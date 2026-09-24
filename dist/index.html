@@ -123,6 +123,10 @@
     .polaroid img {
       display: block;
       width: 100%;
+      /* height 必须显式 auto：<img> 上的 height="480" 属性会被当成固定高度，
+         与 width:100% 一起把盒子压成竖长条（约 112×480），aspect-ratio:1 随之失效，
+         object-fit:cover 再把画面裁成特写。 */
+      height: auto;
       aspect-ratio: 1;
       object-fit: cover;
       border-radius: var(--radius-xs);
