@@ -62,11 +62,8 @@ python -m http.server 5173 -d .build/site   # 打开 http://127.0.0.1:5173
 
 页面层做的低风险优化（不改 URL / slug / id / Giscus term / 投稿与原图链接，也不改视觉布局）：
 
-- **字体**：去掉 `dist/styles.css` 首行的阻塞式 `@import`，改为各页 `<head>` 的
-  `preconnect`（`fonts.googleapis.com` + `fonts.gstatic.com`）+ Google Fonts stylesheet
-  （`display=optional`）。用 `display=optional` 是性能考虑：字体在短时间内取不到时直接
-  保留系统回退字体，不再等远程字体到达后替换首屏文字，从而避免字体替换造成布局跳动（CLS）。
-  详情页同一份链接在 `tools/generate_work_pages.mjs`，改字体链接要两处同步。
+- **字体**：移除远程 Google Fonts 请求，改用 `Segoe Print` / `Bradley Hand` / `Comic Sans MS`
+  等本机优先的稳定字体栈。这样首屏不等待外部字体，也不会在字体到达后替换文字，避免字体替换造成布局跳动（CLS）。
 - **首屏图片优先级**：`dist/index.html` / `dist/category.html` 的卡片按渲染序号给前 6 张
   `loading="eager"`，其中第一张真实作品图 `fetchpriority="high"` 抢 LCP；其余保持
   `loading="lazy" decoding="async"`。首页 hero 装饰照片墙补 1:1 `width/height` +

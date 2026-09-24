@@ -1,5 +1,4 @@
-/* 字体不再用阻塞式远程导入：各页 <head> 直接放 preconnect + Google Fonts stylesheet（display=swap），
-   详情页同一份链接见 tools/generate_work_pages.mjs。改字体链接时两处一起改。 */
+/* 使用本机优先的手写字体栈，不请求远程字体，避免字体替换造成首屏布局偏移。 */
 
 /* ==========================================================================
    蓝色大肥鱼 · 组件层（手绘涂鸦风 · 蓝白）
@@ -133,6 +132,7 @@ a:hover { text-decoration: underline; text-decoration-style: wavy; }
 
 .page {
   max-width: var(--shell-max);
+  min-height: calc(100vh - var(--space-10));
   margin: 0 auto;
   padding: var(--space-6) var(--space-4) var(--space-9);
 }

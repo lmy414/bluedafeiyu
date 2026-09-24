@@ -518,9 +518,6 @@ function renderPage(ctx) {
   <meta property="og:image" content="${e(publicAsset(work.displayUrl))}" />
   <meta property="og:site_name" content="蓝色大肥鱼" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Patrick+Hand&family=ZCOOL+KuaiLe&display=optional" />
   <link rel="stylesheet" href="../tokens.css?v=14" />
   <link rel="stylesheet" href="../styles.css?v=18" />
   <script src="../analytics.js" defer></script>

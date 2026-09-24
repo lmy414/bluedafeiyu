@@ -17,12 +17,12 @@
 
 :root {
   /* ---------------------------------------------------------------- ① 字体 */
-  /* 系统 UI 字体栈 + 手写两支（Google Fonts，各页 <head> 的 preconnect + stylesheet link 引入） */
+  /* 系统 UI 字体栈 + 本机手写字体栈；不依赖远程字体，避免字体替换造成首屏布局偏移 */
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
     "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
-  --font-marker: "ZCOOL KuaiLe", "Permanent Marker", cursive;
-  --font-hand: "Patrick Hand", "ZCOOL KuaiLe", cursive;
+  --font-marker: "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive;
+  --font-hand: "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive;
 
   /* 字号：内容站密度，正文 14px */
   --text-2xs: 11px;
