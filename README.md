@@ -69,6 +69,13 @@ python -m http.server 5173 -d .build/site   # 打开 http://127.0.0.1:5173
   `loading="eager"`，其中第一张真实作品图 `fetchpriority="high"` 抢 LCP；其余保持
   `loading="lazy" decoding="async"`。首页 hero 装饰照片墙补 1:1 `width/height` +
   `decoding="async" fetchpriority="low"`，不抢主内容带宽。
+- **列表增量渲染（分页加载）**：`dist/index.html` 与 `dist/category.html` 的状态变化（首页搜索 /
+  排序、分类页角色 / 类型 / 关键词）不再一次性把所有卡片和图片插进 DOM，只先渲染首批 24 张，
+  滚动接近底部时由 `IntersectionObserver` 追加下一批。分类页全程复用同一个 observer（回调读取
+  当前结果与已渲染数，筛选变化只清空网格并重置批次，不会新建 observer）；同时保留始终可见的「加载更多」按钮，
+  并用接近底部的 passive scroll 做 WebView 兜底，三条路径都仍然首批起步、绝不一次性全量渲染。首批前 6 张 `eager`、
+  第一张 `fetchpriority="high"`，续接批次一律 `lazy`；结果计数仍是完整命中的元数据，不受
+  已渲染数量影响。
 - **详情页**：主图 `loading="eager" fetchpriority="high" decoding="async"`；相关推荐图与角色头像
   保持 `loading="lazy" decoding="async"`。
 - **数据脚本**：`index.html` / `category.html` 在 `<head>` 用 `<link rel="preload" as="script">`
@@ -77,7 +84,7 @@ python -m http.server 5173 -d .build/site   # 打开 http://127.0.0.1:5173
 
 `dist/works/*.html` 仍是生成物：改版式要改 `tools/generate_work_pages.mjs` 再重新构建。
 
-## 发布产物 gzip 预压缩（可选）
+## 发布产物 gzip 预压缩（正式发布默认开启）
 
 `tools/compress_static.mjs` 用 Node 内置 zlib 给发布产物里的 html/css/js/json/xml/svg/txt
 生成同名 `.gz`，供 nginx `gzip_static` 直接回发：
@@ -90,20 +97,29 @@ npm run compress -- --dir .build/site
 npm run compress:write -- --dir .build/site
 ```
 
-默认只报告、加 `--precompress` 才写；`.gz` 只落在发布产物里，脚本会拒绝在 `dist/` 或仓库根上运行。
+脚本本身默认只报告、加 `--precompress` 才写；`.gz` 只落在发布产物里，它拒绝在 `dist/` 或仓库根上运行，
+也**不纳入源码 git**。
 
-发布脚本内置了这个开关：给 `ops/deploy-server.sh` 设环境变量 `PRECOMPRESS=1`（或 `true`）时，
-`build_site.mjs` 成功后、`chmod` / 删 `.build-output` / `cp -al data` 之前，会自动对 staging 产物
-跑一次 `node tools/compress_static.mjs --dir <staging>/site --precompress`；预压缩失败则中止发布、
-`current` 保持不变。默认 `PRECOMPRESS=0`（关闭），避免每个 release 的产物无谓膨胀；也能写在
-`DEPLOY_ENV` 配置文件里。开着它还要在服务器 nginx 打开 `gzip_static on`（见下）。
+发布脚本内置了这个开关且**默认开启**：`ops/deploy-server.sh` 在 `build_site.mjs` 成功后、
+`chmod` / 删 `.build-output` / `cp -al data` 之前，自动对 staging 产物跑一次
+`node tools/compress_static.mjs --dir <staging>/site --precompress`；预压缩失败则中止发布、
+`current` 保持不变。想关闭就显式设 `PRECOMPRESS=0`（或 `false`/`no`/`off`，大小写均可），
+也能写在 `DEPLOY_ENV` 配置文件里。
+
+**注意**：脚本只负责生成 `.gz`，**不会自动改服务器 nginx 配置**。正式发布默认会在产物里生成
+`.gz`，且 `ops/nginx-performance.conf` 里已启用 `gzip_static on`；但仍需由人工把该片段 include
+进服务器 `server {}` 块并 `nginx -t` / reload 才会真正回发 `.gz`（不再需要手动取消注释）。没有
+include 时也没关系：那些 `.gz` 只是发布包里多出的文件，nginx 照常回源文件并实时 gzip，站点行为
+不变。
 
 `ops/nginx-performance.conf` 是可直接抄进 `server {}` 块的 nginx 片段：`gzip_types`、可选 brotli，
 以及一份「不无脑长缓存」的缓存策略——只有带 `?v=<n>` 的 css/js 才用一年 `immutable`（改版即换
 query）；图片给 **7 天**普通缓存（**非 immutable**，因为派生图文件名不是内容指纹，换图靠覆盖同名
 文件）；HTML/JSON `no-cache`；xml/txt 短缓存 1 小时。特别地，`site-data.js` 不带 `?v=`，会落到
-`no-cache`，不会被长缓存。它**不会**被 `ops/deploy-server.sh` 自动加载——线上 nginx 配置仍在
-服务器侧，需要人工 include 并 `nginx -t` 后 reload；不启用时脚本与站点行为保持原样。
+`no-cache`，不会被长缓存。片段里的 `gzip_static on;` 已默认启用（不再需要人工取消注释），
+它**不会**被 `ops/deploy-server.sh` 自动加载——线上 nginx 配置仍在服务器侧，需要人工 include
+并 `nginx -t` 后 reload；未 include 时脚本与站点行为保持原样，某文件缺 `.gz` 时仍由 `gzip on`
+实时压缩兜底。
 
 ## 发布
 

@@ -68,6 +68,11 @@
       font-weight: bold;
       transform: rotate(-1deg);
     }
+
+    /* 增量渲染的补充样式：末尾提示与降级「加载更多」都居中，其余沿用共享 .note / .btn */
+    #results .gallery-end { text-align: center; margin: var(--space-6) 0 0; }
+    #load-more-wrap { text-align: center; margin: var(--space-5) 0 0; }
+    #sentinel { min-height: 1px; }
   </style>
   <script src="analytics.js" defer></script>
 </head>
@@ -94,17 +99,28 @@
     </div>
 
     <p class="count" id="count" aria-live="polite"></p>
-    <div id="results"></div>
+    <div id="results">
+      <div class="masonry cols-3" id="grid"></div>
+      <p class="note gallery-end" id="end-note" hidden></p>
+      <div class="empty" id="empty" hidden>没有符合条件的作品</div>
+      <p id="load-more-wrap" hidden><button type="button" class="btn" id="load-more">加载更多</button></p>
+    </div>
+    <div id="sentinel" aria-hidden="true"></div>
   </main>
   <footer class="site-footer"><p>非官方同人整理项目，图片版权归原作者所有。本站使用最小化 Google Analytics 了解页面与性能表现，不建立热度排行。</p><p><a href="changelog.html">更新日志</a> · <a href="about.html#analytics">统计与隐私</a></p></footer>
   <script src="site-data.js"></script>
   <script>
-  /* 分类页逻辑：角色、类型两级单选筛选 + 范围内搜索，状态进 URL hash（#c=&s=&q=） */
+  /* 分类页逻辑：角色、类型两级单选筛选 + 范围内搜索，状态进 URL hash（#c=&s=&q=）
+     结果按 PAGE_SIZE 增量渲染：先出首批，滚动接近底部时由 IntersectionObserver 追加下一批，
+     避免一次把全部作品卡片 / 图片都插进 DOM。 */
   (function () {
     "use strict";
 
-    /* 首屏图片优先级：序号 < EAGER_CARDS 的卡片 eager 正常加载，第一张额外 fetchpriority=high
-       抢 LCP；其余 lazy。分类页每次筛选都会整块重渲染，序号取当前结果里的位置。 */
+    /* 每批渲染的卡片数：首批在状态变化后立即入 DOM，其余等观察器 /「加载更多」续接 */
+    const PAGE_SIZE = 24;
+    /* 首屏图片优先级：序号 < EAGER_CARDS 的卡片 eager 正常加载，其中第一张额外
+       fetchpriority=high 抢 LCP；其余 lazy。序号取当前结果里的渲染位置，因此续接批次
+       仍走 lazy，不会反复给新页首图 high。 */
     const EAGER_CARDS = 6;
     const DEMO = window.DEMO || {};
     const characters = Array.isArray(DEMO.characters) ? DEMO.characters : [];
@@ -115,7 +131,12 @@
     const catChipsEl = document.getElementById("catChips");
     const searchInput = document.getElementById("searchInput");
     const countEl = document.getElementById("count");
-    const resultsEl = document.getElementById("results");
+    const gridEl = document.getElementById("grid");
+    const endNoteEl = document.getElementById("end-note");
+    const emptyEl = document.getElementById("empty");
+    const sentinel = document.getElementById("sentinel");
+    const loadMoreWrap = document.getElementById("load-more-wrap");
+    const loadMoreBtn = document.getElementById("load-more");
 
     const charById = new Map();
     const catById = new Map();
@@ -289,6 +310,39 @@
       );
     }
 
+    /* 当前筛选结果（已按渲染顺序排好）与已插入 DOM 的卡片数。观察器回调只读这两个变量，
+       因此筛选重渲染时无需重建观察器：清空网格 + 归零 renderedCount 后，旧回调不会再追加旧 list。 */
+    let list = [];
+    let renderedCount = 0;
+    /* 加载更多按钮始终保留：它既是无 IntersectionObserver 时的降级，也是触控 / 键盘用户的显式入口。 */
+    let loadMoreEnabled = true;
+
+    /* 更新计数、空状态与末尾提示。count 仍按「命中 / 当前范围」统计完整数据（元数据计算，
+       不是 DOM 数量），键盘与屏幕阅读器据此读到筛选结果数。 */
+    function updateStatus() {
+      const total = list.length;
+      const exhausted = total > 0 && renderedCount >= total;
+      endNoteEl.hidden = !exhausted;
+      if (exhausted) endNoteEl.textContent = "已经到底了 · 共 " + total + " 张";
+      emptyEl.hidden = total !== 0;
+      if (loadMoreWrap && loadMoreBtn) {
+        loadMoreWrap.hidden = !(loadMoreEnabled && !exhausted);
+        loadMoreBtn.disabled = exhausted;
+      }
+    }
+
+    /* 追加下一批：index 传渲染序号，首批（renderedCount=0）前 EAGER_CARDS 张才 eager，续接批次全 lazy */
+    function appendNextPage() {
+      if (renderedCount >= list.length) { updateStatus(); return; }
+      const slice = list.slice(renderedCount, renderedCount + PAGE_SIZE);
+      gridEl.insertAdjacentHTML(
+        "beforeend",
+        slice.map((work, i) => cardMarkup(work, renderedCount + i)).join("")
+      );
+      renderedCount += slice.length;
+      updateStatus();
+    }
+
     function render() {
       for (const button of charChipsEl.children) {
         const id = button.dataset.id;
@@ -314,11 +368,15 @@
 
       const scope = works.filter(inScope);
       const needle = normalize(state.q);
-      const list = scope.filter((work) => matches(work, needle));
+      list = scope.filter((work) => matches(work, needle));
       countEl.textContent = list.length + " / " + scope.length + " 张";
-      resultsEl.innerHTML = list.length
-        ? '<div class="masonry cols-3">' + list.map((work, index) => cardMarkup(work, index)).join("") + "</div>"
-        : '<div class="empty">没有符合条件的作品</div>';
+
+      /* 状态变化：清空结果、重置批次与提示，再只渲染首批；旧观察器回调读到的已是新 list */
+      gridEl.innerHTML = "";
+      renderedCount = 0;
+      endNoteEl.hidden = true;
+      emptyEl.hidden = list.length !== 0;
+      appendNextPage();
     }
 
     /* ---------- 交互：chips 前进后退可回溯，输入用 replace 不刷历史 ---------- */
@@ -365,6 +423,34 @@
     });
     window.addEventListener("hashchange", syncFromLocation);
     window.addEventListener("popstate", syncFromLocation);
+
+    /* 只建一个观察器：回调读取当前 list / renderedCount，筛选重渲染不重绑，避免观察器无限增长 */
+    if (typeof IntersectionObserver === "function" && sentinel) {
+      const observer = new IntersectionObserver(
+        (records) => {
+          if (records.some((record) => record.isIntersecting)) appendNextPage();
+        },
+        { rootMargin: "320px 0px" }
+      );
+      observer.observe(sentinel);
+    }
+    if (loadMoreWrap && loadMoreBtn) {
+      loadMoreWrap.hidden = false;
+      loadMoreBtn.addEventListener("click", () => appendNextPage());
+    }
+
+    /* 某些 WebView 对 0 高度 sentinel 的 IntersectionObserver 事件不稳定；接近底部时
+       用 passive scroll 做兜底。仍按 PAGE_SIZE 追加，不会回退到全量渲染。 */
+    let scrollTick = 0;
+    window.addEventListener("scroll", () => {
+      if (scrollTick) return;
+      scrollTick = window.setTimeout(() => {
+        scrollTick = 0;
+        if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 480) {
+          appendNextPage();
+        }
+      }, 80);
+    }, { passive: true });
 
     render();
     writeHash(state, "replace"); // 首次进入把脏 hash 归一化，不产生历史记录
