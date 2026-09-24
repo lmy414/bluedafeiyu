@@ -1,0 +1,57 @@
+# bluedafeiyu —— 站点源码仓库
+#
+# 这个仓库只跟踪「手写的站点源码」：dist/ 下的页面 / 样式 / 脚本、tools/、ops/、archive/。
+# 图片、清单、派生资产一律来自内容仓库 lmy414/ai-girl-stickers，不在这里跟踪。
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# 依赖与本地运行时产物
+node_modules/
+__pycache__/
+.sites-runtime/
+
+# 本地配置与密钥
+.env
+.env.*
+!.env.example
+*.log
+
+# 构建产物
+/.build/
+
+# 可选：把内容仓库克隆到本仓库同级 content/ 时，整个目录不进 git
+/content/
+
+# 并行子代理的 git worktree（不进仓库）
+/.worktrees/
+
+# ---------------------------------------------------------------- 内容仓库同步物
+# tools/sync_content.mjs 从内容仓库同步进来的清单与派生资产：一次都不跟踪
+/dist/characters.json
+/dist/categories.json
+/dist/blue-fish-ids.json
+/dist/favicon.ico
+/dist/favicon.png
+/dist/avatar.png
+/dist/data/
+/dist/submissions/
+/dist/owner-picks/
+
+# ---------------------------------------------------------------- 构建生成物
+# tools/build_site_snapshot.mjs / generate_work_pages.mjs / generate_sitemap.mjs 的产出
+/dist/site-data.json
+/dist/site-data.js
+/dist/sitemap.xml
+/dist/works/
+
+# ---------------------------------------------------------------- 图片
+# 本仓库不跟踪任何图片位图；图片归内容仓库
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.ico

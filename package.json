@@ -1,0 +1,17 @@
+{
+  "name": "bluedafeiyu",
+  "private": true,
+  "type": "module",
+  "description": "蓝色大肥鱼（AI娘表情包）站点源码：手写页面、生成器与零依赖构建",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "sync": "node tools/sync_content.mjs",
+    "snapshot": "node tools/build_site_snapshot.mjs",
+    "pages": "node tools/generate_work_pages.mjs",
+    "sitemap": "node tools/generate_sitemap.mjs",
+    "build": "node tools/build_site.mjs",
+    "build:dist": "node tools/build.mjs"
+  }
+}
