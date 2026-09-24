@@ -111,14 +111,10 @@ npm run compress:write -- --dir .build/site
 include 时也没关系：那些 `.gz` 只是发布包里多出的文件，nginx 照常回源文件并实时 gzip，站点行为
 不变。
 
-`ops/nginx-performance.conf` 是可直接抄进 `server {}` 块的 nginx 片段：`gzip_types`、可选 brotli，
-以及一份「不无脑长缓存」的缓存策略——只有带 `?v=<n>` 的 css/js 才用一年 `immutable`（改版即换
-query）；图片给 **7 天**普通缓存（**非 immutable**，因为派生图文件名不是内容指纹，换图靠覆盖同名
-文件）；HTML/JSON `no-cache`；xml/txt 短缓存 1 小时。特别地，`site-data.js` 不带 `?v=`，会落到
-`no-cache`，不会被长缓存。片段里的 `gzip_static on;` 已默认启用（不再需要人工取消注释），
-它**不会**被 `ops/deploy-server.sh` 自动加载——线上 nginx 配置仍在服务器侧，需要人工 include
-并 `nginx -t` 后 reload；未 include 时脚本与站点行为保持原样，某文件缺 `.gz` 时仍由 `gzip on`
-实时压缩兜底。
+`ops/nginx-performance.conf` 是可 include 进现有 `server {}` 块的最小 nginx 片段，当前只补
+`gzip_static on;`；现有 vhost 继续负责 gzip、gzip_types 与缓存分层，避免重复指令冲突。
+正式发布默认生成 `.gz`，人工 include 后执行 `nginx -t` / reload 即会优先回发预压缩文件；缺少 `.gz`
+时仍由已有 `gzip on` 实时压缩兜底。Brotli 暂不启用。
 
 ## 发布
 
