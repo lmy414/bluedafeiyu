@@ -91,7 +91,9 @@ const UNIX_BANNED = [
 ];
 
 // 构建产物必须排除的 dist 内相对目录（POSIX 风格）。
-const SKIP_DIRS = ["data", "submissions/originals"];
+// .github 是 tools/sync_content.mjs 从内容仓库同步进来的投稿模板副本，
+// 只供本地比对，绝不能进发布包（否则会出现在站点 web 根下）。
+const SKIP_DIRS = ["data", "submissions/originals", ".github"];
 
 // 产物必须存在且非空的文件（POSIX 风格相对路径）。
 const REQUIRED_FILES = [

@@ -39,6 +39,8 @@ __pycache__/
 /dist/data/
 /dist/submissions/
 /dist/owner-picks/
+# 投稿模板副本（内容仓库根的 .github/ 同步进来），构建期只读、不进发布包
+/dist/.github/
 
 # ---------------------------------------------------------------- 构建生成物
 # tools/build_site_snapshot.mjs / generate_work_pages.mjs / generate_sitemap.mjs 的产出
