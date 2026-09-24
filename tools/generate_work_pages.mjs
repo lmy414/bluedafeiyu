@@ -137,16 +137,18 @@ function buildContext(work, character, titleVariant, totalCount) {
    约定：渲染函数产出纯文本，转义在页面模板拼装时统一过 escapeHtml；
    降级分支：缺别名省略「（又称…）」/「{alias1}」退「AI娘」；缺 tag 中段退「AI娘二创表情包」、场景句收缩。 */
 
-// §2 title：《{name}》{characterName}{kindWord} - {tag1}AI娘二创 | 蓝色大肥鱼
+// §2 title：《{name}》{characterName}{kindWord} - {tag1} AI娘二创 | 蓝色大肥鱼
 // 变体钩子：同一角色交替把中段换成 {alias1}表情包（如「蓝色大肥鱼表情包」），扩大长尾面；
 // 无 tag 时中段换「AI娘二创表情包」；超长截中段，作品名 + 角色名 + 品类词必保，整条 ≤60 字符。
+// tag 与「AI娘二创」之间留一个空格：tag 常以拉丁字母结尾（glm、zcode、dsh），不留空格会拼成
+// 「glmAI娘二创」这种连读；只在中段真带 tag 时留，免得无 tag 分支多出一个前导空格。
 function renderTitle(ctx) {
   const head = `《${ctx.name}》${ctx.characterName}${ctx.kindWord}`;
   const sep = " - ";
   const tail = " | 蓝色大肥鱼";
   let mid;
   if (ctx.titleVariant === "alias" && ctx.alias1) mid = `${ctx.alias1}表情包`;
-  else if (ctx.tagWords && ctx.tags[0]) mid = `${ctx.tags[0]}AI娘二创`;
+  else if (ctx.tagWords && ctx.tags[0]) mid = `${ctx.tags[0]} AI娘二创`;
   else mid = "AI娘二创表情包";
   const budget = 60 - head.length - sep.length - tail.length;
   if (budget < 2) return head + tail;
@@ -181,9 +183,10 @@ function renderKeywords(ctx) {
   return items.join(",");
 }
 
-// §7 alt：《{name}》{characterName}{kindWord}，{tags顿号}AI娘二创图（主图与相关缩略图同公式）
+// §7 alt：《{name}》{characterName}{kindWord}，{tags顿号} AI娘二创图（主图与相关缩略图同公式）
+// 空格同 §2 的理由：tag 以拉丁字母结尾时，不留空格会拼成「glmAI娘二创图」。
 function renderAlt(ctx) {
-  const tagPart = ctx.tagsJoined ? ctx.tagsJoined : "";
+  const tagPart = ctx.tagsJoined ? `${ctx.tagsJoined} ` : "";
   return `《${ctx.name}》${ctx.characterName}${ctx.kindWord}，${tagPart}AI娘二创图`;
 }
 

@@ -35,11 +35,13 @@ node tools/build_site.mjs --content-dir /path/to/ai-girl-stickers
 python -m http.server 5173 -d .build/site        # 打开 http://127.0.0.1:5173
 ```
 
-构建链：同步内容 → 归一快照 → 生成 191 个详情页 → sitemap → 复制成发布产物。
+构建链：同步内容 → 归一快照 → 生成 250 个详情页 → sitemap → 复制成发布产物。
 
 `dist/works/<slug>.html` 是生成物，不要手改；改版式改 `tools/generate_work_pages.mjs` 再重跑。也不要在构建期跑内容仓库的 `prepare_works.mjs`：`id` 和 `slug` 一经发布即冻结。
 
 详情页的正文段（H1 下那段）**整段是内容数据**，不是模板：取清单里的 `commentary`（蓝色大肥鱼第一人称评价），缺字段才退兜底句；要改某一页的正文，改内容仓库的清单，不要改生成器。分类枚举同理走内容仓库的 `categories.json`，加分类不用动代码——但新增分类要同时补 `generate_work_pages.mjs` 的 `KIND_WORDS`、`index.html` 与 `category.html` 里那份 `kindWord` 映射（前端卡片 alt 用），漏了会静默退成「表情包」。
+
+首批（blue-fish）记录的归一有两条容易踩的线：`build_site_snapshot.mjs` **先合并 `data/blue-fish-editorial.json` 叠加层、再判「够不够格当作品」**（名字 / 标签 / 角色三者齐全），顺序反了那 59 条补过名字的记录会重新掉线；叠加层里带 `originalPath` 的记录原图走本内容仓的 Raw，没带的仍指上游档案馆。
 
 ## Git 流程
 
@@ -58,4 +60,5 @@ python -m http.server 5173 -d .build/site        # 打开 http://127.0.0.1:5173
 - 发布脚本分别拉取代码仓与内容仓的 `main`，构建、预压缩、原子切换 `current`，健康检查失败自动回滚；
 - 不要用面板上传整包，也不要直接改服务器上的站点文件；
 - 回滚用 `ops/rollback-server.sh <release目录名>`，只切软链、不删文件；
+- **首批图的派生图（`data/blue-fish/previews/`）不在发布产物里**：`build.mjs` 跳过 `data/`，线上由 `DEPLOY_ROOT/shared/data` 这份持久副本硬链接进每个 release。所以**内容仓的 `dist/data/` 一旦新增或替换文件，必须先把它刷进 `shared/data` 再发布**，否则页面对得上、图对不上。2026-09-25 新收编的 59 件作品用的就是这批派生图，发之前请确认 `shared/data/blue-fish/previews/` 里那 59 个文件名都在；
 - 服务器配置（`DEPLOY_ENV`、`DEPLOY_ROOT`、`SOURCE_DIR`、`CONTENT_DIR` 等）由维护者在服务器侧维护，不写进仓库。

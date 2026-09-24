@@ -276,7 +276,7 @@
       const kindWord = ({ meme: "表情包", illustration: "二创插画", setting: "立绘设定图", comic: "漫画" })[kindId] || "表情包";
       const tags = (Array.isArray(work.tags) ? work.tags : []).slice(0, 2).join("、");
       const text = "《" + String(work.name == null ? "" : work.name) + "》" + characterName + kindWord;
-      return tags ? text + "，" + tags + "AI娘二创图" : text;
+      return tags ? text + "，" + tags + " AI娘二创图" : text;
     }
 
     function cardMarkup(work, index) {

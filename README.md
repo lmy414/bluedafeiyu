@@ -42,7 +42,7 @@ CONTENT_DIR=/path/to/ai-girl-stickers node tools/build_site.mjs
 
 1. `tools/sync_content.mjs` —— 从内容仓库把清单 / 派生图 / `data/` 同步进本仓库 `dist/`（只覆盖清单内的目标，缺文件即报错）；
 2. `tools/build_site_snapshot.mjs` —— 归一成 `dist/site-data.json` + `dist/site-data.js`；
-3. `tools/generate_work_pages.mjs` —— 幂等生成 191 个 `dist/works/<slug>.html`；
+3. `tools/generate_work_pages.mjs` —— 幂等生成 250 个 `dist/works/<slug>.html`；
 4. `tools/generate_sitemap.mjs` —— 生成 `dist/sitemap.xml`；
 5. `tools/build.mjs` —— 把 `dist/` 复制成干净发布产物，跳过 `dist/data/` 与 `dist/submissions/originals/`，并对清单、派生图、详情页、投稿模板下拉做断言。
 

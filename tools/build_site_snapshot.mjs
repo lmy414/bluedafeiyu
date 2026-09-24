@@ -32,13 +32,14 @@ const kindFor = (record) => {
   if (/立绘|设定|三视图/.test(String(record.name || ""))) return ["setting"];
   return ["meme"];
 };
-const gate = (record) => {
-  const name = String(record.name || "").trim();
-  const tags = Array.isArray(record.tags) ? record.tags.map((x) => String(x || "").trim()).filter(Boolean) : [];
-  const characterId = String(record.characterId || "").trim();
-  return name && tags.length && characterId;
-};
+// 首批记录「够不够格当作品」的门槛：得有名字、标签、角色。
+// 叠加层合并之后才判——首批里有 59 条上游清单只给了图和角色，名字与标签是后来
+// 视觉复核补在叠加层里的，合并前它们过不了这道门，也就一直没进站点。
+const gate = (name, tags, characterId) => Boolean(String(name || "").trim() && tags.length && String(characterId || "").trim());
 const rawUrl = (value) => `${UPSTREAM}${String(value || "").replace(/^\/+/, "")}`;
+// 自托管原图（叠加层带 originalPath 的首批记录）走本内容仓的 Raw，不再依赖上游档案馆
+const CONTENT_RAW = "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/";
+const contentRawUrl = (value) => `${CONTENT_RAW}${String(value || "").replace(/^\/+/, "")}`;
 
 function main() {
   const characters = readJson(path.join(DIST, "characters.json"));
@@ -70,24 +71,32 @@ function main() {
   }
 
   raw.forEach((record) => {
-    if (!gate(record)) return;
     const sourcePath = String(record.sourcePath || "").trim();
+    const editorial = editorialByPath.get(sourcePath) || {};
+    // 叠加层优先：首批 59 条的名字、标签、分类、评价、自托管原图都在这里；
+    // 其余条目回落到上游 raw 清单的字段
+    const name = String(editorial.name || record.name || "").trim();
+    const tags = (Array.isArray(editorial.tags) && editorial.tags.length ? editorial.tags : record.tags || [])
+      .map((x) => String(x || "").trim())
+      .filter(Boolean);
+    const characterId = String(record.characterId || "").trim();
+    if (!gate(name, tags, characterId)) return;
     const frozenEntry = frozenByPath.get(sourcePath);
     if (!frozenEntry || !frozenEntry.id || !frozenEntry.slug) return;
-    const editorial = editorialByPath.get(sourcePath) || {};
     const filename = basename(record.previewPath || record.sourcePath);
     const preview = `data/blue-fish/previews/${encodeURIComponent(filename)}`;
-    const format = String(record.format || "").toLowerCase();
+    const format = String(editorial.format || record.format || "").toLowerCase();
+    const originalUrl = editorial.originalPath ? contentRawUrl(editorial.originalPath) : rawUrl(sourcePath);
     works.push({
       id: frozenEntry.id,
       slug: frozenEntry.slug,
-      name: String(record.name).trim(),
+      name,
       description: "首批收录自蓝色大肥鱼档案馆的公开清单；单条原作者与授权信息待补充，可在详情页申请署名或删除。",
-      characterId: String(record.characterId).trim(),
+      characterId,
       // 分类与第一人称评价取编辑叠加层；没有叠加层的条目退回既有的 meme 兜底
       categoryIds: Array.isArray(editorial.categoryIds) && editorial.categoryIds.length ? editorial.categoryIds : ["meme"],
       commentary: String(editorial.commentary || ""),
-      tags: record.tags.map((x) => String(x).trim()).filter(Boolean),
+      tags,
       format,
       mimeType: format === "jpg" || format === "jpeg" ? "image/jpeg" : `image/${format || "png"}`,
       isAnimated: format === "gif" || format === "apng",
@@ -101,13 +110,13 @@ function main() {
       status: "published",
       createdAt: "2026-09-15T00:00:00+08:00",
       updatedAt: "2026-09-15T00:00:00+08:00",
-      path: rawUrl(sourcePath),
+      path: originalUrl,
       thumbnailPath: preview,
       fullPath: preview,
       thumbUrl: preview,
       displayUrl: preview,
-      originalUrl: rawUrl(sourcePath),
-      tone: String(record.characterId).trim(),
+      originalUrl,
+      tone: characterId,
       symbol: "",
       sourcePath,
       source: "blue-fish"

@@ -31,11 +31,12 @@ https://xn--pssy23gqgbz2d718b.com/works/<slug>
 ## 2. `<title>`（接住主搜索意图，25–32 字，≤60 字符）
 
 ```
-《{name}》{characterName}{kindWord} - {tag1}AI娘二创 | 蓝色大肥鱼
+《{name}》{characterName}{kindWord} - {tag1} AI娘二创 | 蓝色大肥鱼
 ```
 
 - 无 tag 时中段换「AI娘二创表情包」；超长时截中段，**作品名 + 角色名 + 品类词必保**。
-- 渲染例：`《分我点token》DeepSeek娘表情包 - tokenAI娘二创 | 蓝色大肥鱼`。
+- `{tag1}` 与「AI娘二创」之间**留一个空格**（2026-09-25 修）：tag 常以拉丁字母结尾（`glm`、`zcode`、`dsh`），不留空格会拼成 `glmAI娘二创` 这种连读；只在中段真带 tag 时留，无 tag 分支不带前导空格。
+- 渲染例：`《分我点token》DeepSeek娘表情包 - token AI娘二创 | 蓝色大肥鱼`。
 - 变体钩子：角色有别名时，可轮换把 `{tag1}` 换成 `{alias1}`（如「蓝色大肥鱼表情包」），同一角色下交替使用，扩大长尾面。
 
 ## 3. `<meta name="description">`（120–160 字，多长尾自然句）
@@ -80,12 +81,14 @@ https://xn--pssy23gqgbz2d718b.com/works/<slug>
 
 | 图 | alt 公式 |
 |---|---|
-| 详情主图 | `《{name}》{characterName}{kindWord}，{tags顿号}AI娘二创图` |
+| 详情主图 | `《{name}》{characterName}{kindWord}，{tags顿号} AI娘二创图` |
 | 相关作品缩略图 | 同公式（用对方作品的各字段） |
 | 列表卡片图（首页/分类） | 同公式 |
 | 纯装饰图 | `alt=""` 且 `aria-hidden="true"` |
 
-- 渲染例：`《分我点token》DeepSeek娘表情包，token、打工人AI娘二创图`。
+`{tags顿号}` 与「AI娘二创图」之间**留一个空格**（2026-09-25 修，同 §2）：tag 以拉丁字母结尾时不留空格会拼成 `glmAI娘二创图`；无 tag 时整段省略，不带前导空格。
+
+- 渲染例：`《分我点token》DeepSeek娘表情包，token、打工人 AI娘二创图`。
 - 主图放在 `<figure>` 里，配 `<figcaption>`（`《{name}》· {characterName}`）——图旁的可见文本同样喂给图片检索。
 - `<img>` 带 `width`/`height`（防布局偏移，利于图片质量评估）；主图 `loading="eager"`，列表图 `loading="lazy"`。
 - **图片文件名也参与图片 SEO**：后续派生图可迁到语义化文件名（`<slug>.webp`）；当前沿用既有文件名，由 alt / figcaption / JSON-LD 补语义。图片 sitemap 可后续补。

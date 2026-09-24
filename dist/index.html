@@ -346,7 +346,7 @@
         var kindWord = ({ meme: "表情包", illustration: "二创插画", setting: "立绘设定图", comic: "漫画" })[kindId] || "表情包";
         var tags = (work.tags || []).slice(0, 2).join("、");
         var text = "《" + String(work.name == null ? "" : work.name) + "》" + characterName + kindWord;
-        return tags ? text + "，" + tags + "AI娘二创图" : text;
+        return tags ? text + "，" + tags + " AI娘二创图" : text;
       }
 
       function cardHtml(entry, index) {
