@@ -16,8 +16,12 @@
   <meta name="twitter:card" content="summary" />
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Patrick+Hand&family=ZCOOL+KuaiLe&display=swap" />
   <link rel="stylesheet" href="tokens.css?v=14" />
   <link rel="stylesheet" href="styles.css?v=18" />
+  <link rel="preload" href="site-data.js" as="script" />
   <script>
     (function () {
       var hash = String(location.hash || "");
@@ -209,13 +213,15 @@
         </div>
       </div>
       <div class="hero-art" aria-hidden="true">
+        <!-- 装饰性照片墙（父容器 aria-hidden）：统一 1:1 占位盒，与 .polaroid img 的 aspect-ratio:1 一致；
+             fetchpriority=low 让位给首屏第一张真实作品图（fetchpriority=high）。 -->
         <div class="hero-collage">
-          <div class="polaroid"><span class="tape-strip"></span><img src="owner-picks/previews/blue-maid.webp" alt="" /></div>
-          <div class="polaroid"><span class="tape-strip"></span><img src="submissions/previews/deepseek/issue-20-001.webp" alt="" /></div>
-          <div class="polaroid"><span class="tape-strip"></span><img src="submissions/previews/deepseek/issue-07-001.webp" alt="" /></div>
-          <div class="polaroid"><span class="tape-strip"></span><img src="submissions/previews/claude/issue-08-001.webp" alt="" /></div>
-          <div class="polaroid"><span class="tape-strip"></span><img src="submissions/previews/qwen/issue-16-001.webp" alt="" /></div>
-          <div class="polaroid"><span class="tape-strip"></span><img src="submissions/previews/stepfun/issue-19-001.webp" alt="" /></div>
+          <div class="polaroid"><span class="tape-strip"></span><img src="owner-picks/previews/blue-maid.webp" alt="" width="480" height="480" decoding="async" fetchpriority="low" /></div>
+          <div class="polaroid"><span class="tape-strip"></span><img src="submissions/previews/deepseek/issue-20-001.webp" alt="" width="480" height="480" decoding="async" fetchpriority="low" /></div>
+          <div class="polaroid"><span class="tape-strip"></span><img src="submissions/previews/deepseek/issue-07-001.webp" alt="" width="480" height="480" decoding="async" fetchpriority="low" /></div>
+          <div class="polaroid"><span class="tape-strip"></span><img src="submissions/previews/claude/issue-08-001.webp" alt="" width="480" height="480" decoding="async" fetchpriority="low" /></div>
+          <div class="polaroid"><span class="tape-strip"></span><img src="submissions/previews/qwen/issue-16-001.webp" alt="" width="480" height="480" decoding="async" fetchpriority="low" /></div>
+          <div class="polaroid"><span class="tape-strip"></span><img src="submissions/previews/stepfun/issue-19-001.webp" alt="" width="480" height="480" decoding="async" fetchpriority="low" /></div>
         </div>
       </div>
     </section>
@@ -253,6 +259,10 @@
       "use strict";
 
       var PAGE_SIZE = 24;
+      /* 首屏图片优先级：序号 < EAGER_CARDS 的卡片以 eager 正常加载（兼顾移动端 2 列时也不过多），
+         其中第一张真实作品图额外 fetchpriority=high 抢 LCP；其余一律 lazy。序号取「当前筛选
+         结果里的渲染序号」，因此分页续接的新页卡片仍走 lazy，不会反复给新页首图 high。 */
+      var EAGER_CARDS = 6;
       var DEMO = window.DEMO || {};
       var characters = Array.isArray(DEMO.characters) ? DEMO.characters : [];
       var works = Array.isArray(DEMO.works) ? DEMO.works : [];
@@ -342,17 +352,19 @@
         return tags ? text + "，" + tags + "AI娘二创图" : text;
       }
 
-      function cardHtml(entry) {
+      function cardHtml(entry, index) {
         var work = entry.work;
         var tags = (work.tags || []).slice(0, 3).map(function (tag) { return "#" + tag; }).join(" ");
         var format = String(work.format || "").toUpperCase();
         var meta = entry.characterName + " · " + format + " · " + work.width + " × " + work.height;
+        var loading = index < EAGER_CARDS ? "eager" : "lazy";
+        var priority = index === 0 ? ' fetchpriority="high"' : "";
         return (
           '<article class="card">' +
             `<a class="card-art-link" href="works/${work.slug}.html">` +
               '<img class="card-art" src="' + escapeHtml(work.thumbUrl) + '" alt="' + escapeHtml(altFor(work)) + '"' +
                 ' width="' + escapeHtml(work.width) + '" height="' + escapeHtml(work.height) + '"' +
-                ' loading="lazy" decoding="async" />' +
+                ' loading="' + loading + '" decoding="async"' + priority + ' />' +
             '</a>' +
             '<div class="card-body">' +
               '<h3 class="card-title" title="' + escapeHtml(work.name) + '">' + escapeHtml(work.name) + '</h3>' +
@@ -378,7 +390,7 @@
       function appendNextPage() {
         if (renderedCount >= filtered.length) { updateStatus(); return; }
         var slice = filtered.slice(renderedCount, renderedCount + PAGE_SIZE);
-        grid.insertAdjacentHTML("beforeend", slice.map(cardHtml).join(""));
+        grid.insertAdjacentHTML("beforeend", slice.map(function (entry, i) { return cardHtml(entry, renderedCount + i); }).join(""));
         renderedCount += slice.length;
         updateStatus();
       }

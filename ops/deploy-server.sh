@@ -12,6 +12,8 @@
 #      origin/<CONTENT_BRANCH> 到 CONTENT_DIR（只动这两份工作树，不碰 current）；
 #   4. staging 临时目录里跑 tools/build_site.mjs（内部顺序：同步内容 → 快照 →
 #      详情页 → sitemap → tools/build.mjs）；
+#   4b. 可选：PRECOMPRESS=1/true 时对产物跑 tools/compress_static.mjs --precompress
+#      生成 .gz（默认关闭；必须在 chmod / 删 .build-output / cp -al 之前）；
 #   5. 先 chmod 构建产物，再 cp -al 硬链接 shared/data（顺序不能反）；
 #   6. 校验产物关键文件；
 #   7. nginx -t；
@@ -38,7 +40,7 @@ die() {
 # ---------------------------------------------------------------- 配置加载
 
 CONFIG_FILE="${DEPLOY_ENV:-}"
-CONFIG_VARS=(DEPLOY_ROOT SOURCE_DIR REPO_URL BRANCH HEALTH_URL CONTENT_REPO_URL CONTENT_BRANCH CONTENT_DIR SHARED_DATA_DIR RELEASES_DIR CURRENT_LINK)
+CONFIG_VARS=(DEPLOY_ROOT SOURCE_DIR REPO_URL BRANCH HEALTH_URL CONTENT_REPO_URL CONTENT_BRANCH CONTENT_DIR SHARED_DATA_DIR RELEASES_DIR CURRENT_LINK PRECOMPRESS)
 
 # 先记住当前已经通过环境变量给出的值，读完配置文件后再覆盖回去（环境变量优先）。
 declare -A __preset=()
@@ -90,6 +92,16 @@ STAGING_ROOT="${DEPLOY_ROOT}/.staging"
 LOG_DIR="${DEPLOY_ROOT}/logs"
 HEALTH_URL="${HEALTH_URL%/}"
 
+# 可选：构建后对发布产物做 gzip 预压缩（生成 .gz 供 nginx `gzip_static on`）。
+# 默认 0（关闭）：多数环境靠 nginx 实时 gzip 即可，不预压缩以免每个 release 的产物无谓膨胀。
+# 只认下面列出的真假写法，写别的值直接报错，避免「以为是开、其实没开」。
+PRECOMPRESS="${PRECOMPRESS:-0}"
+case "${PRECOMPRESS}" in
+  1 | true | TRUE | yes | YES | on | ON) PRECOMPRESS_ENABLED=1 ;;
+  0 | false | FALSE | no | NO | off | OFF | "") PRECOMPRESS_ENABLED=0 ;;
+  *) die "PRECOMPRESS 只能是 0/1/true/false（收到：${PRECOMPRESS}）" ;;
+esac
+
 log "DEPLOY_ROOT=${DEPLOY_ROOT}"
 log "SOURCE_DIR=${SOURCE_DIR}（代码仓库）"
 log "REPO_URL=${REPO_URL}"
@@ -101,6 +113,7 @@ log "HEALTH_URL=${HEALTH_URL}"
 log "SHARED_DATA_DIR=${SHARED_DATA_DIR}"
 log "RELEASES_DIR=${RELEASES_DIR}"
 log "CURRENT_LINK=${CURRENT_LINK}"
+log "PRECOMPRESS=${PRECOMPRESS}（1/true 时构建后生成 .gz，供 nginx gzip_static）"
 
 # ---------------------------------------------------------------- 防并发
 
@@ -164,6 +177,20 @@ if ! node "${SOURCE_DIR}/tools/build_site.mjs" --content-dir "${CONTENT_DIR}" --
   die "构建失败，未改动 current"
 fi
 log "构建完成：${STAGING_DIR}/site"
+
+# ------------------------------------------------- 预压缩（可选；必须在 chmod / 删 .build-output / cp -al 之前）
+# PRECOMPRESS=1/true 时，给刚构建好的产物生成同名 .gz，供 nginx `gzip_static on` 直接回发，
+# 省掉每个请求的实时压缩 CPU。默认关闭（见上方 PRECOMPRESS 归一化）。
+# 位置很关键：必须在 chmod（否则新写的 .gz 权限不对）、删 .build-output、cp -al data 之前。
+# 预压缩失败要保持 current 不变，所以这里直接 die，此时还没动过 release / 软链。
+if [ "${PRECOMPRESS_ENABLED}" = "1" ]; then
+  log "预压缩产物文本资源：node ${SOURCE_DIR}/tools/compress_static.mjs --dir ${STAGING_DIR}/site --precompress"
+  if ! node "${SOURCE_DIR}/tools/compress_static.mjs" --dir "${STAGING_DIR}/site" --precompress; then
+    die "预压缩失败，未改动 current"
+  fi
+  PRECOMPRESSED_COUNT="$(find "${STAGING_DIR}/site" -type f -name '*.gz' | wc -l | tr -d ' ')" || PRECOMPRESSED_COUNT="unknown"
+  log "预压缩完成：生成 ${PRECOMPRESSED_COUNT} 个 .gz（nginx 还需开 gzip_static on 才会用到）"
+fi
 
 # ------------------------------------------------- 权限（必须在 cp -al 之前）
 

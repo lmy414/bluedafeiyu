@@ -405,7 +405,7 @@ function renderCardGrid(items) {
   const cards = items
     .map(
       (item) => `        <a class="card related-card" href="${escapeHtml(item.work.slug + ".html")}">
-          <img class="card-art" src="${escapeHtml(pageAsset(item.work.thumbUrl))}" alt="${escapeHtml(renderAlt(item))}" width="${escapeHtml(item.work.width)}" height="${escapeHtml(item.work.height)}" loading="lazy" />
+          <img class="card-art" src="${escapeHtml(pageAsset(item.work.thumbUrl))}" alt="${escapeHtml(renderAlt(item))}" width="${escapeHtml(item.work.width)}" height="${escapeHtml(item.work.height)}" loading="lazy" decoding="async" />
           <div class="card-body">
             <h3 class="card-title">《${escapeHtml(item.name)}》</h3>
             <p class="card-meta">${escapeHtml(item.characterName)} · ${escapeHtml(item.kindWord)}</p>
@@ -518,6 +518,9 @@ function renderPage(ctx) {
   <meta property="og:image" content="${e(publicAsset(work.displayUrl))}" />
   <meta property="og:site_name" content="蓝色大肥鱼" />
   <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Patrick+Hand&family=ZCOOL+KuaiLe&display=swap" />
   <link rel="stylesheet" href="../tokens.css?v=14" />
   <link rel="stylesheet" href="../styles.css?v=18" />
   <script src="../analytics.js" defer></script>
@@ -539,7 +542,7 @@ ${PAGE_CSS}
       <div class="panel">
         <span class="tape-strip" aria-hidden="true"></span>
         <figure class="work-figure">
-          <img src="${e(pageAsset(work.displayUrl))}" alt="${e(altText)}" width="${e(work.width)}" height="${e(work.height)}" loading="eager" />
+          <img src="${e(pageAsset(work.displayUrl))}" alt="${e(altText)}" width="${e(work.width)}" height="${e(work.height)}" loading="eager" fetchpriority="high" decoding="async" />
           <figcaption>《${e(ctx.name)}》· ${e(ctx.characterName)}</figcaption>
         </figure>
         <div class="work-actions">
@@ -550,7 +553,7 @@ ${PAGE_CSS}
       <div class="info-stack">
         <div class="panel char-card">
           <span class="tape-strip" aria-hidden="true"></span>
-          <img class="char-avatar" src="${e(avatarThumb)}" alt="${e(avatarAlt)}" width="64" height="64"${avatarAlt ? "" : ' aria-hidden="true"'} loading="lazy" />
+          <img class="char-avatar" src="${e(avatarThumb)}" alt="${e(avatarAlt)}" width="64" height="64"${avatarAlt ? "" : ' aria-hidden="true"'} loading="lazy" decoding="async" />
           <div class="char-card-body">
             <p class="char-name">${e(ctx.characterName)}</p>
 ${aliasLineHtml}

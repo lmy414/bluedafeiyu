@@ -17,7 +17,7 @@
 
 :root {
   /* ---------------------------------------------------------------- ① 字体 */
-  /* 系统 UI 字体栈 + 手写两支（Google Fonts，@import 在 styles.css 首行） */
+  /* 系统 UI 字体栈 + 手写两支（Google Fonts，各页 <head> 的 preconnect + stylesheet link 引入） */
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
     "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;

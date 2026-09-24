@@ -12,6 +12,8 @@
     "pages": "node tools/generate_work_pages.mjs",
     "sitemap": "node tools/generate_sitemap.mjs",
     "build": "node tools/build_site.mjs",
-    "build:dist": "node tools/build.mjs"
+    "build:dist": "node tools/build.mjs",
+    "compress": "node tools/compress_static.mjs",
+    "compress:write": "node tools/compress_static.mjs --precompress"
   }
 }

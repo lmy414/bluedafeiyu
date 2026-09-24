@@ -16,8 +16,12 @@
   <meta name="twitter:card" content="summary" />
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Patrick+Hand&family=ZCOOL+KuaiLe&display=swap" />
   <link rel="stylesheet" href="tokens.css?v=14" />
   <link rel="stylesheet" href="styles.css?v=18" />
+  <link rel="preload" href="site-data.js" as="script" />
   <style>
     /* 分类页专属样式：只做布局与页面贴纸（手写小签、分类贴纸），
        公共组件（topbar / toolbar / chips / card / empty）外观一律交给 styles.css */
@@ -99,6 +103,9 @@
   (function () {
     "use strict";
 
+    /* 首屏图片优先级：序号 < EAGER_CARDS 的卡片 eager 正常加载，第一张额外 fetchpriority=high
+       抢 LCP；其余 lazy。分类页每次筛选都会整块重渲染，序号取当前结果里的位置。 */
+    const EAGER_CARDS = 6;
     const DEMO = window.DEMO || {};
     const characters = Array.isArray(DEMO.characters) ? DEMO.characters : [];
     const categories = Array.isArray(DEMO.categories) ? DEMO.categories : [];
@@ -254,7 +261,7 @@
       return tags ? text + "，" + tags + "AI娘二创图" : text;
     }
 
-    function cardMarkup(work) {
+    function cardMarkup(work, index) {
       const character = charById.get(work.characterId);
       const name = String(work.name == null ? "" : work.name);
       const meta = [];
@@ -267,10 +274,12 @@
       const tags = (Array.isArray(work.tags) ? work.tags : []).slice(0, 3)
         .map((tag) => "#" + tag)
         .join(" ");
+      const loading = index < EAGER_CARDS ? "eager" : "lazy";
+      const priority = index === 0 ? ' fetchpriority="high"' : "";
       return (
         `<a class="card" href="works/${work.slug}.html">` +
           '<img class="card-art" src="' + escapeHtml(work.thumbUrl) + '" alt="' + escapeHtml(altFor(work)) + '"' + sizeAttrs +
-            ' loading="lazy" decoding="async" />' +
+            ' loading="' + loading + '" decoding="async"' + priority + ' />' +
           '<div class="card-body">' +
             '<h2 class="card-title" title="' + escapeHtml(name) + '">' + escapeHtml(name) + "</h2>" +
             '<p class="card-meta">' + escapeHtml(meta.join(" · ")) + "</p>" +
@@ -308,7 +317,7 @@
       const list = scope.filter((work) => matches(work, needle));
       countEl.textContent = list.length + " / " + scope.length + " 张";
       resultsEl.innerHTML = list.length
-        ? '<div class="masonry cols-3">' + list.map(cardMarkup).join("") + "</div>"
+        ? '<div class="masonry cols-3">' + list.map((work, index) => cardMarkup(work, index)).join("") + "</div>"
         : '<div class="empty">没有符合条件的作品</div>';
     }
 
