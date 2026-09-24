@@ -39,6 +39,8 @@ python -m http.server 5173 -d .build/site        # 打开 http://127.0.0.1:5173
 
 `dist/works/<slug>.html` 是生成物，不要手改；改版式改 `tools/generate_work_pages.mjs` 再重跑。也不要在构建期跑内容仓库的 `prepare_works.mjs`：`id` 和 `slug` 一经发布即冻结。
 
+详情页的正文段（H1 下那段）**整段是内容数据**，不是模板：取清单里的 `commentary`（蓝色大肥鱼第一人称评价），缺字段才退兜底句；要改某一页的正文，改内容仓库的清单，不要改生成器。分类枚举同理走内容仓库的 `categories.json`，加分类不用动代码——但新增分类要同时补 `generate_work_pages.mjs` 的 `KIND_WORDS`、`index.html` 与 `category.html` 里那份 `kindWord` 映射（前端卡片 alt 用），漏了会静默退成「表情包」。
+
 ## Git 流程
 
 1. 从最新 `main` 开功能分支，用 `feat/` / `fix/` / `docs/` / `chore/` 前缀；

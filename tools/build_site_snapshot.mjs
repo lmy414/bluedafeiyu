@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 // tools/build_site_snapshot.mjs —— 把三路来源归一成公开静态数据快照。
-// 读：characters/categories、投稿/owner-picks 清单、blue-fish raw 清单与冻结映射。
-//     这些输入全部来自内容仓库（lmy414/ai-girl-stickers），由 tools/sync_content.mjs
-//     先同步进本仓库 dist/；本仓库自己不跟踪它们。
+// 读：characters/categories、投稿/owner-picks 清单、blue-fish raw 清单、冻结映射
+//     （blue-fish-ids.json）与首批编辑叠加层（data/blue-fish-editorial.json：视觉复核出的
+//     categoryIds 与第一人称 commentary）。这些输入全部来自内容仓库
+//     （lmy414/ai-girl-stickers），由 tools/sync_content.mjs 先同步进本仓库 dist/；
+//     本仓库自己不跟踪它们。
 // 写：dist/site-data.json、dist/site-data.js。幂等、无网络、确定性。
 //     上游 EDMOK/blue-fish-archive 的原图 URL 与既有投稿/owner-picks 原图 path 都不改写。
 
@@ -22,6 +24,9 @@ const writeIfChanged = (file, text) => {
   return true;
 };
 const basename = (value) => String(value || "").split("/").pop();
+// 投稿/站长自用清单缺 categoryIds 时的兜底启发式。漫画（多格分镜）判不出来——
+// 那是视觉复核的结论，写在清单里；这里的兜底永远只会给 meme。
+// tools/prepare_works.mjs 有同款一份，改规则两处一起改。
 const kindFor = (record) => {
   if (String(record.id || "").startsWith("sticker_op_")) return ["illustration"];
   if (/立绘|设定|三视图/.test(String(record.name || ""))) return ["setting"];
@@ -43,6 +48,13 @@ function main() {
   const raw = readJson(RAW_PATH);
   const frozen = readJson(path.join(DIST, "blue-fish-ids.json"));
   const frozenByPath = new Map(Object.entries(frozen));
+  // 首批（blue-fish）编辑叠加层：视觉复核出的分类与第一人称评价。
+  // 单独一份文件、不写回上面那份 raw 清单——raw 会被仓库外导入流程重新生成，
+  // 而叠加层是本站的编辑结论，必须留下来（理由同 dist/blue-fish-ids.json 的冻结映射）。
+  const editorialPath = path.join(DIST, "data", "blue-fish-editorial.json");
+  const editorialByPath = fs.existsSync(editorialPath)
+    ? new Map(Object.entries(readJson(editorialPath)))
+    : new Map();
   const works = [];
 
   for (const record of [...submissions, ...ownerPicks]) {
@@ -57,11 +69,12 @@ function main() {
     });
   }
 
-  raw.forEach((record, index) => {
+  raw.forEach((record) => {
     if (!gate(record)) return;
     const sourcePath = String(record.sourcePath || "").trim();
     const frozenEntry = frozenByPath.get(sourcePath);
     if (!frozenEntry || !frozenEntry.id || !frozenEntry.slug) return;
+    const editorial = editorialByPath.get(sourcePath) || {};
     const filename = basename(record.previewPath || record.sourcePath);
     const preview = `data/blue-fish/previews/${encodeURIComponent(filename)}`;
     const format = String(record.format || "").toLowerCase();
@@ -71,7 +84,9 @@ function main() {
       name: String(record.name).trim(),
       description: "首批收录自蓝色大肥鱼档案馆的公开清单；单条原作者与授权信息待补充，可在详情页申请署名或删除。",
       characterId: String(record.characterId).trim(),
-      categoryIds: ["meme"],
+      // 分类与第一人称评价取编辑叠加层；没有叠加层的条目退回既有的 meme 兜底
+      categoryIds: Array.isArray(editorial.categoryIds) && editorial.categoryIds.length ? editorial.categoryIds : ["meme"],
+      commentary: String(editorial.commentary || ""),
       tags: record.tags.map((x) => String(x).trim()).filter(Boolean),
       format,
       mimeType: format === "jpg" || format === "jpeg" ? "image/jpeg" : `image/${format || "png"}`,
@@ -107,13 +122,10 @@ function main() {
   }).sort((a, b) => String(b.createdAt).localeCompare(String(a.createdAt)) || String(b.slug).localeCompare(String(a.slug)));
 
   const snapshot = {
-    version: "2026-09-23-site-migration",
+    version: "2026-09-25-vision-reclassify",
     characters,
-    categories: [
-      { id: "meme", name: "梗图", description: "表情包梗、聊天用图", status: "active" },
-      { id: "illustration", name: "插画", description: "完整构图的绘画作品", status: "active" },
-      { id: "setting", name: "设定图", description: "立绘、三视图、设定稿", status: "active" }
-    ],
+    // 分类直接取内容仓库的 categories.json（此前这里硬编码过一份，加分类要改两处就漏了）
+    categories: categories.filter((item) => item.status === "active"),
     works: unique
   };
   const json = `${JSON.stringify(snapshot, null, 2)}\n`;

@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>蓝色大肥鱼 - AI娘表情包、DeepSeek娘梗图与二创立绘下载</title>
-  <meta name="description" content="蓝色大肥鱼收录 DeepSeek娘、Claude娘、Qwen娘、GLM娘等 AI娘表情包、梗图、插画和立绘设定，支持按角色分类、Tag 搜索、高清查看和原图下载。" />
+  <meta name="description" content="蓝色大肥鱼收录 DeepSeek娘、Claude娘、Qwen娘、GLM娘等 AI娘表情包、梗图、插画、立绘设定与多格漫画，支持按角色分类、Tag 搜索、高清查看和原图下载。" />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://xn--pssy23gqgbz2d718b.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="蓝色大肥鱼" />
   <meta property="og:title" content="蓝色大肥鱼 - AI娘表情包、DeepSeek娘梗图与二创立绘下载" />
-  <meta property="og:description" content="蓝色大肥鱼收录 DeepSeek娘、Claude娘、Qwen娘、GLM娘等 AI娘表情包、梗图、插画和立绘设定，支持按角色分类、Tag 搜索、高清查看和原图下载。" />
+  <meta property="og:description" content="蓝色大肥鱼收录 DeepSeek娘、Claude娘、Qwen娘、GLM娘等 AI娘表情包、梗图、插画、立绘设定与多格漫画，支持按角色分类、Tag 搜索、高清查看和原图下载。" />
   <meta property="og:url" content="https://xn--pssy23gqgbz2d718b.com/" />
   <meta property="og:image" content="https://xn--pssy23gqgbz2d718b.com/favicon.png" />
   <meta name="twitter:card" content="summary" />
@@ -343,7 +343,7 @@
         var character = characterById.get(work.characterId);
         var characterName = character ? character.name : "未知角色";
         var kindId = (work.categoryIds || [])[0] || "";
-        var kindWord = ({ meme: "表情包", illustration: "二创插画", setting: "立绘设定图" })[kindId] || "表情包";
+        var kindWord = ({ meme: "表情包", illustration: "二创插画", setting: "立绘设定图", comic: "漫画" })[kindId] || "表情包";
         var tags = (work.tags || []).slice(0, 2).join("、");
         var text = "《" + String(work.name == null ? "" : work.name) + "》" + characterName + kindWord;
         return tags ? text + "，" + tags + "AI娘二创图" : text;

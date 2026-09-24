@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI娘表情包分类 - 按角色浏览梗图、插画与设定图 | 蓝色大肥鱼</title>
-  <meta name="description" content="按 DeepSeek娘、Claude娘、Qwen娘、GLM娘等角色浏览 AI娘梗图、表情包、二创插画与立绘设定图，并在分类内搜索名称和 Tag。" />
+  <title>AI娘表情包分类 - 按角色浏览梗图、插画、设定图与漫画 | 蓝色大肥鱼</title>
+  <meta name="description" content="按 DeepSeek娘、Claude娘、Qwen娘、GLM娘等角色浏览 AI娘梗图、表情包、二创插画、立绘设定图与多格漫画，并在分类内搜索名称和 Tag。" />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://xn--pssy23gqgbz2d718b.com/category.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="蓝色大肥鱼" />
-  <meta property="og:title" content="AI娘表情包分类 - 按角色浏览梗图、插画与设定图 | 蓝色大肥鱼" />
-  <meta property="og:description" content="按 DeepSeek娘、Claude娘、Qwen娘、GLM娘等角色浏览 AI娘梗图、表情包、二创插画与立绘设定图，并在分类内搜索名称和 Tag。" />
+  <meta property="og:title" content="AI娘表情包分类 - 按角色浏览梗图、插画、设定图与漫画 | 蓝色大肥鱼" />
+  <meta property="og:description" content="按 DeepSeek娘、Claude娘、Qwen娘、GLM娘等角色浏览 AI娘梗图、表情包、二创插画、立绘设定图与多格漫画，并在分类内搜索名称和 Tag。" />
   <meta property="og:url" content="https://xn--pssy23gqgbz2d718b.com/category.html" />
   <meta property="og:image" content="https://xn--pssy23gqgbz2d718b.com/favicon.png" />
   <meta name="twitter:card" content="summary" />
@@ -273,7 +273,7 @@
       const character = charById.get(work.characterId);
       const characterName = character ? character.name : String(work.characterId || "未知角色");
       const kindId = (Array.isArray(work.categoryIds) ? work.categoryIds : [])[0] || "";
-      const kindWord = ({ meme: "表情包", illustration: "二创插画", setting: "立绘设定图" })[kindId] || "表情包";
+      const kindWord = ({ meme: "表情包", illustration: "二创插画", setting: "立绘设定图", comic: "漫画" })[kindId] || "表情包";
       const tags = (Array.isArray(work.tags) ? work.tags : []).slice(0, 2).join("、");
       const text = "《" + String(work.name == null ? "" : work.name) + "》" + characterName + kindWord;
       return tags ? text + "，" + tags + "AI娘二创图" : text;

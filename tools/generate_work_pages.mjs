@@ -3,7 +3,9 @@
 // 特性：Node 内置模块 only；幂等（每次先清 works/ 下旧 .html 再全量重建）；确定性（输出只由数据决定，无时间戳；
 // 推荐排序、伪随机补足都走稳定种子，两次生成逐字节一致）。
 // 长尾文案公式（archive/2026-09-24/docs/SEO规范.md §2 title / §3 description / §4 keywords / §7 alt / §8 正文段）集中在
-// 下面「文案渲染」一节、各一个函数；改公式只改那里。
+// 下面「文案渲染」一节、各一个函数；改公式只改那里。§8 正文段自 2026-09-25 起整段数据化：
+// 直接用清单里的 work.commentary（蓝色大肥鱼第一人称评价，内容侧逐张视觉复核写出），
+// 不再走模板句式；见 renderBodyParagraph。
 // 推荐区口径见 archive/2026-09-24/docs/SEO规范.md §9：同角色「更多{characterName}表情包」至多 4 张 + 跨角色「猜你喜欢」4 张，
 // 任何一页都有推荐；信息区三层（角色卡 / 作品信息卡 / 授权便签）见 renderPage。
 import fs from "node:fs";
@@ -35,7 +37,7 @@ const LICENSE_LABELS = {
   removed: "已下架"
 };
 // {kindWord} 映射：按 categoryIds 首项（archive/2026-09-24/docs/SEO规范.md 记号表）
-const KIND_WORDS = { meme: "表情包", illustration: "二创插画", setting: "立绘设定图" };
+const KIND_WORDS = { meme: "表情包", illustration: "二创插画", setting: "立绘设定图", comic: "漫画" };
 
 // ---------- 通用工具 ----------
 function escapeHtml(value) {
@@ -120,6 +122,8 @@ function buildContext(work, character, titleVariant, totalCount) {
     kindWord,
     // 「二创」前缀去重：kindWord 本身以「二创」开头（如二创插画）时不再叠加，避免「二创二创」堆砌
     kindClause: kindWord.startsWith("二创") ? kindWord : `二创${kindWord}`,
+    // 第一人称评价（§8 正文段主体）：内容侧视觉复核逐张写出的 work.commentary，缺则空串
+    commentary: String(work.commentary || "").trim(),
     titleVariant,
     totalCount,
     // 主流程回填：charInfo（角色卡素材）、relatedSame（推荐区一）、relatedGuess（推荐区二）
@@ -159,7 +163,7 @@ function renderDescription(ctx) {
     : "聊天斗图、日常吐槽都能用";
   const aliasWord = ctx.alias1 || "AI娘";
   return `《${ctx.name}》${ctx.characterName}${ctx.kindClause}${aliasPart}${topicPart}。${scenePart}，可查看高清大图、免费下载原图。` +
-    `更多${ctx.characterName}表情包、${aliasWord}梗图、AI娘二创同人图与立绘设定，尽在蓝色大肥鱼开放档案。`;
+    `更多${ctx.characterName}表情包、${aliasWord}梗图、AI娘二创同人图、立绘设定与多格漫画，尽在蓝色大肥鱼开放档案。`;
 }
 
 // §4 keywords：长尾组合 8–12 个（tag 取前 5；缺别名省略 {alias1}表情包）
@@ -183,16 +187,14 @@ function renderAlt(ctx) {
   return `《${ctx.name}》${ctx.characterName}${ctx.kindWord}，${tagPart}AI娘二创图`;
 }
 
-// §8 正文长尾段：紧跟 H1，承接「原图」「下载」等意图词
+// §8 正文段：紧跟 H1。上一版是第三人称的官方长尾模板（「本站提供…收录了…欢迎…」），
+// 现改为蓝色大肥鱼（DeepSeek 娘）的第一人称评价，正文来自清单里的 work.commentary
+// （内容侧视觉复核逐张写出）。这里不再拼收尾长尾句：正文整段就是评价本身，
+// 「高清原图 / 免费下载 / 角色 / 品类」这些长尾词由 §2 title、§3 description、§4 keywords、
+// §7 alt、面包屑与信息卡承担。缺 commentary 时退一句通用的第一人称兜底。
 function renderBodyParagraph(ctx) {
-  const aliasPart = ctx.aliasesJoined ? `（又称${ctx.aliasesJoined}）` : "";
-  const scenePart = ctx.tagsJoined
-    ? `画面围绕「${ctx.tagsJoined}」展开，适合${ctx.tagWords}相关的聊天斗图与日常表达。`
-    : "适合聊天斗图与日常表达。";
-  const aliasWord = ctx.alias1 || "AI娘";
-  return `《${ctx.name}》是${ctx.characterName}${aliasPart}的${ctx.kindClause}，${scenePart}` +
-    `本站提供${ctx.characterName}表情包高清查看与原图免费下载，收录了${aliasWord}梗图、AI娘二创同人图、` +
-    `${ctx.characterName}立绘设定等${ctx.totalCount}件作品，欢迎按角色与分类浏览。`;
+  return ctx.commentary ||
+    `${ctx.characterName}的这张${ctx.kindClause}我还没来得及细看，先把图摆在这儿，等投稿的各位来补两句。`;
 }
 
 /* ================= 页面模板 ================= */
