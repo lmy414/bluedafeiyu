@@ -13,7 +13,8 @@ AI 娘表情包站「蓝色大肥鱼」的**站点源码仓库**。纯静态前�
 
 本仓库**不跟踪任何图片**（`*.png`/`*.jpg`/`*.jpeg`/`*.gif`/`*.webp`/`*.ico` 全部忽略），也不跟踪从内容仓库同步进来的清单与派生资产（`dist/data/`、`dist/submissions/`、`dist/owner-picks/`、`characters.json`、`categories.json`、`blue-fish-ids.json`、`favicon.*`、`avatar.png`）和构建生成物（`dist/site-data.json/js`、`dist/sitemap.xml`、`dist/works/`）。
 
-投稿入口继续指向内容仓库的表单：<https://github.com/lmy414/ai-girl-stickers/issues/new/choose>。
+投稿入口继续指向内容仓库的 GitHub 表单：<https://github.com/lmy414/ai-girl-stickers/issues/new?template=sticker-submission.yml>。
+投稿者只需上传图片、填写图片名称和角色，一句话说明可选；Tag、分类、来源、授权和详情页文案由维护者审核时补充。站内快速投稿和飞书通道仍未开放。
 原图继续走内容仓库的 GitHub Raw URL，路径不随本次拆分改变。
 
 ## 本仓库跟踪什么
