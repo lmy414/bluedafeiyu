@@ -20,12 +20,25 @@ AI 娘表情包站「蓝色大肥鱼」的**站点源码仓库**。纯静态前�
 ## 本仓库跟踪什么
 
 - `dist/index.html`、`dist/category.html`、`dist/submit.html`、`dist/about.html`、`dist/projects.html`、`dist/changelog.html`、`dist/404.html` —— 手写页面；
-- `dist/styles.css`、`dist/tokens.css`、`dist/analytics.js`、`dist/robots.txt`、`dist/google653ce5fe960a5fb0.html`；
+- `dist/styles.css`、`dist/tokens.css`、`dist/lang.js`、`dist/analytics.js`、`dist/robots.txt`、`dist/google653ce5fe960a5fb0.html`；
 - `tools/` —— 内容同步、快照、详情页生成、sitemap、构建、模板校验；
 - `ops/` —— 服务器侧发布 / 回滚脚本；
 - `archive/2026-09-24/` —— 改造前的历史文档副本。
 
 `dist/works/<slug>.html` 是生成物，别手改。
+
+## 多语言（zh 默认 / en / ja）
+
+站点界面支持中文（默认）、英语、日语三种语言，由零依赖的 `dist/lang.js` 承担：词典 + 运行时 + 顶栏「中 / EN / 日」切换贴纸（自动注入 `header .topnav` 末尾）。语言取值优先级：URL `?lang=`（会记住）→ `localStorage`（key `bluedafeiyu-lang`）→ 浏览器语言 → zh；切换时 `<html lang>`、页面 title 与 meta 描述同步更新，详情页动态文案监听 `site:langchange` 重渲染。
+
+约定（`lang.js` 头部注释也有一份）：
+
+- **中文不进词典**：zh 就是页面 HTML 原文与 JS 里的兜底串，运行时首次应用时缓存原文，切回 zh 直接还原，词典与页面永不漂移；
+- 静态文案挂 `data-i18n="key"`；混排行内元素的段落把每段纯文本包 `<span data-i18n=...>` 再翻；带变量用 `data-i18n-tpl` + `data-i18n-vars`（JSON，`{kindId}` 是特殊变量、按 `kind.<id>` 取品类词）；属性用 `data-i18n-attr="placeholder:key"`；页面级 title/meta 挂 `body[data-i18n-page]`；
+- 动态文案（计数、空状态、复制反馈等）在页面脚本里调 `SiteLang.fmt(key, 中文兜底, 变量)`；
+- **作品名、Tag、详情页正文（commentary）是内容数据，三种语言保持中文原文**；work 详情页不换 title/meta（canonical 内容语言是中文）；
+- 详情页模板的 i18n 在 `tools/generate_work_pages.mjs` 里，改完重跑构建即可；`tools/build.mjs` 把 `lang.js` 列进必需文件，产物缺它直接失败；
+- 新增 key 时 en / ja 两份都要补，中文兜底留在页面原处；未翻译的 key 会静默退回中文。
 
 ## 本地构建
 

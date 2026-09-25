@@ -17,8 +17,9 @@
   <meta name="twitter:card" content="summary" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" href="/favicon.png" />
-  <link rel="stylesheet" href="/tokens.css?v=14" />
-  <link rel="stylesheet" href="/styles.css?v=18" />
+  <link rel="stylesheet" href="/tokens.css?v=15" />
+  <link rel="stylesheet" href="/styles.css?v=19" />
+  <script src="/lang.js?v=1"></script>
   <style>
     /* 404 专属样式：便签纸卡 + 手写大号 404 + 出口按钮排布。
        公共组件（.panel / .btn / .marker-highlight / .tape-strip / .plain-list / .note）已在 styles.css，此处不重复。
@@ -79,44 +80,44 @@
   </style>
   <script src="/analytics.js" defer></script>
 </head>
-<body>
+<body data-i18n-page="notfound">
   <header class="topbar">
-    <a class="brand" href="/index.html"><span class="brand-mark"><img src="/avatar.png" alt="" /></span><span class="brand-text"><strong>蓝色大肥鱼</strong><small>AI 娘表情包开放档案</small></span></a>
-    <nav class="topnav"><a href="/index.html">首页</a><a href="/category.html">分类</a><a href="/submit.html">投稿</a><a href="/about.html">关于</a><a href="/projects.html">推荐</a></nav>
+    <a class="brand" href="/index.html"><span class="brand-mark"><img src="/avatar.png" alt="" /></span><span class="brand-text"><strong>蓝色大肥鱼</strong><small data-i18n="brand.tagline">AI 娘表情包开放档案</small></span></a>
+    <nav class="topnav"><a href="/index.html" data-i18n="nav.home">首页</a><a href="/category.html" data-i18n="nav.category">分类</a><a href="/submit.html" data-i18n="nav.submit">投稿</a><a href="/about.html" data-i18n="nav.about">关于</a><a href="/projects.html" data-i18n="nav.projects">推荐</a></nav>
   </header>
   <main class="page">
-    <h1 class="page-title">404 · 这条鱼没找到</h1>
-    <p class="lede">这个地址底下是空的：链接可能抄错了，作品可能已经下架，也可能它压根还没收进来。</p>
+    <h1 class="page-title" data-i18n="notfound.h1">404 · 这条鱼没找到</h1>
+    <p class="lede" data-i18n="notfound.lede">这个地址底下是空的：链接可能抄错了，作品可能已经下架，也可能它压根还没收进来。</p>
 
     <div class="panel lost-card">
       <span class="tape-strip" aria-hidden="true"></span>
       <p class="lost-code">404</p>
-      <p class="lost-text">我翻遍了整个鱼塘，也没捞到你要的那张图。</p>
+      <p class="lost-text" data-i18n="notfound.text">我翻遍了整个鱼塘，也没捞到你要的那张图。</p>
     </div>
 
     <div class="lost-reasons">
-      <h2 class="section-label">大概是这几种情况</h2>
+      <h2 class="section-label" data-i18n="notfound.reasonsTitle">大概是这几种情况</h2>
       <ul class="plain-list">
-        <li>地址抄漏或抄错了一个字符——作品详情页的地址长这样：<span class="term">/works/作品slug.html</span>。</li>
-        <li>这张作品被作者要求下架了，已经从站上撤掉。</li>
-        <li>你点的是改版前的旧地址，页面换了位置；首页、分类和更新日志都还在。</li>
+        <li><span data-i18n="notfound.reason1a">地址抄漏或抄错了一个字符——作品详情页的地址长这样：</span><span class="term">/works/作品slug.html</span><span data-i18n="notfound.reason1c">。</span></li>
+        <li data-i18n="notfound.reason2">这张作品被作者要求下架了，已经从站上撤掉。</li>
+        <li data-i18n="notfound.reason3">你点的是改版前的旧地址，页面换了位置；首页、分类和更新日志都还在。</li>
       </ul>
     </div>
 
     <div class="lost-exits">
       <a class="btn primary hover-wiggle" href="/index.html">
         <svg class="icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 7 8 2.5 13.5 7" /><path d="M3.75 6.5V13.5H12.25V6.5" /></svg>
-        回首页看看
+        <span data-i18n="notfound.exitHome">回首页看看</span>
       </a>
       <a class="btn" href="/category.html">
         <svg class="icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h7" /></svg>
-        按角色或分类翻
+        <span data-i18n="notfound.exitCategory">按角色或分类翻</span>
       </a>
-      <a class="btn" href="/submit.html">手上有图，顺便投一张</a>
+      <a class="btn" href="/submit.html" data-i18n="notfound.exitSubmit">手上有图，顺便投一张</a>
     </div>
 
-    <p class="note">如果这个地址是从站内点进来的，那就是我挂错了，欢迎到 <a href="https://github.com/lmy414/ai-girl-stickers/issues" target="_blank" rel="noopener">GitHub Issues</a> 说一声。</p>
+    <p class="note"><span data-i18n="notfound.noteA">如果这个地址是从站内点进来的，那就是我挂错了，欢迎到 </span><a href="https://github.com/lmy414/ai-girl-stickers/issues" target="_blank" rel="noopener">GitHub Issues</a><span data-i18n="notfound.noteC"> 说一声。</span></p>
   </main>
-  <footer class="site-footer"><p>非官方同人整理项目，图片版权归原作者所有。本站使用最小化 Google Analytics 了解页面与性能表现，不建立热度排行。</p><p><a href="/changelog.html">更新日志</a> · <a href="/about.html#analytics">统计与隐私</a></p><p><a href="https://github.com/lmy414/bluedafeiyu" target="_blank" rel="noopener">站点源码仓库</a> · <a href="https://github.com/lmy414/ai-girl-stickers" target="_blank" rel="noopener">内容与投稿仓库</a></p></footer>
+  <footer class="site-footer"><p data-i18n="footer.disclaimer">非官方同人整理项目，图片版权归原作者所有。本站使用最小化 Google Analytics 了解页面与性能表现，不建立热度排行。</p><p><a href="/changelog.html" data-i18n="footer.changelog">更新日志</a> · <a href="/about.html#analytics" data-i18n="footer.privacy">统计与隐私</a></p><p><a href="https://github.com/lmy414/bluedafeiyu" target="_blank" rel="noopener" data-i18n="footer.source">站点源码仓库</a> · <a href="https://github.com/lmy414/ai-girl-stickers" target="_blank" rel="noopener" data-i18n="footer.content">内容与投稿仓库</a></p></footer>
 </body>
 </html>

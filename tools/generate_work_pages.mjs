@@ -119,6 +119,7 @@ function buildContext(work, character, titleVariant, totalCount) {
     tagsJoined: tags.join("、"),
     tagWords: tags.slice(0, 2).join("、"),
     tagQuoteList: tags.slice(0, 2).map((t) => `「${t}」`).join(""),
+    kindId: String((work.categoryIds || [])[0] || ""),
     kindWord,
     // 「二创」前缀去重：kindWord 本身以「二创」开头（如二创插画）时不再叠加，避免「二创二创」堆砌
     kindClause: kindWord.startsWith("二创") ? kindWord : `二创${kindWord}`,
@@ -383,7 +384,8 @@ const PAGE_CSS = `    .breadcrumb {
       color: var(--text-primary);
     }`;
 
-// 复制 canonical URL 的内联 JS：每页同一段（URL 从 <link rel="canonical"> 取）
+// 复制 canonical URL 的内联 JS：每页同一段（URL 从 <link rel="canonical"> 取）。
+// 文案走 dist/lang.js 的多语言层（SiteLang 由 ../lang.js 同步加载，一定存在）。
 const COPY_CANONICAL_JS = `  <script>
     (function () {
       "use strict";
@@ -393,27 +395,34 @@ const COPY_CANONICAL_JS = `  <script>
         var link = document.querySelector('link[rel="canonical"]');
         var url = link ? link.href : window.location.href;
         var flash = function () {
-          btn.textContent = "已复制";
-          window.setTimeout(function () { btn.textContent = "复制链接"; }, 1600);
+          btn.textContent = SiteLang.fmt("ui.copied", "已复制");
+          window.setTimeout(function () { btn.textContent = SiteLang.fmt("work.copyLink", "复制链接"); }, 1600);
         };
         if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(url).then(flash, function () { window.prompt("复制链接：", url); });
+          navigator.clipboard.writeText(url).then(flash, function () { window.prompt(SiteLang.fmt("work.copyLink", "复制链接") + "：", url); });
         } else {
-          window.prompt("复制链接：", url);
+          window.prompt(SiteLang.fmt("work.copyLink", "复制链接") + "：", url);
         }
       });
     })();
   </script>`;
 
-// 推荐卡网格（两个推荐区共用）：.card 拍立得式，图 + 标题 + 角色名；img alt 走 §7 公式（各用对方字段渲染）
+// 推荐卡网格（两个推荐区共用）：.card 拍立得式，图 + 标题 + 角色名；img alt 走 §7 公式（各用对方字段渲染）。
+// alt 与 meta 挂 data-i18n（vars 携带 name / character / kindId，{kindId} 由 lang.js 词典解析成品类词）。
+function cardAltAttrs(item) {
+  const kindId = String((item.work.categoryIds || [])[0]) || "meme";
+  const vars = `{"name":"${escapeHtml(item.name)}","character":"${escapeHtml(item.characterName)}","kindId":"${escapeHtml(kindId)}"}`;
+  return ` data-i18n-attr="alt:alt.work" data-i18n-vars='${vars}'`;
+}
+
 function renderCardGrid(items) {
   const cards = items
     .map(
       (item) => `        <a class="card related-card" href="${escapeHtml(item.work.slug + ".html")}">
-          <img class="card-art" src="${escapeHtml(pageAsset(item.work.thumbUrl))}" alt="${escapeHtml(renderAlt(item))}" width="${escapeHtml(item.work.width)}" height="${escapeHtml(item.work.height)}" loading="lazy" decoding="async" />
+          <img class="card-art" src="${escapeHtml(pageAsset(item.work.thumbUrl))}" alt="${escapeHtml(renderAlt(item))}"${cardAltAttrs(item)} width="${escapeHtml(item.work.width)}" height="${escapeHtml(item.work.height)}" loading="lazy" decoding="async" />
           <div class="card-body">
             <h3 class="card-title">《${escapeHtml(item.name)}》</h3>
-            <p class="card-meta">${escapeHtml(item.characterName)} · ${escapeHtml(item.kindWord)}</p>
+            <p class="card-meta" data-i18n-tpl="work.cardMeta" data-i18n-vars='{"character":"${escapeHtml(item.characterName)}","kindId":"${escapeHtml(String((item.work.categoryIds || [])[0]) || "meme")}"}'>${escapeHtml(item.characterName)} · ${escapeHtml(item.kindWord)}</p>
           </div>
         </a>`
     )
@@ -442,9 +451,10 @@ function renderPage(ctx) {
   const submitterGithub = String(submitter.github || "").trim();
   const sourceUrl = String(origin.sourceUrl || "").trim();
 
+  const submitterUnlabeled = `<span data-i18n="work.unlabeled">未标注</span>`;
   const submitterHtml = submitterGithub
-    ? `<a href="https://github.com/${e(submitterGithub)}" target="_blank" rel="noopener">${e(submitterName || "未标注")}</a>`
-    : e(submitterName || "未标注");
+    ? `<a href="https://github.com/${e(submitterGithub)}" target="_blank" rel="noopener">${submitterName ? e(submitterName) : submitterUnlabeled}</a>`
+    : (submitterName ? e(submitterName) : submitterUnlabeled);
   const sourceHtml = sourceUrl
     ? `<a href="${e(sourceUrl)}" target="_blank" rel="noopener">${e(sourceUrl)}</a>`
     : "—";
@@ -454,21 +464,25 @@ function renderPage(ctx) {
   const dimensionBadge = `<span class="sticker-tag">${e(work.width)}×${e(work.height)} px</span>`;
   const volumeBadge = `<span class="sticker-tag">${e(formatSize(work.fileSize))}</span>`;
   const licensePositive = ["submitter-permission", "author-permission", "cc0", "cc-by", "cc-by-nc"].includes(String(license.type));
-  const licenseBadge = `<span class="license-tag${licensePositive ? "" : " is-unknown"}">${e(licenseLabel)}</span>`;
+  const originKey = Object.prototype.hasOwnProperty.call(ORIGIN_LABELS, origin.type) ? String(origin.type) : "unknown";
+  const licenseKey = Object.prototype.hasOwnProperty.call(LICENSE_LABELS, license.type) ? String(license.type) : "unknown";
+  const licenseBadge = `<span class="license-tag${licensePositive ? "" : " is-unknown"}" data-i18n="license.${licenseKey}">${e(licenseLabel)}</span>`;
 
+  // 信息行：[词典 key, 中文兜底文案, 值 HTML]。dt 的多语言由 data-i18n 处理；
+  // 类型值也是品类词，随 kind.<id> 一起翻（kindId 缺失退 meme，与列表 alt 口径一致）。
   const infoRows = [
-    ["类型", e(ctx.kindWord)],
-    ["格式", formatBadge],
-    ["尺寸", dimensionBadge],
-    ["体积", volumeBadge],
-    ["提交者", submitterHtml],
-    ["来源类型", e(originLabel)],
-    ["来源作者", e(originAuthor || "未标注")],
-    ["来源链接", sourceHtml],
-    ["授权状态", licenseBadge],
-    ["收录时间", e(formatDate(work.createdAt))]
+    ["work.field.type", "类型", `<span data-i18n="kind.${ctx.kindId || "meme"}">${e(ctx.kindWord)}</span>`],
+    ["work.field.format", "格式", formatBadge],
+    ["work.field.size", "尺寸", dimensionBadge],
+    ["work.field.volume", "体积", volumeBadge],
+    ["work.field.submitter", "提交者", submitterHtml],
+    ["work.field.origin", "来源类型", `<span data-i18n="origin.${originKey}">${e(originLabel)}</span>`],
+    ["work.field.originAuthor", "来源作者", originAuthor ? e(originAuthor) : submitterUnlabeled],
+    ["work.field.sourceUrl", "来源链接", sourceHtml],
+    ["work.field.license", "授权状态", licenseBadge],
+    ["work.field.date", "收录时间", e(formatDate(work.createdAt))]
   ];
-  const infoRowsHtml = infoRows.map(([label, value]) => `            <dt>${label}</dt><dd>${value}</dd>`).join("\n");
+  const infoRowsHtml = infoRows.map(([key, label, value]) => `            <dt data-i18n="${key}">${label}</dt><dd>${value}</dd>`).join("\n");
 
   const chipsHtml = ctx.tags.length
     ? ctx.tags
@@ -480,14 +494,16 @@ function renderPage(ctx) {
   const charInfo = ctx.charInfo || { count: 1, avatarThumb: "", avatarCtx: null };
   const avatarThumb = charInfo.avatarThumb ? pageAsset(charInfo.avatarThumb) : "../avatar.png";
   const avatarAlt = charInfo.avatarCtx ? renderAlt(charInfo.avatarCtx) : "";
-  const aliasLineHtml = ctx.aliasesJoined ? `            <p class="char-aliases">又称${e(ctx.aliasesJoined)}</p>` : "";
+  const aliasLineHtml = ctx.aliasesJoined
+    ? `            <p class="char-aliases" data-i18n-tpl="work.aka" data-i18n-vars='{"aliases":"${e(ctx.aliasesJoined)}"}'>又称${e(ctx.aliasesJoined)}</p>`
+    : "";
 
   const sameHtml = ctx.relatedSame.length
     ? renderCardGrid(ctx.relatedSame)
-    : `      <p class="empty-note">该角色暂无更多作品</p>`;
+    : `      <p class="empty-note" data-i18n="work.emptySame">该角色暂无更多作品</p>`;
   const guessHtml = ctx.relatedGuess.length
     ? renderCardGrid(ctx.relatedGuess)
-    : `      <p class="empty-note">暂无更多推荐</p>`;
+    : `      <p class="empty-note" data-i18n="work.emptyGuess">暂无更多推荐</p>`;
 
   // §10 JSON-LD（ImageObject）。内容在 <script> 里是原始文本，走 JSON 转义（该语境下的转义），
   // 另把 "<" 转 \\u003c 防止数据里的 "</script>" 闭合标签。
@@ -523,8 +539,9 @@ function renderPage(ctx) {
   <meta property="og:image" content="${e(publicAsset(work.displayUrl))}" />
   <meta property="og:site_name" content="蓝色大肥鱼" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="stylesheet" href="../tokens.css?v=14" />
-  <link rel="stylesheet" href="../styles.css?v=18" />
+  <link rel="stylesheet" href="../tokens.css?v=15" />
+  <link rel="stylesheet" href="../styles.css?v=19" />
+  <script src="../lang.js?v=1"></script>
   <script src="../analytics.js" defer></script>
   <style>
 ${PAGE_CSS}
@@ -533,23 +550,23 @@ ${PAGE_CSS}
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="../index.html"><span class="brand-mark"><img src="../avatar.png" alt="" /></span><span class="brand-text"><strong>蓝色大肥鱼</strong><small>AI 娘表情包开放档案</small></span></a>
-    <nav class="topnav"><a href="../index.html">首页</a><a href="../category.html">分类</a><a href="../submit.html">投稿</a><a href="../about.html">关于</a><a href="../projects.html">推荐</a></nav>
+    <a class="brand" href="../index.html"><span class="brand-mark"><img src="../avatar.png" alt="" /></span><span class="brand-text"><strong>蓝色大肥鱼</strong><small data-i18n="brand.tagline">AI 娘表情包开放档案</small></span></a>
+    <nav class="topnav"><a href="../index.html" data-i18n="nav.home">首页</a><a href="../category.html" data-i18n="nav.category">分类</a><a href="../submit.html" data-i18n="nav.submit">投稿</a><a href="../about.html" data-i18n="nav.about">关于</a><a href="../projects.html" data-i18n="nav.projects">推荐</a></nav>
   </header>
   <main class="page">
-    <nav class="breadcrumb" aria-label="面包屑"><a href="../index.html">全部作品</a><span class="crumb-sep" aria-hidden="true">→</span><a href="../category.html#c=${e(ctx.characterId)}">${e(ctx.characterName)}</a><span class="crumb-sep" aria-hidden="true">→</span><span>《${e(ctx.name)}》</span></nav>
+    <nav class="breadcrumb" aria-label="面包屑" data-i18n-attr="aria-label:work.breadcrumbLabel"><a href="../index.html" data-i18n="index.section.all">全部作品</a><span class="crumb-sep" aria-hidden="true">→</span><a href="../category.html#c=${e(ctx.characterId)}">${e(ctx.characterName)}</a><span class="crumb-sep" aria-hidden="true">→</span><span>《${e(ctx.name)}》</span></nav>
     <h1 class="page-title">《${e(ctx.name)}》</h1>
     <p class="work-intro">${e(intro)}</p>
     <div class="grid-2">
       <div class="panel">
         <span class="tape-strip" aria-hidden="true"></span>
         <figure class="work-figure">
-          <img src="${e(pageAsset(work.displayUrl))}" alt="${e(altText)}" width="${e(work.width)}" height="${e(work.height)}" loading="eager" fetchpriority="high" decoding="async" />
-          <figcaption>《${e(ctx.name)}》· ${e(ctx.characterName)}</figcaption>
+          <img src="${e(pageAsset(work.displayUrl))}" alt="${e(altText)}" data-i18n-attr="alt:alt.work" data-i18n-vars='{"name":"${e(ctx.name)}","character":"${e(ctx.characterName)}","kindId":"${e(ctx.kindId || "meme")}"}' width="${e(work.width)}" height="${e(work.height)}" loading="eager" fetchpriority="high" decoding="async" />
+          <figcaption data-i18n-tpl="work.figcaption" data-i18n-vars='{"name":"${e(ctx.name)}","character":"${e(ctx.characterName)}"}'>《${e(ctx.name)}》· ${e(ctx.characterName)}</figcaption>
         </figure>
         <div class="work-actions">
-          <a class="btn primary hover-wiggle" href="${e(work.originalUrl)}" target="_blank" rel="noopener">下载原图</a>
-          <button class="btn" type="button" data-copy-canonical>复制链接</button>
+          <a class="btn primary hover-wiggle" href="${e(work.originalUrl)}" target="_blank" rel="noopener" data-i18n="work.download">下载原图</a>
+          <button class="btn" type="button" data-copy-canonical data-i18n="work.copyLink">复制链接</button>
         </div>
       </div>
       <div class="info-stack">
@@ -559,16 +576,16 @@ ${PAGE_CSS}
           <div class="char-card-body">
             <p class="char-name">${e(ctx.characterName)}</p>
 ${aliasLineHtml}
-            <p class="char-count"><a href="../category.html#c=${e(ctx.characterId)}">共 ${e(charInfo.count)} 件作品</a></p>
+            <p class="char-count"><a href="../category.html#c=${e(ctx.characterId)}" data-i18n-tpl="work.count" data-i18n-vars='{"count":"${e(charInfo.count)}"}'>共 ${e(charInfo.count)} 件作品</a></p>
           </div>
         </div>
         <div class="panel">
-          <h2 class="info-title">作品信息</h2>
+          <h2 class="info-title" data-i18n="work.info">作品信息</h2>
           <dl class="info-list">
 ${infoRowsHtml}
           </dl>
           <div class="tag-row">
-            <p class="tag-label">标签</p>
+            <p class="tag-label" data-i18n="work.tags">标签</p>
             <div class="chips">
 ${chipsHtml}
             </div>
@@ -576,22 +593,22 @@ ${chipsHtml}
         </div>
         <div class="license-note">
           <span class="tape-strip" aria-hidden="true"></span>
-          <p class="license-note-label">授权说明</p>
+          <p class="license-note-label" data-i18n="work.licenseTitle">授权说明</p>
           <p class="license-text">${e(licenseNote || "—")}</p>
-          <p class="license-footnote">图片版权归原作者所有；<a href="${e(TAKEDOWN_URL)}">申请署名、修改或删除</a>。</p>
+          <p class="license-footnote"><span data-i18n="work.licenseFootnoteA">图片版权归原作者所有；</span><a href="${e(TAKEDOWN_URL)}" data-i18n="work.licenseFootnoteLink">申请署名、修改或删除</a><span>。</span></p>
         </div>
       </div>
     </div>
-    <h2 class="section-label">评论</h2>
+    <h2 class="section-label" data-i18n="section.comments">评论</h2>
     <div class="panel giscus-panel">
       <script src="https://giscus.app/client.js" data-repo="lmy414/lmy414-blog-comments" data-repo-id="R_kgDOTUvnVw" data-category="Announcements" data-category-id="DIC_kwDOTUvnV84DF4fs" data-mapping="specific" data-term="${e(`sticker-${work.id}`)}" data-reactions-enabled="1" data-input-position="bottom" data-theme="light" data-lang="zh-CN" crossorigin="anonymous" async></script>
     </div>
-    <h2 class="section-label">更多${e(ctx.characterName)}表情包</h2>
+    <h2 class="section-label" data-i18n-tpl="work.more" data-i18n-vars='{"name":"${e(ctx.characterName)}"}'>更多${e(ctx.characterName)}表情包</h2>
 ${sameHtml}
-    <h2 class="section-label">猜你喜欢</h2>
+    <h2 class="section-label" data-i18n="work.guess">猜你喜欢</h2>
 ${guessHtml}
   </main>
-  <footer class="site-footer"><p>非官方同人整理项目，图片版权归原作者所有。本站使用最小化 Google Analytics 了解页面与性能表现，不建立热度排行。</p><p><a href="../changelog.html">更新日志</a> · <a href="../about.html#analytics">统计与隐私</a></p><p><a href="https://github.com/lmy414/bluedafeiyu" target="_blank" rel="noopener">站点源码仓库</a> · <a href="https://github.com/lmy414/ai-girl-stickers" target="_blank" rel="noopener">内容与投稿仓库</a></p></footer>
+  <footer class="site-footer"><p data-i18n="footer.disclaimer">非官方同人整理项目，图片版权归原作者所有。本站使用最小化 Google Analytics 了解页面与性能表现，不建立热度排行。</p><p><a href="../changelog.html" data-i18n="footer.changelog">更新日志</a> · <a href="../about.html#analytics" data-i18n="footer.privacy">统计与隐私</a></p><p><a href="https://github.com/lmy414/bluedafeiyu" target="_blank" rel="noopener" data-i18n="footer.source">站点源码仓库</a> · <a href="https://github.com/lmy414/ai-girl-stickers" target="_blank" rel="noopener" data-i18n="footer.content">内容与投稿仓库</a></p></footer>
 ${COPY_CANONICAL_JS}
 </body>
 </html>

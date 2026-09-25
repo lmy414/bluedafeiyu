@@ -107,6 +107,7 @@ const REQUIRED_FILES = [
   "404.html",
   "styles.css",
   "tokens.css",
+  "lang.js",
   "robots.txt",
   "sitemap.xml",
   "analytics.js",

@@ -41,6 +41,8 @@ python -m http.server 5173 -d .build/site        # 打开 http://127.0.0.1:5173
 
 详情页的正文段（H1 下那段）**整段是内容数据**，不是模板：取清单里的 `commentary`（蓝色大肥鱼第一人称评价），缺字段才退兜底句；要改某一页的正文，改内容仓库的清单，不要改生成器。分类枚举同理走内容仓库的 `categories.json`，加分类不用动代码——但新增分类要同时补 `generate_work_pages.mjs` 的 `KIND_WORDS`、`index.html` 与 `category.html` 里那份 `kindWord` 映射（前端卡片 alt 用），漏了会静默退成「表情包」。
 
+**界面是三语的**（zh 默认 / en / ja），由零依赖的 `dist/lang.js` 承担：en/ja 词典 + 运行时 + 顶栏切换贴纸。zh 不进词典——页面原文与 JS 兜底串就是中文，运行时缓存原文、切回即还原。静态文案挂 `data-i18n`，动态文案调 `SiteLang.fmt(key, 中文兜底)`，页面级 title/meta 挂 `body[data-i18n-page]`；详情页模板的 i18n 写在 `generate_work_pages.mjs`。**作品名、Tag、commentary 是内容数据，三语保持中文**；新增界面 key 时 en/ja 两份都要补（漏了静默退中文）。完整约定见 README「多语言」一节与 `lang.js` 头部注释。
+
 首批（blue-fish）记录的归一有两条容易踩的线：`build_site_snapshot.mjs` **先合并 `data/blue-fish-editorial.json` 叠加层、再判「够不够格当作品」**（名字 / 标签 / 角色三者齐全），顺序反了那 59 条补过名字的记录会重新掉线；叠加层里带 `originalPath` 的记录原图走本内容仓的 Raw，没带的仍指上游档案馆。
 
 ## Git 流程

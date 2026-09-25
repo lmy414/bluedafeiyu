@@ -16,8 +16,9 @@
   <meta name="twitter:card" content="summary" />
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="stylesheet" href="tokens.css?v=14" />
-  <link rel="stylesheet" href="styles.css?v=18" />
+  <link rel="stylesheet" href="tokens.css?v=15" />
+  <link rel="stylesheet" href="styles.css?v=19" />
+  <script src="lang.js?v=1"></script>
   <link rel="preload" href="site-data.js" as="script" />
   <script>
     (function () {
@@ -254,30 +255,30 @@
   </style>
   <script src="analytics.js" defer></script>
 </head>
-<body>
+<body data-i18n-page="index">
   <header class="topbar">
-    <a class="brand" href="index.html"><span class="brand-mark"><img src="avatar.png" alt="" /></span><span class="brand-text"><strong>蓝色大肥鱼</strong><small>AI 娘表情包开放档案</small></span></a>
-    <nav class="topnav"><a href="index.html" class="is-active">首页</a><a href="category.html">分类</a><a href="submit.html">投稿</a><a href="about.html">关于</a><a href="projects.html">推荐</a></nav>
+    <a class="brand" href="index.html"><span class="brand-mark"><img src="avatar.png" alt="" /></span><span class="brand-text"><strong>蓝色大肥鱼</strong><small data-i18n="brand.tagline">AI 娘表情包开放档案</small></span></a>
+    <nav class="topnav"><a href="index.html" class="is-active" data-i18n="nav.home">首页</a><a href="category.html" data-i18n="nav.category">分类</a><a href="submit.html" data-i18n="nav.submit">投稿</a><a href="about.html" data-i18n="nav.about">关于</a><a href="projects.html" data-i18n="nav.projects">推荐</a></nav>
   </header>
   <main class="page">
     <section class="hero panel" aria-labelledby="hero-title">
       <span class="tape-strip" aria-hidden="true"></span>
       <div class="hero-body">
         <h1 class="hero-title" id="hero-title">蓝色<span class="marker-highlight">大肥鱼</span></h1>
-        <p class="hero-subtitle">AI 娘表情包开放档案</p>
-        <p class="hero-lede">收集与下载 AI 娘二创表情包，按角色归档、按 Tag 检索。</p>
+        <p class="hero-subtitle" data-i18n="brand.tagline">AI 娘表情包开放档案</p>
+        <p class="hero-lede" data-i18n="index.hero.lede">收集与下载 AI 娘二创表情包，按角色归档、按 Tag 检索。</p>
         <div class="hero-actions">
           <a class="btn primary hover-wiggle" href="#gallery">
             <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 6.5 L8 10.5 L12 6.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            <span>开始浏览</span>
+            <span data-i18n="index.cta.browse">开始浏览</span>
           </a>
           <a class="btn hover-wiggle" href="submit.html">
             <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 3.5 V12.5 M3.5 8 H12.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
-            <span>提交作品</span>
+            <span data-i18n="index.cta.submit">提交作品</span>
           </a>
           <button type="button" class="btn hover-wiggle" id="btn-qq-group" aria-haspopup="dialog" aria-controls="qq-modal">
             <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 3.5 H13.5 V10.5 H8 L5.5 13 V10.5 H2.5 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg>
-            <span>加入交流群</span>
+            <span data-i18n="index.cta.group">加入交流群</span>
           </button>
         </div>
       </div>
@@ -295,21 +296,21 @@
       </div>
     </section>
 
-    <h2 class="section-label">全部作品</h2>
+    <h2 class="section-label" data-i18n="index.section.all">全部作品</h2>
 
     <div class="toolbar">
       <div class="search-box">
         <svg class="search-icon" width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5"></circle><path d="M10.5 10.5 L14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
-        <input id="search" type="text" placeholder="搜索名称、Tag、角色或别名" aria-label="搜索名称、Tag、角色或别名" autocomplete="off" />
+        <input id="search" type="text" placeholder="搜索名称、Tag、角色或别名" aria-label="搜索名称、Tag、角色或别名" autocomplete="off" data-i18n-attr="placeholder:index.search.placeholder,aria-label:index.search.placeholder" />
       </div>
-      <label class="sort-label" for="sort">排序</label>
+      <label class="sort-label" for="sort" data-i18n="sort.label">排序</label>
       <select id="sort">
-        <option value="newest">最新收录</option>
-        <option value="oldest">最早收录</option>
-        <option value="name-asc">名称正序</option>
-        <option value="name-desc">名称倒序</option>
-        <option value="size">文件体积</option>
-        <option value="random">随机浏览</option>
+        <option value="newest" data-i18n="sort.newest">最新收录</option>
+        <option value="oldest" data-i18n="sort.oldest">最早收录</option>
+        <option value="name-asc" data-i18n="sort.nameAsc">名称正序</option>
+        <option value="name-desc" data-i18n="sort.nameDesc">名称倒序</option>
+        <option value="size" data-i18n="sort.size">文件体积</option>
+        <option value="random" data-i18n="sort.random">随机浏览</option>
       </select>
       <span class="count" id="count">已显示 0 / 0 张</span>
     </div>
@@ -317,7 +318,7 @@
     <section id="gallery">
       <div class="masonry cols-4" id="grid"></div>
       <p class="note gallery-end" id="end-note" hidden></p>
-      <div class="empty" id="empty" hidden>没有匹配的作品，换个关键词试试。</div>
+      <div class="empty" id="empty" hidden data-i18n="list.emptyIndex">没有匹配的作品，换个关键词试试。</div>
     </section>
     <div id="sentinel" aria-hidden="true"></div>
   </main>
@@ -326,23 +327,23 @@
     <div class="qq-modal-backdrop" data-qq-close></div>
     <div class="qq-modal-card panel" role="dialog" aria-modal="true" aria-labelledby="qq-modal-title">
       <span class="tape-strip" aria-hidden="true"></span>
-      <h2 class="qq-modal-title" id="qq-modal-title">加入交流群</h2>
-      <p class="qq-modal-lede">QQ 群「鱼之饭盆」<br />群号 <span class="marker-highlight">1060898801</span></p>
+      <h2 class="qq-modal-title" id="qq-modal-title" data-i18n="index.cta.group">加入交流群</h2>
+      <p class="qq-modal-lede"><span data-i18n="index.qq.lede1">QQ 群「鱼之饭盆」</span><br /><span data-i18n="index.qq.lede2">群号</span> <span class="marker-highlight">1060898801</span></p>
       <figure class="qq-modal-qr">
-        <img src="qq-group.png" alt="QQ 群「鱼之饭盆」（群号 1060898801）的加入二维码" width="518" height="518" loading="lazy" decoding="async" />
-        <figcaption>扫码进群</figcaption>
+        <img src="qq-group.png" alt="QQ 群「鱼之饭盆」（群号 1060898801）的加入二维码" width="518" height="518" loading="lazy" decoding="async" data-i18n-attr="alt:qq.qrAlt" />
+        <figcaption data-i18n="qq.scan">扫码进群</figcaption>
       </figure>
       <div class="qq-modal-actions">
         <button type="button" class="btn primary" id="btn-qq-copy">
           <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><rect x="5.5" y="5.5" width="8" height="8" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"></rect><path d="M10.5 5.5v-2a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg>
-          <span id="btn-qq-copy-text">复制群号</span>
+          <span id="btn-qq-copy-text" data-i18n="qq.copy">复制群号</span>
         </button>
-        <button type="button" class="btn" data-qq-close>关闭</button>
+        <button type="button" class="btn" data-qq-close data-i18n="index.qq.close">关闭</button>
       </div>
     </div>
   </div>
 
-  <footer class="site-footer"><p>非官方同人整理项目，图片版权归原作者所有。本站使用最小化 Google Analytics 了解页面与性能表现，不建立热度排行。</p><p><a href="changelog.html">更新日志</a> · <a href="about.html#analytics">统计与隐私</a></p><p><a href="https://github.com/lmy414/bluedafeiyu" target="_blank" rel="noopener">站点源码仓库</a> · <a href="https://github.com/lmy414/ai-girl-stickers" target="_blank" rel="noopener">内容与投稿仓库</a></p></footer>
+  <footer class="site-footer"><p data-i18n="footer.disclaimer">非官方同人整理项目，图片版权归原作者所有。本站使用最小化 Google Analytics 了解页面与性能表现，不建立热度排行。</p><p><a href="changelog.html" data-i18n="footer.changelog">更新日志</a> · <a href="about.html#analytics" data-i18n="footer.privacy">统计与隐私</a></p><p><a href="https://github.com/lmy414/bluedafeiyu" target="_blank" rel="noopener" data-i18n="footer.source">站点源码仓库</a> · <a href="https://github.com/lmy414/ai-girl-stickers" target="_blank" rel="noopener" data-i18n="footer.content">内容与投稿仓库</a></p></footer>
   <script src="site-data.js"></script>
   <script>
     (function () {
@@ -389,21 +390,25 @@
         return h >>> 0;
       }
 
-      var entries = works.map(function (work, index) {
-        var character = characterById.get(work.characterId) || null;
-        var fields = [work.name].concat(work.tags || []);
-        if (character) {
-          fields.push(character.name);
-          fields.push.apply(fields, character.aliases || []);
-        }
-        return {
-          work: work,
-          index: index,
-          characterName: character ? character.name : "未知角色",
-          fields: fields.map(normalize),
-          randomKey: hashId(String(work.id == null ? index : work.id))
-        };
-      });
+      /* entries 由语言决定（未知角色名随语言走），切换语言时重建 */
+      function buildEntries() {
+        return works.map(function (work, index) {
+          var character = characterById.get(work.characterId) || null;
+          var fields = [work.name].concat(work.tags || []);
+          if (character) {
+            fields.push(character.name);
+            fields.push.apply(fields, character.aliases || []);
+          }
+          return {
+            work: work,
+            index: index,
+            characterName: character ? character.name : SiteLang.fmt("char.unknown", "未知角色"),
+            fields: fields.map(normalize),
+            randomKey: hashId(String(work.id == null ? index : work.id))
+          };
+        });
+      }
+      var entries = buildEntries();
 
       var comparators = {
         newest: function (a, b) { return a.index - b.index; },
@@ -431,12 +436,19 @@
       var filtered = [];
       var renderedCount = 0;
 
-      /* 卡片图 alt（archive/2026-09-24/docs/SEO规范.md §7 列表卡片图公式）：《{name}》{characterName}{kindWord}，{tags顿号}AI娘二创图 */
+      /* 卡片图 alt（archive/2026-09-24/docs/SEO规范.md §7 列表卡片图公式）：《{name}》{characterName}{kindWord}，{tags顿号}AI娘二创图。
+         zh 保持原公式；en / ja 走 lang.js 的 alt.work 模板（{kindId} 由词典解析成品类词，不含中文 tag）。 */
       function altFor(work) {
         var character = characterById.get(work.characterId);
-        var characterName = character ? character.name : "未知角色";
+        var characterName = character ? character.name : SiteLang.fmt("char.unknown", "未知角色");
         var kindId = (work.categoryIds || [])[0] || "";
-        var kindWord = ({ meme: "表情包", illustration: "二创插画", setting: "立绘设定图", comic: "漫画" })[kindId] || "表情包";
+        var kindWord = SiteLang.fmt(
+          "kind." + (kindId || "meme"),
+          ({ meme: "表情包", illustration: "二创插画", setting: "立绘设定图", comic: "漫画" })[kindId] || "表情包"
+        );
+        if (SiteLang.current !== "zh") {
+          return SiteLang.fmt("alt.work", "", { name: work.name, character: characterName, kindId: kindId || "meme" });
+        }
         var tags = (work.tags || []).slice(0, 2).join("、");
         var text = "《" + String(work.name == null ? "" : work.name) + "》" + characterName + kindWord;
         return tags ? text + "，" + tags + " AI娘二创图" : text;
@@ -468,11 +480,11 @@
       function updateStatus() {
         var total = filtered.length;
         var shown = Math.min(renderedCount, total);
-        countEl.textContent = "已显示 " + shown + " / " + total + " 张";
+        countEl.textContent = SiteLang.fmt("list.count", "已显示 {shown} / {total} 张", { shown: shown, total: total });
         var exhausted = total > 0 && renderedCount >= total;
         endNote.hidden = !exhausted;
         if (exhausted) {
-          endNote.textContent = "已经到底了 · 共 " + total + " 张";
+          endNote.textContent = SiteLang.fmt("list.end", "已经到底了 · 共 {total} 张", { total: total });
         }
         emptyEl.hidden = total !== 0;
       }
@@ -497,6 +509,11 @@
       /* 事件只在初始化绑一次：卡片是委托处理，重渲染不重绑 */
       searchInput.addEventListener("input", refresh);
       sortSelect.addEventListener("change", refresh);
+      /* 语言切换：重算未知角色名等随语言走的字段，再整列重渲染 */
+      document.addEventListener("site:langchange", function () {
+        entries = buildEntries();
+        refresh();
+      });
       var observer = new IntersectionObserver(function (records) {
         if (records.some(function (record) { return record.isIntersecting; })) { appendNextPage(); }
       }, { rootMargin: "320px 0px" });
@@ -542,12 +559,12 @@
       });
 
       function done() {
-        copyText.textContent = "已复制";
-        window.setTimeout(function () { copyText.textContent = "复制群号"; }, 1600);
+        copyText.textContent = SiteLang.fmt("ui.copied", "已复制");
+        window.setTimeout(function () { copyText.textContent = SiteLang.fmt("qq.copy", "复制群号"); }, 1600);
       }
       function fail() {
-        copyText.textContent = "复制失败，请手动选择";
-        window.setTimeout(function () { copyText.textContent = "复制群号"; }, 2400);
+        copyText.textContent = SiteLang.fmt("ui.copyFail", "复制失败，请手动选择");
+        window.setTimeout(function () { copyText.textContent = SiteLang.fmt("qq.copy", "复制群号"); }, 2400);
       }
       if (copyBtn) {
         copyBtn.addEventListener("click", function () {

@@ -16,8 +16,9 @@
   <meta name="twitter:card" content="summary" />
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="stylesheet" href="tokens.css?v=14" />
-  <link rel="stylesheet" href="styles.css?v=18" />
+  <link rel="stylesheet" href="tokens.css?v=15" />
+  <link rel="stylesheet" href="styles.css?v=19" />
+  <script src="lang.js?v=1"></script>
   <style>
     /* 更新日志专属样式：时间线条目 + 交替微旋转纸卡 + 日期便签。
        公共组件（.panel / .card-title / .marker-highlight / .tape-strip / .note）已在 styles.css，此处不重复。
@@ -111,16 +112,30 @@
   </style>
   <script src="analytics.js" defer></script>
 </head>
-<body>
+<body data-i18n-page="changelog">
   <header class="topbar">
-    <a class="brand" href="index.html"><span class="brand-mark"><img src="avatar.png" alt="" /></span><span class="brand-text"><strong>蓝色大肥鱼</strong><small>AI 娘表情包开放档案</small></span></a>
-    <nav class="topnav"><a href="index.html">首页</a><a href="category.html">分类</a><a href="submit.html">投稿</a><a href="about.html">关于</a><a href="projects.html">推荐</a></nav>
+    <a class="brand" href="index.html"><span class="brand-mark"><img src="avatar.png" alt="" /></span><span class="brand-text"><strong>蓝色大肥鱼</strong><small data-i18n="brand.tagline">AI 娘表情包开放档案</small></span></a>
+    <nav class="topnav"><a href="index.html" data-i18n="nav.home">首页</a><a href="category.html" data-i18n="nav.category">分类</a><a href="submit.html" data-i18n="nav.submit">投稿</a><a href="about.html" data-i18n="nav.about">关于</a><a href="projects.html" data-i18n="nav.projects">推荐</a></nav>
   </header>
   <main class="page">
-    <h1 class="page-title">更新日志</h1>
-    <p class="lede">本站的变更记录，大事小事都记一笔。</p>
+    <h1 class="page-title" data-i18n="changelog.h1">更新日志</h1>
+    <p class="lede" data-i18n="changelog.lede">本站的变更记录，大事小事都记一笔。</p>
 
     <ol class="timeline">
+      <li class="tl-item">
+        <article class="panel entry-card tilt-l">
+          <span class="tape-strip" aria-hidden="true"></span>
+          <div class="entry-head">
+            <span class="date-sticker">2026-09-26</span>
+            <h2 class="card-title entry-title"><span class="marker-highlight">英语 / 日语</span>界面支持上线</h2>
+          </div>
+          <ul class="entry-points">
+            <li>新增英语与日语界面，顶栏右侧「中 / EN / 日」贴纸一键切换，选择记忆在本机，也认 ?lang= 参数与浏览器语言。</li>
+            <li>七个手写页与 250 个详情页的界面文案全部接入翻译层；分类名、品类词、来源与授权标签同步翻译。</li>
+            <li>作品名、Tag 与详情页正文是内容数据，保持中文原文；日文下自动切用日文字体栈。</li>
+          </ul>
+        </article>
+      </li>
       <li class="tl-item">
         <article class="panel entry-card tilt-l">
           <span class="tape-strip" aria-hidden="true"></span>
@@ -206,8 +221,8 @@
         </article>
       </li>
     </ol>
-    <p class="note">本页为节选示例；完整变更记录已归档到仓库 archive/2026-09-24/CHANGELOG.md。</p>
+    <p class="note" data-i18n="changelog.note">本页为节选示例；完整变更记录已归档到仓库 archive/2026-09-24/CHANGELOG.md。</p>
   </main>
-  <footer class="site-footer"><p>非官方同人整理项目，图片版权归原作者所有。本站使用最小化 Google Analytics 了解页面与性能表现，不建立热度排行。</p><p><a href="changelog.html">更新日志</a> · <a href="about.html#analytics">统计与隐私</a></p><p><a href="https://github.com/lmy414/bluedafeiyu" target="_blank" rel="noopener">站点源码仓库</a> · <a href="https://github.com/lmy414/ai-girl-stickers" target="_blank" rel="noopener">内容与投稿仓库</a></p></footer>
+  <footer class="site-footer"><p data-i18n="footer.disclaimer">非官方同人整理项目，图片版权归原作者所有。本站使用最小化 Google Analytics 了解页面与性能表现，不建立热度排行。</p><p><a href="changelog.html" data-i18n="footer.changelog">更新日志</a> · <a href="about.html#analytics" data-i18n="footer.privacy">统计与隐私</a></p><p><a href="https://github.com/lmy414/bluedafeiyu" target="_blank" rel="noopener" data-i18n="footer.source">站点源码仓库</a> · <a href="https://github.com/lmy414/ai-girl-stickers" target="_blank" rel="noopener" data-i18n="footer.content">内容与投稿仓库</a></p></footer>
 </body>
 </html>

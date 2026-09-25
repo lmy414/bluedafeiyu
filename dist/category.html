@@ -16,8 +16,9 @@
   <meta name="twitter:card" content="summary" />
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="stylesheet" href="tokens.css?v=14" />
-  <link rel="stylesheet" href="styles.css?v=18" />
+  <link rel="stylesheet" href="tokens.css?v=15" />
+  <link rel="stylesheet" href="styles.css?v=19" />
+  <script src="lang.js?v=1"></script>
   <link rel="preload" href="site-data.js" as="script" />
   <style>
     /* 分类页专属样式：只做布局与页面贴纸（手写小签、分类贴纸），
@@ -73,38 +74,38 @@
   </style>
   <script src="analytics.js" defer></script>
 </head>
-<body>
+<body data-i18n-page="category">
   <header class="topbar">
-    <a class="brand" href="index.html"><span class="brand-mark"><img src="avatar.png" alt="" /></span><span class="brand-text"><strong>蓝色大肥鱼</strong><small>AI 娘表情包开放档案</small></span></a>
-    <nav class="topnav"><a href="index.html">首页</a><a href="category.html" class="is-active">分类</a><a href="submit.html">投稿</a><a href="about.html">关于</a><a href="projects.html">推荐</a></nav>
+    <a class="brand" href="index.html"><span class="brand-mark"><img src="avatar.png" alt="" /></span><span class="brand-text"><strong>蓝色大肥鱼</strong><small data-i18n="brand.tagline">AI 娘表情包开放档案</small></span></a>
+    <nav class="topnav"><a href="index.html" data-i18n="nav.home">首页</a><a href="category.html" class="is-active" data-i18n="nav.category">分类</a><a href="submit.html" data-i18n="nav.submit">投稿</a><a href="about.html" data-i18n="nav.about">关于</a><a href="projects.html" data-i18n="nav.projects">推荐</a></nav>
   </header>
   <main class="page">
-    <h1 class="section-label">分类浏览</h1>
-    <p class="lede">按<span class="marker-highlight">角色</span>浏览，角色下按<span class="marker-highlight">作品类型</span>分组。</p>
+    <h1 class="section-label" data-i18n="category.h1">分类浏览</h1>
+    <p class="lede"><span data-i18n="category.lede.a">按</span><span class="marker-highlight" data-i18n="filter.characters">角色</span><span data-i18n="category.lede.b">浏览，角色下按</span><span class="marker-highlight" data-i18n="ui.workType">作品类型</span><span data-i18n="category.lede.c">分组。</span></p>
 
     <div class="filter-row">
-      <span class="filter-label" id="charRowLabel">角色</span>
+      <span class="filter-label" id="charRowLabel" data-i18n="filter.characters">角色</span>
       <div class="chips" id="charChips" role="group" aria-labelledby="charRowLabel"></div>
     </div>
     <div class="filter-row">
-      <span class="filter-label" id="catRowLabel">类型</span>
+      <span class="filter-label" id="catRowLabel" data-i18n="filter.types">类型</span>
       <div class="chips" id="catChips" role="group" aria-labelledby="catRowLabel"></div>
     </div>
 
     <div class="toolbar">
-      <input class="search-input" id="searchInput" type="text" autocomplete="off" spellcheck="false" aria-label="搜索名称或 Tag" placeholder="在 全部角色 · 全部类型 内搜索名称或 Tag" />
+      <input class="search-input" id="searchInput" type="text" autocomplete="off" spellcheck="false" aria-label="搜索名称或 Tag" placeholder="在 全部角色 · 全部类型 内搜索名称或 Tag" data-i18n-attr="aria-label:category.search.aria" />
     </div>
 
     <p class="count" id="count" aria-live="polite"></p>
     <div id="results">
       <div class="masonry cols-3" id="grid"></div>
       <p class="note gallery-end" id="end-note" hidden></p>
-      <div class="empty" id="empty" hidden>没有符合条件的作品</div>
-      <p id="load-more-wrap" hidden><button type="button" class="btn" id="load-more">加载更多</button></p>
+      <div class="empty" id="empty" hidden data-i18n="list.emptyCategory">没有符合条件的作品</div>
+      <p id="load-more-wrap" hidden><button type="button" class="btn" id="load-more" data-i18n="list.loadMore">加载更多</button></p>
     </div>
     <div id="sentinel" aria-hidden="true"></div>
   </main>
-  <footer class="site-footer"><p>非官方同人整理项目，图片版权归原作者所有。本站使用最小化 Google Analytics 了解页面与性能表现，不建立热度排行。</p><p><a href="changelog.html">更新日志</a> · <a href="about.html#analytics">统计与隐私</a></p><p><a href="https://github.com/lmy414/bluedafeiyu" target="_blank" rel="noopener">站点源码仓库</a> · <a href="https://github.com/lmy414/ai-girl-stickers" target="_blank" rel="noopener">内容与投稿仓库</a></p></footer>
+  <footer class="site-footer"><p data-i18n="footer.disclaimer">非官方同人整理项目，图片版权归原作者所有。本站使用最小化 Google Analytics 了解页面与性能表现，不建立热度排行。</p><p><a href="changelog.html" data-i18n="footer.changelog">更新日志</a> · <a href="about.html#analytics" data-i18n="footer.privacy">统计与隐私</a></p><p><a href="https://github.com/lmy414/bluedafeiyu" target="_blank" rel="noopener" data-i18n="footer.source">站点源码仓库</a> · <a href="https://github.com/lmy414/ai-girl-stickers" target="_blank" rel="noopener" data-i18n="footer.content">内容与投稿仓库</a></p></footer>
   <script src="site-data.js"></script>
   <script>
   /* 分类页逻辑：角色、类型两级单选筛选 + 范围内搜索，状态进 URL hash（#c=&s=&q=）
@@ -268,12 +269,19 @@
       return tags.some((tag) => normalize(tag).indexOf(needle) !== -1);
     }
 
-    /* 卡片图 alt（archive/2026-09-24/docs/SEO规范.md §7 列表卡片图公式）：《{name}》{characterName}{kindWord}，{tags顿号}AI娘二创图 */
+    /* 卡片图 alt（archive/2026-09-24/docs/SEO规范.md §7 列表卡片图公式）：《{name}》{characterName}{kindWord}，{tags顿号}AI娘二创图。
+       zh 保持原公式；en / ja 走 lang.js 的 alt.work 模板（{kindId} 由词典解析成品类词，不含中文 tag）。 */
     function altFor(work) {
       const character = charById.get(work.characterId);
-      const characterName = character ? character.name : String(work.characterId || "未知角色");
+      const characterName = character ? character.name : SiteLang.fmt("char.unknown", "未知角色");
       const kindId = (Array.isArray(work.categoryIds) ? work.categoryIds : [])[0] || "";
-      const kindWord = ({ meme: "表情包", illustration: "二创插画", setting: "立绘设定图", comic: "漫画" })[kindId] || "表情包";
+      const kindWord = SiteLang.fmt(
+        "kind." + (kindId || "meme"),
+        ({ meme: "表情包", illustration: "二创插画", setting: "立绘设定图", comic: "漫画" })[kindId] || "表情包"
+      );
+      if (SiteLang.current !== "zh") {
+        return SiteLang.fmt("alt.work", "", { name: work.name, character: characterName, kindId: kindId || "meme" });
+      }
       const tags = (Array.isArray(work.tags) ? work.tags : []).slice(0, 2).join("、");
       const text = "《" + String(work.name == null ? "" : work.name) + "》" + characterName + kindWord;
       return tags ? text + "，" + tags + " AI娘二创图" : text;
@@ -283,7 +291,7 @@
       const character = charById.get(work.characterId);
       const name = String(work.name == null ? "" : work.name);
       const meta = [];
-      meta.push(character ? character.name : String(work.characterId || "未知角色"));
+      meta.push(character ? character.name : SiteLang.fmt("char.unknown", "未知角色"));
       if (work.format) meta.push(String(work.format).toUpperCase());
       if (work.width && work.height) meta.push(work.width + "×" + work.height);
       const sizeAttrs = work.width && work.height
@@ -320,7 +328,7 @@
       const total = list.length;
       const exhausted = total > 0 && renderedCount >= total;
       endNoteEl.hidden = !exhausted;
-      if (exhausted) endNoteEl.textContent = "已经到底了 · 共 " + total + " 张";
+      if (exhausted) endNoteEl.textContent = SiteLang.fmt("list.end", "已经到底了 · 共 {total} 张", { total: total });
       emptyEl.hidden = total !== 0;
       if (loadMoreWrap && loadMoreBtn) {
         loadMoreWrap.hidden = !(loadMoreEnabled && !exhausted);
@@ -358,15 +366,22 @@
         if (num) num.textContent = String(subCount(id));
       }
 
-      const characterLabel = state.c && charById.has(state.c) ? charById.get(state.c).name : "全部角色";
-      const categoryLabel = state.s && catById.has(state.s) ? catById.get(state.s).name : "全部类型";
-      searchInput.placeholder = "在 " + characterLabel + " · " + categoryLabel + " 内搜索名称或 Tag";
+      /* 范围标签随语言走：zh 用清单里的中文名，en / ja 用 lang.js 的 cat.<id> / 「全部」兜底 */
+      function categoryLabel(category) {
+        return category ? SiteLang.t("cat." + category.id, String(category.name == null ? "" : category.name)) : SiteLang.t("filter.allTypes", "全部类型");
+      }
+      const characterLabel = state.c && charById.has(state.c) ? charById.get(state.c).name : SiteLang.t("filter.allCharacters", "全部角色");
+      const categoryText = state.s && catById.has(state.s) ? categoryLabel(catById.get(state.s)) : SiteLang.t("filter.allTypes", "全部类型");
+      searchInput.placeholder = SiteLang.fmt("category.search.placeholder", "在 {character} · {category} 内搜索名称或 Tag", {
+        character: characterLabel,
+        category: categoryText
+      });
       if (searchInput.value !== state.q) searchInput.value = state.q;
 
       const scope = works.filter(inScope);
       const needle = normalize(state.q);
       list = scope.filter((work) => matches(work, needle));
-      countEl.textContent = list.length + " / " + scope.length + " 张";
+      countEl.textContent = SiteLang.fmt("list.scopedCount", "{matched} / {total} 张", { matched: list.length, total: scope.length });
 
       /* 状态变化：清空结果、重置批次与提示，再只渲染首批；旧观察器回调读到的已是新 list */
       gridEl.innerHTML = "";
@@ -403,12 +418,12 @@
 
     buildChips(
       charChipsEl,
-      [{ id: "", name: "全部" }].concat(characters.map((item) => ({ id: item.id, name: String(item.name == null ? "" : item.name) }))),
+      [{ id: "", name: SiteLang.t("filter.all", "全部") }].concat(characters.map((item) => ({ id: item.id, name: String(item.name == null ? "" : item.name) }))),
       (id) => pick("c", id)
     );
     buildChips(
       catChipsEl,
-      [{ id: "", name: "全部" }].concat(categories.map((item) => ({ id: item.id, name: String(item.name == null ? "" : item.name) }))),
+      [{ id: "", name: SiteLang.t("filter.all", "全部") }].concat(categories.map((item) => ({ id: item.id, name: SiteLang.t("cat." + item.id, String(item.name == null ? "" : item.name)) }))),
       (id) => pick("s", id)
     );
 
@@ -417,6 +432,22 @@
       searchTimer = window.setTimeout(() => {
         commit({ c: state.c, s: state.s, q: searchInput.value }, "replace");
       }, 200);
+    });
+    /* 语言切换：chips 的「全部」/ 分类名、占位提示与计数都随语言重渲染 */
+    document.addEventListener("site:langchange", () => {
+      charChipsEl.innerHTML = "";
+      catChipsEl.innerHTML = "";
+      buildChips(
+        charChipsEl,
+        [{ id: "", name: SiteLang.t("filter.all", "全部") }].concat(characters.map((item) => ({ id: item.id, name: String(item.name == null ? "" : item.name) }))),
+        (id) => pick("c", id)
+      );
+      buildChips(
+        catChipsEl,
+        [{ id: "", name: SiteLang.t("filter.all", "全部") }].concat(categories.map((item) => ({ id: item.id, name: SiteLang.t("cat." + item.id, String(item.name == null ? "" : item.name)) }))),
+        (id) => pick("s", id)
+      );
+      render();
     });
     window.addEventListener("hashchange", syncFromLocation);
     window.addEventListener("popstate", syncFromLocation);

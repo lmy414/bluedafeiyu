@@ -121,13 +121,54 @@ a:hover { text-decoration: underline; text-decoration-style: wavy; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.2; }
 .brand-text strong { font-family: var(--font-marker); font-weight: normal; font-size: var(--text-lg); }
 .brand-text small { color: var(--text-secondary); font-family: var(--font-hand); font-size: var(--text-sm); }
-.topnav { display: flex; gap: var(--space-4); margin-left: auto; font-family: var(--font-hand); font-size: var(--text-lg); font-weight: bold; }
+.topnav { display: flex; align-items: center; gap: var(--space-4); margin-left: auto; font-family: var(--font-hand); font-size: var(--text-lg); font-weight: bold; }
 .topnav a { color: var(--text-primary); }
 .topnav a.is-active, .topnav a:hover {
   color: var(--brand);
   text-decoration: underline;
   text-decoration-style: wavy;
   text-decoration-thickness: 2px;
+}
+
+/* ---- 语言切换器（dist/lang.js 注入 .topnav 末尾）：三枚歪斜小贴纸，选中那枚摆正压墨 ---- */
+.lang-switch { display: flex; align-items: center; gap: var(--space-2); margin-left: var(--space-2); }
+.lang-switch-btn {
+  min-width: 30px;
+  padding: 2px var(--space-2);
+  background: var(--paper-card);
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-paper-sm);
+  color: var(--text-primary);
+  font-family: var(--font-hand);
+  font-size: var(--text-sm);
+  font-weight: bold;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: transform var(--duration-1) ease, box-shadow var(--duration-1) ease;
+}
+.lang-switch-btn:nth-child(3n+1) { transform: rotate(-2deg); }
+.lang-switch-btn:nth-child(3n+2) { transform: rotate(1.6deg); }
+.lang-switch-btn:nth-child(3n) { transform: rotate(-0.8deg); }
+.lang-switch-btn:hover {
+  color: var(--brand);
+  transform: rotate(0) translate(-1px, -1px);
+  box-shadow: var(--shadow-paper);
+}
+.lang-switch-btn[aria-pressed="true"] {
+  color: var(--brand-ink);
+  background: var(--brand);
+  transform: rotate(0);
+  box-shadow: var(--shadow-paper);
+}
+
+/* 窄屏：顶栏允许换行，语言贴纸独占一行也不挤导航 */
+@media (max-width: 640px) {
+  .topbar { flex-wrap: wrap; }
+  .topnav { flex-wrap: wrap; row-gap: var(--space-1); }
+  /* 导航词只在链接之间换行，不允许「ホーム」这类词从中间断开 */
+  .topnav a { white-space: nowrap; }
+  .lang-switch { margin-left: 0; }
 }
 
 .page {
