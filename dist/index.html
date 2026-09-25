@@ -94,6 +94,70 @@
     }
     .btn svg { flex: none; }
 
+    /* ---------- 交流群弹窗：手绘纸卡居中，点 hero 按钮弹出群号与二维码 ---------- */
+    .qq-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-4);
+    }
+    .qq-modal[hidden] { display: none; }
+    .qq-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: var(--ink);
+      opacity: 0.45;
+    }
+    .qq-modal-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      width: min(100%, 360px);
+      padding: var(--space-6) var(--space-5);
+      transform: rotate(-0.8deg);
+      box-shadow: var(--shadow-paper-lg);
+    }
+    .qq-modal-title {
+      margin: 0;
+      font-family: var(--font-marker);
+      font-weight: normal;
+      font-size: var(--text-xl);
+      transform: rotate(-0.5deg);
+    }
+    .qq-modal-lede {
+      margin: 0;
+      font-family: var(--font-hand);
+      font-size: var(--text-lg);
+    }
+    .qq-modal-qr {
+      margin: 0;
+      align-self: center;
+      padding: var(--space-2);
+      background: var(--paper-card);
+      border: 2px solid var(--ink);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-paper-sm);
+      text-align: center;
+    }
+    .qq-modal-qr img { display: block; width: 200px; height: auto; }
+    .qq-modal-qr figcaption {
+      margin-top: var(--space-1);
+      font-family: var(--font-hand);
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+    }
+    .qq-modal-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      justify-content: center;
+      margin-top: var(--space-2);
+    }
+
     /* 右侧照片墙：拍立得拼贴。原 --art-deepseek-* 深色艺术带降级成浅蓝底衬（--sticky-* 渐变），
        蓝白纸面基调不变，主角是贴上去的照片。 */
     .hero-art {
@@ -211,6 +275,10 @@
             <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 3.5 V12.5 M3.5 8 H12.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
             <span>提交作品</span>
           </a>
+          <button type="button" class="btn hover-wiggle" id="btn-qq-group" aria-haspopup="dialog" aria-controls="qq-modal">
+            <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 3.5 H13.5 V10.5 H8 L5.5 13 V10.5 H2.5 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg>
+            <span>加入交流群</span>
+          </button>
         </div>
       </div>
       <div class="hero-art" aria-hidden="true">
@@ -253,6 +321,27 @@
     </section>
     <div id="sentinel" aria-hidden="true"></div>
   </main>
+
+  <div class="qq-modal" id="qq-modal" hidden>
+    <div class="qq-modal-backdrop" data-qq-close></div>
+    <div class="qq-modal-card panel" role="dialog" aria-modal="true" aria-labelledby="qq-modal-title">
+      <span class="tape-strip" aria-hidden="true"></span>
+      <h2 class="qq-modal-title" id="qq-modal-title">加入交流群</h2>
+      <p class="qq-modal-lede">QQ 群「鱼之饭盆」<br />群号 <span class="marker-highlight">1060898801</span></p>
+      <figure class="qq-modal-qr">
+        <img src="qq-group.png" alt="QQ 群「鱼之饭盆」（群号 1060898801）的加入二维码" width="518" height="518" loading="lazy" decoding="async" />
+        <figcaption>扫码进群</figcaption>
+      </figure>
+      <div class="qq-modal-actions">
+        <button type="button" class="btn primary" id="btn-qq-copy">
+          <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><rect x="5.5" y="5.5" width="8" height="8" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"></rect><path d="M10.5 5.5v-2a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg>
+          <span id="btn-qq-copy-text">复制群号</span>
+        </button>
+        <button type="button" class="btn" data-qq-close>关闭</button>
+      </div>
+    </div>
+  </div>
+
   <footer class="site-footer"><p>非官方同人整理项目，图片版权归原作者所有。本站使用最小化 Google Analytics 了解页面与性能表现，不建立热度排行。</p><p><a href="changelog.html">更新日志</a> · <a href="about.html#analytics">统计与隐私</a></p></footer>
   <script src="site-data.js"></script>
   <script>
@@ -414,6 +503,74 @@
       observer.observe(sentinel);
 
       refresh();
+    })();
+  </script>
+  <script>
+    // 交流群弹窗：开 / 关、Esc 与点背景关闭、复制群号。图片 loading="lazy"，
+    // 弹窗没打开前不拉二维码。
+    (function () {
+      "use strict";
+      var QQ_NUMBER = "1060898801";
+      var modal = document.getElementById("qq-modal");
+      var openBtn = document.getElementById("btn-qq-group");
+      var copyBtn = document.getElementById("btn-qq-copy");
+      var copyText = document.getElementById("btn-qq-copy-text");
+      if (!modal || !openBtn) return;
+
+      var lastFocus = null;
+
+      function openModal() {
+        lastFocus = document.activeElement;
+        modal.hidden = false;
+        document.body.style.overflow = "hidden";
+        var closeBtn = modal.querySelector("[data-qq-close].btn");
+        if (closeBtn) closeBtn.focus();
+      }
+
+      function closeModal() {
+        modal.hidden = true;
+        document.body.style.overflow = "";
+        if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
+      }
+
+      openBtn.addEventListener("click", openModal);
+      modal.addEventListener("click", function (event) {
+        if (event.target.closest("[data-qq-close]")) closeModal();
+      });
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && !modal.hidden) closeModal();
+      });
+
+      function done() {
+        copyText.textContent = "已复制";
+        window.setTimeout(function () { copyText.textContent = "复制群号"; }, 1600);
+      }
+      function fail() {
+        copyText.textContent = "复制失败，请手动选择";
+        window.setTimeout(function () { copyText.textContent = "复制群号"; }, 2400);
+      }
+      if (copyBtn) {
+        copyBtn.addEventListener("click", function () {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(QQ_NUMBER).then(done).catch(fail);
+            return;
+          }
+          try {
+            var ta = document.createElement("textarea");
+            ta.value = QQ_NUMBER;
+            ta.setAttribute("readonly", "");
+            ta.style.position = "fixed";
+            ta.style.opacity = "0";
+            document.body.appendChild(ta);
+            ta.select();
+            var ok = document.execCommand("copy");
+            document.body.removeChild(ta);
+            ok ? done() : fail();
+          } catch (err) {
+            fail();
+          }
+        });
+      }
     })();
   </script>
 </body>

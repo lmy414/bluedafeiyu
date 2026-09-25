@@ -22,10 +22,52 @@
     /* 页面专属样式：只做本页组合，公共组件（.panel/.form/.btn/.email-preview…）一律用 styles.css。
        颜色只用变量，禁止硬编码色值。旋转只给装饰容器，表单控件保持水平。 */
 
-    /* ---- 投稿指南纸卡 ---- */
+    /* ---- 投稿指南纸卡：加宽填满左栏，右侧留给群内投稿 ---- */
     .guide-card {
-      max-width: var(--measure-base);
       transform: rotate(-0.5deg);
+    }
+
+    /* ---- 顶部双栏：左指南、右群内投稿，填掉宽屏右侧的大片留白。
+       ≤1080px 退回单列，群卡回到正文流里。 ---- */
+    .submit-top {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 320px);
+      gap: var(--space-6);
+      align-items: start;
+    }
+    .submit-top .guide-main { min-width: 0; }
+    .submit-aside { position: sticky; top: var(--space-5); }
+    .qq-card {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      transform: rotate(0.8deg);
+    }
+    .qq-card .group-label { margin: 0; }
+    .qq-card .prose p { margin: 0 0 var(--space-2); }
+    .qq-card .prose p:last-child { margin-bottom: 0; }
+    .qq-card .qq-number { font-size: var(--text-lg); }
+    .qq-card .group-qr {
+      margin: 0;
+      align-self: center;
+      padding: var(--space-2);
+      background: var(--paper-card);
+      border: 2px solid var(--ink);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-paper-sm);
+      text-align: center;
+    }
+    .qq-card .group-qr img { display: block; width: 150px; height: auto; }
+    .qq-card .group-qr figcaption {
+      margin-top: var(--space-1);
+      font-family: var(--font-hand);
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+    }
+    .qq-card .hint { margin: 0; font-size: var(--text-xs); color: var(--text-tertiary); }
+    @media (max-width: 1080px) {
+      .submit-top { grid-template-columns: 1fr; }
+      .submit-aside { position: static; }
     }
     .rule-list {
       margin: 0 0 var(--space-3);
@@ -170,6 +212,8 @@
     <p class="lede">把你的 AI 娘二创表情包交给我们归档。现在通过 GitHub 表单投稿，填写图片、名称和角色即可，说明可选；其余收录信息由维护者审核时补齐。</p>
 
     <h2 class="section-label">投稿指南</h2>
+    <div class="submit-top">
+    <div class="guide-main">
     <div class="panel guide-card">
       <p>本站收录 <strong>AI 角色的拟人化二创表情包</strong>：梗图、插画、设定图、多格漫画都可以，主角是各大 AI 产品的娘化角色（DeepSeek娘、豆包娘、Kimi娘……）就行。</p>
       <p><strong class="marker-highlight">以下四类不收：</strong></p>
@@ -188,6 +232,27 @@
         <li>同意维护者核实后收录，并在收到版权要求时修改信息或删除；</li>
         <li>知道本站是非官方同人整理项目，图片著作权始终归原作者。</li>
       </ol>
+    </div>
+    </div>
+
+    <aside class="submit-aside" aria-labelledby="qq-card-title">
+      <div class="panel qq-card">
+        <span class="tape-strip" aria-hidden="true"></span>
+        <h3 class="group-label" id="qq-card-title">群内投稿</h3>
+        <div class="prose">
+          <p>QQ 群「鱼之饭盆」，群号 <span class="marker-highlight qq-number">1060898801</span>。把图发到群里并 @维护者，也算投稿。</p>
+        </div>
+        <figure class="group-qr">
+          <img src="qq-group.png" alt="QQ 群「鱼之饭盆」（群号 1060898801）的加入二维码" width="518" height="518" loading="lazy" decoding="async" />
+          <figcaption>扫码进群</figcaption>
+        </figure>
+        <button type="button" class="btn" id="btn-qq-copy">
+          <svg class="icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="8" rx="1" /><path d="M10.5 5.5v-2a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2" /></svg>
+          <span id="btn-qq-copy-text">复制群号</span>
+        </button>
+        <p class="hint">收录仍以投稿表单为准：群内投稿的图会由维护者代走表单流程，来源与授权随后补齐。</p>
+      </div>
+    </aside>
     </div>
 
     <h2 class="section-label">快速投稿入口</h2>
@@ -288,6 +353,42 @@
     });
     document.getElementById("btn-generate").disabled = true;
     document.getElementById("generate-hint").hidden = true;
+
+    // 群内投稿卡：复制群号。
+    (function () {
+      var QQ_NUMBER = "1060898801";
+      var copyBtn = document.getElementById("btn-qq-copy");
+      var copyText = document.getElementById("btn-qq-copy-text");
+      if (!copyBtn) return;
+      function done() {
+        copyText.textContent = "已复制";
+        window.setTimeout(function () { copyText.textContent = "复制群号"; }, 1600);
+      }
+      function fail() {
+        copyText.textContent = "复制失败，请手动选择";
+        window.setTimeout(function () { copyText.textContent = "复制群号"; }, 2400);
+      }
+      copyBtn.addEventListener("click", function () {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(QQ_NUMBER).then(done).catch(fail);
+          return;
+        }
+        try {
+          var ta = document.createElement("textarea");
+          ta.value = QQ_NUMBER;
+          ta.setAttribute("readonly", "");
+          ta.style.position = "fixed";
+          ta.style.opacity = "0";
+          document.body.appendChild(ta);
+          ta.select();
+          var ok = document.execCommand("copy");
+          document.body.removeChild(ta);
+          ok ? done() : fail();
+        } catch (err) {
+          fail();
+        }
+      });
+    })();
   </script>
 </body>
 </html>

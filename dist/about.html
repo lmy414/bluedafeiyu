@@ -86,6 +86,33 @@
       .group-qr { justify-self: start; }
     }
 
+    /* ---- 双栏布局：左侧正文加宽，右侧常驻交流群，填掉宽屏右侧的大片留白。
+       ≤1080px（平板及以下）退回单列，交流群回到正文流里。 ---- */
+    .about-columns {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 340px);
+      gap: var(--space-6);
+      align-items: start;
+    }
+    .about-main { min-width: 0; }
+    /* 正文卡从 34em 加宽到 84ch：减少右侧白屏，同时保持阅读行长 */
+    .about-main .about-card { max-width: var(--measure-wide); }
+    .about-aside { position: sticky; top: var(--space-5); }
+    .about-aside .section-label { margin-top: 0; }
+    /* 窄栏里交流群卡改纵向排：文字在上、二维码居中在下 */
+    .about-aside .about-card.group-card {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      max-width: none;
+    }
+    .about-aside .group-card .prose { min-width: 0; }
+    .about-aside .group-qr { align-self: center; }
+    @media (max-width: 1080px) {
+      .about-columns { grid-template-columns: 1fr; }
+      .about-aside { position: static; }
+    }
+
     .icon { flex: none; }
     .action-row { margin-top: var(--space-4); margin-bottom: 0; }
   </style>
@@ -100,6 +127,8 @@
     <h1 class="page-title">关于</h1>
     <p class="lede">蓝色大肥鱼是一个非官方同人整理项目，讲清楚它是干什么的、版权归谁、以及我们不收集你的哪些数据。</p>
 
+    <div class="about-columns">
+    <div class="about-main">
     <h2 class="section-label">关于本站</h2>
     <div class="panel about-card tilt-l">
       <div class="prose">
@@ -158,17 +187,21 @@
         </a>
       </p>
     </div>
+    </div>
 
-    <h2 class="section-label">交流群</h2>
-    <div class="panel about-card group-card tilt-l">
-      <div class="prose">
-        <p>本站的 QQ 群叫「鱼之饭盆」，群号 <span class="marker-highlight qq-number">1060898801</span>。QQ 里搜这个号码就能进；想聊图、催更、报 Bug，或者单纯过来看看鱼，都欢迎。</p>
-        <p>投稿还是走<a href="submit.html">投稿表单</a>：收录、署名和来源都在表单里留痕，好追溯；群里更适合聊图和反馈问题。</p>
+    <aside class="about-aside" aria-labelledby="about-group-title">
+      <h2 class="section-label" id="about-group-title">交流群</h2>
+      <div class="panel about-card group-card tilt-l">
+        <div class="prose">
+          <p>本站的 QQ 群叫「鱼之饭盆」，群号 <span class="marker-highlight qq-number">1060898801</span>。QQ 里搜这个号码就能进；想聊图、催更、报 Bug，或者单纯过来看看鱼，都欢迎。</p>
+          <p>投稿还是走<a href="submit.html">投稿表单</a>：收录、署名和来源都在表单里留痕，好追溯；群里更适合聊图和反馈问题。</p>
+        </div>
+        <figure class="group-qr">
+          <img src="qq-group.png" alt="QQ 群「鱼之饭盆」（群号 1060898801）的加入二维码" width="518" height="518" loading="lazy" decoding="async" />
+          <figcaption>扫码进群</figcaption>
+        </figure>
       </div>
-      <figure class="group-qr">
-        <img src="qq-group.png" alt="QQ 群「鱼之饭盆」（群号 1060898801）的加入二维码" width="518" height="518" />
-        <figcaption>扫码进群</figcaption>
-      </figure>
+    </aside>
     </div>
   </main>
   <footer class="site-footer"><p>非官方同人整理项目，图片版权归原作者所有。本站使用最小化 Google Analytics 了解页面与性能表现，不建立热度排行。</p><p><a href="changelog.html">更新日志</a> · <a href="about.html#analytics">统计与隐私</a></p></footer>
