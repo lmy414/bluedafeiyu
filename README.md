@@ -1,6 +1,6 @@
-# bluedafeiyu —— 蓝色大肥鱼站点源码
+# bluedafeiyu：蓝色大肥鱼站点源码
 
-AI 娘表情包站「蓝色大肥鱼」的**站点源码仓库**。纯静态前端：没有前端框架、没有后端、没有测试框架。零依赖构建，只用 Node 内置模块。
+AI 娘表情包站“蓝色大肥鱼”的**站点源码仓库**。纯静态前端：没有前端框架、没有后端、没有测试框架。零依赖构建，只用 Node 内置模块。
 
 站点线上地址：<https://xn--pssy23gqgbz2d718b.com>（中文域名一律用 punycode 书写）。
 
@@ -11,7 +11,7 @@ AI 娘表情包站「蓝色大肥鱼」的**站点源码仓库**。纯静态前�
 | **本站（源码）** | 手写页面、样式、生成器、构建器、发布脚本 | `lmy414/bluedafeiyu` |
 | **内容仓库** | 投稿与原图、派生图、清单、投稿/下架表单 | `lmy414/ai-girl-stickers` |
 
-本仓库**不跟踪任何图片**（`*.png`/`*.jpg`/`*.jpeg`/`*.gif`/`*.webp`/`*.ico` 全部忽略），也不跟踪从内容仓库同步进来的清单与派生资产（`dist/data/`、`dist/submissions/`、`dist/owner-picks/`、`characters.json`、`categories.json`、`blue-fish-ids.json`、`favicon.*`、`avatar.png`）和构建生成物（`dist/site-data.json/js`、`dist/sitemap.xml`、`dist/works/`）。
+本仓库**不跟踪任何图片**（`*.png`/`*.jpg`/`*.jpeg`/`*.gif`/`*.webp`/`*.ico` 全部忽略）。从内容仓库同步进来的清单与派生资产（`dist/data/`、`dist/submissions/`、`dist/owner-picks/`、`characters.json`、`categories.json`、`blue-fish-ids.json`、`favicon.*`、`avatar.png`）和构建生成物（`dist/site-data.json/js`、`dist/sitemap.xml`、`dist/works/`）也不进 git。
 
 投稿入口继续指向内容仓库的 GitHub 表单：<https://github.com/lmy414/ai-girl-stickers/issues/new?template=sticker-submission.yml>。
 投稿者只需上传图片、填写图片名称和角色，一句话说明可选；Tag、分类、来源、授权和详情页文案由维护者审核时补充。站内快速投稿和飞书通道仍未开放。
@@ -19,17 +19,17 @@ AI 娘表情包站「蓝色大肥鱼」的**站点源码仓库**。纯静态前�
 
 ## 本仓库跟踪什么
 
-- `dist/index.html`、`dist/category.html`、`dist/submit.html`、`dist/about.html`、`dist/projects.html`、`dist/changelog.html`、`dist/404.html` —— 手写页面；
+- `dist/index.html`、`dist/category.html`、`dist/submit.html`、`dist/about.html`、`dist/projects.html`、`dist/changelog.html`、`dist/404.html`：手写页面；
 - `dist/styles.css`、`dist/tokens.css`、`dist/lang.js`、`dist/analytics.js`、`dist/robots.txt`、`dist/google653ce5fe960a5fb0.html`；
-- `tools/` —— 内容同步、快照、详情页生成、sitemap、构建、模板校验；
-- `ops/` —— 服务器侧发布 / 回滚脚本；
-- `archive/2026-09-24/` —— 改造前的历史文档副本。
+- `tools/`：内容同步、快照、详情页生成、sitemap、构建、模板校验；
+- `ops/`：服务器侧发布 / 回滚脚本；
+- `archive/2026-09-24/`：改造前的历史文档副本。
 
 `dist/works/<slug>.html` 是生成物，别手改。
 
 ## 多语言（zh 默认 / en / ja）
 
-站点界面支持中文（默认）、英语、日语三种语言，由零依赖的 `dist/lang.js` 承担：词典 + 运行时 + 顶栏「中 / EN / 日」切换贴纸（自动注入 `header .topnav` 末尾）。语言取值优先级：URL `?lang=`（会记住）→ `localStorage`（key `bluedafeiyu-lang`）→ 浏览器语言 → zh；切换时 `<html lang>`、页面 title 与 meta 描述同步更新，详情页动态文案监听 `site:langchange` 重渲染。
+站点界面支持中文（默认）、英语、日语三种语言，由零依赖的 `dist/lang.js` 承担：词典 + 运行时 + 顶栏“中 / EN / 日”切换贴纸（自动注入 `header .topnav` 末尾）。语言取值优先级：URL `?lang=`（会记住）→ `localStorage`（key `bluedafeiyu-lang`）→ 浏览器语言 → zh。切换时 `<html lang>`、页面 title 与 meta 描述同步更新；详情页动态文案监听 `site:langchange` 重渲染。
 
 约定（`lang.js` 头部注释也有一份）：
 
@@ -54,11 +54,11 @@ CONTENT_DIR=/path/to/ai-girl-stickers node tools/build_site.mjs
 
 `tools/build_site.mjs` 顺序执行：
 
-1. `tools/sync_content.mjs` —— 从内容仓库把清单 / 派生图 / `data/` 同步进本仓库 `dist/`（只覆盖清单内的目标，缺文件即报错）；
-2. `tools/build_site_snapshot.mjs` —— 归一成 `dist/site-data.json` + `dist/site-data.js`；
-3. `tools/generate_work_pages.mjs` —— 幂等生成 250 个 `dist/works/<slug>.html`；
-4. `tools/generate_sitemap.mjs` —— 生成 `dist/sitemap.xml`；
-5. `tools/build.mjs` —— 把 `dist/` 复制成干净发布产物，跳过 `dist/data/` 与 `dist/submissions/originals/`，并对清单、派生图、详情页、投稿模板下拉做断言。
+1. `tools/sync_content.mjs`：从内容仓库把清单 / 派生图 / `data/` 同步进本仓库 `dist/`（只覆盖清单内的目标，缺文件即报错）；
+2. `tools/build_site_snapshot.mjs`：归一成 `dist/site-data.json` + `dist/site-data.js`；
+3. `tools/generate_work_pages.mjs`：幂等生成 250 个 `dist/works/<slug>.html`；
+4. `tools/generate_sitemap.mjs`：生成 `dist/sitemap.xml`；
+5. `tools/build.mjs`：把 `dist/` 复制成干净发布产物，跳过 `dist/data/` 与 `dist/submissions/originals/`，并对清单、派生图、详情页、投稿模板下拉做断言。
 
 **不会**在构建期调用内容仓库的 `tools/prepare_works.mjs`：slug 与 id 一经发布即冻结，绝不能重算。
 
@@ -85,7 +85,7 @@ python -m http.server 5173 -d .build/site   # 打开 http://127.0.0.1:5173
 - **列表增量渲染（分页加载）**：`dist/index.html` 与 `dist/category.html` 的状态变化（首页搜索 /
   排序、分类页角色 / 类型 / 关键词）不再一次性把所有卡片和图片插进 DOM，只先渲染首批 24 张，
   滚动接近底部时由 `IntersectionObserver` 追加下一批。分类页全程复用同一个 observer（回调读取
-  当前结果与已渲染数，筛选变化只清空网格并重置批次，不会新建 observer）；同时保留始终可见的「加载更多」按钮，
+  当前结果与已渲染数，筛选变化只清空网格并重置批次，不会新建 observer）；同时保留始终可见的“加载更多”按钮，
   并用接近底部的 passive scroll 做 WebView 兜底，三条路径都仍然首批起步、绝不一次性全量渲染。首批前 6 张 `eager`、
   第一张 `fetchpriority="high"`，续接批次一律 `lazy`；结果计数仍是完整命中的元数据，不受
   已渲染数量影响。
@@ -104,12 +104,12 @@ python -m http.server 5173 -d .build/site   # 打开 http://127.0.0.1:5173
 三处和普通页面不同，改它之前先看一眼：
 
 - **页内链接与静态资源一律用站点根绝对路径**（`/styles.css`、`/index.html`）。nginx 的 `error_page` 会在任意目录深度回发这个文件，`/works/xxx.html` 下面用相对路径会解析成 `/works/styles.css`。
-- **状态码保持 404**：`error_page 404 /404.html;` 不带 `=200`，页面自带 `<meta name="robots" content="noindex,follow">` 退出索引；也刻意不往 `robots.txt` 加 `Disallow`——挡住了爬虫就看不到那条 noindex。
+- **状态码保持 404**：`error_page 404 /404.html;` 不带 `=200`，页面自带 `<meta name="robots" content="noindex,follow">` 退出索引；也刻意不往 `robots.txt` 加 `Disallow`，挡住了爬虫就看不到那条 noindex。
 - **不引 `site-data.js`**：这页没有任何列表逻辑，白拉一份全站清单没意义（同 `about.html`）。
 
 `tools/build.mjs` 把 `404.html` 列进必需文件，`ops/deploy-server.sh` 也会在产物校验里确认它在，缺了直接构建 / 发布失败。
 
-线上接管这一页要人工把 `ops/nginx-performance.conf` 里的 `error_page 404 /404.html;` include 进 `server {}` 并 `nginx -t && nginx -s reload`（发布脚本只跑 `nginx -t`，不会替你 reload）。没接上也不会用错状态码，只是回到 nginx 默认错误页。发布脚本会在健康检查后回读一个不存在的地址，把「自定义 404 是否已生效」写进 `logs/deploy.log`——这一条只提示、不影响发布结果。
+线上接管这一页要人工把 `ops/nginx-performance.conf` 里的 `error_page 404 /404.html;` include 进 `server {}` 并 `nginx -t && nginx -s reload`（发布脚本只跑 `nginx -t`，不会替你 reload）。没接上也不会用错状态码，只是回到 nginx 默认错误页。发布脚本会在健康检查后回读一个不存在的地址，把“自定义 404 是否已生效”写进 `logs/deploy.log`。这一条只提示，不影响发布结果。
 
 ## 发布产物 gzip 预压缩（正式发布默认开启）
 
@@ -129,11 +129,11 @@ npm run compress:write -- --dir .build/site
 
 发布脚本内置了这个开关且**默认开启**：`ops/deploy-server.sh` 在 `build_site.mjs` 成功后、
 `chmod` / 删 `.build-output` / `cp -al data` 之前，自动对 staging 产物跑一次
-`node tools/compress_static.mjs --dir <staging>/site --precompress`；预压缩失败则中止发布、
+`node tools/compress_static.mjs --dir <staging>/site --precompress`。预压缩失败则中止发布，
 `current` 保持不变。想关闭就显式设 `PRECOMPRESS=0`（或 `false`/`no`/`off`，大小写均可），
 也能写在 `DEPLOY_ENV` 配置文件里。
 
-**注意**：脚本只负责生成 `.gz`，**不会自动改服务器 nginx 配置**。正式发布默认会在产物里生成
+**注意**：脚本只负责生成 `.gz`，不会自动改服务器 nginx 配置。正式发布默认会在产物里生成
 `.gz`，且 `ops/nginx-performance.conf` 里已启用 `gzip_static on`；但仍需由人工把该片段 include
 进服务器 `server {}` 块并 `nginx -t` / reload 才会真正回发 `.gz`（不再需要手动取消注释）。没有
 include 时也没关系：那些 `.gz` 只是发布包里多出的文件，nginx 照常回源文件并实时 gzip，站点行为

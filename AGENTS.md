@@ -4,7 +4,7 @@
 
 ## 这是什么项目
 
-「蓝色大肥鱼」是 AI 娘二创表情包站，纯静态前端：手写 HTML / CSS / JS，没有前端框架、没有后端、没有第三方依赖。
+“蓝色大肥鱼”是 AI 娘二创表情包站，纯静态前端：手写 HTML / CSS / JS，没有前端框架、没有后端、没有第三方依赖。
 
 源码与内容分成两个仓库：
 
@@ -21,10 +21,10 @@
 
 历史文档已归档到 `archive/2026-09-24/`：
 
-- `架构边界.md` —— 分层边界与硬性规则；
-- `数据契约.md` —— 字段与枚举的唯一来源；
-- `docs/SEO规范.md` —— 详情页文案与结构化数据口径；
-- `docs/维护与发布.md` —— 发布拓扑与 `ops/` 脚本细节。
+- `架构边界.md`：分层边界与硬性规则；
+- `数据契约.md`：字段与枚举的唯一来源；
+- `docs/SEO规范.md`：详情页文案与结构化数据口径；
+- `docs/维护与发布.md`：发布拓扑与 `ops/` 脚本细节。
 
 归档文档记录的是仓库拆分前的单仓库形态，与现状冲突时以本文件和实际代码为准。
 
@@ -39,16 +39,16 @@ python -m http.server 5173 -d .build/site        # 打开 http://127.0.0.1:5173
 
 `dist/works/<slug>.html` 是生成物，不要手改；改版式改 `tools/generate_work_pages.mjs` 再重跑。也不要在构建期跑内容仓库的 `prepare_works.mjs`：`id` 和 `slug` 一经发布即冻结。
 
-详情页的正文段（H1 下那段）**整段是内容数据**，不是模板：取清单里的 `commentary`（蓝色大肥鱼第一人称评价），缺字段才退兜底句；要改某一页的正文，改内容仓库的清单，不要改生成器。分类枚举同理走内容仓库的 `categories.json`，加分类不用动代码——但新增分类要同时补 `generate_work_pages.mjs` 的 `KIND_WORDS`、`index.html` 与 `category.html` 里那份 `kindWord` 映射（前端卡片 alt 用），漏了会静默退成「表情包」。
+详情页的正文段（H1 下那段）**整段是内容数据**，不是模板：取清单里的 `commentary`（蓝色大肥鱼第一人称评价），缺字段才退兜底句；要改某一页的正文，改内容仓库的清单，不要改生成器。分类枚举同理走内容仓库的 `categories.json`，加分类不用动代码，但新增分类要同时补 `generate_work_pages.mjs` 的 `KIND_WORDS`、`index.html` 与 `category.html` 里那份 `kindWord` 映射（前端卡片 alt 用），漏了会静默退成“表情包”。
 
-**界面是三语的**（zh 默认 / en / ja），由零依赖的 `dist/lang.js` 承担：en/ja 词典 + 运行时 + 顶栏切换贴纸。zh 不进词典——页面原文与 JS 兜底串就是中文，运行时缓存原文、切回即还原。静态文案挂 `data-i18n`，动态文案调 `SiteLang.fmt(key, 中文兜底)`，页面级 title/meta 挂 `body[data-i18n-page]`；详情页模板的 i18n 写在 `generate_work_pages.mjs`。**作品名、Tag、commentary 是内容数据，三语保持中文**；新增界面 key 时 en/ja 两份都要补（漏了静默退中文）。完整约定见 README「多语言」一节与 `lang.js` 头部注释。
+**界面是三语的**（zh 默认 / en / ja），由零依赖的 `dist/lang.js` 承担：en/ja 词典 + 运行时 + 顶栏切换贴纸。zh 不进词典：页面原文与 JS 兜底串就是中文，运行时缓存原文、切回即还原。静态文案挂 `data-i18n`，动态文案调 `SiteLang.fmt(key, 中文兜底)`，页面级 title/meta 挂 `body[data-i18n-page]`；详情页模板的 i18n 写在 `generate_work_pages.mjs`。**作品名、Tag、commentary 是内容数据，三语保持中文**；新增界面 key 时 en/ja 两份都要补（漏了静默退中文）。完整约定见 README“多语言”一节与 `lang.js` 头部注释。
 
-首批（blue-fish）记录的归一有两条容易踩的线：`build_site_snapshot.mjs` **先合并 `data/blue-fish-editorial.json` 叠加层、再判「够不够格当作品」**（名字 / 标签 / 角色三者齐全），顺序反了那 59 条补过名字的记录会重新掉线；叠加层里带 `originalPath` 的记录原图走本内容仓的 Raw，没带的仍指上游档案馆。
+首批（blue-fish）记录的归一有两条容易踩的线：`build_site_snapshot.mjs` **先合并 `data/blue-fish-editorial.json` 叠加层，再判“够不够格当作品”**（名字 / 标签 / 角色三者齐全）。顺序反了，那 59 条补过名字的记录会重新掉线；叠加层里带 `originalPath` 的记录原图走本内容仓的 Raw，没带的仍指上游档案馆。
 
 ## Git 流程
 
-1. 从最新 `main` 开功能分支，用 `feat/` / `fix/` / `docs/` / `chore/` 前缀；
-2. **显式列文件名暂存，禁止 `git add -A` / `git add .`**；
+1. 从最新 `main` 开功能分支，用 `feat/`、`fix/`、`docs/`、`chore/` 前缀；
+2. **显式列文件名暂存，禁止 `git add -A` 和 `git add .`**；
 3. 本地构建过一遍，并起服务在浏览器里验收；
 4. 提交信息用前缀 + 中文简述；
 5. 推送功能分支，复核后快进 `main` 再推送。
@@ -58,7 +58,7 @@ python -m http.server 5173 -d .build/site        # 打开 http://127.0.0.1:5173
 **每次更新都由服务器从 GitHub 拉取，不要本地上传。**
 
 - 先推送 `origin/main`；**推送不等于发布**；
-- 发布在服务器侧跑 `ops/deploy-server.sh` 的**副本**（脚本会 `git fetch` + `reset --hard origin/main`，直接跑工作树里的脚本会被它自己替换掉）；
+- 发布在服务器侧跑 `ops/deploy-server.sh` 的**副本**（脚本会先 `git fetch` 加 `reset --hard origin/main`。直接跑工作树里的这份脚本，`reset --hard` 会在运行中把它替换掉）；
 - 发布脚本分别拉取代码仓与内容仓的 `main`，构建、预压缩、原子切换 `current`，健康检查失败自动回滚；
 - 不要用面板上传整包，也不要直接改服务器上的站点文件；
 - 回滚用 `ops/rollback-server.sh <release目录名>`，只切软链、不删文件；
