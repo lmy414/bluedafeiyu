@@ -1,0 +1,9 @@
+# 换行约定
+#
+# ops/ 下的发布脚本跑在 Linux 服务器上（docs/维护与发布.md §3.6：复制成
+# $DEPLOY_ROOT/.deploy-runner.sh 再执行）。带 CRLF 的副本会让 bash 直接报
+#   $'\r': command not found
+#   set: pipefail: invalid option name
+# 脚本因此立即退出、发布根本起不来——2026-09-25 实操踩到过一次。
+# 这里锁死 shell 脚本用 LF，别再让它随本地编辑器变回 CRLF。
+*.sh text eol=lf
