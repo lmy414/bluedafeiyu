@@ -18,7 +18,7 @@ AI 娘表情包站「蓝色大肥鱼」的**站点源码仓库**。纯静态前�
 
 ## 本仓库跟踪什么
 
-- `dist/index.html`、`dist/category.html`、`dist/submit.html`、`dist/about.html`、`dist/projects.html`、`dist/changelog.html` —— 手写页面；
+- `dist/index.html`、`dist/category.html`、`dist/submit.html`、`dist/about.html`、`dist/projects.html`、`dist/changelog.html`、`dist/404.html` —— 手写页面；
 - `dist/styles.css`、`dist/tokens.css`、`dist/analytics.js`、`dist/robots.txt`、`dist/google653ce5fe960a5fb0.html`；
 - `tools/` —— 内容同步、快照、详情页生成、sitemap、构建、模板校验；
 - `ops/` —— 服务器侧发布 / 回滚脚本；
@@ -83,6 +83,20 @@ python -m http.server 5173 -d .build/site   # 打开 http://127.0.0.1:5173
 
 `dist/works/*.html` 仍是生成物：改版式要改 `tools/generate_work_pages.mjs` 再重新构建。
 
+## 自定义 404 页
+
+`dist/404.html` 是手写页面，和别的页面一样是纸卡 + 便签的手绘风，内容是大号 404、可能原因清单和三个出口（首页 / 分类 / 投稿）。
+
+三处和普通页面不同，改它之前先看一眼：
+
+- **页内链接与静态资源一律用站点根绝对路径**（`/styles.css`、`/index.html`）。nginx 的 `error_page` 会在任意目录深度回发这个文件，`/works/xxx.html` 下面用相对路径会解析成 `/works/styles.css`。
+- **状态码保持 404**：`error_page 404 /404.html;` 不带 `=200`，页面自带 `<meta name="robots" content="noindex,follow">` 退出索引；也刻意不往 `robots.txt` 加 `Disallow`——挡住了爬虫就看不到那条 noindex。
+- **不引 `site-data.js`**：这页没有任何列表逻辑，白拉一份全站清单没意义（同 `about.html`）。
+
+`tools/build.mjs` 把 `404.html` 列进必需文件，`ops/deploy-server.sh` 也会在产物校验里确认它在，缺了直接构建 / 发布失败。
+
+线上接管这一页要人工把 `ops/nginx-performance.conf` 里的 `error_page 404 /404.html;` include 进 `server {}` 并 `nginx -t && nginx -s reload`（发布脚本只跑 `nginx -t`，不会替你 reload）。没接上也不会用错状态码，只是回到 nginx 默认错误页。发布脚本会在健康检查后回读一个不存在的地址，把「自定义 404 是否已生效」写进 `logs/deploy.log`——这一条只提示、不影响发布结果。
+
 ## 发布产物 gzip 预压缩（正式发布默认开启）
 
 `tools/compress_static.mjs` 用 Node 内置 zlib 给发布产物里的 html/css/js/json/xml/svg/txt
@@ -111,10 +125,10 @@ npm run compress:write -- --dir .build/site
 include 时也没关系：那些 `.gz` 只是发布包里多出的文件，nginx 照常回源文件并实时 gzip，站点行为
 不变。
 
-`ops/nginx-performance.conf` 是可 include 进现有 `server {}` 块的最小 nginx 片段，当前只补
-`gzip_static on;`；现有 vhost 继续负责 gzip、gzip_types 与缓存分层，避免重复指令冲突。
-正式发布默认生成 `.gz`，人工 include 后执行 `nginx -t` / reload 即会优先回发预压缩文件；缺少 `.gz`
-时仍由已有 `gzip on` 实时压缩兜底。Brotli 暂不启用。
+`ops/nginx-performance.conf` 是可 include 进现有 `server {}` 块的最小 nginx 片段，当前补两件事：
+`gzip_static on;` 与自定义 404 的 `error_page 404 /404.html;`（后者见上一节）。现有 vhost 继续负责
+gzip、gzip_types 与缓存分层，避免重复指令冲突。正式发布默认生成 `.gz`，人工 include 后执行
+`nginx -t` / reload 即会优先回发预压缩文件；缺少 `.gz` 时仍由已有 `gzip on` 实时压缩兜底。Brotli 暂不启用。
 
 ## 发布
 

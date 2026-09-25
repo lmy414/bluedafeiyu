@@ -103,6 +103,8 @@ const REQUIRED_FILES = [
   "about.html",
   "projects.html",
   "changelog.html",
+  // 自定义 404：产物里缺了它，线上会退回 nginx 的默认错误页（还是 404，但样子不对）。
+  "404.html",
   "styles.css",
   "tokens.css",
   "robots.txt",

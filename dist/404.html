@@ -1,0 +1,122 @@
+<!doctype html>
+<!-- blue-fish-404：发布脚本回读线上 404 时按这个标记确认回发的是本站自定义页 -->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 页面走丢了 - 蓝色大肥鱼</title>
+  <meta name="description" content="蓝色大肥鱼的 404 页面：这个地址底下没有内容，可能是链接抄错、作品已下架或旧地址失效，可以回首页或按分类继续找。" />
+  <!-- 404 不该进索引：靠 noindex 让它退出搜索结果，而不是用 robots.txt 挡住（挡住了爬虫就看不到这条 noindex）。 -->
+  <meta name="robots" content="noindex,follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="蓝色大肥鱼" />
+  <meta property="og:title" content="404 页面走丢了 - 蓝色大肥鱼" />
+  <meta property="og:description" content="蓝色大肥鱼的 404 页面：这个地址底下没有内容，可能是链接抄错、作品已下架或旧地址失效，可以回首页或按分类继续找。" />
+  <meta property="og:image" content="https://xn--pssy23gqgbz2d718b.com/favicon.png" />
+  <meta property="og:url" content="https://xn--pssy23gqgbz2d718b.com/404.html" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="stylesheet" href="/tokens.css?v=14" />
+  <link rel="stylesheet" href="/styles.css?v=18" />
+  <style>
+    /* 404 专属样式：便签纸卡 + 手写大号 404 + 出口按钮排布。
+       公共组件（.panel / .btn / .marker-highlight / .tape-strip / .plain-list / .note）已在 styles.css，此处不重复。
+       颜色 / 字号 / 间距 / 圆角 / 阴影只用变量，禁止硬编码色值。
+
+       本页是本仓库唯一全用站点根绝对路径（/xxx）的页面，别改成相对路径：
+       nginx 的 error_page 会在任意目录深度回发它（/works/xxx.html 也在内），
+       相对路径到了那一层会解析成 /works/tokens.css 这种不存在的地址。 */
+
+    /* ---- 便签纸卡：贴在网格纸上的大便签，卡内文字居中，整卡跟随站点左对齐列 ---- */
+    .lost-card {
+      max-width: var(--measure-base);
+      padding: var(--space-7) var(--space-5);
+      background: var(--sticky-1);
+      text-align: center;
+      transform: rotate(-0.6deg);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .lost-card:hover {
+      transform: rotate(0) translate(-2px, -2px);
+      box-shadow: var(--shadow-paper-lg);
+    }
+
+    /* ---- 手写大号 404：本页唯一的大字号，沿用首页 hero 的 calc 写法 ---- */
+    .lost-code {
+      margin: 0 0 var(--space-2);
+      font-family: var(--font-marker);
+      font-weight: normal;
+      font-size: calc(var(--text-hero) * 2.2);
+      line-height: var(--leading-tight);
+      letter-spacing: var(--tracking-wide);
+    }
+    .lost-text {
+      margin: 0;
+      font-family: var(--font-hand);
+      font-weight: normal;
+      font-size: var(--text-xl);
+    }
+
+    /* ---- 出口：主页与分类是主路径，投稿放旁边 ---- */
+    .lost-exits {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      margin: var(--space-6) 0 0;
+    }
+
+    /* ---- 可能原因清单 ---- */
+    .lost-reasons {
+      max-width: var(--measure-base);
+      margin: var(--space-6) 0 0;
+    }
+    .lost-reasons .plain-list { margin: 0; }
+
+    @media (max-width: 760px) {
+      .lost-exits .btn { flex: 1 1 auto; justify-content: center; }
+    }
+  </style>
+  <script src="/analytics.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/index.html"><span class="brand-mark"><img src="/avatar.png" alt="" /></span><span class="brand-text"><strong>蓝色大肥鱼</strong><small>AI 娘表情包开放档案</small></span></a>
+    <nav class="topnav"><a href="/index.html">首页</a><a href="/category.html">分类</a><a href="/submit.html">投稿</a><a href="/about.html">关于</a><a href="/projects.html">推荐</a></nav>
+  </header>
+  <main class="page">
+    <h1 class="page-title">404 · 这条鱼没找到</h1>
+    <p class="lede">这个地址底下是空的：链接可能抄错了，作品可能已经下架，也可能它压根还没收进来。</p>
+
+    <div class="panel lost-card">
+      <span class="tape-strip" aria-hidden="true"></span>
+      <p class="lost-code">404</p>
+      <p class="lost-text">我翻遍了整个鱼塘，也没捞到你要的那张图。</p>
+    </div>
+
+    <div class="lost-reasons">
+      <h2 class="section-label">大概是这几种情况</h2>
+      <ul class="plain-list">
+        <li>地址抄漏或抄错了一个字符——作品详情页的地址长这样：<span class="term">/works/作品slug.html</span>。</li>
+        <li>这张作品被作者要求下架了，已经从站上撤掉。</li>
+        <li>你点的是改版前的旧地址，页面换了位置；首页、分类和更新日志都还在。</li>
+      </ul>
+    </div>
+
+    <div class="lost-exits">
+      <a class="btn primary hover-wiggle" href="/index.html">
+        <svg class="icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 7 8 2.5 13.5 7" /><path d="M3.75 6.5V13.5H12.25V6.5" /></svg>
+        回首页看看
+      </a>
+      <a class="btn" href="/category.html">
+        <svg class="icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h7" /></svg>
+        按角色或分类翻
+      </a>
+      <a class="btn" href="/submit.html">手上有图，顺便投一张</a>
+    </div>
+
+    <p class="note">如果这个地址是从站内点进来的，那就是我挂错了，欢迎到 <a href="https://github.com/lmy414/ai-girl-stickers/issues" target="_blank" rel="noopener">GitHub Issues</a> 说一声。</p>
+  </main>
+  <footer class="site-footer"><p>非官方同人整理项目，图片版权归原作者所有。本站使用最小化 Google Analytics 了解页面与性能表现，不建立热度排行。</p><p><a href="/changelog.html">更新日志</a> · <a href="/about.html#analytics">统计与隐私</a></p></footer>
+</body>
+</html>

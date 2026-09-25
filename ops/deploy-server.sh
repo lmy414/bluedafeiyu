@@ -226,6 +226,7 @@ cp -al "${SHARED_DATA_DIR}" "${STAGING_DIR}/site/data"
 
 for required in \
   "${STAGING_DIR}/site/index.html" \
+  "${STAGING_DIR}/site/404.html" \
   "${STAGING_DIR}/site/data/blue-fish-classification.json" \
   "${STAGING_DIR}/site/submissions/works.json" \
   "${STAGING_DIR}/site/site-data.json" \
@@ -235,7 +236,7 @@ for required in \
     die "产物缺少必需文件：${required}"
   fi
 done
-log "产物校验通过：首页 / 首批数据 / 投稿清单 / site-data / sitemap / Google 验证文件均存在"
+log "产物校验通过：首页 / 自定义 404 / 首批数据 / 投稿清单 / site-data / sitemap / Google 验证文件均存在"
 
 # ---------------------------------------------------------------- nginx
 
@@ -341,6 +342,23 @@ fi
 if [ -n "${HEALTH_FAILED}" ]; then
   restore_current
   die "健康检查失败于 ${HEALTH_FAILED}，current 已回滚到 ${OLD_TARGET:-（无）}"
+fi
+
+# ------------------------------------------------- 自定义 404 回读（只提示，绝不判失败）
+# 线上 404 由 ops/nginx-performance.conf 的 `error_page 404 /404.html;` 接管，而那句要人工
+# include 进 server{} 再 nginx -s reload 才生效 —— 发布脚本只跑 nginx -t，不会替人 reload。
+# 这里回读一个必然不存在的地址，把「片段还没生效」这件事写进日志：
+# 产物里 404.html 本身上面已经校验过了，退回 nginx 默认错误页只是样子不对，
+# 所以这里只 log 不 die，不能让一次正常发布因为还没 reload 而回滚。
+NOTFOUND_URL="${HEALTH_URL}/__deploy_404_probe__-${STAMP}"
+NOTFOUND_CODE="$(curl -sS -o /dev/null -w '%{http_code}' --max-time 20 "${NOTFOUND_URL}" || echo '000')"
+NOTFOUND_BODY="$(curl -sS --max-time 20 "${NOTFOUND_URL}" 2>/dev/null || true)"
+if [ "${NOTFOUND_CODE}" != "404" ]; then
+  log "提示：不存在地址回读为 ${NOTFOUND_CODE}（期望 404），本次未验证自定义 404 页"
+elif [[ "${NOTFOUND_BODY}" == *"blue-fish-404"* ]]; then
+  log "自定义 404 已生效：不存在的地址返回 404 且回发站点自己的 404.html"
+else
+  log "提示：不存在的地址返回 404，但回发的不是自定义 404.html —— 确认 ops/nginx-performance.conf 里的 error_page 已 include 进 server{} 并 nginx -s reload"
 fi
 
 # 统计命令只用于收尾日志，放在健康检查通过之后且非致命：
