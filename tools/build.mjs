@@ -113,6 +113,8 @@ const REQUIRED_FILES = [
   "google653ce5fe960a5fb0.html",
   "favicon.png",
   "avatar.png",
+  // 关于页「交流群」的 QQ 群二维码（内容仓库同步进来，见 tools/sync_content.mjs）
+  "qq-group.png",
   "characters.json",
   "categories.json",
   "blue-fish-ids.json",

@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>关于蓝色大肥鱼 - AI娘表情包开放档案与版权说明</title>
-  <meta name="description" content="了解蓝色大肥鱼 AI娘表情包开放档案、图片版权与授权、Google Analytics 统计隐私、评论机制、角色设计致谢和删除申请方式。" />
+  <meta name="description" content="了解蓝色大肥鱼 AI娘表情包开放档案、图片版权与授权、Google Analytics 统计隐私、评论机制、官方 QQ 交流群、角色设计致谢和删除申请方式。" />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://xn--pssy23gqgbz2d718b.com/about.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="蓝色大肥鱼" />
   <meta property="og:title" content="关于蓝色大肥鱼 - AI娘表情包开放档案与版权说明" />
-  <meta property="og:description" content="了解蓝色大肥鱼 AI娘表情包开放档案、图片版权与授权、Google Analytics 统计隐私、评论机制、角色设计致谢和删除申请方式。" />
+  <meta property="og:description" content="了解蓝色大肥鱼 AI娘表情包开放档案、图片版权与授权、Google Analytics 统计隐私、评论机制、官方 QQ 交流群、角色设计致谢和删除申请方式。" />
   <meta property="og:url" content="https://xn--pssy23gqgbz2d718b.com/about.html" />
   <meta property="og:image" content="https://xn--pssy23gqgbz2d718b.com/favicon.png" />
   <meta name="twitter:card" content="summary" />
@@ -45,6 +45,45 @@
       font-family: var(--font-hand);
       font-size: var(--text-md);
       font-weight: var(--weight-bold);
+    }
+
+    /* ---- 群号：等宽体放大加粗，一眼能抄准；不加复制按钮，免得为一行静态内容引脚本 ---- */
+    .qq-number {
+      font-family: var(--font-mono);
+      font-size: var(--text-xl);
+      font-weight: var(--weight-bold);
+      letter-spacing: var(--tracking-wide);
+    }
+
+    /* ---- 交流群卡：左文右码，窄屏（站点既有 760px 断点）堆成上下；二维码图来自
+       内容仓库同步（dist/qq-group.png，站点仓不跟踪图片），当纸片贴在卡里。 ---- */
+    .about-card.group-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: var(--space-5);
+      max-width: var(--measure-wide);
+    }
+    .group-card .prose { min-width: 0; }
+    .group-qr {
+      margin: 0;
+      padding: var(--space-2);
+      background: var(--paper-card);
+      border: 2px solid var(--ink);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-paper-sm);
+      text-align: center;
+    }
+    .group-qr img { display: block; width: 168px; height: auto; }
+    .group-qr figcaption {
+      margin-top: var(--space-1);
+      font-family: var(--font-hand);
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+    }
+    @media (max-width: 760px) {
+      .about-card.group-card { grid-template-columns: minmax(0, 1fr); }
+      .group-qr { justify-self: start; }
     }
 
     .icon { flex: none; }
@@ -118,6 +157,18 @@
         打开署名与删除申请
         </a>
       </p>
+    </div>
+
+    <h2 class="section-label">交流群</h2>
+    <div class="panel about-card group-card tilt-l">
+      <div class="prose">
+        <p>本站的 QQ 群叫「鱼之饭盆」，群号 <span class="marker-highlight qq-number">1060898801</span>。QQ 里搜这个号码就能进；想聊图、催更、报 Bug，或者单纯过来看看鱼，都欢迎。</p>
+        <p>投稿还是走<a href="submit.html">投稿表单</a>：收录、署名和来源都在表单里留痕，好追溯；群里更适合聊图和反馈问题。</p>
+      </div>
+      <figure class="group-qr">
+        <img src="qq-group.png" alt="QQ 群「鱼之饭盆」（群号 1060898801）的加入二维码" width="518" height="518" />
+        <figcaption>扫码进群</figcaption>
+      </figure>
     </div>
   </main>
   <footer class="site-footer"><p>非官方同人整理项目，图片版权归原作者所有。本站使用最小化 Google Analytics 了解页面与性能表现，不建立热度排行。</p><p><a href="changelog.html">更新日志</a> · <a href="about.html#analytics">统计与隐私</a></p></footer>

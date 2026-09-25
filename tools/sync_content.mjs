@@ -47,6 +47,9 @@ const SYNC_FILE_TARGETS = [
   "favicon.ico",
   "favicon.png",
   "avatar.png",
+  // 关于页「交流群」用的 QQ 群二维码。站点页面上出现的图都归内容仓库管，
+  // 本仓库不跟踪任何图片，所以它和 favicon.png / avatar.png 走同一条同步链。
+  "qq-group.png",
 ];
 
 // 从内容仓库**根目录**（不是它的 dist/）同步到本仓库 dist/ 的单个文件。
