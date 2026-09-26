@@ -1,6 +1,6 @@
 # bluedafeiyu：蓝色大肥鱼站点源码
 
-AI 娘表情包站“蓝色大肥鱼”的**站点源码仓库**。纯静态前端：没有前端框架、没有后端、没有测试框架。零依赖构建，只用 Node 内置模块。
+AI 娘表情包站“蓝色大肥鱼”的**站点源码仓库**。前端仍是**纯静态**的：手写 HTML / CSS / JS，没有前端框架、没有前端运行时依赖，构建零依赖、只用 Node 内置模块。站点仓另外带两段服务端程序——`server/`（统一投稿服务，收网页 / QQ / GitHub Issue 三种来源）与 `tools/intake/`（维护者收录中转）；它们都只在内地服务器本地运行，**线上尚未开通**，前端本身依旧是静态站点。
 
 站点线上地址：<https://xn--pssy23gqgbz2d718b.com>（中文域名一律用 punycode 书写）。
 
@@ -8,22 +8,27 @@ AI 娘表情包站“蓝色大肥鱼”的**站点源码仓库**。纯静态前�
 
 | 仓库 | 内容 | 地址 |
 | --- | --- | --- |
-| **本站（源码）** | 手写页面、样式、生成器、构建器、发布脚本 | `lmy414/bluedafeiyu` |
-| **内容仓库** | 投稿与原图、派生图、清单、投稿/下架表单 | `lmy414/ai-girl-stickers` |
+| **本站（源码）** | 手写页面、样式、生成器、构建器、发布脚本、`data/` 结构化清单、全部自动化脚本，以及 `server/` 统一投稿服务与 `tools/intake/` 收录中转 | `lmy414/bluedafeiyu` |
+| **内容仓库** | 图片（投稿原图、派生图、站点图标、QQ 群二维码）与投稿 / 下架表单 | `lmy414/ai-girl-stickers` |
 
-本仓库**不跟踪任何图片**（`*.png`/`*.jpg`/`*.jpeg`/`*.gif`/`*.webp`/`*.ico` 全部忽略）。从内容仓库同步进来的清单与派生资产（`dist/data/`、`dist/submissions/`、`dist/owner-picks/`、`characters.json`、`categories.json`、`blue-fish-ids.json`、`favicon.*`、`avatar.png`）和构建生成物（`dist/site-data.json/js`、`dist/sitemap.xml`、`dist/works/`）也不进 git。
+本仓库**不跟踪任何图片**（`*.png`/`*.jpg`/`*.jpeg`/`*.gif`/`*.webp`/`*.ico` 全部忽略），但**跟踪结构化数据**：角色、分类、投稿清单、id 冻结映射与首批编辑叠加层都在仓库根的 `data/`（`characters.json`、`categories.json`、`blue-fish-ids.json`、`works.json`、`owner-picks.json`、`blue-fish-classification.json`、`blue-fish-editorial.json`）。构建时 `data/` 由 `tools/stage_data.mjs` 暂存成 `dist/` 下的产物路径，图片由 `tools/sync_content.mjs` 从内容仓库同步；**构建不读内容仓库的任何 JSON 或脚本**。`dist/data/blue-fish/previews/` 是**从内容仓库同步进来的首批预览图**；`dist/data/blue-fish-classification.json` 与 `dist/data/blue-fish-editorial.json` 则是**站点仓 `data/` 的清单暂存副本**，只在构建期被读取，**不进发布包**（`tools/build.mjs` 跳过整个 `dist/data/`，线上的首批预览图由 `DEPLOY_ROOT/shared/data` 持久副本提供）。从内容仓库同步进来的其余图片与模板副本（`dist/submissions/`、`dist/owner-picks/`、`favicon.*`、`avatar.png`、`qq-group.png`、`dist/.github/`）和构建生成物（`dist/site-data.json/js`、`dist/sitemap.xml`、`dist/works/`）也不进 git。
 
 投稿入口继续指向内容仓库的 GitHub 表单：<https://github.com/lmy414/ai-girl-stickers/issues/new?template=sticker-submission.yml>。
-投稿者只需上传图片、填写图片名称和角色，一句话说明可选；Tag、分类、来源、授权和详情页文案由维护者审核时补充。站内快速投稿和飞书通道仍未开放。
-原图继续走内容仓库的 GitHub Raw URL，路径不随本次拆分改变。
+投稿者只需上传图片、填写图片名称和角色，一句话说明可选；Tag、分类、来源、授权和详情页文案由维护者审核时补充。站内投稿服务（`server/`）已在站点仓实现、可本地运行，但**线上尚未开通**，前端仍是静态站点；飞书通道同样未开放。
+原图继续走内容仓库的 GitHub Raw URL，路径不随本次拆分改变。投稿表单里的角色下拉由本仓库的 `tools/sync_issue_template.mjs` 从 `data/characters.json` 生成（见下）。
 
 ## 本仓库跟踪什么
 
 - `dist/index.html`、`dist/category.html`、`dist/submit.html`、`dist/about.html`、`dist/projects.html`、`dist/changelog.html`、`dist/404.html`：手写页面；
 - `dist/styles.css`、`dist/tokens.css`、`dist/lang.js`、`dist/analytics.js`、`dist/robots.txt`、`dist/google653ce5fe960a5fb0.html`；
-- `tools/`：内容同步、快照、详情页生成、sitemap、构建、模板校验；
+- `data/`：结构化清单（权威副本）；
+- `tools/`：数据暂存、图片同步、快照、详情页生成、sitemap、构建、模板生成 / 校验、数据准备（`prepare_works`）、图片派生（`generate_image_derivatives.py`、`prepare_favicon.py`）、迁移回归测试（`tools/tests/`）；
+- `server/`：站点仓自带的**统一投稿服务**（网页 / QQ / GitHub Issue 三来源统一进 AI 审核队列），零依赖、只应本地 / 内地服务器运行，见 [`server/README.md`](server/README.md)；
+- `tools/intake/`：维护者**收录中转** CLI 与回环管理 API（原内容仓的 `tools/intake/` 已迁到本仓库），见 [`tools/intake/README.md`](tools/intake/README.md)；
 - `ops/`：服务器侧发布 / 回滚脚本；
-- `archive/2026-09-24/`：改造前的历史文档副本。
+- `archive/2026-09-24/`：本站改造前的历史文档副本（属站点仓，内容仓没有这份 archive）。
+
+`server/` 与 `tools/intake/` 是站点仓里的两段**服务端程序**，都不是前端功能、也不是公开投稿 API：`server/` 面向投稿入站与 AI 初审，`tools/intake/` 面向维护者收录中转。两者目前都只在内地服务器本地运行，线上尚未开通。
 
 `dist/works/<slug>.html` 是生成物，别手改。
 
@@ -54,15 +59,30 @@ CONTENT_DIR=/path/to/ai-girl-stickers node tools/build_site.mjs
 
 `tools/build_site.mjs` 顺序执行：
 
-1. `tools/sync_content.mjs`：从内容仓库把清单 / 派生图 / `data/` 同步进本仓库 `dist/`（只覆盖清单内的目标，缺文件即报错）；
-2. `tools/build_site_snapshot.mjs`：归一成 `dist/site-data.json` + `dist/site-data.js`；
-3. `tools/generate_work_pages.mjs`：幂等生成 250 个 `dist/works/<slug>.html`；
-4. `tools/generate_sitemap.mjs`：生成 `dist/sitemap.xml`；
-5. `tools/build.mjs`：把 `dist/` 复制成干净发布产物，跳过 `dist/data/` 与 `dist/submissions/originals/`，并对清单、派生图、详情页、投稿模板下拉做断言。
+1. `tools/stage_data.mjs`：把本仓库 `data/` 的清单暂存成 `dist/` 下的产物路径（`data/works.json` → `dist/submissions/works.json` 等，只覆盖清单内的目标，缺文件即报错）；
+2. `tools/sync_content.mjs`：从内容仓库把图片（预览图 / 派生图 / 站点图标 / QQ 群二维码）与投稿模板副本同步进本仓库 `dist/`（只覆盖清单内的目标，缺文件即报错；**不读内容仓库的任何 JSON**）；
+3. `tools/build_site_snapshot.mjs`：归一成 `dist/site-data.json` + `dist/site-data.js`；
+4. `tools/generate_work_pages.mjs`：幂等生成 339 个 `dist/works/<slug>.html`；
+5. `tools/generate_sitemap.mjs`：生成 `dist/sitemap.xml`；
+6. `tools/build.mjs`：把 `dist/` 复制成干净发布产物，跳过 `dist/data/`、`dist/submissions/originals/` 与 `dist/.github/`，并对清单、派生图、详情页、投稿模板下拉做断言。
 
-**不会**在构建期调用内容仓库的 `tools/prepare_works.mjs`：slug 与 id 一经发布即冻结，绝不能重算。
+**不会**在构建期调用 `tools/prepare_works.mjs`（它现在也归本仓库）：slug 与 id 一经发布即冻结，绝不能重算。
 
 也可以把内容仓库克隆到本仓库同级的 `content/` 目录，之后省略 `--content-dir`（该目录已在 `.gitignore` 里）。
+
+### 数据与内容侧脚本
+
+```bash
+node tools/stage_data.mjs                                          # data/ → dist/ 暂存
+node tools/prepare_works.mjs                                       # 冻结 id/slug、补 slug 与兜底 categoryIds
+node tools/sync_issue_template.mjs --check --content-dir <内容仓>  # 校验内容仓投稿模板下拉
+node tools/sync_issue_template.mjs --write --content-dir <内容仓>  # 从 data/characters.json 生成模板
+python tools/generate_image_derivatives.py --content-dir <内容仓>  # 生成派生图（写内容仓图片、改本仓 data/works.json）
+python tools/prepare_favicon.py --content-dir <内容仓>             # 从 assets/ 生成站点图标
+node tools/tests/migration.test.mjs --content-dir <内容仓>         # 迁移回归测试
+```
+
+`tools/tests/migration.test.mjs` 会在临时目录里搭一个**只有图片与投稿模板、不含任何 JSON** 的瘦身内容仓库，用它完整构建一遍，并断言产物清单与本仓库 `data/` 逐字节一致——这就是「构建不依赖内容仓库 JSON / 脚本」的回归防线。没有内容仓库时它会打印跳过说明并退出 0。
 
 ## 本机预览
 

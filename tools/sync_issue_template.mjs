@@ -1,12 +1,13 @@
 #!/usr/bin/env node
-// tools/sync_issue_template.mjs —— 投稿模板「角色」下拉与角色清单校验（Node 内置模块 only）
+// tools/sync_issue_template.mjs —— 投稿模板「角色」下拉的生成与校验（Node 内置模块 only）
 //
-// 注意：写模板的权威脚本在**内容仓库** lmy414/ai-girl-stickers 里（投稿模板归它管）。
-// 本仓库这份是构建期的校验器：tools/build.mjs 复用它的 checkTemplateSync 导出，
-// 在产物里断言 characters.json 与内容仓库的投稿模板下拉一致。
+// 分工：角色清单是**站点结构化数据**，权威副本在本仓库 data/characters.json；
+// 投稿模板归内容仓库管、留在它的 .github/ISSUE_TEMPLATE/。本脚本是模板下拉的
+// **权威生成器**（--write 从本仓库 data/ 生成内容仓库的模板）兼校验器
+// （tools/build.mjs 复用它的 checkTemplateSync 导出，在产物里断言模板下拉一致）。
 //
 // 路径口径：
-//   角色清单 = <本仓库>/dist/characters.json（由 tools/sync_content.mjs 从内容仓库同步）
+//   角色清单 = <本仓库>/data/characters.json
 //   投稿模板 = <内容仓库根>/.github/ISSUE_TEMPLATE/sticker-submission.yml
 //              内容仓库根取 --content-dir / CONTENT_DIR，缺省 <本仓库>/content。
 //
@@ -16,7 +17,7 @@
 //   node tools/sync_issue_template.mjs --write              # 写回内容仓库的模板，写完再自检
 //
 // 行为契约（tools/build.mjs 也按这个契约复用本脚本的导出）：
-//   1. 角色清单 = <本仓库>/dist/characters.json（顶层数组）；模板 = 内容仓库的投稿模板。
+//   1. 角色清单 = <本仓库>/data/characters.json（顶层数组）；模板 = 内容仓库的投稿模板。
 //   2. 期望下拉行 = 清单里 inSubmissionForm === true 的条目**按清单顺序**输出，
 //      8 空格缩进，格式精确为：
 //        `        - "${name}（${id}${aliases.length ? " · 别名 " + aliases.join(" / ") : ""}）"`
@@ -41,7 +42,7 @@ import { fileURLToPath } from "node:url";
 
 const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(SCRIPT_DIR, "..");
-const CHARACTERS_PATH = path.join(REPO_ROOT, "dist", "characters.json");
+const CHARACTERS_PATH = path.join(REPO_ROOT, "data", "characters.json");
 
 // 内容仓库根目录：--content-dir / CONTENT_DIR，缺省 <本仓库>/content。
 // 投稿模板读的就是 <内容仓库根>/.github/ISSUE_TEMPLATE/sticker-submission.yml。
@@ -161,7 +162,7 @@ function diffText(expected, actual, firstDiff) {
     `下拉行不一致：期望 ${expected.length} 行，实际 ${actual.length} 行`,
   ];
   if (firstDiff >= 0) parts.push(`首个差异在第 ${firstDiff + 1} 行`);
-  parts.push("期望（按 dist/characters.json 生成）：", renderLineList(expected));
+  parts.push("期望（按 data/characters.json 生成）：", renderLineList(expected));
   parts.push("实际（模板现状）：", renderLineList(actual));
   return parts.join("\n");
 }
@@ -283,7 +284,7 @@ function parseArgs(argv) {
     } else if (arg === "-h" || arg === "--help") {
       process.stdout.write(
         "用法：node tools/sync_issue_template.mjs [--check|--write] [--content-dir <内容仓库根>]\n" +
-          "  --check              校验投稿模板的角色下拉与 dist/characters.json 一致（默认）\n" +
+          "  --check              校验投稿模板的角色下拉与 data/characters.json 一致（默认）\n" +
           "  --write              把期望下拉写回内容仓库的模板，写完再自检一遍\n" +
           "  --content-dir <目录> 内容仓库根目录，也可用 CONTENT_DIR 环境变量\n",
       );

@@ -18,8 +18,9 @@
 // 行为契约（服务器侧发布脚本与本地自检都按这个契约来）：
 //   1. 把 <仓库根>/dist 递归复制成一份发布产物；跳过 dist/data/ 与
 //      dist/submissions/originals/（既不复制、也不创建空目录）。
-//      本仓库不跟踪任何清单 / 派生图 / 原图：它们由 tools/sync_content.mjs
-//      从内容仓库同步进 dist/ 之后，才由本脚本复制进产物。
+//      清单 / 派生图 / 原图都不在本仓库：清单由本仓库 data/ 经 tools/stage_data.mjs
+//      暂存进 dist/，图片由 tools/sync_content.mjs 从内容仓库同步进 dist/，
+//      之后才由本脚本复制进产物。
 //   2. 纯字节拷贝：不改写 JSON、不写时间戳、不访问网络、不修改原图、不跑压缩。
 //      同一输入两次构建，文件集合与每个文件的 SHA-256 必须完全一致。
 //   3. 复制后做断言，任一失败就删掉产物并非零退出：必需文件齐全、被排除目录
@@ -91,6 +92,8 @@ const UNIX_BANNED = [
 ];
 
 // 构建产物必须排除的 dist 内相对目录（POSIX 风格）。
+// data 是构建期的清单 / 首批预览图暂存区（线上由 DEPLOY_ROOT/shared/data 提供），
+// submissions/originals 是原图（线上走 GitHub Raw），两者都不进发布包。
 // .github 是 tools/sync_content.mjs 从内容仓库同步进来的投稿模板副本，
 // 只供本地比对，绝不能进发布包（否则会出现在站点 web 根下）。
 const SKIP_DIRS = ["data", "submissions/originals", ".github"];

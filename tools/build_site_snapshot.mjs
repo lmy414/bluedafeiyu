@@ -2,9 +2,8 @@
 // tools/build_site_snapshot.mjs —— 把三路来源归一成公开静态数据快照。
 // 读：characters/categories、投稿/owner-picks 清单、blue-fish raw 清单、冻结映射
 //     （blue-fish-ids.json）与首批编辑叠加层（data/blue-fish-editorial.json：视觉复核出的
-//     categoryIds 与第一人称 commentary）。这些输入全部来自内容仓库
-//     （lmy414/ai-girl-stickers），由 tools/sync_content.mjs 先同步进本仓库 dist/；
-//     本仓库自己不跟踪它们。
+//     categoryIds 与第一人称 commentary）。这些清单的权威副本都在本仓库 data/
+//     （内容仓库只管图片），由 tools/stage_data.mjs 先暂存进本仓库 dist/。
 // 写：dist/site-data.json、dist/site-data.js。幂等、无网络、确定性。
 //     上游 EDMOK/blue-fish-archive 的原图 URL 与既有投稿/owner-picks 原图 path 都不改写。
 
@@ -133,7 +132,7 @@ function main() {
   const snapshot = {
     version: "2026-09-25-vision-reclassify",
     characters,
-    // 分类直接取内容仓库的 categories.json（此前这里硬编码过一份，加分类要改两处就漏了）
+    // 分类直接取本仓库 data/categories.json（此前这里硬编码过一份，加分类要改两处就漏了）
     categories: categories.filter((item) => item.status === "active"),
     works: unique
   };

@@ -2,8 +2,9 @@
 #
 # ops/deploy-server.sh —— 服务器侧发布脚本（GitHub 驱动）
 #
-# 站点拆成两个仓库：代码仓库（本仓库）与内容仓库（图片 / 投稿 / 清单）。
-# 发布时两份工作树都要更新，构建在代码工作树里跑、内容由 --content-dir 指过去。
+# 站点拆成两个仓库：代码仓库（本仓库，含站点源码 + data/ 结构化清单 + 全部脚本）
+# 与内容仓库（图片 / 投稿模板）。发布时两份工作树都要更新，构建在代码工作树里跑、
+# 内容由 --content-dir 指过去（构建只从内容仓取图片与模板副本，不读它的 JSON）。
 #
 # 流程（顺序固定，不要调换）：
 #   1. 加载配置并校验必填变量；
@@ -144,7 +145,8 @@ COMMIT_SHA="$(git -C "${SOURCE_DIR}" rev-parse HEAD)"
 COMMIT_SUBJECT="$(git -C "${SOURCE_DIR}" log -1 --pretty=%s)"
 log "将要发布的代码提交：${COMMIT_SHA} ${COMMIT_SUBJECT}"
 
-# 内容仓库工作树（图片 / 投稿 / 清单）。构建只读它，不改它的数据。
+# 内容仓库工作树（图片 / 投稿模板）。构建只读它，不改它的数据。
+# 结构化清单已迁到代码仓库的 data/，这里不再有 JSON。
 if [ ! -d "${CONTENT_DIR}/.git" ]; then
   log "内容仓库工作树不存在，开始克隆：${CONTENT_REPO_URL} -> ${CONTENT_DIR}"
   git clone --branch "${CONTENT_BRANCH}" "${CONTENT_REPO_URL}" "${CONTENT_DIR}"
@@ -207,10 +209,10 @@ rm -f "${STAGING_DIR}/site/.build-output"
 
 # 站点要托管的首批图片（dist/data/）不在发布产物里：build.mjs 会跳过 data/，
 # 线上统一由 DEPLOY_ROOT/shared/data 这份持久副本硬链接进每个 release。
-# 内容仓库现在也跟踪 dist/data/，但 shared/data 仍是线上权威副本；如果内容仓库
-# 的 dist/data/ 有变化（例如把超限 GIF 换成动画 WebP），要另行把它刷进
-# shared/data，否则 release 里的预览图会与 site-data.json 对不上。这份刷新是
-# 显式的运维动作，本脚本不自动覆盖 shared/data。
+# 内容仓库跟踪的是 dist/data/blue-fish/previews/ 图片（清单已迁到代码仓库 data/），
+# shared/data 仍是线上权威副本；如果那些预览图有变化（例如把超限 GIF 换成动画
+# WebP），要另行把它刷进 shared/data，否则 release 里的预览图会与 site-data.json
+# 对不上。这份刷新是显式的运维动作，本脚本不自动覆盖 shared/data。
 if [ ! -d "${SHARED_DATA_DIR}" ]; then
   die "共享数据目录不存在：${SHARED_DATA_DIR}"
 fi
@@ -227,7 +229,6 @@ cp -al "${SHARED_DATA_DIR}" "${STAGING_DIR}/site/data"
 for required in \
   "${STAGING_DIR}/site/index.html" \
   "${STAGING_DIR}/site/404.html" \
-  "${STAGING_DIR}/site/data/blue-fish-classification.json" \
   "${STAGING_DIR}/site/submissions/works.json" \
   "${STAGING_DIR}/site/site-data.json" \
   "${STAGING_DIR}/site/sitemap.xml" \

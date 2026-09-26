@@ -7,12 +7,17 @@
     "node": ">=18"
   },
   "scripts": {
+    "stage": "node tools/stage_data.mjs",
     "sync": "node tools/sync_content.mjs",
     "snapshot": "node tools/build_site_snapshot.mjs",
     "pages": "node tools/generate_work_pages.mjs",
     "sitemap": "node tools/generate_sitemap.mjs",
     "build": "node tools/build_site.mjs",
     "build:dist": "node tools/build.mjs",
+    "prepare-works": "node tools/prepare_works.mjs",
+    "template": "node tools/sync_issue_template.mjs",
+    "favicon": "python tools/prepare_favicon.py",
+    "derivatives": "python tools/generate_image_derivatives.py",
     "compress": "node tools/compress_static.mjs",
     "compress:write": "node tools/compress_static.mjs --precompress"
   }

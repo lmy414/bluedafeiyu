@@ -1,7 +1,7 @@
 # bluedafeiyu —— 站点源码仓库
 #
-# 这个仓库只跟踪「手写的站点源码」：dist/ 下的页面 / 样式 / 脚本、tools/、ops/、archive/。
-# 图片、清单、派生资产一律来自内容仓库 lmy414/ai-girl-stickers，不在这里跟踪。
+# 这个仓库跟踪「站点源码 + 结构化数据」：dist/ 下的页面 / 样式 / 脚本、tools/、ops/、
+# archive/，以及 data/ 下的清单。图片一律来自内容仓库 lmy414/ai-girl-stickers，不在这里跟踪。
 
 # OS / editor
 .DS_Store
@@ -28,8 +28,15 @@ __pycache__/
 # 并行子代理的 git worktree（不进仓库）
 /.worktrees/
 
+# ---------------------------------------------------------------- 结构化数据（跟踪）
+# data/ 是角色 / 分类 / 投稿清单 / id 冻结映射 / 首批编辑叠加层的权威副本，
+# **进 git**。构建期由 tools/stage_data.mjs 暂存成 dist/ 下的产物路径。
+# 这里只登记占位说明，不加忽略规则：
+
 # ---------------------------------------------------------------- 内容仓库同步物
-# tools/sync_content.mjs 从内容仓库同步进来的清单与派生资产：一次都不跟踪
+# tools/sync_content.mjs 从内容仓库同步进来的图片与投稿模板副本：一次都不跟踪。
+# 注意 data/ 下的清单不再从内容仓库同步——它们在仓库根 data/ 里跟踪，
+# 由 tools/stage_data.mjs 暂存成下面这些 dist/ 路径。
 /dist/characters.json
 /dist/categories.json
 /dist/blue-fish-ids.json
