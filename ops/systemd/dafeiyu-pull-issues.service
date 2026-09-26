@@ -1,0 +1,15 @@
+[Unit]
+Description=拉取 GitHub 投稿 Issue 附件
+After=network-online.target dafeiyu-submission.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=dafeiyu
+Group=dafeiyu
+WorkingDirectory=/srv/www/dafeiyu/source
+EnvironmentFile=/etc/dafeiyu/submission.env
+ExecStart=/usr/bin/flock -n -E 0 /run/lock/dafeiyu-queue.lock /usr/bin/node server/cli.mjs pull-issues --state open --max-pages 5
+TimeoutStartSec=30min
+Restart=on-failure
+RestartSec=120s

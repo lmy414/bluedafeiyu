@@ -1,0 +1,25 @@
+[Unit]
+Description=蓝色大肥鱼 · 投稿批量发布（ready 中转条目 → 两个公开仓 → 部署）
+Documentation=https://github.com/lmy414/bluedafeiyu
+# 发布要 git fetch/push，需要网络先就绪。
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+# 运行用户 / 组由维护者按服务器实际账户调整；该用户要能写两个 Git 工作树并执行部署脚本。
+User=dafeiyu
+Group=dafeiyu
+# 私有环境文件（不进 git、权限 0600）：路径、开关与部署配置全在这里。
+# 真实发布必须在文件里显式打开 AUTO_PUBLISH_ENABLED / PUBLISH_PUSH_ENABLED / PUBLISH_DEPLOY_ENABLED。
+EnvironmentFile=/etc/dafeiyu/publish.env
+# 脚本内部全部用绝对路径，cwd 不重要；SOURCE_DIR 由 EnvironmentFile 提供。
+ExecStart=/usr/bin/node ${SOURCE_DIR}/ops/publish-batch.mjs
+# 单次发布要构建 + 部署 + 健康检查，给足超时。
+TimeoutStartSec=3600
+# 发布是后台运维任务，降低优先级，别和公开入口抢 CPU。
+Nice=10
+# 失败时非零退出，systemd 会记入 journal；批次日志另外落在 INTAKE_ROOT/batches/。
+
+[Install]
+WantedBy=multi-user.target

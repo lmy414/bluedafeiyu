@@ -16,13 +16,25 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 export const SCHEMA = 'submission-server/1';
+/* AI 受校验内容的响应契约版本。审核层只认这个版本的形状，其余一律转人工。 */
+export const AI_CONTENT_SCHEMA = 'submission-ai-content/1';
 export const DEFAULT_MAX_BYTES = 16 * 1024 * 1024;
 export const DEFAULT_MAX_JSON_BYTES = 24 * 1024 * 1024;
 export const DEFAULT_GITHUB_REPO = 'lmy414/ai-girl-stickers';
 export const DEFAULT_GITHUB_LABEL = 'sticker-submission';
 export const GITHUB_API_BASE = 'https://api.github.com';
+/* GitHub Issue 列表分页：per_page 上限 100（GitHub 硬限制），翻页次数有上限，防跑飞。 */
+export const GITHUB_MAX_PER_PAGE = 100;
+export const DEFAULT_GITHUB_PER_PAGE = 100;
+export const DEFAULT_GITHUB_MAX_PAGES = 5;
+/* 429 / 5xx / 网络超时的有限退避重试：次数与退避上限都有界。 */
+export const DEFAULT_GITHUB_MAX_RETRIES = 3;
+export const DEFAULT_GITHUB_RETRY_BASE_MS = 500;
+export const DEFAULT_GITHUB_RETRY_MAX_MS = 8000;
 export const DEFAULT_REVIEW_TIMEOUT_MS = 60 * 1000;
 export const DEFAULT_REVIEW_MIN_CONFIDENCE = 0.6;
+/* promptVersion 跟响应契约绑定：改契约就换版本号。 */
+export const DEFAULT_PROMPT_VERSION = AI_CONTENT_SCHEMA;
 export const DEFAULT_RATE_MAX = 10;
 export const DEFAULT_RATE_WINDOW_MS = 60 * 1000;
 /* 限流器内存里最多保留多少个客户端键；防止 IPv6 地址轮换把 Map 撑爆。 */
@@ -73,6 +85,37 @@ export function assertPrivateRoot(root, { contentDir = null } = {}) {
     throw new Error(`存储根不能位于任何 git 工作树内（发现 ${gitRoot}）：${abs}`);
   }
   return abs;
+}
+
+/**
+ * 从内容仓 `data/characters.json` 与 `data/categories.json` **动态**读取可用枚举。
+ * 只认 status=active（缺省视为 active）的条目；文件缺失或损坏一律 ok=false，
+ * 让审核层 fail-closed 转人工，绝不放开未校验的枚举。
+ */
+export function loadContentVocabulary(siteRoot = SITE_ROOT) {
+  const readList = (fileName) => {
+    try {
+      const records = JSON.parse(fs.readFileSync(path.join(siteRoot, 'data', fileName), 'utf8'));
+      return Array.isArray(records) ? records : null;
+    } catch {
+      return null;
+    }
+  };
+  const activeIds = (records) => new Set((records || [])
+    .filter((entry) => entry && typeof entry === 'object' && (entry.status === undefined || entry.status === 'active'))
+    .map((entry) => String(entry.id || '').trim())
+    .filter(Boolean));
+  const characters = readList('characters.json');
+  const categories = readList('categories.json');
+  const characterIds = activeIds(characters);
+  const categoryIds = activeIds(categories);
+  const loaded = characters !== null && categories !== null;
+  return {
+    characterIds,
+    categoryIds,
+    loaded,
+    ok: loaded && characterIds.size > 0 && categoryIds.size > 0,
+  };
 }
 
 /* ------------------------------------------------ 可信代理与客户端 IP 工具
@@ -216,6 +259,18 @@ function integerOf(value, fallback, label) {
   return number;
 }
 
+/**
+ * 闭区间整数解析：用于分页 / 重试这类既要允许 0 又要有上限的配置。
+ * 越界即抛错（配置期快速失败），不接受 0.5、'abc' 这类值。
+ */
+function rangedIntegerOf(value, fallback, label, { min = 0, max = Number.MAX_SAFE_INTEGER } = {}) {
+  const number = value === undefined || value === null || value === '' ? fallback : Number(value);
+  if (!Number.isSafeInteger(number) || number < min || number > max) {
+    throw new Error(`${label} 必须是 ${min}-${max} 之间的整数：${value}`);
+  }
+  return number;
+}
+
 function floatOf(value, fallback, label) {
   if (value === undefined || value === null || value === '') return fallback;
   const number = Number(value);
@@ -273,7 +328,7 @@ export function resolveConfig(overrides = {}, { env = process.env } = {}) {
     model: String(reviewModel).trim(),
     timeoutMs: integerOf(overrides.reviewTimeoutMs ?? env.SUBMISSION_AI_TIMEOUT_MS, DEFAULT_REVIEW_TIMEOUT_MS, 'SUBMISSION_AI_TIMEOUT_MS'),
     minConfidence: floatOf(overrides.reviewMinConfidence ?? env.SUBMISSION_AI_MIN_CONFIDENCE, DEFAULT_REVIEW_MIN_CONFIDENCE, 'SUBMISSION_AI_MIN_CONFIDENCE'),
-    promptVersion: String(overrides.promptVersion ?? env.SUBMISSION_AI_PROMPT_VERSION ?? 'v1'),
+    promptVersion: String(overrides.promptVersion ?? env.SUBMISSION_AI_PROMPT_VERSION ?? DEFAULT_PROMPT_VERSION),
     configured: Boolean(String(reviewEndpoint).trim() && String(reviewApiKey)),
   };
 
@@ -320,6 +375,11 @@ export function resolveConfig(overrides = {}, { env = process.env } = {}) {
       token: String(overrides.githubToken ?? env.SUBMISSION_GITHUB_TOKEN ?? ''),
       timeoutMs: integerOf(overrides.githubTimeoutMs ?? env.SUBMISSION_GITHUB_TIMEOUT_MS, 20 * 1000, 'SUBMISSION_GITHUB_TIMEOUT_MS'),
       maxRedirects: integerOf(overrides.githubMaxRedirects ?? env.SUBMISSION_GITHUB_MAX_REDIRECTS, 3, 'SUBMISSION_GITHUB_MAX_REDIRECTS'),
+      perPage: rangedIntegerOf(overrides.githubPerPage ?? env.SUBMISSION_GITHUB_PER_PAGE, DEFAULT_GITHUB_PER_PAGE, 'SUBMISSION_GITHUB_PER_PAGE', { min: 1, max: GITHUB_MAX_PER_PAGE }),
+      maxPages: rangedIntegerOf(overrides.githubMaxPages ?? env.SUBMISSION_GITHUB_MAX_PAGES, DEFAULT_GITHUB_MAX_PAGES, 'SUBMISSION_GITHUB_MAX_PAGES', { min: 1 }),
+      maxRetries: rangedIntegerOf(overrides.githubMaxRetries ?? env.SUBMISSION_GITHUB_MAX_RETRIES, DEFAULT_GITHUB_MAX_RETRIES, 'SUBMISSION_GITHUB_MAX_RETRIES', { min: 0 }),
+      retryBaseMs: rangedIntegerOf(overrides.githubRetryBaseMs ?? env.SUBMISSION_GITHUB_RETRY_BASE_MS, DEFAULT_GITHUB_RETRY_BASE_MS, 'SUBMISSION_GITHUB_RETRY_BASE_MS', { min: 1 }),
+      retryMaxMs: rangedIntegerOf(overrides.githubRetryMaxMs ?? env.SUBMISSION_GITHUB_RETRY_MAX_MS, DEFAULT_GITHUB_RETRY_MAX_MS, 'SUBMISSION_GITHUB_RETRY_MAX_MS', { min: 1 }),
       maxBytes,
     },
     qq,
@@ -365,7 +425,14 @@ export function configSummary(cfg) {
     rateLimit: cfg.rateLimit,
     turnstile: { enabled: cfg.turnstile.enabled },
     review: { configured: cfg.review.configured, model: cfg.review.model || null, minConfidence: cfg.review.minConfidence },
-    github: { repo: cfg.github.repo, label: cfg.github.label, token: cfg.github.token ? 'configured' : 'absent' },
+    github: {
+      repo: cfg.github.repo,
+      label: cfg.github.label,
+      token: cfg.github.token ? 'configured' : 'absent',
+      perPage: cfg.github.perPage,
+      maxPages: cfg.github.maxPages,
+      maxRetries: cfg.github.maxRetries,
+    },
     qq: {
       enabled: cfg.qq.enabled,
       inboundToken: cfg.qq.inboundToken ? 'configured' : 'absent',

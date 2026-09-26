@@ -1,0 +1,11 @@
+[Unit]
+Description=每天三次拉取 GitHub 投稿
+
+[Timer]
+OnCalendar=*-*-* 08,14,20:00:00
+Persistent=true
+RandomizedDelaySec=300
+Unit=dafeiyu-pull-issues.service
+
+[Install]
+WantedBy=timers.target

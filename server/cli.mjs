@@ -15,11 +15,15 @@
  *   review [<id>...] [--all] [--limit N]   跑 AI 审核（未配置则一律转人工）
  *   approve <id> [--reason ...]
  *   reject <id> [--reason ...]
- *   pull-issues [--issue N] [--state open]
+ *   pull-issues [--issue N] [--state open] [--since <ISO>|auto] [--max-pages N] [--full]
+ *   bridge-passed [<id>...] [--limit N]    把 auto_passed 且内容完整的条目桥接进私有中转区
+ *   bridge-ready [--json]                  列出中转区 ready 条目
  *   stats
  *
  * 注意：本服务**不会**自动把图片写进内容仓、不会推送、不会发布。
  * approve 只是人工审核通过，后续收录仍由维护者按既有流程做。
+ * 桥接只写 INTAKE_ROOT 的 inbox/ 与 meta/，需要显式配置 INTAKE_ROOT 与
+ * INTAKE_CONTENT_DIR 才启用；缺配置是可观测 skipped，不影响队列。
  */
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -27,6 +31,7 @@ import path from 'node:path';
 import { configSummary, resolveConfig } from './config.mjs';
 import { createQueue, sha256, STATES } from './queue.mjs';
 import { createReviewer, reviewPending } from './review.mjs';
+import { createBridge } from './bridge.mjs';
 import { createGithubAdapter } from './adapters/github.mjs';
 import { createQqAdapter } from './adapters/qq.mjs';
 import { startServers } from './http.mjs';
@@ -69,10 +74,11 @@ async function loadCharacters(cfg) {
 async function buildContext(cfg, { fetchImpl } = {}) {
   const queue = await createQueue(cfg);
   const reviewer = createReviewer(cfg, { fetchImpl });
+  const bridge = await createBridge({ queue });
   const githubAdapter = createGithubAdapter(cfg, { queue, fetchImpl });
   const qqAdapter = createQqAdapter(cfg, { queue, fetchImpl });
   const characters = await loadCharacters(cfg);
-  return { queue, reviewer, githubAdapter, qqAdapter, characters };
+  return { queue, reviewer, bridge, githubAdapter, qqAdapter, characters };
 }
 
 const commands = {
@@ -99,6 +105,7 @@ const commands = {
     console.log(`私有存储根 ${cfg.storageRoot}`);
     console.log(`AI 审核：${context.reviewer.configured ? '已配置' : '未配置（一律转人工）'}`);
     console.log(`QQ 入站：${context.qqAdapter.enabled ? '已开启' : '未开启'}`);
+    console.log(`自动桥接：${context.bridge.enabled ? '已开启' : `未启用（${context.bridge.reason}）`}`);
     console.log('本服务不会自动发布；图片入库后由维护者人工收录。');
     const shutdown = async () => { await servers.close(); process.exit(0); };
     process.on('SIGINT', shutdown);
@@ -186,7 +193,27 @@ const commands = {
     for (const entry of results) {
       console.log(`${String(entry.verdict).padEnd(8)}${entry.id}  ${entry.reason || ''}`);
     }
-    console.log(`\n共审核 ${results.length} 条。通过也不会自动发布，仍需人工 approve。`);
+    console.log(`\n共审核 ${results.length} 条。通过后会自动进入私有中转区，下一次批量发布处理；下架仍需人工。`);
+  },
+
+  async 'review-received'(cfg, { options }) {
+    const { queue, reviewer, bridge } = await buildContext(cfg);
+    const limit = optionValue(options, 'limit') ? Number(optionValue(options, 'limit')) : 50;
+    const received = await queue.list({ state: STATES.RECEIVED, limit });
+    const results = [];
+    for (const item of received) {
+      try {
+        const result = await reviewPending(queue, reviewer, { ids: [item.id], limit: 1 });
+        results.push({ id: item.id, ...(result[0] || { verdict: 'manual', reason: '没有审核结果' }) });
+      } catch (error) {
+        results.push({ id: item.id, verdict: 'manual', reason: error.message });
+      }
+    }
+    const bridged = await bridge.bridgePending({ limit });
+    for (const entry of results) {
+      console.log(`${String(entry.verdict).padEnd(8)}${entry.id}  ${entry.reason || ''}`);
+    }
+    console.log(`\n即时审核 ${results.length} 条；桥接 ready ${bridged.ready} 条。`);
   },
 
   async approve(cfg, { options, positional }) {
@@ -205,14 +232,82 @@ const commands = {
 
   async 'pull-issues'(cfg, { options }) {
     const { queue, githubAdapter } = await buildContext(cfg);
+
+    /* --since <ISO> 显式起点；--since（不带值）与不传都表示用已持久化游标；
+     * --full / --no-since 强制忽略游标做一次全量。默认行为兼容原有手动命令。 */
+    let since;
+    if (options.full || options['no-since']) since = null;
+    else if (options.since === undefined) since = undefined;
+    else if (options.since === true || String(options.since).toLowerCase() === 'auto') since = undefined;
+    else since = String(options.since);
+
+    const maxPagesRaw = optionValue(options, 'max-pages');
+    let maxPages;
+    if (maxPagesRaw) {
+      maxPages = Number(maxPagesRaw);
+      if (!Number.isSafeInteger(maxPages) || maxPages <= 0) die(`--max-pages 必须是正整数：${maxPagesRaw}`);
+    }
+
     const results = await githubAdapter.pullIssues({
       issue: optionValue(options, 'issue') ? Number(optionValue(options, 'issue')) : null,
       state: optionValue(options, 'state', 'open'),
+      since,
+      ...(maxPages ? { maxPages } : {}),
     });
     for (const entry of results) {
       console.log(`${String(entry.status).padEnd(16)}#${entry.issue}  ${entry.item ? entry.item.id : ''}  ${entry.error || ''}`);
     }
     console.log(`\n共处理 ${results.length} 个附件，入队 ${(await queue.list()).length} 条。`);
+    const cursor = await githubAdapter.readCursor();
+    if (cursor && cursor.since) console.log(`增量游标 since=${cursor.since}（下次拉取只取更新的 Issue；--full 可强制全量）`);
+  },
+
+  /**
+   * 把 auto_passed 且完整 content schema 合法的条目桥接进私有中转区。
+   * 只写 INTAKE_ROOT 的 inbox/ + meta/；不写内容仓、不跑 git、不提交。
+   */
+  async 'bridge-passed'(cfg, { options, positional }) {
+    const queue = await createQueue(cfg);
+    const bridge = await createBridge({ queue });
+    if (!bridge.enabled) {
+      console.log(`bridge-passed skipped：${bridge.reason}`);
+      return;
+    }
+    const pending = await bridge.bridgePending({
+      ids: positional,
+      limit: optionValue(options, 'limit') ? Number(optionValue(options, 'limit')) : 200,
+    });
+    if (pending.results.length === 0) console.log('没有 auto_passed 的条目可桥接。');
+    for (const entry of pending.results) {
+      console.log(`${String(entry.status).padEnd(10)}${String(entry.sha256 || '').slice(0, 12).padEnd(14)}${entry.id}  ${entry.reason || ''}`);
+    }
+    console.log(`\n就绪 ${pending.ready}，重复 ${pending.duplicate}，跳过 ${pending.skipped}，失败 ${pending.failed}。`);
+    console.log(`中转区 ${bridge.intake.root}；发布由后续批次负责，本命令不提交 Git。`);
+  },
+
+  /** 列出中转区 ready 条目（供人工查看与后续发布批次消费）。 */
+  async 'bridge-ready'(cfg, { options }) {
+    const queue = await createQueue(cfg);
+    const bridge = await createBridge({ queue });
+    if (!bridge.enabled) {
+      console.log(`bridge-ready skipped：${bridge.reason}`);
+      return;
+    }
+    const items = await bridge.listReady();
+    if (options.json) {
+      console.log(JSON.stringify(items, null, 2));
+      return;
+    }
+    if (items.length === 0) {
+      console.log('中转区没有 ready 条目。');
+      return;
+    }
+    console.log(`${'sha256'.padEnd(14)}${'字节'.padEnd(10)}${'投稿 id'.padEnd(30)}名字`);
+    for (const item of items) {
+      const name = (item.fields && item.fields.name) || '(未填)';
+      console.log(`${String(item.sha256).slice(0, 12).padEnd(14)}${String(item.bytes).padEnd(10)}${String(item.submissionId || '').padEnd(30)}${name}`);
+    }
+    console.log(`\n共 ${items.length} 条 ready；中转区 ${bridge.intake.root}`);
   },
 
   async stats(cfg) {
@@ -232,13 +327,20 @@ const commands = {
   review [<id>...] [--all]  跑 AI 审核（未配置一律转人工）
   approve <id> / reject <id> 人工审核结论
   pull-issues               拉取 ai-girl-stickers 投稿 Issue 附件
+                            [--state open] [--issue N] [--max-pages N]
+                            [--since ISO] [--full]  默认走已存 since 游标，--full 全量
+  bridge-passed [<id>...]   把 auto_passed 且内容完整的条目桥接进私有中转区
+  bridge-ready [--json]     列出中转区 ready 条目
   stats                     队列计数
 
 配置走环境变量：SUBMISSION_STORAGE_ROOT（必填）
                 SUBMISSION_ADMIN_TOKEN / SUBMISSION_ALLOWED_ORIGINS
                 SUBMISSION_AI_ENDPOINT / SUBMISSION_AI_API_KEY / SUBMISSION_AI_MODEL
                 SUBMISSION_GITHUB_REPO（默认 lmy414/ai-girl-stickers）/ SUBMISSION_GITHUB_TOKEN
-                SUBMISSION_QQ_ENABLED / SUBMISSION_QQ_INBOUND_TOKEN / SUBMISSION_QQ_GROUP_ALLOWLIST`);
+                SUBMISSION_GITHUB_MAX_PAGES / SUBMISSION_GITHUB_PER_PAGE
+                SUBMISSION_GITHUB_MAX_RETRIES / SUBMISSION_GITHUB_RETRY_BASE_MS / SUBMISSION_GITHUB_RETRY_MAX_MS
+                SUBMISSION_QQ_ENABLED / SUBMISSION_QQ_INBOUND_TOKEN / SUBMISSION_QQ_GROUP_ALLOWLIST
+                INTAKE_ROOT / INTAKE_CONTENT_DIR（两个都显式配置才启用桥接）`);
   },
 };
 

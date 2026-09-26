@@ -27,9 +27,11 @@ import {
   listItems,
   looksLikeContentRepo,
   pullIssueAttachments,
+  readItem,
   redactUrl,
   resolveConfig,
   stageBuffer,
+  stageReadyItem,
   verifyItems,
 } from './core.mjs';
 
@@ -378,7 +380,51 @@ test('坏 meta 不会让 list / verify / pull 整体崩', async (t) => {
   assert.ok(results.some((entry) => entry.status === 'staged' || entry.status === 'duplicate'));
 });
 
-/* ------------------------------------------- 6. 临时文件并发安全 */
+/* ------------------------------------- 6. 审核通过桥接：ready 与幂等 */
+
+test('stageReadyItem 写入 ready 状态、保留桥接元数据且按 sha256 幂等', async (t) => {
+  const cfg = await makeCfg(t);
+  const first = await stageReadyItem(cfg, TINY_PNG, {
+    ext: '.png',
+    submissionId: 'sub_test_1',
+    source: 'web',
+    fields: { name: '桥接图', character: 'deepseek', tags: ['吐槽'] },
+    content: { commentary: '来自审核的完整内容' },
+    contentSchema: 'submission-ai-content/1',
+    origin: { via: 'bridge' },
+    receivedAt: '2026-01-01T00:00:00.000Z',
+  });
+  assert.equal(first.status, 'ready');
+  assert.equal(first.item.status, 'ready');
+  assert.equal(first.item.submissionId, 'sub_test_1');
+  assert.equal(first.item.contentSchema, 'submission-ai-content/1');
+
+  const meta = await readItem(cfg, first.sha256);
+  assert.equal(meta.status, 'ready');
+  assert.equal(meta.content.commentary, '来自审核的完整内容');
+  assert.deepEqual(await fs.readFile(path.join(cfg.inboxDir, `${first.sha256}.png`)), TINY_PNG);
+
+  const again = await stageReadyItem(cfg, TINY_PNG, { ext: '.png', submissionId: 'sub_other' });
+  assert.equal(again.status, 'duplicate');
+  assert.equal(again.item.submissionId, 'sub_test_1', '既有记录不能被后来者覆盖');
+  assert.equal((await listItems(cfg, { status: 'ready' })).length, 1);
+  assert.equal((await listItems(cfg, { status: 'staged' })).length, 0, 'ready 不与人工 staged 混淆');
+});
+
+test('stageReadyItem 拒绝非图片字节与伪装扩展名', async (t) => {
+  const cfg = await makeCfg(t);
+  await assert.rejects(
+    () => stageReadyItem(cfg, Buffer.from('PK\u0003\u0004 nope'), { ext: '.png', submissionId: 'sub_bad' }),
+    /图片格式/,
+  );
+  await assert.rejects(
+    () => stageReadyItem(cfg, TINY_PNG, { ext: '.gif', submissionId: 'sub_bad2' }),
+    /扩展名/,
+  );
+  assert.deepEqual(await listItems(cfg), []);
+});
+
+/* ------------------------------------------- 7. 临时文件并发安全 */
 
 test('并发写同一 sha256 不会因临时文件名冲突而失败', async (t) => {
   const cfg = await makeCfg(t);
@@ -390,7 +436,7 @@ test('并发写同一 sha256 不会因临时文件名冲突而失败', async (t)
   assert.equal(items.length, 1);
 });
 
-/* ------------------------------------------- 7. 内容仓自动发现不依赖 JSON */
+/* ------------------------------------------- 8. 内容仓自动发现不依赖 JSON */
 
 test('内容仓自动发现不依赖任何 JSON 清单', async (t) => {
   const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'intake-content-'));

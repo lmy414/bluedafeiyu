@@ -20,9 +20,11 @@ import {
   createAdminHandler,
   createPublicHandler,
   createRateLimiter,
+  createReviewCoordinator,
   createTurnstileVerifier,
   parseMultipartForm,
   resolveClientIp,
+  reviewCoordinatorFor,
   startServers,
 } from './http.mjs';
 import { createQqAdapter } from './adapters/qq.mjs';
@@ -33,9 +35,58 @@ const TINY_PNG = Buffer.from(
 );
 const ORIGIN = 'https://xn--pssy23gqgbz2d718b.com';
 
-async function setup(t, { env = {}, client = null, characters = ['deepseek', 'other'], turnstileVerify = null } = {}) {
+/** 合法的 submission-ai-content/1 通过响应（审核层可解析为 pass）。 */
+function passEnvelope(name = '测试表情') {
+  return {
+    choices: [{
+      message: {
+        content: JSON.stringify({
+          schema: 'submission-ai-content/1',
+          verdict: 'pass',
+          confidence: 0.99,
+          reason: 'ok',
+          content: {
+            name,
+            description: '',
+            commentary: '一张测试图。',
+            characterId: 'deepseek',
+            categoryIds: ['meme'],
+            tags: ['测试'],
+          },
+        }),
+      },
+    }],
+  };
+}
+
+/** 轮询等待断言成立；超时即失败，避免后台任务未跑完就断言的偶发红。 */
+async function waitFor(predicate, { timeout = 5000, interval = 10, label = '条件' } = {}) {
+  const deadline = Date.now() + timeout;
+  for (;;) {
+    if (await predicate()) return;
+    if (Date.now() > deadline) throw new Error(`等待${label}超时`);
+    await new Promise((resolve) => setTimeout(resolve, interval));
+  }
+}
+
+/** 给一个 promise 加超时护栏：实现若把审核做成阻塞，测试快速失败而不是挂死。 */
+function timeoutAfter(ms, message) {
+  let timer;
+  const promise = new Promise((_, reject) => {
+    timer = setTimeout(() => reject(new Error(message)), ms);
+  });
+  return { promise, cancel: () => clearTimeout(timer) };
+}
+
+async function setup(t, {
+  env = {},
+  client = null,
+  characters = ['deepseek', 'other'],
+  turnstileVerify = null,
+  bridge = null,
+  logger = { error() {}, warn() {} },
+} = {}) {
   const base = await fs.mkdtemp(path.join(os.tmpdir(), 'http-'));
-  t.after(() => fs.rm(base, { recursive: true, force: true }));
   const cfg = resolveConfig(
     { storageRoot: path.join(base, 'private'), adminToken: 'admin-secret-value' },
     { env: { SUBMISSION_ALLOWED_ORIGINS: ORIGIN, ...env } },
@@ -43,8 +94,24 @@ async function setup(t, { env = {}, client = null, characters = ['deepseek', 'ot
   const queue = await createQueue(cfg);
   const reviewer = createReviewer(cfg, { client });
   const qqAdapter = createQqAdapter(cfg, { queue, fetchImpl: async () => { throw new Error('不该出站'); } });
-  const deps = { cfg, queue, reviewer, qqAdapter, characters, turnstileVerify, logger: { error() {}, warn() {} } };
-  return { base, cfg, queue, reviewer, deps, publicHandler: createPublicHandler(deps), adminHandler: createAdminHandler(deps) };
+  const deps = { cfg, queue, reviewer, qqAdapter, bridge, characters, turnstileVerify, logger };
+  // 与两个 handler 共享同一协调器实例（同一队列），收尾时先等后台审核落定再删目录，
+  // 否则 Windows 上后台任务还在写盘，rm 会因目录非空失败。
+  const reviewCoordinator = reviewCoordinatorFor(deps);
+  t.after(async () => {
+    await reviewCoordinator.drain();
+    await fs.rm(base, { recursive: true, force: true });
+  });
+  return {
+    base,
+    cfg,
+    queue,
+    reviewer,
+    reviewCoordinator,
+    deps,
+    publicHandler: createPublicHandler(deps),
+    adminHandler: createAdminHandler(deps),
+  };
 }
 
 async function withServer(handler, fn) {
@@ -260,7 +327,29 @@ test('管理端触发审核：未配置 AI 转人工，人工可批准', async (
 });
 
 test('管理端能看到 AI 原始结果，公开端没有这个路由', async (t) => {
-  const passClient = async () => ({ verdict: 'pass', confidence: 0.99, reason: 'ok', raw: { internal_note: '内部推理' } });
+  // 严格 submission-ai-content/1 契约：受校验的 content 在正文里，
+  // 内部推理挂在传输层包装上（未知字段不允许出现在契约正文）。
+  const passClient = async () => ({
+    choices: [{
+      message: {
+        content: JSON.stringify({
+          schema: 'submission-ai-content/1',
+          verdict: 'pass',
+          confidence: 0.99,
+          reason: 'ok',
+          content: {
+            name: '测试表情',
+            description: '',
+            commentary: '一张测试图。',
+            characterId: 'deepseek',
+            categoryIds: ['meme'],
+            tags: ['测试'],
+          },
+        }),
+      },
+    }],
+    internal_note: '内部推理',
+  });
   const { publicHandler, adminHandler, queue } = await setup(t, { client: passClient });
   await withServer(publicHandler, async (port) => { await submit(port, {}); });
   const item = (await queue.list())[0];
@@ -499,4 +588,163 @@ test('QQ 入口超大 body 返回 413 而不是 400', async (t) => {
     });
     assert.equal(res.status, 413);
   });
+});
+
+/* ------------------------------------------- 入队后异步审核 / 自动桥接 */
+
+function qqEvent(port, { groupId = 'g1', messageId = 'm1', base64 } = {}) {
+  return call(port, {
+    method: 'POST',
+    routePath: '/api/v1/adapters/qq/events',
+    headers: { authorization: 'Bearer qq-token', 'Content-Type': 'application/json' },
+    body: Buffer.from(JSON.stringify({ groupId, messageId, image: { base64: base64 ?? TINY_PNG.toString('base64') } })),
+  });
+}
+
+test('网页投稿：HTTP 响应先返回，后台异步跑审核（不阻塞）', async (t) => {
+  let release;
+  const gate = new Promise((resolve) => { release = resolve; });
+  const calls = [];
+  const { publicHandler, queue } = await setup(t, {
+    client: async () => { calls.push(1); await gate; return passEnvelope(); },
+  });
+  await withServer(publicHandler, async (port) => {
+    const guard = timeoutAfter(3000, '响应被后台审核阻塞了');
+    let res;
+    try {
+      res = await Promise.race([submit(port, {}), guard.promise]);
+    } finally {
+      guard.cancel();
+    }
+    try {
+      assert.equal(res.status, 201, res.body.toString());
+      const id = JSON.parse(res.body).id;
+      // gate 未放行却已拿到响应：证明审核在后台，不阻塞 HTTP。
+      assert.notEqual((await queue.get(id)).state, STATES.AUTO_PASSED);
+      release();
+      await waitFor(async () => (await queue.get(id)).state === STATES.AUTO_PASSED, { label: '后台审核完成' });
+    } finally {
+      release();
+    }
+  });
+  assert.equal(calls.length, 1, '后台审核应恰好调用一次审核器');
+});
+
+test('QQ 入站 accepted 同样触发后台审核；重复推送不重审', async (t) => {
+  const calls = [];
+  const { publicHandler, queue } = await setup(t, {
+    client: async () => { calls.push(1); return passEnvelope(); },
+    env: {
+      SUBMISSION_QQ_ENABLED: 'true',
+      SUBMISSION_QQ_INBOUND_TOKEN: 'qq-token',
+      SUBMISSION_QQ_GROUP_ALLOWLIST: 'g1',
+    },
+  });
+  await withServer(publicHandler, async (port) => {
+    const first = await qqEvent(port, {});
+    assert.equal(first.status, 202, first.body.toString());
+    const body = JSON.parse(first.body);
+    assert.equal(body.status, STATES.RECEIVED, 'mocked 创建时仍在 received，审核在后台');
+    await waitFor(async () => (await queue.get(body.id)).state === STATES.AUTO_PASSED, { label: 'QQ 后台审核完成' });
+    assert.equal(calls.length, 1);
+
+    const dup = await qqEvent(port, {});
+    assert.equal(dup.status, 200);
+    assert.equal(JSON.parse(dup.body).id, body.id);
+    assert.equal(calls.length, 1, '重复推送是幂等命中，不应再次审核');
+  });
+});
+
+test('审核 pass 且桥接可用时自动桥接；桥接异常只记日志、不改队列状态', async (t) => {
+  const bridged = [];
+  const errors = [];
+  const okBridge = { enabled: true, bridgeItem: async (id) => { bridged.push(id); return { id, status: 'ready' }; } };
+  const first = await setup(t, {
+    client: async () => passEnvelope(),
+    bridge: okBridge,
+    logger: { error: (message) => errors.push(String(message)), warn() {} },
+  });
+  await withServer(first.publicHandler, async (port) => {
+    const res = await submit(port, {});
+    assert.equal(res.status, 201);
+    const id = JSON.parse(res.body).id;
+    await waitFor(() => bridged.length === 1, { label: '自动桥接' });
+    assert.deepEqual(bridged, [id]);
+    assert.equal((await first.queue.get(id)).state, STATES.AUTO_PASSED);
+    assert.deepEqual(errors, []);
+  });
+
+  const boom = await setup(t, {
+    client: async () => passEnvelope(),
+    bridge: { enabled: true, bridgeItem: async () => { throw new Error('intake down'); } },
+    logger: { error: (message) => errors.push(String(message)), warn() {} },
+  });
+  await withServer(boom.publicHandler, async (port) => {
+    const res = await submit(port, {});
+    assert.equal(res.status, 201);
+    const id = JSON.parse(res.body).id;
+    await waitFor(() => errors.some((message) => message.includes('后台桥接失败')), { label: '桥接异常日志' });
+    // 桥接异常不改变队列终态，也不把公开响应变成失败。
+    assert.equal((await boom.queue.get(id)).state, STATES.AUTO_PASSED);
+  });
+});
+
+test('审核转人工/失败时不桥接', async (t) => {
+  const bridged = [];
+  const bridge = { enabled: true, bridgeItem: async (id) => { bridged.push(id); return { id, status: 'ready' }; } };
+
+  const manual = await setup(t, {
+    client: async () => ({ choices: [{ message: { content: '完全看不懂的内容' } }] }),
+    bridge,
+  });
+  await withServer(manual.publicHandler, async (port) => {
+    const res = await submit(port, {});
+    assert.equal(res.status, 201);
+    const id = JSON.parse(res.body).id;
+    await waitFor(async () => (await manual.queue.get(id)).state === STATES.NEEDS_MANUAL, { label: '转人工' });
+    assert.deepEqual(bridged, []);
+  });
+
+  const failing = await setup(t, {
+    client: async () => { throw new Error('AI down'); },
+    bridge,
+  });
+  await withServer(failing.publicHandler, async (port) => {
+    const res = await submit(port, {});
+    assert.equal(res.status, 201);
+    const id = JSON.parse(res.body).id;
+    await waitFor(async () => (await failing.queue.get(id)).state === STATES.NEEDS_MANUAL, { label: '审核失败转人工' });
+    assert.deepEqual(bridged, [], '审核失败绝不桥接');
+  });
+});
+
+test('并发保护：同一 id 飞行中重复触发只审核一次', async (t) => {
+  let release;
+  const gate = new Promise((resolve) => { release = resolve; });
+  const calls = [];
+  const { queue, reviewer } = await setup(t, {
+    client: async () => { calls.push(1); await gate; return passEnvelope(); },
+  });
+  const { item } = await queue.enqueue({
+    source: 'web',
+    sourceId: 'web:concurrency',
+    buffer: TINY_PNG,
+    fields: { name: '并发测试', character: 'deepseek' },
+    origin: { via: 'web' },
+  });
+  const coordinator = createReviewCoordinator({ queue, reviewer, bridge: null, logger: { error() {} } });
+  try {
+    const firstTask = coordinator.trigger(item.id);
+    assert.ok(firstTask, '首次触发应返回后台任务');
+    assert.equal(coordinator.trigger(item.id), null, '同一 id 在飞行中应被并发保护挡下');
+    // 管理端显式审核复用同一飞行任务，不会另开一次审核。
+    assert.equal(coordinator.run(item.id), firstTask);
+    release();
+    await firstTask;
+    assert.equal((await queue.get(item.id)).state, STATES.AUTO_PASSED);
+    assert.equal(calls.length, 1);
+    assert.equal(coordinator.size(), 0, '完成后不再占用 in-flight 名额');
+  } finally {
+    release();
+  }
 });

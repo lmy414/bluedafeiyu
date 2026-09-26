@@ -1,0 +1,15 @@
+[Unit]
+Description=蓝色大肥鱼 · 每 6 小时触发一次投稿批量发布（00/06/12/18）
+
+[Timer]
+# 每 6 小时触发：00、06、12、18 点。
+# 服务器应设置为 Asia/Shanghai 时区，部署后用 systemctl list-timers 核对下一次触发时间。
+OnCalendar=*-*-* 00,06,12,18:00:00
+# 关机期间错过的窗口，开机后补跑一次。
+Persistent=true
+# 随机延迟 0–300 秒，避开其它整点任务，减少与其它发布/备份的锁竞争。
+RandomizedDelaySec=300
+Unit=dafeiyu-publish.service
+
+[Install]
+WantedBy=timers.target

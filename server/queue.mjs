@@ -22,7 +22,7 @@ import { createHash } from 'node:crypto';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
-import { ALLOWED_IMAGE_EXT, FORMAT_EXT, SCHEMA, ensureStorageLayout } from './config.mjs';
+import { AI_CONTENT_SCHEMA, ALLOWED_IMAGE_EXT, FORMAT_EXT, SCHEMA, ensureStorageLayout } from './config.mjs';
 
 export const SOURCES = new Set(['web', 'qq', 'github-issue', 'local', 'manual']);
 
@@ -88,6 +88,35 @@ function normalizeFields(fields = {}) {
     character: String(fields.character || ''),
     tags: Array.isArray(fields.tags) ? fields.tags.map((tag) => String(tag)).filter(Boolean).slice(0, 20) : [],
     ...(fields.extra && typeof fields.extra === 'object' ? { extra: fields.extra } : {}),
+  };
+}
+
+/* AI content 白名单：只有这六个内容字段。系统/法律字段（id/slug/path/submitter/
+ * origin/license/status 等）与任何未知字段都不在其中，写摘要时一律丢弃——审核层
+ * 已经拒过，这里再兜一次底。审核结论三元组留在 item.review 上，不塞进 content。 */
+const REVIEW_CONTENT_LIMITS = Object.freeze({
+  name: 200,
+  description: 2000,
+  commentary: 2000,
+  characterId: 64,
+  categoryIds: 10,
+  categoryId: 64,
+  tags: 20,
+  tagLength: 40,
+});
+
+/** 只保留白名单字段并截断长度；不是对象时返回 null。 */
+function normalizeReviewContent(content) {
+  if (!content || typeof content !== 'object' || Array.isArray(content)) return null;
+  const text = (value, max) => String(value ?? '').slice(0, max);
+  const list = (value, max, itemMax) => (Array.isArray(value) ? value.slice(0, max).map((entry) => text(entry, itemMax)) : []);
+  return {
+    name: text(content.name, REVIEW_CONTENT_LIMITS.name),
+    description: text(content.description, REVIEW_CONTENT_LIMITS.description),
+    commentary: text(content.commentary, REVIEW_CONTENT_LIMITS.commentary),
+    characterId: text(content.characterId, REVIEW_CONTENT_LIMITS.characterId),
+    categoryIds: list(content.categoryIds, REVIEW_CONTENT_LIMITS.categoryIds, REVIEW_CONTENT_LIMITS.categoryId),
+    tags: list(content.tags, REVIEW_CONTENT_LIMITS.tags, REVIEW_CONTENT_LIMITS.tagLength),
   };
 }
 
@@ -336,21 +365,54 @@ export async function createQueue(cfg, { now = () => Date.now(), reviewTimeoutMs
     return withLock(async () => {
       const item = await readItem(id);
       if (!item) throw new Error(`队列里没有 ${id}`);
+      const content = normalizeReviewContent(review.content);
+      const schema = review.schema
+        ? String(review.schema).slice(0, 64)
+        : (content ? AI_CONTENT_SCHEMA : null);
       item.review = {
         verdict: review.verdict,
         confidence: review.confidence,
         reason: String(review.reason || '').slice(0, 1000),
+        schema,
         model: review.model || null,
         promptVersion: review.promptVersion || null,
         latencyMs: review.latencyMs ?? null,
         decidedBy: review.decidedBy || 'ai',
         at: new Date(now()).toISOString(),
       };
+      /* 受校验的 AI 内容：只保留白名单字段（六个内容字段 + 审核三元组），
+       * 系统/法律/未知字段一律剔除；超限不落，桥接会按内容不完整跳过。 */
+      if (content) {
+        let serialized = '';
+        try { serialized = JSON.stringify(content); } catch { serialized = ''; }
+        item.review.content = serialized && serialized.length <= cfg.maxJsonBytes ? content : null;
+      } else {
+        item.review.content = null;
+      }
       item.updatedAt = item.review.at;
       if (raw !== null && raw !== undefined) {
-        await writeFileAtomic(path.join(paths.ai, `${item.id}.json`), `${JSON.stringify({ id, at: item.review.at, payload: raw }, null, 2)}\n`);
+        await writeFileAtomic(path.join(paths.ai, `${item.id}.json`), `${JSON.stringify({ id, at: item.review.at, schema: item.review.schema, content: item.review.content ?? null, payload: raw }, null, 2)}\n`);
       }
       await saveItem(item);
+      return item;
+    });
+  }
+
+  /**
+   * 记录桥接结果（不改变公开投稿状态机）。桥接是私有中转步骤，状态只作为
+   * 附加字段 `item.bridge` 落盘，`state` 始终停在 auto_passed。
+   */
+  async function recordBridge(id, patch = {}) {
+    return withLock(async () => {
+      const item = await readItem(id);
+      if (!item) throw new Error(`队列里没有 ${id}`);
+      item.bridge = {
+        ...(item.bridge || {}),
+        ...patch,
+        at: new Date(now()).toISOString(),
+      };
+      await saveItem(item);
+      await log('bridge', { id, status: item.bridge.status || null, sha256: item.bridge.sha256 || null });
       return item;
     });
   }
@@ -428,6 +490,7 @@ export async function createQueue(cfg, { now = () => Date.now(), reviewTimeoutMs
     transition,
     attachReview,
     readReviewRaw,
+    recordBridge,
     decide,
     readImage,
     objectFile,

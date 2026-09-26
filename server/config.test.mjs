@@ -12,11 +12,13 @@ import { fileURLToPath } from 'node:url';
 import { test } from 'node:test';
 
 import {
+  AI_CONTENT_SCHEMA,
   assertPrivateRoot,
   configSummary,
   ensureStorageLayout,
   isIpInCidr,
   isTrustedProxy,
+  loadContentVocabulary,
   normalizeIp,
   parseCidr,
   resolveConfig,
@@ -207,5 +209,116 @@ test('ensureStorageLayout 只建私有权限目录', async (t) => {
   for (const dir of [cfg.paths.items, cfg.paths.objects, cfg.paths.index, cfg.paths.ai, cfg.paths.logs]) {
     const stat = await fs.stat(dir);
     assert.ok(stat.isDirectory());
+  }
+});
+
+test('默认 promptVersion 指向 submission-ai-content/1，且可被环境变量覆盖', async (t) => {
+  const root = path.join(await tmpDir('prompt-'), 'private');
+  t.after(() => fs.rm(path.dirname(root), { recursive: true, force: true }));
+  const cfg = resolveConfig({ storageRoot: root }, { env: {} });
+  assert.equal(AI_CONTENT_SCHEMA, 'submission-ai-content/1');
+  assert.equal(cfg.review.promptVersion, AI_CONTENT_SCHEMA);
+
+  const custom = resolveConfig({ storageRoot: root }, { env: { SUBMISSION_AI_PROMPT_VERSION: 'v9' } });
+  assert.equal(custom.review.promptVersion, 'v9');
+});
+
+test('从 data/ 动态加载角色与分类枚举，忽略停用项', async (t) => {
+  const site = await tmpDir('vocab-site-');
+  t.after(() => fs.rm(site, { recursive: true, force: true }));
+  await fs.mkdir(path.join(site, 'data'), { recursive: true });
+  await fs.writeFile(
+    path.join(site, 'data', 'characters.json'),
+    JSON.stringify([
+      { id: 'deepseek', name: 'DeepSeek娘', status: 'active' },
+      { id: 'retired', name: '旧角色', status: 'inactive' },
+      { id: 'kimi', name: 'Kimi娘' },
+    ]),
+    'utf8',
+  );
+  await fs.writeFile(
+    path.join(site, 'data', 'categories.json'),
+    JSON.stringify([{ id: 'meme', name: '梗图', status: 'active' }]),
+    'utf8',
+  );
+
+  const vocabulary = loadContentVocabulary(site);
+  assert.equal(vocabulary.ok, true);
+  assert.deepEqual([...vocabulary.characterIds].sort(), ['deepseek', 'kimi']);
+  assert.deepEqual([...vocabulary.categoryIds], ['meme']);
+});
+
+test('枚举文件缺失或损坏时 ok=false，供审核层 fail-closed', async (t) => {
+  const site = await tmpDir('vocab-missing-');
+  t.after(() => fs.rm(site, { recursive: true, force: true }));
+  const missing = loadContentVocabulary(site);
+  assert.equal(missing.ok, false);
+  assert.equal(missing.characterIds.size, 0);
+  assert.equal(missing.categoryIds.size, 0);
+
+  await fs.mkdir(path.join(site, 'data'), { recursive: true });
+  await fs.writeFile(path.join(site, 'data', 'characters.json'), '{ not json', 'utf8');
+  assert.equal(loadContentVocabulary(site).ok, false);
+});
+
+test('真实仓库 data/ 能加载出可用枚举', () => {
+  const vocabulary = loadContentVocabulary(SITE_ROOT);
+  assert.equal(vocabulary.ok, true);
+  assert.ok(vocabulary.characterIds.has('deepseek'));
+  assert.ok(vocabulary.categoryIds.has('meme'));
+});
+
+test('GitHub 分页 / 重试有安全默认值且可覆盖', async (t) => {
+  const root = path.join(await tmpDir('ghcfg-'), 'private');
+  t.after(() => fs.rm(path.dirname(root), { recursive: true, force: true }));
+  const cfg = resolveConfig({ storageRoot: root }, { env: {} });
+  assert.equal(cfg.github.perPage, 100);
+  assert.equal(cfg.github.maxPages, 5);
+  assert.equal(cfg.github.maxRetries, 3);
+  assert.equal(cfg.github.retryBaseMs, 500);
+  assert.equal(cfg.github.retryMaxMs, 8000);
+
+  const custom = resolveConfig(
+    { storageRoot: root, githubPerPage: 30, githubMaxPages: 2, githubMaxRetries: 0, githubRetryBaseMs: 10, githubRetryMaxMs: 40 },
+    { env: {} },
+  );
+  assert.equal(custom.github.perPage, 30);
+  assert.equal(custom.github.maxPages, 2);
+  assert.equal(custom.github.maxRetries, 0, '允许把重试关掉');
+  assert.equal(custom.github.retryBaseMs, 10);
+  assert.equal(custom.github.retryMaxMs, 40);
+
+  const envCustom = resolveConfig({ storageRoot: root }, {
+    env: {
+      SUBMISSION_GITHUB_PER_PAGE: '50',
+      SUBMISSION_GITHUB_MAX_PAGES: '9',
+      SUBMISSION_GITHUB_MAX_RETRIES: '1',
+      SUBMISSION_GITHUB_RETRY_BASE_MS: '200',
+      SUBMISSION_GITHUB_RETRY_MAX_MS: '2000',
+    },
+  });
+  assert.equal(envCustom.github.perPage, 50);
+  assert.equal(envCustom.github.maxPages, 9);
+  assert.equal(envCustom.github.maxRetries, 1);
+  assert.equal(envCustom.github.retryBaseMs, 200);
+  assert.equal(envCustom.github.retryMaxMs, 2000);
+});
+
+test('GitHub 分页 / 重试拒绝非法值', async (t) => {
+  const root = path.join(await tmpDir('ghbad-'), 'private');
+  t.after(() => fs.rm(path.dirname(root), { recursive: true, force: true }));
+  for (const [key, value] of [
+    ['githubPerPage', '0'],
+    ['githubPerPage', '101'],
+    ['githubMaxPages', '-1'],
+    ['githubMaxRetries', '-1'],
+    ['githubRetryBaseMs', '0'],
+    ['githubRetryMaxMs', 'nope'],
+  ]) {
+    assert.throws(
+      () => resolveConfig({ storageRoot: root, [key]: value }, { env: {} }),
+      /SUBMISSION_GITHUB|github/i,
+      `应拒绝 ${key}=${value}`,
+    );
   }
 });

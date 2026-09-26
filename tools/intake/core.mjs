@@ -430,6 +430,85 @@ export async function addLocalFile(cfg, file, { fields = {}, targetPath = null }
   });
 }
 
+/* ------------------------------------------------- 审核通过条目桥接入区 */
+
+/* 中转状态：ready 供自动发布批次消费；staged 仍是人工收录的默认状态。 */
+export const READY_STATUS = 'ready';
+
+const FORMAT_BY_EXT = { '.png': 'png', '.jpg': 'jpeg', '.jpeg': 'jpeg', '.gif': 'gif', '.webp': 'webp', '.apng': 'png' };
+
+/**
+ * 把已通过审核、内容完整的条目写进中转区，状态 `ready`。
+ *
+ * 与 stageBuffer 的差别：
+ *   1. 状态是 `ready`（供发布批次消费），不是人工收录用的 `staged`；
+ *   2. 附带 `submissionId` 与受校验的完整 AI 内容，供发布批次与追溯使用；
+ *   3. 幂等键仍是 sha256：已有记录一律返回 duplicate，绝不覆盖既有记录。
+ *
+ * 调用方（server/bridge.mjs）负责先做内容 schema 校验；这里只做字节层校验与落盘。
+ * 本函数不读、不写、不跑 git，也不碰内容仓工作树。
+ */
+export async function stageReadyItem(cfg, buffer, {
+  ext = '',
+  submissionId = null,
+  source = 'web',
+  fields = {},
+  content = null,
+  contentSchema = null,
+  origin = {},
+  license = 'unknown',
+  receivedAt = null,
+} = {}) {
+  await ensureLayout(cfg);
+  if (!Buffer.isBuffer(buffer)) buffer = Buffer.from(buffer);
+  if (buffer.length === 0) throw new Error('不能收空文件');
+  if (buffer.length > cfg.maxBytes) {
+    throw new Error(`图片超过大小上限 ${cfg.maxBytes} 字节：${buffer.length}`);
+  }
+
+  const digest = sha256(buffer);
+  const existing = await readItem(cfg, digest);
+  if (existing) return { status: 'duplicate', item: existing, sha256: digest };
+
+  const sniffed = sniffImageFormat(buffer);
+  if (!sniffed) throw new Error('文件头不是已知图片格式，拒绝写入中转区');
+
+  /* ext 是队列条目里的裸扩展名（.png/.jpg/...），不能走 path.extname（点文件会判成无扩展名）。 */
+  let resolvedExt = String(ext || '').trim().toLowerCase();
+  if (resolvedExt && !resolvedExt.startsWith('.')) resolvedExt = `.${resolvedExt}`;
+  if (resolvedExt === '.jpeg') resolvedExt = '.jpg';
+  if (!ALLOWED_EXT.has(resolvedExt)) resolvedExt = extensionFromSniffed(sniffed);
+  if (FORMAT_BY_EXT[resolvedExt] && FORMAT_BY_EXT[resolvedExt] !== sniffed) {
+    throw new Error(`文件内容像 ${sniffed}，扩展名却是 ${resolvedExt}，拒绝写入中转区`);
+  }
+
+  const at = new Date().toISOString();
+  const item = {
+    schema: SCHEMA,
+    sha256: digest,
+    ext: resolvedExt,
+    bytes: buffer.length,
+    source,
+    status: READY_STATUS,
+    submissionId: submissionId ? String(submissionId) : null,
+    contentSchema: contentSchema || null,
+    receivedAt: receivedAt || at,
+    bridgedAt: at,
+    fields: redactValue({ name: '', description: '', character: '', tags: [], ...fields }),
+    content: redactValue(content),
+    origin: redactValue({ ...origin, submissionId: submissionId ? String(submissionId) : null }),
+    license: redactValue(license),
+    targetPath: null,
+    batch: null,
+    publishedAt: null,
+  };
+
+  await writeBufferAtomic(itemFile(cfg, item), buffer);
+  await writeJsonAtomic(metaFile(cfg, digest), item);
+  await log(cfg, 'stage-ready', { sha256: digest, submissionId: item.submissionId, source, bytes: buffer.length });
+  return { status: READY_STATUS, item, sha256: digest };
+}
+
 /* ---------------------------------------------------------------- 读取 */
 
 export async function readItem(cfg, digest) {

@@ -10,6 +10,9 @@
  *
  * QQ 机器人侧走公开口的 POST /api/v1/adapters/qq/events，它自带令牌与群白名单鉴权。
  *
+ * 网页投稿与 QQ 入站只在**新建**条目后即发即忘地触发一次后台审核（不阻塞响应）；
+ * 审核 pass 且桥接可用时自动写入私有中转区。审核/桥接异常只记日志，不影响响应。
+ *
  * 这里只做「HTTP -> 队列/审核/适配器」的映射，不含业务判断。
  */
 import { timingSafeEqual } from 'node:crypto';
@@ -305,16 +308,97 @@ function queueErrorStatus(error) {
 
 /* ---------------------------------------------------------------- 公开入口 */
 
+/**
+ * 审核协调器：把「入队后异步审核 + 自动桥接」收敛成一个按 id 去重的执行器，
+ * 公开入口（后台即发即忘）与管理入口（显式等待结果）共用同一实例，因此
+ * **同一 id 永远不会被并发重审**——管理端若撞上正在飞行的后台审核，直接复用
+ * 那个任务的结果，而不是再开一次。
+ *
+ * 硬性边界：
+ *   - run(id) 只做一次 reviewQueuedItem；verdict=pass 且桥接可用时自动
+ *     bridgeItem，把 ready 写进私有中转区；
+ *   - 审核 / 桥接异常只记日志并返回 null：不抛出、不改公开响应、不动队列；
+ *   - trigger(id) 即发即忘；不可用或该 id 已在飞行中返回 null（并发保护）。
+ */
+export function createReviewCoordinator({ queue, reviewer, bridge = null, logger = console } = {}) {
+  const inFlight = new Map();
+  const available = Boolean(queue && reviewer && typeof reviewer.review === 'function');
+
+  function run(id, { actor = 'ai' } = {}) {
+    const target = String(id || '');
+    if (!available || !target) return Promise.resolve(null);
+    const existing = inFlight.get(target);
+    if (existing) return existing;
+
+    const task = (async () => {
+      try {
+        const result = await reviewQueuedItem(queue, reviewer, target, { actor });
+        if (result && result.verdict === 'pass' && bridge && bridge.enabled) {
+          try {
+            await bridge.bridgeItem(target);
+          } catch (error) {
+            logger.error?.(`后台桥接失败 ${target}：${error.message}`);
+          }
+        }
+        return result;
+      } catch (error) {
+        logger.error?.(`后台审核失败 ${target}：${error.message}`);
+        return null;
+      }
+    })();
+
+    inFlight.set(target, task);
+    const settle = () => { if (inFlight.get(target) === task) inFlight.delete(target); };
+    task.then(settle, settle);
+    return task;
+  }
+
+  function trigger(id, options) {
+    const target = String(id || '');
+    if (!available || !target || inFlight.has(target)) return null;
+    return run(target, options);
+  }
+
+  /** 等待当前在飞的审核任务全部落定（测试收尾用）；不启动新任务。 */
+  async function drain({ timeout = 5000 } = {}) {
+    const tasks = [...inFlight.values()];
+    if (tasks.length === 0) return;
+    let timer;
+    await Promise.race([
+      Promise.allSettled(tasks),
+      new Promise((resolve) => { timer = setTimeout(resolve, timeout); timer.unref?.(); }),
+    ]).finally(() => clearTimeout(timer));
+  }
+
+  return { available, run, trigger, drain, size: () => inFlight.size };
+}
+
+/* 进程内按队列共享协调器：公开口与管理口即便分开构造，也拿到同一实例。 */
+const REVIEW_COORDINATORS = new WeakMap();
+
+export function reviewCoordinatorFor({ queue, reviewer, bridge = null, logger = console } = {}) {
+  if (!queue || typeof queue !== 'object') return createReviewCoordinator({ queue, reviewer, bridge, logger });
+  let coordinator = REVIEW_COORDINATORS.get(queue);
+  if (!coordinator) {
+    coordinator = createReviewCoordinator({ queue, reviewer, bridge, logger });
+    REVIEW_COORDINATORS.set(queue, coordinator);
+  }
+  return coordinator;
+}
+
 export function createPublicHandler({
   cfg,
   queue,
   qqAdapter,
+  reviewer = null,
+  bridge = null,
   characters = [],
   turnstileVerify = null,
   now = () => Date.now(),
   logger = console,
 } = {}) {
   const allowRate = createRateLimiter({ ...cfg.rateLimit, now });
+  const reviewCoordinator = reviewCoordinatorFor({ queue, reviewer, bridge, logger });
   // 配了 secret 却没注入测试客户端时，才构造真实的 siteverify 客户端；测试注入优先。
   const verifyTurnstile = turnstileVerify
     || (cfg.turnstile.enabled
@@ -366,6 +450,10 @@ export function createPublicHandler({
           return sendJson(res, 400, { ok: false, error: 'invalid json' });
         }
         const result = await qqAdapter.handleInbound({ authorization: req.headers.authorization || '', payload });
+        // 仅新建（accepted）才在后台触发审核；重复推送是幂等命中，不重审。
+        if (result.status === 'accepted' && result.body && result.body.id) {
+          reviewCoordinator.trigger(result.body.id);
+        }
         return sendJson(res, result.code, result.body);
       }
 
@@ -427,6 +515,8 @@ export function createPublicHandler({
           fields: checked.fields,
           origin: { via: 'web' },
         });
+        // 只对新建条目在后台触发审核与自动桥接；重复投稿不重审，且不阻塞响应。
+        if (result.status === 'created') reviewCoordinator.trigger(result.item.id);
         return sendJson(res, result.status === 'created' ? 201 : 200, {
           ok: true,
           id: result.item.id,
@@ -449,11 +539,14 @@ export function createAdminHandler({
   cfg,
   queue,
   reviewer,
+  bridge = null,
   githubAdapter = null,
   now = () => Date.now(),
   logger = console,
 } = {}) {
   const itemIdPattern = /^\/api\/v1\/items\/(sub_[A-Za-z0-9_]+)(\/raw|\/review|\/decision)?$/;
+  // 与公开口共享同一协调器：管理端显式审核会加入正在飞行的后台审核，不重复审。
+  const reviewCoordinator = reviewCoordinatorFor({ queue, reviewer, bridge, logger });
 
   return async function adminHandler(req, res) {
     try {
@@ -490,11 +583,8 @@ export function createAdminHandler({
         }
         const results = [];
         for (const id of targets) {
-          try {
-            results.push({ id, ...(await reviewQueuedItem(queue, reviewer, id, { actor: 'ai' })) });
-          } catch (error) {
-            results.push({ id, verdict: 'manual', reason: error.message });
-          }
+          const result = await reviewCoordinator.run(id);
+          results.push(result ? { id, ...result } : { id, verdict: 'manual', reason: '审核未能执行，转人工' });
         }
         return sendJson(res, 200, { ok: true, results });
       }
@@ -538,7 +628,8 @@ export function createAdminHandler({
           return sendJson(res, 200, { ok: true, raw: await queue.readReviewRaw(id) });
         }
         if (req.method === 'POST' && sub === '/review') {
-          const result = await reviewQueuedItem(queue, reviewer, id, { actor: 'ai' });
+          const result = await reviewCoordinator.run(id);
+          if (!result) return sendJson(res, 400, { ok: false, error: '请求无法处理' });
           const item = await queue.get(id);
           return sendJson(res, 200, { ok: true, id, ...result, state: item.state });
         }
@@ -571,6 +662,9 @@ function listen(server, port, host) {
 /**
  * 启动两个监听口。管理口必须是回环地址且必须配令牌，否则拒绝启动。
  * public 口默认也绑回环；只有显式设置 SUBMISSION_PUBLIC_HOST 才可能对公网开放。
+ *
+ * deps 来自 buildContext，携带 queue / reviewer / bridge / qqAdapter 等；cfg 由本函数
+ * 合并进来，确保两个 handler 拿到完整依赖（background 审核需要 reviewer + bridge）。
  */
 export async function startServers(cfg, deps) {
   if (!LOOPBACK_HOSTS.has(cfg.adminHost)) {
@@ -579,8 +673,9 @@ export async function startServers(cfg, deps) {
   if (!cfg.adminToken) {
     throw new Error('启动管理 API 必须配置 SUBMISSION_ADMIN_TOKEN');
   }
-  const publicServer = createServer(createPublicHandler(deps));
-  const adminServer = createServer(createAdminHandler(deps));
+  const handlerDeps = { ...deps, cfg };
+  const publicServer = createServer(createPublicHandler(handlerDeps));
+  const adminServer = createServer(createAdminHandler(handlerDeps));
   await listen(publicServer, cfg.publicPort, cfg.publicHost);
   try {
     await listen(adminServer, cfg.adminPort, cfg.adminHost);

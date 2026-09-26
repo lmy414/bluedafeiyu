@@ -80,9 +80,9 @@
       "page.category.title": "AI-Girl Sticker Categories - Browse Memes, Illustrations & Comics by Character | 蓝色大肥鱼",
       "page.category.desc":
         "Browse AI-girl memes, stickers, fan illustrations, character sheets and comics by character (DeepSeek, Claude, Qwen, GLM and more), and search names & tags within each category.",
-      "page.submit.title": "Submit AI-Girl Fan Stickers - Simplified GitHub Form | 蓝色大肥鱼",
+      "page.submit.title": "Submit AI-Girl Fan Stickers - On-Site Form & GitHub | 蓝色大肥鱼",
       "page.submit.desc":
-        "Submitting an AI-girl fan sticker only takes an image upload plus its name and character — an optional one-line note. Tags, source, license and category are added by maintainers during review.",
+        "Submitting an AI-girl fan sticker only takes an image upload plus its name and character — an optional one-line note. Use the on-site form or the GitHub form; approved works are published in batches, and tags, source, license and category are added by maintainers during review.",
       "page.about.title": "About 蓝色大肥鱼 - AI-Girl Sticker Archive, Licensing & Privacy",
       "page.about.desc":
         "What the 蓝色大肥鱼 AI-girl sticker archive is, image copyright & licensing, Google Analytics privacy, comments, the official QQ group, character-design credits, and how to request attribution or removal.",
@@ -121,7 +121,7 @@
 
       "submit.h1": "Submit",
       "submit.lede":
-        "Hand your AI-girl fan stickers to us for archiving. Submissions currently go through the GitHub form: upload the image and fill in its name and character — a note is optional; the rest of the catalog info is completed by maintainers during review.",
+        "Hand your AI-girl fan stickers to us for archiving. Submit right on this page, or use the GitHub form: upload the image and fill in its name and character — a note is optional; the rest of the catalog info is completed by maintainers during review, and approved works are published in batches.",
       "submit.guide.title": "Submission guide",
       "submit.what.a": "This site collects ",
       "submit.what.b": "humanized fan stickers of AI characters",
@@ -167,24 +167,44 @@
         "The Feishu channel is still in preparation — please use the GitHub form above for now.",
       "submit.channel.soon": "Coming soon",
       "submit.form.title": "Quick submit",
-      "submit.form.noticeA": "On-site quick submit is not open yet",
-      "submit.form.noticeB": " · please use the GitHub form above for now",
+      "submit.form.noticeA": "On-site quick submit is open",
+      "submit.form.noticeB": " · submissions are queued for review and published in batches once approved",
       "submit.form.files": "Image files",
       "submit.form.filesHint":
-        "Drag & drop the image directly in the GitHub form; on-site quick submit is not open yet.",
+        "PNG / JPG / GIF / WebP / APNG, up to 10 MB each; send the original file, not a chat screenshot.",
       "submit.form.name": "Image name",
       "submit.form.desc": "One-line note",
       "submit.form.character": "Character",
       "submit.form.metaHint":
-        "Tags, work type, source, license and contact info are added by maintainers during review; if you know the source or license, put it in the note above or in a comment on the Issue.",
+        "Tags, work type, source, license and contact info are added by maintainers during review; if you know the source or license, put it in the note above.",
       "submit.form.confirmLabel": "Confirm before submitting",
       "submit.form.confirmHint": "All three boxes must be checked to submit.",
-      "submit.form.submit": "On-site submit · not open yet",
+      "submit.form.submit": "Submit on-site",
       "submit.form.select": "Select a character",
+      "submit.form.submitting": "Submitting…",
+      "submit.form.success":
+        "Submitted — thank you! Approved works are published in batches after review.",
+      "submit.form.turnstileHint": "Please complete the human verification before submitting.",
+      "submit.form.err.fileRequired": "Choose an image first.",
+      "submit.form.err.fileCount": "Only one image can be submitted at a time.",
+      "submit.form.err.fileType": "Only PNG / JPG / GIF / WebP / APNG are supported.",
+      "submit.form.err.fileSize": "A single image must not exceed 10 MB.",
+      "submit.form.err.fileEmpty": "The image is empty — please choose another file.",
+      "submit.form.err.name": "Enter an image name of no more than 120 characters.",
+      "submit.form.err.character": "Choose a character.",
+      "submit.form.err.desc": "The note must not exceed 500 characters.",
+      "submit.form.err.confirm": "Please tick all three confirmations first.",
+      "submit.form.err.turnstile": "Please complete the human verification first.",
+      "submit.form.err.tooLarge": "The image exceeds the size limit — compress it and try again.",
+      "submit.form.err.rejected":
+        "The submission was not accepted. Please try again later or use the GitHub form.",
+      "submit.form.err.busy": "Too many submissions — please try again later.",
+      "submit.form.err.invalid": "The submission did not pass validation — please check and retry.",
+      "submit.form.err.server": "Submission failed. Please try again later or use the GitHub form.",
       "submit.note1":
-        "On-site quick submit is not open yet — please use the GitHub submission form for now.",
+        "You can also keep using the GitHub submission form above; both routes feed the same review queue.",
       "submit.note2":
-        "Submissions don't go live immediately: maintainers review each image and fill in tags, category, source and license before archiving; they may ask you questions on the Issue.",
+        "Submissions don't go live immediately: maintainers review each image and fill in tags, category, source and license, then approved works are published in batches; they may reach out to confirm details.",
 
       "about.h1": "About",
       "about.lede":
@@ -361,9 +381,9 @@
       "page.category.title": "AI娘スタンプのカタログ - キャラ別にネタ画・イラスト・設定画・漫画を閲覧 | 蓝色大肥鱼",
       "page.category.desc":
         "DeepSeek娘・Claude娘・Qwen娘・GLM娘 などのキャラ別に、AI娘のネタ画・スタンプ・ファンアート・設定画・多コマ漫画を閲覧。カテゴリ内で名前やタグを検索できます。",
-      "page.submit.title": "AI娘スタンプの投稿 - 簡略化された GitHub フォーム | 蓝色大肥鱼",
+      "page.submit.title": "AI娘スタンプの投稿 - サイト内フォームと GitHub | 蓝色大肥鱼",
       "page.submit.desc":
-        "AI娘スタンプの投稿は、画像のアップロードと画像名・キャラの記入だけ。ひとこと説明は任意です。タグ・出所・ライセンス・分類はメンテナーが審査時に補完します。",
+        "AI娘スタンプの投稿は、画像のアップロードと画像名・キャラの記入だけ。ひとこと説明は任意です。サイト内フォームでも GitHub フォームでも投稿でき、承認後にまとめて公開されます。タグ・出所・ライセンス・分類はメンテナーが審査時に補完します。",
       "page.about.title": "蓝色大肥鱼について - AI娘スタンプのオープンアーカイブと著作権について",
       "page.about.desc":
         "AI娘スタンプアーカイブ「蓝色大肥魚」の概要、画像の著作権とライセンス、Google Analytics のプライバシー、コメントの仕組み、公式 QQ グループ、キャラデザのクレジット、署名・削除の申請方法。",
@@ -403,7 +423,7 @@
 
       "submit.h1": "投稿",
       "submit.lede":
-        "あなたの AI娘二次創作スタンプを私たちのアーカイブにどうぞ。現在の投稿は GitHub フォームから。画像のアップロードと画像名・キャラの記入だけで、説明は任意です。その他の収録情報はメンテナーが審査時に補完します。",
+        "あなたの AI娘二次創作スタンプを私たちのアーカイブにどうぞ。このページから直接投稿するか、GitHub フォームをご利用ください。画像のアップロードと画像名・キャラの記入だけで、説明は任意です。その他の収録情報はメンテナーが審査時に補完し、承認後にまとめて公開されます。",
       "submit.guide.title": "投稿ガイド",
       "submit.what.a": "当サイトが収録するのは",
       "submit.what.b": "AIキャラの擬人化二次創作スタンプ",
@@ -447,24 +467,44 @@
         "Feishu の投稿窓口は準備中です。今は上の GitHub 投稿フォームをご利用ください。",
       "submit.channel.soon": "もうすぐ開通",
       "submit.form.title": "クイック投稿",
-      "submit.form.noticeA": "サイト内クイック投稿はまだ開放していません",
-      "submit.form.noticeB": " · 上の GitHub 投稿フォームをご利用ください",
+      "submit.form.noticeA": "サイト内クイック投稿を開放しました",
+      "submit.form.noticeB": " · 投稿は審査キューに入り、承認後にまとめて公開されます",
       "submit.form.files": "画像ファイル",
       "submit.form.filesHint":
-        "GitHub フォームでは画像をそのままドラッグしてください。サイト内クイック投稿は未開放です。",
+        "PNG / JPG / GIF / WebP / APNG、1 枚 10 MB まで。元画像をアップロードし、チャット画面のスクショは避けてください。",
       "submit.form.name": "画像の名前",
       "submit.form.desc": "ひとこと説明",
       "submit.form.character": "キャラ",
       "submit.form.metaHint":
-        "タグ・作品タイプ・出所・ライセンス・連絡先はメンテナーが審査時に補完します。出所やライセンスをご存じなら、上の説明欄か Issue のコメントに書いてください。",
+        "タグ・作品タイプ・出所・ライセンス・連絡先はメンテナーが審査時に補完します。出所やライセンスをご存じなら、上の説明欄に書いてください。",
       "submit.form.confirmLabel": "送信前の確認",
       "submit.form.confirmHint": "3 つすべてチェックしないと送信できません。",
-      "submit.form.submit": "サイト内送信 · 未開放",
+      "submit.form.submit": "サイト内送信",
       "submit.form.select": "キャラを選択",
+      "submit.form.submitting": "送信中…",
+      "submit.form.success": "送信しました。ありがとうございます！承認後にまとめて公開されます。",
+      "submit.form.turnstileHint": "送信の前に人機認証を完了してください。",
+      "submit.form.err.fileRequired": "まず画像を選択してください。",
+      "submit.form.err.fileCount": "一度に送信できる画像は 1 枚だけです。",
+      "submit.form.err.fileType": "PNG / JPG / GIF / WebP / APNG のみ対応しています。",
+      "submit.form.err.fileSize": "画像 1 枚は 10 MB 以下にしてください。",
+      "submit.form.err.fileEmpty": "画像が空です。別のファイルを選択してください。",
+      "submit.form.err.name": "画像の名前を 120 文字以内で入力してください。",
+      "submit.form.err.character": "キャラを選択してください。",
+      "submit.form.err.desc": "説明は 500 文字以内にしてください。",
+      "submit.form.err.confirm": "先に 3 つの確認すべてにチェックしてください。",
+      "submit.form.err.turnstile": "先に人機認証を完了してください。",
+      "submit.form.err.tooLarge": "画像がサイズ上限を超えています。圧縮して再試行してください。",
+      "submit.form.err.rejected":
+        "投稿は受け付けられませんでした。しばらくして再試行するか、GitHub フォームをご利用ください。",
+      "submit.form.err.busy": "送信が多すぎます。しばらくしてから再試行してください。",
+      "submit.form.err.invalid": "入力内容が検証を通りませんでした。確認して再試行してください。",
+      "submit.form.err.server":
+        "送信に失敗しました。しばらくして再試行するか、GitHub フォームをご利用ください。",
       "submit.note1":
-        "サイト内クイック投稿は未開放です。現段階では GitHub 投稿フォームを優先的にご利用ください。",
+        "上の GitHub 投稿フォームも引き続き使えます。どちらの入口も同じ審査キューに入ります。",
       "submit.note2":
-        "投稿はすぐには公開されません。メンテナーが画像を確認してタグ・分類・出所・ライセンスを補完し、確認後に収録します。その間に Issue で質問することがあります。",
+        "投稿はすぐには公開されません。メンテナーが画像を確認してタグ・分類・出所・ライセンスを補完し、承認後にまとめて公開します。その間に確認のご連絡をすることがあります。",
 
       "about.h1": "About",
       "about.lede":

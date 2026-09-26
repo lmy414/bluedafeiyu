@@ -11,7 +11,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { test } from 'node:test';
 
-import { resolveConfig } from './config.mjs';
+import { AI_CONTENT_SCHEMA, resolveConfig } from './config.mjs';
 import { STATES, TERMINAL_STATES, createQueue } from './queue.mjs';
 
 const TINY_PNG = Buffer.from(
@@ -178,4 +178,69 @@ test('stats 只给计数，不外泄内部字段', async (t) => {
   assert.equal(stats.byState[STATES.RECEIVED], 1);
   assert.equal(stats.bySource.web, 1);
   assert.ok(!JSON.stringify(stats).includes('sha256'));
+});
+
+test('attachReview 把受校验 content 写进私有摘要与 ai raw，剔除系统/未知字段', async (t) => {
+  const { queue, cfg } = await setup(t);
+  const { item } = await queue.enqueue({ source: 'web', sourceId: 'web:content', buffer: TINY_PNG, fields: { name: 'r' } });
+  const content = {
+    name: '探头的大肥鱼',
+    description: '一句话说明',
+    commentary: '第一人称评价',
+    characterId: 'deepseek',
+    categoryIds: ['meme'],
+    tags: ['探头'],
+    // 下面这些系统/法律字段绝不能落库
+    id: 'hack',
+    slug: 'hack',
+    path: '/etc/passwd',
+    submitter: 'evil',
+    origin: 'evil',
+    license: 'WTFPL',
+    status: 'approved',
+    freeform: { nested: true },
+  };
+  await queue.attachReview(item.id, {
+    verdict: 'pass',
+    confidence: 0.9,
+    reason: 'ok',
+    schema: AI_CONTENT_SCHEMA,
+    content,
+  }, { raw: { chain_of_thought: '内部推理' } });
+
+  const stored = await queue.get(item.id);
+  // content 只允许这六个字段，系统/法律/未知字段一律剔除。
+  assert.deepEqual(Object.keys(stored.review.content).sort(), [
+    'categoryIds', 'characterId', 'commentary', 'description', 'name', 'tags',
+  ]);
+  assert.equal(stored.review.schema, AI_CONTENT_SCHEMA);
+  assert.equal(stored.review.content.verdict, undefined); // 审核结论不塞进 content
+  assert.equal(stored.review.verdict, 'pass');
+  assert.equal(stored.review.content.characterId, 'deepseek');
+  assert.deepEqual(stored.review.content.tags, ['探头']);
+  assert.equal(stored.content, undefined); // 顶层没有 content
+  const serialized = JSON.stringify(stored);
+  for (const leak of ['hack', '/etc/passwd', 'evil', 'WTFPL', 'freeform']) {
+    assert.ok(!serialized.includes(leak), `摘要里不应出现 ${leak}`);
+  }
+
+  const raw = JSON.parse(await fs.readFile(path.join(cfg.paths.ai, `${item.id}.json`), 'utf8'));
+  assert.equal(raw.payload.chain_of_thought, '内部推理');
+  assert.equal(raw.schema, AI_CONTENT_SCHEMA);
+  assert.ok(raw.content.categoryIds.includes('meme'));
+  assert.equal(raw.content.status, undefined);
+  assert.deepEqual(Object.keys(raw.content).sort(), [
+    'categoryIds', 'characterId', 'commentary', 'description', 'name', 'tags',
+  ]);
+});
+
+test('attachReview 没有 content 时只记摘要，不无中生有', async (t) => {
+  const { queue, cfg } = await setup(t);
+  const { item } = await queue.enqueue({ source: 'web', sourceId: 'web:nocontent', buffer: TINY_PNG, fields: { name: 'r' } });
+  await queue.attachReview(item.id, { verdict: 'manual', confidence: 0, reason: '未配置', schema: null, content: null }, { raw: { not_configured: true } });
+  const stored = await queue.get(item.id);
+  assert.equal(stored.review.verdict, 'manual');
+  assert.equal(stored.review.content, null);
+  const raw = JSON.parse(await fs.readFile(path.join(cfg.paths.ai, `${item.id}.json`), 'utf8'));
+  assert.equal(raw.content, null);
 });

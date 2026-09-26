@@ -1,0 +1,22 @@
+[Unit]
+Description=蓝色大肥鱼统一投稿服务
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=dafeiyu
+Group=dafeiyu
+WorkingDirectory=/srv/www/dafeiyu/source
+EnvironmentFile=/etc/dafeiyu/submission.env
+ExecStart=/usr/bin/node server/cli.mjs serve
+Restart=on-failure
+RestartSec=5s
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/srv/www/dafeiyu/submission-private
+
+[Install]
+WantedBy=multi-user.target
