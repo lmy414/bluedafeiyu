@@ -23,6 +23,7 @@ import path from 'node:path';
 
 import { AI_CONTENT_SCHEMA, loadContentVocabulary } from './config.mjs';
 import { STATES } from './queue.mjs';
+import { QQ_GROUP_ORIGIN } from './adapters/qq.mjs';
 import {
   READY_STATUS,
   listItems,
@@ -225,6 +226,19 @@ export async function createBridge({
   const metaPathOf = (digest) => path.join(intakeCfg.metaDir, `${digest}.json`);
   const inboxPathOf = (digest, ext) => path.join(intakeCfg.inboxDir, `${digest}${ext}`);
 
+  /* QQ 群内投稿的来源枚举兜底：老条目或调用方没给 type/via 时补成稳定枚举，
+   * 保证中转 meta 与发布映射始终拿到 origin.type='qq-group'，不因缺来源字段失败。 */
+  function normalizeOrigin(item) {
+    const origin = item.origin && typeof item.origin === 'object' && !Array.isArray(item.origin)
+      ? { ...item.origin }
+      : {};
+    if (item.source === 'qq') {
+      if (!origin.type) origin.type = QQ_GROUP_ORIGIN;
+      if (!origin.via) origin.via = QQ_GROUP_ORIGIN;
+    }
+    return origin;
+  }
+
   async function bridgeItem(target) {
     const item = typeof target === 'string' ? await queue.get(target) : target;
     if (!item || !item.id) return { id: null, sha256: null, status: 'failed', reason: '队列里没有该条目' };
@@ -281,7 +295,7 @@ export async function createBridge({
           tags: check.value.tags,
         },
         content: check.value,
-        origin: item.origin || {},
+        origin: normalizeOrigin(item),
         license: item.license || 'unknown',
         receivedAt: item.createdAt || null,
       });

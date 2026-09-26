@@ -12,12 +12,22 @@
  *   5. 图片既非 base64 也非白名单内 URL        -> 400/403
  *   6. 解出来的字节不是图片 / 超限             -> 400/413
  *
+ * 投稿口径：群内投稿**只需要标题 + 角色**。字段兼容 name/title 与 character/role
+ * 两套命名，description 可空；QQ 侧不需要、也不应该提供来源或授权字段——来源固定为
+ * 「群内投稿」稳定枚举，授权由发布层兜底成 unknown。
+ *
+ * origin 固定写入 `type` / `via` = 'qq-group'（稳定来源枚举），并保留
+ * groupId / userId / messageId 与图片获取方式 imageVia，供中转 meta 与发布映射识别。
+ *
  * 幂等键：qq:<groupId>:<messageId>:<sha256 前 16 位>，同一条群消息重复推不重复入库。
  */
 import { timingSafeEqual } from 'node:crypto';
 
 import { sniffImageFormat, sha256 } from '../queue.mjs';
 import { fetchWithLimits } from './github.mjs';
+
+/** 群内投稿的稳定来源枚举：写进 origin.type / origin.via，发布映射据此识别来源。 */
+export const QQ_GROUP_ORIGIN = 'qq-group';
 
 function safeEqual(given, expected) {
   const a = Buffer.from(String(given || ''));
@@ -47,11 +57,21 @@ export function createQqAdapter(cfg, { queue, fetchImpl = globalThis.fetch } = {
     return imageHostAllowlist.includes(url.hostname);
   }
 
+  /* 取第一个非空值：兼容 name/title、character/role，空白串视为未填。 */
+  function firstFilled(...values) {
+    for (const value of values) {
+      if (value === undefined || value === null) continue;
+      const text = String(value).trim();
+      if (text !== '') return text;
+    }
+    return '';
+  }
+
   function fieldsFrom(payload) {
     const nested = payload.fields && typeof payload.fields === 'object' ? payload.fields : {};
     return {
-      name: payload.name ?? nested.name ?? '',
-      character: payload.character ?? nested.character ?? '',
+      name: firstFilled(payload.name, payload.title, nested.name, nested.title),
+      character: firstFilled(payload.character, payload.role, nested.character, nested.role),
       description: payload.description ?? nested.description ?? '',
       tags: Array.isArray(payload.tags) ? payload.tags : (Array.isArray(nested.tags) ? nested.tags : []),
     };
@@ -113,7 +133,15 @@ export function createQqAdapter(cfg, { queue, fetchImpl = globalThis.fetch } = {
       sourceId,
       buffer,
       fields: fieldsFrom(payload),
-      origin: { groupId, userId, messageId, via },
+      /* origin 固定为「群内投稿」稳定枚举；图片获取方式另存 imageVia，不覆盖来源枚举。 */
+      origin: {
+        type: QQ_GROUP_ORIGIN,
+        via: QQ_GROUP_ORIGIN,
+        groupId,
+        userId,
+        messageId,
+        imageVia: via,
+      },
     });
     const accepted = result.status === 'created';
     return reply(accepted ? 'accepted' : 'duplicate', accepted ? 202 : 200, null, {

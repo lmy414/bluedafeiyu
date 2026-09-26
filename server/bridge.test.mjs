@@ -64,12 +64,13 @@ async function setup(t, { env = {}, overrides = {}, intakeOverrides = {}, vocabu
   return { base, cfg, queue, bridge, intakeRoot, contentDir };
 }
 
-async function seedPassed(queue, { content = VALID_CONTENT, suffix = '' } = {}) {
+async function seedPassed(queue, { content = VALID_CONTENT, suffix = '', source = 'web', origin = undefined } = {}) {
   const { item } = await queue.enqueue({
-    source: 'web',
-    sourceId: `web:bridge${suffix}`,
+    source,
+    sourceId: `${source}:bridge${suffix}`,
     buffer: Buffer.concat([TINY_PNG, Buffer.from(suffix || '0')]),
     fields: { name: 'r', character: 'deepseek' },
+    ...(origin ? { origin } : {}),
   });
   await queue.transition(item.id, 'review.start', { actor: 'ai' });
   await queue.attachReview(
@@ -182,6 +183,30 @@ test('auto_passed 且内容完整时写入 inbox + meta，状态 ready', async (
   assert.equal(stored.state, STATES.AUTO_PASSED, '桥接不改动公开投稿状态机');
   assert.equal(stored.bridge.status, 'ready');
   assert.equal(stored.bridge.sha256, item.sha256);
+});
+
+test('QQ 来源 pass 后中转 meta 用 origin.type=qq-group 与 license=unknown，不需要来源/授权字段', async (t) => {
+  const { queue, bridge, intakeRoot } = await setup(t);
+  /* 故意只给群/用户/消息号、不带 type/via：模拟老条目，验证桥接兜底成稳定枚举。 */
+  const item = await seedPassed(queue, {
+    suffix: 'qq',
+    source: 'qq',
+    origin: { groupId: '111', userId: 'u1', messageId: 'm1', imageVia: 'base64' },
+  });
+
+  const result = await bridge.bridgeItem(item.id);
+  assert.equal(result.status, 'ready');
+
+  const meta = JSON.parse(await fs.readFile(path.join(intakeRoot, 'meta', `${item.sha256}.json`), 'utf8'));
+  assert.equal(meta.source, 'qq');
+  assert.equal(meta.origin.type, 'qq-group', '发布映射按 origin.type 识别来源');
+  assert.equal(meta.origin.via, 'qq-group');
+  assert.equal(meta.origin.groupId, '111');
+  assert.equal(meta.origin.userId, 'u1');
+  assert.equal(meta.origin.messageId, 'm1');
+  assert.equal(meta.origin.submissionId, item.id);
+  assert.equal(meta.license, 'unknown', '缺授权字段时默认 unknown，不阻断发布映射');
+  assert.equal(meta.content.characterId, 'deepseek');
 });
 
 test('按 submission id + sha256 幂等：重复桥接只返回 duplicate', async (t) => {

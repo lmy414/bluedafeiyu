@@ -753,6 +753,61 @@ test('内部审核结果：pass 且内容完整 → auto_passed 并桥接到 rea
   assert.deepEqual(bridged, [item.id]);
 });
 
+test('QQ 来源 pass 回写：只凭标题+角色即可，不因缺来源/授权字段 422', async (t) => {
+  const bridged = [];
+  const bridge = { enabled: true, bridgeItem: async (id) => { bridged.push(id); return { id, status: 'ready' }; } };
+  const { publicHandler, queue } = await internalSetup(t, {
+    bridge,
+    env: {
+      SUBMISSION_QQ_ENABLED: 'true',
+      SUBMISSION_QQ_INBOUND_TOKEN: 'qq-token',
+      SUBMISSION_QQ_GROUP_ALLOWLIST: 'g1',
+    },
+  });
+
+  await withServer(publicHandler, async (port) => {
+    const inbound = await call(port, {
+      method: 'POST',
+      routePath: '/api/v1/adapters/qq/events',
+      headers: { authorization: 'Bearer qq-token', 'Content-Type': 'application/json' },
+      body: Buffer.from(JSON.stringify({
+        groupId: 'g1',
+        userId: 'u1',
+        messageId: 'm-internal',
+        image: { base64: TINY_PNG.toString('base64') },
+        title: '群内投稿',
+        role: 'deepseek',
+      })),
+    });
+    assert.equal(inbound.status, 202, inbound.body.toString());
+    const id = JSON.parse(inbound.body).id;
+
+    const storedBefore = await queue.get(id);
+    assert.equal(storedBefore.fields.name, '群内投稿');
+    assert.equal(storedBefore.fields.description, '');
+    assert.equal(storedBefore.origin.type, 'qq-group');
+
+    const res = await postReviewResult(port, {
+      token: ASTRABOT_TOKEN,
+      body: {
+        submissionId: id,
+        verdict: 'pass',
+        confidence: 0.95,
+        reason: '属于 AI 娘二创表情包',
+        content: validReviewContent(),
+        reviewer: 'astrbot',
+        model: 'astrbot-vision',
+      },
+    });
+    assert.equal(res.status, 200, res.body.toString());
+    const body = JSON.parse(res.body);
+    assert.equal(body.state, STATES.AUTO_PASSED);
+    assert.equal(body.bridge.status, 'ready');
+  });
+
+  assert.deepEqual(bridged.length, 1, 'QQ pass 必须触发桥接（不因缺来源字段中断）');
+});
+
 test('内部审核结果：重复提交幂等，返回原结果且不重复桥接', async (t) => {
   const bridged = [];
   const bridge = { enabled: true, bridgeItem: async (id) => { bridged.push(id); return { id, status: 'ready' }; } };
