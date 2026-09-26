@@ -43,6 +43,13 @@ test('help 列出 pull-issues 的 state / since / max-pages 参数', () => {
   assert.match(result.stdout, /--max-pages/);
 });
 
+test('help 列出内部审核令牌变量，便于服务器侧发现', () => {
+  const result = runCli(['help']);
+  assert.equal(result.status, 0, result.stderr);
+  assert.match(result.stdout, /SUBMISSION_ASTRABOT_REVIEW_TOKEN/);
+  assert.match(result.stdout, /SUBMISSION_HERMES_REVIEW_TOKEN/);
+});
+
 test('pull-issues 缺少存储根时快速失败（不联网）', () => {
   const result = runCli(['pull-issues'], { SUBMISSION_STORAGE_ROOT: '' });
   assert.equal(result.status, 1);

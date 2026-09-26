@@ -1,7 +1,7 @@
 # 统一投稿服务（server/）
 
-网页公开投稿、QQ 群入站、GitHub 内容仓 Issue 附件，三种来源统一进一条 **AI 审核队列**，
-审核只做建议，**最终发布仍由维护者人工决定**。后端放在站点仓（本仓库）里，不另建第三仓。
+网页公开投稿、QQ 群入站、GitHub 内容仓 Issue 附件，三种来源统一进一条**投稿队列**。
+QQ 由 AstrBot 即时审核，网站与 GitHub 由 Hermes 定时审核，审核结果通过内部接口回写；后端放在站点仓（本仓库）里，不另建第三仓。
 
 > 状态：这是**本地可运行、可测试**的实现（`node --test "server/**/*.test.mjs"` 当前全绿）。
 > 线上**尚未开通**，也**没有配置任何真实服务密钥**；未配置的服务一律「关闭/明确未配置」，
@@ -57,7 +57,9 @@ SQLite/Postgres，需要单独说明新增依赖与迁移方案——本次没�
 | `SUBMISSION_RATE_MAX_KEYS` | 否 | 限流器内存里保留的客户端键上限，默认 5000（防 IPv6 轮换把内存撑爆） |
 | `SUBMISSION_TURNSTILE_SECRET` | 否 | 配了才校验 Turnstile（siteverify）；不配则跳过（公开入口本身仍有限流） |
 | `SUBMISSION_TURNSTILE_TIMEOUT_MS` | 否 | siteverify 请求超时，默认 5000 ms；超时 / 异常一律 fail-closed |
-| `SUBMISSION_AI_ENDPOINT` / `SUBMISSION_AI_API_KEY` / `SUBMISSION_AI_MODEL` | 否 | OpenAI 兼容 vision 审核服务；不配则审核一律转人工 |
+| `SUBMISSION_ASTRABOT_REVIEW_TOKEN` | 启用 QQ 审核回写时必填 | AstrBot 审核结果回写令牌 |
+| `SUBMISSION_HERMES_REVIEW_TOKEN` | 启用 Hermes 审核回写时必填 | Hermes 审核结果回写令牌 |
+| `SUBMISSION_AI_ENDPOINT` / `SUBMISSION_AI_API_KEY` / `SUBMISSION_AI_MODEL` | 否 | 兼容旧版人工/CLI审核工具；Hermes 模式不配置 |
 | `SUBMISSION_AI_TIMEOUT_MS` / `SUBMISSION_AI_MIN_CONFIDENCE` | 否 | 审核超时与置信度阈值，默认 60s / 0.6 |
 | `SUBMISSION_AI_PROMPT_VERSION` | 否 | 审核提示词版本标记（只落私有记录，便于回溯），默认 `v1` |
 | `SUBMISSION_GITHUB_REPO` | 否 | 默认 `lmy414/ai-girl-stickers` |
@@ -156,7 +158,9 @@ GitHub 标签过滤与附件域名白名单/限额、QQ 被动入站与令牌/�
   Cloudflare siteverify，超时或异常一律拒绝），配 `SUBMISSION_TURNSTILE_SECRET` 即启用；
   但当前没有配任何 secret、前端也还没回传 token，所以线上并未实际启用。
 
-**本次未做**：未部署、未开公网、未接入任何真实密钥、未替维护者自动推送或发布图片。
+**当前自动审核模式**：服务端不在投稿入队后自动调用 AI；QQ 由 AstrBot 审核，网站与 GitHub 由 Hermes 每 5 分钟审核并回写。`SUBMISSION_AI_*` 不配置也不会阻塞外部审核结果接口。
+
+**本次未做**：未部署、未开公网、未接入任何真实密钥。
 
 ## 与 `tools/intake/` 的分工
 

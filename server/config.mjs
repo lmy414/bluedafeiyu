@@ -342,6 +342,16 @@ export function resolveConfig(overrides = {}, { env = process.env } = {}) {
 
   const turnstileSecret = String(overrides.turnstileSecret ?? env.SUBMISSION_TURNSTILE_SECRET ?? '');
 
+  /* 内部审核 reviewer 各用一把独立令牌，来源身份与令牌一一对应。
+   * 两把都配时必须互不相同，否则无法严格区分来源。 */
+  const internalReviewTokens = {
+    astrbot: String(overrides.astrbotReviewToken ?? env.SUBMISSION_ASTRABOT_REVIEW_TOKEN ?? ''),
+    hermes: String(overrides.hermesReviewToken ?? env.SUBMISSION_HERMES_REVIEW_TOKEN ?? ''),
+  };
+  if (internalReviewTokens.astrbot && internalReviewTokens.astrbot === internalReviewTokens.hermes) {
+    throw new Error('SUBMISSION_ASTRABOT_REVIEW_TOKEN 与 SUBMISSION_HERMES_REVIEW_TOKEN 不能相同');
+  }
+
   return {
     schema: SCHEMA,
     storageRoot,
@@ -368,6 +378,10 @@ export function resolveConfig(overrides = {}, { env = process.env } = {}) {
       timeoutMs: integerOf(overrides.turnstileTimeoutMs ?? env.SUBMISSION_TURNSTILE_TIMEOUT_MS, DEFAULT_TURNSTILE_TIMEOUT_MS, 'SUBMISSION_TURNSTILE_TIMEOUT_MS'),
     },
     review,
+    internalReview: {
+      enabled: Boolean(internalReviewTokens.astrbot || internalReviewTokens.hermes),
+      tokens: internalReviewTokens,
+    },
     github: {
       repo: githubRepo,
       label: githubLabel,
@@ -425,6 +439,11 @@ export function configSummary(cfg) {
     rateLimit: cfg.rateLimit,
     turnstile: { enabled: cfg.turnstile.enabled },
     review: { configured: cfg.review.configured, model: cfg.review.model || null, minConfidence: cfg.review.minConfidence },
+    internalReview: {
+      enabled: cfg.internalReview.enabled,
+      astrbot: cfg.internalReview.tokens.astrbot ? 'configured' : 'absent',
+      hermes: cfg.internalReview.tokens.hermes ? 'configured' : 'absent',
+    },
     github: {
       repo: cfg.github.repo,
       label: cfg.github.label,

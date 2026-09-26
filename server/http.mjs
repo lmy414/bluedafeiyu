@@ -10,17 +10,26 @@
  *
  * QQ 机器人侧走公开口的 POST /api/v1/adapters/qq/events，它自带令牌与群白名单鉴权。
  *
- * 网页投稿与 QQ 入站只在**新建**条目后即发即忘地触发一次后台审核（不阻塞响应）；
- * 审核 pass 且桥接可用时自动写入私有中转区。审核/桥接异常只记日志，不影响响应。
+ * **内置 AI 自动审核默认关闭**：网页投稿与 QQ 入站只把条目写进队列（received），
+ * 不再在入队后自动调用 review.mjs。审核结论由外部 reviewer（AstrBot / Hermes）
+ * 通过独立的内部接口 **POST /api/v1/internal/review-results** 回写，每个 reviewer
+ * 用各自令牌鉴权；已配置则按结论推进（pass 且内容完整才自动桥接），
+ * 未配置则条目停在 received 等人工处理。
+ *
+ * 内部接口还有一个只读列表/原图/字段接口，方便 Hermes 每 5 分钟取 web/github 待审条目：
+ *   GET /api/v1/internal/submissions[?state=&sources=&limit=]
+ *   GET /api/v1/internal/submissions/<id>[/raw]
+ * 这些接口同样走独立令牌，响应绝不回显令牌或私有路径。
  *
  * 这里只做「HTTP -> 队列/审核/适配器」的映射，不含业务判断。
  */
 import { timingSafeEqual } from 'node:crypto';
 import { createServer } from 'node:http';
 
-import { DEFAULT_TURNSTILE_TIMEOUT_MS, configSummary, isIpAddress, isTrustedProxy, normalizeIp } from './config.mjs';
-import { STATES, sha256 } from './queue.mjs';
+import { AI_CONTENT_SCHEMA, DEFAULT_TURNSTILE_TIMEOUT_MS, configSummary, isIpAddress, isTrustedProxy, loadContentVocabulary, normalizeIp } from './config.mjs';
+import { SOURCES, STATES, sha256 } from './queue.mjs';
 import { reviewQueuedItem } from './review.mjs';
+import { validateContent as validateReviewContent } from './bridge.mjs';
 
 const LOOPBACK_HOSTS = new Set(['127.0.0.1', '::1', 'localhost']);
 
@@ -139,11 +148,20 @@ export function parseMultipartForm(buffer, contentType, { maxBytes = Infinity, m
   return { fields, files };
 }
 
+function safeTokenEqual(given, expected) {
+  const a = Buffer.from(String(given || ''));
+  const b = Buffer.from(String(expected || ''));
+  return a.length === b.length && a.length > 0 && timingSafeEqual(a, b);
+}
+
 function authorized(req, token) {
   const header = String(req.headers.authorization || '');
-  const given = Buffer.from(header.startsWith('Bearer ') ? header.slice(7) : '');
-  const expected = Buffer.from(String(token || ''));
-  return given.length === expected.length && given.length > 0 && timingSafeEqual(given, expected);
+  return safeTokenEqual(header.startsWith('Bearer ') ? header.slice(7) : '', token);
+}
+
+function bearerToken(req) {
+  const header = String(req.headers.authorization || '');
+  return header.startsWith('Bearer ') ? header.slice(7) : '';
 }
 
 /**
@@ -386,11 +404,304 @@ export function reviewCoordinatorFor({ queue, reviewer, bridge = null, logger = 
   return coordinator;
 }
 
+/* ------------------------------------------------------- 内部审核接口
+ *
+ * 外部 reviewer（AstrBot / Hermes）用各自独立令牌走这里回写审核结论，并从只读列表
+ * 取待审条目与原图。内部接口不走公开 Origin/CORS（机器人不带 Origin），但**必须**
+ * 通过令牌鉴权；未配置任何内部令牌时整组接口 503。
+ */
+
+/* reviewer 身份与令牌一一对应；令牌未配置即该来源不可用。 */
+export const INTERNAL_REVIEWERS = Object.freeze(['astrbot', 'hermes']);
+const INTERNAL_SOURCES = Object.freeze(['web', 'github-issue']);
+const INTERNAL_ID_PATTERN = /^sub_[A-Za-z0-9_-]{1,64}$/;
+const INTERNAL_ITEM_PATTERN = /^\/api\/v1\/internal\/submissions\/(sub_[A-Za-z0-9_-]{1,64})(\/raw)?$/;
+/* 同一 reviewer 审完后的稳定态：重复提交只需回原结果，不再改状态。 */
+const INTERNAL_REVIEW_STATES = new Set([STATES.AUTO_PASSED, STATES.AUTO_REJECTED, STATES.NEEDS_MANUAL]);
+const INTERNAL_MAX_LIMIT = 200;
+const INTERNAL_MAX_BATCH = 200;
+const INTERNAL_REASON_MAX = 1000;
+const INTERNAL_MODEL_MAX = 128;
+
+/**
+ * 内部接口鉴权：从独立令牌解析 reviewer 身份。
+ * 返回 { ok:true, reviewer } 或 { ok:false, status, error }。常量时间比对，不回显令牌。
+ */
+export function authenticateInternalReview(req, cfg) {
+  const tokens = (cfg && cfg.internalReview && cfg.internalReview.tokens) || {};
+  const configured = INTERNAL_REVIEWERS.filter((name) => String(tokens[name] || ''));
+  if (configured.length === 0) return { ok: false, status: 503, error: 'internal review not configured' };
+  const given = bearerToken(req);
+  for (const name of configured) {
+    if (safeTokenEqual(given, tokens[name])) return { ok: true, reviewer: name };
+  }
+  return { ok: false, status: 401, error: 'unauthorized' };
+}
+
+/** 内部只读视图：给 reviewer 字段与原图入口，不含存储路径与任何密钥。 */
+function internalItemView(item) {
+  const view = {
+    id: item.id,
+    source: item.source,
+    state: item.state,
+    sha256: item.sha256,
+    ext: item.ext,
+    mime: item.mime,
+    bytes: item.bytes,
+    fields: item.fields || {},
+    createdAt: item.createdAt,
+    updatedAt: item.updatedAt,
+    rawPath: `/api/v1/internal/submissions/${item.id}/raw`,
+  };
+  if (item.review) view.review = item.review;
+  return view;
+}
+
+/**
+ * 应用一条内部审核结果（单条基元）。硬规则：
+ *   - 令牌已确定 reviewer 身份，单条请求里的 reviewer 字段必须与之一致（上层校验）；
+ *   - submissionId / verdict / confidence / reason / model 严格校验；
+ *   - 只有 received 能写入；同一 reviewer 已审完的条目幂等返回原结果、不改状态；
+ *     别人已审或状态不符则 409，绝不覆盖；
+ *   - pass 必须带通过六字段 + 枚举 + 注入校验的 content，否则 422 且状态不变；
+ *   - pass 走 attachReview → review.pass → 桥接（写待发布区）；
+ *   - reject / manual 只进人工审核区，绝不触发桥接。
+ * 返回 { status, body }，由 HTTP 层原样发出；业务错误不抛出。
+ * 兼容两家字段命名：submissionId 与 id 二选一。
+ */
+export async function applyOneReview({ queue, bridge = null, cfg, reviewer, result, vocabulary = null, logger = console } = {}) {
+  const send = (status, body) => ({ status, body });
+  const body = result && typeof result === 'object' && !Array.isArray(result) ? result : {};
+
+  const submissionId = String(body.submissionId || body.id || '').trim();
+  if (!INTERNAL_ID_PATTERN.test(submissionId)) {
+    return send(400, { ok: false, error: 'submissionId 非法' });
+  }
+  if (body.verdict !== 'pass' && body.verdict !== 'reject' && body.verdict !== 'manual') {
+    return send(400, { ok: false, error: 'verdict 必须是 pass / reject / manual' });
+  }
+  if (typeof body.confidence !== 'number' || !Number.isFinite(body.confidence) || body.confidence < 0 || body.confidence > 1) {
+    return send(400, { ok: false, error: 'confidence 必须是 0..1 的 JSON number' });
+  }
+  const reason = typeof body.reason === 'string' ? body.reason.trim() : '';
+  if (!reason || reason.length > INTERNAL_REASON_MAX) {
+    return send(400, { ok: false, error: `reason 必填且不超过 ${INTERNAL_REASON_MAX} 字` });
+  }
+  const model = body.model === undefined || body.model === null ? '' : String(body.model).trim();
+  if (model.length > INTERNAL_MODEL_MAX) return send(400, { ok: false, error: `model 不超过 ${INTERNAL_MODEL_MAX} 字` });
+
+  const item = await queue.get(submissionId);
+  if (!item) return send(404, { ok: false, error: 'not found' });
+
+  /* 幂等与冲突：状态必须 received；已由同一 reviewer 审完的直接回原结果。 */
+  if (item.state !== STATES.RECEIVED) {
+    const sameReviewer = Boolean(item.review && item.review.decidedBy === reviewer);
+    if (sameReviewer && INTERNAL_REVIEW_STATES.has(item.state)) {
+      return send(200, {
+        ok: true,
+        id: item.id,
+        state: item.state,
+        duplicate: true,
+        verdict: item.review.verdict,
+        confidence: item.review.confidence,
+        reason: item.review.reason,
+        model: item.review.model || null,
+        bridge: item.bridge || null,
+      });
+    }
+    return send(409, { ok: false, error: '条目状态不允许写入审核结果' });
+  }
+
+  let content = null;
+  if (body.verdict === 'pass') {
+    const check = validateReviewContent(body.content, vocabulary || loadContentVocabulary(cfg.siteRoot));
+    if (!check.ok) {
+      return send(422, { ok: false, error: 'content 校验未通过', errors: check.errors.slice(0, 5) });
+    }
+    content = check.value;
+  }
+
+  /* 判重返回原结果：并发下同一 reviewer 的第二个请求撞上已推进的状态时也走这里，
+   * 不会当成失败，也不会覆盖别人写下的结论。 */
+  const duplicateResponse = (current) => ({
+    ok: true,
+    id: current.id,
+    state: current.state,
+    duplicate: true,
+    verdict: current.review ? current.review.verdict : null,
+    confidence: current.review ? current.review.confidence : null,
+    reason: current.review ? current.review.reason : '',
+    model: (current.review && current.review.model) || null,
+    bridge: current.bridge || null,
+  });
+
+  try {
+    await queue.transition(submissionId, 'review.start', { actor: reviewer });
+    await queue.attachReview(submissionId, {
+      verdict: body.verdict,
+      confidence: body.confidence,
+      reason,
+      schema: body.verdict === 'pass' ? AI_CONTENT_SCHEMA : null,
+      content,
+      model: model || null,
+      promptVersion: null,
+      latencyMs: null,
+      decidedBy: reviewer,
+    }, {
+      raw: { source: 'internal-review', reviewer, model: model || null, verdict: body.verdict, confidence: body.confidence, reason },
+    });
+    const event = body.verdict === 'pass' ? 'review.pass' : body.verdict === 'reject' ? 'review.reject' : 'review.manual';
+    await queue.transition(submissionId, event, { actor: reviewer, reason });
+  } catch (error) {
+    /* 并发下先到者已把状态推进，后到者按幂等回原结果；否则失败关闭转人工。 */
+    const current = await queue.get(submissionId).catch(() => null);
+    if (current && current.review && current.review.decidedBy === reviewer && INTERNAL_REVIEW_STATES.has(current.state)) {
+      return send(200, duplicateResponse(current));
+    }
+    if (current && current.state !== STATES.RECEIVED) {
+      if (current.state === STATES.REVIEWING) {
+        await queue.transition(submissionId, 'review.manual', {
+          actor: reviewer,
+          reason: `内部审核写入失败：${error.message}`,
+        }).catch(() => {});
+      }
+      return send(409, { ok: false, error: '条目状态不允许写入审核结果' });
+    }
+    await queue.transition(submissionId, 'review.manual', {
+      actor: reviewer,
+      reason: `内部审核写入失败：${error.message}`,
+    }).catch(() => {});
+    logger.error?.(`内部审核写入失败 ${submissionId}：${error.message}`);
+    return send(500, { ok: false, error: '审核结果写入失败' });
+  }
+
+  let bridgeResult = null;
+  if (body.verdict === 'pass' && bridge) {
+    try {
+      bridgeResult = await bridge.bridgeItem(submissionId);
+    } catch (error) {
+      logger.error?.(`内部审核桥接失败 ${submissionId}：${error.message}`);
+      bridgeResult = { id: submissionId, status: 'failed', reason: '桥接异常' };
+    }
+  }
+
+  const stored = await queue.get(submissionId);
+  return send(200, {
+    ok: true,
+    id: submissionId,
+    state: stored ? stored.state : null,
+    duplicate: false,
+    verdict: body.verdict,
+    confidence: body.confidence,
+    bridge: bridgeResult,
+  });
+}
+
+/**
+ * 单条请求形态：body 自带 reviewer，必须与令牌身份一致，再交给 applyOneReview。
+ */
+export async function applyInternalReview({ queue, bridge = null, cfg, reviewer, payload, vocabulary = null, logger = console } = {}) {
+  const body = payload && typeof payload === 'object' && !Array.isArray(payload) ? payload : {};
+  if (String(body.reviewer || '') !== reviewer) {
+    return { status: 403, body: { ok: false, error: 'reviewer 与令牌不匹配' } };
+  }
+  return applyOneReview({ queue, bridge, cfg, reviewer, result: body, vocabulary, logger });
+}
+
+/**
+ * 批量请求形态（Hermes 客户端）：{ schema, reviewer, promptVersion, results:[...] }。
+ * 信封的 reviewer 必须与令牌一致；逐条独立处理并回逐条结果——单条不合法不拖垮整批。
+ * schema / promptVersion 只作审计透传，不参与判定。
+ */
+export async function applyInternalReviewBatch({ queue, bridge = null, cfg, reviewer, payload, vocabulary = null, logger = console } = {}) {
+  const body = payload && typeof payload === 'object' && !Array.isArray(payload) ? payload : {};
+  if (String(body.reviewer || '') !== reviewer) {
+    return { status: 403, body: { ok: false, error: 'reviewer 与令牌不匹配' } };
+  }
+  const entries = Array.isArray(body.results) ? body.results : [];
+  if (entries.length > INTERNAL_MAX_BATCH) {
+    return { status: 413, body: { ok: false, error: `results 数量超过上限 ${INTERNAL_MAX_BATCH}` } };
+  }
+  const results = [];
+  for (const entry of entries) {
+    const outcome = await applyOneReview({ queue, bridge, cfg, reviewer, result: entry, vocabulary, logger });
+    results.push({
+      id: (entry && (entry.submissionId || entry.id)) || null,
+      status: outcome.status,
+      ...outcome.body,
+    });
+  }
+  return {
+    status: 200,
+    body: {
+      ok: true,
+      schema: body.schema ? String(body.schema).slice(0, 64) : null,
+      reviewer,
+      count: results.length,
+      results,
+    },
+  };
+}
+
+/** 处理内部接口的只读列表 / 详情 / 原图 / 审核结果写入。 */
+export async function handleInternalRequest({ req, res, url, reviewer, cfg, queue, bridge = null, vocabulary = null, logger = console }) {
+  if (req.method === 'GET' && url.pathname === '/api/v1/internal/submissions') {
+    const state = url.searchParams.get('state') || STATES.RECEIVED;
+    if (!Object.values(STATES).includes(state)) return sendJson(res, 400, { ok: false, error: 'state 非法' });
+    const sourcesParam = url.searchParams.get('sources');
+    const sources = sourcesParam
+      ? sourcesParam.split(',').map((entry) => entry.trim()).filter(Boolean)
+      : [...INTERNAL_SOURCES];
+    for (const source of sources) {
+      if (!SOURCES.has(source)) return sendJson(res, 400, { ok: false, error: `source 非法：${source}` });
+    }
+    const rawLimit = Number(url.searchParams.get('limit') || 50);
+    const limit = Number.isSafeInteger(rawLimit) && rawLimit > 0 ? Math.min(rawLimit, INTERNAL_MAX_LIMIT) : 50;
+    const items = await queue.list({ state, sources, limit });
+    return sendJson(res, 200, { ok: true, count: items.length, items: items.map((item) => internalItemView(item)) });
+  }
+
+  const match = INTERNAL_ITEM_PATTERN.exec(url.pathname);
+  if (match && req.method === 'GET') {
+    const item = await queue.get(match[1]);
+    if (!item) return sendJson(res, 404, { ok: false, error: 'not found' });
+    if (match[2] === '/raw') {
+      const buffer = await queue.readImage(match[1]);
+      res.writeHead(200, {
+        'Content-Type': item.mime || 'application/octet-stream',
+        'Content-Length': buffer.length,
+        'Content-Disposition': `attachment; filename="${item.id}${item.ext}"`,
+        'X-Content-Type-Options': 'nosniff',
+        'Cache-Control': 'no-store',
+      });
+      res.end(buffer);
+      return undefined;
+    }
+    return sendJson(res, 200, { ok: true, item: internalItemView(item) });
+  }
+
+  if (req.method === 'POST' && url.pathname === '/api/v1/internal/review-results') {
+    let payload = {};
+    try {
+      const raw = await readBody(req, cfg.maxJsonBytes);
+      payload = raw.length ? JSON.parse(raw.toString('utf8')) : {};
+    } catch (error) {
+      if (error && error.code === 'TOO_LARGE') return sendJson(res, 413, { ok: false, error: '请求体过大' });
+      return sendJson(res, 400, { ok: false, error: 'invalid json' });
+    }
+    const result = Array.isArray(payload.results)
+      ? await applyInternalReviewBatch({ queue, bridge, cfg, reviewer, payload, vocabulary, logger })
+      : await applyInternalReview({ queue, bridge, cfg, reviewer, payload, vocabulary, logger });
+    return sendJson(res, result.status, result.body);
+  }
+
+  return sendJson(res, 404, { ok: false, error: 'not found' });
+}
+
 export function createPublicHandler({
   cfg,
   queue,
   qqAdapter,
-  reviewer = null,
   bridge = null,
   characters = [],
   turnstileVerify = null,
@@ -398,7 +709,6 @@ export function createPublicHandler({
   logger = console,
 } = {}) {
   const allowRate = createRateLimiter({ ...cfg.rateLimit, now });
-  const reviewCoordinator = reviewCoordinatorFor({ queue, reviewer, bridge, logger });
   // 配了 secret 却没注入测试客户端时，才构造真实的 siteverify 客户端；测试注入优先。
   const verifyTurnstile = turnstileVerify
     || (cfg.turnstile.enabled
@@ -409,6 +719,16 @@ export function createPublicHandler({
     try {
       const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
       const origin = req.headers.origin;
+
+      /* 内部审核接口走独立令牌，不参与公开 Origin/CORS（机器人不带 Origin）。
+       * 必须放在 Origin 校验之前，否则带 Origin 的机器人会被公开白名单误拦。 */
+      if (url.pathname.startsWith('/api/v1/internal/')) {
+        const auth = authenticateInternalReview(req, cfg);
+        if (!auth.ok) {
+          return sendJson(res, auth.status, { ok: false, error: auth.error }, auth.status === 401 ? { 'WWW-Authenticate': 'Bearer' } : {});
+        }
+        return handleInternalRequest({ req, res, url, reviewer: auth.reviewer, cfg, queue, bridge, logger });
+      }
 
       if (origin) {
         if (!cfg.allowedOrigins.includes(origin)) {
@@ -431,6 +751,7 @@ export function createPublicHandler({
           service: 'blue-fish-submission',
           schedule: 'manual-review-required',
           review: cfg.review.configured ? 'configured' : 'not_configured',
+          internalReview: cfg.internalReview.enabled ? 'enabled' : 'disabled',
           qq: cfg.qq.enabled ? 'enabled' : 'disabled',
           github: { repo: cfg.github.repo, label: cfg.github.label, token: cfg.github.token ? 'configured' : 'absent' },
           limits: { maxBytes: cfg.maxBytes },
@@ -449,11 +770,8 @@ export function createPublicHandler({
           }
           return sendJson(res, 400, { ok: false, error: 'invalid json' });
         }
+        /* 只入队，不自动审核：内置 AI 自动触发已关闭，结论由内部审核接口回写。 */
         const result = await qqAdapter.handleInbound({ authorization: req.headers.authorization || '', payload });
-        // 仅新建（accepted）才在后台触发审核；重复推送是幂等命中，不重审。
-        if (result.status === 'accepted' && result.body && result.body.id) {
-          reviewCoordinator.trigger(result.body.id);
-        }
         return sendJson(res, result.code, result.body);
       }
 
@@ -515,8 +833,7 @@ export function createPublicHandler({
           fields: checked.fields,
           origin: { via: 'web' },
         });
-        // 只对新建条目在后台触发审核与自动桥接；重复投稿不重审，且不阻塞响应。
-        if (result.status === 'created') reviewCoordinator.trigger(result.item.id);
+        /* 只入队（received），不自动审核、不自动桥接；结论由内部审核接口回写。 */
         return sendJson(res, result.status === 'created' ? 201 : 200, {
           ok: true,
           id: result.item.id,
@@ -550,13 +867,24 @@ export function createAdminHandler({
 
   return async function adminHandler(req, res) {
     try {
+      const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
+
+      /* 内部审核接口也挂在管理口（Hermes 客户端默认走回环管理口）：用独立 reviewer
+       * 令牌鉴权，不占用管理令牌；其余管理路由仍必须 Bearer 管理令牌。 */
+      if (url.pathname.startsWith('/api/v1/internal/')) {
+        const auth = authenticateInternalReview(req, cfg);
+        if (!auth.ok) {
+          return sendJson(res, auth.status, { ok: false, error: auth.error }, auth.status === 401 ? { 'WWW-Authenticate': 'Bearer' } : {});
+        }
+        return handleInternalRequest({ req, res, url, reviewer: auth.reviewer, cfg, queue, bridge, logger });
+      }
+
       if (!cfg.adminToken) {
         return sendJson(res, 503, { ok: false, error: 'admin token not configured' });
       }
       if (!authorized(req, cfg.adminToken)) {
         return sendJson(res, 401, { ok: false, error: 'unauthorized' }, { 'WWW-Authenticate': 'Bearer' });
       }
-      const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
 
       if (req.method === 'GET' && url.pathname === '/api/v1/health') {
         return sendJson(res, 200, { ok: true, summary: configSummary(cfg), stats: await queue.stats() });
@@ -664,7 +992,8 @@ function listen(server, port, host) {
  * public 口默认也绑回环；只有显式设置 SUBMISSION_PUBLIC_HOST 才可能对公网开放。
  *
  * deps 来自 buildContext，携带 queue / reviewer / bridge / qqAdapter 等；cfg 由本函数
- * 合并进来，确保两个 handler 拿到完整依赖（background 审核需要 reviewer + bridge）。
+ * 合并进来。公开口用 bridge 处理内部审核结果的桥接；管理口用 reviewer 做手动审核，
+ * 但公开入队已不再自动调用 reviewer。
  */
 export async function startServers(cfg, deps) {
   if (!LOOPBACK_HOSTS.has(cfg.adminHost)) {

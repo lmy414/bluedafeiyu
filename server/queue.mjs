@@ -332,10 +332,17 @@ export async function createQueue(cfg, { now = () => Date.now(), reviewTimeoutMs
     return id ? readItem(id) : null;
   }
 
-  async function list({ state, source, limit } = {}) {
+  async function list({ state, source, sources, limit } = {}) {
     let items = await listItems();
     if (state) items = items.filter((item) => item.state === state);
     if (source) items = items.filter((item) => item.source === source || (item.sourceIds || []).some((sid) => sid.startsWith(`${source}:`)));
+    /* sources 是 source 的多值版：内部取「web + github」这类跨来源待审条目时用。
+     * 合并条目的 sourceIds 前缀也算命中，避免同图合并后漏掉来源。 */
+    if (Array.isArray(sources) && sources.length > 0) {
+      const wanted = new Set(sources.map((entry) => String(entry)));
+      items = items.filter((item) => wanted.has(item.source)
+        || (item.sourceIds || []).some((sid) => wanted.has(String(sid).split(':')[0])));
+    }
     items.sort((a, b) => String(a.createdAt).localeCompare(String(b.createdAt)) || String(a.id).localeCompare(String(b.id)));
     if (limit && Number.isFinite(limit)) items = items.slice(0, limit);
     return items;

@@ -121,6 +121,50 @@ test('配置摘要不回显任何密钥', async (t) => {
   assert.deepEqual(cfg.qq.groupAllowlist, ['123456', '789']);
 });
 
+test('内部审核令牌：独立解析、互不相同，摘要一律不回显', async (t) => {
+  const root = path.join(await tmpDir('internal-'), 'private');
+  t.after(() => fs.rm(path.dirname(root), { recursive: true, force: true }));
+
+  const cfg = resolveConfig(
+    { storageRoot: root },
+    {
+      env: {
+        SUBMISSION_ASTRABOT_REVIEW_TOKEN: 'astrbot-secret-value',
+        SUBMISSION_HERMES_REVIEW_TOKEN: 'hermes-secret-value',
+      },
+    },
+  );
+  assert.equal(cfg.internalReview.enabled, true);
+  assert.equal(cfg.internalReview.tokens.astrbot, 'astrbot-secret-value');
+  assert.equal(cfg.internalReview.tokens.hermes, 'hermes-secret-value');
+
+  const summary = configSummary(cfg);
+  const text = JSON.stringify(summary);
+  for (const secret of ['astrbot-secret-value', 'hermes-secret-value']) {
+    assert.ok(!text.includes(secret), `摘要里不应出现 ${secret}`);
+  }
+  assert.equal(summary.internalReview.astrbot, 'configured');
+  assert.equal(summary.internalReview.hermes, 'configured');
+
+  const none = resolveConfig({ storageRoot: root }, { env: {} });
+  assert.equal(none.internalReview.enabled, false);
+  assert.equal(none.internalReview.tokens.astrbot, '');
+  assert.equal(none.internalReview.tokens.hermes, '');
+  assert.equal(configSummary(none).internalReview.astrbot, 'absent');
+  assert.equal(configSummary(none).internalReview.hermes, 'absent');
+
+  // 两个 reviewer 的令牌必须互不相同，否则无法严格区分来源。
+  assert.throws(
+    () => resolveConfig({ storageRoot: root }, {
+      env: {
+        SUBMISSION_ASTRABOT_REVIEW_TOKEN: 'same-token',
+        SUBMISSION_HERMES_REVIEW_TOKEN: 'same-token',
+      },
+    }),
+    /不能相同/,
+  );
+});
+
 test('recoverAfterMs 由 reviewRecoverMs 覆盖，不受 reviewTimeoutMs 影响', async (t) => {
   const root = path.join(await tmpDir('recover-'), 'private');
   t.after(() => fs.rm(path.dirname(root), { recursive: true, force: true }));

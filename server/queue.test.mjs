@@ -170,6 +170,24 @@ test('并发入库被串行化，条目与索引都不丢', async (t) => {
   assert.equal(Object.keys(sourceIndex).length, 24);
 });
 
+test('list 支持按多个来源与状态过滤，供内部取 web + github 条目', async (t) => {
+  const { queue } = await setup(t);
+  await queue.enqueue({ source: 'web', sourceId: 'web:l1', buffer: TINY_PNG, fields: { name: 'w' } });
+  await queue.enqueue({ source: 'github-issue', sourceId: 'github-issue:2', buffer: Buffer.concat([TINY_PNG, Buffer.from([1])]), fields: { name: 'g' } });
+  await queue.enqueue({ source: 'qq', sourceId: 'qq:l3', buffer: Buffer.concat([TINY_PNG, Buffer.from([2])]), fields: { name: 'q' } });
+
+  const webAndGithub = await queue.list({ sources: ['web', 'github-issue'] });
+  assert.deepEqual(webAndGithub.map((item) => item.source).sort(), ['github-issue', 'web']);
+
+  const receivedWeb = await queue.list({ state: STATES.RECEIVED, sources: ['web'] });
+  assert.equal(receivedWeb.length, 1);
+  assert.equal(receivedWeb[0].source, 'web');
+
+  // 空数组与不传都不该改变既有语义（返回全部）。
+  assert.equal((await queue.list({ sources: [] })).length, 3);
+  assert.equal((await queue.list({})).length, 3);
+});
+
 test('stats 只给计数，不外泄内部字段', async (t) => {
   const { queue } = await setup(t);
   await queue.enqueue({ source: 'web', sourceId: 'web:st', buffer: TINY_PNG, fields: { name: 'st' } });

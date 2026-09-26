@@ -34,6 +34,9 @@ const TINY_PNG = Buffer.from(
   'base64',
 );
 const ORIGIN = 'https://xn--pssy23gqgbz2d718b.com';
+/* 内部审核 reviewer 的独立令牌（测试值，非真实密钥）。 */
+const ASTRABOT_TOKEN = 'astrbot-review-token-value';
+const HERMES_TOKEN = 'hermes-review-token-value';
 
 /** 合法的 submission-ai-content/1 通过响应（审核层可解析为 pass）。 */
 function passEnvelope(name = '测试表情') {
@@ -57,25 +60,6 @@ function passEnvelope(name = '测试表情') {
       },
     }],
   };
-}
-
-/** 轮询等待断言成立；超时即失败，避免后台任务未跑完就断言的偶发红。 */
-async function waitFor(predicate, { timeout = 5000, interval = 10, label = '条件' } = {}) {
-  const deadline = Date.now() + timeout;
-  for (;;) {
-    if (await predicate()) return;
-    if (Date.now() > deadline) throw new Error(`等待${label}超时`);
-    await new Promise((resolve) => setTimeout(resolve, interval));
-  }
-}
-
-/** 给一个 promise 加超时护栏：实现若把审核做成阻塞，测试快速失败而不是挂死。 */
-function timeoutAfter(ms, message) {
-  let timer;
-  const promise = new Promise((_, reject) => {
-    timer = setTimeout(() => reject(new Error(message)), ms);
-  });
-  return { promise, cancel: () => clearTimeout(timer) };
 }
 
 async function setup(t, {
@@ -590,7 +574,7 @@ test('QQ 入口超大 body 返回 413 而不是 400', async (t) => {
   });
 });
 
-/* ------------------------------------------- 入队后异步审核 / 自动桥接 */
+/* ------------------------------- 内置 AI 自动审核默认关闭（入队不再触发） */
 
 function qqEvent(port, { groupId = 'g1', messageId = 'm1', base64 } = {}) {
   return call(port, {
@@ -601,36 +585,26 @@ function qqEvent(port, { groupId = 'g1', messageId = 'm1', base64 } = {}) {
   });
 }
 
-test('网页投稿：HTTP 响应先返回，后台异步跑审核（不阻塞）', async (t) => {
-  let release;
-  const gate = new Promise((resolve) => { release = resolve; });
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+test('公开投稿不再自动触发内置 AI 审核，条目停在 received', async (t) => {
   const calls = [];
   const { publicHandler, queue } = await setup(t, {
-    client: async () => { calls.push(1); await gate; return passEnvelope(); },
+    client: async () => { calls.push(1); return passEnvelope(); },
   });
   await withServer(publicHandler, async (port) => {
-    const guard = timeoutAfter(3000, '响应被后台审核阻塞了');
-    let res;
-    try {
-      res = await Promise.race([submit(port, {}), guard.promise]);
-    } finally {
-      guard.cancel();
-    }
-    try {
-      assert.equal(res.status, 201, res.body.toString());
-      const id = JSON.parse(res.body).id;
-      // gate 未放行却已拿到响应：证明审核在后台，不阻塞 HTTP。
-      assert.notEqual((await queue.get(id)).state, STATES.AUTO_PASSED);
-      release();
-      await waitFor(async () => (await queue.get(id)).state === STATES.AUTO_PASSED, { label: '后台审核完成' });
-    } finally {
-      release();
-    }
+    const res = await submit(port, {});
+    assert.equal(res.status, 201, res.body.toString());
+    const id = JSON.parse(res.body).id;
+    await delay(50);
+    assert.equal((await queue.get(id)).state, STATES.RECEIVED, '入队后不得自动跑审核');
   });
-  assert.equal(calls.length, 1, '后台审核应恰好调用一次审核器');
+  assert.equal(calls.length, 0, '公开入队不得调用内置 AI 审核器');
 });
 
-test('QQ 入站 accepted 同样触发后台审核；重复推送不重审', async (t) => {
+test('QQ 入站不再自动审核；重复推送仍然幂等', async (t) => {
   const calls = [];
   const { publicHandler, queue } = await setup(t, {
     client: async () => { calls.push(1); return passEnvelope(); },
@@ -643,79 +617,328 @@ test('QQ 入站 accepted 同样触发后台审核；重复推送不重审', asyn
   await withServer(publicHandler, async (port) => {
     const first = await qqEvent(port, {});
     assert.equal(first.status, 202, first.body.toString());
-    const body = JSON.parse(first.body);
-    assert.equal(body.status, STATES.RECEIVED, 'mocked 创建时仍在 received，审核在后台');
-    await waitFor(async () => (await queue.get(body.id)).state === STATES.AUTO_PASSED, { label: 'QQ 后台审核完成' });
-    assert.equal(calls.length, 1);
-
+    const id = JSON.parse(first.body).id;
+    await delay(50);
+    assert.equal((await queue.get(id)).state, STATES.RECEIVED, 'QQ 入站不得自动跑审核');
     const dup = await qqEvent(port, {});
     assert.equal(dup.status, 200);
-    assert.equal(JSON.parse(dup.body).id, body.id);
-    assert.equal(calls.length, 1, '重复推送是幂等命中，不应再次审核');
+    assert.equal(JSON.parse(dup.body).id, id);
+  });
+  assert.equal(calls.length, 0, 'QQ 入站不得调用内置 AI 审核器');
+});
+
+/* ------------------------------------- 内部审核结果接口（独立令牌保护） */
+
+/** 打开带内部审核令牌的测试环境。 */
+function internalSetup(t, extra = {}) {
+  return setup(t, {
+    ...extra,
+    env: {
+      SUBMISSION_ASTRABOT_REVIEW_TOKEN: ASTRABOT_TOKEN,
+      SUBMISSION_HERMES_REVIEW_TOKEN: HERMES_TOKEN,
+      ...(extra.env || {}),
+    },
+  });
+}
+
+function postReviewResult(port, { token = HERMES_TOKEN, body } = {}) {
+  return call(port, {
+    method: 'POST',
+    routePath: '/api/v1/internal/review-results',
+    headers: { authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+    body: Buffer.from(JSON.stringify(body || {})),
+  });
+}
+
+/** 与站点 data/ 真实枚举一致（deepseek / meme 都存在）。 */
+function validReviewContent(name = '测试表情') {
+  return {
+    name,
+    description: '一张用于内部审核测试的图',
+    commentary: '蓝色大肥鱼觉得这张图挺有意思。',
+    characterId: 'deepseek',
+    categoryIds: ['meme'],
+    tags: ['测试'],
+  };
+}
+
+function seedItem(queue, { source = 'github-issue', extra = 0, fields = {} } = {}) {
+  return queue.enqueue({
+    source,
+    sourceId: `${source}:internal${extra}`,
+    buffer: Buffer.concat([TINY_PNG, Buffer.from([extra & 0xff])]),
+    fields: { name: '待审图', character: 'deepseek', ...fields },
+  });
+}
+
+test('内部接口：未配置令牌 503，缺失 / 错误令牌 401', async (t) => {
+  const off = await setup(t);
+  await withServer(off.publicHandler, async (port) => {
+    assert.equal((await call(port, { routePath: '/api/v1/internal/submissions' })).status, 503);
+  });
+
+  const on = await internalSetup(t);
+  await withServer(on.publicHandler, async (port) => {
+    assert.equal((await call(port, { routePath: '/api/v1/internal/submissions' })).status, 401);
+    assert.equal((await call(port, { routePath: '/api/v1/internal/submissions', headers: { authorization: 'Bearer nope' } })).status, 401);
+    assert.equal((await postReviewResult(port, { token: 'wrong', body: {} })).status, 401);
   });
 });
 
-test('审核 pass 且桥接可用时自动桥接；桥接异常只记日志、不改队列状态', async (t) => {
+test('内部列表：只给 web / github 的 received 条目、字段与原图，且不泄露令牌', async (t) => {
+  const { publicHandler, queue } = await internalSetup(t);
+  const web = (await seedItem(queue, { source: 'web', extra: 11 })).item;
+  const gh = (await seedItem(queue, { source: 'github-issue', extra: 12 })).item;
+  await seedItem(queue, { source: 'qq', extra: 13 });
+  const reviewed = (await seedItem(queue, { source: 'web', extra: 14 })).item;
+  await queue.transition(reviewed.id, 'review.start', { actor: 'hermes' });
+  await queue.transition(reviewed.id, 'review.manual', { actor: 'hermes', reason: '拿不准' });
+
+  await withServer(publicHandler, async (port) => {
+    const res = await call(port, {
+      routePath: '/api/v1/internal/submissions?state=received&sources=web,github-issue',
+      headers: { authorization: `Bearer ${HERMES_TOKEN}` },
+    });
+    assert.equal(res.status, 200, res.body.toString());
+    const text = res.body.toString();
+    assert.ok(!text.includes(HERMES_TOKEN) && !text.includes(ASTRABOT_TOKEN), '响应不得泄露令牌');
+    const body = JSON.parse(text);
+    assert.deepEqual(body.items.map((item) => item.id).sort(), [web.id, gh.id].sort());
+    for (const entry of body.items) {
+      assert.equal(entry.state, STATES.RECEIVED);
+      assert.ok(entry.fields.name);
+    }
+
+    const raw = await call(port, {
+      routePath: `/api/v1/internal/submissions/${gh.id}/raw`,
+      headers: { authorization: `Bearer ${HERMES_TOKEN}` },
+    });
+    assert.equal(raw.status, 200);
+    assert.ok(raw.body.equals(await queue.readImage(gh.id)));
+    assert.equal(raw.headers['x-content-type-options'], 'nosniff');
+  });
+});
+
+test('内部审核结果：pass 且内容完整 → auto_passed 并桥接到 ready', async (t) => {
   const bridged = [];
-  const errors = [];
-  const okBridge = { enabled: true, bridgeItem: async (id) => { bridged.push(id); return { id, status: 'ready' }; } };
-  const first = await setup(t, {
-    client: async () => passEnvelope(),
-    bridge: okBridge,
-    logger: { error: (message) => errors.push(String(message)), warn() {} },
-  });
-  await withServer(first.publicHandler, async (port) => {
-    const res = await submit(port, {});
-    assert.equal(res.status, 201);
-    const id = JSON.parse(res.body).id;
-    await waitFor(() => bridged.length === 1, { label: '自动桥接' });
-    assert.deepEqual(bridged, [id]);
-    assert.equal((await first.queue.get(id)).state, STATES.AUTO_PASSED);
-    assert.deepEqual(errors, []);
+  const bridge = { enabled: true, bridgeItem: async (id) => { bridged.push(id); return { id, status: 'ready', sha256: 'deadbeef' }; } };
+  const { publicHandler, queue } = await internalSetup(t, { bridge });
+  const { item } = await seedItem(queue, { extra: 21 });
+
+  await withServer(publicHandler, async (port) => {
+    const res = await postReviewResult(port, {
+      body: {
+        submissionId: item.id,
+        verdict: 'pass',
+        confidence: 0.93,
+        reason: '属于 AI 娘二创表情包',
+        content: validReviewContent(),
+        reviewer: 'hermes',
+        model: 'gpt-vision',
+      },
+    });
+    assert.equal(res.status, 200, res.body.toString());
+    const body = JSON.parse(res.body);
+    assert.equal(body.state, STATES.AUTO_PASSED);
+    assert.equal(body.duplicate, false);
+    assert.equal(body.bridge.status, 'ready');
   });
 
-  const boom = await setup(t, {
-    client: async () => passEnvelope(),
-    bridge: { enabled: true, bridgeItem: async () => { throw new Error('intake down'); } },
-    logger: { error: (message) => errors.push(String(message)), warn() {} },
-  });
-  await withServer(boom.publicHandler, async (port) => {
-    const res = await submit(port, {});
-    assert.equal(res.status, 201);
-    const id = JSON.parse(res.body).id;
-    await waitFor(() => errors.some((message) => message.includes('后台桥接失败')), { label: '桥接异常日志' });
-    // 桥接异常不改变队列终态，也不把公开响应变成失败。
-    assert.equal((await boom.queue.get(id)).state, STATES.AUTO_PASSED);
-  });
+  const stored = await queue.get(item.id);
+  assert.equal(stored.state, STATES.AUTO_PASSED);
+  assert.equal(stored.review.verdict, 'pass');
+  assert.equal(stored.review.decidedBy, 'hermes');
+  assert.equal(stored.review.model, 'gpt-vision');
+  assert.equal(stored.review.content.characterId, 'deepseek');
+  assert.deepEqual(bridged, [item.id]);
 });
 
-test('审核转人工/失败时不桥接', async (t) => {
+test('内部审核结果：重复提交幂等，返回原结果且不重复桥接', async (t) => {
   const bridged = [];
   const bridge = { enabled: true, bridgeItem: async (id) => { bridged.push(id); return { id, status: 'ready' }; } };
+  const { publicHandler, queue } = await internalSetup(t, { bridge });
+  const { item } = await seedItem(queue, { extra: 22 });
+  const payload = {
+    submissionId: item.id,
+    verdict: 'pass',
+    confidence: 0.9,
+    reason: 'ok',
+    content: validReviewContent(),
+    reviewer: 'hermes',
+    model: 'm',
+  };
 
-  const manual = await setup(t, {
-    client: async () => ({ choices: [{ message: { content: '完全看不懂的内容' } }] }),
-    bridge,
-  });
-  await withServer(manual.publicHandler, async (port) => {
-    const res = await submit(port, {});
-    assert.equal(res.status, 201);
-    const id = JSON.parse(res.body).id;
-    await waitFor(async () => (await manual.queue.get(id)).state === STATES.NEEDS_MANUAL, { label: '转人工' });
-    assert.deepEqual(bridged, []);
+  await withServer(publicHandler, async (port) => {
+    const first = await postReviewResult(port, { body: payload });
+    assert.equal(first.status, 200, first.body.toString());
+    assert.equal(JSON.parse(first.body).duplicate, false);
+
+    const again = await postReviewResult(port, { body: payload });
+    assert.equal(again.status, 200, again.body.toString());
+    const body = JSON.parse(again.body);
+    assert.equal(body.duplicate, true);
+    assert.equal(body.state, STATES.AUTO_PASSED);
+    assert.equal(body.verdict, 'pass');
+    assert.equal(body.confidence, 0.9);
   });
 
-  const failing = await setup(t, {
-    client: async () => { throw new Error('AI down'); },
-    bridge,
+  assert.equal((await queue.get(item.id)).state, STATES.AUTO_PASSED);
+  assert.deepEqual(bridged, [item.id], '重复提交不得重复桥接');
+});
+
+test('内部审核结果：reject / manual 进人工审核区，绝不写待发布区', async (t) => {
+  const bridged = [];
+  const bridge = { enabled: true, bridgeItem: async (id) => { bridged.push(id); return { id, status: 'ready' }; } };
+  const { publicHandler, queue } = await internalSetup(t, { bridge });
+  const rejected = (await seedItem(queue, { extra: 23 })).item;
+  const manual = (await seedItem(queue, { extra: 24 })).item;
+
+  await withServer(publicHandler, async (port) => {
+    const r1 = await postReviewResult(port, {
+      body: { submissionId: rejected.id, verdict: 'reject', confidence: 0.88, reason: '真人照片', content: null, reviewer: 'hermes', model: 'm' },
+    });
+    assert.equal(r1.status, 200, r1.body.toString());
+    assert.equal(JSON.parse(r1.body).state, STATES.AUTO_REJECTED);
+
+    const r2 = await postReviewResult(port, {
+      body: { submissionId: manual.id, verdict: 'manual', confidence: 0.4, reason: '拿不准', reviewer: 'hermes', model: 'm' },
+    });
+    assert.equal(r2.status, 200, r2.body.toString());
+    assert.equal(JSON.parse(r2.body).state, STATES.NEEDS_MANUAL);
   });
-  await withServer(failing.publicHandler, async (port) => {
-    const res = await submit(port, {});
-    assert.equal(res.status, 201);
-    const id = JSON.parse(res.body).id;
-    await waitFor(async () => (await failing.queue.get(id)).state === STATES.NEEDS_MANUAL, { label: '审核失败转人工' });
-    assert.deepEqual(bridged, [], '审核失败绝不桥接');
+
+  assert.equal((await queue.get(rejected.id)).state, STATES.AUTO_REJECTED);
+  assert.equal((await queue.get(manual.id)).state, STATES.NEEDS_MANUAL);
+  assert.deepEqual(bridged, [], 'reject / manual 绝不进入待发布区');
+});
+
+test('内部审核结果：令牌来源与 reviewer 必须一致，字段严格校验', async (t) => {
+  const { publicHandler, queue } = await internalSetup(t);
+  const { item } = await seedItem(queue, { extra: 25 });
+  const base = { submissionId: item.id, verdict: 'manual', confidence: 0.5, reason: 'ok', reviewer: 'hermes', model: 'm' };
+
+  await withServer(publicHandler, async (port) => {
+    // astrbot 令牌不得冒充 hermes。
+    assert.equal((await postReviewResult(port, { token: ASTRABOT_TOKEN, body: base })).status, 403);
+    assert.equal((await postReviewResult(port, { body: { ...base, submissionId: 'not-an-id' } })).status, 400);
+    assert.equal((await postReviewResult(port, { body: { ...base, verdict: 'approved' } })).status, 400);
+    assert.equal((await postReviewResult(port, { body: { ...base, confidence: 2 } })).status, 400);
+    assert.equal((await postReviewResult(port, { body: { ...base, reason: '' } })).status, 400);
+    assert.equal((await postReviewResult(port, { body: { ...base, reviewer: 'unknown-agent' } })).status, 403);
+    assert.equal((await postReviewResult(port, { body: { ...base, submissionId: `sub_${'0'.repeat(24)}` } })).status, 404);
+
+    assert.equal((await queue.get(item.id)).state, STATES.RECEIVED, '非法请求不得改变状态');
   });
+});
+
+test('内部审核结果：pass 但 content 不合规一律 422，条目停在 received', async (t) => {
+  const bridged = [];
+  const bridge = { enabled: true, bridgeItem: async (id) => { bridged.push(id); return { id, status: 'ready' }; } };
+  const { publicHandler, queue } = await internalSetup(t, { bridge });
+  const { item } = await seedItem(queue, { extra: 26 });
+  const base = { submissionId: item.id, verdict: 'pass', confidence: 0.9, reason: 'ok', reviewer: 'hermes', model: 'm' };
+
+  await withServer(publicHandler, async (port) => {
+    assert.equal((await postReviewResult(port, { body: { ...base, content: { ...validReviewContent(), categoryIds: undefined } } })).status, 422);
+    assert.equal((await postReviewResult(port, { body: { ...base, content: { ...validReviewContent(), characterId: '不存在' } } })).status, 422);
+    assert.equal((await postReviewResult(port, { body: { ...base, content: null } })).status, 422);
+  });
+
+  const stored = await queue.get(item.id);
+  assert.equal(stored.state, STATES.RECEIVED, '内容不合规不得推进状态');
+  assert.equal(stored.review, null);
+  assert.deepEqual(bridged, []);
+});
+
+test('内部审核结果：非 received 且非本人已审的条目返回 409', async (t) => {
+  const { publicHandler, queue } = await internalSetup(t);
+  const { item } = await seedItem(queue, { extra: 27 });
+  await queue.transition(item.id, 'review.start', { actor: 'other' });
+
+  await withServer(publicHandler, async (port) => {
+    const res = await postReviewResult(port, {
+      body: { submissionId: item.id, verdict: 'manual', confidence: 0.5, reason: 'ok', reviewer: 'hermes', model: 'm' },
+    });
+    assert.equal(res.status, 409, res.body.toString());
+  });
+  assert.equal((await queue.get(item.id)).state, STATES.REVIEWING, '冲突请求不得改变状态');
+});
+
+test('内部审核：公开健康检查只报启用状态，不回显令牌', async (t) => {
+  const { publicHandler } = await internalSetup(t);
+  await withServer(publicHandler, async (port) => {
+    const res = await call(port, { routePath: '/api/v1/health' });
+    const text = res.body.toString();
+    assert.ok(!text.includes(HERMES_TOKEN) && !text.includes(ASTRABOT_TOKEN));
+    assert.equal(JSON.parse(text).internalReview, 'enabled');
+  });
+});
+
+test('内部审核结果：管理口接受批量回写（Hermes 形态），逐条独立处理', async (t) => {
+  const bridged = [];
+  const bridge = { enabled: true, bridgeItem: async (id) => { bridged.push(id); return { id, status: 'ready' }; } };
+  const { adminHandler, queue } = await internalSetup(t, { bridge });
+  const passed = (await seedItem(queue, { extra: 31 })).item;
+  const rejected = (await seedItem(queue, { extra: 32 })).item;
+  const badContent = (await seedItem(queue, { extra: 33 })).item;
+
+  await withServer(adminHandler, async (port) => {
+    // 内部令牌不能读管理路由：管理口其余接口仍要管理令牌。
+    assert.equal((await call(port, { routePath: '/api/v1/items', headers: { authorization: `Bearer ${HERMES_TOKEN}` } })).status, 401);
+
+    const batch = {
+      schema: 'submission-review-results/1',
+      reviewer: 'hermes',
+      promptVersion: 'v1',
+      results: [
+        { id: passed.id, verdict: 'pass', confidence: 0.9, reason: 'ok', content: validReviewContent('A'), model: 'm' },
+        { id: rejected.id, verdict: 'reject', confidence: 0.8, reason: '真人照片', content: null, model: 'm' },
+        { id: badContent.id, verdict: 'pass', confidence: 0.9, reason: 'ok', content: { ...validReviewContent('C'), characterId: '不存在' }, model: 'm' },
+      ],
+    };
+    const res = await call(port, {
+      method: 'POST',
+      routePath: '/api/v1/internal/review-results',
+      headers: { authorization: `Bearer ${HERMES_TOKEN}`, 'Content-Type': 'application/json' },
+      body: Buffer.from(JSON.stringify(batch)),
+    });
+    assert.equal(res.status, 200, res.body.toString());
+    const body = JSON.parse(res.body);
+    assert.equal(body.count, 3);
+    assert.deepEqual(body.results.map((entry) => entry.status), [200, 200, 422]);
+
+    // 信封 reviewer 与令牌不一致 → 403，整批不动。
+    const mismatch = await call(port, {
+      method: 'POST',
+      routePath: '/api/v1/internal/review-results',
+      headers: { authorization: `Bearer ${HERMES_TOKEN}`, 'Content-Type': 'application/json' },
+      body: Buffer.from(JSON.stringify({ ...batch, reviewer: 'astrbot' })),
+    });
+    assert.equal(mismatch.status, 403);
+  });
+
+  assert.equal((await queue.get(passed.id)).state, STATES.AUTO_PASSED);
+  assert.equal((await queue.get(rejected.id)).state, STATES.AUTO_REJECTED);
+  assert.equal((await queue.get(badContent.id)).state, STATES.RECEIVED);
+  assert.deepEqual(bridged, [passed.id]);
+});
+
+test('内部审核结果：空批次探测（doctor --probe 形态）返回 200 且不动条目', async (t) => {
+  const { adminHandler, queue } = await internalSetup(t);
+  const { item } = await seedItem(queue, { extra: 34 });
+  await withServer(adminHandler, async (port) => {
+    const res = await call(port, {
+      method: 'POST',
+      routePath: '/api/v1/internal/review-results',
+      headers: { authorization: `Bearer ${HERMES_TOKEN}`, 'Content-Type': 'application/json' },
+      body: Buffer.from(JSON.stringify({ schema: 'submission-review-results/1', reviewer: 'hermes', results: [] })),
+    });
+    assert.equal(res.status, 200, res.body.toString());
+    const body = JSON.parse(res.body);
+    assert.equal(body.count, 0);
+    assert.equal(body.reviewer, 'hermes');
+  });
+  assert.equal((await queue.get(item.id)).state, STATES.RECEIVED);
 });
 
 test('并发保护：同一 id 飞行中重复触发只审核一次', async (t) => {

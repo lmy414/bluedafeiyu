@@ -27,6 +27,7 @@
     "pull:issues": "node server/cli.mjs pull-issues",
     "publish:batch": "node ops/publish-batch.mjs",
     "test:server": "node --test 'server/**/*.test.mjs'",
-    "test:publish": "node --test ops/tests/publish-batch.test.mjs"
+    "test:publish": "node --test ops/tests/publish-batch.test.mjs",
+    "test:hermes": "node --test ops/hermes/tests/hermes.test.mjs"
   }
 }

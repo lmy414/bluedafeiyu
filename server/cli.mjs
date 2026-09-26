@@ -88,7 +88,9 @@ const commands = {
     console.log('\n检查：');
     console.log(`  √ 存储根可写且不在公开仓：${summary.storageRoot}`);
     console.log(`  ${summary.adminToken === 'configured' ? '√' : '·'} 管理令牌：${summary.adminToken}`);
-    console.log(`  ${summary.review.configured ? '√' : '·'} AI 审核：${summary.review.configured ? '已配置' : '未配置（审核会转人工）'}`);
+    console.log(`  ${summary.review.configured ? '√' : '·'} AI 审核：${summary.review.configured ? '已配置（仅手动触发，不会自动跑）' : '未配置（一律转人工）'}`);
+    const internal = summary.internalReview || {};
+    console.log(`  ${internal.enabled ? '√' : '·'} 内部审核令牌：astrbot=${internal.astrbot || 'absent'} hermes=${internal.hermes || 'absent'}`);
     console.log(`  ${summary.qq.enabled ? '√' : '·'} QQ 入站：${summary.qq.enabled ? '已开启' : '未开启'}`);
     console.log(`  ${summary.github.token === 'configured' ? '√' : '·'} GitHub 令牌：${summary.github.token}`);
     console.log('\n注意：doctor 不发任何网络请求，也不构造真实 AI 客户端。');
@@ -103,7 +105,9 @@ const commands = {
     console.log(`公开投稿入口 http://${cfg.publicHost}:${publicPort}`);
     console.log(`管理接口（仅回环） http://${cfg.adminHost}:${adminPort}`);
     console.log(`私有存储根 ${cfg.storageRoot}`);
-    console.log(`AI 审核：${context.reviewer.configured ? '已配置' : '未配置（一律转人工）'}`);
+    console.log(`AI 审核：${context.reviewer.configured ? '已配置（仅管理端手动触发）' : '未配置（一律转人工）'}`);
+    console.log('内置 AI 自动审核：已关闭（入队不自动审；结论由内部审核接口回写）');
+    console.log(`内部审核接口：${cfg.internalReview.enabled ? '已开启（astrbot / hermes 独立令牌）' : '未开启（未配置审核令牌）'}`);
     console.log(`QQ 入站：${context.qqAdapter.enabled ? '已开启' : '未开启'}`);
     console.log(`自动桥接：${context.bridge.enabled ? '已开启' : `未启用（${context.bridge.reason}）`}`);
     console.log('本服务不会自动发布；图片入库后由维护者人工收录。');
@@ -336,6 +340,10 @@ const commands = {
 配置走环境变量：SUBMISSION_STORAGE_ROOT（必填）
                 SUBMISSION_ADMIN_TOKEN / SUBMISSION_ALLOWED_ORIGINS
                 SUBMISSION_AI_ENDPOINT / SUBMISSION_AI_API_KEY / SUBMISSION_AI_MODEL
+                              （仅管理端手动触发，入队不再自动审核）
+                SUBMISSION_ASTRABOT_REVIEW_TOKEN   内部审核 reviewer=astrbot 的独立令牌
+                SUBMISSION_HERMES_REVIEW_TOKEN     内部审核 reviewer=hermes 的独立令牌
+                              （配了才开放 POST /api/v1/internal/review-results 与内部列表）
                 SUBMISSION_GITHUB_REPO（默认 lmy414/ai-girl-stickers）/ SUBMISSION_GITHUB_TOKEN
                 SUBMISSION_GITHUB_MAX_PAGES / SUBMISSION_GITHUB_PER_PAGE
                 SUBMISSION_GITHUB_MAX_RETRIES / SUBMISSION_GITHUB_RETRY_BASE_MS / SUBMISSION_GITHUB_RETRY_MAX_MS
