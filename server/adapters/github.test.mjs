@@ -84,12 +84,15 @@ test('附件地址白名单只认 GitHub 附件域名', () => {
   assert.ok(isAllowedAttachmentUrl(ASSET));
   assert.ok(isAllowedAttachmentUrl('https://user-images.githubusercontent.com/1/abc/x.png'));
   assert.ok(isAllowedAttachmentUrl('https://private-user-images.githubusercontent.com/1/abc/x.png'));
+  assert.ok(isAllowedAttachmentUrl('https://github-production-user-asset-6210df.s3.amazonaws.com/174191390/659074916-asset.png?X-Amz-Signature=redacted'));
   for (const bad of [
     'http://github.com/user-attachments/assets/1',
     'https://evil.com/user-attachments/assets/1',
     'https://github.com.evil.com/user-attachments/assets/1',
     'https://github.com/lmy414/ai-girl-stickers/raw/main/x.png',
     'https://user-images.githubusercontent.com.evil.com/x.png',
+    'https://github-production-user-asset.evil.com/x.png',
+    'https://github-production-user-asset.s3.example.com/x.png',
     'https://github.com:8443/user-attachments/assets/1',
     'not a url',
   ]) {

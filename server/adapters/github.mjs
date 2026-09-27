@@ -42,6 +42,10 @@ export const GITHUB_ATTACHMENT_HOSTS = Object.freeze([
   'private-user-images.githubusercontent.com',
 ]);
 
+/* GitHub 近期附件会从按区域命名的 S3 用户附件域名签名重定向。
+ * 只允许 GitHub 官方 user-asset 形态，不能放开整个 s3.amazonaws.com。 */
+const GITHUB_PRODUCTION_ASSET_HOST = /^github-production-user-asset-[a-z0-9-]+\.s3\.amazonaws\.com$/i;
+
 /* 游标文件的结构版本与默认文件名。只落时间戳、仓库与计数，绝不含密钥。 */
 export const GITHUB_STATE_SCHEMA = 'submission-server/github-pull/1';
 export const GITHUB_STATE_FILE_NAME = 'github-issues.json';
@@ -58,7 +62,7 @@ export function isAllowedAttachmentUrl(value) {
   if (url.port !== '') return false;
   if (url.username || url.password) return false;
   if (url.hostname === 'github.com') return url.pathname.startsWith('/user-attachments/assets/');
-  return GITHUB_ATTACHMENT_HOSTS.includes(url.hostname);
+  return GITHUB_ATTACHMENT_HOSTS.includes(url.hostname) || GITHUB_PRODUCTION_ASSET_HOST.test(url.hostname);
 }
 
 /**
