@@ -540,8 +540,8 @@ function renderPage(ctx) {
   <meta property="og:site_name" content="蓝色大肥鱼" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="../tokens.css?v=15" />
-  <link rel="stylesheet" href="../styles.css?v=19" />
-  <script src="../lang.js?v=1"></script>
+  <link rel="stylesheet" href="../styles.css?v=20" />
+  <script src="../lang.js?v=2"></script>
   <script src="../analytics.js" defer></script>
   <style>
 ${PAGE_CSS}
@@ -551,7 +551,7 @@ ${PAGE_CSS}
 <body>
   <header class="topbar">
     <a class="brand" href="../index.html"><span class="brand-mark"><img src="../avatar.png" alt="" /></span><span class="brand-text"><strong>蓝色大肥鱼</strong><small data-i18n="brand.tagline">AI 娘表情包开放档案</small></span></a>
-    <nav class="topnav"><a href="../index.html" data-i18n="nav.home">首页</a><a href="../category.html" data-i18n="nav.category">分类</a><a href="../submit.html" data-i18n="nav.submit">投稿</a><a href="../about.html" data-i18n="nav.about">关于</a><a href="../projects.html" data-i18n="nav.projects">推荐</a></nav>
+    <nav class="topnav"><a href="../index.html" data-i18n="nav.home">首页</a><a href="../category.html" data-i18n="nav.category">分类</a><a href="../topics.html" data-i18n="nav.topics">专题</a><a href="../submit.html" data-i18n="nav.submit">投稿</a><a href="../about.html" data-i18n="nav.about">关于</a><a href="../projects.html" data-i18n="nav.projects">推荐</a></nav>
   </header>
   <main class="page">
     <nav class="breadcrumb" aria-label="面包屑" data-i18n-attr="aria-label:work.breadcrumbLabel"><a href="../index.html" data-i18n="index.section.all">全部作品</a><span class="crumb-sep" aria-hidden="true">→</span><a href="../category.html#c=${e(ctx.characterId)}">${e(ctx.characterName)}</a><span class="crumb-sep" aria-hidden="true">→</span><span>《${e(ctx.name)}》</span></nav>

@@ -17,7 +17,7 @@
 
 本仓库**不跟踪任何图片**（`*.png`/`*.jpg`/`*.gif`/`*.webp`/`*.ico` 等一律忽略），但**跟踪结构化数据**：角色、分类、投稿清单、id 冻结映射与首批编辑叠加层都在仓库根的 `data/`。构建时 `data/` 由 `tools/stage_data.mjs` 暂存成 `dist/` 下的产物路径，图片则由 `tools/sync_content.mjs` 从内容仓库同步。**构建不读内容仓库的任何 JSON 或脚本。**
 
-`data/` 七个文件与产物的对应关系（`tools/stage_data.mjs` 里写死）：
+`data/` 八个文件与产物的对应关系（`tools/stage_data.mjs` 里写死）：
 
 | `data/` | 产物路径 |
 |---|---|
@@ -26,8 +26,11 @@
 | `blue-fish-ids.json` | `dist/blue-fish-ids.json` |
 | `works.json` | `dist/submissions/works.json` |
 | `owner-picks.json` | `dist/owner-picks/works.json` |
+| `topics.json` | `dist/topics.json`（专题：**站长人工精选**的作品合集，不分类；快照里带成 `topics`，供 `topics.html` 与首页专题轮播用） |
 | `blue-fish-classification.json` | `dist/data/blue-fish-classification.json`（构建期读，不进产物） |
 | `blue-fish-editorial.json` | `dist/data/blue-fish-editorial.json`（构建期读，不进产物） |
+
+专题（`data/topics.json`）由站长手动维护，**不要自动把作品批量归进专题**。每条字段：`id`（kebab-case，发布后冻结，用于 `topics.html#t=<id>`）、`name`、`summary`、`coverWorkId`、`status`（`active` 才上线）、`order`（升序）、`createdAt`/`updatedAt`、`workIds`（显式收录的作品 id，按此顺序展示）。构建时下架或不存在的 `workIds` 会被跳过并警告，封面失效退回首张，收录清空的专题不上线。
 
 `dist/data/blue-fish/previews/` 不在这张表里：它是 `tools/sync_content.mjs` 从内容仓 `dist/data/blue-fish/previews/` **同步进来的首批预览图**；上表两张 blue-fish JSON 则是**站点仓 `data/` 的清单暂存副本**。三者都落在 `dist/data/`，而 `tools/build.mjs` 会整个跳过 `dist/data/`，所以这批预览图与两张 JSON 都**不进发布包**；线上的首批预览图由 `DEPLOY_ROOT/shared/data` 持久副本硬链接提供（见「更新与发布」）。
 

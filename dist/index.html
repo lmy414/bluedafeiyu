@@ -17,8 +17,8 @@
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="tokens.css?v=15" />
-  <link rel="stylesheet" href="styles.css?v=19" />
-  <script src="lang.js?v=1"></script>
+  <link rel="stylesheet" href="styles.css?v=20" />
+  <script src="lang.js?v=2"></script>
   <link rel="preload" href="site-data.js" as="script" />
   <script>
     (function () {
@@ -252,13 +252,60 @@
       text-align: center;
       margin: var(--space-6) 0 0;
     }
+    /* ---------- 专题轮播：标题横幅与全部作品之间，一排可左右轮换的纸堆（卡片样式在 styles.css .topic-*） ---------- */
+    #topics { scroll-margin-top: var(--space-10); }
+    #topics[hidden] { display: none; }
+    .section-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-2) var(--space-4);
+    }
+    .section-head .section-label { margin-bottom: var(--space-2); }
+    .rail-controls { display: flex; align-items: center; gap: var(--space-2); margin-left: auto; }
+    .rail-btn { min-height: 0; padding: var(--space-1) var(--space-3); }
+    .section-more { font-family: var(--font-hand); font-size: var(--text-lg); font-weight: bold; margin-left: var(--space-2); }
+    .topic-rail {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: calc((100% - var(--space-6) * 2) / 3);
+      gap: var(--space-6);
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline: var(--space-3);
+      scroll-behavior: smooth;
+      /* 纸堆有旋转和投影，留出内边距免得被滚动容器裁掉 */
+      margin: 0 calc(var(--space-3) * -1);
+      padding: var(--space-5) var(--space-3) var(--space-5);
+      scrollbar-width: none;
+    }
+    .topic-rail::-webkit-scrollbar { display: none; }
+    .topic-rail .topic-card { scroll-snap-align: start; }
+    @media (max-width: 1080px) { .topic-rail { grid-auto-columns: calc((100% - var(--space-6)) / 2); } }
+    @media (max-width: 560px) {
+      .topic-rail { grid-auto-columns: 80%; gap: var(--space-5); padding-left: var(--space-4); padding-right: var(--space-4); }
+      .topic-rail .topic-card { scroll-snap-align: center; }
+      .rail-controls .rail-btn { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) { .topic-rail { scroll-behavior: auto; } }
+    .rail-dots { display: flex; justify-content: center; gap: var(--space-2); margin: 0 0 var(--space-2); }
+    .rail-dot {
+      width: var(--space-3);
+      height: var(--space-3);
+      padding: 0;
+      background: var(--paper-card);
+      border: 1.5px solid var(--ink);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .rail-dot[aria-current="true"] { background: var(--brand); }
   </style>
   <script src="analytics.js" defer></script>
 </head>
 <body data-i18n-page="index">
   <header class="topbar">
     <a class="brand" href="index.html"><span class="brand-mark"><img src="avatar.png" alt="" /></span><span class="brand-text"><strong>蓝色大肥鱼</strong><small data-i18n="brand.tagline">AI 娘表情包开放档案</small></span></a>
-    <nav class="topnav"><a href="index.html" class="is-active" data-i18n="nav.home">首页</a><a href="category.html" data-i18n="nav.category">分类</a><a href="submit.html" data-i18n="nav.submit">投稿</a><a href="about.html" data-i18n="nav.about">关于</a><a href="projects.html" data-i18n="nav.projects">推荐</a></nav>
+    <nav class="topnav"><a href="index.html" class="is-active" data-i18n="nav.home">首页</a><a href="category.html" data-i18n="nav.category">分类</a><a href="topics.html" data-i18n="nav.topics">专题</a><a href="submit.html" data-i18n="nav.submit">投稿</a><a href="about.html" data-i18n="nav.about">关于</a><a href="projects.html" data-i18n="nav.projects">推荐</a></nav>
   </header>
   <main class="page">
     <section class="hero panel" aria-labelledby="hero-title">
@@ -294,6 +341,19 @@
           <div class="polaroid"><span class="tape-strip"></span><img src="submissions/previews/stepfun/issue-19-001.webp" alt="" width="480" height="480" decoding="async" fetchpriority="low" /></div>
         </div>
       </div>
+    </section>
+
+    <section id="topics" aria-labelledby="topics-title" aria-roledescription="carousel" hidden>
+      <div class="section-head">
+        <h2 class="section-label" id="topics-title" data-i18n="index.section.topics">专题</h2>
+        <div class="rail-controls">
+          <button type="button" class="btn rail-btn" id="rail-prev" aria-label="上一组专题" data-i18n-attr="aria-label:index.topics.prev" aria-controls="home-topics">←</button>
+          <button type="button" class="btn rail-btn" id="rail-next" aria-label="下一组专题" data-i18n-attr="aria-label:index.topics.next" aria-controls="home-topics">→</button>
+          <a class="section-more" href="topics.html"><span data-i18n="index.topics.more">全部专题</span> →</a>
+        </div>
+      </div>
+      <div class="topic-rail" id="home-topics" tabindex="0" aria-label="专题" data-i18n-attr="aria-label:index.section.topics"></div>
+      <div class="rail-dots" id="rail-dots" aria-hidden="true"></div>
     </section>
 
     <h2 class="section-label" data-i18n="index.section.all">全部作品</h2>
@@ -520,6 +580,129 @@
       observer.observe(sentinel);
 
       refresh();
+    })();
+  </script>
+  <script>
+    /* 首页专题轮播：DEMO.topics 是站长精选的专题（快照已按 order 排好、剔除空专题），全部放进一条横向轨道。
+       每 AUTO_MS 自动前进一格，到尾回到开头；鼠标悬停、键盘聚焦、触摸拖动、切到后台时暂停；
+       prefers-reduced-motion 时不自动轮换。没有专题时整段保持 hidden。 */
+    (function () {
+      "use strict";
+      var AUTO_MS = 5000;
+      var PREVIEW_THUMBS = 3;
+      var DEMO = window.DEMO || {};
+      var topics = Array.isArray(DEMO.topics) ? DEMO.topics : [];
+      var works = Array.isArray(DEMO.works) ? DEMO.works : [];
+      var section = document.getElementById("topics");
+      var rail = document.getElementById("home-topics");
+      var dotsEl = document.getElementById("rail-dots");
+      var prevBtn = document.getElementById("rail-prev");
+      var nextBtn = document.getElementById("rail-next");
+      if (!section || !rail || !topics.length) return;
+      var workById = new Map(works.map(function (w) { return [w.id, w]; }));
+
+      function escapeHtml(value) {
+        return String(value == null ? "" : value).replace(/[&<>"']/g, function (ch) {
+          return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch];
+        });
+      }
+
+      function cardHtml(topic, index) {
+        var list = (topic.workIds || []).map(function (id) { return workById.get(id); }).filter(Boolean);
+        var cover = workById.get(topic.coverWorkId) || list[0];
+        var rest = list.filter(function (w) { return w !== cover; });
+        var thumbs = rest.slice(0, PREVIEW_THUMBS).map(function (w) {
+          return '<img src="' + escapeHtml(w.thumbUrl) + '" alt="" loading="lazy" decoding="async" />';
+        }).join("");
+        var more = rest.length > PREVIEW_THUMBS ? '<span class="topic-more">+' + (rest.length - PREVIEW_THUMBS) + "</span>" : "";
+        return (
+          '<a class="topic-card" href="topics.html#t=' + encodeURIComponent(topic.id) + '" aria-roledescription="slide">' +
+            '<div class="topic-sheet">' +
+              '<span class="tape-strip" aria-hidden="true"></span>' +
+              (cover ? '<img class="topic-cover" src="' + escapeHtml(cover.thumbUrl) + '" alt="' + escapeHtml(topic.name) + '" loading="' + (index < 3 ? "eager" : "lazy") + '" decoding="async" />' : "") +
+              (thumbs || more ? '<div class="topic-thumbs" aria-hidden="true">' + thumbs + more + "</div>" : "") +
+              '<div class="topic-body">' +
+                '<div class="topic-head">' +
+                  '<h3 class="topic-name">' + escapeHtml(topic.name) + "</h3>" +
+                  '<span class="topic-count">' + escapeHtml(SiteLang.fmt("topics.count", "{count} 张", { count: list.length })) + "</span>" +
+                "</div>" +
+                (topic.summary ? '<p class="topic-summary">' + escapeHtml(topic.summary) + "</p>" : "") +
+              "</div>" +
+            "</div>" +
+          "</a>"
+        );
+      }
+
+      function render() { rail.innerHTML = topics.map(cardHtml).join(""); }
+
+      /* ---------- 轮换：以「第一张完整可见的卡」为当前位置，步进一张 ---------- */
+      function cards() { return rail.children; }
+      function step() {
+        var first = cards()[0], second = cards()[1];
+        if (!first) return rail.clientWidth;
+        return second ? second.offsetLeft - first.offsetLeft : first.offsetWidth;
+      }
+      function currentIndex() { return Math.round(rail.scrollLeft / Math.max(1, step())); }
+      function maxIndex() { return Math.max(0, Math.round((rail.scrollWidth - rail.clientWidth) / Math.max(1, step()))); }
+      function go(index) {
+        var last = maxIndex();
+        var target = index > last ? 0 : index < 0 ? last : index;
+        rail.scrollTo({ left: target * step() });
+      }
+      function renderDots() {
+        var count = maxIndex() + 1;
+        dotsEl.hidden = count < 2;
+        prevBtn.hidden = nextBtn.hidden = count < 2;
+        if (dotsEl.children.length !== count) {
+          var html = "";
+          for (var i = 0; i < count; i++) html += '<button type="button" class="rail-dot" tabindex="-1" data-i="' + i + '"></button>';
+          dotsEl.innerHTML = html;
+        }
+        var now = currentIndex();
+        for (var j = 0; j < dotsEl.children.length; j++) dotsEl.children[j].setAttribute("aria-current", String(j === now));
+      }
+
+      var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var timer = 0;
+      var paused = false;
+      function stop() { window.clearInterval(timer); timer = 0; }
+      function start() {
+        stop();
+        if (reduceMotion || paused || document.hidden || maxIndex() < 1) return;
+        timer = window.setInterval(function () { go(currentIndex() + 1); }, AUTO_MS);
+      }
+      function pause() { paused = true; stop(); }
+      function resume() { paused = false; start(); }
+
+      prevBtn.addEventListener("click", function () { go(currentIndex() - 1); start(); });
+      nextBtn.addEventListener("click", function () { go(currentIndex() + 1); start(); });
+      dotsEl.addEventListener("click", function (event) {
+        var dot = event.target.closest(".rail-dot");
+        if (dot) { go(Number(dot.dataset.i)); start(); }
+      });
+      rail.addEventListener("keydown", function (event) {
+        if (event.key === "ArrowRight") { event.preventDefault(); go(currentIndex() + 1); }
+        if (event.key === "ArrowLeft") { event.preventDefault(); go(currentIndex() - 1); }
+      });
+      section.addEventListener("mouseenter", pause);
+      section.addEventListener("mouseleave", resume);
+      section.addEventListener("focusin", pause);
+      section.addEventListener("focusout", function (event) { if (!section.contains(event.relatedTarget)) resume(); });
+      rail.addEventListener("touchstart", pause, { passive: true });
+      rail.addEventListener("touchend", function () { window.setTimeout(resume, AUTO_MS); }, { passive: true });
+      var dotTick = 0;
+      rail.addEventListener("scroll", function () {
+        if (dotTick) return;
+        dotTick = window.setTimeout(function () { dotTick = 0; renderDots(); }, 120);
+      }, { passive: true });
+      document.addEventListener("visibilitychange", function () { document.hidden ? stop() : start(); });
+      window.addEventListener("resize", function () { renderDots(); start(); });
+
+      render();
+      section.hidden = false;
+      renderDots();
+      start();
+      document.addEventListener("site:langchange", function () { render(); renderDots(); });
     })();
   </script>
   <script>

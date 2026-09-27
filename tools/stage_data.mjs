@@ -41,6 +41,8 @@ const STAGE_TARGETS = [
   { from: "blue-fish-ids.json", to: "blue-fish-ids.json" },
   { from: "works.json", to: "submissions/works.json" },
   { from: "owner-picks.json", to: "owner-picks/works.json" },
+  // 专题：人工编排的作品合集（按 workIds 显式收录），公开清单同时进快照
+  { from: "topics.json", to: "topics.json" },
   { from: "blue-fish-classification.json", to: "data/blue-fish-classification.json" },
   { from: "blue-fish-editorial.json", to: "data/blue-fish-editorial.json" },
 ];

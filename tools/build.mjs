@@ -126,6 +126,8 @@ const REQUIRED_FILES = [
   "site-data.js",
   "submissions/works.json",
   "owner-picks/works.json",
+  "topics.json",
+  "topics.html",
 ];
 
 function log(message) {

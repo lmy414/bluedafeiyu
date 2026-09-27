@@ -40,6 +40,7 @@ const DATA_FILES = [
   "blue-fish-ids.json",
   "works.json",
   "owner-picks.json",
+  "topics.json",
   "blue-fish-classification.json",
   "blue-fish-editorial.json",
 ];
@@ -49,6 +50,7 @@ const STAGED = {
   "blue-fish-ids.json": "blue-fish-ids.json",
   "works.json": "submissions/works.json",
   "owner-picks.json": "owner-picks/works.json",
+  "topics.json": "topics.json",
 };
 
 const IMAGE_DIRS = [

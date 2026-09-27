@@ -9,7 +9,7 @@ const DIST = path.join(ROOT, "dist");
 const ORIGIN = "https://xn--pssy23gqgbz2d718b.com";
 const data = JSON.parse(fs.readFileSync(path.join(DIST, "site-data.json"), "utf8"));
 const escapeXml = (v) => String(v).replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&apos;"})[c]);
-const staticPages = ["", "category.html", "submit.html", "about.html", "projects.html", "changelog.html"];
+const staticPages = ["", "category.html", "topics.html", "submit.html", "about.html", "projects.html", "changelog.html"];
 const urls = staticPages.map((rel) => ({ loc: `${ORIGIN}/${rel}`, lastmod: "2026-09-23" }));
 for (const work of data.works) urls.push({ loc: `${ORIGIN}/works/${work.slug}.html`, lastmod: String(work.updatedAt || work.createdAt || "").slice(0, 10) || "2026-09-23" });
 const body = urls.map(({loc,lastmod}) => `  <url>\n    <loc>${escapeXml(loc)}</loc>\n    <lastmod>${escapeXml(lastmod)}</lastmod>\n  </url>`).join("\n");

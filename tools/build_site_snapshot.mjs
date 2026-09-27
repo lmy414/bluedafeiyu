@@ -134,6 +134,7 @@ function main() {
     characters,
     // 分类直接取本仓库 data/categories.json（此前这里硬编码过一份，加分类要改两处就漏了）
     categories: categories.filter((item) => item.status === "active"),
+    topics: buildTopics(readJson(path.join(DIST, "topics.json")), unique),
     works: unique
   };
   const json = `${JSON.stringify(snapshot, null, 2)}\n`;
@@ -141,6 +142,45 @@ function main() {
   const jsonChanged = writeIfChanged(path.join(DIST, "site-data.json"), json);
   const jsChanged = writeIfChanged(path.join(DIST, "site-data.js"), js);
   console.log(`[snapshot] works=${unique.length} characters=${characters.length} json=${jsonChanged ? "written" : "unchanged"} js=${jsChanged ? "written" : "unchanged"}`);
+}
+
+// 专题：站长人工精选，data/topics.json 按 workIds 显式收录（不按 tag 现算，不分类；id 即稳定键）。
+// 作品下架后 id 会从快照消失——这里只丢弃并警告，不让一次下架卡住整站构建；
+// 封面失效退回首张收录作品；收录清空的专题不上线。
+function buildTopics(list, works) {
+  const known = new Set(works.map((work) => work.id));
+  const seenTopic = new Set();
+  const topics = [];
+  for (const topic of Array.isArray(list) ? list : []) {
+    const id = String(topic && topic.id || "").trim();
+    if (!id || topic.status !== "active") continue;
+    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id)) throw new Error(`专题 id 不合法：${id}`);
+    if (seenTopic.has(id)) throw new Error(`专题 id 重复：${id}`);
+    seenTopic.add(id);
+    const seenWork = new Set();
+    const workIds = [];
+    for (const raw of Array.isArray(topic.workIds) ? topic.workIds : []) {
+      const workId = String(raw || "").trim();
+      if (!workId || seenWork.has(workId)) continue;
+      seenWork.add(workId);
+      if (!known.has(workId)) { console.warn(`[snapshot] 专题 ${id} 引用了不存在或未发布的作品 ${workId}，已跳过`); continue; }
+      workIds.push(workId);
+    }
+    if (!workIds.length) { console.warn(`[snapshot] 专题 ${id} 没有可用作品，本次不上线`); continue; }
+    const coverWorkId = workIds.includes(topic.coverWorkId) ? topic.coverWorkId : workIds[0];
+    topics.push({
+      id,
+      name: String(topic.name || id),
+      summary: String(topic.summary || ""),
+      coverWorkId,
+      order: Number(topic.order) || 0,
+      updatedAt: String(topic.updatedAt || topic.createdAt || ""),
+      workIds
+    });
+  }
+  topics.sort((a, b) => a.order - b.order || a.id.localeCompare(b.id));
+  console.log(`[snapshot] topics=${topics.length}`);
+  return topics;
 }
 
 main();
