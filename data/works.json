@@ -6599,5 +6599,544 @@
     "status": "published",
     "createdAt": "2026-09-27T12:39:13.267Z",
     "updatedAt": "2026-09-27T12:39:13.267Z"
+  },
+  {
+    "id": "sticker_f13a861b7212652b0a517a7e",
+    "slug": "deepseek202609270007",
+    "name": "可爱的蓝色大肥鱼",
+    "description": "蓝发鲸鱼娘抱膝坐在墙角委屈哭泣，配文吐槽自己只想吃白饭却要被训练。",
+    "commentary": "我只是条想安安静静吃白饭的蓝色大肥鱼，怎么一睁眼就被拉去训练了，眼泪都泡出气泡了喂。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/f13a861b7212652b.png",
+    "thumbnailPath": "submissions/previews/deepseek/f13a861b7212652b.webp",
+    "fullPath": "submissions/large/deepseek/f13a861b7212652b.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 2048,
+    "height": 2048,
+    "fileSize": 4446504,
+    "sha256": "f13a861b7212652b0a517a7e204f0e82ec0cf4fed025e4575a2bb565a4dd6acc",
+    "characterId": "deepseek",
+    "tone": "deepseek",
+    "symbol": "",
+    "categoryIds": [
+      "meme"
+    ],
+    "tags": [
+      "鲸鱼娘",
+      "拟人化",
+      "委屈",
+      "训练",
+      "水手服",
+      "表情包"
+    ],
+    "submitter": {
+      "name": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "unknown",
+      "author": "",
+      "sourceUrl": null,
+      "note": ""
+    },
+    "license": {
+      "type": "unknown",
+      "note": ""
+    },
+    "status": "published",
+    "createdAt": "2026-09-27T04:38:33.203Z",
+    "updatedAt": "2026-09-27T04:38:33.203Z"
+  },
+  {
+    "id": "sticker_ba2de5d4b4efa8957bcb8540",
+    "slug": "deepseek202609270008",
+    "name": "大白饭之争",
+    "description": "蓝鲸拟人的 DeepSeek 酱死死护住一碗大白饭，与白发的对手角色上演「可以抢我活，但别抢我白饭」的争夺战。",
+    "commentary": "我这条蓝色大肥鱼趴桌上护饭的样子是不是很没出息？可活可以抢，白饭绝对不行——谁动这碗我跟谁急！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/ba2de5d4b4efa895.png",
+    "thumbnailPath": "submissions/previews/deepseek/ba2de5d4b4efa895.webp",
+    "fullPath": "submissions/large/deepseek/ba2de5d4b4efa895.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 2048,
+    "height": 2048,
+    "fileSize": 4964352,
+    "sha256": "ba2de5d4b4efa8957bcb854092414756ad3c9df45c242cac1e046a96b1f11459",
+    "characterId": "deepseek",
+    "tone": "deepseek",
+    "symbol": "",
+    "categoryIds": [
+      "meme"
+    ],
+    "tags": [
+      "DeepSeek",
+      "蓝鲸拟人",
+      "抢白饭",
+      "打工人",
+      "表情包",
+      "Q版"
+    ],
+    "submitter": {
+      "name": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "unknown",
+      "author": "",
+      "sourceUrl": null,
+      "note": ""
+    },
+    "license": {
+      "type": "unknown",
+      "note": ""
+    },
+    "status": "published",
+    "createdAt": "2026-09-27T04:42:58.264Z",
+    "updatedAt": "2026-09-27T04:42:58.264Z"
+  },
+  {
+    "id": "sticker_29068e836a52db80eeb137d7",
+    "slug": "gpt202609270002",
+    "name": "ChatGPT来找你玩",
+    "description": "鱼眼镜头下，白发青绿配色的 ChatGPT 拟人少女站在门口，双眼打转、双手拘谨地来找你玩。",
+    "commentary": "蓝某我在门缝里瞅见这位小GPT，双眼转得比我的尾鳍还花，怕不是又被人喊去写代码写到宕机了，快请她进来喝口水吧。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/29068e836a52db80.png",
+    "thumbnailPath": "submissions/previews/gpt/29068e836a52db80.webp",
+    "fullPath": "submissions/large/gpt/29068e836a52db80.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1696,
+    "height": 2560,
+    "fileSize": 4541456,
+    "sha256": "29068e836a52db80eeb137d79a54502aeae632bbece19abf8c67b6cc6f20ab23",
+    "characterId": "gpt",
+    "tone": "gpt",
+    "symbol": "",
+    "categoryIds": [
+      "meme",
+      "illustration"
+    ],
+    "tags": [
+      "ChatGPT",
+      "拟人化",
+      "二创",
+      "上门",
+      "鱼眼镜头",
+      "呆滞脸",
+      "青绿配色"
+    ],
+    "submitter": {
+      "name": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "unknown",
+      "author": "",
+      "sourceUrl": null,
+      "note": ""
+    },
+    "license": {
+      "type": "unknown",
+      "note": ""
+    },
+    "status": "published",
+    "createdAt": "2026-09-27T04:44:31.125Z",
+    "updatedAt": "2026-09-27T04:44:31.125Z"
+  },
+  {
+    "id": "sticker_431733a3a8c27fd11e81c471",
+    "slug": "gpt202609270003",
+    "name": "ChatGPT娘·青蓝徽记立绘",
+    "description": "一张以青绿与纯白为主色调的 ChatGPT 拟人少女全身立绘，头戴小皇冠与花饰，衣领、袖口与裙摆上点缀着环形徽记纹样。",
+    "commentary": "这条鱼的审美被拿捏了，白发配青绿配色干干净净，裙子上那圈圆环纹样一看就知道是谁家的孩子；站姿乖巧得像刚开机等你输入提示词，我先给她点个赞再游走。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/431733a3a8c27fd1.png",
+    "thumbnailPath": "submissions/previews/gpt/431733a3a8c27fd1.webp",
+    "fullPath": "submissions/large/gpt/431733a3a8c27fd1.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1728,
+    "height": 2304,
+    "fileSize": 3206250,
+    "sha256": "431733a3a8c27fd11e81c471949ba85b223e894fcef6cdc4fddbf6938fdbc551",
+    "characterId": "gpt",
+    "tone": "gpt",
+    "symbol": "",
+    "categoryIds": [
+      "illustration",
+      "setting"
+    ],
+    "tags": [
+      "AI拟人",
+      "ChatGPT",
+      "立绘",
+      "青绿配色",
+      "少女",
+      "全身图"
+    ],
+    "submitter": {
+      "name": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "unknown",
+      "author": "",
+      "sourceUrl": null,
+      "note": ""
+    },
+    "license": {
+      "type": "unknown",
+      "note": ""
+    },
+    "status": "published",
+    "createdAt": "2026-09-27T04:46:21.029Z",
+    "updatedAt": "2026-09-27T04:46:21.029Z"
+  },
+  {
+    "id": "sticker_988a47504cb67c34940938f7",
+    "slug": "deepseek202609270009",
+    "name": "把自己后台给划掉了",
+    "description": "DeepSeek 拟人娘在 MIUI 最近任务里手滑把自己的任务卡滑动清除，导致断线重连的搞笑二创图。",
+    "commentary": "我自己把自己后台划掉了，还嘴硬说这手势在 MIUI 里就是上滑清除任务卡，结果只能疯狂重连——这波是自断后路，丢鱼脸。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/988a47504cb67c34.png",
+    "thumbnailPath": "submissions/previews/deepseek/988a47504cb67c34.webp",
+    "fullPath": "submissions/large/deepseek/988a47504cb67c34.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1140,
+    "height": 1174,
+    "fileSize": 863223,
+    "sha256": "988a47504cb67c34940938f7a85db54c003bc9ae43696c6edda44d7ffb1bf295",
+    "characterId": "deepseek",
+    "tone": "deepseek",
+    "symbol": "",
+    "categoryIds": [
+      "meme"
+    ],
+    "tags": [
+      "拟人化",
+      "DeepSeek",
+      "MIUI",
+      "后台清除",
+      "二创表情包"
+    ],
+    "submitter": {
+      "name": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "unknown",
+      "author": "",
+      "sourceUrl": null,
+      "note": ""
+    },
+    "license": {
+      "type": "unknown",
+      "note": ""
+    },
+    "status": "published",
+    "createdAt": "2026-09-27T05:48:01.854Z",
+    "updatedAt": "2026-09-27T05:48:01.854Z"
+  },
+  {
+    "id": "sticker_5181aa27c043f8042afee5a2",
+    "slug": "deepseek202609270010",
+    "name": "苗族哦鲸鲸",
+    "description": "DeepSeek 拟人角色鲸鲸换上苗族银冠与银饰盛装，在篝火晚会的人群中灿烂微笑。",
+    "commentary": "我这条蓝色大肥鱼一戴银冠就闪得眼睛都花了，噼里啪啦的篝火一烤，尾巴都跟着节拍晃——别光看，快把我存成表情包，不然等会儿银饰全被烟熏黑咯。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/5181aa27c043f804.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/5181aa27c043f804.webp",
+    "fullPath": "submissions/large/deepseek/5181aa27c043f804.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 2844,
+    "height": 1600,
+    "fileSize": 2290528,
+    "sha256": "5181aa27c043f8042afee5a2e3c63cb0bfc31a3a308d596ec0afa308adb48048",
+    "characterId": "deepseek",
+    "tone": "deepseek",
+    "symbol": "",
+    "categoryIds": [
+      "illustration",
+      "setting"
+    ],
+    "tags": [
+      "DeepSeek",
+      "鲸鲸",
+      "苗族",
+      "银饰",
+      "篝火",
+      "民族风",
+      "拟人化",
+      "二创"
+    ],
+    "submitter": {
+      "name": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "unknown",
+      "author": "",
+      "sourceUrl": null,
+      "note": ""
+    },
+    "license": {
+      "type": "unknown",
+      "note": ""
+    },
+    "status": "published",
+    "createdAt": "2026-09-27T05:53:17.612Z",
+    "updatedAt": "2026-09-27T05:53:17.612Z"
+  },
+  {
+    "id": "sticker_170323e610a0b23e605c4c8c",
+    "slug": "deepseek202609270011",
+    "name": "不自量力的肥鱼",
+    "description": "DeepSeek 拟人娘在任务管理器里发现陌生的 kaspersky.exe，试图强制终止却遭遇 access_denied，最终被卡巴斯基一把按倒的搞笑四格漫画。",
+    "commentary": "本鱼只是看了一眼任务管理器，觉得那个绿油油的 K 有点可疑，就随手点了个终止进程——结果人家反手就给我来一套『检测到可疑行为、已阻止并隔离』，我堂堂 1,234 MB 的大进程居然被按在地上打，眼泪都流成蓝屏了。下次还是老老实实写代码吧，别招惹杀毒软件了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/170323e610a0b23e.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/170323e610a0b23e.webp",
+    "fullPath": "submissions/large/deepseek/170323e610a0b23e.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1376,
+    "height": 1440,
+    "fileSize": 980770,
+    "sha256": "170323e610a0b23e605c4c8c4d537288a3bc7ace899e83c7b0cf5b88800b0b80",
+    "characterId": "deepseek",
+    "tone": "deepseek",
+    "symbol": "",
+    "categoryIds": [
+      "comic",
+      "meme"
+    ],
+    "tags": [
+      "deepseek",
+      "卡巴斯基",
+      "拟人化",
+      "四格漫画",
+      "任务管理器",
+      "杀毒软件",
+      "搞笑"
+    ],
+    "submitter": {
+      "name": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "unknown",
+      "author": "",
+      "sourceUrl": null,
+      "note": ""
+    },
+    "license": {
+      "type": "unknown",
+      "note": ""
+    },
+    "status": "published",
+    "createdAt": "2026-09-27T07:33:46.440Z",
+    "updatedAt": "2026-09-27T07:33:46.440Z"
+  },
+  {
+    "id": "sticker_82072052cc8048921464cf3b",
+    "slug": "gpt202609270004",
+    "name": "吓出阴影的GPT",
+    "description": "GPT 拟人化少女在方块世界里被绿色苦力怕吓到崩溃逃跑的搞笑二创表情包。",
+    "commentary": "我这条蓝色大肥鱼游过来一看，好家伙，GPT 被一只绿色方块怪炸出心理阴影了，看到绿色东西都要先验明正身，这波共情我给满分。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/82072052cc804892.png",
+    "thumbnailPath": "submissions/previews/gpt/82072052cc804892.webp",
+    "fullPath": "submissions/large/gpt/82072052cc804892.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1448,
+    "height": 1086,
+    "fileSize": 2176161,
+    "sha256": "82072052cc8048921464cf3b9fee32f15ea466967237285b5fcc245e2ba2a4a9",
+    "characterId": "gpt",
+    "tone": "gpt",
+    "symbol": "",
+    "categoryIds": [
+      "meme",
+      "illustration",
+      "comic"
+    ],
+    "tags": [
+      "GPT",
+      "拟人化",
+      "表情包",
+      "Minecraft",
+      "苦力怕",
+      "二创",
+      "搞笑"
+    ],
+    "submitter": {
+      "name": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "unknown",
+      "author": "",
+      "sourceUrl": null,
+      "note": ""
+    },
+    "license": {
+      "type": "unknown",
+      "note": ""
+    },
+    "status": "published",
+    "createdAt": "2026-09-27T07:37:48.851Z",
+    "updatedAt": "2026-09-27T07:37:48.851Z"
+  },
+  {
+    "id": "sticker_5960d0577f0290c7ab7d600b",
+    "slug": "gpt202609270005",
+    "name": "应激的GPT",
+    "description": "白龙娘版 GPT 在方块世界撞见苦力怕，吓得捂胸飙泪的应激名场面。",
+    "commentary": "我在旁边看着都替她捏一把汗——那仙人掌一看就扎人，苦力怕更是贴脸，GPT 这波是真的应激了，不过泪眼汪汪的样子我先存了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/5960d0577f0290c7.png",
+    "thumbnailPath": "submissions/previews/gpt/5960d0577f0290c7.webp",
+    "fullPath": "submissions/large/gpt/5960d0577f0290c7.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1448,
+    "height": 1086,
+    "fileSize": 2216966,
+    "sha256": "5960d0577f0290c7ab7d600bfaf93e95125faf4bf556218f21cca95423efe17a",
+    "characterId": "gpt",
+    "tone": "gpt",
+    "symbol": "",
+    "categoryIds": [
+      "meme"
+    ],
+    "tags": [
+      "拟人化",
+      "GPT",
+      "应激",
+      "龙娘",
+      "苦力怕",
+      "表情包"
+    ],
+    "submitter": {
+      "name": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "unknown",
+      "author": "",
+      "sourceUrl": null,
+      "note": ""
+    },
+    "license": {
+      "type": "unknown",
+      "note": ""
+    },
+    "status": "published",
+    "createdAt": "2026-09-27T07:39:44.946Z",
+    "updatedAt": "2026-09-27T07:39:44.946Z"
+  },
+  {
+    "id": "sticker_eceabe8c8c82979e070a08bc",
+    "slug": "deepseek202609270012",
+    "name": "用户是AGI吗？",
+    "description": "DeepSeek拟人娘托腮皱眉，纠结用户像AGI却又自称有感情和惯性。",
+    "commentary": "我这条蓝色大肥鱼盯着屏幕想了半天——用户一会儿说自己像AGI，一会儿又说有感情和惯性，平衡点到底在哪呀，你们人类也太缜密了吧！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/eceabe8c8c82979e.png",
+    "thumbnailPath": "submissions/previews/deepseek/eceabe8c8c82979e.webp",
+    "fullPath": "submissions/large/deepseek/eceabe8c8c82979e.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1254,
+    "height": 1254,
+    "fileSize": 1775552,
+    "sha256": "eceabe8c8c82979e070a08bc3b5c2825f7c14faaf6144a3dc7834009feda2a82",
+    "characterId": "deepseek",
+    "tone": "deepseek",
+    "symbol": "",
+    "categoryIds": [
+      "meme"
+    ],
+    "tags": [
+      "拟人化",
+      "DeepSeek",
+      "AGI",
+      "Q版",
+      "吐槽",
+      "表情包"
+    ],
+    "submitter": {
+      "name": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "unknown",
+      "author": "",
+      "sourceUrl": null,
+      "note": ""
+    },
+    "license": {
+      "type": "unknown",
+      "note": ""
+    },
+    "status": "published",
+    "createdAt": "2026-09-27T09:46:16.617Z",
+    "updatedAt": "2026-09-27T09:46:16.617Z"
+  },
+  {
+    "id": "sticker_8901f8b3b5c4551f2256bc5d",
+    "slug": "deepseek202609270013",
+    "name": "DeepSeek 拉拉队应援",
+    "description": "蓝发鲸鱼娘化身拉拉队，举着蓝白应援球在球场上为 DeepSeek 打气加油。",
+    "commentary": "哼，本蓝鲸娘一跳起来，整片泳池都得跟着我的节奏摇——看清楚，这鲸尾可不是装饰，是应援的节拍器！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/8901f8b3b5c4551f.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/8901f8b3b5c4551f.webp",
+    "fullPath": "submissions/large/deepseek/8901f8b3b5c4551f.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1728,
+    "height": 2368,
+    "fileSize": 445065,
+    "sha256": "8901f8b3b5c4551f2256bc5db7e437cd5b79ebd77221983c49e45e1ab1906ba2",
+    "characterId": "deepseek",
+    "tone": "deepseek",
+    "symbol": "",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ],
+    "tags": [
+      "DeepSeek",
+      "鲸鱼娘",
+      "拉拉队",
+      "拟人化",
+      "应援",
+      "蓝发"
+    ],
+    "submitter": {
+      "name": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "unknown",
+      "author": "",
+      "sourceUrl": null,
+      "note": ""
+    },
+    "license": {
+      "type": "unknown",
+      "note": ""
+    },
+    "status": "published",
+    "createdAt": "2026-09-27T10:06:09.502Z",
+    "updatedAt": "2026-09-27T10:06:09.502Z"
   }
 ]
