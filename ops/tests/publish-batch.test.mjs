@@ -25,13 +25,16 @@ import path from 'node:path';
 
 import {
   acquirePublishLock,
+  LICENSE_TYPES,
   loadManifests,
+  ORIGIN_TYPES,
   planBatch,
   readReadyEntries,
   resolvePublishConfig,
   runBatch,
   sniffImage,
 } from '../publish-batch.mjs';
+import { QQ_GROUP_ORIGIN } from '../../server/adapters/qq.mjs';
 
 /* 真的 1x1 PNG / GIF，用来造合法图片字节 */
 const TINY_PNG = Buffer.from(
@@ -357,6 +360,70 @@ test('planBatch：桥接写入的真实 ready 形状（content 六字段、无 a
   assert.deepEqual(plan.publishable[0].record.categoryIds, ['illustration']);
   assert.equal(plan.publishable[0].record.license.type, 'unknown');
   assert.equal(plan.publishable[0].record.origin.type, 'unknown');
+});
+
+test('planBatch：QQ 群内投稿（origin.type=qq-group）可发布，来源如实入档', async (t) => {
+  const ws = await makeWorkspace(t);
+  // 与 server/adapters/qq.mjs + server/bridge.mjs 写进中转 meta 的形状一致：
+  // origin 固定 type/via = 'qq-group'，license 落到 unknown。
+  writeReady(ws, {
+    item: {
+      source: 'qq',
+      fields: { name: '群内投稿', description: '', character: 'deepseek', tags: ['群友'] },
+      content: {
+        name: '群内投稿',
+        description: '',
+        commentary: '这是群友发来、看图写的评价。',
+        characterId: 'deepseek',
+        categoryIds: ['meme'],
+        tags: ['群友'],
+      },
+      license: 'unknown',
+      origin: { type: QQ_GROUP_ORIGIN, via: QQ_GROUP_ORIGIN, groupId: '123', userId: '456', messageId: '789', imageVia: 'base64' },
+    },
+  });
+  const cfg = configFor(ws);
+  const { entries } = await readReadyEntries(cfg.intake);
+  const plan = planBatch(cfg, entries, loadManifests(cfg.siteDataDir));
+  assert.equal(plan.publishable.length, 1, JSON.stringify(plan.skipped));
+  assert.equal(plan.publishable[0].record.origin.type, 'qq-group');
+  assert.equal(plan.publishable[0].record.license.type, 'unknown');
+});
+
+test('origin 枚举与 QQ 入站契约一致：含 qq-group，且不放宽其他值', () => {
+  assert.equal(QQ_GROUP_ORIGIN, 'qq-group');
+  assert.equal(ORIGIN_TYPES.has(QQ_GROUP_ORIGIN), true, '发布器必须认 bridge 写入的 qq-group');
+  // 只多了 qq-group 这一个入站来源，契约原有枚举与 license 枚举不受影响。
+  assert.deepEqual([...ORIGIN_TYPES].sort(), ['author-submitted', 'community-created', 'internet-found', 'qq-group', 'self-created', 'unknown']);
+  assert.deepEqual([...LICENSE_TYPES].sort(), ['author-permission', 'cc-by', 'cc-by-nc', 'cc0', 'submitter-permission', 'unknown']);
+});
+
+test('planBatch：非法 originType / licenseType 仍被拒绝，不放宽成 qq-group', async (t) => {
+  const ws = await makeWorkspace(t);
+  const badOrigins = ['qq_group', 'QQ-GROUP', 'qq-group ', 'web', 'author-submitted '];
+  for (const [index, originType] of badOrigins.entries()) {
+    const byte = Buffer.from(`origin-${index}`);
+    writeReady(ws, {
+      sha256: sha256(byte),
+      image: byte,
+      item: { fields: { name: 'x', character: 'deepseek', categoryIds: ['meme'], tags: ['t'], commentary: 'c', originType } },
+    });
+  }
+  const badLicenseByte = Buffer.from('license-0');
+  writeReady(ws, {
+    sha256: sha256(badLicenseByte),
+    image: badLicenseByte,
+    item: { fields: { name: 'x', character: 'deepseek', categoryIds: ['meme'], tags: ['t'], commentary: 'c', licenseType: 'all-rights-reserved' } },
+  });
+
+  const cfg = configFor(ws);
+  const { entries } = await readReadyEntries(cfg.intake);
+  const plan = planBatch(cfg, entries, loadManifests(cfg.siteDataDir));
+  assert.equal(plan.publishable.length, 0);
+  assert.equal(plan.skipped.length, badOrigins.length + 1);
+  const reasons = plan.skipped.flatMap((entry) => entry.problems).join('；');
+  for (const originType of badOrigins) assert.match(reasons, new RegExp(`originType 不在枚举内：${originType}`));
+  assert.match(reasons, /licenseType 不在枚举内：all-rights-reserved/);
 });
 
 /* ================================================================ 发布锁 */

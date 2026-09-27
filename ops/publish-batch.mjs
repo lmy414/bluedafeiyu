@@ -55,8 +55,11 @@ const MIME_BY_EXT = {
   '.apng': 'image/png',
 };
 
-/* 公开清单的枚举（archive/2026-09-24/数据契约.md §5 §6）。unknown 用于缺信息的情形。 */
-export const ORIGIN_TYPES = new Set(['self-created', 'author-submitted', 'internet-found', 'community-created', 'unknown']);
+/* 公开清单的枚举（archive/2026-09-24/数据契约.md §5 §6）。unknown 用于缺信息的情形。
+ * qq-group 是 server/adapters/qq.mjs 与 server/bridge.mjs 写入中转 meta 的稳定来源枚举
+ * （QQ_GROUP_ORIGIN = origin.type / origin.via），发布器必须认它，否则群内投稿永久留在 ready。
+ * 只加这一个入站来源；其余非法值仍严格拒绝。 */
+export const ORIGIN_TYPES = new Set(['self-created', 'author-submitted', 'internet-found', 'community-created', 'qq-group', 'unknown']);
 export const LICENSE_TYPES = new Set(['submitter-permission', 'author-permission', 'cc0', 'cc-by', 'cc-by-nc', 'unknown']);
 
 /* 公开文本的长度与字符上限。数值与 server/bridge.mjs 的 content 限制对齐，
