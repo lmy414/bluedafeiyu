@@ -6549,5 +6549,55 @@
     "status": "published",
     "createdAt": "2026-09-27T12:39:12.636Z",
     "updatedAt": "2026-09-27T12:39:12.636Z"
+  },
+  {
+    "id": "sticker_3c068ab2a950ba6aa8e61633",
+    "slug": "deepseek202609270006",
+    "name": "ds娘的构成主义海报",
+    "description": "以红蓝金构成主义版式绘制的DeepSeek拟人蓝发少女，手持几何化鲸鱼，配俄文标语与建筑色块。",
+    "commentary": "本鱼被画进海报里啦，这红蓝配色一摆，感觉下一秒就要扛着鲸鱼去搞五年计划了，不过裙子上的褶子画得比我游得还利索。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/3c068ab2a950ba6a.png",
+    "thumbnailPath": "submissions/previews/deepseek/3c068ab2a950ba6a.webp",
+    "fullPath": "submissions/large/deepseek/3c068ab2a950ba6a.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1078,
+    "height": 992,
+    "fileSize": 1727480,
+    "sha256": "3c068ab2a950ba6aa8e61633e1027a4a06f4eabdb27780e9f245ee8a992a11bd",
+    "characterId": "deepseek",
+    "tone": "deepseek",
+    "symbol": "",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ],
+    "tags": [
+      "deepseek",
+      "ds娘",
+      "构成主义",
+      "海报",
+      "鲸鱼",
+      "拟人化",
+      "蓝发"
+    ],
+    "submitter": {
+      "name": "tzh654321",
+      "github": "tzh654321"
+    },
+    "origin": {
+      "type": "unknown",
+      "author": "",
+      "sourceUrl": "https://github.com/lmy414/ai-girl-stickers/issues/51",
+      "note": ""
+    },
+    "license": {
+      "type": "unknown",
+      "note": ""
+    },
+    "status": "published",
+    "createdAt": "2026-09-27T12:39:13.267Z",
+    "updatedAt": "2026-09-27T12:39:13.267Z"
   }
 ]
