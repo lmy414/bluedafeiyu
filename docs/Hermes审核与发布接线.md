@@ -279,6 +279,8 @@ node ops/hermes/cli.mjs publish --live --limit 5    # 需 HERMES_PUBLISH_LIVE=tr
   不在 Hermes 里另存一份 `id` / 状态映射；
 - 不要让 Hermes 调用人工决定接口，也不要让模型生成 `approved` / `published`；
 - 不要改 `data/works.json`、内容仓或中转区；发布只走 `ops/publish-batch.mjs`；
+- `publish` 作业先执行 `dafeiyu-publish.service`。成功后运行 `ops/issue-reconcile.mjs`，核对中转记录、公开清单和作品页。
+  对已收录的 GitHub Issue 先留言，再关闭；不处理网页和 QQ 投稿。失败时退出非零，下轮重试，不重复留言。
 - 不要同时开 systemd timer 和 Hermes 定时任务，避免重复审、重复发布。
 
 ## 10. 切换与回滚
