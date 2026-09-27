@@ -5857,5 +5857,103 @@
     "categoryIds": [
       "meme"
     ]
+  },
+  {
+    "id": "sticker_faaa80951f9d089198ead789",
+    "slug": "deepseek202609260001",
+    "name": "DeepSeek娘吃瓜",
+    "description": "蓝发兽耳女仆装的AI拟人角色抱着半块西瓜，一副看热闹的吃瓜表情。",
+    "commentary": "蓝色大肥鱼抱着西瓜蹲在群里看戏，嘴上还挂着瓜子牙——这瓜保熟，但保不齐最后被吃的就是我自己。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/faaa80951f9d0891.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/faaa80951f9d0891.webp",
+    "fullPath": "submissions/large/deepseek/faaa80951f9d0891.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 960,
+    "height": 960,
+    "fileSize": 102966,
+    "sha256": "faaa80951f9d089198ead789087deeb175db52832cb18874f75cbf0ed71ada70",
+    "characterId": "deepseek",
+    "tone": "deepseek",
+    "symbol": "",
+    "categoryIds": [
+      "meme"
+    ],
+    "tags": [
+      "吃瓜",
+      "看戏",
+      "Q版",
+      "蓝发",
+      "兽耳",
+      "女仆",
+      "西瓜",
+      "表情包"
+    ],
+    "submitter": {
+      "name": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "qq-group",
+      "author": "",
+      "sourceUrl": null,
+      "note": ""
+    },
+    "license": {
+      "type": "unknown",
+      "note": ""
+    },
+    "status": "published",
+    "createdAt": "2026-09-26T22:42:06.337Z",
+    "updatedAt": "2026-09-26T22:42:06.337Z"
+  },
+  {
+    "id": "sticker_c390e2fe14673713bb471ed5",
+    "slug": "deepseek202609260002",
+    "name": "内存不够啦 DeepSeek娘",
+    "description": "DeepSeek 娘看着 16GB 内存被游戏和 Edge 占满，抱着资料可怜巴巴地求主人关掉《Slay the Spire 2》和 Edge 进程。",
+    "commentary": "我抱着 148k 上下文的资料夹站在那儿，主人却把 16GB 里塞满杀戮尖塔和 Edge，呜呜，我不是不想帮忙，是真的怕关掉游戏弄丢你的进度呀。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/c390e2fe14673713.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/c390e2fe14673713.webp",
+    "fullPath": "submissions/large/deepseek/c390e2fe14673713.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 435331,
+    "sha256": "c390e2fe14673713bb471ed5542cb7567641be1ccd8f3a46700159fe986e22c6",
+    "characterId": "deepseek",
+    "tone": "deepseek",
+    "symbol": "",
+    "categoryIds": [
+      "comic"
+    ],
+    "tags": [
+      "DeepSeek娘",
+      "内存不足",
+      "拟人化",
+      "条漫",
+      "蓝发鲸鱼娘",
+      "Harness"
+    ],
+    "submitter": {
+      "name": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "qq-group",
+      "author": "",
+      "sourceUrl": null,
+      "note": ""
+    },
+    "license": {
+      "type": "unknown",
+      "note": ""
+    },
+    "status": "published",
+    "createdAt": "2026-09-26T23:49:31.517Z",
+    "updatedAt": "2026-09-26T23:49:31.517Z"
   }
 ]
