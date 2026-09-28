@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // tools/tests/submit-form.test.mjs —— 投稿页前端静态检查（零依赖，Node 内置模块 only）
 //
-// 只读 dist/submit.html 与 dist/lang.js，不联网、不起服务、不写任何文件。
+// 只读 Astro 构建产物与 frontend/public/page-scripts/submit-0.js，不联网、不起服务、不写任何文件。
 // 验证站内快速投稿确实接到了统一投稿 API，且没有把占位期的禁用/占位形态留在线上。
 //
 // 用法：
@@ -18,8 +18,9 @@ import test from "node:test";
 import { fileURLToPath } from "node:url";
 
 const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const SUBMIT_HTML = path.join(REPO_ROOT, "dist", "submit.html");
-const LANG_JS = path.join(REPO_ROOT, "dist", "lang.js");
+const SUBMIT_HTML = path.join(REPO_ROOT, "frontend", "out", "submit.html");
+const SCRIPT_JS = path.join(REPO_ROOT, "frontend", "public", "page-scripts", "submit-0.js");
+const LANG_JS = path.join(REPO_ROOT, "frontend", "public", "lang.js");
 
 const html = fs.readFileSync(SUBMIT_HTML, "utf8");
 const lang = fs.readFileSync(LANG_JS, "utf8");
@@ -33,15 +34,9 @@ function formSlice() {
   return html.slice(start, end);
 }
 
-/* 取页内最后一个无 src 的 <script> 段（投稿逻辑就在那里）。 */
-function inlineScript() {
-  const matches = [...html.matchAll(/<script(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/g)];
-  assert.ok(matches.length > 0, "找不到页内 script");
-  return matches[matches.length - 1][1];
-}
-
+// 投稿逻辑在独立文件中，不能把构建产物中的 script src 当作内联代码检查。
 const form = formSlice();
-const script = inlineScript();
+const script = fs.readFileSync(SCRIPT_JS, "utf8");
 
 /* 去掉注释后的代码，用来查「内部信息」这类只该出现在解释性注释里、不该出现在代码路径里的词。 */
 function codeOnly(source) {

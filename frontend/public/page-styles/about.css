@@ -1,0 +1,97 @@
+
+    /* 页面专属样式：五张错落纸卡 + 便签强调，公共组件（.panel/.btn/.section-label…）一律用 styles.css。
+       颜色只用变量，禁止硬编码色值。 */
+
+    /* ---- 错落纸卡：微旋转交替 ---- */
+    .about-card { max-width: var(--measure-base); }
+    .about-card.tilt-l { transform: rotate(-0.8deg); }
+    .about-card.tilt-r { transform: rotate(0.7deg); margin-left: var(--space-7); }
+
+    /* ---- 「署名与删除」突出便签卡 ---- */
+    .sticky-note { background: var(--sticky-1); }
+
+    .prose p { margin: 0 0 var(--space-3); }
+    .prose p:last-child { margin-bottom: 0; }
+    .plain-list {
+      margin: 0;
+      padding-left: var(--space-5);
+    }
+    .plain-list li { margin-bottom: var(--space-1); }
+    .plain-list li:last-child { margin-bottom: 0; }
+    .plain-list li::marker { color: var(--marker); font-weight: var(--weight-bold); }
+
+    /* ---- 术语强调：手写体 ---- */
+    .term {
+      font-family: var(--font-hand);
+      font-size: var(--text-md);
+      font-weight: var(--weight-bold);
+    }
+
+    /* ---- 群号：等宽体放大加粗，一眼能抄准；不加复制按钮，免得为一行静态内容引脚本 ---- */
+    .qq-number {
+      font-family: var(--font-mono);
+      font-size: var(--text-xl);
+      font-weight: var(--weight-bold);
+      letter-spacing: var(--tracking-wide);
+    }
+
+    /* ---- 交流群卡：左文右码，窄屏（站点既有 760px 断点）堆成上下；二维码图来自
+       内容仓库同步（dist/qq-group.png，站点仓不跟踪图片），当纸片贴在卡里。 ---- */
+    .about-card.group-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: var(--space-5);
+      max-width: var(--measure-wide);
+    }
+    .group-card .prose { min-width: 0; }
+    .group-qr {
+      margin: 0;
+      padding: var(--space-2);
+      background: var(--paper-card);
+      border: 2px solid var(--ink);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-paper-sm);
+      text-align: center;
+    }
+    .group-qr img { display: block; width: 168px; height: auto; }
+    .group-qr figcaption {
+      margin-top: var(--space-1);
+      font-family: var(--font-hand);
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+    }
+    @media (max-width: 760px) {
+      .about-card.group-card { grid-template-columns: minmax(0, 1fr); }
+      .group-qr { justify-self: start; }
+    }
+
+    /* ---- 双栏布局：左侧正文加宽，右侧常驻交流群，填掉宽屏右侧的大片留白。
+       ≤1080px（平板及以下）退回单列，交流群回到正文流里。 ---- */
+    .about-columns {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 340px);
+      gap: var(--space-6);
+      align-items: start;
+    }
+    .about-main { min-width: 0; }
+    /* 正文卡从 34em 加宽到 84ch：减少右侧白屏，同时保持阅读行长 */
+    .about-main .about-card { max-width: var(--measure-wide); }
+    .about-aside { position: sticky; top: var(--space-5); }
+    .about-aside .section-label { margin-top: 0; }
+    /* 窄栏里交流群卡改纵向排：文字在上、二维码居中在下 */
+    .about-aside .about-card.group-card {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      max-width: none;
+    }
+    .about-aside .group-card .prose { min-width: 0; }
+    .about-aside .group-qr { align-self: center; }
+    @media (max-width: 1080px) {
+      .about-columns { grid-template-columns: 1fr; }
+      .about-aside { position: static; }
+    }
+
+    .icon { flex: none; }
+    .action-row { margin-top: var(--space-4); margin-bottom: 0; }

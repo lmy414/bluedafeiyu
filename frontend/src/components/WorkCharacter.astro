@@ -1,0 +1,10 @@
+---
+const {work,character,count,avatar,avatarAlt} = Astro.props;
+const aliases=(character.aliases||[]).join('、');
+const image=avatar||'../avatar.png';
+---
+<div class="panel char-card">
+ <span class="tape-strip" aria-hidden="true"></span>
+ <img class="char-avatar" src={image} alt={avatarAlt||''} width="64" height="64" loading="lazy" decoding="async" />
+ <div class="char-card-body"><p class="char-name">{character.name}</p>{aliases && <p class="char-aliases" data-i18n-tpl="work.aka" data-i18n-vars={JSON.stringify({aliases})}>又称{aliases}</p>}<p class="char-count"><a href={'../category.html#c='+work.characterId} data-i18n-tpl="work.count" data-i18n-vars={JSON.stringify({count:String(count)})}>共 {count} 件作品</a></p></div>
+</div>

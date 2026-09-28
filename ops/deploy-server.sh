@@ -176,6 +176,13 @@ cleanup_staging() {
 }
 trap cleanup_staging EXIT
 
+# Astro is a build-only dependency; install the locked frontend toolchain before touching current.
+# Existing node_modules can be stale across versions, so npm ci is required for each release.
+log "安装前端构建依赖：npm ci --prefix ${SOURCE_DIR}/frontend"
+if ! npm ci --prefix "${SOURCE_DIR}/frontend" --no-audit --no-fund; then
+  die "Astro 构建依赖安装失败，未改动 current"
+fi
+
 log "运行构建：node ${SOURCE_DIR}/tools/build_site.mjs --content-dir ${CONTENT_DIR} --out ${STAGING_DIR}/site"
 if ! node "${SOURCE_DIR}/tools/build_site.mjs" --content-dir "${CONTENT_DIR}" --out "${STAGING_DIR}/site"; then
   die "构建失败，未改动 current"

@@ -1,0 +1,47 @@
+
+    /* 项目推荐专属样式：留空占位便签 + 将来项目卡的虚线空版式。
+       公共组件（.panel / .empty / .tape-strip / .grid-2 / .marker-highlight）已在 styles.css，此处不重复。
+       颜色 / 字号 / 间距 / 圆角 / 阴影只用变量，禁止硬编码色值。 */
+
+    /* ---- 征集便签：贴在网格纸上的大便签 ---- */
+    .recruit-card {
+      max-width: var(--measure-wide);
+      padding: var(--space-7) var(--space-5);
+      background: var(--sticky-1);
+      text-align: center;
+      transform: rotate(-0.6deg);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .recruit-card:hover {
+      transform: rotate(0) translate(-2px, -2px);
+      box-shadow: var(--shadow-paper-lg);
+    }
+    .recruit-text {
+      margin: var(--space-2) 0;
+      font-family: var(--font-marker);
+      font-weight: normal;
+      font-size: var(--text-2xl);
+    }
+
+    /* ---- 将来项目卡的版式占位：虚线空卡，微旋转，卡内淡字。旋转只给装饰纸卡，不给交互控件 ---- */
+    .project-slots {
+      max-width: var(--measure-wide);
+      margin-top: var(--space-6);
+    }
+    .project-slot {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: calc(var(--space-10) * 2);
+      padding: var(--space-6);
+      color: var(--text-tertiary);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .project-slot.tilt-l { transform: rotate(-1deg); }
+    .project-slot.tilt-r { transform: rotate(0.8deg); }
+    .project-slot.tilt-l:hover,
+    .project-slot.tilt-r:hover {
+      transform: rotate(0) translate(-2px, -2px);
+      box-shadow: var(--shadow-paper);
+      z-index: 2;
+    }

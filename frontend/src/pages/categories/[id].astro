@@ -1,0 +1,50 @@
+---
+import Site from '../../layouts/Site.astro';
+import Card from '../../components/WorkCard.astro';
+import {categories,works} from '../../lib/site.mjs';
+export function getStaticPaths(){return categories.map(category=>({params:{id:category.id},props:{category}}))}
+const {category}=Astro.props;
+const selected=works.filter(w=>w.categoryIds?.includes(category.id));
+const title=`${category.name}作品 - 蓝色大肥鱼`;
+const canonical=`https://xn--pssy23gqgbz2d718b.com/categories/${category.id}.html`;
+---
+<Site active="category" bodyPage="categoryDetail" categoryId={category.id} rootPath="../">
+ <Fragment slot="head">
+  <title>{title}</title>
+  <meta name="description" content={category.description} />
+  <link rel="canonical" href={canonical} />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="蓝色大肥鱼" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={category.description} />
+  <meta property="og:url" content={canonical} />
+  <link rel="icon" href="../favicon.ico" />
+  <link rel="stylesheet" href="../tokens.css?v=15" />
+  <link rel="stylesheet" href="../styles.css?v=20" />
+  <link rel="stylesheet" href="/page-styles/category.css" />
+  <link rel="stylesheet" href="/page-styles/category-landing.css" />
+  <script is:inline src="../lang.js?v=2"></script>
+  <script is:inline src="../analytics.js" defer></script>
+  <script is:inline>
+    function updateTitle() {
+      const id=document.body.dataset.categoryId;
+      const name=window.SiteLang?.t?.('cat.'+id,'') || document.querySelector('h1')?.textContent || '';
+      if (!name) return;
+      const lang=document.documentElement.lang.split('-')[0];
+      document.title=lang==='zh' ? `${name}作品 - 蓝色大肥鱼` : `${name} ${lang==='ja'?'作品':'Works'} | 蓝色大肥鱼`;
+      const desc=document.querySelector('meta[name="description"]');
+      if(desc)desc.content=lang==='en'?`${name} stickers and fan art. Browse ${document.querySelectorAll('main .card').length} works.`:lang==='ja'?`${name}の作品を一覧で見る。`:document.querySelector('main .lede')?.textContent||desc.content;
+      const og=document.querySelector('meta[property="og:title"]');if(og)og.content=document.title;
+      const ogDesc=document.querySelector('meta[property="og:description"]');if(ogDesc&&desc)ogDesc.content=desc.content;
+    }
+    document.addEventListener('site:langchange',updateTitle);
+    window.addEventListener('DOMContentLoaded',updateTitle,{once:true});
+  </script>
+
+ </Fragment>
+ <p><a href="../category.html"><span aria-hidden="true">← </span><span data-i18n="nav.category">全部分类</span></a></p>
+ <h1 class="section-label" data-i18n={"cat."+category.id}>{category.name}</h1>
+ <p class="lede">{category.description}</p>
+ <p class="count" data-i18n-tpl="topics.count" data-i18n-vars={JSON.stringify({count:selected.length})}>共 {selected.length} 件已发布作品</p>
+ <ul class="masonry cols-3 category-work-list">{selected.map(w=><Card work={w} />)}</ul>
+</Site>

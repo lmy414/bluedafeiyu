@@ -1,0 +1,133 @@
+---
+import Site from '../layouts/Site.astro';
+---
+<Site active="changelog" bodyPage="changelog">
+  <Fragment slot="head">
+  <title>更新日志 - 蓝色大肥鱼网站改版与收录记录</title>
+  <meta name="description" content="查看蓝色大肥鱼 AI娘表情包站的页面改版、数据迁移、作品收录、SEO 和性能优化记录。" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://xn--pssy23gqgbz2d718b.com/changelog.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="蓝色大肥鱼" />
+  <meta property="og:title" content="更新日志 - 蓝色大肥鱼网站改版与收录记录" />
+  <meta property="og:description" content="查看蓝色大肥鱼 AI娘表情包站的页面改版、数据迁移、作品收录、SEO 和性能优化记录。" />
+  <meta property="og:url" content="https://xn--pssy23gqgbz2d718b.com/changelog.html" />
+  <meta property="og:image" content="https://xn--pssy23gqgbz2d718b.com/favicon.png" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="tokens.css?v=15" />
+  <link rel="stylesheet" href="styles.css?v=20" />
+  <script is:inline src="lang.js?v=2"></script>
+  <link rel="stylesheet" href="/page-styles/changelog.css" />
+  <script is:inline src="analytics.js" defer></script>
+</Fragment>
+
+    <h1 class="page-title" data-i18n="changelog.h1">更新日志</h1>
+    <p class="lede" data-i18n="changelog.lede">本站的变更记录，大事小事都记一笔。</p>
+
+    <ol class="timeline">
+      <li class="tl-item">
+        <article class="panel entry-card tilt-l">
+          <span class="tape-strip" aria-hidden="true"></span>
+          <div class="entry-head">
+            <span class="date-sticker">2026-09-26</span>
+            <h2 class="card-title entry-title"><span class="marker-highlight">英语 / 日语</span>界面支持上线</h2>
+          </div>
+          <ul class="entry-points">
+            <li>新增英语与日语界面，顶栏右侧「中 / EN / 日」贴纸一键切换，选择记忆在本机，也认 ?lang= 参数与浏览器语言。</li>
+            <li>七个手写页与 250 个详情页的界面文案全部接入翻译层；分类名、品类词、来源与授权标签同步翻译。</li>
+            <li>作品名、Tag 与详情页正文是内容数据，保持中文原文；日文下自动切用日文字体栈。</li>
+          </ul>
+        </article>
+      </li>
+      <li class="tl-item">
+        <article class="panel entry-card tilt-l">
+          <span class="tape-strip" aria-hidden="true"></span>
+          <div class="entry-head">
+            <span class="date-sticker">2026-09-25</span>
+            <h2 class="card-title entry-title"><span class="marker-highlight">投稿表单</span>简化</h2>
+          </div>
+          <ul class="entry-points">
+            <li>GitHub 投稿现在只需上传图片、填写图片名称和角色，一句话说明可选。</li>
+            <li>Tag、分类、来源、授权和详情页正文改由维护者看图审核时补齐，投稿者不用先理解完整收录契约。</li>
+            <li>站内快速投稿与飞书通道仍未开放，当前真实入口仍是 GitHub Issue 表单。</li>
+          </ul>
+        </article>
+      </li>
+      <li class="tl-item">
+        <article class="panel entry-card tilt-r">
+          <span class="tape-strip" aria-hidden="true"></span>
+          <div class="entry-head">
+            <span class="date-sticker">2026-09-25</span>
+            <h2 class="card-title entry-title"><span class="marker-highlight">自定义 404</span>页上线</h2>
+          </div>
+          <ul class="entry-points">
+            <li>新增站点自己的 404 页：大号 404、几条可能原因，以及回首页 / 翻分类 / 去投稿三个出口。</li>
+            <li>页面照旧返回 404 状态码并标记 noindex，不会被搜索引擎当成正常页面收进去。</li>
+            <li>404 页与其它静态页一样参与 gzip 预压缩与构建校验；产物里少了它，构建和发布都会直接失败。</li>
+          </ul>
+        </article>
+      </li>
+      <li class="tl-item">
+        <article class="panel entry-card tilt-l">
+          <span class="tape-strip" aria-hidden="true"></span>
+          <div class="entry-head">
+            <span class="date-sticker">2026-09-25</span>
+            <h2 class="card-title entry-title"><span class="marker-highlight">逐张视觉复核</span>重分类，新增漫画分类</h2>
+          </div>
+          <ul class="entry-points">
+            <li>191 件作品全部重看一遍图，按实际画面重分到梗图 / 插画 / 设定图 / 漫画。</li>
+            <li>新立「漫画」分类，收多格分镜、连环画与条漫。</li>
+            <li>详情页正文改为蓝色大肥鱼第一人称评价，逐张手写。</li>
+            <li>首批 59 件当时没有名字与标签、一直没上线的图，这次看图补齐名字与标签后全部收编，作品总数 191 → 250。</li>
+            <li>这 59 张的原图转为本站自托管，下载不再依赖上游档案馆。</li>
+            <li>修掉标题与图片 alt 里标签与「AI娘二创」粘连的问题（如 glmAI娘二创 → glm AI娘二创）。</li>
+          </ul>
+        </article>
+      </li>
+      <li class="tl-item">
+        <article class="panel entry-card tilt-r">
+          <span class="tape-strip" aria-hidden="true"></span>
+          <div class="entry-head">
+            <span class="date-sticker">2026-09-22</span>
+            <h2 class="card-title entry-title"><span class="marker-highlight">架构边界</span>基准与数据边界落地</h2>
+          </div>
+          <ul class="entry-points">
+            <li>新增《架构边界》规范基准。</li>
+            <li>角色与分类迁出代码为 JSON 清单。</li>
+            <li>构建补引用完整性断言。</li>
+          </ul>
+        </article>
+      </li>
+      <li class="tl-item">
+        <article class="panel entry-card tilt-r">
+          <div class="entry-head">
+            <span class="date-sticker">2026-09-22</span>
+            <h2 class="card-title entry-title">第三批<span class="marker-highlight">投稿收录</span>（#19–#22）</h2>
+          </div>
+          <ul class="entry-points">
+            <li>收录 6 张图。</li>
+            <li>新立 Stepfun 娘与 GLM 娘两个角色。</li>
+          </ul>
+        </article>
+      </li>
+      <li class="tl-item">
+        <article class="panel entry-card tilt-l">
+          <span class="tape-strip" aria-hidden="true"></span>
+          <div class="entry-head">
+            <span class="date-sticker">2026-09-21</span>
+            <h2 class="card-title entry-title">第一期<span class="marker-highlight">加载优化</span>落地</h2>
+          </div>
+          <ul class="entry-points">
+            <li>投稿补缩略图与详情图派生。</li>
+            <li>发布包 73.7 MB → 8.3 MB。</li>
+          </ul>
+        </article>
+      </li>
+    </ol>
+    <p class="note" data-i18n="changelog.note">本页为节选示例；完整变更记录已归档到仓库 archive/2026-09-24/CHANGELOG.md。</p>
+
+  <Fragment slot="scripts">
+</Fragment>
+</Site>

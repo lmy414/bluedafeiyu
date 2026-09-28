@@ -1,0 +1,60 @@
+
+    /* 专题页专属样式：只做页面布局（专题头纸卡、切换条、计数签）；
+       专题卡 .topic-* 与 card / chips / toolbar / empty 等公共组件在 styles.css */
+    .page > section > .section-label:first-child { margin-top: 0; }
+    [hidden] { display: none !important; }
+
+    .topic-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+      gap: var(--space-5);
+      align-items: center;
+      margin: var(--space-3) 0 var(--space-6);
+      transform: rotate(-0.4deg);
+    }
+    .topic-hero-cover {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      background: var(--bg-inset);
+      border: 2px solid var(--ink);
+      border-radius: var(--radius-xs);
+      box-shadow: var(--shadow-paper-sm);
+      transform: rotate(-1.5deg);
+    }
+    .topic-hero-body { display: flex; flex-direction: column; gap: var(--space-3); }
+    .topic-hero-title {
+      margin: 0;
+      font-family: var(--font-marker);
+      font-weight: normal;
+      font-size: calc(var(--text-hero) * 1.3);
+      line-height: var(--leading-tight);
+    }
+    .topic-hero-summary { margin: 0; color: var(--text-secondary); font-family: var(--font-hand); font-size: var(--text-lg); }
+    .topic-hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
+    .topic-hero .topic-count { align-self: flex-start; }
+    @media (max-width: 760px) {
+      .topic-hero { grid-template-columns: 1fr; }
+    }
+
+    .topic-switch { margin: 0 0 var(--space-5); }
+    .toolbar .search-input { flex: 1; min-width: 0; }
+    .count {
+      display: inline-block;
+      margin: 0 0 var(--space-4);
+      padding: var(--space-1) var(--space-4);
+      background: var(--sticky-2);
+      border: 1.5px solid var(--ink);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-paper-sm);
+      color: var(--text-primary);
+      font-family: var(--font-hand);
+      font-size: var(--text-lg);
+      font-weight: bold;
+      transform: rotate(-1deg);
+    }
+    #results .gallery-end { text-align: center; margin: var(--space-6) 0 0; }
+    #load-more-wrap { text-align: center; margin: var(--space-5) 0 0; }
+    #sentinel { min-height: 1px; }

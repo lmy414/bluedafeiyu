@@ -1,0 +1,8 @@
+---
+import {characterById} from '../lib/site.mjs';
+const {work,related=false} = Astro.props;
+const image = '/'+(work.thumbUrl||'').replace(/^\/+/, '');
+const character=Astro.props.character||characterById.get(work.characterId)?.name||work.characterId;
+const title=`《${work.name}》`;
+---
+{related?<a class="card related-card" href={work.slug+'.html'}><img class="card-art" src={image} alt={title} width={work.width||480} height={work.height||480} loading="lazy" decoding="async" /><div class="card-body"><h3 class="card-title">{title}</h3><p class="card-meta">{character}</p></div></a>:<li class="category-card-item"><a class="card" href={'/works/'+work.slug+'.html'}><img class="card-art" src={image} alt={`${title}${character}作品`} width={work.width||480} height={work.height||480} loading="lazy" decoding="async" /><div class="card-body"><h2 class="card-title">{work.name}</h2><p class="card-meta">{character} · {String(work.format||'').toUpperCase()}</p></div></a></li>}

@@ -1,0 +1,49 @@
+---
+import Site from '../layouts/Site.astro';
+import CategoryFilters from '../components/CategoryFilters.astro';
+---
+<Site active="category" bodyPage="category">
+  <Fragment slot="head">
+  <title>AI娘表情包分类 - 按角色浏览梗图、插画、设定图与漫画 | 蓝色大肥鱼</title>
+  <meta name="description" content="按 DeepSeek娘、Claude娘、Qwen娘、GLM娘等角色浏览 AI娘梗图、表情包、二创插画、立绘设定图与多格漫画，并在分类内搜索名称和 Tag。" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://xn--pssy23gqgbz2d718b.com/category.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="蓝色大肥鱼" />
+  <meta property="og:title" content="AI娘表情包分类 - 按角色浏览梗图、插画、设定图与漫画 | 蓝色大肥鱼" />
+  <meta property="og:description" content="按 DeepSeek娘、Claude娘、Qwen娘、GLM娘等角色浏览 AI娘梗图、表情包、二创插画、立绘设定图与多格漫画，并在分类内搜索名称和 Tag。" />
+  <meta property="og:url" content="https://xn--pssy23gqgbz2d718b.com/category.html" />
+  <meta property="og:image" content="https://xn--pssy23gqgbz2d718b.com/favicon.png" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="tokens.css?v=15" />
+  <link rel="stylesheet" href="styles.css?v=20" />
+  <script is:inline src="lang.js?v=2"></script>
+  <link rel="preload" href="site-data.js" as="script" />
+  <link rel="stylesheet" href="/page-styles/category.css" />
+  <script is:inline src="analytics.js" defer></script>
+</Fragment>
+
+    <h1 class="section-label" data-i18n="category.h1">分类浏览</h1>
+    <p class="lede"><span data-i18n="category.lede.a">按</span><span class="marker-highlight" data-i18n="filter.characters">角色</span><span data-i18n="category.lede.b">浏览，角色下按</span><span class="marker-highlight" data-i18n="ui.workType">作品类型</span><span data-i18n="category.lede.c">分组。</span></p>
+
+    <CategoryFilters />
+    <div class="toolbar">
+      <input class="search-input" id="searchInput" type="text" autocomplete="off" spellcheck="false" aria-label="搜索名称或 Tag" placeholder="在 全部角色 · 全部类型 内搜索名称或 Tag" data-i18n-attr="aria-label:category.search.aria" />
+    </div>
+
+    <p class="count" id="count" aria-live="polite"></p>
+    <div id="results">
+      <div class="masonry cols-3" id="grid"></div>
+      <p class="note gallery-end" id="end-note" hidden></p>
+      <div class="empty" id="empty" hidden data-i18n="list.emptyCategory">没有符合条件的作品</div>
+      <p id="load-more-wrap" hidden><button type="button" class="btn" id="load-more" data-i18n="list.loadMore">加载更多</button></p>
+    </div>
+    <div id="sentinel" aria-hidden="true"></div>
+
+  <Fragment slot="scripts">
+  <script is:inline src="site-data.js"></script>
+  <script is:inline src="/page-scripts/category-0.js"></script>
+</Fragment>
+</Site>

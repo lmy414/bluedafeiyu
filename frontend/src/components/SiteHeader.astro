@@ -1,0 +1,7 @@
+---
+const {active="",rootPath=""}=Astro.props;
+---
+<header class="topbar">
+    <a class="brand" href={rootPath+"index.html"}><span class="brand-mark"><img src={rootPath+"avatar.png"} alt="" /></span><span class="brand-text"><strong>蓝色大肥鱼</strong><small data-i18n="brand.tagline">AI 娘表情包开放档案</small></span></a>
+    <nav class="topnav"><a href={rootPath+"index.html"} class:list={{"is-active": active === "index"}} data-i18n="nav.home">首页</a><a href={rootPath+"category.html"} class:list={{"is-active": active === "category"}} data-i18n="nav.category">分类</a><a href={rootPath+"topics.html"} class:list={{"is-active": active === "topics"}} data-i18n="nav.topics">专题</a><a href={rootPath+"submit.html"} class:list={{"is-active": active === "submit"}} data-i18n="nav.submit">投稿</a><a href={rootPath+"about.html"} class:list={{"is-active": active === "about"}} data-i18n="nav.about">关于</a><a href={rootPath+"projects.html"} class:list={{"is-active": active === "projects"}} data-i18n="nav.projects">推荐</a></nav>
+  </header>

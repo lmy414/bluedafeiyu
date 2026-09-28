@@ -1,0 +1,178 @@
+
+    /* 页面专属样式：只做本页组合，公共组件（.panel/.form/.btn/.email-preview…）一律用 styles.css。
+       颜色只用变量，禁止硬编码色值。旋转只给装饰容器，表单控件保持水平。 */
+
+    /* ---- 投稿指南纸卡：加宽填满左栏，右侧留给群内投稿 ---- */
+    .guide-card {
+      transform: rotate(-0.5deg);
+    }
+
+    /* ---- 顶部双栏：左指南、右群内投稿，填掉宽屏右侧的大片留白。
+       ≤1080px 退回单列，群卡回到正文流里。 ---- */
+    .submit-top {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 320px);
+      gap: var(--space-6);
+      align-items: start;
+    }
+    .submit-top .guide-main { min-width: 0; }
+    .submit-aside { position: sticky; top: var(--space-5); }
+    .qq-card {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      transform: rotate(0.8deg);
+    }
+    .qq-card .group-label { margin: 0; }
+    .qq-card .prose p { margin: 0 0 var(--space-2); }
+    .qq-card .prose p:last-child { margin-bottom: 0; }
+    .qq-card .qq-number { font-size: var(--text-lg); }
+    .qq-card .group-qr {
+      margin: 0;
+      align-self: center;
+      padding: var(--space-2);
+      background: var(--paper-card);
+      border: 2px solid var(--ink);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-paper-sm);
+      text-align: center;
+    }
+    .qq-card .group-qr img { display: block; width: 150px; height: auto; }
+    .qq-card .group-qr figcaption {
+      margin-top: var(--space-1);
+      font-family: var(--font-hand);
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+    }
+    .qq-card .hint { margin: 0; font-size: var(--text-xs); color: var(--text-tertiary); }
+    @media (max-width: 1080px) {
+      .submit-top { grid-template-columns: 1fr; }
+      .submit-aside { position: static; }
+    }
+    .rule-list {
+      margin: 0 0 var(--space-3);
+      padding-left: var(--space-5);
+    }
+    .rule-list li { margin-bottom: var(--space-1); }
+    .rule-list li:last-child { margin-bottom: 0; }
+    .rule-list li::marker { color: var(--marker); font-weight: var(--weight-bold); }
+    .req-mark {
+      color: var(--marker);
+      font-family: var(--font-hand);
+      margin-left: 2px;
+    }
+    .group-label {
+      font-family: var(--font-marker);
+      font-weight: normal;
+      font-size: var(--text-lg);
+    }
+
+    /* ---- 表单顶部的醒目便签 ---- */
+    .form-notice {
+      margin: 0 0 var(--space-4);
+      padding: var(--space-2) var(--space-3);
+      background: var(--sticky-1);
+      border: 2px solid var(--ink);
+      border-radius: var(--radius-xs);
+      box-shadow: var(--shadow-paper-sm);
+      color: var(--text-primary);
+      font-family: var(--font-hand);
+      font-size: var(--text-lg);
+      font-weight: var(--weight-bold);
+      line-height: var(--leading-tight);
+      text-align: center;
+      transform: rotate(-0.6deg);
+    }
+
+    /* ---- 快速投稿：摊开的投稿单（大纸卡 + 胶带） ---- */
+    .form-sheet { margin-top: var(--space-2); }
+
+    /* ---- 三条确认：淡蓝便签块 ---- */
+    .confirm-note {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      max-width: var(--measure-wide);
+      background: var(--sticky-1);
+      transform: rotate(-0.8deg);
+    }
+
+    .form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-3);
+      margin-top: var(--space-2);
+    }
+    /* ---- 提交状态提示：成功 / 失败共用一行 ---- */
+    .form-status {
+      margin: 0;
+      font-family: var(--font-hand);
+      font-size: var(--text-base);
+      font-weight: var(--weight-bold);
+      color: var(--text-secondary);
+    }
+    .form-status.is-ok { color: var(--marker); }
+    .form-status.is-error { color: var(--text-primary); }
+    .turnstile-slot { min-height: var(--control-height); }
+
+    /* ---- 投稿邮件草稿面板 ---- */
+    .email-panel { margin-top: var(--space-4); }
+    .email-title {
+      font-family: var(--font-marker);
+      font-weight: normal;
+      font-size: var(--text-xl);
+      margin: 0 0 var(--space-2);
+      transform: rotate(-1deg);
+    }
+    .email-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-top: var(--space-3);
+    }
+
+    /* ---- 快速投稿入口：两张便签纸片（GitHub 已开通 / 飞书占位） ---- */
+    .channel-card.tilt-l { transform: rotate(-1deg); }
+    .channel-card.tilt-r { transform: rotate(0.8deg); }
+    .channel-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-2);
+      margin-bottom: var(--space-2);
+    }
+    .channel-head h3 {
+      font-family: var(--font-marker);
+      font-weight: normal;
+      font-size: var(--text-xl);
+      margin: 0;
+    }
+    .channel-desc {
+      color: var(--text-secondary);
+      font-family: var(--font-hand);
+      font-size: var(--text-base);
+      margin: 0 0 var(--space-3);
+    }
+
+    /* ---- 手写小贴纸徽标（替代扁平 badge） ---- */
+    .sticker-tag {
+      display: inline-block;
+      font-family: var(--font-hand);
+      font-size: var(--text-sm);
+      font-weight: var(--weight-bold);
+      line-height: var(--leading-tight);
+      color: var(--text-primary);
+      background: var(--sticky-1);
+      border: 1.5px solid var(--ink);
+      border-radius: var(--radius-xs);
+      padding: var(--space-1) var(--space-2);
+      transform: rotate(-1.5deg);
+    }
+    .sticker-tag.is-on {
+      background: var(--marker-soft);
+      transform: rotate(1.5deg);
+    }
+
+    /* ---- 投稿表单：控件保持水平，只有装饰容器允许旋转 ---- */
+    .icon { flex: none; }

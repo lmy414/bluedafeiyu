@@ -1,7 +1,4 @@
-# bluedafeiyu —— 站点源码仓库
-#
-# 这个仓库跟踪「站点源码 + 结构化数据」：dist/ 下的页面 / 样式 / 脚本、tools/、ops/、
-# archive/，以及 data/ 下的清单。图片一律来自内容仓库 lmy414/ai-girl-stickers，不在这里跟踪。
+# bluedafeiyu: Astro 前台源码在 frontend/；权威数据在 data/；dist/ 仅为构建期暂存。
 
 # OS / editor
 .DS_Store
@@ -49,13 +46,19 @@ __pycache__/
 /dist/owner-picks/
 # 投稿模板副本（内容仓库根的 .github/ 同步进来），构建期只读、不进发布包
 /dist/.github/
+# 旧版 dist/ 中可能残留不再作为源码的页面和脚本：不再提交。
+/dist/*.html
+/dist/*.css
+/dist/*.js
+/dist/*.txt
+/dist/*.xml
 
 # ---------------------------------------------------------------- 构建生成物
-# tools/build_site_snapshot.mjs / generate_work_pages.mjs / generate_sitemap.mjs 的产出
+# tools/build_site_snapshot.mjs 的产出
 /dist/site-data.json
 /dist/site-data.js
-/dist/sitemap.xml
 /dist/works/
+/dist/sitemap.xml
 
 # ---------------------------------------------------------------- 图片
 # 本仓库不跟踪任何图片位图；图片归内容仓库

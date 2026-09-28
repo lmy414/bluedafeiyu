@@ -2,7 +2,7 @@
   "name": "bluedafeiyu",
   "private": true,
   "type": "module",
-  "description": "蓝色大肥鱼（AI娘表情包）站点源码：手写页面、生成器与零依赖构建",
+  "description": "蓝色大肥鱼（AI娘表情包）站点源码：Astro 静态前台、数据与构建脚本",
   "engines": {
     "node": ">=18"
   },
@@ -10,10 +10,8 @@
     "stage": "node tools/stage_data.mjs",
     "sync": "node tools/sync_content.mjs",
     "snapshot": "node tools/build_site_snapshot.mjs",
-    "pages": "node tools/generate_work_pages.mjs",
-    "sitemap": "node tools/generate_sitemap.mjs",
     "build": "node tools/build_site.mjs",
-    "build:dist": "node tools/build.mjs",
+    "test:frontend": "node --test tools/tests/submit-form.test.mjs && npm --prefix frontend test",
     "prepare-works": "node tools/prepare_works.mjs",
     "template": "node tools/sync_issue_template.mjs",
     "favicon": "python tools/prepare_favicon.py",

@@ -1,0 +1,20 @@
+---
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+const {active='',bodyPage,rootPath='',categoryId}=Astro.props;
+---
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <slot name="head" />
+</head>
+<body data-i18n-page={bodyPage} data-category-id={categoryId}>
+  <SiteHeader active={active} rootPath={rootPath} />
+  <main class="page"><slot /></main>
+  <slot name="after-main" />
+  <SiteFooter rootPath={rootPath} />
+  <slot name="scripts" />
+</body>
+</html>

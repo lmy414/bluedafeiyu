@@ -1,0 +1,43 @@
+<form class="form" id="submission-form" novalidate data-api-endpoint="/api/v1/submissions">
+      <div class="form-row">
+        <label for="f-files"><span data-i18n="submit.form.files">图片文件</span><span class="req-mark">*</span></label>
+        <span class="hint" data-i18n="submit.form.filesHint">支持 PNG / JPG / GIF / WebP / APNG，单张不超过 10 MB；请传原图，别传带聊天框的截图。</span>
+        <input type="file" id="f-files" name="image" accept="image/png,image/jpeg,image/gif,image/webp,image/apng" required />
+      </div>
+      <div class="form-row">
+        <label for="f-name"><span data-i18n="submit.form.name">图片名称</span><span class="req-mark">*</span></label>
+        <input type="text" id="f-name" name="name" autocomplete="off" maxlength="120" required />
+      </div>
+      <div class="form-row">
+        <label for="f-desc" data-i18n="submit.form.desc">一句话说明</label>
+        <input type="text" id="f-desc" name="description" autocomplete="off" maxlength="500" />
+      </div>
+      <div class="form-row">
+        <label for="f-character"><span data-i18n="submit.form.character">角色</span><span class="req-mark">*</span></label>
+        <select id="f-character" name="character" required></select>
+      </div>
+      <div class="form-row">
+        <span class="hint" data-i18n="submit.form.metaHint">Tag、作品类型、来源、授权和联系信息由维护者审核时补充；知道来源或授权时可写在上面的说明里。</span>
+      </div>
+      <input type="hidden" id="f-turnstile-token" name="turnstileToken" value="" />
+      <div class="form-row" id="turnstile-row" hidden>
+        <span class="hint" data-i18n="submit.form.turnstileHint">请先完成人机验证，再提交。</span>
+        <div class="turnstile-slot" id="turnstile-slot"></div>
+      </div>
+      <div class="panel confirm-note">
+        <div class="form-row">
+          <span class="group-label"><span data-i18n="submit.form.confirmLabel">提交前确认</span><span class="req-mark">*</span></span>
+          <span class="hint" data-i18n="submit.form.confirmHint">三条全部勾选后才能提交。</span>
+        </div>
+        <label class="checkbox-row"><input type="checkbox" id="f-confirm-1" name="confirmRights" required /><span data-i18n="submit.confirm1">我确认自己有权提交这张图片，或已获原作者允许。</span></label>
+        <label class="checkbox-row"><input type="checkbox" id="f-confirm-2" name="confirmReview" required /><span data-i18n="submit.confirm2">同意维护者核实后收录，并在收到版权要求时修改信息或删除。</span></label>
+        <label class="checkbox-row"><input type="checkbox" id="f-confirm-3" name="confirmFanProject" required /><span data-i18n="submit.confirm3">知道本站是非官方同人整理项目，图片著作权始终归原作者。</span></label>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="btn primary" id="btn-generate">
+          <svg class="icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3.5" width="12" height="9" rx="1" /><path d="m2.5 4.5 5.5 4 5.5-4" /></svg>
+          <span id="btn-generate-text">站内提交</span>
+        </button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
+      </div>
+      </form>

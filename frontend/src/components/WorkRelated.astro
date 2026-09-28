@@ -1,0 +1,5 @@
+---
+import WorkCard from './WorkCard.astro';
+const {title,items,nameKey,characterName}=Astro.props;
+---
+<h2 class="section-label" data-i18n={nameKey==='work.guess'?'work.guess':undefined} data-i18n-tpl={nameKey==='work.more'?'work.more':undefined} data-i18n-vars={nameKey==='work.more'?JSON.stringify({name:characterName}):undefined}>{title}</h2>{items.length?<div class="related-grid">{items.map(work=><WorkCard work={work} related />)}</div>:<p class="empty-note">暂无更多作品</p>}

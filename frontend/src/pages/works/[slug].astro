@@ -1,0 +1,33 @@
+---
+import Site from '../../layouts/Site.astro';
+import WorkMeta from '../../components/WorkMeta.astro';
+import WorkBreadcrumb from '../../components/WorkBreadcrumb.astro';
+import WorkPrimary from '../../components/WorkPrimary.astro';
+import WorkCharacter from '../../components/WorkCharacter.astro';
+import WorkInfo from '../../components/WorkInfo.astro';
+import WorkRelated from '../../components/WorkRelated.astro';
+import {works,site} from '../../lib/site.mjs';
+import {seoContext} from '../../lib/seo.mjs';
+import {relatedWorks} from '../../lib/related.mjs';
+export function getStaticPaths(){return works.map(work=>({params:{slug:work.slug},props:{work}}))}
+const work=Astro.props.work||works.find(w=>w.slug===Astro.params.slug);
+const character=site.characters.find(c=>c.id===work.characterId)||{name:work.characterId,aliases:[]};
+const {same,guess:other}=relatedWorks(work,works);
+const charWorks=works.filter(w=>w.characterId===work.characterId);
+const avatar=charWorks[0]?.thumbUrl?'../'+charWorks[0].thumbUrl:'../avatar.png';
+const slugs=works.filter(w=>w.characterId===work.characterId).map(w=>w.slug).sort();
+const ctx=seoContext(work,character,slugs.indexOf(work.slug)%2?'alias':'tag');
+const intro=work.commentary||`${character.name}的这张${ctx.kindClause}我还没来得及细看，先把图摆在这儿，等投稿的各位来补两句。`;
+---
+<Site rootPath="../" bodyPage="work">
+ <Fragment slot="head"><WorkMeta work={work} character={character} ctx={ctx} /></Fragment>
+ <WorkBreadcrumb work={work} character={character} />
+ <h1 class="page-title">《{work.name}》</h1>
+ <p class="work-intro">{intro}</p>
+ <div class="grid-2"><WorkPrimary work={work} character={character} /><div class="info-stack"><WorkCharacter work={work} character={character} avatar={avatar} count={charWorks.length} /><WorkInfo work={work} character={character} /></div></div>
+ <h2 class="section-label" data-i18n="section.comments">评论</h2>
+ <div class="panel giscus-panel"><script is:inline src="https://giscus.app/client.js" data-repo="lmy414/lmy414-blog-comments" data-repo-id="R_kgDOTUvnVw" data-category="Announcements" data-category-id="DIC_kwDOTUvnV84DF4fs" data-mapping="specific" data-term={'sticker-'+work.id} data-reactions-enabled="1" data-input-position="bottom" data-theme="light" data-lang="zh-CN" crossorigin="anonymous" async></script></div>
+ <WorkRelated title={'更多'+character.name+'表情包'} items={same} nameKey="work.more" characterName={character.name} />
+ <WorkRelated title="猜你喜欢" items={other} nameKey="work.guess" />
+ <Fragment slot="scripts"><script is:inline src="/page-scripts/work.js"></script></Fragment>
+</Site>

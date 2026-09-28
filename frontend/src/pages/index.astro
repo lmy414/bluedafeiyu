@@ -1,0 +1,65 @@
+---
+import Site from '../layouts/Site.astro';
+import HomeGallery from '../components/HomeGallery.astro';
+import HomeTopics from '../components/HomeTopics.astro';
+import HomeHero from '../components/HomeHero.astro';
+import QqModal from '../components/QqModal.astro';
+---
+<Site active="index" bodyPage="index">
+  <Fragment slot="head">
+  <title>蓝色大肥鱼 - AI娘表情包、DeepSeek娘梗图与二创立绘下载</title>
+  <meta name="description" content="蓝色大肥鱼收录 DeepSeek娘、Claude娘、Qwen娘、GLM娘等 AI娘表情包、梗图、插画、立绘设定与多格漫画，支持按角色分类、Tag 搜索、高清查看和原图下载。" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://xn--pssy23gqgbz2d718b.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="蓝色大肥鱼" />
+  <meta property="og:title" content="蓝色大肥鱼 - AI娘表情包、DeepSeek娘梗图与二创立绘下载" />
+  <meta property="og:description" content="蓝色大肥鱼收录 DeepSeek娘、Claude娘、Qwen娘、GLM娘等 AI娘表情包、梗图、插画、立绘设定与多格漫画，支持按角色分类、Tag 搜索、高清查看和原图下载。" />
+  <meta property="og:url" content="https://xn--pssy23gqgbz2d718b.com/" />
+  <meta property="og:image" content="https://xn--pssy23gqgbz2d718b.com/favicon.png" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="tokens.css?v=15" />
+  <link rel="stylesheet" href="styles.css?v=20" />
+  <script is:inline src="lang.js?v=2"></script>
+  <link rel="preload" href="site-data.js" as="script" />
+  <script is:inline src="/page-scripts/index-0.js"></script>
+  <link rel="stylesheet" href="/page-styles/index.css" />
+  <script is:inline src="analytics.js" defer></script>
+</Fragment>
+
+    <HomeHero />
+
+    <HomeTopics />
+
+    <h2 class="section-label" data-i18n="index.section.all">全部作品</h2>
+
+    <div class="toolbar">
+      <div class="search-box">
+        <svg class="search-icon" width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5"></circle><path d="M10.5 10.5 L14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+        <input id="search" type="text" placeholder="搜索名称、Tag、角色或别名" aria-label="搜索名称、Tag、角色或别名" autocomplete="off" data-i18n-attr="placeholder:index.search.placeholder,aria-label:index.search.placeholder" />
+      </div>
+      <label class="sort-label" for="sort" data-i18n="sort.label">排序</label>
+      <select id="sort">
+        <option value="newest" data-i18n="sort.newest">最新收录</option>
+        <option value="oldest" data-i18n="sort.oldest">最早收录</option>
+        <option value="name-asc" data-i18n="sort.nameAsc">名称正序</option>
+        <option value="name-desc" data-i18n="sort.nameDesc">名称倒序</option>
+        <option value="size" data-i18n="sort.size">文件体积</option>
+        <option value="random" data-i18n="sort.random">随机浏览</option>
+      </select>
+      <span class="count" id="count">已显示 0 / 0 张</span>
+    </div>
+
+    <HomeGallery />
+    <div id="sentinel" aria-hidden="true"></div>
+
+  <QqModal slot="after-main" />
+  <Fragment slot="scripts">
+  <script is:inline src="site-data.js"></script>
+  <script is:inline src="/page-scripts/index-1.js"></script>
+  <script is:inline src="/page-scripts/index-2.js"></script>
+  <script is:inline src="/page-scripts/index-3.js"></script>
+</Fragment>
+</Site>

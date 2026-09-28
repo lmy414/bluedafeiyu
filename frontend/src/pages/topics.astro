@@ -1,0 +1,76 @@
+---
+import Site from '../layouts/Site.astro';
+---
+<Site active="topics" bodyPage="topics">
+  <Fragment slot="head">
+  <title>AI娘表情包专题 - 站长精选的连载与主题合集 | 蓝色大肥鱼</title>
+  <meta name="description" content="站长精选的 AI娘表情包专题：把同一组连载、同一个梗的作品收在一起，按专题连着看，点进详情查看高清大图、下载原图。" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://xn--pssy23gqgbz2d718b.com/topics.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="蓝色大肥鱼" />
+  <meta property="og:title" content="AI娘表情包专题 - 站长精选的连载与主题合集 | 蓝色大肥鱼" />
+  <meta property="og:description" content="站长精选的 AI娘表情包专题：把同一组连载、同一个梗的作品收在一起，按专题连着看，点进详情查看高清大图、下载原图。" />
+  <meta property="og:url" content="https://xn--pssy23gqgbz2d718b.com/topics.html" />
+  <meta property="og:image" content="https://xn--pssy23gqgbz2d718b.com/favicon.png" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="tokens.css?v=15" />
+  <link rel="stylesheet" href="styles.css?v=20" />
+  <script is:inline src="lang.js?v=2"></script>
+  <link rel="preload" href="site-data.js" as="script" />
+  <link rel="stylesheet" href="/page-styles/topics.css" />
+  <script is:inline src="analytics.js" defer></script>
+</Fragment>
+
+    <!-- 专题目录：没有 #t= 或 id 认不出时显示 -->
+    <section id="topic-index" aria-labelledby="topics-h1">
+      <h1 class="section-label" id="topics-h1" data-i18n="topics.h1">专题</h1>
+      <p class="lede"><span data-i18n="topics.lede.a">站长精选：同一个梗、同一组连载，收成一叠</span><span class="marker-highlight" data-i18n="topics.lede.b">连着看</span><span data-i18n="topics.lede.c">。点开任意专题开始翻。</span></p>
+      <div class="toolbar">
+        <input class="search-input" id="topicSearch" type="text" autocomplete="off" spellcheck="false" aria-label="搜索专题名称、简介或收录作品" placeholder="搜索专题名称、简介或收录作品" data-i18n-attr="aria-label:topics.searchAll,placeholder:topics.searchAll" />
+      </div>
+      <p class="count" id="topic-count" aria-live="polite"></p>
+      <div class="masonry cols-3" id="topic-grid"></div>
+      <div class="empty" id="topic-none" hidden data-i18n="topics.none">专题还在精选中，先去分类页逛逛吧。</div>
+      <div class="empty" id="topic-miss" hidden data-i18n="topics.miss">没有匹配的专题，换个关键词试试。</div>
+    </section>
+
+    <!-- 专题详情：#t=<topicId>&q=<搜索词> -->
+    <section id="topic-detail" hidden aria-labelledby="topic-title">
+      <div class="topic-hero panel">
+        <span class="tape-strip" aria-hidden="true"></span>
+        <img class="topic-hero-cover" id="topic-cover" alt="" decoding="async" />
+        <div class="topic-hero-body">
+          <span class="topic-count" id="topic-total"></span>
+          <h1 class="topic-hero-title" id="topic-title"></h1>
+          <p class="topic-hero-summary" id="topic-summary"></p>
+          <div class="topic-hero-actions">
+            <a class="btn hover-wiggle" href="topics.html" id="topic-back"><span aria-hidden="true">←</span> <span data-i18n="topics.back">全部专题</span></a>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="section-label" data-i18n="topics.switch">换个专题</h2>
+      <div class="chips topic-switch" id="topic-chips" role="group" aria-label="换个专题" data-i18n-attr="aria-label:topics.switch"></div>
+
+      <div class="toolbar">
+        <input class="search-input" id="searchInput" type="text" autocomplete="off" spellcheck="false" aria-label="在专题内搜索名称或 Tag" placeholder="在专题内搜索名称或 Tag" data-i18n-attr="aria-label:topics.search,placeholder:topics.search" />
+      </div>
+
+      <p class="count" id="count" aria-live="polite"></p>
+      <div id="results">
+        <div class="masonry cols-3" id="grid"></div>
+        <p class="note gallery-end" id="end-note" hidden></p>
+        <div class="empty" id="empty" hidden data-i18n="list.emptyCategory">没有符合条件的作品</div>
+        <p id="load-more-wrap" hidden><button type="button" class="btn" id="load-more" data-i18n="list.loadMore">加载更多</button></p>
+      </div>
+      <div id="sentinel" aria-hidden="true"></div>
+    </section>
+
+  <Fragment slot="scripts">
+  <script is:inline src="site-data.js"></script>
+  <script is:inline src="/page-scripts/topics-0.js"></script>
+</Fragment>
+</Site>

@@ -1,0 +1,57 @@
+
+    /* 404 专属样式：便签纸卡 + 手写大号 404 + 出口按钮排布。
+       公共组件（.panel / .btn / .marker-highlight / .tape-strip / .plain-list / .note）已在 styles.css，此处不重复。
+       颜色 / 字号 / 间距 / 圆角 / 阴影只用变量，禁止硬编码色值。
+
+       本页是本仓库唯一全用站点根绝对路径（/xxx）的页面，别改成相对路径：
+       nginx 的 error_page 会在任意目录深度回发它（/works/xxx.html 也在内），
+       相对路径到了那一层会解析成 /works/tokens.css 这种不存在的地址。 */
+
+    /* ---- 便签纸卡：贴在网格纸上的大便签，卡内文字居中，整卡跟随站点左对齐列 ---- */
+    .lost-card {
+      max-width: var(--measure-base);
+      padding: var(--space-7) var(--space-5);
+      background: var(--sticky-1);
+      text-align: center;
+      transform: rotate(-0.6deg);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .lost-card:hover {
+      transform: rotate(0) translate(-2px, -2px);
+      box-shadow: var(--shadow-paper-lg);
+    }
+
+    /* ---- 手写大号 404：本页唯一的大字号，沿用首页 hero 的 calc 写法 ---- */
+    .lost-code {
+      margin: 0 0 var(--space-2);
+      font-family: var(--font-marker);
+      font-weight: normal;
+      font-size: calc(var(--text-hero) * 2.2);
+      line-height: var(--leading-tight);
+      letter-spacing: var(--tracking-wide);
+    }
+    .lost-text {
+      margin: 0;
+      font-family: var(--font-hand);
+      font-weight: normal;
+      font-size: var(--text-xl);
+    }
+
+    /* ---- 出口：主页与分类是主路径，投稿放旁边 ---- */
+    .lost-exits {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      margin: var(--space-6) 0 0;
+    }
+
+    /* ---- 可能原因清单 ---- */
+    .lost-reasons {
+      max-width: var(--measure-base);
+      margin: var(--space-6) 0 0;
+    }
+    .lost-reasons .plain-list { margin: 0; }
+
+    @media (max-width: 760px) {
+      .lost-exits .btn { flex: 1 1 auto; justify-content: center; }
+    }

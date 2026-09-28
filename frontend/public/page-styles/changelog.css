@@ -1,0 +1,90 @@
+
+    /* 更新日志专属样式：时间线条目 + 交替微旋转纸卡 + 日期便签。
+       公共组件（.panel / .card-title / .marker-highlight / .tape-strip / .note）已在 styles.css，此处不重复。
+       颜色 / 字号 / 间距 / 圆角 / 阴影只用变量，禁止硬编码色值。 */
+
+    /* ---- 时间线：左侧手绘虚线 + 墨点 ---- */
+    .timeline {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+      max-width: var(--measure-wide);
+      margin: 0;
+      padding: var(--space-2) 0 var(--space-2) var(--space-7);
+      list-style: none;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: var(--space-2);
+      top: 0;
+      bottom: 0;
+      border-left: 3px dashed var(--ink-45);
+    }
+    .tl-item { position: relative; }
+    .tl-item::before {
+      content: "";
+      position: absolute;
+      left: calc(var(--space-1) - var(--space-7));
+      top: var(--space-6);
+      width: var(--space-3);
+      height: var(--space-3);
+      background: var(--marker-soft);
+      border: 2px solid var(--ink);
+      border-radius: 50%;
+    }
+
+    /* ---- 条目纸卡：交替 ±0.8deg，悬停摆正抬起。旋转只给装饰纸卡，不给交互控件 ---- */
+    .entry-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .entry-card.tilt-l { transform: rotate(-0.8deg); }
+    .entry-card.tilt-r { transform: rotate(0.8deg); }
+    .entry-card.tilt-l:hover,
+    .entry-card.tilt-r:hover {
+      transform: rotate(0) translate(-2px, -2px);
+      box-shadow: var(--shadow-paper-lg);
+      z-index: 2;
+    }
+
+    /* ---- 卡头：日期小贴纸 + marker 标题 ---- */
+    .entry-head {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      margin-bottom: var(--space-3);
+    }
+    .date-sticker {
+      display: inline-block;
+      padding: var(--space-1) var(--space-3);
+      background: var(--sticky-1);
+      border: 2px solid var(--ink);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-paper-sm);
+      font-family: var(--font-hand);
+      font-size: var(--text-lg);
+      font-weight: var(--weight-bold);
+      transform: rotate(-2deg);
+    }
+    .entry-card.tilt-r .date-sticker { transform: rotate(1.5deg); }
+    /* .card-title 的 ellipsis 是给瀑布流卡的，条目标题要能换行 */
+    .entry-title {
+      margin: 0;
+      font-family: var(--font-marker);
+      font-weight: normal;
+      font-size: var(--text-xl);
+      white-space: normal;
+      overflow: visible;
+      text-overflow: clip;
+    }
+
+    /* ---- 要点列表 ---- */
+    .entry-points { margin: 0; padding-left: var(--space-5); }
+    .entry-points li { margin-bottom: var(--space-1); }
+    .entry-points li:last-child { margin-bottom: 0; }
+    .entry-points li::marker { color: var(--marker); font-weight: var(--weight-bold); }
+
+    @media (max-width: 760px) {
+      .timeline { padding-left: var(--space-6); }
+      .tl-item::before { left: calc(var(--space-1) - var(--space-6)); }
+    }

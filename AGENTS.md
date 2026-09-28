@@ -4,13 +4,13 @@
 
 ## 这是什么项目
 
-“蓝色大肥鱼”是 AI 娘二创表情包站，前端是**纯静态**的：手写 HTML / CSS / JS，没有前端框架、没有前端运行时依赖、构建零依赖。站点仓另外带两段**服务端程序**——`server/`（统一投稿服务）与 `tools/intake/`（维护者收录中转），它们只在内地服务器本地运行、线上尚未开通，前端本身仍是静态站点。
+“蓝色大肥鱼”是 AI 娘二创表情包站，前端由 Astro 在构建时生成**纯静态** HTML；源码在 `frontend/src/`，无需线上 Node 运行时。站点仓另外带两段**服务端程序**——`server/`（统一投稿服务）与 `tools/intake/`（维护者收录中转），它们只在内地服务器本地运行、线上尚未开通，前端本身仍是静态站点。
 
 源码、结构化数据与内容分成两个仓库：
 
 | 仓库 | 放什么 |
 |---|---|
-| `lmy414/bluedafeiyu`（本仓库） | 站点页面、样式、生成器、构建与发布脚本、`data/` 结构化清单、全部自动化脚本，以及 `server/` 统一投稿服务与 `tools/intake/` 收录中转 |
+| `lmy414/bluedafeiyu`（本仓库） | Astro 页面、样式、构建与发布脚本、`data/` 结构化清单、全部自动化脚本，以及 `server/` 统一投稿服务与 `tools/intake/` 收录中转 |
 | `lmy414/ai-girl-stickers` | 图片（投稿原图、派生图、站点图标、QQ 群二维码）与投稿 Issue 模板 |
 
 线上地址：<https://xn--pssy23gqgbz2d718b.com/>（中文域名一律写 punycode）。
@@ -30,9 +30,9 @@
 | `blue-fish-classification.json` | `dist/data/blue-fish-classification.json`（构建期读，不进产物） |
 | `blue-fish-editorial.json` | `dist/data/blue-fish-editorial.json`（构建期读，不进产物） |
 
-专题（`data/topics.json`）由站长手动维护，**不要自动把作品批量归进专题**。每条字段：`id`（kebab-case，发布后冻结，用于 `topics.html#t=<id>`）、`name`、`summary`、`coverWorkId`、`status`（`active` 才上线）、`order`（升序）、`createdAt`/`updatedAt`、`workIds`（显式收录的作品 id，按此顺序展示）。构建时下架或不存在的 `workIds` 会被跳过并警告，封面失效退回首张，收录清空的专题不上线。
+专题（`data/topics.json`）由站长手动维护，**不要自动把作品批量归进专题**。每条字段：`id`（kebab-case，发布后冻结，用于 `topics/<id>.html`；旧 hash 链接仍可用）、`name`、`summary`、`coverWorkId`、`status`（`active` 才上线）、`order`（升序）、`createdAt`/`updatedAt`、`workIds`（显式收录的作品 id，按此顺序展示）。构建时下架或不存在的 `workIds` 会被跳过并警告，封面失效退回首张，收录清空的专题不上线。
 
-`dist/data/blue-fish/previews/` 不在这张表里：它是 `tools/sync_content.mjs` 从内容仓 `dist/data/blue-fish/previews/` **同步进来的首批预览图**；上表两张 blue-fish JSON 则是**站点仓 `data/` 的清单暂存副本**。三者都落在 `dist/data/`，而 `tools/build.mjs` 会整个跳过 `dist/data/`，所以这批预览图与两张 JSON 都**不进发布包**；线上的首批预览图由 `DEPLOY_ROOT/shared/data` 持久副本硬链接提供（见「更新与发布」）。
+`dist/data/blue-fish/previews/` 不在这张表里：它是 `tools/sync_content.mjs` 从内容仓 `dist/data/blue-fish/previews/` **同步进来的首批预览图**；上表两张 blue-fish JSON 则是**站点仓 `data/` 的清单暂存副本**。三者都落在 `dist/data/`，而 Astro 发布步骤不复制 `dist/data/`，所以这批预览图与两张 JSON 都**不进发布包**；线上的首批预览图由 `DEPLOY_ROOT/shared/data` 持久副本硬链接提供（见「更新与发布」）。
 
 ## 文档在哪
 
@@ -47,18 +47,19 @@
 
 ## 本地构建
 
-```bash
-node tools/build_site.mjs --content-dir /path/to/ai-girl-stickers
-python -m http.server 5173 -d .build/site        # 打开 http://127.0.0.1:5173
+```powershell
+cd frontend
+npm ci
+cd ..
+node tools/build_site.mjs --content-dir <内容仓绝对路径> --out .build/site
+python -m http.server 5173 -d .build/site
 ```
 
-构建链：暂存站点数据 → 同步内容图片 → 归一快照 → 生成详情页 → sitemap → 复制成发布产物。
+权威清单仍在 `data/`；`dist/` 只暂存清单、快照及图片，不含可维护的前台页面。构建依次暂存数据、同步图片、生成快照，再由 `frontend/src/pages/` 输出 `.html`。改版式改 Astro 页面/组件；不要手工编辑 `.build/site/`。作品 `id`、`slug` 冻结，构建期不运行 `tools/prepare_works.mjs`。
 
-`dist/works/<slug>.html` 是生成物，不要手改；改版式改 `tools/generate_work_pages.mjs` 再重跑。构建期**不会**跑 `tools/prepare_works.mjs`（它现在也归本仓库）：`id` 和 `slug` 一经发布即冻结，绝不能在构建期重算。
+作品详情正文来自 `data/works.json` 或 `data/owner-picks.json` 的 `commentary`，SEO 文案公式在 `frontend/src/lib/seo.mjs`。四类分类由 `data/categories.json` 自动生成 `/categories/<id>.html`；专题由 `data/topics.json` 自动生成 `/topics/<id>.html`，每个专题需有有效作品。旧的 `/category.html` 与 `/topics.html` 仍保留。
 
-详情页的正文段（H1 下那段）**整段是内容数据**，不是模板：取清单里的 `commentary`（蓝色大肥鱼第一人称评价），缺字段才退兜底句；要改某一页的正文，改本仓库 `data/works.json`（或 `data/owner-picks.json`）里的清单，不要改生成器。分类枚举同理走本仓库的 `data/categories.json`，加分类不用动代码，但新增分类要同时补 `generate_work_pages.mjs` 的 `KIND_WORDS`、`index.html` 与 `category.html` 里那份 `kindWord` 映射（前端卡片 alt 用），漏了会静默退成“表情包”。
-
-**界面是三语的**（zh 默认 / en / ja），由零依赖的 `dist/lang.js` 承担：en/ja 词典 + 运行时 + 顶栏切换贴纸。zh 不进词典：页面原文与 JS 兜底串就是中文，运行时缓存原文、切回即还原。静态文案挂 `data-i18n`，动态文案调 `SiteLang.fmt(key, 中文兜底)`，页面级 title/meta 挂 `body[data-i18n-page]`；详情页模板的 i18n 写在 `generate_work_pages.mjs`。**作品名、Tag、commentary 是内容数据，三语保持中文**；新增界面 key 时 en/ja 两份都要补（漏了静默退中文）。完整约定见 README“多语言”一节与 `lang.js` 头部注释。
+界面三语（zh 默认 / en / ja）由 `frontend/public/lang.js` 和页面交互脚本承担。动态文案改动后要同时检查英、日词典。`frontend/public/page-styles/`、`page-scripts/` 管页内特有代码；公共布局与可复用结构在 `frontend/src/layouts/`、`components/`。后台 `admin/` 独立运行，不参与公开前端。
 
 首批（blue-fish）记录的归一有两条容易踩的线：`build_site_snapshot.mjs` **先合并 `data/blue-fish-editorial.json` 叠加层，再判“够不够格当作品”**（名字 / 标签 / 角色三者齐全）。顺序反了，那 59 条补过名字的记录会重新掉线；叠加层里带 `originalPath` 的记录原图走内容仓（`lmy414/ai-girl-stickers`）的 Raw，没带的仍指上游档案馆。
 

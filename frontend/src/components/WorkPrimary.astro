@@ -1,0 +1,7 @@
+---
+const {work,character}=Astro.props;
+const kind={meme:'表情包',illustration:'二创插画',setting:'立绘设定图',comic:'漫画'}[work.categoryIds?.[0]]||'作品';
+const alt=`《${work.name}》${character.name}${kind}，${(work.tags||[]).join('、')} AI娘二创图`;
+const src=/^https?:/.test(work.displayUrl||'')?work.displayUrl:'../'+(work.displayUrl||work.thumbUrl);
+---
+<div class="panel"><span class="tape-strip" aria-hidden="true"></span><figure class="work-figure"><img src={src} alt={alt} data-i18n-attr="alt:alt.work" data-i18n-vars={JSON.stringify({name:work.name,character:character.name,kindId:work.categoryIds?.[0]||'meme'})} width={work.width} height={work.height} loading="eager" fetchpriority="high" decoding="async" /><figcaption data-i18n-tpl="work.figcaption" data-i18n-vars={JSON.stringify({name:work.name,character:character.name})}>《{work.name}》· {character.name}</figcaption></figure><div class="work-actions"><a class="btn primary hover-wiggle" href={work.originalUrl} target="_blank" rel="noopener" data-i18n="work.download">下载原图</a><button class="btn" type="button" data-copy-canonical data-i18n="work.copyLink">复制链接</button></div></div>

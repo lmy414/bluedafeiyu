@@ -1,0 +1,258 @@
+
+    /* 首页专属样式 —— 只写页面布局与开屏横幅；纸卡 / 按钮 / 便签 / 工具条 / 卡片等
+       公共组件已在 styles.css，此处不重复。颜色 / 字号 / 间距 / 圆角 / 阴影只用变量。 */
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+    /* ---------- 开屏横幅：贴在网格纸上的手绘海报 ----------
+       纸卡外观（白底 / 2px 墨线 / 硬投影 / 手绘圆角 / position:relative）来自共享 .panel，
+       这里只补分栏布局与手写歪斜。胶带要伸出纸面，不裁剪 overflow。 */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 5fr) minmax(0, 4fr);
+      gap: var(--space-5);
+      transform: rotate(-0.5deg);
+    }
+    .hero-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: var(--space-3);
+      padding: var(--space-6) var(--space-5);
+    }
+    .hero-title {
+      width: fit-content;
+      margin: 0;
+      font-family: var(--font-marker);
+      font-weight: normal;
+      font-size: calc(var(--text-hero) * 1.8);
+      line-height: var(--leading-tight);
+      transform: rotate(-1deg);
+    }
+    .hero-subtitle {
+      width: fit-content;
+      margin: 0;
+      font-family: var(--font-hand);
+      font-size: var(--text-xl);
+      color: var(--text-secondary);
+      transform: rotate(0.5deg);
+    }
+    .hero-lede {
+      margin: 0;
+      font-family: var(--font-hand);
+      font-size: var(--text-lg);
+      color: var(--text-secondary);
+      max-width: var(--measure-base);
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      margin-top: var(--space-2);
+    }
+    .btn svg { flex: none; }
+
+    /* ---------- 交流群弹窗：手绘纸卡居中，点 hero 按钮弹出群号与二维码 ---------- */
+    .qq-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-4);
+    }
+    .qq-modal[hidden] { display: none; }
+    .qq-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: var(--ink);
+      opacity: 0.45;
+    }
+    .qq-modal-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      width: min(100%, 360px);
+      padding: var(--space-6) var(--space-5);
+      transform: rotate(-0.8deg);
+      box-shadow: var(--shadow-paper-lg);
+    }
+    .qq-modal-title {
+      margin: 0;
+      font-family: var(--font-marker);
+      font-weight: normal;
+      font-size: var(--text-xl);
+      transform: rotate(-0.5deg);
+    }
+    .qq-modal-lede {
+      margin: 0;
+      font-family: var(--font-hand);
+      font-size: var(--text-lg);
+    }
+    .qq-modal-qr {
+      margin: 0;
+      align-self: center;
+      padding: var(--space-2);
+      background: var(--paper-card);
+      border: 2px solid var(--ink);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-paper-sm);
+      text-align: center;
+    }
+    .qq-modal-qr img { display: block; width: 200px; height: auto; }
+    .qq-modal-qr figcaption {
+      margin-top: var(--space-1);
+      font-family: var(--font-hand);
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+    }
+    .qq-modal-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      justify-content: center;
+      margin-top: var(--space-2);
+    }
+
+    /* 右侧照片墙：拍立得拼贴。原 --art-deepseek-* 深色艺术带降级成浅蓝底衬（--sticky-* 渐变），
+       蓝白纸面基调不变，主角是贴上去的照片。 */
+    .hero-art {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-5);
+      background: linear-gradient(135deg, var(--sticky-1), var(--sticky-2));
+      border: 2px dashed var(--ink);
+      border-radius: var(--radius-sketchy-alt);
+    }
+    .hero-collage {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-3);
+      width: min(100%, calc(var(--space-10) * 5));
+    }
+    .polaroid {
+      position: relative;
+      padding: var(--space-1) var(--space-1) var(--space-2);
+      background: var(--paper-card);
+      border: 2px solid var(--ink);
+      border-radius: var(--radius-xs);
+      box-shadow: var(--shadow-paper-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .polaroid img {
+      display: block;
+      width: 100%;
+      /* height 必须显式 auto：<img> 上的 height="480" 属性会被当成固定高度，
+         与 width:100% 一起把盒子压成竖长条（约 112×480），aspect-ratio:1 随之失效，
+         object-fit:cover 再把画面裁成特写。 */
+      height: auto;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: var(--radius-xs);
+      background: var(--bg-inset);
+    }
+    /* 错落微旋转：只给装饰性照片墙，不给输入控件；悬停与共享 .card 同一约定——摆正抬起 */
+    .polaroid:nth-child(3n+1) { transform: rotate(-2deg); }
+    .polaroid:nth-child(3n+2) { transform: rotate(1.5deg) translateY(var(--space-2)); }
+    .polaroid:nth-child(3n) { transform: rotate(-0.8deg) translateY(calc(var(--space-2) * -1)); }
+    .polaroid:hover {
+      transform: rotate(0) translate(-2px, -2px);
+      box-shadow: var(--shadow-paper);
+      z-index: 2;
+    }
+    /* 共享 .tape-strip 按大纸卡取 104px；照片胶带只缩尺寸、换倾角，不另起一套组件样式 */
+    .polaroid .tape-strip {
+      width: var(--space-10);
+      height: var(--space-4);
+      top: calc(var(--space-2) * -1);
+    }
+    .polaroid:nth-child(even) .tape-strip { transform: rotate(4deg) translateX(-50%); }
+
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-art { order: -1; padding: var(--space-4); }
+      .hero-body { padding: var(--space-5); }
+    }
+
+    /* ---------- 工具条扩展（.toolbar 容器是共享的，这里只管搜索框与排序标签） ---------- */
+    .search-box {
+      position: relative;
+      flex: 1 1 calc(var(--space-10) * 3);
+      min-width: calc(var(--space-10) * 3);
+      max-width: calc(var(--space-10) * 5);
+    }
+    .search-icon {
+      position: absolute;
+      left: var(--space-2);
+      top: 50%;
+      transform: translateY(-50%);
+      display: block;
+      color: var(--text-tertiary);
+      pointer-events: none;
+    }
+    .search-box input {
+      width: 100%;
+      padding-left: calc(var(--space-2) + var(--space-6));
+    }
+    .sort-label {
+      color: var(--text-secondary);
+      font-family: var(--font-hand);
+      font-size: var(--text-base);
+    }
+
+    /* ---------- 画廊收尾 ---------- */
+    .card-art-link { display: block; }
+    .gallery-end {
+      text-align: center;
+      margin: var(--space-6) 0 0;
+    }
+    /* ---------- 专题轮播：标题横幅与全部作品之间，一排可左右轮换的纸堆（卡片样式在 styles.css .topic-*） ---------- */
+    #topics { scroll-margin-top: var(--space-10); }
+    #topics[hidden] { display: none; }
+    .section-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-2) var(--space-4);
+    }
+    .section-head .section-label { margin-bottom: var(--space-2); }
+    .rail-controls { display: flex; align-items: center; gap: var(--space-2); margin-left: auto; }
+    .rail-btn { min-height: 0; padding: var(--space-1) var(--space-3); }
+    .section-more { font-family: var(--font-hand); font-size: var(--text-lg); font-weight: bold; margin-left: var(--space-2); }
+    .topic-rail {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: calc((100% - var(--space-6) * 2) / 3);
+      gap: var(--space-6);
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline: var(--space-3);
+      scroll-behavior: smooth;
+      /* 纸堆有旋转和投影，留出内边距免得被滚动容器裁掉 */
+      margin: 0 calc(var(--space-3) * -1);
+      padding: var(--space-5) var(--space-3) var(--space-5);
+      scrollbar-width: none;
+    }
+    .topic-rail::-webkit-scrollbar { display: none; }
+    .topic-rail .topic-card { scroll-snap-align: start; }
+    @media (max-width: 1080px) { .topic-rail { grid-auto-columns: calc((100% - var(--space-6)) / 2); } }
+    @media (max-width: 560px) {
+      .topic-rail { grid-auto-columns: 80%; gap: var(--space-5); padding-left: var(--space-4); padding-right: var(--space-4); }
+      .topic-rail .topic-card { scroll-snap-align: center; }
+      .rail-controls .rail-btn { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) { .topic-rail { scroll-behavior: auto; } }
+    .rail-dots { display: flex; justify-content: center; gap: var(--space-2); margin: 0 0 var(--space-2); }
+    .rail-dot {
+      width: var(--space-3);
+      height: var(--space-3);
+      padding: 0;
+      background: var(--paper-card);
+      border: 1.5px solid var(--ink);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .rail-dot[aria-current="true"] { background: var(--brand); }

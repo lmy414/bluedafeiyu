@@ -1,0 +1,4 @@
+---
+const {work,character}=Astro.props;
+---
+<nav class="breadcrumb" aria-label="面包屑" data-i18n-attr="aria-label:work.breadcrumbLabel"><a href="../index.html" data-i18n="index.section.all">全部作品</a><span class="crumb-sep" aria-hidden="true">→</span><a href={'../category.html#c='+work.characterId}>{character.name}</a><span class="crumb-sep" aria-hidden="true">→</span><span>《{work.name}》</span></nav>

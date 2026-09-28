@@ -1,0 +1,51 @@
+
+    /* 分类页专属样式：只做布局与页面贴纸（手写小签、分类贴纸），
+       公共组件（topbar / toolbar / chips / card / empty）外观一律交给 styles.css */
+    .page > .section-label:first-child { margin-top: 0; }
+
+    /* 两行筛选：行首分类贴纸 + 便签 chips，窄屏允许 chips 换到贴纸下方 */
+    .filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: var(--space-2) var(--space-4);
+      margin: 0 0 var(--space-4);
+    }
+    .filter-row .chips { flex: 1 1 240px; min-width: 0; }
+    .filter-label {
+      flex: none;
+      padding: var(--space-1) var(--space-3);
+      background: var(--sticky-1);
+      border: 1.5px solid var(--ink);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-paper-sm);
+      color: var(--text-primary);
+      font-family: var(--font-hand);
+      font-size: var(--text-lg);
+      font-weight: bold;
+      transform: rotate(-1.5deg);
+    }
+    .filter-row + .filter-row .filter-label { transform: rotate(1deg); }
+
+    .toolbar .search-input { flex: 1; min-width: 0; }
+
+    /* 结果计数：贴在瀑布流左上角的手写小签（#count 由 JS 写 textContent，内部不能放装饰子元素） */
+    .count {
+      display: inline-block;
+      margin: 0 0 var(--space-4);
+      padding: var(--space-1) var(--space-4);
+      background: var(--sticky-2);
+      border: 1.5px solid var(--ink);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-paper-sm);
+      color: var(--text-primary);
+      font-family: var(--font-hand);
+      font-size: var(--text-lg);
+      font-weight: bold;
+      transform: rotate(-1deg);
+    }
+
+    /* 增量渲染的补充样式：末尾提示与降级「加载更多」都居中，其余沿用共享 .note / .btn */
+    #results .gallery-end { text-align: center; margin: var(--space-6) 0 0; }
+    #load-more-wrap { text-align: center; margin: var(--space-5) 0 0; }
+    #sentinel { min-height: 1px; }

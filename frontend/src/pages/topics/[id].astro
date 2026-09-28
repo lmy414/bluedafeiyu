@@ -1,0 +1,35 @@
+---
+import Site from '../../layouts/Site.astro';
+import Card from '../../components/WorkCard.astro';
+import {byWorkId,topics} from '../../lib/site.mjs';
+export function getStaticPaths(){return topics.map(topic=>({params:{id:topic.id},props:{topic}}))}
+const {topic}=Astro.props;
+const selected=(topic.workIds||[]).map(id=>byWorkId.get(id)).filter(Boolean);
+const cover=byWorkId.get(topic.coverWorkId)||selected[0];
+const title=`${topic.name}专题 - 蓝色大肥鱼`;
+const canonical=`https://xn--pssy23gqgbz2d718b.com/topics/${topic.id}.html`;
+---
+<Site active="topics" bodyPage="topicDetail" rootPath="../">
+ <Fragment slot="head">
+  <title>{title}</title>
+  <meta name="description" content={topic.summary} />
+  <link rel="canonical" href={canonical} />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="蓝色大肥鱼" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={topic.summary} />
+  <meta property="og:url" content={canonical} />
+  <link rel="icon" href="../favicon.ico" />
+  <link rel="stylesheet" href="../tokens.css?v=15" />
+  <link rel="stylesheet" href="../styles.css?v=20" />
+  <link rel="stylesheet" href="/page-styles/topics.css" />
+  <link rel="stylesheet" href="/page-styles/category-landing.css" />
+  <script is:inline src="../lang.js?v=2"></script>
+  <script is:inline src="../analytics.js" defer></script>
+
+ </Fragment>
+ <p><a href="../topics.html">← 全部专题</a></p>
+ <div class="topic-hero panel"><span class="tape-strip" aria-hidden="true"></span>{cover && <img class="topic-hero-cover" src={"/"+cover.thumbUrl} alt={topic.name} width={cover.width} height={cover.height} />}<div class="topic-hero-body"><h1 class="topic-hero-title">{topic.name}</h1><p class="topic-hero-summary">{topic.summary}</p></div></div>
+ <p class="count" data-i18n-tpl="topics.count" data-i18n-vars={JSON.stringify({count:selected.length})}>{selected.length} 张作品</p>
+ <ul class="masonry cols-3 category-work-list">{selected.map(w=><Card work={w} />)}</ul>
+</Site>
