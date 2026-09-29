@@ -24,7 +24,9 @@
  * 这里只做「HTTP -> 队列/审核/适配器」的映射，不含业务判断。
  */
 import { timingSafeEqual } from 'node:crypto';
+import fs from 'node:fs/promises';
 import { createServer } from 'node:http';
+import path from 'node:path';
 
 import { AI_CONTENT_SCHEMA, DEFAULT_TURNSTILE_TIMEOUT_MS, configSummary, isIpAddress, isTrustedProxy, loadContentVocabulary, normalizeIp } from './config.mjs';
 import { SOURCES, STATES, sha256 } from './queue.mjs';
@@ -423,6 +425,63 @@ const INTERNAL_MAX_BATCH = 200;
 const INTERNAL_REASON_MAX = 1000;
 const INTERNAL_MODEL_MAX = 128;
 
+/* content 校验失败摘要的硬上限：条数与单条长度都封顶，避免把 AI 返回的长文本灌进
+ * 日志或响应。errors[] 里可能夹带 AI 生成的原文片段（未知字段名、不在枚举内的
+ * characterId / categoryIds、重复项），因此写日志与回响应前一律先按下面的规则
+ * 隐去插值，只留「哪条规则没过」，绝不出现 AI 原文 / 图片字节 / 任何令牌。 */
+const INTERNAL_ERROR_SUMMARY_LIMIT = 8;
+const INTERNAL_ERROR_SUMMARY_MAX_LENGTH = 200;
+const ERROR_UNKNOWN_FIELD = /含未知字段/;
+const ERROR_AFTER_COLON = /^(.*?[：:])\s*\S*.*$/;
+
+/**
+ * 把 bridge.validateContent 的错误列表压成可安全展示 / 记录的摘要。
+ *   - 去掉控制字符与换行，防止日志注入伪造行；
+ *   - `含未知字段 <key>` 与 `…：<payload>` 的插值一律替换为 `[已隐去]`，
+ *     避免把 AI 提供的字段名 / 枚举值落进私有日志；
+ *   - 单条限长、整表限量，超出的直接丢弃。
+ */
+export function summarizeContentErrors(errors, { limit = INTERNAL_ERROR_SUMMARY_LIMIT, maxLength = INTERNAL_ERROR_SUMMARY_MAX_LENGTH } = {}) {
+  const list = Array.isArray(errors) ? errors : [];
+  const summary = [];
+  for (const raw of list) {
+    if (typeof raw !== 'string') continue;
+    let text = raw.replace(/[\u0000-\u001f\u007f]+/g, ' ').replace(/\s+/g, ' ').trim();
+    if (!text) continue;
+    if (ERROR_UNKNOWN_FIELD.test(text)) {
+      text = 'content 含未知字段 [已隐去]';
+    } else {
+      const match = ERROR_AFTER_COLON.exec(text);
+      if (match) text = `${match[1]}[已隐去]`;
+    }
+    if (text.length > maxLength) text = `${text.slice(0, maxLength)}…`;
+    summary.push(text);
+    if (summary.length >= limit) break;
+  }
+  return summary;
+}
+
+/**
+ * 把内容校验失败的错误摘要写进服务端私有的 logs/queue.log（与 queue.mjs 相同的行格式）。
+ * 只落脱敏摘要、条目 id 与 reviewer；日志写失败只告警，绝不影响审核回写的响应。
+ * 返回脱敏摘要，供调用方回给 reviewer 安全展示 / 记录。
+ */
+export async function recordContentErrors(queue, { id, reviewer, errors, logger = console } = {}) {
+  const summary = summarizeContentErrors(errors);
+  if (summary.length === 0) return summary;
+  const logsDir = queue && queue.paths ? queue.paths.logs : null;
+  if (logsDir) {
+    const line = `${new Date().toISOString()}\tinternal.review.content_invalid\t${JSON.stringify({ id, reviewer, errors: summary })}\n`;
+    try {
+      await fs.mkdir(logsDir, { recursive: true, mode: 0o700 });
+      await fs.appendFile(path.join(logsDir, 'queue.log'), line, { encoding: 'utf8', mode: 0o600 });
+    } catch (error) {
+      logger?.warn?.(`内容校验错误日志写入失败：${error.message}`);
+    }
+  }
+  return summary;
+}
+
 /**
  * 内部接口鉴权：从独立令牌解析 reviewer 身份。
  * 返回 { ok:true, reviewer } 或 { ok:false, status, error }。常量时间比对，不回显令牌。
@@ -516,7 +575,10 @@ export async function applyOneReview({ queue, bridge = null, cfg, reviewer, resu
   if (body.verdict === 'pass') {
     const check = validateReviewContent(body.content, vocabulary || loadContentVocabulary(cfg.siteRoot));
     if (!check.ok) {
-      return send(422, { ok: false, error: 'content 校验未通过', errors: check.errors.slice(0, 5) });
+      /* 422：响应只回笼统错误 + 脱敏摘要，并把摘要写进私有 queue.log。
+       * 摘要不含 AI 原文 / 图片 / 令牌，外部 reviewer（AstrBot / Hermes）可安全展示。 */
+      const errors = await recordContentErrors(queue, { id: submissionId, reviewer, errors: check.errors, logger });
+      return send(422, { ok: false, error: 'content 校验未通过', errors });
     }
     content = check.value;
   }

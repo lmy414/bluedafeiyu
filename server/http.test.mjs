@@ -26,6 +26,7 @@ import {
   resolveClientIp,
   reviewCoordinatorFor,
   startServers,
+  summarizeContentErrors,
 } from './http.mjs';
 import { createQqAdapter } from './adapters/qq.mjs';
 
@@ -903,6 +904,96 @@ test('内部审核结果：pass 但 content 不合规一律 422，条目停在 r
   assert.equal(stored.state, STATES.RECEIVED, '内容不合规不得推进状态');
   assert.equal(stored.review, null);
   assert.deepEqual(bridged, []);
+});
+
+test('summarizeContentErrors：隐去插值、去除控制字符、限长限量', () => {
+  const summary = summarizeContentErrors([
+    'content 含未知字段 AI原文_SECRET',
+    'content.characterId 不在角色枚举内：FAKE_TOKEN_abc',
+    'content.categoryIds 含非法分类：\u0000cat\nINJECTED',
+    'content.tags 出现重复项：dup-value',
+    'content.name 不能为空',
+    'content 缺少字段 name',
+    'not-a-string',
+    '',
+  ]);
+  // 插值里的 AI 原文 / 值一律不得出现在摘要里
+  const text = summary.join('\n');
+  assert.ok(!text.includes('AI原文_SECRET'));
+  assert.ok(!text.includes('FAKE_TOKEN_abc'));
+  assert.ok(!text.includes('INJECTED'));
+  assert.ok(!text.includes('dup-value'));
+  // 控制字符被剥掉，摘要里没有可伪造日志行的换行 / 制表符
+  for (const entry of summary) assert.ok(!/[\u0000-\u001f\u007f]/.test(entry));
+  // 只保留「哪条规则没过」+ 固定的安全字段名
+  assert.ok(summary.includes('content.name 不能为空'));
+  assert.ok(summary.includes('content 缺少字段 name'));
+  assert.equal(summary.filter((entry) => entry.startsWith('content 含未知字段')).length, 1);
+
+  // 上限生效：超量截断、超长截断
+  assert.equal(summarizeContentErrors(Array.from({ length: 20 }, () => 'content.name 不能为空')).length, 8);
+  const long = summarizeContentErrors([`content 缺少字段 ${'x'.repeat(500)}`], { maxLength: 20 });
+  assert.equal(long.length, 1);
+  assert.ok(long[0].length <= 21, '单条摘要必须限长');
+  assert.deepEqual(summarizeContentErrors(null), []);
+  assert.deepEqual(summarizeContentErrors([123, null, 'content.name 不能为空']), ['content.name 不能为空']);
+});
+
+test('内部审核结果：422 校验错误写进私有 queue.log，且不泄露 AI 原文 / 令牌', async (t) => {
+  const { publicHandler, queue, cfg } = await internalSetup(t);
+  const { item } = await seedItem(queue, { extra: 41 });
+  // 让 AI「原文」出现在会被校验拒绝的两个位置：未知字段名与不在枚举内的 characterId。
+  const leakField = 'AI原文_SECRET_FIELD\nINJECTED_LINE';
+  const leakValue = 'FAKE_SECRET_character_9f3c';
+  const base = { submissionId: item.id, verdict: 'pass', confidence: 0.9, reason: 'ok', reviewer: 'hermes', model: 'm' };
+
+  await withServer(publicHandler, async (port) => {
+    // 未知字段：走「含未知字段」脱敏分支（含换行，验证不会伪造日志行）。
+    const unknown = await postReviewResult(port, {
+      body: { ...base, content: { ...validReviewContent(), [leakField]: '不该落盘的 AI 原文' } },
+    });
+    assert.equal(unknown.status, 422, unknown.body.toString());
+    const unknownBody = JSON.parse(unknown.body);
+    assert.equal(unknownBody.error, 'content 校验未通过');
+    assert.ok(Array.isArray(unknownBody.errors) && unknownBody.errors.length > 0);
+    assert.ok(unknownBody.errors.every((entry) => typeof entry === 'string'));
+    assert.ok(!unknown.body.toString().includes('AI原文_SECRET_FIELD'), '响应不得回显 AI 提供的未知字段名');
+    assert.ok(!unknown.body.toString().includes('INJECTED_LINE'), '响应不得回显注入的换行内容');
+
+    // 枚举外的 characterId：走「…：<payload>」脱敏分支。
+    const badCharacter = await postReviewResult(port, {
+      body: { ...base, content: { ...validReviewContent(), characterId: leakValue } },
+    });
+    assert.equal(badCharacter.status, 422, badCharacter.body.toString());
+    assert.ok(!badCharacter.body.toString().includes(leakValue), '响应不得回显 AI 提供的枚举值');
+  });
+
+  assert.equal((await queue.get(item.id)).state, STATES.RECEIVED, '422 不得推进状态');
+
+  const raw = await fs.readFile(path.join(cfg.storageRoot, 'logs', 'queue.log'), 'utf8');
+  assert.ok(!raw.includes('AI原文_SECRET_FIELD'), 'queue.log 不得写入 AI 原文 / 未知字段名');
+  assert.ok(!raw.includes(leakValue), 'queue.log 不得写入 AI 提供的枚举值');
+  assert.ok(!raw.includes('INJECTED_LINE'), 'queue.log 不得被 AI 内容注入伪造行');
+  assert.ok(!raw.includes(HERMES_TOKEN) && !raw.includes(ASTRABOT_TOKEN), 'queue.log 不得写入令牌');
+  assert.ok(!raw.includes(TINY_PNG.toString('base64')), 'queue.log 不得写入图片正文');
+  assert.ok(!raw.includes('不该落盘的 AI 原文'), 'queue.log 不得写入 AI 原文内容');
+
+  // 每行都是 `ISO 时间 \t 事件 \t JSON` 三段；日志注入不得凭空多出记录
+  const lines = raw.split('\n').filter(Boolean);
+  const events = lines.map((line) => {
+    const parts = line.split('\t');
+    assert.equal(parts.length, 3, `日志行结构被破坏：${line}`);
+    assert.ok(!Number.isNaN(Date.parse(parts[0])), `日志时间戳非法：${line}`);
+    return { event: parts[1], detail: JSON.parse(parts[2]) };
+  });
+  const recorded = events.filter((entry) => entry.event === 'internal.review.content_invalid');
+  assert.equal(recorded.length, 2, '两次 422 各应记录一条 content 校验失败日志');
+  for (const entry of recorded) {
+    assert.equal(entry.detail.id, item.id);
+    assert.equal(entry.detail.reviewer, 'hermes');
+    assert.ok(Array.isArray(entry.detail.errors) && entry.detail.errors.length > 0);
+    assert.ok(entry.detail.errors.every((value) => typeof value === 'string' && !/[\u0000-\u001f\u007f]/.test(value)));
+  }
 });
 
 test('内部审核结果：非 received 且非本人已审的条目返回 409', async (t) => {
