@@ -28,6 +28,21 @@ type FormState = {
   tags: string
 }
 
+type IssueReplyStateReason = 'completed' | 'not_planned'
+
+const ISSUE_REPLY_REJECTED_TEMPLATE = '感谢投稿！这张图暂时不收录，原因：'
+const ISSUE_REPLY_ACCEPTED_TEMPLATE = '已收录到「蓝色大肥鱼」，谢谢投稿！'
+
+function initialIssueReplyBody(submission?: SubmissionDoc): string {
+  if (submission?.state !== 'auto_rejected') return ''
+  const reason = submission.review?.reason
+  return `未通过审核（AI 审核）：${typeof reason === 'string' ? reason : ''}`
+}
+
+function initialIssueReplyStateReason(submission?: SubmissionDoc): IssueReplyStateReason {
+  return submission && ['auto_rejected', 'rejected'].includes(submission.state) ? 'not_planned' : 'completed'
+}
+
 function record(value: unknown): Record<string, unknown> {
   return value && typeof value === 'object' && !Array.isArray(value) ? value as Record<string, unknown> : {}
 }
@@ -105,6 +120,12 @@ export function WorkDrawer({
   const [events, setEvents] = useState<AuditEvent[]>([])
   const [saving, setSaving] = useState(false)
   const [message, setMessage] = useState('')
+  const [replyBody, setReplyBody] = useState(() => initialIssueReplyBody(submission))
+  const [closeIssue, setCloseIssue] = useState(true)
+  const [replyStateReason, setReplyStateReason] = useState<IssueReplyStateReason>(() => initialIssueReplyStateReason(submission))
+  const [replying, setReplying] = useState(false)
+  const [replyMessage, setReplyMessage] = useState('')
+  const [replyError, setReplyError] = useState('')
 
   const auditTarget = work?.workId || submission?.submissionId
   useEffect(() => {
@@ -121,6 +142,11 @@ export function WorkDrawer({
   const image = work ? fullImageURL(work) : submission ? submissionImage(submission) : undefined
   const originalURL = work ? workOriginalURL(work) : undefined
   const title = work?.name || submission?.title || '未命名投稿'
+  const origin = record(submission?.origin)
+  const issue = typeof origin.issue === 'number' && Number.isSafeInteger(origin.issue) && origin.issue > 0
+    ? origin.issue
+    : undefined
+  const issueUrl = typeof origin.issueUrl === 'string' ? origin.issueUrl : ''
   const reviewContentPresent = Boolean(submission && Object.keys(record(submission.review?.content)).length)
   const history = useMemo(() => {
     const stateHistory = submission && Array.isArray(submission.stateHistory)
@@ -201,6 +227,26 @@ export function WorkDrawer({
       setMessage(error instanceof Error ? error.message : '人工收录失败')
     } finally {
       setSaving(false)
+    }
+  }
+
+  async function replyToIssue() {
+    if (!submission || !issue) return
+    setReplying(true)
+    setReplyMessage('')
+    setReplyError('')
+    try {
+      await mutate('/issue-reply', 'POST', {
+        body: replyBody,
+        close: closeIssue,
+        stateReason: replyStateReason,
+        submissionId: submission.submissionId,
+      })
+      setReplyMessage('已提交，约 1 分钟内回复到 GitHub 并发送飞书通知')
+    } catch (error) {
+      setReplyError(error instanceof Error ? error.message : '发送失败')
+    } finally {
+      setReplying(false)
     }
   }
 
@@ -359,6 +405,67 @@ export function WorkDrawer({
                 {saving ? '处理中…' : '人工收录'}
               </button>
               {message ? <p className="s3-notice">{message}</p> : null}
+            </section>
+          ) : null}
+
+          {submission && submission.source === 'github-issue' && issue ? (
+            <section className="s3-form-section">
+              <h3>回复 GitHub Issue</h3>
+              <p className="s3-muted">
+                Issue：{issueUrl ? <a href={issueUrl} rel="noreferrer" target="_blank">#{issue}</a> : `#${issue}`}
+              </p>
+              <label>
+                回复内容
+                <textarea onChange={(event) => setReplyBody(event.target.value)} rows={5} value={replyBody} />
+              </label>
+              <div className="s3-bulk-actions">
+                <button
+                  className="s3-button s3-button--ghost"
+                  onClick={() => setReplyBody(ISSUE_REPLY_REJECTED_TEMPLATE)}
+                  type="button"
+                >
+                  不收录模板
+                </button>
+                <button
+                  className="s3-button s3-button--ghost"
+                  onClick={() => setReplyBody(ISSUE_REPLY_ACCEPTED_TEMPLATE)}
+                  type="button"
+                >
+                  已收录模板
+                </button>
+              </div>
+              <fieldset>
+                <legend>关闭方式</legend>
+                <div className="s3-check-grid">
+                  <label className="s3-check">
+                    <input
+                      checked={replyStateReason === 'not_planned'}
+                      name="issue-reply-state-reason"
+                      onChange={() => setReplyStateReason('not_planned')}
+                      type="radio"
+                    />
+                    未收录（not_planned）
+                  </label>
+                  <label className="s3-check">
+                    <input
+                      checked={replyStateReason === 'completed'}
+                      name="issue-reply-state-reason"
+                      onChange={() => setReplyStateReason('completed')}
+                      type="radio"
+                    />
+                    已完成（completed）
+                  </label>
+                </div>
+              </fieldset>
+              <label className="s3-check">
+                <input checked={closeIssue} onChange={(event) => setCloseIssue(event.target.checked)} type="checkbox" />
+                同时关闭 Issue
+              </label>
+              <button className="s3-button s3-button--primary" disabled={replying} onClick={() => void replyToIssue()} type="button">
+                {replying ? '发送中…' : '发送回复'}
+              </button>
+              {replyMessage ? <p className="s3-notice">{replyMessage}</p> : null}
+              {replyError ? <p className="s3-danger-copy">{replyError}</p> : null}
             </section>
           ) : null}
 
