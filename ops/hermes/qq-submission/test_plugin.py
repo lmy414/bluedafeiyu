@@ -10,6 +10,7 @@ import sys
 import tempfile
 import unittest
 import urllib.error
+from datetime import datetime
 from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import patch
@@ -17,11 +18,18 @@ from unittest.mock import patch
 
 PLUGIN_DIR = Path(__file__).resolve().parent
 PLUGIN_NAME = "dafeiyu_qq_submission_under_test"
-spec = importlib.util.spec_from_file_location(PLUGIN_NAME, PLUGIN_DIR / "__init__.py")
-assert spec and spec.loader
-plugin = importlib.util.module_from_spec(spec)
-sys.modules[PLUGIN_NAME] = plugin
-spec.loader.exec_module(plugin)
+
+
+def load_plugin(name: str):
+    spec = importlib.util.spec_from_file_location(name, PLUGIN_DIR / "__init__.py")
+    assert spec and spec.loader
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+plugin = load_plugin(PLUGIN_NAME)
 
 
 class Platform:
@@ -117,9 +125,9 @@ class PluginTests(unittest.TestCase):
             raw_message=raw_message,
         )
 
-    def dispatch(self, event):
+    def dispatch_with(self, target_plugin, event):
         async def run():
-            result = plugin.on_pre_gateway_dispatch(
+            result = target_plugin.on_pre_gateway_dispatch(
                 event=event,
                 gateway=self.gateway,
             )
@@ -134,8 +142,44 @@ class PluginTests(unittest.TestCase):
 
         return asyncio.run(run())
 
+    def dispatch(self, event):
+        return self.dispatch_with(plugin, event)
+
     def env(self, **values):
+        values.setdefault(
+            "DAFEIYU_QQ_RATE_FILE",
+            str(Path(self.temp_dir.name) / "rate_state.json"),
+        )
         return patch.dict(os.environ, values, clear=True)
+
+    def at(self, hour: int, minute: int = 0, second: int = 0) -> datetime:
+        return datetime(
+            2026,
+            9,
+            29,
+            hour,
+            minute,
+            second,
+            tzinfo=plugin.SHANGHAI_TIMEZONE,
+        )
+
+    def fixed_now(self, hour: int, minute: int = 0):
+        return patch.object(plugin, "_now", return_value=self.at(hour, minute))
+
+    def success_text(
+        self,
+        title: str,
+        remaining: int,
+        limit: int = 10,
+        reset_hour: str = "15:00",
+    ) -> str:
+        return (
+            f"已收到投稿《{title}》，审核结果会稍后公布。"
+            f"本小时剩余投稿次数：{remaining}/{limit}（{reset_hour} 重置）"
+        )
+
+    def quota_text(self, limit: int = 10, reset_hour: str = "15:00") -> str:
+        return f"本小时投稿名额已用完（每小时 {limit} 张），{reset_hour} 后再试"
 
     def fake_urlopen(self, status: int, body: bytes):
         calls = []
@@ -286,7 +330,10 @@ class PluginTests(unittest.TestCase):
         with self.env(
             DAFEIYU_QQ_INBOUND_TOKEN="secret-token",
             DAFEIYU_QQ_INBOUND_URL="https://example.test/qq-events",
-        ), patch("urllib.request.urlopen", side_effect=fake_urlopen):
+        ), self.fixed_now(14, 5), patch(
+            "urllib.request.urlopen",
+            side_effect=fake_urlopen,
+        ):
             result = self.dispatch(event)
 
         self.assertEqual(result, {"action": "skip", "reason": "qqbot-submission"})
@@ -308,7 +355,7 @@ class PluginTests(unittest.TestCase):
         )
         self.assertEqual(
             self.adapter.sent[0]["text"],
-            "已收到投稿《标题》，审核结果会稍后公布",
+            self.success_text("标题", 9),
         )
 
     def test_slash_command_is_compatible(self) -> None:
@@ -439,6 +486,206 @@ class PluginTests(unittest.TestCase):
         )
         self.assertEqual(calls, [])
         self.assertEqual(self.adapter.sent[0]["text"], "投稿通道未配置")
+
+    def test_eleventh_submission_in_same_hour_is_rejected(self) -> None:
+        rate_file = Path(self.temp_dir.name) / "same-hour.json"
+        fake_urlopen, calls = self.fake_urlopen(202, b'{"ok":true}')
+        with self.env(
+            DAFEIYU_QQ_INBOUND_TOKEN="token",
+            DAFEIYU_QQ_RATE_FILE=str(rate_file),
+            DAFEIYU_QQ_HOURLY_LIMIT="10",
+        ), self.fixed_now(14, 30), patch(
+            "urllib.request.urlopen",
+            side_effect=fake_urlopen,
+        ):
+            for index in range(10):
+                result = self.dispatch(
+                    self.make_event(message_id=f"msg-{index}")
+                )
+                self.assertEqual(
+                    result,
+                    {"action": "skip", "reason": "qqbot-submission"},
+                )
+
+            self.assertEqual(len(calls), 10)
+            self.assertEqual(
+                self.adapter.sent[-1]["text"],
+                self.success_text("测试标题", 0),
+            )
+            result = self.dispatch(self.make_event(message_id="msg-11"))
+
+        self.assertEqual(
+            result,
+            {"action": "skip", "reason": "qqbot-hourly-limit"},
+        )
+        self.assertEqual(len(calls), 10)
+        self.assertEqual(len(self.adapter.sent), 11)
+        self.assertEqual(self.adapter.sent[-1]["text"], self.quota_text())
+        self.assertEqual(
+            json.loads(rate_file.read_text(encoding="utf-8")),
+            {"hour": "2026-09-29T14", "count": 10},
+        )
+
+    def test_rate_limit_resets_at_next_natural_hour(self) -> None:
+        rate_file = Path(self.temp_dir.name) / "next-hour.json"
+        fake_urlopen, calls = self.fake_urlopen(202, b'{"ok":true}')
+        with self.env(
+            DAFEIYU_QQ_INBOUND_TOKEN="token",
+            DAFEIYU_QQ_RATE_FILE=str(rate_file),
+            DAFEIYU_QQ_HOURLY_LIMIT="2",
+        ), patch("urllib.request.urlopen", side_effect=fake_urlopen):
+            with self.fixed_now(14, 59):
+                for index in range(2):
+                    self.dispatch(
+                        self.make_event(message_id=f"before-reset-{index}")
+                    )
+            with self.fixed_now(15, 0):
+                result = self.dispatch(
+                    self.make_event(message_id="after-reset")
+                )
+
+        self.assertEqual(result, {"action": "skip", "reason": "qqbot-submission"})
+        self.assertEqual(len(calls), 3)
+        self.assertEqual(
+            self.adapter.sent[-1]["text"],
+            self.success_text("测试标题", 1, limit=2, reset_hour="16:00"),
+        )
+        self.assertEqual(
+            json.loads(rate_file.read_text(encoding="utf-8")),
+            {"hour": "2026-09-29T15", "count": 1},
+        )
+
+    def test_duplicate_and_failed_submissions_do_not_consume_slots(self) -> None:
+        rate_file = Path(self.temp_dir.name) / "release.json"
+        calls = []
+        failure = urllib.error.HTTPError(
+            "https://example.test/qq-events",
+            400,
+            "Bad Request",
+            {},
+            io.BytesIO(b'{"ok":false,"error":"invalid_image"}'),
+        )
+        responses = [
+            FakeResponse(200, b'{"ok":true,"id":"sub_1"}'),
+            failure,
+            FakeResponse(202, b'{"ok":true,"id":"sub_2"}'),
+        ]
+
+        def urlopen(request, timeout=None):
+            calls.append({"request": request, "timeout": timeout})
+            response = responses.pop(0)
+            if isinstance(response, Exception):
+                raise response
+            return response
+
+        def state_count() -> int:
+            return int(
+                json.loads(rate_file.read_text(encoding="utf-8"))["count"]
+            )
+
+        with self.env(
+            DAFEIYU_QQ_INBOUND_TOKEN="token",
+            DAFEIYU_QQ_RATE_FILE=str(rate_file),
+            DAFEIYU_QQ_HOURLY_LIMIT="1",
+        ), self.fixed_now(14, 30), patch(
+            "urllib.request.urlopen",
+            side_effect=urlopen,
+        ):
+            self.dispatch(self.make_event(message_id="duplicate"))
+            self.assertEqual(state_count(), 0)
+
+            self.dispatch(self.make_event(message_id="failure"))
+            self.assertEqual(state_count(), 0)
+
+            result = self.dispatch(self.make_event(message_id="accepted"))
+
+        self.assertEqual(result, {"action": "skip", "reason": "qqbot-submission"})
+        self.assertEqual(len(calls), 3)
+        self.assertEqual(state_count(), 1)
+        self.assertEqual(
+            [item["text"] for item in self.adapter.sent],
+            [
+                "这张图已经投过了",
+                "投稿失败：invalid_image",
+                self.success_text("测试标题", 0, limit=1),
+            ],
+        )
+
+    def test_multi_image_stops_at_limit_and_warns_once(self) -> None:
+        rate_file = Path(self.temp_dir.name) / "multi-limit.json"
+        event = self.make_event(
+            message_id="multi-limit",
+            media_urls=[str(self.image_path)] * 3,
+            media_types=["image/png"] * 3,
+            attachments=[{"content_type": "image/png"}] * 3,
+        )
+        fake_urlopen, calls = self.fake_urlopen(202, b'{"ok":true}')
+        with self.env(
+            DAFEIYU_QQ_INBOUND_TOKEN="token",
+            DAFEIYU_QQ_RATE_FILE=str(rate_file),
+            DAFEIYU_QQ_HOURLY_LIMIT="2",
+        ), self.fixed_now(14, 30), patch(
+            "urllib.request.urlopen",
+            side_effect=fake_urlopen,
+        ):
+            result = self.dispatch(event)
+
+        self.assertEqual(result, {"action": "skip", "reason": "qqbot-submission"})
+        self.assertEqual(len(calls), 2)
+        self.assertEqual(
+            [item["text"] for item in self.adapter.sent],
+            [
+                self.success_text("测试标题", 1, limit=2),
+                self.success_text("测试标题", 0, limit=2),
+                self.quota_text(limit=2),
+            ],
+        )
+        self.assertEqual(
+            json.loads(rate_file.read_text(encoding="utf-8")),
+            {"hour": "2026-09-29T14", "count": 2},
+        )
+
+    def test_reloaded_plugin_reads_persisted_count(self) -> None:
+        rate_file = Path(self.temp_dir.name) / "persisted.json"
+        reloaded = load_plugin("dafeiyu_qq_submission_reloaded")
+        first_urlopen, first_calls = self.fake_urlopen(202, b'{"ok":true}')
+        second_urlopen, second_calls = self.fake_urlopen(202, b'{"ok":true}')
+
+        with self.env(
+            DAFEIYU_QQ_INBOUND_TOKEN="token",
+            DAFEIYU_QQ_RATE_FILE=str(rate_file),
+            DAFEIYU_QQ_HOURLY_LIMIT="10",
+        ), self.fixed_now(14, 30), patch(
+            "urllib.request.urlopen",
+            side_effect=first_urlopen,
+        ):
+            self.dispatch(self.make_event(message_id="before-reload"))
+
+        with self.env(
+            DAFEIYU_QQ_INBOUND_TOKEN="token",
+            DAFEIYU_QQ_RATE_FILE=str(rate_file),
+            DAFEIYU_QQ_HOURLY_LIMIT="10",
+        ), patch.object(
+            reloaded,
+            "_now",
+            return_value=self.at(14, 40),
+        ), patch("urllib.request.urlopen", side_effect=second_urlopen):
+            result = self.dispatch_with(
+                reloaded,
+                self.make_event(message_id="after-reload"),
+            )
+
+        self.assertEqual(result, {"action": "skip", "reason": "qqbot-submission"})
+        self.assertEqual(len(first_calls), 1)
+        self.assertEqual(len(second_calls), 1)
+        self.assertEqual(
+            self.adapter.sent[-1]["text"],
+            self.success_text("测试标题", 8),
+        )
+        self.assertEqual(
+            json.loads(rate_file.read_text(encoding="utf-8")),
+            {"hour": "2026-09-29T14", "count": 2},
+        )
 
 
 if __name__ == "__main__":
