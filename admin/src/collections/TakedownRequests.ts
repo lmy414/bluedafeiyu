@@ -1,12 +1,14 @@
 import type { CollectionConfig } from 'payload'
 
-import { isAuthenticated, canReview } from '../lib/access'
+import { canDeleteContent, canManageContent, canReadContent } from '../lib/access'
+import { auditAfterChange, auditAfterDelete } from '../lib/audit'
 
 export const TakedownRequests: CollectionConfig = {
   slug: 'takedown-requests',
   labels: { singular: '下架与更正申请', plural: '下架与更正申请' },
   admin: { useAsTitle: 'requestId', group: '投稿审核', defaultColumns: ['requestId', 'requestType', 'status', 'createdAt'] },
-  access: { read: isAuthenticated, create: ({ req }) => !req.user || isAuthenticated({ req } as never), update: canReview, delete: ({ req }) => req.user?.role === 'owner' },
+  access: { read: canReadContent, create: canManageContent, update: canManageContent, delete: canDeleteContent },
+  hooks: { afterChange: [auditAfterChange('takedown-requests')], afterDelete: [auditAfterDelete('takedown-requests')] },
   fields: [
     { name: 'requestId', type: 'text', required: true, unique: true, index: true, label: '申请 ID' },
     { name: 'requestType', type: 'select', required: true, options: [{ label: '下架', value: 'takedown' }, { label: '署名更正', value: 'attribution' }, { label: '来源更正', value: 'source-correction' }, { label: '授权更正', value: 'license-correction' }], label: '申请类型' },
@@ -17,5 +19,3 @@ export const TakedownRequests: CollectionConfig = {
     { name: 'processedAt', type: 'date', label: '处理时间' },
   ],
 }
-
-

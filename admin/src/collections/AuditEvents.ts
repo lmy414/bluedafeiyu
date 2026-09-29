@@ -5,11 +5,12 @@ import { isOwner } from '../lib/access'
 export const AuditEvents: CollectionConfig = {
   slug: 'audit-events',
   labels: { singular: '操作审计', plural: '操作审计' },
-  admin: { useAsTitle: 'action', group: '系统', defaultColumns: ['action', 'actorType', 'targetType', 'createdAt'] },
+  admin: { useAsTitle: 'action', group: '系统', defaultColumns: ['action', 'actorName', 'actorType', 'targetType', 'createdAt'] },
   access: { read: isOwner, create: isOwner, update: () => false, delete: isOwner },
   fields: [
     { name: 'actorType', type: 'select', required: true, options: [{ label: '人工', value: 'human' }, { label: 'AI', value: 'ai' }, { label: '系统', value: 'system' }], label: '操作者类型' },
-    { name: 'actor', type: 'relationship', relationTo: 'users', label: '操作者' },
+    { name: 'actor', type: 'relationship', relationTo: 'users', label: '操作者账号' },
+    { name: 'actorName', type: 'text', required: true, label: '操作者名称', admin: { description: '用户显示名或邮箱；机器人记为账号名。' } },
     { name: 'action', type: 'text', required: true, label: '操作' },
     { name: 'targetType', type: 'text', required: true, label: '目标类型' },
     { name: 'targetId', type: 'text', required: true, label: '目标 ID' },
@@ -19,6 +20,3 @@ export const AuditEvents: CollectionConfig = {
     { name: 'ip', type: 'text', label: 'IP' },
   ],
 }
-
-
-

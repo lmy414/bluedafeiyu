@@ -73,9 +73,11 @@ export interface Config {
     categories: Category;
     submissions: Submission;
     works: Work;
+    topics: Topic;
     'takedown-requests': TakedownRequest;
     'publish-runs': PublishRun;
     'audit-events': AuditEvent;
+    'legacy-snapshots': LegacySnapshot;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -89,9 +91,11 @@ export interface Config {
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
     submissions: SubmissionsSelect<false> | SubmissionsSelect<true>;
     works: WorksSelect<false> | WorksSelect<true>;
+    topics: TopicsSelect<false> | TopicsSelect<true>;
     'takedown-requests': TakedownRequestsSelect<false> | TakedownRequestsSelect<true>;
     'publish-runs': PublishRunsSelect<false> | PublishRunsSelect<true>;
     'audit-events': AuditEventsSelect<false> | AuditEventsSelect<true>;
+    'legacy-snapshots': LegacySnapshotsSelect<false> | LegacySnapshotsSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -138,16 +142,19 @@ export interface UserAuthOperations {
 export interface User {
   id: number;
   /**
-   * 控制后台菜单和业务操作权限；AI 服务账号不应获得登录后台的权限。
+   * 机器人只能使用 API Key，不能登录后台界面。
    */
-  role: 'owner' | 'editor' | 'reviewer' | 'publisher' | 'ai-agent';
-  displayName?: string | null;
+  role: 'owner' | 'bot';
   /**
-   * 给 AI 或自动化使用的账号；后续接入 API Key 时使用。
+   * 审计记录中的操作者名称。
    */
-  isServiceAccount?: boolean | null;
+  displayName?: string | null;
   updatedAt: string;
   createdAt: string;
+  enableAPIKey?: boolean | null;
+  apiKey?: string | null;
+  apiKeyIndex?: string | null;
+  hasAPIKey?: boolean | null;
   email: string;
   resetPasswordToken?: string | null;
   resetPasswordExpiration?: string | null;
@@ -190,6 +197,16 @@ export interface Media {
   height?: number | null;
   focalX?: number | null;
   focalY?: number | null;
+  sizes?: {
+    thumbnail?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+  };
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -207,6 +224,16 @@ export interface Character {
     | null;
   status: 'active' | 'inactive';
   inSubmissionForm?: boolean | null;
+  legacyOrder?: number | null;
+  legacyData?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -220,6 +247,16 @@ export interface Category {
   name: string;
   description?: string | null;
   status: 'active' | 'inactive';
+  legacyOrder?: number | null;
+  legacyData?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -231,30 +268,33 @@ export interface Submission {
   id: number;
   title: string;
   submissionId: string;
-  source: 'web' | 'github-issue' | 'qq' | 'feishu' | 'manual';
-  sourceId?: string | null;
+  source: 'web' | 'github-issue' | 'qq' | 'manual';
   sourceIds?:
     | {
-        value?: string | null;
+        value: string;
         id?: string | null;
       }[]
     | null;
-  asset: number | Media;
-  sha256: string;
-  format?: string | null;
-  mime?: string | null;
-  bytes?: number | null;
-  fields?: {
-    name?: string | null;
-    characterText?: string | null;
-    description?: string | null;
-    tags?: string | null;
-    originType?: string | null;
-    originAuthor?: string | null;
-    originUrl?: string | null;
-    licenseType?: string | null;
-    licenseNote?: string | null;
-  };
+  sha256?: string | null;
+  media?: (number | null) | Media;
+  fields?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  review?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
   state:
     | 'received'
     | 'reviewing'
@@ -267,15 +307,6 @@ export interface Submission {
     | 'publishing'
     | 'published'
     | 'publish_failed';
-  review?:
-    | {
-        [k: string]: unknown;
-      }
-    | unknown[]
-    | string
-    | number
-    | boolean
-    | null;
   stateHistory?:
     | {
         [k: string]: unknown;
@@ -285,10 +316,6 @@ export interface Submission {
     | number
     | boolean
     | null;
-  submitter?: {
-    name?: string | null;
-    github?: string | null;
-  };
   origin?:
     | {
         [k: string]: unknown;
@@ -298,12 +325,8 @@ export interface Submission {
     | number
     | boolean
     | null;
-  humanDecision?: {
-    decision?: ('approved' | 'rejected') | null;
-    reason?: string | null;
-    actor?: string | null;
-    at?: string | null;
-  };
+  work?: (number | null) | Work;
+  syncedAt?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -314,11 +337,17 @@ export interface Submission {
 export interface Work {
   id: number;
   workId: string;
-  slug: string;
+  /**
+   * 新作品发布前可为空，由发布器生成后回写。
+   */
+  slug?: string | null;
   name: string;
   description?: string | null;
   commentary?: string | null;
   kind: 'submission' | 'owner-picks' | 'blue-fish';
+  channel: 'web' | 'github-issue' | 'qq' | 'manual' | 'owner' | 'blue-fish';
+  submissionId?: string | null;
+  sha256?: string | null;
   character: number | Character;
   categories?: (number | Category)[] | null;
   tags?:
@@ -336,6 +365,12 @@ export interface Work {
     fullPath?: string | null;
     externalOriginalUrl?: string | null;
   };
+  format?: string | null;
+  mimeType?: string | null;
+  isAnimated?: boolean | null;
+  width?: number | null;
+  height?: number | null;
+  fileSize?: number | null;
   submitter?: {
     name?: string | null;
     github?: string | null;
@@ -358,9 +393,23 @@ export interface Work {
     | number
     | boolean
     | null;
-  status: 'draft' | 'approved' | 'ready_to_publish' | 'publishing' | 'published' | 'unpublished';
+  status: 'pending' | 'published' | 'hidden' | 'removed' | 'deleted';
+  needsPublish?: boolean | null;
+  changeAction?: ('add' | 'update' | 'hide' | 'restore' | 'remove' | 'delete') | null;
   publishedAt?: string | null;
+  lastPublishedAt?: string | null;
+  lastPublishRun?: (number | null) | PublishRun;
+  review?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
   legacySource?: string | null;
+  legacyOrder?: number | null;
   legacyData?:
     | {
         [k: string]: unknown;
@@ -370,6 +419,96 @@ export interface Work {
     | number
     | boolean
     | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "publish-runs".
+ */
+export interface PublishRun {
+  id: number;
+  runId: string;
+  trigger: 'manual' | 'bot';
+  mode: 'preview' | 'publish' | 'rollback';
+  status: 'queued' | 'in_progress' | 'succeeded' | 'failed' | 'cancelled';
+  requestedAt?: string | null;
+  requestedBy?: (number | null) | User;
+  works?: (number | Work)[] | null;
+  plannedChanges?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  summary?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  step?: string | null;
+  commits?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  releasePath?: string | null;
+  healthCheck?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  results?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  log?: string | null;
+  error?: string | null;
+  startedAt?: string | null;
+  finishedAt?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "topics".
+ */
+export interface Topic {
+  id: number;
+  topicId: string;
+  name: string;
+  summary: string;
+  nameEn?: string | null;
+  summaryEn?: string | null;
+  nameJa?: string | null;
+  summaryJa?: string | null;
+  cover?: (number | null) | Work;
+  works?: (number | Work)[] | null;
+  status: 'draft' | 'active';
+  order: number;
+  needsPublish?: boolean | null;
+  lastPublishedAt?: string | null;
+  lastPublishRun?: (number | null) | PublishRun;
   updatedAt: string;
   createdAt: string;
 }
@@ -395,51 +534,16 @@ export interface TakedownRequest {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "publish-runs".
- */
-export interface PublishRun {
-  id: number;
-  runId: string;
-  trigger: 'manual' | 'scheduled' | 'ai';
-  mode: 'preview' | 'publish' | 'rollback';
-  status: 'queued' | 'in_progress' | 'succeeded' | 'failed' | 'cancelled';
-  works?: (number | Work)[] | null;
-  plannedChanges?:
-    | {
-        [k: string]: unknown;
-      }
-    | unknown[]
-    | string
-    | number
-    | boolean
-    | null;
-  step?: string | null;
-  releasePath?: string | null;
-  healthCheck?:
-    | {
-        [k: string]: unknown;
-      }
-    | unknown[]
-    | string
-    | number
-    | boolean
-    | null;
-  log?: string | null;
-  error?: string | null;
-  startedAt?: string | null;
-  finishedAt?: string | null;
-  actor?: (number | null) | User;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "audit-events".
  */
 export interface AuditEvent {
   id: number;
   actorType: 'human' | 'ai' | 'system';
   actor?: (number | null) | User;
+  /**
+   * 用户显示名或邮箱；机器人记为账号名。
+   */
+  actorName: string;
   action: string;
   targetType: string;
   targetId: string;
@@ -463,6 +567,18 @@ export interface AuditEvent {
     | null;
   requestId?: string | null;
   ip?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "legacy-snapshots".
+ */
+export interface LegacySnapshot {
+  id: number;
+  key: string;
+  text: string;
+  eol: 'lf' | 'crlf';
   updatedAt: string;
   createdAt: string;
 }
@@ -515,6 +631,10 @@ export interface PayloadLockedDocument {
         value: number | Work;
       } | null)
     | ({
+        relationTo: 'topics';
+        value: number | Topic;
+      } | null)
+    | ({
         relationTo: 'takedown-requests';
         value: number | TakedownRequest;
       } | null)
@@ -525,6 +645,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'audit-events';
         value: number | AuditEvent;
+      } | null)
+    | ({
+        relationTo: 'legacy-snapshots';
+        value: number | LegacySnapshot;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -575,9 +699,12 @@ export interface PayloadMigration {
 export interface UsersSelect<T extends boolean = true> {
   role?: T;
   displayName?: T;
-  isServiceAccount?: T;
   updatedAt?: T;
   createdAt?: T;
+  enableAPIKey?: T;
+  apiKey?: T;
+  apiKeyIndex?: T;
+  hasAPIKey?: T;
   email?: T;
   resetPasswordToken?: T;
   resetPasswordExpiration?: T;
@@ -617,6 +744,20 @@ export interface MediaSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
+  sizes?:
+    | T
+    | {
+        thumbnail?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+      };
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -633,6 +774,8 @@ export interface CharactersSelect<T extends boolean = true> {
       };
   status?: T;
   inSubmissionForm?: T;
+  legacyOrder?: T;
+  legacyData?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -645,6 +788,8 @@ export interface CategoriesSelect<T extends boolean = true> {
   name?: T;
   description?: T;
   status?: T;
+  legacyOrder?: T;
+  legacyData?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -656,49 +801,21 @@ export interface SubmissionsSelect<T extends boolean = true> {
   title?: T;
   submissionId?: T;
   source?: T;
-  sourceId?: T;
   sourceIds?:
     | T
     | {
         value?: T;
         id?: T;
       };
-  asset?: T;
   sha256?: T;
-  format?: T;
-  mime?: T;
-  bytes?: T;
-  fields?:
-    | T
-    | {
-        name?: T;
-        characterText?: T;
-        description?: T;
-        tags?: T;
-        originType?: T;
-        originAuthor?: T;
-        originUrl?: T;
-        licenseType?: T;
-        licenseNote?: T;
-      };
-  state?: T;
+  media?: T;
+  fields?: T;
   review?: T;
+  state?: T;
   stateHistory?: T;
-  submitter?:
-    | T
-    | {
-        name?: T;
-        github?: T;
-      };
   origin?: T;
-  humanDecision?:
-    | T
-    | {
-        decision?: T;
-        reason?: T;
-        actor?: T;
-        at?: T;
-      };
+  work?: T;
+  syncedAt?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -713,6 +830,9 @@ export interface WorksSelect<T extends boolean = true> {
   description?: T;
   commentary?: T;
   kind?: T;
+  channel?: T;
+  submissionId?: T;
+  sha256?: T;
   character?: T;
   categories?: T;
   tags?:
@@ -732,6 +852,12 @@ export interface WorksSelect<T extends boolean = true> {
         fullPath?: T;
         externalOriginalUrl?: T;
       };
+  format?: T;
+  mimeType?: T;
+  isAnimated?: T;
+  width?: T;
+  height?: T;
+  fileSize?: T;
   submitter?:
     | T
     | {
@@ -741,9 +867,37 @@ export interface WorksSelect<T extends boolean = true> {
   origin?: T;
   license?: T;
   status?: T;
+  needsPublish?: T;
+  changeAction?: T;
   publishedAt?: T;
+  lastPublishedAt?: T;
+  lastPublishRun?: T;
+  review?: T;
   legacySource?: T;
+  legacyOrder?: T;
   legacyData?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "topics_select".
+ */
+export interface TopicsSelect<T extends boolean = true> {
+  topicId?: T;
+  name?: T;
+  summary?: T;
+  nameEn?: T;
+  summaryEn?: T;
+  nameJa?: T;
+  summaryJa?: T;
+  cover?: T;
+  works?: T;
+  status?: T;
+  order?: T;
+  needsPublish?: T;
+  lastPublishedAt?: T;
+  lastPublishRun?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -777,16 +931,20 @@ export interface PublishRunsSelect<T extends boolean = true> {
   trigger?: T;
   mode?: T;
   status?: T;
+  requestedAt?: T;
+  requestedBy?: T;
   works?: T;
   plannedChanges?: T;
+  summary?: T;
   step?: T;
+  commits?: T;
   releasePath?: T;
   healthCheck?: T;
+  results?: T;
   log?: T;
   error?: T;
   startedAt?: T;
   finishedAt?: T;
-  actor?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -797,6 +955,7 @@ export interface PublishRunsSelect<T extends boolean = true> {
 export interface AuditEventsSelect<T extends boolean = true> {
   actorType?: T;
   actor?: T;
+  actorName?: T;
   action?: T;
   targetType?: T;
   targetId?: T;
@@ -804,6 +963,17 @@ export interface AuditEventsSelect<T extends boolean = true> {
   after?: T;
   requestId?: T;
   ip?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "legacy-snapshots_select".
+ */
+export interface LegacySnapshotsSelect<T extends boolean = true> {
+  key?: T;
+  text?: T;
+  eol?: T;
   updatedAt?: T;
   createdAt?: T;
 }

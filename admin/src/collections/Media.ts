@@ -1,6 +1,9 @@
+import path from 'node:path'
+
 import type { CollectionConfig } from 'payload'
 
-import { canManageContent, isAuthenticated } from '../lib/access'
+import { canDeleteContent, canManageContent, canReadContent } from '../lib/access'
+import { auditAfterChange, auditAfterDelete } from '../lib/audit'
 
 export const Media: CollectionConfig = {
   slug: 'media',
@@ -8,34 +11,27 @@ export const Media: CollectionConfig = {
   admin: {
     useAsTitle: 'filename',
     group: '内容管理',
-    defaultColumns: ['filename', 'mimeType', 'filesize', 'createdAt'],
+    defaultColumns: ['filename', 'mimeType', 'filesize', 'mediaRole', 'createdAt'],
   },
   access: {
-    read: isAuthenticated,
+    read: canReadContent,
     create: canManageContent,
     update: canManageContent,
-    delete: ({ req }) => req.user?.role === 'owner' || req.user?.role === 'editor',
+    delete: canDeleteContent,
   },
+  hooks: { afterChange: [auditAfterChange('media')], afterDelete: [auditAfterDelete('media')] },
   upload: {
+    staticDir: process.env.MEDIA_DIR || path.resolve(process.cwd(), 'media'),
     mimeTypes: ['image/png', 'image/jpeg', 'image/gif', 'image/webp', 'image/apng'],
     adminThumbnail: 'thumbnailURL',
     focalPoint: true,
+    imageSizes: [
+      { name: 'thumbnail', width: 480, height: 480, position: 'centre' },
+    ],
   },
   fields: [
-    {
-      name: 'alt',
-      type: 'text',
-      required: true,
-      label: '替代文本',
-    },
-    {
-      name: 'sha256',
-      type: 'text',
-      unique: true,
-      index: true,
-      label: 'SHA-256',
-      admin: { readOnly: true },
-    },
+    { name: 'alt', type: 'text', required: true, label: '替代文本' },
+    { name: 'sha256', type: 'text', unique: true, index: true, label: 'SHA-256', admin: { readOnly: true } },
     {
       name: 'mediaRole',
       type: 'select',
@@ -61,23 +57,8 @@ export const Media: CollectionConfig = {
       ],
       label: '存储来源',
     },
-    {
-      name: 'externalUrl',
-      type: 'text',
-      label: '外部地址',
-    },
-    {
-      name: 'sourcePath',
-      type: 'text',
-      label: '来源路径',
-    },
-    {
-      name: 'isAnimated',
-      type: 'checkbox',
-      defaultValue: false,
-      label: '动画图片',
-      admin: { readOnly: true },
-    },
+    { name: 'externalUrl', type: 'text', label: '外部地址' },
+    { name: 'sourcePath', type: 'text', label: '来源路径' },
+    { name: 'isAnimated', type: 'checkbox', defaultValue: false, label: '动画图片', admin: { readOnly: true } },
   ],
 }
-

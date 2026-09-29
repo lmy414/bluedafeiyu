@@ -1,41 +1,42 @@
 import { defineConfig, devices } from '@playwright/test'
 
-/**
- * Read environment variables from file.
- * https://github.com/motdotla/dotenv
- */
 import 'dotenv/config'
 
-/**
- * See https://playwright.dev/docs/test-configuration.
- */
+const baseURL = process.env.S3_ADMIN_BASE_URL || 'http://127.0.0.1:3100'
+const databaseURL = process.env.S3_ADMIN_DATABASE_URL || 'file:E:/quick-site-studio/tmp/s3-admin/admin.db'
+
 export default defineConfig({
   testDir: './tests/e2e',
-  /* Fail the build on CI if you accidentally left test.only in the source code. */
+  testMatch: /console\.e2e\.spec\.ts/,
   forbidOnly: !!process.env.CI,
-  /* Retry on CI only */
-  retries: process.env.CI ? 2 : 0,
-  /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
-  /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
-  /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
+  retries: process.env.CI ? 1 : 0,
+  workers: 1,
+  reporter: [['list']],
   use: {
-    /* Base URL to use in actions like `await page.goto('/')`. */
-    // baseURL: 'http://localhost:3000',
-
-    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    baseURL,
+    screenshot: 'only-on-failure',
+    trace: 'retain-on-failure',
   },
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'], channel: 'chromium' },
+      use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     },
   ],
   webServer: {
-    command: 'pnpm dev',
+    command: 'npm run dev -- --port 3100',
+    env: {
+      ...process.env,
+      ADMIN_PUBLISH_REQUEST_DIR: process.env.ADMIN_PUBLISH_REQUEST_DIR || 'E:/quick-site-studio/tmp/s3-admin/run',
+      DATABASE_URL: databaseURL,
+      MEDIA_DIR: process.env.MEDIA_DIR || 'E:/quick-site-studio/tmp/s3-admin/media',
+      PAYLOAD_PUBLIC_SERVER_URL: baseURL,
+      PAYLOAD_SECRET: process.env.PAYLOAD_SECRET || 's3-admin-local-secret',
+      S3_ADMIN_OWNER_EMAIL: process.env.S3_ADMIN_OWNER_EMAIL || 'owner@local.test',
+      S3_ADMIN_OWNER_PASSWORD: process.env.S3_ADMIN_OWNER_PASSWORD || '',
+    },
     reuseExistingServer: true,
-    url: 'http://localhost:3000',
+    timeout: 120_000,
+    url: baseURL,
   },
 })

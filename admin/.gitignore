@@ -49,3 +49,6 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /*.db
+
+# 发布请求目录
+/run/

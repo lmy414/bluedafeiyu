@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url'
 
 import { getPayload } from 'payload'
 
-import config from '../src/payload.config.js'
+import config from '../src/payload.config'
 
 const HERE = path.dirname(fileURLToPath(import.meta.url))
 const ADMIN_DIR = path.resolve(HERE, '..')
@@ -37,20 +37,26 @@ const MIME_BY_EXT: Record<string, string> = {
 }
 
 const payload = await getPayload({ config })
-const mediaBySha = new Map<string, string>()
+const mediaBySha = new Map<string, number | string>()
 const hashCache = new Map<string, string>()
-type UpsertCollection = 'categories' | 'characters' | 'submissions' | 'works'
+type UpsertCollection = 'categories' | 'characters' | 'legacy-snapshots' | 'submissions' | 'topics' | 'works'
 const stats = {
   categories: { created: 0, updated: 0, skipped: 0 },
   characters: { created: 0, updated: 0, skipped: 0 },
   media: { created: 0, reused: 0, missing: 0, skipped: 0 },
   works: { created: 0, updated: 0, skipped: 0 },
+  topics: { created: 0, updated: 0, skipped: 0 },
   submissions: { created: 0, updated: 0, skipped: 0 },
+  snapshots: { created: 0, updated: 0, skipped: 0 },
   errors: [] as string[],
 }
 
 function readJson<T>(filename: string): T {
   return JSON.parse(fs.readFileSync(path.join(dataDir, filename), 'utf8')) as T
+}
+
+function readText(filename: string): string {
+  return fs.readFileSync(path.join(dataDir, filename), 'utf8')
 }
 
 function basenameFromUrl(value: string): string {
@@ -74,6 +80,26 @@ function relativeSource(filename: string): string {
   return path.relative(contentDir, filename).split(path.sep).join('/')
 }
 
+function tagsToArray(value: unknown): Array<{ value: string }> {
+  if (!Array.isArray(value)) return []
+  return value
+    .map((item) => String(item || '').trim())
+    .filter(Boolean)
+    .filter((item, index, all) => all.indexOf(item) === index)
+    .map((item) => ({ value: item }))
+}
+
+function safeDate(value: unknown): string | undefined {
+  if (!value) return undefined
+  const date = new Date(String(value))
+  return Number.isNaN(date.getTime()) ? undefined : date.toISOString()
+}
+
+function mediaMime(filename: string | null): string | undefined {
+  if (!filename) return undefined
+  return MIME_BY_EXT[path.extname(filename).toLowerCase()]
+}
+
 async function findOne(collection: any, field: string, value: unknown): Promise<any | null> {
   const result = await payload.find({
     collection,
@@ -85,29 +111,36 @@ async function findOne(collection: any, field: string, value: unknown): Promise<
   return result.docs[0] ?? null
 }
 
-async function upsert(
-  collection: UpsertCollection,
-  field: string,
-  value: unknown,
-  data: Record<string, any>,
-): Promise<any> {
+async function upsert(collection: UpsertCollection, field: string, value: unknown, data: Record<string, any>): Promise<any> {
   const existing = await findOne(collection, field, value)
+  const stat = stats[collection === 'legacy-snapshots' ? 'snapshots' : collection] as { created: number; updated: number; skipped: number }
   if (existing && noUpdate) {
-    stats[collection].skipped += 1
+    stat.skipped += 1
     return existing
   }
   if (dryRun) {
-    if (existing) stats[collection].updated += 1
-    else stats[collection].created += 1
-    return existing ?? { id: `dry-${collection}-${String(value)}` }
+    if (existing) stat.updated += 1
+    else stat.created += 1
+    return existing ?? { id: `dry-${collection}-${String(value)}`, ...data }
   }
   if (existing) {
-    const updated = await payload.update({ collection, id: existing.id, data, overrideAccess: true } as any)
-    stats[collection].updated += 1
+    const updated = await payload.update({
+      collection,
+      id: existing.id,
+      data,
+      context: { audit: false, importLegacy: true, skipNeedsPublish: true },
+      overrideAccess: true,
+    } as any)
+    stat.updated += 1
     return updated
   }
-  const created = await payload.create({ collection, data, overrideAccess: true } as any)
-  stats[collection].created += 1
+  const created = await payload.create({
+    collection,
+    data,
+    context: { audit: false, importLegacy: true, skipNeedsPublish: true },
+    overrideAccess: true,
+  } as any)
+  stat.created += 1
   return created
 }
 
@@ -115,11 +148,11 @@ async function ensureMedia(
   filename: string | null,
   meta: {
     alt: string
-    externalUrl?: string | null
+    externalUrl?: null | string
     role: 'attachment' | 'large' | 'original' | 'preview'
-    sourcePath?: string | null
+    sourcePath?: null | string
   },
-): Promise<string | null> {
+): Promise<number | string | null> {
   if (!filename) return null
   if (!fs.existsSync(filename)) {
     stats.media.missing += 1
@@ -147,6 +180,7 @@ async function ensureMedia(
   const created = await payload.create({
     collection: 'media',
     filePath: filename,
+    context: { audit: false, importLegacy: true },
     overrideAccess: true,
     data: {
       alt: String(meta.alt || path.basename(filename)).slice(0, 200),
@@ -155,33 +189,13 @@ async function ensureMedia(
       storageKind: 'content-repository',
       sourcePath: meta.sourcePath || relativeSource(filename),
       externalUrl: meta.externalUrl || null,
-      isAnimated: ext === '.gif',
+      isAnimated: ext === '.gif' || ext === '.apng',
     },
   } as any)
-  const createdID = String(created.id)
+  const createdID = created.id
   mediaBySha.set(sha256, createdID)
   stats.media.created += 1
   return createdID
-}
-
-function tagsToArray(value: unknown): Array<{ value: string }> {
-  if (!Array.isArray(value)) return []
-  return value
-    .map((item) => String(item || '').trim())
-    .filter(Boolean)
-    .filter((item, index, all) => all.indexOf(item) === index)
-    .map((item) => ({ value: item }))
-}
-
-function safeDate(value: unknown): string | undefined {
-  if (!value) return undefined
-  const date = new Date(String(value))
-  return Number.isNaN(date.getTime()) ? undefined : date.toISOString()
-}
-
-function mediaMime(filename: string | null): string | undefined {
-  if (!filename) return undefined
-  return MIME_BY_EXT[path.extname(filename).toLowerCase()]
 }
 
 function submissionSource(raw: any): 'github-issue' | 'manual' {
@@ -190,15 +204,52 @@ function submissionSource(raw: any): 'github-issue' | 'manual' {
   return 'manual'
 }
 
+function blueFishRows(): any[] {
+  const classification = readJson<any[]>('blue-fish-classification.json')
+  const editorial = readJson<Record<string, any>>('blue-fish-editorial.json')
+  const ids = readJson<Record<string, any>>('blue-fish-ids.json')
+  return classification
+    .map((item, index) => {
+      const edit = editorial[item.sourcePath] || {}
+      const identity = ids[item.sourcePath] || {}
+      const tags = Array.isArray(edit.tags) && edit.tags.length ? edit.tags : item.tags || []
+      const characterId = String(edit.characterId || item.characterId || '').trim()
+      const name = String(edit.name || item.name || '').trim()
+      const passes = Boolean(name && tags.length && characterId)
+      return {
+        ...item,
+        ...edit,
+        index,
+        id: identity.id,
+        slug: identity.slug,
+        sourcePath: item.sourcePath,
+        previewPath: item.previewPath,
+        name,
+        tags,
+        characterId,
+        categoryIds: edit.categoryIds || item.categoryIds || [],
+        commentary: edit.commentary || '',
+        description: edit.description || '',
+        originalPath: edit.originalPath || null,
+        sourceUrl: item.sourceUrl || null,
+        passes,
+        legacyData: { sourcePath: item.sourcePath, editorial: edit },
+      }
+    })
+    .filter((item) => item.passes && item.id)
+}
+
 async function importCategories() {
   const rows = readJson<any[]>('categories.json')
   const result = new Map<string, any>()
-  for (const row of rows) {
+  for (const [index, row] of rows.entries()) {
     const doc = await upsert('categories', 'categoryId', row.id, {
       categoryId: row.id,
       name: row.name,
       description: row.description || '',
       status: row.status || 'active',
+      legacyOrder: index,
+      legacyData: row,
     })
     result.set(row.id, doc)
   }
@@ -208,34 +259,178 @@ async function importCategories() {
 async function importCharacters() {
   const rows = readJson<any[]>('characters.json')
   const result = new Map<string, any>()
-  for (const row of rows) {
+  for (const [index, row] of rows.entries()) {
     const doc = await upsert('characters', 'characterId', row.id, {
       characterId: row.id,
       name: row.name,
       aliases: tagsToArray(row.aliases),
       status: row.status || 'active',
       inSubmissionForm: Boolean(row.inSubmissionForm),
+      legacyOrder: index,
+      legacyData: row,
     })
     result.set(row.id, doc)
   }
   return result
 }
 
-async function importWorks(characterMap: Map<string, any>, categoryMap: Map<string, any>) {
-  const datasets: Array<{ file: string; kind: 'blue-fish' | 'owner-picks' | 'submission' }> = [
-    { file: 'works.json', kind: 'submission' },
-    { file: 'owner-picks.json', kind: 'owner-picks' },
-  ]
+async function importEditorialSnapshot() {
+  const text = readText('blue-fish-editorial.json')
+  await upsert('legacy-snapshots', 'key', 'blue-fish-editorial', {
+    key: 'blue-fish-editorial',
+    text,
+    eol: text.includes('\r\n') ? 'crlf' : 'lf',
+  })
+}
 
-  if (!skipBlueFish) datasets.push({ file: 'blue-fish.json', kind: 'blue-fish' })
+function pathToContent(rawPath: string | null | undefined): string | null {
+  if (!rawPath) return null
+  const clean = String(rawPath).replace(/^\/+/, '')
+  if (clean.startsWith('dist/')) return path.join(contentDir, clean)
+  return path.join(contentDir, 'dist', clean)
+}
+
+async function importOneWork(raw: any, kind: 'blue-fish' | 'owner-picks' | 'submission', order: number, characterMap: Map<string, any>, categoryMap: Map<string, any>) {
+  const characterId = String(raw.characterId || '').trim()
+  const character = characterMap.get(characterId)
+  if (!character) throw new Error(`找不到角色 ${characterId}`)
+  const categoryIds = Array.isArray(raw.categoryIds) ? raw.categoryIds.filter((id: string) => categoryMap.has(id)) : []
+
+  let originalPath: string | null = null
+  let previewPath: string | null = null
+  let largePath: string | null = null
+  let externalOriginalUrl: string | null = raw.path || raw.sourceUrl || null
+
+  if (kind === 'submission') {
+    originalPath = path.join(contentDir, 'dist', 'submissions', 'originals', characterId, basenameFromUrl(raw.path || ''))
+    previewPath = raw.thumbnailPath ? pathToContent(raw.thumbnailPath) : null
+    largePath = raw.fullPath ? pathToContent(raw.fullPath) : null
+  } else if (kind === 'owner-picks') {
+    originalPath = path.join(contentDir, 'owner-picks', basenameFromUrl(raw.path || ''))
+    previewPath = raw.thumbnailPath ? path.join(contentDir, raw.thumbnailPath) : null
+    largePath = raw.fullPath ? path.join(contentDir, raw.fullPath) : null
+  } else {
+    previewPath = raw.previewPath
+      ? path.join(contentDir, 'dist', 'data', 'blue-fish', 'previews', path.basename(raw.previewPath))
+      : null
+    originalPath = raw.originalPath ? path.join(contentDir, raw.originalPath) : null
+    largePath = previewPath
+    externalOriginalUrl = raw.sourceUrl || null
+  }
+
+  const originalMedia = previewsOnly
+    ? null
+    : await ensureMedia(originalPath, {
+        alt: raw.name,
+        role: 'original',
+        sourcePath: originalPath ? relativeSource(originalPath) : null,
+        externalUrl: externalOriginalUrl,
+      })
+  const previewMedia = await ensureMedia(previewPath, {
+    alt: raw.name,
+    role: 'preview',
+    sourcePath: previewPath ? relativeSource(previewPath) : null,
+    externalUrl: externalOriginalUrl,
+  })
+  const largeMedia = previewsOnly
+    ? null
+    : await ensureMedia(largePath, {
+        alt: raw.name,
+        role: 'large',
+        sourcePath: largePath ? relativeSource(largePath) : null,
+        externalUrl: externalOriginalUrl,
+      })
+
+  const channel = kind === 'owner-picks' ? 'owner' : kind === 'blue-fish' ? 'blue-fish' : submissionSource(raw)
+  const workData: Record<string, any> = {
+    workId: raw.id,
+    slug: raw.slug || undefined,
+    name: raw.name,
+    description: raw.description || '',
+    commentary: raw.commentary || '',
+    kind,
+    channel,
+    submissionId: kind === 'submission' ? `legacy_${raw.id}` : undefined,
+    sha256: raw.sha256 || undefined,
+    character: character.id,
+    categories: categoryIds.map((id: string) => categoryMap.get(id).id),
+    tags: tagsToArray(raw.tags),
+    original: originalMedia || undefined,
+    preview: previewMedia || originalMedia || undefined,
+    large: largeMedia || undefined,
+    legacyPaths: {
+      path: raw.path || raw.sourceUrl || null,
+      thumbnailPath: raw.thumbnailPath || raw.previewPath || null,
+      fullPath: raw.fullPath || null,
+      externalOriginalUrl,
+    },
+    format: raw.format || undefined,
+    mimeType: raw.mimeType || mediaMime(originalPath || previewPath),
+    isAnimated: Boolean(raw.isAnimated),
+    width: raw.width || undefined,
+    height: raw.height || undefined,
+    fileSize: raw.fileSize || undefined,
+    submitter: raw.submitter || {},
+    origin: raw.origin || (kind === 'blue-fish'
+      ? { type: 'archive', author: 'EDMOK/blue-fish-archive', sourceUrl: raw.sourceUrl || null, note: '蓝色大肥鱼档案馆历史归档' }
+      : {}),
+    license: raw.license || (kind === 'blue-fish'
+      ? { type: 'unknown', note: '历史归档，授权状态不明' }
+      : {}),
+    status: 'published',
+    needsPublish: false,
+    changeAction: null,
+    publishedAt: safeDate(raw.createdAt),
+    review: raw.review ?? undefined,
+    legacySource: kind === 'blue-fish' ? 'blue-fish-archive' : kind === 'owner-picks' ? 'owner-picks.json' : 'works.json',
+    legacyOrder: order,
+    legacyData: kind === 'blue-fish' ? raw.legacyData : raw,
+  }
+
+  await upsert('works', 'workId', raw.id, workData)
+
+  if (kind === 'submission' && !skipSubmissions) {
+    const asset = originalMedia || previewMedia || largeMedia
+    if (!asset) {
+      stats.submissions.skipped += 1
+      return
+    }
+    await upsert('submissions', 'submissionId', `legacy_${raw.id}`, {
+      title: raw.name,
+      submissionId: `legacy_${raw.id}`,
+      source: submissionSource(raw),
+      sourceIds: [{ value: String(raw.id) }],
+      media: asset,
+      fields: {
+        name: raw.name,
+        description: raw.description || '',
+        characterId,
+        categoryIds,
+        tags: Array.isArray(raw.tags) ? raw.tags : [],
+      },
+      state: 'published',
+      review: { schema: 'legacy-import/1', verdict: 'pass', confidence: 1, reason: '历史作品迁移，不代表真实审核结论' },
+      stateHistory: [{ event: 'legacy.import', from: null, to: 'published', at: safeDate(raw.createdAt) || new Date().toISOString(), actor: 'import', reason: '历史作品迁移' }],
+      origin: raw.origin || {},
+      syncedAt: safeDate(raw.updatedAt) || new Date().toISOString(),
+    })
+  }
+}
+
+async function importWorks(characterMap: Map<string, any>, categoryMap: Map<string, any>) {
+  const datasets: Array<{ file: string; kind: 'owner-picks' | 'submission'; rows: any[] }> = [
+    { file: 'works.json', kind: 'submission', rows: readJson<any[]>('works.json') },
+    { file: 'owner-picks.json', kind: 'owner-picks', rows: readJson<any[]>('owner-picks.json') },
+  ]
+  if (!skipBlueFish) datasets.push({ file: 'blue-fish-classification.json', kind: 'submission', rows: blueFishRows().map((row) => ({ ...row, kind: 'blue-fish' })) })
 
   for (const dataset of datasets) {
-    const rows = dataset.file === 'blue-fish.json' ? buildBlueFishRows() : readJson<any[]>(dataset.file)
-    const selected = limit > 0 ? rows.slice(0, limit) : rows
+    const selected = limit > 0 ? dataset.rows.slice(0, limit) : dataset.rows
     console.log(`[导入] ${dataset.file}: ${selected.length} 条`)
-    for (const raw of selected) {
+    for (const [order, raw] of selected.entries()) {
+      const kind = (raw.kind || dataset.kind) as 'blue-fish' | 'owner-picks' | 'submission'
       try {
-        await importOneWork(raw, dataset.kind, characterMap, categoryMap)
+        await importOneWork(raw, kind, order, characterMap, categoryMap)
       } catch (error) {
         const message = `${dataset.file} / ${raw.id || raw.sourcePath || raw.name}: ${(error as Error).message}`
         stats.errors.push(message)
@@ -245,180 +440,23 @@ async function importWorks(characterMap: Map<string, any>, categoryMap: Map<stri
   }
 }
 
-function buildBlueFishRows(): any[] {
-  const classification = readJson<any[]>('blue-fish-classification.json')
-  const editorial = readJson<Record<string, any>>('blue-fish-editorial.json')
-  const ids = readJson<Record<string, any>>('blue-fish-ids.json')
-  return classification
-    .map((item) => {
-      const edit = editorial[item.sourcePath] || {}
-      const identity = ids[item.sourcePath] || {}
-      return {
-        ...item,
-        ...edit,
-        id: identity.id || `sticker_bf_${item.sourcePath}`,
-        slug: identity.slug || `blue-fish-${item.sourcePath}`,
-        sourcePath: item.sourcePath,
-        previewPath: item.previewPath,
-        name: edit.name || item.name,
-        tags: edit.tags || item.tags || [],
-        characterId: edit.characterId || item.characterId,
-        categoryIds: edit.categoryIds || item.categoryIds || [],
-        commentary: edit.commentary || '',
-        description: edit.description || '',
-        originalPath: edit.originalPath || null,
-        sourceUrl: item.sourceUrl || null,
-      }
-    })
-    .filter((item) => item.name && item.tags.length > 0 && item.characterId)
-}
-
-async function importOneWork(
-  raw: any,
-  kind: 'blue-fish' | 'owner-picks' | 'submission',
-  characterMap: Map<string, any>,
-  categoryMap: Map<string, any>,
-) {
-  const character = characterMap.get(raw.characterId)
-  if (!character) throw new Error(`找不到角色 ${raw.characterId}`)
-  const categoryIds = Array.isArray(raw.categoryIds) ? raw.categoryIds.filter((id: string) => categoryMap.has(id)) : []
-
-  let originalPath: string | null = null
-  let previewPath: string | null = null
-  let largePath: string | null = null
-  let externalOriginalUrl: string | null = raw.path || raw.sourceUrl || null
-
-  if (kind === 'submission') {
-    const originalName = basenameFromUrl(raw.path)
-    originalPath = path.join(contentDir, 'dist', 'submissions', 'originals', raw.characterId, originalName)
-    previewPath = raw.thumbnailPath ? path.join(contentDir, 'dist', raw.thumbnailPath) : null
-    largePath = raw.fullPath ? path.join(contentDir, 'dist', raw.fullPath) : null
-  } else if (kind === 'owner-picks') {
-    const originalName = basenameFromUrl(raw.path)
-    originalPath = path.join(contentDir, 'owner-picks', originalName)
-    previewPath = raw.thumbnailPath ? path.join(contentDir, 'dist', raw.thumbnailPath) : null
-    largePath = raw.fullPath ? path.join(contentDir, 'dist', raw.fullPath) : null
-  } else {
-    previewPath = raw.previewPath
-      ? path.join(contentDir, 'dist', 'data', 'blue-fish', 'previews', path.basename(raw.previewPath))
-      : null
-    originalPath = raw.originalPath ? path.join(contentDir, raw.originalPath) : null
-    externalOriginalUrl = raw.sourceUrl || null
-  }
-
-  const original = previewsOnly
-    ? null
-    : await ensureMedia(originalPath, {
-        alt: raw.name,
-        role: 'original',
-        sourcePath: originalPath ? relativeSource(originalPath) : null,
-        externalUrl: externalOriginalUrl,
-      })
-  const preview = await ensureMedia(previewPath, {
-    alt: raw.name,
-    role: 'preview',
-    sourcePath: previewPath ? relativeSource(previewPath) : null,
-    externalUrl: externalOriginalUrl,
-  })
-  const large = previewsOnly
-    ? null
-    : await ensureMedia(largePath, {
-        alt: raw.name,
-        role: 'large',
-        sourcePath: largePath ? relativeSource(largePath) : null,
-        externalUrl: externalOriginalUrl,
-      })
-
-  const workData = {
-    workId: raw.id,
-    slug: raw.slug,
-    name: raw.name,
-    description: raw.description || '',
-    commentary: raw.commentary || '',
-    kind,
-    character: character.id,
-    categories: categoryIds.map((id: string) => categoryMap.get(id).id),
-    tags: tagsToArray(raw.tags),
-    original: original || undefined,
-    preview: preview || original || undefined,
-    large: large || undefined,
-    legacyPaths: {
-      path: raw.path || raw.sourceUrl || null,
-      thumbnailPath: raw.thumbnailPath || raw.previewPath || null,
-      fullPath: raw.fullPath || raw.largePath || null,
-      externalOriginalUrl,
-    },
-    submitter: raw.submitter || {},
-    origin: raw.origin || (kind === 'blue-fish' ? {
-      type: 'archive',
-      author: 'EDMOK/blue-fish-archive',
-      sourceUrl: raw.sourceUrl || null,
-      note: '蓝色大肥鱼档案馆历史归档',
-    } : {}),
-    license: raw.license || (kind === 'blue-fish' ? {
-      type: 'unknown',
-      note: '历史归档，授权状态不明',
-    } : {}),
-    status: raw.status || 'published',
-    publishedAt: safeDate(raw.createdAt) || new Date().toISOString(),
-    legacySource: kind === 'blue-fish' ? 'blue-fish-archive' : kind === 'owner-picks' ? 'owner-picks.json' : 'works.json',
-    legacyData: raw,
-  }
-
-  await upsert('works', 'workId', raw.id, workData)
-
-  if (kind === 'submission' && !skipSubmissions) {
-    const asset = original || preview || large
-    if (!asset) {
-      stats.submissions.skipped += 1
-      return
-    }
-    const submissionId = `legacy_${raw.id}`
-    await upsert('submissions', 'submissionId', submissionId, {
-      title: raw.name,
-      submissionId,
-      source: submissionSource(raw),
-      sourceId: raw.sourceIssue !== null && raw.sourceIssue !== undefined ? String(raw.sourceIssue) : raw.id,
-      sourceIds: [{ value: String(raw.id) }],
-      asset,
-      sha256: raw.sha256 ? String(raw.sha256) : fileHash(originalPath || previewPath || ''),
-      format: raw.format || path.extname(originalPath || previewPath || '').replace('.', ''),
-      mime: raw.mimeType || mediaMime(originalPath || previewPath),
-      bytes: raw.fileSize || undefined,
-      fields: {
-        name: raw.name,
-        characterText: raw.characterId,
-        description: raw.description || '',
-        tags: Array.isArray(raw.tags) ? raw.tags.join(',') : '',
-        originType: raw.origin?.type || '',
-        originAuthor: raw.origin?.author || '',
-        originUrl: raw.origin?.sourceUrl || '',
-        licenseType: raw.license?.type || '',
-        licenseNote: raw.license?.note || '',
-      },
-      state: 'published',
-      review: {
-        schema: 'legacy-import/1',
-        verdict: 'pass',
-        confidence: 1,
-        reason: '历史作品迁移，不代表真实审核结论',
-      },
-      stateHistory: [{
-        event: 'legacy.import',
-        from: null,
-        to: 'published',
-        at: safeDate(raw.createdAt) || new Date().toISOString(),
-        actor: 'import',
-        reason: '历史作品迁移',
-      }],
-      submitter: raw.submitter || {},
-      origin: raw.origin || {},
-      humanDecision: {
-        decision: 'approved',
-        reason: '历史作品迁移',
-        actor: 'import',
-        at: safeDate(raw.updatedAt) || new Date().toISOString(),
-      },
+async function importTopics(workIds: Map<string, any>) {
+  const rows = readJson<any[]>('topics.json')
+  for (const raw of rows) {
+    const works = Array.isArray(raw.workIds) ? raw.workIds.map((id: string) => workIds.get(id)).filter(Boolean) : []
+    await upsert('topics', 'topicId', raw.id, {
+      topicId: raw.id,
+      name: raw.name,
+      summary: raw.summary || '',
+      nameEn: raw.i18n?.en?.name || raw.nameEn || undefined,
+      summaryEn: raw.i18n?.en?.summary || raw.summaryEn || undefined,
+      nameJa: raw.i18n?.ja?.name || raw.nameJa || undefined,
+      summaryJa: raw.i18n?.ja?.summary || raw.summaryJa || undefined,
+      cover: works.find((doc: any) => doc.workId === raw.coverWorkId)?.id || works[0]?.id || undefined,
+      works: works.map((doc: any) => doc.id),
+      status: raw.status || 'draft',
+      order: Number(raw.order) || 0,
+      needsPublish: false,
     })
   }
 }
@@ -434,6 +472,10 @@ async function main() {
   const categoryMap = await importCategories()
   const characterMap = await importCharacters()
   await importWorks(characterMap, categoryMap)
+  await importEditorialSnapshot()
+  const allWorks = await payload.find({ collection: 'works', depth: 0, limit: 2000, overrideAccess: true, pagination: false })
+  const workIds = new Map(allWorks.docs.map((doc: any) => [doc.workId, doc]))
+  await importTopics(workIds)
 
   console.log('\n[完成]')
   console.log(JSON.stringify(stats, null, 2))
@@ -442,9 +484,3 @@ async function main() {
 
 await main()
 process.exit(process.exitCode || 0)
-
-
-
-
-
-

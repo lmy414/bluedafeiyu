@@ -1,0 +1,197 @@
+'use client'
+
+import { Gutter } from '@payloadcms/ui'
+import React, { useEffect, useMemo, useState } from 'react'
+
+import { useAdminApi } from '../components/admin/api'
+import { BulkBar } from '../components/admin/BulkBar'
+import { CHANNELS, WORK_STATUSES } from '../components/admin/constants'
+import { Modal } from '../components/admin/Modal'
+import { PageHeader } from '../components/admin/PageHeader'
+import { Pagination } from '../components/admin/Pagination'
+import { WorkCard } from '../components/admin/WorkCard'
+import type { CategoryDoc, CharacterDoc, ListResponse, TopicDoc, WorkDoc } from '../components/admin/types'
+import { relationID } from '../components/admin/types'
+
+export function LibraryView() {
+  const { get, mutate } = useAdminApi()
+  const [works, setWorks] = useState<WorkDoc[]>([])
+  const [characters, setCharacters] = useState<CharacterDoc[]>([])
+  const [categories, setCategories] = useState<CategoryDoc[]>([])
+  const [topics, setTopics] = useState<TopicDoc[]>([])
+  const [channel, setChannel] = useState('')
+  const [characterId, setCharacterId] = useState('')
+  const [categoryId, setCategoryId] = useState('')
+  const [status, setStatus] = useState('')
+  const [keyword, setKeyword] = useState('')
+  const [selected, setSelected] = useState<string[]>([])
+  const [page, setPage] = useState(1)
+  const [message, setMessage] = useState('')
+  const [modal, setModal] = useState<'category' | 'delete' | 'topic' | null>(null)
+  const [chosenCategories, setChosenCategories] = useState<string[]>([])
+  const [topicId, setTopicId] = useState('')
+  const [deleteText, setDeleteText] = useState('')
+  const [loading, setLoading] = useState(true)
+
+  async function load() {
+    setLoading(true)
+    try {
+      const [workResult, characterResult, categoryResult, topicResult] = await Promise.all([
+        get<ListResponse<WorkDoc>>('/works', { depth: 2, limit: 3000, pagination: false, sort: '-updatedAt' }),
+        get<ListResponse<CharacterDoc>>('/characters', { depth: 0, limit: 1000, pagination: false }),
+        get<ListResponse<CategoryDoc>>('/categories', { depth: 0, limit: 1000, pagination: false }),
+        get<ListResponse<TopicDoc>>('/topics', { depth: 0, limit: 1000, pagination: false }),
+      ])
+      setWorks(workResult.docs || [])
+      setCharacters(characterResult.docs || [])
+      setCategories(categoryResult.docs || [])
+      setTopics(topicResult.docs || [])
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : '作品库读取失败')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  useEffect(() => {
+    void load()
+  }, [])
+
+  const filtered = useMemo(() => {
+    const search = keyword.trim().toLowerCase()
+    return works.filter((work) => {
+      if (channel && work.channel !== channel) return false
+      if (status && work.status !== status) return false
+      if (characterId && String(relationID(work.character)) !== characterId) return false
+      if (categoryId && !(work.categories || []).some((item) => String(relationID(item)) === categoryId)) return false
+      if (!search) return true
+      const haystack = [work.name, work.workId, ...(work.tags || []).map((tag) => tag.value)].join(' ').toLowerCase()
+      return haystack.includes(search)
+    })
+  }, [categoryId, channel, characterId, keyword, status, works])
+
+  const totalPages = Math.max(1, Math.ceil(filtered.length / 48))
+  const visible = filtered.slice((page - 1) * 48, page * 48)
+
+  function toggle(id: string) {
+    setSelected((current) => (current.includes(id) ? current.filter((value) => value !== id) : [...current, id]))
+  }
+
+  async function bulk(action: 'add-to-topic' | 'delete' | 'hide' | 'restore' | 'set-categories', extra: Record<string, unknown> = {}) {
+    if (!selected.length) return
+    setMessage('正在处理…')
+    try {
+      await mutate('/works/bulk', 'POST', { action, ids: selected, ...extra })
+      setSelected([])
+      setModal(null)
+      setDeleteText('')
+      await load()
+      setMessage('批量操作已完成。')
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : '批量操作失败')
+    }
+  }
+
+  useEffect(() => setPage(1), [categoryId, channel, characterId, keyword, status])
+
+  return (
+    <Gutter className="s3-admin-page">
+      <PageHeader description="统一筛选、搜索并批量维护后台作品。" title="作品库" />
+      <section className="s3-filter-panel">
+        <label>
+          渠道
+          <select onChange={(event) => setChannel(event.target.value)} value={channel}>
+            <option value="">全部渠道</option>
+            {CHANNELS.map((item) => <option key={item.value} value={item.value}>{item.label}</option>)}
+          </select>
+        </label>
+        <label>
+          角色
+          <select onChange={(event) => setCharacterId(event.target.value)} value={characterId}>
+            <option value="">全部角色</option>
+            {characters.map((item) => <option key={String(item.id)} value={String(item.id)}>{item.name || item.characterId}</option>)}
+          </select>
+        </label>
+        <label>
+          分类
+          <select onChange={(event) => setCategoryId(event.target.value)} value={categoryId}>
+            <option value="">全部分类</option>
+            {categories.map((item) => <option key={String(item.id)} value={String(item.id)}>{item.name || item.categoryId}</option>)}
+          </select>
+        </label>
+        <label>
+          状态
+          <select onChange={(event) => setStatus(event.target.value)} value={status}>
+            <option value="">全部状态</option>
+            {WORK_STATUSES.map((item) => <option key={item.value} value={item.value}>{item.label}</option>)}
+          </select>
+        </label>
+        <label className="s3-search-field">
+          搜索
+          <input onChange={(event) => setKeyword(event.target.value)} placeholder="名称、标签或 ID" value={keyword} />
+        </label>
+      </section>
+      <div className="s3-result-line">
+        <span>共 {filtered.length} 件作品</span>
+        <div>
+          <button className="s3-text-button" onClick={() => setSelected(visible.map((work) => work.workId))} type="button">选择本页</button>
+          <button className="s3-text-button" onClick={() => setSelected([])} type="button">清空选择</button>
+        </div>
+      </div>
+      {message ? <p className="s3-notice">{message}</p> : null}
+      {loading ? <p className="s3-loading">正在读取作品库…</p> : null}
+      {!loading && !filtered.length ? <div className="s3-empty">没有符合条件的作品。</div> : null}
+      <section className="s3-card-grid">
+        {visible.map((work) => (
+          <WorkCard
+            key={String(work.id)}
+            onOpen={() => toggle(work.workId)}
+            onSelect={() => toggle(work.workId)}
+            selected={selected.includes(work.workId)}
+            work={work}
+          />
+        ))}
+      </section>
+      <Pagination page={page} setPage={setPage} totalPages={totalPages} />
+      <BulkBar count={selected.length}>
+        <button className="s3-button s3-button--secondary" onClick={() => { setChosenCategories([]); setModal('category') }} type="button">改分类</button>
+        <button className="s3-button s3-button--warning" onClick={() => void bulk('hide')} type="button">隐藏</button>
+        <button className="s3-button s3-button--secondary" onClick={() => void bulk('restore')} type="button">恢复</button>
+        <button className="s3-button s3-button--secondary" onClick={() => { setTopicId(topics[0]?.topicId || ''); setModal('topic') }} type="button">加入专题</button>
+        <button className="s3-button s3-button--danger" onClick={() => setModal('delete')} type="button">删除</button>
+      </BulkBar>
+
+      <Modal confirmLabel="保存分类" onClose={() => setModal(null)} onConfirm={() => void bulk('set-categories', { categoryIds: chosenCategories })} open={modal === 'category'} title="批量修改分类">
+        <div className="s3-check-grid">
+          {categories.map((category) => {
+            const stableId = category.categoryId || String(category.id)
+            return (
+              <label className="s3-check" key={String(category.id)}>
+                <input checked={chosenCategories.includes(stableId)} onChange={(event) => setChosenCategories(event.target.checked ? [...chosenCategories, stableId] : chosenCategories.filter((value) => value !== stableId))} type="checkbox" />
+                {category.name || category.categoryId}
+              </label>
+            )
+          })}
+        </div>
+      </Modal>
+
+      <Modal confirmLabel="加入专题" onClose={() => setModal(null)} onConfirm={() => void bulk('add-to-topic', { topicId })} open={modal === 'topic'} title="加入专题">
+        <label>
+          选择专题
+          <select onChange={(event) => setTopicId(event.target.value)} value={topicId}>
+            {topics.map((topic) => <option key={String(topic.id)} value={topic.topicId}>{topic.name}（{topic.topicId}）</option>)}
+          </select>
+        </label>
+      </Modal>
+
+      <Modal confirmLabel="确认删除" danger onClose={() => { setModal(null); setDeleteText('') }} onConfirm={() => { if (deleteText === '删除') void bulk('delete', { confirm: 'DELETE' }) }} open={modal === 'delete'} title="彻底删除作品">
+        <p className="s3-danger-copy">删除会在下次发布时彻底移除作品和图片，不可恢复。</p>
+        <label>
+          请输入「删除」两个字以确认
+          <input onChange={(event) => setDeleteText(event.target.value)} value={deleteText} />
+        </label>
+        <button className="s3-button s3-button--danger" disabled={deleteText !== '删除'} onClick={() => void bulk('delete', { confirm: 'DELETE' })} type="button">我确认删除</button>
+      </Modal>
+    </Gutter>
+  )
+}
