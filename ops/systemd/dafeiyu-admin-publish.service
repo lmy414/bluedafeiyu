@@ -1,0 +1,17 @@
+[Unit]
+Description=蓝色大肥鱼后台发布执行器
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=root
+Group=root
+WorkingDirectory=/srv/apps/dafeiyu-admin/src
+EnvironmentFile=/etc/dafeiyu/admin-publish.env
+ExecStart=/usr/bin/node /srv/apps/dafeiyu-admin/src/ops/admin/publish-worker.mjs
+TimeoutStartSec=3600
+Nice=10
+
+[Install]
+WantedBy=multi-user.target

@@ -643,14 +643,14 @@ function journalPath(cfg, batchId) {
   return path.join(batchDir(cfg), `${batchId}.json`);
 }
 
-function writeJournal(cfg, journal) {
+export function writeJournal(cfg, journal) {
   const file = journalPath(cfg, journal.batchId);
   fs.mkdirSync(path.dirname(file), { recursive: true, mode: 0o700 });
   fs.writeFileSync(file, `${JSON.stringify(journal, null, 2)}\n`, { encoding: 'utf8', mode: 0o600 });
   return file;
 }
 
-function readLatestUnfinishedJournal(cfg) {
+export function readLatestUnfinishedJournal(cfg) {
   const dir = batchDir(cfg);
   let names = [];
   try { names = fs.readdirSync(dir); } catch { return null; }
@@ -724,7 +724,7 @@ function repoDir(cfg, repoKey) {
  *     先 git reset --hard origin/<branch>，再删掉日志里未跟踪的残留文件；
  *   - 计划外改动（尤其没有批次日志时）一律拒绝，绝不替人 reset。
  */
-function ensureRepoClean(cfg, exec, repoKey, previousJournal, log) {
+export function ensureRepoClean(cfg, exec, repoKey, previousJournal, log) {
   const dir = repoDir(cfg, repoKey);
   const remoteRef = `${cfg.remote}/${cfg.branch}`;
   gitCmd(exec, dir, ['fetch', '--prune', cfg.remote]);
@@ -791,7 +791,7 @@ function updateWorksManifest(cfg, items, originalText) {
   return added;
 }
 
-function runToolchain(cfg, exec, workDir) {
+export function runToolchain(cfg, exec, workDir) {
   // 先确认服务器真能跑派生图（Pillow），避免写坏清单后才发现缺依赖。
   runCmd(exec, cfg.python, ['-c', 'import PIL, sys; sys.exit(0)'], { cwd: cfg.siteDir });
   runCmd(exec, cfg.node, ['tools/prepare_works.mjs'], { cwd: cfg.siteDir });
@@ -829,7 +829,7 @@ function discoverChanged(cfg, exec, repoKey) {
 }
 
 /** 只显式列文件暂存与提交；绝不 git add -A / .。返回新 commit 或 null。 */
-function commitRepo(cfg, exec, repoKey, files, message) {
+export function commitRepo(cfg, exec, repoKey, files, message) {
   if (files.length === 0) return null;
   const dir = repoDir(cfg, repoKey);
   for (const rel of files) {
@@ -849,7 +849,7 @@ function commitRepo(cfg, exec, repoKey, files, message) {
   return (gitCmd(exec, dir, ['rev-parse', 'HEAD']).stdout || '').trim() || null;
 }
 
-function runDeploy(cfg, exec, log) {
+export function runDeploy(cfg, exec, log) {
   let command = 'bash';
   let args;
   if (cfg.deployCmd) {
@@ -867,7 +867,7 @@ function runDeploy(cfg, exec, log) {
   runCmd(exec, command, args, { env: process.env });
 }
 
-function markPublished(cfg, digest, batchId, atIso) {
+export function markPublished(cfg, digest, batchId, atIso) {
   const file = path.join(cfg.intake.metaDir, `${digest}.json`);
   const item = JSON.parse(fs.readFileSync(file, 'utf8'));
   const next = { ...item, status: 'published', publishedAt: atIso, batchId };

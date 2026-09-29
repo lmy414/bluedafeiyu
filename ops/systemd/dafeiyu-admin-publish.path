@@ -1,0 +1,9 @@
+[Unit]
+Description=蓝色大肥鱼后台发布请求监听
+
+[Path]
+PathExists=/srv/apps/dafeiyu-admin/run/publish.request
+Unit=dafeiyu-admin-publish.service
+
+[Install]
+WantedBy=paths.target

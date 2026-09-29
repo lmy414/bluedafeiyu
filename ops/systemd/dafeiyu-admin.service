@@ -1,0 +1,23 @@
+[Unit]
+Description=蓝色大肥鱼后台 Next/Payload 服务
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=dafeiyu-admin
+Group=dafeiyu-admin
+WorkingDirectory=/srv/apps/dafeiyu-admin/app
+EnvironmentFile=/etc/dafeiyu/admin.env
+ExecStart=/usr/bin/npm run start -- -p 3100 -H 127.0.0.1
+Restart=on-failure
+RestartSec=5s
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/srv/apps/dafeiyu-admin/data /srv/apps/dafeiyu-admin/media /srv/apps/dafeiyu-admin/run
+MemoryMax=900M
+
+[Install]
+WantedBy=multi-user.target
