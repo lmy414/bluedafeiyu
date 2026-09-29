@@ -1,7 +1,8 @@
 # dafeiyu-qq-submission
 
-Hermes Agent v0.21.0 的 QQ 群投稿插件。它拦截 `qqbot` 消息：群内只接受
-`投稿`（兼容前面带一个 `/`），私聊和其他群消息只 `skip`，不会把 QQ 流量交给 Agent。
+Hermes Agent v0.21.0 的 QQ 群投稿插件。它拦截 `qqbot` 消息：群内只有消息以
+`<@...>` / `<@!...>` @机器人，且正文为 `投稿`（兼容前面带一个 `/`）时才处理；
+私聊、未 @机器人消息和其他群消息都只 `skip`，不会把 QQ 流量交给 Agent。
 
 ## 文件
 
@@ -29,6 +30,7 @@ Hermes 侧环境变量：
 | --- | --- |
 | `DAFEIYU_QQ_INBOUND_URL` | 投稿服务 QQ 入站地址；默认 `https://xn--pssy23gqgbz2d718b.com/api/v1/adapters/qq/events` |
 | `DAFEIYU_QQ_INBOUND_TOKEN` | 必填；对应服务端 `SUBMISSION_QQ_INBOUND_TOKEN`，通过 `Authorization: Bearer ...` 发送 |
+| `DAFEIYU_QQ_BOT_OPENID` | 可选；配置后只接受 @ 此 openid，未配置时接受任意 `<@...>` 开头（见下方风险说明） |
 
 Hermes 的 `QQ_APP_ID` / `QQ_CLIENT_SECRET`、QQ 平台 `qqbot` 的
 `group_policy=allowlist` 与 `group_allow_from`，以及 `config.yaml` 的
@@ -40,18 +42,28 @@ Hermes 的 `QQ_APP_ID` / `QQ_CLIENT_SECRET`、QQ 平台 `qqbot` 的
 
 ## 用法
 
-Hermes 的 QQ 适配器只把群里 @机器人 的消息推给插件，`event.text` 已去掉 @ 前缀，
-因此命令直接从 `投稿` 开始，兼容一个前导 `/`：
+Hermes 会把群事件中的 `event.text` 交给插件；全量群消息事件为
+`GROUP_MESSAGE_CREATE`，适配器会把开头的 `<@openid>` 去掉，因此命令直接从 `投稿`
+开始，兼容一个前导 `/`。插件仍回看 `event.raw_message["content"]` 判断是否真的 @了机器人：
 
 ```text
-@机器人 投稿 早安 世界 deepseek + 图片
-@机器人 /投稿 早安 世界 蓝色大肥鱼 + 图片
+<@机器人openid> 投稿 早安 世界 deepseek + 图片
+<@!机器人openid>  /投稿 早安 世界 蓝色大肥鱼 + 图片
 ```
 
+- `content` 以 `<@...>` 或 `<@!...>` 开头（允许前导空白）才算已 @。未 @ 的消息静默
+  `skip`，不回复、不做命令解析、不发送投稿请求。
+- 配置 `DAFEIYU_QQ_BOT_OPENID` 时，内容前缀中的 openid 必须匹配。未配置时接受任意
+  `<@...>` 开头；这意味着群里 @ 别人再写“投稿”也会被视为可接受风险。
+- 旧 `GROUP_AT_MESSAGE_CREATE` 兼容：`raw_message` 缺少 `content` 时按已 @ 处理；若
+  Hermes 暴露了显式事件名，`GROUP_AT_MESSAGE_CREATE` 也可在无内容前缀时通过。
+  `raw_message["mentions"]` 中任一项 `is_you: true` 可作为辅助判断；线上 mentions
+  结构尚未确认，因此内容前缀优先。
 - 命令词必须是 `投稿` 或 `/投稿`，且后面必须是空白或消息结尾；`投稿xxx` 按非投稿消息静默 `skip`。
 - 去掉命令词后按空白切分，最后一个词是角色，其余部分是标题；标题可以包含空格。
 - 角色必填，支持 `characters.json` 中的 id / 别名，大小写不敏感；也兼容
-  `角色:deepseek` / `角色：deepseek`。
+  `角色:deepseek` / `角色：deepseek`。角色词末尾可加“娘”：若去掉末尾“娘”后能匹配
+  id / 别名，则按该角色处理，例如 `deepseek娘` → `deepseek`。
 - 只支持本条消息内联的 `image/*` 附件。Hermes 会把引用/回复消息里的图片追加到
   `event.media_urls` 末尾；插件按本条 `raw_message.attachments` 的内联图片数量截取前缀，
   引用图片不会提交。
@@ -81,12 +93,14 @@ Hermes 的 QQ 适配器只把群里 @机器人 的消息推给插件，`event.te
 
 1. 非 `qqbot` 消息返回 `None`，不改变 Hermes 正常分发。
 2. 所有 `qqbot` 消息返回 `skip`；私聊不回复。
-3. 群消息必须是 `投稿` / `/投稿` 开头，且命令词后为空白或消息结尾。
-4. 合法投稿按“标题 + 最后一个角色词”解析；角色别名会归一成 `characters.json` 的 id。
-5. 先校验标题和角色，再校验内联图片；参数不合法时回复对应提示并 `skip`。
-6. 每张内联图片单独 POST。请求体字段为 `groupId`、`userId`、`messageId`、`name`、
+3. 群消息必须先通过 @机器人判断；未 @ 的投稿和闲聊均静默跳过，不回复也不解析命令。
+4. 群消息必须是 `投稿` / `/投稿` 开头，且命令词后为空白或消息结尾。
+5. 合法投稿按“标题 + 最后一个角色词”解析；角色别名和末尾“娘”写法会归一成
+   `characters.json` 的 id。
+6. 先校验标题和角色，再校验内联图片；参数不合法时回复对应提示并 `skip`。
+7. 每张内联图片单独 POST。请求体字段为 `groupId`、`userId`、`messageId`、`name`、
    `character`、`image.base64`；多图共用原消息 `messageId`。
-7. HTTP 202 视为新入库，HTTP 200 视为重复；其他状态和网络异常回复简短失败原因。
+8. HTTP 202 视为新入库，HTTP 200 视为重复；其他状态和网络异常回复简短失败原因。
 
 ## 请求与响应契约
 
@@ -118,8 +132,10 @@ python -m unittest discover -s ops/hermes/qq-submission -v
 ```
 
 测试只使用临时文件和 mock `urllib.request.urlopen`，不会连接投稿服务或 QQ。当前覆盖：
-无斜杠 / 兼容斜杠命令、`投稿xxx` 静默、别名与角色前缀、标题含空格、各参数错误提示、
-标题边界、引用图片排除，以及内联 + 引用混合时只提交内联图片。
+未 @ 投稿/闲聊静默、缺少原始 `content` 的旧事件兼容、`mentions.is_you` 回退、
+配置 bot openid 后 @ 他人被忽略、`deepseek娘` 角色归一、无斜杠 / 兼容斜杠命令、
+`投稿xxx` 静默、别名与角色前缀、标题含空格、各参数错误提示、标题边界、引用图片排除，
+以及内联 + 引用混合时只提交内联图片。
 
 ## 限速
 

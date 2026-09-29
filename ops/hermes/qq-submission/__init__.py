@@ -26,6 +26,7 @@ DEFAULT_INBOUND_URL = (
 )
 FORMAT_HINT = "格式：@机器人 投稿 标题 角色 + 图片（例：@机器人 投稿 早安 deepseek）"
 COMMAND_RE = re.compile(r"^/?投稿(?:\s+|\Z)")
+BOT_MENTION_RE = re.compile(r"^\s*<@!?([^>\s]+)>")
 CHARACTER_FILE = Path(__file__).with_name("characters.json")
 ROLE_PREFIXES = ("角色:", "角色：")
 TITLE_MAX_LENGTH = 64
@@ -273,6 +274,86 @@ def _raw_user_id(event: Any) -> str:
     return str(author.get("member_openid") or "").strip()
 
 
+def _event_type(event: Any) -> str:
+    """Return an explicit QQ event type when Hermes exposes one."""
+    raw = getattr(event, "raw_message", None)
+    values = [
+        getattr(event, "event_type", None),
+        getattr(event, "type", None),
+    ]
+    if isinstance(raw, dict):
+        values.extend(
+            [
+                raw.get("event_type"),
+                raw.get("type"),
+                raw.get("t"),
+            ]
+        )
+    normalized = [str(value).strip().upper() for value in values if value]
+    if "GROUP_AT_MESSAGE_CREATE" in normalized:
+        return "GROUP_AT_MESSAGE_CREATE"
+    return normalized[0] if normalized else ""
+
+
+def _configured_bot_openid() -> str:
+    return os.environ.get("DAFEIYU_QQ_BOT_OPENID", "").strip()
+
+
+def _mention_openid(item: dict[str, Any]) -> str:
+    for key in ("openid", "user_openid", "member_openid", "id"):
+        value = item.get(key)
+        if value:
+            return str(value).strip()
+    return ""
+
+
+def _mention_is_self(item: Any, configured_openid: str) -> bool:
+    if not isinstance(item, dict):
+        return False
+
+    mentioned_openid = _mention_openid(item)
+    if (
+        configured_openid
+        and mentioned_openid
+        and mentioned_openid.casefold() == configured_openid.casefold()
+    ):
+        return True
+
+    return item.get("is_you") is True or item.get("is_self") is True
+
+
+def _is_bot_mentioned(event: Any) -> bool:
+    """Return whether the raw QQ message mentions this bot.
+
+    Content prefix is authoritative for full ``GROUP_MESSAGE_CREATE`` events.
+    Older @-only events may omit ``content``; in that case they are accepted so
+    the historical Hermes behavior remains compatible.
+    """
+    raw = getattr(event, "raw_message", None)
+    if not isinstance(raw, dict):
+        return True
+    if "content" not in raw:
+        return True
+
+    content = str(raw.get("content") or "")
+    match = BOT_MENTION_RE.match(content)
+    if match:
+        configured_openid = _configured_bot_openid()
+        if not configured_openid:
+            return True
+        mentioned_openid = match.group(1).strip()
+        return mentioned_openid.casefold() == configured_openid.casefold()
+
+    configured_openid = _configured_bot_openid()
+    mentions = raw.get("mentions")
+    if isinstance(mentions, (list, tuple)):
+        for mention in mentions:
+            if _mention_is_self(mention, configured_openid):
+                return True
+
+    return _event_type(event) == "GROUP_AT_MESSAGE_CREATE"
+
+
 def _resolve_character(marker: str) -> tuple[str, str]:
     """Return (user-facing role value, canonical id or empty)."""
     value = marker.strip()
@@ -282,6 +363,9 @@ def _resolve_character(marker: str) -> tuple[str, str]:
             break
 
     canonical = _character_lookup().get(value.casefold(), "")
+    if not canonical and len(value) > 1 and value.endswith("娘"):
+        base_value = value[:-1].strip()
+        canonical = _character_lookup().get(base_value.casefold(), "")
     return value, canonical
 
 
@@ -591,6 +675,10 @@ def on_pre_gateway_dispatch(
         if getattr(source, "chat_type", None) != "group":
             logger.info("decision=skip reason=qqbot-direct-message")
             return {"action": "skip", "reason": "qqbot-direct-message"}
+
+        if not _is_bot_mentioned(event):
+            logger.info("decision=silent reason=qqbot-not-mentioned")
+            return {"action": "skip", "reason": "qqbot-not-mentioned"}
 
         text = str(getattr(event, "text", "") or "").strip()
         match = COMMAND_RE.match(text)

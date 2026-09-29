@@ -81,6 +81,7 @@ class PluginTests(unittest.TestCase):
         self.qq_platform = Platform("qqbot")
         self.adapter = FakeAdapter()
         self.gateway = FakeGateway(self.qq_platform, self.adapter)
+        self.bot_openid = "E6627A25B64DE66880B8DBED805FC574"
 
     def make_event(
         self,
@@ -95,6 +96,9 @@ class PluginTests(unittest.TestCase):
         group_id: str = "group-1",
         user_id: str = "user-1",
         raw_message_extra=None,
+        raw_content=None,
+        include_raw_content: bool = True,
+        event_type=None,
     ):
         if media_urls is None:
             media_urls = [str(self.image_path)]
@@ -114,6 +118,12 @@ class PluginTests(unittest.TestCase):
             "author": {"member_openid": user_id},
             "attachments": attachments,
         }
+        if include_raw_content:
+            raw_message["content"] = (
+                raw_content
+                if raw_content is not None
+                else f"<@{self.bot_openid}>  {text}"
+            )
         if raw_message_extra:
             raw_message.update(raw_message_extra)
         return SimpleNamespace(
@@ -123,6 +133,7 @@ class PluginTests(unittest.TestCase):
             media_types=media_types,
             source=source,
             raw_message=raw_message,
+            event_type=event_type,
         )
 
     def dispatch_with(self, target_plugin, event):
@@ -240,6 +251,104 @@ class PluginTests(unittest.TestCase):
         self.assertEqual(result, {"action": "skip", "reason": "qqbot-non-submission"})
         self.assertEqual(calls, [])
         self.assertEqual(self.adapter.sent, [])
+
+    def test_group_submission_without_bot_mention_is_silent(self) -> None:
+        event = self.make_event(
+            text="投稿 标题 deepseek",
+            raw_content="投稿 标题 deepseek",
+        )
+        fake_urlopen, calls = self.fake_urlopen(202, b'{"ok":true}')
+        with self.env(DAFEIYU_QQ_INBOUND_TOKEN="token"), patch(
+            "urllib.request.urlopen", side_effect=fake_urlopen
+        ):
+            result = self.dispatch(event)
+
+        self.assertEqual(result, {"action": "skip", "reason": "qqbot-not-mentioned"})
+        self.assertEqual(calls, [])
+        self.assertEqual(self.adapter.sent, [])
+
+    def test_plain_chat_without_bot_mention_is_silent(self) -> None:
+        event = self.make_event(text="我卡了吗", raw_content="我卡了吗")
+        with self.env(DAFEIYU_QQ_INBOUND_TOKEN="token"):
+            result = self.dispatch(event)
+
+        self.assertEqual(result, {"action": "skip", "reason": "qqbot-not-mentioned"})
+        self.assertEqual(self.adapter.sent, [])
+
+    def test_legacy_event_without_raw_content_is_accepted(self) -> None:
+        event = self.make_event(include_raw_content=False)
+        fake_urlopen, calls = self.fake_urlopen(202, b'{"ok":true}')
+        with self.env(DAFEIYU_QQ_INBOUND_TOKEN="token"), patch(
+            "urllib.request.urlopen", side_effect=fake_urlopen
+        ):
+            result = self.dispatch(event)
+
+        self.assertEqual(result, {"action": "skip", "reason": "qqbot-submission"})
+        self.assertEqual(len(calls), 1)
+
+    def test_group_at_event_type_is_accepted_without_content_prefix(self) -> None:
+        event = self.make_event(
+            raw_content="投稿 标题 deepseek",
+            event_type="GROUP_AT_MESSAGE_CREATE",
+        )
+        fake_urlopen, calls = self.fake_urlopen(202, b'{"ok":true}')
+        with self.env(DAFEIYU_QQ_INBOUND_TOKEN="token"), patch(
+            "urllib.request.urlopen", side_effect=fake_urlopen
+        ):
+            result = self.dispatch(event)
+
+        self.assertEqual(result, {"action": "skip", "reason": "qqbot-submission"})
+        self.assertEqual(len(calls), 1)
+
+    def test_mentions_is_you_is_accepted_without_content_prefix(self) -> None:
+        event = self.make_event(
+            raw_content="投稿 标题 deepseek",
+            raw_message_extra={"mentions": [{"is_you": True}]},
+        )
+        fake_urlopen, calls = self.fake_urlopen(202, b'{"ok":true}')
+        with self.env(DAFEIYU_QQ_INBOUND_TOKEN="token"), patch(
+            "urllib.request.urlopen", side_effect=fake_urlopen
+        ):
+            result = self.dispatch(event)
+
+        self.assertEqual(result, {"action": "skip", "reason": "qqbot-submission"})
+        self.assertEqual(len(calls), 1)
+
+    def test_configured_bot_openid_ignores_other_mention(self) -> None:
+        event = self.make_event(
+            text="投稿 标题 deepseek",
+            raw_content="<@OTHER_OPENID>  投稿 标题 deepseek",
+        )
+        fake_urlopen, calls = self.fake_urlopen(202, b'{"ok":true}')
+        with self.env(
+            DAFEIYU_QQ_BOT_OPENID=self.bot_openid,
+            DAFEIYU_QQ_INBOUND_TOKEN="token",
+        ), patch("urllib.request.urlopen", side_effect=fake_urlopen):
+            result = self.dispatch(event)
+
+        self.assertEqual(result, {"action": "skip", "reason": "qqbot-not-mentioned"})
+        self.assertEqual(calls, [])
+        self.assertEqual(self.adapter.sent, [])
+
+    def test_bot_mention_and_character_suffix_submission_succeeds(self) -> None:
+        event = self.make_event(
+            text="投稿 不给饭就捣乱 deepseek娘",
+            raw_content=(
+                f"<@{self.bot_openid}>  投稿 不给饭就捣乱 deepseek娘"
+            ),
+        )
+        fake_urlopen, calls = self.fake_urlopen(202, b'{"ok":true}')
+        with self.env(
+            DAFEIYU_QQ_BOT_OPENID=self.bot_openid,
+            DAFEIYU_QQ_INBOUND_TOKEN="token",
+        ), patch("urllib.request.urlopen", side_effect=fake_urlopen):
+            result = self.dispatch(event)
+
+        self.assertEqual(result, {"action": "skip", "reason": "qqbot-submission"})
+        self.assertEqual(len(calls), 1)
+        payload = json.loads(calls[0]["request"].data.decode("utf-8"))
+        self.assertEqual(payload["name"], "不给饭就捣乱")
+        self.assertEqual(payload["character"], "deepseek")
 
     def test_command_prefix_without_boundary_is_silent(self) -> None:
         event = self.make_event(text="投稿xxx")
