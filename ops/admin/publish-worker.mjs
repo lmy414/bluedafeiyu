@@ -578,9 +578,9 @@ function stagedAndCommit(cfg, exec, repoKey, changes, message) {
   for (const item of changes) {
     assertSafeRelative(item.path, `${repoKey} 提交路径`);
     if (item.deleted) {
-      gitCmd(exec, dir, ['rm', '--cached', '--ignore-unmatch', '--', item.path]);
+      gitCmd(exec, dir, ['rm', '--cached', '--sparse', '--ignore-unmatch', '--', item.path]);
     } else {
-      gitCmd(exec, dir, ['add', '--', item.path]);
+      gitCmd(exec, dir, ['add', '--sparse', '--', item.path]);
     }
   }
   const staged = (gitCmd(exec, dir, ['diff', '--cached', '--name-only']).stdout || '').trim();
@@ -731,6 +731,16 @@ export async function processPublishRequest({ request, env = process.env, deps =
     step = 'delete';
     journal.step = step;
     const deleted = deleteContentPaths(cfg, snapshot.deletions);
+    for (const rel of deleted.missing) {
+      let tracked = false;
+      try {
+        gitCmd(exec, cfg.contentDir, ['ls-files', '--error-unmatch', '--', rel]);
+        tracked = true;
+      } catch {
+        // 未跟踪且未检出的路径无需进入本次提交。
+      }
+      if (tracked) gitCmd(exec, cfg.contentDir, ['rm', '--cached', '--sparse', '--ignore-unmatch', '--', rel]);
+    }
     if (deleted.removed.length) logLine(log, `删除内容文件：${deleted.removed.join(', ')}`);
 
     step = 'write-site';
@@ -804,6 +814,14 @@ export async function processPublishRequest({ request, env = process.env, deps =
     step = 'push';
     journal.step = step;
     pushRepo(contentCfg, exec, 'content');
+    try {
+      const sparse = exec('git', ['-C', cfg.contentDir, 'config', '--get', 'core.sparseCheckout'], {});
+      if (sparse?.status === 0 && String(sparse.stdout || '').trim() === 'true') {
+        gitCmd(exec, cfg.contentDir, ['sparse-checkout', 'reapply']);
+      }
+    } catch (error) {
+      logLine(log, `警告：内容仓稀疏检出重应用失败（不影响发布）：${errorMessage(error)}`);
+    }
     pushRepo(siteCfg, exec, 'site');
     journal.pushed = true;
 

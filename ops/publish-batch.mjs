@@ -258,10 +258,6 @@ export function resolvePublishConfig({ env = process.env, argv = [], overrides =
   if (!fs.existsSync(path.join(siteDataDir, 'works.json'))) throw new Error(`站点仓里找不到 data/works.json：${siteDataDir}`);
   if (!fs.existsSync(path.join(siteDataDir, 'characters.json'))) throw new Error(`站点仓里找不到 data/characters.json：${siteDataDir}`);
   if (!fs.existsSync(path.join(siteDataDir, 'categories.json'))) throw new Error(`站点仓里找不到 data/categories.json：${siteDataDir}`);
-  if (!fs.existsSync(path.join(contentDir, 'dist', 'submissions', 'originals'))) {
-    throw new Error(`内容仓里找不到原图目录：${path.join(contentDir, 'dist', 'submissions', 'originals')}`);
-  }
-
   const auto = parseBool(env.AUTO_PUBLISH_ENABLED, false);
   let dryRun = true;
   if (args.live) {

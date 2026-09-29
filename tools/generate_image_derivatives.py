@@ -235,20 +235,12 @@ def generate_submissions(force: bool = False) -> tuple[int, int, int]:
         if not isinstance(record, dict):
             raise ValueError("submission manifest contains a non-object record")
         source = submission_source(record)
-        if not source.is_file():
-            raise FileNotFoundError(f"source image not found: {source}")
-
         character = str(record["characterId"])
         stem = source.stem
         thumbnail = SUBMISSIONS_PREVIEWS / character / f"{stem}{WEBP_SUFFIX}"
         display = SUBMISSIONS_LARGE / character / f"{stem}{WEBP_SUFFIX}"
 
-        thumb_size = write_derivative(source, thumbnail, THUMBNAIL_EDGE, THUMBNAIL_QUALITY) \
-            if force or not fresh(thumbnail) else None
-        display_size = write_derivative(source, display, DISPLAY_EDGE, DISPLAY_QUALITY) \
-            if force or not fresh(display) else None
-
-        if thumb_size is None or display_size is None:
+        if not force and fresh(thumbnail) and fresh(display):
             # Already generated: read the real state back so the report and the
             # manifest never depend on what this run decided to skip.
             with Image.open(thumbnail) as probe:
@@ -256,7 +248,22 @@ def generate_submissions(force: bool = False) -> tuple[int, int, int]:
             with Image.open(display) as probe:
                 display_size = (probe.width, probe.height, bool(getattr(probe, "is_animated", False)))
         else:
-            written += 2
+            if not source.is_file():
+                raise FileNotFoundError(f"source image not found: {source}")
+            thumb_size = write_derivative(source, thumbnail, THUMBNAIL_EDGE, THUMBNAIL_QUALITY) \
+                if force or not fresh(thumbnail) else None
+            display_size = write_derivative(source, display, DISPLAY_EDGE, DISPLAY_QUALITY) \
+                if force or not fresh(display) else None
+            if thumb_size is None:
+                with Image.open(thumbnail) as probe:
+                    thumb_size = (probe.width, probe.height, bool(getattr(probe, "is_animated", False)))
+            else:
+                written += 1
+            if display_size is None:
+                with Image.open(display) as probe:
+                    display_size = (probe.width, probe.height, bool(getattr(probe, "is_animated", False)))
+            else:
+                written += 1
         if thumb_size[2] != display_size[2]:
             raise ValueError(f"animation mismatch for {source}")
 
@@ -380,12 +387,6 @@ def main() -> None:
     if args.content_dir:
         configure_paths(Path(args.content_dir))
 
-    if not (DIST / "submissions" / "originals").is_dir():
-        sys.exit(
-            f"[derivatives] 在内容仓库里找不到原图目录：{SUBMISSIONS_ORIGINALS}\n"
-            f"  用 --content-dir <内容仓库根目录> 或 CONTENT_DIR 指定内容仓库；\n"
-            f"  当前解析到的内容仓库根：{CONTENT_ROOT}"
-        )
     if not SUBMISSIONS_MANIFEST.is_file():
         sys.exit(f"[derivatives] 在本仓库 data/ 里找不到投稿清单：{SUBMISSIONS_MANIFEST}")
 

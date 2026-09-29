@@ -333,7 +333,7 @@ async function runOriginalPublish(t, { runId, submissionId, workId, rawStatus = 
     notifier,
     runIssueReconcile: () => {},
   }));
-  return { result, state, targetPath };
+  return { result, state, targetPath, ws, exec };
 }
 
 test('发布成功后通知飞书', async (t) => {
@@ -346,6 +346,7 @@ test('发布成功后通知飞书', async (t) => {
     notifier: { published: async (payload) => { published.push(payload); throw new Error('notify down'); } },
   });
   assert.equal(fixture.result.code, 0, fixture.result.err);
+  assert.ok(fixture.exec.calls.some(({ cmd, args }) => cmd === 'git' && args.includes('add') && args.includes('--sparse') && args.at(-1) === fixture.targetPath));
   assert.match(fixture.result.err, /发布结果通知失败.*notify down/);
   assert.deepEqual(published, [{
     ok: true,
@@ -543,6 +544,39 @@ test('删除路径：只删除允许前缀下的内容文件并提交', async (t
   assert.equal(JSON.parse(result.out).status, 'succeeded');
   assert.equal(fs.existsSync(path.join(ws.content, ...rel.split('/'))), false);
   assert.match(runGit(ws.content, ['log', '-1', '--pretty=%s']), /删除 1/);
+  assert.equal(state.statuses.at(-1).status, 'succeeded');
+});
+
+test('稀疏检出下：缺失但已跟踪的删除进入提交并在推送后 reapply', async (t) => {
+  const runId = 'run-delete-sparse';
+  const rel = 'dist/submissions/originals/deepseek/old.png';
+  const ws = await makeWorkspace(t, { contentFiles: { [rel]: 'old image\n' } });
+  runGit(ws.content, ['sparse-checkout', 'init', '--no-cone']);
+  runGit(ws.content, ['sparse-checkout', 'set', '--no-cone', '/*', '!/dist/submissions/originals/']);
+  assert.equal(runGit(ws.content, ['status', '--porcelain']).trim(), '');
+  assert.equal(runGit(ws.content, ['ls-files', '--error-unmatch', '--', rel]).trim(), rel);
+  assert.equal(fs.existsSync(path.join(ws.content, ...rel.split('/'))), false);
+  const snapshot = snapshotFrom(ws, runId, {
+    deletions: [{ workId: 'old', kind: 'submission', contentPaths: [rel] }],
+    summary: { added: 0, updated: 0, hidden: 0, restored: 0, deleted: 1, topics: 0 },
+  });
+  const state = { statuses: [], snapshot };
+  const backend = await startBackend(t, state);
+  const submission = await startSubmissionService(t, state);
+  const exec = makeFakeExec(state);
+  writeRequest(ws, runId);
+
+  const result = await capture(() => main(['--run', runId], {
+    env: envFor(ws, backend, { submissionServiceUrl: submission.url }),
+    exec,
+    fetchImpl: makePublishFetch(state), runIssueReconcile: () => {},
+  }));
+  assert.equal(result.code, 0, result.err);
+  assert.equal(JSON.parse(result.out).status, 'succeeded');
+  assert.ok(exec.calls.some(({ cmd, args }) => cmd === 'git' && args.includes('rm') && args.includes('--cached') && args.includes('--sparse') && args.includes('--ignore-unmatch') && args.at(-1) === rel));
+  assert.ok(exec.calls.some(({ cmd, args }) => cmd === 'git' && args.includes('sparse-checkout') && args.includes('reapply')));
+  assert.equal(runGit(ws.content, ['ls-tree', '-r', '--name-only', 'HEAD']).split('\n').includes(rel), false);
+  assert.equal(runGit(ws.content, ['status', '--porcelain']).trim(), '');
   assert.equal(state.statuses.at(-1).status, 'succeeded');
 });
 
