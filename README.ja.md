@@ -51,6 +51,105 @@ UI は中国語、英語、日本語に対応しています。
 
 このリポジトリでページを生成し、画像アーカイブで画像を保存します。ここでは画像ファイルを管理しません。ビルド時に画像アーカイブから同期します。
 
+## システム構成
+
+以下の 3 つの図はコンポーネントと処理の流れだけを示し、本番ホスト、ポート、秘密情報は含みません。
+
+### サイト構成
+
+```mermaid
+flowchart LR
+  subgraph 訪問者
+    V[ブラウザ]
+    Q[QQ 投稿グループ]
+    G[GitHub Issue フォーム]
+  end
+  subgraph エッジ
+    CF[Cloudflare CDN<br/>Turnstile]
+  end
+  subgraph サーバー
+    NG[Nginx]
+    ST[静的サイト<br/>Astro ビルド成果物]
+    SUB[統合投稿サービス<br/>server/]
+    ADM[管理画面<br/>Payload CMS]
+    PUB[公開ワーカー<br/>ops/admin/]
+    HM[Hermes Agent<br/>AI 審査・定期実行・QQ プラグイン]
+  end
+  subgraph GitHub
+    SR[(サイトリポジトリ<br/>bluedafeiyu)]
+    CR[(画像リポジトリ<br/>ai-girl-stickers)]
+  end
+  FS[Feishu グループ通知]
+
+  V --> CF --> NG
+  NG --> ST
+  NG -->|"/api 投稿"| SUB
+  NG -->|"管理画面"| ADM
+  Q --> HM -->|"QQ 受信"| SUB
+  G -.->|定期的に添付を取得| SUB
+  HM -->|"審査結果を書き戻し"| SUB
+  SUB -->|"公開待ちへ同期"| ADM
+  ADM -->|"公開リクエスト"| PUB
+  PUB -->|"マニフェストをコミット"| SR
+  PUB -->|"原画像と派生画像をコミット"| CR
+  PUB -->|"ビルドとデプロイ"| ST
+  V -.->|原画像のダウンロード| CR
+  SUB & PUB & HM --> FS
+```
+
+### データ処理の流れ
+
+```mermaid
+flowchart TD
+  A1[サイト<br/>Turnstile + IP ごとに 1 時間 10 回] --> C
+  A2[QQ グループ<br/>@ボット + 1 時間 10 枚] --> C
+  A3[GitHub Issue<br/>ラベル絞り込み + 添付の許可リスト] --> C
+  C[sha256 で重複排除してキューへ<br/>状態 received] --> D[Hermes AI 審査]
+  D -->|"通過"| E[auto_passed<br/>名前・タグ・分類・本文を生成]
+  D -->|"却下"| F[auto_rejected<br/>理由を記録]
+  D -->|"判断保留"| M[needs_manual]
+  M --> H[管理画面で手動審査]
+  F --> H
+  E --> I[管理画面の公開待ち]
+  H -->|"手動で収録"| I
+  I --> J[公開ワーカー]
+  J --> K[原画像の書き込み・派生画像の生成・works.json の更新]
+  K --> L[ビルド検証 → 両リポジトリへ push → デプロイ]
+  L --> N[サーバー上の原画像を解放<br/>ダウンロードは GitHub Raw へ]
+  L --> O[公開結果の通知]
+```
+
+### 同期の流れ
+
+```mermaid
+sequenceDiagram
+  autonumber
+  participant GH as GitHub Issue
+  participant HM as Hermes 定期実行
+  participant SUB as 投稿サービス
+  participant ADM as 管理画面
+  participant PUB as 公開ワーカー
+  participant REPO as サイト / 画像リポジトリ
+  participant FS as Feishu グループ
+
+  HM->>SUB: 1 日 3 回 Issue の添付を取得
+  SUB-->>FS: 投稿を受信
+  loop 5 分ごと
+    HM->>SUB: 審査待ちを取得して審査結果を書き戻し
+    SUB-->>FS: 審査結果
+    HM->>ADM: 投稿を公開待ちへ同期
+    HM->>GH: 照合：公開済み → 作品リンクを返信して閉じる<br/>却下 → 理由（AI / 手動審査）を書いて閉じる
+    HM-->>FS: Issue に返信して閉じた
+  end
+  loop 6 時間ごと
+    HM->>ADM: 同期してから公開計画を取得
+    ADM->>PUB: 変更があれば公開を開始
+    PUB->>REPO: コミット・push・ビルド・デプロイ
+    PUB->>SUB: push 済みの原画像を解放
+    PUB-->>FS: 公開成功 / 失敗
+  end
+  ADM->>GH: 管理画面から素早く返信して閉じる（オーナーが手動）
+```
 ## ディレクトリ構成
 
 | パス | 内容 |

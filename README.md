@@ -51,6 +51,105 @@
 
 站点仓负责生成页面，图片仓负责保存位图。本仓库不跟踪图片文件，线上资源由构建流程从图片仓同步。
 
+## 系统架构
+
+以下三张图只描述组件关系和流程，不包含线上主机、端口、密钥等部署细节。
+
+### 站点架构
+
+```mermaid
+flowchart LR
+  subgraph 访客
+    V[浏览器]
+    Q[QQ 投稿群]
+    G[GitHub Issue 表单]
+  end
+  subgraph 边缘
+    CF[Cloudflare CDN<br/>Turnstile 人机验证]
+  end
+  subgraph 服务器
+    NG[Nginx]
+    ST[静态站点<br/>Astro 构建产物]
+    SUB[统一投稿服务<br/>server/]
+    ADM[后台<br/>Payload CMS]
+    PUB[发布执行器<br/>ops/admin/]
+    HM[Hermes Agent<br/>AI 审核 · 定时任务 · QQ 插件]
+  end
+  subgraph GitHub
+    SR[(站点仓<br/>bluedafeiyu)]
+    CR[(图片仓<br/>ai-girl-stickers)]
+  end
+  FS[飞书群通知]
+
+  V --> CF --> NG
+  NG --> ST
+  NG -->|"/api 投稿"| SUB
+  NG -->|"后台"| ADM
+  Q --> HM -->|"QQ 入站"| SUB
+  G -.->|定时拉取附件| SUB
+  HM -->|"审核结果回写"| SUB
+  SUB -->|"同步待发布"| ADM
+  ADM -->|"发布请求"| PUB
+  PUB -->|"提交清单"| SR
+  PUB -->|"提交原图与派生图"| CR
+  PUB -->|"构建部署"| ST
+  V -.->|原图下载| CR
+  SUB & PUB & HM --> FS
+```
+
+### 数据处理流程
+
+```mermaid
+flowchart TD
+  A1[站内投稿<br/>Turnstile + 每 IP 每小时 10 次] --> C
+  A2[QQ 群投稿<br/>@机器人 + 每小时 10 张] --> C
+  A3[GitHub Issue<br/>标签过滤 + 附件白名单] --> C
+  C[按 sha256 去重入队<br/>状态 received] --> D[Hermes AI 审核]
+  D -->|"通过"| E[auto_passed<br/>生成名称 · 标签 · 分类 · 正文]
+  D -->|"拒绝"| F[auto_rejected<br/>记录理由]
+  D -->|"不确定"| M[needs_manual]
+  M --> H[后台人工复核]
+  F --> H
+  E --> I[后台待发布]
+  H -->|"人工收录"| I
+  I --> J[发布执行器]
+  J --> K[写原图 · 生成派生图 · 更新 works.json]
+  K --> L[构建校验 → 推送两仓 → 部署]
+  L --> N[释放服务器原图<br/>下载改走 GitHub Raw]
+  L --> O[上线结果通知]
+```
+
+### 同步流程
+
+```mermaid
+sequenceDiagram
+  autonumber
+  participant GH as GitHub Issue
+  participant HM as Hermes 定时任务
+  participant SUB as 投稿服务
+  participant ADM as 后台
+  participant PUB as 发布执行器
+  participant REPO as 站点仓 / 图片仓
+  participant FS as 飞书群
+
+  HM->>SUB: 每天 3 次拉取 Issue 附件
+  SUB-->>FS: 收到投稿
+  loop 每 5 分钟
+    HM->>SUB: 取待审条目并回写审核结果
+    SUB-->>FS: 审核结果
+    HM->>ADM: 同步投稿到待发布
+    HM->>GH: 对账：已上线 → 回复作品链接并关闭<br/>未通过 → 写明理由（AI / 人工审核）并关闭
+    HM-->>FS: Issue 已回复并关闭
+  end
+  loop 每 6 小时
+    HM->>ADM: 同步后读取发布计划
+    ADM->>PUB: 有变更则发起发布
+    PUB->>REPO: 提交并推送，构建部署
+    PUB->>SUB: 释放已推送的原图
+    PUB-->>FS: 上线成功 / 失败
+  end
+  ADM->>GH: 后台快捷回复并关闭 Issue（站长手动）
+```
 ## 仓库结构
 
 | 路径 | 内容 |

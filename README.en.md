@@ -51,6 +51,105 @@ The interface supports Chinese, English and Japanese.
 
 This repository builds the pages. The image archive stores binary assets. No image files are tracked here; the build process syncs them from the archive repository.
 
+## Architecture
+
+The three diagrams below describe components and flows only. They contain no production hosts, ports, or secrets.
+
+### Site architecture
+
+```mermaid
+flowchart LR
+  subgraph Visitors
+    V[Browser]
+    Q[QQ submission group]
+    G[GitHub Issue form]
+  end
+  subgraph Edge
+    CF[Cloudflare CDN<br/>Turnstile]
+  end
+  subgraph Server
+    NG[Nginx]
+    ST[Static site<br/>Astro build]
+    SUB[Unified submission service<br/>server/]
+    ADM[Admin<br/>Payload CMS]
+    PUB[Publish worker<br/>ops/admin/]
+    HM[Hermes Agent<br/>AI review · schedules · QQ plugin]
+  end
+  subgraph GitHub
+    SR[(Site repo<br/>bluedafeiyu)]
+    CR[(Image repo<br/>ai-girl-stickers)]
+  end
+  FS[Feishu group notifications]
+
+  V --> CF --> NG
+  NG --> ST
+  NG -->|"/api submissions"| SUB
+  NG -->|"admin"| ADM
+  Q --> HM -->|"QQ inbound"| SUB
+  G -.->|scheduled attachment pull| SUB
+  HM -->|"review results"| SUB
+  SUB -->|"sync to publish queue"| ADM
+  ADM -->|"publish request"| PUB
+  PUB -->|"commit manifests"| SR
+  PUB -->|"commit originals and derivatives"| CR
+  PUB -->|"build and deploy"| ST
+  V -.->|original downloads| CR
+  SUB & PUB & HM --> FS
+```
+
+### Data processing
+
+```mermaid
+flowchart TD
+  A1[Website<br/>Turnstile + 10 per IP per hour] --> C
+  A2[QQ group<br/>@bot + 10 images per hour] --> C
+  A3[GitHub Issue<br/>label filter + attachment allowlist] --> C
+  C[Deduplicate by sha256<br/>state received] --> D[Hermes AI review]
+  D -->|"pass"| E[auto_passed<br/>name · tags · categories · commentary]
+  D -->|"reject"| F[auto_rejected<br/>reason recorded]
+  D -->|"unsure"| M[needs_manual]
+  M --> H[Manual review in admin]
+  F --> H
+  E --> I[Admin publish queue]
+  H -->|"manual include"| I
+  I --> J[Publish worker]
+  J --> K[Write originals · generate derivatives · update works.json]
+  K --> L[Build check → push both repos → deploy]
+  L --> N[Release server originals<br/>downloads served by GitHub Raw]
+  L --> O[Publish result notification]
+```
+
+### Synchronization
+
+```mermaid
+sequenceDiagram
+  autonumber
+  participant GH as GitHub Issue
+  participant HM as Hermes schedules
+  participant SUB as Submission service
+  participant ADM as Admin
+  participant PUB as Publish worker
+  participant REPO as Site / image repos
+  participant FS as Feishu group
+
+  HM->>SUB: Pull Issue attachments 3 times a day
+  SUB-->>FS: Submission received
+  loop Every 5 minutes
+    HM->>SUB: Fetch pending items and write review results
+    SUB-->>FS: Review result
+    HM->>ADM: Sync submissions to the publish queue
+    HM->>GH: Reconcile: published → reply with links and close<br/>rejected → state the reason (AI / manual review) and close
+    HM-->>FS: Issue replied and closed
+  end
+  loop Every 6 hours
+    HM->>ADM: Sync, then read the publish plan
+    ADM->>PUB: Start a publish run if there are changes
+    PUB->>REPO: Commit, push, build and deploy
+    PUB->>SUB: Release pushed originals
+    PUB-->>FS: Publish succeeded / failed
+  end
+  ADM->>GH: Quick reply and close from the admin (owner, manual)
+```
 ## Repository Layout
 
 | Path | Contents |
