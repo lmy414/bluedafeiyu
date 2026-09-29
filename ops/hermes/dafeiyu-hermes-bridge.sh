@@ -11,13 +11,12 @@ if [[ "$#" -ne 1 ]]; then
 fi
 
 sync_admin() {
-  local wait_flag="$1"
   (
     set -a
     . /etc/dafeiyu/admin-bot.env
     set +a
     export ADMIN_API_URL=http://127.0.0.1:3100
-    exec /usr/bin/flock "$wait_flag" /run/lock/dafeiyu-admin-sync.lock \
+    exec /usr/bin/flock "$@" /run/lock/dafeiyu-admin-sync.lock \
       /usr/sbin/runuser -u dafeiyu-admin --preserve-environment -- \
       /usr/bin/node /srv/apps/dafeiyu-admin/src/ops/admin/hermes-publish.mjs --sync-only
   )
