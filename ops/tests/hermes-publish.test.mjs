@@ -107,3 +107,21 @@ test('--sync-first：先同步投稿再读发布计划', async (t) => {
   assert.equal(backend.calls[0].path, '/cms-api/submissions/sync');
   assert.equal(backend.calls[0].body.constructor, Object);
 });
+
+test('--sync-only：只同步，stdout 为空', async (t) => {
+  const backend = await startBackend(t, { syncStatus: 200 });
+  const result = await capture((io) => main(['--sync-only'], { env: envFor(backend), stdout: io.stdout, stderr: io.stderr }));
+  assert.equal(result.code, 0, result.err);
+  assert.equal(result.out, '');
+  assert.deepEqual(backend.calls.map((call) => call.path), ['/cms-api/submissions/sync']);
+  assert.equal(backend.calls[0].body.constructor, Object);
+});
+
+test('--sync-only：同步失败退出 1 且 stdout 为空', async (t) => {
+  const backend = await startBackend(t, { syncStatus: 500 });
+  const result = await capture((io) => main(['--sync-only'], { env: envFor(backend), stdout: io.stdout, stderr: io.stderr }));
+  assert.equal(result.code, 1);
+  assert.equal(result.out, '');
+  assert.match(result.err, /同步投稿/);
+  assert.deepEqual(backend.calls.map((call) => call.path), ['/cms-api/submissions/sync']);
+});

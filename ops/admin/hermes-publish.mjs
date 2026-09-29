@@ -10,9 +10,10 @@ import { pathToFileURL } from 'node:url';
 export const DEFAULT_API_URL = 'http://127.0.0.1:3100';
 
 function parseArgs(argv = []) {
-  const args = { syncFirst: false, help: false };
+  const args = { syncFirst: false, syncOnly: false, help: false };
   for (const arg of argv) {
     if (arg === '--sync-first') { args.syncFirst = true; continue; }
+    if (arg === '--sync-only') { args.syncOnly = true; continue; }
     if (arg === '--help' || arg === '-h') { args.help = true; continue; }
     throw new Error(`无法识别的参数：${arg}`);
   }
@@ -181,6 +182,14 @@ async function pollRun(cfg, runId, fetchImpl, deps = {}) {
   throw new Error('发布结果轮询超时');
 }
 
+async function syncSubmissions(cfg, fetchImpl) {
+  const sync = await apiRequest(cfg, '/cms-api/submissions/sync', { method: 'POST', body: JSON.stringify({}) }, fetchImpl);
+  if (!sync.response.ok) {
+    const detail = typeof sync.data === 'object' && sync.data ? (sync.data.error || sync.data.message || '') : sync.data;
+    throw new Error(`后台同步投稿 HTTP ${sync.response.status}${detail ? `：${detail}` : ''}`);
+  }
+}
+
 async function requestPublish(cfg, fetchImpl) {
   const { response, data, url } = await apiRequest(cfg, '/cms-api/publish/request', {
     method: 'POST',
@@ -203,19 +212,17 @@ export async function main(argv = process.argv.slice(2), deps = {}) {
   const stderr = deps.stderr || process.stderr;
   const args = parseArgs(argv);
   if (args.help) {
-    stdout.write('用法：node ops/admin/hermes-publish.mjs [--sync-first]\n');
+    stdout.write('用法：node ops/admin/hermes-publish.mjs [--sync-first] [--sync-only]\n');
     return 0;
   }
   const cfg = resolveHermesPublishConfig(env);
   const fetchImpl = deps.fetchImpl || globalThis.fetch;
   try {
-    if (args.syncFirst) {
-      const sync = await apiRequest(cfg, '/cms-api/submissions/sync', { method: 'POST', body: JSON.stringify({}) }, fetchImpl);
-      if (!sync.response.ok) {
-        const detail = typeof sync.data === 'object' && sync.data ? (sync.data.error || sync.data.message || '') : sync.data;
-        throw new Error(`后台同步投稿 HTTP ${sync.response.status}${detail ? `：${detail}` : ''}`);
-      }
+    if (args.syncOnly) {
+      await syncSubmissions(cfg, fetchImpl);
+      return 0;
     }
+    if (args.syncFirst) await syncSubmissions(cfg, fetchImpl);
     const plan = await getJson(cfg, '/cms-api/publish/plan', fetchImpl);
     if (!planHasChanges(plan)) return 0;
     const requested = await requestPublish(cfg, fetchImpl);

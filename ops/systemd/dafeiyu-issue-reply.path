@@ -1,0 +1,9 @@
+[Unit]
+Description=蓝色大肥鱼后台 Issue 快捷回复请求监听
+
+[Path]
+PathExistsGlob=/srv/apps/dafeiyu-admin/run/issue-replies/*.json
+Unit=dafeiyu-issue-reply.service
+
+[Install]
+WantedBy=paths.target

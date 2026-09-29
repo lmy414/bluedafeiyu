@@ -1,0 +1,15 @@
+[Unit]
+Description=蓝色大肥鱼后台 Issue 快捷回复执行器
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=root
+EnvironmentFile=/etc/dafeiyu/admin-publish.env
+EnvironmentFile=-/etc/dafeiyu-submission.env
+WorkingDirectory=/srv/apps/dafeiyu/source
+ExecStart=/usr/bin/node /srv/apps/dafeiyu/source/ops/issue-reconcile.mjs --replies /srv/apps/dafeiyu-admin/run/issue-replies
+
+[Install]
+WantedBy=multi-user.target
