@@ -11,7 +11,8 @@ QQ、网站与 GitHub 投稿统一入队，由 Hermes 定时审核并通过内�
 
 以下内容**只允许留在内地服务器的私有存储根**，绝不进任何公开仓、不进发布产物：
 
-- 待审图片字节；
+- 待审及待发布原图；发布器推送到 GitHub 内容仓后调用释放接口删除，原图下载改由 GitHub Raw 提供；
+- 超过 14 天仍未释放的原图由定时任务清理；原图释放后仍保留 sha256 / 扩展名 / 尺寸等元数据；
 - AI 原始返回结果；
 - 队列数据库（本实现是磁盘 JSON，不是外部数据库）；
 - 密钥（只走环境变量注入）；
@@ -93,6 +94,8 @@ node server/cli.mjs enqueue ./test.png --name "作品名" --character deepseek
 node server/cli.mjs list
 node server/cli.mjs review --all
 node server/cli.mjs approve sub_xxxx --reason "看图确认"
+node server/cli.mjs prune-originals
+node server/cli.mjs prune-originals --days 14 --apply --json
 ```
 
 测试（Node 内置 `node:test`，全部注入假 fetch，不外呼，测试根在系统临时目录）：
@@ -135,7 +138,8 @@ received ──review.start──▶ reviewing ──review.pass──▶ auto_p
 | `GET` | `/api/v1/health` `/api/v1/stats` | 脱敏摘要与计数 |
 | `GET` | `/api/v1/items?state=&source=&limit=` | 列表 |
 | `GET` | `/api/v1/items/<id>` | 条目详情 |
-| `GET` | `/api/v1/items/<id>/raw` | 原图（附件下载、`nosniff`） |
+| `GET` | `/api/v1/items/<id>/raw` | 原图（附件下载、`nosniff`）；已释放返回 410 |
+| `POST` | `/api/v1/items/<id>/release-original` | 删除私有原图并记录 `{reason,rawUrl}`；重复调用幂等 |
 | `GET`/`POST` | `/api/v1/items/<id>/review` | 读取原始 AI 结果 / 触发一次审核 |
 | `POST` | `/api/v1/items/<id>/decision` | `{decision:"approved"|"rejected","reason":...}` |
 | `POST` | `/api/v1/review` | 批量审核 `{ids:[...]}` 或待审队列 |

@@ -104,14 +104,14 @@ export function ReviewView() {
     setSelected((current) => (current.includes(id) ? current.filter((value) => value !== id) : [...current, id]))
   }
 
-  async function bulk(action: 'hide' | 'include' | 'remove') {
+  async function bulk(action: 'hide' | 'remove') {
     if (!selected.length) return
     setMessage('正在处理…')
     try {
       await mutate('/works/bulk', 'POST', { action, ids: selected })
       setSelected([])
       await load()
-      setMessage(action === 'include' ? '已收录为待发布作品。' : action === 'hide' ? '已隐藏，下一次发布会生效。' : '已移除，未发布作品不会进入公开清单。')
+      setMessage(action === 'hide' ? '已隐藏，下一次发布会生效。' : '已移除，未发布作品不会进入公开清单。')
     } catch (error) {
       setMessage(error instanceof Error ? error.message : '批量操作失败')
     }
@@ -119,7 +119,7 @@ export function ReviewView() {
 
   return (
     <Gutter className="s3-admin-page">
-      <PageHeader description="AI 通过后直接进入待发布；此处用于快速复核、修正和移除。" title="投稿审核" />
+      <PageHeader description="AI 通过后直接进入待发布；拒绝或转人工条目须在详情中逐条人工复核收录，不能批量纳入。" title="投稿审核" />
       <div className="s3-tab-row">
         {CHANNEL_TABS.map((tab) => (
           <button className={channel === tab.value ? 's3-tab s3-tab--active' : 's3-tab'} key={tab.value} onClick={() => setChannel(tab.value)} type="button">
@@ -156,10 +156,6 @@ export function ReviewView() {
             : []
           return (
             <article className="s3-card" key={String(submission.id)}>
-              <label className="s3-select">
-                <input checked={selected.includes(submission.submissionId)} onChange={() => toggle(submission.submissionId)} type="checkbox" />
-                <span>选择</span>
-              </label>
               <button className="s3-card-main" onClick={() => setActiveSubmission(submission)} type="button">
                 <div className="s3-card-image">
                   {image ? <img alt={submission.title} loading="lazy" src={image} /> : <span>暂无预览图</span>}
@@ -172,6 +168,7 @@ export function ReviewView() {
                   <p>{String(content.characterId || '未设置角色')}</p>
                   <p className="s3-card-meta">{labelOf(CHANNELS, submission.source)} · {categoryNames.length ? categoryNames.join(' / ') : '未分类'}</p>
                   <p className="s3-card-confidence">AI 置信度：{confidenceText(submission.review?.confidence)}</p>
+                  <p className="s3-card-meta">AI 理由：{String(submission.review?.reason || submission.review?.summary || '未记录')}</p>
                 </div>
               </button>
             </article>
@@ -180,11 +177,12 @@ export function ReviewView() {
       </section>
       <Pagination page={page} setPage={setPage} totalPages={totalPages} />
 
-      <BulkBar count={selected.length}>
-        {mode === 'pending' ? <button className="s3-button s3-button--danger" onClick={() => void bulk('remove')} type="button">批量移除</button> : null}
-        {mode === 'published' ? <button className="s3-button s3-button--warning" onClick={() => void bulk('hide')} type="button">批量隐藏</button> : null}
-        {mode === 'rejected' ? <button className="s3-button s3-button--primary" onClick={() => void bulk('include')} type="button">批量收录</button> : null}
-      </BulkBar>
+      {mode !== 'rejected' ? (
+        <BulkBar count={selected.length}>
+          {mode === 'pending' ? <button className="s3-button s3-button--danger" onClick={() => void bulk('remove')} type="button">批量移除</button> : null}
+          {mode === 'published' ? <button className="s3-button s3-button--warning" onClick={() => void bulk('hide')} type="button">批量隐藏</button> : null}
+        </BulkBar>
+      ) : null}
 
       {activeWork ? (
         <WorkDrawer

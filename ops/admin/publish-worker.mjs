@@ -247,7 +247,7 @@ function validateSnapshot(snapshot, expectedRunId) {
   return { ...snapshot, files: { ...snapshot.files }, originals, deletions, summary: normalizeSummary(snapshot.summary) };
 }
 
-function resolveWorkerConfig(env = process.env) {
+export function resolveWorkerConfig(env = process.env) {
   if (!env.INTAKE_ROOT) throw new Error('必须指定 INTAKE_ROOT');
   const contentDir = env.PUBLISH_CONTENT_DIR || env.CONTENT_DIR;
   const siteDir = env.PUBLISH_SITE_DIR || env.SOURCE_DIR;
@@ -258,6 +258,8 @@ function resolveWorkerConfig(env = process.env) {
     env: { ...env, PUBLISH_SITE_DIR: siteDir, PUBLISH_CONTENT_DIR: contentDir, PUBLISH_BRANCH: baseBranch },
     overrides: { siteDir, contentDir, root: env.INTAKE_ROOT },
   });
+  const originalBaseUrl = String(env.PUBLISH_ORIGINAL_BASE_URL || 'https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main').replace(/\/+$/, '');
+  if (!/^https:\/\/[^\s]+$/.test(originalBaseUrl)) throw new Error(`PUBLISH_ORIGINAL_BASE_URL 必须是 https 地址：${originalBaseUrl}`);
   const apiUrl = String(env.ADMIN_API_URL || 'http://127.0.0.1:3100').replace(/\/+$/, '');
   const token = String(env.ADMIN_WORKER_TOKEN || '');
   if (!token) throw new Error('必须指定 ADMIN_WORKER_TOKEN');
@@ -266,6 +268,7 @@ function resolveWorkerConfig(env = process.env) {
   if (!submissionToken) throw new Error('必须指定 SUBMISSION_ADMIN_TOKEN');
   return {
     ...base,
+    originalBaseUrl,
     apiUrl,
     token,
     submissionApiUrl,
@@ -354,6 +357,43 @@ function submissionRawUrl(cfg, submissionId) {
   const match = target.pathname.match(/^\/api\/v1\/items\/([^/]+)\/raw$/);
   if (!match || !SUBMISSION_ID_RE.test(match[1])) throw new Error(`投稿原图地址不在允许路径内：${target.pathname}`);
   return target.toString();
+}
+
+function submissionReleaseUrl(cfg, submissionId) {
+  if (!SUBMISSION_ID_RE.test(submissionId)) throw new Error(`submissionId 不合法：${submissionId}`);
+  const base = new URL(cfg.submissionApiUrl);
+  const target = new URL(`/api/v1/items/${submissionId}/release-original`, `${cfg.submissionApiUrl}/`);
+  if (target.origin !== base.origin) throw new Error(`投稿释放地址不能跨域：${submissionId}`);
+  const match = target.pathname.match(/^\/api\/v1\/items\/([^/]+)\/release-original$/);
+  if (!match || !SUBMISSION_ID_RE.test(match[1])) throw new Error(`投稿释放地址不在允许路径内：${target.pathname}`);
+  return target.toString();
+}
+
+function originalRawUrl(cfg, targetPath) {
+  return `${cfg.originalBaseUrl}/${String(targetPath).replace(/^\/+/, '')}`;
+}
+
+export async function releasePublishedOriginals(cfg, snapshot, { fetchImpl, log = () => {} } = {}) {
+  for (const item of snapshot.originals) {
+    const rawUrl = originalRawUrl(cfg, item.targetPath);
+    try {
+      const response = await fetchImpl(rawUrl, { method: 'HEAD', signal: timeoutSignal(cfg.httpTimeoutMs) });
+      if (!response.ok) throw new Error(`HEAD ${new URL(rawUrl).pathname} HTTP ${response.status}`);
+    } catch (error) {
+      logLine(log, `警告：原图 Raw 不可访问，跳过释放 ${item.submissionId}：${errorMessage(error)}`);
+      continue;
+    }
+    try {
+      await fetchJson(fetchImpl, submissionReleaseUrl(cfg, item.submissionId), {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${cfg.submissionToken}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ reason: 'published', rawUrl }),
+      }, cfg.httpTimeoutMs);
+      logLine(log, `已通知投稿服务释放原图：${item.submissionId}`);
+    } catch (error) {
+      logLine(log, `警告：通知投稿服务释放原图失败（不影响发布）：${item.submissionId}：${errorMessage(error)}`);
+    }
+  }
 }
 
 function writeIfChanged(file, text) {
@@ -749,6 +789,10 @@ export async function processPublishRequest({ request, env = process.env, deps =
     pushRepo(contentCfg, exec, 'content');
     pushRepo(siteCfg, exec, 'site');
     journal.pushed = true;
+
+    step = 'release';
+    journal.step = step;
+    await releasePublishedOriginals(cfg, snapshot, { fetchImpl, log });
 
     step = 'deploy';
     journal.step = step;

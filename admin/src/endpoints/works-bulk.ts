@@ -5,8 +5,18 @@ import { json, readJsonBody, requireOwnerOrBot } from '../lib/endpoint-auth'
 import { writeAudit } from '../lib/audit'
 import { validateContent } from '../lib/sync-submissions'
 
-const ALLOWED_ACTIONS = ['hide', 'restore', 'remove', 'delete', 'set-categories', 'add-to-topic', 'include'] as const
+const ALLOWED_ACTIONS = ['hide', 'restore', 'remove', 'delete', 'set-categories', 'add-to-topic', 'include', 'manual-include'] as const
 type BulkAction = (typeof ALLOWED_ACTIONS)[number]
+
+type BulkBody = {
+  action?: BulkAction
+  categoryIds?: string[]
+  confirm?: string
+  content?: unknown
+  ids?: string[]
+  submissionId?: string
+  topicId?: string
+}
 
 async function findWorks(req: PayloadRequest, ids: string[]): Promise<any[]> {
   const payload = req.payload as any
@@ -116,16 +126,94 @@ async function includeSubmissions(req: PayloadRequest, ids: string[]): Promise<{
   return { workIds, skipped }
 }
 
-const bulkHandler = async (req: PayloadRequest): Promise<Response> => {
+async function manualInclude(req: PayloadRequest, body: BulkBody): Promise<Response> {
+  const role = (req.user as any)?.role
+  if (role !== 'owner') return json({ ok: false, error: '人工收录仅限站长' }, 403)
+  const submissionId = String(body.submissionId || '').trim()
+  if (!submissionId) return json({ ok: false, error: 'submissionId 不能为空' }, 400)
+  if (body.confirm !== 'MANUAL_INCLUDE') return json({ ok: false, error: '人工收录需要明确确认' }, 400)
+
+  const payload = req.payload as any
+  const submission = await payload.find({
+    collection: 'submissions',
+    where: { or: [{ submissionId: { equals: submissionId } }, ...(/^\d+$/.test(submissionId) ? [{ id: { equals: Number(submissionId) } }] : [])] },
+    limit: 1,
+    depth: 1,
+    overrideAccess: true,
+  })
+  const doc = submission.docs[0]
+  if (!doc) return json({ ok: false, error: `找不到投稿 ${submissionId}` }, 404)
+  if (!['auto_rejected', 'needs_manual'].includes(String(doc.state))) {
+    return json({ ok: false, error: `投稿 ${submissionId} 不是拒绝或转人工状态` }, 400)
+  }
+  if (doc.work) return json({ ok: false, error: `投稿 ${submissionId} 已关联作品` }, 400)
+
+  const vocab = await vocabulary(req)
+  const check = validateContent(body.content, vocab)
+  if (!check.ok) return json({ ok: false, error: `投稿 ${submissionId} 内容不合法：${check.errors.join('；')}` }, 400)
+  if (!doc.sha256) return json({ ok: false, error: `投稿 ${submissionId} 缺 sha256` }, 400)
+  const duplicate = await payload.find({ collection: 'works', where: { sha256: { equals: doc.sha256 } }, limit: 1, depth: 0, overrideAccess: true })
+  if (duplicate.docs[0]) return json({ ok: false, error: `投稿 ${submissionId} 已存在同图作品`, workId: duplicate.docs[0].workId }, 409)
+
+  const character = vocab.characterDocs.find((item: any) => item.characterId === check.value.characterId)
+  const categories = vocab.categoryDocs.filter((item: any) => check.value.categoryIds.includes(item.categoryId))
+  const workId = `sticker_${String(doc.sha256).slice(0, 24)}`
+  const created = await payload.create({
+    collection: 'works',
+    data: {
+      workId,
+      name: check.value.name,
+      description: check.value.description,
+      commentary: check.value.commentary,
+      kind: 'submission',
+      channel: doc.source || 'manual',
+      submissionId: doc.submissionId,
+      sha256: doc.sha256,
+      character: character?.id,
+      categories: categories.map((item: any) => item.id),
+      tags: check.value.tags.map((value: string) => ({ value })),
+      preview: doc.media?.id || doc.media,
+      status: 'pending',
+      needsPublish: true,
+      changeAction: 'add',
+      review: doc.review || null,
+      origin: doc.origin || {},
+      legacySource: 'submission-sync',
+    },
+    context: { audit: false, skipNeedsPublish: true, skipFieldAccess: true },
+    overrideAccess: true,
+    req,
+  })
+  await payload.update({ collection: 'submissions', id: doc.id, data: { work: created.id }, context: { audit: false }, overrideAccess: true, req })
+  await writeAudit(req, {
+    action: 'submissions.manual-include',
+    after: {
+      content: check.value,
+      manual: true,
+      review: doc.review || null,
+      submissionId: doc.submissionId,
+      workId: created.workId,
+      workStatus: created.status,
+    },
+    before: { review: doc.review || null, state: doc.state, submissionId: doc.submissionId },
+    targetId: doc.submissionId,
+    targetType: 'submissions',
+  })
+  return json({ ok: true, action: 'manual-include', workId: created.workId })
+}
+
+export const bulkHandler = async (req: PayloadRequest): Promise<Response> => {
   const denied = requireOwnerOrBot(req)
   if (denied) return denied
   const role = (req.user as any)?.role
-  const body = await readJsonBody<{ action?: BulkAction; confirm?: string; ids?: string[]; categoryIds?: string[]; topicId?: string }>(req)
+  const body = await readJsonBody<BulkBody>(req)
   const action = body.action
-  const ids = Array.isArray(body.ids) ? body.ids.map(String).filter(Boolean) : []
   if (!action || !ALLOWED_ACTIONS.includes(action)) return json({ ok: false, error: 'action 非法' }, 400)
-  if (!ids.length) return json({ ok: false, error: 'ids 不能为空' }, 400)
   if (role === 'bot' && action !== 'set-categories') return json({ ok: false, error: '机器人无此操作权限' }, 403)
+  if (action === 'manual-include') return manualInclude(req, body)
+
+  const ids = Array.isArray(body.ids) ? body.ids.map(String).filter(Boolean) : []
+  if (!ids.length) return json({ ok: false, error: 'ids 不能为空' }, 400)
   if (action === 'delete' && body.confirm !== 'DELETE') return json({ ok: false, error: '删除需要 confirm=DELETE' }, 400)
 
   const payload = req.payload as any

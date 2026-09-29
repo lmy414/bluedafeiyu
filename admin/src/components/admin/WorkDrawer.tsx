@@ -19,6 +19,19 @@ type AuditEvent = {
   id: string | number
 }
 
+type FormState = {
+  categories: string[]
+  character: string
+  commentary: string
+  description: string
+  name: string
+  tags: string
+}
+
+function record(value: unknown): Record<string, unknown> {
+  return value && typeof value === 'object' && !Array.isArray(value) ? value as Record<string, unknown> : {}
+}
+
 function fullImageURL(work: WorkDoc): string | undefined {
   const media = asObject<MediaDoc>(work.preview)
   return media?.url || media?.thumbnailURL || media?.sizes?.thumbnail?.url
@@ -26,7 +39,50 @@ function fullImageURL(work: WorkDoc): string | undefined {
 
 function submissionImage(submission: SubmissionDoc): string | undefined {
   const media = asObject<MediaDoc>(submission.media)
-  return media?.url || media?.thumbnailURL || media?.sizes?.thumbnail?.url
+  return media?.thumbnailURL || media?.sizes?.thumbnail?.url || media?.url
+}
+
+function initialForm(
+  item: DrawerItem,
+  categories: CategoryDoc[],
+  characters: CharacterDoc[],
+): FormState {
+  if (item.kind === 'work') {
+    const work = item.work
+    return {
+      categories: Array.isArray(work.categories) ? work.categories.map((value) => String(relationID(value))) : [],
+      character: String(relationID(work.character) || ''),
+      commentary: work.commentary || '',
+      description: work.description || '',
+      name: work.name || '',
+      tags: work.tags?.map((tag) => tag.value).join(', ') || '',
+    }
+  }
+
+  const submission = item.submission
+  const reviewContent = record(submission.review?.content)
+  const source = Object.keys(reviewContent).length ? reviewContent : record(submission.fields)
+  const rawCategories = Array.isArray(source.categoryIds) ? source.categoryIds : []
+  const categoryIds = rawCategories
+    .map((value) => {
+      const raw = String(value)
+      return categories.find((category) => String(category.id) === raw || String(category.categoryId) === raw)?.id
+    })
+    .filter((value): value is NonNullable<typeof value> => value !== undefined && value !== null)
+    .map(String)
+  const rawCharacter = String(source.characterId || source.character || '')
+  const character = rawCharacter
+    ? characters.find((item) => String(item.id) === rawCharacter || String(item.characterId) === rawCharacter)?.id
+    : undefined
+
+  return {
+    categories: categoryIds,
+    character: character === undefined || character === null ? '' : String(character),
+    commentary: typeof source.commentary === 'string' ? source.commentary : '',
+    description: typeof source.description === 'string' ? source.description : '',
+    name: typeof source.name === 'string' ? source.name : '',
+    tags: Array.isArray(source.tags) ? source.tags.map(String).join(', ') : '',
+  }
 }
 
 export function WorkDrawer({
@@ -45,48 +101,51 @@ export function WorkDrawer({
   const { apiRoute, get, mutate } = useAdminApi()
   const submission = item.kind === 'submission' ? item.submission : undefined
   const work = item.kind === 'work' ? item.work : asObject<WorkDoc>(submission?.work)
-  const [form, setForm] = useState(() => ({
-    categories: work && Array.isArray(work.categories) ? work.categories.map((value) => String(relationID(value))) : [],
-    character: work ? String(relationID(work.character) || '') : '',
-    commentary: work?.commentary || '',
-    description: work?.description || '',
-    name: work?.name || '',
-    tags: work?.tags?.map((tag) => tag.value).join(', ') || '',
-  }))
+  const [form, setForm] = useState<FormState>(() => initialForm(item, categories, characters))
   const [events, setEvents] = useState<AuditEvent[]>([])
   const [saving, setSaving] = useState(false)
   const [message, setMessage] = useState('')
 
+  const auditTarget = work?.workId || submission?.submissionId
   useEffect(() => {
-    if (!work) return
+    if (!auditTarget) return
     void get<{ docs: AuditEvent[] }>('/audit-events', {
       depth: 0,
       limit: 20,
       sort: '-createdAt',
-      'where[targetId][equals]': work.workId,
+      'where[targetId][equals]': auditTarget,
     }).then((result) => setEvents(result.docs || []))
-  }, [get, work])
+  }, [auditTarget, get])
 
   const review = work?.review || submission?.review
   const image = work ? fullImageURL(work) : submission ? submissionImage(submission) : undefined
   const originalURL = work ? workOriginalURL(work) : undefined
   const title = work?.name || submission?.title || '未命名投稿'
+  const reviewContentPresent = Boolean(submission && Object.keys(record(submission.review?.content)).length)
   const history = useMemo(() => {
-    if (submission && Array.isArray(submission.stateHistory)) {
-      return submission.stateHistory.map((entry, index) => ({
+    const stateHistory = submission && Array.isArray(submission.stateHistory)
+      ? submission.stateHistory.map((entry, index) => ({
         id: `submission-${index}`,
         label: `${String(entry.from || '开始')} → ${String(entry.to || '未知')}`,
         note: String(entry.reason || entry.actor || ''),
         time: String(entry.at || ''),
       }))
-    }
-    return events.map((event) => ({
+      : []
+    const auditHistory = events.map((event) => ({
       id: event.id,
       label: event.action || '记录',
       note: event.actorName || '',
       time: event.createdAt || '',
     }))
+    return [...stateHistory, ...auditHistory]
   }, [events, submission])
+
+  function parsedTags(): string[] {
+    return form.tags
+      .split(/[,，\n]/)
+      .map((value) => value.trim())
+      .filter(Boolean)
+  }
 
   async function save() {
     if (!work) return
@@ -99,11 +158,7 @@ export function WorkDrawer({
         commentary: form.commentary,
         description: form.description,
         name: form.name,
-        tags: form.tags
-          .split(/[,，\n]/)
-          .map((value) => value.trim())
-          .filter(Boolean)
-          .map((value) => ({ value })),
+        tags: parsedTags().map((value) => ({ value })),
       })
       setMessage('保存成功，已标记为待发布。')
       onSaved()
@@ -114,12 +169,47 @@ export function WorkDrawer({
     }
   }
 
+  async function manualInclude() {
+    if (!submission) return
+    const character = characters.find((item) => String(item.id) === form.character)
+    const selectedCategories = form.categories
+      .map((id) => categories.find((item) => String(item.id) === id))
+      .filter((item): item is CategoryDoc => Boolean(item))
+    const content = {
+      name: form.name.trim(),
+      description: form.description.trim(),
+      commentary: form.commentary.trim(),
+      characterId: character?.characterId ? String(character.characterId) : '',
+      categoryIds: selectedCategories
+        .map((item) => String(item.categoryId || ''))
+        .filter(Boolean),
+      tags: parsedTags(),
+    }
+
+    setSaving(true)
+    setMessage('')
+    try {
+      await mutate('/works/bulk', 'POST', {
+        action: 'manual-include',
+        confirm: 'MANUAL_INCLUDE',
+        content,
+        submissionId: submission.submissionId,
+      })
+      setMessage('人工收录成功，已进入待发布；原始 AI 结论、状态未改写，操作已写入审计。')
+      onSaved()
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : '人工收录失败')
+    } finally {
+      setSaving(false)
+    }
+  }
+
   return (
     <div className="s3-drawer-backdrop" role="presentation">
       <aside aria-label="作品详情" className="s3-drawer">
         <header className="s3-drawer-header">
           <div>
-            <p className="s3-eyebrow">{work ? '作品审核' : '投稿详情'}</p>
+            <p className="s3-eyebrow">{work ? '作品审核' : '人工复审'}</p>
             <h2>{title}</h2>
           </div>
           <button aria-label="关闭" className="s3-icon-button" onClick={onClose} type="button">
@@ -207,6 +297,73 @@ export function WorkDrawer({
 
           {submission ? (
             <section className="s3-form-section">
+              <h3>人工复审收录</h3>
+              <p className="s3-muted">
+                {reviewContentPresent
+                  ? 'AI 已给出内容草案。请逐项核对后主动收录；原始 AI 结论不会改写。'
+                  : 'AI 未保留可用内容。请填写完整六字段后主动收录；缺失字段不会自动补全。'}
+              </p>
+              <label>
+                名称
+                <input onChange={(event) => setForm({ ...form, name: event.target.value })} value={form.name} />
+              </label>
+              <label>
+                说明
+                <textarea onChange={(event) => setForm({ ...form, description: event.target.value })} rows={3} value={form.description} />
+              </label>
+              <label>
+                详情正文
+                <textarea onChange={(event) => setForm({ ...form, commentary: event.target.value })} rows={6} value={form.commentary} />
+              </label>
+              <label>
+                角色
+                <select onChange={(event) => setForm({ ...form, character: event.target.value })} value={form.character}>
+                  <option value="">未设置</option>
+                  {characters.map((character) => (
+                    <option key={String(character.id)} value={String(character.id)}>
+                      {character.name || character.characterId}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <fieldset>
+                <legend>分类（多选）</legend>
+                <div className="s3-check-grid">
+                  {categories.map((category) => {
+                    const id = String(category.id)
+                    return (
+                      <label className="s3-check" key={id}>
+                        <input
+                          checked={form.categories.includes(id)}
+                          onChange={(event) =>
+                            setForm({
+                              ...form,
+                              categories: event.target.checked
+                                ? [...form.categories, id]
+                                : form.categories.filter((value) => value !== id),
+                            })
+                          }
+                          type="checkbox"
+                        />
+                        {category.name || category.categoryId}
+                      </label>
+                    )
+                  })}
+                </div>
+              </fieldset>
+              <label>
+                标签（逗号分隔）
+                <input onChange={(event) => setForm({ ...form, tags: event.target.value })} value={form.tags} />
+              </label>
+              <button className="s3-button s3-button--primary" disabled={saving} onClick={() => void manualInclude()} type="button">
+                {saving ? '处理中…' : '人工收录'}
+              </button>
+              {message ? <p className="s3-notice">{message}</p> : null}
+            </section>
+          ) : null}
+
+          {submission ? (
+            <section className="s3-form-section">
               <h3>投稿原始字段</h3>
               <pre>{JSON.stringify(submission.fields || {}, null, 2)}</pre>
               <p className="s3-muted">状态：{SUBMISSION_STATES[submission.state] || submission.state}</p>
@@ -214,7 +371,7 @@ export function WorkDrawer({
           ) : null}
 
           <section className="s3-form-section">
-            <h3>状态历史</h3>
+            <h3>状态与审计历史</h3>
             {history.length ? (
               <ol className="s3-history">
                 {history.map((entry) => (

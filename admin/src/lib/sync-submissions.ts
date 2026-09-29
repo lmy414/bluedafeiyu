@@ -172,7 +172,11 @@ async function requestJson(token: string, url: string): Promise<any> {
 
 async function requestBytes(token: string, url: string): Promise<Buffer> {
   const response = await fetch(url, { headers: { Authorization: `Bearer ${token}` } })
-  if (!response.ok) throw new Error(`读取投稿原图失败 ${response.status}`)
+  if (!response.ok) {
+    const error = new Error(`读取投稿原图失败 ${response.status}`) as Error & { status?: number }
+    error.status = response.status
+    throw error
+  }
   return Buffer.from(await response.arrayBuffer())
 }
 
@@ -241,9 +245,22 @@ export async function syncSubmissions(payload: Payload, options: { baseUrl?: str
       let content: any = null
 
       if (!mediaId && !options.dryRun) {
-        const raw = await requestBytes(token, `${baseUrl}/api/v1/items/${encodeURIComponent(submissionId)}/raw`)
-        preview = await prepareSubmissionPreview(raw, item)
-        mediaId = await ensureSubmissionMedia(payload, item, preview, false)
+        try {
+          const raw = await requestBytes(token, `${baseUrl}/api/v1/items/${encodeURIComponent(submissionId)}/raw`)
+          preview = await prepareSubmissionPreview(raw, item)
+          mediaId = await ensureSubmissionMedia(payload, item, preview, false)
+        } catch (error) {
+          if ((error as any)?.status !== 410) throw error
+          const existingPreview = existingSubmission?.media || existingWork?.preview
+          if (!existingPreview) {
+            stats.skipped += 1
+            console.warn(`[同步] ${submissionId} 原图已释放且 Payload 中没有预览，跳过`)
+            continue
+          }
+          mediaId = typeof existingPreview === 'object' ? existingPreview.id : existingPreview
+          stats.skipped += 1
+          console.warn(`[同步] ${submissionId} 原图已释放，使用 Payload 已有预览`)
+        }
       } else if (!mediaId) {
         mediaId = `dry-media-${queuedDigest.slice(0, 12)}`
       }

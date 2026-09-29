@@ -133,6 +133,10 @@
 .s3-stat-card small { color: var(--theme-elevation-500, #64748b); margin-top: auto; }
 .s3-stat-card--blue { background: linear-gradient(145deg, #eff6ff, #dbeafe); }
 .s3-stat-card--warning { background: linear-gradient(145deg, #fffbeb, #fef3c7); }
+html[data-theme='dark'] .s3-stat-card--blue strong { color: var(--s3-blue-dark); }
+html[data-theme='dark'] .s3-stat-card--warning strong { color: var(--s3-amber); }
+html[data-theme='dark'] .s3-stat-card--blue small,
+html[data-theme='dark'] .s3-stat-card--warning small { color: var(--s3-slate); }
 
 .s3-panel {
   margin-top: 1.2rem;

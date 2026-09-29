@@ -48,6 +48,16 @@ function sendJson(res, status, payload, extraHeaders = {}) {
   res.end(body);
 }
 
+function sendOriginalReleased(res, item) {
+  return sendJson(res, 410, {
+    ok: false,
+    error: '原图已释放，请从 GitHub Raw 获取',
+    releasedAt: item.original?.releasedAt ?? null,
+    reason: item.original?.reason ?? null,
+    rawUrl: item.original?.rawUrl ?? null,
+  });
+}
+
 function readBody(req, maxBytes) {
   return new Promise((resolve, reject) => {
     const chunks = [];
@@ -727,6 +737,7 @@ export async function handleInternalRequest({ req, res, url, reviewer, cfg, queu
     const item = await queue.get(match[1]);
     if (!item) return sendJson(res, 404, { ok: false, error: 'not found' });
     if (match[2] === '/raw') {
+      if (item.original?.released) return sendOriginalReleased(res, item);
       const buffer = await queue.readImage(match[1]);
       res.writeHead(200, {
         'Content-Type': item.mime || 'application/octet-stream',
@@ -922,7 +933,7 @@ export function createAdminHandler({
   now = () => Date.now(),
   logger = console,
 } = {}) {
-  const itemIdPattern = /^\/api\/v1\/items\/(sub_[A-Za-z0-9_]+)(\/raw|\/review|\/decision)?$/;
+  const itemIdPattern = /^\/api\/v1\/items\/(sub_[A-Za-z0-9_]+)(\/(?:raw|review|decision|release-original))?$/;
   // 与公开口共享同一协调器：管理端显式审核会加入正在飞行的后台审核，不重复审。
   const reviewCoordinator = reviewCoordinatorFor({ queue, reviewer, bridge, logger });
 
@@ -997,9 +1008,22 @@ export function createAdminHandler({
           if (!item) return sendJson(res, 404, { ok: false, error: 'not found' });
           return sendJson(res, 200, { ok: true, item });
         }
+        if (req.method === 'POST' && sub === '/release-original') {
+          const item = await queue.get(id);
+          if (!item) return sendJson(res, 404, { ok: false, error: 'not found' });
+          const raw = await readBody(req, cfg.maxJsonBytes);
+          const body = raw.length ? JSON.parse(raw.toString('utf8')) : {};
+          const reason = body.reason === undefined ? 'published' : body.reason;
+          if (reason !== 'published' && reason !== 'expired') {
+            return sendJson(res, 400, { ok: false, error: 'reason 必须是 published 或 expired' });
+          }
+          const rawUrl = typeof body.rawUrl === 'string' ? body.rawUrl : null;
+          return sendJson(res, 200, await queue.releaseOriginal(id, { reason, rawUrl }));
+        }
         if (req.method === 'GET' && sub === '/raw') {
           const item = await queue.get(id);
           if (!item) return sendJson(res, 404, { ok: false, error: 'not found' });
+          if (item.original?.released) return sendOriginalReleased(res, item);
           const file = await queue.objectFile(id);
           const { readFile } = await import('node:fs/promises');
           const buffer = await readFile(file);

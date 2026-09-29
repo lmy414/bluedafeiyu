@@ -10,7 +10,7 @@ import http from 'node:http';
 import os from 'node:os';
 import path from 'node:path';
 
-import { SNAPSHOT_SITE_FILES, main } from '../admin/publish-worker.mjs';
+import { SNAPSHOT_SITE_FILES, main, releasePublishedOriginals, resolveWorkerConfig } from '../admin/publish-worker.mjs';
 
 const TINY_PNG = Buffer.from(
   'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8DwHwAFAAH/q842iQAAAABJRU5ErkJggg==',
@@ -233,6 +233,14 @@ async function startBackend(t, state) {
 async function startSubmissionService(t, state) {
   const server = http.createServer(async (req, res) => {
     const url = new URL(req.url, 'http://127.0.0.1');
+    if (req.method === 'POST' && /^\/api\/v1\/items\/sub_[A-Za-z0-9_]+\/release-original$/.test(url.pathname)) {
+      let raw = '';
+      for await (const chunk of req) raw += chunk;
+      state.releaseCalls = state.releaseCalls || [];
+      state.releaseCalls.push({ path: url.pathname, auth: req.headers.authorization || '', body: raw ? JSON.parse(raw) : null });
+      const status = state.releaseStatus || 200;
+      res.writeHead(status, { 'content-type': 'application/json' }); res.end(JSON.stringify(status < 400 ? { ok: true, released: true } : { error: 'release failed' })); return;
+    }
     if (req.method !== 'GET' || !/^\/api\/v1\/items\/sub_[A-Za-z0-9_]+\/raw$/.test(url.pathname)) {
       res.writeHead(404, { 'content-type': 'application/json' }); res.end(JSON.stringify({ error: 'not found' })); return;
     }
@@ -264,6 +272,7 @@ function envFor(ws, backend, extra = {}) {
     ADMIN_PUBLISH_REQUEST_DIR: ws.requestDir,
     SUBMISSION_ADMIN_API_URL: extra.submissionServiceUrl || 'http://127.0.0.1:1',
     SUBMISSION_ADMIN_TOKEN: 'submission-token',
+    PUBLISH_ORIGINAL_BASE_URL: 'https://raw.test',
     ...extra,
   };
 }
@@ -283,6 +292,99 @@ async function capture(fn) {
     process.stderr.write = stderr;
   }
 }
+function makePublishFetch(state) {
+  return async (input, options = {}) => {
+    const url = String(input);
+    if (url === 'https://raw.test' || url.startsWith('https://raw.test/')) {
+      state.rawHeadCalls = state.rawHeadCalls || [];
+      state.rawHeadCalls.push({ method: options.method || 'GET', url });
+      return new Response('', { status: state.rawStatus || 404 });
+    }
+    return globalThis.fetch(input, options);
+  };
+}
+
+async function runOriginalPublish(t, { runId, submissionId, workId, rawStatus = 404, releaseStatus = 200 }) {
+  const record = {
+    id: workId,
+    name: '原图发布测试',
+    characterId: 'deepseek',
+    categoryIds: ['meme'],
+    tags: ['测试'],
+    status: 'published',
+  };
+  const ws = await makeWorkspace(t);
+  const digest = sha256(TINY_PNG);
+  const targetPath = `dist/submissions/originals/deepseek/${digest.slice(0, 16)}.png`;
+  const snapshot = snapshotFrom(ws, runId, {
+    files: { 'data/works.json': `${JSON.stringify([record], null, 2)}\n` },
+    originals: [{ workId: record.id, sha256: digest, characterId: 'deepseek', ext: 'png', targetPath, submissionId }],
+    summary: { added: 1, updated: 0, hidden: 0, restored: 0, deleted: 0, topics: 0 },
+  });
+  const state = { statuses: [], snapshot, submissionBody: TINY_PNG, rawStatus, releaseStatus };
+  const backend = await startBackend(t, state);
+  const submission = await startSubmissionService(t, state);
+  const exec = makeFakeExec(state);
+  writeRequest(ws, runId);
+  const result = await capture(() => main(['--run', runId], {
+    env: envFor(ws, backend, { submissionServiceUrl: submission.url }),
+    exec,
+    fetchImpl: makePublishFetch(state),
+    runIssueReconcile: () => {},
+  }));
+  return { result, state, targetPath };
+}
+
+test('推送成功后 HEAD 校验 Raw，再通知投稿服务释放原图', async (t) => {
+  const fixture = await runOriginalPublish(t, { runId: 'run-release-ok', submissionId: 'sub_release_ok', workId: 'sticker_ffffffffffffffffffffffff', rawStatus: 200 });
+  assert.equal(fixture.result.code, 0, fixture.result.err);
+  assert.equal(JSON.parse(fixture.result.out).status, 'succeeded');
+  assert.deepEqual(fixture.state.rawHeadCalls, [{ method: 'HEAD', url: `https://raw.test/${fixture.targetPath}` }]);
+  assert.equal(fixture.state.releaseCalls.length, 1);
+  assert.equal(fixture.state.releaseCalls[0].path, '/api/v1/items/sub_release_ok/release-original');
+  assert.equal(fixture.state.releaseCalls[0].auth, 'Bearer submission-token');
+  assert.deepEqual(fixture.state.releaseCalls[0].body, { reason: 'published', rawUrl: `https://raw.test/${fixture.targetPath}` });
+});
+
+test('Raw 不可访问时只记录警告，不调用释放接口', async (t) => {
+  const fixture = await runOriginalPublish(t, { runId: 'run-release-raw-missing', submissionId: 'sub_release_raw_missing', workId: 'sticker_aaaaaaaaaaaaaaaaaaaaaaab' });
+  assert.equal(fixture.result.code, 0, fixture.result.err);
+  assert.equal(JSON.parse(fixture.result.out).status, 'succeeded');
+  assert.equal(fixture.state.releaseCalls, undefined);
+  assert.match(fixture.result.err, /原图 Raw 不可访问/);
+});
+
+test('释放失败不影响发布成功结果', async (t) => {
+  const fixture = await runOriginalPublish(t, { runId: 'run-release-fail', submissionId: 'sub_release_fail', workId: 'sticker_aaaaaaaaaaaaaaaaaaaaaaac', rawStatus: 200, releaseStatus: 500 });
+  assert.equal(fixture.result.code, 0, fixture.result.err);
+  assert.equal(JSON.parse(fixture.result.out).status, 'succeeded');
+  assert.equal(fixture.state.releaseCalls.length, 1);
+  assert.match(fixture.result.err, /通知投稿服务释放原图失败/);
+});
+
+test('未配置 PUBLISH_ORIGINAL_BASE_URL 时使用 GitHub 默认基址', async (t) => {
+  const ws = await makeWorkspace(t);
+  const env = envFor(ws, { url: 'http://127.0.0.1:1' });
+  delete env.PUBLISH_ORIGINAL_BASE_URL;
+  const cfg = resolveWorkerConfig(env);
+  assert.equal(cfg.originalBaseUrl, 'https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main');
+
+  const calls = [];
+  await releasePublishedOriginals(cfg, {
+    originals: [{ submissionId: 'sub_default_base', targetPath: 'dist/submissions/originals/deepseek/default.png' }],
+  }, {
+    fetchImpl: async (url, options) => {
+      calls.push({ method: options.method, url: String(url) });
+      return new Response('', { status: 404 });
+    },
+    log: () => {},
+  });
+
+  assert.equal(calls[0].method, 'HEAD');
+  assert.equal(calls[0].url, 'https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/default.png');
+  assert.doesNotMatch(calls[0].url, /undefined/);
+});
+
 test('无变更 noop：跳过提交、推送和部署，状态上报 succeeded', async (t) => {
   const runId = 'run-noop';
   const ws = await makeWorkspace(t, { works: [baselineRecord()] });
@@ -296,7 +398,7 @@ test('无变更 noop：跳过提交、推送和部署，状态上报 succeeded',
   const result = await capture(() => main(['--run', runId], {
     env: envFor(ws, backend, { submissionServiceUrl: submission.url }),
     exec,
-    runIssueReconcile: () => {},
+    fetchImpl: makePublishFetch(state), runIssueReconcile: () => {},
   }));
   assert.equal(result.code, 0, result.err);
   const output = JSON.parse(result.out);
@@ -334,7 +436,7 @@ test('新增一张图：下载、派生、构建校验、提交白名单、推�
   const result = await capture(() => main(['--run', runId], {
     env: envFor(ws, backend, { submissionServiceUrl: submission.url }),
     exec,
-    runIssueReconcile: () => {},
+    fetchImpl: makePublishFetch(state), runIssueReconcile: () => {},
   }));
   assert.equal(result.code, 0, result.err);
   const output = JSON.parse(result.out);
@@ -390,7 +492,7 @@ test('内容仓已有哈希一致的原图：跳过投稿服务下载', async (t
   const result = await capture(() => main(['--run', runId], {
     env: envFor(ws, backend, { submissionServiceUrl: submission.url }),
     exec,
-    runIssueReconcile: () => {},
+    fetchImpl: makePublishFetch(state), runIssueReconcile: () => {},
   }));
   assert.equal(result.code, 0, result.err);
   assert.equal(JSON.parse(result.out).status, 'succeeded');
@@ -415,7 +517,7 @@ test('删除路径：只删除允许前缀下的内容文件并提交', async (t
   const result = await capture(() => main(['--run', runId], {
     env: envFor(ws, backend, { submissionServiceUrl: submission.url }),
     exec,
-    runIssueReconcile: () => {},
+    fetchImpl: makePublishFetch(state), runIssueReconcile: () => {},
   }));
   assert.equal(result.code, 0, result.err);
   assert.equal(JSON.parse(result.out).status, 'succeeded');
@@ -441,7 +543,7 @@ test('sha256 不匹配：下载阶段失败并写失败状态和 journal', async
   const result = await capture(() => main(['--run', runId], {
     env: envFor(ws, backend, { submissionServiceUrl: submission.url }),
     exec,
-    runIssueReconcile: () => {},
+    fetchImpl: makePublishFetch(state), runIssueReconcile: () => {},
   }));
   assert.equal(result.code, 1);
   const output = JSON.parse(result.out);
@@ -478,7 +580,7 @@ test('白名单外改动：发现阶段失败，不提交、不覆盖脏文件',
   const result = await capture(() => main(['--run', runId], {
     env: envFor(ws, backend, { submissionServiceUrl: submission.url }),
     exec,
-    runIssueReconcile: () => {},
+    fetchImpl: makePublishFetch(state), runIssueReconcile: () => {},
   }));
   assert.equal(result.code, 1);
   assert.equal(JSON.parse(result.out).status, 'failed');
@@ -514,7 +616,7 @@ test('部署失败：状态上报 failed，不标记中转条目', async (t) => 
   const result = await capture(() => main(['--run', runId], {
     env: envFor(ws, backend, { submissionServiceUrl: submission.url }),
     exec,
-    runIssueReconcile: () => {},
+    fetchImpl: makePublishFetch(state), runIssueReconcile: () => {},
   }));
   assert.equal(result.code, 1);
   const output = JSON.parse(result.out);
@@ -535,9 +637,9 @@ test('重复触发：publish.request 已改名时第二次只跳过，不再请�
   const exec = makeFakeExec(state);
   writeRequest(ws, runId);
 
-  const first = await capture(() => main(['--run', runId], { env: envFor(ws, backend, { submissionServiceUrl: submission.url }), exec, runIssueReconcile: () => {} }));
+  const first = await capture(() => main(['--run', runId], { env: envFor(ws, backend, { submissionServiceUrl: submission.url }), exec, fetchImpl: makePublishFetch(state), runIssueReconcile: () => {} }));
   assert.equal(first.code, 0, first.err);
-  const second = await capture(() => main(['--run', runId], { env: envFor(ws, backend, { submissionServiceUrl: submission.url }), exec, runIssueReconcile: () => {} }));
+  const second = await capture(() => main(['--run', runId], { env: envFor(ws, backend, { submissionServiceUrl: submission.url }), exec, fetchImpl: makePublishFetch(state), runIssueReconcile: () => {} }));
   assert.equal(second.code, 0);
   assert.equal(JSON.parse(second.out).status, 'skipped');
   assert.equal(state.snapshotCalls, 1);

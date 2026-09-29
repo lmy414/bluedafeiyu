@@ -13,7 +13,14 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { test } from 'node:test';
 
+import { resolveConfig } from './config.mjs';
+import { createQueue } from './queue.mjs';
+
 const CLI = path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'cli.mjs');
+const TINY_PNG = Buffer.from(
+  'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8DwHwAFAAH/q842iQAAAABJRU5ErkJggg==',
+  'base64',
+);
 
 /** 取一个当前空闲端口（配置层不接受 0）。 */
 function freePort() {
@@ -62,6 +69,54 @@ test('pull-issues --max-pages 非正整数时校验失败，不发网络请求',
   const result = runCli(['pull-issues', '--max-pages', '0'], { SUBMISSION_STORAGE_ROOT: path.join(base, 'private') });
   assert.equal(result.status, 1);
   assert.match(result.stderr, /--max-pages/);
+});
+
+test('prune-originals 默认 dry-run 不写，--apply 释放到期原图且不动未到期', async (t) => {
+  const base = await fs.mkdtemp(path.join(os.tmpdir(), 'cliprune-'));
+  t.after(() => fs.rm(base, { recursive: true, force: true }));
+  const storageRoot = path.join(base, 'private');
+  const now = Date.now();
+  const oldTime = now - 15 * 24 * 60 * 60 * 1000;
+  const cfg = resolveConfig({ storageRoot }, { env: {} });
+
+  const oldQueue = await createQueue(cfg, { now: () => oldTime });
+  const oldItem = (await oldQueue.enqueue({
+    source: 'web',
+    sourceId: 'web:prune-old',
+    buffer: TINY_PNG,
+    fields: { name: '旧图' },
+  })).item;
+  const oldFile = path.join(cfg.paths.objects, `${oldItem.sha256}${oldItem.ext}`);
+
+  const freshQueue = await createQueue(cfg, { now: () => now });
+  const freshItem = (await freshQueue.enqueue({
+    source: 'web',
+    sourceId: 'web:prune-fresh',
+    buffer: Buffer.concat([TINY_PNG, Buffer.from([1])]),
+    fields: { name: '新图' },
+  })).item;
+  const freshFile = path.join(cfg.paths.objects, `${freshItem.sha256}${freshItem.ext}`);
+
+  const env = { SUBMISSION_STORAGE_ROOT: storageRoot };
+  const dryRun = runCli(['prune-originals', '--days', '14', '--json'], env);
+  assert.equal(dryRun.status, 0, dryRun.stderr);
+  assert.deepEqual(JSON.parse(dryRun.stdout), [{ id: oldItem.id, createdAt: oldItem.createdAt, status: 'dry-run' }]);
+  assert.equal((await oldQueue.get(oldItem.id)).original, undefined);
+  assert.equal((await fs.stat(oldFile)).isFile(), true);
+
+  const applied = runCli(['prune-originals', '--days', '14', '--apply', '--json'], env);
+  assert.equal(applied.status, 0, applied.stderr);
+  assert.deepEqual(JSON.parse(applied.stdout), [{ id: oldItem.id, createdAt: oldItem.createdAt, status: 'released' }]);
+  const released = await oldQueue.get(oldItem.id);
+  assert.equal(released.original.released, true);
+  assert.equal(released.original.reason, 'expired');
+  assert.equal(released.sha256, oldItem.sha256);
+  assert.equal(released.ext, oldItem.ext);
+  await assert.rejects(fs.stat(oldFile), { code: 'ENOENT' });
+
+  const fresh = await oldQueue.get(freshItem.id);
+  assert.equal(fresh.original, undefined);
+  assert.equal((await fs.stat(freshFile)).isFile(), true);
 });
 
 test('serve 启动时构造桥接并如实报告未配置（缺 INTAKE 即 skipped，不影响启动）', async (t) => {

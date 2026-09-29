@@ -286,6 +286,86 @@ test('管理员能取原图（按附件下载）与条目，公开端做不到',
   });
 });
 
+test('管理端释放原图：成功、幂等、404、鉴权失败', async (t) => {
+  const { adminHandler, queue, cfg } = await setup(t);
+  const { item } = await queue.enqueue({ source: 'web', sourceId: 'web:release', buffer: TINY_PNG, fields: { name: '释放测试' } });
+  const objectFile = path.join(cfg.paths.objects, `${item.sha256}${item.ext}`);
+  const routePath = `/api/v1/items/${item.id}/release-original`;
+  const body = Buffer.from(JSON.stringify({ reason: 'published', rawUrl: 'https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/inbox/a.png' }));
+
+  await withServer(adminHandler, async (port) => {
+    const denied = await call(port, { method: 'POST', routePath, headers: { 'Content-Type': 'application/json' }, body });
+    assert.equal(denied.status, 401);
+
+    const released = await call(port, {
+      method: 'POST',
+      routePath,
+      headers: { authorization: 'Bearer admin-secret-value', 'Content-Type': 'application/json' },
+      body,
+    });
+    assert.equal(released.status, 200, released.body.toString());
+    assert.deepEqual(JSON.parse(released.body), { ok: true, released: true });
+
+    const stored = await queue.get(item.id);
+    assert.equal(stored.original.released, true);
+    assert.equal(stored.original.reason, 'published');
+    assert.equal(stored.original.rawUrl, 'https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/inbox/a.png');
+    assert.equal(stored.sha256, item.sha256);
+    assert.equal(stored.ext, item.ext);
+    assert.equal(stored.bytes, item.bytes);
+    await assert.rejects(fs.stat(objectFile), { code: 'ENOENT' });
+
+    const again = await call(port, {
+      method: 'POST',
+      routePath,
+      headers: { authorization: 'Bearer admin-secret-value', 'Content-Type': 'application/json' },
+      body,
+    });
+    assert.equal(again.status, 200);
+    assert.deepEqual(JSON.parse(again.body), { ok: true, released: 'already' });
+
+    const missing = await call(port, {
+      method: 'POST',
+      routePath: `/api/v1/items/sub_${'0'.repeat(24)}/release-original`,
+      headers: { authorization: 'Bearer admin-secret-value', 'Content-Type': 'application/json' },
+      body: Buffer.from('{}'),
+    });
+    assert.equal(missing.status, 404);
+  });
+});
+
+test('原图释放后：管理 raw、internal raw 返回 410，readImage 明确报错', async (t) => {
+  const { adminHandler, publicHandler, queue } = await internalSetup(t);
+  const { item } = await seedItem(queue, { extra: 91 });
+  await queue.releaseOriginal(item.id, { reason: 'published', rawUrl: 'https://raw.example/item.png' });
+
+  await withServer(adminHandler, async (port) => {
+    const raw = await call(port, {
+      routePath: `/api/v1/items/${item.id}/raw`,
+      headers: { authorization: 'Bearer admin-secret-value' },
+    });
+    assert.equal(raw.status, 410);
+    const body = JSON.parse(raw.body);
+    assert.equal(body.ok, false);
+    assert.match(body.error, /原图已释放/);
+    assert.equal(body.rawUrl, 'https://raw.example/item.png');
+  });
+
+  await withServer(publicHandler, async (port) => {
+    const raw = await call(port, {
+      routePath: `/api/v1/internal/submissions/${item.id}/raw`,
+      headers: { authorization: `Bearer ${HERMES_TOKEN}` },
+    });
+    assert.equal(raw.status, 410);
+    assert.match(JSON.parse(raw.body).error, /原图已释放/);
+  });
+
+  await assert.rejects(
+    () => queue.readImage(item.id),
+    (error) => error.code === 'ORIGINAL_RELEASED' && /原图已释放/.test(error.message),
+  );
+});
+
 test('管理端触发审核：未配置 AI 转人工，人工可批准', async (t) => {
   const { publicHandler, adminHandler, queue } = await setup(t);
   await withServer(publicHandler, async (port) => { await submit(port, {}); });

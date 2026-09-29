@@ -434,9 +434,49 @@ export async function createQueue(cfg, { now = () => Date.now(), reviewTimeoutMs
     return transition(id, event, { actor, reason });
   }
 
+  async function releaseOriginal(id, { reason = 'published', rawUrl = null } = {}) {
+    return withLock(async () => {
+      const item = await readItem(id);
+      if (!item) throw new Error(`队列里没有 ${id}`);
+      if (item.original?.released) return { ok: true, released: 'already' };
+
+      const at = new Date(now()).toISOString();
+      await fs.rm(path.join(paths.objects, `${item.sha256}${item.ext}`), { force: true });
+      item.original = { released: true, releasedAt: at, reason, rawUrl };
+      item.updatedAt = at;
+      await saveItem(item);
+      await log('original.release', { id, reason, rawUrl });
+      return { ok: true, released: true };
+    });
+  }
+
+  async function pruneOriginals({ days = 14, apply = false } = {}) {
+    const cutoff = now() - days * 24 * 60 * 60 * 1000;
+    const due = (await listItems())
+      .filter((item) => {
+        const createdAt = Date.parse(item.createdAt || '');
+        return !item.original?.released && Number.isFinite(createdAt) && createdAt < cutoff;
+      })
+      .sort((a, b) => String(a.createdAt).localeCompare(String(b.createdAt)) || String(a.id).localeCompare(String(b.id)));
+
+    const results = [];
+    for (const item of due) {
+      if (!apply) {
+        results.push({ id: item.id, createdAt: item.createdAt, status: 'dry-run' });
+        continue;
+      }
+      const released = await releaseOriginal(item.id, { reason: 'expired' });
+      results.push({ id: item.id, createdAt: item.createdAt, status: released.released === true ? 'released' : 'already' });
+    }
+    return results;
+  }
+
   async function readImage(id) {
     const item = await readItem(id);
     if (!item) throw new Error(`队列里没有 ${id}`);
+    if (item.original?.released) {
+      throw Object.assign(new Error('原图已释放，请从 GitHub Raw 获取'), { code: 'ORIGINAL_RELEASED' });
+    }
     return fs.readFile(path.join(paths.objects, `${item.sha256}${item.ext}`));
   }
 
@@ -499,6 +539,8 @@ export async function createQueue(cfg, { now = () => Date.now(), reviewTimeoutMs
     readReviewRaw,
     recordBridge,
     decide,
+    releaseOriginal,
+    pruneOriginals,
     readImage,
     objectFile,
     recover,

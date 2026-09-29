@@ -1,0 +1,10 @@
+[Unit]
+Description=蓝色大肥鱼 · 每日清理过期投稿原图
+
+[Timer]
+OnCalendar=*-*-* 04:15:00
+Persistent=true
+Unit=dafeiyu-prune-originals.service
+
+[Install]
+WantedBy=timers.target

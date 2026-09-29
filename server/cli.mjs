@@ -8,6 +8,7 @@
  *   doctor                   校验配置与私有存储根，打印脱敏摘要（不发网络请求）
  *   serve                    启动公开入口 + 管理入口
  *   recover                  启动前恢复：卡住的审核转人工、重建索引
+ *   prune-originals [--days 14] [--apply] [--json]  清理过期原图，默认 dry-run
  *   enqueue <图片> [--name --character --description]   把本地图放进队列
  *   list [--state --source --json]
  *   show <id>
@@ -120,6 +121,32 @@ const commands = {
     const queue = await createQueue(cfg);
     const result = await queue.recover();
     console.log(`恢复完成：转人工 ${result.recovered.length} 条，索引已重建。`);
+  },
+
+  async 'prune-originals'(cfg, { options }) {
+    const daysRaw = optionValue(options, 'days', '14');
+    const days = Number(daysRaw);
+    if (!Number.isSafeInteger(days) || days <= 0) die(`--days 必须是正整数：${daysRaw}`);
+    const apply = options.apply === true || String(options.apply).toLowerCase() === 'true';
+    const queue = await createQueue(cfg);
+    const results = await queue.pruneOriginals({ days, apply });
+
+    if (options.json) {
+      console.log(JSON.stringify(results, null, 2));
+      return;
+    }
+
+    console.log(apply
+      ? `原图清理：APPLY（${days} 天前且未释放）`
+      : `原图清理：DRY-RUN（${days} 天前且未释放，只列出）`);
+    if (results.length === 0) {
+      console.log('没有可清理的条目。');
+      return;
+    }
+    for (const entry of results) {
+      console.log(`${String(entry.status).padEnd(10)}${entry.id}  ${entry.createdAt}`);
+    }
+    console.log(`\n共 ${results.length} 条。`);
   },
 
   async enqueue(cfg, { options, positional }) {
@@ -326,6 +353,8 @@ const commands = {
   doctor                    校验配置与私有存储根（不发网络请求）
   serve                     启动公开投稿入口 + 管理接口
   recover                   恢复卡住的审核、重建索引
+  prune-originals           清理超过 14 天仍未释放的原图，默认只列出
+                            [--days N] [--apply] [--json]
   enqueue <图片...>         把本地图放进队列
   list / show / export      查看与导出
   review [<id>...] [--all]  跑 AI 审核（未配置一律转人工）

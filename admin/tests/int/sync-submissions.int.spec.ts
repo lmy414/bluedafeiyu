@@ -31,6 +31,8 @@ let firstBuffer: Buffer
 let secondBuffer: Buffer
 let firstDigest: string
 let secondDigest: string
+let queueItems: any[]
+let rawStatusById = new Map<string, number>()
 
 function jsonResponse(value: unknown): Response {
   return {
@@ -160,12 +162,16 @@ beforeAll(async () => {
     [firstItem.id, firstBuffer],
     [secondItem.id, secondBuffer],
   ])
+  queueItems = [firstItem, secondItem]
+  rawStatusById = new Map()
 
   vi.stubGlobal('fetch', vi.fn(async (input: string | URL | Request) => {
     const url = new URL(String(input))
-    if (url.pathname === '/api/v1/items') return jsonResponse({ items: [firstItem, secondItem] })
+    if (url.pathname === '/api/v1/items') return jsonResponse({ items: queueItems })
     if (url.pathname.endsWith('/raw')) {
       const id = decodeURIComponent(url.pathname.split('/').slice(-2, -1)[0] || '')
+      const status = rawStatusById.get(id)
+      if (status && status !== 200) return { ok: false, status } as Response
       const bytes = bytesById.get(id)
       if (!bytes) throw new Error(`unexpected raw request: ${id}`)
       return bytesResponse(bytes)
@@ -258,5 +264,33 @@ describe('syncSubmissions timestamps and formats', () => {
     expect(exportedUntouched.updatedAt).toBe(fallback.createdAt)
     const publishedExportIds = publishedExport.map((record: any) => record.id)
     expect(publishedExportIds.slice(-2)).toEqual([timed.workId, fallback.workId])
+  })
+  it('uses an existing preview for a released original and skips when no preview exists', async () => {
+    const previewItem = { ...queueItems[0], id: 'sub_released_preview_123' }
+    const missingBuffer = await makeJpeg(1, 2, 3)
+    const missingItem = queueItem({ buffer: missingBuffer, name: '已释放无预览', suffix: 'released' })
+    missingItem.id = 'sub_released_missing_123'
+    rawStatusById.set(previewItem.id, 410)
+    rawStatusById.set(missingItem.id, 410)
+    queueItems.push(previewItem, missingItem)
+
+    const existingWork = await (payload as any).find({ collection: 'works', where: { sha256: { equals: firstDigest } }, limit: 1, depth: 0, overrideAccess: true })
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {})
+    try {
+      const stats = await syncSubmissions(payload, { baseUrl: 'http://submission.test', limit: 10, token: 'test-token' })
+      expect(stats.errors).toEqual([])
+      expect(stats.skipped).toBe(2)
+
+      const releasedSubmission = await (payload as any).find({ collection: 'submissions', where: { submissionId: { equals: previewItem.id } }, limit: 1, depth: 0, overrideAccess: true })
+      expect(releasedSubmission.docs).toHaveLength(1)
+      expect(String(releasedSubmission.docs[0].media)).toBe(String(existingWork.docs[0].preview))
+
+      const missingSubmission = await (payload as any).find({ collection: 'submissions', where: { submissionId: { equals: missingItem.id } }, limit: 1, depth: 0, overrideAccess: true })
+      expect(missingSubmission.docs).toHaveLength(0)
+      expect(warn).toHaveBeenCalledWith(expect.stringContaining('原图已释放且 Payload 中没有预览'))
+    } finally {
+      warn.mockRestore()
+      queueItems.splice(queueItems.length - 2, 2)
+    }
   })
 })

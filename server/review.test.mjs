@@ -84,6 +84,20 @@ test('未配置 AI 客户端时判为待人工，绝不通过', async (t) => {
   assert.equal((await queue.get(item.id)).state, STATES.NEEDS_MANUAL);
 });
 
+test('已释放原图进入 AI 审核时转人工，不调用审核器', async (t) => {
+  const { queue } = await setup(t);
+  const item = await seeded(queue, 'released');
+  await queue.releaseOriginal(item.id, { reason: 'published', rawUrl: 'https://raw.example/released.png' });
+
+  const result = await reviewQueuedItem(queue, {
+    review: async () => { throw new Error('已释放原图不应调用审核器'); },
+  }, item.id);
+
+  assert.equal(result.verdict, 'manual');
+  assert.match(result.reason, /原图已释放/);
+  assert.equal((await queue.get(item.id)).state, STATES.NEEDS_MANUAL);
+});
+
 test('AI 返回通过只到 auto_passed，仍需人工，服务不发布', async (t) => {
   const { reviewer, queue } = await setup(t, { client: async () => payload() });
   const item = await seeded(queue, 'a');
