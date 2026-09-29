@@ -446,7 +446,9 @@ export async function main(argv = process.argv.slice(2), deps = {}) {
   const request = deps.request || createGithubRequest(deps.githubToken || tokenFromGh(), deps.fetchImpl);
   const fetchItems = deps.fetchItems || (() => fetchQueueItems({ env, fetchImpl: deps.fetchImpl }));
   const notify = deps.notify === undefined ? (await import('../server/notify.mjs')).createNotifier() : deps.notify;
-  const result = await reconcile({ meta, works, request, checkPage: deps.checkPage, fetchItems, notify, now: deps.now, log });
+  const fetchImpl = deps.fetchImpl || globalThis.fetch;
+  const checkPage = deps.checkPage || (async (url) => (await fetchImpl(url, { method: 'HEAD', signal: timeoutSignal(15000) })).ok);
+  const result = await reconcile({ meta, works, request, checkPage, fetchItems, notify, now: deps.now, log });
   process.stdout.write(`${JSON.stringify(result)}\n`);
   return result.failed.length ? 1 : 0;
 }

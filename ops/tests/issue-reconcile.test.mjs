@@ -216,3 +216,20 @@ test('--replies：校验失败移入 failed，成功评论、关闭并移入 don
   assert.equal(backend.calls.find((call) => call.method === 'PATCH').body.state_reason, 'completed');
   assert.match(backend.notifications[0], /已在后台回复 GitHub Issue #64（已关闭）/);
 });
+test('main 未注入 checkPage 时用 HEAD 检查作品页', async () => {
+  const backend = fakeBackend({ issues: [issue()] });
+  const heads = [];
+  const code = await main([], {
+    request: backend.request,
+    fetchItems: async () => [queueItem({ hash: PUBLISHED_HASH })],
+    meta: [metaFor(PUBLISHED_HASH)],
+    works: [workFor(PUBLISHED_HASH)],
+    fetchImpl: async (url, options) => { heads.push([url, options?.method]); return { ok: true }; },
+    notify: null,
+    log: () => {},
+    env: {},
+  });
+  assert.equal(code, 0);
+  assert.deepEqual(heads, [['https://xn--pssy23gqgbz2d718b.com/works/deepseek-test.html', 'HEAD']]);
+  assert.equal(backend.calls.find((call) => call.method === 'PATCH').body.state_reason, 'completed');
+});
