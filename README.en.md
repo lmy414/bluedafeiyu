@@ -29,14 +29,16 @@ The interface supports Chinese, English and Japanese.
 | Interface languages | Chinese, English, Japanese |
 | Work types | Memes, illustrations, character sheets, comics |
 | Images | Stored in a separate public image archive |
-| Submissions | GitHub Issue Forms |
+| Submissions | Site form, QQ group bot, GitHub Issue Forms |
 
 ## Quick Links
 
 | Purpose | Link |
 | --- | --- |
 | Browse online | <https://xn--pssy23gqgbz2d718b.com/> |
-| Submit a work | <https://github.com/lmy414/ai-girl-stickers/issues/new?template=sticker-submission.yml> |
+| Submit through the site | <https://xn--pssy23gqgbz2d718b.com/submit.html> |
+| Submit through QQ | @ the bot in the submission group with "投稿 标题 角色" and include the image in the same message |
+| Submit via GitHub Issue | <https://github.com/lmy414/ai-girl-stickers/issues/new?template=sticker-submission.yml> |
 | Request attribution or takedown | <https://github.com/lmy414/ai-girl-stickers/issues/new?template=takedown-request.yml> |
 | Image archive | <https://github.com/lmy414/ai-girl-stickers> |
 
@@ -56,14 +58,14 @@ This repository builds the pages. The image archive stores binary assets. No ima
 | `frontend/` | Astro source. Pages live in `src/pages/`; layouts and components live in `src/layouts/` and `src/components/`; public assets live in `public/` |
 | `data/` | Authoritative JSON for characters, categories, works, owner picks, topics and editorial overlays |
 | `tools/` | Build, content sync, data staging, snapshot generation, image derivatives and static compression scripts |
-| `server/` | Unified submission service for the website, QQ and GitHub Issues. It currently runs locally for testing and is not enabled in production |
+| `server/` | Unified, live submission service for the website, QQ groups and GitHub Issues |
 | `tools/intake/` | Maintainer intake tools for duplicate checks, staging and GitHub Issue attachment imports |
 | `ops/` | Deployment, rollback, review and publishing automation, and server configuration examples |
 | `docs/` | Maintenance notes for network performance, CDN, submission automation and Hermes review |
 | `archive/` | Historical documents from before the repository split |
 | `dist/`, `.build/`, `frontend/out/` | Build or local runtime output. These are not frontend source files |
 
-See [`server/README.md`](server/README.md) and [`tools/intake/README.md`](tools/intake/README.md) for detailed instructions. Public submissions currently use the GitHub Issue Forms in the image archive.
+See [`server/README.md`](server/README.md) and [`tools/intake/README.md`](tools/intake/README.md) for detailed instructions. Public submissions are available through the site form, the QQ group bot or the image archive's GitHub Issue Forms.
 
 ## Brand Assets
 
@@ -92,6 +94,6 @@ The build output is written to `.build/site/`. See [`frontend/README.md`](fronte
 
 ## Submissions and Copyright
 
-This is an unofficial fan archive. Submissions, attribution corrections and takedown requests all use the GitHub Issue Forms in the image archive. See [`CONTRIBUTING.md`](https://github.com/lmy414/ai-girl-stickers/blob/main/CONTRIBUTING.md) for the full rules.
+This is an unofficial fan archive. Submissions are accepted through the site form, the QQ group bot and the image archive's GitHub Issue Forms; attribution corrections and takedown requests still use the GitHub Issue Forms. See [`CONTRIBUTING.md`](https://github.com/lmy414/ai-girl-stickers/blob/main/CONTRIBUTING.md) for the full rules.
 
 Image copyright always belongs to the original author. Publishing an image in this repository or including it on the website does not automatically grant an MIT license. Check the source and license shown on each work's detail page before reuse. The code in this repository is released under the MIT License; see [`LICENSE`](LICENSE).

@@ -29,14 +29,16 @@
 | 界面语言 | 中文、English、日本語 |
 | 作品类型 | 梗图、插画、设定图、漫画 |
 | 图片来源 | 独立图片存档仓库 |
-| 投稿方式 | GitHub Issue 表单 |
+| 投稿方式 | 站内、QQ 群、GitHub Issue 表单 |
 
 ## 常用入口
 
 | 用途 | 地址 |
 | --- | --- |
 | 在线浏览 | <https://xn--pssy23gqgbz2d718b.com/> |
-| 投稿作品 | <https://github.com/lmy414/ai-girl-stickers/issues/new?template=sticker-submission.yml> |
+| 站内投稿 | <https://xn--pssy23gqgbz2d718b.com/submit.html> |
+| QQ 群投稿 | 在投稿群 @机器人，发送「投稿 标题 角色」并附图 |
+| GitHub Issue 投稿 | <https://github.com/lmy414/ai-girl-stickers/issues/new?template=sticker-submission.yml> |
 | 署名或下架申请 | <https://github.com/lmy414/ai-girl-stickers/issues/new?template=takedown-request.yml> |
 | 图片存档仓库 | <https://github.com/lmy414/ai-girl-stickers> |
 
@@ -56,14 +58,14 @@
 | `frontend/` | Astro 前台源码。页面在 `src/pages/`，布局和组件在 `src/layouts/`、`src/components/`，静态资源在 `public/` |
 | `data/` | 角色、分类、作品、站长自用、专题和编辑叠加层的权威 JSON 清单 |
 | `tools/` | 构建、内容同步、数据暂存、快照生成、图片派生和静态压缩脚本 |
-| `server/` | 网站、QQ 和 GitHub Issue 的统一投稿服务。目前只在本地运行和测试，线上尚未开通 |
+| `server/` | 网站、QQ 群和 GitHub Issue 的统一投稿服务，已上线 |
 | `tools/intake/` | 维护者用的收录中转工具，负责查重、暂存和 Issue 附件导入 |
 | `ops/` | 部署、回滚、审核发布自动化和服务器配置示例 |
 | `docs/` | 访问提速、CDN、投稿自动化和 Hermes 审核等维护文档 |
 | `archive/` | 拆分仓库前的历史文档 |
 | `dist/`、`.build/`、`frontend/out/` | 构建期或本地运行产物，不是前台源码，不要手工编辑 |
 
-投稿服务、收录工具的详细用法见 [`server/README.md`](server/README.md) 和 [`tools/intake/README.md`](tools/intake/README.md)。公开投稿目前以图片仓的 GitHub 表单为准。
+投稿服务、收录工具的详细用法见 [`server/README.md`](server/README.md) 和 [`tools/intake/README.md`](tools/intake/README.md)。公开投稿可从站内投稿页、QQ 群机器人或图片仓 GitHub Issue 表单进入。
 
 ## 站点图标
 
@@ -92,6 +94,6 @@ python -m http.server 5173 -d .build/site
 
 ## 投稿与版权
 
-这是一个非官方同人整理项目。投稿、署名更正和下架申请都走图片仓的 GitHub Issue 表单，具体规则见 [`CONTRIBUTING.md`](https://github.com/lmy414/ai-girl-stickers/blob/main/CONTRIBUTING.md)。
+这是一个非官方同人整理项目。投稿可走站内投稿页、QQ 群机器人或图片仓 GitHub Issue 表单；署名更正与下架申请仍走 GitHub Issue 表单。具体规则见 [`CONTRIBUTING.md`](https://github.com/lmy414/ai-girl-stickers/blob/main/CONTRIBUTING.md)。
 
 作品图片的著作权归原作者。公开仓库或收录到站点，都不会让作品图片自动获得 MIT 授权。使用图片时，以作品详情页标注的来源与授权为准。本仓库代码按 MIT 许可发布，见 [`LICENSE`](LICENSE)。

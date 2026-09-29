@@ -3,9 +3,8 @@
 网页公开投稿、QQ 群入站、GitHub 内容仓 Issue 附件，三种来源统一进一条**投稿队列**。
 QQ、网站与 GitHub 投稿统一入队，由 Hermes 定时审核并通过内部接口回写；后端放在站点仓（本仓库）里，不另建第三仓。
 
-> 状态：这是**本地可运行、可测试**的实现（`node --test "server/**/*.test.mjs"` 当前全绿）。
-> 线上**尚未开通**，也**没有配置任何真实服务密钥**；未配置的服务一律「关闭/明确未配置」，
-> 不会假造审核结论。
+> 状态：服务已上线，`node --test "server/**/*.test.mjs"` 当前全绿。
+> 真实密钥只通过服务器环境变量注入，不写入仓库或文档。
 
 ## 私有数据边界（最重要）
 
@@ -58,6 +57,7 @@ SQLite/Postgres，需要单独说明新增依赖与迁移方案——本次没�
 | `SUBMISSION_RATE_MAX_KEYS` | 否 | 限流器内存里保留的客户端键上限，默认 5000（防 IPv6 轮换把内存撑爆） |
 | `SUBMISSION_TURNSTILE_SECRET` | 否 | 配了才校验 Turnstile（siteverify）；不配则跳过（公开入口本身仍有限流） |
 | `SUBMISSION_TURNSTILE_TIMEOUT_MS` | 否 | siteverify 请求超时，默认 5000 ms；超时 / 异常一律 fail-closed |
+| `PUBLIC_TURNSTILE_SITEKEY` | 前端构建时启用 Turnstile 时配置 | 公开 sitekey；构建期注入 `frontend/src/components/SubmissionForm.astro` 的投稿表单 |
 | `SUBMISSION_ASTRABOT_REVIEW_TOKEN` | 否 | 旧 AstrBot 审核令牌；已停用并忽略，只打一行警告。QQ 投稿改由 Hermes 审核 |
 | `SUBMISSION_HERMES_REVIEW_TOKEN` | 启用 Hermes 审核回写时必填 | Hermes 审核结果回写令牌 |
 | `SUBMISSION_AI_ENDPOINT` / `SUBMISSION_AI_API_KEY` / `SUBMISSION_AI_MODEL` | 否 | 兼容旧版人工/CLI审核工具；Hermes 模式不配置 |
@@ -75,8 +75,10 @@ SQLite/Postgres，需要单独说明新增依赖与迁移方案——本次没�
 | `SUBMISSION_QQ_IMAGE_HOST_ALLOWLIST` | 否 | 图片 URL 域名白名单；不配则只接受 base64 图片 |
 | `SUBMISSION_QQ_TIMEOUT_MS` | 否 | QQ 入站处理（含图片下载）超时，默认 20s |
 | `SUBMISSION_REVIEW_RECOVER_MS` | 否 | 重启后把卡在 `reviewing` 的条目转人工的等待时长，默认 5 分钟 |
-| `FEISHU_NOTIFY_APP_ID` / `FEISHU_NOTIFY_APP_SECRET` / `FEISHU_NOTIFY_CHAT_ID` | 否 | 三项都配才启用飞书群通知；请求超时或发送失败只告警，不影响投稿与发布 |
+| `FEISHU_NOTIFY_APP_ID` / `FEISHU_NOTIFY_APP_SECRET` / `FEISHU_NOTIFY_CHAT_ID` | 否 | 三项都配才启用飞书群通知；收到投稿、审核结果和上线结果时发送，请求超时或发送失败只告警，不影响投稿与发布 |
 | `SUBMISSION_CONTENT_DIR` | 否 | 内容仓路径。**只用于配置期校验**：拒绝把 `SUBMISSION_STORAGE_ROOT` 落在内容仓内。服务不读、不写、不校验内容仓的任何文件 |
+
+线上取值：`SUBMISSION_RATE_MAX=10`、`SUBMISSION_RATE_WINDOW_MS=3600000`（每 IP 每小时 10 次）；`SUBMISSION_TRUSTED_PROXY_CIDRS` 包含本机回环（`127.0.0.1/32`、`::1/128`）与 Cloudflare 官方 IP 段，以便通过 `X-Forwarded-For` 取得真实访客 IP；Cloudflare IP 段变化时需同步更新。
 
 ## 运行
 
@@ -147,33 +149,34 @@ received ──review.start──▶ reviewing ──review.pass──▶ auto_p
 | `POST` | `/api/v1/pull-issues` | 拉取 Issue 附件 |
 | `POST` | `/api/v1/recover` | 恢复卡住的审核 |
 
-## 已实现 vs 待真实服务配置
+## 已实现与线上状态
 
 **已实现并本地验收**：配置与私有根检查、持久队列与状态机、幂等去重、原子写与恢复、
 网页 multipart/JSON 上传与限流/CORS/字段校验、可信代理下的客户端 IP 解析、管理端鉴权与读取、
 GitHub 标签过滤与附件域名白名单/限额、QQ 被动入站与令牌/群白名单、
 **Turnstile siteverify 校验器（fail-closed）**、AI 审核失败关闭与人工决定、CLI。
 
-**待服务器侧配置后才能真实使用（当前未配置，处于关闭/未配置状态）**：
+**线上已启用**：
 
-- AI 审核：需要 `SUBMISSION_AI_ENDPOINT` + `SUBMISSION_AI_API_KEY`（现在审核一律转人工）；
-- QQ 入站：需要在 QQ 机器人侧把群图片推到本入口，并配 `SUBMISSION_QQ_INBOUND_TOKEN` + 群白名单；
-- GitHub Issue：匿名可读公开 Issue，但建议配只读 `SUBMISSION_GITHUB_TOKEN` 以放宽配额；
-- Turnstile：**校验器已在当前代码实现**（`server/http.mjs` 的 `createTurnstileVerifier` 走
-  Cloudflare siteverify，超时或异常一律拒绝），配 `SUBMISSION_TURNSTILE_SECRET` 即启用；
-  但当前没有配任何 secret、前端也还没回传 token，所以线上并未实际启用。
+- 网页投稿：线上已配置 `SUBMISSION_TURNSTILE_SECRET`；前端通过构建期 `PUBLIC_TURNSTILE_SITEKEY`
+  注入 sitekey（`frontend/src/components/SubmissionForm.astro`），Turnstile 人机验证使用浅色主题。
+  线上限流取 `SUBMISSION_RATE_MAX=10`、`SUBMISSION_RATE_WINDOW_MS=3600000`（每 IP 每小时 10 次）；
+  `SUBMISSION_TRUSTED_PROXY_CIDRS` 包含本机回环（`127.0.0.1/32`、`::1/128`）与 Cloudflare 官方 IP 段，以通过
+  `X-Forwarded-For` 取得真实访客 IP；Cloudflare IP 段变化时需同步更新。
+- QQ 群投稿：在投稿群 @机器人，发送「投稿 标题 角色」并在同一条消息内附图；每个自然小时共 10 张，
+  整点重置，回复显示剩余次数。由 Hermes 插件 `ops/hermes/qq-submission` 处理。
+- GitHub Issue：原有投稿表单保留；署名更正与下架仍走 GitHub Issue 表单。
+- 飞书群通知：收到投稿、审核结果和上线结果会发飞书群通知（`server/notify.mjs`），变量为
+  `FEISHU_NOTIFY_APP_ID` / `FEISHU_NOTIFY_APP_SECRET` / `FEISHU_NOTIFY_CHAT_ID`。
 
-**当前自动审核模式**：服务端不在投稿入队后自动调用 AI；QQ、网站与 GitHub 投稿均由 Hermes 每 5 分钟审核并回写。`SUBMISSION_AI_*` 不配置也不会阻塞外部审核结果接口。
-
-**本次未做**：未部署、未开公网、未接入任何真实密钥。
+**当前自动审核模式**：服务端不在投稿入队后自动调用 AI；QQ、网站与 GitHub 投稿均由 Hermes 每 5 分钟审核并回写，审核通过后由后台批量发布。`SUBMISSION_AI_*` 不配置也不会阻塞外部审核结果接口。
 
 ## 与 `tools/intake/` 的分工
 
 - `tools/intake/`：维护者**收录中转**（原内容仓的 intake 已迁到这里）。收录后按
   `sha256` 回源校验、清理、查重；它读站点仓 `data/{characters,works,owner-picks}.json`
   作为权威清单，`contentDir` 仅用于原图 git blob 校验。
-- `server/`：面向**投稿入站与 AI 初审**的统一队列。审核通过（`approved`）后，
-  仍由维护者按既有流程人工收录到内容仓，再走 `tools/intake/` 的校验与清理。
+- `server/`：面向**投稿入站与审核**的统一队列。审核通过（`approved`）后由后台批量发布到内容仓。
 
 `server/adapters/github.mjs` 复用 `tools/intake/core.mjs` 的 Issue 解析函数，
 保证两处的字段口径一致。

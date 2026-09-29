@@ -29,14 +29,16 @@ UI は中国語、英語、日本語に対応しています。
 | UI 言語 | 中国語、英語、日本語 |
 | 作品種別 | ミーム、イラスト、設定資料、漫画 |
 | 画像 | 独立した公開画像アーカイブに保存 |
-| 投稿方法 | GitHub Issue フォーム |
+| 投稿方法 | サイト内フォーム、QQ グループ Bot、GitHub Issue フォーム |
 
 ## 主なリンク
 
 | 用途 | リンク |
 | --- | --- |
 | オンラインで閲覧 | <https://xn--pssy23gqgbz2d718b.com/> |
-| 作品を投稿 | <https://github.com/lmy414/ai-girl-stickers/issues/new?template=sticker-submission.yml> |
+| サイト内投稿 | <https://xn--pssy23gqgbz2d718b.com/submit.html> |
+| QQ グループ投稿 | 投稿グループで Bot を @ し、「投稿 标题 角色」と画像を同じメッセージで送信 |
+| GitHub Issue 投稿 | <https://github.com/lmy414/ai-girl-stickers/issues/new?template=sticker-submission.yml> |
 | クレジット修正・削除依頼 | <https://github.com/lmy414/ai-girl-stickers/issues/new?template=takedown-request.yml> |
 | 画像アーカイブ | <https://github.com/lmy414/ai-girl-stickers> |
 
@@ -56,14 +58,14 @@ UI は中国語、英語、日本語に対応しています。
 | `frontend/` | Astro のソース。ページは `src/pages/`、レイアウトとコンポーネントは `src/layouts/` と `src/components/`、公開アセットは `public/` |
 | `data/` | キャラクター、カテゴリ、作品、サイト運営者のおすすめ、特集、編集用オーバーレイの正本 JSON |
 | `tools/` | ビルド、コンテンツ同期、データ一時展開、スナップショット生成、画像派生、静的圧縮スクリプト |
-| `server/` | Web、QQ、GitHub Issue を統合する投稿サービス。現在はローカルでの実行とテストのみで、本番では未公開 |
+| `server/` | Web、QQ グループ、GitHub Issue を統合する投稿サービス。本番稼働中 |
 | `tools/intake/` | 管理者向けの取込ツール。重複確認、一時保管、GitHub Issue 添付の取込を担当 |
 | `ops/` | デプロイ、ロールバック、審査・公開自動化、サーバー設定例 |
 | `docs/` | 通信高速化、CDN、投稿自動化、Hermes 審査などの保守資料 |
 | `archive/` | リポジトリ分割前の履歴資料 |
 | `dist/`、`.build/`、`frontend/out/` | ビルド時またはローカル実行時の生成物。フロントエンドのソースではありません |
 
-詳しい使い方は [`server/README.md`](server/README.md) と [`tools/intake/README.md`](tools/intake/README.md) を参照してください。現在の一般投稿は画像アーカイブの GitHub Issue フォームを使用します。
+詳しい使い方は [`server/README.md`](server/README.md) と [`tools/intake/README.md`](tools/intake/README.md) を参照してください。一般投稿はサイト内フォーム、QQ グループ Bot、画像アーカイブの GitHub Issue フォームから受け付けます。
 
 ## ブランド素材
 
@@ -92,6 +94,6 @@ python -m http.server 5173 -d .build/site
 
 ## 投稿と著作権
 
-これは非公式の同人アーカイブです。投稿、クレジット修正、削除依頼は、すべて画像アーカイブの GitHub Issue フォームから受け付けます。詳しいルールは [`CONTRIBUTING.md`](https://github.com/lmy414/ai-girl-stickers/blob/main/CONTRIBUTING.md) を参照してください。
+これは非公式の同人アーカイブです。投稿はサイト内フォーム、QQ グループ Bot、画像アーカイブの GitHub Issue フォームから受け付けます。クレジット修正と削除依頼は引き続き GitHub Issue フォームを使用します。詳しいルールは [`CONTRIBUTING.md`](https://github.com/lmy414/ai-girl-stickers/blob/main/CONTRIBUTING.md) を参照してください。
 
 画像の著作権は常に原作者に帰属します。このリポジトリで公開されたことやサイトに掲載されたことによって、画像に MIT ライセンスが自動的に付与されることはありません。再利用する前に、各作品の個別ページに記載された出典とライセンスを確認してください。このリポジトリのコードは MIT ライセンスで公開しています。詳細は [`LICENSE`](LICENSE) を参照してください。
