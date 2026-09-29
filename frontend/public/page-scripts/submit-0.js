@@ -210,6 +210,7 @@
         try {
           turnstileWidgetId = window.turnstile.render(turnstileSlot, {
             sitekey: turnstileSitekey,
+            theme: "light",
             callback: function (token) { turnstileInput.value = token || ""; },
             "expired-callback": function () { turnstileInput.value = ""; },
             "error-callback": function () { turnstileInput.value = ""; }
