@@ -159,6 +159,7 @@ jobs:
             sha256sum "${ARCHIVE_NAME}" > "${ARCHIVE_NAME}.sha256"
           )
 
+          tar -tzf "${RELEASE_DIR}/${ARCHIVE_NAME}" > "${RUNNER_TEMP}/archive-list.txt"
           for required in \
             './server.js' \
             './migrate.mjs' \
@@ -167,7 +168,7 @@ jobs:
             './node_modules/@libsql/client/package.json' \
             './node_modules/libsql/package.json' \
             './node_modules/sharp/package.json'; do
-            if ! tar -tzf "${RELEASE_DIR}/${ARCHIVE_NAME}" | grep -qx "${required}"; then
+            if ! grep -qxF "${required}" "${RUNNER_TEMP}/archive-list.txt"; then
               echo "archive is missing ${required}" >&2
               exit 1
             fi
