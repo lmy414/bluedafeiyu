@@ -153,20 +153,22 @@ export async function applyPublishStatus(
       const result = results.get(String(work.workId))
       const mergeLegacy = (current: any) => {
         const base = current && typeof current === 'object' && !Array.isArray(current) ? { ...current } : {}
-        if (!result) return base
-        for (const [key, value] of Object.entries({
-          slug: result.slug,
-          path: result.path,
-          thumbnailPath: result.thumbnailPath,
-          fullPath: result.fullPath,
-          width: result.width,
-          height: result.height,
-          fileSize: result.fileSize,
-          format: result.format,
-          mimeType: result.mimeType,
-        })) {
-          if (value !== undefined && value !== null && value !== '') base[key] = value
+        if (result) {
+          for (const [key, value] of Object.entries({
+            slug: result.slug,
+            path: result.path,
+            thumbnailPath: result.thumbnailPath,
+            fullPath: result.fullPath,
+            width: result.width,
+            height: result.height,
+            fileSize: result.fileSize,
+            format: result.format,
+            mimeType: result.mimeType,
+          })) {
+            if (value !== undefined && value !== null && value !== '') base[key] = value
+          }
         }
+        if (work.legacySource === 'submission-sync' && base.createdAt && work.updatedAt) base.updatedAt = work.updatedAt
         return base
       }
       const data: Record<string, any> = {

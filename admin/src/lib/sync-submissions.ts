@@ -34,11 +34,20 @@ function normalizeDigest(value: unknown): string {
   return String(value || '').trim().toLowerCase()
 }
 
+function normalizeImageFormat(value: unknown): string {
+  const format = String(value || '').trim().toLowerCase().replace(/^\./, '')
+  return format === 'jpeg' ? 'jpg' : format
+}
+
 function originalFormat(item: any, metadata: Metadata): string {
-  const ext = String(item.ext || '').trim().toLowerCase().replace(/^\./, '')
-  if (ext === 'jpg' || ext === 'jpeg') return 'jpeg'
-  if (ext === 'apng') return 'apng'
-  return ext || String(metadata.format || 'png').toLowerCase()
+  const ext = normalizeImageFormat(item.ext)
+  if (ext) return ext
+  return normalizeImageFormat(metadata.format) || 'png'
+}
+
+function normalizeIso(value: unknown): string | null {
+  const text = String(value || '')
+  return Number.isFinite(Date.parse(text)) ? new Date(text).toISOString() : null
 }
 
 function mimeForFormat(format: string, item: any): string {
@@ -252,6 +261,7 @@ export async function syncSubmissions(payload: Payload, options: { baseUrl?: str
           if (options.dryRun) {
             linkedWorkId = `dry-work-${digest.slice(0, 24)}`
           } else {
+            const createdAt = normalizeIso(item.createdAt) || new Date().toISOString()
             const created = await (payload as any).create({
               collection: 'works',
               data: {
@@ -279,6 +289,9 @@ export async function syncSubmissions(payload: Payload, options: { baseUrl?: str
                 review: item.review || null,
                 origin: item.origin || {},
                 legacySource: 'submission-sync',
+                legacyData: { createdAt, updatedAt: createdAt },
+                createdAt,
+                updatedAt: createdAt,
               },
               context: { audit: false, skipNeedsPublish: true, skipFieldAccess: true },
               overrideAccess: true,

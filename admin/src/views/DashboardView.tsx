@@ -11,8 +11,10 @@ import { StatusBadge } from '../components/admin/StatusBadge'
 import type { PublishRun } from '../components/admin/types'
 
 type Stats = {
+  aiReviewing: number
   autoRejected: number
   latestRun: PublishRun | null
+  needsAttention: number
   needsPublish: number
   needsPublishByChannel: Record<string, number>
   pendingByChannel: Record<string, number>
@@ -21,8 +23,10 @@ type Stats = {
 }
 
 const EMPTY_STATS: Stats = {
+  aiReviewing: 0,
   autoRejected: 0,
   latestRun: null,
+  needsAttention: 0,
   needsPublish: 0,
   needsPublishByChannel: {},
   pendingByChannel: {},
@@ -85,11 +89,16 @@ export function DashboardView() {
             <small>其中 {stats.needsPublishByChannel[channel.value] || 0} 项有未发布改动</small>
           </article>
         ))}
-        <article className="s3-stat-card s3-stat-card--warning">
-          <span>AI 拒绝或转人工</span>
-          <strong>{loading ? '…' : stats.autoRejected + stats.pendingReview}</strong>
-          <small>可在投稿审核中收录</small>
+        <article className="s3-stat-card">
+          <span>AI 审核中</span>
+          <strong>{loading ? '…' : stats.aiReviewing}</strong>
+          <small>同步后更新</small>
         </article>
+        <Link className="s3-stat-card s3-stat-card--warning" href="/admin/review">
+          <span>AI 拒绝 / 转人工</span>
+          <strong>{loading ? '…' : stats.needsAttention}</strong>
+          <small>可在投稿审核中收录</small>
+        </Link>
         <article className="s3-stat-card s3-stat-card--blue">
           <span>待发布改动</span>
           <strong>{loading ? '…' : stats.needsPublish + stats.topicsNeedsPublish}</strong>

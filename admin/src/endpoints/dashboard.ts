@@ -21,11 +21,15 @@ async function dashboardStats(req: PayloadRequest) {
   }
   const reviewPending = submissions.docs.filter((doc: any) => ['received', 'reviewing', 'needs_manual'].includes(doc.state)).length
   const autoRejected = submissions.docs.filter((doc: any) => doc.state === 'auto_rejected').length
+  const aiReviewing = submissions.docs.filter((doc: any) => ['received', 'reviewing'].includes(doc.state)).length
+  const needsAttention = submissions.docs.filter((doc: any) => ['auto_rejected', 'needs_manual'].includes(doc.state) && !doc.work).length
   return {
     pendingByChannel,
     needsPublishByChannel,
     pendingReview: reviewPending,
     autoRejected,
+    aiReviewing,
+    needsAttention,
     needsPublish: works.docs.filter((doc: any) => doc.needsPublish).length,
     topicsNeedsPublish: topics.docs.filter((doc: any) => doc.needsPublish).length,
     latestRun: runs.docs[0] || null,

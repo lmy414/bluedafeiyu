@@ -76,11 +76,19 @@ function relationCode(value: unknown, codeField: string): string {
   return String(value ?? '')
 }
 
+function legacyOrder(value: unknown): number | null {
+  if (value === null || value === undefined || value === '') return null
+  const order = Number(value)
+  return Number.isFinite(order) ? order : null
+}
+
 function orderedDocs(docs: any[]): any[] {
   return [...docs].sort((left, right) => {
-    const leftOrder = Number.isFinite(Number(left.legacyOrder)) ? Number(left.legacyOrder) : Number.MAX_SAFE_INTEGER
-    const rightOrder = Number.isFinite(Number(right.legacyOrder)) ? Number(right.legacyOrder) : Number.MAX_SAFE_INTEGER
-    if (leftOrder !== rightOrder) return leftOrder - rightOrder
+    const leftOrder = legacyOrder(left.legacyOrder)
+    const rightOrder = legacyOrder(right.legacyOrder)
+    if (leftOrder !== null && rightOrder === null) return -1
+    if (leftOrder === null && rightOrder !== null) return 1
+    if (leftOrder !== null && rightOrder !== null && leftOrder !== rightOrder) return leftOrder - rightOrder
     const leftDate = String(left.createdAt || '')
     const rightDate = String(right.createdAt || '')
     if (leftDate !== rightDate) return leftDate.localeCompare(rightDate)
