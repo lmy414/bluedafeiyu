@@ -452,6 +452,7 @@ class PluginTests(unittest.TestCase):
         self.assertEqual(request.full_url, "https://example.test/qq-events")
         self.assertEqual(request.get_header("Authorization"), "Bearer secret-token")
         self.assertEqual(request.get_header("Content-type"), "application/json")
+        self.assertEqual(request.get_header("User-agent"), "dafeiyu-qq-submission/1.0")
         self.assertEqual(calls[0]["timeout"], 20)
         self.assertEqual(payload["groupId"], "group-1")
         self.assertEqual(payload["userId"], "user-1")

@@ -491,6 +491,8 @@ def _post_image(
         headers={
             "Authorization": f"Bearer {token}",
             "Content-Type": "application/json",
+            # Cloudflare 会以 1010 拦截 urllib 默认 UA，必须显式声明。
+            "User-Agent": "dafeiyu-qq-submission/1.0",
         },
         method="POST",
     )
