@@ -6,7 +6,7 @@ import { useAdminApi } from './api'
 import { CHANNELS, SUBMISSION_STATES, formatDate, labelOf } from './constants'
 import { StatusBadge } from './StatusBadge'
 import type { CategoryDoc, CharacterDoc, MediaDoc, SubmissionDoc, WorkDoc } from './types'
-import { asObject, relationID } from './types'
+import { asObject, relationID, workOriginalURL } from './types'
 
 type DrawerItem =
   | { kind: 'submission'; submission: SubmissionDoc }
@@ -20,7 +20,7 @@ type AuditEvent = {
 }
 
 function fullImageURL(work: WorkDoc): string | undefined {
-  const media = asObject<MediaDoc>(work.large) || asObject<MediaDoc>(work.original) || asObject<MediaDoc>(work.preview)
+  const media = asObject<MediaDoc>(work.preview)
   return media?.url || media?.thumbnailURL || media?.sizes?.thumbnail?.url
 }
 
@@ -69,6 +69,7 @@ export function WorkDrawer({
 
   const review = work?.review || submission?.review
   const image = work ? fullImageURL(work) : submission ? submissionImage(submission) : undefined
+  const originalURL = work ? workOriginalURL(work) : undefined
   const title = work?.name || submission?.title || '未命名投稿'
   const history = useMemo(() => {
     if (submission && Array.isArray(submission.stateHistory)) {
@@ -128,6 +129,7 @@ export function WorkDrawer({
         <div className="s3-drawer-scroll">
           <div className="s3-drawer-image">
             {image ? <img alt={title} src={image} /> : <span>暂无预览图</span>}
+            {originalURL ? <a className="s3-muted" href={originalURL} rel="noreferrer" target="_blank">查看原图</a> : null}
           </div>
 
           {work ? (

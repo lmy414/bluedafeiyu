@@ -51,12 +51,12 @@ export type WorkDoc = {
   commentary?: string
   description?: string
   id: ID
-  large?: MediaDoc | ID
   lastPublishedAt?: string
   legacyData?: Record<string, unknown>
+  legacyPaths?: { externalOriginalUrl?: null | string; fullPath?: null | string; path?: null | string; thumbnailPath?: null | string }
   name: string
   needsPublish?: boolean
-  original?: MediaDoc | ID
+  path?: string
   preview?: MediaDoc | ID
   publishedAt?: string
   review?: ReviewInfo
@@ -137,8 +137,19 @@ export function asObject<T extends object>(value: T | ID | null | undefined): T 
 }
 
 export function workImageURL(work: WorkDoc): string | undefined {
-  const media = asObject<MediaDoc>(work.preview) || asObject<MediaDoc>(work.original) || asObject<MediaDoc>(work.large)
+  const media = asObject<MediaDoc>(work.preview)
   return media?.sizes?.thumbnail?.url || media?.thumbnailURL || media?.url
+}
+
+export function workOriginalURL(work: WorkDoc): string | undefined {
+  if (work.status !== 'published' && work.status !== 'hidden') return undefined
+  const raw = work.legacyPaths?.path || work.path || (typeof work.legacyData?.path === 'string' ? work.legacyData.path : '')
+  const value = String(raw || '').trim()
+  if (!value) return undefined
+  if (/^https?:\/\//i.test(value)) return value
+  const normalized = value.replace(/\\/g, '/').replace(/^\/+/, '')
+  const repoPath = normalized.startsWith('dist/') ? normalized : `dist/${normalized}`
+  return `https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/${repoPath}`
 }
 
 export function submissionImageURL(submission: SubmissionDoc): string | undefined {

@@ -21,7 +21,8 @@
     "export:data": "cross-env NODE_OPTIONS=--no-deprecation tsx scripts/export-data.ts",
     "sync:submissions": "cross-env NODE_OPTIONS=--no-deprecation tsx scripts/sync-submissions.ts",
     "roundtrip:check": "cross-env NODE_OPTIONS=--no-deprecation tsx scripts/roundtrip-check.ts",
-    "migrate": "cross-env NODE_OPTIONS=--no-deprecation payload migrate"
+    "migrate": "cross-env NODE_OPTIONS=--no-deprecation payload migrate",
+    "prepare:standalone": "node scripts/prepare-standalone-migrations.mjs .next/standalone"
   },
   "dependencies": {
     "@payloadcms/db-sqlite": "3.90.2",

@@ -217,10 +217,6 @@ async function startBackend(t, state) {
       if (state.snapshotError) { res.writeHead(500, { 'content-type': 'application/json' }); res.end(JSON.stringify({ error: state.snapshotError })); return; }
       res.writeHead(200, { 'content-type': 'application/json' }); res.end(JSON.stringify(state.snapshot)); return;
     }
-    if (req.method === 'GET' && url.pathname.startsWith('/cms-api/publish/media/')) {
-      state.mediaCalls = (state.mediaCalls || 0) + 1;
-      res.writeHead(200, { 'content-type': 'image/png' }); res.end(state.mediaBody || TINY_PNG); return;
-    }
     if (req.method === 'POST' && /^\/cms-api\/publish\/runs\/[^/]+\/status$/.test(url.pathname)) {
       let raw = '';
       for await (const chunk of req) raw += chunk;
@@ -232,6 +228,23 @@ async function startBackend(t, state) {
   await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
   t.after(() => new Promise((resolve) => server.close(resolve)));
   return { url: `http://127.0.0.1:${server.address().port}`, state, close: () => new Promise((resolve) => server.close(resolve)) };
+}
+
+async function startSubmissionService(t, state) {
+  const server = http.createServer(async (req, res) => {
+    const url = new URL(req.url, 'http://127.0.0.1');
+    if (req.method !== 'GET' || !/^\/api\/v1\/items\/sub_[A-Za-z0-9_]+\/raw$/.test(url.pathname)) {
+      res.writeHead(404, { 'content-type': 'application/json' }); res.end(JSON.stringify({ error: 'not found' })); return;
+    }
+    state.submissionCalls = (state.submissionCalls || 0) + 1;
+    state.submissionPaths = state.submissionPaths || [];
+    state.submissionPaths.push(url.pathname);
+    state.submissionAuth = req.headers.authorization || '';
+    res.writeHead(200, { 'content-type': state.submissionMime || 'image/png' }); res.end(state.submissionBody || TINY_PNG);
+  });
+  await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
+  t.after(() => new Promise((resolve) => server.close(resolve)));
+  return { url: `http://127.0.0.1:${server.address().port}`, state };
 }
 
 function envFor(ws, backend, extra = {}) {
@@ -249,6 +262,8 @@ function envFor(ws, backend, extra = {}) {
     ADMIN_API_URL: backend.url,
     ADMIN_WORKER_TOKEN: 'worker-token',
     ADMIN_PUBLISH_REQUEST_DIR: ws.requestDir,
+    SUBMISSION_ADMIN_API_URL: extra.submissionServiceUrl || 'http://127.0.0.1:1',
+    SUBMISSION_ADMIN_TOKEN: 'submission-token',
     ...extra,
   };
 }
@@ -273,12 +288,13 @@ test('无变更 noop：跳过提交、推送和部署，状态上报 succeeded',
   const ws = await makeWorkspace(t, { works: [baselineRecord()] });
   const state = { statuses: [], snapshot: null };
   const backend = await startBackend(t, state);
+  const submission = await startSubmissionService(t, state);
   state.snapshot = snapshotFrom(ws, runId);
   const exec = makeFakeExec(state);
   writeRequest(ws, runId);
 
   const result = await capture(() => main(['--run', runId], {
-    env: envFor(ws, backend),
+    env: envFor(ws, backend, { submissionServiceUrl: submission.url }),
     exec,
     runIssueReconcile: () => {},
   }));
@@ -306,16 +322,17 @@ test('新增一张图：下载、派生、构建校验、提交白名单、推�
   const targetPath = `dist/submissions/originals/deepseek/${digest.slice(0, 16)}.png`;
   const snapshot = snapshotFrom(ws, runId, {
     files: { 'data/works.json': `${JSON.stringify([record], null, 2)}\n` },
-    originals: [{ workId: record.id, sha256: digest, characterId: 'deepseek', ext: 'png', targetPath, downloadPath: '/cms-api/publish/media/one' }],
+    originals: [{ workId: record.id, sha256: digest, characterId: 'deepseek', ext: 'png', targetPath, submissionId: 'sub_one' }],
     summary: { added: 1, updated: 0, hidden: 0, restored: 0, deleted: 0, topics: 0 },
   });
-  const state = { statuses: [], snapshot, mediaBody: TINY_PNG };
+  const state = { statuses: [], snapshot, submissionBody: TINY_PNG };
   const backend = await startBackend(t, state);
+  const submission = await startSubmissionService(t, state);
   const exec = makeFakeExec(state);
   writeRequest(ws, runId);
 
   const result = await capture(() => main(['--run', runId], {
-    env: envFor(ws, backend),
+    env: envFor(ws, backend, { submissionServiceUrl: submission.url }),
     exec,
     runIssueReconcile: () => {},
   }));
@@ -326,6 +343,9 @@ test('新增一张图：下载、派生、构建校验、提交白名单、推�
   assert.ok(output.commits.site);
   assert.ok(output.commits.content);
   assert.equal(state.deployRuns, 1);
+  assert.equal(state.submissionCalls, 1);
+  assert.deepEqual(state.submissionPaths, ['/api/v1/items/sub_one/raw']);
+  assert.equal(state.submissionAuth, 'Bearer submission-token');
 
   const works = readJson(path.join(ws.site, 'data', 'works.json'));
   assert.equal(works[0].slug, `test-${record.id}`);
@@ -343,6 +363,41 @@ test('新增一张图：下载、派生、构建校验、提交白名单、推�
   assert.match(runGit(ws.content, ['log', '-1', '--pretty=%s']), /新增 1/);
 });
 
+test('内容仓已有哈希一致的原图：跳过投稿服务下载', async (t) => {
+  const runId = 'run-skip-existing';
+  const record = {
+    id: 'sticker_eeeeeeeeeeeeeeeeeeeeeeee',
+    name: '跳过下载作品',
+    characterId: 'deepseek',
+    categoryIds: ['meme'],
+    tags: ['测试'],
+    status: 'published',
+  };
+  const digest = sha256(TINY_PNG);
+  const targetPath = `dist/submissions/originals/deepseek/${digest.slice(0, 16)}.png`;
+  const ws = await makeWorkspace(t, { contentFiles: { [targetPath]: TINY_PNG } });
+  const snapshot = snapshotFrom(ws, runId, {
+    files: { 'data/works.json': `${JSON.stringify([record], null, 2)}\n` },
+    originals: [{ workId: record.id, sha256: digest, characterId: 'deepseek', ext: 'png', targetPath, submissionId: 'sub_skip' }],
+    summary: { added: 1, updated: 0, hidden: 0, restored: 0, deleted: 0, topics: 0 },
+  });
+  const state = { statuses: [], snapshot };
+  const backend = await startBackend(t, state);
+  const submission = await startSubmissionService(t, state);
+  const exec = makeFakeExec(state);
+  writeRequest(ws, runId);
+
+  const result = await capture(() => main(['--run', runId], {
+    env: envFor(ws, backend, { submissionServiceUrl: submission.url }),
+    exec,
+    runIssueReconcile: () => {},
+  }));
+  assert.equal(result.code, 0, result.err);
+  assert.equal(JSON.parse(result.out).status, 'succeeded');
+  assert.equal(state.submissionCalls || 0, 0);
+  assert.ok(fs.existsSync(path.join(ws.content, ...targetPath.split('/'))));
+});
+
 test('删除路径：只删除允许前缀下的内容文件并提交', async (t) => {
   const runId = 'run-delete';
   const rel = 'dist/submissions/originals/deepseek/old.png';
@@ -353,11 +408,12 @@ test('删除路径：只删除允许前缀下的内容文件并提交', async (t
   });
   const state = { statuses: [], snapshot };
   const backend = await startBackend(t, state);
+  const submission = await startSubmissionService(t, state);
   const exec = makeFakeExec(state);
   writeRequest(ws, runId);
 
   const result = await capture(() => main(['--run', runId], {
-    env: envFor(ws, backend),
+    env: envFor(ws, backend, { submissionServiceUrl: submission.url }),
     exec,
     runIssueReconcile: () => {},
   }));
@@ -373,16 +429,17 @@ test('sha256 不匹配：下载阶段失败并写失败状态和 journal', async
   const ws = await makeWorkspace(t);
   const targetPath = 'dist/submissions/originals/deepseek/bad.png';
   const snapshot = snapshotFrom(ws, runId, {
-    originals: [{ workId: 'bad', sha256: 'c'.repeat(64), characterId: 'deepseek', ext: 'png', targetPath, downloadPath: '/cms-api/publish/media/bad' }],
+    originals: [{ workId: 'bad', sha256: 'c'.repeat(64), characterId: 'deepseek', ext: 'png', targetPath, submissionId: 'sub_bad' }],
     summary: { added: 1, updated: 0, hidden: 0, restored: 0, deleted: 0, topics: 0 },
   });
-  const state = { statuses: [], snapshot, mediaBody: TINY_PNG };
+  const state = { statuses: [], snapshot, submissionBody: TINY_PNG };
   const backend = await startBackend(t, state);
+  const submission = await startSubmissionService(t, state);
   const exec = makeFakeExec(state);
   writeRequest(ws, runId);
 
   const result = await capture(() => main(['--run', runId], {
-    env: envFor(ws, backend),
+    env: envFor(ws, backend, { submissionServiceUrl: submission.url }),
     exec,
     runIssueReconcile: () => {},
   }));
@@ -409,16 +466,17 @@ test('白名单外改动：发现阶段失败，不提交、不覆盖脏文件',
   const digest = sha256(TINY_PNG);
   const snapshot = snapshotFrom(ws, runId, {
     files: { 'data/works.json': `${JSON.stringify([record], null, 2)}\n` },
-    originals: [{ workId: record.id, sha256: digest, characterId: 'deepseek', ext: 'png', targetPath: 'dist/submissions/originals/deepseek/dirty.png', downloadPath: '/cms-api/publish/media/dirty' }],
+    originals: [{ workId: record.id, sha256: digest, characterId: 'deepseek', ext: 'png', targetPath: 'dist/submissions/originals/deepseek/dirty.png', submissionId: 'sub_dirty' }],
     summary: { added: 1, updated: 0, hidden: 0, restored: 0, deleted: 0, topics: 0 },
   });
-  const state = { statuses: [], snapshot, mediaBody: TINY_PNG, extraDirty: true };
+  const state = { statuses: [], snapshot, submissionBody: TINY_PNG, extraDirty: true };
   const backend = await startBackend(t, state);
+  const submission = await startSubmissionService(t, state);
   const exec = makeFakeExec(state);
   writeRequest(ws, runId);
 
   const result = await capture(() => main(['--run', runId], {
-    env: envFor(ws, backend),
+    env: envFor(ws, backend, { submissionServiceUrl: submission.url }),
     exec,
     runIssueReconcile: () => {},
   }));
@@ -443,17 +501,18 @@ test('部署失败：状态上报 failed，不标记中转条目', async (t) => 
   const digest = sha256(TINY_PNG);
   const snapshot = snapshotFrom(ws, runId, {
     files: { 'data/works.json': `${JSON.stringify([record], null, 2)}\n` },
-    originals: [{ workId: record.id, sha256: digest, characterId: 'deepseek', ext: 'png', targetPath: 'dist/submissions/originals/deepseek/deploy.png', downloadPath: '/cms-api/publish/media/deploy' }],
+    originals: [{ workId: record.id, sha256: digest, characterId: 'deepseek', ext: 'png', targetPath: 'dist/submissions/originals/deepseek/deploy.png', submissionId: 'sub_deploy' }],
     summary: { added: 1, updated: 0, hidden: 0, restored: 0, deleted: 0, topics: 0 },
   });
   writeJson(path.join(ws.intake, 'meta', `${digest}.json`), { sha256: digest, status: 'ready' });
-  const state = { statuses: [], snapshot, mediaBody: TINY_PNG, failDeploy: true };
+  const state = { statuses: [], snapshot, submissionBody: TINY_PNG, failDeploy: true };
   const backend = await startBackend(t, state);
+  const submission = await startSubmissionService(t, state);
   const exec = makeFakeExec(state);
   writeRequest(ws, runId);
 
   const result = await capture(() => main(['--run', runId], {
-    env: envFor(ws, backend),
+    env: envFor(ws, backend, { submissionServiceUrl: submission.url }),
     exec,
     runIssueReconcile: () => {},
   }));
@@ -471,13 +530,14 @@ test('重复触发：publish.request 已改名时第二次只跳过，不再请�
   const ws = await makeWorkspace(t, { works: [baselineRecord()] });
   const state = { statuses: [], snapshot: null };
   const backend = await startBackend(t, state);
+  const submission = await startSubmissionService(t, state);
   state.snapshot = snapshotFrom(ws, runId);
   const exec = makeFakeExec(state);
   writeRequest(ws, runId);
 
-  const first = await capture(() => main(['--run', runId], { env: envFor(ws, backend), exec, runIssueReconcile: () => {} }));
+  const first = await capture(() => main(['--run', runId], { env: envFor(ws, backend, { submissionServiceUrl: submission.url }), exec, runIssueReconcile: () => {} }));
   assert.equal(first.code, 0, first.err);
-  const second = await capture(() => main(['--run', runId], { env: envFor(ws, backend), exec, runIssueReconcile: () => {} }));
+  const second = await capture(() => main(['--run', runId], { env: envFor(ws, backend, { submissionServiceUrl: submission.url }), exec, runIssueReconcile: () => {} }));
   assert.equal(second.code, 0);
   assert.equal(JSON.parse(second.out).status, 'skipped');
   assert.equal(state.snapshotCalls, 1);

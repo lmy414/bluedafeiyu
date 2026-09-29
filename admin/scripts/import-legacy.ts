@@ -149,7 +149,8 @@ async function ensureMedia(
   meta: {
     alt: string
     externalUrl?: null | string
-    role: 'attachment' | 'large' | 'original' | 'preview'
+    isAnimated?: boolean
+    role: 'attachment' | 'preview'
     sourcePath?: null | string
   },
 ): Promise<number | string | null> {
@@ -189,7 +190,7 @@ async function ensureMedia(
       storageKind: 'content-repository',
       sourcePath: meta.sourcePath || relativeSource(filename),
       externalUrl: meta.externalUrl || null,
-      isAnimated: ext === '.gif' || ext === '.apng',
+      isAnimated: Boolean(meta.isAnimated || ext === '.gif' || ext === '.apng'),
     },
   } as any)
   const createdID = created.id
@@ -296,50 +297,31 @@ async function importOneWork(raw: any, kind: 'blue-fish' | 'owner-picks' | 'subm
   if (!character) throw new Error(`找不到角色 ${characterId}`)
   const categoryIds = Array.isArray(raw.categoryIds) ? raw.categoryIds.filter((id: string) => categoryMap.has(id)) : []
 
-  let originalPath: string | null = null
   let previewPath: string | null = null
-  let largePath: string | null = null
-  let externalOriginalUrl: string | null = raw.path || raw.sourceUrl || null
 
   if (kind === 'submission') {
-    originalPath = path.join(contentDir, 'dist', 'submissions', 'originals', characterId, basenameFromUrl(raw.path || ''))
-    previewPath = raw.thumbnailPath ? pathToContent(raw.thumbnailPath) : null
-    largePath = raw.fullPath ? pathToContent(raw.fullPath) : null
+    const sourceStem = path.parse(basenameFromUrl(raw.path || '')).name
+    previewPath = raw.thumbnailPath
+      ? pathToContent(raw.thumbnailPath)
+      : sourceStem
+        ? path.join(contentDir, 'dist', 'submissions', 'previews', characterId, `${sourceStem}.webp`)
+        : null
   } else if (kind === 'owner-picks') {
-    originalPath = path.join(contentDir, 'owner-picks', basenameFromUrl(raw.path || ''))
-    previewPath = raw.thumbnailPath ? path.join(contentDir, raw.thumbnailPath) : null
-    largePath = raw.fullPath ? path.join(contentDir, raw.fullPath) : null
+    const previewRelative = raw.thumbnailPath || raw.fullPath
+    previewPath = previewRelative ? path.join(contentDir, previewRelative) : null
   } else {
     previewPath = raw.previewPath
       ? path.join(contentDir, 'dist', 'data', 'blue-fish', 'previews', path.basename(raw.previewPath))
       : null
-    originalPath = raw.originalPath ? path.join(contentDir, raw.originalPath) : null
-    largePath = previewPath
-    externalOriginalUrl = raw.sourceUrl || null
   }
 
-  const originalMedia = previewsOnly
-    ? null
-    : await ensureMedia(originalPath, {
-        alt: raw.name,
-        role: 'original',
-        sourcePath: originalPath ? relativeSource(originalPath) : null,
-        externalUrl: externalOriginalUrl,
-      })
   const previewMedia = await ensureMedia(previewPath, {
     alt: raw.name,
+    isAnimated: Boolean(raw.isAnimated),
     role: 'preview',
     sourcePath: previewPath ? relativeSource(previewPath) : null,
-    externalUrl: externalOriginalUrl,
+    externalUrl: raw.path || raw.sourceUrl || null,
   })
-  const largeMedia = previewsOnly
-    ? null
-    : await ensureMedia(largePath, {
-        alt: raw.name,
-        role: 'large',
-        sourcePath: largePath ? relativeSource(largePath) : null,
-        externalUrl: externalOriginalUrl,
-      })
 
   const channel = kind === 'owner-picks' ? 'owner' : kind === 'blue-fish' ? 'blue-fish' : submissionSource(raw)
   const workData: Record<string, any> = {
@@ -355,17 +337,15 @@ async function importOneWork(raw: any, kind: 'blue-fish' | 'owner-picks' | 'subm
     character: character.id,
     categories: categoryIds.map((id: string) => categoryMap.get(id).id),
     tags: tagsToArray(raw.tags),
-    original: originalMedia || undefined,
-    preview: previewMedia || originalMedia || undefined,
-    large: largeMedia || undefined,
+    preview: previewMedia || undefined,
     legacyPaths: {
       path: raw.path || raw.sourceUrl || null,
       thumbnailPath: raw.thumbnailPath || raw.previewPath || null,
       fullPath: raw.fullPath || null,
-      externalOriginalUrl,
+      externalOriginalUrl: raw.path || raw.sourceUrl || null,
     },
     format: raw.format || undefined,
-    mimeType: raw.mimeType || mediaMime(originalPath || previewPath),
+    mimeType: raw.mimeType || mediaMime(previewPath),
     isAnimated: Boolean(raw.isAnimated),
     width: raw.width || undefined,
     height: raw.height || undefined,
@@ -390,7 +370,7 @@ async function importOneWork(raw: any, kind: 'blue-fish' | 'owner-picks' | 'subm
   await upsert('works', 'workId', raw.id, workData)
 
   if (kind === 'submission' && !skipSubmissions) {
-    const asset = originalMedia || previewMedia || largeMedia
+    const asset = previewMedia
     if (!asset) {
       stats.submissions.skipped += 1
       return
@@ -466,8 +446,9 @@ async function main() {
   console.log(`内容仓：${contentDir}`)
   console.log(`数据目录：${dataDir}`)
   console.log(dryRun ? '模式：dry-run（不会写数据库）' : '模式：写入数据库')
-  if (previewsOnly) console.log('素材：只导入预览图')
-  if (noMedia) console.log('素材：跳过所有文件上传')
+  if (previewsOnly) console.log('提示：--previews-only 已为默认行为，参数保留兼容且无额外作用。')
+  console.log('素材：只导入预览图；原图和大图不会写入后台。')
+  if (noMedia) console.log('素材：--no-media 已指定，跳过所有文件上传')
 
   const categoryMap = await importCategories()
   const characterMap = await importCharacters()

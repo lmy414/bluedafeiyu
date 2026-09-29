@@ -9,7 +9,11 @@ User=dafeiyu-admin
 Group=dafeiyu-admin
 WorkingDirectory=/srv/apps/dafeiyu-admin/app
 EnvironmentFile=/etc/dafeiyu/admin.env
-ExecStart=/usr/bin/npm run start -- -p 3100 -H 127.0.0.1
+Environment=PORT=3100
+Environment=HOSTNAME=127.0.0.1
+Environment=NODE_ENV=production
+Environment=NODE_OPTIONS=--max-old-space-size=512
+ExecStart=/usr/bin/node server.js
 Restart=on-failure
 RestartSec=5s
 NoNewPrivileges=true
@@ -17,7 +21,7 @@ PrivateTmp=true
 ProtectHome=true
 ProtectSystem=strict
 ReadWritePaths=/srv/apps/dafeiyu-admin/data /srv/apps/dafeiyu-admin/media /srv/apps/dafeiyu-admin/run
-MemoryMax=900M
+MemoryMax=700M
 
 [Install]
 WantedBy=multi-user.target

@@ -36,10 +36,8 @@ export const Media: CollectionConfig = {
       name: 'mediaRole',
       type: 'select',
       required: true,
-      defaultValue: 'original',
+      defaultValue: 'preview',
       options: [
-        { label: '原图', value: 'original' },
-        { label: '大图', value: 'large' },
         { label: '预览图', value: 'preview' },
         { label: '附件', value: 'attachment' },
       ],

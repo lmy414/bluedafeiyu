@@ -1,0 +1,237 @@
+name: Admin build and release
+
+on:
+  push:
+    branches:
+      - main
+      - feat/admin-console
+    paths:
+      - 'admin/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: admin-build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: admin/package-lock.json
+
+      - name: Install dependencies
+        working-directory: admin
+        run: npm ci --no-audit --no-fund
+
+      - name: Build Next.js and Payload
+        working-directory: admin
+        run: npm run build
+
+      - name: Prepare standalone migrations
+        working-directory: admin
+        run: npm run prepare:standalone
+
+      - name: Assemble standalone release tree
+        run: |
+          set -euo pipefail
+          STANDALONE="admin/.next/standalone"
+
+          mkdir -p "${STANDALONE}/.next/static"
+          cp -a admin/.next/static/. "${STANDALONE}/.next/static/"
+
+          if [ -d admin/public ]; then
+            mkdir -p "${STANDALONE}/public"
+            cp -a admin/public/. "${STANDALONE}/public/"
+          fi
+
+          # These files are not part of the release contract. They are normally
+          # absent in CI, but fail closed here if checkout or tracing changes.
+          rm -f \
+            "${STANDALONE}/.env" \
+            "${STANDALONE}/.env.local" \
+            "${STANDALONE}/.env.production" \
+            "${STANDALONE}/admin.db" \
+            "${STANDALONE}/admin.db-journal" \
+            "${STANDALONE}/admin.db-shm" \
+            "${STANDALONE}/admin.db-wal"
+
+          test -f "${STANDALONE}/server.js"
+          test -f "${STANDALONE}/migrate.mjs"
+          test -d "${STANDALONE}/migrations"
+          test -d "${STANDALONE}/.next/static"
+
+      - name: Smoke test standalone package
+        run: |
+          set -euo pipefail
+          STANDALONE="admin/.next/standalone"
+          SMOKE_DIR="${RUNNER_TEMP}/admin-smoke"
+          SERVER_LOG="${RUNNER_TEMP}/admin-server.log"
+          mkdir -p "${SMOKE_DIR}/media" "${SMOKE_DIR}/run"
+
+          (
+            cd "${STANDALONE}"
+            DATABASE_URL="file:${SMOKE_DIR}/admin.db" \
+            PAYLOAD_SECRET="ci-admin-migration-secret" \
+            NODE_ENV=production \
+            node migrate.mjs
+          )
+
+          (
+            cd "${STANDALONE}"
+            PORT=3199 \
+            HOSTNAME=127.0.0.1 \
+            NODE_ENV=production \
+            DATABASE_URL="file:${SMOKE_DIR}/admin.db" \
+            PAYLOAD_SECRET="ci-admin-migration-secret" \
+            PAYLOAD_PUBLIC_SERVER_URL="http://127.0.0.1:3199" \
+            MEDIA_DIR="${SMOKE_DIR}/media" \
+            ADMIN_PUBLISH_REQUEST_DIR="${SMOKE_DIR}/run" \
+            exec node server.js
+          ) > "${SERVER_LOG}" 2>&1 &
+          SERVER_PID=$!
+
+          cleanup() {
+            kill "${SERVER_PID}" 2>/dev/null || true
+            wait "${SERVER_PID}" 2>/dev/null || true
+          }
+          trap cleanup EXIT
+
+          LOGIN_CODE="000"
+          for _ in $(seq 1 30); do
+            LOGIN_CODE="$(curl -sS -o /dev/null -w '%{http_code}' --max-time 5 http://127.0.0.1:3199/admin/login || echo '000')"
+            if [ "${LOGIN_CODE}" = "200" ]; then
+              break
+            fi
+            sleep 1
+          done
+
+          if [ "${LOGIN_CODE}" != "200" ]; then
+            cat "${SERVER_LOG}"
+            echo "admin login smoke test failed: ${LOGIN_CODE}" >&2
+            exit 1
+          fi
+
+          ME_CODE="$(curl -sS -o /dev/null -w '%{http_code}' --max-time 5 http://127.0.0.1:3199/cms-api/users/me || echo '000')"
+          case "${ME_CODE}" in
+            200 | 401) ;;
+            *)
+              cat "${SERVER_LOG}"
+              echo "users/me smoke test failed: ${ME_CODE}" >&2
+              exit 1
+              ;;
+          esac
+
+          echo "standalone smoke test passed: /admin/login=${LOGIN_CODE} /cms-api/users/me=${ME_CODE}"
+
+      - name: Create release archive
+        id: package
+        run: |
+          set -euo pipefail
+          STANDALONE="admin/.next/standalone"
+          SHORT_SHA="${GITHUB_SHA:0:7}"
+          ARCHIVE_NAME="admin-${SHORT_SHA}.tar.gz"
+          RELEASE_DIR="${RUNNER_TEMP}/admin-release"
+          RELEASE_TAG="admin-${SHORT_SHA}"
+          LATEST_TAG="admin-latest-${GITHUB_REF_NAME//\//-}"
+
+          mkdir -p "${RELEASE_DIR}"
+          tar \
+            --exclude='./.env' \
+            --exclude='./.env.*' \
+            --exclude='./admin.db*' \
+            -C "${STANDALONE}" \
+            -czf "${RELEASE_DIR}/${ARCHIVE_NAME}" \
+            .
+          (
+            cd "${RELEASE_DIR}"
+            sha256sum "${ARCHIVE_NAME}" > "${ARCHIVE_NAME}.sha256"
+          )
+
+          for required in \
+            './server.js' \
+            './migrate.mjs' \
+            './node_modules/payload/package.json' \
+            './node_modules/@payloadcms/db-sqlite/package.json' \
+            './node_modules/@libsql/client/package.json' \
+            './node_modules/libsql/package.json' \
+            './node_modules/sharp/package.json'; do
+            if ! tar -tzf "${RELEASE_DIR}/${ARCHIVE_NAME}" | grep -qx "${required}"; then
+              echo "archive is missing ${required}" >&2
+              exit 1
+            fi
+          done
+
+          {
+            echo "archive_name=${ARCHIVE_NAME}"
+            echo "release_dir=${RELEASE_DIR}"
+            echo "release_tag=${RELEASE_TAG}"
+            echo "latest_tag=${LATEST_TAG}"
+          } >> "${GITHUB_OUTPUT}"
+
+          {
+            echo "### Admin release"
+            echo
+            echo "- release tag: \`${RELEASE_TAG}\`"
+            echo "- fixed tag: \`${LATEST_TAG}\`"
+            echo "- archive: \`${ARCHIVE_NAME}\`"
+            echo "- sha256: \`$(cat "${RELEASE_DIR}/${ARCHIVE_NAME}.sha256")\`"
+          } >> "${GITHUB_STEP_SUMMARY}"
+
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ARCHIVE_NAME: ${{ steps.package.outputs.archive_name }}
+          RELEASE_DIR: ${{ steps.package.outputs.release_dir }}
+          RELEASE_TAG: ${{ steps.package.outputs.release_tag }}
+          LATEST_TAG: ${{ steps.package.outputs.latest_tag }}
+        run: |
+          set -euo pipefail
+
+          ASSETS=(
+            "${RELEASE_DIR}/${ARCHIVE_NAME}"
+            "${RELEASE_DIR}/${ARCHIVE_NAME}.sha256"
+          )
+
+          if gh release view "${RELEASE_TAG}" --repo "${GITHUB_REPOSITORY}" >/dev/null 2>&1; then
+            gh release upload "${RELEASE_TAG}" "${ASSETS[@]}" --repo "${GITHUB_REPOSITORY}" --clobber
+          else
+            gh release create "${RELEASE_TAG}" "${ASSETS[@]}" \
+              --repo "${GITHUB_REPOSITORY}" \
+              --target "${GITHUB_SHA}" \
+              --title "${RELEASE_TAG}" \
+              --notes "Admin standalone build for ${GITHUB_SHA}." \
+              --prerelease
+          fi
+
+          if gh release view "${LATEST_TAG}" --repo "${GITHUB_REPOSITORY}" >/dev/null 2>&1; then
+            while IFS= read -r asset; do
+              case "${asset}" in
+                "${ARCHIVE_NAME}" | "${ARCHIVE_NAME}.sha256")
+                  ;;
+                admin-*.tar.gz | admin-*.tar.gz.sha256)
+                  gh release delete-asset "${LATEST_TAG}" "${asset}" --repo "${GITHUB_REPOSITORY}" --yes
+                  ;;
+              esac
+            done < <(gh release view "${LATEST_TAG}" --repo "${GITHUB_REPOSITORY}" --json assets --jq '.assets[].name')
+          else
+            gh release create "${LATEST_TAG}" \
+              --repo "${GITHUB_REPOSITORY}" \
+              --target "${GITHUB_SHA}" \
+              --title "admin latest (${GITHUB_REF_NAME})" \
+              --notes "Latest admin standalone build for ${GITHUB_REF_NAME}." \
+              --prerelease
+          fi
+
+          gh release upload "${LATEST_TAG}" "${ASSETS[@]}" --repo "${GITHUB_REPOSITORY}" --clobber

@@ -16,6 +16,27 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // The admin app is built in GitHub Actions and deployed as a self-contained
+  // Next.js output. Keep native/runtime packages external so output tracing
+  // copies them into .next/standalone instead of webpack bundling them.
+  output: 'standalone',
+  outputFileTracingRoot: dirname,
+  outputFileTracingIncludes: {
+    '/*': [
+      './node_modules/@img/**/*',
+      './node_modules/@libsql/**/*',
+      './node_modules/libsql/**/*',
+      './node_modules/sharp/**/*',
+    ],
+  },
+  serverExternalPackages: [
+    '@libsql/client',
+    '@payloadcms/db-sqlite',
+    '@payloadcms/drizzle',
+    'libsql',
+    'payload',
+    'sharp',
+  ],
   webpack: (webpackConfig) => {
     webpackConfig.resolve.extensionAlias = {
       '.cjs': ['.cts', '.cjs'],
@@ -31,5 +52,3 @@ const nextConfig: NextConfig = {
 }
 
 export default withPayload(nextConfig, { devBundleServerPackages: false })
-
-

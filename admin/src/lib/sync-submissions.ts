@@ -5,6 +5,11 @@ import os from 'node:os'
 import path from 'node:path'
 
 import type { Payload } from 'payload'
+import sharp, { type Metadata } from 'sharp'
+
+const PREVIEW_EDGE = 480
+const PREVIEW_QUALITY = 76
+const PREVIEW_EFFORT = 6
 
 export const CONTENT_KEYS = ['name', 'description', 'commentary', 'characterId', 'categoryIds', 'tags'] as const
 
@@ -23,6 +28,68 @@ const FORBIDDEN = /[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]|<\/?[A-Za-z!]|
 
 function sha256(buffer: Buffer): string {
   return crypto.createHash('sha256').update(buffer).digest('hex')
+}
+
+function normalizeDigest(value: unknown): string {
+  return String(value || '').trim().toLowerCase()
+}
+
+function originalFormat(item: any, metadata: Metadata): string {
+  const ext = String(item.ext || '').trim().toLowerCase().replace(/^\./, '')
+  if (ext === 'jpg' || ext === 'jpeg') return 'jpeg'
+  if (ext === 'apng') return 'apng'
+  return ext || String(metadata.format || 'png').toLowerCase()
+}
+
+function mimeForFormat(format: string, item: any): string {
+  const explicit = String(item.mimeType || '').trim().toLowerCase()
+  if (explicit) return explicit
+  if (format === 'jpg' || format === 'jpeg') return 'image/jpeg'
+  if (format === 'apng') return 'image/apng'
+  return `image/${format || 'png'}`
+}
+
+export type SubmissionPreview = {
+  bytes: Buffer
+  fileSize: number
+  format: string
+  height: number
+  isAnimated: boolean
+  mimeType: string
+  sha256: string
+  width: number
+}
+
+export async function prepareSubmissionPreview(buffer: Buffer, item: any): Promise<SubmissionPreview> {
+  const digest = sha256(buffer)
+  const expected = normalizeDigest(item?.sha256)
+  if (expected && expected !== digest) throw new Error(`投稿原图 sha256 与队列记录不一致：${item?.id || ''}`)
+
+  const metadata = await sharp(buffer, { animated: true }).metadata()
+  if (!metadata.width || !metadata.height) throw new Error(`无法读取原图尺寸：${item?.id || ''}`)
+  const orientation = Number(metadata.orientation || 1)
+  const rotated = orientation >= 5 && orientation <= 8
+  const width = rotated ? metadata.height : metadata.width
+  const height = rotated ? metadata.width : (metadata.pageHeight || metadata.height)
+  const format = originalFormat(item, metadata)
+  const isAnimated = Boolean(metadata.pages && metadata.pages > 1) || format === 'gif' || format === 'apng'
+
+  const { data } = await sharp(buffer, { animated: true })
+    .rotate()
+    .resize({ fit: 'inside', height: PREVIEW_EDGE, kernel: 'lanczos3', width: PREVIEW_EDGE, withoutEnlargement: true })
+    .webp({ effort: PREVIEW_EFFORT, quality: PREVIEW_QUALITY })
+    .toBuffer({ resolveWithObject: true })
+
+  return {
+    bytes: data,
+    fileSize: buffer.length,
+    format,
+    height,
+    isAnimated,
+    mimeType: mimeForFormat(format, item),
+    sha256: digest,
+    width,
+  }
 }
 
 function normalizeSource(source: unknown): 'github-issue' | 'manual' | 'qq' | 'web' {
@@ -94,10 +161,10 @@ async function requestJson(token: string, url: string): Promise<any> {
   return response.json()
 }
 
-async function requestBytes(baseUrl: string, token: string, url: string): Promise<{ bytes: Buffer; mime: string }> {
+async function requestBytes(token: string, url: string): Promise<Buffer> {
   const response = await fetch(url, { headers: { Authorization: `Bearer ${token}` } })
   if (!response.ok) throw new Error(`读取投稿原图失败 ${response.status}`)
-  return { bytes: Buffer.from(await response.arrayBuffer()), mime: response.headers.get('content-type') || 'application/octet-stream' }
+  return Buffer.from(await response.arrayBuffer())
 }
 
 async function findOne(payload: Payload, collection: string, field: string, value: unknown): Promise<any | null> {
@@ -105,26 +172,25 @@ async function findOne(payload: Payload, collection: string, field: string, valu
   return result.docs[0] ?? null
 }
 
-async function ensureSubmissionMedia(payload: Payload, item: any, bytes: Buffer, dryRun: boolean): Promise<number | string | null> {
-  if (dryRun) return `dry-media-${sha256(bytes).slice(0, 12)}`
-  const digest = item.sha256 || sha256(bytes)
+async function ensureSubmissionMedia(payload: Payload, item: any, preview: SubmissionPreview, dryRun: boolean): Promise<number | string | null> {
+  const digest = preview.sha256
+  if (dryRun) return `dry-media-${digest.slice(0, 12)}`
   const existing = await findOne(payload, 'media', 'sha256', digest)
   if (existing) return existing.id
-  const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), 'dafeiyu-submission-'))
-  const ext = String(item.ext || '.png')
-  const filePath = path.join(tempDir, `${digest}${ext}`)
+  const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), 'dafeiyu-submission-preview-'))
+  const filePath = path.join(tempDir, `${digest}.webp`)
   try {
-    await fs.writeFile(filePath, bytes)
+    await fs.writeFile(filePath, preview.bytes)
     const created = await (payload as any).create({
       collection: 'media',
       filePath,
       data: {
         alt: item.fields?.name || `投稿 ${item.id}`,
         sha256: digest,
-        mediaRole: 'original',
+        mediaRole: 'preview',
         storageKind: 'payload-private',
-        sourcePath: `submission/${item.id}${ext}`,
-        isAnimated: ext === '.gif' || ext === '.apng',
+        sourcePath: `submission/${item.id}.webp`,
+        isAnimated: preview.isAnimated,
       },
       context: { audit: false, skipNeedsPublish: true },
       overrideAccess: true,
@@ -158,11 +224,22 @@ export async function syncSubmissions(payload: Payload, options: { baseUrl?: str
     try {
       const submissionId = String(item.id)
       const existingSubmission = await findOne(payload, 'submissions', 'submissionId', submissionId)
-      const digest = String(item.sha256 || '')
-      const existingWork = digest ? await findOne(payload, 'works', 'sha256', digest) : null
+      const queuedDigest = normalizeDigest(item.sha256)
+      const existingWork = queuedDigest ? await findOne(payload, 'works', 'sha256', queuedDigest) : null
       let linkedWorkId = existingWork?.id
       let mediaId: number | string | null = existingSubmission?.media || null
+      let preview: SubmissionPreview | null = null
       let content: any = null
+
+      if (!mediaId && !options.dryRun) {
+        const raw = await requestBytes(token, `${baseUrl}/api/v1/items/${encodeURIComponent(submissionId)}/raw`)
+        preview = await prepareSubmissionPreview(raw, item)
+        mediaId = await ensureSubmissionMedia(payload, item, preview, false)
+      } else if (!mediaId) {
+        mediaId = `dry-media-${queuedDigest.slice(0, 12)}`
+      }
+      const digest = preview?.sha256 || queuedDigest || String(existingWork?.sha256 || '')
+      if (digest && queuedDigest && digest !== queuedDigest) throw new Error(`投稿 sha256 不一致：${submissionId}`)
 
       if (item.state === 'auto_passed' && !existingWork) {
         const check = validateContent(item.review?.content, vocabulary)
@@ -171,10 +248,6 @@ export async function syncSubmissions(payload: Payload, options: { baseUrl?: str
           console.warn(`[同步] ${submissionId} 内容未通过：${check.errors.join('；')}`)
         } else {
           content = check.value
-          if (!options.dryRun) {
-            const raw = await requestBytes(baseUrl, token, `${baseUrl}/api/v1/items/${encodeURIComponent(submissionId)}/raw`)
-            mediaId = await ensureSubmissionMedia(payload, item, raw.bytes, Boolean(options.dryRun))
-          }
           const workId = `sticker_${digest.slice(0, 24)}`
           if (options.dryRun) {
             linkedWorkId = `dry-work-${digest.slice(0, 24)}`
@@ -190,10 +263,16 @@ export async function syncSubmissions(payload: Payload, options: { baseUrl?: str
                 channel: normalizeSource(item.source),
                 submissionId,
                 sha256: digest,
+                format: preview?.format,
+                mimeType: preview?.mimeType,
+                isAnimated: preview?.isAnimated,
+                width: preview?.width,
+                height: preview?.height,
+                fileSize: preview?.fileSize,
                 character: characterResult.docs.find((doc: any) => doc.characterId === content.characterId)?.id,
                 categories: categoryResult.docs.filter((doc: any) => content.categoryIds.includes(doc.categoryId)).map((doc: any) => doc.id),
                 tags: content.tags.map((value: string) => ({ value })),
-                original: mediaId || undefined,
+                preview: mediaId || undefined,
                 status: 'pending',
                 needsPublish: true,
                 changeAction: 'add',

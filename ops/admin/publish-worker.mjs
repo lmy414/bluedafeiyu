@@ -6,7 +6,7 @@
  *   node ops/admin/publish-worker.mjs --run <runId>
  *
  * 发布内容不在本文件里生成。后台先通过 /cms-api/publish/snapshot 给出数据文件和原图清单，
- * 本文件负责下载、校验、写仓、构建校验、显式提交、推送、部署和回写状态。
+ * 本文件再按 submissionId 从投稿服务管理口取原图，校验后写内容仓；原图不经过后台媒体目录。
  *
  * 安全边界：
  *   - 只通过 HTTP 访问后台；ADMIN_WORKER_TOKEN 只放在 Authorization 头里，不写日志；
@@ -47,8 +47,10 @@ export const CONTENT_ALLOW_PREFIXES = [
   'dist/submissions/previews/',
   'dist/submissions/large/',
 ];
+const ORIGINAL_ALLOW_PREFIXES = ['dist/submissions/originals/'];
 const IMAGE_EXTENSIONS = new Set(['.png', '.jpg', '.jpeg', '.gif', '.webp', '.apng']);
 const RUN_ID_RE = /^[A-Za-z0-9._-]{1,128}$/;
+const SUBMISSION_ID_RE = /^sub_[A-Za-z0-9_]+$/;
 
 function logLine(log, message) {
   log(String(message));
@@ -222,14 +224,15 @@ function validateSnapshot(snapshot, expectedRunId) {
     const workId = String(item.workId ?? '').trim();
     const digest = String(item.sha256 ?? '').trim().toLowerCase();
     const targetPath = assertSafeRelative(item.targetPath, `snapshot.originals[${index}].targetPath`);
-    const downloadPath = String(item.downloadPath ?? '').trim();
+    const submissionId = String(item.submissionId ?? "").trim();
     if (!workId) throw new Error(`snapshot.originals[${index}].workId 为空`);
+    if (!SUBMISSION_ID_RE.test(submissionId)) throw new Error(`snapshot.originals[${index}].submissionId 不合法：${submissionId}`);
+    if (Object.prototype.hasOwnProperty.call(item, 'downloadPath')) throw new Error(`snapshot.originals[${index}] 不再允许 downloadPath`);
     if (!/^[a-f0-9]{64}$/.test(digest)) throw new Error(`snapshot.originals[${index}].sha256 不合法`);
     if (!IMAGE_EXTENSIONS.has(normalizeImageExt(item.ext))) throw new Error(`snapshot.originals[${index}].ext 不支持：${item.ext}`);
     if (normalizeImageExt(item.ext) !== targetImageExt(targetPath)) throw new Error(`snapshot.originals[${index}] 扩展名与 targetPath 不一致`);
-    if (!downloadPath.startsWith('/cms-api/publish/media/')) throw new Error(`snapshot.originals[${index}].downloadPath 不允许：${downloadPath}`);
-    assertAllowedRelative(targetPath, `snapshot.originals[${index}].targetPath`, CONTENT_ALLOW_PREFIXES);
-    return { ...item, workId, sha256: digest, targetPath, downloadPath };
+    assertAllowedRelative(targetPath, `snapshot.originals[${index}].targetPath`, ORIGINAL_ALLOW_PREFIXES);
+    return { ...item, workId, sha256: digest, submissionId, targetPath };
   });
   const deletions = snapshot.deletions.map((item, index) => {
     if (!item || typeof item !== 'object' || Array.isArray(item)) throw new Error(`snapshot.deletions[${index}] 必须是对象`);
@@ -258,10 +261,15 @@ function resolveWorkerConfig(env = process.env) {
   const apiUrl = String(env.ADMIN_API_URL || 'http://127.0.0.1:3100').replace(/\/+$/, '');
   const token = String(env.ADMIN_WORKER_TOKEN || '');
   if (!token) throw new Error('必须指定 ADMIN_WORKER_TOKEN');
+  const submissionApiUrl = String(env.SUBMISSION_ADMIN_API_URL || 'http://127.0.0.1:8788').replace(/\/+$/, '');
+  const submissionToken = String(env.SUBMISSION_ADMIN_TOKEN || '');
+  if (!submissionToken) throw new Error('必须指定 SUBMISSION_ADMIN_TOKEN');
   return {
     ...base,
     apiUrl,
     token,
+    submissionApiUrl,
+    submissionToken,
     requestDir: path.resolve(env.ADMIN_PUBLISH_REQUEST_DIR || '/srv/apps/dafeiyu-admin/run'),
     siteBranch: baseBranch,
     contentBranch: env.CONTENT_BRANCH || baseBranch,
@@ -338,11 +346,13 @@ async function fetchSnapshot(cfg, runId, fetchImpl) {
   return validateSnapshot(snapshot, runId);
 }
 
-function mediaUrl(cfg, downloadPath) {
-  const base = new URL(cfg.apiUrl);
-  const target = new URL(downloadPath, `${cfg.apiUrl}/`);
-  if (target.origin !== base.origin) throw new Error(`下载地址不能跨域：${downloadPath}`);
-  if (!target.pathname.startsWith('/cms-api/publish/media/')) throw new Error(`下载地址不在允许前缀内：${downloadPath}`);
+function submissionRawUrl(cfg, submissionId) {
+  if (!SUBMISSION_ID_RE.test(submissionId)) throw new Error(`submissionId 不合法：${submissionId}`);
+  const base = new URL(cfg.submissionApiUrl);
+  const target = new URL(`/api/v1/items/${submissionId}/raw`, `${cfg.submissionApiUrl}/`);
+  if (target.origin !== base.origin) throw new Error(`投稿原图地址不能跨域：${submissionId}`);
+  const match = target.pathname.match(/^\/api\/v1\/items\/([^/]+)\/raw$/);
+  if (!match || !SUBMISSION_ID_RE.test(match[1])) throw new Error(`投稿原图地址不在允许路径内：${target.pathname}`);
   return target.toString();
 }
 
@@ -372,7 +382,7 @@ export function writeSiteSnapshotFiles(cfg, files) {
 export async function downloadOriginals(cfg, snapshot, { fetchImpl, log = () => {} } = {}) {
   const written = [];
   for (const item of snapshot.originals) {
-    const { abs, rel } = repoPath(cfg.contentDir, item.targetPath, `原图 targetPath ${item.targetPath}`, CONTENT_ALLOW_PREFIXES);
+    const { abs, rel } = repoPath(cfg.contentDir, item.targetPath, `原图 targetPath ${item.targetPath}`, ORIGINAL_ALLOW_PREFIXES);
     if (fs.existsSync(abs)) {
       if (sha256File(abs) === item.sha256) {
         logLine(log, `原图已存在且哈希一致，跳过：${rel}`);
@@ -380,9 +390,9 @@ export async function downloadOriginals(cfg, snapshot, { fetchImpl, log = () => 
       }
       throw new Error(`目标原图已存在且内容不同：${rel}`);
     }
-    const url = mediaUrl(cfg, item.downloadPath);
-    const response = await fetchImpl(url, { headers: workerHeaders(cfg), signal: timeoutSignal(cfg.httpTimeoutMs) });
-    if (!response.ok) throw new Error(`下载原图 HTTP ${response.status}：${item.downloadPath}`);
+    const url = submissionRawUrl(cfg, item.submissionId);
+    const response = await fetchImpl(url, { headers: { Authorization: `Bearer ${cfg.submissionToken}` }, signal: timeoutSignal(cfg.httpTimeoutMs) });
+    if (!response.ok) throw new Error(`读取投稿原图 HTTP ${response.status}：${item.submissionId}`);
     const buffer = Buffer.from(await response.arrayBuffer());
     if (sha256(buffer) !== item.sha256) throw new Error(`原图 sha256 不匹配：${rel}`);
     fs.mkdirSync(path.dirname(abs), { recursive: true });

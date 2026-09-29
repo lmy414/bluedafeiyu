@@ -87,19 +87,6 @@ const snapshotHandler = async (req: PayloadRequest): Promise<Response> => {
   return json(await buildPublishSnapshot(req.payload, run))
 }
 
-const mediaHandler = async (req: PayloadRequest): Promise<Response> => {
-  const denied = requireWorker(req)
-  if (denied) return denied
-  const route = (req.routeParams || {}) as Record<string, string>
-  const media = await (req.payload as any).findByID({ collection: 'media', id: route.mediaId, depth: 0, overrideAccess: true }).catch(() => null)
-  if (!media?.filename) return json({ ok: false, error: '素材不存在' }, 404)
-  const staticDir = (req.payload as any).collections.media.config.upload.staticDir
-  const filename = path.join(String(staticDir), String(media.filename))
-  const bytes = await fs.readFile(filename).catch(() => null)
-  if (!bytes) return json({ ok: false, error: '素材文件不存在' }, 404)
-  return new Response(bytes, { headers: { 'Content-Type': media.mimeType || 'application/octet-stream', 'Content-Length': String(bytes.length), 'Cache-Control': 'no-store' }, status: 200 })
-}
-
 const runStatusHandler = async (req: PayloadRequest): Promise<Response> => {
   const denied = requireWorker(req)
   if (denied) return denied
@@ -153,7 +140,6 @@ export const PublishEndpoints: Endpoint[] = [
   { handler: planHandler, method: 'get', path: '/publish/plan' },
   { handler: requestHandler, method: 'post', path: '/publish/request' },
   { handler: snapshotHandler, method: 'get', path: '/publish/snapshot' },
-  { handler: mediaHandler, method: 'get', path: '/publish/media/:mediaId' },
   { handler: runStatusHandler, method: 'post', path: '/publish/runs/:runId/status' },
   { handler: runHandler, method: 'get', path: '/publish/runs/:runId' },
 ]

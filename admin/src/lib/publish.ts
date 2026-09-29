@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import fs from 'node:fs'
 import path from 'node:path'
 
 import type { Payload, PayloadRequest } from 'payload'
@@ -61,16 +60,11 @@ export async function buildPublishPlan(payload: Payload): Promise<PublishPlan> {
   return plan
 }
 
-function contentRepoDir(): string {
-  return path.resolve(process.env.CONTENT_REPO_DIR || path.resolve(process.cwd(), '..', 'AI娘表情包'))
-}
-
 function extFromWork(work: any): string {
-  const filename = work.original?.filename || work.original?.sourcePath || ''
-  const ext = path.extname(String(filename)).toLowerCase()
-  if (ext) return ext
+  const sourceExt = path.extname(String(work.legacyPaths?.path || '')).toLowerCase()
+  if (sourceExt) return sourceExt === '.jpeg' ? '.jpg' : sourceExt
   const format = String(work.format || 'png').toLowerCase().replace(/^\./, '')
-  return `.${format || 'png'}`
+  return `.${format === 'jpeg' ? 'jpg' : (format || 'png')}`
 }
 
 export function targetOriginalPath(work: any): string {
@@ -102,7 +96,7 @@ function relativeContentPath(value: unknown, kind: string): string | null {
 
 export function contentPathsForWork(work: any): string[] {
   const paths = work.legacyPaths || {}
-  const values = [paths.path, paths.thumbnailPath, paths.fullPath, work.original?.sourcePath, work.preview?.sourcePath, work.large?.sourcePath]
+  const values = [paths.path, paths.thumbnailPath, paths.fullPath, work.preview?.sourcePath]
   const result: string[] = []
   for (const value of values) {
     const relative = relativeContentPath(value, work.kind)
@@ -122,22 +116,18 @@ export async function buildPublishSnapshot(payload: Payload, run: any): Promise<
   const allWorks = await (payload as any).find({ collection: 'works', depth: 2, limit: 2000, overrideAccess: true, pagination: false })
   const originalUrlByWorkId: Record<string, string> = {}
   const originals: any[] = []
-  const contentDir = contentRepoDir()
   for (const work of allWorks.docs) {
-    if (work.status !== 'pending' || work.kind !== 'submission' || !work.original) continue
+    if (work.status !== 'pending' || work.kind !== 'submission' || !work.submissionId || !work.sha256) continue
     const targetPath = targetOriginalPath(work)
     originalUrlByWorkId[work.workId] = `https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/${targetPath}`
-    const targetAbsolute = path.join(contentDir, targetPath)
-    if (!fs.existsSync(targetAbsolute)) {
-      originals.push({
-        workId: work.workId,
-        sha256: work.sha256,
-        characterId: work.character?.characterId || work.character,
-        ext: extFromWork(work),
-        targetPath,
-        downloadPath: `/cms-api/publish/media/${work.original.id || work.original}`,
-      })
-    }
+    originals.push({
+      workId: work.workId,
+      sha256: work.sha256,
+      characterId: String(work.character?.characterId || work.character || 'unknown'),
+      ext: extFromWork(work),
+      targetPath,
+      submissionId: work.submissionId,
+    })
   }
   const deletions = allWorks.docs
     .filter((work: any) => work.status === 'deleted')
@@ -232,7 +222,7 @@ export async function applyPublishStatus(
 
   const deleted = await (payload as any).find({ collection: 'works', where: { status: { equals: 'deleted' } }, limit: 2000, depth: 1, overrideAccess: true, pagination: false })
   for (const work of deleted.docs) {
-    for (const relation of [work.original, work.preview, work.large]) {
+    for (const relation of [work.preview]) {
       if (!relation) continue
       const mediaId = typeof relation === 'object' ? relation.id : relation
       await (payload as any).delete({ collection: 'media', id: mediaId, context: { audit: false }, overrideAccess: true }).catch(() => undefined)

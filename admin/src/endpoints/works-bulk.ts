@@ -98,7 +98,7 @@ async function includeSubmissions(req: PayloadRequest, ids: string[]): Promise<{
         character: character?.id,
         categories: categories.map((item: any) => item.id),
         tags: check.value.tags.map((value: string) => ({ value })),
-        original: doc.media?.id || doc.media,
+        preview: doc.media?.id || doc.media,
         status: 'pending',
         needsPublish: true,
         changeAction: 'add',

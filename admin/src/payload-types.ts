@@ -181,7 +181,7 @@ export interface Media {
   id: number;
   alt: string;
   sha256?: string | null;
-  mediaRole: 'original' | 'large' | 'preview' | 'attachment';
+  mediaRole: 'preview' | 'attachment';
   storageKind: 'payload-private' | 'content-repository' | 'external';
   externalUrl?: string | null;
   sourcePath?: string | null;
@@ -356,9 +356,7 @@ export interface Work {
         id?: string | null;
       }[]
     | null;
-  original?: (number | null) | Media;
   preview?: (number | null) | Media;
-  large?: (number | null) | Media;
   legacyPaths?: {
     path?: string | null;
     thumbnailPath?: string | null;
@@ -841,9 +839,7 @@ export interface WorksSelect<T extends boolean = true> {
         value?: T;
         id?: T;
       };
-  original?: T;
   preview?: T;
-  large?: T;
   legacyPaths?:
     | T
     | {

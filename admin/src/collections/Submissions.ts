@@ -41,7 +41,7 @@ export const Submissions: CollectionConfig = {
     },
     { name: 'sourceIds', type: 'array', label: '关联来源 ID', admin: { readOnly: true }, fields: [{ name: 'value', type: 'text', required: true }] },
     { name: 'sha256', type: 'text', index: true, label: 'SHA-256', admin: { readOnly: true } },
-    { name: 'media', type: 'upload', relationTo: 'media', label: '原图', admin: { readOnly: true } },
+    { name: 'media', type: 'upload', relationTo: 'media', label: '预览图', admin: { readOnly: true } },
     { name: 'fields', type: 'json', label: '投稿字段', admin: { readOnly: true } },
     { name: 'review', type: 'json', label: 'AI 审核结果', admin: { readOnly: true } },
     {

@@ -93,9 +93,7 @@ export const Works: CollectionConfig = {
     { name: 'character', type: 'relationship', relationTo: 'characters', required: true, label: '角色' },
     { name: 'categories', type: 'relationship', relationTo: 'categories', hasMany: true, label: '分类' },
     { name: 'tags', type: 'array', label: '标签', fields: [{ name: 'value', type: 'text', required: true }] },
-    { name: 'original', type: 'upload', relationTo: 'media', label: '原图' },
     { name: 'preview', type: 'upload', relationTo: 'media', label: '预览图' },
-    { name: 'large', type: 'upload', relationTo: 'media', label: '大图' },
     {
       name: 'legacyPaths',
       type: 'group',
