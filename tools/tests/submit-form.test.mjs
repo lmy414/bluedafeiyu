@@ -8,8 +8,8 @@
 //   node --test tools/tests/submit-form.test.mjs
 //
 // 覆盖：endpoint 可配置、控件解除 disabled、必填 name 属性、单文件格式与 10 MB 校验、
-// 三条确认必勾选、FormData POST、turnstileToken 字段、按钮状态文案、不回显内部信息，
-// 以及 GitHub 入口与「审核后批量发布」文案仍在。
+// 三条确认必勾选、FormData POST、turnstileToken 字段、Turnstile sitekey 构建注入与失败重置、
+// 按钮状态文案、不回显内部信息，以及 GitHub 入口与「审核后批量发布」文案仍在。
 
 import assert from "node:assert/strict";
 import fs from "node:fs";
@@ -19,10 +19,12 @@ import { fileURLToPath } from "node:url";
 
 const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const SUBMIT_HTML = path.join(REPO_ROOT, "frontend", "out", "submit.html");
+const SUBMIT_FORM_ASTRO = path.join(REPO_ROOT, "frontend", "src", "components", "SubmissionForm.astro");
 const SCRIPT_JS = path.join(REPO_ROOT, "frontend", "public", "page-scripts", "submit-0.js");
 const LANG_JS = path.join(REPO_ROOT, "frontend", "public", "lang.js");
 
 const html = fs.readFileSync(SUBMIT_HTML, "utf8");
+const formAstro = fs.readFileSync(SUBMIT_FORM_ASTRO, "utf8");
 const lang = fs.readFileSync(LANG_JS, "utf8");
 
 /* 取 <form id="submission-form" …> … </form> 这一段，之后的断言只针对表单本身。 */
@@ -50,6 +52,13 @@ test("表单把 endpoint 交给 data-api-endpoint，默认同源 /api/v1/submiss
   assert.match(form, /data-api-endpoint="\/api\/v1\/submissions"/);
   assert.match(script, /DEFAULT_ENDPOINT\s*=\s*"\/api\/v1\/submissions"/);
   assert.match(script, /form\.getAttribute\("data-api-endpoint"\)/);
+});
+
+test("投稿表单从构建环境读取 Turnstile sitekey（空值不输出属性）", () => {
+  assert.match(formAstro, /import\.meta\.env\.PUBLIC_TURNSTILE_SITEKEY/);
+  assert.match(formAstro, /\.trim\(\)/);
+  assert.match(formAstro, /data-turnstile-sitekey=\{turnstileSitekey \|\| undefined\}/);
+  assert.match(script, /form\.getAttribute\("data-turnstile-sitekey"\)/);
 });
 
 test("投稿控件已解除 disabled（占位形态不再存在）", () => {
@@ -98,6 +107,11 @@ test("按钮 loading / 成功 / 失败三种提示都有词典 key", () => {
   assert.match(script, /submit\.form\.err\.server/);
   assert.match(script, /submitBtn\.disabled\s*=\s*true/);
   assert.match(script, /aria-busy/);
+});
+
+test("提交失败后重置 Turnstile token，403 走同一失败分支", () => {
+  assert.match(script, /else \{\s*resetTurnstile\(\);\s*var mapped = errorForStatus\(outcome\.response\.status\);/);
+  assert.match(script, /\.catch\(function \(\) \{\s*resetTurnstile\(\);/);
 });
 
 test("页内 script 语法可解析", () => {

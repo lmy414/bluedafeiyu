@@ -1,4 +1,7 @@
-<form class="form" id="submission-form" novalidate data-api-endpoint="/api/v1/submissions">
+---
+const turnstileSitekey = (import.meta.env.PUBLIC_TURNSTILE_SITEKEY || "").trim();
+---
+<form class="form" id="submission-form" novalidate data-api-endpoint="/api/v1/submissions" data-turnstile-sitekey={turnstileSitekey || undefined}>
       <div class="form-row">
         <label for="f-files"><span data-i18n="submit.form.files">图片文件</span><span class="req-mark">*</span></label>
         <span class="hint" data-i18n="submit.form.filesHint">支持 PNG / JPG / GIF / WebP / APNG，单张不超过 10 MB；请传原图，别传带聊天框的截图。</span>

@@ -101,7 +101,7 @@
       function errorForStatus(status) {
         if (status === 413) return { key: "submit.form.err.tooLarge", fallback: "图片超过大小上限，请压缩后重试。" };
         if (status === 403) return { key: "submit.form.err.rejected", fallback: "提交未被接受，请稍后重试或改用 GitHub 投稿表单。" };
-        if (status === 429) return { key: "submit.form.err.busy", fallback: "提交过于频繁，请稍后再试。" };
+        if (status === 429) return { key: "submit.form.err.busy", fallback: "提交过于频繁：每个 IP 每小时最多投稿 10 次，请稍后再试。" };
         if (status === 400) return { key: "submit.form.err.invalid", fallback: "提交信息未通过校验，请检查后重试。" };
         return { key: "submit.form.err.server", fallback: "提交失败，请稍后重试或改用 GitHub 投稿表单。" };
       }
@@ -156,11 +156,13 @@
               resetTurnstile();
               setStatus("ok", "submit.form.success", "提交成功，感谢！维护者审核通过后会批量发布。");
             } else {
+              resetTurnstile();
               var mapped = errorForStatus(outcome.response.status);
               setStatus("error", mapped.key, mapped.fallback);
             }
           })
           .catch(function () {
+            resetTurnstile();
             var mapped = errorForStatus(0);
             setStatus("error", mapped.key, mapped.fallback);
           })

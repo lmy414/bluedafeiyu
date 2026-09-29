@@ -217,7 +217,7 @@
       "submit.form.err.tooLarge": "The image exceeds the size limit — compress it and try again.",
       "submit.form.err.rejected":
         "The submission was not accepted. Please try again later or use the GitHub form.",
-      "submit.form.err.busy": "Too many submissions — please try again later.",
+      "submit.form.err.busy": "Too many submissions: each IP can submit up to 10 times per hour. Please try again later.",
       "submit.form.err.invalid": "The submission did not pass validation — please check and retry.",
       "submit.form.err.server": "Submission failed. Please try again later or use the GitHub form.",
       "submit.note1":
@@ -535,7 +535,7 @@
       "submit.form.err.tooLarge": "画像がサイズ上限を超えています。圧縮して再試行してください。",
       "submit.form.err.rejected":
         "投稿は受け付けられませんでした。しばらくして再試行するか、GitHub フォームをご利用ください。",
-      "submit.form.err.busy": "送信が多すぎます。しばらくしてから再試行してください。",
+      "submit.form.err.busy": "送信が多すぎます：1 つの IP につき 1 時間に最大 10 回まで投稿できます。しばらくしてから再試行してください。",
       "submit.form.err.invalid": "入力内容が検証を通りませんでした。確認して再試行してください。",
       "submit.form.err.server":
         "送信に失敗しました。しばらくして再試行するか、GitHub フォームをご利用ください。",
