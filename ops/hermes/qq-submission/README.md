@@ -1,7 +1,7 @@
 # dafeiyu-qq-submission
 
 Hermes Agent v0.21.0 的 QQ 群投稿插件。它拦截 `qqbot` 消息：群内只接受
-`/投稿`，私聊和其他群消息只 `skip`，不会把 QQ 流量交给 Agent。
+`投稿`（兼容前面带一个 `/`），私聊和其他群消息只 `skip`，不会把 QQ 流量交给 Agent。
 
 ## 文件
 
@@ -38,16 +38,53 @@ Hermes 的 `QQ_APP_ID` / `QQ_CLIENT_SECRET`、QQ 平台 `qqbot` 的
 服务端还需核实 `SUBMISSION_QQ_ENABLED=true`、`SUBMISSION_QQ_INBOUND_TOKEN` 与
 `SUBMISSION_QQ_GROUP_ALLOWLIST` 已配置，且白名单包含同一个群 openid。
 
+## 用法
+
+Hermes 的 QQ 适配器只把群里 @机器人 的消息推给插件，`event.text` 已去掉 @ 前缀，
+因此命令直接从 `投稿` 开始，兼容一个前导 `/`：
+
+```text
+@机器人 投稿 早安 世界 deepseek + 图片
+@机器人 /投稿 早安 世界 蓝色大肥鱼 + 图片
+```
+
+- 命令词必须是 `投稿` 或 `/投稿`，且后面必须是空白或消息结尾；`投稿xxx` 按非投稿消息静默 `skip`。
+- 去掉命令词后按空白切分，最后一个词是角色，其余部分是标题；标题可以包含空格。
+- 角色必填，支持 `characters.json` 中的 id / 别名，大小写不敏感；也兼容
+  `角色:deepseek` / `角色：deepseek`。
+- 只支持本条消息内联的 `image/*` 附件。Hermes 会把引用/回复消息里的图片追加到
+  `event.media_urls` 末尾；插件按本条 `raw_message.attachments` 的内联图片数量截取前缀，
+  引用图片不会提交。
+- 标题按 64 个字符兜底校验。已核对 `server/adapters/qq.mjs` 与
+  `server/config.mjs`，QQ 入站路径未声明标题/名称长度上限，因此使用插件约定值 64。
+
+## 参数错误提示
+
+参数错误时回复原消息（`reply_to` 原 `message_id`）后 `skip`。标题/角色问题优先于图片问题，
+一次只提示一条；每条提示末尾都会附：
+
+```text
+格式：@机器人 投稿 标题 角色 + 图片（例：@机器人 投稿 早安 deepseek）
+```
+
+| 情况 | 提示正文 |
+| --- | --- |
+| 只有 `投稿` | `缺少标题和角色` |
+| 命令后只有一个已知角色 | `缺少标题` |
+| 命令后只有一个未知词 | `缺少角色` |
+| 最后一个词不是已知角色 | `角色「xxx」不存在，可用：<所有角色 id，用 / 分隔>` |
+| 标题超过 64 个字符 | `标题太长` |
+| 没有内联图片 | `缺少图片` |
+| 有引用/回复且内联图片为 0 | `只支持在同一条消息里附图，不支持引用或回复的图片` |
+
 ## 行为
 
 1. 非 `qqbot` 消息返回 `None`，不改变 Hermes 正常分发。
 2. 所有 `qqbot` 消息返回 `skip`；私聊不回复。
-3. 群消息必须是 `/投稿` 开头，且 `/投稿` 后为空白或消息结尾。
-4. 末尾词命中角色 id / 别名，或写成 `角色:xxx` / `角色：xxx` 时，作为
-   `character`；其余内容是标题。
-5. 标题为空或没有 `image/*` 附件时，回复
-   `格式：@机器人 /投稿 标题 角色 + 图片`。
-6. 每张图片单独 POST。请求体字段为 `groupId`、`userId`、`messageId`、`name`、
+3. 群消息必须是 `投稿` / `/投稿` 开头，且命令词后为空白或消息结尾。
+4. 合法投稿按“标题 + 最后一个角色词”解析；角色别名会归一成 `characters.json` 的 id。
+5. 先校验标题和角色，再校验内联图片；参数不合法时回复对应提示并 `skip`。
+6. 每张内联图片单独 POST。请求体字段为 `groupId`、`userId`、`messageId`、`name`、
    `character`、`image.base64`；多图共用原消息 `messageId`。
 7. HTTP 202 视为新入库，HTTP 200 视为重复；其他状态和网络异常回复简短失败原因。
 
@@ -80,4 +117,6 @@ python ops/hermes/qq-submission/sync_characters.py
 python -m unittest discover -s ops/hermes/qq-submission -v
 ```
 
-测试只使用临时文件和 mock `urllib.request.urlopen`，不会连接投稿服务或 QQ。
+测试只使用临时文件和 mock `urllib.request.urlopen`，不会连接投稿服务或 QQ。当前覆盖：
+无斜杠 / 兼容斜杠命令、`投稿xxx` 静默、别名与角色前缀、标题含空格、各参数错误提示、
+标题边界、引用图片排除，以及内联 + 引用混合时只提交内联图片。

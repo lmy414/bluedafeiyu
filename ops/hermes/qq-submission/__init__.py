@@ -19,10 +19,11 @@ logger = logging.getLogger(__name__)
 DEFAULT_INBOUND_URL = (
     "https://xn--pssy23gqgbz2d718b.com/api/v1/adapters/qq/events"
 )
-FORMAT_HINT = "格式：@机器人 /投稿 标题 角色 + 图片"
-COMMAND_RE = re.compile(r"^/投稿(?:\s+|$)")
+FORMAT_HINT = "格式：@机器人 投稿 标题 角色 + 图片（例：@机器人 投稿 早安 deepseek）"
+COMMAND_RE = re.compile(r"^/?投稿(?:\s+|\Z)")
 CHARACTER_FILE = Path(__file__).with_name("characters.json")
 ROLE_PREFIXES = ("角色:", "角色：")
+TITLE_MAX_LENGTH = 64
 ERROR_REASON_MAX = 120
 
 
@@ -56,6 +57,12 @@ def _character_lookup() -> dict[str, str]:
     return lookup
 
 
+@lru_cache(maxsize=1)
+def _character_ids() -> tuple[str, ...]:
+    """Return canonical character ids in characters.json order."""
+    return tuple(dict.fromkeys(_character_lookup().values()))
+
+
 def _platform_value(event: Any) -> Any:
     platform = getattr(getattr(event, "source", None), "platform", None)
     return getattr(platform, "value", platform)
@@ -78,30 +85,71 @@ def _raw_user_id(event: Any) -> str:
     return str(author.get("member_openid") or "").strip()
 
 
-def _parse_title_character(text: str) -> tuple[str, str]:
-    body = text.strip()
-    if not body:
-        return "", ""
-
-    parts = body.rsplit(maxsplit=1)
-    if len(parts) != 2:
-        return body, ""
-
-    title, marker = parts[0].strip(), parts[1].strip()
+def _resolve_character(marker: str) -> tuple[str, str]:
+    """Return (user-facing role value, canonical id or empty)."""
+    value = marker.strip()
     for prefix in ROLE_PREFIXES:
-        if marker.startswith(prefix):
-            value = marker[len(prefix):].strip()
-            if value:
-                canonical = _character_lookup().get(value.casefold(), value)
-                return title, canonical
+        if value.startswith(prefix):
+            value = value[len(prefix):].strip()
+            break
 
-    canonical = _character_lookup().get(marker.casefold())
-    if canonical:
-        return title, canonical
-    return body, ""
+    canonical = _character_lookup().get(value.casefold(), "")
+    return value, canonical
+
+
+def _parse_submission(text: str) -> tuple[str, str, str, str]:
+    """Return (title, canonical role, error code, user-facing role value)."""
+    parts = text.split()
+    if not parts:
+        return "", "", "missing_both", ""
+
+    if len(parts) == 1:
+        role_value, canonical = _resolve_character(parts[0])
+        if canonical:
+            return "", canonical, "missing_title", role_value
+        return "", "", "missing_role", role_value
+
+    title = " ".join(parts[:-1])
+    role_value, canonical = _resolve_character(parts[-1])
+    if not canonical:
+        return title, "", "unknown_role", role_value
+    return title, canonical, "", role_value
+
+
+def _inline_image_count(event: Any) -> int:
+    raw = getattr(event, "raw_message", None)
+    if not isinstance(raw, dict):
+        return 0
+    attachments = raw.get("attachments")
+    if not isinstance(attachments, (list, tuple)):
+        return 0
+
+    count = 0
+    for attachment in attachments:
+        if not isinstance(attachment, dict):
+            continue
+        content_type = str(attachment.get("content_type") or "").lower()
+        if content_type.startswith("image/"):
+            count += 1
+    return count
+
+
+def _has_quoted_message(event: Any) -> bool:
+    raw = getattr(event, "raw_message", None)
+    if not isinstance(raw, dict):
+        return False
+    if raw.get("msg_elements"):
+        return True
+    message_type = raw.get("message_type")
+    return message_type == 103 or str(message_type) == "103"
 
 
 def _image_paths(event: Any) -> list[str]:
+    """Return only the image paths belonging to current-message attachments."""
+    inline_count = _inline_image_count(event)
+    if inline_count <= 0:
+        return []
+
     media_urls = getattr(event, "media_urls", None)
     media_types = getattr(event, "media_types", None)
     if not isinstance(media_urls, (list, tuple)):
@@ -110,10 +158,23 @@ def _image_paths(event: Any) -> list[str]:
         return []
 
     paths = []
-    for path, media_type in zip(media_urls, media_types):
+    for path, media_type in zip(media_urls[:inline_count], media_types[:inline_count]):
         if str(media_type or "").lower().startswith("image/"):
             paths.append(str(path))
     return paths
+
+
+def _submission_error(message: str) -> str:
+    return f"{message}\n{FORMAT_HINT}"
+
+
+def _invalid_submission(
+    gateway: Any,
+    event: Any,
+    message: str,
+) -> dict[str, str]:
+    _schedule(_send_reply(gateway, event, _submission_error(message)))
+    return {"action": "skip", "reason": "qqbot-invalid-submission"}
 
 
 def _short_reason(value: Any) -> str:
@@ -271,11 +332,32 @@ def on_pre_gateway_dispatch(
         if not match:
             return {"action": "skip", "reason": "qqbot-non-submission"}
 
-        title, character = _parse_title_character(text[match.end():])
+        title, character, parse_error, role_value = _parse_submission(
+            text[match.end():]
+        )
+        if parse_error == "missing_both":
+            return _invalid_submission(gateway, event, "缺少标题和角色")
+        if parse_error == "missing_title":
+            return _invalid_submission(gateway, event, "缺少标题")
+        if parse_error == "missing_role":
+            return _invalid_submission(gateway, event, "缺少角色")
+        if parse_error == "unknown_role":
+            available = " / ".join(_character_ids())
+            return _invalid_submission(
+                gateway,
+                event,
+                f"角色「{role_value}」不存在，可用：{available}",
+            )
+        if len(title) > TITLE_MAX_LENGTH:
+            return _invalid_submission(gateway, event, "标题太长")
+
         image_paths = _image_paths(event)
-        if not title or not image_paths:
-            _schedule(_send_reply(gateway, event, FORMAT_HINT))
-            return {"action": "skip", "reason": "qqbot-invalid-submission"}
+        if not image_paths:
+            if _has_quoted_message(event):
+                message = "只支持在同一条消息里附图，不支持引用或回复的图片"
+            else:
+                message = "缺少图片"
+            return _invalid_submission(gateway, event, message)
 
         token = os.environ.get("DAFEIYU_QQ_INBOUND_TOKEN", "").strip()
         if not token:
