@@ -17,6 +17,14 @@
       if (!section || !rail || !topics.length) return;
       var workById = new Map(works.map(function (w) { return [w.id, w]; }));
 
+      function topicText(topic, field) {
+        var lang = window.SiteLang && SiteLang.current;
+        var localized = lang && topic && topic.i18n && topic.i18n[lang];
+        var value = localized && localized[field];
+        if (typeof value === "string" && value) return value;
+        return String(topic && topic[field] || "");
+      }
+
       function escapeHtml(value) {
         return String(value == null ? "" : value).replace(/[&<>"']/g, function (ch) {
           return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch];
@@ -35,14 +43,14 @@
           '<a class="topic-card" href="topics/' + encodeURIComponent(topic.id) + '.html" aria-roledescription="slide">' +
             '<div class="topic-sheet">' +
               '<span class="tape-strip" aria-hidden="true"></span>' +
-              (cover ? '<img class="topic-cover" src="' + escapeHtml(cover.thumbUrl) + '" alt="' + escapeHtml(topic.name) + '" loading="' + (index < 3 ? "eager" : "lazy") + '" decoding="async" />' : "") +
+              (cover ? '<img class="topic-cover" src="' + escapeHtml(cover.thumbUrl) + '" alt="' + escapeHtml(topicText(topic, "name")) + '" loading="' + (index < 3 ? "eager" : "lazy") + '" decoding="async" />' : "") +
               (thumbs || more ? '<div class="topic-thumbs" aria-hidden="true">' + thumbs + more + "</div>" : "") +
               '<div class="topic-body">' +
                 '<div class="topic-head">' +
-                  '<h3 class="topic-name">' + escapeHtml(topic.name) + "</h3>" +
+                  '<h3 class="topic-name">' + escapeHtml(topicText(topic, "name")) + "</h3>" +
                   '<span class="topic-count">' + escapeHtml(SiteLang.fmt("topics.count", "{count} 张", { count: list.length })) + "</span>" +
                 "</div>" +
-                (topic.summary ? '<p class="topic-summary">' + escapeHtml(topic.summary) + "</p>" : "") +
+                (topicText(topic, "summary") ? '<p class="topic-summary">' + escapeHtml(topicText(topic, "summary")) + "</p>" : "") +
               "</div>" +
             "</div>" +
           "</a>"

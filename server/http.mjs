@@ -11,12 +11,11 @@
  * QQ 机器人侧走公开口的 POST /api/v1/adapters/qq/events，它自带令牌与群白名单鉴权。
  *
  * **内置 AI 自动审核默认关闭**：网页投稿与 QQ 入站只把条目写进队列（received），
- * 不再在入队后自动调用 review.mjs。审核结论由外部 reviewer（AstrBot / Hermes）
- * 通过独立的内部接口 **POST /api/v1/internal/review-results** 回写，每个 reviewer
- * 用各自令牌鉴权；已配置则按结论推进（pass 且内容完整才自动桥接），
- * 未配置则条目停在 received 等人工处理。
+ * 不再在入队后自动调用 review.mjs。审核结论由外部 reviewer（Hermes）
+ * 通过独立的内部接口 **POST /api/v1/internal/review-results** 回写，
+ * 已配置则按结论推进（pass 且内容完整才自动桥接），未配置则条目停在 received 等人工处理。
  *
- * 内部接口还有一个只读列表/原图/字段接口，方便 Hermes 每 5 分钟取 web/github 待审条目：
+ * 内部接口还有一个只读列表/原图/字段接口，方便 Hermes 每 5 分钟取 web/github/qq 待审条目：
  *   GET /api/v1/internal/submissions[?state=&sources=&limit=]
  *   GET /api/v1/internal/submissions/<id>[/raw]
  * 这些接口同样走独立令牌，响应绝不回显令牌或私有路径。
@@ -408,14 +407,14 @@ export function reviewCoordinatorFor({ queue, reviewer, bridge = null, logger = 
 
 /* ------------------------------------------------------- 内部审核接口
  *
- * 外部 reviewer（AstrBot / Hermes）用各自独立令牌走这里回写审核结论，并从只读列表
- * 取待审条目与原图。内部接口不走公开 Origin/CORS（机器人不带 Origin），但**必须**
- * 通过令牌鉴权；未配置任何内部令牌时整组接口 503。
+ * 外部 reviewer（Hermes）用独立令牌走这里回写审核结论，并从只读列表取待审条目与原图。
+ * 内部接口不走公开 Origin/CORS（机器人不带 Origin），但**必须**通过令牌鉴权；
+ * 未配置内部令牌时整组接口 503。
  */
 
 /* reviewer 身份与令牌一一对应；令牌未配置即该来源不可用。 */
-export const INTERNAL_REVIEWERS = Object.freeze(['astrbot', 'hermes']);
-const INTERNAL_SOURCES = Object.freeze(['web', 'github-issue']);
+export const INTERNAL_REVIEWERS = Object.freeze(['hermes']);
+const INTERNAL_SOURCES = Object.freeze(['web', 'github-issue', 'qq']);
 const INTERNAL_ID_PATTERN = /^sub_[A-Za-z0-9_-]{1,64}$/;
 const INTERNAL_ITEM_PATTERN = /^\/api\/v1\/internal\/submissions\/(sub_[A-Za-z0-9_-]{1,64})(\/raw)?$/;
 /* 同一 reviewer 审完后的稳定态：重复提交只需回原结果，不再改状态。 */
@@ -576,7 +575,7 @@ export async function applyOneReview({ queue, bridge = null, cfg, reviewer, resu
     const check = validateReviewContent(body.content, vocabulary || loadContentVocabulary(cfg.siteRoot));
     if (!check.ok) {
       /* 422：响应只回笼统错误 + 脱敏摘要，并把摘要写进私有 queue.log。
-       * 摘要不含 AI 原文 / 图片 / 令牌，外部 reviewer（AstrBot / Hermes）可安全展示。 */
+       * 摘要不含 AI 原文 / 图片 / 令牌，外部 reviewer（Hermes）可安全展示。 */
       const errors = await recordContentErrors(queue, { id: submissionId, reviewer, errors: check.errors, logger });
       return send(422, { ok: false, error: 'content 校验未通过', errors });
     }

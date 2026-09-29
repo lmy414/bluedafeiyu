@@ -9,7 +9,7 @@
  *   3. 审核结论复用 submission-ai-content/1 校验，非法内容降级成 manual，绝不上报 pass；
  *   4. 回写走公开口的 POST /api/v1/internal/review-results，用 Hermes 专属令牌，
  *      批次形状 { schema, reviewer, promptVersion, results:[{submissionId,...}] }；
- *   5. 本地锁互斥、可回收陈旧锁；QQ 与已由 Hermes 审过的条目跳过；
+ *   5. 本地锁互斥、可回收陈旧锁；默认审核 web / GitHub / QQ，已由 Hermes 审过的条目跳过；
  *   6. 提示词与 server/review.mjs 的 SYSTEM_PROMPT 不漂移；环境变量示例不含真实密钥。
  *
  * 全程离线：fetch / exec / 枚举都注入假实现，临时目录在系统 tmp。
@@ -314,7 +314,7 @@ test('review-cycle：--live 但缺 HERMES_REVIEW_LIVE 时拒绝', async (t) => {
   assert.equal(fetchImpl.calls.length, 0);
 });
 
-test('review-cycle：跳过 QQ 与已由 Hermes 审过的 needs_manual', async (t) => {
+test('review-cycle：默认审核 QQ，跳过已由 Hermes 审过的 needs_manual', async (t) => {
   const stateDir = await tempStateDir(t);
   const fetchImpl = makeFetch([
     ['state=received', () => jsonResponse({ ok: true, count: 2, items: [
@@ -329,8 +329,8 @@ test('review-cycle：跳过 QQ 与已由 Hermes 审过的 needs_manual', async (
   const { code, out } = await capture(() => main(['review-cycle', '--include-needs-manual', '--json'], { env, fetchImpl, vocabulary: VOCABULARY }));
   assert.equal(code, 0);
   const summary = JSON.parse(out);
-  assert.deepEqual(summary.ids, ['sub_web001']);
-  assert.equal(summary.skipped, 2);
+  assert.deepEqual(summary.ids, ['sub_web001', 'sub_qq0001']);
+  assert.equal(summary.skipped, 1);
 });
 
 test('review-cycle --live：看图、调模型、批量回写 pass 结果', async (t) => {

@@ -1,6 +1,6 @@
 # Hermes 审核与发布接线
 
-面向服务器维护者。把「网页 / GitHub Issue 投稿的视觉审核」和「批量发布」接到 Hermes 的
+面向服务器维护者。把「网页 / GitHub Issue / QQ 投稿的视觉审核」和「批量发布」接到 Hermes 的
 应用内定时任务上，替换掉现在由 systemd timer 触发的 `server/cli.mjs review-received`
 与 `ops/publish-batch.mjs`。
 
@@ -17,7 +17,7 @@ Hermes 只做两件事：按点触发任务，以及调用视觉模型。条目�
 | `server/` | 统一投稿队列与状态机 | 待审图、AI 原始结果、队列都在私有存储根，唯一真源 |
 | `tools/intake/` | 维护者收录中转 | 只由维护者调用，不参与这条接线 |
 | Hermes | 定时器 + 视觉模型调用者 | 只留一个锁文件，不存权威状态 |
-| QQ 入站 | `server/` 自己处理 | 内部来源固定为 `web` 和 `github-issue`，QQ 不在其中 |
+| QQ 入站 | `server/` 自己处理 | 统一入队；Hermes 默认审核 `web`、`github-issue`、`qq` |
 
 三条边界：
 
@@ -35,9 +35,9 @@ Hermes 只做两件事：按点触发任务，以及调用视觉模型。条目�
 
 ```text
 网页投稿 ─┐
-          ├─▶ server/ 私有队列 ──GET received──▶ Hermes 调视觉 AI ──POST review-results──┐
-GitHub Issue┘        ▲                                                                  │
-                     └────────────────── 状态机迁移 + pass 自动桥接 ◀─────────────────────┘
+GitHub Issue├─▶ server/ 私有队列 ──GET received──▶ Hermes 调视觉 AI ──POST review-results──┐
+QQ 入站 ───┘        ▲                                                                      │
+                    └────────────────── 状态机迁移 + pass 自动桥接 ◀───────────────────────┘
                                                 │ auto_passed
                                                 ▼
                                   私有中转区 INTAKE_ROOT（ready）
@@ -46,7 +46,7 @@ GitHub Issue┘        ▲                                                      
                                    ops/publish-batch.mjs --live ──▶ 两个公开仓 ──▶ 部署
 ```
 
-投稿入队**不再自动审核**（`server/http.mjs` 里已关闭自动触发），所以 `web` 与 `github-issue`
+投稿入队**不再自动审核**（`server/http.mjs` 里已关闭自动触发），所以 `web`、`github-issue` 与 `qq`
 条目会停在 `received`，等 Hermes 来审。
 
 ## 3. Hermes 应用内定时任务
@@ -79,20 +79,19 @@ ssh -N -L 8788:127.0.0.1:8788 user@server   # 管理口，仅 pull-issues 用
 ## 4. HTTP 接口契约
 
 接口实现在 `server/http.mjs` 的 `handleInternalRequest`、`authenticateInternalReview` 与
-`applyInternalReviewBatch`。鉴权用内部令牌，reviewer 身份与令牌一一对应：
-`SUBMISSION_HERMES_REVIEW_TOKEN` 对应 `hermes`，`SUBMISSION_ASTRABOT_REVIEW_TOKEN` 对应 `astrbot`。
-两把都配时必须不同值，否则 server 拒绝启动。未配任何内部令牌时，内部接口返回 `503`。
+`applyInternalReviewBatch`。鉴权用内部令牌，`SUBMISSION_HERMES_REVIEW_TOKEN` 对应 reviewer
+`hermes`。未配置该令牌时，内部接口返回 `503`。
 
 ### 4.1 待审列表与原图
 
 | 方法 | 路径 | 说明 |
 | --- | --- | --- |
-| `GET` | `/api/v1/internal/submissions?state=received&sources=web,github-issue&limit=50` | 待审列表 |
+| `GET` | `/api/v1/internal/submissions?state=received&sources=web,github-issue,qq&limit=50` | 待审列表 |
 | `GET` | `/api/v1/internal/submissions/<id>` | 单条只读视图 |
 | `GET` | `/api/v1/internal/submissions/<id>/raw` | 原图字节，`Content-Type` 取条目 `mime` |
 
 - `state` 默认 `received`，必须是合法状态；`limit` 默认 50、上限 200；
-- `sources` 默认 `web,github-issue`，QQ 天然被排除；
+- `sources` 默认 `web,github-issue,qq`；省略时三类来源都返回；
 - 列表条目字段：`id`、`source`、`state`、`sha256`、`ext`、`mime`、`bytes`、`fields`、
   `createdAt`、`updatedAt`、`rawPath`，已审过的还带 `review`。没有存储路径与密钥。
 
@@ -215,7 +214,7 @@ ssh -N -L 8788:127.0.0.1:8788 user@server   # 管理口，仅 pull-issues 用
 | --- | --- |
 | `HERMES_REVIEW_API_URL` | 内部审核口，默认 `http://127.0.0.1:8790` |
 | `HERMES_REVIEW_TOKEN` | Hermes 专属令牌，对应 server 的 `SUBMISSION_HERMES_REVIEW_TOKEN` |
-| `HERMES_REVIEW_SOURCES` | 待审来源，默认 `web,github-issue` |
+| `HERMES_REVIEW_SOURCES` | 待审来源，默认 `web,github-issue,qq` |
 | `HERMES_ADMIN_API_URL` / `HERMES_ADMIN_TOKEN` | 管理口与 `SUBMISSION_ADMIN_TOKEN`，仅 `pull-issues` 用 |
 | `HERMES_VISION_ENDPOINT` / `HERMES_VISION_API_KEY` | OpenAI 兼容 vision 接口；缺任一，`review-cycle --live` 直接报错 |
 | `HERMES_VISION_MODEL` | 传给模型的 `model` 字段 |
@@ -259,8 +258,8 @@ node ops/hermes/cli.mjs publish --live --limit 5    # 需 HERMES_PUBLISH_LIVE=tr
 命令行 `--live` 和对应环境开关，缺一个就报错退出。
 
 `post-results` 给 Hermes 应用内原生视觉步骤用：把逐条结果写成 JSON（顶层数组，或
-`{ results: [...] }`），脚本按第 4.2 节的单条规则校验后再批量回写。QQ 条目始终跳过；
-已在 `needs_manual` 且 `review.decidedBy` 为 `hermes` 的条目也不重审，留给人工。
+`{ results: [...] }`），脚本按第 4.2 节的单条规则校验后再批量回写。
+已在 `needs_manual` 且 `review.decidedBy` 为 `hermes` 的条目不重审，留给人工。
 
 ### 8.1 用 server 侧内建审核还是 Hermes
 
@@ -303,5 +302,5 @@ node --test ops/hermes/tests/hermes.test.mjs   # 或 npm run test:hermes
 ```
 
 测试全程离线，注入假 fetch / 假 exec：覆盖默认 dry-run、双钥匙开关、`submission-ai-content/1`
-校验与降级、回写批量信封与 403 不重试、本地锁互斥与回收、QQ 与已审条目跳过，以及提示词与
+校验与降级、回写批量信封与 403 不重试、本地锁互斥与回收、默认审核 QQ 与已审条目跳过，以及提示词与
 `server/review.mjs` 不漂移、环境变量示例不含真实密钥。

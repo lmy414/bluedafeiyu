@@ -49,12 +49,22 @@
     function topicWorks(topic) {
       return (topic.workIds || []).map((id) => workById.get(id)).filter(Boolean);
     }
-    /* 目录搜索口径：专题名 + 简介 + 收录作品的名称与 Tag，建一次索引 */
-    const topicIndex = new Map(topics.map((topic) => [topic.id, [topic.name, topic.summary]
-      .concat(...topicWorks(topic).map((work) => [work.name].concat(Array.isArray(work.tags) ? work.tags : [])))
-      .map(normalize)]));
+    /* 专题的可见名称与简介按当前界面语言取 i18n，缺失时回落中文。 */
+    function topicText(topic, field) {
+      const lang = window.SiteLang && SiteLang.current;
+      const localized = lang && topic && topic.i18n && topic.i18n[lang];
+      const value = localized && localized[field];
+      if (typeof value === "string" && value) return value;
+      return String(topic && topic[field] || "");
+    }
+    /* 目录搜索口径：当前语言的专题名 + 简介 + 收录作品的名称与 Tag。 */
+    function topicSearchFields(topic) {
+      return [topicText(topic, "name"), topicText(topic, "summary")]
+        .concat(...topicWorks(topic).map((work) => [work.name].concat(Array.isArray(work.tags) ? work.tags : [])))
+        .map(normalize);
+    }
     function topicMatches(topic, tokens) {
-      const fields = topicIndex.get(topic.id) || [];
+      const fields = topicSearchFields(topic);
       return tokens.every((token) => fields.some((field) => field.indexOf(token) !== -1));
     }
 
@@ -94,10 +104,10 @@
             (thumbs || more ? '<div class="topic-thumbs" aria-hidden="true">' + thumbs + more + "</div>" : "") +
             '<div class="topic-body">' +
               '<div class="topic-head">' +
-                '<h2 class="topic-name">' + escapeHtml(topic.name) + "</h2>" +
+                '<h2 class="topic-name">' + escapeHtml(topicText(topic, "name")) + "</h2>" +
                 '<span class="topic-count">' + escapeHtml(SiteLang.fmt("topics.count", "{count} 张", { count: list.length })) + "</span>" +
               "</div>" +
-              (topic.summary ? '<p class="topic-summary">' + escapeHtml(topic.summary) + "</p>" : "") +
+              (topicText(topic, "summary") ? '<p class="topic-summary">' + escapeHtml(topicText(topic, "summary")) + "</p>" : "") +
             "</div>" +
           "</div>" +
         "</a>"
@@ -200,7 +210,7 @@
         button.type = "button";
         button.className = "chip";
         button.dataset.id = topic.id;
-        button.appendChild(document.createTextNode(topic.name));
+        button.appendChild(document.createTextNode(topicText(topic, "name")));
         const num = document.createElement("span");
         num.className = "num";
         num.textContent = String(topicWorks(topic).length);
@@ -231,9 +241,9 @@
         coverEl.alt = altFor(cover);
       }
       totalEl.textContent = SiteLang.fmt("topics.count", "{count} 张", { count: scope.length });
-      titleEl.textContent = topic.name;
-      summaryEl.textContent = topic.summary || "";
-      summaryEl.hidden = !topic.summary;
+      titleEl.textContent = topicText(topic, "name");
+      summaryEl.textContent = topicText(topic, "summary");
+      summaryEl.hidden = !summaryEl.textContent;
       for (const button of chipsEl.children) {
         const selected = button.dataset.id === topic.id;
         button.classList.toggle("is-selected", selected);
@@ -279,7 +289,7 @@
       window.clearTimeout(searchTimer);
       searchTimer = window.setTimeout(() => commit({ t: state.t, q: searchInput.value }, "replace"), 200);
     });
-    document.addEventListener("site:langchange", () => render());
+    document.addEventListener("site:langchange", () => { renderChips(); render(); });
     window.addEventListener("hashchange", syncFromLocation);
     window.addEventListener("popstate", syncFromLocation);
 

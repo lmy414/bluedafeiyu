@@ -294,7 +294,7 @@ function portOf(value, fallback, label) {
  * 解析配置。overrides 优先于环境变量；env 可注入（测试用）。
  * 只返回纯数据，不建立任何网络连接、不读取密钥文件。
  */
-export function resolveConfig(overrides = {}, { env = process.env } = {}) {
+export function resolveConfig(overrides = {}, { env = process.env, logger = console } = {}) {
   const storageRaw = overrides.storageRoot ?? env.SUBMISSION_STORAGE_ROOT ?? '';
   if (!String(storageRaw).trim()) {
     throw new Error('必须显式配置 SUBMISSION_STORAGE_ROOT（私有存储根，不得位于任何公开仓或 git 工作树）');
@@ -342,15 +342,14 @@ export function resolveConfig(overrides = {}, { env = process.env } = {}) {
 
   const turnstileSecret = String(overrides.turnstileSecret ?? env.SUBMISSION_TURNSTILE_SECRET ?? '');
 
-  /* 内部审核 reviewer 各用一把独立令牌，来源身份与令牌一一对应。
-   * 两把都配时必须互不相同，否则无法严格区分来源。 */
+  /* AstrBot 审核路径已下线。旧变量只做一次提示，不参与配置，也不启用旧 reviewer。 */
+  if (Object.prototype.hasOwnProperty.call(env, 'SUBMISSION_ASTRABOT_REVIEW_TOKEN')) {
+    logger?.warn?.('[config] SUBMISSION_ASTRABOT_REVIEW_TOKEN 已停用，将忽略；QQ 投稿由 Hermes 审核。');
+  }
+
   const internalReviewTokens = {
-    astrbot: String(overrides.astrbotReviewToken ?? env.SUBMISSION_ASTRABOT_REVIEW_TOKEN ?? ''),
     hermes: String(overrides.hermesReviewToken ?? env.SUBMISSION_HERMES_REVIEW_TOKEN ?? ''),
   };
-  if (internalReviewTokens.astrbot && internalReviewTokens.astrbot === internalReviewTokens.hermes) {
-    throw new Error('SUBMISSION_ASTRABOT_REVIEW_TOKEN 与 SUBMISSION_HERMES_REVIEW_TOKEN 不能相同');
-  }
 
   return {
     schema: SCHEMA,
@@ -379,7 +378,7 @@ export function resolveConfig(overrides = {}, { env = process.env } = {}) {
     },
     review,
     internalReview: {
-      enabled: Boolean(internalReviewTokens.astrbot || internalReviewTokens.hermes),
+      enabled: Boolean(internalReviewTokens.hermes),
       tokens: internalReviewTokens,
     },
     github: {
@@ -441,7 +440,6 @@ export function configSummary(cfg) {
     review: { configured: cfg.review.configured, model: cfg.review.model || null, minConfidence: cfg.review.minConfidence },
     internalReview: {
       enabled: cfg.internalReview.enabled,
-      astrbot: cfg.internalReview.tokens.astrbot ? 'configured' : 'absent',
       hermes: cfg.internalReview.tokens.hermes ? 'configured' : 'absent',
     },
     github: {

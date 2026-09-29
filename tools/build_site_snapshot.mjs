@@ -72,6 +72,8 @@ function main() {
   raw.forEach((record) => {
     const sourcePath = String(record.sourcePath || "").trim();
     const editorial = editorialByPath.get(sourcePath) || {};
+    // 后台下架/删除的首批作品只留叠加层墓碑，不进入任何公开快照。
+    if (editorial.status === "hidden" || editorial.status === "deleted") return;
     // 叠加层优先：首批 59 条的名字、标签、分类、评价、自托管原图都在这里；
     // 其余条目回落到上游 raw 清单的字段
     const name = String(editorial.name || record.name || "").trim();
@@ -144,6 +146,23 @@ function main() {
   console.log(`[snapshot] works=${unique.length} characters=${characters.length} json=${jsonChanged ? "written" : "unchanged"} js=${jsChanged ? "written" : "unchanged"}`);
 }
 
+// 专题三语字段：只透传 en / ja 的非空字符串，缺省由前台回落中文。
+function normalizeTopicI18n(value) {
+  const out = {};
+  const source = value && typeof value === "object" && !Array.isArray(value) ? value : {};
+  for (const lang of ["en", "ja"]) {
+    const raw = source[lang];
+    if (!raw || typeof raw !== "object" || Array.isArray(raw)) continue;
+    const entry = {};
+    for (const field of ["name", "summary"]) {
+      const text = typeof raw[field] === "string" ? raw[field] : "";
+      if (text.trim()) entry[field] = text;
+    }
+    if (Object.keys(entry).length) out[lang] = entry;
+  }
+  return out;
+}
+
 // 专题：站长人工精选，data/topics.json 按 workIds 显式收录（不按 tag 现算，不分类；id 即稳定键）。
 // 作品下架后 id 会从快照消失——这里只丢弃并警告，不让一次下架卡住整站构建；
 // 封面失效退回首张收录作品；收录清空的专题不上线。
@@ -168,10 +187,12 @@ function buildTopics(list, works) {
     }
     if (!workIds.length) { console.warn(`[snapshot] 专题 ${id} 没有可用作品，本次不上线`); continue; }
     const coverWorkId = workIds.includes(topic.coverWorkId) ? topic.coverWorkId : workIds[0];
+    const i18n = normalizeTopicI18n(topic.i18n);
     topics.push({
       id,
       name: String(topic.name || id),
       summary: String(topic.summary || ""),
+      ...(Object.keys(i18n).length ? { i18n } : {}),
       coverWorkId,
       order: Number(topic.order) || 0,
       updatedAt: String(topic.updatedAt || topic.createdAt || ""),

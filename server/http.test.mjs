@@ -36,7 +36,7 @@ const TINY_PNG = Buffer.from(
 );
 const ORIGIN = 'https://xn--pssy23gqgbz2d718b.com';
 /* 内部审核 reviewer 的独立令牌（测试值，非真实密钥）。 */
-const ASTRABOT_TOKEN = 'astrbot-review-token-value';
+const LEGACY_ASTRABOT_TOKEN = 'astrbot-review-token-value';
 const HERMES_TOKEN = 'hermes-review-token-value';
 
 /** 合法的 submission-ai-content/1 通过响应（审核层可解析为 pass）。 */
@@ -635,7 +635,6 @@ function internalSetup(t, extra = {}) {
   return setup(t, {
     ...extra,
     env: {
-      SUBMISSION_ASTRABOT_REVIEW_TOKEN: ASTRABOT_TOKEN,
       SUBMISSION_HERMES_REVIEW_TOKEN: HERMES_TOKEN,
       ...(extra.env || {}),
     },
@@ -686,25 +685,26 @@ test('内部接口：未配置令牌 503，缺失 / 错误令牌 401', async (t)
   });
 });
 
-test('内部列表：只给 web / github 的 received 条目、字段与原图，且不泄露令牌', async (t) => {
+test('内部列表：默认给 web / github / qq 的 received 条目、字段与原图，且不泄露令牌', async (t) => {
   const { publicHandler, queue } = await internalSetup(t);
   const web = (await seedItem(queue, { source: 'web', extra: 11 })).item;
   const gh = (await seedItem(queue, { source: 'github-issue', extra: 12 })).item;
-  await seedItem(queue, { source: 'qq', extra: 13 });
+  const qq = (await seedItem(queue, { source: 'qq', extra: 13 })).item;
+  await seedItem(queue, { source: 'local', extra: 15 });
   const reviewed = (await seedItem(queue, { source: 'web', extra: 14 })).item;
   await queue.transition(reviewed.id, 'review.start', { actor: 'hermes' });
   await queue.transition(reviewed.id, 'review.manual', { actor: 'hermes', reason: '拿不准' });
 
   await withServer(publicHandler, async (port) => {
     const res = await call(port, {
-      routePath: '/api/v1/internal/submissions?state=received&sources=web,github-issue',
+      routePath: '/api/v1/internal/submissions?state=received',
       headers: { authorization: `Bearer ${HERMES_TOKEN}` },
     });
     assert.equal(res.status, 200, res.body.toString());
     const text = res.body.toString();
-    assert.ok(!text.includes(HERMES_TOKEN) && !text.includes(ASTRABOT_TOKEN), '响应不得泄露令牌');
+    assert.ok(!text.includes(HERMES_TOKEN) && !text.includes(LEGACY_ASTRABOT_TOKEN), '响应不得泄露令牌');
     const body = JSON.parse(text);
-    assert.deepEqual(body.items.map((item) => item.id).sort(), [web.id, gh.id].sort());
+    assert.deepEqual(body.items.map((item) => item.id).sort(), [web.id, gh.id, qq.id].sort());
     for (const entry of body.items) {
       assert.equal(entry.state, STATES.RECEIVED);
       assert.ok(entry.fields.name);
@@ -789,15 +789,15 @@ test('QQ 来源 pass 回写：只凭标题+角色即可，不因缺来源/授权
     assert.equal(storedBefore.origin.type, 'qq-group');
 
     const res = await postReviewResult(port, {
-      token: ASTRABOT_TOKEN,
+      token: HERMES_TOKEN,
       body: {
         submissionId: id,
         verdict: 'pass',
         confidence: 0.95,
         reason: '属于 AI 娘二创表情包',
         content: validReviewContent(),
-        reviewer: 'astrbot',
-        model: 'astrbot-vision',
+        reviewer: 'hermes',
+        model: 'hermes-vision',
       },
     });
     assert.equal(res.status, 200, res.body.toString());
@@ -874,8 +874,8 @@ test('内部审核结果：令牌来源与 reviewer 必须一致，字段严格�
   const base = { submissionId: item.id, verdict: 'manual', confidence: 0.5, reason: 'ok', reviewer: 'hermes', model: 'm' };
 
   await withServer(publicHandler, async (port) => {
-    // astrbot 令牌不得冒充 hermes。
-    assert.equal((await postReviewResult(port, { token: ASTRABOT_TOKEN, body: base })).status, 403);
+    // 旧 AstrBot 令牌没有配置身份，不能访问内部审核接口。
+    assert.equal((await postReviewResult(port, { token: LEGACY_ASTRABOT_TOKEN, body: base })).status, 401);
     assert.equal((await postReviewResult(port, { body: { ...base, submissionId: 'not-an-id' } })).status, 400);
     assert.equal((await postReviewResult(port, { body: { ...base, verdict: 'approved' } })).status, 400);
     assert.equal((await postReviewResult(port, { body: { ...base, confidence: 2 } })).status, 400);
@@ -974,7 +974,7 @@ test('内部审核结果：422 校验错误写进私有 queue.log，且不泄露
   assert.ok(!raw.includes('AI原文_SECRET_FIELD'), 'queue.log 不得写入 AI 原文 / 未知字段名');
   assert.ok(!raw.includes(leakValue), 'queue.log 不得写入 AI 提供的枚举值');
   assert.ok(!raw.includes('INJECTED_LINE'), 'queue.log 不得被 AI 内容注入伪造行');
-  assert.ok(!raw.includes(HERMES_TOKEN) && !raw.includes(ASTRABOT_TOKEN), 'queue.log 不得写入令牌');
+  assert.ok(!raw.includes(HERMES_TOKEN) && !raw.includes(LEGACY_ASTRABOT_TOKEN), 'queue.log 不得写入令牌');
   assert.ok(!raw.includes(TINY_PNG.toString('base64')), 'queue.log 不得写入图片正文');
   assert.ok(!raw.includes('不该落盘的 AI 原文'), 'queue.log 不得写入 AI 原文内容');
 
@@ -1015,7 +1015,7 @@ test('内部审核：公开健康检查只报启用状态，不回显令牌', as
   await withServer(publicHandler, async (port) => {
     const res = await call(port, { routePath: '/api/v1/health' });
     const text = res.body.toString();
-    assert.ok(!text.includes(HERMES_TOKEN) && !text.includes(ASTRABOT_TOKEN));
+    assert.ok(!text.includes(HERMES_TOKEN) && !text.includes(LEGACY_ASTRABOT_TOKEN));
     assert.equal(JSON.parse(text).internalReview, 'enabled');
   });
 });
@@ -1058,7 +1058,7 @@ test('内部审核结果：管理口接受批量回写（Hermes 形态），逐�
       method: 'POST',
       routePath: '/api/v1/internal/review-results',
       headers: { authorization: `Bearer ${HERMES_TOKEN}`, 'Content-Type': 'application/json' },
-      body: Buffer.from(JSON.stringify({ ...batch, reviewer: 'astrbot' })),
+      body: Buffer.from(JSON.stringify({ ...batch, reviewer: 'other-reviewer' })),
     });
     assert.equal(mismatch.status, 403);
   });

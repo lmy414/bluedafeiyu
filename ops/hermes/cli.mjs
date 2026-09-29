@@ -10,13 +10,13 @@
  *
  * 对接的是 server/ 的内部审核接口（server/http.mjs 的 handleInternalRequest）：
  *
- *   GET  /api/v1/internal/submissions?state=received&sources=web,github-issue&limit=N
+ *   GET  /api/v1/internal/submissions?state=received&sources=web,github-issue,qq&limit=N
  *   GET  /api/v1/internal/submissions/<id>/raw
  *   POST /api/v1/internal/review-results
  *        { schema, reviewer:"hermes", promptVersion, results:[{ submissionId, verdict, confidence, reason, model, content }] }
  *
  * 内部接口走**公开口**（默认 127.0.0.1:8790），用 Hermes 专属令牌
- * SUBMISSION_HERMES_REVIEW_TOKEN；QQ 由 server 侧排除在内部来源之外，Hermes 不处理。
+ * SUBMISSION_HERMES_REVIEW_TOKEN。默认审核 web、github-issue、qq 三种来源。
  *
  * 安全姿态：
  *
@@ -52,7 +52,7 @@ export const REVIEW_RESULTS_SCHEMA = 'submission-review-results/1';
 export const REVIEW_RESULTS_PATH = '/api/v1/internal/review-results';
 export const INTERNAL_LIST_PATH = '/api/v1/internal/submissions';
 export const REVIEWER_ID = 'hermes';
-export const DEFAULT_SOURCES = 'web,github-issue';
+export const DEFAULT_SOURCES = 'web,github-issue,qq';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 export const REPO_ROOT = path.resolve(HERE, '..', '..');
@@ -503,7 +503,7 @@ async function cmdDoctor(cfg, argv, deps) {
     `内部审核口：${cfg.review.apiUrl}（令牌${cfg.review.token ? '已配置' : '缺失'}）`,
     `管理口：${cfg.admin.apiUrl}（令牌${cfg.admin.token ? '已配置' : '缺失'}，pull-issues 用）`,
     `视觉模型：${cfg.vision.endpoint && cfg.vision.apiKey ? `已配置（${cfg.vision.model || '默认模型'}）` : '未配置'}`,
-    `内部来源：${cfg.sources}（QQ 由 server 排除）`,
+    `内部来源：${cfg.sources}`,
     `置信度门槛：${cfg.minConfidence}`,
     `状态目录：${cfg.stateDir}`,
     `真实开关：review=${cfg.live.review} pull=${cfg.live.pull} publish=${cfg.live.publish}`,
@@ -554,16 +554,14 @@ export async function cmdReviewCycle(cfg, argv, deps) {
 
   const locked = await withLocalLock(cfg.stateDir, 'review-cycle', async () => {
     const listed = await listPendingItems(cfg, { limit, includeNeedsManual: Boolean(argv.includeNeedsManual), fetchImpl });
-    // QQ 已由 server 的内部来源排除；这里再兜一层，避免配置被改错。
-    const notQq = listed.filter((item) => item && item.source !== 'qq');
     // 已在 needs_manual 且已被 Hermes 审过的条目不再重审，留给人工，避免每 5 分钟空转。
-    const targets = notQq.filter((item) => !(item.review && item.review.decidedBy === REVIEWER_ID));
+    const targets = listed.filter((item) => !(item.review && item.review.decidedBy === REVIEWER_ID));
     const skipped = listed.length - targets.length;
 
     if (!mode.live) {
       emit(argv, { mode: 'dry-run', reason: mode.reason, pending: listed.length, targets: targets.length, skipped, ids: targets.map((item) => item.id) }, [
         `[review-cycle] ${mode.reason}`,
-        `[review-cycle] 待审 ${listed.length} 条，跳过已审 / QQ ${skipped} 条，本轮目标 ${targets.length} 条：${targets.map((item) => item.id).join(', ') || '（空）'}`,
+        `[review-cycle] 待审 ${listed.length} 条，跳过已审 ${skipped} 条，本轮目标 ${targets.length} 条：${targets.map((item) => item.id).join(', ') || '（空）'}`,
         '[review-cycle] 不发模型请求、不写队列。',
       ]);
       return 0;
