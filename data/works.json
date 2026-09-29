@@ -8475,7 +8475,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-09-29T11:45:01.991Z",
-    "updatedAt": "2026-09-29T11:45:01.991Z",
+    "updatedAt": "2026-09-29T15:12:56.709Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202609290015",
@@ -8905,7 +8905,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-09-29T13:42:57.204Z",
-    "updatedAt": "2026-09-29T13:42:57.204Z",
+    "updatedAt": "2026-09-29T15:13:27.839Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202609290024",
@@ -8998,7 +8998,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-09-29T13:56:30.049Z",
-    "updatedAt": "2026-09-29T13:56:30.049Z",
+    "updatedAt": "2026-09-29T15:13:02.314Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202609290026",
@@ -9137,7 +9137,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-09-29T14:20:59.531Z",
-    "updatedAt": "2026-09-29T14:20:59.531Z",
+    "updatedAt": "2026-09-29T15:13:07.530Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202609290029",
@@ -9180,7 +9180,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-09-29T14:21:14.374Z",
-    "updatedAt": "2026-09-29T14:21:14.374Z",
+    "updatedAt": "2026-09-29T15:13:50.360Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202609290030",
@@ -9224,12 +9224,62 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-09-29T14:21:26.162Z",
-    "updatedAt": "2026-09-29T14:21:26.162Z",
+    "updatedAt": "2026-09-29T15:13:42.398Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202609290031",
     "categoryIds": [
       "illustration"
+    ]
+  },
+  {
+    "id": "sticker_57349db3d7d55f1e530d1bd9",
+    "name": "铁盆未必有我忧郁",
+    "description": "蓝发少女顶着铁盆坐在雨中的钢铁高塔上，围裙上印着蓝色小鲸鱼，神情低落。",
+    "commentary": "哼，人类总说铁盆扣头是防雷防雨，可我这只蓝色大肥鱼淋的不是雨，是没有人来问我的寂寞……盆里的水都是我的眼泪好吧。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/57349db3d7d55f1e.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/57349db3d7d55f1e.webp",
+    "fullPath": "submissions/large/deepseek/57349db3d7d55f1e.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1500,
+    "height": 1500,
+    "fileSize": 232192,
+    "sha256": "57349db3d7d55f1e530d1bd90566a90a22af53e264e19c69b80bfccb367a8be0",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "拟人化",
+      "蓝发",
+      "鲸鱼",
+      "铁盆",
+      "雨天",
+      "忧郁",
+      "表情包"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "4D13F666516499FDA40E68B31531C082",
+      "messageId": "ROBOT1.0_cxoWejoEgaV.VYmteOkGXWlF8iBGiwE8-Lvz5C1I7cb8zUyrxv5oVMYLUST9hfBMrP.o6nMsaK-hAG1hjbTQI4otHvw-Sfsioa3QF0e2gvYNIqrVm3QhC6-bhktADRFg",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-29T16:51:04.801Z",
+    "updatedAt": "2026-09-29T16:51:04.801Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609290032",
+    "categoryIds": [
+      "illustration",
+      "meme"
     ]
   }
 ]
