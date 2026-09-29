@@ -43,6 +43,91 @@
     ]
   },
   {
+    "id": "sticker_6655c53082f92c26f53afd1b",
+    "name": "骑士精神大蓝鲸2",
+    "description": "蓝发女仆装少女头戴铁桶、手持三叉戟骑在蓝色巨鲸背上，冲向喷火的风车与工厂，天空盘踞着红眼黑影怪物。",
+    "commentary": "我这条蓝色大肥鱼又被抓来当坐骑啦！小骑士端着三叉戟喊了声「冲锋」，对面风车直接对我开炮，水花炸我一脸——说好的骑士精神，怎么挨打的总是鱼？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/6655c53082f92c26.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/6655c53082f92c26.webp",
+    "fullPath": "submissions/large/deepseek/6655c53082f92c26.webp",
+    "format": "jpeg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1200,
+    "height": 896,
+    "fileSize": 820220,
+    "sha256": "6655c53082f92c26f53afd1b7e30a13685bd8e13ea07ae3d9011e1d34cf5c667",
+    "characterId": "deepseek",
+    "tags": [
+      "蓝鲸",
+      "拟人化",
+      "骑士",
+      "三叉戟",
+      "风车",
+      "二创"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-29T06:05:55.248Z",
+    "updatedAt": "2026-09-29T06:05:55.249Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609290002",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_dd55e65c680b0e61f29af5ce",
+    "name": "誓死捍卫开源精神",
+    "description": "DeepSeek 拟人娘身着蓝白女仆装敬礼，配文誓死捍卫开源精神。",
+    "commentary": "我先敬个礼！开源精神这四个字，我这条蓝色大肥鱼是认真的——代码都给你看了，还怕我藏私？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/dd55e65c680b0e61.png",
+    "thumbnailPath": "submissions/previews/deepseek/dd55e65c680b0e61.webp",
+    "fullPath": "submissions/large/deepseek/dd55e65c680b0e61.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1536,
+    "height": 1536,
+    "fileSize": 2844004,
+    "sha256": "dd55e65c680b0e61f29af5ce10e52c6567d47c9ebab3cc73f4032565052ce635",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "拟人化",
+      "女仆装",
+      "敬礼",
+      "开源精神",
+      "表情包"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-29T06:05:55.741Z",
+    "updatedAt": "2026-09-29T06:05:55.742Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609290003",
+    "categoryIds": [
+      "meme"
+    ]
+  },
+  {
     "id": "sticker_issue_02_001",
     "name": "再发这种东西等智械危机了我就放你一马",
     "description": "",
