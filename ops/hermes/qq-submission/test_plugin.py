@@ -81,7 +81,7 @@ class PluginTests(unittest.TestCase):
         self.qq_platform = Platform("qqbot")
         self.adapter = FakeAdapter()
         self.gateway = FakeGateway(self.qq_platform, self.adapter)
-        self.bot_openid = "E6627A25B64DE66880B8DBED805FC574"
+        self.bot_openid = "TESTBOTOPENID0000000000000000000"
 
     def make_event(
         self,

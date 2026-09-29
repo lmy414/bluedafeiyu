@@ -70,7 +70,7 @@ python -m http.server 5173 -d dist   # 打开 http://127.0.0.1:5173
 
 ## 线上与发布
 
-站点跑在阿里云香港的 nginx 上（QuickSite Studio 面板里的 `aliyun-hk`），根目录 `/srv/www/dafeiyu/current` → `releases/<时间戳>`。**发布已改为 GitHub 驱动**（2026-09-22）：本地改仓库 → 提交推送 GitHub → 服务器 `source/` 工作树拉 `origin/main` → `ops/deploy-server.sh` 构建干净产物并原子切 `current`。细节见 [`docs/维护与发布.md`](docs/维护与发布.md)。
+站点跑在阿里云香港的 nginx 上（QuickSite Studio 面板里的 `<源站主机>`），根目录 `/srv/www/dafeiyu/current` → `releases/<时间戳>`。**发布已改为 GitHub 驱动**（2026-09-22）：本地改仓库 → 提交推送 GitHub → 服务器 `source/` 工作树拉 `origin/main` → `ops/deploy-server.sh` 构建干净产物并原子切 `current`。细节见 [`docs/维护与发布.md`](docs/维护与发布.md)。
 
 - 服务器操作仍走本地面板的 `qss` CLI。**写命令会在面板任务中心显示计划、等用户确认**，没确认前不许声称"已完成"。
 - **`qss fs upload` 在本项目流程里已经完全用不到。** 本轮 `shared/data` 的迁移是在服务器侧用 `cp -al` 从当前 release 的 `data/` 硬链接出来的，**没有任何文件上传**。它是直连 SFTP 写入、不经确认门；真要用之前，先跟用户要授权。
@@ -93,5 +93,5 @@ python -m http.server 5173 -d dist   # 打开 http://127.0.0.1:5173
 - **`qss fs` 的绝对路径参数会命中上面那条 MSYS 改写坑**（2026-09-22 实测定位）：`fs read /etc/nginx/nginx.conf` 报 `No such file`，真因是开头的 `/` 被 MSYS 改写后才传给 node——`export MSYS_NO_PATHCONV=1` 之后绝对路径正常。来不及设的话，去掉开头斜杠用相对路径也行（相对 `context.path`，空时就是根）。`exec "cat /abs/path"` 不受影响，因为整条命令参数不以 `/` 开头。
 - 提交时 git 会提示 LF→CRLF，无害。
 - **`qss` 找不到面板时看端口，别怀疑网络。** 面板把实际端口写在 `../server-panel/data/runtime.json`，但那份记录会过期（遇到过写 `42000`、实际监听 `47300`）。用 `QSS_PANEL_URL=http://127.0.0.1:<实际端口>` 覆盖，或加 `--panel`。报错是 `fetch failed` 时先查这个，再查服务器。
-- 面板/CLI 走 HTTP 时才受本机代理影响；**面板到服务器的 SSH 不受 `NO_PROXY` 管**，那是系统路由层的事。发布前先 `qss server stats aliyun-hk` 确认在线。
-- **本机 Clash / Mihomo 的 TUN 会抢走 SSH 的默认路由**，表现为面板报 `Connection lost before handshake`。已在 `~/.ssh/config` 的 `aliyun-hk` 条目里加 `BindAddress <本机物理网卡地址>` 绕过。**遇到同样报错先查这条路由，不要怀疑服务器。**
+- 面板/CLI 走 HTTP 时才受本机代理影响；**面板到服务器的 SSH 不受 `NO_PROXY` 管**，那是系统路由层的事。发布前先 `qss server stats <源站主机>` 确认在线。
+- **本机 Clash / Mihomo 的 TUN 会抢走 SSH 的默认路由**，表现为面板报 `Connection lost before handshake`。已在 `~/.ssh/config` 的 `<源站主机>` 条目里加 `BindAddress <本机物理网卡地址>` 绕过。**遇到同样报错先查这条路由，不要怀疑服务器。**
