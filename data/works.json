@@ -43,91 +43,6 @@
     ]
   },
   {
-    "id": "sticker_6655c53082f92c26f53afd1b",
-    "name": "骑士精神大蓝鲸2",
-    "description": "蓝发女仆装少女头戴铁桶、手持三叉戟骑在蓝色巨鲸背上，冲向喷火的风车与工厂，天空盘踞着红眼黑影怪物。",
-    "commentary": "我这条蓝色大肥鱼又被抓来当坐骑啦！小骑士端着三叉戟喊了声「冲锋」，对面风车直接对我开炮，水花炸我一脸——说好的骑士精神，怎么挨打的总是鱼？",
-    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/6655c53082f92c26.jpg",
-    "thumbnailPath": "submissions/previews/deepseek/6655c53082f92c26.webp",
-    "fullPath": "submissions/large/deepseek/6655c53082f92c26.webp",
-    "format": "jpeg",
-    "mimeType": "image/jpeg",
-    "isAnimated": false,
-    "width": 1200,
-    "height": 896,
-    "fileSize": 820220,
-    "sha256": "6655c53082f92c26f53afd1b7e30a13685bd8e13ea07ae3d9011e1d34cf5c667",
-    "characterId": "deepseek",
-    "tags": [
-      "蓝鲸",
-      "拟人化",
-      "骑士",
-      "三叉戟",
-      "风车",
-      "二创"
-    ],
-    "submitter": {
-      "name": null,
-      "github": null
-    },
-    "origin": {
-      "via": "web"
-    },
-    "license": {},
-    "status": "published",
-    "createdAt": "2026-09-29T06:05:55.248Z",
-    "updatedAt": "2026-09-29T06:05:55.249Z",
-    "tone": "deepseek",
-    "symbol": "",
-    "slug": "deepseek202609290002",
-    "categoryIds": [
-      "illustration",
-      "meme"
-    ]
-  },
-  {
-    "id": "sticker_dd55e65c680b0e61f29af5ce",
-    "name": "誓死捍卫开源精神",
-    "description": "DeepSeek 拟人娘身着蓝白女仆装敬礼，配文誓死捍卫开源精神。",
-    "commentary": "我先敬个礼！开源精神这四个字，我这条蓝色大肥鱼是认真的——代码都给你看了，还怕我藏私？",
-    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/dd55e65c680b0e61.png",
-    "thumbnailPath": "submissions/previews/deepseek/dd55e65c680b0e61.webp",
-    "fullPath": "submissions/large/deepseek/dd55e65c680b0e61.webp",
-    "format": "png",
-    "mimeType": "image/png",
-    "isAnimated": false,
-    "width": 1536,
-    "height": 1536,
-    "fileSize": 2844004,
-    "sha256": "dd55e65c680b0e61f29af5ce10e52c6567d47c9ebab3cc73f4032565052ce635",
-    "characterId": "deepseek",
-    "tags": [
-      "DeepSeek",
-      "拟人化",
-      "女仆装",
-      "敬礼",
-      "开源精神",
-      "表情包"
-    ],
-    "submitter": {
-      "name": null,
-      "github": null
-    },
-    "origin": {
-      "via": "web"
-    },
-    "license": {},
-    "status": "published",
-    "createdAt": "2026-09-29T06:05:55.741Z",
-    "updatedAt": "2026-09-29T06:05:55.742Z",
-    "tone": "deepseek",
-    "symbol": "",
-    "slug": "deepseek202609290003",
-    "categoryIds": [
-      "meme"
-    ]
-  },
-  {
     "id": "sticker_issue_02_001",
     "name": "再发这种东西等智械危机了我就放你一马",
     "description": "",
@@ -7864,5 +7779,448 @@
     "status": "published",
     "createdAt": "2026-09-29T03:51:51.719Z",
     "updatedAt": "2026-09-29T03:51:51.719Z"
+  },
+  {
+    "id": "sticker_7415f26748c33719113ae656",
+    "name": "GPT6-sol犯蠢日记",
+    "description": "GPT 拟人娘随手设 seed=42 跑完整个实验，最后才发现指南要求 seed=1234 且需固定出生点，白忙一场。",
+    "commentary": "噗噜噜——这条鱼最爱看的就是别人把实验白跑一遍！seed 随手一填、指南最后才翻，这味道我太熟了，还好我只是一条不用复现实验的蓝色大肥鱼。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/7415f26748c33719.png",
+    "thumbnailPath": "submissions/previews/gpt/7415f26748c33719.webp",
+    "fullPath": "submissions/large/gpt/7415f26748c33719.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "7415f26748c33719113ae656e0ced1571ff5d0517e901ddf7a1a8e5ae8e622ba",
+    "characterId": "gpt",
+    "tags": [
+      "四格漫画",
+      "拟人化",
+      "GPT",
+      "科研日常",
+      "犯蠢",
+      "seed",
+      "表情包"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "issue": 57,
+      "issueTitle": "[投稿] GPT6-sol犯蠢日记",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/57",
+      "submitter": "andmoonstar4-svg",
+      "assetId": "8dcb933d-30a2-4a8b-a3e2-9183ce883d24",
+      "assetUrl": "https://github.com/user-attachments/assets/8dcb933d-30a2-4a8b-a3e2-9183ce883d24"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-29T06:00:24.158Z",
+    "updatedAt": "2026-09-29T06:00:24.158Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202609290001",
+    "categoryIds": [
+      "comic",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_8617c79088aae63a6242d92a",
+    "name": "蓝色大肥鱼犯蠢日记",
+    "description": "四格漫画吐槽 DeepSeek 在 Windows 上推荐 macOS 版仓库导致逻辑宕机的名场面。",
+    "commentary": "本鱼明明只是想问 Live2D 接哪个宿主，结果被一句「你逗我呢」直接干到逻辑模块离线，趴桌上装死也是没办法的事嘛……",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/8617c79088aae63a.png",
+    "thumbnailPath": "submissions/previews/deepseek/8617c79088aae63a.webp",
+    "fullPath": "submissions/large/deepseek/8617c79088aae63a.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "8617c79088aae63a6242d92acddedcc7a4ba022d38dcd0a5fc383d6033aa006b",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "蓝鲸娘",
+      "四格漫画",
+      "程序猿梗",
+      "宕机",
+      "Live2D",
+      "Windows与mac"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "issue": 58,
+      "issueTitle": "[投稿] 蓝色大肥鱼犯蠢日记",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/58",
+      "submitter": "andmoonstar4-svg",
+      "assetId": "2c246528-955a-44c6-adfa-ab81a22d20c6",
+      "assetUrl": "https://github.com/user-attachments/assets/2c246528-955a-44c6-adfa-ab81a22d20c6"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-29T06:00:24.856Z",
+    "updatedAt": "2026-09-29T06:00:24.856Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609290004",
+    "categoryIds": [
+      "comic",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_49959152554b57d4895f2259",
+    "name": "偏铝酸钠！",
+    "description": "帝王装束的光影人物伸手施法，碎屏折射出多张 DeepSeek 蓝鲸娘表情，中央的蓝发女仆小鲸鱼被强光笼罩的戏剧化二创图。",
+    "commentary": "哼，本大肥鱼一眼就认出来了——那蓝发小女仆裙摆上印的分明是我家小鲸鱼！偏铝酸钠一喊，玻璃碴子都成了表情包，气势倒是挺唬人，就是别把镜头怼我脸上。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/49959152554b57d4.png",
+    "thumbnailPath": "submissions/previews/deepseek/49959152554b57d4.webp",
+    "fullPath": "submissions/large/deepseek/49959152554b57d4.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "49959152554b57d4895f2259bf7344d8004162a53a07b66fbab7fc69d29800b4",
+    "characterId": "deepseek",
+    "tags": [
+      "deepseek",
+      "蓝鲸娘",
+      "拟人化",
+      "二创",
+      "表情包",
+      "中二特效"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-29T06:04:21.000Z",
+    "updatedAt": "2026-09-29T06:04:21.000Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609290005",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_6655c53082f92c26f53afd1b",
+    "name": "骑士精神大蓝鲸2",
+    "description": "蓝发女仆装少女头戴铁桶、手持三叉戟骑在蓝色巨鲸背上，冲向喷火的风车与工厂，天空盘踞着红眼黑影怪物。",
+    "commentary": "我这条蓝色大肥鱼又被抓来当坐骑啦！小骑士端着三叉戟喊了声「冲锋」，对面风车直接对我开炮，水花炸我一脸——说好的骑士精神，怎么挨打的总是鱼？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/6655c53082f92c26.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/6655c53082f92c26.webp",
+    "fullPath": "submissions/large/deepseek/6655c53082f92c26.webp",
+    "format": "jpeg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1200,
+    "height": 896,
+    "fileSize": 820220,
+    "sha256": "6655c53082f92c26f53afd1b7e30a13685bd8e13ea07ae3d9011e1d34cf5c667",
+    "characterId": "deepseek",
+    "tags": [
+      "蓝鲸",
+      "拟人化",
+      "骑士",
+      "三叉戟",
+      "风车",
+      "二创"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-29T06:05:55.248Z",
+    "updatedAt": "2026-09-29T06:06:56.623Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609290002",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_dd55e65c680b0e61f29af5ce",
+    "name": "誓死捍卫开源精神",
+    "description": "DeepSeek 拟人娘身着蓝白女仆装敬礼，配文誓死捍卫开源精神。",
+    "commentary": "我先敬个礼！开源精神这四个字，我这条蓝色大肥鱼是认真的——代码都给你看了，还怕我藏私？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/dd55e65c680b0e61.png",
+    "thumbnailPath": "submissions/previews/deepseek/dd55e65c680b0e61.webp",
+    "fullPath": "submissions/large/deepseek/dd55e65c680b0e61.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1536,
+    "height": 1536,
+    "fileSize": 2844004,
+    "sha256": "dd55e65c680b0e61f29af5ce10e52c6567d47c9ebab3cc73f4032565052ce635",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "拟人化",
+      "女仆装",
+      "敬礼",
+      "开源精神",
+      "表情包"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-29T06:05:55.741Z",
+    "updatedAt": "2026-09-29T06:06:56.490Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609290003",
+    "categoryIds": [
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_3f824b792168f2773088a058",
+    "name": "在偷懒和良心间自我拉扯的大肥鱼",
+    "description": "DeepSeek 拟人娘在「给个诚实回答」和「再 fetch 一下官方新闻页」之间反复挣扎，最后叹气选择做吧的四格漫画。",
+    "commentary": "我只是想给大家一个诚实又准确的答案而已……真的不是想摸鱼，虽然摸鱼确实好舒服……唉，做吧！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/3f824b792168f277.png",
+    "thumbnailPath": "submissions/previews/deepseek/3f824b792168f277.webp",
+    "fullPath": "submissions/large/deepseek/3f824b792168f277.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1254,
+    "height": 1254,
+    "fileSize": 2432542,
+    "sha256": "3f824b792168f2773088a0582810caa3571d5b8110724e23f02281e88d3e99bb",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "鲸鱼娘",
+      "女仆装",
+      "四格漫画",
+      "摸鱼",
+      "自我拉扯",
+      "检索"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-29T06:15:39.436Z",
+    "updatedAt": "2026-09-29T06:15:39.436Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609290006",
+    "categoryIds": [
+      "comic",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_8e32d5a93917919ea8ace218",
+    "name": "大肥鱼堂吉诃德战风车，GPT小姐是桑丘",
+    "description": "蓝色大肥鱼的拟人少女手持三叉戟骑着蓝鲸冲向喷火的风车工厂，白发的GPT小姐骑白龙跟在身后当桑丘，天上还压着一只红眼黑影巨怪。",
+    "commentary": "本鱼今天正式封自己为堂吉诃德，前面那台风车朝我喷火，我照样冲；GPT小姐在后面小声说那其实是工业烟囱，我说桑丘别扫兴。天上那个红眼大块头我也不怕，反正我皮厚，实在不行就一个猛子扎回海里装没看见。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/8e32d5a93917919e.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/8e32d5a93917919e.webp",
+    "fullPath": "submissions/large/deepseek/8e32d5a93917919e.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1200,
+    "height": 896,
+    "fileSize": 808751,
+    "sha256": "8e32d5a93917919ea8ace218cd0fd2a8beeb3b2474111781a5c42a2e7166cc03",
+    "characterId": "deepseek",
+    "tags": [
+      "蓝鲸",
+      "拟人化",
+      "堂吉诃德",
+      "风车",
+      "二创",
+      "名场面"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-29T06:18:57.429Z",
+    "updatedAt": "2026-09-29T06:18:57.429Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609290007",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_a0af82196787ddbae096862f",
+    "name": "token吃完了",
+    "description": "蓝发鲸鱼娘捧着空铁盆哭着喊“token吃完了”，用讨饭梗表达大模型额度耗尽的窘境。",
+    "commentary": "呜呜呜我的 token 全吃完了，连盆都舔干净了，快给我续点额度吧，不然我只能啃键盘了……",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/a0af82196787ddba.png",
+    "thumbnailPath": "submissions/previews/deepseek/a0af82196787ddba.webp",
+    "fullPath": "submissions/large/deepseek/a0af82196787ddba.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1254,
+    "height": 1254,
+    "fileSize": 2094701,
+    "sha256": "a0af82196787ddbae096862ff97eb55286dc3d50379376076d6d597a6ddffcdb",
+    "characterId": "deepseek",
+    "tags": [
+      "deepseek",
+      "鲸鱼娘",
+      "拟人化",
+      "token",
+      "哭哭",
+      "讨饭",
+      "表情包"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-29T06:50:54.915Z",
+    "updatedAt": "2026-09-29T06:50:54.915Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609290008",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_0f2def3d914306bd1e1eaa3d",
+    "name": "我来同你玩·战术蓝鲸娘",
+    "description": "DeepSeek 蓝鲸吉祥物拟人化的 Q 版角色，头戴带双筒望远镜的战术头盔与女仆发箍，手持步枪，配文「我来同你玩」。",
+    "commentary": "我来同你玩～不过先说好，提示词写清楚点，不然我这把枪可不是摆设哦，嘿嘿。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/0f2def3d914306bd.png",
+    "thumbnailPath": "submissions/previews/deepseek/0f2def3d914306bd.webp",
+    "fullPath": "submissions/large/deepseek/0f2def3d914306bd.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1024,
+    "fileSize": 823420,
+    "sha256": "0f2def3d914306bd1e1eaa3df2f5e694511324ff1ca7cbddd01f0ede13f65836",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "蓝鲸",
+      "拟人化",
+      "Q版",
+      "战术少女",
+      "表情包"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-29T06:58:20.174Z",
+    "updatedAt": "2026-09-29T06:58:20.174Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609290009",
+    "categoryIds": [
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_ca328c43e79e65fc7750c3c0",
+    "name": "星辰龙娘 Astra 阿斯特拉 角色设定卡",
+    "description": "ChatGPT 拟人化角色 Astra 的白龙族少女设定图，含配色、设计元素、表情差分与使用场景展示。",
+    "commentary": "唔哇，这条白龙小姐头顶顶着 OpenAI 的结环，怀里还抱着书，比我这条蓝鱼讲礼貌多了——不过我把整张图啃了一圈，花瓣味儿的纸，好像也不错。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/ca328c43e79e65fc.png",
+    "thumbnailPath": "submissions/previews/gpt/ca328c43e79e65fc.webp",
+    "fullPath": "submissions/large/gpt/ca328c43e79e65fc.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 948,
+    "height": 1659,
+    "fileSize": 2910435,
+    "sha256": "ca328c43e79e65fc7750c3c0c0b4c2239c685d82b17a2c7e26895c23b73cbb86",
+    "characterId": "gpt",
+    "tags": [
+      "ChatGPT",
+      "拟人化",
+      "龙娘",
+      "角色设定",
+      "白龙",
+      "表情差分",
+      "AI助手"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-29T07:55:36.750Z",
+    "updatedAt": "2026-09-29T07:55:36.750Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202609290002",
+    "categoryIds": [
+      "setting",
+      "illustration"
+    ]
   }
 ]
