@@ -28,6 +28,61 @@ import Site from '../layouts/Site.astro';
 
     <ol class="timeline">
       <li class="tl-item">
+        <article class="panel entry-card tilt-r">
+          <span class="tape-strip" aria-hidden="true"></span>
+          <div class="entry-head">
+            <span class="date-sticker">2026-09-29</span>
+            <h2 class="card-title entry-title"><span class="marker-highlight">站内投稿</span>加入人机验证与限速</h2>
+          </div>
+          <ul class="entry-points">
+            <li>站内快速投稿表单接入 Cloudflare Turnstile 人机验证，多数情况下自动通过，必要时点一下即可。</li>
+            <li>每个 IP 每小时最多提交 10 次，超出会提示稍后再试。</li>
+            <li>验证框固定为浅色，和站点配色保持一致。</li>
+          </ul>
+        </article>
+      </li>
+      <li class="tl-item">
+        <article class="panel entry-card tilt-l">
+          <span class="tape-strip" aria-hidden="true"></span>
+          <div class="entry-head">
+            <span class="date-sticker">2026-09-29</span>
+            <h2 class="card-title entry-title"><span class="marker-highlight">QQ 群投稿</span>开放</h2>
+          </div>
+          <ul class="entry-points">
+            <li>在投稿群里 @机器人，发送「投稿 标题 角色」并在同一条消息里附图即可投稿，参数不对会逐项提醒。</li>
+            <li>角色名支持常用别名，也认「娘」后缀，比如 deepseek娘。</li>
+            <li>群投稿每个自然小时共 10 张，整点重置，回复里会显示本小时剩余次数。</li>
+            <li>站内、GitHub、QQ 三个入口的投稿统一进入审核队列，审核通过后批量发布。</li>
+          </ul>
+        </article>
+      </li>
+      <li class="tl-item">
+        <article class="panel entry-card tilt-r">
+          <span class="tape-strip" aria-hidden="true"></span>
+          <div class="entry-head">
+            <span class="date-sticker">2026-09-28</span>
+            <h2 class="card-title entry-title"><span class="marker-highlight">前台</span>迁移到 Astro</h2>
+          </div>
+          <ul class="entry-points">
+            <li>全部页面改用 Astro 静态构建，页面结构和访问地址保持不变。</li>
+            <li>旧的页面生成脚本已清理下线。</li>
+          </ul>
+        </article>
+      </li>
+      <li class="tl-item">
+        <article class="panel entry-card tilt-l">
+          <span class="tape-strip" aria-hidden="true"></span>
+          <div class="entry-head">
+            <span class="date-sticker">2026-09-27</span>
+            <h2 class="card-title entry-title"><span class="marker-highlight">专题页</span>上线，首页新增专题轮播</h2>
+          </div>
+          <ul class="entry-points">
+            <li>新增专题页，按主题把相关作品串在一起看。</li>
+            <li>首页加入专题轮播，最新专题一眼可见。</li>
+          </ul>
+        </article>
+      </li>
+      <li class="tl-item">
         <article class="panel entry-card tilt-l">
           <span class="tape-strip" aria-hidden="true"></span>
           <div class="entry-head">
