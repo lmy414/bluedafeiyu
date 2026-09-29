@@ -1,0 +1,11 @@
+[Unit]
+Description=蓝色大肥鱼 Hermes QQ 适配器补丁
+After=docker.service network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/srv/apps/dafeiyu/source/ops/hermes/patch-qqbot-adapter.sh
+
+[Install]
+WantedBy=multi-user.target

@@ -145,3 +145,16 @@ python -m unittest discover -s ops/hermes/qq-submission -v
 | --- | --- | --- |
 | `DAFEIYU_QQ_HOURLY_LIMIT` | `10` | 每个自然小时允许新入库的图片上限 |
 | `DAFEIYU_QQ_RATE_FILE` | 插件目录下 `rate_state.json` | 保存整点计数，内容形如 `{"hour":"2026-09-29T14","count":N}` |
+
+## 容器升级后的 QQ 适配器补丁
+
+Hermes 容器重建后会丢失 `gateway/platforms/qqbot/adapter.py` 的本地改动。宿主机脚本
+`ops/hermes/patch-qqbot-adapter.sh` 会检查并补齐三处补丁，改动后自动重启 `hermes-webui`。
+手动检查可运行：
+
+```bash
+/srv/apps/dafeiyu/source/ops/hermes/patch-qqbot-adapter.sh --dry-run
+```
+
+systemd 单元 `dafeiyu-hermes-qqpatch.service` / `.timer` 会在开机 2 分钟后执行，并每 5 分钟检查一次。
+补丁失败时脚本会按镜像 ID 去重，向飞书群发送一次告警。

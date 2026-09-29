@@ -1,0 +1,11 @@
+[Unit]
+Description=定时检查蓝色大肥鱼 Hermes QQ 适配器补丁
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=5min
+Persistent=false
+Unit=dafeiyu-hermes-qqpatch.service
+
+[Install]
+WantedBy=timers.target
