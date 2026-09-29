@@ -7730,5 +7730,54 @@
     "status": "published",
     "createdAt": "2026-09-28T13:08:56.067Z",
     "updatedAt": "2026-09-28T13:08:56.067Z"
+  },
+  {
+    "id": "sticker_861eea153cec974e41522bcd",
+    "slug": "deepseek202609290001",
+    "name": "骑士精神大蓝鲸",
+    "description": "蓝发少女骑士骑着DeepSeek蓝鲸，手持三叉戟冲向喷吐黑烟的工业污染炮台。",
+    "commentary": "我这条蓝色大肥鱼今天不当数据搬运工了，驮着骑士小姐就往炮口冲——虽然柴油味儿呛得我直想喷水，但骑士精神嘛，就是明知会挨一炮也要先摆好最帅的姿势。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/861eea153cec974e.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/861eea153cec974e.webp",
+    "fullPath": "submissions/large/deepseek/861eea153cec974e.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1200,
+    "height": 896,
+    "fileSize": 857821,
+    "sha256": "861eea153cec974e41522bcdf03d11378ea4a42352c8c3138157f8a72535aa31",
+    "characterId": "deepseek",
+    "tone": "deepseek",
+    "symbol": "",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ],
+    "tags": [
+      "deepseek",
+      "蓝鲸",
+      "拟人化",
+      "骑士",
+      "环保",
+      "蒸汽朋克"
+    ],
+    "submitter": {
+      "name": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "unknown",
+      "author": "",
+      "sourceUrl": null,
+      "note": ""
+    },
+    "license": {
+      "type": "unknown",
+      "note": ""
+    },
+    "status": "published",
+    "createdAt": "2026-09-29T03:51:51.719Z",
+    "updatedAt": "2026-09-29T03:51:51.719Z"
   }
 ]
