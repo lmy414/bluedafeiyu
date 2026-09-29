@@ -19,11 +19,11 @@ const TINY_PNG = Buffer.from(
   'base64',
 );
 
-async function setup(t, { env = {}, now } = {}) {
+async function setup(t, { env = {}, now, notifier } = {}) {
   const base = await fs.mkdtemp(path.join(os.tmpdir(), 'queue-'));
   t.after(() => fs.rm(base, { recursive: true, force: true }));
   const cfg = resolveConfig({ storageRoot: path.join(base, 'private') }, { env });
-  const queue = await createQueue(cfg, { now });
+  const queue = await createQueue(cfg, { now, notifier });
   return { base, cfg, queue };
 }
 
@@ -261,4 +261,50 @@ test('attachReview 没有 content 时只记摘要，不无中生有', async (t) 
   assert.equal(stored.review.content, null);
   const raw = JSON.parse(await fs.readFile(path.join(cfg.paths.ai, `${item.id}.json`), 'utf8'));
   assert.equal(raw.content, null);
+});
+
+test('通知只在新条目和各审核目标态触发，重复与中间态不发', async (t) => {
+  const received = [];
+  const reviewed = [];
+  const notifier = {
+    received(item) { received.push(item.id); },
+    reviewed(item, detail) { reviewed.push({ id: item.id, ...detail }); },
+  };
+  const { queue } = await setup(t, { notifier });
+
+  const first = await queue.enqueue({
+    source: 'web',
+    sourceId: 'web:n1',
+    buffer: TINY_PNG,
+    fields: { name: '通知测试', character: 'deepseek' },
+  });
+  assert.equal(first.status, 'created');
+  assert.deepEqual(received, [first.item.id]);
+
+  const duplicateSource = await queue.enqueue({ source: 'web', sourceId: 'web:n1', buffer: TINY_PNG });
+  assert.equal(duplicateSource.status, 'duplicate_source');
+  assert.deepEqual(received, [first.item.id]);
+
+  const duplicateHash = await queue.enqueue({ source: 'qq', sourceId: 'qq:n1', buffer: TINY_PNG });
+  assert.equal(duplicateHash.status, 'duplicate_hash');
+  assert.deepEqual(received, [first.item.id]);
+
+  await queue.transition(first.item.id, 'review.start', { actor: 'hermes' });
+  assert.equal(reviewed.length, 0);
+
+  await queue.transition(first.item.id, 'review.pass', { actor: 'hermes', reason: '资料齐全' });
+  assert.deepEqual(reviewed, [{
+    id: first.item.id,
+    from: STATES.REVIEWING,
+    to: STATES.AUTO_PASSED,
+    reason: '资料齐全',
+  }]);
+
+  await queue.decide(first.item.id, 'approved', { actor: 'maintainer', reason: '人工确认' });
+  assert.deepEqual(reviewed[1], {
+    id: first.item.id,
+    from: STATES.AUTO_PASSED,
+    to: STATES.APPROVED,
+    reason: '人工确认',
+  });
 });

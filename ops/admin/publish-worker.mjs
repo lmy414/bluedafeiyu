@@ -51,6 +51,7 @@ const ORIGINAL_ALLOW_PREFIXES = ['dist/submissions/originals/'];
 const IMAGE_EXTENSIONS = new Set(['.png', '.jpg', '.jpeg', '.gif', '.webp', '.apng']);
 const RUN_ID_RE = /^[A-Za-z0-9._-]{1,128}$/;
 const SUBMISSION_ID_RE = /^sub_[A-Za-z0-9_]+$/;
+const DEFAULT_SITE_URL = 'https://xn--pssy23gqgbz2d718b.com/';
 
 function logLine(log, message) {
   log(String(message));
@@ -58,6 +59,22 @@ function logLine(log, message) {
 
 function errorMessage(error) {
   return error && error.message ? error.message : String(error);
+}
+
+async function notifyPublishedResult(deps, result, cfg, log) {
+  try {
+    const notifier = deps.notifier || await (await import('../../server/notify.mjs')).createNotifier();
+    const payload = {
+      ok: result.status === 'succeeded',
+      runId: result.runId,
+      summary: normalizeSummary(result.summary),
+      siteUrl: cfg?.healthUrl || DEFAULT_SITE_URL,
+    };
+    if (!payload.ok) payload.error = result.error || '发布失败';
+    await notifier.published(payload);
+  } catch (error) {
+    logLine(log, `警告：发布结果通知失败（不影响发布）：${errorMessage(error)}`);
+  }
 }
 
 function isInside(parent, child) {
@@ -833,6 +850,7 @@ export async function processPublishRequest({ request, env = process.env, deps =
     journal.step = 'done';
     journal.path = writeWorkerJournal(cfg, journal);
     result.journalPath = journal.path;
+    await notifyPublishedResult(deps, result, cfg, log);
     return result;
   } catch (error) {
     const message = errorMessage(error);
@@ -877,6 +895,7 @@ export async function processPublishRequest({ request, env = process.env, deps =
       } catch { /* 尽力保留原始错误 */ }
     }
     logLine(log, `失败：${message}`);
+    await notifyPublishedResult(deps, result, cfg, log);
     return result;
   } finally {
     if (lock) {

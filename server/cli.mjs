@@ -33,6 +33,7 @@ import { configSummary, resolveConfig } from './config.mjs';
 import { createQueue, sha256, STATES } from './queue.mjs';
 import { createReviewer, reviewPending } from './review.mjs';
 import { createBridge } from './bridge.mjs';
+import { createNotifier } from './notify.mjs';
 import { createGithubAdapter } from './adapters/github.mjs';
 import { createQqAdapter } from './adapters/qq.mjs';
 import { startServers } from './http.mjs';
@@ -73,7 +74,7 @@ async function loadCharacters(cfg) {
 }
 
 async function buildContext(cfg, { fetchImpl } = {}) {
-  const queue = await createQueue(cfg);
+  const queue = await createQueue(cfg, { notifier: createNotifier() });
   const reviewer = createReviewer(cfg, { fetchImpl });
   const bridge = await createBridge({ queue });
   const githubAdapter = createGithubAdapter(cfg, { queue, fetchImpl });
@@ -118,7 +119,7 @@ const commands = {
   },
 
   async recover(cfg) {
-    const queue = await createQueue(cfg);
+    const queue = await createQueue(cfg, { notifier: createNotifier() });
     const result = await queue.recover();
     console.log(`恢复完成：转人工 ${result.recovered.length} 条，索引已重建。`);
   },
@@ -128,7 +129,7 @@ const commands = {
     const days = Number(daysRaw);
     if (!Number.isSafeInteger(days) || days <= 0) die(`--days 必须是正整数：${daysRaw}`);
     const apply = options.apply === true || String(options.apply).toLowerCase() === 'true';
-    const queue = await createQueue(cfg);
+    const queue = await createQueue(cfg, { notifier: createNotifier() });
     const results = await queue.pruneOriginals({ days, apply });
 
     if (options.json) {
@@ -151,7 +152,7 @@ const commands = {
 
   async enqueue(cfg, { options, positional }) {
     if (positional.length === 0) die('enqueue 需要至少一个图片路径');
-    const queue = await createQueue(cfg);
+    const queue = await createQueue(cfg, { notifier: createNotifier() });
     for (const file of positional) {
       const buffer = await fs.readFile(file);
       const digest = sha256(buffer);
@@ -171,7 +172,7 @@ const commands = {
   },
 
   async list(cfg, { options }) {
-    const queue = await createQueue(cfg);
+    const queue = await createQueue(cfg, { notifier: createNotifier() });
     const items = await queue.list({
       state: optionValue(options, 'state') || undefined,
       source: optionValue(options, 'source') || undefined,
@@ -194,7 +195,7 @@ const commands = {
 
   async show(cfg, { positional }) {
     if (!positional[0]) die('show 需要 id');
-    const queue = await createQueue(cfg);
+    const queue = await createQueue(cfg, { notifier: createNotifier() });
     const item = await queue.get(positional[0]);
     if (!item) die(`队列里没有 ${positional[0]}`);
     console.log(JSON.stringify(item, null, 2));
@@ -202,7 +203,7 @@ const commands = {
 
   async export(cfg, { options, positional }) {
     if (!positional[0]) die('export 需要 id');
-    const queue = await createQueue(cfg);
+    const queue = await createQueue(cfg, { notifier: createNotifier() });
     const item = await queue.get(positional[0]);
     if (!item) die(`队列里没有 ${positional[0]}`);
     const outDir = path.resolve(optionValue(options, 'out', './review'));
@@ -249,14 +250,14 @@ const commands = {
 
   async approve(cfg, { options, positional }) {
     if (!positional[0]) die('approve 需要 id');
-    const queue = await createQueue(cfg);
+    const queue = await createQueue(cfg, { notifier: createNotifier() });
     const item = await queue.decide(positional[0], 'approved', { actor: 'maintainer', reason: optionValue(options, 'reason') });
     console.log(`已批准 ${item.id}（state=${item.state}）。服务不会自动收录/发布，请按既有流程人工入库。`);
   },
 
   async reject(cfg, { options, positional }) {
     if (!positional[0]) die('reject 需要 id');
-    const queue = await createQueue(cfg);
+    const queue = await createQueue(cfg, { notifier: createNotifier() });
     const item = await queue.decide(positional[0], 'rejected', { actor: 'maintainer', reason: optionValue(options, 'reason') });
     console.log(`已拒绝 ${item.id}（state=${item.state}）。`);
   },
@@ -298,7 +299,7 @@ const commands = {
    * 只写 INTAKE_ROOT 的 inbox/ + meta/；不写内容仓、不跑 git、不提交。
    */
   async 'bridge-passed'(cfg, { options, positional }) {
-    const queue = await createQueue(cfg);
+    const queue = await createQueue(cfg, { notifier: createNotifier() });
     const bridge = await createBridge({ queue });
     if (!bridge.enabled) {
       console.log(`bridge-passed skipped：${bridge.reason}`);
@@ -318,7 +319,7 @@ const commands = {
 
   /** 列出中转区 ready 条目（供人工查看与后续发布批次消费）。 */
   async 'bridge-ready'(cfg, { options }) {
-    const queue = await createQueue(cfg);
+    const queue = await createQueue(cfg, { notifier: createNotifier() });
     const bridge = await createBridge({ queue });
     if (!bridge.enabled) {
       console.log(`bridge-ready skipped：${bridge.reason}`);
@@ -342,7 +343,7 @@ const commands = {
   },
 
   async stats(cfg) {
-    const queue = await createQueue(cfg);
+    const queue = await createQueue(cfg, { notifier: createNotifier() });
     console.log(JSON.stringify(await queue.stats(), null, 2));
     console.log(`\n状态枚举：${Object.values(STATES).join(' / ')}`);
   },

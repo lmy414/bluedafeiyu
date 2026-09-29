@@ -49,6 +49,17 @@ export const TRANSITIONS = Object.freeze({
   'human.reopen': { from: [STATES.APPROVED, STATES.REJECTED], to: STATES.NEEDS_MANUAL },
 });
 
+/* 只有这些目标态需要通知；reviewing 等中间态不发。 */
+const REVIEW_NOTIFY_STATES = new Set([
+  STATES.AUTO_PASSED,
+  STATES.AUTO_REJECTED,
+  STATES.NEEDS_MANUAL,
+  STATES.APPROVED,
+  STATES.REJECTED,
+]);
+
+const NOOP_NOTIFIER = Object.freeze({ enabled: false, received() {}, reviewed() {} });
+
 const MIME_BY_FORMAT = { png: 'image/png', jpeg: 'image/jpeg', gif: 'image/gif', webp: 'image/webp' };
 
 /** 按文件头认格式。扩展名是投稿者说了算的，只看扩展名会放进改名的脚本。 */
@@ -152,7 +163,7 @@ async function readJsonFile(file) {
  * 打开（或创建）队列。返回的实例自己维护内存索引，并在线性化锁内落盘。
  * 所有写操作都串行化：同进程用 promise 链，跨进程用 wx 锁文件。
  */
-export async function createQueue(cfg, { now = () => Date.now(), reviewTimeoutMs = cfg.recoverAfterMs } = {}) {
+export async function createQueue(cfg, { now = () => Date.now(), reviewTimeoutMs = cfg.recoverAfterMs, notifier = NOOP_NOTIFIER } = {}) {
   await ensureStorageLayout(cfg);
   const paths = cfg.paths;
 
@@ -319,6 +330,7 @@ export async function createQueue(cfg, { now = () => Date.now(), reviewTimeoutMs
       sourceIndex.set(sourceId, id);
       await persistIndexes();
       await log('enqueue', { id, source, bytes: data.length });
+      notifier.received(item);
       return { status: 'created', item };
     });
   }
@@ -364,6 +376,9 @@ export async function createQueue(cfg, { now = () => Date.now(), reviewTimeoutMs
       item.stateHistory.push({ event, from: previous, to: rule.to, at, actor, reason });
       await saveItem(item);
       await log('transition', { id, event, to: rule.to, actor });
+      if (REVIEW_NOTIFY_STATES.has(rule.to)) {
+        notifier.reviewed(item, { from: previous, to: rule.to, reason });
+      }
       return item;
     });
   }

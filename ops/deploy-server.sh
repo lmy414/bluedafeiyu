@@ -157,6 +157,10 @@ else
   git -C "${CONTENT_DIR}" reset --hard "origin/${CONTENT_BRANCH}"
 fi
 
+# 构建不读原图（原图下载走 GitHub Raw），部署用的内容工作树只检出派生图与模板，省掉约 330MB。
+# 发布器用的是另一份工作树（PUBLISH_CONTENT_DIR），它要从原图生成派生图，不在这里稀疏。
+git -C "${CONTENT_DIR}" sparse-checkout set --no-cone '/*' '!/dist/submissions/originals/' '!/blue-fish-originals/' '!/owner-picks/*.png'
+
 CONTENT_COMMIT_SHA="$(git -C "${CONTENT_DIR}" rev-parse HEAD)"
 CONTENT_COMMIT_SUBJECT="$(git -C "${CONTENT_DIR}" log -1 --pretty=%s)"
 log "将要发布的内容提交：${CONTENT_COMMIT_SHA} ${CONTENT_COMMIT_SUBJECT}"

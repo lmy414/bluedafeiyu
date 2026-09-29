@@ -75,6 +75,7 @@ SQLite/Postgres，需要单独说明新增依赖与迁移方案——本次没�
 | `SUBMISSION_QQ_IMAGE_HOST_ALLOWLIST` | 否 | 图片 URL 域名白名单；不配则只接受 base64 图片 |
 | `SUBMISSION_QQ_TIMEOUT_MS` | 否 | QQ 入站处理（含图片下载）超时，默认 20s |
 | `SUBMISSION_REVIEW_RECOVER_MS` | 否 | 重启后把卡在 `reviewing` 的条目转人工的等待时长，默认 5 分钟 |
+| `FEISHU_NOTIFY_APP_ID` / `FEISHU_NOTIFY_APP_SECRET` / `FEISHU_NOTIFY_CHAT_ID` | 否 | 三项都配才启用飞书群通知；请求超时或发送失败只告警，不影响投稿与发布 |
 | `SUBMISSION_CONTENT_DIR` | 否 | 内容仓路径。**只用于配置期校验**：拒绝把 `SUBMISSION_STORAGE_ROOT` 落在内容仓内。服务不读、不写、不校验内容仓的任何文件 |
 
 ## 运行

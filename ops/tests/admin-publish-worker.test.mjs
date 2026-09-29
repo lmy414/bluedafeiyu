@@ -304,7 +304,7 @@ function makePublishFetch(state) {
   };
 }
 
-async function runOriginalPublish(t, { runId, submissionId, workId, rawStatus = 404, releaseStatus = 200 }) {
+async function runOriginalPublish(t, { runId, submissionId, workId, rawStatus = 404, releaseStatus = 200, healthUrl = 'https://health.test/', notifier }) {
   const record = {
     id: workId,
     name: '原图发布测试',
@@ -327,13 +327,33 @@ async function runOriginalPublish(t, { runId, submissionId, workId, rawStatus = 
   const exec = makeFakeExec(state);
   writeRequest(ws, runId);
   const result = await capture(() => main(['--run', runId], {
-    env: envFor(ws, backend, { submissionServiceUrl: submission.url }),
+    env: envFor(ws, backend, { submissionServiceUrl: submission.url, HEALTH_URL: healthUrl }),
     exec,
     fetchImpl: makePublishFetch(state),
+    notifier,
     runIssueReconcile: () => {},
   }));
   return { result, state, targetPath };
 }
+
+test('发布成功后通知飞书', async (t) => {
+  const published = [];
+  const fixture = await runOriginalPublish(t, {
+    runId: 'run-notify-ok',
+    submissionId: 'sub_notify_ok',
+    workId: 'sticker_eeeeeeeeeeeeeeeeeeeeeeee',
+    rawStatus: 200,
+    notifier: { published: async (payload) => { published.push(payload); throw new Error('notify down'); } },
+  });
+  assert.equal(fixture.result.code, 0, fixture.result.err);
+  assert.match(fixture.result.err, /发布结果通知失败.*notify down/);
+  assert.deepEqual(published, [{
+    ok: true,
+    runId: 'run-notify-ok',
+    summary: { added: 1, updated: 0, hidden: 0, restored: 0, deleted: 0, topics: 0 },
+    siteUrl: 'https://health.test/',
+  }]);
+});
 
 test('推送成功后 HEAD 校验 Raw，再通知投稿服务释放原图', async (t) => {
   const fixture = await runOriginalPublish(t, { runId: 'run-release-ok', submissionId: 'sub_release_ok', workId: 'sticker_ffffffffffffffffffffffff', rawStatus: 200 });
@@ -608,21 +628,31 @@ test('部署失败：状态上报 failed，不标记中转条目', async (t) => 
   });
   writeJson(path.join(ws.intake, 'meta', `${digest}.json`), { sha256: digest, status: 'ready' });
   const state = { statuses: [], snapshot, submissionBody: TINY_PNG, failDeploy: true };
+  const published = [];
   const backend = await startBackend(t, state);
   const submission = await startSubmissionService(t, state);
   const exec = makeFakeExec(state);
   writeRequest(ws, runId);
 
   const result = await capture(() => main(['--run', runId], {
-    env: envFor(ws, backend, { submissionServiceUrl: submission.url }),
+    env: envFor(ws, backend, { submissionServiceUrl: submission.url, HEALTH_URL: 'https://health.test/' }),
     exec,
-    fetchImpl: makePublishFetch(state), runIssueReconcile: () => {},
+    fetchImpl: makePublishFetch(state),
+    notifier: { published: async (payload) => published.push(payload) },
+    runIssueReconcile: () => {},
   }));
   assert.equal(result.code, 1);
   const output = JSON.parse(result.out);
   assert.equal(output.status, 'failed');
   assert.equal(state.statuses.at(-1).step, 'deploy');
   assert.ok(output.commits.site);
+  assert.deepEqual(published, [{
+    ok: false,
+    runId: 'run-deploy-fail',
+    summary: { added: 1, updated: 0, hidden: 0, restored: 0, deleted: 0, topics: 0 },
+    siteUrl: 'https://health.test/',
+    error: 'bash -lc fake deploy 退出码 1：deploy failed',
+  }]);
   assert.equal(readJson(path.join(ws.intake, 'meta', `${digest}.json`)).status, 'ready');
   assert.equal(readJson(path.join(ws.intake, 'batches', `${runId}.json`)).status, 'failed');
 });

@@ -1,0 +1,5 @@
+name: dafeiyu-qq-submission
+version: 0.1.0
+description: 将 QQ 群 /投稿消息转发到蓝色大肥鱼投稿服务
+hooks:
+  - pre_gateway_dispatch
