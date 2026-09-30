@@ -38,5 +38,5 @@ export const worksByAuthorHandler = async (req: PayloadRequest): Promise<Respons
 export const WorksByAuthorEndpoint: Endpoint = {
   handler: worksByAuthorHandler,
   method: 'get',
-  path: '/works/by-author',
+  path: '/works-author',
 }
