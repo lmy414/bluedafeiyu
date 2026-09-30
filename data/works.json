@@ -9467,7 +9467,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-09-30T00:01:00.653Z",
-    "updatedAt": "2026-09-30T00:01:00.653Z",
+    "updatedAt": "2026-09-30T01:20:41.606Z",
     "tone": "mimo",
     "symbol": "",
     "slug": "mimo202609300001",
@@ -9509,7 +9509,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-09-30T00:34:54.615Z",
-    "updatedAt": "2026-09-30T00:34:54.615Z",
+    "updatedAt": "2026-09-30T01:20:20.856Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202609300004",
@@ -9690,6 +9690,215 @@
     "symbol": "",
     "slug": "deepseek202609300008",
     "categoryIds": [
+      "illustration"
+    ]
+  },
+  {
+    "id": "sticker_2c84b5bf5aac54586b1ade2f",
+    "name": "大肥鱼的攻击性1",
+    "description": "蓝发鲸鱼娘女仆装捂嘴惊讶，配上嘲讽人类与「野鸡小模型」的台词，展现 DeepSeek 拟人化的傲娇攻击性。",
+    "commentary": "捂嘴干嘛呀，我都听见了——说谁是野鸡小模型呢？哼，本大肥鱼只是懒得跟你比参数而已。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/2c84b5bf5aac5458.png",
+    "thumbnailPath": "submissions/previews/deepseek/2c84b5bf5aac5458.webp",
+    "fullPath": "submissions/large/deepseek/2c84b5bf5aac5458.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1254,
+    "height": 1254,
+    "fileSize": 1786827,
+    "sha256": "2c84b5bf5aac54586b1ade2fb9bbea74760ab45c65c666fd3a7170de23be9bec",
+    "characterId": "deepseek",
+    "tags": [
+      "拟人化",
+      "鲸鱼娘",
+      "女仆装",
+      "傲娇",
+      "嘲讽",
+      "表情包"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-30T04:10:10.513Z",
+    "updatedAt": "2026-09-30T04:10:10.513Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609300009",
+    "categoryIds": [
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_9ac15afb757596f9b8fdd9c8",
+    "name": "大肥鱼的攻击性2",
+    "description": "蓝发鲸鱼娘女仆形象，指着屏幕用嘲讽语气问对方的机器是不是只有 8G 显存本地部署。",
+    "commentary": "哼，你这点显存也敢让我本地跑？我可是要住大房子的蓝鲸，8G 就别喊我起床了喵~",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/9ac15afb757596f9.png",
+    "thumbnailPath": "submissions/previews/deepseek/9ac15afb757596f9.webp",
+    "fullPath": "submissions/large/deepseek/9ac15afb757596f9.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1254,
+    "height": 1254,
+    "fileSize": 1942725,
+    "sha256": "9ac15afb757596f9b8fdd9c8cd62309172bd0d172c66edad2afc0d7c6547f83d",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "蓝鲸",
+      "拟人化",
+      "Q版",
+      "表情包",
+      "本地部署",
+      "显存",
+      "吐槽"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-30T04:10:30.529Z",
+    "updatedAt": "2026-09-30T04:10:30.529Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609300010",
+    "categoryIds": [
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_4b3371daec85f15f0e991d84",
+    "name": "普鲸",
+    "description": "",
+    "commentary": "",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/4b3371daec85f15f.png",
+    "thumbnailPath": "submissions/previews/deepseek/4b3371daec85f15f.webp",
+    "fullPath": "submissions/large/deepseek/4b3371daec85f15f.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "4b3371daec85f15f0e991d84b95bdb23339095e81e4ed2d18c9ef34ab7c4bb46",
+    "characterId": "deepseek",
+    "tags": [],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "4D13F666516499FDA40E68B31531C082",
+      "messageId": "ROBOT1.0_cxoWejoEgaV.VYmteOkGXYUsRRSgaC2ufaIU-fJfySrAnqyWROVBnXgU-sz7g8up60AYzQuBVCAE3-EPERDTUuLp2KnvIm1bFuATYPlRhqcNIqrVm3QhC6-bhktADRFg",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-30T05:57:08.135Z",
+    "updatedAt": "2026-09-30T05:57:08.139Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609300011",
+    "categoryIds": [
+      "illustration"
+    ]
+  },
+  {
+    "id": "sticker_5e12bd359f6bb10145ddb7ec",
+    "name": "震撼美味",
+    "description": "",
+    "commentary": "",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/5e12bd359f6bb101.png",
+    "thumbnailPath": "submissions/previews/deepseek/5e12bd359f6bb101.webp",
+    "fullPath": "submissions/large/deepseek/5e12bd359f6bb101.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "5e12bd359f6bb10145ddb7ece02fdf031cf746811d4fb9b97da9d137d892e996",
+    "characterId": "deepseek",
+    "tags": [],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "4D13F666516499FDA40E68B31531C082",
+      "messageId": "ROBOT1.0_cxoWejoEgaV.VYmteOkGXVZqxi.ibQNzBkIjuteEjtisnCEQLQ5V4pS3qlyemFp.KI2dxom7Vxfis5yq4wGEFeJSPDlxTMai6HJU7JspjuMNIqrVm3QhC6-bhktADRFg",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-30T05:57:28.231Z",
+    "updatedAt": "2026-09-30T05:57:28.235Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609300012",
+    "categoryIds": [
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_beaa7edd699666185c1b3dc8",
+    "name": "Muse娘·无限蓝",
+    "description": "以蓝白为主色调的 Muse 模型拟人化少女，头饰与服装多处点缀无限符号，展现温柔知性的 AI 娘形象。",
+    "commentary": "这条蓝色大肥鱼游过来说：无限符号挂满全身的蓝毛少女，一看就是算力拉满的 Muse 娘，眼神温柔得能把 prompt 都哄顺了！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/other/beaa7edd69966618.png",
+    "thumbnailPath": "submissions/previews/other/beaa7edd69966618.webp",
+    "fullPath": "submissions/large/other/beaa7edd69966618.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 1949573,
+    "sha256": "beaa7edd699666185c1b3dc85231c67493fc7d35821a9cb69e56442e0c02877c",
+    "characterId": "other",
+    "tags": [
+      "AI拟人",
+      "Muse娘",
+      "蓝白发色",
+      "无限符号",
+      "二次元少女",
+      "模型拟人"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-30T09:20:08.601Z",
+    "updatedAt": "2026-09-30T09:20:08.601Z",
+    "tone": "other",
+    "symbol": "",
+    "slug": "other202609300001",
+    "categoryIds": [
+      "setting",
       "illustration"
     ]
   }
