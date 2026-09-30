@@ -106,8 +106,8 @@ export const aiFillHandler = async (req: PayloadRequest): Promise<Response> => {
   const original = await readOriginal(work?.legacyPaths?.path)
   const image = original || (await readMedia(payload, work?.preview)) || (await readMedia(payload, submission?.media))
   if (!image) return json({ ok: false, error: '读不到这张图，无法补全' }, 422)
-  // 宽高只能从原图读，预览图尺寸不算数。
-  const effective = original ? fields : fields.filter((field) => field !== 'dimensions')
+  // 原图读不到时使用后台预览图；预览图经过同步时已保留真实宽高，可用于补齐字段。
+  const effective = fields
 
   const categoryResult = await payload.find({ collection: 'categories', where: { status: { equals: 'active' } }, limit: 1000, depth: 0, overrideAccess: true })
   const character = work?.character && typeof work.character === 'object' ? work.character : null
