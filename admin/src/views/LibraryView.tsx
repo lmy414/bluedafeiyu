@@ -11,7 +11,7 @@ import { PageHeader } from '../components/admin/PageHeader'
 import { Pagination } from '../components/admin/Pagination'
 import { WorkCard } from '../components/admin/WorkCard'
 import type { CategoryDoc, CharacterDoc, ListResponse, TopicDoc, WorkDoc } from '../components/admin/types'
-import { relationID } from '../components/admin/types'
+import { NO_AUTHOR, authorOf, authorOptions, relationID } from '../components/admin/types'
 
 export function LibraryView() {
   const { get, mutate } = useAdminApi()
@@ -23,6 +23,7 @@ export function LibraryView() {
   const [characterId, setCharacterId] = useState('')
   const [categoryId, setCategoryId] = useState('')
   const [status, setStatus] = useState('')
+  const [author, setAuthor] = useState('')
   const [keyword, setKeyword] = useState('')
   const [selected, setSelected] = useState<string[]>([])
   const [page, setPage] = useState(1)
@@ -62,13 +63,19 @@ export function LibraryView() {
     return works.filter((work) => {
       if (channel && work.channel !== channel) return false
       if (status && work.status !== status) return false
+      if (author) {
+        const value = authorOf(work)
+        if (author === NO_AUTHOR ? value !== '' : value !== author) return false
+      }
       if (characterId && String(relationID(work.character)) !== characterId) return false
       if (categoryId && !(work.categories || []).some((item) => String(relationID(item)) === categoryId)) return false
       if (!search) return true
-      const haystack = [work.name, work.workId, ...(work.tags || []).map((tag) => tag.value)].join(' ').toLowerCase()
+      const haystack = [work.name, work.workId, authorOf(work), ...(work.tags || []).map((tag) => tag.value)].join(' ').toLowerCase()
       return haystack.includes(search)
     })
-  }, [categoryId, channel, characterId, keyword, status, works])
+  }, [author, categoryId, channel, characterId, keyword, status, works])
+
+  const authors = useMemo(() => authorOptions(works, authorOf), [works])
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / 48))
   const visible = filtered.slice((page - 1) * 48, page * 48)
@@ -92,7 +99,7 @@ export function LibraryView() {
     }
   }
 
-  useEffect(() => setPage(1), [categoryId, channel, characterId, keyword, status])
+  useEffect(() => setPage(1), [author, categoryId, channel, characterId, keyword, status])
 
   return (
     <Gutter className="s3-admin-page">
@@ -126,9 +133,20 @@ export function LibraryView() {
             {WORK_STATUSES.map((item) => <option key={item.value} value={item.value}>{item.label}</option>)}
           </select>
         </label>
+        <label>
+          作者
+          <select onChange={(event) => setAuthor(event.target.value)} value={author}>
+            <option value="">全部作者</option>
+            {authors.map((item) => (
+              <option key={item.value || NO_AUTHOR} value={item.value || NO_AUTHOR}>
+                {item.value || '未署名'}（{item.count}）
+              </option>
+            ))}
+          </select>
+        </label>
         <label className="s3-search-field">
           搜索
-          <input onChange={(event) => setKeyword(event.target.value)} placeholder="名称、标签或 ID" value={keyword} />
+          <input onChange={(event) => setKeyword(event.target.value)} placeholder="名称、标签、作者或 ID" value={keyword} />
         </label>
       </section>
       <div className="s3-result-line">

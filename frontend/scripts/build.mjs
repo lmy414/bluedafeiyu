@@ -29,6 +29,11 @@ const run = (script, args = [], cwd = root) => {
 };
 const astro = path.join(frontend, 'node_modules', 'astro', 'bin', 'astro.mjs');
 if (!fs.existsSync(astro)) throw new Error('Astro is not installed: run npm ci in frontend/');
+// 分享卡片登记表：页面构建时由 src/lib/v2.mjs 的 ogCard() 追加，这里先清空
+const ogJobsFile = path.join(frontend, '.astro', 'og-jobs.jsonl');
+fs.mkdirSync(path.dirname(ogJobsFile), { recursive: true });
+fs.writeFileSync(ogJobsFile, '');
+process.env.OG_JOBS_FILE = ogJobsFile;
 run(astro, ['build'], frontend);
 // Publish only Astro output plus the original public data and synced preview assets.
 if(fs.existsSync(out)) {
@@ -47,10 +52,25 @@ const copy = (relative, target = relative) => {
 for (const file of ['avatar.png','favicon.ico','favicon.png','qq-group.png','characters.json','categories.json','blue-fish-ids.json','topics.json','site-data.json','site-data.js','submissions/works.json','owner-picks/works.json']) copy(file);
 for (const dir of ['submissions/previews','submissions/large','owner-picks/previews']) copy(dir);
 // data/blue-fish/previews is intentionally omitted; production serves its shared/data persistent copy.
+// 社交分享卡片：每页一张 1200×630 JPG，画面就是该页对应的作品（tools/og_cards.py，需 Python + Pillow）。
+// 缓存在 .build/og-cache，内容没变的卡片不重画。SKIP_OG=1 可跳过（页面里的 og:image 会指向不存在的图）。
+if (process.env.SKIP_OG !== '1') {
+  const jobs = [...new Map(fs.readFileSync(ogJobsFile, 'utf8').split('\n').filter(Boolean).map(l => JSON.parse(l)).map(j => [j.id, j])).values()];
+  const cache = path.join(root, '.build', 'og-cache');
+  fs.mkdirSync(cache, { recursive: true });
+  const jobsJson = path.join(cache, 'jobs.json');
+  fs.writeFileSync(jobsJson, JSON.stringify(jobs));
+  const py = spawnSync(process.env.PYTHON || 'python', [path.join(root, 'tools', 'og_cards.py'), jobsJson, cache, dist, path.join(dist, 'avatar.png')], { cwd: root, stdio: 'inherit' });
+  if (py.error || py.status !== 0) throw new Error('分享卡片生成失败：' + (py.error?.message || py.status));
+  fs.mkdirSync(path.join(out, 'og'), { recursive: true });
+  for (const j of jobs) fs.copyFileSync(path.join(cache, j.id + '.jpg'), path.join(out, 'og', j.id + '.jpg'));
+  console.log('[og] ' + jobs.length + ' share cards');
+}
 // Astro generates the 404 page; server response semantics must still be verified.
 const snapshot = JSON.parse(fs.readFileSync(path.join(dist,'site-data.json'),'utf8'));
 const origin = 'https://xn--pssy23gqgbz2d718b.com';
-const urls = ['/', '/category.html','/topics.html','/submit.html','/about.html','/projects.html','/changelog.html',
+const urls = ['/', '/characters.html','/community.html','/topics.html','/submit.html','/about.html','/projects.html','/changelog.html',
+ ...(snapshot.characters || []).filter(c => c.status === 'active' && snapshot.works.some(w => w.characterId === c.id && w.status === 'published')).map(c => `/characters/${c.id}.html`),
  ...snapshot.categories.filter(c => c.status === 'active').map(c=>`/categories/${c.id}.html`),
  ...(snapshot.topics || []).map(t=>`/topics/${t.id}.html`),
  ...snapshot.works.map(w=>`/works/${w.slug}.html`)];

@@ -1,0 +1,15 @@
+---
+import V2 from '../layouts/V2.astro';
+---
+<V2 title="搜索 AI 娘二创作品 | 蓝色大肥鱼" desc="按作品名、角色、别名或 Tag 搜索 AI 娘二创作品。" path="/search.html" active="search" bodyPage="search" robots="noindex,follow">
+  <div class="search-page">
+    <header class="feed-head"><div><h1 data-i18n="v2.search">搜索</h1></div></header>
+    <form class="bigsearch" role="search" id="sform">
+      <label class="sr" for="q" data-i18n="v2.keyword">关键词</label>
+      <input id="q" name="q" type="search" placeholder="作品名、角色、别名、Tag" data-i18n-attr="placeholder:v2.searchPh2" />
+      <button class="btn btn-ink" data-i18n="v2.search">搜索</button>
+    </form>
+    <p class="s-count" id="scount" aria-live="polite"></p>
+    <div class="feed-grid" id="sres"></div>
+  </div>
+</V2>

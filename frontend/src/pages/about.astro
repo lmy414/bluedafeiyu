@@ -1,27 +1,8 @@
 ---
-import Site from '../layouts/Site.astro';
+import V2 from '../layouts/V2.astro';
 ---
-<Site active="about" bodyPage="about">
-  <Fragment slot="head">
-  <title>关于蓝色大肥鱼 - AI娘表情包开放档案与版权说明</title>
-  <meta name="description" content="了解蓝色大肥鱼 AI娘表情包开放档案、图片版权与授权、Google Analytics 统计隐私、评论机制、官方 QQ 交流群、角色设计致谢和删除申请方式。" />
-  <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://xn--pssy23gqgbz2d718b.com/about.html" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="蓝色大肥鱼" />
-  <meta property="og:title" content="关于蓝色大肥鱼 - AI娘表情包开放档案与版权说明" />
-  <meta property="og:description" content="了解蓝色大肥鱼 AI娘表情包开放档案、图片版权与授权、Google Analytics 统计隐私、评论机制、官方 QQ 交流群、角色设计致谢和删除申请方式。" />
-  <meta property="og:url" content="https://xn--pssy23gqgbz2d718b.com/about.html" />
-  <meta property="og:image" content="https://xn--pssy23gqgbz2d718b.com/favicon.png" />
-  <meta name="twitter:card" content="summary" />
-  <link rel="icon" href="favicon.ico" sizes="any" />
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="stylesheet" href="tokens.css?v=15" />
-  <link rel="stylesheet" href="styles.css?v=20" />
-  <script is:inline src="lang.js?v=2"></script>
-  <link rel="stylesheet" href="/page-styles/about.css" />
-  <script is:inline src="analytics.js" defer></script>
-</Fragment>
+<V2 title="关于蓝色大肥鱼 - AI娘表情包开放档案与版权说明" desc="了解蓝色大肥鱼 AI娘表情包开放档案、图片版权与授权、Google Analytics 统计隐私、评论机制、官方 QQ 交流群、角色设计致谢和删除申请方式。" path="/about.html" active="about" bodyPage="about" pageStyles={["/page-styles/about.css"]} robots="index,follow">
+<div class="page">
 
     <h1 class="page-title" data-i18n="about.h1">关于</h1>
     <p class="lede" data-i18n="about.lede">蓝色大肥鱼是一个非官方同人整理项目，讲清楚它是干什么的、版权归谁、以及我们不收集你的哪些数据。</p>
@@ -32,7 +13,7 @@ import Site from '../layouts/Site.astro';
     <div class="panel about-card tilt-l">
       <div class="prose">
         <p><span data-i18n="about.site.p1a">「蓝色大肥鱼」是收集 </span><strong data-i18n="about.site.p1b">AI 娘二创表情包</strong><span data-i18n="about.site.p1c">的开放档案：作品按角色归档，支持按名称、Tag 与角色别名检索；每张作品都有独立详情页，可以查看来源与授权、下载原图，还带一个独立的评论区。更新日志见页脚。</span></p>
-        <p><span data-i18n="about.site.p2a">你能在这里做的事：按角色与分类浏览全部作品；用关键词搜名称、Tag 或别名；进详情页拿原图；在作品下留言讨论；也可以把自己的作品</span><a href="submit.html" data-i18n="about.site.p2link">投稿</a><span data-i18n="about.site.p2b">进来。</span></p>
+        <p><span data-i18n="about.site.p2a">你能在这里做的事：按角色与分类浏览全部作品；用关键词搜名称、Tag 或别名；进详情页拿原图；在作品下留言讨论；也可以把自己的作品</span><a href="/submit.html" data-i18n="about.site.p2link">投稿</a><span data-i18n="about.site.p2b">进来。</span></p>
       </div>
     </div>
 
@@ -95,14 +76,14 @@ import Site from '../layouts/Site.astro';
           <p><span data-i18n="about.group.a">本站的 QQ 群叫「鱼之饭盆」，群号 </span><span class="marker-highlight qq-number">1060898801</span><span data-i18n="about.group.c">。QQ 里搜这个号码就能进；想聊图、催更、报 Bug，或者单纯过来看看鱼，都欢迎。</span></p>
         </div>
         <figure class="group-qr">
-          <img src="qq-group.png" alt="QQ 群「鱼之饭盆」（群号 1060898801）的加入二维码" width="518" height="518" loading="lazy" decoding="async" data-i18n-attr="alt:qq.qrAlt" />
+          <img src="/qq-group.png" alt="QQ 群「鱼之饭盆」（群号 1060898801）的加入二维码" width="518" height="518" loading="lazy" decoding="async" data-i18n-attr="alt:qq.qrAlt" />
           <figcaption data-i18n="qq.scan">扫码进群</figcaption>
         </figure>
       </div>
     </aside>
     </div>
-
-  <Fragment slot="scripts">
+</div>
+<Fragment slot="scripts">
   <script is:inline src="/page-scripts/about-0.js"></script>
 </Fragment>
-</Site>
+</V2>

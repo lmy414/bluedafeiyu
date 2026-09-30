@@ -1,0 +1,30 @@
+---
+// 页面 SEO 与社交分享字段。og = { image, alt }，image 为站内路径（/og/xxx.jpg）
+import { ORIGIN } from '../../lib/v2.mjs';
+const { title, desc, path = '/', type = 'website', og, shareDesc = '', robots = 'index,follow', canonical = '' } = Astro.props;
+const url = canonical || ORIGIN + path;
+const share = shareDesc || desc;
+const img = og ? ORIGIN + og.image : ORIGIN + '/favicon.png';
+const large = Boolean(og);
+---
+<title>{title}</title>
+<meta name="description" content={desc} />
+<meta name="robots" content={robots} />
+<link rel="canonical" href={url} />
+<meta property="og:site_name" content="蓝色大肥鱼" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:type" content={type} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={share} />
+<meta property="og:url" content={url} />
+<meta property="og:image" content={img} />
+<meta property="og:image:secure_url" content={img} />
+{large ? <><meta property="og:image:type" content="image/jpeg" /><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" /><meta property="og:image:alt" content={og.alt} /></> : null}
+<meta name="twitter:card" content={large ? 'summary_large_image' : 'summary'} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={share} />
+<meta name="twitter:image" content={img} />
+{large ? <meta name="twitter:image:alt" content={og.alt} /> : null}
+<meta itemprop="name" content={title} />
+<meta itemprop="description" content={share} />
+<meta itemprop="image" content={img} />

@@ -1,14 +1,14 @@
 ---
-import V2 from '../../layouts/V2.astro';
-import Feed from '../../components/v2/Feed.astro';
-import FeedHead from '../../components/v2/FeedHead.astro';
-import PillTabs from '../../components/v2/PillTabs.astro';
-import { works, TYPES, PAGE_SIZE, chunk, pageHref, ogCard, pg } from '../../lib/v2.mjs';
+import V2 from '../../../../layouts/V2.astro';
+import Feed from '../../../../components/v2/Feed.astro';
+import FeedHead from '../../../../components/v2/FeedHead.astro';
+import PillTabs from '../../../../components/v2/PillTabs.astro';
+import { works, TYPES, PAGE_SIZE, chunk, pageHref, ogCard, pg } from '../../../../lib/v2.mjs';
 export function getStaticPaths() {
   return TYPES.flatMap(t => {
     const list = works.filter(w => w.cats.includes(t.id));
     const pages = chunk(list, PAGE_SIZE);
-    return pages.map((items, i) => ({ params: { id: t.id }, props: { t, list, items, n: i + 1, pages: pages.length } })).slice(0, 1);
+    return pages.map((items, i) => ({ params: { id: t.id, n: String(i + 1) }, props: { t, list, items, n: i + 1, pages: pages.length } })).slice(1);
   });
 }
 const { t, list, items, n, pages } = Astro.props;

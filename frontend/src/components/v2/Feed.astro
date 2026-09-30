@@ -1,0 +1,9 @@
+---
+// 一页瀑布流。每页都是真实静态页面（无 JS / 爬虫可用），v2.js 接近底部时抓下一页追加。
+import MediaCard from './MediaCard.astro';
+const { items, page = 1, total, next = '', open = '', noChar = false } = Astro.props;
+---
+{items.length
+  ? <><div class="feed-grid" data-feed data-page={page} data-total={total} data-next={next || undefined} data-open={open || undefined}>{items.map(w => <MediaCard w={w} noChar={noChar} />)}</div>
+     {next ? <a class="sr" rel="next" href={next} tabindex="-1" data-i18n="v2.nextBatch">下一批作品</a> : null}</>
+  : <p class="empty-v2"><span data-i18n="v2.emptyA">这里还没有作品，</span><a href="/submit.html" data-i18n="v2.emptyB">来投第一张</a></p>}

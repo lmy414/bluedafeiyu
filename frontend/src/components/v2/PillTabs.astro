@@ -1,0 +1,7 @@
+---
+// 二级筛选胶囊条 items = [{ href, label, key, count, on }]
+const { label, labelKey, items } = Astro.props;
+---
+<nav class="role-tabs" aria-label={label} data-i18n-attr={labelKey ? 'aria-label:' + labelKey : undefined}>
+  {items.map(t => <a href={t.href} aria-current={t.on ? 'page' : undefined}><span data-i18n={t.key}>{t.label}</span><em>{t.count}</em></a>)}
+</nav>

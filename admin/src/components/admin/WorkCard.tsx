@@ -4,7 +4,7 @@ import React from 'react'
 
 import { CHANNELS, labelOf } from './constants'
 import type { CharacterDoc, WorkDoc } from './types'
-import { asObject, workImageURL } from './types'
+import { asObject, authorOf, workImageURL } from './types'
 
 function confidenceText(value?: number): string {
   if (typeof value !== 'number') return '未记录'
@@ -44,7 +44,7 @@ export function WorkCard({
               {work.status === 'pending' ? '待发布' : work.status === 'published' ? '已上线' : work.status === 'hidden' ? '已隐藏' : work.status === 'removed' ? '已移除' : '已删除'}
             </span>
           </div>
-          <p>{character?.name || '未设置角色'}</p>
+          <p>{character?.name || '未设置角色'} · {authorOf(work) || '未署名'}</p>
           <p className="s3-card-meta">
             {labelOf(CHANNELS, work.channel)} · {categories.length ? categories.join(' / ') : '未分类'}
           </p>

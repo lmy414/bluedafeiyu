@@ -1,28 +1,9 @@
 ---
-import Site from '../layouts/Site.astro';
+import V2 from '../layouts/V2.astro';
 import SubmissionForm from '../components/SubmissionForm.astro';
 ---
-<Site active="submit" bodyPage="submit">
-  <Fragment slot="head">
-  <title>AI娘表情包投稿 - 站内快速投稿与 GitHub 表单 | 蓝色大肥鱼</title>
-  <meta name="description" content="提交 AI 娘表情包只需上传图片、填写名称和角色，说明可选；站内快速投稿与 GitHub 表单均可，审核通过后批量发布，Tag、来源、授权与分类由维护者审核补充。" />
-  <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://xn--pssy23gqgbz2d718b.com/submit.html" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="蓝色大肥鱼" />
-  <meta property="og:title" content="AI娘表情包投稿 - 站内快速投稿与 GitHub 表单 | 蓝色大肥鱼" />
-  <meta property="og:description" content="提交 AI 娘表情包只需上传图片、填写名称和角色，说明可选；站内快速投稿与 GitHub 表单均可，审核通过后批量发布，Tag、来源、授权与分类由维护者审核补充。" />
-  <meta property="og:url" content="https://xn--pssy23gqgbz2d718b.com/submit.html" />
-  <meta property="og:image" content="https://xn--pssy23gqgbz2d718b.com/favicon.png" />
-  <meta name="twitter:card" content="summary" />
-  <link rel="icon" href="favicon.ico" sizes="any" />
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="stylesheet" href="tokens.css?v=15" />
-  <link rel="stylesheet" href="styles.css?v=20" />
-  <script is:inline src="lang.js?v=2"></script>
-  <link rel="stylesheet" href="/page-styles/submit.css" />
-  <script is:inline src="analytics.js" defer></script>
-</Fragment>
+<V2 title="AI娘表情包投稿 - 站内快速投稿与 GitHub 表单 | 蓝色大肥鱼" desc="提交 AI 娘表情包只需上传图片、填写名称和角色，说明可选；站内快速投稿与 GitHub 表单均可，审核通过后批量发布，Tag、来源、授权与分类由维护者审核补充。" path="/submit.html" active="submit" bodyPage="submit" pageStyles={["/page-styles/submit.css"]} robots="index,follow">
+<div class="page">
 
     <h1 class="page-title" data-i18n="submit.h1">投稿</h1>
     <p class="lede" data-i18n="submit.lede">把你的 AI 娘二创表情包交给我们归档。可以直接在本页快速投稿，也可以走 GitHub 表单；填写图片、名称和角色即可，说明可选；其余收录信息由维护者审核时补齐，审核通过后批量发布。</p>
@@ -59,7 +40,7 @@ import SubmissionForm from '../components/SubmissionForm.astro';
           <p><span data-i18n="submit.qq.a">QQ 群「鱼之饭盆」，群号 </span><span class="marker-highlight qq-number">1060898801</span><span data-i18n="submit.qq.c">。把图发到群里并 @维护者，也算投稿。</span></p>
         </div>
         <figure class="group-qr">
-          <img src="qq-group.png" alt="QQ 群「鱼之饭盆」（群号 1060898801）的加入二维码" width="518" height="518" loading="lazy" decoding="async" data-i18n-attr="alt:qq.qrAlt" />
+          <img src="/qq-group.png" alt="QQ 群「鱼之饭盆」（群号 1060898801）的加入二维码" width="518" height="518" loading="lazy" decoding="async" data-i18n-attr="alt:qq.qrAlt" />
           <figcaption data-i18n="qq.scan">扫码进群</figcaption>
         </figure>
         <button type="button" class="btn" id="btn-qq-copy">
@@ -108,9 +89,9 @@ import SubmissionForm from '../components/SubmissionForm.astro';
     <p class="note" data-i18n="submit.note1">也可以继续使用上方的 GitHub 投稿表单；两种入口都会进入同一审核队列。</p>
 
     <p class="note" data-i18n="submit.note2">投稿不会立即上线：维护者会看图补充 Tag、分类、来源和授权信息，审核通过后批量发布；期间可能会向你确认信息。</p>
-
-  <Fragment slot="scripts">
-    <script is:inline src="site-data.js"></script>
+</div>
+<Fragment slot="scripts">
+    <script is:inline src="/site-data.js"></script>
     <script is:inline src="/page-scripts/submit-0.js"></script>
 </Fragment>
-</Site>
+</V2>

@@ -195,6 +195,48 @@ export function WorkDrawer({
     }
   }
 
+  const [filling, setFilling] = useState(false)
+
+  /** 只补当前表单里为空的字段；结果填进表单，仍需人工点保存/收录。 */
+  async function aiFill() {
+    const blankFields: string[] = []
+    if (!form.name.trim()) blankFields.push('name')
+    if (!form.description.trim() || /^首批收录自蓝色大肥鱼档案馆|原投稿未逐张命名/.test(form.description.trim())) blankFields.push('description')
+    if (!form.commentary.trim()) blankFields.push('commentary')
+    if (!parsedTags().length) blankFields.push('tags')
+    if (!form.categories.length) blankFields.push('categories')
+    if (!blankFields.length) {
+      setMessage('没有空字段需要补全。')
+      return
+    }
+    setFilling(true)
+    setMessage('AI 正在看图补全…')
+    try {
+      const result = await mutate<{ errors?: string[]; suggestion: Record<string, any> }>('/ai-fill', 'POST', {
+        fields: blankFields,
+        ...(work ? { workId: work.workId } : { submissionId: submission?.submissionId }),
+      })
+      const s = result.suggestion || {}
+      const categoryIds = Array.isArray(s.categoryIds)
+        ? categories.filter((item) => s.categoryIds.includes(String(item.categoryId))).map((item) => String(item.id))
+        : []
+      setForm((current) => ({
+        ...current,
+        name: current.name.trim() ? current.name : s.name || current.name,
+        description: blankFields.includes('description') && s.description ? s.description : current.description,
+        commentary: current.commentary.trim() ? current.commentary : s.commentary || current.commentary,
+        tags: current.tags.trim() ? current.tags : Array.isArray(s.tags) ? s.tags.join(', ') : current.tags,
+        categories: current.categories.length ? current.categories : categoryIds,
+      }))
+      const source = s.descriptionSource === 'author' ? '（说明取自作者原文）' : ''
+      const warn = result.errors?.length ? `；未补上：${result.errors.join('、')}` : ''
+      setMessage(`已填入 AI 建议${source}，请核对后保存${warn}`)
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : 'AI 补全失败')
+    } finally {
+      setFilling(false)
+    }
+  }
   async function manualInclude() {
     if (!submission) return
     const character = characters.find((item) => String(item.id) === form.character)
@@ -323,9 +365,14 @@ export function WorkDrawer({
                 标签（逗号分隔）
                 <input onChange={(event) => setForm({ ...form, tags: event.target.value })} value={form.tags} />
               </label>
-              <button className="s3-button s3-button--primary" disabled={saving} onClick={() => void save()} type="button">
-                {saving ? '保存中…' : '保存修改'}
-              </button>
+              <div className="s3-bulk-actions">
+                <button className="s3-button s3-button--secondary" disabled={filling || saving} onClick={() => void aiFill()} type="button">
+                  {filling ? 'AI 补全中…' : 'AI 补全空字段'}
+                </button>
+                <button className="s3-button s3-button--primary" disabled={saving || filling} onClick={() => void save()} type="button">
+                  {saving ? '保存中…' : '保存修改'}
+                </button>
+              </div>
               {message ? <p className="s3-notice">{message}</p> : null}
             </section>
           ) : null}
@@ -347,7 +394,7 @@ export function WorkDrawer({
               <p className="s3-muted">
                 {reviewContentPresent
                   ? 'AI 已给出内容草案。请逐项核对后主动收录；原始 AI 结论不会改写。'
-                  : 'AI 未保留可用内容。请填写完整六字段后主动收录；缺失字段不会自动补全。'}
+                  : 'AI 未保留可用内容。可以点「AI 补全空字段」让 AI 看图填写，核对后再收录。'}
               </p>
               <label>
                 名称
@@ -401,9 +448,14 @@ export function WorkDrawer({
                 标签（逗号分隔）
                 <input onChange={(event) => setForm({ ...form, tags: event.target.value })} value={form.tags} />
               </label>
-              <button className="s3-button s3-button--primary" disabled={saving} onClick={() => void manualInclude()} type="button">
-                {saving ? '处理中…' : '人工收录'}
-              </button>
+              <div className="s3-bulk-actions">
+                <button className="s3-button s3-button--secondary" disabled={filling || saving} onClick={() => void aiFill()} type="button">
+                  {filling ? 'AI 补全中…' : 'AI 补全空字段'}
+                </button>
+                <button className="s3-button s3-button--primary" disabled={saving || filling} onClick={() => void manualInclude()} type="button">
+                  {saving ? '处理中…' : '人工收录'}
+                </button>
+              </div>
               {message ? <p className="s3-notice">{message}</p> : null}
             </section>
           ) : null}

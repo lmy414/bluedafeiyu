@@ -11,7 +11,7 @@ import { Pagination } from '../components/admin/Pagination'
 import { WorkCard } from '../components/admin/WorkCard'
 import { WorkDrawer } from '../components/admin/WorkDrawer'
 import type { CategoryDoc, CharacterDoc, ListResponse, SubmissionDoc, WorkDoc } from '../components/admin/types'
-import { submissionImageURL } from '../components/admin/types'
+import { NO_AUTHOR, authorOf, authorOptions, submissionImageURL } from '../components/admin/types'
 
 type ChannelFilter = 'all' | 'github-issue' | 'qq' | 'web'
 type ReviewMode = 'pending' | 'published' | 'rejected'
@@ -45,6 +45,7 @@ export function ReviewView() {
   const [activeWork, setActiveWork] = useState<WorkDoc | null>(null)
   const [activeSubmission, setActiveSubmission] = useState<SubmissionDoc | null>(null)
   const [page, setPage] = useState(1)
+  const [author, setAuthor] = useState('')
   const [loading, setLoading] = useState(true)
   const [message, setMessage] = useState('')
 
@@ -95,10 +96,22 @@ export function ReviewView() {
     void load()
   }, [channel, mode])
 
-  const count = mode === 'rejected' ? submissions.length : works.length
+  const authors = useMemo(
+    () => (mode === 'rejected' ? authorOptions(submissions, authorOf) : authorOptions(works, authorOf)),
+    [mode, submissions, works],
+  )
+  const matchAuthor = (value: string) => !author || (author === NO_AUTHOR ? value === '' : value === author)
+  const filteredWorks = useMemo(() => works.filter((work) => matchAuthor(authorOf(work))), [author, works])
+  const filteredSubmissions = useMemo(() => submissions.filter((item) => {
+    const linked = typeof item.work === 'object' && item.work ? item.work : undefined
+    return matchAuthor(authorOf(linked || item))
+  }), [author, submissions])
+  useEffect(() => setPage(1), [author])
+
+  const count = mode === 'rejected' ? filteredSubmissions.length : filteredWorks.length
   const totalPages = Math.max(1, Math.ceil(count / 48))
-  const pageWorks = useMemo(() => works.slice((page - 1) * 48, page * 48), [page, works])
-  const pageSubmissions = useMemo(() => submissions.slice((page - 1) * 48, page * 48), [page, submissions])
+  const pageWorks = useMemo(() => filteredWorks.slice((page - 1) * 48, page * 48), [page, filteredWorks])
+  const pageSubmissions = useMemo(() => filteredSubmissions.slice((page - 1) * 48, page * 48), [page, filteredSubmissions])
 
   function toggle(id: string) {
     setSelected((current) => (current.includes(id) ? current.filter((value) => value !== id) : [...current, id]))
@@ -134,6 +147,19 @@ export function ReviewView() {
           </button>
         ))}
       </div>
+      <section className="s3-filter-panel">
+        <label>
+          作者
+          <select onChange={(event) => setAuthor(event.target.value)} value={author}>
+            <option value="">全部作者</option>
+            {authors.map((item) => (
+              <option key={item.value || NO_AUTHOR} value={item.value || NO_AUTHOR}>
+                {item.value || '未署名'}（{item.count}）
+              </option>
+            ))}
+          </select>
+        </label>
+      </section>
       {message ? <p className="s3-notice">{message}</p> : null}
       {loading ? <p className="s3-loading">正在读取审核队列…</p> : null}
       {!loading && count === 0 ? <div className="s3-empty">当前筛选下没有条目。</div> : null}

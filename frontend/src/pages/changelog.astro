@@ -1,27 +1,8 @@
 ---
-import Site from '../layouts/Site.astro';
+import V2 from '../layouts/V2.astro';
 ---
-<Site active="changelog" bodyPage="changelog">
-  <Fragment slot="head">
-  <title>更新日志 - 蓝色大肥鱼网站改版与收录记录</title>
-  <meta name="description" content="查看蓝色大肥鱼 AI娘表情包站的页面改版、数据迁移、作品收录、SEO 和性能优化记录。" />
-  <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://xn--pssy23gqgbz2d718b.com/changelog.html" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="蓝色大肥鱼" />
-  <meta property="og:title" content="更新日志 - 蓝色大肥鱼网站改版与收录记录" />
-  <meta property="og:description" content="查看蓝色大肥鱼 AI娘表情包站的页面改版、数据迁移、作品收录、SEO 和性能优化记录。" />
-  <meta property="og:url" content="https://xn--pssy23gqgbz2d718b.com/changelog.html" />
-  <meta property="og:image" content="https://xn--pssy23gqgbz2d718b.com/favicon.png" />
-  <meta name="twitter:card" content="summary" />
-  <link rel="icon" href="favicon.ico" sizes="any" />
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="stylesheet" href="tokens.css?v=15" />
-  <link rel="stylesheet" href="styles.css?v=20" />
-  <script is:inline src="lang.js?v=2"></script>
-  <link rel="stylesheet" href="/page-styles/changelog.css" />
-  <script is:inline src="analytics.js" defer></script>
-</Fragment>
+<V2 title="更新日志 - 蓝色大肥鱼网站改版与收录记录" desc="查看蓝色大肥鱼 AI娘表情包站的页面改版、数据迁移、作品收录、SEO 和性能优化记录。" path="/changelog.html" active="changelog" bodyPage="changelog" pageStyles={["/page-styles/changelog.css"]} robots="index,follow">
+<div class="page">
 
     <h1 class="page-title" data-i18n="changelog.h1">更新日志</h1>
     <p class="lede" data-i18n="changelog.lede">本站的变更记录，大事小事都记一笔。</p>
@@ -182,7 +163,7 @@ import Site from '../layouts/Site.astro';
       </li>
     </ol>
     <p class="note" data-i18n="changelog.note">本页为节选示例；完整变更记录已归档到仓库 archive/2026-09-24/CHANGELOG.md。</p>
-
-  <Fragment slot="scripts">
+</div>
+<Fragment slot="scripts">
 </Fragment>
-</Site>
+</V2>

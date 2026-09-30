@@ -1,0 +1,17 @@
+---
+// 瀑布流作品卡：点击由 v2.js 接管为作品浮层；无 JS 时进入 /works/<slug>.html
+import { LICENSE, fmtSize, fmtDate } from '../../lib/v2.mjs';
+const { w, noChar = false } = Astro.props;
+const [licShort, licFull] = LICENSE[w.lic];
+---
+<article class="media-card" style={'--c:' + w.char.color + ';--cs:' + w.char.soft} data-k={w.cats.join(' ')}>
+  <a href={'/works/' + w.slug + '.html'} data-work={w.slug}>
+    <div class="ph" style={w.width && w.height ? 'aspect-ratio:' + w.width + '/' + w.height : undefined}>
+      <img loading="lazy" decoding="async" src={w.thumb} alt={w.description || w.name} width={w.width || undefined} height={w.height || undefined} />
+      <span class="lic" data-lic={w.lic} title={licFull}>{licShort}</span>
+      <span class="badge">{w.typeShort || '作品'}</span>
+      {w.fileSize ? <span class="dl">↓ {fmtSize(w.fileSize)}</span> : null}
+    </div>
+    <div class="meta"><h3>{w.name}</h3><p>{noChar ? null : <span class="who"><i></i>{w.char.name}</span>}<span>{fmtDate(w.createdAt)}</span></p></div>
+  </a>
+</article>

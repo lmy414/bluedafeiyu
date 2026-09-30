@@ -1,0 +1,4 @@
+---
+const { back, backText, backKey, title, sub, subKey, subVars } = Astro.props;
+---
+<header class="role-head"><a class="back" href={back}>← <span data-i18n={backKey}>{backText}</span></a><div><h1>{title}</h1><p data-i18n-tpl={subKey} data-i18n-vars={subVars ? JSON.stringify(subVars) : undefined}>{sub}</p></div></header>

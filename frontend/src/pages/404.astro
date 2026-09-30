@@ -1,30 +1,9 @@
 ---
-import Site from '../layouts/Site.astro';
+import V2 from '../layouts/V2.astro';
 ---
 <!-- blue-fish-404 -->
-<Site bodyPage="notfound" rootPath="/">
- <Fragment slot="head">
-
-
-  <title>404 页面走丢了 - 蓝色大肥鱼</title>
-  <meta name="description" content="蓝色大肥鱼的 404 页面：这个地址底下没有内容，可能是链接抄错、作品已下架或旧地址失效，可以回首页或按分类继续找。" />
-  <!-- 404 不该进索引：靠 noindex 让它退出搜索结果，而不是用 robots.txt 挡住（挡住了爬虫就看不到这条 noindex）。 -->
-  <meta name="robots" content="noindex,follow" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="蓝色大肥鱼" />
-  <meta property="og:title" content="404 页面走丢了 - 蓝色大肥鱼" />
-  <meta property="og:description" content="蓝色大肥鱼的 404 页面：这个地址底下没有内容，可能是链接抄错、作品已下架或旧地址失效，可以回首页或按分类继续找。" />
-  <meta property="og:image" content="https://xn--pssy23gqgbz2d718b.com/favicon.png" />
-  <meta property="og:url" content="https://xn--pssy23gqgbz2d718b.com/404.html" />
-  <meta name="twitter:card" content="summary" />
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  <link rel="stylesheet" href="/tokens.css?v=15" />
-  <link rel="stylesheet" href="/styles.css?v=20" />
-  <script is:inline src="/lang.js?v=2"></script>
-  <link rel="stylesheet" href="/page-styles/404.css" />
-  <script is:inline src="/analytics.js" defer></script>
-</Fragment>
+<V2 title="404 页面走丢了 - 蓝色大肥鱼" desc="蓝色大肥鱼的 404 页面：这个地址底下没有内容，可能是链接抄错、作品已下架或旧地址失效，可以回首页或按分类继续找。" path="/404.html" active="notfound" bodyPage="notfound" pageStyles={["/page-styles/404.css"]} robots="noindex,follow">
+<div class="page">
 
     <h1 class="page-title" data-i18n="notfound.h1">404 · 这条鱼没找到</h1>
     <p class="lede" data-i18n="notfound.lede">这个地址底下是空的：链接可能抄错了，作品可能已经下架，也可能它压根还没收进来。</p>
@@ -58,4 +37,5 @@ import Site from '../layouts/Site.astro';
 
     <p class="note"><span data-i18n="notfound.noteA">如果这个地址是从站内点进来的，那就是我挂错了，欢迎到 </span><a href="https://github.com/lmy414/ai-girl-stickers/issues" target="_blank" rel="noopener">GitHub Issues</a><span data-i18n="notfound.noteC"> 说一声。</span></p>
 
-</Site>
+</div>
+</V2>

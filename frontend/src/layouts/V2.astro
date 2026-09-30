@@ -1,0 +1,79 @@
+---
+// v2 布局：左侧导航（手机端为左侧抽屉）+ 顶部搜索 + 正文。所有页面共用。
+// 资源一律用根路径（/xxx），同一布局可放在任意层级的页面里。
+import V2Meta from '../components/v2/V2Meta.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { SITE, GH_ICON } from '../lib/v2.mjs';
+const { title, desc, path = '/', type = 'website', og = null, shareDesc = '', active = '', bodyPage, accent = '', pageStyles = [], robots = 'index,follow', canonical = '' } = Astro.props;
+const SECTION_OF = { works: 'gallery', characters: 'gallery', collections: 'gallery', community: 'community' };
+const section = SECTION_OF[active] || '';
+const gallery = [['works', '作品', '/index.html', 'v2.nav.works'], ['characters', '角色', '/characters.html', 'v2.nav.characters'], ['collections', '合集', '/topics.html', 'v2.nav.collections']];
+const bodyStyle = accent ? '--c:' + accent : undefined;
+---
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script is:inline>document.documentElement.classList.add('js')</script>
+  <V2Meta title={title} desc={desc} path={path} type={type} og={og} shareDesc={shareDesc} robots={robots} canonical={canonical} />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="stylesheet" href="/tokens.css?v=15" />
+  <link rel="stylesheet" href="/styles.css?v=20" />
+  {pageStyles.map(href => <link rel="stylesheet" href={href} />)}
+  <link rel="stylesheet" href="/v2.css?v=1" />
+  <script is:inline src="/lang.js?v=3"></script>
+  <script is:inline src="/analytics.js" defer></script>
+  <slot name="head" />
+</head>
+<body class="v2" data-i18n-page={bodyPage} style={bodyStyle}>
+  <a class="skip" href="#main" data-i18n="v2.skip">跳到正文</a>
+  <div class="app">
+    <aside class="sidebar" id="site-drawer" aria-label="站点导航" data-i18n-attr="aria-label:v2.siteNav">
+      <div class="drawer-head">
+        <a class="brand" href="/index.html"><img src="/avatar.png" alt="" width="34" height="34" /><span>蓝色大肥鱼<small data-i18n="v2.tagline">AI 娘二创图库</small></span></a>
+        <button type="button" class="drawer-x" data-drawer-close aria-label="关闭菜单" data-i18n-attr="aria-label:v2.closeMenu">×</button>
+      </div>
+      <nav class="side-nav">
+        <a href="/index.html" aria-current={section === 'gallery' ? 'page' : undefined}><span aria-hidden="true">▦</span><b data-i18n="v2.nav.gallery">图库</b></a>
+        <div class="side-sub">{gallery.map(([k, t, h, key]) => <a href={h} aria-current={k === active ? 'page' : undefined} data-i18n={key}>{t}</a>)}</div>
+        <a href="/community.html" aria-current={section === 'community' ? 'page' : undefined}><span aria-hidden="true">◉</span><b data-i18n="v2.nav.community">社群</b></a>
+      </nav>
+      <div class="side-acts">
+        <a class="btn btn-ink" href="/community.html" data-i18n="v2.joinGroup">加入社群</a>
+        <a class="btn btn-line" href="/submit.html" data-i18n="nav.submit">投稿</a>
+        <a class="btn btn-line" href={SITE.repoContent} target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="side-lang"><div class="topnav" data-lang-host="drawer"></div></div>
+      <p class="side-foot"><a href="/about.html" data-i18n="v2.aboutCopyright">关于与版权</a> · <a href="/changelog.html" data-i18n="footer.changelog">更新日志</a> · <a href="/projects.html" data-i18n="nav.projects">推荐</a><br /><span data-i18n="v2.disclaimer">非官方同人整理项目，图片版权归原作者所有</span></p>
+    </aside>
+    <div class="drawer-back" data-drawer-close hidden></div>
+    <div class="main-col">
+      <header class="topbar-feed">
+        <button type="button" class="drawer-btn" aria-label="打开菜单" aria-controls="site-drawer" aria-expanded="false" data-i18n-attr="aria-label:v2.openMenu"><span aria-hidden="true"></span></button>
+        <form class="feed-search" action="/search.html" role="search">
+          <label class="sr" for="q-top" data-i18n="v2.searchLabel">搜索作品</label>
+          <input id="q-top" name="q" type="search" placeholder="搜索作品、角色、别名或 Tag" autocomplete="off" data-i18n-attr="placeholder:v2.searchPh" />
+          <button class="btn btn-ink" data-i18n="v2.search">搜索</button>
+        </form>
+        <nav class="top-actions" aria-label="站点入口" data-i18n-attr="aria-label:v2.entries">
+          <a class="ta-icon" href={SITE.repoContent} target="_blank" rel="noopener" title="GitHub · 内容与投稿仓库" aria-label="GitHub 内容与投稿仓库" data-i18n-attr="title:footer.content,aria-label:footer.content" set:html={GH_ICON} />
+          <a class="btn btn-line btn-sm" href="/submit.html" data-i18n="nav.submit">投稿</a>
+          <a class="btn btn-ink btn-sm" href="/community.html" data-i18n="v2.joinGroup">加入社群</a>
+          <span class="ta-sep" aria-hidden="true"></span>
+          <a class="btn btn-line btn-sm ta-about" href="/about.html" aria-current={active === 'about' ? 'page' : undefined} data-i18n="nav.about">关于</a>
+          <div class="topnav" data-lang-host="top"></div>
+        </nav>
+      </header>
+      <main id="main" class="content">
+        <slot />
+        {active && !['works', 'characters', 'collections', 'search'].includes(active) ? <SiteFooter rootPath="/" /> : null}
+      </main>
+    </div>
+  </div>
+  <template id="group-cta-tpl"><aside class="group-cta" aria-label="加入社群" data-i18n-attr="aria-label:v2.joinGroup"><img src={SITE.group.qr} alt={'QQ 群「' + SITE.group.name + '」二维码'} width="88" height="88" loading="lazy" data-i18n-attr="alt:qq.qrAlt" /><div><b data-i18n="v2.cta.title">加入「鱼之饭盆」</b><p><span data-i18n="v2.cta.text">聊图、催更、投稿、参加活动。QQ 群号</span> <span class="qq-no">{SITE.group.number}</span></p><p class="cta-acts"><button type="button" class="btn btn-ink btn-sm" data-copy-text={SITE.group.number} data-i18n="qq.copy">复制群号</button><a class="btn btn-line btn-sm" href="/community.html" data-i18n="v2.cta.more">社群介绍</a></p></div></aside></template>
+  <script is:inline src="/v2.js?v=1" defer></script>
+  <slot name="scripts" />
+</body>
+</html>

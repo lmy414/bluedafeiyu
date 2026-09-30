@@ -4,6 +4,8 @@ import path from 'node:path'
 
 import type { Payload } from 'payload'
 
+import { isPlaceholderDescription } from './placeholder'
+
 export const SITE_DATA_FILES = [
   'data/works.json',
   'data/owner-picks.json',
@@ -220,6 +222,11 @@ function editorialText(works: any[], snapshot: any): string {
     const sourcePath = String(work.legacyData?.sourcePath || '')
     if (!sourcePath) continue
     const current = isObject(base[sourcePath]) ? base[sourcePath] : {}
+    // 后台补写的说明与点评写进叠加层；占位说明、空值不写，避免无意义改动。
+    const description = String(work.description ?? '').trim()
+    if (description && !isPlaceholderDescription(description) && current.description !== description) current.description = description
+    const commentary = String(work.commentary ?? '').trim()
+    if (commentary && current.commentary !== commentary) current.commentary = commentary
     if (work.status === 'hidden' || work.status === 'deleted') current.status = work.status
     else if (Object.prototype.hasOwnProperty.call(current, 'status')) delete current.status
     base[sourcePath] = current

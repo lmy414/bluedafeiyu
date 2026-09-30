@@ -56,6 +56,8 @@ export type WorkDoc = {
   legacyPaths?: { externalOriginalUrl?: null | string; fullPath?: null | string; path?: null | string; thumbnailPath?: null | string }
   name: string
   needsPublish?: boolean
+  origin?: Record<string, unknown> | null
+  fields?: Record<string, unknown>
   path?: string
   preview?: MediaDoc | ID
   publishedAt?: string
@@ -63,6 +65,7 @@ export type WorkDoc = {
   sha256?: string
   status: 'deleted' | 'hidden' | 'pending' | 'published' | 'removed'
   submissionId?: string
+  submitter?: { github?: string | null; name?: string | null } | null
   tags?: Array<{ id?: string; value: string }>
   updatedAt?: string
   workId: string
@@ -156,3 +159,33 @@ export function submissionImageURL(submission: SubmissionDoc): string | undefine
   const media = asObject<MediaDoc>(submission.media)
   return media?.sizes?.thumbnail?.url || media?.thumbnailURL || media?.url
 }
+
+const SELF_AUTHOR = /^(本人|自己|我|原创|self)$/i
+
+function cleanAuthor(value: unknown): string {
+  return String(value ?? '').trim().replace(/^@+/, '').trim()
+}
+
+/** 作品作者：来源作者优先；填「本人」或空时用投稿者。都没有返回空串。 */
+export function authorOf(item: { origin?: Record<string, unknown> | null; submitter?: { github?: string | null; name?: string | null } | null; fields?: Record<string, unknown> }): string {
+  const origin = item.origin || {}
+  const submitter = cleanAuthor(item.submitter?.name) || cleanAuthor(item.submitter?.github)
+    || cleanAuthor(origin.submitter) || cleanAuthor(item.fields?.submitter)
+  const author = cleanAuthor(origin.author)
+  if (author && !SELF_AUTHOR.test(author)) return author
+  return submitter
+}
+
+/** 作者下拉选项，按作品数倒序。 */
+export function authorOptions<T>(items: T[], pick: (item: T) => string): Array<{ count: number; value: string }> {
+  const counts = new Map<string, number>()
+  for (const item of items) {
+    const value = pick(item)
+    counts.set(value, (counts.get(value) || 0) + 1)
+  }
+  return [...counts.entries()]
+    .map(([value, count]) => ({ value, count }))
+    .sort((left, right) => right.count - left.count || left.value.localeCompare(right.value))
+}
+
+export const NO_AUTHOR = '__none__'

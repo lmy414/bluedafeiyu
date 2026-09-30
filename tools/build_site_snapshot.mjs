@@ -92,7 +92,8 @@ function main() {
       id: frozenEntry.id,
       slug: frozenEntry.slug,
       name,
-      description: "首批收录自蓝色大肥鱼档案馆的公开清单；单条原作者与授权信息待补充，可在详情页申请署名或删除。",
+      // 说明优先取编辑叠加层（后台补写的看图说明），没有时留空，不再填占位句
+      description: String(editorial.description || "").trim(),
       characterId,
       // 分类与第一人称评价取编辑叠加层；没有叠加层的条目退回既有的 meme 兜底
       categoryIds: Array.isArray(editorial.categoryIds) && editorial.categoryIds.length ? editorial.categoryIds : ["meme"],

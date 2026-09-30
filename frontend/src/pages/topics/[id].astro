@@ -1,59 +1,14 @@
 ---
-import Site from '../../layouts/Site.astro';
-import Card from '../../components/WorkCard.astro';
-import {byWorkId,topics} from '../../lib/site.mjs';
-export function getStaticPaths(){return topics.map(topic=>({params:{id:topic.id},props:{topic}}))}
-const {topic}=Astro.props;
-const selected=(topic.workIds||[]).map(id=>byWorkId.get(id)).filter(Boolean);
-const cover=byWorkId.get(topic.coverWorkId)||selected[0];
-const title=`${topic.name}专题 - 蓝色大肥鱼`;
-const topicI18n=topic.i18n&&typeof topic.i18n==='object'?topic.i18n:{};
-const canonical=`https://xn--pssy23gqgbz2d718b.com/topics/${topic.id}.html`;
+import V2 from '../../layouts/V2.astro';
+import Feed from '../../components/v2/Feed.astro';
+import SubHead from '../../components/v2/SubHead.astro';
+import { topics, ogCard } from '../../lib/v2.mjs';
+export function getStaticPaths() { return topics.map(t => ({ params: { id: t.id }, props: { t } })); }
+const { t } = Astro.props;
+const list = [t.cover, ...t.list.filter(w => w !== t.cover)];
+const og = ogCard('topic-' + t.id, t.cover, t.name, (t.summary || '') + ' · ' + t.list.length + ' 件作品', '合集');
 ---
-<Site active="topics" bodyPage="topicDetail" rootPath="../">
- <Fragment slot="head">
-  <title>{title}</title>
-  <meta name="description" content={topic.summary} />
-  <link rel="canonical" href={canonical} />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="蓝色大肥鱼" />
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={topic.summary} />
-  <meta property="og:url" content={canonical} />
-  <link rel="icon" href="../favicon.ico" />
-  <link rel="stylesheet" href="../tokens.css?v=15" />
-  <link rel="stylesheet" href="../styles.css?v=20" />
-  <link rel="stylesheet" href="/page-styles/topics.css" />
-  <link rel="stylesheet" href="/page-styles/category-landing.css" />
-  <script is:inline src="../lang.js?v=2"></script>
-  <script is:inline src="../analytics.js" defer></script>
-
- </Fragment>
- <p><a href="../topics.html">← 全部专题</a></p>
- <div class="topic-hero panel" id="topic-hero" data-topic-name={topic.name} data-topic-summary={topic.summary} data-topic-i18n={JSON.stringify(topicI18n)}><span class="tape-strip" aria-hidden="true"></span>{cover && <img class="topic-hero-cover" src={"/"+cover.thumbUrl} alt={topic.name} width={cover.width} height={cover.height} />}<div class="topic-hero-body"><h1 class="topic-hero-title" id="topic-title">{topic.name}</h1><p class="topic-hero-summary" id="topic-summary">{topic.summary}</p></div></div>
- <p class="count" data-i18n-tpl="topics.count" data-i18n-vars={JSON.stringify({count:selected.length})}>{selected.length} 张作品</p>
- <ul class="masonry cols-3 category-work-list">{selected.map(w=><Card work={w} />)}</ul>
-
-  <Fragment slot="scripts">
-  <script is:inline>
-    (function () {
-      "use strict";
-      var root = document.getElementById("topic-hero");
-      if (!root || !window.SiteLang) return;
-      var i18n = {};
-      try { i18n = JSON.parse(root.getAttribute("data-topic-i18n") || "{}"); } catch (err) { i18n = {}; }
-      function apply() {
-        var entry = i18n && i18n[window.SiteLang.current] || {};
-        var name = typeof entry.name === "string" && entry.name ? entry.name : root.getAttribute("data-topic-name") || "";
-        var summary = typeof entry.summary === "string" && entry.summary ? entry.summary : root.getAttribute("data-topic-summary") || "";
-        document.getElementById("topic-title").textContent = name;
-        var summaryEl = document.getElementById("topic-summary");
-        summaryEl.textContent = summary;
-        summaryEl.hidden = !summary;
-      }
-      document.addEventListener("site:langchange", apply);
-      apply();
-    })();
-  </script>
-  </Fragment>
-</Site>
+<V2 title={t.name + '合集 - 蓝色大肥鱼'} desc={t.summary || t.name} path={'/topics/' + t.id + '.html'} og={og} active="collections" bodyPage="topicDetail" accent={t.color + ';--cs:' + t.soft}>
+  <SubHead back="/topics.html" backText="合集" backKey="v2.nav.collections" title={t.name} sub={(t.summary ? t.summary + ' · ' : '') + t.list.length + ' 件作品'} />
+  <Feed items={list} total={list.length} />
+</V2>

@@ -1,0 +1,16 @@
+---
+import V2 from '../../layouts/V2.astro';
+import Feed from '../../components/v2/Feed.astro';
+import FeedHead from '../../components/v2/FeedHead.astro';
+import { works, PAGE_SIZE, chunk, pageHref, ogCard } from '../../lib/v2.mjs';
+export function getStaticPaths() {
+  return chunk(works, PAGE_SIZE).slice(1).map((items, i) => ({ params: { n: String(i + 2) }, props: { items, n: i + 2, pages: Math.ceil(works.length / PAGE_SIZE) } }));
+}
+const { items, n, pages } = Astro.props;
+const path = pageHref('/index.html', n);
+const og = ogCard('home-p' + n, items[0], '蓝色大肥鱼 · AI 娘二创图库', '共 ' + works.length + ' 件作品 · 第 ' + n + ' 页', '作品');
+---
+<V2 title={'蓝色大肥鱼 - AI 娘二创图库 第' + n + '页'} desc="AI 娘二创图库：按角色和类型浏览表情包、插画、设定与漫画，免费下载原图。" path={path} og={og} active="works" bodyPage="index" robots="noindex,follow">
+  <FeedHead title="作品" titleKey="v2.nav.works" sub={'第 ' + n + ' 页'} subKey="v2.pageN" subVars={{ n }} sort={false} />
+  <Feed items={items} page={n} total={works.length} next={n < pages ? pageHref('/index.html', n + 1) : ''} />
+</V2>

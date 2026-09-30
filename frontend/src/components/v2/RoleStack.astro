@@ -1,0 +1,8 @@
+---
+// 一叠封面卡（角色、合集共用）
+const { href, list, title, sub, subKey, subVars, color, soft } = Astro.props;
+---
+<a class="role-stack" href={href} style={'--c:' + color + ';--cs:' + soft}>
+  <span class="role-papers" aria-hidden="true">{list.slice(0, 3).map((w, i) => <img class={'paper p' + i} loading="lazy" src={w.thumb} alt="" />)}</span>
+  <span class="role-label"><b>{title}</b><small data-i18n-tpl={subKey} data-i18n-vars={subVars ? JSON.stringify(subVars) : undefined}>{sub}</small></span>
+</a>

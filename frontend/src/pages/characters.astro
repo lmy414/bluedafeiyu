@@ -1,0 +1,10 @@
+---
+import V2 from '../layouts/V2.astro';
+import RoleStack from '../components/v2/RoleStack.astro';
+import { activeChars, byChar, ogCard } from '../lib/v2.mjs';
+const og = ogCard('characters', byChar.get(activeChars[0].id)[0], '角色图鉴', activeChars.map(c => c.name).join('、'), '角色');
+---
+<V2 title="AI 娘角色 - 按角色浏览二创作品 | 蓝色大肥鱼" desc={'按角色浏览 AI 娘二创：' + activeChars.map(c => c.name).join('、') + '。'} path="/characters.html" og={og} active="characters" bodyPage="characters">
+  <header class="feed-head"><div><h1 data-i18n="v2.nav.characters">角色</h1><p data-i18n="v2.charsSub">选择一个角色，进入对应作品。</p></div></header>
+  <div class="role-grid">{activeChars.map(c => <RoleStack href={'/characters/' + c.id + '.html'} list={byChar.get(c.id)} title={c.name} sub={byChar.get(c.id).length + ' 件作品'} subKey="work.count" subVars={{ count: byChar.get(c.id).length }} color={c.color} soft={c.soft} />)}</div>
+</V2>

@@ -1,27 +1,8 @@
 ---
-import Site from '../layouts/Site.astro';
+import V2 from '../layouts/V2.astro';
 ---
-<Site active="projects" bodyPage="projects">
-  <Fragment slot="head">
-  <title>项目推荐 - 站长的其他项目与网站 | 蓝色大肥鱼</title>
-  <meta name="description" content="蓝色大肥鱼站长的其他项目和网站推荐页面，项目卡片正在整理中。" />
-  <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://xn--pssy23gqgbz2d718b.com/projects.html" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="蓝色大肥鱼" />
-  <meta property="og:title" content="项目推荐 - 站长的其他项目与网站 | 蓝色大肥鱼" />
-  <meta property="og:description" content="蓝色大肥鱼站长的其他项目和网站推荐页面，项目卡片正在整理中。" />
-  <meta property="og:url" content="https://xn--pssy23gqgbz2d718b.com/projects.html" />
-  <meta property="og:image" content="https://xn--pssy23gqgbz2d718b.com/favicon.png" />
-  <meta name="twitter:card" content="summary" />
-  <link rel="icon" href="favicon.ico" sizes="any" />
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="stylesheet" href="tokens.css?v=15" />
-  <link rel="stylesheet" href="styles.css?v=20" />
-  <script is:inline src="lang.js?v=2"></script>
-  <link rel="stylesheet" href="/page-styles/projects.css" />
-  <script is:inline src="analytics.js" defer></script>
-</Fragment>
+<V2 title="项目推荐 - 站长的其他项目与网站 | 蓝色大肥鱼" desc="蓝色大肥鱼站长的其他项目和网站推荐页面，项目卡片正在整理中。" path="/projects.html" active="projects" bodyPage="projects" pageStyles={["/page-styles/projects.css"]} robots="index,follow">
+<div class="page">
 
     <h1 class="page-title" data-i18n="projects.h1">项目推荐</h1>
     <p class="lede" data-i18n="projects.lede">我自己的其他项目和网站，会慢慢搬到这里。</p>
@@ -35,7 +16,7 @@ import Site from '../layouts/Site.astro';
       <div class="empty project-slot tilt-l" data-i18n="projects.slot">待补充</div>
       <div class="empty project-slot tilt-r" data-i18n="projects.slot">待补充</div>
     </div>
-
-  <Fragment slot="scripts">
+</div>
+<Fragment slot="scripts">
 </Fragment>
-</Site>
+</V2>
