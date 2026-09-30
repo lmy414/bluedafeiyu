@@ -6,7 +6,7 @@ import path from 'node:path'
 import type { Endpoint, PayloadRequest } from 'payload'
 
 import { writeAudit } from '../lib/audit'
-import { json, readJsonBody, requireOwnerOrBot } from '../lib/endpoint-auth'
+import { json, readJsonBody, requireOwnerOrBot, requireWorker } from '../lib/endpoint-auth'
 
 type IssueReplyBody = {
   body?: string
@@ -27,9 +27,11 @@ function positiveIssue(value: unknown): number | null {
 }
 
 export const issueReplyHandler = async (req: PayloadRequest): Promise<Response> => {
-  const denied = requireOwnerOrBot(req)
-  if (denied) return denied
-  if ((req.user as any)?.role !== 'owner') return json({ ok: false, error: '机器人无此操作权限' }, 403)
+  const role = (req.user as any)?.role
+  if (role !== 'owner') {
+    const denied = requireWorker(req)
+    if (denied) return denied
+  }
 
   let requestBody: IssueReplyBody
   try {
