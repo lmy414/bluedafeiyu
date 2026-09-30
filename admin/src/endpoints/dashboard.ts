@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { Endpoint, PayloadRequest } from 'payload'
 
-import { json, readJsonBody, requireOwnerOrBot } from '../lib/endpoint-auth'
+import { json, readJsonBody, requireOwnerOrBot, requireWorker } from '../lib/endpoint-auth'
 import { writeAudit } from '../lib/audit'
 import { syncSubmissions } from '../lib/sync-submissions'
 
@@ -43,8 +43,11 @@ const statsHandler = async (req: PayloadRequest): Promise<Response> => {
 }
 
 const syncHandler = async (req: PayloadRequest): Promise<Response> => {
-  const denied = requireOwnerOrBot(req)
-  if (denied) return denied
+  const role = (req.user as any)?.role
+  if (role !== 'owner' && role !== 'bot') {
+    const denied = requireWorker(req)
+    if (denied) return denied
+  }
   let body: any = {}
   try {
     body = await readJsonBody(req)
