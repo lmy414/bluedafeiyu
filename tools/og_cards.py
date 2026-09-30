@@ -13,8 +13,8 @@ def pick(env, *cands):
     for p in [os.environ.get(env)] + list(cands):
         if p and os.path.exists(p): return p
     sys.exit('og_cards: 找不到中文字体，请设置 %s' % env)
-FONT_B = pick('OG_FONT_BOLD', 'C:/Windows/Fonts/msyhbd.ttc', '/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc', '/usr/share/fonts/noto-cjk/NotoSansCJK-Bold.ttc')
-FONT_R = pick('OG_FONT_REGULAR', 'C:/Windows/Fonts/msyh.ttc', '/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc', '/usr/share/fonts/noto-cjk/NotoSansCJK-Regular.ttc')
+FONT_B = pick('OG_FONT_BOLD', 'C:/Windows/Fonts/msyhbd.ttc', '/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc', '/usr/share/fonts/noto-cjk/NotoSansCJK-Bold.ttc', '/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc')
+FONT_R = pick('OG_FONT_REGULAR', 'C:/Windows/Fonts/msyh.ttc', '/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc', '/usr/share/fonts/noto-cjk/NotoSansCJK-Regular.ttc', '/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc')
 font = lambda p, s: ImageFont.truetype(p if os.path.exists(p) else FONT_R, s)
 
 def wrap(draw, text, f, width, lines):
