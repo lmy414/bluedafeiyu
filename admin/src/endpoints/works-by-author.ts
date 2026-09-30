@@ -2,12 +2,15 @@
 import type { Endpoint, PayloadRequest } from 'payload'
 
 import { authorOf, NO_AUTHOR } from '../components/admin/types'
-import { json } from '../lib/endpoint-auth'
+import { json, requireWorker } from '../lib/endpoint-auth'
 
 /** 后台作品查询的服务端作者筛选；前端列表仍可在已加载结果上即时组合其他筛选。 */
 export const worksByAuthorHandler = async (req: PayloadRequest): Promise<Response> => {
   const role = (req.user as any)?.role
-  if (role !== 'owner' && role !== 'bot') return json({ ok: false, error: 'unauthorized' }, 401)
+  if (role !== 'owner' && role !== 'bot') {
+    const denied = requireWorker(req)
+    if (denied) return denied
+  }
   const url = new URL(req.url || 'http://localhost')
   const author = String(url.searchParams.get('author') || '').trim()
   const limitRaw = Number(url.searchParams.get('limit') || 5000)

@@ -34,9 +34,21 @@ async function readMedia(payload: any, media: unknown): Promise<Buffer | null> {
 async function readOriginal(url: unknown): Promise<Buffer | null> {
   const text = String(url || '').trim()
   if (!/^https:\/\//i.test(text)) return null
+  let target = text
   try {
-    const response = await fetch(text, { signal: AbortSignal.timeout(30_000) })
+    const parsed = new URL(text)
+    const parts = parsed.pathname.split('/').filter(Boolean)
+    if (parsed.hostname === 'github.com' && parts.length > 4 && parts[2] === 'blob') {
+      target = `https://raw.githubusercontent.com/${parts[0]}/${parts[1]}/${parts[3]}/${parts.slice(4).join('/')}`
+    }
+  } catch {
+    return null
+  }
+  try {
+    const response = await fetch(target, { signal: AbortSignal.timeout(30_000) })
     if (!response.ok) return null
+    const contentType = String(response.headers.get('content-type') || '').toLowerCase()
+    if (contentType && !contentType.startsWith('image/')) return null
     const length = Number(response.headers.get('content-length') || 0)
     if (length > MAX_ORIGINAL_BYTES) return null
     const buffer = Buffer.from(await response.arrayBuffer())
