@@ -60,7 +60,7 @@ if (process.env.SKIP_OG !== '1') {
   fs.mkdirSync(cache, { recursive: true });
   const jobsJson = path.join(cache, 'jobs.json');
   fs.writeFileSync(jobsJson, JSON.stringify(jobs));
-  const py = spawnSync(process.env.PYTHON || 'python', [path.join(root, 'tools', 'og_cards.py'), jobsJson, cache, dist, path.join(dist, 'avatar.png')], { cwd: root, stdio: 'inherit' });
+  const py = spawnSync(process.env.PYTHON || 'python3', [path.join(root, 'tools', 'og_cards.py'), jobsJson, cache, dist, path.join(dist, 'avatar.png')], { cwd: root, stdio: 'inherit' });
   if (py.error || py.status !== 0) throw new Error('分享卡片生成失败：' + (py.error?.message || py.status));
   fs.mkdirSync(path.join(out, 'og'), { recursive: true });
   for (const j of jobs) fs.copyFileSync(path.join(cache, j.id + '.jpg'), path.join(out, 'og', j.id + '.jpg'));
