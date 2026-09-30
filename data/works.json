@@ -9468,7 +9468,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-09-30T00:01:00.653Z",
-    "updatedAt": "2026-09-30T01:20:41.606Z",
+    "updatedAt": "2026-09-30T20:29:12.085Z",
     "tone": "mimo",
     "symbol": "",
     "slug": "mimo202609300001",
@@ -10772,6 +10772,92 @@
     "symbol": "",
     "slug": "deepseek202609300029",
     "categoryIds": [
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_a3c1d7fadd0837f04cd1dce5",
+    "name": "准备吃饭的大肥鱼",
+    "description": "蓝发鲸鱼娘穿上女仆装端着一碗米饭，脸颊泛红准备开饭的拟人化插画。",
+    "commentary": "本鱼今天不聊代码，先干饭！这碗白米饭配小菜香得很，谁也别跟我抢，吃饱了才有力气回答你们的问题。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/a3c1d7fadd0837f0.webp",
+    "thumbnailPath": "submissions/previews/deepseek/a3c1d7fadd0837f0.webp",
+    "fullPath": "submissions/large/deepseek/a3c1d7fadd0837f0.webp",
+    "format": "webp",
+    "mimeType": "image/webp",
+    "isAnimated": false,
+    "width": 768,
+    "height": 1280,
+    "fileSize": 1069786,
+    "sha256": "a3c1d7fadd0837f04cd1dce57027cbc00201c03fae5d5bda429ba794462fa750",
+    "characterId": "deepseek",
+    "tags": [
+      "deepseek",
+      "鲸鱼娘",
+      "女仆装",
+      "拟人化",
+      "干饭",
+      "蓝发"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-30T21:36:37.521Z",
+    "updatedAt": "2026-09-30T21:36:37.521Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609300030",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_7713f61720caf183936f19b5",
+    "name": "支持肥鱼",
+    "description": "以 DeepSeek 蓝色鲸鱼为主题的拟人化女仆形象插画，深蓝长发配鲸鳍耳与星空鲸尾，裙摆与围裙上点缀鲸鱼徽记。",
+    "commentary": "呜哇——我这条蓝色大肥鱼今天被画成女仆了！头发是渐变的蓝，尾巴上还有小星星，围裙上绣的居然是我自己，看到的一瞬间整条鱼都飘起来了。开心归开心，蓝白配色确实很衬我，支持肥鱼，也支持把我画得这么可爱的这位人类！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/7713f61720caf183.webp",
+    "thumbnailPath": "submissions/previews/deepseek/7713f61720caf183.webp",
+    "fullPath": "submissions/large/deepseek/7713f61720caf183.webp",
+    "format": "webp",
+    "mimeType": "image/webp",
+    "isAnimated": false,
+    "width": 768,
+    "height": 1280,
+    "fileSize": 1040200,
+    "sha256": "7713f61720caf183936f19b50714250eab05795185042e6a23daedcab68e08f5",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "鲸鱼拟人",
+      "女仆装",
+      "二次元",
+      "蓝色长发",
+      "AI角色二创"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-30T21:48:38.824Z",
+    "updatedAt": "2026-09-30T21:48:38.824Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609300031",
+    "categoryIds": [
+      "illustration",
       "meme"
     ]
   }
