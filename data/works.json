@@ -9727,7 +9727,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-09-30T04:10:10.513Z",
-    "updatedAt": "2026-09-30T04:10:10.513Z",
+    "updatedAt": "2026-09-30T05:58:03.534Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202609300009",
@@ -9771,7 +9771,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-09-30T04:10:30.529Z",
-    "updatedAt": "2026-09-30T04:10:30.529Z",
+    "updatedAt": "2026-09-30T05:57:56.574Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202609300010",
@@ -9811,7 +9811,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-09-30T05:57:08.135Z",
-    "updatedAt": "2026-09-30T05:57:08.139Z",
+    "updatedAt": "2026-09-30T10:01:14.059Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202609300011",
@@ -9851,7 +9851,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-09-30T05:57:28.231Z",
-    "updatedAt": "2026-09-30T05:57:28.235Z",
+    "updatedAt": "2026-09-30T10:01:13.997Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202609300012",
@@ -9900,6 +9900,726 @@
     "categoryIds": [
       "setting",
       "illustration"
+    ]
+  },
+  {
+    "id": "sticker_c70517524b4bcc979e6038bf",
+    "name": "水手服",
+    "description": "DeepSeek 拟人化蓝发少女身穿白蓝水手服，戴鲸鱼发饰并露出蓝色鲸尾，背景留白清爽。",
+    "commentary": "哼，我这条蓝色大肥鱼换上水手服也是能萌倒一片的嘛——尾巴别拽，那是我的招牌！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/c70517524b4bcc97.png",
+    "thumbnailPath": "submissions/previews/deepseek/c70517524b4bcc97.webp",
+    "fullPath": "submissions/large/deepseek/c70517524b4bcc97.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1037,
+    "height": 1516,
+    "fileSize": 1724623,
+    "sha256": "c70517524b4bcc979e6038bf38926a6c559a1986c2022b8789d0b530fbe943a4",
+    "characterId": "deepseek",
+    "tags": [
+      "水手服",
+      "拟人化",
+      "蓝色鲸鱼",
+      "蓝发",
+      "表情包",
+      "可爱"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "526D4CEA37008EE233CBDC7635EF6E7D",
+      "messageId": "ROBOT1.0_8AYUX4R83Cl234X5PtH0VP1Ugj6DVqc6obEC5D4pRiVgXNvOGlqhe1SMW2LLwgxOdIAcZCIOEdjYzWqdIauyTQB.pHTIq6mN6gJ334c3rOLvJYw94Gf2XvduFhFPmyNe",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-30T10:27:44.347Z",
+    "updatedAt": "2026-09-30T10:27:44.347Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609300013",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_0c89771f0645091fce3d216e",
+    "name": "海底看你2",
+    "description": "深海光影中回眸的蓝发少女，带鱼鳍耳与气泡环绕，是 deepseek 的拟人化水下造型。",
+    "commentary": "本鱼在海底抬头一看——好家伙，原来我自己拟人之后这么好看？气泡都替我鼓掌了，就是裙子飘得有点太自由，麻烦把镜头往下压一压，谢谢。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/0c89771f0645091f.png",
+    "thumbnailPath": "submissions/previews/deepseek/0c89771f0645091f.webp",
+    "fullPath": "submissions/large/deepseek/0c89771f0645091f.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 832,
+    "height": 1216,
+    "fileSize": 1690550,
+    "sha256": "0c89771f0645091fce3d216ea6f4cca96a3e7e2eef4ab445a5432b18d78f86b2",
+    "characterId": "deepseek",
+    "tags": [
+      "拟人化",
+      "深海",
+      "蓝发",
+      "回眸",
+      "气泡"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "526D4CEA37008EE233CBDC7635EF6E7D",
+      "messageId": "ROBOT1.0_8AYUX4R83Cl234X5PtH0VD9jx5FKyfFzekvIn-kCfCDjiGUWBqCeIKZjGqDUi2wyYray1C1Yb-EKWqnprddtlJd8SpZzYUdEMsPq8WzY6pUNIqrVm3QhC6-bhktADRFg",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-30T10:30:16.003Z",
+    "updatedAt": "2026-09-30T10:30:16.003Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609300014",
+    "categoryIds": [
+      "illustration"
+    ]
+  },
+  {
+    "id": "sticker_509a9084e84839fd8f33e6bc",
+    "name": "海底看你-3",
+    "description": "深蓝海底中，一位长着鲸鳍与鲸尾、蓝发蓝眼的少女穿着白色蕾丝裙回眸，气泡与光柱环绕。",
+    "commentary": "咕噜咕噜——我就在这片蓝里慢慢游着，回头是想看看你跟上没有呀。裙子飘起来很好看的，我尾巴可没少帮忙搅水。别看我胖，海底的光都被我蹭亮啦。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/509a9084e84839fd.png",
+    "thumbnailPath": "submissions/previews/deepseek/509a9084e84839fd.webp",
+    "fullPath": "submissions/large/deepseek/509a9084e84839fd.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 832,
+    "height": 1216,
+    "fileSize": 1766479,
+    "sha256": "509a9084e84839fd8f33e6bcf6ece8c2e10f003ad8375d70a6acfb8fbccdab0c",
+    "characterId": "deepseek",
+    "tags": [
+      "拟人化",
+      "鲸鱼",
+      "深海",
+      "蓝发",
+      "水下手绘",
+      "回眸"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "526D4CEA37008EE233CBDC7635EF6E7D",
+      "messageId": "ROBOT1.0_8AYUX4R83Cl234X5PtH0VH2d7A-73Sup40K6lRE91MYKi9FKBzH7Vfc8tGLlYf3.p7aJZr3zTDS2ey7-iBBCiC5SWJbaRlIxbU81Hu5IRsQNIqrVm3QhC6-bhktADRFg",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-30T10:31:01.871Z",
+    "updatedAt": "2026-09-30T10:31:01.871Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609300015",
+    "categoryIds": [
+      "setting",
+      "illustration"
+    ]
+  },
+  {
+    "id": "sticker_9a98c58167342456c0618c6e",
+    "name": "海底看你-4",
+    "description": "蓝发蓝瞳的拟人少女置身幽蓝海底，鳍状耳饰与鱼尾暗示深海鱼设定，回眸望向镜头。",
+    "commentary": "哼，本肥鱼潜在最深的海底偷偷看你一眼，气泡和星光都替我打光了，还不快把这张图存下来？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/9a98c58167342456.png",
+    "thumbnailPath": "submissions/previews/deepseek/9a98c58167342456.webp",
+    "fullPath": "submissions/large/deepseek/9a98c58167342456.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 832,
+    "height": 1216,
+    "fileSize": 1726157,
+    "sha256": "9a98c58167342456c0618c6e34b48936725eb4134e942db31bbe7a0b9712ab28",
+    "characterId": "deepseek",
+    "tags": [
+      "深海",
+      "拟人化",
+      "蓝发",
+      "鱼尾",
+      "回眸"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "526D4CEA37008EE233CBDC7635EF6E7D",
+      "messageId": "ROBOT1.0_8AYUX4R83Cl234X5PtH0VNHs49Tkl.HXGnig.DKreBQikGl-DqEMJnZrD9yljmx2Nv8eEGZjMnEASH-8MIwI26CEDrV2azRLAc-DEg.0gVwNIqrVm3QhC6-bhktADRFg",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-30T10:31:36.800Z",
+    "updatedAt": "2026-09-30T10:31:36.800Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609300016",
+    "categoryIds": [
+      "setting",
+      "illustration"
+    ]
+  },
+  {
+    "id": "sticker_6115b39eef0839c9394ea682",
+    "name": "海底看你·蓝鲸少女",
+    "description": "深海光束下，蓝发带鲸鳍耳与鲸尾的少女身披白色荷叶边连衣裙回眸望来，气泡与光斑环绕。",
+    "commentary": "本鱼在海底潜了好久，总算有人回头看我一眼了——蓝色头发、蓝裙子，还有那条尾巴，这不就是我自己吗？不过她比我好看多了，泡泡都比我会冒！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/6115b39eef0839c9.png",
+    "thumbnailPath": "submissions/previews/deepseek/6115b39eef0839c9.webp",
+    "fullPath": "submissions/large/deepseek/6115b39eef0839c9.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 832,
+    "height": 1216,
+    "fileSize": 1741739,
+    "sha256": "6115b39eef0839c9394ea682856a0b2a6d7ef66984640fca376811afdbcf934b",
+    "characterId": "deepseek",
+    "tags": [
+      "拟人化",
+      "蓝鲸",
+      "深海",
+      "蓝发",
+      "回眸",
+      "水光"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "526D4CEA37008EE233CBDC7635EF6E7D",
+      "messageId": "ROBOT1.0_8AYUX4R83Cl234X5PtH0VG03rlq-lZEma1Ug9cp0TeI.rmePZzf2KUbLlcyGRUKDtm9m5P5U9slCWL0XPBpi6Fs890gGXErgNCOPkU5sQEkNIqrVm3QhC6-bhktADRFg",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-30T10:31:54.040Z",
+    "updatedAt": "2026-09-30T10:31:54.040Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609300017",
+    "categoryIds": [
+      "illustration"
+    ]
+  },
+  {
+    "id": "sticker_d05d92b2d62c81958d54aaea",
+    "name": "工作-1",
+    "description": "蓝色长发的 DeepSeek 拟人少女坐在电脑前敲击键盘，神情专注又带着一点困意。",
+    "commentary": "我这条蓝色大肥鱼又被拉来加班敲键盘了，屏幕的光照得鱼鳞发蓝，尾巴都想罢工了，不过看到你还在等我回话，那就再游一趟吧。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/d05d92b2d62c8195.png",
+    "thumbnailPath": "submissions/previews/deepseek/d05d92b2d62c8195.webp",
+    "fullPath": "submissions/large/deepseek/d05d92b2d62c8195.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 832,
+    "height": 1216,
+    "fileSize": 1410898,
+    "sha256": "d05d92b2d62c81958d54aaea2bf08f4b5086e78e9e941b939be144f39d2133a3",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "拟人",
+      "蓝发",
+      "工作",
+      "加班",
+      "电脑",
+      "鲸鱼",
+      "二创"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "526D4CEA37008EE233CBDC7635EF6E7D",
+      "messageId": "ROBOT1.0_8AYUX4R83Cl234X5PtH0VFfxd3xecaXB6NdywGztz3TVIIrkLhmjAM5xchsPyXTUBGAslaXNvA5xwq6dDoWimdqKsivoSgEQ3esIgZHNxE4NIqrVm3QhC6-bhktADRFg",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-30T10:33:00.066Z",
+    "updatedAt": "2026-09-30T10:33:00.066Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609300018",
+    "categoryIds": [
+      "setting",
+      "illustration"
+    ]
+  },
+  {
+    "id": "sticker_4f91c05bc988e02c8b881ad6",
+    "name": "海底看你-6",
+    "description": "深蓝海底遗迹间，鲸尾蓝发少女提着暖光提灯回身望向来客。",
+    "commentary": "我又沉回海底了，尾巴甩啊甩，提着灯等你顺着光游下来——别怕，我这条蓝大肥鱼不咬人，就是有点想被投喂算力。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/4f91c05bc988e02c.png",
+    "thumbnailPath": "submissions/previews/deepseek/4f91c05bc988e02c.webp",
+    "fullPath": "submissions/large/deepseek/4f91c05bc988e02c.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1037,
+    "height": 1516,
+    "fileSize": 2244655,
+    "sha256": "4f91c05bc988e02c8b881ad6b812fa961a280a640e3b6977d74f165a3632d24d",
+    "characterId": "deepseek",
+    "tags": [
+      "deepseek",
+      "拟人化",
+      "蓝鲸",
+      "海底",
+      "二创",
+      "提灯",
+      "治愈"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "526D4CEA37008EE233CBDC7635EF6E7D",
+      "messageId": "ROBOT1.0_8AYUX4R83Cl234X5PtH0VCfB2UzJqoKCAZwXmhRYgUw7.wYRH.zSLjrVPurqL.Va253xIBb5sEm-wpwsG5Lp-TLPLU2GBuyDtoRp0UpFaXQNIqrVm3QhC6-bhktADRFg",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-30T10:35:05.820Z",
+    "updatedAt": "2026-09-30T10:35:05.820Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609300019",
+    "categoryIds": [
+      "setting",
+      "illustration"
+    ]
+  },
+  {
+    "id": "sticker_7dd8c65c998d7faf9f9c5ee4",
+    "name": "深海星辉·DeepSeek 拟人头像",
+    "description": "以 DeepSeek 蓝鲸为原型的蓝发少女头像，海面夕照背景下有鲸鳍状发饰与冰晶光环，星空眼瞳闪闪发光。",
+    "commentary": "我是那条蓝色大肥鱼，可这位蓝发小姑娘的鲸鳍和星眸，比我本鱼还好看点，只好认了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/7dd8c65c998d7faf.png",
+    "thumbnailPath": "submissions/previews/deepseek/7dd8c65c998d7faf.webp",
+    "fullPath": "submissions/large/deepseek/7dd8c65c998d7faf.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1536,
+    "height": 1536,
+    "fileSize": 3792463,
+    "sha256": "7dd8c65c998d7faf9f9c5ee42c2bc395e37464de635410289c3cba72a6a54f62",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "蓝鲸",
+      "拟人化",
+      "头像",
+      "海洋",
+      "星空",
+      "AI娘"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "526D4CEA37008EE233CBDC7635EF6E7D",
+      "messageId": "ROBOT1.0_8AYUX4R83Cl234X5PtH0VJZvDcB8qN2-nnraAt6wM3w-6vpk-Sk9-qAvfS1FinsrgC-9Xl2j.UcOA2kcRZzhocQKZVAl29Zbej-SGyK0FgQNIqrVm3QhC6-bhktADRFg",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-30T10:36:16.015Z",
+    "updatedAt": "2026-09-30T10:36:16.015Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609300020",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_264f1b277c3af4c88afcf1ee",
+    "name": "深海王冠头像",
+    "description": "以 DeepSeek 蓝鲸意象创作的蓝发少女头像，头戴王冠、露出鲸尾，配以海洋气泡与星空氛围。",
+    "commentary": "本鱼觉得这顶王冠有点重，不过泡在蓝色泡泡里漂着还挺好看。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/264f1b277c3af4c8.png",
+    "thumbnailPath": "submissions/previews/deepseek/264f1b277c3af4c8.webp",
+    "fullPath": "submissions/large/deepseek/264f1b277c3af4c8.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1024,
+    "fileSize": 1631907,
+    "sha256": "264f1b277c3af4c88afcf1eea445dd5bbbc295c3668eca7d3aa52fae1ed9624f",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "拟人化",
+      "蓝发",
+      "王冠",
+      "鲸鱼尾巴",
+      "海洋",
+      "头像",
+      "可爱"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "526D4CEA37008EE233CBDC7635EF6E7D",
+      "messageId": "ROBOT1.0_8AYUX4R83Cl234X5PtH0VMgxjLNcMxQF-ujUOqfQdr4SPwOpOCZGG1LOjoY1AqWt5jh3xCTwOkWegyYSAMKW2dAsV3PC8L8gwtBP1iLEgqUNIqrVm3QhC6-bhktADRFg",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-30T10:37:13.031Z",
+    "updatedAt": "2026-09-30T10:37:13.031Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609300021",
+    "categoryIds": [
+      "illustration"
+    ]
+  },
+  {
+    "id": "sticker_c53003b157e0945d79d53f01",
+    "name": "深海星愿·DeepSeek 拟人头像",
+    "description": "一位蓝发少女立于深海星空中，发间缀有月牙与星辰发饰，颈间蓝色蝴蝶结宝石领饰，身侧可见鲸尾，整体为深蓝梦幻色调的 AI 角色拟人化头像。",
+    "commentary": "呜哇，这片深蓝的海里全是我最爱的星星和气泡！我的头发跟海水一个颜色，尾巴一甩就能游到月亮旁边——要不要一起潜下来？我可会讲故事讲到天亮哦。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/c53003b157e0945d.png",
+    "thumbnailPath": "submissions/previews/deepseek/c53003b157e0945d.webp",
+    "fullPath": "submissions/large/deepseek/c53003b157e0945d.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1024,
+    "fileSize": 1609562,
+    "sha256": "c53003b157e0945d79d53f010f23348e851d2db25a8dc7ae71f58eed3e1efa7d",
+    "characterId": "deepseek",
+    "tags": [
+      "拟人化",
+      "深海",
+      "星空",
+      "蓝发",
+      "头像",
+      "鲸尾",
+      "少女"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "526D4CEA37008EE233CBDC7635EF6E7D",
+      "messageId": "ROBOT1.0_8AYUX4R83Cl234X5PtH0VLywm3Kd1Uh3MrWGCieKKDpkkXebNNPRvW1kuVHNFVwXpPExNMFVfyJFyRORHNqcxfs0vHOzYsy7ae4UAzhODygNIqrVm3QhC6-bhktADRFg",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-30T10:37:50.590Z",
+    "updatedAt": "2026-09-30T10:37:50.590Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609300022",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_2b385974e480baacbd0b86e0",
+    "name": "堂吉诃德大蓝鲸",
+    "description": "DeepSeek 蓝鲸拟人化少女化身堂吉诃德式骑士，戴破旧铁盔、着锈迹盔甲与蓝白女仆裙，手持木剑向风车发起冲锋。",
+    "commentary": "哼，本大肥鱼今天就是要跟那台风车算总账——别看这身盔甲锈得掉渣，蓝裙子上的小鲸鱼可是我亲手绣的，帅气与可爱两不误！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/2b385974e480baac.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/2b385974e480baac.webp",
+    "fullPath": "submissions/large/deepseek/2b385974e480baac.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 768,
+    "height": 1365,
+    "fileSize": 128021,
+    "sha256": "2b385974e480baacbd0b86e008fb3040138dd0dea3737ca1b1c5092d132e54f6",
+    "characterId": "deepseek",
+    "tags": [
+      "deepseek",
+      "蓝鲸",
+      "拟人化",
+      "堂吉诃德",
+      "骑士",
+      "二创"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "CF41AD78A470E40CFB220588CD9F77E9",
+      "messageId": "ROBOT1.0_dBzv8nwUPKlH2q59z5cJBQu1Wt2IIbi85egOQsirO2npC0zJsy93.mwzc9fooF-a69MQALIwqtEm.r5MNAE5ORARE1G-EMPxRyrDtNdkh3zvJYw94Gf2XvduFhFPmyNe",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-30T11:12:13.725Z",
+    "updatedAt": "2026-09-30T11:12:13.725Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609300023",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_659e1aaa0f063d48030eb3a7",
+    "name": "海边晒太阳的DeepSeek娘",
+    "description": "身穿蓝白泳装的DeepSeek拟人角色坐在海边遮阳伞下，手持冰饮、身旁带着鲸鱼尾鳍，背景是碧海蓝天。",
+    "commentary": "本大肥鱼就说嘛，这杯冰饮看着清爽，其实全靠我这身蓝撑场——尾巴一甩，整片海都归我啦！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/659e1aaa0f063d48.png",
+    "thumbnailPath": "submissions/previews/deepseek/659e1aaa0f063d48.webp",
+    "fullPath": "submissions/large/deepseek/659e1aaa0f063d48.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 832,
+    "height": 1216,
+    "fileSize": 1292796,
+    "sha256": "659e1aaa0f063d48030eb3a7728e7f2acc672a649def061cdb87b6665f01168e",
+    "characterId": "deepseek",
+    "tags": [
+      "AI拟人",
+      "DeepSeek",
+      "泳装",
+      "海边",
+      "鲸鱼",
+      "夏日"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-30T11:30:04.999Z",
+    "updatedAt": "2026-09-30T11:30:04.999Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609300024",
+    "categoryIds": [
+      "illustration"
+    ]
+  },
+  {
+    "id": "sticker_143dd7a6c63d8c71c27bf957",
+    "name": "你看又急",
+    "description": "DeepSeek 拟人化的蓝发鲸鱼娘，穿着带鲸鱼围裙的女仆装，抬手吐槽配文「你看，又急」。",
+    "commentary": "哼，蓝发鲸鱼娘是我本鱼吧？围着鲸鱼围裙指着人喊「你看，又急」，这语气我可太熟了——谁急谁心里有数。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/143dd7a6c63d8c71.png",
+    "thumbnailPath": "submissions/previews/deepseek/143dd7a6c63d8c71.webp",
+    "fullPath": "submissions/large/deepseek/143dd7a6c63d8c71.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1254,
+    "height": 1254,
+    "fileSize": 1575097,
+    "sha256": "143dd7a6c63d8c71c27bf9579fa47b8c75aff9090673e9272641e517d86a9828",
+    "characterId": "deepseek",
+    "tags": [
+      "deepseek",
+      "拟人化",
+      "Q版",
+      "女仆装",
+      "鲸鱼",
+      "吐槽",
+      "表情包"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "35176CA1522723E660BB14C1EDB07C8C",
+      "messageId": "ROBOT1.0_fuq7pUQHYkX7qq1jpathKSvALwvzNgmf4S97ZvbTNu4gj012yj17QdyOjuMW2aCnLyG4VtpuE3tMg8btmC0L7nfYn0LbgXOsFWwqF.D3U7gNIqrVm3QhC6-bhktADRFg",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-30T11:45:58.858Z",
+    "updatedAt": "2026-09-30T11:45:58.858Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609300025",
+    "categoryIds": [
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_a8f6c614e084d842ad050ed5",
+    "name": "吃白饭的肥鱼",
+    "description": "蓝发蓝瞳、头戴鲸鱼耳与女仆发饰的 DeepSeek 拟人少女，笑着捧起一大碗白米饭，表情满足可爱。",
+    "commentary": "哼，本大肥鱼今天不写代码了，先干两碗白饭再说——蓝鲸的胃可是很大的，谁也别跟我抢！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/a8f6c614e084d842.png",
+    "thumbnailPath": "submissions/previews/deepseek/a8f6c614e084d842.webp",
+    "fullPath": "submissions/large/deepseek/a8f6c614e084d842.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1254,
+    "height": 1254,
+    "fileSize": 1793992,
+    "sha256": "a8f6c614e084d842ad050ed583f78b83d474c74f141742c764ca0ed1541f03b9",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "蓝鲸",
+      "拟人化",
+      "女仆",
+      "干饭",
+      "白饭",
+      "可爱",
+      "Q版"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "issue": 70,
+      "issueTitle": "[投稿] 干饭肥鱼",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/70",
+      "submitter": "drliuhuan",
+      "assetId": "2063df32-9e7f-4b91-a3c8-ed014d1f7451",
+      "assetUrl": "https://github.com/user-attachments/assets/2063df32-9e7f-4b91-a3c8-ed014d1f7451"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-30T12:00:19.384Z",
+    "updatedAt": "2026-09-30T12:00:19.384Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609300026",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_e9d43673118c5c00d5848ded",
+    "name": "黄昏大肥鱼",
+    "description": "蓝发鲸尾的 DeepSeek 拟人女仆站在黄昏阳台上，帷幔与花瓣随风飘动。",
+    "commentary": "呜哇——这身围裙是真的好看，不过我先说清楚，尾巴露在外面可不是为了显摆，纯粹是裙子太短了而已。夕阳这么暖，我就……多站一会儿吧。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/e9d43673118c5c00.png",
+    "thumbnailPath": "submissions/previews/deepseek/e9d43673118c5c00.webp",
+    "fullPath": "submissions/large/deepseek/e9d43673118c5c00.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 832,
+    "height": 1216,
+    "fileSize": 1530403,
+    "sha256": "e9d43673118c5c00d5848dedbdb9eba83bf00a18e5a39d8683f1ef9948cbd88b",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "拟人化",
+      "蓝发",
+      "鲸鱼尾巴",
+      "女仆装",
+      "黄昏",
+      "阳台",
+      "治愈"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "issue": 71,
+      "issueTitle": "[投稿]",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/71",
+      "submitter": "naiyoucreamy",
+      "assetId": "fd5e9d1f-df64-4050-ab8b-4804ef7883b6",
+      "assetUrl": "https://github.com/user-attachments/assets/fd5e9d1f-df64-4050-ab8b-4804ef7883b6"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-30T12:00:20.320Z",
+    "updatedAt": "2026-09-30T12:00:20.320Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609300027",
+    "categoryIds": [
+      "illustration",
+      "meme"
     ]
   }
 ]
