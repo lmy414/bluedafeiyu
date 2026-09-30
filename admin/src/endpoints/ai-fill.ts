@@ -99,7 +99,7 @@ export const aiFillHandler = async (req: PayloadRequest): Promise<Response> => {
 
   const requested = normalizeFields(body.fields)
   const base = work || { name: submission?.fields?.name, description: submission?.fields?.description }
-  const fields = work ? (requested ? requested.filter((field) => missingFields(work).includes(field)) : missingFields(work)) : (requested || [])
+  const fields = work ? (requested ? requested.filter((field) => field === 'dimensions' ? (!Number(work.width) || !Number(work.height)) : missingFields(work).includes(field)) : missingFields(work)) : (requested || [])
   if (!fields.length) return json({ ok: true, workId: work?.workId, fields: [], suggestion: {}, applied: false })
 
   const payload = req.payload as any
