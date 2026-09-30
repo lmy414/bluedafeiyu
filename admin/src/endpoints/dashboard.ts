@@ -66,4 +66,5 @@ export const SubmissionsSyncEndpoint: Endpoint = { handler: syncHandler, method:
 
 export const DashboardEndpoints: Endpoint[] = [
   { handler: statsHandler, method: 'get', path: '/dashboard/stats' },
+  SubmissionsSyncEndpoint,
 ]
