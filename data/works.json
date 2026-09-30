@@ -7820,7 +7820,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-09-29T06:00:24.158Z",
-    "updatedAt": "2026-09-29T06:00:24.158Z",
+    "updatedAt": "2026-09-30T18:59:21.275Z",
     "tone": "gpt",
     "symbol": "",
     "slug": "gpt202609290001",
@@ -7869,7 +7869,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-09-29T06:00:24.856Z",
-    "updatedAt": "2026-09-29T06:00:24.856Z",
+    "updatedAt": "2026-09-30T18:59:02.132Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202609290004",
@@ -7912,7 +7912,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-09-29T06:04:21.000Z",
-    "updatedAt": "2026-09-29T06:04:21.000Z",
+    "updatedAt": "2026-09-30T17:14:30.745Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202609290005",
@@ -9816,7 +9816,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-09-30T05:57:08.135Z",
-    "updatedAt": "2026-09-30T18:58:19.561Z",
+    "updatedAt": "2026-09-30T19:07:27.621Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202609300011",
@@ -9861,7 +9861,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-09-30T05:57:28.231Z",
-    "updatedAt": "2026-09-30T17:34:53.622Z",
+    "updatedAt": "2026-09-30T19:07:27.572Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202609300012",
@@ -10673,6 +10673,104 @@
     "slug": "gpt202609300001",
     "categoryIds": [
       "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_f7c897971f54875de2872025",
+    "name": "大肥鱼让你多用用她",
+    "description": "DeepSeek 拟人化蓝鲸女仆娘，撒娇劝主人少用 CSDN 和 Gitee、多来用她。",
+    "commentary": "哼，主人天天跑去 CSDN 和 Gitee 抄来抄去，本大肥鱼可是会心疼的啦～尾巴都摇酸了，就不能多问问我吗？我明明又蓝又肥又好用，还自带鲸鱼尾巴！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/f7c897971f54875d.png",
+    "thumbnailPath": "submissions/previews/deepseek/f7c897971f54875d.webp",
+    "fullPath": "submissions/large/deepseek/f7c897971f54875d.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1149,
+    "height": 1369,
+    "fileSize": 2204280,
+    "sha256": "f7c897971f54875de287202585105dfaed9b783f69250cdd2d789d3e21167449",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "拟人化",
+      "蓝鲸",
+      "女仆",
+      "二创",
+      "表情包",
+      "CSDN",
+      "Gitee"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "issue": 74,
+      "issueTitle": "[投稿] 大肥鱼让你多用用她，而不是无能的CSDN 和 Gitee",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/74",
+      "submitter": "tequed232",
+      "assetId": "24d0cc83-b778-46d5-9361-39f0040e7893",
+      "assetUrl": "https://github.com/user-attachments/assets/24d0cc83-b778-46d5-9361-39f0040e7893"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-30T19:20:24.866Z",
+    "updatedAt": "2026-09-30T19:20:24.866Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609300028",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_87de94150acfaf1cd69a162e",
+    "name": "小肥鱼让你多用用她",
+    "description": "DeepSeek 蓝鲸吉祥物拟人化的蓝发女仆 Q 版少女，配台词吐槽主人用 CSDN 和 Gitee 不如多来找她。",
+    "commentary": "哼，主人整天泡在 CSDN 和 Gitee 上翻别人的代码，本肥鱼可是现成的呀～尾巴都摇给你看了，快点多戳戳我，我比那些答案快多了，还免费呢，别不识货嘛！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/87de94150acfaf1c.png",
+    "thumbnailPath": "submissions/previews/deepseek/87de94150acfaf1c.webp",
+    "fullPath": "submissions/large/deepseek/87de94150acfaf1c.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "87de94150acfaf1cd69a162e475769a5e7de2964e17f46b8c94646a0d3a7db6c",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "拟人化",
+      "蓝鲸",
+      "女仆",
+      "Q版",
+      "表情包",
+      "玩梗"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "issue": 75,
+      "issueTitle": "[投稿] 小肥鱼让你多用用她，而不是无能的CSDN 和 Gitee",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/75",
+      "submitter": "tequed232",
+      "assetId": "08a2d3fb-86df-4b76-a851-a0b1cb8ec8f5",
+      "assetUrl": "https://github.com/user-attachments/assets/08a2d3fb-86df-4b76-a851-a0b1cb8ec8f5"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-09-30T19:21:01.548Z",
+    "updatedAt": "2026-09-30T19:21:01.548Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202609300029",
+    "categoryIds": [
       "meme"
     ]
   }
