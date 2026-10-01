@@ -1,66 +1,68 @@
 ---
 // 2026 国庆「网站前台设计征集」活动详情页。活动常量（图片、仓库地址）在 src/lib/v2.mjs 的 EVENT
+// 三语：中文写在标签里，英日文案在 public/lang.js 的 ev.* 键；带链接或代码的句子拆成多个 span
 import V2 from '../../layouts/V2.astro';
 import { EVENT, SITE } from '../../lib/v2.mjs';
 const title = '国庆网站前台设计征集 · 蓝色大肥鱼';
 const desc = '给蓝色大肥鱼.com 这个网站设计新的样子：不限 AI、不限工具、不限技术栈，提交能运行的静态网页即可参与。10 月 26 日截稿，采用奖 88 元、人气奖 66 元 DeepSeek 开放平台 API 额度。';
+const ext = { target: '_blank', rel: 'noopener' };
 ---
 <V2 title={title} desc={desc} path={EVENT.href} active="event" bodyPage="event" pageStyles={['/page-styles/event.css']}>
 <div class="page ev-page">
   <header class="ev-hero">
-    <figure class="ev-hero-art panel"><img src={EVENT.img} width={EVENT.imgW} height={EVENT.imgH} alt="鲸鱼娘举着国庆快乐的表情包" fetchpriority="high" decoding="async" /></figure>
+    <figure class="ev-hero-art panel"><img src={EVENT.img} width={EVENT.imgW} height={EVENT.imgH} alt="鲸鱼娘举着国庆快乐的表情包" data-i18n-attr="alt:v2.ev.alt" fetchpriority="high" decoding="async" /></figure>
     <div class="ev-hero-text">
-      <p class="ev-kicker">国庆快乐 🐳</p>
-      <h1 class="page-title">网站前台设计征集</h1>
-      <p class="lede">新版网站已经上线，但站长还是不太满意，想看看大家心目中的 AI 娘二创站应该长什么样。</p>
-      <p class="ev-slogan panel">不限 AI，不限工具，不限技术栈。<br />可以古法手搓，也可以给 AI 许愿。<br />只要页面能运行、和主题相关就行。</p>
+      <p class="ev-kicker" data-i18n="v2.ev.kicker">国庆快乐 🐳</p>
+      <h1 class="page-title" data-i18n="v2.ev.title">网站前台设计征集</h1>
+      <p class="lede" data-i18n="ev.lede">新版网站已经上线，但站长还是不太满意，想看看大家心目中的 AI 娘二创站应该长什么样。</p>
+      <p class="ev-slogan panel"><span data-i18n="ev.s1">不限 AI，不限工具，不限技术栈。</span><br /><span data-i18n="ev.s2">可以古法手搓，也可以给 AI 许愿。</span><br /><span data-i18n="ev.s3">只要页面能运行、和主题相关就行。</span></p>
       <p class="ev-cta">
         {EVENT.repo
-          ? <a class="btn btn-ink" href={EVENT.repo} target="_blank" rel="noopener">前往活动仓库投稿</a>
-          : <span class="btn btn-line" aria-disabled="true">活动仓库即将开放</span>}
-        {EVENT.gallery && <a class="btn btn-line" href={EVENT.gallery} target="_blank" rel="noopener">投稿展览</a>}
-        <a class="btn btn-line" href="/community.html">加群聊聊</a>
+          ? <a class="btn btn-ink" href={EVENT.repo} {...ext} data-i18n="ev.cta.repo">前往活动仓库投稿</a>
+          : <span class="btn btn-line" aria-disabled="true" data-i18n="ev.cta.soon">活动仓库即将开放</span>}
+        {EVENT.gallery && <a class="btn btn-line" href={EVENT.gallery} {...ext} data-i18n="ev.cta.gallery">投稿展览</a>}
+        <a class="btn btn-line" href="/community.html" data-i18n="ev.cta.group">加群聊聊</a>
       </p>
     </div>
   </header>
 
-  <h2 class="section-label">做什么</h2>
+  <h2 class="section-label" data-i18n="ev.h.what">做什么</h2>
   <div class="panel prose ev-sec">
-    <p>给「蓝色大肥鱼.com」这个网站设计新的样子。首页、作品浏览、角色页都可以做，只做一个页面也行，把整个站都重做一遍也行。</p>
-    <p>风格完全自由。现在网站的「网格纸 + 手绘墨线」只是现状，不用照着来：赛博、像素、杂志、水彩、极简、复古游戏……风格越多越好，只要符合网站的用途（让大家方便地浏览、找到、下载 AI 娘二创作品）就行。</p>
-    <p>活动仓库里有起步包：网站的作品与角色数据、现在的配色，还有几句可以直接丢给 AI 的提示词，拿来就能开工。起步包和示例只是参考写法，不用照着做。</p>
+    <p data-i18n="ev.what1">给「蓝色大肥鱼.com」这个网站设计新的样子。首页、作品浏览、角色页都可以做，只做一个页面也行，把整个站都重做一遍也行。</p>
+    <p data-i18n="ev.what2">风格完全自由。现在网站的「网格纸 + 手绘墨线」只是现状，不用照着来：赛博、像素、杂志、水彩、极简、复古游戏……风格越多越好，只要符合网站的用途（让大家方便地浏览、找到、下载 AI 娘二创作品）就行。</p>
+    <p data-i18n="ev.what3">活动仓库里有起步包：网站的作品与角色数据、现在的配色，还有几句可以直接丢给 AI 的提示词，拿来就能开工。起步包和示例只是参考写法，不用照着做。</p>
   </div>
 
-  <h2 class="section-label">怎么参加</h2>
+  <h2 class="section-label" data-i18n="ev.h.how">怎么参加</h2>
   <ol class="panel ev-steps">
-    <li>Fork <a href={EVENT.repo} target="_blank" rel="noopener">活动仓库</a>。</li>
-    <li>在 <code>submissions/你的GitHub用户名/</code> 里放上你的网页，入口文件是 <code>index.html</code>。</li>
-    <li>提交 PR。页面能打开、内容和主题相关，就会被合并，合并后就算参与成功。</li>
+    <li><span data-i18n="ev.how1a">Fork </span><a href={EVENT.repo} {...ext} data-i18n="ev.how1b">活动仓库</a><span data-i18n="ev.how1c">。</span></li>
+    <li><span data-i18n="ev.how2a">在 </span><code data-i18n="ev.how2path">submissions/你的GitHub用户名/</code><span data-i18n="ev.how2b"> 里放上你的网页，入口文件是 </span><code>index.html</code><span data-i18n="ev.how2c">。</span></li>
+    <li data-i18n="ev.how3">提交 PR。页面能打开、内容和主题相关，就会被合并，合并后就算参与成功。</li>
   </ol>
-  <p class="small">合并以后，截稿前可以随时再提 PR，修改你自己的文件夹。</p>
+  <p class="small" data-i18n="ev.howNote">合并以后，截稿前可以随时再提 PR，修改你自己的文件夹。</p>
 
-  <h2 class="section-label">时间（北京时间）</h2>
+  <h2 class="section-label" data-i18n="ev.h.time">时间（北京时间）</h2>
   <ul class="panel ev-time">
-    <li><b>即日起</b><span>开放投稿，随交随合并</span></li>
-    <li><b>10 月 26 日（周一）23:59</b><span>截稿</span></li>
-    <li><b>截稿后 – 11 月 6 日（周五）23:59</b><span>人气投票</span></li>
-    <li><b>11 月 7 日（周六）</b><span>公布结果</span></li>
+    <li><b data-i18n="ev.t1a">即日起</b><span data-i18n="ev.t1b">开放投稿，随交随合并</span></li>
+    <li><b data-i18n="ev.t2a">10 月 26 日（周一）23:59</b><span data-i18n="ev.t2b">截稿</span></li>
+    <li><b data-i18n="ev.t3a">截稿后 – 11 月 6 日（周五）23:59</b><span data-i18n="ev.t3b">人气投票</span></li>
+    <li><b data-i18n="ev.t4a">11 月 7 日（周六）</b><span data-i18n="ev.t4b">公布结果</span></li>
   </ul>
 
-  <h2 class="section-label">奖励</h2>
+  <h2 class="section-label" data-i18n="ev.h.prize">奖励</h2>
   <div class="ev-prizes">
-    <section class="panel ev-prize"><h3>🏆 采用奖</h3><p class="ev-amt">88 元</p><p>你的设计会成为网站未来的前台，上线时署名。</p></section>
-    <section class="panel ev-prize"><h3>🔥 人气奖</h3><p class="ev-amt">66 元</p><p>投稿满 3 份时设立。截稿后在 GitHub 投票 Issue 里给喜欢的作品点 👍，想投几个就投几个，得票最多的获奖。</p></section>
-    <section class="panel ev-prize"><h3>🎨 参与</h3><p class="ev-amt">展览</p><p>所有被合并的作品都会一直留在<a href={EVENT.gallery} target="_blank" rel="noopener">展览页</a>上。</p></section>
+    <section class="panel ev-prize"><h3 data-i18n="ev.p1">🏆 采用奖</h3><p class="ev-amt" data-i18n="ev.p1amt">88 元</p><p data-i18n="ev.p1d">你的设计会成为网站未来的前台，上线时署名。</p></section>
+    <section class="panel ev-prize"><h3 data-i18n="ev.p2">🔥 人气奖</h3><p class="ev-amt" data-i18n="ev.p2amt">66 元</p><p data-i18n="ev.p2d">投稿满 3 份时设立。截稿后在 GitHub 投票 Issue 里给喜欢的作品点 👍，想投几个就投几个，得票最多的获奖。</p></section>
+    <section class="panel ev-prize"><h3 data-i18n="ev.p3">🎨 参与</h3><p class="ev-amt" data-i18n="ev.p3amt">展览</p><p><span data-i18n="ev.p3da">所有被合并的作品都会一直留在</span><a href={EVENT.gallery} {...ext} data-i18n="ev.p3db">展览页</a><span data-i18n="ev.p3dc">上。</span></p></section>
   </div>
-  <p class="small">奖金为 DeepSeek 开放平台 API 额度，可以折现；两个奖可以同一个人拿。奖金由站长个人出资，本活动与 DeepSeek 官方无关。</p>
+  <p class="small" data-i18n="ev.prizeNote">奖金为 DeepSeek 开放平台 API 额度，可以折现；两个奖可以同一个人拿。奖金由站长个人出资，本活动与 DeepSeek 官方无关。</p>
 
-  <h2 class="section-label">小提示</h2>
+  <h2 class="section-label" data-i18n="ev.h.tips">小提示</h2>
   <ul class="panel prose ev-tips">
-    <li>页面要能直接打开，资源请用相对路径：写 <code>./img/a.png</code>，不要写 <code>/img/a.png</code>。</li>
-    <li>用框架开发的话，请提交打包后的文件。</li>
-    <li>规则里没写到的情况，由站长决定。</li>
+    <li><span data-i18n="ev.tip1a">页面要能直接打开，资源请用相对路径：写 </span><code>./img/a.png</code><span data-i18n="ev.tip1b">，不要写 </span><code>/img/a.png</code><span data-i18n="ev.tip1c">。</span></li>
+    <li data-i18n="ev.tip2">用框架开发的话，请提交打包后的文件。</li>
+    <li data-i18n="ev.tip3">规则里没写到的情况，由站长决定。</li>
   </ul>
-  <p class="ev-bye">国庆快乐，玩得开心 🐳 · <a href="/community.html">QQ 群 {SITE.group.number}</a></p>
+  <p class="ev-bye"><span data-i18n="ev.bye">国庆快乐，玩得开心 🐳 · </span><a href="/community.html"><span data-i18n="ev.byeGroup">QQ 群</span> {SITE.group.number}</a></p>
 </div>
 </V2>

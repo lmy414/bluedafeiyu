@@ -366,3 +366,14 @@ html.ev-open { overflow: hidden; }
   .ev-body { padding: var(--space-4); }
   .ev-acts .btn { flex: 1; text-align: center; }
 }
+
+/* 社群页：站长的其他平台（B 站 / X） */
+.cm-social { width: 100%; margin-top: var(--space-4); padding-top: var(--space-4); border-top: 2px dashed var(--border-subtle); }
+.cm-social-title { margin: 0 0 var(--space-2); font-size: var(--text-sm); font-weight: var(--weight-bold); color: var(--text-secondary); }
+.cm-social ul { display: grid; gap: var(--space-2); margin: 0; padding: 0; list-style: none; }
+.cm-sns { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-2) var(--space-3); color: var(--text-primary); text-align: left; background: var(--bg-surface); border: 2px solid var(--border-default); border-radius: var(--radius-md); box-shadow: var(--shadow-paper-sm); }
+.cm-sns:hover { text-decoration: none; background: var(--bg-hover); }
+.cm-sns-ic { display: grid; flex: none; place-items: center; width: 36px; height: 36px; color: var(--brand-ink); background: var(--ink); border-radius: var(--radius-sm); }
+.cm-sns-bili .cm-sns-ic { background: var(--marker); }
+.cm-sns-tx { display: grid; line-height: 1.3; }
+.cm-sns-tx small { font-size: var(--text-xs); color: var(--text-secondary); }

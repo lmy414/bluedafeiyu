@@ -1,6 +1,6 @@
 ---
 import V2 from '../layouts/V2.astro';
-import { SITE, works, ogCard } from '../lib/v2.mjs';
+import { SITE, SOCIAL_ICON, works, ogCard } from '../lib/v2.mjs';
 const og = ogCard('community', works[0], '加入「' + SITE.group.name + '」', 'QQ 群号 ' + SITE.group.number + ' · 聊图、催更、投稿、参加活动', '社群');
 ---
 <V2 title={'加入社群 · ' + SITE.group.name + ' | 蓝色大肥鱼'} desc={'蓝色大肥鱼的 QQ 交流群「' + SITE.group.name + '」，聊图、催更、投稿、参加活动。'} path="/community.html" og={og} active="community" bodyPage="community">
@@ -12,6 +12,10 @@ const og = ogCard('community', works[0], '加入「' + SITE.group.name + '」', 
         <p class="cm-no"><span data-i18n="index.qq.lede2">群号</span> <b>{SITE.group.number}</b></p>
         <p class="cta-acts"><button type="button" class="btn btn-ink" data-copy-text={SITE.group.number} data-i18n="qq.copy">复制群号</button></p>
         <p class="small" data-i18n="v2.cm.how">QQ 里搜群号，或扫码进群</p>
+        <div class="cm-social">
+          <p class="cm-social-title" data-i18n="v2.cm.elsewhere">也可以在这里找到我</p>
+          <ul>{SITE.social.map(s => <li><a class={'cm-sns cm-sns-' + s.id} href={s.href} target="_blank" rel="noopener me"><span class="cm-sns-ic" set:html={SOCIAL_ICON[s.id]} /><span class="cm-sns-tx"><b data-i18n={s.key}>{s.name}</b><small>{s.handle}</small></span></a></li>)}</ul>
+        </div>
       </section>
       <section class="cm-info">
         <h2 data-i18n="v2.cm.canTitle">在群里可以做什么</h2>

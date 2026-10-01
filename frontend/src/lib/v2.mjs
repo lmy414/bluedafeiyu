@@ -10,7 +10,17 @@ export const SITE = {
   group: { name: '鱼之饭盆', number: '1060898801', qr: '/qq-group.png' },
   repoContent: 'https://github.com/lmy414/ai-girl-stickers',
   repoSource: 'https://github.com/lmy414/bluedafeiyu',
-  takedown: 'https://github.com/lmy414/ai-girl-stickers/issues/new?template=takedown-request.yml'
+  takedown: 'https://github.com/lmy414/ai-girl-stickers/issues/new?template=takedown-request.yml',
+  // 站长的其他平台（社群页「也可以在这里找到我」）
+  social: [
+    { id: 'bili', name: '哔哩哔哩', key: 'v2.cm.bili', handle: 'UID 321480847', href: 'https://space.bilibili.com/321480847' },
+    { id: 'x', name: 'X', key: 'v2.cm.x', handle: '@mirror960896', href: 'https://x.com/mirror960896' }
+  ]
+};
+// 平台图标：B 站小电视、X 标志，单色，跟随 currentColor
+export const SOCIAL_ICON = {
+  bili: '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="currentColor"><path d="M17.81 4.47c.36.36.36.94 0 1.3l-.93.93h1.37A3.75 3.75 0 0 1 22 10.45v6.3a3.75 3.75 0 0 1-3.75 3.75H5.75A3.75 3.75 0 0 1 2 16.75v-6.3A3.75 3.75 0 0 1 5.75 6.7h1.37l-.93-.93a.92.92 0 1 1 1.3-1.3L9.73 6.7h4.54l2.24-2.23a.92.92 0 0 1 1.3 0ZM18.25 8.6H5.75c-1.02 0-1.85.83-1.85 1.85v6.3c0 1.02.83 1.85 1.85 1.85h12.5c1.02 0 1.85-.83 1.85-1.85v-6.3c0-1.02-.83-1.85-1.85-1.85ZM8 11.3c.55 0 1 .45 1 1v1.4a1 1 0 1 1-2 0v-1.4c0-.55.45-1 1-1Zm8 0c.55 0 1 .45 1 1v1.4a1 1 0 1 1-2 0v-1.4c0-.55.45-1 1-1Z"/></svg>',
+  x: '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.67l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23Zm-1.16 17.52h1.83L7.08 4.13H5.12l11.96 15.64Z"/></svg>'
 };
 
 // 2026 国庆「网站前台设计征集」：开屏弹窗与活动页共用。repo 留空表示活动仓库尚未开放
