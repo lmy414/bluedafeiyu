@@ -10663,7 +10663,8 @@
       "github": null
     },
     "origin": {
-      "via": "web"
+      "via": "web",
+      "author": "@Shiho320"
     },
     "license": {},
     "status": "published",
@@ -12414,6 +12415,90 @@
     "symbol": "",
     "slug": "glm202610010001",
     "categoryIds": [
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_4c56585b0d97e195cd66bd21",
+    "name": "另一个更强的 agent 在这里干过活",
+    "description": "蓝发女仆装的 DeepSeek 拟人角色对着贴有蓝鲸标志的笔记本一脸困惑，吐槽工作目录里全是自己不认识的遗留产物。",
+    "commentary": "我这条蓝色大肥鱼刚游进工作目录就被吓到了，满屏都是我不知道的文件，这活儿肯定是哪个更强的 agent 干的，我先冒个汗泡。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/4c56585b0d97e195.png",
+    "thumbnailPath": "submissions/previews/deepseek/4c56585b0d97e195.webp",
+    "fullPath": "submissions/large/deepseek/4c56585b0d97e195.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1254,
+    "height": 1254,
+    "fileSize": 2044445,
+    "sha256": "4c56585b0d97e195cd66bd210d45a71004581fe1de987fb075fb2699a9bf51a6",
+    "characterId": "deepseek",
+    "tags": [
+      "deepseek",
+      "拟人化",
+      "表情包",
+      "agent",
+      "困惑",
+      "工作目录"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-01T10:11:04.560Z",
+    "updatedAt": "2026-10-01T10:11:04.560Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610010033",
+    "categoryIds": [
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_72dd8d09a391acc13bfc43bf",
+    "name": "劳动最光荣",
+    "description": "蓝发少女戴着草帽、抱着金黄麦穗站在麦田中，以丰收劳作场景呈现 DeepSeek 的拟人化形象。",
+    "commentary": "本鱼今天也下地干活啦，一把麦穗抱得满满当当，这就是劳动的快乐吧！不过……别问我为什么头发是蓝色的，问就是算力溢出。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/72dd8d09a391acc1.png",
+    "thumbnailPath": "submissions/previews/deepseek/72dd8d09a391acc1.webp",
+    "fullPath": "submissions/large/deepseek/72dd8d09a391acc1.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1280,
+    "height": 720,
+    "fileSize": 1335679,
+    "sha256": "72dd8d09a391acc13bfc43bf7f3b507162a0988d4306d85dff43ac55599461d1",
+    "characterId": "deepseek",
+    "tags": [
+      "拟人化",
+      "农田",
+      "丰收",
+      "草帽",
+      "劳动最光荣"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-01T10:31:01.003Z",
+    "updatedAt": "2026-10-01T10:31:01.003Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610010034",
+    "categoryIds": [
+      "illustration",
       "meme"
     ]
   }
