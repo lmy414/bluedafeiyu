@@ -50,6 +50,8 @@ const SYNC_FILE_TARGETS = [
   "avatar.png",
   // 关于页「交流群」用的 QQ 群二维码。
   "qq-group.png",
+  // 2026 国庆活动开屏弹窗与活动页用的表情包。
+  "events/national-day-2026.webp",
 ];
 
 // 从内容仓库**根目录**（不是它的 dist/）同步到本仓库 dist/ 的单个文件。

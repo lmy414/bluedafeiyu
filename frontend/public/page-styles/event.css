@@ -1,0 +1,29 @@
+/* 活动详情页（events/*.astro）：公共组件用 styles.css / v2.css，这里只放版式。颜色只用变量 */
+.ev-page { max-width: 960px; }
+.ev-hero { display: grid; grid-template-columns: minmax(0, 320px) minmax(0, 1fr); gap: var(--space-6); align-items: center; }
+.ev-hero-art { margin: 0; padding: var(--space-2); transform: rotate(-1.2deg); }
+.ev-hero-art img { display: block; width: 100%; height: auto; border-radius: var(--radius-sm); }
+.ev-kicker { margin: 0 0 var(--space-2); font-family: var(--font-hand); font-size: var(--text-lg); color: var(--brand); }
+.ev-slogan { margin: 0 0 var(--space-4); padding: var(--space-4); font-weight: var(--weight-bold); line-height: 1.8; background: var(--sticky-1); }
+.ev-cta { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: 0; }
+.ev-cta [aria-disabled="true"] { cursor: default; opacity: .7; }
+.ev-sec p:last-child { margin-bottom: 0; }
+.ev-steps, .ev-time, .ev-tips { margin: 0; padding-left: var(--space-7); }
+.ev-steps li, .ev-tips li { margin: var(--space-1) 0; }
+.ev-time { list-style: none; padding-left: var(--space-5); }
+.ev-time li { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-3); padding: var(--space-2) 0; border-bottom: 2px dashed var(--border-subtle); }
+.ev-time li:last-child { border-bottom: 0; }
+.ev-time b { min-width: 16em; }
+.ev-prizes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); }
+.ev-prize h3 { margin: 0; font-size: var(--text-lg); }
+.ev-prize p { margin: var(--space-2) 0 0; font-size: var(--text-sm); color: var(--text-secondary); }
+.ev-prize .ev-amt { font-family: var(--font-marker); font-size: var(--text-2xl); color: var(--text-primary); }
+.ev-page code { padding: 0 4px; background: var(--sticky-2); border-radius: var(--radius-xs); }
+.ev-page > .small { margin: var(--space-2) 0 0; }
+.ev-bye { margin: var(--space-7) 0 0; text-align: center; font-family: var(--font-hand); font-size: var(--text-lg); }
+@media (max-width: 760px) {
+  .ev-hero { grid-template-columns: 1fr; }
+  .ev-hero-art { max-width: 300px; margin: 0 auto; }
+  .ev-prizes { grid-template-columns: 1fr; }
+  .ev-time b { min-width: 0; }
+}

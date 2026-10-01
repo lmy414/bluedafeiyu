@@ -184,6 +184,41 @@
     matchMedia('(min-width: 961px)').addEventListener('change', function (m) { if (m.matches && isOpen()) set(false); });
   })();
 
+  // —— 开屏活动弹窗 ——
+  // 每个活动在同一浏览器只自动弹一次；活动截止后、活动页本身、直接打开作品地址时不弹。任何 [data-ev-open] 都能再次打开
+  (function () {
+    var pop = document.getElementById('event-popup'); if (!pop) return;
+    var key = 'ev-seen:' + pop.getAttribute('data-event'), until = Date.parse(pop.getAttribute('data-until') || ''), lastFocus = null;
+    var store = function (v) { try { if (v === undefined) return localStorage.getItem(key); localStorage.setItem(key, v); } catch (e) { return null; } };
+    function open() {
+      if (!pop.hidden) return;
+      lastFocus = document.activeElement; pop.hidden = false; root.classList.add('ev-open');
+      pop.querySelector('.ev-x').focus({ preventScroll: true });
+    }
+    function close() {
+      if (pop.hidden) return;
+      pop.hidden = true; root.classList.remove('ev-open'); store('1');
+      if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
+    }
+    pop.addEventListener('click', function (e) {
+      if (e.target.closest('[data-ev-close]')) close();
+      else if (e.target.closest('a[href]')) store('1');
+    });
+    document.addEventListener('click', function (e) { var t = e.target.closest('[data-ev-open]'); if (t) { e.preventDefault(); open(); } });
+    document.addEventListener('keydown', function (e) {
+      if (pop.hidden) return;
+      if (e.key === 'Escape') { e.stopImmediatePropagation(); close(); }
+      else if (e.key === 'Tab') {
+        var f = [].filter.call(pop.querySelectorAll('a[href],button'), function (x) { return x.offsetParent; }); if (!f.length) return;
+        if (e.shiftKey && document.activeElement === f[0]) { e.preventDefault(); f[f.length - 1].focus(); }
+        else if (!e.shiftKey && document.activeElement === f[f.length - 1]) { e.preventDefault(); f[0].focus(); }
+      }
+    }, true);
+    var onEventPage = location.pathname === pop.getAttribute('data-href');
+    var workDirect = feedEl && feedEl.getAttribute('data-open');
+    if (!onEventPage && !workDirect && !store() && !(until && Date.now() > until)) setTimeout(open, 400);
+  })();
+
   // —— 作品浮层 ——
   (function () {
     if (!window.fetch || !('replaceState' in history)) return;
@@ -201,7 +236,7 @@
       '<figure class="wm-stage"><img alt=""><button type="button" class="wm-nav prev" data-step="-1">‹</button><button type="button" class="wm-nav next" data-step="1">›</button></figure>' +
       '<div class="wm-info"></div></div>';
     document.body.appendChild(box);
-    var panel = box.querySelector('.wm-panel'), img = box.querySelector('.wm-stage img'), info = box.querySelector('.wm-info');
+    var panel = box.querySelector('.wm-panel'), stageEl = box.querySelector('.wm-stage'), img = stageEl.querySelector('img'), info = box.querySelector('.wm-info');
     var labels = function () {
       box.querySelector('.wm-x').setAttribute('aria-label', T('index.qq.close', '关闭'));
       box.querySelector('.prev').setAttribute('aria-label', T('v2.prev', '上一张'));
@@ -251,13 +286,29 @@
       sec.classList.add('on');
     }
 
+    // 大图加载前：按作品宽高比撑开占位（不再先缩成一条再展开），先铺列表卡片里已经加载好的缩略图，大图到了再盖上
+    function setStage(slug, w) {
+      var dim = !!(w.w && w.h), sel = window.CSS && CSS.escape ? CSS.escape(slug) : slug;
+      var card = document.querySelector('[data-work="' + sel + '"] img'), thumb = card ? (card.currentSrc || card.src) : '';
+      img.onload = img.onerror = null;
+      img.removeAttribute('src');
+      stageEl.classList.add('is-loading'); stageEl.classList.toggle('has-dim', dim);
+      if (dim) { img.width = w.w; img.height = w.h; img.style.setProperty('--r', String(w.w / w.h)); img.style.setProperty('--w', w.w + 'px'); }
+      else { img.removeAttribute('width'); img.removeAttribute('height'); img.style.removeProperty('--r'); img.style.removeProperty('--w'); }
+      img.style.backgroundImage = thumb ? 'url("' + thumb.replace(/["\\]/g, encodeURIComponent) + '")' : '';
+      var src = w.l;
+      img.onload = function () { if (img.getAttribute('src') !== src) return; stageEl.classList.remove('is-loading'); img.style.backgroundImage = ''; };
+      img.onerror = function () { if (img.getAttribute('src') === src) stageEl.classList.remove('is-loading'); };
+      img.src = src; img.alt = w.d || w.n;
+      if (img.complete && img.naturalWidth) img.onload();
+    }
     function show(i) {
       return load().then(function (d) {
         list = collect(); if (!list.length) return;
         idx = (i + list.length) % list.length;
         var slug = list[idx], w = d[slug]; if (!w) return;
         current = slug;
-        img.removeAttribute('src'); if (w.w && w.h) { img.width = w.w; img.height = w.h; } else { img.removeAttribute('width'); img.removeAttribute('height'); } img.src = w.l; img.alt = w.d || w.n;
+        setStage(slug, w);
         render(slug, w);
         info.scrollTop = 0; panel.scrollTop = 0;
         box.querySelector('.prev').hidden = box.querySelector('.next').hidden = list.length < 2;

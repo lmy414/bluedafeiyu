@@ -13,6 +13,16 @@ export const SITE = {
   takedown: 'https://github.com/lmy414/ai-girl-stickers/issues/new?template=takedown-request.yml'
 };
 
+// 2026 国庆「网站前台设计征集」：开屏弹窗与活动页共用。repo 留空表示活动仓库尚未开放
+export const EVENT = {
+  id: 'national-day-2026',
+  href: '/events/national-day-2026.html',
+  img: '/events/national-day-2026.webp', imgW: 720, imgH: 900,
+  popupUntil: '2026-11-07T23:59:59+08:00',
+  repo: 'https://github.com/lmy414/bluedafeiyu-design-2026',
+  gallery: 'https://lmy414.github.io/bluedafeiyu-design-2026/'
+};
+
 // 类型短名（卡片角标、筛选条用）；全称用 data/categories.json 的 name
 export const SHORT = { meme: '梗图', illustration: '插画', setting: '设定', comic: '漫画' };
 export const TYPES = categories.map(c => ({ ...c, short: SHORT[c.id] || c.name }));

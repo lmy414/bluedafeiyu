@@ -44,6 +44,7 @@ __pycache__/
 /dist/data/
 /dist/submissions/
 /dist/owner-picks/
+/dist/events/
 # 投稿模板副本（内容仓库根的 .github/ 同步进来），构建期只读、不进发布包
 /dist/.github/
 # 旧版 dist/ 中可能残留不再作为源码的页面和脚本：不再提交。

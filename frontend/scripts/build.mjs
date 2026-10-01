@@ -49,7 +49,7 @@ const copy = (relative, target = relative) => {
   fs.mkdirSync(path.dirname(to), {recursive:true});
   fs.cpSync(from, to, {recursive:true, force:true});
 };
-for (const file of ['avatar.png','favicon.ico','favicon.png','qq-group.png','characters.json','categories.json','blue-fish-ids.json','topics.json','site-data.json','site-data.js','submissions/works.json','owner-picks/works.json']) copy(file);
+for (const file of ['avatar.png','favicon.ico','favicon.png','qq-group.png','events/national-day-2026.webp','characters.json','categories.json','blue-fish-ids.json','topics.json','site-data.json','site-data.js','submissions/works.json','owner-picks/works.json']) copy(file);
 for (const dir of ['submissions/previews','submissions/large','owner-picks/previews']) copy(dir);
 // data/blue-fish/previews is intentionally omitted; production serves its shared/data persistent copy.
 // 社交分享卡片：每页一张 1200×630 JPG，画面就是该页对应的作品（tools/og_cards.py，需 Python + Pillow）。
@@ -69,7 +69,7 @@ if (process.env.SKIP_OG !== '1') {
 // Astro generates the 404 page; server response semantics must still be verified.
 const snapshot = JSON.parse(fs.readFileSync(path.join(dist,'site-data.json'),'utf8'));
 const origin = 'https://xn--pssy23gqgbz2d718b.com';
-const urls = ['/', '/characters.html','/community.html','/topics.html','/submit.html','/about.html','/projects.html','/changelog.html',
+const urls = ['/', '/characters.html','/community.html','/topics.html','/submit.html','/about.html','/projects.html','/changelog.html','/events/national-day-2026.html',
  ...(snapshot.characters || []).filter(c => c.status === 'active' && snapshot.works.some(w => w.characterId === c.id && w.status === 'published')).map(c => `/characters/${c.id}.html`),
  ...snapshot.categories.filter(c => c.status === 'active').map(c=>`/categories/${c.id}.html`),
  ...(snapshot.topics || []).map(t=>`/topics/${t.id}.html`),

@@ -13,7 +13,8 @@
 }
 body.v2 { padding: 0; --c: var(--brand); --cs: var(--brand-soft); }
 body.v2 img { max-width: 100%; }
-body.v2 h1, body.v2 h2, body.v2 h3 { margin: 0; line-height: var(--leading-tight); }
+/* 标题复位用 :where 降到 0 特异性，不覆盖 .section-label / .page-title 等组件自己的外边距（否则分区标题会压在纸卡上） */
+:where(body.v2 h1, body.v2 h2, body.v2 h3) { margin: 0; line-height: var(--leading-tight); }
 body.v2 input[type="search"] {
   font: inherit; color: var(--text-primary); background: var(--bg-surface); min-height: var(--control-height);
   border: 2px solid var(--ink); border-radius: var(--radius-md); box-shadow: var(--shadow-paper-sm); padding: var(--space-1) var(--space-3);
@@ -332,3 +333,36 @@ html.wm-open { overflow: hidden; }
 .wm-info h2 { margin-top: var(--space-3); }
 @media (max-width: 1180px) { .top-actions .ta-sep, .top-actions .ta-about { display: none; } }
 .media-card .ph img { display: block; }
+
+/* 作品浮层大图：有宽高时按比例算出显示尺寸，加载前就占好位置；缩略图作底图，大图加载完成后移除 */
+.wm-stage img { --wm-img-h: calc(var(--wm-h) - var(--space-4) * 2 - 4px); max-height: var(--wm-img-h); background-position: center; background-size: contain; background-repeat: no-repeat; }
+.wm-stage.has-dim img { width: min(100%, calc(var(--wm-img-h) * var(--r)), var(--w)); height: auto; aspect-ratio: var(--r); }
+.wm-stage.is-loading:not(.has-dim) img { min-width: min(100%, 320px); min-height: 240px; }
+@media (max-width: 960px) {
+  .wm-stage img { --wm-img-h: 62vh; --wm-img-h: 62dvh; }
+}
+
+/* 开屏活动弹窗（EventPopup.astro）：左表情包、右活动入口；手机上下排 */
+.ev-pop { position: fixed; inset: 0; z-index: calc(var(--z-drawer) + 1); display: grid; place-items: center; padding: var(--space-4); }
+.ev-pop[hidden] { display: none; }
+.ev-back { position: absolute; inset: 0; background: var(--on-art-veil-strong); }
+.ev-card { position: relative; display: grid; grid-template-columns: minmax(0, 360px) minmax(0, 320px); width: min(720px, 100%); max-height: calc(100dvh - var(--space-4) * 2); overflow: auto; background: var(--bg-surface); border: 2px solid var(--border-default); border-radius: var(--radius-lg); box-shadow: var(--shadow-paper-lg); overscroll-behavior: contain; }
+.ev-art { margin: 0; background: var(--bg-stage); border-right: 2px solid var(--border-default); }
+.ev-art img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+.ev-body { display: flex; flex-direction: column; justify-content: center; gap: var(--space-2); padding: var(--space-5); }
+.ev-body h2 { margin: 0; font-size: var(--text-xl); font-weight: var(--weight-black); }
+.ev-body p { margin: 0; font-size: var(--text-sm); color: var(--text-secondary); }
+.ev-kicker { font-family: var(--font-hand); font-size: var(--text-lg) !important; color: var(--brand) !important; }
+.ev-facts { display: grid; gap: var(--space-2); margin: var(--space-2) 0; padding: 0; list-style: none; }
+.ev-facts li { display: flex; gap: var(--space-2); padding: var(--space-2) var(--space-3); font-size: var(--text-sm); background: var(--sticky-1); border: 2px solid var(--border-default); border-radius: var(--radius-sm); }
+.ev-facts b { flex: none; }
+.ev-acts { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-2) !important; }
+.ev-x { position: absolute; top: var(--space-2); right: var(--space-2); z-index: 2; width: 36px; height: 36px; font-size: var(--text-xl); line-height: 1; color: var(--text-primary); background: var(--bg-surface); border: 2px solid var(--border-default); border-radius: 50%; cursor: pointer; }
+html.ev-open { overflow: hidden; }
+@media (max-width: 640px) {
+  .ev-card { grid-template-columns: 1fr; width: min(400px, 100%); }
+  .ev-art { border-right: 0; border-bottom: 2px solid var(--border-default); }
+  .ev-art img { max-height: 46dvh; object-position: center 20%; }
+  .ev-body { padding: var(--space-4); }
+  .ev-acts .btn { flex: 1; text-align: center; }
+}

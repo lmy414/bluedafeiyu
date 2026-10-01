@@ -3,11 +3,13 @@
 // 资源一律用根路径（/xxx），同一布局可放在任意层级的页面里。
 import V2Meta from '../components/v2/V2Meta.astro';
 import SiteFooter from '../components/SiteFooter.astro';
-import { SITE, GH_ICON } from '../lib/v2.mjs';
+import EventPopup from '../components/v2/EventPopup.astro';
+import { SITE, GH_ICON, EVENT } from '../lib/v2.mjs';
 const { title, desc, path = '/', type = 'website', og = null, shareDesc = '', active = '', bodyPage, accent = '', pageStyles = [], robots = 'index,follow', canonical = '' } = Astro.props;
-const SECTION_OF = { works: 'gallery', characters: 'gallery', collections: 'gallery', community: 'community' };
+const SECTION_OF = { works: 'gallery', characters: 'gallery', collections: 'gallery', community: 'community', event: 'community' };
 const section = SECTION_OF[active] || '';
 const gallery = [['works', '作品', '/index.html', 'v2.nav.works'], ['characters', '角色', '/characters.html', 'v2.nav.characters'], ['collections', '合集', '/topics.html', 'v2.nav.collections']];
+const communityNav = [['community', '加入社群', '/community.html', 'v2.joinGroup'], ['event', '最新活动', EVENT.href, 'v2.nav.events']];
 const bodyStyle = accent ? '--c:' + accent : undefined;
 ---
 <!doctype html>
@@ -22,8 +24,8 @@ const bodyStyle = accent ? '--c:' + accent : undefined;
   <link rel="stylesheet" href="/tokens.css?v=15" />
   <link rel="stylesheet" href="/styles.css?v=20" />
   {pageStyles.map(href => <link rel="stylesheet" href={href} />)}
-  <link rel="stylesheet" href="/v2.css?v=1" />
-  <script is:inline src="/lang.js?v=3"></script>
+  <link rel="stylesheet" href="/v2.css?v=3" />
+  <script is:inline src="/lang.js?v=5"></script>
   <script is:inline src="/analytics.js" defer></script>
   <slot name="head" />
 </head>
@@ -39,6 +41,7 @@ const bodyStyle = accent ? '--c:' + accent : undefined;
         <a href="/index.html" aria-current={section === 'gallery' ? 'page' : undefined}><span aria-hidden="true">▦</span><b data-i18n="v2.nav.gallery">图库</b></a>
         <div class="side-sub">{gallery.map(([k, t, h, key]) => <a href={h} aria-current={k === active ? 'page' : undefined} data-i18n={key}>{t}</a>)}</div>
         <a href="/community.html" aria-current={section === 'community' ? 'page' : undefined}><span aria-hidden="true">◉</span><b data-i18n="v2.nav.community">社群</b></a>
+        <div class="side-sub">{communityNav.map(([k, t, h, key]) => <a href={h} aria-current={k === active ? 'page' : undefined} data-i18n={key}>{t}</a>)}</div>
       </nav>
       <div class="side-acts">
         <a class="btn btn-ink" href="/community.html" data-i18n="v2.joinGroup">加入社群</a>
@@ -73,7 +76,8 @@ const bodyStyle = accent ? '--c:' + accent : undefined;
     </div>
   </div>
   <template id="group-cta-tpl"><aside class="group-cta" aria-label="加入社群" data-i18n-attr="aria-label:v2.joinGroup"><img src={SITE.group.qr} alt={'QQ 群「' + SITE.group.name + '」二维码'} width="88" height="88" loading="lazy" data-i18n-attr="alt:qq.qrAlt" /><div><b data-i18n="v2.cta.title">加入「鱼之饭盆」</b><p><span data-i18n="v2.cta.text">聊图、催更、投稿、参加活动。QQ 群号</span> <span class="qq-no">{SITE.group.number}</span></p><p class="cta-acts"><button type="button" class="btn btn-ink btn-sm" data-copy-text={SITE.group.number} data-i18n="qq.copy">复制群号</button><a class="btn btn-line btn-sm" href="/community.html" data-i18n="v2.cta.more">社群介绍</a></p></div></aside></template>
-  <script is:inline src="/v2.js?v=1" defer></script>
+  <EventPopup />
+  <script is:inline src="/v2.js?v=2" defer></script>
   <slot name="scripts" />
 </body>
 </html>

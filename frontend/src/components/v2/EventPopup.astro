@@ -1,0 +1,21 @@
+---
+// 开屏弹窗：国庆快乐表情包 + 活动入口。v2.js 决定是否弹出（每个活动只自动弹一次，活动页本身不弹）
+import { EVENT } from '../../lib/v2.mjs';
+---
+<div class="ev-pop" id="event-popup" data-event={EVENT.id} data-until={EVENT.popupUntil} data-href={EVENT.href} hidden>
+  <div class="ev-back" data-ev-close></div>
+  <div class="ev-card" role="dialog" aria-modal="true" aria-labelledby="ev-title">
+    <button type="button" class="ev-x" data-ev-close aria-label="关闭" data-i18n-attr="aria-label:index.qq.close">×</button>
+    <figure class="ev-art"><img src={EVENT.img} width={EVENT.imgW} height={EVENT.imgH} alt="鲸鱼娘举着国庆快乐的表情包" data-i18n-attr="alt:v2.ev.alt" decoding="async" /></figure>
+    <div class="ev-body">
+      <p class="ev-kicker" data-i18n="v2.ev.kicker">国庆快乐 🐳</p>
+      <h2 id="ev-title" data-i18n="v2.ev.title">网站前台设计征集</h2>
+      <p data-i18n="v2.ev.text">给「蓝色大肥鱼.com」这个网站设计新的样子。不限 AI、不限工具、不限技术栈，古法手搓或给 AI 许愿都行。</p>
+      <ul class="ev-facts">
+        <li><b data-i18n="v2.ev.deadline">截稿</b><span data-i18n="v2.ev.deadlineV">10 月 26 日（周一）23:59</span></li>
+        <li><b data-i18n="v2.ev.prize">奖励</b><span data-i18n="v2.ev.prizeV">采用奖 88 元 · 人气奖 66 元</span></li>
+      </ul>
+      <p class="ev-acts"><a class="btn btn-ink" href={EVENT.href} data-i18n="v2.ev.more">查看活动详情</a><button type="button" class="btn btn-line" data-ev-close data-i18n="v2.ev.later">先逛逛</button></p>
+    </div>
+  </div>
+</div>
