@@ -22,7 +22,24 @@ export type CategoryDoc = {
   name?: string
 }
 
+/** 作者型专题的联系方式（与导出 / 快照形态一致，字段名冻结）。 */
+export type TopicAuthorChannel = {
+  id?: ID
+  label?: string
+  platform?: string
+  url?: string
+}
+
+/** 作者分组：整组可空；有值时 name 与 channels[0] 必在，channels 顺序即首选顺序。 */
+export type TopicAuthor = {
+  bio?: string
+  channels?: TopicAuthorChannel[]
+  name?: string
+  url?: string
+}
+
 export type TopicDoc = {
+  author?: TopicAuthor | null
   cover?: ID | WorkDoc
   id: ID
   lastPublishedAt?: string

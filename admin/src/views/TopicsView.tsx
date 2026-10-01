@@ -10,10 +10,23 @@ import { useAdminApi } from '../components/admin/api'
 import { CHANNELS, labelOf } from '../components/admin/constants'
 import { PageHeader } from '../components/admin/PageHeader'
 import { StatusBadge } from '../components/admin/StatusBadge'
-import type { ListResponse, TopicDoc, WorkDoc } from '../components/admin/types'
+import type { ListResponse, TopicAuthor, TopicDoc, WorkDoc } from '../components/admin/types'
 import { relationID, workImageURL } from '../components/admin/types'
 
+type ChannelDraft = {
+  id?: string
+  label: string
+  platform: string
+  url: string
+}
+
 type TopicDraft = {
+  author: {
+    bio: string
+    channels: ChannelDraft[]
+    name: string
+    url: string
+  }
   cover: string
   name: string
   nameEn: string
@@ -27,7 +40,15 @@ type TopicDraft = {
   works: string[]
 }
 
+type BackendAuthor = {
+  bio: string | null
+  channels: Array<{ id?: string; label?: string; platform: string; url: string }>
+  name: string
+  url: string | null
+}
+
 const EMPTY_DRAFT: TopicDraft = {
+  author: { bio: '', channels: [], name: '', url: '' },
   cover: '',
   name: '',
   nameEn: '',
@@ -41,8 +62,24 @@ const EMPTY_DRAFT: TopicDraft = {
   works: [],
 }
 
+function asAuthor(value: TopicDoc['author']): TopicAuthor | undefined {
+  return value && typeof value === 'object' ? value : undefined
+}
+
 function draftFromTopic(topic: TopicDoc): TopicDraft {
+  const author = asAuthor(topic.author)
   return {
+    author: {
+      bio: author?.bio || '',
+      channels: (author?.channels || []).map((channel) => ({
+        ...(channel.id ? { id: String(channel.id) } : {}),
+        label: channel.label || '',
+        platform: channel.platform || '',
+        url: channel.url || '',
+      })),
+      name: author?.name || '',
+      url: author?.url || '',
+    },
     cover: String(relationID(topic.cover) || ''),
     name: topic.name || '',
     nameEn: String((topic as TopicDoc & { nameEn?: string }).nameEn || ''),
@@ -85,6 +122,70 @@ function SortableWork({
       <button className="s3-text-button s3-text-button--danger" onClick={onRemove} type="button">移除</button>
     </li>
   )
+}
+
+/**
+ * 与服务端 isHttpUrl 对齐：先要求字面量 `http://` / `https://` 且 authority 以非空、
+ * 非 `/?#\`、非空白字符开头（挡掉 `https://`、`https:///x`、反斜杠这些 new URL 会
+ * 偷偷规范化的写法），再解析核对协议与主机名。
+ */
+function isHttpUrl(value: string): boolean {
+  const raw = value.trim()
+  if (!raw || /\s/.test(raw) || raw.includes('\\')) return false
+  if (!/^https?:\/\/[^\s/?#\\]/.test(raw)) return false
+  try {
+    const parsed = new URL(raw)
+    return (parsed.protocol === 'http:' || parsed.protocol === 'https:') && Boolean(parsed.hostname)
+  } catch {
+    return false
+  }
+}
+
+const NO_AUTHOR_CHANNELS = '作者型专题至少需要一个渠道作为首选联系方式。'
+
+function validateAuthorDraft(author: TopicDraft['author']): string | null {
+  const name = author.name.trim()
+  const homepage = author.url.trim()
+  const bio = author.bio.trim()
+  const channels = author.channels
+  // 分组全空视为普通专题，不启动作者版式。
+  if (!name && !homepage && !bio && !channels.length) return null
+  if (!name) return '作者型专题必须填写作者名。'
+  if (homepage && !isHttpUrl(homepage)) return '作者主页链接不是有效的 http/https 地址。'
+  if (!channels.length) return NO_AUTHOR_CHANNELS
+  for (const [index, channel] of channels.entries()) {
+    const position = index + 1
+    if (!channel.platform.trim()) return `渠道 ${position} 需要填写平台名。`
+    const url = channel.url.trim()
+    if (!url) return `渠道 ${position} 需要填写链接。`
+    if (!isHttpUrl(url)) return `渠道 ${position} 的链接不是有效的 http/https 地址。`
+  }
+  return null
+}
+
+/**
+ * 后端 author 分组：字段名与集合一致；返回 null 表示应清空（PATCH 时发送 null 而非省略）。
+ * 作者仍存在时 url / bio 显式发送（空串发 null），否则 PATCH 省略字段会保留旧值。
+ */
+function authorPayload(author: TopicDraft['author']): BackendAuthor | null {
+  const name = author.name.trim()
+  const channels = author.channels
+    .filter((channel) => channel.platform.trim() && channel.url.trim())
+    .map((channel) => ({
+      ...(channel.id ? { id: channel.id } : {}),
+      label: channel.label.trim(),
+      platform: channel.platform.trim(),
+      url: channel.url.trim(),
+    }))
+  if (!name && !channels.length) return null
+  const url = author.url.trim()
+  const bio = author.bio.trim()
+  return {
+    url: url || null,
+    bio: bio || null,
+    name,
+    channels,
+  }
 }
 
 export function TopicsView() {
@@ -155,6 +256,43 @@ export function TopicsView() {
     setDraft({ ...draft, works: arrayMove(draft.works, oldIndex, newIndex) })
   }
 
+  function updateAuthor(patch: Partial<TopicDraft['author']>) {
+    setDraft((current) => ({ ...current, author: { ...current.author, ...patch } }))
+  }
+
+  function updateChannel(index: number, patch: Partial<ChannelDraft>) {
+    setDraft((current) => ({
+      ...current,
+      author: {
+        ...current.author,
+        channels: current.author.channels.map((channel, i) => (i === index ? { ...channel, ...patch } : channel)),
+      },
+    }))
+  }
+
+  function addAuthorChannel() {
+    setDraft((current) => ({
+      ...current,
+      author: { ...current.author, channels: [...current.author.channels, { label: '', platform: '', url: '' }] },
+    }))
+  }
+
+  function removeAuthorChannel(index: number) {
+    setDraft((current) => ({
+      ...current,
+      author: { ...current.author, channels: current.author.channels.filter((_, i) => i !== index) },
+    }))
+  }
+
+  function moveAuthorChannel(index: number, offset: number) {
+    setDraft((current) => {
+      const target = index + offset
+      const channels = current.author.channels
+      if (target < 0 || target >= channels.length) return current
+      return { ...current, author: { ...current.author, channels: arrayMove(channels, index, target) } }
+    })
+  }
+
   async function save() {
     if (!draft.name.trim() || !draft.summary.trim()) {
       setMessage('中文名称和简介为必填项。')
@@ -164,8 +302,15 @@ export function TopicsView() {
       setMessage('topicId 必须是 kebab-case。')
       return
     }
+    const authorError = validateAuthorDraft(draft.author)
+    if (authorError) {
+      setMessage(authorError)
+      return
+    }
     setMessage('正在保存…')
     const data = {
+      // 新建与 PATCH 都发送 author；清空时发 null，确保服务端确实移除原值。
+      author: authorPayload(draft.author),
       cover: draft.cover ? Number(draft.cover) : undefined,
       name: draft.name,
       nameEn: draft.nameEn || undefined,
@@ -190,6 +335,8 @@ export function TopicsView() {
       setMessage(error instanceof Error ? error.message : '专题保存失败')
     }
   }
+
+  const authorChannels = draft.author.channels
 
   return (
     <Gutter className="s3-admin-page">
@@ -264,6 +411,75 @@ export function TopicsView() {
                 </>
               ) : null}
             </div>
+
+            <div className="s3-form-section s3-author-block">
+              <div className="s3-panel-heading">
+                <div>
+                  <p className="s3-eyebrow">选填 · 与语言无关</p>
+                  <h2>来源作者</h2>
+                </div>
+              </div>
+              <p className="s3-muted">
+                整组可留空，留空时专题按普通版式展示。只要填写任意一项，就需要填写作者名，并至少保留一个完整渠道；
+                渠道按列表顺序展示，第一项为首选联系方式，可添加、删除、上下移动。
+              </p>
+              <div className="s3-form-grid">
+                <label>
+                  作者名
+                  <input onChange={(event) => updateAuthor({ name: event.target.value })} placeholder="可留空；填写后为作者型专题必填" value={draft.author.name} />
+                </label>
+                <label>
+                  作者主页（选填）
+                  <input onChange={(event) => updateAuthor({ url: event.target.value })} placeholder="https://…" value={draft.author.url} />
+                </label>
+                <label className="s3-form-span">
+                  作者简介（选填）
+                  <textarea onChange={(event) => updateAuthor({ bio: event.target.value })} rows={3} value={draft.author.bio} />
+                </label>
+              </div>
+
+              <div className="s3-author-channels">
+                <div className="s3-panel-heading">
+                  <div>
+                    <p className="s3-eyebrow">按列表顺序展示</p>
+                    <h3>联系方式</h3>
+                  </div>
+                  <button className="s3-button s3-button--secondary" onClick={addAuthorChannel} type="button">添加渠道</button>
+                </div>
+                {!authorChannels.length ? (
+                  <p className="s3-empty">暂无渠道；作者型专题至少需要一项，第一项即首选联系方式。</p>
+                ) : null}
+                <ul className="s3-channel-list">
+                  {authorChannels.map((channel, index) => (
+                    <li className={index === 0 ? 's3-channel-row s3-channel-row--primary' : 's3-channel-row'} key={channel.id || `channel-${index}`}>
+                      <div className="s3-channel-head">
+                        <span className={index === 0 ? 's3-status s3-status--active' : 's3-status'}>{index === 0 ? '首选联系方式' : `渠道 ${index + 1}`}</span>
+                        <div className="s3-channel-actions">
+                          <button className="s3-icon-button" disabled={index === 0} onClick={() => moveAuthorChannel(index, -1)} title="上移" type="button">↑</button>
+                          <button className="s3-icon-button" disabled={index === authorChannels.length - 1} onClick={() => moveAuthorChannel(index, 1)} title="下移" type="button">↓</button>
+                          <button className="s3-text-button s3-text-button--danger" onClick={() => removeAuthorChannel(index)} type="button">删除</button>
+                        </div>
+                      </div>
+                      <div className="s3-form-grid">
+                        <label>
+                          平台
+                          <input onChange={(event) => updateChannel(index, { platform: event.target.value })} placeholder="如 Bilibili" value={channel.platform} />
+                        </label>
+                        <label>
+                          显示文本（选填）
+                          <input onChange={(event) => updateChannel(index, { label: event.target.value })} placeholder="留空时显示平台名" value={channel.label} />
+                        </label>
+                        <label className="s3-form-span">
+                          链接
+                          <input onChange={(event) => updateChannel(index, { url: event.target.value })} placeholder="https://…" value={channel.url} />
+                        </label>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
             <button className="s3-button s3-button--primary" onClick={() => void save()} type="button">保存专题</button>
           </section>
 

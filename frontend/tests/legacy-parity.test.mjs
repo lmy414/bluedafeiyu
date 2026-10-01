@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 const root=path.resolve(import.meta.dirname,'../..');
 const out=process.env.SITE_OUT_DIR ? path.resolve(process.env.SITE_OUT_DIR) : path.join(root,'.build/site');
-const data=JSON.parse(fs.readFileSync(path.join(root,'dist/site-data.json'),'utf8'));
+const data=JSON.parse(fs.readFileSync(process.env.SITE_SNAPSHOT ? path.resolve(process.env.SITE_SNAPSHOT) : path.join(root,'dist/site-data.json'),'utf8'));
 const html=rel=>fs.readFileSync(path.join(out,rel),'utf8');
 test('all published work URLs and original root routes exist',()=>{
  for(const p of ['index.html','category.html','topics.html','about.html','submit.html','projects.html','changelog.html','404.html'])assert.ok(fs.existsSync(path.join(out,p)),p);
@@ -27,7 +27,28 @@ test('public snapshot, assets and robots are present; private intake assets excl
 test('work detail metadata, commentary and conversation id remain tied to published slug',()=>{
  for(const work of data.works){const doc=html(`works/${work.slug}.html`);assert.ok(doc.includes(`/works/${work.slug}.html`));assert.ok(doc.includes(`sticker-${work.id}`));assert.ok(doc.includes('application/ld+json'));assert.ok(doc.includes(work.name));}
 });
-test('topic list is empty without producing empty topic pages',()=>{
- assert.equal((data.topics||[]).length,0);
- assert.equal(fs.existsSync(path.join(out,'topics')),false);
+test('active topics produce static pages: author topics use the author layout, plain topics keep SubHead + Feed',()=>{
+ const topics=data.topics||[];
+ const topicDir=path.join(out,'topics');
+ const pages=fs.existsSync(topicDir) ? fs.readdirSync(topicDir).filter(p=>p.endsWith('.html')).sort() : [];
+ assert.deepEqual(pages,topics.map(t=>`${t.id}.html`).sort(),'专题页面必须与快照 ID 精确对应');
+ // 无有效专题时不要求 topics/ 目录存在（getStaticPaths 为空，构建不会生成这一点）。
+ if(!topics.length)return;
+ for(const topic of topics){
+  const doc=html(`topics/${topic.id}.html`);
+  assert.ok(doc.includes('href="/works/'),`${topic.id} 应有作品入口`);
+  assert.ok(doc.includes('feed-grid'),`${topic.id} 应展示作品流`);
+  if(topic.author){
+   // 作者型专题：作者名、首选渠道 URL 与独立版式标记都要出现在页面上。
+   // 快照里的 & 到了 HTML 属性 / 文本里会转义成 &amp;，两种都认。
+   const seen=text=>doc.includes(text)||doc.includes(text.replace(/&/g,'&amp;'));
+   assert.ok(seen(topic.author.name),`${topic.id} 应显示作者名`);
+   assert.ok(seen(topic.author.channels[0].url),`${topic.id} 应显示首选渠道链接`);
+   assert.ok(doc.includes('topic-author'),`${topic.id} 应使用作者版式`);
+  }else{
+   assert.ok(doc.includes('role-head'),`${topic.id} 应沿用 SubHead`);
+   assert.ok(doc.includes('feed-grid'),`${topic.id} 应沿用 Feed`);
+   assert.ok(!doc.includes('topic-author'),`${topic.id} 不应出现作者版式标记`);
+  }
+ }
 });

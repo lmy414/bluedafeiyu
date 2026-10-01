@@ -502,6 +502,43 @@ export interface Topic {
   summaryJa?: string | null;
   cover?: (number | null) | Work;
   works?: (number | Work)[] | null;
+  /**
+   * 整组可留空；填写任意一项即视为作者型专题，此时作者名与首选渠道（渠道第一项）为必需。
+   */
+  author?: {
+    /**
+     * 作者型专题必填；可留空表示普通专题。
+     */
+    name?: string | null;
+    /**
+     * 选填，仅支持 http/https 链接。
+     */
+    url?: string | null;
+    /**
+     * 选填。
+     */
+    bio?: string | null;
+    /**
+     * 可增删、上下移动；按列表顺序展示，第一项为首选联系方式。
+     */
+    channels?:
+      | {
+          /**
+           * 必填，如 Bilibili、Pixiv、微博。
+           */
+          platform: string;
+          /**
+           * 选填，留空时显示平台名。
+           */
+          label?: string | null;
+          /**
+           * 必填，仅支持 http/https 链接。
+           */
+          url: string;
+          id?: string | null;
+        }[]
+      | null;
+  };
   status: 'draft' | 'active';
   order: number;
   needsPublish?: boolean | null;
@@ -889,6 +926,21 @@ export interface TopicsSelect<T extends boolean = true> {
   summaryJa?: T;
   cover?: T;
   works?: T;
+  author?:
+    | T
+    | {
+        name?: T;
+        url?: T;
+        bio?: T;
+        channels?:
+          | T
+          | {
+              platform?: T;
+              label?: T;
+              url?: T;
+              id?: T;
+            };
+      };
   status?: T;
   order?: T;
   needsPublish?: T;

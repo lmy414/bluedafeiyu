@@ -30,7 +30,11 @@
 | `blue-fish-classification.json` | `dist/data/blue-fish-classification.json`（构建期读，不进产物） |
 | `blue-fish-editorial.json` | `dist/data/blue-fish-editorial.json`（构建期读，不进产物） |
 
-专题（`data/topics.json`）由站长手动维护，**不要自动把作品批量归进专题**。每条字段：`id`（kebab-case，发布后冻结，用于 `topics/<id>.html`；旧 hash 链接仍可用）、`name`、`summary`、`coverWorkId`、`status`（`active` 才上线）、`order`（升序）、`createdAt`/`updatedAt`、`workIds`（显式收录的作品 id，按此顺序展示）。构建时下架或不存在的 `workIds` 会被跳过并警告，封面失效退回首张，收录清空的专题不上线。
+专题收录的作品由站长人工精选，**不要自动把作品批量归进专题**；专题元数据可由 owner/bot 经后台 upsert 接口创建或更新，本仓库不预置具体专题记录。每条字段：`id`（kebab-case，发布后冻结，用于 `topics/<id>.html`；旧 hash 链接仍可用）、`name`、`summary`、`coverWorkId`、`status`（`active` 才上线）、`order`（升序）、`createdAt`/`updatedAt`、`workIds`（显式收录的作品 id，按此顺序展示）。构建时下架或不存在的 `workIds` 会被跳过并警告，封面失效退回首张，收录清空的专题不上线。
+
+后台另提供受鉴权的专题 upsert 接口（`POST /cms-api/topics/upsert`，owner 或 bot 均可调用），只允许按严格白名单维护文案与作者元数据：`topicId`（查找键）、`name`/`summary` 与英日译名、`author`（省略保留、`null` 清空）、`status`、`order`；`works`、`cover`、`needsPublish` 等键一律 400 拒绝。**作品与封面只能由站长在后台关联**，机器人不得通过该接口改动；机器人也不能把已关联作品的专题改成草稿。一条 `active` 但没有任何作品的专题不会生成专题页面。
+
+可选字段 `author` 表示「来源作者专题」，结构 `{ name, url?, bio?, channels: [{ platform, label?, url }] }`：`channels` 第一项即首选联系方式，每行 `platform` 与 `url` 必填，`url`（含 `author.url`）只接受 http/https；没有 `author` 时专题维持普通版式（`SubHead` + `Feed`），有 `author` 时前台改用独立作者版式并展示作者名（不做头像），缺作者名或首选渠道会直接构建失败。作者型专题记录按需创建，本仓库不预置。
 
 `dist/data/blue-fish/previews/` 不在这张表里：它是 `tools/sync_content.mjs` 从内容仓 `dist/data/blue-fish/previews/` **同步进来的首批预览图**；上表两张 blue-fish JSON 则是**站点仓 `data/` 的清单暂存副本**。三者都落在 `dist/data/`，而 Astro 发布步骤不复制 `dist/data/`，所以这批预览图与两张 JSON 都**不进发布包**；线上的首批预览图由 `DEPLOY_ROOT/shared/data` 持久副本硬链接提供（见「更新与发布」）。
 

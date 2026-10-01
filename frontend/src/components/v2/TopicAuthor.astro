@@ -1,0 +1,30 @@
+---
+// 作者型专题头部：只在快照带有效 author 时启用（name 与 channels[0] 已由快照保证，url 只可能是 http/https）。
+// 左列作者与专题简介，右列首选渠道 / 主页 / 次要渠道；普通专题仍走 SubHead。
+const { name, sub, author } = Astro.props;
+const [first, ...rest] = author.channels;
+const firstLabel = first.label && first.label !== first.platform ? first.label : "";
+---
+<header class="topic-author">
+  <a class="back" href="/topics.html">← <span data-i18n="v2.nav.collections">合集</span></a>
+  <div class="ta-card">
+    <div class="ta-intro">
+      <p class="ta-kicker" data-i18n="v2.topic.authorTag">来源作者专题</p>
+      <h1 class="ta-name">{author.name}</h1>
+      <p class="ta-topic"><span class="ta-badge" data-i18n="v2.topic.badge">专题</span><span class="ta-topic-tx">{name}</span>{sub ? <span class="ta-topic-sub">{sub}</span> : null}</p>
+      {author.bio ? <p class="ta-bio">{author.bio}</p> : null}
+    </div>
+    <div class="ta-actions">
+      <a class="btn btn-ink ta-go" href={first.url} target="_blank" rel="noopener noreferrer">
+        <span data-i18n="v2.topic.primary">前往</span><span>{first.platform}</span><span class="ta-go-arrow" aria-hidden="true">→</span>{firstLabel ? <small>{firstLabel}</small> : null}
+      </a>
+      {author.url ? <a class="btn btn-line ta-home" href={author.url} target="_blank" rel="noopener noreferrer" data-i18n="v2.topic.home">作者主页</a> : null}
+      {rest.length
+        ? <div class="ta-more">
+            <p class="ta-more-title" data-i18n="v2.topic.moreChannels">其他渠道</p>
+            <ul>{rest.map(c => <li><a class="btn btn-line btn-sm" href={c.url} target="_blank" rel="noopener noreferrer">{c.label || c.platform}</a></li>)}</ul>
+          </div>
+        : null}
+    </div>
+  </div>
+</header>

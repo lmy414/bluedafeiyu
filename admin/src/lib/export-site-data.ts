@@ -176,6 +176,78 @@ function categoryRecord(doc: any): Record<string, any> {
   return base
 }
 
+type ExportedAuthorChannel = {
+  label?: string
+  platform: string
+  url: string
+}
+
+type ExportedAuthor = {
+  bio?: string
+  channels: ExportedAuthorChannel[]
+  name: string
+  url?: string
+}
+
+function text(value: unknown): string {
+  return typeof value === 'string' ? value.trim() : ''
+}
+
+/**
+ * 只接受 http/https 外链：先要求字面量 `http://` / `https://` 且 authority 以非空、
+ * 非 `/?#\`、非空白字符开头（挡掉 `https://`、`https:///x`、反斜杠这些 new URL 会
+ * 偷偷规范化的写法），再解析核对协议与主机名。
+ */
+function isHttpUrl(value: string): boolean {
+  if (!value || /\s/.test(value) || value.includes('\\')) return false
+  if (!/^https?:\/\/[^\s/?#\\]/.test(value)) return false
+  try {
+    const parsed = new URL(value)
+    return (parsed.protocol === 'http:' || parsed.protocol === 'https:') && Boolean(parsed.hostname)
+  } catch {
+    return false
+  }
+}
+
+/**
+ * 作者分组显式透传：整组全空返回 null（普通专题）；只要出现任意作者字段就按作者型校验，
+ * 缺作者名、渠道不完整或链接非法一律抛错（含 topicId），不静默降级为普通版式。
+ * 输出形态固定为 { name, url?, bio?, channels: [{ platform, label?, url }] }，字段名冻结。
+ */
+function authorRecord(value: unknown, topicId: string): ExportedAuthor | null {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return null
+  const author = value as { bio?: unknown; channels?: unknown; name?: unknown; url?: unknown }
+  const name = text(author.name)
+  const homepage = text(author.url)
+  const bio = text(author.bio)
+  const rawChannels = Array.isArray(author.channels) ? author.channels : []
+  if (!name && !homepage && !bio && rawChannels.length === 0) return null
+  const fail = (why: string): never => {
+    throw new Error(`专题 ${topicId} 的作者信息不完整：${why}`)
+  }
+  if (!name) fail('缺少作者名（name）')
+  if (homepage && !isHttpUrl(homepage)) fail(`作者主页不是有效的 http/https 地址：${homepage}`)
+  const channels: ExportedAuthorChannel[] = []
+  rawChannels.forEach((raw, index) => {
+    if (!raw || typeof raw !== 'object' || Array.isArray(raw)) fail(`渠道 ${index + 1} 不是对象`)
+    const channel = raw as { label?: unknown; platform?: unknown; url?: unknown }
+    const platform = text(channel.platform)
+    const url = text(channel.url)
+    if (!platform) fail(`渠道 ${index + 1} 缺 platform`)
+    if (!url) fail(`渠道 ${index + 1} 缺 url`)
+    if (!isHttpUrl(url)) fail(`渠道 ${index + 1} 的链接不是有效的 http/https 地址：${url}`)
+    const label = text(channel.label)
+    channels.push({ platform, ...(label ? { label } : {}), url })
+  })
+  if (!channels.length) fail('缺少首选渠道 channels[0]（只有作者名不足以成为作者型专题）')
+  return {
+    name,
+    ...(homepage ? { url: homepage } : {}),
+    ...(bio ? { bio } : {}),
+    channels,
+  }
+}
+
 function topicRecord(doc: any): Record<string, any> {
   const workIds = (Array.isArray(doc.works) ? doc.works : []).map((item: unknown) => relationCode(item, 'workId')).filter(Boolean)
   const coverWorkId = relationCode(doc.cover, 'workId')
@@ -194,6 +266,9 @@ function topicRecord(doc: any): Record<string, any> {
     workIds,
   }
   if (Object.keys(i18n).length > 0) record.i18n = i18n
+  // 无作者时不加键，record 的键顺序与输出保持原样。
+  const author = authorRecord(doc.author, String(doc.topicId || ''))
+  if (author) record.author = author
   return record
 }
 

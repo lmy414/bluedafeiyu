@@ -2,13 +2,19 @@
 import V2 from '../../layouts/V2.astro';
 import Feed from '../../components/v2/Feed.astro';
 import SubHead from '../../components/v2/SubHead.astro';
+import TopicAuthor from '../../components/v2/TopicAuthor.astro';
 import { topics, ogCard } from '../../lib/v2.mjs';
 export function getStaticPaths() { return topics.map(t => ({ params: { id: t.id }, props: { t } })); }
 const { t } = Astro.props;
 const list = [t.cover, ...t.list.filter(w => w !== t.cover)];
+const sub = (t.summary ? t.summary + ' · ' : '') + t.list.length + ' 件作品';
 const og = ogCard('topic-' + t.id, t.cover, t.name, (t.summary || '') + ' · ' + t.list.length + ' 件作品', '合集');
+// t.author 只会在快照里带有效作者时出现（缺作者名 / 首选渠道会先构建失败），所以这里可以直接信
+const author = t.author || null;
 ---
 <V2 title={t.name + '合集 - 蓝色大肥鱼'} desc={t.summary || t.name} path={'/topics/' + t.id + '.html'} og={og} active="collections" bodyPage="topicDetail" accent={t.color + ';--cs:' + t.soft}>
-  <SubHead back="/topics.html" backText="合集" backKey="v2.nav.collections" title={t.name} sub={(t.summary ? t.summary + ' · ' : '') + t.list.length + ' 件作品'} />
+  {author
+    ? <TopicAuthor name={t.name} sub={sub} author={author} />
+    : <SubHead back="/topics.html" backText="合集" backKey="v2.nav.collections" title={t.name} sub={sub} />}
   <Feed items={list} total={list.length} />
 </V2>

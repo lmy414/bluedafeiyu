@@ -164,6 +164,45 @@ function normalizeTopicI18n(value) {
   return out;
 }
 
+// 外链校验：先要求字面量 http:// / https:// 且 authority 以非空、非 /?#\ 、非空白字符开头
+// （挡掉 `https://`、`https:///x`、反斜杠这些 new URL 会偷偷规范化的写法），
+// 再解析核对协议与主机名；javascript: / data: 之类的 scheme 同样在此失败。
+const safeLink = (raw) => {
+  if (!raw || /\s/.test(raw) || raw.includes("\\")) return false;
+  if (!/^https?:\/\/[^\s/?#\\]/.test(raw)) return false;
+  let parsed;
+  try { parsed = new URL(raw); } catch { return false; }
+  return (parsed.protocol === "http:" || parsed.protocol === "https:") && Boolean(parsed.hostname);
+};
+
+// 专题来源作者（可选字段）：{ name, url?, bio?, channels: [{ platform, label?, url }] }。
+// 没有 author 或各字段全空 → null，前台维持原 SubHead + Feed，快照里也不多出这个键。
+// 一旦出现作者名或渠道就按作者型处理：缺作者名或首选渠道直接构建失败，并报出专题 id 与原因。
+function normalizeTopicAuthor(value, id) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return null;
+  const name = typeof value.name === "string" ? value.name.trim() : "";
+  const homepage = typeof value.url === "string" ? value.url.trim() : "";
+  const bio = typeof value.bio === "string" ? value.bio.trim() : "";
+  const channelsRaw = Array.isArray(value.channels) ? value.channels : [];
+  if (!name && !homepage && !bio && !channelsRaw.length) return null;
+  const fail = (why) => { throw new Error(`专题 ${id} 的作者信息不完整：${why}`); };
+  if (!name) fail("缺少 name（作者名）");
+  if (homepage && !safeLink(homepage)) fail(`url 不是有效的 http/https 地址：${homepage}`);
+  const channels = [];
+  channelsRaw.forEach((channel, i) => {
+    if (!channel || typeof channel !== "object" || Array.isArray(channel)) fail(`渠道 ${i + 1} 不是对象`);
+    const platform = String(channel.platform || "").trim();
+    const url = String(channel.url || "").trim();
+    if (!platform) fail(`渠道 ${i + 1} 缺 platform`);
+    if (!url) fail(`渠道 ${i + 1} 缺 url`);
+    if (!safeLink(url)) fail(`渠道 ${i + 1} 的 url 不是有效的 http/https 地址：${url}`);
+    const label = typeof channel.label === "string" ? channel.label.trim() : "";
+    channels.push({ platform, ...(label ? { label } : {}), url });
+  });
+  if (!channels.length) fail("缺少首选渠道 channels[0]（只有作者名不足以成为作者型专题）");
+  return { name, ...(homepage ? { url: homepage } : {}), ...(bio ? { bio } : {}), channels };
+}
+
 // 专题：站长人工精选，data/topics.json 按 workIds 显式收录（不按 tag 现算，不分类；id 即稳定键）。
 // 作品下架后 id 会从快照消失——这里只丢弃并警告，不让一次下架卡住整站构建；
 // 封面失效退回首张收录作品；收录清空的专题不上线。
@@ -189,11 +228,14 @@ function buildTopics(list, works) {
     if (!workIds.length) { console.warn(`[snapshot] 专题 ${id} 没有可用作品，本次不上线`); continue; }
     const coverWorkId = workIds.includes(topic.coverWorkId) ? topic.coverWorkId : workIds[0];
     const i18n = normalizeTopicI18n(topic.i18n);
+    const author = normalizeTopicAuthor(topic.author, id);
     topics.push({
       id,
       name: String(topic.name || id),
       summary: String(topic.summary || ""),
       ...(Object.keys(i18n).length ? { i18n } : {}),
+      // 无 author 时连键都不加，快照形状与原来完全一致
+      ...(author ? { author } : {}),
       coverWorkId,
       order: Number(topic.order) || 0,
       updatedAt: String(topic.updatedAt || topic.createdAt || ""),

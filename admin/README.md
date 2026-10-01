@@ -122,7 +122,7 @@ npm run create:bot
 - 后台用户/机器人：`Authorization: users API-Key <key>`
 - 发布执行器：`Authorization: Bearer <ADMIN_WORKER_TOKEN>`
 
-机器人不能登录后台界面，不能管理用户，不能删除、隐藏或移除作品；可以读取投稿、作品、专题，通过普通作品 REST API 修改可编辑字段和分类，也可以发起发布。机器人调用批量接口时目前只允许 `set-categories`。
+机器人不能登录后台界面，不能管理用户，不能删除、隐藏或移除作品；可以读取投稿、作品、专题，通过普通作品 REST API 修改可编辑字段和分类，通过 `POST /cms-api/topics/upsert` 维护专题文案与作者元数据，也可以发起发布。机器人调用批量接口时目前只允许 `set-categories`。
 
 ### 发布执行器接口
 
@@ -167,6 +167,28 @@ Content-Type: application/json
 ```
 
 支持 `hide`、`restore`、`remove`、`delete`（需 `confirm: "DELETE"`）、`set-categories`（`categoryIds`）、`add-to-topic`（`topicId`）、`include`。
+
+#### 专题 upsert
+
+```http
+POST /cms-api/topics/upsert
+Authorization: users API-Key <key>
+Content-Type: application/json
+
+{
+  "topicId": "maojing",
+  "name": "猫鲸",
+  "summary": "收录 GitHub 用户 1cyberlangke1 投稿的相关作品。",
+  "author": {
+    "name": "1cyberlangke1",
+    "url": "https://github.com/1cyberlangke1",
+    "channels": [{ "platform": "GitHub", "url": "https://github.com/1cyberlangke1" }]
+  },
+  "status": "active"
+}
+```
+
+owner 或 bot 均可调用。按 `topicId` 查找：命中更新、未命中新建；输入与库中一致时返回 `changed:false` 且不写库，避免误设 `needsPublish`。严格白名单只接受 `topicId`、`name`、`summary`、`nameEn`/`summaryEn`/`nameJa`/`summaryJa`、`author`、`status`、`order`；`works`、`cover`、`needsPublish`、`id`、时间戳等键一律 400 拒绝并报出键名。`author` 省略保留旧值、显式 `null` 清空；渠道第一项是首选联系方式。**传入 `author` 对象是整个作者块的全量替换**：后续要追加 X/Bilibili 等渠道时，需先查询原有渠道并连同 GitHub 一起提交，只有省略 `author` 才保留原作者块。**收录作品与封面只能由站长在后台关联**；机器人不能把已关联作品的专题改成草稿（403）。成功返回 `{ ok, created, changed, id, topicId, status }`，字段校验失败 400、请求体非合法 JSON 400、`topicId` 并发唯一冲突 409。
 
 #### 发布计划与请求
 
