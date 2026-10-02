@@ -18,6 +18,24 @@ type BulkBody = {
   topicId?: string
 }
 
+/**
+ * 把专题的作品关系值归一成 Payload 关系字段需要的数字 ID。
+ * SQLite/Payload 的 works.id 是 number，关系字段只接受数字；depth>0 时也可能拿到
+ * 已填充的关系对象（取它的 id）。旧的字符串形式「11」也兼容；其余（NaN、小数、0、
+ * 布尔、缺 id 的对象、超长到溢出/失去精度的数字串等）一律返回 null，交由调用方
+ * 明确处理，绝不静默写坏数据。
+ */
+function workRelationId(value: unknown): number | null {
+  const raw = value && typeof value === 'object' ? (value as { id?: unknown }).id : value
+  if (typeof raw === 'number') return Number.isSafeInteger(raw) && raw > 0 ? raw : null
+  if (typeof raw === 'string' && /^\d+$/.test(raw.trim())) {
+    const parsed = Number(raw.trim())
+    // isSafeInteger 同时挡掉超长数字串解析出的 Infinity 与超过 2^53-1 的失真值。
+    return Number.isSafeInteger(parsed) && parsed > 0 ? parsed : null
+  }
+  return null
+}
+
 async function findWorks(req: PayloadRequest, ids: string[]): Promise<any[]> {
   const payload = req.payload as any
   const numericIds = ids.filter((id) => /^\d+$/.test(id)).map(Number)
@@ -243,10 +261,17 @@ export const bulkHandler = async (req: PayloadRequest): Promise<Response> => {
     const topicResult = await payload.find({ collection: 'topics', where: { topicId: { equals: body.topicId } }, limit: 1, depth: 0, overrideAccess: true })
     const topic = topicResult.docs[0]
     if (!topic) return json({ ok: false, error: '专题不存在' }, 404)
-    const existing = Array.isArray(topic.works) ? topic.works.map((item: any) => String(item?.id ?? item)) : []
-    const next = [...existing]
+    const next: number[] = []
+    if (Array.isArray(topic.works)) {
+      for (const item of topic.works) {
+        const id = workRelationId(item)
+        if (id === null) return json({ ok: false, error: '专题已有作品关系数据异常' }, 400)
+        if (!next.includes(id)) next.push(id)
+      }
+    }
     for (const work of works) {
-      const id = String(work.id)
+      const id = workRelationId(work.id)
+      if (id === null) return json({ ok: false, error: `作品 ${work.workId} 缺少有效的数字 ID` }, 400)
       if (!next.includes(id)) next.push(id)
       affected.push(work.workId)
     }
