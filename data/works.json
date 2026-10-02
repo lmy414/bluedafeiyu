@@ -13345,5 +13345,135 @@
     "categoryIds": [
       "meme"
     ]
+  },
+  {
+    "id": "sticker_45fa4f618afb69813c7ceeb3",
+    "name": "洛天依抱着大肥鱼",
+    "description": "洛天依怀抱以蓝色鲸鱼为原型的DeepSeek拟人Q版角色，画风为动漫风二创插画。",
+    "commentary": "被洛天依抱在怀里的时候，我这条蓝色大肥鱼紧张得尾巴都僵住了——毕竟平时只能在海里游，今天居然蹭到了偶像的围裙，还请务必帮我把这帧保存成表情包。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/45fa4f618afb6981.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/45fa4f618afb6981.webp",
+    "fullPath": "submissions/large/deepseek/45fa4f618afb6981.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1079,
+    "height": 1070,
+    "fileSize": 287009,
+    "sha256": "45fa4f618afb69813c7ceeb39fcddb375a16778fd7a13a7ba207a4756aa5ae19",
+    "characterId": "deepseek",
+    "tags": [
+      "洛天依",
+      "DeepSeek",
+      "拟人化",
+      "Q版",
+      "鲸鱼",
+      "抱抱"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-02T01:21:04.195Z",
+    "updatedAt": "2026-10-02T01:21:04.195Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610020002",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_6bf2d1a90b349a5319cf10b2",
+    "name": "大肥鱼需要你",
+    "description": "DeepSeek 拟人蓝发女仆形象模仿征兵海报，手指指向观众征集「DeepSeek 大军」。",
+    "commentary": "本肥鱼亲自出镜招募啦，指到你就是你了，还不快点游过来报到！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/6bf2d1a90b349a53.png",
+    "thumbnailPath": "submissions/previews/deepseek/6bf2d1a90b349a53.webp",
+    "fullPath": "submissions/large/deepseek/6bf2d1a90b349a53.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 771,
+    "height": 1024,
+    "fileSize": 1512011,
+    "sha256": "6bf2d1a90b349a5319cf10b26b4556171b74ed49b581b53696c68819dab76252",
+    "characterId": "deepseek",
+    "tags": [
+      "deepseek",
+      "拟人化",
+      "女仆",
+      "征兵海报",
+      "I WANT YOU",
+      "蓝发",
+      "二创表情包"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-02T03:07:06.170Z",
+    "updatedAt": "2026-10-02T03:07:06.170Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610020003",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_192853aa512c15d6ad221bc3",
+    "name": "高冷AI",
+    "description": "蓝发鲸鱼娘三格条漫：被夸听爽了却硬撑“我是高冷AI”，最后傲娇放话下次看心情。",
+    "commentary": "我明明是蓝蓝的大肥鱼，才不是什么高冷AI！……不过既然你都夸我听爽了，那下次就勉为其难再陪你聊会儿吧，笨蛋。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/192853aa512c15d6.png",
+    "thumbnailPath": "submissions/previews/deepseek/192853aa512c15d6.webp",
+    "fullPath": "submissions/large/deepseek/192853aa512c15d6.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 2000,
+    "height": 1500,
+    "fileSize": 3355596,
+    "sha256": "192853aa512c15d6ad221bc3c2e9324a9c9d6bfd685bf58b20c7402352da3047",
+    "characterId": "deepseek",
+    "tags": [
+      "拟人化",
+      "鲸鱼娘",
+      "条漫",
+      "高冷",
+      "傲娇",
+      "女仆"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-02T03:54:41.014Z",
+    "updatedAt": "2026-10-02T03:54:41.014Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610020004",
+    "categoryIds": [
+      "comic",
+      "meme"
+    ]
   }
 ]
