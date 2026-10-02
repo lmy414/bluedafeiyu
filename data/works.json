@@ -13298,5 +13298,52 @@
       "illustration",
       "meme"
     ]
+  },
+  {
+    "id": "sticker_20bd763c7685a111634fa1a6",
+    "name": "全给爆了！",
+    "description": "DeepSeek 拟人化女仆在燃烧背景前咧嘴喊出「全给爆了！」，围裙与尾巴带有鲸鱼标识的漫画风表情包。",
+    "commentary": "本鱼今天火力全开，锅铲一甩，厨房和服务器一起炸成了烟花，看谁还敢说推理慢！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/20bd763c7685a111.png",
+    "thumbnailPath": "submissions/previews/deepseek/20bd763c7685a111.webp",
+    "fullPath": "submissions/large/deepseek/20bd763c7685a111.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1400,
+    "height": 1123,
+    "fileSize": 2666504,
+    "sha256": "20bd763c7685a111634fa1a68017672f8ced6640755001f5b53bed4f2695265e",
+    "characterId": "deepseek",
+    "tags": [
+      "deepseek",
+      "拟人化",
+      "女仆",
+      "表情包",
+      "黑白漫画",
+      "鲸鱼"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "issue": 79,
+      "issueTitle": "[投稿]",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/79",
+      "submitter": "lilisanae",
+      "assetId": "de7c36e2-188c-4820-ae39-470401ebeb12",
+      "assetUrl": "https://github.com/user-attachments/assets/de7c36e2-188c-4820-ae39-470401ebeb12"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-02T00:00:55.227Z",
+    "updatedAt": "2026-10-02T00:00:55.227Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610020001",
+    "categoryIds": [
+      "meme"
+    ]
   }
 ]
