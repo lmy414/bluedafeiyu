@@ -239,6 +239,10 @@ cp -al "${SHARED_DATA_DIR}" "${STAGING_DIR}/site/data"
 
 for required in \
   "${STAGING_DIR}/site/index.html" \
+  "${STAGING_DIR}/site/en/index.html" \
+  "${STAGING_DIR}/site/ja/index.html" \
+  "${STAGING_DIR}/site/zh-hant/index.html" \
+  "${STAGING_DIR}/site/vendor/opencc/cn2t-1.4.2.js" \
   "${STAGING_DIR}/site/404.html" \
   "${STAGING_DIR}/site/submissions/works.json" \
   "${STAGING_DIR}/site/site-data.json" \
@@ -338,7 +342,7 @@ check_ok() {
 }
 
 HEALTH_FAILED=""
-for path in "/" "/robots.txt" "/submissions/works.json" "/site-data.json" "/sitemap.xml" "/google653ce5fe960a5fb0.html" "/${WORK_REL}"; do
+for path in "/" "/en/" "/ja/" "/zh-hant/" "/robots.txt" "/submissions/works.json" "/site-data.json" "/sitemap.xml" "/google653ce5fe960a5fb0.html" "/${WORK_REL}" "/en/${WORK_REL}" "/ja/${WORK_REL}" "/zh-hant/${WORK_REL}" "/vendor/opencc/cn2t-1.4.2.js"; do
   if ! check_ok "${HEALTH_URL}${path}"; then
     HEALTH_FAILED="${HEALTH_URL}${path}"
     break

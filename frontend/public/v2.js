@@ -6,29 +6,12 @@
 (function () {
   'use strict';
   var T = function (key, zh, vars) { return window.SiteLang ? window.SiteLang.fmt(key, zh, vars) : String(zh).replace(/\{(\w+)\}/g, function (m, k) { return vars && vars[k] != null ? vars[k] : m; }); };
+  var P = function (href) { return window.SiteLang ? window.SiteLang.url(href) : href; };
   var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
   var root = document.documentElement;
   var flash = function (b, t) { var o = b.textContent; b.textContent = t; setTimeout(function () { b.textContent = o; }, 1600); };
   var KIND = { meme: '梗图', illustration: '插画', setting: '设定', comic: '漫画' };
   var kindText = function (ids) { return (ids || []).map(function (id) { return T('v2.type.' + id, KIND[id] || id); }).join(' · '); };
-
-  // 语言切换器：lang.js 注入到第一个 .topnav；抽屉里再放一份（点击转发）
-  function mountLang() {
-    var sw = document.getElementById('lang-switch'); if (!sw) return;
-    var host = document.querySelector('[data-lang-host="drawer"]');
-    if (host && !host.firstChild) {
-      var copy = sw.cloneNode(true); copy.id = 'lang-switch-drawer';
-      copy.addEventListener('click', function (e) { var b = e.target.closest('.lang-switch-btn'); if (!b) return; var i = [].indexOf.call(copy.children, b); sw.children[i] && sw.children[i].click(); });
-      host.appendChild(copy);
-    }
-  }
-  function syncLangCopy() {
-    var sw = document.getElementById('lang-switch'), copy = document.getElementById('lang-switch-drawer'); if (!sw || !copy) return;
-    [].forEach.call(copy.children, function (b, i) { b.setAttribute('aria-pressed', sw.children[i] ? sw.children[i].getAttribute('aria-pressed') : 'false'); });
-  }
-  // lang.js 在 DOMContentLoaded 时注入切换器；v2.js 是 defer 脚本，可能先于它运行，所以两个时机都试一次
-  mountLang(); document.addEventListener('DOMContentLoaded', mountLang); addEventListener('load', mountLang);
-  document.addEventListener('site:langchange', syncLangCopy);
 
   // 快捷键：/ 聚焦搜索
   document.addEventListener('keydown', function (e) {
@@ -67,7 +50,7 @@
       if (searchSort === 'random') for (var j = hit.length - 1; j > 0; j--) { var k = Math.floor(Math.random() * (j + 1)); var temp = hit[j]; hit[j] = hit[k]; hit[k] = temp; }
       count.textContent = words.length ? T('v2.found', '找到 {count} 件', { count: hit.length }) : T('v2.typeToSearch', '输入关键词开始搜索');
       res.innerHTML = hit.map(function (r) {
-        return '<article class="media-card"><a href="/works/' + esc(r.s) + '.html" data-work="' + esc(r.s) + '"><div class="ph"' + (r.w && r.h ? ' style="aspect-ratio:' + r.w + '/' + r.h + '"' : '') + '><img loading="lazy" src="' + esc(r.i) + '" alt="' + esc(r.n) + '"><span class="badge">' + esc(kindText(r.k) || T('v2.work', '作品')) + '</span></div><div class="meta"><h3>' + esc(r.n) + '</h3><p><span class="who"><i></i>' + esc(r.c) + '</span></p><p class="work-stats" data-work-stats="' + esc(r.id) + '"></p></div></a></article>';
+        return '<article class="media-card"><a href="' + esc(P('/works/' + r.s + '.html')) + '" data-work="' + esc(r.s) + '"><div class="ph"' + (r.w && r.h ? ' style="aspect-ratio:' + r.w + '/' + r.h + '"' : '') + '><img loading="lazy" src="' + esc(r.i) + '" alt="' + esc(r.n) + '"><span class="badge">' + esc(kindText(r.k) || T('v2.work', '作品')) + '</span></div><div class="meta"><h3>' + esc(r.n) + '</h3><p><span class="who"><i></i>' + esc(r.c) + '</span></p><p class="work-stats" data-work-stats="' + esc(r.id) + '"></p></div></a></article>';
       }).join('');
       document.dispatchEvent(new CustomEvent('v2:dom'));
     };
@@ -119,7 +102,9 @@
       if (next) return setBar('idle', '');
       setBar('end', '<span class="sr">' + esc(T('v2.allLoaded', '已全部加载，共 {count} 件', { count: total })) + '</span>');
       if (cta && !(bar.nextElementSibling && bar.nextElementSibling.classList.contains('group-cta'))) {
-        var node = cta.content.firstElementChild.cloneNode(true); node.classList.add('end'); bar.after(node);
+        var node = cta.content.firstElementChild.cloneNode(true); node.classList.add('end');
+        node.querySelectorAll('a[href]').forEach(function (a) { a.setAttribute('href', P(a.getAttribute('href'))); });
+        bar.after(node);
         if (window.SiteLang) document.dispatchEvent(new CustomEvent('v2:dom'));
       }
     };
@@ -281,16 +266,17 @@
     var load = function () { return dataP || (dataP = fetch('/works-v2.json').then(function (r) { return r.json(); })); };
     var slugOf = function (a) { var d = a.getAttribute('data-work'); if (d) return d; var m = (a.getAttribute('href') || '').match(/^\/works\/([^/?#]+)\.html$/); return m ? m[1] : null; };
     var autoOpen = feedEl ? feedEl.getAttribute('data-open') : null;
-    var listUrl = autoOpen ? '/index.html' : location.pathname + location.search;
-    var workUrl = function (slug) { return '/works/' + slug + '.html'; };
+    var listUrl = autoOpen ? P('/index.html') : location.pathname + location.search;
+    var workUrl = function (slug) { return P('/works/' + slug + '.html'); };
 
     var box = document.createElement('div');
     box.className = 'wm'; box.hidden = true;
     box.innerHTML = '<div class="wm-back" data-close></div><div class="wm-panel" role="dialog" aria-modal="true" aria-labelledby="wm-title">' +
-      '<button type="button" class="wm-x" data-close>×</button>' +
+      '<button type="button" class="wm-x" data-close>×</button><div class="wm-language" data-lang-host="work"></div>' +
       '<figure class="wm-stage"><img alt=""><button type="button" class="wm-nav prev" data-step="-1">‹</button><button type="button" class="wm-nav next" data-step="1">›</button></figure>' +
       '<div class="wm-info"></div></div>';
     document.body.appendChild(box);
+    if (window.SiteLang) SiteLang.mountMenus();
     var panel = box.querySelector('.wm-panel'), stageEl = box.querySelector('.wm-stage'), img = stageEl.querySelector('img'), info = box.querySelector('.wm-info');
     var labels = function () {
       box.querySelector('.wm-x').setAttribute('aria-label', T('index.qq.close', '关闭'));
@@ -312,7 +298,7 @@
       var fact = function (k, v) { return '<div><dt>' + esc(k) + '</dt><dd>' + v + '</dd></div>'; };
       var cta = document.getElementById('group-cta-tpl');
       var src = T(ORIGIN_KEY[w.ok] || 'origin.unknown', ORIGIN_ZH[w.ok] || ORIGIN_ZH.unknown);
-      info.innerHTML = '<a class="who big" href="/characters/' + esc(w.cid) + '.html" style="--c:' + esc(w.col) + '"><i></i>' + esc(w.c) + '</a>' +
+      info.innerHTML = '<a class="who big" href="' + esc(P('/characters/' + w.cid + '.html')) + '" style="--c:' + esc(w.col) + '"><i></i>' + esc(w.c) + '</a>' +
         '<h2 id="wm-title">' + esc(w.n) + '</h2>' + (w.cm ? '<blockquote class="wm-quote">' + esc(w.cm) + '</blockquote>' : '') + (w.d ? '<p class="desc">' + esc(w.d) + '</p>' : '') +
         '<p class="work-stats" data-work-stats="' + esc(w.id) + '"></p>' +
         '<div class="acts"><a class="btn btn-ink" data-download-work="' + esc(w.id) + '" href="' + esc(w.o) + '" target="_blank" rel="noopener">' + esc(T('work.download', '下载原图')) + (w.f ? ' · ' + esc(w.f) : '') + (w.s ? ' ' + esc(w.s) : '') + '</a>' +
@@ -320,25 +306,26 @@
         '<button class="btn btn-line" type="button" data-copy-url="' + esc(location.origin + workUrl(slug)) + '">' + esc(T('work.copyLink', '复制链接')) + '</button></div>' +
         '<dl class="wm-facts">' +
           fact(T('work.field.license', '授权状态'), '<span class="lic-inline" data-lic="' + esc(w.lk) + '">' + esc(T('license.' + w.lk, w.lt)) + '</span>' + (w.ln ? '<small class="lic-note">' + esc(w.ln) + '</small>' : '')) +
-          (w.rights ? fact(T('work.field.imageCredit', '图片署名'), esc(w.rights.creditText)) + fact(T('work.field.copyright', '版权说明'), esc(w.rights.copyrightNotice)) + fact(T('work.licenseTitle', '授权说明'), '<a href="' + esc(w.rights.license) + '">' + esc(T('work.licenseTitle', '授权说明')) + '</a> · <a href="' + esc(w.rights.acquireLicensePage) + '">' + esc(T('work.acquireLicense', '如何取得许可')) + '</a>') : '') +
+          (w.rights ? fact(T('work.field.imageCredit', '图片署名'), esc(T('work.imageCreditText', w.rights.creditText, {credit: w.rights.creditName ? w.rights.creditName + '；' : ''}))) + fact(T('work.field.copyright', '版权说明'), esc(T(w.rights.type === 'cc0' ? 'work.copyright.cc0' : w.rights.creator ? 'work.copyright.named' : 'work.copyright.unknown', w.rights.copyrightNotice, {creator: w.rights.creator}))) + fact(T('work.licenseTitle', '授权说明'), '<a href="' + esc(P(w.rights.license)) + '">' + esc(T('work.licenseTitle', '授权说明')) + '</a> · <a href="' + esc(P(w.rights.acquireLicensePage)) + '">' + esc(T('work.acquireLicense', '如何取得许可')) + '</a>') : '') +
           fact(w.ac ? T('v2.credit', '署名') : w.sa ? T('v2.author', '作者') : T('work.field.submitter', '提交者'), w.a && /^https?:\/\//i.test(w.au || '') ? '<a href="' + esc(w.au) + '" target="_blank" rel="nofollow noopener noreferrer">' + esc(w.a) + '</a>' : esc(w.a || (w.ac ? T('submit.form.anonymous', '不署名') : T('work.unlabeled', '未标注')))) + fact(T('work.field.type', '类型'), esc(kindText(w.k) || T('v2.work', '作品'))) + (w.w && w.h ? fact(T('work.field.size', '尺寸'), w.w + ' × ' + w.h) : '') +
           (w.ac && w.sa ? fact(T('work.field.originAuthor', '来源作者'), esc(w.sa)) : '') +
           fact(T('v2.source', '来源'), w.su ? '<a href="' + esc(w.su) + '" target="_blank" rel="nofollow noopener">' + esc(src) + '</a>' : esc(src)) + fact(T('work.field.date', '收录时间'), esc(w.dt)) +
         '</dl>' +
-        (w.tg && w.tg.length ? '<p class="wm-tags">' + w.tg.map(function (t) { return '<a href="/search.html?q=' + encodeURIComponent(t) + '">#' + esc(t) + '</a>'; }).join('') + '</p>' : '') +
+        (w.tg && w.tg.length ? '<p class="wm-tags">' + w.tg.map(function (t) { return '<a href="' + esc(P('/search.html?q=' + encodeURIComponent(t))) + '">#' + esc(t) + '</a>'; }).join('') + '</p>' : '') +
         (cta ? cta.innerHTML : '') +
         '<p class="wm-more"><a href="https://github.com/lmy414/ai-girl-stickers/issues/new?template=takedown-request.yml" target="_blank" rel="noopener">' + esc(T('v2.takedown', '这是你的作品？申请署名或下架')) + '</a></p>' +
         '<section class="wm-comments"><h3>' + esc(T('section.comments', '评论')) + '</h3><button type="button" class="btn btn-line btn-sm" data-comments="' + esc(w.id) + '">' + esc(T('v2.loadComments', '展开评论')) + '</button></section>';
       // 模板里的 data-i18n 文案按当前语言补一次
       [].forEach.call(info.querySelectorAll('[data-i18n]'), function (el) { el.textContent = T(el.getAttribute('data-i18n'), el.textContent); });
       [].forEach.call(info.querySelectorAll('[data-i18n-attr]'), function (el) { el.getAttribute('data-i18n-attr').split(',').forEach(function (p) { var kv = p.split(':'); if (kv[1]) el.setAttribute(kv[0], T(kv[1], el.getAttribute(kv[0]) || '')); }); });
+      info.querySelectorAll('a[href]').forEach(function (a) { a.setAttribute('href', P(a.getAttribute('href'))); });
     }
     // Giscus：按需加载，避免每翻一张都拉评论
     function comments(btn) {
       var sec = btn.parentNode, lang = (window.SiteLang && window.SiteLang.current) || 'zh';
       var s = document.createElement('script');
       s.src = 'https://giscus.app/client.js'; s.async = true; s.crossOrigin = 'anonymous';
-      var attrs = { repo: 'lmy414/lmy414-blog-comments', 'repo-id': 'R_kgDOTUvnVw', category: 'Announcements', 'category-id': 'DIC_kwDOTUvnV84DF4fs', mapping: 'specific', term: 'sticker-' + btn.getAttribute('data-comments'), 'reactions-enabled': '1', 'input-position': 'bottom', theme: document.documentElement.dataset.theme || 'light', lang: lang === 'zh' ? 'zh-CN' : lang };
+      var attrs = { repo: 'lmy414/lmy414-blog-comments', 'repo-id': 'R_kgDOTUvnVw', category: 'Announcements', 'category-id': 'DIC_kwDOTUvnV84DF4fs', mapping: 'specific', term: 'sticker-' + btn.getAttribute('data-comments'), 'reactions-enabled': '1', 'input-position': 'bottom', theme: document.documentElement.dataset.theme || 'light', lang: lang === 'zh' ? 'zh-CN' : lang === 'zh-Hant' ? 'zh-TW' : lang };
       Object.keys(attrs).forEach(function (k) { s.setAttribute('data-' + k, attrs[k]); });
       btn.replaceWith(s);
       sec.classList.add('on');

@@ -130,39 +130,25 @@ a:hover { text-decoration: underline; text-decoration-style: wavy; }
   text-decoration-thickness: 2px;
 }
 
-/* ---- 语言切换器（dist/lang.js 注入 .topnav 末尾）：三枚歪斜小贴纸，选中那枚摆正压墨 ---- */
-.lang-switch { display: flex; align-items: center; gap: var(--space-2); margin-left: var(--space-2); }
-.lang-switch-btn {
-  min-width: 30px;
-  padding: 2px var(--space-2);
-  background: var(--paper-card);
-  border: 1.5px solid var(--ink);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-paper-sm);
-  color: var(--text-primary);
-  font-family: var(--font-hand);
-  font-size: var(--text-sm);
-  font-weight: bold;
-  line-height: 1.4;
-  cursor: pointer;
-  transition: transform var(--duration-1) ease, box-shadow var(--duration-1) ease;
-}
-.lang-switch-btn:nth-child(3n+1) { transform: rotate(-2deg); }
-.lang-switch-btn:nth-child(3n+2) { transform: rotate(1.6deg); }
-.lang-switch-btn:nth-child(3n) { transform: rotate(-0.8deg); }
-.lang-switch-btn:hover {
-  color: var(--brand);
-  transform: rotate(0) translate(-1px, -1px);
-  box-shadow: var(--shadow-paper);
-}
-.lang-switch-btn[aria-pressed="true"] {
-  color: var(--brand-ink);
-  background: var(--brand);
-  transform: rotate(0);
-  box-shadow: var(--shadow-paper);
-}
+/* ---- 语言菜单：一个入口，选项在展开后显示 ---- */
+.lang-switch { position: relative; margin-left: var(--space-2); }
+.lang-fallback { position: relative; }
+.lang-fallback summary { list-style: none; }
+.lang-fallback summary::-webkit-details-marker { display: none; }
+.lang-trigger { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2); min-height: 36px; padding: 4px var(--space-3); border: 2px solid var(--border-default); border-radius: var(--radius-md); box-shadow: var(--shadow-paper-sm); background: var(--bg-surface); color: var(--text-primary); font: inherit; font-size: var(--text-sm); font-weight: var(--weight-bold); white-space: nowrap; cursor: pointer; }
+.lang-trigger:hover, .lang-trigger[aria-expanded="true"] { background: var(--bg-hover); }
+.lang-arrow { transition: transform var(--duration-1) ease; }
+.lang-trigger[aria-expanded="true"] .lang-arrow { transform: rotate(180deg); }
+.lang-menu { position: absolute; top: calc(100% + var(--space-2)); right: 0; z-index: var(--z-dropdown, 30); min-width: 180px; padding: var(--space-2); background: var(--bg-surface); border: 2px solid var(--border-default); border-radius: var(--radius-md); box-shadow: var(--shadow-paper); }
+.lang-menu[hidden], .lang-status[hidden] { display: none; }
+.lang-option { display: flex; align-items: center; justify-content: space-between; width: 100%; min-height: 40px; padding: var(--space-2) var(--space-3); border: 0; border-radius: var(--radius-sm); background: transparent; color: var(--text-primary); font: inherit; font-size: var(--text-sm); text-align: left; cursor: pointer; }
+.lang-option:hover, .lang-option:focus-visible { background: var(--bg-hover); }
+.lang-option[aria-checked="true"] { background: var(--brand); color: var(--brand-ink); font-weight: var(--weight-bold); }
+.lang-option[aria-checked="true"]::after { content: '✓'; margin-left: var(--space-3); }
+.lang-trigger:focus-visible, .lang-option:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; }
+.lang-status { display: block; max-width: 240px; margin-top: var(--space-2); font-size: var(--text-xs); color: var(--text-secondary); }
 
-/* 窄屏：顶栏允许换行，语言贴纸独占一行也不挤导航 */
+/* 窄屏：旧版导航允许在链接之间换行 */
 @media (max-width: 640px) {
   .topbar { flex-wrap: wrap; }
   .topnav { flex-wrap: wrap; row-gap: var(--space-1); }

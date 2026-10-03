@@ -1,4 +1,4 @@
-/* 蓝色大肥鱼 · 站点多语言层（zh 默认 / en / ja）
+/* 蓝色大肥鱼 · 站点多语言层（zh 默认 / zh-Hant / en / ja）
    --------------------------------------------------------------------------
    约定（与各页手写脚本和 tools/generate_work_pages.mjs 的模板共同成立）：
      · 中文（zh）不进词典：zh 就是各页 HTML 的原文与各处 JS 的兜底串，运行时
@@ -13,9 +13,9 @@
        提供 en/ja 的 title 与 description；详情页是数据文案，不挂此属性、不换标题；
      · 动态渲染的文案（卡片计数、排序下拉、空状态等）由页面脚本调
        SiteLang.fmt(key, 中文兜底, 变量) 取词，并监听 document 的 site:langchange 重渲染；
-     · 切换器由本文件自动注入 header .topnav 末尾，选择存 localStorage
-       （bluedafeiyu-lang），?lang= 参数优先并会被记住。
-   作品名、Tag、详情页正文（commentary）等属于内容数据，三种语言下都保持中文原文。 */
+     · 发布页面的 data-site-lang 固定 URL 对应的语言，菜单跳转到语言版本；
+       旧 ?lang= 链接兼容跳转。未标记的开发页面仍支持原地切换。
+   作品名、Tag、详情页正文（commentary）等属于内容数据，保持原文。 */
 
 (function () {
   "use strict";
@@ -24,14 +24,30 @@
   var CHANGE_EVENT = "site:langchange";
 
   var LANGS = [
-    { id: "zh", label: "中", title: "中文", htmlLang: "zh-CN" },
-    { id: "en", label: "EN", title: "English", htmlLang: "en" },
-    { id: "ja", label: "日", title: "日本語", htmlLang: "ja" }
+    { id: "zh", label: "简体中文", title: "简体中文", htmlLang: "zh-CN" },
+    { id: "zh-Hant", label: "繁體中文", title: "繁體中文", htmlLang: "zh-Hant" },
+    { id: "en", label: "English", title: "English", htmlLang: "en" },
+    { id: "ja", label: "日本語", title: "日本語", htmlLang: "ja" }
   ];
 
   /* 词典：只存 en / ja。zh 走页面原文。改文案时同步改页面里的中文与这里两份。 */
   var DICT = {
     en: {
+      "v2.licenseShort.unknown": "Unclear",
+      "v2.licenseShort.author-permission": "Author permission",
+      "v2.licenseShort.submitter-permission": "Submitter permission",
+      "page.work.title": "{name} - {character} {kindId} | 蓝色大肥鱼",
+      "page.work.desc": "View {name}, a {kindId} featuring {character}. Check attribution and image permissions, view the full-size image, download the original and discuss the work.",
+      "page.characterDetail.title": "{name} stickers and fan art | 蓝色大肥鱼",
+      "page.characterDetail.desc": "Browse {count} AI-girl fan works featuring {name}. View images, check their sources and download originals.",
+      "page.categoryDetail.title": "{name} works | 蓝色大肥鱼",
+      "page.categoryDetail.desc": "Browse {count} AI-girl fan works in {name}. View full-size images and check sources and permissions.",
+      "page.topicDetail.title": "{name} collection | 蓝色大肥鱼",
+      "page.topicDetail.desc": "A hand-picked collection of {count} AI-girl fan works: {name}.",
+      "work.imageCreditText": "{credit}蓝色大肥鱼 (archive)",
+      "work.copyright.cc0": "Recorded as CC0 public domain; check the work's permission notes.",
+      "work.copyright.named": "Image copyright belongs to the original author {creator}.",
+      "work.copyright.unknown": "Image copyright belongs to its original author, who is not identified.",
       "theme.toLight": "Switch to light mode",
       "theme.toDark": "Switch to dark mode",
       "v2.sort.popular": "Popular",
@@ -544,6 +560,21 @@
     },
 
     ja: {
+      "v2.licenseShort.unknown": "許諾不明",
+      "v2.licenseShort.author-permission": "作者許諾",
+      "v2.licenseShort.submitter-permission": "投稿許諾",
+      "page.work.title": "{name} - {character} {kindId} | 蓝色大肥鱼",
+      "page.work.desc": "{character}の{kindId}「{name}」。クレジットと画像の利用許諾を確認し、大きな画像を表示、原図をダウンロード、作品についてコメントできます。",
+      "page.characterDetail.title": "{name}のスタンプと二次創作 | 蓝色大肥鱼",
+      "page.characterDetail.desc": "{name}のAI娘二次創作を{count}件収録。画像、出所と利用許諾を確認し、原図をダウンロードできます。",
+      "page.categoryDetail.title": "{name}の作品 | 蓝色大肥鱼",
+      "page.categoryDetail.desc": "{name}に分類されたAI娘二次創作を{count}件収録。大きな画像、出所と利用許諾を確認できます。",
+      "page.topicDetail.title": "{name}の特集 | 蓝色大肥鱼",
+      "page.topicDetail.desc": "AI娘二次創作{count}件の手選び特集「{name}」。",
+      "work.imageCreditText": "{credit}蓝色大肥鱼（アーカイブ）",
+      "work.copyright.cc0": "CC0パブリックドメインとして記録。作品の利用許諾の備考を確認してください。",
+      "work.copyright.named": "画像の著作権は原作者{creator}に帰属します。",
+      "work.copyright.unknown": "画像の著作権は原作者に帰属します。原作者は未記載です。",
       "theme.toLight": "ライトモードに切り替え",
       "theme.toDark": "ダークモードに切り替え",
       "v2.sort.popular": "人気順",
@@ -1061,14 +1092,19 @@
 
   // ---------- 语言检测与持久化 ----------
   function normalize(raw) {
-    var text = String(raw || "").toLowerCase();
+    var text = String(raw || "").trim().toLowerCase().replace(/_/g, '-');
     if (text.indexOf("en") === 0) return "en";
     if (text.indexOf("ja") === 0 || text.indexOf("jp") === 0) return "ja";
-    if (text.indexOf("zh") === 0) return "zh";
+    if (/^zh(?:-|$)/.test(text)) {
+      if (text.indexOf('-hans') !== -1) return "zh";
+      return /-(?:hant|tw|hk|mo)(?:-|$)/.test(text) ? "zh-Hant" : "zh";
+    }
     return "";
   }
 
   function detect() {
+    var pageLanguage = normalize(document.documentElement.getAttribute('data-site-lang'));
+    if (pageLanguage) return pageLanguage;
     try {
       var fromUrl = normalize(new URLSearchParams(window.location.search).get("lang"));
       if (fromUrl) {
@@ -1086,8 +1122,35 @@
     return "zh";
   }
 
-  var current = detect();
+  var bakedLanguage = normalize(document.documentElement.getAttribute('data-site-lang'));
+  var initial = detect();
+  var current = bakedLanguage || (initial === 'zh-Hant' ? 'zh' : initial);
   var originals = new WeakMap(); // element -> { text, attrs: { attr: value } }
+  var converter, converterPromise, requested = initial, switchers = [], notice = '';
+  var traditionalOverrides = {
+    'about.license.p1b': '程式碼',
+    'v2.nav.gallery': '圖庫',
+    'v2.tagline': 'AI 娘二創圖庫'
+  };
+
+  function traditional(text) { return converter ? converter(String(text == null ? '' : text)) : text; }
+  function loadTraditional() {
+    if (converter) return Promise.resolve();
+    if (window.OpenCC) { converter = window.OpenCC.Converter({ from: 'cn', to: 'twp' }); return Promise.resolve(); }
+    if (converterPromise) return converterPromise;
+    converterPromise = new Promise(function (resolve, reject) {
+      var script = document.createElement('script');
+      script.src = '/vendor/opencc/cn2t-1.4.2.js';
+      script.async = true;
+      script.onload = function () {
+        try { converter = window.OpenCC.Converter({ from: 'cn', to: 'twp' }); resolve(); }
+        catch (err) { converterPromise = null; reject(err); }
+      };
+      script.onerror = function () { script.remove(); converterPromise = null; reject(new Error('Traditional Chinese resource failed to load')); };
+      document.head.appendChild(script);
+    });
+    return converterPromise;
+  }
 
   // ---------- 取词 ----------
   function interpolate(text, params) {
@@ -1097,11 +1160,18 @@
         var kindId = String(params.kindId || "meme");
         return lookup("kind." + kindId, kindId);
       }
-      return params[name] === undefined ? whole : String(params[name]);
+      if (params[name] === undefined) return whole;
+      var value = String(params[name]);
+      return current === 'zh-Hant' ? traditional(value) : value;
     });
   }
 
   function lookup(key, fallback) {
+    if (current === 'zh-Hant') {
+      if (Object.prototype.hasOwnProperty.call(traditionalOverrides, key)) return traditionalOverrides[key];
+      if (key === 'alt.work' && !fallback) return '《{name}》{character}{kindId}，AI 娘二創作品';
+      return traditional(fallback);
+    }
     if (current !== "zh") {
       var table = DICT[current];
       if (table && Object.prototype.hasOwnProperty.call(table, key)) return table[key];
@@ -1163,17 +1233,18 @@
     if (!cache[page]) {
       cache[page] = {
         title: document.title,
-        description: (document.querySelector('meta[name="description"]') || {}).content || "",
-        ogTitle: (document.querySelector('meta[property="og:title"]') || {}).content || "",
-        ogDescription: (document.querySelector('meta[property="og:description"]') || {}).content || ""
+        description: document.querySelector('meta[name="description"]')?.getAttribute('content') || "",
+        ogTitle: document.querySelector('meta[property="og:title"]')?.getAttribute('content') || "",
+        ogDescription: document.querySelector('meta[property="og:description"]')?.getAttribute('content') || ""
       };
     }
     var original = cache[page];
-    if (current === "zh") {
-      document.title = original.title;
-      setMeta('meta[name="description"]', original.description);
-      setMeta('meta[property="og:title"]', original.ogTitle);
-      setMeta('meta[property="og:description"]', original.ogDescription);
+    if (current === "zh" || current === 'zh-Hant') {
+      var convert = current === 'zh-Hant' ? traditional : function (value) { return value; };
+      document.title = convert(original.title);
+      setMeta('meta[name="description"]', convert(original.description));
+      setMeta('meta[property="og:title"]', convert(original.ogTitle));
+      setMeta('meta[property="og:description"]', convert(original.ogDescription));
       return;
     }
     var table = DICT[current] || {};
@@ -1192,6 +1263,8 @@
   }
 
   function apply() {
+    // 独立 URL 的 HTML 已在构建期翻译；运行时只负责动态文案。
+    if (bakedLanguage === current) return;
     var nodes = document.querySelectorAll("[data-i18n],[data-i18n-tpl],[data-i18n-attr]");
     for (var i = 0; i < nodes.length; i += 1) applyElement(nodes[i]);
     var htmlLang = "zh-CN";
@@ -1202,47 +1275,112 @@
     applyPageMeta();
   }
 
-  // ---------- 语言切换器（注入 header .topnav 末尾） ----------
+  // ---------- 同一套菜单分别挂到桌面顶栏、手机抽屉 ----------
   function injectSwitcher() {
-    var nav = document.querySelector("[data-lang-host=\"top\"]") || document.querySelector(".topnav");
-    if (!nav || document.getElementById("lang-switch")) return;
-    var box = document.createElement("div");
-    box.id = "lang-switch";
-    box.className = "lang-switch";
-    box.setAttribute("role", "group");
-    box.setAttribute("aria-label", fmt("ui.switchLang", "切换语言"));
-    LANGS.forEach(function (lang) {
-      var button = document.createElement("button");
-      button.type = "button";
-      button.className = "lang-switch-btn";
-      button.textContent = lang.label;
-      button.title = lang.title;
-      button.lang = lang.htmlLang;
-      button.setAttribute("aria-pressed", String(lang.id === current));
-      button.addEventListener("click", function () { setLang(lang.id); });
-      box.appendChild(button);
+    var hosts = document.querySelectorAll('[data-lang-host]');
+    if (!hosts.length) { var nav = document.querySelector('.topnav'); hosts = nav ? [nav] : []; }
+    [].forEach.call(hosts, function (host, index) {
+      if (host.querySelector('.lang-switch')) return;
+      var box = document.createElement('div');
+      var hostName = host.getAttribute('data-lang-host');
+      box.id = !hostName || hostName === 'top' ? 'lang-switch' : 'lang-switch-' + hostName;
+      box.className = 'lang-switch';
+      var trigger = document.createElement('button');
+      trigger.type = 'button'; trigger.className = 'lang-trigger';
+      trigger.setAttribute('aria-haspopup', 'menu'); trigger.setAttribute('aria-expanded', 'false');
+      var icon = document.createElement('span'); icon.textContent = '◎'; icon.setAttribute('aria-hidden', 'true');
+      var label = document.createElement('span'); label.className = 'lang-current';
+      var arrow = document.createElement('span'); arrow.className = 'lang-arrow'; arrow.textContent = '⌄'; arrow.setAttribute('aria-hidden', 'true');
+      trigger.appendChild(icon); trigger.appendChild(label); trigger.appendChild(arrow);
+      var menu = document.createElement('div');
+      menu.id = 'language-menu-' + index; menu.className = 'lang-menu'; menu.hidden = true;
+      menu.setAttribute('role', 'menu'); trigger.setAttribute('aria-controls', menu.id);
+      var status = document.createElement('small'); status.className = 'lang-status'; status.setAttribute('role', 'status'); status.hidden = true;
+      var items = LANGS.map(function (lang) {
+        var item = document.createElement('button');
+        item.type = 'button'; item.className = 'lang-option'; item.textContent = lang.title; item.lang = lang.htmlLang;
+        item.tabIndex = -1; item.setAttribute('role', 'menuitemradio'); item.setAttribute('data-language', lang.id);
+        item.addEventListener('click', function () { closeMenus(); trigger.focus(); setLang(lang.id); });
+        menu.appendChild(item); return item;
+      });
+      var entry = { box: box, trigger: trigger, menu: menu, label: label, items: items, status: status };
+      switchers.push(entry);
+      function open(at) {
+        closeMenus(); menu.hidden = false; trigger.setAttribute('aria-expanded', 'true');
+        items[at == null ? Math.max(0, LANGS.findIndex(function (lang) { return lang.id === current; })) : at].focus();
+      }
+      trigger.addEventListener('click', function () { if (menu.hidden) open(); else closeMenus(); });
+      box.addEventListener('keydown', function (event) {
+        var i = items.indexOf(document.activeElement), key = event.key;
+        if (key === 'Escape' && !menu.hidden) { event.preventDefault(); event.stopPropagation(); closeMenus(); trigger.focus(); }
+        else if (key === 'ArrowDown' || key === 'ArrowUp') {
+          event.preventDefault(); event.stopPropagation();
+          if (menu.hidden) open(key === 'ArrowUp' ? items.length - 1 : 0);
+          else items[(i + (key === 'ArrowDown' ? 1 : -1) + items.length) % items.length].focus();
+        } else if (!menu.hidden && (key === 'Home' || key === 'End')) { event.preventDefault(); items[key === 'Home' ? 0 : items.length - 1].focus(); }
+        else if (key === 'Tab' && !menu.hidden) { closeMenus(); trigger.focus(); }
+      });
+      box.addEventListener('focusout', function (event) { if (!box.contains(event.relatedTarget)) { menu.hidden = true; trigger.setAttribute('aria-expanded', 'false'); } });
+      box.appendChild(trigger); box.appendChild(menu); box.appendChild(status); host.appendChild(box);
     });
-    nav.appendChild(box);
+    document.addEventListener('pointerdown', function (event) {
+      if (!switchers.some(function (entry) { return entry.box.contains(event.target); })) closeMenus();
+    });
+    refreshSwitcher();
+  }
+
+  function closeMenus() {
+    switchers.forEach(function (entry) { entry.menu.hidden = true; entry.trigger.setAttribute('aria-expanded', 'false'); });
   }
 
   function refreshSwitcher() {
-    var box = document.getElementById("lang-switch");
-    if (!box) return;
-    var buttons = box.querySelectorAll(".lang-switch-btn");
-    for (var i = 0; i < buttons.length; i += 1) {
-      buttons[i].setAttribute("aria-pressed", String(LANGS[i] && LANGS[i].id === current));
-    }
-    box.setAttribute("aria-label", fmt("ui.switchLang", "切换语言"));
+    var lang = LANGS.find(function (entry) { return entry.id === current; });
+    var busy = requested === 'zh-Hant' && !converter;
+    switchers.forEach(function (entry) {
+      entry.label.textContent = lang.label + (busy ? '…' : '');
+      entry.trigger.setAttribute('aria-label', fmt('ui.switchLang', '切换语言') + '：' + lang.title);
+      entry.trigger.setAttribute('aria-busy', String(busy));
+      entry.menu.setAttribute('aria-label', fmt('ui.switchLang', '切换语言'));
+      entry.items.forEach(function (item, i) { item.setAttribute('aria-checked', String(LANGS[i].id === current)); });
+      entry.status.textContent = notice; entry.status.hidden = !notice;
+    });
   }
 
-  function setLang(id) {
-    var next = normalize(id);
-    if (!next || next === current) return;
+  function commitLanguage(next, persist) {
     current = next;
-    try { window.localStorage.setItem(STORAGE_KEY, current); } catch (err) { /* 忽略 */ }
+    if (persist) { try { window.localStorage.setItem(STORAGE_KEY, current); } catch (err) { /* 忽略 */ } }
     apply();
     refreshSwitcher();
     document.dispatchEvent(new CustomEvent(CHANGE_EVENT, { detail: { lang: current } }));
+  }
+
+  function setLang(id, persist) {
+    var next = normalize(id);
+    if (!next) return Promise.resolve();
+    if (bakedLanguage && next !== current) {
+      if (persist !== false) { try { window.localStorage.setItem(STORAGE_KEY, next); } catch (err) { /* 忽略 */ } }
+      window.location.assign(languageUrl(next));
+      return Promise.resolve();
+    }
+    requested = next; notice = ''; refreshSwitcher();
+    if (next === current && (next !== 'zh-Hant' || converter)) return Promise.resolve();
+    if (next !== 'zh-Hant' || converter) { commitLanguage(next, persist !== false); return Promise.resolve(); }
+    return loadTraditional().then(function () {
+      if (requested === next) commitLanguage(next, persist !== false);
+    }).catch(function () {
+      if (requested !== next) return;
+      requested = current; notice = '繁體中文載入失敗，請重新選擇重試。'; refreshSwitcher();
+    });
+  }
+
+  function languageUrl(id, href) {
+    var next = normalize(id) || 'zh';
+    var url = new URL(href || window.location.href, window.location.origin);
+    var pathname = url.pathname.replace(/^\/(?:zh-hant|en|ja)(?=\/|$)/, '') || '/';
+    if (pathname === '/index.html') pathname = '/';
+    var prefix = next === 'zh' ? '' : next === 'zh-Hant' ? '/zh-hant' : '/' + next;
+    url.searchParams.delete('lang');
+    return prefix + pathname + url.search + url.hash;
   }
 
   // ---------- 对外接口 ----------
@@ -1250,12 +1388,23 @@
     get current() { return current; },
     t: fmt,
     fmt: fmt,
-    setLang: setLang
+    setLang: setLang,
+    mountMenus: injectSwitcher,
+    languageUrl: languageUrl,
+    url: function (href) {
+      if (!bakedLanguage) return href;
+      var target = new URL(href, window.location.origin);
+      if (target.origin !== window.location.origin && target.origin !== 'https://xn--pssy23gqgbz2d718b.com') return href;
+      return languageUrl(current, href);
+    }
   };
 
   function init() {
+    var legacy = normalize(new URLSearchParams(window.location.search).get('lang'));
+    if (bakedLanguage && legacy) { window.location.replace(languageUrl(legacy)); return; }
     apply();
     injectSwitcher();
+    if (initial === 'zh-Hant') setLang(initial, false);
   }
 
   if (document.readyState === "loading") {

@@ -11,9 +11,10 @@ import { activeChars, byChar, ORIGIN } from '../lib/v2.mjs';
       var c = p.get('c'), s = p.get('s'), q = p.get('q');
       var safe = function (v) { return v && /^[a-z0-9-]+$/i.test(v) ? v.toLowerCase() : ''; };
       c = safe(c); s = safe(s);
-      if (q) location.replace('/search.html?q=' + encodeURIComponent(q));
-      else if (c) location.replace('/characters/' + c + (s ? '/' + s : '') + '.html');
-      else if (s) location.replace('/categories/' + s + '.html');
+      var P = function (href) { return window.SiteLang ? SiteLang.url(href) : href; };
+      if (q) location.replace(P('/search.html?q=' + encodeURIComponent(q)));
+      else if (c) location.replace(P('/characters/' + c + (s ? '/' + s : '') + '.html'));
+      else if (s) location.replace(P('/categories/' + s + '.html'));
     })();
   </script></Fragment>
   <header class="feed-head"><div><h1 data-i18n="v2.nav.characters">角色</h1><p data-i18n="v2.charsSub">选择一个角色，进入对应作品。</p></div></header>

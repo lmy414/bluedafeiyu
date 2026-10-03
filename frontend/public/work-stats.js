@@ -28,7 +28,13 @@
     metric: function (id, mode) { return snapshot && snapshot.available && snapshot.works[id] ? snapshot.works[id][mode === 'downloads' ? 'downloads' : 'views'] || 0 : 0; },
     available: function () { return !!(snapshot && snapshot.available); },
     cardHTML: function (slug, w, noChar) {
-      return '<article class="media-card" style="--c:' + esc(w.col) + ';--cs:' + esc(w.cs) + '" data-k="' + esc((w.k || []).join(' ')) + '"><a href="/works/' + esc(slug) + '.html" data-work="' + esc(slug) + '"><div class="ph"' + (w.w && w.h ? ' style="aspect-ratio:' + w.w + '/' + w.h + '"' : '') + '><img loading="lazy" decoding="async" src="' + esc(w.i || w.l) + '" alt="' + esc(w.d || w.n) + '"' + (w.w && w.h ? ' width="' + w.w + '" height="' + w.h + '"' : '') + '><span class="lic" data-lic="' + esc(w.lk) + '" title="' + esc(w.lt) + '">' + esc(w.ls || w.lt) + '</span><span class="badge">' + esc(w.ts || '作品') + '</span>' + (w.s ? '<span class="dl">↓ ' + esc(w.s) + '</span>' : '') + '</div><div class="meta"><h3>' + esc(w.n) + '</h3><p>' + (noChar ? '' : '<span class="who"><i></i>' + esc(w.c) + '</span>') + '<span>' + esc(w.dt) + '</span></p><p class="work-stats" data-work-stats="' + esc(w.id) + '"></p></div></a></article>';
+      var href = '/works/' + slug + '.html';
+      if (window.SiteLang) href = SiteLang.url(href);
+      var licenseFull = T('license.' + w.lk, w.lt);
+      var licenseShort = T('v2.licenseShort.' + w.lk, w.ls || w.lt);
+      var kinds = {meme:'梗图',illustration:'插画',setting:'设定',comic:'漫画'};
+      var type = (w.k || []).map(function (id) { return T('v2.type.' + id, kinds[id] || id); }).join(' · ') || T('v2.work', '作品');
+      return '<article class="media-card" style="--c:' + esc(w.col) + ';--cs:' + esc(w.cs) + '" data-k="' + esc((w.k || []).join(' ')) + '"><a href="' + esc(href) + '" data-work="' + esc(slug) + '"><div class="ph"' + (w.w && w.h ? ' style="aspect-ratio:' + w.w + '/' + w.h + '"' : '') + '><img loading="lazy" decoding="async" src="' + esc(w.i || w.l) + '" alt="' + esc(w.d || w.n) + '"' + (w.w && w.h ? ' width="' + w.w + '" height="' + w.h + '"' : '') + '><span class="lic" data-lic="' + esc(w.lk) + '" title="' + esc(licenseFull) + '">' + esc(licenseShort) + '</span><span class="badge">' + esc(type) + '</span>' + (w.s ? '<span class="dl">↓ ' + esc(w.s) + '</span>' : '') + '</div><div class="meta"><h3>' + esc(w.n) + '</h3><p>' + (noChar ? '' : '<span class="who"><i></i>' + esc(w.c) + '</span>') + '<span>' + esc(w.dt) + '</span></p><p class="work-stats" data-work-stats="' + esc(w.id) + '"></p></div></a></article>';
     },
   };
   document.addEventListener('work:show', function (e) { track('work_view', e.detail.id); paint(); });

@@ -292,6 +292,12 @@ html.wm-open { overflow: hidden; }
 .topbar-feed .topnav, .side-lang .topnav { display: flex; align-items: center; }
 .topbar-feed .lang-switch { margin-left: 0; }
 .side-lang { display: none; }
+.side-lang .lang-switch { width: 100%; margin-left: 0; }
+.side-lang .lang-trigger { width: 100%; justify-content: flex-start; }
+.side-lang .lang-arrow { margin-left: auto; }
+.side-lang .lang-menu { position: static; min-width: 0; width: 100%; margin-top: var(--space-2); }
+.wm-language { position: absolute; top: 10px; right: 60px; z-index: 3; }
+.wm-language .lang-switch { margin-left: 0; }
 .ta-sep { width: 2px; height: 22px; background: var(--border-subtle); border-radius: 2px; }
 
 /* ---- 手机左侧抽屉 ---- */
@@ -334,7 +340,7 @@ html.wm-open { overflow: hidden; }
 .empty-v2 { padding: var(--space-8); text-align: center; color: var(--text-secondary); background: var(--bg-surface); border: 2px dashed var(--border-default); border-radius: var(--radius-md); }
 
 /* ---- 细节修正 ---- */
-.top-actions .btn, .top-actions .lang-switch-btn { white-space: nowrap; flex: none; }
+.top-actions .btn, .top-actions .lang-trigger { white-space: nowrap; flex: none; }
 .top-actions { flex: none; }
 .wm-info .who.big { display: inline-flex; margin-bottom: var(--space-2); }
 .wm-info h2 { margin-top: var(--space-3); }

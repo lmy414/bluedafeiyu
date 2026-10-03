@@ -3,13 +3,17 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "prebuild": "node scripts/prepare-language-assets.mjs",
+    "predev": "node scripts/prepare-language-assets.mjs",
     "build": "astro build",
     "dev": "astro dev --host 127.0.0.1",
     "preview": "astro preview --host 127.0.0.1",
-    "test": "node --test tests/legacy-parity.test.mjs tests/theme.test.mjs tests/image-metadata.test.mjs && node tests/source-shape.mjs",
+    "test": "node --test tests/legacy-parity.test.mjs tests/theme.test.mjs tests/image-metadata.test.mjs tests/language.test.mjs tests/language-pages.test.mjs && node tests/source-shape.mjs",
     "build:site": "node ../tools/build_site.mjs"
   },
   "dependencies": {
-    "astro": "7.3.5"
+    "astro": "7.3.5",
+    "linkedom": "0.18.13",
+    "opencc-js": "1.4.2"
   }
 }
