@@ -3,10 +3,18 @@ import type { CollectionConfig } from 'payload'
 import { canDeleteContent, canManageContent, canPublish, canReadContent } from '../lib/access'
 import { auditAfterChange, auditAfterDelete } from '../lib/audit'
 import { WorksBulkEndpoint } from '../endpoints/works-bulk'
+import { submissionAttribution } from '../lib/attribution.mjs'
 
 const ownerOnlyUpdate = ({ req }: any) => req.user?.role === 'owner' || req.context?.skipFieldAccess === true
 
-const PUBLIC_FIELDS = ['name', 'description', 'commentary', 'character', 'categories', 'tags', 'status'] as const
+const normalizeSubmitter = ({ data, originalDoc }: any) => {
+  if (!data?.submitter) return data
+  const who = { ...(originalDoc?.submitter || {}), ...data.submitter }
+  const normalized = submissionAttribution({ credit: who.credit, creditName: who.credit ? who.name : undefined, creditUrl: who.credit ? who.url : undefined })
+  return normalized ? { ...data, submitter: normalized } : data
+}
+
+const PUBLIC_FIELDS = ['name', 'description', 'commentary', 'character', 'categories', 'tags', 'status', 'submitter'] as const
 
 function sameValue(left: unknown, right: unknown): boolean {
   return JSON.stringify(left ?? null) === JSON.stringify(right ?? null)
@@ -51,6 +59,7 @@ export const Works: CollectionConfig = {
   },
   endpoints: [WorksBulkEndpoint],
   hooks: {
+    beforeValidate: [normalizeSubmitter],
     beforeChange: [beforeChangeNeedsPublish],
     afterChange: [auditAfterChange('works')],
     afterDelete: [auditAfterDelete('works')],
@@ -111,7 +120,12 @@ export const Works: CollectionConfig = {
     { name: 'width', type: 'number', label: '宽' },
     { name: 'height', type: 'number', label: '高' },
     { name: 'fileSize', type: 'number', label: '文件大小' },
-    { name: 'submitter', type: 'group', label: '投稿者', fields: [{ name: 'name', type: 'text' }, { name: 'github', type: 'text' }] },
+    { name: 'submitter', type: 'group', label: '投稿者署名（与作品来源独立）', fields: [
+      { name: 'credit', type: 'select', label: '是否署名', options: [{ label: '不署名', value: 'anonymous' }, { label: '署名', value: 'named' }] },
+      { name: 'name', type: 'text', label: '署名名字' },
+      { name: 'url', type: 'text', label: '个人主页链接（可选）' },
+      { name: 'github', type: 'text', label: 'GitHub 用户名（历史记录）' },
+    ] },
     { name: 'origin', type: 'json', label: '来源信息' },
     { name: 'license', type: 'json', label: '授权信息' },
     {

@@ -119,6 +119,8 @@ describe('works-bulk original media model', () => {
 
   it('lets the owner explicitly include a rejected submission using edited content', async () => {
     const fixture = await makeFixture({ state: 'auto_rejected' })
+    fixture.submission.fields = { ...fixture.submission.fields, credit: 'named', creditName: '小鱼', creditUrl: 'https://home.example/me' }
+    fixture.submission.origin = { ...fixture.submission.origin, author: '原作者', sourceUrl: 'https://source.example/art' }
     const response = await bulkHandler(request(owner, {
       action: 'manual-include',
       confirm: 'MANUAL_INCLUDE',
@@ -134,6 +136,7 @@ describe('works-bulk original media model', () => {
     expect(fixture.calls.workCreates[0].data.preview).toBe(10)
     expect(fixture.calls.workCreates[0].data.review).toEqual(fixture.submission.review)
     expect(fixture.calls.workCreates[0].data.origin).toEqual(fixture.submission.origin)
+    expect(fixture.calls.workCreates[0].data.submitter).toEqual({ credit: 'named', name: '小鱼', url: 'https://home.example/me', github: '' })
     expect(fixture.calls.workCreates[0].data.workId).toBe(`sticker_${fixture.submission.sha256.slice(0, 24)}`)
     expect(fixture.calls.submissionUpdates[0].data.work).toBe('work-1')
     expect(fixture.calls.auditCreates[0].data.action).toBe('submissions.manual-include')

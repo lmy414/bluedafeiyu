@@ -150,7 +150,7 @@
 
       "submit.h1": "Submit",
       "submit.lede":
-        "Hand your AI-girl fan stickers to us for archiving. Submit right on this page, or use the GitHub form: upload the image and fill in its name and character — a note is optional; the rest of the catalog info is completed by maintainers during review, and approved works are published in batches.",
+        "Submit your AI character fan art on this page or through GitHub: upload an image, enter its name and character, and choose whether to display credit. A note is optional. Maintainers review the remaining information and publish approved submissions in batches.",
       "submit.guide.title": "Submission guide",
       "submit.what.a": "This site collects ",
       "submit.what.b": "humanized fan stickers of AI characters",
@@ -170,7 +170,7 @@
         " PNG / JPG / GIF / WebP / APNG, up to 10 MB per image; upload the original whenever possible — avoid chat-window screenshots or recompressed copies.",
       "submit.onlyTitle": "When submitting you only need to:",
       "submit.onlyBody":
-        " Upload the image and fill in its name and character; a one-line note is optional. Tags, category, source, license and the detail-page copy are filled in by maintainers after visual review; if you know the source or license, mention it in the note or in a comment on the Issue.",
+        "Upload an image, enter its name and character, and choose whether to display credit. A credit name is required if selected; a personal homepage and note are optional. Maintainers add tags, categories, source, license and detail text during review. Put any known source or license information in the note or an Issue comment.",
       "submit.confirmTitle": "You must confirm three items before submitting:",
       "submit.confirm1":
         "I confirm I have the right to submit this image, or have obtained the original author's permission.",
@@ -188,7 +188,7 @@
       "submit.channel.github": "GitHub submission form",
       "submit.channel.githubOn": "Open · recommended",
       "submit.channel.githubDesc":
-        "Drag & drop the image right in; just fill in its name and character — the note is optional.",
+        "Drag and drop the image, enter its name and character, and choose whether to display credit. A credit name is required if selected; a homepage and note are optional.",
       "submit.channel.open": "Open the form",
       "submit.channel.feishu": "Feishu submission",
       "submit.channel.feishuTag": "Placeholder · coming soon",
@@ -204,8 +204,17 @@
       "submit.form.name": "Image name",
       "submit.form.desc": "One-line note",
       "submit.form.character": "Character",
+      "submit.form.credit": "Display credit",
+      "submit.form.anonymous": "No credit",
+      "submit.form.named": "Credit me",
+      "submit.form.creditName": "Credit name",
+      "submit.form.creditUrl": "Personal homepage (optional)",
+      "submit.form.creditHint": "Clicking your credited name opens your homepage. This identifies the submitter; put image source and original author information in the note.",
+      "submit.form.err.credit": "Choose whether to display credit.",
+      "submit.form.err.creditName": "Enter a credit name, up to 120 characters.",
+      "submit.form.err.creditUrl": "Enter a valid http:// or https:// homepage address.",
       "submit.form.metaHint":
-        "Tags, work type, source, license and contact info are added by maintainers during review; if you know the source or license, put it in the note above.",
+        "Tags, work type, source and license are added by maintainers during review; if you know the source or license, put it in the note above.",
       "submit.form.confirmLabel": "Confirm before submitting",
       "submit.form.confirmHint": "All three boxes must be checked to submit.",
       "submit.form.submit": "Submit on-site",
@@ -505,6 +514,7 @@
       "v2.prev": "Previous",
       "v2.next": "Next",
       "v2.author": "Author",
+      "v2.credit": "Credit",
       "v2.source": "Source",
       "v2.takedown": "Is this your work? Request attribution or removal",
       "v2.loadComments": "Show comments",
@@ -640,7 +650,7 @@
 
       "submit.h1": "投稿",
       "submit.lede":
-        "あなたの AI娘二次創作スタンプを私たちのアーカイブにどうぞ。このページから直接投稿するか、GitHub フォームをご利用ください。画像のアップロードと画像名・キャラの記入だけで、説明は任意です。その他の収録情報はメンテナーが審査時に補完し、承認後にまとめて公開されます。",
+        "AI娘の二次創作をこのページまたはGitHubから投稿できます。画像・名前・キャラを入力し、クレジット表記の有無を選んでください。説明は任意です。メンテナーが審査し、承認後にまとめて公開します。",
       "submit.guide.title": "投稿ガイド",
       "submit.what.a": "当サイトが収録するのは",
       "submit.what.b": "AIキャラの擬人化二次創作スタンプ",
@@ -658,7 +668,7 @@
         "PNG / JPG / GIF / WebP / APNG、1 枚 10 MB まで。できるだけ元画像をアップロードし、チャット画面のスクショや再圧縮した画像は避けてください。",
       "submit.onlyTitle": "投稿時に必要なもの：",
       "submit.onlyBody":
-        "画像のアップロード、画像名とキャラの記入だけ。ひとこと説明は任意です。タグ・分類・出所・ライセンス・詳細ページの文案は、メンテナーが画像を確認したうえで補完します。出所やライセンスをご存じなら、説明欄や Issue のコメントに書いてください。",
+        "画像・名前・キャラを入力し、クレジット表記の有無を選んでください。表記する場合は名前が必須で、個人ホームページと説明は任意です。タグ・分類・出所・ライセンス・詳細文は審査時に補完します。出所や許諾情報は説明欄かIssueコメントに記入してください。",
       "submit.confirmTitle": "送信前に次の 3 つに同意してください：",
       "submit.confirm1":
         "この画像を投稿する権利を持ち、または原作者の許諾を得ていることを確認します。",
@@ -676,7 +686,7 @@
       "submit.channel.github": "GitHub 投稿フォーム",
       "submit.channel.githubOn": "開通済み · おすすめ",
       "submit.channel.githubDesc":
-        "画像をドラッグして直接アップロードできます。記入は画像名とキャラだけで、説明は任意。",
+        "画像をドラッグしてアップロードし、画像名・キャラ・クレジット表記の有無を入力します。表記する場合は名前が必須で、個人ホームページと説明は任意です。",
       "submit.channel.open": "フォームを開く",
       "submit.channel.feishu": "Feishu 投稿",
       "submit.channel.feishuTag": "準備中 · もうすぐ開通",
@@ -692,8 +702,17 @@
       "submit.form.name": "画像の名前",
       "submit.form.desc": "ひとこと説明",
       "submit.form.character": "キャラ",
+      "submit.form.credit": "クレジット表記",
+      "submit.form.anonymous": "表記しない",
+      "submit.form.named": "表記する",
+      "submit.form.creditName": "表記する名前",
+      "submit.form.creditUrl": "個人ホームページ（任意）",
+      "submit.form.creditHint": "名前をクリックすると個人ホームページが開きます。投稿者のクレジットと作品の出所は別です。原作者や出所は説明欄に記入してください。",
+      "submit.form.err.credit": "クレジットを表記するか選択してください。",
+      "submit.form.err.creditName": "表記する名前を120文字以内で入力してください。",
+      "submit.form.err.creditUrl": "有効な http:// または https:// のホームページURLを入力してください。",
       "submit.form.metaHint":
-        "タグ・作品タイプ・出所・ライセンス・連絡先はメンテナーが審査時に補完します。出所やライセンスをご存じなら、上の説明欄に書いてください。",
+        "タグ・作品タイプ・出所・ライセンスはメンテナーが審査時に補完します。出所やライセンスをご存じなら、上の説明欄に書いてください。",
       "submit.form.confirmLabel": "送信前の確認",
       "submit.form.confirmHint": "3 つすべてチェックしないと送信できません。",
       "submit.form.submit": "サイト内送信",
@@ -991,6 +1010,7 @@
       "v2.prev": "前へ",
       "v2.next": "次へ",
       "v2.author": "作者",
+      "v2.credit": "クレジット",
       "v2.source": "出所",
       "v2.takedown": "あなたの作品ですか？署名・削除を申請",
       "v2.loadComments": "コメントを表示",

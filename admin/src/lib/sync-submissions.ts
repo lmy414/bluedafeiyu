@@ -3,6 +3,7 @@ import crypto from 'node:crypto'
 import fs from 'node:fs/promises'
 import os from 'node:os'
 import path from 'node:path'
+import { submissionAttribution } from './attribution.mjs'
 
 import type { Payload } from 'payload'
 import sharp, { type Metadata } from 'sharp'
@@ -305,6 +306,7 @@ export async function syncSubmissions(payload: Payload, options: { baseUrl?: str
                 changeAction: 'add',
                 review: item.review || null,
                 origin: item.origin || {},
+                submitter: submissionAttribution(item.fields || {}) || undefined,
                 legacySource: 'submission-sync',
                 legacyData: { createdAt, updatedAt: createdAt },
                 createdAt,

@@ -286,6 +286,23 @@ test('planBatch：合格条目生成公开记录', async (t) => {
   assert.equal(item.previewRel.endsWith('.webp'), true);
 });
 
+test('planBatch：署名发布到 submitter，来源不变，匿名不泄露 GitHub 用户名', async (t) => {
+  for (const credit of ['named', 'anonymous']) {
+    const ws = await makeWorkspace(t);
+    const entry = writeReady(ws);
+    entry.fields = { ...entry.fields, credit, creditName: '小鱼', creditUrl: 'https://home.example/me' };
+    const cfg = configFor(ws);
+    const plan = planBatch(cfg, [entry], loadManifests(cfg.siteDataDir));
+    assert.equal(plan.publishable.length, 1);
+    const record = plan.publishable[0].record;
+    assert.equal(record.submitter.name, credit === 'named' ? '小鱼' : '');
+    assert.equal(record.submitter.url, credit === 'named' ? 'https://home.example/me' : '');
+    assert.equal(record.submitter.github, '');
+    assert.equal(record.origin.author, 'tester');
+    assert.equal(record.origin.sourceUrl, 'https://example.com/p/1');
+  }
+});
+
 test('planBatch：不完整内容一律留在 ready 并给出原因', async (t) => {
   const ws = await makeWorkspace(t);
   // 缺角色

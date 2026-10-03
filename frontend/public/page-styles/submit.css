@@ -2,6 +2,8 @@
     /* 页面专属样式：只做本页组合，公共组件（.panel/.form/.btn/.email-preview…）一律用 styles.css。
        颜色只用变量，禁止硬编码色值。旋转只给装饰容器，表单控件保持水平。 */
 
+    #credit-fields:not([hidden]) { display: grid; gap: var(--space-4); }
+
     /* ---- 投稿指南纸卡：加宽填满左栏，右侧留给群内投稿 ---- */
     .guide-card {
       transform: rotate(-0.5deg);

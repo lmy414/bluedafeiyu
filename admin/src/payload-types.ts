@@ -370,7 +370,9 @@ export interface Work {
   height?: number | null;
   fileSize?: number | null;
   submitter?: {
+    credit?: ('anonymous' | 'named') | null;
     name?: string | null;
+    url?: string | null;
     github?: string | null;
   };
   origin?:
@@ -894,7 +896,9 @@ export interface WorksSelect<T extends boolean = true> {
   submitter?:
     | T
     | {
+        credit?: T;
         name?: T;
+        url?: T;
         github?: T;
       };
   origin?: T;

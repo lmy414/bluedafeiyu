@@ -64,12 +64,12 @@ async function setup(t, { env = {}, overrides = {}, intakeOverrides = {}, vocabu
   return { base, cfg, queue, bridge, intakeRoot, contentDir };
 }
 
-async function seedPassed(queue, { content = VALID_CONTENT, suffix = '', source = 'web', origin = undefined } = {}) {
+async function seedPassed(queue, { content = VALID_CONTENT, suffix = '', source = 'web', origin = undefined, fields = {} } = {}) {
   const { item } = await queue.enqueue({
     source,
     sourceId: `${source}:bridge${suffix}`,
     buffer: Buffer.concat([TINY_PNG, Buffer.from(suffix || '0')]),
-    fields: { name: 'r', character: 'deepseek' },
+    fields: { name: 'r', character: 'deepseek', ...fields },
     ...(origin ? { origin } : {}),
   });
   await queue.transition(item.id, 'review.start', { actor: 'ai' });
@@ -183,6 +183,18 @@ test('auto_passed 且内容完整时写入 inbox + meta，状态 ready', async (
   assert.equal(stored.state, STATES.AUTO_PASSED, '桥接不改动公开投稿状态机');
   assert.equal(stored.bridge.status, 'ready');
   assert.equal(stored.bridge.sha256, item.sha256);
+});
+
+test('审核桥接保留署名字段，并独立保留来源', async (t) => {
+  const { queue, bridge, intakeRoot } = await setup(t);
+  const origin = { author: '原作者', sourceUrl: 'https://source.example/art' };
+  const fields = { credit: 'named', creditName: '小鱼', creditUrl: 'https://home.example/me' };
+  const item = await seedPassed(queue, { origin, fields });
+  await bridge.bridgeItem(item.id);
+  const meta = JSON.parse(await fs.readFile(path.join(intakeRoot, 'meta', `${item.sha256}.json`), 'utf8'));
+  for (const [key, value] of Object.entries(fields)) assert.equal(meta.fields[key], value);
+  assert.equal(meta.origin.author, origin.author);
+  assert.equal(meta.origin.sourceUrl, origin.sourceUrl);
 });
 
 test('QQ 来源 pass 后中转 meta 用 origin.type=qq-group 与 license=unknown，不需要来源/授权字段', async (t) => {

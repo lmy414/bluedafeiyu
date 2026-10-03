@@ -174,6 +174,19 @@ test('只处理带 sticker-submission 标签的 Issue，并只发给白名单域
   assert.equal(tokenSeen.attachment, '', '附件请求不能带 token');
 });
 
+test('GitHub 署名字段入队，匿名不公开发帖账号作为署名', async (t) => {
+  for (const mode of ['署名', '不署名']) {
+    const entry = { ...LABELED_ISSUE, body: LABELED_ISSUE.body + `\n\n### 是否署名\n\n${mode}\n\n### 署名名字（选择署名时必填）\n\n小鱼\n\n### 个人主页链接（可选）\n\nhttps://home.example/me` };
+    const { queue, adapter } = await setup(t, { fetchImpl: issueFetch({ issues: [entry], downloads: [], tokenSeen: {} }) });
+    assert.equal((await adapter.pullIssues())[0].status, 'staged');
+    const [item] = await queue.list();
+    assert.equal(item.fields.credit, mode === '署名' ? 'named' : 'anonymous');
+    assert.equal(item.fields.creditName, mode === '署名' ? '小鱼' : '');
+    assert.equal(item.fields.creditUrl, mode === '署名' ? 'https://home.example/me' : '');
+    assert.equal(item.origin.submitter, entry.user.login, 'GitHub 账号仅保留为入站记录');
+  }
+});
+
 test('重复拉取不重复下载、不产生第二条', async (t) => {
   const downloads = [];
   const { queue, adapter } = await setup(t, {

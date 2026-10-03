@@ -5,6 +5,7 @@ import path from 'node:path'
 import type { Payload } from 'payload'
 
 import { isPlaceholderDescription } from './placeholder'
+import { safeHomepage } from './attribution.mjs'
 
 export const SITE_DATA_FILES = [
   'data/works.json',
@@ -141,8 +142,13 @@ function workRecord(doc: any, options: { originalUrlByWorkId?: Record<string, st
   setPreservingKeyOrder(base, 'sha256', doc.sha256 ?? base.sha256 ?? '')
   setPreservingKeyOrder(base, 'characterId', characterId)
   setPreservingKeyOrder(base, 'tags', tags)
-  setPreservingKeyOrder(base, 'submitter', doc.submitter ?? base.submitter ?? {})
-  setPreservingKeyOrder(base, 'origin', doc.origin ?? base.origin ?? {})
+  const who = doc.submitter ?? base.submitter ?? {}
+  const submitter = who.credit === 'anonymous' ? { credit: 'anonymous', name: '', url: '', github: '' }
+    : who.credit === 'named' ? { ...who, url: safeHomepage(who.url), github: '' } : who
+  setPreservingKeyOrder(base, 'submitter', submitter)
+  const origin = { ...(doc.origin ?? base.origin ?? {}) }
+  if (who.credit === 'anonymous') delete origin.submitter
+  setPreservingKeyOrder(base, 'origin', origin)
   setPreservingKeyOrder(base, 'license', doc.license ?? base.license ?? {})
   setPreservingKeyOrder(base, 'status', status)
   setPreservingKeyOrder(base, 'createdAt', createdAt)

@@ -800,6 +800,9 @@ const FIELD_LABELS = {
   内容来源: 'originType',
   来源作者: 'originAuthor',
   来源链接: 'originUrl',
+  是否署名: 'credit',
+  '署名名字（选择署名时必填）': 'creditName',
+  '个人主页链接（可选）': 'creditUrl',
   授权状态: 'licenseType',
   授权说明: 'licenseNote',
 };

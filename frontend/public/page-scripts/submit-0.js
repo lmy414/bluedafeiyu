@@ -17,6 +17,10 @@
       var nameInput = document.getElementById("f-name");
       var descInput = document.getElementById("f-desc");
       var characterSelect = document.getElementById("f-character");
+      var creditSelect = document.getElementById("f-credit");
+      var creditFields = document.getElementById("credit-fields");
+      var creditName = document.getElementById("f-credit-name");
+      var creditUrl = document.getElementById("f-credit-url");
       var confirmBoxes = [
         document.getElementById("f-confirm-1"),
         document.getElementById("f-confirm-2"),
@@ -50,6 +54,14 @@
         renderStatus();
       }
       function clearStatus() { lastStatus = null; renderStatus(); }
+
+      function updateCredit() {
+        var named = creditSelect.value === "named";
+        creditFields.hidden = !named;
+        creditName.required = named;
+      }
+      creditSelect.addEventListener("change", updateCredit);
+      updateCredit();
 
       function extOf(filename) {
         var match = /\.([a-z0-9]+)$/i.exec(String(filename || ""));
@@ -85,6 +97,23 @@
         }
         if (descInput.value.trim().length > MAX_DESC) {
           return { key: "submit.form.err.desc", fallback: "说明不能超过 500 字。", field: descInput };
+        }
+        if (creditSelect.value !== "named" && creditSelect.value !== "anonymous") {
+          return { key: "submit.form.err.credit", fallback: "请选择是否署名。", field: creditSelect };
+        }
+        if (creditSelect.value === "named") {
+          if (!creditName.value.trim() || creditName.value.trim().length > 120) {
+            return { key: "submit.form.err.creditName", fallback: "请填写署名名字，且不超过 120 字。", field: creditName };
+          }
+          var homepage = creditUrl.value.trim();
+          if (homepage) {
+            try {
+              var parsedUrl = new URL(homepage);
+              if (!/^https?:$/.test(parsedUrl.protocol) || parsedUrl.username || parsedUrl.password || /\s/.test(homepage) || homepage.length > 2048) throw new Error("invalid homepage");
+            } catch (err) {
+              return { key: "submit.form.err.creditUrl", fallback: "个人主页链接须为有效的 http:// 或 https:// 地址。", field: creditUrl };
+            }
+          }
         }
         for (var i = 0; i < confirmBoxes.length; i += 1) {
           if (!confirmBoxes[i].checked) {
@@ -127,6 +156,11 @@
         data.append("name", nameInput.value.trim());
         data.append("character", characterSelect.value);
         data.append("description", descInput.value.trim());
+        data.append("credit", creditSelect.value);
+        if (creditSelect.value === "named") {
+          data.append("creditName", creditName.value.trim());
+          data.append("creditUrl", creditUrl.value.trim());
+        }
         data.append("turnstileToken", String(turnstileInput.value || ""));
 
         busy = true;
@@ -153,6 +187,7 @@
           .then(function (outcome) {
             if (outcome.response.ok && outcome.payload && outcome.payload.ok === true) {
               form.reset();
+              updateCredit();
               resetTurnstile();
               setStatus("ok", "submit.form.success", "提交成功，感谢！维护者审核通过后会批量发布。");
             } else {

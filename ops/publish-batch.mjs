@@ -39,6 +39,7 @@ import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 import { resolveConfig } from '../tools/intake/core.mjs';
+import { submissionAttribution } from '../admin/src/lib/attribution.mjs';
 
 export const PUBLISH_SCHEMA = 'publish-batch/1';
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -396,6 +397,7 @@ function extractContent(entry) {
     licenseType: firstDefined(fields.licenseType, license.type, typeof entry.license === 'string' ? entry.license : undefined),
     licenseNote: firstDefined(fields.licenseNote, license.note),
     submitter: firstDefined(origin.submitter, fields.submitter, entry.submitter),
+    attribution: submissionAttribution(fields),
   };
 }
 
@@ -423,7 +425,9 @@ export function validateEntry(cfg, entry, manifests, nowIso) {
     }
   }
 
-  const content = extractContent(entry);
+  let content;
+  try { content = extractContent(entry); }
+  catch (error) { return { ok: false, problems: [...problems, error.message] }; }
   const name = checkText(content.name, { label: 'name', max: TEXT_LIMITS.name, required: true });
   if (!name.ok) problems.push(name.reason);
   const description = checkText(content.description, { label: 'description', max: TEXT_LIMITS.description });
@@ -531,6 +535,7 @@ export function validateEntry(cfg, entry, manifests, nowIso) {
     submitter: {
       name: String(content.submitter || ''),
       github: String(content.submitter || ''),
+      ...(content.attribution || {}),
     },
     origin: {
       type: content.originType !== undefined ? String(content.originType) : 'unknown',

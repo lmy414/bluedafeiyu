@@ -4,6 +4,7 @@ import type { Endpoint, PayloadRequest } from 'payload'
 import { json, readJsonBody, requireOwnerOrBot } from '../lib/endpoint-auth'
 import { writeAudit } from '../lib/audit'
 import { validateContent } from '../lib/sync-submissions'
+import { submissionAttribution } from '../lib/attribution.mjs'
 
 const ALLOWED_ACTIONS = ['hide', 'restore', 'remove', 'delete', 'set-categories', 'add-to-topic', 'include', 'manual-include'] as const
 type BulkAction = (typeof ALLOWED_ACTIONS)[number]
@@ -132,6 +133,7 @@ async function includeSubmissions(req: PayloadRequest, ids: string[]): Promise<{
         changeAction: 'add',
         review: doc.review || null,
         origin: doc.origin || {},
+        submitter: submissionAttribution(doc.fields || {}) || undefined,
         legacySource: 'submission-sync',
       },
       context: { audit: false, skipNeedsPublish: true, skipFieldAccess: true },
@@ -196,6 +198,7 @@ async function manualInclude(req: PayloadRequest, body: BulkBody): Promise<Respo
       changeAction: 'add',
       review: doc.review || null,
       origin: doc.origin || {},
+      submitter: submissionAttribution(doc.fields || {}) || undefined,
       legacySource: 'submission-sync',
     },
     context: { audit: false, skipNeedsPublish: true, skipFieldAccess: true },

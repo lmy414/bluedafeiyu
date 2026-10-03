@@ -293,6 +293,7 @@ export async function createBridge({
           description: check.value.description,
           character: check.value.characterId,
           tags: check.value.tags,
+          ...(item.fields?.credit ? { credit: item.fields.credit, creditName: item.fields.creditName, creditUrl: item.fields.creditUrl } : {}),
         },
         content: check.value,
         origin: normalizeOrigin(item),

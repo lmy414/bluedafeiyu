@@ -6,7 +6,7 @@ import SubmissionForm from '../components/SubmissionForm.astro';
 <div class="page">
 
     <h1 class="page-title" data-i18n="submit.h1">投稿</h1>
-    <p class="lede" data-i18n="submit.lede">把你的 AI 娘二创表情包交给我们归档。可以直接在本页快速投稿，也可以走 GitHub 表单；填写图片、名称和角色即可，说明可选；其余收录信息由维护者审核时补齐，审核通过后批量发布。</p>
+    <p class="lede" data-i18n="submit.lede">把你的 AI 娘二创表情包交给我们归档。可以直接在本页快速投稿，也可以走 GitHub 表单；填写图片、名称、角色，并选择是否署名，说明可选；其余收录信息由维护者审核时补齐，审核通过后批量发布。</p>
 
     <h2 class="section-label" data-i18n="submit.guide.title">投稿指南</h2>
     <div class="submit-top">
@@ -22,7 +22,7 @@ import SubmissionForm from '../components/SubmissionForm.astro';
       </ol>
       <p data-i18n="submit.boundary">没写到的边界按常识判断，维护者保留是否收录的最终决定权。</p>
       <p><strong data-i18n="submit.format.a">格式要求：</strong><span data-i18n="submit.format.b">PNG / JPG / GIF / WebP / APNG，单张 ≤ 10 MB；尽量传原图，别传带聊天框的截图或二次压缩过的图。</span></p>
-      <p><strong class="marker-highlight" data-i18n="submit.onlyTitle">投稿时只需：</strong><span data-i18n="submit.onlyBody">上传图片、填写图片名称和角色，一句话说明可选。Tag、分类、来源、授权和详情页文案由维护者看图审核后补齐；如果知道来源或授权信息，可以写在说明里或在 Issue 评论中补充。</span></p>
+      <p><strong class="marker-highlight" data-i18n="submit.onlyTitle">投稿时只需：</strong><span data-i18n="submit.onlyBody">上传图片、填写图片名称和角色，并选择是否署名。署名时名字必填，个人主页可留空；一句话说明可选。Tag、分类、来源、授权和详情页文案由维护者看图审核后补齐；如果知道来源或授权信息，可以写在说明里或在 Issue 评论中补充。</span></p>
       <p><strong class="marker-highlight" data-i18n="submit.confirmTitle">提交前必须确认三条：</strong></p>
       <ol class="rule-list">
         <li data-i18n="submit.confirm1">我确认自己有权提交这张图片，或已获原作者允许；</li>
@@ -60,7 +60,7 @@ import SubmissionForm from '../components/SubmissionForm.astro';
           <h3 data-i18n="submit.channel.github">GitHub 投稿表单</h3>
           <span class="sticker-tag is-on" data-i18n="submit.channel.githubOn">已开通 · 推荐</span>
         </div>
-        <p class="channel-desc" data-i18n="submit.channel.githubDesc">可直接拖图上传，只需填写图片名称、角色，说明可选。</p>
+        <p class="channel-desc" data-i18n="submit.channel.githubDesc">可直接拖图上传，填写图片名称、角色并选择是否署名。署名名字按选择填写，个人主页和说明可选。</p>
         <a class="btn" href="https://github.com/lmy414/ai-girl-stickers/issues/new?template=sticker-submission.yml" target="_blank" rel="noopener">
           <svg class="icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 2.5H13.5V6.5" /><path d="M13.5 2.5 7.5 8.5" /><path d="M12 9.5V13.5H2.5V4H6.5" /></svg>
           <span data-i18n="submit.channel.open">打开投稿表单</span>

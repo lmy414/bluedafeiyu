@@ -156,8 +156,12 @@ beforeAll(async () => {
   secondBuffer = await makeJpeg(200, 120, 40)
   firstDigest = crypto.createHash('sha256').update(firstBuffer).digest('hex')
   secondDigest = crypto.createHash('sha256').update(secondBuffer).digest('hex')
-  const firstItem = queueItem({ buffer: firstBuffer, createdAt: VALID_CREATED_AT, name: '时间测试作品', suffix: 'first' })
-  const secondItem = queueItem({ buffer: secondBuffer, name: '无时间测试作品', suffix: 'second' })
+  const firstItem: any = queueItem({ buffer: firstBuffer, createdAt: VALID_CREATED_AT, name: '时间测试作品', suffix: 'first' })
+  const secondItem: any = queueItem({ buffer: secondBuffer, name: '无时间测试作品', suffix: 'second' })
+  firstItem.fields = { ...firstItem.fields, credit: 'named', creditName: '小鱼', creditUrl: 'https://home.example/me' }
+  firstItem.origin = { ...firstItem.origin, author: '原作者', sourceUrl: 'https://source.example/art' }
+  secondItem.fields = { ...secondItem.fields, credit: 'anonymous', creditName: '不公开的名字' }
+  secondItem.origin = { ...secondItem.origin, submitter: 'private-github-login', sourceUrl: 'https://source.example/second' }
   const bytesById = new Map([
     [firstItem.id, firstBuffer],
     [secondItem.id, secondBuffer],
@@ -219,6 +223,11 @@ describe('syncSubmissions timestamps and formats', () => {
     expect(exportedFallback.createdAt).toBe(fallback.createdAt)
     expect(exportedFallback.updatedAt).toBe(fallback.updatedAt)
     expect(exportedFallback.format).toBe('jpg')
+    expect(exportedTimed.submitter).toMatchObject({ credit: 'named', name: '小鱼', url: 'https://home.example/me', github: '' })
+    expect(exportedTimed.origin).toMatchObject({ author: '原作者', sourceUrl: 'https://source.example/art' })
+    expect(exportedFallback.submitter).toEqual({ credit: 'anonymous', name: '', url: '', github: '' })
+    expect(exportedFallback.origin.submitter).toBeUndefined()
+    expect(exportedFallback.origin.sourceUrl).toBe('https://source.example/second')
     const exportedIds = exported.map((record: any) => record.id)
     expect(exportedIds.slice(0, 2)).toEqual(['sticker_legacy_order_0', 'sticker_legacy_order_1'])
     expect(exportedIds.slice(-2)).toEqual([timed.workId, fallback.workId])

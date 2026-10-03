@@ -320,7 +320,8 @@
         '<button class="btn btn-line" type="button" data-copy-url="' + esc(location.origin + workUrl(slug)) + '">' + esc(T('work.copyLink', '复制链接')) + '</button></div>' +
         '<dl class="wm-facts">' +
           fact(T('work.field.license', '授权状态'), '<span class="lic-inline" data-lic="' + esc(w.lk) + '">' + esc(T('license.' + w.lk, w.lt)) + '</span>' + (w.ln ? '<small class="lic-note">' + esc(w.ln) + '</small>' : '')) +
-          fact(T('v2.author', '作者'), esc(w.a || T('work.unlabeled', '未标注'))) + fact(T('work.field.type', '类型'), esc(kindText(w.k) || T('v2.work', '作品'))) + (w.w && w.h ? fact(T('work.field.size', '尺寸'), w.w + ' × ' + w.h) : '') +
+          fact(w.ac ? T('v2.credit', '署名') : T('v2.author', '作者'), w.a && /^https?:\/\//i.test(w.au || '') ? '<a href="' + esc(w.au) + '" target="_blank" rel="nofollow noopener noreferrer">' + esc(w.a) + '</a>' : esc(w.a || (w.ac ? T('submit.form.anonymous', '不署名') : T('work.unlabeled', '未标注')))) + fact(T('work.field.type', '类型'), esc(kindText(w.k) || T('v2.work', '作品'))) + (w.w && w.h ? fact(T('work.field.size', '尺寸'), w.w + ' × ' + w.h) : '') +
+          (w.ac && w.sa ? fact(T('work.field.originAuthor', '来源作者'), esc(w.sa)) : '') +
           fact(T('v2.source', '来源'), w.su ? '<a href="' + esc(w.su) + '" target="_blank" rel="nofollow noopener">' + esc(src) + '</a>' : esc(src)) + fact(T('work.field.date', '收录时间'), esc(w.dt)) +
         '</dl>' +
         (w.tg && w.tg.length ? '<p class="wm-tags">' + w.tg.map(function (t) { return '<a href="/search.html?q=' + encodeURIComponent(t) + '">#' + esc(t) + '</a>'; }).join('') + '</p>' : '') +

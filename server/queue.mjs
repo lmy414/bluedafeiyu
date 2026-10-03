@@ -21,6 +21,7 @@
 import { createHash } from 'node:crypto';
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { submissionAttribution } from '../admin/src/lib/attribution.mjs';
 
 import { AI_CONTENT_SCHEMA, ALLOWED_IMAGE_EXT, FORMAT_EXT, SCHEMA, ensureStorageLayout } from './config.mjs';
 
@@ -93,11 +94,13 @@ export function resolveExtension(buffer, hint) {
 }
 
 function normalizeFields(fields = {}) {
+  const attribution = submissionAttribution(fields);
   return {
     name: String(fields.name || '').slice(0, 200),
     description: String(fields.description || '').slice(0, 2000),
     character: String(fields.character || ''),
     tags: Array.isArray(fields.tags) ? fields.tags.map((tag) => String(tag)).filter(Boolean).slice(0, 20) : [],
+    ...(attribution ? { credit: attribution.credit, creditName: attribution.name, creditUrl: attribution.url } : {}),
     ...(fields.extra && typeof fields.extra === 'object' ? { extra: fields.extra } : {}),
   };
 }
@@ -272,6 +275,7 @@ export async function createQueue(cfg, { now = () => Date.now(), reviewTimeoutMs
     if (data.length === 0) throw new Error('不能收空文件');
     if (data.length > cfg.maxBytes) throw new Error(`图片超过大小上限 ${cfg.maxBytes} 字节：${data.length}`);
     const { format, ext: resolvedExt, mime } = resolveExtension(data, ext);
+    const normalizedFields = normalizeFields(fields);
     const digest = sha256(data);
     const id = `sub_${digest.slice(0, 24)}`;
 
@@ -316,7 +320,7 @@ export async function createQueue(cfg, { now = () => Date.now(), reviewTimeoutMs
         bytes: data.length,
         source,
         sourceIds: [sourceId],
-        fields: normalizeFields(fields),
+        fields: normalizedFields,
         origin,
         state: STATES.RECEIVED,
         stateHistory: [{ event: 'enqueue', from: null, to: STATES.RECEIVED, at, actor: source, reason: '' }],

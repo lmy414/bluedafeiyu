@@ -29,6 +29,7 @@ import path from 'node:path';
 
 import { AI_CONTENT_SCHEMA, DEFAULT_TURNSTILE_TIMEOUT_MS, configSummary, isIpAddress, isTrustedProxy, loadContentVocabulary, normalizeIp } from './config.mjs';
 import { SOURCES, STATES, sha256 } from './queue.mjs';
+import { submissionAttribution } from '../admin/src/lib/attribution.mjs';
 import { reviewQueuedItem } from './review.mjs';
 import { validateContent as validateReviewContent } from './bridge.mjs';
 
@@ -300,7 +301,10 @@ function validateSubmissionFields(fields, characters, { characterMaxLength = 64 
   }
   const description = String(fields.description || '').trim();
   if (description.length > 500) return { error: '说明不超过 500 字' };
-  return { fields: { name, character, description } };
+  try {
+    const attribution = submissionAttribution(fields);
+    return { fields: { name, character, description, ...(attribution ? { credit: attribution.credit, creditName: attribution.name, creditUrl: attribution.url } : {}) } };
+  } catch (error) { return { error: error.message }; }
 }
 
 /* 标准 base64 字母表 + 可选补位；逗号不是合法字符，出现即视为 data: URI 或垃圾输入。 */
@@ -868,7 +872,7 @@ export function createPublicHandler({
           const raw = await readBody(req, cfg.maxBytes);
           let payload = {};
           try { payload = raw.length ? JSON.parse(raw.toString('utf8')) : {}; } catch { return sendJson(res, 400, { ok: false, error: 'invalid json' }); }
-          fields = { name: payload.name, character: payload.character, description: payload.description };
+          fields = { name: payload.name, character: payload.character, description: payload.description, credit: payload.credit, creditName: payload.creditName, creditUrl: payload.creditUrl };
           try {
             fileBuffer = decodeBase64Image(payload.dataBase64, cfg.maxBytes);
           } catch (error) {

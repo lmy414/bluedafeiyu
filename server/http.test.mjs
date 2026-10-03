@@ -155,6 +155,30 @@ async function submit(port, { fields = { name: '测试图', character: 'deepseek
   });
 }
 
+test('站内署名入队：支持仅名字，匿名清理残留；非法名字或主页拒绝', async (t) => {
+  for (const fields of [
+    { credit: 'named', creditName: '小鱼', creditUrl: 'https://home.example/me' },
+    { credit: 'named', creditName: '小鱼' },
+    { credit: 'anonymous', creditName: '隐藏名字', creditUrl: 'javascript:bad' },
+    { credit: 'named', creditName: '' },
+    { credit: 'named', creditName: '鱼', creditUrl: 'javascript:bad' },
+  ]) {
+    const { publicHandler, queue } = await setup(t);
+    await withServer(publicHandler, async (port) => {
+      const res = await submit(port, { fields: { name: '测试图', character: 'deepseek', ...fields } });
+      const invalid = fields.credit === 'named' && (!fields.creditName || fields.creditUrl === 'javascript:bad');
+      assert.equal(res.status, invalid ? 400 : 201, res.body.toString());
+      const items = await queue.list();
+      assert.equal(items.length, invalid ? 0 : 1);
+      if (!invalid) {
+        assert.equal(items[0].fields.creditName, fields.credit === 'anonymous' ? '' : '小鱼');
+        assert.equal(items[0].fields.creditUrl, fields.credit === 'anonymous' ? '' : fields.creditUrl || '');
+        assert.deepEqual(items[0].origin, { via: 'web' }, '不把署名写入作品来源');
+      }
+    });
+  }
+});
+
 test('公开健康检查不泄露密钥，且如实报告未配置项', async (t) => {
   const { publicHandler } = await setup(t);
   await withServer(publicHandler, async (port) => {

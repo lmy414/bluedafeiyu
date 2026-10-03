@@ -20,7 +20,25 @@ const turnstileSitekey = (import.meta.env.PUBLIC_TURNSTILE_SITEKEY || "").trim()
         <select id="f-character" name="character" required></select>
       </div>
       <div class="form-row">
-        <span class="hint" data-i18n="submit.form.metaHint">Tag、作品类型、来源、授权和联系信息由维护者审核时补充；知道来源或授权时可写在上面的说明里。</span>
+        <label for="f-credit"><span data-i18n="submit.form.credit">是否署名</span><span class="req-mark">*</span></label>
+        <select id="f-credit" name="credit" required>
+          <option value="anonymous" data-i18n="submit.form.anonymous">不署名</option>
+          <option value="named" data-i18n="submit.form.named">署名</option>
+        </select>
+      </div>
+      <div id="credit-fields" hidden>
+        <div class="form-row">
+          <label for="f-credit-name"><span data-i18n="submit.form.creditName">署名名字</span><span class="req-mark">*</span></label>
+          <input type="text" id="f-credit-name" name="creditName" autocomplete="nickname" maxlength="120" />
+        </div>
+        <div class="form-row">
+          <label for="f-credit-url" data-i18n="submit.form.creditUrl">个人主页链接（可选）</label>
+          <input type="url" id="f-credit-url" name="creditUrl" autocomplete="url" maxlength="2048" placeholder="https://" />
+          <span class="hint" data-i18n="submit.form.creditHint">填写链接后，点击署名名字即可打开个人主页。这里是投稿者署名，作品来源和原作者信息请写在说明里。</span>
+        </div>
+      </div>
+      <div class="form-row">
+        <span class="hint" data-i18n="submit.form.metaHint">Tag、作品类型、来源和授权由维护者审核时补充；知道来源或授权时可写在上面的说明里。</span>
       </div>
       <input type="hidden" id="f-turnstile-token" name="turnstileToken" value="" />
       <div class="form-row" id="turnstile-row" hidden>
