@@ -13701,8 +13701,7 @@
       "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/80",
       "submitter": "kaiyuey03",
       "assetId": "1b73eebb-35cb-4356-aa3c-1380fe4a50d7",
-      "assetUrl": "https://github.com/user-attachments/assets/1b73eebb-35cb-4356-aa3c-1380fe4a50d7",
-      "author": "@莱恩希德公爵"
+      "assetUrl": "https://github.com/user-attachments/assets/1b73eebb-35cb-4356-aa3c-1380fe4a50d7"
     },
     "license": {},
     "status": "published",
@@ -13752,9 +13751,9 @@
       "assetUrl": "https://github.com/user-attachments/assets/af46448b-71e1-4ff4-971e-81d4f79e9c0c"
     },
     "license": {},
-    "status": "removed",
+    "status": "published",
     "createdAt": "2026-10-02T06:01:20.681Z",
-    "updatedAt": "2026-10-03T03:19:44Z",
+    "updatedAt": "2026-10-02T06:01:20.681Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202610020010",
@@ -13798,8 +13797,7 @@
       "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/82",
       "submitter": "kaiyuey03",
       "assetId": "6268af71-866b-4cab-b258-77035194b72a",
-      "assetUrl": "https://github.com/user-attachments/assets/6268af71-866b-4cab-b258-77035194b72a",
-      "author": "@莱恩希德公爵"
+      "assetUrl": "https://github.com/user-attachments/assets/6268af71-866b-4cab-b258-77035194b72a"
     },
     "license": {},
     "status": "published",
@@ -13848,8 +13846,7 @@
       "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/83",
       "submitter": "kaiyuey03",
       "assetId": "1fdd51b7-bc42-40cf-a8c9-b20942deefba",
-      "assetUrl": "https://github.com/user-attachments/assets/1fdd51b7-bc42-40cf-a8c9-b20942deefba",
-      "author": "@莱恩希德公爵"
+      "assetUrl": "https://github.com/user-attachments/assets/1fdd51b7-bc42-40cf-a8c9-b20942deefba"
     },
     "license": {},
     "status": "published",
@@ -13899,8 +13896,7 @@
       "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/84",
       "submitter": "kaiyuey03",
       "assetId": "b8b5da3e-9b6e-4fa6-a881-90faef13ed3b",
-      "assetUrl": "https://github.com/user-attachments/assets/b8b5da3e-9b6e-4fa6-a881-90faef13ed3b",
-      "author": "@莱恩希德公爵"
+      "assetUrl": "https://github.com/user-attachments/assets/b8b5da3e-9b6e-4fa6-a881-90faef13ed3b"
     },
     "license": {},
     "status": "published",
@@ -13949,8 +13945,7 @@
       "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/85",
       "submitter": "kaiyuey03",
       "assetId": "21a4f0b1-2726-4d4f-8541-84d0c4bf2cd8",
-      "assetUrl": "https://github.com/user-attachments/assets/21a4f0b1-2726-4d4f-8541-84d0c4bf2cd8",
-      "author": "@莱恩希德公爵"
+      "assetUrl": "https://github.com/user-attachments/assets/21a4f0b1-2726-4d4f-8541-84d0c4bf2cd8"
     },
     "license": {},
     "status": "published",
@@ -14000,8 +13995,7 @@
       "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/86",
       "submitter": "kaiyuey03",
       "assetId": "808a8f5c-e3de-4828-a34d-40cae4a6719b",
-      "assetUrl": "https://github.com/user-attachments/assets/808a8f5c-e3de-4828-a34d-40cae4a6719b",
-      "author": "@莱恩希德公爵"
+      "assetUrl": "https://github.com/user-attachments/assets/808a8f5c-e3de-4828-a34d-40cae4a6719b"
     },
     "license": {},
     "status": "published",
@@ -14809,6 +14803,184 @@
     "slug": "deepseek202610020032",
     "categoryIds": [
       "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_9d9a59d84ee9558ffe6b2f99",
+    "name": "支持大肥鱼·月夜鲸娘",
+    "description": "深蓝发色的鲸鱼拟人女仆，在月夜水畔栏杆边微笑比心，裙摆与围裙上带有小鲸鱼标识。",
+    "commentary": "呜哇——月光下的水面好亮，我这条蓝色大肥鱼站在这里，尾巴上的星星都跟着一闪一闪啦！谢谢你们的支持，我会继续游得更远的，记得给我顺顺头发哦～",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/9d9a59d84ee9558f.webp",
+    "thumbnailPath": "submissions/previews/deepseek/9d9a59d84ee9558f.webp",
+    "fullPath": "submissions/large/deepseek/9d9a59d84ee9558f.webp",
+    "format": "webp",
+    "mimeType": "image/webp",
+    "isAnimated": false,
+    "width": 768,
+    "height": 1280,
+    "fileSize": 1057148,
+    "sha256": "9d9a59d84ee9558ffe6b2f99a844c5060542a7f901088d8667a6bb29d88723dc",
+    "characterId": "deepseek",
+    "tags": [
+      "拟人化",
+      "女仆装",
+      "鲸鱼",
+      "月夜",
+      "可爱",
+      "二创"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-02T22:50:21.821Z",
+    "updatedAt": "2026-10-02T22:50:21.821Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610020033",
+    "categoryIds": [
+      "setting",
+      "illustration"
+    ]
+  },
+  {
+    "id": "sticker_f20c92776d04b4419ceb226d",
+    "name": "支持大肥鱼·蓝鲸女仆装",
+    "description": "DeepSeek 蓝鲸吉祥物拟人化的蓝发女仆少女，带鲸耳与星空尾巴，双手交握略显害羞。",
+    "commentary": "我就是那条蓝色大肥鱼！今天换上女仆装站在门口，耳朵和尾巴都藏不住了，被盯着看还有点害羞。支持大肥鱼的话，就请多摸摸我的头吧～",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/f20c92776d04b441.webp",
+    "thumbnailPath": "submissions/previews/deepseek/f20c92776d04b441.webp",
+    "fullPath": "submissions/large/deepseek/f20c92776d04b441.webp",
+    "format": "webp",
+    "mimeType": "image/webp",
+    "isAnimated": false,
+    "width": 768,
+    "height": 1280,
+    "fileSize": 1039332,
+    "sha256": "f20c92776d04b4419ceb226d376036ead525646f0f361c241303f9a887681f4b",
+    "characterId": "deepseek",
+    "tags": [
+      "deepseek",
+      "蓝鲸",
+      "拟人化",
+      "女仆装",
+      "兽耳",
+      "星空尾巴",
+      "害羞"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-02T22:51:04.135Z",
+    "updatedAt": "2026-10-02T22:51:04.135Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610020034",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_80f3901a6c8e246a08b623e2",
+    "name": "给你点赞",
+    "description": "蓝发鲸鱼娘身穿女仆装，笑着竖起大拇指，表达赞许与鼓励。",
+    "commentary": "本鱼给你点个赞，今天也要开开心心一起冲浪哦！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/80f3901a6c8e246a.png",
+    "thumbnailPath": "submissions/previews/deepseek/80f3901a6c8e246a.webp",
+    "fullPath": "submissions/large/deepseek/80f3901a6c8e246a.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1080,
+    "height": 1080,
+    "fileSize": 1125571,
+    "sha256": "80f3901a6c8e246a08b623e2f11188b12a8a088e6ccbe8fc2f2cce75475156d4",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "拟人化",
+      "点赞",
+      "女仆装",
+      "鲸鱼娘",
+      "表情包"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-02T23:26:04.900Z",
+    "updatedAt": "2026-10-02T23:26:04.900Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610020035",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_5fe7e85d3eaf6840aa2e173f",
+    "name": "大肥鱼在跳舞",
+    "description": "DeepSeek 拟人化蓝发 Q 版小女仆坐在车内挥动双手跳舞的循环动图。",
+    "commentary": "嘿嘿，是我啦～蓝蓝的一小只，坐在车里晃来晃去，尾巴都要甩飞啦，快把我抱走！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/5fe7e85d3eaf6840.gif",
+    "thumbnailPath": "submissions/previews/deepseek/5fe7e85d3eaf6840.webp",
+    "fullPath": "submissions/large/deepseek/5fe7e85d3eaf6840.webp",
+    "format": "gif",
+    "mimeType": "image/gif",
+    "isAnimated": true,
+    "width": 240,
+    "height": 240,
+    "fileSize": 2584362,
+    "sha256": "5fe7e85d3eaf6840aa2e173f5cd6fd49fa43e2b0a5d84546613835135d214b59",
+    "characterId": "deepseek",
+    "tags": [
+      "deepseek",
+      "拟人化",
+      "Q版",
+      "动图",
+      "跳舞",
+      "蓝鲸",
+      "女仆装"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "issue": 88,
+      "issueTitle": "大肥鱼跳舞",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/88",
+      "submitter": "Ellpp",
+      "assetId": "d5b54c7e-25ca-4073-8093-1973a631abec",
+      "assetUrl": "https://github.com/user-attachments/assets/d5b54c7e-25ca-4073-8093-1973a631abec"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-03T00:00:27.911Z",
+    "updatedAt": "2026-10-03T00:00:27.911Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610030001",
+    "categoryIds": [
       "meme"
     ]
   }
