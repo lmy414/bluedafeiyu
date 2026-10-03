@@ -2,7 +2,7 @@
 import V2 from '../layouts/V2.astro';
 import SubmissionForm from '../components/SubmissionForm.astro';
 ---
-<V2 title="AI娘表情包投稿 - 站内快速投稿与 GitHub 表单 | 蓝色大肥鱼" desc="提交 AI 娘表情包只需上传图片、填写名称和角色，说明可选；站内快速投稿与 GitHub 表单均可，审核通过后批量发布，Tag、来源、授权与分类由维护者审核补充。" path="/submit.html" active="submit" bodyPage="submit" pageStyles={["/page-styles/submit.css"]} robots="index,follow">
+<V2 title="AI娘表情包投稿 - 站内快速投稿与 GitHub 表单 | 蓝色大肥鱼" desc="提交 AI 娘表情包，上传图片、填写名称和角色并选择是否署名；署名时填写名字，个人主页链接和说明可选。站内快速投稿与 GitHub 表单均可，来源、授权与分类由维护者审核补充。" path="/submit.html" active="submit" bodyPage="submit" pageStyles={["/page-styles/submit.css?v=2"]} robots="index,follow">
 <div class="page">
 
     <h1 class="page-title" data-i18n="submit.h1">投稿</h1>
@@ -92,6 +92,6 @@ import SubmissionForm from '../components/SubmissionForm.astro';
 </div>
 <Fragment slot="scripts">
     <script is:inline src="/site-data.js"></script>
-    <script is:inline src="/page-scripts/submit-0.js"></script>
+    <script is:inline src="/page-scripts/submit-0.js?v=2"></script>
 </Fragment>
 </V2>
