@@ -721,6 +721,7 @@ function repoDir(cfg, repoKey) {
 /**
  * 确保工作树干净并可发布：
  *   - 干净且 HEAD == origin/<branch> → 直接返回；
+ *   - 干净且仅落后远端 → 快进同步代码；
  *   - 否则只允许回收「上一次未完成批次」留下的改动：这些路径必须对上批次日志（或白名单），
  *     先 git reset --hard origin/<branch>，再删掉日志里未跟踪的残留文件；
  *   - 计划外改动（尤其没有批次日志时）一律拒绝，绝不替人 reset。
@@ -735,6 +736,11 @@ export function ensureRepoClean(cfg, exec, repoKey, previousJournal, log) {
   const originHead = (gitCmd(exec, dir, ['rev-parse', remoteRef]).stdout || '').trim();
 
   if (changed.length === 0 && head === originHead) return;
+  if (changed.length === 0 && gitTry(exec, dir, ['merge-base', '--is-ancestor', 'HEAD', remoteRef])) {
+    log(`同步远端更新：git -C ${dir} merge --ff-only ${remoteRef}`);
+    gitCmd(exec, dir, ['merge', '--ff-only', remoteRef]);
+    return;
+  }
 
   if (!previousJournal) {
     throw new Error(`${repoKey} 工作树 ${dir} 不干净，且没有可回收的上次批次记录，拒绝自动 reset：${(changed.length ? changed : [`HEAD=${head} != ${originHead}`]).slice(0, 5).join(', ')}`);
@@ -805,6 +811,8 @@ export function runToolchain(cfg, exec, workDir) {
     env: { ...process.env, CONTENT_DIR: cfg.contentDir },
   });
   if (cfg.buildCheck) {
+    // 工作树可能刚快进到新增前端依赖的版本，构建前按锁文件同步依赖。
+    runCmd(exec, 'npm', ['ci', '--prefix', 'frontend'], { cwd: cfg.siteDir });
     const out = path.join(workDir, 'build-check');
     fs.rmSync(out, { recursive: true, force: true });
     runCmd(exec, cfg.node, ['tools/build_site.mjs', '--content-dir', cfg.contentDir, '--out', out, '--force-clean'], {

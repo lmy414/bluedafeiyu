@@ -209,6 +209,60 @@ function makeFakeExec(state = {}) {
   return exec;
 }
 
+function advanceRemote(ws, rel, body) {
+  const peer = path.join(ws.root, 'peer-' + crypto.randomUUID());
+  runGit(ws.root, ['clone', ws.siteBare, peer]);
+  const file = path.join(peer, ...rel.split('/'));
+  fs.mkdirSync(path.dirname(file), { recursive: true });
+  fs.writeFileSync(file, body);
+  runGit(peer, ['add', '--', rel]);
+  runGit(peer, ['commit', '-m', 'remote update']);
+  runGit(peer, ['push', 'origin', 'main']);
+}
+
+for (const scenario of ['before-build', 'code-during-build', 'data-during-build']) {
+  test(`远端并发更新：${scenario} 保留远端与本次收录数据`, async t => {
+    const ws = await makeWorkspace(t, { works: [baselineRecord()] });
+    const runId = 'run-' + scenario;
+    const state = { statuses: [], snapshot: snapshotFrom(ws, runId, {
+      files: { 'data/works.json': JSON.stringify([baselineRecord({ name: '本次修改' })]) + '\n' },
+      summary: { added:0, updated:1, hidden:0, restored:0, deleted:0, topics:0 },
+    }) };
+    const backend = await startBackend(t, state);
+    const baseExec = makeFakeExec(state);
+    let advanced = false;
+    if (scenario === 'before-build') advanceRemote(ws, 'frontend/upgrade.txt', '语言升级\n');
+    const exec = (cmd, args, options) => {
+      if (scenario !== 'before-build' && !advanced && cmd === 'git' && args[1] === ws.site && args[2] === 'push') {
+        advanced = true;
+        advanceRemote(ws, scenario === 'data-during-build' ? 'data/works.json' : 'frontend/upgrade.txt',
+          scenario === 'data-during-build' ? JSON.stringify([baselineRecord({ name:'他人收录修改' })]) + '\n' : '语言升级\n');
+      }
+      return baseExec(cmd, args, options);
+    };
+    writeRequest(ws, runId);
+    const result = await capture(() => main(['--run',runId], { env:envFor(ws,backend), exec, fetchImpl:makePublishFetch(state), runIssueReconcile:()=>{} }));
+    const output = JSON.parse(result.out);
+    if (scenario === 'data-during-build') {
+      assert.equal(result.code,1);
+      assert.match(output.error,/远端收录数据/);
+      assert.equal(readJson(path.join(ws.site,'data','works.json'))[0].name,'本次修改');
+      assert.match(runGit(ws.siteBare,['show','main:data/works.json']),/他人收录修改/);
+      assert.equal(state.deployRuns || 0,0);
+      assert.equal(baseExec.calls.some(c=>c.args.includes('rebase')),false);
+    } else {
+      assert.equal(result.code,0,result.err);
+      assert.equal(output.status,'succeeded');
+      assert.equal(runGit(ws.siteBare,['rev-parse','main']).trim(),output.commits.site);
+      assert.equal(runGit(ws.siteBare,['show','main:frontend/upgrade.txt']),'语言升级\n');
+      assert.match(runGit(ws.siteBare,['show','main:data/works.json']),/本次修改/);
+      assert.equal(state.deployRuns,1);
+      assert.equal(runGit(ws.site,['status','--porcelain']).trim(),'');
+    }
+    assert.equal(baseExec.calls.some(c=>c.args.includes('--force')),false);
+  });
+}
+
 async function startBackend(t, state) {
   const server = http.createServer(async (req, res) => {
     const url = new URL(req.url, 'http://127.0.0.1');
@@ -469,6 +523,9 @@ test('新增一张图：下载、派生、构建校验、提交白名单、推�
   assert.equal(state.submissionCalls, 1);
   assert.deepEqual(state.submissionPaths, ['/api/v1/items/sub_one/raw']);
   assert.equal(state.submissionAuth, 'Bearer submission-token');
+  const install = exec.calls.findIndex(c => c.cmd === 'npm' && c.args.join(' ') === 'ci --prefix frontend');
+  const build = exec.calls.findIndex(c => c.cmd === 'node' && c.args[0] === 'tools/build_site.mjs');
+  assert.ok(install >= 0 && install < build, '按锁文件安装前端依赖后才执行构建');
 
   const works = readJson(path.join(ws.site, 'data', 'works.json'));
   assert.equal(works[0].slug, `test-${record.id}`);

@@ -596,10 +596,32 @@ function stagedAndCommit(cfg, exec, repoKey, changes, message) {
   return (gitCmd(exec, dir, ['rev-parse', 'HEAD']).stdout || '').trim() || null;
 }
 
-function pushRepo(cfg, exec, repoKey) {
+function pushRepo(cfg, exec, repoKey, log = () => {}) {
   const dir = repoKey === 'site' ? cfg.siteDir : cfg.contentDir;
   const branch = repoKey === 'site' ? cfg.siteBranch : cfg.contentBranch;
-  gitCmd(exec, dir, ['push', cfg.remote, `HEAD:${branch}`]);
+  try {
+    gitCmd(exec, dir, ['push', cfg.remote, `HEAD:${branch}`]);
+  } catch (error) {
+    if (repoKey !== 'site' || !/non-fast-forward|fetch first|Updates were rejected/i.test(errorMessage(error))) throw error;
+    // 构建期间前端代码可能推进 main。仅在远端未改动快照数据时重放本次提交；
+    // 数据并发更新需要重新取快照，不能用旧的整文件快照覆盖新收录。
+    const remoteRef = `${cfg.remote}/${branch}`;
+    gitCmd(exec, dir, ['fetch', '--prune', cfg.remote]);
+    const base = (gitCmd(exec, dir, ['merge-base', 'HEAD', remoteRef]).stdout || '').trim();
+    const remoteFiles = (gitCmd(exec, dir, ['diff', '--name-only', `${base}..${remoteRef}`]).stdout || '').trim().split('\n').filter(Boolean);
+    if (remoteFiles.some(rel => SITE_ALLOWLIST.includes(rel))) {
+      throw new Error('远端收录数据在构建期间发生变化，已保留本次本地提交；请重新发起发布以获取新快照');
+    }
+    logLine(log, '推送遇到并发代码更新，重放收录提交后重试一次');
+    try {
+      gitCmd(exec, dir, ['rebase', remoteRef], { env: { ...process.env, GIT_COMMITTER_NAME: cfg.gitName, GIT_COMMITTER_EMAIL: cfg.gitEmail } });
+    } catch (rebaseError) {
+      gitTry(exec, dir, ['rebase', '--abort']);
+      throw rebaseError;
+    }
+    gitCmd(exec, dir, ['push', cfg.remote, `HEAD:${branch}`]);
+  }
+  return (gitCmd(exec, dir, ['rev-parse', 'HEAD']).stdout || '').trim();
 }
 
 function currentReleasePath(cfg) {
@@ -822,7 +844,9 @@ export async function processPublishRequest({ request, env = process.env, deps =
     } catch (error) {
       logLine(log, `警告：内容仓稀疏检出重应用失败（不影响发布）：${errorMessage(error)}`);
     }
-    pushRepo(siteCfg, exec, 'site');
+    const pushedSiteCommit = pushRepo(siteCfg, exec, 'site', log);
+    if (result.commits.site) result.commits.site = pushedSiteCommit;
+    journal.commits = { ...result.commits };
     journal.pushed = true;
 
     step = 'release';
