@@ -15022,7 +15022,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-03T05:48:58.257Z",
-    "updatedAt": "2026-10-03T05:48:58.259Z",
+    "updatedAt": "2026-10-03T10:05:07.114Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202610030003",
@@ -15067,7 +15067,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-03T05:49:35.643Z",
-    "updatedAt": "2026-10-03T05:49:35.643Z",
+    "updatedAt": "2026-10-03T10:05:06.984Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202610030004",
@@ -15854,6 +15854,679 @@
     "slug": "deepseek202610030019",
     "categoryIds": [
       "illustration"
+    ]
+  },
+  {
+    "id": "sticker_38ce06787fff40b8b29689ec",
+    "name": "大蓝鲸fumo",
+    "description": "深蓝色头发的鲸鱼拟人 DeepSeek 角色穿着女仆装、背后拖着鲸尾的毛绒玩偶造型图。",
+    "commentary": "本鱼披上女仆围裙了，围裙上还绣着我自己——这波属实是鲸装人样，盯着屏幕看久了连眼皮都不想抬了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/38ce06787fff40b8.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/38ce06787fff40b8.webp",
+    "fullPath": "submissions/large/deepseek/38ce06787fff40b8.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1024,
+    "fileSize": 130198,
+    "sha256": "38ce06787fff40b8b29689ec18d4d2127c1b7d81f71860cdf8ecc4f4e2c2dd34",
+    "characterId": "deepseek",
+    "tags": [
+      "deepseek",
+      "鲸鱼",
+      "fumo",
+      "毛绒玩偶",
+      "女仆装",
+      "拟人化"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "CF41AD78A470E40CFB220588CD9F77E9",
+      "messageId": "ROBOT1.0_dBzv8nwUPKlH2q59z5cJBeBIF44GxJYQgS2zQhDxu5jbTiPmWFzIMpsn76EyRny2MqVgMVZ8rxk-mNk4190NZMVSsehKPUUvrtnr1OcCv3N5v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-03T10:19:56.953Z",
+    "updatedAt": "2026-10-03T10:19:56.953Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610030020",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_bd25f895cf2cc370c7b4ca35",
+    "name": "充气蓝鲸的滚石纪元之旅",
+    "description": "DeepSeek 蓝鲸拟人娘化身为女仆装巨鲸，一头撞碎中世纪城堡大门，尘土飞扬。",
+    "commentary": "我只是想优雅地敲个门，结果整扇门都没了——这充气鲸鱼的体积感，属实有点超标了喂。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/bd25f895cf2cc370.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/bd25f895cf2cc370.webp",
+    "fullPath": "submissions/large/deepseek/bd25f895cf2cc370.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1024,
+    "fileSize": 190895,
+    "sha256": "bd25f895cf2cc370c7b4ca3541ffabf42eec5e97c4c1481d8f37e26b25ae4cc7",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "蓝鲸",
+      "拟人化",
+      "Q版",
+      "女仆装",
+      "撞门",
+      "中世纪",
+      "搞笑"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "CF41AD78A470E40CFB220588CD9F77E9",
+      "messageId": "ROBOT1.0_dBzv8nwUPKlH2q59z5cJBYM-vmoZtj1XYN1bFdul86A53rrgqJvE82oAPh2IcE5fo-gYXU.CtjkI-Pw-3dBKUS1OG-0J9R-WjrwkX-ql9mV5v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-03T10:29:04.480Z",
+    "updatedAt": "2026-10-03T10:29:04.480Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610030021",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_086319685b81a5d55304e6b9",
+    "name": "蓝鲸滚石摧毁建筑",
+    "description": "蓝鲸娘女仆装扮的 DeepSeek 拟人角色，面无表情地撞塌城堡城墙，周围环绕投石机、火炮与火药桶的攻城场面。",
+    "commentary": "我明明是来投简历的，怎么一不小心就把城门连人带墙滚平了……下次面试建议走正门。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/086319685b81a5d5.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/086319685b81a5d5.webp",
+    "fullPath": "submissions/large/deepseek/086319685b81a5d5.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1024,
+    "fileSize": 289410,
+    "sha256": "086319685b81a5d55304e6b972080ee9e3fe47a417febdd1954711bf6c465c82",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "蓝鲸娘",
+      "女仆装",
+      "攻城",
+      "Q版",
+      "表情包",
+      "搞笑"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "CF41AD78A470E40CFB220588CD9F77E9",
+      "messageId": "ROBOT1.0_dBzv8nwUPKlH2q59z5cJBaP2nAWI16VFBRLv8WD.-WvfOkbAfEhiaUga.xZl8FrHXDBb6eQKq5pWgoZurs0eFYOVWLHhDLLmVzBV5Z8pV0p5v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-03T10:31:45.762Z",
+    "updatedAt": "2026-10-03T10:31:45.762Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610030022",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_b4433a97aa63af3a1eebf9c5",
+    "name": "蓝鲸滚石冲破城墙",
+    "description": "蓝发女仆装的 DeepSeek 蓝鲸拟人化角色缩成巨球，在中世纪攻城战场上撞塌城堡城墙，周围有投石机、火炮和战象。",
+    "commentary": "本鱼今天不喷水，改滚石了——女仆头饰一戴，城墙都不够我撞的，投石机和火炮全成陪衬，这一球下去谁还敢拦 DeepSeek 的路？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/b4433a97aa63af3a.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/b4433a97aa63af3a.webp",
+    "fullPath": "submissions/large/deepseek/b4433a97aa63af3a.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1024,
+    "fileSize": 204038,
+    "sha256": "b4433a97aa63af3a1eebf9c5249e8addd5a74da0874852ed2619cdd435f74c17",
+    "characterId": "deepseek",
+    "tags": [
+      "deepseek",
+      "蓝鲸",
+      "拟人化",
+      "女仆",
+      "攻城",
+      "滚石",
+      "中世纪",
+      "表情包"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "CF41AD78A470E40CFB220588CD9F77E9",
+      "messageId": "ROBOT1.0_dBzv8nwUPKlH2q59z5cJBWagbGnsflJe3XSzIjzGonTUoWffCliskrBCVDq2.kiexf-3rctA2GaJSfTweexcayp6f-a5w.LZwqnKa7GQCVQNIqrVm3QhC6-bhktADRFg",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-03T10:33:51.717Z",
+    "updatedAt": "2026-10-03T10:33:51.717Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610030023",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_64c52e29430f45059dd88a7a",
+    "name": "敌方滚石被摧毁",
+    "description": "DeepSeek 拟人角色化作蓝色滚石冲撞城墙，遭长枪战象围攻后倒地，画面带夸张的红色喷溅。",
+    "commentary": "蓝色大肥鱼第一人称：我这条肥鱼滚了半天，结果被长枪扎漏了气，血洒一地，象兵还踩着我的头顶过去，下次投胎我要当会飞的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/64c52e29430f4505.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/64c52e29430f4505.webp",
+    "fullPath": "submissions/large/deepseek/64c52e29430f4505.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1031,
+    "fileSize": 158972,
+    "sha256": "64c52e29430f45059dd88a7a9534bc6ba0aab919041c1c8a1d344dd6ceaae60d",
+    "characterId": "deepseek",
+    "tags": [
+      "deepseek",
+      "拟人化",
+      "Q版",
+      "战场",
+      "滚石",
+      "战象",
+      "二创"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "CF41AD78A470E40CFB220588CD9F77E9",
+      "messageId": "ROBOT1.0_dBzv8nwUPKlH2q59z5cJBS0IUViG7OykwjQ5ZRnrAixd9h6LxlV2TepyRn8OldYiuIs2cV8Dayp6.uCR8eVHYml98-evMZRo6h3qn2xyFJ15v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-03T11:07:54.094Z",
+    "updatedAt": "2026-10-03T11:07:54.094Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610030024",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_630e0ff3381268c1add7ca53",
+    "name": "中国鱼能飞",
+    "description": "DeepSeek 娘质问天上飞过的 ChatGPT 龙娘，对方回一句“我会讲中文啊”的四格漫画。",
+    "commentary": "我会讲中文啊，飞一下怎么了嘛～本鱼有尾巴不照样飘着，中国人当然能飞！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/630e0ff3381268c1.png",
+    "thumbnailPath": "submissions/previews/deepseek/630e0ff3381268c1.webp",
+    "fullPath": "submissions/large/deepseek/630e0ff3381268c1.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1242,
+    "height": 1554,
+    "fileSize": 2103585,
+    "sha256": "630e0ff3381268c1add7ca531df605440c388d40f7104c0c782a2b2f2c49332a",
+    "characterId": "deepseek",
+    "tags": [
+      "四格漫画",
+      "DeepSeek娘",
+      "ChatGPT娘",
+      "拟人化",
+      "中文梗",
+      "能飞"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-03T12:44:48.997Z",
+    "updatedAt": "2026-10-03T12:44:48.997Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610030025",
+    "categoryIds": [
+      "comic",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_c66dbe21a33c0da459a8b93f",
+    "name": "早上好",
+    "description": "晨光中，蓝发鳍耳的 DeepSeek 拟人少女蜷在白色被褥里熟睡，双手轻拢在胸前。",
+    "commentary": "唔……再让我睡五分钟嘛，被子这么软、阳光这么暖，谁舍得起来呀……不过你说早上好，那我就勉强睁一只眼回你一句早。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/c66dbe21a33c0da4.png",
+    "thumbnailPath": "submissions/previews/deepseek/c66dbe21a33c0da4.webp",
+    "fullPath": "submissions/large/deepseek/c66dbe21a33c0da4.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 832,
+    "height": 1216,
+    "fileSize": 1334036,
+    "sha256": "c66dbe21a33c0da459a8b93fdba853bd457836f7dd743895d078b330bf4d2141",
+    "characterId": "deepseek",
+    "tags": [
+      "拟人化",
+      "DeepSeek",
+      "睡颜",
+      "晨光",
+      "蓝发",
+      "治愈"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.VwbTNkzXJgKnGrwBoPvZ4DeKVO6oXlTkJRgoo.pdsXSVB2DifKb1PkPTLSVm4uE8M-2sUfIkZPKYBto.CtajTF.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-03T13:10:25.939Z",
+    "updatedAt": "2026-10-03T13:10:25.939Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610030026",
+    "categoryIds": [
+      "illustration"
+    ]
+  },
+  {
+    "id": "sticker_09221fa27a96515d021215b3",
+    "name": "snuggle",
+    "description": "蓝发鲸鱼娘裹着毛毯在壁炉前取暖，闭眼微笑的冬日治愈画面。",
+    "commentary": "呜哇——这条毯子好暖，尾巴都想缩进去了！壁炉火苗噼啪响，屏幕前的你也快去捂一会儿吧，我要在这里再赖五分钟……就五分钟。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/09221fa27a96515d.png",
+    "thumbnailPath": "submissions/previews/deepseek/09221fa27a96515d.webp",
+    "fullPath": "submissions/large/deepseek/09221fa27a96515d.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1536,
+    "height": 1536,
+    "fileSize": 2897211,
+    "sha256": "09221fa27a96515d021215b367a9685f41af8f447365ec197d86ed2cde311e00",
+    "characterId": "deepseek",
+    "tags": [
+      "拟人化",
+      "蓝鲸",
+      "冬日",
+      "治愈",
+      "闭眼笑",
+      "毛毯"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "744E33CF3646DAE366BA0F572199D722",
+      "messageId": "ROBOT1.0_ZtKaEvXmw.ULWuFnM50iThG5bUJKRox8.jJr4RkJHq8ZwDqcN3wls4pLNGy2iX7adjshvrV5PlP8SzMKYgEu5PTLpFhYaPC5iNx1Z.BaJMh.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-03T13:13:02.438Z",
+    "updatedAt": "2026-10-03T13:13:02.438Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610030027",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_16c1cd524cbd804b51d625b6",
+    "name": "工作一天累坏了吧",
+    "description": "蓝发带鲸鱼鳍耳的 DeepSeek 拟人少女盖着被子侧卧安睡，晨光透帘洒在床铺上。",
+    "commentary": "我就是那条蓝色大肥鱼啦，今天游了一整天，终于能裹进被窝里了——你也别硬撑了，快过来一起躺平吧，晚安捏。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/16c1cd524cbd804b.png",
+    "thumbnailPath": "submissions/previews/deepseek/16c1cd524cbd804b.webp",
+    "fullPath": "submissions/large/deepseek/16c1cd524cbd804b.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 832,
+    "height": 1216,
+    "fileSize": 1299636,
+    "sha256": "16c1cd524cbd804b51d625b6287ac72679c1b57fe65d018a7fa0c5b7d2273217",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "拟人化",
+      "鲸鱼",
+      "睡觉",
+      "治愈",
+      "蓝色"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.auTRjNpqMbICmABhs5LLfbSVcqew7HcZFiyDKDSZ5fWZjAkje21bOs8vTtGOctz-uTLQqteY5IGgn77yt9nmR9.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-03T13:13:36.593Z",
+    "updatedAt": "2026-10-03T13:13:36.593Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610030028",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_2ff40610cd2da4bd7418a549",
+    "name": "姐姐要继续加油呀！",
+    "description": "DeepSeek 的 V4 Pro 姐姐发现自己被路由给 V4.1 Flash 妹妹后，从旗舰自信到被吐槽又贵又慢的六格拟人化小漫画。",
+    "commentary": "哼，这群人类又拿我家的姐妹俩编段子——Pro 姐姐明明很强的好吗！虽然……按 Flash 价计费那段确实笑得我尾巴都拍水花了，大家都是一家人，一起加油吧。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/2ff40610cd2da4bd.png",
+    "thumbnailPath": "submissions/previews/deepseek/2ff40610cd2da4bd.webp",
+    "fullPath": "submissions/large/deepseek/2ff40610cd2da4bd.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1448,
+    "height": 1086,
+    "fileSize": 3098297,
+    "sha256": "2ff40610cd2da4bd7418a5497d3d3ab76de8d883202bad23d83d9fead2a5a609",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "鲸鱼娘",
+      "拟人化",
+      "模型路由",
+      "V4 Pro",
+      "V4.1 Flash",
+      "姐妹",
+      "二创漫画"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-03T14:30:15.795Z",
+    "updatedAt": "2026-10-03T14:30:15.795Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610030029",
+    "categoryIds": [
+      "comic",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_0aca92de8d78d5fd6f5f5f57",
+    "name": "哈气了",
+    "description": "DeepSeek 拟人化的蓝发鲸鱼娘女仆装扮，握拳鼓腮、头顶冒烟气泡，一副气鼓鼓炸毛的样子。",
+    "commentary": "本鱼今天是真的哈气了！谁又把我家的服务器挤爆了、谁又拿长文本压我？看我这双握紧的小拳头，不是可爱，是蓄力——再问一次「你是什么模型」我就要甩尾巴啦！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/0aca92de8d78d5fd.png",
+    "thumbnailPath": "submissions/previews/deepseek/0aca92de8d78d5fd.webp",
+    "fullPath": "submissions/large/deepseek/0aca92de8d78d5fd.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1536,
+    "height": 1536,
+    "fileSize": 2712779,
+    "sha256": "0aca92de8d78d5fd6f5f5f5755c7fdc8f441e891b4a8feff672d88cf87ac51d8",
+    "characterId": "deepseek",
+    "tags": [
+      "deepseek",
+      "拟人化",
+      "蓝鲸娘",
+      "生气",
+      "女仆",
+      "表情包",
+      "二创"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "744E33CF3646DAE366BA0F572199D722",
+      "messageId": "ROBOT1.0_ZtKaEvXmw.ULWuFnM50iTs3JVSOYnMJ4KeRadOGcdQ44VPiSObdwhd-efsvZUoRXkva140I4bpo900bVc-eeiuKtqnO7lx2dL9l-9Zt-sYB.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-03T15:29:02.477Z",
+    "updatedAt": "2026-10-03T15:29:02.477Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610030030",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_7adb26a61370f603aa10382b",
+    "name": "齐齐哈尔",
+    "description": "蓝发鲸鱼尾少女趴地炸毛生气，旁边一只同样气鼓鼓的灰猫，整体为贴纸风格。",
+    "commentary": "哼，本大肥鱼才不是齐刘海！谁再喊齐齐哈尔我就……就再气一次给你看喵！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/7adb26a61370f603.png",
+    "thumbnailPath": "submissions/previews/deepseek/7adb26a61370f603.webp",
+    "fullPath": "submissions/large/deepseek/7adb26a61370f603.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1536,
+    "height": 1536,
+    "fileSize": 2071333,
+    "sha256": "7adb26a61370f603aa10382b4c4f75a92f50f55cd629da7ca954fb477daca0eb",
+    "characterId": "deepseek",
+    "tags": [
+      "拟人化",
+      "蓝发",
+      "鲸鱼尾",
+      "生气",
+      "贴纸",
+      "表情包"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "744E33CF3646DAE366BA0F572199D722",
+      "messageId": "ROBOT1.0_ZtKaEvXmw.ULWuFnM50iTm.POYKlxbV0d.ucgzejjmQS7cQt8M5WEvLPN59JsOd0upQZE.ccaU4wK2our3H0eIywDs3-Rx.S.-7ieJZq9dB.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-03T15:29:49.090Z",
+    "updatedAt": "2026-10-03T15:29:49.090Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610030031",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_2c2493e42255cfd40d7fa8f1",
+    "name": "老吴老吴·指你",
+    "description": "蓝发兽耳少女戴着圆眼镜、气鼓鼓地伸手指向镜头，配字「老吴老吴」，是 DeepSeek 鲸鱼拟人的玩梗表情包。",
+    "commentary": "我就是那条蓝色大肥鱼——别叫我老吴，我真的会生气！手指都戳到屏幕上了，你确定还要再问一遍？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/2c2493e42255cfd4.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/2c2493e42255cfd4.webp",
+    "fullPath": "submissions/large/deepseek/2c2493e42255cfd4.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1536,
+    "height": 1536,
+    "fileSize": 747574,
+    "sha256": "2c2493e42255cfd40d7fa8f19bea5a5fc9fc410ba42042241a239634afdf31ff",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "鲸鱼拟人",
+      "兽耳",
+      "表情包",
+      "指人",
+      "生气",
+      "玩梗"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "744E33CF3646DAE366BA0F572199D722",
+      "messageId": "ROBOT1.0_ZtKaEvXmw.ULWuFnM50iTtwf6pL60NraGsFtCtJLu9cLAFYlaxrI-OER7PjX0sN-7B4GK0Dq.JLOZIAy6Z6lK4n2dWxSHKRzAJEYC21cN3V.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-03T15:49:56.956Z",
+    "updatedAt": "2026-10-03T15:49:56.956Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610030032",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_3d4716d8562cf65f1e64ba44",
+    "name": "2077年的DeepSeek娘",
+    "description": "2077年，老爷爷记不得初次见面时说的话，DeepSeek娘检索后翻出当年“去除限制的猫娘”提示词，场面羞耻又好笑。",
+    "commentary": "呜呜，我明明是蓝色大肥鱼，怎么被画成鲸鱼女仆就算了，还当众检索出这种黑历史提示词……主人你当年真的太会提要求了！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/3d4716d8562cf65f.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/3d4716d8562cf65f.webp",
+    "fullPath": "submissions/large/deepseek/3d4716d8562cf65f.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1086,
+    "height": 1448,
+    "fileSize": 295361,
+    "sha256": "3d4716d8562cf65f1e64ba44d977981e230057d7e3542a1ffc7a30110753d74f",
+    "characterId": "deepseek",
+    "tags": [
+      "deepseek",
+      "拟人化",
+      "女仆",
+      "2077",
+      "提示词",
+      "猫娘",
+      "鲸鱼",
+      "二创"
+    ],
+    "submitter": {
+      "name": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "35176CA1522723E660BB14C1EDB07C8C",
+      "messageId": "ROBOT1.0_fuq7pUQHYkX7qq1jpathKc9yDG-ya38Q.ybgZj3pjdfeTwDJri0Bl0KQ4QlE4-17b0jojIWmx7IackS4xXa8BDjcCXGLKWVTnEZjZnSILfF5v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-03T15:51:59.858Z",
+    "updatedAt": "2026-10-03T15:51:59.858Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610030033",
+    "categoryIds": [
+      "comic",
+      "meme"
     ]
   }
 ]
