@@ -10,7 +10,7 @@ const SECTION_OF = { works: 'gallery', characters: 'gallery', collections: 'gall
 const section = SECTION_OF[active] || '';
 const gallery = [['works', '作品', '/index.html', 'v2.nav.works'], ['characters', '角色', '/characters.html', 'v2.nav.characters'], ['collections', '合集', '/topics.html', 'v2.nav.collections']];
 const communityNav = [['community', '加入社群', '/community.html', 'v2.joinGroup'], ['event', '最新活动', EVENT.href, 'v2.nav.events']];
-const bodyStyle = accent ? '--c:' + accent : undefined;
+const bodyStyle = accent ? '--c:' + accent + ';--role-tab-ink:var(--on-art)' : undefined;
 ---
 <!doctype html>
 <html lang="zh-CN">
@@ -18,14 +18,15 @@ const bodyStyle = accent ? '--c:' + accent : undefined;
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script is:inline>document.documentElement.classList.add('js')</script>
+  <script is:inline src="/theme.js?v=1"></script>
   <V2Meta title={title} desc={desc} path={path} type={type} og={og} shareDesc={shareDesc} robots={robots} canonical={canonical} />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" href="/favicon.png" />
-  <link rel="stylesheet" href="/tokens.css?v=15" />
+  <link rel="stylesheet" href="/tokens.css?v=16" />
   <link rel="stylesheet" href="/styles.css?v=20" />
   {pageStyles.map(href => <link rel="stylesheet" href={href} />)}
-  <link rel="stylesheet" href="/v2.css?v=6" />
-  <script is:inline src="/lang.js?v=9"></script>
+  <link rel="stylesheet" href="/v2.css?v=7" />
+  <script is:inline src="/lang.js?v=10"></script>
   <script is:inline src="/analytics.js" defer></script>
   <slot name="head" />
 </head>
@@ -60,6 +61,9 @@ const bodyStyle = accent ? '--c:' + accent : undefined;
           <input id="q-top" name="q" type="search" placeholder="搜索作品、角色、别名或 Tag" autocomplete="off" data-i18n-attr="placeholder:v2.searchPh" />
           <button class="btn btn-ink" data-i18n="v2.search">搜索</button>
         </form>
+        <button type="button" class="theme-toggle btn btn-line" data-theme-toggle aria-label="切换到黑夜模式" aria-pressed="false" title="切换到黑夜模式" hidden>
+          <span class="theme-moon" aria-hidden="true">☾</span><span class="theme-sun" aria-hidden="true">☀</span>
+        </button>
         <nav class="top-actions" aria-label="站点入口" data-i18n-attr="aria-label:v2.entries">
           <a class="ta-icon" href={SITE.repoContent} target="_blank" rel="noopener" title="GitHub · 内容与投稿仓库" aria-label="GitHub 内容与投稿仓库" data-i18n-attr="title:footer.content,aria-label:footer.content" set:html={GH_ICON} />
           <a class="btn btn-line btn-sm" href="/submit.html" data-i18n="nav.submit">投稿</a>
@@ -78,7 +82,7 @@ const bodyStyle = accent ? '--c:' + accent : undefined;
   <template id="group-cta-tpl"><aside class="group-cta" aria-label="加入社群" data-i18n-attr="aria-label:v2.joinGroup"><img src={SITE.group.qr} alt={'QQ 群「' + SITE.group.name + '」二维码'} width="88" height="88" loading="lazy" data-i18n-attr="alt:qq.qrAlt" /><div><b data-i18n="v2.cta.title">加入「鱼之饭盆」</b><p><span data-i18n="v2.cta.text">聊图、催更、投稿、参加活动。QQ 群号</span> <span class="qq-no">{SITE.group.number}</span></p><p class="cta-acts"><button type="button" class="btn btn-ink btn-sm" data-copy-text={SITE.group.number} data-i18n="qq.copy">复制群号</button><a class="btn btn-line btn-sm" href="/community.html" data-i18n="v2.cta.more">社群介绍</a></p></div></aside></template>
   <EventPopup />
   <script is:inline src="/work-stats.js?v=1" defer></script>
-  <script is:inline src="/v2.js?v=4" defer></script>
+  <script is:inline src="/v2.js?v=5" defer></script>
   <slot name="scripts" />
 </body>
 </html>

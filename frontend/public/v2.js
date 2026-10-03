@@ -337,7 +337,7 @@
       var sec = btn.parentNode, lang = (window.SiteLang && window.SiteLang.current) || 'zh';
       var s = document.createElement('script');
       s.src = 'https://giscus.app/client.js'; s.async = true; s.crossOrigin = 'anonymous';
-      var attrs = { repo: 'lmy414/lmy414-blog-comments', 'repo-id': 'R_kgDOTUvnVw', category: 'Announcements', 'category-id': 'DIC_kwDOTUvnV84DF4fs', mapping: 'specific', term: 'sticker-' + btn.getAttribute('data-comments'), 'reactions-enabled': '1', 'input-position': 'bottom', theme: 'light', lang: lang === 'zh' ? 'zh-CN' : lang };
+      var attrs = { repo: 'lmy414/lmy414-blog-comments', 'repo-id': 'R_kgDOTUvnVw', category: 'Announcements', 'category-id': 'DIC_kwDOTUvnV84DF4fs', mapping: 'specific', term: 'sticker-' + btn.getAttribute('data-comments'), 'reactions-enabled': '1', 'input-position': 'bottom', theme: document.documentElement.dataset.theme || 'light', lang: lang === 'zh' ? 'zh-CN' : lang };
       Object.keys(attrs).forEach(function (k) { s.setAttribute('data-' + k, attrs[k]); });
       btn.replaceWith(s);
       sec.classList.add('on');

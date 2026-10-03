@@ -32,6 +32,8 @@
   /* 词典：只存 en / ja。zh 走页面原文。改文案时同步改页面里的中文与这里两份。 */
   var DICT = {
     en: {
+      "theme.toLight": "Switch to light mode",
+      "theme.toDark": "Switch to dark mode",
       "v2.sort.popular": "Popular",
       "v2.sort.downloads": "Downloads",
       "v2.sort.curated": "Curated order",
@@ -531,6 +533,8 @@
     },
 
     ja: {
+      "theme.toLight": "ライトモードに切り替え",
+      "theme.toDark": "ダークモードに切り替え",
       "v2.sort.popular": "人気順",
       "v2.sort.downloads": "ダウンロード数",
       "v2.sort.curated": "選定順",

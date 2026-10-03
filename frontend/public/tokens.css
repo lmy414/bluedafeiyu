@@ -16,6 +16,7 @@
    ========================================================================== */
 
 :root {
+  color-scheme: light;
   /* ---------------------------------------------------------------- ① 字体 */
   /* 系统 UI 字体栈 + 本机手写字体栈；不依赖远程字体，避免字体替换造成首屏布局偏移 */
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
@@ -177,6 +178,32 @@
   --border-default: var(--ink);
   --border-strong: var(--ink);
   --border-subtle: var(--grid-line);
+}
+
+/* 黑夜模式：覆盖调色板与语义层，作品图和角色识别色保持原色。 */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: #d8e7fa;
+  --ink-70: #b0c4dd;
+  --ink-45: #91a8c4;
+  --paper: #101923;
+  --paper-card: #192738;
+  --marker: #8abbff;
+  --marker-soft: #294567;
+  --sticky-1: #233b56;
+  --sticky-2: #203247;
+  --sticky-3: #192738;
+  --grid-line: #26384b;
+  --tape: rgba(176, 196, 221, 0.22);
+  --tape-shine: rgba(216, 231, 250, 0.12);
+  --brand-ink: #101923;
+  --brand-hover: #acd0ff;
+  --border-default: #607b9d;
+  --border-strong: #91a8c4;
+  --shadow-paper-sm: 2px 2px 0 #080f18;
+  --shadow-paper: 4px 4px 0 #080f18;
+  --shadow-paper-lg: 6px 6px 0 #080f18;
+  --shadow-tape: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 /* ==========================================================================

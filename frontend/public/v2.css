@@ -12,6 +12,13 @@
   --art-mimo-a: #ffbf8a;     --art-mimo-b: #b3541e;
 }
 body.v2 { padding: 0; --c: var(--brand); --cs: var(--brand-soft); }
+/* 顶栏主题按钮独立于桌面入口，手机端也可以直接切换。 */
+.theme-toggle { flex: none; width: 40px; height: 40px; padding: 0; font-size: var(--text-2xl); }
+.theme-toggle[hidden], .theme-sun { display: none; }
+[data-theme="dark"] .theme-moon { display: none; }
+[data-theme="dark"] .theme-sun { display: inline; }
+/* 角色便签采用主题底色，作品与角色识别色保持原样。 */
+[data-theme="dark"] .who.big { background: var(--bg-inset); }
 body.v2 img { max-width: 100%; }
 /* 标题复位用 :where 降到 0 特异性，不覆盖 .section-label / .page-title 等组件自己的外边距（否则分区标题会压在纸卡上） */
 :where(body.v2 h1, body.v2 h2, body.v2 h3) { margin: 0; line-height: var(--leading-tight); }
@@ -125,8 +132,8 @@ body.v2 .site-footer { margin: var(--space-8) 0 0; }
 .role-tabs a { flex: none; padding: var(--space-1) var(--space-4); color: var(--text-primary); font-size: var(--text-sm); font-weight: var(--weight-bold); background: var(--bg-surface); border: 2px solid var(--border-default); border-radius: var(--radius-pill); }
 .role-tabs a:hover { text-decoration: none; background: var(--bg-hover); }
 .role-tabs a em { margin-left: var(--space-1); font-style: normal; font-size: var(--text-xs); color: var(--text-tertiary); }
-.role-tabs a[aria-current] { color: var(--brand-ink); background: var(--c); }
-.role-tabs a[aria-current] em { color: var(--brand-ink); }
+.role-tabs a[aria-current] { color: var(--role-tab-ink, var(--brand-ink)); background: var(--c); }
+.role-tabs a[aria-current] em { color: var(--role-tab-ink, var(--brand-ink)); }
 @media (max-width: 960px) {
   .role-tabs { top: 64px; margin-inline: calc(var(--space-4) * -1); padding-inline: var(--space-4); }
 }
