@@ -16,11 +16,13 @@ export function WorkCard({
   onSelect,
   selected,
   work,
+  metrics,
 }: {
   onOpen: () => void
   onSelect: () => void
   selected: boolean
   work: WorkDoc
+  metrics?: { views: number; downloads: number }
 }) {
   const character = asObject<CharacterDoc>(work.character)
   const categories = Array.isArray(work.categories)
@@ -49,6 +51,7 @@ export function WorkCard({
             {labelOf(CHANNELS, work.channel)} · {categories.length ? categories.join(' / ') : '未分类'}
           </p>
           <p className="s3-card-confidence">AI 置信度：{confidenceText(work.review?.confidence)}</p>
+          <p className="s3-card-meta">浏览 {metrics ? metrics.views.toLocaleString() : '—'} · 下载 {metrics ? metrics.downloads.toLocaleString() : '—'}</p>
         </div>
       </button>
     </article>

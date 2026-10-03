@@ -405,3 +405,15 @@ html.ev-open { overflow: hidden; }
   .ta-more ul li { flex: 1; }
   .ta-more ul li a { width: 100%; justify-content: center; }
 }
+/* GA4 作品聚合统计 */
+.work-stats,.stats-note { color:var(--text-secondary); font-size:var(--text-sm); }
+.stats-note { margin:0 0 1rem; }
+.sort-bar button:disabled { opacity:.5; cursor:default; }
+.work-sort { max-width:36rem; }
+.work-sort .sort-bar { width:max-content; max-width:100%; }
+.work-sort .stats-note { margin:.4rem 0 0; }
+@media (max-width:640px) {
+  .feed-head { flex-direction:column; align-items:stretch; }
+  .work-sort { max-width:100%; min-width:0; }
+  .work-sort .sort-bar button { flex:1; padding:var(--space-1) var(--space-2); }
+}

@@ -4,6 +4,7 @@ import { Gutter } from '@payloadcms/ui'
 import React, { useEffect, useMemo, useState } from 'react'
 
 import { useAdminApi } from '../components/admin/api'
+import type { AnalyticsData } from '../components/admin/AnalyticsPanel'
 import { BulkBar } from '../components/admin/BulkBar'
 import { CHANNELS, WORK_STATUSES } from '../components/admin/constants'
 import { Modal } from '../components/admin/Modal'
@@ -33,20 +34,24 @@ export function LibraryView() {
   const [topicId, setTopicId] = useState('')
   const [deleteText, setDeleteText] = useState('')
   const [loading, setLoading] = useState(true)
+  const [analytics, setAnalytics] = useState<AnalyticsData | null>(null)
+  const [sort, setSort] = useState('latest')
 
   async function load() {
     setLoading(true)
     try {
-      const [workResult, characterResult, categoryResult, topicResult] = await Promise.all([
+      const [workResult, characterResult, categoryResult, topicResult, analyticsResult] = await Promise.all([
         get<ListResponse<WorkDoc>>('/works', { depth: 2, limit: 3000, pagination: false, sort: '-updatedAt' }),
         get<ListResponse<CharacterDoc>>('/characters', { depth: 0, limit: 1000, pagination: false }),
         get<ListResponse<CategoryDoc>>('/categories', { depth: 0, limit: 1000, pagination: false }),
         get<ListResponse<TopicDoc>>('/topics', { depth: 0, limit: 1000, pagination: false }),
+        get<AnalyticsData>('/analytics').catch(() => null),
       ])
       setWorks(workResult.docs || [])
       setCharacters(characterResult.docs || [])
       setCategories(categoryResult.docs || [])
       setTopics(topicResult.docs || [])
+      setAnalytics(analyticsResult)
     } catch (error) {
       setMessage(error instanceof Error ? error.message : '作品库读取失败')
     } finally {
@@ -72,8 +77,12 @@ export function LibraryView() {
       if (!search) return true
       const haystack = [work.name, work.workId, authorOf(work), ...(work.tags || []).map((tag) => tag.value)].join(' ').toLowerCase()
       return haystack.includes(search)
+    }).sort((a, b) => {
+      if (sort === 'latest') return 0
+      const field = sort === 'downloads' ? 'downloads' : 'views'
+      return (analytics?.works[b.workId]?.[field] || 0) - (analytics?.works[a.workId]?.[field] || 0)
     })
-  }, [author, categoryId, channel, characterId, keyword, status, works])
+  }, [analytics, author, categoryId, channel, characterId, keyword, sort, status, works])
 
   const authors = useMemo(() => authorOptions(works, authorOf), [works])
 
@@ -99,12 +108,17 @@ export function LibraryView() {
     }
   }
 
-  useEffect(() => setPage(1), [author, categoryId, channel, characterId, keyword, status])
+  useEffect(() => setPage(1), [author, categoryId, channel, characterId, keyword, sort, status])
 
   return (
     <Gutter className="s3-admin-page">
       <PageHeader description="统一筛选、搜索并批量维护后台作品。" title="作品库" />
       <section className="s3-filter-panel">
+        <label>排序<select value={sort} onChange={event => setSort(event.target.value)}>
+          <option value="latest">最近修改</option>
+          <option value="popular" disabled={!analytics?.available}>热度（浏览量）</option>
+          <option value="downloads" disabled={!analytics?.available}>下载量</option>
+        </select></label>
         <label>
           渠道
           <select onChange={(event) => setChannel(event.target.value)} value={channel}>
@@ -163,6 +177,7 @@ export function LibraryView() {
         {visible.map((work) => (
           <WorkCard
             key={String(work.id)}
+            metrics={analytics?.available ? analytics.works[work.workId] : undefined}
             onOpen={() => toggle(work.workId)}
             onSelect={() => toggle(work.workId)}
             selected={selected.includes(work.workId)}

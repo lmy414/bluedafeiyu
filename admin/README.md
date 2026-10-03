@@ -2,6 +2,8 @@
 
 这里是“蓝色大肥鱼”的独立后台。公开站仍是 Astro 静态站，后台只负责管理 Payload 数据、镜像投稿队列、导出发布快照和接收发布请求；后台不直接替换线上 `current`。
 
+GA4 作品浏览与下载统计的权限、配置、定时同步和验证步骤见 [`../docs/GA4作品统计.md`](../docs/GA4作品统计.md)。统计写入独立缓存，不触发内容发布。
+
 ## 环境变量
 
 - `DATABASE_URL`：SQLite 文件 URL，生产示例 `file:/srv/apps/dafeiyu-admin/data/admin.db`。

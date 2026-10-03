@@ -12,6 +12,6 @@ const [licShort, licFull] = LICENSE[w.lic];
       <span class="badge">{w.typeShort || '作品'}</span>
       {w.fileSize ? <span class="dl">↓ {fmtSize(w.fileSize)}</span> : null}
     </div>
-    <div class="meta"><h3>{w.name}</h3><p>{noChar ? null : <span class="who"><i></i>{w.char.name}</span>}<span>{fmtDate(w.createdAt)}</span></p></div>
+    <div class="meta"><h3>{w.name}</h3><p>{noChar ? null : <span class="who"><i></i>{w.char.name}</span>}<span>{fmtDate(w.createdAt)}</span></p><p class="work-stats" data-work-stats={w.id}>浏览 — · 下载 —</p></div>
   </a>
 </article>

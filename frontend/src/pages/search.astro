@@ -1,5 +1,6 @@
 ---
 import V2 from '../layouts/V2.astro';
+import WorkSort from '../components/v2/WorkSort.astro';
 ---
 <V2 title="搜索 AI 娘二创作品 | 蓝色大肥鱼" desc="按作品名、角色、别名或 Tag 搜索 AI 娘二创作品。" path="/search.html" active="search" bodyPage="search" robots="noindex,follow">
   <div class="search-page">
@@ -10,6 +11,7 @@ import V2 from '../layouts/V2.astro';
       <button class="btn btn-ink" data-i18n="v2.search">搜索</button>
     </form>
     <p class="s-count" id="scount" aria-live="polite"></p>
+    <WorkSort />
     <div class="feed-grid" id="sres"></div>
   </div>
 </V2>

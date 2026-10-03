@@ -5,6 +5,7 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 
 import { useAdminApi } from '../components/admin/api'
+import { AnalyticsPanel } from '../components/admin/AnalyticsPanel'
 import { CHANNELS, formatDate, labelOf } from '../components/admin/constants'
 import { PageHeader } from '../components/admin/PageHeader'
 import { StatusBadge } from '../components/admin/StatusBadge'
@@ -106,6 +107,7 @@ export function DashboardView() {
         </article>
       </section>
 
+      <AnalyticsPanel />
       <section className="s3-panel">
         <div className="s3-panel-heading">
           <div>

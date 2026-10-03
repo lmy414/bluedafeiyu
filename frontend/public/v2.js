@@ -56,17 +56,20 @@
   // —— 搜索页 ——
   var res = document.getElementById('sres');
   if (res) {
-    var input = document.getElementById('q'), count = document.getElementById('scount'), idx = null;
+    var input = document.getElementById('q'), count = document.getElementById('scount'), idx = null, searchSort = 'latest';
     var run = function () {
       var q = input.value.trim().toLowerCase();
       history.replaceState(history.state, '', q ? '?q=' + encodeURIComponent(input.value.trim()) : location.pathname);
       var words = q.split(/\s+/).filter(Boolean);
       if (!idx) { count.textContent = T('v2.loading', '正在加载'); return; }
       var hit = words.length ? idx.filter(function (r) { var hay = (r.n + ' ' + r.c + ' ' + r.a + ' ' + r.t + ' ' + r.d).toLowerCase(); return words.every(function (w) { return hay.indexOf(w) >= 0; }); }) : [];
+      if (searchSort === 'popular' || searchSort === 'downloads') hit.sort(function (a, b) { return WorkStats.metric(b.id, searchSort) - WorkStats.metric(a.id, searchSort); });
+      if (searchSort === 'random') for (var j = hit.length - 1; j > 0; j--) { var k = Math.floor(Math.random() * (j + 1)); var temp = hit[j]; hit[j] = hit[k]; hit[k] = temp; }
       count.textContent = words.length ? T('v2.found', '找到 {count} 件', { count: hit.length }) : T('v2.typeToSearch', '输入关键词开始搜索');
       res.innerHTML = hit.map(function (r) {
-        return '<article class="media-card"><a href="/works/' + esc(r.s) + '.html" data-work="' + esc(r.s) + '"><div class="ph"' + (r.w && r.h ? ' style="aspect-ratio:' + r.w + '/' + r.h + '"' : '') + '><img loading="lazy" src="' + esc(r.i) + '" alt="' + esc(r.n) + '"><span class="badge">' + esc(kindText(r.k) || T('v2.work', '作品')) + '</span></div><div class="meta"><h3>' + esc(r.n) + '</h3><p><span class="who"><i></i>' + esc(r.c) + '</span></p></div></a></article>';
+        return '<article class="media-card"><a href="/works/' + esc(r.s) + '.html" data-work="' + esc(r.s) + '"><div class="ph"' + (r.w && r.h ? ' style="aspect-ratio:' + r.w + '/' + r.h + '"' : '') + '><img loading="lazy" src="' + esc(r.i) + '" alt="' + esc(r.n) + '"><span class="badge">' + esc(kindText(r.k) || T('v2.work', '作品')) + '</span></div><div class="meta"><h3>' + esc(r.n) + '</h3><p><span class="who"><i></i>' + esc(r.c) + '</span></p><p class="work-stats" data-work-stats="' + esc(r.id) + '"></p></div></a></article>';
       }).join('');
+      document.dispatchEvent(new CustomEvent('v2:dom'));
     };
     input.value = new URLSearchParams(location.search).get('q') || '';
     var top = document.getElementById('q-top'); if (top) top.value = input.value;
@@ -74,6 +77,18 @@
     var tm; input.addEventListener('input', function () { clearTimeout(tm); tm = setTimeout(run, 150); });
     document.getElementById('sform').addEventListener('submit', function (e) { e.preventDefault(); run(); });
     document.addEventListener('site:langchange', run);
+    var searchBar = document.querySelector('.sort-bar'), searchSortTouched = false;
+    if (searchBar) searchBar.addEventListener('click', function (e) {
+      var btn = e.target.closest('[data-sort]'); if (!btn || btn.disabled) return;
+      searchSortTouched = true;
+      searchSort = btn.getAttribute('data-sort');
+      searchBar.querySelectorAll('[data-sort]').forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); }); run();
+    });
+    if (searchBar && window.WorkStats) WorkStats.ready.then(function () {
+      if (!searchSortTouched && WorkStats.available() && searchBar.getAttribute('data-default-sort') === 'downloads') {
+        searchSort = 'downloads'; searchBar.querySelectorAll('[data-sort]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-sort') === searchSort)); }); run();
+      }
+    });
   }
 
   // —— 连续下滑 + 稳定瀑布流 ——
@@ -82,6 +97,7 @@
     var total = +feedEl.getAttribute('data-total');
     var next = feedEl.getAttribute('data-next'), busy = false, fails = 0;
     var cards = [].slice.call(feedEl.querySelectorAll('.media-card'));
+    var initialCards = cards.slice(), initialNext = next, virtual = null, sorting = false;
     var cols = [];
     var colCount = function () { var w = feedEl.clientWidth; return w < 520 ? 2 : Math.max(2, Math.min(5, Math.floor(w / 250))); };
     var place = function (list) { list.forEach(function (c) { var m = cols[0]; cols.forEach(function (col) { if (col.offsetHeight < m.offsetHeight) m = col; }); m.appendChild(c); }); };
@@ -108,11 +124,21 @@
       }
     };
     var loaded = 0;
-    var save = function () { if (root.classList.contains('wm-open') || (history.state && history.state.wm)) return; history.replaceState(Object.assign({}, history.state || {}, { feedLoaded: loaded, feedY: scrollY }), ''); };
+    var save = function () { if (root.classList.contains('wm-open') || (history.state && history.state.wm)) return; history.replaceState(Object.assign({}, history.state || {}, { feedLoaded: virtual ? 0 : loaded, feedY: virtual ? 0 : scrollY }), ''); };
     var st; addEventListener('scroll', function () { clearTimeout(st); st = setTimeout(save, 200); }, { passive: true });
 
     function load() {
       if (!next || busy) return Promise.resolve(false);
+      if (virtual) {
+        var batch = virtual.slugs.slice(virtual.position, virtual.position + 24);
+        var holder = document.createElement('div');
+        holder.innerHTML = batch.map(function (slug) { return WorkStats.cardHTML(slug, virtual.data[slug], feedEl.getAttribute('data-no-char') === 'true'); }).join('');
+        var add = [].slice.call(holder.children);
+        cards.push.apply(cards, add); place(add); virtual.position += batch.length;
+        next = virtual.position < virtual.slugs.length ? '#stats-next' : null;
+        loaded++; idle(); document.dispatchEvent(new CustomEvent('v2:dom')); save();
+        return Promise.resolve(true);
+      }
       busy = true; setBar('loading', '<span class="sr">' + esc(T('v2.loading', '正在加载')) + '</span>');
       return fetch(next, { credentials: 'same-origin' }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); }).then(function (html) {
         var doc = new DOMParser().parseFromString(html, 'text/html');
@@ -121,6 +147,7 @@
         add.forEach(function (c) { c.querySelectorAll('img').forEach(function (i) { i.loading = 'eager'; i.fetchPriority = 'low'; }); });
         cards.push.apply(cards, add); place(add);
         next = grid.getAttribute('data-next'); fails = 0; loaded++; busy = false; idle(); save();
+        document.dispatchEvent(new CustomEvent('v2:dom'));
         return true;
       }).catch(function () {
         busy = false; fails++;
@@ -128,14 +155,36 @@
         return false;
       });
     }
-    var io = new IntersectionObserver(function (es) { if (es[0].isIntersecting && !fails) load(); }, { rootMargin: '0px 0px 200% 0px' });
+    var io = new IntersectionObserver(function (es) { if (es[0].isIntersecting && !fails && !sorting) load(); }, { rootMargin: '0px 0px 200% 0px' });
     bar.addEventListener('click', function (e) { if (e.target.closest('[data-more]')) { fails = 0; load(); } });
 
-    // 排序：随机需要先把全部分页加载完
-    var sortBar = document.querySelector('.sort-bar'), order = null;
+    // 统计排序读取完整范围的作品元数据，再按批次显示；不抓全站图片。
+    var sortBar = document.querySelector('.sort-bar'), order = null, sortTouched = false, defaulting = false;
     var relayout = function (list) { cols.forEach(function (c) { c.replaceChildren(); }); place(list); };
     if (sortBar) sortBar.addEventListener('click', function (e) {
-      var btn = e.target.closest('[data-sort]'); if (!btn || btn.getAttribute('aria-pressed') === 'true') return;
+      var btn = e.target.closest('[data-sort]'); if (!btn || btn.disabled) return;
+      if (!defaulting) sortTouched = true;
+      if (sorting || busy || btn.getAttribute('aria-pressed') === 'true') return;
+      var mode = btn.getAttribute('data-sort');
+      if (mode === 'popular' || mode === 'downloads') {
+        sorting = true; setBar('loading', esc(T('v2.loading', '正在加载')));
+        Promise.all([fetch('/works-v2.json').then(function (r) { if (!r.ok) throw new Error(); return r.json(); }), WorkStats.ready]).then(function (result) {
+          if (!WorkStats.available()) throw new Error();
+          var data = result[0], slugs = JSON.parse(feedEl.getAttribute('data-slugs') || '[]').filter(function (slug) { return !!data[slug]; });
+          var ranks = {}; slugs.forEach(function (slug, i) { ranks[slug] = i; });
+          slugs.sort(function (a, b) { return WorkStats.metric(data[b].id, mode) - WorkStats.metric(data[a].id, mode) || ranks[a] - ranks[b]; });
+          virtual = { data: data, slugs: slugs, position: 0 }; cards = []; loaded = 0; fails = 0;
+          cols.forEach(function (c) { c.replaceChildren(); });
+          next = slugs.length ? '#stats-next' : null;
+          sortBar.querySelectorAll('[data-sort]').forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
+          return load();
+        }).catch(function () { idle(); setBar('error', esc(T('stats.sortFail', '统计排序暂不可用，请稍后重试'))); }).finally(function () { sorting = false; });
+        return;
+      }
+      if (virtual) {
+        virtual = null; cards = initialCards.slice(); next = initialNext; loaded = 0; order = null; fails = 0;
+        relayout(cards); idle();
+      }
       sortBar.querySelectorAll('[data-sort]').forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
       var go = function () {
         if (btn.getAttribute('data-sort') === 'random') {
@@ -158,7 +207,13 @@
       var i = 0, step = function () { return i++ < s.feedLoaded ? load().then(function (ok) { return ok ? step() : null; }) : Promise.resolve(); };
       return step().then(function () { scrollTo(0, s.feedY || 0); });
     })() : Promise.resolve();
-    restore.then(function () { idle(); io.observe(sentinel); });
+    Promise.all([restore, window.WorkStats ? WorkStats.ready : Promise.resolve()]).then(function () {
+      idle();
+      if (sortBar && !sortTouched && window.WorkStats && WorkStats.available() && sortBar.getAttribute('data-default-sort') === 'downloads') {
+        defaulting = true; sortBar.querySelector('[data-sort="downloads"]').click(); defaulting = false;
+      }
+      io.observe(sentinel);
+    });
   })();
 
   // —— 手机左侧抽屉 ——
@@ -259,7 +314,8 @@
       var src = T(ORIGIN_KEY[w.ok] || 'origin.unknown', ORIGIN_ZH[w.ok] || ORIGIN_ZH.unknown);
       info.innerHTML = '<a class="who big" href="/characters/' + esc(w.cid) + '.html" style="--c:' + esc(w.col) + '"><i></i>' + esc(w.c) + '</a>' +
         '<h2 id="wm-title">' + esc(w.n) + '</h2>' + (w.cm ? '<blockquote class="wm-quote">' + esc(w.cm) + '</blockquote>' : '') + (w.d ? '<p class="desc">' + esc(w.d) + '</p>' : '') +
-        '<div class="acts"><a class="btn btn-ink" href="' + esc(w.o) + '" target="_blank" rel="noopener">' + esc(T('work.download', '下载原图')) + (w.f ? ' · ' + esc(w.f) : '') + (w.s ? ' ' + esc(w.s) : '') + '</a>' +
+        '<p class="work-stats" data-work-stats="' + esc(w.id) + '"></p>' +
+        '<div class="acts"><a class="btn btn-ink" data-download-work="' + esc(w.id) + '" href="' + esc(w.o) + '" target="_blank" rel="noopener">' + esc(T('work.download', '下载原图')) + (w.f ? ' · ' + esc(w.f) : '') + (w.s ? ' ' + esc(w.s) : '') + '</a>' +
         '<button class="btn btn-line" type="button" data-copy-img="' + esc(w.l) + '">' + esc(T('v2.copyImg', '复制图片')) + '</button>' +
         '<button class="btn btn-line" type="button" data-copy-url="' + esc(location.origin + workUrl(slug)) + '">' + esc(T('work.copyLink', '复制链接')) + '</button></div>' +
         '<dl class="wm-facts">' +
@@ -307,9 +363,11 @@
         list = collect(); if (!list.length) return;
         idx = (i + list.length) % list.length;
         var slug = list[idx], w = d[slug]; if (!w) return;
+        var changed = current !== slug;
         current = slug;
         setStage(slug, w);
         render(slug, w);
+        if (changed) document.dispatchEvent(new CustomEvent('work:show', { detail: { id: w.id } }));
         info.scrollTop = 0; panel.scrollTop = 0;
         box.querySelector('.prev').hidden = box.querySelector('.next').hidden = list.length < 2;
         history.replaceState(Object.assign({}, history.state || {}, { wm: slug }), '', workUrl(slug));

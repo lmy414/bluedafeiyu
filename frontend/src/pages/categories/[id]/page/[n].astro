@@ -21,5 +21,5 @@ const og = ogCard('cat-' + t.id + (n > 1 ? '-p' + n : ''), items[0], t.name, t.d
 <V2 title={t.name + '作品' + pg(n) + ' - 蓝色大肥鱼'} desc={t.description + '。共 ' + list.length + ' 件 AI 娘二创作品。'} path={path} og={og} active="works" bodyPage="categoryDetail" robots={n > 1 ? 'noindex,follow' : 'index,follow'}>
   <FeedHead title={t.name} titleKey={'cat.' + t.id} sub={t.description + ' · 共 ' + list.length + ' 件'} subKey={'v2.typeSub.' + t.id} subVars={{ count: list.length }} sort={n === 1} />
   <PillTabs label="按类型筛选" labelKey="v2.byType" items={tabs} />
-  <Feed items={items} page={n} total={list.length} next={n < pages ? pageHref(base, n + 1) : ''} />
+  <Feed allItems={list} items={items} page={n} total={list.length} next={n < pages ? pageHref(base, n + 1) : ''} />
 </V2>

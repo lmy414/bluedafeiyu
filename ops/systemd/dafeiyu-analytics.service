@@ -1,0 +1,14 @@
+[Unit]
+Description=蓝色大肥鱼 GA4 聚合统计同步
+After=network-online.target dafeiyu-admin.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/dafeiyu/admin-publish.env
+ExecStart=/usr/bin/node /srv/apps/dafeiyu-admin/src/ops/admin/sync-analytics.mjs
+TimeoutStartSec=240
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true

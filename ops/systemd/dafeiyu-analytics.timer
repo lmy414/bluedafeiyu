@@ -1,0 +1,10 @@
+[Unit]
+Description=每小时同步蓝色大肥鱼 GA4 统计
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=1h
+RandomizedDelaySec=3min
+
+[Install]
+WantedBy=timers.target

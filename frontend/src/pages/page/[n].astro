@@ -12,5 +12,5 @@ const og = ogCard('home-p' + n, items[0], '蓝色大肥鱼 · AI 娘二创图库
 ---
 <V2 title={'蓝色大肥鱼 - AI 娘二创图库 第' + n + '页'} desc="AI 娘二创图库：按角色和类型浏览表情包、插画、设定与漫画，免费下载原图。" path={path} og={og} active="works" bodyPage="index" robots="noindex,follow">
   <FeedHead title="作品" titleKey="v2.nav.works" sub={'第 ' + n + ' 页'} subKey="v2.pageN" subVars={{ n }} sort={false} />
-  <Feed items={items} page={n} total={works.length} next={n < pages ? pageHref('/index.html', n + 1) : ''} />
+  <Feed allItems={works} items={items} page={n} total={works.length} next={n < pages ? pageHref('/index.html', n + 1) : ''} />
 </V2>

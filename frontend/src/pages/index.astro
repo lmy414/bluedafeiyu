@@ -14,7 +14,7 @@ const desc = '蓝色大肥鱼收录 DeepSeek娘、Claude娘、Qwen娘、GLM娘�
 ---
 <V2 title={title} desc={desc} path="/" og={og} active="works" bodyPage="index">
   <Fragment slot="head"><script is:inline src="/page-scripts/index-0.js"></script></Fragment>
-  <FeedHead title="作品" titleKey="v2.nav.works" sub={'共 ' + works.length + ' 件，按最新收录排序'} subKey="v2.worksSub" subVars={{ count: works.length }} />
+  <FeedHead title="作品" titleKey="v2.nav.works" sub={'共 ' + works.length + ' 件'} subKey="v2.worksSub" subVars={{ count: works.length }} />
   <PillTabs label="按类型筛选" labelKey="v2.byType" items={tabs} />
-  <Feed items={items} total={works.length} next={next} />
+  <Feed allItems={works} items={items} total={works.length} next={next} />
 </V2>

@@ -32,6 +32,16 @@
   /* 词典：只存 en / ja。zh 走页面原文。改文案时同步改页面里的中文与这里两份。 */
   var DICT = {
     en: {
+      "v2.sort.popular": "Popular",
+      "v2.sort.downloads": "Downloads",
+      "v2.sort.curated": "Curated order",
+      "stats.counts": "Views {views} · Downloads {downloads}",
+      "stats.updated": "Updated: {date}; downloads count button clicks",
+      "stats.unavailable": "Statistics have not synced yet",
+      "stats.note": "Since {start}, updated {date}; downloads count button clicks",
+      "stats.stale": "Statistics update delayed",
+      "stats.limited": "Some counts are limited by GA4 aggregation",
+      "stats.sortFail": "Statistics sorting is unavailable. Please try again later.",
       "nav.home": "Home",
       "nav.category": "Categories",
       "nav.submit": "Submit",
@@ -58,7 +68,7 @@
       "index.topics.more": "All collections",
       "brand.tagline": "An open archive of AI-girl fan stickers",
       "footer.disclaimer":
-        "An unofficial fan-curated project. All images belong to their original authors. This site uses minimal Google Analytics to understand traffic and performance, and builds no popularity rankings.",
+        "An unofficial fan-curated project. All images belong to their original authors. This site uses minimal Google Analytics to understand traffic and performance, and displays aggregate work views and download clicks.",
       "footer.changelog": "Changelog",
       "footer.privacy": "Analytics & privacy",
       "footer.source": "Site source repo",
@@ -255,7 +265,7 @@
         " to collect aggregated page-visit, source, device and performance data, in order to spot loading issues and improve pages; Google may set first-party analytics cookies.",
       "about.privacy.li2a": "Ads personalization, Google Signals and ad storage are all disabled",
       "about.privacy.li2c":
-        "; this site builds no user profiles, and never turns analytics data into popularity scores or rankings.",
+        "; this site builds no user profiles. Aggregate work views and download clicks are displayed and used for sorting.",
       "about.privacy.li3a": "Google Fonts load from Google's font service; comments are hosted on ",
       "about.privacy.li3c":
         " — the site itself doesn't store commenter identities.",
@@ -383,7 +393,7 @@
       "v2.ev.later": "Maybe later",
       "v2.cta.text": "Chat about art, ask for more, submit work and join events. QQ group",
       "v2.cta.more": "About the group",
-      "v2.worksSub": "{count} works, newest first",
+      "v2.worksSub": "{count} works",
       "v2.pageN": "Page {n}",
       "v2.byType": "Filter by type",
       "v2.sort": "Sort",
@@ -511,6 +521,16 @@
     },
 
     ja: {
+      "v2.sort.popular": "人気順",
+      "v2.sort.downloads": "ダウンロード数",
+      "v2.sort.curated": "選定順",
+      "stats.counts": "閲覧 {views} · ダウンロード {downloads}",
+      "stats.updated": "更新：{date}。ダウンロード数はボタンのクリック回数です",
+      "stats.unavailable": "統計はまだ同期されていません",
+      "stats.note": "集計開始 {start}、更新 {date}。ダウンロード数はクリック回数です",
+      "stats.stale": "統計の更新が遅れています",
+      "stats.limited": "GA4 の集計制限により一部の統計が制限されています",
+      "stats.sortFail": "統計による並べ替えは利用できません。後でもう一度お試しください。",
       "nav.home": "ホーム",
       "nav.category": "カタログ",
       "nav.submit": "投稿",
@@ -537,7 +557,7 @@
       "index.topics.more": "すべての特集",
       "brand.tagline": "AI娘スタンプのオープンアーカイブ",
       "footer.disclaimer":
-        "非公式のファン整理プロジェクトです。画像の著作権は各原作者に帰属します。当サイトはページとパフォーマンスの把握のため最小限の Google Analytics を使用しており、人気ランキングは作成していません。",
+        "非公式のファン整理プロジェクトです。画像の著作権は各原作者に帰属します。当サイトは最小限の Google Analytics を使用し、作品の閲覧数とダウンロードボタンのクリック数を集計・表示します。",
       "footer.changelog": "更新履歴",
       "footer.privacy": "統計とプライバシー",
       "footer.source": "サイトのソースリポジトリ",
@@ -733,7 +753,7 @@
         " を使って、ページ訪問・参照元・端末・パフォーマンスの集計データを収集します。読み込み問題の発見とページ改善のためであり、Google はファーストパーティの分析 Cookie を設定することがあります。",
       "about.privacy.li2a": "広告のパーソナライズ、Google Signals、広告ストレージはすべて無効化しています",
       "about.privacy.li2c":
-        "。アカウントのプロファイリングは行わず、統計データを人気スコアやランキングにすることもありません。",
+        "。アカウントのプロファイリングは行わず、作品の閲覧数とダウンロードクリック数を集計して表示・並べ替えに使用します。",
       "about.privacy.li3a": "Google Fonts は Google のフォントサービスから読み込みます。コメントは ",
       "about.privacy.li3c": " にホストされ、当サイトがコメント者の情報を保存することはありません。",
       "about.comments.p1a": "コメントは ",
@@ -859,7 +879,7 @@
       "v2.ev.later": "あとで",
       "v2.cta.text": "作品の話、リクエスト、投稿、イベント参加など。QQ グループ番号",
       "v2.cta.more": "グループ紹介",
-      "v2.worksSub": "全 {count} 件・新着順",
+      "v2.worksSub": "全 {count} 件",
       "v2.pageN": "{n} ページ目",
       "v2.byType": "種類で絞り込み",
       "v2.sort": "並び替え",

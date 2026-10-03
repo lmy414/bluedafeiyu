@@ -1,8 +1,9 @@
 ---
 // 列表页标题 + 排序
+import WorkSort from './WorkSort.astro';
 const { title, titleKey, sub, subKey, subVars, sort = true } = Astro.props;
 ---
 <header class="feed-head">
   <div><h1 data-i18n={titleKey}>{title}</h1><p data-i18n-tpl={subKey} data-i18n-vars={subVars ? JSON.stringify(subVars) : undefined}>{sub}</p></div>
-  {sort ? <div class="sort-bar" role="group" aria-label="排序" data-i18n-attr="aria-label:v2.sort"><button type="button" aria-pressed="true" data-sort="latest" data-i18n="v2.sort.latest">最新</button><button type="button" aria-pressed="false" data-sort="random" data-i18n="v2.sort.random">随机</button></div> : null}
+  {sort ? <WorkSort /> : null}
 </header>

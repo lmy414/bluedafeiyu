@@ -43,13 +43,13 @@ export async function apiRequest<T>(
     },
   })
   const data = (await response.json().catch(() => null)) as
-    | { errors?: Array<{ message?: string }>; message?: string }
+    | { errors?: Array<{ message?: string }>; message?: string; error?: string }
     | T
     | null
   if (!response.ok) {
-    const payload = data as { errors?: Array<{ message?: string }>; message?: string } | null
+    const payload = data as { errors?: Array<{ message?: string }>; message?: string; error?: string } | null
     const message =
-      payload?.errors?.[0]?.message || payload?.message || `请求失败（HTTP ${response.status}）`
+      payload?.errors?.[0]?.message || payload?.message || payload?.error || `请求失败（HTTP ${response.status}）`
     throw new APIError(message, response.status)
   }
   return data as T

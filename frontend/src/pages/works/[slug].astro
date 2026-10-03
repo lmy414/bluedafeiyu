@@ -27,8 +27,8 @@ const ld = JSON.stringify({ '@context': 'https://schema.org', '@type': 'ImageObj
     <img src={w.large} alt={w.description || w.name} width={w.width} height={w.height} loading="lazy" />
     {w.commentary ? <blockquote>{w.commentary}</blockquote> : null}
     {w.description ? <p>{w.description}</p> : null}
-    <p><a href={w.originalUrl || w.path} target="_blank" rel="noopener">下载原图 · {String(w.format || '').toUpperCase()} {fmtSize(w.fileSize)}</a></p>
+    <p><a href={w.originalUrl || w.path} data-download-work={w.id} target="_blank" rel="noopener">下载原图 · {String(w.format || '').toUpperCase()} {fmtSize(w.fileSize)}</a></p>
   </article>
-  <FeedHead title="作品" titleKey="v2.nav.works" sub={'共 ' + works.length + ' 件，按最新收录排序'} subKey="v2.worksSub" subVars={{ count: works.length }} />
-  <Feed items={lead} total={works.length} next={works.length > PAGE_SIZE ? pageHref('/index.html', 2) : ''} open={w.slug} />
+  <FeedHead title="作品" titleKey="v2.nav.works" sub={'共 ' + works.length + ' 件'} subKey="v2.worksSub" subVars={{ count: works.length }} />
+  <Feed allItems={works} items={lead} total={works.length} next={works.length > PAGE_SIZE ? pageHref('/index.html', 2) : ''} open={w.slug} />
 </V2>

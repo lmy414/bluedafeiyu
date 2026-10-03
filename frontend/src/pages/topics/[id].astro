@@ -3,6 +3,7 @@ import V2 from '../../layouts/V2.astro';
 import Feed from '../../components/v2/Feed.astro';
 import SubHead from '../../components/v2/SubHead.astro';
 import TopicAuthor from '../../components/v2/TopicAuthor.astro';
+import WorkSort from '../../components/v2/WorkSort.astro';
 import { topics, ogCard } from '../../lib/v2.mjs';
 export function getStaticPaths() { return topics.map(t => ({ params: { id: t.id }, props: { t } })); }
 const { t } = Astro.props;
@@ -16,5 +17,6 @@ const author = t.author || null;
   {author
     ? <TopicAuthor name={t.name} sub={sub} author={author} />
     : <SubHead back="/topics.html" backText="合集" backKey="v2.nav.collections" title={t.name} sub={sub} />}
-  <Feed items={list} total={list.length} />
+  <WorkSort curated />
+  <Feed allItems={list} items={list} total={list.length} />
 </V2>

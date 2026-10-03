@@ -1,0 +1,10 @@
+---
+const { curated = false } = Astro.props;
+---
+<div class="work-sort"><div class="sort-bar" role="group" aria-label="排序" data-default-sort="downloads" data-i18n-attr="aria-label:v2.sort">
+  <button type="button" aria-pressed="true" data-sort="latest" data-i18n={curated ? 'v2.sort.curated' : 'v2.sort.latest'}>{curated ? '精选顺序' : '最新'}</button>
+  <button type="button" aria-pressed="false" data-sort="popular" data-i18n="v2.sort.popular" disabled>热度</button>
+  <button type="button" aria-pressed="false" data-sort="downloads" data-i18n="v2.sort.downloads" disabled>下载量</button>
+  <button type="button" aria-pressed="false" data-sort="random" data-i18n="v2.sort.random">随机</button>
+</div>
+<p class="stats-note" data-stats-note>统计尚未同步</p></div>
