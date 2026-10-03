@@ -2,6 +2,7 @@
 // 只读 dist/site-data.json（由 tools/build_site_snapshot.mjs 生成），不改作品 id / slug
 import { works as published, site, categories, topics as allTopics, byWorkId } from './site.mjs';
 import { workAttribution } from '../../../admin/src/lib/attribution.mjs';
+import { imageRights } from './image-metadata.mjs';
 
 export const ORIGIN = 'https://xn--pssy23gqgbz2d718b.com';
 export const PAGE_SIZE = 24;
@@ -94,7 +95,7 @@ export const works = published
       typeShort: cats.map(id => typeById.get(id).short).join(' · '),
       lic: licKey(w), originKind: originType(w.origin), originLink: originUrl(w.origin),
       attribution,
-      author: attribution.name,
+      author: imageRights(w).creditName,
       authorUrl: attribution.url
     };
   })
@@ -123,7 +124,7 @@ export function overlayData() {
     n: w.name, c: w.char.name, cid: w.characterId, col: w.char.color, cs: w.char.soft, i: w.thumb, l: w.large, w: w.width, h: w.height,
     d: w.description || '', cm: w.commentary || '', o: w.originalUrl || w.path, f: String(w.format || '').toUpperCase(), s: fmtSize(w.fileSize),
     lk: w.lic, ls: LICENSE[w.lic][0], lt: LICENSE[w.lic][1], ln: w.license?.note || '', a: w.author, k: w.cats, ts: w.typeShort || '作品', tg: w.tagsShown,
-    au: w.authorUrl, ac: w.attribution.explicit, sa: w.origin?.author || '',
+    au: w.authorUrl, ac: w.attribution.explicit, sa: imageRights(w).creator, rights: imageRights(w),
     ok: w.originKind, su: w.originLink, dt: fmtDate(w.createdAt), id: w.id
   }]));
 }

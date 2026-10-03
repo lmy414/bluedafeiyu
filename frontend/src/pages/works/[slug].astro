@@ -2,8 +2,9 @@
 import V2 from '../../layouts/V2.astro';
 import Feed from '../../components/v2/Feed.astro';
 import FeedHead from '../../components/v2/FeedHead.astro';
-import { works, PAGE_SIZE, ogCard, fmtSize, abs, ORIGIN, pageHref } from '../../lib/v2.mjs';
+import { works, PAGE_SIZE, ogCard, fmtSize, LICENSE, pageHref } from '../../lib/v2.mjs';
 import { seoContext, seoTitle, seoDescription } from '../../lib/seo.mjs';
+import { imageMetadata, imageRights } from '../../lib/image-metadata.mjs';
 export function getStaticPaths() { return works.map(w => ({ params: { slug: w.slug }, props: { w } })); }
 const { w } = Astro.props;
 const character = { ...w.char, aliases: w.char.aliases || [] };
@@ -16,8 +17,8 @@ const pitch = w.commentary || w.description || w.char.name + '的二创作品：
 const og = ogCard('w-' + w.slug, w, w.name, pitch, w.char.name + (w.typeShort ? ' · ' + w.typeShort : ''), true);
 const firstPage = works.slice(0, PAGE_SIZE);
 const lead = [w, ...firstPage.filter(o => o !== w)].slice(0, PAGE_SIZE);
-const creator = w.origin?.author || w.author || '未标注';
-const ld = JSON.stringify({ '@context': 'https://schema.org', '@type': 'ImageObject', name: w.name, description: desc, contentUrl: abs(w.displayUrl), thumbnailUrl: abs(w.thumbUrl), uploadDate: w.createdAt, creator: { '@type': 'Person', name: creator }, license: w.license?.note || '授权状态不明', keywords: (w.tags || []).join(','), genre: ctx.kindWord, url: ORIGIN + '/works/' + w.slug + '.html' }).replace(/</g, '\\u003c');
+const rights = imageRights(w);
+const ld = JSON.stringify(imageMetadata(w, { description: desc, genre: ctx.kindWord })).replace(/</g, '\\u003c');
 ---
 <V2 title={title} desc={desc} shareDesc={pitch} path={'/works/' + w.slug + '.html'} type="article" og={og} active="works" bodyPage="work" accent={w.char.color + ';--cs:' + w.char.soft}>
   <Fragment slot="head"><script type="application/ld+json" set:html={ld} /></Fragment>
@@ -27,8 +28,11 @@ const ld = JSON.stringify({ '@context': 'https://schema.org', '@type': 'ImageObj
     <img src={w.large} alt={w.description || w.name} width={w.width} height={w.height} loading="lazy" />
     {w.commentary ? <blockquote>{w.commentary}</blockquote> : null}
     {w.description ? <p>{w.description}</p> : null}
-    {w.author ? <p>{w.attribution.explicit ? '署名' : '作者'}：{w.authorUrl ? <a href={w.authorUrl} target="_blank" rel="nofollow noopener noreferrer">{w.author}</a> : w.author}</p> : null}
-    {w.attribution.explicit && w.origin?.author ? <p>来源作者：{w.origin.author}</p> : null}
+    {w.author ? <p>{w.attribution.explicit ? '署名' : rights.creator ? '作者' : '提交者'}：{w.authorUrl ? <a href={w.authorUrl} target="_blank" rel="nofollow noopener noreferrer">{w.author}</a> : w.author}</p> : null}
+    {w.attribution.explicit && rights.creator ? <p>来源作者：{rights.creator}</p> : null}
+    <p>图片署名：{rights.creditText}</p>
+    <p>版权说明：{rights.copyrightNotice}</p>
+    <p>授权状态：{LICENSE[w.lic][1]} {w.license?.note || ''} · <a href={rights.license}>授权说明</a> · <a href={rights.acquireLicensePage}>如何取得许可</a></p>
     <p><a href={w.originalUrl || w.path} data-download-work={w.id} target="_blank" rel="noopener">下载原图 · {String(w.format || '').toUpperCase()} {fmtSize(w.fileSize)}</a></p>
   </article>
   <FeedHead title="作品" titleKey="v2.nav.works" sub={'共 ' + works.length + ' 件'} subKey="v2.worksSub" subVars={{ count: works.length }} />

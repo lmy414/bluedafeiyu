@@ -17,14 +17,27 @@ import V2 from '../layouts/V2.astro';
       </div>
     </div>
 
-    <h2 class="section-label" data-i18n="about.license.title">许可与版权</h2>
+    <h2 class="section-label" id="license" data-i18n="about.license.title">许可与版权</h2>
     <div class="panel about-card tilt-r">
       <div class="prose">
         <p><span data-i18n="about.license.p1a">本站的</span><strong data-i18n="about.license.p1b">程序代码</strong><span data-i18n="about.license.p1c">以 </span><span class="term">MIT</span><span data-i18n="about.license.p1d"> 协议发布，随便用。</span></p>
         <p><span data-i18n="about.license.p2a">但投稿或被收录的</span><strong><span data-i18n="about.license.p2b">表情包不会因为进了本站仓库就自动获得 </span><span class="term">MIT</span><span data-i18n="about.license.p2b2"> 授权</span></strong><span data-i18n="about.license.p2c">——图片的著作权始终归原作者所有。能不能用、怎么用，以每张作品详情页标注的来源与授权为准。</span></p>
         <p data-i18n="about.license.p3">标注为「授权状态不明」的作品，请先联系原作者取得许可，勿直接商用。</p>
+        <ul class="plain-list">
+          <li id="license-unknown" data-i18n="about.rights.unknown">授权状态不明：本站未确认图片的使用许可；收录和提供下载不代表授予转载、改编或商业使用权。</li>
+          <li id="license-submitter-permission" data-i18n="about.rights.submitter">投稿者确认授权收录与下载：仅记录投稿者对本站收录和下载的许可，其他用途需向权利人另行确认。</li>
+          <li id="license-author-permission" data-i18n="about.rights.author">原作者明确授权：具体允许的用途以作品的授权备注为准；未明确允许的用途请联系原作者。</li>
+          <li id="license-cc0" data-i18n="about.rights.cc0">CC0 公共领域：作品记录标注为 CC0；使用时仍需核实原始声明及第三方权利。</li>
+          <li id="license-cc-by" data-i18n="about.rights.by">CC BY 署名：遵守原作者声明的署名条件；协议版本以原始声明为准，本站不推定版本。</li>
+          <li id="license-cc-by-nc" data-i18n="about.rights.byNc">CC BY-NC 署名·非商用：遵守署名和非商业使用条件；协议版本以原始声明为准，商业用途需另行取得许可。</li>
+        </ul>
       </div>
     </div>
+
+    <h2 class="section-label" id="licensing" data-i18n="about.rights.acquireTitle">如何取得图片使用许可</h2>
+    <div class="panel about-card tilt-l"><div class="prose">
+      <p data-i18n="about.rights.acquireBody">打开对应作品，查看来源作者、来源链接和授权备注，通过原作者的公开主页或原始发布页面联系权利人，并说明作品链接、用途及是否商用。作者或来源未标注时，可通过下方「署名与删除申请」提交作品链接，请维护者协助核实来源；本站无法代未知权利人授权。</p>
+    </div></div>
 
     <h2 class="section-label" id="analytics" data-i18n="about.privacy.title">统计与隐私</h2>
     <div class="panel about-card tilt-l">
