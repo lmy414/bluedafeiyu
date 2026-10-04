@@ -1,20 +1,6 @@
 ---
-import V2 from '../layouts/V2.astro';
-import Feed from '../components/v2/Feed.astro';
-import FeedHead from '../components/v2/FeedHead.astro';
-import PillTabs from '../components/v2/PillTabs.astro';
-import { works, TYPES, PAGE_SIZE, ogCard, pageHref } from '../lib/v2.mjs';
-const items = works.slice(0, PAGE_SIZE);
-const next = works.length > PAGE_SIZE ? pageHref('/index.html', 2) : '';
-const tabs = [{ href: '/index.html', label: '全部', key: 'filter.all', count: works.length, on: true },
-  ...TYPES.map(t => ({ href: '/categories/' + t.id + '.html', label: t.short, key: 'v2.type.' + t.id, count: works.filter(w => w.cats.includes(t.id)).length }))];
-const og = ogCard('home', works[0], '蓝色大肥鱼 · AI 娘二创图库', '共 ' + works.length + ' 件作品 · 最新：' + works[0].name, '作品');
-const title = '蓝色大肥鱼 - AI娘表情包、DeepSeek娘梗图与二创立绘下载';
-const desc = '蓝色大肥鱼收录 DeepSeek娘、Claude娘、Qwen娘、GLM娘等 AI娘表情包、梗图、插画、立绘设定与多格漫画，支持按角色分类、Tag 搜索、高清查看和原图下载。';
+import ArchivePage from "../components/archive/ArchivePage.astro";
+import { archivePages } from "../lib/archive.mjs";
+const page = archivePages.get("/index.html");
 ---
-<V2 title={title} desc={desc} path="/" og={og} active="works" bodyPage="index">
-  <Fragment slot="head"><script is:inline src="/page-scripts/index-0.js"></script></Fragment>
-  <FeedHead title="作品" titleKey="v2.nav.works" sub={'共 ' + works.length + ' 件'} subKey="v2.worksSub" subVars={{ count: works.length }} />
-  <PillTabs label="按类型筛选" labelKey="v2.byType" items={tabs} />
-  <Feed allItems={works} items={items} total={works.length} next={next} />
-</V2>
+<ArchivePage page={page} />

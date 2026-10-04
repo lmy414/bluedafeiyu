@@ -1,21 +1,9 @@
 ---
-import V2 from '../../../layouts/V2.astro';
-import Feed from '../../../components/v2/Feed.astro';
-import PillTabs from '../../../components/v2/PillTabs.astro';
-import SubHead from '../../../components/v2/SubHead.astro';
-import { activeChars, byChar, TYPES, ofType, PAGE_SIZE, chunk, pageHref, ogCard, pg } from '../../../lib/v2.mjs';
-export function getStaticPaths() { return activeChars.flatMap(c => { const all = byChar.get(c.id); return TYPES.map(t => { const list = ofType(all, t.id); if (!list.length) return null; const pages = chunk(list, PAGE_SIZE); return { params: { id: c.id, type: t.id }, props: { c, all, tid: t.id, list, items: pages[0], n: 1, pages: pages.length } }; }).filter(Boolean); }); }
-const { c, all, tid, list, items, n, pages } = Astro.props;
-const t = TYPES.find(x => x.id === tid);
-const base = '/characters/' + c.id + (tid ? '/' + tid : '') + '.html';
-const path = pageHref(base, n);
-const tabs = [{ href: '/characters/' + c.id + '.html', label: '全部', key: 'filter.all', count: all.length, on: !tid },
-  ...TYPES.map(x => ({ href: '/characters/' + c.id + '/' + x.id + '.html', label: x.short, key: 'v2.type.' + x.id, count: ofType(all, x.id).length, on: x.id === tid })).filter(x => x.count)];
-const og = ogCard('c-' + c.id + (tid ? '-' + tid : '') + (n > 1 ? '-p' + n : ''), items[0], c.name + (t ? ' · ' + t.short : ''), (c.aliases.length ? '又名 ' + c.aliases.join('、') + ' · ' : '') + list.length + ' 件作品', '角色');
-const sub = (t ? t.name + ' · ' : '') + list.length + ' 件作品';
+import ArchivePage from "../../../components/archive/ArchivePage.astro";
+import { archivePages } from "../../../lib/archive.mjs";
+export function getStaticPaths() {
+ return [...archivePages].flatMap(([url,page])=>{const match=url.match(/^\/characters\/([^\/]+)\/((?!page$)[^\/]+)\.html$/);return match?[{params:{id: match[1], type: match[2]},props:{page}}]:[];});
+}
+const {page}=Astro.props;
 ---
-<V2 title={c.name + (t ? t.name : '') + '表情包与二创' + pg(n) + ' | 蓝色大肥鱼'} desc={c.name + (c.aliases.length ? '（又称' + c.aliases.join('、') + '）' : '') + (t ? t.name : '') + '的 AI 娘二创作品，共 ' + list.length + ' 件。'} path={path} og={og} active="characters" bodyPage="characterDetail" accent={c.color + ';--cs:' + c.soft} robots={n > 1 ? 'noindex,follow' : 'index,follow'}>
-  <SubHead back="/characters.html" backText="角色" backKey="v2.nav.characters" title={c.name} sub={sub} subKey={t ? 'v2.charTypeSub' : 'work.count'} subVars={t ? { kindId: t.id, count: list.length } : { count: list.length }} />
-  <PillTabs label={c.name + '作品分类'} labelKey="v2.byType" items={tabs} />
-  <Feed allItems={list} items={items} page={n} total={list.length} next={n < pages ? pageHref(base, n + 1) : ''} noChar />
-</V2>
+<ArchivePage page={page} />

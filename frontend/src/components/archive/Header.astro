@@ -1,0 +1,17 @@
+---
+import { archiveContext } from "../../lib/archive.mjs";
+const { icon } = archiveContext;
+---
+<header class="topbar">
+  <button class="mobile-menu icon-button" data-menu aria-label="打开菜单" aria-controls="sidebar" aria-expanded="false"><Fragment set:html={icon('menu')} /></button>
+  <a class="mobile-brand" href="/"><img src="/avatar.png" width="25" height="25" alt="蓝色大肥鱼" /></a>
+  <form class="top-search feed-search" action="/search.html" role="search">
+    <label class="sr" for="top-q" data-i18n="v2.searchLabel">搜索作品</label><Fragment set:html={icon('search',19)} />
+    <input type="search" id="top-q" name="q" placeholder="搜索作品、角色或 Tag" data-i18n-attr="placeholder:v2.searchPh" autocomplete="off" /><kbd>/</kbd>
+  </form>
+  <div class="top-tools">
+    <button class="icon-button" data-theme-toggle hidden><Fragment set:html={icon('moon',19)} /></button>
+    <div class="topnav" data-lang-host></div>
+    <a class="button primary small top-submit" href="/submit.html"><Fragment set:html={icon('upload',16)} /><span data-i18n="nav.submit">投稿</span></a>
+  </div>
+</header>

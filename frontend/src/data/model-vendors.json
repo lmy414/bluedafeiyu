@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-10-04",
+  "vendors": {
+    "deepseek": { "name": "深度求索（DeepSeek）", "en": "DeepSeek", "source": "https://www.deepseek.com/" },
+    "gpt": { "name": "OpenAI", "source": "https://openai.com/about/" },
+    "claude": { "name": "Anthropic", "source": "https://www.anthropic.com/company" },
+    "kimi": { "name": "月之暗面（Moonshot AI）", "en": "Moonshot AI", "source": "https://www.moonshot.cn/" },
+    "qwen": { "name": "阿里巴巴（通义团队）", "en": "Alibaba (Qwen team)", "source": "https://qwenlm.github.io/about/" },
+    "gemini": { "name": "Google（Google DeepMind）", "source": "https://deepmind.google/models/gemini/" },
+    "grok": { "name": "xAI", "source": "https://x.ai/news/grok" },
+    "stepfun": { "name": "阶跃星辰（StepFun）", "en": "StepFun", "source": "https://www.stepfun.com/" },
+    "glm": { "name": "智谱（Z.ai）", "en": "Z.ai (Zhipu)", "source": "https://www.zhipuai.cn/zh/about" },
+    "mimo": { "name": "小米（Xiaomi MiMo）", "en": "Xiaomi MiMo", "source": "https://mimo.xiaomi.com/" }
+  }
+}

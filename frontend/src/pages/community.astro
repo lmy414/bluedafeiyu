@@ -1,36 +1,6 @@
 ---
-import V2 from '../layouts/V2.astro';
-import { SITE, SOCIAL_ICON, works, ogCard } from '../lib/v2.mjs';
-const og = ogCard('community', works[0], '加入「' + SITE.group.name + '」', 'QQ 群号 ' + SITE.group.number + ' · 聊图、催更、投稿、参加活动', '社群');
+import ArchivePage from "../components/archive/ArchivePage.astro";
+import { archivePages } from "../lib/archive.mjs";
+const page = archivePages.get("/community.html");
 ---
-<V2 title={'加入社群 · ' + SITE.group.name + ' | 蓝色大肥鱼'} desc={'蓝色大肥鱼的 QQ 交流群「' + SITE.group.name + '」，聊图、催更、投稿、参加活动。'} path="/community.html" og={og} active="community" bodyPage="community">
-  <div class="community">
-    <header class="feed-head"><div><h1 data-i18n="v2.cta.title">加入「鱼之饭盆」</h1><p data-i18n="v2.cm.lede">本站的 QQ 交流群。想聊图、催更、报 Bug，或者单纯过来看看鱼，都欢迎。</p></div></header>
-    <div class="cm-grid">
-      <section class="cm-join">
-        <img src={SITE.group.qr} alt={'QQ 群「' + SITE.group.name + '」（群号 ' + SITE.group.number + '）的加入二维码'} width="260" height="260" data-i18n-attr="alt:qq.qrAlt" />
-        <p class="cm-no"><span data-i18n="index.qq.lede2">群号</span> <b>{SITE.group.number}</b></p>
-        <p class="cta-acts"><button type="button" class="btn btn-ink" data-copy-text={SITE.group.number} data-i18n="qq.copy">复制群号</button></p>
-        <p class="small" data-i18n="v2.cm.how">QQ 里搜群号，或扫码进群</p>
-        <div class="cm-social">
-          <p class="cm-social-title" data-i18n="v2.cm.elsewhere">也可以在这里找到我</p>
-          <ul>{SITE.social.map(s => <li><a class={'cm-sns cm-sns-' + s.id} href={s.href} target="_blank" rel="noopener me"><span class="cm-sns-ic" set:html={SOCIAL_ICON[s.id]} /><span class="cm-sns-tx"><b data-i18n={s.key}>{s.name}</b><small>{s.handle}</small></span></a></li>)}</ul>
-        </div>
-      </section>
-      <section class="cm-info">
-        <h2 data-i18n="v2.cm.canTitle">在群里可以做什么</h2>
-        <ul class="cm-list">
-          <li><b data-i18n="v2.cm.c2">直接投稿</b><span data-i18n="v2.cm.c2d">在群里 @机器人，发送「投稿 标题 角色」并附图，就能进入审核。</span></li>
-          <li><b data-i18n="v2.cm.c3">参加活动</b><span data-i18n="v2.cm.c3d">投稿征集、主题创作等社区活动会在群里发布。</span></li>
-          <li><b data-i18n="v2.cm.c4">反馈问题</b><span data-i18n="v2.cm.c4d">页面打不开、图片有误、想要新角色，群里说一声。</span></li>
-        </ul>
-        <h2 data-i18n="v2.cm.rulesTitle">群规</h2>
-        <ul class="cm-rules">
-          <li data-i18n="v2.cm.r1">只聊和 AI 娘、二创、本站相关的内容。</li>
-          <li data-i18n="v2.cm.r2">转发别人的作品请注明出处，尊重原作者。</li>
-          <li data-i18n="v2.cm.r3">不发真人肖像、不发 R18 内容、不刷屏。</li>
-        </ul>
-      </section>
-    </div>
-  </div>
-</V2>
+<ArchivePage page={page} />

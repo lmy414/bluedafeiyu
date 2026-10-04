@@ -1,0 +1,51 @@
+---
+import V2Meta from '../components/v2/V2Meta.astro';
+import Navigation from '../components/archive/Navigation.astro';
+import Header from '../components/archive/Header.astro';
+import Footer from '../components/archive/Footer.astro';
+import MobileNav from '../components/archive/MobileNav.astro';
+import PreviewDialog from '../components/archive/PreviewDialog.astro';
+const { title, desc, path = '/', active = '', bodyPage = active, og, type = 'website', shareDesc = '',
+  robots = 'index,follow', canonical = '', pageStyles = [], bodyAttrs = {}, schemas = [] } = Astro.props;
+---
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <V2Meta {title} {desc} {path} {og} {type} {shareDesc} {robots} {canonical} />
+    <link rel="icon" href="/favicon.png" />
+    <script is:inline src="/theme.js?v=1"></script>
+    <link rel="stylesheet" href="/tokens.css?v=16" />
+    <link rel="stylesheet" href="/archive/original-tools.css?v=1" />
+    <link rel="stylesheet" href="/archive/layout.css?v=1" />
+    <link rel="stylesheet" href="/archive/original-theme.css?v=1" />
+    <link rel="stylesheet" href="/archive/seo-content.css?v=1" />
+    <link rel="stylesheet" href="/archive/preview.css?v=1" />
+    <link rel="stylesheet" href="/archive/filter-select.css?v=1" />
+    {pageStyles.map(href => <link rel="stylesheet" {href} />)}
+    <script is:inline src="/archive-labels.js?v=1" defer></script>
+    <script is:inline src="/lang.js?v=13" defer></script>
+    <script is:inline src="/analytics.js" defer></script>
+    {schemas.map(schema => <script is:inline type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, '\\u003c')} />)}
+    <slot name="head" />
+  </head>
+  <body class="archive" data-archive data-i18n-page={bodyPage} data-page={active} {...bodyAttrs}>
+    <a class="skip-link" href="#main" data-i18n="v2.skip">跳到正文</a>
+    <Navigation {active} />
+    <div class="menu-scrim" data-menu-close hidden></div>
+    <div class="main-wrap">
+      <Header {active} />
+      <main id="main">
+        <slot />
+        <Footer />
+      </main>
+      <MobileNav {active} />
+    </div>
+    <PreviewDialog />
+    <script is:inline src="/work-stats.js?v=3" defer></script>
+    <script is:inline type="module" src="/archive/archive.js?v=1"></script>
+    <script is:inline src="/archive/filter-select.js?v=1" defer></script>
+    <slot name="scripts" />
+  </body>
+</html>

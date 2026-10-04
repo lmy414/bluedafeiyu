@@ -1127,6 +1127,8 @@
   var current = bakedLanguage || (initial === 'zh-Hant' ? 'zh' : initial);
   var originals = new WeakMap(); // element -> { text, attrs: { attr: value } }
   var converter, converterPromise, requested = initial, switchers = [], notice = '';
+  Object.assign(DICT.en, window.ArchiveLabels && window.ArchiveLabels.en || {});
+  Object.assign(DICT.ja, window.ArchiveLabels && window.ArchiveLabels.ja || {});
   var traditionalOverrides = {
     'about.license.p1b': '程式碼',
     'v2.nav.gallery': '圖庫',

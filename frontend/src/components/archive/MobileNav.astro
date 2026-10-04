@@ -1,0 +1,11 @@
+---
+import { archiveContext } from "../../lib/archive.mjs";
+import { navigation } from './nav-items.mjs';
+const { active = "" } = Astro.props;
+const { icon } = archiveContext;
+---
+<nav class="mobile-bottom" aria-label="快捷导航">
+  {navigation.slice(0,4).map(item => <a href={item.href} aria-current={active === item.id ? 'page' : undefined}>
+    <Fragment set:html={icon(item.icon,19)} /><span data-i18n={item.key}>{item.label}</span>
+  </a>)}
+</nav>

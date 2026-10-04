@@ -1,22 +1,6 @@
 ---
-import V2 from '../layouts/V2.astro';
-import RoleStack from '../components/v2/RoleStack.astro';
-import { activeChars, byChar, ORIGIN } from '../lib/v2.mjs';
+import ArchivePage from "../components/archive/ArchivePage.astro";
+import { archivePages } from "../lib/archive.mjs";
+const page = archivePages.get("/category.html");
 ---
-<V2 title="AI娘表情包分类 - 按角色浏览梗图、插画、设定图与漫画 | 蓝色大肥鱼" desc="按 DeepSeek娘、Claude娘、Qwen娘、GLM娘等角色浏览 AI娘梗图、表情包、二创插画、立绘设定图与多格漫画。" path="/category.html" canonical={ORIGIN + '/characters.html'} active="characters" bodyPage="category">
-  <Fragment slot="head"><script is:inline>
-    // 旧链接兼容：#c=<角色>&s=<类型>&q=<关键词> → 新地址
-    (function () {
-      var p = new URLSearchParams(String(location.hash || '').replace(/^#/, ''));
-      var c = p.get('c'), s = p.get('s'), q = p.get('q');
-      var safe = function (v) { return v && /^[a-z0-9-]+$/i.test(v) ? v.toLowerCase() : ''; };
-      c = safe(c); s = safe(s);
-      var P = function (href) { return window.SiteLang ? SiteLang.url(href) : href; };
-      if (q) location.replace(P('/search.html?q=' + encodeURIComponent(q)));
-      else if (c) location.replace(P('/characters/' + c + (s ? '/' + s : '') + '.html'));
-      else if (s) location.replace(P('/categories/' + s + '.html'));
-    })();
-  </script></Fragment>
-  <header class="feed-head"><div><h1 data-i18n="v2.nav.characters">角色</h1><p data-i18n="v2.charsSub">选择一个角色，进入对应作品。</p></div></header>
-  <div class="role-grid">{activeChars.map(c => <RoleStack href={'/characters/' + c.id + '.html'} list={byChar.get(c.id)} title={c.name} sub={byChar.get(c.id).length + ' 件作品'} subKey="work.count" subVars={{ count: byChar.get(c.id).length }} color={c.color} soft={c.soft} />)}</div>
-</V2>
+<ArchivePage page={page} />

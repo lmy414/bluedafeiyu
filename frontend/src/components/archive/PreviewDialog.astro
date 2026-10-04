@@ -1,0 +1,9 @@
+---
+import { archiveContext } from "../../lib/archive.mjs";
+const { icon } = archiveContext;
+---
+<dialog id="preview-dialog" class="preview-dialog" aria-label="作品预览" data-i18n-attr="aria-label:d.previewTitle">
+  <button class="dialog-close icon-button" data-preview-close aria-label="关闭预览"><Fragment set:html={icon('close',22)} /></button>
+  <div id="preview-body"></div>
+</dialog>
+<div id="toast" class="toast" role="status" hidden></div>

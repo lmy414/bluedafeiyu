@@ -85,5 +85,75 @@
         }
       ]
     }
+  },
+  {
+    "id": "morning-night",
+    "name": "早安与晚安",
+    "summary": "从早上好到钻进被窝，把一天的问候交给小肥鱼。",
+    "status": "active",
+    "order": 1,
+    "coverWorkId": "sticker_c66dbe21a33c0da459a8b93f",
+    "workIds": [
+      "sticker_c66dbe21a33c0da459a8b93f",
+      "sticker_4cefe5be4c07cf9d96d67864",
+      "sticker_8a30fe16ad1604f13bca8dbc",
+      "sticker_742d9817fba02c62c945e30d",
+      "sticker_issue_32_051",
+      "sticker_issue_32_050"
+    ],
+    "createdAt": "2026-10-04T08:00:00.000Z",
+    "updatedAt": "2026-10-04T08:00:00.000Z"
+  },
+  {
+    "id": "working-fish",
+    "name": "今天也在努力工作",
+    "summary": "认真开工、排查问题，忙完一天再歇一会儿。",
+    "status": "active",
+    "order": 2,
+    "coverWorkId": "sticker_eab7f6d525b40368d9abeefb",
+    "workIds": [
+      "sticker_eab7f6d525b40368d9abeefb",
+      "sticker_bf_160",
+      "sticker_4c56585b0d97e195cd66bd21",
+      "sticker_098544e894938a22d475b196",
+      "sticker_d05d92b2d62c81958d54aaea",
+      "sticker_16c1cd524cbd804b51d625b6"
+    ],
+    "createdAt": "2026-10-04T08:00:00.000Z",
+    "updatedAt": "2026-10-04T08:00:00.000Z"
+  },
+  {
+    "id": "soft-moments",
+    "name": "给你一点小小的安慰",
+    "summary": "摸摸头、说晚安，留几张温柔的图给想关心的人。",
+    "status": "active",
+    "order": 3,
+    "coverWorkId": "sticker_issue_32_048",
+    "workIds": [
+      "sticker_issue_32_048",
+      "sticker_bf_116",
+      "sticker_16c1cd524cbd804b51d625b6",
+      "sticker_issue_32_051",
+      "sticker_issue_32_050"
+    ],
+    "createdAt": "2026-10-04T08:00:00.000Z",
+    "updatedAt": "2026-10-04T08:00:00.000Z"
+  },
+  {
+    "id": "meet-ai-girls",
+    "name": "认识几位 AI 娘",
+    "summary": "从不同角色的立绘与二创开始，去各自的档案里继续逛。",
+    "status": "active",
+    "order": 4,
+    "coverWorkId": "sticker_bec975c5feb5bb316bf80c25",
+    "workIds": [
+      "sticker_bec975c5feb5bb316bf80c25",
+      "sticker_ca328c43e79e65fc7750c3c0",
+      "sticker_f8323e128d058ac9ddd4827d",
+      "sticker_5922a89a613db957824d7c54",
+      "sticker_48343eb7359e9ef2bbc972dc"
+    ],
+    "createdAt": "2026-10-04T08:00:00.000Z",
+    "updatedAt": "2026-10-04T08:00:00.000Z"
   }
 ]

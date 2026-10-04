@@ -16,7 +16,7 @@
         ? T('stats.note', '统计始于 {start}，更新于 {date}；下载为按钮点击次数', { start: snapshot.startDate, date: new Date(snapshot.syncedAt).toLocaleString() }) + (snapshot.stale ? ' · ' + T('stats.stale', '统计更新延迟') : '') + (snapshot.limited ? ' · ' + T('stats.limited', '部分统计受 GA4 汇总限制') : '')
         : T('stats.unavailable', '统计尚未同步');
     });
-    document.querySelectorAll('[data-sort="popular"], [data-sort="downloads"]').forEach(function (el) { el.disabled = !(snapshot && snapshot.available); });
+    document.querySelectorAll('[data-sort="popular"], [data-sort="downloads"], #filter-form option[value="popular"], #filter-form option[value="downloads"]').forEach(function (el) { el.disabled = !(snapshot && snapshot.available); });
   }
   function track(name, id) {
     if (!/^[A-Za-z0-9_-]{1,100}$/.test(id || '')) return;

@@ -1,0 +1,9 @@
+---
+import ArchivePage from "../../../../components/archive/ArchivePage.astro";
+import { archivePages } from "../../../../lib/archive.mjs";
+export function getStaticPaths() {
+ return [...archivePages].flatMap(([url,page])=>{const match=url.match(/^\/topics\/([^\/]+)\/page\/(\d+)\.html$/);return match?[{params:{id: match[1], n: match[2]},props:{page}}]:[];});
+}
+const {page}=Astro.props;
+---
+<ArchivePage page={page} />

@@ -27,7 +27,7 @@ test('public snapshot, assets and robots are present; private intake assets excl
 test('work detail metadata, commentary and conversation id remain tied to published slug',()=>{
  for(const work of data.works){const doc=html(`works/${work.slug}.html`);assert.ok(doc.includes(`/works/${work.slug}.html`));assert.ok(doc.includes(`sticker-${work.id}`));assert.ok(doc.includes('application/ld+json'));assert.ok(doc.includes(work.name));}
 });
-test('active topics produce static pages: author topics use the author layout, plain topics keep SubHead + Feed',()=>{
+test('active topics produce static pages with a shared collection layout and original authors',()=>{
  const topics=data.topics||[];
  const topicDir=path.join(out,'topics');
  const pages=fs.existsSync(topicDir) ? fs.readdirSync(topicDir).filter(p=>p.endsWith('.html')).sort() : [];
@@ -37,7 +37,7 @@ test('active topics produce static pages: author topics use the author layout, p
  for(const topic of topics){
   const doc=html(`topics/${topic.id}.html`);
   assert.ok(doc.includes('href="/works/'),`${topic.id} 应有作品入口`);
-  assert.ok(doc.includes('feed-grid'),`${topic.id} 应展示作品流`);
+  assert.ok(doc.includes('work-grid'),`${topic.id} 应展示作品流`);
   if(topic.author){
    // 作者型专题：作者名、首选渠道 URL 与独立版式标记都要出现在页面上。
    // 快照里的 & 到了 HTML 属性 / 文本里会转义成 &amp;，两种都认。
@@ -46,8 +46,8 @@ test('active topics produce static pages: author topics use the author layout, p
    assert.ok(seen(topic.author.channels[0].url),`${topic.id} 应显示首选渠道链接`);
    assert.ok(doc.includes('topic-author'),`${topic.id} 应使用作者版式`);
   }else{
-   assert.ok(doc.includes('role-head'),`${topic.id} 应沿用 SubHead`);
-   assert.ok(doc.includes('feed-grid'),`${topic.id} 应沿用 Feed`);
+   assert.ok(doc.includes('topic-hero'),`${topic.id} 应使用共用合集头部`);
+   assert.ok(doc.includes('work-grid'),`${topic.id} 应使用共用作品卡片`);
    assert.ok(!doc.includes('topic-author'),`${topic.id} 不应出现作者版式标记`);
   }
  }

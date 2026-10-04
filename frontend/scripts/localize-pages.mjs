@@ -12,7 +12,7 @@ export const LOCALES = [
   { id: 'ja', prefix: '/ja', html: 'ja', hreflang: 'ja', og: 'ja_JP', label: '日本語' }
 ];
 const source = fs.readFileSync(new URL('../public/lang.js', import.meta.url), 'utf8');
-const program = new vm.Script(source, { filename: 'lang.js' });
+let program = new vm.Script(source, { filename: 'lang.js' });
 const converter = Converter({ from: 'cn', to: 'twp' });
 const normalizeHome = p => p === '/index.html' ? '/' : p;
 export const localizedPath = (base, locale) => locale.prefix + normalizeHome(base);
@@ -27,7 +27,7 @@ function pageMeta(document, api, base, snapshot) {
   const slug = base.match(/^\/works\/([^/]+)\.html$/)?.[1];
   const work = slug && snapshot.works.find(w => w.slug === slug);
   const name = document.querySelector('main h1')?.textContent || '';
-  const count = document.querySelector('[data-feed]')?.getAttribute('data-total') || 0;
+  const count = document.body.getAttribute('data-archive-count') || document.querySelector('[data-feed]')?.getAttribute('data-total') || 0;
   const n = base.match(/\/page\/(\d+)\.html$/)?.[1];
   const locale = api.current;
   if (locale === 'en' || locale === 'ja') {
@@ -95,6 +95,17 @@ export async function localizeHtml(html, base, locale, snapshot) {
   }
   for (const script of document.querySelectorAll('script[type="application/ld+json"]')) {
     const data = JSON.parse(script.textContent);
+    function localizeSchema(value) {
+      if (!value || typeof value !== 'object') return;
+      for (const [key, child] of Object.entries(value)) {
+        if (typeof child === 'string' && ['url','@id','item'].includes(key)) {
+          const target = new URL(child, ORIGIN + base);
+          if (target.origin === ORIGIN && (target.pathname.endsWith('.html') || target.pathname === '/')) value[key] = ORIGIN + toPage(child);
+        } else if (child && typeof child === 'object') localizeSchema(child);
+      }
+      if (value.inLanguage) value.inLanguage = locale.html;
+    }
+    localizeSchema(data);
     if (data['@type'] === 'ImageObject') {
       data.url = ORIGIN + localizedPath(base, locale);
       data.license = ORIGIN + toPage(data.license);
@@ -105,8 +116,8 @@ export async function localizeHtml(html, base, locale, snapshot) {
         data.copyrightNotice = document.querySelector('[data-copyright]')?.textContent || data.copyrightNotice;
         if (work) data.genre = api.fmt('kind.' + (work.categoryIds?.[0] || 'meme'), data.genre);
       }
-      script.textContent = JSON.stringify(data).replace(/</g, '\\u003c');
     }
+    script.textContent = JSON.stringify(data).replace(/</g, '\\u003c');
   }
   // 无 JS 时保留可折叠的语言入口；JS 入口由 lang.js 绑定统一交互。
   for (const host of document.querySelectorAll('[data-lang-host]')) {
@@ -119,6 +130,7 @@ export async function localizeHtml(html, base, locale, snapshot) {
 }
 
 export async function buildLanguagePages(out, snapshot) {
+  program = new vm.Script(fs.readFileSync(path.join(out, 'archive-labels.js'), 'utf8') + '\n' + source, { filename: 'lang.js' });
   const files = [];
   function walk(dir) {
     for (const item of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -131,7 +143,7 @@ export async function buildLanguagePages(out, snapshot) {
   let count = 0;
   for (const file of files) {
     const html = fs.readFileSync(file, 'utf8');
-    if (!html.includes('class="v2"')) continue;
+    if (!html.includes('class="v2"') && !html.includes('data-archive')) continue;
     const relative = path.relative(out, file).split(path.sep).join('/');
     const base = '/' + relative;
     for (const locale of LOCALES) {

@@ -1,12 +1,6 @@
 ---
-import V2 from '../layouts/V2.astro';
-import RoleStack from '../components/v2/RoleStack.astro';
-import { topics, works, ogCard } from '../lib/v2.mjs';
-const og = ogCard('topics', topics[0]?.cover || works[0], '合集', topics.length ? topics.map(t => t.name).join('、') : '站长精选的成组作品', '合集');
+import ArchivePage from "../components/archive/ArchivePage.astro";
+import { archivePages } from "../lib/archive.mjs";
+const page = archivePages.get("/topics.html");
 ---
-<V2 title="AI娘表情包合集 - 站长精选的成组作品 | 蓝色大肥鱼" desc="站长精选的 AI 娘二创合集：同一个梗、同一组作品收在一起，一次看完。" path="/topics.html" og={og} active="collections" bodyPage="topics">
-  <header class="feed-head"><div><h1 data-i18n="v2.nav.collections">合集</h1><p data-i18n="v2.topicsSub">站长精选的成组作品，一次看完。</p></div></header>
-  {topics.length
-    ? <div class="role-grid">{topics.map(t => <RoleStack href={'/topics/' + t.id + '.html'} list={[t.cover, ...t.list.filter(w => w !== t.cover)]} title={t.name} sub={t.list.length + ' 件作品'} subKey="work.count" subVars={{ count: t.list.length }} color={t.color} soft={t.soft} />)}</div>
-    : <p class="empty-v2"><span data-i18n="v2.topicsEmpty">合集还在整理中，先去</span><a href="/characters.html" data-i18n="v2.nav.characters">角色</a><span data-i18n="v2.topicsEmpty2">里逛逛吧。</span></p>}
-</V2>
+<ArchivePage page={page} />

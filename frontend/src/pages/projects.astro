@@ -1,22 +1,6 @@
 ---
-import V2 from '../layouts/V2.astro';
+import ArchivePage from "../components/archive/ArchivePage.astro";
+import { archivePages } from "../lib/archive.mjs";
+const page = archivePages.get("/projects.html");
 ---
-<V2 title="项目推荐 - 站长的其他项目与网站 | 蓝色大肥鱼" desc="蓝色大肥鱼站长的其他项目和网站推荐页面，项目卡片正在整理中。" path="/projects.html" active="projects" bodyPage="projects" pageStyles={["/page-styles/projects.css"]} robots="index,follow">
-<div class="page">
-
-    <h1 class="page-title" data-i18n="projects.h1">项目推荐</h1>
-    <p class="lede" data-i18n="projects.lede">我自己的其他项目和网站，会慢慢搬到这里。</p>
-
-    <div class="panel recruit-card">
-      <span class="tape-strip" aria-hidden="true"></span>
-      <p class="recruit-text"><span class="marker-highlight" data-i18n="projects.recruit.a">项目征集中</span><span data-i18n="projects.recruit.b"> · 留空占位</span></p>
-    </div>
-
-    <div class="grid-2 project-slots">
-      <div class="empty project-slot tilt-l" data-i18n="projects.slot">待补充</div>
-      <div class="empty project-slot tilt-r" data-i18n="projects.slot">待补充</div>
-    </div>
-</div>
-<Fragment slot="scripts">
-</Fragment>
-</V2>
+<ArchivePage page={page} />

@@ -1,25 +1,9 @@
 ---
-import V2 from '../../../../layouts/V2.astro';
-import Feed from '../../../../components/v2/Feed.astro';
-import FeedHead from '../../../../components/v2/FeedHead.astro';
-import PillTabs from '../../../../components/v2/PillTabs.astro';
-import { works, TYPES, PAGE_SIZE, chunk, pageHref, ogCard, pg } from '../../../../lib/v2.mjs';
+import ArchivePage from "../../../../components/archive/ArchivePage.astro";
+import { archivePages } from "../../../../lib/archive.mjs";
 export function getStaticPaths() {
-  return TYPES.flatMap(t => {
-    const list = works.filter(w => w.cats.includes(t.id));
-    const pages = chunk(list, PAGE_SIZE);
-    return pages.map((items, i) => ({ params: { id: t.id, n: String(i + 1) }, props: { t, list, items, n: i + 1, pages: pages.length } })).slice(1);
-  });
+ return [...archivePages].flatMap(([url,page])=>{const match=url.match(/^\/categories\/([^\/]+)\/page\/(\d+)\.html$/);return match?[{params:{id: match[1], n: match[2]},props:{page}}]:[];});
 }
-const { t, list, items, n, pages } = Astro.props;
-const base = '/categories/' + t.id + '.html';
-const path = pageHref(base, n);
-const tabs = [{ href: '/index.html', label: '全部', key: 'filter.all', count: works.length },
-  ...TYPES.map(x => ({ href: '/categories/' + x.id + '.html', label: x.short, key: 'v2.type.' + x.id, count: works.filter(w => w.cats.includes(x.id)).length, on: x.id === t.id }))];
-const og = ogCard('cat-' + t.id + (n > 1 ? '-p' + n : ''), items[0], t.name, t.description + ' · 共 ' + list.length + ' 件', t.short);
+const {page}=Astro.props;
 ---
-<V2 title={t.name + '作品' + pg(n) + ' - 蓝色大肥鱼'} desc={t.description + '。共 ' + list.length + ' 件 AI 娘二创作品。'} path={path} og={og} active="works" bodyPage="categoryDetail" robots={n > 1 ? 'noindex,follow' : 'index,follow'}>
-  <FeedHead title={t.name} titleKey={'cat.' + t.id} sub={t.description + ' · 共 ' + list.length + ' 件'} subKey={'v2.typeSub.' + t.id} subVars={{ count: list.length }} sort={n === 1} />
-  <PillTabs label="按类型筛选" labelKey="v2.byType" items={tabs} />
-  <Feed allItems={list} items={items} page={n} total={list.length} next={n < pages ? pageHref(base, n + 1) : ''} />
-</V2>
+<ArchivePage page={page} />

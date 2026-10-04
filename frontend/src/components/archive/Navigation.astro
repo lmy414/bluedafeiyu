@@ -1,0 +1,31 @@
+---
+import { archiveContext } from "../../lib/archive.mjs";
+import { navigation } from './nav-items.mjs';
+const { active = "" } = Astro.props;
+const { icon, works } = archiveContext;
+---
+<aside class="sidebar" id="sidebar">
+  <a class="brand" href="/">
+    <img src="/avatar.png" width="43" height="43" alt="蓝色大肥鱼" />
+    <span>蓝色大肥鱼<small data-i18n="d.brandSub">AI 娘二创开放档案</small></span>
+  </a>
+  <button class="mobile-close icon-button" data-menu-close aria-label="关闭菜单"><Fragment set:html={icon('close')} /></button>
+  <p class="nav-label" data-i18n="d.explore">逛一逛</p>
+  <nav class="main-nav">
+    {navigation.map(item => <a href={item.href} aria-current={active === item.id ? 'page' : undefined}>
+      <Fragment set:html={icon(item.icon)} /><span data-i18n={item.key}>{item.label}</span>
+      {item.id === 'browse' && <small>{works.length}</small>}
+    </a>)}
+  </nav>
+  <div class="side-note">
+    <span class="eyebrow">FISH NOTES</span><p data-i18n="d.sideText">收好每一张有趣的图。</p>
+    <a class="button primary small" href="/submit.html"><Fragment set:html={icon('upload',16)} /><span data-i18n="nav.submit">投稿</span></a>
+  </div>
+  <div class="sidebar-bottom">
+    <a href="/about.html" data-i18n="v2.aboutCopyright">关于与版权</a>
+    <a href="/changelog.html" data-i18n="footer.changelog">更新日志</a>
+    <a href="/projects.html" data-i18n="nav.projects">推荐</a>
+    <a href="https://github.com/lmy414/ai-girl-stickers" target="_blank" rel="noopener">GitHub</a>
+    <p data-i18n="d.nonOfficial">非官方同人整理项目</p>
+  </div>
+</aside>

@@ -1,0 +1,19 @@
+---
+import Archive from '../../layouts/Archive.astro';
+const { page } = Astro.props;
+if (!page) throw new Error('Archive route has no page model');
+const attrs = Object.fromEntries([...String(page.options.attrs || '').matchAll(/([\w-]+)(?:="([^"]*)")?/g)].map(m=>[m[1],m[2] ?? '']));
+const meta = page.meta;
+attrs['data-archive-count'] = meta.total;
+const bodyPage = page.url.startsWith('/works/') ? 'work' :
+  /^\/characters\/.+/.test(page.url) ? 'characterDetail' :
+  /^\/categories\/.+/.test(page.url) ? 'categoryDetail' :
+  /^\/topics\/.+/.test(page.url) ? 'topicDetail' : page.active === 'home' ? 'index' : page.active;
+const firstSchema = meta.schemas[0];
+if (firstSchema['@type'] === 'ImageObject') attrs['data-work-id'] = page.content.match(/data-comment-term="sticker-([^"]+)"/)?.[1];
+---
+<Archive title={meta.title} desc={meta.description} path={page.url === '/index.html' ? '/' : page.url}
+  active={page.active} {bodyPage} robots={meta.robots} canonical={meta.canonical} og={meta.og}
+  bodyAttrs={attrs} schemas={meta.schemas}>
+  <Fragment set:html={page.content} />
+</Archive>

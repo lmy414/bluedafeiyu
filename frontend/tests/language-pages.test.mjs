@@ -44,8 +44,8 @@ test('HTML 在执行 JS 前已翻译，导航与分页留在当前语言且资�
     const document = read(localizedPath('/about.html', locale));
     assert.equal(document.querySelector('main h1').textContent, labels[i]);
     assert.equal(document.querySelector('.feed-search').getAttribute('action'), locale.prefix + '/search.html');
-    assert.equal(document.querySelector('a[data-i18n="nav.submit"]').getAttribute('href'), locale.prefix + '/submit.html');
-    assert.equal(document.querySelector('script[src*="lang.js"]').getAttribute('src'), '/lang.js?v=12');
+    assert.equal(document.querySelector('.top-submit').getAttribute('href'), locale.prefix + '/submit.html');
+    assert.equal(document.querySelector('script[src*="lang.js"]').getAttribute('src'), '/lang.js?v=13');
     assert.ok(document.querySelector('noscript details a[href="/ja/about.html"]'));
     const pagination = read(localizedPath('/page/2.html', locale));
     assert.ok(pagination.querySelector('[data-next]').getAttribute('data-next').startsWith(locale.prefix + '/page/'));

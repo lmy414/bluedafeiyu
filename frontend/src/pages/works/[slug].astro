@@ -1,40 +1,9 @@
 ---
-import V2 from '../../layouts/V2.astro';
-import Feed from '../../components/v2/Feed.astro';
-import FeedHead from '../../components/v2/FeedHead.astro';
-import { works, PAGE_SIZE, ogCard, fmtSize, LICENSE, pageHref } from '../../lib/v2.mjs';
-import { seoContext, seoTitle, seoDescription } from '../../lib/seo.mjs';
-import { imageMetadata, imageRights } from '../../lib/image-metadata.mjs';
-export function getStaticPaths() { return works.map(w => ({ params: { slug: w.slug }, props: { w } })); }
-const { w } = Astro.props;
-const character = { ...w.char, aliases: w.char.aliases || [] };
-const slugs = works.filter(o => o.characterId === w.characterId).map(o => o.slug).sort();
-const ctx = seoContext(w, character, slugs.indexOf(w.slug) % 2 ? 'alias' : 'tag');
-const title = seoTitle(ctx);
-const desc = seoDescription(ctx);
-// 分享简介用大肥鱼的点评（AI 以第一人称写的介绍）；没有点评才用客观描述
-const pitch = w.commentary || w.description || w.char.name + '的二创作品：' + w.name;
-const og = ogCard('w-' + w.slug, w, w.name, pitch, w.char.name + (w.typeShort ? ' · ' + w.typeShort : ''), true);
-const firstPage = works.slice(0, PAGE_SIZE);
-const lead = [w, ...firstPage.filter(o => o !== w)].slice(0, PAGE_SIZE);
-const rights = imageRights(w);
-const ld = JSON.stringify(imageMetadata(w, { description: desc, genre: ctx.kindWord })).replace(/</g, '\\u003c');
+import ArchivePage from "../../components/archive/ArchivePage.astro";
+import { archivePages } from "../../lib/archive.mjs";
+export function getStaticPaths() {
+ return [...archivePages].flatMap(([url,page])=>{const match=url.match(/^\/works\/([^\/]+)\.html$/);return match?[{params:{slug: match[1]},props:{page}}]:[];});
+}
+const {page}=Astro.props;
 ---
-<V2 title={title} desc={desc} shareDesc={pitch} path={'/works/' + w.slug + '.html'} type="article" og={og} active="works" bodyPage="work" accent={w.char.color + ';--cs:' + w.char.soft}>
-  <Fragment slot="head"><script type="application/ld+json" set:html={ld} /></Fragment>
-  <article class="w-static" data-static-work data-comment-term={'sticker-' + w.id}>
-    <h1>{w.name}</h1>
-    <p>{w.char.name}{w.cats.map(id => <Fragment> · <span data-i18n={'v2.type.' + id}>{id === 'meme' ? '梗图' : id === 'illustration' ? '插画' : id === 'setting' ? '设定' : '漫画'}</span></Fragment>)}</p>
-    <img src={w.large} alt={w.description || w.name} width={w.width} height={w.height} loading="lazy" />
-    {w.commentary ? <blockquote>{w.commentary}</blockquote> : null}
-    {w.description ? <p>{w.description}</p> : null}
-    {w.author ? <p><span data-i18n={w.attribution.explicit ? 'v2.credit' : rights.creator ? 'v2.author' : 'work.field.submitter'}>{w.attribution.explicit ? '署名' : rights.creator ? '作者' : '提交者'}</span>：{w.authorUrl ? <a href={w.authorUrl} target="_blank" rel="nofollow noopener noreferrer">{w.author}</a> : w.author}</p> : null}
-    {w.attribution.explicit && rights.creator ? <p><span data-i18n="work.field.originAuthor">来源作者</span>：{rights.creator}</p> : null}
-    <p><span data-i18n="work.field.imageCredit">图片署名</span>：<span data-i18n-tpl="work.imageCreditText" data-i18n-vars={JSON.stringify({credit: rights.creditName ? rights.creditName + '；' : ''})}>{rights.creditText}</span></p>
-    <p><span data-i18n="work.field.copyright">版权说明</span>：<span data-copyright data-i18n-tpl={rights.type === 'cc0' ? 'work.copyright.cc0' : rights.creator ? 'work.copyright.named' : 'work.copyright.unknown'} data-i18n-vars={JSON.stringify({creator: rights.creator})}>{rights.copyrightNotice}</span></p>
-    <p><span data-i18n="work.field.license">授权状态</span>：<span data-i18n={'license.' + w.lic}>{LICENSE[w.lic][1]}</span> {w.license?.note || ''} · <a href={rights.license} data-i18n="work.licenseTitle">授权说明</a> · <a href={rights.acquireLicensePage} data-i18n="work.acquireLicense">如何取得许可</a></p>
-    <p><a href={w.originalUrl || w.path} data-download-work={w.id} target="_blank" rel="noopener"><span data-i18n="work.download">下载原图</span> · {String(w.format || '').toUpperCase()} {fmtSize(w.fileSize)}</a></p>
-  </article>
-  <FeedHead title="作品" titleKey="v2.nav.works" sub={'共 ' + works.length + ' 件'} subKey="v2.worksSub" subVars={{ count: works.length }} />
-  <Feed allItems={works} items={lead} total={works.length} next={works.length > PAGE_SIZE ? pageHref('/index.html', 2) : ''} open={w.slug} />
-</V2>
+<ArchivePage page={page} />

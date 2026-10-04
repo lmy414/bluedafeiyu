@@ -70,11 +70,22 @@ if (process.env.SKIP_OG !== '1') {
 }
 // Astro generates the 404 page; server response semantics must still be verified.
 const snapshot = JSON.parse(fs.readFileSync(path.join(dist,'site-data.json'),'utf8'));
-const urls = ['/', '/characters.html','/community.html','/topics.html','/submit.html','/about.html','/projects.html','/changelog.html','/events/national-day-2026.html',
- ...(snapshot.characters || []).filter(c => c.status === 'active' && snapshot.works.some(w => w.characterId === c.id && w.status === 'published')).map(c => `/characters/${c.id}.html`),
- ...snapshot.categories.filter(c => c.status === 'active').map(c=>`/categories/${c.id}.html`),
- ...(snapshot.topics || []).map(t=>`/topics/${t.id}.html`),
- ...snapshot.works.map(w=>`/works/${w.slug}.html`)];
+// The canonical, indexable HTML is the route registry. Include new browse and
+// character/type landings, and exclude search, legacy directory and pagination.
+const urls = [];
+function collectIndexable(dir) {
+ for (const item of fs.readdirSync(dir, {withFileTypes:true})) {
+  const file = path.join(dir, item.name);
+  if(item.isDirectory()) collectIndexable(file);
+  else if(item.name.endsWith('.html')) {
+   const html = fs.readFileSync(file, 'utf8');
+   if(!html.includes('data-archive') || !/<meta name="robots" content="index,follow"/.test(html)) continue;
+   const url = '/' + path.relative(out,file).split(path.sep).join('/');
+   urls.push(url === '/index.html' ? '/' : url);
+  }
+ }
+}
+collectIndexable(out);
 await buildLanguagePages(out, snapshot);
 fs.writeFileSync(path.join(out,'sitemap.xml'),languageSitemap(urls));
 for (const base of urls) for (const locale of LOCALES) {

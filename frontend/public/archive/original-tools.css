@@ -1,0 +1,103 @@
+/* Copied from bluedafeiyu/frontend/public/styles.css and v2.css. Run node sync-theme.mjs to refresh. */
+/* 使用本机优先的手写字体栈，不请求远程字体，避免字体替换造成首屏布局偏移。 */
+
+/* ==========================================================================
+   蓝色大肥鱼 · 组件层（手绘涂鸦风 · 蓝白）
+   --------------------------------------------------------------------------
+   本文件是「③ 组件层」：纸卡 / 按钮 / 便签 / 工具条 / 卡片等公共组件都在这里，
+   各页页内 <style> 只放该页专属版式。
+     · 颜色、字号、间距、圆角、阴影、动效时长一律取自 tokens.css，不写硬编码色值；
+     · 底层是网格纸背景，组件是白纸卡片（2px 墨线 + 硬投影 + 微旋转）悬浮其上；
+     · 旋转只给装饰容器，输入控件保持水平；悬停约定统一为「摆正抬起」。
+   ========================================================================== */
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+/* ---- 网格纸背景层 ---- */
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.7;
+  color: var(--text-primary);
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-attachment: fixed;
+}
+
+a { color: var(--brand); text-decoration: none; }
+a:hover { text-decoration: underline; text-decoration-style: wavy; }
+
+::selection { background: var(--marker-soft); color: var(--ink); }
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: var(--paper); border-left: 2px solid var(--ink); }
+::-webkit-scrollbar-thumb { background: var(--ink); border-radius: var(--radius-pill); border: 3px solid var(--paper); }
+
+/* ---- 手绘小工具 ---- */
+.hover-wiggle:hover { animation: wiggle var(--duration-3) ease-in-out; }
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+  75% { transform: rotate(-1deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.marker-highlight { position: relative; z-index: 1; }
+.marker-highlight::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: var(--space-1);
+  left: calc(var(--space-1) * -1.5);
+  right: calc(var(--space-1) * -2.5);
+  height: 42%;
+  background-color: var(--marker-soft);
+  transform: rotate(-1deg);
+  opacity: 0.9;
+  border-radius: var(--radius-sm);
+}
+
+.tape-strip {
+  position: absolute;
+  width: 104px;
+  height: 28px;
+  background-color: var(--tape);
+  background-image: linear-gradient(90deg, transparent, var(--tape-shine), transparent);
+  box-shadow: var(--shadow-tape);
+  transform: rotate(-3deg) translateX(-50%);
+  left: 50%;
+  top: calc(var(--space-3) * -1);
+  z-index: 10;
+  border-left: 1px dashed var(--on-art-line);
+  border-right: 1px dashed var(--on-art-line);
+}
+
+.icon { flex: none; }
+
+/* ---- 错落纸卡：微旋转交替，悬停统一「摆正抬起」 ---- */
+.tilt-l, .tilt-r {
+  transition: transform var(--duration-2) ease, box-shadow var(--duration-2) ease;
+}
+.tilt-l { transform: rotate(-0.8deg); }
+.tilt-r { transform: rotate(0.8deg); }
+.tilt-l:hover,
+.tilt-r:hover {
+  position: relative;
+  transform: rotate(0) translate(-2px, -2px);
+  box-shadow: var(--shadow-paper-lg);
+  z-index: 2;
+}
+
+
+/* Original supplementary character colors. */
+:root {
+  --art-gpt-a: #7fd1b9;      --art-gpt-b: #1d6b57;
+  --art-glm-a: #8fb3f2;      --art-glm-b: #2a4a8f;
+  --art-stepfun-a: #8fd3f4;  --art-stepfun-b: #1f6b8f;
+  --art-mimo-a: #ffbf8a;     --art-mimo-b: #b3541e;
+}
