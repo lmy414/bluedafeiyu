@@ -1,8 +1,9 @@
 ---
 import V2 from '../layouts/Archive.astro';
+import DocumentPage from '../components/archive/DocumentPage.astro';
 ---
 <V2 title="关于蓝色大肥鱼 - AI娘表情包开放档案与版权说明" desc="了解蓝色大肥鱼 AI娘表情包开放档案、图片版权与授权、Google Analytics 统计隐私、评论机制、官方 QQ 交流群、角色设计致谢和删除申请方式。" path="/about.html" active="about" bodyPage="about" pageStyles={["/page-styles/about.css"]} robots="index,follow">
-<div class="page">
+<DocumentPage>
 
     <h1 class="page-title" data-i18n="about.h1">关于</h1>
     <p class="lede" data-i18n="about.lede">蓝色大肥鱼是一个非官方同人整理项目，讲清楚它是干什么的、版权归谁、以及我们不收集你的哪些数据。</p>
@@ -95,7 +96,7 @@ import V2 from '../layouts/Archive.astro';
       </div>
     </aside>
     </div>
-</div>
+</DocumentPage>
 <Fragment slot="scripts">
   <script is:inline src="/page-scripts/about-0.js"></script>
 </Fragment>

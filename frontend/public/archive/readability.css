@@ -1,0 +1,24 @@
+/* Keep text upright while retaining the paper, ink, grid and decorative tape. */
+body.archive {
+  --font-marker: var(--font-sans);
+  --font-hand: var(--font-sans);
+  font-style: normal;
+  font-synthesis: none;
+}
+.archive :is(h1,h2,h3,h4,label,.brand,.group-label,.date-sticker) { font-style: normal; }
+.archive :is(.page-head h1,.section-head h2,.hero-text h2,.character-info h1,.topic-hero h1,.community-hero h2,.event-hero h1,.error-page h1) { font-weight: 700; }
+.archive :is(.side-note,.role-card,.collection-card,.tilt-l,.tilt-r,.guide-card,.qq-card,.form-notice,.confirm-note,.sticker-tag,.email-title,.entry-card,.page-title,.section-label,.hero-paper,.qr-paper,.event-hero>figure) { transform: none; }
+.archive main, .archive .main-wrap, .archive .section, .archive .filter-fields { min-width: 0; }
+.archive .document-page :is(.entry-title,.channel-head h3,.group-label) { font-weight: 700; }
+.archive .document-page .form-notice { font-weight: 400; }
+.archive .document-page .sticker-tag { line-height: 1.6; }
+.archive .document-page .date-sticker { transform: none; }
+.archive .hero-paper figcaption { line-height: 1.6; }
+.archive .character-facts b { color: var(--brand); }
+@media (max-width: 760px) {
+  .archive .work-title { font-size: 14px; min-height: 44px; }
+  .archive .card-meta { font-size: 11px; flex-wrap: wrap; gap: 4px 8px; }
+  .archive .type-label, .archive .mobile-bottom a { font-size: 11px; }
+  .archive :is(.breadcrumbs,.results-line,.results-line small,.character-facts span,.role-body p,.role-body>span,.footer p) { font-size: 12px; }
+  .archive .filter-bar label { font-size: 11px; }
+}

@@ -246,6 +246,7 @@
           turnstileWidgetId = window.turnstile.render(turnstileSlot, {
             sitekey: turnstileSitekey,
             theme: "light",
+            size: turnstileSlot.clientWidth > 0 && turnstileSlot.clientWidth < 300 ? "compact" : "normal",
             callback: function (token) { turnstileInput.value = token || ""; },
             "expired-callback": function () { turnstileInput.value = ""; },
             "error-callback": function () { turnstileInput.value = ""; }

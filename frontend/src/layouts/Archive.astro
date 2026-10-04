@@ -23,7 +23,9 @@ const { title, desc, path = '/', active = '', bodyPage = active, og, type = 'web
     <link rel="stylesheet" href="/archive/seo-content.css?v=1" />
     <link rel="stylesheet" href="/archive/preview.css?v=1" />
     <link rel="stylesheet" href="/archive/filter-select.css?v=1" />
-    {pageStyles.map(href => <link rel="stylesheet" {href} />)}
+    {['submit','about','changelog'].includes(active) && <link rel="stylesheet" href="/archive/document.css?v=1" />}
+    {pageStyles.map(href => <link rel="stylesheet" href={href + '?v=2'} />)}
+    <link rel="stylesheet" href="/archive/readability.css?v=1" />
     <script is:inline src="/archive-labels.js?v=1" defer></script>
     <script is:inline src="/lang.js?v=13" defer></script>
     <script is:inline src="/analytics.js" defer></script>

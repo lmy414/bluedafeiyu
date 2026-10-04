@@ -1,8 +1,9 @@
 ---
 import V2 from '../layouts/Archive.astro';
+import DocumentPage from '../components/archive/DocumentPage.astro';
 ---
 <V2 title="更新日志 - 蓝色大肥鱼网站改版与收录记录" desc="查看蓝色大肥鱼 AI娘表情包站的页面改版、数据迁移、作品收录、SEO 和性能优化记录。" path="/changelog.html" active="changelog" bodyPage="changelog" pageStyles={["/page-styles/changelog.css"]} robots="index,follow">
-<div class="page">
+<DocumentPage>
 
     <h1 class="page-title" data-i18n="changelog.h1">更新日志</h1>
     <p class="lede" data-i18n="changelog.lede">本站的变更记录，大事小事都记一笔。</p>
@@ -177,7 +178,7 @@ import V2 from '../layouts/Archive.astro';
       </li>
     </ol>
     <p class="note" data-i18n="changelog.note">本页为节选示例；完整变更记录已归档到仓库 archive/2026-09-24/CHANGELOG.md。</p>
-</div>
+</DocumentPage>
 <Fragment slot="scripts">
 </Fragment>
 </V2>

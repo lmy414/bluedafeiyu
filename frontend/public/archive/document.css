@@ -1,0 +1,56 @@
+/* Shared document components; use the archive theme without importing the old shell. */
+.document-page { padding-block: 32px 12px; min-width: 0; }
+.document-page .page-title { font-size: 32px; font-weight: 750; margin-bottom: 12px; }
+.document-page > .lede { max-width: 84ch; margin-bottom: 28px; color: var(--text-secondary); }
+.document-page .section-label { display: block; font-size: 23px; font-weight: 700; margin: 30px 0 18px; padding-left: 12px; border-left: 4px solid var(--brand); }
+.document-page .panel { position: relative; min-width: 0; padding: 26px; background: var(--bg-surface); border: 2px solid var(--border-default); border-radius: var(--radius-sketchy); box-shadow: var(--shadow-paper-sm); }
+.document-page .panel .panel { box-shadow: none; }
+.document-page .grid-2 { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; }
+.document-page .prose p { margin-bottom: 14px; }
+.document-page .prose p:last-child { margin-bottom: 0; }
+.document-page .prose ul, .document-page .prose ol { padding-left: 24px; }
+.document-page .prose li { margin-block: 6px; }
+.document-page .prose a, .document-page .plain-list a { color: var(--brand); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.document-page .hint, .document-page .note { color: var(--text-secondary); font-size: 14px; line-height: 1.7; }
+.document-page .note { margin-top: 20px; max-width: 90ch; }
+.document-page .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 9px 16px; background: var(--bg-surface); border: 2px solid var(--border-default); border-radius: var(--radius-md); box-shadow: var(--shadow-paper-sm); font-weight: 650; text-decoration: none; line-height: 1.5; }
+.document-page .btn:hover { background: var(--bg-hover); color: var(--text-primary); }
+.document-page .btn.primary { background: var(--brand); color: var(--brand-ink); }
+.document-page .btn:disabled { opacity: .6; cursor: not-allowed; box-shadow: none; }
+.document-page .form { display: flex; flex-direction: column; gap: 20px; max-width: 900px; margin-inline: auto; }
+.document-page .form-row { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.document-page .form-row > label, .document-page .group-label { font-size: 16px; font-weight: 650; }
+.document-page .form :is(input[type=text],input[type=url],select,textarea) { width: 100%; min-width: 0; min-height: 46px; padding: 10px 12px; color: var(--text-primary); background: var(--bg-surface); border: 2px solid var(--border-default); border-radius: var(--radius-md); box-shadow: var(--shadow-paper-sm); }
+.document-page .form input[type=file] { width: 100%; min-width: 0; padding: 14px; border: 2px dashed var(--border-default); border-radius: var(--radius-md); background: var(--bg-inset); overflow: hidden; }
+.document-page .form input[type=file]::file-selector-button { margin-right: 14px; padding: 9px 13px; color: var(--text-primary); font: inherit; font-weight: 600; border: 1px solid var(--border-default); border-radius: var(--radius-sm); background: var(--bg-surface); cursor: pointer; }
+.document-page .checkbox-row { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; line-height: 1.7; }
+.document-page .checkbox-row input { flex: 0 0 18px; width: 18px; height: 18px; margin: 4px 0 0; accent-color: var(--brand); }
+.document-page .confirm-note { max-width: none; padding: 20px; background: var(--bg-inset); }
+.document-page .form-notice { padding: 14px 18px; text-align: left; font-size: 16px; line-height: 1.8; margin-bottom: 24px; }
+.document-page .form-notice strong { font-weight: 700; }
+.document-page .form-sheet { padding: 32px; }
+.document-page .form :is(input,select,textarea):disabled { background: var(--bg-inset); color: var(--text-tertiary); cursor: not-allowed; }
+.document-page .about-card.tilt-r { margin-left: 0; }
+.document-page .about-main .about-card { max-width: none; }
+.document-page :is(.about-aside,.submit-aside) { top: 100px; }
+.document-page .timeline { max-width: 100%; }
+.document-page .entry-head { row-gap: 12px; }
+.document-page .date-sticker { flex: none; }
+@media (max-width: 1100px) {
+  .document-page :is(.submit-top,.about-columns) { grid-template-columns: minmax(0,1fr); }
+  .document-page :is(.about-aside,.submit-aside) { position: static; }
+}
+@media (max-width: 760px) {
+  .document-page { padding-top: 24px; font-size: 15px; }
+  .document-page .page-title { font-size: 28px; }
+  .document-page .section-label { font-size: 20px; margin-top: 26px; }
+  .document-page .panel { padding: 20px 16px; }
+  .document-page .grid-2 { grid-template-columns: minmax(0,1fr); }
+  .document-page .form-notice { padding: 12px; font-size: 14px; }
+  .document-page .form input[type=file] { padding: 10px; font-size: 13px; }
+  .document-page .form input[type=file]::file-selector-button { margin-right: 8px; padding: 7px; }
+  .document-page .form .confirm-note { padding: 16px 12px; }
+  .document-page .checkbox-row { gap: 9px; font-size: 14px; }
+  .document-page .timeline { padding-left: 22px; }
+  .document-page .entry-head { flex-direction: column; align-items: flex-start; }
+}
