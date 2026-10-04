@@ -91,7 +91,7 @@ import SubmissionForm from '../components/SubmissionForm.astro';
     <p class="note" data-i18n="submit.note2">投稿不会立即上线：维护者会看图补充 Tag、分类、来源和授权信息，审核通过后批量发布；期间可能会向你确认信息。</p>
 </div>
 <Fragment slot="scripts">
-    <script is:inline src="/site-data.js"></script>
-    <script is:inline src="/page-scripts/submit-0.js?v=2"></script>
+    <script is:inline src="/site-data.js" defer></script>
+    <script is:inline src="/page-scripts/submit-0.js?v=2" defer></script>
 </Fragment>
 </V2>

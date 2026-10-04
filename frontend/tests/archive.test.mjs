@@ -11,6 +11,18 @@ const files=[];
 function walk(dir){for(const entry of fs.readdirSync(dir,{withFileTypes:true})){if(dir===out&&['en','ja','zh-hant'].includes(entry.name))continue;const file=path.join(dir,entry.name);if(entry.isDirectory())walk(file);else if(entry.name.endsWith('.html'))files.push(path.relative(out,file));}}
 walk(out);
 
+test('submission initializes after deferred language and character data in all locales',()=>{
+ for(const prefix of ['', 'en/', 'ja/', 'zh-hant/']){
+  const file=prefix+'submit.html', doc=read(file);
+  const scripts=[...doc.querySelectorAll('script[src]')];
+  const language=scripts.findIndex(s=>s.getAttribute('src').startsWith('/lang.js'));
+  const data=scripts.findIndex(s=>s.getAttribute('src')==='/site-data.js');
+  const form=scripts.findIndex(s=>s.getAttribute('src').startsWith('/page-scripts/submit-0.js'));
+  assert.ok(language>=0&&data>language&&form>data, file+' dependency order');
+  for(const index of [language,data,form])assert.ok(scripts[index].hasAttribute('defer'),file+' must defer dependent scripts');
+ }
+});
+
 test('all archive pages render one H1, production SEO and reachable local links/images',()=>{
  let pages=0, links=0;
  for(const file of files){
