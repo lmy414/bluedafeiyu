@@ -122,7 +122,7 @@ export const pageHref = (base, n) => (n === 1 ? base : base.replace(/(index)?\.h
 export function overlayData() {
   return Object.fromEntries(works.map(w => [w.slug, {
     n: w.name, c: w.char.name, cid: w.characterId, col: w.char.color, cs: w.char.soft, i: w.thumb, l: w.large, w: w.width, h: w.height,
-    d: w.description || '', cm: w.commentary || '', o: w.originalUrl || w.path, f: String(w.format || '').toUpperCase(), s: fmtSize(w.fileSize),
+    d: w.description || '', cm: w.commentary || '', o: w.originalUrl || w.path, f: String(w.format || '').toUpperCase(), s: fmtSize(w.fileSize), bytes: Number(w.fileSize) || 0,
     lk: w.lic, ls: LICENSE[w.lic][0], lt: LICENSE[w.lic][1], ln: w.license?.note || '', a: w.author, k: w.cats, ts: w.typeShort || '作品', tg: w.tagsShown,
     au: w.authorUrl, ac: w.attribution.explicit, sa: imageRights(w).creator, rights: imageRights(w),
     ok: w.originKind, su: w.originLink, dt: fmtDate(w.createdAt), id: w.id

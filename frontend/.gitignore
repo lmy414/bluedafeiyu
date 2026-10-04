@@ -2,3 +2,4 @@ node_modules/
 out/
 .astro/
 public/vendor/opencc/
+public/vendor/fflate/

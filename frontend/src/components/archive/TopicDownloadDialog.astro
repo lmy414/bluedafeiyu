@@ -1,0 +1,15 @@
+---
+import { archiveContext } from '../../lib/archive.mjs';
+const { tr } = archiveContext;
+---
+<dialog id="topic-download-dialog" class="topic-download-dialog" aria-labelledby="topic-download-title">
+  <h2 id="topic-download-title"></h2>
+  <p data-topic-status role="status" aria-live="polite"></p>
+  <progress data-topic-progress max="1" value="0"></progress>
+  <ul data-topic-failures hidden></ul>
+  <div class="detail-actions">
+    <button class="button" type="button" data-topic-retry hidden>{tr('zipRetry','重试失败图片','Retry failed images','失敗した画像を再試行')}</button>
+    <button class="button primary" type="button" data-topic-save hidden>{tr('zipSave','保存 ZIP','Save ZIP','ZIPを保存')}</button>
+    <button class="button" type="button" data-topic-close>{tr('zipCancel','取消','Cancel','キャンセル')}</button>
+  </div>
+</dialog>

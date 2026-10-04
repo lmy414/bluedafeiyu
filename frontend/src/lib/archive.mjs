@@ -41,6 +41,25 @@ for(const [key, en, ja] of [
   ['commentsFail','Comments could not load. Please try again later.','コメントを読み込めませんでした。後でもう一度お試しください。']
 ]){translations.en['d.'+key]=en;translations.ja['d.'+key]=ja;}
 
+for (const [key,en,ja] of [
+  ['zipCancel','Cancel','キャンセル'],
+  ['zipRetry','Retry failed images','失敗した画像を再試行'],
+  ['zipSave','Save ZIP','ZIPを保存'],
+  ['zipTitle','Collection originals ZIP','コレクションの元画像ZIP'],
+  ['zipLoading','Loading collection…','コレクションを読み込み中…'],
+  ['zipProgress','Fetching originals {done} / {total}','元画像を取得中 {done} / {total}'],
+  ['zipPacking','Packing originals…','元画像をZIPにまとめています…'],
+  ['zipFailed','Fetched {done} / {total} images; {failed} failed. Retry or save the successful images.','{total}枚中{done}枚を取得、{failed}枚が失敗。再試行するか取得済み画像を保存できます。'],
+  ['zipReady','{count} originals packed. Download started. If it did not save, click “Save ZIP”.','{count}枚の元画像をZIPにまとめ、ダウンロードを開始しました。保存されない場合は「ZIPを保存」を押してください。'],
+  ['zipError','Could not create ZIP. Close and try again.','ZIPを作成できませんでした。閉じて再試行してください。'],
+  ['zipLimit','Originals exceed the packing limit (100 MB total, 20 MB per image). No incomplete archive was created.','元画像が上限（合計100 MB、1枚20 MB）を超えています。不完全なZIPは作成していません。'],
+  ['zipSavePartial','Save successful images','取得済み画像を保存'],
+  ['zipPartialPrefix','Partial_','一部_'],
+  ['zipCancelled','Packing cancelled','ZIP作成をキャンセルしました'],
+  ['zipClose','Close','閉じる'],
+  ['copyStill','Still image copied. Download the original for animation.','静止画像をコピーしました。アニメーションは元画像をダウンロードしてください。'],
+  ['copyImageFail','Could not copy. Try again or download the original.','コピーできませんでした。再試行するか元画像をダウンロードしてください。']
+]) { translations.en['d.'+key]=en; translations.ja['d.'+key]=ja; }
 const ctx={works,bySlug,chars,topics,types,snapshot,translations,editorial:read('discovery.json'),modelVendors:read('model-vendors.json').vendors,commonTags:[...tagCounts].sort((a,b)=>b[1]-a[1]).slice(0,16)};
 Object.assign(ctx,createPrimitives(ctx));
 for(const factory of [createWorkCards,createCollectionCards,createCharacterCards,createListing]) Object.assign(ctx,factory(ctx));

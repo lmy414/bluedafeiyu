@@ -1,0 +1,16 @@
+.topic-download-dialog{width:min(520px,calc(100% - 32px));max-height:85dvh;overflow:auto;padding:24px;border:1px solid var(--border-default);border-radius:var(--radius-md);background:var(--bg-surface);color:var(--text-primary)}
+.topic-download-dialog::backdrop{background:rgba(0,0,0,.5)}
+.topic-download-dialog h2{font-size:var(--text-xl);margin:0 0 16px}
+.topic-download-dialog p{line-height:1.7;margin:0 0 16px}
+.topic-download-dialog progress{width:100%;margin-bottom:16px;accent-color:var(--accent)}
+.topic-download-dialog ul{max-height:180px;overflow:auto;padding-left:24px}
+.topic-download-dialog .detail-actions{flex-wrap:wrap;margin-bottom:0}
+.topic-download-dialog [hidden]{display:none!important}
+.collection-card-download{display:flex;flex-direction:column}
+.collection-card-download>.collection-link{display:block;color:inherit;flex:1}
+.collection-download{margin:0 18px 18px;align-self:flex-start}
+.topic-download-actions{margin:16px 0 0}
+[data-copy-img]:disabled{opacity:.65;cursor:wait}
+.image-copy-status{font-size:var(--text-xs);color:var(--text-secondary);margin:8px 0;line-height:1.5}
+.image-copy-status:empty{display:none}
+@media(max-width:480px){.topic-download-dialog{padding:20px}.topic-download-dialog .button{flex:1;min-width:0}.topic-download-actions .button{width:100%}}

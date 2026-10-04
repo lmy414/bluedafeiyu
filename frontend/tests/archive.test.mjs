@@ -69,6 +69,24 @@ test('all works keep static detail, live analytics IDs and comment threads',()=>
   assert.equal(doc.querySelector('[data-static-work]').getAttribute('data-comment-term'),'sticker-'+work.id);
   assert.equal(doc.querySelector('[data-download-work]').getAttribute('data-download-work'),work.id);
   assert.equal(doc.querySelector('[data-comments]').getAttribute('data-comments'),work.id);
+  assert.ok(doc.querySelector('[data-copy-img]'),work.slug+' has image copy');
   assert.equal(doc.querySelector('body').getAttribute('data-work-id'),work.id);
+ }
+});
+
+test('topic downloads exist on topic pages and homepage only, independent of rendered cards',()=>{
+ const data=JSON.parse(fs.readFileSync(path.join(out,'archive-data.json'),'utf8'));
+ for(const topic of data.topics){
+  const doc=read('topics/'+topic.id+'.html');
+  assert.equal(doc.querySelector('[data-download-topic]').getAttribute('data-download-topic'),topic.id);
+  assert.ok(topic.slugs.length>=doc.querySelectorAll('#results .work-card').length);
+ }
+ assert.equal(read('index.html').querySelector('[data-download-topic]').getAttribute('data-download-topic'),'maojing');
+ for(const file of ['browse.html','search.html','topics.html','characters/deepseek.html']) assert.equal(read(file).querySelectorAll('[data-download-topic]').length,0,file);
+ assert.ok(data.works.every(w=>Number.isFinite(w.bytes)&&w.bytes>=0));
+ for(const prefix of ['', 'en/', 'ja/', 'zh-hant/']){
+  const doc=read(prefix+'topics/maojing.html');
+  assert.ok(doc.querySelector('#topic-download-dialog'));
+  assert.ok(!doc.querySelector('a button'),'No button nested inside a link');
  }
 });

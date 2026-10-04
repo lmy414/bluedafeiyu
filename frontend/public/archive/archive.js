@@ -1,4 +1,6 @@
 import {renderWorkCard} from './work-card.js';
+import {copyImage} from './image-copy.js?v=1';
+import {installTopicDownloads} from './topic-download.js?v=1';
 (() => {
   'use strict';
   const $ = (selector, parent = document) => parent.querySelector(selector);
@@ -17,6 +19,20 @@ import {renderWorkCard} from './work-card.js';
   const card = w => renderWorkCard(w, {url:localURL, translate:tx});
   const drawGrid = list => `<div class="work-grid">${list.map(card).join('')}</div>`;
   async function copy(value) { try { await navigator.clipboard.writeText(value);toast(tx('ui.copied','已复制')); } catch { toast(tx('d.copyFail','复制失败，请手动复制。')); } }
+  installTopicDownloads({load,tx,toast});
+  document.addEventListener('click', event => {
+    const button = event.target.closest('[data-copy-img]');
+    if (!button || button.disabled) return;
+    const feedback = button.closest('.detail-info,.preview-info')?.querySelector('[data-image-copy-status]');
+    if (feedback) feedback.textContent = '';
+    const report = message => { if (feedback) feedback.textContent = message; else toast(message); };
+    const copying = copyImage(button.dataset.copyImg);
+    button.disabled = true;
+    button.setAttribute('aria-busy','true');
+    copying.then(() => report(button.dataset.copyAnimated === 'true' ? tx('d.copyStill','已复制静态图片，动图请下载原图') : tx('v2.copiedImg','已复制图片')),
+      error => report(error.message === 'unsupported' ? tx('v2.copyImgFail','浏览器不支持，请长按保存') : tx('d.copyImageFail','复制失败，请重试或下载原图')))
+      .finally(() => {button.disabled = false;button.removeAttribute('aria-busy');});
+  });
   let menuPrevious;
   const mobileQuery=matchMedia('(max-width:760px)');
   const sidebar=$('#sidebar');
@@ -131,7 +147,7 @@ import {renderWorkCard} from './work-card.js';
             <div class="preview-note"><span class="eyebrow">FISH NOTES</span><p>${esc(w.cm||w.d)}</p></div>
             ${w.tg.length?`<div class="tags preview-tags">${w.tg.slice(0,6).map(t=>`<a class="tag" href="${localURL(`/search.html?q=${encodeURIComponent(t)}`)}"><span aria-hidden="true">#</span>${esc(t)}</a>`).join('')}</div>`:''}
             <dl class="preview-facts"><div><dt>${esc(tx('d.previewFormat','原图格式'))}</dt><dd>${esc(w.f)}</dd></div><div><dt>${esc(tx('d.previewSize','文件大小'))}</dt><dd>${esc(w.s)}</dd></div><div class="preview-permission"><dt>${esc(tx('d.previewPermission','使用许可'))}</dt><dd>${esc(tx('license.'+w.lk,w.lt))}</dd></div></dl>
-            <div class="detail-actions preview-actions"><a class="button primary" href="${localURL(`/works/${esc(w.slug)}.html`)}">${esc(tx('d.fullDetail','查看完整详情'))}${previewIcon('arrow')}</a><a class="button" data-download-work="${esc(w.id)}" href="${esc(new URL(w.o,'https://xn--pssy23gqgbz2d718b.com').href)}" target="_blank" rel="noopener">${previewIcon('download')}${esc(tx('work.download','下载原图'))}</a></div>
+            <div class="detail-actions preview-actions"><a class="button primary" href="${localURL(`/works/${esc(w.slug)}.html`)}">${esc(tx('d.fullDetail','查看完整详情'))}${previewIcon('arrow')}</a><a class="button" data-download-work="${esc(w.id)}" href="${esc(new URL(w.o,'https://xn--pssy23gqgbz2d718b.com').href)}" target="_blank" rel="noopener">${previewIcon('download')}${esc(tx('work.download','下载原图'))}</a><button class="button" type="button" data-copy-img="${esc(w.l)}" data-copy-animated="${/^(GIF|APNG)$/i.test(w.f)}">${previewIcon('image')}${esc(tx('v2.copyImg','复制图片'))}</button></div><p class="image-copy-status" data-image-copy-status role="status" aria-live="polite"></p>
           </div>
         </div>
         <nav class="preview-nav" aria-label="${esc(tx('d.previewNavigation','作品切换'))}"><button class="preview-step" data-preview-step="-1" ${previewIndex===0?'disabled':''}>${previewIcon('back')}${esc(tx('d.prevWork','上一张'))}</button><span class="preview-position"><b>${String(previewIndex+1).padStart(2,'0')}</b><span>/</span>${String(previewSlugs.length).padStart(2,'0')}</span><button class="preview-step" data-preview-step="1" ${previewIndex===previewSlugs.length-1?'disabled':''}>${esc(tx('d.nextWork','下一张'))}${previewIcon('arrow')}</button></nav>`;}
