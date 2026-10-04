@@ -1,6 +1,7 @@
 ---
 import V2 from '../layouts/Archive.astro';
 import DocumentPage from '../components/archive/DocumentPage.astro';
+import AcknowledgementCard from '../components/archive/AcknowledgementCard.astro';
 ---
 <V2 title="关于蓝色大肥鱼 - AI娘表情包开放档案与版权说明" desc="了解蓝色大肥鱼 AI娘表情包开放档案、图片版权与授权、Google Analytics 统计隐私、评论机制、官方 QQ 交流群、角色设计致谢和删除申请方式。" path="/about.html" active="about" bodyPage="about" pageStyles={["/page-styles/about.css"]} robots="index,follow">
 <DocumentPage>
@@ -66,6 +67,11 @@ import DocumentPage from '../components/archive/DocumentPage.astro';
         </ul>
       </div>
     </div>
+
+    <section aria-labelledby="special-thanks-title" id="special-thanks">
+      <h2 class="section-label" id="special-thanks-title" data-i18n="d.specialThanks">特别致谢</h2>
+      <AcknowledgementCard name="霜霜" href="https://wldss.cn/" avatar="/credits/shuangshuang.jpg" />
+    </section>
 
     <h2 class="section-label" data-i18n="about.takedown.title">署名与删除</h2>
     <div class="panel about-card sticky-note tilt-r">

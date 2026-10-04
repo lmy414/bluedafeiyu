@@ -59,7 +59,7 @@ const IMAGE_DIRS = [
   "dist/owner-picks/previews",
   "dist/data/blue-fish/previews",
 ];
-const IMAGE_FILES = ["dist/favicon.ico", "dist/favicon.png", "dist/avatar.png", "dist/qq-group.png", "dist/events/national-day-2026.webp"];
+const IMAGE_FILES = ["dist/favicon.ico", "dist/favicon.png", "dist/avatar.png", "dist/qq-group.png", "dist/credits/shuangshuang.jpg", "dist/events/national-day-2026.webp"];
 const TEMPLATE_REL = ".github/ISSUE_TEMPLATE/sticker-submission.yml";
 
 let passed = 0;

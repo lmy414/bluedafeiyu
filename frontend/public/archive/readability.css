@@ -15,7 +15,11 @@ body.archive {
 .archive .document-page .date-sticker { transform: none; }
 .archive .hero-paper figcaption { line-height: 1.6; }
 .archive .character-facts b { color: var(--brand); }
+.archive .footer > div:last-child { flex-wrap: wrap; }
+.archive .sidebar { overflow-y: auto; }
+.archive .sidebar > * { flex-shrink: 0; }
 @media (max-width: 760px) {
+  .archive .top-github { display: none; }
   .archive .work-title { font-size: 14px; min-height: 44px; }
   .archive .card-meta { font-size: 11px; flex-wrap: wrap; gap: 4px 8px; }
   .archive .type-label, .archive .mobile-bottom a { font-size: 11px; }

@@ -1,0 +1,27 @@
+---
+import { archiveContext } from '../../lib/archive.mjs';
+const { name, href, avatar } = Astro.props;
+const { icon } = archiveContext;
+---
+<a class="acknowledgement-card panel" href={href} target="_blank" rel="noopener">
+  <img src={avatar} alt={name} width="96" height="96" loading="lazy" />
+  <div class="acknowledgement-info">
+    <h3>{name}</h3>
+    <span class="acknowledgement-domain">{new URL(href).hostname}</span>
+    <span class="acknowledgement-action"><span data-i18n="d.visitWebsite">访问网站</span><Fragment set:html={icon('arrow',16)} /></span>
+  </div>
+</a>
+<style>
+  .acknowledgement-card { display: flex; align-items: center; gap: 24px; text-decoration: none; }
+  .acknowledgement-card img { flex: none; width: 96px; height: 96px; object-fit: cover; border: 2px solid var(--border-default); border-radius: var(--radius-md); }
+  .acknowledgement-info { min-width: 0; }
+  .acknowledgement-info h3 { margin: 0 0 6px; font-size: 23px; font-weight: 700; }
+  .acknowledgement-domain { display: block; color: var(--text-secondary); overflow-wrap: anywhere; }
+  .acknowledgement-action { display: inline-flex; align-items: center; gap: 8px; margin-top: 10px; color: var(--brand); font-weight: 600; }
+  .acknowledgement-card:hover { background: var(--bg-hover); }
+  @media (max-width: 760px) {
+    .acknowledgement-card { gap: 16px; }
+    .acknowledgement-card img { width: 76px; height: 76px; }
+    .acknowledgement-info h3 { font-size: 20px; }
+  }
+</style>

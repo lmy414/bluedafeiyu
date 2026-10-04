@@ -1,6 +1,7 @@
 ---
 import { archiveContext } from "../../lib/archive.mjs";
 import { navigation } from './nav-items.mjs';
+import RepositoryLinks from './RepositoryLinks.astro';
 const { active = "" } = Astro.props;
 const { icon, works } = archiveContext;
 ---
@@ -25,7 +26,7 @@ const { icon, works } = archiveContext;
     <a href="/about.html" data-i18n="v2.aboutCopyright">关于与版权</a>
     <a href="/changelog.html" data-i18n="footer.changelog">更新日志</a>
     <a href="/projects.html" data-i18n="nav.projects">推荐</a>
-    <a href="https://github.com/lmy414/ai-girl-stickers" target="_blank" rel="noopener">GitHub</a>
+    <RepositoryLinks />
     <p data-i18n="d.nonOfficial">非官方同人整理项目</p>
   </div>
 </aside>

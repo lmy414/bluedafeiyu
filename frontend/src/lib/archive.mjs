@@ -27,6 +27,7 @@ const topics = snapshot.topics.filter(t=>t.status!=='removed').map(t=>({...t,lis
 const tagCounts=new Map();for(const w of works)for(const tag of w.tg)tagCounts.set(tag,(tagCounts.get(tag)||0)+1);
 const translations={en:{},ja:{}};
 for(const [key, en, ja] of [
+  ['specialThanks','Special thanks','特別な感謝'],['visitWebsite','Visit website','サイトを見る'],
   ['discover','Discover','見つける'],['gallery','All works','作品一覧'],['brandSub','AI-girl fan art archive','AI娘の二次創作アーカイブ'],
   ['explore','EXPLORE','ブラウズ'],['sideText','A home for every delightful image.','楽しい一枚を、大切に。'],['nonOfficial','Unofficial fan archive','非公式ファンアーカイブ'],
   ['footerText','AI-girl fan art archive · Images belong to their creators','AI娘の二次創作アーカイブ · 画像の権利は原作者に帰属します'],['rights','Sources & permissions','出典と利用許諾'],

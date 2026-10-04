@@ -1130,6 +1130,7 @@
   Object.assign(DICT.en, window.ArchiveLabels && window.ArchiveLabels.en || {});
   Object.assign(DICT.ja, window.ArchiveLabels && window.ArchiveLabels.ja || {});
   var traditionalOverrides = {
+    'd.specialThanks': '特別致謝',
     'about.license.p1b': '程式碼',
     'v2.nav.gallery': '圖庫',
     'v2.tagline': 'AI 娘二創圖庫'
