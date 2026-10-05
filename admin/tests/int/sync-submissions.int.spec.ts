@@ -251,7 +251,13 @@ describe('syncSubmissions timestamps and formats', () => {
     const publishResult = await applyPublishStatus(
       { context: { audit: false }, payload } as any,
       run,
-      { results: { works: [] } },
+      { results: { works: [timed, fallback].map((work) => ({
+        workId: work.workId,
+        slug: `test-${work.id}`,
+        path: `https://raw.example/${work.sha256}.jpg`,
+        thumbnailPath: `submissions/previews/${work.sha256}.webp`,
+        fullPath: `submissions/large/${work.sha256}.webp`,
+      })) } },
     )
     expect(publishResult.publishedWorks).toBe(2)
 
@@ -273,6 +279,42 @@ describe('syncSubmissions timestamps and formats', () => {
     expect(exportedUntouched.updatedAt).toBe(fallback.createdAt)
     const publishedExportIds = publishedExport.map((record: any) => record.id)
     expect(publishedExportIds.slice(-2)).toEqual([timed.workId, fallback.workId])
+  })
+  it('keeps a submission synced during publication pending when it has no result in the batch', async () => {
+    const character = await (payload as any).find({ collection: 'characters', limit: 1, overrideAccess: true })
+    const lateWork = await (payload as any).create({
+      collection: 'works',
+      data: {
+        workId: 'sticker_synced_during_publish',
+        name: '发布过程中同步的新投稿',
+        kind: 'submission',
+        channel: 'qq',
+        character: character.docs[0].id,
+        status: 'pending',
+        needsPublish: true,
+        changeAction: 'add',
+        legacySource: 'submission-sync',
+      },
+      context: { audit: false, skipNeedsPublish: true },
+      overrideAccess: true,
+    })
+    const run = await (payload as any).find({ collection: 'publish-runs', limit: 1, overrideAccess: true })
+
+    const result = await applyPublishStatus(
+      { context: { audit: false }, payload } as any,
+      run.docs[0],
+      { results: { works: [] } },
+    )
+
+    expect(result.publishedWorks).toBe(0)
+    const saved = await (payload as any).findByID({ collection: 'works', id: lateWork.id, overrideAccess: true })
+    expect(saved.status).toBe('pending')
+    expect(saved.needsPublish).toBe(true)
+    expect(saved.changeAction).toBe('add')
+    expect(saved.lastPublishedAt).toBeNull()
+    expect(saved.legacyPaths.path).toBeNull()
+    const published = JSON.parse((await exportSiteData(payload))['data/works.json'])
+    expect(published.some((work: any) => work.id === lateWork.workId)).toBe(false)
   })
   it('uses an existing preview for a released original and skips when no preview exists', async () => {
     const previewItem = { ...queueItems[0], id: 'sub_released_preview_123' }

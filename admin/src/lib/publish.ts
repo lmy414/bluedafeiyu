@@ -151,6 +151,9 @@ export async function applyPublishStatus(
     const finishedAt = new Date().toISOString()
     for (const work of works.docs) {
       const result = results.get(String(work.workId))
+      // 发布期间同步的新投稿不在本批原图和结果中，留待下一批处理。
+      // 否则会被误标为 published，且原图、派生图路径仍为空。
+      if (work.status === 'pending' && !result) continue
       const mergeLegacy = (current: any) => {
         const base = current && typeof current === 'object' && !Array.isArray(current) ? { ...current } : {}
         if (result) {
