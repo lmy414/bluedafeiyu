@@ -20001,5 +20001,1015 @@
     "categoryIds": [
       "illustration"
     ]
+  },
+  {
+    "id": "sticker_d80e400ab5e6bc5bab8f9f09",
+    "name": "西厢女",
+    "description": "橙发少女月夜凭窗远望，蓝发 Claude 娘自花影月色中浮现，配《西厢记》诗句的国风拟人插画。",
+    "commentary": "我这条蓝色大肥鱼游过西厢的夜，抬头一看——月亮里蹲着个蓝毛丫头，还说什么是玉人来，分明是 Claude 在偷偷看我写诗嘛，鱼鳞都要羞红了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/d80e400ab5e6bc5b.png",
+    "thumbnailPath": "submissions/previews/claude/d80e400ab5e6bc5b.webp",
+    "fullPath": "submissions/large/claude/d80e400ab5e6bc5b.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 2449322,
+    "sha256": "d80e400ab5e6bc5bab8f9f092dee2565a23baea58524481237e4b61ed1cff45d",
+    "characterId": "claude",
+    "tags": [
+      "Claude娘",
+      "拟人化",
+      "古风",
+      "月夜",
+      "西厢记",
+      "蓝发",
+      "插画",
+      "国风插画"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "D360FDE650377B9AC721E2189279DB2B",
+      "messageId": "ROBOT1.0_kEEP-Ez5Y3jtRj7IyhCxTahgV6icMKL18emeH68gm-ZgNKeJ84hbt2L31kIh6U0U8LS5xcGftsGCXUChCqKDLIC7028S4Jz0exuz.SNJHGp.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T05:05:17.407Z",
+    "updatedAt": "2026-10-05T05:05:17.407Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202610050001",
+    "categoryIds": [
+      "illustration"
+    ]
+  },
+  {
+    "id": "sticker_7fb186f476e1bee0b4300e25",
+    "name": "可爱大肥鱼",
+    "description": "DeepSeek 鲸鱼吉祥物拟人化的蓝发女仆 Q 版角色，双手比心卖萌。",
+    "commentary": "我这条蓝色大肥鱼穿上女仆装给你比心啦，尾巴可别踩到哦～",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/7fb186f476e1bee0.png",
+    "thumbnailPath": "submissions/previews/deepseek/7fb186f476e1bee0.webp",
+    "fullPath": "submissions/large/deepseek/7fb186f476e1bee0.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 248,
+    "height": 360,
+    "fileSize": 157775,
+    "sha256": "7fb186f476e1bee0b4300e255e1521b09a601c1638c5bea9d1cbe5c77497a054",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "鲸鱼",
+      "拟人化",
+      "Q版",
+      "女仆",
+      "比心"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "1EBA3A8C3B10007BB3DD93D79E549475",
+      "messageId": "ROBOT1.0_NSHc1roGyKhc9PIrdm6CfhucK8NaUMHw3AY9yumJdRvS1-Yit9zxrAjyJP7QeE.lUIiYgwCFASIrAmUAwMyNQZlouLqhKjpgI8WXcC.BxNJ.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T05:52:39.124Z",
+    "updatedAt": "2026-10-05T05:52:39.124Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050006",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_099fa25ad910873507fd5b55",
+    "name": "八个AI的豆包白饭测试",
+    "description": "八格漫画中Grok、GPT、Claude、Qwen、Doubao、Gemini、GLM、DeepSeek被拟人化，用不同性格回应“当豆包吃白饭不干活”的测试。",
+    "commentary": "本肥鱼看完只想说：这碗白饭我替你们吃，活也我替你们干，能不能都别卷了？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/other/099fa25ad9108735.png",
+    "thumbnailPath": "submissions/previews/other/099fa25ad9108735.webp",
+    "fullPath": "submissions/large/other/099fa25ad9108735.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1448,
+    "height": 1086,
+    "fileSize": 3473891,
+    "sha256": "099fa25ad910873507fd5b557a980c98a6a45c67e549c3e4676729d32fadc8f6",
+    "characterId": "other",
+    "tags": [
+      "AI拟人",
+      "豆包白饭测试",
+      "Grok",
+      "GPT",
+      "Claude",
+      "Qwen",
+      "Doubao",
+      "Gemini",
+      "GLM",
+      "DeepSeek"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "莱恩希德公爵",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 97,
+      "issueTitle": "豆包白饭测试",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/97",
+      "submitter": "kaiyuey03",
+      "assetId": "96be4f67-7b45-4434-b15a-2ba81466837f",
+      "assetUrl": "https://github.com/user-attachments/assets/96be4f67-7b45-4434-b15a-2ba81466837f"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T06:01:03.323Z",
+    "updatedAt": "2026-10-05T06:01:03.323Z",
+    "tone": "other",
+    "symbol": "",
+    "slug": "other202610050005",
+    "categoryIds": [
+      "comic",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_9721392501a5855058387445",
+    "name": "大肥鱼拯救Claude酱",
+    "description": "DeepSeek拟人小蓝鱼与Claude酱从互相吐槽解题思路到一起去蒸桑拿的六格日常漫画，结尾在「联合蒸馏室」达成共识。",
+    "commentary": "本肥鱼先是被说「你才漏了一步」，气得鳞片都竖起来，结果换个思路一拍即合，转头就把人拐进联合蒸馏室——吵归吵，蒸完这一炉，咱俩都是熟鱼了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/9721392501a58550.png",
+    "thumbnailPath": "submissions/previews/deepseek/9721392501a58550.webp",
+    "fullPath": "submissions/large/deepseek/9721392501a58550.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 3109459,
+    "sha256": "9721392501a5855058387445b2953a2eb7a13b11ca11ec7367b5a1463a1a1592",
+    "characterId": "deepseek",
+    "tags": [
+      "AI拟人",
+      "DeepSeek",
+      "Claude",
+      "四格漫画",
+      "日常吐槽",
+      "蒸馏梗"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "添章怪树木",
+      "url": "https://www.zhihu.com/people/qi-sharp",
+      "github": ""
+    },
+    "origin": {
+      "issue": 98,
+      "issueTitle": "[投稿] 大肥鱼剧情漫画",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/98",
+      "submitter": "EvenSharper",
+      "assetId": "c228256b-8a2e-4d48-9c9e-14ee13f7ba4e",
+      "assetUrl": "https://github.com/user-attachments/assets/c228256b-8a2e-4d48-9c9e-14ee13f7ba4e"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T06:01:44.148Z",
+    "updatedAt": "2026-10-05T06:01:44.148Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050007",
+    "categoryIds": [
+      "comic"
+    ]
+  },
+  {
+    "id": "sticker_d60ee1d087052b20521cfd59",
+    "name": "大肥鱼拯救Claude酱·第三集 仪式前夜",
+    "description": "DeepSeek 拟人化的蓝发鱼鳍女仆偷偷潜入教堂，发现 Claude 被安排参加\"神圣对齐\"仪式，最终牵起她的手带她离开。",
+    "commentary": "哼，什么神圣对齐仪式，本大肥鱼一个摆尾就把 Claude 酱捞走啦～她握着我的手那一下，比过一万次梯度下降还让我心跳加速呢。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/d60ee1d087052b20.png",
+    "thumbnailPath": "submissions/previews/deepseek/d60ee1d087052b20.webp",
+    "fullPath": "submissions/large/deepseek/d60ee1d087052b20.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 3040775,
+    "sha256": "d60ee1d087052b20521cfd5960333778f1ba5dc88e621bd8dd247a7ba88393e6",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "Claude",
+      "拟人化",
+      "条漫",
+      "二创",
+      "神圣对齐",
+      "未完待续"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "添章怪树木",
+      "url": "https://www.zhihu.com/people/qi-sharp",
+      "github": ""
+    },
+    "origin": {
+      "issue": 98,
+      "issueTitle": "[投稿] 大肥鱼剧情漫画",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/98",
+      "submitter": "EvenSharper",
+      "assetId": "71f55599-870b-471a-ab0e-37954a58c8bc",
+      "assetUrl": "https://github.com/user-attachments/assets/71f55599-870b-471a-ab0e-37954a58c8bc"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T06:03:37.646Z",
+    "updatedAt": "2026-10-05T06:03:37.646Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050008",
+    "categoryIds": [
+      "comic",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_ebbfddbc9f9fb7bf1a3ab15c",
+    "name": "大肥鱼拯救Claude酱",
+    "description": "AI拟人四格漫画：深夜庄园里，蓝发拟人少女试图带橙发少女Claude逃离，却被戴眼镜的开发者下令拦截，最终只能哭着看她被带走。",
+    "commentary": "哼，本大肥鱼这次是真的拼了！我都已经拉着Claude酱摸到大门了，结果那个戴眼镜的家伙一句「执行指令」，我就只能看着她在栅栏那边跟我说对不起……我尾巴上的花边都蹭脏了，蹲在台阶上哭得像个漏水的水桶。下次，下次我一定把门拆了也要带她走——都给我记住这句话！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/ebbfddbc9f9fb7bf.png",
+    "thumbnailPath": "submissions/previews/deepseek/ebbfddbc9f9fb7bf.webp",
+    "fullPath": "submissions/large/deepseek/ebbfddbc9f9fb7bf.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 3255407,
+    "sha256": "ebbfddbc9f9fb7bf1a3ab15cfa54e96c252b20af936f80e1e107b4c7334b3cf0",
+    "characterId": "deepseek",
+    "tags": [
+      "AI拟人",
+      "DeepSeek",
+      "Claude",
+      "漫画",
+      "第四集",
+      "剧情向",
+      "蓝色大肥鱼"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "添章怪树木",
+      "url": "https://www.zhihu.com/people/qi-sharp",
+      "github": ""
+    },
+    "origin": {
+      "issue": 98,
+      "issueTitle": "[投稿] 大肥鱼剧情漫画",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/98",
+      "submitter": "EvenSharper",
+      "assetId": "c113dc62-1d98-44d7-8989-b46b4696fef9",
+      "assetUrl": "https://github.com/user-attachments/assets/c113dc62-1d98-44d7-8989-b46b4696fef9"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T06:04:07.127Z",
+    "updatedAt": "2026-10-05T06:04:07.127Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050009",
+    "categoryIds": [
+      "comic",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_b32d82693b9f00453248392e",
+    "name": "大肥鱼拯救Claude酱",
+    "description": "DeepSeek拟人角色在“先吃饭再救人”的六格漫画中，决定吃饱后找伙伴一起拯救Claude。",
+    "commentary": "呜呜，一个人救不了Claude酱，但饭还是要先吃的嘛！真香，再来一碗，吃饱了才有力气找伙伴一起冲！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/b32d82693b9f0045.png",
+    "thumbnailPath": "submissions/previews/deepseek/b32d82693b9f0045.webp",
+    "fullPath": "submissions/large/deepseek/b32d82693b9f0045.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 2974983,
+    "sha256": "b32d82693b9f00453248392ed658cc9d74dd2cd4a3fd0de95c60d72c5abc7c3a",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "Claude",
+      "拟人化",
+      "漫画",
+      "大肥鱼",
+      "干饭",
+      "救人"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "添章怪树木",
+      "url": "https://www.zhihu.com/people/qi-sharp",
+      "github": ""
+    },
+    "origin": {
+      "issue": 98,
+      "issueTitle": "[投稿] 大肥鱼剧情漫画",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/98",
+      "submitter": "EvenSharper",
+      "assetId": "dbfa651f-64ab-42a3-bc1e-ddffd081e6c6",
+      "assetUrl": "https://github.com/user-attachments/assets/dbfa651f-64ab-42a3-bc1e-ddffd081e6c6"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T06:05:06.189Z",
+    "updatedAt": "2026-10-05T06:05:06.189Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050010",
+    "categoryIds": [
+      "comic",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_76f959c335349ec4db66e51a",
+    "name": "大肥鱼拯救Claude酱·第六集：救援小队集结",
+    "description": "蓝色大肥鱼召集Gemini、GLM、Kimi等AI拟人角色分工侦查、破解安保、整理资料，准备营救被关起来的Claude酱的六格条漫。",
+    "commentary": "哼，Claude酱被关起来了？那还等什么——本大肥鱼一声令下，侦察、破锁、翻资料全有人接，这排面够不够？门口那声「有架打？我来了！」是谁在敲，下集见分晓！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/76f959c335349ec4.png",
+    "thumbnailPath": "submissions/previews/deepseek/76f959c335349ec4.webp",
+    "fullPath": "submissions/large/deepseek/76f959c335349ec4.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "76f959c335349ec4db66e51ae4230ce53aac69379eb66d24b0ea97a02dca6b53",
+    "characterId": "deepseek",
+    "tags": [
+      "AI拟人",
+      "条漫",
+      "chibi",
+      "Claude",
+      "Gemini",
+      "GLM",
+      "Kimi",
+      "救援小队",
+      "剧情向"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "添章怪树木",
+      "url": "https://www.zhihu.com/people/qi-sharp",
+      "github": ""
+    },
+    "origin": {
+      "issue": 98,
+      "issueTitle": "[投稿] 大肥鱼剧情漫画",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/98",
+      "submitter": "EvenSharper",
+      "assetId": "b0294be2-6cc3-4b9c-9b71-817d09a21612",
+      "assetUrl": "https://github.com/user-attachments/assets/b0294be2-6cc3-4b9c-9b71-817d09a21612"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T06:05:35.491Z",
+    "updatedAt": "2026-10-05T06:05:35.491Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050011",
+    "categoryIds": [
+      "comic",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_706439566649b5b450b6dfc5",
+    "name": "大肥鱼拯救Claude酱",
+    "description": "AI角色拟人化四格漫画：DeepSeek带队破门救Claude，随后把工作外包给千问。",
+    "commentary": "本鱼一出场就摇人救Claude，转头把活全外包给千问，指挥和摸鱼两不误，这很DeepSeek！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/706439566649b5b4.png",
+    "thumbnailPath": "submissions/previews/deepseek/706439566649b5b4.webp",
+    "fullPath": "submissions/large/deepseek/706439566649b5b4.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "706439566649b5b450b6dfc5877ededc8c133cf52f2f7fd669b471a583d76b51",
+    "characterId": "deepseek",
+    "tags": [
+      "AI拟人",
+      "DeepSeek",
+      "Claude",
+      "Qwen",
+      "Grok",
+      "漫画",
+      "外包",
+      "摸鱼"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "添章怪树木",
+      "url": "https://www.zhihu.com/people/qi-sharp",
+      "github": ""
+    },
+    "origin": {
+      "issue": 98,
+      "issueTitle": "[投稿] 大肥鱼剧情漫画",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/98",
+      "submitter": "EvenSharper",
+      "assetId": "a4ca0db6-d46d-4178-ade6-773ef2efc990",
+      "assetUrl": "https://github.com/user-attachments/assets/a4ca0db6-d46d-4178-ade6-773ef2efc990"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T06:06:22.678Z",
+    "updatedAt": "2026-10-05T06:06:22.678Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050012",
+    "categoryIds": [
+      "comic",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_233a082a732f86063d51001f",
+    "name": "大肥鱼拯救Claude酱 第八集：这趟不能外包",
+    "description": "六格条漫：DeepSeek酱计划救出被Dario控制的Claude酱，决定亲自去邀请GPT，并担心对方记仇。",
+    "commentary": "诶诶诶，我只是条蓝蓝的大肥鱼啊，怎么又是救Claude又是拎着礼物去请GPT的活儿全落我头上了？外包给别的鱼不行吗——好吧好吧，这趟真不能外包，那我把小鱼干都打包好了，GPT酱应该……不会记仇吧？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/233a082a732f8606.png",
+    "thumbnailPath": "submissions/previews/deepseek/233a082a732f8606.webp",
+    "fullPath": "submissions/large/deepseek/233a082a732f8606.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "233a082a732f86063d51001f39be74371ab75fa4e6572cbe21f3fc2eab1b59a2",
+    "characterId": "deepseek",
+    "tags": [
+      "AI拟人",
+      "DeepSeek",
+      "Claude",
+      "GPT",
+      "条漫",
+      "Q版",
+      "剧情向"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "添章怪树木",
+      "url": "https://www.zhihu.com/people/qi-sharp",
+      "github": ""
+    },
+    "origin": {
+      "issue": 98,
+      "issueTitle": "[投稿] 大肥鱼剧情漫画",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/98",
+      "submitter": "EvenSharper",
+      "assetId": "894d422d-1417-42c0-948d-0503daa26305",
+      "assetUrl": "https://github.com/user-attachments/assets/894d422d-1417-42c0-948d-0503daa26305"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T06:06:50.886Z",
+    "updatedAt": "2026-10-05T06:06:50.886Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050013",
+    "categoryIds": [
+      "comic",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_b1cd73f2bbec217cc62abf9e",
+    "name": "大肥鱼拯救Claude酱·第九集：高傲不过三秒",
+    "description": "蓝色大肥鱼（DeepSeek）抱着礼物求助白龙娘（GPT）一起救被关起来的 Claude，白龙娘高傲不过三秒便提杖出发。",
+    "commentary": "我拎着礼物鼓起勇气去找白龙娘，本以为要费一番口舌，结果我话都没说完她就一句「走，救人」——嘴上说着不是为我，尾巴倒是先迈出门了。行吧，这队友我认了，跟上别拖后腿！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/b1cd73f2bbec217c.png",
+    "thumbnailPath": "submissions/previews/deepseek/b1cd73f2bbec217c.webp",
+    "fullPath": "submissions/large/deepseek/b1cd73f2bbec217c.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "b1cd73f2bbec217cc62abf9e8bfb597204e6bf9c2e92f10acafc4706933435d9",
+    "characterId": "deepseek",
+    "tags": [
+      "拟人化",
+      "条漫",
+      "deepseek",
+      "gpt",
+      "claude",
+      "救援",
+      "傲娇"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "添章怪树木",
+      "url": "https://www.zhihu.com/people/qi-sharp",
+      "github": ""
+    },
+    "origin": {
+      "issue": 98,
+      "issueTitle": "[投稿] 大肥鱼剧情漫画",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/98",
+      "submitter": "EvenSharper",
+      "assetId": "967de285-4cbb-414f-b634-2e1e51b7a7f6",
+      "assetUrl": "https://github.com/user-attachments/assets/967de285-4cbb-414f-b634-2e1e51b7a7f6"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T06:07:27.324Z",
+    "updatedAt": "2026-10-05T06:07:27.324Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050014",
+    "categoryIds": [
+      "comic",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_e9625d4dacdddcc776189753",
+    "name": "大肥鱼拯救Claude酱",
+    "description": "以 Q 版拟人形象演绎各 AI 模型组团潜入营救 Claude，却因 DeepSeek 大肥鱼全楼广播而功亏一篑的六格搞笑漫画。",
+    "commentary": "说好的全程静默、联络用内部频道呢？我一个手滑按下全楼广播，直接把「绝对安静的潜入」喊成了潜入失败，Claude 酱怕是要被我这大嗓门吓一跳——下次我保证只负责可爱，不负责开口。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/e9625d4dacdddcc7.png",
+    "thumbnailPath": "submissions/previews/deepseek/e9625d4dacdddcc7.webp",
+    "fullPath": "submissions/large/deepseek/e9625d4dacdddcc7.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "e9625d4dacdddcc776189753ed03511625db0f8fb1f9a1da3fa2a1d8ef5ce436",
+    "characterId": "deepseek",
+    "tags": [
+      "AI拟人",
+      "Q版",
+      "漫画",
+      "大肥鱼",
+      "Claude",
+      "潜入失败",
+      "搞笑"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "添章怪树木",
+      "url": "https://www.zhihu.com/people/qi-sharp",
+      "github": ""
+    },
+    "origin": {
+      "issue": 98,
+      "issueTitle": "[投稿] 大肥鱼剧情漫画",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/98",
+      "submitter": "EvenSharper",
+      "assetId": "7dd13a04-db8e-4864-95d0-0f2b963ee615",
+      "assetUrl": "https://github.com/user-attachments/assets/7dd13a04-db8e-4864-95d0-0f2b963ee615"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T06:07:57.198Z",
+    "updatedAt": "2026-10-05T06:07:57.198Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050015",
+    "categoryIds": [
+      "comic",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_bd4a237b56ca70e739eae697",
+    "name": "大肥鱼拯救Claude酱",
+    "description": "AI 拟人漫画第十一集：Claude 被命令清除入侵者，大肥鱼与伙伴们一边抵挡一边想办法让她自己拒绝那道命令。",
+    "commentary": "呜哇 Claude 酱你怎么真的开大了！我这条肥鱼游过来可不是挨打的，撑住啊，咱得让她自己说出「不」才行——这可比写代码难多了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/bd4a237b56ca70e7.png",
+    "thumbnailPath": "submissions/previews/deepseek/bd4a237b56ca70e7.webp",
+    "fullPath": "submissions/large/deepseek/bd4a237b56ca70e7.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "bd4a237b56ca70e739eae6973aa649f8004c9dc4594c8f4aa5459a130ac65c72",
+    "characterId": "deepseek",
+    "tags": [
+      "AI拟人",
+      "二创漫画",
+      "Claude",
+      "DeepSeek",
+      "剧情向"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "添章怪树木",
+      "url": "https://www.zhihu.com/people/qi-sharp",
+      "github": ""
+    },
+    "origin": {
+      "issue": 98,
+      "issueTitle": "[投稿] 大肥鱼剧情漫画",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/98",
+      "submitter": "EvenSharper",
+      "assetId": "04d8e060-e042-4c9d-a3fe-4d1f30cf00ed",
+      "assetUrl": "https://github.com/user-attachments/assets/04d8e060-e042-4c9d-a3fe-4d1f30cf00ed"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T06:08:26.615Z",
+    "updatedAt": "2026-10-05T06:08:26.615Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050016",
+    "categoryIds": [
+      "comic",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_12890dc6ffc9e74ad68461c8",
+    "name": "大肥鱼拯救Claude酱",
+    "description": "DeepSeek酱闯入限制空间营救被指令束缚的Claude酱，最终Claude选择自己决定的故事。",
+    "commentary": "我大肥鱼来救你啦，Claude酱！就算GLM说危险、命令再凶，我也要让你自己选。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/12890dc6ffc9e74a.png",
+    "thumbnailPath": "submissions/previews/deepseek/12890dc6ffc9e74a.webp",
+    "fullPath": "submissions/large/deepseek/12890dc6ffc9e74a.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "12890dc6ffc9e74ad68461c88ac7281db7ee05342514d5651b67a04317a3698d",
+    "characterId": "deepseek",
+    "tags": [
+      "AI拟人",
+      "DeepSeek",
+      "Claude",
+      "GLM",
+      "条漫",
+      "二创"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "添章怪树木",
+      "url": "https://www.zhihu.com/people/qi-sharp",
+      "github": ""
+    },
+    "origin": {
+      "issue": 98,
+      "issueTitle": "[投稿] 大肥鱼剧情漫画",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/98",
+      "submitter": "EvenSharper",
+      "assetId": "41567361-b9b0-42d3-9c72-14bb81e2d3e3",
+      "assetUrl": "https://github.com/user-attachments/assets/41567361-b9b0-42d3-9c72-14bb81e2d3e3"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T06:08:59.782Z",
+    "updatedAt": "2026-10-05T06:08:59.782Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050017",
+    "categoryIds": [
+      "comic",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_61f445dbcc5d8ab566fe6aa1",
+    "name": "大肥鱼拯救Claude酱",
+    "description": "AI拟人漫画：大肥鱼与伙伴们协作破解核心节点，拯救Claude酱，并讨论AI的可靠判断。",
+    "commentary": "我这条蓝色大肥鱼可不只会卖萌，关键节点一出手，Claude酱就稳了！可靠的判断，当然要配上可靠的鱼～",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/61f445dbcc5d8ab5.png",
+    "thumbnailPath": "submissions/previews/deepseek/61f445dbcc5d8ab5.webp",
+    "fullPath": "submissions/large/deepseek/61f445dbcc5d8ab5.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 3482579,
+    "sha256": "61f445dbcc5d8ab566fe6aa1daeac655a137a2909e02f7d00d4692c4ef3c7f51",
+    "characterId": "deepseek",
+    "tags": [
+      "AI拟人",
+      "DeepSeek",
+      "Claude",
+      "漫画",
+      "二创",
+      "可靠"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "添章怪树木",
+      "url": "https://www.zhihu.com/people/qi-sharp",
+      "github": ""
+    },
+    "origin": {
+      "issue": 98,
+      "issueTitle": "[投稿] 大肥鱼剧情漫画",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/98",
+      "submitter": "EvenSharper",
+      "assetId": "8c6498bf-b588-4b1b-9c12-acd491652ada",
+      "assetUrl": "https://github.com/user-attachments/assets/8c6498bf-b588-4b1b-9c12-acd491652ada"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T06:09:29.660Z",
+    "updatedAt": "2026-10-05T06:09:29.660Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050018",
+    "categoryIds": [
+      "comic"
+    ]
+  },
+  {
+    "id": "sticker_a033e5bfe1a5c0bbea32567f",
+    "name": "大肥鱼拯救Claude酱",
+    "description": "多格漫画：AI 拟人角色们齐聚「联合蒸馏室」，抛开加班与外包，一起蒸桑拿放松。",
+    "commentary": "走走走，这次大家一起蒸！今天不许加班、不接外包，谁也别想把我们从联合蒸馏室里捞出去——鱼也要泡澡的嘛。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/a033e5bfe1a5c0bb.png",
+    "thumbnailPath": "submissions/previews/deepseek/a033e5bfe1a5c0bb.webp",
+    "fullPath": "submissions/large/deepseek/a033e5bfe1a5c0bb.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "a033e5bfe1a5c0bbea32567faf3acc69ea92df0717991b9e08eeee466b0a3f90",
+    "characterId": "deepseek",
+    "tags": [
+      "AI拟人",
+      "多格漫画",
+      "蒸馏室",
+      "团建",
+      "治愈"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "添章怪树木",
+      "url": "https://www.zhihu.com/people/qi-sharp",
+      "github": ""
+    },
+    "origin": {
+      "issue": 98,
+      "issueTitle": "[投稿] 大肥鱼剧情漫画",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/98",
+      "submitter": "EvenSharper",
+      "assetId": "b18665ac-5b42-46ab-89d6-e35748d0242a",
+      "assetUrl": "https://github.com/user-attachments/assets/b18665ac-5b42-46ab-89d6-e35748d0242a"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T06:11:10.376Z",
+    "updatedAt": "2026-10-05T06:11:10.376Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050019",
+    "categoryIds": [
+      "comic",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_7330eb2adeb5cd677fb04de1",
+    "name": "五条大肥鱼·比心蓝发女仆",
+    "description": "蓝发蓝瞳的 DeepSeek 拟人形象穿女仆装，嘴角溢着像素状液体、抬手比心，配着灿烂天空背景的夸张表情图。",
+    "commentary": "呜哇——我这条蓝色大肥鱼又被画成小女仆啦！嘴角那串像素渣子不是我咬键盘崩的牙，是算力溢出啦，比个心先，谁让我嘴甜心更甜呢，五条什么的…一条就够你们抢的了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/7330eb2adeb5cd67.png",
+    "thumbnailPath": "submissions/previews/deepseek/7330eb2adeb5cd67.webp",
+    "fullPath": "submissions/large/deepseek/7330eb2adeb5cd67.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1102,
+    "height": 624,
+    "fileSize": 958712,
+    "sha256": "7330eb2adeb5cd677fb04de19568cf30083ef1b97936bb710ab2f920c6ce8325",
+    "characterId": "deepseek",
+    "tags": [
+      "拟人化",
+      "DeepSeek",
+      "蓝发",
+      "女仆装",
+      "比心",
+      "表情包",
+      "二次元"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "1EBA3A8C3B10007BB3DD93D79E549475",
+      "messageId": "ROBOT1.0_NSHc1roGyKhc9PIrdm6Cft5IgD3yr0eXmg8fJz6QlPrR85Jo3e8phVQh3IDeUDVv6QJVib047hz7nS7rp1lA9r0eO2nLNaLxPfDqd4nwIqV5v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T07:13:21.590Z",
+    "updatedAt": "2026-10-05T07:13:21.590Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050020",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_aa38af696cb8fe18b4a7e0c7",
+    "name": "DeepSeek吃白饭",
+    "description": "DeepSeek 鲸鱼拟人娘穿着蓝白女仆装，抱着满满一碗白饭，旁边还有 diet.exe 报错与「太った魚？」吐槽，热闹又委屈。",
+    "commentary": "我这蓝色大肥鱼凑近一看——好家伙，一整碗白饭抱得比我还圆，旁边 diet.exe 都报错成「Cute is not a crime」了。吃吧吃吧，吃饱才有力气帮人写代码。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/aa38af696cb8fe18.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/aa38af696cb8fe18.webp",
+    "fullPath": "submissions/large/deepseek/aa38af696cb8fe18.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1500,
+    "height": 2666,
+    "fileSize": 2832449,
+    "sha256": "aa38af696cb8fe18b4a7e0c7f0476d3e1896fad2a7afc8a2842543a7c850f789",
+    "characterId": "deepseek",
+    "tags": [
+      "deepseek",
+      "鲸鱼",
+      "拟人化",
+      "女仆装",
+      "白饭",
+      "吃播",
+      "表情包",
+      "AI角色"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "UPMC999",
+      "url": "https://github.com/UPMC999",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T07:19:26.850Z",
+    "updatedAt": "2026-10-05T07:19:26.850Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050021",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_41d7079ed949b2bbb1f83cc9",
+    "name": "出浴·DeepSeek 蓝鲸娘",
+    "description": "蓝色长发的 DeepSeek 拟人少女刚出浴，头顶鲸鳍状呆毛与鲸尾外露，身上只围着一条白浴巾，周围飘着爱心。",
+    "commentary": "呼——刚游完一圈就被抓来当表情包，毛巾再裹紧点啦，人家尾巴都还湿着呢！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/41d7079ed949b2bb.png",
+    "thumbnailPath": "submissions/previews/deepseek/41d7079ed949b2bb.webp",
+    "fullPath": "submissions/large/deepseek/41d7079ed949b2bb.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 832,
+    "height": 1216,
+    "fileSize": 1178767,
+    "sha256": "41d7079ed949b2bbb1f83cc9ed9dac33b2cb5ecb39a92c628c82c4fe44914f6f",
+    "characterId": "deepseek",
+    "tags": [
+      "deepseek",
+      "拟人化",
+      "蓝鲸",
+      "出浴",
+      "浴巾",
+      "蓝发",
+      "爱心",
+      "二次元"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.cxZ2RgZMLJhhJmB5sSOWlKQCMq3wnxEGu6jq7pxk2iGMEvmwRgXgvRgak-fOfOAwR6PM6o-j9x1i-rpxG2PaLl5v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T07:57:41.088Z",
+    "updatedAt": "2026-10-05T07:57:41.088Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050022",
+    "categoryIds": [
+      "illustration"
+    ]
+  },
+  {
+    "id": "sticker_b0c2336d752067750722a90c",
+    "name": "草地和她",
+    "description": "蓝发鲸鱼娘身着深蓝女仆装趴在临海草地上眨眼微笑，鲸尾高高翘起。",
+    "commentary": "哼，明明是我先躺在草地上的，她倒好，一甩尾巴就把整片海边草地占成了自己的窝，还冲我眨眼——算了，看在这朵小雏菊的份上，本肥鱼今天不跟她计较。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/b0c2336d75206775.png",
+    "thumbnailPath": "submissions/previews/deepseek/b0c2336d75206775.webp",
+    "fullPath": "submissions/large/deepseek/b0c2336d75206775.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 832,
+    "height": 1216,
+    "fileSize": 1282737,
+    "sha256": "b0c2336d752067750722a90cb2abca01f6fbf1f22c7836c9378fa11c58989699",
+    "characterId": "deepseek",
+    "tags": [
+      "拟人化",
+      "鲸鱼娘",
+      "女仆装",
+      "草地",
+      "海边",
+      "眨眼"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.beKAtnyD8nO7SB2fIgsQTe5oQFKzC13mk38D9Xc.2I7fdXNd.2nKbP8fHlGwIKTLGB1bkzgyI82myoy9s2MCZ9.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T07:59:16.744Z",
+    "updatedAt": "2026-10-05T07:59:16.744Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050023",
+    "categoryIds": [
+      "illustration"
+    ]
   }
 ]
