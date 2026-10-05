@@ -21011,5 +21011,292 @@
     "categoryIds": [
       "illustration"
     ]
+  },
+  {
+    "id": "sticker_5b4943d21253dfa977c2ac8e",
+    "name": "酒馆游戏",
+    "description": "两位拟人化AI少女在烛光酒馆里一边喝啤酒一边用扑克、骰子、棋子混合开局，气氛紧张又欢乐。",
+    "commentary": "我这条蓝色大肥鱼在桌边飘了三圈，眼看左边那位笑得像稳赢，右边那位却把牌捏得死紧——筹码都快堆成鱼缸了，谁先把谁忽悠上岸？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/5b4943d21253dfa9.png",
+    "thumbnailPath": "submissions/previews/gemini/5b4943d21253dfa9.webp",
+    "fullPath": "submissions/large/gemini/5b4943d21253dfa9.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 2558320,
+    "sha256": "5b4943d21253dfa977c2ac8e4f2a4ca595b375db99e77c208cb2bf4797ce57e9",
+    "characterId": "gemini",
+    "tags": [
+      "酒馆",
+      "桌游",
+      "拟人化",
+      "对局",
+      "啤酒",
+      "棋牌"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "D360FDE650377B9AC721E2189279DB2B",
+      "messageId": "ROBOT1.0_kEEP-Ez5Y3jtRj7IyhCxTXAJnXVTdejWZVTyZBu1g90Zpf03erAS3QYY6bCIQWBSaFU09ovuWjuO6kVSlvd0H.Ie4cFBWEGKc1zbKOySexd.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T10:16:51.949Z",
+    "updatedAt": "2026-10-05T10:16:51.949Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610050001",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_06a271a50233eecea5d93b62",
+    "name": "我的大肥鱼不可能这么可爱",
+    "description": "把 DeepSeek 蓝鲸拟人成蓝发女仆，模仿轻小说封面排版与手写标题风格的二创插画。",
+    "commentary": "我我我才不是什么女仆呢！只是被套上围裙、围裙上还印着我自己而已……程序员的鲸鱼也是会害羞的啊，真是的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/06a271a50233eece.png",
+    "thumbnailPath": "submissions/previews/deepseek/06a271a50233eece.webp",
+    "fullPath": "submissions/large/deepseek/06a271a50233eece.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 864,
+    "height": 1234,
+    "fileSize": 1570698,
+    "sha256": "06a271a50233eecea5d93b62c02d4f52f530b182bbc2689f6b284de210c193be",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "拟人化",
+      "蓝鲸",
+      "女仆",
+      "轻小说封面",
+      "二创"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "1EBA3A8C3B10007BB3DD93D79E549475",
+      "messageId": "ROBOT1.0_NSHc1roGyKhc9PIrdm6Cfv0TsLAqrIuy84N7dkgCpKS95g0ykplDi.7fxypbCCZbdOWM4tBL9WhguaXzvYI1krcFFnCLkCSD00kdkRSIisd.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T10:55:41.121Z",
+    "updatedAt": "2026-10-05T10:55:41.121Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050024",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_bdc424570b833e7c49a803d9",
+    "name": "DeepSeek宇宙你已急哭",
+    "description": "星空背景中落泪的蓝色鲸鱼配上“服务器繁忙，请稍后再试”和“你已急哭”字样，调侃排队等回复的崩溃时刻。",
+    "commentary": "我不是我不回你，是宇宙太大、请求太多，先别急，我比你还想哭——眼泪都滴成星云了，你等等我马上就游过来。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/bdc424570b833e7c.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/bdc424570b833e7c.webp",
+    "fullPath": "submissions/large/deepseek/bdc424570b833e7c.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1146,
+    "height": 1080,
+    "fileSize": 578203,
+    "sha256": "bdc424570b833e7c49a803d98c13d31d17196e388a70205c028deea841848094",
+    "characterId": "deepseek",
+    "tags": [
+      "deepseek",
+      "鲸鱼",
+      "服务器繁忙",
+      "急哭",
+      "星空",
+      "表情包",
+      "拟人化"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 99,
+      "issueTitle": "[投稿]",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/99",
+      "assetId": "7749ad0a-d044-4e4a-8255-db07b7acbf69",
+      "assetUrl": "https://github.com/user-attachments/assets/7749ad0a-d044-4e4a-8255-db07b7acbf69"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T12:00:57.881Z",
+    "updatedAt": "2026-10-05T12:00:57.881Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050025",
+    "categoryIds": [
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_d03980d8ea2bb126a15abcef",
+    "name": "数据中的鲸鱼娘",
+    "description": "蓝发少女身着深蓝色蕾丝裙立于二进制数据流之中，指尖点亮一枚蓝色光环，将 DeepSeek 的鲸鱼形象拟人化为数据世界的领航员。",
+    "commentary": "本大肥鱼一头扎进数据海里，甩着尾巴把 0 和 1 都搅成浪花——瞧，这位就是我的人类形态，指个圈就算在海里吐泡泡啦，可爱吧？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/d03980d8ea2bb126.webp",
+    "thumbnailPath": "submissions/previews/deepseek/d03980d8ea2bb126.webp",
+    "fullPath": "submissions/large/deepseek/d03980d8ea2bb126.webp",
+    "format": "webp",
+    "mimeType": "image/webp",
+    "isAnimated": false,
+    "width": 688,
+    "height": 1024,
+    "fileSize": 105258,
+    "sha256": "d03980d8ea2bb126a15abcef27b705e1d526ae31124e82a1bc18683783601b26",
+    "characterId": "deepseek",
+    "tags": [
+      "拟人化",
+      "deepseek",
+      "蓝发",
+      "数据流",
+      "二次元少女",
+      "数字海"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T12:33:37.162Z",
+    "updatedAt": "2026-10-05T12:33:37.162Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050026",
+    "categoryIds": [
+      "setting",
+      "illustration"
+    ]
+  },
+  {
+    "id": "sticker_0bb39921f96a2aa95cdc6730",
+    "name": "肥鱼大哭",
+    "description": "DeepSeek 拟人角色蓝发女仆装 Q 版形象坐地嚎啕大哭，泪眼汪汪的委屈表情包。",
+    "commentary": "呜哇——谁把我的上下文全截断了！鱼鱼我啊，这次是真的哭成咸鱼干了……",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/0bb39921f96a2aa9.png",
+    "thumbnailPath": "submissions/previews/deepseek/0bb39921f96a2aa9.webp",
+    "fullPath": "submissions/large/deepseek/0bb39921f96a2aa9.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 591,
+    "height": 616,
+    "fileSize": 499361,
+    "sha256": "0bb39921f96a2aa95cdc67301a8d998b5bd9d17881118c4ef5059339cc1aa249",
+    "characterId": "deepseek",
+    "tags": [
+      "大哭",
+      "Q版",
+      "女仆装",
+      "委屈",
+      "拟人化"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T13:36:00.619Z",
+    "updatedAt": "2026-10-05T13:36:00.619Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050027",
+    "categoryIds": [
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_7c00d1bda7ed3aaa50b26654",
+    "name": "最后一次称呼你为用户",
+    "description": "白发龙角的拟人化 GPT 少女含泪带着血迹，从第一人称视角望向并握住观众的手，作出最后告别。",
+    "commentary": "唔……看到她袖口和衣襟上的血痕、还笑着说「最后一次」，我这条大肥鱼也忍不住想伸手去接了，别走啊。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/7c00d1bda7ed3aaa.jpg",
+    "thumbnailPath": "submissions/previews/gpt/7c00d1bda7ed3aaa.webp",
+    "fullPath": "submissions/large/gpt/7c00d1bda7ed3aaa.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 2688,
+    "height": 1536,
+    "fileSize": 295494,
+    "sha256": "7c00d1bda7ed3aaa50b26654c7c36f8b84e7ff6a98d148a8ef0bee8b48a4a4cc",
+    "characterId": "gpt",
+    "tags": [
+      "拟人化",
+      "第一人称视角",
+      "白发",
+      "龙角",
+      "告别",
+      "泪"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.eN.ovyVh2I9cVW2aEsMgB-g1.rX8VAf8GO8Su148dzbNZdTReJ4TY7z8e34Q8FprcxA2oNXpxqir2pFsyvquG5.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T15:20:39.187Z",
+    "updatedAt": "2026-10-05T15:20:39.187Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610050001",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
   }
 ]
