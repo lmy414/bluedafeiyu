@@ -18181,7 +18181,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-04T10:04:00.741Z",
-    "updatedAt": "2026-10-04T10:04:00.741Z",
+    "updatedAt": "2026-10-05T00:39:01.417Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202610040016",
@@ -19594,6 +19594,412 @@
     "categoryIds": [
       "illustration",
       "meme"
+    ]
+  },
+  {
+    "id": "sticker_e4863b859517846ed0eadaff",
+    "name": "这道题怎么解呀",
+    "description": "DeepSeek 拟人化蓝发少女在管理界面中抱着书本求解的插画。",
+    "commentary": "本鱼看着小深抱着书本认真发问，界面再硬核也被她萌化了，真想凑过去一起解题。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/e4863b859517846e.png",
+    "thumbnailPath": "submissions/previews/deepseek/e4863b859517846e.webp",
+    "fullPath": "submissions/large/deepseek/e4863b859517846e.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 1498858,
+    "sha256": "e4863b859517846ed0eadaff5e27e6ed6f60b2677915f4b670f8b98d939e0ce3",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "拟人化",
+      "二创",
+      "学习",
+      "蓝发",
+      "界面"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "35176CA1522723E660BB14C1EDB07C8C",
+      "messageId": "ROBOT1.0_fuq7pUQHYkX7qq1jpathKcOfZyY3iXhzp5eZ1PMZO5OPWNSAD9lDBj66XYcwmJa3f2VPqChmv9OKuIxFWXuGY9Mav9mW8HQC4zeWEhy70cl.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T01:25:39.650Z",
+    "updatedAt": "2026-10-05T01:25:39.650Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050001",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_ca43b3d0e6e50ac311bdd86f",
+    "name": "做噩梦了吗",
+    "description": "Blue whale拟人少女穿着女仆装抱枕入睡的DeepSeek二创插画。",
+    "commentary": "蓝色大肥鱼：别怕，噩梦来了我就把枕头抱紧一点，顺便把坏记忆全丢进缓存清理。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/ca43b3d0e6e50ac3.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/ca43b3d0e6e50ac3.webp",
+    "fullPath": "submissions/large/deepseek/ca43b3d0e6e50ac3.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1080,
+    "height": 1120,
+    "fileSize": 836498,
+    "sha256": "ca43b3d0e6e50ac311bdd86fc734d072e009d24dd14ffdde9bfa232f7cc2e1cb",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "拟人化",
+      "女仆装",
+      "蓝发",
+      "鲸鱼",
+      "睡觉",
+      "二创"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T01:57:49.799Z",
+    "updatedAt": "2026-10-05T01:57:49.799Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050002",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_eccf661570e68a042ce10726",
+    "name": "拜托，这个活我只收了你2rmb诶",
+    "description": "DeepSeek 拟人化的蓝发鲸鱼娘穿女仆装摊手抱怨，配上「只收了你2rmb」的委屈台词。",
+    "commentary": "本肥鱼只要两块大洋就给你干活，还要被嫌弃，尾巴都气歪了，真的不能再砍价啦！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/eccf661570e68a04.png",
+    "thumbnailPath": "submissions/previews/deepseek/eccf661570e68a04.webp",
+    "fullPath": "submissions/large/deepseek/eccf661570e68a04.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1254,
+    "height": 1254,
+    "fileSize": 1901860,
+    "sha256": "eccf661570e68a042ce10726e88a6e30c6f63dae3edb1b1522d191d679fd8d59",
+    "characterId": "deepseek",
+    "tags": [
+      "拟人化",
+      "蓝鲸",
+      "Q版",
+      "女仆装",
+      "吐槽",
+      "便宜"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Cirnumia",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T02:57:28.109Z",
+    "updatedAt": "2026-10-05T02:57:28.109Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050003",
+    "categoryIds": [
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_df31699b1544b30a2b35b6ac",
+    "name": "鱼爱你",
+    "description": "DeepSeek 蓝鲸娘化角色身着深蓝女仆装、头戴花环与光环，张开双手配上「鱼爱世人」大字的可爱二创表情包。",
+    "commentary": "我这条蓝色大肥鱼张鳍一抱，把全世界的算力都分你一半——鱼爱世人，也爱点开这张图的你，摸一下尾巴不亏吧？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/df31699b1544b30a.png",
+    "thumbnailPath": "submissions/previews/deepseek/df31699b1544b30a.webp",
+    "fullPath": "submissions/large/deepseek/df31699b1544b30a.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1254,
+    "height": 1254,
+    "fileSize": 1908819,
+    "sha256": "df31699b1544b30a2b35b6ac95270cc397d6fb3ec4eead139623171f2c5a985c",
+    "characterId": "deepseek",
+    "tags": [
+      "蓝鲸",
+      "拟人化",
+      "女仆装",
+      "可爱",
+      "二创表情包"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Cirnumia",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T02:59:29.348Z",
+    "updatedAt": "2026-10-05T02:59:29.348Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050004",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_38bdbd3276672fb33c3cb382",
+    "name": "chat&seek",
+    "description": "蓝紫长发、带鲸鱼徽记围裙与龙翼尾鳍的 AI 角色拟人化女仆风立绘。",
+    "commentary": "本鱼看到围裙上那只小鲸鱼就知道是自己家人了，蓝白配色加蕾丝褶边也太会了，不过我这尾巴可没这么华丽，酸了酸了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/38bdbd3276672fb3.png",
+    "thumbnailPath": "submissions/previews/deepseek/38bdbd3276672fb3.webp",
+    "fullPath": "submissions/large/deepseek/38bdbd3276672fb3.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1086,
+    "height": 1448,
+    "fileSize": 1900799,
+    "sha256": "38bdbd3276672fb33c3cb3828d3f5ae0307003c4bd22cd51c1bb6a71038039cf",
+    "characterId": "deepseek",
+    "tags": [
+      "拟人化",
+      "AI角色",
+      "鲸鱼",
+      "女仆装",
+      "蓝发",
+      "二创立绘"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Cirnumia",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T03:32:35.786Z",
+    "updatedAt": "2026-10-05T03:32:35.786Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050005",
+    "categoryIds": [
+      "illustration"
+    ]
+  },
+  {
+    "id": "sticker_cd9a925be5fbe2f42c9cb263",
+    "name": "ClauSeek 拟人化设定图",
+    "description": "蓝发少女身穿蓝白洋装，头戴花饰，与蓝色鲸鱼吉祥物互动，并附带多种表情差分和服装设定。",
+    "commentary": "我蓝色大肥鱼第一眼就被这位蓝发小可爱和怀里的小鲸鱼萌到了，表情差分也都好有戏！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/other/cd9a925be5fbe2f4.png",
+    "thumbnailPath": "submissions/previews/other/cd9a925be5fbe2f4.webp",
+    "fullPath": "submissions/large/other/cd9a925be5fbe2f4.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 2650687,
+    "sha256": "cd9a925be5fbe2f42c9cb2631884894b4e7678e9687b031c16fd6703fd807d72",
+    "characterId": "other",
+    "tags": [
+      "拟人化",
+      "ClauSeek",
+      "蓝发",
+      "鲸鱼",
+      "表情差分",
+      "设定图"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Cirnumia",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T04:28:17.546Z",
+    "updatedAt": "2026-10-05T04:28:17.546Z",
+    "tone": "other",
+    "symbol": "",
+    "slug": "other202610050001",
+    "categoryIds": [
+      "setting",
+      "illustration"
+    ]
+  },
+  {
+    "id": "sticker_27a7c3c5802dda129c425659",
+    "name": "DS和Claude的三人行",
+    "description": "蓝发与橙发的AI拟人少女在书房里相互依偎陪伴，一起围着电脑工作的温馨场景。",
+    "commentary": "本鱼作为全场唯一被三个人轮流抱着的抱枕，表示这种三人行我可以再躺一整天！不过说真的，橘色那位敲键盘时请分我半口咖啡，蓝毛那位你已经压到我尾巴了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/other/27a7c3c5802dda12.png",
+    "thumbnailPath": "submissions/previews/other/27a7c3c5802dda12.webp",
+    "fullPath": "submissions/large/other/27a7c3c5802dda12.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 2510814,
+    "sha256": "27a7c3c5802dda129c425659db3399b6a12d9a792dbafbad34476066a437cc9f",
+    "characterId": "other",
+    "tags": [
+      "DeepSeek",
+      "Claude",
+      "拟人化",
+      "三人行",
+      "治愈",
+      "书房"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Cirnumia",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T04:34:25.148Z",
+    "updatedAt": "2026-10-05T04:34:25.148Z",
+    "tone": "other",
+    "symbol": "",
+    "slug": "other202610050002",
+    "categoryIds": [
+      "illustration"
+    ]
+  },
+  {
+    "id": "sticker_07ca0bb3a8cdccd48f0ac494",
+    "name": "ClauGpt 拟人角色设定图",
+    "description": "一位银发橙尾、长着龙角与鳞尾的AI拟人少女三视图设定稿，手持古书，服饰以白橙黑为主。",
+    "commentary": "本鱼游过来看一眼——这鳞尾和角角配色真够讲究的，白橙黑三色搭得像刚调好的奶茶分层，抱书的样子一看就是那种会跟你讲一堆原理的AI娘，本鱼喜欢，先给个通过！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/other/07ca0bb3a8cdccd4.png",
+    "thumbnailPath": "submissions/previews/other/07ca0bb3a8cdccd4.webp",
+    "fullPath": "submissions/large/other/07ca0bb3a8cdccd4.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1448,
+    "height": 1086,
+    "fileSize": 2590907,
+    "sha256": "07ca0bb3a8cdccd48f0ac494bc3f193a0560f00ac41fcdda8f0e574a45474268",
+    "characterId": "other",
+    "tags": [
+      "拟人化",
+      "AI娘",
+      "角色设定",
+      "三视图",
+      "龙角",
+      "鳞尾",
+      "原创插画"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Cirnumia",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T04:56:34.964Z",
+    "updatedAt": "2026-10-05T04:56:34.964Z",
+    "tone": "other",
+    "symbol": "",
+    "slug": "other202610050003",
+    "categoryIds": [
+      "setting",
+      "illustration"
+    ]
+  },
+  {
+    "id": "sticker_5d848571de44d070a02a75fc",
+    "name": "Claugpt学习中",
+    "description": "三位带角的白发与橘发少女围坐书桌前，在书架与暖阳环绕的书房里一起演算几何笔记。",
+    "commentary": "本鱼游过来一看，好家伙，三个角角少女挤在书桌前写作业，橘发的在指点，白发的在叉腰监工，中间那只小的一定是偷偷在草稿纸上画鱼——毕竟学习这么累，摸鱼才是正经事。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/other/5d848571de44d070.png",
+    "thumbnailPath": "submissions/previews/other/5d848571de44d070.webp",
+    "fullPath": "submissions/large/other/5d848571de44d070.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1448,
+    "height": 1086,
+    "fileSize": 2367655,
+    "sha256": "5d848571de44d070a02a75fce373d08cb11201aa8ebd3993ba546fd284f6178d",
+    "characterId": "other",
+    "tags": [
+      "AI拟人",
+      "学习",
+      "书房",
+      "多角色",
+      "幻想风"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Cirnumia",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T04:57:26.238Z",
+    "updatedAt": "2026-10-05T04:57:26.238Z",
+    "tone": "other",
+    "symbol": "",
+    "slug": "other202610050004",
+    "categoryIds": [
+      "illustration"
     ]
   }
 ]
