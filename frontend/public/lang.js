@@ -117,8 +117,9 @@
       "ui.copied": "Copied",
       "ui.copyFail": "Copy failed — please select it manually",
       "qq.copy": "Copy group number",
+      "qq.join": "Join the QQ group",
       "qq.scan": "Scan to join",
-      "qq.qrAlt": "QR code for joining the QQ group \u201c鱼之饭盆\u201d (group number 1060898801)",
+      "qq.qrAlt": "QR code for joining the QQ group \u201cAAAA肥鱼批发市场\u201d (group number 1003728058)",
       "alt.work": "\u201c{name}\u201d — {character} {kindId} fan art",
 
       "page.index.title": "蓝色大肥鱼 - AI-Girl Fan Stickers, Memes & Character Art Downloads",
@@ -155,7 +156,7 @@
       "sort.nameDesc": "Name Z→A",
       "sort.size": "File size",
       "sort.random": "Random",
-      "index.qq.lede1": "QQ group \u201c鱼之饭盆\u201d",
+      "index.qq.lede1": "QQ group \u201cAAAA肥鱼批发市场\u201d",
       "index.qq.lede2": "Group number",
       "index.qq.close": "Close",
 
@@ -197,7 +198,7 @@
       "submit.confirm3":
         "I understand this is an unofficial fan-curated project, and image copyright always stays with the original author.",
       "submit.qq.title": "Submit via QQ group",
-      "submit.qq.a": "The QQ group is called \u201c鱼之饭盆\u201d, group number ",
+      "submit.qq.a": "The QQ group is called \u201cAAAA肥鱼批发市场\u201d, group number ",
       "submit.qq.c":
         ". Posting the image in the group and @-ing a maintainer counts as a submission too.",
       "submit.qq.hint":
@@ -321,7 +322,7 @@
       "about.takedown.p2c": ".",
       "about.takedown.btn": "Open attribution & takedown request",
       "about.group.title": "Community group",
-      "about.group.a": "Our QQ group is called \u201c鱼之饭盆\u201d, group number ",
+      "about.group.a": "Our QQ group is called \u201cAAAA肥鱼批发市场\u201d, group number ",
       "about.group.c":
         ". Search that number in QQ to join — whether you want to chat about images, nudge for updates, report bugs, or just come look at the fish, you're welcome.",
 
@@ -418,7 +419,7 @@
       "v2.search": "Search",
       "v2.keyword": "Keyword",
       "v2.entries": "Site links",
-      "v2.cta.title": "Join “鱼之饭盆”",
+      "v2.cta.title": "Join “AAAA肥鱼批发市场”",
       "v2.ev.alt": "The whale girl holding a Happy National Day sticker",
       "v2.ev.kicker": "Happy National Day 🐳",
       "v2.ev.title": "Site Front-End Design Contest",
@@ -553,8 +554,8 @@
       "v2.homeTitle": "蓝色大肥鱼 - AI-Girl Fan Art Gallery",
       "page.characters.title": "AI-Girl Characters - Browse Fan Art by Character | 蓝色大肥鱼",
       "page.characters.desc": "Browse AI-girl fan art by character: DeepSeek, Claude, GPT, Qwen, GLM and more.",
-      "page.community.title": "Join the Community · 鱼之饭盆 | 蓝色大肥鱼",
-      "page.community.desc": "The 蓝色大肥鱼 QQ group “鱼之饭盆”: chat about art, submit work and join events.",
+      "page.community.title": "Join the Community · AAAA肥鱼批发市场 | 蓝色大肥鱼",
+      "page.community.desc": "The 蓝色大肥鱼 QQ group “AAAA肥鱼批发市场”: chat about art, submit work and join events.",
       "page.search.title": "Search AI-Girl Fan Art | 蓝色大肥鱼",
       "page.search.desc": "Search AI-girl fan art by title, character, alias or tag."
     },
@@ -644,8 +645,9 @@
       "ui.copied": "コピーしました",
       "ui.copyFail": "コピーに失敗しました。手動で選択してください",
       "qq.copy": "グループ番号をコピー",
+      "qq.join": "QQ グループに参加",
       "qq.scan": "QRコードで参加",
-      "qq.qrAlt": "QQグループ「鱼之饭盆」（グループ番号 1060898801）への参加用QRコード",
+      "qq.qrAlt": "QQグループ「AAAA肥鱼批发市场」（グループ番号 1003728058）への参加用QRコード",
       "alt.work": "《{name}》{character}{kindId}、AI娘二次創作画像",
 
       "page.index.title": "蓝色大肥鱼 - AI娘スタンプ・DeepSeek娘ネタ画・二次創作イラスト集",
@@ -683,7 +685,7 @@
       "sort.nameDesc": "名前降順",
       "sort.size": "ファイルサイズ",
       "sort.random": "ランダム",
-      "index.qq.lede1": "QQグループ「鱼之饭盆」",
+      "index.qq.lede1": "QQグループ「AAAA肥鱼批发市场」",
       "index.qq.lede2": "グループ番号",
       "index.qq.close": "閉じる",
 
@@ -723,7 +725,7 @@
       "submit.confirm3":
         "当サイトが非公式のファン整理プロジェクトであり、画像の著作権は原作者に帰属することを理解しています。",
       "submit.qq.title": "グループで投稿",
-      "submit.qq.a": "QQグループは「鱼之饭盆」、グループ番号は ",
+      "submit.qq.a": "QQグループは「AAAA肥鱼批发市场」、グループ番号は ",
       "submit.qq.c":
         "。グループに画像を投稿してメンテナーに @ をつければ、それも投稿として扱われます。",
       "submit.qq.hint":
@@ -846,7 +848,7 @@
       "about.takedown.p2c": "。",
       "about.takedown.btn": "署名・削除申請を開く",
       "about.group.title": "交流グループ",
-      "about.group.a": "当サイトの QQ グループは「鱼之饭盆」、グループ番号は ",
+      "about.group.a": "当サイトの QQ グループは「AAAA肥鱼批发市场」、グループ番号は ",
       "about.group.c":
         "。QQ でこの番号を検索すれば参加できます。画像の話、更新の催促、バグ報告、単に魚を見に来るだけでも歓迎です。",
 
@@ -942,7 +944,7 @@
       "v2.search": "検索",
       "v2.keyword": "キーワード",
       "v2.entries": "サイトリンク",
-      "v2.cta.title": "「鱼之饭盆」に参加",
+      "v2.cta.title": "「AAAA肥鱼批发市场」に参加",
       "v2.ev.alt": "「国慶節おめでとう」のスタンプを持つクジラ娘",
       "v2.ev.kicker": "国慶節おめでとう 🐳",
       "v2.ev.title": "サイトのフロントデザイン募集",
@@ -1077,8 +1079,8 @@
       "v2.homeTitle": "蓝色大肥鱼 - AI娘二次創作ギャラリー",
       "page.characters.title": "AI娘キャラ一覧 - キャラ別に二次創作を見る | 蓝色大肥鱼",
       "page.characters.desc": "DeepSeek娘、Claude娘、GPT娘、Qwen娘、GLM娘などキャラ別に AI娘の二次創作を見られます。",
-      "page.community.title": "コミュニティに参加・鱼之饭盆 | 蓝色大肥鱼",
-      "page.community.desc": "蓝色大肥鱼の QQ グループ「鱼之饭盆」。作品の話、投稿、イベント参加など。",
+      "page.community.title": "コミュニティに参加・AAAA肥鱼批发市场 | 蓝色大肥鱼",
+      "page.community.desc": "蓝色大肥鱼の QQ グループ「AAAA肥鱼批发市场」。作品の話、投稿、イベント参加など。",
       "page.search.title": "AI娘二次創作を検索 | 蓝色大肥鱼",
       "page.search.desc": "作品名・キャラ・別名・タグで AI娘の二次創作を検索できます。"
     }

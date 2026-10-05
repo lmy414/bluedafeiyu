@@ -274,10 +274,10 @@
 
     // 群内投稿卡：复制群号。
     (function () {
-      var QQ_NUMBER = "1060898801";
       var copyBtn = document.getElementById("btn-qq-copy");
       var copyText = document.getElementById("btn-qq-copy-text");
       if (!copyBtn) return;
+      var QQ_NUMBER = copyBtn.dataset.copyText;
       function done() {
         copyText.textContent = SiteLang.fmt("ui.copied", "已复制");
         window.setTimeout(function () { copyText.textContent = SiteLang.fmt("qq.copy", "复制群号"); }, 1600);

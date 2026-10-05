@@ -9,7 +9,7 @@ export const PAGE_SIZE = 24;
 
 // 站点信息（沿用原站 about / QqModal / WorkInfo 的内容）
 export const SITE = {
-  group: { name: '鱼之饭盆', number: '1060898801', qr: '/qq-group.png' },
+  group: { name: 'AAAA肥鱼批发市场', number: '1003728058', url: 'https://qm.qq.com/q/4AOX3WfO1O', qr: '/qq-group.png?v=1003728058' },
   repoContent: 'https://github.com/lmy414/ai-girl-stickers',
   repoSource: 'https://github.com/lmy414/bluedafeiyu',
   takedown: 'https://github.com/lmy414/ai-girl-stickers/issues/new?template=takedown-request.yml',

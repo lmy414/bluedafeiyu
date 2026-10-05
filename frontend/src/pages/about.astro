@@ -1,5 +1,6 @@
 ---
 import V2 from '../layouts/Archive.astro';
+import { SITE } from '../lib/v2.mjs';
 import DocumentPage from '../components/archive/DocumentPage.astro';
 import AcknowledgementCard from '../components/archive/AcknowledgementCard.astro';
 ---
@@ -93,12 +94,13 @@ import AcknowledgementCard from '../components/archive/AcknowledgementCard.astro
       <h2 class="section-label" id="about-group-title" data-i18n="about.group.title">交流群</h2>
       <div class="panel about-card group-card tilt-l">
         <div class="prose">
-          <p><span data-i18n="about.group.a">本站的 QQ 群叫「鱼之饭盆」，群号 </span><span class="marker-highlight qq-number">1060898801</span><span data-i18n="about.group.c">。QQ 里搜这个号码就能进；想聊图、催更、报 Bug，或者单纯过来看看鱼，都欢迎。</span></p>
+          <p><span data-i18n="about.group.a">本站的 QQ 群叫「{SITE.group.name}」，群号 </span><span class="marker-highlight qq-number">{SITE.group.number}</span><span data-i18n="about.group.c">。QQ 里搜这个号码就能进；想聊图、催更、报 Bug，或者单纯过来看看鱼，都欢迎。</span></p>
         </div>
         <figure class="group-qr">
-          <img src="/qq-group.png" alt="QQ 群「鱼之饭盆」（群号 1060898801）的加入二维码" width="518" height="518" loading="lazy" decoding="async" data-i18n-attr="alt:qq.qrAlt" />
+          <img src={SITE.group.qr} alt={`QQ 群「${SITE.group.name}」（群号 ${SITE.group.number}）的加入二维码`} width="492" height="492" loading="lazy" decoding="async" data-i18n-attr="alt:qq.qrAlt" />
           <figcaption data-i18n="qq.scan">扫码进群</figcaption>
         </figure>
+        <a class="btn primary" href={SITE.group.url} target="_blank" rel="noopener" data-i18n="qq.join">点击加入 QQ 群</a>
       </div>
     </aside>
     </div>

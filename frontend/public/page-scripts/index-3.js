@@ -3,12 +3,12 @@
     // 弹窗没打开前不拉二维码。
     (function () {
       "use strict";
-      var QQ_NUMBER = "1060898801";
       var modal = document.getElementById("qq-modal");
       var openBtn = document.getElementById("btn-qq-group");
       var copyBtn = document.getElementById("btn-qq-copy");
       var copyText = document.getElementById("btn-qq-copy-text");
       if (!modal || !openBtn) return;
+      var QQ_NUMBER = copyBtn && copyBtn.dataset.copyText;
 
       var lastFocus = null;
 

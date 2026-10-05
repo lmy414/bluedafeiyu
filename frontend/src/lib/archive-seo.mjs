@@ -1,5 +1,5 @@
 import { imageMetadata } from './image-metadata.mjs';
-import { workBySlug, ogCard, ORIGIN } from './v2.mjs';
+import { workBySlug, ogCard, ORIGIN, SITE } from './v2.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { seoContext, seoTitle } from './seo.mjs';
@@ -32,7 +32,7 @@ export function createSEO(ctx) {
     '/topics.html': ['AI 娘主题合集与作者作品集 — 蓝色大肥鱼', '浏览猫鲸作者作品集与日常场景选题，按问候、工作、安慰和角色初见阅读作品。主题合集保留作品来源、署名与授权记录。'],
     '/search.html': ['搜索 AI 娘作品、角色与标签 — 蓝色大肥鱼', '用作品名、角色别名、图片说明或标签查找已收录的 AI 娘作品，并按角色与作品类型筛选。'],
     '/submit.html': ['投稿 AI 娘二创作品：来源与授权填写指南 — 蓝色大肥鱼', '了解 AI 娘图片投稿需要填写的角色、作品类型、原始来源、署名和授权信息。站内投稿和 GitHub 表单均会进入审核队列。'],
-    '/community.html': ['鱼之饭盆社群与公开交流入口 — 蓝色大肥鱼', '查看鱼之饭盆 QQ 交流群、站长公开账号和二创交流入口，分享作品、参加活动或反馈归档问题。'],
+    '/community.html': [`${SITE.group.name}社群与公开交流入口 — 蓝色大肥鱼`, `查看${SITE.group.name} QQ 交流群、站长公开账号和二创交流入口，分享作品、参加活动或反馈归档问题。`],
     '/events/national-day-2026.html': ['2026 国庆前台设计征集：规则与投稿入口 — 蓝色大肥鱼', '查看蓝色大肥鱼 2026 国庆前台设计征集的参加方式、奖项、截止时间、活动仓库和投稿展览。'],
     '/about.html': ['关于蓝色大肥鱼：图片来源、版权与使用许可', '了解 AI 娘二创档案的整理方式、图片署名与授权状态、统计与隐私，以及补署名和下架申请流程。'],
     '/changelog.html': ['蓝色大肥鱼更新日志：内容收录与站点变更', '查阅蓝色大肥鱼正式站点的历史更新记录，了解作品收录、功能和维护变更。查看正式站点的内容收录与功能变更。'],

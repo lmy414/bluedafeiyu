@@ -1,15 +1,19 @@
+---
+import { SITE } from '../lib/v2.mjs';
+---
 <div class="qq-modal" id="qq-modal" hidden>
     <div class="qq-modal-backdrop" data-qq-close></div>
     <div class="qq-modal-card panel" role="dialog" aria-modal="true" aria-labelledby="qq-modal-title">
       <span class="tape-strip" aria-hidden="true"></span>
       <h2 class="qq-modal-title" id="qq-modal-title" data-i18n="index.cta.group">加入交流群</h2>
-      <p class="qq-modal-lede"><span data-i18n="index.qq.lede1">QQ 群「鱼之饭盆」</span><br /><span data-i18n="index.qq.lede2">群号</span> <span class="marker-highlight">1060898801</span></p>
+      <p class="qq-modal-lede"><span data-i18n="index.qq.lede1">QQ 群「{SITE.group.name}」</span><br /><span data-i18n="index.qq.lede2">群号</span> <span class="marker-highlight">{SITE.group.number}</span></p>
       <figure class="qq-modal-qr">
-        <img src="qq-group.png" alt="QQ 群「鱼之饭盆」（群号 1060898801）的加入二维码" width="518" height="518" loading="lazy" decoding="async" data-i18n-attr="alt:qq.qrAlt" />
+        <img src={SITE.group.qr} alt={`QQ 群「${SITE.group.name}」（群号 ${SITE.group.number}）的加入二维码`} width="492" height="492" loading="lazy" decoding="async" data-i18n-attr="alt:qq.qrAlt" />
         <figcaption data-i18n="qq.scan">扫码进群</figcaption>
       </figure>
       <div class="qq-modal-actions">
-        <button type="button" class="btn primary" id="btn-qq-copy">
+        <a class="btn primary" href={SITE.group.url} target="_blank" rel="noopener" data-i18n="qq.join">点击加入 QQ 群</a>
+        <button type="button" class="btn primary" id="btn-qq-copy" data-copy-text={SITE.group.number}>
           <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><rect x="5.5" y="5.5" width="8" height="8" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"></rect><path d="M10.5 5.5v-2a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg>
           <span id="btn-qq-copy-text" data-i18n="qq.copy">复制群号</span>
         </button>
