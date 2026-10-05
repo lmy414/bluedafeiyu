@@ -92,4 +92,6 @@ test('旧维护报告不能当成本次完成通知', async (t) => {
   await assert.rejects(readReport({ reportRoot }), /最近 20 小时/);
   await fs.writeFile(path.join(reportRoot, 'latest.json'), JSON.stringify({ finishedAt: new Date().toISOString(), status: 'success' }));
   assert.equal((await readReport({ reportRoot })).status, 'success');
+  await fs.writeFile(path.join(reportRoot, 'latest.json'), JSON.stringify({ startedAt: '2026-10-05T03:00:00+08:00', finishedAt: '2026-10-05T03:01:00+08:00', status: 'success' }));
+  await assert.rejects(readReport({ reportRoot, now: Date.parse('2026-10-05T04:30:00+08:00') }), /本轮维护尚未产生报告/);
 });

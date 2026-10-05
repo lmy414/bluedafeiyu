@@ -179,6 +179,10 @@ export async function readReport({ reportRoot = REPORT_ROOT, now = Date.now() } 
   const report = JSON.parse(await fs.readFile(path.join(reportRoot, 'latest.json'), 'utf8'));
   const age = now - Date.parse(report.finishedAt || '');
   if (!Number.isFinite(age) || age > 20 * 60 * 60 * 1000 || age < -60000) throw new Error('没有最近 20 小时内的维护报告，请检查定时任务，不能把旧报告当成本次完成');
+  const local = new Date(now + 8 * 3600000);
+  let lastScheduledRun = Date.UTC(local.getUTCFullYear(), local.getUTCMonth(), local.getUTCDate(), 4, 15) - 8 * 3600000;
+  if (now < lastScheduledRun) lastScheduledRun -= DAY;
+  if (Date.parse(report.startedAt || report.finishedAt) < lastScheduledRun) throw new Error('04:15 的本轮维护尚未产生报告，请检查定时任务，旧报告不会重新投递');
   return report;
 }
 async function main() {
