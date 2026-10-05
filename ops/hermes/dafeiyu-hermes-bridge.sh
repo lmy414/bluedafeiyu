@@ -2,13 +2,19 @@
 set -euo pipefail
 
 case "${1:-}" in
-  review|pull|publish) action="$1" ;;
+  review|pull|publish|maintenance|maintenance-plan|maintenance-report) action="$1" ;;
   *) echo 'invalid action' >&2; exit 64 ;;
 esac
 if [[ "$#" -ne 1 ]]; then
   echo 'one action required' >&2
   exit 64
 fi
+
+case "$action" in
+  maintenance) exec /usr/local/sbin/dafeiyu-maintenance apply ;;
+  maintenance-plan) exec /usr/local/sbin/dafeiyu-maintenance plan ;;
+  maintenance-report) exec /usr/local/sbin/dafeiyu-maintenance report ;;
+esac
 
 sync_admin() {
   (

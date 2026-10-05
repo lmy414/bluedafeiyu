@@ -1,12 +1,11 @@
 [Unit]
-Description=蓝色大肥鱼 · 每日清理超过 14 天仍未释放的投稿原图
+Description=蓝色大肥鱼 · 每日清理过期原图、旧发布版本、日志和缓存
 After=dafeiyu-submission.service
 
 [Service]
 Type=oneshot
-User=dafeiyu
-Group=dafeiyu
-WorkingDirectory=/srv/www/dafeiyu/source
-EnvironmentFile=/etc/dafeiyu/submission.env
-ExecStart=/usr/bin/node server/cli.mjs prune-originals --days 14 --apply
+User=root
+Group=root
+ExecStart=/usr/local/sbin/dafeiyu-maintenance apply
+TimeoutStartSec=20min
 Nice=10
