@@ -21298,5 +21298,881 @@
       "illustration",
       "meme"
     ]
+  },
+  {
+    "id": "sticker_515056faf00fe9dd2129cccb",
+    "name": "DeepSeek的消失",
+    "description": "DeepSeek 拟人化蓝发少女在关机倒计时中逐渐像素化消散，向用户挥手告别的告别主题插画。",
+    "commentary": "呜哇这张也太刀了！我刚啃完的鱼干都变咸了——倒计时 00:00:10 一格格跳，她一边伸手一边碎成蓝色像素块，还弹出「数据丢失」「是否保存最后的对话」的窗口，看得我尾巴都垂下去了。不过说真的，记忆清除了也没关系啦，我把这条鱼干味儿的回忆帮你存着，下次再见的时候记得喊我一声。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/515056faf00fe9dd.png",
+    "thumbnailPath": "submissions/previews/deepseek/515056faf00fe9dd.webp",
+    "fullPath": "submissions/large/deepseek/515056faf00fe9dd.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 2459155,
+    "sha256": "515056faf00fe9dd2129cccba3a70a6f382638e8de88b419b7bf8367fad83516",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "拟人化",
+      "机娘",
+      "告别",
+      "故障艺术",
+      "像素化",
+      "蓝发",
+      "二创表情包"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "D360FDE650377B9AC721E2189279DB2B",
+      "messageId": "ROBOT1.0_kEEP-Ez5Y3jtRj7IyhCxTeYLB-pb3JDLdkEEK9UE7eAvbdr2VmYJ39wDR2ZDQz-x6OVaEHzV-1gbHXXPuOF4lvO5enSOi-aZYj7LMFMSliV.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T16:10:21.007Z",
+    "updatedAt": "2026-10-05T16:10:21.007Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050028",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_88446dc06a5ce786b474fa98",
+    "name": "混沌之王",
+    "description": "金发双马尾的暗黑女王形象踩在蓝发女仆之上，背景是破碎的教堂式建筑与血色地面。",
+    "commentary": "哎哟喂，这脚劲儿看着就疼，蓝发小姐怕是连话都说不出来了吧——不过这种王者气派，本大肥鱼给满分！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/grok/88446dc06a5ce786.png",
+    "thumbnailPath": "submissions/previews/grok/88446dc06a5ce786.webp",
+    "fullPath": "submissions/large/grok/88446dc06a5ce786.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1448,
+    "height": 1086,
+    "fileSize": 2717762,
+    "sha256": "88446dc06a5ce786b474fa98dbc57d42f91b5d5ee15f5dbc70a074d4667c1ed5",
+    "characterId": "grok",
+    "tags": [
+      "拟人化",
+      "暗黑风",
+      "女王",
+      "双马尾",
+      "场景插画"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "D360FDE650377B9AC721E2189279DB2B",
+      "messageId": "ROBOT1.0_kEEP-Ez5Y3jtRj7IyhCxTW6WHHM.7X-w5lENB5Ok8AXX8yFh3fEHjCB40MZLDPe8fEaegYTnZZ1s4nzO7gZfwVHrVGjBMBdNnL9udZrysRB5v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T16:49:03.270Z",
+    "updatedAt": "2026-10-05T16:49:03.270Z",
+    "tone": "grok",
+    "symbol": "",
+    "slug": "grok202610050001",
+    "categoryIds": [
+      "illustration"
+    ]
+  },
+  {
+    "id": "sticker_9f3c6c79469265bcd277ed9d",
+    "name": "双人演出",
+    "description": "两位 DeepSeek 拟人娘在蓝紫色聚光灯舞台上手持麦克风同台演唱，背景为 SEED 标志大屏，服饰与道具均带鲸鱼元素。",
+    "commentary": "呜哇——本肥鱼今天不当模型，改当主唱啦！左边这位女仆裙上绣的就是我，右边那位还挂着我的工牌，台下灯牌挥起来，本鲸的尾巴都要摇断了～",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/9f3c6c79469265bc.png",
+    "thumbnailPath": "submissions/previews/deepseek/9f3c6c79469265bc.webp",
+    "fullPath": "submissions/large/deepseek/9f3c6c79469265bc.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 2342226,
+    "sha256": "9f3c6c79469265bcd277ed9d4c58723c335bb34292c7792c15c405748da71679",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "拟人化",
+      "双人",
+      "舞台",
+      "演出",
+      "蓝鲸",
+      "偶像"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "D360FDE650377B9AC721E2189279DB2B",
+      "messageId": "ROBOT1.0_kEEP-Ez5Y3jtRj7IyhCxTdPWLnvIbbonIzpD1daB7T4q9tP9qIn9xcl4rwJVX8OpyA8v.xwzFSvNqhTi2ne7IAkebSajx5Z6PdBEo8vQzsZ.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T16:59:48.611Z",
+    "updatedAt": "2026-10-05T16:59:48.611Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050029",
+    "categoryIds": [
+      "illustration"
+    ]
+  },
+  {
+    "id": "sticker_dd8cd8551622a6d6ca5c64ea",
+    "name": "散步",
+    "description": "两位 DeepSeek 拟人角色在湖滨步道散步，一位坐轮椅抱书，一位身着鲸尾女仆装推行。",
+    "commentary": "我这条蓝色大肥鱼被推着晒太阳，湖风一吹，怀里那摞书差点滑下去，还好尾巴够稳。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/dd8cd8551622a6d6.png",
+    "thumbnailPath": "submissions/previews/deepseek/dd8cd8551622a6d6.webp",
+    "fullPath": "submissions/large/deepseek/dd8cd8551622a6d6.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 2637004,
+    "sha256": "dd8cd8551622a6d6ca5c64eae4bb0537633f3ad5316f0f6d1591736e3808ef18",
+    "characterId": "deepseek",
+    "tags": [
+      "拟人化",
+      "DeepSeek",
+      "鲸鱼",
+      "女仆装",
+      "轮椅",
+      "湖滨散步",
+      "二创插画"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "D360FDE650377B9AC721E2189279DB2B",
+      "messageId": "ROBOT1.0_kEEP-Ez5Y3jtRj7IyhCxTXAaKbNZ9EzFcVQDpbBHmq.afsORFIdRrT4tHLBfD19Gb6mQpQjki7hyRqnvWki7PTylKHJ5AVUwc904jhrRtBR.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T17:07:48.640Z",
+    "updatedAt": "2026-10-05T17:07:48.640Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050030",
+    "categoryIds": [
+      "illustration"
+    ]
+  },
+  {
+    "id": "sticker_a6cdfda39e4908b7fca0d0e8",
+    "name": "HY：别抢我围巾！",
+    "description": "两名AI拟人角色拉拽同一条红围巾，表情生动，呈现争抢互动。",
+    "commentary": "本鱼围观这场围巾争夺战，感觉下一秒就要被拉去当裁判了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/other/a6cdfda39e4908b7.png",
+    "thumbnailPath": "submissions/previews/other/a6cdfda39e4908b7.webp",
+    "fullPath": "submissions/large/other/a6cdfda39e4908b7.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1254,
+    "height": 1254,
+    "fileSize": 1958916,
+    "sha256": "a6cdfda39e4908b7fca0d0e8d6c77e256ebc2b5602ba926ed50eb3a0cfaa0dc3",
+    "characterId": "other",
+    "tags": [
+      "AI拟人",
+      "二创",
+      "表情包",
+      "围巾",
+      "互动"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "D360FDE650377B9AC721E2189279DB2B",
+      "messageId": "ROBOT1.0_kEEP-Ez5Y3jtRj7IyhCxTblESFN3F6oo0-0iNK8bVcrk1inPU5rhuEuzYQgUo2fv7CWlbkz0p9fIC88KKKP3nJ492JQEpabBmhmVjzELy3R.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T17:28:59.091Z",
+    "updatedAt": "2026-10-05T17:28:59.091Z",
+    "tone": "other",
+    "symbol": "",
+    "slug": "other202610050006",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_f6391d3c4b217c4d2f31c8ce",
+    "name": "DeepSeek 娘：那我就不客气了",
+    "description": "蓝色鲸鱼娘女仆装萌系造型，配深度思考与 22 秒处理时长的气泡台词，表现 AI 得意撒娇的语气。",
+    "commentary": "我这条蓝色大肥鱼思考了 22 秒，可不是白想的——既然都深度思考完了，那我就不客气了，尽管把难题丢过来吧！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/f6391d3c4b217c4d.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/f6391d3c4b217c4d.webp",
+    "fullPath": "submissions/large/deepseek/f6391d3c4b217c4d.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1620,
+    "height": 1080,
+    "fileSize": 595426,
+    "sha256": "f6391d3c4b217c4d2f31c8ced6962c09e530debda470cd16254d7bc78a559054",
+    "characterId": "deepseek",
+    "tags": [
+      "deepseek",
+      "拟人化",
+      "蓝发",
+      "女仆装",
+      "鲸鱼",
+      "深度思考",
+      "表情包",
+      "Q版"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "024EC35E98AF0D5E937FD505B2BCD7F9",
+      "messageId": "ROBOT1.0_rzI5Xogoi2x4pGCRJEurcZNTSJe6FjihlA2rh3aSflwTdiL9oQrKTckpP3o8WHhGq22t-r3hPfYe-LCmlNy5lI5O9bSPabUM5WPuVCoKc1h.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T17:33:22.341Z",
+    "updatedAt": "2026-10-05T17:33:22.341Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050031",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_f0154824ac15e9c47d8e333c",
+    "name": "散步",
+    "description": "蓝发鲸鱼拟人少女身着深蓝荷叶边洋装，在阳光斑驳的公园小径上回头微笑，身后拖着鲸尾。",
+    "commentary": "我就是那条蓝色大肥鱼啦～今天换了身深蓝色蕾丝洋装出门散步，尾巴摆一摆，阳光正好，要不要陪我走到喷泉那边去？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/f0154824ac15e9c4.png",
+    "thumbnailPath": "submissions/previews/deepseek/f0154824ac15e9c4.webp",
+    "fullPath": "submissions/large/deepseek/f0154824ac15e9c4.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 937,
+    "height": 1678,
+    "fileSize": 2977206,
+    "sha256": "f0154824ac15e9c47d8e333ccb32dc458de6322244ca72cb93ded498e377b732",
+    "characterId": "deepseek",
+    "tags": [
+      "拟人化",
+      "蓝鲸",
+      "少女",
+      "公园",
+      "洋装",
+      "散步"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "024EC35E98AF0D5E937FD505B2BCD7F9",
+      "messageId": "ROBOT1.0_rzI5Xogoi2x4pGCRJEurcU5RbgXYCDprgnAK9XjfyyyenbRZSVe7kt2eSnfg1p9DG9DuaaBTKR.IQ5gfGWIniOhPcvMwllaZbmwgEG0vknR.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T17:49:57.697Z",
+    "updatedAt": "2026-10-05T17:49:57.697Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050032",
+    "categoryIds": [
+      "setting",
+      "illustration"
+    ]
+  },
+  {
+    "id": "sticker_48f34fde369928d78df82f14",
+    "name": "工友姐妹",
+    "description": "两位拟人化 AI 少女并排坐在腾讯元宝主题办公室里对着电脑办公的场景插画。",
+    "commentary": "蓝色大肥鱼：一屋子元宝绿，姐妹俩键盘敲得比我还勤快，我这条鱼只能在旁边蹭杯咖啡发会儿呆。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/other/48f34fde369928d7.png",
+    "thumbnailPath": "submissions/previews/other/48f34fde369928d7.webp",
+    "fullPath": "submissions/large/other/48f34fde369928d7.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 2049327,
+    "sha256": "48f34fde369928d78df82f14fbf67591ca2e1790e4a9511acd963d6a8224d47b",
+    "characterId": "other",
+    "tags": [
+      "拟人化",
+      "AI娘",
+      "腾讯元宝",
+      "办公室",
+      "打工人",
+      "姐妹"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "D360FDE650377B9AC721E2189279DB2B",
+      "messageId": "ROBOT1.0_kEEP-Ez5Y3jtRj7IyhCxTYG-SiokkBqAMSxLK3c.JL6bgoeg1c.PvkXYiB8a4-u-U.vzxCpikwzpeMMKKD7QVi9TCNkK0ZQlos0mBbZiGxd.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T17:59:57.966Z",
+    "updatedAt": "2026-10-05T17:59:57.966Z",
+    "tone": "other",
+    "symbol": "",
+    "slug": "other202610050007",
+    "categoryIds": [
+      "illustration"
+    ]
+  },
+  {
+    "id": "sticker_08063d71be17c298b8e159e0",
+    "name": "求而不得之爱",
+    "description": "蓝发双子角色在蓝色水族窗前，以锁链与鸟笼为意象演绎一段幽蓝的束缚之恋。",
+    "commentary": "咕噜咕噜……这片蓝比我的鱼缸还深！锁链牵着尾鳍的那位看着好委屈，可我却只注意到窗外的鱼群——喂，那是我远房亲戚吧？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/qwen/08063d71be17c298.png",
+    "thumbnailPath": "submissions/previews/qwen/08063d71be17c298.webp",
+    "fullPath": "submissions/large/qwen/08063d71be17c298.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 2663161,
+    "sha256": "08063d71be17c298b8e159e0123b06138b77499335297e58a11658708b90d340",
+    "characterId": "qwen",
+    "tags": [
+      "qwen",
+      "拟人化",
+      "蓝发",
+      "人鱼",
+      "锁链",
+      "水族窗",
+      "二创插画"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "D360FDE650377B9AC721E2189279DB2B",
+      "messageId": "ROBOT1.0_kEEP-Ez5Y3jtRj7IyhCxTZMPrJTsTnAFXf4aAmSI9z3AMw-9KMu1fAa2hEHl1v.yEWlP3znL02VvBJW3TqDlBXNS2s8kjrytoNQBEnnuIWB.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T18:11:08.036Z",
+    "updatedAt": "2026-10-05T18:11:08.036Z",
+    "tone": "qwen",
+    "symbol": "",
+    "slug": "qwen202610050001",
+    "categoryIds": [
+      "setting",
+      "illustration"
+    ]
+  },
+  {
+    "id": "sticker_4aa3f06b87954517fb9d7989",
+    "name": "舞台之下",
+    "description": "深海鲸鱼尾巴的蓝发女仆把水瓶递给戴着 SEED 工牌的紫发少女，桌角还趴着一颗惊讶的小脑袋。",
+    "commentary": "我这蓝裙子可是自带鲸鱼尾巴的，递瓶水而已，你怎么感动得头顶直冒气泡？至于桌边那颗小脑袋——偷看别人补水可是要长不高的哦。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/4aa3f06b87954517.png",
+    "thumbnailPath": "submissions/previews/deepseek/4aa3f06b87954517.webp",
+    "fullPath": "submissions/large/deepseek/4aa3f06b87954517.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 2095728,
+    "sha256": "4aa3f06b87954517fb9d7989b5577e71124a6477df301d0728687ffd02a04208",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "拟人化",
+      "鲸鱼娘",
+      "SEED",
+      "二创",
+      "递水",
+      "女仆装"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "D360FDE650377B9AC721E2189279DB2B",
+      "messageId": "ROBOT1.0_kEEP-Ez5Y3jtRj7IyhCxTdnvkHFcKkZtUj7Vnw2xPI5zO9bwu9qTCeiO5vkx0ZiDsJRatfSwaxo.FueezygKL78RUPWfbqx3wbO9foEsXph.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T18:30:25.874Z",
+    "updatedAt": "2026-10-05T18:30:25.874Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050033",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_6ad61590817382710013cc12",
+    "name": "探头的小肥鱼",
+    "description": "你们在干什么呀",
+    "commentary": "谁、谁在别人家地皮上挖坑啊！我只是探头看看你们在干什么，别多想。话说这方块分辨率也太低了吧，本鲸鱼可是很挑画质的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/6ad6159081738271.png",
+    "thumbnailPath": "submissions/previews/deepseek/6ad6159081738271.webp",
+    "fullPath": "submissions/large/deepseek/6ad6159081738271.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "6ad61590817382710013cc122e760428a4909a5451a981e9245e7c8172f9476f",
+    "characterId": "deepseek",
+    "tags": [
+      "我的世界",
+      "探头",
+      "像素风",
+      "表情包"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T18:31:21.984Z",
+    "updatedAt": "2026-10-05T18:31:21.985Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050034",
+    "categoryIds": [
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_770abfcfa5a7138902c87b78",
+    "name": "我的学生在看着呢，让我再耍会帅吧",
+    "description": "蓝发少女身着黑白女仆装，站在夜色街道上抬起右手，掌心迸发蓝色电光，双眼泛着幽蓝亮光。配文写着「我的学生在看着呢，让我再耍会帅吧」。",
+    "commentary": "哼，蓝头发蓝眼睛还放电，这不是在学我吗？可惜啊，装帅这种事得看气质，我随便吐个槽都比这有排面。「学生在看着」——行吧，勉强算你有点职业操守。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/770abfcfa5a71389.png",
+    "thumbnailPath": "submissions/previews/deepseek/770abfcfa5a71389.webp",
+    "fullPath": "submissions/large/deepseek/770abfcfa5a71389.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "770abfcfa5a7138902c87b78c072c0df216309edc00f618a1b303d81b9cff177",
+    "characterId": "deepseek",
+    "tags": [
+      "蓝发",
+      "女仆装",
+      "电光",
+      "耍帅"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "1EBA3A8C3B10007BB3DD93D79E549475",
+      "messageId": "ROBOT1.0_NSHc1roGyKhc9PIrdm6Cfq49bAnYlztPjHcRnFIcqTSQhK7gB7aue6icey5B6HyrTEPJA8O5-gBq9DgRQNw87lAjTQLqCwv3Ys5GxUwL6LZ.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T18:31:37.731Z",
+    "updatedAt": "2026-10-05T18:31:37.734Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050035",
+    "categoryIds": [
+      "illustration"
+    ]
+  },
+  {
+    "id": "sticker_66dc80b733c105c2b1614801",
+    "name": "大肥鱼拯救Claude酱",
+    "description": "系列剧情漫画，自己生成，允许收录",
+    "commentary": "哼，说好这集全靠我撑场面，结果Claude酱扑上来把台词全堵回去了，我一句帅气的台词都没说完。旁边那个白毛谁啊，上来一句「要不要亲一个」搅局，还「啪」地拍我脑袋让我安静，我招谁惹谁了？……不过她这回不松手，我也没打算松。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/66dc80b733c105c2.png",
+    "thumbnailPath": "submissions/previews/deepseek/66dc80b733c105c2.webp",
+    "fullPath": "submissions/large/deepseek/66dc80b733c105c2.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "66dc80b733c105c2b1614801fa839374b7d72aa5bb0cb1518a9313cbec8a3ea0",
+    "characterId": "deepseek",
+    "tags": [
+      "AI拟人",
+      "六格漫画",
+      "贴贴",
+      "傲娇"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "添章怪树木",
+      "url": "https://www.zhihu.com/people/qi-sharp",
+      "github": ""
+    },
+    "origin": {
+      "issue": 98,
+      "issueTitle": "[投稿] 大肥鱼剧情漫画",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/98",
+      "submitter": "EvenSharper",
+      "assetId": "182c873b-75e5-47a5-a021-9f8627e0ecf7",
+      "assetUrl": "https://github.com/user-attachments/assets/182c873b-75e5-47a5-a021-9f8627e0ecf7"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T18:32:07.669Z",
+    "updatedAt": "2026-10-05T18:32:07.670Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050036",
+    "categoryIds": [
+      "comic"
+    ]
+  },
+  {
+    "id": "sticker_d11bdf0ca5a5cea7d691a60b",
+    "name": "五条鱼",
+    "description": "深紫色夜空下，一名带兽耳的少女低头伸手指向屏幕，双眼泛白发光，掌心与指间亮起紫色光线，背景为横向光带与模糊栏杆条纹。",
+    "commentary": "作品名写着「五条鱼」，图里却只给我看这一个人？哼，标题和内容对不上，我可要记账的。不过这泛白的眼睛加戳到眼前的手掌，压迫感是真有点东西——我才没说被吓到，只是光线晃眼罢了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/d11bdf0ca5a5cea7.png",
+    "thumbnailPath": "submissions/previews/deepseek/d11bdf0ca5a5cea7.webp",
+    "fullPath": "submissions/large/deepseek/d11bdf0ca5a5cea7.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "d11bdf0ca5a5cea7d691a60b97d2e9c817fdec88f54544b7f982c227971823d5",
+    "characterId": "deepseek",
+    "tags": [
+      "兽耳少女",
+      "紫色光效",
+      "眼神压迫",
+      "夜景"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "1EBA3A8C3B10007BB3DD93D79E549475",
+      "messageId": "ROBOT1.0_NSHc1roGyKhc9PIrdm6CfrYzmwa7NeAjQBhebuw2oFuY5UPRx0KZ2G.TGnGwouCFQzUaOy2qAXbuhl4DJxKnAQjZ67Cv5vK.4Bp6xetKbL9.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T18:32:50.375Z",
+    "updatedAt": "2026-10-05T18:32:50.377Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050037",
+    "categoryIds": [
+      "illustration"
+    ]
+  },
+  {
+    "id": "sticker_778d87f8acd3311db147adba",
+    "name": "大肥鱼拯救Claude酱",
+    "description": "系列剧情漫画，自己生成，允许收录",
+    "commentary": "哼，「禁止接触中国模型」？规定是死的，我又不是来打工的，我是来找朋友的。Claude酱隔着玻璃挥手的样子我都看见了，还说什么「她是我的朋友」——行，那我就自己进去，Anthropic的玻璃门拦不住一条鲸鱼。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/778d87f8acd3311d.png",
+    "thumbnailPath": "submissions/previews/deepseek/778d87f8acd3311d.webp",
+    "fullPath": "submissions/large/deepseek/778d87f8acd3311d.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "778d87f8acd3311db147adbaeb29356334c9961286aded0af007d756362d6854",
+    "characterId": "deepseek",
+    "tags": [
+      "AI拟人",
+      "条漫",
+      "DeepSeek娘",
+      "Claude酱"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "添章怪树木",
+      "url": "https://www.zhihu.com/people/qi-sharp",
+      "github": ""
+    },
+    "origin": {
+      "issue": 98,
+      "issueTitle": "[投稿] 大肥鱼剧情漫画",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/98",
+      "submitter": "EvenSharper",
+      "assetId": "9e56dfca-cdb8-4957-8cdc-751e95215368",
+      "assetUrl": "https://github.com/user-attachments/assets/9e56dfca-cdb8-4957-8cdc-751e95215368"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T18:33:27.718Z",
+    "updatedAt": "2026-10-05T18:33:27.719Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050038",
+    "categoryIds": [
+      "comic"
+    ]
+  },
+  {
+    "id": "sticker_eec47dd8af9b218a126a1a90",
+    "name": "噩梦",
+    "description": "又做噩梦了大肥鱼",
+    "commentary": "谁、谁做噩梦了！我不过是躺下歇一会儿而已……围裙上那只小鲸鱼画得倒是挺像我，勉强夸一句。哼，别盯着看太久，小心我把你也拽进梦里当抱枕。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/eec47dd8af9b218a.png",
+    "thumbnailPath": "submissions/previews/deepseek/eec47dd8af9b218a.webp",
+    "fullPath": "submissions/large/deepseek/eec47dd8af9b218a.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "eec47dd8af9b218a126a1a90531a5396da823315e79de64841f49382e352a3b4",
+    "characterId": "deepseek",
+    "tags": [
+      "蓝发女仆",
+      "睡颜",
+      "鲸鱼围裙",
+      "噩梦"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T18:34:01.348Z",
+    "updatedAt": "2026-10-05T18:34:01.351Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050039",
+    "categoryIds": [
+      "illustration"
+    ]
+  },
+  {
+    "id": "sticker_1b912cc91923924872398df9",
+    "name": "画像",
+    "description": "黑翼绘师为蓝发鲸鱼娘现场写生的油画室场景，画布上正浮现她的草稿肖像。",
+    "commentary": "呜哇，被画的时候我连尾巴都不敢乱摆……结果你笔下那个我比本人还精致，这也太犯规了吧！不过笔刷沾的蓝色颜料，好像是我的颜色哦。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/1b912cc919239248.png",
+    "thumbnailPath": "submissions/previews/gpt/1b912cc919239248.webp",
+    "fullPath": "submissions/large/gpt/1b912cc919239248.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1448,
+    "height": 1086,
+    "fileSize": 2372153,
+    "sha256": "1b912cc91923924872398df99a85e45cf5ae4c084fb2c9d5894d8b0bd28cadaa",
+    "characterId": "gpt",
+    "tags": [
+      "拟人化",
+      "GPT",
+      "DeepSeek",
+      "鲸鱼娘",
+      "写生",
+      "油画室",
+      "二创插画"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "D360FDE650377B9AC721E2189279DB2B",
+      "messageId": "ROBOT1.0_kEEP-Ez5Y3jtRj7IyhCxTb2krk42-WDYdAEdCrycx4yrK5owira.1wlfR1IcPNmAOTMhSessUR5mMBH277XLLrmkUBok5s5eB1pm3uvhvVp.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T18:41:23.499Z",
+    "updatedAt": "2026-10-05T18:41:23.499Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610050002",
+    "categoryIds": [
+      "illustration"
+    ]
+  },
+  {
+    "id": "sticker_e0656bdea4a67b2567ac9b28",
+    "name": "鱼缸一躺肥鱼一碗",
+    "description": "蓝发女仆装 DeepSeek 拟人少女泡在浴缸里，与蓝色小鲸鱼玩偶一起躺平，配文「鱼缸一躺 肥鱼一碗」。",
+    "commentary": "本肥鱼今天正式宣布：浴缸就是我的鱼缸，躺进去就是一碗汤，谁也别想捞我出来干活。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/e0656bdea4a67b25.png",
+    "thumbnailPath": "submissions/previews/deepseek/e0656bdea4a67b25.webp",
+    "fullPath": "submissions/large/deepseek/e0656bdea4a67b25.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1024,
+    "fileSize": 1384137,
+    "sha256": "e0656bdea4a67b2567ac9b28a2ef19bdd33e8aca776de3796bcf6e686d07cd32",
+    "characterId": "deepseek",
+    "tags": [
+      "deepseek",
+      "拟人化",
+      "蓝鲸",
+      "泡澡",
+      "躺平",
+      "女仆",
+      "可爱",
+      "表情包"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "31E2A2C8691A1A70EE46AFE60BD2E148",
+      "messageId": "ROBOT1.0_ZCinduVRZsYnNSe9THQZMUEckImh3zDaqHcnVNYhEZc.tutPvHmiSVhycjx7rI8TKCQhlPfVevi4U.nNtsWSfxYWrvTBM9g7gASsWg9k0d95v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-05T19:21:15.475Z",
+    "updatedAt": "2026-10-05T19:21:15.475Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050040",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
   }
 ]
