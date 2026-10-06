@@ -86,7 +86,7 @@ import {installTopicDownloads} from './topic-download.js?v=2';
     const setURL=()=>{const state=getState();history.replaceState({...history.state,filters:state},'',localURL(stateURL().href));};
     function render(reshuffle=true,append=false){
       const state=getState(),words=state.q.toLocaleLowerCase().split(/\s+/).filter(Boolean);
-      filtered=all.filter(w=>(!state.character||w.cid===state.character)&&(!state.type||w.k.includes(state.type))&&words.every(word=>{const text=[w.n,w.c,w.d,w.cm,...w.tg,...(dataset.characters.find(c=>c.id===w.cid)?.aliases||[])].join(' ');const l=localized(w);return (text+' '+[l.n,l.c,l.d,l.cm,...l.tg].join(' ')).toLocaleLowerCase().includes(word);}));
+      filtered=all.filter(w=>(!state.character||w.cid===state.character)&&(!state.type||w.k.includes(state.type))&&words.every(word=>{const text=[w.n,w.c,w.d,w.cm,...w.tg,...w.tg.map(names),...(dataset.characters.find(c=>c.id===w.cid)?.aliases||[])].join(' ');const l=localized(w);return (text+' '+[l.n,l.c,l.d,l.cm,...l.tg].join(' ')).toLocaleLowerCase().includes(word);}));
       if(state.sort==='popular'||state.sort==='downloads')filtered.sort((a,b)=>(window.WorkStats?.metric(b.id,state.sort)||0)-(window.WorkStats?.metric(a.id,state.sort)||0));
       if(state.sort==='random'){
         if(reshuffle||!render.randomOrder){render.randomOrder=filtered.map(w=>w.slug);for(let i=render.randomOrder.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[render.randomOrder[i],render.randomOrder[j]]=[render.randomOrder[j],render.randomOrder[i]];}}

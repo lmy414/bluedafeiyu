@@ -1192,8 +1192,9 @@
     if (current !== 'en' && current !== 'ja') return value;
     var n=0, key=value.trim().replace(/\d+(?:[.,]\d+)*/g,function(){return '{n'+n+++'}';});
     var entry=window.ArchiveCopy && window.ArchiveCopy.texts && window.ArchiveCopy.texts[key];
+    var tag=window.ArchiveCopy && window.ArchiveCopy.tags && window.ArchiveCopy.tags[value.trim()];
     var numbers=value.match(/\d+(?:[.,]\d+)*/g)||[];
-    return entry && entry[current] ? entry[current].replace(/\{n(\d+)\}/g,function(_,i){return numbers[i]||'';}) : translateNames(value);
+    return entry && entry[current] ? entry[current].replace(/\{n(\d+)\}/g,function(_,i){return numbers[i]||'';}) : tag && tag[current] ? tag[current] : translateNames(value);
   }
   function characterName(id, fallback) {
     var entry=window.ArchiveCopy && window.ArchiveCopy.characters && window.ArchiveCopy.characters[id];

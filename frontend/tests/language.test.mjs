@@ -7,7 +7,7 @@ import { renderWorkCard } from '../public/archive/work-card.js';
 
 const source = fs.readFileSync(new URL('../public/lang.js', import.meta.url), 'utf8');
 const converter = Converter({ from: 'cn', to: 'twp' });
-function boot({ saved = null, language = 'zh-CN', search = '', blocked = false, baked = '', pathname = '/about.html', hash = '' } = {}) {
+function boot({ saved = null, language = 'zh-CN', search = '', blocked = false, baked = '', pathname = '/about.html', hash = '', copy = null } = {}) {
   const storage = new Map(saved ? [['bluedafeiyu-lang', saved]] : []);
   const listeners = {}, scripts = [], events = [];
   let document;
@@ -45,7 +45,7 @@ function boot({ saved = null, language = 'zh-CN', search = '', blocked = false, 
   const navigations = [];
   const location = new URL('https://example.test' + pathname + search + hash);
   location.assign = href => navigations.push(href); location.replace = href => navigations.push(href);
-  const window = { navigator: { languages: [language] }, location, localStorage: {
+  const window = { ArchiveCopy:copy, navigator: { languages: [language] }, location, localStorage: {
     getItem: key => { if (blocked) throw Error('blocked'); return storage.get(key); },
     setItem: (key, value) => { if (blocked) throw Error('blocked'); storage.set(key, value); },
   } };
@@ -129,6 +129,16 @@ test('英文统一站名和所有 AI 娘的 Chan 名称，模板变量和动态�
   for (const language of ['zh']) {
     const other = boot({ baked: language });
     assert.equal(other.api.translateNames('蓝色大肥鱼 / DeepSeek娘 / 通义千问娘'), '蓝色大肥鱼 / DeepSeek娘 / 通义千问娘');
+  }
+});
+
+test('中文标签链接在英日检索界面显示本地词汇，保留原检索值和数字占位符', () => {
+  const copy={texts:{'收录 {n0} 件作品':{en:'{n0} archived works',ja:'{n0}件の作品を収録'}},tags:{'Q版':{en:'chibi',ja:'ちびキャラ'},'哈气':{en:'hissing',ja:'威嚇'}}};
+  for(const [lang,label]of [['en','chibi'],['ja','ちびキャラ']]){
+    const page=boot({baked:lang,copy});
+    assert.equal(page.api.contentText('Q版'),label);
+    assert.equal(page.api.contentText('收录 676 件作品'),lang==='en'?'676 archived works':'676件の作品を収録');
+    assert.equal(new URL(page.api.url('/search.html?q=Q%E7%89%88'),'https://example.test').searchParams.get('q'),'Q版');
   }
 });
 
