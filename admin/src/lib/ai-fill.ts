@@ -15,7 +15,7 @@ import {sourceHash, validateI18n} from './localization.mjs'
 
 export { isPlaceholderDescription }
 
-export const FILL_FIELDS = ['name', 'description', 'commentary', 'tags', 'categories', 'dimensions'] as const
+export const FILL_FIELDS = ['name', 'description', 'commentary', 'tags', 'categories', 'dimensions', 'i18n'] as const
 export type FillField = (typeof FILL_FIELDS)[number]
 type TextField = 'name' | 'description' | 'commentary'
 

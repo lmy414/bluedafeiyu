@@ -10,6 +10,7 @@ import { json, readJsonBody, requireWorker } from '../lib/endpoint-auth'
 import {sourceHash} from '../lib/localization.mjs'
 
 type FillBody = {
+  draft?: {name:string;description:string;commentary:string;tags:string[];characterId:string;categoryIds:string[]}
   apply?: boolean
   /** 抽屉里当前表单为空的字段；不传则按作品库里的缺失字段算。 */
   fields?: string[]
@@ -99,8 +100,13 @@ export const aiFillHandler = async (req: PayloadRequest): Promise<Response> => {
   if (body.apply && !work) return json({ ok: false, error: '只有已入库的作品才能直接写入' }, 400)
 
   const requested = normalizeFields(body.fields)
-  const base = work || { name: submission?.fields?.name, description: submission?.fields?.description }
-  const fields = work ? (requested ? requested.filter((field) => field === 'dimensions' ? (!Number(work.width) || !Number(work.height)) : missingFields(work).includes(field)) : missingFields(work)) : (requested || [])
+  let base = work || { name: submission?.fields?.name, description: submission?.fields?.description }
+  if(body.draft) {
+    const draft=body.draft
+    if(['name','description','commentary','characterId'].some(k=>typeof (draft as any)[k]!=='string')||!Array.isArray(draft.tags)||draft.tags.some(t=>typeof t!=='string')||!Array.isArray(draft.categoryIds)||draft.categoryIds.some(t=>typeof t!=='string'))return json({ok:false,error:'draft 文案字段不合法'},400)
+    base={...base,name:draft.name,description:draft.description,commentary:draft.commentary,tags:draft.tags.map(value=>({value})),character:{characterId:draft.characterId},categories:draft.categoryIds.map(categoryId=>({categoryId}))}
+  }
+  const fields = work ? (requested ? requested.filter((field) => field === 'i18n' || (field === 'dimensions' ? (!Number(work.width) || !Number(work.height)) : missingFields(base).includes(field))) : missingFields(work)) : (requested || [])
   if (!fields.length) return json({ ok: true, workId: work?.workId, fields: [], suggestion: {}, applied: false })
 
   const payload = req.payload as any
@@ -153,11 +159,12 @@ export const aiFillHandler = async (req: PayloadRequest): Promise<Response> => {
     data.width = suggestion.width
     data.height = suggestion.height
   }
-  if (!Object.keys(data).length) return json({ ok: true, workId: work.workId, fields: effective, suggestion, errors, applied: false })
   if (suggestion.i18n) {
     if(suggestion.i18n.sourceHash!==sourceHash(localizationSource({...fresh,...data}))) return json({ok:false,error:'作品在生成期间已修改，请重新生成完整多语言版本'},409)
     data.legacyData={...(fresh.legacyData||{}),i18n:suggestion.i18n}
   }
+
+  if (!Object.keys(data).length) return json({ ok: true, workId: work.workId, fields: effective, suggestion, errors, applied: false })
 
   data.needsPublish = true
   if (!fresh.changeAction) data.changeAction = 'update'
