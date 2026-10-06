@@ -85,5 +85,40 @@
         }
       ]
     }
+  },
+  {
+    "id": "constructivism",
+    "name": "构成主义",
+    "summary": "构成主义视觉风格的 AI 娘作品合集，由站长挑选收录。",
+    "coverWorkId": "sticker_3c068ab2a950ba6aa8e61633",
+    "status": "active",
+    "order": 1,
+    "createdAt": "2026-10-06T22:56:35.565Z",
+    "updatedAt": "2026-10-06T23:04:59.675Z",
+    "workIds": [
+      "sticker_3313d50ffff72c4218bdcd4a",
+      "sticker_00c658a38d076ee4d64cdeb8",
+      "sticker_6fd257d097856a91bdca95bd",
+      "sticker_db7e395d961ad1e654c42656",
+      "sticker_621404f4a731ffc8b78b38b8",
+      "sticker_909e5f8d7a5f8ffdb61c6da3",
+      "sticker_7b7b6129bb2441e903fa0b32",
+      "sticker_0ebd7eb6b052271056f098b6",
+      "sticker_700c17a13b177535d3e4f4c2",
+      "sticker_c79d2fd4171ee34034a33884",
+      "sticker_issue_29_001",
+      "sticker_3c068ab2a950ba6aa8e61633",
+      "sticker_issue_24_001"
+    ],
+    "i18n": {
+      "en": {
+        "name": "Constructivism",
+        "summary": "A collection of AI girl artworks in a Constructivist visual style, selected by the site owner."
+      },
+      "ja": {
+        "name": "構成主義",
+        "summary": "構成主義の視覚スタイルを取り入れたAI娘作品を、サイト管理者が選んで収録する特集です。"
+      }
+    }
   }
 ]
