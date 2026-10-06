@@ -23,7 +23,12 @@ const works = Object.entries(overlayData()).map(([slug,w])=>({...w,slug}));
 const bySlug = new Map(works.map(w=>[w.slug,w])), byId = new Map(works.map(w=>[w.id,w]));
 const types = snapshot.categories.filter(t=>t.status==='active');
 const chars = snapshot.characters.filter(c=>c.status==='active').map(c=>({...c,list:works.filter(w=>w.cid===c.id)})).filter(c=>c.list.length).sort((a,b)=>b.list.length-a.list.length);
-const topics = snapshot.topics.filter(t=>t.status!=='removed').map(t=>({...t,list:t.workIds.map(id=>byId.get(id)).filter(Boolean),eyebrow:t.author?'作者作品集':'主题合集'}));
+const topics = snapshot.topics.filter(t=>t.status!=='removed').map(t=>{
+  const list=t.workIds.map(id=>byId.get(id)).filter(Boolean);
+  const cover=list.find(w=>w.id===t.coverWorkId)||list[0];
+  const art=[cover,...list.filter(w=>w!==cover)].filter(Boolean).slice(0,3);
+  return {...t,list,cover,art,eyebrow:t.author?'作者作品集':'主题合集'};
+});
 const tagCounts=new Map();for(const w of works)for(const tag of w.tg)tagCounts.set(tag,(tagCounts.get(tag)||0)+1);
 const translations={en:{},ja:{}};
 for(const [key, en, ja] of [
@@ -79,4 +84,4 @@ ctx.seo.generatePages(ctx.write,ctx.browsePage,ctx.breadcrumbs);
 export const archivePages=pages;
 export const archiveContext=ctx;
 export const archiveTranslations=translations;
-export const archiveData={works,characters:chars.map(({list,...c})=>c),types,topics:topics.map(({list,...t})=>({...t,slugs:list.map(w=>w.slug)}))};
+export const archiveData={works,characters:chars.map(({list,...c})=>c),types,topics:topics.map(({list,cover,art,...t})=>({...t,slugs:list.map(w=>w.slug)}))};

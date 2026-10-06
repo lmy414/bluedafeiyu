@@ -1,6 +1,14 @@
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const kind=(api,id)=>api.fmt('v2.type.'+id,id);
 function context(base,api,snapshot){
+  const topicId=base.match(/^\/topics\/([^/]+)(?:\/page\/\d+)?\.html$/)?.[1];
+  const topic=topicId&&(snapshot.topics||[]).find(t=>t.id===topicId);
+  if(topic){
+    const value=topic.i18n?.[api.current];
+    const name=value?.name||api.contentText(topic.name);
+    const works=topic.workIds.map(id=>snapshot.works.find(w=>w.id===id)).filter(Boolean);
+    return {topic,works,name,title:api.current==='en'?name+' · AI girl art collection':name+'・AI娘作品集',summary:value?.summary||api.contentText(topic.summary)};
+  }
   const role=base.match(/^\/characters\/([^/]+)(?:\/(meme|illustration|setting|comic|standing|other))?(?:\/page\/\d+)?\.html$/);
   const category=base.match(/^\/categories\/([^/]+)(?:\/page\/\d+)?\.html$/);
   const character=role&&snapshot.characters.find(c=>c.id===role[1]);
@@ -34,6 +42,14 @@ export function applyNativeArchives(document,api,base,snapshot){
     if(id)link.textContent=en?roleName(id)+' stickers and fan art':roleName(id)+'のネタ画像・二次創作';
   }
   const c=context(base,api,snapshot);if(!c)return null;
+  if(c.topic){
+    const heading=document.querySelector('main h1');if(heading)heading.textContent=c.name;
+    const lead=document.querySelector('.topic-hero .lede,.page-head .lede');if(lead)lead.textContent=c.summary;
+    const page=base.match(/\/page\/(\d+)\.html$/)?.[1];
+    const crumb=document.querySelector('.breadcrumbs > span:last-child');if(crumb)crumb.textContent=page?(en?'Page '+page:page+'ページ目'):c.name;
+    const description=en?`${c.summary} This collection includes ${c.works.length} works. Each work retains its description, source, attribution and license information.`:`${c.summary} ${c.works.length}件の作品を収録し、各作品の説明、出典、クレジット、ライセンス情報を保持しています。`;
+    return {title:c.title+(page?(en?' · Page ':' · ')+page+(en?'':'ページ目'):'')+' | DeepSeek Chan',description};
+  }
   const native=w=>w.i18n[language];
   const heading=document.querySelector('main h1');
   if(heading){

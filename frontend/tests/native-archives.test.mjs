@@ -10,6 +10,28 @@ import {spawnSync} from 'node:child_process';
 const api=language=>({current:language,characterName:id=>id==='doubao'?(language==='en'?'Doubao Chan':'Doubaoちゃん'):id,fmt:key=>({en:{meme:'Reaction images',illustration:'Fan art',comic:'Comics'},ja:{meme:'ネタ画像',illustration:'イラスト',comic:'漫画'}}[language][key.split('.').pop()])});
 const snapshot={characters:[{id:'doubao',name:'豆包娘',aliases:['豆包']}],categories:[{id:'meme'},{id:'illustration'}],works:[{slug:'frozen',name:'新的围巾',characterId:'doubao',categoryIds:['meme','illustration'],tags:['新标签'],i18n:{en:{name:'New Scarf',tags:['a new theme']},ja:{name:'新しいマフラー',tags:['新しいテーマ']}}}]};
 const role='<main><header class="character-info"><h1>豆包娘<small>表情包档案</small></h1><p class="alias">也叫 豆包</p><div class="tags"><a href="/search.html?q=新标签">新标签</a></div></header><section class="role-reading"><h2>中文标题</h2><p>包含旧作品的旧介绍</p><div class="role-type-links"><a href="/characters/doubao/meme.html">中文类型<small>1</small></a></div><div class="reading-faq"><details><summary>怎样找图</summary><div>旧内容</div></details></div></section></main>';
+
+test('new topics use saved translations in collection cards, page SEO and breadcrumb schemas',async()=>{
+ const topic={id:'new-style',name:'全新视觉专题',summary:'由站长精选的全新视觉作品。',workIds:['fixture'],i18n:{en:{name:'New Visual Style',summary:'A new visual collection selected by the site owner.'},ja:{name:'新しい視覚スタイル',summary:'管理者が選んだ新しい視覚スタイルの作品集です。'}}};
+ const fixture={...snapshot,topics:[topic],works:[{...snapshot.works[0],id:'fixture'}]};
+ for(const language of ['en','ja']){
+  const html='<html><head><link rel="canonical" href="'+ORIGIN+'/topics/new-style.html"><title>'+topic.name+'</title><meta name="description" content="'+topic.summary+'"><meta property="og:image:alt" content="'+topic.name+'"><script type="application/ld+json">'+JSON.stringify({'@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',name:topic.name,item:ORIGIN+'/topics/new-style.html'}]})+'</script></head><body data-archive data-i18n-page="topicDetail"><main><div class="breadcrumbs"><span>'+topic.name+'</span></div><header class="topic-hero"><h1>'+topic.name+'</h1><p class="lede">'+topic.summary+'</p></header><a class="collection-card"><h3>'+topic.name+'</h3><p>'+topic.summary+'</p></a></main></body></html>';
+  const {document}=parseHTML(await localizeHtml(html,'/topics/new-style.html',LOCALES.find(l=>l.id===language),fixture));
+  const value=topic.i18n[language];
+  assert.equal(document.querySelector('main h1').textContent,value.name);
+  assert.equal(document.querySelector('.topic-hero .lede').textContent,value.summary);
+  assert.equal(document.querySelector('.collection-card h3').textContent,value.name);
+  assert.equal(document.querySelector('.collection-card p').textContent,value.summary);
+  assert.ok(document.title.includes(value.name));
+  assert.ok(document.querySelector('meta[name="description"]').getAttribute('content').includes(value.summary));
+  assert.equal(nativeArchiveName('/topics/new-style/page/2.html',api(language),fixture).includes(topic.name),false);
+  const schema=JSON.parse(document.querySelector('script[type="application/ld+json"]').textContent);
+  assert.ok(schema.itemListElement[0].name.includes(value.name));
+  if(language==='en')assert.doesNotMatch(document.documentElement.outerHTML,/[\u3400-\u9fff]/u);
+  const {document:cardPage}=parseHTML(await localizeHtml(html.replace('data-i18n-page="topicDetail"','data-i18n-page="index"'),'/index.html',LOCALES.find(l=>l.id===language),fixture));
+  assert.equal(cardPage.querySelector('.collection-card p').textContent,value.summary);
+ }
+});
 test('new characters and changed work titles/tags produce native archive copy without cached Chinese sentence keys',()=>{
  for(const language of ['en','ja']){
   const {document}=parseHTML(role),result=applyNativeArchives(document,api(language),'/characters/doubao.html',snapshot);

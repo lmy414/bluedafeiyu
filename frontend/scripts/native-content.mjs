@@ -6,6 +6,7 @@ export function applyNativeContent(document,api,base,snapshot) {
   const bySlug=new Map(snapshot.works.map(w=>[w.slug,w]));
   const localized=w=>w?.i18n?.[api.current];
   const textMap=new Map();for(const w of snapshot.works){const value=localized(w);if(value)for(const field of ['name','description','commentary'])if(w[field]&&!textMap.has(w[field]))textMap.set(w[field],value[field]);}
+  for(const topic of snapshot.topics||[]){const value=topic.i18n?.[api.current];if(value)for(const field of ['name','summary'])if(topic[field]&&value[field])textMap.set(topic[field],value[field]);}
   const nativeText=text=>textMap.get(String(text).trim())||api.contentText(text);
   for(const card of document.querySelectorAll('.work-card[data-slug]')) {
     const w=bySlug.get(card.getAttribute('data-slug')),value=localized(w);if(!value)continue;

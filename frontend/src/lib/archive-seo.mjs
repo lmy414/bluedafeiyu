@@ -67,7 +67,7 @@ export function createSEO(ctx) {
       title = c.name + (c.n > 1 ? ` · 第 ${c.n} 页` : '') + ' — 蓝色大肥鱼';
       desc = description(c) + (c.n > 1 ? ` 当前为第 ${c.n} 页。` : '');
       const visible = c.list.slice((c.n - 1) * 24, c.n * 24);
-      image = visible[0]?.l || image;
+      image = (c.kind === 'topic' && c.n === 1 ? c.topic.cover?.l : visible[0]?.l) || visible[0]?.l || image;
       if (c.character) trail.push(['角色档案', '/characters.html']);
       else if (c.kind === 'topic') trail.push(['主题合集', '/topics.html']);
       else if (c.kind === 'type') trail.push(['全部作品', '/browse.html']);

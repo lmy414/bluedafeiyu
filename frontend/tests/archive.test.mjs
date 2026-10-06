@@ -8,6 +8,26 @@ const out=process.env.SITE_OUT_DIR||path.join(root,'.build/site');
 const snapshot=JSON.parse(fs.readFileSync(path.join(root,'dist/site-data.json'),'utf8'));
 const read=file=>parseHTML(fs.readFileSync(path.join(out,file),'utf8')).document;
 const files=[];
+test('selected topic covers lead collection artwork without changing member order',()=>{
+ const data=JSON.parse(fs.readFileSync(path.join(out,'archive-data.json'),'utf8'));
+ const jobs=fs.readFileSync(path.join(root,'frontend/.astro/og-jobs.jsonl'),'utf8').split('\n').filter(Boolean).map(line=>JSON.parse(line));
+ const index=read('topics.html'), home=read('index.html');
+ for(const topic of snapshot.topics){
+  const memberIds=topic.workIds;
+  const coverId=memberIds.includes(topic.coverWorkId)?topic.coverWorkId:memberIds[0];
+  const cover=data.works.find(work=>work.id===coverId);
+  const doc=read('topics/'+topic.id+'.html');
+  assert.equal(doc.querySelector('.topic-mosaic img').getAttribute('src'),cover.i,topic.id+' hero cover');
+  assert.equal(index.querySelector(`a[href="/topics/${topic.id}.html"] .collection-art img`).getAttribute('src'),cover.i,topic.id+' collection card cover');
+  const homeCard=home.querySelector(`.collection-grid a[href="/topics/${topic.id}.html"] .collection-art img`);
+  if(homeCard)assert.equal(homeCard.getAttribute('src'),cover.i,topic.id+' homepage card cover');
+  assert.deepEqual([...doc.querySelectorAll('#results .work-card')].map(card=>card.getAttribute('data-slug')),memberIds.slice(0,24).map(id=>data.works.find(work=>work.id===id).slug),topic.id+' curated order');
+  const sharePath=new URL(doc.querySelector('meta[property="og:image"]').getAttribute('content')).pathname;
+  const shareJob=jobs.find(job=>job.id===path.basename(sharePath,'.jpg'));
+  assert.ok(shareJob,topic.id+' share card job');
+  assert.equal(new URL(shareJob.img,'https://xn--pssy23gqgbz2d718b.com').href,new URL(cover.l,'https://xn--pssy23gqgbz2d718b.com').href,topic.id+' share image source');
+ }
+});
 function walk(dir){for(const entry of fs.readdirSync(dir,{withFileTypes:true})){if(dir===out&&['en','ja','zh-hant'].includes(entry.name))continue;const file=path.join(dir,entry.name);if(entry.isDirectory())walk(file);else if(entry.name.endsWith('.html'))files.push(path.relative(out,file));}}
 walk(out);
 
