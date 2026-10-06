@@ -186,7 +186,7 @@ export async function suggestFill(request: FillRequest, call: VisionCaller): Pro
     if (request.current) {
       const source={...request.current, ...Object.fromEntries(['name','description','commentary','tags','categoryIds'].filter(k=>k in suggestion).map(k=>[k,(suggestion as any)[k]]))}
       const raw=await call({
-        system:'你是英语和日语母语的二创档案编辑。分别根据给定中文事实撰写真正自然的英文和日文，不逐字翻译，不编造画面、作者、授权、热度。英文角色和站名 DeepSeek Chan；鲸娘、鲸鱼娘、蓝色大肥鱼都是 DeepSeek Chan，绝不能 Whale Chan、Whale Girl、Blue Fish、Fat Fish。其他角色为模型名 Chan，如 Claude Chan、StepFun Chan、GPT Chan。日文角色为模型名ちゃん，如 DeepSeekちゃん、Claudeちゃん；日文站名保留 DeepSeek Chan。产品名称保持官方模型名。每种语言提供 name、description、commentary、tags（与中文同数量同顺序）、seoTitle、seoDescription、faq（两组作品专属 question/answer）、originNote、licenseNote 字符串；FAQ 只据已知事实回答，未知来源/授权不能编造。英文不能残留中文，日文用自然日语。只输出 JSON {"en":{...},"ja":{...}}。',
+        system:'你是英语和日语母语的二创档案编辑。分别根据给定中文事实撰写真正自然的英文和日文，不逐字翻译，不编造画面、作者、授权、热度。英文角色和站名 DeepSeek Chan；鲸娘、鲸鱼娘、蓝色大肥鱼都是 DeepSeek Chan，绝不能 Whale Chan、Whale Girl、Blue Fish、Fat Fish。其他角色为模型名 Chan，如 Claude Chan、StepFun Chan、GPT Chan。日文角色为模型名ちゃん，如 DeepSeekちゃん、Claudeちゃん；日文站名保留 DeepSeek Chan。产品名称保持官方模型名。每种语言提供 name、description、commentary、tags（与中文同数量同顺序）、seoTitle、seoDescription、faq（两组作品专属 question/answer）、originNote、licenseNote 字符串；FAQ 只据已知事实回答，未知来源/授权不能编造。英文不能残留中文，日文用自然日语。日文的 Q版 使用自然的 ちびキャラ 或 デフォルメ，不直接沿用中文缩写 Q版；日文标签必须是当地常用检索词。只输出 JSON {"en":{...},"ja":{...}}。',
         user:JSON.stringify(source), image:normalized.data,
       })
       suggestion.i18n={sourceHash:sourceHash(source),...validateI18n(parseModelJson(raw),source)}

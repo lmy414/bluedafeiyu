@@ -21,6 +21,7 @@ export function validateI18n(value, original) {
     if(language==='en' && /whale[ -]?girl/i.test(entry.name) && !entry.name.includes('DeepSeek Chan')) throw Error('Whale alias used as title name');
     if (language==='en' && /[\u3400-\u9fff]/u.test(prose)) throw Error('Chinese left in English prose');
     if (language==='ja' && /鲸|蓝|这|图|们|什么|机翻/u.test(prose)) throw Error('Simplified Chinese left in Japanese prose');
+    if (language==='ja' && entry.tags.some(t=>/^Q\s*版$/u.test(t))) throw Error('Use native Japanese chibi tags: ちびキャラ or デフォルメ');
     if (/(?:javascript|vbscript|data)\s*:|\bon[a-z]+\s*=|<\/?[A-Za-z!]|[\u0000-\u0008\u000B\u000C\u000E-\u001F]/u.test(prose)) throw Error('Unsafe localized prose');
   }
   return { en:value.en, ja:value.ja };

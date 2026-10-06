@@ -14,7 +14,7 @@ test('v2 retains validated translations through review and bridge, v1 historical
   payload.schema='submission-ai-content/1';assert.equal(parseReviewResponse(payload,{vocabulary}).verdict,'pass');
 });
 test('missing languages, tag misalignment, name violations and injection are rejected',()=>{
-  for(const change of [v=>delete v.ja,v=>v.en.tags.pop(),v=>v.en.name='Whale Chan',v=>v.ja.name='鲸鱼娘',v=>v.en.faq[0].answer='<script>x</script>',v=>v.en.description='javascript:alert(1)']){
+  for(const change of [v=>delete v.ja,v=>v.en.tags.pop(),v=>v.en.name='Whale Chan',v=>v.ja.name='鲸鱼娘',v=>v.ja.tags[0]='Q版',v=>v.en.faq[0].answer='<script>x</script>',v=>v.en.description='javascript:alert(1)']){
     const value=fixtureI18n(source.tags);change(value);assert.throws(()=>validateI18n(value,source));
     assert.equal(bridge({...source,i18n:value},vocabulary).ok,false);
   }

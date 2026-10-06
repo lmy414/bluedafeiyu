@@ -51,7 +51,7 @@ const SYSTEM_PROMPT = [
   '英文与日文分别根据画面事实和中文含义，以母语编辑的真实语境撰写，不逐字机翻，不通过英文转译日文。标题体现具体画面或梗；标签用当地常见检索词，与中文标签保持同数量同顺序；FAQ 两组问答必须与该作品事实相关，不编造授权。',
   '英文站名与角色 DeepSeek娘、鲸娘、鲸鱼娘、蓝色大肥鱼均为 DeepSeek Chan，其他角色为模型名 Chan（Doubao Chan、Kimi Chan、Qwen Chan、Claude Chan、Gemini Chan、Grok Chan、StepFun Chan、GLM Chan、GPT Chan、MiMo Chan）。禁止 Whale Chan、Whale Girl、Blue Fish、Fat Fish。',
   '日文角色使用模型名ちゃん（DeepSeekちゃん、Claudeちゃん等），日文站名仍为 DeepSeek Chan。产品本身保持官方模型名。作者用户名、URL、ID 和授权状态不可改写。',
-  'originNote 和 licenseNote 没有已知事实时必须为空字符串。英文文案不得残留中文；日文用自然日语。缺任一语言时不得返回 pass。',
+  'originNote 和 licenseNote 没有已知事实时必须为空字符串。英文文案不得残留中文；日文用自然日语。日文的 Q版 使用自然的 ちびキャラ 或 デフォルメ，不直接沿用中文缩写 Q版；日文标签必须是当地常用检索词。缺任一语言时不得返回 pass。',
   '只能输出以上字段，不得输出 id/slug/path/submitter/origin/license/status 等系统或法律字段。',
 ].join('\n');
 
