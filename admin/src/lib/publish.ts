@@ -143,10 +143,11 @@ export async function applyPublishStatus(
 ): Promise<{ publishedWorks: number; updatedTopics: number }> {
   const payload = req.payload
   const transactionID = await (payload.db as any).beginTransaction()
+  if (transactionID === null || transactionID === undefined) throw new Error('发布状态回写需要启用数据库事务')
   let publishedWorks = 0
   let updatedTopics = 0
   try {
-    const works = await (payload as any).find({ collection: 'works', where: { needsPublish: { equals: true } }, depth: 0, limit: 2000, overrideAccess: true, pagination: false })
+    const works = await (payload as any).find({ collection: 'works', where: { needsPublish: { equals: true } }, depth: 0, limit: 2000, overrideAccess: true, pagination: false, req: { transactionID } })
     const results = new Map<string, any>((body.results?.works || []).map((result: any) => [String(result.workId), result]))
     const finishedAt = new Date().toISOString()
     for (const work of works.docs) {
@@ -207,7 +208,7 @@ export async function applyPublishStatus(
       publishedWorks += 1
     }
 
-    const topics = await (payload as any).find({ collection: 'topics', where: { needsPublish: { equals: true } }, depth: 0, limit: 1000, overrideAccess: true, pagination: false })
+    const topics = await (payload as any).find({ collection: 'topics', where: { needsPublish: { equals: true } }, depth: 0, limit: 1000, overrideAccess: true, pagination: false, req: { transactionID } })
     for (const topic of topics.docs) {
       await (payload as any).update({
         collection: 'topics',

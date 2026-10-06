@@ -72,6 +72,16 @@ class GenerateSubmissionsWithoutOriginalsTests(unittest.TestCase):
         with self.assertRaisesRegex(FileNotFoundError, "source image not found"):
             derivatives.generate_submissions()
 
+    def test_retired_records_keep_slug_without_requiring_deleted_images(self) -> None:
+        records = [
+            {"id": f"sticker_{status}", "slug": f"retired-{status}", "status": status}
+            for status in ["hidden", "removed", "deleted"]
+        ]
+        self.manifest.write_text(json.dumps(records), encoding="utf-8")
+
+        self.assertEqual(derivatives.generate_submissions(), (3, 0, 0))
+        self.assertEqual(json.loads(self.manifest.read_text(encoding="utf-8")), records)
+
 
 if __name__ == "__main__":
     unittest.main()

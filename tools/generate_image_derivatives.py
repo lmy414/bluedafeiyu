@@ -234,6 +234,8 @@ def generate_submissions(force: bool = False) -> tuple[int, int, int]:
     for record in records:
         if not isinstance(record, dict):
             raise ValueError("submission manifest contains a non-object record")
+        if record.get("status") in {"hidden", "removed", "deleted"}:
+            continue
         source = submission_source(record)
         character = str(record["characterId"])
         stem = source.stem

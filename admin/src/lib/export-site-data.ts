@@ -328,7 +328,10 @@ export function buildSiteDataTexts(input: {
     originalUrlByWorkId: input.originalUrlByWorkId,
     treatPendingAsPublished: input.treatPendingAsPublished,
   }
-  const allowedStatus = (doc: any) => doc.status === 'published' || (input.treatPendingAsPublished && doc.status === 'pending')
+  // 已分配的网址永久占用；隐藏或删除后仍保留记录，前台按 status 过滤。
+  const allowedStatus = (doc: any) => doc.status === 'published'
+    || (input.treatPendingAsPublished && doc.status === 'pending')
+    || (['hidden', 'removed', 'deleted'].includes(doc.status) && Boolean(doc.slug))
   const works = orderedDocs(input.works.filter((doc) => doc.kind === 'submission' && allowedStatus(doc))).map((doc) => workRecord(doc, options))
   const ownerPicks = orderedDocs(input.works.filter((doc) => doc.kind === 'owner-picks' && allowedStatus(doc))).map((doc) => workRecord(doc, options))
   const characters = orderedDocs(input.characters).map(characterRecord)

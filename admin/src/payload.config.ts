@@ -109,6 +109,8 @@ export default buildConfig({
     client: {
       url: process.env.DATABASE_URL || 'file:./admin.db',
     },
+    transactionOptions: { behavior: 'immediate' },
+    busyTimeout: 5000,
     migrationDir: path.resolve(dirname, 'migrations'),
     push: process.env.NODE_ENV !== 'production',
   }),

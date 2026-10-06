@@ -51,6 +51,7 @@ export async function writeAudit(
       targetType: input.targetType,
     },
     overrideAccess: true,
+    req,
   })
 }
 

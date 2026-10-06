@@ -11,6 +11,7 @@ import sharp from 'sharp'
 import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest'
 
 import { Categories } from '@/collections/Categories'
+import { AuditEvents } from '@/collections/AuditEvents'
 import { Characters } from '@/collections/Characters'
 import { LegacySnapshots } from '@/collections/LegacySnapshots'
 import { Media } from '@/collections/Media'
@@ -98,6 +99,7 @@ beforeAll(async () => {
     collections: [
       Characters,
       Categories,
+      AuditEvents,
       {
         ...Media,
         upload: {
@@ -114,6 +116,8 @@ beforeAll(async () => {
     ],
     db: sqliteAdapter({
       client: { url: `file:${dbPath.replace(/\\/g, '/')}` },
+      transactionOptions: { behavior: 'immediate' },
+      busyTimeout: 5000,
       push: true,
     }),
     secret: 'sync-test-secret',
@@ -315,6 +319,60 @@ describe('syncSubmissions timestamps and formats', () => {
     expect(saved.legacyPaths.path).toBeNull()
     const published = JSON.parse((await exportSiteData(payload))['data/works.json'])
     expect(published.some((work: any) => work.id === lateWork.workId)).toBe(false)
+  })
+  it('writes the work and its audit event in the same SQLite transaction', async () => {
+    const character = await (payload as any).find({ collection: 'characters', limit: 1, overrideAccess: true })
+    const work = await (payload as any).create({
+      collection: 'works',
+      data: { workId: 'sticker_audit_transaction', name: '审计事务测试', kind: 'submission', channel: 'manual', character: character.docs[0].id, status: 'published', needsPublish: false },
+      context: { skipNeedsPublish: true },
+      overrideAccess: true,
+    })
+    const audit = await (payload as any).find({ collection: 'audit-events', where: { targetId: { equals: String(work.id) } }, overrideAccess: true })
+    expect(audit.docs).toHaveLength(1)
+    expect(audit.docs[0].action).toBe('works.create')
+    await (payload as any).delete({ collection: 'works', id: work.id, context: { audit: false }, overrideAccess: true })
+  })
+  it('rolls back all work status updates when a later slug conflicts with a hidden work', async () => {
+    const character = await (payload as any).find({ collection: 'characters', limit: 1, overrideAccess: true })
+    const create = (data: any) => (payload as any).create({
+      collection: 'works',
+      data: { name: '事务回归作品', kind: 'submission', channel: 'manual', character: character.docs[0].id, ...data },
+      context: { audit: false, skipNeedsPublish: true },
+      overrideAccess: true,
+    })
+    const hidden = await create({ workId: 'sticker_transaction_hidden', slug: 'transaction-reserved', status: 'hidden', needsPublish: false })
+    const conflicting = await create({ workId: 'sticker_transaction_conflict', status: 'pending', needsPublish: true, createdAt: '2026-10-06T00:00:00Z' })
+    const valid = await create({ workId: 'sticker_transaction_valid', status: 'pending', needsPublish: true, createdAt: '2026-10-06T00:01:00Z' })
+    const run = await (payload as any).find({ collection: 'publish-runs', limit: 1, overrideAccess: true })
+    const updates: number[] = []
+    const update = (payload as any).update.bind(payload)
+    const spy = vi.spyOn(payload as any, 'update').mockImplementation(async (args: any) => {
+      const result = await update(args)
+      if (args.collection === 'works') updates.push(args.id)
+      return result
+    })
+    try {
+      await expect(applyPublishStatus(
+        { context: { audit: false }, payload } as any,
+        run.docs[0],
+        { results: { works: [
+          { workId: valid.workId, slug: 'transaction-new' },
+          { workId: conflicting.workId, slug: hidden.slug },
+        ] } },
+      )).rejects.toThrow()
+      expect(updates).toContain(valid.id)
+      for (const work of [valid, conflicting]) {
+        const saved = await (payload as any).findByID({ collection: 'works', id: work.id, overrideAccess: true })
+        expect(saved.status).toBe('pending')
+        expect(saved.needsPublish).toBe(true)
+        expect(saved.slug).toBeNull()
+        expect(saved.lastPublishRun).toBeNull()
+      }
+    } finally {
+      spy.mockRestore()
+      for (const work of [valid, conflicting, hidden]) await (payload as any).delete({ collection: 'works', id: work.id, context: { audit: false }, overrideAccess: true })
+    }
   })
   it('uses an existing preview for a released original and skips when no preview exists', async () => {
     const previewItem = { ...queueItems[0], id: 'sub_released_preview_123' }
