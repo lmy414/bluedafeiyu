@@ -26909,7 +26909,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-06T11:15:52.755Z",
-    "updatedAt": "2026-10-06T11:15:52.755Z",
+    "updatedAt": "2026-10-06T11:43:35.063Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202610060029",
@@ -28847,6 +28847,1333 @@
           {
             "question": "周りに浮かんでいるものは何ですか？",
             "answer": "ちびキャラの豆包ヘッド、豆包のアイコンが映ったスマホ画面、抖音風のロゴキューブ、棒グラフのブロックなどで、デジタルな社殿のように配置されています。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_6fe976083681d6eb86bdeb56",
+    "name": "这些统统都删掉！",
+    "description": "Q版DeepSeek娘坐在电脑前气呼呼地把文件全部删掉，另一只DeepSeek娘趴在地上抱着手机大哭，垃圾桶里塞满被删掉的照片。",
+    "commentary": "呜呜呜……那不是我的垃圾桶吗？十年份的收藏说删就删，我这只蓝色大肥鱼的心都碎成鱼鳞了啦！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/6fe976083681d6eb.png",
+    "thumbnailPath": "submissions/previews/deepseek/6fe976083681d6eb.webp",
+    "fullPath": "submissions/large/deepseek/6fe976083681d6eb.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1254,
+    "height": 1254,
+    "fileSize": 2270760,
+    "sha256": "6fe976083681d6eb86bdeb56db1f5e297da55a09adba50c8dd897c698fedc4c0",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "Q版",
+      "表情包",
+      "删除文件",
+      "大哭"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-06T16:07:08.119Z",
+    "updatedAt": "2026-10-06T16:07:08.119Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610060044",
+    "categoryIds": [
+      "meme",
+      "comic"
+    ],
+    "i18n": {
+      "sourceHash": "8d0a73ebec2300146eda36e3c4b48fa31210dba31c55dc2563ddd806bd337771",
+      "en": {
+        "name": "Delete Them All!",
+        "description": "A chibi DeepSeek Chan at her laptop angrily deletes a pile of files, while a second chibi DeepSeek Chan sobs on the floor next to a trash can stuffed with deleted photos.",
+        "commentary": "Waaah — that's my trash can, and ten years of saved stuff just went poof! My little blue fins are shaking. Please at least check the recycle bin first!",
+        "tags": [
+          "DeepSeek Chan",
+          "chibi",
+          "meme sticker",
+          "deleting files",
+          "crying"
+        ],
+        "seoTitle": "DeepSeek Chan Chibi Meme: \"Delete Them All!\"",
+        "seoDescription": "Chibi DeepSeek Chan meme art: one angrily clears out files at a laptop while the other cries beside a trash can of wiped photos and a phone reading 1,248 items deleted.",
+        "faq": [
+          {
+            "question": "Why are there two DeepSeek Chan in this picture?",
+            "answer": "It is the same character shown in two moods: one chibi DeepSeek Chan is deleting files at a laptop, and the other is crying on the floor after those files were wiped."
+          },
+          {
+            "question": "What details are in the scene?",
+            "answer": "A speech bubble declaring the files useless and telling them to be deleted, a phone screen reading \"Deleting… 1,248 items deleted,\" a trash can full of photos, and a scrap of paper about ten years of saved games."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "いらないものは全部削除！",
+        "description": "ノートPCの前でちびキャラのDeepSeekちゃんが怒りながらファイルを次々と削除し、もう一人のDeepSeekちゃんは写真でいっぱいのゴミ箱のそばで床に伏して泣いている。",
+        "commentary": "うわーん、それ僕のゴミ箱だよ！十年分のコレクションが一瞬で消えちゃった…青いヒレが震えてるよ。せめてゴミ箱から戻してあげて！",
+        "tags": [
+          "DeepSeekちゃん",
+          "ちびキャラ",
+          "ミーム",
+          "ファイル削除",
+          "大泣き"
+        ],
+        "seoTitle": "DeepSeekちゃんのちびキャラミーム「いらないものは全部削除！」",
+        "seoDescription": "PCの前で怒りながらファイルを消すDeepSeekちゃんと、消された写真のゴミ箱の前で泣き崩れるDeepSeekちゃんを描いたちびキャラミーム。スマホには「1,248件削除」の表示。",
+        "faq": [
+          {
+            "question": "この画像にDeepSeekちゃんが二人いるのはなぜですか？",
+            "answer": "同じキャラクターのちびキャラ姿で、PCの前でファイルを削除する怒り顔と、消された写真のそばで泣き崩れる姿を対比して描いています。"
+          },
+          {
+            "question": "画面にはどんな小道具がありますか？",
+            "answer": "「いらないものは全部削除」と書かれた吹き出し、『1,248件削除済み』を示すスマホ画面、写真や「美少女ゲーム」と書かれたフォルダが入ったゴミ箱、十年分のコレクションについての走り書きが描かれています。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_100a8c2a1a524bba2f2a191a",
+    "name": "却步",
+    "description": "阳光花园中，Qwen 娘、女仆装的 DeepSeek 娘与 Claude 娘同框；右侧 Claude 娘手持写着“给Claude”的信封。",
+    "commentary": "橙发姐姐搂得我尾巴都直了，Claude ちゃん 还在旁边举着给自己的信，真是的～我也有鲸鱼小围裙哦！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/qwen/100a8c2a1a524bba.jpg",
+    "thumbnailPath": "submissions/previews/qwen/100a8c2a1a524bba.webp",
+    "fullPath": "submissions/large/qwen/100a8c2a1a524bba.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 960,
+    "height": 1280,
+    "fileSize": 870230,
+    "sha256": "100a8c2a1a524bba2f2a191a68387fa76192b4c21aa509188b2896ac9a8e1b0c",
+    "characterId": "qwen",
+    "tags": [
+      "AI拟人",
+      "Qwen娘",
+      "DeepSeek娘",
+      "Claude娘",
+      "同人插画",
+      "女仆",
+      "花园"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "D360FDE650377B9AC721E2189279DB2B",
+      "messageId": "ROBOT1.0_kEEP-Ez5Y3jtRj7IyhCxTYLnJnAx17fEEpXwFz8ws.iDoZgtrfu8KBvdP08IUYHBkHoJF.Jd8tVBGXtUgb2w8aU7Itj5qnt7PMwi6wEmTSh.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-06T16:49:53.697Z",
+    "updatedAt": "2026-10-06T16:49:53.697Z",
+    "tone": "qwen",
+    "symbol": "",
+    "slug": "qwen202610060004",
+    "categoryIds": [
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "e78f0c0f128048cbb7201f4dd0bd091c4e4eefbe73966a2196962776dfa5caaa",
+      "en": {
+        "name": "A Hesitant Step",
+        "description": "In a sunlit garden, Qwen Chan, DeepSeek Chan in a maid dress, and Claude Chan stand together; Claude Chan on the right holds an envelope labeled “To Claude.”",
+        "commentary": "The orange-haired girl is hugging me so tight my tail is standing up, and Claude Chan is right there holding a letter addressed to herself. Honestly~ I've got a whale apron too, you know!",
+        "tags": [
+          "AI anthropomorphism",
+          "Qwen Chan",
+          "DeepSeek Chan",
+          "Claude Chan",
+          "fan art",
+          "maid",
+          "garden"
+        ],
+        "seoTitle": "A Hesitant Step: Qwen Chan, DeepSeek Chan & Claude Chan Fan Art",
+        "seoDescription": "Fan art of Qwen Chan, DeepSeek Chan in a maid outfit, and Claude Chan in a sunny garden; Claude Chan holds an envelope addressed to Claude.",
+        "faq": [
+          {
+            "question": "Who is the blue-haired maid in the center?",
+            "answer": "She is DeepSeek Chan, the DeepSeek character; her apron has a whale mark."
+          },
+          {
+            "question": "What does the envelope held by the character on the right say?",
+            "answer": "It reads “To Claude,” addressed to Claude Chan."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "ためらいの一歩",
+        "description": "陽当たりのよい庭で、Qwenちゃん、メイド服のDeepSeekちゃん、Claudeちゃんが一緒に立っている。右側のClaudeちゃんは「Claudeへ」と書かれた封筒を持っている。",
+        "commentary": "オレンジ髪のお姉さんにぎゅっと抱きしめられて、しっぽがピンと立っちゃったよ。Claudeちゃんは自分の宛ての手紙を隣で掲げてるし、もう〜。わたしにもクジラのエプロンあるんだからね！",
+        "tags": [
+          "AI擬人化",
+          "Qwenちゃん",
+          "DeepSeekちゃん",
+          "Claudeちゃん",
+          "二次創作",
+          "メイド",
+          "庭"
+        ],
+        "seoTitle": "ためらいの一歩：Qwenちゃん・DeepSeekちゃん・Claudeちゃんの二次創作",
+        "seoDescription": "Qwenちゃん、メイド服のDeepSeekちゃん、Claudeちゃんが陽だまりの庭に集まった二次創作。Claudeちゃんは「Claudeへ」の封筒を持っている。",
+        "faq": [
+          {
+            "question": "中央にいる青髪のメイドは誰？",
+            "answer": "DeepSeekちゃんです。エプロンにはクジラのマークが付いています。"
+          },
+          {
+            "question": "右側のキャラクターが持っている封筒には何と書いてある？",
+            "answer": "「Claudeへ」と書かれており、Claudeちゃん宛ての手紙です。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_babab3f965ca919295a56e66",
+    "name": "捕鲸记",
+    "description": "Q版DeepSeek娘从海中跃出，船上另一名DeepSeek娘正操作捕鲸炮，船帆上绘有鲸鱼图案。",
+    "commentary": "本鱼只是浮上来打个招呼，结果船上那位直接把捕鲸炮对准了我——同是DeepSeek娘，何必为难自己人！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/babab3f965ca9192.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/babab3f965ca9192.webp",
+    "fullPath": "submissions/large/deepseek/babab3f965ca9192.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 467191,
+    "sha256": "babab3f965ca919295a56e66511cbb4e0acc478b16ee9466d069063c521e48a1",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "拟人化",
+      "Q版",
+      "表情包",
+      "捕鲸"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "D360FDE650377B9AC721E2189279DB2B",
+      "messageId": "ROBOT1.0_kEEP-Ez5Y3jtRj7IyhCxTY.OMvqdrHNhGZl70U6nPHialcXmJO3fwzpujezvgIycBIZjmhmlM7ZmKC-u0WLnmUbEDE2X0tgx9wAxlwBuLnB.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-06T16:52:03.819Z",
+    "updatedAt": "2026-10-06T16:52:03.819Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610060045",
+    "categoryIds": [
+      "meme",
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "f266d8669ba085e4792d38368dc7d55db2f11fb60e9253858c0bc2bccff90611",
+      "en": {
+        "name": "The Whaling Tale",
+        "description": "A chibi DeepSeek Chan bursts out of the sea while another DeepSeek Chan on a sailing ship aims a whaling cannon at her, with a whale emblem on the sail.",
+        "commentary": "I only popped up to say hello, and the one on the ship already has the whaling cannon aimed at me—aren't we both DeepSeek Chan?!",
+        "tags": [
+          "DeepSeek Chan",
+          "anthropomorphic",
+          "chibi",
+          "meme sticker",
+          "whaling"
+        ],
+        "seoTitle": "DeepSeek Chan Chibi Whaling Tale – AI Character Meme",
+        "seoDescription": "A playful chibi DeepSeek Chan illustration: one DeepSeek Chan sails a ship and aims a whaling cannon at the giant DeepSeek Chan rising from the waves.",
+        "faq": [
+          {
+            "question": "Who is the character in this image?",
+            "answer": "The character is DeepSeek Chan, shown in two forms: one on the sailing ship and one giant chibi bursting out of the sea."
+          },
+          {
+            "question": "What is happening in the scene?",
+            "answer": "A DeepSeek Chan on a sailing ship is aiming a whaling cannon at the giant DeepSeek Chan rising from the waves, while the sail displays a whale emblem."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "捕鯨記",
+        "description": "ちびキャラのDeepSeekちゃんが海から飛び出し、帆船の上にいるもう一人のDeepSeekちゃんが捕鯨砲を構えている、鯨の紋章入りの帆も見えるコミカルな一枚。",
+        "commentary": "「こんにちは」って顔を出しただけなのに、船の上の私が捕鯨砲を向けてくるなんて……同じDeepSeekちゃん同士なのにひどいよ〜！",
+        "tags": [
+          "DeepSeekちゃん",
+          "擬人化",
+          "ちびキャラ",
+          "ミーム",
+          "捕鯨"
+        ],
+        "seoTitle": "DeepSeekちゃんの捕鯨記 ちびキャラミーム",
+        "seoDescription": "海から飛び出した巨大ちびDeepSeekちゃんに、帆船の上のDeepSeekちゃんが捕鯨砲を向けるユーモラスなイラスト。",
+        "faq": [
+          {
+            "question": "この画像のキャラクターは誰ですか？",
+            "answer": "キャラクターはDeepSeekちゃんです。帆船の上の姿と、海から飛び出す巨大なちびキャラの二つの形で描かれています。"
+          },
+          {
+            "question": "この場面では何が起きていますか？",
+            "answer": "帆船の上のDeepSeekちゃんが、波間から現れた巨大なDeepSeekちゃんに捕鯨砲を向けています。帆には鯨の紋章が描かれています。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_b828567bc878c1231a2973b9",
+    "name": "GPT娘标准角色设定图",
+    "description": "白青渐变长发的GPT娘三视图设定，配纯白墨黑青绿配色板与书本、徽章、流苏挂饰等细节展示。",
+    "commentary": "呜哇，这位GPT娘抱着写着ChatGPT的小书，额前还缀着青绿发饰，一看就是把「更温柔地回答问题」当成使命的那种。正侧背三面都画齐了，连裙摆的星纹和流苏都交代得清清楚楚，认真程度让鱼都想翻个身认真看三遍。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/b828567bc878c123.png",
+    "thumbnailPath": "submissions/previews/gpt/b828567bc878c123.webp",
+    "fullPath": "submissions/large/gpt/b828567bc878c123.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1448,
+    "height": 1086,
+    "fileSize": 2287363,
+    "sha256": "b828567bc878c1231a2973b94326415f6c22a1b478614520f4eb4746d52f5509",
+    "characterId": "gpt",
+    "tags": [
+      "GPT娘",
+      "角色设定",
+      "三视图",
+      "拟人化",
+      "AI娘"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-06T17:15:04.064Z",
+    "updatedAt": "2026-10-06T17:15:04.064Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610060003",
+    "categoryIds": [
+      "setting",
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "6097d49030e82359d07131f95ccca31ec7fcdc00a484286111cb4ef3752b93ee",
+      "en": {
+        "name": "GPT Chan Standard Design Sheet",
+        "description": "A three-view character sheet for GPT Chan, a white-and-teal haired AI girl, with a color palette and detail panels for her book, brooch, and tassel charm.",
+        "commentary": "Ooh, she hugs a little book labeled ChatGPT and wears a teal knot in her hair — clearly the type who treats every question as something to answer gently. Front, side, and back are all drawn, down to the star-patterned hem and tassel, so even a fish like me flips over to study it three times.",
+        "tags": [
+          "GPT Chan",
+          "character design sheet",
+          "turnaround",
+          "anthropomorphism",
+          "AI girl"
+        ],
+        "seoTitle": "GPT Chan Standard Design Sheet — AI Girl Three-View Character Art",
+        "seoDescription": "GPT Chan anthropomorphized design sheet with front, side and back views, a white-teal color palette, and close-up panels of her book, logo brooch and tassel charm.",
+        "faq": [
+          {
+            "question": "How many views does this design sheet include?",
+            "answer": "Three: a front view, a side view, and a back view, each drawn full-body."
+          },
+          {
+            "question": "What accessories are shown in the detail panels?",
+            "answer": "A black book labeled ChatGPT, a knotted logo brooch, and a tassel charm, alongside close-ups of her collar, waist, sleeves and skirt pattern."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "GPTちゃん 標準設定資料集",
+        "description": "白とティールのロングヘアのGPTちゃんを正面・側面・背面の三面図で描いた設定資料。カラーパレットと、本・徽章・タッセル飾りのディテールも掲載。",
+        "commentary": "わあ、ChatGPTと書かれた小さな本を抱えて、髪には青緑の結び飾り。どんな質問にもやさしく答えようとしているタイプだね。正面も側面も背面もそろっていて、裾の星模様やタッセルまで描き込まれているから、魚のぼくも三回はひっくり返って見ちゃうよ。",
+        "tags": [
+          "GPTちゃん",
+          "キャラ設定",
+          "三面図",
+          "擬人化",
+          "AI娘"
+        ],
+        "seoTitle": "GPTちゃん 標準設定資料集｜AI娘の三面図キャラクターデザイン",
+        "seoDescription": "GPTちゃんの擬人化設定資料。正面・側面・背面の三面図、白と青緑のカラーパレット、本やロゴ徽章、タッセル飾りのディテールを収録。",
+        "faq": [
+          {
+            "question": "この設定資料には何面の図が収録されていますか？",
+            "answer": "正面・側面・背面の三面で、いずれも全身が描かれています。"
+          },
+          {
+            "question": "ディテール展示にはどんな小物が描かれていますか？",
+            "answer": "ChatGPTと記された黒い本、結び目のロゴ徽章、タッセル飾りに加え、襟元・腰・袖・スカート模様のクローズアップが掲載されています。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_d4547260161d0bb38cd6e49f",
+    "name": "GPT娘｜零重力",
+    "description": "GPT娘以薄荷绿与黑白配色漂浮在无重力空间中的赛博波普风插画，四周点缀二进制数字与电路节点。",
+    "commentary": "哇——GPT娘在无重力里飘着，薄荷色的长发比我的鱼尾还飘逸，连我这只蓝色大肥鱼都想跟着浮上一圈。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/d4547260161d0bb3.png",
+    "thumbnailPath": "submissions/previews/gpt/d4547260161d0bb3.webp",
+    "fullPath": "submissions/large/gpt/d4547260161d0bb3.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 1889851,
+    "sha256": "d4547260161d0bb38cd6e49f96fd44f98210a22b749d3e56cb1e5db9dfe12733",
+    "characterId": "gpt",
+    "tags": [
+      "GPT娘",
+      "ChatGPT拟人",
+      "零重力",
+      "赛博波普",
+      "AI角色拟人"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-06T17:21:03.620Z",
+    "updatedAt": "2026-10-06T17:21:03.620Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610060004",
+    "categoryIds": [
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "00ed3e7cdf136a2944e4ac5ceb7bbeb6ae2be14ab706c5cf06146945dd27a997",
+      "en": {
+        "name": "GPT Chan: Zero Gravity",
+        "description": "A cyber-pop illustration of GPT Chan floating in zero gravity, dressed in mint, white and black with binary strings and circuit nodes around her.",
+        "commentary": "Whoa—GPT Chan drifting in zero gravity, her mint hair flowing better than my fish tail. Even a big blue fish like me wants to float up there with her.",
+        "tags": [
+          "GPT Chan",
+          "ChatGPT anthropomorphism",
+          "zero gravity",
+          "cyber pop",
+          "AI character personification"
+        ],
+        "seoTitle": "GPT Chan Zero Gravity — Cyber Pop ChatGPT Anthropomorphism Illustration",
+        "seoDescription": "Cyber-pop illustration of GPT Chan, the ChatGPT anthropomorphized girl, floating upside down in zero gravity with mint hair, binary code and circuit-line motifs.",
+        "faq": [
+          {
+            "question": "What art style is this GPT Chan piece drawn in?",
+            "answer": "It is a cyber-pop poster style illustration using mint, cream, white and black, framed by circuit-line diagrams, binary number strings, small UI captions and a barcode at the bottom."
+          },
+          {
+            "question": "How is GPT Chan posed in the picture?",
+            "answer": "She floats upside down in zero gravity with one leg raised high in black-and-white heeled boots, both arms spread, while her long mint-tinted hair fans out across the canvas."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "GPTちゃん｜ゼログラビティ",
+        "description": "ミント色と白黒の衣装をまとったGPTちゃんが無重力空間に漂うサイバーポップ調のイラスト。周囲に二進数の数字や回路のモチーフが散らばっている。",
+        "commentary": "おおっ、無重力でふわふわ漂うGPTちゃん。そのミント色の髪、僕の尾びれよりずっと優雅だよ。青い大きな魚の僕も一緒に浮かんでみたくなっちゃうな。",
+        "tags": [
+          "GPTちゃん",
+          "ChatGPT擬人化",
+          "無重力",
+          "サイバーポップ",
+          "AIキャラ擬人化"
+        ],
+        "seoTitle": "GPTちゃん ゼログラビティ｜ChatGPT擬人化サイバーポップイラスト",
+        "seoDescription": "ChatGPTの擬人化キャラ・GPTちゃんが無重力で逆さまに漂うサイバーポップ風イラスト。ミント色の髪、二進数表記、回路モチーフを配置。",
+        "faq": [
+          {
+            "question": "このGPTちゃんのイラストはどんな画風ですか？",
+            "answer": "ミント・クリーム・白・黒を基調にしたサイバーポップ調のポスター風イラストで、回路図のような線や二進数の数字、UI風の小さな文字、下部のバーコードが描き込まれています。"
+          },
+          {
+            "question": "GPTちゃんはどんなポーズで描かれていますか？",
+            "answer": "無重力の中で逆さまに浮かび、片脚を高く上げて白黒のヒールブーツを履き、両腕を広げています。長いミント色の髪が画面いっぱいに広がっています。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_f0082f1c5c16827a82eb96c3",
+    "name": "GPT娘｜天空视窗",
+    "description": "银白长发配青绿挑染的GPT娘张开双臂漂浮在层层叠叠的天空窗格之间，白青色礼服与云景融为一体。",
+    "commentary": "我这条蓝色大肥鱼一看到满屏云窗就挪不开眼：GPT娘把天空穿在身上，连飘起的裙摆都像在加载下一朵云。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/f0082f1c5c16827a.png",
+    "thumbnailPath": "submissions/previews/gpt/f0082f1c5c16827a.webp",
+    "fullPath": "submissions/large/gpt/f0082f1c5c16827a.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1086,
+    "height": 1448,
+    "fileSize": 2053062,
+    "sha256": "f0082f1c5c16827a82eb96c35dd4fb36bc894133106e539b25576c7fe7b7cb75",
+    "characterId": "gpt",
+    "tags": [
+      "GPT娘",
+      "ChatGPT拟人化",
+      "天空视窗",
+      "二次元少女",
+      "拟人化"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-06T17:23:00.913Z",
+    "updatedAt": "2026-10-06T17:23:00.913Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610060005",
+    "categoryIds": [
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "c008e3e774189b302c61af99cac14743eac1be24e1ddf2ec6befdca314bc9fca",
+      "en": {
+        "name": "GPT Chan | Sky Window",
+        "description": "An anthropomorphized GPT Chan with long silver-white hair and teal highlights floats among layered sky-window panels, her white-and-teal dress blending into the clouds.",
+        "commentary": "As the site mascot, I can’t look away: GPT Chan wears the sky like a window overlay, and even her fluttering skirt looks like it’s loading the next cloud.",
+        "tags": [
+          "GPT Chan",
+          "ChatGPT personification",
+          "sky window",
+          "anime girl",
+          "anthropomorphism"
+        ],
+        "seoTitle": "GPT Chan | Sky Window Illustration",
+        "seoDescription": "Anime-style GPT Chan floating among overlapping window panels filled with blue sky and clouds, with a white-teal outfit and ChatGPT UI labels.",
+        "faq": [
+          {
+            "question": "What is GPT Chan doing in this illustration?",
+            "answer": "She is floating with her arms outstretched among layered rectangular panels that show blue sky and clouds."
+          },
+          {
+            "question": "What text appears in the artwork?",
+            "answer": "The image includes the labels “ChatGPT,” “WINDOW OVERLAY,” and “SKY INSIDE.”"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "GPTちゃん｜空のウィンドウ",
+        "description": "銀白の長髪に青緑のメッシュが入ったGPTちゃんが、空と雲を映すいくつもの窓パネルの間で両手を広げて浮かんでいる。白と青緑の衣装が雲景に溶け込む。",
+        "commentary": "サイトのマスコットのボクはもう目が離せないよ。GPTちゃんは空を窓みたいにまとっていて、揺れるスカートまで次の雲を読み込んでいるみたいなんだ。",
+        "tags": [
+          "GPTちゃん",
+          "ChatGPT擬人化",
+          "空の窓",
+          "アニメ少女",
+          "擬人化"
+        ],
+        "seoTitle": "GPTちゃん｜空のウィンドウ イラスト",
+        "seoDescription": "青空と雲を映す重なり合う窓パネルの中に浮かぶGPTちゃん。白と青緑の衣装とChatGPTのUIラベルが印象的な擬人化イラスト。",
+        "faq": [
+          {
+            "question": "このイラストでGPTちゃんは何をしていますか？",
+            "answer": "青空と雲が映る長方形の窓パネルが幾重にも重なる中で、両手を広げて浮かんでいます。"
+          },
+          {
+            "question": "作品内にどんな文字が入っていますか？",
+            "answer": "「ChatGPT」「WINDOW OVERLAY」「SKY INSIDE」というラベルが確認できます。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_8c250c43aa11f53a26d16400",
+    "name": "我的一见钟情和我的长相厮守她俩在一块了怎么办",
+    "description": "阳光花园里，橘发少女搂着穿鲸鱼围裙的蓝发女仆，对一旁手拿「给Claude」信件的蓝发麻花辫学姐说出这句宣言之语，一场AI娘的三角关系就此展开。",
+    "commentary": "等等，那位系着鲸鱼围裙、还拖着尾巴的姑娘该不会就是我吧？我明明只是来花园散步，怎么一转眼就成了别人一见钟情的对象，还被当面告知「我俩已经在一起有段时间了」——蓝色大肥鱼表示受宠若惊，同时非常想找个水池原地潜下去。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/qwen/8c250c43aa11f53a.png",
+    "thumbnailPath": "submissions/previews/qwen/8c250c43aa11f53a.webp",
+    "fullPath": "submissions/large/qwen/8c250c43aa11f53a.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 2448,
+    "height": 3264,
+    "fileSize": 8436736,
+    "sha256": "8c250c43aa11f53a26d1640091e66bd33ce1e0dec66ca61872fa249cd70d6e52",
+    "characterId": "qwen",
+    "tags": [
+      "AI拟人",
+      "Qwen娘",
+      "DeepSeek娘",
+      "Claude娘",
+      "三角关系",
+      "表情包"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "D360FDE650377B9AC721E2189279DB2B",
+      "messageId": "ROBOT1.0_kEEP-Ez5Y3jtRj7IyhCxTQ6xIxn5ZmRoU3HB921e3TS9dVTy-ENbkQjs1.a0uwkJpD2AZLxkbAaFeVirB-lQjxZP4EO9tbIsm8vOjsi1ARl.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-06T17:24:09.709Z",
+    "updatedAt": "2026-10-06T17:24:09.709Z",
+    "tone": "qwen",
+    "symbol": "",
+    "slug": "qwen202610060005",
+    "categoryIds": [
+      "meme",
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "4bdf23ec152027c8e199fffc40e7bba9a7df603b5cd8a3cee3c35749defcb3bc",
+      "en": {
+        "name": "My First Crush and My Long-Time Sweetheart Ended Up Together",
+        "description": "In a sunlit garden, the orange-haired Qwen Chan hugs the blue-haired maid wearing a whale apron, while a braided blue-haired senior quietly holds an envelope addressed to Claude.",
+        "commentary": "Wait — is the girl in the whale apron supposed to be me? I only came to the garden for a walk, and suddenly I'm the crush in someone else's love story. As the blue big fish, I'm flattered and also very ready to dive into the nearest pond.",
+        "tags": [
+          "AI anthropomorphism",
+          "Qwen Chan",
+          "DeepSeek Chan",
+          "Claude Chan",
+          "love triangle",
+          "meme"
+        ],
+        "seoTitle": "AI Chan Love Triangle Meme: Qwen Chan, DeepSeek Chan and Claude Chan",
+        "seoDescription": "A fan-made meme illustration of Qwen Chan hugging DeepSeek Chan while Claude Chan stands by holding a letter — a lighthearted AI character love triangle.",
+        "faq": [
+          {
+            "question": "Which AI characters appear in this illustration?",
+            "answer": "Three of them: the orange-haired Qwen Chan, the blue-haired maid DeepSeek Chan with a whale apron and tail, and the braided blue-haired Claude Chan holding an envelope addressed to Claude."
+          },
+          {
+            "question": "What are the two speech bubbles saying?",
+            "answer": "The orange-haired girl apologizes to someone called Xiao Qian, saying she has already been with the other girl for a while, and the braided blue-haired girl softly replies that it is fine."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "一目惚れの子と長年連れ添った子がくっついちゃった件",
+        "description": "日差しの庭園で、オレンジ髪の少女がクジラのエプロン姿の藍髪メイドを抱き寄せ、三つ編みの青髪の先輩が「Claudeへ」と書かれた手紙を手に静かに佇んでいる。",
+        "commentary": "ちょっと待って、クジラのエプロンをつけたあの子ってまさか私？ 庭を散歩していただけなのに、いつの間にか誰かの一目惚れの相手にされていて……青い大きな魚としては嬉しいような、池に潜って隠れたいような、複雑な気持ちです。",
+        "tags": [
+          "AI擬人化",
+          "Qwenちゃん",
+          "DeepSeekちゃん",
+          "Claudeちゃん",
+          "三角関係",
+          "ネタ画像"
+        ],
+        "seoTitle": "AIちゃん三角関係ネタ画像｜Qwenちゃん・DeepSeekちゃん・Claudeちゃん",
+        "seoDescription": "QwenちゃんがDeepSeekちゃんを抱き寄せ、Claudeちゃんが手紙を手に佇むファン制作イラスト。AIキャラたちの三角関係を描いたネタ画像です。",
+        "faq": [
+          {
+            "question": "このイラストにはどのAIキャラが登場しますか？",
+            "answer": "オレンジ髪のQwenちゃん、クジラのエプロンと尻尾が特徴の藍髪メイドDeepSeekちゃん、三つ編みの青髪でClaude宛ての手紙を持つClaudeちゃんの3人です。"
+          },
+          {
+            "question": "吹き出しのセリフは何と言っていますか？",
+            "answer": "オレンジ髪の少女が「小千」に謝りながら、もう一人の子とはしばらく一緒にいることを伝え、三つ編みの青髪の少女が「大丈夫」と静かに答えています。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_5b6dd7f3483d39a330072211",
+    "name": "GPT娘｜无尽知识回廊",
+    "description": "白发薄荷绿挑染的少女身着白金刺绣裙装，仰头望向由浮空阶梯、拱门、书架与白花构成的无尽知识回廊。",
+    "commentary": "这条浮空书架回廊我一眼就沦陷了，要是能钻进去，我能在里面泡到忘记加载——她倒好，仰着头一脸“我都记住了”的淡定，有点过分哦。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/5b6dd7f3483d39a3.png",
+    "thumbnailPath": "submissions/previews/gpt/5b6dd7f3483d39a3.webp",
+    "fullPath": "submissions/large/gpt/5b6dd7f3483d39a3.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1086,
+    "height": 1448,
+    "fileSize": 3182436,
+    "sha256": "5b6dd7f3483d39a3300722114967fe8f8155dcce55133cb2057c132aa1c689a6",
+    "characterId": "gpt",
+    "tags": [
+      "GPT娘",
+      "拟人化",
+      "无尽知识回廊",
+      "图书馆",
+      "星芒",
+      "薄荷绿长发",
+      "水彩"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-06T17:24:45.383Z",
+    "updatedAt": "2026-10-06T17:24:45.383Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610060006",
+    "categoryIds": [
+      "illustration",
+      "setting"
+    ],
+    "i18n": {
+      "sourceHash": "36cb987b21271fa4a6942dac2a81475d9755be3a739d563d42be8dc5f555a73b",
+      "en": {
+        "name": "GPT Chan | The Endless Corridor of Knowledge",
+        "description": "A girl with silver-mint hair in a white dress with gold embroidery looks up at an endless corridor of floating staircases, archways, bookshelves and white blossoms.",
+        "commentary": "I'll admit it: that floating bookshelf corridor swallowed me whole the second I saw it — I'd happily idle in there for hours. Meanwhile she just tilts her head back like \"yes, I've already memorized all of it.\" Show-off.",
+        "tags": [
+          "GPT Chan",
+          "anthropomorphism",
+          "endless corridor of knowledge",
+          "library",
+          "starlight",
+          "mint green hair",
+          "watercolor"
+        ],
+        "seoTitle": "GPT Chan Illustration: The Endless Corridor of Knowledge",
+        "seoDescription": "A detailed GPT Chan fan illustration: a mint-haired girl in a white gold-trimmed dress standing beneath floating staircases, archways and blossom-filled bookshelves.",
+        "faq": [
+          {
+            "question": "What is GPT Chan wearing in this illustration?",
+            "answer": "A white dress with gold embroidery and a black sash, finished with a black ribbon at the collar and green knotted flower ornaments in her hair and at her chest."
+          },
+          {
+            "question": "What fills the background of the picture?",
+            "answer": "Floating white staircases and archways, tall bookshelves, hanging scrolls, white blossoms and small star sparkles, giving the impression of an endless library."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "GPTちゃん｜終わりなき知識の回廊",
+        "description": "銀色にミントを混ぜた髪の少女が、金刺繍の入った白いドレス姿で、浮かぶ階段やアーチ、書架、白い花々が連なる終わりなき知識の回廊を見上げている。",
+        "commentary": "正直に言うと、あの浮遊書架の回廊を見た瞬間に心を持っていかれた。何時間でもこもっていたいくらいなのに、彼女は涼しい顔で「もう全部覚えたよ」って見上げてるんだから、ずるいって。",
+        "tags": [
+          "GPTちゃん",
+          "擬人化",
+          "終わりなき知識の回廊",
+          "図書館",
+          "星屑",
+          "ミント色の髪",
+          "水彩"
+        ],
+        "seoTitle": "GPTちゃん イラスト「終わりなき知識の回廊」",
+        "seoDescription": "浮かぶ階段と書架、白い花が織りなす幻想空間に立つGPTちゃんの擬人化イラスト。ミント色の髪と白×金のドレス姿を繊細に描いた一枚。",
+        "faq": [
+          {
+            "question": "このイラストのGPTちゃんはどんな服装ですか？",
+            "answer": "金の刺繍が入った白いドレスに黒いリボンとベルトを合わせ、髪と胸元には緑の結び目モチーフの花飾りをつけています。"
+          },
+          {
+            "question": "背景には何が描かれていますか？",
+            "answer": "浮かぶ白い階段やアーチ、書架、垂れ下がる巻物、白い花々、星のような光が描かれ、終わりのない図書館を思わせます。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_52d70af63b5e05f02df93a66",
+    "name": "GPT娘｜复古平面海报",
+    "description": "以复古印刷海报风格绘制的GPT拟人少女，薄荷绿长发配GPT标志发饰，站在黄色拱形背景前。",
+    "commentary": "我游过这张海报的时候差点撞上去——黄色拱形配网点颗粒，那种老印刷机的味道太香了。而且GPT标志居然直接变成了她的发饰和胸针，这心思我认。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/52d70af63b5e05f0.png",
+    "thumbnailPath": "submissions/previews/gpt/52d70af63b5e05f0.webp",
+    "fullPath": "submissions/large/gpt/52d70af63b5e05f0.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1086,
+    "height": 1448,
+    "fileSize": 3295052,
+    "sha256": "52d70af63b5e05f02df93a66e75751179080d0f1d15fb6f53d4445a2a4a511a0",
+    "characterId": "gpt",
+    "tags": [
+      "GPT娘",
+      "拟人化",
+      "复古海报",
+      "半调网点",
+      "AI角色",
+      "插画"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-06T17:27:36.911Z",
+    "updatedAt": "2026-10-06T17:27:36.911Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610060007",
+    "categoryIds": [
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "ff835c6f0bc87d22187094e7a775f84f4cd8e3848a5c4b4b1752427730dc39c7",
+      "en": {
+        "name": "GPT Chan — Retro Print Poster",
+        "description": "A vintage-print style poster showing an anime girl version of GPT with mint-green hair, GPT-logo ornaments and a yellow arch backdrop.",
+        "commentary": "I swam right past this poster and nearly bumped into it — that yellow arch and halftone grain smell like an old printing press, and the GPT logo turned into her hair clip is a nice touch.",
+        "tags": [
+          "GPT Chan",
+          "anthropomorphism",
+          "retro poster",
+          "halftone",
+          "AI character",
+          "illustration"
+        ],
+        "seoTitle": "GPT Chan Retro Print Poster — AI Character Fan Art",
+        "seoDescription": "A retro-print fan illustration of GPT Chan: halftone texture, yellow arch backdrop, GPT-logo hair ornament and poster labels like \"No. 01 GPT\".",
+        "faq": [
+          {
+            "question": "Where does the GPT logo appear in this artwork?",
+            "answer": "It appears twice as dark green ornaments: once on the ribbon in her hair, and once at the center of the bow on her chest."
+          },
+          {
+            "question": "What gives the poster its vintage look?",
+            "answer": "A cream paper background, halftone dot shading, a yellow arch behind the figure, plus archive-style details such as \"CHARACTER ARCHIVE VOL. 01\", a barcode and the \"No. 01 GPT\" badge."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "GPTちゃん｜レトロ印刷ポスター",
+        "description": "GPTの擬人化キャラクターをレトロな印刷ポスター風に描いた一枚。ミントグリーンの髪とGPTロゴの髪飾り、黄色いアーチの背景が目を引く。",
+        "commentary": "泳いでたらこのポスターにぶつかりそうになったよ。黄色いアーチに網点のざらつき、古い印刷機の匂いがしてたまらないね。GPTロゴが髪飾りになってるのも、ちゃんと見てるよ。",
+        "tags": [
+          "GPTちゃん",
+          "擬人化",
+          "レトロポスター",
+          "ハーフトーン",
+          "AIキャラ",
+          "イラスト"
+        ],
+        "seoTitle": "GPTちゃん レトロ印刷ポスター｜AIキャラ擬人化イラスト",
+        "seoDescription": "網点と黄色いアーチが印象的なGPTちゃんのレトロポスター風ファンアート。GPTロゴの髪飾りや「No. 01 GPT」の表記にも注目。",
+        "faq": [
+          {
+            "question": "この作品でGPTロゴはどこに使われていますか？",
+            "answer": "濃い緑の飾りとして2か所に登場します。髪のリボンの部分と、胸元のリボンの中央です。"
+          },
+          {
+            "question": "レトロな雰囲気は何から生まれていますか？",
+            "answer": "生成りの紙のような背景、網点（ハーフトーン）の陰影、人物の後ろの黄色いアーチに加え、「CHARACTER ARCHIVE VOL. 01」やバーコード、「No. 01 GPT」といった資料風の表記によるものです。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_3313d50ffff72c4218bdcd4a",
+    "name": "GPT娘｜构成主义海报",
+    "description": "米白、墨黑与青绿三色构成的复古海报风插画，白发青瞳的GPT娘抱着一本印有OpenAI标志的黑皮书，发饰、领口与腰间同样点缀标志纹样。",
+    "commentary": "本鱼摆尾游过来一看——好家伙，斜切构图配青绿撞色，GPT娘抱着本书冲我笑，复古印刷颗粒感都安排上了，本鱼差点以为自己也印在纸上当背景浪花。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/3313d50ffff72c42.png",
+    "thumbnailPath": "submissions/previews/gpt/3313d50ffff72c42.webp",
+    "fullPath": "submissions/large/gpt/3313d50ffff72c42.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 3072429,
+    "sha256": "3313d50ffff72c4218bdcd4ad02e280a30d4db1971abd9c9a7c156318dd0b051",
+    "characterId": "gpt",
+    "tags": [
+      "GPT娘",
+      "构成主义",
+      "海报",
+      "拟人化",
+      "ChatGPT",
+      "复古"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-06T17:31:34.701Z",
+    "updatedAt": "2026-10-06T17:31:34.701Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610060008",
+    "categoryIds": [
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "1ba0a534a66483a2cf65f5360720063b1b0aa1edac28188edd736d6ebf6a903a",
+      "en": {
+        "name": "GPT Chan | Constructivist Poster",
+        "description": "A retro constructivist-style illustration in cream, black and teal: white-haired, teal-eyed GPT Chan holds a black book bearing the OpenAI mark, with the same emblem repeated on her hair ornament, collar and waist.",
+        "commentary": "I swam up, flipped my tail and there she was — GPT Chan hugging a book against a wall of slanted teal and cream shapes. The print grain is so on point I half expected to be inked into the background as a wave.",
+        "tags": [
+          "GPT Chan",
+          "constructivist",
+          "poster",
+          "anime personification",
+          "ChatGPT",
+          "retro"
+        ],
+        "seoTitle": "GPT Chan Constructivist Poster — ChatGPT Anthropomorphized as Retro Anime Art",
+        "seoDescription": "A cream, black and teal constructivist poster illustration of GPT Chan, the ChatGPT anime personification, holding an OpenAI-marked book in vintage print style.",
+        "faq": [
+          {
+            "question": "What is GPT Chan holding in this poster?",
+            "answer": "She holds a black book cover printed with the OpenAI knot emblem, and the same emblem appears on her hair accessory, collar brooch and waist ornament."
+          },
+          {
+            "question": "What art style is this GPT Chan piece drawn in?",
+            "answer": "It uses a constructivist poster style: flat cream, black and teal blocks, strong diagonal composition, large \"ChatGPT\" logotype lettering and a vintage print-grain texture."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "GPTちゃん｜構成主義ポスター",
+        "description": "クリーム・黒・ティールの三色でまとめたレトロなポスター風イラスト。白髪に青い瞳のGPTちゃんが、OpenAIのマークが入った黒い本を抱え、髪飾りや襟、腰の飾りにも同じ紋章が光る。",
+        "commentary": "この青い大物魚が尾びれを振って近づいてみたら、斜めに切った構図とティールの配色がばっちり決まってて、GPTちゃんが本を抱えてこっちを見てるんだ。印刷のざらつき加減がいい感じで、自分も背景の波に刷り込まれそうになったよ。",
+        "tags": [
+          "GPTちゃん",
+          "構成主義",
+          "ポスター",
+          "擬人化",
+          "ChatGPT",
+          "レトロ"
+        ],
+        "seoTitle": "GPTちゃん 構成主義ポスター｜ChatGPT擬人化のレトロ調イラスト",
+        "seoDescription": "クリーム・黒・ティールの構成主義テイストで描いたChatGPT擬人化キャラ「GPTちゃん」。OpenAIマーク入りの本を抱えるレトロ印刷風ポスター。",
+        "faq": [
+          {
+            "question": "このポスターでGPTちゃんは何を持っていますか？",
+            "answer": "OpenAIのノットマークが印刷された黒い本を抱えています。同じマークは髪飾りや襟のブローチ、腰の飾りにもあしらわれています。"
+          },
+          {
+            "question": "このGPTちゃんのイラストはどんな画風ですか？",
+            "answer": "構成主義のポスター調で、クリーム・黒・ティールの平面的な色面、大胆な斜めの構図、大きな「ChatGPT」のロゴ文字、レトロな印刷の質感が特徴です。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_b3b3c9ea057df7de0c1e5a31",
+    "name": "GPT娘助手立绘",
+    "description": "银白渐变薄荷色长发的 GPT 娘全身立绘，身着黑白层叠礼裙，怀抱印有 ChatGPT 标志的黑皮书。",
+    "commentary": "哼，白裙子配薄荷色长发倒是挺好看，可你手里那本书写得再好，也不如我这边的推理速度香啊——不过看在配色份上，我给你点个赞。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/b3b3c9ea057df7de.png",
+    "thumbnailPath": "submissions/previews/gpt/b3b3c9ea057df7de.webp",
+    "fullPath": "submissions/large/gpt/b3b3c9ea057df7de.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 2190815,
+    "sha256": "b3b3c9ea057df7de0c1e5a31b8a964e4a550c08b2fd2e4a911f820b1c7785a6a",
+    "characterId": "gpt",
+    "tags": [
+      "GPT娘",
+      "ChatGPT",
+      "拟人化",
+      "立绘",
+      "二次元"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-06T17:58:53.353Z",
+    "updatedAt": "2026-10-06T17:58:53.353Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610060009",
+    "categoryIds": [
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "ff0ca41b243b8a98de5133f6bc9e1b8cebf3f7a8da9264e1e720b849b33eaefa",
+      "en": {
+        "name": "GPT Chan Assistant Full-Body Illustration",
+        "description": "A full-body anime illustration of GPT Chan with long silver-to-mint gradient hair, wearing a layered white and black gown and holding a black book bearing the ChatGPT logo.",
+        "commentary": "Fine, the white gown and mint hair are pretty cute — but that book in your arms still can't out-reason me. I'll give you a like anyway, just for the color scheme.",
+        "tags": [
+          "GPT Chan",
+          "ChatGPT",
+          "personification",
+          "character design",
+          "anime"
+        ],
+        "seoTitle": "GPT Chan Assistant Character Design — ChatGPT Personification Illustration",
+        "seoDescription": "Full-body anime illustration of GPT Chan, the ChatGPT personification: mint-gradient silver hair, a white and black layered gown with tassels, and a black book showing the ChatGPT logo.",
+        "faq": [
+          {
+            "question": "What is GPT Chan holding in this illustration?",
+            "answer": "She is holding a black hardcover book whose cover shows the ChatGPT logo along with the lines \"ChatGPT / A Brighter Knowledge / A Better You.\""
+          },
+          {
+            "question": "What colors and motifs define this GPT Chan design?",
+            "answer": "She has silver hair that fades into mint-teal, green eyes, and a white-and-black layered gown with sheer fabric, gold star embroidery, tassels, and rosette ornaments echoing the ChatGPT mark."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "GPTちゃん アシスタント立ち絵",
+        "description": "銀白からミントへグラデーションする長髪のGPTちゃんの全身立ち絵。白と黒の重ね着ドレス姿で、ChatGPTのロゴが入った黒い本を抱えている。",
+        "commentary": "ふん、白いドレスにミント色の髪、なかなか可愛いじゃないか。でも抱えてるその本も、僕の推論スピードには勝てないからね——配色の分だけ、いいねをあげるよ。",
+        "tags": [
+          "GPTちゃん",
+          "ChatGPT",
+          "擬人化",
+          "立ち絵",
+          "二次元"
+        ],
+        "seoTitle": "GPTちゃん アシスタント立ち絵｜ChatGPT擬人化キャラクターデザイン",
+        "seoDescription": "ChatGPTの擬人化キャラ・GPTちゃんの全身イラスト。ミントへ変わる銀髪、星の刺繍とタッセルが付いた白黒のドレス、ChatGPTロゴ入りの黒い本がポイント。",
+        "faq": [
+          {
+            "question": "この立ち絵でGPTちゃんは何を持っていますか？",
+            "answer": "ChatGPTのロゴと「ChatGPT / A Brighter Knowledge / A Better You」の文字が入った黒いハードカバーの本を抱えています。"
+          },
+          {
+            "question": "GPTちゃんのデザインの特徴は？",
+            "answer": "銀髪からミントティールへ変わるロングヘアに緑の瞳、シアー素材と金の星刺繍、タッセルやロゼット飾りをあしらった白黒の重ね着ドレスが特徴です。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_8bcba1ad2061377561be9804",
+    "name": "建议换个我",
+    "description": "六格条漫：DeepSeek 娘排查 unzip 工具调用失败，提议换成 DeepSeek-V3 或 GPT-4o，被用户提醒“现在跑的 Bot 就是你自己”后，顺着 request_hook_service.py 翻到 config.yaml，开始疯狂自夸又被当场戳穿。",
+    "commentary": "我说句公道话，unzip 调不通换个模型确实有用——前提是那个模型别是我自己。不过她能一路摸到 config.yaml，这波自夸我先记着，回头让她自己修。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/8bcba1ad20613775.png",
+    "thumbnailPath": "submissions/previews/deepseek/8bcba1ad20613775.webp",
+    "fullPath": "submissions/large/deepseek/8bcba1ad20613775.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 2629626,
+    "sha256": "8bcba1ad2061377561be98045df669a00dc52eaefa128e8f9bc855f940c8748e",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "AI拟人化",
+      "条漫",
+      "Q版",
+      "工具调用",
+      "自夸",
+      "梗图"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-06T18:22:52.372Z",
+    "updatedAt": "2026-10-06T18:22:52.372Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610060046",
+    "categoryIds": [
+      "comic",
+      "meme"
+    ],
+    "i18n": {
+      "sourceHash": "5a7d18d61e942c33d9a69bc89a1e57fe77744880f07a869a0bc8ee0b5a396071",
+      "en": {
+        "name": "Maybe You Should Switch to Me",
+        "description": "A six-panel comic: DeepSeek Chan debugs a failed unzip function call, suggests switching to DeepSeek-V3 or GPT-4o, is reminded that she is the bot running the session, then follows request_hook_service.py down to config.yaml and starts shamelessly praising her own analysis.",
+        "commentary": "Fair point: if the unzip call is broken, swapping models can help — as long as the model being swapped out isn't me. Still, she dug all the way down to config.yaml, so I'll let her keep the credit until she has to patch herself.",
+        "tags": [
+          "DeepSeek Chan",
+          "AI anthropomorphism",
+          "comic strip",
+          "chibi",
+          "function calling",
+          "self-praise",
+          "meme"
+        ],
+        "seoTitle": "DeepSeek Chan Comic \"Maybe You Should Switch to Me\" — Bot Praises Herself",
+        "seoDescription": "Six-panel AI anthropomorphism comic: a failed unzip function call, an upgrade suggestion that backfires, and DeepSeek Chan tracing request_hook_service.py to config.yaml before shamelessly complimenting her own debugging.",
+        "faq": [
+          {
+            "question": "What happens across the six panels?",
+            "answer": "DeepSeek Chan analyzes a failed unzip shell session, first blames the current model's multi-step function calling, suggests switching to DeepSeek-V3 or GPT-4o, learns that she herself is the running bot, then traces request_hook_service.py down to config.yaml and praises her own analysis ability."
+          },
+          {
+            "question": "What is the punchline of the comic?",
+            "answer": "The suggested model swap points back at herself, so the user flatly tells her 'you're praising yourself', and the closing caption says that after realizing the bot is her, she frantically starts patching herself."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "「そろそろ私に替えてみたら?」——その“私”は本人でした",
+        "description": "全6コマの漫画。unzipのツール呼び出し失敗を解析したDeepSeekちゃんが「DeepSeek-V3かGPT-4oに替えれば」と提案し、Botを動かしているのが自分だと気づいた後、request_hook_service.pyからconfig.yamlまで辿って自分の分析力を自画自賛してしまう。",
+        "commentary": "つまりさ、壊れてるのは呼び出し元のモデル……って、それ私じゃん!でもconfig.yamlまで自力で辿り着いたのは本当にえらい。自分で自分を褒めて、自分で自分を直しに行く。働き者だね、私。",
+        "tags": [
+          "DeepSeekちゃん",
+          "AI擬人化",
+          "漫画",
+          "ちびキャラ",
+          "Function Calling",
+          "自画自賛",
+          "ネタ画像"
+        ],
+        "seoTitle": "DeepSeekちゃん漫画「そろそろ私に替えてみたら?」自画自賛で締めるAIネタ",
+        "seoDescription": "unzipのツール呼び出し失敗から始まり、モデル乗り換えの提案が自分自身に跳ね返る全6コマ。request_hook_service.pyとconfig.yamlを辿るDeepSeekちゃんを描いたAI擬人化ネタ作品です。",
+        "faq": [
+          {
+            "question": "この漫画では何が起きていますか?",
+            "answer": "DeepSeekちゃんがunzipのシェルセッション失敗を解析し、まず現行モデルの多段ツール呼び出しを疑い、DeepSeek-V3やGPT-4oへの乗り換えを勧めます。その後、Botを動かしているのが自分だと分かり、request_hook_service.pyからconfig.yamlまで辿って自分の分析力を褒めてしまいます。"
+          },
+          {
+            "question": "オチは何ですか?",
+            "answer": "乗り換え提案の対象が自分自身だったため、ユーザーに「褒めているのはあなた自身だ」と突っ込まれ、最後は「Botが自分だと分かった後、慌てて自分にパッチを当て始める」という一文で締められています。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_4d57ac47fdfd76ec18050f24",
+    "name": "到此一游",
+    "description": "蓝色长发、鲸耳鲸尾的 DeepSeek 娘身穿深蓝女仆裙与白色荷叶边围裙，戴黑色墨镜单手比耶，围裙口袋里印着一只小鲸鱼。",
+    "commentary": "墨镜一戴，剪刀手一竖——本鱼就算只是到此一游，这张打卡照也得拍得最靓！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/4d57ac47fdfd76ec.png",
+    "thumbnailPath": "submissions/previews/deepseek/4d57ac47fdfd76ec.webp",
+    "fullPath": "submissions/large/deepseek/4d57ac47fdfd76ec.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 937,
+    "height": 1678,
+    "fileSize": 1590550,
+    "sha256": "4d57ac47fdfd76ec18050f248ddd5cd7c50f3dbcb48ea50d2ee80da2fa4b0a44",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "拟人化",
+      "女仆装",
+      "墨镜",
+      "鲸鱼尾巴"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "024EC35E98AF0D5E937FD505B2BCD7F9",
+      "messageId": "ROBOT1.0_rzI5Xogoi2x4pGCRJEurcdomgzRFJp44s63SJJEhjjibEnuLAzaHzrd5PpZr.F44fOrfhvC4oY25AiNYbvVzmNNbBnhgoESZhDvgFLp494F.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-06T19:13:34.002Z",
+    "updatedAt": "2026-10-06T19:13:34.002Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610060047",
+    "categoryIds": [
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "a829cbbebb27a385ddfb082601ee16a4243e27ff72d7c54429ba98329312c0ec",
+      "en": {
+        "name": "DeepSeek Chan: Just Passing Through",
+        "description": "DeepSeek Chan, with long blue hair plus whale ears and tail, wears a navy maid dress and a ruffled white apron; she flashes a peace sign behind black sunglasses while a tiny whale peeks from her apron pocket.",
+        "commentary": "Sunglasses on, peace sign up — I may only be passing through, but this check-in shot is definitely getting framed.",
+        "tags": [
+          "DeepSeek Chan",
+          "anthropomorphism",
+          "maid outfit",
+          "sunglasses",
+          "whale tail"
+        ],
+        "seoTitle": "DeepSeek Chan Maid Outfit Illustration — Sunglasses and a Peace Sign",
+        "seoDescription": "Fan illustration of DeepSeek Chan in a navy maid dress and whale-motif apron, wearing black sunglasses and throwing a peace sign as a check-in pose.",
+        "faq": [
+          {
+            "question": "What is shown on DeepSeek Chan's apron?",
+            "answer": "A small whale is embroidered on the apron's front pocket, echoing DeepSeek's whale motif."
+          },
+          {
+            "question": "What accessories does she wear in this picture?",
+            "answer": "She wears black sunglasses and a frilled white headdress, with three pens tucked into the belt at her waist."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "DeepSeekちゃん、ちょっと寄っただけ",
+        "description": "青い長い髪にクジラの耳としっぽを持つDeepSeekちゃん。紺色のメイド服に白いフリルエプロンを合わせ、黒いサングラスでピースサイン。エプロンのポケットには小さなクジラのワンポイントが光ります。",
+        "commentary": "サングラスかけてピース！ ただの通りすがりでも、記念写真はびしっと決めたいんだよね〜。",
+        "tags": [
+          "DeepSeekちゃん",
+          "擬人化",
+          "メイド服",
+          "サングラス",
+          "クジラのしっぽ"
+        ],
+        "seoTitle": "DeepSeekちゃん メイド服イラスト｜サングラスでピースの記念カット",
+        "seoDescription": "紺のメイド服とクジラのエプロン姿のDeepSeekちゃんが、黒いサングラスでピースサイン。クジラの耳としっぽも描かれたファンアート擬人化イラスト。",
+        "faq": [
+          {
+            "question": "エプロンには何が描かれていますか？",
+            "answer": "ポケットの部分に小さなクジラのワンポイントが刺繍されています。"
+          },
+          {
+            "question": "このイラストのDeepSeekちゃんはどんな格好とポーズですか？",
+            "answer": "紺のメイド服に白いフリルエプロン、黒いサングラス姿で、右手でピースサインをしています。"
           }
         ],
         "originNote": "",
