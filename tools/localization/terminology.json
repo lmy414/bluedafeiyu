@@ -1,0 +1,35 @@
+{
+  "version": "native-localization-2026-10-06",
+  "site": { "zh": "蓝色大肥鱼", "en": "DeepSeek Chan", "ja": "DeepSeek Chan" },
+  "characters": {
+    "deepseek": { "en": "DeepSeek Chan", "ja": "DeepSeekちゃん", "aliases": ["DeepSeek娘", "鲸鱼娘", "鲸娘", "蓝色大肥鱼", "大肥鱼"] },
+    "doubao": { "en": "Doubao Chan", "ja": "Doubaoちゃん" },
+    "kimi": { "en": "Kimi Chan", "ja": "Kimiちゃん" },
+    "qwen": { "en": "Qwen Chan", "ja": "Qwenちゃん" },
+    "claude": { "en": "Claude Chan", "ja": "Claudeちゃん" },
+    "gemini": { "en": "Gemini Chan", "ja": "Geminiちゃん" },
+    "grok": { "en": "Grok Chan", "ja": "Grokちゃん" },
+    "stepfun": { "en": "StepFun Chan", "ja": "StepFunちゃん" },
+    "glm": { "en": "GLM Chan", "ja": "GLMちゃん" },
+    "gpt": { "en": "GPT Chan", "ja": "GPTちゃん" },
+    "mimo": { "en": "MiMo Chan", "ja": "MiMoちゃん" },
+    "other": { "en": "Other characters", "ja": "その他のキャラクター" },
+    "owner-picks": { "en": "Owner's picks", "ja": "管理人のコレクション" }
+  },
+  "categories": {
+    "meme": { "en": "Reaction images", "ja": "ネタ画像" },
+    "illustration": { "en": "Fan art", "ja": "ファンアート" },
+    "setting": { "en": "Character designs", "ja": "キャラクター設定画" },
+    "comic": { "en": "Comics", "ja": "漫画" }
+  },
+  "rules": [
+    "Write for native English-speaking fan-art readers and Japanese fandom readers. Recreate meaning, humor and conversational tone; never translate word by word or through English into Japanese.",
+    "The English site name and DeepSeek character name are DeepSeek Chan. DeepSeek娘, 鲸鱼娘, 鲸娘 and 蓝色大肥鱼 refer to the same character. Every alias including 蓝发鲸娘 and 深潜鲸娘 is DeepSeek Chan in English and DeepSeekちゃん in Japanese. Never translate these names as Whale Girl, Deep-Diving Whale Girl, 鯨娘, Whale Chan, Blue Fish or Fat Fish. Use DeepSeek Chan / DeepSeekちゃん in titles and descriptions whenever the source refers to that character.",
+    "In Japanese, character names use the model name followed by ちゃん. The site brand remains DeepSeek Chan. Preserve official product/model/company names when discussing the AI product rather than its fan character.",
+    "Use supplied facts only. Do not infer authors, licenses, official endorsements, unseen image details or popularity. Preserve user handles, creator credits, URLs, identifiers and dates exactly.",
+    "Titles must read naturally, retain the actual joke or visual subject, and be distinct. Tags are local search terms for the depicted mood, action, costume, scene and format; preserve tag order and count so links can resolve to the source tag.",
+    "Description describes what the source says is visible. Commentary keeps the playful first-person archive voice and specific observation. Explain Chinese wordplay naturally when a literal translation would confuse the reader.",
+    "Write useful, grounded SEO title/description and two short FAQ pairs about this specific work or its depicted joke. Do not stuff keywords, repeat the title as a question, or imply permission to repost or sell the image.",
+    "Output plain text only inside valid JSON; no HTML, markdown, code fences, invented domain names or translator notes. Each language must be authored independently from the original Chinese source."
+  ]
+}

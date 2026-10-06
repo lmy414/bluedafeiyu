@@ -217,7 +217,7 @@
       characters.forEach(function (character) {
         var option = document.createElement("option");
         option.value = character.id;
-        option.textContent = character.name;
+        option.textContent = SiteLang.characterName(character.id, character.name);
         characterSelect.appendChild(option);
       });
       labelIdle();
@@ -267,6 +267,7 @@
       /* 语言切换：重写动态文案（占位选项、按钮、当前提示）。 */
       document.addEventListener("site:langchange", function () {
         placeholder.textContent = t("submit.form.select", "请选择角色");
+        characters.forEach(function (character, index) { characterSelect.options[index + 1].textContent = SiteLang.characterName(character.id, character.name); });
         if (busy) labelBusy(); else labelIdle();
         renderStatus();
       });

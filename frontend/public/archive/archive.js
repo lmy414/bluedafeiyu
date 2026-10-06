@@ -1,6 +1,6 @@
-import {renderWorkCard} from './work-card.js';
+import {renderWorkCard} from './work-card.js?v=2';
 import {copyImage} from './image-copy.js?v=1';
-import {installTopicDownloads} from './topic-download.js?v=1';
+import {installTopicDownloads} from './topic-download.js?v=2';
 (() => {
   'use strict';
   const $ = (selector, parent = document) => parent.querySelector(selector);
@@ -12,11 +12,13 @@ import {installTopicDownloads} from './topic-download.js?v=1';
     return window.SiteLang ? SiteLang.fmt(key, fallback, vars) : String(fallback).replace(/\{(\w+)\}/g,(_,k)=>vars?.[k]??'');
   };
   const localURL = href => window.SiteLang ? SiteLang.url(href) : href;
+  const names = value => window.SiteLang ? SiteLang.contentText(value) : value;
+  const localized = w => window.SiteLang ? SiteLang.localWork(w) : w;
   const basePath = path => path.replace(/^\/(?:en|ja|zh-hant)(?=\/)/, '');
   let dataPromise;
   const load = () => dataPromise || (dataPromise = fetch('/archive-data.json').then(r => { if(!r.ok)throw Error('data'); return r.json(); }));
   const toast = text => { const el=$('#toast'); el.textContent=text;el.hidden=false;clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.hidden=true,3000); };
-  const card = w => renderWorkCard(w, {url:localURL, translate:tx});
+  const card = w => renderWorkCard(localized(w), {url:localURL, translate:tx, names});
   const drawGrid = list => `<div class="work-grid">${list.map(card).join('')}</div>`;
   async function copy(value) { try { await navigator.clipboard.writeText(value);toast(tx('ui.copied','已复制')); } catch { toast(tx('d.copyFail','复制失败，请手动复制。')); } }
   installTopicDownloads({load,tx,toast});
@@ -65,8 +67,9 @@ import {installTopicDownloads} from './topic-download.js?v=1';
     const selected={character:document.body.dataset.character||'',type:document.body.dataset.type||'',sort:document.body.dataset.sort||'latest'};
     for(const name of ['character','type','sort'])if(params.has(name))selected[name]=params.get(name);
     for(const [name,value]of Object.entries(selected))if(form.elements[name])form.elements[name].value=value;
-    if(query)query.value=params.get('q')||'';
-    const getState=()=>({q:query?.value.trim()||'',character:form.elements.character.value,type:form.elements.type.value,sort:form.elements.sort.value});
+    const sourceQuery=params.get('q')||'',displayQuery=names(sourceQuery);
+    if(query)query.value=displayQuery;
+    const getState=()=>({q:query ? (query.value.trim()===displayQuery ? sourceQuery : query.value.trim()) : '',character:form.elements.character.value,type:form.elements.type.value,sort:form.elements.sort.value});
     const listBase=document.body.dataset.listBase||basePath(location.pathname);
     const globalArchive=listBase==='/browse.html'||listBase.startsWith('/categories/');
     const categoryURL=()=>{
@@ -83,7 +86,7 @@ import {installTopicDownloads} from './topic-download.js?v=1';
     const setURL=()=>{const state=getState();history.replaceState({...history.state,filters:state},'',localURL(stateURL().href));};
     function render(reshuffle=true,append=false){
       const state=getState(),words=state.q.toLocaleLowerCase().split(/\s+/).filter(Boolean);
-      filtered=all.filter(w=>(!state.character||w.cid===state.character)&&(!state.type||w.k.includes(state.type))&&words.every(word=>[w.n,w.c,w.d,w.cm,...w.tg,...(dataset.characters.find(c=>c.id===w.cid)?.aliases||[])].join(' ').toLocaleLowerCase().includes(word)));
+      filtered=all.filter(w=>(!state.character||w.cid===state.character)&&(!state.type||w.k.includes(state.type))&&words.every(word=>{const text=[w.n,w.c,w.d,w.cm,...w.tg,...(dataset.characters.find(c=>c.id===w.cid)?.aliases||[])].join(' ');const l=localized(w);return (text+' '+[l.n,l.c,l.d,l.cm,...l.tg].join(' ')).toLocaleLowerCase().includes(word);}));
       if(state.sort==='popular'||state.sort==='downloads')filtered.sort((a,b)=>(window.WorkStats?.metric(b.id,state.sort)||0)-(window.WorkStats?.metric(a.id,state.sort)||0));
       if(state.sort==='random'){
         if(reshuffle||!render.randomOrder){render.randomOrder=filtered.map(w=>w.slug);for(let i=render.randomOrder.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[render.randomOrder[i],render.randomOrder[j]]=[render.randomOrder[j],render.randomOrder[i]];}}
@@ -91,7 +94,7 @@ import {installTopicDownloads} from './topic-download.js?v=1';
       }
       if(searchPage&&!state.q&&!state.character&&!state.type){count.textContent=tx('d.searchPrompt','输入关键词开始查找。');result.innerHTML='';$('#search-discovery').hidden=false;$('[data-load-more]').hidden=true;$('.load-more-wrap').hidden=true;return;}
       if(searchPage)$('#search-discovery').hidden=true;
-      count.textContent=tx('d.resultCounts','{count} 件作品',{count:filtered.length})+(state.q?' · “'+state.q+'”':'');
+      count.textContent=tx('d.resultCounts','{count} 件作品',{count:filtered.length})+(state.q?' · “'+(query?.value||state.q)+'”':'');
       const changed=Object.entries(defaultState).some(([name,value])=>state[name]!==value)||!!state.q;
       const start=changed?0:pageStart;
       const existingGrid=$('.work-grid',result);
@@ -132,7 +135,8 @@ import {installTopicDownloads} from './topic-download.js?v=1';
   };
   async function preview(slug,mode='work'){
     try{
-      const d=await load(),w=d.works.find(w=>w.slug===slug);if(!w)return;
+      const d=await load(),original=d.works.find(w=>w.slug===slug);if(!original)return;
+      const w=localized(original);
       previewMode=mode;previewSlugs=[...new Set($$('.work-card').map(el=>el.dataset.slug))];if(!previewSlugs.includes(slug))previewSlugs=[slug];previewIndex=previewSlugs.indexOf(slug);
       dialog.dataset.previewMode=mode;
       if(!dialog.open){previewFocus=document.activeElement;dialog.showModal();document.body.style.overflow='hidden';}
@@ -144,8 +148,8 @@ import {installTopicDownloads} from './topic-download.js?v=1';
           <div class="preview-info">
             <div class="preview-topline"><a class="preview-role" href="${localURL(`/characters/${esc(w.cid)}.html`)}"><i class="role-dot" style="--role:${esc(w.col)}"></i>${esc(w.c)}${previewIcon('arrow')}</a><span class="preview-kind">${w.k.map(id=>esc(tx('v2.type.'+id,id))).join(' · ')}</span></div>
             <h2>${esc(w.n)}</h2>
-            <div class="preview-note"><span class="eyebrow">FISH NOTES</span><p>${esc(w.cm||w.d)}</p></div>
-            ${w.tg.length?`<div class="tags preview-tags">${w.tg.slice(0,6).map(t=>`<a class="tag" href="${localURL(`/search.html?q=${encodeURIComponent(t)}`)}"><span aria-hidden="true">#</span>${esc(t)}</a>`).join('')}</div>`:''}
+            <div class="preview-note"><span class="eyebrow">${esc(tx("d.fishComment","大肥鱼说"))}</span><p>${esc(w.cm||w.d)}</p></div>
+            ${w.tg.length?`<div class="tags preview-tags">${w.tg.slice(0,6).map((t,i)=>`<a class="tag" href="${localURL(`/search.html?q=${encodeURIComponent(w.sourceTags?.[i]||t)}`)}"><span aria-hidden="true">#</span>${esc(names(t))}</a>`).join('')}</div>`:''}
             <dl class="preview-facts"><div><dt>${esc(tx('d.previewFormat','原图格式'))}</dt><dd>${esc(w.f)}</dd></div><div><dt>${esc(tx('d.previewSize','文件大小'))}</dt><dd>${esc(w.s)}</dd></div><div class="preview-permission"><dt>${esc(tx('d.previewPermission','使用许可'))}</dt><dd>${esc(tx('license.'+w.lk,w.lt))}</dd></div></dl>
             <div class="detail-actions preview-actions"><a class="button primary" href="${localURL(`/works/${esc(w.slug)}.html`)}">${esc(tx('d.fullDetail','查看完整详情'))}${previewIcon('arrow')}</a><a class="button" data-download-work="${esc(w.id)}" href="${esc(new URL(w.o,'https://xn--pssy23gqgbz2d718b.com').href)}" target="_blank" rel="noopener">${previewIcon('download')}${esc(tx('work.download','下载原图'))}</a><button class="button" type="button" data-copy-img="${esc(w.l)}" data-copy-animated="${/^(GIF|APNG)$/i.test(w.f)}">${previewIcon('image')}${esc(tx('v2.copyImg','复制图片'))}</button></div><p class="image-copy-status" data-image-copy-status role="status" aria-live="polite"></p>
           </div>

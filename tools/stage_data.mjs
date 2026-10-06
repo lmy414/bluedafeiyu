@@ -36,6 +36,7 @@ const DIST_DIR = path.join(REPO_ROOT, "dist");
 // raw 清单与编辑叠加层，只在构建期被 tools/build_site_snapshot.mjs 读取，
 // 不进发布产物（tools/build.mjs 的 SKIP_DIRS 跳过 data/）。
 const STAGE_TARGETS = [
+  { from: "work-localizations.json", to: "data/work-localizations.json" },
   { from: "characters.json", to: "characters.json" },
   { from: "categories.json", to: "categories.json" },
   { from: "blue-fish-ids.json", to: "blue-fish-ids.json" },

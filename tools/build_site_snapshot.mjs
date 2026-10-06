@@ -8,6 +8,7 @@
 //     上游 EDMOK/blue-fish-archive 的原图 URL 与既有投稿/owner-picks 原图 path 都不改写。
 
 import fs from "node:fs";
+import {sourceHash,validateI18n} from "./localization/contract.mjs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -98,6 +99,7 @@ function main() {
       // 分类与第一人称评价取编辑叠加层；没有叠加层的条目退回既有的 meme 兜底
       categoryIds: Array.isArray(editorial.categoryIds) && editorial.categoryIds.length ? editorial.categoryIds : ["meme"],
       commentary: String(editorial.commentary || ""),
+      ...(editorial.i18n ? {i18n:editorial.i18n} : {}),
       tags,
       format,
       mimeType: format === "jpg" || format === "jpeg" ? "image/jpeg" : `image/${format || "png"}`,
@@ -132,6 +134,14 @@ function main() {
     return true;
   }).sort((a, b) => String(b.createdAt).localeCompare(String(a.createdAt)) || String(b.slug).localeCompare(String(a.slug)));
 
+  const translationsPath = path.join(DIST,"data/work-localizations.json");
+  const localized = fs.existsSync(translationsPath) ? readJson(translationsPath).works : {};
+  for (const work of unique) {
+    const candidate = work.i18n?.sourceHash === sourceHash(work) ? work.i18n : localized[work.id];
+    delete work.i18n;
+    if (candidate?.sourceHash === sourceHash(work)) work.i18n = {sourceHash:candidate.sourceHash, ...validateI18n(candidate,work)};
+    else console.warn(`[i18n] Missing or stale localization: ${work.id}`);
+  }
   const snapshot = {
     version: "2026-09-25-vision-reclassify",
     characters,

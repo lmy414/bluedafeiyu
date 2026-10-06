@@ -134,7 +134,7 @@ export function resolveHermesConfig({ env = process.env } = {}) {
     minConfidence: Number.isFinite(Number(env.HERMES_REVIEW_MIN_CONFIDENCE))
       ? Number(env.HERMES_REVIEW_MIN_CONFIDENCE)
       : DEFAULT_MIN_CONFIDENCE,
-    promptVersion: String(env.HERMES_REVIEW_PROMPT_VERSION || 'hermes-review-v1'),
+    promptVersion: String(env.HERMES_REVIEW_PROMPT_VERSION || 'hermes-review-v2-native-en-ja'),
     httpTimeoutMs: intOf(env.HERMES_HTTP_TIMEOUT_MS, DEFAULT_HTTP_TIMEOUT_MS),
     stateDir: String(env.HERMES_STATE_DIR || path.join(os.tmpdir(), 'dafeiyu-hermes-state')),
     lockStaleMs: intOf(env.HERMES_LOCK_STALE_MS, DEFAULT_LOCK_STALE_MS),

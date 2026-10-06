@@ -15,7 +15,7 @@
        SiteLang.fmt(key, 中文兜底, 变量) 取词，并监听 document 的 site:langchange 重渲染；
      · 发布页面的 data-site-lang 固定 URL 对应的语言，菜单跳转到语言版本；
        旧 ?lang= 链接兼容跳转。未标记的开发页面仍支持原地切换。
-   作品名、Tag、详情页正文（commentary）等属于内容数据，保持原文。 */
+   内容数据保留原文；英文展示时统一其中的角色名与站名，署名和链接不翻译。 */
 
 (function () {
   "use strict";
@@ -36,15 +36,15 @@
       "v2.licenseShort.unknown": "Unclear",
       "v2.licenseShort.author-permission": "Author permission",
       "v2.licenseShort.submitter-permission": "Submitter permission",
-      "page.work.title": "{name} - {character} {kindId} | 蓝色大肥鱼",
+      "page.work.title": "{name} - {character} {kindId} | DeepSeek Chan",
       "page.work.desc": "View {name}, a {kindId} featuring {character}. Check attribution and image permissions, view the full-size image, download the original and discuss the work.",
-      "page.characterDetail.title": "{name} stickers and fan art | 蓝色大肥鱼",
+      "page.characterDetail.title": "{name} stickers and fan art | DeepSeek Chan",
       "page.characterDetail.desc": "Browse {count} AI-girl fan works featuring {name}. View images, check their sources and download originals.",
-      "page.categoryDetail.title": "{name} works | 蓝色大肥鱼",
+      "page.categoryDetail.title": "{name} works | DeepSeek Chan",
       "page.categoryDetail.desc": "Browse {count} AI-girl fan works in {name}. View full-size images and check sources and permissions.",
-      "page.topicDetail.title": "{name} collection | 蓝色大肥鱼",
+      "page.topicDetail.title": "{name} collection | DeepSeek Chan",
       "page.topicDetail.desc": "A hand-picked collection of {count} AI-girl fan works: {name}.",
-      "work.imageCreditText": "{credit}蓝色大肥鱼 (archive)",
+      "work.imageCreditText": "{credit}DeepSeek Chan (archive)",
       "work.copyright.cc0": "Recorded as CC0 public domain; check the work's permission notes.",
       "work.copyright.named": "Image copyright belongs to the original author {creator}.",
       "work.copyright.unknown": "Image copyright belongs to its original author, who is not identified.",
@@ -66,7 +66,7 @@
       "nav.about": "About",
       "nav.projects": "Projects",
       "nav.topics": "Collections",
-      "page.topics.title": "AI-Girl Sticker Collections - Hand-Picked Series & Themed Sets | 蓝色大肥鱼",
+      "page.topics.title": "AI-Girl Sticker Collections - Hand-Picked Series & Themed Sets | DeepSeek Chan",
       "page.topics.desc": "Hand-picked AI-girl sticker collections: works from the same series or on the same joke, gathered so you can browse them in a row, view in high resolution and download originals.",
       "topics.h1": "Collections",
       "topics.lede.a": "Hand-picked: works on the same joke or from the same series, stacked together to ",
@@ -95,9 +95,9 @@
       "ui.workType": "work type",
       "section.comments": "Comments",
       "char.unknown": "Unknown character",
-      "kind.meme": "Sticker",
-      "kind.illustration": "Fan illustration",
-      "kind.setting": "Character sheet",
+      "kind.meme": "Reaction image",
+      "kind.illustration": "Fan art",
+      "kind.setting": "Character design",
       "kind.comic": "Comic",
       "filter.all": "All",
       "filter.characters": "Character",
@@ -119,29 +119,29 @@
       "qq.copy": "Copy group number",
       "qq.join": "Join the QQ group",
       "qq.scan": "Scan to join",
-      "qq.qrAlt": "QR code for joining the QQ group \u201cAAAA肥鱼批发市场\u201d (group number 1003728058)",
+      "qq.qrAlt": "QR code to join the DeepSeek Chan QQ community (group number 1003728058)",
       "alt.work": "\u201c{name}\u201d — {character} {kindId} fan art",
 
-      "page.index.title": "蓝色大肥鱼 - AI-Girl Fan Stickers, Memes & Character Art Downloads",
+      "page.index.title": "DeepSeek Chan - AI-Girl Fan Stickers, Memes & Character Art Downloads",
       "page.index.desc":
-        "蓝色大肥鱼 archives AI-girl fan stickers, memes, illustrations, character sheets and multi-panel comics featuring DeepSeek, Claude, Qwen, GLM and more — browse by character, search by tag, view in high resolution and download originals.",
-      "page.category.title": "AI-Girl Sticker Categories - Browse Memes, Illustrations & Comics by Character | 蓝色大肥鱼",
+        "DeepSeek Chan archives AI-girl fan stickers, memes, illustrations, character sheets and multi-panel comics featuring DeepSeek Chan, Claude Chan, Qwen Chan, GLM Chan and more — browse by character, search by tag, view in high resolution and download originals.",
+      "page.category.title": "AI-Girl Sticker Categories - Browse Memes, Illustrations & Comics by Character | DeepSeek Chan",
       "page.category.desc":
-        "Browse AI-girl memes, stickers, fan illustrations, character sheets and comics by character (DeepSeek, Claude, Qwen, GLM and more), and search names & tags within each category.",
-      "page.submit.title": "Submit AI-Girl Fan Stickers - On-Site Form & GitHub | 蓝色大肥鱼",
+        "Browse AI-girl memes, stickers, fan illustrations, character sheets and comics by character (DeepSeek Chan, Claude Chan, Qwen Chan, GLM Chan and more), and search names & tags within each category.",
+      "page.submit.title": "Submit AI-Girl Fan Stickers - On-Site Form & GitHub | DeepSeek Chan",
       "page.submit.desc":
         "Submitting an AI-girl fan sticker only takes an image upload plus its name and character — an optional one-line note. Use the on-site form or the GitHub form; approved works are published in batches, and tags, source, license and category are added by maintainers during review.",
-      "page.about.title": "About 蓝色大肥鱼 - AI-Girl Sticker Archive, Licensing & Privacy",
+      "page.about.title": "About DeepSeek Chan - AI-Girl Sticker Archive, Licensing & Privacy",
       "page.about.desc":
-        "What the 蓝色大肥鱼 AI-girl sticker archive is, image copyright & licensing, Google Analytics privacy, comments, the official QQ group, character-design credits, and how to request attribution or removal.",
-      "page.projects.title": "Projects - The Owner's Other Projects & Sites | 蓝色大肥鱼",
-      "page.projects.desc": "Other projects and websites by the owner of 蓝色大肥鱼 — cards are being curated.",
-      "page.changelog.title": "Changelog - 蓝色大肥鱼 Site Updates & Archive Records",
+        "What the DeepSeek Chan AI-girl sticker archive is, image copyright & licensing, Google Analytics privacy, comments, the official QQ group, character-design credits, and how to request attribution or removal.",
+      "page.projects.title": "Projects - The Owner's Other Projects & Sites | DeepSeek Chan",
+      "page.projects.desc": "Other projects and websites by the owner of DeepSeek Chan — cards are being curated.",
+      "page.changelog.title": "Changelog - DeepSeek Chan Site Updates & Archive Records",
       "page.changelog.desc":
-        "Redesigns, data migrations, new works, SEO and performance changes on the 蓝色大肥鱼 AI-girl sticker site.",
-      "page.notfound.title": "404 - Page Lost at Sea | 蓝色大肥鱼",
+        "Redesigns, data migrations, new works, SEO and performance changes on the DeepSeek Chan AI-girl sticker site.",
+      "page.notfound.title": "404 - Page Lost at Sea | DeepSeek Chan",
       "page.notfound.desc":
-        "The 蓝色大肥鱼 404 page: nothing lives at this address — the link may be mistyped, the work taken down, or the URL outdated. Head back home or browse by category.",
+        "The DeepSeek Chan 404 page: nothing lives at this address — the link may be mistyped, the work taken down, or the URL outdated. Head back home or browse by category.",
 
       "index.hero.lede": "Collect and download AI-girl fan stickers, archived by character and searchable by tag.",
       "index.cta.browse": "Start browsing",
@@ -156,7 +156,7 @@
       "sort.nameDesc": "Name Z→A",
       "sort.size": "File size",
       "sort.random": "Random",
-      "index.qq.lede1": "QQ group \u201cAAAA肥鱼批发市场\u201d",
+      "index.qq.lede1": "DeepSeek Chan QQ community",
       "index.qq.lede2": "Group number",
       "index.qq.close": "Close",
 
@@ -198,7 +198,7 @@
       "submit.confirm3":
         "I understand this is an unofficial fan-curated project, and image copyright always stays with the original author.",
       "submit.qq.title": "Submit via QQ group",
-      "submit.qq.a": "The QQ group is called \u201cAAAA肥鱼批发市场\u201d, group number ",
+      "submit.qq.a": "Join our DeepSeek Chan QQ community. Group number: ",
       "submit.qq.c":
         ". Posting the image in the group and @-ing a maintainer counts as a submission too.",
       "submit.qq.hint":
@@ -265,9 +265,9 @@
 
       "about.h1": "About",
       "about.lede":
-        "蓝色大肥鱼 is an unofficial fan-curated project. This page explains what it does, who owns the images, and which of your data we don't collect.",
+        "DeepSeek Chan is an unofficial fan-curated project. This page explains what it does, who owns the images, and which of your data we don't collect.",
       "about.site.title": "About this site",
-      "about.site.p1a": "\u201c蓝色大肥鱼\u201d is an open archive of ",
+      "about.site.p1a": "\u201cDeepSeek Chan\u201d is an open archive of ",
       "about.site.p1b": "AI-girl fan stickers",
       "about.site.p1c":
         ": works are archived by character and searchable by name, tag and character alias; every work has its own detail page where you can check source & license, download the original, and leave comments in a dedicated thread. The changelog is linked in the footer.",
@@ -322,7 +322,7 @@
       "about.takedown.p2c": ".",
       "about.takedown.btn": "Open attribution & takedown request",
       "about.group.title": "Community group",
-      "about.group.a": "Our QQ group is called \u201cAAAA肥鱼批发市场\u201d, group number ",
+      "about.group.a": "Join our DeepSeek Chan QQ community. Group number: ",
       "about.group.c":
         ". Search that number in QQ to join — whether you want to chat about images, nudge for updates, report bugs, or just come look at the fish, you're welcome.",
 
@@ -419,11 +419,11 @@
       "v2.search": "Search",
       "v2.keyword": "Keyword",
       "v2.entries": "Site links",
-      "v2.cta.title": "Join “AAAA肥鱼批发市场”",
+      "v2.cta.title": "Join the DeepSeek Chan community",
       "v2.ev.alt": "The whale girl holding a Happy National Day sticker",
       "v2.ev.kicker": "Happy National Day 🐳",
       "v2.ev.title": "Site Front-End Design Contest",
-      "v2.ev.text": "Design a new look for the 蓝色大肥鱼.com website. Any AI, any tool, any stack — hand-code it or just ask an AI.",
+      "v2.ev.text": "Design a new look for the DeepSeek Chan website. Any AI, any tool, any stack — hand-code it or just ask an AI.",
       "v2.ev.deadline": "Deadline",
       "v2.ev.deadlineV": "Oct 26 (Mon) 23:59, UTC+8",
       "v2.ev.prize": "Prizes",
@@ -438,10 +438,10 @@
       "v2.sort": "Sort",
       "v2.sort.latest": "Newest",
       "v2.sort.random": "Random",
-      "v2.type.meme": "Meme",
-      "v2.type.illustration": "Illustration",
-      "v2.type.setting": "Character sheet",
-      "v2.type.comic": "Comic",
+      "v2.type.meme": "Reaction images",
+      "v2.type.illustration": "Fan art",
+      "v2.type.setting": "Character designs",
+      "v2.type.comic": "Comics",
       "v2.typeSub.meme": "Sticker jokes and chat images · {count} works",
       "v2.typeSub.illustration": "Fully composed artwork · {count} works",
       "v2.typeSub.setting": "Standing art, turnarounds and design sheets · {count} works",
@@ -468,7 +468,7 @@
       "ev.cta.gallery": "Submission gallery",
       "ev.cta.group": "Chat in the group",
       "ev.h.what": "What to make",
-      "ev.what1": "Design a new look for the 蓝色大肥鱼.com website. Home, the works feed, character pages — anything goes. One page is fine; redoing the whole site is fine too.",
+      "ev.what1": "Design a new look for the DeepSeek Chan website. Home, the works feed, character pages — anything goes. One page is fine; redoing the whole site is fine too.",
       "ev.what2": "Style is completely up to you. The current “grid paper + hand-drawn ink” look is just what we have now: cyber, pixel, magazine, watercolor, minimal, retro game… the more styles the better, as long as it serves the site’s purpose (browsing, finding and downloading AI-girl fan art).",
       "ev.what3": "The event repo has a starter kit: the site’s works and character data, the current palette, and a few prompts you can hand straight to an AI. The kit and example only show how things work — no need to copy them.",
       "ev.h.how": "How to join",
@@ -511,8 +511,8 @@
       "ev.tip3": "Anything the rules don’t cover is up to the site owner.",
       "ev.bye": "Happy National Day, have fun 🐳 · ",
       "ev.byeGroup": "QQ group",
-      "page.event.title": "National Day Site Front-End Design Contest · 蓝色大肥鱼",
-      "page.event.desc": "Design a new look for 蓝色大肥鱼.com: any AI, any tool, any stack — submit a static page that runs. Deadline Oct 26; ¥88 adopted prize and ¥66 popular prize in DeepSeek API credit.",
+      "page.event.title": "National Day Site Front-End Design Contest · DeepSeek Chan",
+      "page.event.desc": "Design a new look for DeepSeek Chan: any AI, any tool, any stack — submit a static page that runs. Deadline Oct 26; ¥88 adopted prize and ¥66 popular prize in DeepSeek API credit.",
       "v2.cm.elsewhere": "Find me elsewhere",
       "v2.cm.bili": "Bilibili",
       "v2.cm.x": "X (Twitter)",
@@ -551,12 +551,12 @@
       "v2.origin.issue": "GitHub Issue submission",
       "v2.origin.qq": "QQ group submission",
       "v2.origin.site": "On-site submission",
-      "v2.homeTitle": "蓝色大肥鱼 - AI-Girl Fan Art Gallery",
-      "page.characters.title": "AI-Girl Characters - Browse Fan Art by Character | 蓝色大肥鱼",
-      "page.characters.desc": "Browse AI-girl fan art by character: DeepSeek, Claude, GPT, Qwen, GLM and more.",
-      "page.community.title": "Join the Community · AAAA肥鱼批发市场 | 蓝色大肥鱼",
-      "page.community.desc": "The 蓝色大肥鱼 QQ group “AAAA肥鱼批发市场”: chat about art, submit work and join events.",
-      "page.search.title": "Search AI-Girl Fan Art | 蓝色大肥鱼",
+      "v2.homeTitle": "DeepSeek Chan - AI-Girl Fan Art Gallery",
+      "page.characters.title": "AI-Girl Characters - Browse Fan Art by Character | DeepSeek Chan",
+      "page.characters.desc": "Browse AI-girl fan art by character: DeepSeek Chan, Claude Chan, GPT Chan, Qwen Chan, GLM Chan and more.",
+      "page.community.title": "Join the Community | DeepSeek Chan",
+      "page.community.desc": "Join the DeepSeek Chan QQ community to share fan art, submit work and take part in events.",
+      "page.search.title": "Search AI-Girl Fan Art | DeepSeek Chan",
       "page.search.desc": "Search AI-girl fan art by title, character, alias or tag."
     },
 
@@ -564,15 +564,15 @@
       "v2.licenseShort.unknown": "許諾不明",
       "v2.licenseShort.author-permission": "作者許諾",
       "v2.licenseShort.submitter-permission": "投稿許諾",
-      "page.work.title": "{name} - {character} {kindId} | 蓝色大肥鱼",
+      "page.work.title": "{name} - {character} {kindId} | DeepSeek Chan",
       "page.work.desc": "{character}の{kindId}「{name}」。クレジットと画像の利用許諾を確認し、大きな画像を表示、原図をダウンロード、作品についてコメントできます。",
-      "page.characterDetail.title": "{name}のスタンプと二次創作 | 蓝色大肥鱼",
+      "page.characterDetail.title": "{name}のスタンプと二次創作 | DeepSeek Chan",
       "page.characterDetail.desc": "{name}のAI娘二次創作を{count}件収録。画像、出所と利用許諾を確認し、原図をダウンロードできます。",
-      "page.categoryDetail.title": "{name}の作品 | 蓝色大肥鱼",
+      "page.categoryDetail.title": "{name}の作品 | DeepSeek Chan",
       "page.categoryDetail.desc": "{name}に分類されたAI娘二次創作を{count}件収録。大きな画像、出所と利用許諾を確認できます。",
-      "page.topicDetail.title": "{name}の特集 | 蓝色大肥鱼",
+      "page.topicDetail.title": "{name}の特集 | DeepSeek Chan",
       "page.topicDetail.desc": "AI娘二次創作{count}件の手選び特集「{name}」。",
-      "work.imageCreditText": "{credit}蓝色大肥鱼（アーカイブ）",
+      "work.imageCreditText": "{credit}DeepSeek Chan（アーカイブ）",
       "work.copyright.cc0": "CC0パブリックドメインとして記録。作品の利用許諾の備考を確認してください。",
       "work.copyright.named": "画像の著作権は原作者{creator}に帰属します。",
       "work.copyright.unknown": "画像の著作権は原作者に帰属します。原作者は未記載です。",
@@ -594,7 +594,7 @@
       "nav.about": "About",
       "nav.projects": "プロジェクト",
       "nav.topics": "特集",
-      "page.topics.title": "AI娘スタンプ特集 - 管理人セレクトの連載・テーマ集 | 蓝色大肥鱼",
+      "page.topics.title": "AI娘スタンプ特集 - 管理人セレクトの連載・テーマ集 | DeepSeek Chan",
       "page.topics.desc": "管理人が選んだAI娘スタンプの特集。同じ連載・同じネタの作品をまとめて続けて見られ、高解像度表示と原画ダウンロードもできます。",
       "topics.h1": "特集",
       "topics.lede.a": "管理人セレクト：同じネタ、同じ連載をひと束にまとめて",
@@ -650,26 +650,26 @@
       "qq.qrAlt": "QQグループ「AAAA肥鱼批发市场」（グループ番号 1003728058）への参加用QRコード",
       "alt.work": "《{name}》{character}{kindId}、AI娘二次創作画像",
 
-      "page.index.title": "蓝色大肥鱼 - AI娘スタンプ・DeepSeek娘ネタ画・二次創作イラスト集",
+      "page.index.title": "DeepSeek Chan - AI娘スタンプ・DeepSeek娘ネタ画・二次創作イラスト集",
       "page.index.desc":
-        "蓝色大肥魚は DeepSeek娘・Claude娘・Qwen娘・GLM娘 などの AI娘スタンプ・ネタ画・イラスト・設定画・多コマ漫画を収録。キャラ別の分類、タグ検索、高解像度表示、原図ダウンロードに対応しています。",
-      "page.category.title": "AI娘スタンプのカタログ - キャラ別にネタ画・イラスト・設定画・漫画を閲覧 | 蓝色大肥鱼",
+        "DeepSeek Chanは DeepSeek娘・Claude娘・Qwen娘・GLM娘 などの AI娘スタンプ・ネタ画・イラスト・設定画・多コマ漫画を収録。キャラ別の分類、タグ検索、高解像度表示、原図ダウンロードに対応しています。",
+      "page.category.title": "AI娘スタンプのカタログ - キャラ別にネタ画・イラスト・設定画・漫画を閲覧 | DeepSeek Chan",
       "page.category.desc":
         "DeepSeek娘・Claude娘・Qwen娘・GLM娘 などのキャラ別に、AI娘のネタ画・スタンプ・ファンアート・設定画・多コマ漫画を閲覧。カテゴリ内で名前やタグを検索できます。",
-      "page.submit.title": "AI娘スタンプの投稿 - サイト内フォームと GitHub | 蓝色大肥鱼",
+      "page.submit.title": "AI娘スタンプの投稿 - サイト内フォームと GitHub | DeepSeek Chan",
       "page.submit.desc":
         "AI娘スタンプの投稿は、画像のアップロードと画像名・キャラの記入だけ。ひとこと説明は任意です。サイト内フォームでも GitHub フォームでも投稿でき、承認後にまとめて公開されます。タグ・出所・ライセンス・分類はメンテナーが審査時に補完します。",
-      "page.about.title": "蓝色大肥鱼について - AI娘スタンプのオープンアーカイブと著作権について",
+      "page.about.title": "DeepSeek Chanについて - AI娘スタンプのオープンアーカイブと著作権について",
       "page.about.desc":
-        "AI娘スタンプアーカイブ「蓝色大肥魚」の概要、画像の著作権とライセンス、Google Analytics のプライバシー、コメントの仕組み、公式 QQ グループ、キャラデザのクレジット、署名・削除の申請方法。",
-      "page.projects.title": "プロジェクト紹介 - 管理人の他のプロジェクトとサイト | 蓝色大肥鱼",
-      "page.projects.desc": "蓝色大肥魚の管理人による他のプロジェクト・サイトの紹介ページ。カードは準備中です。",
-      "page.changelog.title": "更新履歴 - 蓝色大肥鱼のサイト改修と収録記録",
+        "AI娘スタンプアーカイブ「DeepSeek Chan」の概要、画像の著作権とライセンス、Google Analytics のプライバシー、コメントの仕組み、公式 QQ グループ、キャラデザのクレジット、署名・削除の申請方法。",
+      "page.projects.title": "プロジェクト紹介 - 管理人の他のプロジェクトとサイト | DeepSeek Chan",
+      "page.projects.desc": "DeepSeek Chanの管理人による他のプロジェクト・サイトの紹介ページ。カードは準備中です。",
+      "page.changelog.title": "更新履歴 - DeepSeek Chanのサイト改修と収録記録",
       "page.changelog.desc":
-        "AI娘スタンプサイト「蓝色大肥魚」の改版・データ移行・作品収録・SEO・パフォーマンス改善の記録。",
-      "page.notfound.title": "404 - ページが迷子になりました | 蓝色大肥鱼",
+        "AI娘スタンプサイト「DeepSeek Chan」の改版・データ移行・作品収録・SEO・パフォーマンス改善の記録。",
+      "page.notfound.title": "404 - ページが迷子になりました | DeepSeek Chan",
       "page.notfound.desc":
-        "蓝色大肥魚の 404 ページ。このアドレスにはコンテンツがありません。リンクの打ち間違い・削除済み・旧アドレスの可能性があります。ホームに戻るか、カテゴリから探してください。",
+        "DeepSeek Chanの 404 ページ。このアドレスにはコンテンツがありません。リンクの打ち間違い・削除済み・旧アドレスの可能性があります。ホームに戻るか、カテゴリから探してください。",
 
       "index.hero.lede":
         "AI娘の二次創作スタンプを収集・ダウンロード。キャラ別にアーカイブし、タグで検索できます。",
@@ -790,11 +790,11 @@
       "submit.note2":
         "投稿はすぐには公開されません。メンテナーが画像を確認してタグ・分類・出所・ライセンスを補完し、承認後にまとめて公開します。その間に確認のご連絡をすることがあります。",
 
-      "about.h1": "About",
+      "about.h1": "このサイトについて",
       "about.lede":
-        "「蓝色大肥鱼」は非公式のファン整理プロジェクトです。何をしているサイトか、画像の権利は誰にあるか、どんなデータを収集しないかを説明します。",
+        "「DeepSeek Chan」は非公式のファン整理プロジェクトです。何をしているサイトか、画像の権利は誰にあるか、どんなデータを収集しないかを説明します。",
       "about.site.title": "このサイトについて",
-      "about.site.p1a": "「蓝色大肥鱼」は",
+      "about.site.p1a": "「DeepSeek Chan」は",
       "about.site.p1b": "AI娘の二次創作スタンプ",
       "about.site.p1c":
         "のオープンアーカイブです。作品はキャラ別にアーカイブされ、名前・タグ・別名で検索できます。各作品に詳細ページがあり、出所とライセンスの確認、原図のダウンロード、独立したコメント欄を備えています。更新履歴はフッターから。",
@@ -948,7 +948,7 @@
       "v2.ev.alt": "「国慶節おめでとう」のスタンプを持つクジラ娘",
       "v2.ev.kicker": "国慶節おめでとう 🐳",
       "v2.ev.title": "サイトのフロントデザイン募集",
-      "v2.ev.text": "サイト「蓝色大肥鱼.com」の新しいデザインを募集します。AI・ツール・技術スタックは自由。手作りでも AI 任せでも OK。",
+      "v2.ev.text": "サイト「DeepSeek Chan」の新しいデザインを募集します。AI・ツール・技術スタックは自由。手作りでも AI 任せでも OK。",
       "v2.ev.deadline": "締切",
       "v2.ev.deadlineV": "10月26日（月）23:59（北京時間）",
       "v2.ev.prize": "賞",
@@ -963,7 +963,7 @@
       "v2.sort": "並び替え",
       "v2.sort.latest": "新着",
       "v2.sort.random": "ランダム",
-      "v2.type.meme": "ミーム",
+      "v2.type.meme": "ネタ画像",
       "v2.type.illustration": "イラスト",
       "v2.type.setting": "設定画",
       "v2.type.comic": "漫画",
@@ -993,7 +993,7 @@
       "ev.cta.gallery": "投稿ギャラリー",
       "ev.cta.group": "グループで話す",
       "ev.h.what": "作るもの",
-      "ev.what1": "サイト「蓝色大肥鱼.com」の新しいデザインを作ってください。トップ、作品一覧、キャラページなど何でも OK。1 ページだけでも、サイト全体を作り直しても構いません。",
+      "ev.what1": "サイト「DeepSeek Chan」の新しいデザインを作ってください。トップ、作品一覧、キャラページなど何でも OK。1 ページだけでも、サイト全体を作り直しても構いません。",
       "ev.what2": "スタイルは完全に自由です。今の「方眼紙 + 手描きの線」はあくまで現状。サイバー、ピクセル、雑誌風、水彩、ミニマル、レトロゲーム……いろいろなスタイル大歓迎。サイトの用途（AI娘の二次創作を見て、探して、ダウンロードできること）に合っていれば OK です。",
       "ev.what3": "イベントリポジトリにはスターターキットがあります：作品とキャラのデータ、今の配色、そのまま AI に渡せるプロンプト。キットとサンプルは書き方の参考なので、真似する必要はありません。",
       "ev.h.how": "参加方法",
@@ -1036,8 +1036,8 @@
       "ev.tip3": "ルールにないことはサイト管理人が判断します。",
       "ev.bye": "国慶節おめでとう、楽しんで 🐳 · ",
       "ev.byeGroup": "QQ グループ",
-      "page.event.title": "国慶節・サイトのフロントデザイン募集 · 蓝色大肥鱼",
-      "page.event.desc": "蓝色大肥鱼.com の新しいデザインを募集。AI・ツール・技術スタックは自由、動く静的ページを提出するだけ。10月26日締切、採用賞 88 元・人気賞 66 元（DeepSeek API クレジット）。",
+      "page.event.title": "国慶節・サイトのフロントデザイン募集 · DeepSeek Chan",
+      "page.event.desc": "DeepSeek Chan の新しいデザインを募集。AI・ツール・技術スタックは自由、動く静的ページを提出するだけ。10月26日締切、採用賞 88 元・人気賞 66 元（DeepSeek API クレジット）。",
       "v2.cm.elsewhere": "ほかの場所でも",
       "v2.cm.bili": "bilibili",
       "v2.cm.x": "X（Twitter）",
@@ -1076,12 +1076,12 @@
       "v2.origin.issue": "GitHub Issue からの投稿",
       "v2.origin.qq": "QQ グループからの投稿",
       "v2.origin.site": "サイト内フォームからの投稿",
-      "v2.homeTitle": "蓝色大肥鱼 - AI娘二次創作ギャラリー",
-      "page.characters.title": "AI娘キャラ一覧 - キャラ別に二次創作を見る | 蓝色大肥鱼",
+      "v2.homeTitle": "DeepSeek Chan - AI娘二次創作ギャラリー",
+      "page.characters.title": "AI娘キャラ一覧 - キャラ別に二次創作を見る | DeepSeek Chan",
       "page.characters.desc": "DeepSeek娘、Claude娘、GPT娘、Qwen娘、GLM娘などキャラ別に AI娘の二次創作を見られます。",
-      "page.community.title": "コミュニティに参加・AAAA肥鱼批发市场 | 蓝色大肥鱼",
-      "page.community.desc": "蓝色大肥鱼の QQ グループ「AAAA肥鱼批发市场」。作品の話、投稿、イベント参加など。",
-      "page.search.title": "AI娘二次創作を検索 | 蓝色大肥鱼",
+      "page.community.title": "コミュニティに参加・AAAA肥鱼批发市场 | DeepSeek Chan",
+      "page.community.desc": "DeepSeek Chanの QQ グループ「AAAA肥鱼批发市场」。作品の話、投稿、イベント参加など。",
+      "page.search.title": "AI娘二次創作を検索 | DeepSeek Chan",
       "page.search.desc": "作品名・キャラ・別名・タグで AI娘の二次創作を検索できます。"
     }
   };
@@ -1158,6 +1158,54 @@
   }
 
   // ---------- 取词 ----------
+  // 英文角色名与站名共用一套规则；原始档案、链接和其他语言保留原文。
+  var englishNames = {
+    '蓝色大肥鱼': 'DeepSeek Chan', '藍色大肥魚': 'DeepSeek Chan', 'Blue Fish': 'DeepSeek Chan',
+    'DeepSeek娘': 'DeepSeek Chan', '鲸娘': 'DeepSeek Chan', '鯨娘': 'DeepSeek Chan', '鲸鱼娘': 'DeepSeek Chan', '鯨魚娘': 'DeepSeek Chan',
+    '豆包娘': 'Doubao Chan', 'Kimi娘': 'Kimi Chan',
+    '通义千问娘': 'Qwen Chan', '通義千問娘': 'Qwen Chan', '千问娘': 'Qwen Chan', '千問娘': 'Qwen Chan', 'Qwen娘': 'Qwen Chan',
+    'Claude娘': 'Claude Chan', 'Gemini娘': 'Gemini Chan', 'Grok娘': 'Grok Chan',
+    'Stepfun娘': 'StepFun Chan', 'StepFun娘': 'StepFun Chan', '阶跃星辰娘': 'StepFun Chan',
+    'GLM娘': 'GLM Chan', 'GPT娘': 'GPT Chan', 'ChatGPT娘': 'GPT Chan', 'MiMo娘': 'MiMo Chan'
+  };
+  var englishNameLookup = {};
+  Object.keys(englishNames).forEach(function (name) { englishNameLookup[name.toLowerCase()] = englishNames[name]; });
+  var englishNamePattern = new RegExp(Object.keys(englishNames).sort(function (a, b) { return b.length - a.length; }).map(function (name) { return name.replace(/娘$/, '\\s*娘'); }).join('|'), 'gi');
+  function translateNames(text) {
+    var value = String(text == null ? '' : text);
+    if (current !== 'en' && current !== 'ja') return value;
+    return value.replace(englishNamePattern, function (name, offset, original) {
+      if (/^\.[a-z]{2,}\b/i.test(original.slice(offset + name.length))) return name;
+      var target = englishNameLookup[name.replace(/\s+娘$/, '娘').toLowerCase()];
+      return current === 'ja' && !/^(?:蓝色大肥鱼|藍色大肥魚|Blue Fish)$/i.test(name) ? target.replace(/ Chan$/, 'ちゃん') : target;
+    })
+      .replace(/\b(DeepSeek|Doubao|Kimi|Qwen|Claude|Gemini|Grok|StepFun|GLM|GPT|ChatGPT|MiMo)[ -]chan\b/gi, function (whole, name) {
+        if(current === 'ja' && whole === 'DeepSeek Chan') return whole;
+        var canonical = Object.values(englishNames).find(function (value) { return value.toLowerCase() === name.toLowerCase() + ' chan'; });
+        return current === 'ja' ? (canonical || name + ' Chan').replace(/ Chan$/, 'ちゃん') : (canonical || name + ' Chan');
+      });
+  }
+
+  function contentText(text) {
+    var value = String(text == null ? '' : text);
+    if (current === 'zh-Hant') return traditional(value);
+    if (current !== 'en' && current !== 'ja') return value;
+    var n=0, key=value.trim().replace(/\d+(?:[.,]\d+)*/g,function(){return '{n'+n+++'}';});
+    var entry=window.ArchiveCopy && window.ArchiveCopy.texts && window.ArchiveCopy.texts[key];
+    var numbers=value.match(/\d+(?:[.,]\d+)*/g)||[];
+    return entry && entry[current] ? entry[current].replace(/\{n(\d+)\}/g,function(_,i){return numbers[i]||'';}) : translateNames(value);
+  }
+  function characterName(id, fallback) {
+    var entry=window.ArchiveCopy && window.ArchiveCopy.characters && window.ArchiveCopy.characters[id];
+    return entry && entry[current] ? entry[current] : contentText(fallback);
+  }
+  function localWork(work) {
+    var entry=work.i18n && work.i18n[current];
+    if (entry) return Object.assign({},work,{n:entry.name,d:entry.description,cm:entry.commentary,c:characterName(work.cid,work.c),tg:entry.tags,sourceTags:work.tg,ln:entry.licenseNote});
+    if (current === 'zh-Hant') return Object.assign({},work,{n:traditional(work.n),d:traditional(work.d),cm:traditional(work.cm),c:traditional(work.c),tg:work.tg.map(traditional),sourceTags:work.tg});
+    return work;
+  }
+
   function interpolate(text, params) {
     if (!params) return String(text);
     return String(text).replace(/\{(\w+)\}/g, function (whole, name) {
@@ -1167,7 +1215,8 @@
       }
       if (params[name] === undefined) return whole;
       var value = String(params[name]);
-      return current === 'zh-Hant' ? traditional(value) : value;
+      if (current === 'zh-Hant') return traditional(value);
+      return ['creator', 'credit', 'author'].includes(name) ? value : contentText(value);
     });
   }
 
@@ -1179,9 +1228,9 @@
     }
     if (current !== "zh") {
       var table = DICT[current];
-      if (table && Object.prototype.hasOwnProperty.call(table, key)) return table[key];
+      if (table && Object.prototype.hasOwnProperty.call(table, key)) return translateNames(table[key]);
     }
-    return fallback;
+    return contentText(fallback);
   }
 
   function fmt(key, fallback, params) {
@@ -1206,7 +1255,7 @@
       try { vars = JSON.parse(rawVars); } catch (err) { vars = null; }
     }
     if (tplKey) {
-      el.textContent = current === "zh" ? original.text : interpolate(lookup(tplKey, original.text), vars);
+      el.textContent = current === "zh" ? original.text : fmt(tplKey, original.text, vars);
     } else if (plainKey) {
       el.textContent = current === "zh" ? original.text : lookup(plainKey, original.text);
     }
@@ -1224,7 +1273,7 @@
           el.setAttribute(attr, original.attrs[attr] == null ? "" : original.attrs[attr]);
         } else {
           var fallback = original.attrs[attr] == null ? "" : original.attrs[attr];
-          el.setAttribute(attr, interpolate(lookup(key, fallback), vars));
+          el.setAttribute(attr, fmt(key, fallback, vars));
         }
       });
     }
@@ -1255,10 +1304,10 @@
     var table = DICT[current] || {};
     var title = table["page." + page + ".title"];
     var description = table["page." + page + ".desc"];
-    if (title) document.title = title;
-    setMeta('meta[name="description"]', description);
-    setMeta('meta[property="og:title"]', title);
-    setMeta('meta[property="og:description"]', description);
+    if (title) document.title = translateNames(title);
+    setMeta('meta[name="description"]', translateNames(description));
+    setMeta('meta[property="og:title"]', translateNames(title));
+    setMeta('meta[property="og:description"]', translateNames(description));
   }
 
   function setMeta(selector, value) {
@@ -1393,6 +1442,10 @@
     get current() { return current; },
     t: fmt,
     fmt: fmt,
+    translateNames: translateNames,
+    contentText: contentText,
+    characterName: characterName,
+    localWork: localWork,
     setLang: setLang,
     mountMenus: injectSwitcher,
     languageUrl: languageUrl,

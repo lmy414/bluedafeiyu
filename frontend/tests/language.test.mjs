@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
 import { Converter } from 'opencc-js/cn2t';
+import { renderWorkCard } from '../public/archive/work-card.js';
 
 const source = fs.readFileSync(new URL('../public/lang.js', import.meta.url), 'utf8');
 const converter = Converter({ from: 'cn', to: 'twp' });
@@ -95,6 +96,42 @@ test('按需加载繁体，静态属性、动态变量转换且简英繁往返�
   assert.equal(page.input.getAttribute('placeholder'), '搜索作品、角色、别名或 Tag');
   assert.equal(page.scripts.length, 1);
 });
+test('英文统一站名和所有 AI 娘的 Chan 名称，模板变量和动态卡片同样生效', async () => {
+  const page = boot({ baked: 'en', pathname: '/en/browse.html' });
+  const expected = {
+    deepseek: 'DeepSeek Chan', doubao: 'Doubao Chan', kimi: 'Kimi Chan', qwen: 'Qwen Chan',
+    claude: 'Claude Chan', gemini: 'Gemini Chan', grok: 'Grok Chan', stepfun: 'StepFun Chan',
+    glm: 'GLM Chan', gpt: 'GPT Chan', mimo: 'MiMo Chan'
+  };
+  const characters = JSON.parse(fs.readFileSync(new URL('../../data/characters.json', import.meta.url), 'utf8'));
+  for (const character of characters.filter(c => c.name.endsWith('娘'))) {
+    assert.ok(expected[character.id], character.id + ' needs an English name');
+    assert.equal(page.api.translateNames(character.name), expected[character.id]);
+    assert.equal(page.api.fmt('char.' + character.id, character.name), expected[character.id]);
+  }
+  assert.equal(page.api.translateNames('蓝色大肥鱼 / Blue Fish / DeepSeek-chan'), 'DeepSeek Chan / DeepSeek Chan / DeepSeek Chan');
+  assert.equal(page.api.translateNames('DeepSeek 娘 / Claude 娘 / 通义千问 娘'), 'DeepSeek Chan / Claude Chan / Qwen Chan');
+  assert.equal(page.api.translateNames('deepseek娘 / STEPFUN 娘 / blue fish'), 'DeepSeek Chan / StepFun Chan / DeepSeek Chan');
+  assert.equal(page.api.translateNames('蓝色大肥鱼.com / DeepSeek娘.png'), '蓝色大肥鱼.com / DeepSeek娘.png');
+  assert.equal(page.api.fmt('page.work.title', '', { name: 'DeepSeek娘与Claude娘', character: 'DeepSeek娘', kindId: 'meme' }), 'DeepSeek Chan与Claude Chan - DeepSeek Chan Reaction image | DeepSeek Chan');
+  assert.equal(page.api.translateNames('DeepSeek API / OpenAI / Claude'), 'DeepSeek API / OpenAI / Claude');
+  assert.equal(page.api.fmt('work.copyright.named', '', { creator: '蓝色大肥鱼' }), 'Image copyright belongs to the original author 蓝色大肥鱼.');
+  const work = { slug: 'frozen-slug', id: 'frozen-id', cid: 'deepseek', c: 'DeepSeek娘', n: '蓝色大肥鱼与Kimi娘', d: 'DeepSeek娘', k: ['meme'], i: '/image.webp', col: '#123', dt: '2026.10.06' };
+  const card = renderWorkCard(work, { url: page.api.url, translate: page.api.fmt, names: page.api.translateNames });
+  assert.match(card, /DeepSeek Chan与Kimi Chan/);
+  assert.match(card, /alt="DeepSeek Chan"/);
+  assert.match(card, /href="\/en\/characters\/deepseek.html"/);
+  assert.doesNotMatch(card, /DeepSeek娘|蓝色大肥鱼/);
+  assert.equal(work.c, 'DeepSeek娘');
+  const japanese=boot({baked:'ja'});
+  assert.equal(japanese.api.translateNames('蓝色大肥鱼 / DeepSeek娘 / 通义千问娘'), 'DeepSeek Chan / DeepSeekちゃん / Qwenちゃん');
+  assert.equal(japanese.api.translateNames('DeepSeek Chan'), 'DeepSeek Chan');
+  for (const language of ['zh']) {
+    const other = boot({ baked: language });
+    assert.equal(other.api.translateNames('蓝色大肥鱼 / DeepSeek娘 / 通义千问娘'), '蓝色大肥鱼 / DeepSeek娘 / 通义千问娘');
+  }
+});
+
 test('转换资源失败可重试，迟到的加载不会覆盖新的语言选择', async () => {
   const page = boot(); const failed = page.api.setLang('zh-Hant'); page.scripts.at(-1).onerror(); await failed;
   assert.equal(page.api.current, 'zh'); assert.equal(page.storage.has('bluedafeiyu-lang'), false);

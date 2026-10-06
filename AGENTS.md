@@ -17,7 +17,7 @@
 
 本仓库**不跟踪任何图片**（`*.png`/`*.jpg`/`*.gif`/`*.webp`/`*.ico` 等一律忽略），但**跟踪结构化数据**：角色、分类、投稿清单、id 冻结映射与首批编辑叠加层都在仓库根的 `data/`。构建时 `data/` 由 `tools/stage_data.mjs` 暂存成 `dist/` 下的产物路径，图片则由 `tools/sync_content.mjs` 从内容仓库同步。**构建不读内容仓库的任何 JSON 或脚本。**
 
-`data/` 八个文件与产物的对应关系（`tools/stage_data.mjs` 里写死）：
+`data/` 的构建暂存映射（`tools/stage_data.mjs` 里写死）：
 
 | `data/` | 产物路径 |
 |---|---|
@@ -29,6 +29,7 @@
 | `topics.json` | `dist/topics.json`（专题：**站长人工精选**的作品合集，不分类；快照里带成 `topics`，供 `topics.html` 与首页专题轮播用） |
 | `blue-fish-classification.json` | `dist/data/blue-fish-classification.json`（构建期读，不进产物） |
 | `blue-fish-editorial.json` | `dist/data/blue-fish-editorial.json`（构建期读，不进产物） |
+| `work-localizations.json` | `dist/data/work-localizations.json`（按作品 ID 和中文内容摘要合并英日译文） |
 
 专题收录的作品由站长人工精选，**不要自动把作品批量归进专题**；专题元数据可由 owner/bot 经后台 upsert 接口创建或更新，本仓库不预置具体专题记录。每条字段：`id`（kebab-case，发布后冻结，用于 `topics/<id>.html`；旧 hash 链接仍可用）、`name`、`summary`、`coverWorkId`、`status`（`active` 才上线）、`order`（升序）、`createdAt`/`updatedAt`、`workIds`（显式收录的作品 id，按此顺序展示）。构建时下架或不存在的 `workIds` 会被跳过并警告，封面失效退回首张，收录清空的专题不上线。
 
@@ -64,6 +65,8 @@ python -m http.server 5173 -d .build/site
 作品详情正文来自 `data/works.json` 或 `data/owner-picks.json` 的 `commentary`，SEO 文案公式在 `frontend/src/lib/seo.mjs`。四类分类由 `data/categories.json` 自动生成 `/categories/<id>.html`；专题由 `data/topics.json` 自动生成 `/topics/<id>.html`，每个专题需有有效作品。旧的 `/category.html` 与 `/topics.html` 仍保留。
 
 界面支持简体中文（`zh`，默认）、繁体中文（`zh-Hant`）、英语（`en`）和日语（`ja`）。简体保留原 URL，其他语言使用 `/zh-hant/`、`/en/` 和 `/ja/` 前缀。`frontend/scripts/localize-pages.mjs` 在 Astro 构建后复用 `frontend/public/lang.js` 生成各语言静态 HTML、canonical、hreflang 和 sitemap。语言菜单跳转到当前页面的对应版本，地址固定页面语言，不受浏览器偏好影响。动态链接用 `SiteLang.url()` 保持当前语言；图片、脚本和数据共用根目录资源。繁体动态文案按需加载站内 OpenCC，特殊用词在 `traditionalOverrides` 中维护。动态文案改动后要检查繁体转换和英、日词典。`frontend/public/page-styles/`、`page-scripts/` 管页内特有代码；公共布局与可复用结构在 `frontend/src/layouts/`、`components/`。后台 `admin/` 独立运行，不参与公开前端。
+
+英日详情页必须有真实译文。存量译文在 `data/work-localizations.json`，新内容从后台的 `i18n` 导出；中文修改后必须重新生成译文。公共文案由 Astro 直接读取 `data/site-copy-localizations.json`，命名与维护规则见 `docs/多语言内容维护.md`。发布前运行 `node tools/localization/audit-pages.mjs <构建目录>` 检查正文及结构化数据。
 
 首批（blue-fish）记录的归一有两条容易踩的线：`build_site_snapshot.mjs` **先合并 `data/blue-fish-editorial.json` 叠加层，再判“够不够格当作品”**（名字 / 标签 / 角色三者齐全）。顺序反了，那 59 条补过名字的记录会重新掉线；叠加层里带 `originalPath` 的记录原图走内容仓（`lmy414/ai-girl-stickers`）的 Raw，没带的仍指上游档案馆。
 

@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import {applyNativeContent} from './native-content.mjs';
 import path from 'node:path';
 import vm from 'node:vm';
 import { parseHTML } from 'linkedom';
@@ -35,8 +36,9 @@ function pageMeta(document, api, base, snapshot) {
     if (work) {
       const character = snapshot.characters.find(c => c.id === work.characterId)?.name || work.characterId;
       const kindId = work.categoryIds?.[0] || 'meme';
-      title = api.fmt('page.work.title', '', { name: work.name, character, kindId });
-      desc = api.fmt('page.work.desc', '', { name: work.name, character, kindId });
+      const native=work.i18n?.[locale];
+      title = native ? native.seoTitle+' | DeepSeek Chan' : api.fmt('page.work.title', '', { name: work.name, character, kindId });
+      desc = native ? native.seoDescription : api.fmt('page.work.desc', '', { name: work.name, character, kindId });
     } else if (['characterDetail', 'categoryDetail', 'topicDetail'].includes(page)) {
       title = api.fmt('page.' + page + '.title', '', { name });
       desc = api.fmt('page.' + page + '.desc', '', { name, count });
@@ -67,6 +69,7 @@ export async function localizeHtml(html, base, locale, snapshot) {
   program.runInNewContext({ window, document, URL, URLSearchParams, WeakMap, Promise, CustomEvent: parsed.CustomEvent });
   await window.SiteLang.setLang(locale.id, false);
   const api = window.SiteLang;
+  applyNativeContent(document,api,base,snapshot);
   const { work, desc } = pageMeta(document, api, base, snapshot);
   const toPage = value => {
     if (!value || value.startsWith('#')) return value;
@@ -97,21 +100,32 @@ export async function localizeHtml(html, base, locale, snapshot) {
     const data = JSON.parse(script.textContent);
     function localizeSchema(value) {
       if (!value || typeof value !== 'object') return;
+      const entitySlug=String(value.url||value.item||'').match(/\/works\/([^/]+)\.html/)?.[1];
+      const entity=entitySlug && snapshot.works.find(w=>w.slug===entitySlug)?.i18n?.[locale.id];
+      if(entity && value.name) value.name=entity.name;
       for (const [key, child] of Object.entries(value)) {
         if (typeof child === 'string' && ['url','@id','item'].includes(key)) {
           const target = new URL(child, ORIGIN + base);
           if (target.origin === ORIGIN && (target.pathname.endsWith('.html') || target.pathname === '/')) value[key] = ORIGIN + toPage(child);
-        } else if (child && typeof child === 'object') localizeSchema(child);
+        } else if (typeof child === 'string' && ['name','description','headline','caption','alternateName','text','keywords'].includes(key)) {
+          value[key] = api.contentText(child);
+        } else if (child && typeof child === 'object' && !['creator','author','copyrightHolder'].includes(key)) localizeSchema(child);
       }
       if (value.inLanguage) value.inLanguage = locale.html;
     }
-    localizeSchema(data);
+    if (!(data['@type']==='FAQPage' && work?.i18n?.[locale.id])) localizeSchema(data);
+    if (locale.id !== 'zh' && ['WebSite','WebPage','CollectionPage'].includes(data['@type'])) {
+      data.name=document.title;
+      data.description=desc;
+    }
     if (data['@type'] === 'ImageObject') {
       data.url = ORIGIN + localizedPath(base, locale);
       data.license = ORIGIN + toPage(data.license);
       data.acquireLicensePage = ORIGIN + toPage(data.acquireLicensePage);
       if (locale.id !== 'zh') {
-        data.description = desc;
+        data.name = work?.i18n?.[locale.id]?.name || document.querySelector('main h1')?.textContent || data.name;
+        data.description = work?.i18n?.[locale.id]?.description || desc;
+        if(work?.i18n?.[locale.id]) data.keywords=work.i18n[locale.id].tags.join(', ');
         data.creditText = document.querySelector('[data-i18n-tpl="work.imageCreditText"]')?.textContent || data.creditText;
         data.copyrightNotice = document.querySelector('[data-copyright]')?.textContent || data.copyrightNotice;
         if (work) data.genre = api.fmt('kind.' + (work.categoryIds?.[0] || 'meme'), data.genre);
@@ -130,7 +144,9 @@ export async function localizeHtml(html, base, locale, snapshot) {
 }
 
 export async function buildLanguagePages(out, snapshot) {
-  program = new vm.Script(fs.readFileSync(path.join(out, 'archive-labels.js'), 'utf8') + '\n' + source, { filename: 'lang.js' });
+  const missing=snapshot.works.filter(w=>!w.i18n?.en||!w.i18n?.ja);
+  if(missing.length) throw new Error('Native English/Japanese work content missing or stale: '+missing.map(w=>w.id).join(', '));
+  program = new vm.Script(fs.readFileSync(path.join(out, 'archive-copy.js'), 'utf8')+'\n'+fs.readFileSync(path.join(out, 'archive-labels.js'), 'utf8') + '\n' + source, { filename: 'lang.js' });
   const files = [];
   function walk(dir) {
     for (const item of fs.readdirSync(dir, { withFileTypes: true })) {

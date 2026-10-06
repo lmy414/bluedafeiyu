@@ -53,7 +53,7 @@ export function installTopicDownloads({ load, tx, toast }) {
       if (session !== current) return;
       failures.replaceChildren();
       for (const work of result.failed) {
-        const li = document.createElement('li'); li.textContent = work.n; failures.append(li);
+        const li = document.createElement('li'); li.textContent = window.SiteLang ? window.SiteLang.localWork(work).n : work.n; failures.append(li);
       }
       failures.hidden = !result.failed.length;
       retry.hidden = !result.failed.length;
@@ -106,7 +106,7 @@ export function installTopicDownloads({ load, tx, toast }) {
       const [data, library] = await Promise.all([load(), import('/vendor/fflate/fflate-0.8.2.js')]);
       if (session !== current) return;
       Object.assign(current, topicMembers(data, opener.dataset.downloadTopic), { zip: library.zip });
-      dialog.querySelector('h2').textContent = current.topic.name + ' · ' + tx('d.zipTitle','专题原图打包');
+      dialog.querySelector('h2').textContent = (window.SiteLang ? window.SiteLang.contentText(current.topic.name) : current.topic.name) + ' · ' + tx('d.zipTitle','专题原图打包');
       await run(current);
     } catch {
       if (session === current) { status.textContent = tx('d.zipError','打包失败，请关闭后重试。'); current.busy = false; close.textContent = tx('d.zipClose','关闭'); }

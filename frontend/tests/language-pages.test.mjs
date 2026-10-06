@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { parseHTML, DOMParser } from 'linkedom';
-import { LOCALES, ORIGIN, localizedPath } from '../scripts/localize-pages.mjs';
+import { LOCALES, ORIGIN, localizedPath, localizeHtml, buildLanguagePages } from '../scripts/localize-pages.mjs';
 
 const root = path.resolve(import.meta.dirname, '../..');
 const out = process.env.SITE_OUT_DIR ? path.resolve(process.env.SITE_OUT_DIR) : path.join(root, '.build/site');
@@ -39,13 +39,13 @@ test('每个公开 HTML 的四种语言版本、canonical 和相互 hreflang 都
 });
 
 test('HTML 在执行 JS 前已翻译，导航与分页留在当前语言且资产共用根路径', () => {
-  const labels = ['关于', '關於', 'About', 'About'];
+  const labels = ['关于', '關於', 'About', 'このサイトについて'];
   for (const [i, locale] of LOCALES.entries()) {
     const document = read(localizedPath('/about.html', locale));
     assert.equal(document.querySelector('main h1').textContent, labels[i]);
     assert.equal(document.querySelector('.feed-search').getAttribute('action'), locale.prefix + '/search.html');
     assert.equal(document.querySelector('.top-submit').getAttribute('href'), locale.prefix + '/submit.html');
-    assert.equal(document.querySelector('script[src*="lang.js"]').getAttribute('src'), '/lang.js?v=15');
+    assert.equal(document.querySelector('script[src*="lang.js"]').getAttribute('src'), '/lang.js?v=17');
     assert.ok(document.querySelector('noscript details a[href="/ja/about.html"]'));
     const pagination = read(localizedPath('/page/2.html', locale));
     assert.ok(pagination.querySelector('[data-next]').getAttribute('data-next').startsWith(locale.prefix + '/page/'));
@@ -62,7 +62,13 @@ test('作品的冻结标识、作者、图片和评论串跨语言一致，许�
     for (const locale of LOCALES) {
       const document = read(localizedPath(base, locale));
       const data = JSON.parse(document.querySelector('script[type="application/ld+json"]').textContent);
-      assert.equal(data.name, original.name);
+      assert.equal(data.name, ['en','ja'].includes(locale.id) ? work.i18n[locale.id].name : original.name);
+      if (['en','ja'].includes(locale.id)) {
+        const native=work.i18n[locale.id];
+        assert.equal(document.querySelector('main h1').textContent,native.name,work.id+' '+locale.id);
+        assert.equal(data.keywords,native.tags.join(', '));
+        assert.deepEqual([...document.querySelectorAll('[data-work-faq] details')].map(el=>({question:el.querySelector('summary').textContent,answer:el.querySelector('div').textContent})),native.faq);
+      }
       assert.deepEqual(data.creator, original.creator);
       assert.equal(data.contentUrl, original.contentUrl);
       assert.equal(data.thumbnailUrl, original.thumbnailUrl);
@@ -72,9 +78,50 @@ test('作品的冻结标识、作者、图片和评论串跨语言一致，许�
       assert.equal(document.querySelector('[data-static-work]').getAttribute('data-comment-term'), 'sticker-' + work.id);
       assert.ok(!data.creditText.includes('{credit}'));
       assert.ok(!data.copyrightNotice.includes('{creator}'));
-      if (locale.id === 'en') assert.ok(data.description.startsWith('View '));
-      if (locale.id === 'ja') assert.ok(data.description.includes('ダウンロード'));
+      if (locale.id === 'en') {
+        assert.equal(data.description,work.i18n.en.description);
+        assert.equal(document.querySelector('meta[name="description"]').getAttribute('content'),work.i18n.en.seoDescription);
+        assert.equal(document.querySelector('[data-work-faq]').querySelectorAll('details').length,2);
+        assert.ok(data.creditText.endsWith('DeepSeek Chan (archive)'));
+        assert.doesNotMatch(document.querySelector('main h1').textContent, /(?:DeepSeek|Claude|GPT|GLM|Kimi|Gemini|Grok|MiMo|Stepfun|通义千问|豆包)\s*娘(?!\.[a-z])/i);
+      }
+      if (locale.id === 'ja') assert.equal(data.description,work.i18n.ja.description);
     }
+  }
+});
+
+test('新作品缺少真实英日内容时停止生成语言页面', async () => {
+  await assert.rejects(buildLanguagePages(out,{works:[{id:'untranslated',name:'新作品'}]}),/Native English\/Japanese work content missing or stale: untranslated/);
+});
+
+test('英文静态展示、SEO、结构化数据统一 Chan，保留 URL、标识和作者署名', async () => {
+  const html = '<html><head><title>蓝色大肥鱼</title><link rel="canonical" href="' + ORIGIN + '/works/frozen-slug.html"><meta name="description" content="DeepSeek娘作品"><meta property="og:site_name" content="蓝色大肥鱼"><meta property="og:url" content="' + ORIGIN + '/works/frozen-slug.html"><script>const original = "蓝色大肥鱼";</script><script type="application/ld+json">' + JSON.stringify({ '@type': 'ImageObject', name: 'DeepSeek娘与Claude娘', creator: { '@type': 'Person', name: '蓝色大肥鱼' }, contentUrl: 'https://example.test/DeepSeek娘.png', url: ORIGIN + '/works/frozen-slug.html', license: ORIGIN + '/about.html', acquireLicensePage: ORIGIN + '/about.html' }) + '</script></head><body><a href="/characters/deepseek.html">DeepSeek娘</a><main><h1>DeepSeek娘与Claude娘</h1><img alt="通义千问娘" src="/frozen.png"><button aria-label="DeepSeek娘">预览</button><option value="kimi">Kimi娘</option><dl class="work-facts"><dd>蓝色大肥鱼</dd></dl></main><footer>Blue Fish</footer></body></html>';
+  const english = LOCALES.find(locale => locale.id === 'en');
+  const doc = parseHTML(await localizeHtml(html, '/works/frozen-slug.html', english, { works: [{ slug: 'frozen-slug', name: 'DeepSeek娘与Claude娘', characterId: 'deepseek', categoryIds: ['meme'] }], characters: [{ id: 'deepseek', name: 'DeepSeek娘' }] })).document;
+  assert.equal(doc.querySelector('main h1').textContent, 'DeepSeek Chan与Claude Chan');
+  assert.equal(doc.querySelector('footer').textContent, 'DeepSeek Chan');
+  assert.equal(doc.querySelector('meta[property="og:site_name"]').getAttribute('content'), 'DeepSeek Chan');
+  assert.ok(doc.title.endsWith(' | DeepSeek Chan'));
+  assert.equal(doc.querySelector('a').getAttribute('href'), '/en/characters/deepseek.html');
+  assert.equal(doc.querySelector('option').getAttribute('value'), 'kimi');
+  assert.equal(doc.querySelector('option').textContent, 'Kimi Chan');
+  assert.equal(doc.querySelector('img').getAttribute('alt'), 'Qwen Chan');
+  assert.equal(doc.querySelector('button').getAttribute('aria-label'), 'DeepSeek Chan');
+  assert.equal(doc.querySelector('.work-facts dd').textContent, '蓝色大肥鱼');
+  assert.equal(doc.querySelector('script').textContent, 'const original = "蓝色大肥鱼";');
+  const data = JSON.parse(doc.querySelector('script[type="application/ld+json"]').textContent);
+  assert.equal(data.name, 'DeepSeek Chan与Claude Chan');
+  assert.equal(data.creator.name, '蓝色大肥鱼');
+  assert.equal(data.contentUrl, 'https://example.test/DeepSeek娘.png');
+});
+
+test('英文首页和所有角色页的品牌、角色名称在无 JS 时也使用 Chan', () => {
+  for (const base of ['/index.html', '/characters.html', ...snapshot.characters.filter(c => c.status === 'active' && snapshot.works.some(w => w.characterId === c.id)).map(c => '/characters/' + c.id + '.html')]) {
+    const doc = read('/en' + base);
+    assert.equal(doc.querySelector('meta[property="og:site_name"]').getAttribute('content'), 'DeepSeek Chan', base);
+    assert.match(doc.querySelector('.sidebar').textContent, /DeepSeek Chan/, base);
+    assert.doesNotMatch(doc.querySelector('.sidebar').textContent, /蓝色大肥鱼|Blue Fish/, base);
+    assert.doesNotMatch(doc.querySelector('main h1').textContent, /(?:DeepSeek|Claude|GPT|GLM|Kimi|Gemini|Grok|MiMo|Stepfun|通义千问|豆包)娘/, base);
   }
 });
 

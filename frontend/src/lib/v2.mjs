@@ -121,6 +121,7 @@ export const pageHref = (base, n) => (n === 1 ? base : base.replace(/(index)?\.h
 // 作品浮层数据（/works-v2.json）：字段名尽量短，控制体积
 export function overlayData() {
   return Object.fromEntries(works.map(w => [w.slug, {
+    i18n: Object.fromEntries(Object.entries(w.i18n || {}).filter(([lang])=>['en','ja'].includes(lang)).map(([lang,value])=>[lang,{...value,tags:w.tagsShown.map(t=>value.tags[w.tags.indexOf(t)])}])),
     n: w.name, c: w.char.name, cid: w.characterId, col: w.char.color, cs: w.char.soft, i: w.thumb, l: w.large, w: w.width, h: w.height,
     d: w.description || '', cm: w.commentary || '', o: w.originalUrl || w.path, f: String(w.format || '').toUpperCase(), s: fmtSize(w.fileSize), bytes: Number(w.fileSize) || 0,
     lk: w.lic, ls: LICENSE[w.lic][0], lt: LICENSE[w.lic][1], ln: w.license?.note || '', a: w.author, k: w.cats, ts: w.typeShort || '作品', tg: w.tagsShown,
