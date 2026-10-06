@@ -4,7 +4,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
-import { buildLanguagePages, languageSitemap, localizedPath, LOCALES } from './localize-pages.mjs';
+import { buildLanguagePages, languageSitemap, localizedPath, LOCALES, ORIGIN } from './localize-pages.mjs';
+import { readSitemapHistory, updateSitemapHistory } from './sitemap-history.mjs';
 
 const frontend = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const root = path.resolve(frontend, '..');
@@ -24,6 +25,7 @@ const rel = path.relative(root,out);
 const withinRepo = rel && !rel.startsWith('..') && !path.isAbsolute(rel);
 if(out===root || out===dist || out===frontend || out===astroOut || out===path.parse(out).root || out.split(path.sep).filter(Boolean).length<3)throw new Error(`Unsafe output path: ${out}`);
 if(withinRepo && (rel.split(path.sep)[0]!=='.build')) throw new Error(`Output inside source repository must be under .build: ${out}`);
+const previousSitemap = readSitemapHistory(path.resolve(process.env.SITE_PREVIOUS_DIR || out), { origin: ORIGIN });
 const run = (script, args = [], cwd = root) => {
   const result = spawnSync(process.execPath, [script, ...args], { cwd, env: process.env, stdio: 'inherit' });
   if (result.error || result.status !== 0) throw new Error(`${script} failed: ${result.error?.message || result.status}`);
@@ -87,7 +89,9 @@ function collectIndexable(dir) {
 }
 collectIndexable(out);
 await buildLanguagePages(out, snapshot);
-fs.writeFileSync(path.join(out,'sitemap.xml'),languageSitemap(urls));
+const sitemapHistory = updateSitemapHistory(urls.flatMap(base => LOCALES.map(locale => localizedPath(base, locale))), out, previousSitemap);
+fs.writeFileSync(path.join(out,'sitemap.xml'),languageSitemap(urls, sitemapHistory.lastmods));
+console.log(`[sitemap] ${sitemapHistory.unchanged} unchanged, ${sitemapHistory.changed} changed, ${sitemapHistory.added} new; ${sitemapHistory.seeded} existing release dates used for initial baseline`);
 for (const base of urls) for (const locale of LOCALES) {
  const p = localizedPath(base, locale);
  const file = p.endsWith('/') ? p + 'index.html' : p;

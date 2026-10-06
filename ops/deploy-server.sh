@@ -188,7 +188,7 @@ if ! npm ci --prefix "${SOURCE_DIR}/frontend" --no-audit --no-fund; then
 fi
 
 log "运行构建：node ${SOURCE_DIR}/tools/build_site.mjs --content-dir ${CONTENT_DIR} --out ${STAGING_DIR}/site"
-if ! node "${SOURCE_DIR}/tools/build_site.mjs" --content-dir "${CONTENT_DIR}" --out "${STAGING_DIR}/site"; then
+if ! SITE_PREVIOUS_DIR="${CURRENT_LINK}" node "${SOURCE_DIR}/tools/build_site.mjs" --content-dir "${CONTENT_DIR}" --out "${STAGING_DIR}/site"; then
   die "构建失败，未改动 current"
 fi
 log "构建完成：${STAGING_DIR}/site"

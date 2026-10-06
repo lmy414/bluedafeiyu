@@ -68,6 +68,8 @@ python -m http.server 5173 -d .build/site
 
 英日详情页必须有真实译文。存量译文在 `data/work-localizations.json`，新内容从后台的 `i18n` 导出；中文修改后必须重新生成译文。公共文案由 Astro 直接读取 `data/site-copy-localizations.json`，命名与维护规则见 `docs/多语言内容维护.md`。发布前运行 `node tools/localization/audit-pages.mjs <构建目录>` 检查正文及结构化数据。
 
+sitemap 的 `lastmod` 根据页面正文、SEO 文案和结构化数据变化更新。重复部署沿用原日期。服务器构建用 `SITE_PREVIOUS_DIR` 读取现行发布目录的 sitemap 与 HTML；本地默认读取旧输出目录。公开 JSON 和 `/data/blue-fish/previews/` 允许抓取，robots 只限制后台与内部审核接口。作者未知时保留缺省 `creator`。维护细则见 `docs/抓取与更新时间.md`。
+
 首批（blue-fish）记录的归一有两条容易踩的线：`build_site_snapshot.mjs` **先合并 `data/blue-fish-editorial.json` 叠加层，再判“够不够格当作品”**（名字 / 标签 / 角色三者齐全）。顺序反了，那 59 条补过名字的记录会重新掉线；叠加层里带 `originalPath` 的记录原图走内容仓（`lmy414/ai-girl-stickers`）的 Raw，没带的仍指上游档案馆。
 
 ## 结构化数据与脚本

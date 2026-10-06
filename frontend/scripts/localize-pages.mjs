@@ -172,10 +172,11 @@ export async function buildLanguagePages(out, snapshot) {
   console.log('[i18n] ' + count + ' static language pages');
 }
 
-export function languageSitemap(paths) {
+export function languageSitemap(paths, lastmods = new Map()) {
   const rows = paths.flatMap(base => LOCALES.map(locale => {
     const alternatives = LOCALES.concat([{ prefix: '', hreflang: 'x-default' }]).map(other => '<xhtml:link rel="alternate" hreflang="' + other.hreflang + '" href="' + escape(ORIGIN + localizedPath(base, other)) + '"/>').join('');
-    return '  <url><loc>' + escape(ORIGIN + localizedPath(base, locale)) + '</loc>' + alternatives + '</url>';
+    const lastmod = lastmods.get(localizedPath(base, locale));
+    return '  <url><loc>' + escape(ORIGIN + localizedPath(base, locale)) + '</loc>' + (lastmod ? '<lastmod>' + escape(lastmod) + '</lastmod>' : '') + alternatives + '</url>';
   }));
   return '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + rows.join('\n') + '\n</urlset>\n';
 }

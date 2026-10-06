@@ -138,6 +138,8 @@ test('sitemap 收录四种语言的可索引路由，每条包含完整的语言
     assert.equal(links.length, 5, loc);
     assert.ok(links.some(link => link.getAttribute('href') === loc), loc);
     assert.equal(read(new URL(loc).pathname).querySelector('meta[name="robots"]').getAttribute('content'), 'index,follow', loc);
+    const lastmod = el.querySelector('lastmod')?.textContent;
+    assert.ok(lastmod && Number.isFinite(Date.parse(lastmod)) && Date.parse(lastmod) <= Date.now(), loc + ': missing or future lastmod');
   }
   for (const locale of LOCALES) {
     assert.ok(locs.includes(ORIGIN + localizedPath('/', locale)));

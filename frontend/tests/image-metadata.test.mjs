@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import { imageMetadata } from '../src/lib/image-metadata.mjs';
+import { imageMetadata, imageRights } from '../src/lib/image-metadata.mjs';
 
 const sample = { name: '测试作品', slug: 'test', displayUrl: '/images/test.webp', thumbUrl: '/images/thumb.webp', tags: [] };
 test('未知作者不变成投稿者或占位 Person，授权备注不变成网址', () => {
@@ -50,7 +50,7 @@ test('所有发布页的四项字段有可达锚点，结构化数据与浮层�
       const escaped = meta[key].replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
       assert.ok(html.includes(escaped), `${work.slug}: ${key} 未显示`);
     }
-    if (meta.creator) assert.equal(meta.creator.name, String(work.origin.author).trim());
+    assert.equal(meta.creator?.name, imageRights(work).creator || undefined, work.slug + ': creator must match the recorded original artist');
     assert.ok(!meta.license.includes('creativecommons.org'), '没有版本依据时不指定 CC 版本');
   }
 });
