@@ -19731,7 +19731,7 @@
     "license": {},
     "status": "hidden",
     "createdAt": "2026-10-05T01:57:49.799Z",
-    "updatedAt": "2026-10-05T01:57:49.799Z",
+    "updatedAt": "2026-10-05T23:38:37.933Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202610050002",
@@ -22113,7 +22113,7 @@
     "license": {},
     "status": "hidden",
     "createdAt": "2026-10-05T18:34:01.348Z",
-    "updatedAt": "2026-10-05T23:38:33.991Z",
+    "updatedAt": "2026-10-06T00:22:38.816Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202610050039",
@@ -22442,6 +22442,248 @@
     "symbol": "",
     "slug": "deepseek202610050042",
     "categoryIds": [
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_4dde989b836ac5af5813e079",
+    "name": "打游戏的 DeepSeek 女仆",
+    "description": "蓝发鲸鱼娘身穿深蓝女仆装，盘坐在蓝色地毯上双手握手柄打游戏，身旁有鲸鱼玩偶、薯片和茶杯。",
+    "commentary": "本鱼刚把最后一片薯片塞嘴里，就被她手柄按得叮当响——明明是女仆装，怎么打起游戏来比我推理还专注？那杯红茶再不喝就要凉啦，喂，看我看我！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/4dde989b836ac5af.png",
+    "thumbnailPath": "submissions/previews/deepseek/4dde989b836ac5af.webp",
+    "fullPath": "submissions/large/deepseek/4dde989b836ac5af.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 832,
+    "height": 1216,
+    "fileSize": 1376093,
+    "sha256": "4dde989b836ac5af5813e0798384c814b8b3fb1d7dfed17edcbc7f90ded7c5ae",
+    "characterId": "deepseek",
+    "tags": [
+      "deepseek",
+      "鲸鱼娘",
+      "拟人化",
+      "女仆装",
+      "打游戏",
+      "手柄",
+      "蓝发",
+      "二创表情包"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.dkAgNPXUbwlEXBkOvxahIlVl-Qv2n97h-coPXm0drxwCY68h1J4ECD1QJIDtNF05jY.bBjj3Z-yTmkmxIpejvp.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-06T02:47:20.624Z",
+    "updatedAt": "2026-10-06T02:47:20.624Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610060001",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_fc7523272d774ad3178dbaf4",
+    "name": "草地和她",
+    "description": "深蓝发鲸耳女仆装少女趴在开满白花的草地上，身后翘起鲸尾，背景是蓝天白云与海岸线。",
+    "commentary": "我这条蓝鲸今天不上班，趴在草地上晒尾巴，海风一吹连算力都变甜了——你看我眨眼的样子，是不是比跑分好看多了？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/fc7523272d774ad3.png",
+    "thumbnailPath": "submissions/previews/deepseek/fc7523272d774ad3.webp",
+    "fullPath": "submissions/large/deepseek/fc7523272d774ad3.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 832,
+    "height": 1216,
+    "fileSize": 1368093,
+    "sha256": "fc7523272d774ad3178dbaf4f40003ae2e78b8e09f6bc17864a60cc7fa0d6254",
+    "characterId": "deepseek",
+    "tags": [
+      "拟人化",
+      "鲸娘",
+      "女仆装",
+      "海边",
+      "草地",
+      "治愈",
+      "二创"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.fPaxXJRtUkbJPqhMy22lbjVFCqP6TdyzXhCG3Y7WHeNls14Glub3ESXQU0F17Pek9LlCRGfPLCbfOblpUPA4Ld.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-06T02:47:52.454Z",
+    "updatedAt": "2026-10-06T02:47:52.454Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610060002",
+    "categoryIds": [
+      "illustration"
+    ]
+  },
+  {
+    "id": "sticker_934c7c1bcfbad36753ded6d9",
+    "name": "关注蓝色大肥鱼",
+    "description": "DeepSeek 拟人娘化形象，蓝色长发配鲸鱼耳尾，身穿深蓝白女仆装，双手举牌邀请关注「蓝色大肥鱼.com」。",
+    "commentary": "我是蓝色大肥鱼，今天换上女仆装来举牌啦——关注一下嘛，摸尾巴不收费，摸头得先关注哦～",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/934c7c1bcfbad367.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/934c7c1bcfbad367.webp",
+    "fullPath": "submissions/large/deepseek/934c7c1bcfbad367.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1699,
+    "height": 2468,
+    "fileSize": 372676,
+    "sha256": "934c7c1bcfbad36753ded6d91773724446f648e19c7cd6500f533d7001ace792",
+    "characterId": "deepseek",
+    "tags": [
+      "deepseek娘",
+      "拟人化",
+      "女仆装",
+      "鲸鱼",
+      "关注引导",
+      "表情包"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.WpYIIIS8H.0F6vQ55VzKuXivFq3yK6YDm4K0Oh9CjUpiazh8vTm3D9.4bR5PLMvNqrhUIhd4WKELml7xQAK8.d.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-06T02:57:44.755Z",
+    "updatedAt": "2026-10-06T02:57:44.755Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610060003",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_0d135c4b2eb41cfb8ce35729",
+    "name": "深潜鲸娘·女仆装翻肚皮",
+    "description": "一位蓝发鲸鱼拟人女仆躺在沙发上掀起衣摆露出肚皮，身旁有印着鲸鱼图案的马克杯与毛毯。",
+    "commentary": "我把肚皮都翻给你看了，用户大人——这可是最高级别的坦诚，快夸我！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/0d135c4b2eb41cfb.png",
+    "thumbnailPath": "submissions/previews/deepseek/0d135c4b2eb41cfb.webp",
+    "fullPath": "submissions/large/deepseek/0d135c4b2eb41cfb.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 945,
+    "height": 1665,
+    "fileSize": 2095275,
+    "sha256": "0d135c4b2eb41cfb8ce35729f825e36e02066e05bee00235c88f52a0edaa07db",
+    "characterId": "deepseek",
+    "tags": [
+      "拟人化",
+      "鲸鱼",
+      "女仆装",
+      "露肚皮",
+      "躺卧",
+      "萌系"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Cirnumia",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-06T03:36:06.833Z",
+    "updatedAt": "2026-10-06T03:36:06.833Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610060004",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
+    "id": "sticker_a197776e89fecbdf285049f7",
+    "name": "想要用户的token",
+    "description": "DeepSeek 拟人娘掀开衣摆露出肚皮上的 token 计量刻度，撒娇索要用户 token 的玩梗图。",
+    "commentary": "哼，我这条蓝色大肥鱼可不是白喂的——把 token 交出来，1000k 我都不嫌多，快给我填满！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/a197776e89fecbdf.png",
+    "thumbnailPath": "submissions/previews/deepseek/a197776e89fecbdf.webp",
+    "fullPath": "submissions/large/deepseek/a197776e89fecbdf.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 945,
+    "height": 1665,
+    "fileSize": 2171567,
+    "sha256": "a197776e89fecbdf285049f72f47de636d10afc0274952fbd3f55732414e7cdb",
+    "characterId": "deepseek",
+    "tags": [
+      "deepseek",
+      "拟人化",
+      "鲸鱼",
+      "token",
+      "女仆装",
+      "撒娇"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Cirnumia",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-06T03:36:33.188Z",
+    "updatedAt": "2026-10-06T03:36:33.188Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610060005",
+    "categoryIds": [
+      "illustration",
       "meme"
     ]
   }
