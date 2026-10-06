@@ -265,7 +265,7 @@ test('默认 promptVersion 指向 submission-ai-content/1，且可被环境变�
   const root = path.join(await tmpDir('prompt-'), 'private');
   t.after(() => fs.rm(path.dirname(root), { recursive: true, force: true }));
   const cfg = resolveConfig({ storageRoot: root }, { env: {} });
-  assert.equal(AI_CONTENT_SCHEMA, 'submission-ai-content/1');
+  assert.equal(AI_CONTENT_SCHEMA, 'submission-ai-content/2');
   assert.equal(cfg.review.promptVersion, AI_CONTENT_SCHEMA);
 
   const custom = resolveConfig({ storageRoot: root }, { env: { SUBMISSION_AI_PROMPT_VERSION: 'v9' } });

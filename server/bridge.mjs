@@ -20,6 +20,7 @@
  * 但不 import review.mjs，避免将来 review 侧调用桥接时形成模块环。
  */
 import path from 'node:path';
+import { validateI18n } from '../tools/localization/contract.mjs';
 
 import { AI_CONTENT_SCHEMA, loadContentVocabulary } from './config.mjs';
 import { STATES } from './queue.mjs';
@@ -35,7 +36,7 @@ export const CONTENT_SCHEMA = AI_CONTENT_SCHEMA;
 export const BRIDGE_SCHEMA = 'submission-bridge/1';
 
 /* 与审核层一致：content 只允许这六个字段，多一个少一个都算不完整。 */
-export const CONTENT_KEYS = Object.freeze(['name', 'description', 'commentary', 'characterId', 'categoryIds', 'tags']);
+export const CONTENT_KEYS = Object.freeze(['name', 'description', 'commentary', 'characterId', 'categoryIds', 'tags', 'i18n']);
 const CONTENT_KEY_SET = new Set(CONTENT_KEYS);
 
 /* 与 server/review.mjs 的 LIMITS 对齐。 */
@@ -107,7 +108,7 @@ export function validateContent(content, vocabulary = null) {
     if (!CONTENT_KEY_SET.has(key)) errors.push(`content 含未知字段 ${key}`);
   }
   for (const key of CONTENT_KEYS) {
-    if (!(key in content)) errors.push(`content 缺少字段 ${key}`);
+    if (key !== 'i18n' && !(key in content)) errors.push(`content 缺少字段 ${key}`);
   }
   if (errors.length > 0) return { ok: false, errors, value: null };
 
@@ -136,10 +137,13 @@ export function validateContent(content, vocabulary = null) {
   }
   if (errors.length > 0) return { ok: false, errors, value: null };
 
+  let i18n;
+  if ('i18n' in content) { try { i18n = validateI18n(content.i18n, content); } catch(error) { return {ok:false,errors:['content.i18n: '+error.message],value:null}; } }
   return {
     ok: true,
     errors: [],
     value: {
+      ...(i18n ? {i18n} : {}),
       name: content.name.trim(),
       description: content.description.trim(),
       commentary: content.commentary.trim(),

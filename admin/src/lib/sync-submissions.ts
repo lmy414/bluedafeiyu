@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import crypto from 'node:crypto'
+import { validateI18n } from './localization.mjs'
 import fs from 'node:fs/promises'
 import os from 'node:os'
 import path from 'node:path'
@@ -12,7 +13,7 @@ const PREVIEW_EDGE = 480
 const PREVIEW_QUALITY = 76
 const PREVIEW_EFFORT = 6
 
-export const CONTENT_KEYS = ['name', 'description', 'commentary', 'characterId', 'categoryIds', 'tags'] as const
+export const CONTENT_KEYS = ['name', 'description', 'commentary', 'characterId', 'categoryIds', 'tags', 'i18n'] as const
 
 const TEXT_LIMITS = {
   name: 200,
@@ -123,7 +124,7 @@ export function validateContent(content: unknown, vocabulary: { characterIds: Se
   const keys = Object.keys(object)
   const errors: string[] = []
   for (const key of keys) if (!CONTENT_KEYS.includes(key as any)) errors.push(`content 含未知字段 ${key}`)
-  for (const key of CONTENT_KEYS) if (!(key in object)) errors.push(`content 缺少字段 ${key}`)
+  for (const key of CONTENT_KEYS) if (key !== 'i18n' && !(key in object)) errors.push(`content 缺少字段 ${key}`)
   if (errors.length) return { ok: false, errors }
 
   if (!textOk(object.name, TEXT_LIMITS.name, true)) errors.push('content.name 非法')
@@ -152,9 +153,12 @@ export function validateContent(content: unknown, vocabulary: { characterIds: Se
     if (!vocabulary.categoryIds.has(String(id).trim())) errors.push(`content.categoryIds 不在分类词表内：${String(id)}`)
   }
   if (errors.length) return { ok: false, errors }
+  let i18n
+  if ('i18n' in object) { try { i18n = validateI18n(object.i18n, object) } catch(error) { return {ok:false,errors:['content.i18n: '+(error as Error).message]} } }
   return {
     ok: true,
     value: {
+      ...(i18n ? {i18n} : {}),
       name: String(object.name).trim(),
       description: String(object.description).trim(),
       commentary: String(object.commentary).trim(),

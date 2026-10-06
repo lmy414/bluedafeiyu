@@ -9,7 +9,7 @@
  *   3. **不自动发布**：即使 verdict=pass，队列也只到 auto_passed，
  *      必须由维护者 human.approve 才到 approved，且服务仍然不推送、不发布。
  *
- * AI 响应必须是严格的 submission-ai-content/1 契约：verdict、JSON number
+ * AI 响应必须是严格的 submission-ai-content/2 契约：verdict、JSON number
  * confidence、reason、content{name,description,commentary,characterId,categoryIds,tags}。
  * 未知字段、错误类型、重复 tags、HTML/脚本/控制字符、非法角色/分类、低置信度，
  * 以及任何 AI 异常或字段缺失，一律转人工。**AI 不得生成 id/slug/path/submitter/
@@ -19,13 +19,14 @@
  * 通过校验的 content 只写入私有条目摘要与 ai raw，绝不进公开响应。
  */
 import { AI_CONTENT_SCHEMA, loadContentVocabulary } from './config.mjs';
+import { validateI18n } from '../tools/localization/contract.mjs';
 import { STATES } from './queue.mjs';
 
 export const REVIEW_VERDICTS = Object.freeze(['pass', 'reject', 'manual']);
 export { AI_CONTENT_SCHEMA };
 
 /* content 白名单：只有这六个字段，别的（含系统/法律字段）都是未知字段。 */
-export const CONTENT_KEYS = Object.freeze(['name', 'description', 'commentary', 'characterId', 'categoryIds', 'tags']);
+export const CONTENT_KEYS = Object.freeze(['name', 'description', 'commentary', 'characterId', 'categoryIds', 'tags', 'i18n']);
 const TOP_LEVEL_KEYS = new Set(['schema', 'verdict', 'confidence', 'reason', 'content']);
 
 const LIMITS = Object.freeze({
@@ -45,8 +46,12 @@ const SYSTEM_PROMPT = [
   '只判断这张图是否属于「AI 角色的拟人化二创表情包」，并产出站点内容字段。',
   '拒绝：真人肖像、与 AI 角色无关的通用表情包、明显盗用商业素材、含违法内容。',
   '只输出一个 JSON 对象，不要输出解释、Markdown 或代码块，结构严格如下：',
-  '{"schema":"submission-ai-content/1","verdict":"pass|reject","confidence":0.0,"reason":"一句话理由","content":{"name":"图片名称","description":"一句话说明","commentary":"蓝色大肥鱼第一人称评价","characterId":"角色 id","categoryIds":["分类 id"],"tags":["标签"]}}',
-  'content 的六个字段都必须提供；verdict 为 reject 时也要给出。',
+  '{"schema":"submission-ai-content/2","verdict":"pass|reject","confidence":0.0,"reason":"一句话理由","content":{"name":"图片名称","description":"一句话说明","commentary":"蓝色大肥鱼第一人称评价","characterId":"角色 id","categoryIds":["分类 id"],"tags":["标签"],"i18n":{"en":{"name":"目标语言作品标题","description":"自然的画面说明","commentary":"保留第一人称俏皮语气的点评","tags":["同顺序的目标语言标签"],"seoTitle":"自然搜索标题","seoDescription":"作品专属搜索摘要","faq":[{"question":"作品相关问题","answer":"依据画面事实回答"},{"question":"另一个作品相关问题","answer":"依据事实回答"}],"originNote":"","licenseNote":""},"ja":{"name":"目标语言作品标题","description":"自然的画面说明","commentary":"保留第一人称俏皮语气的点评","tags":["同顺序的目标语言标签"],"seoTitle":"自然搜索标题","seoDescription":"作品专属搜索摘要","faq":[{"question":"作品相关问题","answer":"依据画面事实回答"},{"question":"另一个作品相关问题","answer":"依据事实回答"}],"originNote":"","licenseNote":""}}}}',
+  'content 必须提供 name、description、commentary、characterId、categoryIds、tags、i18n 七个字段；en 和 ja 的每个字段都必须提供。',
+  '英文与日文分别根据画面事实和中文含义，以母语编辑的真实语境撰写，不逐字机翻，不通过英文转译日文。标题体现具体画面或梗；标签用当地常见检索词，与中文标签保持同数量同顺序；FAQ 两组问答必须与该作品事实相关，不编造授权。',
+  '英文站名与角色 DeepSeek娘、鲸娘、鲸鱼娘、蓝色大肥鱼均为 DeepSeek Chan，其他角色为模型名 Chan（Doubao Chan、Kimi Chan、Qwen Chan、Claude Chan、Gemini Chan、Grok Chan、StepFun Chan、GLM Chan、GPT Chan、MiMo Chan）。禁止 Whale Chan、Whale Girl、Blue Fish、Fat Fish。',
+  '日文角色使用模型名ちゃん（DeepSeekちゃん、Claudeちゃん等），日文站名仍为 DeepSeek Chan。产品本身保持官方模型名。作者用户名、URL、ID 和授权状态不可改写。',
+  'originNote 和 licenseNote 没有已知事实时必须为空字符串。英文文案不得残留中文；日文用自然日语。缺任一语言时不得返回 pass。',
   '只能输出以上字段，不得输出 id/slug/path/submitter/origin/license/status 等系统或法律字段。',
 ].join('\n');
 
@@ -103,7 +108,7 @@ export function validateContent(content, vocabulary) {
     if (!CONTENT_KEYS.includes(key)) return { error: `content 含未知字段 ${key}，转人工` };
   }
   for (const key of CONTENT_KEYS) {
-    if (!(key in content)) return { error: `content 缺少字段 ${key}` };
+    if (key !== 'i18n' && !(key in content)) return { error: `content 缺少字段 ${key}` };
   }
 
   const name = strictText(content.name, { label: 'content.name', max: LIMITS.name, allowEmpty: false });
@@ -133,8 +138,11 @@ export function validateContent(content, vocabulary) {
   });
   if (tags.error) return tags;
 
+  let i18n;
+  if ('i18n' in content) { try { i18n = validateI18n(content.i18n, content); } catch(error) { return { error: 'content.i18n: '+error.message }; } }
   return {
     value: {
+      ...(i18n ? { i18n } : {}),
       name: name.value,
       description: description.value,
       commentary: commentary.value,
@@ -148,9 +156,9 @@ export function validateContent(content, vocabulary) {
 /**
  * 解析各家 AI 服务的响应成统一结论。任何看不懂的输入一律 manual。
  * 支持：已是统一形状的对象 / OpenAI 兼容 choices[].message.content(JSON 字符串) / output_text。
- * 只有完整通过 submission-ai-content/1 校验的 pass/reject 才会带 content 返回。
+ * 只有完整通过 submission-ai-content/2 校验的 pass/reject 才会带 content 返回。
  */
-export function parseReviewResponse(payload, { vocabulary = null } = {}) {
+export function parseReviewResponse(payload, { vocabulary = null, requireI18n = false } = {}) {
   if (payload === null || payload === undefined) return manual('AI 未返回可解析的结果');
   let value = payload;
   if (typeof payload === 'string') {
@@ -181,7 +189,7 @@ export function parseReviewResponse(payload, { vocabulary = null } = {}) {
   for (const key of Object.keys(value)) {
     if (!TOP_LEVEL_KEYS.has(key)) return manual(`AI 返回了未知字段 ${key}，转人工`);
   }
-  if (value.schema !== undefined && value.schema !== AI_CONTENT_SCHEMA) {
+  if (value.schema !== undefined && !['submission-ai-content/1', AI_CONTENT_SCHEMA].includes(value.schema)) {
     return manual(`AI 返回的 schema 不是 ${AI_CONTENT_SCHEMA}`);
   }
   if (value.verdict !== 'pass' && value.verdict !== 'reject') return manual('AI 没有给出明确的通过/拒绝结论');
@@ -190,6 +198,7 @@ export function parseReviewResponse(payload, { vocabulary = null } = {}) {
   }
   const reason = strictText(value.reason, { label: 'reason', max: LIMITS.reason, allowEmpty: false });
   if (reason.error) return manual(reason.error);
+  if ((requireI18n || value.schema === AI_CONTENT_SCHEMA) && !value.content?.i18n) return manual('content 缺少完整英文、日文 i18n');
   const content = validateContent(value.content, vocabulary);
   if (content.error) return manual(content.error);
 
@@ -235,7 +244,7 @@ export function createHttpReviewClient({ endpoint, apiKey, model, timeoutMs, fet
                   text: [
                     `投稿名称：${fields.name || '(未填)'}；角色：${fields.character || '(未填)'}`,
                     vocabularyLine(vocabulary),
-                    '请按 system 指定的 submission-ai-content/1 结构只输出一个 JSON 对象。',
+                    '请按 system 指定的 submission-ai-content/2 结构只输出一个 JSON 对象。',
                   ].join('\n'),
                 },
                 { type: 'image_url', image_url: { url: `data:${mime};base64,${buffer.toString('base64')}` } },
@@ -317,7 +326,7 @@ export function createReviewer(cfg, { client = null, now = () => Date.now(), fet
       };
     }
 
-    const parsed = parseReviewResponse(payload, { vocabulary: activeVocabulary });
+    const parsed = parseReviewResponse(payload, { vocabulary: activeVocabulary, requireI18n:true });
     const latencyMs = now() - started;
     const base = {
       verdict: parsed.verdict,

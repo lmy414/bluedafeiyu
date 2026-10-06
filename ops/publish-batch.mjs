@@ -35,6 +35,7 @@
 import { spawnSync } from 'node:child_process';
 import crypto from 'node:crypto';
 import fs from 'node:fs';
+import {sourceHash,validateI18n} from '../tools/localization/contract.mjs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
@@ -382,6 +383,7 @@ function extractContent(entry) {
     fields,
     ai,
     content,
+    i18n: content.i18n || ai.i18n,
     name: firstDefined(content.name, ai.name, fields.name),
     description: firstDefined(content.description, ai.description, fields.description) || '',
     commentary: firstDefined(content.commentary, ai.commentary, fields.commentary),
@@ -551,6 +553,11 @@ export function validateEntry(cfg, entry, manifests, nowIso) {
     createdAt,
     updatedAt: createdAt,
   };
+
+  if (content.i18n) {
+    try { record.i18n = {sourceHash:sourceHash(record), ...validateI18n(content.i18n, record)}; }
+    catch(error) { return {ok:false,reason:'i18n: '+error.message}; }
+  }
 
   return {
     ok: true,

@@ -7,6 +7,7 @@
 // 未知字段、错误类型、重复 tags、HTML/脚本/控制字符、非法角色/分类、低置信度，
 // 一律转人工；只有受校验的 content 能进私有摘要与 ai raw，绝不进公开响应。
 import assert from 'node:assert/strict';
+import {fixtureI18n} from '../tools/localization/test-fixture.mjs';
 import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
@@ -49,6 +50,7 @@ function payload(overrides = {}) {
       characterId: 'deepseek',
       categoryIds: ['meme'],
       tags: ['探头', '可爱'],
+      i18n:fixtureI18n(),
       ...(contentOverride || {}),
     },
     ...rest,
@@ -168,6 +170,7 @@ test('合法的 pass/reject 响应解析出受校验 content', () => {
     characterId: 'deepseek',
     categoryIds: ['meme'],
     tags: ['探头', '可爱'],
+    i18n:fixtureI18n(),
   });
 
   const rejected = parseReviewResponse(payload({ verdict: 'reject' }), { vocabulary: VOCABULARY });
@@ -177,7 +180,7 @@ test('合法的 pass/reject 响应解析出受校验 content', () => {
 
 test('schema 字段若出现必须匹配 submission-ai-content/1，缺失可容忍', () => {
   assert.equal(parseReviewResponse({ ...payload(), schema: undefined }, { vocabulary: VOCABULARY }).verdict, 'pass');
-  assert.equal(parseReviewResponse({ ...payload(), schema: 'submission-ai-content/2' }, { vocabulary: VOCABULARY }).verdict, 'manual');
+  assert.equal(parseReviewResponse({ ...payload(), schema: 'submission-ai-content/99' }, { vocabulary: VOCABULARY }).verdict, 'manual');
 });
 
 test('未知字段一律转人工（顶层与 content 内）', () => {

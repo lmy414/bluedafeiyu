@@ -117,6 +117,7 @@ export function WorkDrawer({
   const submission = item.kind === 'submission' ? item.submission : undefined
   const work = item.kind === 'work' ? item.work : asObject<WorkDoc>(submission?.work)
   const [form, setForm] = useState<FormState>(() => initialForm(item, categories, characters))
+  const [localizedSuggestion,setLocalizedSuggestion]=useState<Record<string,unknown>|null>(null)
   const [events, setEvents] = useState<AuditEvent[]>([])
   const [saving, setSaving] = useState(false)
   const [message, setMessage] = useState('')
@@ -179,6 +180,7 @@ export function WorkDrawer({
     setMessage('')
     try {
       await mutate(`/works/${encodeURIComponent(String(work.id))}`, 'PATCH', {
+        ...(localizedSuggestion?{legacyData:{...(work.legacyData||{}),i18n:localizedSuggestion}}:{}),
         categories: form.categories.map(Number),
         character: form.character ? Number(form.character) : undefined,
         commentary: form.commentary,
@@ -217,6 +219,7 @@ export function WorkDrawer({
         ...(work ? { workId: work.workId } : { submissionId: submission?.submissionId }),
       })
       const s = result.suggestion || {}
+      if(s.i18n)setLocalizedSuggestion(s.i18n)
       const categoryIds = Array.isArray(s.categoryIds)
         ? categories.filter((item) => s.categoryIds.includes(String(item.categoryId))).map((item) => String(item.id))
         : []

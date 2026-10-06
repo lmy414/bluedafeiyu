@@ -7,6 +7,7 @@ import type { Endpoint, PayloadRequest } from 'payload'
 import { FILL_FIELDS, type FillField, authorDescription, httpVisionCaller, missingFields, suggestFill, visionConfig } from '../lib/ai-fill'
 import { writeAudit } from '../lib/audit'
 import { json, readJsonBody, requireWorker } from '../lib/endpoint-auth'
+import {sourceHash} from '../lib/localization.mjs'
 
 type FillBody = {
   apply?: boolean
@@ -111,10 +112,18 @@ export const aiFillHandler = async (req: PayloadRequest): Promise<Response> => {
 
   const categoryResult = await payload.find({ collection: 'categories', where: { status: { equals: 'active' } }, limit: 1000, depth: 0, overrideAccess: true })
   const character = work?.character && typeof work.character === 'object' ? work.character : null
+  const localizationSource=(doc:any)=>({
+    name:String(doc.name||''),description:String(doc.description||''),commentary:String(doc.commentary||''),
+    tags:(doc.tags||[]).map((t:any)=>String(t.value??t)),
+    characterId:String(doc.character?.characterId||character?.characterId||submission?.fields?.characterId||'other'),
+    categoryIds:(doc.categories||[]).map((c:any)=>String(c.categoryId||categoryResult.docs.find((d:any)=>String(d.id)===String(c))?.categoryId||'')),
+    origin:doc.origin||{},license:doc.license||{},
+  })
 
   let result
   try {
     result = await suggestFill({
+      current:localizationSource(base),
       authorText: authorDescription(work, submission),
       characterName: String(character?.name || submission?.fields?.characterId || ''),
       fields: effective,
@@ -130,7 +139,7 @@ export const aiFillHandler = async (req: PayloadRequest): Promise<Response> => {
   if (!body.apply) return json({ ok: true, workId: work?.workId, fields: effective, suggestion, errors, applied: false })
 
   // 写回：只写缺失字段，再核对一次，防止并发期间人工已经填了。
-  const fresh = await payload.findByID({ collection: 'works', id: work.id, depth: 0, overrideAccess: true })
+  const fresh = await payload.findByID({ collection: 'works', id: work.id, depth: 1, overrideAccess: true })
   const stillMissing = new Set(missingFields(fresh))
   const data: Record<string, any> = {}
   if (suggestion.name && stillMissing.has('name')) data.name = suggestion.name
@@ -145,6 +154,10 @@ export const aiFillHandler = async (req: PayloadRequest): Promise<Response> => {
     data.height = suggestion.height
   }
   if (!Object.keys(data).length) return json({ ok: true, workId: work.workId, fields: effective, suggestion, errors, applied: false })
+  if (suggestion.i18n) {
+    if(suggestion.i18n.sourceHash!==sourceHash(localizationSource({...fresh,...data}))) return json({ok:false,error:'作品在生成期间已修改，请重新生成完整多语言版本'},409)
+    data.legacyData={...(fresh.legacyData||{}),i18n:suggestion.i18n}
+  }
 
   data.needsPublish = true
   if (!fresh.changeAction) data.changeAction = 'update'

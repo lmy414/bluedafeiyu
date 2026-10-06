@@ -24,7 +24,7 @@
  *   2. **真实动作要两把钥匙**：命令行给 --live，且环境变量 HERMES_REVIEW_LIVE /
  *      HERMES_PULL_LIVE / HERMES_PUBLISH_LIVE 对应为 true，缺一不可。
  *   3. **密钥只从环境变量读**，不进仓库；本文件不含真实端点、令牌或服务器路径。
- *   4. 审核结论复用 server/review.mjs 的 submission-ai-content/1 校验，
+ *   4. 审核结论复用 server/review.mjs 的 submission-ai-content/2 校验，
  *      不自己造字段口径；低置信度、解析失败、异常一律转人工，绝不假造通过。
  *
  * 用法：
@@ -274,7 +274,7 @@ export async function fetchItemRaw(cfg, item, { fetchImpl = globalThis.fetch } =
 
 /**
  * 构造视觉审核器。复用 server/review.mjs 的 OpenAI 兼容客户端与提示词，
- * 保证 Hermes 与 server/ 用同一套 submission-ai-content/1 口径。
+ * 保证 Hermes 与 server/ 用同一套 submission-ai-content/2 口径。
  */
 export function buildVisionReviewer(cfg, { fetchImpl = globalThis.fetch } = {}) {
   if (!cfg.vision.endpoint || !cfg.vision.apiKey) {
@@ -290,7 +290,7 @@ export function buildVisionReviewer(cfg, { fetchImpl = globalThis.fetch } = {}) 
   return async function review({ buffer, mime, fields, vocabulary }) {
     const started = Date.now();
     const payload = await client({ buffer, mime: mime || 'image/png', fields, vocabulary });
-    const parsed = parseReviewResponse(payload, { vocabulary });
+    const parsed = parseReviewResponse(payload, { vocabulary, requireI18n:true });
     if (parsed.verdict !== 'manual' && parsed.confidence < cfg.minConfidence) {
       return {
         verdict: 'manual',
@@ -345,7 +345,7 @@ function manualResult(id, reason, extras = {}) {
 
 /**
  * 校验并归一一条待回写的审核结果，形状对齐 server/internal 的单条 result。
- * pass 必须有通过 submission-ai-content/1 校验的 content；reject / manual 不需要 content。
+ * pass 必须有通过 submission-ai-content/2 校验的 content；reject / manual 不需要 content。
  * 校验失败降级成 manual，而不是丢弃——失败关闭是这里的硬规则。
  * 返回 { ok, result, downgraded, error }。
  */

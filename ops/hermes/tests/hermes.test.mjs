@@ -15,6 +15,7 @@
  * 全程离线：fetch / exec / 枚举都注入假实现，临时目录在系统 tmp。
  */
 import { test } from 'node:test';
+import {fixtureI18n} from '../../../tools/localization/test-fixture.mjs';
 import assert from 'node:assert/strict';
 import fsp from 'node:fs/promises';
 import os from 'node:os';
@@ -58,6 +59,7 @@ const VALID_CONTENT = Object.freeze({
   characterId: 'deepseek',
   categoryIds: ['meme'],
   tags: ['无语', '反差'],
+  i18n:fixtureI18n(['无语','反差']),
 });
 
 /* ---------------------------------------------------------------- 测试工具 */

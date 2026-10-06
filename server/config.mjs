@@ -17,7 +17,7 @@ import { fileURLToPath } from 'node:url';
 
 export const SCHEMA = 'submission-server/1';
 /* AI 受校验内容的响应契约版本。审核层只认这个版本的形状，其余一律转人工。 */
-export const AI_CONTENT_SCHEMA = 'submission-ai-content/1';
+export const AI_CONTENT_SCHEMA = 'submission-ai-content/2';
 export const DEFAULT_MAX_BYTES = 16 * 1024 * 1024;
 export const DEFAULT_MAX_JSON_BYTES = 24 * 1024 * 1024;
 export const DEFAULT_GITHUB_REPO = 'lmy414/ai-girl-stickers';

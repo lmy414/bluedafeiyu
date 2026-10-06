@@ -6,6 +6,7 @@
 //   2. 管理接口只允许回环 + Bearer 常量时间鉴权，没配令牌直接拒绝；
 //   3. 管理端能看到条目、原图与审核结果，公开端看不到。
 import assert from 'node:assert/strict';
+import {fixtureI18n} from '../tools/localization/test-fixture.mjs';
 import http from 'node:http';
 import fs from 'node:fs/promises';
 import os from 'node:os';
@@ -56,6 +57,7 @@ function passEnvelope(name = '测试表情') {
             characterId: 'deepseek',
             categoryIds: ['meme'],
             tags: ['测试'],
+            i18n:fixtureI18n(['测试']),
           },
         }),
       },
@@ -433,6 +435,7 @@ test('管理端能看到 AI 原始结果，公开端没有这个路由', async (
             characterId: 'deepseek',
             categoryIds: ['meme'],
             tags: ['测试'],
+            i18n:fixtureI18n(['测试']),
           },
         }),
       },

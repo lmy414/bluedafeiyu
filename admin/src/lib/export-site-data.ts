@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import fs from 'node:fs'
 import path from 'node:path'
+import { sourceHash, validateI18n } from './localization.mjs'
 
 import type { Payload } from 'payload'
 
@@ -160,6 +161,13 @@ function workRecord(doc: any, options: { originalUrlByWorkId?: Record<string, st
   }
   setPreservingKeyOrder(base, 'slug', doc.slug ?? '')
   setPreservingKeyOrder(base, 'categoryIds', categoryIds)
+  if(base.i18n?.sourceHash!==sourceHash(base))delete base.i18n
+  const saved=doc.legacyData?.i18n
+  if(saved?.sourceHash===sourceHash(base)) base.i18n={sourceHash:saved.sourceHash,...validateI18n(saved,base)}
+  const authored = doc.review?.content
+  if (!base.i18n && authored?.i18n && sourceHash(authored) === sourceHash({...base, origin:{}, license:{}})) {
+    base.i18n = {sourceHash:sourceHash(base), ...validateI18n(authored.i18n, base)}
+  } else if (base.i18n && base.i18n.sourceHash !== sourceHash(base)) delete base.i18n
   return base
 }
 
@@ -310,6 +318,9 @@ function editorialText(works: any[], snapshot: any): string {
     if (commentary && current.commentary !== commentary) current.commentary = commentary
     if (work.status === 'hidden' || work.status === 'deleted') current.status = work.status
     else if (Object.prototype.hasOwnProperty.call(current, 'status')) delete current.status
+    const exported=workRecord(work,{})
+    if(exported.i18n)current.i18n=exported.i18n
+    else if(current.i18n)delete current.i18n
     base[sourcePath] = current
   }
   return serializeJson(base, FILE_EOL['data/blue-fish-editorial.json'])

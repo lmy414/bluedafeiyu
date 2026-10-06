@@ -11,6 +11,7 @@
 import sharp from 'sharp'
 
 import { isPlaceholderDescription } from './placeholder'
+import {sourceHash, validateI18n} from './localization.mjs'
 
 export { isPlaceholderDescription }
 
@@ -121,6 +122,7 @@ function parseModelJson(content: string): Record<string, unknown> {
 }
 
 export type FillSuggestion = {
+  i18n?: {sourceHash:string;en:any;ja:any}
   categoryIds?: string[]
   commentary?: string
   description?: string
@@ -132,6 +134,7 @@ export type FillSuggestion = {
 }
 
 export type FillRequest = {
+  current?: any
   authorText: string
   characterName: string
   fields: FillField[]
@@ -179,6 +182,17 @@ export async function suggestFill(request: FillRequest, call: VisionCaller): Pro
   const errors: string[] = []
   const wanted = new Set(request.fields)
   const normalized = await normalizeImage(request.image)
+  const finish = async () => {
+    if (request.current) {
+      const source={...request.current, ...Object.fromEntries(['name','description','commentary','tags','categoryIds'].filter(k=>k in suggestion).map(k=>[k,(suggestion as any)[k]]))}
+      const raw=await call({
+        system:'你是英语和日语母语的二创档案编辑。分别根据给定中文事实撰写真正自然的英文和日文，不逐字翻译，不编造画面、作者、授权、热度。英文角色和站名 DeepSeek Chan；鲸娘、鲸鱼娘、蓝色大肥鱼都是 DeepSeek Chan，绝不能 Whale Chan、Whale Girl、Blue Fish、Fat Fish。其他角色为模型名 Chan，如 Claude Chan、StepFun Chan、GPT Chan。日文角色为模型名ちゃん，如 DeepSeekちゃん、Claudeちゃん；日文站名保留 DeepSeek Chan。产品名称保持官方模型名。每种语言提供 name、description、commentary、tags（与中文同数量同顺序）、seoTitle、seoDescription、faq（两组作品专属 question/answer）、originNote、licenseNote 字符串；FAQ 只据已知事实回答，未知来源/授权不能编造。英文不能残留中文，日文用自然日语。只输出 JSON {"en":{...},"ja":{...}}。',
+        user:JSON.stringify(source), image:normalized.data,
+      })
+      suggestion.i18n={sourceHash:sourceHash(source),...validateI18n(parseModelJson(raw),source)}
+    }
+    return {suggestion,errors}
+  }
 
   if (wanted.has('dimensions') && normalized.width && normalized.height) {
     suggestion.width = normalized.width
@@ -196,7 +210,7 @@ export async function suggestFill(request: FillRequest, call: VisionCaller): Pro
   const modelFields: string[] = []
   for (const field of ['name', 'description', 'commentary', 'tags'] as const) if (wanted.has(field)) modelFields.push(field)
   if (wanted.has('categories')) modelFields.push('categoryIds')
-  if (!modelFields.length) return { suggestion, errors }
+  if (!modelFields.length) return finish()
 
   const raw = await call({
     system: SYSTEM_PROMPT,
@@ -231,5 +245,5 @@ export async function suggestFill(request: FillRequest, call: VisionCaller): Pro
     if (ids.length) suggestion.categoryIds = [...new Set(ids)].slice(0, 2)
     else errors.push('categoryIds 不在分类词表内')
   }
-  return { suggestion, errors }
+  return finish()
 }
