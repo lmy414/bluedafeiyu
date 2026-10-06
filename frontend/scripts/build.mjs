@@ -89,6 +89,8 @@ function collectIndexable(dir) {
 }
 collectIndexable(out);
 await buildLanguagePages(out, snapshot);
+const nativeAudit = spawnSync(process.execPath, [path.join(root, 'tools/localization/audit-pages.mjs'), out, path.join(root, '.build/native-localization-audit.json')], { cwd: root, stdio: 'inherit' });
+if (nativeAudit.error || nativeAudit.status !== 0) throw new Error('英日页面校验失败，构建中止；详情见 .build/native-localization-audit.json');
 const sitemapHistory = updateSitemapHistory(urls.flatMap(base => LOCALES.map(locale => localizedPath(base, locale))), out, previousSitemap);
 fs.writeFileSync(path.join(out,'sitemap.xml'),languageSitemap(urls, sitemapHistory.lastmods));
 console.log(`[sitemap] ${sitemapHistory.unchanged} unchanged, ${sitemapHistory.changed} changed, ${sitemapHistory.added} new; ${sitemapHistory.seeded} existing release dates used for initial baseline`);

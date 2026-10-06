@@ -23,6 +23,7 @@ import { Works } from '@/collections/Works'
 import { exportSiteData } from '@/lib/export-site-data'
 import { applyPublishStatus } from '@/lib/publish'
 import { syncSubmissions } from '@/lib/sync-submissions'
+import { fixtureI18n } from '../../../tools/localization/test-fixture.mjs'
 
 const VALID_CREATED_AT = '2026-09-20T01:02:03.456Z'
 const ORIGINAL_FETCH = globalThis.fetch
@@ -137,6 +138,12 @@ beforeAll(async () => {
     context: { audit: false },
     overrideAccess: true,
   })
+  await (payload as any).create({
+    collection: 'categories',
+    data: { categoryId: 'sync-test-category-second', name: '同步测试第二分类', status: 'active' },
+    context: { audit: false },
+    overrideAccess: true,
+  })
   for (const [legacyOrder, workId] of [[0, 'sticker_legacy_order_0'], [1, 'sticker_legacy_order_1']] as const) {
     await (payload as any).create({
       collection: 'works',
@@ -161,6 +168,8 @@ beforeAll(async () => {
   firstDigest = crypto.createHash('sha256').update(firstBuffer).digest('hex')
   secondDigest = crypto.createHash('sha256').update(secondBuffer).digest('hex')
   const firstItem: any = queueItem({ buffer: firstBuffer, createdAt: VALID_CREATED_AT, name: '时间测试作品', suffix: 'first' })
+  firstItem.review.content.categoryIds = ['sync-test-category', 'sync-test-category-second']
+  firstItem.review.content.i18n = fixtureI18n(firstItem.review.content.tags)
   const secondItem: any = queueItem({ buffer: secondBuffer, name: '无时间测试作品', suffix: 'second' })
   firstItem.fields = { ...firstItem.fields, credit: 'named', creditName: '小鱼', creditUrl: 'https://home.example/me' }
   firstItem.origin = { ...firstItem.origin, author: '原作者', sourceUrl: 'https://source.example/art' }
@@ -224,6 +233,10 @@ describe('syncSubmissions timestamps and formats', () => {
     expect(exportedTimed.createdAt).toBe(VALID_CREATED_AT)
     expect(exportedTimed.updatedAt).toBe(VALID_CREATED_AT)
     expect(exportedTimed.format).toBe('jpg')
+    // Database query order differs from review order; changing it invalidates sourceHash and drops native content.
+    expect(exportedTimed.categoryIds).toEqual(['sync-test-category', 'sync-test-category-second'])
+    expect(exportedTimed.i18n.en.name).toBe(queueItems[0].review.content.i18n.en.name)
+    expect(exportedTimed.i18n.ja.name).toBe(queueItems[0].review.content.i18n.ja.name)
     expect(exportedFallback.createdAt).toBe(fallback.createdAt)
     expect(exportedFallback.updatedAt).toBe(fallback.updatedAt)
     expect(exportedFallback.format).toBe('jpg')

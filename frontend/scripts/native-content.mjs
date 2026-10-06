@@ -1,3 +1,4 @@
+import {applyNativeArchives} from './native-archives.mjs';
 const escape=value=>String(value||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function applyNativeContent(document,api,base,snapshot) {
   const native=['en','ja'].includes(api.current);
@@ -42,5 +43,7 @@ export function applyNativeContent(document,api,base,snapshot) {
   }
   for(const meta of document.querySelectorAll('meta[property="og:image:alt"],meta[name="twitter:image:alt"]'))meta.setAttribute('content',value ? value.description||value.name : nativeText(meta.getAttribute('content')));
   const author=document.querySelector('.work-facts > div:first-child dd');if(author?.textContent==='原作者未标注')author.textContent=api.contentText(author.textContent);
-  return {work,value};
+  const archive=applyNativeArchives(document,api,base,snapshot);
+  if(archive)for(const meta of document.querySelectorAll('meta[property="og:image:alt"],meta[name="twitter:image:alt"]'))meta.setAttribute('content',archive.title);
+  return {work,value,archive};
 }

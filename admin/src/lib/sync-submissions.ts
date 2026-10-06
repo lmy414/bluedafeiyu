@@ -302,7 +302,7 @@ export async function syncSubmissions(payload: Payload, options: { baseUrl?: str
                 height: preview?.height,
                 fileSize: preview?.fileSize,
                 character: characterResult.docs.find((doc: any) => doc.characterId === content.characterId)?.id,
-                categories: categoryResult.docs.filter((doc: any) => content.categoryIds.includes(doc.categoryId)).map((doc: any) => doc.id),
+                categories: content.categoryIds.map((id: string) => categoryResult.docs.find((doc: any) => doc.categoryId === id)!.id),
                 tags: content.tags.map((value: string) => ({ value })),
                 preview: mediaId || undefined,
                 status: 'pending',
@@ -371,4 +371,3 @@ export async function syncSubmissions(payload: Payload, options: { baseUrl?: str
   }
   return stats
 }
-

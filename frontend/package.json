@@ -8,7 +8,7 @@
     "build": "astro build",
     "dev": "astro dev --host 127.0.0.1",
     "preview": "astro preview --host 127.0.0.1",
-    "test": "node --test tests/legacy-parity.test.mjs tests/theme.test.mjs tests/image-metadata.test.mjs tests/language.test.mjs tests/language-pages.test.mjs tests/archive.test.mjs tests/image-actions.test.mjs tests/sitemap-history.test.mjs && node tests/source-shape.mjs",
+    "test": "node --test tests/legacy-parity.test.mjs tests/theme.test.mjs tests/image-metadata.test.mjs tests/language.test.mjs tests/language-pages.test.mjs tests/native-archives.test.mjs tests/archive.test.mjs tests/image-actions.test.mjs tests/sitemap-history.test.mjs && node tests/source-shape.mjs",
     "build:site": "node ../tools/build_site.mjs"
   },
   "dependencies": {

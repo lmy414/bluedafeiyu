@@ -24,5 +24,6 @@ function scan(dir,lang) {for(const entry of fs.readdirSync(dir,{withFileTypes:tr
   for(const script of document.querySelectorAll('script[type="application/ld+json"]'))schema(JSON.parse(script.textContent));
 }}
 for(const lang of ['en','ja'])scan(path.join(out,lang),lang);
-const report={pages,details,problems};fs.writeFileSync(path.join(out,'native-localization-audit.json'),JSON.stringify(report,null,2)+'\n');
+const report={pages,details,problems},reportFile=process.argv[3]?path.resolve(process.argv[3]):path.join(out,'native-localization-audit.json');
+fs.mkdirSync(path.dirname(reportFile),{recursive:true});fs.writeFileSync(reportFile,JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify({pages,details,problems:problems.length,samples:problems.slice(0,25)},null,2));if(problems.length)process.exitCode=1;

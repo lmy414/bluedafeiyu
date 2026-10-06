@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import {applyNativeContent} from './native-content.mjs';
+import {nativeArchiveName} from './native-archives.mjs';
 import path from 'node:path';
 import vm from 'node:vm';
 import { parseHTML } from 'linkedom';
@@ -23,7 +24,7 @@ function setMeta(document, selector, value) {
   if (value != null) document.querySelector(selector)?.setAttribute('content', value);
 }
 
-function pageMeta(document, api, base, snapshot) {
+function pageMeta(document, api, base, snapshot, archive) {
   const page = document.body.getAttribute('data-i18n-page');
   const slug = base.match(/^\/works\/([^/]+)\.html$/)?.[1];
   const work = slug && snapshot.works.find(w => w.slug === slug);
@@ -43,9 +44,10 @@ function pageMeta(document, api, base, snapshot) {
       title = api.fmt('page.' + page + '.title', '', { name });
       desc = api.fmt('page.' + page + '.desc', '', { name, count });
     }
+    if(archive){title=archive.title;desc=archive.description;}
     if (title) document.title = title;
     if (desc) setMeta(document, 'meta[name="description"]', desc);
-    if (n) document.title += ' · ' + api.fmt('v2.pageN', '第 {n} 页', { n });
+    if (n && !archive) document.title += ' · ' + api.fmt('v2.pageN', '第 {n} 页', { n });
   } else if (locale === 'zh-Hant' && !document.body.getAttribute('data-i18n-page')) {
     document.title = converter(document.title);
     setMeta(document, 'meta[name="description"]', converter(document.querySelector('meta[name="description"]')?.getAttribute('content') || ''));
@@ -69,8 +71,8 @@ export async function localizeHtml(html, base, locale, snapshot) {
   program.runInNewContext({ window, document, URL, URLSearchParams, WeakMap, Promise, CustomEvent: parsed.CustomEvent });
   await window.SiteLang.setLang(locale.id, false);
   const api = window.SiteLang;
-  applyNativeContent(document,api,base,snapshot);
-  const { work, desc } = pageMeta(document, api, base, snapshot);
+  const native=applyNativeContent(document,api,base,snapshot);
+  const { work, desc } = pageMeta(document, api, base, snapshot,native?.archive);
   const toPage = value => {
     if (!value || value.startsWith('#')) return value;
     const url = new URL(value, ORIGIN + base);
@@ -103,6 +105,10 @@ export async function localizeHtml(html, base, locale, snapshot) {
       const entitySlug=String(value.url||value.item||'').match(/\/works\/([^/]+)\.html/)?.[1];
       const entity=entitySlug && snapshot.works.find(w=>w.slug===entitySlug)?.i18n?.[locale.id];
       if(entity && value.name) value.name=entity.name;
+      const archivePath=String(value.url||value.item||'');
+      if(value.name&&['en','ja'].includes(locale.id)&&archivePath){
+        const name=nativeArchiveName(new URL(archivePath,ORIGIN).pathname.replace(/^\/(en|ja)/,''),api,snapshot);if(name)value.name=name;
+      }
       for (const [key, child] of Object.entries(value)) {
         if (typeof child === 'string' && ['url','@id','item'].includes(key)) {
           const target = new URL(child, ORIGIN + base);
