@@ -72,6 +72,69 @@ class GenerateSubmissionsWithoutOriginalsTests(unittest.TestCase):
         with self.assertRaisesRegex(FileNotFoundError, "source image not found"):
             derivatives.generate_submissions()
 
+    def test_character_correction_keeps_existing_media_without_original(self) -> None:
+        self.write_manifest({
+            "id": "sticker_reclassified", "characterId": "doubao",
+            "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/other/source.png",
+        })
+        self.write_derivative("submissions/previews/other/source.webp", (7, 5))
+        self.write_derivative("submissions/large/other/source.webp", (11, 9))
+        before = {file: file.read_bytes() for file in self.content.rglob("*.webp")}
+
+        self.assertEqual(derivatives.generate_submissions(), (1, 2, 0))
+        saved = json.loads(self.manifest.read_text(encoding="utf-8"))[0]
+        self.assertEqual(saved["characterId"], "doubao")
+        self.assertEqual(saved["thumbnailPath"], "submissions/previews/other/source.webp")
+        self.assertEqual(saved["fullPath"], "submissions/large/other/source.webp")
+        self.assertEqual({file: file.read_bytes() for file in self.content.rglob("*.webp")}, before)
+
+    def test_character_correction_generates_from_recorded_original(self) -> None:
+        self.write_manifest({
+            "id": "sticker_reclassified", "characterId": "doubao",
+            "path": "dist/submissions/originals/other/source.png",
+        })
+        source = self.content / "dist/submissions/originals/other/source.png"
+        source.parent.mkdir(parents=True)
+        Image.new("RGB", (12, 8), "blue").save(source)
+        before = source.read_bytes()
+
+        self.assertEqual(derivatives.generate_submissions(), (1, 2, 0))
+        self.assertEqual(source.read_bytes(), before)
+        self.assertTrue((self.content / "dist/submissions/previews/other/source.webp").is_file())
+        self.assertTrue((self.content / "dist/submissions/large/other/source.webp").is_file())
+        self.assertFalse((self.content / "dist/submissions/previews/doubao").exists())
+
+    def test_reclassified_missing_media_reports_recorded_path(self) -> None:
+        self.write_manifest({
+            "id": "sticker_reclassified", "characterId": "doubao",
+            "path": "/submissions/originals/other/source.png",
+        })
+        with self.assertRaisesRegex(FileNotFoundError, r"originals[/\\]other[/\\]source\.png"):
+            derivatives.generate_submissions()
+
+    def test_source_path_supports_local_and_raw_urls(self) -> None:
+        expected = self.content / "dist/submissions/originals/other/source.png"
+        for raw in [
+            "/submissions/originals/other/source.png",
+            "submissions/originals/other/source.png",
+            "dist/submissions/originals/other/source.png",
+            "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/other/source.png",
+        ]:
+            with self.subTest(path=raw):
+                self.assertEqual(derivatives.submission_source({"path": raw, "characterId": "doubao"}), expected)
+
+    def test_invalid_media_paths_are_rejected(self) -> None:
+        for raw in [
+            "/submissions/originals/../source.png",
+            "/submissions/originals/other/../source.png",
+            "/submissions/originals/other/..",
+            "/submissions/originals/other\\outside/source.png",
+            "/submissions/originals/other/",
+            "/unrelated/source.png",
+        ]:
+            with self.subTest(path=raw), self.assertRaises(ValueError):
+                derivatives.submission_source({"path": raw, "characterId": "doubao"})
+
     def test_retired_records_keep_slug_without_requiring_deleted_images(self) -> None:
         records = [
             {"id": f"sticker_{status}", "slug": f"retired-{status}", "status": status}

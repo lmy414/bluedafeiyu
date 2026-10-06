@@ -217,10 +217,17 @@ def fresh(path: Path) -> bool:
 
 def submission_source(record: dict[str, Any]) -> Path:
     raw_path = str(record.get("path") or "")
-    filename = Path(urlsplit(raw_path).path).name
-    if not filename:
-        raise ValueError(f"record {record.get('id')} has no source filename")
-    return SUBMISSIONS_ORIGINALS / str(record["characterId"]) / filename
+    url_path = "/" + urlsplit(raw_path).path.lstrip("/")
+    marker = "/submissions/originals/"
+    if marker not in url_path:
+        raise ValueError(f"record {record.get('id')} has no submission original path")
+    parts = url_path.split(marker, 1)[1].split("/")
+    if len(parts) != 2 or any(part in {"", ".", ".."} or "\\" in part or "\0" in part for part in parts):
+        raise ValueError(f"invalid submission original path: {raw_path}")
+    source = SUBMISSIONS_ORIGINALS.joinpath(*parts)
+    if not source.resolve().is_relative_to(SUBMISSIONS_ORIGINALS.resolve()):
+        raise ValueError(f"submission original path escapes content directory: {raw_path}")
+    return source
 
 
 def generate_submissions(force: bool = False) -> tuple[int, int, int]:
@@ -237,10 +244,11 @@ def generate_submissions(force: bool = False) -> tuple[int, int, int]:
         if record.get("status") in {"hidden", "removed", "deleted"}:
             continue
         source = submission_source(record)
-        character = str(record["characterId"])
+        # Media paths stay fixed when an editor corrects the character classification.
+        media_directory = source.parent.relative_to(SUBMISSIONS_ORIGINALS)
         stem = source.stem
-        thumbnail = SUBMISSIONS_PREVIEWS / character / f"{stem}{WEBP_SUFFIX}"
-        display = SUBMISSIONS_LARGE / character / f"{stem}{WEBP_SUFFIX}"
+        thumbnail = SUBMISSIONS_PREVIEWS / media_directory / f"{stem}{WEBP_SUFFIX}"
+        display = SUBMISSIONS_LARGE / media_directory / f"{stem}{WEBP_SUFFIX}"
 
         if not force and fresh(thumbnail) and fresh(display):
             # Already generated: read the real state back so the report and the

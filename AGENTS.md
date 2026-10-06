@@ -90,6 +90,7 @@ node tools/tests/migration.test.mjs --content-dir <内容仓>         # 迁移�
 - `data/blue-fish-editorial.json` 是按 `sourcePath` 认图的编辑叠加层（59 条补名字 / 标签的记录靠它上线），**不要删**；
 - `data/blue-fish-classification.json` 是上游 raw 清单；仓库外导入流程会重新生成它，编辑结论要写在叠加层里；
 - 投稿模板归内容仓（`.github/ISSUE_TEMPLATE/`），但下拉**由本仓库从 `data/characters.json` 生成**。
+- 修改作品角色不移动已发布图片：派生图脚本从记录的 `path` 读取原图目录，缩略图和大图沿用同一目录；不要用可编辑的 `characterId` 重算图片路径。内容仓稀疏检出时，已有的完整派生图可以继续复用。
 
 ## Git 流程
 
