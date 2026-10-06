@@ -290,7 +290,7 @@ export function createTurnstileVerifier({
   };
 }
 
-function validateSubmissionFields(fields, characters, { characterMaxLength = 64 } = {}) {
+function validateSubmissionFields(fields, characters, { characterMaxLength = 64, siteRoot } = {}) {
   const name = String(fields.name || '').trim();
   if (!name || name.length > 120) return { error: '名称必填且不超过 120 字' };
   const character = String(fields.character || '').trim();
@@ -301,9 +301,12 @@ function validateSubmissionFields(fields, characters, { characterMaxLength = 64 
   }
   const description = String(fields.description || '').trim();
   if (description.length > 500) return { error: '说明不超过 500 字' };
+  const categoryId = typeof fields.categoryId === 'string' ? fields.categoryId.trim() : '';
+  const vocabulary = loadContentVocabulary(siteRoot);
+  if (!categoryId || !vocabulary.ok || !vocabulary.categoryIds.has(categoryId)) return { error: '请选择一个有效的作品类型' };
   try {
     const attribution = submissionAttribution(fields);
-    return { fields: { name, character, description, ...(attribution ? { credit: attribution.credit, creditName: attribution.name, creditUrl: attribution.url } : {}) } };
+    return { fields: { name, character, description, categoryId, ...(attribution ? { credit: attribution.credit, creditName: attribution.name, creditUrl: attribution.url } : {}) } };
   } catch (error) { return { error: error.message }; }
 }
 
@@ -872,7 +875,7 @@ export function createPublicHandler({
           const raw = await readBody(req, cfg.maxBytes);
           let payload = {};
           try { payload = raw.length ? JSON.parse(raw.toString('utf8')) : {}; } catch { return sendJson(res, 400, { ok: false, error: 'invalid json' }); }
-          fields = { name: payload.name, character: payload.character, description: payload.description, credit: payload.credit, creditName: payload.creditName, creditUrl: payload.creditUrl };
+          fields = { name: payload.name, character: payload.character, description: payload.description, categoryId: payload.categoryId, credit: payload.credit, creditName: payload.creditName, creditUrl: payload.creditUrl };
           try {
             fileBuffer = decodeBase64Image(payload.dataBase64, cfg.maxBytes);
           } catch (error) {
@@ -897,7 +900,7 @@ export function createPublicHandler({
           if (!verified) return sendJson(res, 403, { ok: false, error: 'turnstile verification failed' });
         }
 
-        const checked = validateSubmissionFields(fields, characters, { characterMaxLength: cfg.characterMaxLength });
+        const checked = validateSubmissionFields(fields, characters, { characterMaxLength: cfg.characterMaxLength, siteRoot: cfg.siteRoot });
         if (checked.error) return sendJson(res, 400, { ok: false, error: checked.error });
         if (!fileBuffer || fileBuffer.length === 0) return sendJson(res, 400, { ok: false, error: '图片内容为空' });
 

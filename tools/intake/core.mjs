@@ -795,6 +795,7 @@ const FIELD_LABELS = {
   图片名称: 'name',
   '一句话说明（可选）': 'description',
   角色: 'character',
+  作品类型: 'categoryId',
   角色补充: 'characterExtra',
   Tag: 'tags',
   内容来源: 'originType',
@@ -817,6 +818,9 @@ export function fieldsFromSections(sections) {
         .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')
         .split(/[\s,，、]+/)
         .filter((tag) => tag && !tag.startsWith('http'));
+    } else if (key === 'categoryId') {
+      const match = String(value).match(/（([a-z0-9_-]+)）/);
+      fields[key] = match ? match[1] : String(value).trim();
     } else {
       fields[key] = value;
     }

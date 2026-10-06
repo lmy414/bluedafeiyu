@@ -12,6 +12,7 @@ import sharp from 'sharp'
 
 import { isPlaceholderDescription } from './placeholder'
 import {sourceHash, validateI18n} from './localization.mjs'
+import { WORK_TYPE_RULES } from './work-types.mjs'
 
 export { isPlaceholderDescription }
 
@@ -74,7 +75,7 @@ const SYSTEM_PROMPT = [
   'commentary：「蓝色大肥鱼」（DeepSeek 娘，傲娇、嘴硬、爱吐槽的蓝发鲸鱼娘）的第一人称点评，两到三句；必须针对这张图的具体内容，不能是通用模板，不要复述 description。',
   'tags：1 到 4 个中文短标签，每个不超过 8 字。',
   'categoryIds：从给定分类 id 里选 1 个；多格分镜、四格、条漫只能选 comic。',
-].join('\n')
+].join('\n') + '\n' + WORK_TYPE_RULES
 
 type Vocabulary = { categories: Array<{ categoryId: string; name?: string; description?: string }> }
 
@@ -242,8 +243,8 @@ export async function suggestFill(request: FillRequest, call: VisionCaller): Pro
   if (modelFields.includes('categoryIds')) {
     const allowed = new Set(request.vocabulary.categories.map((item) => item.categoryId))
     const ids = Array.isArray(parsed.categoryIds) ? parsed.categoryIds.map(String).filter((id) => allowed.has(id)) : []
-    if (ids.length) suggestion.categoryIds = [...new Set(ids)].slice(0, 2)
-    else errors.push('categoryIds 不在分类词表内')
+    if (ids.length === 1 && Array.isArray(parsed.categoryIds) && parsed.categoryIds.length === 1) suggestion.categoryIds = ids
+    else errors.push('categoryIds 必须是词表中的单个类型')
   }
   return finish()
 }

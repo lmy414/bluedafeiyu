@@ -97,7 +97,7 @@
         var kindId = (work.categoryIds || [])[0] || "";
         var kindWord = SiteLang.fmt(
           "kind." + (kindId || "meme"),
-          ({ meme: "表情包", illustration: "二创插画", setting: "立绘设定图", comic: "漫画" })[kindId] || "表情包"
+          ({ meme: "表情包", illustration: "二创插画", setting: "设定图", comic: "漫画", standing: "立绘", other: "其他作品" })[kindId] || "表情包"
         );
         if (SiteLang.current !== "zh") {
           return SiteLang.fmt("alt.work", "", { name: work.name, character: characterName, kindId: kindId || "meme" });

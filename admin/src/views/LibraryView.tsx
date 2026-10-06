@@ -200,7 +200,7 @@ export function LibraryView() {
             const stableId = category.categoryId || String(category.id)
             return (
               <label className="s3-check" key={String(category.id)}>
-                <input checked={chosenCategories.includes(stableId)} onChange={(event) => setChosenCategories(event.target.checked ? [...chosenCategories, stableId] : chosenCategories.filter((value) => value !== stableId))} type="checkbox" />
+                <input checked={chosenCategories.includes(stableId)} onChange={() => setChosenCategories([stableId])} name="bulk-work-type" type="radio" />
                 {category.name || category.categoryId}
               </label>
             )

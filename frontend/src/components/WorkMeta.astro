@@ -4,10 +4,10 @@ import {imageMetadata} from '../lib/image-metadata.mjs';
 const {work,character,ctx}=Astro.props;
 const origin='https://xn--pssy23gqgbz2d718b.com';
 const url=val=>/^https?:/.test(val||'')?val:origin+'/'+String(val||'').replace(/^\/+/, '');
-const kind={meme:'表情包',illustration:'二创插画',setting:'立绘设定图',comic:'漫画'}[work.categoryIds?.[0]]||'作品';
+const kind={meme:'表情包',illustration:'二创插画',setting:'设定图',comic:'漫画',standing:'立绘',other:'其他作品'}[work.categoryIds?.[0]]||'作品';
 const title=seoTitle(ctx);
 const description=seoDescription(ctx);
 const canonical=`${origin}/works/${work.slug}.html`;
 const json=JSON.stringify(imageMetadata(work,{description,genre:kind})).replace(/</g,'\\u003c');
 ---
-<title>{title}</title><meta name="description" content={description} /><meta name="robots" content="index,follow" /><link rel="canonical" href={canonical} /><meta property="og:type" content="article" /><meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:url" content={canonical} /><meta property="og:image" content={url(work.displayUrl)} /><link rel="icon" href="../favicon.ico" /><link rel="stylesheet" href="../tokens.css?v=15" /><link rel="stylesheet" href="../styles.css?v=20" /><link rel="stylesheet" href="/page-styles/work.css" /><script is:inline src="../lang.js?v=2"></script><script is:inline src="../analytics.js" defer></script><script type="application/ld+json" set:html={json} />
+<title>{title}</title><meta name="description" content={description} /><meta name="robots" content="index,follow" /><link rel="canonical" href={canonical} /><meta property="og:type" content="article" /><meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:url" content={canonical} /><meta property="og:image" content={url(work.displayUrl)} /><link rel="icon" href="../favicon.ico" /><link rel="stylesheet" href="../tokens.css?v=15" /><link rel="stylesheet" href="../styles.css?v=20" /><link rel="stylesheet" href="/page-styles/work.css" /><script is:inline src="../lang.js?v=19"></script><script is:inline src="../analytics.js" defer></script><script type="application/ld+json" set:html={json} />

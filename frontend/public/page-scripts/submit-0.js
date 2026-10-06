@@ -17,6 +17,8 @@
       var nameInput = document.getElementById("f-name");
       var descInput = document.getElementById("f-desc");
       var characterSelect = document.getElementById("f-character");
+      var typeSelect = document.getElementById("f-type");
+      var typeHint = document.getElementById("type-hint");
       var creditSelect = document.getElementById("f-credit");
       var creditFields = document.getElementById("credit-fields");
       var creditName = document.getElementById("f-credit-name");
@@ -95,6 +97,9 @@
         if (!characterSelect.value) {
           return { key: "submit.form.err.character", fallback: "请选择角色。", field: characterSelect };
         }
+        if (!DEMO.categories.some(function (c) { return c.status === "active" && c.id === typeSelect.value; })) {
+          return { key: "submit.form.err.type", fallback: "请选择一个作品类型。", field: typeSelect };
+        }
         if (descInput.value.trim().length > MAX_DESC) {
           return { key: "submit.form.err.desc", fallback: "说明不能超过 500 字。", field: descInput };
         }
@@ -155,6 +160,7 @@
         data.append("image", fileInput.files[0], fileInput.files[0].name);
         data.append("name", nameInput.value.trim());
         data.append("character", characterSelect.value);
+        data.append("categoryId", typeSelect.value);
         data.append("description", descInput.value.trim());
         data.append("credit", creditSelect.value);
         if (creditSelect.value === "named") {
@@ -187,6 +193,7 @@
           .then(function (outcome) {
             if (outcome.response.ok && outcome.payload && outcome.payload.ok === true) {
               form.reset();
+              updateTypeHint();
               updateCredit();
               resetTurnstile();
               setStatus("ok", "submit.form.success", "提交成功，感谢！维护者审核通过后会批量发布。");
@@ -221,6 +228,15 @@
         characterSelect.appendChild(option);
       });
       labelIdle();
+
+      function updateTypeHint() {
+        var entry = DEMO.categories.find(function (c) { return c.id === typeSelect.value; });
+        var key = entry ? "submit.typeDesc." + entry.id : "submit.form.typeHint";
+        typeHint.setAttribute("data-i18n", key);
+        typeHint.textContent = t(key, entry ? entry.description : "每张图只能选择一个类型；不好判断时选择“其他”。");
+      }
+      typeSelect.addEventListener("change", updateTypeHint);
+      updateTypeHint();
 
       form.addEventListener("submit", function (event) {
         event.preventDefault();

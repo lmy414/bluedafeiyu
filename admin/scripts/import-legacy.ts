@@ -357,7 +357,7 @@ async function importOneWork(raw: any, kind: 'blue-fish' | 'owner-picks' | 'subm
     license: raw.license || (kind === 'blue-fish'
       ? { type: 'unknown', note: '历史归档，授权状态不明' }
       : {}),
-    status: 'published',
+    status: raw.status === 'deleted' ? 'removed' : ['hidden', 'removed', 'draft', 'pending'].includes(raw.status) ? raw.status : 'published',
     needsPublish: false,
     changeAction: null,
     publishedAt: safeDate(raw.createdAt),

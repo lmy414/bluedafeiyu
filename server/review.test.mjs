@@ -251,7 +251,7 @@ test('重复 tags 与重复 categoryIds 一律转人工', () => {
 
   const dupCategories = parseReviewResponse(payload({ content: { categoryIds: ['meme', 'meme'] } }), { vocabulary: VOCABULARY });
   assert.equal(dupCategories.verdict, 'manual');
-  assert.match(dupCategories.reason, /重复/);
+  assert.match(dupCategories.reason, /重复|数量上限 1/);
 });
 
 test('非法角色或分类不在枚举内一律转人工', () => {

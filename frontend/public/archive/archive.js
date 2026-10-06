@@ -1,4 +1,4 @@
-import {renderWorkCard} from './work-card.js?v=2';
+import {renderWorkCard} from './work-card.js?v=3';
 import {copyImage} from './image-copy.js?v=1';
 import {installTopicDownloads} from './topic-download.js?v=2';
 (() => {
@@ -6,7 +6,7 @@ import {installTopicDownloads} from './topic-download.js?v=2';
   const $ = (selector, parent = document) => parent.querySelector(selector);
   const $$ = (selector, parent = document) => [...parent.querySelectorAll(selector)];
   const esc = value => String(value ?? '').replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[s]);
-  const typeNames={meme:'梗图',illustration:'插画',setting:'设定图',comic:'漫画'};
+  const typeNames={meme:'梗图',illustration:'插画',setting:'设定图',comic:'漫画',standing:'立绘',other:'其他'};
   const tx = (key, fallback, vars) => {
     if(key.startsWith('v2.type.'))fallback=typeNames[key.slice(8)]||fallback;
     return window.SiteLang ? SiteLang.fmt(key, fallback, vars) : String(fallback).replace(/\{(\w+)\}/g,(_,k)=>vars?.[k]??'');

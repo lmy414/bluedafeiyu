@@ -100,7 +100,7 @@ export const Works: CollectionConfig = {
     { name: 'submissionId', type: 'text', index: true, label: '投稿队列 ID', admin: { readOnly: true } },
     { name: 'sha256', type: 'text', unique: true, index: true, label: 'SHA-256', admin: { readOnly: true } },
     { name: 'character', type: 'relationship', relationTo: 'characters', required: true, label: '角色' },
-    { name: 'categories', type: 'relationship', relationTo: 'categories', hasMany: true, label: '分类' },
+    { name: 'categories', type: 'relationship', relationTo: 'categories', hasMany: true, minRows: 1, maxRows: 1, required: true, label: '作品类型', validate: (value: unknown) => Array.isArray(value) && value.length === 1 ? true : '每张图必须且只能选择一个作品类型', admin: { description: '每张图片只保留一个类型。' } },
     { name: 'tags', type: 'array', label: '标签', fields: [{ name: 'value', type: 'text', required: true }] },
     { name: 'preview', type: 'upload', relationTo: 'media', label: '预览图' },
     {

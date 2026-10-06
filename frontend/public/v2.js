@@ -10,7 +10,7 @@
   var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
   var root = document.documentElement;
   var flash = function (b, t) { var o = b.textContent; b.textContent = t; setTimeout(function () { b.textContent = o; }, 1600); };
-  var KIND = { meme: '梗图', illustration: '插画', setting: '设定', comic: '漫画' };
+  var KIND = { meme: '梗图', illustration: '插画', setting: '设定图', comic: '漫画', standing: '立绘', other: '其他' };
   var kindText = function (ids) { return (ids || []).map(function (id) { return T('v2.type.' + id, KIND[id] || id); }).join(' · '); };
 
   // 快捷键：/ 聚焦搜索

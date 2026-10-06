@@ -9,6 +9,7 @@
 
 import fs from "node:fs";
 import {sourceHash,validateI18n} from "./localization/contract.mjs";
+import { isSingleWorkType } from '../admin/src/lib/work-types.mjs';
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -133,6 +134,11 @@ function main() {
     seen.add(work.id);
     return true;
   }).sort((a, b) => String(b.createdAt).localeCompare(String(a.createdAt)) || String(b.slug).localeCompare(String(a.slug)));
+
+  const allowedTypes = new Set(categories.filter(c => c.status === 'active').map(c => c.id));
+  for (const work of unique) {
+    if (!isSingleWorkType(work.categoryIds, allowedTypes)) throw new Error(`作品 ${work.id} 必须且只能有一个有效类型`);
+  }
 
   const translationsPath = path.join(DIST,"data/work-localizations.json");
   const localized = fs.existsSync(translationsPath) ? readJson(translationsPath).works : {};

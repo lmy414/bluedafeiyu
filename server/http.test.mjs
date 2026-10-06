@@ -139,7 +139,7 @@ function multipartBody(fields, file) {
   return { boundary, body: Buffer.concat(parts) };
 }
 
-async function submit(port, { fields = { name: '测试图', character: 'deepseek' }, file = { field: 'file', filename: 'a.png', type: 'image/png', data: TINY_PNG }, origin = ORIGIN, raw = false, headers = {} } = {}) {
+async function submit(port, { fields = { name: '测试图', character: 'deepseek', categoryId: 'meme' }, file = { field: 'file', filename: 'a.png', type: 'image/png', data: TINY_PNG }, origin = ORIGIN, raw = false, headers = {} } = {}) {
   if (raw) {
     return call(port, {
       method: 'POST',
@@ -167,7 +167,7 @@ test('站内署名入队：支持仅名字，匿名清理残留；非法名字�
   ]) {
     const { publicHandler, queue } = await setup(t);
     await withServer(publicHandler, async (port) => {
-      const res = await submit(port, { fields: { name: '测试图', character: 'deepseek', ...fields } });
+      const res = await submit(port, { fields: { name: '测试图', character: 'deepseek', categoryId: 'meme', ...fields } });
       const invalid = fields.credit === 'named' && (!fields.creditName || fields.creditUrl === 'javascript:bad');
       assert.equal(res.status, invalid ? 400 : 201, res.body.toString());
       const items = await queue.list();
@@ -198,7 +198,7 @@ test('公开健康检查不泄露密钥，且如实报告未配置项', async (t
 test('multipart 投稿成功，公开响应不含 sha / 内部路径', async (t) => {
   const { publicHandler, queue } = await setup(t);
   await withServer(publicHandler, async (port) => {
-    const res = await submit(port, { fields: { name: '表情', character: 'deepseek', description: '测试' } });
+    const res = await submit(port, { fields: { name: '表情', character: 'deepseek', categoryId: 'meme', description: '测试' } });
     assert.equal(res.status, 201, res.body.toString());
     const body = JSON.parse(res.body);
     assert.equal(body.ok, true);
@@ -214,7 +214,7 @@ test('JSON/base64 投稿同样入库', async (t) => {
   const { publicHandler, queue } = await setup(t);
   await withServer(publicHandler, async (port) => {
     const res = await submit(port, {
-      raw: { name: 'base64 图', character: 'deepseek', filename: 'b.png', dataBase64: TINY_PNG.toString('base64') },
+      raw: { name: 'base64 图', character: 'deepseek', categoryId: 'meme', filename: 'b.png', dataBase64: TINY_PNG.toString('base64') },
     });
     assert.equal(res.status, 201, res.body.toString());
     assert.equal((await queue.list()).length, 1);
@@ -241,10 +241,30 @@ test('允许的 Origin 回显具体来源，且从不用 *', async (t) => {
 test('字段校验：缺名称、非法角色、缺图片', async (t) => {
   const { publicHandler } = await setup(t);
   await withServer(publicHandler, async (port) => {
-    assert.equal((await submit(port, { fields: { character: 'deepseek' } })).status, 400);
+    assert.equal((await submit(port, { fields: { character: 'deepseek', categoryId: 'meme' } })).status, 400);
     assert.equal((await submit(port, { fields: { name: 'x', character: 'not-a-character' } })).status, 400);
     assert.equal((await submit(port, { file: null })).status, 400);
   });
+});
+
+test('站内作品类型：六个单选值保留入队，缺失、未知与多选输入拒绝', async (t) => {
+  for (const categoryId of ['meme', 'illustration', 'comic', 'standing', 'setting', 'other']) {
+    const { publicHandler, queue } = await setup(t);
+    await withServer(publicHandler, async port => {
+      const response = await submit(port, { fields: { name: '类型测试', character: 'deepseek', categoryId } });
+      assert.equal(response.status, 201, response.body.toString());
+      assert.equal((await queue.list())[0].fields.categoryId, categoryId);
+    });
+  }
+  const { publicHandler, queue } = await setup(t);
+  await withServer(publicHandler, async port => {
+    for (const categoryId of [undefined, '', 'wallpaper', 'meme,comic']) {
+      const fields = { name: '无效类型', character: 'deepseek', ...(categoryId === undefined ? {} : { categoryId }) };
+      assert.equal((await submit(port, { fields })).status, 400);
+    }
+    assert.equal((await submit(port, { raw: { name: '多选', character: 'deepseek', categoryId: ['meme', 'comic'], image: { base64: TINY_PNG.toString('base64') } } })).status, 400);
+  });
+  assert.equal((await queue.list()).length, 0);
 });
 
 test('格式与大小校验：非图片、超限被拒绝', async (t) => {
@@ -583,8 +603,8 @@ test('Turnstile 开启：缺 token / 校验失败一律 403，校验通过才入
   });
   await withServer(publicHandler, async (port) => {
     assert.equal((await submit(port, {})).status, 403);
-    assert.equal((await submit(port, { fields: { name: 'x', character: 'deepseek', turnstileToken: 'bad' } })).status, 403);
-    const ok = await submit(port, { fields: { name: 'x', character: 'deepseek', turnstileToken: 'good' } });
+    assert.equal((await submit(port, { fields: { name: 'x', character: 'deepseek', categoryId: 'meme', turnstileToken: 'bad' } })).status, 403);
+    const ok = await submit(port, { fields: { name: 'x', character: 'deepseek', categoryId: 'meme', turnstileToken: 'good' } });
     assert.equal(ok.status, 201, ok.body.toString());
   });
   assert.deepEqual(seen, ['bad', 'good']);
@@ -597,7 +617,7 @@ test('Turnstile 校验器抛错也 fail-closed（注入校验器，测试不外�
     turnstileVerify: async () => { throw new Error('boom'); },
   });
   await withServer(throws.publicHandler, async (port) => {
-    assert.equal((await submit(port, { fields: { name: 'x', character: 'deepseek', turnstileToken: 'good' } })).status, 403);
+    assert.equal((await submit(port, { fields: { name: 'x', character: 'deepseek', categoryId: 'meme', turnstileToken: 'good' } })).status, 403);
   });
   // 校验器返回 false（例如 siteverify 说 success=false）同样拒绝
   const denies = await setup(t, {
@@ -605,7 +625,7 @@ test('Turnstile 校验器抛错也 fail-closed（注入校验器，测试不外�
     turnstileVerify: async () => false,
   });
   await withServer(denies.publicHandler, async (port) => {
-    assert.equal((await submit(port, { fields: { name: 'x', character: 'deepseek', turnstileToken: 'good' } })).status, 403);
+    assert.equal((await submit(port, { fields: { name: 'x', character: 'deepseek', categoryId: 'meme', turnstileToken: 'good' } })).status, 403);
   });
 });
 
@@ -640,21 +660,21 @@ test('JSON base64 严格校验：拒绝 data: 前缀 / 非法字符 / 超长', a
   const { publicHandler, queue } = await setup(t);
   await withServer(publicHandler, async (port) => {
     const dataUri = await submit(port, {
-      raw: { name: 'x', character: 'deepseek', dataBase64: `data:image/png;base64,${TINY_PNG.toString('base64')}` },
+      raw: { name: 'x', character: 'deepseek', categoryId: 'meme', dataBase64: `data:image/png;base64,${TINY_PNG.toString('base64')}` },
     });
     assert.equal(dataUri.status, 400);
-    const illegal = await submit(port, { raw: { name: 'x', character: 'deepseek', dataBase64: '!!!not-base64!!!' } });
+    const illegal = await submit(port, { raw: { name: 'x', character: 'deepseek', categoryId: 'meme', dataBase64: '!!!not-base64!!!' } });
     assert.equal(illegal.status, 400);
-    const whitespace = await submit(port, { raw: { name: 'x', character: 'deepseek', dataBase64: `${TINY_PNG.toString('base64')}\n` } });
+    const whitespace = await submit(port, { raw: { name: 'x', character: 'deepseek', categoryId: 'meme', dataBase64: `${TINY_PNG.toString('base64')}\n` } });
     assert.equal(whitespace.status, 400);
-    const valid = await submit(port, { raw: { name: 'x', character: 'deepseek', dataBase64: TINY_PNG.toString('base64') } });
+    const valid = await submit(port, { raw: { name: 'x', character: 'deepseek', categoryId: 'meme', dataBase64: TINY_PNG.toString('base64') } });
     assert.equal(valid.status, 201, valid.body.toString());
   });
   assert.equal((await queue.list()).length, 1);
 
   const small = await setup(t, { env: { SUBMISSION_MAX_BYTES: '16' } });
   await withServer(small.publicHandler, async (port) => {
-    const big = await submit(port, { raw: { name: 'x', character: 'deepseek', dataBase64: TINY_PNG.toString('base64') } });
+    const big = await submit(port, { raw: { name: 'x', character: 'deepseek', categoryId: 'meme', dataBase64: TINY_PNG.toString('base64') } });
     assert.equal(big.status, 413);
   });
 });
@@ -664,7 +684,7 @@ test('character 超过长度上限被拒绝，边界内接受', async (t) => {
   await withServer(publicHandler, async (port) => {
     const tooLong = await submit(port, { fields: { name: 'n', character: 'x'.repeat(65) } });
     assert.equal(tooLong.status, 400);
-    const boundary = await submit(port, { fields: { name: 'n', character: 'x'.repeat(64) } });
+    const boundary = await submit(port, { fields: { name: 'n', character: 'x'.repeat(64), categoryId: 'meme' } });
     assert.equal(boundary.status, 201, boundary.body.toString());
   });
 });
@@ -774,7 +794,7 @@ function seedItem(queue, { source = 'github-issue', extra = 0, fields = {} } = {
     source,
     sourceId: `${source}:internal${extra}`,
     buffer: Buffer.concat([TINY_PNG, Buffer.from([extra & 0xff])]),
-    fields: { name: '待审图', character: 'deepseek', ...fields },
+    fields: { name: '待审图', character: 'deepseek', categoryId: 'meme', ...fields },
   });
 }
 
@@ -1205,7 +1225,7 @@ test('并发保护：同一 id 飞行中重复触发只审核一次', async (t) 
     source: 'web',
     sourceId: 'web:concurrency',
     buffer: TINY_PNG,
-    fields: { name: '并发测试', character: 'deepseek' },
+    fields: { name: '并发测试', character: 'deepseek', categoryId: 'meme' },
     origin: { via: 'web' },
   });
   const coordinator = createReviewCoordinator({ queue, reviewer, bridge: null, logger: { error() {} } });

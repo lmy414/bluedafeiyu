@@ -27,7 +27,7 @@ const bodyStyle = accent ? '--c:' + accent + ';--role-tab-ink:var(--on-art)' : u
   {pageStyles.map(href => <link rel="stylesheet" href={href} />)}
   <link rel="stylesheet" href="/v2.css?v=8" />
   <script is:inline src="/archive-copy.js?v=2" defer></script>
-    <script is:inline src="/lang.js?v=18"></script>
+    <script is:inline src="/lang.js?v=19"></script>
   <script is:inline src="/analytics.js" defer></script>
   <slot name="head" />
 </head>
@@ -82,8 +82,8 @@ const bodyStyle = accent ? '--c:' + accent + ';--role-tab-ink:var(--on-art)' : u
   </div>
   <template id="group-cta-tpl"><aside class="group-cta" aria-label="加入社群" data-i18n-attr="aria-label:v2.joinGroup"><img src={SITE.group.qr} alt={'QQ 群「' + SITE.group.name + '」二维码'} width="88" height="88" loading="lazy" data-i18n-attr="alt:qq.qrAlt" /><div><b data-i18n="v2.cta.title">加入「{SITE.group.name}」</b><p><span data-i18n="v2.cta.text">聊图、催更、投稿、参加活动。QQ 群号</span> <span class="qq-no">{SITE.group.number}</span></p><p class="cta-acts"><a class="btn btn-ink btn-sm" href={SITE.group.url} target="_blank" rel="noopener" data-i18n="qq.join">点击加入 QQ 群</a><button type="button" class="btn btn-ink btn-sm" data-copy-text={SITE.group.number} data-i18n="qq.copy">复制群号</button><a class="btn btn-line btn-sm" href="/community.html" data-i18n="v2.cta.more">社群介绍</a></p></div></aside></template>
   <EventPopup />
-  <script is:inline src="/work-stats.js?v=2" defer></script>
-  <script is:inline src="/v2.js?v=7" defer></script>
+  <script is:inline src="/work-stats.js?v=4" defer></script>
+  <script is:inline src="/v2.js?v=8" defer></script>
   <slot name="scripts" />
 </body>
 </html>

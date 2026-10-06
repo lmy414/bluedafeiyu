@@ -130,7 +130,7 @@
         "Browse AI-girl memes, stickers, fan illustrations, character sheets and comics by character (DeepSeek Chan, Claude Chan, Qwen Chan, GLM Chan and more), and search names & tags within each category.",
       "page.submit.title": "Submit AI-Girl Fan Stickers - On-Site Form & GitHub | DeepSeek Chan",
       "page.submit.desc":
-        "Submitting an AI-girl fan sticker only takes an image upload plus its name and character — an optional one-line note. Use the on-site form or the GitHub form; approved works are published in batches, and tags, source, license and category are added by maintainers during review.",
+        "Upload your AI character fan art, enter its name and character, and select one work type. Use the on-site or GitHub form. Maintainers check the selected type, complete tags and source information, and publish approved works in batches.",
       "page.about.title": "About DeepSeek Chan - AI-Girl Sticker Archive, Licensing & Privacy",
       "page.about.desc":
         "What the DeepSeek Chan AI-girl sticker archive is, image copyright & licensing, Google Analytics privacy, comments, the official QQ group, character-design credits, and how to request attribution or removal.",
@@ -169,7 +169,7 @@
 
       "submit.h1": "Submit",
       "submit.lede":
-        "Submit your AI character fan art on this page or through GitHub: upload an image, enter its name and character, and choose whether to display credit. A note is optional. Maintainers review the remaining information and publish approved submissions in batches.",
+        "Submit your AI character fan art here or through GitHub: upload an image, enter its name and character, select one work type, and choose whether to display credit. A note is optional. Maintainers check the information and publish approved submissions in batches.",
       "submit.guide.title": "Submission guide",
       "submit.what.a": "This site collects ",
       "submit.what.b": "humanized fan stickers of AI characters",
@@ -189,7 +189,7 @@
         " PNG / JPG / GIF / WebP / APNG, up to 10 MB per image; upload the original whenever possible — avoid chat-window screenshots or recompressed copies.",
       "submit.onlyTitle": "When submitting you only need to:",
       "submit.onlyBody":
-        "Upload an image, enter its name and character, and choose whether to display credit. A credit name is required if selected; a personal homepage and note are optional. Maintainers add tags, categories, source, license and detail text during review. Put any known source or license information in the note or an Issue comment.",
+        "Upload an image, enter its name and character, choose one work type and decide whether to show your name. A credited name is required when selected; your homepage and a short note are optional. Maintainers verify the type and add tags, sources, permissions and detail-page text.",
       "submit.confirmTitle": "You must confirm three items before submitting:",
       "submit.confirm1":
         "I confirm I have the right to submit this image, or have obtained the original author's permission.",
@@ -207,7 +207,7 @@
       "submit.channel.github": "GitHub submission form",
       "submit.channel.githubOn": "Open · recommended",
       "submit.channel.githubDesc":
-        "Drag and drop the image, enter its name and character, and choose whether to display credit. A credit name is required if selected; a homepage and note are optional.",
+        "Upload an image and enter its name, character and work type. Choose whether to show your name; your homepage and note are optional.",
       "submit.channel.open": "Open the form",
       "submit.channel.feishu": "Feishu submission",
       "submit.channel.feishuTag": "Placeholder · coming soon",
@@ -233,7 +233,7 @@
       "submit.form.err.creditName": "Enter a credit name, up to 120 characters.",
       "submit.form.err.creditUrl": "Enter a valid http:// or https:// homepage address.",
       "submit.form.metaHint":
-        "Tags, work type, source and license are added by maintainers during review; if you know the source or license, put it in the note above.",
+        "You choose the work type; maintainers check it during review and add tags, sources and permissions. Include known source or permission details in your note.",
       "submit.form.confirmLabel": "Confirm before submitting",
       "submit.form.confirmHint": "All three boxes must be checked to submit.",
       "submit.form.submit": "Submit on-site",
@@ -261,7 +261,7 @@
       "submit.note1":
         "You can also keep using the GitHub submission form above; both routes feed the same review queue.",
       "submit.note2":
-        "Submissions don't go live immediately: maintainers review each image and fill in tags, category, source and license, then approved works are published in batches; they may reach out to confirm details.",
+        "Submissions are reviewed before publication. Maintainers verify the selected type and add tags, sources and permission details.",
 
       "about.h1": "About",
       "about.lede":
@@ -442,9 +442,26 @@
       "v2.type.illustration": "Fan art",
       "v2.type.setting": "Character designs",
       "v2.type.comic": "Comics",
+      "v2.type.standing": "Character art",
+      "v2.type.other": "Other",
+      "kind.standing": "Character art",
+      "kind.other": "Other",
+      "cat.standing": "Character art",
+      "cat.other": "Other",
+      "submit.form.type": "Work type",
+      "submit.form.selectType": "Choose one work type",
+      "submit.form.typeHint": "Choose exactly one type per image. Select Other when unsure.",
+      "submit.form.err.type": "Please choose one valid work type.",
+      "submit.typeDesc.meme": "A single scene expressing a joke, attitude or chat reaction.",
+      "submit.typeDesc.illustration": "Artwork focused on portraits, scenes, atmosphere or composition, including avatars and busts.",
+      "submit.typeDesc.setting": "Design references such as turnarounds, structural details, color palettes or annotated parts.",
+      "submit.typeDesc.comic": "At least two distinct panels; reactions, comparisons and jokes count. A continuing story is not required.",
+      "submit.typeDesc.standing": "An isolated full or nearly full character on a simple background, showing their design or pose.",
+      "submit.typeDesc.other": "Images whose format or limited information prevents a reliable classification.",
+
       "v2.typeSub.meme": "Sticker jokes and chat images · {count} works",
       "v2.typeSub.illustration": "Fully composed artwork · {count} works",
-      "v2.typeSub.setting": "Standing art, turnarounds and design sheets · {count} works",
+      "v2.typeSub.setting": "Turnarounds and annotated design references · {count} works",
       "v2.typeSub.comic": "Short multi-panel comics · {count} works",
       "v2.charsSub": "Pick a character to see their works.",
       "v2.charTypeSub": "{kindId} · {count} works",
@@ -658,7 +675,7 @@
         "DeepSeek娘・Claude娘・Qwen娘・GLM娘 などのキャラ別に、AI娘のネタ画・スタンプ・ファンアート・設定画・多コマ漫画を閲覧。カテゴリ内で名前やタグを検索できます。",
       "page.submit.title": "AI娘スタンプの投稿 - サイト内フォームと GitHub | DeepSeek Chan",
       "page.submit.desc":
-        "AI娘スタンプの投稿は、画像のアップロードと画像名・キャラの記入だけ。ひとこと説明は任意です。サイト内フォームでも GitHub フォームでも投稿でき、承認後にまとめて公開されます。タグ・出所・ライセンス・分類はメンテナーが審査時に補完します。",
+        "AIキャラクターの二次創作をアップロードし、画像名・キャラと作品の種類を一つ選んで投稿できます。サイト内またはGitHubのフォームをご利用ください。選んだ種類をメンテナーが確認し、タグや出典を補完して、承認後にまとめて公開します。",
       "page.about.title": "DeepSeek Chanについて - AI娘スタンプのオープンアーカイブと著作権について",
       "page.about.desc":
         "AI娘スタンプアーカイブ「DeepSeek Chan」の概要、画像の著作権とライセンス、Google Analytics のプライバシー、コメントの仕組み、公式 QQ グループ、キャラデザのクレジット、署名・削除の申請方法。",
@@ -698,7 +715,7 @@
 
       "submit.h1": "投稿",
       "submit.lede":
-        "AI娘の二次創作をこのページまたはGitHubから投稿できます。画像・名前・キャラを入力し、クレジット表記の有無を選んでください。説明は任意です。メンテナーが審査し、承認後にまとめて公開します。",
+        "AIキャラクターの二次創作をこのページまたはGitHubから投稿できます。画像・名前・キャラを入力し、作品の種類を一つ選び、クレジット表記の有無を選んでください。説明は任意です。メンテナーが審査し、承認後にまとめて公開します。",
       "submit.guide.title": "投稿ガイド",
       "submit.what.a": "当サイトが収録するのは",
       "submit.what.b": "AIキャラの擬人化二次創作スタンプ",
@@ -716,7 +733,7 @@
         "PNG / JPG / GIF / WebP / APNG、1 枚 10 MB まで。できるだけ元画像をアップロードし、チャット画面のスクショや再圧縮した画像は避けてください。",
       "submit.onlyTitle": "投稿時に必要なもの：",
       "submit.onlyBody":
-        "画像・名前・キャラを入力し、クレジット表記の有無を選んでください。表記する場合は名前が必須で、個人ホームページと説明は任意です。タグ・分類・出所・ライセンス・詳細文は審査時に補完します。出所や許諾情報は説明欄かIssueコメントに記入してください。",
+        "画像、名前、キャラクターを入力し、作品の種類を一つ選び、名前を公開するか選択してください。名前を公開する場合は名前が必須です。ホームページと説明は任意です。管理者が種類を確認し、タグ、出所、利用許諾、詳細文を補います。",
       "submit.confirmTitle": "送信前に次の 3 つに同意してください：",
       "submit.confirm1":
         "この画像を投稿する権利を持ち、または原作者の許諾を得ていることを確認します。",
@@ -734,7 +751,7 @@
       "submit.channel.github": "GitHub 投稿フォーム",
       "submit.channel.githubOn": "開通済み · おすすめ",
       "submit.channel.githubDesc":
-        "画像をドラッグしてアップロードし、画像名・キャラ・クレジット表記の有無を入力します。表記する場合は名前が必須で、個人ホームページと説明は任意です。",
+        "画像をアップロードし、名前、キャラクター、作品の種類を入力してください。名前の公開を選び、ホームページと説明は任意で記入できます。",
       "submit.channel.open": "フォームを開く",
       "submit.channel.feishu": "Feishu 投稿",
       "submit.channel.feishuTag": "準備中 · もうすぐ開通",
@@ -760,7 +777,7 @@
       "submit.form.err.creditName": "表記する名前を120文字以内で入力してください。",
       "submit.form.err.creditUrl": "有効な http:// または https:// のホームページURLを入力してください。",
       "submit.form.metaHint":
-        "タグ・作品タイプ・出所・ライセンスはメンテナーが審査時に補完します。出所やライセンスをご存じなら、上の説明欄に書いてください。",
+        "作品の種類は投稿者が選び、審査で確認します。タグ、出所、利用許諾は管理者が補います。分かる情報は説明欄に記入してください。",
       "submit.form.confirmLabel": "送信前の確認",
       "submit.form.confirmHint": "3 つすべてチェックしないと送信できません。",
       "submit.form.submit": "サイト内送信",
@@ -788,7 +805,7 @@
       "submit.note1":
         "上の GitHub 投稿フォームも引き続き使えます。どちらの入口も同じ審査キューに入ります。",
       "submit.note2":
-        "投稿はすぐには公開されません。メンテナーが画像を確認してタグ・分類・出所・ライセンスを補完し、承認後にまとめて公開します。その間に確認のご連絡をすることがあります。",
+        "投稿は審査後に公開されます。管理者が選択された種類を確認し、タグ、出所、利用許諾の情報を補います。",
 
       "about.h1": "このサイトについて",
       "about.lede":
@@ -967,9 +984,26 @@
       "v2.type.illustration": "イラスト",
       "v2.type.setting": "設定画",
       "v2.type.comic": "漫画",
+      "v2.type.standing": "立ち絵",
+      "v2.type.other": "その他",
+      "kind.standing": "立ち絵",
+      "kind.other": "その他",
+      "cat.standing": "立ち絵",
+      "cat.other": "その他",
+      "submit.form.type": "作品の種類",
+      "submit.form.selectType": "作品の種類を一つ選択",
+      "submit.form.typeHint": "画像ごとに種類を一つ選んでください。判断が難しい場合は「その他」を選択。",
+      "submit.form.err.type": "作品の種類を一つ選んでください。",
+      "submit.typeDesc.meme": "一枚の画面でネタ、態度、チャットでの反応を表す画像。",
+      "submit.typeDesc.illustration": "人物、場面、雰囲気、構図を描く作品。アイコンや上半身の絵も含みます。",
+      "submit.typeDesc.setting": "三面図、構造の詳細、配色表、部位の注釈などを含むデザイン資料。",
+      "submit.typeDesc.comic": "明確に分かれた二つ以上のコマが必要です。反応、比較、ギャグも含み、物語の進行は必須ではありません。",
+      "submit.typeDesc.standing": "シンプルな背景で、全身またはほぼ全身の姿やポーズを見せる独立したキャラクター絵。",
+      "submit.typeDesc.other": "特殊な形式や情報不足により、ほかの種類に確実に分類できない画像。",
+
       "v2.typeSub.meme": "スタンプネタ・チャット用画像・{count} 件",
       "v2.typeSub.illustration": "構図の整ったイラスト・{count} 件",
-      "v2.typeSub.setting": "立ち絵・三面図・設定稿・{count} 件",
+      "v2.typeSub.setting": "三面図・注釈付きデザイン資料・{count} 件",
       "v2.typeSub.comic": "数コマの短い漫画・{count} 件",
       "v2.charsSub": "キャラを選ぶと、その作品が表示されます。",
       "v2.charTypeSub": "{kindId}・{count} 件",

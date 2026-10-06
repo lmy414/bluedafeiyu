@@ -2,7 +2,7 @@
 const {work,character}=Astro.props;
 const labels={'self-created':'自己创作或生成','author-submitted':'原作者本人投稿','internet-found':'网络整理','community-created':'社区成员创作',unknown:'来源不明'};
 const licences={'submitter-permission':'投稿者确认授权收录与下载','author-permission':'原作者明确授权',cc0:'CC0 公共领域','cc-by':'CC BY 署名','cc-by-nc':'CC BY-NC 署名·非商用',unknown:'授权状态不明',removed:'已下架'};
-const kind={meme:'表情包',illustration:'二创插画',setting:'立绘设定图',comic:'漫画'};
+const kind={meme:'表情包',illustration:'二创插画',setting:'设定图',comic:'漫画',standing:'立绘',other:'其他作品'};
 const badge=bytes=>{const n=Number(bytes)||0;return n<1024?`${n} B`:n<1048576?`${+(n/1024).toFixed(1)} KB`:`${+(n/1048576).toFixed(1)} MB`};
 const src=work.origin||{},who=work.submitter||{},license=work.license||{};
 const rows=[['work.field.type','类型',kind[work.categoryIds?.[0]]||'作品'],['work.field.format','格式',String(work.format||'').toUpperCase()],['work.field.size','尺寸',`${work.width}×${work.height} px`],['work.field.volume','体积',badge(work.fileSize)],['work.field.submitter','提交者',who.name||'未标注'],['work.field.origin','来源类型',labels[src.type]||labels.unknown],['work.field.originAuthor','来源作者',src.author||'未标注'],['work.field.sourceUrl','来源链接',src.sourceUrl||'—'],['work.field.license','授权状态',licences[license.type]||licences.unknown],['work.field.date','收录时间',String(work.createdAt||'').slice(0,10)]];

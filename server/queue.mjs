@@ -100,6 +100,7 @@ function normalizeFields(fields = {}) {
     name: String(fields.name || '').slice(0, 200),
     description: String(fields.description || '').slice(0, 2000),
     character: String(fields.character || ''),
+    ...(fields.categoryId ? { categoryId: String(fields.categoryId).trim() } : {}),
     tags: Array.isArray(fields.tags) ? fields.tags.map((tag) => String(tag)).filter(Boolean).slice(0, 20) : [],
     ...(attribution ? { credit: attribution.credit, creditName: attribution.name, creditUrl: attribution.url } : {}),
     ...(fields.extra && typeof fields.extra === 'object' ? { extra: fields.extra } : {}),

@@ -30,7 +30,7 @@ const { title, desc, path = '/', active = '', bodyPage = active, og, type = 'web
     <link rel="stylesheet" href="/archive/readability.css?v=2" />
     <script is:inline src="/archive-labels.js?v=5" defer></script>
     <script is:inline src="/archive-copy.js?v=2" defer></script>
-    <script is:inline src="/lang.js?v=18" defer></script>
+    <script is:inline src="/lang.js?v=19" defer></script>
     <script is:inline src="/analytics.js" defer></script>
     {schemas.map(schema => <script is:inline type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, '\\u003c')} />)}
     <slot name="head" />
@@ -49,8 +49,8 @@ const { title, desc, path = '/', active = '', bodyPage = active, og, type = 'web
     </div>
     <PreviewDialog />
     <TopicDownloadDialog />
-    <script is:inline src="/work-stats.js?v=3" defer></script>
-    <script is:inline type="module" src="/archive/archive.js?v=5"></script>
+    <script is:inline src="/work-stats.js?v=4" defer></script>
+    <script is:inline type="module" src="/archive/archive.js?v=6"></script>
     <script is:inline src="/archive/filter-select.js?v=1" defer></script>
     <slot name="scripts" />
   </body>

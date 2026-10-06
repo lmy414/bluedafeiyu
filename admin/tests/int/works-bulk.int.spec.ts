@@ -253,6 +253,7 @@ let tempRoot = ''
 let realPayload: Payload | undefined
 let ownerUser: AnyRecord
 let characterId = 0
+let categoryId = 0
 
 /** 关系值可能是数字 ID、字符串 ID，或 depth>0 时填充出的对象；取其中的数字 ID。 */
 function numberAt(value: unknown): number | undefined {
@@ -273,7 +274,7 @@ function realReq(user: AnyRecord, body: AnyRecord): any {
 async function createWork(workId: string): Promise<AnyRecord> {
   return live().create({
     collection: 'works',
-    data: { character: characterId, channel: 'manual', kind: 'submission', name: `作品 ${workId}`, status: 'published', workId },
+    data: { character: characterId, categories: [categoryId], channel: 'manual', kind: 'submission', name: `作品 ${workId}`, status: 'published', workId },
     context: { audit: false, skipNeedsPublish: true },
     overrideAccess: true,
   })
@@ -323,6 +324,8 @@ beforeAll(async () => {
     overrideAccess: true,
   })
   characterId = Number(character.id)
+  const category = await live().create({ collection: 'categories', data: { categoryId: 'bulk-type', name: '测试类型', status: 'active' }, context: { audit: false }, overrideAccess: true })
+  categoryId = Number(category.id)
 
   for (const topic of [
     { name: '收集专题', topicId: 'bulk-add-topic', works: [] as number[] },
@@ -345,6 +348,24 @@ afterAll(async () => {
 })
 
 describe('works-bulk add-to-topic（真实 Payload + 内存 SQLite）', () => {
+  it('批量类型修改拒绝空值和多个类型，单类型写入后仍只有一个关系', async () => {
+    const work = await createWork('sticker_bulk_type')
+    for (const categoryIds of [[], ['bulk-type', 'bulk-type']]) {
+      const response = await bulkHandler(realReq(ownerUser, { action: 'set-categories', ids: [work.workId], categoryIds }))
+      expect(response.status).toBe(400)
+    }
+    const response = await bulkHandler(realReq(ownerUser, { action: 'set-categories', ids: [work.workId], categoryIds: ['bulk-type'] }))
+    expect(response.status).toBe(200)
+    const stored = await live().findByID({ collection: 'works', id: work.id, depth: 0, overrideAccess: true })
+    expect(stored.categories).toEqual([categoryId])
+  })
+
+  it('Works 数据字段也拒绝空类型和多个类型', async () => {
+    const work = await createWork('sticker_type_constraint')
+    for (const categories of [[], [categoryId, categoryId]]) {
+      await expect(live().update({ collection: 'works', id: work.id, data: { categories }, context: { audit: false }, overrideAccess: true })).rejects.toThrow()
+    }
+  })
   it('把稳定 ID 对应作品的数字 work.id 写入关系并成功落库', async () => {
     const work = await createWork('sticker_bulk_add')
     const before = await findTopic('bulk-add-topic')

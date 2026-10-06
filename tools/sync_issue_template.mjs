@@ -108,7 +108,7 @@ function indentWidth(line) {
 // 行级定位：找 `id: character` 的那个 dropdown 块，返回它的 options: 行下标
 // 与紧随其后的选项行闭区间 [runStart..runEnd]（runEnd < runStart 表示选项区为空）。
 // 找不到这样的块返回 null。
-function findCharacterOptionsBlock(lines) {
+function findCharacterOptionsBlock(lines, fieldId = 'character') {
   // body 列表项起点：`- type: dropdown`（缩进结构里的项首行）。
   const itemStarts = [];
   for (let i = 0; i < lines.length; i += 1) {
@@ -124,7 +124,7 @@ function findCharacterOptionsBlock(lines) {
     // 项内必须有 `id: character`（精确匹配，不误伤 `id: character-extra`）。
     let idIndent = -1;
     for (let i = from + 1; i < to; i += 1) {
-      if (/^\s*id:\s*["']?character["']?\s*$/.test(lines[i].text)) {
+      if (lines[i].text.trim().replace(/["']/g, '') === `id: ${fieldId}`) {
         idIndent = indentWidth(lines[i].text);
         break;
       }
@@ -182,7 +182,11 @@ export function expectedOptionLines(characters) {
 }
 
 // 校验模板下拉与角色清单是否一致。返回 { ok, message }；message 可直接打印。
-export function checkTemplateSync({ characters, yamlText }) {
+export function expectedTypeOptionLines(categories) {
+  return categories.filter(c => c.status === 'active').map(c => `        - "${c.name}（${c.id}）"`);
+}
+
+export function checkTemplateSync({ characters, categories, yamlText }) {
   if (!Array.isArray(characters)) {
     return { ok: false, message: "characters 不是数组，无法校验模板下拉" };
   }
@@ -214,6 +218,13 @@ export function checkTemplateSync({ characters, yamlText }) {
     }
   }
   if (firstDiff === -1) {
+    if (categories) {
+      const typeBlock = findCharacterOptionsBlock(lines, 'category');
+      const typeExpected = expectedTypeOptionLines(categories);
+      if (!typeBlock) return { ok: false, message: '投稿模板缺少作品类型下拉' };
+      const typeActual = lines.slice(typeBlock.runStart, typeBlock.runEnd + 1).map(line => line.text);
+      if (typeExpected.join('\n') !== typeActual.join('\n')) return { ok: false, message: '作品类型下拉与 data/categories.json 不一致' };
+    }
     return { ok: true, message: `模板下拉与角色清单一致（${expected.length} 行）` };
   }
   return { ok: false, message: diffText(expected, actual, firstDiff) };
@@ -221,7 +232,7 @@ export function checkTemplateSync({ characters, yamlText }) {
 
 // 把期望下拉行写回模板：只动选项区，其余行（含各自换行符）原样保留。
 // 返回 { ok, changed, message }。
-function writeTemplate(yamlText, characters) {
+function writeTemplate(yamlText, characters, categories) {
   const lines = splitLines(yamlText);
   const block = findCharacterOptionsBlock(lines);
   if (block === null) {
@@ -238,12 +249,17 @@ function writeTemplate(yamlText, characters) {
     const old = lines[block.runStart + index];
     return { text, eol: old !== undefined && old.eol !== "" ? old.eol : fallbackEol };
   });
-  const nextText = joinLines([
+  let nextText = joinLines([
     ...lines.slice(0, block.runStart),
     ...newRun,
     ...lines.slice(block.runEnd + 1),
   ]);
 
+  const typeLines = splitLines(nextText);
+  const typeBlock = findCharacterOptionsBlock(typeLines, 'category');
+  if (!typeBlock) return { ok: false, changed: false, message: '投稿模板缺少作品类型下拉，拒绝写入' };
+  const typeEol = typeLines[typeBlock.optionsIndex].eol || '\n';
+  nextText = joinLines([...typeLines.slice(0, typeBlock.runStart), ...expectedTypeOptionLines(categories).map(text => ({ text, eol: typeEol })), ...typeLines.slice(typeBlock.runEnd + 1)]);
   fs.writeFileSync(TEMPLATE_PATH, nextText, "utf8");
   return { ok: true, changed: nextText !== yamlText, message: "" };
 }
@@ -300,6 +316,7 @@ function parseArgs(argv) {
 function main() {
   const mode = parseArgs(process.argv.slice(2));
   const characters = readCharacters();
+  const categories = JSON.parse(fs.readFileSync(path.join(REPO_ROOT, 'data/categories.json'), 'utf8'));
 
   let yamlText;
   try {
@@ -312,7 +329,7 @@ function main() {
   }
 
   if (mode === "check") {
-    const result = checkTemplateSync({ characters, yamlText });
+    const result = checkTemplateSync({ characters, categories, yamlText });
     if (result.ok) {
       process.stdout.write(`[sync] ${result.message}\n`);
       return;
@@ -324,7 +341,7 @@ function main() {
     process.exit(1);
   }
 
-  const outcome = writeTemplate(yamlText, characters);
+  const outcome = writeTemplate(yamlText, characters, categories);
   if (!outcome.ok) {
     process.stderr.write(`[sync] ${outcome.message}\n`);
     process.exit(1);
@@ -337,6 +354,7 @@ function main() {
   // 写回后自检：从磁盘重读，确认落盘结果与清单一致。
   const after = checkTemplateSync({
     characters,
+    categories,
     yamlText: fs.readFileSync(TEMPLATE_PATH, "utf8"),
   });
   if (!after.ok) {

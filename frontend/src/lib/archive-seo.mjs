@@ -6,7 +6,7 @@ import { seoContext, seoTitle } from './seo.mjs';
 
 export const pageURL = (base, n) => n === 1 ? base :
   (base === '/browse.html' ? '/page/' : base.replace(/\.html$/, '/page/')) + n + '.html';
-const kindNames = { meme: '表情包与梗图', illustration: '二创插画', setting: '立绘与设定图', comic: '漫画' };
+const kindNames = { meme: '表情包与梗图', illustration: '二创插画', setting: '设定图', comic: '漫画', standing: '立绘', other: '其他作品' };
 
 export function createSEO(ctx) {
   const { works, chars, topics, types, esc, grid, button, sectionHead, tr, out } = ctx;
@@ -108,7 +108,7 @@ export function createSEO(ctx) {
     const counts = types.map(t => [t, c.list.filter(w => w.k.includes(t.id)).length]).filter(([, n]) => n);
     const tags = new Map();for (const w of c.list) for (const tag of w.tg) tags.set(tag, (tags.get(tag) || 0) + 1);
     const common = [...tags].sort((a, b) => b[1] - a[1]).slice(0, 4).map(([t]) => t);
-    return `<section class="section intro-panel role-reading">${sectionHead(esc(c.name) + '的收录范围')}<p>这份档案目前收录 ${c.list.length} 件${esc(c.name)}作品。${c.aliases.length ? `现有角色记录中的别名是${esc(c.aliases.join('、'))}。` : ''}${common.length ? `作品中常见的标签包括${esc(common.join('、'))}，可以从这些线索开始找图。` : ''}</p><div class="role-type-links">${counts.map(([t, n]) => `<a class="chip" href="/characters/${c.id}/${t.id}.html">${esc(c.name + kindNames[t.id])}<small>${n}</small></a>`).join('')}</div><p class="source-note">数量按类型分别统计，同一作品可能属于多个类型。本站展示社区二创；不同作者的设计以各作品原始来源为准。</p>${questions([[`怎样找到${c.name}的表情包？`, `<p>进入${counts.some(([t]) => t.id === 'meme') ? button('/characters/' + c.id + '/meme.html', esc(c.name) + '表情包与梗图', 'small') : button('/characters/' + c.id + '/' + counts[0][0].id + '.html', esc(c.name + kindNames[counts[0][0].id]), 'small')}，或在本页按类型筛选。${counts.some(([t]) => t.id === 'meme') ? '' : '这个角色暂未收录梗图，可先浏览其他类型。'}</p>`], ['下载后可以转载或商用吗？', '<p>收录和下载不等于获得转载、改编或商业使用许可。请进入作品详情核对原作者、来源和授权备注；授权状态不明时，先联系权利人确认。</p><a class="text-link" href="/about.html#licensing">查看取得使用许可的方法</a>']])}</section>`;
+    return `<section class="section intro-panel role-reading">${sectionHead(esc(c.name) + '的收录范围')}<p>这份档案目前收录 ${c.list.length} 件${esc(c.name)}作品。${c.aliases.length ? `现有角色记录中的别名是${esc(c.aliases.join('、'))}。` : ''}${common.length ? `作品中常见的标签包括${esc(common.join('、'))}，可以从这些线索开始找图。` : ''}</p><div class="role-type-links">${counts.map(([t, n]) => `<a class="chip" href="/characters/${c.id}/${t.id}.html">${esc(c.name + kindNames[t.id])}<small>${n}</small></a>`).join('')}</div><p class="source-note">每张作品只归入一个类型，各类型数量之和等于角色作品总数。本站展示社区二创；不同作者的设计以各作品原始来源为准。</p>${questions([[`怎样找到${c.name}的表情包？`, `<p>进入${counts.some(([t]) => t.id === 'meme') ? button('/characters/' + c.id + '/meme.html', esc(c.name) + '表情包与梗图', 'small') : button('/characters/' + c.id + '/' + counts[0][0].id + '.html', esc(c.name + kindNames[counts[0][0].id]), 'small')}，或在本页按类型筛选。${counts.some(([t]) => t.id === 'meme') ? '' : '这个角色暂未收录梗图，可先浏览其他类型。'}</p>`], ['下载后可以转载或商用吗？', '<p>收录和下载不等于获得转载、改编或商业使用许可。请进入作品详情核对原作者、来源和授权备注；授权状态不明时，先联系权利人确认。</p><a class="text-link" href="/about.html#licensing">查看取得使用许可的方法</a>']])}</section>`;
   }
   const topicNotes = {
     maojing: ['按投稿者阅读猫鲸的不同表情', '这个作者作品集保留现有收录顺序。先看头像与表情变化，再对照每张作品的说明；想找特定情绪时，可以在合集内筛选梗图或搜索相关标签。'],
@@ -132,7 +132,7 @@ export function createSEO(ctx) {
     }
     if (c?.kind === 'character-type' || c?.kind === 'type') {
       const heading = kindNames[c.type], sample = c.list.slice(0, 3).map(w => `《${w.n}》`).join('、');
-      content += `<section class="section intro-panel">${sectionHead('这一栏可以怎样看？')}<p>本栏整理${esc(c.character?.name || 'AI 娘')}的${esc(heading)}，包括${esc(sample)}等已收录作品。${c.type === 'comic' ? '漫画可能包含连续分镜，建议进入详情放大阅读。' : c.type === 'setting' ? '不同作品由不同作者创作，设定内容以来源中的说明为准。' : c.type === 'meme' ? '可以按台词、情绪和聊天场景继续搜索，再查看作品详情选择原图。' : '进入作品详情可查看完整构图、原始来源和作者署名。'}</p><a class="text-link" href="${c.character ? '/characters/' + c.character.id + '.html' : '/characters.html'}">${esc(c.character ? '回到' + c.character.name + '角色档案' : '按角色继续找作品')}</a></section>`;
+      content += `<section class="section intro-panel">${sectionHead('这一栏可以怎样看？')}<p>本栏整理${esc(c.character?.name || 'AI 娘')}的${esc(heading)}，包括${esc(sample)}等已收录作品。${c.type === 'comic' ? '漫画包含多格分镜，可以表达反应、对比或笑点，建议进入详情放大阅读。' : c.type === 'setting' ? '不同作品由不同作者创作，设定内容以来源中的说明为准。' : c.type === 'meme' ? '可以按台词、情绪和聊天场景继续搜索，再查看作品详情选择原图。' : '进入作品详情可查看完整构图、原始来源和作者署名。'}</p><a class="text-link" href="${c.character ? '/characters/' + c.character.id + '.html' : '/characters.html'}">${esc(c.character ? '回到' + c.character.name + '角色档案' : '按角色继续找作品')}</a></section>`;
     }
     if (c?.kind === 'topic') {
       const note = topicNotes[c.topic.id];

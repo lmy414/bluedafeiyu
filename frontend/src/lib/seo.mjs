@@ -1,5 +1,5 @@
 // Title/description contract ported from the current site's archived SEO rules.
-const kind = {meme:'表情包', illustration:'二创插画',setting:'立绘设定图',comic:'漫画'};
+const kind = {meme:'表情包', illustration:'二创插画',setting:'设定图',comic:'漫画',standing:'立绘',other:'其他作品'};
 export function seoContext(work, character, variant='tag') {
  const tags=Array.isArray(work.tags)?work.tags.map(String):[];
  const aliases=Array.isArray(character.aliases)?character.aliases.map(String):[];

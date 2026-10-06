@@ -319,6 +319,7 @@ function editorialText(works: any[], snapshot: any): string {
     if (work.status === 'hidden' || work.status === 'deleted') current.status = work.status
     else if (Object.prototype.hasOwnProperty.call(current, 'status')) delete current.status
     const exported=workRecord(work,{})
+    setPreservingKeyOrder(current, 'categoryIds', exported.categoryIds)
     if(exported.i18n)current.i18n=exported.i18n
     else if(current.i18n)delete current.i18n
     base[sourcePath] = current

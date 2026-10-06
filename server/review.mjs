@@ -21,6 +21,7 @@
 import { AI_CONTENT_SCHEMA, loadContentVocabulary } from './config.mjs';
 import { validateI18n } from '../tools/localization/contract.mjs';
 import { STATES } from './queue.mjs';
+import { WORK_TYPE_RULES } from '../admin/src/lib/work-types.mjs';
 
 export const REVIEW_VERDICTS = Object.freeze(['pass', 'reject', 'manual']);
 export { AI_CONTENT_SCHEMA };
@@ -35,7 +36,7 @@ const LIMITS = Object.freeze({
   commentary: 2000,
   characterId: 64,
   categoryId: 64,
-  categoryIds: 10,
+  categoryIds: 1,
   tags: 20,
   tagLength: 40,
   reason: 1000,
@@ -53,7 +54,7 @@ const SYSTEM_PROMPT = [
   '日文角色使用模型名ちゃん（DeepSeekちゃん、Claudeちゃん等），日文站名仍为 DeepSeek Chan。产品本身保持官方模型名。作者用户名、URL、ID 和授权状态不可改写。',
   'originNote 和 licenseNote 没有已知事实时必须为空字符串。英文文案不得残留中文；日文用自然日语。日文的 Q版 使用自然的 ちびキャラ 或 デフォルメ，不直接沿用中文缩写 Q版；日文标签必须是当地常用检索词。缺任一语言时不得返回 pass。',
   '只能输出以上字段，不得输出 id/slug/path/submitter/origin/license/status 等系统或法律字段。',
-].join('\n');
+].join('\n') + '\n' + WORK_TYPE_RULES;
 
 /* 控制字符、HTML 标签、脚本协议、事件处理器一律视为注入，拒绝。 */
 const CONTROL_CHARS = /[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/;
@@ -210,7 +211,7 @@ function vocabularyLine(vocabulary) {
     return '（角色与分类枚举未加载，无法确定时请降低置信度或给出 reject）';
   }
   return `characterId 只能取：${[...vocabulary.characterIds].join('、')}；`
-    + `categoryIds 只能取：${[...vocabulary.categoryIds].join('、')}，至少一个。`;
+    + `categoryIds 只能取：${[...vocabulary.categoryIds].join('、')}，必须且只能一个。`;
 }
 
 /**
@@ -243,6 +244,7 @@ export function createHttpReviewClient({ endpoint, apiKey, model, timeoutMs, fet
                   type: 'text',
                   text: [
                     `投稿名称：${fields.name || '(未填)'}；角色：${fields.character || '(未填)'}`,
+                    `投稿者选择的类型：${fields.categoryId || '(未填)'}；仅供参考，与画面冲突时按分类规则纠正。`,
                     vocabularyLine(vocabulary),
                     '请按 system 指定的 submission-ai-content/2 结构只输出一个 JSON 对象。',
                   ].join('\n'),

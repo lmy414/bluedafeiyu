@@ -62,7 +62,7 @@ python -m http.server 5173 -d .build/site
 
 权威清单仍在 `data/`；`dist/` 只暂存清单、快照及图片，不含可维护的前台页面。构建依次暂存数据、同步图片、生成快照，再由 `frontend/src/pages/` 输出 `.html`。改版式改 Astro 页面/组件；不要手工编辑 `.build/site/`。作品 `id`、`slug` 冻结，构建期不运行 `tools/prepare_works.mjs`。
 
-作品详情正文来自 `data/works.json` 或 `data/owner-picks.json` 的 `commentary`，SEO 文案公式在 `frontend/src/lib/seo.mjs`。四类分类由 `data/categories.json` 自动生成 `/categories/<id>.html`；专题由 `data/topics.json` 自动生成 `/topics/<id>.html`，每个专题需有有效作品。旧的 `/category.html` 与 `/topics.html` 仍保留。
+作品详情正文来自 `data/works.json` 或 `data/owner-picks.json` 的 `commentary`，SEO 文案公式在 `frontend/src/lib/seo.mjs`。六类单选类型由 `data/categories.json` 自动生成 `/categories/<id>.html`；专题由 `data/topics.json` 自动生成 `/topics/<id>.html`，每个专题需有有效作品。旧的 `/category.html` 与 `/topics.html` 仍保留。
 
 界面支持简体中文（`zh`，默认）、繁体中文（`zh-Hant`）、英语（`en`）和日语（`ja`）。简体保留原 URL，其他语言使用 `/zh-hant/`、`/en/` 和 `/ja/` 前缀。`frontend/scripts/localize-pages.mjs` 在 Astro 构建后复用 `frontend/public/lang.js` 生成各语言静态 HTML、canonical、hreflang 和 sitemap。语言菜单跳转到当前页面的对应版本，地址固定页面语言，不受浏览器偏好影响。动态链接用 `SiteLang.url()` 保持当前语言；图片、脚本和数据共用根目录资源。繁体动态文案按需加载站内 OpenCC，特殊用词在 `traditionalOverrides` 中维护。动态文案改动后要检查繁体转换和英、日词典。`frontend/public/page-styles/`、`page-scripts/` 管页内特有代码；公共布局与可复用结构在 `frontend/src/layouts/`、`components/`。后台 `admin/` 独立运行，不参与公开前端。
 

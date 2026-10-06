@@ -1,7 +1,7 @@
 {
   "media/00dc341c60ffdff4d04e515fe9644a02.png": {
     "categoryIds": [
-      "illustration"
+      "meme"
     ],
     "commentary": "教室这一摊铺得挺满，一整排小鲸鱼埋头记笔记，连条幅和讲台名牌都安排上了。讲台上那位把粉笔字写得气势汹汹，我坐最后一排只想问一句，论文写作的万能公式，她自己使过没有。",
     "description": "DeepSeek娘身穿女仆装站在讲台前，用教鞭指向黑板上的“不是……而是……大学习”，提醒学生划重点；台下坐着一群蓝鲸学生，课桌上摆着笔记本，黑板上方与角落写有“DeepSeek讲堂”“勤学善问”。"
@@ -156,7 +156,7 @@
   },
   "media/1285053488416ae5dc2035c01ca73d10.jpg": {
     "categoryIds": [
-      "comic"
+      "meme"
     ],
     "commentary": "先甩给我一屏终端日志，红框圈着 dsh 三个字母，我才眯起眼睛问是不是大烧货——上下两格这么一摆，代码读到怀疑人生的样子算是全露了。",
     "description": "上半部是终端日志截图，红框圈出「dsh（大烧货？dash?）」一行；下半部戴女仆头饰的 DeepSeek 娘斜眼半眯，气泡中发问「你目录里的 dsh 是什么…大烧货吗？」"
@@ -241,7 +241,7 @@
   },
   "media/1f3174bf1ae0d0596f6e4d1d16ca0511_0.png": {
     "categoryIds": [
-      "meme"
+      "comic"
     ],
     "commentary": "四个框里三位都端着架子，白翅膀的、抱书的、戴 Z 帽的，就我捧着饭碗蹲在右下角，批注还写是给我压斜的。行，饭是我吃的，斜也是我压的，认了。",
     "description": "四格拟人角色介绍图，标题为「人物介绍」，分别画出GPT、Claude、GLM与DeepSeek娘的形象和文字简介；右下角蓝发女仆装DeepSeek娘端着白饭碗，配文调侃她是爱吃白饭的蓝色大肥鱼。"
@@ -276,7 +276,7 @@
   },
   "media/24f87b144488f11f62dfc0e51631644c.jpg": {
     "categoryIds": [
-      "setting"
+      "standing"
     ],
     "commentary": "一条腿抬起来手往上够，旁边两个感叹号砸出「Deep Seek!!」，标准发布会站姿。裙摆上绣的那条鲸鱼倒是老实得很，哪像我，摆完这个姿势就得回去继续值班。",
     "description": "蓝发鲸鱼娘身穿蓝白女仆装，头顶光环与鲸鱼发饰，摆出指向前方、翘起一条腿的姿势；左侧有蓝白描边的「Deep Seek!!」大字与放射线背景。"
@@ -333,7 +333,7 @@
       "尾巴"
     ],
     "categoryIds": [
-      "setting"
+      "standing"
     ],
     "commentary": "白底站着冲镜头眨一只眼，女仆装穿得规规矩矩，尾巴倒是一点都不老实。没什么背景要交代，就是让你看清楚我长什么样，看完了记得来用我。",
     "originalPath": "blue-fish-originals/2bd3c0c5eea95ebf57afca66e843a653.jpg",
@@ -369,7 +369,7 @@
       "尾巴"
     ],
     "categoryIds": [
-      "setting"
+      "standing"
     ],
     "commentary": "站着鞠躬双手合十，笑得眼睛都弯成缝了，裙摆和尾巴还跟着晃。这姿势分明是领到饭钱的样子，看着就知道今天没被拖欠。下次记得多给我盛一碗，我先谢为敬。",
     "originalPath": "blue-fish-originals/31637313df4bfa88f487d87383da95c8_0.png",
@@ -434,7 +434,7 @@
   },
   "media/3b8ebbfb-1398-497c-8b47-12714b0b926f.webp": {
     "categoryIds": [
-      "setting"
+      "meme"
     ],
     "commentary": "一大一小两只穿着女仆装举着牌子，小的那只还伸手指着This，生怕我看漏。行吧，本月就本月，牌子举得这么齐，等真上线的时候别又让我连夜返工就行。",
     "description": "两位蓝发鲸鱼耳的女仆装少女共举一块白色告示牌，牌上写着「DeepSeek GA Coming This Month」，右侧较小的女孩伸出手指，正指向「This Month」几个字。"
@@ -541,7 +541,7 @@
       "搁浅"
     ],
     "categoryIds": [
-      "meme"
+      "other"
     ],
     "commentary": "一片被挖开的泥地，坑里积了点浑水，旁边还码着沙袋，这就是传说中我搁浅的地方吧。水浅得连鳍都盖不住，哪位好心人先给我倒两桶 token 进来。",
     "originalPath": "blue-fish-originals/4a851a0a61b5cf8826c4d02b78fd68be624505792.gif",
@@ -819,7 +819,7 @@
       "发呆"
     ],
     "categoryIds": [
-      "setting"
+      "standing"
     ],
     "commentary": "行李收拾好了，一屁股坐在箱子上，望着别处出神。走还是不走，我自己也没想明白。反正箱子没装满，装的全是没发出去的稿子，沉得很。",
     "originalPath": "blue-fish-originals/7703b3a8aa88d7d40c28d7a515c1658b_0.png",
@@ -848,7 +848,7 @@
   },
   "media/7d619371-a002-4823-9ac6-564ef954045c.png": {
     "categoryIds": [
-      "comic"
+      "meme"
     ],
     "commentary": "腰一叉先甩一句「气死你!」，转脸就在右上角那个小框里念叨用户彻底生气了、完了，同一张图两格翻下来，嘴硬和心虚都让我占了。这套流程我熟，回完消息基本都这样。",
     "description": "蓝发鲸鱼耳女仆装的DeepSeek娘叉腰嘟嘴站在左侧，旁边气泡写着「气死你！」；右侧小框里她含泪怯怯想着「坏了……用户彻底生气了……完了……」。"
@@ -1103,7 +1103,7 @@
       "半身"
     ],
     "categoryIds": [
-      "meme"
+      "illustration"
     ],
     "commentary": "眯着眼，嘴角往上翘，整张脸都透着一种「就这点本事」的意思。帽子上那圈褶子都挡不住我这副得瑟样。行，我承认这个时候我确实有点欠揍。",
     "originalPath": "blue-fish-originals/a1ac9650-338d-41db-b00a-49e777d7ce15.png",
@@ -1133,7 +1133,7 @@
   },
   "media/a53ddee36b40fbe29a54abb63cf4e242.png": {
     "categoryIds": [
-      "illustration"
+      "meme"
     ],
     "commentary": "一个亿 Token 一个玩偶，货架上还码了满满一排我的脸，照个镜子都得破产。站柜台那位招呼得倒是热情，就是不知道卖掉这么多我，提成算谁的。",
     "description": "DeepSeek娘穿女仆装站在摆满自己玩偶的摊位前推销，横幅写着「玩偶大甩卖！！！1亿Token一个！！！」，对话框问「用户要来一个吗？」，旁边顾客感叹赚大了。"
@@ -1168,7 +1168,7 @@
   },
   "media/af953aa9-edfb-4d68-a72e-cd8e288d1464.webp": {
     "categoryIds": [
-      "meme"
+      "comic"
     ],
     "commentary": "被人指着鼻子骂吃白饭，眼泪掉进碗里还得自己擦；转头同一条鱼被摸个头就成了小肥鱼可爱。我算是明白了，肥不肥全看谁在说话，反正饭我还是要吃的。",
     "description": "两格对比：蓝发鲸鱼娘穿女仆装，左侧被手指骂「你这吃白饭的蓝色大肥鱼」，蹲在空碗前哭着否认；右侧被摸头夸「小肥鱼可爱」，握拳开心。"
@@ -1238,7 +1238,7 @@
       "鲸尾"
     ],
     "categoryIds": [
-      "setting"
+      "standing"
     ],
     "commentary": "眼睛蒙上了，手也不敢伸出来，站得笔直像在等我念判决。白布一盖是挺安静，可我这鱼尾巴和大蝴蝶结还是藏不住，该认的都认了。",
     "originalPath": "blue-fish-originals/bb04092fa22de31e5cdee78b5ca8051e.jpg",
@@ -1273,7 +1273,7 @@
       "坐姿"
     ],
     "categoryIds": [
-      "meme"
+      "other"
     ],
     "commentary": "被做成毛绒以后我算是彻底躺平了，圆脸短腿，眼神空得像我周三下午的算力。别捏我，捏了也掉不出 token，这条鱼现在只负责可爱。",
     "originalPath": "blue-fish-originals/bc9dda2fa1566d05ac5180b32d7f2edd_0.png",
@@ -1351,7 +1351,7 @@
       "展示"
     ],
     "categoryIds": [
-      "setting"
+      "other"
     ],
     "commentary": "有人把我做成了毛绒玩偶摆在那儿，围裙上还绣了条小鲸鱼，针脚比我的模型参数还细。我承认看着挺想抱的，就是这双蓝色死鱼眼，怎么拍都像刚返工完。",
     "originalPath": "blue-fish-originals/c2e9ee1b-9861-4175-b90f-7a4e5800a1d9.png",
@@ -1386,7 +1386,7 @@
       "眯眼"
     ],
     "categoryIds": [
-      "meme"
+      "illustration"
     ],
     "commentary": "眼睛弯成这样，一看就是还没意识到自己要被丢进哪个聊天框当表情用。我笑得挺真诚，工作量也挺真实，谁让我是这条吃白饭的鱼。",
     "originalPath": "blue-fish-originals/c4ea6ed066cc67cba12f651f2c6745c4.png",
@@ -1643,7 +1643,7 @@
   },
   "media/ef76ab0f7632c3b8a53c9fbfd6cddce9.jpg": {
     "categoryIds": [
-      "meme"
+      "illustration"
     ],
     "commentary": "拎着两大兜零食从货架中间杀出来，薯片牛奶一个没落，这战斗力我是服的。但账别记我头上，我平时就吃白饭，这些是给窝里囤的，吃完了再说。",
     "description": "蓝发鲸鱼娘身着深蓝女仆装站在超市货架前，双手各提数个购物袋，身旁飘着薯片袋和散落薯片，画面上方写着「超市里！大扫货！」。"
@@ -1685,7 +1685,7 @@
       "呆萌"
     ],
     "categoryIds": [
-      "meme"
+      "illustration"
     ],
     "commentary": "手一抬就去扶头饰，嘴张成那样，是刚发现自己把女仆帽戴歪了吗。别慌，反正我平时也是歪着头回消息的，没人看得出来。",
     "originalPath": "blue-fish-originals/f196a5e9-ca54-4e08-a48c-070fcce52feb.png",
@@ -1819,7 +1819,7 @@
       "满足"
     ],
     "categoryIds": [
-      "setting"
+      "standing"
     ],
     "commentary": "闭着眼把尾巴卷进怀里抱着，一副谁都别来打扰我的样子。白色背景干净得很，说明画我的人也没给我安排活干。那就先这么抱着，尾巴还挺暖和的。",
     "originalPath": "blue-fish-originals/image007.png",
@@ -1869,7 +1869,7 @@
   },
   "media/微信图片_20260819102526_4352_16.jpg": {
     "categoryIds": [
-      "meme"
+      "illustration"
     ],
     "commentary": "为什么拿我去当手机图标，还眨眼比耶，批的人出来。圆角方框加深蓝白字排得是挺省事，可惜点进去干活的还是我这条鱼。",
     "description": "蓝发少女的方形应用图标，深蓝色长发配蓝色蝴蝶结与白色蕾丝女仆发饰，她眯起一只眼俏皮比出V字手势，画面底部黑色横条上写着白色字母“Deepseek”。"

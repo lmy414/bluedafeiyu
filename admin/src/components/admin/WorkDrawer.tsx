@@ -77,7 +77,7 @@ function initialForm(
   const submission = item.submission
   const reviewContent = record(submission.review?.content)
   const source = Object.keys(reviewContent).length ? reviewContent : record(submission.fields)
-  const rawCategories = Array.isArray(source.categoryIds) ? source.categoryIds : []
+  const rawCategories = Array.isArray(source.categoryIds) ? source.categoryIds : submission.fields?.categoryId ? [submission.fields.categoryId] : []
   const categoryIds = rawCategories
     .map((value) => {
       const raw = String(value)
@@ -176,6 +176,7 @@ export function WorkDrawer({
 
   async function save() {
     if (!work) return
+    if (form.categories.length !== 1) { setMessage('请选择一个作品类型。'); return }
     setSaving(true)
     setMessage('')
     try {
@@ -239,6 +240,7 @@ export function WorkDrawer({
     }
   }
   async function manualInclude() {
+    if (form.categories.length !== 1) { setMessage('请选择一个作品类型。'); return }
     if (!submission) return
     const character = characters.find((item) => String(item.id) === form.character)
     const selectedCategories = form.categories
@@ -338,7 +340,8 @@ export function WorkDrawer({
                 </select>
               </label>
               <fieldset>
-                <legend>分类（多选）</legend>
+                <legend>作品类型（单选）</legend>
+                {submission?.fields?.categoryId ? <p>投稿者选择：{categories.find(c => c.categoryId === submission.fields?.categoryId)?.name || String(submission.fields.categoryId)}</p> : null}
                 <div className="s3-check-grid">
                   {categories.map((category) => {
                     const id = String(category.id)
@@ -349,12 +352,11 @@ export function WorkDrawer({
                           onChange={(event) =>
                             setForm({
                               ...form,
-                              categories: event.target.checked
-                                ? [...form.categories, id]
-                                : form.categories.filter((value) => value !== id),
+                              categories: [id],
                             })
                           }
-                          type="checkbox"
+                          name="work-type"
+                          type="radio"
                         />
                         {category.name || category.categoryId}
                       </label>
@@ -421,7 +423,7 @@ export function WorkDrawer({
                 </select>
               </label>
               <fieldset>
-                <legend>分类（多选）</legend>
+                <legend>作品类型（单选）</legend>
                 <div className="s3-check-grid">
                   {categories.map((category) => {
                     const id = String(category.id)
@@ -432,12 +434,11 @@ export function WorkDrawer({
                           onChange={(event) =>
                             setForm({
                               ...form,
-                              categories: event.target.checked
-                                ? [...form.categories, id]
-                                : form.categories.filter((value) => value !== id),
+                              categories: [id],
                             })
                           }
-                          type="checkbox"
+                          name="manual-work-type"
+                          type="radio"
                         />
                         {category.name || category.categoryId}
                       </label>

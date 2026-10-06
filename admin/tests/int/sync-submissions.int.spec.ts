@@ -35,6 +35,7 @@ let firstDigest: string
 let secondDigest: string
 let queueItems: any[]
 let rawStatusById = new Map<string, number>()
+let categoryRelationId: number
 
 function jsonResponse(value: unknown): Response {
   return {
@@ -132,12 +133,13 @@ beforeAll(async () => {
     context: { audit: false },
     overrideAccess: true,
   })
-  await (payload as any).create({
+  const category = await (payload as any).create({
     collection: 'categories',
     data: { categoryId: 'sync-test-category', name: '同步测试分类', status: 'active' },
     context: { audit: false },
     overrideAccess: true,
   })
+  categoryRelationId = category.id
   await (payload as any).create({
     collection: 'categories',
     data: { categoryId: 'sync-test-category-second', name: '同步测试第二分类', status: 'active' },
@@ -153,6 +155,7 @@ beforeAll(async () => {
         kind: 'submission',
         channel: 'manual',
         character: character.id,
+        categories: [category.id],
         status: 'published',
         needsPublish: false,
         legacyOrder,
@@ -168,7 +171,7 @@ beforeAll(async () => {
   firstDigest = crypto.createHash('sha256').update(firstBuffer).digest('hex')
   secondDigest = crypto.createHash('sha256').update(secondBuffer).digest('hex')
   const firstItem: any = queueItem({ buffer: firstBuffer, createdAt: VALID_CREATED_AT, name: '时间测试作品', suffix: 'first' })
-  firstItem.review.content.categoryIds = ['sync-test-category', 'sync-test-category-second']
+  firstItem.review.content.categoryIds = ['sync-test-category']
   firstItem.review.content.i18n = fixtureI18n(firstItem.review.content.tags)
   const secondItem: any = queueItem({ buffer: secondBuffer, name: '无时间测试作品', suffix: 'second' })
   firstItem.fields = { ...firstItem.fields, credit: 'named', creditName: '小鱼', creditUrl: 'https://home.example/me' }
@@ -233,8 +236,8 @@ describe('syncSubmissions timestamps and formats', () => {
     expect(exportedTimed.createdAt).toBe(VALID_CREATED_AT)
     expect(exportedTimed.updatedAt).toBe(VALID_CREATED_AT)
     expect(exportedTimed.format).toBe('jpg')
-    // Database query order differs from review order; changing it invalidates sourceHash and drops native content.
-    expect(exportedTimed.categoryIds).toEqual(['sync-test-category', 'sync-test-category-second'])
+    // The single type must survive synchronization and export without dropping native content.
+    expect(exportedTimed.categoryIds).toEqual(['sync-test-category'])
     expect(exportedTimed.i18n.en.name).toBe(queueItems[0].review.content.i18n.en.name)
     expect(exportedTimed.i18n.ja.name).toBe(queueItems[0].review.content.i18n.ja.name)
     expect(exportedFallback.createdAt).toBe(fallback.createdAt)
@@ -307,6 +310,7 @@ describe('syncSubmissions timestamps and formats', () => {
         kind: 'submission',
         channel: 'qq',
         character: character.docs[0].id,
+        categories: [categoryRelationId],
         status: 'pending',
         needsPublish: true,
         changeAction: 'add',
@@ -337,7 +341,7 @@ describe('syncSubmissions timestamps and formats', () => {
     const character = await (payload as any).find({ collection: 'characters', limit: 1, overrideAccess: true })
     const work = await (payload as any).create({
       collection: 'works',
-      data: { workId: 'sticker_audit_transaction', name: '审计事务测试', kind: 'submission', channel: 'manual', character: character.docs[0].id, status: 'published', needsPublish: false },
+      data: { workId: 'sticker_audit_transaction', name: '审计事务测试', kind: 'submission', channel: 'manual', character: character.docs[0].id, categories: [categoryRelationId], status: 'published', needsPublish: false },
       context: { skipNeedsPublish: true },
       overrideAccess: true,
     })
@@ -350,7 +354,7 @@ describe('syncSubmissions timestamps and formats', () => {
     const character = await (payload as any).find({ collection: 'characters', limit: 1, overrideAccess: true })
     const create = (data: any) => (payload as any).create({
       collection: 'works',
-      data: { name: '事务回归作品', kind: 'submission', channel: 'manual', character: character.docs[0].id, ...data },
+      data: { name: '事务回归作品', kind: 'submission', channel: 'manual', character: character.docs[0].id, categories: [categoryRelationId], ...data },
       context: { audit: false, skipNeedsPublish: true },
       overrideAccess: true,
     })

@@ -16,6 +16,7 @@
  */
 import { test } from 'node:test';
 import {fixtureI18n} from '../../../tools/localization/test-fixture.mjs';
+import { WORK_TYPE_RULES } from '../../../admin/src/lib/work-types.mjs';
 import assert from 'node:assert/strict';
 import fsp from 'node:fs/promises';
 import os from 'node:os';
@@ -515,6 +516,7 @@ test('提示词与 server/review.mjs 的 SYSTEM_PROMPT 不漂移', async () => {
 
   const prompt = await fsp.readFile(path.join(REPO_ROOT, 'ops', 'hermes', 'prompt-review.md'), 'utf8');
   assert.ok(prompt.includes(canonical), 'ops/hermes/prompt-review.md 的 System 段与 server/review.mjs 不一致，需要同步');
+  assert.ok(prompt.includes(WORK_TYPE_RULES), 'Hermes 必须使用相同的六类型判断规则');
 });
 
 test('环境变量示例与脚本不含真实密钥，也不碰被禁的接口', async () => {

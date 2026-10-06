@@ -51,7 +51,7 @@ describe('suggestFill', () => {
     expect(suggestion.commentary).toBeUndefined()
     expect(suggestion.tags).toEqual(['按钮'])
     expect(suggestion.categoryIds).toBeUndefined()
-    expect(errors).toEqual(expect.arrayContaining(['commentary 不合法或为空', 'categoryIds 不在分类词表内']))
+    expect(errors).toEqual(expect.arrayContaining(['commentary 不合法或为空', 'categoryIds 必须是词表中的单个类型']))
   })
 
   it('说明和点评一样时丢弃点评', async () => {

@@ -2,25 +2,37 @@
   {
     "id": "meme",
     "name": "梗图",
-    "description": "表情包梗、聊天用图",
+    "description": "单幅画面，表达梗、吐槽、态度或聊天反应",
     "status": "active"
   },
   {
     "id": "illustration",
     "name": "插画",
-    "description": "完整构图的绘画作品",
+    "description": "人物、场景、氛围与艺术构图，含头像和半身像",
     "status": "active"
   },
   {
     "id": "setting",
     "name": "设定图",
-    "description": "立绘、三视图、设定稿",
+    "description": "明确的设计参考：三视图、结构拆解、色板或部位标注",
     "status": "active"
   },
   {
     "id": "comic",
     "name": "漫画",
-    "description": "多格分镜、连环画、条漫",
+    "description": "两个及以上明确分格或分镜，可表达反应、对比或笑点，不要求叙事",
+    "status": "active"
+  },
+  {
+    "id": "standing",
+    "name": "立绘",
+    "description": "简单背景上的独立人物，展示完整或接近完整的造型与姿态",
+    "status": "active"
+  },
+  {
+    "id": "other",
+    "name": "其他",
+    "description": "形式特殊或信息不足，无法可靠归入前五类的图片",
     "status": "active"
   }
 ]

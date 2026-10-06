@@ -73,7 +73,16 @@ test("表单字段带 name 属性，字段名与后端契约一致", () => {
   assert.match(form, /id="f-name"[^>]*name="name"/);
   assert.match(form, /id="f-desc"[^>]*name="description"/);
   assert.match(form, /id="f-character"[^>]*name="character"/);
+  assert.match(form, /id="f-type"[^>]*name="categoryId"[^>]*required/);
   assert.match(form, /id="f-turnstile-token"[^>]*name="turnstileToken"/);
+});
+
+test("作品类型只允许单选，六个有效类型都存在并随表单提交", () => {
+  const selector = /<select[^>]*id="f-type"[\s\S]*?<\/select>/.exec(form)?.[0];
+  assert.ok(selector);
+  assert.doesNotMatch(selector, /\bmultiple\b/);
+  for (const id of ['meme', 'illustration', 'comic', 'standing', 'setting', 'other']) assert.match(selector, new RegExp(`value="${id}"`));
+  assert.match(script, /data\.append\("categoryId"/);
 });
 
 test("三个确认项与 turnstileToken 字段都在表单里", () => {

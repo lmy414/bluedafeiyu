@@ -349,7 +349,10 @@ export interface Work {
   submissionId?: string | null;
   sha256?: string | null;
   character: number | Character;
-  categories?: (number | Category)[] | null;
+  /**
+   * 每张图片只保留一个类型。
+   */
+  categories: (number | Category)[];
   tags?:
     | {
         value: string;

@@ -301,6 +301,7 @@ html[data-theme='dark'] .s3-stat-card--warning small { color: var(--s3-slate); }
 .s3-form-grid textarea { resize: vertical; }
 .s3-check-grid { display: grid; gap: .45rem; grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr)); }
 .s3-check { align-items: center; display: flex !important; flex-direction: row; gap: .4rem; }
+.s3-check input[type='radio'] { flex: 0 0 1rem; height: 1rem; margin: 0; padding: 0; width: 1rem; }
 .s3-rationale { background: #f8fafc; border-radius: .6rem; line-height: 1.7; padding: .8rem; }
 .s3-detail-list { display: grid; gap: .6rem; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); margin: 0; }
 .s3-detail-list--wide { grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); }

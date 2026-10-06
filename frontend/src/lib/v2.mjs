@@ -36,7 +36,7 @@ export const EVENT = {
 };
 
 // 类型短名（卡片角标、筛选条用）；全称用 data/categories.json 的 name
-export const SHORT = { meme: '梗图', illustration: '插画', setting: '设定', comic: '漫画' };
+export const SHORT = { meme: '梗图', illustration: '插画', setting: '设定图', comic: '漫画', standing: '立绘', other: '其他' };
 export const TYPES = categories.map(c => ({ ...c, short: SHORT[c.id] || c.name }));
 const typeById = new Map(TYPES.map(t => [t.id, t]));
 

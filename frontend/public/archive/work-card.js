@@ -1,6 +1,6 @@
 // One renderer for Astro's static HTML and cards appended in the browser.
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
-const kindNames = {meme:'梗图',illustration:'插画',setting:'设定图',comic:'漫画'};
+const kindNames = {meme:'梗图',illustration:'插画',setting:'设定图',comic:'漫画',standing:'立绘',other:'其他'};
 export function renderWorkCard(work, {url = value => value, translate = (_key,value) => value, names = value => value, eager = false} = {}) {
   const href = esc(url('/works/' + work.slug + '.html'));
   const roleHref = esc(url('/characters/' + work.cid + '.html'));

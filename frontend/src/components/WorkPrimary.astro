@@ -1,6 +1,6 @@
 ---
 const {work,character}=Astro.props;
-const kind={meme:'表情包',illustration:'二创插画',setting:'立绘设定图',comic:'漫画'}[work.categoryIds?.[0]]||'作品';
+const kind={meme:'表情包',illustration:'二创插画',setting:'设定图',comic:'漫画',standing:'立绘',other:'其他作品'}[work.categoryIds?.[0]]||'作品';
 const alt=`《${work.name}》${character.name}${kind}，${(work.tags||[]).join('、')} AI娘二创图`;
 const src=/^https?:/.test(work.displayUrl||'')?work.displayUrl:'../'+(work.displayUrl||work.thumbUrl);
 ---

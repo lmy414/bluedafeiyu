@@ -1,4 +1,5 @@
 ---
+import categories from '../../../data/categories.json';
 const turnstileSitekey = (import.meta.env.PUBLIC_TURNSTILE_SITEKEY || "").trim();
 ---
 <form class="form" id="submission-form" novalidate data-api-endpoint="/api/v1/submissions" data-turnstile-sitekey={turnstileSitekey || undefined}>
@@ -20,6 +21,14 @@ const turnstileSitekey = (import.meta.env.PUBLIC_TURNSTILE_SITEKEY || "").trim()
         <select id="f-character" name="character" required></select>
       </div>
       <div class="form-row">
+        <label for="f-type"><span data-i18n="submit.form.type">作品类型</span><span class="req-mark">*</span></label>
+        <select id="f-type" name="categoryId" required aria-describedby="type-hint">
+          <option value="" data-i18n="submit.form.selectType">请选择作品类型</option>
+          {categories.filter(c => c.status === 'active').map(c => <option value={c.id} data-i18n={`v2.type.${c.id}`}>{c.name}</option>)}
+        </select>
+        <span class="hint" id="type-hint" aria-live="polite" data-i18n="submit.form.typeHint">每张图只能选择一个类型；不好判断时选择“其他”。</span>
+      </div>
+      <div class="form-row">
         <label for="f-credit"><span data-i18n="submit.form.credit">是否署名</span><span class="req-mark">*</span></label>
         <select id="f-credit" name="credit" required>
           <option value="anonymous" data-i18n="submit.form.anonymous">不署名</option>
@@ -38,7 +47,7 @@ const turnstileSitekey = (import.meta.env.PUBLIC_TURNSTILE_SITEKEY || "").trim()
         </div>
       </div>
       <div class="form-row">
-        <span class="hint" data-i18n="submit.form.metaHint">Tag、作品类型、来源和授权由维护者审核时补充；知道来源或授权时可写在上面的说明里。</span>
+        <span class="hint" data-i18n="submit.form.metaHint">作品类型由你选择，审核时会核对；Tag、来源和授权由维护者补充。知道来源或授权时可写在说明里。</span>
       </div>
       <input type="hidden" id="f-turnstile-token" name="turnstileToken" value="" />
       <div class="form-row" id="turnstile-row" hidden>

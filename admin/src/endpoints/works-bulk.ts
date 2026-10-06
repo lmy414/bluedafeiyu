@@ -253,6 +253,7 @@ export const bulkHandler = async (req: PayloadRequest): Promise<Response> => {
 
   if (action === 'set-categories') {
     const categoryIds = Array.isArray(body.categoryIds) ? body.categoryIds.map(String) : []
+    if (categoryIds.length !== 1) return json({ ok: false, error: '每张图必须且只能选择一个作品类型' }, 400)
     const categories = await payload.find({ collection: 'categories', where: { categoryId: { in: categoryIds } }, limit: 1000, depth: 0, overrideAccess: true })
     if (categories.docs.length !== categoryIds.length) return json({ ok: false, error: '分类不存在' }, 400)
     for (const work of works) {

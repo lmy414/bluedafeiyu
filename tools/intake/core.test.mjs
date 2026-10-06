@@ -22,6 +22,7 @@ import os from 'node:os';
 import path from 'node:path';
 import {
   downloadAttachment,
+  fieldsFromSections,
   githubJson,
   hasStickerSubmissionLabel,
   listItems,
@@ -42,6 +43,13 @@ const TINY_PNG = Buffer.from(
 );
 
 const ASSET_URL = 'https://github.com/user-attachments/assets/123e4567-e89b-12d3-a456-426614174000';
+
+test('GitHub 单选作品类型标签转换为稳定 id，旧表单仍可入队', () => {
+  for (const [name, id] of [['梗图','meme'],['插画','illustration'],['漫画','comic'],['立绘','standing'],['设定图','setting'],['其他','other']]) {
+    assert.deepEqual(fieldsFromSections({ 图片名称: '测试', 作品类型: `${name}（${id}）` }), { name: '测试', categoryId: id });
+  }
+  assert.deepEqual(fieldsFromSections({ 图片名称: '旧投稿' }), { name: '旧投稿' });
+});
 
 async function makeContentDir(base) {
   const dir = path.join(base, 'content');

@@ -21,7 +21,7 @@ const TEXT_LIMITS = {
   commentary: 2000,
   characterId: 64,
   categoryId: 64,
-  categoryIds: 10,
+  categoryIds: 1,
   tags: 20,
   tagLength: 40,
 }

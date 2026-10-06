@@ -1,7 +1,7 @@
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const kind=(api,id)=>api.fmt('v2.type.'+id,id);
 function context(base,api,snapshot){
-  const role=base.match(/^\/characters\/([^/]+)(?:\/(meme|illustration|setting|comic))?(?:\/page\/\d+)?\.html$/);
+  const role=base.match(/^\/characters\/([^/]+)(?:\/(meme|illustration|setting|comic|standing|other))?(?:\/page\/\d+)?\.html$/);
   const category=base.match(/^\/categories\/([^/]+)(?:\/page\/\d+)?\.html$/);
   const character=role&&snapshot.characters.find(c=>c.id===role[1]);
   const type=category?.[1]||(role?.[2]&&role[2]!=='page'?role[2]:null);
@@ -53,7 +53,8 @@ export function applyNativeArchives(document,api,base,snapshot){
     const notes=en?{comic:'Comics may span several panels. Open the work to read it at full size.',setting:'Designs vary by creator. Check the original source for character details.',meme:'Search by dialogue, mood or chat situation, then open a work to download its original.',illustration:'Open a work to see the full composition, original source and artist credit.'}:{comic:'複数のコマがある漫画は、作品の詳細ページで拡大してお読みください。',setting:'デザインは作者ごとに異なります。設定の詳細は各作品の出典をご確認ください。',meme:'セリフ、気分、会話の場面で検索し、作品の詳細から元画像をご覧ください。',illustration:'作品の詳細では、全体の構図、出典、作者のクレジットをご確認いただけます。'};
     if(section){
       section.querySelector('h2').textContent=en?'Explore this archive':'このアーカイブの見方';
-      section.querySelector('p').textContent=(en?`This archive brings together ${kind(api,c.type).toLowerCase()} featuring ${c.name}, including ${samples}. `:`${c.name}の${kind(api,c.type)}をまとめています。収録作品には${samples}などがあります。`)+notes[c.type];
+      const extra=en?{standing:'These works show an isolated character, usually against a plain background.',other:'These works have unusual formats or cannot be confidently assigned to another type.'}:{standing:'シンプルな背景で、キャラクターの全身や姿を見せる作品です。',other:'特殊な形式や、ほかの種類に分類しにくい作品をまとめています。'};
+      section.querySelector('p').textContent=(en?`This archive brings together ${kind(api,c.type).toLowerCase()} featuring ${c.name}, including ${samples}. `:`${c.name}の${kind(api,c.type)}をまとめています。収録作品には${samples}などがあります。`)+(notes[c.type]||extra[c.type]||'');
       const link=section.querySelector('a');if(link)link.textContent=c.character?(en?'Back to '+c.name+'’s archive':c.name+'のアーカイブへ'):(en?'Browse by character':'キャラクターから探す');
     }
   }else{

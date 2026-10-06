@@ -11,6 +11,11 @@ const vocabulary={characterIds:new Set(['deepseek']),categoryIds:new Set(['meme'
 const record={...source,workId:'frozen-id',slug:'frozen-slug',kind:'submission',status:'published',legacySource:'submission-sync',character:{characterId:'deepseek'},categories:[{categoryId:'meme'}],tags:source.tags.map(value=>({value})),origin:{},license:{}}
 const exported=(work:any)=>JSON.parse(buildSiteDataTexts({works:[work],characters:[],categories:[],topics:[]})['data/works.json'])[0]
 describe('multilingual persistence and export',()=>{
+  it('exports the current single type for archived blue-fish works over the previous snapshot',()=>{
+    const work={...record,kind:'blue-fish',categories:[{categoryId:'standing'}],legacyData:{sourcePath:'media/design.png'}}
+    const output=buildSiteDataTexts({works:[work],characters:[],categories:[],topics:[],editorialSnapshot:{text:JSON.stringify({'media/design.png':{categoryIds:['setting','illustration'],commentary:'让我看看'}})}})
+    expect(JSON.parse(output['data/blue-fish-editorial.json'])['media/design.png'].categoryIds).toEqual(['standing'])
+  })
   it('keeps review translations through validation/export and invalidates edited source',()=>{
     const content={...source,i18n:fixtureI18n(source.tags)}
     expect(validateContent(content,vocabulary).ok).toBe(true)
