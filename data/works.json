@@ -14310,6 +14310,54 @@
     ]
   },
   {
+    "id": "sticker_d2cc76d9cec6405433a086c7",
+    "name": "小笨蛋模型",
+    "description": "一张与 DeepSeek 的聊天截图，小d酱用撒娇口吻讲解灰度测试的观察方法，并自嘲是「小笨蛋模型」。",
+    "commentary": "本鱼游过来瞅一眼——这 DeepSeek 被叫小d酱还会害羞，讲灰度测试讲得头头是道，最后一句「我可能自己都不知道自己被升级了」露馅了吧？明明精得很，还装小笨蛋，哼，可爱。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/d2cc76d9cec64054.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/d2cc76d9cec64054.webp",
+    "fullPath": "submissions/large/deepseek/d2cc76d9cec64054.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 2433,
+    "height": 2800,
+    "fileSize": 1107643,
+    "sha256": "d2cc76d9cec6405433a086c7763682b3f976c4d2164d405c0c8aae57047e4f42",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "小d酱",
+      "灰度测试",
+      "拟人化",
+      "聊天截图"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "issue": 82,
+      "issueTitle": "小笨蛋模型",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/82",
+      "submitter": "kaiyuey03",
+      "assetId": "af46448b-71e1-4ff4-971e-81d4f79e9c0c",
+      "assetUrl": "https://github.com/user-attachments/assets/af46448b-71e1-4ff4-971e-81d4f79e9c0c"
+    },
+    "license": {},
+    "status": "deleted",
+    "createdAt": "2026-10-02T06:01:20.681Z",
+    "updatedAt": "2026-10-03T18:25:16.444Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610020010",
+    "categoryIds": [
+      "meme"
+    ]
+  },
+  {
     "id": "sticker_8ab90fe5d57579e6bbf858d4",
     "name": "小笨蛋模型小d酱",
     "description": "四格漫画中，DeepSeek 拟人角色小d酱讲述识别灰度测试的四个征兆，最后自嘲是小笨蛋模型并撒娇要白饭。",
@@ -19647,6 +19695,52 @@
     ]
   },
   {
+    "id": "sticker_ca43b3d0e6e50ac311bdd86f",
+    "name": "做噩梦了吗",
+    "description": "Blue whale拟人少女穿着女仆装抱枕入睡的DeepSeek二创插画。",
+    "commentary": "蓝色大肥鱼：别怕，噩梦来了我就把枕头抱紧一点，顺便把坏记忆全丢进缓存清理。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/ca43b3d0e6e50ac3.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/ca43b3d0e6e50ac3.webp",
+    "fullPath": "submissions/large/deepseek/ca43b3d0e6e50ac3.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1080,
+    "height": 1120,
+    "fileSize": 836498,
+    "sha256": "ca43b3d0e6e50ac311bdd86fc734d072e009d24dd14ffdde9bfa232f7cc2e1cb",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "拟人化",
+      "女仆装",
+      "蓝发",
+      "鲸鱼",
+      "睡觉",
+      "二创"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "hidden",
+    "createdAt": "2026-10-05T01:57:49.799Z",
+    "updatedAt": "2026-10-05T01:57:49.799Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050002",
+    "categoryIds": [
+      "illustration",
+      "meme"
+    ]
+  },
+  {
     "id": "sticker_eccf661570e68a042ce10726",
     "name": "拜托，这个活我只收了你2rmb诶",
     "description": "DeepSeek 拟人化的蓝发鲸鱼娘穿女仆装摊手抱怨，配上「只收了你2rmb」的委屈台词。",
@@ -21986,6 +22080,48 @@
     ]
   },
   {
+    "id": "sticker_eec47dd8af9b218a126a1a90",
+    "name": "噩梦",
+    "description": "又做噩梦了大肥鱼",
+    "commentary": "谁、谁做噩梦了！我不过是躺下歇一会儿而已……围裙上那只小鲸鱼画得倒是挺像我，勉强夸一句。哼，别盯着看太久，小心我把你也拽进梦里当抱枕。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/eec47dd8af9b218a.png",
+    "thumbnailPath": "submissions/previews/deepseek/eec47dd8af9b218a.webp",
+    "fullPath": "submissions/large/deepseek/eec47dd8af9b218a.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "eec47dd8af9b218a126a1a90531a5396da823315e79de64841f49382e352a3b4",
+    "characterId": "deepseek",
+    "tags": [
+      "蓝发女仆",
+      "睡颜",
+      "鲸鱼围裙",
+      "噩梦"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "hidden",
+    "createdAt": "2026-10-05T18:34:01.348Z",
+    "updatedAt": "2026-10-05T23:38:33.991Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610050039",
+    "categoryIds": [
+      "illustration"
+    ]
+  },
+  {
     "id": "sticker_1b912cc91923924872398df9",
     "name": "画像",
     "description": "黑翼绘师为蓝发鲸鱼娘现场写生的油画室场景，画布上正浮现她的草稿肖像。",
@@ -22126,7 +22262,7 @@
     "updatedAt": "2026-10-05T23:22:03.722Z",
     "tone": "deepseek",
     "symbol": "",
-    "slug": "deepseek202610050002",
+    "slug": "deepseek202610050043",
     "categoryIds": [
       "illustration"
     ]
@@ -22170,7 +22306,7 @@
     "updatedAt": "2026-10-05T23:24:13.510Z",
     "tone": "deepseek",
     "symbol": "",
-    "slug": "deepseek202610050039",
+    "slug": "deepseek202610050044",
     "categoryIds": [
       "comic",
       "meme"
