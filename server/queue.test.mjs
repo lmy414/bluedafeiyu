@@ -13,6 +13,7 @@ import { test } from 'node:test';
 
 import { AI_CONTENT_SCHEMA, resolveConfig } from './config.mjs';
 import { STATES, TERMINAL_STATES, createQueue } from './queue.mjs';
+import { fixtureI18n } from '../tools/localization/test-fixture.mjs';
 
 const TINY_PNG = Buffer.from(
   'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8DwHwAFAAH/q842iQAAAABJRU5ErkJggg==',
@@ -250,6 +251,33 @@ test('attachReview 把受校验 content 写进私有摘要与 ai raw，剔除系
   assert.deepEqual(Object.keys(raw.content).sort(), [
     'categoryIds', 'characterId', 'commentary', 'description', 'name', 'tags',
   ]);
+});
+
+test('英日审核内容在私有摘要、原始记录与队列重启后保持完整', async (t) => {
+  const { queue, cfg } = await setup(t);
+  const { item } = await queue.enqueue({ source: 'web', sourceId: 'web:native', buffer: TINY_PNG });
+  const content = {
+    name: '探头', description: 'DeepSeek娘探头。', commentary: '让我看看。',
+    characterId: 'deepseek', categoryIds: ['meme'], tags: ['探头'], i18n: fixtureI18n(['探头']),
+  };
+  await queue.attachReview(item.id, { verdict: 'pass', confidence: 0.95, schema: AI_CONTENT_SCHEMA, content }, { raw: { content } });
+  assert.deepEqual((await queue.get(item.id)).review.content, content);
+  const stored = JSON.parse(await fs.readFile(path.join(cfg.paths.ai, `${item.id}.json`), 'utf8'));
+  assert.deepEqual(stored.content.i18n, content.i18n);
+  const reopened = await createQueue(cfg);
+  assert.deepEqual((await reopened.get(item.id)).review.content.i18n, content.i18n);
+});
+
+test('非法英日内容在队列落盘前拒绝，保留原审核状态', async (t) => {
+  const { queue } = await setup(t);
+  const { item } = await queue.enqueue({ source: 'web', sourceId: 'web:invalid-native', buffer: TINY_PNG });
+  const content = {
+    name: '探头', description: '探头。', commentary: '让我看看。',
+    characterId: 'deepseek', categoryIds: ['meme'], tags: ['探头'], i18n: fixtureI18n(['探头']),
+  };
+  content.i18n.en.name = '蓝色大肥鱼';
+  await assert.rejects(() => queue.attachReview(item.id, { verdict: 'pass', confidence: 0.95, content }), /Chinese left in English prose/);
+  assert.equal((await queue.get(item.id)).review, null);
 });
 
 test('attachReview 没有 content 时只记摘要，不无中生有', async (t) => {

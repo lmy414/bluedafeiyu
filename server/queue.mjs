@@ -22,6 +22,7 @@ import { createHash } from 'node:crypto';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { submissionAttribution } from '../admin/src/lib/attribution.mjs';
+import { validateI18n } from '../tools/localization/contract.mjs';
 
 import { AI_CONTENT_SCHEMA, ALLOWED_IMAGE_EXT, FORMAT_EXT, SCHEMA, ensureStorageLayout } from './config.mjs';
 
@@ -105,7 +106,7 @@ function normalizeFields(fields = {}) {
   };
 }
 
-/* AI content 白名单：只有这六个内容字段。系统/法律字段（id/slug/path/submitter/
+/* AI content 白名单：中文内容字段与完整 i18n。系统/法律字段（id/slug/path/submitter/
  * origin/license/status 等）与任何未知字段都不在其中，写摘要时一律丢弃——审核层
  * 已经拒过，这里再兜一次底。审核结论三元组留在 item.review 上，不塞进 content。 */
 const REVIEW_CONTENT_LIMITS = Object.freeze({
@@ -124,7 +125,7 @@ function normalizeReviewContent(content) {
   if (!content || typeof content !== 'object' || Array.isArray(content)) return null;
   const text = (value, max) => String(value ?? '').slice(0, max);
   const list = (value, max, itemMax) => (Array.isArray(value) ? value.slice(0, max).map((entry) => text(entry, itemMax)) : []);
-  return {
+  const normalized = {
     name: text(content.name, REVIEW_CONTENT_LIMITS.name),
     description: text(content.description, REVIEW_CONTENT_LIMITS.description),
     commentary: text(content.commentary, REVIEW_CONTENT_LIMITS.commentary),
@@ -132,6 +133,8 @@ function normalizeReviewContent(content) {
     categoryIds: list(content.categoryIds, REVIEW_CONTENT_LIMITS.categoryIds, REVIEW_CONTENT_LIMITS.categoryId),
     tags: list(content.tags, REVIEW_CONTENT_LIMITS.tags, REVIEW_CONTENT_LIMITS.tagLength),
   };
+  if ('i18n' in content) normalized.i18n = validateI18n(content.i18n, normalized);
+  return normalized;
 }
 
 async function writeFileAtomic(file, data, mode = 0o600) {
@@ -406,7 +409,7 @@ export async function createQueue(cfg, { now = () => Date.now(), reviewTimeoutMs
         decidedBy: review.decidedBy || 'ai',
         at: new Date(now()).toISOString(),
       };
-      /* 受校验的 AI 内容：只保留白名单字段（六个内容字段 + 审核三元组），
+      /* 受校验的 AI 内容：只保留中文内容与 i18n，审核三元组单独保存，
        * 系统/法律/未知字段一律剔除；超限不落，桥接会按内容不完整跳过。 */
       if (content) {
         let serialized = '';
