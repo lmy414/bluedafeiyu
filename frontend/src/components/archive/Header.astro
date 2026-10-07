@@ -11,6 +11,7 @@ const { icon } = archiveContext;
     <input type="search" id="top-q" name="q" placeholder="搜索作品、角色或 Tag" data-i18n-attr="placeholder:v2.searchPh" autocomplete="off" /><kbd>/</kbd>
   </form>
   <div class="top-tools">
+    <button type="button" class="button primary small top-group" data-group-open aria-haspopup="dialog" aria-controls="group-dialog"><Fragment set:html={icon('heart',16)} /><span data-i18n="qq.open">加群</span></button>
     <a class="button small top-github" href={SITE.repoContent} target="_blank" rel="noopener" title="内容与投稿仓库" data-i18n-attr="title:footer.content">GitHub</a>
     <button class="icon-button" data-theme-toggle hidden><Fragment set:html={icon('moon',19)} /></button>
     <div class="topnav" data-lang-host></div>

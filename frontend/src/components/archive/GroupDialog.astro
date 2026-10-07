@@ -1,0 +1,20 @@
+---
+import { SITE } from '../../lib/v2.mjs';
+import { archiveContext } from '../../lib/archive.mjs';
+const { icon } = archiveContext;
+---
+<dialog id="group-dialog" class="group-dialog" aria-labelledby="group-dialog-title">
+  <button type="button" class="icon-button group-close" data-group-close aria-label="关闭" data-i18n-attr="aria-label:index.qq.close"><Fragment set:html={icon('close',20)} /></button>
+  <h2 id="group-dialog-title" data-i18n="index.cta.group">加入交流群</h2>
+  <p class="group-lede" data-i18n="index.qq.lede1">QQ 群「{SITE.group.name}」</p>
+  <figure class="group-qr">
+    <img src={SITE.group.qr} alt={`QQ 群「${SITE.group.name}」（群号 ${SITE.group.number}）的加入二维码`} width="518" height="518" loading="lazy" decoding="async" data-i18n-attr="alt:qq.qrAlt" />
+    <figcaption data-i18n="qq.scan">扫码进群</figcaption>
+  </figure>
+  <p class="group-number-label" data-i18n="index.qq.lede2">群号</p>
+  <button type="button" class="button group-copy" data-group-copy={SITE.group.number} autofocus>
+    <strong>{SITE.group.number}</strong><span data-i18n="qq.copy">复制群号</span>
+  </button>
+  <p class="group-copy-status" data-group-copy-status role="status" aria-live="polite"></p>
+  <a class="button primary group-join" href={SITE.group.url} target="_blank" rel="noopener" data-i18n="qq.join">点击加入 QQ 群</a>
+</dialog>

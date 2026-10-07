@@ -6,6 +6,7 @@ import Footer from '../components/archive/Footer.astro';
 import MobileNav from '../components/archive/MobileNav.astro';
 import PreviewDialog from '../components/archive/PreviewDialog.astro';
 import TopicDownloadDialog from '../components/archive/TopicDownloadDialog.astro';
+import GroupDialog from '../components/archive/GroupDialog.astro';
 const { title, desc, path = '/', active = '', bodyPage = active, og, type = 'website', shareDesc = '',
   robots = 'index,follow', canonical = '', pageStyles = [], bodyAttrs = {}, schemas = [] } = Astro.props;
 ---
@@ -25,12 +26,13 @@ const { title, desc, path = '/', active = '', bodyPage = active, og, type = 'web
     <link rel="stylesheet" href="/archive/preview.css?v=1" />
     <link rel="stylesheet" href="/archive/image-actions.css?v=1" />
     <link rel="stylesheet" href="/archive/filter-select.css?v=1" />
+    <link rel="stylesheet" href="/archive/group.css?v=1" />
     {['submit','about','changelog'].includes(active) && <link rel="stylesheet" href="/archive/document.css?v=1" />}
     {pageStyles.map(href => <link rel="stylesheet" {href} />)}
     <link rel="stylesheet" href="/archive/readability.css?v=2" />
     <script is:inline src="/archive-labels.js?v=5" defer></script>
     <script is:inline src="/archive-copy.js?v=2" defer></script>
-    <script is:inline src="/lang.js?v=19" defer></script>
+    <script is:inline src="/lang.js?v=20" defer></script>
     <script is:inline src="/analytics.js" defer></script>
     {schemas.map(schema => <script is:inline type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, '\\u003c')} />)}
     <slot name="head" />
@@ -49,8 +51,9 @@ const { title, desc, path = '/', active = '', bodyPage = active, og, type = 'web
     </div>
     <PreviewDialog />
     <TopicDownloadDialog />
+    <GroupDialog />
     <script is:inline src="/work-stats.js?v=4" defer></script>
-    <script is:inline type="module" src="/archive/archive.js?v=6"></script>
+    <script is:inline type="module" src="/archive/archive.js?v=7"></script>
     <script is:inline src="/archive/filter-select.js?v=1" defer></script>
     <slot name="scripts" />
   </body>
