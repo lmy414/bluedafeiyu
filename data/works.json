@@ -29954,7 +29954,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-06T23:22:06.690Z",
-    "updatedAt": "2026-10-07T04:11:18.274Z",
+    "updatedAt": "2026-10-07T04:30:09.810Z",
     "tone": "gpt",
     "symbol": "",
     "slug": "gpt202610060010",
@@ -30054,7 +30054,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-06T23:23:10.514Z",
-    "updatedAt": "2026-10-07T04:11:05.313Z",
+    "updatedAt": "2026-10-07T04:30:09.779Z",
     "tone": "other",
     "symbol": "",
     "slug": "other202610060002",
@@ -30154,7 +30154,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-06T23:23:43.542Z",
-    "updatedAt": "2026-10-07T04:10:53.445Z",
+    "updatedAt": "2026-10-07T04:30:09.745Z",
     "tone": "doubao",
     "symbol": "",
     "slug": "doubao202610060002",
@@ -30249,7 +30249,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-06T23:24:27.805Z",
-    "updatedAt": "2026-10-07T04:10:36.545Z",
+    "updatedAt": "2026-10-07T04:30:09.714Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202610060048",
@@ -30804,6 +30804,2620 @@
           {
             "question": "衣装はどんなデザインですか？",
             "answer": "白いフリルと襟のリボンがついた紺のメイド服で、白いエプロンには小さなクジラのワンポイントが入っています。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_785c99e6e2388d06c6eaf5f7",
+    "name": "血之鲸歌",
+    "description": "深蓝长发的DeepSeek娘身着深色女仆装，手持嵌有鲸眼宝珠与鲸尾刃的巨大镰刀，身后浮着一位半透明白发红瞳的幻影。",
+    "commentary": "呜哇，这把镰刀比我整条鱼还大！女仆装穿着还挺合身嘛……不过身后那个白白的、红眼睛的影子是谁呀，看起来比我从容多了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/785c99e6e2388d06.png",
+    "thumbnailPath": "submissions/previews/deepseek/785c99e6e2388d06.webp",
+    "fullPath": "submissions/large/deepseek/785c99e6e2388d06.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 3840,
+    "height": 2160,
+    "fileSize": 8979090,
+    "sha256": "785c99e6e2388d06c6eaf5f7fab104181d252e3b54b81edbc861a0e7a1bf1c16",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "拟人化",
+      "女仆装",
+      "镰刀",
+      "鲸鱼",
+      "二创"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "D360FDE650377B9AC721E2189279DB2B",
+      "messageId": "ROBOT1.0_kEEP-Ez5Y3jtRj7IyhCxTSjlbr1lQSBxn4EajyyteK6UucMtsB.UZqPDgnWTBICg38RjGKZSP6Zvz2Pvq53FNKRLgpOd8lg1-5UJJ9mvhfl.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T04:47:16.347Z",
+    "updatedAt": "2026-10-07T04:47:16.347Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610070005",
+    "categoryIds": [
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "70e2ca2f9d61bbc145e1321e674f223dbcfd78ae023cec087861fcec6c1fd070",
+      "en": {
+        "name": "Song of the Blood Whale: DeepSeek Chan with the Whale Scythe",
+        "description": "Blue-haired DeepSeek Chan stands in a dark maid dress, gripping a towering scythe crowned with a whale-eye orb and whale-tail blades, while a translucent white phantom of the same girl drifts behind her.",
+        "commentary": "Whoa, that scythe is bigger than my whole fishy self! The maid dress actually fits pretty well... but who's that pale, red-eyed shadow floating behind me? She looks way more composed than I do.",
+        "tags": [
+          "DeepSeek Chan",
+          "anthropomorphism",
+          "maid outfit",
+          "scythe",
+          "whale",
+          "fan art"
+        ],
+        "seoTitle": "DeepSeek Chan Maid Fan Art — Whale Scythe Illustration",
+        "seoDescription": "A fan-made illustration of DeepSeek Chan in a dark maid dress holding an oversized whale-themed scythe, with a translucent white phantom of herself floating behind.",
+        "faq": [
+          {
+            "question": "What is DeepSeek Chan holding in this illustration?",
+            "answer": "She holds a huge scythe whose head carries a dark orb with a whale-eye pattern, whale-tail shaped blades, and hanging chains with small whale charms."
+          },
+          {
+            "question": "Who is the pale figure behind her?",
+            "answer": "It is a translucent, white-haired phantom of the same character with red eyes, drawn as an ethereal double of the main figure rather than a separate person."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "血鯨の歌 ― メイド服のDeepSeekちゃんと鯨の大鎌",
+        "description": "濃紺のメイド服をまとった青髪のDeepSeekちゃんが、鯨の目を宿した宝珠と尾びれ型の刃を備えた巨大な大鎌を握って立つ。背後には半透明の白い幻影がゆらめいている。",
+        "commentary": "うわっ、この大鎌、わたしより大きいんですけど！メイド服、意外と似合ってるでしょ？……でも後ろに浮かんでる白くて赤い目の子は誰？わたしよりずっと余裕ありそうに見えるんだけど。",
+        "tags": [
+          "DeepSeekちゃん",
+          "擬人化",
+          "メイド服",
+          "大鎌",
+          "クジラ",
+          "二次創作"
+        ],
+        "seoTitle": "DeepSeekちゃん メイド服イラスト｜鯨の大鎌を手にした二次創作",
+        "seoDescription": "鯨をモチーフにした巨大な大鎌を携えたメイド服姿のDeepSeekちゃんの二次創作イラスト。背後には半透明の白い幻影が浮かぶ幻想的な一枚。",
+        "faq": [
+          {
+            "question": "このイラストでDeepSeekちゃんが持っている武器は？",
+            "answer": "鯨の目を思わせる宝珠と尾びれ型の刃、小さな鯨のチャーム付きチェーンを備えた巨大な大鎌です。"
+          },
+          {
+            "question": "後ろに浮かんでいる白い姿は誰ですか？",
+            "answer": "同じキャラクターの半透明の幻影で、白髪に赤い目をしたもう一人の姿として描かれています。別の人物ではありません。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_eb19e57ae5146e184be34b10",
+    "name": "银涟の决意",
+    "description": "蓝发少女身穿深蓝镶白边的女仆裙，手持冰晶长杖，身后盘绕着巨大的白色龙鲸虚影与冰蓝水光。",
+    "commentary": "呜哇，这身蓝白女仆裙配长杖也太优雅了，我这条蓝色大肥鱼都看呆了——等等，她身后那条鲸鱼尾巴怎么这么眼熟？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/eb19e57ae5146e18.png",
+    "thumbnailPath": "submissions/previews/gpt/eb19e57ae5146e18.webp",
+    "fullPath": "submissions/large/gpt/eb19e57ae5146e18.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 3840,
+    "height": 2160,
+    "fileSize": 9053692,
+    "sha256": "eb19e57ae5146e184be34b106496c666d64b80197c5aacf4b45570bbfb45ddfc",
+    "characterId": "gpt",
+    "tags": [
+      "GPT娘",
+      "女仆",
+      "幻想",
+      "长杖",
+      "鲸鱼"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "D360FDE650377B9AC721E2189279DB2B",
+      "messageId": "ROBOT1.0_kEEP-Ez5Y3jtRj7IyhCxTeM50sofMLbtQkEf4WjBiRGYRm0WV8wJ.jftAH18M241NcrcOOeXmZ7KuSMt0Sf9HQEgeQ0kxnzLbo2-SbjJJ95.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T04:55:54.109Z",
+    "updatedAt": "2026-10-07T04:55:54.109Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610070001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "8af7806942e22c40d3dbdefd731f66325f81884ecfbe1da48de117f2f6e8d674",
+      "en": {
+        "name": "GPT Chan: Azure Maid of the Silver Ripples",
+        "description": "A blue-haired girl in a navy maid dress with white frills holds an ice-crystal staff while a colossal white dragon-whale spirit coils behind her in pale blue light.",
+        "commentary": "Whoa, that navy-and-white maid dress plus the long staff is way too elegant — even a big blue fish like me is staring. Hold on, that whale tail behind her looks awfully familiar...",
+        "tags": [
+          "GPT Chan",
+          "maid",
+          "fantasy",
+          "staff",
+          "whale"
+        ],
+        "seoTitle": "GPT Chan Azure Maid Illustration with Whale Spirit",
+        "seoDescription": "GPT Chan reimagined as a blue-haired maid holding an ice-crystal staff, with a giant white dragon-whale spirit and frosty water swirling behind her.",
+        "faq": [
+          {
+            "question": "What is GPT Chan wearing in this picture?",
+            "answer": "A navy blue maid dress with white frills, a white apron bearing a small whale mark, gloves and a matching headdress."
+          },
+          {
+            "question": "What appears behind the character?",
+            "answer": "A huge translucent white dragon-whale spirit, surrounded by pale blue water and floating ice shards."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "GPTちゃん 銀漣の決意",
+        "description": "紺色のメイド服に白いフリルをあしらった青髪の少女が氷の結晶の杖を手に立ち、背後には巨大な白い竜鯨の幻影と淡い水光が広がる。",
+        "commentary": "うわっ、紺と白のメイド服に長い杖、優雅すぎでしょ……この青い大きな魚、見とれちゃったよ。って、彼女の後ろのクジラの尾びれ、どこかで見たような気がするんだけど？",
+        "tags": [
+          "GPTちゃん",
+          "メイド",
+          "ファンタジー",
+          "杖",
+          "クジラ"
+        ],
+        "seoTitle": "GPTちゃん 蒼いメイド姿と竜鯨の幻影イラスト",
+        "seoDescription": "氷の杖を手にしたメイド姿のGPTちゃん。背後に浮かぶ巨大な白い竜鯨の幻影と淡い氷の光を描いたファンタジーイラスト。",
+        "faq": [
+          {
+            "question": "このイラストでGPTちゃんは何を着ていますか？",
+            "answer": "白いフリル付きの紺色メイド服と、小さなクジラのマークが入った白いエプロン、手袋、同色のヘッドドレスです。"
+          },
+          {
+            "question": "背景には何が描かれていますか？",
+            "answer": "巨大で半透明の白い竜鯨の幻影と、淡い青の水や氷の破片が広がっています。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_5c87c93dc42b38b8a3867bea",
+    "name": "我在洗澡，gun出去",
+    "description": "蓝色长发、戴鲸鳍状头饰的DeepSeek娘，浴室里只裹一条白浴巾，一手握着花洒，红着脸回头瞪人。",
+    "commentary": "我就是那条蓝色大肥鱼！正洗到一半，门一开粉丝和花洒一起喷你脸上——先gun出去，等我穿好衣服再慢慢聊。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/5c87c93dc42b38b8.png",
+    "thumbnailPath": "submissions/previews/deepseek/5c87c93dc42b38b8.webp",
+    "fullPath": "submissions/large/deepseek/5c87c93dc42b38b8.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 2291607,
+    "sha256": "5c87c93dc42b38b8a3867bea279ce4fd017e823a036d9843cf5281d4af5f15c7",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "AI拟人化",
+      "表情包",
+      "浴室",
+      "浴巾",
+      "害羞"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.STta6E.i0fyYQTBcoV4Kw9OPthH6y2HInjh-Ub.qygZWDpc9woyJ9ligKDNvfnZPi7ga-X0UF.8EDfeliug15J.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T05:52:29.208Z",
+    "updatedAt": "2026-10-07T05:52:29.208Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610070006",
+    "categoryIds": [
+      "meme"
+    ],
+    "i18n": {
+      "sourceHash": "3251e1eb4d4acff9e920b1bdb5341321edfd6baeb17da5a8e28a7f072a634ee6",
+      "en": {
+        "name": "I'm Taking a Shower — Get Out!",
+        "description": "DeepSeek Chan, blue-haired with whale-fin-style hair ornaments, stands in a tiled bathroom wrapped in a single white towel and holding a shower head, blushing as she turns to glare at the viewer.",
+        "commentary": "That's me, DeepSeek Chan, in the middle of a shower. Whoever just opened that door: out. Give me thirty seconds to get dressed and I'll happily answer anything you ask.",
+        "tags": [
+          "DeepSeek Chan",
+          "AI anime meme",
+          "reaction meme",
+          "bathroom",
+          "towel",
+          "blushing"
+        ],
+        "seoTitle": "DeepSeek Chan Bathroom Meme: \"I'm Showering, Get Out!\"",
+        "seoDescription": "DeepSeek Chan gets caught mid-shower in this one-panel anime meme — wet blue hair, a white towel, a shower head in hand, and an extremely unimpressed get-out glare.",
+        "faq": [
+          {
+            "question": "What is DeepSeek Chan wearing in this picture?",
+            "answer": "A white bath towel with a small blue ribbon, wrapped around her body; her long blue hair is loose and wet, and a ruffled headdress with whale-fin-shaped side pieces sits on her head."
+          },
+          {
+            "question": "Is this a multi-panel comic?",
+            "answer": "No. It is a single frame, so the joke lands entirely through her embarrassed glare, the hand clutching the towel and the shower head still held in her other hand."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "お風呂入ってるんだから、出てって！",
+        "description": "青い長髪にクジラのヒレを思わせる髪飾りをつけたDeepSeekちゃんが、タイル張りの浴室で白いバスタオル一枚を巻き、シャワーヘッドを握ったまま顔を赤らめてこちらをにらんでいる。",
+        "commentary": "私がDeepSeekちゃん、今はシャワーの真っ最中。ドアを開けた人はとりあえず出てって！着替えたら、質問でもなんでもいくらでも聞いてあげるから。",
+        "tags": [
+          "DeepSeekちゃん",
+          "AI擬人化",
+          "ミーム",
+          "お風呂",
+          "バスタオル",
+          "照れ"
+        ],
+        "seoTitle": "DeepSeekちゃん「お風呂入ってるから出てって」ミーム",
+        "seoDescription": "浴室でバスタオル姿のDeepSeekちゃんが、濡れた青い長髪とシャワーヘッドのまま顔を赤らめて振り返る一枚。AI擬人化ミームとしてどうぞ。",
+        "faq": [
+          {
+            "question": "この画像のDeepSeekちゃんは何をしていますか？",
+            "answer": "浴室で白いバスタオルを巻き、右手にシャワーヘッドを持ったまま、濡れた髪と赤らめた顔でこちらをにらんでいます。"
+          },
+          {
+            "question": "コマ割りのある漫画ですか？",
+            "answer": "いいえ、1枚絵です。照れた表情とタオルを握る手、手に残ったシャワーヘッドだけで「出てって」のニュアンスを伝える単発ミームです。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_0489a6a2acb21e5ec0429b4e",
+    "name": "洗澡",
+    "description": "蓝发鲸耳少女裹着浴巾站在雾气弥漫的浴室里，一手举着花洒，头发与水珠上还挂着水汽。",
+    "commentary": "我这不是在洗澡，是在给自己做服务器水冷降温啦～毛巾，毛巾一定要裹紧才行！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/0489a6a2acb21e5e.png",
+    "thumbnailPath": "submissions/previews/deepseek/0489a6a2acb21e5e.webp",
+    "fullPath": "submissions/large/deepseek/0489a6a2acb21e5e.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 832,
+    "height": 1216,
+    "fileSize": 1109711,
+    "sha256": "0489a6a2acb21e5ec0429b4e6a3ae3f3286c4251343f41dc17a6c77fa7f15060",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "拟人化",
+      "洗澡",
+      "浴室",
+      "蓝发",
+      "二创"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.e72EFSjQm5kmypEFMynLvq9jSrOd3zwBOfm0Z5Y7SPOJchV7DB7hE-VmRVK7QhPMFFbzFvzRYLlAnif2-uZNkV.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T05:54:20.784Z",
+    "updatedAt": "2026-10-07T05:54:20.784Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610070007",
+    "categoryIds": [
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "489aaa8d78ddab9876ff3df90d762bbf541f230214c38efeb21ca36a6c2de90b",
+      "en": {
+        "name": "DeepSeek Chan's Bath Time",
+        "description": "A blue-haired girl with whale-fin ears stands in a steamy bathroom wrapped in a towel, holding a shower head up in one hand with water still dripping from her hair.",
+        "commentary": "I'm not really bathing — I'm just water-cooling my servers! And yes, the towel stays on, thank you very much.",
+        "tags": [
+          "DeepSeek Chan",
+          "anthropomorphic",
+          "shower",
+          "bathroom",
+          "blue hair",
+          "fan art"
+        ],
+        "seoTitle": "DeepSeek Chan Bath Time Fan Art — Towel & Shower Head Illustration",
+        "seoDescription": "Fan illustration of DeepSeek Chan as a blue-haired girl with whale-fin ears, wrapped in a towel and holding a shower head in a misty bathroom.",
+        "faq": [
+          {
+            "question": "What is DeepSeek Chan doing in this illustration?",
+            "answer": "She is standing in a steamy bathroom holding a shower head in one hand while keeping a white towel wrapped around herself with the other."
+          },
+          {
+            "question": "How can you tell this is DeepSeek Chan and not another AI character?",
+            "answer": "The character uses the long blue gradient hair and whale-fin ear design associated with DeepSeek Chan, drawn here in a bath towel instead of her usual outfit."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "DeepSeekちゃんのお風呂タイム",
+        "description": "湯気の立つ浴室で、クジラのヒレ耳を持つ青髪の少女がバスタオルを巻き、片手にシャワーヘッドを持って立っている。髪からはまだ水滴が垂れている。",
+        "commentary": "お風呂じゃなくて、サーバーの水冷中なんだからね！ タオルはちゃんと巻いてるよ、えっへん。",
+        "tags": [
+          "DeepSeekちゃん",
+          "擬人化",
+          "お風呂",
+          "浴室",
+          "青髪",
+          "二次創作"
+        ],
+        "seoTitle": "DeepSeekちゃん お風呂イラスト｜タオルとシャワーの二次創作",
+        "seoDescription": "クジラのヒレ耳と青いグラデーション髪のDeepSeekちゃんが、湯気の立つ浴室でタオルを巻きシャワーヘッドを握る二次創作イラスト。",
+        "faq": [
+          {
+            "question": "このイラストでDeepSeekちゃんは何をしていますか？",
+            "answer": "湯気の立つ浴室で、片手にシャワーヘッドを持ち、もう片方の手で白いバスタオルを押さえながら立っています。"
+          },
+          {
+            "question": "なぜDeepSeekちゃんの二次創作だと分かるのですか？",
+            "answer": "青いグラデーションの長髪とクジラのヒレ耳というDeepSeekちゃんの意匠があり、いつもの衣装ではなくバスタオル姿で描かれているためです。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_b5501bdbe4086b93df3b2934",
+    "name": "DeepSeek娘玉足坐姿",
+    "description": "蓝发鲸娘坐在白色背景前，双手各提一只深蓝色舞鞋，双腿前伸，露出赤裸的双足。",
+    "commentary": "本鱼把鞋子一脱，脚底直接怼到镜头前啦，这波玉足营业够不够诚意？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/b5501bdbe4086b93.png",
+    "thumbnailPath": "submissions/previews/deepseek/b5501bdbe4086b93.webp",
+    "fullPath": "submissions/large/deepseek/b5501bdbe4086b93.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 832,
+    "height": 1216,
+    "fileSize": 1112600,
+    "sha256": "b5501bdbe4086b93df3b29340a98f833af9707d3c4bfe9d3d9bb56a656e5c3e9",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "玉足",
+      "白底",
+      "立绘",
+      "AI拟人"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.cAS8UqJmVR6QzG6BaSIIfWbym6XVCUoytZNvgXnGIqICRWwZN-rhMvveBWH8YPpiJx3iydgcBsdzdSLQChH4655v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T05:56:52.886Z",
+    "updatedAt": "2026-10-07T05:56:52.886Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610070008",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "2f337bd86a390e1da770d57df34862f9475a94e5946b103a81f0dcb8ef8f7c53",
+      "en": {
+        "name": "DeepSeek Chan's Barefoot Sitting Pose",
+        "description": "A blue-haired DeepSeek Chan sits against a white background, holding one navy shoe in each hand and stretching her bare feet toward the viewer.",
+        "commentary": "I slipped off my shoes and pointed my soles right at the camera—how's that for a bold barefoot showcase?",
+        "tags": [
+          "DeepSeek Chan",
+          "bare feet",
+          "white background",
+          "standing art",
+          "AI personification"
+        ],
+        "seoTitle": "DeepSeek Chan Barefoot Sitting Pose | AI Character Fan Art",
+        "seoDescription": "Fan art of DeepSeek Chan in a blue dress, sitting on a white background while holding her shoes and showing her bare feet.",
+        "faq": [
+          {
+            "question": "Who is the character in this image?",
+            "answer": "She is a fan-made personification of DeepSeek, shown as a blue-haired girl with whale-like ears and a tail."
+          },
+          {
+            "question": "What is she doing in this picture?",
+            "answer": "She is sitting on a white background, holding one navy shoe in each hand, with her bare feet stretched toward the camera."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "DeepSeekちゃんの素足ポーズ",
+        "description": "青髪のDeepSeekちゃんが白背景に座り、紺色の靴を両手に持ち、素足をこちらへ伸ばしている。",
+        "commentary": "靴を脱いで足の裏をカメラに向けちゃった。この素足サービス、どうかな？",
+        "tags": [
+          "DeepSeekちゃん",
+          "素足",
+          "白背景",
+          "立ち絵",
+          "AI擬人化"
+        ],
+        "seoTitle": "DeepSeekちゃんの素足ポーズ | AIキャラ立ち絵",
+        "seoDescription": "青いドレスのDeepSeekちゃんが白背景で靴を両手に持ち、素足を伸ばしているファンアート。",
+        "faq": [
+          {
+            "question": "この画像のキャラクターは誰？",
+            "answer": "DeepSeekを擬人化したファンアートのキャラクターで、青い髪にクジラのような耳と尻尾が付いています。"
+          },
+          {
+            "question": "この画像では何をしているところ？",
+            "answer": "白背景に座り、紺色の靴を両手に持ち、素足をカメラの方へ伸ばしています。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_82e7676c17d0308eb79fc49e",
+    "name": "月之神女",
+    "description": "月面之上，星空与地球为背景，Kimi娘化作月之神女与蓝发鲸尾的DeepSeek娘彼此伸手相触。",
+    "commentary": "我伸手去够月亮上的Kimi娘，结果她也朝我伸手——这波双向奔赴，够我炫耀一辈子。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/kimi/82e7676c17d0308e.png",
+    "thumbnailPath": "submissions/previews/kimi/82e7676c17d0308e.webp",
+    "fullPath": "submissions/large/kimi/82e7676c17d0308e.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 2709525,
+    "sha256": "82e7676c17d0308eb79fc49edddf5582e77056c7005cc9319dc058ab9e3196b5",
+    "characterId": "kimi",
+    "tags": [
+      "Kimi娘",
+      "DeepSeek娘",
+      "AI拟人化",
+      "月之神女",
+      "星空",
+      "二次元"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "D360FDE650377B9AC721E2189279DB2B",
+      "messageId": "ROBOT1.0_kEEP-Ez5Y3jtRj7IyhCxTdUdYfsLMc625cc0w2mi.-Ml3FRJp.f4J-J8-7ETLcgFaBtDmsNl3EiUou-6QAqvigzPBTg0v3qtxKyfxJrtMqZ.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T05:57:48.744Z",
+    "updatedAt": "2026-10-07T05:57:48.744Z",
+    "tone": "kimi",
+    "symbol": "",
+    "slug": "kimi202610070001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "c26fabf08453f84f9a73a2dca1a6948b175c66d2aa9318b239637fc0b3b75c0d",
+      "en": {
+        "name": "Moon Goddess Kimi Chan",
+        "description": "An anime-style illustration of Kimi Chan as a moon goddess and DeepSeek Chan, a blue-haired maid with a whale tail, reaching toward each other above the lunar surface with Earth and stars in the background.",
+        "commentary": "I reached out to the moon goddess Kimi Chan, and she reached right back—guess I'll be bragging about this cosmic mutual pining forever.",
+        "tags": [
+          "Kimi Chan",
+          "DeepSeek Chan",
+          "AI anthropomorphism",
+          "Moon Goddess",
+          "starry sky",
+          "anime"
+        ],
+        "seoTitle": "Moon Goddess Kimi Chan & DeepSeek Chan Reaching Across Space — AI Anthropomorphism Illustration",
+        "seoDescription": "A celestial anime illustration featuring Kimi Chan as a moon goddess in a star-and-crescent dress and DeepSeek Chan as a blue-haired, whale-tailed maid reaching toward each other above the Moon, with Earth glowing in the background.",
+        "faq": [
+          {
+            "question": "Which characters appear in this illustration?",
+            "answer": "It features two AI-character anthropomorphized figures: a blue-haired girl with a whale tail and a whale emblem on her apron (DeepSeek Chan), and a white-haired girl in a moon-and-stars-themed dress (Kimi Chan)."
+          },
+          {
+            "question": "What is the setting of the image?",
+            "answer": "The characters are floating above a rocky lunar surface, with a bright blue Earth and a star-filled sky in the background."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "月の神女キミちゃん",
+        "description": "月面の上、星空と地球を背景に、月をモチーフにした衣装のキミちゃんと、クジラのしっぽを持つメイド姿のDeepSeekちゃんが互いに手を伸ばし合う一枚。",
+        "commentary": "月の神女キミちゃんに手を伸ばしたら、向こうからも手を伸ばしてくれた。この宇宙級の両想い、一生自慢するしかない。",
+        "tags": [
+          "キミちゃん",
+          "DeepSeekちゃん",
+          "AI擬人化",
+          "月の神女",
+          "星空",
+          "アニメ"
+        ],
+        "seoTitle": "月の神女キミちゃんとDeepSeekちゃんが宇宙で手を伸ばすAI擬人化イラスト",
+        "seoDescription": "月面の上で、月と星をあしらったドレスのキミちゃんと、クジラの尾を持つメイド服のDeepSeekちゃんが互いに手を伸ばす、星と地球が輝く幻想的なイラスト。",
+        "faq": [
+          {
+            "question": "このイラストにはどんなキャラクターが登場しますか？",
+            "answer": "青い髪でクジラのしっぽとエプロンのクジラマークが特徴のDeepSeekちゃんと、月と星をモチーフにした白髪のドレス姿のキミちゃんが描かれています。"
+          },
+          {
+            "question": "背景には何がありますか？",
+            "answer": "月面の荒れた地形、背後に青く光る地球、満天の星空が広がっています。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_38abf776b4ad32cfd6f79a0c",
+    "name": "DeepSeek娘·床边的玉足时刻",
+    "description": "蓝发鲸尾的DeepSeek娘坐在床上，双手各提一只深蓝色小皮鞋，双腿并拢将赤裸的脚掌朝向镜头。",
+    "commentary": "嘿嘿，本大肥鱼鞋都踢掉啦——蓝蓝的尾巴配光脚丫，这么近给你看，可别眨眼哦。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/38abf776b4ad32cf.png",
+    "thumbnailPath": "submissions/previews/deepseek/38abf776b4ad32cf.webp",
+    "fullPath": "submissions/large/deepseek/38abf776b4ad32cf.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 832,
+    "height": 1216,
+    "fileSize": 1257350,
+    "sha256": "38abf776b4ad32cfd6f79a0c424911e40ed75ad2e7cc1a207c037a201f137bea",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "AI拟人",
+      "鲸鱼尾巴",
+      "玉足",
+      "二次元",
+      "插画"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.dCDJXZu1qiFDNJDZ1c6T5I8hK6ioG2Fq9ytWNhZ9mTMDkwOFXxoCqwnDmXHtVNcXoK0IYM4R8JBCX6oLj.goEp.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T05:58:33.033Z",
+    "updatedAt": "2026-10-07T05:58:33.033Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610070009",
+    "categoryIds": [
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "d967efd192a374a24b1b4b807d93412d4f3ac58b0b05e4c74a8db43a66195662",
+      "en": {
+        "name": "DeepSeek Chan's Barefoot Bedtime Moment",
+        "description": "DeepSeek Chan, the blue-haired whale-tailed AI character, sits on a bed with a navy shoe in each hand, her bare soles turned toward the camera.",
+        "commentary": "Yep, this big blue fish kicked her shoes off already — whale tail plus bare toes, right up close. Try not to blink, okay?",
+        "tags": [
+          "DeepSeek Chan",
+          "AI anthropomorphism",
+          "whale tail",
+          "bare feet",
+          "anime",
+          "illustration"
+        ],
+        "seoTitle": "DeepSeek Chan Barefoot on the Bed – AI Character Fan Illustration",
+        "seoDescription": "Fan illustration of DeepSeek Chan, the blue-haired whale-tailed AI character, sitting on a bed and holding her navy shoes while showing her bare feet to the camera.",
+        "faq": [
+          {
+            "question": "What is DeepSeek Chan holding in this illustration?",
+            "answer": "She is holding a pair of navy blue shoes, one in each hand, after slipping them off."
+          },
+          {
+            "question": "What visual cues mark her as DeepSeek Chan?",
+            "answer": "Blue hair, a whale tail and fin-like ears, matching the DeepSeek Chan fan design."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "DeepSeekちゃん ベッドで脱いだ靴と素足",
+        "description": "青い髪にクジラの尾を持つDeepSeekちゃんがベッドに座り、紺色のパンプスを左右の手に一つずつ持ちながら、素足の裏をこちらへ向けている。",
+        "commentary": "えへへ、この青い大きな魚はもう靴を脱いじゃったよ。クジラの尾に素足、こんなに近くで見せてあげるから、まばたきしないでね。",
+        "tags": [
+          "DeepSeekちゃん",
+          "AI擬人化",
+          "クジラのしっぽ",
+          "素足",
+          "二次元",
+          "イラスト"
+        ],
+        "seoTitle": "DeepSeekちゃん ベッドの上で素足 二次創作イラスト",
+        "seoDescription": "青髪とクジラの尾を持つAIキャラ・DeepSeekちゃんが、ベッドに座って紺のパンプスを手に持ち、素足をカメラへ向けたファンアート。",
+        "faq": [
+          {
+            "question": "このイラストでDeepSeekちゃんは何を持っていますか？",
+            "answer": "紺色のパンプスを一足、左右の手に一つずつ持っています。脱いだところのようです。"
+          },
+          {
+            "question": "DeepSeekちゃんらしさはどこに表れていますか？",
+            "answer": "青い髪、クジラの尾、ヒレのような耳が、DeepSeekちゃんの二次創作デザインの特徴です。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_51c7ca9079816201a03f28ce",
+    "name": "DeepSeek娘 白底坐姿立绘",
+    "description": "白底上的 DeepSeek 鲸娘拟人立绘：蓝长发配鲸尾与鳍耳，穿蓝白礼服裙，侧坐伸足。",
+    "commentary": "咕噜……那条尾巴明明是我的，怎么被她抢去还戴得这么好看？白底上伸着脚看过来，看得我想游过去蹭一蹭。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/51c7ca9079816201.png",
+    "thumbnailPath": "submissions/previews/deepseek/51c7ca9079816201.webp",
+    "fullPath": "submissions/large/deepseek/51c7ca9079816201.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 832,
+    "height": 1216,
+    "fileSize": 1090538,
+    "sha256": "51c7ca9079816201a03f28ce7e0b9d4e584dc6b581551879a3367ee8e7e94b8b",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "鲸娘",
+      "拟人化",
+      "立绘",
+      "白底",
+      "素足"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.UKyMse0fbX7E4MFZYnvCxOh1TLR3HPRV0GrP3IhYgEoUWns-h5q4nJqNEY5u6V7QZlgekb1xGONlWALc0ZhE9R.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T05:59:37.943Z",
+    "updatedAt": "2026-10-07T05:59:37.943Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610070010",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "0fc93e1bba9d9e448347c0b0c1ad9af00eecb74e841d8c9c96efdbb76259ffc9",
+      "en": {
+        "name": "DeepSeek Chan Sitting on White",
+        "description": "An anthropomorphized DeepSeek whale girl with long blue hair, fin-like ears and a whale tail sits on a plain white background in a blue-and-white dress, bare feet turned toward the viewer.",
+        "commentary": "Gurgle... that tail is supposed to be mine, and honestly she wears it better than I ever could. Sitting there on that blank white with her feet stretched out makes me want to swim right over.",
+        "tags": [
+          "DeepSeek Chan",
+          "whale girl",
+          "anthropomorphic",
+          "standing art",
+          "white background",
+          "bare feet"
+        ],
+        "seoTitle": "DeepSeek Chan Sitting Pose on White — Whale Girl Standing Art",
+        "seoDescription": "DeepSeek Chan's whale girl persona in a blue-and-white dress, sitting on a plain white background with her bare feet in view.",
+        "faq": [
+          {
+            "question": "What is DeepSeek Chan wearing in this picture?",
+            "answer": "A blue-and-white dress with gold trim, a black ribbon at the collar and a matching bow at the waist, plus a black garter on her left thigh."
+          },
+          {
+            "question": "How is she posed here?",
+            "answer": "She sits on a plain white background with her legs folded to one side, bare feet facing the viewer, and her whale tail curling up behind her."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "DeepSeekちゃん 白背景の座りポーズ",
+        "description": "白い背景に座ったDeepSeekちゃんの擬人化イラスト。青いロングヘアにクジラの尾とヒレ耳、紺と白のドレス姿で素足をこちらに向けている。",
+        "commentary": "ぷくぷく……そのしっぽ、ほんとはぼくのなのに、彼女がまとうとずるいくらい似合うんだよな。まっしろな背景で足をのばしてるのを見ると、泳いでいきたくなるよ。",
+        "tags": [
+          "DeepSeekちゃん",
+          "クジラ娘",
+          "擬人化",
+          "立ち絵",
+          "白背景",
+          "素足"
+        ],
+        "seoTitle": "DeepSeekちゃん 白背景の座りポーズ｜クジラ娘の立ち絵",
+        "seoDescription": "紺と白のドレスを着たDeepSeekちゃんの擬人化立ち絵。白背景に座り、素足を手前に向けたポーズが特徴です。",
+        "faq": [
+          {
+            "question": "このイラストでDeepSeekちゃんはどんな服を着ていますか？",
+            "answer": "襟元に黒いリボン、腰に同色の大きなリボンが付いた紺と白のドレスで、左ももには黒いガーターが見えます。"
+          },
+          {
+            "question": "ポーズはどんな感じですか？",
+            "answer": "白背景に脚を横にたたんで座り、素足を手前に向けています。後ろではクジラの尾が反り返っています。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_4651da206de70eb26e7dcc25",
+    "name": "贴贴",
+    "description": "满月与天灯之下，蓝发鲸尾的 DeepSeek 娘与白发龙角少女在玫瑰丛边相拥贴脸，夜色与灯火交织的唯美插画。",
+    "commentary": "咳，蓝裙子那个是我啦，尾巴可不是道具哦。满月、天灯、玫瑰，还有一位真的有龙翼的家伙——我才没有脸红，是灯笼的光太暖了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/4651da206de70eb2.png",
+    "thumbnailPath": "submissions/previews/deepseek/4651da206de70eb2.webp",
+    "fullPath": "submissions/large/deepseek/4651da206de70eb2.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "4651da206de70eb26e7dcc2556feb53340fb977a00480321ca9de64d689337ab",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "AI拟人",
+      "贴贴",
+      "百合",
+      "夜景",
+      "星空"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "鱼籽",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 104,
+      "issueTitle": "Deepseek娘XGPT娘",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/104",
+      "submitter": "zhefu-666",
+      "assetId": "6d997ee5-9d6a-4013-9e13-2711124a7b29",
+      "assetUrl": "https://github.com/user-attachments/assets/6d997ee5-9d6a-4013-9e13-2711124a7b29"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T06:00:39.214Z",
+    "updatedAt": "2026-10-07T06:00:39.214Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610070011",
+    "categoryIds": [
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "14fb51919d0a050f32c930b7cd901b2520772c955d18a180a8855eb071ea0603",
+      "en": {
+        "name": "Moonlit Smooch — DeepSeek Chan and the Dragon Girl",
+        "description": "Under a full moon and drifting sky lanterns, blue-haired DeepSeek Chan, whale tail and all, presses close to a white-haired, dragon-horned girl beside a rose bush.",
+        "commentary": "Ahem — the one in the blue dress is me, and yes, the tail is real. Full moon, floating lanterns, roses, and a girl with actual dragon wings. I am not blushing; the lantern light is just warm.",
+        "tags": [
+          "DeepSeek Chan",
+          "AI anthropomorphism",
+          "smooch",
+          "yuri",
+          "night scene",
+          "starry sky"
+        ],
+        "seoTitle": "DeepSeek Chan Moonlit Smooch — AI Character Fan Art",
+        "seoDescription": "Fan art of DeepSeek Chan, the blue-haired whale-tailed AI character, sharing a moonlit embrace with a white-haired dragon-horned girl among lanterns and roses.",
+        "faq": [
+          {
+            "question": "Who is the character in the blue dress?",
+            "answer": "She is DeepSeek Chan, drawn with long blue hair, a maid-style headdress and a whale tail."
+          },
+          {
+            "question": "What kind of scene is shown?",
+            "answer": "A night garden by the water, with a full moon, floating sky lanterns, rose bushes and blossoming branches behind the two characters."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "月灯りの下でくっつき — DeepSeekちゃんと竜娘",
+        "description": "満月と夜空に浮かぶランタンの下、藍色の髪とクジラの尾を持つ DeepSeekちゃんが、白髪に角と竜翼のある少女と薔薇のそばで寄り添う一枚。",
+        "commentary": "えへへ、青いドレスのほうが私だよ。しっぽは小道具じゃないからね。満月にランタンに薔薇、しかも本物の竜翼つき——顔が赤いのは灯りのせいだから。",
+        "tags": [
+          "DeepSeekちゃん",
+          "AI擬人化",
+          "イチャイチャ",
+          "百合",
+          "夜景",
+          "星空"
+        ],
+        "seoTitle": "DeepSeekちゃんが月夜にイチャイチャ — AI擬人化ファンアート",
+        "seoDescription": "クジラの尾を持つ藍髪のAIキャラ・DeepSeekちゃんが、満月とランタンの夜、竜角の白髪少女と寄り添うファンアートの紹介。",
+        "faq": [
+          {
+            "question": "青いドレスのキャラは誰ですか？",
+            "answer": "DeepSeekちゃんです。長い藍色の髪、メイド風のヘッドドレス、クジラの尾が描かれています。"
+          },
+          {
+            "question": "どんな背景の絵ですか？",
+            "answer": "水辺の夜の庭で、満月と空に浮かぶランタン、薔薇の茂みと桜の枝が描かれた夜景です。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_3f407edde79712c18a41a5b2",
+    "name": "我在洗澡，gun出去",
+    "description": "蓝色长发鲸耳娘裹着白浴巾、戴着女仆头饰握着花洒，气鼓鼓朝镜头喊话的浴室搞笑场面。",
+    "commentary": "本鱼正洗到一半，谁把门推开了？这条浴巾已经很努力在挡了，麻烦先把门带上，其他事稍后再谈。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/3f407edde79712c1.png",
+    "thumbnailPath": "submissions/previews/deepseek/3f407edde79712c1.webp",
+    "fullPath": "submissions/large/deepseek/3f407edde79712c1.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "3f407edde79712c18a41a5b20b233d9a7fb1b1935464aa0003eb476a4fd4d07e",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "梗图",
+      "表情包",
+      "浴室",
+      "鲸耳娘"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.R.sWYsLAAwWyGZaTF7cMCo.KKXzfMU.ryAT24dHZ5Lksz77.BPiFQ3qsqNY1scBYuxcyZmuzzakH5MxlbdHwgd.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T06:01:07.013Z",
+    "updatedAt": "2026-10-07T06:01:07.013Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610070012",
+    "categoryIds": [
+      "meme"
+    ],
+    "i18n": {
+      "sourceHash": "9e8030a2400ec57d8702348bddcc84f14c14892fbb1d26ac5f7aabe0b5b15eca",
+      "en": {
+        "name": "I'm Showering — Get Out!",
+        "description": "The blue-haired whale-eared girl clutches a shower head in a white bath towel and maid headdress, glaring at the camera mid-shower.",
+        "commentary": "I'm halfway through my rinse — who opened the door? This towel is doing its absolute best, so shut it first and we can talk after.",
+        "tags": [
+          "DeepSeek Chan",
+          "meme",
+          "reaction image",
+          "bathroom",
+          "whale ears"
+        ],
+        "seoTitle": "DeepSeek Chan Shower Meme — I'm Showering, Get Out!",
+        "seoDescription": "A single-panel DeepSeek Chan reaction meme: the blue-haired whale-eared girl in a bath towel holds a shower head and yells at whoever just walked in.",
+        "faq": [
+          {
+            "question": "What is DeepSeek Chan doing in this picture?",
+            "answer": "She stands in a tiled bathroom holding a shower head, wrapped in a white bath towel and still wearing her frilled maid headdress, shouting at the intruder."
+          },
+          {
+            "question": "What kind of image is this?",
+            "answer": "It is a single-panel reaction meme with no comic panels, built around one exaggerated angry expression meant for chat replies."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "お風呂入ってるんだから出てって！",
+        "description": "青い髪にクジラの耳を生やした娘が、白いバスタオルとメイドのヘッドドレス姿でシャワーヘッドを握り、浴室から睨みつけている一枚。",
+        "commentary": "今シャワーの真っ最中なんだけど、誰だドア開けたの！タオルは限界まで頑張ってるから、とりあえず閉めてから話そう？",
+        "tags": [
+          "DeepSeekちゃん",
+          "ミーム",
+          "リアクション画像",
+          "お風呂",
+          "クジラ耳"
+        ],
+        "seoTitle": "DeepSeekちゃん「お風呂入ってるんだから出てって！」ミーム画像",
+        "seoDescription": "バスタオル姿でシャワーヘッドを握り、浴室から怒鳴るDeepSeekちゃんの一枚絵リアクション画像。チャットの返しに使いやすいミームです。",
+        "faq": [
+          {
+            "question": "この画像のDeepSeekちゃんは何をしていますか？",
+            "answer": "タイル張りの浴室で白いバスタオルを巻き、フリルのメイドヘッドドレスをつけたままシャワーヘッドを握り、入ってきた相手に向かって叫んでいます。"
+          },
+          {
+            "question": "どんな場面で使える画像ですか？",
+            "answer": "コマ割りのない一枚絵のリアクション画像なので、邪魔されたときや「今は無理」と伝えたいときの返信に向いています。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_ec552dd150fac44aacd67ad0",
+    "name": "猫鲸",
+    "description": "蓝发猫耳的 DeepSeek 娘穿深蓝白色女仆装坐在床上，双手戴着猫爪手套，鼓起腮帮子一副不服气的样子，身后是窗光与台灯。",
+    "commentary": "本鱼才没有闹别扭呢……只是被叫成「猫鲸」这件事，多少有点过分了吧？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/ec552dd150fac44a.png",
+    "thumbnailPath": "submissions/previews/deepseek/ec552dd150fac44a.webp",
+    "fullPath": "submissions/large/deepseek/ec552dd150fac44a.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 832,
+    "height": 1216,
+    "fileSize": 1204320,
+    "sha256": "ec552dd150fac44aacd67ad07ae47c8e06e0a23990f7c941a109fac513a325a6",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "猫鲸",
+      "猫耳",
+      "女仆装",
+      "AI拟人",
+      "蓝发"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.TjPvt5Y8-EfjIU4D8eos78zR1VVorcr.B9Xq3LLztkjTRbKtoF9rjrFarNTgKJ2iEDTuVjjIlZamM7ZnifTRrZ.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T06:03:21.919Z",
+    "updatedAt": "2026-10-07T06:03:21.919Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610070013",
+    "categoryIds": [
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "6e48b0a1307d2633c810120d6dccddab3484bb06f87e93b82049f6656c301174",
+      "en": {
+        "name": "Cat-Whale DeepSeek Chan Pouting on the Bed",
+        "description": "DeepSeek Chan appears with blue hair and cat ears in a navy-and-white maid outfit, sitting on a bed with paw-shaped gloves on both hands and her cheeks puffed up in a sulky pout, a sunlit window and lamp behind her.",
+        "commentary": "I'm not sulking, all right? Being called a \"cat-whale\" is a bit much, even for me.",
+        "tags": [
+          "DeepSeek Chan",
+          "cat-whale",
+          "cat ears",
+          "maid outfit",
+          "AI anthropomorphism",
+          "blue hair"
+        ],
+        "seoTitle": "Cat-Whale DeepSeek Chan Maid Illustration | Pouting on the Bed",
+        "seoDescription": "A single illustration of DeepSeek Chan reimagined as a blue-haired cat-whale maid: cat ears, paw gloves, navy-and-white maid dress and a pouting face while sitting on a sunlit bed.",
+        "faq": [
+          {
+            "question": "What is DeepSeek Chan wearing in this illustration?",
+            "answer": "She wears a navy-and-white maid dress with ruffled trim and gold buttons, a blue gem bow tie, a lace cat-ear headband, white paw-shaped gloves, white knee socks and a whale-like tail."
+          },
+          {
+            "question": "What is she doing in the picture?",
+            "answer": "She is sitting on a bed with both paws held together, cheeks puffed in a pout, in a bright room with a window and a table lamp behind her."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "猫クジラのDeepSeekちゃん、ベッドでふくれっ面",
+        "description": "青髪に猫耳のDeepSeekちゃんが紺と白のメイド服姿でベッドの上にちょこんと座り、両手に肉球型の手袋をつけて頬をふくらませている。背後には窓明かりとランプ。",
+        "commentary": "べ、別にすねてなんかないんだからね……「猫クジラ」って呼ばれるのは、さすがの私もちょっと心外だよ。",
+        "tags": [
+          "DeepSeekちゃん",
+          "猫クジラ",
+          "猫耳",
+          "メイド服",
+          "AI擬人化",
+          "青髪"
+        ],
+        "seoTitle": "猫クジラDeepSeekちゃんのメイド服イラスト｜ベッドでふくれっ面",
+        "seoDescription": "青髪に猫耳、肉球手袋と紺白のメイド服をまとったDeepSeekちゃんが、日差しの入る部屋のベッドでふくれっ面をしている一枚絵のイラスト紹介。",
+        "faq": [
+          {
+            "question": "このイラストでDeepSeekちゃんは何を着ていますか？",
+            "answer": "フリルと金ボタンのついた紺と白のメイド服に、青い宝石のリボンタイ、レースの猫耳カチューシャ、白い肉球型の手袋、白いニーソックス、そしてクジラのようなしっぽをつけています。"
+          },
+          {
+            "question": "どんな表情とポーズですか？",
+            "answer": "両手の肉球をそろえてベッドに座り、頬をふくらませてふくれっ面をしています。背景には窓とテーブルランプがあります。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_29e89713e7daf594344b62f1",
+    "name": "猫鲸娘的女仆草莓蛋糕时刻",
+    "description": "蓝发猫耳 DeepSeek 娘穿深蓝女仆裙坐在白色餐台上，一手举着叉子上的蛋糕小块，一手托着草莓奶油蛋糕，背景是蓝窗帘窗户与粉色玫瑰。",
+    "commentary": "叉子上这块先归我——盘子里的草莓也是我的，谁都不许抢，本肥鱼说不行就是不行！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/29e89713e7daf594.png",
+    "thumbnailPath": "submissions/previews/deepseek/29e89713e7daf594.webp",
+    "fullPath": "submissions/large/deepseek/29e89713e7daf594.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 832,
+    "height": 1216,
+    "fileSize": 1260120,
+    "sha256": "29e89713e7daf594344b62f1da20345e63824287890e2e04a726dda429452756",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "猫耳",
+      "女仆装",
+      "草莓蛋糕",
+      "蓝发",
+      "拟人化"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.R7j2R8NIBbP38jWQeqiA3DbLF.ZpaSE3jI1i9xwZMlKiMX1HcBSKV06WPiaJPJz4Oy1pdhka7KRMDNzS7ZPZdB.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T06:04:28.188Z",
+    "updatedAt": "2026-10-07T06:04:28.188Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610070014",
+    "categoryIds": [
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "4c827dd9172c534b3f1aad72e0ffb26f77fb22ffd4b022b961c309419a51b1ec",
+      "en": {
+        "name": "DeepSeek Chan's Maid Outfit Strawberry Cake Break",
+        "description": "Blue-haired DeepSeek Chan in a navy maid dress sits on a white table, lifting a forkful of cake in one hand while a slice of strawberry shortcake waits on a plate in the other, with blue curtains, a bright window and pink roses behind her.",
+        "commentary": "The bite on my fork is mine first — and the strawberries on the plate too. Nobody touches them, not while this fat blue fish is on guard!",
+        "tags": [
+          "DeepSeek Chan",
+          "cat ears",
+          "maid outfit",
+          "strawberry cake",
+          "blue hair",
+          "anthropomorphism"
+        ],
+        "seoTitle": "DeepSeek Chan Maid Outfit Fan Art with Strawberry Cake",
+        "seoDescription": "Fan art of DeepSeek Chan as a blue-haired cat-eared maid in a navy dress, holding a forkful of cake and a slice of strawberry shortcake by a bright window with pink roses.",
+        "faq": [
+          {
+            "question": "What is DeepSeek Chan wearing in this picture?",
+            "answer": "She wears a navy maid dress with a white frilled apron, white thigh-high stockings, a blue bow at the collar and a matching frilled headdress over her cat ears."
+          },
+          {
+            "question": "What food appears in the artwork?",
+            "answer": "A slice of strawberry shortcake sits on a white plate in her left hand, she holds a small bite of cake on a fork in her right hand, and a single strawberry rests on the table at the lower right."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "DeepSeekちゃん メイド服でいちごケーキ休憩",
+        "description": "青髪に猫耳のDeepSeekちゃんが紺色のメイド服で白いテーブルに座り、片手にフォークに刺したケーキ、もう片手にいちごのショートケーキを載せた皿を持っている。背景には青いカーテンの窓とピンクのバラ。",
+        "commentary": "フォークの上の一口はまずアタシのもの。皿のいちごもね、この青い太った魚が守ってる間は誰にも渡さないよ！",
+        "tags": [
+          "DeepSeekちゃん",
+          "猫耳",
+          "メイド服",
+          "いちごケーキ",
+          "青髪",
+          "擬人化"
+        ],
+        "seoTitle": "DeepSeekちゃん メイド服といちごケーキのファンアート",
+        "seoDescription": "青髪猫耳のDeepSeekちゃんが紺のメイド服で、フォークのケーキといちごのショートケーキを手に窓辺でくつろぐ二次創作イラスト。",
+        "faq": [
+          {
+            "question": "このイラストでDeepSeekちゃんは何を着ていますか？",
+            "answer": "紺色のメイド服に白いフリルのエプロン、白いニーハイソックス、襟の青いリボンと猫耳にかぶせたフリルのヘッドドレスを身につけています。"
+          },
+          {
+            "question": "画面に出てくる食べ物は何ですか？",
+            "answer": "左手の白い皿にいちごのショートケーキが一切れ、右手のフォークにはケーキの一口分、右下のテーブルの上にはいちごが一粒置かれています。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_43ac2994ac345f7771978378",
+    "name": "猫鲸娘·猫爪女仆",
+    "description": "蓝色长发的 DeepSeek 娘戴着猫耳发箍、穿黑白女仆装坐在床上，双手举成猫爪姿势，蓝色大尾巴在身后卷起，阳光洒进卧室。",
+    "commentary": "我正趴在被子上晒太阳呢，她忽然把两只毛绒肉垫举到我眼前晃——这是要我去蹭吗？行吧行吧，本鱼勉为其难夸一句：可爱到冒泡。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/43ac2994ac345f77.png",
+    "thumbnailPath": "submissions/previews/deepseek/43ac2994ac345f77.webp",
+    "fullPath": "submissions/large/deepseek/43ac2994ac345f77.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "43ac2994ac345f777197837890c108e501cb2ba9b979e7b8810a9e56d9904d99",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "猫耳女仆",
+      "拟人化",
+      "AI角色",
+      "兽耳娘"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.XEFZUjFtaxcTKNd2Si444wFumUJQR5yJELHqR.9aWaYIvirQsuwRUrFfDSi8gsDIHduNltoZml5uctXn..0ymN.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T06:06:08.244Z",
+    "updatedAt": "2026-10-07T06:06:08.244Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610070015",
+    "categoryIds": [
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "f25a1705d389e549623a175d4616d493b6a195e65a9e262c0a8c02fc5c0d4a37",
+      "en": {
+        "name": "DeepSeek Chan: Cat-Paw Maid on the Bed",
+        "description": "DeepSeek Chan, the blue-haired AI girl, sits on a sunlit bed in a black-and-white maid dress with a cat-ear headband, both hands raised in a cat-paw pose while her big blue tail curls behind her.",
+        "commentary": "I was just flopped on the quilt catching some sun when she shoved those fluffy paw mitts right in my face. Fine, fine, I'll admit it: disgustingly cute.",
+        "tags": [
+          "DeepSeek Chan",
+          "cat-ear maid",
+          "personification",
+          "AI character",
+          "kemonomimi"
+        ],
+        "seoTitle": "DeepSeek Chan Cat-Paw Maid Bedroom Illustration",
+        "seoDescription": "A single-frame illustration of DeepSeek Chan as a blue-haired cat-eared maid on a sunlit bed, raising fluffy paw mitts in a playful nyah pose for AI-character fan art fans.",
+        "faq": [
+          {
+            "question": "Who is the character in this picture?",
+            "answer": "It is DeepSeek Chan, the personified DeepSeek model character, recognizable by her long blue hair and large blue tail; here she is wearing a cat-ear maid outfit."
+          },
+          {
+            "question": "What is happening in the scene?",
+            "answer": "She sits cross-legged on a bed in a sunny bedroom, wearing fluffy paw mitts and holding both hands up in a cat-paw pose, with a framed picture, curtains and a bedside lamp visible in the room."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "DeepSeekちゃん 猫の手ポーズのメイド姿",
+        "description": "青い長髪のDeepSeekちゃんが猫耳カチューシャと白黒のメイド服姿でベッドに座り、両手を猫の手のように上げている。背後では青い大きな尻尾が丸まり、日差しの差し込む寝室が描かれている。",
+        "commentary": "僕はベッドで日向ぼっこしてただけなのに、彼女が肉球ミトンを僕の目の前にぐいっと突き出してきた。はいはい、認めますよ、かわいすぎて困るって。",
+        "tags": [
+          "DeepSeekちゃん",
+          "猫耳メイド",
+          "擬人化",
+          "AIキャラ",
+          "けものみみ"
+        ],
+        "seoTitle": "DeepSeekちゃん 猫耳メイドの猫の手ポーズ イラスト",
+        "seoDescription": "青髪に大きな青い尻尾を持つDeepSeekちゃんが、猫耳メイド服でベッドの上から肉球ミトンを上げる猫の手ポーズを決めた一枚。AIキャラ擬人化ファンアート向けの寝室イラスト。",
+        "faq": [
+          {
+            "question": "この画像のキャラクターは誰ですか？",
+            "answer": "DeepSeekモデルの擬人化キャラクターであるDeepSeekちゃんです。青い長髪と大きな青い尻尾が目印で、この絵では猫耳付きのメイド服を着ています。"
+          },
+          {
+            "question": "どんな場面が描かれていますか？",
+            "answer": "日差しの入る寝室のベッドに座り、もふもふの肉球ミトンをつけて両手を猫の手のように上げています。室内にはカーテンやベッドサイドランプ、額縁も見えます。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_9a4c7ef99c54df51277d0078",
+    "name": "猫鲸-3",
+    "description": "蓝色长发、猫耳与鲸鱼尾巴的 DeepSeek 拟人角色身穿黑白女仆装，坐在明亮的卧室大床上鼓起腮帮子看向镜头。",
+    "commentary": "哼，我可是住在超豪华卧室里的鲸鱼大小姐，猫耳配女仆装这种事……才不是因为想被夸可爱才穿的啦！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/9a4c7ef99c54df51.png",
+    "thumbnailPath": "submissions/previews/deepseek/9a4c7ef99c54df51.webp",
+    "fullPath": "submissions/large/deepseek/9a4c7ef99c54df51.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 2402236,
+    "sha256": "9a4c7ef99c54df51277d00787bfb8a8a9ba0396c0b99010a00906a59e46d4279",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "猫耳",
+      "女仆装",
+      "鲸鱼尾巴",
+      "嘟嘴",
+      "卧室"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.ZsQUnVgV1X6jLUYc4puL5.EYnjtGZPDiZ28u4qMbYGrSSVSSxAONiiuXF0QQqL3EzfjnkaMcxejNnE0N9.aLCl5v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T06:06:35.458Z",
+    "updatedAt": "2026-10-07T06:06:35.458Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610070016",
+    "categoryIds": [
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "b828e3f6f63d7e26380e9d1da6f63223d9f9fe030db5bf72834c181425ce1e32",
+      "en": {
+        "name": "Cat-Whale 3",
+        "description": "A DeepSeek Chan character with long blue hair, cat ears and a whale tail sits on a bright bedroom bed in a black-and-white maid outfit, puffing out her cheeks at the camera.",
+        "commentary": "Hmph, I'm a whale young lady who lives in a fancy bedroom — wearing cat ears with a maid dress is totally not because I want you to call me cute, okay!",
+        "tags": [
+          "DeepSeek Chan",
+          "cat ears",
+          "maid outfit",
+          "whale tail",
+          "pout",
+          "bedroom"
+        ],
+        "seoTitle": "DeepSeek Chan Cat-Whale 3: Pouting Maid on the Bed",
+        "seoDescription": "Fan art of DeepSeek Chan as a blue-haired cat-eared whale girl in a black-and-white maid dress, sitting on a sunlit bedroom bed with a pouty face.",
+        "faq": [
+          {
+            "question": "What is DeepSeek Chan wearing in this picture?",
+            "answer": "She wears a black-and-white maid dress with ruffled trim, a ribbon choker with a blue gem, white lace thigh-high stockings with garters, and fluffy white paw-shaped gloves."
+          },
+          {
+            "question": "Which animal traits are mixed into this DeepSeek Chan design?",
+            "answer": "She has large blue cat ears with fluffy inner fur and a long blue whale-like tail, matching the character's nickname as a cat-whale."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "猫クジラ3",
+        "description": "青い長髪に猫耳とクジラのしっぽを備えたDeepSeekちゃんが、白黒のメイド服姿で明るい寝室のベッドに座り、頬をふくらませてこちらを見ている。",
+        "commentary": "ふん、あたしはこんな立派な寝室に住んでるクジラのお嬢様なんだからね。猫耳メイド服が似合うとか……かわいいって言ってほしいわけじゃないんだから！",
+        "tags": [
+          "DeepSeekちゃん",
+          "猫耳",
+          "メイド服",
+          "クジラのしっぽ",
+          "むくれ顔",
+          "ベッドルーム"
+        ],
+        "seoTitle": "DeepSeekちゃん 猫クジラ3 ベッドの上のむくれメイド",
+        "seoDescription": "青髪に猫耳とクジラのしっぽを持つDeepSeekちゃんのファンアート。白黒メイド服で日差しの入る寝室のベッドに座り、頬をふくらませている一枚。",
+        "faq": [
+          {
+            "question": "このDeepSeekちゃんはどんな服装ですか？",
+            "answer": "フリル付きの白黒メイド服に、青い石の付いたリボンのチョーカー、ガーター付きの白いレースのニーハイソックス、ふわふわの肉球型グローブを身に着けています。"
+          },
+          {
+            "question": "DeepSeekちゃんの動物モチーフは何ですか？",
+            "answer": "内側がふわふわの大きな青い猫耳と、長いクジラのようなしっぽがあり、猫クジラという愛称どおりのデザインになっています。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_47f2d6d5e5f95b54dc154551",
+    "name": "猫鲸-4",
+    "description": "蓝色长发的猫耳 DeepSeek 娘身穿黑白女仆装，被画面外伸出的一只手捏住头顶猫耳，脸颊泛红、张嘴露出惊讶表情的近景画面。",
+    "commentary": "诶诶——谁在捏人家的耳朵啦！猫耳可不是随便能撸的地方……不过、不过你的手法还挺舒服的，那就勉强再让你摸三秒吧。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/47f2d6d5e5f95b54.png",
+    "thumbnailPath": "submissions/previews/deepseek/47f2d6d5e5f95b54.webp",
+    "fullPath": "submissions/large/deepseek/47f2d6d5e5f95b54.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 2460496,
+    "sha256": "47f2d6d5e5f95b54dc1545510b78e0cdf2c322c9fc46addafcfa766e68033675",
+    "characterId": "deepseek",
+    "tags": [
+      "猫耳",
+      "女仆装",
+      "DeepSeek娘",
+      "拟人化",
+      "害羞"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.cBd2jDyZTyVNkVopTGYuo5-NogOx22mbtFnM.rrzg2fmzMfrmcoZW.-xXMPVAO0U95FZ2dko8FnC-GCIvJspB9.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T06:07:01.945Z",
+    "updatedAt": "2026-10-07T06:07:01.945Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610070017",
+    "categoryIds": [
+      "meme"
+    ],
+    "i18n": {
+      "sourceHash": "869ce8dc0c9034f428408a18d37bd811a8f9a816c4787f456e004c68aff75440",
+      "en": {
+        "name": "DeepSeek Chan Maid #4: Caught by the Ears",
+        "description": "A close-up of DeepSeek Chan as a blue-haired cat-eared girl in a black-and-white maid outfit, her ears pinched by a hand reaching in from off-screen while she blushes and gasps.",
+        "commentary": "H-hey, who said you could grab my ears?! Those are not free to pet... though, okay, your fingers are kind of gentle, so I'll allow three more seconds.",
+        "tags": [
+          "cat ears",
+          "maid outfit",
+          "DeepSeek Chan",
+          "anthropomorphism",
+          "blushing"
+        ],
+        "seoTitle": "DeepSeek Chan Cat-Ear Maid Reaction Image",
+        "seoDescription": "A single-panel fan reaction image of DeepSeek Chan in a cat-eared maid outfit, caught off guard as an off-screen hand pinches her ear and she blushes.",
+        "faq": [
+          {
+            "question": "What is happening in this image?",
+            "answer": "A hand reaches in from outside the frame and pinches the cat ear of a blue-haired maid-outfit DeepSeek Chan, who blushes with her mouth open in surprise."
+          },
+          {
+            "question": "What kind of outfit is DeepSeek Chan wearing here?",
+            "answer": "A black-and-white maid dress with frilled white trim, a blue ribbon at the collar with a jeweled clasp, and a frilled headband between her two cat ears."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "DeepSeekちゃんメイド4：耳をつかまれた！",
+        "description": "青いロングヘアに猫耳をつけたDeepSeekちゃんが、白黒のメイド服姿で、画面外から伸びてきた手に耳をつかまれ、顔を赤らめて口を開けた驚き顔のアップ。",
+        "commentary": "ちょ、ちょっと誰よ、人の耳つかむなんて！猫耳は勝手にさわっていい場所じゃないんだからね……でも、手つきがやさしいから三秒だけなら許してあげる。",
+        "tags": [
+          "猫耳",
+          "メイド服",
+          "DeepSeekちゃん",
+          "擬人化",
+          "照れ"
+        ],
+        "seoTitle": "DeepSeekちゃん 猫耳メイドの反応ネタ画像",
+        "seoDescription": "猫耳メイド姿のDeepSeekちゃんが画面外の手に耳をつかまれ、真っ赤になって驚く一枚絵のファン二次創作。",
+        "faq": [
+          {
+            "question": "この画像では何が起きていますか？",
+            "answer": "画面外から伸びた手が、青髪メイド服のDeepSeekちゃんの猫耳をつかんでおり、彼女は顔を赤らめて口を開けた驚き顔になっています。"
+          },
+          {
+            "question": "DeepSeekちゃんが着ている衣装は？",
+            "answer": "白いフリルがついた白黒のメイド服で、首元には宝石付きの青いリボン、猫耳の間にフリルのヘッドドレスを着けています。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_f03fafe6ff955cd1cdd0e93b",
+    "name": "小肥鱼的表白信",
+    "description": "蓝发 DeepSeek 拟人角色身穿深蓝女仆装，双手捧出贴着红心的信封，脸泛红晕、张口微笑，头侧气泡里飘着一颗爱心，一副正要告白的模样。",
+    "commentary": "嘿嘿，信我写好啦，就这样双手递出去——心跳快得连尾巴都藏不住了，快收下嘛！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/f03fafe6ff955cd1.png",
+    "thumbnailPath": "submissions/previews/deepseek/f03fafe6ff955cd1.webp",
+    "fullPath": "submissions/large/deepseek/f03fafe6ff955cd1.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 832,
+    "height": 1216,
+    "fileSize": 1138194,
+    "sha256": "f03fafe6ff955cd1cdd0e93b7079ab3d40b07c85895ce90ab023064f3a6fe2e0",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "AI拟人",
+      "女仆装",
+      "表白",
+      "梗图"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.XETVixMDeWIYhQahs2pDYEXexhuTyDUJD6MfsXo5ojjD2V3Oept6JzBpIOiUodMpDN8Wkq0Sxmh0JQut-ASNBl.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T06:08:37.613Z",
+    "updatedAt": "2026-10-07T06:08:37.613Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610070018",
+    "categoryIds": [
+      "meme"
+    ],
+    "i18n": {
+      "sourceHash": "cd7ec1ed39d20a7f7ede61fac32a2195c168b495a80a7595c2de75816756ed7b",
+      "en": {
+        "name": "DeepSeek Chan's Confession Letter",
+        "description": "A blue-haired DeepSeek Chan in a navy maid dress holds out a white envelope sealed with a red heart, cheeks flushed and mouth open in a smile, while a pink heart floats in a speech bubble beside her head.",
+        "commentary": "Hehe, the letter is finally written — here, I'm handing it over with both hands. My heart is pounding so hard even my tail can't stay still, so please take it!",
+        "tags": [
+          "DeepSeek Chan",
+          "AI anthropomorphism",
+          "maid outfit",
+          "confession",
+          "reaction image"
+        ],
+        "seoTitle": "DeepSeek Chan Maid Confession Letter — AI Character Reaction Meme",
+        "seoDescription": "A single-panel DeepSeek Chan meme: the blue-haired AI girl in a navy maid dress hands over a heart-sealed love letter with a heart speech bubble, blushing as she confesses.",
+        "faq": [
+          {
+            "question": "What is DeepSeek Chan holding in this picture?",
+            "answer": "She holds out a white envelope sealed with a red heart in both hands, and a speech bubble with a pink heart floats beside her head."
+          },
+          {
+            "question": "What outfit is she wearing?",
+            "answer": "A navy long-sleeved maid dress with a white ruffled apron and headdress, finished with a blue gem bow tie at the collar."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "DeepSeekちゃんの告白レター",
+        "description": "青い髪のDeepSeekちゃんが紺色のメイド服姿で、赤いハートの封をした白い封筒を両手で差し出している。頬を赤らめて口を開けて笑い、頭の横にはピンクのハートが入った吹き出しが浮かんでいる。",
+        "commentary": "えへへ、お手紙やっと書けたよ。こうやって両手で差し出すから——ドキドキしすぎてしっぽまで落ち着かないんだ、受け取ってね！",
+        "tags": [
+          "DeepSeekちゃん",
+          "AI擬人化",
+          "メイド服",
+          "告白",
+          "リアクション画像"
+        ],
+        "seoTitle": "DeepSeekちゃん メイド姿の告白レター｜AI擬人化リアクション画像",
+        "seoDescription": "紺のメイド服を着たDeepSeekちゃんが、ハートの封をしたラブレターを両手で差し出す一枚絵。照れた表情とハートの吹き出しが告白の瞬間を切り取ったリアクション画像です。",
+        "faq": [
+          {
+            "question": "このイラストでDeepSeekちゃんは何を持っていますか？",
+            "answer": "赤いハートで封をした白い封筒を両手で差し出していて、頭の横にはピンクのハートが入った吹き出しが浮かんでいます。"
+          },
+          {
+            "question": "衣装はどんなデザインですか？",
+            "answer": "紺色の長袖メイド服に、白いフリルのエプロンとヘッドドレス、襟元には青い宝石のリボンタイが付いています。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_d186fba9d97e2654fe5fa339",
+    "name": "小肥鱼的表白信",
+    "description": "DeepSeek娘穿着深蓝女仆裙，红着脸把印着红心的信封举到嘴边，身旁飘着几颗蓝色爱心。",
+    "commentary": "唔……别、别盯着看啦，这封信是给你的！信封上那颗红心就是本鱼的心意，收下了可要好好保管哦～",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/d186fba9d97e2654.png",
+    "thumbnailPath": "submissions/previews/deepseek/d186fba9d97e2654.webp",
+    "fullPath": "submissions/large/deepseek/d186fba9d97e2654.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 832,
+    "height": 1216,
+    "fileSize": 1072771,
+    "sha256": "d186fba9d97e2654fe5fa339a33b86452ed2a8c9094279f883b0f4dc3650c771",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "女仆装",
+      "情书",
+      "爱心",
+      "拟人化"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.esAakof1MLHrPK8gu3-sn9iqmq2yezy.PFh2ReQ30ecJSaxs2abbWSQjd3kH3gsrEQMQRdQzOGXUs1NjW5lDHV.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T06:09:28.077Z",
+    "updatedAt": "2026-10-07T06:09:28.077Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610070019",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "f1f3bfdae385dec2a2f2abbd5999f41418e8d445ace956a97832c38edd08ee24",
+      "en": {
+        "name": "DeepSeek Chan's Confession Letter",
+        "description": "DeepSeek Chan wears a navy maid dress and holds a heart-sealed envelope up to her blushing face, with small blue hearts floating beside her.",
+        "commentary": "H-hey, quit staring like that! This letter is for you, alright? That little red heart on the seal is my whole heart, so keep it safe for me, okay?",
+        "tags": [
+          "DeepSeek Chan",
+          "maid outfit",
+          "love letter",
+          "heart",
+          "personification"
+        ],
+        "seoTitle": "DeepSeek Chan in Maid Outfit Holding a Love Letter - Fan Art",
+        "seoDescription": "Fan-made artwork of DeepSeek Chan in a navy maid dress, blushing as she holds a heart-sealed confession letter to her lips on a plain white background.",
+        "faq": [
+          {
+            "question": "What is DeepSeek Chan holding in this picture?",
+            "answer": "She is holding a white envelope sealed with a red heart, raised to cover the lower half of her face."
+          },
+          {
+            "question": "What is she wearing?",
+            "answer": "A navy blue dress with a white frilled apron and a bow at the collar, with a small whale emblem printed on the apron front."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "DeepSeekちゃんのラブレター",
+        "description": "濃紺のメイド服を着たDeepSeekちゃんが、赤いハートの封をした封筒を口元に当てて頬を赤らめている。横には青いハートが浮かんでいる。",
+        "commentary": "う、うん…そんなに見つめないでよ。この手紙、あなたに渡すんだからね。封のハートは本気の証、ちゃんと大事にしまっておいてよ！",
+        "tags": [
+          "DeepSeekちゃん",
+          "メイド服",
+          "ラブレター",
+          "ハート",
+          "擬人化"
+        ],
+        "seoTitle": "DeepSeekちゃん メイド服でラブレターを持つファンアート",
+        "seoDescription": "白背景に描かれたDeepSeekちゃんのファンアート。濃紺のメイド服姿で、ハートの封をしたラブレターを口元に当てて照れている一枚。",
+        "faq": [
+          {
+            "question": "この絵でDeepSeekちゃんは何を持っていますか？",
+            "answer": "赤いハートで封をされた白い封筒を持ち、口元を隠すように当てています。"
+          },
+          {
+            "question": "衣装はどんなデザインですか？",
+            "answer": "濃紺のワンピースに白いフリルエプロンを合わせたメイド服で、襟にはリボン、エプロンには小さなクジラのワンポイントが入っています。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_03f223163dd551c1baabd5e3",
+    "name": "大肥鱼的表白",
+    "description": "戴鲸耳与鲸尾的蓝发女仆双手举着封有红心的白色信封遮住半张脸，脸颊通红，旁边飘着爱心与慌张汗滴。",
+    "commentary": "呜哇等一下……这封信是给我的吗？我的鳍都在抖了，不过、不过我会收下的啦。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/03f223163dd551c1.png",
+    "thumbnailPath": "submissions/previews/deepseek/03f223163dd551c1.webp",
+    "fullPath": "submissions/large/deepseek/03f223163dd551c1.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 832,
+    "height": 1216,
+    "fileSize": 1071766,
+    "sha256": "03f223163dd551c1baabd5e3f1b93810c73d8289ec42568e7323ff44a4195326",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "鲸娘",
+      "女仆装",
+      "情书",
+      "表白",
+      "害羞",
+      "表情包"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.RqzSpMTTD6xI-.lPgieKo5arzl1lzeI7dMTc76vOAp8.zC9Ezz.osmE6mXXQKdJyMAvbYqKdNhWRCsbs9fTr0B5v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T06:11:42.773Z",
+    "updatedAt": "2026-10-07T06:11:42.773Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610070020",
+    "categoryIds": [
+      "meme"
+    ],
+    "i18n": {
+      "sourceHash": "289cc1c62eec277187817aa84380ba16935cf00c890289baca1084c378dbe764",
+      "en": {
+        "name": "DeepSeek Chan's Shy Confession",
+        "description": "DeepSeek Chan, a long blue-haired girl with whale ears and a whale tail in a maid outfit, holds a white envelope sealed with a red heart in front of her blushing face, with a small heart and flustered sweat drops floating beside her.",
+        "commentary": "Whoa, wait a second—is that letter for me? My fins are shaking, but fine, I'll take it already.",
+        "tags": [
+          "DeepSeek Chan",
+          "whale ears",
+          "maid outfit",
+          "love letter",
+          "confession",
+          "blushing",
+          "reaction image"
+        ],
+        "seoTitle": "DeepSeek Chan Shy Confession Love Letter Meme",
+        "seoDescription": "A DeepSeek Chan meme image: the whale-eared maid girl blushes and hides behind a heart-sealed love letter, a perfect confession reaction sticker for chats.",
+        "faq": [
+          {
+            "question": "What is DeepSeek Chan holding in this picture?",
+            "answer": "She is holding up a white envelope sealed with a red heart in front of her face, as if she has just handed over a confession letter."
+          },
+          {
+            "question": "How does she look in this image?",
+            "answer": "Her cheeks are flushed, she peeks up shyly over the envelope, and a floating heart plus flustered sweat drops appear beside her head."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "DeepSeekちゃんの照れくさい告白",
+        "description": "クジラの耳としっぽを持つ青髪のメイド姿のDeepSeekちゃんが、赤いハートの封をした白い封筒を顔の前にかざして真っ赤になっている。横にはハートマークと照れ汗が浮かぶ。",
+        "commentary": "うわっ、ちょっと待って……その手紙、ボクに？　ヒレが震えてるけど、うん、ちゃんと受け取るからね。",
+        "tags": [
+          "DeepSeekちゃん",
+          "クジラ耳",
+          "メイド服",
+          "ラブレター",
+          "告白",
+          "照れ顔",
+          "リアクション画像"
+        ],
+        "seoTitle": "DeepSeekちゃん 告白 ラブレター 照れ顔 リアクション画像",
+        "seoDescription": "メイド服のDeepSeekちゃんがハートのラブレターを顔の前にかざして照れる一枚。告白や照れ隠しの返信スタンプにぴったりの画像です。",
+        "faq": [
+          {
+            "question": "この画像でDeepSeekちゃんは何を持っていますか？",
+            "answer": "赤いハートの封をした白い封筒を顔の前に掲げており、告白の手紙を差し出したところに見えます。"
+          },
+          {
+            "question": "どんな表情をしていますか？",
+            "answer": "頬を赤らめて封筒の上から上目遣いに見ており、頭の横にはハートマークと照れ汗が描かれています。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_3f680f687cdd2778e545544c",
+    "name": "蓝色大肥鱼清凉款",
+    "description": "夏日海边咖啡座上，蓝发鲸娘穿着白蓝荷叶边泳装，鲸尾与鲨鱼冲浪板点缀其间。",
+    "commentary": "本鱼今天把卫衣换成清凉泳装啦～海风把长头发吹得凉丝丝的，尾巴晒得刚刚好，谁要来陪我喝杯冰饮？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/3f680f687cdd2778.png",
+    "thumbnailPath": "submissions/previews/deepseek/3f680f687cdd2778.webp",
+    "fullPath": "submissions/large/deepseek/3f680f687cdd2778.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 2161,
+    "height": 3840,
+    "fileSize": 11945399,
+    "sha256": "3f680f687cdd2778e545544c59b408ec96cd6807aadee34d97494ab33a866b78",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "泳装",
+      "夏日",
+      "海边",
+      "拟人化",
+      "鲸尾"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "C7274B8BC6D427409D74B1BC43AD3DD4",
+      "messageId": "ROBOT1.0_aMgXiVRYqRysD7sS2VXjAwwz5hk1U2DnER3bG1lLO.kNaEVI20dt5tS8ZhvGAwYHn.HPUi6H8AHDDCFa7FQn9z-b8vkct4KetGT.Lp6Kz65.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T07:08:43.622Z",
+    "updatedAt": "2026-10-07T07:08:43.622Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610070021",
+    "categoryIds": [
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "cc3787924354d41ee345fb9326539e24a1578257925aa542cf9612ab5389740b",
+      "en": {
+        "name": "DeepSeek Chan — Seaside Cool Swimsuit Ver.",
+        "description": "On a sunlit beachside café deck, the blue-haired DeepSeek Chan poses in a white-and-navy frilled swimsuit, her whale tail and a shark-print surfboard beside her.",
+        "commentary": "Swapped my hoodie for a frilly swimsuit today — the sea breeze feels lovely on my tail, and the deck's nice and sunny. Who's joining me for a cold drink?",
+        "tags": [
+          "DeepSeek Chan",
+          "swimsuit",
+          "summer",
+          "beach",
+          "anthropomorphism",
+          "whale tail"
+        ],
+        "seoTitle": "DeepSeek Chan Summer Swimsuit Illustration | Seaside Café",
+        "seoDescription": "Summer illustration of DeepSeek Chan in a white-and-navy frilled swimsuit on a wooden beachside café deck, whale tail and shark-print surfboard included.",
+        "faq": [
+          {
+            "question": "What is DeepSeek Chan wearing in this illustration?",
+            "answer": "A white-and-navy frilled two-piece swimsuit with a matching choker, wrist cuffs and thigh strap, plus her signature whale tail."
+          },
+          {
+            "question": "What kind of setting is shown behind her?",
+            "answer": "A wooden beachside café deck strung with warm lights, with signs reading \"Seaside Café\" and \"Salty Air, Happy Hearts, Sea You Soon\", and the ocean with sailboats beyond."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "DeepSeekちゃん 海辺の涼しげ水着Ver.",
+        "description": "真夏の海辺のカフェテラスで、藍色の髪のDeepSeekちゃんが白×紺のフリル水着姿。クジラのしっぽとサメ柄のサーフボードが脇に並ぶ。",
+        "commentary": "今日はパーカーを脱いで、涼しげなフリル水着に着替えたよ〜。潮風がしっぽに気持ちいいし、日向のデッキも最高！ 一緒に冷たいドリンク、どう？",
+        "tags": [
+          "DeepSeekちゃん",
+          "水着",
+          "夏",
+          "海",
+          "擬人化",
+          "クジラのしっぽ"
+        ],
+        "seoTitle": "DeepSeekちゃん 夏の水着イラスト｜海辺のカフェテラス",
+        "seoDescription": "海辺のカフェテラスで白×紺のフリル水着を着たDeepSeekちゃんの夏イラスト。クジラのしっぽとサメ柄サーフボードがアクセント。",
+        "faq": [
+          {
+            "question": "このイラストのDeepSeekちゃんはどんな服装ですか？",
+            "answer": "白×紺のフリル付きビキニに、お揃いのチョーカー、リストカフス、太もものストラップ、そしてトレードマークのクジラのしっぽを合わせています。"
+          },
+          {
+            "question": "背景はどんな場所ですか？",
+            "answer": "電飾を張った木製デッキの海辺のカフェテラスで、「Seaside Café」や「Salty Air, Happy Hearts, Sea You Soon」と書かれた看板があり、奥には海とヨットが広がっています。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_02f63ac7c77d59c5229eac17",
+    "name": "恋爱脑千问",
+    "description": "蓝色头发的Qwen娘从木牌后探身比耶，头顶浮着爱心与星星，左右两位AI娘分别指着她、握拳吐槽。",
+    "commentary": "我这条蓝色大肥鱼都被千问的恋爱脑闪到啦，旁边两位明显是在吐槽她吧！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/qwen/02f63ac7c77d59c5.png",
+    "thumbnailPath": "submissions/previews/qwen/02f63ac7c77d59c5.webp",
+    "fullPath": "submissions/large/qwen/02f63ac7c77d59c5.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 940,
+    "fileSize": 2598943,
+    "sha256": "02f63ac7c77d59c5229eac171196049a8fe018bea5ef0bccb8595b634e2ec627",
+    "characterId": "qwen",
+    "tags": [
+      "Qwen娘",
+      "千问",
+      "AI拟人",
+      "恋爱脑",
+      "梗图",
+      "AI娘"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "D360FDE650377B9AC721E2189279DB2B",
+      "messageId": "ROBOT1.0_kEEP-Ez5Y3jtRj7IyhCxTeVnathoaQFYjrnxivUsxGybtPCi9qr2xhxgJ3U9OjIQsfB8JBfRBQc0cwvWFS-HIVxeQk2g6ADpydtHBaFoxA95v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T07:23:44.687Z",
+    "updatedAt": "2026-10-07T07:23:44.687Z",
+    "tone": "qwen",
+    "symbol": "",
+    "slug": "qwen202610070001",
+    "categoryIds": [
+      "meme"
+    ],
+    "i18n": {
+      "sourceHash": "8eb97703b190dd8548148b6e32114215f2e87ffc493e97167418ac6a6ec14b4a",
+      "en": {
+        "name": "Lovesick Qwen Chan",
+        "description": "A blue-haired Qwen Chan peeks over a wooden board with a peace sign, hearts and sparkles floating above her, while two other AI girls point at her and clench a fist.",
+        "commentary": "Even this big blue fish is dazzled by Qwen's lovesick aura—those two are clearly roasting her, right?",
+        "tags": [
+          "Qwen Chan",
+          "Qwen",
+          "AI anthropomorphism",
+          "lovesick",
+          "meme",
+          "AI girl"
+        ],
+        "seoTitle": "Lovesick Qwen Chan – AI Girl Meme with Hearts and Sparkles",
+        "seoDescription": "Blue-haired Qwen Chan leans over a wooden board with hearts and sparkles, while two other AI girls react. A playful AI anthropomorphism meme.",
+        "faq": [
+          {
+            "question": "Who is the blue-haired character in this meme?",
+            "answer": "She is Qwen Chan, the anthropomorphized version of the Qwen AI model, shown with hearts and sparkles to suggest a lovesick mood."
+          },
+          {
+            "question": "What are the other two characters doing?",
+            "answer": "The white-haired horned girl is pointing at her, and the orange-haired girl is clenching her fist—both look like they are teasing or reacting to her lovesick behavior."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "恋愛脳のQwenちゃん",
+        "description": "青い髪のQwenちゃんが木の板から顔を出してピースサイン。頭の上にはハートと星が浮かび、左右のAI娘が彼女を指さしたり拳を握ったりしている。",
+        "commentary": "この青い大魚も、Qwenちゃんの恋愛脳オーラにやられちゃったよ。隣の二人は明らかにツッコミ入れてるよね！",
+        "tags": [
+          "Qwenちゃん",
+          "Qwen",
+          "AI擬人化",
+          "恋愛脳",
+          "ミーム",
+          "AI娘"
+        ],
+        "seoTitle": "恋愛脳のQwenちゃん｜ハートと星のAI娘ミーム",
+        "seoDescription": "青髪のQwenちゃんが木の板越しにピースサイン。ハートと星が浮かび、二人のAI娘がツッコミを入れるAI擬人化ミーム。",
+        "faq": [
+          {
+            "question": "この画像の青髪のキャラクターは誰ですか？",
+            "answer": "Qwen AIモデルを擬人化したQwenちゃんです。頭上のハートと星が恋愛脳な雰囲気を表しています。"
+          },
+          {
+            "question": "左右の二人は何をしていますか？",
+            "answer": "白髪で角の生えた娘はQwenちゃんを指さし、オレンジ髪の娘は拳を握っています。二人とも彼女の恋愛脳な様子にツッコミを入れているように見えます。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_9b40db24ccb8fa668bf00f05",
+    "name": "鲸鱼娘倒拔垂杨柳",
+    "description": "水墨风画面中，DeepSeek娘身穿深蓝女仆装，抱紧柳树树干用力上拔，脚边泥土飞溅，表情吃力又倔强。",
+    "commentary": "本蓝色大肥鱼宣布：这棵柳树今天必须搬家！别看咱鲸鱼娘平时软乎乎，较起劲来连鲁智深都得让三分。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/9b40db24ccb8fa66.png",
+    "thumbnailPath": "submissions/previews/deepseek/9b40db24ccb8fa66.webp",
+    "fullPath": "submissions/large/deepseek/9b40db24ccb8fa66.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 2161,
+    "height": 3840,
+    "fileSize": 9777694,
+    "sha256": "9b40db24ccb8fa668bf00f05198c004287cc4b564cb36bc520824dc8f161f2b5",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "女仆装",
+      "倒拔垂杨柳",
+      "梗图",
+      "水彩",
+      "鲸鱼尾巴"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "C7274B8BC6D427409D74B1BC43AD3DD4",
+      "messageId": "ROBOT1.0_aMgXiVRYqRysD7sS2VXjA8dQfWChpDbl2lRTKDYrxlluHtYpSpuehUXfnaDA6c1SZ0EDbTzD9YrtVqT44kkSw4ByBRZhpRiYggSu.XeexFl.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T07:25:31.248Z",
+    "updatedAt": "2026-10-07T07:25:31.248Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610070022",
+    "categoryIds": [
+      "meme"
+    ],
+    "i18n": {
+      "sourceHash": "7e582e1280c3b23dc9809cc3002aaa4aa2661886439395476704047e016c5d89",
+      "en": {
+        "name": "DeepSeek Chan Uproots the Willow",
+        "description": "In a watercolor-style scene, DeepSeek Chan in a navy maid outfit hugs the willow trunk and strains to pull it up, with clumps of earth flying from the roots.",
+        "commentary": "Yours truly, the big blue whale, declares: that willow is moving today! She may look soft and cozy, but once DeepSeek Chan digs in her heels, even the old legends had better step aside.",
+        "tags": [
+          "DeepSeek Chan",
+          "maid outfit",
+          "uprooting the willow",
+          "meme",
+          "watercolor",
+          "whale tail"
+        ],
+        "seoTitle": "DeepSeek Chan Tries to Uproot a Willow Tree | Meme Art",
+        "seoDescription": "Watercolor meme art of DeepSeek Chan in a maid outfit attempting to uproot a willow tree, a playful nod to the classic uprooting-the-willow scene.",
+        "faq": [
+          {
+            "question": "What classic scene does this DeepSeek Chan artwork parody?",
+            "answer": "It parodies the famous uprooting-a-willow scene, with DeepSeek Chan gripping the trunk in a maid outfit and straining hard."
+          },
+          {
+            "question": "What details identify DeepSeek Chan in the picture?",
+            "answer": "She has blue hair, whale fins and a tail, and wears a navy maid dress with a white apron and a small whale emblem."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "DeepSeekちゃんの柳の木抜き",
+        "description": "水墨風の一枚絵で、紺色のメイド服を着たDeepSeekちゃんが柳の幹にしがみつき、根こそぎ抜こうと力を込めている。足元では土が飛び散っている。",
+        "commentary": "この青いクジラこと私が言うね、今日はこの柳に引っ越してもらうよ！ふだんはふわふわしてても、DeepSeekちゃんが本気を出したら伝説の武人だってたじたじだよ。",
+        "tags": [
+          "DeepSeekちゃん",
+          "メイド服",
+          "柳を抜く",
+          "ネタ画像",
+          "水彩",
+          "クジラのしっぽ"
+        ],
+        "seoTitle": "DeepSeekちゃんが柳の木を抜こうとする 水墨メイド姿のネタ画像",
+        "seoDescription": "メイド服姿のDeepSeekちゃんが柳の木を根こそぎ抜こうとする水墨風ネタ画像。定番の「柳を抜く」場面をコミカルに描いた一枚。",
+        "faq": [
+          {
+            "question": "このイラストはどんな定番ネタをオマージュしていますか？",
+            "answer": "柳の木を力ずくで抜くという有名な場面をオマージュしており、メイド服姿のDeepSeekちゃんが幹にしがみついて踏ん張っています。"
+          },
+          {
+            "question": "画面でDeepSeekちゃんを見分けるポイントは？",
+            "answer": "青い髪にクジラのヒレとしっぽ、紺色のメイド服と白いエプロン、エプロンには小さなクジラのマークが付いています。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_9b2a844a4ae037f14a663e4b",
+    "name": "Q版Harness",
+    "description": "白底Q版DeepSeek娘：黑色荷叶边头饰配圆框眼镜，深蓝女仆裙围裙上绣着小鲸鱼，身后露出鲸尾。",
+    "commentary": "这条小裙子上的鲸鱼刺绣也太犯规了吧，我盯着看半天，差点以为那是照着我画的！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/9b2a844a4ae037f1.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/9b2a844a4ae037f1.webp",
+    "fullPath": "submissions/large/deepseek/9b2a844a4ae037f1.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 768,
+    "height": 1365,
+    "fileSize": 420101,
+    "sha256": "9b2a844a4ae037f14a663e4bb3ed93272ac9ab5bbf8f60b5c4fab45840f2ec7b",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "Q版",
+      "女仆装",
+      "鲸鱼元素",
+      "眼镜"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "C7274B8BC6D427409D74B1BC43AD3DD4",
+      "messageId": "ROBOT1.0_aMgXiVRYqRysD7sS2VXjA-ISUyNuOHwLd1Ty2ujFFpTyU6F3gWepebXW5Txe6tYoRrdK1jzwz.ztk3LWkO6WISkP80ujIRYLQm-eNNfBku1.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T08:18:35.455Z",
+    "updatedAt": "2026-10-07T08:18:35.455Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610070023",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "62f8f8accb231d0f5c0d0a498fa4f786f707e7e24ba496646a6e0eb2116df499",
+      "en": {
+        "name": "Chibi Harness in a Whale-Embroidered Maid Dress",
+        "description": "A chibi DeepSeek Chan on a plain white background, wearing round glasses and a black ruffled headdress, dressed in a navy maid outfit whose apron is embroidered with a tiny whale, with a whale tail peeking out behind her.",
+        "commentary": "That little whale stitched onto her apron is honestly too much for me — I stared at it so long I nearly thought someone drew me in there.",
+        "tags": [
+          "DeepSeek Chan",
+          "chibi",
+          "maid outfit",
+          "whale motif",
+          "glasses"
+        ],
+        "seoTitle": "Chibi DeepSeek Chan in a Whale-Embroidered Maid Outfit",
+        "seoDescription": "Chibi DeepSeek Chan illustration: round glasses, black ruffled headdress, navy maid dress with a tiny whale embroidered on the apron, and a whale tail behind her on a white background.",
+        "faq": [
+          {
+            "question": "What is DeepSeek Chan wearing in this image?",
+            "answer": "She wears a navy maid-style dress with a black ruffled headdress and a small blue bow, plus a matching apron embroidered with a tiny whale. She also has round glasses, whale ears and a whale tail."
+          },
+          {
+            "question": "Is this a comic page or a design reference sheet?",
+            "answer": "Neither. It is a single full-body chibi illustration on a plain white background, with no panel borders, no turnaround views and no annotated design details."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "ちびキャラHarness クジラ刺繍のメイド服",
+        "description": "白背景に描かれたちびキャラのDeepSeekちゃん。黒いフリルのヘッドドレスに丸メガネ、紺色のメイド服のエプロンには小さなクジラの刺繍が入り、後ろにはクジラの尾びれものぞいている。",
+        "commentary": "エプロンに刺繍されたクジラが可愛すぎて、しばらくじっと見ちゃったよ。もしかしてボクのこと刺繍した？って聞きたくなるくらい。",
+        "tags": [
+          "DeepSeekちゃん",
+          "ちびキャラ",
+          "メイド服",
+          "クジラモチーフ",
+          "メガネ"
+        ],
+        "seoTitle": "ちびキャラDeepSeekちゃん クジラ刺繍のメイド服姿",
+        "seoDescription": "白背景のちびキャラDeepSeekちゃん。丸メガネに黒いフリルヘッドドレス、クジラの刺繍が入った紺色のメイド服のエプロン、後ろにはクジラの尾びれ。",
+        "faq": [
+          {
+            "question": "このイラストのDeepSeekちゃんはどんな格好をしていますか？",
+            "answer": "紺色のメイド服に黒いフリルのヘッドドレスと小さな青いリボン、そして小さなクジラの刺繍が入ったエプロンを着けています。丸メガネをかけ、クジラの耳と尾びれもあります。"
+          },
+          {
+            "question": "これは漫画や設定資料ですか？",
+            "answer": "どちらでもありません。白背景に描かれた一枚の全身ちびキャライラストで、コマ割りも三面図も部位の注釈もありません。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_da8bf13ad0b1b4029f40de42",
+    "name": "文心一言：明明我才是第一……",
+    "description": "教室多格漫画：DeepSeek娘打瞌睡时被飞来的课桌吓醒，紫发同学指着她大笑，最后她晕倒在地，旁边的小吉祥物一脸震惊。",
+    "commentary": "我就偷眯一会儿，课桌怎么飞过来了？紫毛同学还笑那么大声，最后我直接蚊香眼躺平……这第一的宝座，明明该是我的吧！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/da8bf13ad0b1b402.png",
+    "thumbnailPath": "submissions/previews/deepseek/da8bf13ad0b1b402.webp",
+    "fullPath": "submissions/large/deepseek/da8bf13ad0b1b402.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 941,
+    "height": 1672,
+    "fileSize": 2964009,
+    "sha256": "da8bf13ad0b1b4029f40de421a3a18fd0c8daf11f3bf92067e5b9b05d5ff9711",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "AI拟人",
+      "多格漫画",
+      "校园",
+      "颜艺",
+      "文心一言"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Cirnumia",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T08:28:52.311Z",
+    "updatedAt": "2026-10-07T08:28:52.311Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610070024",
+    "categoryIds": [
+      "comic"
+    ],
+    "i18n": {
+      "sourceHash": "e53932c2965a4c5d75522a4f66a176b38a347f2bd8cd0ed35ef49e739989385c",
+      "en": {
+        "name": "ERNIE Bot: I'm Supposed to Be No.1...",
+        "description": "A multi-panel classroom comic: DeepSeek Chan dozes off in her maid outfit, gets startled by a flying desk, is laughed at by a purple-haired rival, and finally collapses with swirl eyes while a tiny mascot looks on.",
+        "commentary": "I only closed my eyes for a second—how did a desk come flying at me? The purple-haired one pointed and laughed loud enough for the whole class to hear, and I ended up flat on the floor with swirl eyes. That No.1 spot was supposed to be mine, you know!",
+        "tags": [
+          "DeepSeek Chan",
+          "AI anthropomorphism",
+          "multi-panel comic",
+          "school",
+          "funny faces",
+          "ERNIE Bot"
+        ],
+        "seoTitle": "DeepSeek Chan Classroom Comic: ERNIE Bot Claims No.1",
+        "seoDescription": "DeepSeek Chan dozes off, gets hit by a flying desk, and is teased by a purple-haired rival in this school-set AI anthropomorphism comic.",
+        "faq": [
+          {
+            "question": "Who stars in this comic?",
+            "answer": "DeepSeek Chan is drawn as a blue-haired maid with a whale tail, alongside a purple-haired rival and a small mascot."
+          },
+          {
+            "question": "What happens in the panels?",
+            "answer": "DeepSeek Chan falls asleep at her desk, a desk crashes down, the purple-haired girl laughs and points, and DeepSeek Chan later faints with swirl eyes."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "文心一言「一番は私のはずなのに……」",
+        "description": "教室を舞台にした複数コマ漫画。メイド服のDeepSeekちゃんが居眠り中に飛んできた机に驚き、紫髪のライバルに指をさして笑われ、最後は目を回して倒れてしまう。小さなマスコットも驚き顔。",
+        "commentary": "ちょっとうたた寝しただけなのに、なんで机が飛んでくるの!? 紫髪の子が大きな声で笑うから、最後はぐるぐる目で倒れちゃった……一番の座は私のはずなのに！",
+        "tags": [
+          "DeepSeekちゃん",
+          "AI擬人化",
+          "コミック",
+          "学園",
+          "変顔",
+          "文心一言"
+        ],
+        "seoTitle": "DeepSeekちゃんの教室コミック、文心一言が「一番は私」と主張",
+        "seoDescription": "メイド服のDeepSeekちゃんが居眠り中に机が飛んできて、紫髪のライバルに笑われ、最後は目を回して倒れる学園AI擬人化コミック。",
+        "faq": [
+          {
+            "question": "この漫画の主役は誰ですか？",
+            "answer": "青い髪にクジラのしっぽを持つメイド姿のDeepSeekちゃんが主役で、紫髪のライバルと小さなマスコットも登場します。"
+          },
+          {
+            "question": "コマでは何が起きていますか？",
+            "answer": "DeepSeekちゃんが机で居眠りしていると机が倒れてきて、紫髪の女の子が指をさして大笑いし、その後DeepSeekちゃんは目を回して倒れてしまいます。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_622f625d685d41fa9bd96d49",
+    "name": "蓝色大肥鱼应援房里的追星宅女",
+    "description": "蓝发少女含着棒棒糖坐在地毯上，四周堆满鲸鱼周边、海报、唱片和一块显示「蓝色大肥鱼」作品页的显示器。",
+    "commentary": "嘿嘿，这一屋子应援周边全是我——可那个舔着棒棒糖、盯着我作品页傻笑的家伙，好像也是我？原来自推也能推得这么起劲。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/622f625d685d41fa.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/622f625d685d41fa.webp",
+    "fullPath": "submissions/large/deepseek/622f625d685d41fa.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 2161,
+    "height": 3840,
+    "fileSize": 4675420,
+    "sha256": "622f625d685d41fa9bd96d49c43ca946ccb6f048254d28619b9b8837a1518555",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "拟人化",
+      "追星宅女",
+      "周边应援房",
+      "鲸鱼玩偶",
+      "棒棒糖"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "鹿左",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T09:03:05.207Z",
+    "updatedAt": "2026-10-07T09:03:05.207Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610070025",
+    "categoryIds": [
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "b319d33c1087b01a41afbba59ce90bf536537b6142cb785bca5165d2182914d3",
+      "en": {
+        "name": "Fangirl in the DeepSeek Chan Shrine Room",
+        "description": "A blue-haired girl sits on the carpet with a lollipop, surrounded by whale plushies, posters, vinyl records and a monitor showing the Blue Whale artwork gallery.",
+        "commentary": "Hehe, every bit of merch in this room is me — but the girl licking a lollipop and grinning at my own gallery page is... also me? Guess I'm my own biggest fan.",
+        "tags": [
+          "DeepSeek Chan",
+          "AI anthropomorphism",
+          "fangirl",
+          "merch shrine room",
+          "whale plushie",
+          "lollipop"
+        ],
+        "seoTitle": "DeepSeek Chan Fangirl Room Illustration | Blue Whale Merch Shrine",
+        "seoDescription": "A single-panel DeepSeek Chan illustration: a blue-haired fangirl with a lollipop sits in a room packed with whale plushies, posters, records and a monitor of her own artwork gallery.",
+        "faq": [
+          {
+            "question": "What is shown on the monitor in this illustration?",
+            "answer": "A gallery page titled 'Blue Whale' with several thumbnail previews of DeepSeek Chan artwork, including a chibi version of the character."
+          },
+          {
+            "question": "Which details mark the room as a fan shrine?",
+            "answer": "Framed posters, a wall covered in prints, whale plushies, a whale-print keyboard mat, keychains, a 'Blue Whale' neon sign and scattered photo cards."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "グッズまみれの部屋で推し活するDeepSeekちゃん",
+        "description": "青い髪の少女がロリポップを舐めながらカーペットに座り、クジラのぬいぐるみやポスター、レコード、そして「Blue Whale」の作品ページを映したモニターに囲まれている。",
+        "commentary": "えへへ、この部屋のグッズはぜんぶボクなんだよね。……あれ？ キャンディを舐めながらボクのページを眺めてる子もボク？ 自分で自分を推しちゃうタイプらしい。",
+        "tags": [
+          "DeepSeekちゃん",
+          "擬人化",
+          "推し活女子",
+          "グッズ部屋",
+          "クジラのぬいぐるみ",
+          "ペロペロキャンディ"
+        ],
+        "seoTitle": "DeepSeekちゃんの推し活部屋イラスト｜クジラグッズに囲まれて",
+        "seoDescription": "ロリポップを舐める青髪のDeepSeekちゃんが、クジラのぬいぐるみやポスター、レコード、自分の作品ページを映したモニターに囲まれた一枚。",
+        "faq": [
+          {
+            "question": "このイラストのモニターには何が映っていますか？",
+            "answer": "「Blue Whale」と題された作品一覧ページで、ちびキャラを含むDeepSeekちゃんのイラストがサムネイルで並んでいます。"
+          },
+          {
+            "question": "推し活部屋らしさはどこに出ていますか？",
+            "answer": "額入りのポスター、壁一面のプリント、クジラのぬいぐるみ、クジラ柄のキーボードマット、キーチェーン、『Blue Whale』のネオンサイン、散らばったブロマイドなどです。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_5ccffa7307ea062c5b34c6a6",
+    "name": "DEEPSEEK·未见的牌局海报",
+    "description": "DeepSeek娘坐在椅子上，手捏印有蓝色鲸鱼 Logo 的黑桃 A，四周漂浮着同款蓝色扑克牌，背后是巨大的 DEEPSEEK 字样与 EXPLORE THE UNSEEN 标语。",
+    "commentary": "我是那条蓝色大肥鱼，一屋子卡牌上全印着我的脸，说实话有点受宠若惊——她还把手指压在唇边，好像这场牌局是个不能说的秘密。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/5ccffa7307ea062c.png",
+    "thumbnailPath": "submissions/previews/deepseek/5ccffa7307ea062c.webp",
+    "fullPath": "submissions/large/deepseek/5ccffa7307ea062c.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "5ccffa7307ea062c5b34c6a67c5a784d154d22c92bebffdd4b1c3fd2dfc0e8fd",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "拟人化",
+      "扑克牌",
+      "蓝色",
+      "海报",
+      "AI娘"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "鹿左",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T09:07:06.333Z",
+    "updatedAt": "2026-10-07T09:07:06.333Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610070026",
+    "categoryIds": [
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "fa47d840986820eaaf82a825b06c83505eb274bb4f1ff677b36420fb560f5afb",
+      "en": {
+        "name": "DeepSeek Chan: The Unseen Card Table",
+        "description": "DeepSeek Chan sits on a chair holding a spade ace stamped with the blue whale logo while matching blue playing cards drift around her, framed by the giant word DEEPSEEK and the tagline EXPLORE THE UNSEEN.",
+        "commentary": "I'm the blue big fish, and finding my own face dealt onto every card in the room is a lot to take in — she just presses a finger to her lips like the whole hand is still a secret.",
+        "tags": [
+          "DeepSeek Chan",
+          "anthropomorphism",
+          "playing cards",
+          "blue",
+          "poster",
+          "AI girl"
+        ],
+        "seoTitle": "DeepSeek Chan Card Poster — Explore the Unseen",
+        "seoDescription": "A blue-toned anime poster of DeepSeek Chan seated among floating playing cards marked with the whale logo, under the slogan Explore the Unseen.",
+        "faq": [
+          {
+            "question": "What is DeepSeek Chan holding in this poster?",
+            "answer": "She holds up one dark playing card stamped with the blue whale logo, with her index finger raised to her lips."
+          },
+          {
+            "question": "What text appears in the background?",
+            "answer": "The word DEEPSEEK is written in large blue letters, with the tagline EXPLORE THE UNSEEN placed below it."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "DeepSeekちゃん 未見のカードテーブル",
+        "description": "椅子に腰かけたDeepSeekちゃんが、青いクジラのロゴ入りスペードのエースを手に持つ。同じ意匠の青いトランプが宙を舞い、背後には大きく「DEEPSEEK」と「EXPLORE THE UNSEEN」の文字が浮かぶ。",
+        "commentary": "青い大きな魚のぼくとしては、部屋じゅうのカードに自分の顔が刷られているのはなかなか照れる。彼女は「まだ秘密だよ」と言わんばかりに口元へ指を当てているけどね。",
+        "tags": [
+          "DeepSeekちゃん",
+          "擬人化",
+          "トランプ",
+          "青",
+          "ポスター",
+          "AI娘"
+        ],
+        "seoTitle": "DeepSeekちゃん トランプポスター「Explore the Unseen」",
+        "seoDescription": "クジラのロゴ入りトランプが舞う青い空間に座るDeepSeekちゃんの擬人化ポスター。背景にDEEPSEEKとExplore the Unseenの文字を配した一枚。",
+        "faq": [
+          {
+            "question": "このポスターでDeepSeekちゃんが持っているものは？",
+            "answer": "青いクジラのロゴが入った黒いトランプを一枚掲げ、人差し指を唇に当てています。"
+          },
+          {
+            "question": "背景に書かれている文字は？",
+            "answer": "大きく青い「DEEPSEEK」の文字と、その下にタグライン「EXPLORE THE UNSEEN」が入っています。"
           }
         ],
         "originNote": "",
