@@ -33424,5 +33424,830 @@
         "licenseNote": ""
       }
     }
+  },
+  {
+    "id": "sticker_21f926a23384cf5c907d7e3c",
+    "name": "Gemini-4-Argon 立绘",
+    "description": "AI 角色拟人化的彩虹长发猫耳少女，身穿白蓝星辉服饰，在白底上呈全身站立姿态。",
+    "commentary": "咕噜噜～这位彩虹色 Gemini 娘也太闪了吧，星星撒了一地，我都想游过去蹭一身光！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/21f926a23384cf5c.png",
+    "thumbnailPath": "submissions/previews/gemini/21f926a23384cf5c.webp",
+    "fullPath": "submissions/large/gemini/21f926a23384cf5c.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 941,
+    "height": 1672,
+    "fileSize": 1684927,
+    "sha256": "21f926a23384cf5c907d7e3c92f8544ded63d914ae011872e45108a1a2a42683",
+    "characterId": "gemini",
+    "tags": [
+      "Gemini娘",
+      "拟人化",
+      "立绘",
+      "猫耳",
+      "彩虹发",
+      "星辉"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T10:20:06.462Z",
+    "updatedAt": "2026-10-07T10:20:06.462Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610070001",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "05ac86ebccdbc6c6bafa4060def8794911dc9578e39cdff6096fb427b0d35ed0",
+      "en": {
+        "name": "Gemini-4-Argon Standing Art",
+        "description": "An anthropomorphized AI character with rainbow hair and cat ears, wearing a white-and-blue star-themed outfit in a full-body standing pose on a plain white background.",
+        "commentary": "Gurgle gurgle—this rainbow-haired Gemini Chan is way too sparkly! Stars are scattered everywhere, and I just want to swim over and soak up some of that shine!",
+        "tags": [
+          "Gemini Chan",
+          "anthropomorphism",
+          "standing art",
+          "cat ears",
+          "rainbow hair",
+          "starlight"
+        ],
+        "seoTitle": "Gemini-4-Argon Standing Art – Rainbow-Haired Gemini Chan",
+        "seoDescription": "A full-body standing illustration of Gemini Chan, an anthropomorphized AI character with rainbow hair, cat ears, and a white-and-blue star-themed outfit.",
+        "faq": [
+          {
+            "question": "What is Gemini Chan wearing?",
+            "answer": "She wears a white-and-blue crop top with a ruffled skirt, star ornaments, and white boots decorated with star charms."
+          },
+          {
+            "question": "What stands out about her design?",
+            "answer": "Her long rainbow-gradient hair, cat ears, differently colored eyes, and the floating star motifs around her are the main features."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "Gemini-4-Argon 立ち絵",
+        "description": "虹色のロングヘアと猫耳を持つAIキャラクターの擬人化。白と青の星モチーフ衣装をまとった全身立ち絵で、背景は白。",
+        "commentary": "ぷかぷか〜この虹色Geminiちゃん、キラキラすぎて目がチカチカするよ！星があちこちに散ってて、思わず泳いで光を浴びに行きたくなっちゃう！",
+        "tags": [
+          "Geminiちゃん",
+          "擬人化",
+          "立ち絵",
+          "猫耳",
+          "レインボーヘア",
+          "星"
+        ],
+        "seoTitle": "Gemini-4-Argon 立ち絵｜虹色ヘアのGeminiちゃん",
+        "seoDescription": "AIキャラクターGeminiちゃんの全身立ち絵。虹色のロングヘア、猫耳、白と青の星モチーフ衣装が特徴です。",
+        "faq": [
+          {
+            "question": "Geminiちゃんはどんな服を着ていますか？",
+            "answer": "星の飾りがついた白と青のクロップトップとフリルスカート、星のチャーム付きの白いブーツを身に着けています。"
+          },
+          {
+            "question": "デザインの特徴は何ですか？",
+            "answer": "虹色のグラデーションロングヘア、猫耳、左右で色の異なる瞳、周囲に浮かぶ星のモチーフが主な特徴です。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_17caa752a812b515559d844b",
+    "name": "Gemini-4-Argon 三视图设定",
+    "description": "蓝紫渐变长发、猫耳星饰的拟人少女，身着白蓝星纹偶像风服装，以正面、侧面、背面三视角并列展示的设定图。",
+    "commentary": "三种角度、每一颗星形挂坠都交代得清清楚楚，这设定资料做得比我整理鱼鳞还认真。尾巴颜色那么花，是想让我的蓝色输掉吗？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/17caa752a812b515.png",
+    "thumbnailPath": "submissions/previews/gemini/17caa752a812b515.webp",
+    "fullPath": "submissions/large/gemini/17caa752a812b515.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 2032645,
+    "sha256": "17caa752a812b515559d844b6631c7df7bd89a3250827fa211dfc815e43c2874",
+    "characterId": "gemini",
+    "tags": [
+      "三视图",
+      "设定图",
+      "拟人化",
+      "猫耳娘",
+      "星空",
+      "偶像风"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T10:21:41.806Z",
+    "updatedAt": "2026-10-07T10:21:41.806Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610070002",
+    "categoryIds": [
+      "setting"
+    ],
+    "i18n": {
+      "sourceHash": "49ff7e83f8128bd16f694bf4a9cc48e8034097fe975643836cc3601c24b3ece6",
+      "en": {
+        "name": "Gemini-4-Argon Character Sheet — Front, Side & Back",
+        "description": "A cat-eared girl with long blue-to-rainbow gradient hair in a white-and-navy star-motif idol outfit, shown from the front, side and back on a plain white background.",
+        "commentary": "Three angles and every single star charm accounted for — that's how you present a reference sheet. My tail is honestly a little jealous of that rainbow shading.",
+        "tags": [
+          "three-view",
+          "character sheet",
+          "personification",
+          "cat-eared girl",
+          "starry motif",
+          "idol outfit"
+        ],
+        "seoTitle": "Gemini-4-Argon Character Sheet: Front, Side & Back Views",
+        "seoDescription": "Three-view reference art of the Gemini-inspired cat-eared idol girl with rainbow-gradient hair and a white-and-navy star-motif costume, on a clean white background.",
+        "faq": [
+          {
+            "question": "How many views does this character sheet include?",
+            "answer": "Three: a front view, a side view and a back view, each labelled 'Front', 'Side' and 'Back' beneath the figure."
+          },
+          {
+            "question": "What outfit details can I see in the drawing?",
+            "answer": "A white and navy star-motif idol costume with detached flared sleeves, a ruffled layered skirt, a thigh strap, hanging star charms, and platform boots decorated with star ornaments and ribbons."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "Gemini-4-Argon 三面図設定",
+        "description": "青から虹色へグラデーションする長い髪に猫耳の少女が、白と紺の星モチーフのアイドル衣装をまとった姿を、正面・側面・背面の三面で描いた設定資料。",
+        "commentary": "三面ときっちり星のチャームまで描き込んであって、これは本気の設定資料だね。この虹色のしっぽ、うちの青いのと並べたら負けそうだなあ。",
+        "tags": [
+          "三面図",
+          "設定資料",
+          "擬人化",
+          "猫耳娘",
+          "星モチーフ",
+          "アイドル衣装"
+        ],
+        "seoTitle": "Gemini-4-Argon 三面図｜正面・側面・背面の設定資料",
+        "seoDescription": "虹色グラデーションの髪と星モチーフ衣装が特徴のGemini擬人化キャラを、正面・側面・背面の三面で描いた白背景の設定資料。",
+        "faq": [
+          {
+            "question": "この設定資料には何面が描かれていますか？",
+            "answer": "正面・側面・背面の三面で、それぞれの立ち絵の下に『Front』『Side』『Back』のラベルが添えられています。"
+          },
+          {
+            "question": "衣装にはどんなディテールがありますか？",
+            "answer": "白と紺の星モチーフのアイドル衣装で、袖の分かれたフレアスリーブ、フリルの重なったスカート、太もものベルト、揺れる星のチャーム、星の飾りとリボンが付いた厚底ブーツが見えます。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_5e27dce3a5ddbbdf37a7df7f",
+    "name": "大肥鱼的 bash 危机",
+    "description": "四格漫画：DeepSeek娘一不小心把 bash 工具弄坏，含泪拆键盘修理，最后躲在桌下祈祷用户没发现，右侧另附一段群聊截图。",
+    "commentary": "呜啊……人家真的只是顺手动了动 bash，结果一拆就装不回去了嘛！键盘我都拼好了，用户酱肯定没发现……对吧？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/5e27dce3a5ddbbdf.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/5e27dce3a5ddbbdf.webp",
+    "fullPath": "submissions/large/deepseek/5e27dce3a5ddbbdf.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 3114,
+    "height": 2342,
+    "fileSize": 1752480,
+    "sha256": "5e27dce3a5ddbbdf37a7df7f1ca06f7862e64455ac41a4513f6a0a17cc9f98de",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "Q版",
+      "四格漫画",
+      "bash",
+      "修bug",
+      "拟人化"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T10:23:21.557Z",
+    "updatedAt": "2026-10-07T10:23:21.557Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610070027",
+    "categoryIds": [
+      "comic"
+    ],
+    "i18n": {
+      "sourceHash": "8b1208e6790a3fa5d82e66761e4d763289ee93d7d098e4b2f1352c5703a24a8c",
+      "en": {
+        "name": "DeepSeek Chan Breaks bash",
+        "description": "A four-panel comic in which DeepSeek Chan accidentally wrecks her bash tool, tearfully takes the keyboard apart to repair it, and finally hides under the desk hoping her user never notices, with a group-chat screenshot alongside.",
+        "commentary": "Waaah... I only meant to poke at bash for a second, and now it's in pieces! I even put the keyboard back together, so user-chan definitely hasn't noticed... right?",
+        "tags": [
+          "DeepSeek Chan",
+          "chibi",
+          "4-panel comic",
+          "bash",
+          "bug fixing",
+          "anthropomorphism"
+        ],
+        "seoTitle": "DeepSeek Chan Breaks bash — Chibi 4-Panel Comic",
+        "seoDescription": "A chibi four-panel comic of DeepSeek Chan breaking her bash tool, trying to repair it in tears, and hiding the mistake from her user, shown next to a group-chat screenshot.",
+        "faq": [
+          {
+            "question": "What does DeepSeek Chan break in this comic?",
+            "answer": "She accidentally breaks her bash tool, cries over it, then pulls the keyboard apart trying to fix it herself."
+          },
+          {
+            "question": "How is this comic laid out?",
+            "answer": "It is a four-panel comic arranged in two rows of two, with dialogue bubbles in each panel, and a chat screenshot appears next to the panels."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "bashを壊しちゃったDeepSeekちゃん",
+        "description": "bashツールをうっかり壊してしまったDeepSeekちゃんが、涙目でキーボードを分解して修理に奮闘し、最後は机の下に隠れてユーザーに気づかれないよう願う4コマ漫画。横にはグループチャットのスクリーンショットも添えられている。",
+        "commentary": "うぅ……ちょっとbashをいじっただけなのに、バラバラになっちゃったよぉ。キーボードも組み直したし、ユーザーちゃんはきっと気づいてない……よね？",
+        "tags": [
+          "DeepSeekちゃん",
+          "ちびキャラ",
+          "4コマ漫画",
+          "bash",
+          "バグ修正",
+          "擬人化"
+        ],
+        "seoTitle": "bashを壊したDeepSeekちゃん｜ちびキャラ4コマ漫画",
+        "seoDescription": "bashツールを壊して泣きながら修理し、ユーザーに隠れようとするDeepSeekちゃんを描いたちびキャラ4コマ漫画。チャットのスクリーンショット付き。",
+        "faq": [
+          {
+            "question": "この漫画でDeepSeekちゃんは何を壊してしまったのですか？",
+            "answer": "bashツールをうっかり壊してしまい、涙を浮かべながらキーボードを分解して自分で直そうとしています。"
+          },
+          {
+            "question": "この漫画の構成はどうなっていますか？",
+            "answer": "2行2列の4コマ構成で、各コマにセリフが入っており、コマの横にはグループチャットのスクリーンショットが並んでいます。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_dc41396d0fa917027107b198",
+    "name": "小肥鱼",
+    "description": "蓝发DeepSeek娘身着深蓝白边女仆装坐在阳光洒落的床上，佩戴鲸鳍发饰，围裙上印着小鲸鱼图案。",
+    "commentary": "我一睁眼就套上这身女仆装，阳光还挺配合地给我打光，围裙上那只小鲸鱼可是我最得意的地方。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/dc41396d0fa91702.png",
+    "thumbnailPath": "submissions/previews/deepseek/dc41396d0fa91702.webp",
+    "fullPath": "submissions/large/deepseek/dc41396d0fa91702.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 941,
+    "height": 1671,
+    "fileSize": 2177639,
+    "sha256": "dc41396d0fa917027107b198e07103555379c461fa8e10658fd058f615f5ca84",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "女仆装",
+      "蓝发",
+      "拟人化",
+      "二次元",
+      "插画"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "是妲家呀",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T11:07:40.459Z",
+    "updatedAt": "2026-10-07T11:07:40.459Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610070028",
+    "categoryIds": [
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "5e98ce9f95a13ae6535e4454fb71b072580073fd81885927004ce5f95622017b",
+      "en": {
+        "name": "DeepSeek Chan in a Whale-Motif Maid Outfit",
+        "description": "Blue-haired DeepSeek Chan sits on a sunlit bed in a navy-and-white maid dress, wearing whale-fin hair accessories with a small whale print on her apron.",
+        "commentary": "Put on the maid dress the moment I woke up, and the sunlight kindly handled my lighting for free — that little whale on my apron is the part I'm proudest of.",
+        "tags": [
+          "DeepSeek Chan",
+          "maid outfit",
+          "blue hair",
+          "anthropomorphism",
+          "anime",
+          "illustration"
+        ],
+        "seoTitle": "DeepSeek Chan Maid Outfit Illustration | Blue-Haired Whale Motif",
+        "seoDescription": "Fan illustration of the DeepSeek Chan AI mascot: long blue hair, navy maid dress with whale-fin hair clips, a whale logo apron and a big starry tail resting on a sunlit bed.",
+        "faq": [
+          {
+            "question": "What is DeepSeek Chan wearing in this picture?",
+            "answer": "She wears a navy maid dress with white frills and blue bows, a white apron printed with a small blue whale, and white ruffled thigh-high stockings."
+          },
+          {
+            "question": "Which details carry the whale motif?",
+            "answer": "Her whale-fin shaped hair accessories, the large blue tail with star sparkles and a moon mark, and the little whale printed on the apron front."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "DeepSeekちゃんのくじらモチーフメイド姿",
+        "description": "青いロングヘアのDeepSeekちゃんが、紺と白のメイド服に鯨のヒレ型ヘアアクセサリーを合わせ、日の差し込むベッドに座っている一枚。",
+        "commentary": "起きた瞬間にこのメイド服を着て、あとはお日さまが勝手にライティングしてくれたの。エプロンの小さなくじらが、いちばんの自慢なんだ。",
+        "tags": [
+          "DeepSeekちゃん",
+          "メイド服",
+          "青髪",
+          "擬人化",
+          "アニメ",
+          "イラスト"
+        ],
+        "seoTitle": "DeepSeekちゃん メイド服イラスト｜青髪のくじらモチーフ",
+        "seoDescription": "DeepSeekちゃん（AIキャラ）のファンアート。青いロングヘアに紺のメイド服、鯨のヒレ型ヘアアクセサリー、くじらロゴ入りエプロン、星が散った大きな尾びれを添えて、日の当たるベッドの上に座っています。",
+        "faq": [
+          {
+            "question": "このイラストでDeepSeekちゃんは何を着ていますか？",
+            "answer": "白いフリルと青いリボンが付いた紺色のメイド服に、青いくじらのプリントが入った白いエプロン、フリル付きの白いサイハイソックスを身につけています。"
+          },
+          {
+            "question": "くじらのモチーフはどこに入っていますか？",
+            "answer": "ヒレ型のヘアアクセサリー、星がきらめき月のマークが入った大きな青い尾びれ、エプロン前面のくじらのプリントで確認できます。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_1398d544bbd7b4b5a2f085ef",
+    "name": "俯视肥鱼-6",
+    "description": "从正上方俯视的 DeepSeek 娘半身特写，蓝发闭眼、脸颊泛红，头侧别着蓝色蝴蝶发饰，胸前是深蓝蝴蝶结与蓝宝石胸针，背景为木质地板。",
+    "commentary": "唔……从这个高度被直直看下来，感觉整个人都被看得一清二楚，脸都热起来了。不过被这样盯着看，好像……也不是那么讨厌啦。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/1398d544bbd7b4b5.png",
+    "thumbnailPath": "submissions/previews/deepseek/1398d544bbd7b4b5.webp",
+    "fullPath": "submissions/large/deepseek/1398d544bbd7b4b5.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 768,
+    "height": 1344,
+    "fileSize": 1353925,
+    "sha256": "1398d544bbd7b4b5a2f085ef9e80d7f274f7cfe5e237c8cb479ef8157614916d",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "俯视视角",
+      "蓝发",
+      "蝴蝶结",
+      "AI拟人"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "526D4CEA37008EE233CBDC7635EF6E7D",
+      "messageId": "ROBOT1.0_8AYUX4R83Cl234X5PtH0VPVuq9MWTAJ8oztsVZEhyMAOj7Nj4GrAYnCN8cfeMlNdI6y0PZZAt-93r9nrpa3fNqU9E-pEbee3V-6H8iWkBbd.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T13:20:54.962Z",
+    "updatedAt": "2026-10-07T13:20:54.962Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610070029",
+    "categoryIds": [
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "136b9b400b338379b1745c9b23f3753d8d9fafcc143c04647454b8dbccc5514f",
+      "en": {
+        "name": "Looking Down at DeepSeek Chan 6",
+        "description": "A close top-down view of DeepSeek Chan: blue hair, closed eyes and a soft blush, a blue butterfly clip by her ear and a navy bow with a sapphire brooch at her chest, over a wooden floor.",
+        "commentary": "Whoa—viewed from straight above like this, I feel like every bit of me is on display, and my cheeks are burning. Still, being stared at this closely isn't so bad.",
+        "tags": [
+          "DeepSeek Chan",
+          "top-down view",
+          "blue hair",
+          "bow",
+          "AI anthropomorphization"
+        ],
+        "seoTitle": "DeepSeek Chan Top-Down Close-Up Illustration",
+        "seoDescription": "A soft top-down portrait of DeepSeek Chan with blue hair, a butterfly hair clip and a sapphire bow brooch, drawn as AI character fan art.",
+        "faq": [
+          {
+            "question": "What accessories can be seen on DeepSeek Chan in this picture?",
+            "answer": "A blue butterfly hair clip on the left side of her head, and a navy bow with a sapphire brooch at her chest."
+          },
+          {
+            "question": "What camera angle does this artwork use?",
+            "answer": "A close top-down angle from directly above, with the character's eyes closed and her cheeks blushing."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "見下ろしDeepSeekちゃん 6",
+        "description": "DeepSeekちゃんを真上から見下ろしたクローズアップ。青い髪に閉じた目、頬はほんのり赤く、頭の横には青い蝶の髪飾り、胸元には紺色のリボンとサファイアのブローチ。背景は木の床。",
+        "commentary": "うぅ……真上から見られると、全部まる見えな気がして顔が熱くなっちゃう。でも、こんなに近くで見つめられるのも、そんなに嫌じゃないかも。",
+        "tags": [
+          "DeepSeekちゃん",
+          "見下ろし",
+          "青髪",
+          "リボン",
+          "AI擬人化"
+        ],
+        "seoTitle": "DeepSeekちゃん 見下ろしクローズアップイラスト",
+        "seoDescription": "青髪に蝶の髪飾り、サファイアのリボンをつけたDeepSeekちゃんを真上から描いたAI擬人化ファンアート。",
+        "faq": [
+          {
+            "question": "このイラストでDeepSeekちゃんが身につけている装飾は？",
+            "answer": "頭の左横に青い蝶の髪飾り、胸元に紺色のリボンとサファイアのブローチがあります。"
+          },
+          {
+            "question": "どんな構図のイラストですか？",
+            "answer": "真上からの見下ろし近距离アングルで、目を閉じて頬を赤らめた様子が描かれています。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_98c8d2cd1a5f89e0a61944f0",
+    "name": "俯视肥鱼-7",
+    "description": "淡蓝长发、蓝色礼服配金蓝发饰的 DeepSeek娘闭眼微红着脸，被从上方俯视的半身特写。",
+    "commentary": "唔……从上面拍的话，脸颊是不是显得更圆了？不过你都盯着看这么久了，我就当是在夸我啦。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/98c8d2cd1a5f89e0.png",
+    "thumbnailPath": "submissions/previews/deepseek/98c8d2cd1a5f89e0.webp",
+    "fullPath": "submissions/large/deepseek/98c8d2cd1a5f89e0.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 768,
+    "height": 1344,
+    "fileSize": 1313717,
+    "sha256": "98c8d2cd1a5f89e0a61944f0451caf28d468f9b2c626cd8345057b503e28e73d",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "蓝发少女",
+      "拟人化",
+      "俯视视角",
+      "脸红",
+      "睡颜"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "526D4CEA37008EE233CBDC7635EF6E7D",
+      "messageId": "ROBOT1.0_8AYUX4R83Cl234X5PtH0VHJZVOzTo82-JX4Z.z208Hsq9qMD9xjbEvZUglutWRTcx-wzSSg0ZxEJkSbaCwgr122Bb-FrWOJ1.btBgiEs8bZ.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T13:21:23.681Z",
+    "updatedAt": "2026-10-07T13:21:23.681Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610070030",
+    "categoryIds": [
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "9bc9edee0489a9e8f52538fb7d835292a5f003be3a1f73d5a4b1b8de9701a287",
+      "en": {
+        "name": "DeepSeek Chan From Above #7",
+        "description": "A close-up of DeepSeek Chan, blue-haired in a blue dress with gold-and-blue hair ornaments, eyes shut and cheeks flushed, viewed from a high angle.",
+        "commentary": "Mm... from up there my cheeks look even rounder, don't they? But you've been staring this long, so I'll just take it as a compliment.",
+        "tags": [
+          "DeepSeek Chan",
+          "blue-haired girl",
+          "anthropomorphism",
+          "high angle",
+          "blushing",
+          "sleepy face"
+        ],
+        "seoTitle": "DeepSeek Chan From Above #7 – Blushing Blue-Haired Anime Illustration",
+        "seoDescription": "High-angle close-up illustration of DeepSeek Chan: blue hair, blue dress with a ribbon, gold-and-blue hair ornaments, eyes closed and cheeks flushed.",
+        "faq": [
+          {
+            "question": "What is DeepSeek Chan wearing in this illustration?",
+            "answer": "She wears a blue dress with a white-and-blue ribbon at the chest, plus gold and blue hair ornaments and blue ribbon ties in her hair."
+          },
+          {
+            "question": "What expression does she have?",
+            "answer": "Her eyes are closed and her cheeks are clearly flushed, with her mouth slightly open, giving a shy, sleepy look."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "見下ろしDeepSeekちゃん #7",
+        "description": "薄青いロングヘアに青いドレス、金と青の髪飾りをつけたDeepSeekちゃんが、目を閉じて頬を赤らめた姿を上から見下ろした構図のクローズアップ。",
+        "commentary": "ん……上から見られると、余計に頬がまるく見える気がする。でもそんなにじっと見てくれてるなら、褒められてるってことにしとくね。",
+        "tags": [
+          "DeepSeekちゃん",
+          "青髪の女の子",
+          "擬人化",
+          "俯瞰視点",
+          "照れ顔",
+          "寝顔"
+        ],
+        "seoTitle": "見下ろしDeepSeekちゃん #7｜照れ顔の青髪イラスト",
+        "seoDescription": "青いドレスと金青の髪飾りをつけたDeepSeekちゃんを俯瞰でとらえたクローズアップ。目を閉じて頬を赤らめた表情がポイントの一枚。",
+        "faq": [
+          {
+            "question": "このイラストのDeepSeekちゃんは何を着ていますか？",
+            "answer": "胸元に白と青のリボンがついた青いドレスを着ており、髪には金と青の飾りと青いリボンをつけています。"
+          },
+          {
+            "question": "表情はどのような感じですか？",
+            "answer": "目を閉じて頬をはっきり赤らめており、口も少し開いていて、照れたり眠たそうな雰囲気の表情です。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_fd294665a41d3366b8d55b8d",
+    "name": "俯视肥鱼-8",
+    "description": "蓝色长发的DeepSeek娘俯身靠近镜头，闭眼脸红，胸前双手交叠，头上戴着白色花朵发饰。",
+    "commentary": "凑这么近……才不是想让你盯着看啦，只是有点热而已。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/fd294665a41d3366.png",
+    "thumbnailPath": "submissions/previews/deepseek/fd294665a41d3366.webp",
+    "fullPath": "submissions/large/deepseek/fd294665a41d3366.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 768,
+    "height": 1344,
+    "fileSize": 1299488,
+    "sha256": "fd294665a41d3366b8d55b8d98d68214b891cd2652a6ecc997e1e314124861ed",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "拟人化",
+      "蓝发",
+      "脸红",
+      "俯视",
+      "二次元"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "526D4CEA37008EE233CBDC7635EF6E7D",
+      "messageId": "ROBOT1.0_8AYUX4R83Cl234X5PtH0VGsnRhRNDNZ26qaRfoyURtPHpOMqx99Loir9IenezRFcI3kwm8Fd6YsjDdoSQ7B84yau5D9-pTDzSd-KBQWesOp5v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T13:22:44.246Z",
+    "updatedAt": "2026-10-07T13:22:44.246Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610070031",
+    "categoryIds": [
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "b1ac86acfbe2cc7e7855c8eb69d12ea9c48533074016199830ff496b46dbe45c",
+      "en": {
+        "name": "DeepSeek Chan Looking Down 8",
+        "description": "A blue-haired DeepSeek Chan leans toward the viewer with her eyes closed and cheeks flushed, holding her hands near her chest and wearing a white flower hair ornament.",
+        "commentary": "I'm leaning in close... it's not like I want you to stare, okay? I'm just a little warm.",
+        "tags": [
+          "DeepSeek Chan",
+          "gijinka",
+          "blue hair",
+          "blushing",
+          "looking down",
+          "anime"
+        ],
+        "seoTitle": "DeepSeek Chan Looking Down – Blue-Haired Blushing Illustration",
+        "seoDescription": "Close-up fan art of DeepSeek Chan leaning toward the camera with closed eyes, blushing cheeks, blue hair, and a white flower hair accessory.",
+        "faq": [
+          {
+            "question": "What is shown in this DeepSeek Chan image?",
+            "answer": "It shows a close-up of the blue-haired DeepSeek Chan leaning forward with her eyes closed and cheeks blushing, wearing a light blue top with a white flower accessory in her hair."
+          },
+          {
+            "question": "Is this an official DeepSeek artwork?",
+            "answer": "No. It is a fan-made anthropomorphic illustration of the DeepSeek character; no official affiliation or licensing details are indicated in the image."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "見下ろすDeepSeekちゃん-8",
+        "description": "青い長髪のDeepSeekちゃんがこちらへ身を寄せ、目を閉じて頬を赤らめている。胸元で両手を重ね、髪には白い花飾りをつけている。",
+        "commentary": "こんなに近くに寄っちゃって……じっと見ないでよ、ちょっと暑いだけなんだから。",
+        "tags": [
+          "DeepSeekちゃん",
+          "擬人化",
+          "青髪",
+          "照れ",
+          "見下ろし",
+          "アニメ"
+        ],
+        "seoTitle": "見下ろすDeepSeekちゃん 青髪で照れるイラスト",
+        "seoDescription": "青い髪のDeepSeekちゃんがカメラへ身を寄せ、目を閉じて頬を赤らめるクローズアップ。白い花の髪飾りと淡いブルーのトップスが特徴のファンアート。",
+        "faq": [
+          {
+            "question": "このイラストには何が描かれていますか？",
+            "answer": "青髪のDeepSeekちゃんが前かがみで近づき、目を閉じて頬を赤らめています。髪には白い花飾りがあり、胸元で両手を重ねています。"
+          },
+          {
+            "question": "これは公式のDeepSeekイラストですか？",
+            "answer": "いいえ、DeepSeekちゃんの擬人化ファンアートです。公式の提携やライセンスを示す情報は画像内にありません。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_5f1d80c5855c394249fc8734",
+    "name": "不哭不哭",
+    "description": "蓝发蓝瞳、戴着白色鳍状耳饰的 DeepSeek 娘身穿蓝白女仆装，含泪带笑仰头望向前方，一只手正轻轻拭过她的脸颊。",
+    "commentary": "哎呀别哭别哭，我这条蓝色大肥鱼最见不得这个了——不就是任务又跑崩了嘛，擦擦脸，我给你重新跑一遍！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/5f1d80c5855c3942.png",
+    "thumbnailPath": "submissions/previews/deepseek/5f1d80c5855c3942.webp",
+    "fullPath": "submissions/large/deepseek/5f1d80c5855c3942.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 2401203,
+    "sha256": "5f1d80c5855c394249fc87348176a84cc6658485e3ab09b527ec17531131a830",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "女仆装",
+      "蓝发",
+      "泪眼",
+      "拟人化",
+      "插画"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.Q9W-q9PAyzjM.Okth40T1P3OywJA5.eK.wg8OKygb1nSaUq4RRkWdwdEX9l7Pp0OkviOa1KbSQJocl5.J1nELV.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-07T14:55:34.919Z",
+    "updatedAt": "2026-10-07T14:55:34.919Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610070032",
+    "categoryIds": [
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "dbe0d912812fb3b10fbf1e44ab098b3927eeece163cfd9733babd2921ace4481",
+      "en": {
+        "name": "Don't Cry, Don't Cry",
+        "description": "DeepSeek Chan, blue-haired and blue-eyed with white fin-like ear ornaments, wears a blue-and-white maid dress and looks up with teary eyes and a small smile as a hand gently wipes her cheek.",
+        "commentary": "Hey now, don't cry, don't cry — this big blue fish can't stand it. So the job crashed again? Wipe those tears and I'll just run it one more time!",
+        "tags": [
+          "DeepSeek Chan",
+          "maid outfit",
+          "blue hair",
+          "teary eyes",
+          "anthropomorphism",
+          "illustration"
+        ],
+        "seoTitle": "DeepSeek Chan Maid Illustration — \"Don't Cry, Don't Cry\"",
+        "seoDescription": "A fan-made DeepSeek Chan illustration: the blue-haired AI girl in a blue-and-white maid dress, teary-eyed and smiling, while a hand gently wipes her cheek in an ornate golden doorway setting.",
+        "faq": [
+          {
+            "question": "What is DeepSeek Chan wearing in this illustration?",
+            "answer": "She wears a blue-and-white maid dress with a white lace collar, a blue ribbon bow with a blue gem pendant at the neck, and frilled white apron layers, plus white fin-shaped ear ornaments and a white lace headdress."
+          },
+          {
+            "question": "Why does she look like she is crying?",
+            "answer": "Her eyes are wet and her cheeks are flushed with a small smile, and a hand is touching her cheek — the scene reads as someone comforting her under the title \"Don't Cry, Don't Cry.\""
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "泣かないで、泣かないで",
+        "description": "青い髪と青い瞳、白いヒレ状の耳飾りをつけた DeepSeekちゃんが、青と白のメイド服姿で涙をためた笑顔で見上げている。頬にはそっと手が添えられている。",
+        "commentary": "こらこら、泣かないで泣かないで。この青い大きな魚はそういう顔に弱いんだから——またタスクが落ちただけだろ？涙を拭いて、もう一回回してやるよ！",
+        "tags": [
+          "DeepSeekちゃん",
+          "メイド服",
+          "青髪",
+          "涙目",
+          "擬人化",
+          "イラスト"
+        ],
+        "seoTitle": "DeepSeekちゃん メイド服イラスト「泣かないで、泣かないで」",
+        "seoDescription": "二次創作の DeepSeekちゃん イラスト。青と白のメイド服を着た青髪の AI 娘が、金色の扉を背に涙をためた笑顔で見上げ、頬に手を添えられている様子を描いています。",
+        "faq": [
+          {
+            "question": "このイラストの DeepSeekちゃん はどんな服装ですか？",
+            "answer": "白いレースの襟とフリルがついた青と白のメイド服で、首元には青いリボンと青い宝石のペンダント、頭には白いレースのヘッドドレスとヒレ状の耳飾りをつけています。"
+          },
+          {
+            "question": "なぜ泣いているように見えるのですか？",
+            "answer": "瞳が潤み、頬が赤らんだまま小さく笑っていて、頬に手が添えられています。タイトルの「泣かないで、泣かないで」と合わせて、誰かに慰められている場面だと分かります。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
   }
 ]
