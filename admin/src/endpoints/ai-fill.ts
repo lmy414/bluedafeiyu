@@ -100,7 +100,7 @@ export const aiFillHandler = async (req: PayloadRequest): Promise<Response> => {
   if (body.apply && !work) return json({ ok: false, error: '只有已入库的作品才能直接写入' }, 400)
 
   const requested = normalizeFields(body.fields)
-  let base = work || { name: submission?.fields?.name, description: submission?.fields?.description }
+  let base = work || { name: submission?.fields?.name, description: submission?.fields?.description, origin: submission?.origin || {}, license: {} }
   if(body.draft) {
     const draft=body.draft
     if(['name','description','commentary','characterId'].some(k=>typeof (draft as any)[k]!=='string')||!Array.isArray(draft.tags)||draft.tags.some(t=>typeof t!=='string')||!Array.isArray(draft.categoryIds)||draft.categoryIds.some(t=>typeof t!=='string'))return json({ok:false,error:'draft 文案字段不合法'},400)

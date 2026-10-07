@@ -5,6 +5,7 @@ import { json, readJsonBody, requireOwnerOrBot } from '../lib/endpoint-auth'
 import { writeAudit } from '../lib/audit'
 import { validateContent } from '../lib/sync-submissions'
 import { submissionAttribution } from '../lib/attribution.mjs'
+import { sourceHash } from '../lib/localization.mjs'
 
 const ALLOWED_ACTIONS = ['hide', 'restore', 'remove', 'delete', 'set-categories', 'add-to-topic', 'include', 'manual-include'] as const
 type BulkAction = (typeof ALLOWED_ACTIONS)[number]
@@ -175,6 +176,11 @@ async function manualInclude(req: PayloadRequest, body: BulkBody): Promise<Respo
   const duplicate = await payload.find({ collection: 'works', where: { sha256: { equals: doc.sha256 } }, limit: 1, depth: 0, overrideAccess: true })
   if (duplicate.docs[0]) return json({ ok: false, error: `投稿 ${submissionId} 已存在同图作品`, workId: duplicate.docs[0].workId }, 409)
 
+  const i18n = (body.content as any)?.i18n
+  if (!i18n) return json({ ok: false, error: '请先生成完整的英文和日文版本，再人工收录' }, 400)
+  const currentHash = sourceHash({ ...check.value, origin: doc.origin || {}, license: {} })
+  if (i18n.sourceHash !== currentHash) return json({ ok: false, error: '内容已修改，请重新生成英文和日文版本，再人工收录' }, 409)
+
   const character = vocab.characterDocs.find((item: any) => item.characterId === check.value.characterId)
   const categories = vocab.categoryDocs.filter((item: any) => check.value.categoryIds.includes(item.categoryId))
   const workId = `sticker_${String(doc.sha256).slice(0, 24)}`
@@ -200,6 +206,7 @@ async function manualInclude(req: PayloadRequest, body: BulkBody): Promise<Respo
       origin: doc.origin || {},
       submitter: submissionAttribution(doc.fields || {}) || undefined,
       legacySource: 'submission-sync',
+      legacyData: { i18n: { sourceHash: currentHash, ...check.value.i18n } },
     },
     context: { audit: false, skipNeedsPublish: true, skipFieldAccess: true },
     overrideAccess: true,

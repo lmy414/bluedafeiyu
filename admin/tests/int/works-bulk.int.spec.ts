@@ -18,6 +18,9 @@ import { Topics } from '@/collections/Topics'
 import { Users } from '@/collections/Users'
 import { Works } from '@/collections/Works'
 import { bulkHandler } from '@/endpoints/works-bulk'
+import { sourceHash } from '@/lib/localization.mjs'
+import { buildSiteDataTexts } from '@/lib/export-site-data'
+import { fixtureI18n } from '../../../tools/localization/test-fixture.mjs'
 
 type AnyRecord = Record<string, any>
 
@@ -96,7 +99,7 @@ function request(user: AnyRecord, body: AnyRecord, payload: AnyRecord, context: 
   return { context, json: async () => body, payload, user } as any
 }
 
-const completeContent = {
+const sourceContent = {
   categoryIds: ['cat-1'],
   characterId: 'char-1',
   commentary: '人工确认后的详情正文',
@@ -104,6 +107,7 @@ const completeContent = {
   name: '人工确认名称',
   tags: ['测试', '人工复审'],
 }
+const completeContent = { ...sourceContent, i18n: { sourceHash: sourceHash(sourceContent), ...fixtureI18n(sourceContent.tags) } }
 
 describe('works-bulk original media model', () => {
   it('keeps the HEAD batch include path on the original sha256 and media id', async () => {
@@ -155,6 +159,31 @@ describe('works-bulk original media model', () => {
     expect(response.status).toBe(400)
     expect(result.error).toContain('不是拒绝或转人工状态')
     expect(fixture.calls.workCreates).toHaveLength(0)
+  })
+
+  it('persists manual translations with source notes and exports both locales without replacing the AI verdict', async () => {
+    const fixture = await makeFixture()
+    fixture.submission.origin = { via: 'web', note: '已核对的原始来源说明' }
+    const content = { ...sourceContent, i18n: { sourceHash: sourceHash({ ...sourceContent, origin: fixture.submission.origin }), ...fixtureI18n(sourceContent.tags) } }
+    const response = await bulkHandler(request(owner, { action: 'manual-include', confirm: 'MANUAL_INCLUDE', content, submissionId: fixture.submission.submissionId }, fixture.payload))
+    expect(response.status).toBe(200)
+    const created = fixture.calls.workCreates[0].data
+    expect(created.review).toEqual(fixture.submission.review)
+    expect(created.legacyData.i18n).toEqual(content.i18n)
+    const text = buildSiteDataTexts({ works: [{ ...created, character: { characterId: 'char-1' }, categories: [{ categoryId: 'cat-1' }], slug: 'manual-test' }], characters: [], categories: [], topics: [], treatPendingAsPublished: true })['data/works.json']
+    const exported = JSON.parse(text)[0]
+    expect(exported.i18n).toEqual(content.i18n)
+  })
+
+  it('rejects missing or stale manual translations before creating pending work', async () => {
+    for (const content of [sourceContent, { ...completeContent, description: '修改过的中文说明' }]) {
+      const fixture = await makeFixture()
+      const response = await bulkHandler(request(owner, { action: 'manual-include', confirm: 'MANUAL_INCLUDE', content, submissionId: fixture.submission.submissionId }, fixture.payload))
+      expect([400, 409]).toContain(response.status)
+      expect((await response.json()).error).toContain('英文和日文')
+      expect(fixture.calls.workCreates).toHaveLength(0)
+      expect(fixture.calls.submissionUpdates).toHaveLength(0)
+    }
   })
 
   it('requires explicit confirmation and owner role', async () => {

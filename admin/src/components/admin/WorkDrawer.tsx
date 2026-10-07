@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 
 import { useAdminApi } from './api'
 import { CHANNELS, SUBMISSION_STATES, formatDate, labelOf } from './constants'
@@ -29,6 +29,17 @@ type FormState = {
 }
 
 type IssueReplyStateReason = 'completed' | 'not_planned'
+
+function draftContent(form: FormState, categories: CategoryDoc[], characters: CharacterDoc[]) {
+  return {
+    name: form.name.trim(),
+    description: form.description.trim(),
+    commentary: form.commentary.trim(),
+    characterId: characters.find((item) => String(item.id) === form.character)?.characterId || '',
+    categoryIds: categories.filter((item) => form.categories.includes(String(item.id))).map((item) => String(item.categoryId || '')).filter(Boolean),
+    tags: form.tags.split(/[,，\n]/).map((value) => value.trim()).filter(Boolean),
+  }
+}
 
 const ISSUE_REPLY_REJECTED_TEMPLATE = '感谢投稿！这张图暂时不收录，原因：'
 const ISSUE_REPLY_ACCEPTED_TEMPLATE = '已收录到「蓝色大肥鱼」，谢谢投稿！'
@@ -117,7 +128,10 @@ export function WorkDrawer({
   const submission = item.kind === 'submission' ? item.submission : undefined
   const work = item.kind === 'work' ? item.work : asObject<WorkDoc>(submission?.work)
   const [form, setForm] = useState<FormState>(() => initialForm(item, categories, characters))
+  const currentForm = useRef(form)
+  currentForm.current = form
   const [localizedSuggestion,setLocalizedSuggestion]=useState<Record<string,unknown>|null>(null)
+  const [localizedDraft, setLocalizedDraft] = useState<string | null>(null)
   const [events, setEvents] = useState<AuditEvent[]>([])
   const [saving, setSaving] = useState(false)
   const [message, setMessage] = useState('')
@@ -214,7 +228,7 @@ export function WorkDrawer({
     try {
       const result = await mutate<{ errors?: string[]; suggestion: Record<string, any> }>('/ai-fill', 'POST', {
         fields: blankFields,
-        draft:{name:form.name,description:form.description,commentary:form.commentary,tags:parsedTags(),characterId:characters.find(c=>String(c.id)===form.character)?.characterId||'other',categoryIds:categories.filter(c=>form.categories.includes(String(c.id))).map(c=>c.categoryId)},
+        draft: draftContent(form, categories, characters),
         ...(work ? { workId: work.workId } : { submissionId: submission?.submissionId }),
       })
       const s = result.suggestion || {}
@@ -222,6 +236,14 @@ export function WorkDrawer({
       const categoryIds = Array.isArray(s.categoryIds)
         ? categories.filter((item) => s.categoryIds.includes(String(item.categoryId))).map((item) => String(item.id))
         : []
+      if (s.i18n) setLocalizedDraft(JSON.stringify(draftContent({
+        ...form,
+        name: form.name.trim() ? form.name : s.name || form.name,
+        description: blankFields.includes('description') && s.description ? s.description : form.description,
+        commentary: form.commentary.trim() ? form.commentary : s.commentary || form.commentary,
+        tags: form.tags.trim() ? form.tags : Array.isArray(s.tags) ? s.tags.join(', ') : form.tags,
+        categories: form.categories.length ? form.categories : categoryIds,
+      }, categories, characters)))
       setForm((current) => ({
         ...current,
         name: current.name.trim() ? current.name : s.name || current.name,
@@ -242,28 +264,29 @@ export function WorkDrawer({
   async function manualInclude() {
     if (form.categories.length !== 1) { setMessage('请选择一个作品类型。'); return }
     if (!submission) return
-    const character = characters.find((item) => String(item.id) === form.character)
-    const selectedCategories = form.categories
-      .map((id) => categories.find((item) => String(item.id) === id))
-      .filter((item): item is CategoryDoc => Boolean(item))
-    const content = {
-      name: form.name.trim(),
-      description: form.description.trim(),
-      commentary: form.commentary.trim(),
-      characterId: character?.characterId ? String(character.characterId) : '',
-      categoryIds: selectedCategories
-        .map((item) => String(item.categoryId || ''))
-        .filter(Boolean),
-      tags: parsedTags(),
-    }
+    const content = draftContent(form, categories, characters)
 
     setSaving(true)
     setMessage('')
     try {
+      let i18n = localizedSuggestion
+      if (!i18n || localizedDraft !== JSON.stringify(content)) {
+        setMessage('正在为当前内容生成英文和日文版本…')
+        const result = await mutate<{ suggestion: Record<string, any> }>('/ai-fill', 'POST', {
+          fields: ['i18n'], draft: content, submissionId: submission.submissionId,
+        })
+        i18n = result.suggestion?.i18n
+        if (!i18n) throw new Error('英文和日文版本未生成，请重试人工收录。')
+        setLocalizedSuggestion(i18n)
+        setLocalizedDraft(JSON.stringify(content))
+      }
+      if (JSON.stringify(draftContent(currentForm.current, categories, characters)) !== JSON.stringify(content)) {
+        throw new Error('生成期间内容已修改，请核对后重新人工收录。')
+      }
       await mutate('/works/bulk', 'POST', {
         action: 'manual-include',
         confirm: 'MANUAL_INCLUDE',
-        content,
+        content: { ...content, i18n },
         submissionId: submission.submissionId,
       })
       setMessage('人工收录成功，已进入待发布；原始 AI 结论、状态未改写，操作已写入审计。')
