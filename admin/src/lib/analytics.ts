@@ -64,7 +64,7 @@ async function requestJSON(url: string, init: RequestInit, fetchImpl: typeof fet
   return response.json()
 }
 
-async function accessToken(credentialsFile: string, fetchImpl: typeof fetch): Promise<string> {
+export async function accessToken(credentialsFile: string, fetchImpl: typeof fetch): Promise<string> {
   let credentials: { type?: string; client_email?: string; private_key?: string }
   try { credentials = JSON.parse(await fs.readFile(credentialsFile, 'utf8')) }
   catch { throw new Error('GA4 服务账号文件无法读取') }

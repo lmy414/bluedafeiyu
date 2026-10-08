@@ -6,6 +6,7 @@ import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { buildLanguagePages, languageSitemap, localizedPath, LOCALES, ORIGIN } from './localize-pages.mjs';
 import { readSitemapHistory, updateSitemapHistory } from './sitemap-history.mjs';
+import { writeAiContent } from './ai-content.mjs';
 
 const frontend = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const root = path.resolve(frontend, '..');
@@ -89,6 +90,7 @@ function collectIndexable(dir) {
 }
 collectIndexable(out);
 await buildLanguagePages(out, snapshot);
+console.log('[ai-content] ' + JSON.stringify(writeAiContent(out, snapshot)));
 const nativeAudit = spawnSync(process.execPath, [path.join(root, 'tools/localization/audit-pages.mjs'), out, path.join(root, '.build/native-localization-audit.json')], { cwd: root, stdio: 'inherit' });
 if (nativeAudit.error || nativeAudit.status !== 0) throw new Error('英日页面校验失败，构建中止；详情见 .build/native-localization-audit.json');
 const sitemapHistory = updateSitemapHistory(urls.flatMap(base => LOCALES.map(locale => localizedPath(base, locale))), out, previousSitemap);

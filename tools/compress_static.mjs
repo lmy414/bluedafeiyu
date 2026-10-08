@@ -42,6 +42,7 @@ const TEXT_EXTENSIONS = new Set([
   ".xml",
   ".svg",
   ".txt",
+  ".md",
   ".map",
 ]);
 

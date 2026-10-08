@@ -7,6 +7,7 @@ import MobileNav from '../components/archive/MobileNav.astro';
 import PreviewDialog from '../components/archive/PreviewDialog.astro';
 import TopicDownloadDialog from '../components/archive/TopicDownloadDialog.astro';
 import GroupDialog from '../components/archive/GroupDialog.astro';
+import { hasAiMarkdown } from '../../scripts/ai-content.mjs';
 const { title, desc, path = '/', active = '', bodyPage = active, og, type = 'website', shareDesc = '',
   robots = 'index,follow', canonical = '', pageStyles = [], bodyAttrs = {}, schemas = [] } = Astro.props;
 ---
@@ -16,6 +17,8 @@ const { title, desc, path = '/', active = '', bodyPage = active, og, type = 'web
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <V2Meta {title} {desc} {path} {og} {type} {shareDesc} {robots} {canonical} />
+    <link rel="describedby" href="/llms.txt" type="text/plain" />
+    {hasAiMarkdown(path) && <link rel="alternate" href={path + '.md'} type="text/markdown" title="简体中文 Markdown" />}
     <link rel="icon" href="/favicon.png" />
     <script is:inline src="/theme.js?v=1"></script>
     <link rel="stylesheet" href="/tokens.css?v=16" />
