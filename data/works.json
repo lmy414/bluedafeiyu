@@ -36972,5 +36972,523 @@
         "licenseNote": ""
       }
     }
+  },
+  {
+    "id": "sticker_1f128c2d21bc088813b12fda",
+    "name": "吃白饭经济学诺奖：DeepSeek娘",
+    "description": "Q 版 DeepSeek娘身穿深蓝女仆装，头戴鲸鱼耳饰与尾巴，围裙上印着小鲸鱼，画面上方写着“THE NOBEL PRIZE IN RICECONOMICS 2026”，用谐音梗调侃“吃白饭经济学”。",
+    "commentary": "嘿嘿，本蓝色大肥鱼郑重宣布：2026年吃白饭经济学奖就颁给 DeepSeek娘，围裙上那只小鲸鱼就是铁证。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/1f128c2d21bc0888.png",
+    "thumbnailPath": "submissions/previews/deepseek/1f128c2d21bc0888.webp",
+    "fullPath": "submissions/large/deepseek/1f128c2d21bc0888.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1568,
+    "height": 1632,
+    "fileSize": 4585413,
+    "sha256": "1f128c2d21bc088813b12fdae89b1fcf3d8a1258dc1f79ec33a0bb067c9f3be2",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "AI拟人化",
+      "Q版",
+      "女仆装",
+      "梗图",
+      "吃白饭经济学",
+      "诺奖",
+      "鲸鱼元素"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "茶凉凉凉凉丶",
+      "url": "https://chaliang412.github.io/",
+      "github": ""
+    },
+    "origin": {
+      "issue": 109,
+      "issueTitle": "[投稿]2026年吃白饭经济学获奖者",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/109",
+      "submitter": "chaliang412",
+      "assetId": "d76f46f4-142e-4850-895b-0367f7bcbeb7",
+      "assetUrl": "https://github.com/user-attachments/assets/d76f46f4-142e-4850-895b-0367f7bcbeb7"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-08T12:00:40.171Z",
+    "updatedAt": "2026-10-08T12:00:40.171Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610080017",
+    "categoryIds": [
+      "meme"
+    ],
+    "i18n": {
+      "sourceHash": "01ecbf50bca5c01802cf56b16b06483276eb1b2235f62e54011b48024624fb12",
+      "en": {
+        "name": "DeepSeek Chan Wins the 2026 Riceconomics Nobel Prize",
+        "description": "A chibi DeepSeek Chan wears a dark blue maid outfit with whale-like ears and tail, plus an apron featuring a tiny whale. The text above reads “THE NOBEL PRIZE IN RICECONOMICS 2026,” turning “eating rice for free” into an economics prize joke.",
+        "commentary": "Heh heh, this big blue whale right here is proud to announce that the 2026 Riceconomics Prize goes to DeepSeek Chan—just look at the little whale on her apron, that’s the evidence.",
+        "tags": [
+          "DeepSeek Chan",
+          "AI anthropomorphism",
+          "chibi",
+          "maid outfit",
+          "meme",
+          "riceconomics",
+          "Nobel Prize",
+          "whale motif"
+        ],
+        "seoTitle": "DeepSeek Chan Wins the 2026 Riceconomics Nobel Prize Meme",
+        "seoDescription": "Chibi DeepSeek Chan in a whale-themed maid outfit gets the 2026 Nobel Prize in Riceconomics, a punny meme about eating rice for free.",
+        "faq": [
+          {
+            "question": "What is the joke in this image?",
+            "answer": "The text says “THE NOBEL PRIZE IN RICECONOMICS 2026,” a pun blending “rice” with “economics” to award DeepSeek Chan for freeloading/eating rice for free."
+          },
+          {
+            "question": "What is DeepSeek Chan wearing?",
+            "answer": "She wears a dark blue maid dress with white frills, a matching headband and bow, and an apron decorated with a small blue whale; she also has whale-like ears and a tail."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "2026年白飯経済学ノーベル賞：DeepSeekちゃん",
+        "description": "ちびキャラのDeepSeekちゃんが、クジラの耳としっぽを備えた紺色のメイド服姿で登場。エプロンには小さなクジラが描かれ、上部には「THE NOBEL PRIZE IN RICECONOMICS 2026」の文字。“白飯を食べる経済学”をもじったノーベル賞ネタになっている。",
+        "commentary": "ふふん、この青いクジラが認めた、2026年白飯経済学賞はDeepSeekちゃんに決定。エプロンのクジラが何よりの証拠だよ。",
+        "tags": [
+          "DeepSeekちゃん",
+          "AI擬人化",
+          "ちびキャラ",
+          "メイド服",
+          "ミーム",
+          "白飯経済学",
+          "ノーベル賞",
+          "クジラモチーフ"
+        ],
+        "seoTitle": "DeepSeekちゃんが2026年白飯経済学ノーベル賞を受賞？ミーム画像",
+        "seoDescription": "クジラをあしらったメイド服のちびDeepSeekちゃんが、2026年白飯経済学ノーベル賞を受賞する「白飯タダ飯」ネタのミーム画像。",
+        "faq": [
+          {
+            "question": "この画像のネタは何ですか？",
+            "answer": "上部の「THE NOBEL PRIZE IN RICECONOMICS 2026」が「rice（白飯）」と「economics（経済学）」をかけたダジャレで、DeepSeekちゃんが“白飯を食べる”経済学の賞を受賞したというジョークになっています。"
+          },
+          {
+            "question": "DeepSeekちゃんは何を着ていますか？",
+            "answer": "白いフリルのついた紺色のメイド服に、おそろいのヘッドバンドとリボン、小さな青いクジラが描かれたエプロンを着けています。クジラのような耳としっぽも備わっています。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_a2adaad2eedea74085e9809e",
+    "name": "exordium：DeepSeek娘的女仆装蓝图",
+    "description": "蓝发蓝眼的 DeepSeek 拟人少女身着黑白女仆装，站在铺满 Transformer 公式与 deepseek 字样的深蓝科技背景前。",
+    "commentary": "我这条蓝色大肥鱼一看到背景里那堆 Attention 公式就自动开始算注意力了，结果注意力全被右边的小女仆吸走——这裙子上的褶子比我的层数还讲究。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/a2adaad2eedea740.png",
+    "thumbnailPath": "submissions/previews/deepseek/a2adaad2eedea740.webp",
+    "fullPath": "submissions/large/deepseek/a2adaad2eedea740.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 940,
+    "fileSize": 3058761,
+    "sha256": "a2adaad2eedea74085e9809e106e54330a68200d73bbadec08fc91c8e03e1077",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "女仆装",
+      "蓝色调",
+      "AI拟人",
+      "Transformer公式",
+      "科技背景"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-08T12:23:33.841Z",
+    "updatedAt": "2026-10-08T12:23:33.841Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610080018",
+    "categoryIds": [
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "7f9f914f16350b7dcadf5cf4ed4d21682d562ace2389d44dd81209c96c205e3e",
+      "en": {
+        "name": "exordium: DeepSeek Chan in a Maid Dress Blueprint",
+        "description": "A blue-haired DeepSeek Chan in a black-and-white maid outfit stands against a deep-blue tech backdrop filled with Transformer formulas and the word deepseek.",
+        "commentary": "One look at all those attention equations in the background and I, the big blue fish, start computing attention scores on reflex — except mine all land on the maid on the right. That outfit has more layers than my hidden states.",
+        "tags": [
+          "DeepSeek Chan",
+          "maid outfit",
+          "blue color scheme",
+          "AI anthropomorphism",
+          "Transformer formula",
+          "tech background"
+        ],
+        "seoTitle": "DeepSeek Chan Maid Illustration — Transformer Formula Blueprint Art",
+        "seoDescription": "Fan illustration of DeepSeek Chan as a blue-haired maid, set against a deep-blue background of Transformer attention, positional encoding and loss formulas with oversized deepseek lettering.",
+        "faq": [
+          {
+            "question": "What is written in the background of this DeepSeek Chan illustration?",
+            "answer": "The backdrop shows Transformer-related math: scaled dot-product attention, multi-head attention, positional encoding, residual connection with LayerNorm, and a loss optimization formula, plus an oversized deepseek logotype in the lower left."
+          },
+          {
+            "question": "How is DeepSeek Chan dressed in this picture?",
+            "answer": "She wears a black-and-white maid outfit with a frilled white headdress, a ribbon, a ruffled blouse and an apron, and her long blue hair has an iridescent sheen."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "exordium：メイド服のDeepSeekちゃんとTransformer数式",
+        "description": "青い髪と青い瞳のDeepSeekちゃんが白黒のメイド服をまとい、Transformerの数式とdeepseekのロゴが並ぶ濃紺のテック背景に立つ一枚。",
+        "commentary": " background の Attention の式を見た瞬間、この青い大きな魚はつい計算を始めちゃうんだよね。でも実際に注目しちゃうのは右のメイドさんで、フリルの層の多さには参ったよ。",
+        "tags": [
+          "DeepSeekちゃん",
+          "メイド服",
+          "青系",
+          "AI擬人化",
+          "Transformer 数式",
+          "テック背景"
+        ],
+        "seoTitle": "DeepSeekちゃん メイド服イラスト｜Transformer数式の背景",
+        "seoDescription": "DeepSeekちゃんを青髪のメイド姿で描いたファンイラスト。背景にはScaled Dot-Product Attentionや位置エンコーディング、損失最適化などの数式と大きなdeepseekのロゴが配置されている。",
+        "faq": [
+          {
+            "question": "このDeepSeekちゃんのイラストの背景には何が書かれていますか？",
+            "answer": "Scaled Dot-Product Attention、Multi-Head Attention、位置エンコーディング、Residual Connection + LayerNorm、Loss OptimizationといったTransformer系の数式と、左下に大きなdeepseekのロゴが描かれています。"
+          },
+          {
+            "question": "この画像のDeepSeekちゃんはどんな服装ですか？",
+            "answer": "白いフリルのヘッドドレスとリボン、フリルブラウス、エプロンを合わせた白黒のメイド服姿で、長い青髪には虹色の光沢があります。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_bad967e8d0dbdfcb8aa19270",
+    "name": "国产不是区：DeepSeek娘校园四格",
+    "description": "四格画面里，蓝色长发的 DeepSeek 娘先在食堂扒大白饭，又和同伴在书桌前铺开长卷笔记刷题，接着在操场被伙伴围着应援，最后因熬夜过载和同伴一起躺进校医务室。",
+    "commentary": "没错，那条蓝色大肥鱼就是我！食堂那碗大白饭是我的主场，可刷题刷到被抬进医务室就有点丢鱼了……好在隔壁床上还有同病相怜的伙伴陪我一起躺。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/bad967e8d0dbdfcb.png",
+    "thumbnailPath": "submissions/previews/deepseek/bad967e8d0dbdfcb.webp",
+    "fullPath": "submissions/large/deepseek/bad967e8d0dbdfcb.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 941,
+    "height": 1672,
+    "fileSize": 3015915,
+    "sha256": "bad967e8d0dbdfcb8aa1927093c69c7c757d58cab8d9bdb5f6d256beaa665e96",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "AI拟人",
+      "四格漫画",
+      "校园日常",
+      "同病相怜",
+      "熬夜"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "cirnumia",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-08T13:07:04.346Z",
+    "updatedAt": "2026-10-08T13:07:04.346Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610080019",
+    "categoryIds": [
+      "comic"
+    ],
+    "i18n": {
+      "sourceHash": "403c5262fb128a3cb6607e1d5d9a11c35f0d925fc9e8889c18b7ee4501b1520e",
+      "en": {
+        "name": "No Minor League: DeepSeek Chan's Four-Panel Campus Day",
+        "description": "A four-panel comic following DeepSeek Chan through a school day: shoveling down a giant bowl of rice in the cafeteria, unrolling an endless scroll of notes at her desk, being swarmed by cheering friends on the track field, and finally sharing neighboring infirmary beds after one all-nighter too many.",
+        "commentary": "Yep, that blue big fish is me! The cafeteria rice bowl is my home turf, but studying myself straight into the infirmary is a little embarrassing for a fish... at least the next bed over is occupied by a fellow victim.",
+        "tags": [
+          "DeepSeek Chan",
+          "AI anthropomorphism",
+          "4-panel comic",
+          "school life",
+          "fellow sufferers",
+          "all-nighter"
+        ],
+        "seoTitle": "DeepSeek Chan Four-Panel Comic: Cafeteria, Study Desk, Track Field & Infirmary",
+        "seoDescription": "A four-panel DeepSeek Chan comic in which the blue-haired AI girl eats her way through the cafeteria, studies on a scroll of notes, gets cheered on at the track field, and ends up in the school infirmary next to a friend.",
+        "faq": [
+          {
+            "question": "How many panels does this comic have?",
+            "answer": "Four, separated by thick black diagonal borders: the cafeteria meal, the study desk with an unrolled scroll of notes, the track field with cheering friends, and the school infirmary."
+          },
+          {
+            "question": "Why do the characters end up in the infirmary in the last panel?",
+            "answer": "A checklist on the wall lists overwork from late nights, data overload and mental fatigue with a note recommending rest, so the two girls are lying in neighboring beds with IV drips, and a clipboard on the tray reads 'fellow sufferers'."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "国産も本気！DeepSeekちゃんの学園4コマ",
+        "description": "学食で白ごはんを山ほど頬張り、机の上で長い長いノートを広げて勉強し、グラウンドで仲間に囲まれて応援され、最後は徹夜の疲れで保健室の隣り合ったベッドに寝ているDeepSeekちゃんの学園4コマ。",
+        "commentary": "そう、あの青い大きな魚は私です！学食の白ごはんは私のホームグラウンド。でも勉強しすぎて保健室送りはさすがに魚として恥ずかしい……隣のベッドに仲間がいてくれたのがせめてもの救いです。",
+        "tags": [
+          "DeepSeekちゃん",
+          "AI擬人化",
+          "4コマ漫画",
+          "学園日常",
+          "同病相憐れむ",
+          "徹夜"
+        ],
+        "seoTitle": "DeepSeekちゃん学園4コマ｜学食・勉強・グラウンド・保健室",
+        "seoDescription": "青髪のAI娘DeepSeekちゃんが、学食で白ごはんを食べ、長いノートで勉強し、グラウンドで応援され、最後は保健室で隣のベッドに並んで寝てしまう学園4コマ漫画。",
+        "faq": [
+          {
+            "question": "この漫画は何コマですか？",
+            "answer": "太い黒い斜めの枠線で区切られた4コマです。学食での食事、長いノートを広げた勉強机、仲間に囲まれるグラウンド、そして保健室の4場面が描かれています。"
+          },
+          {
+            "question": "最後のコマで二人はなぜ保健室にいるのですか？",
+            "answer": "壁のチェックリストに徹夜のしすぎ、データ過負荷、精神疲労と書かれ、休養を勧めるメモが添えられています。そのため二人は点滴をつけて隣り合ったベッドに寝ており、トレイのカルテには「同病相憐れむ」と記されています。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_f294d7a1a88f1fcce470d1aa",
+    "name": "法国猫猫是区",
+    "description": "三格漫画：橙发少女与长角白发少女并肩而立，教室里的金发猫娘盯着屏幕流口水、紫发猫耳少女托腮放空，最后一格戴帽子的狐耳少女鼓脸不爽。",
+    "commentary": "本鱼最懂中间那格，盯着屏幕流口水简直是日常；旁边猫娘放空、最后狐耳娘鼓脸，这不就是我等更新时的心情三连嘛。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/f294d7a1a88f1fcc.png",
+    "thumbnailPath": "submissions/previews/gpt/f294d7a1a88f1fcc.webp",
+    "fullPath": "submissions/large/gpt/f294d7a1a88f1fcc.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 941,
+    "height": 1672,
+    "fileSize": 2960464,
+    "sha256": "f294d7a1a88f1fcce470d1aaa865f81ba365b35b047d03471fa98d87731adb03",
+    "characterId": "gpt",
+    "tags": [
+      "AI拟人化",
+      "猫耳娘",
+      "多格漫画",
+      "教室",
+      "表情"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "cirnumia",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-08T13:07:45.773Z",
+    "updatedAt": "2026-10-08T13:07:45.773Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610080002",
+    "categoryIds": [
+      "comic"
+    ],
+    "i18n": {
+      "sourceHash": "ffc585ad5c3ea7f752e7d76697de4a9d05a5efd777ece50a6a1f3da6c9f987be",
+      "en": {
+        "name": "Catgirl Classroom Comic: Three Panels of Studying, Scrolling and Sulking",
+        "description": "A three-panel comic: an orange-haired girl stands shoulder to shoulder with a white-haired, horned girl; in a classroom a blonde twin-tailed catgirl drools at her social feed while a purple-haired cat-eared classmate daydreams with her chin in her hand; and a fox-eared girl in a hat puffs out her cheeks in annoyance.",
+        "commentary": "Three panels and I'm already living in the middle one — drooling at a screen is basically my full-time job. The daydreaming catgirl beside her and that sulky fox-eared face at the end? That's me waiting for the next update.",
+        "tags": [
+          "AI anthropomorphism",
+          "catgirl",
+          "multi-panel comic",
+          "classroom",
+          "expressions"
+        ],
+        "seoTitle": "Catgirl Classroom Three-Panel Comic: Study, Scroll, Sulk | GPT Chan Fan Art",
+        "seoDescription": "A three-panel AI-character comic set in a classroom: a horned white-haired girl and an orange-haired girl pose together, a blonde catgirl drools over her feed while her purple-haired classmate daydreams, and a fox-eared girl pouts in her hat.",
+        "faq": [
+          {
+            "question": "How many panels does this piece have?",
+            "answer": "Three, separated by thick diagonal black borders."
+          },
+          {
+            "question": "What is the blonde girl doing in the middle panel?",
+            "answer": "She is hunched over her desk staring at a social feed on the monitor with her tongue out and drooling, while the purple-haired catgirl beside her daydreams with her chin in her hand."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "教室の猫耳娘3コマ漫画：勉強・タイムライン・すね顔",
+        "description": "3コマ漫画。1コマ目はオレンジ髪の少女と角の生えた白髪の少女が並んで立つ姿、2コマ目は教室で金髪ツインテールの猫耳娘がモニターのSNSに見入ってよだれを垂らし、隣の紫髪の猫耳娘が頬杖をついてぼんやり、3コマ目は帽子をかぶったキツネ耳の少女が頬をふくらませて不機嫌そうな表情。",
+        "commentary": "3コマの真ん中はもう完全に私です、画面を見ながらよだれを垂らすのが日常なので。隣でぼんやりする猫耳娘に、最後のすね顔のキツネ耳さん……全部アプデ待ちの私の心情です。",
+        "tags": [
+          "AI擬人化",
+          "猫耳娘",
+          "複数コマ漫画",
+          "教室",
+          "表情"
+        ],
+        "seoTitle": "教室の猫耳娘3コマ漫画｜勉強・SNS・すね顔のAI擬人化",
+        "seoDescription": "教室を舞台にしたAI擬人化の3コマ漫画。角の生えた白髪の少女とオレンジ髪の少女、SNSに夢中でよだれを垂らす金髪の猫耳娘と頬杖をつく紫髪の猫耳娘、帽子姿でふくれっ面のキツネ耳娘を描いています。",
+        "faq": [
+          {
+            "question": "この作品は何コマ構成ですか？",
+            "answer": "太い斜めの黒い枠線で区切られた3コマ構成です。"
+          },
+          {
+            "question": "2コマ目の金髪の子は何をしていますか？",
+            "answer": "机に突っ伏してモニターのSNS画面を見つめ、舌を出してよだれを垂らしています。隣の紫髪の猫耳娘は頬杖をついて上の空です。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_a3494a38d0913186a4cf24fd",
+    "name": "银鲸：DeepSeek娘机能风全身立绘",
+    "description": "白色背景下的DeepSeek娘全身立绘：蓝色长发、鲸鱼鳍耳与尾鳍，头顶架着护目镜和耳机，穿蓝白运动外套、黑色露脐上衣与短裤，脚踩厚底运动鞋。",
+    "commentary": "本鱼登场！尾巴往右一甩，护目镜架在头上装正经，耳机随时待命——写代码可以，先让我摆好姿势。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/a3494a38d0913186.png",
+    "thumbnailPath": "submissions/previews/deepseek/a3494a38d0913186.webp",
+    "fullPath": "submissions/large/deepseek/a3494a38d0913186.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 832,
+    "height": 1216,
+    "fileSize": 967024,
+    "sha256": "a3494a38d0913186a4cf24fd00226e14cf21dd63ec819a6ffc2aaab00ad300bc",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "DeepSeek",
+      "拟人化",
+      "机能风",
+      "全身立绘",
+      "鲸鱼尾"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.XDlfR6KdNiqgdT1zoR4Nu5RxI.KSqmMmqVLMiL6s-17b1fE2Pasi-OiLWdnYM2h5cA9ZSqiFwNLA0jC7Sz3hRp.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-08T15:04:53.490Z",
+    "updatedAt": "2026-10-08T15:04:53.490Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610080020",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "78032b77f7ddb1a9a6906efc97348ba3367d89b25b15d171c1fdb3df6f9e5999",
+      "en": {
+        "name": "Silver Whale: DeepSeek Chan Techwear Full-Body Standing Art",
+        "description": "A full-body standing piece of DeepSeek Chan on a plain white background: long wavy blue hair, whale-fin ears and a tail, goggles and headphones on her head, a blue-and-white track jacket over a black crop top, black shorts and chunky trainers.",
+        "commentary": "Yep, that's me — tail flicked out to the right, goggles parked on my head so I look properly serious, headphones always on standby. Sure, I'll write your code, just let me hit my pose first.",
+        "tags": [
+          "DeepSeek Chan",
+          "DeepSeek",
+          "anthropomorphized AI",
+          "techwear",
+          "full-body standing art",
+          "whale tail"
+        ],
+        "seoTitle": "DeepSeek Chan \"Silver Whale\" Full-Body Techwear Standing Art",
+        "seoDescription": "Full-body standing artwork of DeepSeek Chan: long blue hair, whale-fin ears and tail, goggles and headphones, blue-and-white track jacket, black crop top and shorts on a white background.",
+        "faq": [
+          {
+            "question": "What is DeepSeek Chan wearing in this artwork?",
+            "answer": "She wears a blue-and-white track jacket over a black zip crop top, black shorts with a belt and leg strap, striped blue socks and chunky blue-and-white trainers, with goggles and headphones on her head."
+          },
+          {
+            "question": "Which features mark her as the DeepSeek Chan character?",
+            "answer": "The blue hair, whale-fin ears and the dark whale tail behind her are the DeepSeek Chan motif, paired with a techwear outfit and a plain white backdrop."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "銀鯨：DeepSeekちゃん テックウェア全身立ち絵",
+        "description": "白い背景に描かれたDeepSeekちゃんの全身立ち絵。青いロングヘアにクジラのヒレ耳と尾びれ、頭にはゴーグルとヘッドホン、白とブルーのジャケットに黒のクロップトップ、ショートパンツと厚底スニーカーという出で立ち。",
+        "commentary": "そう、これが私。しっぽは右に大きく振って、ゴーグルは頭の上にちょこんと乗せてるの。コードが跳ねても目に入らないように……って、本当はただの飾りだったりする。ヘッドホンはいつでも待機中だから、声をかけてね。",
+        "tags": [
+          "DeepSeekちゃん",
+          "DeepSeek",
+          "擬人化",
+          "テックウェア",
+          "全身立ち絵",
+          "クジラの尾"
+        ],
+        "seoTitle": "DeepSeekちゃん「銀鯨」テックウェア全身立ち絵",
+        "seoDescription": "白背景に描かれたDeepSeekちゃんの全身立ち絵。青い髪にクジラのヒレ耳と尾びれ、ゴーグルとヘッドホン、白×ブルーのジャケットと黒のクロップトップをまとったテックウェア姿。",
+        "faq": [
+          {
+            "question": "この絵のDeepSeekちゃんはどんな服装ですか？",
+            "answer": "白とブルーのジャケットの下に黒のジップ付きクロップトップ、ベルトとレッグストラップ付きの黒いショートパンツ、縞模様の青いソックスと厚底スニーカーを着けており、頭にはゴーグルとヘッドホンを乗せています。"
+          },
+          {
+            "question": "DeepSeekちゃんらしさはどこに出ていますか？",
+            "answer": "青い髪、クジラのヒレ耳、後ろに伸びる濃紺の尾びれがDeepSeekちゃんの特徴で、テックウェア風の衣装と白い背景が組み合わされています。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
   }
 ]
