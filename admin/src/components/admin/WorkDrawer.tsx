@@ -87,7 +87,7 @@ function initialForm(
 
   const submission = item.submission
   const reviewContent = record(submission.review?.content)
-  const source = { ...record(submission.fields), ...reviewContent }
+  const source = { ...record(submission.fields), ...reviewContent, ...record(submission.editorial) }
   const rawCategories = Array.isArray(source.categoryIds) ? source.categoryIds : submission.fields?.categoryId ? [submission.fields.categoryId] : []
   const categoryIds = rawCategories
     .map((value) => {

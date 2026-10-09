@@ -287,6 +287,7 @@ html[data-theme='dark'] .s3-stat-card--warning small { color: var(--s3-slate); }
 .s3-filter-panel select,
 .s3-panel-heading input,
 .s3-modal input,
+.s3-modal textarea,
 .s3-modal select {
   background: var(--theme-elevation-0, #fff);
   border: 1px solid #cbd5e1;
@@ -298,7 +299,11 @@ html[data-theme='dark'] .s3-stat-card--warning small { color: var(--s3-slate); }
   width: 100%;
 }
 .s3-form-section textarea,
-.s3-form-grid textarea { resize: vertical; }
+.s3-form-grid textarea,
+.s3-modal textarea { resize: vertical; }
+.s3-check input[type='checkbox'] { flex: 0 0 1rem; height: 1rem; min-height: 1rem; margin: 0; padding: 0; width: 1rem; }
+.s3-job-panel li { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; padding: .6rem 0; overflow-wrap: anywhere; }
+.s3-job-panel { margin-bottom: 7rem; }
 .s3-check-grid { display: grid; gap: .45rem; grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr)); }
 .s3-check { align-items: center; display: flex !important; flex-direction: row; gap: .4rem; }
 .s3-check input[type='radio'] { flex: 0 0 1rem; height: 1rem; margin: 0; padding: 0; width: 1rem; }

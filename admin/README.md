@@ -81,7 +81,10 @@ npm run sync:submissions -- --state=auto_passed --source=web
 同步会按 `submissionId` 从 `/raw` 读取原图字节，但只在内存中用 sharp 生成 480px、quality 76 的 webp 预览后上传为 `media.mediaRole=preview`；原图字节不落盘、不入 media。同步还会从原图校验/写入 `sha256`、`format`、`mimeType`、`width`、`height`、`fileSize`。`auto_passed` 且 `review.content` 通过 `name`、`description`、`commentary`、`characterId`、`categoryIds`、`tags` 六字段校验的条目，若没有任何作品使用相同 `sha256`，会创建 `status=pending`、`needsPublish=true` 的投稿作品；重复 `sha256` 只建立投稿到作品的关联。AI 拒绝或转人工的条目同样保存预览，但不创建作品。
 
 `--limit` 表示每页条数，整轮同步会沿 `nextCursor` 读到末页。默认每页 200 条，上限 500 条。
-投稿服务必须先升级到支持游标分页的版本。镜像内容没有变化时不重复写库。
+投稿服务必须先升级到支持游标分页和版本摘要的版本。镜像内容没有变化时不重复写库。
+定时同步和“立即同步”默认先读取 `/api/v1/item-versions`，只拉取版本不同的完整记录。
+原图或收录失败的条目不确认版本，下轮继续尝试。需要完整对账时向同步接口传 `{ "full": true }`。
+CLI 保留完整遍历，用于人工对账。
 原图释放或预览生成失败时，仍保存投稿元数据。缺少预览的新条目不会自动创建待发布作品。
 同步结果包含 `pages`、`scanned`、`unchanged`、`previewUnavailable` 和逐条 `errors`。
 存在错误时，后台返回 `ok:false`，发布桥接停止本轮发布。
@@ -114,6 +117,48 @@ npm run test:e2e
 ```
 
 Playwright 配置默认使用 `http://127.0.0.1:3100`，测试截图写入 `E:\quick-site-studio\tmp\s3-shots`。测试只创建发布请求并检查 queued 状态，不启动发布执行器。
+
+## 列表与持久化批量任务
+
+作品库和投稿审核每页读取 48 条卡片摘要。筛选、搜索、作者统计和全局热度排序都在服务器执行。
+卡片不返回完整审核内容、英日译文和状态历史；点击条目后才读取详情。概览用数据库聚合统计。
+角色、类型和专题词表在当前后台会话中缓存 60 秒。
+
+多选后支持以下操作：
+
+- 批量写字段：只写勾选字段，所选条目使用同一值。可修改名称、说明、点评、标签、角色和类型。
+- AI 批量补写：逐图补写缺失字段并生成英日版本，保留已有内容。
+- 批量翻译：根据当前中文生成英日版本。有效译文默认跳过；覆盖需要确认。
+- 批量人工收录：仅限未关联作品的人工审核投稿。站长必须确认已逐张看图，字段、译文、预览和原图校验通过后才进入待发布。
+
+每批最多 200 条，同时最多 5 个待执行任务。任务存入 `bulk-jobs`，由独立 systemd 执行器处理。
+关闭页面不会停止任务，服务重启后从已提交游标恢复。结果保留在界面的“批量任务”区域。
+失败项可以单独重试；取消只停止尚未提交的条目。写入与进度推进共用事务，操作逐条记录审计。
+生成期间人工修改过的条目会失败，避免覆盖。投稿的人工编辑存入 `editorial`，同步不会覆盖草稿，原投稿和 AI 结论保留。
+
+接口均需站长身份，执行器接口需独立令牌：
+
+```text
+GET  /cms-api/console/list?kind=works&page=1&limit=48
+GET  /cms-api/console/authors?kind=works
+POST /cms-api/bulk/request
+GET  /cms-api/bulk/jobs?jobId=<任务 ID>
+POST /cms-api/bulk/cancel
+POST /cms-api/bulk/retry
+POST /cms-api/bulk/process-next  （仅 ADMIN_WORKER_TOKEN）
+```
+
+安装独立执行器前先部署新后台并完成迁移：
+
+```bash
+install -m 644 /srv/apps/dafeiyu-admin/src/ops/systemd/dafeiyu-admin-bulk.service /etc/systemd/system/
+systemctl daemon-reload
+systemctl enable --now dafeiyu-admin-bulk.service
+systemctl status dafeiyu-admin-bulk.service
+```
+
+执行器复用 `/etc/dafeiyu/admin.env` 中的 `ADMIN_WORKER_TOKEN`，仅访问回环地址。
+迁移新增任务表、草稿字段、版本摘要字段和列表索引，不修改已发布内容。
 
 ## 创建机器人
 
@@ -219,7 +264,7 @@ POST /cms-api/submissions/sync
 
 - `works.workId`、`slug`、`topicId` 发布后冻结；新投稿作品 id 为 `sticker_<sha256 前 24 位>`。
 - 公开字段改动由钩子自动置 `needsPublish=true`；发布器带 `context.skipNeedsPublish` 回写时不会重复置真。
-- `submissions` 是投稿服务的只读镜像，队列状态仍以 `server/` 为准。
+- `submissions` 的原投稿、AI 结论和队列状态是投稿服务镜像，仍以 `server/` 为准。人工草稿独立存入 `editorial`。
 - `audit-events` 记录所有已挂 hooks 的集合写操作，另有批量接口和发布接口的显式审计。
 - `media` 只保存 webp 预览；`media.sha256` 对投稿同步使用原图 sha256 作为逻辑去重键，实际落盘文件为预览。删除作品最终只清理预览 media，但保留作品墓碑记录。
 - 后台服务器不保存原图。原图在发布前只存在于投稿服务私有队列，发布执行器校验 sha256 后写入内容仓并推送 GitHub。

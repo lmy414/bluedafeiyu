@@ -970,7 +970,18 @@ export function createAdminHandler({
       if (req.method === 'GET' && url.pathname === '/api/v1/stats') {
         return sendJson(res, 200, { ok: true, stats: await queue.stats() });
       }
+      if (req.method === 'GET' && url.pathname === '/api/v1/item-versions') {
+        const items = await queue.list();
+        return sendJson(res, 200, { ok: true, items: items.map(item => ({ id: item.id, version: sha256(Buffer.from(JSON.stringify(item))) })) });
+      }
       if (req.method === 'GET' && url.pathname === '/api/v1/items') {
+        const ids = url.searchParams.get('ids');
+        if (ids !== null) {
+          const targets = [...new Set(ids.split(','))];
+          if (!targets.length || targets.length > 100 || targets.some(id => !INTERNAL_ID_PATTERN.test(id))) return sendJson(res, 400, { ok: false, error: 'ids 非法或超过 100 条' });
+          const items = (await Promise.all(targets.map(id => queue.get(id)))).filter(Boolean);
+          return sendJson(res, 200, { ok: true, count: items.length, items, nextCursor: null });
+        }
         const rawLimit = Number(url.searchParams.get('limit') || 200);
         const limit = Number.isSafeInteger(rawLimit) && rawLimit > 0 ? Math.min(rawLimit, 10000) : 200;
         const cursor = url.searchParams.get('cursor');

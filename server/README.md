@@ -140,6 +140,8 @@ received ──review.start──▶ reviewing ──review.pass──▶ auto_p
 | --- | --- | --- |
 | `GET` | `/api/v1/health` `/api/v1/stats` | 脱敏摘要与计数 |
 | `GET` | `/api/v1/items?state=&source=&limit=&cursor=` | 游标分页列表；响应含 `nextCursor`，为 `null` 时已到末页 |
+| `GET` | `/api/v1/item-versions` | 所有投稿的 `{id,version}` 小摘要；用于增量同步，版本覆盖审核和原图释放等变化 |
+| `GET` | `/api/v1/items?ids=<逗号分隔 ID>` | 按 ID 读取变化条目，每批最多 100 条 |
 | `GET` | `/api/v1/items/<id>` | 条目详情 |
 | `GET` | `/api/v1/items/<id>/raw` | 原图（附件下载、`nosniff`）；已释放返回 410 |
 | `POST` | `/api/v1/items/<id>/release-original` | 删除私有原图并记录 `{reason,rawUrl}`；重复调用幂等 |

@@ -4,34 +4,29 @@ import type { Endpoint, PayloadRequest } from 'payload'
 import { json, readJsonBody, requireOwnerOrBot, requireWorker } from '../lib/endpoint-auth'
 import { writeAudit } from '../lib/audit'
 import { syncSubmissions } from '../lib/sync-submissions'
+import { consoleRows } from '../lib/console-list'
 
 async function dashboardStats(req: PayloadRequest) {
   const payload = req.payload as any
   const [works, submissions, topics, runs] = await Promise.all([
-    payload.find({ collection: 'works', limit: 3000, depth: 0, overrideAccess: true, pagination: false }),
-    payload.find({ collection: 'submissions', limit: 3000, depth: 0, overrideAccess: true, pagination: false }),
-    payload.find({ collection: 'topics', limit: 1000, depth: 0, overrideAccess: true, pagination: false }),
+    consoleRows(payload, "SELECT channel,sum(status='pending') AS pending,sum(needs_publish=1) AS needs FROM works GROUP BY channel"),
+    consoleRows(payload, "SELECT sum(state IN ('received','reviewing','needs_manual')) AS pending,sum(state='auto_rejected') AS rejected,sum(state IN ('received','reviewing')) AS reviewing,sum(state IN ('auto_rejected','needs_manual') AND work_id IS NULL) AS attention FROM submissions"),
+    consoleRows(payload, 'SELECT count(*) AS total FROM topics WHERE needs_publish=1'),
     payload.find({ collection: 'publish-runs', limit: 1, sort: '-requestedAt', depth: 0, overrideAccess: true }),
   ])
   const pendingByChannel: Record<string, number> = {}
   const needsPublishByChannel: Record<string, number> = {}
-  for (const work of works.docs) {
-    if (work.status === 'pending') pendingByChannel[work.channel] = (pendingByChannel[work.channel] || 0) + 1
-    if (work.needsPublish) needsPublishByChannel[work.channel] = (needsPublishByChannel[work.channel] || 0) + 1
-  }
-  const reviewPending = submissions.docs.filter((doc: any) => ['received', 'reviewing', 'needs_manual'].includes(doc.state)).length
-  const autoRejected = submissions.docs.filter((doc: any) => doc.state === 'auto_rejected').length
-  const aiReviewing = submissions.docs.filter((doc: any) => ['received', 'reviewing'].includes(doc.state)).length
-  const needsAttention = submissions.docs.filter((doc: any) => ['auto_rejected', 'needs_manual'].includes(doc.state) && !doc.work).length
+  for (const row of works) { pendingByChannel[row.channel] = Number(row.pending); needsPublishByChannel[row.channel] = Number(row.needs) }
+  const counts = submissions[0] || {}
   return {
     pendingByChannel,
     needsPublishByChannel,
-    pendingReview: reviewPending,
-    autoRejected,
-    aiReviewing,
-    needsAttention,
-    needsPublish: works.docs.filter((doc: any) => doc.needsPublish).length,
-    topicsNeedsPublish: topics.docs.filter((doc: any) => doc.needsPublish).length,
+    pendingReview: Number(counts.pending || 0),
+    autoRejected: Number(counts.rejected || 0),
+    aiReviewing: Number(counts.reviewing || 0),
+    needsAttention: Number(counts.attention || 0),
+    needsPublish: Object.values(needsPublishByChannel).reduce((a, b) => a + b, 0),
+    topicsNeedsPublish: Number(topics[0].total),
     latestRun: runs.docs[0] || null,
   }
 }
@@ -57,6 +52,7 @@ const syncHandler = async (req: PayloadRequest): Promise<Response> => {
   const url = new URL(req.url || 'http://localhost')
   const stats = await syncSubmissions(req.payload, {
     dryRun: Boolean(body.dryRun),
+    incremental: body.full !== true,
     limit: Number(body.limit || url.searchParams.get('limit') || 200),
     source: body.source || url.searchParams.get('source') || undefined,
     state: body.state || url.searchParams.get('state') || undefined,

@@ -341,6 +341,23 @@ test('管理列表支持完整游标分页、来源筛选和非法游标校验',
   });
 });
 
+test('管理版本摘要只返回小摘要，变化后更新且可按 ID 取增量', async t => {
+  const { queue, adminHandler } = await setup(t);
+  const item = (await queue.enqueue({ source: 'web', sourceId: 'web:versions', buffer: TINY_PNG, fields: { name: 'test' } })).item;
+  await withServer(adminHandler, async port => {
+    const headers = { authorization: 'Bearer admin-secret-value' };
+    const before = JSON.parse((await call(port, { routePath: '/api/v1/item-versions', headers })).body);
+    assert.deepEqual(Object.keys(before.items[0]).sort(), ['id','version']);
+    await queue.transition(item.id, 'review.start');
+    const after = JSON.parse((await call(port, { routePath: '/api/v1/item-versions', headers })).body);
+    assert.notEqual(after.items[0].version, before.items[0].version);
+    const full = JSON.parse((await call(port, { routePath: `/api/v1/items?ids=${item.id}`, headers })).body);
+    assert.equal(full.items[0].state, 'reviewing');
+    assert.equal((await call(port, { routePath: '/api/v1/items?ids=bad', headers })).status, 400);
+    assert.equal((await call(port, { routePath: '/api/v1/item-versions' })).status, 401);
+  });
+});
+
 test('管理员能取原图（按附件下载）与条目，公开端做不到', async (t) => {
   const { publicHandler, adminHandler, queue } = await setup(t);
   await withServer(publicHandler, async (port) => {

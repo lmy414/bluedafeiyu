@@ -41,7 +41,7 @@ jobs:
           MEDIA_DIR: ${{ runner.temp }}/admin-test-media
           PAYLOAD_SECRET: ci-admin-test-secret
         run: |
-          node --test "server/**/*.test.mjs" ops/tests/hermes-publish.test.mjs ops/hermes/tests/hermes.test.mjs
+          node --test "server/**/*.test.mjs" ops/tests/hermes-publish.test.mjs ops/tests/bulk-worker.test.mjs ops/hermes/tests/hermes.test.mjs
           cd admin
           npm run test:int -- --maxWorkers=1
           npx tsc --noEmit

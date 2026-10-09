@@ -1,25 +1,23 @@
 'use client'
 
 import { Gutter } from '@payloadcms/ui'
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { useAdminApi } from '../components/admin/api'
-import type { AnalyticsData } from '../components/admin/AnalyticsPanel'
+import { useConsoleList, useConsoleVocabulary } from '../components/admin/useConsoleList'
+import { BulkJobsPanel, BulkTools } from '../components/admin/BulkTools'
 import { BulkBar } from '../components/admin/BulkBar'
 import { CHANNELS, WORK_STATUSES } from '../components/admin/constants'
 import { Modal } from '../components/admin/Modal'
 import { PageHeader } from '../components/admin/PageHeader'
 import { Pagination } from '../components/admin/Pagination'
 import { WorkCard } from '../components/admin/WorkCard'
-import type { CategoryDoc, CharacterDoc, ListResponse, TopicDoc, WorkDoc } from '../components/admin/types'
-import { NO_AUTHOR, authorOf, authorOptions, relationID } from '../components/admin/types'
+import type { WorkDoc } from '../components/admin/types'
+import { NO_AUTHOR } from '../components/admin/types'
 
 export function LibraryView() {
-  const { get, mutate } = useAdminApi()
-  const [works, setWorks] = useState<WorkDoc[]>([])
-  const [characters, setCharacters] = useState<CharacterDoc[]>([])
-  const [categories, setCategories] = useState<CategoryDoc[]>([])
-  const [topics, setTopics] = useState<TopicDoc[]>([])
+  const { mutate } = useAdminApi()
+  const { characters, categories, topics } = useConsoleVocabulary()
   const [channel, setChannel] = useState('')
   const [characterId, setCharacterId] = useState('')
   const [categoryId, setCategoryId] = useState('')
@@ -33,61 +31,13 @@ export function LibraryView() {
   const [chosenCategories, setChosenCategories] = useState<string[]>([])
   const [topicId, setTopicId] = useState('')
   const [deleteText, setDeleteText] = useState('')
-  const [loading, setLoading] = useState(true)
-  const [analytics, setAnalytics] = useState<AnalyticsData | null>(null)
   const [sort, setSort] = useState('latest')
-
-  async function load() {
-    setLoading(true)
-    try {
-      const [workResult, characterResult, categoryResult, topicResult, analyticsResult] = await Promise.all([
-        get<ListResponse<WorkDoc>>('/works', { depth: 2, limit: 3000, pagination: false, sort: '-updatedAt' }),
-        get<ListResponse<CharacterDoc>>('/characters', { depth: 0, limit: 1000, pagination: false }),
-        get<ListResponse<CategoryDoc>>('/categories', { depth: 0, limit: 1000, pagination: false }),
-        get<ListResponse<TopicDoc>>('/topics', { depth: 0, limit: 1000, pagination: false }),
-        get<AnalyticsData>('/analytics').catch(() => null),
-      ])
-      setWorks(workResult.docs || [])
-      setCharacters(characterResult.docs || [])
-      setCategories(categoryResult.docs || [])
-      setTopics(topicResult.docs || [])
-      setAnalytics(analyticsResult)
-    } catch (error) {
-      setMessage(error instanceof Error ? error.message : '作品库读取失败')
-    } finally {
-      setLoading(false)
-    }
-  }
-
-  useEffect(() => {
-    void load()
-  }, [])
-
-  const filtered = useMemo(() => {
-    const search = keyword.trim().toLowerCase()
-    return works.filter((work) => {
-      if (channel && work.channel !== channel) return false
-      if (status && work.status !== status) return false
-      if (author) {
-        const value = authorOf(work)
-        if (author === NO_AUTHOR ? value !== '' : value !== author) return false
-      }
-      if (characterId && String(relationID(work.character)) !== characterId) return false
-      if (categoryId && !(work.categories || []).some((item) => String(relationID(item)) === categoryId)) return false
-      if (!search) return true
-      const haystack = [work.name, work.workId, authorOf(work), ...(work.tags || []).map((tag) => tag.value)].join(' ').toLowerCase()
-      return haystack.includes(search)
-    }).sort((a, b) => {
-      if (sort === 'latest') return 0
-      const field = sort === 'downloads' ? 'downloads' : 'views'
-      return (analytics?.works[b.workId]?.[field] || 0) - (analytics?.works[a.workId]?.[field] || 0)
-    })
-  }, [analytics, author, categoryId, channel, characterId, keyword, sort, status, works])
-
-  const authors = useMemo(() => authorOptions(works, authorOf), [works])
-
-  const totalPages = Math.max(1, Math.ceil(filtered.length / 48))
-  const visible = filtered.slice((page - 1) * 48, page * 48)
+  const [search, setSearch] = useState('')
+  useEffect(() => { const timer = setTimeout(() => setSearch(keyword), 300); return () => clearTimeout(timer) }, [keyword])
+  const { data, authors, loading, error, refresh } = useConsoleList<WorkDoc>({ kind: 'works', channel, status, author, character: characterId, category: categoryId, keyword: search, sort, page, limit: 48 })
+  const totalPages = data.totalPages || 1
+  const visible = data.docs
+  useEffect(() => { if (data.page && data.page !== page) setPage(data.page) }, [data.page])
 
   function toggle(id: string) {
     setSelected((current) => (current.includes(id) ? current.filter((value) => value !== id) : [...current, id]))
@@ -101,14 +51,14 @@ export function LibraryView() {
       setSelected([])
       setModal(null)
       setDeleteText('')
-      await load()
+      refresh()
       setMessage('批量操作已完成。')
     } catch (error) {
       setMessage(error instanceof Error ? error.message : '批量操作失败')
     }
   }
 
-  useEffect(() => setPage(1), [author, categoryId, channel, characterId, keyword, sort, status])
+  useEffect(() => { setPage(1); setSelected([]) }, [author, categoryId, channel, characterId, search, sort, status])
 
   return (
     <Gutter className="s3-admin-page">
@@ -116,8 +66,8 @@ export function LibraryView() {
       <section className="s3-filter-panel">
         <label>排序<select value={sort} onChange={event => setSort(event.target.value)}>
           <option value="latest">最近修改</option>
-          <option value="popular" disabled={!analytics?.available}>热度（浏览量）</option>
-          <option value="downloads" disabled={!analytics?.available}>下载量</option>
+          <option value="popular" disabled={!data.metricsAvailable}>热度（浏览量）</option>
+          <option value="downloads" disabled={!data.metricsAvailable}>下载量</option>
         </select></label>
         <label>
           渠道
@@ -164,20 +114,20 @@ export function LibraryView() {
         </label>
       </section>
       <div className="s3-result-line">
-        <span>共 {filtered.length} 件作品</span>
+        <span>共 {data.totalDocs || 0} 件作品</span>
         <div>
-          <button className="s3-text-button" onClick={() => setSelected(visible.map((work) => work.workId))} type="button">选择本页</button>
+          <button className="s3-text-button" onClick={() => setSelected(current => [...new Set([...current, ...visible.map(work => work.workId)])])} type="button">选择本页</button>
           <button className="s3-text-button" onClick={() => setSelected([])} type="button">清空选择</button>
         </div>
       </div>
-      {message ? <p className="s3-notice">{message}</p> : null}
+      {message || error ? <p className="s3-notice">{message || error}</p> : null}
       {loading ? <p className="s3-loading">正在读取作品库…</p> : null}
-      {!loading && !filtered.length ? <div className="s3-empty">没有符合条件的作品。</div> : null}
+      {!loading && !visible.length ? <div className="s3-empty">没有符合条件的作品。</div> : null}
       <section className="s3-card-grid">
         {visible.map((work) => (
           <WorkCard
             key={String(work.id)}
-            metrics={analytics?.available ? analytics.works[work.workId] : undefined}
+            metrics={work.metrics}
             onOpen={() => toggle(work.workId)}
             onSelect={() => toggle(work.workId)}
             selected={selected.includes(work.workId)}
@@ -187,6 +137,7 @@ export function LibraryView() {
       </section>
       <Pagination page={page} setPage={setPage} totalPages={totalPages} />
       <BulkBar count={selected.length}>
+        <BulkTools ids={selected} target="works" characters={characters} categories={categories} onSubmitted={() => { setSelected([]); setMessage('后台任务已提交，关闭页面也会继续执行。') }} />
         <button className="s3-button s3-button--secondary" onClick={() => { setChosenCategories([]); setModal('category') }} type="button">改分类</button>
         <button className="s3-button s3-button--warning" onClick={() => void bulk('hide')} type="button">隐藏</button>
         <button className="s3-button s3-button--secondary" onClick={() => void bulk('restore')} type="button">恢复</button>
@@ -194,6 +145,7 @@ export function LibraryView() {
         <button className="s3-button s3-button--danger" onClick={() => setModal('delete')} type="button">删除</button>
       </BulkBar>
 
+      <BulkJobsPanel onCompleted={refresh} />
       <Modal confirmLabel="保存分类" onClose={() => setModal(null)} onConfirm={() => void bulk('set-categories', { categoryIds: chosenCategories })} open={modal === 'category'} title="批量修改分类">
         <div className="s3-check-grid">
           {categories.map((category) => {

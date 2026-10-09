@@ -43,6 +43,7 @@ export const Submissions: CollectionConfig = {
     { name: 'sha256', type: 'text', index: true, label: 'SHA-256', admin: { readOnly: true } },
     { name: 'media', type: 'upload', relationTo: 'media', label: '预览图', admin: { readOnly: true } },
     { name: 'fields', type: 'json', label: '投稿字段', admin: { readOnly: true } },
+    { name: 'editorial', type: 'json', label: '人工编辑草稿（不改原投稿或 AI 结论）', admin: { readOnly: true } },
     { name: 'review', type: 'json', label: 'AI 审核结果', admin: { readOnly: true } },
     {
       name: 'state',
@@ -69,5 +70,6 @@ export const Submissions: CollectionConfig = {
     { name: 'origin', type: 'json', label: '原始来源信息', admin: { readOnly: true } },
     { name: 'work', type: 'relationship', relationTo: 'works', label: '关联作品', admin: { readOnly: true } },
     { name: 'syncedAt', type: 'date', label: '同步时间', admin: { readOnly: true } },
+    { name: 'queueVersion', type: 'text', label: '投稿服务版本摘要', admin: { hidden: true } },
   ],
 }

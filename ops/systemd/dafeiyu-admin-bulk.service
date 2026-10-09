@@ -1,0 +1,24 @@
+[Unit]
+Description=蓝色大肥鱼持久化批量任务执行器
+After=network-online.target dafeiyu-admin.service
+Wants=network-online.target dafeiyu-admin.service
+
+[Service]
+Type=simple
+User=dafeiyu-admin
+Group=dafeiyu-admin
+WorkingDirectory=/srv/apps/dafeiyu-admin/src
+EnvironmentFile=/etc/dafeiyu/admin.env
+Environment=ADMIN_API_URL=http://127.0.0.1:3100
+ExecStart=/usr/bin/node /srv/apps/dafeiyu-admin/src/ops/admin/bulk-worker.mjs
+Restart=on-failure
+RestartSec=10s
+TimeoutStopSec=450s
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+MemoryMax=100M
+
+[Install]
+WantedBy=multi-user.target

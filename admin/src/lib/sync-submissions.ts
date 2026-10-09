@@ -236,7 +236,16 @@ async function ensureSubmissionMedia(payload: Payload, item: any, preview: Submi
   }
 }
 
-async function* submissionPages(token: string, baseUrl: string, query: URLSearchParams) {
+async function* submissionPages(token: string, baseUrl: string, query: URLSearchParams, ids?: string[]) {
+  if (ids) {
+    for (let offset = 0; offset < ids.length; offset += 100) {
+      const list = await requestJson(token, `${baseUrl}/api/v1/items?${new URLSearchParams({ ids: ids.slice(offset, offset + 100).join(',') })}`)
+      if (!Array.isArray(list.items)) throw new Error('投稿列表响应缺少 items')
+      if (list.items.length !== ids.slice(offset, offset + 100).length) throw new Error('增量投稿响应不完整')
+      yield list.items as any[]
+    }
+    return
+  }
   const seen = new Set<string>()
   while (true) {
     const list = await requestJson(token, `${baseUrl}/api/v1/items?${query.toString()}`)
@@ -271,7 +280,7 @@ function mirrorUnchanged(existing: any, data: Record<string, any>): boolean {
 
 export async function syncSubmissions(
   payload: Payload,
-  options: { baseUrl?: string; dryRun?: boolean; limit?: number; source?: string; state?: string; token?: string } = {},
+  options: { baseUrl?: string; dryRun?: boolean; limit?: number; source?: string; state?: string; token?: string; incremental?: boolean } = {},
 ) {
   const baseUrl = String(options.baseUrl || process.env.SUBMISSION_ADMIN_API_URL || 'http://127.0.0.1:8788').replace(/\/+$/, '')
   const token = options.token || process.env.SUBMISSION_ADMIN_TOKEN || ''
@@ -313,9 +322,27 @@ export async function syncSubmissions(
     errors: [] as string[],
   }
 
-  for await (const items of submissionPages(token, baseUrl, query)) {
+  let ids: string[] | undefined
+  if (options.incremental && !options.source && !options.state) {
+    const versions = await requestJson(token, `${baseUrl}/api/v1/item-versions`)
+    if (!Array.isArray(versions.items)) throw new Error('投稿版本摘要响应非法')
+    const mirrors = new Map<string, any>()
+    for (let page = 1; ; page += 1) {
+      const existing = await (payload as any).find({ collection: 'submissions', depth: 0, limit: 200, page, overrideAccess: true, select: { submissionId: true, queueVersion: true, media: true } })
+      for (const doc of existing.docs) mirrors.set(doc.submissionId, doc)
+      if (!existing.hasNextPage) break
+    }
+    ids = versions.items.filter((entry: any) => {
+      if (!/^sub_[A-Za-z0-9_-]{1,64}$/.test(entry.id) || !/^[a-f0-9]{64}$/.test(entry.version)) throw new Error('投稿版本摘要字段非法')
+      const mirror = mirrors.get(entry.id)
+      return !mirror || mirror.queueVersion !== entry.version
+    }).map((entry: any) => entry.id)
+    stats.unchanged = versions.items.length - ids!.length
+  }
+  for await (const items of submissionPages(token, baseUrl, query, ids)) {
     stats.pages += 1
     for (const item of items) {
+      const errorCount = stats.errors.length
       stats.scanned += 1
       try {
         const submissionId = String(item.id)
@@ -350,6 +377,7 @@ export async function syncSubmissions(
             const check = validateContent(item.review?.content, vocabulary)
             if (!check.ok) {
               stats.skipped += 1
+              stats.errors.push(`${submissionId} 内容未通过：${check.errors.join('；')}`)
               console.warn(`[同步] ${submissionId} 内容未通过：${check.errors.join('；')}`)
             } else {
               content = check.value
@@ -419,6 +447,8 @@ export async function syncSubmissions(
           origin: item.origin || {},
           work: linkedWorkId || undefined,
           syncedAt: new Date().toISOString(),
+          // 缺预览但原图仍在时不确认版本，下一轮继续尝试；已释放原图则保留无图记录。
+          queueVersion: stats.errors.length === errorCount && (mediaId || item.original?.released) ? sha256(Buffer.from(JSON.stringify(item))) : null,
         }
 
         if (existingSubmission && mirrorUnchanged(existingSubmission, submissionData)) {

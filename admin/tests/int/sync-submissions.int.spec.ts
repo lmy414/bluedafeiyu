@@ -187,7 +187,9 @@ beforeAll(async () => {
 
   vi.stubGlobal('fetch', vi.fn(async (input: string | URL | Request) => {
     const url = new URL(String(input))
+    if (url.pathname === '/api/v1/item-versions') return jsonResponse({ items: queueItems.map(item => ({ id: item.id, version: crypto.createHash('sha256').update(JSON.stringify(item)).digest('hex') })) })
     if (url.pathname === '/api/v1/items') {
+      if (url.searchParams.has('ids')) return jsonResponse({ items: queueItems.filter(item => url.searchParams.get('ids')!.split(',').includes(item.id)), nextCursor: null })
       const limit = Number(url.searchParams.get('limit')) || 200
       const offset = Number(url.searchParams.get('cursor')) || 0
       return jsonResponse({ items: queueItems.slice(offset, offset + limit), nextCursor: offset + limit < queueItems.length ? String(offset + limit) : null })
@@ -229,10 +231,15 @@ describe('syncSubmissions timestamps and formats', () => {
       const manual = await (payload as any).find({ collection: 'submissions', where: { state: { equals: 'needs_manual' } }, limit: 100, depth: 0, overrideAccess: true })
       expect(manual.docs).toHaveLength(30)
       expect(manual.docs.some((doc: any) => doc.submissionId === 'sub_page_529')).toBe(true)
-      const repeat = await syncSubmissions(payload, { baseUrl: 'http://submission.test', limit: 200, token: 'test-token' })
+      const repeat = await syncSubmissions(payload, { baseUrl: 'http://submission.test', limit: 200, token: 'test-token', incremental: true })
+      expect(repeat.scanned).toBe(0)
       expect(repeat.createdSubmissions).toBe(0)
       expect(repeat.updatedSubmissions).toBe(0)
       expect(repeat.unchanged).toBe(530)
+      items[529].fields.name = '审核后修改的旧投稿'
+      const changed = await syncSubmissions(payload, { baseUrl: 'http://submission.test', token: 'test-token', incremental: true })
+      expect(changed.scanned).toBe(1)
+      expect(changed.updatedSubmissions).toBe(1)
     } finally {
       queueItems = originalItems
       await (payload as any).delete({ collection: 'submissions', where: { submissionId: { in: items.map((item) => item.id) } }, context: { audit: false }, overrideAccess: true })

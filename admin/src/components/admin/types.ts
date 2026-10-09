@@ -61,6 +61,8 @@ export type ReviewInfo = {
 }
 
 export type WorkDoc = {
+  effectiveAuthor?: string
+  metrics?: { views: number; downloads: number }
   categories?: Array<CategoryDoc | ID>
   changeAction?: null | string
   channel: string
@@ -89,6 +91,8 @@ export type WorkDoc = {
 }
 
 export type SubmissionDoc = {
+  effectiveAuthor?: string
+  editorial?: Record<string, unknown>
   fields?: Record<string, unknown>
   id: ID
   media?: MediaDoc | ID
@@ -184,7 +188,8 @@ function cleanAuthor(value: unknown): string {
 }
 
 /** 作品作者：来源作者优先；填「本人」或空时用投稿者。都没有返回空串。 */
-export function authorOf(item: { origin?: Record<string, unknown> | null; submitter?: { github?: string | null; name?: string | null } | null; fields?: Record<string, unknown> }): string {
+export function authorOf(item: { effectiveAuthor?: string; origin?: Record<string, unknown> | null; submitter?: { github?: string | null; name?: string | null } | null; fields?: Record<string, unknown> }): string {
+  if (typeof item.effectiveAuthor === 'string') return item.effectiveAuthor
   const origin = item.origin || {}
   const submitter = cleanAuthor(item.submitter?.name) || cleanAuthor(item.submitter?.github)
     || cleanAuthor(origin.submitter) || cleanAuthor(item.fields?.submitter)

@@ -78,6 +78,7 @@ export interface Config {
     'publish-runs': PublishRun;
     'audit-events': AuditEvent;
     'legacy-snapshots': LegacySnapshot;
+    'bulk-jobs': BulkJob;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -96,6 +97,7 @@ export interface Config {
     'publish-runs': PublishRunsSelect<false> | PublishRunsSelect<true>;
     'audit-events': AuditEventsSelect<false> | AuditEventsSelect<true>;
     'legacy-snapshots': LegacySnapshotsSelect<false> | LegacySnapshotsSelect<true>;
+    'bulk-jobs': BulkJobsSelect<false> | BulkJobsSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -286,6 +288,15 @@ export interface Submission {
     | number
     | boolean
     | null;
+  editorial?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
   review?:
     | {
         [k: string]: unknown;
@@ -327,6 +338,7 @@ export interface Submission {
     | null;
   work?: (number | null) | Work;
   syncedAt?: string | null;
+  queueVersion?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -624,6 +636,49 @@ export interface LegacySnapshot {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "bulk-jobs".
+ */
+export interface BulkJob {
+  id: number;
+  jobId: string;
+  operation: 'write-fields' | 'ai-fill' | 'translate' | 'manual-include';
+  target: 'works' | 'submissions';
+  status: 'queued' | 'running' | 'succeeded' | 'partial' | 'failed' | 'cancelled';
+  ids:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  options?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  results?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  cursor: number;
+  requestedBy: number | User;
+  finishedAt?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
@@ -850,12 +905,14 @@ export interface SubmissionsSelect<T extends boolean = true> {
   sha256?: T;
   media?: T;
   fields?: T;
+  editorial?: T;
   review?: T;
   state?: T;
   stateHistory?: T;
   origin?: T;
   work?: T;
   syncedAt?: T;
+  queueVersion?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -1029,6 +1086,24 @@ export interface LegacySnapshotsSelect<T extends boolean = true> {
   key?: T;
   text?: T;
   eol?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "bulk-jobs_select".
+ */
+export interface BulkJobsSelect<T extends boolean = true> {
+  jobId?: T;
+  operation?: T;
+  target?: T;
+  status?: T;
+  ids?: T;
+  options?: T;
+  results?: T;
+  cursor?: T;
+  requestedBy?: T;
+  finishedAt?: T;
   updatedAt?: T;
   createdAt?: T;
 }

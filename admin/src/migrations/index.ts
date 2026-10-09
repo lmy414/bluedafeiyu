@@ -3,6 +3,8 @@ import * as migration_20260929_052303_remove_original_large from './20260929_052
 import * as migration_20261002_000000_topic_author from './20261002_000000_topic_author';
 import * as migration_20261004_000000_submitter_credit from './20261004_000000_submitter_credit';
 
+import * as migration_20261009_000000_bulk_jobs from './20261009_000000_bulk_jobs';
+
 export const migrations = [
   {
     up: migration_20260929_033658_initial.up,
@@ -23,5 +25,10 @@ export const migrations = [
     up: migration_20261004_000000_submitter_credit.up,
     down: migration_20261004_000000_submitter_credit.down,
     name: '20261004_000000_submitter_credit',
+  },
+  {
+    up: migration_20261009_000000_bulk_jobs.up,
+    down: migration_20261009_000000_bulk_jobs.down,
+    name: '20261009_000000_bulk_jobs',
   },
 ];

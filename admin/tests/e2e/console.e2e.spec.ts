@@ -231,6 +231,43 @@ test('首页人工审核入口直达待处理列表，已处理记录可查', as
   await shot(page, '11-review-handled')
 })
 
+test('多选写字段提交持久任务；页面关闭后执行器处理，重新打开可查结果', async ({ page, request, browser }) => {
+  const auth = await request.post('/cms-api/users/login', { data: OWNER })
+  const headers = { Authorization: 'JWT ' + (await auth.json()).token }
+  const source = (await (await request.get('/cms-api/works?limit=1&depth=0', { headers })).json()).docs[0]
+  const stamp = Date.now(); const keys = [`bulk_browser_${stamp}_a`, `bulk_browser_${stamp}_b`]
+  for (const workId of keys) {
+    const response = await request.post('/cms-api/works', { headers, data: { name: workId, workId, character: source.character, categories: source.categories, channel: 'web', kind: 'submission', status: 'published', needsPublish: false } })
+    expect(response.ok()).toBe(true)
+  }
+  await login(page); await page.goto('/admin/library')
+  await page.getByLabel('搜索').fill(`bulk_browser_${stamp}`)
+  await expect(page.locator('.s3-card')).toHaveCount(2)
+  await page.getByRole('button', { name: '选择本页' }).click()
+  await page.getByRole('button', { name: '批量写字段', exact: true }).click()
+  const modal = page.locator('.s3-modal')
+  await modal.getByLabel('说明', { exact: true }).check()
+  await modal.getByLabel('批量说明', { exact: true }).fill('关闭浏览器后的批量写入')
+  await modal.getByLabel('我已确认所选条目和本次修改范围').check()
+  const responsePromise = page.waitForResponse(r => r.url().endsWith('/bulk/request') && r.request().method() === 'POST')
+  await modal.getByRole('button', { name: '提交后台任务' }).click()
+  const submitted = await (await responsePromise).json()
+  expect(submitted.job.status).toBe('queued')
+  await page.close()
+  // 测试通过独立执行器契约推进，不调用任何前端列表或轮询接口。
+  const workerHeaders = { Authorization: 'Bearer ' + process.env.ADMIN_WORKER_TOKEN }
+  for (let n = 0; n < 2; n++) {
+    const processed = await request.post('/cms-api/bulk/process-next', { headers: workerHeaders })
+    expect(processed.ok()).toBe(true)
+  }
+  const saved = await request.get('/cms-api/works?where[workId][in]=' + keys.join(','), { headers })
+  expect((await saved.json()).docs.every((w: { description: string }) => w.description === '关闭浏览器后的批量写入')).toBe(true)
+  const reopened = await browser.newPage(); await login(reopened); await reopened.goto('/admin/library')
+  await expect(reopened.getByText(/批量写字段 · 完成 · 2\/2/).first()).toBeVisible()
+  await shot(reopened, '12-bulk-completed')
+  await reopened.close()
+})
+
 test('移动端主要页面不横向溢出', async ({ page }) => {
   await login(page)
   await page.setViewportSize({ width: 390, height: 844 })

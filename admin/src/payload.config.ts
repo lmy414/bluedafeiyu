@@ -7,6 +7,7 @@ import sharp from 'sharp'
 import { zh } from 'payload/i18n/zh'
 
 import { AuditEvents } from './collections/AuditEvents'
+import { BulkJobs } from './collections/BulkJobs'
 import { Categories } from './collections/Categories'
 import { Characters } from './collections/Characters'
 import { LegacySnapshots } from './collections/LegacySnapshots'
@@ -98,6 +99,7 @@ export default buildConfig({
     PublishRuns,
     AuditEvents,
     LegacySnapshots,
+    BulkJobs,
   ],
   endpoints,
   editor: lexicalEditor(),

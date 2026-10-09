@@ -1,13 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import fs from 'node:fs/promises'
-import path from 'node:path'
-
 import type { Endpoint, PayloadRequest } from 'payload'
 
 import { FILL_FIELDS, type FillField, authorDescription, httpVisionCaller, missingFields, suggestFill, visionConfig } from '../lib/ai-fill'
 import { writeAudit } from '../lib/audit'
 import { json, readJsonBody, requireWorker } from '../lib/endpoint-auth'
 import {sourceHash} from '../lib/localization.mjs'
+import { readMedia, readOriginal } from '../lib/content-images'
 
 type FillBody = {
   draft?: {name:string;description:string;commentary:string;tags:string[];characterId:string;categoryIds:string[]}
@@ -16,48 +14,6 @@ type FillBody = {
   fields?: string[]
   submissionId?: string
   workId?: string
-}
-
-const MAX_ORIGINAL_BYTES = 30 * 1024 * 1024
-
-function mediaDir(): string {
-  return path.resolve(process.env.MEDIA_DIR || path.resolve(process.cwd(), 'media'))
-}
-
-async function readMedia(payload: any, media: unknown): Promise<Buffer | null> {
-  const id = media && typeof media === 'object' ? (media as any).id : media
-  if (id === null || id === undefined || id === '') return null
-  const doc = typeof media === 'object' && (media as any).filename ? media : await payload.findByID({ collection: 'media', id, depth: 0, overrideAccess: true }).catch(() => null)
-  const filename = String((doc as any)?.filename || '')
-  if (!filename || filename.includes('/') || filename.includes('\\')) return null
-  return fs.readFile(path.join(mediaDir(), filename)).catch(() => null)
-}
-
-async function readOriginal(url: unknown): Promise<Buffer | null> {
-  const text = String(url || '').trim()
-  if (!/^https:\/\//i.test(text)) return null
-  let target = text
-  try {
-    const parsed = new URL(text)
-    const parts = parsed.pathname.split('/').filter(Boolean)
-    if (parsed.hostname === 'github.com' && parts.length > 4 && parts[2] === 'blob') {
-      target = `https://raw.githubusercontent.com/${parts[0]}/${parts[1]}/${parts[3]}/${parts.slice(4).join('/')}`
-    }
-  } catch {
-    return null
-  }
-  try {
-    const response = await fetch(target, { signal: AbortSignal.timeout(30_000) })
-    if (!response.ok) return null
-    const contentType = String(response.headers.get('content-type') || '').toLowerCase()
-    if (contentType && !contentType.startsWith('image/')) return null
-    const length = Number(response.headers.get('content-length') || 0)
-    if (length > MAX_ORIGINAL_BYTES) return null
-    const buffer = Buffer.from(await response.arrayBuffer())
-    return buffer.length > MAX_ORIGINAL_BYTES ? null : buffer
-  } catch {
-    return null
-  }
 }
 
 function normalizeFields(value: unknown): FillField[] | null {
