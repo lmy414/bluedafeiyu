@@ -303,7 +303,6 @@ export function createReviewer(cfg, { client = null, now = () => Date.now(), fet
           controller.abort();
           reject(new Error('AI 审核超时'));
         }, cfg.review.timeoutMs);
-        timer.unref?.();
       });
       try {
         payload = await Promise.race([

@@ -172,7 +172,6 @@ export async function fetchWithLimits(fetchImpl, startUrl, {
         controller.abort();
         reject(new Error(`附件下载超时：${safe}`));
       }, timeoutMs);
-      timer.unref?.();
     });
     let response;
     try {

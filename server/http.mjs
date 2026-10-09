@@ -265,7 +265,6 @@ export function createTurnstileVerifier({
         controller.abort();
         reject(new Error('turnstile verify timeout'));
       }, timeoutMs);
-      timer.unref?.();
     });
     try {
       const body = new URLSearchParams({ secret: String(secret), response: String(token) });
