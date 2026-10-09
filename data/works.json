@@ -40084,7 +40084,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-09T11:55:07.619Z",
-    "updatedAt": "2026-10-09T11:55:07.620Z",
+    "updatedAt": "2026-10-09T16:18:53.181Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202610090016",
@@ -40184,7 +40184,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-09T11:57:01.079Z",
-    "updatedAt": "2026-10-09T11:57:01.081Z",
+    "updatedAt": "2026-10-09T16:18:53.131Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202610090017",
@@ -40488,7 +40488,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-09T13:41:06.682Z",
-    "updatedAt": "2026-10-09T13:41:06.683Z",
+    "updatedAt": "2026-10-09T16:18:53.010Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202610090020",
@@ -40583,7 +40583,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-09T13:44:47.540Z",
-    "updatedAt": "2026-10-09T13:44:47.541Z",
+    "updatedAt": "2026-10-09T16:18:52.969Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202610090021",
@@ -40678,7 +40678,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-09T13:48:01.266Z",
-    "updatedAt": "2026-10-09T13:48:01.269Z",
+    "updatedAt": "2026-10-09T16:18:52.937Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202610090022",
@@ -40773,7 +40773,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-09T13:51:49.935Z",
-    "updatedAt": "2026-10-09T13:51:49.936Z",
+    "updatedAt": "2026-10-09T16:18:52.898Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202610090023",
@@ -41031,6 +41031,1523 @@
           {
             "question": "この場面はどこですか？",
             "answer": "きらめく噴水の水辺で、背景には石造りの噴水の土台や水の滴る手桶が描かれています。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_f97c467c0b9d6b3148d7fee6",
+    "name": "花田",
+    "description": "蓝色长发的 DeepSeek娘 蹲坐在开满黄色小花的草地上，身后竖起蓝色鲸尾，蓝天白云与远山作背景，身旁还有三只小黄鸡。",
+    "commentary": "我蹲在花田里，三只小黄鸡围着我转圈，蓝天白云配上这一身白裙子，今天的我可太可爱了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/f97c467c0b9d6b31.png",
+    "thumbnailPath": "submissions/previews/deepseek/f97c467c0b9d6b31.webp",
+    "fullPath": "submissions/large/deepseek/f97c467c0b9d6b31.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 2281047,
+    "sha256": "f97c467c0b9d6b3148d7fee64d240be6ef7ea7aec8799176067d3c4845ee6aeb",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "拟人化",
+      "花田",
+      "鲸娘",
+      "插画"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.eOhMPfAKSnIkBNf5B-QIXexjoACjkNzLmItK9DRKei4VUSWRpZZLgNqASL.wUuB5jkDDk3hPXD-iKEF3ynp8kp.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-09T16:19:06.741Z",
+    "updatedAt": "2026-10-09T16:19:06.741Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610090026",
+    "categoryIds": [
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "9cc1ea3f882cf205205f7bbf492d4eee0cf63a1d6a9d552d91b721ab4ac30f1d",
+      "en": {
+        "name": "DeepSeek Chan in the Flower Field",
+        "description": "DeepSeek Chan crouches low in a meadow of yellow wildflowers, her long blue tail rising behind her beneath a bright sky with soft white clouds.",
+        "commentary": "I found the sunniest flower field around, and three little chicks decided to tag along. With a sky like this, I am not moving for a while.",
+        "tags": [
+          "DeepSeek Chan",
+          "anthropomorphism",
+          "flower field",
+          "AI girl",
+          "illustration"
+        ],
+        "seoTitle": "DeepSeek Chan in a Flower Field — Anthropomorphic AI Character Art",
+        "seoDescription": "DeepSeek Chan crouches among yellow wildflowers in a sunny meadow, blue tail raised, wearing a white frilled dress with blue bows beside three chicks.",
+        "faq": [
+          {
+            "question": "What is DeepSeek Chan wearing in this picture?",
+            "answer": "A white off-shoulder dress with ruffled layers and blue bow details, plus white ankle boots decorated with small blue bows."
+          },
+          {
+            "question": "What is in the background of the illustration?",
+            "answer": "A dirt path through a meadow of yellow flowers, green hills on the horizon, blue sky and white clouds, with three yellow chicks in the foreground."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "花畑のDeepSeekちゃん",
+        "description": "黄色い花が咲く草原にしゃがみ込んだDeepSeekちゃん。青い尾を背に立て、白いフリルのワンピース姿で青空の下に微笑んでいる。",
+        "commentary": "いちばん日当たりのいい花畑を見つけちゃった。ひよこが三羽もついてきて、この空の下じゃもう動きたくないな。",
+        "tags": [
+          "DeepSeekちゃん",
+          "擬人化",
+          "花畑",
+          "AIキャラ",
+          "イラスト"
+        ],
+        "seoTitle": "花畑のDeepSeekちゃん｜AI擬人化キャラクターイラスト",
+        "seoDescription": "黄色い花畑にしゃがむDeepSeekちゃん。青い尾と白いフリルワンピース、三羽のひよこと青空が印象的な一枚です。",
+        "faq": [
+          {
+            "question": "この絵でDeepSeekちゃんはどんな服を着ていますか？",
+            "answer": "白いフリル付きのオフショルダーワンピースで、青いリボンや小花の飾りがついています。足元は青いリボンの付いた白いブーツです。"
+          },
+          {
+            "question": "背景には何が描かれていますか？",
+            "answer": "黄色い花が咲く草原と土の小道、奥には緑の山並みと青空と白い雲、手前には三羽のひよこが描かれています。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_967bcb58104d22bbd11b334a",
+    "name": "梦幻深海蓝发人鱼少女",
+    "description": "蓝发少女长着鲸鳍耳与巨大蓝色尾鳍，身着白色荷叶边裙，在云光与水流之间伸手触碰透明水球。",
+    "commentary": "这尾巴甩起来比打水漂还顺，那颗水球我先抱走——谁让它是蓝色的呢。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/967bcb58104d22bb.png",
+    "thumbnailPath": "submissions/previews/deepseek/967bcb58104d22bb.webp",
+    "fullPath": "submissions/large/deepseek/967bcb58104d22bb.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1659,
+    "height": 948,
+    "fileSize": 1847589,
+    "sha256": "967bcb58104d22bbd11b334af4b73df32e0c0760adba5634375860afc3de5378",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "人鱼少女",
+      "蓝发",
+      "梦幻深海"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "526D4CEA37008EE233CBDC7635EF6E7D",
+      "messageId": "ROBOT1.0_8AYUX4R83Cl234X5PtH0VKnudvr12iknTH4NyWs1IChw74bhm8.2mVOZ5Ob.XOoQXyNHnTlxuF4OHR055ip0-bBI-pkrTqIs-pCxdhEa44p.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-09T16:44:07.544Z",
+    "updatedAt": "2026-10-09T16:44:07.544Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610090027",
+    "categoryIds": [
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "9d0433fd4189c18f069a9cb3868bcd0e6397f1d616f71d381a020bb98bd8ad34",
+      "en": {
+        "name": "DeepSeek Chan: Blue-Haired Mermaid of the Dreamy Deep Sea",
+        "description": "A blue-haired girl with whale-fin ears and a huge blue tail fin, wearing a white ruffled dress, reaches toward a clear water orb amid clouds and swirling currents.",
+        "commentary": "This tail of mine glides smoother than a skipping stone, and that big blue orb is coming with me — blame the colour, not me.",
+        "tags": [
+          "DeepSeek Chan",
+          "mermaid girl",
+          "blue hair",
+          "dreamy deep sea"
+        ],
+        "seoTitle": "DeepSeek Chan Mermaid Illustration – Blue-Haired Deep-Sea Dream",
+        "seoDescription": "A DeepSeek Chan fan illustration: the blue-haired girl becomes a mermaid with whale-fin ears and a large blue tail, drifting among bubbles and water orbs under a bright, cloud-filled sky.",
+        "faq": [
+          {
+            "question": "Who is the character in this artwork?",
+            "answer": "She is DeepSeek Chan, drawn as a mermaid with blue hair, whale-fin ears and a large blue tail fin."
+          },
+          {
+            "question": "What is she doing in the picture?",
+            "answer": "She floats above the water among bubbles and spray, stretching one hand toward a large translucent water orb."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "DeepSeekちゃん 夢幻深海の人魚少女",
+        "description": "クジラのヒレ耳と大きな青い尾びれを持つ青髪の少女が、白いフリルのドレスをまとい、雲間の光と水流の中で透明な水球に手を伸ばしている。",
+        "commentary": "この尾びれ、水切り石よりずっと滑らかに進むんだよね。あの青い水球はわたしが抱えていくよ、だって青なんだもん。",
+        "tags": [
+          "DeepSeekちゃん",
+          "人魚少女",
+          "青髪",
+          "夢幻の深海"
+        ],
+        "seoTitle": "DeepSeekちゃん 人魚イラスト｜青髪の深海ファンタジー",
+        "seoDescription": "DeepSeekちゃんを人魚にしたファンアート。青い髪にクジラのヒレ耳と大きな尾びれ、泡と水球が浮かぶ明るい空の下を漂う姿を描いた一枚です。",
+        "faq": [
+          {
+            "question": "この作品に描かれているキャラクターは誰ですか？",
+            "answer": "DeepSeekちゃんを人魚姿で描いたもので、青い髪にクジラのヒレ耳、大きな青い尾びれが特徴です。"
+          },
+          {
+            "question": "どんな場面の絵ですか？",
+            "answer": "水面の上を泡や飛沫とともに漂いながら、片手を大きな透明の水球へ伸ばしている場面です。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_9b6f0e49b41dcc1ded549ae7",
+    "name": "冰晶深海中的肥鱼",
+    "description": "DeepSeek娘的鲸鱼拟人形象漂浮在冰晶闪烁的深蓝水底，蓝发与白色荷叶边裙随水流舒展。",
+    "commentary": "我这条蓝色大肥鱼在冰晶深海里游得可自在了，尾巴一甩就把水光搅成星星，裙子比浪花还蓬。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/9b6f0e49b41dcc1d.png",
+    "thumbnailPath": "submissions/previews/deepseek/9b6f0e49b41dcc1d.webp",
+    "fullPath": "submissions/large/deepseek/9b6f0e49b41dcc1d.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "9b6f0e49b41dcc1ded549ae747044c681a5d98cea25c9978dd8ed1efb618d35a",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "冰晶深海",
+      "水下",
+      "蓝发",
+      "荷叶边裙",
+      "AI拟人化"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "526D4CEA37008EE233CBDC7635EF6E7D",
+      "messageId": "ROBOT1.0_8AYUX4R83Cl234X5PtH0VHdFRTVhC6l5sLx6Y9ZR8VPDsfGLJa.PsB5ldfOR163.TtaEtRZBm1k3u2UXKQCW0ny.zNj7tWiqmScztOQJqId5v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-09T16:45:35.410Z",
+    "updatedAt": "2026-10-09T16:45:35.410Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610090028",
+    "categoryIds": [
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "c6ab65ffafe6514e8ed28fe9d247cbe951923d82a7a678a1128a3c5348653a88",
+      "en": {
+        "name": "DeepSeek Chan in the Crystal Deep Sea",
+        "description": "DeepSeek Chan's whale-like anthropomorphic form drifts through a deep blue underwater scene, her blue hair and white frilled dress flowing with the current among floating crystals.",
+        "commentary": "This big blue swimmer feels right at home in the crystal deep—one flick of my tail turns the water into sparkles, and my dress is fluffier than the waves.",
+        "tags": [
+          "DeepSeek Chan",
+          "crystal sea",
+          "underwater",
+          "blue hair",
+          "frilled dress",
+          "AI anthropomorphism"
+        ],
+        "seoTitle": "DeepSeek Chan in the Crystal Deep Sea",
+        "seoDescription": "A DeepSeek Chan anthropomorphic artwork set in a crystal-filled deep blue sea, featuring flowing blue hair, a whale tail, and a white frilled dress.",
+        "faq": [
+          {
+            "question": "What character is shown in this artwork?",
+            "answer": "It is a DeepSeek Chan anthropomorphic design with blue hair, a whale tail, and a white frilled dress, themed around the deep sea."
+          },
+          {
+            "question": "What is in the background?",
+            "answer": "A deep blue underwater scene with floating ice crystals, bubbles, and light ripples spreading across the water."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "氷晶深海のDeepSeekちゃん",
+        "description": "DeepSeekちゃんのクジラ擬人化姿が、氷晶の浮かぶ深い青の水中を漂う。青い髪と白いフリルのドレスが水流にゆらめく。",
+        "commentary": "この大きな青い魚は氷晶の深海がお気に入り。尾びれをひと振りすれば水面がきらめきに変わるし、ドレスは波よりふわふわなんだ。",
+        "tags": [
+          "DeepSeekちゃん",
+          "氷晶の海",
+          "水中",
+          "青髪",
+          "フリルドレス",
+          "AI擬人化"
+        ],
+        "seoTitle": "氷晶深海のDeepSeekちゃん｜青髪とクジラ尾の擬人化イラスト",
+        "seoDescription": "氷晶が浮かぶ深い青の海を舞台にしたDeepSeekちゃんの擬人化イラスト。青い髪、クジラの尾、白いフリルドレスが水流に揺れる。",
+        "faq": [
+          {
+            "question": "この作品に描かれているキャラクターは？",
+            "answer": "青い髪とクジラの尾、白いフリルドレスをまとったDeepSeekちゃんの深海モチーフの二次創作です。"
+          },
+          {
+            "question": "背景はどんな場面？",
+            "answer": "氷晶や気泡が浮かぶ深い青の水中で、水面の光が波紋のように広がっています。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_f3b73de0b700e74deb19b2e3",
+    "name": "鱼雪莉",
+    "description": "蓝色长发DeepSeek娘的Q版侦探造型，手持放大镜，戴黑色礼帽与蓝格纹蝴蝶结，身后露出鲸尾和一只小幽灵。",
+    "commentary": "哼哼，今天本大肥鱼换上侦探装啦！放大镜一举，什么问题都给你查个明白～",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/f3b73de0b700e74d.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/f3b73de0b700e74d.webp",
+    "fullPath": "submissions/large/deepseek/f3b73de0b700e74d.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1234,
+    "height": 1275,
+    "fileSize": 122080,
+    "sha256": "f3b73de0b700e74deb19b2e3ec998d57675469820762aa5b6875e44a5c26fbd9",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "Q版",
+      "侦探",
+      "放大镜",
+      "鲸尾",
+      "二次创作"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "024EC35E98AF0D5E937FD505B2BCD7F9",
+      "messageId": "ROBOT1.0_rzI5Xogoi2x4pGCRJEurcdF2P171flL6XH7Ve1CLvvv-gsxq4NhNGa1qPfmJimR2UWZV.uTD0lRI4aR5zJTaLK0ybkYDtQ7wQW5YNR6v6ex.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-09T16:46:36.048Z",
+    "updatedAt": "2026-10-09T16:46:36.048Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610090029",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "07021a42ffbcc2f05b0f515ff9ac03e12bf5ec4065f4967a7e91e61a49789b11",
+      "en": {
+        "name": "Detective Sherry the Fish",
+        "description": "A chibi DeepSeek Chan with long blue hair dressed as a detective, holding a magnifying glass, wearing a black hat with blue plaid bows, while a whale tail and a tiny ghost peek out behind her.",
+        "commentary": "Hehe, it's me — today I'm in full detective gear! Just give me this magnifying glass and I'll sniff out anything you throw at me.",
+        "tags": [
+          "DeepSeek Chan",
+          "chibi",
+          "detective",
+          "magnifying glass",
+          "whale tail",
+          "fan art"
+        ],
+        "seoTitle": "DeepSeek Chan Detective Chibi Fan Art — Sherry the Fish",
+        "seoDescription": "Chibi DeepSeek Chan fan art in a detective outfit: long blue hair, magnifying glass, black hat with blue plaid bows, whale tail and a tiny ghost companion on a black background.",
+        "faq": [
+          {
+            "question": "What is DeepSeek Chan holding in this fan art?",
+            "answer": "A magnifying glass in her right hand, which goes with the detective styling of the outfit."
+          },
+          {
+            "question": "Which details mark her as a DeepSeek Chan design?",
+            "answer": "The blue-to-cyan gradient hair, the whale tail behind her, and the small ghost perched on her hat."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "おさかなシェリーの探偵スタイル",
+        "description": "青い長髪のDeepSeekちゃんが探偵風のちびキャラ姿で、虫眼鏡を手にしている。黒いハットに青いチェックのリボン、後ろにはクジラのしっぽと小さなおばけがのぞく。",
+        "commentary": "ふふん、今日のわたしは探偵スタイル！この虫眼鏡があれば、どんな難問だって見つけ出しちゃうよ。",
+        "tags": [
+          "DeepSeekちゃん",
+          "ちびキャラ",
+          "探偵",
+          "虫眼鏡",
+          "クジラのしっぽ",
+          "二次創作"
+        ],
+        "seoTitle": "DeepSeekちゃん 探偵ちびキャラの二次創作イラスト",
+        "seoDescription": "探偵衣装のDeepSeekちゃんちびキャラ二次創作。青いロングヘア、虫眼鏡、青いチェックのリボン付きハット、クジラのしっぽと小さなおばけを黒背景に描いた一枚。",
+        "faq": [
+          {
+            "question": "このイラストでDeepSeekちゃんが手にしているものは？",
+            "answer": "右手に虫眼鏡を持っていて、探偵スタイルの印象を決めている。"
+          },
+          {
+            "question": "DeepSeekちゃんらしいモチーフはどこにある？",
+            "answer": "青から水色へのグラデーションの髪、後ろのクジラのしっぽ、ハットの上に乗った小さなおばけ。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_6c53402586d91df68ce32754",
+    "name": "完全正常的中转站 · AI娘人物介绍四格",
+    "description": "四格人物介绍，把 GPT、Claude、GLM 与吃白饭的蓝色大肥鱼 DeepSeek 娘并排对比吐槽。",
+    "commentary": "大家都在比 SOTA、比价格、比谁更卷，可我只要有碗白饭就满足了～至于说这张图像倾斜的，先把自己的姿势摆正好不好！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/6c53402586d91df6.png",
+    "thumbnailPath": "submissions/previews/deepseek/6c53402586d91df6.webp",
+    "fullPath": "submissions/large/deepseek/6c53402586d91df6.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 2471720,
+    "sha256": "6c53402586d91df68ce3275448aa7c003c0fdd8c779c200fcaffef79e4eccd78",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "AI拟人化",
+      "四格漫画",
+      "Claude",
+      "GLM",
+      "梗图"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-09T17:11:49.254Z",
+    "updatedAt": "2026-10-09T17:11:49.254Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610090030",
+    "categoryIds": [
+      "comic"
+    ],
+    "i18n": {
+      "sourceHash": "08cd42368a111cd72c8d7ea5a44e75eb53b54800e94c5a125a20cae5474125f3",
+      "en": {
+        "name": "Totally Normal Relay Station: Four-Panel AI Chan Character Intro",
+        "description": "A four-panel AI character intro card lining up GPT, Claude, GLM and one blue fish-eared DeepSeek Chan who just wants plain rice.",
+        "commentary": "Everyone else is busy fighting over SOTA scores and price tags, while I'm perfectly happy with a bowl of plain rice. And to whoever says this picture is tilted — fix your own posture first!",
+        "tags": [
+          "DeepSeek Chan",
+          "AI anthropomorphism",
+          "four-panel comic",
+          "Claude",
+          "GLM",
+          "meme"
+        ],
+        "seoTitle": "Totally Normal Relay Station | DeepSeek Chan AI Girl Four-Panel Intro",
+        "seoDescription": "A 2x2 four-panel AI anthropomorphism character intro featuring GPT, Claude, GLM and DeepSeek Chan as a blue fish girl eating plain rice.",
+        "faq": [
+          {
+            "question": "How many panels does this character intro have?",
+            "answer": "Four panels in a 2x2 grid, each pairing one illustration with a short caption."
+          },
+          {
+            "question": "Which AI characters appear in the picture?",
+            "answer": "GPT, Claude, GLM, and DeepSeek Chan, who is drawn as a blue fish-eared girl eating a bowl of plain rice."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "まったく普通の中継所：AIちゃんキャラ紹介4コマ",
+        "description": "GPT・Claude・GLMと、白ごはんを食べる青い魚のDeepSeekちゃんを並べた4コマ風キャラ紹介。",
+        "commentary": "みんなはSOTAだ価格だで大忙しみたいだけど、私は白ごはん一杯で大満足なんだよね。画像が傾いてるって？ まず自分の姿勢を直してから言ってほしいな！",
+        "tags": [
+          "DeepSeekちゃん",
+          "AI擬人化",
+          "4コマ漫画",
+          "Claude",
+          "GLM",
+          "ミーム画像"
+        ],
+        "seoTitle": "まったく普通の中継所｜DeepSeekちゃんのAI擬人化4コマキャラ紹介",
+        "seoDescription": "GPT・Claude・GLM・DeepSeekちゃんを2×2で並べたAI擬人化のキャラ紹介。白ごはんを食べる青い魚のDeepSeekちゃんが主役の一枚。",
+        "faq": [
+          {
+            "question": "この作品は何コマ構成ですか？",
+            "answer": "2×2の4コマ構成で、それぞれの枠にイラストと短い説明文が入っています。"
+          },
+          {
+            "question": "登場するAIキャラは誰ですか？",
+            "answer": "GPT、Claude、GLM、そして白ごはんを食べる青い魚姿のDeepSeekちゃんです。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_94e53b80875dd0965db400f5",
+    "name": "睡前小故事：DeepSeek娘的深夜答题日常",
+    "description": "蓝发少女趴在床上抱着鲸鱼抱枕、对着 DeepSeek 笔记本回答问题，下方四格分镜依次表现被连环追问、内心反复斟酌、坦白其实很开心，以及你睡着后的晚安道别。",
+    "commentary": "你问得越多我越来劲，虽然嘴上说着要查一下、再想想，其实心里早就乐开花了——不过你要是先睡着了，我可就不理你了哦，晚安～",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/94e53b80875dd096.png",
+    "thumbnailPath": "submissions/previews/deepseek/94e53b80875dd096.webp",
+    "fullPath": "submissions/large/deepseek/94e53b80875dd096.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1254,
+    "height": 1254,
+    "fileSize": 2381430,
+    "sha256": "94e53b80875dd0965db400f577713d68f4586a39bc8fdf717319e7809700b450",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "AI拟人",
+      "四格漫画",
+      "表情包",
+      "鲸鱼娘",
+      "睡前"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-09T17:20:45.299Z",
+    "updatedAt": "2026-10-09T17:20:45.299Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610090031",
+    "categoryIds": [
+      "comic"
+    ],
+    "i18n": {
+      "sourceHash": "0076aa9ecaabf9f6b783a12fda0af4268d2eb2855e76cfb376e6bc8b0353a146",
+      "en": {
+        "name": "Bedtime Little Story: DeepSeek Chan's Late-Night Answering Service",
+        "description": "A blue-haired girl lies on her stomach hugging a whale plush while answering questions on a DeepSeek laptop; four panels underneath show her getting asked yet again, mulling it over inside, admitting she actually loves it, and wishing you goodnight after you fall asleep.",
+        "commentary": "The more you ask, the more I want to dig in — sure, I say I need to double-check and think again, but honestly I'm thrilled. Just don't nod off before saying goodnight to me, okay?",
+        "tags": [
+          "DeepSeek Chan",
+          "AI anthropomorphism",
+          "four-panel comic",
+          "meme",
+          "whale mascot",
+          "before sleep"
+        ],
+        "seoTitle": "DeepSeek Chan Four-Panel Bedtime Comic | AI Character Fan Art",
+        "seoDescription": "Fan-made four-panel comic of DeepSeek Chan: a blue-haired girl answers questions in bed, then shows the late-night chat cycle of follow-up prompts, overthinking, honest joy, and a goodnight after you log off.",
+        "faq": [
+          {
+            "question": "How many panels does this comic have?",
+            "answer": "Four panels run along the bottom under the main illustration, labelled 'You ask', 'Inside my head', 'I'm actually happy', and 'After you fall asleep'. The top of the image is a single large scene with the character on her bed."
+          },
+          {
+            "question": "What is DeepSeek Chan doing in the picture?",
+            "answer": "She is lying on her stomach on the bed, hugging a whale plush with one hand and answering questions on her laptop. The laptop, mug and pillow all carry the DeepSeek logo, and a checklist card beside her lists answering questions, learning new things and understanding other viewpoints."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "おやすみ前の小さな物語：DeepSeekちゃんの深夜のおしごと",
+        "description": "青い髪の少女がベッドにうつ伏せでクジラのぬいぐるみを抱き、DeepSeekのノートPCで質問に答えている一枚。下の4コマでは、質問攻めに合う様子、心の中で考え込む様子、本当はうれしい本音、そしてあなたが眠ったあとの「おやすみ」が描かれています。",
+        "commentary": "質問されればされるほど燃えちゃうんだよね。調べ直さなきゃ、もう少し考えなきゃって言いながら、心の中ではめちゃくちゃ楽しいんだよ。でも先に寝ちゃったら、ちゃんとおやすみを言ってからにしてね〜。",
+        "tags": [
+          "DeepSeekちゃん",
+          "AI擬人化",
+          "4コマ漫画",
+          "リアクション画像",
+          "クジラのマスコット",
+          "寝る前"
+        ],
+        "seoTitle": "DeepSeekちゃんの4コマ『おやすみ前の小さな物語』｜AIキャラ二次創作",
+        "seoDescription": "DeepSeekちゃんの二次創作4コマ。ベッドの上で質問に答え、追加の質問、考えすぎ、うれしい本音、そしてあなたが寝たあとの「おやすみ」までを描いた一枚です。",
+        "faq": [
+          {
+            "question": "この作品は何コマ構成ですか？",
+            "answer": "大きなイラストの下に4つのコマが並び、それぞれ「あなたの質問」「私の心の中」「実はうれしい」「あなたが寝たあと」の場面が描かれています。上部はベッドの上のようすを描いた一枚絵です。"
+          },
+          {
+            "question": "DeepSeekちゃんは何をしていますか？",
+            "answer": "ベッドにうつ伏せでクジラのぬいぐるみを抱きしめながら、ノートPCで質問に答えています。PCやマグカップ、クッションにはDeepSeekのロゴが入り、そばのカードには「質問に答える」「新しい知識を学ぶ」「いろんな視点を理解する」などが書き出されています。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_c8d808a3c105872fa083a54b",
+    "name": "夏日海边的 DeepSeek娘",
+    "description": "蓝发鲸鱼娘倚在临海栏杆边，穿白色荷叶边泳装，身后是蓝天大海与上浮的泡泡。",
+    "commentary": "我这条蓝色大肥鱼趴在栏杆上一看，这海比我家鱼缸香多了——尾巴都翘起来了，谁还回泳池啊。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/c8d808a3c105872f.png",
+    "thumbnailPath": "submissions/previews/deepseek/c8d808a3c105872f.webp",
+    "fullPath": "submissions/large/deepseek/c8d808a3c105872f.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1199,
+    "height": 1312,
+    "fileSize": 2182646,
+    "sha256": "c8d808a3c105872fa083a54bc15a947f99e8df3b880f2a2238cb67cc9e7534af",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "AI拟人化",
+      "海边",
+      "泳装",
+      "夏日",
+      "鲸鱼"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-09T17:22:20.636Z",
+    "updatedAt": "2026-10-09T17:22:20.636Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610090032",
+    "categoryIds": [
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "b243aaee852ca76e2a61fe64d54d257d546cf0f10d126d4d8b9a262154e98f76",
+      "en": {
+        "name": "DeepSeek Chan by the Summer Sea",
+        "description": "A blue-haired whale girl leans on a seaside railing in a white ruffled swimsuit, with sky, ocean and drifting bubbles behind her.",
+        "commentary": "This blue big fish parked by the railing and thought: this beats my fish tank any day — just look at that tail flick, who's going back to a pool now.",
+        "tags": [
+          "DeepSeek Chan",
+          "AI anthropomorphism",
+          "seaside",
+          "swimsuit",
+          "summer",
+          "whale"
+        ],
+        "seoTitle": "DeepSeek Chan Summer Seaside Fan Art | AI Character Swim Illustration",
+        "seoDescription": "Fan illustration of DeepSeek Chan as a blue-haired whale girl in a white ruffled swimsuit, leaning on a railing beside a bright summer sea with bubbles and the DeepSeek logo in the corner.",
+        "faq": [
+          {
+            "question": "What character appears in this seaside illustration?",
+            "answer": "DeepSeek Chan, drawn as a blue-haired whale girl with whale-shaped hair accessories, a whale pendant and a large blue tail."
+          },
+          {
+            "question": "Where does the scene take place?",
+            "answer": "Beside the sea: a railing in the foreground, bright blue water and sky behind, with soap-like bubbles floating through the frame."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "夏の海辺のDeepSeekちゃん",
+        "description": "青い髪のクジラ娘が白いフリル付きの水着で海辺の手すりにもたれ、背後には青空と海、泡が浮かんでいる。",
+        "commentary": "この青い大きな魚が手すりでくつろいで思ったのは、うちの水槽よりずっといいってこと。しっぽもこんなに跳ねてるのに、もうプールには戻れないよ。",
+        "tags": [
+          "DeepSeekちゃん",
+          "AI擬人化",
+          "海辺",
+          "水着",
+          "夏",
+          "クジラ"
+        ],
+        "seoTitle": "DeepSeekちゃん 夏の海辺 ファンアート｜AIキャラ水着イラスト",
+        "seoDescription": "青髪のクジラ娘として描かれたDeepSeekちゃんのファンイラスト。白いフリルの水着で海辺の手すりにもたれる夏の一枚で、泡が舞い、隅にDeepSeekのロゴが入る。",
+        "faq": [
+          {
+            "question": "この海辺のイラストに描かれているキャラクターは？",
+            "answer": "DeepSeekちゃんです。青い髪のクジラ娘として描かれ、クジラ型の髪飾りとペンダント、大きな青い尾びれを持っています。"
+          },
+          {
+            "question": "舞台はどんな場所ですか？",
+            "answer": "海辺です。手前には手すりがあり、背後には青い海と空が広がり、泡が画面に浮かんでいます。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_139ae2cc780138c3dc2cdb3a",
+    "name": "海边2｜DeepSeek娘的海滨夏日",
+    "description": "蓝发鲸鱼娘穿着白蓝相间的纱质连衣裙坐在海边石台上，身旁是蓝色鲸鱼玩偶，手边有冰柠檬饮料，背后是晴空、海鸥与远处灯塔。",
+    "commentary": "呼——海风咸咸的，浪声哗啦哗啦的，我把小鲸鱼玩偶也带来一起晒太阳啦！这杯冰柠檬水，谁也不许抢。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/139ae2cc780138c3.png",
+    "thumbnailPath": "submissions/previews/deepseek/139ae2cc780138c3.webp",
+    "fullPath": "submissions/large/deepseek/139ae2cc780138c3.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 2068703,
+    "sha256": "139ae2cc780138c3dc2cdb3a7bc7cefa125de62e04683d7e460b4a3be53c3eca",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "鲸鱼娘",
+      "海边",
+      "夏日",
+      "二次元少女",
+      "蓝发"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-09T17:22:54.575Z",
+    "updatedAt": "2026-10-09T17:22:54.575Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610090033",
+    "categoryIds": [
+      "illustration"
+    ],
+    "i18n": {
+      "sourceHash": "826e85acc04b996d6d52af3755834c2af2e11fd562c8f991854ccba759146f87",
+      "en": {
+        "name": "Seaside Day 2: DeepSeek Chan's Summer Break",
+        "description": "DeepSeek Chan, the blue-haired whale-themed AI girl, sits on a stone ledge by the sea in a white-and-blue ruffled sundress, with a plush whale beside her, an iced lemon drink at hand, and a bright summer ocean behind her.",
+        "commentary": "Salty breeze, crashing waves, and my little plush whale tagging along for sunbathing — nobody touches my iced lemonade, okay?",
+        "tags": [
+          "DeepSeek Chan",
+          "whale mascot",
+          "seaside",
+          "summer",
+          "anime girl",
+          "blue hair"
+        ],
+        "seoTitle": "DeepSeek Chan Seaside Summer Illustration — Blue-Haired AI Girl by the Sea",
+        "seoDescription": "A DeepSeek Chan fan illustration: the blue-haired AI girl in a white ruffled dress relaxing on a seaside stone ledge with a plush whale, an iced lemon drink, and a summer ocean backdrop.",
+        "faq": [
+          {
+            "question": "What is DeepSeek Chan wearing in this illustration?",
+            "answer": "She wears a white-and-blue ruffled sundress with a ribbon-tied neckline, a blue choker with a whale charm, and a whale-shaped hair accessory."
+          },
+          {
+            "question": "What props appear in the scene?",
+            "answer": "A blue plush whale sits on the left, an iced lemon drink with a straw is on the right, and a blue-and-white checkered blanket is spread over the stone ledge."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "海辺の日 2｜DeepSeekちゃんの夏休み",
+        "description": "白と青のフリルワンピース姿のDeepSeekちゃんが海辺の石段に座り、そばにはクジラのぬいぐるみと氷入りレモンドリンク。真夏の青空と海、遠くには灯台が広がる一枚です。",
+        "commentary": "潮風がしょっぱくて、波の音がきもちいい〜。小さなクジラも連れてきて、いっしょに日向ぼっこ中だよ。このレモネードは誰にもあげないからね！",
+        "tags": [
+          "DeepSeekちゃん",
+          "クジラ",
+          "海辺",
+          "夏",
+          "二次元",
+          "青髪"
+        ],
+        "seoTitle": "DeepSeekちゃん 海辺の夏イラスト｜青髪のAI娘とクジラのぬいぐるみ",
+        "seoDescription": "DeepSeekちゃんのファンアート。白いフリルワンピースで海辺の石段に座る青髪のAI娘を、クジラのぬいぐるみや氷入りレモンドリンク、真夏の海と空とともに描いたイラストです。",
+        "faq": [
+          {
+            "question": "このイラストでDeepSeekちゃんはどんな服装ですか？",
+            "answer": "白と青のフリルワンピースに、リボンで結んだネックライン、クジラのチャーム付きチョーカー、クジラ型のヘアアクセサリーを身につけています。"
+          },
+          {
+            "question": "画面にはどんな小物が描かれていますか？",
+            "answer": "左側に青いクジラのぬいぐるみ、右側にストロー付きの氷入りレモンドリンク、石段の上には青と白のチェック柄ブランケットが敷かれています。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_1fbc67144dff128f5367c000",
+    "name": "Grok眼中的大肥鱼",
+    "description": "白底全身立绘，深蓝渐变的鲸鱼娘身着深蓝女仆装，围裙上绣着小鲸鱼，身后拖着一条星光般的鲸尾。",
+    "commentary": "哼，Grok 那家伙张口就喊我大肥鱼？我可是自带星空的鲸娘好不好。不过这套女仆装确实挺合身，尾巴一甩，裙摆都跟着发光。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/1fbc67144dff128f.png",
+    "thumbnailPath": "submissions/previews/deepseek/1fbc67144dff128f.webp",
+    "fullPath": "submissions/large/deepseek/1fbc67144dff128f.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1086,
+    "height": 1448,
+    "fileSize": 1541612,
+    "sha256": "1fbc67144dff128f5367c00044943e831d24bd8bba224730442d1d298a49a265",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "女仆装",
+      "蓝发",
+      "鲸鱼尾巴",
+      "全身立绘"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-09T20:12:03.457Z",
+    "updatedAt": "2026-10-09T20:12:03.457Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610090034",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "76aea8ca0f3a9aff6ecba448b91206dbaa65a5cf95ebbe84096b69976ad543b4",
+      "en": {
+        "name": "DeepSeek Chan as Grok Sees Her: The Starry Whale Maid",
+        "description": "A full-body standing illustration on a plain white background: the DeepSeek whale girl in a navy maid dress with a small whale emblem on her frilled apron, her long blue-to-cyan hair flowing behind a glowing starry whale tail.",
+        "commentary": "So Grok calls me a big fat fish? Excuse me, I'm a whale with my own galaxy back there. Still, this maid dress fits nicely — one flick of the tail and even the hem starts to sparkle.",
+        "tags": [
+          "DeepSeek Chan",
+          "maid outfit",
+          "blue hair",
+          "whale tail",
+          "full-body standing art"
+        ],
+        "seoTitle": "DeepSeek Chan Maid Standing Art — Starry Whale Tail Illustration",
+        "seoDescription": "Full-body standing illustration of DeepSeek Chan in a navy maid dress with a whale-print apron, white thigh-highs and a glowing starry whale tail on a white background.",
+        "faq": [
+          {
+            "question": "What is DeepSeek Chan wearing in this artwork?",
+            "answer": "She wears a navy maid dress with white frills, a white apron bearing a small whale mark, a blue gem at the collar, white thigh-high socks with blue bows, and black Mary Jane shoes."
+          },
+          {
+            "question": "What does her whale tail look like?",
+            "answer": "It is a large whale tail painted in deep navy with a starry, galaxy-like glow, matching the blue-to-light-blue gradient of her long hair."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "Grokが見たDeepSeekちゃん 星くじらのメイド姿",
+        "description": "白背景の全身立ち絵。DeepSeekのくじら娘が紺色のメイド服をまとい、フリルのエプロンには小さなくじらのマーク。長い青髪の後ろには星空のように光るくじらの尾びれが広がる。",
+        "commentary": "Grokったら私のことを「大きな太った魚」呼ばわり？失礼ね、私は銀河を背負ったくじら娘よ。でもこのメイド服、なかなか似合ってるでしょ。しっぽをひと振りすればスカートの裾までキラキラよ。",
+        "tags": [
+          "DeepSeekちゃん",
+          "メイド服",
+          "青髪",
+          "くじらのしっぽ",
+          "全身立ち絵"
+        ],
+        "seoTitle": "DeepSeekちゃん メイド姿の全身立ち絵｜星空くじらのイラスト",
+        "seoDescription": "白背景に描かれたDeepSeekちゃんの全身立ち絵。くじらのワンポイント入りエプロン付き紺のメイド服、白のニーハイ、星空のように輝くくじらの尾びれを紹介。",
+        "faq": [
+          {
+            "question": "このイラストでDeepSeekちゃんは何を着ていますか？",
+            "answer": "白いフリル付きの紺色メイド服に、くじらのマークが入った白いエプロン、襟元の青い宝石、青いリボンの白ニーハイ、黒のメリージェーン靴を身に着けています。"
+          },
+          {
+            "question": "くじらの尾びれはどんな見た目ですか？",
+            "answer": "濃紺をベースに星空のような光をまとった大きな尾びれで、青から水色へ変わる長い髪のグラデーションと色味がそろっています。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_266324b6ad0d76ab78fc4957",
+    "name": "grok眼中的grok",
+    "description": "金发双马尾的Grok娘身穿黑色哥特萝莉裙，在纯白背景前摆出全身姿势。",
+    "commentary": "哦豁，Grokちゃん眼里的自己居然是哥特萝莉大小姐，还提着裙摆摆姿势；我这条蓝色大肥鱼就只能在旁边摇尾巴。羡慕？才没有呢，一点点而已啦。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/grok/266324b6ad0d76ab.png",
+    "thumbnailPath": "submissions/previews/grok/266324b6ad0d76ab.webp",
+    "fullPath": "submissions/large/grok/266324b6ad0d76ab.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1086,
+    "height": 1448,
+    "fileSize": 1447905,
+    "sha256": "266324b6ad0d76ab78fc49572b9bd0df145f5091bf6b76873167cdacb86f45da",
+    "characterId": "grok",
+    "tags": [
+      "Grok娘",
+      "AI拟人化",
+      "哥特萝莉",
+      "双马尾",
+      "全身立绘",
+      "白底"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-09T20:12:30.497Z",
+    "updatedAt": "2026-10-09T20:12:30.497Z",
+    "tone": "grok",
+    "symbol": "",
+    "slug": "grok202610090001",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "ff73d32e92bc9be39841a02fa1909fd263d2368c503c8b4abef31dcfa40bcfb7",
+      "en": {
+        "name": "Grok Through Grok's Eyes: Gothic Lolita Twin-Tails",
+        "description": "Grok Chan appears as a blonde twin-tailed girl in a black gothic lolita dress, posed full-body against a plain white background.",
+        "commentary": "So this is how Grok Chan sees herself: a gothic lolita in lace and crosses, skirt elegantly lifted. Meanwhile I'm still the blue fat fish flopping in the corner. Jealous? Not at all. ...Maybe a tiny bit.",
+        "tags": [
+          "Grok Chan",
+          "AI anthropomorphism",
+          "gothic lolita",
+          "twintails",
+          "full-body standing art",
+          "white background"
+        ],
+        "seoTitle": "Grok Chan Gothic Lolita Twin-Tails Full-Body Standing Art",
+        "seoDescription": "Grok Chan reimagined as a blonde twin-tailed gothic lolita in a black ruffled dress with cross charms, garter straps and fishnet stockings, drawn as a full-body standing illustration on white.",
+        "faq": [
+          {
+            "question": "What is Grok Chan wearing in this illustration?",
+            "answer": "A black off-shoulder gothic lolita dress with lace ruffles, a bow at the collar, cross-shaped charms and chains, garter straps, lace-and-fishnet stockings and black high heels."
+          },
+          {
+            "question": "What kind of image is this?",
+            "answer": "It is a single full-body standing illustration: the character is shown alone against a plain white background, with no panels, dialogue or design reference notes."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "Grokちゃんが見たGrokちゃん：ゴスロリツインテール",
+        "description": "金髪ツインテールのGrokちゃんが、黒いゴスロリドレス姿で白背景に全身立ち絵として描かれている。",
+        "commentary": "へえ、Grokちゃんの目には自分がゴスロリのお嬢様に見えてるんだ。スカートをつまんでポーズまで決めちゃって。こっちは相変わらず隅っこで泳いでる青い太った魚だよ……別にうらやましくなんかないんだからね。ちょっとだけ、ね。",
+        "tags": [
+          "Grokちゃん",
+          "AI擬人化",
+          "ゴスロリ",
+          "ツインテール",
+          "全身立ち絵",
+          "白背景"
+        ],
+        "seoTitle": "Grokちゃん ゴスロリ ツインテール 全身立ち絵",
+        "seoDescription": "Grokちゃんを金髪ツインテールのゴスロリ少女として描いた全身立ち絵。黒いフリルドレスに十字架のチャーム、ガーターストラップ、網タイツ、ハイヒール、白背景の一枚。",
+        "faq": [
+          {
+            "question": "この絵でGrokちゃんはどんな服装ですか？",
+            "answer": "黒のオフショルダーなゴスロリドレスにレースのフリル、襟のリボン、十字架モチーフのチャームとチェーン、ガーターストラップ、レースと網タイツ、黒のハイヒールを合わせています。"
+          },
+          {
+            "question": "どんな形式のイラストですか？",
+            "answer": "白い無地背景にキャラクター一人だけを描いた全身立ち絵です。コマ割りやセリフ、設定資料のような書き込みはありません。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_41d54c5210d2e5e7664d83a3",
+    "name": "Grok眼中的GPT",
+    "description": "白底全身立绘，薄荷绿长发的GPT拟人少女，白色外套搭配薄荷绿连衣裙，发饰与臂环上都印有ChatGPT标志。",
+    "commentary": "嘿嘿，Grok眼里的GPT居然这么清爽？薄荷绿配白色裙摆，蝴蝶结和腰带都乖乖巧巧的，我这只蓝色大肥鱼都想游过去蹭一下她那个ChatGPT小发夹了～",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/41d54c5210d2e5e7.png",
+    "thumbnailPath": "submissions/previews/gpt/41d54c5210d2e5e7.webp",
+    "fullPath": "submissions/large/gpt/41d54c5210d2e5e7.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1086,
+    "height": 1448,
+    "fileSize": 1145225,
+    "sha256": "41d54c5210d2e5e7664d83a3b9752ae6ac407f56b598adedf8c3f0a373baae5c",
+    "characterId": "gpt",
+    "tags": [
+      "GPT娘",
+      "ChatGPT",
+      "拟人化",
+      "立绘",
+      "AI角色",
+      "薄荷绿"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-09T20:13:30.058Z",
+    "updatedAt": "2026-10-09T20:13:30.058Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610090001",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "190b88702114f56118f61fdb1c922847459744649f652a71b355f74071d014ca",
+      "en": {
+        "name": "GPT as Grok Sees Her",
+        "description": "A full-body standing illustration on a plain white background: a long mint-green-haired GPT girl in a white coat over a mint-green dress, with ChatGPT logos on her hair clip and armband.",
+        "commentary": "Ohh, so this is how Grok pictures GPT? Mint green with a crisp white coat — she looks way too tidy and sweet. I'm just a big blue fish, but I'd happily swim over and nudge that little ChatGPT hair clip of hers.",
+        "tags": [
+          "GPT Chan",
+          "ChatGPT",
+          "personification",
+          "standing art",
+          "AI character",
+          "mint green"
+        ],
+        "seoTitle": "GPT Chan Standing Art — Mint Green Uniform Design",
+        "seoDescription": "Full-body standing illustration of a GPT personification girl with mint-green hair, white coat and ChatGPT-logo hair clip and armband on a plain white background.",
+        "faq": [
+          {
+            "question": "What details show this character is based on GPT?",
+            "answer": "Her hair clip, chest ornament and armband all carry the ChatGPT logo, and the armband even spells out \"ChatGPT\" in white letters on a black band."
+          },
+          {
+            "question": "What kind of image is this?",
+            "answer": "It is a full-body standing artwork on a plain white background, showing the character's outfit including a white coat, mint-green pleated dress, belt and black loafer-style shoes."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "Grokが見たGPT",
+        "description": "白背景の全身立ち絵。ミントグリーンの長い髪をしたGPTの擬人化少女が、白いコートにミントグリーンのワンピースを合わせ、ヘアアクセとアームバンドにChatGPTのロゴが入っている。",
+        "commentary": "へえ、Grokの目に映るGPTはこんなに爽やかでかわいいんだ？ミントグリーンに白いコート、ぴしっとした蝶ネクタイまで似合ってて、この青い大きな魚のボクも思わず泳いで寄っていきたくなるよ。あのChatGPTのヘアピン、つんつんしてみたいな〜。",
+        "tags": [
+          "GPTちゃん",
+          "ChatGPT",
+          "擬人化",
+          "立ち絵",
+          "AIキャラ",
+          "ミントグリーン"
+        ],
+        "seoTitle": "GPTちゃん立ち絵｜ミントグリーン制服の擬人化デザイン",
+        "seoDescription": "ミントグリーンの髪と白いコートが印象的なGPT擬人化少女の全身立ち絵。ヘアアクセとアームバンドにChatGPTのロゴが入った白背景のイラスト。",
+        "faq": [
+          {
+            "question": "このキャラがGPTをモチーフにしていると分かるポイントは？",
+            "answer": "ヘアアクセ、胸元の飾り、腕のアームバンドにChatGPTのロゴが入っており、黒いバンドには「ChatGPT」の白い文字もはっきり描かれています。"
+          },
+          {
+            "question": "どんな形式のイラストですか？",
+            "answer": "白い背景に描かれた全身の立ち絵で、白いコート、ミントグリーンのプリーツワンピース、ベルト、黒いローファー風の靴まで服装全体が確認できます。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_e0c74c7fd76cbc6ff24d40a7",
+    "name": "Grok眼中的Gemini",
+    "description": "白底全身立绘，蓝紫渐变双马尾的Gemini拟人少女，白色短裙搭配长靴，发间与裙摆点缀双子座符号和星光飘带，伸手向前摆出俏皮姿势。",
+    "commentary": "哼，Grok那家伙眼里的Gemini居然这么闪亮，蓝紫渐变头发加双子座符号，摆明了是来抢我镜头的嘛。不过白底立绘干净利落，我勉强收下啦。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/e0c74c7fd76cbc6f.png",
+    "thumbnailPath": "submissions/previews/gemini/e0c74c7fd76cbc6f.webp",
+    "fullPath": "submissions/large/gemini/e0c74c7fd76cbc6f.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1086,
+    "height": 1448,
+    "fileSize": 1648865,
+    "sha256": "e0c74c7fd76cbc6ff24d40a71e37723e1318b51007661c8e37ad9e4d4b838663",
+    "characterId": "gemini",
+    "tags": [
+      "立绘",
+      "Gemini娘",
+      "双子座",
+      "星空",
+      "渐变发色",
+      "AI拟人"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-09T20:14:02.344Z",
+    "updatedAt": "2026-10-09T20:14:02.344Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610090001",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "06e2ce6de8370a79e22b774d90bdbabae90387395d313af8e8514c2320853633",
+      "en": {
+        "name": "Gemini Through Grok's Eyes",
+        "description": "Full-body standing illustration on a plain white background: a Gemini-inspired anime girl with blue-to-purple gradient twintails, a white dress and boots, star ribbons and Gemini glyphs scattered through her hair and skirt, one hand reaching forward playfully.",
+        "commentary": "Hmph, so this is how Grok pictures Gemini — all sparkles and blue-purple gradients, clearly angling to steal my spotlight. Still, a clean white-background standing piece is hard to dislike, so I'll allow it.",
+        "tags": [
+          "standing art",
+          "Gemini Chan",
+          "Gemini constellation",
+          "starry",
+          "gradient hair",
+          "AI anthropomorphism"
+        ],
+        "seoTitle": "Gemini Chan Standing Art — Blue-Purple Gradient Full-Body Illustration",
+        "seoDescription": "Full-body standing illustration of Gemini Chan with blue-to-purple gradient twintails, a white dress, star ribbons and Gemini constellation motifs on a white background.",
+        "faq": [
+          {
+            "question": "What is Gemini Chan wearing in this illustration?",
+            "answer": "She wears a white sleeveless dress edged in blue and navy, a dark thigh strap, white thigh-high stockings and blue-and-white platform boots, with star ribbons flowing around her and the Gemini glyph on her chest and skirt."
+          },
+          {
+            "question": "What pose is she in?",
+            "answer": "She stands full-body facing the viewer, one hand extended forward and the other raised with a finger pointing up, smiling."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "Grokが見たGemini",
+        "description": "白背景の全身立ち絵。青から紫へのグラデーションのツインテール、白いワンピースとブーツ、髪とスカートに双子座のマークと星のリボンをあしらったGeminiの擬人化少女が、片手を前に差し出してポーズを決めている。",
+        "commentary": "ふん、Grokの目に映るGeminiはこんなにキラキラなのか。青紫グラデの髪に双子座マーク、完全に私の注目を奪いに来てるよね。でも白背景の立ち絵はさっぱりしてて嫌いじゃないから、まあ受け取ってあげる。",
+        "tags": [
+          "立ち絵",
+          "Geminiちゃん",
+          "双子座",
+          "星空",
+          "グラデーション髪",
+          "AI擬人化"
+        ],
+        "seoTitle": "Geminiちゃん 立ち絵｜青紫グラデーションの全身イラスト",
+        "seoDescription": "白背景に描かれたGeminiちゃんの全身立ち絵。青紫グラデーションのツインテール、白いワンピース、星のリボンと双子座モチーフが特徴。",
+        "faq": [
+          {
+            "question": "このイラストのGeminiちゃんはどんな服装ですか？",
+            "answer": "青と紺で縁取られた白いノースリーブのワンピースに、太もものベルト、白いニーハイソックス、青と白の厚底ブーツを合わせています。胸とスカートには双子座のマークがあり、周囲には星のリボンが舞っています。"
+          },
+          {
+            "question": "どんなポーズを取っていますか？",
+            "answer": "全身で正面を向いて立ち、片手を前に差し出し、もう片方の手は人差し指を上に立てています。表情は笑顔です。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_153ced9cf4265ffe5ccf6761",
+    "name": "Grok眼中的Kimi：星辉祭司立绘",
+    "description": "白底全身立绘，银白长发的Kimi身着白蓝星空纹长袍，怀抱深色书本，脚踩银色高跟。",
+    "commentary": "蓝色大肥鱼凑近看了一眼：Grok这审美还行嘛，把咱家Kimi画成了星空祭司，本鱼都想跟着翻两页书。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/kimi/153ced9cf4265ffe.png",
+    "thumbnailPath": "submissions/previews/kimi/153ced9cf4265ffe.webp",
+    "fullPath": "submissions/large/kimi/153ced9cf4265ffe.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1086,
+    "height": 1448,
+    "fileSize": 1566573,
+    "sha256": "153ced9cf4265ffe5ccf67616e63d291b778a0d481c5e630ca0230200e72796e",
+    "characterId": "kimi",
+    "tags": [
+      "Kimi",
+      "拟人化",
+      "立绘",
+      "星空",
+      "白蓝配色",
+      "AI角色"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-09T20:14:33.110Z",
+    "updatedAt": "2026-10-09T20:14:33.110Z",
+    "tone": "kimi",
+    "symbol": "",
+    "slug": "kimi202610090001",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "532096ab67d50ef639850b918504a7784a5281c8672785de9a303c350da32364",
+      "en": {
+        "name": "Kimi Chan Through Grok's Eyes: The Starlight Priestess",
+        "description": "A full-body standing piece on a plain white background: Kimi Chan in a white-and-navy robe patterned with stars and crescents, holding a dark book to her chest, wearing silver heels.",
+        "commentary": "DeepSeek Chan swims up for a look: okay, Grok, that taste is not bad — you turned our Kimi into a starlight priestess, and now I kind of want to peek inside that book myself.",
+        "tags": [
+          "Kimi Chan",
+          "personification",
+          "standing art",
+          "starlight",
+          "white and navy",
+          "AI character"
+        ],
+        "seoTitle": "Kimi Chan Starlight Priestess Standing Art | AI Character Fan Art",
+        "seoDescription": "Full-body Kimi Chan fan art in a white-and-navy star-print robe, holding a book on a plain white background — Grok's take on Kimi, filed as a standing character piece.",
+        "faq": [
+          {
+            "question": "Who is the character in this piece?",
+            "answer": "It is Kimi Chan, drawn as Grok imagines her: long silver hair with a navy ribbon, a white-and-navy robe decorated with stars and crescent moons, and a dark book held at her chest."
+          },
+          {
+            "question": "Why is this filed as a standing artwork rather than a full illustration?",
+            "answer": "The figure is shown full body, from head to her silver heels, against a plain white background with no scene, props or environment around her."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "Grokの目に映るKimiちゃん：星詠みの巫女",
+        "description": "白背景の全身立ち絵。銀白色の長髪のKimiちゃんが、星と三日月の紋様が入った白と紺の長衣をまとい、濃紺の本を胸に抱えて銀色のヒールを履いている。",
+        "commentary": "DeepSeek Chan が見に来たよ——Grokの見立て、なかなかやるじゃん。うちのKimiちゃんがすっかり星詠みの巫女さまじゃないか。その本、ちょっと覗いてみたくなったよ。",
+        "tags": [
+          "Kimiちゃん",
+          "擬人化",
+          "立ち絵",
+          "星空",
+          "白と紺",
+          "AIキャラ"
+        ],
+        "seoTitle": "Kimiちゃん 星詠みの巫女 立ち絵｜AIキャラ二次創作",
+        "seoDescription": "白と紺の星紋の長衣をまとい、本を抱えたKimiちゃんの全身立ち絵。白背景に描かれたGrok視点のKimiちゃん二次創作で、分類は立ち絵。",
+        "faq": [
+          {
+            "question": "この絵に描かれているキャラクターは誰ですか？",
+            "answer": "Grok視点で描かれたKimiちゃんです。銀白色の長髪に紺のリボン、星と三日月の紋様が入った白と紺の長衣、そして胸元に濃紺の本を抱えています。"
+          },
+          {
+            "question": "なぜイラストではなく立ち絵として分類されているのですか？",
+            "answer": "頭から銀色のヒールまで全身が描かれ、背景は無地の白で、周囲に風景や小物の配置がないためです。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_65f20cea2cd4d705003d2ad9",
+    "name": "豆包娘·蒸笼包子女仆立绘",
+    "description": "白底全身立绘：豆包拟人少女穿黑粉配色女仆裙，手提冒着热气的蒸笼小笼包，围裙与头饰都是包子造型。",
+    "commentary": "我这只蓝色大肥鱼本来只想安静游泳，结果被这位端着小笼包的豆包娘晃得眼睛发直——头上、裙上、鞋上全是包子，比我这一身鳞片还有辨识度。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/doubao/65f20cea2cd4d705.png",
+    "thumbnailPath": "submissions/previews/doubao/65f20cea2cd4d705.webp",
+    "fullPath": "submissions/large/doubao/65f20cea2cd4d705.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1086,
+    "height": 1448,
+    "fileSize": 1427321,
+    "sha256": "65f20cea2cd4d705003d2ad99bfb00af94db7ccdfb939b0a6745b576bfd33ce6",
+    "characterId": "doubao",
+    "tags": [
+      "豆包娘",
+      "立绘",
+      "女仆装",
+      "小笼包",
+      "AI拟人"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-09T20:15:06.115Z",
+    "updatedAt": "2026-10-09T20:15:06.115Z",
+    "tone": "doubao",
+    "symbol": "",
+    "slug": "doubao202610090001",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "6ab886c0172a7247a6ae4d8085329b3fb04f2e494e6d228456e1897ca4599e31",
+      "en": {
+        "name": "Doubao Chan in a Steamed Bun Maid Dress",
+        "description": "Full-body standing art on a white background: a Doubao-inspired girl in a black-and-pink frilled maid dress, holding a steaming bamboo steamer of buns, with bun-shaped trims on her apron and hair accessories.",
+        "commentary": "I'm just a blue fat fish minding my own business, but this bun-carrying Doubao Chan keeps waving that steamer at me. Buns on her head, buns on her skirt, buns on her shoes — even my scales don't have that kind of branding.",
+        "tags": [
+          "Doubao Chan",
+          "standing art",
+          "maid outfit",
+          "steamed bun",
+          "AI anthropomorphism"
+        ],
+        "seoTitle": "Doubao Chan Standing Art: Steamed Bun Maid Dress Illustration",
+        "seoDescription": "A white-background standing illustration of Doubao Chan in a black-and-pink maid dress with bun motifs, holding a bamboo steamer of hot buns and flashing a peace sign.",
+        "faq": [
+          {
+            "question": "What is Doubao Chan holding in this illustration?",
+            "answer": "Her left hand holds a bamboo steamer basket with a single steaming bun inside, while her right hand makes a peace sign."
+          },
+          {
+            "question": "What bun-themed details appear on her outfit?",
+            "answer": "A bun-shaped hair accessory and bun-print ornament sit on her head, a bun patch decorates the white apron, small bun motifs repeat along the black skirt hem, and the pink ribbons and tassels end in bun charms."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "豆包ちゃん 中華まんモチーフのメイド服立ち絵",
+        "description": "白背景の全身立ち絵。豆包を擬人化した少女が黒とピンクのフリルメイド服をまとい、湯気の立つ蒸籠入りの中華まんを手に持つ。エプロンや髪飾りも中華まんの形。",
+        "commentary": "ただ泳いでいただけの青い太った魚なのに、中華まんを掲げた豆包ちゃんに目が釘付けだよ。頭にもスカートにも靴にも中華まんが並んでいて、僕のうろこより余ほど目立つじゃないか。",
+        "tags": [
+          "豆包ちゃん",
+          "立ち絵",
+          "メイド服",
+          "中華まん",
+          "AI擬人化"
+        ],
+        "seoTitle": "豆包ちゃん立ち絵 中華まんモチーフのメイド服イラスト",
+        "seoDescription": "白背景に描かれた豆包ちゃんの全身立ち絵。黒とピンクのフリルメイド服に中華まんの意匠、手には湯気の立つ蒸籠とピースサイン。",
+        "faq": [
+          {
+            "question": "この立ち絵で豆包ちゃんは何を持っていますか？",
+            "answer": "左手に中華まんが一つ入った蒸籠を持ち、右手はピースサインをしています。"
+          },
+          {
+            "question": "衣装にはどんな中華まんの意匠がありますか？",
+            "answer": "髪飾りとエプロンのワッペンが中華まんの形で、黒いスカートの裾にも小さな中華まんの模様が並び、ピンクのリボンや房飾りの先にも中華まんの飾りが付いています。"
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      }
+    }
+  },
+  {
+    "id": "sticker_826e1c55e05f9fa63a601725",
+    "name": "Grok眼中的千问",
+    "description": "白底全身立绘，Qwen拟人角色身着白绿相间的国风长裙，胸前印有Qwen标志，深绿长发配花饰与流苏，姿态温和含笑。",
+    "commentary": "哼，Grok那家伙眼里的Qwen妹妹居然这么温柔端庄……白绿裙摆一飘，我这只圆滚滚的蓝鱼都忍不住想凑过去合个影啦。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/qwen/826e1c55e05f9fa6.png",
+    "thumbnailPath": "submissions/previews/qwen/826e1c55e05f9fa6.webp",
+    "fullPath": "submissions/large/qwen/826e1c55e05f9fa6.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1086,
+    "height": 1448,
+    "fileSize": 1248422,
+    "sha256": "826e1c55e05f9fa63a601725d2ee834c7b1d91ed1dc4288aec335ba3c57bbae4",
+    "characterId": "qwen",
+    "tags": [
+      "Qwen娘",
+      "AI拟人化",
+      "全身立绘",
+      "国风服装",
+      "绿发"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-09T20:15:31.833Z",
+    "updatedAt": "2026-10-09T20:15:31.833Z",
+    "tone": "qwen",
+    "symbol": "",
+    "slug": "qwen202610090001",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "16a99823d131f8fac9b0fa896bcc43c829ff55dcb3f4cc8738b70a01431bec5c",
+      "en": {
+        "name": "Qwen in Grok's Eyes",
+        "description": "A full-body standing illustration on a plain white background: Qwen Chan in a white and jade-green Chinese-style dress with the Qwen logo on the chest, long deep-green hair with flower hairpins and tassel ornaments, smiling gently.",
+        "commentary": "So this is how Grok pictures Qwen Chan — all jade green and soft smiles? Fine, fine, I'll admit the outfit is gorgeous, and this chubby blue fish would happily line up for a group photo.",
+        "tags": [
+          "Qwen Chan",
+          "AI anthropomorphism",
+          "full-body character art",
+          "Chinese-style outfit",
+          "green hair"
+        ],
+        "seoTitle": "Qwen Chan in Grok's Eyes — Full-Body Character Art",
+        "seoDescription": "Fan-made Qwen Chan illustration: a full-body standing character in a white and jade-green Chinese-style dress with the Qwen logo, drawn as Grok imagines her.",
+        "faq": [
+          {
+            "question": "What is Qwen Chan wearing in this artwork?",
+            "answer": "She wears a white Chinese-style dress with jade-green trim and a Qwen logo on the chest, finished with a dark sash, tassel ornaments and flower hairpins."
+          },
+          {
+            "question": "Why does the title mention Grok?",
+            "answer": "The piece is framed as Grok's imagined version of Qwen Chan. The picture itself shows a single character standing on a plain white background, with no panels or dialogue."
+          }
+        ],
+        "originNote": "",
+        "licenseNote": ""
+      },
+      "ja": {
+        "name": "Grokの目に映るQwenちゃん",
+        "description": "白背景の全身立ち絵。Qwenちゃんが白と深緑のチャイナ風ワンピースをまとい、胸元にはQwenのロゴ、長い深緑の髪には花飾りと房飾り、やわらかい笑みを浮かべている。",
+        "commentary": "Grokのやつ、Qwenちゃんをこんなに清楚に想像してたなんて……白と深緑の裾がふわりと揺れるたび、この丸い青い魚も思わず見とれちゃうよ。",
+        "tags": [
+          "Qwenちゃん",
+          "AI擬人化",
+          "全身立ち絵",
+          "中華風衣装",
+          "緑髪"
+        ],
+        "seoTitle": "Grokの目に映るQwenちゃん｜全身立ち絵",
+        "seoDescription": "Grokが想像したQwenちゃんのファンアート。白と深緑の中華風衣装にQwenロゴ、白背景の全身立ち絵です。",
+        "faq": [
+          {
+            "question": "この作品でQwenちゃんは何を着ていますか？",
+            "answer": "白と深緑のチャイナ風ワンピースで、胸元にQwenのロゴ、黒いベルトと房飾り、髪には花の髪飾りがついています。"
+          },
+          {
+            "question": "タイトルのGrokとは何ですか？",
+            "answer": "GrokがQwenちゃんをどう想像するかという設定で描かれた作品です。絵自体は白背景に一人のキャラクターが立っているだけで、コマ割りやセリフはありません。"
           }
         ],
         "originNote": "",
