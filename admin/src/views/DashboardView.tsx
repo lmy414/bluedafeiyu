@@ -61,7 +61,8 @@ export function DashboardView() {
     try {
       const result = await mutate<{ stats: Record<string, unknown> }>('/submissions/sync', 'POST')
       await load()
-      setMessage(`同步完成：${JSON.stringify(result.stats)}`)
+      const errors = Array.isArray(result.stats.errors) ? result.stats.errors : []
+      setMessage(`${errors.length ? '同步部分失败，请检查错误' : '同步完成'}：${JSON.stringify(result.stats)}`)
     } catch (error) {
       setMessage(error instanceof Error ? error.message : '同步失败')
     }
@@ -95,7 +96,7 @@ export function DashboardView() {
           <strong>{loading ? '…' : stats.aiReviewing}</strong>
           <small>同步后更新</small>
         </article>
-        <Link className="s3-stat-card s3-stat-card--warning" href="/admin/review">
+        <Link className="s3-stat-card s3-stat-card--warning" href="/admin/review?mode=rejected">
           <span>AI 拒绝 / 转人工</span>
           <strong>{loading ? '…' : stats.needsAttention}</strong>
           <small>可在投稿审核中收录</small>

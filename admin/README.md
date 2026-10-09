@@ -80,6 +80,12 @@ npm run sync:submissions -- --state=auto_passed --source=web
 
 同步会按 `submissionId` 从 `/raw` 读取原图字节，但只在内存中用 sharp 生成 480px、quality 76 的 webp 预览后上传为 `media.mediaRole=preview`；原图字节不落盘、不入 media。同步还会从原图校验/写入 `sha256`、`format`、`mimeType`、`width`、`height`、`fileSize`。`auto_passed` 且 `review.content` 通过 `name`、`description`、`commentary`、`characterId`、`categoryIds`、`tags` 六字段校验的条目，若没有任何作品使用相同 `sha256`，会创建 `status=pending`、`needsPublish=true` 的投稿作品；重复 `sha256` 只建立投稿到作品的关联。AI 拒绝或转人工的条目同样保存预览，但不创建作品。
 
+`--limit` 表示每页条数，整轮同步会沿 `nextCursor` 读到末页。默认每页 200 条，上限 500 条。
+投稿服务必须先升级到支持游标分页的版本。镜像内容没有变化时不重复写库。
+原图释放或预览生成失败时，仍保存投稿元数据。缺少预览的新条目不会自动创建待发布作品。
+同步结果包含 `pages`、`scanned`、`unchanged`、`previewUnavailable` 和逐条 `errors`。
+存在错误时，后台返回 `ok:false`，发布桥接停止本轮发布。
+
 ## 后台界面
 
 后台首页为业务概览，左侧业务导航依次为：概览、投稿审核、作品库、专题、发布、机器人；Payload 默认集合导航保留在下方作为高级入口。
@@ -87,7 +93,7 @@ npm run sync:submissions -- --state=auto_passed --source=web
 | 路由 | 用途 |
 |---|---|
 | `/admin` | 渠道待发布数、AI 拒绝/转人工、待发布改动和最近发布批次 |
-| `/admin/review` | 按渠道和状态审核作品，抽屉内编辑，支持移除/隐藏/收录 |
+| `/admin/review` | 按渠道和状态审核作品，抽屉内编辑，支持移除/隐藏/收录；`?mode=rejected` 直达未处理人工列表，已关联作品的 AI 记录可在“已处理的 AI 记录”页签查看 |
 | `/admin/library` | 筛选、搜索、批量改分类、隐藏、恢复、删除和加入专题 |
 | `/admin/topics-board` | 专题三语文案、封面、作品选择、拖动排序和上线状态 |
 | `/admin/publish` | 发布计划、二次确认、批次轮询和历史记录 |

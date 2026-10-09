@@ -352,7 +352,7 @@ export async function createQueue(cfg, { now = () => Date.now(), reviewTimeoutMs
     return id ? readItem(id) : null;
   }
 
-  async function list({ state, source, sources, limit } = {}) {
+  async function list({ state, source, sources, limit, after } = {}) {
     let items = await listItems();
     if (state) items = items.filter((item) => item.state === state);
     if (source) items = items.filter((item) => item.source === source || (item.sourceIds || []).some((sid) => sid.startsWith(`${source}:`)));
@@ -363,7 +363,10 @@ export async function createQueue(cfg, { now = () => Date.now(), reviewTimeoutMs
       items = items.filter((item) => wanted.has(item.source)
         || (item.sourceIds || []).some((sid) => wanted.has(String(sid).split(':')[0])));
     }
-    items.sort((a, b) => String(a.createdAt).localeCompare(String(b.createdAt)) || String(a.id).localeCompare(String(b.id)));
+    const compare = (a, b) => String(a.createdAt).localeCompare(String(b.createdAt)) || String(a.id).localeCompare(String(b.id));
+    items.sort(compare);
+    // 创建时间和 ID 不随审核变化；用游标分页，避免状态变化令 offset 跳过条目。
+    if (after) items = items.filter((item) => compare(item, after) > 0);
     if (limit && Number.isFinite(limit)) items = items.slice(0, limit);
     return items;
   }

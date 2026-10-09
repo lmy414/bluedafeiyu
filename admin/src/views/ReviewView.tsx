@@ -1,9 +1,10 @@
 'use client'
 
 import { Gutter } from '@payloadcms/ui'
+import { useSearchParams } from 'next/navigation'
 import React, { useEffect, useMemo, useState } from 'react'
 
-import { useAdminApi } from '../components/admin/api'
+import { getAllDocs, useAdminApi } from '../components/admin/api'
 import { BulkBar } from '../components/admin/BulkBar'
 import { CHANNELS, SUBMISSION_STATES, labelOf } from '../components/admin/constants'
 import { PageHeader } from '../components/admin/PageHeader'
@@ -14,7 +15,7 @@ import type { CategoryDoc, CharacterDoc, ListResponse, SubmissionDoc, WorkDoc } 
 import { NO_AUTHOR, authorOf, authorOptions, submissionImageURL } from '../components/admin/types'
 
 type ChannelFilter = 'all' | 'github-issue' | 'qq' | 'web'
-type ReviewMode = 'pending' | 'published' | 'rejected'
+type ReviewMode = 'pending' | 'published' | 'rejected' | 'reviewed'
 
 const CHANNEL_TABS: Array<{ label: string; value: ChannelFilter }> = [
   { label: '全部', value: 'all' },
@@ -27,6 +28,7 @@ const MODE_TABS: Array<{ label: string; value: ReviewMode }> = [
   { label: '待发布', value: 'pending' },
   { label: '已上线（复审）', value: 'published' },
   { label: 'AI 拒绝 / 转人工', value: 'rejected' },
+  { label: '已处理的 AI 记录', value: 'reviewed' },
 ]
 
 function confidenceText(value?: number): string {
@@ -35,8 +37,13 @@ function confidenceText(value?: number): string {
 
 export function ReviewView() {
   const { get, mutate } = useAdminApi()
+  const searchParams = useSearchParams()
   const [channel, setChannel] = useState<ChannelFilter>('all')
-  const [mode, setMode] = useState<ReviewMode>('pending')
+  const [mode, setMode] = useState<ReviewMode>(() => {
+    const requested = searchParams.get('mode')
+    return MODE_TABS.some((tab) => tab.value === requested) ? requested as ReviewMode : 'pending'
+  })
+  const submissionMode = mode === 'rejected' || mode === 'reviewed'
   const [works, setWorks] = useState<WorkDoc[]>([])
   const [submissions, setSubmissions] = useState<SubmissionDoc[]>([])
   const [characters, setCharacters] = useState<CharacterDoc[]>([])
@@ -60,27 +67,24 @@ export function ReviewView() {
       setCharacters(characterResult.docs || [])
       setCategories(categoryResult.docs || [])
 
-      if (mode === 'rejected') {
-        const result = await get<ListResponse<SubmissionDoc>>('/submissions', {
+      if (submissionMode) {
+        const docs = await getAllDocs<SubmissionDoc>(get, '/submissions', {
           depth: 2,
-          limit: 500,
-          pagination: false,
-          sort: '-syncedAt',
+          sort: '-createdAt',
           'where[state][in]': 'auto_rejected,needs_manual',
+          'where[work][exists]': mode === 'reviewed',
           ...(channel === 'all' ? {} : { 'where[source][equals]': channel }),
         })
-        setSubmissions((result.docs || []).filter((submission) => !submission.work))
+        setSubmissions(docs)
         setWorks([])
       } else {
-        const result = await get<ListResponse<WorkDoc>>('/works', {
+        const docs = await getAllDocs<WorkDoc>(get, '/works', {
           depth: 2,
-          limit: 500,
-          pagination: false,
           sort: '-updatedAt',
           'where[status][equals]': mode,
           ...(channel === 'all' ? {} : { 'where[channel][equals]': channel }),
         })
-        setWorks(result.docs || [])
+        setWorks(docs)
         setSubmissions([])
       }
     } catch (error) {
@@ -97,7 +101,7 @@ export function ReviewView() {
   }, [channel, mode])
 
   const authors = useMemo(
-    () => (mode === 'rejected' ? authorOptions(submissions, authorOf) : authorOptions(works, authorOf)),
+    () => (submissionMode ? authorOptions(submissions, authorOf) : authorOptions(works, authorOf)),
     [mode, submissions, works],
   )
   const matchAuthor = (value: string) => !author || (author === NO_AUTHOR ? value === '' : value === author)
@@ -108,7 +112,7 @@ export function ReviewView() {
   }), [author, submissions])
   useEffect(() => setPage(1), [author])
 
-  const count = mode === 'rejected' ? filteredSubmissions.length : filteredWorks.length
+  const count = submissionMode ? filteredSubmissions.length : filteredWorks.length
   const totalPages = Math.max(1, Math.ceil(count / 48))
   const pageWorks = useMemo(() => filteredWorks.slice((page - 1) * 48, page * 48), [page, filteredWorks])
   const pageSubmissions = useMemo(() => filteredSubmissions.slice((page - 1) * 48, page * 48), [page, filteredSubmissions])
@@ -165,7 +169,7 @@ export function ReviewView() {
       {!loading && count === 0 ? <div className="s3-empty">当前筛选下没有条目。</div> : null}
 
       <section className="s3-card-grid">
-        {mode !== 'rejected' && pageWorks.map((work) => (
+        {!submissionMode && pageWorks.map((work) => (
           <WorkCard
             key={String(work.id)}
             onOpen={() => setActiveWork(work)}
@@ -174,7 +178,7 @@ export function ReviewView() {
             work={work}
           />
         ))}
-        {mode === 'rejected' && pageSubmissions.map((submission) => {
+        {submissionMode && pageSubmissions.map((submission) => {
           const image = submissionImageURL(submission)
           const content = submission.fields || {}
           const categoryNames = Array.isArray(content.categoryIds)
@@ -191,7 +195,8 @@ export function ReviewView() {
                     <h3>{submission.title}</h3>
                     <span className="s3-status s3-status--rejected">{SUBMISSION_STATES[submission.state] || submission.state}</span>
                   </div>
-                  <p>{String(content.characterId || '未设置角色')}</p>
+                  <p>{String(content.characterId || content.character || '未设置角色')}</p>
+                  {submission.work ? <p className="s3-card-meta">已关联作品：{typeof submission.work === 'object' ? submission.work.name : String(submission.work)}</p> : null}
                   <p className="s3-card-meta">{labelOf(CHANNELS, submission.source)} · {categoryNames.length ? categoryNames.join(' / ') : '未分类'}</p>
                   <p className="s3-card-confidence">AI 置信度：{confidenceText(submission.review?.confidence)}</p>
                   <p className="s3-card-meta">AI 理由：{String(submission.review?.reason || submission.review?.summary || '未记录')}</p>
@@ -203,7 +208,7 @@ export function ReviewView() {
       </section>
       <Pagination page={page} setPage={setPage} totalPages={totalPages} />
 
-      {mode !== 'rejected' ? (
+      {!submissionMode ? (
         <BulkBar count={selected.length}>
           {mode === 'pending' ? <button className="s3-button s3-button--danger" onClick={() => void bulk('remove')} type="button">批量移除</button> : null}
           {mode === 'published' ? <button className="s3-button s3-button--warning" onClick={() => void bulk('hide')} type="button">批量隐藏</button> : null}

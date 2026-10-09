@@ -188,6 +188,10 @@ async function syncSubmissions(cfg, fetchImpl) {
     const detail = typeof sync.data === 'object' && sync.data ? (sync.data.error || sync.data.message || '') : sync.data;
     throw new Error(`后台同步投稿 HTTP ${sync.response.status}${detail ? `：${detail}` : ''}`);
   }
+  const errors = sync.data?.stats?.errors;
+  if (sync.data?.ok === false || (Array.isArray(errors) && errors.length)) {
+    throw new Error(`后台同步投稿部分失败：${Array.isArray(errors) ? errors.join('；') : '未知错误'}`);
+  }
 }
 
 async function requestPublish(cfg, fetchImpl) {

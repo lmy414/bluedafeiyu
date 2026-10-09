@@ -87,7 +87,7 @@ function initialForm(
 
   const submission = item.submission
   const reviewContent = record(submission.review?.content)
-  const source = Object.keys(reviewContent).length ? reviewContent : record(submission.fields)
+  const source = { ...record(submission.fields), ...reviewContent }
   const rawCategories = Array.isArray(source.categoryIds) ? source.categoryIds : submission.fields?.categoryId ? [submission.fields.categoryId] : []
   const categoryIds = rawCategories
     .map((value) => {
@@ -153,7 +153,7 @@ export function WorkDrawer({
     }).then((result) => setEvents(result.docs || []))
   }, [auditTarget, get])
 
-  const review = work?.review || submission?.review
+  const review = submission?.review || work?.review
   const image = work ? fullImageURL(work) : submission ? submissionImage(submission) : undefined
   const originalURL = work ? workOriginalURL(work) : undefined
   const title = work?.name || submission?.title || '未命名投稿'

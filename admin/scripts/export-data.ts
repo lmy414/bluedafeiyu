@@ -27,7 +27,7 @@ const texts = snapshot ? (await buildPublishSnapshot(payload, { runId: 'roundtri
 if (againstHead) {
   const mismatches: string[] = []
   for (const relativePath of SITE_DATA_FILES) {
-    const current = execFileSync('git', ['show', `HEAD:${relativePath}`], { cwd: outDir, encoding: 'utf8' })
+    const current = execFileSync('git', ['show', `HEAD:${relativePath}`], { cwd: outDir, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 })
     if (current !== texts[relativePath]) mismatches.push(relativePath)
   }
   console.log(JSON.stringify({ target: 'HEAD', mismatched: mismatches, matched: SITE_DATA_FILES.filter((file) => !mismatches.includes(file)) }, null, 2))

@@ -57,12 +57,12 @@ const syncHandler = async (req: PayloadRequest): Promise<Response> => {
   const url = new URL(req.url || 'http://localhost')
   const stats = await syncSubmissions(req.payload, {
     dryRun: Boolean(body.dryRun),
-    limit: Number(body.limit || url.searchParams.get('limit') || 500),
+    limit: Number(body.limit || url.searchParams.get('limit') || 200),
     source: body.source || url.searchParams.get('source') || undefined,
     state: body.state || url.searchParams.get('state') || undefined,
   })
   await writeAudit(req, { action: 'submissions.sync', after: stats, targetId: req.user ? String((req.user as any).id) : 'worker', targetType: 'submissions' })
-  return json({ ok: true, stats })
+  return json({ ok: stats.errors.length === 0, stats })
 }
 
 export const SubmissionsSyncEndpoint: Endpoint = { handler: syncHandler, method: 'post', path: '/sync' }

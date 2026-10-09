@@ -139,7 +139,7 @@ received ──review.start──▶ reviewing ──review.pass──▶ auto_p
 | 方法 | 路径 | 用途 |
 | --- | --- | --- |
 | `GET` | `/api/v1/health` `/api/v1/stats` | 脱敏摘要与计数 |
-| `GET` | `/api/v1/items?state=&source=&limit=` | 列表 |
+| `GET` | `/api/v1/items?state=&source=&limit=&cursor=` | 游标分页列表；响应含 `nextCursor`，为 `null` 时已到末页 |
 | `GET` | `/api/v1/items/<id>` | 条目详情 |
 | `GET` | `/api/v1/items/<id>/raw` | 原图（附件下载、`nosniff`）；已释放返回 410 |
 | `POST` | `/api/v1/items/<id>/release-original` | 删除私有原图并记录 `{reason,rawUrl}`；重复调用幂等 |
@@ -148,6 +148,10 @@ received ──review.start──▶ reviewing ──review.pass──▶ auto_p
 | `POST` | `/api/v1/review` | 批量审核 `{ids:[...]}` 或待审队列 |
 | `POST` | `/api/v1/pull-issues` | 拉取 Issue 附件 |
 | `POST` | `/api/v1/recover` | 恢复卡住的审核 |
+
+管理列表按 `createdAt`、`id` 升序排列，游标记录这两个稳定字段。
+每页默认 200 条，上限 10,000 条。客户端保留 `state` 和 `source` 筛选，沿 `nextCursor` 读取后续页。
+审核状态变化不会改变游标位置。非法游标返回 400。
 
 ## 已实现与线上状态
 

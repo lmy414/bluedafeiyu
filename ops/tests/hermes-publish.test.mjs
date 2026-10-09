@@ -18,7 +18,7 @@ async function startBackend(t, state) {
       res.end(JSON.stringify(body));
     };
     if (req.method === 'POST' && url.pathname === '/cms-api/submissions/sync') {
-      return send(state.syncStatus || 200, { ok: true });
+      return send(state.syncStatus || 200, state.syncBody || { ok: true });
     }
     if (req.method === 'GET' && url.pathname === '/cms-api/publish/plan') {
       return send(200, state.plan);
@@ -115,6 +115,14 @@ test('--sync-only：只同步，stdout 为空', async (t) => {
   assert.equal(result.out, '');
   assert.deepEqual(backend.calls.map((call) => call.path), ['/cms-api/submissions/sync']);
   assert.equal(backend.calls[0].body.constructor, Object);
+});
+
+test('同步 HTTP 200 但有逐条错误时停止发布，不静默吞掉错误', async (t) => {
+  const backend = await startBackend(t, { syncBody: { ok: false, stats: { errors: ['sub_bad: 预览失败'] } }, plan: { hasChanges: true } });
+  const result = await capture((io) => main(['--sync-first'], { env: envFor(backend), stdout: io.stdout, stderr: io.stderr }));
+  assert.equal(result.code, 1);
+  assert.match(result.err, /同步投稿部分失败.*sub_bad/);
+  assert.deepEqual(backend.calls.map((call) => call.path), ['/cms-api/submissions/sync']);
 });
 
 test('--sync-only：同步失败退出 1 且 stdout 为空', async (t) => {

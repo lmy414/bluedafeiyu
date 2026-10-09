@@ -500,9 +500,10 @@ describe('topics upsert handler（真实 Payload + 内存 SQLite）', () => {
 
   it('真实库中 bot 不能把已关联作品的 active 专题改草稿', async () => {
     const character = await live().create({ collection: 'characters', data: { characterId: 'upsert-char', name: '测试角色', status: 'active' }, context: { audit: false }, overrideAccess: true })
+    const category = await live().create({ collection: 'categories', data: { categoryId: 'upsert-category', name: '测试类型', status: 'active' }, context: { audit: false }, overrideAccess: true })
     const work = await live().create({
       collection: 'works',
-      data: { workId: 'sticker_upsert_work', name: '测试作品', kind: 'submission', channel: 'manual', character: character.id, status: 'published' },
+      data: { workId: 'sticker_upsert_work', name: '测试作品', kind: 'submission', channel: 'manual', character: character.id, categories: [category.id], status: 'published' },
       context: { audit: false, skipNeedsPublish: true },
       overrideAccess: true,
     })

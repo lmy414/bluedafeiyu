@@ -35,6 +35,17 @@ jobs:
         working-directory: admin
         run: npm ci --no-audit --no-fund
 
+      - name: Test submission service and admin
+        env:
+          DATABASE_URL: file:${{ runner.temp }}/admin-tests.db
+          MEDIA_DIR: ${{ runner.temp }}/admin-test-media
+          PAYLOAD_SECRET: ci-admin-test-secret
+        run: |
+          node --test "server/**/*.test.mjs" ops/tests/hermes-publish.test.mjs ops/hermes/tests/hermes.test.mjs
+          cd admin
+          npm run test:int -- --maxWorkers=1
+          npx tsc --noEmit
+
       - name: Build Next.js and Payload
         working-directory: admin
         run: npm run build

@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import crypto from 'node:crypto'
+import { isDeepStrictEqual } from 'node:util'
 import { validateI18n } from './localization.mjs'
 import fs from 'node:fs/promises'
 import os from 'node:os'
@@ -33,11 +34,16 @@ function sha256(buffer: Buffer): string {
 }
 
 function normalizeDigest(value: unknown): string {
-  return String(value || '').trim().toLowerCase()
+  return String(value || '')
+    .trim()
+    .toLowerCase()
 }
 
 function normalizeImageFormat(value: unknown): string {
-  const format = String(value || '').trim().toLowerCase().replace(/^\./, '')
+  const format = String(value || '')
+    .trim()
+    .toLowerCase()
+    .replace(/^\./, '')
   return format === 'jpeg' ? 'jpg' : format
 }
 
@@ -53,7 +59,9 @@ function normalizeIso(value: unknown): string | null {
 }
 
 function mimeForFormat(format: string, item: any): string {
-  const explicit = String(item.mimeType || '').trim().toLowerCase()
+  const explicit = String(item.mimeType || '')
+    .trim()
+    .toLowerCase()
   if (explicit) return explicit
   if (format === 'jpg' || format === 'jpeg') return 'image/jpeg'
   if (format === 'apng') return 'image/apng'
@@ -81,7 +89,7 @@ export async function prepareSubmissionPreview(buffer: Buffer, item: any): Promi
   const orientation = Number(metadata.orientation || 1)
   const rotated = orientation >= 5 && orientation <= 8
   const width = rotated ? metadata.height : metadata.width
-  const height = rotated ? metadata.width : (metadata.pageHeight || metadata.height)
+  const height = rotated ? metadata.width : metadata.pageHeight || metadata.height
   const format = originalFormat(item, metadata)
   const isAnimated = Boolean(metadata.pages && metadata.pages > 1) || format === 'gif' || format === 'apng'
 
@@ -118,7 +126,10 @@ function textOk(value: unknown, max: number, required = false): boolean {
   return value.length <= max
 }
 
-export function validateContent(content: unknown, vocabulary: { characterIds: Set<string>; categoryIds: Set<string> }): { ok: true; value: any } | { ok: false; errors: string[] } {
+export function validateContent(
+  content: unknown,
+  vocabulary: { characterIds: Set<string>; categoryIds: Set<string> },
+): { ok: true; value: any } | { ok: false; errors: string[] } {
   if (!content || typeof content !== 'object' || Array.isArray(content)) return { ok: false, errors: ['content 不是对象'] }
   const object = content as Record<string, unknown>
   const keys = Object.keys(object)
@@ -154,11 +165,17 @@ export function validateContent(content: unknown, vocabulary: { characterIds: Se
   }
   if (errors.length) return { ok: false, errors }
   let i18n
-  if ('i18n' in object) { try { i18n = validateI18n(object.i18n, object) } catch(error) { return {ok:false,errors:['content.i18n: '+(error as Error).message]} } }
+  if ('i18n' in object) {
+    try {
+      i18n = validateI18n(object.i18n, object)
+    } catch (error) {
+      return { ok: false, errors: ['content.i18n: ' + (error as Error).message] }
+    }
+  }
   return {
     ok: true,
     value: {
-      ...(i18n ? {i18n} : {}),
+      ...(i18n ? { i18n } : {}),
       name: String(object.name).trim(),
       description: String(object.description).trim(),
       commentary: String(object.commentary).trim(),
@@ -170,13 +187,13 @@ export function validateContent(content: unknown, vocabulary: { characterIds: Se
 }
 
 async function requestJson(token: string, url: string): Promise<any> {
-  const response = await fetch(url, { headers: { Authorization: `Bearer ${token}` } })
+  const response = await fetch(url, { headers: { Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(30_000) })
   if (!response.ok) throw new Error(`投稿服务请求失败 ${response.status}：${await response.text()}`)
   return response.json()
 }
 
 async function requestBytes(token: string, url: string): Promise<Buffer> {
-  const response = await fetch(url, { headers: { Authorization: `Bearer ${token}` } })
+  const response = await fetch(url, { headers: { Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(30_000) })
   if (!response.ok) {
     const error = new Error(`读取投稿原图失败 ${response.status}`) as Error & { status?: number }
     error.status = response.status
@@ -219,154 +236,217 @@ async function ensureSubmissionMedia(payload: Payload, item: any, preview: Submi
   }
 }
 
-export async function syncSubmissions(payload: Payload, options: { baseUrl?: string; dryRun?: boolean; limit?: number; source?: string; state?: string; token?: string } = {}) {
+async function* submissionPages(token: string, baseUrl: string, query: URLSearchParams) {
+  const seen = new Set<string>()
+  while (true) {
+    const list = await requestJson(token, `${baseUrl}/api/v1/items?${query.toString()}`)
+    if (!Array.isArray(list.items)) throw new Error('投稿列表响应缺少 items，拒绝报告同步成功')
+    if (!('nextCursor' in list) && list.items.length >= Number(query.get('limit'))) {
+      throw new Error('投稿服务尚不支持分页，请先升级投稿服务，避免漏同步')
+    }
+    yield list.items as any[]
+    if (!list.nextCursor) break
+    if (typeof list.nextCursor !== 'string' || seen.has(list.nextCursor)) throw new Error('投稿分页游标没有前进')
+    seen.add(list.nextCursor)
+    query.set('cursor', list.nextCursor)
+  }
+}
+
+function relationKey(value: any): string | null {
+  return value ? String(typeof value === 'object' ? value.id : value) : null
+}
+
+function mirrorUnchanged(existing: any, data: Record<string, any>): boolean {
+  return Object.entries(data).every(([key, value]) => {
+    if (key === 'syncedAt') return true
+    if (key === 'media' || key === 'work') return relationKey(existing[key]) === relationKey(value)
+    if (key === 'sourceIds')
+      return isDeepStrictEqual(
+        (existing[key] || []).map((entry: any) => entry.value),
+        value.map((entry: any) => entry.value),
+      )
+    return isDeepStrictEqual(existing[key] ?? null, value ?? null)
+  })
+}
+
+export async function syncSubmissions(
+  payload: Payload,
+  options: { baseUrl?: string; dryRun?: boolean; limit?: number; source?: string; state?: string; token?: string } = {},
+) {
   const baseUrl = String(options.baseUrl || process.env.SUBMISSION_ADMIN_API_URL || 'http://127.0.0.1:8788').replace(/\/+$/, '')
   const token = options.token || process.env.SUBMISSION_ADMIN_TOKEN || ''
   if (!token) throw new Error('缺少 SUBMISSION_ADMIN_TOKEN')
-  const limit = Number.isSafeInteger(options.limit) && Number(options.limit) > 0 ? Number(options.limit) : 500
+  // limit 是单页大小，不是整轮上限；所有来源、所有状态都须遍历到末页。
+  const limit = Number.isSafeInteger(options.limit) && Number(options.limit) > 0 ? Math.min(Number(options.limit), 500) : 200
   const query = new URLSearchParams({ limit: String(limit) })
   if (options.state) query.set('state', options.state)
   if (options.source) query.set('source', options.source)
-  const list = await requestJson(token, `${baseUrl}/api/v1/items?${query.toString()}`)
-  const items = Array.isArray(list.items) ? list.items : []
 
-  const characterResult = await (payload as any).find({ collection: 'characters', where: { status: { equals: 'active' } }, limit: 1000, depth: 0, overrideAccess: true })
-  const categoryResult = await (payload as any).find({ collection: 'categories', where: { status: { equals: 'active' } }, limit: 1000, depth: 0, overrideAccess: true })
+  const characterResult = await (payload as any).find({
+    collection: 'characters',
+    where: { status: { equals: 'active' } },
+    limit: 1000,
+    depth: 0,
+    overrideAccess: true,
+  })
+  const categoryResult = await (payload as any).find({
+    collection: 'categories',
+    where: { status: { equals: 'active' } },
+    limit: 1000,
+    depth: 0,
+    overrideAccess: true,
+  })
   const vocabulary = {
     characterIds: new Set(characterResult.docs.map((doc: any) => String(doc.characterId)) as string[]),
     categoryIds: new Set(categoryResult.docs.map((doc: any) => String(doc.categoryId)) as string[]),
   }
-  const stats = { createdSubmissions: 0, updatedSubmissions: 0, createdWorks: 0, linkedWorks: 0, skipped: 0, errors: [] as string[] }
+  const stats = {
+    pages: 0,
+    scanned: 0,
+    unchanged: 0,
+    previewUnavailable: 0,
+    createdSubmissions: 0,
+    updatedSubmissions: 0,
+    createdWorks: 0,
+    linkedWorks: 0,
+    skipped: 0,
+    errors: [] as string[],
+  }
 
-  for (const [index, item] of items.entries()) {
-    try {
-      const submissionId = String(item.id)
-      const existingSubmission = await findOne(payload, 'submissions', 'submissionId', submissionId)
-      const queuedDigest = normalizeDigest(item.sha256)
-      const existingWork = queuedDigest ? await findOne(payload, 'works', 'sha256', queuedDigest) : null
-      let linkedWorkId = existingWork?.id
-      let mediaId: number | string | null = existingSubmission?.media || null
-      let preview: SubmissionPreview | null = null
-      let content: any = null
+  for await (const items of submissionPages(token, baseUrl, query)) {
+    stats.pages += 1
+    for (const item of items) {
+      stats.scanned += 1
+      try {
+        const submissionId = String(item.id)
+        const existingSubmission = await findOne(payload, 'submissions', 'submissionId', submissionId)
+        const queuedDigest = normalizeDigest(item.sha256)
+        const existingWork = queuedDigest ? await findOne(payload, 'works', 'sha256', queuedDigest) : null
+        let linkedWorkId = existingWork?.id || existingSubmission?.work
+        let mediaId: number | string | null = existingSubmission?.media || existingWork?.preview || null
+        let preview: SubmissionPreview | null = null
+        let content: any = null
 
-      if (!mediaId && !options.dryRun) {
+        if (!mediaId && !options.dryRun) {
+          try {
+            if (item.original?.released) throw Object.assign(new Error('原图已释放'), { status: 410 })
+            const raw = await requestBytes(token, `${baseUrl}/api/v1/items/${encodeURIComponent(submissionId)}/raw`)
+            preview = await prepareSubmissionPreview(raw, item)
+            mediaId = await ensureSubmissionMedia(payload, item, preview, false)
+          } catch (error) {
+            stats.previewUnavailable += 1
+            if ((error as any)?.status !== 410) stats.errors.push(`${submissionId} 预览失败：${(error as Error).message}`)
+            // 缺图也必须镜像投稿元数据；不能让人工条目从后台消失。
+            // 未生成预览的 AI 通过条目不创建作品，下一轮可以重试。
+          }
+        } else if (!mediaId) {
+          mediaId = `dry-media-${queuedDigest.slice(0, 12)}`
+        }
+        const digest = preview?.sha256 || queuedDigest || String(existingWork?.sha256 || '')
+        if (digest && queuedDigest && digest !== queuedDigest) throw new Error(`投稿 sha256 不一致：${submissionId}`)
+
         try {
-          const raw = await requestBytes(token, `${baseUrl}/api/v1/items/${encodeURIComponent(submissionId)}/raw`)
-          preview = await prepareSubmissionPreview(raw, item)
-          mediaId = await ensureSubmissionMedia(payload, item, preview, false)
+          if (item.state === 'auto_passed' && !existingWork && !linkedWorkId && mediaId && !item.original?.released) {
+            const check = validateContent(item.review?.content, vocabulary)
+            if (!check.ok) {
+              stats.skipped += 1
+              console.warn(`[同步] ${submissionId} 内容未通过：${check.errors.join('；')}`)
+            } else {
+              content = check.value
+              const workId = `sticker_${digest.slice(0, 24)}`
+              if (!digest) throw new Error(`投稿 ${submissionId} 缺少 sha256`)
+              if (options.dryRun) {
+                linkedWorkId = `dry-work-${digest.slice(0, 24)}`
+              } else {
+                const createdAt = normalizeIso(item.createdAt) || new Date().toISOString()
+                const created = await (payload as any).create({
+                  collection: 'works',
+                  data: {
+                    workId,
+                    name: content.name,
+                    description: content.description,
+                    commentary: content.commentary,
+                    kind: 'submission',
+                    channel: normalizeSource(item.source),
+                    submissionId,
+                    sha256: digest,
+                    format: preview?.format,
+                    mimeType: preview?.mimeType,
+                    isAnimated: preview?.isAnimated,
+                    width: preview?.width,
+                    height: preview?.height,
+                    fileSize: preview?.fileSize,
+                    character: characterResult.docs.find((doc: any) => doc.characterId === content.characterId)?.id,
+                    categories: content.categoryIds.map((id: string) => categoryResult.docs.find((doc: any) => doc.categoryId === id)!.id),
+                    tags: content.tags.map((value: string) => ({ value })),
+                    preview: mediaId || undefined,
+                    status: 'pending',
+                    needsPublish: true,
+                    changeAction: 'add',
+                    review: item.review || null,
+                    origin: item.origin || {},
+                    submitter: submissionAttribution(item.fields || {}) || undefined,
+                    legacySource: 'submission-sync',
+                    legacyData: { createdAt, updatedAt: createdAt },
+                    createdAt,
+                    updatedAt: createdAt,
+                  },
+                  context: { audit: false, skipNeedsPublish: true, skipFieldAccess: true },
+                  overrideAccess: true,
+                })
+                linkedWorkId = created.id
+              }
+              stats.createdWorks += 1
+            }
+          } else if (existingWork) {
+            stats.linkedWorks += 1
+          }
         } catch (error) {
-          if ((error as any)?.status !== 410) throw error
-          const existingPreview = existingSubmission?.media || existingWork?.preview
-          if (!existingPreview) {
-            stats.skipped += 1
-            console.warn(`[同步] ${submissionId} 原图已释放且 Payload 中没有预览，跳过`)
-            continue
-          }
-          mediaId = typeof existingPreview === 'object' ? existingPreview.id : existingPreview
-          stats.skipped += 1
-          console.warn(`[同步] ${submissionId} 原图已释放，使用 Payload 已有预览`)
+          stats.errors.push(`${submissionId} 收录失败：${(error as Error).message}`)
         }
-      } else if (!mediaId) {
-        mediaId = `dry-media-${queuedDigest.slice(0, 12)}`
-      }
-      const digest = preview?.sha256 || queuedDigest || String(existingWork?.sha256 || '')
-      if (digest && queuedDigest && digest !== queuedDigest) throw new Error(`投稿 sha256 不一致：${submissionId}`)
 
-      if (item.state === 'auto_passed' && !existingWork) {
-        const check = validateContent(item.review?.content, vocabulary)
-        if (!check.ok) {
-          stats.skipped += 1
-          console.warn(`[同步] ${submissionId} 内容未通过：${check.errors.join('；')}`)
+        const submissionData: Record<string, any> = {
+          title: item.fields?.name || `投稿 ${submissionId}`,
+          submissionId,
+          source: normalizeSource(item.source),
+          sourceIds: (Array.isArray(item.sourceIds) ? item.sourceIds : []).map((value: unknown) => ({ value: String(value) })),
+          sha256: digest || undefined,
+          media: mediaId || undefined,
+          fields: item.fields || {},
+          review: item.review || null,
+          state: item.state || 'received',
+          stateHistory: item.stateHistory || [],
+          origin: item.origin || {},
+          work: linkedWorkId || undefined,
+          syncedAt: new Date().toISOString(),
+        }
+
+        if (existingSubmission && mirrorUnchanged(existingSubmission, submissionData)) {
+          stats.unchanged += 1
+        } else if (options.dryRun) {
+          if (existingSubmission) stats.updatedSubmissions += 1
+          else stats.createdSubmissions += 1
+        } else if (existingSubmission) {
+          await (payload as any).update({
+            collection: 'submissions',
+            id: existingSubmission.id,
+            data: submissionData,
+            context: { audit: false, skipNeedsPublish: true },
+            overrideAccess: true,
+          })
+          stats.updatedSubmissions += 1
         } else {
-          content = check.value
-          const workId = `sticker_${digest.slice(0, 24)}`
-          if (options.dryRun) {
-            linkedWorkId = `dry-work-${digest.slice(0, 24)}`
-          } else {
-            const createdAt = normalizeIso(item.createdAt) || new Date().toISOString()
-            const created = await (payload as any).create({
-              collection: 'works',
-              data: {
-                workId,
-                name: content.name,
-                description: content.description,
-                commentary: content.commentary,
-                kind: 'submission',
-                channel: normalizeSource(item.source),
-                submissionId,
-                sha256: digest,
-                format: preview?.format,
-                mimeType: preview?.mimeType,
-                isAnimated: preview?.isAnimated,
-                width: preview?.width,
-                height: preview?.height,
-                fileSize: preview?.fileSize,
-                character: characterResult.docs.find((doc: any) => doc.characterId === content.characterId)?.id,
-                categories: content.categoryIds.map((id: string) => categoryResult.docs.find((doc: any) => doc.categoryId === id)!.id),
-                tags: content.tags.map((value: string) => ({ value })),
-                preview: mediaId || undefined,
-                status: 'pending',
-                needsPublish: true,
-                changeAction: 'add',
-                review: item.review || null,
-                origin: item.origin || {},
-                submitter: submissionAttribution(item.fields || {}) || undefined,
-                legacySource: 'submission-sync',
-                legacyData: { createdAt, updatedAt: createdAt },
-                createdAt,
-                updatedAt: createdAt,
-              },
-              context: { audit: false, skipNeedsPublish: true, skipFieldAccess: true },
-              overrideAccess: true,
-            })
-            linkedWorkId = created.id
-          }
+          await (payload as any).create({
+            collection: 'submissions',
+            data: submissionData,
+            context: { audit: false, skipNeedsPublish: true },
+            overrideAccess: true,
+          })
+          stats.createdSubmissions += 1
         }
-      } else if (existingWork) {
-        stats.linkedWorks += 1
+      } catch (error) {
+        stats.errors.push(`${item.id}: ${(error as Error).message}`)
       }
-
-      const submissionData: Record<string, any> = {
-        title: item.fields?.name || `投稿 ${submissionId}`,
-        submissionId,
-        source: normalizeSource(item.source),
-        sourceIds: (Array.isArray(item.sourceIds) ? item.sourceIds : []).map((value: unknown) => ({ value: String(value) })),
-        sha256: digest || undefined,
-        media: mediaId || undefined,
-        fields: item.fields || {},
-        review: item.review || null,
-        state: item.state || 'received',
-        stateHistory: item.stateHistory || [],
-        origin: item.origin || {},
-        work: linkedWorkId || undefined,
-        syncedAt: new Date().toISOString(),
-      }
-
-      if (options.dryRun) {
-        if (existingSubmission) stats.updatedSubmissions += 1
-        else stats.createdSubmissions += 1
-      } else if (existingSubmission) {
-        await (payload as any).update({
-          collection: 'submissions',
-          id: existingSubmission.id,
-          data: submissionData,
-          context: { audit: false, skipNeedsPublish: true },
-          overrideAccess: true,
-        })
-        stats.updatedSubmissions += 1
-      } else {
-        await (payload as any).create({
-          collection: 'submissions',
-          data: submissionData,
-          context: { audit: false, skipNeedsPublish: true },
-          overrideAccess: true,
-        })
-        stats.createdSubmissions += 1
-      }
-
-      if (index + 1 >= limit) break
-    } catch (error) {
-      stats.errors.push(`${item.id}: ${(error as Error).message}`)
     }
   }
   return stats

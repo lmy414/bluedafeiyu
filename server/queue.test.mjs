@@ -68,6 +68,20 @@ test('同 sha256 不同来源合并到同一条且记录来源', async (t) => {
   assert.equal((await queue.list()).length, 1);
 });
 
+test('游标分页按创建时间和 ID 排序，审核状态变化不跳过后续条目', async (t) => {
+  const { queue } = await setup(t, { now: () => 1_000_000 });
+  for (let index = 0; index < 4; index += 1) {
+    await queue.enqueue({ source: 'web', sourceId: `web:page-${index}`, buffer: Buffer.concat([TINY_PNG, Buffer.from([index])]), fields: { name: `图 ${index}` } });
+  }
+  const all = await queue.list();
+  const first = await queue.list({ state: STATES.RECEIVED, limit: 2 });
+  assert.deepEqual(first.map((item) => item.id), all.slice(0, 2).map((item) => item.id));
+  await queue.transition(first[0].id, 'review.start');
+  const next = await queue.list({ state: STATES.RECEIVED, limit: 2, after: first.at(-1) });
+  assert.deepEqual(next.map((item) => item.id), all.slice(2).map((item) => item.id));
+  assert.deepEqual(await queue.list({ after: all.at(-1), limit: 2 }), []);
+});
+
 test('非图片字节与超限图片被拒绝', async (t) => {
   const { queue } = await setup(t);
   await assert.rejects(

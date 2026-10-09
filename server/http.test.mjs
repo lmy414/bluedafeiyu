@@ -312,6 +312,35 @@ test('管理接口：没配令牌一律拒绝；令牌错 401；令牌对可读�
   void queue; void deps;
 });
 
+test('管理列表支持完整游标分页、来源筛选和非法游标校验', async (t) => {
+  const { queue, adminHandler } = await setup(t);
+  for (let index = 0; index < 5; index += 1) {
+    await queue.enqueue({ source: index === 4 ? 'qq' : 'web', sourceId: `web:page-${index}`, buffer: Buffer.concat([TINY_PNG, Buffer.from([index])]), fields: { name: `图 ${index}` } });
+  }
+  await withServer(adminHandler, async (port) => {
+    const headers = { authorization: 'Bearer admin-secret-value' };
+    const ids = [];
+    let cursor = '';
+    let pages = 0;
+    do {
+      const res = await call(port, { routePath: `/api/v1/items?limit=2${cursor ? `&cursor=${encodeURIComponent(cursor)}` : ''}`, headers });
+      assert.equal(res.status, 200);
+      const body = JSON.parse(res.body);
+      ids.push(...body.items.map((item) => item.id));
+      cursor = body.nextCursor;
+      pages += 1;
+    } while (cursor);
+    assert.equal(pages, 3);
+    assert.deepEqual(ids, (await queue.list()).map((item) => item.id));
+    assert.equal(new Set(ids).size, 5);
+    const filtered = await call(port, { routePath: '/api/v1/items?source=qq&limit=2', headers });
+    assert.equal(JSON.parse(filtered.body).count, 1);
+    assert.equal(JSON.parse(filtered.body).nextCursor, null);
+    const bad = await call(port, { routePath: '/api/v1/items?cursor=not-valid', headers });
+    assert.equal(bad.status, 400);
+  });
+});
+
 test('管理员能取原图（按附件下载）与条目，公开端做不到', async (t) => {
   const { publicHandler, adminHandler, queue } = await setup(t);
   await withServer(publicHandler, async (port) => {

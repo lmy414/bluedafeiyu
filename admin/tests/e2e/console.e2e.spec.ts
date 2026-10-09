@@ -78,6 +78,8 @@ async function ensureTestData(request: APIRequestContext) {
   const sourceResult = await json('/cms-api/works?limit=1&depth=0&sort=createdAt')
   const source = sourceResult.docs?.[0]
   if (!source) throw new Error('作品库为空，无法准备 E2E 数据')
+  // 上一轮 E2E 会隐藏种子作品；重跑时恢复隔离测试库的夹具。
+  if (source.status !== 'published') await json('/cms-api/works/' + source.id, { status: 'published' }, 'PATCH')
 
   const stamp = Date.now().toString()
   const pendingName = 'S3 E2E 待发布 ' + stamp
@@ -141,7 +143,7 @@ test('后台运营台完整流程', async ({ page, request }) => {
   await page.locator('.s3-card').first().locator('.s3-select input').check()
   await page.getByRole('button', { name: '改分类' }).click()
   const categoryModal = page.locator('.s3-modal')
-  await categoryModal.locator('input[type="checkbox"]').first().check()
+  await categoryModal.locator('input[type="radio"]').first().check()
   await categoryModal.getByRole('button', { name: '保存分类' }).click()
   await expect(page.getByText('批量操作已完成。')).toBeVisible()
   await page.locator('.s3-card').first().locator('.s3-select input').check()
@@ -195,6 +197,38 @@ test('后台运营台完整流程', async ({ page, request }) => {
   await expect(page.locator('.s3-modal').getByText('新的 API Key')).toBeVisible()
   await expect(page.locator('.s3-key-display code')).not.toHaveText('')
   await shot(page, '10-bot-key')
+})
+
+test('首页人工审核入口直达待处理列表，已处理记录可查', async ({ page, request }) => {
+  const loginResponse = await request.post('/cms-api/users/login', { data: OWNER })
+  const headers = { Authorization: 'JWT ' + (await loginResponse.json()).token }
+  const works = await request.get('/cms-api/works?limit=1&depth=0', { headers })
+  const work = (await works.json()).docs[0]
+  for (const [submissionId, title, linked] of [
+    ['sub_browser_manual', '浏览器验收转人工', false],
+    ['sub_browser_handled', '浏览器验收已处理', true],
+  ] as const) {
+    const existing = await request.get(`/cms-api/submissions?where[submissionId][equals]=${submissionId}`, { headers })
+    if (!(await existing.json()).docs.length) {
+      const created = await request.post('/cms-api/submissions', { headers, data: {
+        submissionId, title, source: 'web', state: 'needs_manual',
+        fields: { character: 'deepseek' }, review: { verdict: 'manual', reason: 'E2E 人工审核记录' },
+        ...(linked ? { work: work.id } : {}),
+      } })
+      expect(created.ok()).toBe(true)
+    }
+  }
+  await login(page)
+  const entry = page.locator('.s3-stat-card').filter({ hasText: 'AI 拒绝 / 转人工' })
+  await expect(entry).toHaveAttribute('href', '/admin/review?mode=rejected')
+  await entry.click()
+  await expect(page.getByRole('heading', { name: '投稿审核' })).toBeVisible()
+  await expect(page.getByRole('button', { name: 'AI 拒绝 / 转人工', exact: true })).toHaveClass(/s3-subtab--active/)
+  await expect(page.locator('.s3-card').filter({ hasText: '浏览器验收转人工' })).toBeVisible()
+  await page.getByRole('button', { name: '已处理的 AI 记录' }).click()
+  await expect(page.locator('.s3-card').filter({ hasText: '浏览器验收已处理' })).toBeVisible()
+  await expect(page.locator('.s3-card').filter({ hasText: '浏览器验收转人工' })).toHaveCount(0)
+  await shot(page, '11-review-handled')
 })
 
 test('移动端主要页面不横向溢出', async ({ page }) => {

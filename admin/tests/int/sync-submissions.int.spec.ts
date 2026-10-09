@@ -187,7 +187,11 @@ beforeAll(async () => {
 
   vi.stubGlobal('fetch', vi.fn(async (input: string | URL | Request) => {
     const url = new URL(String(input))
-    if (url.pathname === '/api/v1/items') return jsonResponse({ items: queueItems })
+    if (url.pathname === '/api/v1/items') {
+      const limit = Number(url.searchParams.get('limit')) || 200
+      const offset = Number(url.searchParams.get('cursor')) || 0
+      return jsonResponse({ items: queueItems.slice(offset, offset + limit), nextCursor: offset + limit < queueItems.length ? String(offset + limit) : null })
+    }
     if (url.pathname.endsWith('/raw')) {
       const id = decodeURIComponent(url.pathname.split('/').slice(-2, -1)[0] || '')
       const status = rawStatusById.get(id)
@@ -206,6 +210,66 @@ afterAll(() => {
 })
 
 describe('syncSubmissions timestamps and formats', () => {
+  it('syncs all 530 items across pages, including manual records after item 500', async () => {
+    const originalItems = queueItems
+    const items = Array.from({ length: 530 }, (_, index) => ({
+      id: `sub_page_${index}`, sha256: index.toString(16).padStart(64, '0'), source: 'web',
+      fields: { name: `分页投稿 ${index}` }, state: index >= 500 ? 'needs_manual' : 'received',
+      review: index >= 500 ? { verdict: 'manual', reason: '待人工看图' } : null,
+      original: { released: true }, createdAt: VALID_CREATED_AT,
+    }))
+    queueItems = items
+    try {
+      const stats = await syncSubmissions(payload, { baseUrl: 'http://submission.test', limit: 200, token: 'test-token' })
+      expect(stats.errors).toEqual([])
+      expect(stats.pages).toBe(3)
+      expect(stats.scanned).toBe(530)
+      expect(stats.createdSubmissions).toBe(530)
+      expect(stats.createdWorks).toBe(0)
+      const manual = await (payload as any).find({ collection: 'submissions', where: { state: { equals: 'needs_manual' } }, limit: 100, depth: 0, overrideAccess: true })
+      expect(manual.docs).toHaveLength(30)
+      expect(manual.docs.some((doc: any) => doc.submissionId === 'sub_page_529')).toBe(true)
+      const repeat = await syncSubmissions(payload, { baseUrl: 'http://submission.test', limit: 200, token: 'test-token' })
+      expect(repeat.createdSubmissions).toBe(0)
+      expect(repeat.updatedSubmissions).toBe(0)
+      expect(repeat.unchanged).toBe(530)
+    } finally {
+      queueItems = originalItems
+      await (payload as any).delete({ collection: 'submissions', where: { submissionId: { in: items.map((item) => item.id) } }, context: { audit: false }, overrideAccess: true })
+    }
+  }, 60_000)
+
+  it('retains manual metadata on image download failure and retries the preview next time', async () => {
+    const originalItems = queueItems
+    const item = { ...queueItems[0], id: 'sub_preview_failure', sha256: 'f'.repeat(64), state: 'needs_manual' }
+    queueItems = [item]
+    rawStatusById.set(item.id, 500)
+    try {
+      const stats = await syncSubmissions(payload, { baseUrl: 'http://submission.test', token: 'test-token' })
+      expect(stats.errors).toHaveLength(1)
+      expect(stats.previewUnavailable).toBe(1)
+      const saved = await (payload as any).find({ collection: 'submissions', where: { submissionId: { equals: item.id } }, depth: 0, overrideAccess: true })
+      expect(saved.docs).toHaveLength(1)
+      expect(saved.docs[0].state).toBe('needs_manual')
+      expect(saved.docs[0].media).toBeNull()
+      expect(saved.docs[0].work).toBeNull()
+    } finally {
+      rawStatusById.delete(item.id)
+      queueItems = originalItems
+      await (payload as any).delete({ collection: 'submissions', where: { submissionId: { equals: item.id } }, context: { audit: false }, overrideAccess: true })
+    }
+  })
+
+  it('rejects a malformed list instead of silently reporting an empty successful sync', async () => {
+    const fetchImpl = globalThis.fetch
+    vi.stubGlobal('fetch', vi.fn(async () => jsonResponse({ ok: true })))
+    try {
+      await expect(syncSubmissions(payload, { baseUrl: 'http://submission.test', token: 'test-token' })).rejects.toThrow('items')
+    } finally {
+      vi.stubGlobal('fetch', fetchImpl)
+    }
+  })
+
   it('uses queue createdAt, normalizes jpeg to jpg, and lets later edits update updatedAt', async () => {
     const beforeFallback = Date.now()
     const stats = await syncSubmissions(payload, { baseUrl: 'http://submission.test', limit: 10, token: 'test-token' })
@@ -391,7 +455,7 @@ describe('syncSubmissions timestamps and formats', () => {
       for (const work of [valid, conflicting, hidden]) await (payload as any).delete({ collection: 'works', id: work.id, context: { audit: false }, overrideAccess: true })
     }
   })
-  it('uses an existing preview for a released original and skips when no preview exists', async () => {
+  it('uses an existing preview for a released original and keeps metadata when no preview exists', async () => {
     const previewItem = { ...queueItems[0], id: 'sub_released_preview_123' }
     const missingBuffer = await makeJpeg(1, 2, 3)
     const missingItem = queueItem({ buffer: missingBuffer, name: '已释放无预览', suffix: 'released' })
@@ -401,21 +465,20 @@ describe('syncSubmissions timestamps and formats', () => {
     queueItems.push(previewItem, missingItem)
 
     const existingWork = await (payload as any).find({ collection: 'works', where: { sha256: { equals: firstDigest } }, limit: 1, depth: 0, overrideAccess: true })
-    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {})
     try {
       const stats = await syncSubmissions(payload, { baseUrl: 'http://submission.test', limit: 10, token: 'test-token' })
       expect(stats.errors).toEqual([])
-      expect(stats.skipped).toBe(2)
+      expect(stats.previewUnavailable).toBe(1)
 
       const releasedSubmission = await (payload as any).find({ collection: 'submissions', where: { submissionId: { equals: previewItem.id } }, limit: 1, depth: 0, overrideAccess: true })
       expect(releasedSubmission.docs).toHaveLength(1)
       expect(String(releasedSubmission.docs[0].media)).toBe(String(existingWork.docs[0].preview))
 
       const missingSubmission = await (payload as any).find({ collection: 'submissions', where: { submissionId: { equals: missingItem.id } }, limit: 1, depth: 0, overrideAccess: true })
-      expect(missingSubmission.docs).toHaveLength(0)
-      expect(warn).toHaveBeenCalledWith(expect.stringContaining('原图已释放且 Payload 中没有预览'))
+      expect(missingSubmission.docs).toHaveLength(1)
+      expect(missingSubmission.docs[0].media).toBeNull()
+      expect(missingSubmission.docs[0].work).toBeNull()
     } finally {
-      warn.mockRestore()
       queueItems.splice(queueItems.length - 2, 2)
     }
   })

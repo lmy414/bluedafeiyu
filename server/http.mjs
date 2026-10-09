@@ -972,13 +972,31 @@ export function createAdminHandler({
         return sendJson(res, 200, { ok: true, stats: await queue.stats() });
       }
       if (req.method === 'GET' && url.pathname === '/api/v1/items') {
-        const limit = Number(url.searchParams.get('limit') || 200);
-        const items = await queue.list({
+        const rawLimit = Number(url.searchParams.get('limit') || 200);
+        const limit = Number.isSafeInteger(rawLimit) && rawLimit > 0 ? Math.min(rawLimit, 10000) : 200;
+        const cursor = url.searchParams.get('cursor');
+        let after;
+        if (cursor) {
+          try {
+            after = JSON.parse(Buffer.from(cursor, 'base64url').toString('utf8'));
+            if (!after || typeof after.createdAt !== 'string' || !Number.isFinite(Date.parse(after.createdAt))
+              || typeof after.id !== 'string' || !INTERNAL_ID_PATTERN.test(after.id)) throw new Error('invalid cursor');
+          } catch {
+            return sendJson(res, 400, { ok: false, error: 'cursor 非法' });
+          }
+        }
+        const page = await queue.list({
           state: url.searchParams.get('state') || undefined,
           source: url.searchParams.get('source') || undefined,
-          limit: Number.isSafeInteger(limit) && limit > 0 ? limit : 200,
+          limit: limit + 1,
+          after,
         });
-        return sendJson(res, 200, { ok: true, count: items.length, items });
+        const items = page.slice(0, limit);
+        const last = items.at(-1);
+        const nextCursor = page.length > limit && last
+          ? Buffer.from(JSON.stringify({ createdAt: last.createdAt, id: last.id })).toString('base64url')
+          : null;
+        return sendJson(res, 200, { ok: true, count: items.length, items, nextCursor });
       }
       if (req.method === 'POST' && url.pathname === '/api/v1/review') {
         const raw = await readBody(req, cfg.maxJsonBytes);
