@@ -103,7 +103,7 @@ function stringList(value, { label, max, itemMax, allowEmpty = true }) {
  * 校验 content 对象：未知字段、缺字段、错误类型、重复项、非法枚举全部拒绝。
  * vocabulary 必须 ok=true；否则无法确认角色/分类合法性，fail-closed。
  */
-export function validateContent(content, vocabulary) {
+export function validateContent(content, vocabulary, attribution = {}) {
   if (!content || typeof content !== 'object' || Array.isArray(content)) return { error: 'AI 未返回 content 对象' };
   for (const key of Object.keys(content)) {
     if (!CONTENT_KEYS.includes(key)) return { error: `content 含未知字段 ${key}，转人工` };
@@ -140,7 +140,7 @@ export function validateContent(content, vocabulary) {
   if (tags.error) return tags;
 
   let i18n;
-  if ('i18n' in content) { try { i18n = validateI18n(content.i18n, content); } catch(error) { return { error: 'content.i18n: '+error.message }; } }
+  if ('i18n' in content) { try { i18n = validateI18n(content.i18n, { ...content, ...attribution }); } catch(error) { return { error: 'content.i18n: '+error.message }; } }
   return {
     value: {
       ...(i18n ? { i18n } : {}),
@@ -218,64 +218,20 @@ function vocabularyLine(vocabulary) {
  * OpenAI 兼容 vision 客户端。**缺 endpoint 或 apiKey 时直接抛错**，
  * 不允许出现「看起来配了其实没配」的调用。
  */
-export function createHttpReviewClient({ endpoint, apiKey, model, timeoutMs, fetchImpl = globalThis.fetch }) {
-  if (!String(endpoint || '').trim() || !String(apiKey || '').trim()) {
-    throw new Error('createHttpReviewClient 需要 endpoint 与 apiKey；未配置时不要构造真实客户端');
-  }
-  if (typeof fetchImpl !== 'function') throw new Error('缺少可用的 fetch 实现');
-  return async function httpReviewClient({ buffer, mime = 'image/png', fields = {}, vocabulary = null, signal }) {
-    const controller = new AbortController();
-    const onAbort = () => controller.abort();
-    if (signal) signal.addEventListener('abort', onAbort, { once: true });
-    const timer = setTimeout(() => controller.abort(), timeoutMs);
-    timer.unref?.();
-    try {
-      const response = await fetchImpl(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
-        body: JSON.stringify({
-          model: model || undefined,
-          messages: [
-            { role: 'system', content: SYSTEM_PROMPT },
-            {
-              role: 'user',
-              content: [
-                {
-                  type: 'text',
-                  text: [
-                    `投稿名称：${fields.name || '(未填)'}；角色：${fields.character || '(未填)'}`,
-                    `投稿者选择的类型：${fields.categoryId || '(未填)'}；仅供参考，与画面冲突时按分类规则纠正。`,
-                    vocabularyLine(vocabulary),
-                    '请按 system 指定的 submission-ai-content/2 结构只输出一个 JSON 对象。',
-                  ].join('\n'),
-                },
-                { type: 'image_url', image_url: { url: `data:${mime};base64,${buffer.toString('base64')}` } },
-              ],
-            },
-          ],
-        }),
-        signal: controller.signal,
-      });
-      if (!response.ok) throw new Error(`AI 服务返回 ${response.status}`);
-      return await response.json();
-    } finally {
-      clearTimeout(timer);
-      if (signal) signal.removeEventListener('abort', onAbort);
-    }
-  };
+export function createHttpReviewClient() {
+  throw new Error('独立模型审核已停用，请使用 Hermes Agent 工具任务');
 }
 
 /**
- * 构造审核器。client 可注入（测试用假客户端，生产用 createHttpReviewClient）。
+ * 契约测试审核器。client 仅用于离线测试，生产由 Hermes Agent 工具处理。
  * vocabulary 可注入；不注入时每次审核动态从 data/ 读取，配置不完整时 configured=false。
  */
 export function createReviewer(cfg, { client = null, now = () => Date.now(), fetchImpl, vocabulary = null } = {}) {
   const injected = typeof client === 'function' ? client : null;
-  const configured = Boolean(injected) || cfg.review.configured;
-  const activeClient = injected
-    || (cfg.review.configured
-      ? createHttpReviewClient({ ...cfg.review, fetchImpl: fetchImpl || cfg.fetchImpl })
-      : null);
+  // Production generation is owned by Hermes Agent. Injected clients exist only
+  // for offline contract tests; configured endpoints no longer trigger calls.
+  const configured = Boolean(injected);
+  const activeClient = injected;
 
   const vocabularyOf = () => (vocabulary && typeof vocabulary === 'object' ? vocabulary : loadContentVocabulary(cfg.siteRoot));
 

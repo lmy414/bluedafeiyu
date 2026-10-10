@@ -2,17 +2,27 @@
 import crypto from 'node:crypto'
 import { isDeepStrictEqual } from 'node:util'
 import type { PayloadRequest } from 'payload'
-import { authorDescription, httpVisionCaller, missingFields, suggestFill, visionConfig } from './ai-fill'
-import { readMedia, readOriginal } from './content-images'
 import { sourceHash, validateI18n } from './localization.mjs'
 import { prepareSubmissionPreview, validateContent } from './sync-submissions'
 import { writeAudit } from './audit'
 import { submissionAttribution } from './attribution.mjs'
 
 export const JOB_OPERATIONS = ['write-fields', 'ai-fill', 'translate', 'manual-include'] as const
-export const EDIT_KEYS = ['name', 'description', 'commentary', 'characterId', 'categoryIds', 'tags'] as const
+export const EDIT_KEYS = [
+  'name',
+  'description',
+  'commentary',
+  'characterId',
+  'categoryIds',
+  'tags',
+] as const
 export const RUNNABLE = ['queued', 'running']
-export type JobResult = { id: string; status: 'succeeded' | 'skipped' | 'failed'; message: string }
+export type JobResult = {
+  id: string
+  status: 'succeeded' | 'skipped' | 'failed'
+  message: string
+  suggestion?: any
+}
 
 export async function loadVocabulary(payload: any) {
   const [characters, categories] = await Promise.all([
@@ -63,9 +73,12 @@ export function draftOf(doc: any, target: string, vocab: any) {
     description: doc.description || '',
     commentary: doc.commentary || '',
     tags: (doc.tags || []).map((t: any) => t.value),
-    characterId: vocab.characters.find((c: any) => String(c.id) === String(relation(doc.character)))?.characterId || '',
+    characterId:
+      vocab.characters.find((c: any) => String(c.id) === String(relation(doc.character)))
+        ?.characterId || '',
     categoryIds: (doc.categories || []).map(
-      (c: any) => vocab.categories.find((v: any) => String(v.id) === String(relation(c)))?.categoryId || '',
+      (c: any) =>
+        vocab.categories.find((v: any) => String(v.id) === String(relation(c)))?.categoryId || '',
     ),
     origin: doc.origin || {},
     license: doc.license || {},
@@ -120,7 +133,8 @@ export function validatePatch(patch: any, vocab: any) {
   if (!patch || typeof patch !== 'object' || Array.isArray(patch) || !Object.keys(patch).length)
     throw new Error('至少选择一个字段')
   for (const key of Object.keys(patch))
-    if (!(EDIT_KEYS as readonly string[]).includes(key)) throw new Error(`不允许批量修改字段 ${key}`)
+    if (!(EDIT_KEYS as readonly string[]).includes(key))
+      throw new Error(`不允许批量修改字段 ${key}`)
   const full = {
     name: '校验',
     description: '',
@@ -135,26 +149,41 @@ export function validatePatch(patch: any, vocab: any) {
   return Object.fromEntries(Object.keys(patch).map((key) => [key, checked.value[key]]))
 }
 
-function workPatch(content: any, vocab: any) {
+export function workPatch(content: any, vocab: any) {
   const data: any = {}
-  for (const key of ['name', 'description', 'commentary']) if (key in content) data[key] = content[key]
+  for (const key of ['name', 'description', 'commentary'])
+    if (key in content) data[key] = content[key]
   if ('tags' in content) data.tags = content.tags.map((value: string) => ({ value }))
-  if ('characterId' in content) data.character = vocab.characters.find((c: any) => c.characterId === content.characterId)?.id
+  if ('characterId' in content)
+    data.character = vocab.characters.find((c: any) => c.characterId === content.characterId)?.id
   if ('categoryIds' in content)
-    data.categories = content.categoryIds.map((id: string) => vocab.categories.find((c: any) => c.categoryId === id)?.id)
+    data.categories = content.categoryIds.map(
+      (id: string) => vocab.categories.find((c: any) => c.categoryId === id)?.id,
+    )
   return data
 }
 
-export async function prepareJobItem(req: PayloadRequest, job: any, id: string, vocab: any, callOverride?: any) {
+export async function prepareJobItem(
+  req: PayloadRequest,
+  job: any,
+  id: string,
+  vocab: any,
+  agentContent?: any,
+) {
   const doc = await targetDoc(req.payload, job.target, id)
   if (!doc) throw new Error('条目不存在')
-  if (job.options?.versions?.[id] !== fingerprint(doc, job.target)) throw new Error('条目自提交后已修改，请重新选择后提交')
-  if (job.target === 'works' && ['deleted', 'removed'].includes(doc.status)) throw new Error('已删除或移除的作品不能批量编辑')
-  if (job.target === 'submissions' && doc.work) return { doc, skipped: '已关联作品，不重复处理', data: null }
-  const draft = draftOf(doc, job.target, vocab)
+  if (job.options?.versions?.[id] !== fingerprint(doc, job.target))
+    throw new Error('条目自提交后已修改，请重新选择后提交')
+  if (job.target === 'works' && ['deleted', 'removed'].includes(doc.status))
+    throw new Error('已删除或移除的作品不能批量编辑')
+  if (job.target === 'submissions' && doc.work)
+    return { doc, skipped: '已关联作品，不重复处理', data: null }
+  const draft = { ...draftOf(doc, job.target, vocab), ...job.options?.drafts?.[id] }
   if (job.operation === 'write-fields') {
     const patch = validatePatch(job.options.patch, vocab)
-    const changed = Object.fromEntries(Object.entries(patch).filter(([k, v]) => !isDeepStrictEqual(draft[k], v)))
+    const changed = Object.fromEntries(
+      Object.entries(patch).filter(([k, v]) => !isDeepStrictEqual(draft[k], v)),
+    )
     if (!Object.keys(changed).length) return { doc, skipped: '字段已一致', data: null }
     return {
       doc,
@@ -165,30 +194,38 @@ export async function prepareJobItem(req: PayloadRequest, job: any, id: string, 
     }
   }
   if (job.operation === 'manual-include') {
-    if (!['needs_manual', 'auto_rejected'].includes(doc.state)) throw new Error('条目不是人工审核状态')
+    if (!['needs_manual', 'auto_rejected'].includes(doc.state))
+      throw new Error('条目不是人工审核状态')
     const check = validateContent(contentOnly(draft), vocab)
     if (!check.ok) throw new Error('请先补写字段：' + check.errors.join('；'))
     if (!doc.sha256 || !doc.media) throw new Error('缺少原图摘要或预览，不能收录')
     const i18n = doc.editorial?.i18n || doc.review?.content?.i18n
-    if (!i18n || i18n.sourceHash !== sourceHash(draft)) throw new Error('请先批量翻译当前内容，再收录')
+    if (!i18n || i18n.sourceHash !== sourceHash(draft))
+      throw new Error('请先批量翻译当前内容，再收录')
     validateI18n(i18n, draft)
     const token = process.env.SUBMISSION_ADMIN_TOKEN
-    if (!token || !/^sub_[A-Za-z0-9_-]{1,64}$/.test(doc.submissionId)) throw new Error('投稿服务原图校验未配置或投稿 ID 非法')
-    const base = String(process.env.SUBMISSION_ADMIN_API_URL || 'http://127.0.0.1:8788').replace(/\/$/, '')
-    const response = await fetch(`${base}/api/v1/items/${encodeURIComponent(doc.submissionId)}/raw`, {
-      headers: { Authorization: `Bearer ${token}` },
-      signal: AbortSignal.timeout(30_000),
-    })
+    if (!token || !/^sub_[A-Za-z0-9_-]{1,64}$/.test(doc.submissionId))
+      throw new Error('投稿服务原图校验未配置或投稿 ID 非法')
+    const base = String(process.env.SUBMISSION_ADMIN_API_URL || 'http://127.0.0.1:8788').replace(
+      /\/$/,
+      '',
+    )
+    const response = await fetch(
+      `${base}/api/v1/items/${encodeURIComponent(doc.submissionId)}/raw`,
+      {
+        headers: { Authorization: `Bearer ${token}` },
+        signal: AbortSignal.timeout(30_000),
+      },
+    )
     if (!response.ok) throw new Error(`原图不可用（HTTP ${response.status}），无法收录待发布作品`)
     const raw = Buffer.from(await response.arrayBuffer())
     if (raw.length > 30 * 1024 * 1024) throw new Error('原图超过校验上限')
-    const original = await prepareSubmissionPreview(raw, { id: doc.submissionId, sha256: doc.sha256 })
+    const original = await prepareSubmissionPreview(raw, {
+      id: doc.submissionId,
+      sha256: doc.sha256,
+    })
     return { doc, draft, i18n, original, data: null }
   }
-  const cfg = visionConfig()
-  if (!cfg && !callOverride) throw new Error('AI 模型未配置')
-  const base = { ...draft, tags: draft.tags.map((value: string) => ({ value })), categories: draft.categoryIds }
-  const fields = job.operation === 'translate' ? ['i18n'] : missingFields(base).filter((key) => key !== 'dimensions')
   if (job.operation === 'translate') {
     const check = validateContent(contentOnly(draft), vocab)
     if (!check.ok) throw new Error('中文字段不完整，请先批量补写：' + check.errors.join('；'))
@@ -202,24 +239,9 @@ export async function prepareJobItem(req: PayloadRequest, job: any, id: string, 
       }
     }
   }
-  const image =
-    (await readMedia(req.payload, job.target === 'works' ? doc.preview : doc.media)) ||
-    (await readOriginal(doc.legacyPaths?.path))
-  if (!image) throw new Error('无法读取图片，不能生成内容')
-  const { suggestion, errors } = await suggestFill(
-    {
-      current: draft,
-      name: draft.name,
-      fields: fields as any,
-      image,
-      authorText: authorDescription(job.target === 'works' ? doc : null, job.target === 'submissions' ? doc : null),
-      characterName: vocab.characters.find((c: any) => c.characterId === draft.characterId)?.name || draft.characterId,
-      vocabulary: { categories: vocab.categories },
-    },
-    callOverride || httpVisionCaller(cfg!),
-  )
-  if (errors.length) throw new Error(errors.join('；'))
-  const merged = { ...draft, ...suggestion }
+  if (!agentContent) throw new Error('任务等待 Hermes Agent 通过工具处理，后台不调用模型')
+  const merged = { ...draft, ...agentContent }
+  const suggestion = agentContent
   const check = validateContent(contentOnly(merged), vocab)
   if (!check.ok) throw new Error(check.errors.join('；'))
   if (suggestion.i18n?.sourceHash !== sourceHash(merged)) throw new Error('译文与当前内容不匹配')
@@ -227,18 +249,20 @@ export async function prepareJobItem(req: PayloadRequest, job: any, id: string, 
     job.target === 'works'
       ? {
           ...workPatch(
-            Object.fromEntries(EDIT_KEYS.filter((k) => k in suggestion).map((k) => [k, (suggestion as any)[k]])),
+            Object.fromEntries(
+              EDIT_KEYS.filter((k) => k in suggestion).map((k) => [k, (suggestion as any)[k]]),
+            ),
             vocab,
           ),
           legacyData: { ...(doc.legacyData || {}), i18n: suggestion.i18n },
           needsPublish: true,
         }
       : { editorial: { ...contentOnly(merged), i18n: suggestion.i18n } }
-  return { doc, data }
+  return { doc, data, suggestion, suggestOnly: job.options?.suggestOnly === true }
 }
 
-/** 内容写入和游标推进共用事务；进程重启不会重复执行已提交条目。模型调用在事务外。 */
-export async function stepJob(req: PayloadRequest, job: any, callOverride?: any) {
+/** 内容写入和游标推进共用事务；Agent 生成和工具修正在事务外。 */
+export async function stepJob(req: PayloadRequest, job: any, agentContent?: any) {
   const payload = req.payload as any
   const ids: string[] = job.ids
   if (!RUNNABLE.includes(job.status) || job.cursor >= ids.length) return job
@@ -247,16 +271,32 @@ export async function stepJob(req: PayloadRequest, job: any, callOverride?: any)
   let prepared: any
   let failure: string | undefined
   try {
-    prepared = await prepareJobItem(req, job, id, vocab, callOverride)
+    prepared = await prepareJobItem(req, job, id, vocab, agentContent)
   } catch (error) {
     failure = (error as Error).message
   }
   const transactionID = await payload.db.beginTransaction()
   if (transactionID == null) throw new Error('批量任务需要数据库事务')
-  const txReq = { ...req, transactionID, context: { ...req.context, audit: true } } as PayloadRequest
+  const txReq = {
+    ...req,
+    transactionID,
+    context: { ...req.context, audit: true },
+  } as PayloadRequest
   try {
-    const freshJob = await payload.findByID({ collection: 'bulk-jobs', id: job.id, depth: 0, overrideAccess: true, req: txReq })
-    if (!RUNNABLE.includes(freshJob.status) || freshJob.cursor !== job.cursor) {
+    const freshJob = await payload.findByID({
+      collection: 'bulk-jobs',
+      id: job.id,
+      depth: 0,
+      overrideAccess: true,
+      req: txReq,
+    })
+    if (
+      !RUNNABLE.includes(freshJob.status) ||
+      freshJob.cursor !== job.cursor ||
+      (agentContent &&
+        (freshJob.options?.agent?.token !== job.options?.agent?.token ||
+          freshJob.options?.agent?.expiresAt <= Date.now()))
+    ) {
       await payload.db.rollbackTransaction(transactionID)
       return freshJob
     }
@@ -267,6 +307,13 @@ export async function stepJob(req: PayloadRequest, job: any, callOverride?: any)
         result.message = '生成期间内容已修改，请重新提交'
       } else if (prepared.skipped) {
         result = { id, status: 'skipped', message: prepared.skipped }
+      } else if (prepared.suggestOnly) {
+        result = {
+          id,
+          status: 'succeeded',
+          message: 'Hermes 建议已生成，请核对后保存',
+          suggestion: prepared.suggestion,
+        }
       } else if (job.operation === 'manual-include') {
         const duplicate = await payload.find({
           collection: 'works',
@@ -276,7 +323,8 @@ export async function stepJob(req: PayloadRequest, job: any, callOverride?: any)
           overrideAccess: true,
           req: txReq,
         })
-        if (duplicate.docs.length) result = { id, status: 'failed', message: '同图作品已存在，请人工确认关联' }
+        if (duplicate.docs.length)
+          result = { id, status: 'failed', message: '同图作品已存在，请人工确认关联' }
         else {
           const created = await payload.create({
             collection: 'works',
@@ -338,7 +386,7 @@ export async function stepJob(req: PayloadRequest, job: any, callOverride?: any)
       targetType: job.target,
       targetId: id,
       before: prepared?.doc,
-      after: { jobId: job.jobId, result, data: prepared?.data, model: visionConfig()?.model },
+      after: { jobId: job.jobId, result, data: prepared?.data, model: 'hermes-agent' },
     })
     const results = [...(freshJob.results || []), result]
     const cursor = job.cursor + 1
@@ -353,7 +401,13 @@ export async function stepJob(req: PayloadRequest, job: any, callOverride?: any)
     const updated = await payload.update({
       collection: 'bulk-jobs',
       id: job.id,
-      data: { results, cursor, status, ...(cursor === ids.length ? { finishedAt: new Date().toISOString() } : {}) },
+      data: {
+        results,
+        cursor,
+        status,
+        ...(agentContent ? { options: { ...freshJob.options, agent: null } } : {}),
+        ...(cursor === ids.length ? { finishedAt: new Date().toISOString() } : {}),
+      },
       overrideAccess: true,
       req: txReq,
     })
@@ -365,7 +419,11 @@ export async function stepJob(req: PayloadRequest, job: any, callOverride?: any)
     // 单条写入失败回滚后记录失败并推进；不能让一个坏条目永久阻塞整批。
     const failureTransaction = await payload.db.beginTransaction()
     if (failureTransaction == null) throw error
-    const failureReq = { ...req, transactionID: failureTransaction, context: { audit: true } } as PayloadRequest
+    const failureReq = {
+      ...req,
+      transactionID: failureTransaction,
+      context: { audit: true },
+    } as PayloadRequest
     try {
       const current = await payload.findByID({
         collection: 'bulk-jobs',
@@ -378,10 +436,19 @@ export async function stepJob(req: PayloadRequest, job: any, callOverride?: any)
         await payload.db.rollbackTransaction(failureTransaction)
         return current
       }
-      const result: JobResult = { id, status: 'failed', message: `写入失败，已回滚本条：${(error as Error).message}` }
+      const result: JobResult = {
+        id,
+        status: 'failed',
+        message: `写入失败，已回滚本条：${(error as Error).message}`,
+      }
       const results = [...(current.results || []), result]
       const cursor = job.cursor + 1
-      const status = cursor < ids.length ? 'running' : results.every((r) => r.status === 'failed') ? 'failed' : 'partial'
+      const status =
+        cursor < ids.length
+          ? 'running'
+          : results.every((r) => r.status === 'failed')
+            ? 'failed'
+            : 'partial'
       await writeAudit(failureReq, {
         action: `bulk.${job.operation}`,
         targetType: job.target,
@@ -391,7 +458,13 @@ export async function stepJob(req: PayloadRequest, job: any, callOverride?: any)
       const updated = await payload.update({
         collection: 'bulk-jobs',
         id: job.id,
-        data: { results, cursor, status, ...(cursor === ids.length ? { finishedAt: new Date().toISOString() } : {}) },
+        data: {
+          results,
+          cursor,
+          status,
+          ...(agentContent ? { options: { ...current.options, agent: null } } : {}),
+          ...(cursor === ids.length ? { finishedAt: new Date().toISOString() } : {}),
+        },
         overrideAccess: true,
         req: failureReq,
       })

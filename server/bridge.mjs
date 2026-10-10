@@ -23,6 +23,7 @@ import path from 'node:path';
 import { validateI18n } from '../tools/localization/contract.mjs';
 
 import { AI_CONTENT_SCHEMA, loadContentVocabulary } from './config.mjs';
+import { submissionAttribution } from '../admin/src/lib/attribution.mjs';
 import { STATES } from './queue.mjs';
 import { QQ_GROUP_ORIGIN } from './adapters/qq.mjs';
 import {
@@ -99,7 +100,7 @@ function listError(value, { label, max, itemMax, allowEmpty = true }) {
  * 未知字段、缺字段、错误类型、重复项、注入文本、非法枚举全部拒绝。
  * vocabulary.ok !== true 时 fail-closed（无法确认角色/分类合法性）。
  */
-export function validateContent(content, vocabulary = null) {
+export function validateContent(content, vocabulary = null, attribution = {}) {
   if (!content || typeof content !== 'object' || Array.isArray(content)) {
     return { ok: false, errors: ['content 不是对象'], value: null };
   }
@@ -138,7 +139,7 @@ export function validateContent(content, vocabulary = null) {
   if (errors.length > 0) return { ok: false, errors, value: null };
 
   let i18n;
-  if ('i18n' in content) { try { i18n = validateI18n(content.i18n, content); } catch(error) { return {ok:false,errors:['content.i18n: '+error.message],value:null}; } }
+  if ('i18n' in content) { try { i18n = validateI18n(content.i18n, { ...content, ...attribution }); } catch(error) { return {ok:false,errors:['content.i18n: '+error.message],value:null}; } }
   return {
     ok: true,
     errors: [],
@@ -266,7 +267,7 @@ export async function createBridge({
     }
 
     const content = item.review.content || null;
-    const check = validateContent(content, resolvedVocabulary);
+    const check = validateContent(content, resolvedVocabulary, { origin: item.origin, submitter: submissionAttribution(item.fields) });
     if (!check.ok) {
       const reason = `内容 schema 不合法：${check.errors.slice(0, 5).join('；')}`;
       await queue.recordBridge(item.id, {

@@ -1,149 +1,52 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { Endpoint, PayloadRequest } from 'payload'
+import { createBulkJob } from './bulk-jobs'
+import { json, readJsonBody } from '../lib/endpoint-auth'
+import { missingFields } from '../lib/ai-fill'
 
-import { FILL_FIELDS, type FillField, authorDescription, httpVisionCaller, missingFields, suggestFill, visionConfig } from '../lib/ai-fill'
-import { writeAudit } from '../lib/audit'
-import { json, readJsonBody, requireWorker } from '../lib/endpoint-auth'
-import {sourceHash} from '../lib/localization.mjs'
-import { readMedia, readOriginal } from '../lib/content-images'
-
-type FillBody = {
-  draft?: {name:string;description:string;commentary:string;tags:string[];characterId:string;categoryIds:string[]}
-  apply?: boolean
-  /** 抽屉里当前表单为空的字段；不传则按作品库里的缺失字段算。 */
-  fields?: string[]
-  submissionId?: string
-  workId?: string
-}
-
-function normalizeFields(value: unknown): FillField[] | null {
-  if (!Array.isArray(value)) return null
-  return value.map(String).filter((field): field is FillField => (FILL_FIELDS as readonly string[]).includes(field))
-}
-
-async function loadTarget(req: PayloadRequest, body: FillBody): Promise<{ work: any | null; submission: any | null }> {
-  const payload = req.payload as any
-  let work: any = null
-  let submission: any = null
-  if (body.workId) {
-    const found = await payload.find({ collection: 'works', where: { workId: { equals: String(body.workId) } }, limit: 1, depth: 1, overrideAccess: true })
-    work = found.docs[0] || null
-  }
-  const submissionId = body.submissionId || work?.submissionId
-  if (submissionId) {
-    const found = await payload.find({ collection: 'submissions', where: { submissionId: { equals: String(submissionId) } }, limit: 1, depth: 1, overrideAccess: true })
-    submission = found.docs[0] || null
-  }
-  return { work, submission }
-}
-
+/** Generation is asynchronous and performed exclusively by Hermes Agent tools. */
 export const aiFillHandler = async (req: PayloadRequest): Promise<Response> => {
-  const role = (req.user as any)?.role
-  // 站长走后台会话；批量补全走执行器令牌。机器人账号不能写。
-  const viaWorker = role !== 'owner'
-  if (viaWorker) {
-    const denied = requireWorker(req)
-    if (denied) return denied
-  }
-  const cfg = visionConfig()
-  if (!cfg) return json({ ok: false, error: '视觉模型未配置（AI_FILL_ENDPOINT / AI_FILL_API_KEY 或 HERMES_VISION_*）' }, 503)
-
-  const body = await readJsonBody<FillBody>(req)
-  if (!body.workId && !body.submissionId) return json({ ok: false, error: 'workId 或 submissionId 必填' }, 400)
-  if (viaWorker && !body.apply) return json({ ok: false, error: '执行器调用必须明确 apply=true' }, 400)
-  const { work, submission } = await loadTarget(req, body)
-  if (!work && !submission) return json({ ok: false, error: '找不到作品或投稿' }, 404)
-  if (body.apply && !work) return json({ ok: false, error: '只有已入库的作品才能直接写入' }, 400)
-
-  const requested = normalizeFields(body.fields)
-  let base = work || { name: submission?.fields?.name, description: submission?.fields?.description, origin: submission?.origin || {}, license: {} }
-  if(body.draft) {
-    const draft=body.draft
-    if(['name','description','commentary','characterId'].some(k=>typeof (draft as any)[k]!=='string')||!Array.isArray(draft.tags)||draft.tags.some(t=>typeof t!=='string')||!Array.isArray(draft.categoryIds)||draft.categoryIds.some(t=>typeof t!=='string'))return json({ok:false,error:'draft 文案字段不合法'},400)
-    base={...base,name:draft.name,description:draft.description,commentary:draft.commentary,tags:draft.tags.map(value=>({value})),character:{characterId:draft.characterId},categories:draft.categoryIds.map(categoryId=>({categoryId}))}
-  }
-  const fields = work ? (requested ? requested.filter((field) => field === 'i18n' || (field === 'dimensions' ? (!Number(work.width) || !Number(work.height)) : missingFields(base).includes(field))) : missingFields(work)) : (requested || [])
-  if (!fields.length) return json({ ok: true, workId: work?.workId, fields: [], suggestion: {}, applied: false })
-
-  const payload = req.payload as any
-  const original = await readOriginal(work?.legacyPaths?.path)
-  const image = original || (await readMedia(payload, work?.preview)) || (await readMedia(payload, submission?.media))
-  if (!image) return json({ ok: false, error: '读不到这张图，无法补全' }, 422)
-  // 原图读不到时使用后台预览图；预览图经过同步时已保留真实宽高，可用于补齐字段。
-  const effective = fields
-
-  const categoryResult = await payload.find({ collection: 'categories', where: { status: { equals: 'active' } }, limit: 1000, depth: 0, overrideAccess: true })
-  const character = work?.character && typeof work.character === 'object' ? work.character : null
-  const localizationSource=(doc:any)=>({
-    name:String(doc.name||''),description:String(doc.description||''),commentary:String(doc.commentary||''),
-    tags:(doc.tags||[]).map((t:any)=>String(t.value??t)),
-    characterId:String(doc.character?.characterId||character?.characterId||submission?.fields?.characterId||'other'),
-    categoryIds:(doc.categories||[]).map((c:any)=>String(c.categoryId||categoryResult.docs.find((d:any)=>String(d.id)===String(c))?.categoryId||'')),
-    origin:doc.origin||{},license:doc.license||{},
-  })
-
-  let result
-  try {
-    result = await suggestFill({
-      current:localizationSource(base),
-      authorText: authorDescription(work, submission),
-      characterName: String(character?.name || submission?.fields?.characterId || ''),
-      fields: effective,
-      image,
-      name: String(base?.name || ''),
-      vocabulary: { categories: categoryResult.docs.map((doc: any) => ({ categoryId: String(doc.categoryId), name: doc.name, description: doc.description })) },
-    }, httpVisionCaller(cfg))
-  } catch (error) {
-    return json({ ok: false, error: `AI 补全失败：${error instanceof Error ? error.message : String(error)}` }, 502)
-  }
-  const { suggestion, errors } = result
-
-  if (!body.apply) return json({ ok: true, workId: work?.workId, fields: effective, suggestion, errors, applied: false })
-
-  // 写回：只写缺失字段，再核对一次，防止并发期间人工已经填了。
-  const fresh = await payload.findByID({ collection: 'works', id: work.id, depth: 1, overrideAccess: true })
-  const stillMissing = new Set(missingFields(fresh))
-  const data: Record<string, any> = {}
-  if (suggestion.name && stillMissing.has('name')) data.name = suggestion.name
-  if (suggestion.description && stillMissing.has('description')) data.description = suggestion.description
-  if (suggestion.commentary && stillMissing.has('commentary')) data.commentary = suggestion.commentary
-  if (suggestion.tags && stillMissing.has('tags')) data.tags = suggestion.tags.map((value) => ({ value }))
-  if (suggestion.categoryIds && stillMissing.has('categories')) {
-    data.categories = categoryResult.docs.filter((doc: any) => suggestion.categoryIds!.includes(String(doc.categoryId))).map((doc: any) => doc.id)
-  }
-  if (suggestion.width && suggestion.height && stillMissing.has('dimensions')) {
-    data.width = suggestion.width
-    data.height = suggestion.height
-  }
-  if (suggestion.i18n) {
-    if(suggestion.i18n.sourceHash!==sourceHash(localizationSource({...fresh,...data}))) return json({ok:false,error:'作品在生成期间已修改，请重新生成完整多语言版本'},409)
-    data.legacyData={...(fresh.legacyData||{}),i18n:suggestion.i18n}
-  }
-
-  if (!Object.keys(data).length) return json({ ok: true, workId: work.workId, fields: effective, suggestion, errors, applied: false })
-
-  data.needsPublish = true
-  if (!fresh.changeAction) data.changeAction = 'update'
-  await payload.update({ collection: 'works', id: work.id, data, context: { audit: false, skipFieldAccess: true }, overrideAccess: true, req })
-  await writeAudit(req, {
-    action: 'works.ai-fill',
-    before: Object.fromEntries(Object.keys(data).map((key) => [key, fresh[key] ?? null])),
-    after: { ...data, descriptionSource: suggestion.descriptionSource || null, model: cfg.model || null, via: viaWorker ? 'worker' : 'owner' },
-    targetId: work.workId,
-    targetType: 'works',
-  })
-  return json({ ok: true, workId: work.workId, fields: effective, suggestion, errors, applied: true, written: Object.keys(data).filter((key) => key !== 'needsPublish' && key !== 'changeAction') })
+  if (req.user?.role !== 'owner')
+    return json({ error: '仅站长可提交 Hermes 编辑任务' }, req.user ? 403 : 401)
+  const body = await readJsonBody<any>(req)
+  const target = body.workId ? 'works' : 'submissions'
+  const id = String(body.workId || body.submissionId || '')
+  if (!id) return json({ error: 'workId 或 submissionId 必填' }, 400)
+  const response = await createBulkJob({
+    ...req,
+    json: async () => ({
+      operation:
+        Array.isArray(body.fields) && body.fields.every((f: string) => f === 'i18n')
+          ? 'translate'
+          : 'ai-fill',
+      target,
+      ids: [id],
+      drafts: body.draft ? { [id]: body.draft } : {},
+      suggestOnly: !body.apply,
+      requestId: body.requestId,
+    }),
+  } as PayloadRequest)
+  return response
 }
 
-/** 列出有缺失字段的作品，供批量补全使用。 */
 export const aiFillMissingHandler = async (req: PayloadRequest): Promise<Response> => {
-  if ((req.user as any)?.role !== 'owner') {
-    const denied = requireWorker(req)
-    if (denied) return denied
-  }
-  const result = await (req.payload as any).find({ collection: 'works', where: { status: { in: ['published', 'pending'] } }, limit: 5000, depth: 0, overrideAccess: true, pagination: false })
+  if (req.user?.role !== 'owner') return json({ error: 'unauthorized' }, 401)
+  const result = await (req.payload as any).find({
+    collection: 'works',
+    where: { status: { in: ['published', 'pending'] } },
+    limit: 5000,
+    depth: 0,
+    overrideAccess: true,
+    pagination: false,
+  })
   const items = result.docs
-    .map((doc: any) => ({ workId: doc.workId, kind: doc.kind, status: doc.status, name: doc.name, missing: missingFields(doc) }))
+    .map((doc: any) => ({
+      workId: doc.workId,
+      kind: doc.kind,
+      status: doc.status,
+      name: doc.name,
+      missing: missingFields(doc),
+    }))
     .filter((item: any) => item.missing.length)
   return json({ ok: true, total: items.length, items })
 }

@@ -2,7 +2,7 @@
 set -euo pipefail
 
 case "${1:-}" in
-  review|pull|publish|maintenance|maintenance-plan|maintenance-report) action="$1" ;;
+  agent-tool|review|pull|publish|maintenance|maintenance-plan|maintenance-report) action="$1" ;;
   *) echo 'invalid action' >&2; exit 64 ;;
 esac
 if [[ "$#" -ne 1 ]]; then
@@ -44,18 +44,16 @@ set -a
 set +a
 cd /srv/apps/dafeiyu/source
 
+if [[ "$action" == agent-tool ]]; then
+  set -a
+  . /etc/dafeiyu/admin.env
+  set +a
+  exec /usr/sbin/runuser -u dafeiyu --preserve-environment -- /usr/bin/node ops/hermes/tool.mjs
+fi
+
 if [[ "$action" == review ]]; then
-  /usr/sbin/runuser -u dafeiyu -- /usr/bin/node ops/hermes/cli.mjs review-cycle --live --limit 20 --json
-  if ! sync_admin -n >&2; then
-    echo 'admin sync skipped: lock busy or sync failed' >&2
-  fi
-  (
-    set -a
-    . /etc/dafeiyu/admin-publish.env
-    set +a
-    /usr/bin/node /srv/apps/dafeiyu/source/ops/issue-reconcile.mjs
-  ) >&2 || echo 'issue reconcile failed' >&2
-  exit 0
+  echo 'Direct review-cycle is retired; run the Hermes editorial Agent task.' >&2
+  exit 65
 fi
 
 /usr/sbin/runuser -u dafeiyu -- /usr/bin/node server/cli.mjs pull-issues --state open --max-pages 5

@@ -32,6 +32,7 @@ import { SOURCES, STATES, sha256 } from './queue.mjs';
 import { submissionAttribution } from '../admin/src/lib/attribution.mjs';
 import { reviewQueuedItem } from './review.mjs';
 import { validateContent as validateReviewContent } from './bridge.mjs';
+import { agentAction } from './agent.mjs';
 
 const LOOPBACK_HOSTS = new Set(['127.0.0.1', '::1', 'localhost']);
 
@@ -525,6 +526,7 @@ function internalItemView(item) {
     fields: item.fields || {},
     createdAt: item.createdAt,
     updatedAt: item.updatedAt,
+    ...(item.agent ? { agent: { stage: item.agent.stage, lastError: item.agent.lastError, draft: item.agent.draft } } : {}),
     rawPath: `/api/v1/internal/submissions/${item.id}/raw`,
   };
   if (item.review) view.review = item.review;
@@ -543,7 +545,7 @@ function internalItemView(item) {
  * 返回 { status, body }，由 HTTP 层原样发出；业务错误不抛出。
  * 兼容两家字段命名：submissionId 与 id 二选一。
  */
-export async function applyOneReview({ queue, bridge = null, cfg, reviewer, result, vocabulary = null, logger = console } = {}) {
+export async function applyOneReview({ queue, bridge = null, cfg, reviewer, result, vocabulary = null, logger = console, agentToken = null } = {}) {
   const send = (status, body) => ({ status, body });
   const body = result && typeof result === 'object' && !Array.isArray(result) ? result : {};
 
@@ -588,7 +590,7 @@ export async function applyOneReview({ queue, bridge = null, cfg, reviewer, resu
 
   let content = null;
   if (body.verdict === 'pass') {
-    const check = validateReviewContent(body.content, vocabulary || loadContentVocabulary(cfg.siteRoot));
+    const check = validateReviewContent(body.content, vocabulary || loadContentVocabulary(cfg.siteRoot), { origin: item.origin, submitter: submissionAttribution(item.fields) });
     if (!check.ok) {
       /* 422：响应只回笼统错误 + 脱敏摘要，并把摘要写进私有 queue.log。
        * 摘要不含 AI 原文 / 图片 / 令牌，外部 reviewer（Hermes）可安全展示。 */
@@ -613,7 +615,7 @@ export async function applyOneReview({ queue, bridge = null, cfg, reviewer, resu
   });
 
   try {
-    await queue.transition(submissionId, 'review.start', { actor: reviewer });
+    await queue.transition(submissionId, 'review.start', { actor: reviewer, agentToken });
     await queue.attachReview(submissionId, {
       verdict: body.verdict,
       confidence: body.confidence,
@@ -630,6 +632,7 @@ export async function applyOneReview({ queue, bridge = null, cfg, reviewer, resu
     const event = body.verdict === 'pass' ? 'review.pass' : body.verdict === 'reject' ? 'review.reject' : 'review.manual';
     await queue.transition(submissionId, event, { actor: reviewer, reason });
   } catch (error) {
+    if (agentToken && error.status === 409) return send(409, { ok: false, error: error.message });
     /* 并发下先到者已把状态推进，后到者按幂等回原结果；否则失败关闭转人工。 */
     const current = await queue.get(submissionId).catch(() => null);
     if (current && current.review && current.review.decidedBy === reviewer && INTERNAL_REVIEW_STATES.has(current.state)) {
@@ -722,6 +725,30 @@ export async function applyInternalReviewBatch({ queue, bridge = null, cfg, revi
 
 /** 处理内部接口的只读列表 / 详情 / 原图 / 审核结果写入。 */
 export async function handleInternalRequest({ req, res, url, reviewer, cfg, queue, bridge = null, vocabulary = null, logger = console }) {
+  if (req.method === 'POST' && url.pathname === '/api/v1/internal/agent') {
+    if (reviewer !== 'hermes') return sendJson(res, 403, { error: 'Hermes only' });
+    try {
+      const raw = await readBody(req, cfg.maxJsonBytes);
+      const body = JSON.parse(raw.toString('utf8'));
+      const output = await agentAction(queue, body.action, body, { vocabulary: vocabulary || loadContentVocabulary(cfg.siteRoot) });
+      if (body.action === 'image') {
+        const item = await queue.get(body.id);
+        if (item.original?.released) return sendOriginalReleased(res, item);
+        const buffer = await queue.readImage(body.id);
+        res.writeHead(200, { 'Content-Type': item.mime, 'Content-Length': buffer.length, 'Cache-Control': 'no-store' });
+        return res.end(buffer);
+      }
+      if (body.action === 'complete') {
+        const result = output.result;
+        if (result.verdict === 'pass' && result.confidence < cfg.review.minConfidence) return sendJson(res, 422, { error: '初审置信度不足，请判断是否需要人工复核' });
+        const applied = await applyOneReview({ queue, bridge, cfg, reviewer, vocabulary, logger, agentToken: body.token, result: { submissionId: body.id, ...result, model: 'hermes-agent' } });
+        return sendJson(res, applied.status, applied.body);
+      }
+      return sendJson(res, 200, { ok: true, ...output });
+    } catch (error) {
+      return sendJson(res, error.status || (error.code === 'TOO_LARGE' ? 413 : error.code === 'LOCALIZATION_INVALID' ? 422 : 400), { ok: false, error: error.message, path: error.path || null });
+    }
+  }
   if (req.method === 'GET' && url.pathname === '/api/v1/internal/submissions') {
     const state = url.searchParams.get('state') || STATES.RECEIVED;
     if (!Object.values(STATES).includes(state)) return sendJson(res, 400, { ok: false, error: 'state 非法' });
@@ -1009,6 +1036,7 @@ export function createAdminHandler({
         return sendJson(res, 200, { ok: true, count: items.length, items, nextCursor });
       }
       if (req.method === 'POST' && url.pathname === '/api/v1/review') {
+        if (!reviewer?.configured) return sendJson(res, 410, { error: '独立审核已停用，请使用 Hermes Agent 工具任务' });
         const raw = await readBody(req, cfg.maxJsonBytes);
         const body = raw.length ? JSON.parse(raw.toString('utf8')) : {};
         const targets = Array.isArray(body.ids) ? body.ids : [];
@@ -1076,6 +1104,7 @@ export function createAdminHandler({
           return sendJson(res, 200, { ok: true, raw: await queue.readReviewRaw(id) });
         }
         if (req.method === 'POST' && sub === '/review') {
+          if (!reviewer?.configured) return sendJson(res, 410, { error: '独立审核已停用，请使用 Hermes Agent 工具任务' });
           const result = await reviewCoordinator.run(id);
           if (!result) return sendJson(res, 400, { ok: false, error: '请求无法处理' });
           const item = await queue.get(id);

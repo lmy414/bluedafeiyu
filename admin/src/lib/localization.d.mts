@@ -1,4 +1,5 @@
-export const LOCALE_FIELDS: string[];
-export function sourceText(work: any): any;
-export function sourceHash(work: any): string;
-export function validateI18n(value: any, original: any): {en:any;ja:any};
+export const LOCALE_FIELDS: string[]
+export function sourceText(work: any): any
+export function sourceHash(work: any): string
+export function validateLocale(value: any, language: 'en' | 'ja', original: any): any
+export function validateI18n(value: any, original: any): { en: any; ja: any }

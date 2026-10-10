@@ -31,7 +31,7 @@ import path from 'node:path';
 
 import { configSummary, resolveConfig } from './config.mjs';
 import { createQueue, sha256, STATES } from './queue.mjs';
-import { createReviewer, reviewPending } from './review.mjs';
+import { createReviewer } from './review.mjs';
 import { createBridge } from './bridge.mjs';
 import { createNotifier } from './notify.mjs';
 import { createGithubAdapter } from './adapters/github.mjs';
@@ -213,40 +213,9 @@ const commands = {
     console.log(`已导出 ${target}`);
   },
 
-  async review(cfg, { options, positional }) {
-    const { queue, reviewer } = await buildContext(cfg);
-    if (!reviewer.configured) {
-      console.log('提示：AI 审核未配置，本次一律转人工（不会假造结论）。');
-    }
-    const results = await reviewPending(queue, reviewer, {
-      ids: positional,
-      limit: optionValue(options, 'limit') ? Number(optionValue(options, 'limit')) : 50,
-    });
-    for (const entry of results) {
-      console.log(`${String(entry.verdict).padEnd(8)}${entry.id}  ${entry.reason || ''}`);
-    }
-    console.log(`\n共审核 ${results.length} 条。通过后会自动进入私有中转区，下一次批量发布处理；下架仍需人工。`);
-  },
+  async review() { throw new Error('独立审核已停用，请使用 Hermes Agent 工具任务'); },
 
-  async 'review-received'(cfg, { options }) {
-    const { queue, reviewer, bridge } = await buildContext(cfg);
-    const limit = optionValue(options, 'limit') ? Number(optionValue(options, 'limit')) : 50;
-    const received = await queue.list({ state: STATES.RECEIVED, limit });
-    const results = [];
-    for (const item of received) {
-      try {
-        const result = await reviewPending(queue, reviewer, { ids: [item.id], limit: 1 });
-        results.push({ id: item.id, ...(result[0] || { verdict: 'manual', reason: '没有审核结果' }) });
-      } catch (error) {
-        results.push({ id: item.id, verdict: 'manual', reason: error.message });
-      }
-    }
-    const bridged = await bridge.bridgePending({ limit });
-    for (const entry of results) {
-      console.log(`${String(entry.verdict).padEnd(8)}${entry.id}  ${entry.reason || ''}`);
-    }
-    console.log(`\n即时审核 ${results.length} 条；桥接 ready ${bridged.ready} 条。`);
-  },
+  async 'review-received'() { throw new Error('独立审核已停用，请使用 Hermes Agent 工具任务'); },
 
   async approve(cfg, { options, positional }) {
     if (!positional[0]) die('approve 需要 id');

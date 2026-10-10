@@ -71,7 +71,7 @@ function filters(q: ConsoleQuery, includeAuthor: boolean) {
     if (q.category)
       add("EXISTS(SELECT 1 FROM works_rels r WHERE r.parent_id=w.id AND r.path='categories' AND r.categories_id=?)", q.category)
   } else {
-    add("s.state IN ('auto_rejected','needs_manual')")
+    add(q.mode === 'processing' ? "s.state IN ('received','reviewing')" : "s.state IN ('auto_rejected','needs_manual')")
     add(q.mode === 'reviewed' ? 's.work_id IS NOT NULL' : 's.work_id IS NULL')
     if (q.channel && q.channel !== 'all') add('s.source=?', q.channel)
   }
@@ -119,7 +119,7 @@ export async function consoleList(payload: Payload, q: ConsoleQuery) {
   const projection =
     q.kind === 'works'
       ? `w.id,w.work_id AS workId,w.name,w.status,w.channel,w.updated_at AS updatedAt,(${WORK_AUTHOR}) AS effectiveAuthor,c.id AS characterId,c.character_id AS characterKey,c.name AS characterName,${media},json_extract(w.review,'$.confidence') AS confidence,json_extract(w.review,'$.reason') AS reason,(SELECT json_group_array(json_object('id',cat.id,'categoryId',cat.category_id,'name',cat.name)) FROM works_rels r JOIN categories cat ON cat.id=r.categories_id WHERE r.parent_id=w.id AND r.path='categories') AS categories`
-      : `s.id,s.submission_id AS submissionId,s.title,s.source,s.state,s.updated_at AS updatedAt,(${SUB_AUTHOR}) AS effectiveAuthor,coalesce(json_extract(s.editorial,'$.characterId'),json_extract(s.fields,'$.characterId'),json_extract(s.fields,'$.character')) AS characterKey,${media},json_extract(s.review,'$.confidence') AS confidence,json_extract(s.review,'$.reason') AS reason,w.id AS workId,w.work_id AS linkedKey,w.name AS workName,w.status AS workStatus`
+      : `s.id,s.submission_id AS submissionId,s.title,s.source,s.state,json_extract(s.agent_progress,'$.stage') AS agentStage,json_extract(s.agent_progress,'$.lastError') AS agentError,s.updated_at AS updatedAt,(${SUB_AUTHOR}) AS effectiveAuthor,coalesce(json_extract(s.editorial,'$.characterId'),json_extract(s.fields,'$.characterId'),json_extract(s.fields,'$.character')) AS characterKey,${media},json_extract(s.review,'$.confidence') AS confidence,json_extract(s.review,'$.reason') AS reason,w.id AS workId,w.work_id AS linkedKey,w.name AS workName,w.status AS workStatus`
   const rows = await consoleRows(
     payload,
     `SELECT ${projection} FROM ${FROM[q.kind]} ${f.where} ORDER BY ${rank}${f.alias}.${q.kind === 'works' ? 'updated_at' : 'created_at'} DESC,${f.alias}.id DESC LIMIT ? OFFSET ?`,
@@ -151,6 +151,7 @@ export async function consoleList(payload: Payload, q: ConsoleQuery) {
           title: r.title,
           source: r.source,
           state: r.state,
+          agentProgress: { stage: r.agentStage, lastError: r.agentError },
           media: preview,
           fields: { character: r.characterKey },
           work: r.workId ? { id: r.workId, workId: r.linkedKey, name: r.workName, status: r.workStatus } : undefined,

@@ -60,7 +60,7 @@ SQLite/Postgres，需要单独说明新增依赖与迁移方案——本次没�
 | `PUBLIC_TURNSTILE_SITEKEY` | 前端构建时启用 Turnstile 时配置 | 公开 sitekey；构建期注入 `frontend/src/components/SubmissionForm.astro` 的投稿表单 |
 | `SUBMISSION_ASTRABOT_REVIEW_TOKEN` | 否 | 旧 AstrBot 审核令牌；已停用并忽略，只打一行警告。QQ 投稿改由 Hermes 审核 |
 | `SUBMISSION_HERMES_REVIEW_TOKEN` | 启用 Hermes 审核回写时必填 | Hermes 审核结果回写令牌 |
-| `SUBMISSION_AI_ENDPOINT` / `SUBMISSION_AI_API_KEY` / `SUBMISSION_AI_MODEL` | 否 | 兼容旧版人工/CLI审核工具；Hermes 模式不配置 |
+| `SUBMISSION_AI_ENDPOINT` / `SUBMISSION_AI_API_KEY` / `SUBMISSION_AI_MODEL` | 否 | 旧配置保留可读，生产直接模型调用已停用 |
 | `SUBMISSION_AI_TIMEOUT_MS` / `SUBMISSION_AI_MIN_CONFIDENCE` | 否 | 审核超时与置信度阈值，默认 60s / 0.6 |
 | `SUBMISSION_AI_PROMPT_VERSION` | 否 | 审核提示词版本标记（只落私有记录，便于回溯），默认 `v1` |
 | `SUBMISSION_GITHUB_REPO` | 否 | 默认 `lmy414/ai-girl-stickers` |
@@ -95,7 +95,7 @@ node server/cli.mjs serve
 # 3) 本地把一张图放进队列 / 查看 / 跑审核 / 人工决定
 node server/cli.mjs enqueue ./test.png --name "作品名" --character deepseek
 node server/cli.mjs list
-node server/cli.mjs review --all
+# 初审、补全与翻译由 Hermes editorial Agent 工具任务处理
 node server/cli.mjs approve sub_xxxx --reason "看图确认"
 node server/cli.mjs prune-originals
 node server/cli.mjs prune-originals --days 14 --apply --json
@@ -128,7 +128,7 @@ received ──review.start──▶ reviewing ──review.pass──▶ auto_p
 ```
 
 - **没有 `published` 状态**，服务不会把图片写进内容仓、不会推送、不会发布；
-- AI 未配置 / 超时 / 报错 / 返回解析不了 / 置信度低于阈值 —— 一律 `needs_manual`，绝不通过；
+- Hermes 工具领取和分阶段草稿保存在条目的私有 `agent` 字段。技术失败保持 `received`，通过 `agent.stage` 显示待翻译或技术暂挂，不误转人工；
 - 即使 AI 判 `pass`，也只到 `auto_passed`，仍需人 `approve`；
 - 重启时卡在 `reviewing` 的条目按超时转人工（`server/cli.mjs recover`）。
 
@@ -145,9 +145,9 @@ received ──review.start──▶ reviewing ──review.pass──▶ auto_p
 | `GET` | `/api/v1/items/<id>` | 条目详情 |
 | `GET` | `/api/v1/items/<id>/raw` | 原图（附件下载、`nosniff`）；已释放返回 410 |
 | `POST` | `/api/v1/items/<id>/release-original` | 删除私有原图并记录 `{reason,rawUrl}`；重复调用幂等 |
-| `GET`/`POST` | `/api/v1/items/<id>/review` | 读取原始 AI 结果 / 触发一次审核 |
+| `GET`/`POST` | `/api/v1/items/<id>/review` | GET 读取原始记录；旧 POST 生产入口返回 410 |
 | `POST` | `/api/v1/items/<id>/decision` | `{decision:"approved"|"rejected","reason":...}` |
-| `POST` | `/api/v1/review` | 批量审核 `{ids:[...]}` 或待审队列 |
+| `POST` | `/api/v1/review` | 旧生产审核入口已停用，返回 410 |
 | `POST` | `/api/v1/pull-issues` | 拉取 Issue 附件 |
 | `POST` | `/api/v1/recover` | 恢复卡住的审核 |
 
@@ -175,7 +175,7 @@ GitHub 标签过滤与附件域名白名单/限额、QQ 被动入站与令牌/�
 - 飞书群通知：收到投稿、审核结果和上线结果会发飞书群通知（`server/notify.mjs`），变量为
   `FEISHU_NOTIFY_APP_ID` / `FEISHU_NOTIFY_APP_SECRET` / `FEISHU_NOTIFY_CHAT_ID`。
 
-**当前自动审核模式**：服务端不在投稿入队后自动调用 AI；QQ、网站与 GitHub 投稿均由 Hermes 每 5 分钟审核并回写，审核通过后由后台批量发布。`SUBMISSION_AI_*` 不配置也不会阻塞外部审核结果接口。
+当前自动审核模式：Hermes 每 5 分钟启动 Agent，用原生工具读取图片、校验和保存中文、英文、日文。`POST /api/v1/internal/agent` 需要独立审核令牌。发布要求保持不变。部署步骤见 `../docs/Hermes审核与发布接线.md`。
 
 ## 与 `tools/intake/` 的分工
 

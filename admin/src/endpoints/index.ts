@@ -1,6 +1,7 @@
 import type { Endpoint } from 'payload'
 
 import { AiFillEndpoints } from './ai-fill'
+import { AgentEndpoints } from './agent'
 import { BulkJobEndpoints } from './bulk-jobs'
 import { ConsoleEndpoints } from './console'
 import { AnalyticsEndpoints } from './analytics'
@@ -17,5 +18,6 @@ export const endpoints: Endpoint[] = [
   ...IssueReplyEndpoints,
   ...DashboardEndpoints,
   ...AiFillEndpoints,
+  ...AgentEndpoints,
   WorksByAuthorEndpoint,
 ]

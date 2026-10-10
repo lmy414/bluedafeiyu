@@ -336,7 +336,7 @@ test('review-cycle：默认审核 QQ，跳过已由 Hermes 审过的 needs_manua
   assert.equal(summary.skipped, 1);
 });
 
-test('review-cycle --live：看图、调模型、批量回写 pass 结果', async (t) => {
+test('review-cycle --live：旧调用路径停用，不调用模型或写入审核结果', async (t) => {
   const stateDir = await tempStateDir(t);
   const fetchImpl = makeFetch([
     [REVIEW_RESULTS_PATH, () => batchResponse([{ id: 'sub_abc123', state: 'auto_passed', verdict: 'pass' }])],
@@ -352,27 +352,12 @@ test('review-cycle --live：看图、调模型、批量回写 pass 结果', asyn
     HERMES_VISION_MODEL: 'vision-model',
   });
   const { code } = await capture(() => main(['review-cycle', '--live'], { env, fetchImpl, vocabulary: VOCABULARY }));
-  assert.equal(code, 0);
-
-  const visionCall = fetchImpl.calls.find((call) => call.url.includes('/v1/chat/completions'));
-  assert.match(visionCall.options.headers.Authorization, /^Bearer vision-key$/);
-
-  const postCall = fetchImpl.calls.find((call) => call.url.includes(REVIEW_RESULTS_PATH));
-  assert.match(postCall.options.headers.Authorization, /^Bearer hermes-token$/);
-  assert.ok(postCall.options.headers['Idempotency-Key']);
-  const body = JSON.parse(postCall.options.body);
-  assert.equal(body.schema, REVIEW_RESULTS_SCHEMA);
-  assert.equal(body.reviewer, 'hermes');
-  assert.equal(body.results.length, 1);
-  assert.equal(body.results[0].submissionId, 'sub_abc123');
-  assert.equal(body.results[0].verdict, 'pass');
-  assert.equal(body.results[0].content.characterId, 'deepseek');
-  // 原图走内部 raw 路径，不是管理口
-  const rawCall = fetchImpl.calls.find((call) => call.url.includes('/raw'));
-  assert.match(rawCall.url, /\/api\/v1\/internal\/submissions\/sub_abc123\/raw$/);
+  assert.equal(code, 1);
+  assert.equal(fetchImpl.calls.length, 1);
+  assert.ok(!fetchImpl.calls.some(call => call.url.includes('/v1/chat/completions') || call.url.includes(REVIEW_RESULTS_PATH)));
 });
 
-test('review-cycle --live：模型报错时回写 manual，不上报 pass', async (t) => {
+test('review-cycle --live：不会因旧模型错误将投稿转人工', async (t) => {
   const stateDir = await tempStateDir(t);
   const fetchImpl = makeFetch([
     [REVIEW_RESULTS_PATH, () => batchResponse([{ id: 'sub_abc123', state: 'needs_manual', verdict: 'manual' }])],
@@ -387,10 +372,8 @@ test('review-cycle --live：模型报错时回写 manual，不上报 pass', asyn
     HERMES_VISION_API_KEY: 'vision-key',
   });
   const { code } = await capture(() => main(['review-cycle', '--live'], { env, fetchImpl, vocabulary: VOCABULARY }));
-  assert.equal(code, 0);
-  const body = JSON.parse(fetchImpl.calls.find((call) => call.url.includes(REVIEW_RESULTS_PATH)).options.body);
-  assert.equal(body.results[0].verdict, 'manual');
-  assert.equal(body.results[0].content, undefined);
+  assert.equal(code, 1);
+  assert.ok(!fetchImpl.calls.some(call => call.url.includes(REVIEW_RESULTS_PATH)));
 });
 
 test('review-cycle --live：未配视觉模型直接报错', async (t) => {
@@ -401,7 +384,7 @@ test('review-cycle --live：未配视觉模型直接报错', async (t) => {
   const env = baseEnv({ HERMES_STATE_DIR: stateDir, HERMES_REVIEW_LIVE: 'true' });
   const { code, err } = await capture(() => main(['review-cycle', '--live'], { env, fetchImpl, vocabulary: VOCABULARY }));
   assert.equal(code, 1);
-  assert.match(err, /视觉模型未配置/);
+  assert.match(err, /已停用/);
 });
 
 test('post-results：校验外部结果文件后批量回写', async (t) => {

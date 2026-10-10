@@ -1,0 +1,12 @@
+name: dafeiyu-editorial
+version: 1.0.0
+description: 蓝色大肥鱼审核与多语言编辑工具。通过受控 SSH 桥接操作，不调用辅助模型。
+author: bluedafeiyu
+provides_tools:
+  - dafeiyu_tasks
+  - dafeiyu_claim
+  - dafeiyu_read
+  - dafeiyu_save_draft
+  - dafeiyu_save_locale
+  - dafeiyu_finish
+  - dafeiyu_release

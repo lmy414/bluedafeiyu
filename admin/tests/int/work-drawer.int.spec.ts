@@ -37,7 +37,7 @@ describe('人工收录的多语言流程', () => {
   it('保留已经生成的译文；中文修改后重新生成', async () => {
     render(React.createElement(WorkDrawer, props))
     fireEvent.click(screen.getByRole('button', { name: 'AI 补全与翻译' }))
-    await screen.findByText(/已生成 AI 建议及英日版本/)
+    await screen.findByText(/Hermes 已生成建议及英日版本/)
     fireEvent.change(screen.getByLabelText('名称'), { target: { value: '修改后的名称' } })
     fireEvent.click(screen.getByRole('button', { name: '人工收录' }))
     await waitFor(() => expect(props.onSaved).toHaveBeenCalledOnce())
@@ -49,7 +49,7 @@ describe('人工收录的多语言流程', () => {
   it('当前中文未修改时复用已生成的译文', async () => {
     render(React.createElement(WorkDrawer, props))
     fireEvent.click(screen.getByRole('button', { name: 'AI 补全与翻译' }))
-    await screen.findByText(/已生成 AI 建议及英日版本/)
+    await screen.findByText(/Hermes 已生成建议及英日版本/)
     fireEvent.click(screen.getByRole('button', { name: '人工收录' }))
     await waitFor(() => expect(props.onSaved).toHaveBeenCalledOnce())
     expect(api.mutate.mock.calls.map(([path]) => path)).toEqual(['/ai-fill', '/works/bulk'])

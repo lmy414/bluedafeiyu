@@ -102,7 +102,7 @@ async function includeSubmissions(req: PayloadRequest, ids: string[]): Promise<{
     })
     const doc = submission.docs[0]
     if (!doc) throw new Error(`找不到投稿 ${id}`)
-    const check = validateContent(doc.review?.content, vocab)
+    const check = validateContent(doc.review?.content, vocab, { origin: doc.origin, submitter: submissionAttribution(doc.fields) })
     if (!check.ok) throw new Error(`投稿 ${id} 内容不合法：${check.errors.join('；')}`)
     if (!doc.sha256) throw new Error(`投稿 ${id} 缺 sha256`)
     const duplicate = await payload.find({ collection: 'works', where: { sha256: { equals: doc.sha256 } }, limit: 1, depth: 0, overrideAccess: true })
@@ -170,7 +170,7 @@ async function manualInclude(req: PayloadRequest, body: BulkBody): Promise<Respo
   if (doc.work) return json({ ok: false, error: `投稿 ${submissionId} 已关联作品` }, 400)
 
   const vocab = await vocabulary(req)
-  const check = validateContent(body.content, vocab)
+  const check = validateContent(body.content, vocab, { origin: doc.origin, submitter: submissionAttribution(doc.fields) })
   if (!check.ok) return json({ ok: false, error: `投稿 ${submissionId} 内容不合法：${check.errors.join('；')}` }, 400)
   if (!doc.sha256) return json({ ok: false, error: `投稿 ${submissionId} 缺 sha256` }, 400)
   const duplicate = await payload.find({ collection: 'works', where: { sha256: { equals: doc.sha256 } }, limit: 1, depth: 0, overrideAccess: true })

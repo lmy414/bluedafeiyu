@@ -458,7 +458,34 @@ test('原图释放后：管理 raw、internal raw 返回 410，readImage 明确�
   );
 });
 
-test('管理端触发审核：未配置 AI 转人工，人工可批准', async (t) => {
+test('Hermes Agent HTTP 工具逐项保存并提交；错误译文不转人工', async (t) => {
+  const { publicHandler, queue } = await setup(t, { env: { SUBMISSION_HERMES_REVIEW_TOKEN: 'agent-test-secret' } });
+  const item = (await queue.enqueue({ source: 'web', sourceId: 'web:agent-http', buffer: TINY_PNG, fields: { name: '工具测试' } })).item;
+  await withServer(publicHandler, async (port) => {
+    const send = async (input) => {
+      const response = await call(port, { method: 'POST', routePath: '/api/v1/internal/agent', headers: { authorization: 'Bearer agent-test-secret', 'Content-Type': 'application/json' }, body: Buffer.from(JSON.stringify({ id: item.id, ...input })) });
+      return { status: response.status, data: response.headers['content-type']?.startsWith('image/') ? null : JSON.parse(response.body) };
+    };
+    const claim = await send({ action: 'claim' });
+    assert.equal(claim.status, 200);
+    const auth = { token: claim.data.token };
+    assert.equal((await send({ action: 'image', ...auth })).status, 200);
+    const content = { name: '工具测试', description: '画面说明', commentary: '我来看看。', characterId: 'deepseek', categoryIds: ['meme'], tags: ['测试'] };
+    const saved = await send({ action: 'draft', ...auth, content, review: { verdict: 'pass', confidence: .99, reason: 'AI 娘二创，画面合规' } });
+    assert.equal(saved.status, 200, JSON.stringify(saved.data));
+    const sourceHash = saved.data.draft.i18n.sourceHash;
+    const locales = fixtureI18n(content.tags);
+    assert.equal((await send({ action: 'locale', ...auth, language: 'en', sourceHash, content: locales.en })).status, 200);
+    assert.equal((await send({ action: 'locale', ...auth, language: 'ja', sourceHash, content: { ...locales.ja, tags: [] } })).status, 422);
+    assert.equal((await queue.get(item.id)).state, 'received');
+    assert.equal((await send({ action: 'locale', ...auth, language: 'ja', sourceHash, content: locales.ja })).status, 200);
+    assert.equal((await send({ action: 'complete', ...auth })).status, 200);
+    assert.equal((await queue.get(item.id)).state, 'auto_passed');
+    assert.equal((await send({ action: 'complete', ...auth })).status, 409);
+  });
+});
+
+test('旧管理审核入口停用，不会把未处理条目误转人工；人工决定仍可用', async (t) => {
   const { publicHandler, adminHandler, queue } = await setup(t);
   await withServer(publicHandler, async (port) => { await submit(port, {}); });
   const item = (await queue.list())[0];
@@ -468,9 +495,9 @@ test('管理端触发审核：未配置 AI 转人工，人工可批准', async (
       routePath: `/api/v1/items/${item.id}/review`,
       headers: { authorization: 'Bearer admin-secret-value' },
     });
-    assert.equal(reviewed.status, 200, reviewed.body.toString());
-    assert.equal(JSON.parse(reviewed.body).verdict, 'manual');
-    assert.equal((await queue.get(item.id)).state, STATES.NEEDS_MANUAL);
+    assert.equal(reviewed.status, 410, reviewed.body.toString());
+    assert.equal((await queue.get(item.id)).state, STATES.RECEIVED);
+    await queue.transition(item.id, 'review.manual', { reason: '内容需人工复核' });
 
     const approved = await call(port, {
       method: 'POST',

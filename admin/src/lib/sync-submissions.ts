@@ -129,6 +129,7 @@ function textOk(value: unknown, max: number, required = false): boolean {
 export function validateContent(
   content: unknown,
   vocabulary: { characterIds: Set<string>; categoryIds: Set<string> },
+  attribution: Record<string, any> = {},
 ): { ok: true; value: any } | { ok: false; errors: string[] } {
   if (!content || typeof content !== 'object' || Array.isArray(content)) return { ok: false, errors: ['content 不是对象'] }
   const object = content as Record<string, unknown>
@@ -167,7 +168,7 @@ export function validateContent(
   let i18n
   if ('i18n' in object) {
     try {
-      i18n = validateI18n(object.i18n, object)
+      i18n = validateI18n(object.i18n, { ...object, ...attribution })
     } catch (error) {
       return { ok: false, errors: ['content.i18n: ' + (error as Error).message] }
     }
@@ -374,7 +375,7 @@ export async function syncSubmissions(
 
         try {
           if (item.state === 'auto_passed' && !existingWork && !linkedWorkId && mediaId && !item.original?.released) {
-            const check = validateContent(item.review?.content, vocabulary)
+            const check = validateContent(item.review?.content, vocabulary, { origin: item.origin, submitter: submissionAttribution(item.fields) })
             if (!check.ok) {
               stats.skipped += 1
               stats.errors.push(`${submissionId} 内容未通过：${check.errors.join('；')}`)
@@ -442,6 +443,7 @@ export async function syncSubmissions(
           media: mediaId || undefined,
           fields: item.fields || {},
           review: item.review || null,
+          agentProgress: item.agent ? { stage: item.agent.stage, lastError: item.agent.lastError, draft: item.agent.draft } : null,
           state: item.state || 'received',
           stateHistory: item.stateHistory || [],
           origin: item.origin || {},

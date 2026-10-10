@@ -122,7 +122,7 @@ const REVIEW_CONTENT_LIMITS = Object.freeze({
 });
 
 /** 只保留白名单字段并截断长度；不是对象时返回 null。 */
-function normalizeReviewContent(content) {
+function normalizeReviewContent(content, original = {}) {
   if (!content || typeof content !== 'object' || Array.isArray(content)) return null;
   const text = (value, max) => String(value ?? '').slice(0, max);
   const list = (value, max, itemMax) => (Array.isArray(value) ? value.slice(0, max).map((entry) => text(entry, itemMax)) : []);
@@ -134,7 +134,7 @@ function normalizeReviewContent(content) {
     categoryIds: list(content.categoryIds, REVIEW_CONTENT_LIMITS.categoryIds, REVIEW_CONTENT_LIMITS.categoryId),
     tags: list(content.tags, REVIEW_CONTENT_LIMITS.tags, REVIEW_CONTENT_LIMITS.tagLength),
   };
-  if ('i18n' in content) normalized.i18n = validateI18n(content.i18n, normalized);
+  if ('i18n' in content) normalized.i18n = validateI18n(content.i18n, { ...normalized, origin: original.origin, submitter: submissionAttribution(original.fields) });
   return normalized;
 }
 
@@ -371,12 +371,13 @@ export async function createQueue(cfg, { now = () => Date.now(), reviewTimeoutMs
     return items;
   }
 
-  async function transition(id, event, { actor = 'system', reason = '' } = {}) {
+  async function transition(id, event, { actor = 'system', reason = '', agentToken = null } = {}) {
     const rule = TRANSITIONS[event];
     if (!rule) throw new Error(`未知事件：${event}`);
     return withLock(async () => {
       const item = await readItem(id);
       if (!item) throw new Error(`队列里没有 ${id}`);
+      if (agentToken && (item.agent?.token !== agentToken || item.agent?.expiresAt <= now())) throw Object.assign(new Error('Agent 任务领取已过期'), { status: 409 });
       if (!rule.from.includes(item.state)) {
         throw new Error(`非法状态迁移：${item.state} 不能执行 ${event}`);
       }
@@ -398,7 +399,7 @@ export async function createQueue(cfg, { now = () => Date.now(), reviewTimeoutMs
     return withLock(async () => {
       const item = await readItem(id);
       if (!item) throw new Error(`队列里没有 ${id}`);
-      const content = normalizeReviewContent(review.content);
+      const content = normalizeReviewContent(review.content, item);
       const schema = review.schema
         ? String(review.schema).slice(0, 64)
         : (content ? AI_CONTENT_SCHEMA : null);
@@ -446,6 +447,20 @@ export async function createQueue(cfg, { now = () => Date.now(), reviewTimeoutMs
       };
       await saveItem(item);
       await log('bridge', { id, status: item.bridge.status || null, sha256: item.bridge.sha256 || null });
+      return item;
+    });
+  }
+
+  /** Agent checkpoints use the same cross-process queue lock as transitions. */
+  async function updateAgent(id, mutate) {
+    return withLock(async () => {
+      const item = await readItem(id);
+      if (!item) throw Object.assign(new Error('条目不存在'), { status: 404 });
+      mutate(item);
+      item.updatedAt = new Date(now()).toISOString();
+      if (Buffer.byteLength(JSON.stringify(item.agent || {})) > cfg.maxJsonBytes) throw Object.assign(new Error('Agent 草稿超过大小上限'), { status: 413 });
+      await saveItem(item);
+      await log('agent.checkpoint', { id, stage: item.agent?.stage });
       return item;
     });
   }
@@ -562,6 +577,7 @@ export async function createQueue(cfg, { now = () => Date.now(), reviewTimeoutMs
     stats,
     transition,
     attachReview,
+    updateAgent,
     readReviewRaw,
     recordBridge,
     decide,

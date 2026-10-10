@@ -306,6 +306,15 @@ export interface Submission {
     | number
     | boolean
     | null;
+  agentProgress?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
   state:
     | 'received'
     | 'reviewing'
@@ -907,6 +916,7 @@ export interface SubmissionsSelect<T extends boolean = true> {
   fields?: T;
   editorial?: T;
   review?: T;
+  agentProgress?: T;
   state?: T;
   stateHistory?: T;
   origin?: T;

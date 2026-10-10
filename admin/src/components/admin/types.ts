@@ -91,6 +91,7 @@ export type WorkDoc = {
 }
 
 export type SubmissionDoc = {
+  agentProgress?: { stage?: string; lastError?: string; draft?: Record<string, unknown> }
   effectiveAuthor?: string
   editorial?: Record<string, unknown>
   fields?: Record<string, unknown>

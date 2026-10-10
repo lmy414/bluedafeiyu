@@ -131,10 +131,12 @@ Playwright 配置默认使用 `http://127.0.0.1:3100`，测试截图写入 `E:\q
 - 批量翻译：根据当前中文生成英日版本。有效译文默认跳过；覆盖需要确认。
 - 批量人工收录：仅限未关联作品的人工审核投稿。站长必须确认已逐张看图，字段、译文、预览和原图校验通过后才进入待发布。
 
-每批最多 200 条，同时最多 5 个待执行任务。任务存入 `bulk-jobs`，由独立 systemd 执行器处理。
+每批最多 200 条，同时最多 5 个待执行任务。任务存入 `bulk-jobs`。补全和翻译由 Hermes Agent 原生工具处理；统一字段写入和已确认的人工收录由 systemd 执行器处理。
 关闭页面不会停止任务，服务重启后从已提交游标恢复。结果保留在界面的“批量任务”区域。
 失败项可以单独重试；取消只停止尚未提交的条目。写入与进度推进共用事务，操作逐条记录审计。
 生成期间人工修改过的条目会失败，避免覆盖。投稿的人工编辑存入 `editorial`，同步不会覆盖草稿，原投稿和 AI 结论保留。
+
+`/ai-fill` 返回 202 和任务编号，页面查询持久化结果。中文、英文和日文通过工具分别校验、保存，技术失败保留已完成内容，不转人工。Agent 处理规范和上线步骤见 `../docs/Hermes审核与发布接线.md`。
 
 接口均需站长身份，执行器接口需独立令牌：
 
@@ -145,7 +147,8 @@ POST /cms-api/bulk/request
 GET  /cms-api/bulk/jobs?jobId=<任务 ID>
 POST /cms-api/bulk/cancel
 POST /cms-api/bulk/retry
-POST /cms-api/bulk/process-next  （仅 ADMIN_WORKER_TOKEN）
+POST /cms-api/bulk/process-next  （仅 ADMIN_WORKER_TOKEN，只处理确定性操作）
+POST /cms-api/agent              （仅 ADMIN_WORKER_TOKEN，Agent 工具协议）
 ```
 
 安装独立执行器前先部署新后台并完成迁移：

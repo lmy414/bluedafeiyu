@@ -45,6 +45,7 @@ export const Submissions: CollectionConfig = {
     { name: 'fields', type: 'json', label: '投稿字段', admin: { readOnly: true } },
     { name: 'editorial', type: 'json', label: '人工编辑草稿（不改原投稿或 AI 结论）', admin: { readOnly: true } },
     { name: 'review', type: 'json', label: 'AI 审核结果', admin: { readOnly: true } },
+    { name: 'agentProgress', type: 'json', label: 'Hermes 处理进度', admin: { readOnly: true } },
     {
       name: 'state',
       type: 'select',

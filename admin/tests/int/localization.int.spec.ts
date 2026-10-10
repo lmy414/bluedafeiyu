@@ -1,11 +1,9 @@
 // @vitest-environment node
 import {describe,it,expect} from 'vitest'
-import sharp from 'sharp'
 import {fixtureI18n} from '../../../tools/localization/test-fixture.mjs'
-import {sourceHash} from '../../src/lib/localization.mjs'
+import {sourceHash, validateLocale, validateI18n} from '../../src/lib/localization.mjs'
 import {buildSiteDataTexts} from '../../src/lib/export-site-data'
 import {validateContent} from '../../src/lib/sync-submissions'
-import {suggestFill} from '../../src/lib/ai-fill'
 const source={name:'探头',description:'露出脑袋',commentary:'让我看看',tags:['探头','可爱'],characterId:'deepseek',categoryIds:['meme']}
 const vocabulary={characterIds:new Set(['deepseek']),categoryIds:new Set(['meme'])}
 const record={...source,workId:'frozen-id',slug:'frozen-slug',kind:'submission',status:'published',legacySource:'submission-sync',character:{characterId:'deepseek'},categories:[{categoryId:'meme'}],tags:source.tags.map(value=>({value})),origin:{},license:{}}
@@ -28,14 +26,12 @@ describe('multilingual persistence and export',()=>{
     const saved={sourceHash:sourceHash(source),...fixtureI18n(source.tags)}
     expect(exported({...record,legacyData:{i18n:saved}}).i18n).toEqual(saved)
   })
-  it('requires valid English and Japanese after AI writes Chinese content',async()=>{
-    const image=await sharp({create:{width:16,height:16,channels:3,background:'blue'}}).png().toBuffer()
-    let calls=0
-    const request={authorText:'',characterName:'DeepSeek娘',fields:['commentary'] as const,image,name:source.name,vocabulary:{categories:[]},current:source}
-    const result=await suggestFill({...request,fields:[...request.fields]},async()=>++calls===1?'{"commentary":"我看见你了"}':JSON.stringify(fixtureI18n(source.tags)))
-    expect(calls).toBe(2)
-    expect(result.suggestion.i18n?.sourceHash).toBe(sourceHash({...source,commentary:'我看见你了'}))
-    calls=0
-    await expect(suggestFill({...request,fields:[...request.fields]},async()=>++calls===1?'{"commentary":"我看见你了"}':'{"en":{}}')).rejects.toThrow()
+  it('validates a single Agent language independently; complete content still requires both',()=>{
+    const value = fixtureI18n(source.tags)
+    expect(validateLocale(value.en, 'en', source)).toEqual(value.en)
+    expect(()=>validateI18n({en:value.en},source)).toThrow()
+    value.en.originNote='Fan art by 小明.'
+    expect(()=>validateLocale(value.en,'en',{...source,origin:{author:'小明'}})).not.toThrow()
+    expect(()=>validateLocale(value.en,'en',source)).toThrow(/Chinese/)
   })
 })

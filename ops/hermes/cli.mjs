@@ -46,7 +46,7 @@ import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 import { AI_CONTENT_SCHEMA, loadContentVocabulary } from '../../server/config.mjs';
-import { containsForbiddenText, createHttpReviewClient, parseReviewResponse } from '../../server/review.mjs';
+import { containsForbiddenText, parseReviewResponse } from '../../server/review.mjs';
 
 export const REVIEW_RESULTS_SCHEMA = 'submission-review-results/1';
 export const REVIEW_RESULTS_PATH = '/api/v1/internal/review-results';
@@ -276,38 +276,8 @@ export async function fetchItemRaw(cfg, item, { fetchImpl = globalThis.fetch } =
  * 构造视觉审核器。复用 server/review.mjs 的 OpenAI 兼容客户端与提示词，
  * 保证 Hermes 与 server/ 用同一套 submission-ai-content/2 口径。
  */
-export function buildVisionReviewer(cfg, { fetchImpl = globalThis.fetch } = {}) {
-  if (!cfg.vision.endpoint || !cfg.vision.apiKey) {
-    throw new Error('视觉模型未配置：需要 HERMES_VISION_ENDPOINT 与 HERMES_VISION_API_KEY');
-  }
-  const client = createHttpReviewClient({
-    endpoint: cfg.vision.endpoint,
-    apiKey: cfg.vision.apiKey,
-    model: cfg.vision.model,
-    timeoutMs: cfg.vision.timeoutMs,
-    fetchImpl,
-  });
-  return async function review({ buffer, mime, fields, vocabulary }) {
-    const started = Date.now();
-    const payload = await client({ buffer, mime: mime || 'image/png', fields, vocabulary });
-    const parsed = parseReviewResponse(payload, { vocabulary, requireI18n:true });
-    if (parsed.verdict !== 'manual' && parsed.confidence < cfg.minConfidence) {
-      return {
-        verdict: 'manual',
-        confidence: 0,
-        content: null,
-        reason: `置信度 ${parsed.confidence} 低于阈值 ${cfg.minConfidence}，转人工`,
-        latencyMs: Date.now() - started,
-      };
-    }
-    return {
-      verdict: parsed.verdict,
-      confidence: parsed.confidence,
-      reason: parsed.reason,
-      content: parsed.content,
-      latencyMs: Date.now() - started,
-    };
-  };
+export function buildVisionReviewer() {
+  throw new Error('独立视觉模型调用已停用，请使用 Hermes editorial Agent 工具任务');
 }
 
 /** 单条审核；任何异常都收敛成 manual，绝不上抛成「通过」。 */
@@ -567,45 +537,7 @@ export async function cmdReviewCycle(cfg, argv, deps) {
       return 0;
     }
 
-    const activeVocabulary = vocabulary && typeof vocabulary === 'object' ? vocabulary : loadContentVocabulary(REPO_ROOT);
-    if (!activeVocabulary.ok) throw new Error('无法读取 data/characters.json 与 data/categories.json，拒绝审核（fail-closed）');
-    const reviewer = buildVisionReviewer(cfg, { fetchImpl });
-
-    const results = [];
-    const failures = [];
-    for (const item of targets) {
-      try {
-        const buffer = await fetchItemRaw(cfg, item, { fetchImpl });
-        const reviewed = await reviewOne(reviewer, {
-          buffer,
-          mime: item.mime,
-          fields: item.fields || {},
-          vocabulary: activeVocabulary,
-        });
-        const checked = validateResult({
-          submissionId: item.id,
-          model: cfg.vision.model || null,
-          ...reviewed,
-        }, { vocabulary: activeVocabulary, minConfidence: cfg.minConfidence });
-        if (!checked.ok) { failures.push({ id: item.id, error: checked.error }); continue; }
-        results.push(checked.result);
-      } catch (error) {
-        failures.push({ id: item.id, error: error.message });
-      }
-    }
-
-    if (results.length === 0) {
-      emit(argv, { mode: 'live', reviewed: 0, failures }, ['[review-cycle] 没有可回写的结果。']);
-      return failures.length > 0 ? 1 : 0;
-    }
-    const response = await postReviewResults(cfg, results, { fetchImpl, onRetry: (error, attempt, delay) => process.stderr.write(`[review-cycle] 回写重试 ${attempt}：${error.message}，${delay} ms 后\n`) });
-    const summary = summarizeApplied(response);
-    emit(argv, { mode: 'live', reviewed: results.length, ...summary, failures }, [
-      `[review-cycle] 回写 ${summary.total} 条：应用 ${summary.applied.length}，重复 ${summary.duplicates.length}，失败 ${summary.failed.length}。`,
-      ...summary.failed.map((entry) => `  失败 ${entry.id}：${entry.error || entry.status}`),
-      ...(failures.length ? [`[review-cycle] 本地失败 ${failures.length} 条，下轮重试：${failures.map((f) => f.id).join(', ')}`] : []),
-    ]);
-    return (failures.length + summary.failed.length) > 0 ? 1 : 0;
+    throw new Error('review-cycle --live 已停用；请启用 Hermes editorial Agent 定时任务');
   });
   if (locked && typeof locked === 'object' && locked.skipped) {
     process.stderr.write(`[review-cycle] ${locked.reason}\n`);

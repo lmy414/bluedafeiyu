@@ -4,8 +4,10 @@ import * as migration_20261002_000000_topic_author from './20261002_000000_topic
 import * as migration_20261004_000000_submitter_credit from './20261004_000000_submitter_credit';
 
 import * as migration_20261009_000000_bulk_jobs from './20261009_000000_bulk_jobs';
+import * as migration_20261010_000000_agent_progress from './20261010_000000_agent_progress';
 
 export const migrations = [
+  // Additive migration; existing editorial data and queue state stay unchanged.
   {
     up: migration_20260929_033658_initial.up,
     down: migration_20260929_033658_initial.down,
@@ -30,5 +32,10 @@ export const migrations = [
     up: migration_20261009_000000_bulk_jobs.up,
     down: migration_20261009_000000_bulk_jobs.down,
     name: '20261009_000000_bulk_jobs',
+  },
+  {
+    up: migration_20261010_000000_agent_progress.up,
+    down: migration_20261010_000000_agent_progress.down,
+    name: '20261010_000000_agent_progress',
   },
 ];

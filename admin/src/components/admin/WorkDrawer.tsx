@@ -9,8 +9,7 @@ import type { CategoryDoc, CharacterDoc, MediaDoc, SubmissionDoc, WorkDoc } from
 import { asObject, relationID, workOriginalURL } from './types'
 
 type DrawerItem =
-  | { kind: 'submission'; submission: SubmissionDoc }
-  | { kind: 'work'; work: WorkDoc }
+  { kind: 'submission'; submission: SubmissionDoc } | { kind: 'work'; work: WorkDoc }
 
 type AuditEvent = {
   action?: string
@@ -36,8 +35,14 @@ function draftContent(form: FormState, categories: CategoryDoc[], characters: Ch
     description: form.description.trim(),
     commentary: form.commentary.trim(),
     characterId: characters.find((item) => String(item.id) === form.character)?.characterId || '',
-    categoryIds: categories.filter((item) => form.categories.includes(String(item.id))).map((item) => String(item.categoryId || '')).filter(Boolean),
-    tags: form.tags.split(/[,，\n]/).map((value) => value.trim()).filter(Boolean),
+    categoryIds: categories
+      .filter((item) => form.categories.includes(String(item.id)))
+      .map((item) => String(item.categoryId || ''))
+      .filter(Boolean),
+    tags: form.tags
+      .split(/[,，\n]/)
+      .map((value) => value.trim())
+      .filter(Boolean),
   }
 }
 
@@ -51,11 +56,15 @@ function initialIssueReplyBody(submission?: SubmissionDoc): string {
 }
 
 function initialIssueReplyStateReason(submission?: SubmissionDoc): IssueReplyStateReason {
-  return submission && ['auto_rejected', 'rejected'].includes(submission.state) ? 'not_planned' : 'completed'
+  return submission && ['auto_rejected', 'rejected'].includes(submission.state)
+    ? 'not_planned'
+    : 'completed'
 }
 
 function record(value: unknown): Record<string, unknown> {
-  return value && typeof value === 'object' && !Array.isArray(value) ? value as Record<string, unknown> : {}
+  return value && typeof value === 'object' && !Array.isArray(value)
+    ? (value as Record<string, unknown>)
+    : {}
 }
 
 function fullImageURL(work: WorkDoc): string | undefined {
@@ -76,7 +85,9 @@ function initialForm(
   if (item.kind === 'work') {
     const work = item.work
     return {
-      categories: Array.isArray(work.categories) ? work.categories.map((value) => String(relationID(value))) : [],
+      categories: Array.isArray(work.categories)
+        ? work.categories.map((value) => String(relationID(value)))
+        : [],
       character: String(relationID(work.character) || ''),
       commentary: work.commentary || '',
       description: work.description || '',
@@ -88,17 +99,25 @@ function initialForm(
   const submission = item.submission
   const reviewContent = record(submission.review?.content)
   const source = { ...record(submission.fields), ...reviewContent, ...record(submission.editorial) }
-  const rawCategories = Array.isArray(source.categoryIds) ? source.categoryIds : submission.fields?.categoryId ? [submission.fields.categoryId] : []
+  const rawCategories = Array.isArray(source.categoryIds)
+    ? source.categoryIds
+    : submission.fields?.categoryId
+      ? [submission.fields.categoryId]
+      : []
   const categoryIds = rawCategories
     .map((value) => {
       const raw = String(value)
-      return categories.find((category) => String(category.id) === raw || String(category.categoryId) === raw)?.id
+      return categories.find(
+        (category) => String(category.id) === raw || String(category.categoryId) === raw,
+      )?.id
     })
     .filter((value): value is NonNullable<typeof value> => value !== undefined && value !== null)
     .map(String)
   const rawCharacter = String(source.characterId || source.character || '')
   const character = rawCharacter
-    ? characters.find((item) => String(item.id) === rawCharacter || String(item.characterId) === rawCharacter)?.id
+    ? characters.find(
+        (item) => String(item.id) === rawCharacter || String(item.characterId) === rawCharacter,
+      )?.id
     : undefined
 
   return {
@@ -130,14 +149,18 @@ export function WorkDrawer({
   const [form, setForm] = useState<FormState>(() => initialForm(item, categories, characters))
   const currentForm = useRef(form)
   currentForm.current = form
-  const [localizedSuggestion,setLocalizedSuggestion]=useState<Record<string,unknown>|null>(null)
+  const [localizedSuggestion, setLocalizedSuggestion] = useState<Record<string, unknown> | null>(
+    null,
+  )
   const [localizedDraft, setLocalizedDraft] = useState<string | null>(null)
   const [events, setEvents] = useState<AuditEvent[]>([])
   const [saving, setSaving] = useState(false)
   const [message, setMessage] = useState('')
   const [replyBody, setReplyBody] = useState(() => initialIssueReplyBody(submission))
   const [closeIssue, setCloseIssue] = useState(true)
-  const [replyStateReason, setReplyStateReason] = useState<IssueReplyStateReason>(() => initialIssueReplyStateReason(submission))
+  const [replyStateReason, setReplyStateReason] = useState<IssueReplyStateReason>(() =>
+    initialIssueReplyStateReason(submission),
+  )
   const [replying, setReplying] = useState(false)
   const [replyMessage, setReplyMessage] = useState('')
   const [replyError, setReplyError] = useState('')
@@ -158,20 +181,24 @@ export function WorkDrawer({
   const originalURL = work ? workOriginalURL(work) : undefined
   const title = work?.name || submission?.title || '未命名投稿'
   const origin = record(submission?.origin)
-  const issue = typeof origin.issue === 'number' && Number.isSafeInteger(origin.issue) && origin.issue > 0
-    ? origin.issue
-    : undefined
+  const issue =
+    typeof origin.issue === 'number' && Number.isSafeInteger(origin.issue) && origin.issue > 0
+      ? origin.issue
+      : undefined
   const issueUrl = typeof origin.issueUrl === 'string' ? origin.issueUrl : ''
-  const reviewContentPresent = Boolean(submission && Object.keys(record(submission.review?.content)).length)
+  const reviewContentPresent = Boolean(
+    submission && Object.keys(record(submission.review?.content)).length,
+  )
   const history = useMemo(() => {
-    const stateHistory = submission && Array.isArray(submission.stateHistory)
-      ? submission.stateHistory.map((entry, index) => ({
-        id: `submission-${index}`,
-        label: `${String(entry.from || '开始')} → ${String(entry.to || '未知')}`,
-        note: String(entry.reason || entry.actor || ''),
-        time: String(entry.at || ''),
-      }))
-      : []
+    const stateHistory =
+      submission && Array.isArray(submission.stateHistory)
+        ? submission.stateHistory.map((entry, index) => ({
+            id: `submission-${index}`,
+            label: `${String(entry.from || '开始')} → ${String(entry.to || '未知')}`,
+            note: String(entry.reason || entry.actor || ''),
+            time: String(entry.at || ''),
+          }))
+        : []
     const auditHistory = events.map((event) => ({
       id: event.id,
       label: event.action || '记录',
@@ -190,12 +217,17 @@ export function WorkDrawer({
 
   async function save() {
     if (!work) return
-    if (form.categories.length !== 1) { setMessage('请选择一个作品类型。'); return }
+    if (form.categories.length !== 1) {
+      setMessage('请选择一个作品类型。')
+      return
+    }
     setSaving(true)
     setMessage('')
     try {
       await mutate(`/works/${encodeURIComponent(String(work.id))}`, 'PATCH', {
-        ...(localizedSuggestion?{legacyData:{...(work.legacyData||{}),i18n:localizedSuggestion}}:{}),
+        ...(localizedSuggestion
+          ? { legacyData: { ...(work.legacyData || {}), i18n: localizedSuggestion } }
+          : {}),
         categories: form.categories.map(Number),
         character: form.character ? Number(form.character) : undefined,
         commentary: form.commentary,
@@ -214,47 +246,111 @@ export function WorkDrawer({
 
   const [filling, setFilling] = useState(false)
 
+  async function requestAgentSuggestion(
+    body: Record<string, unknown>,
+  ): Promise<{ suggestion: Record<string, any>; errors?: string[] }> {
+    const queued = await mutate<{ job: { jobId: string }; suggestion?: Record<string, any> }>(
+      '/ai-fill',
+      'POST',
+      body,
+    )
+    // Compatibility for already-running old UI requests during deployment.
+    if (queued.suggestion) return { suggestion: queued.suggestion }
+    if (!queued.job?.jobId) throw new Error('Hermes 任务未创建')
+    window.dispatchEvent(new Event('s3-bulk-submitted'))
+    for (let attempt = 0; attempt < 450; attempt++) {
+      const response = await get<{
+        job: {
+          status: string
+          results: Array<{ suggestion?: Record<string, any>; message: string }>
+        }
+      }>('/bulk/jobs', { jobId: queued.job.jobId })
+      const job = response.job
+      if (['succeeded', 'partial', 'failed', 'cancelled'].includes(job.status)) {
+        const result = job.results?.[0]
+        if (result?.suggestion && !['cancelled', 'failed'].includes(job.status))
+          return { suggestion: result.suggestion }
+        throw new Error(result?.message || 'Hermes 任务未完成；请到批量任务查看')
+      }
+      await new Promise((resolve) => setTimeout(resolve, 2000))
+    }
+    throw new Error('Hermes 任务仍在后台处理；关闭页面不会取消，请到批量任务查看')
+  }
+
   /** 只补当前表单里为空的字段；结果填进表单，仍需人工点保存/收录。 */
   async function aiFill() {
     const blankFields: string[] = []
     if (!form.name.trim()) blankFields.push('name')
-    if (!form.description.trim() || /^首批收录自蓝色大肥鱼档案馆|原投稿未逐张命名/.test(form.description.trim())) blankFields.push('description')
+    if (
+      !form.description.trim() ||
+      /^首批收录自蓝色大肥鱼档案馆|原投稿未逐张命名/.test(form.description.trim())
+    )
+      blankFields.push('description')
     if (!form.commentary.trim()) blankFields.push('commentary')
     if (!parsedTags().length) blankFields.push('tags')
     if (!form.categories.length) blankFields.push('categories')
     if (!blankFields.length) blankFields.push('i18n')
     setFilling(true)
-    setMessage('AI 正在撰写中文、英文和日文…')
+    setMessage('已提交 Hermes，等待 Agent 逐项处理…')
     try {
-      const result = await mutate<{ errors?: string[]; suggestion: Record<string, any> }>('/ai-fill', 'POST', {
+      const result = await requestAgentSuggestion({
         fields: blankFields,
         draft: draftContent(form, categories, characters),
         ...(work ? { workId: work.workId } : { submissionId: submission?.submissionId }),
       })
       const s = result.suggestion || {}
-      if(s.i18n)setLocalizedSuggestion(s.i18n)
+      if (s.i18n) setLocalizedSuggestion(s.i18n)
       const categoryIds = Array.isArray(s.categoryIds)
-        ? categories.filter((item) => s.categoryIds.includes(String(item.categoryId))).map((item) => String(item.id))
+        ? categories
+            .filter((item) => s.categoryIds.includes(String(item.categoryId)))
+            .map((item) => String(item.id))
         : []
-      if (s.i18n) setLocalizedDraft(JSON.stringify(draftContent({
-        ...form,
-        name: form.name.trim() ? form.name : s.name || form.name,
-        description: blankFields.includes('description') && s.description ? s.description : form.description,
-        commentary: form.commentary.trim() ? form.commentary : s.commentary || form.commentary,
-        tags: form.tags.trim() ? form.tags : Array.isArray(s.tags) ? s.tags.join(', ') : form.tags,
-        categories: form.categories.length ? form.categories : categoryIds,
-      }, categories, characters)))
+      if (s.i18n)
+        setLocalizedDraft(
+          JSON.stringify(
+            draftContent(
+              {
+                ...form,
+                name: form.name.trim() ? form.name : s.name || form.name,
+                description:
+                  blankFields.includes('description') && s.description
+                    ? s.description
+                    : form.description,
+                commentary: form.commentary.trim()
+                  ? form.commentary
+                  : s.commentary || form.commentary,
+                tags: form.tags.trim()
+                  ? form.tags
+                  : Array.isArray(s.tags)
+                    ? s.tags.join(', ')
+                    : form.tags,
+                categories: form.categories.length ? form.categories : categoryIds,
+              },
+              categories,
+              characters,
+            ),
+          ),
+        )
       setForm((current) => ({
         ...current,
         name: current.name.trim() ? current.name : s.name || current.name,
-        description: blankFields.includes('description') && s.description ? s.description : current.description,
-        commentary: current.commentary.trim() ? current.commentary : s.commentary || current.commentary,
-        tags: current.tags.trim() ? current.tags : Array.isArray(s.tags) ? s.tags.join(', ') : current.tags,
+        description:
+          blankFields.includes('description') && s.description
+            ? s.description
+            : current.description,
+        commentary: current.commentary.trim()
+          ? current.commentary
+          : s.commentary || current.commentary,
+        tags: current.tags.trim()
+          ? current.tags
+          : Array.isArray(s.tags)
+            ? s.tags.join(', ')
+            : current.tags,
         categories: current.categories.length ? current.categories : categoryIds,
       }))
       const source = s.descriptionSource === 'author' ? '（说明取自作者原文）' : ''
       const warn = result.errors?.length ? `；未补上：${result.errors.join('、')}` : ''
-      setMessage(`已生成 AI 建议及英日版本${source}，请核对后保存${warn}`)
+      setMessage(`Hermes 已生成建议及英日版本${source}，请核对后保存${warn}`)
     } catch (error) {
       setMessage(error instanceof Error ? error.message : 'AI 补全失败')
     } finally {
@@ -262,7 +358,10 @@ export function WorkDrawer({
     }
   }
   async function manualInclude() {
-    if (form.categories.length !== 1) { setMessage('请选择一个作品类型。'); return }
+    if (form.categories.length !== 1) {
+      setMessage('请选择一个作品类型。')
+      return
+    }
     if (!submission) return
     const content = draftContent(form, categories, characters)
 
@@ -272,15 +371,20 @@ export function WorkDrawer({
       let i18n = localizedSuggestion
       if (!i18n || localizedDraft !== JSON.stringify(content)) {
         setMessage('正在为当前内容生成英文和日文版本…')
-        const result = await mutate<{ suggestion: Record<string, any> }>('/ai-fill', 'POST', {
-          fields: ['i18n'], draft: content, submissionId: submission.submissionId,
+        const result = await requestAgentSuggestion({
+          fields: ['i18n'],
+          draft: content,
+          submissionId: submission.submissionId,
         })
         i18n = result.suggestion?.i18n
         if (!i18n) throw new Error('英文和日文版本未生成，请重试人工收录。')
         setLocalizedSuggestion(i18n)
         setLocalizedDraft(JSON.stringify(content))
       }
-      if (JSON.stringify(draftContent(currentForm.current, categories, characters)) !== JSON.stringify(content)) {
+      if (
+        JSON.stringify(draftContent(currentForm.current, categories, characters)) !==
+        JSON.stringify(content)
+      ) {
         throw new Error('生成期间内容已修改，请核对后重新人工收录。')
       }
       await mutate('/works/bulk', 'POST', {
@@ -333,7 +437,11 @@ export function WorkDrawer({
         <div className="s3-drawer-scroll">
           <div className="s3-drawer-image">
             {image ? <img alt={title} src={image} /> : <span>暂无预览图</span>}
-            {originalURL ? <a className="s3-muted" href={originalURL} rel="noreferrer" target="_blank">查看原图</a> : null}
+            {originalURL ? (
+              <a className="s3-muted" href={originalURL} rel="noreferrer" target="_blank">
+                查看原图
+              </a>
+            ) : null}
           </div>
 
           {work ? (
@@ -341,19 +449,33 @@ export function WorkDrawer({
               <h3>编辑作品</h3>
               <label>
                 名称
-                <input onChange={(event) => setForm({ ...form, name: event.target.value })} value={form.name} />
+                <input
+                  onChange={(event) => setForm({ ...form, name: event.target.value })}
+                  value={form.name}
+                />
               </label>
               <label>
                 说明
-                <textarea onChange={(event) => setForm({ ...form, description: event.target.value })} rows={3} value={form.description} />
+                <textarea
+                  onChange={(event) => setForm({ ...form, description: event.target.value })}
+                  rows={3}
+                  value={form.description}
+                />
               </label>
               <label>
                 详情正文
-                <textarea onChange={(event) => setForm({ ...form, commentary: event.target.value })} rows={6} value={form.commentary} />
+                <textarea
+                  onChange={(event) => setForm({ ...form, commentary: event.target.value })}
+                  rows={6}
+                  value={form.commentary}
+                />
               </label>
               <label>
                 角色
-                <select onChange={(event) => setForm({ ...form, character: event.target.value })} value={form.character}>
+                <select
+                  onChange={(event) => setForm({ ...form, character: event.target.value })}
+                  value={form.character}
+                >
                   <option value="">未设置</option>
                   {characters.map((character) => (
                     <option key={String(character.id)} value={String(character.id)}>
@@ -364,7 +486,13 @@ export function WorkDrawer({
               </label>
               <fieldset>
                 <legend>作品类型（单选）</legend>
-                {submission?.fields?.categoryId ? <p>投稿者选择：{categories.find(c => c.categoryId === submission.fields?.categoryId)?.name || String(submission.fields.categoryId)}</p> : null}
+                {submission?.fields?.categoryId ? (
+                  <p>
+                    投稿者选择：
+                    {categories.find((c) => c.categoryId === submission.fields?.categoryId)?.name ||
+                      String(submission.fields.categoryId)}
+                  </p>
+                ) : null}
                 <div className="s3-check-grid">
                   {categories.map((category) => {
                     const id = String(category.id)
@@ -389,13 +517,26 @@ export function WorkDrawer({
               </fieldset>
               <label>
                 标签（逗号分隔）
-                <input onChange={(event) => setForm({ ...form, tags: event.target.value })} value={form.tags} />
+                <input
+                  onChange={(event) => setForm({ ...form, tags: event.target.value })}
+                  value={form.tags}
+                />
               </label>
               <div className="s3-bulk-actions">
-                <button className="s3-button s3-button--secondary" disabled={filling || saving} onClick={() => void aiFill()} type="button">
+                <button
+                  className="s3-button s3-button--secondary"
+                  disabled={filling || saving}
+                  onClick={() => void aiFill()}
+                  type="button"
+                >
                   {filling ? 'AI 补全中…' : 'AI 补全与翻译'}
                 </button>
-                <button className="s3-button s3-button--primary" disabled={saving || filling} onClick={() => void save()} type="button">
+                <button
+                  className="s3-button s3-button--primary"
+                  disabled={saving || filling}
+                  onClick={() => void save()}
+                  type="button"
+                >
                   {saving ? '保存中…' : '保存修改'}
                 </button>
               </div>
@@ -405,12 +546,30 @@ export function WorkDrawer({
 
           <section className="s3-form-section">
             <h3>AI 审核理由</h3>
-            <p className="s3-rationale">{String(review?.reason || review?.summary || '未记录 AI 理由')}</p>
+            <p className="s3-rationale">
+              {String(review?.reason || review?.summary || '未记录 AI 理由')}
+            </p>
             <dl className="s3-detail-list">
-              <div><dt>结论</dt><dd>{String(review?.verdict || '未记录')}</dd></div>
-              <div><dt>置信度</dt><dd>{typeof review?.confidence === 'number' ? `${Math.round(review.confidence * 100)}%` : '未记录'}</dd></div>
-              <div><dt>模型</dt><dd>{String(review?.model || '未记录')}</dd></div>
-              <div><dt>渠道</dt><dd>{labelOf(CHANNELS, work?.channel || submission?.source)}</dd></div>
+              <div>
+                <dt>结论</dt>
+                <dd>{String(review?.verdict || '未记录')}</dd>
+              </div>
+              <div>
+                <dt>置信度</dt>
+                <dd>
+                  {typeof review?.confidence === 'number'
+                    ? `${Math.round(review.confidence * 100)}%`
+                    : '未记录'}
+                </dd>
+              </div>
+              <div>
+                <dt>模型</dt>
+                <dd>{String(review?.model || '未记录')}</dd>
+              </div>
+              <div>
+                <dt>渠道</dt>
+                <dd>{labelOf(CHANNELS, work?.channel || submission?.source)}</dd>
+              </div>
             </dl>
           </section>
 
@@ -424,19 +583,33 @@ export function WorkDrawer({
               </p>
               <label>
                 名称
-                <input onChange={(event) => setForm({ ...form, name: event.target.value })} value={form.name} />
+                <input
+                  onChange={(event) => setForm({ ...form, name: event.target.value })}
+                  value={form.name}
+                />
               </label>
               <label>
                 说明
-                <textarea onChange={(event) => setForm({ ...form, description: event.target.value })} rows={3} value={form.description} />
+                <textarea
+                  onChange={(event) => setForm({ ...form, description: event.target.value })}
+                  rows={3}
+                  value={form.description}
+                />
               </label>
               <label>
                 详情正文
-                <textarea onChange={(event) => setForm({ ...form, commentary: event.target.value })} rows={6} value={form.commentary} />
+                <textarea
+                  onChange={(event) => setForm({ ...form, commentary: event.target.value })}
+                  rows={6}
+                  value={form.commentary}
+                />
               </label>
               <label>
                 角色
-                <select onChange={(event) => setForm({ ...form, character: event.target.value })} value={form.character}>
+                <select
+                  onChange={(event) => setForm({ ...form, character: event.target.value })}
+                  value={form.character}
+                >
                   <option value="">未设置</option>
                   {characters.map((character) => (
                     <option key={String(character.id)} value={String(character.id)}>
@@ -471,13 +644,26 @@ export function WorkDrawer({
               </fieldset>
               <label>
                 标签（逗号分隔）
-                <input onChange={(event) => setForm({ ...form, tags: event.target.value })} value={form.tags} />
+                <input
+                  onChange={(event) => setForm({ ...form, tags: event.target.value })}
+                  value={form.tags}
+                />
               </label>
               <div className="s3-bulk-actions">
-                <button className="s3-button s3-button--secondary" disabled={filling || saving} onClick={() => void aiFill()} type="button">
+                <button
+                  className="s3-button s3-button--secondary"
+                  disabled={filling || saving}
+                  onClick={() => void aiFill()}
+                  type="button"
+                >
                   {filling ? 'AI 补全中…' : 'AI 补全与翻译'}
                 </button>
-                <button className="s3-button s3-button--primary" disabled={saving || filling} onClick={() => void manualInclude()} type="button">
+                <button
+                  className="s3-button s3-button--primary"
+                  disabled={saving || filling}
+                  onClick={() => void manualInclude()}
+                  type="button"
+                >
                   {saving ? '处理中…' : '人工收录'}
                 </button>
               </div>
@@ -489,11 +675,22 @@ export function WorkDrawer({
             <section className="s3-form-section">
               <h3>回复 GitHub Issue</h3>
               <p className="s3-muted">
-                Issue：{issueUrl ? <a href={issueUrl} rel="noreferrer" target="_blank">#{issue}</a> : `#${issue}`}
+                Issue：
+                {issueUrl ? (
+                  <a href={issueUrl} rel="noreferrer" target="_blank">
+                    #{issue}
+                  </a>
+                ) : (
+                  `#${issue}`
+                )}
               </p>
               <label>
                 回复内容
-                <textarea onChange={(event) => setReplyBody(event.target.value)} rows={5} value={replyBody} />
+                <textarea
+                  onChange={(event) => setReplyBody(event.target.value)}
+                  rows={5}
+                  value={replyBody}
+                />
               </label>
               <div className="s3-bulk-actions">
                 <button
@@ -535,10 +732,19 @@ export function WorkDrawer({
                 </div>
               </fieldset>
               <label className="s3-check">
-                <input checked={closeIssue} onChange={(event) => setCloseIssue(event.target.checked)} type="checkbox" />
+                <input
+                  checked={closeIssue}
+                  onChange={(event) => setCloseIssue(event.target.checked)}
+                  type="checkbox"
+                />
                 同时关闭 Issue
               </label>
-              <button className="s3-button s3-button--primary" disabled={replying} onClick={() => void replyToIssue()} type="button">
+              <button
+                className="s3-button s3-button--primary"
+                disabled={replying}
+                onClick={() => void replyToIssue()}
+                type="button"
+              >
                 {replying ? '发送中…' : '发送回复'}
               </button>
               {replyMessage ? <p className="s3-notice">{replyMessage}</p> : null}
@@ -550,7 +756,9 @@ export function WorkDrawer({
             <section className="s3-form-section">
               <h3>投稿原始字段</h3>
               <pre>{JSON.stringify(submission.fields || {}, null, 2)}</pre>
-              <p className="s3-muted">状态：{SUBMISSION_STATES[submission.state] || submission.state}</p>
+              <p className="s3-muted">
+                状态：{SUBMISSION_STATES[submission.state] || submission.state}
+              </p>
             </section>
           ) : null}
 
@@ -566,12 +774,16 @@ export function WorkDrawer({
                   </li>
                 ))}
               </ol>
-            ) : <p className="s3-muted">暂无状态历史。</p>}
+            ) : (
+              <p className="s3-muted">暂无状态历史。</p>
+            )}
           </section>
         </div>
         <footer className="s3-drawer-footer">
           <span className="s3-muted">API：{apiRoute}</span>
-          <button className="s3-button s3-button--ghost" onClick={onClose} type="button">关闭</button>
+          <button className="s3-button s3-button--ghost" onClick={onClose} type="button">
+            关闭
+          </button>
         </footer>
       </aside>
     </div>

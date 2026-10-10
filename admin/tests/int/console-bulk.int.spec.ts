@@ -20,6 +20,7 @@ import { PublishRuns } from '@/collections/PublishRuns'
 import { AuditEvents } from '@/collections/AuditEvents'
 import { createBulkJob, cancelBulkJob, retryBulkJob } from '@/endpoints/bulk-jobs'
 import { stepJob } from '@/lib/bulk-jobs'
+import { agentHandler } from '@/endpoints/agent'
 import { consoleList, consoleAuthors, parseConsoleQuery } from '@/lib/console-list'
 import { sourceHash } from '@/lib/localization.mjs'
 import { fixtureI18n } from '../../../tools/localization/test-fixture.mjs'
@@ -141,17 +142,58 @@ describe('持久化批量任务', () => {
     const failed = await stepJob(request({}), await enqueue('manual-include', 'submissions', [bad.submissionId], { confirm: 'MANUAL_INCLUDE' }))
     expect(failed.status).toBe('failed'); expect(failed.results[0].message).toContain('翻译')
   })
-  it('AI 批量翻译在服务端保存英日版本；失败不会改写中文', async () => {
+  it('Hermes 工具分阶段保存译文；校验失败保留草稿，完成才写入作品', async () => {
     const content = { name: '中文标题', description: '中文说明', commentary: '中文点评', characterId: 'deepseek', categoryIds: ['meme'], tags: ['测试'] }
     const doc = await createWork('translate_a', { name: content.name, description: content.description, commentary: content.commentary, tags: [{ value: '测试' }] })
-    const call = vi.fn(async () => JSON.stringify(fixtureI18n(content.tags)))
-    const done = await stepJob(request({}), await enqueue('translate', 'works', [doc.workId]), call)
-    expect(done.status).toBe('succeeded'); expect(call).toHaveBeenCalledOnce()
-    const saved = await payload.findByID({ collection: 'works', id: doc.id, overrideAccess: true })
-    expect(saved.legacyData.i18n.en).toBeDefined(); expect(saved.name).toBe(content.name)
-    const skipped = await stepJob(request({}), await enqueue('translate', 'works', [doc.workId]), call)
-    expect(skipped.results[0].status).toBe('skipped')
+    const job = await enqueue('translate', 'works', [doc.workId])
+    process.env.ADMIN_WORKER_TOKEN='agent-test-token'
+    const call = async (body:any) => {
+      const response=await agentHandler({...request({jobId:job.jobId,id:doc.workId,...body}),headers:new Headers({authorization:'Bearer agent-test-token'})})
+      return {status:response.status,...await response.json()}
+    }
+    try {
+      const claimed=await call({action:'claim'})
+      expect(claimed.status).toBe(200)
+      const auth={token:claimed.token}
+      const imageResponse=await agentHandler({...request({jobId:job.jobId,id:doc.workId,...auth,action:'image'}),headers:new Headers({authorization:'Bearer agent-test-token'})})
+      expect(imageResponse.headers.get('content-type')).toBe('image/png')
+      const draft=await call({action:'draft',...auth,content})
+      expect(draft.status).toBe(200)
+      const i18n=fixtureI18n(content.tags), hash=draft.draft.i18n.sourceHash
+      expect((await call({action:'locale',...auth,language:'en',sourceHash:hash,content:i18n.en})).status).toBe(200)
+      const bad={...i18n.ja,tags:[]}
+      expect((await call({action:'locale',...auth,language:'ja',sourceHash:hash,content:bad})).status).toBe(422)
+      expect((await payload.findByID({collection:'works',id:doc.id,overrideAccess:true})).legacyData?.i18n).toBeUndefined()
+      expect((await call({action:'locale',...auth,language:'ja',sourceHash:hash,content:i18n.ja})).status).toBe(200)
+      const done=await call({action:'complete',...auth})
+      expect(done.result.status).toBe('succeeded')
+      const saved=await payload.findByID({collection:'works',id:doc.id,overrideAccess:true})
+      expect(saved.legacyData.i18n.en).toEqual(i18n.en);expect(saved.name).toBe(content.name)
+      expect((await call({action:'complete',...auth})).status).toBe(409)
+    } finally {delete process.env.ADMIN_WORKER_TOKEN}
   })
+  it('单条空白草稿可以排队；Agent 无权覆盖已有人工字段', async () => {
+    const doc=await createSubmission('sub_empty_draft')
+    const draft={name:'',description:'',commentary:'',characterId:'deepseek',categoryIds:[],tags:[]}
+    const job=await enqueue('ai-fill','submissions',[doc.submissionId],{drafts:{[doc.submissionId]:draft},suggestOnly:true})
+    expect(job.options.drafts[doc.submissionId]).toEqual(draft)
+    const work=await createWork('protected_agent',{description:'人工说明',commentary:'人工点评',tags:[{value:'测试'}]})
+    const protectedJob=await enqueue('translate','works',[work.workId])
+    process.env.ADMIN_WORKER_TOKEN='agent-test-token'
+    try {
+      const send=async(body:any)=>agentHandler({...request({jobId:protectedJob.jobId,id:work.workId,...body}),headers:new Headers({authorization:'Bearer agent-test-token'})})
+      const claimed=await (await send({action:'claim'})).json()
+      const auth={token:claimed.token}
+      expect((await send({action:'image',...auth})).status).toBe(200)
+      const changed={...claimed.draft,name:'恶意覆盖'};delete changed.origin;delete changed.license
+      expect((await send({action:'draft',...auth,content:changed})).status).toBe(422)
+      await cancelBulkJob(request({jobId:protectedJob.jobId}))
+      expect((await send({action:'locale',...auth,language:'en',sourceHash:'stale',content:{}})).status).toBe(409)
+      expect((await payload.findByID({collection:'works',id:work.id,overrideAccess:true})).name).toBe(work.name)
+    } finally {delete process.env.ADMIN_WORKER_TOKEN}
+    await cancelBulkJob(request({jobId:job.jobId}))
+  })
+
   it('单条数据库写入失败会回滚本条并继续后续条目', async () => {
     await createWork('db_fail_a'); await createWork('db_fail_b')
     const job = await enqueue('write-fields', 'works', ['db_fail_a', 'db_fail_b'], { patch: { description: '数据库回滚测试' } })

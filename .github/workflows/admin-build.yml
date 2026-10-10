@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - feat/admin-console
+      - feat/hermes-agent-editorial
     paths:
       - 'admin/**'
   workflow_dispatch:
@@ -41,7 +42,8 @@ jobs:
           MEDIA_DIR: ${{ runner.temp }}/admin-test-media
           PAYLOAD_SECRET: ci-admin-test-secret
         run: |
-          node --test "server/**/*.test.mjs" ops/tests/hermes-publish.test.mjs ops/tests/bulk-worker.test.mjs ops/hermes/tests/hermes.test.mjs
+          node --test "server/**/*.test.mjs" ops/tests/hermes-publish.test.mjs ops/tests/bulk-worker.test.mjs ops/hermes/tests/hermes.test.mjs ops/hermes/tests/tool.test.mjs
+          python3 -m unittest discover -s ops/hermes/editorial-plugin -p test_plugin.py
           cd admin
           npm run test:int -- --maxWorkers=1
           npx tsc --noEmit
