@@ -273,7 +273,12 @@ export async function agentHandler(req: PayloadRequest) {
         i18n: draft.i18n,
       })
       const result = done.results.at(-1)
-      return json({ ok: result?.status !== 'failed', status: done.status, result, ...(result?.status === 'failed' ? { error: result.message } : {}) })
+      return json({
+        ok: result?.status !== 'failed',
+        status: done.status,
+        result,
+        ...(result?.status === 'failed' ? { error: result.message } : {}),
+      })
     }
     return json({
       ok: true,

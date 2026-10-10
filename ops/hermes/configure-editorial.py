@@ -26,7 +26,11 @@ cfg = yaml.safe_load((home / 'config.yaml').read_text())
 enabled = cfg.setdefault('plugins', {}).setdefault('enabled', [])
 if 'dafeiyu-editorial' not in enabled: enabled.append('dafeiyu-editorial')
 # Per-model capability only. Preserve the default model and other jobs.
-cfg.setdefault('providers', {}).setdefault('api.commandcode.ai', {}).setdefault('models', {}).setdefault('deepseek/deepseek-v4.1-flash', {})['supports_vision'] = True
+provider = (cfg.get('providers') or {}).get('api.commandcode.ai')
+if not provider:
+    provider = next((p for p in cfg.get('custom_providers', []) if p.get('name') == 'api.commandcode.ai'), None)
+if not provider: raise SystemExit('Existing Agent provider is missing; refusing to invent credentials or endpoints')
+provider.setdefault('models', {}).setdefault('deepseek/deepseek-v4.1-flash', {})['supports_vision'] = True
 (home / 'config.yaml').write_text(yaml.safe_dump(cfg, allow_unicode=True, sort_keys=False))
 updated = update_job(job['id'], {
     'prompt': '按 dafeiyu-editorial 技能处理后台补全、翻译任务及新投稿。每轮最多 3 条，只使用 dafeiyu_editorial 工具。先查 admin 再查 submission。逐项看图、校验、保存；技术失败用 release，不转人工。没有任务时直接结束。禁止调用独立或辅助模型，禁止发布和人工批准。',

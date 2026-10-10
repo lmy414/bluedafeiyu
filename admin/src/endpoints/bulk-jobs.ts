@@ -36,6 +36,8 @@ const summary = (job: any) => ({
   createdAt: job.createdAt,
   updatedAt: job.updatedAt,
   finishedAt: job.finishedAt,
+  agentStage: job.options?.agent?.stage,
+  agentError: job.options?.agent?.lastError,
   succeeded: (job.results || []).filter((r: any) => r.status === 'succeeded').length,
   skipped: (job.results || []).filter((r: any) => r.status === 'skipped').length,
   failed: (job.results || []).filter((r: any) => r.status === 'failed').length,
@@ -244,7 +246,53 @@ export async function retryBulkJob(req: PayloadRequest) {
   if (denied) return denied
   const body = await readJsonBody<any>(req)
   const job = await findJob(req, String(body.jobId || ''))
-  if (!job || RUNNABLE.includes(job.status)) return json({ error: '只能重试已结束任务' }, 400)
+  if (!job) return json({ error: '任务不存在' }, 404)
+  if (RUNNABLE.includes(job.status) && job.options?.agent?.stage === 'blocked') {
+    const transactionID = await (req.payload.db as any).beginTransaction()
+    if (transactionID == null) throw new Error('重试需要数据库事务')
+    const tx = { ...req, transactionID } as PayloadRequest
+    try {
+      const fresh = await (req.payload as any).findByID({
+        collection: 'bulk-jobs',
+        id: job.id,
+        overrideAccess: true,
+        req: tx,
+      })
+      if (fresh.options?.agent?.stage !== 'blocked') throw new Error('任务状态已变化')
+      const next = await (req.payload as any).update({
+        collection: 'bulk-jobs',
+        id: job.id,
+        data: {
+          status: 'queued',
+          options: {
+            ...fresh.options,
+            agent: {
+              ...fresh.options.agent,
+              token: null,
+              expiresAt: 0,
+              retryAt: 0,
+              attempt: 0,
+              stage: 'queued',
+              lastError: null,
+            },
+          },
+        },
+        overrideAccess: true,
+        req: tx,
+      })
+      await writeAudit(tx, {
+        action: 'bulk.agent-retry',
+        targetId: job.jobId,
+        targetType: 'bulk-jobs',
+      })
+      await (req.payload.db as any).commitTransaction(transactionID)
+      return json({ ok: true, job: summary(next) })
+    } catch (error) {
+      await (req.payload.db as any).rollbackTransaction(transactionID)
+      throw error
+    }
+  }
+  if (RUNNABLE.includes(job.status)) return json({ error: '只能重试已结束或技术暂挂任务' }, 400)
   const ids = (job.results || []).filter((r: any) => r.status === 'failed').map((r: any) => r.id)
   if (!ids.length) return json({ error: '没有失败项可重试' }, 400)
   return createBulkJob({
