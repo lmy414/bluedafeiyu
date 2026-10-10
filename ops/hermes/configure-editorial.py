@@ -33,7 +33,7 @@ if not provider: raise SystemExit('Existing Agent provider is missing; refusing 
 provider.setdefault('models', {}).setdefault('deepseek/deepseek-v4.1-flash', {})['supports_vision'] = True
 (home / 'config.yaml').write_text(yaml.safe_dump(cfg, allow_unicode=True, sort_keys=False))
 updated = update_job(job['id'], {
-    'prompt': '按 dafeiyu-editorial 技能处理后台补全、翻译任务及新投稿。每轮最多 3 条，只使用 dafeiyu_editorial 工具。先查 admin 再查 submission。逐项看图、校验、保存；技术失败用 release，不转人工。没有任务时直接结束。禁止调用独立或辅助模型，禁止发布和人工批准。',
+    'prompt': '按 dafeiyu-editorial 技能处理署名、来源、授权备注和可恢复下架申请，以及后台补全、翻译任务和新投稿。每轮总计最多 3 条，只使用 dafeiyu_editorial 工具。先 sync/list requests，再查 admin 和 submission。申请证据不足、署名冲突、永久删除和功能/Bug 不自动处理。逐项校验保存；技术失败用 release，不转人工。没有任务时直接结束。禁止调用独立或辅助模型，禁止直接发布和人工批准。',
     'skills': ['dafeiyu-editorial'], 'skill': None, 'script': None,
     'no_agent': False, 'model': 'deepseek/deepseek-v4.1-flash',
     'provider': 'custom:api.commandcode.ai',

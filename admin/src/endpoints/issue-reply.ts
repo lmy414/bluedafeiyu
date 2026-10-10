@@ -13,9 +13,6 @@ type IssueReplyBody = {
   close?: boolean
   stateReason?: 'completed' | 'not_planned'
   submissionId?: string
-  workId?: string
-  author?: string
-  issue?: number
 }
 
 function issueReplyDir(): string {
@@ -117,28 +114,7 @@ const attributionHandler = async (req: PayloadRequest): Promise<Response> => {
     const denied = requireWorker(req)
     if (denied) return denied
   }
-  const body = await readJsonBody<IssueReplyBody>(req)
-  const workId = String(body.workId || '').trim()
-  const author = String(body.author || '').trim()
-  const issue = positiveIssue(body.issue)
-  const reply = String(body.body || '').trim()
-  if (!workId || !author || !issue || !reply) return json({ ok: false, error: 'workId、author、issue、body 必填' }, 400)
-  const payload = req.payload as any
-  const result = await payload.find({ collection: 'works', where: { workId: { equals: workId } }, limit: 1, depth: 0, overrideAccess: true })
-  const work = result.docs[0]
-  if (!work) return json({ ok: false, error: '作品不存在' }, 404)
-  const origin = work.origin && typeof work.origin === 'object' && !Array.isArray(work.origin) ? work.origin : {}
-  const nextOrigin = { ...origin, author }
-  await payload.update({ collection: 'works', id: work.id, data: { origin: nextOrigin, needsPublish: true, changeAction: 'update' }, context: { audit: false, skipFieldAccess: true }, overrideAccess: true, req })
-  await writeAudit(req, { action: 'works.attribution-update', before: { origin }, after: { origin: nextOrigin, issue, author }, targetId: work.workId, targetType: 'works' })
-  const targetDir = issueReplyDir()
-  const filename = `${Date.now()}-${crypto.randomUUID()}.json`
-  const target = path.join(targetDir, filename)
-  const temp = `${target}.tmp`
-  await fs.mkdir(targetDir, { recursive: true, mode: 0o770 })
-  await fs.writeFile(temp, `${JSON.stringify({ schema: 'issue-reply/1', issue, body: reply, close: true, stateReason: 'completed', requestedBy: 'system', requestedAt: new Date().toISOString() })}\n`, { encoding: 'utf8', mode: 0o660 })
-  await fs.rename(temp, target)
-  return json({ ok: true, workId, author, issue, queued: true })
+  return json({ ok: false, error: '旧署名快捷接口已停用。请通过下架与更正申请由 Hermes 校验，并在发布核验后回复。' }, 410)
 }
 
 export const IssueReplyEndpoints: Endpoint[] = [

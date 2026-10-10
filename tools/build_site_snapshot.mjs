@@ -75,7 +75,7 @@ function main() {
     const sourcePath = String(record.sourcePath || "").trim();
     const editorial = editorialByPath.get(sourcePath) || {};
     // 后台下架/删除的首批作品只留叠加层墓碑，不进入任何公开快照。
-    if (editorial.status === "hidden" || editorial.status === "deleted") return;
+    if (["hidden", "deleted", "removed"].includes(editorial.status)) return;
     // 叠加层优先：首批 59 条的名字、标签、分类、评价、自托管原图都在这里；
     // 其余条目回落到上游 raw 清单的字段
     const name = String(editorial.name || record.name || "").trim();

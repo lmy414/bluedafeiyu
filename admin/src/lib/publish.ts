@@ -111,6 +111,7 @@ export async function buildPublishSnapshot(payload: Payload, run: any): Promise<
   originals: any[]
   deletions: any[]
   summary: PublishPlan['summary']
+  versions: Record<string, string>
 }> {
   const plan = await buildPublishPlan(payload)
   const allWorks = await (payload as any).find({ collection: 'works', depth: 2, limit: 2000, overrideAccess: true, pagination: false })
@@ -133,7 +134,8 @@ export async function buildPublishSnapshot(payload: Payload, run: any): Promise<
     .filter((work: any) => work.status === 'deleted')
     .map((work: any) => ({ workId: work.workId, kind: work.kind, contentPaths: contentPathsForWork(work) }))
   const files = await exportSiteData(payload, { originalUrlByWorkId, treatPendingAsPublished: true })
-  return { runId: run.runId, files, originals, deletions, summary: plan.summary }
+  const versions = Object.fromEntries(allWorks.docs.filter((w: any) => w.needsPublish).map((w: any) => [w.workId, w.updatedAt]))
+  return { runId: run.runId, files, originals, deletions, summary: plan.summary, versions }
 }
 
 export async function applyPublishStatus(
@@ -151,6 +153,9 @@ export async function applyPublishStatus(
     const results = new Map<string, any>((body.results?.works || []).map((result: any) => [String(result.workId), result]))
     const finishedAt = new Date().toISOString()
     for (const work of works.docs) {
+      // A rights request arriving during a build belongs to the next snapshot.
+      const versions = run.plannedChanges?.snapshotVersions
+      if (versions && versions[work.workId] !== work.updatedAt) continue
       const result = results.get(String(work.workId))
       // 发布期间同步的新投稿不在本批原图和结果中，留待下一批处理。
       // 否则会被误标为 published，且原图、派生图路径仍为空。

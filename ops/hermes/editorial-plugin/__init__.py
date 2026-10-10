@@ -14,8 +14,8 @@ _budgets = {}
 
 
 def bridge(action, args):
-    if args.get('target') not in ('submission', 'admin'):
-        return {'ok': False, 'error': 'target must be submission or admin'}
+    if args.get('target') not in ('submission', 'admin', 'requests'):
+        return {'ok': False, 'error': 'target must be submission, admin or requests'}
     payload = {**args, 'action': action}
     encoded = json.dumps(payload, ensure_ascii=False).encode('utf-8')
     if len(encoded) > 128 * 1024:
@@ -72,7 +72,7 @@ def handle(action, args, **kwargs):
                 draft = result.get('draft') or (result.get('item') or {}).get('draft') or {}
                 i18n = draft.get('i18n') or {}
                 result = {k: result[k] for k in ('ok', 'id', 'jobId', 'stage', 'ready', 'status') if k in result}
-                result.update({'sourceHash': i18n.get('sourceHash'), 'savedLanguages': [lang for lang in ('en', 'ja') if i18n.get(lang)]})
+                result.update({'sourceHash': i18n.get('sourceHash') or draft.get('sourceHash'), 'savedLanguages': [lang for lang in ('en', 'ja') if i18n.get(lang)]})
             return json.dumps(result, ensure_ascii=False)
         from PIL import Image, ImageOps
         data = base64.b64decode(result['image'], validate=True)
@@ -95,7 +95,7 @@ def handle(action, args, **kwargs):
 
 
 STRING = {'type': 'string'}
-COMMON = {'target': {'type': 'string', 'enum': ['submission', 'admin']}, 'id': STRING, 'jobId': STRING, 'token': STRING}
+COMMON = {'target': {'type': 'string', 'enum': ['submission', 'admin', 'requests']}, 'id': STRING, 'jobId': STRING, 'token': STRING}
 CONTENT = {'type': 'object', 'additionalProperties': False, 'properties': {
     'name': STRING, 'description': STRING, 'commentary': STRING, 'characterId': STRING,
     'categoryIds': {'type': 'array', 'items': STRING, 'minItems': 1, 'maxItems': 1},
@@ -125,6 +125,11 @@ def register(ctx):
         ('dafeiyu_claim', 'Claim exactly one task. Save the returned token and pass it to every subsequent tool. No model call.', {}, partial(handle, 'claim'), ['target']),
         ('dafeiyu_read', 'Read a claimed task or attach its image directly to your native vision context. Never calls an auxiliary model.', {'action': {'type': 'string', 'enum': ['get', 'image']}}, action_handle, ['target', 'id', 'token', 'action']),
         ('dafeiyu_save_draft', 'Validate and checkpoint all Chinese fields. Correct field errors and retry. Keep filled human fields unchanged. Submission tasks also require review.', {'content': CONTENT, 'review': REVIEW}, partial(handle, 'draft'), ['target', 'id', 'token', 'content']),
+        ('dafeiyu_save_request', 'For target requests only: checkpoint an evidence-based rights decision. Apply only an exact requested metadata change or recoverable takedown. Conflicts/uncertain ownership use manual. Never permanently delete.', {'decision': {'type': 'object', 'additionalProperties': False, 'properties': {
+            'verdict': {'type': 'string', 'enum': ['apply', 'manual']}, 'reason': STRING, 'quote': STRING,
+            'requestType': {'type': 'string', 'enum': ['attribution', 'source-correction', 'license-correction', 'takedown']},
+            'patch': {'type': 'object', 'additionalProperties': False, 'properties': {'author': STRING, 'url': STRING, 'licenseNote': STRING}},
+        }, 'required': ['verdict', 'reason']}}, partial(handle, 'draft'), ['target', 'id', 'token', 'decision']),
         ('dafeiyu_save_locale', 'Validate and checkpoint one language you wrote. Use the sourceHash from the saved draft. Other languages and Chinese content survive validation errors.', {'language': {'type': 'string', 'enum': ['en', 'ja']}, 'sourceHash': STRING, 'content': LOCALE}, partial(handle, 'locale'), ['target', 'id', 'token', 'language', 'sourceHash', 'content']),
         ('dafeiyu_finish', 'Validate or complete a claimed task. pass requires valid Chinese, English, Japanese. reject/manual is only for actual content risks or uncertainty, not technical failures.', {'action': {'type': 'string', 'enum': ['validate', 'complete']}, 'review': REVIEW}, action_handle, ['target', 'id', 'token', 'action']),
         ('dafeiyu_release', 'Checkpoint and release a task on technical error or time budget. Does not mark the submission manual or rejected.', {'reason': STRING}, partial(handle, 'release'), ['target', 'id', 'token', 'reason']),

@@ -17,5 +17,7 @@ export const TakedownRequests: CollectionConfig = {
     { name: 'status', type: 'select', required: true, defaultValue: 'received', options: [{ label: '已收到', value: 'received' }, { label: '处理中', value: 'investigating' }, { label: '通过', value: 'approved' }, { label: '拒绝', value: 'rejected' }, { label: '已完成', value: 'completed' }], label: '状态' },
     { name: 'decisionNote', type: 'textarea', label: '处理说明' },
     { name: 'processedAt', type: 'date', label: '处理时间' },
+    { name: 'issueData', type: 'json', label: 'GitHub 请求原文', admin: { readOnly: true } },
+    { name: 'agentProgress', type: 'json', label: 'Hermes 处理进度', admin: { readOnly: true } },
   ],
 }

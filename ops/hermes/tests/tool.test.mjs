@@ -2,6 +2,13 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { runTool } from '../tool.mjs';
 const env = { HERMES_REVIEW_TOKEN: 'offline-test', ADMIN_WORKER_TOKEN: 'offline-admin' };
+test('rights tools use the existing worker bridge without exposing GitHub read credentials', async () => {
+ const calls=[];const result=await runTool({target:'requests',action:'sync'},{...env,SUBMISSION_GITHUB_TOKEN:'read-only'},async(url,options)=>{calls.push({url,options});return Response.json({ok:true,tasks:[]});});
+ assert.equal(calls[0].url,'http://127.0.0.1:3100/cms-api/request-agent');
+ assert.equal(calls[0].options.headers['X-GitHub-Read-Token'],'read-only');
+ assert.equal(JSON.stringify(result).includes('read-only'),false);
+ await assert.rejects(()=>runTool({target:'requests',action:'ack'},env),/Invalid tool/);
+});
 test('SSH bridge only accesses loopback business API and returns field errors', async () => {
  const calls=[];
  const fetchImpl=async (url,options)=>{calls.push({url,options});return Response.json({error:'i18n.ja.tags invalid',path:'i18n.ja.tags'},{status:422});};

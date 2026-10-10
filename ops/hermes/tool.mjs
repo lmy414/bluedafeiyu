@@ -3,7 +3,7 @@
 import { pathToFileURL } from 'node:url';
 const ACTIONS = new Set(['list', 'rules', 'claim', 'get', 'image', 'draft', 'locale', 'validate', 'complete', 'release', 'sync']);
 export async function runTool(input, env = process.env, fetchImpl = fetch) {
-  if (!input || !ACTIONS.has(input.action) || !['submission', 'admin'].includes(input.target)) throw new Error('Invalid tool action or target');
+  if (!input || !ACTIONS.has(input.action) || !['submission', 'admin', 'requests'].includes(input.target)) throw new Error('Invalid tool action or target');
   const submission = input.target === 'submission';
   const base = submission ? (env.HERMES_REVIEW_API_URL || 'http://127.0.0.1:8790') : 'http://127.0.0.1:3100';
   const parsed = new URL(base);
@@ -11,8 +11,8 @@ export async function runTool(input, env = process.env, fetchImpl = fetch) {
   const token = submission ? env.HERMES_REVIEW_TOKEN : env.ADMIN_WORKER_TOKEN;
   if (!token) throw new Error('Tool bridge authentication is not configured');
   if (input.action === 'sync' && submission) throw new Error('sync only permits admin');
-  const response = await fetchImpl(base.replace(/\/$/, '') + (submission ? '/api/v1/internal/agent' : input.action === 'sync' ? '/cms-api/submissions/sync' : '/cms-api/agent'), {
-    method: 'POST', headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+  const response = await fetchImpl(base.replace(/\/$/, '') + (submission ? '/api/v1/internal/agent' : input.target === 'requests' ? '/cms-api/request-agent' : input.action === 'sync' ? '/cms-api/submissions/sync' : '/cms-api/agent'), {
+    method: 'POST', headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json', ...(input.target === 'requests' && env.SUBMISSION_GITHUB_TOKEN ? { 'X-GitHub-Read-Token': env.SUBMISSION_GITHUB_TOKEN } : {}) },
     body: JSON.stringify(input), signal: AbortSignal.timeout(60_000),
   });
   if (input.action === 'image' && response.ok && response.headers.get('content-type')?.startsWith('image/')) {

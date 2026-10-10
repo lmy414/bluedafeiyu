@@ -8,6 +8,7 @@ import type { Endpoint, PayloadRequest } from 'payload'
 import { json, readJsonBody, requireOwnerOrBot, requireWorker } from '../lib/endpoint-auth'
 import { writeAudit } from '../lib/audit'
 import { applyPublishStatus, buildPublishPlan, buildPublishSnapshot } from '../lib/publish'
+import { queueRightsReplies } from '../lib/rights-requests'
 
 function requestDir(): string {
   return path.resolve(process.env.ADMIN_PUBLISH_REQUEST_DIR || path.resolve(process.cwd(), 'run'))
@@ -84,7 +85,11 @@ const snapshotHandler = async (req: PayloadRequest): Promise<Response> => {
   const run = await findRun(req, runId)
   if (!run) return json({ ok: false, error: '批次不存在' }, 404)
   if (run.status !== 'queued' && run.status !== 'in_progress') return json({ ok: false, error: '批次状态不允许取快照' }, 409)
-  return json(await buildPublishSnapshot(req.payload, run))
+  const snapshot = await buildPublishSnapshot(req.payload, run)
+  await (req.payload as any).update({ collection: 'publish-runs', id: run.id,
+    data: { plannedChanges: { ...run.plannedChanges, snapshotVersions: snapshot.versions } },
+    context: { audit: false }, overrideAccess: true, req })
+  return json(snapshot)
 }
 
 const runStatusHandler = async (req: PayloadRequest): Promise<Response> => {
@@ -121,6 +126,9 @@ const runStatusHandler = async (req: PayloadRequest): Promise<Response> => {
   }
 
   await payload.update({ collection: 'publish-runs', id: run.id, data, context: { audit: false }, overrideAccess: true, req })
+  // Reply failures never turn a successfully deployed release into a failed batch.
+  // The next Hermes sync resumes the durable request records.
+  if (status === 'succeeded') await queueRightsReplies(payload).catch(() => undefined)
   if (status !== 'succeeded') {
     await writeAudit(req, { action: `publish.${status}`, after: { body, runId: run.runId }, targetId: run.id, targetType: 'publish-runs' })
   }

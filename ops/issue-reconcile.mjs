@@ -4,6 +4,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
+import { rightsComments, rightsIssueHash, rightsIssueSnapshot, verifyRightsPublication, acknowledgeRightsReply, reportRightsConflict } from './rights-publication.mjs';
 
 export const REPO = 'lmy414/ai-girl-stickers';
 export const SITE = 'https://xn--pssy23gqgbz2d718b.com';
@@ -291,7 +292,10 @@ export function createGithubRequest(token, fetchImpl = globalThis.fetch) {
 
 function validateReplyRequest(value) {
   if (!value || typeof value !== 'object' || Array.isArray(value)) throw new Error('请求必须是 JSON 对象');
-  if (value.schema !== 'issue-reply/1') throw new Error('schema 必须是 issue-reply/1');
+  if (!['issue-reply/1', 'issue-reply/2'].includes(value.schema)) throw new Error('schema 必须是 issue-reply/1 或 issue-reply/2');
+  if (value.schema === 'issue-reply/2' && (!/^github-rights-[1-9][0-9]*$/.test(value.requestId || '') ||
+    value.requestId !== `github-rights-${value.issue}` || !value.expected || !/^[a-zA-Z0-9_-]+$/.test(value.expected.slug || '') ||
+    !['published', 'removed'].includes(value.expected.status) || !/^[a-f0-9]{64}$/.test(value.issueHash || ''))) throw new Error('署名删除回复的验证条件非法');
   if (!Number.isSafeInteger(value.issue) || value.issue < 1) throw new Error('issue 必须是正整数');
   if (typeof value.body !== 'string' || value.body.trim() === '') throw new Error('body 不能为空');
   if ([...value.body].length > 5000) throw new Error('body 超过 5000 字');
@@ -323,7 +327,7 @@ async function failReplyFile(file, directory, error) {
   await fs.writeFile(`${target}.error`, `${error.message}\n`, { encoding: 'utf8', mode: 0o600 });
 }
 
-export async function processReplies({ dir, request, notify, log = console.error, env = process.env } = {}) {
+export async function processReplies({ dir, request, notify, log = console.error, env = process.env, verifyRights = verifyRightsPublication, acknowledge = acknowledgeRightsReply } = {}) {
   if (typeof request !== 'function') throw new Error('缺少 GitHub 请求器');
   const directory = dir || String(env.ADMIN_ISSUE_REPLY_DIR || DEFAULT_REPLY_DIR);
   const names = (await fs.readdir(directory, { withFileTypes: true }))
@@ -350,6 +354,18 @@ export async function processReplies({ dir, request, notify, log = console.error
     try {
       const issue = await request(`/repos/${REPO}/issues/${payload.issue}`);
       const labels = Array.isArray(issue.labels) ? issue.labels : [];
+      if (payload.schema === 'issue-reply/2') {
+        if (issue.pull_request || !labels.some(label => label.name === 'takedown') || /^\[(?:bug|feature|投稿)\]/i.test(issue.title || '')) throw new Error('目标不是有效的署名删除申请');
+        const comments = await rightsComments(request, payload.issue);
+        if (rightsIssueHash(rightsIssueSnapshot(issue, comments)) !== payload.issueHash) throw new Error('申请原文或评论已修改，需要重新核验');
+        await verifyRights(payload);
+        const marker = `<!-- dafeiyu-rights:${payload.requestId} -->`;
+        let comment = comments.find(c => c.user?.login === 'lmy414' && c.body?.includes(marker));
+        if (!comment) comment = await request(`/repos/${REPO}/issues/${payload.issue}/comments`, { method: 'POST', body: { body: `${payload.body}\n\n${marker}` } });
+        if (issue.state !== 'closed') await request(`/repos/${REPO}/issues/${payload.issue}`, { method: 'PATCH', body: { state: 'closed', state_reason: 'completed' } });
+        await acknowledge(payload, comment.html_url, env);
+        summary.closed++;
+      } else {
       if (issue.pull_request || !labels.some((label) => label.name === 'sticker-submission')) {
         throw new Error('目标 Issue 不带 sticker-submission 标签');
       }
@@ -364,6 +380,7 @@ export async function processReplies({ dir, request, notify, log = console.error
         });
         summary.closed++;
       }
+      }
     } catch (error) {
       if (error.message === '目标 Issue 不带 sticker-submission 标签') {
         await failReplyFile(file, directory, error);
@@ -372,6 +389,11 @@ export async function processReplies({ dir, request, notify, log = console.error
       } else {
         summary.failed.push({ file: name, error: error.message });
         log(`Issue 回复请求 ${name} 执行失败：${error.message}`);
+        // Rights sync retries from the database every five minutes, avoiding a path-unit busy loop.
+        if (payload.schema === 'issue-reply/2') await moveReplyFile(file, directory, 'retry');
+        if (payload.schema === 'issue-reply/2' && error.message === '申请原文或评论已修改，需要重新核验') {
+          await reportRightsConflict(payload, error.message, env).catch(e => log(e.message));
+        }
       }
       continue;
     }

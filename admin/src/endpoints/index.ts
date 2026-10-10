@@ -9,12 +9,14 @@ import { WorksByAuthorEndpoint } from './works-by-author'
 import { DashboardEndpoints } from './dashboard'
 import { IssueReplyEndpoints } from './issue-reply'
 import { PublishEndpoints } from './publish'
+import { RequestAgentEndpoints } from './request-agent'
 
 export const endpoints: Endpoint[] = [
   ...ConsoleEndpoints,
   ...BulkJobEndpoints,
   ...AnalyticsEndpoints,
   ...PublishEndpoints,
+  ...RequestAgentEndpoints,
   ...IssueReplyEndpoints,
   ...DashboardEndpoints,
   ...AiFillEndpoints,

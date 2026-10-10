@@ -590,6 +590,24 @@ export interface TakedownRequest {
   status: 'received' | 'investigating' | 'approved' | 'rejected' | 'completed';
   decisionNote?: string | null;
   processedAt?: string | null;
+  issueData?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  agentProgress?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -1041,6 +1059,8 @@ export interface TakedownRequestsSelect<T extends boolean = true> {
   status?: T;
   decisionNote?: T;
   processedAt?: T;
+  issueData?: T;
+  agentProgress?: T;
   updatedAt?: T;
   createdAt?: T;
 }

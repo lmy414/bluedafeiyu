@@ -12,6 +12,9 @@ fi
 if [[ -d "$HOME_DIR/plugins/dafeiyu-editorial" ]]; then
   cp -a "$HOME_DIR/plugins/dafeiyu-editorial" "$BACKUP/plugin"
 fi
+if [[ -d "$HOME_DIR/skills/dafeiyu-editorial" ]]; then
+  cp -a "$HOME_DIR/skills/dafeiyu-editorial" "$BACKUP/skill"
+fi
 install -m 755 "$ROOT/ops/hermes/dafeiyu-hermes-bridge.sh" /usr/local/sbin/dafeiyu-hermes-bridge
 install -d -m 755 "$HOME_DIR/plugins/dafeiyu-editorial" "$HOME_DIR/skills/dafeiyu-editorial"
 install -m 644 "$ROOT/ops/hermes/editorial-plugin/__init__.py" "$ROOT/ops/hermes/editorial-plugin/plugin.yaml" "$HOME_DIR/plugins/dafeiyu-editorial/"

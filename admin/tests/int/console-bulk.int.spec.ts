@@ -23,6 +23,9 @@ import { stepJob } from '@/lib/bulk-jobs'
 import { agentHandler } from '@/endpoints/agent'
 import { consoleList, consoleAuthors, parseConsoleQuery } from '@/lib/console-list'
 import { sourceHash } from '@/lib/localization.mjs'
+import { TakedownRequests } from '@/collections/TakedownRequests'
+import { requestAgentHandler } from '@/endpoints/request-agent'
+import { issueSnapshot } from '@/lib/rights-requests'
 import { fixtureI18n } from '../../../tools/localization/test-fixture.mjs'
 
 let payload: any, owner: any, bot: any, char: any, category: any, media: any, root: string, imageBytes: Buffer
@@ -43,7 +46,7 @@ async function enqueue(operation: string, target: string, ids: string[], extras:
 beforeAll(async () => {
   root = await fs.mkdtemp(path.join(os.tmpdir(), 'console-bulk-'))
   process.env.MEDIA_DIR = path.join(root, 'media')
-  const config = buildConfig({ collections: [Users, BulkJobs, Works, Submissions, Categories, Characters, { ...Media, upload: { ...(Media.upload as any), staticDir: process.env.MEDIA_DIR } }, Topics, PublishRuns, AuditEvents], db: sqliteAdapter({ client: { url: `file:${path.join(root, 'test.db').replace(/\\/g, '/')}` }, push: true, transactionOptions: { behavior: 'immediate' } }), secret: 'console-bulk-test', sharp })
+  const config = buildConfig({ collections: [Users, BulkJobs, Works, Submissions, Categories, Characters, { ...Media, upload: { ...(Media.upload as any), staticDir: process.env.MEDIA_DIR } }, Topics, PublishRuns, AuditEvents, TakedownRequests], db: sqliteAdapter({ client: { url: `file:${path.join(root, 'test.db').replace(/\\/g, '/')}` }, push: true, transactionOptions: { behavior: 'immediate' } }), secret: 'console-bulk-test', sharp })
   payload = await getPayload({ config })
   owner = await payload.create({ collection: 'users', data: { email: 'owner@bulk.test', password: 'test-password', role: 'owner' }, overrideAccess: true, context: { audit: false } })
   bot = { id: owner.id, role: 'bot' }
@@ -217,4 +220,26 @@ describe('持久化批量任务', () => {
     expect((await createBulkJob(request({ operation: 'write-fields', target: 'works', ids: ['cancel_a'] }, bot))).status).toBe(403)
     expect((await createBulkJob(request({ operation: 'write-fields', target: 'works', ids: ['cancel_a'], patch: { slug: 'bad' } }))).status).toBe(400)
   })
+  it('申请使用真实 SQLite：并发领取拒绝，补充作者后等待原发布任务且保留匿名投稿', async () => {
+    const oldToken = process.env.ADMIN_WORKER_TOKEN
+    process.env.ADMIN_WORKER_TOKEN = 'rights-worker'
+    const issue = { number: 142, title: '[署名/删除]', state: 'open', labels: [{ name: 'takedown' }], user: { login: 'creator' }, body: 'https://xn--pssy23gqgbz2d718b.com/works/rights-fixed.html\n作者小鱼' }
+    const base = { name: 'rights', description: '画面说明', commentary: '让我看看', characterId: 'deepseek', categoryIds: ['meme'], tags: [], origin: { issue: 99 }, license: { type: 'submitter-permission' } }
+    const saved = await createWork('rights_case', { ...base, slug: 'rights-fixed', tags: [], submitter: { credit: 'anonymous' }, legacyData: { i18n: { sourceHash: sourceHash(base), ...fixtureI18n(base.tags) } } })
+    const record = await payload.create({ collection: 'takedown-requests', data: { requestId: 'github-rights-142', requestType: 'attribution', status: 'received', issueData: issueSnapshot(issue), agentProgress: { stage: 'queued', attempt: 0 } }, overrideAccess: true, context: { audit: false } })
+    vi.stubGlobal('fetch', vi.fn(async (url: string) => Response.json(url.includes('/comments') ? [] : url.endsWith('/99') ? { user: { login: 'creator' } } : issue)))
+    const call = (action: string, extra: any = {}) => requestAgentHandler({ payload, headers: new Headers({ authorization: 'Bearer rights-worker' }), json: async () => ({ action, id: record.requestId, ...extra }) } as any)
+    try {
+      const claim = await (await call('claim')).json()
+      expect(claim.ok).toBe(true)
+      expect((await call('claim')).status).toBe(409)
+      expect((await call('draft', { token: claim.token, decision: { verdict: 'apply', requestType: 'attribution', patch: { author: '小鱼' }, quote: '作者小鱼', reason: '原投稿账号补充作者' } })).status).toBe(200)
+      expect((await call('complete', { token: claim.token })).status).toBe(200)
+      const result = await payload.findByID({ collection: 'works', id: saved.id, depth: 0, overrideAccess: true })
+      expect(result).toMatchObject({ slug: 'rights-fixed', origin: { author: '小鱼', issue: 99 }, submitter: { credit: 'anonymous' }, status: 'published', needsPublish: true })
+      const after = await payload.findByID({ collection: 'takedown-requests', id: record.id, depth: 0, overrideAccess: true })
+      expect(after).toMatchObject({ status: 'approved', agentProgress: { stage: 'awaiting_publish', token: null } })
+    } finally { vi.unstubAllGlobals(); if (oldToken === undefined) delete process.env.ADMIN_WORKER_TOKEN; else process.env.ADMIN_WORKER_TOKEN = oldToken }
+  })
+
 })
