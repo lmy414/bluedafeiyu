@@ -165,12 +165,15 @@ export function validateRightsDecision(
     if (
       typeof value !== 'string' ||
       !value.trim() ||
-      value.length > (field === 'licenseNote' ? 2000 : 1200) ||
-      /[\u0000-\u001f\u007f]|<\/?[A-Za-z!]|(?:javascript|data|vbscript)\s*:/i.test(value)
+      value.length > (field === 'licenseNote' ? 2000 : field === 'url' ? 2048 : 120) ||
+      /[\u0000-\u0008\u000B\u000C\u000E-\u001f\u007f]|<\/?[A-Za-z!]|(?:javascript|data|vbscript)\s*:/i.test(
+        value,
+      )
     )
       throw rightsFail('更正内容非法')
     if (!text.includes(value)) throw rightsFail('更正内容必须逐字出现在申请人原文中')
     if (field === 'author') {
+      if (/[\r\n\t]/.test(value)) throw rightsFail('作者名不能换行')
       if (value.length > 120) throw rightsFail('作者名超过 120 字')
       if (work.origin?.author && work.origin.author !== value && !owner && !sameSubmitter)
         throw rightsFail('已有作者与申请冲突，请提交 manual')
@@ -183,7 +186,8 @@ export function validateRightsDecision(
         throw rightsFail('补充原作者署名需要完整关系说明及确认；否则提交 manual')
       draft.origin = { ...draft.origin, author: value }
     } else if (field === 'url') {
-      if (safeHomepage(value) !== value) throw rightsFail('来源仅接受有效 http/https URL')
+      if (!/^https?:\/\/[^\s/?#\\]/.test(value) || value.includes('\\') || !safeHomepage(value))
+        throw rightsFail('来源仅接受有效 http/https URL')
       draft.origin = { ...draft.origin, url: value }
     } else {
       // Preserve the permission type. Quote the claimant instead of inventing a CC version or ownership.

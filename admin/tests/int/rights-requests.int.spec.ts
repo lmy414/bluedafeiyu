@@ -165,6 +165,44 @@ describe('申请业务边界', () => {
     expect(corrected.draft.i18n).toEqual({ sourceHash: sourceHash(corrected.draft) })
     expect(() => validateRightsReady(corrected)).toThrow()
   })
+  it('来源链接保留原文，接受无末尾斜杠的地址并拒绝不安全地址', () => {
+    const check = (url: string) =>
+      validateRightsDecision(
+        { ...decision, requestType: 'source-correction', quote: url, patch: { url } },
+        { ...record, issueData: { ...record.issueData, body: body + '\n来源：' + url } },
+        work,
+        original,
+        'creator',
+      )
+    expect(check('https://example.com').draft.origin.url).toBe('https://example.com')
+    for (const url of [
+      'https://user:password@example.com',
+      'https:///example.com',
+      'https://example.com\\path',
+    ])
+      expect(() => check(url)).toThrow('来源')
+  })
+  it('允许原文中的多行授权说明，拒绝多行作者名', () => {
+    const note = '仅限非商业用途\n转载时请保留署名'
+    const current = { ...record, issueData: { ...record.issueData, body: body + '\n' + note } }
+    const result = validateRightsDecision(
+      { ...decision, requestType: 'license-correction', quote: note, patch: { licenseNote: note } },
+      current,
+      work,
+      original,
+      'creator',
+    )
+    expect(result.draft.license.note).toBe('授权说明照录：' + note)
+    expect(() =>
+      validateRightsDecision(
+        { ...decision, quote: note, patch: { author: note } },
+        current,
+        work,
+        original,
+        'creator',
+      ),
+    ).toThrow('作者名')
+  })
   it('译文只准更正授权备注；保留已有标题与 FAQ', () => {
     const progress = {
       decision: { requestType: 'license-correction' },
