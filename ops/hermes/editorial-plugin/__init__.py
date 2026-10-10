@@ -37,6 +37,14 @@ def bridge(action, args):
 
 def handle(action, args, **kwargs):
     try:
+        # The plugin is installed in a shared QQ/Feishu gateway. Keep queue
+        # mutation authority confined to the configured editorial cron run;
+        # public chat messages cannot invoke these tools, even by injection.
+        from cron.jobs import resolve_job_ref
+        job = resolve_job_ref('dafeiyu-review-cycle')
+        task_id = str(kwargs.get('task_id') or '')
+        if not job or not task_id.startswith('cron:' + job['id'] + ':'):
+            return json.dumps({'ok': False, 'error': 'Editorial tools are restricted to the configured editorial cron task.'})
         if action == 'image':
             from agent.auxiliary_client import _read_main_provider, _read_main_model
             from agent.image_routing import _lookup_supports_vision

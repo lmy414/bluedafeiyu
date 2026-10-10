@@ -2,6 +2,8 @@ import importlib.util
 import json
 from pathlib import Path
 import unittest
+import types
+import sys
 from unittest.mock import patch
 
 spec = importlib.util.spec_from_file_location('editorial_plugin', Path(__file__).with_name('__init__.py'))
@@ -30,6 +32,18 @@ class PluginTests(unittest.TestCase):
         self.assertEqual(len(ctx.tools), 7)
         self.assertTrue(all(t['toolset'] == 'dafeiyu_editorial' for t in ctx.tools))
         self.assertTrue(all(t['schema']['parameters']['additionalProperties'] is False for t in ctx.tools))
+
+    def test_shared_chat_cannot_use_editorial_authority(self):
+        cron = types.ModuleType('cron')
+        jobs = types.ModuleType('cron.jobs')
+        jobs.resolve_job_ref = lambda _: {'id': 'editorial-run'}
+        with patch.dict(sys.modules, {'cron': cron, 'cron.jobs': jobs}), patch.object(plugin, 'bridge') as bridge:
+            value = json.loads(plugin.handle('list', {'target': 'admin'}, task_id='qq:public-message'))
+            self.assertFalse(value['ok'])
+            bridge.assert_not_called()
+            bridge.return_value = {'jobs': []}
+            value = json.loads(plugin.handle('list', {'target': 'admin'}, task_id='cron:editorial-run:smoke'))
+            self.assertEqual(value['jobs'], [])
 
     def test_no_model_client_and_transport_failure_is_not_success(self):
         with patch.object(plugin.subprocess, 'run') as run:
