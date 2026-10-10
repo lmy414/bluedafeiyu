@@ -53,8 +53,7 @@ export function validateLocale(entry, language, original = {}) {
   if (
     !Array.isArray(entry.tags) ||
     entry.tags.length !== (original.tags || []).length ||
-    entry.tags.some((t) => typeof t !== 'string' || !t.trim() || t.length > 80) ||
-    new Set(entry.tags).size !== entry.tags.length
+    entry.tags.some((t) => typeof t !== 'string' || !t.trim() || t.length > 80)
   )
     invalid(`${path}.tags`, `Invalid ${language} tag alignment`)
   if (!Array.isArray(entry.faq) || entry.faq.length !== 2)

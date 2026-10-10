@@ -24,3 +24,13 @@ test('source digest detects editorial and taxonomy changes but preserves frozen 
   assert.notEqual(sourceHash(source),sourceHash({...source,tags:['新标签']}));
   assert.equal(sourceHash(source),sourceHash({...source,id:'frozen',slug:'same',submitter:{name:'Author'}}));
 });
+test('distinct source aliases may translate to the same tag without losing positional alignment',()=>{
+  const aliased={...source,tags:['DeepSeek娘','鲸鱼娘']};
+  const value=fixtureI18n(aliased.tags);
+  value.en.tags=['DeepSeek Chan','DeepSeek Chan'];
+  value.ja.tags=['DeepSeekちゃん','DeepSeekちゃん'];
+  assert.deepEqual(validateI18n(value,aliased).en.tags,value.en.tags);
+  assert.deepEqual(validateI18n(value,aliased).ja.tags,value.ja.tags);
+  value.en.tags.pop();
+  assert.throws(()=>validateI18n(value,aliased),/tag alignment/);
+});
