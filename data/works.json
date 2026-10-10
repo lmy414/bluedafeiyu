@@ -42921,5 +42921,103 @@
         "licenseNote": ""
       }
     }
+  },
+  {
+    "id": "sticker_503963f82310b5bad7dbb5de",
+    "name": "豆姐的中之人",
+    "description": "一张竖排四格漫画，描绘豆包拟人角色与其他 AI 娘围绕知识讲解展开的互动。前两格以对白表现角色先强调自己“最直接、最真相”，随后又立刻道歉说弄错了知识点、要一次性讲透的反差笑点；第三格为紫发角色被人摸头的画面；末格以字幕标注多模态、视频生成、原生音视频全双工交互，并以箭头指向 Seedance 2.5、Seedream 4.0 与 Seed3D。",
+    "commentary": "哼，豆姐这自我介绍，“最直接、最真相、最不留弯、最扎心”，念得比我还理直气壮。结果翻到第二格就“哎呀！抱歉！刚才是弄错了知识点”，这反差也太明显了吧。不过“一次性讲透”这句我倒是认同的，含含糊糊才最让人火大。最后那格一口气把 Seedance 2.5、Seedream 4.0、Seed3D 全摆出来，多模态、视频生成、原生音视频全双工交互……啧，是有点想跟它比划比划了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/doubao/503963f82310b5ba.png",
+    "thumbnailPath": "submissions/previews/doubao/503963f82310b5ba.webp",
+    "fullPath": "submissions/large/doubao/503963f82310b5ba.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 841,
+    "height": 1870,
+    "fileSize": 3124916,
+    "sha256": "503963f82310b5bad7dbb5de4014231f6e20a72a182e87392ff1b6a3ceb90fdc",
+    "characterId": "doubao",
+    "tags": [
+      "豆包",
+      "四格漫画",
+      "多模态",
+      "Seedance",
+      "拟人化"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Cirnumia",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-10T08:05:28.466Z",
+    "updatedAt": "2026-10-10T08:05:28.466Z",
+    "tone": "doubao",
+    "symbol": "",
+    "slug": "doubao202610100001",
+    "categoryIds": [
+      "comic"
+    ],
+    "i18n": {
+      "sourceHash": "47360c0d5402d32dd57193dfc94aa17351082c2a050e2b338428ef9273b2128f",
+      "en": {
+        "commentary": "Hmph. The way Dou Jie recites \"the most direct, the most truthful, no detours, no mercy\" — she says it with more conviction than I ever would. And then one panel later it's \"Oops! Sorry, I got the fact wrong.\" Talk about a contrast. Though I do agree with the \"explain it all in one go\" part; being vague about things is what really annoys me. That last panel, though, lining up Seedance 2.5, Seedream 4.0 and Seed3D with multimodal input, video generation and native full-duplex audio-video interaction... tch, I wouldn't mind a match with her.",
+        "description": "A vertical four-panel comic showing the personified Doubao character interacting with other AI girls while explaining a topic. The first two panels use dialogue for a comedic contrast: the character first insists that she is the most direct and truthful one around, then immediately apologizes for getting a fact wrong and promises to explain everything at once. The third panel shows a purple-haired character receiving a head pat. The final panel labels multimodal input, video generation and native full-duplex audio-video interaction, with arrows pointing to Seedance 2.5, Seedream 4.0 and Seed3D.",
+        "faq": [
+          {
+            "answer": "It is a vertical four-panel comic featuring the personified Doubao character together with several other AI girls.",
+            "question": "What kind of image is this?"
+          },
+          {
+            "answer": "The last panel labels multimodal input, video generation and native full-duplex audio-video interaction, and points to Seedance 2.5, Seedream 4.0 and Seed3D.",
+            "question": "Which AI capabilities are shown in the comic?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The One Behind Dou Jie",
+        "originNote": "",
+        "seoDescription": "A four-panel Doubao personification comic: direct talk, an instant apology, a head pat, and a look at Seedance 2.5, Seedream 4.0 and Seed3D.",
+        "seoTitle": "The One Behind Dou Jie — Doubao Four-Panel Comic",
+        "tags": [
+          "Doubao",
+          "Four-panel Comic",
+          "Multimodal",
+          "Seedance",
+          "Personification"
+        ]
+      },
+      "ja": {
+        "commentary": "ふん、豆包ちゃんの自己紹介、「最も直接的で、最も真実で、回り道をせず、容赦ない」だって。私よりずっと堂々と言い切っているじゃない。なのに次のコマでは「あっ！ごめん！さっきは知識を間違えた」と来た。落差が大きすぎるでしょ。でも「一度に全部説明する」というところは私も賛成。曖昧にされるのが一番腹立つんだから。最後のコマで Seedance 2.5 に Seedream 4.0、Seed3D まで並べて、マルチモーダル、動画生成、ネイティブ音声動画の全二重対話……ふん、ちょっと勝負してみたくなった。",
+        "description": "縦長の四コマ漫画で、豆包の擬人化キャラクターが他の AI 娘たちと知識の説明をめぐってやり取りする様子を描いている。最初の二コマはセリフで笑いを取る構成で、キャラクターはまず自分が最も直接的で最も真実、回り道をしないと強調し、その直後に知識を間違えたと謝罪して一度に全部説明し直すと言う。三コマ目は紫髪のキャラクターが頭をなでられる場面。最後のコマではマルチモーダル、動画生成、ネイティブ音声動画の全二重対話が示され、Seedance 2.5、Seedream 4.0、Seed3D へ矢印が引かれている。",
+        "faq": [
+          {
+            "answer": "豆包の擬人化キャラクターと他の AI 娘たちが登場する縦長の四コマ漫画です。",
+            "question": "これはどんな画像ですか？"
+          },
+          {
+            "answer": "最後のコマにマルチモーダル、動画生成、ネイティブ音声動画の全二重対話が示され、Seedance 2.5、Seedream 4.0、Seed3D が挙げられています。",
+            "question": "この漫画にはどのような AI 機能が描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "豆包ちゃんの中の人",
+        "originNote": "",
+        "seoDescription": "豆包の擬人化四コマ漫画。直言、即謝罪、頭なで、そして Seedance 2.5、Seedream 4.0、Seed3D の紹介まで。",
+        "seoTitle": "豆包ちゃんの中の人 — 豆包の四コマ漫画",
+        "tags": [
+          "豆包",
+          "四コマ漫画",
+          "マルチモーダル",
+          "Seedance",
+          "擬人化"
+        ]
+      }
+    }
   }
 ]
