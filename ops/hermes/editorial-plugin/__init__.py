@@ -58,6 +58,13 @@ def handle(action, args, **kwargs):
                 if key in _budgets:
                     _budgets[key]['errors'] += 1
         if action != 'image' or not result.get('ok') or not result.get('image'):
+            # Checkpoint replies need only the hash/stage, not every saved
+            # translation repeated into the Agent context on each tool turn.
+            if action in ('draft', 'locale', 'validate', 'release') and result.get('ok'):
+                draft = result.get('draft') or (result.get('item') or {}).get('draft') or {}
+                i18n = draft.get('i18n') or {}
+                result = {k: result[k] for k in ('ok', 'id', 'jobId', 'stage', 'ready', 'status') if k in result}
+                result.update({'sourceHash': i18n.get('sourceHash'), 'savedLanguages': [lang for lang in ('en', 'ja') if i18n.get(lang)]})
             return json.dumps(result, ensure_ascii=False)
         from PIL import Image, ImageOps
         data = base64.b64decode(result['image'], validate=True)
