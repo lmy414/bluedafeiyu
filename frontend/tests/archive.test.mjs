@@ -31,15 +31,20 @@ test('selected topic covers lead collection artwork without changing member orde
 function walk(dir){for(const entry of fs.readdirSync(dir,{withFileTypes:true})){if(dir===out&&['en','ja','zh-hant'].includes(entry.name))continue;const file=path.join(dir,entry.name);if(entry.isDirectory())walk(file);else if(entry.name.endsWith('.html'))files.push(path.relative(out,file));}}
 walk(out);
 
-test('submission initializes after deferred language and character data in all locales',()=>{
+test('submission renders role checkboxes before JavaScript without loading the work catalog',()=>{
+ const expected=snapshot.characters.filter(c=>c.status==='active'&&c.inSubmissionForm).map(c=>c.id);
  for(const prefix of ['', 'en/', 'ja/', 'zh-hant/']){
   const file=prefix+'submit.html', doc=read(file);
-  const scripts=[...doc.querySelectorAll('script[src]')];
-  const language=scripts.findIndex(s=>s.getAttribute('src').startsWith('/lang.js'));
-  const data=scripts.findIndex(s=>s.getAttribute('src')==='/site-data.js');
-  const form=scripts.findIndex(s=>s.getAttribute('src').startsWith('/page-scripts/submit-0.js'));
-  assert.ok(language>=0&&data>language&&form>data, file+' dependency order');
-  for(const index of [language,data,form])assert.ok(scripts[index].hasAttribute('defer'),file+' must defer dependent scripts');
+  const choices=doc.querySelector('#character-choices');
+  assert.ok(!choices.hasAttribute('hidden'),file+' roles visible before scripts');
+  assert.equal(doc.querySelector('select#f-character'),null,file+' no empty native listbox');
+  assert.deepEqual([...choices.querySelectorAll('input[name=characterIds]')].map(input=>input.getAttribute('value')),expected);
+  assert.ok([...choices.querySelectorAll('label span')].every(label=>label.textContent.trim()));
+  assert.equal(doc.querySelector('script[src="/site-data.js"]'),null,file+' no work catalog dependency');
+  assert.ok(doc.querySelector('script[src^="/page-scripts/submit-0.js"]').hasAttribute('async'),file+' form initializes independently');
+  if(prefix==='en/')assert.match(choices.textContent,/DeepSeek Chan/);
+  if(prefix==='ja/')assert.match(choices.textContent,/DeepSeekちゃん/);
+  if(prefix==='zh-hant/')assert.match(choices.textContent,/通義千問娘/);
  }
 });
 

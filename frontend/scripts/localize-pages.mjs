@@ -71,6 +71,7 @@ export async function localizeHtml(html, base, locale, snapshot) {
   program.runInNewContext({ window, document, URL, URLSearchParams, WeakMap, Promise, CustomEvent: parsed.CustomEvent });
   await window.SiteLang.setLang(locale.id, false);
   const api = window.SiteLang;
+  for (const label of document.querySelectorAll('[data-character-name]')) label.textContent = api.characterName(label.getAttribute('data-character-name'), label.getAttribute('data-character-label'));
   const native=applyNativeContent(document,api,base,snapshot);
   const { work, desc } = pageMeta(document, api, base, snapshot,native?.archive);
   const toPage = value => {

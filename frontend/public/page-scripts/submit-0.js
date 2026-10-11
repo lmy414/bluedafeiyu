@@ -16,9 +16,8 @@
       var fileInput = document.getElementById("f-files");
       var nameInput = document.getElementById("f-name");
       var descInput = document.getElementById("f-desc");
-      var characterSelect = document.getElementById("f-character");
       var characterChoices = document.getElementById("character-choices");
-      var selectedCharacters = function () { return Array.from(characterSelect.selectedOptions).map(function (option) { return option.value; }).filter(Boolean); };
+      var selectedCharacters = function () { return Array.from(characterChoices.querySelectorAll('input:checked')).map(function (input) { return input.value; }); };
       var typeSelect = document.getElementById("f-type");
       var typeHint = document.getElementById("type-hint");
       var creditSelect = document.getElementById("f-credit");
@@ -32,6 +31,7 @@
       ];
       var submitBtn = document.getElementById("btn-generate");
       var submitLabel = document.getElementById("btn-generate-text");
+      var idleText = submitLabel.textContent;
       var statusEl = document.getElementById("form-status");
       var turnstileInput = document.getElementById("f-turnstile-token");
       var turnstileRow = document.getElementById("turnstile-row");
@@ -42,9 +42,9 @@
       var busy = false;
       var lastStatus = null;
 
-      function t(key, fallback, params) { return SiteLang.fmt(key, fallback, params); }
+      function t(key, fallback, params) { return window.SiteLang ? SiteLang.fmt(key, fallback, params) : String(fallback).replace(/\{(\w+)\}/g, function (_, name) { return params && params[name] !== undefined ? params[name] : ''; }); }
 
-      function labelIdle() { submitLabel.textContent = t("submit.form.submit", "站内提交"); }
+      function labelIdle() { submitLabel.textContent = t("submit.form.submit", idleText); }
       function labelBusy() { submitLabel.textContent = t("submit.form.submitting", "提交中…"); }
 
       function renderStatus() {
@@ -97,9 +97,9 @@
           return { key: "submit.form.err.name", fallback: "请填写图片名称，且不超过 120 字。", field: nameInput };
         }
         if (!selectedCharacters().length) {
-          return { key: "submit.form.err.character", fallback: "请选择角色。", field: characterChoices.querySelector('input') || characterSelect };
+          return { key: "submit.form.err.character", fallback: "请选择角色。", field: characterChoices.querySelector('input') };
         }
-        if (!DEMO.categories.some(function (c) { return c.status === "active" && c.id === typeSelect.value; })) {
+        if (!typeSelect.value || !typeSelect.selectedOptions[0]) {
           return { key: "submit.form.err.type", fallback: "请选择一个作品类型。", field: typeSelect };
         }
         if (descInput.value.trim().length > MAX_DESC) {
@@ -217,41 +217,14 @@
           });
       }
 
-      /* 角色下拉：复用站点数据，只列进投稿表单的角色。 */
-      var characters = DEMO.characters.filter(function (c) { return c.inSubmissionForm; });
-      var placeholder = document.createElement("option");
-      placeholder.value = "";
-      placeholder.textContent = t("submit.form.select", "请选择角色");
-      characterSelect.innerHTML = "";
-      characterSelect.appendChild(placeholder);
-      characters.forEach(function (character) {
-        var option = document.createElement("option");
-        option.value = character.id;
-        option.textContent = SiteLang.characterName(character.id, character.name);
-        characterSelect.appendChild(option);
-        var label = document.createElement("label");
-        var checkbox = document.createElement("input");
-        checkbox.type = "checkbox";
-        checkbox.name = "characterChoice";
-        checkbox.value = character.id;
-        var title = document.createElement("span");
-        title.textContent = option.textContent;
-        label.append(checkbox, title);
-        characterChoices.appendChild(label);
-        checkbox.addEventListener("change", function () {
-          option.selected = checkbox.checked;
-          placeholder.selected = false;
-        });
-      });
-      characterChoices.hidden = false;
-      characterSelect.hidden = true;
       labelIdle();
+      var defaultTypeHint = typeHint.textContent;
 
       function updateTypeHint() {
-        var entry = DEMO.categories.find(function (c) { return c.id === typeSelect.value; });
-        var key = entry ? "submit.typeDesc." + entry.id : "submit.form.typeHint";
+        var option = typeSelect.selectedOptions[0];
+        var key = typeSelect.value ? "submit.typeDesc." + typeSelect.value : "submit.form.typeHint";
         typeHint.setAttribute("data-i18n", key);
-        typeHint.textContent = t(key, entry ? entry.description : "每张图只能选择一个类型；不好判断时选择“其他”。");
+        typeHint.textContent = t(key, typeSelect.value ? option.getAttribute('data-description') : defaultTypeHint);
       }
       typeSelect.addEventListener("change", updateTypeHint);
       updateTypeHint();
@@ -298,13 +271,10 @@
         document.head.appendChild(turnstileScript);
       }
 
-      /* 语言切换：重写动态文案（占位选项、按钮、当前提示）。 */
       document.addEventListener("site:langchange", function () {
-        placeholder.textContent = t("submit.form.select", "请选择角色");
-        characters.forEach(function (character, index) {
-          var name = SiteLang.characterName(character.id, character.name);
-          characterSelect.options[index + 1].textContent = name;
-          characterChoices.children[index].querySelector('span').textContent = name;
+        updateTypeHint();
+        characterChoices.querySelectorAll('[data-character-name]').forEach(function (label) {
+          label.textContent = SiteLang.characterName(label.getAttribute('data-character-name'), label.getAttribute('data-character-label'));
         });
         if (busy) labelBusy(); else labelIdle();
         renderStatus();
@@ -317,13 +287,15 @@
       var copyText = document.getElementById("btn-qq-copy-text");
       if (!copyBtn) return;
       var QQ_NUMBER = copyBtn.dataset.copyText;
+      var copyIdle = copyText.textContent;
+      function t(key, fallback) { return window.SiteLang ? SiteLang.fmt(key, fallback) : fallback; }
       function done() {
-        copyText.textContent = SiteLang.fmt("ui.copied", "已复制");
-        window.setTimeout(function () { copyText.textContent = SiteLang.fmt("qq.copy", "复制群号"); }, 1600);
+        copyText.textContent = t("ui.copied", "已复制");
+        window.setTimeout(function () { copyText.textContent = t("qq.copy", copyIdle); }, 1600);
       }
       function fail() {
-        copyText.textContent = SiteLang.fmt("ui.copyFail", "复制失败，请手动选择");
-        window.setTimeout(function () { copyText.textContent = SiteLang.fmt("qq.copy", "复制群号"); }, 2400);
+        copyText.textContent = t("ui.copyFail", "复制失败，请手动选择");
+        window.setTimeout(function () { copyText.textContent = t("qq.copy", copyIdle); }, 2400);
       }
       copyBtn.addEventListener("click", function () {
         if (navigator.clipboard && navigator.clipboard.writeText) {

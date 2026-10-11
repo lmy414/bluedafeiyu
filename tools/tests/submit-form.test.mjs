@@ -72,7 +72,9 @@ test("表单字段带 name 属性，字段名与后端契约一致", () => {
   assert.match(form, /id="f-files"[^>]*name="image"/);
   assert.match(form, /id="f-name"[^>]*name="name"/);
   assert.match(form, /id="f-desc"[^>]*name="description"/);
-  assert.match(form, /id="f-character"[^>]*name="character"/);
+  assert.match(form, /id="character-choices"/);
+  assert.match(form, /type="checkbox"[^>]*name="characterIds"/);
+  assert.match(script, /data\.append\("character", selectedCharacters\(\)\[0\]\)/);
   assert.match(form, /id="f-type"[^>]*name="categoryId"[^>]*required/);
   assert.match(form, /id="f-turnstile-token"[^>]*name="turnstileToken"/);
 });

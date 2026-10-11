@@ -1,5 +1,6 @@
 ---
 import categories from '../../../data/categories.json';
+import characters from '../../../data/characters.json';
 const turnstileSitekey = (import.meta.env.PUBLIC_TURNSTILE_SITEKEY || "").trim();
 ---
 <form class="form" id="submission-form" novalidate data-api-endpoint="/api/v1/submissions" data-turnstile-sitekey={turnstileSitekey || undefined}>
@@ -16,17 +17,21 @@ const turnstileSitekey = (import.meta.env.PUBLIC_TURNSTILE_SITEKEY || "").trim()
         <label for="f-desc" data-i18n="submit.form.desc">一句话说明</label>
         <input type="text" id="f-desc" name="description" autocomplete="off" maxlength="500" />
       </div>
-      <div class="form-row">
-        <label for="f-character" id="character-label"><span data-i18n="submit.form.character">角色</span><span class="req-mark">*</span></label>
-        <select id="f-character" name="character" multiple required aria-describedby="character-hint"></select>
+      <fieldset class="form-row character-field" id="f-character" aria-describedby="character-hint">
+        <legend id="character-label"><span data-i18n="submit.form.character">角色</span><span class="req-mark">*</span></legend>
         <span class="hint" id="character-hint" data-i18n="submit.form.charactersHint">可多选，请勾选图片中出现的全部角色。</span>
-        <div class="character-choices" id="character-choices" role="group" aria-labelledby="character-label" aria-describedby="character-hint" hidden></div>
-      </div>
+        <div class="character-choices" id="character-choices">
+          {characters.filter(c => c.status === 'active' && c.inSubmissionForm).map(character => <label>
+            <input type="checkbox" name="characterIds" value={character.id} />
+            <span data-character-name={character.id} data-character-label={character.name}>{character.name}</span>
+          </label>)}
+        </div>
+      </fieldset>
       <div class="form-row">
         <label for="f-type"><span data-i18n="submit.form.type">作品类型</span><span class="req-mark">*</span></label>
         <select id="f-type" name="categoryId" required aria-describedby="type-hint">
           <option value="" data-i18n="submit.form.selectType">请选择作品类型</option>
-          {categories.filter(c => c.status === 'active').map(c => <option value={c.id} data-i18n={`v2.type.${c.id}`}>{c.name}</option>)}
+          {categories.filter(c => c.status === 'active').map(c => <option value={c.id} data-i18n={`v2.type.${c.id}`} data-description={c.description} data-i18n-attr={`data-description:submit.typeDesc.${c.id}`}>{c.name}</option>)}
         </select>
         <span class="hint" id="type-hint" aria-live="polite" data-i18n="submit.form.typeHint">每张图只能选择一个类型；不好判断时选择“其他”。</span>
       </div>
@@ -68,7 +73,7 @@ const turnstileSitekey = (import.meta.env.PUBLIC_TURNSTILE_SITEKEY || "").trim()
       <div class="form-actions">
         <button type="submit" class="btn primary" id="btn-generate">
           <svg class="icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3.5" width="12" height="9" rx="1" /><path d="m2.5 4.5 5.5 4 5.5-4" /></svg>
-          <span id="btn-generate-text">站内提交</span>
+          <span id="btn-generate-text" data-i18n="submit.form.submit">站内提交</span>
         </button>
         <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
       </div>

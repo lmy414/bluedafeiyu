@@ -55,10 +55,11 @@ test('native card and detail localization retains all character identities',()=>
 test('submission uses touch-friendly checkboxes and serializes every selected character',()=>{
  const form=fs.readFileSync(new URL('../src/components/SubmissionForm.astro',import.meta.url),'utf8');
  const script=fs.readFileSync(new URL('../public/page-scripts/submit-0.js',import.meta.url),'utf8');
- assert.match(form,/<select[^>]*id="f-character"[^>]*multiple/);
- assert.match(form,/id="character-choices" role="group"/);
+ assert.match(form,/<fieldset[^>]*id="f-character"/);
+ assert.match(form,/type="checkbox" name="characterIds"/);
+ assert.match(form,/characters\.filter\(c => c\.status === 'active' && c\.inSubmissionForm\)/);
  assert.match(script,/data\.append\("characterIds", JSON\.stringify\(selectedCharacters\(\)\)\)/);
- assert.match(script,/checkbox\.type = "checkbox"/);
+ assert.doesNotMatch(script,/DEMO|SITE_DATA|characterSelect/);
 });
 test('AI character indexes include shared works once in each matching archive',()=>{
  const snapshot={works:[{id:'frozen-id',slug:'frozen',name:'同框',status:'published',characterId:'deepseek',characterIds:['deepseek','gpt'],categoryIds:['meme']}],characters:chars.map(c=>({...c,status:'active'})),categories:[{id:'meme',name:'梗图',status:'active'}],topics:[]};
