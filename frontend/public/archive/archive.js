@@ -1,4 +1,4 @@
-import {renderWorkCard} from './work-card.js?v=3';
+import {renderWorkCard} from './work-card.js?v=4';
 import {copyImage} from './image-copy.js?v=1';
 import {installTopicDownloads} from './topic-download.js?v=2';
 (() => {
@@ -16,7 +16,7 @@ import {installTopicDownloads} from './topic-download.js?v=2';
   const localized = w => window.SiteLang ? SiteLang.localWork(w) : w;
   const basePath = path => path.replace(/^\/(?:en|ja|zh-hant)(?=\/)/, '');
   let dataPromise;
-  const load = () => dataPromise || (dataPromise = fetch('/archive-data.json').then(r => { if(!r.ok)throw Error('data'); return r.json(); }));
+  const load = () => dataPromise || (dataPromise = fetch('/archive-data.json?v=2').then(r => { if(!r.ok)throw Error('data'); return r.json(); }));
   const toast = text => { const el=$('#toast'); el.textContent=text;el.hidden=false;clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.hidden=true,3000); };
   const card = w => renderWorkCard(localized(w), {url:localURL, translate:tx, names});
   const drawGrid = list => `<div class="work-grid">${list.map(card).join('')}</div>`;
@@ -99,10 +99,11 @@ import {installTopicDownloads} from './topic-download.js?v=2';
     for(const [key,value] of new URLSearchParams(location.hash.slice(1))) if(['character','type','sort','q'].includes(key))params.set(key,value);
     const selected={character:document.body.dataset.character||'',type:document.body.dataset.type||'',sort:document.body.dataset.sort||'latest'};
     for(const name of ['character','type','sort'])if(params.has(name))selected[name]=params.get(name);
-    for(const [name,value]of Object.entries(selected))if(form.elements[name])form.elements[name].value=value;
+    const setCharacters=value=>{const ids=String(value||'').split(',').filter(Boolean);for(const option of form.elements.character.options)option.selected=option.value?ids.includes(option.value):!ids.length;};
+    for(const [name,value]of Object.entries(selected))if(form.elements[name]){if(name==='character')setCharacters(value);else form.elements[name].value=value;}
     const sourceQuery=params.get('q')||'',displayQuery=names(sourceQuery);
     if(query)query.value=displayQuery;
-    const getState=()=>({q:query ? (query.value.trim()===displayQuery ? sourceQuery : query.value.trim()) : '',character:form.elements.character.value,type:form.elements.type.value,sort:form.elements.sort.value});
+    const getState=()=>({q:query ? (query.value.trim()===displayQuery ? sourceQuery : query.value.trim()) : '',character:[...form.elements.character.selectedOptions].map(option=>option.value).filter(Boolean).join(','),type:form.elements.type.value,sort:form.elements.sort.value});
     const listBase=document.body.dataset.listBase||basePath(location.pathname);
     const globalArchive=listBase==='/browse.html'||listBase.startsWith('/categories/');
     const categoryURL=()=>{
@@ -118,8 +119,10 @@ import {installTopicDownloads} from './topic-download.js?v=2';
     const stateURL=()=>{const state=getState(),url=new URL(document.body.dataset.listBase||basePath(location.pathname),location.origin),fragment=new URLSearchParams();for(const[name,value]of Object.entries(state))if(value&&value!==defaultState[name]){if(searchPage&&name==='q')url.searchParams.set(name,value);else fragment.set(name,value);}url.hash=fragment.toString();return url;};
     const setURL=()=>{const state=getState();history.replaceState({...history.state,filters:state},'',localURL(stateURL().href));};
     function render(reshuffle=true,append=false){
+      document.dispatchEvent(new Event('archive:filter-sync'));
       const state=getState(),words=state.q.toLocaleLowerCase().split(/\s+/).filter(Boolean);
-      filtered=all.filter(w=>(!state.character||w.cid===state.character)&&(!state.type||w.k.includes(state.type))&&words.every(word=>{const text=[w.n,w.c,w.d,w.cm,...w.tg,...w.tg.map(names),...(dataset.characters.find(c=>c.id===w.cid)?.aliases||[])].join(' ');const l=localized(w);return (text+' '+[l.n,l.c,l.d,l.cm,...l.tg].join(' ')).toLocaleLowerCase().includes(word);}));
+      const characters=state.character.split(',').filter(Boolean);
+      filtered=all.filter(w=>characters.every(id=>w.cids.includes(id))&&(!state.type||w.k.includes(state.type))&&words.every(word=>{const roles=dataset.characters.filter(c=>w.cids.includes(c.id));const text=[w.n,w.c,w.d,w.cm,...w.roles.map(role=>role.name),...roles.flatMap(role=>role.aliases||[]),...w.tg,...w.tg.map(names)].join(' ');const l=localized(w);return (text+' '+[l.n,l.c,l.d,l.cm,...l.roles.map(role=>role.name),...l.tg].join(' ')).toLocaleLowerCase().includes(word);}));
       if(state.sort==='popular'||state.sort==='downloads')filtered.sort((a,b)=>(window.WorkStats?.metric(b.id,state.sort)||0)-(window.WorkStats?.metric(a.id,state.sort)||0));
       if(state.sort==='random'){
         if(reshuffle||!render.randomOrder){render.randomOrder=filtered.map(w=>w.slug);for(let i=render.randomOrder.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[render.randomOrder[i],render.randomOrder[j]]=[render.randomOrder[j],render.randomOrder[i]];}}
@@ -143,13 +146,13 @@ import {installTopicDownloads} from './topic-download.js?v=2';
     function update(){shown=24;if(pageNumber>1){location.assign(localURL(stateURL().href));return;}setURL();if(dataset)render();}
     form.addEventListener('change',event=>{
       if(event.target.name==='type'&&globalArchive){location.assign(localURL(categoryURL().href));return;}
-      if(event.target.name==='character'&&document.body.dataset.character&&event.target.value!==document.body.dataset.character){
-        const state=getState();const url=new URL(state.character?'/characters/'+state.character+'.html':'/browse.html',location.origin);
-        const fragment=new URLSearchParams();if(state.type)fragment.set('type',state.type);if(state.sort!=='latest')fragment.set('sort',state.sort);url.hash=fragment.toString();location.assign(localURL(url.href));return;
+      if(event.target.name==='character'&&document.body.dataset.character&&!getState().character.split(',').includes(document.body.dataset.character)){
+        const state=getState();const url=new URL('/browse.html',location.origin);
+        const fragment=new URLSearchParams();if(state.character)fragment.set('character',state.character);if(state.type)fragment.set('type',state.type);if(state.sort!=='latest')fragment.set('sort',state.sort);url.hash=fragment.toString();location.assign(localURL(url.href));return;
       }
       update();
     });form.addEventListener('submit',e=>e.preventDefault());
-    document.addEventListener('click',e=>{if(e.target.closest('[data-reset]')){form.elements.character.value=document.body.dataset.character||'';form.elements.type.value=document.body.dataset.type||'';form.elements.sort.value=document.body.dataset.sort||'latest';if(query)query.value='';update();}});
+    document.addEventListener('click',e=>{if(e.target.closest('[data-reset]')){setCharacters(document.body.dataset.character||'');form.elements.type.value=document.body.dataset.type||'';form.elements.sort.value=document.body.dataset.sort||'latest';if(query)query.value='';update();}});
     $('#search-form')?.addEventListener('submit',e=>{e.preventDefault();update();});
     let timer;query?.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(update,220);});
     $('[data-load-more]').addEventListener('click',()=>{shown+=24;render(false,true);});
@@ -179,7 +182,7 @@ import {installTopicDownloads} from './topic-download.js?v=2';
         <div class="preview-content">
           <div class="preview-art"><figure class="preview-photo"><img src="${esc(w.l)}" alt="${esc(w.d||w.n)}" width="${w.w}" height="${w.h}"></figure></div>
           <div class="preview-info">
-            <div class="preview-topline"><a class="preview-role" href="${localURL(`/characters/${esc(w.cid)}.html`)}"><i class="role-dot" style="--role:${esc(w.col)}"></i>${esc(w.c)}${previewIcon('arrow')}</a><span class="preview-kind">${w.k.map(id=>esc(tx('v2.type.'+id,id))).join(' · ')}</span></div>
+            <div class="preview-topline">${w.roles.map(role=>`<a class="preview-role" data-character-id="${esc(role.id)}" href="${localURL(`/characters/${esc(role.id)}.html`)}"><i class="role-dot" style="--role:${esc(role.color)}"></i>${esc(role.name)}${previewIcon('arrow')}</a>`).join('')}<span class="preview-kind">${w.k.map(id=>esc(tx('v2.type.'+id,id))).join(' · ')}</span></div>
             <h2>${esc(w.n)}</h2>
             <div class="preview-note"><span class="eyebrow">${esc(tx("d.fishComment","大肥鱼说"))}</span><p>${esc(w.cm||w.d)}</p></div>
             ${w.tg.length?`<div class="tags preview-tags">${w.tg.slice(0,6).map((t,i)=>`<a class="tag" href="${localURL(`/search.html?q=${encodeURIComponent(w.sourceTags?.[i]||t)}`)}"><span aria-hidden="true">#</span>${esc(names(t))}</a>`).join('')}</div>`:''}

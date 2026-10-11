@@ -1,3 +1,4 @@
+import {workCharacterIds} from '../../tools/work-characters.mjs';
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const kind=(api,id)=>api.fmt('v2.type.'+id,id);
 function context(base,api,snapshot){
@@ -14,7 +15,7 @@ function context(base,api,snapshot){
   const character=role&&snapshot.characters.find(c=>c.id===role[1]);
   const type=category?.[1]||(role?.[2]&&role[2]!=='page'?role[2]:null);
   if(!character&&!category)return null;
-  const works=snapshot.works.filter(w=>(!character||w.characterId===character.id)&&(!type||w.categoryIds?.includes(type)));
+  const works=snapshot.works.filter(w=>(!character||workCharacterIds(w).includes(character.id))&&(!type||w.categoryIds?.includes(type)));
   const name=character?api.characterName(character.id,character.name):api.current==='en'?'AI characters':'AIキャラクター';
   const title=type?(api.current==='en'?name+' · '+kind(api,type):name+'の'+kind(api,type)):(api.current==='en'?name+' fan art archive':name+'の二次創作アーカイブ');
   return {character,type,works,name,title};

@@ -146,7 +146,7 @@ function findCharacterOptionsBlock(lines, fieldId = 'character') {
         if (trimmed !== "-" && !trimmed.startsWith("- ")) break;
         end = j;
       }
-      return { optionsIndex: i, runStart: i + 1, runEnd: end };
+      return { from, optionsIndex: i, runStart: i + 1, runEnd: end };
     }
   }
   return null;
@@ -204,6 +204,7 @@ export function checkTemplateSync({ characters, categories, yamlText }) {
     };
   }
 
+  if (!lines.slice(block.from, block.optionsIndex).some(line => /^\s*multiple:\s*true\s*$/.test(line.text))) return { ok: false, message: '角色下拉必须启用 multiple: true' };
   const actual = [];
   for (let i = block.runStart; i <= block.runEnd; i += 1) {
     actual.push(lines[i].text);
@@ -234,7 +235,7 @@ export function checkTemplateSync({ characters, categories, yamlText }) {
 // 返回 { ok, changed, message }。
 function writeTemplate(yamlText, characters, categories) {
   const lines = splitLines(yamlText);
-  const block = findCharacterOptionsBlock(lines);
+  let block = findCharacterOptionsBlock(lines);
   if (block === null) {
     return {
       ok: false,
@@ -244,6 +245,11 @@ function writeTemplate(yamlText, characters, categories) {
   }
 
   const expected = expectedOptionLines(characters);
+  const multipleIndex = lines.findIndex((line, index) => index > block.from && index < block.optionsIndex && /^\s*multiple:/.test(line.text));
+  const indent = ' '.repeat(indentWidth(lines[block.optionsIndex].text));
+  if (multipleIndex >= 0) lines[multipleIndex].text = `${indent}multiple: true`;
+  else lines.splice(block.optionsIndex, 0, { text: `${indent}multiple: true`, eol: lines[block.optionsIndex].eol || '\n' });
+  block = findCharacterOptionsBlock(lines);
   const fallbackEol = lines[block.optionsIndex].eol || "\n";
   const newRun = expected.map((text, index) => {
     const old = lines[block.runStart + index];

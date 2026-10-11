@@ -32,6 +32,14 @@ def load_plugin(name: str):
 plugin = load_plugin(PLUGIN_NAME)
 
 
+class MultiCharacterTests(unittest.TestCase):
+    def test_multi_tokens_preserve_primary_and_old_syntax(self):
+        self.assertEqual(plugin._parse_submission('合影 deepseek,kimi')[:3], ('合影', 'deepseek,kimi', ''))
+        self.assertEqual(plugin._parse_submission('合影 deepseek+deepseek+kimi')[:3], ('合影', 'deepseek,kimi', ''))
+        self.assertEqual(plugin._parse_submission('合影 deepseek,unknown')[2], 'unknown_role')
+        self.assertEqual(plugin._parse_submission('探头 deepseek')[:3], ('探头', 'deepseek', ''))
+
+
 class Platform:
     def __init__(self, value: str) -> None:
         self.value = value

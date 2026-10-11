@@ -22,7 +22,7 @@ const read = name => JSON.parse(fs.readFileSync(path.join(root, 'frontend/src/da
 const works = Object.entries(overlayData()).map(([slug,w])=>({...w,slug}));
 const bySlug = new Map(works.map(w=>[w.slug,w])), byId = new Map(works.map(w=>[w.id,w]));
 const types = snapshot.categories.filter(t=>t.status==='active');
-const chars = snapshot.characters.filter(c=>c.status==='active').map(c=>({...c,list:works.filter(w=>w.cid===c.id)})).filter(c=>c.list.length).sort((a,b)=>b.list.length-a.list.length);
+const chars = snapshot.characters.filter(c=>c.status==='active').map(c=>({...c,list:works.filter(w=>w.cids.includes(c.id))})).filter(c=>c.list.length).sort((a,b)=>b.list.length-a.list.length);
 const topics = snapshot.topics.filter(t=>t.status!=='removed').map(t=>{
   const list=t.workIds.map(id=>byId.get(id)).filter(Boolean);
   const cover=list.find(w=>w.id===t.coverWorkId)||list[0];

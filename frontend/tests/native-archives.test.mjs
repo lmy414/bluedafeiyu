@@ -96,3 +96,22 @@ test('publication audit rejects Chinese fallback and keeps its diagnostic report
   fs.rmSync(temp,{recursive:true,force:true});
  }
 });
+test('publication audit protects overlapping full credits regardless of new submission order',()=>{
+ const temp=fs.mkdtempSync(path.join(os.tmpdir(),'dafeiyu-overlapping-credits-'));
+ try{
+  for(const lang of ['en','ja'])fs.mkdirSync(path.join(temp,lang),{recursive:true});
+  const credits=['可卿救我口牙','Ryan9438（B 站 ID：可卿救我口牙）','Ryan9438'];
+  const audit=path.resolve(import.meta.dirname,'../../tools/localization/audit-pages.mjs');
+  for(const names of [credits,[...credits].reverse()]){
+   fs.writeFileSync(path.join(temp,'site-data.json'),JSON.stringify({works:names.map(name=>({submitter:{name}})),topics:[]}));
+   for(const lang of ['en','ja'])fs.writeFileSync(path.join(temp,lang,'index.html'),'<html><head><title>Archive</title></head><body><p>'+credits[1]+'</p></body></html>');
+   const result=spawnSync(process.execPath,[audit,temp],{encoding:'utf8'});
+   assert.equal(result.status,0,result.stdout+result.stderr);
+   assert.deepEqual(JSON.parse(fs.readFileSync(path.join(temp,'native-localization-audit.json'))).problems,[]);
+  }
+  fs.writeFileSync(path.join(temp,'en/index.html'),'<html><head><title>Archive</title></head><body><p>'+credits[1]+'</p><p>确实未翻译的中文</p></body></html>');
+  const result=spawnSync(process.execPath,[audit,temp],{encoding:'utf8'});
+  assert.equal(result.status,1);
+  assert.deepEqual(JSON.parse(fs.readFileSync(path.join(temp,'native-localization-audit.json'))).problems.map(p=>p.text),['确实未翻译的中文']);
+ }finally{fs.rmSync(temp,{recursive:true,force:true});}
+});

@@ -26,7 +26,7 @@ export async function agentAction(queue, action, input, { vocabulary, now = Date
     const items = await queue.list({ state: STATES.RECEIVED, limit: 200 });
     return { items: items.filter(i => !i.agent?.token || i.agent.expiresAt <= now).filter(i => !i.agent?.retryAt || i.agent.retryAt <= now).slice(0, 20).map(agentView) };
   }
-  if (action === 'rules') return { characterIds: [...vocabulary.characterIds], categoryIds: [...vocabulary.categoryIds], rules: WORK_TYPE_RULES };
+  if (action === 'rules') return { characterIds: [...vocabulary.characterIds], categoryIds: [...vocabulary.categoryIds], rules: WORK_TYPE_RULES + '\ncharacterIds 必须是非空、无重复的合法角色数组，标明画面中同时出现的所有已确认角色，不得猜测不存在的角色。characterId 必须在集合中（默认第一项），仅用于新图目录，不改变已发布图片路径。' };
   if (!/^sub_[A-Za-z0-9_-]{1,64}$/.test(input.id || '')) throw fault('投稿 ID 非法', 400);
   if (action === 'claim') {
     const token = crypto.randomUUID();

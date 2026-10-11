@@ -9,6 +9,23 @@ const vocabulary={characterIds:new Set(['deepseek']),categoryIds:new Set(['meme'
 const record={...source,workId:'frozen-id',slug:'frozen-slug',kind:'submission',status:'published',legacySource:'submission-sync',character:{characterId:'deepseek'},categories:[{categoryId:'meme'}],tags:source.tags.map(value=>({value})),origin:{},license:{}}
 const exported=(work:any)=>JSON.parse(buildSiteDataTexts({works:[work],characters:[],categories:[],topics:[]})['data/works.json'])[0]
 describe('multilingual persistence and export',()=>{
+  it('removes overlapping exact attribution longest first without weakening safety checks',()=>{
+    const value=fixtureI18n(source.tags)
+    value.en.originNote='Fan art by 小明老师 and 小明.'
+    const original={...source,origin:{author:'小明'},submitter:{name:'小明老师'}}
+    expect(()=>validateLocale(value.en,'en',original)).not.toThrow()
+    value.en.originNote='Fan art by 小明老师 and 其他人.'
+    expect(()=>validateLocale(value.en,'en',original)).toThrow(/Chinese/)
+    value.en.originNote='javascript:小明老师'
+    expect(()=>validateLocale(value.en,'en',original)).toThrow(/Unsafe/)
+  })
+  it('exports blue-fish roles only into editorial and preserves the raw snapshot',()=>{
+    const legacyData={sourcePath:'media/fixed.png',characterId:'deepseek'}
+    const work={...record,kind:'blue-fish',characters:[{characterId:'deepseek'},{characterId:'claude'}],legacyData}
+    const output=buildSiteDataTexts({works:[work],characters:[],categories:[],topics:[]})
+    expect(JSON.parse(output['data/blue-fish-editorial.json'])['media/fixed.png']).toMatchObject({characterId:'deepseek',characterIds:['deepseek','claude']})
+    expect(legacyData).toEqual({sourcePath:'media/fixed.png',characterId:'deepseek'})
+  })
   it('exports the current single type for archived blue-fish works over the previous snapshot',()=>{
     const work={...record,kind:'blue-fish',categories:[{categoryId:'standing'}],legacyData:{sourcePath:'media/design.png'}}
     const output=buildSiteDataTexts({works:[work],characters:[],categories:[],topics:[],editorialSnapshot:{text:JSON.stringify({'media/design.png':{categoryIds:['setting','illustration'],commentary:'让我看看'}})}})

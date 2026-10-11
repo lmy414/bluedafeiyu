@@ -7,8 +7,8 @@ import { resolveConfig } from './config.mjs';
 import { createQueue } from './queue.mjs';
 import { agentAction } from './agent.mjs';
 import { fixtureI18n } from '../tools/localization/test-fixture.mjs';
-const vocabulary = {ok:true,characterIds:new Set(['deepseek']),categoryIds:new Set(['meme'])};
-const content = {name:'探头',description:'露出脑袋',commentary:'让我看看',characterId:'deepseek',categoryIds:['meme'],tags:['探头']};
+const vocabulary = {ok:true,characterIds:new Set(['deepseek','doubao']),categoryIds:new Set(['meme'])};
+const content = {name:'探头',description:'露出脑袋',commentary:'让我看看',characterId:'deepseek',characterIds:['deepseek','doubao'],categoryIds:['meme'],tags:['探头']};
 const png=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8DwHwAFAAH/q842iQAAAABJRU5ErkJggg==','base64');
 test('Agent saves Chinese and each language; bad locale never loses prior content or marks manual',async t=>{
  const root=await fs.mkdtemp(path.join(os.tmpdir(),'agent-'));t.after(()=>fs.rm(root,{recursive:true,force:true}));
@@ -27,7 +27,9 @@ test('Agent saves Chinese and each language; bad locale never loses prior conten
  await assert.rejects(()=>call('locale',{...auth,language:'ja',sourceHash,content:bad}),/tags/);
  const stored=await queue.get(item.id);assert.equal(stored.state,'received');assert.equal(stored.agent.draft.name,content.name);assert.deepEqual(stored.agent.draft.i18n.en,locales.en);
  await call('locale',{...auth,language:'ja',sourceHash,content:locales.ja});
- assert.equal((await call('complete',auth)).result.verdict,'pass');
+ const completed = await call('complete',auth);
+ assert.equal(completed.result.verdict,'pass');
+ assert.deepEqual(completed.result.content.characterIds,['deepseek','doubao']);
  await call('release',{...auth,reason:'technical issue'});assert.equal((await queue.get(item.id)).state,'received');
  await assert.rejects(()=>call('get',auth),/过期/);
 });

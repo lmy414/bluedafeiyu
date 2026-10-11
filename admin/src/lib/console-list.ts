@@ -67,7 +67,7 @@ function filters(q: ConsoleQuery, includeAuthor: boolean) {
   if (q.kind === 'works') {
     if (q.status || ['pending', 'published'].includes(q.mode)) add('w.status=?', q.status || q.mode)
     if (q.channel && q.channel !== 'all') add('w.channel=?', q.channel)
-    if (q.character) add('w.character_id=?', q.character)
+    if (q.character) add("EXISTS(SELECT 1 FROM works_rels r WHERE r.parent_id=w.id AND r.path='characters' AND r.characters_id=?)", q.character)
     if (q.category)
       add("EXISTS(SELECT 1 FROM works_rels r WHERE r.parent_id=w.id AND r.path='categories' AND r.categories_id=?)", q.category)
   } else {
@@ -118,7 +118,7 @@ export async function consoleList(payload: Payload, q: ConsoleQuery) {
   const media = 'm.id AS mediaId,m.url AS mediaUrl,m.thumbnail_u_r_l AS thumbnailURL,m.sizes_thumbnail_url AS smallURL'
   const projection =
     q.kind === 'works'
-      ? `w.id,w.work_id AS workId,w.name,w.status,w.channel,w.updated_at AS updatedAt,(${WORK_AUTHOR}) AS effectiveAuthor,c.id AS characterId,c.character_id AS characterKey,c.name AS characterName,${media},json_extract(w.review,'$.confidence') AS confidence,json_extract(w.review,'$.reason') AS reason,(SELECT json_group_array(json_object('id',cat.id,'categoryId',cat.category_id,'name',cat.name)) FROM works_rels r JOIN categories cat ON cat.id=r.categories_id WHERE r.parent_id=w.id AND r.path='categories') AS categories`
+      ? `w.id,w.work_id AS workId,w.name,w.status,w.channel,w.updated_at AS updatedAt,(${WORK_AUTHOR}) AS effectiveAuthor,c.id AS characterId,c.character_id AS characterKey,c.name AS characterName,${media},json_extract(w.review,'$.confidence') AS confidence,json_extract(w.review,'$.reason') AS reason,(SELECT json_group_array(json_object('id',cat.id,'categoryId',cat.category_id,'name',cat.name)) FROM works_rels r JOIN categories cat ON cat.id=r.categories_id WHERE r.parent_id=w.id AND r.path='categories') AS categories,(SELECT json_group_array(json_object('id',role.id,'characterId',role.character_id,'name',role.name)) FROM works_rels rr JOIN characters role ON role.id=rr.characters_id WHERE rr.parent_id=w.id AND rr.path='characters' ORDER BY rr."order") AS characters`
       : `s.id,s.submission_id AS submissionId,s.title,s.source,s.state,json_extract(s.agent_progress,'$.stage') AS agentStage,json_extract(s.agent_progress,'$.lastError') AS agentError,s.updated_at AS updatedAt,(${SUB_AUTHOR}) AS effectiveAuthor,coalesce(json_extract(s.editorial,'$.characterId'),json_extract(s.fields,'$.characterId'),json_extract(s.fields,'$.character')) AS characterKey,${media},json_extract(s.review,'$.confidence') AS confidence,json_extract(s.review,'$.reason') AS reason,w.id AS workId,w.work_id AS linkedKey,w.name AS workName,w.status AS workStatus`
   const rows = await consoleRows(
     payload,
@@ -143,6 +143,7 @@ export async function consoleList(payload: Payload, q: ConsoleQuery) {
           preview,
           character: { id: r.characterId, characterId: r.characterKey, name: r.characterName },
           categories: JSON.parse(r.categories || '[]'),
+          characters: JSON.parse(r.characters || '[]'),
           metrics: snapshot ? snapshot.works[r.workId] || { views: 0, downloads: 0 } : undefined,
         }
       : {

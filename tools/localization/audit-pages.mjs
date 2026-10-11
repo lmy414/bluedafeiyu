@@ -3,7 +3,7 @@ import path from 'node:path';
 import {parseHTML} from '../../frontend/node_modules/linkedom/esm/index.js';
 const out=path.resolve(process.argv[2]||'.build/native-localization');
 const snapshot=JSON.parse(fs.readFileSync(path.join(out,'site-data.json'),'utf8'));
-const identities=['上善无形',...(snapshot.topics||[]).map(t=>t.author?.name),...snapshot.works.flatMap(w=>[w.origin?.author,w.submitter?.name])].filter(v=>v&&v.length>1);
+const identities=[...new Set(['上善无形',...(snapshot.topics||[]).map(t=>t.author?.name),...snapshot.works.flatMap(w=>[w.origin?.author,w.submitter?.name])])].filter(v=>typeof v==='string'&&v.length>1).sort((a,b)=>b.length-a.length);
 const problems=[];let pages=0,details=0;
 function remaining(text) {let result=String(text||'');for(const name of identities)result=result.replaceAll(name,'');return result.replaceAll('投稿','');}
 function scan(dir,lang) {for(const entry of fs.readdirSync(dir,{withFileTypes:true})){

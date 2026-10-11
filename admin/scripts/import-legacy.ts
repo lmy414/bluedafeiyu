@@ -295,6 +295,8 @@ async function importOneWork(raw: any, kind: 'blue-fish' | 'owner-picks' | 'subm
   const characterId = String(raw.characterId || '').trim()
   const character = characterMap.get(characterId)
   if (!character) throw new Error(`找不到角色 ${characterId}`)
+  const characterIds: string[] = [...new Set<string>(Array.isArray(raw.characterIds) && raw.characterIds.length ? raw.characterIds.map((id: unknown) => String(id).trim()) : [characterId])]
+  if (!characterIds.includes(characterId) || characterIds.some((id) => !characterMap.has(id))) throw new Error('角色集合非法')
   const categoryIds = Array.isArray(raw.categoryIds) ? raw.categoryIds.filter((id: string) => categoryMap.has(id)) : []
 
   let previewPath: string | null = null
@@ -335,6 +337,7 @@ async function importOneWork(raw: any, kind: 'blue-fish' | 'owner-picks' | 'subm
     submissionId: kind === 'submission' ? `legacy_${raw.id}` : undefined,
     sha256: raw.sha256 || undefined,
     character: character.id,
+    characters: characterIds.map((id) => characterMap.get(id).id),
     categories: categoryIds.map((id: string) => categoryMap.get(id).id),
     tags: tagsToArray(raw.tags),
     preview: previewMedia || undefined,

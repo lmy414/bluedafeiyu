@@ -12,6 +12,8 @@ export const LOCALE_FIELDS = [
   'licenseNote',
 ]
 export function sourceText(work) {
+  const roles = [...new Set((Array.isArray(work.characterIds) && work.characterIds.some((id) => typeof id === 'string' && id.trim())
+    ? work.characterIds : [work.characterId]).filter((id) => typeof id === 'string' && id.trim()).map((id) => id.trim()))]
   return {
     name: work.name || '',
     description: work.description || '',
@@ -21,6 +23,7 @@ export function sourceText(work) {
     categoryIds: work.categoryIds || [],
     originNote: work.origin?.note || '',
     licenseNote: work.license?.note || '',
+    ...(roles.length > 1 ? { characterIds: roles } : {}),
   }
 }
 export function sourceHash(work) {
@@ -76,9 +79,9 @@ export function validateLocale(entry, language, original = {}) {
   })
   // Only exact, known attribution is exempt from language checks. Safety checks
   // still inspect the original text, including exempt names and URLs.
-  const protectedNames = [original.origin?.author, original.submitter?.name].filter(
+  const protectedNames = [...new Set([original.origin?.author, original.submitter?.name].filter(
     (v) => typeof v === 'string' && v.trim(),
-  )
+  ))].sort((a, b) => b.length - a.length)
   for (const [key, text] of texts) {
     if (
       /(?:javascript|vbscript|data)\s*:|\bon[a-z]+\s*=|<\/?[A-Za-z!]|[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/u.test(

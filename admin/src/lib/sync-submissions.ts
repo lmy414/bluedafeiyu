@@ -14,7 +14,7 @@ const PREVIEW_EDGE = 480
 const PREVIEW_QUALITY = 76
 const PREVIEW_EFFORT = 6
 
-export const CONTENT_KEYS = ['name', 'description', 'commentary', 'characterId', 'categoryIds', 'tags', 'i18n'] as const
+export const CONTENT_KEYS = ['name', 'description', 'commentary', 'characterId', 'characterIds', 'categoryIds', 'tags', 'i18n'] as const
 
 const TEXT_LIMITS = {
   name: 200,
@@ -136,7 +136,7 @@ export function validateContent(
   const keys = Object.keys(object)
   const errors: string[] = []
   for (const key of keys) if (!CONTENT_KEYS.includes(key as any)) errors.push(`content 含未知字段 ${key}`)
-  for (const key of CONTENT_KEYS) if (key !== 'i18n' && !(key in object)) errors.push(`content 缺少字段 ${key}`)
+  for (const key of CONTENT_KEYS) if (key !== 'i18n' && key !== 'characterIds' && !(key in object)) errors.push(`content 缺少字段 ${key}`)
   if (errors.length) return { ok: false, errors }
 
   if (!textOk(object.name, TEXT_LIMITS.name, true)) errors.push('content.name 非法')
@@ -160,6 +160,15 @@ export function validateContent(
   const categoryIdsRaw = object.categoryIds
   const tagsRaw = object.tags
   const characterId = String(object.characterId || '').trim()
+  const characterIds = 'characterIds' in object ? object.characterIds : [characterId]
+  if (!Array.isArray(characterIds) || !characterIds.length || characterIds.length > vocabulary.characterIds.size) {
+    errors.push('content.characterIds 非法')
+  } else {
+    const normalized = characterIds.map((id) => typeof id === 'string' ? id.trim() : '')
+    if (new Set(normalized).size !== normalized.length) errors.push('content.characterIds 重复')
+    for (const id of characterIds) if (!textOk(id, TEXT_LIMITS.characterId, true) || !vocabulary.characterIds.has(String(id).trim())) errors.push('content.characterIds 不在角色词表内')
+    if (!normalized.includes(characterId)) errors.push('content.characterId 必须属于角色集合')
+  }
   if (!vocabulary.characterIds.has(characterId)) errors.push(`content.characterId 不在角色词表内：${characterId}`)
   for (const id of Array.isArray(categoryIdsRaw) ? (categoryIdsRaw as unknown[]) : []) {
     if (!vocabulary.categoryIds.has(String(id).trim())) errors.push(`content.categoryIds 不在分类词表内：${String(id)}`)
@@ -181,6 +190,7 @@ export function validateContent(
       description: String(object.description).trim(),
       commentary: String(object.commentary).trim(),
       characterId,
+      characterIds: (characterIds as string[]).map((id) => id.trim()),
       categoryIds: (categoryIdsRaw as unknown[]).map((id: unknown) => String(id).trim()),
       tags: (tagsRaw as unknown[]).map((tag: unknown) => String(tag).trim()).filter(Boolean),
     },
@@ -406,6 +416,7 @@ export async function syncSubmissions(
                     height: preview?.height,
                     fileSize: preview?.fileSize,
                     character: characterResult.docs.find((doc: any) => doc.characterId === content.characterId)?.id,
+                    characters: content.characterIds.map((id: string) => characterResult.docs.find((doc: any) => doc.characterId === id)?.id),
                     categories: content.categoryIds.map((id: string) => categoryResult.docs.find((doc: any) => doc.categoryId === id)!.id),
                     tags: content.tags.map((value: string) => ({ value })),
                     preview: mediaId || undefined,

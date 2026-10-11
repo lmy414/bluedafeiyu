@@ -123,6 +123,9 @@ test('英文统一站名和所有 AI 娘的 Chan 名称，模板变量和动态�
   assert.match(card, /href="\/en\/characters\/deepseek.html"/);
   assert.doesNotMatch(card, /DeepSeek娘|蓝色大肥鱼/);
   assert.equal(work.c, 'DeepSeek娘');
+  const multiple=page.api.localWork({...work,tg:[],roles:[{id:'deepseek',name:'DeepSeek娘',color:'#123'},{id:'gpt',name:'GPT娘',color:'#456'}],i18n:{en:{name:'Together',description:'Together',commentary:'Together',tags:[]}}});
+  assert.deepEqual(Array.from(multiple.roles,role=>role.name),['DeepSeek Chan','GPT Chan']);
+  assert.match(renderWorkCard(multiple,{url:page.api.url,translate:page.api.fmt,names:page.api.translateNames}),/GPT Chan/);
   const japanese=boot({baked:'ja'});
   assert.equal(japanese.api.translateNames('蓝色大肥鱼 / DeepSeek娘 / 通义千问娘'), 'DeepSeek Chan / DeepSeekちゃん / Qwenちゃん');
   assert.equal(japanese.api.translateNames('DeepSeek Chan'), 'DeepSeek Chan');

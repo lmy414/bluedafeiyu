@@ -30,6 +30,7 @@ const VALID_CONTENT = {
   description: '一张用于测试的图',
   commentary: '这张图看起来像在质疑什么。',
   characterId: 'deepseek',
+  characterIds: ['deepseek', 'doubao'],
   categoryIds: ['meme'],
   tags: ['测试', '吐槽'],
 };
@@ -98,6 +99,20 @@ async function snapshotDir(dir) {
 }
 
 /* ------------------------------------------------------------ 配置开关 */
+
+test('多角色内容边界拒绝错误类型/空/重复/非法词表，缺代表角色默认第一项', () => {
+  const content = { ...VALID_CONTENT };
+  delete content.characterId;
+  const defaulted = validateContent(content, VOCABULARY);
+  assert.equal(defaulted.ok, true);
+  assert.equal(defaulted.value.characterId, 'deepseek');
+  for (const ids of [[], ['deepseek', 'deepseek'], ['deepseek', 'unknown'], 'deepseek,doubao', [3]]) {
+    assert.equal(validateContent({ ...VALID_CONTENT, characterIds: ids }, VOCABULARY).ok, false);
+  }
+  assert.equal(validateContent({ ...VALID_CONTENT, characterId: 'doubao', characterIds: ['deepseek'] }, VOCABULARY).ok, false);
+  const legacy = { ...VALID_CONTENT }; delete legacy.characterIds;
+  assert.deepEqual(validateContent(legacy, VOCABULARY).value.characterIds, ['deepseek']);
+});
 
 test('resolveBridgeOptions 要求同时显式配置 INTAKE_ROOT 与 INTAKE_CONTENT_DIR', () => {
   assert.equal(resolveBridgeOptions({ env: {} }).enabled, false);
@@ -176,8 +191,10 @@ test('auto_passed 且内容完整时写入 inbox + meta，状态 ready', async (
   assert.equal(meta.contentSchema, AI_CONTENT_SCHEMA);
   assert.equal(meta.fields.name, VALID_CONTENT.name);
   assert.equal(meta.fields.character, 'deepseek');
+  assert.deepEqual(meta.fields.characterIds, ['deepseek', 'doubao']);
+  assert.deepEqual(meta.content.characterIds, ['deepseek', 'doubao']);
   assert.deepEqual(meta.content.categoryIds, ['meme']);
-  assert.deepEqual(Object.keys(meta.content).sort(), ['categoryIds', 'characterId', 'commentary', 'description', 'name', 'tags']);
+  assert.deepEqual(Object.keys(meta.content).sort(), ['categoryIds', 'characterId', 'characterIds', 'commentary', 'description', 'name', 'tags']);
 
   const stored = await queue.get(item.id);
   assert.equal(stored.state, STATES.AUTO_PASSED, '桥接不改动公开投稿状态机');

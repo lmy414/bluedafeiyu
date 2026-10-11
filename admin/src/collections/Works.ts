@@ -14,7 +14,25 @@ const normalizeSubmitter = ({ data, originalDoc }: any) => {
   return normalized ? { ...data, submitter: normalized } : data
 }
 
-const PUBLIC_FIELDS = ['name', 'description', 'commentary', 'character', 'categories', 'tags', 'status', 'submitter'] as const
+const normalizeCharacters = ({ data, originalDoc }: any) => {
+  if (!data) return data
+  const id = (value: any) => value && typeof value === 'object' ? value.id : value
+  const next = { ...data }
+  if (next.characters != null) {
+    if (!Array.isArray(next.characters)) return next
+    next.characters = [...new Map(next.characters.map((value: any) => [String(id(value)), id(value)])).values()]
+    const primary = id(next.character ?? originalDoc?.character)
+    next.character = next.characters.find((value: any) => String(value) === String(primary)) ?? next.characters[0]
+  } else if (next.character != null && !originalDoc?.characters?.length) {
+    next.characters = [id(next.character)]
+  } else if (next.character != null && originalDoc?.characters?.length) {
+    const primary = id(next.character)
+    next.character = originalDoc.characters.some((value: any) => String(id(value)) === String(primary)) ? primary : id(originalDoc.characters[0])
+  }
+  return next
+}
+
+const PUBLIC_FIELDS = ['name', 'description', 'commentary', 'character', 'characters', 'categories', 'tags', 'status', 'submitter'] as const
 
 function sameValue(left: unknown, right: unknown): boolean {
   return JSON.stringify(left ?? null) === JSON.stringify(right ?? null)
@@ -59,7 +77,7 @@ export const Works: CollectionConfig = {
   },
   endpoints: [WorksBulkEndpoint],
   hooks: {
-    beforeValidate: [normalizeSubmitter],
+    beforeValidate: [normalizeCharacters, normalizeSubmitter],
     beforeChange: [beforeChangeNeedsPublish],
     afterChange: [auditAfterChange('works')],
     afterDelete: [auditAfterDelete('works')],
@@ -99,7 +117,8 @@ export const Works: CollectionConfig = {
     },
     { name: 'submissionId', type: 'text', index: true, label: '投稿队列 ID', admin: { readOnly: true } },
     { name: 'sha256', type: 'text', unique: true, index: true, label: 'SHA-256', admin: { readOnly: true } },
-    { name: 'character', type: 'relationship', relationTo: 'characters', required: true, label: '角色' },
+    { name: 'character', type: 'relationship', relationTo: 'characters', required: true, label: '代表角色' },
+    { name: 'characters', type: 'relationship', relationTo: 'characters', hasMany: true, required: true, minRows: 1, label: '角色集合' },
     { name: 'categories', type: 'relationship', relationTo: 'categories', hasMany: true, minRows: 1, maxRows: 1, required: true, label: '作品类型', validate: (value: unknown) => Array.isArray(value) && value.length === 1 ? true : '每张图必须且只能选择一个作品类型', admin: { description: '每张图片只保留一个类型。' } },
     { name: 'tags', type: 'array', label: '标签', fields: [{ name: 'value', type: 'text', required: true }] },
     { name: 'preview', type: 'upload', relationTo: 'media', label: '预览图' },

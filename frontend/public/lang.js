@@ -223,7 +223,8 @@
         "PNG / JPG / GIF / WebP / APNG, up to 10 MB each; send the original file, not a chat screenshot.",
       "submit.form.name": "Image name",
       "submit.form.desc": "One-line note",
-      "submit.form.character": "Character",
+      "submit.form.character": "Characters",
+      "submit.form.charactersHint": "Select all characters appearing in the image. Multiple selections are allowed.",
       "submit.form.credit": "Display credit",
       "submit.form.anonymous": "No credit",
       "submit.form.named": "Credit me",
@@ -768,7 +769,8 @@
         "PNG / JPG / GIF / WebP / APNG、1 枚 10 MB まで。元画像をアップロードし、チャット画面のスクショは避けてください。",
       "submit.form.name": "画像の名前",
       "submit.form.desc": "ひとこと説明",
-      "submit.form.character": "キャラ",
+      "submit.form.character": "キャラクター",
+      "submit.form.charactersHint": "画像に登場するキャラクターをすべて選択してください。複数選択できます。",
       "submit.form.credit": "クレジット表記",
       "submit.form.anonymous": "表記しない",
       "submit.form.named": "表記する",
@@ -1238,8 +1240,9 @@
   }
   function localWork(work) {
     var entry=work.i18n && work.i18n[current];
-    if (entry) return Object.assign({},work,{n:entry.name,d:entry.description,cm:entry.commentary,c:characterName(work.cid,work.c),tg:entry.tags,sourceTags:work.tg,ln:entry.licenseNote});
-    if (current === 'zh-Hant') return Object.assign({},work,{n:traditional(work.n),d:traditional(work.d),cm:traditional(work.cm),c:traditional(work.c),tg:work.tg.map(traditional),sourceTags:work.tg});
+    var roles=work.roles && work.roles.map(function(role){return Object.assign({},role,{name:characterName(role.id,role.name)});});
+    if (entry) return Object.assign({},work,{roles:roles,n:entry.name,d:entry.description,cm:entry.commentary,c:characterName(work.cid,work.c),tg:entry.tags,sourceTags:work.tg,ln:entry.licenseNote});
+    if (current === 'zh-Hant') return Object.assign({},work,{roles:roles,n:traditional(work.n),d:traditional(work.d),cm:traditional(work.cm),c:traditional(work.c),tg:work.tg.map(traditional),sourceTags:work.tg});
     return work;
   }
 

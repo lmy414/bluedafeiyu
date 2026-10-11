@@ -830,8 +830,14 @@ export function fieldsFromSections(sections) {
 
 /** 括号里的 characterId，例如「DeepSeek娘（deepseek · 别名 …）」-> deepseek */
 export function characterIdFromLabel(value) {
-  const match = String(value || '').match(/（([a-z0-9_-]+)\s*[·)）]/);
+  const match = String(value || '').trim().match(/^[^（）\r\n]+（([a-z0-9_-]+)(?:\s*·\s*别名 [^（）\r\n]+)?）$/);
   return match ? match[1] : '';
+}
+
+export function characterIdsFromLabels(value) {
+  const labels = String(value || '').trim().split(/(?<=）)\s*[,，\n]\s*/);
+  const ids = labels.map(characterIdFromLabel);
+  return ids.length && ids.every(Boolean) ? [...new Set(ids)] : [];
 }
 
 /** 调 GitHub API。只跟 apiBase 同源重定向，Authorization 只发给同源。 */
@@ -932,7 +938,10 @@ export async function pullIssueAttachments(cfg, { issue = null, state = 'open', 
     }
     const sections = parseIssueForm(entry.body);
     const fields = fieldsFromSections(sections);
-    if (fields.character) fields.character = characterIdFromLabel(fields.character) || fields.character;
+    if (fields.character) {
+      const ids = characterIdsFromLabels(fields.character);
+      if (ids.length) { fields.characterIds = ids; fields.character = ids[0]; }
+    }
 
     for (const rawUrl of extractAttachments(entry.body)) {
       /* 写进 origin / 结果的 URL 先剥掉 jwt 之类的签名参数 */

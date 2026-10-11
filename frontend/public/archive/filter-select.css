@@ -21,6 +21,7 @@
   .filter-select-button{font-size:12px;padding:8px 9px;gap:7px}
   .filter-select-value{gap:4px}
   .filter-select-value .filter-option-count{display:none}
+  .filter-select[data-filter=character] .filter-option-name{white-space:normal;overflow-wrap:anywhere}
   .filter-option{min-height:44px}
 }
 @media(prefers-reduced-motion:reduce){.filter-select-button,.filter-select-arrow{transition:none}}

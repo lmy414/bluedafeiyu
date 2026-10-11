@@ -752,13 +752,48 @@ test('JSON base64 严格校验：拒绝 data: 前缀 / 非法字符 / 超长', a
   });
 });
 
-test('character 超过长度上限被拒绝，边界内接受', async (t) => {
+test('character 超过长度上限或不在词表拒绝，合法角色接受', async (t) => {
   const { publicHandler } = await setup(t, { characters: [] });
   await withServer(publicHandler, async (port) => {
     const tooLong = await submit(port, { fields: { name: 'n', character: 'x'.repeat(65) } });
     assert.equal(tooLong.status, 400);
     const boundary = await submit(port, { fields: { name: 'n', character: 'x'.repeat(64), categoryId: 'meme' } });
-    assert.equal(boundary.status, 201, boundary.body.toString());
+    assert.equal(boundary.status, 400, boundary.body.toString());
+    const valid = await submit(port, { fields: { name: 'n', character: 'deepseek', categoryId: 'meme' } });
+    assert.equal(valid.status, 201);
+  });
+});
+
+test('multipart repeated characterIds 保留所有同名选项', () => {
+  const boundary = 'multi-role-boundary';
+  const body = Buffer.from(`--${boundary}\r\nContent-Disposition: form-data; name="characterIds"\r\n\r\ndeepseek\r\n--${boundary}\r\nContent-Disposition: form-data; name="characterIds"\r\n\r\nkimi\r\n--${boundary}--\r\n`);
+  const parsed = parseMultipartForm(body, `multipart/form-data; boundary=${boundary}`);
+  assert.deepEqual(parsed.fields.characterIds, ['deepseek', 'kimi']);
+});
+
+test('多角色 multipart 和 JSON 保留数组；坏 JSON、空、重复、未知及代表不在集合拒绝', async (t) => {
+  for (const raw of [false, true]) {
+    const { publicHandler, queue } = await setup(t, { characters: ['deepseek','kimi','other'] });
+    await withServer(publicHandler, async port => {
+      for (const ids of ['bad-json', [], ['deepseek', 'deepseek'], ['unknown'], [3], ['kimi']]) {
+        const fields = { name: '多角色', character: 'deepseek', categoryId: 'meme', characterIds: raw ? ids : typeof ids === 'string' ? ids : JSON.stringify(ids) };
+        const res = await submit(port, raw ? { raw: { ...fields, dataBase64: TINY_PNG.toString('base64') } } : { fields });
+        assert.equal(res.status, 400, res.body.toString());
+      }
+      const fields = { name: '多角色', character: 'deepseek', categoryId: 'meme', characterIds: raw ? ['deepseek', 'kimi'] : JSON.stringify(['deepseek', 'kimi']) };
+      const res = await submit(port, raw ? { raw: { ...fields, dataBase64: TINY_PNG.toString('base64') } } : { fields });
+      assert.equal(res.status, 201, res.body.toString());
+      assert.deepEqual((await queue.list())[0].fields.characterIds, ['deepseek', 'kimi']);
+      assert.equal(JSON.parse(res.body).content, undefined);
+    });
+  }
+});
+
+test('角色允许列表约束所有角色，不能通过第二角色绕过', async (t) => {
+  const { publicHandler } = await setup(t, { characters: ['deepseek'] });
+  await withServer(publicHandler, async port => {
+    const res = await submit(port, { fields: { name: '受限角色', character: 'deepseek', categoryId: 'meme', characterIds: JSON.stringify(['deepseek','kimi']) } });
+    assert.equal(res.status, 400);
   });
 });
 

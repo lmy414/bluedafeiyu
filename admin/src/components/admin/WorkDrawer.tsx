@@ -21,6 +21,7 @@ type AuditEvent = {
 type FormState = {
   categories: string[]
   character: string
+  characters: string[]
   commentary: string
   description: string
   name: string
@@ -35,6 +36,7 @@ function draftContent(form: FormState, categories: CategoryDoc[], characters: Ch
     description: form.description.trim(),
     commentary: form.commentary.trim(),
     characterId: characters.find((item) => String(item.id) === form.character)?.characterId || '',
+    characterIds: form.characters.map((id) => characters.find((item) => String(item.id) === id)?.characterId).filter(Boolean),
     categoryIds: categories
       .filter((item) => form.categories.includes(String(item.id)))
       .map((item) => String(item.categoryId || ''))
@@ -89,6 +91,7 @@ function initialForm(
         ? work.categories.map((value) => String(relationID(value)))
         : [],
       character: String(relationID(work.character) || ''),
+      characters: (work.characters?.length ? work.characters : [work.character]).map((value) => String(relationID(value) || '')).filter(Boolean),
       commentary: work.commentary || '',
       description: work.description || '',
       name: work.name || '',
@@ -123,6 +126,7 @@ function initialForm(
   return {
     categories: categoryIds,
     character: character === undefined || character === null ? '' : String(character),
+    characters: (Array.isArray(source.characterIds) && source.characterIds.length ? source.characterIds : [rawCharacter]).map((raw) => characters.find((item) => String(item.id) === String(raw) || item.characterId === raw)?.id).filter((id) => id != null).map(String),
     commentary: typeof source.commentary === 'string' ? source.commentary : '',
     description: typeof source.description === 'string' ? source.description : '',
     name: typeof source.name === 'string' ? source.name : '',
@@ -217,6 +221,10 @@ export function WorkDrawer({
 
   async function save() {
     if (!work) return
+    if (!form.characters.length) {
+      setMessage('请至少选择一个角色。')
+      return
+    }
     if (form.categories.length !== 1) {
       setMessage('请选择一个作品类型。')
       return
@@ -230,6 +238,7 @@ export function WorkDrawer({
           : {}),
         categories: form.categories.map(Number),
         character: form.character ? Number(form.character) : undefined,
+        characters: form.characters.map(Number),
         commentary: form.commentary,
         description: form.description,
         name: form.name,
@@ -358,6 +367,10 @@ export function WorkDrawer({
     }
   }
   async function manualInclude() {
+    if (!form.characters.length) {
+      setMessage('请至少选择一个角色。')
+      return
+    }
     if (form.categories.length !== 1) {
       setMessage('请选择一个作品类型。')
       return
@@ -470,20 +483,21 @@ export function WorkDrawer({
                   value={form.commentary}
                 />
               </label>
-              <label>
-                角色
-                <select
-                  onChange={(event) => setForm({ ...form, character: event.target.value })}
-                  value={form.character}
-                >
-                  <option value="">未设置</option>
-                  {characters.map((character) => (
-                    <option key={String(character.id)} value={String(character.id)}>
+              <fieldset>
+                <legend>角色（至少一项）</legend>
+                <div className="s3-check-grid">
+                  {characters.map((character) => {
+                    const id = String(character.id)
+                    return <label className="s3-check" key={id}>
+                      <input type="checkbox" checked={form.characters.includes(id)} onChange={(event) => {
+                        const selected = event.target.checked ? [...form.characters, id] : form.characters.filter((value) => value !== id)
+                        setForm({ ...form, characters: selected, character: selected.includes(form.character) ? form.character : selected[0] || '' })
+                      }} />
                       {character.name || character.characterId}
-                    </option>
-                  ))}
-                </select>
-              </label>
+                    </label>
+                  })}
+                </div>
+              </fieldset>
               <fieldset>
                 <legend>作品类型（单选）</legend>
                 {submission?.fields?.categoryId ? (
@@ -604,20 +618,21 @@ export function WorkDrawer({
                   value={form.commentary}
                 />
               </label>
-              <label>
-                角色
-                <select
-                  onChange={(event) => setForm({ ...form, character: event.target.value })}
-                  value={form.character}
-                >
-                  <option value="">未设置</option>
-                  {characters.map((character) => (
-                    <option key={String(character.id)} value={String(character.id)}>
+              <fieldset>
+                <legend>角色（至少一项）</legend>
+                <div className="s3-check-grid">
+                  {characters.map((character) => {
+                    const id = String(character.id)
+                    return <label className="s3-check" key={id}>
+                      <input type="checkbox" checked={form.characters.includes(id)} onChange={(event) => {
+                        const selected = event.target.checked ? [...form.characters, id] : form.characters.filter((value) => value !== id)
+                        setForm({ ...form, characters: selected, character: selected.includes(form.character) ? form.character : selected[0] || '' })
+                      }} />
                       {character.name || character.characterId}
-                    </option>
-                  ))}
-                </select>
-              </label>
+                    </label>
+                  })}
+                </div>
+              </fieldset>
               <fieldset>
                 <legend>作品类型（单选）</legend>
                 <div className="s3-check-grid">

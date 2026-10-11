@@ -168,6 +168,7 @@ test('合法的 pass/reject 响应解析出受校验 content', () => {
     description: '一张可用于聊天的二创表情',
     commentary: '这条我很喜欢，聊天时用得上。',
     characterId: 'deepseek',
+    characterIds: ['deepseek'],
     categoryIds: ['meme'],
     tags: ['探头', '可爱'],
     i18n:fixtureI18n(),

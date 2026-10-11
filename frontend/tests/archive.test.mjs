@@ -80,6 +80,21 @@ test('lists share one filter bar and a crawlable load-more chain',()=>{
  assert.match(vendor.querySelector('a').getAttribute('href'),/^https:/);
 });
 
+test('collection filter counts only include its own full member list',()=>{
+ const data=JSON.parse(fs.readFileSync(path.join(out,'archive-data.json'),'utf8'));
+ for(const topic of data.topics){
+  const members=topic.slugs.map(slug=>data.works.find(w=>w.slug===slug));
+  const counts=new Map();for(const work of members)for(const id of work.cids)counts.set(id,(counts.get(id)||0)+1);
+  for(const prefix of ['','en/','ja/','zh-hant/']){
+   const doc=read(prefix+'topics/'+topic.id+'.html');
+   const options=[...doc.querySelectorAll('select[name=character] option')].filter(option=>option.getAttribute('value'));
+   assert.deepEqual(new Set(options.map(option=>option.getAttribute('value'))),new Set(counts.keys()),prefix+topic.id);
+   for(const option of options)assert.equal(Number(option.textContent.match(/\((\d+)\)$/)?.[1]),counts.get(option.getAttribute('value')));
+   assert.ok(doc.querySelector('select[name=character]').hasAttribute('multiple'));
+  }
+ }
+});
+
 test('all works keep static detail, live analytics IDs and comment threads',()=>{
  const data=JSON.parse(fs.readFileSync(path.join(out,'archive-data.json'),'utf8'));
  assert.deepEqual(new Set(data.works.map(w=>w.id)),new Set(snapshot.works.map(w=>w.id)));

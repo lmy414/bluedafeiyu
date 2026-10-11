@@ -81,6 +81,8 @@ export function BulkTools({
               .split(/[,，\n]/)
               .map((x) => x.trim())
               .filter(Boolean)
+          : key === 'characterIds'
+            ? (values[key] || '').split(',').filter(Boolean)
           : key === 'categoryIds'
             ? [values[key] || '']
             : values[key] || '',
@@ -149,7 +151,7 @@ export function BulkTools({
               ID、Slug、原图、来源和授权不可批量修改。
             </p>
             {(
-              ['name', 'description', 'commentary', 'tags', 'characterId', 'categoryIds'] as const
+              ['name', 'description', 'commentary', 'tags', 'characterIds', 'categoryIds'] as const
             ).map((key) => (
               <div key={key}>
                 <label className="s3-check">
@@ -168,20 +170,21 @@ export function BulkTools({
                       description: '说明',
                       commentary: '点评',
                       tags: '标签',
-                      characterId: '角色',
+                      characterIds: '角色',
                       categoryIds: '类型',
                     }[key]
                   }
                 </label>
                 {enabled.includes(key) ? (
-                  key === 'characterId' || key === 'categoryIds' ? (
+                  key === 'characterIds' || key === 'categoryIds' ? (
                     <select
-                      aria-label={'批量' + (key === 'characterId' ? '角色' : '类型')}
-                      value={values[key] || ''}
-                      onChange={(event) => setValues({ ...values, [key]: event.target.value })}
+                      aria-label={'批量' + (key === 'characterIds' ? '角色' : '类型')}
+                      multiple={key === 'characterIds'}
+                      value={key === 'characterIds' ? (values[key] || '').split(',').filter(Boolean) : values[key] || ''}
+                      onChange={(event) => setValues({ ...values, [key]: key === 'characterIds' ? Array.from(event.target.selectedOptions, (option) => option.value).filter(Boolean).join(',') : event.target.value })}
                     >
                       <option value="">请选择</option>
-                      {(key === 'characterId' ? characters : categories).map((item) => (
+                      {(key === 'characterIds' ? characters : categories).map((item) => (
                         <option
                           key={String(item.id)}
                           value={

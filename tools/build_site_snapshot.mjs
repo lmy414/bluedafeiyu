@@ -10,6 +10,7 @@
 import fs from "node:fs";
 import {sourceHash,validateI18n} from "./localization/contract.mjs";
 import { isSingleWorkType } from '../admin/src/lib/work-types.mjs';
+import { workCharacterIds } from './work-characters.mjs';
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -82,7 +83,9 @@ function main() {
     const tags = (Array.isArray(editorial.tags) && editorial.tags.length ? editorial.tags : record.tags || [])
       .map((x) => String(x || "").trim())
       .filter(Boolean);
-    const characterId = String(record.characterId || "").trim();
+    const characterIds = workCharacterIds({ ...record, ...editorial });
+    const primary = editorial.characterId || record.characterId;
+    const characterId = characterIds.includes(primary) ? primary : characterIds[0];
     if (!gate(name, tags, characterId)) return;
     const frozenEntry = frozenByPath.get(sourcePath);
     if (!frozenEntry || !frozenEntry.id || !frozenEntry.slug) return;
@@ -97,6 +100,7 @@ function main() {
       // 说明优先取编辑叠加层（后台补写的看图说明），没有时留空，不再填占位句
       description: String(editorial.description || "").trim(),
       characterId,
+      characterIds,
       // 分类与第一人称评价取编辑叠加层；没有叠加层的条目退回既有的 meme 兜底
       categoryIds: Array.isArray(editorial.categoryIds) && editorial.categoryIds.length ? editorial.categoryIds : ["meme"],
       commentary: String(editorial.commentary || ""),
@@ -136,8 +140,12 @@ function main() {
   }).sort((a, b) => String(b.createdAt).localeCompare(String(a.createdAt)) || String(b.slug).localeCompare(String(a.slug)));
 
   const allowedTypes = new Set(categories.filter(c => c.status === 'active').map(c => c.id));
+  const allowedCharacters = new Set(characters.filter(c => c.status === 'active').map(c => c.id));
   for (const work of unique) {
     if (!isSingleWorkType(work.categoryIds, allowedTypes)) throw new Error(`作品 ${work.id} 必须且只能有一个有效类型`);
+    work.characterIds = workCharacterIds(work);
+    if (!work.characterIds.length || work.characterIds.some(id => !allowedCharacters.has(id))) throw new Error(`作品 ${work.id} 必须包含有效角色`);
+    if (!work.characterIds.includes(work.characterId)) work.characterId = work.characterIds[0];
   }
 
   const translationsPath = path.join(DIST,"data/work-localizations.json");

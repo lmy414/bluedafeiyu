@@ -17,8 +17,10 @@ const turnstileSitekey = (import.meta.env.PUBLIC_TURNSTILE_SITEKEY || "").trim()
         <input type="text" id="f-desc" name="description" autocomplete="off" maxlength="500" />
       </div>
       <div class="form-row">
-        <label for="f-character"><span data-i18n="submit.form.character">角色</span><span class="req-mark">*</span></label>
-        <select id="f-character" name="character" required></select>
+        <label for="f-character" id="character-label"><span data-i18n="submit.form.character">角色</span><span class="req-mark">*</span></label>
+        <select id="f-character" name="character" multiple required aria-describedby="character-hint"></select>
+        <span class="hint" id="character-hint" data-i18n="submit.form.charactersHint">可多选，请勾选图片中出现的全部角色。</span>
+        <div class="character-choices" id="character-choices" role="group" aria-labelledby="character-label" aria-describedby="character-hint" hidden></div>
       </div>
       <div class="form-row">
         <label for="f-type"><span data-i18n="submit.form.type">作品类型</span><span class="req-mark">*</span></label>

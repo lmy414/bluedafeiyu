@@ -21,13 +21,14 @@
 import { AI_CONTENT_SCHEMA, loadContentVocabulary } from './config.mjs';
 import { validateI18n } from '../tools/localization/contract.mjs';
 import { STATES } from './queue.mjs';
+import { validateCharacterSelection } from './characters.mjs';
 import { WORK_TYPE_RULES } from '../admin/src/lib/work-types.mjs';
 
 export const REVIEW_VERDICTS = Object.freeze(['pass', 'reject', 'manual']);
 export { AI_CONTENT_SCHEMA };
 
 /* content 白名单：只有这六个字段，别的（含系统/法律字段）都是未知字段。 */
-export const CONTENT_KEYS = Object.freeze(['name', 'description', 'commentary', 'characterId', 'categoryIds', 'tags', 'i18n']);
+export const CONTENT_KEYS = Object.freeze(['name', 'description', 'commentary', 'characterId', 'characterIds', 'categoryIds', 'tags', 'i18n']);
 const TOP_LEVEL_KEYS = new Set(['schema', 'verdict', 'confidence', 'reason', 'content']);
 
 const LIMITS = Object.freeze({
@@ -109,7 +110,7 @@ export function validateContent(content, vocabulary, attribution = {}) {
     if (!CONTENT_KEYS.includes(key)) return { error: `content 含未知字段 ${key}，转人工` };
   }
   for (const key of CONTENT_KEYS) {
-    if (key !== 'i18n' && !(key in content)) return { error: `content 缺少字段 ${key}` };
+    if (!['i18n', 'characterIds'].includes(key) && !(key in content) && !(key === 'characterId' && 'characterIds' in content)) return { error: `content 缺少字段 ${key}` };
   }
 
   const name = strictText(content.name, { label: 'content.name', max: LIMITS.name, allowEmpty: false });
@@ -118,13 +119,16 @@ export function validateContent(content, vocabulary, attribution = {}) {
   if (description.error) return description;
   const commentary = strictText(content.commentary, { label: 'content.commentary', max: LIMITS.commentary });
   if (commentary.error) return commentary;
-  const characterId = strictText(content.characterId, { label: 'content.characterId', max: LIMITS.characterId, allowEmpty: false });
+  const characterId = strictText(content.characterId ?? content.characterIds?.[0], { label: 'content.characterId', max: LIMITS.characterId, allowEmpty: false });
   if (characterId.error) return characterId;
 
   if (!vocabulary || vocabulary.ok !== true) return { error: '无法加载角色/分类枚举，转人工' };
   if (!vocabulary.characterIds.has(characterId.value)) {
     return { error: `content.characterId 不在角色枚举内：${characterId.value}` };
   }
+
+  const selection = validateCharacterSelection(content, vocabulary.characterIds);
+  if (selection.error) return selection;
 
   const categoryIds = stringList(content.categoryIds, {
     label: 'content.categoryIds', max: LIMITS.categoryIds, itemMax: LIMITS.categoryId, allowEmpty: false,
@@ -147,7 +151,7 @@ export function validateContent(content, vocabulary, attribution = {}) {
       name: name.value,
       description: description.value,
       commentary: commentary.value,
-      characterId: characterId.value,
+      ...selection.value,
       categoryIds: categoryIds.value,
       tags: tags.value,
     },

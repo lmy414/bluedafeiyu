@@ -23,6 +23,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { submissionAttribution } from '../admin/src/lib/attribution.mjs';
 import { validateI18n } from '../tools/localization/contract.mjs';
+import { normalizedCharacterIds } from './characters.mjs';
 
 import { AI_CONTENT_SCHEMA, ALLOWED_IMAGE_EXT, FORMAT_EXT, SCHEMA, ensureStorageLayout } from './config.mjs';
 
@@ -99,7 +100,8 @@ function normalizeFields(fields = {}) {
   return {
     name: String(fields.name || '').slice(0, 200),
     description: String(fields.description || '').slice(0, 2000),
-    character: String(fields.character || ''),
+    character: String(fields.character || fields.characterIds?.[0] || ''),
+    ...(fields.characterIds !== undefined ? { characterIds: normalizedCharacterIds(fields, 'character') } : {}),
     ...(fields.categoryId ? { categoryId: String(fields.categoryId).trim() } : {}),
     tags: Array.isArray(fields.tags) ? fields.tags.map((tag) => String(tag)).filter(Boolean).slice(0, 20) : [],
     ...(attribution ? { credit: attribution.credit, creditName: attribution.name, creditUrl: attribution.url } : {}),
@@ -130,7 +132,8 @@ function normalizeReviewContent(content, original = {}) {
     name: text(content.name, REVIEW_CONTENT_LIMITS.name),
     description: text(content.description, REVIEW_CONTENT_LIMITS.description),
     commentary: text(content.commentary, REVIEW_CONTENT_LIMITS.commentary),
-    characterId: text(content.characterId, REVIEW_CONTENT_LIMITS.characterId),
+    characterId: text(content.characterId || content.characterIds?.[0], REVIEW_CONTENT_LIMITS.characterId),
+    characterIds: normalizedCharacterIds(content),
     categoryIds: list(content.categoryIds, REVIEW_CONTENT_LIMITS.categoryIds, REVIEW_CONTENT_LIMITS.categoryId),
     tags: list(content.tags, REVIEW_CONTENT_LIMITS.tags, REVIEW_CONTENT_LIMITS.tagLength),
   };
@@ -226,6 +229,8 @@ export async function createQueue(cfg, { now = () => Date.now(), reviewTimeoutMs
     for (const entry of entries) {
       if (!entry.endsWith('.json') || entry.startsWith('.')) continue;
       const item = await readJsonFile(path.join(paths.items, entry));
+      if (item?.review?.content && !Object.hasOwn(item.review.content, 'characterIds')) item.review.content.characterIds = normalizedCharacterIds(item.review.content);
+      if (item?.agent?.draft && !Object.hasOwn(item.agent.draft, 'characterIds')) item.agent.draft.characterIds = normalizedCharacterIds(item.agent.draft);
       if (item && item.id) items.push(item);
     }
     return items;
@@ -265,7 +270,10 @@ export async function createQueue(cfg, { now = () => Date.now(), reviewTimeoutMs
   }
 
   async function readItem(id) {
-    return readJsonFile(itemPath(id));
+    const item = await readJsonFile(itemPath(id));
+    if (item?.review?.content && !Object.hasOwn(item.review.content, 'characterIds')) item.review.content.characterIds = normalizedCharacterIds(item.review.content);
+    if (item?.agent?.draft && !Object.hasOwn(item.agent.draft, 'characterIds')) item.agent.draft.characterIds = normalizedCharacterIds(item.agent.draft);
+    return item;
   }
 
   async function saveItem(item) {

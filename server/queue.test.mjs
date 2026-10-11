@@ -244,7 +244,7 @@ test('attachReview 把受校验 content 写进私有摘要与 ai raw，剔除系
   const stored = await queue.get(item.id);
   // content 只允许这六个字段，系统/法律/未知字段一律剔除。
   assert.deepEqual(Object.keys(stored.review.content).sort(), [
-    'categoryIds', 'characterId', 'commentary', 'description', 'name', 'tags',
+    'categoryIds', 'characterId', 'characterIds', 'commentary', 'description', 'name', 'tags',
   ]);
   assert.equal(stored.review.schema, AI_CONTENT_SCHEMA);
   assert.equal(stored.review.content.verdict, undefined); // 审核结论不塞进 content
@@ -263,8 +263,24 @@ test('attachReview 把受校验 content 写进私有摘要与 ai raw，剔除系
   assert.ok(raw.content.categoryIds.includes('meme'));
   assert.equal(raw.content.status, undefined);
   assert.deepEqual(Object.keys(raw.content).sort(), [
-    'categoryIds', 'characterId', 'commentary', 'description', 'name', 'tags',
+    'categoryIds', 'characterId', 'characterIds', 'commentary', 'description', 'name', 'tags',
   ]);
+});
+
+test('legacy 磁盘 content 仅 characterId 读取归一，多角色重启不丢', async (t) => {
+  const { queue, cfg } = await setup(t);
+  const { item } = await queue.enqueue({ source: 'web', sourceId: 'web:roles', buffer: TINY_PNG, fields: { character: 'deepseek', characterIds: ['deepseek', 'kimi'] } });
+  const content = { name: '合影', description: '', commentary: '', characterId: 'deepseek', characterIds: ['deepseek', 'kimi'], categoryIds: ['meme'], tags: [] };
+  await queue.attachReview(item.id, { verdict: 'pass', confidence: .9, content });
+  const reopened = await createQueue(cfg);
+  assert.deepEqual((await reopened.get(item.id)).review.content.characterIds, ['deepseek', 'kimi']);
+  assert.deepEqual((await reopened.get(item.id)).fields.characterIds, ['deepseek', 'kimi']);
+  const file = path.join(cfg.paths.items, `${item.id}.json`);
+  const legacy = JSON.parse(await fs.readFile(file, 'utf8'));
+  delete legacy.review.content.characterIds;
+  await fs.writeFile(file, JSON.stringify(legacy));
+  assert.deepEqual((await reopened.get(item.id)).review.content.characterIds, ['deepseek']);
+  assert.deepEqual((await reopened.list()).find(record=>record.id===item.id),await reopened.get(item.id));
 });
 
 test('英日审核内容在私有摘要、原始记录与队列重启后保持完整', async (t) => {
@@ -275,7 +291,7 @@ test('英日审核内容在私有摘要、原始记录与队列重启后保持�
     characterId: 'deepseek', categoryIds: ['meme'], tags: ['探头'], i18n: fixtureI18n(['探头']),
   };
   await queue.attachReview(item.id, { verdict: 'pass', confidence: 0.95, schema: AI_CONTENT_SCHEMA, content }, { raw: { content } });
-  assert.deepEqual((await queue.get(item.id)).review.content, content);
+  assert.deepEqual((await queue.get(item.id)).review.content, { ...content, characterIds: ['deepseek'] });
   const stored = JSON.parse(await fs.readFile(path.join(cfg.paths.ai, `${item.id}.json`), 'utf8'));
   assert.deepEqual(stored.content.i18n, content.i18n);
   const reopened = await createQueue(cfg);

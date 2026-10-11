@@ -22,6 +22,8 @@
  * 幂等键：qq:<groupId>:<messageId>:<sha256 前 16 位>，同一条群消息重复推不重复入库。
  */
 import { timingSafeEqual } from 'node:crypto';
+import { validateCharacterSelection } from '../characters.mjs';
+import { loadContentVocabulary } from '../config.mjs';
 
 import { sniffImageFormat, sha256 } from '../queue.mjs';
 import { fetchWithLimits } from './github.mjs';
@@ -71,7 +73,8 @@ export function createQqAdapter(cfg, { queue, fetchImpl = globalThis.fetch } = {
     const nested = payload.fields && typeof payload.fields === 'object' ? payload.fields : {};
     return {
       name: firstFilled(payload.name, payload.title, nested.name, nested.title),
-      character: firstFilled(payload.character, payload.role, nested.character, nested.role),
+      character: firstFilled(payload.character, payload.role, nested.character, nested.role, payload.characterIds?.[0], nested.characterIds?.[0]),
+      ...(payload.characterIds !== undefined || nested.characterIds !== undefined ? { characterIds: payload.characterIds ?? nested.characterIds } : {}),
       description: payload.description ?? nested.description ?? '',
       tags: Array.isArray(payload.tags) ? payload.tags : (Array.isArray(nested.tags) ? nested.tags : []),
     };
@@ -128,11 +131,18 @@ export function createQqAdapter(cfg, { queue, fetchImpl = globalThis.fetch } = {
       return reply('duplicate', 200, null, { id: existing.id, status: existing.state });
     }
 
+    const fields = fieldsFrom(payload);
+    if (Object.hasOwn(fields, 'characterIds')) {
+      const selected = validateCharacterSelection(fields, loadContentVocabulary(cfg.siteRoot).characterIds, 'character');
+      if (selected.error) return reply('invalid_fields', 400, '角色集合非法');
+      fields.character = selected.value.characterId;
+      fields.characterIds = selected.value.characterIds;
+    }
     const result = await queue.enqueue({
       source: 'qq',
       sourceId,
       buffer,
-      fields: fieldsFrom(payload),
+      fields,
       /* origin 固定为「群内投稿」稳定枚举；图片获取方式另存 imageVia，不覆盖来源枚举。 */
       origin: {
         type: QQ_GROUP_ORIGIN,

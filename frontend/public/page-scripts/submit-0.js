@@ -17,6 +17,8 @@
       var nameInput = document.getElementById("f-name");
       var descInput = document.getElementById("f-desc");
       var characterSelect = document.getElementById("f-character");
+      var characterChoices = document.getElementById("character-choices");
+      var selectedCharacters = function () { return Array.from(characterSelect.selectedOptions).map(function (option) { return option.value; }).filter(Boolean); };
       var typeSelect = document.getElementById("f-type");
       var typeHint = document.getElementById("type-hint");
       var creditSelect = document.getElementById("f-credit");
@@ -94,8 +96,8 @@
         if (!name || name.length > MAX_NAME) {
           return { key: "submit.form.err.name", fallback: "请填写图片名称，且不超过 120 字。", field: nameInput };
         }
-        if (!characterSelect.value) {
-          return { key: "submit.form.err.character", fallback: "请选择角色。", field: characterSelect };
+        if (!selectedCharacters().length) {
+          return { key: "submit.form.err.character", fallback: "请选择角色。", field: characterChoices.querySelector('input') || characterSelect };
         }
         if (!DEMO.categories.some(function (c) { return c.status === "active" && c.id === typeSelect.value; })) {
           return { key: "submit.form.err.type", fallback: "请选择一个作品类型。", field: typeSelect };
@@ -159,7 +161,8 @@
         var data = new FormData();
         data.append("image", fileInput.files[0], fileInput.files[0].name);
         data.append("name", nameInput.value.trim());
-        data.append("character", characterSelect.value);
+        data.append("character", selectedCharacters()[0]);
+        data.append("characterIds", JSON.stringify(selectedCharacters()));
         data.append("categoryId", typeSelect.value);
         data.append("description", descInput.value.trim());
         data.append("credit", creditSelect.value);
@@ -226,7 +229,22 @@
         option.value = character.id;
         option.textContent = SiteLang.characterName(character.id, character.name);
         characterSelect.appendChild(option);
+        var label = document.createElement("label");
+        var checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.name = "characterChoice";
+        checkbox.value = character.id;
+        var title = document.createElement("span");
+        title.textContent = option.textContent;
+        label.append(checkbox, title);
+        characterChoices.appendChild(label);
+        checkbox.addEventListener("change", function () {
+          option.selected = checkbox.checked;
+          placeholder.selected = false;
+        });
       });
+      characterChoices.hidden = false;
+      characterSelect.hidden = true;
       labelIdle();
 
       function updateTypeHint() {
@@ -283,7 +301,11 @@
       /* 语言切换：重写动态文案（占位选项、按钮、当前提示）。 */
       document.addEventListener("site:langchange", function () {
         placeholder.textContent = t("submit.form.select", "请选择角色");
-        characters.forEach(function (character, index) { characterSelect.options[index + 1].textContent = SiteLang.characterName(character.id, character.name); });
+        characters.forEach(function (character, index) {
+          var name = SiteLang.characterName(character.id, character.name);
+          characterSelect.options[index + 1].textContent = name;
+          characterChoices.children[index].querySelector('span').textContent = name;
+        });
         if (busy) labelBusy(); else labelIdle();
         renderStatus();
       });

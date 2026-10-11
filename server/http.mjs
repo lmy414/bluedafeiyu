@@ -33,6 +33,7 @@ import { submissionAttribution } from '../admin/src/lib/attribution.mjs';
 import { reviewQueuedItem } from './review.mjs';
 import { validateContent as validateReviewContent } from './bridge.mjs';
 import { agentAction } from './agent.mjs';
+import { validateCharacterSelection } from './characters.mjs';
 
 const LOOPBACK_HOSTS = new Set(['127.0.0.1', '::1', 'localhost']);
 
@@ -156,7 +157,11 @@ export function parseMultipartForm(buffer, contentType, { maxBytes = Infinity, m
   const files = [];
   for (const part of parts) {
     if (part.filename !== null && part.filename !== '') files.push(part);
-    else if (part.name) fields[part.name] = part.data.toString('utf8');
+    else if (part.name) {
+      const value = part.data.toString('utf8');
+      if (part.name === 'characterIds' && Object.hasOwn(fields, part.name)) fields[part.name] = [...(Array.isArray(fields[part.name]) ? fields[part.name] : [fields[part.name]]), value];
+      else fields[part.name] = value;
+    }
   }
   return { fields, files };
 }
@@ -293,10 +298,17 @@ export function createTurnstileVerifier({
 function validateSubmissionFields(fields, characters, { characterMaxLength = 64, siteRoot } = {}) {
   const name = String(fields.name || '').trim();
   if (!name || name.length > 120) return { error: '名称必填且不超过 120 字' };
-  const character = String(fields.character || '').trim();
+  const vocabularyForRoles = loadContentVocabulary(siteRoot);
+  let characterIds = fields.characterIds;
+  if (typeof characterIds === 'string') {
+    try { characterIds = JSON.parse(characterIds); } catch { return { error: 'characterIds 不是合法 JSON 数组' }; }
+  }
+  const selected = validateCharacterSelection({ ...fields, ...(characterIds !== undefined ? { characterIds } : {}) }, vocabularyForRoles.characterIds, 'character');
+  if (!vocabularyForRoles.ok || selected.error) return { error: selected.error || '角色词表不可用' };
+  const character = selected.value.characterId;
   if (!character) return { error: '角色必填' };
   if (character.length > characterMaxLength) return { error: `角色不超过 ${characterMaxLength} 字` };
-  if (Array.isArray(characters) && characters.length > 0 && !characters.includes(character)) {
+  if (Array.isArray(characters) && characters.length > 0 && selected.value.characterIds.some(id=>!characters.includes(id))) {
     return { error: '角色不在允许列表内' };
   }
   const description = String(fields.description || '').trim();
@@ -306,7 +318,7 @@ function validateSubmissionFields(fields, characters, { characterMaxLength = 64,
   if (!categoryId || !vocabulary.ok || !vocabulary.categoryIds.has(categoryId)) return { error: '请选择一个有效的作品类型' };
   try {
     const attribution = submissionAttribution(fields);
-    return { fields: { name, character, description, categoryId, ...(attribution ? { credit: attribution.credit, creditName: attribution.name, creditUrl: attribution.url } : {}) } };
+    return { fields: { name, character, characterIds: selected.value.characterIds, description, categoryId, ...(attribution ? { credit: attribution.credit, creditName: attribution.name, creditUrl: attribution.url } : {}) } };
   } catch (error) { return { error: error.message }; }
 }
 
@@ -901,7 +913,7 @@ export function createPublicHandler({
           const raw = await readBody(req, cfg.maxBytes);
           let payload = {};
           try { payload = raw.length ? JSON.parse(raw.toString('utf8')) : {}; } catch { return sendJson(res, 400, { ok: false, error: 'invalid json' }); }
-          fields = { name: payload.name, character: payload.character, description: payload.description, categoryId: payload.categoryId, credit: payload.credit, creditName: payload.creditName, creditUrl: payload.creditUrl };
+          fields = { name: payload.name, character: payload.character, ...(Object.hasOwn(payload, 'characterIds') ? { characterIds: payload.characterIds } : {}), description: payload.description, categoryId: payload.categoryId, credit: payload.credit, creditName: payload.creditName, creditUrl: payload.creditUrl };
           try {
             fileBuffer = decodeBase64Image(payload.dataBase64, cfg.maxBytes);
           } catch (error) {

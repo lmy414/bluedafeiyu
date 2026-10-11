@@ -22,6 +22,7 @@ import os from 'node:os';
 import path from 'node:path';
 import {
   downloadAttachment,
+  characterIdsFromLabels,
   fieldsFromSections,
   githubJson,
   hasStickerSubmissionLabel,
@@ -35,6 +36,13 @@ import {
   stageReadyItem,
   verifyItems,
 } from './core.mjs';
+
+test('GitHub 多角色只解析完整 dropdown 标签，不吞任意文本', () => {
+  assert.deepEqual(characterIdsFromLabels('DeepSeek娘（deepseek · 别名 鲸娘 / 鲸鱼娘）, Kimi娘（kimi）'), ['deepseek', 'kimi']);
+  assert.deepEqual(characterIdsFromLabels('DeepSeek娘（deepseek）\nKimi娘（kimi）'), ['deepseek', 'kimi']);
+  assert.deepEqual(characterIdsFromLabels('任意正文 DeepSeek娘（deepseek） trailing'), []);
+  assert.deepEqual(characterIdsFromLabels('DeepSeek娘（deepseek）, 任意未知内容'), []);
+});
 
 /* 一个真的 1x1 PNG，用来造合法图片字节 */
 const TINY_PNG = Buffer.from(

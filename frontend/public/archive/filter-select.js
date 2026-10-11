@@ -33,8 +33,12 @@
     else if (item.offsetTop + item.offsetHeight > panel.scrollTop + panel.clientHeight) panel.scrollTop = item.offsetTop + item.offsetHeight - panel.clientHeight;
   }
   function sync(control) {
-    content(control.value, control.select.selectedOptions[0] || control.select.options[0]);
+    const selected = [...control.select.selectedOptions].filter(option => option.value);
+    const option = selected.length ? {textContent:selected.map(option=>text(option)[0]).join(' + ')} : control.select.options[0];
+    content(control.value, control.select.multiple ? option : control.select.selectedOptions[0] || control.select.options[0]);
     control.button.setAttribute('aria-label', control.select.getAttribute('aria-label'));
+    control.button.title = control.value.textContent;
+    [...control.panel.children].forEach((item,index)=>item.setAttribute('aria-selected',String(control.select.options[index].selected)));
   }
   function open(control) {
     close(); opened = control; sync(control);
@@ -54,7 +58,10 @@
     });
     const rect = control.button.getBoundingClientRect();
     const width = Math.min(Math.max(rect.width, control.select.name === 'character' ? 250 : 180), innerWidth - 24);
-    const below = innerHeight - rect.bottom - 16, above = rect.top - 16;
+    const bottomNav = document.querySelector('.mobile-bottom');
+    const bottom = bottomNav?.getClientRects().length ? bottomNav.getBoundingClientRect().top : innerHeight;
+    const top = document.querySelector('.topbar')?.getBoundingClientRect().bottom || 0;
+    const below = bottom - rect.bottom - 12, above = rect.top - Math.max(12,top + 8);
     const up = below < 240 && above > below;
     const height = Math.min(332, up ? above : below);
     control.panel.style.width = width + 'px';
@@ -67,7 +74,15 @@
   }
   function choose(control, index) {
     if (control.select.options[index].disabled) return;
-    control.select.selectedIndex = index; sync(control); close(true);
+    if (control.select.multiple) {
+      const option = control.select.options[index];
+      if (!option.value) [...control.select.options].forEach(entry=>entry.selected=!entry.value);
+      else {
+        option.selected = !option.selected;
+        control.select.options[0].selected = ![...control.select.selectedOptions].some(entry=>entry.value);
+      }
+      sync(control);
+    } else { control.select.selectedIndex = index; sync(control); close(true); }
     control.select.dispatchEvent(new Event('change', { bubbles: true }));
   }
   document.querySelectorAll('#filter-form select').forEach(select => {
@@ -81,6 +96,8 @@
     const panel = document.createElement('div'); panel.id = 'filter-options-' + select.name; panel.className = 'filter-select-menu'; panel.hidden = true;
     panel.setAttribute('role', 'listbox'); panel.setAttribute('aria-label', select.getAttribute('aria-label')); document.body.append(panel);
     button.setAttribute('aria-controls', panel.id);
+    if (select.hasAttribute('aria-describedby')) button.setAttribute('aria-describedby',select.getAttribute('aria-describedby'));
+    if (select.multiple) panel.setAttribute('aria-multiselectable','true');
     const control = { select, button, value, panel, index: 0, typed: '', typedAt: 0 }; controls.push(control);
     sync(control); select.hidden = true;
     select.addEventListener('change', () => sync(control));
@@ -106,6 +123,7 @@
   document.addEventListener('focusin', event => { if (opened && event.target !== opened.button && !opened.panel.contains(event.target)) close(); });
   document.addEventListener('click', event => { if (event.target.closest('[data-reset]')) queueMicrotask(() => controls.forEach(sync)); });
   document.addEventListener('site:langchange', () => { close(); controls.forEach(sync); });
+  document.addEventListener('archive:filter-sync', () => controls.forEach(sync));
   window.addEventListener('resize', () => close());
   window.addEventListener('scroll', event => { if (opened && !opened.panel.contains(event.target)) close(); }, true);
 })();

@@ -7,6 +7,8 @@ import * as migration_20261009_000000_bulk_jobs from './20261009_000000_bulk_job
 import * as migration_20261010_000000_agent_progress from './20261010_000000_agent_progress';
 import * as migration_20261010_010000_rights_agent from './20261010_010000_rights_agent';
 
+import * as migration_20261011_000000_work_characters from './20261011_000000_work_characters';
+
 export const migrations = [
   // Additive migration; existing editorial data and queue state stay unchanged.
   {
@@ -40,4 +42,5 @@ export const migrations = [
     name: '20261010_000000_agent_progress',
   },
   { up: migration_20261010_010000_rights_agent.up, down: migration_20261010_010000_rights_agent.down, name: '20261010_010000_rights_agent' },
+  { up: migration_20261011_000000_work_characters.up, down: migration_20261011_000000_work_characters.down, name: '20261011_000000_work_characters' },
 ];

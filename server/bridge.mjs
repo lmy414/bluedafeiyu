@@ -20,6 +20,7 @@
  * 但不 import review.mjs，避免将来 review 侧调用桥接时形成模块环。
  */
 import path from 'node:path';
+import { validateCharacterSelection } from './characters.mjs';
 import { validateI18n } from '../tools/localization/contract.mjs';
 
 import { AI_CONTENT_SCHEMA, loadContentVocabulary } from './config.mjs';
@@ -37,7 +38,7 @@ export const CONTENT_SCHEMA = AI_CONTENT_SCHEMA;
 export const BRIDGE_SCHEMA = 'submission-bridge/1';
 
 /* 与审核层一致：content 只允许这六个字段，多一个少一个都算不完整。 */
-export const CONTENT_KEYS = Object.freeze(['name', 'description', 'commentary', 'characterId', 'categoryIds', 'tags', 'i18n']);
+export const CONTENT_KEYS = Object.freeze(['name', 'description', 'commentary', 'characterId', 'characterIds', 'categoryIds', 'tags', 'i18n']);
 const CONTENT_KEY_SET = new Set(CONTENT_KEYS);
 
 /* 与 server/review.mjs 的 LIMITS 对齐。 */
@@ -109,14 +110,14 @@ export function validateContent(content, vocabulary = null, attribution = {}) {
     if (!CONTENT_KEY_SET.has(key)) errors.push(`content 含未知字段 ${key}`);
   }
   for (const key of CONTENT_KEYS) {
-    if (key !== 'i18n' && !(key in content)) errors.push(`content 缺少字段 ${key}`);
+    if (!['i18n', 'characterIds'].includes(key) && !(key in content) && !(key === 'characterId' && 'characterIds' in content)) errors.push(`content 缺少字段 ${key}`);
   }
   if (errors.length > 0) return { ok: false, errors, value: null };
 
   const nameError = textError(content.name, { label: 'content.name', max: LIMITS.name, allowEmpty: false });
   const descriptionError = textError(content.description, { label: 'content.description', max: LIMITS.description });
   const commentaryError = textError(content.commentary, { label: 'content.commentary', max: LIMITS.commentary });
-  const characterError = textError(content.characterId, { label: 'content.characterId', max: LIMITS.characterId, allowEmpty: false });
+  const characterError = textError(content.characterId ?? content.characterIds?.[0], { label: 'content.characterId', max: LIMITS.characterId, allowEmpty: false });
   const categoryError = listError(content.categoryIds, {
     label: 'content.categoryIds', max: LIMITS.categoryIds, itemMax: LIMITS.categoryId, allowEmpty: false,
   });
@@ -131,7 +132,9 @@ export function validateContent(content, vocabulary = null, attribution = {}) {
   }
   const characterIds = toIdSet(vocabulary.characterIds);
   const categoryIds = toIdSet(vocabulary.categoryIds);
-  const characterId = content.characterId.trim();
+  const selection = validateCharacterSelection(content, characterIds);
+  if (selection.error) return { ok: false, errors: [selection.error], value: null };
+  const characterId = selection.value.characterId;
   if (!characterIds.has(characterId)) errors.push(`content.characterId 不在角色枚举内：${characterId}`);
   for (const id of content.categoryIds) {
     if (!categoryIds.has(String(id).trim())) errors.push(`content.categoryIds 含非法分类：${id}`);
@@ -148,7 +151,7 @@ export function validateContent(content, vocabulary = null, attribution = {}) {
       name: content.name.trim(),
       description: content.description.trim(),
       commentary: content.commentary.trim(),
-      characterId,
+      ...selection.value,
       categoryIds: content.categoryIds.map((id) => String(id).trim()),
       tags: content.tags.map((tag) => tag.trim()),
     },
@@ -297,6 +300,7 @@ export async function createBridge({
           name: check.value.name,
           description: check.value.description,
           character: check.value.characterId,
+          characterIds: check.value.characterIds,
           tags: check.value.tags,
           ...(item.fields?.credit ? { credit: item.fields.credit, creditName: item.fields.creditName, creditUrl: item.fields.creditUrl } : {}),
         },

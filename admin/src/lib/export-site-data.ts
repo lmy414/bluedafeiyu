@@ -142,6 +142,7 @@ function workRecord(doc: any, options: { originalUrlByWorkId?: Record<string, st
   setPreservingKeyOrder(base, 'fileSize', doc.fileSize ?? base.fileSize ?? 0)
   setPreservingKeyOrder(base, 'sha256', doc.sha256 ?? base.sha256 ?? '')
   setPreservingKeyOrder(base, 'characterId', characterId)
+  setPreservingKeyOrder(base, 'characterIds', [...new Set((doc.characters?.length ? doc.characters : [doc.character]).map((item: unknown) => relationCode(item, 'characterId')).filter(Boolean))])
   setPreservingKeyOrder(base, 'tags', tags)
   const who = doc.submitter ?? base.submitter ?? {}
   const submitter = who.credit === 'anonymous' ? { credit: 'anonymous', name: '', url: '', github: '' }
@@ -320,6 +321,8 @@ function editorialText(works: any[], snapshot: any): string {
     else if (Object.prototype.hasOwnProperty.call(current, 'status')) delete current.status
     const exported=workRecord(work,{})
     setPreservingKeyOrder(current, 'categoryIds', exported.categoryIds)
+    setPreservingKeyOrder(current, 'characterId', exported.characterId)
+    setPreservingKeyOrder(current, 'characterIds', exported.characterIds)
     if(exported.i18n)current.i18n=exported.i18n
     else if(current.i18n)delete current.i18n
     base[sourcePath] = current

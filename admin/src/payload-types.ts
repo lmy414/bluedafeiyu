@@ -370,6 +370,7 @@ export interface Work {
   submissionId?: string | null;
   sha256?: string | null;
   character: number | Character;
+  characters: (number | Character)[];
   /**
    * 每张图片只保留一个类型。
    */
@@ -959,6 +960,7 @@ export interface WorksSelect<T extends boolean = true> {
   submissionId?: T;
   sha256?: T;
   character?: T;
+  characters?: T;
   categories?: T;
   tags?:
     | T

@@ -362,6 +362,10 @@ def _resolve_character(marker: str) -> tuple[str, str]:
             value = value[len(prefix):].strip()
             break
 
+    tokens = re.split(r"[,，、+]+", value)
+    if len(tokens) > 1:
+        resolved = [_resolve_character(token)[1] for token in tokens]
+        return value, ",".join(dict.fromkeys(resolved)) if all(resolved) else ""
     canonical = _character_lookup().get(value.casefold(), "")
     if not canonical and len(value) > 1 and value.endswith("娘"):
         base_value = value[:-1].strip()
@@ -767,7 +771,8 @@ def on_pre_gateway_dispatch(
             "userId": str(getattr(source, "user_id", "") or _raw_user_id(event)),
             "messageId": str(getattr(event, "message_id", "") or ""),
             "name": title,
-            "character": character,
+            "character": character.split(",")[0],
+            "characterIds": character.split(","),
         }
         _schedule(
             _process_submission(

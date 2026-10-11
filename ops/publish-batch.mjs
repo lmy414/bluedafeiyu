@@ -387,7 +387,8 @@ function extractContent(entry) {
     name: firstDefined(content.name, ai.name, fields.name),
     description: firstDefined(content.description, ai.description, fields.description) || '',
     commentary: firstDefined(content.commentary, ai.commentary, fields.commentary),
-    characterId: firstDefined(content.characterId, ai.characterId, fields.characterId, fields.character),
+    characterId: firstDefined(content.characterId, ai.characterId, fields.characterId, fields.character, content.characterIds?.[0], fields.characterIds?.[0]),
+    characterIds: Object.hasOwn(content, 'characterIds') ? content.characterIds : Object.hasOwn(ai, 'characterIds') ? ai.characterIds : fields.characterIds,
     categoryIds: firstDefined(content.categoryIds, ai.categoryIds, fields.categoryIds, ai.categories, fields.categories) || [],
     tags: firstDefined(content.tags, ai.tags, fields.tags) || [],
     // verdict / confidence 由 server/ 初审保证（桥接只写 auto_passed）；这里仅在存在时复核。
@@ -441,6 +442,10 @@ export function validateEntry(cfg, entry, manifests, nowIso) {
   const activeCategories = new Set(manifests.categories.filter((c) => c && c.status === 'active').map((c) => c.id));
 
   const characterId = String(content.characterId || '');
+  const characterIds = content.characterIds === undefined ? [characterId] : content.characterIds;
+  if (!Array.isArray(characterIds) || !characterIds.length || characterIds.length > activeCharacters.size
+      || characterIds.some(id => typeof id !== 'string' || !activeCharacters.has(id))
+      || new Set(characterIds).size !== characterIds.length || !characterIds.includes(characterId)) problems.push('characterIds 非法或代表角色不在集合中');
   if (!characterId) problems.push('缺 characterId');
   else if (!activeCharacters.has(characterId)) problems.push(`角色不在 characters.json（active）：${characterId}`);
 
@@ -530,6 +535,7 @@ export function validateEntry(cfg, entry, manifests, nowIso) {
     fileSize: image.length,
     sha256: digest,
     characterId,
+    characterIds,
     tone: characterId,
     symbol: '',
     categoryIds: content.categoryIds.map(String),

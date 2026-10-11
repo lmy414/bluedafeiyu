@@ -8,7 +8,7 @@ import { WorkDrawer } from '@/components/admin/WorkDrawer'
 const api = vi.hoisted(() => ({ get: vi.fn(), mutate: vi.fn() }))
 vi.mock('@/components/admin/api', () => ({ useAdminApi: () => ({ ...api, apiRoute: '/cms-api' }) }))
 
-const content = { name: '已核对的名称', description: '已核对的画面', commentary: '已核对的点评', tags: ['探头'], characterId: 'deepseek', categoryIds: ['illustration'] }
+const content = { name: '已核对的名称', description: '已核对的画面', commentary: '已核对的点评', tags: ['探头'], characterId: 'deepseek', characterIds: ['deepseek'], categoryIds: ['illustration'] }
 const i18n = { sourceHash: 'server-generated-digest', ...fixtureI18n(content.tags) }
 const props = {
   categories: [{ id: 2, categoryId: 'illustration', name: '插画' }],
@@ -25,6 +25,14 @@ beforeEach(() => {
 afterEach(cleanup)
 
 describe('人工收录的多语言流程', () => {
+  it('复选框保存完整角色集合，保留集合中的代表角色', async () => {
+    render(React.createElement(WorkDrawer, { ...props, characters: [...props.characters, { id: 4, characterId: 'claude', name: 'Claude' }], item: { kind: 'work', work: { id: 9, workId: 'fixed', name: '双角色', channel: 'web', status: 'published', character: 1, characters: [1], categories: [2] } } }))
+    fireEvent.click(screen.getByRole('checkbox', { name: 'Claude' }))
+    fireEvent.click(screen.getByRole('button', { name: '保存修改' }))
+    await waitFor(() => expect(props.onSaved).toHaveBeenCalledOnce())
+    expect(api.mutate.mock.calls[0][2]).toMatchObject({ character: 1, characters: [1, 4] })
+  })
+
   it('先生成当前内容的译文，再将中文和译文一起提交', async () => {
     render(React.createElement(WorkDrawer, props))
     fireEvent.click(screen.getByRole('button', { name: '人工收录' }))

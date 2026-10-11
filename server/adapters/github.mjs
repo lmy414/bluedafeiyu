@@ -29,7 +29,7 @@ import path from 'node:path';
 
 import {
   assetIdOf,
-  characterIdFromLabel,
+  characterIdsFromLabels,
   extractAttachments,
   fieldsFromSections,
   parseIssueForm,
@@ -359,7 +359,10 @@ export function createGithubAdapter(cfg, {
 
     const sections = parseIssueForm(entry.body);
     const fields = fieldsFromSections(sections);
-    if (fields.character) fields.character = characterIdFromLabel(fields.character) || fields.character;
+    if (fields.character) {
+      const ids = characterIdsFromLabels(fields.character);
+      if (ids.length) { fields.characterIds = ids; fields.character = ids[0]; }
+    }
 
     for (const url of extractAttachments(entry.body)) {
       /* 落 origin / 结果 / 日志的一律是脱敏地址；带签名的原始地址只用于实际下载 */

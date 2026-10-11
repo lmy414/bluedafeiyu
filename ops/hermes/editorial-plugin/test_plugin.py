@@ -12,6 +12,14 @@ spec.loader.exec_module(plugin)
 
 
 class PluginTests(unittest.TestCase):
+    def test_content_allows_unique_nonempty_character_ids(self):
+        schema = plugin.CONTENT['properties']['characterIds']
+        self.assertEqual(schema['type'], 'array')
+        self.assertEqual(schema['items']['type'], 'string')
+        self.assertEqual(schema['minItems'], 1)
+        self.assertTrue(schema['uniqueItems'])
+        self.assertFalse(plugin.CONTENT['additionalProperties'])
+
     def test_transport_is_fixed_and_json_uses_stdin(self):
         with patch.object(plugin.subprocess, 'run') as run:
             run.return_value.stdout = b'{"ok":true}'

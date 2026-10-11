@@ -19,10 +19,14 @@ import { Topics } from '@/collections/Topics'
 import { PublishRuns } from '@/collections/PublishRuns'
 import { AuditEvents } from '@/collections/AuditEvents'
 import { createBulkJob, cancelBulkJob, retryBulkJob } from '@/endpoints/bulk-jobs'
-import { stepJob } from '@/lib/bulk-jobs'
+import { stepJob, draftOf } from '@/lib/bulk-jobs'
 import { agentHandler } from '@/endpoints/agent'
 import { consoleList, consoleAuthors, parseConsoleQuery } from '@/lib/console-list'
 import { sourceHash } from '@/lib/localization.mjs'
+import { buildSiteDataTexts } from '@/lib/export-site-data'
+import { validateContent } from '@/lib/sync-submissions'
+import { up as migrateCharacters } from '@/migrations/20261011_000000_work_characters'
+import { DatabaseSync } from 'node:sqlite'
 import { TakedownRequests } from '@/collections/TakedownRequests'
 import { requestAgentHandler } from '@/endpoints/request-agent'
 import { issueSnapshot } from '@/lib/rights-requests'
@@ -95,6 +99,52 @@ describe('轻量列表服务端分页', () => {
   })
 })
 
+describe('多角色真实数据库链路', () => {
+  it('迁移旧关系保留分类；保存、检索和导出完整集合且冻结路径', async () => {
+    const second = await payload.create({ collection: 'characters', data: { characterId: 'claude', name: 'Claude', status: 'active' }, overrideAccess: true, context: { audit: false } })
+    const work = await createWork('multi_fixed', { slug: 'frozen-slug', legacyPaths: { path: 'submissions/originals/deepseek/frozen.webp' } })
+    const legacyDB = new DatabaseSync(path.join(root, 'migration.db'))
+    try {
+      legacyDB.exec(`PRAGMA foreign_keys=ON; CREATE TABLE characters(id INTEGER PRIMARY KEY); CREATE TABLE works(id INTEGER PRIMARY KEY, character_id INTEGER REFERENCES characters(id), slug TEXT, path TEXT); CREATE TABLE works_rels(id INTEGER PRIMARY KEY, "order" INTEGER, parent_id INTEGER REFERENCES works(id), path TEXT, categories_id INTEGER); INSERT INTO characters VALUES(1); INSERT INTO works VALUES(1,1,'frozen','original.webp'); INSERT INTO works_rels VALUES(1,1,1,'categories',7);`)
+      await migrateCharacters({ db: { run: async (statement: any) => legacyDB.exec(statement.queryChunks.map((chunk: any) => chunk.value?.join('') || '').join('')) } } as any)
+      expect(legacyDB.prepare("SELECT characters_id FROM works_rels WHERE path='characters'").get()).toMatchObject({ characters_id: 1 })
+      expect(legacyDB.prepare("SELECT categories_id FROM works_rels WHERE path='categories'").get()).toMatchObject({ categories_id: 7 })
+      expect(legacyDB.prepare('SELECT slug,path FROM works').get()).toMatchObject({ slug: 'frozen', path: 'original.webp' })
+      expect(legacyDB.prepare('PRAGMA foreign_key_list(works_rels)').all().some((row: any) => row.from === 'characters_id')).toBe(true)
+    } finally { legacyDB.close() }
+    await payload.update({ collection: 'works', id: work.id, data: { characters: [second.id, char.id, second.id] }, overrideAccess: true, context: { audit: false } })
+    const saved = await payload.findByID({ collection: 'works', id: work.id, depth: 1, overrideAccess: true })
+    expect(saved.characters.map((c: any) => c.id)).toEqual([second.id, char.id])
+    expect(saved.character.id).toBe(char.id)
+    expect(saved.needsPublish).toBe(true)
+    const list = await consoleList(payload, query(`character=${second.id}`))
+    expect(list.totalDocs).toBe(1)
+    expect((list.docs[0] as any).characters.map((c: any) => c.characterId)).toEqual(['claude', 'deepseek'])
+    const exported = JSON.parse(buildSiteDataTexts({ works: [saved], characters: [], categories: [], topics: [] })['data/works.json'])[0]
+    expect(exported).toMatchObject({ id: 'multi_fixed', slug: 'frozen-slug', path: 'submissions/originals/deepseek/frozen.webp', characterId: 'deepseek', characterIds: ['claude', 'deepseek'] })
+    const job = await enqueue('write-fields', 'works', ['multi_fixed'], { patch: { characterIds: ['claude'] } })
+    expect((await stepJob(request({}), job)).status).toBe('succeeded')
+    const changed = await payload.findByID({ collection: 'works', id: work.id, depth: 0, overrideAccess: true })
+    expect(changed.character).toBe(second.id)
+    expect(changed.characters).toEqual([second.id])
+    expect(changed.slug).toBe('frozen-slug')
+    expect(changed.legacyPaths.path).toBe(exported.path)
+  })
+  it('人工审核草稿保留投稿者提交的全部角色', () => {
+    const draft = draftOf({ fields: { character: 'deepseek', characterIds: ['deepseek','claude'] } }, 'submissions', {})
+    expect(draft.characterId).toBe('deepseek')
+    expect(draft.characterIds).toEqual(['deepseek','claude'])
+  })
+  it('拒绝重复、未知角色和不在集合内的代表；单角色 hash 不漂移', () => {
+    const content = { name: '测试', description: '', commentary: '', tags: [], characterId: 'deepseek', categoryIds: ['meme'] }
+    const vocab = { characterIds: new Set(['deepseek', 'claude']), categoryIds: new Set(['meme']) }
+    expect(validateContent(content, vocab).ok).toBe(true)
+    for (const characterIds of [[], ['deepseek', 'deepseek'], ['unknown'], ['claude']]) expect(validateContent({ ...content, characterIds }, vocab).ok).toBe(false)
+    expect(sourceHash({ ...content, characterIds: ['deepseek'] })).toBe(sourceHash(content))
+    expect(sourceHash({ ...content, characterIds: ['deepseek', 'claude'] })).not.toBe(sourceHash(content))
+  })
+})
+
 describe('持久化批量任务', () => {
   it('只排队；无前端请求时执行器继续写入，断点恢复不重复审计', async () => {
     await createWork('bulk_a'); await createWork('bulk_b')
@@ -108,7 +158,7 @@ describe('持久化批量任务', () => {
     expect(last.status).toBe('succeeded'); expect(last.results).toHaveLength(2)
     const duplicateStep = await stepJob(request({}), stored)
     expect(duplicateStep.cursor).toBe(2)
-    expect((await payload.find({ collection: 'audit-events', where: { action: { equals: 'bulk.write-fields' } } })).totalDocs).toBe(2)
+    expect((await payload.find({ collection: 'audit-events', where: { and: [{ action: { equals: 'bulk.write-fields' } }, { targetId: { in: ['bulk_a', 'bulk_b'] } }] } })).totalDocs).toBe(2)
   })
   it('批量修改投稿草稿后同步不会覆盖原字段和 AI 结论', async () => {
     const doc = await createSubmission('sub_editorial', { review: { verdict: 'manual', reason: 'AI 原结论' } })

@@ -24,7 +24,7 @@ export function WorkCard({
   work: WorkDoc
   metrics?: { views: number; downloads: number }
 }) {
-  const character = asObject<CharacterDoc>(work.character)
+  const characterNames = (work.characters?.length ? work.characters : [work.character]).map((value) => asObject<CharacterDoc>(value)?.name).filter(Boolean).join('、')
   const categories = Array.isArray(work.categories)
     ? work.categories.map((item) => asObject<{ name?: string }>(item)?.name).filter(Boolean)
     : []
@@ -46,7 +46,7 @@ export function WorkCard({
               {work.status === 'pending' ? '待发布' : work.status === 'published' ? '已上线' : work.status === 'hidden' ? '已隐藏' : work.status === 'removed' ? '已移除' : '已删除'}
             </span>
           </div>
-          <p>{character?.name || '未设置角色'} · {authorOf(work) || '未署名'}</p>
+          <p>{characterNames || '未设置角色'} · {authorOf(work) || '未署名'}</p>
           <p className="s3-card-meta">
             {labelOf(CHANNELS, work.channel)} · {categories.length ? categories.join(' / ') : '未分类'}
           </p>

@@ -67,6 +67,7 @@ export type WorkDoc = {
   changeAction?: null | string
   channel: string
   character?: CharacterDoc | ID
+  characters?: Array<CharacterDoc | ID>
   commentary?: string
   description?: string
   id: ID

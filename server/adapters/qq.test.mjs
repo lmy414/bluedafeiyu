@@ -123,6 +123,17 @@ test('QQ 投稿只需标题+角色：接受 title / role 别名，description �
   assert.equal(items[0].fields.description, '', 'description 可空');
 });
 
+test('QQ 多角色数组入队不丢失，空/重复/非法数组拒绝', async (t) => {
+  const { queue, adapter } = await setup(t, { env: ENABLED_ENV });
+  for (const ids of [[], ['deepseek', 'deepseek'], ['unknown'], 'deepseek,kimi']) {
+    const result = await adapter.handleInbound({ authorization: 'Bearer qq-secret-value', payload: { ...base64Payload(), characterIds: ids } });
+    assert.equal(result.code, 400);
+  }
+  const result = await adapter.handleInbound({ authorization: 'Bearer qq-secret-value', payload: { ...base64Payload(), characterIds: ['deepseek', 'kimi'] } });
+  assert.equal(result.code, 202);
+  assert.deepEqual((await queue.list())[0].fields.characterIds, ['deepseek', 'kimi']);
+});
+
 test('title / role 别名同样支持嵌套 fields', async (t) => {
   const { queue, adapter } = await setup(t, { env: ENABLED_ENV });
   const result = await adapter.handleInbound({

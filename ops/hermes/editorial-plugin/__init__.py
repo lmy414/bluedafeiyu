@@ -98,9 +98,10 @@ STRING = {'type': 'string'}
 COMMON = {'target': {'type': 'string', 'enum': ['submission', 'admin', 'requests']}, 'id': STRING, 'jobId': STRING, 'token': STRING}
 CONTENT = {'type': 'object', 'additionalProperties': False, 'properties': {
     'name': STRING, 'description': STRING, 'commentary': STRING, 'characterId': STRING,
+    'characterIds': {'type': 'array', 'items': STRING, 'minItems': 1, 'uniqueItems': True},
     'categoryIds': {'type': 'array', 'items': STRING, 'minItems': 1, 'maxItems': 1},
     'tags': {'type': 'array', 'items': STRING, 'maxItems': 20},
-}, 'required': ['name', 'description', 'commentary', 'characterId', 'categoryIds', 'tags']}
+}, 'required': ['name', 'description', 'commentary', 'characterId', 'characterIds', 'categoryIds', 'tags']}
 REVIEW = {'type': 'object', 'additionalProperties': False, 'properties': {
     'verdict': {'type': 'string', 'enum': ['pass', 'reject', 'manual']},
     'confidence': {'type': 'number', 'minimum': 0, 'maximum': 1}, 'reason': STRING,
@@ -124,7 +125,7 @@ def register(ctx):
         ('dafeiyu_tasks', 'List tasks or read authoritative character/category rules. No generation.', {'action': {'type': 'string', 'enum': ['list', 'rules', 'sync']}}, action_handle, ['target', 'action']),
         ('dafeiyu_claim', 'Claim exactly one task. Save the returned token and pass it to every subsequent tool. No model call.', {}, partial(handle, 'claim'), ['target']),
         ('dafeiyu_read', 'Read a claimed task or attach its image directly to your native vision context. Never calls an auxiliary model.', {'action': {'type': 'string', 'enum': ['get', 'image']}}, action_handle, ['target', 'id', 'token', 'action']),
-        ('dafeiyu_save_draft', 'Validate and checkpoint all Chinese fields. Correct field errors and retry. Keep filled human fields unchanged. Submission tasks also require review.', {'content': CONTENT, 'review': REVIEW}, partial(handle, 'draft'), ['target', 'id', 'token', 'content']),
+        ('dafeiyu_save_draft', 'Validate and checkpoint all Chinese fields. Correct field errors and retry. Keep filled human fields unchanged. Include every confirmed visible character in characterIds; never guess absent characters. characterId is the primary member for new image directories. Submission tasks also require review.', {'content': CONTENT, 'review': REVIEW}, partial(handle, 'draft'), ['target', 'id', 'token', 'content']),
         ('dafeiyu_save_request', 'For target requests only: checkpoint an evidence-based rights decision. Apply only an exact requested metadata change or recoverable takedown. Conflicts/uncertain ownership use manual. Never permanently delete.', {'decision': {'type': 'object', 'additionalProperties': False, 'properties': {
             'verdict': {'type': 'string', 'enum': ['apply', 'manual']}, 'reason': STRING, 'quote': STRING,
             'requestType': {'type': 'string', 'enum': ['attribution', 'source-correction', 'license-correction', 'takedown']},

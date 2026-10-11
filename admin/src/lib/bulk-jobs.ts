@@ -13,6 +13,7 @@ export const EDIT_KEYS = [
   'description',
   'commentary',
   'characterId',
+  'characterIds',
   'categoryIds',
   'tags',
 ] as const
@@ -59,7 +60,8 @@ export function draftOf(doc: any, target: string, vocab: any) {
       description: fields.description || '',
       commentary: '',
       tags: fields.tags || [],
-      characterId: fields.characterId || fields.character || '',
+      characterId: fields.characterId || fields.character || fields.characterIds?.[0] || '',
+      ...(Array.isArray(fields.characterIds) ? { characterIds: fields.characterIds } : {}),
       categoryIds: fields.categoryIds || (fields.categoryId ? [fields.categoryId] : []),
       ...review,
       ...editorial,
@@ -76,6 +78,7 @@ export function draftOf(doc: any, target: string, vocab: any) {
     characterId:
       vocab.characters.find((c: any) => String(c.id) === String(relation(doc.character)))
         ?.characterId || '',
+    characterIds: (doc.characters?.length ? doc.characters : [doc.character]).map((value: any) => vocab.characters.find((c: any) => String(c.id) === String(relation(value)))?.characterId).filter(Boolean),
     categoryIds: (doc.categories || []).map(
       (c: any) =>
         vocab.categories.find((v: any) => String(v.id) === String(relation(c)))?.categoryId || '',
@@ -86,7 +89,7 @@ export function draftOf(doc: any, target: string, vocab: any) {
 }
 
 export function contentOnly(draft: any) {
-  return Object.fromEntries(EDIT_KEYS.map((key) => [key, draft[key]])) as any
+  return Object.fromEntries(EDIT_KEYS.filter((key) => draft[key] !== undefined).map((key) => [key, draft[key]])) as any
 }
 
 export function fingerprint(doc: any, target: string) {
@@ -98,6 +101,7 @@ export function fingerprint(doc: any, target: string) {
           commentary: doc.commentary,
           tags: doc.tags,
           character: doc.character,
+          characters: doc.characters,
           categories: doc.categories,
           origin: doc.origin,
           license: doc.license,
@@ -139,7 +143,7 @@ export function validatePatch(patch: any, vocab: any) {
     name: '校验',
     description: '',
     commentary: '',
-    characterId: [...vocab.characterIds][0],
+    characterId: patch.characterIds?.[0] || [...vocab.characterIds][0],
     categoryIds: [[...vocab.categoryIds][0]],
     tags: [],
     ...patch,
@@ -156,6 +160,8 @@ export function workPatch(content: any, vocab: any) {
   if ('tags' in content) data.tags = content.tags.map((value: string) => ({ value }))
   if ('characterId' in content)
     data.character = vocab.characters.find((c: any) => c.characterId === content.characterId)?.id
+  if ('characterIds' in content)
+    data.characters = content.characterIds.map((id: string) => vocab.characters.find((c: any) => c.characterId === id)?.id)
   if ('categoryIds' in content)
     data.categories = content.categoryIds.map(
       (id: string) => vocab.categories.find((c: any) => c.categoryId === id)?.id,
@@ -180,7 +186,8 @@ export async function prepareJobItem(
     return { doc, skipped: '已关联作品，不重复处理', data: null }
   const draft = { ...draftOf(doc, job.target, vocab), ...job.options?.drafts?.[id] }
   if (job.operation === 'write-fields') {
-    const patch = validatePatch(job.options.patch, vocab)
+    const patch: any = validatePatch(job.options.patch, vocab)
+    if (patch.characterIds) patch.characterId = patch.characterIds.includes(draft.characterId) ? draft.characterId : patch.characterIds[0]
     const changed = Object.fromEntries(
       Object.entries(patch).filter(([k, v]) => !isDeepStrictEqual(draft[k], v)),
     )

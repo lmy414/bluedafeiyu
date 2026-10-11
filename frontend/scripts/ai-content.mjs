@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { parseHTML } from 'linkedom';
 import { imageRights } from '../src/lib/image-metadata.mjs';
+import { workCharacterIds } from '../../tools/work-characters.mjs';
 
 export const ORIGIN = 'https://xn--pssy23gqgbz2d718b.com';
 export const hasAiMarkdown = route => /^\/(?:about|submit)\.html$|^\/(?:characters|categories|topics|works)\/[a-z0-9-]+\.html$/.test(route);
@@ -57,11 +58,11 @@ export function createAiDocuments(snapshot) {
       seen.add(row[field]);
     }
   }
-  const workList = list => list.map(w => `- ${link(w.name, `/works/${w.slug}.html.md`)}：${label(byCharacter.get(w.characterId)?.name || w.characterId)}；类型：${(w.categoryIds || []).map(id => label(byCategory.get(id)?.name || id)).join('、')}`).join('\n');
+  const workList = list => list.map(w => `- ${link(w.name, `/works/${w.slug}.html.md`)}：${workCharacterIds(w).map(id=>label(byCharacter.get(id)?.name || id)).join('、')}；类型：${(w.categoryIds || []).map(id => label(byCategory.get(id)?.name || id)).join('、')}`).join('\n');
   const fileLink = (name, route, note) => `- ${link(name, route + '.md')}: ${note}`;
   const roleFiles = [];
   for (const c of characters) {
-    const list = works.filter(w => w.characterId === c.id);
+    const list = works.filter(w => workCharacterIds(w).includes(c.id));
     if (!list.length) continue;
     const route = `/characters/${c.id}.html`;
     documents.set(route + '.md', page(c.name, route, `角色别名：${(c.aliases || []).map(label).join('、') || '未标注'}。\n\n当前公开作品：${list.length} 件。\n\n## 作品索引\n\n${workList(list)}`));
@@ -88,7 +89,7 @@ export function createAiDocuments(snapshot) {
     const original = w.originalUrl || w.path;
     const fields = [
       `- 作品 ID：${label(w.id)}`,
-      `- 角色：${label(byCharacter.get(w.characterId)?.name || w.characterId)}`,
+      `- 角色：${workCharacterIds(w).map(id=>label(byCharacter.get(id)?.name || id)).join('、')}`,
       `- 类型：${(w.categoryIds || []).map(id => label(byCategory.get(id)?.name || id)).join('、')}`,
       `- 标签：${(w.tags || []).map(label).join('、') || '未标注'}`,
       `- 来源作者：${label(rights.creator) || '未标注'}`,

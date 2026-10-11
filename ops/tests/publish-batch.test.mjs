@@ -35,6 +35,14 @@ import {
   sniffImage,
 } from '../publish-batch.mjs';
 import { QQ_GROUP_ORIGIN } from '../../server/adapters/qq.mjs';
+import { checkTemplateSync } from '../../tools/sync_issue_template.mjs';
+
+test('角色模板校验要求 multiple，类型仍维持单选', () => {
+  const characters = [{ id: 'deepseek', name: 'DeepSeek娘', inSubmissionForm: true }];
+  const yamlText = '- type: dropdown\n  id: character\n  attributes:\n    multiple: true\n    options:\n        - "DeepSeek娘（deepseek）"\n';
+  assert.equal(checkTemplateSync({ characters, yamlText }).ok, true);
+  assert.equal(checkTemplateSync({ characters, yamlText: yamlText.replace('multiple: true', 'multiple: false') }).ok, false);
+});
 
 /* 真的 1x1 PNG / GIF，用来造合法图片字节 */
 const TINY_PNG = Buffer.from(
@@ -284,6 +292,24 @@ test('planBatch：合格条目生成公开记录', async (t) => {
   assert.equal(item.record.createdAt, '2026-09-26T00:00:00.000Z');
   assert.equal(item.originalRel.startsWith('dist/submissions/originals/deepseek/'), true);
   assert.equal(item.previewRel.endsWith('.webp'), true);
+});
+
+test('planBatch：多角色保留，目录/id沿用代表角色；非法集合留在 ready', async (t) => {
+  const ws = await makeWorkspace(t);
+  const entry = writeReady(ws);
+  const cfg = configFor(ws);
+  const manifests = loadManifests(cfg.siteDataDir);
+  const single = planBatch(cfg, [entry], manifests).publishable[0];
+  entry.fields.characterIds = ['deepseek', 'other'];
+  const multi = planBatch(cfg, [entry], manifests).publishable[0];
+  assert.deepEqual(multi.record.characterIds, ['deepseek', 'other']);
+  assert.equal(multi.originalRel, single.originalRel);
+  assert.equal(multi.record.id, single.record.id);
+  assert.equal(multi.record.slug, single.record.slug);
+  for (const ids of [[], ['other'], ['deepseek', 'deepseek'], ['deepseek', 'unknown'], 'deepseek,other', [1]]) {
+    entry.fields.characterIds = ids;
+    assert.equal(planBatch(cfg, [entry], manifests).publishable.length, 0);
+  }
 });
 
 test('planBatch：署名发布到 submitter，来源不变，匿名不泄露 GitHub 用户名', async (t) => {
