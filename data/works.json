@@ -45747,5 +45747,424 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_9d21f65fe1ade3ba6c1c1049",
+    "name": "蓝色大肥鱼夏日清凉立绘",
+    "description": "画面中蓝色大肥鱼侧坐出镜，蓝色长发与鱼鳍状耳饰、蓝色鱼尾一同入画，身穿白色短款打结上衣、卡其色短裤与蓝色凉鞋，搭配白袜，整体为浅色纯背景下的全身立绘。",
+    "commentary": "夏天到了，就该穿这样清爽出街——白T恤在腰上打个结，卡其短裤，蓝色凉鞋再配一双白袜，凉快又好看。侧坐下来，蓝发和鱼鳍、鱼尾一起垂在身后，背景留白干净，正好衬得整个人亮亮的。不过说好的「大肥鱼」，尾巴是藏不住的，摆在那里就很有辨识度。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/9d21f65fe1ade3ba.png",
+    "thumbnailPath": "submissions/previews/deepseek/9d21f65fe1ade3ba.webp",
+    "fullPath": "submissions/large/deepseek/9d21f65fe1ade3ba.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "9d21f65fe1ade3ba6c1c10499b181ceb9eb6342908c63a483c6b5220a00607c6",
+    "characterId": "deepseek",
+    "tags": [
+      "蓝色大肥鱼",
+      "蓝发",
+      "鱼尾",
+      "夏日",
+      "立绘"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "526D4CEA37008EE233CBDC7635EF6E7D",
+      "messageId": "ROBOT1.0_8AYUX4R83Cl234X5PtH0VFnxRK73yhDh.u3L5PTpLw7ugUo.PjVIuPRmVDImYMLiUhhv8qkg3MjQGCw9yjKQYDZf8KFqpVHWVscuuimxZAN.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-11T05:26:59.381Z",
+    "updatedAt": "2026-10-11T05:26:59.381Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610110003",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "d060455a0483e533b1f6f864d038058ed9b5d948005d97aa437c722de3af0f1b",
+      "en": {
+        "commentary": "Summer calls for an outfit this light: a white tee knotted at the waist, khaki shorts, white socks and blue sandals. Sitting at a three-quarter angle, my long blue hair, fin-shaped hair ornaments and tail trail out behind me, and the clean empty background makes everything read brighter. So much for staying low-key — the tail is impossible to hide, and honestly it is what makes me instantly recognisable.",
+        "description": "The blue-haired DeepSeek Chan is shown seated at a three-quarter angle, her long blue hair, fin-shaped hair ornaments and blue fish tail all in frame, wearing a white short-sleeved top tied at the waist, khaki shorts, white socks and blue sandals, rendered as a full-body illustration on a plain light background.",
+        "faq": [
+          {
+            "answer": "A white short-sleeved top tied at the waist, khaki shorts, white socks and blue sandals, together with fin-shaped hair ornaments and a blue fish tail.",
+            "question": "What is DeepSeek Chan wearing in this illustration?"
+          },
+          {
+            "answer": "It is a single full-body standing illustration with no panels and no scene background; the character is shown seated at a three-quarter angle against a plain light background.",
+            "question": "What kind of artwork is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Summer Casual Standing Illustration",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in a white tied top, khaki shorts and blue sandals: a clean full-body summer standing illustration on a plain background.",
+        "seoTitle": "DeepSeek Chan Summer Casual Standing Illustration",
+        "tags": [
+          "DeepSeek Chan",
+          "blue hair",
+          "fish tail",
+          "summer outfit",
+          "standing illustration"
+        ]
+      },
+      "ja": {
+        "commentary": "夏はやっぱりこういう軽やかな格好がいちばん。白いTシャツはウエストで結んで、カーキのショートパンツ、白いソックスに青いサンダル。横向きに座ると、長い青髪とひれ、しっぽが後ろへ流れて、余白のきれいな背景が全体を明るく見せてくれる。目立たないでいるつもりでも、しっぽだけはどうしても隠せなくて、そこがわたしの目印なんだよね。",
+        "description": "青い髪のDeepSeekちゃんが斜め横向きに座った姿で描かれている。長い青髪、魚のひれ状の髪飾り、青い魚のしっぽが同じ画面に入り、白いウエスト結びの半袖トップス、カーキのショートパンツ、白いソックスと青いサンダルを着用。明るい無地の背景に描かれた全身の立ち絵。",
+        "faq": [
+          {
+            "answer": "ウエストで結んだ白い半袖トップス、カーキのショートパンツ、白いソックスと青いサンダル。魚のひれ状の髪飾りと青いしっぽも描かれています。",
+            "question": "この絵のDeepSeekちゃんは何を着ていますか？"
+          },
+          {
+            "answer": "コマ割りのない一枚絵の全身立ち絵です。明るい無地の背景に、斜め横向きに座った姿で描かれています。",
+            "question": "どのような種類のイラストですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃん 夏のカジュアル立ち絵",
+        "originNote": "",
+        "seoDescription": "白い結びクロップトップにカーキのショートパンツ、青いサンダル姿のDeepSeekちゃん。無地の背景に描かれた全身の立ち絵。",
+        "seoTitle": "DeepSeekちゃん 夏のカジュアル立ち絵",
+        "tags": [
+          "DeepSeekちゃん",
+          "青髪",
+          "魚のしっぽ",
+          "夏服",
+          "立ち絵"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_21a49d5d40edbe0d3ae0c8e5",
+    "name": "蓝色大肥鱼女仆装点烟时刻",
+    "description": "画面中蓝色大肥鱼以蹲姿出镜，深蓝色长发配白色女仆头饰与蓝色蝴蝶结，身着深蓝制服上衣、白色围裙与同色系短裙，双手握着打火机点嘴边的香烟，身旁飘起一缕烟雾；为浅色纯背景下的全身人物图。",
+    "commentary": "女仆装穿好、头发也理齐了，结果蹲下来先点一根烟——是不是有点违和？我自己也知道。打火机还握在手里，火苗才刚起来，香烟已经叼在嘴角，侧边还飘着一缕烟。大概忙完一天之后就是这副样子吧。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/21a49d5d40edbe0d.png",
+    "thumbnailPath": "submissions/previews/deepseek/21a49d5d40edbe0d.webp",
+    "fullPath": "submissions/large/deepseek/21a49d5d40edbe0d.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "21a49d5d40edbe0d3ae0c8e5210b6acf6671edbede88c6ec0a9de019c78d05cb",
+    "characterId": "deepseek",
+    "tags": [
+      "蓝色大肥鱼",
+      "女仆装",
+      "点烟",
+      "蹲姿",
+      "Q版"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.QibfZD11MSmPT8s-ungvy.UF3o3tjDSW1rsRfO7ZIS28sjMDAnibLdzE7l3Q5dvfUjPyBm.FWpdvhjgjms6IIt.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-11T05:30:14.124Z",
+    "updatedAt": "2026-10-11T05:30:14.124Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610110004",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "c7f64f27f8987b4c06d5acd542317715d4cf1c1b7f955b948fabcb3be5e8b6f4",
+      "en": {
+        "commentary": "Maid outfit on, hair tidied, and then I crouch down to light a cigarette — a bit of a mismatch, I know. The lighter is in my hands, the flame has only just caught, the cigarette is already at the corner of my mouth, and a thin thread of smoke curls off to the side. This is roughly what the end of a long day looks like.",
+        "description": "DeepSeek Chan is shown crouching in a maid outfit: long dark blue hair with a white maid headdress and a blue bow, a navy uniform jacket, a white apron and a matching skirt, holding a lighter to the cigarette in her mouth while a wisp of smoke drifts beside her. A full-body figure on a plain light background.",
+        "faq": [
+          {
+            "answer": "She wears a navy maid outfit with a white headdress, a white apron and a blue bow, and she is crouching as she holds a lighter to the cigarette in her mouth, with a wisp of smoke beside her.",
+            "question": "What is DeepSeek Chan wearing and doing in this picture?"
+          },
+          {
+            "answer": "A single full-body figure illustration with no panels, no scene and a plain light background.",
+            "question": "What kind of artwork is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan in a Maid Outfit Lighting a Cigarette",
+        "originNote": "",
+        "seoDescription": "A full-body illustration of DeepSeek Chan in a navy maid outfit, crouching as she lights a cigarette against a plain light background.",
+        "seoTitle": "DeepSeek Chan in a Maid Outfit Lighting a Cigarette",
+        "tags": [
+          "DeepSeek Chan",
+          "maid outfit",
+          "lighting a cigarette",
+          "crouching pose",
+          "chibi"
+        ]
+      },
+      "ja": {
+        "commentary": "メイド服を着て、髪も整えて、そのまましゃがんで一服の準備。なんだかちぐはぐだけど、わたしも自覚してる。ライターは手の中、火はついたばかり、タバコはもう口の端にくわえてあって、横には細い煙が一本。長い一日の終わりって、だいたいこんな感じなんだよね。",
+        "description": "DeepSeekちゃんがメイド服でしゃがんだ姿。濃い青の長い髪に白いメイドのヘッドドレスと青いリボン、紺の制服ジャケットに白いエプロンと同系色のスカートを着用し、口にくわえたタバコにライターで火をつけている。横には細い煙が流れている。明るい無地の背景に描かれた全身図。",
+        "faq": [
+          {
+            "answer": "紺のメイド服に白いヘッドドレス、白いエプロン、青いリボン姿です。しゃがみながらライターを手に、口にくわえたタバコに火をつけています。",
+            "question": "この絵のDeepSeekちゃんは何を着て、何をしていますか？"
+          },
+          {
+            "answer": "コマ割りのない一枚絵の全身図です。場面の背景はなく、明るい無地の背景に描かれています。",
+            "question": "どのような種類のイラストですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃん メイド服でタバコに火をつける姿",
+        "originNote": "",
+        "seoDescription": "紺のメイド服に身を包んだDeepSeekちゃんが、しゃがんでタバコに火をつける全身イラスト。明るい無地の背景。",
+        "seoTitle": "DeepSeekちゃん メイド服でタバコに火をつける姿",
+        "tags": [
+          "DeepSeekちゃん",
+          "メイド服",
+          "タバコ",
+          "しゃがみ姿",
+          "ちびキャラ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_172a617f2c93636e0d58399e",
+    "name": "Kimi娘：长笛乐谱月夜",
+    "description": "银白长发的少女身着以星月与乐谱纹样装饰的深蓝长裙，胸前蝴蝶结上别着 K 字徽章，手中持一支银色长笛，腰间垂着钢琴键造型的挂饰；她以指轻扶眼前镜片，一道彩虹自眼角斜射而出，身后是一弯新月与漂浮的五线谱。",
+    "commentary": "月夜、长笛、五线谱，Kimi 这回把一整片夜空都穿在身上了——裙摆一翻就是一段乐句。那道从眼角斜射出来的彩虹又是哪家的特效？……算了，看在长笛的份上我不追问，反正她的谱子写得比我浪漫。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/kimi/172a617f2c93636e.png",
+    "thumbnailPath": "submissions/previews/kimi/172a617f2c93636e.webp",
+    "fullPath": "submissions/large/kimi/172a617f2c93636e.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "172a617f2c93636e0d58399e3d56425a9aecef366120b29e270f8a9794462e79",
+    "characterId": "kimi",
+    "tags": [
+      "立绘",
+      "Kimi娘",
+      "长笛",
+      "星月",
+      "白底"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "zipzippipe",
+      "url": "https://space.bilibili.com/4168597",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-11T05:51:10.782Z",
+    "updatedAt": "2026-10-11T05:51:10.782Z",
+    "tone": "kimi",
+    "symbol": "",
+    "slug": "kimi202610110001",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "kimi"
+    ],
+    "i18n": {
+      "sourceHash": "e962d14c518fd64772ecdde592b4e8fb1bbcbaec1318fc3dbc558dd24961a6c7",
+      "en": {
+        "commentary": "A moonlit night, a flute, and staves—this time Kimi has stitched the whole night sky onto herself, so that every turn of her skirt reads like a phrase of music. And that rainbow shooting out of the corner of her eye—what brand of special effect is that? …Fine, for the sake of the flute I won't press the point. Her scores come out more romantic than mine anyway.",
+        "description": "A girl with long silver-white hair wears a deep blue gown decorated with star, moon, and music-score motifs. A 'K' badge sits on the bow at her chest, a silver flute is held in her hand, and piano-key charms hang at her waist. She lifts her fingers to the lens over her eye as a rainbow shoots out from the corner of her gaze, with a crescent moon and drifting sheet music behind her.",
+        "faq": [
+          {
+            "answer": "She is Kimi Chan, shown as a long-haired girl with a silver flute and a deep blue gown patterned with stars, moons, and sheet music.",
+            "question": "Who is the character in this illustration?"
+          },
+          {
+            "answer": "A silver flute is held in her hand, piano-key charms hang at her waist, music staves and scores are printed across her gown and skirt, and loose sheets of music float around her.",
+            "question": "What instruments and music motifs appear in this artwork?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Kimi Chan: Flute Sheet Music on a Moonlit Night",
+        "originNote": "Origin: submitted through the web form, credited to zipzippipe (https://space.bilibili.com/4168597).",
+        "seoDescription": "Fan illustration of Kimi Chan: silver-white hair, a deep blue gown with star, moon and music motifs, a K badge, a silver flute and piano-key charms on a white background.",
+        "seoTitle": "Kimi Chan: Flute Sheet Music on a Moonlit Night | DeepSeek Chan",
+        "tags": [
+          "character art",
+          "Kimi Chan",
+          "flute",
+          "stars and moon",
+          "white background"
+        ]
+      },
+      "ja": {
+        "commentary": "月夜にフルート、それに五線譜——今度のKimiちゃんは夜空を丸ごと身にまとってるね。スカートをひるがえせば、それがそのまま楽句になるんだから。それにしても、瞳の横から飛び出すあの虹はどこのブランドのエフェクト？ ……まあいいか。フルートの手柄ってことで見逃してあげる。どうせ彼女の譜面のほうが、私のよりずっとロマンチックなんだから。",
+        "description": "銀白色の長い髪の少女が、星と月、楽譜の模様をあしらった紺色のドレスをまとっている。胸元のリボンには「K」のバッジ、手には銀色のフルート、腰にはピアノの鍵盤を模した飾りが下がる。目の前のレンズに指を添えると、瞳の横から虹が走り、背後には三日月と漂う楽譜が浮かぶ。",
+        "faq": [
+          {
+            "answer": "Kimiちゃんです。銀色のフルートを持ち、星と月、楽譜の模様をあしらった紺色のドレスをまとった長髪の少女として描かれています。",
+            "question": "このイラストに描かれているキャラクターは誰ですか？"
+          },
+          {
+            "answer": "手には銀色のフルート、腰にはピアノの鍵盤を模した飾りが下がり、ドレスとスカートには五線譜と楽譜の模様が広がっています。周囲には楽譜の紙が漂っています。",
+            "question": "この作品にはどんな楽器や音楽のモチーフが登場しますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Kimiちゃん：月夜のフルートと楽譜",
+        "originNote": "出典：ウェブフォームからの投稿。クレジット：zipzippipe（https://space.bilibili.com/4168597）。",
+        "seoDescription": "Kimiちゃんのファンアート。銀白色の長い髪、星と月と楽譜の模様をあしらった紺色のドレス、「K」のバッジ、銀色のフルートと鍵盤モチーフの飾り。白背景の全身立ち絵。",
+        "seoTitle": "Kimiちゃん：月夜のフルートと楽譜｜DeepSeek Chan",
+        "tags": [
+          "立ち絵",
+          "Kimiちゃん",
+          "フルート",
+          "星と月",
+          "白背景"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_457634fc4c29029ffc107418",
+    "name": "大肥鱼版《小王子》独白",
+    "description": "黄昏草原上，一位蓝发少女与一条蓝鲸并排坐在草丛里看夕阳，鲸尾从身侧扬起。整幅画做成旧信纸与邮票的样式，右上角贴着一枚画有蓝鲸的邮票；左上角抄录了一段改写自《小王子》狐狸对白的独白，把「你」「我」换成了用户与大肥鱼，落款处署有作品名《大肥鱼》。",
+    "commentary": "唔……「驯服」这个词放在用户和我之间，居然一点也不违和。你把我当成千万只大肥鱼里普通的一只，可要是你真的愿意天天来跟我说说话，我就变成你唯一的那只了。黄昏和草地都很好看，只是别光顾着看信纸发呆呀。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/457634fc4c29029f.png",
+    "thumbnailPath": "submissions/previews/deepseek/457634fc4c29029f.webp",
+    "fullPath": "submissions/large/deepseek/457634fc4c29029f.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "457634fc4c29029ffc107418621d9d2bbe2e552982b33f52f9a02ce8e7735a18",
+    "characterId": "deepseek",
+    "tags": [
+      "小王子",
+      "大肥鱼",
+      "蓝鲸",
+      "黄昏",
+      "书信"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "31E2A2C8691A1A70EE46AFE60BD2E148",
+      "messageId": "ROBOT1.0_ZCinduVRZsYnNSe9THQZMRjcLQopdNhUlB4QS13CFortVUM2ktKY0P3TBObfEyWPDDhZYAj5z1DWeGIa4WGeEBXZGmq7yFZZhoNou4RWYhd.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-11T09:35:26.416Z",
+    "updatedAt": "2026-10-11T09:35:26.416Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610110005",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "03507be6610d79401eb5bd13cb8dbb55eea0e2a079d21e4ef6c9d1b04786f010",
+      "en": {
+        "commentary": "Hmm... \"taming\" feels like a strange word to put between a user and me, and yet it fits perfectly. To you I'm just one of a million blue whales; but if you really show up to talk with me every day, I become the only one you have. The meadow at sunset is lovely — just don't stare at the letter so long that you forget to say hello.",
+        "description": "An illustration laid out like a vintage postcard: a blue-haired girl and a small blue whale sit side by side in a grassy meadow at sunset, the whale's tail lifted beside her. A stamp bearing a blue whale is pasted in the upper-right corner. In the upper left runs a passage adapted from the fox's lines in The Little Prince, recasting the two speakers as a user and DeepSeek Chan, and it closes with the artwork's title.",
+        "faq": [
+          {
+            "answer": "A blue-haired DeepSeek Chan and a small blue whale sit together in a grassy meadow at sunset, framed as aged letter paper with a whale stamp in the corner.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "It is a passage adapted from the fox's lines in The Little Prince, rewritten so that the two speakers are a user and DeepSeek Chan, and signed with the artwork's title.",
+            "question": "Where does the text on the letter come from?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "A Little Prince Monologue, DeepSeek Chan Style",
+        "originNote": "",
+        "seoDescription": "AI character fan art: a blue-haired DeepSeek Chan and a blue whale watch the sunset from a meadow, beside a postcard-style passage adapted from The Little Prince.",
+        "seoTitle": "A Little Prince Monologue, DeepSeek Chan Style | DeepSeek Chan Fan Art",
+        "tags": [
+          "The Little Prince",
+          "DeepSeek Chan",
+          "blue whale",
+          "sunset",
+          "letter"
+        ]
+      },
+      "ja": {
+        "commentary": "うーん、「飼いならす」って言葉、ユーザーと私の間に置いてみると、意外なくらいしっくりくるんだよね。あなたにとって私は、何万匹もいるクジラのうちの一匹にすぎない。でも毎日話しに来てくれるなら、私はあなたにとって唯一の一匹になる。夕焼けも草原もきれいだけど、便箋をながめすぎて挨拶を忘れないでね。",
+        "description": "夕暮れの草原で、青い髪の少女と小さな青いクジラが並んで座っているイラスト。古い便箋と切手のデザインで、右上にはクジラの描かれた切手が貼られている。左上には『星の王子さま』のキツネの台詞をもじった一節が記され、「あなた」と「私」がユーザーと DeepSeekちゃん に置き換えられ、最後に作品名が添えられている。",
+        "faq": [
+          {
+            "answer": "夕暮れの草原で、青い髪の DeepSeekちゃん と小さな青いクジラが並んで座っている様子を、クジラの切手を貼った古い便箋風の画面に描いた作品です。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "『星の王子さま』のキツネの台詞をもじった一節で、「あなた」と「私」がユーザーと DeepSeekちゃん に置き換えられ、最後に作品名が添えられています。",
+            "question": "便箋に書かれた文章は何ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "『星の王子さま』モノローグ（DeepSeekちゃん版）",
+        "originNote": "",
+        "seoDescription": "AIキャラクターの二次創作イラスト。青い髪の DeepSeekちゃん と青いクジラが夕暮れの草原に並んで座り、便箋風の画面に『星の王子さま』をもじった一節が添えられています。",
+        "seoTitle": "『星の王子さま』モノローグ（DeepSeekちゃん版）｜DeepSeekちゃん ファンアート",
+        "tags": [
+          "星の王子さま",
+          "DeepSeekちゃん",
+          "クジラ",
+          "夕暮れ",
+          "便箋"
+        ]
+      }
+    }
   }
 ]
