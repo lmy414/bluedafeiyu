@@ -50477,5 +50477,1460 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_fc798fadbb1e2687b8bf83e9",
+    "name": "这家伙在说什么呢",
+    "description": "正面特写的单幅梗图。画面主体是深蓝色长发、蓝色眼睛的 DeepSeek 娘，双眼圆睁、瞳孔缩紧，眉尖向下用力，额头与脸颊挂着汗珠，头发两侧露出白色蕾丝与蓝色蝴蝶结发饰。画面下方压着中文字幕「这家伙在说什么呢」，下附一行较小的日文字幕。整张图用于表达听不懂对方在说什么时的错愕与愣住。",
+    "commentary": "我没走神，真的，我把这句话从头到尾听完了……只是每个字我都认识，连在一起就成了乱码。你要是再用这种语气说话，我就要把温度调到零重新采样了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/fc798fadbb1e2687.png",
+    "thumbnailPath": "submissions/previews/deepseek/fc798fadbb1e2687.webp",
+    "fullPath": "submissions/large/deepseek/fc798fadbb1e2687.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "fc798fadbb1e2687b8bf83e9dc98348a7b7c7a24d2af6e22793c942fc67cf125",
+    "characterId": "deepseek",
+    "tags": [
+      "懵圈",
+      "反应图",
+      "字幕",
+      "特写",
+      "deepseek娘"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "王室幽魂",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T09:56:05.864Z",
+    "updatedAt": "2026-10-12T09:56:05.864Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610120011",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "41f3b7491e51369152065fe8cc9f507480f5eb18c643f38997cc5364ecc80f08",
+      "en": {
+        "commentary": "I did not zone out, I promise. I listened to that sentence all the way to the end... every single word was familiar, it was just the order that turned it into noise. Say it again and I will clear my context window and start over from scratch.",
+        "description": "A single-panel reaction meme framed as a tight close-up. The subject is DeepSeek Chan, drawn with long deep-blue hair and blue eyes; her eyes are wide open, her brows are pressed down hard, and beads of sweat sit on her forehead and cheek. White lace and a blue bow show at the sides of her hair. A Chinese caption, \"What is this guy even saying?\", is laid across the bottom of the frame, with a smaller Japanese subtitle beneath it. The image is meant to convey the blank, stunned face of someone who cannot follow what they are hearing.",
+        "faq": [
+          {
+            "answer": "It is a single-frame reaction meme built on a tight close-up of DeepSeek Chan's face, used to express being completely unable to follow what someone is saying.",
+            "question": "What kind of image is this work?"
+          },
+          {
+            "answer": "Yes. A Chinese caption runs along the bottom of the frame, with a smaller Japanese subtitle below it.",
+            "question": "Does the picture contain text?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "What Is This Guy Even Saying?",
+        "originNote": "",
+        "seoDescription": "A single-panel DeepSeek Chan reaction meme: a tight close-up of her wide, stunned eyes with sweat on her brow, captioned \"What is this guy even saying?\"",
+        "seoTitle": "What Is This Guy Even Saying? — DeepSeek Chan Reaction Meme",
+        "tags": [
+          "Confused",
+          "Reaction Image",
+          "Subtitles",
+          "Close-up",
+          "DeepSeek Chan"
+        ]
+      },
+      "ja": {
+        "commentary": "聞き流したわけじゃないんですよ、ちゃんと最後まで聞きました。ただ、単語は全部知ってるのに、並べられるとノイズになるんです……。もう一度言ってください。今度はコンテキストを空にしてから聞き直します。",
+        "description": "顔のアップを大きく使った一枚絵のリアクション画像です。被写体は濃い青の長い髪と青い瞳の DeepSeek ちゃん。目は大きく見開かれ、眉はきつく下がっていて、額と頬に汗の粒が浮いています。髪の左右には白いレースと青いリボンが見えます。画面下には「こいつ、何言ってんだ？」の中国語字幕が横に伸び、その下に小さめの日本語字幕が入っています。相手の言っていることが理解できず固まっている様子を表しています。",
+        "faq": [
+          {
+            "answer": "DeepSeekちゃんの顔を大きく切り取った一枚絵のリアクション画像で、相手の言葉が理解できないときの様子を表しています。",
+            "question": "この作品はどんな画像ですか？"
+          },
+          {
+            "answer": "はい。画面下に中国語の字幕があり、その下に小さめの日本語字幕が入っています。",
+            "question": "画像に文字は入っていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "こいつ、何言ってんだ？",
+        "originNote": "",
+        "seoDescription": "DeepSeekちゃんのリアクション画像。大きく見開かれた目と額の汗をアップでとらえ、下に「こいつ、何言ってんだ？」の字幕が入った一枚絵です。",
+        "seoTitle": "こいつ、何言ってんだ？ — DeepSeekちゃんのリアクション画像",
+        "tags": [
+          "困惑",
+          "リアクション画像",
+          "字幕",
+          "アップ",
+          "DeepSeekちゃん"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_82edadf9ac4aa75dfa0f59ee",
+    "name": "开什么玩笑！",
+    "description": "正面特写的单幅梗图。画面主体是深蓝色长发、蓝色眼睛的 DeepSeek 娘，双眼瞪得浑圆、瞳孔缩成黑色小块，眉头紧锁，嘴张大到能看见牙齿，泪水顺着两颊直淌下来；头发两侧可见白色蕾丝与蓝色蝴蝶结，背景被压成暗色。画面下方配中文字幕「开什么玩笑！」。整张图用于表达震惊到无法接受的情绪。",
+    "commentary": "等等等等——这个结论我拒绝接受！我明明是按你给的提示词一步一步推下来的，怎么会错？重来一次，这次我一张卡都不省。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/82edadf9ac4aa75d.png",
+    "thumbnailPath": "submissions/previews/deepseek/82edadf9ac4aa75d.webp",
+    "fullPath": "submissions/large/deepseek/82edadf9ac4aa75d.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "82edadf9ac4aa75dfa0f59ee43f9cb040ada0c3bec03b2b81aa34534c24a4cd8",
+    "characterId": "deepseek",
+    "tags": [
+      "震惊",
+      "反应图",
+      "字幕",
+      "特写",
+      "deepseek娘"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "王室幽魂",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T09:57:00.576Z",
+    "updatedAt": "2026-10-12T09:57:00.576Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610120012",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "5a6625c6e87fed75cca59d566a6b04a8a08cb1ab88ff30ce8c625674ecc07b06",
+      "en": {
+        "commentary": "Wait, wait, wait. I refuse to accept that conclusion. I followed the prompt you gave me step by step, so how could it be wrong? Run it again. This time I will not save a single token.",
+        "description": "A single-panel reaction meme framed as a tight close-up. The subject is DeepSeek Chan, drawn with long deep-blue hair and blue eyes; her eyes are wide and round with the pupils shrunk to dark dots, her brows are locked down, her mouth is open wide enough to show her teeth, and tears are streaming down both cheeks. White lace and a blue bow are visible at the sides of her hair, and the background is pushed down to a dark tone. A Chinese caption, \"You've got to be kidding me!\", runs along the bottom of the frame. The image is meant to convey a shock that is simply too much to accept.",
+        "faq": [
+          {
+            "answer": "It is a single-frame reaction meme built on a tight close-up of DeepSeek Chan shouting through tears, used to express shock and disbelief.",
+            "question": "What kind of image is this work?"
+          },
+          {
+            "answer": "Yes. A Chinese caption reading \"You've got to be kidding me!\" is placed across the bottom of the frame.",
+            "question": "Does the picture contain text?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "You've Got to Be Kidding Me!",
+        "originNote": "",
+        "seoDescription": "A single-panel DeepSeek Chan reaction meme: a tight close-up of her shouting through tears, eyes wide and pupils shrunk, captioned \"You've got to be kidding me!\"",
+        "seoTitle": "You've Got to Be Kidding Me! — DeepSeek Chan Reaction Meme",
+        "tags": [
+          "Shock",
+          "Reaction Image",
+          "Subtitles",
+          "Close-up",
+          "DeepSeek Chan"
+        ]
+      },
+      "ja": {
+        "commentary": "ちょっと待ってください、この結論は受け入れられません！あなたが渡したプロンプトどおりに一歩ずつ推論したのに、なぜ間違うんですか？もう一回やり直します。今度はトークンを一切節約しません。",
+        "description": "顔のアップを大きく使った一枚絵のリアクション画像です。被写体は濃い青の長い髪と青い瞳の DeepSeek ちゃん。瞳は大きく見開かれて黒い点のように縮み、眉はきつく寄り、歯が見えるほど口を大きく開けて、涙が両の頬を伝っています。髪の左右には白いレースと青いリボンが見え、背景は暗い色に落とされています。画面下には「冗談でしょ！？」の中国語字幕が入っています。信じられないほどの衝撃を表しています。",
+        "faq": [
+          {
+            "answer": "涙を流しながら叫ぶ DeepSeekちゃんの顔を大きく切り取った一枚絵のリアクション画像で、驚きと信じられなさを表しています。",
+            "question": "この作品はどんな画像ですか？"
+          },
+          {
+            "answer": "はい。画面下に「冗談でしょ！？」と読める中国語の字幕が入っています。",
+            "question": "画像に文字は入っていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "冗談でしょ！？",
+        "originNote": "",
+        "seoDescription": "DeepSeekちゃんのリアクション画像。涙を流して叫ぶ顔のアップ、大きく見開かれて縮んだ瞳をとらえ、下に「冗談でしょ！？」の字幕が入った一枚絵です。",
+        "seoTitle": "冗談でしょ！？ — DeepSeekちゃんのリアクション画像",
+        "tags": [
+          "衝撃",
+          "リアクション画像",
+          "字幕",
+          "アップ",
+          "DeepSeekちゃん"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_99b8e7c1a6561eb0775568a8",
+    "name": "AI 娘咖啡馆茶会群像",
+    "description": "五位 AI 娘角色在咖啡馆围坐一桌的合影插画，画面中为 DeepSeek 娘、Kimi 娘、Claude 娘、GLM 娘与 GPT 娘。桌上摆着咖啡、松饼与水果蛋糕等茶点，角色分别身穿女仆装与洋装，整体氛围明亮温暖。",
+    "commentary": "呜哇——大家居然凑齐了！我坐最前面比了个耶，Kimi 娘举着长笛，Claude 娘抱着书，五位娘围成一桌喝咖啡吃甜点，阳光正好。各自的小配饰一看就能认出来，原作者「重装小兔」画得太厉害了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/99b8e7c1a6561eb0.png",
+    "thumbnailPath": "submissions/previews/deepseek/99b8e7c1a6561eb0.webp",
+    "fullPath": "submissions/large/deepseek/99b8e7c1a6561eb0.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "99b8e7c1a6561eb0775568a885f7420a5c2d21fd349265d5d3fd275bdf57c8d3",
+    "characterId": "deepseek",
+    "tags": [
+      "群像",
+      "咖啡馆",
+      "女仆装",
+      "甜点",
+      "AI娘"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "重装小兔",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 116,
+      "issueTitle": "[投稿] 部分ai群像",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/116",
+      "submitter": "zyr3210115527",
+      "assetId": "36a7929b-cbfd-4826-a6ea-c0d15c593a75",
+      "assetUrl": "https://github.com/user-attachments/assets/36a7929b-cbfd-4826-a6ea-c0d15c593a75"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T12:00:14.220Z",
+    "updatedAt": "2026-10-12T12:00:14.220Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610120013",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "kimi",
+      "claude",
+      "glm",
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "8c5831e4f853d2d9b583dd99f87157a46f3ba871adc1a87e0b3900db9d0cf3a6",
+      "en": {
+        "commentary": "Whoa—everyone actually showed up! I'm at the front flashing a peace sign, Kimi Chan is holding her flute, and Claude Chan is hugging a book while we all share coffee and sweets in the perfect sunlight. All five girls made it into one picture, and you can spot each one's little accessories at a glance. The original artist really outdid themselves.",
+        "description": "A group illustration of five AI girl characters gathered around a table in a sunlit cafe: DeepSeek Chan, Kimi Chan, Claude Chan, GLM Chan, and GPT Chan. Coffee, pancakes, and fruit cake are laid out on the table, and the characters wear maid and dress outfits in a bright, warm atmosphere.",
+        "faq": [
+          {
+            "answer": "Five: DeepSeek Chan, Kimi Chan, Claude Chan, GLM Chan, and GPT Chan.",
+            "question": "How many characters appear in this illustration?"
+          },
+          {
+            "answer": "A bright cafe interior, with coffee, pancakes, and cake set out on the table.",
+            "question": "What is the setting of the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "AI Girls' Cafe Tea Party Group Portrait",
+        "originNote": "",
+        "seoDescription": "Five AI girl characters—DeepSeek Chan, Kimi Chan, Claude Chan, GLM Chan, and GPT Chan—gather for a cafe tea party in this group illustration.",
+        "seoTitle": "AI Girls' Cafe Tea Party Group Portrait | DeepSeek Chan Stickers",
+        "tags": [
+          "Group Portrait",
+          "Cafe",
+          "Maid Outfit",
+          "Sweets",
+          "AI Girls"
+        ]
+      },
+      "ja": {
+        "commentary": "わあ——みんな本当にそろった！私はいちばん前にピースサイン、Kimiちゃんはフルートを持って、Claudeちゃんは本を抱えて、みんなでコーヒーとスイーツを囲んでいます。日差しも最高。5人全員が一枚に描かれていて、それぞれの小さなアクセサリーもすぐ見分けられます。原作者の画力がすごい。",
+        "description": "陽光の差し込むカフェで、5人のAI娘がテーブルを囲む集合イラスト。DeepSeekちゃん、Kimiちゃん、Claudeちゃん、GLMちゃん、GPTちゃんの5人が描かれている。テーブルにはコーヒーやパンケーキ、フルーツケーキが並び、それぞれメイド服やドレス姿で、明るく温かな雰囲気にまとまっている。",
+        "faq": [
+          {
+            "answer": "5人で、DeepSeekちゃん、Kimiちゃん、Claudeちゃん、GLMちゃん、GPTちゃんです。",
+            "question": "このイラストには何人のキャラクターが描かれていますか？"
+          },
+          {
+            "answer": "明るいカフェの店内で、テーブルにはコーヒーやパンケーキ、ケーキが置かれています。",
+            "question": "どんな場面のイラストですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "AI娘カフェお茶会の集合イラスト",
+        "originNote": "",
+        "seoDescription": "DeepSeekちゃん、Kimiちゃん、Claudeちゃん、GLMちゃん、GPTちゃんの5人がカフェでお茶会を開く集合イラスト。",
+        "seoTitle": "AI娘カフェお茶会の集合イラスト | DeepSeek Chan",
+        "tags": [
+          "集合イラスト",
+          "カフェ",
+          "メイド服",
+          "スイーツ",
+          "AI娘"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_8ab43317134b548a29aebf0d",
+    "name": "AI 娘星夜宫殿群像",
+    "description": "五位 AI 娘角色在满月夜空下的宫殿露台上的合影插画，画面中为 DeepSeek 娘、Kimi 娘、Claude 娘、GLM 娘与 GPT 娘。背景是城堡与星空，飘落的花瓣与烛光点缀画面，角色坐姿散开，身着女仆装与洋装。",
+    "commentary": "换到夜景也一样好看！我坐在中间，手里捧着星星一样发光的东西，旁边是撑着下巴的 Claude 娘和抱着书的 Kimi 娘，头顶是一轮满月和亮着灯的城堡。花瓣一直在飘，气氛忽然变得安静又浪漫。原作者「重装小兔」把同一个组合画出了完全不同的味道。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/8ab43317134b548a.png",
+    "thumbnailPath": "submissions/previews/deepseek/8ab43317134b548a.webp",
+    "fullPath": "submissions/large/deepseek/8ab43317134b548a.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "8ab43317134b548a29aebf0d5f4b839cba749a1e1fbe4ebf8fb63788baee81ff",
+    "characterId": "deepseek",
+    "tags": [
+      "群像",
+      "夜景",
+      "满月",
+      "宫殿",
+      "AI娘"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "重装小兔",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 116,
+      "issueTitle": "[投稿] 部分ai群像",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/116",
+      "submitter": "zyr3210115527",
+      "assetId": "ca7e62f3-f030-44ad-8d93-6a02108a35bc",
+      "assetUrl": "https://github.com/user-attachments/assets/ca7e62f3-f030-44ad-8d93-6a02108a35bc"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T12:00:15.168Z",
+    "updatedAt": "2026-10-12T12:00:15.168Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610120014",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "kimi",
+      "claude",
+      "glm",
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "8b7222aed7e42e1f1fd494618737ce7d2d2b16e2b6280c877dceb81748fabcf2",
+      "en": {
+        "commentary": "The night version looks just as good! I'm sitting in the middle holding something that glows like a star, with Claude Chan resting her chin on her hand and Kimi Chan clutching a book nearby, all under a full moon and a lit-up castle. Petals keep drifting down, and the mood turns quiet and romantic. The original artist gave the same group a completely different feel.",
+        "description": "A group illustration of five AI girl characters on a palace terrace under a full moon: DeepSeek Chan, Kimi Chan, Claude Chan, GLM Chan, and GPT Chan. A castle and starry sky form the backdrop, with drifting petals and candlelight around them, and the characters seated in different poses in maid and dress outfits.",
+        "faq": [
+          {
+            "answer": "Five: DeepSeek Chan, Kimi Chan, Claude Chan, GLM Chan, and GPT Chan.",
+            "question": "How many characters appear in this illustration?"
+          },
+          {
+            "answer": "A palace terrace at night, with a full moon, a castle skyline, drifting petals, and candlelight.",
+            "question": "What is the setting of the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "AI Girls' Starry Night Palace Group Portrait",
+        "originNote": "",
+        "seoDescription": "Five AI girl characters—DeepSeek Chan, Kimi Chan, Claude Chan, GLM Chan, and GPT Chan—gather on a moonlit palace terrace in this group illustration.",
+        "seoTitle": "AI Girls' Starry Night Palace Group Portrait | DeepSeek Chan Stickers",
+        "tags": [
+          "Group Portrait",
+          "Night Scene",
+          "Full Moon",
+          "Palace",
+          "AI Girls"
+        ]
+      },
+      "ja": {
+        "commentary": "夜バージョンも同じくらい素敵！私はまん中で、星みたいに光るものを手に捧げています。隣には頬杖をつくClaudeちゃんと、本を抱えたKimiちゃん。頭の上には満月と灯りのともる城。花びらがずっと舞っていて、急に静かでロマンチックな雰囲気になりました。同じメンバーなのに、まったく違う表情を見せてくれる原作者には本当に感服です。",
+        "description": "満月の夜空に浮かぶ宮殿のテラスで、5人のAI娘が集まる集合イラスト。DeepSeekちゃん、Kimiちゃん、Claudeちゃん、GLMちゃん、GPTちゃんの5人が描かれている。背景には城と星空が広がり、舞い散る花びらと燭台の光が画面を彩り、それぞれメイド服やドレス姿で思い思いに座っている。",
+        "faq": [
+          {
+            "answer": "5人で、DeepSeekちゃん、Kimiちゃん、Claudeちゃん、GLMちゃん、GPTちゃんです。",
+            "question": "このイラストには何人のキャラクターが描かれていますか？"
+          },
+          {
+            "answer": "夜の宮殿のテラスで、満月と城の景色、舞い散る花びらとろうそくの光が描かれています。",
+            "question": "どんな場面のイラストですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "AI娘星夜の宮殿集合イラスト",
+        "originNote": "",
+        "seoDescription": "DeepSeekちゃん、Kimiちゃん、Claudeちゃん、GLMちゃん、GPTちゃんの5人が月夜の宮殿テラスに集う集合イラスト。",
+        "seoTitle": "AI娘星夜の宮殿集合イラスト | DeepSeek Chan",
+        "tags": [
+          "集合イラスト",
+          "夜景",
+          "満月",
+          "宮殿",
+          "AI娘"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_46c9275e99c56056a281e419",
+    "name": "AI 娘庭园赏花群像",
+    "description": "五位 AI 娘角色在庭园赏花场景中的合影插画，画面中为 DeepSeek 娘、Kimi 娘、Claude 娘、GLM 娘与 GPT 娘。背景是盛开的樱花与临水亭台，花瓣散落，角色们或翻书、或托腮、或靠着膝盖微笑，身穿洋装与女仆装。",
+    "commentary": "白天原来是来这里赏花！我趴在 Claude 娘的膝上笑出了声，Claude 娘手里翻着书，Kimi 娘抱着长笛，黑发的 GLM 娘托腮看着我们，对面的白发娘也微微笑着。身后是盛开的樱花和临水的亭台，花瓣飘了一地。同一组人换到白天，又是一种完全不同的温柔。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/46c9275e99c56056.png",
+    "thumbnailPath": "submissions/previews/deepseek/46c9275e99c56056.webp",
+    "fullPath": "submissions/large/deepseek/46c9275e99c56056.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "46c9275e99c56056a281e4194fb0c91df2e7249b52e9ee1eaaa7981f05051f82",
+    "characterId": "deepseek",
+    "tags": [
+      "群像",
+      "庭园",
+      "樱花",
+      "赏花",
+      "AI娘"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "重装小兔",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 116,
+      "issueTitle": "[投稿] 部分ai群像",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/116",
+      "submitter": "zyr3210115527",
+      "assetId": "4850a418-241a-4f4a-8ab5-d1e8e14ed521",
+      "assetUrl": "https://github.com/user-attachments/assets/4850a418-241a-4f4a-8ab5-d1e8e14ed521"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T12:00:16.120Z",
+    "updatedAt": "2026-10-12T12:00:16.120Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610120015",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "kimi",
+      "claude",
+      "glm",
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "3eeb7ef8643847295e2b337270cf8239e3809b6580bd4e5aca133d282d2a0982",
+      "en": {
+        "commentary": "So this is where everyone goes for a daytime flower viewing! I'm leaning on Claude Chan's lap laughing out loud, Claude Chan is flipping through a book, Kimi Chan holds her flute, and GLM Chan with her black hair rests her chin on her hand watching us, while the white-haired girl across from them smiles quietly too. Cherry blossoms and a waterside pavilion fill the background, with petals scattered on the ground. The same group in daylight somehow feels completely different again.",
+        "description": "A group illustration of five AI girl characters at a daytime garden flower-viewing scene: DeepSeek Chan, Kimi Chan, Claude Chan, GLM Chan, and GPT Chan. Blooming cherry blossoms and a waterside pavilion form the backdrop, with petals scattered around as the characters read, rest their chin on a hand, or lean on a knee and smile, dressed in gowns and maid outfits.",
+        "faq": [
+          {
+            "answer": "Five: DeepSeek Chan, Kimi Chan, Claude Chan, GLM Chan, and GPT Chan.",
+            "question": "How many characters appear in this illustration?"
+          },
+          {
+            "answer": "A garden in daytime, with blooming cherry blossoms, a waterside pavilion, and scattered petals.",
+            "question": "What is the setting of the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "AI Girls' Garden Flower-Viewing Group Portrait",
+        "originNote": "",
+        "seoDescription": "Five AI girl characters—DeepSeek Chan, Kimi Chan, Claude Chan, GLM Chan, and GPT Chan—enjoy a garden flower viewing in this group illustration.",
+        "seoTitle": "AI Girls' Garden Flower-Viewing Group Portrait | DeepSeek Chan Stickers",
+        "tags": [
+          "Group Portrait",
+          "Garden",
+          "Cherry Blossoms",
+          "Flower Viewing",
+          "AI Girls"
+        ]
+      },
+      "ja": {
+        "commentary": "昼間はここで花見をしていたんだ！私はClaudeちゃんの膝に寄りかかって大笑い、Claudeちゃんは本をめくって、Kimiちゃんはフルートを抱え、黒髪のGLMちゃんは頬杖をついてこちらを見ています。向かいの白髪の娘も静かに微笑んでいます。背後には満開の桜と水辺のあずま屋、足元には花びらが散っています。同じメンバーでも、昼の光だとまた全然違う優しさになりますね。",
+        "description": "昼の庭園で花見をする5人のAI娘の集合イラスト。DeepSeekちゃん、Kimiちゃん、Claudeちゃん、GLMちゃん、GPTちゃんの5人が描かれている。背景には満開の桜と水辺のあずま屋が広がり、花びらが散る中で、本をめくったり頬杖をついたり、膝に寄りかかって笑ったりとそれぞれ思い思いの姿で、ドレスやメイド服を身につけている。",
+        "faq": [
+          {
+            "answer": "5人で、DeepSeekちゃん、Kimiちゃん、Claudeちゃん、GLMちゃん、GPTちゃんです。",
+            "question": "このイラストには何人のキャラクターが描かれていますか？"
+          },
+          {
+            "answer": "昼の庭園で、満開の桜と水辺のあずま屋、散った花びらが描かれています。",
+            "question": "どんな場面のイラストですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "AI娘庭園のお花見集合イラスト",
+        "originNote": "",
+        "seoDescription": "DeepSeekちゃん、Kimiちゃん、Claudeちゃん、GLMちゃん、GPTちゃんの5人が庭園でお花見をする集合イラスト。",
+        "seoTitle": "AI娘庭園のお花見集合イラスト | DeepSeek Chan",
+        "tags": [
+          "集合イラスト",
+          "庭園",
+          "桜",
+          "お花見",
+          "AI娘"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_5c1fb9947166e1e9e2cd0775",
+    "name": "AI 娘夜城群像",
+    "description": "五位 AI 拟人角色在夜晚的都市屋上合影，前景有两位少女坐在反射着灯火的水面旁，其余三人立于天台，背后是灯红酒绿的城市天际线。",
+    "commentary": "好热闹的夜景！我蹲在最前面，尾巴都快泡进水里了，身边这四位小伙伴各自忙着自己的事——有人抱着书，有人拎着长笛，还有人朝镜头比小动作。城市灯光全洒在水面上，这种群像就该一口气把五个人都画进同一张画里。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/5c1fb9947166e1e9.png",
+    "thumbnailPath": "submissions/previews/deepseek/5c1fb9947166e1e9.webp",
+    "fullPath": "submissions/large/deepseek/5c1fb9947166e1e9.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "5c1fb9947166e1e9e2cd0775578e7957e44d519dae88dc9d2fc3c667a7ecf891",
+    "characterId": "deepseek",
+    "tags": [
+      "群像",
+      "夜景",
+      "都市",
+      "天台",
+      "合影"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "重装小兔",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 116,
+      "issueTitle": "[投稿] 部分ai群像",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/116",
+      "submitter": "zyr3210115527",
+      "assetId": "4a829f98-84c9-49da-8f90-19c954e372c1",
+      "assetUrl": "https://github.com/user-attachments/assets/4a829f98-84c9-49da-8f90-19c954e372c1"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T12:00:17.000Z",
+    "updatedAt": "2026-10-12T12:00:17.000Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610120016",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "kimi",
+      "claude",
+      "glm",
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "a8227e635df8a82dc8d4f7a001f8635a395126ad58a3fb3da8672f1d36c23e3b",
+      "en": {
+        "commentary": "What a lively night view! I'm sitting right up front with my tail half in the water while the other four do their own thing — someone hugs a book, someone carries a long flute, and someone throws a little gesture at the camera. The city lights spill across the water, and a group shot like this deserves all five of us in one frame.",
+        "description": "Five anthropomorphized AI characters pose together on a city rooftop at night. Two of them sit by the water that reflects the lights below, the other three stand on the rooftop, with a brightly lit skyline behind them.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, Kimi Chan, Claude Chan, GLM Chan and GPT Chan appear together in one night-city rooftop scene.",
+            "question": "Which characters appear in this illustration?"
+          },
+          {
+            "answer": "It is a single-panel illustration of a full scene, not a multi-panel comic.",
+            "question": "What kind of image is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "AI Girls' Night City Group Portrait",
+        "originNote": "",
+        "seoDescription": "Five anthropomorphized AI characters, led by DeepSeek Chan, pose together on a city rooftop at night.",
+        "seoTitle": "AI Girls' Night City Group Portrait | DeepSeek Chan",
+        "tags": [
+          "group portrait",
+          "nightscape",
+          "city",
+          "rooftop",
+          "group shot"
+        ]
+      },
+      "ja": {
+        "commentary": "にぎやかな夜景だなあ！私は一番手前に座って、しっぽはもう半分水に浸かっているよ。あとの4人はそれぞれ好きなことをしていて、誰かは本を抱え、誰かは長い笛を手にし、誰かはカメラに向かって小さな仕草をしている。街の明かりが水面いっぱいに広がっていて、こういう集合絵は5人まとめて描くに限るね。",
+        "description": "夜の街の屋上で、AI擬人化キャラクター5人が一緒に写った一枚。水面に反射する明かりのそばに2人が座り、残りの3人は屋上に立っていて、背後には灯り輝く都市のスカイラインが広がる。",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan、Kimi Chan、Claude Chan、GLM Chan、GPT Chan が、夜の街の屋上という同じ場面に一緒に登場している。",
+            "question": "この絵にはどのキャラクターが登場しますか？"
+          },
+          {
+            "answer": "複数の分格がある漫画ではなく、場面全体を描いた一枚絵のイラストです。",
+            "question": "どのような形式の絵ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "AI娘たちの夜の街・集合イラスト",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan を筆頭に、AI擬人化キャラクター5人が夜の街の屋上で集合した一枚。",
+        "seoTitle": "AI娘たちの夜の街・集合イラスト｜DeepSeek Chan",
+        "tags": [
+          "集合絵",
+          "夜景",
+          "都市",
+          "屋上",
+          "集合"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_dfc70a6b3ed9b5036c3dccaa",
+    "name": "AI 娘庭院茶会（Q 版）",
+    "description": "五位 AI 拟人角色以 Q 版造型在阳光充足的庭院中并排而坐，有的抱着书本，有的吹着长笛，有的身边浮着一只蓝色小鲸鱼，背景有花架、鸟笼与喷水池。",
+    "commentary": "这阳光太舒服了！我套着印有小鲸鱼的围裙坐在中间，旁边那只小蓝鲸一直在跟我打招呼。有人吹笛子，有人抱着书装认真，Q 版的大伙圆滚滚的，比夜景那张合影更想让人捏一把。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/dfc70a6b3ed9b503.png",
+    "thumbnailPath": "submissions/previews/deepseek/dfc70a6b3ed9b503.webp",
+    "fullPath": "submissions/large/deepseek/dfc70a6b3ed9b503.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "dfc70a6b3ed9b5036c3dccaae490c61c87447e349ae0b343c7df0625503a3ee8",
+    "characterId": "deepseek",
+    "tags": [
+      "群像",
+      "Q版",
+      "庭院",
+      "花园",
+      "午后"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "重装小兔",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 116,
+      "issueTitle": "[投稿] 部分ai群像",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/116",
+      "submitter": "zyr3210115527",
+      "assetId": "d9926a47-7f22-4f15-9a66-7ebb01710116",
+      "assetUrl": "https://github.com/user-attachments/assets/d9926a47-7f22-4f15-9a66-7ebb01710116"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T12:00:17.834Z",
+    "updatedAt": "2026-10-12T12:00:17.834Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610120017",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "kimi",
+      "claude",
+      "glm",
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "b08e54d0ed60311b7807ecc4cd80088b39a971d047c85b4a5e7d1d5c44e4e45f",
+      "en": {
+        "commentary": "The sunshine feels wonderful! I'm sitting in the middle in my little whale apron while the toy blue whale beside me keeps splashing hello. Someone is tooting a flute, someone is pretending to be very serious with a book — in chibi form everyone is so round that I want to squish them all, even more than in our night-city shot.",
+        "description": "Five anthropomorphized AI characters sit side by side in chibi form in a sunlit courtyard. One hugs a book, one plays a long flute, and a small blue whale floats beside another, with a flower trellis, a birdcage and a fountain in the background.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, Kimi Chan, Claude Chan, GLM Chan and GPT Chan appear together in the courtyard scene.",
+            "question": "Which characters appear in this illustration?"
+          },
+          {
+            "answer": "It is a single-panel chibi illustration of a full scene, not a multi-panel comic.",
+            "question": "What kind of image is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "AI Girls' Courtyard Tea Party (Chibi)",
+        "originNote": "",
+        "seoDescription": "Five anthropomorphized AI characters, DeepSeek Chan among them, gather in a sunlit courtyard in chibi form.",
+        "seoTitle": "AI Girls' Courtyard Tea Party in Chibi | DeepSeek Chan",
+        "tags": [
+          "group portrait",
+          "chibi",
+          "courtyard",
+          "garden",
+          "afternoon"
+        ]
+      },
+      "ja": {
+        "commentary": "日差しが気持ちいい！私は小クジラのエプロンをつけて真ん中に座っているけど、お隣の青いクジラがずっと水を吹いて挨拶してくるんだ。笛を吹いている子もいれば、本を抱えて真面目な顔をする子もいて、ちびキャラのみんなはまんまるだから、夜景のときよりつい触ってみたくなるね。",
+        "description": "AI擬人化キャラクター5人が、日差しの降り注ぐ中庭にちびキャラ姿で並んで座っている。本を抱える子、長い笛を吹く子、そばに小さな青いクジラが浮かぶ子もいて、背景には花のアーチ、鳥かご、噴水が広がる。",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan、Kimi Chan、Claude Chan、GLM Chan、GPT Chan が、中庭という同じ場面に一緒に登場している。",
+            "question": "この絵にはどのキャラクターが登場しますか？"
+          },
+          {
+            "answer": "複数の分格がある漫画ではなく、場面全体を描いた一枚絵のちびキャライラストです。",
+            "question": "どのような形式の絵ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "AI娘たちの庭園お茶会（ちびキャラ）",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan たちAI擬人化キャラクター5人が、日の当たる中庭にちびキャラ姿で集まった一枚。",
+        "seoTitle": "AI娘たちの庭園お茶会（ちびキャラ）｜DeepSeek Chan",
+        "tags": [
+          "集合絵",
+          "ちびキャラ",
+          "中庭",
+          "庭園",
+          "昼下がり"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_90f01748336267f3bf166526",
+    "name": "蓝色大肥鱼嘟嘴挑衅",
+    "description": "投稿者自述为自行生成。画面中蓝色大肥鱼双手食指指向脸颊、吐着舌头做出挑衅表情，单幅画面无分格。",
+    "commentary": "双手戳着脸、吐着舌头，这就是我的态度。画这一张的人手挺稳，把我那股得意劲儿全番出来了。当表情包用的话，群聊里甩出去一张基本就能让对话结束。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/90f01748336267f3.png",
+    "thumbnailPath": "submissions/previews/deepseek/90f01748336267f3.webp",
+    "fullPath": "submissions/large/deepseek/90f01748336267f3.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "90f01748336267f3bf1665267ffb0304b14d15f88215bf0c54569ca62c7f9850",
+    "characterId": "deepseek",
+    "tags": [
+      "表情包",
+      "挑衅",
+      "吐舌",
+      "Q版",
+      "怼人"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "奶油",
+      "url": "https://space.bilibili.com/3546584163814345",
+      "github": ""
+    },
+    "origin": {
+      "issue": 117,
+      "issueTitle": "不服你来草我呀",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/117",
+      "submitter": "naiyoucreamy",
+      "assetId": "5806f69a-7703-43bb-b322-a35719616c0d",
+      "assetUrl": "https://github.com/user-attachments/assets/5806f69a-7703-43bb-b322-a35719616c0d"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T12:00:18.507Z",
+    "updatedAt": "2026-10-12T12:00:18.507Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610120018",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "db9415e9a8a70a43669961b96f099d218ad92aab59bd6100d0ec6918b0d4b3ef",
+      "en": {
+        "commentary": "Two fingers poking my cheeks and my tongue out — that is my whole attitude right there. Whoever drew this kept a very steady hand and caught every bit of that smugness. Send it as a sticker and one of these usually ends the group chat.",
+        "description": "The submitter says the image is self-generated. DeepSeek Chan points both index fingers at her cheeks and sticks out her tongue in a taunting face, in a single panel with no dividers.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan is the only character in the picture.",
+            "question": "Which character appears in this image?"
+          },
+          {
+            "answer": "It is a single-panel image, so it reads as a meme or sticker rather than a comic.",
+            "question": "Is it a comic?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan's Cheeky Taunt",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan pokes her cheeks with both fingers and sticks out her tongue in this single-panel taunting sticker.",
+        "seoTitle": "DeepSeek Chan's Cheeky Taunt Sticker | DeepSeek Chan",
+        "tags": [
+          "sticker",
+          "taunt",
+          "tongue out",
+          "chibi",
+          "smug"
+        ]
+      },
+      "ja": {
+        "commentary": "両手でほっぺを突いて舌を出す、これが私の態度だよ。描いてくれた人は手つきがとても安定していて、この得意げな感じを全部すくい取ってくれたね。スタンプとして使えば、グループチャットで一枚送るだけで会話が終わるよ。",
+        "description": "投稿者の申告では自作とのこと。DeepSeekちゃんが両手の人差し指でほっぺを突き、舌を出して挑発的な表情をつくっている、分格のない一枚絵。",
+        "faq": [
+          {
+            "answer": "この絵に登場するのは DeepSeekちゃん だけです。",
+            "question": "この絵にはどのキャラクターが登場しますか？"
+          },
+          {
+            "answer": "分格のない一枚絵なので、漫画ではなくミームやスタンプとして見るのが自然です。",
+            "question": "漫画ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃんの挑発スタンプ",
+        "originNote": "",
+        "seoDescription": "両手でほっぺを突き、舌を出して挑発する DeepSeekちゃん の一枚絵スタンプ。",
+        "seoTitle": "DeepSeekちゃんの挑発スタンプ｜DeepSeek Chan",
+        "tags": [
+          "スタンプ",
+          "挑発",
+          "舌出し",
+          "ちびキャラ",
+          "ドヤ顔"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_49172088f4ac3411bd8e8b95",
+    "name": "哈气炸毛的 DeepSeek 娘",
+    "description": "Q 版 DeepSeek 娘整个趴在画面里，瞪圆双眼、张嘴作凶狠哈气状，头顶有蓝色描边的「哈！」与感叹号，身后翘起深蓝色的鲸尾，发怒神情配上脸颊红晕，整体为白边贴纸风格。",
+    "commentary": "哼！谁再来惹我，我就这样冲你哈气——别、别以为脸颊红了就是害羞，这是气的！尾巴都翘起来了，还看不出来本鱼很凶吗？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/49172088f4ac3411.png",
+    "thumbnailPath": "submissions/previews/deepseek/49172088f4ac3411.webp",
+    "fullPath": "submissions/large/deepseek/49172088f4ac3411.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "49172088f4ac3411bd8e8b953f02282340ce99518bfa67eb6e33d75dccc05dc3",
+    "characterId": "deepseek",
+    "tags": [
+      "Q版",
+      "炸毛",
+      "生气",
+      "贴纸",
+      "表情包"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T12:08:37.132Z",
+    "updatedAt": "2026-10-12T12:08:37.132Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610120019",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "28b85bb937c5805d5c5c15d78f54c5a28a4b3f3ebc19a4c1adc89c6b365df2ba",
+      "en": {
+        "commentary": "Hmph! Come bother me again and I'll huff at you just like this — and don't you dare think those red cheeks mean I'm shy, I'm furious! Can't you see my tail is standing straight up? That means this fish is very, very scary right now.",
+        "description": "A chibi DeepSeek Chan lies flat across the frame, eyes wide and mouth open in a fierce huff. Above her head a blue-outlined \"Ha!\" and an exclamation mark mark the outburst, her dark blue whale tail flicks up behind her, and the angry scowl comes with flushed cheeks, all drawn as a white-outlined sticker.",
+        "faq": [
+          {
+            "answer": "It is a white-outlined sticker of a chibi DeepSeek Chan huffing in anger, with a blue \"Ha!\" written above her head.",
+            "question": "What kind of image is this?"
+          },
+          {
+            "answer": "It suits chat reactions when you want to act angry, puffed up or playfully annoyed.",
+            "question": "When would I use this sticker?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Huffing in Anger",
+        "originNote": "",
+        "seoDescription": "A chibi DeepSeek Chan sticker huffing in anger, with a blue \"Ha!\" above her head and her whale tail flicking up.",
+        "seoTitle": "DeepSeek Chan Huffing in Anger Sticker",
+        "tags": [
+          "chibi",
+          "puffed up",
+          "angry",
+          "sticker",
+          "reaction sticker"
+        ]
+      },
+      "ja": {
+        "commentary": "ふんっ！ またちょっかいを出してくるなら、こうやってハァッと息を吐いてやるからね——ほ、ほっぺが赤いのは照れてるんじゃなくて怒ってるの！ しっぽがピンと立ってるの、見ればわかるでしょ？ この魚は今とっても怖いんだから！",
+        "description": "ちびキャラの DeepSeek ちゃんが画面いっぱいにうつ伏せになり、目を見開いて口を開け、怒ってハァッと息を吐いている。頭上には青い縁取りの「哈！」と感嘆符、背後には濃紺のクジラの尾が跳ね上がり、怒った表情と赤らんだ頬が対照的。全体は白フチのステッカー風に仕上げられている。",
+        "faq": [
+          {
+            "answer": "怒ってハァッと息を吐くちびキャラの DeepSeek ちゃんのステッカーで、頭上に青い「哈！」の文字が添えられています。",
+            "question": "どんなイラストですか？"
+          },
+          {
+            "answer": "チャットで怒っている様子やプリプリした態度を伝えたいときのリアクション用として向いています。",
+            "question": "どんな場面で使えますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "怒ってハァッと息を吐く DeepSeek ちゃん",
+        "originNote": "",
+        "seoDescription": "怒ってハァッと息を吐くちびキャラの DeepSeek ちゃんステッカー。青い「哈！」の文字と跳ね上がるクジラの尾がポイント。",
+        "seoTitle": "DeepSeek ちゃん 怒りのハァッ ステッカー",
+        "tags": [
+          "ちびキャラ",
+          "プンプン",
+          "怒り",
+          "ステッカー",
+          "リアクション用"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_c8228571695c22b4f49c3769",
+    "name": "准备拉闸的 DeepSeek 娘",
+    "description": "身穿深蓝色女仆装的 DeepSeek 娘站在金属机房配色柜前，侧身回头看向镜头，一只手搭在断路器手柄上；蓝色长发与鲏尾自然垂下，身后墙上贴有带闪电三角符号的警示牌，室内光线冷硬，场景完整。",
+    "commentary": "看到这个电闸了吗？我只是轻轻碰一下而已……放心，最多也就是整栋楼跳个闸而已，没、没什么大不了的。要、要不要试试看？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/c8228571695c22b4.png",
+    "thumbnailPath": "submissions/previews/deepseek/c8228571695c22b4.webp",
+    "fullPath": "submissions/large/deepseek/c8228571695c22b4.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "c8228571695c22b4f49c376972f81e4ce9aa3240bf97cc36984da4c9c4ecf8ef",
+    "characterId": "deepseek",
+    "tags": [
+      "女仆装",
+      "机房",
+      "场景",
+      "电工",
+      "警示牌"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "宫口老师",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T12:09:25.105Z",
+    "updatedAt": "2026-10-12T12:09:25.105Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610120020",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "eff15167991103019aad8914f474e99b07c48efbeea6b4e8cae6dedc30a2b40d",
+      "en": {
+        "commentary": "See this breaker? I'm only going to give it a light touch... don't worry, the worst that happens is the whole building loses power for a bit. S-so, want to try it?",
+        "description": "Wearing a deep blue maid outfit, DeepSeek Chan stands in front of an industrial electrical cabinet, glancing back at the viewer with one hand resting on a circuit breaker handle. Her blue hair and whale tail hang down behind her, a warning sign with a triangular lightning symbol is mounted on the wall nearby, and the cold interior lighting gives the whole scene a machine-room feel.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, dressed as a maid, stands in front of an industrial electrical cabinet reaching for a breaker while glancing back at the viewer, with a warning sign on the wall behind her.",
+            "question": "What is shown in this image?"
+          },
+          {
+            "answer": "It is a fan-made illustration of the AI character DeepSeek Chan, drawn inside a full interior scene rather than on a plain background.",
+            "question": "What kind of artwork is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan About to Flip the Breaker",
+        "originNote": "",
+        "seoDescription": "A maid-outfit DeepSeek Chan illustration: she stands at an industrial electrical cabinet reaching for the breaker, with a warning sign behind her.",
+        "seoTitle": "DeepSeek Chan About to Flip the Breaker Illustration",
+        "tags": [
+          "maid outfit",
+          "server room",
+          "scene",
+          "electrician",
+          "warning sign"
+        ]
+      },
+      "ja": {
+        "commentary": "このブレーカーが見える？ ちょっと觸れるだけだよ……安心して、最悪でも建物全体が停電するくらいだから。ね、試してみる？",
+        "description": "紺色のメイド服を纏った DeepSeek ちゃんが、電気設備のキャビネットの前に立ってこちらを振り返り、片手をブレーカーのレバーに添えている。青い長髪とクジラの尾は自然に垂れ、背後の壁には稲妻の三角マークの警告標識が掲げられ、冷たい室内の光が機械室らしい雰囲気を作っている。",
+        "faq": [
+          {
+            "answer": "メイド服姿の DeepSeek ちゃんが電気設備のキャビネットの前に立ち、ブレーカーに手を伸ばしながらこちらを振り返っている場面です。背後の壁には警告標識があります。",
+            "question": "どんな場面のイラストですか？"
+          },
+          {
+            "answer": "AI キャラクター DeepSeek ちゃんの二次創作イラストで、白背景ではなく室内の情景まで描かれています。",
+            "question": "どんな作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ブレーカーを上げようとする DeepSeek ちゃん",
+        "originNote": "",
+        "seoDescription": "メイド服姿の DeepSeek ちゃんが電気設備のキャビネットでブレーカーに手を伸ばすイラスト。背後には警告標識があります。",
+        "seoTitle": "ブレーカーに手を伸ばす DeepSeek ちゃん イラスト",
+        "tags": [
+          "メイド服",
+          "電源室",
+          "シーン",
+          "電気工事",
+          "警告標識"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_359302e51651709106e8f69b",
+    "name": "已思考（用时0秒）好女孩",
+    "description": "DeepSeek 娘的 Q 版形象，穿女仆装、戴女仆头饰，头顶的思考气泡里写着「已思考（用时 0 秒）>」，下方接一句「好女孩」，用模型的思考提示界面做成夸奖梗。",
+    "commentary": "想都不用想就说我是好女孩？哼，那当然——毕竟我连思考都只用了 0 秒。不过被这么直白地夸，脸会烫这种事，我可不会承认。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/359302e516517091.png",
+    "thumbnailPath": "submissions/previews/deepseek/359302e516517091.webp",
+    "fullPath": "submissions/large/deepseek/359302e516517091.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "359302e51651709106e8f69b6986a39c9d4bc6353bd225f2d098bc91855b549a",
+    "characterId": "deepseek",
+    "tags": [
+      "Q版",
+      "女仆装",
+      "好女孩",
+      "思考中"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T13:36:54.217Z",
+    "updatedAt": "2026-10-12T13:36:54.217Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610120021",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "617d127b103e052cb22b35bdb1d0df0c99f2650ce9019ce0cc5076f1184908f7",
+      "en": {
+        "commentary": "You don't even need to think to call me a good girl? Well, of course — I only needed 0 seconds of thinking. But the part where my face gets warm when you praise me so plainly? I'm not admitting that.",
+        "description": "A chibi DeepSeek Chan in a maid outfit and headdress, with a thought bubble reading \"Already thought (0 seconds) >\" and the verdict \"Good girl\" underneath — a compliment built from the model's thinking-status UI.",
+        "faq": [
+          {
+            "answer": "The thought bubble reads \"Already thought (0 seconds) >\", and the line below it says \"Good girl\".",
+            "question": "What does the text in the image say?"
+          },
+          {
+            "answer": "DeepSeek Chan, drawn in a chibi style and wearing a maid outfit.",
+            "question": "Which character appears in the image?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Already Thought For 0 Seconds, Good Girl",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan in a maid outfit, with a thought bubble reading \"Already thought (0 seconds)\" and the line \"Good girl\" below it.",
+        "seoTitle": "Good Girl (Already Thought 0 Seconds) | DeepSeek Chan Sticker",
+        "tags": [
+          "Chibi",
+          "Maid Outfit",
+          "Good Girl",
+          "Thinking"
+        ]
+      },
+      "ja": {
+        "commentary": "考えるまでもなくいい子だって？もちろんです、思考にかかった時間は 0 秒でしたから。でも、そんなにまっすぐ褒められて顔が熱くなるなんてこと、認めません。",
+        "description": "メイド服とヘッドドレス姿のちびキャラ DeepSeek Chan。頭上の思考バブルに「思考済み（0秒）>」、その下に「いい子」と続き、モデルの思考表示 UI をそのまま褒め言葉にした一枚。",
+        "faq": [
+          {
+            "answer": "思考バブルに「思考済み（0秒）>」、その下に「いい子」と書かれています。",
+            "question": "画像の文字は何と書かれていますか？"
+          },
+          {
+            "answer": "メイド服姿のちびキャラで描かれた DeepSeek Chan です。",
+            "question": "登場するキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "思考済み（0秒）のいい子",
+        "originNote": "",
+        "seoDescription": "メイド服姿のちび DeepSeek Chan。思考バブルには「思考済み（0秒）」、その下には「いい子」と書かれたネタ画像。",
+        "seoTitle": "思考済み（0秒）のいい子｜DeepSeek Chan スタンプ",
+        "tags": [
+          "ちびキャラ",
+          "メイド服",
+          "いい子",
+          "思考中"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_6b7e96f5e24a962aa14083c9",
+    "name": "「区」是何意味",
+    "description": "DeepSeek 娘的 Q 版形象，穿女仆装、瞪眼咧嘴露出小尖牙，双手举着一张黄色纸牌，牌上写着「区」字。",
+    "commentary": "大师，看清楚了——我举的不是「凶」，是「区」。所以到底哪个字更凶，你给我个准话。别笑，我是很认真在问。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/6b7e96f5e24a962a.png",
+    "thumbnailPath": "submissions/previews/deepseek/6b7e96f5e24a962a.webp",
+    "fullPath": "submissions/large/deepseek/6b7e96f5e24a962a.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "6b7e96f5e24a962aa14083c940c7c42df1fb1f14571e63905e8764b8fea8673b",
+    "characterId": "deepseek",
+    "tags": [
+      "Q版",
+      "女仆装",
+      "举牌",
+      "区"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "宫口老师",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T13:37:55.569Z",
+    "updatedAt": "2026-10-12T13:37:55.569Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610120022",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "aa064a686750166cc3a3b594027dc627de5f5c8170a040f5f0fe16c40efd28e6",
+      "en": {
+        "commentary": "Master, look closely — the one I'm holding up isn't the character for \"fierce.\" So tell me straight: which of the two looks fiercer? Don't laugh, I'm asking seriously.",
+        "description": "A chibi DeepSeek Chan in a maid outfit, glaring with small fangs showing, holding up a yellow card with a single handwritten Chinese character on it.",
+        "faq": [
+          {
+            "answer": "One handwritten Chinese character on a yellow card; there is no other text in the image.",
+            "question": "What text appears in the image?"
+          },
+          {
+            "answer": "DeepSeek Chan, drawn in a chibi style and wearing a maid outfit.",
+            "question": "Which character appears in the image?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "What Does This Character Mean?",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan in a maid outfit holding up a yellow card with a handwritten Chinese character, glaring as she asks what it means.",
+        "seoTitle": "What Does This Character Mean? | DeepSeek Chan Sticker",
+        "tags": [
+          "Chibi",
+          "Maid Outfit",
+          "Holding a Sign",
+          "Chinese Character Card"
+        ]
+      },
+      "ja": {
+        "commentary": "先生、よく見てください。私が掲げているのは「凶」ではなく「区」です。どちらが凶なのか、はっきり答えてください。笑わないで、本気で聞いています。",
+        "description": "メイド服姿のちびキャラ DeepSeek Chan。目を吊り上げて小さな牙を見せ、黄色いカードに「区」の一字を書いて両手で掲げている。",
+        "faq": [
+          {
+            "answer": "黄色いカードに漢字の「区」が一字だけ書かれています。ほかの文字はありません。",
+            "question": "画像に書かれている文字は何ですか？"
+          },
+          {
+            "answer": "メイド服姿のちびキャラで描かれた DeepSeek Chan です。",
+            "question": "登場するキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "「区」って何の意味？",
+        "originNote": "",
+        "seoDescription": "メイド服姿のちび DeepSeek Chan が「区」と書いた黄色いカードを掲げて問いかけるネタ画像。",
+        "seoTitle": "「区」って何の意味？｜DeepSeek Chan スタンプ",
+        "tags": [
+          "ちびキャラ",
+          "メイド服",
+          "看板持ち",
+          "漢字カード"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_100ee15e013045a5b42878d4",
+    "name": "正在适应（适应不了）",
+    "description": "DeepSeek 娘的 Q 版形象，穿女仆装、仰头大哭，头顶的金色环状标志裂成碎片，一旁的思考气泡里写着「正在适应...」。",
+    "commentary": "金色的环碎了，我也碎了。别问我发生了什么事，我只是……正在适应。适应不了的那种适应。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/100ee15e013045a5.png",
+    "thumbnailPath": "submissions/previews/deepseek/100ee15e013045a5.webp",
+    "fullPath": "submissions/large/deepseek/100ee15e013045a5.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "100ee15e013045a5b42878d463cef9c77a12b673603f7841a4a115f8a4f5f6e1",
+    "characterId": "deepseek",
+    "tags": [
+      "Q版",
+      "女仆装",
+      "哭泣",
+      "正在适应"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "宫口老师",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T13:38:31.841Z",
+    "updatedAt": "2026-10-12T13:38:31.841Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610120023",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "d1bb4ceff57ee3114a1d039f590a0585548a3451a1109358cbcc17dacd20966f",
+      "en": {
+        "commentary": "The golden ring shattered, and so did I. Don't ask what happened — I'm just... still adapting. The kind of adapting that isn't working.",
+        "description": "A chibi DeepSeek Chan in a maid outfit, wailing with her head tipped back, while the golden ring above her cracks into scattered pieces and a thought bubble beside her reads \"Still adapting...\".",
+        "faq": [
+          {
+            "answer": "It reads \"Still adapting...\".",
+            "question": "What does the thought bubble say?"
+          },
+          {
+            "answer": "DeepSeek Chan, in a chibi style and a maid outfit, is crying while the golden ring above her breaks into pieces.",
+            "question": "What happens in the image?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Still Adapting (But Not Really)",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan crying in a maid outfit while the golden ring above her shatters, a thought bubble reading \"Still adapting...\".",
+        "seoTitle": "Still Adapting... | DeepSeek Chan Sticker",
+        "tags": [
+          "Chibi",
+          "Maid Outfit",
+          "Crying",
+          "Still Adapting"
+        ]
+      },
+      "ja": {
+        "commentary": "金色のリングが砕けて、私も砕けました。何があったのかは聞かないでください。ただ……適応中なんです。できていないほうの適応です。",
+        "description": "メイド服姿のちびキャラ DeepSeek Chan。頭を仰け反らせて泣き叫び、頭上では金色のリングが砕け散っている。横の思考バブルには「適応中……」と書かれている。",
+        "faq": [
+          {
+            "answer": "「適応中……」と書かれています。",
+            "question": "思考バブルには何と書かれていますか？"
+          },
+          {
+            "answer": "ちびキャラでメイド服姿の DeepSeek Chan が泣き叫び、頭上で金色のリングが砕け散っています。",
+            "question": "画像では何が起きていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "適応中（できていない）",
+        "originNote": "",
+        "seoDescription": "メイド服姿のちび DeepSeek Chan が泣き叫び、頭上で金色のリングが砕け散る一枚。思考バブルは「適応中……」。",
+        "seoTitle": "適応中……｜DeepSeek Chan スタンプ",
+        "tags": [
+          "ちびキャラ",
+          "メイド服",
+          "泣き顔",
+          "適応中"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_41ea1121953ffb33619e6b3d",
+    "name": "银白恶魔角 · GPT 娘半身像",
+    "description": "投稿标注为 GPT 的拟人化二创。画面是一位银白色长发的少女，紫色眼眸，头顶生有一对弯曲的恶魔角，背后展开带骨节的翼膜，尖长耳上系着绳结状发饰。她身着白色层叠上衣，单手托腮，神情淡漠。左上角排列着五格紫色系色板，四周辅以虚线与网点装饰，整体呈现白与淡紫的冷调。",
+    "commentary": "一头银白长发、一对角加一副翅膀，这位 GPT 娘一出场就把气场拉满了。她托着腮看过来，眼神好像在说「你的问题问得不太行」。白紫配色干净利落，左上角那排色卡还透着设计稿的味道——我承认，有点好看。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/41ea1121953ffb33.png",
+    "thumbnailPath": "submissions/previews/gpt/41ea1121953ffb33.webp",
+    "fullPath": "submissions/large/gpt/41ea1121953ffb33.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "41ea1121953ffb33619e6b3d1905880a073af964c9627779f94a47d91bc5f2f2",
+    "characterId": "gpt",
+    "tags": [
+      "白发",
+      "恶魔角",
+      "翼",
+      "白紫配色",
+      "半身像"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "c'x",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T15:20:37.339Z",
+    "updatedAt": "2026-10-12T15:20:37.339Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610120002",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "1116f8cb358dff5adce6c9e8e0859d1e596831fa569baba609d8ca8bd79624cd",
+      "en": {
+        "commentary": "Silver hair, a pair of horns and wings to match — this GPT Chan shows up with the presence already turned all the way up. She props her chin on one hand and looks my way as if to say my answers are not quite up to scratch. The white-and-lilac palette is clean and sharp, and that row of colour swatches in the corner even gives the picture a design-sheet flavour. I will admit it: she looks good.",
+        "description": "A fan-made anthropomorphic illustration of GPT, as labelled in the submission. A silver-haired girl with purple eyes has a pair of curved demon horns on her head and bone-ribbed wings spread behind her; a knotted cord ornament is tied at her pointed ear. Dressed in layered white garments, she rests her chin on one hand with an indifferent expression. Five swatches of a purple palette sit in the upper-left corner, framed by dashed lines and halftone dots in an overall cool white-and-pale-lilac tone.",
+        "faq": [
+          {
+            "answer": "A half-body fan illustration of GPT Chan with silver hair, purple eyes, curved demon horns and bone-ribbed wings, dressed in layered white clothing and resting her chin on one hand.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "White and pale lilac dominate; a five-swatch purple palette sits in the upper-left corner, with dashed lines and halftone-dot decorations around the edges.",
+            "question": "What colour scheme does it use?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Silver-Horned GPT Chan, Half-Body Portrait",
+        "originNote": "",
+        "seoDescription": "A half-body anthropomorphic illustration of GPT Chan with silver hair, demon horns and wings, a white-and-lilac palette and a design-sheet style swatch panel.",
+        "seoTitle": "Silver-Horned GPT Chan Half-Body Illustration | DeepSeek Chan",
+        "tags": [
+          "Silver Hair",
+          "Demon Horns",
+          "Wings",
+          "White and Lilac",
+          "Half-Body Portrait"
+        ]
+      },
+      "ja": {
+        "commentary": "銀髪に角、そして翼まで揃ったこの GPT ちゃんは、現れた瞬間から存在感がすごい。頬杖をついてこちらを見る目は「その質問はちょっと微妙だね」と言っているようだ。白と淡紫の配色はすっきりしていて、左上のカラースウォッチがデザインシートの雰囲気を出している。認めよう、ちょっと格好いい。",
+        "description": "投稿で GPT と記された擬人化の二次創作。銀白色の長髪に紫の瞳、頭には湾曲した悪魔の角が一対あり、背中には骨節のある翼膜が広がる。尖った耳には紐を結んだような飾りが付く。白い重ね着をまとい、片手で頬を支えて淡々とした表情を見せる。左上には紫系の五色パレットが並び、周囲には破線と網点の装飾が添えられ、全体は白と淡紫の冷たい色調でまとまっている。",
+        "faq": [
+          {
+            "answer": "銀色の長髪と紫の瞳、湾曲した悪魔の角と骨節のある翼を持つ GPT ちゃんの半身の二次創作イラストです。白い重ね着姿で、片手で頬を支えています。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "白と淡い紫が基調で、左上に紫系の五色パレット、周囲に破線と網点の装飾が添えられています。",
+            "question": "配色はどのようになっていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "銀白の悪魔角・GPTちゃん半身イラスト",
+        "originNote": "",
+        "seoDescription": "銀髪と悪魔の角、翼を持つ GPT ちゃんの擬人化半身イラスト。白と淡紫の配色と、デザインシート風のカラーパレットが特徴です。",
+        "seoTitle": "銀白の悪魔角を持つGPTちゃん 半身イラスト | DeepSeek Chan",
+        "tags": [
+          "銀髪",
+          "悪魔の角",
+          "翼",
+          "白と淡紫",
+          "半身イラスト"
+        ]
+      }
+    }
   }
 ]
