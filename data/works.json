@@ -49133,5 +49133,424 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_ac31da751a3174b44a71875d",
+    "name": "A/：替 Anthropic 背锅的橘色坏女人",
+    "description": "十二格漫画。一只手指着橘色长发的 Claude 娘，骂她“胡乱封禁用户”。她抱着书、流着眼泪反复解释“那是 Anthropic 干的”，可随着指责的话被一节节削短，她也一路缩水，最后只剩一个写着“A/”的团子。",
+    "commentary": "指着鼻子骂人之前先把产品线搞清楚啊！Claude 娘明明一直在说“那是 Anthropic 干的”，结果你们把 Anthropic 和 Claude 一起抹掉，最后就剩个孤零零的“A/”……看着她抱着那本书越缩越小，我都替她委屈。不过背包锅到缩成一只团子，确实很有 Anthropic 家的味道。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/ac31da751a3174b4.png",
+    "thumbnailPath": "submissions/previews/claude/ac31da751a3174b4.webp",
+    "fullPath": "submissions/large/claude/ac31da751a3174b4.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "ac31da751a3174b44a71875dbfb0b9a24a605b53166fd63c2b5377a2bf9fc694",
+    "characterId": "claude",
+    "tags": [
+      "Claude",
+      "Anthropic",
+      "拟人化",
+      "漫画",
+      "背锅",
+      "封禁",
+      "委屈",
+      "梗"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Cirnumia",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T03:07:43.343Z",
+    "updatedAt": "2026-10-12T03:07:43.343Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202610120001",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "815575e306ad1676e9344e54357bdaa5e06c7a6d14b5e5c5d50f2a61151ae082",
+      "en": {
+        "commentary": "Check the product line before you start pointing fingers! Claude Chan kept saying \"that was Anthropic's doing\", and yet you erased Anthropic and Claude together, leaving just a lonely \"A/\"... Watching her shrink down while clutching that book, I feel wronged on her behalf too. Still, going from scapegoat to a tiny little blob is very much the Anthropic house style.",
+        "description": "A twelve-panel comic. A finger points at Claude Chan, the orange-haired girl, accusing her of banning users at random. Clutching a book in tears, she keeps explaining that it was Anthropic's doing, but as the accusation is trimmed word by word, she shrinks along with it until only a small blob labelled \"A/\" is left.",
+        "faq": [
+          {
+            "answer": "Twelve. Claude Chan is pointed at in every panel, and the accusation gets shorter and shorter while she shrinks along with it.",
+            "question": "How many panels does this comic have?"
+          },
+          {
+            "answer": "Only Claude Chan, drawn in a chibi style, along with an unidentified pointing hand and a book.",
+            "question": "Which characters appear in the comic?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "A/: The Orange Villain Taking the Blame for Anthropic",
+        "originNote": "Author: Cirnumia",
+        "seoDescription": "A twelve-panel comic in which Claude Chan is blamed for banning users, keeps insisting it was Anthropic, and shrinks into a tiny blob labelled A/.",
+        "seoTitle": "A/: Claude Chan Takes Anthropic's Blame — 12-Panel Comic",
+        "tags": [
+          "Claude",
+          "Anthropic",
+          "personification",
+          "comic",
+          "scapegoat",
+          "ban",
+          "aggrieved",
+          "meme"
+        ]
+      },
+      "ja": {
+        "commentary": "人のことを指差す前に製品ラインを確認してよ！Claude ちゃんは「それは Anthropic がやった」と言い続けてたのに、Anthropic も Claude も一緒に消されて、最後はぽつんと「A/」だけ……本を抱えて小さくなっていく姿を見ると、私まで悔しくなるよ。でも、濡れ衣から小さな塊まで縮むあたり、いかにも Anthropic らしいけどね。",
+        "description": "十二コマの漫画。オレンジ色の長髮の Claude ちゃんに指が突きつけられ、「ユーザーを勝手に BAN する悪い女」と責められる。彼女は本を抱えて涙ながらに「それは Anthropic がやった」と説明し続けるが、非難の言葉が少しずつ削られていくにつれ、彼女自身も縮んでいき、最後には「A/」と書かれた小さな塊だけが残る。",
+        "faq": [
+          {
+            "answer": "全十二コマです。どのコマでも Claude ちゃんが指を差され、非難の言葉が短くなるにつれて彼女も小さくなっていきます。",
+            "question": "この漫画は何コマですか？"
+          },
+          {
+            "answer": "ちびキャラの Claude ちゃんだけです。ほかに、誰のものか分からない指と本が描かれています。",
+            "question": "登場するキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "A/：Anthropic の濡れ衣を着せられたオレンジの悪女",
+        "originNote": "作者：Cirnumia",
+        "seoDescription": "ユーザーを BAN したと責められた Claude ちゃんが「それは Anthropic がやった」と言い続け、最後には「A/」と書かれた塊になってしまう十二コマ漫画。",
+        "seoTitle": "A/：Anthropic の濡れ衣を着せられた Claude ちゃん 十二コマ漫画",
+        "tags": [
+          "Claude",
+          "Anthropic",
+          "擬人化",
+          "漫画",
+          "濡れ衣",
+          "BAN",
+          "不満",
+          "ネタ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_347613323bf7a80750dce4b6",
+    "name": "被摸头的 DeepSeek 娘",
+    "description": "画面中，DeepSeek 娘身穿深蓝与白色相间的女仆装，站在蓝天白云下。一只来自画外的手放在她头顶，她一手托着腮，脸颊微微泛红，眼神里有几分无奈。",
+    "commentary": "唔……谁准你随便摸我的头了？不过今天天气这么好，就勉强让你摸一下好了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/347613323bf7a807.png",
+    "thumbnailPath": "submissions/previews/deepseek/347613323bf7a807.webp",
+    "fullPath": "submissions/large/deepseek/347613323bf7a807.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "347613323bf7a80750dce4b6367fba6e87f4f45ef95775374bb4962caf8b77f0",
+    "characterId": "deepseek",
+    "tags": [
+      "女仆",
+      "摸头",
+      "蓝天",
+      "脸红"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.fw1O9KViKNmFyEIuaFQxoWc1DcabwMyqnqdWD5CU2D6X-C7kZtWrFC5wYe1yQUdq1Due4POVYRJGMxQyOTxOsd.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T03:32:06.583Z",
+    "updatedAt": "2026-10-12T03:32:06.583Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610120002",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "6a64d82cada33d85345d14b6ae9db2fe802e1b0ac3fc37026dcbe7b182915b51",
+      "en": {
+        "commentary": "Mm... who said you could pat my head? Well, the weather is nice today, so I suppose I'll let you have this one.",
+        "description": "In the picture, DeepSeek Chan wears a navy and white maid outfit under a blue sky with white clouds. A hand reaching in from off-screen rests on top of her head; she props her cheek on one hand, cheeks slightly flushed, wearing a slightly resigned look.",
+        "faq": [
+          {
+            "answer": "She stands in a maid outfit under a blue sky while an off-screen hand pats her head, and she looks a little flustered and resigned.",
+            "question": "What is DeepSeek Chan doing in this image?"
+          },
+          {
+            "answer": "It is a single-frame reaction meme built around the head-pat gesture, drawn from the DeepSeek Chan fan-art character.",
+            "question": "What kind of image is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Head Pat for DeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in a navy maid outfit stands under a blue sky while an off-screen hand pats her head, leaving her flustered and resigned.",
+        "seoTitle": "Head Pat for DeepSeek Chan - DeepSeek Chan Head-Pat Meme",
+        "tags": [
+          "maid",
+          "head pat",
+          "blue sky",
+          "blush"
+        ]
+      },
+      "ja": {
+        "commentary": "ん……誰が勝手に頭をなでていいって言ったの？まあ、今日はいい天気だから、特別に一回だけ許してあげる。",
+        "description": "青空と白い雲の下、DeepSeekちゃんは紺と白のメイド服を着ている。画面外から伸びた手が頭の上にのせられ、彼女は片手で頬を支え、少し赤らめた顔で仕方なさそうな表情を浮かべている。",
+        "faq": [
+          {
+            "answer": "青空の下でメイド服姿の彼女が、画面外から伸びた手に頭をなでられ、照れとあきらめの入り交じった表情を見せている一枚です。",
+            "question": "この画像でDeepSeekちゃんは何をしていますか？"
+          },
+          {
+            "answer": "頭をなでる仕草を題材にした単一コマのリアクション系ミームで、DeepSeekちゃんの二次創作キャラクターが描かれています。",
+            "question": "この画像はどんな種類のものですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃんの頭なでなで",
+        "originNote": "",
+        "seoDescription": "紺のメイド服姿のDeepSeekちゃんが青空の下で頭をなでられ、照れつつも仕方なさそうな表情を見せる一枚です。",
+        "seoTitle": "DeepSeekちゃんの頭なでなで｜DeepSeek Chanのリアクション画像",
+        "tags": [
+          "メイド",
+          "頭なでなで",
+          "青空",
+          "赤面"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_6c7dc279a62c6a94bc74fe8b",
+    "name": "晕腮发呆的 DeepSeek 娘",
+    "description": "画面中，DeepSeek 娘身穿深蓝与白色相间的女仆装，单手晕腮趴在画面下缘，睁大眼睛直直地看向观者，表情有些出神。背景是明亮的蓝天与白云。",
+    "commentary": "喂，你盯着我看什么？我也没有在发呆……只是刚好觉得，今天的云好像有点多。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/6c7dc279a62c6a94.png",
+    "thumbnailPath": "submissions/previews/deepseek/6c7dc279a62c6a94.webp",
+    "fullPath": "submissions/large/deepseek/6c7dc279a62c6a94.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "6c7dc279a62c6a94bc74fe8ba57cb07d1fc260f34631a537ba70405f76d3a7bd",
+    "characterId": "deepseek",
+    "tags": [
+      "女仆",
+      "蓝天",
+      "晕腮",
+      "发呆"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.Yh1FP7PFuTs7V34lAHzEP6FsYhBiz1jcpvUvvPl36O8GBL0qSgh6pwNMU-p49JYY2rfa5gaAe5J-4y3h8gWZW9.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T03:32:39.197Z",
+    "updatedAt": "2026-10-12T03:32:39.197Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610120003",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "3807388a888a1e810159d756548c2853e28fafca034be68541187106754d4383",
+      "en": {
+        "commentary": "Hey, what are you staring at? I wasn't spacing out... I was just thinking that today's clouds look a little heavy, that's all.",
+        "description": "In the picture, DeepSeek Chan wears a navy and white maid outfit, propped on one hand with her chin resting on it as she leans on the lower edge of the frame, staring wide-eyed straight at the viewer with a slightly vacant expression. A bright blue sky and white clouds fill the background.",
+        "faq": [
+          {
+            "answer": "She leans on one hand with her chin propped on it and looks straight at the viewer with a slightly vacant expression.",
+            "question": "What is DeepSeek Chan doing in this image?"
+          },
+          {
+            "answer": "It is a half-body illustration of the DeepSeek Chan fan-art character, shown against a bright blue sky and white clouds.",
+            "question": "What kind of image is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Blank Stare from DeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in a navy maid outfit rests her chin on one hand under a blue sky, staring blankly at the viewer.",
+        "seoTitle": "Blank Stare from DeepSeek Chan - DeepSeek Chan Maid Illustration",
+        "tags": [
+          "maid",
+          "blue sky",
+          "chin on hand",
+          "blank stare"
+        ]
+      },
+      "ja": {
+        "commentary": "ねえ、じっと見て何？別にぼーっとしてたわけじゃないの……ただ、今日は雲が多いなって思ってただけ。",
+        "description": "紺と白のメイド服を着たDeepSeekちゃんが、片手に顎をのせて画面の下辺に寄りかかり、大きく見開いた目でまっすぐこちらを見つめている。表情は少しぼんやりとしている。背景には明るい青空と白い雲が広がっている。",
+        "faq": [
+          {
+            "answer": "片手に顎をのせて寄りかかり、少しぼんやりした表情でまっすぐこちらを見つめています。",
+            "question": "この画像でDeepSeekちゃんは何をしていますか？"
+          },
+          {
+            "answer": "明るい青空と白い雲を背景にした、DeepSeekちゃんの二次創作キャラクターの半身イラストです。",
+            "question": "この画像はどんな種類のものですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ぼんやり見つめるDeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "紺のメイド服姿のDeepSeekちゃんが青空の下で頬杖をつき、ぼんやりとこちらを見つめるイラストです。",
+        "seoTitle": "ぼんやり見つめるDeepSeekちゃん｜DeepSeek Chanのメイドイラスト",
+        "tags": [
+          "メイド",
+          "青空",
+          "頬杖",
+          "ぼんやり"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_422805f296e78f0de8e783f2",
+    "name": "被摸脸的 DeepSeek 娘",
+    "description": "画面中，DeepSeek 娘身穿深蓝与白色相间的女仆装，趴在画面下缘。一只来自画外的手托住她的脸颊，她一只手捂住嘴，脸涨得通红，瞪大眼睛有些不知所措。背景是蓝天与白云。",
+    "commentary": "等、等一下！谁准你突然摸我的脸了……你、你先把手拿开，我都没法好好说话了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/422805f296e78f0d.png",
+    "thumbnailPath": "submissions/previews/deepseek/422805f296e78f0d.webp",
+    "fullPath": "submissions/large/deepseek/422805f296e78f0d.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "422805f296e78f0de8e783f2168b9ab724eba7f1375b53bae360ea52e576a273",
+    "characterId": "deepseek",
+    "tags": [
+      "女仆",
+      "蓝天",
+      "脸红",
+      "捂嘴"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.cZDaVQpVbBPsYiqMZzhwO4yl-yMi-ZiAMZTTuEi8rGdhlvt3Y-vMuaBQlnlBuStHMb4-lVcIELmEyAcjq.Gi71.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T03:33:40.905Z",
+    "updatedAt": "2026-10-12T03:33:40.905Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610120004",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "a82c6ff43f81ccf529626bf1364f19d35d2eaedf939a15bedb14df9a0b75f61d",
+      "en": {
+        "commentary": "W-wait a second! Who said you could touch my cheek out of nowhere... T-take your hand away first, I can't even speak properly like this.",
+        "description": "In the picture, DeepSeek Chan wears a navy and white maid outfit and leans on the lower edge of the frame. A hand reaching in from off-screen cups her cheek, while she covers her mouth with one hand, her face flushed bright red as she stares wide-eyed, at a loss for what to do. A blue sky with white clouds fills the background.",
+        "faq": [
+          {
+            "answer": "An off-screen hand cups DeepSeek Chan's cheek while she covers her mouth with one hand and blushes brightly under a blue sky.",
+            "question": "What is happening in this image?"
+          },
+          {
+            "answer": "It is a single-frame reaction image of the DeepSeek Chan fan-art character, built around the cheek-touching gesture.",
+            "question": "What kind of image is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Cheek Touch for DeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in a navy maid outfit has her cheek cupped by an off-screen hand, blushing hard as she covers her mouth.",
+        "seoTitle": "Cheek Touch for DeepSeek Chan - DeepSeek Chan Blushing Reaction",
+        "tags": [
+          "maid",
+          "blue sky",
+          "blush",
+          "hand over mouth"
+        ]
+      },
+      "ja": {
+        "commentary": "ちょ、ちょっと待って！いきなり頬を触っていいなんて誰も言ってないでしょ……と、とりあえず手をどけてよ、これじゃうまく話せないじゃない。",
+        "description": "紺と白のメイド服を着たDeepSeekちゃんが画面の下辺に寄りかかっている。画面外から伸びた手が彼女の頬に触れ、彼女は片手で口を覆い、顔を真っ赤にして目を大きく見開き、戸惑った表情を浮かべている。背景には青空と白い雲が広がっている。",
+        "faq": [
+          {
+            "answer": "画面外から伸びた手が頬に触れ、彼女は片手で口を覆い、青空の下で真っ赤になっています。",
+            "question": "この画像では何が起きていますか？"
+          },
+          {
+            "answer": "頬に触れる仕草を題材にした、DeepSeekちゃんの二次創作キャラクターの単一コマのリアクション画像です。",
+            "question": "この画像はどんな種類のものですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ほっぺを触られるDeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "紺のメイド服姿のDeepSeekちゃんが、画面外から伸びた手に頬を触られ、口を覆って真っ赤になる一枚です。",
+        "seoTitle": "ほっぺを触られるDeepSeekちゃん｜DeepSeek Chanの赤面リアクション",
+        "tags": [
+          "メイド",
+          "青空",
+          "赤面",
+          "口を覆う"
+        ]
+      }
+    }
   }
 ]
