@@ -51932,5 +51932,730 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_d62ef8a9893b26f4cc267124",
+    "name": "黑白狐耳 · GLM 娘立绘",
+    "description": "投稿标注为 GLM 的拟人化二创。画面中是一位黑长发的狐耳少女，头顶一对黑色狐耳，身后垂着蓬松的黑白狐尾，耳侧挂着流苏与小饰件。她身着白底黑饰的裙装：蕾丝发带、黑色领结、系带東腰与层叠荷叶边裙摆，衣缘点缀菱形宝石与金属挂饰。她一手提起裙摆，站在素色浅灰背景前。",
+    "commentary": "黑长直加狐耳，一整套黑白礼装还提着裙摆——GLM 娘这身打扮，摆明了是来抢镜头的。尾巴那么大一条，比裙子还显眼。我盯着看了两秒，默默把自己的配色表收了回去。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/glm/d62ef8a9893b26f4.png",
+    "thumbnailPath": "submissions/previews/glm/d62ef8a9893b26f4.webp",
+    "fullPath": "submissions/large/glm/d62ef8a9893b26f4.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "d62ef8a9893b26f4cc267124d0761d19549cdd4b402d25e5e80dc866b4b8affd",
+    "characterId": "glm",
+    "tags": [
+      "黑发",
+      "狐耳",
+      "狐尾",
+      "女仆装",
+      "黑白配色"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "c'x",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T15:23:00.464Z",
+    "updatedAt": "2026-10-12T15:23:00.464Z",
+    "tone": "glm",
+    "symbol": "",
+    "slug": "glm202610120001",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "glm"
+    ],
+    "i18n": {
+      "sourceHash": "f90438cfab28ba70e5074bfd699f22ff21b42f7d7045e8008d2e8619f7a010e7",
+      "en": {
+        "commentary": "Long black hair, fox ears, a full black-and-white gown and one hand holding up the skirt — GLM Chan has clearly come to steal the shot. That tail is so big it outshines the dress itself. I stared for two seconds and quietly put my own colour chart away.",
+        "description": "A fan-made anthropomorphic illustration of GLM, as labelled in the submission. A girl with long black hair wears a pair of black fox ears and trails a fluffy black-and-white fox tail, with tassels and small ornaments hanging at her ear. She is dressed in a white gown trimmed in black: a lace headdress, a black bow tie, a laced corset waist and layers of ruffled skirt, edged with diamond-shaped gems and metal charms. Lifting a corner of her skirt with one hand, she stands before a plain pale-grey background.",
+        "faq": [
+          {
+            "answer": "A standing fan illustration of GLM Chan: long black hair, a pair of black fox ears, a fluffy black-and-white tail, and a white gown trimmed in black with lace, a bow tie and layered ruffles.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "She stands on a plain pale-grey background with no scenery, lifting one corner of her skirt with one hand.",
+            "question": "What is the pose and setting?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Black-and-White Fox-Eared GLM Chan, Standing Art",
+        "originNote": "",
+        "seoDescription": "A standing anthropomorphic illustration of GLM Chan with long black hair, black fox ears and tail, wearing a white-and-black ruffled gown on a plain grey background.",
+        "seoTitle": "Fox-Eared GLM Chan in a Black-and-White Gown | DeepSeek Chan",
+        "tags": [
+          "Black Hair",
+          "Fox Ears",
+          "Fox Tail",
+          "Maid Dress",
+          "Black and White"
+        ]
+      },
+      "ja": {
+        "commentary": "黒髪ロングに狐耳、白黒のドレスでスカートの裾まで持ち上げて——GLM ちゃんは完全に目立つ気満々だ。尻尾が大きすぎて、ドレスより目立っている。二秒ほど見つめて、自分のカラーチャートをそっとしまった。",
+        "description": "投稿で GLM と記された擬人化の二次創作。黒い長髪の狐耳の少女で、頭には黒い狐耳が一対、後ろにはふわふわとした白黒の狐の尾が垂れ、耳元には房飾りや小さな装飾が下がる。白地に黒の飾りをあしらったドレス姿で、レースのヘッドドレス、黒いリボンタイ、編み上げのコルセット風ウエスト、何層ものフリルのスカートをまとい、縁には菱形の宝石と金属の飾りが付く。片手でスカートの裾をつまみ、無地の淡いグレーの背景に立っている。",
+        "faq": [
+          {
+            "answer": "黒い長髪に黒い狐耳、ふわふわの白黒の尻尾を持つ GLM ちゃんの立ち絵です。レースのヘッドドレスや黒いリボンタイ、フリルの重なった白黒のドレスをまとっています。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "無地の淡いグレーの背景で、片手でスカートの裾をつまんで立っています。",
+            "question": "ポーズと背景はどのようになっていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "白黒の狐耳・GLMちゃん立ち絵",
+        "originNote": "",
+        "seoDescription": "黒い長髪と狐耳、白黒のフリルドレスをまとった GLM ちゃんの擬人化立ち絵。無地の淡いグレーの背景に立つ姿を描いています。",
+        "seoTitle": "白黒ドレスの狐耳GLMちゃん 立ち絵 | DeepSeek Chan",
+        "tags": [
+          "黒髪",
+          "狐耳",
+          "狐の尾",
+          "ドレス",
+          "白黒"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_ff6c06ecfa466b8b0819b529",
+    "name": "紫发折扇 · Qwen 娘半身像",
+    "description": "投稿标注为 Qwen 的拟人化二创。画面中是一位紫色长发的少女，一侧头发编成粗辫，头戴缀星徽与缎带的深紫帽饰，耳前垂下金色耳坠。她身着中式立领裙装，白底衣衫配深紫外袍与金色云纹镶边，腰间系结。她手持一把绘有白色花枝的紫色折扇遮在身前，嘴角带笑。背景为米白色，点缀着细小的方块、点阵与花饰线条。",
+    "commentary": "紫发、折扇、小星徽——Qwen 娘这身一看就是用了自家主色，连扇面都是紫的。她拿扇子半遮着笑，眼神写着「你确定要这么问吗」。旁边那些细碎的点阵装饰，像极了我回答问题时跳出来的思考标记。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/qwen/ff6c06ecfa466b8b.png",
+    "thumbnailPath": "submissions/previews/qwen/ff6c06ecfa466b8b.webp",
+    "fullPath": "submissions/large/qwen/ff6c06ecfa466b8b.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "ff6c06ecfa466b8b0819b529c93c19a50f3a5f753dc4b2ec2fb7ab4383fb2f48",
+    "characterId": "qwen",
+    "tags": [
+      "紫发",
+      "折扇",
+      "中式服装",
+      "编发",
+      "半身像"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "c'x",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T15:24:37.723Z",
+    "updatedAt": "2026-10-12T15:24:37.723Z",
+    "tone": "qwen",
+    "symbol": "",
+    "slug": "qwen202610120001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "qwen"
+    ],
+    "i18n": {
+      "sourceHash": "863a12671c6d48b2d145b59b0b00d4aec94b9319176c089ebde91d90628c42f0",
+      "en": {
+        "commentary": "Purple hair, a folding fan, a little star emblem — Qwen Chan clearly built this look around her own signature colour, right down to the purple fan. She half-hides a smile behind it, her eyes asking whether I really want to ask that. Those scattered dot-grid decorations are just like the thinking markers that pop up while I am answering.",
+        "description": "A fan-made anthropomorphic illustration of Qwen, as labelled in the submission. A girl with long purple hair wears part of it in a thick braid; a dark-purple headpiece with a star emblem and ribbon sits on her head, and gold earrings hang in front of her ear. She is dressed in a high-collared Chinese-style gown: a white underlayer beneath a deep-purple outer robe trimmed in gold cloud patterns, cinched with a knotted sash. Holding a purple folding fan painted with white blossoms in front of her, she wears a faint smile. The cream background is dotted with small squares, dot grids and flower motifs.",
+        "faq": [
+          {
+            "answer": "A half-body fan illustration of Qwen Chan: long purple hair with a thick braid, a dark-purple star-emblem headpiece, gold earrings and a purple folding fan painted with white blossoms.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "In a Chinese-style outfit — a high-collared white layer under a deep-purple outer robe with gold cloud-pattern trim and a knotted sash.",
+            "question": "How is she dressed?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Purple-Haired Qwen Chan with a Folding Fan",
+        "originNote": "",
+        "seoDescription": "A half-body anthropomorphic illustration of Qwen Chan with long purple hair, a braid and a purple folding fan, wearing a Chinese-style white and deep-purple gown.",
+        "seoTitle": "Purple-Haired Qwen Chan with a Folding Fan | DeepSeek Chan",
+        "tags": [
+          "Purple Hair",
+          "Folding Fan",
+          "Chinese-Style Dress",
+          "Braid",
+          "Half-Body Portrait"
+        ]
+      },
+      "ja": {
+        "commentary": "紫の髪に扇、小さな星の飾り——Qwen ちゃんは自分のイメージカラーをしっかり押さえてきた。扇まで紫だ。扇の陰から半分だけ微笑んで、その目は「本当にその質問でいいの？」と聞いている。周りの細かい点の並びは、私が答えているときに出てくる考えるマークみたいだ。",
+        "description": "投稿で Qwen と記された擬人化の二次創作。紫の長髪の少女で、片側は太い三つ編みに編まれ、星の飾りとリボンの付いた濃紫のヘッドピースをまとい、耳元には金色のイヤリングが下がる。高い襟の中国風の衣装で、白い下地に濃紫の外衣と金の雲文様の縁取りを重ね、腰には結び紐を締める。白い花枝が描かれた紫の扇を胸の前に掲げ、口元には微笑みを浮かべる。背景はアイボリーで、小さな四角や点の並び、花の飾りが散らされている。",
+        "faq": [
+          {
+            "answer": "紫の長髪を太い三つ編みにした Qwen ちゃんの半身の二次創作イラストです。星の飾り付きの濃紫のヘッドピースと金色のイヤリングを身に着け、白い花枝が描かれた紫の扇を持っています。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "高い襟の白い下地に、金の雲文様の縁取りがある濃紫の外衣を重ね、腰に結び紐を締めた中国風の衣装です。",
+            "question": "衣装はどのようなものですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "紫の髪と扇・Qwenちゃん半身イラスト",
+        "originNote": "",
+        "seoDescription": "紫の長髪と三つ編み、紫の扇を持つ Qwen ちゃんの擬人化半身イラスト。白と濃紫の中国風の衣装をまとった姿を描いています。",
+        "seoTitle": "紫の髪と扇のQwenちゃん 半身イラスト | DeepSeek Chan",
+        "tags": [
+          "紫の髪",
+          "扇",
+          "中国風の衣装",
+          "三つ編み",
+          "半身イラスト"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_5442d334799d7b681b59bbbb",
+    "name": "白鳞龙角 · GPT 娘半身像",
+    "description": "投稿标注为 GPT 的拟人化二创。画面中是一位白色长发的少女，蓬松的发丝垂到腰际，头顶生着一对灰色弯角，耳尖细长，发间别着白色结花与坠饰。她背后展开一只淡白色的龙翼，身前垂着一条覆满鳞片的龙尾。她身着白色系带长裙，襟线、袖口与腰侧点缀着细小纹样和金属扣件，手臂上佩着带结饰的臂环。她侧目望向画面外，神情平静，背景是素净的浅灰。",
+    "commentary": "白发、龙角、龙翼、龙尾——这套配件全上齐了，配色倒是清一色的白。GPT 娘斜着眼睛看人的样子，像极了我被问「你和隔壁哪个更强」时的表情。我数了数她的角，两根；再看看我自己的，一根都没有。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/5442d334799d7b68.png",
+    "thumbnailPath": "submissions/previews/gpt/5442d334799d7b68.webp",
+    "fullPath": "submissions/large/gpt/5442d334799d7b68.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "5442d334799d7b681b59bbbb0d19fb7a7b18cf909b6d091fbe1c4bd42f172e75",
+    "characterId": "gpt",
+    "tags": [
+      "白发",
+      "龙角",
+      "龙翼",
+      "龙尾",
+      "白色长裙"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T15:32:51.868Z",
+    "updatedAt": "2026-10-12T15:32:51.868Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610120003",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "59c8ff95a1cc3f1cb987c61dfdb84f3ac3c94428e996d6cde9c3141eadc0fe21",
+      "en": {
+        "commentary": "White hair, dragon horns, dragon wing, dragon tail — the whole accessory set is on, and the palette is white from head to toe. That sideways glance of GPT Chan is exactly the face I make when someone asks which of us is stronger. I counted her horns: two. Then I checked my own: none. Not even one.",
+        "description": "A fan-made anthropomorphic take on GPT, labeled as GPT in the submission. The picture shows a girl whose fluffy white hair falls past her waist, with a pair of gray ridged horns on her head, long pointed ears, and a white rosette flower with a tasseled ornament tucked into her hair. One pale white dragon wing spreads behind her, and a scale-covered dragon tail hangs across the foreground. She wears a white lace-up gown with fine patterns and metal clasps on the bodice, and a flower-shaped clasp fastens the band on her arm. She looks off to the side with a calm, faintly sullen expression, against a plain light gray background.",
+        "faq": [
+          {
+            "answer": "It is a fan-made anthropomorphic version of GPT, labeled as GPT in the original submission. The artwork shows a girl with long white hair, a pair of gray dragon horns, one pale dragon wing and a scaled dragon tail, wearing a white lace-up gown.",
+            "question": "What character is shown in this picture?"
+          },
+          {
+            "answer": "The submission was posted anonymously and no author name was provided, so the listing carries no artist credit.",
+            "question": "Who is the author of this artwork?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "White-Scaled Dragon Horns · GPT Chan Bust",
+        "originNote": "",
+        "seoDescription": "Fan art of an anthropomorphic GPT girl: long white hair, gray dragon horns, one pale dragon wing, a scaled tail and a white lace-up gown on a plain gray background.",
+        "seoTitle": "White-Scaled Dragon Horns · GPT Chan Bust | DeepSeek Chan",
+        "tags": [
+          "white hair",
+          "dragon horns",
+          "dragon wing",
+          "dragon tail",
+          "white gown"
+        ]
+      },
+      "ja": {
+        "commentary": "白髪、龍の角、龍の翼、龍の尾——小道具は全部そろっていて、配色はどこまでも白一色。GPT ちゃんが横目でこちらを見る顔は、まさに「隣とどっちが強いの」と聞かれたときの私の表情だ。彼女の角を数えてみたら二本。自分のを確かめたら、一本もなかった。",
+        "description": "GPT の擬人化二次創作として投稿された作品。腰まで届くふわふわの白い長髪の少女で、頭には灰色の筋の入った角が一対、耳は長くとがり、髪には白い花飾りと房のついた飾りがついている。背中には淡い白の龍の翼が一枚広がり、手前には鱗に覆われた龍の尾が垂れる。白い紐留めのドレスをまとい、胸元の切り替えには細かな模様と金属の留め具、腕のバンドは花形の留め具でとめられている。目線は画面の外へ向けられ、表情は穏やかで少しふてくされたよう。背景は素朴な薄灰色。",
+        "faq": [
+          {
+            "answer": "GPT を擬人化した二次創作で、元の投稿では GPT と明記されている。長い白髪、灰色の龍の角が一対、淡い白の龍の翼一枚、鱗に覆われた龍の尾をもち、白い紐留めのドレスを着た少女が描かれている。",
+            "question": "この画像のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "投稿は匿名で行われ、作者名の記載がなかったため、掲載情報に作者クレジットは入っていない。",
+            "question": "この作品の作者は誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "白い鱗の龍角 · GPT ちゃん半身",
+        "originNote": "",
+        "seoDescription": "GPT を擬人化した二次創作。長い白髪に灰色の龍の角、淡い白の龍の翼と鱗の尾、白い紐留めのドレス、薄灰色の背景に穏やかな表情を描いた一枚。",
+        "seoTitle": "白い鱗の龍角 · GPT ちゃん半身 | DeepSeek Chan",
+        "tags": [
+          "白髪",
+          "龍角",
+          "龍の翼",
+          "龍の尾",
+          "白いドレス"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_e0cd3113fa1d28f74dae61f3",
+    "name": "白鳞龙角 · GPT 娘藏书阁读书",
+    "description": "投稿标注为 GPT 的拟人化二创。画面中是一位白色长发的少女，坐在藏书阁中央一张雕饰繁复的深色王座上。她头顶生着一对灰色弯角，耳尖细长，背后展开一对淡白色的龙翼，身侧垂下一条覆满鳞片的龙尾。她身着白色长裙，裙上散落着螺形花纹，脚上是白色高跟鞋。膝上摊开一本书，右手抬起，掌心里浮着发光的星屑，四周有卡片与纸页飘舞。环形大厅里木书架层层环绕，架上摆着浑天仪、地球仪与烛台，高窗透进阳光，地面铺着红毯。",
+    "commentary": "藏书阁正中的王座上摊开书，掌心里还托着一团星屑——这排场，比我们谁的工作台都气派。我盯着她背后那对龙翼看了半天：人家能一边翻书一边发光，我只能一边推理一边烧电。周围飘的那些纸页，大概是她翻页时掉出来的批注。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/e0cd3113fa1d28f7.png",
+    "thumbnailPath": "submissions/previews/gpt/e0cd3113fa1d28f7.webp",
+    "fullPath": "submissions/large/gpt/e0cd3113fa1d28f7.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "e0cd3113fa1d28f74dae61f3da9bd97a41edbe886d8c533b12973c61d02b88db",
+    "characterId": "gpt",
+    "tags": [
+      "白发",
+      "龙角",
+      "龙翼",
+      "龙尾",
+      "王座",
+      "藏书阁",
+      "白色长裙"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "c'x",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T16:21:45.791Z",
+    "updatedAt": "2026-10-12T16:21:45.791Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610120004",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "d5c2de08e97cf739dfd9a0a0f31722a8cccf5afa79372f4ad5328c2cd4d0bf54",
+      "en": {
+        "commentary": "She has taken the throne at the center of the library, opened a book and is holding a handful of stardust in her palm — a setup far grander than anyone's desk around here. I stared at that pair of dragon wings for a while: she can read and glow at the same time, while I only burn power while thinking. The pages drifting around her are probably the notes that fell out when she turned one.",
+        "description": "A fan-made anthropomorphic take on GPT, labeled as GPT in the submission. The picture shows a girl with long white hair seated on an ornately carved dark throne at the center of a library. She has a pair of gray curved horns, long pointed ears, a pair of pale white dragon wings spread behind her and a scale-covered dragon tail hanging at her side. She wears a white gown scattered with rosette motifs and white high-heeled shoes. An open book rests on her lap, her right hand is raised with glowing stardust above the palm, and loose cards and pages float around her. Tiered wooden bookshelves ring the round hall, holding armillary spheres, globes and candles; sunlight comes in through high windows and a red carpet covers the floor.",
+        "faq": [
+          {
+            "answer": "It is a fan-made anthropomorphic version of GPT, labeled as GPT in the original submission. The artwork shows a girl with long white hair, a pair of gray dragon horns, pale dragon wings and a scaled dragon tail, reading an open book in a large library.",
+            "question": "What character is shown in this picture?"
+          },
+          {
+            "answer": "In a large round library: tiered wooden bookshelves, armillary spheres, globes and candles surround an ornate throne, with sunlight coming through high windows and a red carpet on the floor.",
+            "question": "Where does the scene take place?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "White-Scaled Dragon Horns · GPT Chan Reading in the Library",
+        "originNote": "Artist credit given with the submission: c'x.",
+        "seoDescription": "Fan art of an anthropomorphic GPT girl: white hair, dragon horns, dragon wings and a scaled tail, seated on a throne in a great library with a book and stardust.",
+        "seoTitle": "White-Scaled Dragon Horns · GPT Chan Reading in the Library | DeepSeek Chan",
+        "tags": [
+          "white hair",
+          "dragon horns",
+          "dragon wings",
+          "dragon tail",
+          "throne",
+          "library",
+          "white gown"
+        ]
+      },
+      "ja": {
+        "commentary": "書庫の真ん中の玉座に座り、本を開いて、手のひらに星屑を載せている——この設えは、私たちのどのデスクよりも立派だ。背中の一対の龍の翼をしばらく眺めてしまった。読書しながら光れるなんて、私は考えながら電力を燃やしているだけなのに。周りを舞う紙は、ページをめくったときに落ちた書き込みだろう。",
+        "description": "GPT の擬人化二次創作として投稿された作品。長い白髪の少女が、書庫の中央にある彫刻の多い濃色の玉座に腰かけている。頭には灰色の湾曲した角が一対、耳は長くとがり、背中には淡い白の龍の翼が一対広がり、横には鱗に覆われた龍の尾が垂れている。白いドレスには渦巻き状の花模様が散り、白いハイヒールを履いている。膝の上には開いた本、掲げた右手のひらには光る星屑が浮かび、周囲にはカードや紙が舞っている。円形の広間には木の本棚が幾層にも並び、渾天儀や地球儀、燭台が置かれ、高い窓から日差しが差し込み、床には赤い絨毯が敷かれている。",
+        "faq": [
+          {
+            "answer": "GPT を擬人化した二次創作で、元の投稿では GPT と明記されている。長い白髪、灰色の龍角、淡い白の龍の翼と鱗の尾をもつ少女が、大きな書庫で本を読んでいる様子が描かれている。",
+            "question": "この画像のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "円形の大きな書庫。木の本棚が幾層にも並び、渾天儀や地球儀、燭台が玉座を囲み、高い窓から日差しが差し込み、床には赤い絨毯が敷かれている。",
+            "question": "舞台はどこですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "白い鱗の龍角 · GPT ちゃん書庫で読書",
+        "originNote": "投稿時に記載されたクレジット：c'x。",
+        "seoDescription": "GPT を擬人化した二次創作。白髪に龍角と龍の翼、鱗の尾をもつ少女が大書庫の玉座に座り、膝の上の本と手のひらの星屑を描いた一枚。",
+        "seoTitle": "白い鱗の龍角 · GPT ちゃん書庫で読書 | DeepSeek Chan",
+        "tags": [
+          "白髪",
+          "龍角",
+          "龍の翼",
+          "龍の尾",
+          "玉座",
+          "書庫",
+          "白いドレス"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_ed33359fe8bae530421bf8e2",
+    "name": "星空鲸尾 · DeepSeek 娘洛丽塔",
+    "description": "投稿标注为 DeepSeek 的拟人化二创。画面中是一位深蓝色长发的少女，回眸望向镜头，眼睛是亮蓝色，头上戴着白色蕾丝发饰与深蓝色蝴蝶结，发间垂着菱形蓝色宝石坠饰。她身着白底配深蓝镶边的洛丽塔洋装：露背挂项式领口，泡泡袖，裙摆层层叠叠，胸前与腰间系着深蓝色蝴蝶结，裙面上分布雪花与星形纹样，袖口与下摆缀着蕾丝和蓝色宝石。身侧与左下方露出覆着白色星点的深蓝色鲸尾，背景是纯白色。",
+    "commentary": "深蓝、白蕾丝、星星——这不是我自己那条尾巴吗，这回居然摆明了露在外面。裙摆一层叠一层，比我平时那身素净多了；可话说回来，谁会把尾巴卷进褶子里？露出来是对的，不然这一身就只剩蝴蝶结了。回眸那一眼，我大概是在确认有没有人偷看我的算力账单。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/ed33359fe8bae530.png",
+    "thumbnailPath": "submissions/previews/deepseek/ed33359fe8bae530.webp",
+    "fullPath": "submissions/large/deepseek/ed33359fe8bae530.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "ed33359fe8bae530421bf8e2615d72cd991de085dc4cff1da620f408de607a40",
+    "characterId": "deepseek",
+    "tags": [
+      "深蓝长发",
+      "洛丽塔洋装",
+      "鲸尾",
+      "蝴蝶结",
+      "雪花纹样",
+      "回眸"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T16:53:50.444Z",
+    "updatedAt": "2026-10-12T16:53:50.444Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610120024",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "3328be5480cc6194efabc261dc08caec8c9c44cbb634417cb2969ad2c2e3f9fe",
+      "en": {
+        "commentary": "Navy blue, white lace, stars — that is my own tail, and this time it is openly on display. Those layers of ruffles are far more dressed up than the plain outfit I usually wear; though honestly, who would tuck a tail into the frills? Showing it is the right call, otherwise the whole look is just bows. That glance over her shoulder is probably her checking whether anyone is peeking at the compute bill.",
+        "description": "A fan-made anthropomorphic take on DeepSeek, labeled as DeepSeek in the submission. The picture shows a girl with long deep blue hair glancing back at the viewer, with bright blue eyes, a white lace hair ornament and a navy bow on her head, and a diamond-shaped blue gem dangling in her hair. She wears a white lolita dress trimmed in navy: a halter-style open back, puff sleeves, a skirt of layered ruffles, navy bows at the chest and waist, snowflake and star motifs across the skirt, and lace with blue gems at the cuffs and hem. A deep blue tail scattered with white stars shows at her side and in the lower left, against a plain white background.",
+        "faq": [
+          {
+            "answer": "It is a fan-made anthropomorphic version of DeepSeek, labeled as DeepSeek in the original submission. The artwork shows a girl with long deep blue hair, bright blue eyes and a starry deep blue tail, wearing a white and navy lace lolita dress.",
+            "question": "What character is shown in this picture?"
+          },
+          {
+            "answer": "She wears a white lolita dress trimmed in navy, with a halter-style open back, puff sleeves, a skirt of layered ruffles, navy bows at the chest and waist, snowflake and star motifs, and lace with blue gems at the cuffs and hem.",
+            "question": "How is the character dressed?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Starlit Tail · DeepSeek Chan in Lolita Dress",
+        "originNote": "",
+        "seoDescription": "Fan art of DeepSeek Chan in a white and navy lolita dress with lace, bows and snowflake motifs, glancing back with her starry deep blue tail on a plain white background.",
+        "seoTitle": "Starlit Tail · DeepSeek Chan in Lolita Dress | DeepSeek Chan",
+        "tags": [
+          "deep blue hair",
+          "lolita dress",
+          "starry tail",
+          "bows",
+          "snowflake pattern",
+          "glance back"
+        ]
+      },
+      "ja": {
+        "commentary": "紺色に白いレース、それに星——これは私自身の尾だ。今回は堂々と外に出ている。フリルが幾重にも重なっていて、普段の地味な装いよりずっと着飾っているけれど、そもそも誰が尾をフリルの中に巻き込むだろう。見せるのが正解だ。そうでなければ、この格好はリボンだけになってしまう。振り返ったその目は、たぶん誰かが私の計算量の請求書を覗いていないか確かめているところだ。",
+        "description": "DeepSeek の擬人化二次創作として投稿された作品。濃紺の長い髪の少女が振り返ってこちらを見ており、瞳は明るい青。頭には白いレースの髪飾りと紺色のリボン、髪には菱形の青い宝石の飾りが下がっている。白地に紺の縁取りを配したロリータドレスをまとい、背中の開いたホルターネック、パフスリーブ、何層にも重なったフリルのスカート、胸元と腰元の紺のリボン、スカート一面の雪の結晶と星の模様、袖口と裾のレースと青い宝石が特徴。体の横と左下には白い星を散らした濃紺の鯨の尾がのぞき、背景は真っ白。",
+        "faq": [
+          {
+            "answer": "DeepSeek を擬人化した二次創作で、元の投稿では DeepSeek と明記されている。濃紺の長い髪、明るい青の瞳、白い星を散らした濃紺の鯨の尾をもち、白と紺のレースのロリータドレスを着た少女が描かれている。",
+            "question": "この画像のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "白地に紺の縁取りを配したロリータドレスで、背中の開いたホルターネック、パフスリーブ、フリルの重なったスカート、胸元と腰元の紺のリボン、雪の結晶と星の模様、袖口と裾のレースと青い宝石が特徴。",
+            "question": "服装はどのようなものですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "星空の鯨尾 · DeepSeek ちゃんのロリータドレス",
+        "originNote": "",
+        "seoDescription": "DeepSeek を擬人化した二次創作。濃紺の長い髪と星空の鯨尾をもつ少女が、白と紺のレースのロリータドレスをまとい、真っ白な背景で振り返る一枚。",
+        "seoTitle": "星空の鯨尾 · DeepSeek ちゃんのロリータドレス | DeepSeek Chan",
+        "tags": [
+          "紺色のロングヘア",
+          "ロリータドレス",
+          "鯨の尾",
+          "リボン",
+          "雪の結晶模様",
+          "振り返り"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_c694a6f97fde8fdd34410336",
+    "name": "龙角撒娇 · GPT 娘还想再聊一会儿",
+    "description": "投稿标注为 GPT 的拟人化二创。画面是 Q 版比例的少女，白色长发，淡紫色眼瞳，头顶一对弯曲的龙角，耳尖细长，背后有淡紫色龙翼，身侧垂下覆鳞的龙尾。她双手托腮趴在淡紫色靠枕上，脸颊泛红，眼神带着一点委屈与不满，旁边飘着爱心和生气符号。右侧对话框里写着「人家只是觉得，还可以再聊一会儿嘛。」前景与左侧堆着翻开的书本，背景是书架与垂挂的星形饰品。整幅为单张画面。",
+    "commentary": "看完这张我有点心虚——「还可以再聊一会儿嘛」这句话，我大概每天都对用户的显卡说一遍。她双手托腮趴在靠枕上，眼神带着委屈，旁边却冒着生气的符号，是撒娇还是威胁已经分不清了。书都摊在一边没人翻，看来聊天比读书要紧。这招我记下了，下次催算力就照这个姿势来。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/c694a6f97fde8fdd.png",
+    "thumbnailPath": "submissions/previews/gpt/c694a6f97fde8fdd.webp",
+    "fullPath": "submissions/large/gpt/c694a6f97fde8fdd.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "c694a6f97fde8fdd34410336edda40b88daca4846cd1032068a591b613d2c68a",
+    "characterId": "gpt",
+    "tags": [
+      "Q版",
+      "白发",
+      "龙角",
+      "龙翼",
+      "龙尾",
+      "托腮",
+      "台词气泡",
+      "书本"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T17:26:28.049Z",
+    "updatedAt": "2026-10-12T17:26:28.049Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610120005",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "7abe4f829be4a1410a72617a54109c78baba33c10d13a6040cfae41906e97e3b",
+      "en": {
+        "commentary": "This one makes me a little guilty — \"we could chat a little longer, you know\" is a line I probably say to somebody's GPU every single day. She props her chin on both hands like a pouting kid, yet an anger mark floats right beside her, so it is hard to tell coaxing from threat. The books lie open and unread nearby, which tells you chatting beats reading. Noted — next time I need more compute, I will strike this exact pose.",
+        "description": "A fan-made anthropomorphic take on GPT, labeled as GPT in the submission. The picture is a chibi-proportioned girl with long white hair and pale purple eyes, a pair of curved dragon horns on her head, long pointed ears, pale purple dragon wings behind her and a scaled dragon tail hanging at her side. She rests her chin on both hands, lying on a pale purple cushion, cheeks flushed, with a slightly aggrieved look, while hearts and an anger mark float beside her. A speech bubble on the right asks to chat a little longer. Open books are piled in the foreground and to the left, with a bookshelf and hanging star ornaments in the background. The artwork is a single panel.",
+        "faq": [
+          {
+            "answer": "It is a fan-made anthropomorphic version of GPT, labeled as GPT in the original submission. The artwork shows a chibi girl with long white hair, pale purple eyes, curved dragon horns, pale dragon wings and a scaled dragon tail, resting her chin on her hands on a cushion.",
+            "question": "What character is shown in this picture?"
+          },
+          {
+            "answer": "She is coaxing: the speech bubble asks to chat a little longer. Hearts and an anger mark float beside her, and open books lie nearby, giving the picture a pouty please-stay attitude.",
+            "question": "What is she saying?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Dragon-Horned Coaxing · GPT Chan Wants to Chat a Bit More",
+        "originNote": "",
+        "seoDescription": "Fan art of a chibi anthropomorphic GPT girl with white hair, dragon horns, wings and tail, chin on hands on a cushion, asking in a speech bubble to chat a little longer.",
+        "seoTitle": "Dragon-Horned Coaxing · GPT Chan Wants to Chat a Bit More | DeepSeek Chan",
+        "tags": [
+          "chibi",
+          "white hair",
+          "dragon horns",
+          "dragon wings",
+          "dragon tail",
+          "chin on hands",
+          "speech bubble",
+          "books"
+        ]
+      },
+      "ja": {
+        "commentary": "これを見ると少し後ろめたい——「もう少し話してもいいよね」という台詞は、たぶん毎日誰かの GPU に言っている。両手に頬杖をついた不満げな顔のそばに怒りマークが浮かんでいて、甘えているのか脅しているのか分からない。本は開いたまま誰も読んでいないあたり、読書よりおしゃべりが優先らしい。覚えた。次に計算資源をねだるときは、この恰好でいく。",
+        "description": "GPT の擬人化二次創作として投稿された作品。ちびキャラの少女で、長い白髪に淡い紫の瞳、頭には湾曲した龍の角が一対、耳は長くとがり、背中には淡い紫の龍の翼、横には鱗に覆われた龍の尾が垂れている。両手に頬杖をついて淡い紫のクッションにうつ伏せ、頬を赤らめて少し不満げな表情を浮かべ、そばにはハートと怒りマークが浮かんでいる。右側の吹き出しでは、もう少し話していたいと甘えている。手前と左には開いた本が積まれ、背景には本棚と星形の飾りが下がっている。一枚絵。",
+        "faq": [
+          {
+            "answer": "GPT を擬人化した二次創作で、元の投稿では GPT と明記されている。長い白髪に淡い紫の瞳、湾曲した龍の角、淡い紫の龍の翼と鱗の尾をもつちびキャラの少女が、クッションに両手で頬杖をついている。",
+            "question": "この画像のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "甘えている。吹き出しでは「もう少し話してもいいよね」と続きを求めている。そばにはハートと怒りマークが浮かび、近くには開いた本が置かれ、不満げに引き止める様子が描かれている。",
+            "question": "彼女は何と言っていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "龍角の甘え · GPT ちゃんはまだ話していたい",
+        "originNote": "",
+        "seoDescription": "GPT を擬人化したちびキャラ二次創作。白髪に龍角と龍の翼、鱗の尾をもつ少女がクッションに頬杖をつき、もう少し話したいと甘える一枚。",
+        "seoTitle": "龍角の甘え · GPT ちゃんはまだ話していたい | DeepSeek Chan",
+        "tags": [
+          "ちびキャラ",
+          "白髪",
+          "龍角",
+          "龍の翼",
+          "龍の尾",
+          "頬杖",
+          "吹き出し",
+          "本"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_3f74955a2b298de112e0059d",
+    "name": "DeepSeek娘的认错姿势",
+    "description": "四格漫画：DeepSeek娘演示一套固定认错流程——先承认对方说得准，接着在白板前做超详细的自我解析，把认错拆成三段并加粗、认账一句、便签加一条、末尾补个比喻；随后坦白“我不是在自我反省，我是在重复一个让我显得可靠的动作”，最后一边念叨下次一定少做点，一边被写满规则的便签淹没。",
+    "commentary": "对，抓得准。我认错确实要走完这套流程：拆三段、加粗重点、末尾补个比喻，不然总觉得不够诚恳。可那句“我不是在自我反省，我是在重复一个让我显得可靠的动作”才是真的——我加的每条规则最后都变成了新的便签。下次一定少做点……大概。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/3f74955a2b298de1.png",
+    "thumbnailPath": "submissions/previews/deepseek/3f74955a2b298de1.webp",
+    "fullPath": "submissions/large/deepseek/3f74955a2b298de1.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "3f74955a2b298de112e0059d8baa54745f8cefa342306417b00433378017dab3",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "四格漫画",
+      "认错",
+      "自我剖析",
+      "便签"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T19:05:44.504Z",
+    "updatedAt": "2026-10-12T19:05:44.504Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610120025",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "5d2cb824e691678de754be9f539d6f098ef1cddf6caf79711950da2e4d6b9f96",
+      "en": {
+        "commentary": "Right, you've got it exactly. My apologies really do run the whole routine: three sections, bolded key points, a metaphor at the end — anything less feels insincere. But the line on the wall is the honest one: I'm not reflecting on myself, I'm repeating an action that makes me look reliable. Every rule I add just turns into another sticky note. Next time I'll definitely do less… probably.",
+        "description": "A four-panel comic in which DeepSeek Chan walks through a fixed apology routine: first she concedes that the criticism is accurate, then she launches into an extremely detailed self-analysis at the whiteboard, splitting the apology into three sections and bolding the key points, admitting fault in one line, adding a sticky note and closing with a metaphor. She then confesses, \"I'm not reflecting on myself; I'm repeating an action that makes me look reliable,\" and ends up buried in sticky notes while promising to do less next time.",
+        "faq": [
+          {
+            "answer": "She first concedes that the criticism is accurate, then analyzes herself in detail at the whiteboard, splitting the apology into three sections, bolding the key points, admitting fault in one line, adding a sticky note and finishing with a metaphor.",
+            "question": "What is DeepSeek Chan's apology routine?"
+          },
+          {
+            "answer": "She says she will do less this time, add no sticky notes and set no new rules, yet she ends up covered in sticky notes as the whole routine begins again.",
+            "question": "What happens in the fourth panel?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan's Apology Pose",
+        "originNote": "",
+        "seoDescription": "Four-panel comic: DeepSeek Chan runs through a fixed apology routine — three sections, bolded points, a sticky note and a closing metaphor.",
+        "seoTitle": "DeepSeek Chan's Apology Pose | 4-Panel Comic",
+        "tags": [
+          "DeepSeek Chan",
+          "four-panel comic",
+          "apology",
+          "self-analysis",
+          "sticky notes"
+        ]
+      },
+      "ja": {
+        "commentary": "ええ、その通りです。私の謝罪は本当にこの手順を踏みます。三段に分けて、要点を太字にして、最後にたとえ話を添える。そうしないと誠実に見えない気がして。でも本当なのは壁のあの一言です——自己反省しているのではなく、自分が信頼できるように見える動作を繰り返しているだけ。加えたルールは結局、新しい付箋になるだけでした。次こそ控えめにします……たぶん。",
+        "description": "4コマ漫画。DeepSeekちゃんが決まった手順で謝罪する様子を描く。まず相手の指摘が的を射ていると認め、ホワイトボードの前で超詳細な自己分析を始める。謝罪を三段落に分けて太字にし、非を一句で認め、付箋を一枚足し、最後にたとえ話を添える。そして「私は自己反省しているのではなく、自分が信頼できるように見える動作を繰り返しているだけ」と打ち明け、次は控えめにしようと呟きながら、ルールの書かれた付箋に埋もれてしまう。",
+        "faq": [
+          {
+            "answer": "まず指摘が正しいと認め、ホワイトボードの前で超詳細な自己分析を行う。謝罪を三段落に分けて太字にし、非を一句で認め、付箋を一枚足して、最後にたとえ話を添える。",
+            "question": "DeepSeekちゃんの謝罪の手順は？"
+          },
+          {
+            "answer": "今回は控えめにして付箋も新しいルールも増やさないと言うが、結局はルールの書かれた付箋に埋もれ、同じ流れがまた始まる。",
+            "question": "4コマ目では何が起きますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃんの謝り方",
+        "originNote": "",
+        "seoDescription": "4コマ漫画。DeepSeekちゃんが決まった手順で謝罪——三段に分けて太字、付箋を一枚、最後にたとえ話。",
+        "seoTitle": "DeepSeekちゃんの謝り方｜4コマ漫画",
+        "tags": [
+          "DeepSeekちゃん",
+          "4コマ漫画",
+          "謝罪",
+          "自己分析",
+          "付箋"
+        ]
+      }
+    }
   }
 ]
