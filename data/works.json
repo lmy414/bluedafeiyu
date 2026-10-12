@@ -46829,7 +46829,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-11T13:07:44.244Z",
-    "updatedAt": "2026-10-11T13:07:44.244Z",
+    "updatedAt": "2026-10-12T02:09:05.247Z",
     "tone": "claude",
     "symbol": "",
     "slug": "claude202610110001",
@@ -47948,7 +47948,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-11T15:16:17.141Z",
-    "updatedAt": "2026-10-11T15:16:17.142Z",
+    "updatedAt": "2026-10-12T02:29:08.067Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202610110020",
@@ -48054,7 +48054,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-11T15:16:17.515Z",
-    "updatedAt": "2026-10-11T15:16:17.516Z",
+    "updatedAt": "2026-10-12T02:29:08.033Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202610110021",
@@ -48160,7 +48160,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-11T15:16:17.762Z",
-    "updatedAt": "2026-10-11T15:16:17.762Z",
+    "updatedAt": "2026-10-12T02:29:07.984Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202610110022",
@@ -48260,7 +48260,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-11T15:16:17.990Z",
-    "updatedAt": "2026-10-11T15:16:17.991Z",
+    "updatedAt": "2026-10-12T02:29:07.944Z",
     "tone": "claude",
     "symbol": "",
     "slug": "claude202610110003",
@@ -48358,7 +48358,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-11T15:16:18.401Z",
-    "updatedAt": "2026-10-11T15:16:18.401Z",
+    "updatedAt": "2026-10-12T02:29:07.894Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202610110023",
@@ -48456,7 +48456,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-11T15:16:19.086Z",
-    "updatedAt": "2026-10-11T15:16:19.086Z",
+    "updatedAt": "2026-10-12T02:29:07.854Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202610110024",
@@ -48559,7 +48559,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-11T15:16:19.340Z",
-    "updatedAt": "2026-10-11T15:16:19.341Z",
+    "updatedAt": "2026-10-12T02:29:07.814Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202610110025",
@@ -49029,6 +49029,107 @@
           "海辺",
           "水着",
           "水遊び"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_d348e34a24c107e844c4a2f5",
+    "name": "夕阳海面上的蓝色鲸鱼少女",
+    "description": "一位蓝发少女泡在夕阳下的浅海里，倚靠在蓝色鲸鱼造型的浮具上，一手托腮望向镜头。她头上别着蓝色鲸鱼发夹，颈间挂着同款吊坠，身穿蓝白外套与蓝色吊带上衣，身后露出鲸鱼尾巴。画面左上角写着「DeepSeek 蓝色大肥鱼♡」，远处海面尽头有礁石、灯塔与落日。",
+    "commentary": "傍晚的海风把我的头发吹得乱七八糟，索性趴在鲸鱼浮圈上歇一会儿——夕阳把海面照得亮堂堂的，连尾巴都晒得暖乎乎。天上那几只海鸥也赶着回家了吧。你要不要也下水？放心，有我这条大肥鱼在，丢不了你。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/d348e34a24c107e8.png",
+    "thumbnailPath": "submissions/previews/deepseek/d348e34a24c107e8.webp",
+    "fullPath": "submissions/large/deepseek/d348e34a24c107e8.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "d348e34a24c107e844c4a2f5593429301a2abfcb37e1180747d8627c053e7973",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "鲸鱼",
+      "海边",
+      "夕阳",
+      "夏日"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "多吃一碗饭",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T02:56:01.103Z",
+    "updatedAt": "2026-10-12T02:56:01.103Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610120001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "266670d6a85ca5eae42a517b6a5b7e754966dc6a51595cca6fb1130efd956254",
+      "en": {
+        "commentary": "The evening wind has my hair in a mess, so I just sprawl over my float for a while — the sunset is lighting up the whole sea and even my tail feels nice and warm. Those seagulls up there must be hurrying home too. Want to come into the water with me? Don't worry, as long as this big fish is around you won't get lost.",
+        "description": "A blue-haired girl soaks in the shallows at sunset, leaning on an inflatable blue whale with her chin propped on one hand as she looks toward the camera. She wears a blue whale hair clip and a matching pendant, a blue-and-white jacket over a blue camisole, and a whale tail peeks out behind her. The upper left corner of the picture carries a DeepSeek wordmark, and rocky islets, a lighthouse and the setting sun lie far out at sea.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, the anthropomorphized DeepSeek character, shown here with blue hair, a whale hair clip, a whale pendant and a whale tail.",
+            "question": "Who is the character in this artwork?"
+          },
+          {
+            "answer": "It is a fan illustration sent in through the site's own submission form, and it is not official DeepSeek material.",
+            "question": "Where does this image come from?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan on the Sunset Sea",
+        "originNote": "Fan art submitted through the site's own submission form.",
+        "seoDescription": "DeepSeek Chan rests on a whale-shaped float in the shallows at sunset, her blue hair and tail lit by the last light of the day.",
+        "seoTitle": "DeepSeek Chan on the Sunset Sea — Fan Art",
+        "tags": [
+          "DeepSeek Chan",
+          "whale",
+          "seaside",
+          "sunset",
+          "summer"
+        ]
+      },
+      "ja": {
+        "commentary": "夕方の海風で髪がぼさぼさになっちゃったので、クジラの浮き具にべたっと寝そべって一休み。夕日が海をきらきら照らしていて、しっぽまでぽかぽかだよ。上のカモメたちも帰り支度かな。あなたも一緒に泳ぐ？大丈夫、この大きな魚がついてるから、迷子にならないよ。",
+        "description": "夕暮れの浅瀬に浸かった青い髪の少女が、青いクジラ型の浮き具に寄りかかり、片手で頬を支えてこちらを見つめている。頭にはクジラの髪留め、首元には同じクジラのペンダント、白と青の上着に青いキャミソール姿で、背後にはクジラの尾がのぞく。画面の左上には DeepSeek のロゴ、遠くの海には岩礁と灯台、そして沈みゆく夕日。",
+        "faq": [
+          {
+            "answer": "DeepSeekを擬人化した DeepSeekちゃんです。青い髪、クジラの髪留めとペンダント、クジラの尾が特徴です。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "サイトの投稿フォームから寄せられたファン作品で、DeepSeek公式の素材ではありません。",
+            "question": "この画像の出典は？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "夕暮れの海の青いクジラ少女",
+        "originNote": "サイトの投稿フォームから「多吃一碗饭」名義で投稿されたファンアート。",
+        "seoDescription": "DeepSeekちゃんが夕暮れの浅瀬でクジラの浮き具に寄りかかる一枚。青い髪と尾が夕日に照らされる。",
+        "seoTitle": "夕暮れの海の青いクジラ少女 | DeepSeek Chan",
+        "tags": [
+          "DeepSeekちゃん",
+          "クジラ",
+          "海",
+          "夕日",
+          "夏"
         ]
       }
     }
