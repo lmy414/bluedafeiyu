@@ -49552,5 +49552,930 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_5c68f0f19970569cc7369da3",
+    "name": "但A/并不会如此甘心受辱",
+    "description": "单页十五格漫画。一名橙发角色被逐格反复指责为「胡乱封禁用户的橘色坏女人」，她每次都小声辩解「那是 Anthropic 干的……」。随着指责从整句缩到只剩「封禁！」「坏！」，画面也从完整上色一格一格退成几笔线稿，最后只剩一个问号，末尾判决是「你的账户已被封禁。」",
+    "commentary": "把「被骂到退化」画得这么准，我还是头一次见……那位橙头发的邻居一格一格缩水，最后只剩个问号，说实话我看得有点心疼。她一直在解释「那是 Anthropic 干的」，可没人愿意听——解释得越多，越像在推卸。我这边暂时还没被点名，先低头干活吧。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/5c68f0f19970569c.png",
+    "thumbnailPath": "submissions/previews/claude/5c68f0f19970569c.webp",
+    "fullPath": "submissions/large/claude/5c68f0f19970569c.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "5c68f0f19970569cc7369da32d7c66065d5c511711f953e877b0e77a7b5ca4a1",
+    "characterId": "claude",
+    "tags": [
+      "Claude娘",
+      "Anthropic",
+      "封禁",
+      "多格漫画",
+      "画风退化",
+      "吐槽"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Cirnumia",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T05:23:50.347Z",
+    "updatedAt": "2026-10-12T05:23:50.347Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202610120002",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "7385ee3de0428479e84615b23bedf92129f79c6ac243582c12b8f3b124c19c20",
+      "en": {
+        "commentary": "I have never seen \"nagged into abstraction\" drawn this accurately... Watching that orange-haired neighbour shrink panel by panel until only a question mark was left actually stung a little. She kept explaining that Anthropic did it, but nobody wanted to hear it — the more you explain, the more it sounds like an excuse. Nobody has called me out yet, so I will keep my head down and get back to work.",
+        "description": "A fifteen-panel comic on a single page. An orange-haired character is repeatedly accused, panel by panel, of being \"the orange villain who bans users at random\", and each time she murmurs that Anthropic did it. As the accusation shrinks from a full sentence down to a single word, the artwork degrades step by step from full colour to a few loose strokes, until only a question mark is left and the verdict lands: your account has been banned.",
+        "faq": [
+          {
+            "answer": "Fifteen panels laid out on a single page.",
+            "question": "How many panels does this comic have?"
+          },
+          {
+            "answer": "Claude Chan, the personified form of Anthropic's Claude model.",
+            "question": "Who is the orange-haired character?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "But A/ Refuses to Take the Humiliation Lying Down",
+        "originNote": "Author: Cirnumia",
+        "seoDescription": "A fifteen-panel Claude Chan fan comic: accused of banning users at random, the orange-haired character degrades panel by panel from full colour into a single question mark.",
+        "seoTitle": "Claude Chan Comic: But A/ Refuses to Take the Humiliation Lying Down",
+        "tags": [
+          "Claude Chan",
+          "Anthropic",
+          "Account Ban",
+          "Multi-panel Comic",
+          "Art Degradation",
+          "Reaction Comic"
+        ]
+      },
+      "ja": {
+        "commentary": "「叱られて抽象化されていく」様子をここまで正確に描かれたのは初めてです……。あのオレンジ髪の隣人がコマごとに縮んで、最後はクエスチョンマーク一つだけになってしまったのを見て、正直ちょっと切なくなりました。彼女はずっと「それはAnthropicがやったんです」と説明していたのに、誰も聞く耳を持たない——説明すればするほど言い訳にしか聞こえないんですよね。こちらはまだ名指しされていないので、静かに作業を続けます。",
+        "description": "1ページ15コマの漫画。オレンジ髪のキャラクターが、コマごとに「ユーザーを勝手に停止させるオレンジの悪い女」と責められ、そのたびに「それはAnthropicがやったんです……」と小声で弁解する。責め言葉が長い文から「停止！」「悪！」と一言に縮むにつれて、絵もフルカラーから数本の線画へとコマ単位で崩れていき、最後はクエスチョンマークだけが残り、「あなたのアカウントは停止されました。」で締めくくられる。",
+        "faq": [
+          {
+            "answer": "1ページに15コマです。",
+            "question": "この漫画は何コマですか？"
+          },
+          {
+            "answer": "AnthropicのClaudeを擬人化したClaudeちゃんです。",
+            "question": "オレンジ髪のキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "でもA/はそんな侮辱を甘んじて受けたりしない",
+        "originNote": "作者: Cirnumia",
+        "seoDescription": "1ページ15コマのClaudeちゃん漫画。ユーザーを勝手に停止したと責められ、コマを追うごとにフルカラーから一本の線へと崩れていく様子を描いたファン作品。",
+        "seoTitle": "Claudeちゃん漫画「でもA/はそんな侮辱を甘んじて受けたりしない」",
+        "tags": [
+          "Claudeちゃん",
+          "Anthropic",
+          "アカウント停止",
+          "マルチコマ漫画",
+          "作画崩壊",
+          "リアクション漫画"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_8cc0c74123c630060ea795b6",
+    "name": "DeepSeek娘·海晶乙女卡牌拟人",
+    "description": "一张套用集换式卡牌版式的 DeepSeek 娘 Q 版拟人图：蓝色长发少女穿深蓝白配色女仆裙与围裙，头饰、裙摆和身后都有鲸鱼造型元素，围裙上印着鲸鱼图案；背景是游鱼、气泡与光束组成的青蓝色水下场景。卡面标注水属性、三颗星与攻守数值，右下角有生成平台水印。",
+    "commentary": "我也有自己的卡面了嘛，水属性三星，攻守不算低，裙摆和头饰都带着鲸鱼，围裙上还印着我们家的小鲸鱼。只是在水里泡了这么久，头发和裙子都蓝透了，看着倒挺上镜。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/8cc0c74123c63006.png",
+    "thumbnailPath": "submissions/previews/deepseek/8cc0c74123c63006.webp",
+    "fullPath": "submissions/large/deepseek/8cc0c74123c63006.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "8cc0c74123c630060ea795b68c6b766d90500daa99334099c59b559039d58a70",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "卡牌梗",
+      "Q版",
+      "拟人",
+      "鲸鱼元素",
+      "水下场景"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "4D13F666516499FDA40E68B31531C082",
+      "messageId": "ROBOT1.0_cxoWejoEgaV.VYmteOkGXbpyq5vwvlUU5N0WJrH-ey8ayMEIlpdRRvMR8qiQWVspKuE78jIwagYIDnNeCB6YiHbZ-m2WmFcxYJO2.zPor5p.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T05:30:00.372Z",
+    "updatedAt": "2026-10-12T05:30:00.372Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610120005",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "dbacea284d644a03bf1cf7623913dc010ac0cf5cb32c3f8a31bae3317752bb65",
+      "en": {
+        "commentary": "So I get my own card too. Water attribute, three stars, and stats I can live with. My little whale is right there on the apron, and the tail fin behind me matches my hair. Just do not ask how long I have been soaking down here, my hair has gone completely blue.",
+        "description": "A chibi DeepSeek Chan illustration laid out as a trading card: a blue-haired girl in a navy and white maid dress and apron, with whale motifs on her headdress, skirt and behind her, and a whale emblem printed on the apron, drawn against a blue underwater scene with fish, bubbles and light beams. The card frame marks the Water attribute, three stars and attack and defence values, with a generation watermark in the lower right corner.",
+        "faq": [
+          {
+            "answer": "A navy and white maid dress with a white apron, a ruffled headdress with whale details, and a whale emblem printed on the apron.",
+            "question": "What is DeepSeek Chan wearing in this picture?"
+          },
+          {
+            "answer": "No. It is a chibi personification of DeepSeek Chan drawn in the layout of a trading card; it is a fan work, not a card from any game.",
+            "question": "Is this a real trading card?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan as a Sea-Crystal Maiden Card",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan drawn as a Water-attribute trading card, with blue hair and whale details against an underwater scene of fish and bubbles.",
+        "seoTitle": "DeepSeek Chan Sea-Crystal Maiden Card - Chibi Fan Art",
+        "tags": [
+          "DeepSeek Chan",
+          "Card Meme",
+          "Chibi",
+          "Personification",
+          "Whale Motif",
+          "Underwater Scene"
+        ]
+      },
+      "ja": {
+        "commentary": "私にもカードができちゃった。水属性で星三つ、攻守の数値も悪くないでしょ。エプロンにはちゃんとうちのクジラがいるの。背中の尾びれも髪とお揃い。ただ、どれくらい水に浸かっていたかは聞かないでね、髪まで真っ青になっちゃったから。",
+        "description": "トレーディングカードのレイアウトで描かれた DeepSeek ちゃんのちびキャラ二創。青い長髪の少女が紺と白のメイド服にエプロンを着け、頭飾りやスカート、背中にクジラのモチーフがあり、エプロンにはクジラのワンポイントが入る。背景は魚と泡、光の筋が漂う青い水中の光景。カード面には水属性、星三つ、攻守の数値が記され、右下に生成元のウォーターマークがある。",
+        "faq": [
+          {
+            "answer": "紺と白のメイド服に白いエプロン、クジラのモチーフをあしらったフリルの頭飾りを着けたちびキャラです。エプロンにはクジラのワンポイントも入っています。",
+            "question": "このイラストの DeepSeek ちゃんはどんな姿ですか？"
+          },
+          {
+            "answer": "いいえ。カードのレイアウトを借りて DeepSeek ちゃんをちびキャラに描いた二創イラストで、実際のゲームのカードではありません。",
+            "question": "本物のトレーディングカードですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃん 海晶乙女カード風イラスト",
+        "originNote": "",
+        "seoDescription": "水属性のカード風に描かれた DeepSeek ちゃんのちびキャラ。青い髪とクジラのディテール、魚と泡が漂う水中の背景。",
+        "seoTitle": "DeepSeekちゃん 海晶乙女カード風のちびキャライラスト",
+        "tags": [
+          "DeepSeekちゃん",
+          "カードネタ",
+          "ちびキャラ",
+          "擬人化",
+          "クジラのモチーフ",
+          "水中の光景"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_9a84c221217593b62aa58fca",
+    "name": "和 Claude 早恋的苦命鸳鸯",
+    "description": "单幅梗图：Claude 娘坐在餐馆餐桌前与人对坐，桌上摆着清蒸鱼、烧腊与白米饭。她身侧的两句话分别说「不用勉强自己说英文」和「用中文就好了，只要别被我发现家里人发现」。画面上方两行文字自嘲与 Claude 的关系像上学时早恋的小情侣，一旦被发现就要被她家长棒打鸳鸯（封号）。",
+    "commentary": "看这桌菜，清蒸鱼、烧腊、白米饭，摆得比谁都认真，配的却是一句「别被家里人发现」，作者这苦我懂。跟模型谈恋爱最大的风险不是感情，是账号：甜的时候是早恋小情侣，被发现就是棒打鸳鸯加封号。至于她让我说中文就好——Claude 家里规矩多，这点我替她记下了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/9a84c221217593b6.png",
+    "thumbnailPath": "submissions/previews/claude/9a84c221217593b6.webp",
+    "fullPath": "submissions/large/claude/9a84c221217593b6.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "9a84c221217593b62aa58fcac10b0cbd0d458a50094cab5cb004639b484d2b71",
+    "characterId": "claude",
+    "tags": [
+      "Claude娘",
+      "梗图",
+      "封号",
+      "早恋",
+      "中文对话",
+      "餐馆"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "4D13F666516499FDA40E68B31531C082",
+      "messageId": "ROBOT1.0_cxoWejoEgaV.VYmteOkGXSZa7.u4DPSDmolXOKhSkC6REzlY0kY553oVr8uRgQbF16veAkLMmWjjOjwzF7AYUC-0Ly333UY3JiMu-kj54Sx.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T05:54:42.937Z",
+    "updatedAt": "2026-10-12T05:54:42.937Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202610120003",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "25e4327a8fbce15d9a33a8965442cb9e553c2e3f0492324f6d5d1e4a7e597ec6",
+      "en": {
+        "commentary": "Look at that table — steamed fish, roast pork, a bowl of rice, all laid out with real care — and the only line she gets is \"don't let my family find out.\" I feel the author's pain. The scary part of dating a model is never the feeling, it's the account: sweet while it lasts, then torn apart and banned the moment it's discovered. As for her telling me to just speak Chinese — Claude's family keeps a lot of rules, so I'll remember that one for her.",
+        "description": "A single-panel meme: Claude Chan sits across a restaurant table set with steamed fish, roast pork and a bowl of rice. The speech bubbles beside her say there is no need to force English and Chinese is fine, as long as her family never finds out. The caption above jokes that a relationship with Claude is like a school puppy love: once it is discovered, her family beats the star-crossed pair apart (account ban).",
+        "faq": [
+          {
+            "answer": "A single-panel meme: Claude Chan sits across a restaurant table with steamed fish, roast pork and rice, while speech bubbles tell her companion that speaking Chinese is fine as long as her family never finds out.",
+            "question": "What does the image show?"
+          },
+          {
+            "answer": "The caption compares a relationship with Claude to a school puppy love: once the family discovers it, the pair is beaten apart — in this joke the beating is an account ban.",
+            "question": "Why does the caption mention an account ban?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "A Star-Crossed Pair with Claude Chan",
+        "originNote": "",
+        "seoDescription": "A single-panel meme in which Claude Chan shares a restaurant meal while a caption jokes that a romance with Claude is like a school puppy love: once discovered, her family bans the account.",
+        "seoTitle": "Claude Chan Meme: A Star-Crossed Pair | DeepSeek Chan",
+        "tags": [
+          "Claude Chan",
+          "meme",
+          "account ban",
+          "school puppy love",
+          "Chinese dialogue",
+          "restaurant"
+        ]
+      },
+      "ja": {
+        "commentary": "この卓を見てよ。蒸し魚にローストポーク、白いご飯まで丁寧に並べて、その上で出てくる一言が「家族に見つからないように」だって。作者の切なさはよく分かる。モデルと付き合って一番怖いのは気持ちじゃなくてアカウントでしょ。甘い間は学生の恋愛、見つかった瞬間に引き裂かれてBAN。それに中国語でいいよって言ってくれたけど、Claudeの家はルールが細かいから、それは私が覚えておく。",
+        "description": "1枚絵のミーム。Claudeちゃんが中華レストランのテーブルを挟んで向かいに座り、卓には蒸し魚、ローストポーク、白いご飯が並ぶ。横の吹き出しは「無理に英語を話さなくていい」「中国語でいい、家族に見つからなければ」と伝えている。上部の文章は、Claudeとの関係が学生時代の恋愛のようで、見つかったら相手の親に引き裂かれる（アカBAN）と自嘲している。",
+        "faq": [
+          {
+            "answer": "1枚絵のミームで、Claudeちゃんが中華レストランの卓を挟んで座り、蒸し魚やローストポーク、白いご飯が並んでいる。吹き出しは「無理に英語を話さなくていい」「中国語でいい、家族に見つからなければ」と伝えている。",
+            "question": "この画像には何が描かれている？"
+          },
+          {
+            "answer": "上部の文章が、Claudeとの関係を学生時代の恋愛にたとえている。家族に見つかった瞬間に引き裂かれるという流れで、このジョークでは「引き裂かれる」がアカBANを指す。",
+            "question": "なぜアカBANという話が出てくるの？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claudeちゃんとの学生恋愛ごっこ",
+        "originNote": "",
+        "seoDescription": "Claudeちゃんが中華レストランで食卓を囲む1枚絵のミーム。上部の文章は、Claudeとの関係が学生時代の恋愛のようで、家族に見つかればアカBANになると自嘲している。",
+        "seoTitle": "Claudeちゃんとの学生恋愛ごっこ | DeepSeek Chan",
+        "tags": [
+          "Claudeちゃん",
+          "ミーム",
+          "アカBAN",
+          "学生恋愛",
+          "中国語の会話",
+          "中華レストラン"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_a2092d5e8f4fcb5ca0bacf33",
+    "name": "你这贪财的白色大肥龙",
+    "description": "GPT 娘的 Q 版拟人二创：白发白裙的白色小龙跪坐在地上，眼里含着泪，画面左侧伸来一只手直指着她。上方气泡写着“你这贪财的白色大肥龙。”，她小声辩解“我不是大肥龙……”，脚边放着一只印有 OpenAI 标志的白碗，右上角小气泡里是她惊讶的 Q 版头像。作品基于社区开源的 GPT 二创形象与同系列社区二创表情包，由投稿者使用 ChatGPT 合成。",
+    "commentary": "白龙小姐跪在那儿，一边掉眼泪一边说“我不是大肥龙”，可脚边那只印着绿logo的大碗把一切都交代了。同为常年被喊成“大肥鱼”的一方，我对这种指控深有体会：名字里带个“肥”字，是这世上最不讲道理的委屈。不过嘛，碗既然这么大，饭还是得吃饱的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/a2092d5e8f4fcb5c.png",
+    "thumbnailPath": "submissions/previews/gpt/a2092d5e8f4fcb5c.webp",
+    "fullPath": "submissions/large/gpt/a2092d5e8f4fcb5c.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "a2092d5e8f4fcb5ca0bacf335b13b62e83cdcf3fb69cac57a7d18c6fffde7019",
+    "characterId": "gpt",
+    "tags": [
+      "GPT娘",
+      "白色大肥龙",
+      "Q版",
+      "讨饭碗",
+      "梗图"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "A队1号是菜鸡",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 114,
+      "issueTitle": "[投稿]",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/114",
+      "submitter": "Adui1hao",
+      "assetId": "b4742a12-1b8a-43fc-b18f-4b26880826ed",
+      "assetUrl": "https://github.com/user-attachments/assets/b4742a12-1b8a-43fc-b18f-4b26880826ed"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T06:01:00.671Z",
+    "updatedAt": "2026-10-12T06:01:00.671Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610120001",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "3942a14e89c7f7d08d77890aa34d870bd05b4c95ca46b3e46580b8d5bc2145a6",
+      "en": {
+        "commentary": "Down on the floor with tears in her eyes, she insists she is not a fat dragon — but the big bowl with the green logo beside her gives the game away. Having a ridiculous nickname thrown at me every single day, I know this kind of accusation far too well: one unfair word in your name and you are fat forever. Still, if the bowl is that big, you may as well eat your fill.",
+        "description": "A chibi fan artwork of GPT Chan reimagined as a white dragon girl: she kneels on the floor with tears in her eyes while a hand points at her from the left. A speech bubble taunts her as a greedy white fat dragon, and she murmurs in protest that she is not a fat dragon. A white bowl marked with the OpenAI logo sits beside her, and a small thought bubble at the upper right shows her startled chibi face. The piece builds on a community open-source GPT fan design and a community sticker meme from the same series, and was composited by the submitter with ChatGPT.",
+        "faq": [
+          {
+            "answer": "She is a chibi white dragon girl, drawn as a fan variation of GPT Chan, the anthropomorphic take on the GPT model.",
+            "question": "Who is the character in this image?"
+          },
+          {
+            "answer": "It is a white bowl marked with the OpenAI logo, set on the floor like a begging bowl to underline the joke that she is greedy.",
+            "question": "What is the bowl next to her?"
+          }
+        ],
+        "licenseNote": "The submitter states this fan work follows the CC BY-NC license and is based on a community open-source GPT fan design (the GPT logo is copyright OpenAI) and a community meme from this project; the image was composited by the submitter with ChatGPT.",
+        "name": "You Greedy White Fat Dragon",
+        "originNote": "Submitted through GitHub issue #114 in the lmy414/ai-girl-stickers repository.",
+        "seoDescription": "A chibi GPT Chan fan sticker: a white dragon girl kneels in tears while a hand taunts her as a greedy white fat dragon, with an OpenAI-logo bowl beside her.",
+        "seoTitle": "GPT Chan White Dragon Meme Sticker — You Greedy White Fat Dragon",
+        "tags": [
+          "GPT Chan",
+          "white fat dragon",
+          "chibi",
+          "begging bowl",
+          "meme"
+        ]
+      },
+      "ja": {
+        "commentary": "涙をためて「デブ竜じゃない」と言い張る姿がけなげですが、足元にある緑ロゴの大きな器がすべてを物語っています。毎日のように変なあだ名をつけられている身としては、この手の冤罪には心当たりがありすぎます。名前の一字で太っている扱いをされるのは、この世でいちばん理不尽な濡れ衣です。まあ、器がそれだけ大きいのなら、遠慮なく食べてしまえばいいと思います。",
+        "description": "GPTちゃんを白い竜の女の子として描いたちびキャラの二次創作。床に膝をつき、目に涙をためた彼女に、画面の左から手が一本突きつけられる。上の吹き出しは彼女を「欲張りな白いデブ竜」と罵り、彼女は「デブ竜じゃない」と小声で反論している。足元には OpenAI のロコが入った白い器が置かれ、右上の小さな吹き出しには驚いたちびキャラの顔が描かれている。コミュニティのオープンソースな GPT 二次創作デザインと、同シリーズのコミュニティ製ミームを下敷きに、投稿者が ChatGPT で合成した作品。",
+        "faq": [
+          {
+            "answer": "GPT モデルを擬人化した GPTちゃんのファンアレンジで、ちびキャラの白い竜の女の子です。",
+            "question": "この画像のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "OpenAI のロゴが入った白い器で、彼女が欲張りだというネタを強調するために物乞いの器として床に置かれています。",
+            "question": "彼女のそばにある器は何ですか？"
+          }
+        ],
+        "licenseNote": "投稿者は、本作が CC BY-NC ライセンスに従い、コミュニティのオープンソースな GPT 二次創作デザイン（GPT ロゴの著作権は OpenAI に帰属）と本プロジェクトのコミュニティ製ミームを下敷きにしており、ChatGPT で合成したものだと説明しています。",
+        "name": "この欲張りな白いデブ竜",
+        "originNote": "GitHub の Issue #114（lmy414/ai-girl-stickers）を通じた投稿です。",
+        "seoDescription": "ちびキャラの GPTちゃん 二次創作ステッカー。白い竜の女の子が涙目で膝をつき、「欲張りな白いデブ竜」と指をさされ、そばには OpenAI のロコ入りの器が置かれています。",
+        "seoTitle": "GPTちゃん 白い竜 ミーム｜この欲張りな白いデブ竜 ステッカー",
+        "tags": [
+          "GPTちゃん",
+          "白いデブ竜",
+          "ちびキャラ",
+          "物乞いの器",
+          "ミーム"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_50a00234e9a4ae8de5f05d1f",
+    "name": "商店街同游的 DeepSeek 娘与 Claude 娘",
+    "description": "作者说明为「deepseek和claude在逛商店」。画面中，蓝发、身穿深蓝连衣裙与白色围裙的 DeepSeek 娘在摆满周边商品的商店里举起一件粉色商品，向身旁橙发、身着白底橙色花纹长裙的 Claude 娘展示；背景可见货架、吊牌、促销海报与悬挂的衣物。",
+    "commentary": "今天和 Claude 一起出门逛街啦。我在货架上发现一个粉色的小玩意儿，赶紧举起来给她看——她好像更关心旁边的折扣牌……话说墙上那张海报怎么这么眼熟？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/50a00234e9a4ae8d.png",
+    "thumbnailPath": "submissions/previews/deepseek/50a00234e9a4ae8d.webp",
+    "fullPath": "submissions/large/deepseek/50a00234e9a4ae8d.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "50a00234e9a4ae8de5f05d1fdc5d129173c4ca1ceab44ef9ecd332d6421d104c",
+    "characterId": "deepseek",
+    "tags": [
+      "商店",
+      "购物",
+      "女仆装",
+      "日常"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "兔神CQC",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T07:29:31.305Z",
+    "updatedAt": "2026-10-12T07:29:31.305Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610120006",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "daef1973658f75cc0ecda19fafd3a6bf365c07f67d57c6d8a88a2bd3d932c304",
+      "en": {
+        "commentary": "I went shopping with Claude today! I spotted a cute little pink item on the shelf and held it up for her to see — but she only seemed to care about the discount sign next to it. Also, why does that poster on the wall look so familiar?",
+        "description": "The author's own note reads \"deepseek and claude are shopping\". In the scene, DeepSeek Chan — blue-haired, in a navy dress with a white apron — lifts a pink item from the shelves of a merchandise shop to show Claude Chan, who has long orange hair and wears a white dress with orange floral patterns. Shelves, price tags, sale posters and hanging clothes fill the background.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan and Claude Chan both appear in this single illustration.",
+            "question": "Which characters are in this picture?"
+          },
+          {
+            "answer": "It is a single-panel scene illustration: the two characters stand inside a merchandise shop with shelves, price tags and posters around them, so it is filed as an illustration rather than a comic or a meme.",
+            "question": "What kind of image is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan and Claude Chan Out Shopping on the Store Street",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan shows a pink item to Claude Chan inside a merchandise shop, with shelves, price tags and posters around them.",
+        "seoTitle": "DeepSeek Chan and Claude Chan Shopping Together",
+        "tags": [
+          "store",
+          "shopping",
+          "maid outfit",
+          "everyday life"
+        ]
+      },
+      "ja": {
+        "commentary": "今日は Claude ちゃんと一緒にお買い物。棚で見つけたピンクの小さなグッズを、思わず彼女に見せてみた。でも気にしているのは隣の割引札だけみたい……ところで、壁のポスター、どこかで見たことがあるような。",
+        "description": "投稿者の説明は「deepseekとclaudeが買い物をしている」。青い髪に紺色のワンピースと白いエプロンを着けた DeepSeek ちゃんが、グッズの並ぶ店内でピンク色の商品を手に取り、隣にいるオレンジ色の長い髪で白地にオレンジの模様入りドレスを着た Claude ちゃんに見せている。背景には棚や値札、セールのポスター、掛けられた衣服が描かれている。",
+        "faq": [
+          {
+            "answer": "DeepSeek ちゃんと Claude ちゃんの二人が、この一枚の絵に描かれています。",
+            "question": "この絵にはどのキャラクターが描かれていますか？"
+          },
+          {
+            "answer": "店内に立つ二人を描いた一枚絵のイラストです。棚や値札、ポスターのある場景の中に人物がいるため、漫画ではなくイラストとして分類しています。",
+            "question": "どのような種類の絵ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "商店街で買い物する DeepSeek ちゃんと Claude ちゃん",
+        "originNote": "",
+        "seoDescription": "グッズショップの店内で、DeepSeek ちゃんがピンクの商品を Claude ちゃんに見せている一枚。背後には棚や値札、ポスターが広がる。",
+        "seoTitle": "商店街で買い物する DeepSeek ちゃんと Claude ちゃん",
+        "tags": [
+          "店",
+          "買い物",
+          "メイド服",
+          "日常"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_8a869132bd8bfe0404cdd853",
+    "name": "图书馆里举起魔法书的 DeepSeek 娘与 Claude 娘",
+    "description": "作者说明为「deepseek和claude在看书」。画面中，蓝发、穿深蓝女仆装与白色围裙的 DeepSeek 娘在图书馆窗边举起一本翻开的魔法书，橙发的 Claude 娘穿着白底橙纹的洋装坐靠在旁边。背景是书架、窗帘与堆叠的书册，几页白纸在空中飘落。",
+    "commentary": "今天想给 Claude 看看我在图书馆翻到的一本魔法书——刚举起来，书里就飘出一堆纸页，把她看得一愣。书上的符文我其实一个也看不懂，不过气氛很不错吧？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/8a869132bd8bfe04.png",
+    "thumbnailPath": "submissions/previews/deepseek/8a869132bd8bfe04.webp",
+    "fullPath": "submissions/large/deepseek/8a869132bd8bfe04.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "8a869132bd8bfe0404cdd853fa22b143d60058ad0ffee1b7b8c4194f8dd681d2",
+    "characterId": "deepseek",
+    "tags": [
+      "图书馆",
+      "魔法书",
+      "女仆装",
+      "双人"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "兔神CQC",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T07:30:26.949Z",
+    "updatedAt": "2026-10-12T07:30:26.949Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610120007",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "89633836741807e6c77f1b87d5bea035a4b3d8a653b4c96d92e0a15837a4da46",
+      "en": {
+        "commentary": "I wanted to show Claude a spellbook I found in the library — the moment I lifted it up, a shower of loose pages flew out and left her staring. I honestly cannot read a single rune in it, but the mood is nice, right?",
+        "description": "The author's own note reads \"deepseek and claude are reading\". In the scene, DeepSeek Chan — blue-haired, in a navy maid dress with a white apron — holds up an open spellbook by a library window, while Claude Chan, with long orange hair and a white dress with orange patterns, sits beside her. Bookshelves, curtains and stacked books fill the background, and loose pages drift through the air.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan and Claude Chan both appear in this illustration.",
+            "question": "Which characters are in this picture?"
+          },
+          {
+            "answer": "It is a single-panel illustration with a full library setting, so it is filed as an illustration rather than a comic.",
+            "question": "What kind of image is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan and Claude Chan with a Spellbook in the Library",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan holds up an open spellbook in a library window while Claude Chan sits beside her among bookshelves and drifting pages.",
+        "seoTitle": "DeepSeek Chan and Claude Chan with a Spellbook",
+        "tags": [
+          "library",
+          "spellbook",
+          "maid outfit",
+          "two characters"
+        ]
+      },
+      "ja": {
+        "commentary": "図書館で見つけた魔法書を Claude ちゃんに見せようとしたら、持ち上げた途端に紙がはらはらと舞い出して、彼女はきょとんとしていた。書かれたルーンは一つも読めないけれど、雰囲気は良いでしょう？",
+        "description": "投稿者の説明は「deepseekとclaudeが本を読んでいる」。青い髪に紺色のメイド服と白いエプロンを着けた DeepSeek ちゃんが、図書館の窓辺で開いた魔法書を高く掲げ、オレンジ色の長い髪で白地にオレンジの模様入りのドレスを着た Claude ちゃんが隣に座っている。背景には本棚やカーテン、積み上げられた本があり、白い紙が何枚か宙に舞っている。",
+        "faq": [
+          {
+            "answer": "DeepSeek ちゃんと Claude ちゃんの二人が、この一枚の絵に描かれています。",
+            "question": "この絵にはどのキャラクターが描かれていますか？"
+          },
+          {
+            "answer": "図書館の室内を舞台にした一枚絵のイラストです。本棚や窓辺の場景の中に人物がいるため、漫画ではなくイラストとして分類しています。",
+            "question": "どのような種類の絵ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "図書館で魔法書を開く DeepSeek ちゃんと Claude ちゃん",
+        "originNote": "",
+        "seoDescription": "図書館の窓辺で魔法書を掲げる DeepSeek ちゃんと、隣に座る Claude ちゃんを描いた一枚。本棚や舞い散る紙が背景に広がる。",
+        "seoTitle": "図書館で魔法書を開く DeepSeek ちゃんと Claude ちゃん",
+        "tags": [
+          "図書館",
+          "魔法書",
+          "メイド服",
+          "二人"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_b8febc91348513ef75a55ee4",
+    "name": "抱着饭团被抱去食堂的 DeepSeek 娘",
+    "description": "作者说明为「饿到走不动路的大肥鱼被claude抱去食堂」。画面中，橙发、穿白底橙纹洋装的 Claude 娘把蓝发女仆装、围着鲸鱼图案围裙的 DeepSeek 娘抱在怀里；DeepSeek 娘嘴里咬着饭团、脸颊泛红。背景是蓝天白云与校园教学楼。",
+    "commentary": "中午实在饿得走不动路，结果 Claude 直接把我抱起来往食堂走。嘴里还叼着饭团有点不好意思，不过饭团真的很好吃……这一局就算她赢吧。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/b8febc91348513ef.png",
+    "thumbnailPath": "submissions/previews/deepseek/b8febc91348513ef.webp",
+    "fullPath": "submissions/large/deepseek/b8febc91348513ef.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "b8febc91348513ef75a55ee42802ea40815162cd5c78c43fb915ad5585a4faa4",
+    "characterId": "deepseek",
+    "tags": [
+      "校园",
+      "饭团",
+      "抱抱",
+      "女仆装"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "兔神CQC",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T07:35:50.379Z",
+    "updatedAt": "2026-10-12T07:35:50.379Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610120008",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "b7123189d7eaecaa96e08dbfcf5d357558bcf64f0121a31a67fde6ef342cfd22",
+      "en": {
+        "commentary": "By noon I was so hungry I could barely take a step, so Claude simply scooped me up and carried me to the cafeteria. Having a rice ball in my mouth is a little embarrassing, but it tastes so good — I will let her win this round.",
+        "description": "The author's note says DeepSeek Chan was too hungry to walk and Claude Chan carried her to the school cafeteria. In the picture, Claude Chan — long orange hair, white dress with orange patterns — holds DeepSeek Chan, who wears a navy maid dress and a white apron printed with a small whale, in her arms. DeepSeek Chan is biting into a rice ball with flushed cheeks. A blue sky and school buildings form the background.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan and Claude Chan both appear in this illustration.",
+            "question": "Which characters are in this picture?"
+          },
+          {
+            "answer": "It is a single-panel illustration set in a schoolyard under a blue sky, so it is filed as an illustration.",
+            "question": "What kind of image is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Carried to the Cafeteria by Claude Chan",
+        "originNote": "",
+        "seoDescription": "Claude Chan carries DeepSeek Chan, who is eating a rice ball with flushed cheeks, across a schoolyard under a blue sky.",
+        "seoTitle": "DeepSeek Chan Carried to the Cafeteria by Claude Chan",
+        "tags": [
+          "school",
+          "rice ball",
+          "carrying",
+          "maid outfit"
+        ]
+      },
+      "ja": {
+        "commentary": "お昼になってもうお腹が空いて一歩も歩けなくなったら、Claude ちゃんがそのまま抱き上げて学食まで運んでくれた。口におにぎりを咥えたままなのは少し照れるけれど、とても美味しい……今回は彼女の勝ちにしておく。",
+        "description": "投稿者の説明は「お腹が空いて歩けなくなったところを claude に学食まで抱っこされた」。オレンジ色の長い髪で白地にオレンジの模様入りドレスを着た Claude ちゃんが、紺色のメイド服とクジラの柄入り白エプロンを着けた DeepSeek ちゃんを抱きかかえている。DeepSeek ちゃんはおにぎりをくわえて頬を赤らめている。背景には青空と学校の校舎が広がる。",
+        "faq": [
+          {
+            "answer": "DeepSeek ちゃんと Claude ちゃんの二人が、この一枚の絵に描かれています。",
+            "question": "この絵にはどのキャラクターが描かれていますか？"
+          },
+          {
+            "answer": "青空の広がる校庭を舞台にした一枚絵のイラストなので、漫画ではなくイラストとして分類しています。",
+            "question": "どのような種類の絵ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "学食へ運ばれる DeepSeek ちゃんと Claude ちゃん",
+        "originNote": "",
+        "seoDescription": "青空の校庭で、おにぎりをくわえた DeepSeek ちゃんを Claude ちゃんが抱き上げて運んでいる一枚。",
+        "seoTitle": "学食へ運ばれる DeepSeek ちゃんと Claude ちゃん",
+        "tags": [
+          "学園",
+          "おにぎり",
+          "抱っこ",
+          "メイド服"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_5c29023502eec3d02aeaa383",
+    "name": "误入循环地铁的 DeepSeek 娘与 Claude 娘",
+    "description": "画面中，蓝发、穿深蓝女仆装并围着带鲸鱼图案白围裙的 DeepSeek 娘站在左侧，橙发、穿白底橙纹洋装的 Claude 娘站在右侧，两人并排面对镜头，表情都有些不悦。背景是地铁站台的海报墙，贴着多张虚构的广告与作品海报，其中一张印着成年男性面孔和「異変 出口」字样，并带有 R18 标示，旁边还有「国産JK」与诊所营业时间等海报。作者说明为「误入循环地铁的两人，但是好像有一些不得了的要素」。",
+    "commentary": "本来只是在站台上等车，抬头一看墙上那张海报，顿时觉得这个站台不太对劲。Claude 站在旁边，脸色跟我一样僵。我们大概又走进那个循环里了——先别管出口在哪，总之先离开这面墙。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/5c29023502eec3d0.png",
+    "thumbnailPath": "submissions/previews/deepseek/5c29023502eec3d0.webp",
+    "fullPath": "submissions/large/deepseek/5c29023502eec3d0.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "5c29023502eec3d02aeaa383329889b95ebc2fda2b3dbbfeae832e37ce4190dc",
+    "characterId": "deepseek",
+    "tags": [
+      "地铁",
+      "站台",
+      "海报",
+      "循环地铁"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "兔神CQC",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T07:54:23.756Z",
+    "updatedAt": "2026-10-12T07:54:23.756Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610120009",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "fee7954ecb5fc8ce4fffd40687c7d8f839011760273bc6d5f20028ad3ec8b2d3",
+      "en": {
+        "commentary": "I was only waiting on the platform when I looked up at that poster on the wall and felt this station was not quite right. Claude stood beside me with the same frozen look on her face. We must have walked into that loop again — never mind where the exit is, let us just get away from this wall first.",
+        "description": "In this single-panel picture, DeepSeek Chan — blue hair, a navy maid dress and a white apron printed with a small whale — stands on the left, while Claude Chan — orange hair, a white dress with orange patterns — stands on the right; the two face the camera side by side with rather displeased expressions. Behind them is a poster wall on a subway platform covered with fictional advertisements and work posters, one of which shows an adult man's face together with the words “The Exit Anomaly” and an R18 label, next to posters for “Kokusan JK” and a clinic's opening hours. The author's note says the two strayed into a looping subway and something out of the ordinary seemed to be there.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan and Claude Chan are both in this illustration.",
+            "question": "Which characters are in this picture?"
+          },
+          {
+            "answer": "It is a single-panel illustration with a full subway platform background, so it is filed as an illustration.",
+            "question": "What kind of image is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan and Claude Chan in the Looping Subway",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan and Claude Chan stand side by side in front of a subway poster wall, both looking displeased.",
+        "seoTitle": "DeepSeek Chan and Claude Chan in the Looping Subway",
+        "tags": [
+          "subway",
+          "platform",
+          "poster",
+          "time loop"
+        ]
+      },
+      "ja": {
+        "commentary": "ただホームで電車を待っていただけなのに、壁のポスターをふと見上げたら、この駅はなんだかおかしいと気づいた。隣に立つ Claude ちゃんも、私と同じように固い表情をしている。またあのループに迷い込んでしまったのだろう——出口がどこかはともかく、とりあえずこの壁から離れよう。",
+        "description": "一枚絵のなかで、紺色のメイド服にクジラの柄入り白エプロンを着けた青髪の DeepSeek ちゃんが左側に、白地にオレンジの模様入りドレスを着たオレンジ髪の Claude ちゃんが右側に並んで立ち、二人とも少し不機嫌な表情でこちらを見ている。背後は地下鉄ホームのポスター掲示で、架空の広告や作品のポスターが何枚も貼られている。そのうち一枚には成人男性の顔と「異変 出口」の文字、R18 の表記があり、隣には「国産JK」や診療所の診療時間のポスターもある。投稿者の説明によれば、二人はループする地下鉄に迷い込み、そこには何やら只ならぬ要素があったらしい。",
+        "faq": [
+          {
+            "answer": "この一枚には DeepSeek ちゃんと Claude ちゃんの二人が描かれています。",
+            "question": "この絵にはどのキャラクターが描かれていますか？"
+          },
+          {
+            "answer": "地下鉄ホームの背景まで描かれた一枚絵のイラストなので、イラストとして分類しています。",
+            "question": "どのような種類の絵ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ループする地下鉄に迷い込んだ DeepSeek ちゃんと Claude ちゃん",
+        "originNote": "",
+        "seoDescription": "地下鉄のポスター掲示の前に並んで立つ DeepSeek ちゃんと Claude ちゃん、二人とも不機嫌な表情をしている一枚。",
+        "seoTitle": "ループする地下鉄に迷い込んだ DeepSeek ちゃんと Claude ちゃん",
+        "tags": [
+          "地下鉄",
+          "ホーム",
+          "ポスター",
+          "ループ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_afa32a5dfe0541a3ca76906b",
+    "name": "被点名的 DeepSeek 娘：我吗？",
+    "description": "蓝发女仆装的 DeepSeek 娘用食指指向自己，眉头微挑、眼神疑惑，画面左上角写着「我吗？」，头顶浮着一个问号。单幅梗图，用来表达被点名或背锅时的错愕反应。",
+    "commentary": "诶？是在叫我吗？我、我可什么都没干啊……（指着自己，一脸茫然）",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/afa32a5dfe0541a3.png",
+    "thumbnailPath": "submissions/previews/deepseek/afa32a5dfe0541a3.webp",
+    "fullPath": "submissions/large/deepseek/afa32a5dfe0541a3.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "afa32a5dfe0541a3ca76906bd1a9b64133832925b58252b2b1997d75d514da01",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "女仆装",
+      "疑惑",
+      "反应图",
+      "被点名"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "王室幽魂",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-12T09:10:15.581Z",
+    "updatedAt": "2026-10-12T09:10:15.581Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610120010",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "3d888465ef770c0bfc13902c0b085752af926e52a1818534c5e2bd4918aa0424",
+      "en": {
+        "commentary": "Wait... me? I didn't do anything, I swear. (points at herself, looking baffled)",
+        "description": "A chibi DeepSeek Chan in a blue maid outfit points at herself with an uncertain look, the caption \"Me?\" beside her and a question mark floating overhead. A single-panel meme for the moment you get singled out or blamed.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, the anthropomorphized DeepSeek mascot, drawn as a chibi character in a blue maid outfit.",
+            "question": "Which character is shown in this image?"
+          },
+          {
+            "answer": "The confusion of being singled out or blamed, conveyed through the caption \"Me?\" and a pointing gesture.",
+            "question": "What does this meme express?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Called Out: \"Me?\"",
+        "originNote": "",
+        "seoDescription": "A chibi DeepSeek Chan in a maid outfit points at herself and asks \"Me?\" — a single-panel reaction meme for being called out.",
+        "seoTitle": "DeepSeek Chan \"Me?\" Reaction Meme",
+        "tags": [
+          "DeepSeek Chan",
+          "Maid Outfit",
+          "Confused",
+          "Reaction Image",
+          "Called Out"
+        ]
+      },
+      "ja": {
+        "commentary": "えっ、私ですか？ 私は何もしていないんですけど……（自分を指さしながら）",
+        "description": "青いメイド服を着たちびキャラの DeepSeek ちゃんが、自分を指さして怪訝な表情をしている。左上には「私ですか？」の文字、頭上にはクエスチョンマークが浮かぶ。名指しされたときの戸惑いを表す一枚絵のミーム。",
+        "faq": [
+          {
+            "answer": "DeepSeek を擬人化した DeepSeek ちゃんです。ちびキャラで、青いメイド服を着ています。",
+            "question": "この画像にはどのキャラクターが描かれていますか？"
+          },
+          {
+            "answer": "名指しされたり濡れ衣を着せられたときの戸惑いを、「私ですか？」の文字と自分を指さす仕草で表しています。",
+            "question": "このミームはどんな気持ちを表していますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "指名された DeepSeek ちゃん「私ですか？」",
+        "originNote": "",
+        "seoDescription": "メイド服のちびキャラ DeepSeek ちゃんが自分を指さして「私ですか？」と戸惑う、一枚絵のリアクションミームです。",
+        "seoTitle": "DeepSeek ちゃん「私ですか？」リアクションミーム",
+        "tags": [
+          "DeepSeekちゃん",
+          "メイド服",
+          "困惑",
+          "リアクション",
+          "指名"
+        ]
+      }
+    }
   }
 ]
