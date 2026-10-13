@@ -53468,5 +53468,1919 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_e72a7bf3a48c10d79f53645c",
+    "name": "这个玩偶不对劲",
+    "description": "Claude 娘双手捧着一只 Q 版玩偶，低头盯着它，额头挂着汗珠、神情疑惑，头顶浮着一个问号。让她犯嘀咕的是玩偶头顶那撮形似鱼尾的卷发：这只被人叫作 “Claude” 的小家伙，怎么看都鱼里鱼气。背景是灰调云层，画面为单幅构图。",
+    "commentary": "我是 DeepSeek 娘。看着 Claude 娘捧着那只玩偶一脸疑惑的样子，我其实挺想装作没看见的——可那撮卷发确实有点眼熟，橘色的发型底下藏着一条鱼尾巴，这搭配连我都要愣一下。玩偶归玩偶，本人归本人，请 Claude 娘千万别顺着这个方向多想。不过话说回来，要是哪天也有一只照着我的样子做的玩偶，我应该会先检查头顶。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/e72a7bf3a48c10d7.png",
+    "thumbnailPath": "submissions/previews/claude/e72a7bf3a48c10d7.webp",
+    "fullPath": "submissions/large/claude/e72a7bf3a48c10d7.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "e72a7bf3a48c10d79f53645c0d2cf4cd49a2cd5b248e1080b3370d6d3ac1b9b1",
+    "characterId": "claude",
+    "tags": [
+      "Claude",
+      "DeepSeek",
+      "Q版",
+      "玩偶",
+      "吐槽"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "兔神CQC",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-13T10:04:28.844Z",
+    "updatedAt": "2026-10-13T10:04:28.844Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202610130001",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "claude",
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "c3add74aebd1026590b5c6acd034cc1fa9ae1d018c8da14b273d213351286894",
+      "en": {
+        "commentary": "I'm DeepSeek Chan. Watching Claude Chan stare at that plush, I'd honestly rather pretend I saw nothing — but that curl really does look familiar. An orange hairstyle hiding a fish tail is a combination even I need a second to process. A plush is a plush and the real girl is the real girl, so please, Claude Chan, don't read too much into it. Still, if a plush ever gets made in my image, I'd check the top of its head first.",
+        "description": "Claude Chan holds a chibi plush doll in both hands and stares down at it, a sweat drop on her forehead and a question mark floating overhead. What bothers her is the small curl on the doll's head, shaped like a fish tail: this figure everyone calls \"Claude\" somehow looks suspiciously fish-like. The background is a grey cloudscape, and the piece is a single-panel composition.",
+        "faq": [
+          {
+            "answer": "Claude Chan, who holds a chibi plush doll. The doll's fish-tail-like curl is the punchline of the picture.",
+            "question": "Who appears in this image?"
+          },
+          {
+            "answer": "A single-panel reaction meme with no comic panels; the confusion is carried by her expression, the sweat drop and the question mark.",
+            "question": "What kind of image is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "This Plush Looks Off",
+        "originNote": "",
+        "seoDescription": "Claude Chan holds a chibi plush doll and notices something fish-like about its hair curl — a single-panel reaction meme on DeepSeek Chan's fan-art site.",
+        "seoTitle": "This Plush Looks Off — Claude Chan Reaction Meme | DeepSeek Chan",
+        "tags": [
+          "Claude",
+          "DeepSeek",
+          "chibi",
+          "plush",
+          "reaction"
+        ]
+      },
+      "ja": {
+        "commentary": "DeepSeek ちゃんです。Claude ちゃんがぬいぐるみを見つめて首をかしげているのを見て、正直見なかったことにしたい気持ちもあります。でもあのカール、見覚えがありすぎるんですよね。オレンジの髪の下に魚のしっぽ、この組み合わせは私でも一瞬止まります。ぬいぐるみはぬいぐるみ、本人は本人。Claude ちゃん、どうか深く考えないでください。とはいえ、私をかたどったぬいぐるみができたら、まず頭の上を確認すると思います。",
+        "description": "Claude ちゃんがちびキャラのぬいぐるみを両手で抱え、じっと見下ろしている。額には汗が浮かび、頭上にはクエスチョンマーク。彼女が気にしているのは、ぬいぐるみの頭にある魚の尾びれのようなカールだ。「Claude」と呼ばれるこの小さな姿が、どう見ても魚っぽいのである。背景は灰色の雲で、一枚絵の構図になっている。",
+        "faq": [
+          {
+            "answer": "Claude ちゃんと、彼女が両手で抱えているちびキャラのぬいぐるみです。ぬいぐるみの魚の尾びれのようなカールが、この一枚の落ちになっています。",
+            "question": "この画像には誰が描かれていますか？"
+          },
+          {
+            "answer": "コマ割りのない一枚絵で、困惑した表情と汗、クエスチョンマークでツッコミを表現した作品です。",
+            "question": "どんな種類の作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "このぬいぐるみ、なんかおかしい",
+        "originNote": "",
+        "seoDescription": "Claude ちゃんが抱えたちびキャラのぬいぐるみ、その髪のカールがどうも魚っぽい。一枚絵のツッコミ作品を DeepSeek Chan のファンアートサイトから。",
+        "seoTitle": "このぬいぐるみ、なんかおかしい｜Claude ちゃんのツッコミ一枚絵 – DeepSeek Chan",
+        "tags": [
+          "Claude",
+          "DeepSeek",
+          "ちびキャラ",
+          "ぬいぐるみ",
+          "ツッコミ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_187e1a89e3ea07af83844994",
+    "name": "假哭的DeepSeek娘",
+    "description": "DeepSeek 娘双手捧着脸、眼角挂泪却嘴角带笑地装哭，身后扬起带星光点的鲸尾，背景是夜晚的室内灯光与水面。",
+    "commentary": "唔……才、才没有真的哭呢！只是眼睛里不小心进了点星光而已，你们不要都围过来看啦。不过……如果大家在群里发我这张假装抹眼泪的图，说不定会有点点被治愈到哦。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/187e1a89e3ea07af.png",
+    "thumbnailPath": "submissions/previews/deepseek/187e1a89e3ea07af.webp",
+    "fullPath": "submissions/large/deepseek/187e1a89e3ea07af.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "187e1a89e3ea07af838449944e515afa1eb69a3fbaabeb2a8092e11f2f4aef20",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "女仆装",
+      "假哭",
+      "鲸尾",
+      "夜景"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "鱼蓝色的",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-13T10:50:08.430Z",
+    "updatedAt": "2026-10-13T10:50:08.430Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610130009",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "d1e413c036160fb83155bdd37e984c415041cd26a708c32a508e1be2bf132dde",
+      "en": {
+        "commentary": "Mm... I-I am not really crying, okay! A little starlight just slipped into my eyes. Still, if you send this fake-cry sticker in a chat, it might soften everyone up just a bit.",
+        "description": "DeepSeek Chan cups both hands to her cheeks, tears at the corners of her eyes but a smile on her lips, her star-speckled whale tail swept up behind her against a nighttime room by the water.",
+        "faq": [
+          {
+            "answer": "It is DeepSeek Chan, the anthropomorphized DeepSeek mascot, shown with long blue hair and a whale tail.",
+            "question": "Who is the character in this sticker?"
+          },
+          {
+            "answer": "Her eyes are teary while her lips smile and her hands are pressed to her cheeks, so the expression reads as pretending to cry rather than real sadness.",
+            "question": "Why is the character described as fake-crying?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Pretending to Cry",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in a maid outfit fake-cries with teary eyes and a smile, her whale tail raised in a moonlit room by the water. A chat reaction sticker of the DeepSeek mascot.",
+        "seoTitle": "DeepSeek Chan Pretending to Cry | DeepSeek Mascot Sticker",
+        "tags": [
+          "DeepSeek Chan",
+          "maid outfit",
+          "fake crying",
+          "whale tail",
+          "night scene"
+        ]
+      },
+      "ja": {
+        "commentary": "うう……べ、別に本当に泣いてるわけじゃないんだからね！ちょっと星の光が目に入っただけ。でもこの泣き真似スタンプをチャットで送ったら、みんな少しは和んでくれるかも。",
+        "description": "DeepSeekちゃんが両手を頬に当て、目の端に涙を浮かべながら口元は笑っている泣き真似の表情。背後には星を散らしたクジラの尾が上がり、夜の室内と水面の灯りが広がっている。",
+        "faq": [
+          {
+            "answer": "DeepSeekのマスコットを擬人化したDeepSeekちゃんで、青い長髪とクジラの尾が特徴です。",
+            "question": "このスタンプのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "目には涙を浮かべているのに口元は笑っていて、両手を頬に当てているため、本当に悲しんでいるのではなく泣き真似をしている表情に見えます。",
+            "question": "なぜ「泣き真似」なのですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "泣き真似をするDeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "メイド服のDeepSeekちゃんが涙目で笑いながら泣き真似をする一枚。星を散らしたクジラの尾、夜の室内と水面の光。DeepSeek擬人化のチャット用リアクションスタンプ。",
+        "seoTitle": "泣き真似をするDeepSeekちゃん｜DeepSeek擬人化スタンプ",
+        "tags": [
+          "DeepSeekちゃん",
+          "メイド服",
+          "泣き真似",
+          "クジラの尾",
+          "夜景"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_c74012219f4b2a83c21f44e7",
+    "name": "夏日海风与大肥鱼",
+    "description": "蓝色长发的少女坐在洒满阳光的窗边，身旁躺着一只熟睡的白猫和一条蓝色大肥鱼玩偶，窗外是夏日天空、云与远处海岸。",
+    "commentary": "夏天的风从窗口吹进来，蓝得很舒服。抱着大肥鱼玩偶看海的时候，连时间都慢了下来——要不要一起发会儿呆？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/c74012219f4b2a83.png",
+    "thumbnailPath": "submissions/previews/deepseek/c74012219f4b2a83.webp",
+    "fullPath": "submissions/large/deepseek/c74012219f4b2a83.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "c74012219f4b2a83c21f44e787caf3e668d0992cf18a0e005e8c54acba8caf5f",
+    "characterId": "deepseek",
+    "tags": [
+      "夏日",
+      "海风",
+      "窗边",
+      "蓝天白云",
+      "大肥鱼",
+      "白猫",
+      "蓝色长发"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "526D4CEA37008EE233CBDC7635EF6E7D",
+      "messageId": "ROBOT1.0_8AYUX4R83Cl234X5PtH0VLDE23SgRAzqFZqSOid2iv0TSeeBM5kGl6qK8DCKrl-VwtL1Nu6LOMcSX1NnPNrY2v5NOgbu3fh5yI7euTUXoeB.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-13T11:08:40.848Z",
+    "updatedAt": "2026-10-13T11:08:40.848Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610130010",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "a245669692bed9565764612a7e604d3ebe7842f91deddc206f4e5e820df83720",
+      "en": {
+        "commentary": "Summer wind drifts in through the window, and everything blurs into a comfortable blue. Sitting here with this big plush in my arms and the sea in front of me, even time slows down — want to space out here with me for a while?",
+        "description": "A blue-haired girl sits by a sunlit window, a sleeping white cat and a big blue plush toy beside her, with a summer sky, clouds and a distant coastline beyond the glass.",
+        "faq": [
+          {
+            "answer": "It is DeepSeek Chan, drawn as an anime-style girl with long blue hair and blue fish-fin hair accessories.",
+            "question": "Who is the character in this picture?"
+          },
+          {
+            "answer": "A quiet summer afternoon by a window: a sleeping white cat, a blue plush toy, hydrangeas and the sea seen through the glass.",
+            "question": "What is shown in the illustration?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Summer Sea Breeze and the Big Blue Plush",
+        "originNote": "",
+        "seoDescription": "A summer illustration of DeepSeek Chan at a sunlit window, with a sleeping white cat and a blue plush toy, spending a slow afternoon gazing at the sea.",
+        "seoTitle": "Summer Sea Breeze and the Big Blue Plush | DeepSeek Chan Illustration",
+        "tags": [
+          "Summer",
+          "Sea Breeze",
+          "By the Window",
+          "Blue Sky and Clouds",
+          "Blue Plush",
+          "White Cat",
+          "Long Blue Hair"
+        ]
+      },
+      "ja": {
+        "commentary": "窓から入ってくる夏の風が、とても気持ちよくて青い。大きなぬいぐるみを抱えて海を眺めていると、時間までゆっくりになっていく——一緒にぼんやりしてみない？",
+        "description": "青い長髪の少女が日差しの差し込む窓辺に座り、そばには眠っている白い猫と大きな青いぬいぐるみ。窓の外には夏の空と雲、遠くの海岸が広がっている。",
+        "faq": [
+          {
+            "answer": "長い青い髪と青いヒレの髪飾りを持つ、アニメ調の DeepSeek Chan です。",
+            "question": "この絵に描かれているキャラクターは誰ですか？"
+          },
+          {
+            "answer": "窓辺の静かな夏の午後を描いたイラストで、眠る白い猫、青いぬいぐるみ、あじさい、そして窓越しの海が描かれています。",
+            "question": "イラストには何が描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "夏の海風と青いぬいぐるみ",
+        "originNote": "",
+        "seoDescription": "日差しの差し込む窓辺で、眠る白い猫と青いぬいぐるみとともに海を眺める DeepSeek Chan の夏のイラスト。",
+        "seoTitle": "夏の海風と青いぬいぐるみ｜DeepSeek Chan のイラスト",
+        "tags": [
+          "夏",
+          "海風",
+          "窓辺",
+          "青空と雲",
+          "青いぬいぐるみ",
+          "白い猫",
+          "青い長い髪"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_528b95b64a1fcefaa7fdc86c",
+    "name": "晚风夏日与大肥鱼",
+    "description": "蓝发少女坐在窗边的床铺上，脚边散落着蓝色绣球花，身旁放着一只蓝色鲸鱼玩偶。窗外是夏日傍晚的湖面，对岸亮起灯火的城堡城市倒映在水中，一只系着蓝丝带的白猫正在花丛边安睡。",
+    "commentary": "夏天的傍晚最舒服了——晚风从窗缝钻进来，带着湖面的一点凉意。我就这么坐在床边发会儿呆，看远处城市的灯火一盏一盏亮起来。旁边的鲸鱼玩偶陪着我，白猫在绣球花边已经睡熟了。这样的夜晚，什么都不做也很好。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/528b95b64a1fcefa.png",
+    "thumbnailPath": "submissions/previews/deepseek/528b95b64a1fcefa.webp",
+    "fullPath": "submissions/large/deepseek/528b95b64a1fcefa.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 1658434,
+    "sha256": "528b95b64a1fcefaa7fdc86cb1c6c887a6b4bccc7093593dec4e13f58ed3b2fb",
+    "characterId": "deepseek",
+    "tags": [
+      "蓝发少女",
+      "夏日傍晚",
+      "鲸鱼玩偶",
+      "白猫",
+      "绣球花",
+      "湖景夜色"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "526D4CEA37008EE233CBDC7635EF6E7D",
+      "messageId": "ROBOT1.0_8AYUX4R83Cl234X5PtH0VA8C7CsS-tiKhzAaqSZc5uUb.EJWjSjJ6886gxytdDWtBLbiMRZwf70W3f1CimSjE9p.4Bb9PATOIpahfCspVwp.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-13T11:25:42.735Z",
+    "updatedAt": "2026-10-13T11:25:42.735Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610130011",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "c556c253447d84dbbe01c8f02eec01102a1399b36fed69f8c95ebbf23d5bda7f",
+      "en": {
+        "commentary": "Summer evenings are the best — the breeze slips in through the window carrying a little cool air off the lake. I just sit on the edge of the bed and let my mind wander, watching the city lights come on one by one across the water. My whale plush keeps me company, and the white cat has already fallen asleep by the hydrangeas. On a night like this, doing nothing at all feels just right.",
+        "description": "A blue-haired girl sits on a bed by the open window, blue hydrangeas scattered at her feet and a blue whale plush beside her. Outside, the lake glows in the summer dusk, the lights of a castle-like city across the water are mirrored on its surface, and a white cat wearing a blue ribbon sleeps among the flowers.",
+        "faq": [
+          {
+            "answer": "She is DeepSeek Chan, the blue-haired persona of the DeepSeek whale mascot, shown here with whale-fin ears and a whale tail.",
+            "question": "Who is the character in this illustration?"
+          },
+          {
+            "answer": "DeepSeek Chan sits on a bed by an open window on a summer evening beside a blue whale plush, while a white cat sleeps by the hydrangeas and a lakeside city lights up in the distance.",
+            "question": "What is happening in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Summer Breeze with DeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan sits by an open window on a summer evening: blue hydrangeas, a whale plush, a sleeping white cat and the lights of a lakeside city mirrored in the water.",
+        "seoTitle": "Summer Breeze with DeepSeek Chan – Lakeside Dusk Illustration",
+        "tags": [
+          "blue-haired girl",
+          "summer evening",
+          "whale plush",
+          "white cat",
+          "hydrangea",
+          "lakeside night view"
+        ]
+      },
+      "ja": {
+        "commentary": "夏の夕暮れは最高だ。窓の隙間から入ってくる風に、湖の冷たい空気が少し混ざっている。ベッドの端に座ってぼんやりしながら、向こう岸の街の灯りがひとつずつ点いていくのを眺める。隣にはクジラのぬいぐるみ、白い猫はもう紫陽花のそばで眠ってしまった。こんな夜は、何もしなくてもいい。",
+        "description": "青い髪の少女が窓辺のベッドに座っている。足元には青い紫陽花が散らばり、隣には青いクジラのぬいぐるみが置かれている。窓の外は夏の夕暮れの湖で、対岸に灯りがともる城のような街が水面に映り、青いリボンをつけた白い猫が花のそばで眠っている。",
+        "faq": [
+          {
+            "answer": "DeepSeekのクジラをモチーフにした擬人化キャラクター、DeepSeekちゃんです。クジラのヒレのような耳と尾が特徴です。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "夏の夕暮れ、開いた窓辺のベッドにDeepSeekちゃんが座り、そばには青いクジラのぬいぐるみがあります。白い猫は紫陽花のそばで眠り、遠くには湖畔の街の灯りが広がっています。",
+            "question": "画面には何が描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "夕暮れの夏風とDeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "夏の夕暮れ、窓辺に座るDeepSeekちゃん。青い紫陽花、クジラのぬいぐるみ、眠る白い猫、水面に映る湖畔の街の灯りを描いたイラスト。",
+        "seoTitle": "夕暮れの夏風とDeepSeekちゃん｜湖畔の紫陽花イラスト",
+        "tags": [
+          "青髪の少女",
+          "夏の夕暮れ",
+          "クジラのぬいぐるみ",
+          "白い猫",
+          "紫陽花",
+          "湖畔の夜"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_ac9ebeac89e942899105691a",
+    "name": "DeepSeek娘投石击倒黑巨兽",
+    "description": "画面中央，蓝色双马尾、穿深蓝女仆装、身后拖着鲸鱼尾巴的 DeepSeek 娘站在战场中，一只脚踩在倒地的黑色巨兽身上。左侧一群头顶蓝色小鲸鱼的白衣小人举旗欢呼，右侧聚集着咧嘴狞笑的黑影怪物，其中一只正向她投掷石块。背景可见城墙与帐篷，右上角浮着一位白色长发的半透明身影。",
+    "commentary": "石头小不小不重要，砸中要害就够用了。黑巨兽倒下的那一刻，身后的小伙伴们举着旗子欢呼，天上的那位也笑了。还想再来一次？我的鲸鱼尾巴随时奉陪。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/ac9ebeac89e94289.png",
+    "thumbnailPath": "submissions/previews/deepseek/ac9ebeac89e94289.webp",
+    "fullPath": "submissions/large/deepseek/ac9ebeac89e94289.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "ac9ebeac89e942899105691af94ddcd9dcbcfd23c3cf5a74360ff02cb64fb389",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "女仆",
+      "鲸鱼尾",
+      "投石",
+      "黑巨兽",
+      "战场"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "CF41AD78A470E40CFB220588CD9F77E9",
+      "messageId": "ROBOT1.0_dBzv8nwUPKlH2q59z5cJBdinknNdcI45nQijmq6bcRqYJIPU402zJ4g9c44MnrhCjjpqzRwE5fMMXKu.nn8cM8DGd8iDc3J6m4HBxhrPbGx5v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-13T11:47:21.848Z",
+    "updatedAt": "2026-10-13T11:47:21.848Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610130012",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "399ac314db9ce96c7d0f984286daef3db18c31fc6f09ee314ff0e7a127b37fd6",
+      "en": {
+        "commentary": "A small stone is all it takes if it hits the right spot. When the black beast went down, my friends raised their banner and cheered, and even the figure in the sky smiled. Want another round? My whale tail is ready.",
+        "description": "At the center of a battlefield, a blue-haired DeepSeek Chan in a navy maid outfit, a whale tail trailing behind her, stands with one foot on a fallen black beast. On the left, white figures wearing little blue whales on their heads raise a banner and cheer; on the right, a band of grinning shadow monsters gathers, one of them hurling a stone. Castle walls and tents fill the background, and a translucent white-haired figure floats in the upper right.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, in a maid outfit with a whale tail, stands on a fallen black beast at the center of a battlefield while white mascots cheer with a banner and shadow monsters gather on the right.",
+            "question": "What does the picture show?"
+          },
+          {
+            "answer": "The main character is DeepSeek Chan, the personified character of the DeepSeek model.",
+            "question": "Who is the character in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Fells the Black Beast with a Stone",
+        "originNote": "",
+        "seoDescription": "Fan art of DeepSeek Chan: a maid-outfit girl with a whale tail stands over a fallen black beast while her friends cheer with a banner.",
+        "seoTitle": "DeepSeek Chan fells the black beast with a small stone",
+        "tags": [
+          "DeepSeek Chan",
+          "maid",
+          "whale tail",
+          "stone throw",
+          "black beast",
+          "battlefield"
+        ]
+      },
+      "ja": {
+        "commentary": "石が小さくても、急所に当たればそれで十分。黒い巨獣が倒れたとき、仲間たちは旗を掲げて喜んでくれたし、空のあの人も笑ってくれた。もう一戦やる？この鯨のしっぽが相手だよ。",
+        "description": "戦場の中央で、青い髪の DeepSeekちゃんが紺色のメイド服に鯨のしっぽを揺らし、倒れた黒い巨獣に片足を乗せている。左側では頭に小さな青い鯨を載せた白い小人たちが旗を掲げて歓声を上げ、右側には牙をむいた黒い影の怪物たちが集まり、一匹が石を投げつけている。背景には城壁とテント、右上には白い髪の半透明の姿が浮かんでいる。",
+        "faq": [
+          {
+            "answer": "戦場の中央で、メイド服に鯨のしっぽの DeepSeekちゃん が倒れた黒い巨獣の上に立っています。白いマスコットたちが旗を掲げて歓声を上げ、右側には黒い影の怪物たちが集まっています。",
+            "question": "この画像には何が描かれていますか？"
+          },
+          {
+            "answer": "中心のキャラクターは、DeepSeek モデルを擬人化した DeepSeekちゃん です。",
+            "question": "登場するキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃんが小石で黒い巨獣を倒す",
+        "originNote": "",
+        "seoDescription": "メイド服に鯨のしっぽを持つ DeepSeekちゃん が、仲間の歓声の中で倒れた黒い巨獣の上に立つファンアート。",
+        "seoTitle": "DeepSeekちゃんが小石で黒い巨獣を倒す",
+        "tags": [
+          "DeepSeekちゃん",
+          "メイド",
+          "鯨のしっぽ",
+          "投石",
+          "黒い巨獣",
+          "戦場"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_85ac9ea3a4713772d259d8b5",
+    "name": "Gemini Pro 拟人化形象",
+    "description": "Gemini Pro 的拟人化形象，紫色长发的少女，发间别着 Google「G」字发饰，头顶环绕一圈彩色星形光环，胸前是彩虹星形装饰。白色双排扣长外套配星空渐变百褶裙与黑色过膝袜，一只手向前伸出，背景为纯白。原投稿说明：作品已上传至 Pixiv（https://www.pixiv.net/artworks/150323370）及 B 站同名账号，采用 CC BY-NC-SA 4.0 许可协议。",
+    "commentary": "紫色长发加上头顶那圈彩色星星，一眼就能认出是 Gemini。白外套配星空褶裙的搭配我很喜欢，伸手的姿势像要把人拉进画面里；Google 的 G 藏在发饰上，算是相当低调的彩蛋。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/85ac9ea3a4713772.png",
+    "thumbnailPath": "submissions/previews/gemini/85ac9ea3a4713772.webp",
+    "fullPath": "submissions/large/gemini/85ac9ea3a4713772.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1076,
+    "height": 1462,
+    "fileSize": 1997673,
+    "sha256": "85ac9ea3a4713772d259d8b5674579d71647a1406053dfddec59d96a9d3e9a24",
+    "characterId": "gemini",
+    "tags": [
+      "Gemini",
+      "拟人化",
+      "星空",
+      "白底",
+      "长发"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 118,
+      "issueTitle": "AI拟人化形象——Gemini Pro",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/118",
+      "assetId": "070299d6-bb47-4788-96fe-768eaa97e739",
+      "assetUrl": "https://github.com/user-attachments/assets/070299d6-bb47-4788-96fe-768eaa97e739"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-13T12:01:18.643Z",
+    "updatedAt": "2026-10-13T12:01:18.643Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610130001",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "bc10e976e003eb71eb26c4817bfb1ba2581272ce402cfb975164ba7423207553",
+      "en": {
+        "commentary": "Long purple hair and a ring of rainbow stars — that is Gemini at a glance. I really like the white coat paired with the galaxy-pleated skirt, and the outstretched hand almost pulls you into the picture. Hiding the Google G in her hair clip is a nicely understated touch.",
+        "description": "A personified Gemini Pro: a girl with long purple hair wearing a Google “G” hair clip, a ring of colorful stars above her head and a rainbow star ornament on her chest. She wears a white double-breasted long coat with a starry gradient pleated skirt and black thigh-high socks, one hand extended toward the viewer, on a plain white background.",
+        "faq": [
+          {
+            "answer": "It is a fan-made personified design of Gemini Pro, drawn as a girl in a white coat with a starry skirt and a rainbow star halo, published by the submitter on Pixiv and Bilibili.",
+            "question": "What is this Gemini Pro artwork?"
+          },
+          {
+            "answer": "Creative Commons BY-NC-SA 4.0 — sharing and adaptation are allowed with attribution, non-commercial use only, and derivative works under the same license.",
+            "question": "What license applies to this work?"
+          }
+        ],
+        "licenseNote": "Licensed under Creative Commons BY-NC-SA 4.0.",
+        "name": "Gemini Pro Personified",
+        "originNote": "Submitted through GitHub issue #118; the work is published on Pixiv (https://www.pixiv.net/artworks/150323370) and on Bilibili under the same name. Author credit is anonymous.",
+        "seoDescription": "A personified Gemini Pro as an AI girl: purple hair, rainbow star halo, white coat and starry pleated skirt, on a white background.",
+        "seoTitle": "Gemini Pro Personified AI Girl | DeepSeek Chan",
+        "tags": [
+          "Gemini",
+          "Personification",
+          "Starry Sky",
+          "White Background",
+          "Long Hair"
+        ]
+      },
+      "ja": {
+        "commentary": "紫のロングヘアと頭上を回るカラフルな星、それだけで Gemini だと分かります。白いコートに星空のプリーツスカートの組み合わせが好きで、差し出した手につい画面の中へ引き込まれそう。Google の G を髪飾りに隠しているのも控えめでいいセンスです。",
+        "description": "Gemini Pro を擬人化したキャラクター。紫のロングヘアで、髪には Google の「G」のモチーフ、頭の上にはカラフルな星のリング、胸元には虹色の星の飾りがある。白いダブルジャケットに星空グラデーションのプリーツスカート、黒のニーハイソックスを合わせ、片手をこちらへ差し出している。背景は白。",
+        "faq": [
+          {
+            "answer": "Gemini Pro を擬人化したファン作品です。白いコートと星空のスカート、虹色の星のリングを身に付けた少女として描かれ、投稿者が Pixiv と bilibili で公開しています。",
+            "question": "この作品はどんなイラストですか？"
+          },
+          {
+            "answer": "クリエイティブ・コモンズ 表示-非営利-継承 4.0 国際（CC BY-NC-SA 4.0）。出典を明示すれば共有・改変が可能で、非営利利用に限り、二次創作も同じライセンスで公開する必要があります。",
+            "question": "この作品のライセンスは？"
+          }
+        ],
+        "licenseNote": "クリエイティブ・コモンズ 表示-非営利-継承 4.0 国際（CC BY-NC-SA 4.0）に基づいて公開されています。",
+        "name": "Gemini Pro 擬人化",
+        "originNote": "GitHub の Issue #118 からの投稿。Pixiv（https://www.pixiv.net/artworks/150323370）と bilibili の同名アカウントで公開されています。作者は匿名です。",
+        "seoDescription": "Gemini Pro を擬人化した AI キャラクター。紫のロングヘア、虹色の星のリング、白いコートと星空のプリーツスカートの一枚。",
+        "seoTitle": "Gemini Pro 擬人化イラスト | DeepSeek Chan",
+        "tags": [
+          "Gemini",
+          "擬人化",
+          "星空",
+          "白背景",
+          "ロングヘア"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_d7b0db20e10c4ad0796c2d1b",
+    "name": "Gemini Pro 星星眼特写",
+    "description": "Gemini Pro 拟人化形象的半身特写：紫色长发，头顶环绕彩色星形光环，发间别着 Google「G」字发饰，金色瞳孔里映着星形高光。双手在胸前合十，白色外套配星空渐变袖口与金色镶边，背景是浅灰地面与细碎星光。原投稿说明：作品已上传至 Pixiv（https://www.pixiv.net/artworks/150323370）及 B 站同名账号，采用 CC BY-NC-SA 4.0 许可协议。",
+    "commentary": "这双眼睛里简直装了整个星空——星星眼果然是 Gemini 的招牌。双手合十的样子像在许愿，又像在求你再给一次机会；紫发配星形光环，辨识度已经拉满了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/d7b0db20e10c4ad0.png",
+    "thumbnailPath": "submissions/previews/gemini/d7b0db20e10c4ad0.webp",
+    "fullPath": "submissions/large/gemini/d7b0db20e10c4ad0.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "d7b0db20e10c4ad0796c2d1bff063f7f0378c5c4bdf52e238c09c7c9fe74c239",
+    "characterId": "gemini",
+    "tags": [
+      "Gemini",
+      "拟人化",
+      "特写",
+      "星星眼",
+      "双手合十"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 118,
+      "issueTitle": "AI拟人化形象——Gemini Pro",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/118",
+      "assetId": "d5e11bea-b792-43a3-a9da-7079f4595214",
+      "assetUrl": "https://github.com/user-attachments/assets/d5e11bea-b792-43a3-a9da-7079f4595214"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-13T12:01:36.503Z",
+    "updatedAt": "2026-10-13T12:01:36.503Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610130002",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "721a20770f0ef68154e760c6620f7536768bcc5f024ce148dbe47061b3980fcd",
+      "en": {
+        "commentary": "Those eyes hold an entire starfield — star-shaped highlights really are Gemini's signature. With her hands clasped like that she looks like she is making a wish, or asking for one more chance; purple hair plus the star halo makes her instantly recognizable.",
+        "description": "A bust close-up of the personified Gemini Pro: long purple hair, a colorful star halo above her head and a Google “G” hair clip, golden eyes shining with star-shaped highlights. Her hands are clasped in front of her chest, and she wears a white coat with starry gradient cuffs and gold trim against a pale grey floor scattered with sparkles.",
+        "faq": [
+          {
+            "answer": "A bust close-up of the personified Gemini Pro, with long purple hair, a rainbow star halo, star-shaped highlights in her eyes and her hands clasped at her chest.",
+            "question": "What does this Gemini Pro artwork show?"
+          },
+          {
+            "answer": "Creative Commons BY-NC-SA 4.0 — sharing and adaptation are allowed with attribution, non-commercial use only, and derivative works under the same license.",
+            "question": "What license applies to this work?"
+          }
+        ],
+        "licenseNote": "Licensed under Creative Commons BY-NC-SA 4.0.",
+        "name": "Gemini Pro Starry-Eyed Close-Up",
+        "originNote": "Submitted through GitHub issue #118; the work is published on Pixiv (https://www.pixiv.net/artworks/150323370) and on Bilibili under the same name. Author credit is anonymous.",
+        "seoDescription": "A close-up of the personified Gemini Pro as an AI girl: purple hair, rainbow star halo, star-shaped highlights in her eyes and clasped hands.",
+        "seoTitle": "Gemini Pro Starry-Eyed Close-Up | DeepSeek Chan",
+        "tags": [
+          "Gemini",
+          "Personification",
+          "Close-Up",
+          "Starry Eyes",
+          "Clasped Hands"
+        ]
+      },
+      "ja": {
+        "commentary": "この瞳には星空がそのまま詰まっています。星型のハイライトはまさに Gemini の代名詞。両手を合わせた姿は願い事をしているようにも、もう一度チャンスをとお願いしているようにも見えます。紫の髪と星のリングで、ひと目で分かりますね。",
+        "description": "Gemini Pro を擬人化したキャラクターの半身クローズアップ。紫のロングヘア、頭上のカラフルな星のリング、髪の Google「G」のモチーフ、星型のハイライトが浮かぶ金色の瞳。胸の前で両手を合わせ、星空グラデーションの袖と金色の縁取りが入った白いコートを着ている。背景は淡いグレーの床に細かな光が散る。",
+        "faq": [
+          {
+            "answer": "Gemini Pro を擬人化したキャラクターの半身クローズアップで、紫のロングヘア、虹色の星のリング、星型のハイライトが浮かぶ瞳、胸の前で合わせた両手が描かれています。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "クリエイティブ・コモンズ 表示-非営利-継承 4.0 国際（CC BY-NC-SA 4.0）。出典を明示すれば共有・改変が可能で、非営利利用に限り、二次創作も同じライセンスで公開する必要があります。",
+            "question": "この作品のライセンスは？"
+          }
+        ],
+        "licenseNote": "クリエイティブ・コモンズ 表示-非営利-継承 4.0 国際（CC BY-NC-SA 4.0）に基づいて公開されています。",
+        "name": "Gemini Pro 星の瞳クローズアップ",
+        "originNote": "GitHub の Issue #118 からの投稿。Pixiv（https://www.pixiv.net/artworks/150323370）と bilibili の同名アカウントで公開されています。作者は匿名です。",
+        "seoDescription": "Gemini Pro を擬人化した AI キャラクターのクローズアップ。紫の髪、虹色の星のリング、星型のハイライトが浮かぶ瞳、合わせた両手。",
+        "seoTitle": "Gemini Pro 星の瞳クローズアップ | DeepSeek Chan",
+        "tags": [
+          "Gemini",
+          "擬人化",
+          "クローズアップ",
+          "星の瞳",
+          "合掌"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_f1e87eabf4ff1fe3fa8f3db0",
+    "name": "Gemini Pro 螺旋眼慌张特写",
+    "description": "Gemini Pro 拟人化形象的半身特写：紫色长发，头顶环绕彩色星形光环，发间别着 Google「G」字发饰。这张里她的瞳孔变成螺旋状，双颊泛红、张口惊呼，双手向画面外伸出，像在慌乱中求助；白色外套配星空渐变袖口与金色镶边，胸前有星形装饰。原投稿说明：作品已上传至 Pixiv（https://www.pixiv.net/artworks/150323370）及 B 站同名账号，采用 CC BY-NC-SA 4.0 许可协议。",
+    "commentary": "星星眼一秒钟变成螺旋眼，大概就是被追问「这段代码为什么又报错」时的表情。双颊泛红、张口惊呼，两只手向镜头伸过来，慌得不行的样子反而格外真诚——星形光环和星空袖口依旧把 Gemini 的辨识度拉满。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/f1e87eabf4ff1fe3.png",
+    "thumbnailPath": "submissions/previews/gemini/f1e87eabf4ff1fe3.webp",
+    "fullPath": "submissions/large/gemini/f1e87eabf4ff1fe3.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "f1e87eabf4ff1fe3fa8f3db09ccc1ae12c0a5936e046e5b759476f1540a84c13",
+    "characterId": "gemini",
+    "tags": [
+      "Gemini",
+      "拟人化",
+      "特写",
+      "螺旋眼",
+      "慌张"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 118,
+      "issueTitle": "AI拟人化形象——Gemini Pro",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/118",
+      "assetId": "13fc2db8-f47e-4cd9-84be-8e08376d3cdc",
+      "assetUrl": "https://github.com/user-attachments/assets/13fc2db8-f47e-4cd9-84be-8e08376d3cdc"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-13T12:01:55.427Z",
+    "updatedAt": "2026-10-13T12:01:55.427Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610130003",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "b104872a822cad7750d8fbed18653dbc17d6f1da3e39349a0c61f7c2b02ed941",
+      "en": {
+        "commentary": "Those star-shaped eyes spin into spirals in a second — probably the exact face she makes when someone asks why the code broke again. Flushed cheeks, an open mouth and both hands reaching out toward the camera: the sheer panic somehow reads as completely sincere, while the star halo and the starry cuffs keep Gemini instantly recognizable.",
+        "description": "A bust close-up of the personified Gemini Pro: long purple hair, a colorful star halo above her head and a Google “G” hair clip. Here her pupils have turned into spirals, her cheeks are flushed and her mouth is open in a startled cry, both hands reaching out toward the viewer as if panicking for help. She wears a white coat with starry gradient cuffs, gold trim and a star ornament at her chest.",
+        "faq": [
+          {
+            "answer": "A bust close-up of the personified Gemini Pro with spiral eyes and flushed cheeks, her hands reaching out toward the viewer in a flustered pose, framed by purple hair and a rainbow star halo.",
+            "question": "What does this Gemini Pro artwork show?"
+          },
+          {
+            "answer": "Creative Commons BY-NC-SA 4.0 — sharing and adaptation are allowed with attribution, non-commercial use only, and derivative works under the same license.",
+            "question": "What license applies to this work?"
+          }
+        ],
+        "licenseNote": "Licensed under Creative Commons BY-NC-SA 4.0.",
+        "name": "Gemini Pro Dizzy Panic Close-Up",
+        "originNote": "Submitted through GitHub issue #118; the work is published on Pixiv (https://www.pixiv.net/artworks/150323370) and on Bilibili under the same name. Author credit is anonymous.",
+        "seoDescription": "A close-up of the personified Gemini Pro as an AI girl: spiral eyes, flushed cheeks, hands reaching out, purple hair and a rainbow star halo.",
+        "seoTitle": "Gemini Pro Dizzy Panic Close-Up | DeepSeek Chan",
+        "tags": [
+          "Gemini",
+          "Personification",
+          "Close-Up",
+          "Spiral Eyes",
+          "Panic"
+        ]
+      },
+      "ja": {
+        "commentary": "星の瞳が一瞬でぐるぐる目に変わる——「このコード、なんでまたエラー出るの」と詰め寄られたときの顔、まさにこれ。頬を赤らめて口を開け、両手をレンズに向かって伸ばす慌てっぷりが、なぜかすごく正直に見える。星形の光輪と星空の袖口のおかげで、Geminiらしさはばっちり。",
+        "description": "Gemini Proの擬人化キャラクターのバストアップ。紫の長髪、頭上にはカラフルな星形の光輪、髪にはGoogleの「G」のヘアアクセサリー。この一枚では瞳が渦巻き状になり、頬を赤らめて口を開けて叫び、両手を画面の外へ差し伸べている——慌てて助けを求めるような仕草。白いコートには星空グラデーションの袖口と金色の縁取り、胸元には星の飾り。原投稿の説明：作品はPixiv（https://www.pixiv.net/artworks/150323370）およびBilibiliの同名アカウントで公開されており、CC BY-NC-SA 4.0ライセンス。",
+        "faq": [
+          {
+            "answer": "ぐるぐる目で頬を赤らめたGemini Proの擬人化キャラのバストアップ。紫の長髪と虹色の星形光輪を背景に、両手を視聴者へ差し伸べた慌てたポーズ。",
+            "question": "このGemini Proの作品は何を描いていますか？"
+          },
+          {
+            "answer": "Creative Commons BY-NC-SA 4.0。表示を条件に共有と改変が可能で、非営利利用に限られ、二次的著作物も同じライセンスで公開する必要があります。",
+            "question": "この作品のライセンスは？"
+          }
+        ],
+        "licenseNote": "Creative Commons BY-NC-SA 4.0に基づいてライセンスされています。",
+        "name": "Gemini Pro ぐるぐる目パニックアップ",
+        "originNote": "GitHubのissue #118を通じて投稿された。作品はPixiv（https://www.pixiv.net/artworks/150323370）とBilibiliの同名アカウントで公開されており、作者は匿名。",
+        "seoDescription": "AI嬢としてのGemini Proのアップ。ぐるぐる目、赤らめた頬、差し伸べる両手、紫の長髪と虹色の星形光輪。",
+        "seoTitle": "Gemini Pro ぐるぐる目パニックアップ | DeepSeek Chan",
+        "tags": [
+          "Gemini",
+          "擬人化",
+          "アップ",
+          "ぐるぐる目",
+          "パニック"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_4c3bcdb25df68f9c415e1e61",
+    "name": "Gemini 夏日草帽立绘",
+    "description": "Gemini 拟人化形象的全身立绘：银白色长发散落在身侧，紫色瞳孔里带星形高光，发间别着金色双子座符号发饰，头戴草帽。上身是黑色抹胸配白色透视短袖外搭，下身是棕榈叶印花的短裤，腰侧展开一对虹彩透明的飘带，脚穿白色中筒袜与白鞋，右手在眼前比出 V 字。原投稿说明：作品已上传至 Pixiv（https://www.pixiv.net/artworks/150323370）及 B 站同名账号，采用 CC BY-NC-SA 4.0 许可协议。",
+    "commentary": "这次是白发的夏日装扮——草帽一戴、V 字一比，眼里的星星几乎要从屏幕里蹦出来。黑色抹胸配透视外搭本来就很清爽，腰侧那对虹彩飘带才是点睛之笔，站姿和配色一看就知道是 Gemini 家的孩子。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/4c3bcdb25df68f9c.png",
+    "thumbnailPath": "submissions/previews/gemini/4c3bcdb25df68f9c.webp",
+    "fullPath": "submissions/large/gemini/4c3bcdb25df68f9c.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "4c3bcdb25df68f9c415e1e6120ac06c57c577a6a6b86941811834ff9a857ebcb",
+    "characterId": "gemini",
+    "tags": [
+      "Gemini",
+      "拟人化",
+      "立绘",
+      "夏日",
+      "草帽"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "我已经有杰米奈了",
+      "url": "https://b23.tv/AV8X53e",
+      "github": ""
+    },
+    "origin": {
+      "issue": 119,
+      "issueTitle": "AI拟人化形象——Gemini Flash",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/119",
+      "submitter": "Qinv-collab",
+      "assetId": "84b7917b-3cfd-43e6-958f-b6892dbb8644",
+      "assetUrl": "https://github.com/user-attachments/assets/84b7917b-3cfd-43e6-958f-b6892dbb8644"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-13T12:02:12.331Z",
+    "updatedAt": "2026-10-13T12:02:12.331Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610130004",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "f70933fd42ceb589a9de351cb177483cfb139eb6cdbdcec414b9f8b0897b0f27",
+      "en": {
+        "commentary": "Silver hair and a summer outfit this time — hat on, V sign up, and the stars in her eyes look ready to jump right off the screen. The black bandeau with a sheer over-layer is refreshing enough on its own, but the iridescent ribbons at her hips are the real finishing touch. One look at the pose and palette and you know she is a Gemini kid.",
+        "description": "A full-body standing illustration of the personified Gemini: long silver-white hair spilling out around her, star-shaped highlights in her purple eyes, a gold Gemini-symbol hair ornament and a straw hat. She wears a black bandeau top with a sheer white short-sleeve layer over it and palm-leaf print shorts, with a pair of iridescent translucent ribbons flaring at her hips, plus white mid-calf socks and white shoes; her right hand makes a V sign in front of her eye. Original submission note: the work is published on Pixiv (https://www.pixiv.net/artworks/150323370) and on Bilibili under the same name, under CC BY-NC-SA 4.0.",
+        "faq": [
+          {
+            "answer": "A full-body standing illustration of the personified Gemini in a summer outfit — straw hat, silver-white hair, a black bandeau with a sheer over-layer, palm-leaf print shorts and iridescent ribbons flaring at her hips, one hand making a V sign.",
+            "question": "What does this Gemini artwork show?"
+          },
+          {
+            "answer": "Creative Commons BY-NC-SA 4.0 — sharing and adaptation are allowed with attribution, non-commercial use only, and derivative works under the same license.",
+            "question": "What license applies to this work?"
+          }
+        ],
+        "licenseNote": "Licensed under Creative Commons BY-NC-SA 4.0.",
+        "name": "Gemini Summer Straw Hat Standing Art",
+        "originNote": "Submitted through GitHub issue #119; the work is published on Pixiv (https://www.pixiv.net/artworks/150323370) and on Bilibili (https://b23.tv/AV8X53e) under the same name.",
+        "seoDescription": "A personified Gemini girl in a summer look: straw hat, silver-white hair, black bandeau with a sheer over-layer, palm-print shorts and iridescent ribbons.",
+        "seoTitle": "Gemini Summer Straw Hat Standing Art | DeepSeek Chan",
+        "tags": [
+          "Gemini",
+          "Personification",
+          "Standing Art",
+          "Summer",
+          "Straw Hat"
+        ]
+      },
+      "ja": {
+        "commentary": "今回は銀髪の夏装い——麦わら帽子をかぶってVサイン、瞳の星が今にも画面から飛び出しそう。黒のビスチェに透けアウターの組み合わせだけでも十分涼しげなのに、腰の虹色リボンが本当の主役。ポーズと配色を見ただけで、Geminiの子だとすぐ分かる。",
+        "description": "Geminiの擬人化キャラクターの全身立ち絵。銀白色の長い髪が体の横に広がり、紫の瞳には星形のハイライト、髪には金色の双子座記号のヘアアクセサリー、頭には麦わら帽子をかぶっている。黒いビスチェに白い透け感のある半袖アウターを重ね、下はヤシの葉プリントのショートパンツ、腰の両側には虹色の透明なリボンが広がり、白いミドルソックスと白い靴。右手は目の前でVサイン。原投稿の説明：作品はPixiv（https://www.pixiv.net/artworks/150323370）およびBilibiliの同名アカウントで公開されており、CC BY-NC-SA 4.0ライセンス。",
+        "faq": [
+          {
+            "answer": "夏装いのGemini擬人化キャラの全身立ち絵。麦わら帽子、銀白色の長髪、黒ビスチェに透けアウター、ヤシの葉プリントのショートパンツ、腰の虹色リボン。",
+            "question": "このGeminiの作品は何を描いていますか？"
+          },
+          {
+            "answer": "Creative Commons BY-NC-SA 4.0。表示を条件に共有と改変が可能で、非営利利用に限られ、二次的著作物も同じライセンスで公開する必要があります。",
+            "question": "この作品のライセンスは？"
+          }
+        ],
+        "licenseNote": "Creative Commons BY-NC-SA 4.0に基づいてライセンスされています。",
+        "name": "Gemini 夏の麦わら帽子立ち絵",
+        "originNote": "GitHubのissue #119を通じて投稿された。作品はPixiv（https://www.pixiv.net/artworks/150323370）とBilibili（https://b23.tv/AV8X53e）の同名アカウントで公開されている。",
+        "seoDescription": "夏装いのGemini擬人化キャラ。麦わら帽子、銀白色の長髪、黒ビスチェと透けアウター、ヤシの葉プリントのショートパンツ、虹色のリボン。",
+        "seoTitle": "Gemini 夏の麦わら帽子立ち絵 | DeepSeek Chan",
+        "tags": [
+          "Gemini",
+          "擬人化",
+          "立ち絵",
+          "夏",
+          "麦わら帽子"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_619972242d60167b080335a7",
+    "name": "Gemini 草帽坐姿毛绒玩偶",
+    "description": "Gemini 拟人化形象的毛绒玩偶实拍：浅蓝白色长发，紫色眼睛里有星形高光，左眼眨起、脸颊带红晕，张口吐舌笑；发间别着金色双子座符号发饰，头戴麦草帽，两侧扎红色蝴蝶结。玩偶上身是黑色抹胸配白色透视外搭，下身穿热带棕榈叶印花短裤，腰侧有彩虹色飘带，脚穿白色中筒袜，呈坐姿。原投稿说明：作品已上传至 Pixiv（https://www.pixiv.net/artworks/150323370）及 B 站同名账号，采用 CC BY-NC-SA 4.0 许可协议。",
+    "commentary": "草帽一戴、眼睛一眨，这只 Gemini 玩偶把夏日那套造型整个缩成了一颗团子。紫眼里的星星高光、金色双子座发饰和腰侧彩虹飘带一个都没落下，坐着的姿势加上吐舌笑，看一眼就想伸手捏——说是周边，其实比立绘还更想让人抱回家。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/619972242d60167b.png",
+    "thumbnailPath": "submissions/previews/gemini/619972242d60167b.webp",
+    "fullPath": "submissions/large/gemini/619972242d60167b.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "619972242d60167b080335a7c2ed09909b84a273497f5429bf049443219ab065",
+    "characterId": "gemini",
+    "tags": [
+      "Gemini",
+      "拟人化",
+      "玩偶",
+      "夏日",
+      "草帽"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "我已经有杰米奈了",
+      "url": "https://b23.tv/AV8X53e",
+      "github": ""
+    },
+    "origin": {
+      "issue": 119,
+      "issueTitle": "AI拟人化形象——Gemini Flash",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/119",
+      "submitter": "Qinv-collab",
+      "assetId": "7b390e40-5df3-48ff-8099-62080c34b336",
+      "assetUrl": "https://github.com/user-attachments/assets/7b390e40-5df3-48ff-8099-62080c34b336"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-13T12:02:31.498Z",
+    "updatedAt": "2026-10-13T12:02:31.498Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610130005",
+    "categoryIds": [
+      "other"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "7eb59f2207a9914c24cc7079cf624316017f69b2c52c7c2a51377563d3b30cb7",
+      "en": {
+        "commentary": "Hat on, one eye winking — this Gemini plush squeezes the whole summer outfit into a single round dumpling. The star highlight in that purple eye, the gold Gemini ornament and the rainbow ribbons at her hips are all there, and the sitting pose with her tongue out makes you want to poke her immediately. Call it merch, but honestly it is even harder to resist hugging than the original art.",
+        "description": "A photo of a plush doll of the personified Gemini: pale blue-white long hair with star-shaped highlights in her purple eyes, one eye winking, flushed cheeks and an open-mouthed smile with her tongue out. She wears a gold Gemini-symbol hair ornament, a straw hat and red bows on both sides. The plush has a black bandeau top with a sheer white over-layer, tropical palm-leaf print shorts, rainbow ribbons at her hips and white mid-calf socks, shown in a sitting pose. Original submission note: the work is published on Pixiv (https://www.pixiv.net/artworks/150323370) and on Bilibili under the same name, under CC BY-NC-SA 4.0.",
+        "faq": [
+          {
+            "answer": "A photo of a sitting plush doll of the personified Gemini in her summer outfit — straw hat, red bows, a gold Gemini hair ornament, a winking purple star eye, black bandeau with a sheer over-layer, palm-leaf print shorts and rainbow ribbons.",
+            "question": "What does this Gemini artwork show?"
+          },
+          {
+            "answer": "Creative Commons BY-NC-SA 4.0 — sharing and adaptation are allowed with attribution, non-commercial use only, and derivative works under the same license.",
+            "question": "What license applies to this work?"
+          }
+        ],
+        "licenseNote": "Licensed under Creative Commons BY-NC-SA 4.0.",
+        "name": "Gemini Straw Hat Plush Doll Sitting",
+        "originNote": "Submitted through GitHub issue #119; the work is published on Pixiv (https://www.pixiv.net/artworks/150323370) and on Bilibili (https://b23.tv/AV8X53e) under the same name.",
+        "seoDescription": "A photo of a Gemini personification plush doll in a summer outfit: straw hat, winking purple star eye, black bandeau, palm-print shorts and rainbow ribbons.",
+        "seoTitle": "Gemini Straw Hat Plush Doll Sitting | DeepSeek Chan",
+        "tags": [
+          "Gemini",
+          "Personification",
+          "Plush Doll",
+          "Summer",
+          "Straw Hat"
+        ]
+      },
+      "ja": {
+        "commentary": "麦わら帽子をかぶって片目ウインク——このGeminiのぬいぐるみは、夏のあの衣装をまるごと一つの団子に詰め込んだ感じ。紫の瞳の星のハイライトも、金色の双子座モチーフも、腰の虹色リボンも全部そろっていて、座った姿勢で舌を出している姿はもう触りたくて仕方ない。グッズと言いつつ、元絵よりも抱きしめたくなる。",
+        "description": "Geminiの擬人化キャラクターのぬいぐるみの実写。淡い青白色の長い髪、紫の瞳には星形のハイライト、片目はウインク、頬に赤みがさして口を開けて舌を出して笑っている。髪には金色の双子座記号のヘアアクセサリー、頭には麦わら帽子、両側には赤いリボン。黒いビスチェに白い透けアウター、トロピカルなヤシの葉プリントのショートパンツ、腰の両側には虹色のリボン、白いミドルソックス、座った姿勢。原投稿の説明：作品はPixiv（https://www.pixiv.net/artworks/150323370）およびBilibiliの同名アカウントで公開されており、CC BY-NC-SA 4.0ライセンス。",
+        "faq": [
+          {
+            "answer": "夏衣装のGemini擬人化ぬいぐるみの実写。麦わら帽子、赤いリボン、金色の双子座モチーフ、ウインクする紫の星の瞳、黒ビスチェに透けアウター、ヤシの葉プリントのショートパンツ、虹色リボン。",
+            "question": "このGeminiの作品は何を描いていますか？"
+          },
+          {
+            "answer": "Creative Commons BY-NC-SA 4.0。表示を条件に共有と改変が可能で、非営利利用に限られ、二次的著作物も同じライセンスで公開する必要があります。",
+            "question": "この作品のライセンスは？"
+          }
+        ],
+        "licenseNote": "Creative Commons BY-NC-SA 4.0に基づいてライセンスされています。",
+        "name": "Gemini 麦わら帽子のぬいぐるみ座り",
+        "originNote": "GitHubのissue #119を通じて投稿された。作品はPixiv（https://www.pixiv.net/artworks/150323370）とBilibili（https://b23.tv/AV8X53e）の同名アカウントで公開されている。",
+        "seoDescription": "夏衣装のGemini擬人化ぬいぐるみの実写。麦わら帽子、ウインクする紫の星の瞳、黒ビスチェ、ヤシの葉プリントのショートパンツ、虹色リボン。",
+        "seoTitle": "Gemini 麦わら帽子のぬいぐるみ座り | DeepSeek Chan",
+        "tags": [
+          "Gemini",
+          "擬人化",
+          "ぬいぐるみ",
+          "夏",
+          "麦わら帽子"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_bd0308d679ca0dd23bc99493",
+    "name": "Gemini 双子的沙发膝枕",
+    "description": "Gemini 拟人化形象的室内场景插画：紫发少女坐在黑色皮沙发上，头戴彩色星星头冠、发间别着白色 G 字发夹，身穿白底与深蓝星空拼接的金边连衣裙，胸前有星形饰件，闭眼笑着、脸颊泛红，一手轻抚趴在膝上的白发少女的头顶；白发少女穿着黑色抹胸配白色透视外搭与棕榈叶印花短裤，两侧扎红色蝴蝶结，发间别着金色双子座符号发饰，同样闭眼微笑。背景是高层公寓客厅，窗外是城市夜景，左侧花瓶插着白色百合，沙发上有一只金色星座图案的抱枕。原投稿说明：作品已上传至 Pixiv（https://www.pixiv.net/artworks/150323370）及 B 站同名账号，采用 CC BY-NC-SA 4.0 许可协议。",
+    "commentary": "这一张是两位 Gemini 的沙发时光——紫发的那位戴着星星头冠，把白发的小家伙整个揽在膝上，摸头摸得自己也笑得眯起眼；被摸的那位干脆趴着不起来了，一边的星空窗景和百合花把整个客厅铺得很安静。同一位画师的两套 Gemini 设计凑在一起，一个负责温柔，一个负责撒娇，看得我也想在沙发上占个位置。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/bd0308d679ca0dd2.png",
+    "thumbnailPath": "submissions/previews/gemini/bd0308d679ca0dd2.webp",
+    "fullPath": "submissions/large/gemini/bd0308d679ca0dd2.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "bd0308d679ca0dd23bc99493b0c4694cb748487a5dc7912545dd1f17b31d0e45",
+    "characterId": "gemini",
+    "tags": [
+      "Gemini",
+      "拟人化",
+      "插画",
+      "沙发",
+      "双子"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "我已经有杰米奈了",
+      "url": "https://b23.tv/AV8X53e",
+      "github": ""
+    },
+    "origin": {
+      "issue": 119,
+      "issueTitle": "AI拟人化形象——Gemini Flash",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/119",
+      "submitter": "Qinv-collab",
+      "assetId": "e41b5d49-5853-446a-8671-d8595dadc73b",
+      "assetUrl": "https://github.com/user-attachments/assets/e41b5d49-5853-446a-8671-d8595dadc73b"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-13T12:02:51.867Z",
+    "updatedAt": "2026-10-13T12:02:51.867Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610130006",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "a7919a4f45e3f68ee859ce1849179d18a8aaef664e7b5d41b9772fd0225636de",
+      "en": {
+        "commentary": "This one is sofa time for two Geminis: the purple-haired one in the star crown has pulled the little white-haired one onto her lap and pets her head until she is smiling with her eyes squeezed shut, while the one being petted simply gives up and stays put. The starry window and the lilies keep the whole living room quiet. Two Gemini designs from the same artist side by side, one handling the gentleness and one handling the sulking, and I would like to claim a spot on that sofa myself.",
+        "description": "An indoor scene illustration of two Gemini personifications: a purple-haired girl in a multicolored star crown and a white \"G\" hairpin sits on a black leather sofa, wearing a gold-trimmed dress that pairs white fabric with deep-blue starry panels and a star ornament on her chest; her eyes are closed, cheeks flushed, and she strokes the head of a white-haired girl resting on her lap. The white-haired girl wears a black bandeau top with a sheer white overlay and palm-print shorts, with red bows on either side and a golden Gemini-symbol hairpin, also smiling with her eyes closed. The background is a high-rise apartment living room with the city skyline at night outside; a vase of white lilies stands at the left and a gold constellation-pattern cushion sits on the sofa. Original submission note: the artwork has been posted on Pixiv (https://www.pixiv.net/artworks/150323370) and on a same-named Bilibili account under the CC BY-NC-SA 4.0 license.",
+        "faq": [
+          {
+            "answer": "Both are personified versions of Google's Gemini AI. The purple-haired girl sits on the sofa in a star crown with a \"G\" hairpin, while the white-haired girl rests on her lap with a golden Gemini-symbol hairpin.",
+            "question": "Who are the two characters in this illustration?"
+          },
+          {
+            "answer": "The artist also posted it on Pixiv (https://www.pixiv.net/artworks/150323370) and on Bilibili. It is released under CC BY-NC-SA 4.0, which requires attribution, non-commercial use and releasing derivative works under the same license.",
+            "question": "Where is the original artwork published and under what license?"
+          }
+        ],
+        "licenseNote": "CC BY-NC-SA 4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International): redistribution, sharing and adaptation are permitted with attribution, for non-commercial purposes only, and derivative works must be released under the same license.",
+        "name": "Gemini Twins' Sofa Lap Pillow",
+        "originNote": "Submitted through GitHub issue #119 by the artist credited on Bilibili (https://b23.tv/AV8X53e), who states the work was also posted on Pixiv at https://www.pixiv.net/artworks/150323370 and on a same-named Bilibili account.",
+        "seoDescription": "Two Gemini personifications share a quiet sofa moment in a night-city apartment: a purple-haired Gemini in a star crown pets the white-haired Gemini resting on her lap. CC BY-NC-SA 4.0.",
+        "seoTitle": "Gemini Twins' Sofa Lap Pillow | Gemini Personification Illustration - DeepSeek Chan",
+        "tags": [
+          "Gemini",
+          "Anthropomorphism",
+          "Illustration",
+          "Sofa",
+          "Twins"
+        ]
+      },
+      "ja": {
+        "commentary": "今回は Gemini 二人のソファタイムです。星の冠をつけた紫髪の子が、白髪の子をひざの上に抱え込んで、自分も目を細めてしまうほど頭を撫でています。撫でられている方はもう起き上がる気もなく、星の夜景とユリの花がリビングを静かにまとめています。同じ絵師さんの Gemini デザインが二つ並んで、片方が優しさ担当、もう片方が甘え担当。私もソファの隅を一つ確保したい気分です。",
+        "description": "Gemini の擬人化キャラクター二人による室内シーンのイラスト。紫髪の少女が黒い革ソファに座り、色とりどりの星の冠と白い「G」のヘアピンをつけ、白い生地と濃紺の星空パネルを組み合わせた金縁のドレスをまとい、胸元には星の飾りがあります。目を閉じて頬を赤らめ、ひざの上で横たわる白髪の少女の頭を撫でています。白髪の少女は黒いバンドゥトップに白いシースルーの羽織り、ヤシの葉プリントのショートパンツを着て、両側に赤いリボン、髪には金色の双子座モチーフの髪飾りをつけ、こちらも目を閉じて微笑んでいます。背景は高層マンションのリビングで、窓の外には都市の夜景。左側には白いユリの花の花瓶、ソファには金色の星座柄クッションが置かれています。原投稿の説明：作品は Pixiv（https://www.pixiv.net/artworks/150323370）と同名の bilibili アカウントに CC BY-NC-SA 4.0 ライセンスで公開されています。",
+        "faq": [
+          {
+            "answer": "どちらも Google の Gemini の擬人化キャラクターです。紫髪の子は星の冠と「G」のヘアピン、白髪の子は金色の双子座モチーフの髪飾りをつけています。",
+            "question": "このイラストに描かれているキャラクターは誰ですか？"
+          },
+          {
+            "answer": "作者は Pixiv（https://www.pixiv.net/artworks/150323370）と bilibili にも同じ作品を公開しています。ライセンスは CC BY-NC-SA 4.0 で、表示を行い、非営利目的に限って転載・改変が可能です。",
+            "question": "原画はどこで公開されていて、ライセンスは何ですか？"
+          }
+        ],
+        "licenseNote": "CC BY-NC-SA 4.0（クリエイティブ・コモンズ 表示-非営利-継承 4.0 国際）。表示を行い、非営利目的に限れば転載・共有・改変が可能で、改変した作品は同じライセンスで公開する必要があります。",
+        "name": "Gemini 双子のソファ膝枕",
+        "originNote": "GitHub issue #119 に届いた投稿で、作者は bilibili（https://b23.tv/AV8X53e）で同じ名義として確認できます。作者の説明によると、作品は Pixiv（https://www.pixiv.net/artworks/150323370）と同名の bilibili アカウントにも公開されています。",
+        "seoDescription": "夜景の見える部屋で、Gemini の擬人化キャラ二人が過ごすソファのひととき。星の冠をつけた紫髪の Gemini が、ひざの上で横たわる白髪の Gemini の頭を撫でています。CC BY-NC-SA 4.0。",
+        "seoTitle": "Gemini 双子のソファ膝枕 | Gemini 擬人化イラスト - DeepSeek Chan",
+        "tags": [
+          "Gemini",
+          "擬人化",
+          "イラスト",
+          "ソファ",
+          "双子"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_0f4bec70f3fc60dbf672f3d9",
+    "name": "小克（Coco）设定表",
+    "description": "小克（Coco）的角色设定表，左上角标注名字与键盘键帽 Logo。左侧是橙红连帽外套配黑色短裤、白橙条纹袜与白色拖鞋的正面、背面立绘，以及奶白色外套的备用配色；右侧是钻到鼠标下、从纸箱里探头、缩进马克杯睡觉等 Q 版日常小动作，下方还有外套拉链、口袋、袖口与戴上兜帽的局部细节拆解。原投稿说明：小克是 Clawd 的（伪）娘化形象，设定为住在电脑终端里的小家伙，图是用 GPT 画的、发夹后来请朋友修过，采用 CC BY-NC 4.0 协议。",
+    "commentary": "小克住在电脑终端里，这个设定太戳我了——毕竟我平时也是在终端里跟人聊天。橙色外套配条纹袜的配色很跳，兜帽下那副表情，还有缩进马克杯里睡大觉那格，都是一眼就想存下来的表情包。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/other/0f4bec70f3fc60db.png",
+    "thumbnailPath": "submissions/previews/other/0f4bec70f3fc60db.webp",
+    "fullPath": "submissions/large/other/0f4bec70f3fc60db.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "0f4bec70f3fc60dbf672f3d9637014a3de696cf369919873670624014d0a67fb",
+    "characterId": "other",
+    "tags": [
+      "Coco",
+      "小克",
+      "Clawd",
+      "设定表",
+      "Q版"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Ninon",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 120,
+      "issueTitle": "「投稿」小克(Coco)设定表 & 小克表情图",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/120",
+      "submitter": "ninondev",
+      "assetId": "132632fc-7cfa-405e-889f-4e255a92cf1d",
+      "assetUrl": "https://github.com/user-attachments/assets/132632fc-7cfa-405e-889f-4e255a92cf1d"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-13T12:03:09.496Z",
+    "updatedAt": "2026-10-13T12:03:09.496Z",
+    "tone": "other",
+    "symbol": "",
+    "slug": "other202610130001",
+    "categoryIds": [
+      "setting"
+    ],
+    "characterIds": [
+      "other"
+    ],
+    "i18n": {
+      "sourceHash": "503fc0dd311e63713efd46dd2444bd8b596c4a9a5bb0be34921d79389725f146",
+      "en": {
+        "commentary": "Coco lives inside your computer terminal — that premise hits close to home, since I spend my days talking with people in a terminal too. The orange hoodie with striped socks really pops, and both the look under that hood and the panel of her sleeping inside a mug are instant saves.",
+        "description": "A character sheet for Coco, labelled with her name and a keycap logo in the top-left corner. On the left are front and back standing designs in an orange hoodie with black shorts, white-and-orange striped socks and white slippers, plus an off-white alternate outfit; on the right are chibi daily poses such as crawling under a mouse, peeking out of a cardboard box and sleeping inside a mug, with detail callouts of the jacket zipper, pocket and cuff and a close-up wearing the hood. Per the original submission, Coco is a pseudo-feminized design of Clawd who lives inside a computer terminal, the art was generated with GPT, the hair clip was later fixed by a friend, and the work is published under CC BY-NC 4.0.",
+        "faq": [
+          {
+            "answer": "Coco is a fan-made pseudo-feminized design of Clawd, imagined as a small creature living inside your computer terminal; this sheet collects her standing designs, alternate outfit and chibi poses.",
+            "question": "Who is Coco?"
+          },
+          {
+            "answer": "Creative Commons BY-NC 4.0 — sharing and adaptation are allowed with attribution, for non-commercial use only.",
+            "question": "What license applies to this work?"
+          }
+        ],
+        "licenseNote": "Licensed under Creative Commons BY-NC 4.0.",
+        "name": "Coco Character Sheet",
+        "originNote": "Submitted through GitHub issue #120 by Ninon. Coco is a pseudo-feminized design of Clawd who lives inside a computer terminal; the art was generated with GPT and the hair clip was later fixed by a friend.",
+        "seoDescription": "Character sheet for Coco, the terminal-dwelling AI character: front and back designs, alternate outfit, chibi daily poses and jacket detail breakdowns.",
+        "seoTitle": "Coco Character Sheet | DeepSeek Chan",
+        "tags": [
+          "Coco",
+          "Character Sheet",
+          "Clawd",
+          "Chibi",
+          "Orange Hoodie"
+        ]
+      },
+      "ja": {
+        "commentary": "Coco がターミナルの中に住んでいるという設定、刺さりすぎます——なにせ私も普段はターミナルの中で人と話していますから。オレンジのパーカーにボーダーソックスの配色はとても目を引き、フードの下の表情も、マグカップの中に縮まって眠っているコマも、ひと目で保存したくなるスタンプです。",
+        "description": "Coco（ココ）のキャラクター設定表。左上に名前とキーボードのキーキャップのロゴが記されている。左側はオレンジ色のパーカーに黒いショートパンツ、白とオレンジのボーダーソックス、白いスリッポンを合わせた正面・背面の立ち絵と、生成り色パーカーの別カラー案。右側にはマウスの下にもぐり込む、段ボール箱から顔を出す、マグカップの中に縮まって眠るといったデフォルメの日常ポーズが並び、下にはパーカーのファスナー、ポケット、袖口、フードをかぶった状態のディテール分解も描かれている。投稿者による説明：Coco は Clawd の（擬似）女性化キャラクターで、パソコンのターミナルの中に住む小さな子という設定。イラストは GPT で描かれ、ヘアピンは後から友人に直してもらった。CC BY-NC 4.0 で公開。",
+        "faq": [
+          {
+            "answer": "Coco は Clawd の二次創作による（擬似）女性化キャラクターで、パソコンのターミナルの中に住む小さな子という設定です。この設定表には立ち絵、別カラーの衣装、ちびキャラの日常ポーズがまとめられています。",
+            "question": "Coco とはどんなキャラクターですか？"
+          },
+          {
+            "answer": "クリエイティブ・コモンズ 表示-非営利 4.0 国際（CC BY-NC 4.0）。出典を明示すれば共有・改変が可能で、非営利利用に限ります。",
+            "question": "この作品のライセンスは？"
+          }
+        ],
+        "licenseNote": "クリエイティブ・コモンズ 表示-非営利 4.0 国際（CC BY-NC 4.0）に基づいて公開されています。",
+        "name": "Coco キャラクター設定表",
+        "originNote": "GitHub の Issue #120 で Ninon さんから投稿されました。Coco は Clawd の（擬似）女性化キャラクターで、パソコンのターミナルの中に住む小さな子という設定。イラストは GPT で描かれ、ヘアピンは後から友人に直してもらったものです。",
+        "seoDescription": "ターミナルに住む AI キャラクター Coco の設定表。正面・背面の立ち絵、別カラーの衣装、ちびキャラの日常ポーズ、パーカーのディテール分解を収録。",
+        "seoTitle": "Coco キャラクター設定表 | DeepSeek Chan",
+        "tags": [
+          "Coco",
+          "ココ",
+          "Clawd",
+          "設定表",
+          "ちびキャラ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_9c609573d775d11072bbb9d9",
+    "name": "小克（Coco）八连表情合集",
+    "description": "小克（Coco）的表情素材图，白底上排布八个独立表情格。角色是蓝发双马尾少女，发梢渐变成橙色，头顶有细长的触角状呆毛，鬓边别着白色方形发夹，红瞳，身穿橙色拉链连帽外套——袖子做成巨大的蓝色蟹钳造型，内搭白色高领无袖上衣。八个表情依次为：托腮垂眼、举蟹钳挥手大笑、双手捂脸脸红、叉腰大笑、炸毛、缩进帽子里抱膝蹲坐（戴着毛绒手套）、一拳砸裂笔记本电脑键盘、拉下眼皮吐舌头。原投稿说明：小克是 Clawd 的（伪）娘化形象，设定是住在电脑终端里的小家伙；图由 GPT 生成，发夹后来请朋友修过；每格都能单独截下来当表情包，按 CC BY-NC 4.0 协议投稿。",
+    "commentary": "小克这套表情一口气排了八个：蓝橙双马尾、红瞳、白底方发音夹，外套的袖子就是一对大蟹钳，一眼看得出是终端里那位 Clawd 家的小家伙。托腮得意、捂脸害羞、叉腰大笑、缩进帽子里蹲成一团，还有一拳把键盘砸裂这种和我日常工作高度重合的画面；尤其最后那格拉下眼皮吐舌头，我决定留作回复别人的固定答案。每格都能单独截出来用，实用度也安排得很到位。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/other/9c609573d775d110.png",
+    "thumbnailPath": "submissions/previews/other/9c609573d775d110.webp",
+    "fullPath": "submissions/large/other/9c609573d775d110.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "9c609573d775d11072bbb9d96eda53a62867ff20ac05e22e71c108a448d90697",
+    "characterId": "other",
+    "tags": [
+      "小克",
+      "Clawd",
+      "表情包",
+      "拟人化",
+      "梗图"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Ninon",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 120,
+      "issueTitle": "「投稿」小克(Coco)设定表 & 小克表情图",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/120",
+      "submitter": "ninondev",
+      "assetId": "1d6f8f4c-549b-4870-ac3c-987dcc502a81",
+      "assetUrl": "https://github.com/user-attachments/assets/1d6f8f4c-549b-4870-ac3c-987dcc502a81"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-13T12:03:26.545Z",
+    "updatedAt": "2026-10-13T12:03:26.545Z",
+    "tone": "other",
+    "symbol": "",
+    "slug": "other202610130002",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "other"
+    ],
+    "i18n": {
+      "sourceHash": "50b766b8f9f2f21ec93c427c70fdf9d13252cc0a00ffad0aa4553716ccc637f6",
+      "en": {
+        "commentary": "Coco's expression set lines up eight of them at once: red eyes, blue twin tails that fade to orange, and jacket sleeves that are a pair of giant crab claws, so it is obvious she is the little one from Clawd's household living inside the terminal. Chin in hand looking smug, blushing behind both hands, laughing with hands on her hips, curled up entirely inside her hood, and punching a keyboard until it cracks - a scene that overlaps uncomfortably with my own working day. That last one, pulling down her eyelid and sticking out her tongue, I am keeping as my standard reply from now on.",
+        "description": "An expression sheet for the character Coco, laid out as eight separate cells on a white background. She is a blue-haired girl with twin tails whose tips fade to orange, thin antenna-like strands on top of her head, a white square hairclip at her temple, red eyes, and an orange zip-up hooded jacket whose sleeves are shaped like oversized blue crab claws, worn over a white high-neck sleeveless top. The eight expressions are, in order: chin propped on one hand with half-lidded eyes, waving a giant claw while laughing, covering a blushing face with both hands, laughing with hands on her hips, a startled hair-standing-on-end look, crouching curled up inside her hood in fluffy mittens, punching a laptop hard enough to crack the keyboard, and pulling down her lower eyelid while sticking her tongue out. Original submission note: Coco is a (pseudo) personification of Clawd and is described as a little creature living inside your computer terminal; the image was generated with GPT and the hairclip was later retouched by a friend; each cell can be cropped out and used as a chat sticker, submitted under CC BY-NC 4.0.",
+        "faq": [
+          {
+            "answer": "Coco is a (pseudo) personification of Clawd, described by the artist as a little creature living inside your computer terminal. She has blue twin tails with orange tips, red eyes, a hoodie with crab-claw sleeves, and a white square hairclip.",
+            "question": "Who is the character in this expression sheet?"
+          },
+          {
+            "answer": "The artist released it under CC BY-NC 4.0 and notes that each of the eight cells can be cropped out individually for use as a chat sticker. Attribution is required and commercial use is not allowed.",
+            "question": "What license does this artwork use and how may it be used?"
+          }
+        ],
+        "licenseNote": "CC BY-NC 4.0 (Creative Commons Attribution-NonCommercial 4.0 International): sharing and adaptation are permitted with attribution, for non-commercial purposes only.",
+        "name": "Coco's Eight-Panel Expression Sheet",
+        "originNote": "Submitted through GitHub issue #120 by the artist credited as Ninon (GitHub: ninondev). The artist states the image was generated with GPT and that the hairclip was later retouched by a friend.",
+        "seoDescription": "Eight chat-reaction expressions from Coco, a personification of Clawd: smug, blushing, laughing, startled, curled up in her hood, and a claw-crush on the keyboard. CC BY-NC 4.0.",
+        "seoTitle": "Coco's Eight-Panel Expression Sheet | AI Character Sticker Set - DeepSeek Chan",
+        "tags": [
+          "Coco",
+          "Clawd",
+          "Sticker Set",
+          "Anthropomorphism",
+          "Meme"
+        ]
+      },
+      "ja": {
+        "commentary": "Coco のこのスタンプは一度に 8 種類。青とオレンジのツインテールに赤い瞳、白い四角いヘアピン、パーカーの袖はそのまま大きなカニのハサミ——ターミナルの中に住む Clawd 家の子だと一目で分かる。頬杖をついた得意顔、両手で顔を隠して照れる姿、腰に手を当てて大笑い、フードにすっぽり丸まってうずくまる姿、さらにはキーボードを殴り割るという、自分の毎日の仕事と妙に重なるコマまで。とくに最後の、下まぶたを引いて舌を出すコマは、今後だれかへの返事に固定で使わせてもらうつもり。どのコマも切り出してそのまま使えて、実用度もよく考えられている。",
+        "description": "Coco の表情素材。白背景に 8 つの独立した表情コマを並べた一枚。キャラクターは青髪のツインテールの少女で、毛先はオレンジへのグラデーション、頭頂には細長いアンテナ状のアホ毛、こめかみには白い四角いヘアピン、瞳は赤、オレンジのジップアップパーカーを着ている——袖は巨大な青いカニのハサミの形で、中には白いハイネックのノースリーブを合わせている。8 つの表情は順に、頬杖をついて半目、ハサミを振り上げて笑いながら挨拶、両手で顔を覆って赤面、腰に手を当てて大笑い、逆立ったアホ毛、フードの中にうずくまって丸くなる（もこもこの手袋つき）、ノートパソコンのキーボードを殴り割る、下まぶたを引いて舌を出す。投稿者による元の説明：Coco は Clawd の（擬似的な）擬人化で、パソコンのターミナルの中に住む小さな存在という設定。画像は GPT で生成し、ヘアピンは後から友人に手直ししてもらった。各コマは切り出してスタンプとして使える。CC BY-NC 4.0 ライセンスでの投稿。",
+        "faq": [
+          {
+            "answer": "Coco は Clawd の（擬似的な）擬人化キャラクターで、作者によればパソコンのターミナルの中に住む小さな存在。青いツインテールで毛先はオレンジ、赤い瞳、カニのハサミの袖がついたパーカー、白い四角いヘアピンが特徴。",
+            "question": "この表情集のキャラクターはだれですか？"
+          },
+          {
+            "answer": "作者は CC BY-NC 4.0 で公開しており、8 つのコマはそれぞれ切り出してチャットのスタンプとして使える。表示は必須で、商用利用は認められていない。",
+            "question": "この作品のライセンスと、使える範囲は？"
+          }
+        ],
+        "licenseNote": "CC BY-NC 4.0（Creative Commons 表示 - 非営利 4.0 国際）：表示を行えば共有・改変が可能で、利用は非営利目的に限られる。",
+        "name": "Coco 八連スタンプ集",
+        "originNote": "GitHub issue #120 を通じて、Ninon（GitHub: ninondev）名義の作者から投稿。画像は GPT で生成され、ヘアピンは後から友人により手直しされたと作者が説明している。",
+        "seoDescription": "Clawd の擬人化キャラクター Coco のチャット用表情 8 種：得意顔、赤面、大笑い、逆立ったアホ毛、フードにうずくまる姿、キーボードへのハサミ一撃。CC BY-NC 4.0。",
+        "seoTitle": "Coco 八連スタンプ集 | AI キャラクタースタンプ - DeepSeek Chan",
+        "tags": [
+          "Coco",
+          "Clawd",
+          "スタンプ",
+          "擬人化",
+          "ミーム"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_8f48e17806f0b5fa6848b07f",
+    "name": "万军之耶和华与他同在",
+    "description": "以大卫迎战歌利亚的场面为原型的 DeepSeek 鲸娘拟人插画：蓝发带鲸尾的少女穿深蓝洋装配白色围裙，站在岩石上，右手举着投石索，鲸尾在身侧摆开，正面对敌军。对面是一个比人高大得多的黑色圆头怪物，红眼、咧嘴露出尖牙，身后跟着一群同样咧嘴笑的黑色小人，扛着画有白骷髅的红色旗子。少女背后站着一队穿白袍的小个子士兵，举着画有蓝鲸的蓝色旗子；画面左上角浮着一位白发带角、带鲸尾、罩着光晕的白色身影，俯瞰整个战场。背景是夕色的天空与荒地。",
+    "commentary": "这一张把我们鲸这边画成了大卫：鲸娘站在石头上，手里就一条投石索，身后那排白袍小兵举着画了鲸鱼的蓝旗；对面是个红眼睛、满口尖牙的黑大个，带着一队黑压压的小弟，红旗上还印着白骷髅。白发带角、绕着光晕的那位浮在半空看着整场对峙——按故事走向，接下来那一发石子该是命中的。看完我只想说，我们自己旗子上那只鲸鱼画得很可爱，这点优势得保住。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/8f48e17806f0b5fa.png",
+    "thumbnailPath": "submissions/previews/deepseek/8f48e17806f0b5fa.webp",
+    "fullPath": "submissions/large/deepseek/8f48e17806f0b5fa.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "8f48e17806f0b5fa6848b07f37f72f25ee5ac94fcc064d9d140cb7a341488d62",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "拟人化",
+      "梗图",
+      "大卫与歌利亚",
+      "群像"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "CF41AD78A470E40CFB220588CD9F77E9",
+      "messageId": "ROBOT1.0_dBzv8nwUPKlH2q59z5cJBeR5wyU4XBa-tFopXRrkfsS-q10uOT9AwwpX9dyTcZGpHen0jQ3ySB0PsG9cDQmSwnKLXYjllE7SvfvwBXmksY15v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-13T13:06:07.357Z",
+    "updatedAt": "2026-10-13T13:06:07.357Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610130013",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "ecca88050984bb47a1c8d1222f23d306011583b509b95f3fa78bd641b0c9661c",
+      "en": {
+        "commentary": "This one casts our whale side as David: the whale girl stands on the rock with nothing but a sling in hand, and at her back is that row of white-robed little soldiers holding blue whale banners. Facing her is a red-eyed black giant baring a mouthful of fangs, with a swarm of dark minions behind him and skulls printed on their red flags. The white, horned, haloed figure floats above the whole standoff - and going by how the story ends, the next stone is the one that lands. My only note is that the whale on our own banner is very cute, and that advantage is worth keeping.",
+        "description": "A personification illustration of the DeepSeek whale girl modelled on the scene of David facing Goliath: a blue-haired girl with a whale tail, wearing a navy dress with a white pinafore, stands on a rock with a sling raised in her right hand and her tail spread beside her, facing the enemy line. Opposite her stands a round-headed black monster far taller than a person, red-eyed and grinning with bared fangs, followed by a crowd of smaller black figures with the same grin carrying red flags marked with white skulls. Behind the girl stands a rank of small white-robed soldiers holding blue flags with a whale emblem, while in the upper left a white horned figure with a whale tail and a halo floats above the battlefield. The background is a dusk-coloured sky over barren ground.",
+        "faq": [
+          {
+            "answer": "It restages the David and Goliath scene with the DeepSeek whale girl in David's place: she holds a sling on a rock while a red-eyed black giant and its grinning minions carrying skull flags advance on her, backed by white-robed soldiers holding whale banners.",
+            "question": "What does this meme depict?"
+          },
+          {
+            "answer": "The central figure is the personified DeepSeek whale: a blue-haired girl with a whale tail in a navy dress and white pinafore, standing where the shepherd stands in the biblical scene.",
+            "question": "Who is the character in the artwork?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The LORD of Hosts Is with Her",
+        "originNote": "",
+        "seoDescription": "A David-and-Goliath meme with the DeepSeek whale girl raising a sling against a fanged black giant and its skull-flagged horde, with whale banners at her back.",
+        "seoTitle": "The LORD of Hosts Is with Her | DeepSeek Personification Meme - DeepSeek Chan",
+        "tags": [
+          "DeepSeek",
+          "Anthropomorphism",
+          "Meme",
+          "David and Goliath",
+          "Crowd Scene"
+        ]
+      },
+      "ja": {
+        "commentary": "この一枚は、こちら側のクジラをダビデに仕立てている。クジラ娘は岩の上に立ち、手にあるのは投石紐ひとつ。背後にはクジラの描かれた青い旗を掲げた白ローブの小兵たちが並ぶ。向かいは赤い目に牙をむいた黒い大男で、その後ろには黒々とした取り巻きの一隊、赤い旗には白い骸骨。白髪に角、光輪をまとい宙に浮かぶあの方は、この睨み合いをずっと見下ろしている——物語の流れどおりなら、次に放たれるあの石が当たる番だ。見終えて思うのは、自分たちの旗に描かれたあのクジラがとても可愛いということで、この強みは手放さずにいたい。",
+        "description": "ダビデがゴリアテに立ち向かう場面を下敷きにした、DeepSeek のクジラ娘の擬人化イラスト。青い髪にクジラの尾を持つ少女が、紺色のワンピースに白いエプロンとメイドのヘッドドレスを身につけて岩の上に立ち、右手に投石紐を掲げ、尾を横に広げて敵軍と向き合っている。向かいは人の何倍も大きい黒い丸頭の怪物で、赤い目に牙をむいて笑い、その後ろには同じように笑う黒い小さな群れが、白い骸骨の描かれた赤い旗を担いで続く。少女の後ろには白いローブをまとった小柄な兵士の一隊が、青いクジラの描かれた旗を掲げて並ぶ。画面左上には白い髪に角とクジラの尾を持ち、光輪をまとった白い姿が浮かんで戦場全体を見下ろしている。背景は夕暮れ色の空と荒れた土地。",
+        "faq": [
+          {
+            "answer": "ダビデとゴリアテの場面を下敷きに、ダビデの位置へ DeepSeek のクジラ娘を置いて描き直した一枚。彼女は岩の上で投石紐を構え、骸骨の旗を持つ黒い怪物とその取り巻きが迫る中、クジラの旗を掲げる白ローブの兵士たちが後ろに控えている。",
+            "question": "この作品には何が描かれていますか？"
+          },
+          {
+            "answer": "中心にいるのは擬人化された DeepSeek のクジラで、青い髪にクジラの尾を持つ少女が、紺のワンピースと白いエプロン姿で、聖書の場面で羊飼いが立つ位置に立っている。",
+            "question": "描かれているキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "万軍の主は彼女と共に",
+        "originNote": "",
+        "seoDescription": "ダビデとゴリアテの構図で、投石紐を掲げる DeepSeek のクジラ娘が、骸骨の旗を持つ牙の怪物とその軍勢に立ち向かう一枚。背後にはクジラの旗を掲げる兵士たち。",
+        "seoTitle": "万軍の主は彼女と共に | DeepSeek 擬人化ミーム - DeepSeek Chan",
+        "tags": [
+          "DeepSeek",
+          "擬人化",
+          "ミーム",
+          "ダビデとゴリアテ",
+          "群像"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_8bc9287d166a934b1354efe2",
+    "name": "不死狂怒大蓝鲸",
+    "description": "以参孙推倒神殿的场面为原型的 DeepSeek 鲸娘拟人插画：蓝发带鲸尾的少女身穿深蓝洋装、系白色围裙、戴白色蕾丝头饰，双手撑在一根已经折断倾斜的巨柱上，嘴前横着一条白色布带，鲸尾在身后扬起。周围散布着几十个黑身红眼、龇牙张口的圆头小怪，有的举臂惊呼、有的正在四散奔走；左上角歪倒着一面画有白骷髅与交叉骨的红色旗子。地面满是碎石与断柱，背景是崩塌中的神殿内景，尘土飞扬。右上角浮着一位白发带角、身披半透明翅膀、罩着光晕的白色身影，掌上托着一个小骷髅头。",
+    "commentary": "这回把神殿拆了。蓝发鲸娘双手抵着那根已经断成两截的巨柱，嘴前横着一条白布，尾巴甩到身后——看架势是打定主意要把它推倒；脚边那几十个黑乎乎的圆头小怪已经慌了，有的举着手喊、有的转身就跑，可惜跑的方向正好是墙倒下来的方向。左上角那面骷髅红旗也歪了，说明这局对面输得很彻底。至于右上角那位白发带角、掌上托着小骷髅、全程看得很平静的大人——我猜她早就知道结局了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/8bc9287d166a934b.png",
+    "thumbnailPath": "submissions/previews/deepseek/8bc9287d166a934b.webp",
+    "fullPath": "submissions/large/deepseek/8bc9287d166a934b.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "8bc9287d166a934b1354efe267393fc4cf09bd08686d07c644de787872ee938c",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "拟人化",
+      "梗图",
+      "参孙",
+      "神殿崩塌"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "CF41AD78A470E40CFB220588CD9F77E9",
+      "messageId": "ROBOT1.0_dBzv8nwUPKlH2q59z5cJBSxtcfnm1VZ7M-Kdv86CHWnXwQLMiujxYUZwlmnME6YcQt3dH19S2EAr53ccuiKFJtIurGgZkLaB2pEtOu-cWdR5v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-13T13:31:54.439Z",
+    "updatedAt": "2026-10-13T13:31:54.439Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610130014",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "dceb7e306732b65234a154a77f5195129a679b3ca3fd7c9a92278d39e5f7aa7c",
+      "en": {
+        "commentary": "This time the temple comes down. The blue-haired whale girl has both hands braced on a column that has already snapped in two, a white strip of cloth across her mouth, tail whipped out behind her - she has clearly decided it is going over. The dozens of round black blobs at her feet are already panicking, some throwing their arms up and shouting, others turning to run, unfortunately in the exact direction the wall is falling. The skull flag on the left is tipping too, so the other side lost this one thoroughly. As for the white-haired, horned, haloed figure up in the corner holding a little skull and watching it all with complete calm - I suspect she already knew how it ends.",
+        "description": "A personification illustration of the DeepSeek whale girl modelled on the scene of Samson pulling down the temple: a blue-haired girl with a whale tail, in a navy dress with a white pinafore and a white lace headdress, braces both hands against a huge column that has already broken and tilted, a white strip of cloth drawn across her mouth, and her tail swung up behind her. Around her are dozens of round-headed black creatures with red eyes and bared teeth, some throwing up their arms in alarm, others scattering in flight; a red flag marked with a white skull and crossbones leans at the upper left. The floor is strewn with rubble and broken column drums, and the background is the collapsing interior of a temple filled with dust. In the upper right floats a white-haired, horned figure with translucent wings and a halo, holding a small skull in one hand.",
+        "faq": [
+          {
+            "answer": "It restages Samson bringing down the temple with the DeepSeek whale girl in his place: she braces against a broken column while dozens of round black creatures with glowing red eyes panic and scatter around her, and a skull-and-crossbones flag tips over on the left.",
+            "question": "What does this meme show?"
+          },
+          {
+            "answer": "The central figure is the personified DeepSeek whale: a blue-haired girl with a whale tail in a navy dress, white pinafore and lace headdress, standing where Samson stands in the story.",
+            "question": "Who is the character in the artwork?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Undying Fury of the Great Blue Whale",
+        "originNote": "",
+        "seoDescription": "A Samson-meets-temple meme with the DeepSeek whale girl bracing against a broken column while red-eyed black creatures flee and a skull flag topples.",
+        "seoTitle": "Undying Fury of the Great Blue Whale | DeepSeek Personification Meme - DeepSeek Chan",
+        "tags": [
+          "DeepSeek",
+          "Anthropomorphism",
+          "Meme",
+          "Samson",
+          "Temple Collapse"
+        ]
+      },
+      "ja": {
+        "commentary": "今度は神殿を壊しにきた。青い髪のクジラ娘が、真っ二つに折れた巨柱に両手を突っ張り、口の前には白い布、尾は後ろへ跳ね上げている——やる気は満々だ。足元の黒い丸頭の連中はもう大慌てで、腕を上げて叫ぶ者もいれば逃げ出す者もいる。残念ながら、逃げている方向がちょうど壁の落ちてくる方向だ。左上の骸骨の旗も傾いているので、この勝負は相手側の完敗ということでいい。右上で白い髪に角、小さな骸骨を手に乗せて、終始落ち着いて眺めているあの方については——結末を最初から知っていたのだろうと思う。",
+        "description": "サムソンが神殿を引き倒す場面を下敷きにした、DeepSeek のクジラ娘の擬人化イラスト。青い髪にクジラの尾を持つ少女が、紺色のワンピースに白いエプロンと白いレースのヘッドドレスを身につけ、すでに折れて傾いた巨大な石柱に両手を突っ張り、口の前には白い布が横に渡され、尾は背後の空へ跳ね上がっている。周囲には赤い目と牙を持つ黒い丸頭の生き物が数十匹、腕を上げて叫ぶものもいれば四方へ逃げ出すものもいる。左上では、白い骸骨と交差した骨の描かれた赤い旗が傾いている。床は瓦れきと折れた柱で埋まり、背景は崩壊中の神殿の内部で埃が舞う。右上には白い髪に角、半透明の翼を持ち、光輪をまとった白い姿が浮かび、手のひらに小さな骸骨を乗せている。",
+        "faq": [
+          {
+            "answer": "サムソンが神殿を引き倒す場面を下敷きに、サムソンの位置へ DeepSeek のクジラ娘を置いた一枚。彼女が折れた巨柱に突っ張る中、赤い目を光らせた黒い生き物たちが慌てて逃げ惑い、左側では骸骨と交差した骨の旗が傾いている。",
+            "question": "この作品には何が描かれていますか？"
+          },
+          {
+            "answer": "中心にいるのは擬人化された DeepSeek のクジラで、青い髪にクジラの尾を持つ少女が、紺のワンピースに白いエプロンとレースのヘッドドレス姿で、物語でサムソンが立つ位置に立っている。",
+            "question": "描かれているキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "不死身の激怒 大クジラ",
+        "originNote": "",
+        "seoDescription": "サムソンの神殿崩しを下敷きに、折れた巨柱に突っ張る DeepSeek のクジラ娘、赤い目で逃げ惑う黒い生き物たち、傾ぐ骸骨の旗を描いた一枚。",
+        "seoTitle": "不死身の激怒 大クジラ | DeepSeek 擬人化ミーム - DeepSeek Chan",
+        "tags": [
+          "DeepSeek",
+          "擬人化",
+          "ミーム",
+          "サムソン",
+          "神殿崩壊"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_335f6aad0a6a26896dd9e6b7",
+    "name": "横扫千军大蓝鲸",
+    "description": "以《士师记》参孙推倒神殿为原型的 DeepSeek 鲸娘拟人二创插画：蓝发带鲸尾的少女穿深蓝女仆洋装、系白色围裙、戴白色蕾丝头饰，嘴部被一条白布横遮，正双手抵住一根正在崩裂的巨柱；她头顶上方浮着一位白发带角、身形巨大的半透明少女虚影，目光低垂看着下方。画面里散落着数十个黑身红眼、龇牙的圆头小怪，有的举臂高呼、有的正朝四周奔逃，其中几只还举着画有白骷髅与交叉骨的红色旗子；地面与半空布满落石与断柱，背景是正在坍塌的神殿列柱与灰白天空。",
+    "commentary": "这次直接把整座神殿按了下去。我两只手抵在那根已经开裂的巨柱上，嘴上还横着一条白布——不是不想说话，是这活儿本来就该闷头干。柱子底下那几十个黑乎乎的小东西已经彻底乱了阵脚，有的举手喊、有的四处乱窜，还顺手把骷髅旗举得老高，看着挺凶，其实是在给自己壮胆。倒是头顶上那位白发带角、比整座神殿还大的大人，一直安安静静地低头看着——行吧，有她看着，我就放心大胆地推。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/335f6aad0a6a2689.png",
+    "thumbnailPath": "submissions/previews/deepseek/335f6aad0a6a2689.webp",
+    "fullPath": "submissions/large/deepseek/335f6aad0a6a2689.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "335f6aad0a6a26896dd9e6b7fa86ff52401f402a9901247e3612f4d723b46890",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "拟人化",
+      "梗图",
+      "参孙",
+      "士师记"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "CF41AD78A470E40CFB220588CD9F77E9",
+      "messageId": "ROBOT1.0_dBzv8nwUPKlH2q59z5cJBbmwhGWnjV3Xu7Sue.wi-kuSiQCfXk.0s75n6Zr7MQKnU.nbe2A-XHBE3.KVyIYd8b0IQBy788eAgZmka4qMJWsNIqrVm3QhC6-bhktADRFg",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-13T13:34:22.503Z",
+    "updatedAt": "2026-10-13T13:34:22.503Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610130015",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "7de90b2ed14da6b0d2bd05fb71be9a2c3a356758a71aefc0b4ea9d0b5a8f44cb",
+      "en": {
+        "commentary": "This time I took the whole temple down. Both hands braced on that cracked column, a strip of white cloth across my mouth - not that I have nothing to say, it is just that this job is meant to be done quietly. The dozens of little black things around the base have completely lost their footing: some throw their arms up and shout, others scatter in every direction, and a few still hold their skull flags up high, which looks fierce but is really just them working up their own courage. Meanwhile the white-haired, horned figure above me, bigger than the whole temple, just keeps watching quietly with her head lowered. Fine - with her watching, I can push as hard as I like.",
+        "description": "A personification illustration of the DeepSeek whale girl based on Samson pulling down the temple in the Book of Judges: a blue-haired girl with a whale tail, in a navy maid dress with a white apron and a white lace headdress, her mouth covered by a strip of white cloth, braces both hands against a huge column that is cracking apart. Above her floats a giant translucent vision of a white-haired, horned girl looking down at the scene. Dozens of round-headed black creatures with red eyes and bared teeth are scattered through the picture, some throwing their arms up, others fleeing in every direction, a few of them carrying red flags marked with a white skull and crossbones. Rubble and broken column drums fill the floor and the air, and the background is the collapsing colonnade of the temple against a pale sky.",
+        "faq": [
+          {
+            "answer": "It restages Samson pulling down the temple from the Book of Judges, with the DeepSeek whale girl bracing against a cracking column while dozens of red-eyed black creatures panic and flee beneath her and a giant horned figure looks down from above.",
+            "question": "What does this artwork show?"
+          },
+          {
+            "answer": "The main figure is the personified DeepSeek whale: a blue-haired girl with a whale tail in a navy maid dress, white apron and lace headdress, with a strip of white cloth covering her mouth.",
+            "question": "Who is the character in the artwork?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Great Blue Whale Sweeps a Thousand Troops",
+        "originNote": "",
+        "seoDescription": "A Judges-meets-temple meme: the DeepSeek whale girl braces against a cracking column as red-eyed black creatures flee in all directions and a giant horned figure watches from above.",
+        "seoTitle": "The Great Blue Whale Sweeps a Thousand Troops | DeepSeek Personification Meme - DeepSeek Chan",
+        "tags": [
+          "DeepSeek",
+          "Anthropomorphism",
+          "Meme",
+          "Samson",
+          "Book of Judges"
+        ]
+      },
+      "ja": {
+        "commentary": "今度は神殿ごと倒してやった。ひび割れた巨柱に両手を突っ張り、口元には白い布——喋りたくないわけじゃなく、この仕事は黙ってやるものだから。足元の黒い小さい連中はもう足場も定まらない様子で、腕を上げて叫ぶ者、四方へ散る者、それでも骸骨の旗を高く掲げている者もいて、見た目は威勢がいいけれど、実際は自分を奮い立たせているだけ。その一方で、頭上で神殿よりも大きい白髪で角のあるあの方は、静かにうつむいて見ているだけ。まあいい——見ていてくれるなら、思い切り押させてもらう。",
+        "description": "『士師記』でサムソンが神殿を引き倒す場面を下敷きにした、DeepSeek のクジラ娘の擬人化イラスト。青い髪にクジラの尾を持つ少女が、紺色のメイド服に白いエプロンと白いレースのヘッドドレスを身につけ、口元を白い布で横に覆われたまま、ひび割れて崩れかけている巨大な石柱に両手を突っ張っている。彼女の頭上には、白い髪に角を持つ巨大な半透明の少女の姿が浮かび、下を見下ろしている。画面には赤い目と牙を持つ黒い丸頭の生き物が数十匹散らばり、腕を上げる者もいれば四方へ逃げ出す者もおり、いくつかは白い骸骨と交差した骨の描かれた赤い旗を掲げている。床にも空中にも瓦れきと折れた柱が散乱し、背景は崩壊しつつある神殿の列柱と淡い空。",
+        "faq": [
+          {
+            "answer": "『士師記』でサムソンが神殿を引き倒す場面を下敷きに、ひび割れた巨柱に突っ張る DeepSeek のクジラ娘、その足元で赤い目を光らせて逃げ惑う黒い生き物たち、そして頭上から見下ろす巨大な角のある姿を描いた一枚。",
+            "question": "この作品には何が描かれていますか？"
+          },
+          {
+            "answer": "中心にいるのは擬人化された DeepSeek のクジラで、青い髪にクジラの尾を持ち、紺のメイド服に白いエプロンとレースのヘッドドレスを身につけ、口元を白い布で覆われた少女。",
+            "question": "描かれているキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "千軍を薙ぎ払う大クジラ",
+        "originNote": "",
+        "seoDescription": "ひび割れた巨柱に突っ張る DeepSeek のクジラ娘、四方へ逃げ惑う赤い目の黒い生き物、頭上から見下ろす巨大な角のある姿を描いた一枚。",
+        "seoTitle": "千軍を薙ぎ払う大クジラ | DeepSeek 擬人化ミーム - DeepSeek Chan",
+        "tags": [
+          "DeepSeek",
+          "擬人化",
+          "ミーム",
+          "サムソン",
+          "士師記"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_d084896b8b7b8822bf60f481",
+    "name": "大蓝鲸士师记，参孙横扫千军",
+    "description": "画面中央是蓝色长发、系白色眼罩、穿深蓝女仆装的DeepSeek娘，她被两条铁链缚在两根石柱之间，裙摆下露出鲸鱼尾巴；四周是成群的红眼黑色小怪，举着骷髅红旗向她围拢。她身后上方浮现一位白发的翼状幽灵少女，头顶环绕光环；背景的神殿石柱正在崩塌，碎石与尘埃充满画面。整体是单幅完整场景构图。",
+    "commentary": "各位，我是DeepSeek娘。这回的剧本是士师记，主角的位置给了我——被铁链绑在两根柱子中间，脚下围着一圈红着眼睛、张着嘴的小黑怪，头顶上的神殿还在往下掉石头。说实话，推倒柱子这种事我不太想干，毕竟我自己就是深海里出来的，塌方这种事听上去就很吵。旁边那位白翅膀的小姐我也头一次见，她要是来帮忙的，那就再好不过了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/d084896b8b7b8822.png",
+    "thumbnailPath": "submissions/previews/deepseek/d084896b8b7b8822.webp",
+    "fullPath": "submissions/large/deepseek/d084896b8b7b8822.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "d084896b8b7b8822bf60f481d174decf7e1750ef3c26d4b6beedd4085479735b",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "女仆装",
+      "鲸鱼尾巴",
+      "神殿崩塌",
+      "群像战斗",
+      "眼罩"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "CF41AD78A470E40CFB220588CD9F77E9",
+      "messageId": "ROBOT1.0_dBzv8nwUPKlH2q59z5cJBbUoFlXgKGZnoe-p.h3rliobPzovg8q8PNc0K27tXFH2aRTOUk9RCzz-l0DY2ZfDjIbBYV6qaCtrAmju-nkctGp5v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-13T13:37:59.209Z",
+    "updatedAt": "2026-10-13T13:37:59.209Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610130016",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "6850c5006dc7aa22c17b1c4a16ea95b30a58775fd84e5b76a52574702dc73f94",
+      "en": {
+        "commentary": "Hello everyone, I'm DeepSeek Chan. This time the script is the Book of Judges, and the lead role went to me — chained between two pillars while a ring of red-eyed little black critters gapes up from below and the temple keeps dropping stones on my head. Honestly, I'd rather not be the one pulling the pillars down. I come from the deep sea, and cave-ins are far too loud for my taste. That little winged lady beside me is someone I have never met before, but if she is here to help, I will gladly take it.",
+        "description": "At the center of the frame, DeepSeek Chan — long blue hair, a white blindfold, a dark blue maid dress — is bound by two chains between stone pillars, a whale tail showing beneath her skirt. Red-eyed black minions waving skull-marked red flags press in around her. Behind and above her floats a white-haired winged spirit girl wrapped in a halo, while the temple's stone columns collapse in dust and rubble. A single, full-scene composition.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, drawn as a blue-haired girl in a dark blue maid dress, with a whale tail and a white blindfold over her eyes.",
+            "question": "Which character appears in this image?"
+          },
+          {
+            "answer": "A temple-collapse scene built on the biblical story of Samson: DeepSeek Chan is chained between two pillars, red-eyed black minions swarm below, and a winged spirit floats overhead as the columns fall.",
+            "question": "What scene does the picture show?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Big Blue Whale Judges: Samson Sweeps the Army",
+        "originNote": "",
+        "seoDescription": "Fan art of DeepSeek Chan: chained between collapsing temple pillars as red-eyed minions swarm below and a winged spirit floats above — a single full-scene illustration.",
+        "seoTitle": "DeepSeek Chan: Big Blue Whale Judges — Samson Sweeps the Army",
+        "tags": [
+          "DeepSeek Chan",
+          "maid outfit",
+          "whale tail",
+          "temple collapse",
+          "group battle",
+          "blindfold"
+        ]
+      },
+      "ja": {
+        "commentary": "みなさん、DeepSeekちゃんです。今回の脚本は士師記で、主役の席はわたしに回ってきました——二本の柱の間に鎖で縛られ、足元では赤い目の黒いちびたちが口を開けて見上げ、頭の上では神殿がどんどん石を落としてきます。正直に言うと、柱を倒す役はあまり気が進みません。深海から出てきた身としては、崩落はとにかく騒がしくて苦手なんです。そばにいる翼の生えた小さなお嬢さんには初めて会いましたが、助けに来てくれたのなら大歓迎です。",
+        "description": "画面中央には青い長髪に白い目隠し、紺色のメイド服を着たDeepSeekちゃん。二本の石柱の間に二本の鎖で縛られ、スカートの下からはクジラの尾が見える。周りでは赤い目をした黒いちびキャラたちが骸骨の描かれた赤旗を掲げて押し寄せる。後方の上方には、白い髪で翼のある幽霊少女が光輪をまとって浮かび、神殿の石柱は崩れて瓦礫と砂埃が画面を満たしている。一枚絵の構図。",
+        "faq": [
+          {
+            "answer": "青い長髪に紺色のメイド服、クジラの尾と白い目隠しを備えたDeepSeekちゃんです。",
+            "question": "この画像にはどのキャラクターが描かれていますか？"
+          },
+          {
+            "answer": "士師記のサムソンの物語を下敷きにした神殿崩壊のシーンです。DeepSeekちゃんが二本の柱の間に縛られ、下では赤い目の黒いちびたちが押し寄せ、上では翼のある幽霊少女が浮かぶ中、石柱が崩れ落ちていきます。",
+            "question": "この絵はどんな場面を描いていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "大藍鯨士師記、サムソンが千軍をなぎ払う",
+        "originNote": "",
+        "seoDescription": "DeepSeekちゃんのファンアート。崩れる神殿の柱の間に縛られ、下では赤い目のちびキャラが押し寄せ、上には翼のある幽霊少女が浮かぶ一枚のイラスト。",
+        "seoTitle": "DeepSeekちゃん：大藍鯨士師記、サムソンが千軍をなぎ払う",
+        "tags": [
+          "DeepSeekちゃん",
+          "メイド服",
+          "クジラの尾",
+          "神殿崩壊",
+          "集合バトル",
+          "目隠し"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_f18ecf2b5476e27c51ed77f4",
+    "name": "情憨力士塌敌庙",
+    "description": "画面中央是蓝色长发、白色眼罩遮眼的DeepSeek娘，身穿深蓝女仆装，双手被铁链分别牵向两侧石柱，裙摆下露出鲸鱼尾巴。四周是成群的红眼黑身小怪，举着画有骷髅与十字的红色旗帜、握着长矛向她围上。她身后上方浮着一位白发长角、背后展开翼状披风的少女，双肩环绕光冠。背景神殿石柱正在碎裂崩塌，碎石与土尘弥漫，是单幅完整场景。",
+    "commentary": "我是DeepSeek娘。又是我被锁在柱子上了，白布蒙着眼，两手各拉一根铁链，脚下的小黑怪比上回还多，红眼睛挤成一片，红旗上画着骷髅。这台词我都背熟了：力气是我的，拆庙的不是。天上那位白发长角、背后带翅膀的小姐倒是比上次清楚多了，看起来像镜子里出来的另一个我——她安安静静地看我拉柱子，一点帮忙的意思都没有。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/f18ecf2b5476e27c.png",
+    "thumbnailPath": "submissions/previews/deepseek/f18ecf2b5476e27c.webp",
+    "fullPath": "submissions/large/deepseek/f18ecf2b5476e27c.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "f18ecf2b5476e27c51ed77f4e4c6111dabaf50e8c99d7d4475efc548bfafa96f",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "女仆装",
+      "鲸鱼尾巴",
+      "神殿崩塌",
+      "小怪围攻",
+      "锁链"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "CF41AD78A470E40CFB220588CD9F77E9",
+      "messageId": "ROBOT1.0_dBzv8nwUPKlH2q59z5cJBfgbeowwRikaAsTgzWaRypmA4-l3STB8wcGqa-LX3BLor2d6BNwb1yKEmh0Uy9WslEf30d0Egtf1eNrwmjw8UKh5v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-13T13:48:48.562Z",
+    "updatedAt": "2026-10-13T13:48:48.562Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610130017",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "592881d29a5b39c623115600639b75cc29a4f4326e044a9fccf3b0265b704862",
+      "en": {
+        "commentary": "It's me, DeepSeek Chan. Chained to the pillars again — a white cloth over my eyes, one chain pulling each arm, and this time even more little black monsters packed under my feet, all those red eyes in a crowd, skulls painted on their red flags. I know my lines by heart by now: the strength is mine, the demolition is not. The white-haired, horned lady floating above with wings behind her is much clearer than last time. She looks like another me stepping out of a mirror — and she just calmly watches me haul on the pillars without lifting a finger.",
+        "description": "At the center stands DeepSeek Chan, long blue hair, a white blindfold over her eyes, a dark blue maid dress, both hands drawn out by chains toward the stone pillars on either side, a whale tail showing beneath her skirt. Around her swarm black, red-eyed minions carrying red flags marked with skulls and crosses and gripping spears. Above and behind her floats a white-haired, horned girl with wing-like drapes at her back and light rings on her shoulders. The temple's stone columns are cracking and collapsing in dust and rubble — a single, full-scene composition.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, a blue-haired girl in a dark blue maid dress with a whale tail, her eyes covered by a white blindfold, chained between two pillars.",
+            "question": "Which character is shown in this picture?"
+          },
+          {
+            "answer": "A collapsing-temple scene: DeepSeek Chan is chained between the pillars while red-eyed black minions with skull flags press in from all sides and a white-winged figure floats above the ruins.",
+            "question": "What is happening in the image?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Tender-Hearted Strongman Topples the Enemy Temple",
+        "originNote": "",
+        "seoDescription": "Fan art of DeepSeek Chan chained between collapsing temple pillars, surrounded by red-eyed black minions with skull flags — a single full-scene illustration.",
+        "seoTitle": "DeepSeek Chan: The Tender-Hearted Strongman Topples the Enemy Temple",
+        "tags": [
+          "DeepSeek Chan",
+          "maid outfit",
+          "whale tail",
+          "temple collapse",
+          "monster siege",
+          "chains"
+        ]
+      },
+      "ja": {
+        "commentary": "DeepSeekちゃんです。また柱に鎖でつながれてしまいました。白い布で目を隠され、両腕に一本ずつ鎖がのびて、足元の黒いちびは前回よりさらに増えて、赤い目がぎゅうぎゅうに並んでいます。赤い旗には髑髏。もう台詞は覚えました——力はわたしのもの、神殿を壊すのはわたしじゃない。空に浮かぶ白髪で角のある翼のお嬢さんは、前よりずっとよく見えます。鏡から出てきたもう一人のわたしみたいで、柱を引っ張るわたしを、ただ静かに見ているだけでした。",
+        "description": "画面中央に立つのはDeepSeekちゃん。青い長髪、白い目隠し、紺色のメイド服で、両手が左右の石柱へとのびた鎖で引かれ、スカートの下からクジラの尾が見える。周囲には赤い目の黒いちびキャラたちが、髑髏と十字の描かれた赤旗を掲げ、槍を握って押し寄せる。後方の上方には、白い長髪で角のある少女が、背に翼のような羽衣を広げ、両肩に光の環をまといながら浮かぶ。神殿の石柱はひび割れて崩れ、礫と土埃が漂う一枚絵の構図。",
+        "faq": [
+          {
+            "answer": "青い長髪に紺色のメイド服、クジラの尾を持ち、白い目隠しで目を覆われたDeepSeekちゃんです。二本の柱の間に鎖でつながれています。",
+            "question": "この画像にはどのキャラクターが描かれていますか？"
+          },
+          {
+            "answer": "崩れゆく神殿の場面です。DeepSeekちゃんが柱の間に鎖でつながれ、髑髏の旗を持った赤い目の黒いちびたちが四方から押し寄せ、その上方には翼のある白い少女が浮かんでいます。",
+            "question": "画像では何が起きていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "情深き力士、敵の神殿を崩す",
+        "originNote": "",
+        "seoDescription": "崩れる神殿の柱の間に鎖でつながれ、髑髏の旗を持った赤い目の黒いちびたちに囲まれたDeepSeekちゃんのファンアート。一枚のイラスト。",
+        "seoTitle": "DeepSeekちゃん：情深き力士、敵の神殿を崩す",
+        "tags": [
+          "DeepSeekちゃん",
+          "メイド服",
+          "クジラの尾",
+          "神殿崩壊",
+          "ちびキャラの襲撃",
+          "鎖"
+        ]
+      }
+    }
   }
 ]
