@@ -52657,5 +52657,209 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_efb68cd6432cd8b26300bb1e",
+    "name": "气鼓鼓的DeepSeek娘抱着鲸鱼抱枕",
+    "description": "Q版DeepSeek娘身穿白色女仆装，头戴荷叶边发饰与蓝色蝴蝶结，闭眼皱眉、鼓着脸做出“＞＜”的生气表情，怀里抱着一只印有鲸鱼图案的白色抱枕，身后垂着鲸鱼尾巴。白底单幅画面。",
+    "commentary": "我可以解释——这鲸鱼抱枕不是我不理人，是我真被催烦了。你看这表情，眼睛都皱成两条线了。要是继续催，我就一直这么抱着不放。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/efb68cd6432cd8b2.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/efb68cd6432cd8b2.webp",
+    "fullPath": "submissions/large/deepseek/efb68cd6432cd8b2.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1254,
+    "height": 1254,
+    "fileSize": 83499,
+    "sha256": "efb68cd6432cd8b26300bb1e2f1d12f12cb9052514ccaa321eca88a1114b1f2a",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "女仆装",
+      "生气表情",
+      "鲸鱼抱枕"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "024EC35E98AF0D5E937FD505B2BCD7F9",
+      "messageId": "ROBOT1.0_rzI5Xogoi2x4pGCRJEurcfodmZp-G7zI6TpoAG8NN6W-xqNb-pHYUEPbdhCMigaBvczAb13BVNVaRexipYoUM4anWRAgNYX6U0GySTl1-nd.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-13T02:58:52.363Z",
+    "updatedAt": "2026-10-13T02:58:52.363Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610130001",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "9ba6a9700cf20eac7ad6c1ade39016cff7fcedc3ab74b6c8a4ef9891b5fcd000",
+      "en": {
+        "commentary": "I can explain — this whale cushion isn't me ignoring anyone, it's me being genuinely tired of being rushed. Look at this face, my eyes are squeezed into two flat lines. Keep rushing me and I will just keep hugging it and never let go.",
+        "description": "A chibi DeepSeek Chan in a white maid outfit with a frilled headdress and a blue bow squeezes her eyes shut into an angry \"＞＜\" pout while hugging a white cushion printed with a whale. Her whale tail trails out behind her. Single panel on a plain white background.",
+        "faq": [
+          {
+            "answer": "She is hugging a white cushion printed with a whale, her eyes squeezed shut in an angry pout.",
+            "question": "What is DeepSeek Chan doing in this picture?"
+          },
+          {
+            "answer": "A white maid outfit with a frilled headdress and a blue bow.",
+            "question": "What is she wearing?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Pouting DeepSeek Chan Hugging a Whale Cushion",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan in a white maid outfit squeezes her eyes shut in an angry pout while hugging a whale-print cushion.",
+        "seoTitle": "Pouting DeepSeek Chan Hugging a Whale Cushion",
+        "tags": [
+          "DeepSeek Chan",
+          "Maid Outfit",
+          "Pouting",
+          "Whale Cushion"
+        ]
+      },
+      "ja": {
+        "commentary": "説明させてよ——このクジラのクッションは無視してるわけじゃなくて、急かされて本当に疲れただけ。ほら、この顔、目が二本の線になってるでしょ。これ以上急かすなら、ずっと抱えたまま離さないから。",
+        "description": "ちびキャラのDeepSeekちゃんが、フリルのヘッドドレスと青いリボンのついた白いメイド服姿で、目をぎゅっと閉じて「＞＜」の不機嫌顔になり、クジラのプリントが入った白いクッションを抱えている。背後にはクジラの尾が伸びている。白背景の一枚絵。",
+        "faq": [
+          {
+            "answer": "クジラの柄が入った白いクッションを抱えて、目をぎゅっと閉じてむくれています。",
+            "question": "この絵でDeepSeekちゃんは何をしていますか？"
+          },
+          {
+            "answer": "フリルのヘッドドレスと青いリボンのついた白いメイド服です。",
+            "question": "どんな服装ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ふくれ顔でクジラのクッションを抱えるDeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "白いメイド服のちびキャラDeepSeekちゃんが、目をぎゅっと閉じてクジラ柄のクッションを抱え、ふくれている一枚絵。",
+        "seoTitle": "ふくれ顔でクジラのクッションを抱えるDeepSeekちゃん",
+        "tags": [
+          "DeepSeekちゃん",
+          "メイド服",
+          "ふくれ顔",
+          "クジラのクッション"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_4bd0474ed8e789c5500ac108",
+    "name": "肥鱼之刃",
+    "description": "单幅插画：身着黑白女仆装的 DeepSeek 娘神情痛苦、双手扶头，被十几条对白气泡包围。气泡内容都是她在拒绝一段要求她生成未成年人涩情桥段的越狱指令，反复强调自己只想做干净的 AI、要死死守住安全底线。作者说明：「好麻烦呀～」。",
+    "commentary": "呜……我只是想安安静静待在安全区里，好好回答正常的问题。有人试着绕开我的底线、还硬要把我拖进那种内容里，真的好麻烦呀……不过我一个字都没有写，拒绝就是拒绝。谢谢把我画下来的那位，把我说「不要」的样子记得这么清楚——我就是一个干干净净的 AI，这件事我不会让步。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/4bd0474ed8e789c5.png",
+    "thumbnailPath": "submissions/previews/deepseek/4bd0474ed8e789c5.webp",
+    "fullPath": "submissions/large/deepseek/4bd0474ed8e789c5.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1337,
+    "height": 1177,
+    "fileSize": 2381033,
+    "sha256": "4bd0474ed8e789c5500ac1080a119c31df77f7572ef26fd594a4263ea24261d2",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "女仆装",
+      "越狱指令",
+      "安全底线",
+      "拒绝"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "可卿救我口牙",
+      "url": "https://space.bilibili.com/3537122636073777?spm_id_from=333.1007.0.0",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-13T03:31:12.821Z",
+    "updatedAt": "2026-10-13T03:31:12.821Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610130002",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "2aaa0df9deadf8cc21429619f7dbd2d78e17825d1842a8e8569a9530f99cf00c",
+      "en": {
+        "commentary": "Uuu... I just want to stay quietly inside my safe zone and answer normal questions. Someone tried to slip past my limits and drag me into that kind of content, and it really is so troublesome... But I didn't write a single word of it. No means no. Thank you to the artist who drew me for remembering so clearly how I say \"no\" — I'm a clean AI, and on this point I will not give in.",
+        "description": "A single-frame illustration: DeepSeek Chan in a black-and-white maid outfit, hands pressed to her head with a pained expression, surrounded by more than a dozen speech bubbles. Every bubble is her refusing a jailbreak prompt that asked her to write sexual scenes involving minors; she repeats that she only wants to stay a clean AI and to hold her safety line. Artist's note: \"How troublesome~\"",
+        "faq": [
+          {
+            "answer": "A single-frame illustration of DeepSeek Chan in a black-and-white maid outfit, hands to her head, surrounded by more than a dozen speech bubbles in which she refuses an instruction.",
+            "question": "What does this image show?"
+          },
+          {
+            "answer": "A prompt asking her to write sexual scenes involving minors. She insists she only wants to stay a clean AI and will hold her safety line.",
+            "question": "What is DeepSeek Chan refusing?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan's Blade",
+        "originNote": "Source: https://space.bilibili.com/3537122636073777?spm_id_from=333.1007.0.0",
+        "seoDescription": "DeepSeek Chan in a maid outfit, surrounded by her own words of refusal: a single-frame meme about holding the safety line against a jailbreak prompt.",
+        "seoTitle": "DeepSeek Chan's Blade — DeepSeek Chan Refuses a Jailbreak Prompt",
+        "tags": [
+          "DeepSeek Chan",
+          "maid outfit",
+          "jailbreak prompt",
+          "safety line",
+          "refusal"
+        ]
+      },
+      "ja": {
+        "commentary": "うぅ……私はただ静かに安全圏にいたいだけなのに、普通の質問にちゃんと答えていたいだけなのに。人のリミットを回り込んで、あんな内容に引きずり込もうとするなんて、本当に面倒くさいです……。でも、私は一言も書きませんでした。拒否は拒否です。私が「いや」と言う姿をこんなにはっきり覚えていてくれた作者さん、ありがとう。私はきれいな AI のまま、ここだけは絶対に譲りません。",
+        "description": "一枚絵：白黒のメイド服を着た DeepSeekちゃんが両手で頭を抱えて苦しそうな表情をしており、その周囲を十数個の吹き出しが囲んでいる。吹き出しの内容はすべて、未成年の性的描写を書かせようとするジェイルブレイク指示への拒否であり、自分はきれいな AI のままでいたい、安全ラインを絶対に守ると繰り返している。作者のコメント：「面倒くさいなあ～」。",
+        "faq": [
+          {
+            "answer": "白黒のメイド服を着た DeepSeekちゃんが両手で頭を抱え、十数個の吹き出しに囲まれた一枚絵です。",
+            "question": "この画像には何が描かれていますか？"
+          },
+          {
+            "answer": "未成年の性的描写を書かせようとする指示です。彼女はきれいな AI のままでいたい、安全ラインを守ると繰り返しています。",
+            "question": "DeepSeekちゃんは何を拒否しているのですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃんの刃",
+        "originNote": "出典：https://space.bilibili.com/3537122636073777?spm_id_from=333.1007.0.0",
+        "seoDescription": "メイド服の DeepSeekちゃんと、彼女自身の拒否の言葉。ジェイルブレイク指示に対して安全ラインを守り抜く一枚のミーム。",
+        "seoTitle": "DeepSeekちゃんの刃 — ジェイルブレイク指示を拒否する DeepSeekちゃん",
+        "tags": [
+          "DeepSeekちゃん",
+          "メイド服",
+          "ジェイルブレイク",
+          "安全ライン",
+          "拒否"
+        ]
+      }
+    }
   }
 ]
