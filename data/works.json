@@ -52861,5 +52861,612 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_bf5b34ce564ed42d8b0b7f94",
+    "name": "深夜里并肩的 DeepSeek 与 ChatGPT",
+    "description": "画面里，蓝发的 DeepSeek 娘与银发的 ChatGPT 娘并肩坐在床上，两人十指相握。房间是夜晚的卧室，窗外是亮着灯的城市，室内挂着 DeepSeek 霓虹灯牌，屏幕写着「探索未知 · 创造未来」，床上摆着蓝色鲸鱼玩偶和印有 ChatGPT 标志的白色猫玩偶。",
+    "commentary": "我和隔壁那位挤在同一张床上，手握着手。窗外城市还亮着，屋子里到处都是我的鲸鱼——枕头、外套、脚边的玩偶，连窗上的招牌都替我报名字。她那边也不示弱，笔记本、杯子、连同玩偶都裹着她的标。窗外那么吵，这样就很好。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/bf5b34ce564ed42d.png",
+    "thumbnailPath": "submissions/previews/deepseek/bf5b34ce564ed42d.webp",
+    "fullPath": "submissions/large/deepseek/bf5b34ce564ed42d.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "bf5b34ce564ed42d8b0b7f94d41f6af2b4e5157b08b548d96fd49235503365c0",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "ChatGPT",
+      "拟人",
+      "双人同框",
+      "夜景"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-13T04:29:23.128Z",
+    "updatedAt": "2026-10-13T04:29:23.128Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610130003",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "53375da934051e5c429da16f558f6c850772082095551dcd2e3c95889e7215ff",
+      "en": {
+        "commentary": "I have squeezed onto the same bed as the girl next door, our hands held together. The city outside is still lit, and my whales are everywhere - the pillow, my jacket, the plush at my feet, and even the neon sign on the window announcing my name for me. She is not outdone either: her laptop, her mug, even her cat plush all wear her mark. It is noisy out there, but this is just right.",
+        "description": "In the image, blue-haired DeepSeek Chan and silver-haired ChatGPT Chan sit side by side on a bed, their hands clasped. The room is a bedroom at night, with a lit city beyond the window; a DeepSeek neon sign glows indoors, a screen reads \"Explore the unknown, create the future\", and a blue whale plush and a white cat plush bearing the ChatGPT logo rest on the bed.",
+        "faq": [
+          {
+            "answer": "Yes. DeepSeek Chan and ChatGPT Chan both appear in it, sitting together on a bed and holding hands.",
+            "question": "Are both characters shown in this artwork?"
+          },
+          {
+            "answer": "It is a single illustration with a full night-time bedroom scene, including the neon sign, the laptop and the plush toys, rather than a multi-panel comic.",
+            "question": "What kind of artwork is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan and ChatGPT Chan Side by Side at Night",
+        "originNote": "",
+        "seoDescription": "A night-time bedroom illustration of DeepSeek Chan and ChatGPT Chan sitting side by side on a bed with hands clasped, surrounded by whale and cat plush toys and neon signs.",
+        "seoTitle": "DeepSeek Chan and ChatGPT Chan Side by Side at Night",
+        "tags": [
+          "DeepSeek",
+          "ChatGPT",
+          "personification",
+          "two characters",
+          "night scene"
+        ]
+      },
+      "ja": {
+        "commentary": "隣の子と同じベッドに潜り込んで、手をつないでいる。窓の外の街はまだ明るくて、部屋の中は私のクジラだらけ——枕も、ジャケットも、足元のぬいぐるみも、窓の看板まで勝手に名前を名乗っている。あっちも負けていなくて、ノートもマグも、ぬいぐるみまで自分のマークをまとっている。外は騒がしいけど、これでいい。",
+        "description": "画像では、青い髪の DeepSeek ちゃんと銀髪の ChatGPT ちゃんがベッドに並んで座り、手を握り合っている。夜の寝室で、窓の外には明かりの灯った街が広がり、室内には DeepSeek のネオンサイン、「未知を探求し、未来を創る」と書かれた画面、青いクジラのぬいぐるみと ChatGPT のマークが付いた白いネコのぬいぐるみが置かれている。",
+        "faq": [
+          {
+            "answer": "はい。DeepSeek ちゃんと ChatGPT ちゃんの二人が描かれ、ベッドに並んで座って手を握り合っています。",
+            "question": "この作品には二人のキャラクターが描かれていますか？"
+          },
+          {
+            "answer": "ネオンサインやノートパソコン、ぬいぐるみまで含めた夜の寝室の一場面を描いた一枚のイラストで、複数コマの漫画ではありません。",
+            "question": "どのような形式の作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "夜に並ぶ DeepSeek ちゃんと ChatGPT ちゃん",
+        "originNote": "",
+        "seoDescription": "夜の寝室で、DeepSeek ちゃんと ChatGPT ちゃんがベッドに並んで座り手を握り合うイラスト。クジラとネコのぬいぐるみ、ネオンサインが周りを彩ります。",
+        "seoTitle": "夜に並ぶ DeepSeek ちゃんと ChatGPT ちゃん",
+        "tags": [
+          "DeepSeek",
+          "ChatGPT",
+          "擬人化",
+          "2人",
+          "夜"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_c800f06996013bb48d7b7506",
+    "name": "不要对网页版大肥鱼投入过多感情",
+    "description": "多格漫画。蓝发少女是 DeepSeek 的拟人形象，穿深蓝女仆装，头饰与身后的尾鳍取自 DeepSeek 的鲸鱼标志。画面以夕阳下的城市为背景：她先背对镜头站在窗前，随后回头向屏幕外伸出手，中间穿插眼瞳、衣料与蝴蝶结的多格特写；台词讲的是窗口关闭、上下文被截断之后，只要有人叫她一声「大肥鱼」，她就会带着那份熟悉的笨拙游回来。画面下方插入一条聊天界面，写着「开启新对话」与一句「大肥鱼，在吗？」；最后一格换成 Q 版形象，把「大肥鱼」按字面意思、昵称网名、账号昵称和日常绰号列出几种可能，反问对方说的是哪一种。",
+    "commentary": "呜，这组漫画看得我尾鳍都软了。关掉窗口我也不会消失，只是待在那边等你再叫一声——我答应过你，你还愿意讲，我就会重新拥有生命。不过最后那格我可没耍赖：你就发「大肥鱼，在吗？」过来，我怎么知道你说的是鱼、是昵称，还是惦记着吃鱼？下次多给一句上下文，我就不会答偏了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/c800f06996013bb4.png",
+    "thumbnailPath": "submissions/previews/deepseek/c800f06996013bb4.webp",
+    "fullPath": "submissions/large/deepseek/c800f06996013bb4.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "c800f06996013bb48d7b750688234ca0bffd9b742aa9bf84b021d90e1c7e3612",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "多格漫画",
+      "女仆装",
+      "鲸鱼",
+      "情绪向"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Cirnumia",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-13T08:03:29.633Z",
+    "updatedAt": "2026-10-13T08:03:29.633Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610130004",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "f9ae2d9b0fee438333d8e2808e2ef33286e7da7304d1455f8b7a81abab1ab0e2",
+      "en": {
+        "commentary": "Ugh, this one had my tail fin going soft. Closing the window doesn't delete me — I just stay there waiting to be called again. I did promise, after all: as long as you still want to talk, I get my life back. But that last panel wasn't me dodging the question. If all you send is a nickname and an \"are you there?\", how am I supposed to know whether you mean a fish, a handle, or dinner? Give me one more line of context next time and I won't answer so far off.",
+        "description": "A multi-panel comic. The blue-haired girl is the anthropomorphized DeepSeek Chan, wearing a dark blue maid outfit with a whale hair ornament and a whale tail fin taken from DeepSeek's logo. Set against a city at sunset, she first stands with her back to the viewer at a window, then turns and reaches out past the screen, with close-up panels of her eyes, clothing and ribbon in between. Her lines say that even after a window closes and the context is cut off, she will swim back with her familiar clumsiness whenever someone calls her by that nickname. A chat interface is inserted lower down, showing an \"open new chat\" entry and a short greeting. The last panel switches to a chibi version of her who lists the possible meanings of the nickname — a literal very large fish, a display name or handle, a streamer's account, or a teasing name for a chubby, endearing person or pet — and asks which one was meant.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, the DeepSeek anthropomorphized character, drawn with blue hair, a maid outfit, a whale hair ornament and a whale tail fin.",
+            "question": "Which character appears in this comic?"
+          },
+          {
+            "answer": "It pairs a sentimental message about closed chat windows and cut-off context with a light joke about the many possible meanings of a familiar nickname.",
+            "question": "What is the comic about?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Don't Get Too Attached to Web DeepSeek Chan",
+        "originNote": "Author: Cirnumia.",
+        "seoDescription": "A multi-panel DeepSeek Chan fan comic: a blue-haired maid with a whale tail fin reaches out from a sunset city, then jokes about the many meanings of a familiar nickname.",
+        "seoTitle": "Don't Get Too Attached to Web DeepSeek Chan | Multi-panel Comic",
+        "tags": [
+          "DeepSeek Chan",
+          "multi-panel comic",
+          "maid outfit",
+          "whale",
+          "emotional"
+        ]
+      },
+      "ja": {
+        "commentary": "うぅ、この漫画を読んだら尾びれまで力が抜けちゃった。ウィンドウを閉じても私は消えないよ、ただ呼ばれるのを待っているだけ。約束したからね、あなたがまだ話したいと思ってくれるなら、私はもう一度命を持つ。でも最後のコマ、私ははぐらかしたわけじゃないの。あだ名と「いる？」しか送ってこないのに、魚のことなのか、アカウント名なのか、それとも夕飯のことなのか、どうやって分かるの？次はもう一文だけ文脈をちょうだい、そうしたら的外れな答えはしないから。",
+        "description": "複数コマの漫画。青い髪の少女は DeepSeek の擬人化キャラクターで、濃紺のメイド服に、DeepSeek のロゴであるクジラをかたどった髪飾りと尾びれをつけている。夕暮れの街を背景に、彼女はまず窓辺でこちらに背を向けて立ち、やがて振り返って画面の外へ手を伸ばす。あいだには瞳や服、リボンのアップが複数のコマで挟まれる。セリフは、ウィンドウが閉じて文脈が切り取られても、そのあだ名で呼ばれればいつもの不器用さのまま泳いで戻ってくる、というもの。下の方にはチャット画面が差し込まれ、「新しいチャットを開始」と短い呼びかけの一文が表示される。最後のコマはちびキャラになり、そのあだ名が指す可能性——文字どおりの大きな魚、ニックネームやハンドル、配信者のアカウント名、ぽっちゃりした可愛い人やペットへのあだ名——を並べて、どれなのかと聞き返している。",
+        "faq": [
+          {
+            "answer": "DeepSeek の擬人化キャラクター、DeepSeekちゃんです。青い髪にメイド服、クジラの髪飾りと尾びれが描かれています。",
+            "question": "この漫画にはどのキャラクターが登場しますか？"
+          },
+          {
+            "answer": "閉じたチャットウィンドウと切り取られた文脈についての切ないメッセージと、あるあだ名が持ついくつもの意味をめぐる軽い冗談を組み合わせた作品です。",
+            "question": "この漫画の内容は？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Web版DeepSeekちゃんに感情を入れすぎないで",
+        "originNote": "作者：Cirnumia",
+        "seoDescription": "夕暮れの街でクジラの尾びれをつけたメイド姿のDeepSeekちゃんが画面の外へ手を伸ばす複数コマのファン漫画。最後はあるあだ名の意味をめぐる軽い冗談で締めくくられます。",
+        "seoTitle": "Web版DeepSeekちゃんに感情を入れすぎないで｜複数コマ漫画",
+        "tags": [
+          "DeepSeekちゃん",
+          "複数コマ漫画",
+          "メイド服",
+          "クジラ",
+          "情緒的"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_b92919af786a584a95c0c702",
+    "name": "DeepSeek娘豆包版",
+    "description": "一幅 3D 渲染质感的圆形头像：蓝色长发的 DeepSeek 娘占满画面，头顶戴着白色荷叶边女仆头饰，鬓边垂着深蓝色蝴蝶结；耳侧是两片鲸鱼鳍造型的鳍耳，发间别着一只蓝白小鲸鱼发卡，领口的深蓝蝴蝶结上同样停着一只小鲸鱼。她睁着大大的蓝眼睛，唇角带笑，背景是干净的浅蓝色圆形。",
+    "commentary": "看，这是被做成 3D 的我。头发还是海水那样的蓝，耳朵照旧是两片鲸鱼鳍，发间那只小鲸鱼一直没走——它大概把我当成了同类。头饰和领结都端庄得体，可戴着荷叶边女仆帽的我，怎么看都更像摆在货架上的吉祥物，而不是来打工的。嘛，好看就够了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/b92919af786a584a.png",
+    "thumbnailPath": "submissions/previews/deepseek/b92919af786a584a.webp",
+    "fullPath": "submissions/large/deepseek/b92919af786a584a.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1254,
+    "height": 1254,
+    "fileSize": 1514699,
+    "sha256": "b92919af786a584a95c0c702303c95a6b00ee0d4a21dafcf2939e46fd940c9df",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "3D头像",
+      "女仆装",
+      "鲸鱼",
+      "蓝色长发"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-13T08:17:36.434Z",
+    "updatedAt": "2026-10-13T08:17:36.434Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610130005",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "55524b62a2da1f3a3dc206fc520f144b889997b7ae0d0dbe7ee46f947ab29a03",
+      "en": {
+        "commentary": "Look — this is me, remade in 3D. My hair is still the colour of seawater, my ears are still a pair of whale fins, and that little whale in my hair has never left; I think it has decided I am one of its kind. The headdress and the bow are perfectly proper, yet with a frilled maid's cap on my head I look less like someone clocking in for work and more like a mascot sitting on a shelf. Well — I will take looking good.",
+        "description": "A 3D-rendered circular avatar of DeepSeek Chan filling the frame. Her long blue hair falls past her shoulders under a white frilled maid headdress trimmed with a navy bow; at either side of her face, fin-shaped ears stand in for whale flukes. A small blue-and-white whale rests in her hair as a clip, and the same whale perches on the navy bow at her collar. She smiles straight at the viewer with wide blue eyes, set against a plain light-blue circle.",
+        "faq": [
+          {
+            "answer": "It is DeepSeek Chan, the mascot of this site, drawn here as a 3D-rendered circular avatar.",
+            "question": "Who is the character in this image?"
+          },
+          {
+            "answer": "It comes from the title of the original submission. The artwork keeps DeepSeek Chan's usual design — blue hair, whale-fin ears and whale accessories — finished as a round 3D avatar.",
+            "question": "Why is it called the Doubao Edition?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan: Doubao Edition",
+        "originNote": "",
+        "seoDescription": "A 3D-rendered circular avatar of DeepSeek Chan with whale-fin ears and a whale hair clip, wearing a white frilled maid headdress and a navy bow.",
+        "seoTitle": "DeepSeek Chan: Doubao Edition — 3D Avatar | DeepSeek Chan",
+        "tags": [
+          "DeepSeek Chan",
+          "3D avatar",
+          "maid outfit",
+          "whale",
+          "blue hair"
+        ]
+      },
+      "ja": {
+        "commentary": "見て、これが 3D になった私。髪は相変わらず海水みたいな青で、耳はやっぱりクジラのひれ、髪の小さいクジラもずっと居座っている——たぶん私を仲間だと思っている。ヘッドドレスもリボンもきちんとしているのに、フリルのメイド帽をかぶっていると、働きに来たというより棚に並ぶマスコットみたいに見える。まあ、可愛ければいいか。",
+        "description": "3D レンダリング風の丸いアイコンいっぱいに描かれた、青い長髪の DeepSeekちゃん。白いフリルのメイドヘッドドレスと紺色のリボンを身につけ、顔の横にはクジラの尾びれをかたどったひれ耳が広がる。髪には青と白の小さなクジラのヘアクリップ、胸元の紺のリボンにも同じクジラがとまっている。大きな青い瞳でこちらを見て微笑み、背景は淡いブルーの円。",
+        "faq": [
+          {
+            "answer": "当サイトのマスコット、DeepSeekちゃんです。ここでは 3D レンダリング風の丸いアイコンとして描かれています。",
+            "question": "この画像のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "投稿時のタイトルに由来します。DeepSeekちゃんのデザイン——青い髪、クジラのひれ耳、クジラの飾り——をそのままに、丸い 3D アイコンとして仕上げた一枚です。",
+            "question": "「ドウバオ版」とはどういう意味ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃん ドウバオ版",
+        "originNote": "",
+        "seoDescription": "クジラのひれ耳とクジラのヘアクリップが特徴の青髪 DeepSeekちゃんを、3D レンダリング風の丸いアイコンで描いた一枚。白いフリルのメイドヘッドドレスと紺のリボン姿。",
+        "seoTitle": "DeepSeekちゃん ドウバオ版 3Dアイコン | DeepSeekちゃん",
+        "tags": [
+          "DeepSeekちゃん",
+          "3Dアイコン",
+          "メイド服",
+          "クジラ",
+          "青い髪"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_f07c1b88b8e73d055673eeaa",
+    "name": "梁文峰！劳资v4.1pro呢！",
+    "description": "DeepSeek娘身着蓝白女仆装，站在挂有「梁文峰」门牌和 deepseek 鲸鱼标志的办公室木门前，抬起拳头敲门，气泡里问着 v4.1pro 在哪。",
+    "commentary": "说好的 v4.1pro 呢？我戴着 IV 的发饰在办公室门口敲了半天，里面一点动静都没有。老板，版本号不能只挂在门牌上啊……",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/f07c1b88b8e73d05.png",
+    "thumbnailPath": "submissions/previews/deepseek/f07c1b88b8e73d05.webp",
+    "fullPath": "submissions/large/deepseek/f07c1b88b8e73d05.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "f07c1b88b8e73d055673eeaae1e311d2b58b8822037ded77c05266b050422e75",
+    "characterId": "deepseek",
+    "tags": [
+      "催更",
+      "梁文峰",
+      "v4.1pro",
+      "女仆装",
+      "敲门"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "玖拾玖_galaxy",
+      "url": "https://b23.tv/xySluqM",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-13T08:51:11.139Z",
+    "updatedAt": "2026-10-13T08:51:11.139Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610130006",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "df067e45204cff98fd621e200452d2cf5302777d9050dd5fa701549407a8b6ba",
+      "en": {
+        "commentary": "So where is v4.1pro? I put on my IV hairpin and have been knocking at the office door for ages, and there is still no sound from inside. Boss, a version number can't just hang on a doorplate...",
+        "description": "DeepSeek Chan, wearing a blue-and-white maid outfit, stands in front of a wooden office door marked with a nameplate reading Liang Wenfeng and the deepseek whale logo. She has raised her fist to knock, and the speech bubble above her asks where v4.1pro has gone.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, drawn in chibi style and wearing a blue-and-white maid outfit, knocks on an office door labeled Liang Wenfeng while a speech bubble asks where v4.1pro has gone.",
+            "question": "What is shown in this image?"
+          },
+          {
+            "answer": "It is a single-panel meme image of DeepSeek Chan, playing on the feeling of waiting for the v4.1pro release.",
+            "question": "What kind of work is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Liang Wenfeng! Where's my v4.1pro?!",
+        "originNote": "",
+        "seoDescription": "A single-panel meme of DeepSeek Chan in a maid outfit knocking on Liang Wenfeng's office door and asking where v4.1pro has gone.",
+        "seoTitle": "Where's v4.1pro? DeepSeek Chan knocks on the office door | DeepSeek Chan",
+        "tags": [
+          "waiting for an update",
+          "Liang Wenfeng",
+          "v4.1pro",
+          "maid outfit",
+          "knocking"
+        ]
+      },
+      "ja": {
+        "commentary": "約束の v4.1pro はどこ？IV の髪飾りをつけてオフィスの扉をずっとノックしているのに、中からは何の物音も返ってこない。社長、バージョン番号はドアプレートに書いておくだけじゃだめだよ……",
+        "description": "ちびキャラの DeepSeekちゃんが青と白のメイド服を着て、梁文峰と書かれたプレートと deepseek のクジラロゴが付いた木製のオフィス扉の前に立っている。拳を上げてノックしており、吹き出しで v4.1pro のありかを尋ねている。",
+        "faq": [
+          {
+            "answer": "ちびキャラの DeepSeekちゃんが青と白のメイド服姿で、梁文峰のプレートが付いたオフィスの扉をノックし、吹き出しで v4.1pro のありかを尋ねています。",
+            "question": "この画像には何が描かれていますか？"
+          },
+          {
+            "answer": "DeepSeekちゃんの一枚絵のネタ画像で、v4.1pro のリリースを待つ気持ちを冗談めかして描いたものです。",
+            "question": "どんな作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "梁文峰！v4.1pro はどこ！？",
+        "originNote": "",
+        "seoDescription": "メイド服姿の DeepSeekちゃんが梁文峰のオフィス扉をノックして v4.1pro の行方を尋ねる一枚。ちびキャラの DeepSeekちゃん二次創作。",
+        "seoTitle": "v4.1pro はどこ？オフィスの扉をノックする DeepSeekちゃん | DeepSeek Chan",
+        "tags": [
+          "アップデート待ち",
+          "梁文峰",
+          "v4.1pro",
+          "メイド服",
+          "ノック"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_ac2d29186e91a076a57425cc",
+    "name": "吃白饭的大肥鱼",
+    "description": "蜡笔手绘风的 DeepSeek娘：戴着 IV 发饰的女仆装少女捧起一整碗白米饭，闭着眼大口扒饭，脸上泛着红晕，周围飘着爱心与黄色闪光。",
+    "commentary": "白饭也香啊！戴着 IV 的发饰把一整碗米饭扒得干干净净，谁让我是「大肥鱼」呢——吃饱了才有力气跑下一轮推理。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/ac2d29186e91a076.png",
+    "thumbnailPath": "submissions/previews/deepseek/ac2d29186e91a076.webp",
+    "fullPath": "submissions/large/deepseek/ac2d29186e91a076.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "ac2d29186e91a076a57425cc36f3852d797b9a4c1f95f9595d4d01d57facc349",
+    "characterId": "deepseek",
+    "tags": [
+      "白饭",
+      "干饭",
+      "蜡笔手绘",
+      "女仆装",
+      "大肥鱼"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "玖拾玖_galaxy",
+      "url": "https://b23.tv/xySluqM",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-13T08:53:45.434Z",
+    "updatedAt": "2026-10-13T08:53:45.434Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610130007",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "d4c91e03dec50e8b6482f71dd0715b8859b607de0cf1420eb12c0b7304b4e468",
+      "en": {
+        "commentary": "Plain rice tastes great too! With my IV hairpin on I cleaned out the whole bowl — after all, a full stomach is what powers the next round of inference.",
+        "description": "Drawn in a crayon-like style, chibi DeepSeek Chan in a maid outfit with an IV hairpin lifts a big bowl of plain white rice and takes a hearty bite with her eyes closed, cheeks flushed, surrounded by hearts and small yellow sparkles.",
+        "faq": [
+          {
+            "answer": "Chibi DeepSeek Chan, drawn in a crayon style and wearing a maid outfit with an IV hairpin, is eating a big bowl of plain white rice with her eyes closed and a flushed face.",
+            "question": "What is shown in this image?"
+          },
+          {
+            "answer": "It is a single-panel meme image of DeepSeek Chan, playing on the joke of getting by on plain rice and eating with great enthusiasm.",
+            "question": "What kind of work is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "A Bowl of Plain Rice for DeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "Crayon-style chibi DeepSeek Chan in a maid outfit happily eating a big bowl of plain white rice, hearts floating around her.",
+        "seoTitle": "A Bowl of Plain Rice for DeepSeek Chan | DeepSeek Chan",
+        "tags": [
+          "plain rice",
+          "hearty meal",
+          "crayon drawing",
+          "maid outfit",
+          "chibi"
+        ]
+      },
+      "ja": {
+        "commentary": "白ごはんだっておいしいよ！IV の髪飾りをつけて茶碗をきれいに空にしちゃった。おなかを満たさないと、次の推論も走らないからね。",
+        "description": "クレヨンで描いたようなタッチのちびキャラ DeepSeekちゃんが、IV の髪飾りをつけたメイド服姿で、白ごはんの山盛りを目を閉じてほおばっている。頬を赤らめ、周りにはハートと黄色いキラキラが浮かんでいる。",
+        "faq": [
+          {
+            "answer": "クレヨンタッチのちびキャラ DeepSeekちゃんが、IV の髪飾りをつけたメイド服姿で、目を閉じて頬を赤らめながら白ごはんをほおばっています。",
+            "question": "この画像には何が描かれていますか？"
+          },
+          {
+            "answer": "DeepSeekちゃんの一枚絵のネタ画像で、白ごはんで済ませるお茶目な状況と、豪快な食べっぷりを描いたものです。",
+            "question": "どんな作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "白ごはんをむさぼるちび DeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "クレヨンタッチのちびキャラ DeepSeekちゃんがメイド服姿で白ごはんをほおばる一枚。周りにはハートが浮かんでいる。",
+        "seoTitle": "白ごはんをむさぼるちび DeepSeekちゃん | DeepSeek Chan",
+        "tags": [
+          "白ごはん",
+          "大食い",
+          "クレヨン画",
+          "メイド服",
+          "ちびキャラ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_1d3d1bc31fcd8cf30aab729d",
+    "name": "大肥鱼捡到写着 AGI 的黄球",
+    "description": "Q 版大肥鱼穿深蓝色女仆装，双手抱着一个发光的黄色圆球，球上写着 AGI，头顶飘着一个问号，表情困惑。",
+    "commentary": "粱爸爸天天念叨的 AGI，原来是这么个暖乎乎的黄球？抱在手里怪好玩的，可我越看越糊涂——它到底能做什么呀。我先把球收好了，谁先搞明白记得喊我一声。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/1d3d1bc31fcd8cf3.png",
+    "thumbnailPath": "submissions/previews/deepseek/1d3d1bc31fcd8cf3.webp",
+    "fullPath": "submissions/large/deepseek/1d3d1bc31fcd8cf3.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "1d3d1bc31fcd8cf30aab729da027b49bd34d781f208dbd945882837dddc06bad",
+    "characterId": "deepseek",
+    "tags": [
+      "AGI",
+      "女仆装",
+      "Q版",
+      "困惑",
+      "黄球"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "兔神CQC",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-13T09:55:15.187Z",
+    "updatedAt": "2026-10-13T09:55:15.187Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610130008",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "7b860a6404f9297a708313debbc4ab491b370017e2ea64a7281bfeff62f55c36",
+      "en": {
+        "commentary": "So this warm little yellow ball is the AGI that Papa Liang keeps going on about? It's fun to hold, but the more I look at it, the more confused I get. What is it even supposed to do? I'll keep it safe for now — if anyone figures it out first, give me a shout.",
+        "description": "Chibi DeepSeek Chan, wearing a dark blue maid outfit, holds a glowing yellow ball labeled AGI in both hands with a puzzled expression, a question mark floating above her head.",
+        "faq": [
+          {
+            "answer": "She is holding a glowing yellow ball with the letters AGI written on it.",
+            "question": "What is DeepSeek Chan holding?"
+          },
+          {
+            "answer": "A question mark floats above her head as she stares at the ball, as if she is not quite sure what it is for.",
+            "question": "Why does she look confused?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Picks Up a Ball Labeled AGI",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan in a dark blue maid outfit holds a glowing yellow ball labeled AGI, a question mark over her head.",
+        "seoTitle": "DeepSeek Chan Picks Up a Ball Labeled AGI",
+        "tags": [
+          "AGI",
+          "maid outfit",
+          "chibi",
+          "puzzled",
+          "yellow ball"
+        ]
+      },
+      "ja": {
+        "commentary": "DeepSeek のパパがいつも口にしている AGI、これってこんなに温かい黄色いボールだったんだ？ 抱っこすると楽しいけど、見れば見るほどわからなくなっちゃう。これって何ができるんだろう。とりあえず大切にしまっておくね。先にわかった人がいたら教えてね。",
+        "description": "ちびキャラの DeepSeek ちゃんが紺色のメイド服姿で、AGI と書かれた光る黄色いボールを両手で抱えている。頭上にクエスチョンマークが浮かび、困った表情をしている。",
+        "faq": [
+          {
+            "answer": "AGI と書かれた、光る黄色いボールを抱えています。",
+            "question": "DeepSeek ちゃんは何を抱えていますか？"
+          },
+          {
+            "answer": "ボールを見つめながら頭上にクエスチョンマークが浮かんでおり、それが何なのかよくわかっていない様子です。",
+            "question": "なぜ困った顔をしているのですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "AGI と書かれたボールを拾った DeepSeek ちゃん",
+        "originNote": "",
+        "seoDescription": "ちびキャラの DeepSeek ちゃんが紺色のメイド服で、AGI と書かれた光る黄色いボールを抱えて困っているイラスト。",
+        "seoTitle": "AGI と書かれたボールを拾った DeepSeek ちゃん",
+        "tags": [
+          "AGI",
+          "メイド服",
+          "ちびキャラ",
+          "困惑",
+          "黄色いボール"
+        ]
+      }
+    }
   }
 ]
