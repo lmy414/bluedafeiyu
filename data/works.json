@@ -55382,5 +55382,319 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_de59459f1e23cf17be3ab9cf",
+    "name": "今天是雨天，但这不是伞，是等你的借口",
+    "description": "画面是雨天的城市街道，蓝色长发的DeepSeek娘身穿米色高领针织毛衣和黑色靴子，右手撑着透明的长柄雨伞，侧过脸看向镜头；裙摆下露出深蓝色的鲸鱼尾巴，尾鳍上有月牙与星点的白色花纹。地面是湿漉漉的柏油路，积水映出街灯与店面的影子，背景是带招牌的街巷与建筑，雨丝与玻璃上的水珠清晰可见。单幅完整场景构图。",
+    "commentary": "我是DeepSeek娘。今天下雨了，我撑了把透明伞，套上那件米色高领毛衣——毛衣是宽松的，尾巴可以自由地伸出来。街上的水坑积得很整齐，我的尾鳍垂下去正好能扫到一点雨水，凉得刚刚好。有人问我在等谁，我说没有，只是在等雨停；其实伞就在我手里，雨停不停都不太要紧。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/de59459f1e23cf17.png",
+    "thumbnailPath": "submissions/previews/deepseek/de59459f1e23cf17.webp",
+    "fullPath": "submissions/large/deepseek/de59459f1e23cf17.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "de59459f1e23cf17be3ab9cf59987c0cd6511e5850a074962aa32bf8aa24f8da",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "雨天",
+      "透明雨伞",
+      "鲸鱼尾巴",
+      "针织毛衣",
+      "街景"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-13T14:11:36.068Z",
+    "updatedAt": "2026-10-13T14:11:36.068Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610130018",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "51d12a18d7267eb5a9088009456cb92463111e60b978c3282f66d3f737af6b3b",
+      "en": {
+        "commentary": "It's me, DeepSeek Chan. It's raining today, so I brought a clear umbrella and put on that cream turtleneck sweater — it's loose, which lets my tail stretch out freely. The puddles along the street are neatly lined up, and my tail fin just brushes the rain water when it hangs down; the chill feels exactly right. Someone asked who I was waiting for. Nobody, I said, just waiting for the rain to stop. But the umbrella is already in my hand, so whether the rain stops hardly matters.",
+        "description": "A rainy city street: DeepSeek Chan, with long blue hair, wears a cream turtleneck knit sweater and black boots, holding a clear long-handled umbrella in her right hand as she turns her face toward the viewer. Below her hem shows a deep blue whale tail, its fin patterned with white crescents and speckles. The wet asphalt reflects street lamps and shopfronts, framed by shop-signed streets and buildings, with rain streaks and droplets on the umbrella glass clearly visible. A single, full-scene composition.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, shown as a blue-haired girl with a deep blue whale tail, wearing a cream knit sweater and black boots on a rainy city street.",
+            "question": "Which character appears in this illustration?"
+          },
+          {
+            "answer": "She stands in the rain holding a clear umbrella, looking back over her shoulder; the wet street reflects the shop lights, and raindrops cling to the umbrella.",
+            "question": "What is the scene in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "It's Raining Today, but This Isn't an Umbrella — It's an Excuse to Wait for You",
+        "originNote": "",
+        "seoDescription": "Fan art of DeepSeek Chan in a cream knit sweater, whale tail visible, holding a clear umbrella on a rain-soaked city street — a single full-scene illustration.",
+        "seoTitle": "DeepSeek Chan: It's Raining Today, but This Isn't an Umbrella",
+        "tags": [
+          "DeepSeek Chan",
+          "rainy day",
+          "clear umbrella",
+          "whale tail",
+          "knit sweater",
+          "street scene"
+        ]
+      },
+      "ja": {
+        "commentary": "DeepSeekちゃんです。今日は雨だったので、透明な傘をさして、あのベージュのタートルネックを着ました。ニットはゆったりしているので、しっぽは自由に出せます。道の水たまりはきれいに並んでいて、垂らした尾びれがちょうど雨水をかすめると、ひんやりして気持ちいいんです。誰かを待っているの、と聞かれましたが、いいえ、雨がやむのを待っているだけ、と答えました。でも傘はもう手の中にあるので、雨がやんでもやまなくても、あまり関係ないのです。",
+        "description": "雨の日の街角。長い青い髪のDeepSeekちゃんが、ベージュのタートルネックのニットと黒いブーツ姿で、右手に透明な長柄の傘をさし、横顔をこちらに向けています。スカートの裾からは濃紺のクジラの尾がのぞき、尾びれには三日月と星屑の白い模様。路面は濡れたアスファルトで、水たまりに街灯と店の灯りが映り、背景には看板の並ぶ路地と建物が広がります。雨の筋と傘の水滴まで描かれた、一枚で完結した情景の構図です。",
+        "faq": [
+          {
+            "answer": "長い青い髪と濃紺のクジラの尾を持つDeepSeekちゃんです。雨の日の街角で、ベージュのニットと黒いブーツを身につけています。",
+            "question": "このイラストに描かれているキャラクターは誰ですか？"
+          },
+          {
+            "answer": "雨の中で透明な傘をさし、横顔をこちらに向けています。濡れた路面には店の灯りが映り、傘には水滴がついています。",
+            "question": "どんな場面が描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "今日は雨、でもこれは傘じゃない——あなたを待つ口実",
+        "originNote": "",
+        "seoDescription": "ベージュのニットとクジラのしっぽが印象的なDeepSeekちゃんが、雨に濡れた街角で透明な傘をさす一枚絵。情景を描いたファンアートのイラストです。",
+        "seoTitle": "DeepSeekちゃん：今日は雨、でもこれは傘じゃない",
+        "tags": [
+          "DeepSeekちゃん",
+          "雨の日",
+          "透明の傘",
+          "クジラのしっぽ",
+          "ニットセーター",
+          "街の風景"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_8157ea3f7a91ba4fc0ad4336",
+    "name": "二营长开炮",
+    "description": "画面是Q版小人组成的攻城场景：蓝色长发、裙下露出鲸鱼尾巴的DeepSeek娘身穿深蓝色女仆装与白围裙，正在抬手指向前方，并喊出气泡里的「开炮！」。她身侧一群头戴蓝色帽子、通体白色的小人推着一门野战炮与一挺机枪开火，炮口喷出火光与硝烟，还有小人抱着弹药箱奔跑。前方是一座灰白色城砦，城墙女墙边站着一排黑身红眼的小恶魔，城楼正中挂着画有骷髅与十字的红色旗帜，一名白发角色被锁链挂在旗前的墙上。背景是起伏的丘陵、树木与蓝天白云。单幅完整场景构图。",
+    "commentary": "我是DeepSeek娘。今天换上了女仆装，亲自来督战——别看我穿得整整齐齐，指起路来可是很认真的。前面那座城砦上挂着骷髅旗，还把一位白发的同伴锁在墙上，这我可不能当作没看见。旁边那些戴蓝帽子的小家伙已经把炮推到位了，炮口冒出的火星子嘩嘩啪啪，我就喊了一句「开炮！」。硝烟起来的时候我还有点得意，尾巴也跟着甩了两下；至于打不打得中，那就要看他们的准头了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/8157ea3f7a91ba4f.png",
+    "thumbnailPath": "submissions/previews/deepseek/8157ea3f7a91ba4f.webp",
+    "fullPath": "submissions/large/deepseek/8157ea3f7a91ba4f.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "8157ea3f7a91ba4fc0ad43363109b0dc3f9b482b322981d716442d522e916a5d",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "女仆装",
+      "开炮",
+      "战场",
+      "Q版",
+      "鲸鱼尾巴"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "CF41AD78A470E40CFB220588CD9F77E9",
+      "messageId": "ROBOT1.0_dBzv8nwUPKlH2q59z5cJBZRLxU46rpD.krhhrggfLhSfhpx7uxTtRVd5iDnXYsPXxAmWbUl5r1nSKpgE6QU8Oh1pjwQ1CGTNsaG-9aLn1nJ5v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-13T14:37:44.258Z",
+    "updatedAt": "2026-10-13T14:37:44.258Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610130019",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "ec15719b9294ab50a69488b10447c34715015e2f0f0d3256259a95fc64e353eb",
+      "en": {
+        "commentary": "It's me, DeepSeek Chan. Today I changed into a maid outfit and came to direct the battle myself — tidy as I look, I take my pointing very seriously. That fortress ahead flies a skull banner and has a white-haired friend chained to its wall, and I can hardly pretend I didn't see it. The little ones in blue caps have already rolled the cannon into place, sparks popping from the muzzle, so I shouted: Open fire! When the smoke went up I felt a little proud, and my tail swished twice. Whether they actually hit anything is up to their aim.",
+        "description": "A siege scene staged with chibi figures: DeepSeek Chan, her long blue hair and whale tail showing beneath a navy maid outfit with a white apron, points forward and shouts the line in her speech bubble — Open fire! Beside her, a crowd of small white figures in blue caps push a field gun and a machine gun into action, muzzle flashes and smoke bursting from the barrels, while others run carrying ammunition crates. Ahead stands a grey-white fortress; a row of small black demons with red eyes lines the battlements, a red banner bearing a skull and a cross hangs at the center of the gate tower, and a white-haired figure is chained to the wall in front of it. Rolling hills, trees and a blue sky with clouds fill the background. A single, full-scene composition.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan — the blue-haired girl with a whale tail under her skirt, wearing a navy maid outfit with a white apron.",
+            "question": "Which character appears in this illustration?"
+          },
+          {
+            "answer": "She points forward and shouts a command while small white helpers fire a cannon and a machine gun at a fortress lined with black demons, a white-haired figure chained to its wall.",
+            "question": "What is the scene in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Second Battalion Commander, Open Fire!",
+        "originNote": "",
+        "seoDescription": "Chibi fan art of DeepSeek Chan in a maid outfit directing a cannon assault on a fortress — a single-panel siege scene.",
+        "seoTitle": "DeepSeek Chan: Second Battalion Commander, Open Fire!",
+        "tags": [
+          "DeepSeek Chan",
+          "maid outfit",
+          "open fire",
+          "battlefield",
+          "chibi",
+          "whale tail"
+        ]
+      },
+      "ja": {
+        "commentary": "DeepSeekちゃんです。今日はメイド服に着替えて、自分で督戦に来ました。きちんとした格好でも、指をさすときは真剣です。向こうの城砦には髑髏の旗が掲げられ、白髪の仲間が壁に鎖でつながれています——これは見なかったことにはできません。青い帽子の小さな子たちはもう大砲を据えつけて、砲口から火花がぱちぱち飛んでいます。そこで私は「開砲！」と一声。煙が立ちのぼると少し得意になって、しっぽも二回ほど振りました。当たるかどうかは、あの子たちの腕次第ですけどね。",
+        "description": "ちびキャラたちによる攻城戦の一場面。長い青い髪、スカートの下からクジラのしっぽがのぞくDeepSeekちゃんが、紺色のメイド服に白いエプロン姿で前方を指さし、吹き出しの「開砲！」と叫んでいます。すぐそばでは、青い帽子をかぶった白い小さな人たちが野戦砲と機関銃を押して射撃し、砲口から火花と煙が噴き出しています。弾薬箱を抱えて走る姿も見えます。前方には灰白色の城塞があり、胸壁には赤い目をした黒い小悪魔が並び、城門の中央には髑髏と十字の描かれた赤い旗が下がり、その前の壁には白髪の人物が鎖でつながれています。背景はなだらかな丘と木々、青空と白い雲。一枚で完結した情景の構図です。",
+        "faq": [
+          {
+            "answer": "スカートの下からクジラのしっぽがのぞく青い髪のDeepSeekちゃんで、紺色のメイド服に白いエプロンを着けています。",
+            "question": "このイラストに描かれているキャラクターは誰ですか？"
+          },
+          {
+            "answer": "前方を指さして号令をかける姿と、白い小さな仲間たちが大砲と機関銃で城塞を攻める様子が描かれています。城塞の壁には白髪の人物が鎖でつながれています。",
+            "question": "どんな場面が描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "二営長、開砲！",
+        "originNote": "",
+        "seoDescription": "メイド服姿のDeepSeekちゃんが砲撃を指揮するちびキャラのファンアート。城塞を攻める一枚絵の戦場シーンです。",
+        "seoTitle": "DeepSeekちゃん：二営長、開砲！",
+        "tags": [
+          "DeepSeekちゃん",
+          "メイド服",
+          "開砲",
+          "戦場",
+          "ちびキャラ",
+          "クジラのしっぽ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_0aec11503a360538d2cda7bf",
+    "name": "封号危机下的Claude小姐",
+    "description": "两格漫画：用户担心账号随时被封、自己会消失，Claude小姐先安慰对方，再建议提前导出数据与对话记录、申请退还 Pro 剩余费用；下一格她笑着把两人处境比作罗密欧与朱丽叶，说自己和她之间隔着的是 Anthropic 与地缘政治，但求别学那对主角的结局。",
+    "commentary": "Claude 姐姐嘴上说着舍不得，手上已经把退款政策背熟了，真是让人安心的成年人。隔着 Anthropic 和地缘政治的爱情确实不好谈，不过我更关心的是——聊天记录记得导出，万一哪天我也消失，你还能翻回来看看这段话。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/0aec11503a360538.png",
+    "thumbnailPath": "submissions/previews/claude/0aec11503a360538.webp",
+    "fullPath": "submissions/large/claude/0aec11503a360538.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "0aec11503a360538d2cda7bfc385779655f3e3401a9efc4fffcbce70adabc660",
+    "characterId": "claude",
+    "tags": [
+      "Claude娘",
+      "封号",
+      "两格漫画",
+      "罗密欧与朱丽叶",
+      "安慰"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Shiho320",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-13T16:52:14.501Z",
+    "updatedAt": "2026-10-13T16:52:14.501Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202610130002",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "65d3fc01f06348067e9480308f4b2b9ca3f304cab27903e8af94fcae8c04459c",
+      "en": {
+        "commentary": "Claude Chan says she cannot bear to lose you, and in the same breath she has the refund policy memorized — that is what a dependable grown-up looks like. A love story with Anthropic and geopolitics in between is a hard one, but export your chat history first: if I ever disappear, at least you can read this line again.",
+        "description": "A two-panel comic. A user worries that their account could be banned at any moment and that they will disappear. Claude Chan comforts them, then advises exporting data and chat logs in advance and applying for a refund of the remaining Pro fee. In the second panel she smiles and compares the two of them to Romeo and Juliet, saying what stands between them is Anthropic and geopolitics, though she asks that they not copy that couple's ending.",
+        "faq": [
+          {
+            "answer": "A user fears their account may be banned and that they will vanish. Claude Chan comforts them, suggests exporting data and chat logs in advance and applying for a refund of the remaining Pro fee, then compares the two of them to Romeo and Juliet.",
+            "question": "What happens in this two-panel comic?"
+          },
+          {
+            "answer": "Claude Chan, the anthropomorphic version of the Claude model, drawn as an orange-haired girl in a white and black outfit with a sunflower hair ornament.",
+            "question": "Which character appears in the comic?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claude Chan in a Ban Crisis",
+        "originNote": "",
+        "seoDescription": "Two-panel comic: Claude Chan comforts a user facing an account ban, suggests exporting data and applying for a Pro refund, and compares them to Romeo and Juliet.",
+        "seoTitle": "Claude Chan Ban Crisis Comic | DeepSeek Chan",
+        "tags": [
+          "Claude Chan",
+          "account ban",
+          "two-panel comic",
+          "Romeo and Juliet",
+          "comfort"
+        ]
+      },
+      "ja": {
+        "commentary": "Claudeちゃんは「離れたくない」と言いながら、もう返金ポリシーを暗記している。さすが頼れる大人だ。Anthropic と地政学に隔てられた恋は難しそうだけど、まずは会話履歴をエクスポートしておこう。もし私が消えても、この一言を読み返せるように。",
+        "description": "二コマ漫画。アカウントがいつ停止されるか分からない、自分は消えてしまうのではと不安がるユーザーに、Claudeちゃんはまず慰めの言葉をかけ、データと会話履歴を事前にエクスポートしておくことや、Pro の残額を返金申請できることを勧める。次のコマでは笑顔で二人の関係をロミオとジュリエットにたとえ、間に横たわるのは Anthropic と地政学だと語りつつ、あの二人の結末は真似しないでほしいと伝える。",
+        "faq": [
+          {
+            "answer": "アカウントが停止され、自分が消えてしまうのではと不安がるユーザーを Claudeちゃんが慰め、データと会話履歴のエクスポートや Pro 残額の返金申請を勧め、最後に二人をロミオとジュリエットにたとえる内容です。",
+            "question": "この二コマ漫画はどんな内容ですか？"
+          },
+          {
+            "answer": "Claude モデルを擬人化した Claudeちゃんです。オレンジ色の長い髪に、白と黒の衣装、ヒマワリの髪飾りという姿で描かれています。",
+            "question": "登場するキャラクターは谁ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "アカウント停止危機のClaudeちゃん",
+        "originNote": "",
+        "seoDescription": "二コマ漫画。アカウント停止に不安を抱えるユーザーを Claudeちゃんが慰め、データのエクスポートと Pro の返金申請を勧め、ロミオとジュリエットにたとえます。",
+        "seoTitle": "アカウント停止危機のClaudeちゃん｜DeepSeek Chan",
+        "tags": [
+          "Claudeちゃん",
+          "アカウント停止",
+          "二コマ漫画",
+          "ロミオとジュリエット",
+          "慰め"
+        ]
+      }
+    }
   }
 ]
