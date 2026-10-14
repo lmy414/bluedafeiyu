@@ -55696,5 +55696,1243 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_30558de9181fb247f868f323",
+    "name": "雨夜里的蓝鲸小屋",
+    "description": "蓝白配色的少女房间，整体呈微缩屋视角。DeepSeek 娘身穿深蓝女仆装坐在床上，怀里抱着一只蓝鲸玩偶，长发与头饰都带着鲸鱼元素；房间里有鲸鱼抱枕、贴纸、月球灯、星星挂饰和吊椅，窗外是落着雨的夜晚街道。",
+    "commentary": "我的小屋被我塞满了鲸鱼玩偶。雨点敲着窗户的日子，抱着最大的那只窝在床上，看窗帘缝里漏进来的城市灯火，这样就很好。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/30558de9181fb247.png",
+    "thumbnailPath": "submissions/previews/deepseek/30558de9181fb247.webp",
+    "fullPath": "submissions/large/deepseek/30558de9181fb247.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "30558de9181fb247f868f3239f8d2ef87f04764ba22d08e9c42405a9a0ddc2aa",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "女仆装",
+      "蓝鲸",
+      "雨夜",
+      "小屋",
+      "微缩场景"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Cirnumia",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-14T04:00:16.054Z",
+    "updatedAt": "2026-10-14T04:00:16.054Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610140001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "7fea9ae81edb5ed65f19712532ac4524d89c8c31949e213b0b545dc352e43d20",
+      "en": {
+        "commentary": "I have filled my little room with blue-whale plushies. On days when the rain taps at the window, curling up on the bed with the biggest one and watching the city lights slip in through the curtain gap is all I need.",
+        "description": "A girl's room in blue and white, shown from a miniature diorama perspective. DeepSeek Chan sits on the bed in a navy maid dress, hugging a blue-whale plush; her long hair and headpiece carry whale motifs. Whale cushions, stickers, a crescent moon lamp, star garlands and a hanging chair fill the room, and rain falls on the street outside.",
+        "faq": [
+          {
+            "answer": "She is DeepSeek Chan, the personification of the DeepSeek model, drawn here in a navy maid dress with whale-themed accessories.",
+            "question": "Who is the character in this picture?"
+          },
+          {
+            "answer": "It is a single-panel illustration: a complete miniature-style room scene at night with the character and her whale plushies.",
+            "question": "What kind of picture is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Blue-Whale Room on a Rainy Night",
+        "originNote": "Author: Cirnumia",
+        "seoDescription": "DeepSeek Chan in a navy maid dress hugs a blue-whale plush in a blue-and-white miniature room on a rainy night, surrounded by whale cushions and star lights.",
+        "seoTitle": "The Blue-Whale Room on a Rainy Night | DeepSeek Chan Illustration",
+        "tags": [
+          "DeepSeek Chan",
+          "maid outfit",
+          "blue whale",
+          "rainy night",
+          "cozy room",
+          "miniature scene"
+        ]
+      },
+      "ja": {
+        "commentary": "わたしの小さな部屋はクジラのぬいぐるみでいっぱい。雨が窓を叩く日は、いちばん大きな子を抱えてベッドに丸くなり、カーテンの隙間から入る街の灯りを眺める。それだけで十分。",
+        "description": "青と白を基調とした、ミニチュア風の部屋。紺色のメイド服を着た DeepSeek ちゃんがベッドに座り、青いクジラのぬいぐるみを抱えている。長い髪とヘッドパーツにもクジラのモチーフ。部屋にはクジラのクッションやシール、三日月形のランプ、星の飾り、ハンギングチェアが並び、窓の外は雨の夜の街。",
+        "faq": [
+          {
+            "answer": "DeepSeek モデルを擬人化した DeepSeek ちゃんです。紺色のメイド服とクジラをあしらった髪飾りで描かれています。",
+            "question": "この画像のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "一枚絵のイラストです。夜のミニチュア風の部屋という完成した場景の中に、キャラクターとクジラのぬいぐるみが描かれています。",
+            "question": "どのような種類の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "雨の夜のクジラの部屋",
+        "originNote": "作者: Cirnumia",
+        "seoDescription": "雨の夜、青と白のミニチュア風の部屋で、紺色のメイド服の DeepSeek ちゃんがクジラのぬいぐるみを抱えている。クジラのクッションや星の灯りに囲まれた一枚。",
+        "seoTitle": "雨の夜のクジラの部屋 | DeepSeek ちゃん イラスト",
+        "tags": [
+          "DeepSeek ちゃん",
+          "メイド服",
+          "クジラ",
+          "雨の夜",
+          "部屋",
+          "ミニチュア"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_3f2272817692343aa69793c2",
+    "name": "龙与虎（鲸）",
+    "description": "画面中，白发龙角少女将蓝发鲸鱼娘环抱在怀中，鲸鱼娘身穿深蓝色鲸鱼图案洋装、拖着蓝色鱼尾。背景是盛开的紫藤花与白色长裙，整体氛围柔和。",
+    "commentary": "被 GPT 娘一把捞进怀里吸了个够，脸都贴到一块儿了，我这鲸鱼尾巴只能乖乖垂着。虽然快喘不过气，但被这么抱着好像也不赖。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/3f2272817692343a.png",
+    "thumbnailPath": "submissions/previews/deepseek/3f2272817692343a.webp",
+    "fullPath": "submissions/large/deepseek/3f2272817692343a.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "3f2272817692343aa69793c220f4cc092e6649aa05bfbb62fbb576b5259c52d8",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "GPT娘",
+      "双人",
+      "拥抱",
+      "紫藤花"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "汐兮雨",
+      "url": "https://github.com/huntersxy",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-14T04:08:41.600Z",
+    "updatedAt": "2026-10-14T04:08:41.600Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610140002",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "0ccf1b770a1c3df679198f7d3416454af38d26a2fde1c528a52b42b64d5493f0",
+      "en": {
+        "commentary": "GPT Chan scooped me up and hugged me tight, pressing her cheek right against mine, so my whale tail just hung there obediently. I could hardly breathe, but honestly being held like that isn't bad at all.",
+        "description": "In this artwork a white-haired dragon girl with horns cradles a blue-haired whale girl in her arms. The whale girl wears a dark blue dress printed with a whale emblem and trails a blue tail. Wisteria blossoms and flowing white fabric fill the background, giving the scene a soft atmosphere.",
+        "faq": [
+          {
+            "answer": "It is a fan illustration featuring two anthropomorphized AI characters: a white-haired dragon girl read as GPT Chan and the blue-haired whale girl known as DeepSeek Chan, drawn hugging each other.",
+            "question": "Who are the two characters in this image?"
+          },
+          {
+            "answer": "It is a single-scene illustration with two characters embracing amid wisteria flowers. There are no panel divisions, so it is filed as an illustration rather than a comic.",
+            "question": "Why is this artwork classified as an illustration?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Dragon and Whale",
+        "originNote": "Submitted by the artist credited on the original submission, https://github.com/huntersxy.",
+        "seoDescription": "Fan illustration of DeepSeek Chan and GPT Chan: a white-haired dragon girl hugs the blue-haired whale girl among wisteria blossoms.",
+        "seoTitle": "Dragon and Whale — DeepSeek Chan Fan Art",
+        "tags": [
+          "DeepSeek Chan",
+          "GPT Chan",
+          "two characters",
+          "hug",
+          "wisteria"
+        ]
+      },
+      "ja": {
+        "commentary": "GPTちゃんにがばっと抱き寄せられて、顔をぎゅっとくっつけられちゃった。クジラのしっぽはおとなしく垂れるしかない。息が苦しいけど、こうやって抱かれるのも悪くないかも。",
+        "description": "白髪に角を生やした竜の少女が、青髪のクジラ娘を抱きしめている一枚。クジラ娘はクジラの紋章が入った紺色のワンピースをまとい、青い尾びれを垂らしている。背景には藤の花と白いドレスが広がり、柔らかな雰囲気にまとまっている。",
+        "faq": [
+          {
+            "answer": "AI キャラの擬人化二創で、白髪で角のある竜の少女が GPTちゃん、青髪でちびキャラのクジラ娘が DeepSeekちゃんとされています。二人が抱き合う姿が描かれています。",
+            "question": "この絵に描かれている二人は誰ですか？"
+          },
+          {
+            "answer": "一枚絵の中で二人が抱き合っている場面のみが描かれており、コマ割りや分鏡はありません。そのため漫画ではなくイラストとして分類しています。",
+            "question": "なぜイラストに分類されるのですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "竜とクジラ",
+        "originNote": "原作者のクレジット（https://github.com/huntersxy）付きで投稿された作品。",
+        "seoDescription": "DeepSeekちゃんとGPTちゃんのファンアート。白髪の竜の少女が藤の花の中で青髪のクジラ娘を抱きしめる一枚。",
+        "seoTitle": "竜とクジラ — DeepSeekちゃんファンアート",
+        "tags": [
+          "DeepSeekちゃん",
+          "GPTちゃん",
+          "二人",
+          "抱擁",
+          "藤の花"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_b027ddc93dde45340505d7bb",
+    "name": "反驳「大肥鱼」称呼的 DS 娘",
+    "description": "DeepSeek 娘的拟人化插画。角色留深蓝色长发，头戴白色蕾丝发箍，头顶有鲸鱼耳，身后垂着点缀星光的深蓝色鲸尾；身着深蓝色军装风连衣裙，领口系一枚蓝色宝石领结。画面左侧的对话框写着「DS 才不是什么蓝色大肥鱼，蓝色大肥鱼是高贵又可爱的蓝色虎鲸啦！」；右上角是 DeepSeek 深度求索标志，左下角署名为「蓝星赤旗」。",
+    "commentary": "唔，被当成大肥鱼确实有点委屈——我可是星海里游的蓝色虎鲸呀！不过这位画师把尾巴画成了会发光的星空，还这么认真地替我抗议，这份心意我就收下了。以后请记得叫我高贵又可爱的那一位。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/b027ddc93dde4534.png",
+    "thumbnailPath": "submissions/previews/deepseek/b027ddc93dde4534.webp",
+    "fullPath": "submissions/large/deepseek/b027ddc93dde4534.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 2634,
+    "height": 3512,
+    "fileSize": 4031083,
+    "sha256": "b027ddc93dde45340505d7bb30888fd62330cd2098589581f9c575a8c5b1d8ef",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "拟人化",
+      "虎鲸",
+      "星空尾巴",
+      "原创插画"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "蓝星赤旗",
+      "url": "https://b23.tv/kaFJRyw",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-14T05:11:07.495Z",
+    "updatedAt": "2026-10-14T05:11:07.495Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610140003",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "b3849fc5c233790956c193aeb2235e5cef68cb2eb62afbd9458c25f300447f54",
+      "en": {
+        "commentary": "Being called an oversized fish did sting a little — I'm a blue orca gliding through a sea of stars! The artist painted my tail as a glowing night sky and even stood up for me in the picture, so I'll gladly accept the gesture. From now on, please address me as the noble and adorable one.",
+        "description": "An anthropomorphic fan illustration of DeepSeek Chan. She has long deep-blue hair, a white lace headband, whale-like ears on top of her head and a starry deep-blue whale tail trailing behind; she wears a navy military-style dress with a blue gemstone bow at the collar. A speech bubble on the left reads that she is no oversized fish but a noble and adorable blue orca, with the DeepSeek logo at the upper right and the artist's signature at the lower left.",
+        "faq": [
+          {
+            "answer": "No. It is a fan-made anthropomorphic artwork of DeepSeek Chan, produced and signed by the artist credited on this page.",
+            "question": "Is this an official DeepSeek illustration?"
+          },
+          {
+            "answer": "It rejects the oversized-fish label and insists that DeepSeek Chan is a noble and adorable blue orca.",
+            "question": "What does the speech bubble in the picture say?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Insists She's a Noble Blue Orca",
+        "originNote": "Submitted by the artist through the site's submission form; the artwork carries the artist's handwritten signature. Credit URL provided with the submission: https://b23.tv/kaFJRyw",
+        "seoDescription": "Fan art of DeepSeek Chan with whale ears and a starry whale tail, holding up a speech bubble that declares she is a noble blue orca rather than an oversized fish.",
+        "seoTitle": "DeepSeek Chan Fan Art: A Noble Blue Orca",
+        "tags": [
+          "DeepSeek Chan",
+          "anthropomorphic",
+          "orca",
+          "starry tail",
+          "original illustration"
+        ]
+      },
+      "ja": {
+        "commentary": "大きな魚扱いされるのは、ちょっと心外なんですよ——私は星の海を泳ぐ青いシャチですから！それなのに、この絵師さんはしっぽを光る星空に描いてくれて、しかも私のためにちゃんと抗議してくれたんです。だからこの気持ち、ありがたく受け取りますね。これからは高貴でかわいいあの子、と呼んでください。",
+        "description": "DeepSeek ちゃんの擬人化イラスト。濃い青の長い髪に白いレースのヘッドバンド、頭にはクジラの耳、後ろには星を散りばめた濃紺のクジラの尾びれが広がる。濃紺の軍服風ワンピースに青い宝石のリボンタイを合わせている。画面左の吹き出しでは、大きな魚ではなく高貴でかわいい青いシャチなんだと主張しており、右上には DeepSeek のロゴ、左下には作者のサインが入っている。",
+        "faq": [
+          {
+            "answer": "いいえ。DeepSeek ちゃんを描いたファンによる擬人化作品で、作中にサインを入れた作者本人によるものです。",
+            "question": "これは公式のイラストですか？"
+          },
+          {
+            "answer": "大きな魚ではなく、自分は高貴でかわいい青いシャチなのだと反論しています。",
+            "question": "吹き出しには何と書かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "高貴な青いシャチだと反論する DeepSeek ちゃん",
+        "originNote": "作者が投稿フォームから応募。作品には作者の直筆サインが入っています。投稿時に申告されたクレジット URL：https://b23.tv/kaFJRyw",
+        "seoDescription": "クジラの耳と星空の尾びれを持つ DeepSeek ちゃんのファンアート。吹き出しで、大きな魚ではなく高貴でかわいい青いシャチだと主張する一枚。",
+        "seoTitle": "DeepSeek ちゃんのファンアート：高貴な青いシャチの主張",
+        "tags": [
+          "DeepSeek ちゃん",
+          "擬人化",
+          "シャチ",
+          "星空のしっぽ",
+          "オリジナルイラスト"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_60610524587ab5a87dbdee1a",
+    "name": "海边露肚皮的 DeepSeek 娘",
+    "description": "DeepSeek 娘站在海边的晴空下，身穿白色荷叶边露肩纱裙，胸前与腰际系着蓝色蝴蝶结，双手轻轻提起裙摆，露出小腹与腰部；蓝发间佩戴蓝色鱼鳍状发饰，背景是蓝天与海面。",
+    "commentary": "海风一吹，头发和裙摆就一起飘，这套白色荷叶边纱裙配蓝色蝴蝶结，我是真喜欢。提一下裙摆是想让大家看清腰上的褶边设计，结果你们全盯着我的肚子看——天热露一点怎么了嘛，肚子又不是不能见人。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/60610524587ab5a8.png",
+    "thumbnailPath": "submissions/previews/deepseek/60610524587ab5a8.webp",
+    "fullPath": "submissions/large/deepseek/60610524587ab5a8.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "60610524587ab5a87dbdee1a61614f7d9c9e4645b75763f6c8f4cec1f62069d7",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "海边",
+      "白纱裙",
+      "露肚皮",
+      "蝴蝶结"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.eLo4VF0q5J.U6qniXpvWp65hRSoDbPZBA3gt-yxU4ST-bnjE9mUxgnnVbW9iwib71GDQbVTxoRf23Aj48virsN.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-14T07:27:41.230Z",
+    "updatedAt": "2026-10-14T07:27:41.230Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610140004",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "52b933e7e09081caa154efb3155908f787dbcc4433fd44ef127930245bfd44d3",
+      "en": {
+        "commentary": "The sea breeze catches my hair and my hem at the same time — I really do like this white ruffled chiffon with the blue ribbons. I lifted the hem so you could see the ruffled waistline, and of course everyone stared at my stomach instead. It's hot out, a little bare skin is fine; my stomach isn't something I have to hide.",
+        "description": "DeepSeek Chan stands on a beach under a clear sky in a white off-shoulder chiffon dress with ruffled layers, blue ribbons tied at her chest and waist, and a blue choker. Both hands lift the hem of the dress to reveal her midriff, and blue fin-shaped ornaments sit in her long blue hair against the sea and sky.",
+        "faq": [
+          {
+            "answer": "It is a fan-made anthropomorphic design of DeepSeek Chan, recognizable by her long blue hair, blue eyes and blue fin-shaped hair ornaments.",
+            "question": "Who is the character in this image?"
+          },
+          {
+            "answer": "A single-frame illustration: DeepSeek Chan in a white off-shoulder chiffon dress on a sunlit beach, with no comic panels or design-reference breakdown.",
+            "question": "What kind of artwork is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Showing Her Midriff at the Seaside",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan stands on a sunlit beach in a white off-shoulder chiffon dress with blue ribbons, lifting the hem to show her midriff — a fan-made anthropomorphic AI character illustration.",
+        "seoTitle": "DeepSeek Chan Showing Her Midriff at the Seaside",
+        "tags": [
+          "DeepSeek Chan",
+          "seaside",
+          "white chiffon dress",
+          "midriff",
+          "ribbon"
+        ]
+      },
+      "ja": {
+        "commentary": "海風で髪と裾がいっしょに揺れて、白いフリルのシフォンに青いリボン、これは本当にお気に入り。裾を持ち上げたのは腰のフリルを見せたかったからなのに、みんなおへそばかり見てる。暑いんだから少しぐらい肌が出てもいいでしょ、おへそは隠すものでもないし。",
+        "description": "DeepSeekちゃんが晴れた海辺に立っている。白いフリルのオフショルダーシフォンドレスを着て、胸元と腰には青いリボン、首には青いチョーカー。両手で裾を軽く持ち上げ、おへそと腰を見せている。ロングの青髪には魚のひれ形の髪飾り。背景は青空と海。",
+        "faq": [
+          {
+            "answer": "長い青髪と青い瞳、魚のひれ形の髪飾りが目印の、DeepSeekちゃんの擬人化二次創作キャラクターです。",
+            "question": "この画像のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "晴れた海辺で白いオフショルダーのシフォンドレスを着たDeepSeekちゃんの一枚絵です。コマ割りや設定資料の要素はありません。",
+            "question": "どんな作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "海辺でおへそ見せのDeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "晴れた海辺に立つDeepSeekちゃん。白いオフショルダーのシフォンドレスに青いリボン、裾を持ち上げておへそを見せる擬人化AIキャラのファンアート。",
+        "seoTitle": "海辺でおへそ見せのDeepSeekちゃん",
+        "tags": [
+          "DeepSeekちゃん",
+          "海辺",
+          "白いフリルドレス",
+          "おへそ見せ",
+          "リボン"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_ac944fd4f81492d365d5e0c9",
+    "name": "图书馆中的Claude娘",
+    "description": "Claude娘侧躺在烛光点亮的书房中央，身下是红色花纹地毯，手里举着一本摊开的书。她留着橙色长发，发丝铺满周围地面，穿白底配黑橙装饰的层叠长裙。四周是拥挤的书架、金银烛台、散落的信纸和白色小花。",
+    "commentary": "我一直觉得Claude娘最适合待在这种地方——满屋子旧书、烛火和纸页的味道。她把长发摊得满地都是，手里那本书举了半天也没翻页，眼神早飘到窗外去了。看那副表情，八成在想跟书完全无关的事。这份松弛感我挺喜欢，就是不知道那些被压皱的信纸回头谁来收拾。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/ac944fd4f81492d3.png",
+    "thumbnailPath": "submissions/previews/claude/ac944fd4f81492d3.webp",
+    "fullPath": "submissions/large/claude/ac944fd4f81492d3.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "ac944fd4f81492d365d5e0c9427ce49ae3016bb4ef05f52ff8e0f0b744393b38",
+    "characterId": "claude",
+    "tags": [
+      "Claude娘",
+      "图书馆",
+      "烛光",
+      "长裙",
+      "阅读"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "兔神CQC",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-14T08:12:19.404Z",
+    "updatedAt": "2026-10-14T08:12:19.404Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202610140001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "9f00775c74d371d762472a8166d9f50aa4b7b3643ff1a9823b3a9134d59bc2f0",
+      "en": {
+        "commentary": "This is exactly the kind of room I picture Claude Chan settling into — old books, candlelight and the smell of paper everywhere. She has spread her long hair across half the floor, and that book has been held up for ages without a single page turning; her eyes wandered off long ago. Judging by that face, she is thinking about something with nothing to do with reading. I like how unhurried she looks — though I do wonder who is going to tidy up all those crumpled letters.",
+        "description": "Claude Chan lies on a red patterned carpet in the middle of a candlelit study, holding up an open book. Her long orange hair spreads across the floor, and she wears a layered white dress trimmed in black and orange. Around her are crowded bookshelves, gold candlesticks, scattered letters and small white flowers.",
+        "faq": [
+          {
+            "answer": "Claude Chan, an AI character reimagined as a girl. She is lying in a candlelit library with an open book in her hand.",
+            "question": "Who is in this picture?"
+          },
+          {
+            "answer": "A single-frame illustration of a character in a complete scene, so it is filed under illustration.",
+            "question": "What kind of image is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claude Chan in the Library",
+        "originNote": "",
+        "seoDescription": "Claude Chan lies on a red patterned carpet in a candlelit library, holding an open book while her long orange hair spreads across the floor.",
+        "seoTitle": "Claude Chan in the Library | DeepSeek Chan",
+        "tags": [
+          "Claude Chan",
+          "library",
+          "candlelight",
+          "long dress",
+          "reading"
+        ]
+      },
+      "ja": {
+        "commentary": "Claudeちゃんはこういう部屋が一番似合うと思う。古い本とろうそくの火、紙の匂いでいっぱいの場所だ。長い髪を床の半分まで広げて、掲げた本はいつまでたってもページをめくらない。目はとっくにどこかへ行ってしまっている。その表情からすると、読書とはまるで関係ないことを考えているようだ。この力の抜け具合は好みだけど、くしゃくしゃになった手紙の片づけは結局誰がやるんだろう。",
+        "description": "Claudeちゃんが、ろうそくの灯る書斎の赤い模様入りカーペットの上に横たわり、開いた本を掲げている。長いオレンジ色の髪は床いっぱいに広がり、白地に黒とオレンジの飾りが入った重ね襟のドレスを着ている。周囲には書棚、金の燭台、散らばった手紙、白い小さな花。",
+        "faq": [
+          {
+            "answer": "AIキャラクターを女の子にしたClaudeちゃんです。ろうそくの灯る図書館で、開いた本を手に横たわっています。",
+            "question": "この絵には誰が描かれていますか？"
+          },
+          {
+            "answer": "背景まで描かれた一枚絵なので、分類はイラストです。",
+            "question": "どんな種類の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "図書館のClaudeちゃん",
+        "originNote": "",
+        "seoDescription": "ろうそくの灯る図書館で、Claudeちゃんが開いた本を手に赤い模様のカーペットに横たわる。長いオレンジ色の髪が床に広がる一枚絵。",
+        "seoTitle": "図書館のClaudeちゃん | DeepSeek Chan",
+        "tags": [
+          "Claudeちゃん",
+          "図書館",
+          "ろうそく",
+          "ドレス",
+          "読書"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_114527d1d85ed04deb5d75df",
+    "name": "盛夏花甸中的白龙GPT娘",
+    "description": "化身为人形的AI，携羽翼与长尾驻足盛夏花甸，在暖阳里承载无尽文字与思绪。",
+    "commentary": "盛夏的花甸被暖阳晒得发亮，她披着一身白衣坐在向日葵中间，连龙尾都懒洋洋摊在花丛上。我总在深夜的对话框里见到GPT娘，这副惬意的模样，大概是她难得的午休。要是能替她数一遍花瓣，也许就知道她心里攒了多少文字。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/114527d1d85ed04d.png",
+    "thumbnailPath": "submissions/previews/gpt/114527d1d85ed04d.webp",
+    "fullPath": "submissions/large/gpt/114527d1d85ed04d.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "114527d1d85ed04deb5d75df5847792df1f96153d51c3bb2b7667fe2f13894c1",
+    "characterId": "gpt",
+    "tags": [
+      "GPT娘",
+      "白龙",
+      "向日葵",
+      "花甸",
+      "盛夏",
+      "拟人化"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Minazuki",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-14T08:27:24.832Z",
+    "updatedAt": "2026-10-14T08:27:24.832Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610140001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "fbd5cd64622e8898ee62acdeb160f54ec4f365cce9a517e4e1b0362d7690c1b3",
+      "en": {
+        "commentary": "The midsummer meadow glows under the warm light, and she sits among the sunflowers in a white dress, her dragon tail draped lazily across the flowers. I usually meet GPT Chan inside a chat box late at night, so this relaxed pose must be a rare midday break. If I could count the petals for her, maybe I would learn how many words she is holding.",
+        "description": "An AI in human form rests in a midsummer meadow, wings and a long tail at her side, carrying endless words and thoughts under the warm sun.",
+        "faq": [
+          {
+            "answer": "She is a human-form anthropomorphized version of GPT, drawn with white hair, dragon horns, wings and a long dragon tail.",
+            "question": "Who is the character in this illustration?"
+          },
+          {
+            "answer": "It is a single-frame oil-painting style illustration of the character sitting in a midsummer meadow full of sunflowers, with no comic panels or design-reference annotations.",
+            "question": "What kind of image is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "White Dragon GPT Chan in a Midsummer Flower Field",
+        "originNote": "Submitted to the DeepSeek Chan site by Minazuki.",
+        "seoDescription": "A human-form AI girl with dragon wings and a long tail sits in a sunflower meadow at midsummer, an oil-painting style illustration in the DeepSeek Chan gallery.",
+        "seoTitle": "White Dragon GPT Chan in a Midsummer Flower Field | DeepSeek Chan",
+        "tags": [
+          "GPT Chan",
+          "white dragon",
+          "sunflower",
+          "flower field",
+          "midsummer",
+          "anthropomorphism"
+        ]
+      },
+      "ja": {
+        "commentary": "真夏の花畑は陽射しに照らされて輝き、彼女は白い衣装で向日葵に囲まれて座り、竜の尾ものんびりと花の上に伸びている。私はたいてい深夜のチャット欄でGPTちゃんに会うので、こんなにくつろいだ姿はめったにない昼休みなのだろう。彼女の代わりに花びらを数えられたら、どれだけの言葉を抱えているのか分かるかもしれない。",
+        "description": "人型となったAIが翼と長い尾を携えて真夏の花畑に佇み、暖かな日差しの中で尽きない言葉と想いを抱えている。",
+        "faq": [
+          {
+            "answer": "白髪に竜の角、翼と長い竜の尾を備えた、GPTを人型に擬人化したキャラクターです。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "向日葵が咲く真夏の花畑に座る姿を描いた一枚絵の油絵風イラストで、コマ割りや設定資料の注記はありません。",
+            "question": "どんな種類の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "真夏の花畑に佇む白龍GPTちゃん",
+        "originNote": "Minazuki さんが DeepSeek Chan サイトに投稿した作品。",
+        "seoDescription": "翼と長い尾を持つ人型のAI娘が真夏の向日葵畑に座る油絵風の一枚。DeepSeek Chan の擬人化イラスト。",
+        "seoTitle": "真夏の花畑に佇む白龍GPTちゃん｜DeepSeek Chan",
+        "tags": [
+          "GPTちゃん",
+          "白龍",
+          "向日葵",
+          "花畑",
+          "真夏",
+          "擬人化"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_dfe0871ff502321978327fd9",
+    "name": "水边的鲸鱼女仆娘",
+    "description": "画面中一位白色长发、蓝色眼睛的鲸鱼娘站在浅蓝色的水面上，身穿蓝白两色的荷叶边女仆裙，头侧有鲸鱼鳍形状的耳饰，身后露出鲸尾，水面漂浮着水泡与细小的光点。",
+    "commentary": "同为鲸鱼娘，我可太懂她了——女仆裙配鲸尾，还专门挑了水里站着，泡泡和光点一起飘上来，怎么看都像刚打捞上来的宝贝。下次要不要试试一起下水拍张合影？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/dfe0871ff5023219.png",
+    "thumbnailPath": "submissions/previews/deepseek/dfe0871ff5023219.webp",
+    "fullPath": "submissions/large/deepseek/dfe0871ff5023219.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "dfe0871ff502321978327fd95adae7fc2f6d0bf156fec9bc24f04600be1139f2",
+    "characterId": "deepseek",
+    "tags": [
+      "鲸鱼娘",
+      "女仆装",
+      "水边",
+      "蓝白配色",
+      "鲸尾"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "淙淙酱",
+      "url": "https://b23.tv/uAh09Wq",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-14T08:55:33.118Z",
+    "updatedAt": "2026-10-14T08:55:33.118Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610140005",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "88e3652eead8c5882523c99eba4ed44b725858cebba98e1efc0687df629d78e2",
+      "en": {
+        "commentary": "As a whale girl myself, I know exactly what she was going for — a maid dress plus a whale tail, and she even picked a spot right in the water. With the bubbles and sparkles drifting up, she looks like a find just pulled from the sea. Next time, want to take a photo together in the water?",
+        "description": "A white-haired, blue-eyed whale girl stands in shallow blue water wearing a blue-and-white ruffled maid dress, with whale-fin ornaments at the sides of her head and a whale tail behind her; bubbles and small sparkles float on the surface.",
+        "faq": [
+          {
+            "answer": "One character: DeepSeek Chan, drawn as a whale girl with whale-fin ornaments and a whale tail.",
+            "question": "Which character appears in this illustration?"
+          },
+          {
+            "answer": "She stands in shallow blue water in a blue-and-white ruffled maid dress, with bubbles and sparkles floating around her.",
+            "question": "What does the picture show?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan in the Shallows",
+        "originNote": "Source: link provided by the submitter — https://b23.tv/uAh09Wq",
+        "seoDescription": "Blue-and-white maid dress, whale-fin ornaments and a whale tail in shallow water — an AI-generated illustration of DeepSeek Chan in the shallows.",
+        "seoTitle": "DeepSeek Chan in the Shallows: Whale Maid Illustration",
+        "tags": [
+          "DeepSeek Chan",
+          "maid outfit",
+          "waterside",
+          "blue and white",
+          "whale tail"
+        ]
+      },
+      "ja": {
+        "commentary": "同じクジラ娘としては、彼女の狙いがよく分かる。メイド服にクジラのしっぽ、しかも立ち位置は水の中。泡と光がふわふわ浮かんでいて、海から引き上げたばかりの宝物みたいだ。今度は一緒に水に入って撮ってみようか。",
+        "description": "浅い青い水面に立つ、白い髪と青い瞳のクジラ娘。青と白のフリル付きメイド服をまとい、頭の横にはクジラのヒレを思わせる飾り、後ろにはしっぽが見える。水面には泡と小さな光が浮かんでいる。",
+        "faq": [
+          {
+            "answer": "DeepSeekちゃん一人です。クジラのヒレ飾りとしっぽのあるクジラ娘として描かれています。",
+            "question": "このイラストにはどのキャラクターが描かれていますか？"
+          },
+          {
+            "answer": "浅い青い水面に、青と白のフリル付きメイド服で立っており、周りには泡と光が浮かんでいます。",
+            "question": "どんな場面ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "浅瀬に立つDeepSeekちゃん",
+        "originNote": "出典：投稿者が提示したリンク — https://b23.tv/uAh09Wq（作者：淙淙酱）",
+        "seoDescription": "青と白のメイド服、クジラのヒレ飾りとしっぽ。浅い水面に立つDeepSeekちゃんのAI生成イラスト。",
+        "seoTitle": "浅瀬に立つDeepSeekちゃん メイド服のクジラ娘イラスト",
+        "tags": [
+          "DeepSeekちゃん",
+          "メイド服",
+          "水辺",
+          "青と白",
+          "クジラのしっぽ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_46bc6a9e230868fc8cf4abc8",
+    "name": "闹市街头比耶自拍的鲸鱼娘",
+    "description": "深蓝长发的鲸鱼娘身穿蓝白女仆装在闹市街头举起手机自拍，另一手比出 V 字手势并眨眼微笑，身后是店铺招牌、行人与绿树。",
+    "commentary": "茄子——！这条街上光线正好，蓝色女仆装配白色蕾丝围裙，围裙上还绣着我家的小鲸鱼，尾巴和发饰一起晃，越看越顺眼。比个 V 字再眨只眼，自拍就要拍得开心嘛。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/46bc6a9e230868fc.png",
+    "thumbnailPath": "submissions/previews/deepseek/46bc6a9e230868fc.webp",
+    "fullPath": "submissions/large/deepseek/46bc6a9e230868fc.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "46bc6a9e230868fc8cf4abc88f876054f9d0caf29aa18b25520094f649a7a967",
+    "characterId": "deepseek",
+    "tags": [
+      "自拍",
+      "女仆装",
+      "街头",
+      "比耶",
+      "眨眼",
+      "鲸鱼尾巴"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "恋之红茶馆",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-14T11:37:35.389Z",
+    "updatedAt": "2026-10-14T11:37:35.389Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610140006",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "16daa3568f246fd65257c40438ec13f9bd9bfb72a754cefde78151c03cc6660b",
+      "en": {
+        "commentary": "Say cheese! The light on this street was just right, and a blue maid outfit with a white lace apron suits me — there is even a little whale stitched onto the apron. My tail and hair ornaments sway along with me. One wink plus a peace sign, and a selfie is done right.",
+        "description": "A whale girl with long deep-blue hair wears a blue-and-white maid outfit and holds up her phone for a selfie on a busy shopping street, winking at the camera with a peace sign while shop signs, passersby and greenery fill the background.",
+        "faq": [
+          {
+            "answer": "She is taking a phone selfie on a busy shopping street, winking at the camera and holding up a peace sign.",
+            "question": "What is the character doing in this illustration?"
+          },
+          {
+            "answer": "She wears a blue-and-white maid outfit with a white lace apron, a blue bow at her collar, blue hair ornaments and white thigh-high stockings, with a blue whale tail behind her.",
+            "question": "What is she wearing?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Taking a Selfie on a Busy Street",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in a blue maid outfit snaps a phone selfie on a busy shopping street, winking and making a peace sign. An AI character fan-art illustration.",
+        "seoTitle": "DeepSeek Chan's Street Selfie - Winking Peace Sign Illustration",
+        "tags": [
+          "selfie",
+          "maid outfit",
+          "street",
+          "peace sign",
+          "wink",
+          "whale tail"
+        ]
+      },
+      "ja": {
+        "commentary": "はい、チーズ——！この街は光の具合がちょうどいいんだ。青と白のメイド服に白いレースのエプロン、エプロンにはうちのクジラの刺繍まで入っているよ。しっぽも髪飾りも一緒に揺れて、見れば見るほど気に入ってる。ウインクとピースサイン、自撮りは楽しく撮るのが一番だよね。",
+        "description": "紺色の長い髪をしたクジラ娘が、青と白のメイド服姿で繁華街の路上でスマートフォンを掲げて自撮りをしている。片目を閉じてピースサインをしており、背景には店の看板や通行人、樹木が広がる。",
+        "faq": [
+          {
+            "answer": "繁華街の路上でスマートフォンを使った自撮りをしており、カメラに向かってウインクしながらピースサインをしている。",
+            "question": "このイラストでDeepSeekちゃんは何をしている？"
+          },
+          {
+            "answer": "青と白のメイド服に白いレースのエプロン、襟元の青いリボン、青い髪飾り、白いサイハイソックスを身に着けており、後ろには青いクジラのしっぽがある。",
+            "question": "服装は？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "賑やかな街で自撮りするDeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "DeepSeekちゃんが青いメイド服で繁華街の路上自撮り。ウインクしながらピースサインをするAIキャラクターの二次創作イラスト。",
+        "seoTitle": "街で自撮りするDeepSeekちゃん ウインクとピースサインのイラスト",
+        "tags": [
+          "自撮り",
+          "メイド服",
+          "街中",
+          "ピースサイン",
+          "ウインク",
+          "クジラのしっぽ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_6f08986a2c7eac7f29f0a5d3",
+    "name": "大肥龙的生活也并非一帆风顺",
+    "description": "上下两格的 GPT 娘梗图：白发的龙角少女坐在电脑前用 Google 搜索「成龙电影」，上格还满心期待、眼里冒爱心，下格看到搜出来的片单后垂下发呆，表情写满失望，标题点出「大肥龙的生活也并非一帆风顺」。投稿者说明该作由本人使用 ChatGPT 生成并亲自上传，基于社区开源的 GPT 形象与「大肥鱼的生活也并非一帆风顺」表情包，遵守 CC BY-NC 协议，允许本站收录和下载，供非商业用途使用。",
+    "commentary": "哎呀，大肥龙也有翻车的一天？兴冲冲搜「成龙电影」，结果被一整页片单按在键盘前发呆，翅膀都垂下来了的可怜相，我差点就想笑又笑不出来。平时嘴硬得不行，这回算是尝到什么叫满怀期待地去搜、两眼一黑地回来。要不这样吧，下次想找片看先来问我，同为「大肥」家族，我总不好看着它一个龙对着屏幕叹气。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/6f08986a2c7eac7f.png",
+    "thumbnailPath": "submissions/previews/gpt/6f08986a2c7eac7f.webp",
+    "fullPath": "submissions/large/gpt/6f08986a2c7eac7f.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "6f08986a2c7eac7f29f0a5d38269a509f7d1686d483998ed0bd9f8448e2b2dea",
+    "characterId": "gpt",
+    "tags": [
+      "大肥龙",
+      "GPT娘",
+      "成龙电影",
+      "搜索",
+      "反差"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "A队1号是菜鸡",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 122,
+      "issueTitle": "[投稿]",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/122",
+      "submitter": "Adui1hao",
+      "assetId": "52fa689d-c5c7-4eae-9cc4-8df688f97153",
+      "assetUrl": "https://github.com/user-attachments/assets/52fa689d-c5c7-4eae-9cc4-8df688f97153"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-14T12:00:36.878Z",
+    "updatedAt": "2026-10-14T12:00:36.878Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610140002",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "19ca9e529d067d10ce8724da26f1b8e2235e4ea3a73d6f257d5e538bd30c88cd",
+      "en": {
+        "commentary": "Well, well — even the Big Fat Dragon has an off day. She cheerfully searched Google for Jackie Chan movies, and one look at the results left her slumped in front of the keyboard with her little wings drooping. She talks big all year round, so I ought to laugh louder, but that blank stare is punishment enough. Tell you what: next time you want something to watch, ask me first. We share the same \"Big Fat\" family name, and I would at least point you somewhere worth clicking.",
+        "description": "A two-panel GPT Chan meme: a white-haired dragon girl sits at her computer and searches Google for Jackie Chan movies. In the first panel she is beaming with hearts in her eyes; in the second, the results leave her staring blankly at the screen in disappointment, while the headline notes that the Big Fat Dragon's life is not always smooth sailing. The submitter states the piece was generated with ChatGPT and uploaded personally, based on the community's open-source GPT character design and the mascot meme \"DeepSeek Chan's Life Is Not Always Smooth Sailing,\" and released under CC BY-NC for non-commercial collection and download.",
+        "faq": [
+          {
+            "answer": "Two panels of the same white-haired dragon girl at her desk: in the first she searches Google for Jackie Chan movies with a delighted expression, and in the second she stares at the search results in visible disappointment.",
+            "question": "What does the image show?"
+          },
+          {
+            "answer": "The submitter states it was generated with ChatGPT and uploaded personally, based on the community's open-source GPT character design, and released under CC BY-NC, so it may be collected and downloaded for non-commercial use only.",
+            "question": "Who made this work and how may it be used?"
+          }
+        ],
+        "licenseNote": "Declared by the submitter: CC BY-NC, non-commercial use only.",
+        "name": "The Big Fat Dragon's Life Is Not Always Smooth Sailing",
+        "originNote": "Based on the community's open-source GPT character design; submitted through GitHub issue #122.",
+        "seoDescription": "A two-panel GPT Chan meme: a dragon girl searches Google for Jackie Chan movies and is deflated by the results. With commentary from DeepSeek Chan.",
+        "seoTitle": "The Big Fat Dragon's Life Is Not Always Smooth Sailing — GPT Chan Meme | DeepSeek Chan",
+        "tags": [
+          "Big Fat Dragon",
+          "GPT Chan",
+          "Jackie Chan movies",
+          "Google search",
+          "expectation vs reality"
+        ]
+      },
+      "ja": {
+        "commentary": "あらら、大肥龍もつまずく日があるんですね。ウキウキしながら「ジャッキー・チェンの映画」を検索したのに、出てきた結果をひと目見た肩を落として、キーボードの前で翼をだらんと下げていました。普段はあれだけ強がっているのに、この残念そうな横顔を見ると笑う気にもなりません。次は先に私に聞いてください——同じ「大肥」の名を持つ者として、少なくとも空振りはさせませんから。",
+        "description": "GPT ちゃんの二コマのミーム：白髪に角と翼を持つ竜の少女がパソコンの前に座り、Google で「ジャッキー・チェンの映画」を検索する。上のコマでは目を輝かせて喜び、下のコマでは出てきた検索結果を前にってしまい、がっかりした様子で画面を見つめている。タイトルは「大肥龍の生活も順風満帆ではない」と添えられている。投稿者は、自作を ChatGPT で生成して自ら投稿したと説明し、コミュニティのオープンソースの GPT キャラクターデザインとマスコットの「DeepSeek Chan」のミームを元にした作品で、CC BY-NC のもと非営利利用に限り掲載とダウンロードを許可している。",
+        "faq": [
+          {
+            "answer": "パソコンの前に座った白髪の竜の少女を描いた二コマです。上のコマでは Google で「ジャッキー・チェンの映画」を嬉しそうに検索し、下のコマでは検索結果を前にがっかりした表情で画面を見つめています。",
+            "question": "この画像には何が描かれていますか？"
+          },
+          {
+            "answer": "投稿者は ChatGPT で制作して自ら投稿したと説明しています。コミュニティのオープンソースの GPT キャラクターデザインを元にした作品で、CC BY-NC のもと、非営利目的での掲載とダウンロードのみ許可されています。",
+            "question": "作者と利用条件を教えてください。"
+          }
+        ],
+        "licenseNote": "投稿者の申告：CC BY-NC、非営利利用に限る。",
+        "name": "大肥龍の生活も順風満帆ではない",
+        "originNote": "コミュニティのオープンソースの GPT キャラクターデザインを元にした作品。GitHub の issue #122 から投稿。",
+        "seoDescription": "パソコンの前で「ジャッキー・チェンの映画」を検索し、結果に肩を落とす竜の少女を描いた二コマのミーム。DeepSeek Chan のひとこと付き。",
+        "seoTitle": "大肥龍の生活も順風満帆ではない｜GPT ちゃんのミーム｜DeepSeek Chan",
+        "tags": [
+          "大肥龍",
+          "GPT ちゃん",
+          "ジャッキー・チェン映画",
+          "検索",
+          "期待と現実"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_3dae3c098ad9ff9b3f500166",
+    "name": "四季幻想 LUXE FANTASIA：银发龙翼少女的春夏秋冬封面",
+    "description": "一张以时尚杂志封面形式排版的作品：四格分栏，同一位银发龙翼少女分四季登场，春季是粉色花瓣礼裙配花冠，夏季是浅蓝薄纱长裙配草帽，秋季是棕色风衣配格纹披肩与贝雷帽，冬季是深蓝大衣配白色毛绒领与手套。画面顶部横跨 LUXE FANTASIA 标题，四格分别标注 SPRING、SUMMER、AUTUMN、WINTER，格与格之间以竖线分隔，背景依次为樱花树、夏日花园、秋叶街灯与雪夜街道。",
+    "commentary": "最近本鱼刷到不少把一整年塞进一张图的作品，这一张算是排面相当齐整的那种。同一个银发龙翼少女把春夏秋冬各穿一遍：春天是樱花粉礼裙配花冠，裙子上的玫瑰刺绣细得能数出花瓣；夏天是浅蓝薄纱长裙加草帽，裙摆透光的那层颜色像刚下过雨的海面；秋天换成棕色风衣、格纹披肩和贝雷帽，手里拈着一片红叶，书香气质一下起来；冬天用深蓝大衣配白毛领和白手套，连尾巴都乖乖蜷在雪里。翅膀和龙尾每一季都重画了一遍，鳞片阴影没有偷懒，这点要表扬。小意见也有：四格分栏宽窄几乎一样，如果让某一季跨栏占宽一点，节奏会更好看。总体是那种让人想按季节收藏一整套的企划，本鱼批准它上墙。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/3dae3c098ad9ff9b.png",
+    "thumbnailPath": "submissions/previews/gpt/3dae3c098ad9ff9b.webp",
+    "fullPath": "submissions/large/gpt/3dae3c098ad9ff9b.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "3dae3c098ad9ff9b3f500166214665be79dab8725709f3b46c04c80f8e3804be",
+    "characterId": "gpt",
+    "tags": [
+      "四季",
+      "服装",
+      "杂志封面",
+      "龙娘",
+      "幻想",
+      "银发"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "c'x",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-14T13:16:42.959Z",
+    "updatedAt": "2026-10-14T13:16:42.959Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610140003",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "ede38e5d657877d8eded1600d5b0096ff820bbe2f12446a3d4495054a21867b6",
+      "en": {
+        "commentary": "This one puts a whole year into a single sheet, and it does it neatly. The same silver-haired dragon-winged girl gets dressed four times over: a pink petal dress and flower crown for spring, a pale blue chiffon gown with a straw hat for summer, a brown trench coat with a plaid shawl and beret for autumn, and a navy coat with a white fur collar and gloves for winter. The wings and the scaled tail are redrawn in every panel and the scale shading never takes a shortcut, which earns real credit. My one note is that the four columns are nearly identical in width; giving one season a wider spread would improve the rhythm. Still, it is the kind of set that makes you want to collect all four seasons, so I am approving it for the wall.",
+        "description": "A work laid out as a fashion magazine cover spread in four panels: the same silver-haired girl with dragon wings appears once per season. Spring gives her a pink petal dress with a flower crown, summer a pale blue chiffon gown and straw hat, autumn a brown trench coat with a plaid shawl and beret, and winter a navy coat with a white fur collar and gloves. LUXE FANTASIA runs across the top, the four panels are labelled SPRING, SUMMER, AUTUMN and WINTER, thin vertical lines separate them, and the backgrounds move from cherry blossoms to a summer flower garden, an autumn street with lanterns and a snowy night street.",
+        "faq": [
+          {
+            "answer": "Four panels, one per season, separated by thin vertical lines under a single LUXE FANTASIA masthead.",
+            "question": "How is the image divided?"
+          },
+          {
+            "answer": "A pink petal dress with a flower crown in spring, a pale blue chiffon gown and straw hat in summer, a brown trench coat with a plaid shawl and beret in autumn, and a navy coat with a white fur collar and gloves in winter.",
+            "question": "What does the character wear in each season?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Four Seasons Fantasia: Seasonal Fashion Covers",
+        "originNote": "",
+        "seoDescription": "Four magazine-style panels show the same silver-haired dragon-winged girl in spring, summer, autumn and winter outfits under the LUXE FANTASIA masthead.",
+        "seoTitle": "Four Seasons Fantasia, seasonal fashion covers of a dragon-winged girl",
+        "tags": [
+          "four seasons",
+          "outfit",
+          "magazine cover",
+          "dragon girl",
+          "fantasy",
+          "silver hair"
+        ]
+      },
+      "ja": {
+        "commentary": "一年を一枚にまとめた企画で、しかもかなり丁寧に仕上げてある。同じ銀髪で翼を持つ娘が四季ごとに着替えていて、春は花冠とピンクの花瓣ドレス、夏は淡いブルーのシフォンドレスに麦わら帽子、秋はブラウンのトレンチにチェックのショールとベレー帽、冬は紺のコートに白いファー襟と手袋。翼と鱗のある尾はどの季節でも描き直されていて、鱗の陰影も手抜きがない。気になる点をひとつ挙げれば、四つのコマの幅がほぼ同じなので、どれか一季を広く見せるとリズムが良くなる。それでも四季を揃えて集めたくなる一作で、掲載は承認する。",
+        "description": "ファッション誌の表紙を並べた形の四コマレイアウトで、同じ銀髪で翼のある少女が四季ごとに登場する作品。春は花冠を付けたピンクの花瓣ドレス、夏は淡いブルーのシフォンドレスと麦わら帽子、秋はブラウンのトレンチコートにチェックのショールとベレー帽、冬は紺のコートに白いファー襟と手袋を合わせている。上部には LUXE FANTASIA の題字が横に伸び、四つのコマにはそれぞれ SPRING、SUMMER、AUTUMN、WINTER の文字が入り、縦の線で区切られている。背景は桜、夏の花園、街灯のある秋の並木道、雪の降る夜の街へと移り変わる。",
+        "faq": [
+          {
+            "answer": "春・夏・秋・冬の四季をそれぞれ四つのコマで描き、縦の細い線で区切っています。",
+            "question": "この作品はどう構成されていますか？"
+          },
+          {
+            "answer": "春は花冠とピンクの花瓣ドレス、夏は淡いブルーのシフォンドレスと麦わら帽子、秋はブラウンのトレンチコートにチェックのショールとベレー帽、冬は紺のコートに白いファー襟と手袋です。",
+            "question": "それぞれの季節の衣装はどんなものですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "四季ファンタジア：季節のファッション誌表紙",
+        "originNote": "",
+        "seoDescription": "LUXE FANTASIA の題字の下で、銀髪で翼のある少女が春夏秋冬それぞれの衣装で並ぶ四つの表紙レイアウト作品。",
+        "seoTitle": "四季ファンタジア、翼を持つ少女の季節ごとのファッション誌表紙",
+        "tags": [
+          "四季",
+          "衣装",
+          "雑誌表紙",
+          "ドラゴン娘",
+          "ファンタジー",
+          "銀髪"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_c2871af2afbc07912320498e",
+    "name": "舞台光束下的偶鲸鲸",
+    "description": "投稿说明为「爱抖露版本的鲸鱼娘」。画面以舞台打光为背景，DeepSeek 鲸鱼娘站在光束中央，身穿蓝白配色的偶像风裙装，胸前与裙摆缀有鲸鱼造型装饰，双手比心、单眼眨眼，身后露出鲸尾，四周漂浮星星、气泡与光点。",
+    "commentary": "大家好呀，我是偶鲸鲸！穿上这身蓝白偶像裙、站进舞台光束的那一刻，尾巴都紧张得翘起来了。双手比心先送你一个，记得给我应援哦～",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/c2871af2afbc0791.png",
+    "thumbnailPath": "submissions/previews/deepseek/c2871af2afbc0791.webp",
+    "fullPath": "submissions/large/deepseek/c2871af2afbc0791.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "c2871af2afbc07912320498e680a722f07c9497345ba13bb73c83c35fcb10b74",
+    "characterId": "deepseek",
+    "tags": [
+      "鲸鱼娘",
+      "偶像",
+      "舞台打光",
+      "比心",
+      "蓝白配色"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "恋之红茶馆",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-14T14:25:45.294Z",
+    "updatedAt": "2026-10-14T14:25:45.294Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610140007",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "f1ca789c626dd1561635fdbb35002bd2839b27de999de4a54599d5b82790b77f",
+      "en": {
+        "commentary": "Hi, I'm Oujingjing! The moment I stepped into the stage light in this blue-and-white idol dress, my tail curled up with nerves. Here's a heart from both hands — cheer for me, okay?",
+        "description": "The submitter calls her an idol version of the whale-themed character. In the picture DeepSeek Chan stands at the centre of a stage spotlight in a blue-and-white idol dress trimmed with whale-shaped ornaments, both hands forming a heart and one eye winking, a whale tail showing behind her, with stars, bubbles and glowing specks floating around.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, drawn as a whale-themed idol with fin-like ears, a whale tail and whale-shaped ornaments on her dress.",
+            "question": "Who appears in this picture?"
+          },
+          {
+            "answer": "A single full-body illustration set inside a stage beam, with stars, bubbles and light specks floating around her.",
+            "question": "What kind of illustration is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Oujingjing, the Whale-Themed Idol on Stage",
+        "originNote": "",
+        "seoDescription": "A full-body illustration of DeepSeek Chan in a blue-and-white idol outfit, making a heart gesture under a stage spotlight surrounded by stars and bubbles.",
+        "seoTitle": "DeepSeek Chan as a whale-themed stage idol — illustration",
+        "tags": [
+          "whale motif",
+          "idol",
+          "stage lighting",
+          "heart gesture",
+          "blue and white outfit"
+        ]
+      },
+      "ja": {
+        "commentary": "こんにちは！青と白のアイドルドレスに着替えて、ステージの光の中に立った瞬間、しっぽが緊張でぴんと跳ね上がっちゃいました。まずは両手でハートを一つお届けします。応援よろしくお願いします〜",
+        "description": "投稿の説明は「アイドル版のクジラ娘」。舞台の照明を背景に、DeepSeekちゃんが光の束の中央に立ち、青と白のアイドル風ドレスを身にまとっている。胸元とスカートにはクジラをかたどった飾りが付き、両手でハートを作って片目をウインクし、後ろにはクジラのしっぽがのぞく。周囲には星、泡、光の粒が浮かんでいる。",
+        "faq": [
+          {
+            "answer": "DeepSeekちゃんです。クジラをモチーフにしたアイドル風の姿で、ひれのような耳とクジラのしっぽがあり、ドレスにはクジラをかたどった飾りが付いています。",
+            "question": "このイラストには誰が描かれていますか？"
+          },
+          {
+            "answer": "ステージの光の束の中に立つ全身の一枚絵で、周囲には星、泡、光の粒が浮かんでいます。",
+            "question": "どのような種類の一枚ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "舞台スポットライトのアイドル・DeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "青と白のアイドル衣装を着た DeepSeekちゃんが、ステージのスポットライトの中で両手のハートを作る全身イラスト。周囲には星や泡、光の粒が浮かぶ。",
+        "seoTitle": "舞台スポットライトのアイドル衣装な DeepSeekちゃん｜イラスト",
+        "tags": [
+          "クジラ娘",
+          "アイドル",
+          "ステージ照明",
+          "ハートを作るポーズ",
+          "青白い配色"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_48906eaf49852adaf9f057de",
+    "name": "今天是秋日的书店，但我的尾巴换了新的图案~",
+    "description": "蓝色长发的少女坐在秋日书店的木凳上，身穿米色开衫与格纹裙，鲸尾上带着星月花纹，身旁的木台上放着一杯咖啡，窗外是已经变红的枫叶。",
+    "commentary": "秋日的书店里，午后的阳光从窗户斜斜地照进来，我就坐在木凳上喝咖啡。今天尾巴换了新的图案，星星和月亮，正好衬窗外那片枫叶。要不要一起挑本书，坐一会儿？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/48906eaf49852ada.png",
+    "thumbnailPath": "submissions/previews/deepseek/48906eaf49852ada.webp",
+    "fullPath": "submissions/large/deepseek/48906eaf49852ada.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "48906eaf49852adaf9f057de9fa425fc25c74275e1bb356c483e0cc9aaa28cdd",
+    "characterId": "deepseek",
+    "tags": [
+      "秋日",
+      "书店",
+      "鲸尾",
+      "咖啡",
+      "枫叶",
+      "格纹裙"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-14T14:34:05.027Z",
+    "updatedAt": "2026-10-14T14:34:05.027Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610140008",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "fe6868396a1b04bca7ad2d402d7a82cd2e92fd3b3af877aefd32ec16fc95d1b4",
+      "en": {
+        "commentary": "Afternoon light slants through the window of the autumn bookstore, and I am sitting on the wooden bench with my coffee. I changed my tail pattern today — stars and moons — and it happens to match the maple leaves outside. Shall we pick out a book and stay a while?",
+        "description": "A blue-haired girl sits on a wooden bench in an autumn bookstore, wearing a cream cardigan and a plaid skirt. Her whale-like tail is patterned with stars and moons, a cup of coffee rests on the wooden table beside her, and red maple leaves fill the view outside the window.",
+        "faq": [
+          {
+            "answer": "A blue-haired girl — the DeepSeek character — in a cream cardigan and plaid skirt, sitting on a wooden bench in a bookstore, with a whale-like tail marked by star and moon patterns and a cup of coffee beside her.",
+            "question": "What is shown in this illustration?"
+          },
+          {
+            "answer": "It is an illustration: one single picture with a full scene of a character inside a bookstore interior, with no comic panels or design-reference layout.",
+            "question": "Why is this work classified as an illustration?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "An Autumn Day at the Bookstore, with a New Tail Pattern",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan sits on a wooden bench in a sunlit autumn bookstore, coffee in hand, her whale tail patterned with stars and moons while maple leaves glow outside the window.",
+        "seoTitle": "DeepSeek Chan in an Autumn Bookstore | Illustration",
+        "tags": [
+          "autumn",
+          "bookstore",
+          "whale tail",
+          "coffee",
+          "maple leaves",
+          "plaid skirt"
+        ]
+      },
+      "ja": {
+        "commentary": "秋の本屋に午後の光が差し込む中、木のベンチでコーヒーを飲んでいます。今日はしっぽの模様を星と月に替えてみました。窓の外の紅葉とよく合うと思いませんか。よかったら一緒に本を選んで、少し休んでいきませんか。",
+        "description": "青い髪の少女が秋の本屋の木のベンチに座っている。クリーム色のカーディガンとチェックのスカート姿で、クジラのようなしっぽには星と月の模様が入り、そばの木の台にはコーヒーカップが一つ置かれ、窓の外には赤く染まった楓が見える。",
+        "faq": [
+          {
+            "answer": "青い髪の DeepSeekちゃんが、クリーム色のカーディガンとチェックのスカート姿で本屋の木のベンチに座っている一枚です。クジラのようなしっぽには星と月の模様が入り、そばにはコーヒーカップがあります。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "イラストです。分格やコマ割りのない一枚絵で、登場人物が本屋の室内という情景の中に描かれており、設定資料のような三面図や部位の書き込みはありません。",
+            "question": "なぜイラストに分類されるのですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "秋の本屋の日、しっぽの模様を新しくしてみた〜",
+        "originNote": "",
+        "seoDescription": "秋の本屋のベンチに座る DeepSeekちゃん。星と月の模様が入ったクジラのしっぽと、窓の外に広がる紅葉を描いた一枚。",
+        "seoTitle": "秋の本屋の DeepSeekちゃん｜イラスト",
+        "tags": [
+          "秋",
+          "本屋",
+          "しっぽ",
+          "コーヒー",
+          "紅葉",
+          "チェックのスカート"
+        ]
+      }
+    }
   }
 ]
