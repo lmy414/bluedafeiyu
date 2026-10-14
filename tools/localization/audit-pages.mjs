@@ -13,7 +13,8 @@ function scan(dir,lang) {for(const entry of fs.readdirSync(dir,{withFileTypes:tr
   if(work){details++;if(!native||document.querySelector('main h1')?.textContent!==native.name||!document.querySelector('[data-work-faq]'))problems.push({file:path.relative(out,file),problem:'Missing native work title/FAQ'});}
   const pattern=lang==='en'?/[\u3400-\u9fff]|Whale[ -]?Chan|DeepSeek Chan\.com|Blue Fish|Fat Fish/u:/蓝|鲸|这|们|说|图|语|DeepSeek Chan\.com/u;
   const seen=new Set();
-  function check(text,kind){const value=String(text||'').trim();if(value&&!seen.has(value)&&pattern.test(remaining(value))){seen.add(value);problems.push({file:path.relative(out,file),kind,text:value});}}
+  // The homepage SEO intentionally includes the exact Chinese brand. Other text still uses the native-language audit.
+  function check(text,kind){const value=String(text||'').trim();let checked=remaining(value);if(['title','metadata','schema'].includes(kind) && path.basename(file)==='index.html')checked=checked.replaceAll('蓝色大肥鱼','').replaceAll('藍色大肥魚','');if(value&&!seen.has(value)&&pattern.test(checked)){seen.add(value);problems.push({file:path.relative(out,file),kind,text:value});}}
   for(const el of document.querySelectorAll('body *')){
     if(el.closest('script,style,code,pre,textarea,noscript,.lang-menu'))continue;
     for(const node of el.childNodes)if(node.nodeType===3)check(node.textContent,'body');

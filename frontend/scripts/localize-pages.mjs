@@ -1,4 +1,6 @@
 import fs from 'node:fs';
+import { homeMeta, guides, guidePath, localizedCopy } from '../src/lib/landing-copy.mjs';
+import { aboutSEO, aboutDescription, aboutQuestions } from '../src/lib/about-copy.mjs';
 import {applyNativeContent} from './native-content.mjs';
 import {nativeArchiveName} from './native-archives.mjs';
 import path from 'node:path';
@@ -54,6 +56,20 @@ function pageMeta(document, api, base, snapshot, archive) {
   } else if (locale === 'zh-Hant' && !['index', 'category', 'topics', 'submit', 'about', 'characters', 'community', 'search', 'projects', 'changelog', 'notfound', 'event'].includes(page)) {
     document.title = converter(document.title);
     setMeta(document, 'meta[name="description"]', converter(document.querySelector('meta[name="description"]')?.getAttribute('content') || ''));
+  }
+  let landing;
+  if (base === '/index.html') landing = homeMeta(snapshot.works.filter(w=>w.status === 'published').length, locale);
+  if (base === '/about.html') landing = { title: localizedCopy(aboutSEO,locale), description: localizedCopy(aboutDescription,locale) };
+  const guide = guides.find(g => guidePath(g) === base);
+  if (guide) landing = { title: localizedCopy(guide.name,locale) + (locale === 'en' ? ' | Blue Dafeiyu' : locale === 'ja' ? ' | 藍色大肥魚' : ' — 蓝色大肥鱼'), description: localizedCopy(guide.summary,locale) };
+  if (base === '/category.html' && ['en','ja'].includes(locale)) landing = {
+    title: locale === 'en' ? 'AI Girl Character Guide: DeepSeek, GPT, Claude & More | Blue Dafeiyu' : 'AI娘キャラクター図鑑：DeepSeek・GPT・Claudeほか | 藍色大肥魚',
+    description: locale === 'en' ? 'Find AI girl memes, illustrations and comics by character. Explore separate archives for DeepSeek, GPT, Claude, GLM, Gemini and Kimi, with sources and license information.' : 'AIキャラクターのスタンプ、イラスト、漫画を探せます。DeepSeek、GPT、Claude、GLM、Gemini、Kimiのアーカイブで、作品の出典と利用許諾をご覧ください。'
+  };
+  if (landing) {
+    document.title = locale === 'zh-Hant' && base !== '/index.html' ? converter(landing.title) : landing.title;
+    setMeta(document, 'meta[name="description"]', locale === 'zh-Hant' && base !== '/index.html' ? converter(landing.description) : landing.description);
+    for (const selector of ['meta[property="og:image:alt"]','meta[name="twitter:image:alt"]']) setMeta(document,selector,document.title);
   }
   const desc = document.querySelector('meta[name="description"]')?.getAttribute('content') || '';
   if (locale !== 'zh') {
@@ -111,16 +127,30 @@ export async function localizeHtml(html, base, locale, snapshot) {
         const name=nativeArchiveName(new URL(archivePath,ORIGIN).pathname.replace(/^\/(en|ja)/,''),api,snapshot);if(name)value.name=name;
       }
       for (const [key, child] of Object.entries(value)) {
-        if (typeof child === 'string' && ['url','@id','item'].includes(key)) {
+        if (typeof child === 'string' && ['url','@id','item','urlTemplate'].includes(key)) {
           const target = new URL(child, ORIGIN + base);
           if (target.origin === ORIGIN && (target.pathname.endsWith('.html') || target.pathname === '/')) value[key] = ORIGIN + toPage(child);
-        } else if (typeof child === 'string' && ['name','description','headline','caption','alternateName','text','keywords'].includes(key)) {
+        } else if (typeof child === 'string' && ['name','description','headline','caption','text','keywords'].includes(key)) {
           value[key] = api.contentText(child);
         } else if (child && typeof child === 'object' && !['creator','author','copyrightHolder'].includes(key)) localizeSchema(child);
       }
       if (value.inLanguage) value.inLanguage = locale.html;
+      if (archivePath && value.name && ['en','ja'].includes(locale.id)) {
+        const route = new URL(archivePath,ORIGIN).pathname.replace(/^\/(en|ja)(?=\/)/,'');
+        const guide = guides.find(g=>guidePath(g)===route);
+        if (guide) value.name = localizedCopy(guide.name,locale.id);
+        else if (route === '/category.html') value.name = document.title;
+      }
+      if (base === '/index.html' && ['WebSite','Organization'].includes(value['@type'])) {
+        value.name = locale.id === 'en' ? 'Blue Dafeiyu' : locale.id === 'zh' ? '蓝色大肥鱼' : '藍色大肥魚';
+        if (value['@type'] === 'WebSite') value.description = desc;
+      }
     }
     if (!(data['@type']==='FAQPage' && work?.i18n?.[locale.id])) localizeSchema(data);
+    if (base === '/about.html' && data['@type'] === 'FAQPage') {
+      const index = locale.id === 'en' ? 1 : locale.id === 'ja' ? 2 : 0;
+      data.mainEntity = aboutQuestions.map(row=>({ '@type':'Question', name: index === 0 && locale.id === 'zh-Hant' ? converter(row[0]) : row[index], acceptedAnswer:{ '@type':'Answer', text: index === 0 && locale.id === 'zh-Hant' ? converter(row[3]) : row[index+3] } }));
+    }
     if (locale.id !== 'zh' && ['WebSite','WebPage','CollectionPage'].includes(data['@type'])) {
       data.name=document.title;
       data.description=desc;

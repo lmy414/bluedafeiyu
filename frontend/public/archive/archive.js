@@ -1,6 +1,6 @@
 import {renderWorkCard} from './work-card.js?v=4';
 import {copyImage} from './image-copy.js?v=1';
-import {installTopicDownloads} from './topic-download.js?v=2';
+import {installTopicDownloads} from './topic-download.js?v=3';
 (() => {
   'use strict';
   const $ = (selector, parent = document) => parent.querySelector(selector);

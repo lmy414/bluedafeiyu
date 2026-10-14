@@ -3,8 +3,14 @@ import V2 from '../layouts/Archive.astro';
 import { SITE } from '../lib/v2.mjs';
 import DocumentPage from '../components/archive/DocumentPage.astro';
 import AcknowledgementCard from '../components/archive/AcknowledgementCard.astro';
+import { site, works } from '../lib/site.mjs';
+import { workCharacterIds } from '../../../tools/work-characters.mjs';
+import { aboutCopy, aboutQuestions, aboutSEO, aboutDescription } from '../lib/about-copy.mjs';
+const deepseekCount = works.filter(w => workCharacterIds(w).includes('deepseek')).length;
+const characters = site.characters.filter(c => c.status === 'active' && works.some(w => workCharacterIds(w).includes(c.id)));
+const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', inLanguage: 'zh-CN', mainEntity: aboutQuestions.map(row => ({ '@type': 'Question', name: row[0], acceptedAnswer: { '@type': 'Answer', text: row[3] } })) };
 ---
-<V2 title="关于蓝色大肥鱼 - AI娘表情包开放档案与版权说明" desc="了解蓝色大肥鱼 AI娘表情包开放档案、图片版权与授权、Google Analytics 统计隐私、评论机制、官方 QQ 交流群、角色设计致谢和删除申请方式。" path="/about.html" active="about" bodyPage="about" pageStyles={["/page-styles/about.css"]} robots="index,follow">
+<V2 title={aboutSEO[0]} desc={aboutDescription[0]} path="/about.html" active="about" bodyPage="about" pageStyles={["/page-styles/about.css"]} robots="index,follow" schemas={[faqSchema]}>
 <DocumentPage>
 
     <h1 class="page-title" data-i18n="about.h1">关于</h1>
@@ -12,13 +18,25 @@ import AcknowledgementCard from '../components/archive/AcknowledgementCard.astro
 
     <div class="about-columns">
     <div class="about-main">
+    <h2 class="section-label" id="what-is-blue-dafeiyu" data-i18n="d.about.whatTitle">{aboutCopy.whatTitle[0]}</h2>
+    <div class="panel about-card tilt-l"><div class="prose">
+      <p data-i18n="d.about.whatText">{aboutCopy.whatText[0]}</p>
+      <p><a href="https://news.17173.com/content/08212026/094421441.shtml" target="_blank" rel="noopener noreferrer" data-i18n="d.about.source">{aboutCopy.source[0]}</a></p>
+      <p><a href="/characters/deepseek.html" data-character-name="deepseek" data-character-label="DeepSeek娘">DeepSeek娘</a></p>
+    </div></div>
     <h2 class="section-label" data-i18n="about.site.title">关于本站</h2>
     <div class="panel about-card tilt-l">
       <div class="prose">
         <p><span data-i18n="about.site.p1a">「蓝色大肥鱼」是收集 </span><strong data-i18n="about.site.p1b">AI 娘二创表情包</strong><span data-i18n="about.site.p1c">的开放档案：作品按角色归档，支持按名称、Tag 与角色别名检索；每张作品都有独立详情页，可以查看来源与授权、下载原图，还带一个独立的评论区。更新日志见页脚。</span></p>
         <p><span data-i18n="about.site.p2a">你能在这里做的事：按角色与分类浏览全部作品；用关键词搜名称、Tag 或别名；进详情页拿原图；在作品下留言讨论；也可以把自己的作品</span><a href="/submit.html" data-i18n="about.site.p2link">投稿</a><span data-i18n="about.site.p2b">进来。</span></p>
+        <p data-about-count><span data-i18n="d.about.countLabel">{aboutCopy.countLabel[0]}</span> <b>{works.length}</b> <span data-i18n="d.about.countUnit">{aboutCopy.countUnit[0]}</span> <b>{deepseekCount}</b> <span data-i18n="d.about.countEnd">{aboutCopy.countEnd[0]}</span></p>
+        <h3 data-i18n="d.about.charactersTitle">{aboutCopy.charactersTitle[0]}</h3>
+        <div class="role-entry-links">{characters.map(c => <a class="tag" href={'/characters/'+c.id+'.html'} data-character-name={c.id} data-character-label={c.name}>{c.name}</a>)}</div>
       </div>
     </div>
+
+    <h2 class="section-label" id="faq" data-i18n="d.about.faqTitle">{aboutCopy.faqTitle[0]}</h2>
+    <div class="panel about-card"><div class="reading-faq">{aboutQuestions.map((row,i) => <details><summary data-i18n={'d.about.faq.'+i+'.q'}>{row[0]}</summary><div><p data-i18n={'d.about.faq.'+i+'.a'}>{row[3]}</p>{i === 2 && <a class="text-link" href="/submit.html" data-i18n="nav.submit">投稿</a>}{i === 1 && <a class="text-link" href="#licensing" data-i18n="about.rights.acquireTitle">如何取得图片使用许可</a>}</div></details>)}</div></div>
 
     <h2 class="section-label" id="license" data-i18n="about.license.title">许可与版权</h2>
     <div class="panel about-card tilt-r">

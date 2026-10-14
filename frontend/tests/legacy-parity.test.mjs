@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
+import {guides} from '../src/lib/landing-copy.mjs';
 const root=path.resolve(import.meta.dirname,'../..');
 const out=process.env.SITE_OUT_DIR ? path.resolve(process.env.SITE_OUT_DIR) : path.join(root,'.build/site');
 const data=JSON.parse(fs.readFileSync(process.env.SITE_SNAPSHOT ? path.resolve(process.env.SITE_SNAPSHOT) : path.join(root,'dist/site-data.json'),'utf8'));
@@ -31,7 +32,7 @@ test('active topics produce static pages with a shared collection layout and ori
  const topics=data.topics||[];
  const topicDir=path.join(out,'topics');
  const pages=fs.existsSync(topicDir) ? fs.readdirSync(topicDir).filter(p=>p.endsWith('.html')).sort() : [];
- assert.deepEqual(pages,topics.map(t=>`${t.id}.html`).sort(),'专题页面必须与快照 ID 精确对应');
+ assert.deepEqual(pages,[...topics,...guides].map(t=>`${t.id}.html`).sort(),'专题页面必须与快照专题和固定导览 ID 精确对应');
  // 无有效专题时不要求 topics/ 目录存在（getStaticPaths 为空，构建不会生成这一点）。
  if(!topics.length)return;
  for(const topic of topics){

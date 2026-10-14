@@ -17,6 +17,8 @@ import {createSearchPage} from "../components/archive/SearchPage.mjs";
 import {createCommunityPage} from "../components/archive/CommunityPage.mjs";
 import {createEventPage} from "../components/archive/EventPage.mjs";
 import {createUtilityPages} from "../components/archive/UtilityPages.mjs";
+import {createGuidePages} from "../components/archive/GuidePages.mjs";
+import { aboutCopy, aboutQuestions } from './about-copy.mjs';
 const root = process.env.SITE_SOURCE || path.resolve(process.cwd(), '..');
 const read = name => JSON.parse(fs.readFileSync(path.join(root, 'frontend/src/data', name), 'utf8'));
 const works = Object.entries(overlayData()).map(([slug,w])=>({...w,slug}));
@@ -31,6 +33,15 @@ const topics = snapshot.topics.filter(t=>t.status!=='removed').map(t=>{
 });
 const tagCounts=new Map();for(const w of works)for(const tag of w.tg)tagCounts.set(tag,(tagCounts.get(tag)||0)+1);
 const translations={en:{},ja:{}};
+for (const [key, values] of Object.entries(aboutCopy)) {
+  translations.en['d.about.'+key] = values[1]; translations.ja['d.about.'+key] = values[2];
+}
+for (const [i, row] of aboutQuestions.entries()) {
+  for (const [key, offset] of [['q',0],['a',3]]) {
+    translations.en['d.about.faq.'+i+'.'+key] = row[offset+1];
+    translations.ja['d.about.faq.'+i+'.'+key] = row[offset+2];
+  }
+}
 for(const [key, en, ja] of [
   ['specialThanks','Special thanks','特別な感謝'],['visitWebsite','Visit website','サイトを見る'],
   ['discover','Discover','見つける'],['gallery','All works','作品一覧'],['brandSub','AI-girl fan art archive','AI娘の二次創作アーカイブ'],
@@ -75,6 +86,7 @@ createDiscovery(ctx);
 createBrowsePages(ctx);
 createCharacterPages(ctx);
 createCollectionPages(ctx);
+createGuidePages(ctx);
 createWorkPages(ctx);
 createSearchPage(ctx);
 createCommunityPage(ctx);

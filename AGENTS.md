@@ -64,6 +64,8 @@ python -m http.server 5173 -d .build/site
 
 作品详情正文来自 `data/works.json` 或 `data/owner-picks.json` 的 `commentary`，SEO 文案公式在 `frontend/src/lib/seo.mjs`。六类单选类型由 `data/categories.json` 自动生成 `/categories/<id>.html`；专题由 `data/topics.json` 自动生成 `/topics/<id>.html`，每个专题需有有效作品。旧的 `/category.html` 与 `/topics.html` 仍保留。
 
+搜索专题导览的文案在 `frontend/src/lib/landing-copy.mjs`，页面由 `GuidePages.mjs` 生成。导览链接到现有角色、类型和作品，不修改后台人工精选专题的成员。`gemini-memes`、`deepseek-whale` 和 `deepseek-girl` 是导览保留 ID，后台专题不要使用这三个 ID。
+
 界面支持简体中文（`zh`，默认）、繁体中文（`zh-Hant`）、英语（`en`）和日语（`ja`）。简体保留原 URL，其他语言使用 `/zh-hant/`、`/en/` 和 `/ja/` 前缀。`frontend/scripts/localize-pages.mjs` 在 Astro 构建后复用 `frontend/public/lang.js` 生成各语言静态 HTML、canonical、hreflang 和 sitemap。语言菜单跳转到当前页面的对应版本，地址固定页面语言，不受浏览器偏好影响。动态链接用 `SiteLang.url()` 保持当前语言；图片、脚本和数据共用根目录资源。繁体动态文案按需加载站内 OpenCC，特殊用词在 `traditionalOverrides` 中维护。动态文案改动后要检查繁体转换和英、日词典。`frontend/public/page-styles/`、`page-scripts/` 管页内特有代码；公共布局与可复用结构在 `frontend/src/layouts/`、`components/`。后台 `admin/` 独立运行，不参与公开前端。
 
 英日详情页必须有真实译文。存量译文在 `data/work-localizations.json`，新内容从后台的 `i18n` 导出；中文修改后必须重新生成译文。公共文案由 Astro 直接读取 `data/site-copy-localizations.json`，命名与维护规则见 `docs/多语言内容维护.md`。发布前运行 `node tools/localization/audit-pages.mjs <构建目录>` 检查正文及结构化数据。

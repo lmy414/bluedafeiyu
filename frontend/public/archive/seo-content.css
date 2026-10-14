@@ -1,4 +1,7 @@
 /* Reading modules and visible static pagination reuse the original paper theme. */
+[data-editorial-guide] .button{white-space:normal;max-width:100%;overflow-wrap:anywhere}
+[data-editorial-guide] .breadcrumbs{flex-wrap:wrap}
+[data-editorial-guide] .breadcrumbs>span:last-child{white-space:normal;min-width:0;overflow-wrap:anywhere}
 .page-head h1{font-size:30px;line-height:1.5;max-width:750px}
 .character-info h1 small{display:block;font-family:var(--font-sans);font-size:15px;letter-spacing:0;line-height:1.7;margin-top:7px;color:var(--text-secondary)}
 .model-vendor{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 7px;margin:12px 0;font-size:13px;line-height:1.8;color:var(--text-secondary)}

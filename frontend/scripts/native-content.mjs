@@ -1,8 +1,16 @@
 import {applyNativeArchives} from './native-archives.mjs';
+import {aboutCopy,aboutQuestions} from '../src/lib/about-copy.mjs';
 const escape=value=>String(value||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function applyNativeContent(document,api,base,snapshot) {
   const native=['en','ja'].includes(api.current);
   if(!native)return;
+  // Keep the approved brand wording in the visible FAQ identical to its schema.
+  for(const el of document.querySelectorAll('[data-i18n^="d.about."]')) {
+    const key=el.getAttribute('data-i18n').slice('d.about.'.length), index=api.current==='en'?1:2;
+    const question=key.match(/^faq\.(\d+)\.([qa])$/);
+    const text=question?aboutQuestions[Number(question[1])]?.[index+(question[2]==='a'?3:0)]:aboutCopy[key]?.[index];
+    if(text)el.textContent=text;
+  }
   const bySlug=new Map(snapshot.works.map(w=>[w.slug,w]));
   const localized=w=>w?.i18n?.[api.current];
   const textMap=new Map();for(const w of snapshot.works){const value=localized(w);if(value)for(const field of ['name','description','commentary'])if(w[field]&&!textMap.has(w[field]))textMap.set(w[field],value[field]);}
@@ -37,6 +45,7 @@ export function applyNativeContent(document,api,base,snapshot) {
   const protectedText='.work-facts dd,.work-detail .source-note,[data-i18n="v2.cm.owner"],.author-profile h1,.author-name,.topic-author b,.topic-author .author-initial';
   const authoredText='.work-card,.detail-info h1,.detail-info .tags,.work-description,.fish-comment p,.detail-role,.breadcrumbs > span:last-child,.detail-image img,.work-facts small,[data-work-faq]';
   for(const el of document.querySelectorAll('*')) {
+    if(el.closest('[data-i18n^="d.about."],[data-i18n^="d.guide."],[data-i18n="d.homeTitle"]'))continue;
     if(identities.has(el.textContent.trim()) || el.closest('script,style,code,pre,textarea,.lang-fallback,.work-card,'+protectedText) || (value && el.closest(authoredText)))continue;
     for(const node of el.childNodes)if(node.nodeType===3)node.textContent=nativeText(node.textContent);
     for(const attr of ['alt','title','aria-label','placeholder'])if(el.hasAttribute(attr))el.setAttribute(attr,nativeText(el.getAttribute(attr)));

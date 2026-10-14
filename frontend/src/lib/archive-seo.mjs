@@ -3,6 +3,7 @@ import { workBySlug, ogCard, ORIGIN, SITE } from './v2.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { seoContext, seoTitle } from './seo.mjs';
+import { homeMeta, guides, guidePath } from './landing-copy.mjs';
 
 export const pageURL = (base, n) => n === 1 ? base :
   (base === '/browse.html' ? '/page/' : base.replace(/\.html$/, '/page/')) + n + '.html';
@@ -27,7 +28,7 @@ export function createSEO(ctx) {
   }
   for (const t of topics) add('/topics/' + t.id + '.html', t.list, t.name + ' · AI 娘作品合集', 'topic', { topic: t });
   const main = {
-    '/index.html': ['蓝色大肥鱼 — DeepSeek娘表情包与 AI 娘二创档案', `收录 ${works.length} 件 AI 娘表情包、插画、立绘设定与漫画。按角色、类型和日常场景找图，查看 DeepSeek娘等角色的作品来源、署名与授权信息。`],
+    '/index.html': Object.values(homeMeta(works.length)),
     '/characters.html': ['AI 娘角色档案：DeepSeek娘、GPT娘与更多角色 — 蓝色大肥鱼', `浏览 ${chars.length} 位有作品的 AI 娘角色，查看名字、现有别名和代表作品，进入各角色的表情包、插画、设定图与漫画档案。`],
     '/topics.html': ['AI 娘主题合集与作者作品集 — 蓝色大肥鱼', '浏览猫鲸作者作品集与日常场景选题，按问候、工作、安慰和角色初见阅读作品。主题合集保留作品来源、署名与授权记录。'],
     '/search.html': ['搜索 AI 娘作品、角色与标签 — 蓝色大肥鱼', '用作品名、角色别名、图片说明或标签查找已收录的 AI 娘作品，并按角色与作品类型筛选。'],
@@ -38,8 +39,9 @@ export function createSEO(ctx) {
     '/changelog.html': ['蓝色大肥鱼更新日志：内容收录与站点变更', '查阅蓝色大肥鱼正式站点的历史更新记录，了解作品收录、功能和维护变更。查看正式站点的内容收录与功能变更。'],
     '/projects.html': ['蓝色大肥鱼相关项目与图片来源仓库', '访问图片存档仓库、站点源码、首批上游图片档案和前台设计展览，了解作品整理与创作的相关项目。'],
     '/404.html': ['页面不存在 — 蓝色大肥鱼', '这个页面不存在或作品已下架。返回作品档案，按角色与类型继续寻找图片。'],
-    '/category.html': ['AI 娘角色目录旧入口 — 蓝色大肥鱼', '保留旧角色目录与历史链接，前往新的角色档案查找表情包、插画和漫画。']
+    '/category.html': ['AI 娘角色图鉴：DeepSeek娘、GPT娘、Claude娘与更多 — 蓝色大肥鱼', '按角色寻找 AI 娘表情包、插画和漫画。进入 DeepSeek娘、GPT娘、Claude娘、GLM娘、Gemini娘和 Kimi娘的独立档案，查看来源与授权。']
   };
+  for (const guide of guides) main[guidePath(guide)] = [guide.name[0] + ' — 蓝色大肥鱼', guide.summary[0]];
   const full = p => /^https?:/.test(p) ? p : ORIGIN + p;
   const json = value => JSON.stringify(value).replace(/</g, '\\u003c');
   const characterFor = w => chars.find(c => c.id === w.cid);
@@ -62,7 +64,7 @@ export function createSEO(ctx) {
     let title = main[url]?.[0] || fallback + ' — 蓝色大肥鱼';
     let desc = main[url]?.[1] || options.desc || '';
     let image = '/avatar.png', schema, trail = [['蓝色大肥鱼', '/']];
-    let indexOnPublish = !['/search.html', '/404.html', '/category.html'].includes(url);
+    let indexOnPublish = !['/search.html', '/404.html', '/category.html', '/submit.html'].includes(url);
     if (c) {
       title = c.name + (c.n > 1 ? ` · 第 ${c.n} 页` : '') + ' — 蓝色大肥鱼';
       desc = description(c) + (c.n > 1 ? ` 当前为第 ${c.n} 页。` : '');
@@ -89,6 +91,14 @@ export function createSEO(ctx) {
     } else {
       trail.push([title, canonicalPath]);
       schema = { '@type': url === '/index.html' ? 'WebSite' : 'WebPage', '@id': canonical + '#page', url: canonical, name: title, description: desc, inLanguage: 'zh-CN' };
+      if (url === '/index.html') schema = { '@context': 'https://schema.org', '@graph': [
+        { '@type': 'WebSite', '@id': ORIGIN + '/#website', url: ORIGIN + '/', name: '蓝色大肥鱼',
+          alternateName: ['大肥鱼', '大肥魚', '藍色大肥魚', '蓝色大肥鱼.com', 'Blue Dafeiyu'],
+          description: desc, inLanguage: 'zh-CN', publisher: { '@id': ORIGIN + '/#organization' },
+          potentialAction: { '@type': 'SearchAction', target: { '@type': 'EntryPoint', urlTemplate: ORIGIN + '/search.html?q={search_term_string}' }, 'query-input': 'required name=search_term_string' } },
+        { '@type': 'Organization', '@id': ORIGIN + '/#organization', url: ORIGIN + '/', name: '蓝色大肥鱼',
+          alternateName: ['大肥鱼', '大肥魚', '藍色大肥魚', 'Blue Dafeiyu'], logo: ORIGIN + '/favicon.png', sameAs: [SITE.repoSource, SITE.repoContent] }
+      ] };
     }
     const breadcrumb = { '@type': 'BreadcrumbList', itemListElement: trail.map(([name, p], i) => ({ '@type': 'ListItem', position: i + 1, name, item: full(p) })) };
     const record = { url: canonicalPath, canonical, title, description: desc, image: full(image), og: ogCard('archive-' + (url === '/index.html' ? 'home' : url.replace(/[^a-z0-9-]/gi, '-')), { displayUrl: image, description: w?.d || title, name: w?.n || title }, title, w?.c || c?.character?.name || 'AI 娘二创档案', c?.type || ''), indexOnPublish,

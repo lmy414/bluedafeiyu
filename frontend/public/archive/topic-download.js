@@ -24,6 +24,7 @@ export function installTopicDownloads({ load, tx, toast }) {
     if (typeof window.gtag === 'function') window.gtag('event', 'topic_download', {
       topic_id: current.topic.id, image_count: current.files.size,
       failed_count: current.works.length - current.files.size, transport_type: 'beacon',
+      send_to: 'G-4LWN9Z2WT2',
     });
   }
   function download(current) {
