@@ -1,0 +1,277 @@
+/* Journal destination pages: put the existing primary operation near the title. */
+body.archive.j-first-screen .page-head { margin: 20px 0 18px; }
+body.archive.j-first-screen .page-head h1 { margin-top: 3px; font-size: 29px; line-height: 1.4; }
+body.archive.j-first-screen .page-head .lede { margin-top: 5px; font-size: 13px; line-height: 1.75; }
+body.archive.j-first-screen .breadcrumbs { margin: 17px 0 13px; font-size: 12px; }
+body.archive.j-first-screen .fs-disclosure { min-width: 0; color: var(--j-muted); }
+body.archive.j-first-screen .fs-disclosure>summary { cursor: pointer; color: var(--j-blue); font-size: 12px; line-height: 1.6; padding: 8px 0; width: fit-content; }
+body.archive.j-first-screen .fs-disclosure>summary::marker { font-size: 10px; }
+body.archive.j-first-screen .fs-disclosure[open]>.fs-disclosure-content { padding-top: 9px; }
+body.archive.j-first-screen .fs-disclosure-content { min-width: 0; }
+body.archive.j-first-screen .fs-disclosure-content>small { display: block; font-size: 13px; line-height: 1.8; }
+
+/* Three controls stay together; explanation is still one click away. */
+body.archive.j-first-screen .fs-filter-bar { gap: 6px 14px; padding: 13px 15px 8px; }
+body.archive.j-first-screen .fs-filter-bar .filter-fields { flex: 1 1 calc(100% - 90px); gap: 12px; }
+body.archive.j-first-screen .fs-filter-bar .filter-fields label { gap: 5px; }
+body.archive.j-first-screen .fs-filter-bar .filter-select-button { min-height: 42px; }
+body.archive.j-first-screen .fs-filter-bar>.text-button { min-height: 42px; margin: 0; }
+body.archive.j-first-screen .fs-filter-help { flex: 1 1 100%; }
+body.archive.j-first-screen .fs-filter-help>summary { font-size: 11px; padding: 4px 0; }
+body.archive.j-first-screen .fs-filter-help .filter-help { margin: 0 0 5px; font-size: 12px; line-height: 1.7; }
+body.archive.j-first-screen .results-line { margin: 11px 0 14px; font-size: 12px; }
+body.archive.j-first-screen .results-line small { font-size: 11px; }
+body.archive.j-first-screen .search-large { padding: 7px 8px 7px 14px; margin: 0; }
+body.archive.j-first-screen .suggested-tags { gap: 7px; margin: 10px 0 15px; font-size: 12px; }
+body.archive.j-first-screen .suggested-tags b { width: auto; font-size: 12px; }
+body.archive.j-first-screen .suggested-tags .tag { padding: 4px 8px; font-size: 12px; }
+body.archive.j-first-screen #search-discovery { margin-top: 24px; }
+
+/* Character: a compact identity strip, then the live collection and filters. */
+body.archive.fs-character-page .character-hero { grid-template-columns: 130px minmax(0,1fr); align-items: start; overflow: visible; }
+body.archive.fs-character-page .character-portrait { height: 169px; min-height: 0; padding: 15px 14px 29px; border-radius: 12px 0 0 12px; }
+body.archive.fs-character-page .character-portrait img { height: 120px; padding: 5px; max-width: 100%; }
+body.archive.fs-character-page .character-portrait>a { bottom: 8px; font-size: 10px; }
+body.archive.fs-character-page .character-info { padding: 19px 24px 11px; }
+body.archive.fs-character-page .character-info h1 { margin: 4px 0 8px; font-size: 29px; }
+body.archive.fs-character-page .character-facts { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 24px; padding: 0; margin: 0; border: 0; }
+body.archive.fs-character-page .character-facts>div { display: inline-flex; align-items: baseline; gap: 6px; }
+body.archive.fs-character-page .character-facts b { font-size: 18px; line-height: 1.5; }
+body.archive.fs-character-page .character-facts .date { margin: 0; font-size: 12px; }
+body.archive.fs-character-page .character-facts span { font-size: 11px; }
+body.archive.fs-character-page .fs-character-notes { margin-top: 4px; }
+body.archive.fs-character-page .fs-character-notes .lede { margin-top: 10px; }
+body.archive.fs-character-page .fs-character-notes .tags { margin-top: 12px; }
+body.archive.fs-character-page .fs-character-notes .source-note { margin-top: 10px; }
+body.archive.fs-character-page .fs-character-notes .role-reading { margin-top: 17px; padding: 18px 0 8px; border: 0; border-top: 1px dashed var(--j-line); box-shadow: none; border-radius: 0; }
+body.archive.fs-character-page .fs-character-notes .role-reading::before { display: none; }
+body.archive.fs-character-page .fs-character-notes .section-head h2 { font-size: 18px; }
+body.archive.fs-character-page #all-works { margin-top: 22px; }
+body.archive.fs-character-page #all-works>.section-head { margin-bottom: 12px; }
+body.archive.fs-character-page #all-works>.section-head h2 { font-size: 20px; }
+body.archive.fs-character-page #all-works>.section-head p { margin-top: 3px; }
+
+/* Topic: immediate ZIP, compact notes, and the original curated sequence. */
+body.archive.fs-topic-page .topic-hero { grid-template-columns: minmax(0,1fr) 185px; align-items: start; gap: 22px; padding: 23px 25px 17px; }
+body.archive.fs-topic-page .topic-hero h1 { margin: 4px 0 12px; font-size: 30px; line-height: 1.4; }
+body.archive.fs-topic-page .topic-mosaic { height: 155px; padding: 11px; }
+body.archive.fs-topic-page .topic-mosaic img { padding: 4px 4px 8px; }
+body.archive.fs-topic-page .topic-download-actions { margin: 0 0 9px; }
+body.archive.fs-topic-page .topic-download-actions .button { min-height: 42px; padding: 9px 13px; }
+body.archive.fs-topic-page .topic-details { margin-top: 5px; font-size: 12px; }
+body.archive.fs-topic-page .fs-topic-notes { margin-top: 2px; }
+body.archive.fs-topic-page .fs-topic-notes .lede { margin: 0; }
+body.archive.fs-topic-page .fs-topic-notes .author-line { margin-top: 12px; padding-top: 12px; }
+body.archive.fs-topic-page .fs-topic-notes .collection-reading { margin-top:16px; padding:16px 0 0; border:0; border-top:1px dashed var(--j-line); border-radius:0; box-shadow:none; }
+body.archive.fs-topic-page .fs-topic-notes .collection-reading::before { display:none; }
+body.archive.fs-topic-page .fs-topic-notes .collection-reading h2 { font-size:18px; }
+body.archive.fs-topic-page .topic-toc { margin-top: 10px; padding: 0 0 5px; gap: 18px; font-size: 12px; }
+body.archive.fs-topic-page .topic-toc a { min-height: 38px; padding: 8px 0; }
+body.archive.fs-topic-page #collection-works { margin-top: 15px; }
+body.archive.fs-topic-page #collection-works>.section-head { margin-bottom: 12px; }
+body.archive.fs-topic-page #collection-works>.section-head h2 { font-size: 20px; }
+
+/* Submission: the actual form is moved, never cloned; all required checks remain. */
+body.archive.fs-submit-page .document-page { padding-top: 20px; }
+body.archive.fs-submit-page .document-page>.page-title { margin-bottom: 4px; font-size: 30px; }
+body.archive.fs-submit-page .fs-submit-intro { margin: 0; font-size: 13px; line-height: 1.75; color: var(--j-muted); }
+body.archive.fs-submit-page .fs-submit-guide { margin: 5px 0 8px; }
+body.archive.fs-submit-page .fs-submit-guide>summary { min-height: 36px; padding: 8px 0; font-size: 12px; }
+body.archive.fs-submit-page .fs-submit-guide>.fs-disclosure-content { padding: 18px 0 15px; }
+body.archive.fs-submit-page .fs-submit-guide .lede { font-size: 14px; line-height: 1.85; color: var(--j-muted); }
+body.archive.fs-submit-page .document-page .fs-form-heading { margin: 0 0 10px; font-size: 18px; }
+body.archive.fs-submit-page .document-page .fs-form-heading::before { height: 15px; width: 4px; }
+body.archive.fs-submit-page .document-page .form-sheet { margin-top: 0; padding: 23px 27px; }
+body.archive.fs-submit-page .document-page .form-notice { margin-bottom: 17px; padding: 9px 12px; font-size: 12px; line-height: 1.7; }
+body.archive.fs-submit-page .document-page .form { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(0,1fr); align-items: start; gap: 19px 24px; }
+body.archive.fs-submit-page .document-page .form>.fs-form-wide { grid-column: 1/-1; }
+body.archive.fs-submit-page .document-page .form-row { gap: 6px; min-width:0; }
+body.archive.fs-submit-page .document-page .form :is(input[type=text],input[type=url],select,textarea) { width:100%; min-width:0; }
+body.archive.fs-submit-page .document-page .form .hint { font-size: 12px; line-height: 1.75; }
+body.archive.fs-submit-page .document-page .form input[type=file] { min-height: 64px; padding: 11px 12px; font-size: 13px; }
+body.archive.fs-submit-page .document-page .form input[type=file]::file-selector-button { min-height: 40px; padding: 8px 12px; font-size: 13px; }
+body.archive.fs-submit-page .document-page .form .character-choices { grid-template-columns: repeat(4,minmax(0,1fr)); gap: 8px; }
+body.archive.fs-submit-page .document-page .form .character-choices label { min-height: 44px; padding: 9px 11px; font-size: 13px; }
+body.archive.fs-submit-page .document-page .character-field legend { margin-bottom: 5px; }
+body.archive.fs-submit-page .document-page .character-field>.hint { display: block; margin-bottom: 8px; }
+body.archive.fs-submit-page .document-page .form .confirm-note { margin-top: 2px; }
+
+/* Work detail: title and real download/copy buttons precede the image on mobile. */
+body.archive.fs-work-page .work-detail { grid-template-columns: minmax(0,1.12fr) minmax(0,1fr); grid-template-areas: 'art quick' 'art notes'; column-gap: 30px; row-gap: 0; margin-top: 15px; }
+body.archive.fs-work-page .work-detail>.detail-image { grid-area: art; }
+body.archive.fs-work-page .fs-work-quick { grid-area: quick; padding: 2px 0 0; }
+body.archive.fs-work-page .fs-work-notes { grid-area: notes; padding-top: 3px; }
+body.archive.fs-work-page .fs-work-quick h1 { font-size: 27px; line-height: 1.5; margin: 12px 0 17px; }
+body.archive.fs-work-page .fs-work-quick .detail-actions { margin: 0 0 17px; gap: 8px; }
+body.archive.fs-work-page .fs-work-quick .detail-actions .button { min-height: 44px; padding: 10px 12px; font-size: 13px; }
+body.archive.fs-work-page .fs-work-quick .detail-actions .primary { min-width: 128px; }
+body.archive.fs-work-page .fs-work-quick .image-copy-status { margin: 0 0 12px; }
+body.archive.fs-work-page .fs-work-notes .fish-comment { margin-top: 15px; }
+body.archive.fs-work-page .fs-work-notes .work-facts { margin-top: 18px; }
+
+/* Community and reference pages expose their existing destination controls. */
+body.archive.fs-community-page .community-hero { padding: 26px 30px; }
+body.archive.fs-community-page .community-hero h2 { font-size: 29px; margin: 5px 0 8px; }
+body.archive.fs-community-page .group-number { margin-top: 9px; font-size: 28px; }
+body.archive.fs-community-page .group-number .icon-button { width: 44px; height: 44px; }
+body.archive.fs-community-page .community-hero .hero-actions { margin: 14px 0 15px; }
+body.archive.fs-community-page .community-hero .hero-actions .button { min-height: 44px; font-size: 13px; }
+body.archive.fs-community-page .community-hero .small-note { margin-bottom: 0; }
+body.archive.fs-community-page .qr-paper { max-width: 205px; justify-self: center; }
+body.archive.fs-document-page .document-page { padding-top: 22px; }
+body.archive.fs-document-page .document-page>.page-title { font-size: 30px; margin-bottom: 8px; }
+body.archive.fs-document-page .document-page>.lede { margin-bottom: 15px; font-size: 14px; }
+body.archive.fs-document-page .fs-page-contents { display: flex; flex-wrap: wrap; gap: 7px; padding: 12px 14px; margin: 12px 0 24px; border: 1px solid var(--j-line); border-radius: 9px; background: var(--j-paper); }
+body.archive.fs-document-page .fs-page-contents a { display: inline-flex; align-items: center; min-height: 38px; padding: 7px 11px; border-radius: 5px; background: var(--j-soft); color: var(--j-blue); font-size: 12px; text-decoration: none; }
+body.archive.fs-document-page .fs-page-contents a:hover { box-shadow: inset 0 0 0 1px var(--j-blue); }
+
+@media (max-width:1000px) {
+  body.archive.fs-submit-page .document-page .form .character-choices { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  body.archive.fs-work-page .fs-work-quick .detail-actions .button { flex: 1 1 120px; }
+}
+@media (max-width:760px) {
+  body.archive.j-first-screen .page-head { margin: 17px 0 14px; gap: 9px; }
+  body.archive.j-first-screen .page-head h1 { font-size: 25px; line-height: 1.4; }
+  body.archive.j-first-screen .page-head .lede { font-size: 12px; line-height: 1.75; margin-top: 4px; }
+  body.archive.j-first-screen .breadcrumbs { margin: 14px 0 11px; font-size: 11px; }
+  body.archive.j-first-screen .fs-filter-bar { padding: 11px 11px 6px; gap: 5px 10px; }
+  body.archive.j-first-screen .fs-filter-bar .filter-fields { flex: 1 1 100%; width: 100%; grid-template-columns: 1.25fr .85fr 1fr; gap: 9px; }
+  body.archive.j-first-screen .fs-filter-bar .filter-fields label { font-size: 11px; gap: 4px; min-width: 0; }
+  body.archive.j-first-screen .fs-filter-bar .filter-fields label:first-child { grid-column: auto; }
+  body.archive.j-first-screen .fs-filter-bar .filter-select { min-width: 0; }
+  body.archive.j-first-screen .fs-filter-bar .filter-select-button { min-height: 44px; padding: 7px 9px; font-size: 13px; gap: 4px; }
+  body.archive.j-first-screen .fs-filter-bar .filter-select-button>span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  body.archive.j-first-screen .fs-filter-bar>.text-button { min-height: 36px; margin-left: auto; font-size: 12px; }
+  body.archive.j-first-screen .fs-filter-help { flex: 1 1 100%; margin-top: -41px; pointer-events: none; }
+  body.archive.j-first-screen .fs-filter-help>summary { width: fit-content; max-width: calc(100% - 84px); min-height: 44px; padding: 12px 0; font-size: 11px; pointer-events: auto; }
+  body.archive.j-first-screen .fs-filter-help>.fs-disclosure-content { pointer-events: auto; padding-top: 0; }
+  body.archive.j-first-screen .fs-filter-help .filter-help { margin: 0 0 7px; font-size: 11px; }
+  body.archive.j-first-screen .results-line { margin: 9px 0 12px; font-size: 12px; gap: 10px; }
+  body.archive.j-first-screen .results-line small { font-size: 10px; }
+  body.archive.j-first-screen .search-large input { font-size: 16px; }
+  body.archive.j-first-screen .search-large .button { min-height: 44px; }
+  body.archive.j-first-screen .suggested-tags { margin: 8px 0 12px; gap: 6px; }
+  body.archive.j-first-screen .suggested-tags .tag { font-size: 11px; min-height: 30px; }
+  body.archive.fs-character-page .character-hero { grid-template-columns: 100px minmax(0,1fr); gap: 0; }
+  body.archive.fs-character-page .character-portrait { height: 154px; padding: 14px 10px 28px; border-right: 1px solid var(--j-line); border-bottom: 0; }
+  body.archive.fs-character-page .character-portrait img { height: 108px; padding: 4px; }
+  body.archive.fs-character-page .character-portrait>a { font-size: 9px; bottom: 9px; }
+  body.archive.fs-character-page .character-info { padding: 16px 17px 9px; }
+  body.archive.fs-character-page .character-info h1 { font-size: 25px; margin: 3px 0 8px; }
+  body.archive.fs-character-page .character-facts { gap: 4px 14px; }
+  body.archive.fs-character-page .character-facts b { font-size: 16px; }
+  body.archive.fs-character-page .character-facts span { font-size: 10px; }
+  body.archive.fs-character-page .character-facts .date { font-size: 11px; }
+  body.archive.fs-character-page .fs-character-notes>summary { padding: 9px 0; min-height: 36px; font-size: 11px; }
+  body.archive.fs-character-page .fs-character-notes[open]>.fs-disclosure-content { margin-left: -117px; padding: 18px 0 8px; }
+  body.archive.fs-character-page #all-works { margin-top: 17px; }
+  body.archive.fs-character-page #all-works>.section-head { margin-bottom: 10px; }
+  body.archive.fs-character-page #all-works>.section-head h2 { font-size: 19px; }
+  body.archive.fs-character-page #all-works>.section-head p { font-size: 11px; }
+  body.archive.fs-topic-page .topic-hero { grid-template-columns: minmax(0,1fr) 125px; padding: 20px; gap: 13px; }
+  body.archive.fs-topic-page .topic-hero h1 { margin: 4px 0 11px; font-size: 27px; }
+  body.archive.fs-topic-page .topic-mosaic { height: 129px; padding: 6px; margin-top: 3px; }
+  body.archive.fs-topic-page .topic-download-actions .button { min-height: 44px; font-size: 12px; flex: 0 1 auto; padding: 10px 11px; }
+  body.archive.fs-topic-page .topic-details { font-size: 11px; }
+  body.archive.fs-topic-page .fs-topic-notes>summary { font-size: 11px; min-height: 36px; padding: 9px 0; }
+  body.archive.fs-topic-page .fs-topic-notes[open]>.fs-disclosure-content { margin-right: -138px; }
+  body.archive.fs-topic-page .topic-toc { margin-top: 7px; gap: 0 18px; flex-wrap: wrap; }
+  body.archive.fs-topic-page .topic-toc>span { flex-basis: auto; margin-right: auto; font-size: 11px; }
+  body.archive.fs-topic-page .topic-toc>a { font-size: 12px; min-height: 44px; }
+  body.archive.fs-topic-page #collection-works { margin-top: 13px; }
+  body.archive.fs-topic-page #collection-works>.section-head { margin-bottom: 10px; }
+  body.archive.fs-topic-page #collection-works>.section-head h2 { font-size: 19px; }
+  body.archive.fs-submit-page .document-page { padding-top: 16px; }
+  body.archive.fs-submit-page .document-page>.page-title { font-size: 27px; margin-bottom: 4px; }
+  body.archive.fs-submit-page .fs-submit-intro { font-size: 12px; line-height: 1.7; }
+  body.archive.fs-submit-page .fs-submit-guide { margin: 3px 0 5px; }
+  body.archive.fs-submit-page .fs-submit-guide>summary { min-height: 40px; padding-block: 10px; font-size: 12px; }
+  body.archive.fs-submit-page .document-page .fs-form-heading { font-size: 16px; margin: 0 0 9px; }
+  body.archive.fs-submit-page .document-page .form-sheet { padding: 17px 18px 23px; }
+  body.archive.fs-submit-page .document-page .form-notice { padding: 8px 10px; font-size: 11px; line-height: 1.65; margin-bottom: 13px; }
+  body.archive.fs-submit-page .document-page .form { display: flex; align-items:stretch; gap: 15px; }
+  body.archive.fs-submit-page .document-page .form-row { gap: 5px; }
+  body.archive.fs-submit-page .document-page .form-row>label,
+  body.archive.fs-submit-page .document-page .character-field legend { font-size: 14px; }
+  body.archive.fs-submit-page .document-page .form input[type=file] { min-height: 62px; padding: 10px; font-size: 12px; }
+  body.archive.fs-submit-page .document-page .form input[type=file]::file-selector-button { margin-right: 9px; padding: 8px 10px; font-size: 13px; }
+  body.archive.fs-submit-page .document-page .form :is(input[type=text],input[type=url],select,textarea) { min-height: 44px; padding: 9px 11px; font-size: 16px; }
+  body.archive.fs-submit-page .document-page .form .hint { font-size: 11px; line-height: 1.65; }
+  body.archive.fs-submit-page .document-page .form .character-choices { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 7px; }
+  body.archive.fs-submit-page .document-page .form .character-choices label { padding: 8px 10px; min-height: 44px; font-size: 13px; }
+  body.archive.fs-submit-page .document-page .character-field>.hint { margin-bottom: 7px; }
+  body.archive.fs-work-page .work-detail { grid-template-columns: minmax(0,1fr); grid-template-areas: 'quick' 'art' 'notes'; row-gap: 18px; margin-top: 13px; }
+  body.archive.fs-work-page .fs-work-quick { padding: 0; }
+  body.archive.fs-work-page .fs-work-quick h1 { font-size: 25px; margin: 10px 0 13px; }
+  body.archive.fs-work-page .fs-work-quick .detail-actions { gap: 8px; margin: 0; }
+  body.archive.fs-work-page .fs-work-quick .detail-actions .button { flex: 1 1 0; min-width: 0; font-size: 12px; padding: 10px 8px; }
+  body.archive.fs-work-page .fs-work-quick .detail-actions .primary { min-width: 0; }
+  body.archive.fs-work-page .fs-work-quick .image-copy-status { margin-top: 9px; margin-bottom: 0; }
+  body.archive.fs-work-page .fs-work-notes { padding: 0; }
+  body.archive.fs-community-page .community-hero { padding: 23px; grid-template-columns: minmax(0,1fr) 160px; }
+  body.archive.fs-community-page .community-hero h2 { font-size: 27px; }
+  body.archive.fs-community-page .group-number { margin-top: 8px; font-size: 25px; gap: 10px; }
+  body.archive.fs-community-page .community-hero .hero-actions { gap: 9px; margin: 11px 0 13px; }
+  body.archive.fs-community-page .community-hero .hero-actions .button { font-size: 12px; padding: 10px 12px; }
+  body.archive.fs-community-page .community-hero p:not(.eyebrow) { font-size: 13px; }
+  body.archive.fs-document-page .document-page { padding-top: 18px; }
+  body.archive.fs-document-page .document-page>.page-title { font-size: 27px; }
+  body.archive.fs-document-page .document-page>.lede { font-size: 13px; line-height: 1.75; }
+  body.archive.fs-document-page .fs-page-contents { gap: 6px; padding: 10px; margin: 12px 0 20px; }
+  body.archive.fs-document-page .fs-page-contents a { min-height: 44px; padding: 8px 10px; font-size: 12px; }
+}
+@media (max-width:540px) {
+  body.archive.fs-community-page .community-hero { grid-template-columns: minmax(0,1fr); gap: 17px; }
+  body.archive.fs-community-page .community-hero .qr-paper { width: 180px; margin: 2px 0; }
+}
+@media (max-width:380px) {
+  body.archive.j-first-screen .fs-filter-bar .filter-fields { gap: 6px; grid-template-columns: 1.2fr .85fr 1fr; }
+  body.archive.j-first-screen .fs-filter-bar .filter-select-button { padding-inline: 7px; font-size: 12px; }
+  body.archive.fs-character-page .character-hero { grid-template-columns: 88px minmax(0,1fr); }
+  body.archive.fs-character-page .character-portrait { padding-inline: 8px; }
+  body.archive.fs-character-page .character-info { padding-inline: 13px; }
+  body.archive.fs-character-page .character-info h1 { font-size: 23px; }
+  body.archive.fs-character-page .fs-character-notes[open]>.fs-disclosure-content { margin-left: -101px; }
+  body.archive.fs-character-page .character-facts { gap: 3px 9px; }
+  body.archive.fs-topic-page .topic-hero { grid-template-columns: minmax(0,1fr) 92px; padding: 18px; gap: 10px; }
+  body.archive.fs-topic-page .topic-hero h1 { font-size: 25px; }
+  body.archive.fs-topic-page .topic-mosaic { height: 111px; padding: 4px; }
+  body.archive.fs-topic-page .fs-topic-notes[open]>.fs-disclosure-content { margin-right: -102px; }
+  body.archive.fs-topic-page .topic-toc { gap: 0 13px; }
+  body.archive.fs-topic-page .topic-toc>span { flex-basis: auto; min-height: 26px; }
+  body.archive.fs-submit-page .document-page .form-sheet { padding-inline: 15px; }
+  body.archive.fs-work-page .fs-work-quick .detail-actions .button { font-size: 11px; gap: 5px; padding-inline: 6px; }
+}
+
+/* Phone entry points: keep controls readable while reducing ornamental space. */
+@media(max-width:760px){
+  body.archive.fs-character-page .character-portrait { height:135px; padding-top:10px; }
+  body.archive.fs-character-page .character-portrait img { height:91px; }
+  body.archive.fs-character-page .character-info { padding-top:11px; }
+  body.archive.fs-character-page #all-works { margin-top:12px; }
+  body.archive.fs-character-page #all-works>.section-head p { margin-top:0; }
+  body.archive.fs-topic-page .topic-hero { padding-block:14px; }
+  body.archive.fs-topic-page .topic-toc { gap:0 12px; align-items:center; }
+  body.archive.fs-topic-page .topic-toc>span { margin-right:auto; }
+  body.archive.fs-topic-page #collection-works { margin-top:8px; }
+  body.archive.fs-submit-page .fs-form-heading { display:none; }
+  body.archive.fs-submit-page .document-page .form-sheet { padding-top:13px; }
+  body.archive.fs-submit-page .document-page .form-notice { margin-bottom:10px; }
+  body.archive[data-page=topics] .collection-card { grid-template-columns:92px minmax(0,1fr); }
+  body.archive[data-page=topics] .collection-art { min-height:140px; }
+  body.archive[data-page=topics] .collection-art img { height:64px; }
+  body.archive[data-page=topics] .collection-art img:nth-child(1) { top:24px; left:10px; }
+  body.archive[data-page=topics] .collection-art img:nth-child(2) { top:64px; right:18px; }
+  body.archive[data-page=topics] .collection-art img:nth-child(3) { top:20px; right:7px; }
+  body.archive[data-page=topics] .collection-body { padding:11px 12px; }
+  body.archive[data-page=topics] .collection-body h3 { margin-block:4px; }
+  body.archive[data-page=topics] .collection-foot { margin-top:7px; padding-top:6px; }
+  body.archive[data-page=characters] .role-art { height:150px; }
+  body.archive[data-page=characters] .role-body { padding:11px 12px; }
+  body.archive[data-page=characters] .role-body>span { margin-top:7px; }
+}
+@media(max-width:760px) and (max-height:640px){
+  body.archive.fs-topic-page .breadcrumbs { margin-block:8px; }
+  body.archive.fs-topic-page .topic-hero { padding-block:10px; }
+  body.archive.fs-topic-page #collection-works>.section-head { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); }
+}

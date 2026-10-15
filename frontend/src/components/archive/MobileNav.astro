@@ -8,4 +8,7 @@ const { icon } = archiveContext;
   {navigation.slice(0,4).map(item => <a href={item.href} aria-current={active === item.id ? 'page' : undefined}>
     <Fragment set:html={icon(item.icon,19)} /><span data-i18n={item.key}>{item.label}</span>
   </a>)}
+  <a class="j-mobile-submit" href="/submit.html" aria-current={active==='submit'?'page':undefined}>
+    <Fragment set:html={icon('upload',19)} /><span data-i18n="nav.submit">投稿</span>
+  </a>
 </nav>

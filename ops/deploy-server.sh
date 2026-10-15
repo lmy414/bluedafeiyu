@@ -41,7 +41,7 @@ die() {
 # ---------------------------------------------------------------- 配置加载
 
 CONFIG_FILE="${DEPLOY_ENV:-}"
-CONFIG_VARS=(DEPLOY_ROOT SOURCE_DIR REPO_URL BRANCH HEALTH_URL CONTENT_REPO_URL CONTENT_BRANCH CONTENT_DIR SHARED_DATA_DIR RELEASES_DIR CURRENT_LINK PRECOMPRESS)
+CONFIG_VARS=(DEPLOY_ROOT SOURCE_DIR REPO_URL BRANCH HEALTH_URL CONTENT_REPO_URL CONTENT_BRANCH CONTENT_DIR SHARED_DATA_DIR RELEASES_DIR CURRENT_LINK PRECOMPRESS BUILD_MEMORY_MAX_MB BUILD_NODE_HEAP_MB BUILD_MIN_AVAILABLE_MB)
 
 # 先记住当前已经通过环境变量给出的值，读完配置文件后再覆盖回去（环境变量优先）。
 declare -A __preset=()
@@ -180,15 +180,35 @@ cleanup_staging() {
 }
 trap cleanup_staging EXIT
 
+# Protect the running services from build memory spikes. This scope contains the
+# whole child tree; a limit failure aborts staging before current is switched.
+BUILD_MEMORY_MAX_MB="${BUILD_MEMORY_MAX_MB:-1280}"
+export BUILD_NODE_HEAP_MB="${BUILD_NODE_HEAP_MB:-640}"
+export BUILD_MIN_AVAILABLE_MB="${BUILD_MIN_AVAILABLE_MB:-1024}"
+for name in BUILD_MEMORY_MAX_MB BUILD_NODE_HEAP_MB BUILD_MIN_AVAILABLE_MB; do
+  [[ "${!name}" =~ ^[0-9]+$ ]] || die "${name} 必须是整数 MiB"
+done
+command -v systemd-run >/dev/null || die "缺少 systemd-run，无法限制构建内存"
+log "构建内存保护：总内存上限 ${BUILD_MEMORY_MAX_MB} MiB，Node 堆 ${BUILD_NODE_HEAP_MB} MiB，最低可用内存 ${BUILD_MIN_AVAILABLE_MB} MiB"
+guarded_build() {
+  local label="$1"
+  shift
+  systemd-run --quiet --scope --unit="dafeiyu-build-${STAMP}-$$-${label}" \
+    -p "MemoryHigh=$((BUILD_MEMORY_MAX_MB * 4 / 5))M" \
+    -p "MemoryMax=${BUILD_MEMORY_MAX_MB}M" -p MemorySwapMax=512M \
+    -p CPUWeight=50 -p IOWeight=50 \
+    node "${SOURCE_DIR}/ops/build-resource-runner.mjs" "${label}" "$@"
+}
+
 # Astro is a build-only dependency; install the locked frontend toolchain before touching current.
 # Existing node_modules can be stale across versions, so npm ci is required for each release.
 log "安装前端构建依赖：npm ci --prefix ${SOURCE_DIR}/frontend"
-if ! npm ci --prefix "${SOURCE_DIR}/frontend" --no-audit --no-fund; then
+if ! guarded_build dependencies npm ci --prefix "${SOURCE_DIR}/frontend" --no-audit --no-fund; then
   die "Astro 构建依赖安装失败，未改动 current"
 fi
 
 log "运行构建：node ${SOURCE_DIR}/tools/build_site.mjs --content-dir ${CONTENT_DIR} --out ${STAGING_DIR}/site"
-if ! SITE_PREVIOUS_DIR="${CURRENT_LINK}" node "${SOURCE_DIR}/tools/build_site.mjs" --content-dir "${CONTENT_DIR}" --out "${STAGING_DIR}/site"; then
+if ! SITE_PREVIOUS_DIR="${CURRENT_LINK}" guarded_build site node "${SOURCE_DIR}/tools/build_site.mjs" --content-dir "${CONTENT_DIR}" --out "${STAGING_DIR}/site"; then
   die "构建失败，未改动 current"
 fi
 log "构建完成：${STAGING_DIR}/site"
@@ -201,7 +221,7 @@ log "构建完成：${STAGING_DIR}/site"
 # 提醒：脚本只生成 .gz，不会自动改服务器 nginx 配置；必须人工启用 `gzip_static on` 才会用到。
 if [ "${PRECOMPRESS_ENABLED}" = "1" ]; then
   log "预压缩产物文本资源：node ${SOURCE_DIR}/tools/compress_static.mjs --dir ${STAGING_DIR}/site --precompress"
-  if ! node "${SOURCE_DIR}/tools/compress_static.mjs" --dir "${STAGING_DIR}/site" --precompress; then
+  if ! guarded_build compress node "${SOURCE_DIR}/tools/compress_static.mjs" --dir "${STAGING_DIR}/site" --precompress; then
     die "预压缩失败，未改动 current"
   fi
   PRECOMPRESSED_COUNT="$(find "${STAGING_DIR}/site" -type f -name '*.gz' | wc -l | tr -d ' ')" || PRECOMPRESSED_COUNT="unknown"
