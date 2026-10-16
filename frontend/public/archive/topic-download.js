@@ -104,7 +104,7 @@ export function installTopicDownloads({ load, tx, toast }) {
     dialog.showModal();
     close.focus();
     try {
-      const [data, library] = await Promise.all([load(), import('/vendor/fflate/fflate-0.8.2.js')]);
+      const [data, library] = await Promise.all([load(), import(/* @vite-ignore */ '/vendor/fflate/fflate-0.8.2.js')]);
       if (session !== current) return;
       Object.assign(current, topicMembers(data, opener.dataset.downloadTopic), { zip: library.zip });
       dialog.querySelector('h2').textContent = (window.SiteLang ? window.SiteLang.contentText(current.topic.name) : current.topic.name) + ' · ' + tx('d.zipTitle','专题原图打包');

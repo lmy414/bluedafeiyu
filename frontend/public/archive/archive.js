@@ -1,6 +1,7 @@
 import {renderWorkCard} from './work-card.js?v=4';
 import {copyImage} from './image-copy.js?v=1';
 import {installTopicDownloads} from './topic-download.js?v=3';
+import {loadArchiveData} from './data-loader.js?v=1';
 (() => {
   'use strict';
   const $ = (selector, parent = document) => parent.querySelector(selector);
@@ -15,8 +16,7 @@ import {installTopicDownloads} from './topic-download.js?v=3';
   const names = value => window.SiteLang ? SiteLang.contentText(value) : value;
   const localized = w => window.SiteLang ? SiteLang.localWork(w) : w;
   const basePath = path => path.replace(/^\/(?:en|ja|zh-hant)(?=\/)/, '');
-  let dataPromise;
-  const load = () => dataPromise || (dataPromise = fetch('/archive-data.json?v=2').then(r => { if(!r.ok)throw Error('data'); return r.json(); }));
+  const load = loadArchiveData;
   const toast = text => { const el=$('#toast'); el.textContent=text;el.hidden=false;clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.hidden=true,3000); };
   const card = w => renderWorkCard(localized(w), {url:localURL, translate:tx, names});
   const drawGrid = list => `<div class="work-grid">${list.map(card).join('')}</div>`;

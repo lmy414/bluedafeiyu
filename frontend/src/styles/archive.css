@@ -1,0 +1,17 @@
+/* Preserve the published cascade while bundling/minifying it through Astro. */
+@import '../../public/tokens.css';
+@import '../../public/archive/original-tools.css';
+@import '../../public/archive/layout.css';
+@import '../../public/archive/original-theme.css';
+@import '../../public/archive/seo-content.css';
+@import '../../public/archive/preview.css';
+@import '../../public/archive/image-actions.css';
+@import '../../public/archive/filter-select.css';
+@import '../../public/archive/group.css';
+@import '../../public/archive/document.css';
+@import '../../public/archive/readability.css';
+@import '../../public/archive/journal-journal.css';
+@import '../../public/archive/journal-details.css';
+@import '../../public/archive/journal-first-screen.css';
+@import '../../public/archive/journal-home.css';
+@import '../../public/archive/journal-ui.css';

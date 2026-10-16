@@ -45,11 +45,15 @@ if(document.body.dataset.page==='home'){
   async function refreshPopular(){
     if(!hot)return;
     try{
-      const [data,stats]=await Promise.all([fetch('/archive-data.json?v=2').then(r=>{if(!r.ok)throw Error('data');return r.json();}),window.WorkStats?.ready]);
-      const ranked=rankSubmissions(data.works,JSON.parse(hot.dataset.submissionIds),stats);
+      const stats=await window.WorkStats?.ready;
+      if(stats?.available!==true){hot.querySelector('[data-journal-ranking-note]').textContent=t.recentNote;return;}
+      const response=await fetch('/archive-home.json?v=1');
+      if(!response.ok)throw Error('data');
+      const data=await response.json();
+      const ranked=rankSubmissions(data.works,data.works.map(work=>work.id),stats);
       if(!ranked.length){hot.querySelector('[data-journal-ranking-note]').textContent=t.recentNote;return;}
       const grid=hot.querySelector('.journal-popular-grid');
-      grid.innerHTML=ranked.map(w=>renderWorkCard(window.SiteLang?.localWork(w)||w,{eager:true,url:href=>window.SiteLang?.url(href)||href,translate:(key,fallback)=>window.SiteLang?.fmt(key,fallback)||fallback,names:value=>window.SiteLang?.contentText(value)||value})).join('');
+      grid.innerHTML=ranked.map(w=>renderWorkCard(window.SiteLang?.localWork(w)||w,{url:href=>window.SiteLang?.url(href)||href,translate:(key,fallback)=>window.SiteLang?.fmt(key,fallback)||fallback,names:value=>window.SiteLang?.contentText(value)||value})).join('');
       [...grid.children].forEach((card,i)=>{const badge=document.createElement('span');badge.className='journal-rank';badge.textContent=String(i+1).padStart(2,'0');card.prepend(badge);const metric=document.createElement('span');metric.className='journal-view-count';metric.textContent=`${stats.works[ranked[i].id].views.toLocaleString()} ${t.views}`;card.querySelector('.card-meta').append(metric);});
       hot.querySelector('#journal-popular-title .marker-highlight').textContent=t.popular;
       hot.querySelector('[data-journal-ranking-note]').textContent=t.byViews;
@@ -59,5 +63,12 @@ if(document.body.dataset.page==='home'){
       hot.dataset.ranking='popular';
     }catch{hot.querySelector('[data-journal-ranking-note]').textContent=t.recentNote;}
   }
-  refreshPopular();
+  // Recent cards work without a request. Refresh after initial images finish
+  // and only when the section is near the viewport.
+  function schedulePopular(){
+    const run=()=>{if('requestIdleCallback' in window)requestIdleCallback(refreshPopular,{timeout:2000});else setTimeout(refreshPopular,0);};
+    if(hot&&'IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{if(entries.some(entry=>entry.isIntersecting)){observer.disconnect();run();}},{rootMargin:'200px'});observer.observe(hot);}
+    else run();
+  }
+  if(document.readyState==='complete')schedulePopular();else window.addEventListener('load',schedulePopular,{once:true});
 }
