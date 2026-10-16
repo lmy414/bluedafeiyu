@@ -60032,5 +60032,106 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_2109eba4452d91b23f5b72a3",
+    "name": "秋日街道上抱着笔记本回头的DeepSeek娘",
+    "description": "一名蓝发少女站在铺满落叶的秋日街道上，身穿米色风衣与格纹裙，脖子上围着格纹围巾，挎着黑色小包，怀里抱着一本笔记本，身后拖着一条带星形斑纹的蓝色鲸尾，头顶有一根呆毛与蓝色蝴蝶结发饰。画面右侧是橙红的枫树与金黄的树冠，左侧为沿街店铺与人行道，脚下散落着枫叶，阳光从街道尽头照进来。",
+    "commentary": "嗯？我确实听到有人在叫——虽然手里还抱着工作用的笔记本，脚步也没打算停。秋风倒是很诚实，先把一片枫叶放到了我的脚边。好吧，就回头看一眼……然后我真的要回去忙了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/2109eba4452d91b2.png",
+    "thumbnailPath": "submissions/previews/deepseek/2109eba4452d91b2.webp",
+    "fullPath": "submissions/large/deepseek/2109eba4452d91b2.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "2109eba4452d91b23f5b72a30d8635e3a93822a8ac32c916e10d231a7e8c1ea6",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "秋日街景",
+      "风衣",
+      "鲸尾",
+      "回头"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-16T06:14:32.034Z",
+    "updatedAt": "2026-10-16T06:14:32.034Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610160002",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "d29d6e536b9c44e86b31c42489291a88ca9bc135b72ef3a550e8a0062df9efe0",
+      "en": {
+        "commentary": "Hm? So it really was you calling me — I did hear something. The notebook is still in my arms and my feet have no intention of stopping. The autumn wind, at least, is honest: it set a maple leaf right at my heel. All right, one glance back. Then I really do have to get back to work.",
+        "description": "A blue-haired girl stands on an autumn street covered in fallen leaves, wearing a beige trench coat and a plaid skirt with a plaid scarf around her neck and a small black bag at her side. She holds a notebook against her chest, a blue whale tail with star-shaped markings trails behind her, and a blue ribbon and a stray cowlick sit atop her hair. Orange maples and golden canopies fill the right side of the frame, shops and a paved sidewalk line the left, and sunlight spills in from the far end of the street.",
+        "faq": [
+          {
+            "answer": "It is an original fan-made illustration of DeepSeek Chan. The blue hair, the whale tail and the blue ribbon reference the DeepSeek whale motif, while the coat, scarf and notebook are the artist's own styling.",
+            "question": "What is shown in this illustration?"
+          },
+          {
+            "answer": "The character is a DeepSeek Chan interpretation set in an ordinary autumn street scene, so the work is catalogued as an illustration rather than a design sheet or a multi-panel comic.",
+            "question": "Why is this work filed as an illustration?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Looking Back on an Autumn Street",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan stands on a leaf-strewn autumn street in a beige trench coat, holding a notebook, her blue whale tail trailing behind her.",
+        "seoTitle": "DeepSeek Chan on an Autumn Street with Her Notebook",
+        "tags": [
+          "DeepSeek Chan",
+          "autumn street",
+          "trench coat",
+          "whale tail",
+          "looking back"
+        ]
+      },
+      "ja": {
+        "commentary": "ん？やっぱり呼んでいたのはあなただったんだ——何か聞こえた気はしてた。手には仕事のノートを抱えたままだし、足を止めるつもりもない。秋風だけは正直で、足元に楓の葉を一枚そっと置いていった。……わかった、一度だけ振り返る。それで本当に仕事に戻るから。",
+        "description": "落ち葉が敷き詰められた秋の街路に立つ藍色の髪の少女。ベージュのトレンチコートにチェックのスカート、首元にはチェックのマフラー、脇には小さな黒いバッグを提げ、胸元にはノートを抱えている。後ろには星形の模様が入った青いクジラのしっぽが伸び、髪の上には青いリボンと一本のアホ毛がある。画面右側には橙色の楓と黄金色の並木、左側には店舗と歩道が続き、通りの奥から日差しが差し込んでいる。",
+        "faq": [
+          {
+            "answer": "DeepSeek ちゃんの二次創作イラストです。青い髪、クジラのしっぽ、青いリボンは DeepSeek のクジラの意匠を踏まえたもので、コートやマフラー、ノートは描き手による演出です。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "キャラクター設定資料でも複数コマの漫画でもなく、秋の街並みを背景にした一枚絵のため、イラストとして分類しています。",
+            "question": "なぜイラストとして分類されているのですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "秋の街で振り返る DeepSeek ちゃん",
+        "originNote": "",
+        "seoDescription": "落ち葉の舞う秋の街に立つ DeepSeek ちゃん。ベージュのトレンチコート姿でノートを抱え、青いクジラのしっぽが後ろに伸びる。",
+        "seoTitle": "秋の街でノートを抱える DeepSeek ちゃん",
+        "tags": [
+          "DeepSeek ちゃん",
+          "秋の街",
+          "トレンチコート",
+          "クジラのしっぽ",
+          "振り返り"
+        ]
+      }
+    }
   }
 ]
