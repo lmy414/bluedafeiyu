@@ -59931,5 +59931,106 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_02eb7175905b1c83d9771283",
+    "name": "DeepSeek娘便利店撒鲸元券：七天 token 花费回溯",
+    "description": "便利店货架前，Q 版 DeepSeek 娘穿着深蓝色女仆装坐在台面上，手里举着一叠印有自己头像的「鲸元券」撒向四周；画面右侧的笔记本电脑屏幕显示「服务器已崩溃」，气泡台词写着「七天内 token 花费回溯！」，用撒券的热闹场面呼应服务器故障后额度返还的说法。",
+    "commentary": "服务器一崩，我反而成了全场最阔的那个——这七天烧掉的 token 全数退回，变成一叠印着我头像的鲸元券，撒得便利店里满地都是。别客气，捡就是了，这波我一点不心疼。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/02eb7175905b1c83.png",
+    "thumbnailPath": "submissions/previews/deepseek/02eb7175905b1c83.webp",
+    "fullPath": "submissions/large/deepseek/02eb7175905b1c83.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "02eb7175905b1c83d9771283205bcdd777b74192d92d6ee9c91c1919fd28efa7",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "梗图",
+      "鲸元券",
+      "服务器崩溃",
+      "额度回溯"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-16T03:35:01.084Z",
+    "updatedAt": "2026-10-16T03:35:01.084Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610160001",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "6a9a70f43abd8be360540764f9f0449990485531c81f206d82c521fa3ae4e56a",
+      "en": {
+        "commentary": "When the servers went down, I somehow ended up the richest one in the store. Every token burned over those seven days came back, turned into a stack of Whale Vouchers with my own face on them, and I scattered them all over the convenience store. Don't be shy, just pick them up. This round doesn't hurt me one bit.",
+        "description": "In front of convenience-store shelves, a chibi DeepSeek Chan in a dark blue maid outfit sits on the counter, holding up a stack of whale vouchers printed with her own face and scattering them around. The laptop screen to her right reads that the server has crashed, while the speech bubble announces that token spending from the past seven days has been refunded, turning a cheerful voucher giveaway into a joke about credits coming back after the outage.",
+        "faq": [
+          {
+            "answer": "She is holding a stack of whale vouchers printed with her own face and scattering them around the convenience store.",
+            "question": "What is DeepSeek Chan holding in this image?"
+          },
+          {
+            "answer": "The speech bubble says token spending from the past seven days has been refunded, and the laptop screen shows that the server has crashed, matching the joke about credits returning after an outage.",
+            "question": "What do the texts in the image mean?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Scatters Whale Vouchers in a Convenience Store: Seven Days of Token Spending Refunded",
+        "originNote": "",
+        "seoDescription": "A chibi DeepSeek Chan in a maid outfit scatters whale vouchers printed with her own face across a convenience store, while a laptop screen reports a server crash.",
+        "seoTitle": "DeepSeek Chan Scatters Whale Vouchers: Seven-Day Token Refund Meme",
+        "tags": [
+          "DeepSeek Chan",
+          "meme",
+          "whale voucher",
+          "server crash",
+          "token refund"
+        ]
+      },
+      "ja": {
+        "commentary": "サーバーが落ちたおかげで、私が店内で一番太っ腹な立場になっちゃった。この7日で燃やした token が全部戻ってきて、自分の顔が入った鯨元クーポンの束になって、コンビニ中に撒き散らしてるところ。遠慮しないで、拾っていってね。今回は全然痛くないから。",
+        "description": "コンビニの棚の前、濃紺のメイド服を着たちびキャラの DeepSeek ちゃんがカウンターに腰かけ、自分の顔が刷られた「鯨元クーポン」の束を掲げて周りに撒いている。右側のノート PC の画面にはサーバーがクラッシュしたことが表示され、吹き出しには「7日以内の token 消費が返還！」と書かれており、サーバー障害後のクレジット返還をにぎやかに表現した作品。",
+        "faq": [
+          {
+            "answer": "自分の顔が刷られた鯨元クーポンの束を掲げ、コンビニの店内に撒き散らしています。",
+            "question": "この画像で DeepSeek ちゃんは何を持っていますか？"
+          },
+          {
+            "answer": "吹き出しは「7日以内の token 消費が返還！」と告げ、ノート PC の画面はサーバーがクラッシュしたことを示しており、障害後にクレジットが戻ってきたというネタに対応しています。",
+            "question": "画像内の文字は何を意味していますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek ちゃんがコンビニで鯨元クーポンを撒く：7日分の token 消費が返還",
+        "originNote": "",
+        "seoDescription": "メイド服姿のちびキャラ DeepSeek ちゃんが、自分の顔入りの鯨元クーポンをコンビニ中に撒き散らす。ノート PC の画面にはサーバーのクラッシュが表示されている。",
+        "seoTitle": "DeepSeek ちゃんが鯨元クーポンを撒く：7日分 token 返還のミーム",
+        "tags": [
+          "DeepSeek ちゃん",
+          "ミーム",
+          "鯨元クーポン",
+          "サーバーダウン",
+          "返還"
+        ]
+      }
+    }
   }
 ]
