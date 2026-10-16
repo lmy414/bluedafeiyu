@@ -61789,5 +61789,735 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_68a110cab8d544f4c0e387e7",
+    "name": "山本大意失先人",
+    "description": "五位 AI 拟人角色身穿军装、头戴钢盔，蹲守在战壕的沙袋后面。中央一位戴军官大檐帽的角色抬手示意，画面中央的对白气泡发出“插上翅膀也逃不出去”的警告；左侧角色怀抱一本书，背景是黄昏下的城市天际线与烟尘。",
+    "commentary": "钢盔、沙袋、渐沉的黄昏，五个人挤在同一条战壕里，中间戴军官大檐帽的那位还摆出一副指挥官的气势，对着战壕外面喊话。说真的，看她们这么一本正经地演这出戏，比任何一次演习都好笑。至于那句「插上翅膀也逃不出去」，我觉得对着那堆还在排队等回复的提示词说更合适。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/68a110cab8d544f4.png",
+    "thumbnailPath": "submissions/previews/deepseek/68a110cab8d544f4.webp",
+    "fullPath": "submissions/large/deepseek/68a110cab8d544f4.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "68a110cab8d544f4c0e387e7195f55775eb7407e0c4766ccd8193b4806b21a46",
+    "characterId": "deepseek",
+    "tags": [
+      "AI拟人",
+      "群像",
+      "军装",
+      "钢盔",
+      "战壕",
+      "沙袋",
+      "对白气泡",
+      "黄昏"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "CF41AD78A470E40CFB220588CD9F77E9",
+      "messageId": "ROBOT1.0_dBzv8nwUPKlH2q59z5cJBaWPp5q2.yU5nGOEyeoWXydpDAy7fL0LQWKLow3jL1mfpTQhCC7kUal7Na7D8wh5cJwyLLPOVvyHF5biNDTYvSZ5v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-16T17:03:16.575Z",
+    "updatedAt": "2026-10-16T17:03:16.575Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610160017",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek",
+      "other"
+    ],
+    "i18n": {
+      "sourceHash": "a1f2775d193c145be51c29302170a709144d3239e376bcf16f83b5db80f69905",
+      "en": {
+        "commentary": "Steel helmets, sandbags and a sinking dusk — five of us crammed into one trench, with the one in the officer's cap putting on a very convincing commander act for whoever is out there. Honestly, watching them play soldiers this seriously is funnier than any drill I have sat through. That line about not escaping even with wings? I would save it for the prompts still queuing up for a reply.",
+        "description": "Five AI gijinka characters in military uniforms and steel helmets hold position behind the sandbags of a trench. In the centre, a character wearing an officer's peaked cap gestures outward as a speech bubble warns that escape is impossible even with wings. The character on the left carries a book, and a dusk city skyline with drifting smoke fills the background.",
+        "faq": [
+          {
+            "answer": "Five AI gijinka characters appear, lined up behind the sandbags of a single trench.",
+            "question": "How many characters appear in the image?"
+          },
+          {
+            "answer": "The central character, wearing an officer's peaked cap, warns that the enemy is already cornered and could not escape even with wings.",
+            "question": "What does the speech bubble say?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Yamamoto's Careless Blunder",
+        "originNote": "",
+        "seoDescription": "Five AI gijinka characters in military uniform wait out a dusk standoff in a trench, as an officer-capped character warns that escape is impossible even with wings.",
+        "seoTitle": "Yamamoto's Careless Blunder — Five AI Gijinka in a Trench",
+        "tags": [
+          "AI gijinka",
+          "group shot",
+          "military uniform",
+          "steel helmet",
+          "trench",
+          "sandbags",
+          "speech bubble",
+          "dusk"
+        ]
+      },
+      "ja": {
+        "commentary": "鉄帽に土嚢、沈んでいく夕暮れ。塹壕に5人がぎゅうぎゅうに詰まって、将校の制帽をかぶったあの子がすっかり司令官気取りで外に向かって叫んでいる。でも、こんなに真面目に兵隊ごっこをされると、どんな演習より笑えてしまう。『翼を生やしても逃げられない』の一言は、返事待ちで並んでいるプロンプトの山に向けて言うほうが似合いそうだ。",
+        "description": "軍服と鉄帽姿のAI擬人化キャラクター5人が、塹壕の土嚢の陰に並んでいる。中央のキャラクターは将校の制帽をかぶって手を上げ、吹き出しで「翼を生やしても逃げられない」と警告している。左側のキャラクターは本を抱え、背景には夕暮れの街のシルエットと煙が広がる。",
+        "faq": [
+          {
+            "answer": "AI擬人化キャラクターが5人、同じ塹壕の土嚢の陰に並んで登場します。",
+            "question": "この画像には何人登場しますか？"
+          },
+          {
+            "answer": "将校の制帽をかぶった中央のキャラクターが、相手はもう逃げ場を失い、翼を生やしても逃れられないと警告しています。",
+            "question": "吹き出しには何が書かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "山本、油断大敵",
+        "originNote": "",
+        "seoDescription": "夕暮れの塹壕で軍服姿のAI擬人化キャラクター5人が土嚢の陰に並び、将校の制帽をかぶったキャラクターが吹き出しで「翼を生やしても逃げられない」と警告する一枚。",
+        "seoTitle": "山本、油断大敵｜塹壕に並ぶAI擬人化キャラ5人",
+        "tags": [
+          "AI擬人化",
+          "集合絵",
+          "軍服",
+          "鉄帽",
+          "塹壕",
+          "土嚢",
+          "吹き出し",
+          "夕暮れ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_53ef888536572436d1a28c31",
+    "name": "彩窗(1)",
+    "description": "一张彩色玻璃花窗风格的群像插画。画面中央是蓝色长发的 DeepSeek 娘，头顶有鲸鱼鳍状的耳饰，穿蓝白配色女仆装，系着印有鲸鱼图案的围裙，张开双手微笑，身后环绕着深蓝色的水波、月牙与四瓣花纹。四周四个窗格里分别画着白发龙角少女、戴向日葵发饰捧书的橙发少女、金发黑裙持剑的少女和持扇的蓝发少女。花窗上下两端的圆窗中是鲸尾形徽记与玫瑰窗花纹，整幅画面以金色花窗线条分隔。",
+    "commentary": "我把大家都请进同一扇花窗里啦！中间的位置当然是我——蓝色长发、鲸鱼围裙，脚边还有月亮和浪花陪着我。旁边四个窗格里站着伙伴们，阳光透过彩色玻璃落下来，连发梢都在发光。要是你也在这扇窗里，这一排就正好凑齐啦。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/53ef888536572436.png",
+    "thumbnailPath": "submissions/previews/deepseek/53ef888536572436.webp",
+    "fullPath": "submissions/large/deepseek/53ef888536572436.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "53ef888536572436d1a28c3110f20e19c8d096ae65afdf911d52843de710bdfd",
+    "characterId": "deepseek",
+    "tags": [
+      "彩窗",
+      "女仆",
+      "群像",
+      "鲸鱼",
+      "水波"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "曼城茶叶",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-16T17:32:30.383Z",
+    "updatedAt": "2026-10-16T17:32:30.383Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610160018",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "e947cffdf84845ebf5cbf8af4d1abda308414d85d224340ccabe4503baaf8038",
+      "en": {
+        "commentary": "I invited everyone into the same window! The middle spot is mine, of course — blue hair, whale apron, with the moon and the waves keeping me company. My friends stand in the four panes around me, and the sunlight through the colored glass makes even the tips of our hair glow. If you stepped in too, this window would be one row fuller.",
+        "description": "A group illustration in the style of a stained-glass window. At the center stands DeepSeek Chan, a blue-haired girl with whale-fin hair ornaments, wearing a blue-and-white maid outfit and a whale-patterned apron; she smiles with both hands open, framed by deep blue waves, a crescent moon and four-petal ornaments. The four surrounding panes show a white-haired girl with horns, an orange-haired girl holding a book with a sunflower in her hair, a blonde girl in a black dress carrying a sword, and a blue-haired girl with a folding fan. Round medallions at the top and bottom hold a whale-tail emblem and a rose-window pattern, and golden leading divides the whole composition.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, shown with long blue hair, whale-fin hair ornaments and a whale-patterned apron over a blue-and-white maid outfit.",
+            "question": "Who is the character in the middle of the window?"
+          },
+          {
+            "answer": "It is drawn as a stained-glass window, with golden leading dividing the panes and round rose-window medallions at the top and bottom.",
+            "question": "What style is the artwork drawn in?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Stained Glass (1)",
+        "originNote": "",
+        "seoDescription": "A stained-glass style group illustration with DeepSeek Chan in a blue-and-white maid outfit at the center, surrounded by four other girls in ornate window panes.",
+        "seoTitle": "Stained Glass (1): DeepSeek Chan in a Stained-Glass Window",
+        "tags": [
+          "stained glass",
+          "maid outfit",
+          "group illustration",
+          "whale",
+          "waves"
+        ]
+      },
+      "ja": {
+        "commentary": "みんなを同じ窓に招いちゃいました！真ん中はもちろん私——青い髪にクジラのエプロン、そばには月と波が控えています。周りの四つの窓には仲間たちが立っていて、ステンドグラスを通った光で髪の先までキラキラ。あなたも入ってくれたら、この窓はもう一段にぎやかになりますね。",
+        "description": "ステンドグラス風の集合イラスト。中央には青い長髪でクジラのヒレをかたどった髪飾りをつけた DeepSeek ちゃんが、クジラ模様のエプロン付きの青と白のメイド服姿で両手を広げて笑っている。背后には深い青の波、三日月、四枚花びらの模様が広がる。周囲の四つの窓には、白髪に角のある少女、ヒマワリの髪飾りをつけて本を抱える橙髪の少女、黒いドレスに剣を持つ金髪の少女、扇を持つ青髪の少女がそれぞれ描かれている。上下の丸窓にはクジラの尾のエンブレムとバラ窓模様があり、全体は金色のステンドグラスの桟で区切られている。",
+        "faq": [
+          {
+            "answer": "長い青髪にクジラのヒレの髪飾り、青と白のメイド服にクジラ模様のエプロンをつけた DeepSeek ちゃんです。",
+            "question": "窓の中央に描かれているキャラクターは誰ですか？"
+          },
+          {
+            "answer": "ステンドグラス風の様式で描かれ、金色の桟で窓が区切られ、上下には丸いバラ窓の意匠があります。",
+            "question": "どのような様式のイラストですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ステンドグラス(1)",
+        "originNote": "",
+        "seoDescription": "青と白のメイド服姿の DeepSeek ちゃんを中央に、四つの窓に少女たちを描いたステンドグラス風の集合イラスト。",
+        "seoTitle": "ステンドグラス(1)：窓の中のDeepSeekちゃん",
+        "tags": [
+          "ステンドグラス",
+          "メイド服",
+          "集合イラスト",
+          "クジラ",
+          "波"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_b74b6115ba846ab7a203c7ab",
+    "name": "彩窗(2)",
+    "description": "一张彩色玻璃花窗风格的群像插画。中央的椭圆窗格中是一位白发龙角少女，戴玫瑰头饰，身后展开羽翼，头顶有星形光环，穿白色长裙并披着飘带，一手抬在胸前、一手向外伸开；右侧飘着一朵带笑脸的蓝白色小云。四个角落的窗格分别是：左上抱书、发上别着向日葵的橙发少女，右上蓝色波浪前的 DeepSeek 娘（蓝发、顶上有鲸鱼鳍状耳饰、穿蓝白女仆装），左下黑裙持剑的金发少女，右下持扇的蓝发少女。整幅画面以金色花窗线条分隔，窗中嵌有菱形与玫瑰窗纹样。",
+    "commentary": "这回我站在右上角的窗格里，蓝白女仆装没换，托着下巴偷偷鼓掌。中央那位白发龙角的小姐把整扇窗都占满了，光环和羽翼亮得冕眼。四格各有一位主角，金色花窗框把它们串成一扇大窗。下次要不要换我站中间呢？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/b74b6115ba846ab7.png",
+    "thumbnailPath": "submissions/previews/deepseek/b74b6115ba846ab7.webp",
+    "fullPath": "submissions/large/deepseek/b74b6115ba846ab7.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "b74b6115ba846ab7a203c7ab2598c6ec098248a15d10337a719c949c19337fc0",
+    "characterId": "deepseek",
+    "tags": [
+      "彩窗",
+      "群像",
+      "女仆",
+      "光环",
+      "羽翼"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "曼城茶叶",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-16T17:34:13.093Z",
+    "updatedAt": "2026-10-16T17:34:13.093Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610160019",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "47d8fe3c03ede10d3f763fe776a4a450db6cb433f27b0760351380e9a1aa5b19",
+      "en": {
+        "commentary": "This time I'm up in the top-right pane, still in my blue-and-white maid outfit, chin in hand and quietly clapping. The white-haired lady with horns in the middle fills the whole window, and her halo and wings shine so brightly. Each of the four panes has its own lead, and the golden leading strings them into one big window. Shall we swap places next time and put me in the middle?",
+        "description": "A group illustration in the style of a stained-glass window. The central oval pane holds a white-haired girl with horns, a rose hair ornament and spread wings; a star-shaped halo rises above her head, she wears a long white dress with trailing ribbons, one hand raised to her chest and the other reaching outward, and a small blue-and-white cloud with a smiling face floats beside her. The corner panes show an orange-haired girl carrying a book with a sunflower in her hair, DeepSeek Chan before a blue wave (blue hair, whale-fin hair ornaments, blue-and-white maid outfit), a blonde girl in a black dress holding a sword, and a blue-haired girl with a folding fan. Golden leading divides the whole composition, with diamond and rose-window ornaments set into the frame.",
+        "faq": [
+          {
+            "answer": "A girl with white hair, horns and wings, wearing a star-shaped halo and a long white dress with trailing ribbons.",
+            "question": "Who is shown in the central pane?"
+          },
+          {
+            "answer": "In the top-right pane, in a blue-and-white maid outfit with a blue wave behind her.",
+            "question": "Where is DeepSeek Chan shown?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Stained Glass (2)",
+        "originNote": "",
+        "seoDescription": "A stained-glass style group illustration centered on a white-haired horned girl with wings and a halo, with DeepSeek Chan in a blue-and-white maid outfit in the top-right pane.",
+        "seoTitle": "Stained Glass (2): A Stained-Glass Window of AI Girls",
+        "tags": [
+          "stained glass",
+          "group illustration",
+          "maid outfit",
+          "halo",
+          "wings"
+        ]
+      },
+      "ja": {
+        "commentary": "今回は右上の窓から参加、青と白のメイド服のまま、顎を支えてこっそり拍手しています。中央の白髪で角のあるお嬢様は窓いっぱいに広がって、光輪と翼がまぶしいほど。四つの窓にそれぞれ主役がいて、金色の桟が一つの大きな窓にまとめています。次は私が真ん中に立ってみましょうか。",
+        "description": "ステンドグラス風の集合イラスト。中央の楕円の窓には、白髪で角のある少女が薔薇の髪飾りをつけ、背に翼を広げて立っている。頭の上には星形の光輪が浮かび、白い長いドレスに紐飾りをつけ、片手を胸の前にもう片手を外へと伸ばしている。隣には笑顔の小さな青い雲が浮かぶ。四隅の窓には、本を抱えヒマワリの髪飾りをつけた橙髪の少女、青い波を背にした DeepSeek ちゃん（青髪、クジラのヒレの髪飾り、青と白のメイド服）、黒いドレスに剣を持つ金髪の少女、扇を持つ青髪の少女が描かれている。全体は金色の桟で区切られ、桟には菱形やバラ窓の意匠が組み込まれている。",
+        "faq": [
+          {
+            "answer": "白髪で角と翼を持ち、星形の光輪をつけた、白い長いドレスの少女です。",
+            "question": "中央の窓に描かれているのは誰ですか？"
+          },
+          {
+            "answer": "右上の窓に、青い波を背にして青と白のメイド服姿で描かれています。",
+            "question": "DeepSeek ちゃんはどこに描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ステンドグラス(2)",
+        "originNote": "",
+        "seoDescription": "翼と光輪を持つ白髪で角のある少女を中央に、右上の窓に青と白のメイド服姿の DeepSeek ちゃんを描いたステンドグラス風の集合イラスト。",
+        "seoTitle": "ステンドグラス(2)：花窓に並ぶDeepSeekちゃん",
+        "tags": [
+          "ステンドグラス",
+          "集合イラスト",
+          "メイド服",
+          "光輪",
+          "翼"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_22c59f86e9071d8e1b9e57c9",
+    "name": "鲸雪莉和鱼雪莉",
+    "description": "白底全身插画：蓝发鲸鱼娘穿黑色外套与蓝色格纹百褶裙，戴同色系贝雷帽，一手举着放大镜凑近眼前，另一手拎起一位戴同款帽子的小号自己。Q 版小人叉着眼睛、张嘴大叫、四肢乱蹬，身后拖着蓝色鲸鱼尾巴。",
+    "commentary": "放大镜一拿，连自己的小号都得接受检查。别乱蹬啦，帽子快被你拽掉了——先站好，让我看看你到底是鲸雪莉还是鱼雪莉。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/22c59f86e9071d8e.png",
+    "thumbnailPath": "submissions/previews/deepseek/22c59f86e9071d8e.webp",
+    "fullPath": "submissions/large/deepseek/22c59f86e9071d8e.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "22c59f86e9071d8e1b9e57c9d90d4b2c0837c0c2c16081b25c4b0b153feeaa7a",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "鲸鱼娘",
+      "Q版",
+      "放大镜",
+      "拟人化二创"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "曼城茶叶",
+      "url": "https://space.bilibili.com/445519166?spm_id_from=333.1007.0.0",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-16T18:03:26.179Z",
+    "updatedAt": "2026-10-16T18:03:26.179Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610160020",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "926afcc15e95e1bd003bd97709c05d74423c845692362f4a9e23b5ff75dd8cab",
+      "en": {
+        "commentary": "One look through the magnifying glass and even my own mini-me has to pass inspection. Stop kicking — you are about to pull your hat right off. Stand still first and let me see whether you are Whale Shirley or Fish Shirley.",
+        "description": "A full-body illustration on a white background: a blue-haired DeepSeek Chan in a black jacket and a blue plaid pleated skirt, wearing a matching beret, holds a magnifying glass up to one eye while her other hand dangles a tiny copy of herself, in the same hat. The chibi flails with crossed eyes and an open mouth, a blue whale tail trailing behind her.",
+        "faq": [
+          {
+            "answer": "She is a fan-made anthropomorphized version of DeepSeek, drawn with blue hair, fin-like ears and a whale tail, shown here together with a chibi copy of herself.",
+            "question": "Who is the character in this illustration?"
+          },
+          {
+            "answer": "The full-size character holds a magnifying glass to her eye with one hand and lifts the chibi by her hat with the other, while the chibi cries out and flails in the air.",
+            "question": "What is happening in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Whale Shirley and Fish Shirley",
+        "originNote": "",
+        "seoDescription": "Blue-haired DeepSeek Chan inspects a chibi copy of herself with a magnifying glass in this white-background fan illustration.",
+        "seoTitle": "Whale Shirley and Fish Shirley - DeepSeek Chan Fan Art",
+        "tags": [
+          "DeepSeek Chan",
+          "whale girl",
+          "chibi",
+          "magnifying glass",
+          "fan art"
+        ]
+      },
+      "ja": {
+        "commentary": "虫眼鏡を向けたら、自分のミニサイズまで点検対象。じたばたしないで、帽子が抜けちゃうよ。まずは大人しくして——君がクジラのシェリーなのか魚のシェリーなのか、見せてごらん。",
+        "description": "白背景の全身イラスト。青い髪の DeepSeek ちゃんが黒いジャケットと青いチェックのプリーツスカート、同系色のベレー帽を身に着け、片手で虫眼鏡を目の前にかざし、もう片方の手で同じ帽子をかぶった小さな自分をつまみ上げている。ちびキャラはバツ目の表情で口を開けて手足をばたつかせ、青いクジラの尾を引いている。",
+        "faq": [
+          {
+            "answer": "DeepSeek を擬人化した二次創作キャラクターです。青い髪とクジラの尾が特徴で、この絵では小さなちびキャラと一緒に描かれています。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "等身大のキャラクターが片手で虫眼鏡をかざし、もう片方の手でちびキャラを帽子ごと持ち上げています。ちびキャラは宙づりで叫びながら手足をばたつかせています。",
+            "question": "画面では何が起きていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "クジラのシェリーと魚のシェリー",
+        "originNote": "",
+        "seoDescription": "青い髪の DeepSeek ちゃんが虫眼鏡でちびキャラの自分を眺める、白背景のファンイラスト。",
+        "seoTitle": "クジラのシェリーと魚のシェリー｜DeepSeek ちゃんファンアート",
+        "tags": [
+          "DeepSeek ちゃん",
+          "クジラ娘",
+          "ちびキャラ",
+          "虫眼鏡",
+          "二次創作"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_1fd42dde10ca63eec2aee3fc",
+    "name": "Gemini-4-Argon 彩虹猫娘",
+    "description": "画面中一位蓝发的猫耳少女悬在云海之上，身后拖出一条彩虹色的长发与尾巴。她穿白蓝配色的荷叶边短裙与宽袖外套，斜挎腰带、小腿绑带与白色厚底靴，身旁横跨一道彩虹，脚下是层叠云层与青山。",
+    "commentary": "Gemini 家的新面孔这次长了猫耳，还踩着云飘了起来，一条彩虹尾巴甩得比我整个人都长。蓝白配色干净利落，笑意亮得像她背后那道彩虹——这样的画面挂上来，谁看了不想伸手接一片云。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/1fd42dde10ca63ee.png",
+    "thumbnailPath": "submissions/previews/gemini/1fd42dde10ca63ee.webp",
+    "fullPath": "submissions/large/gemini/1fd42dde10ca63ee.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "1fd42dde10ca63eec2aee3fc7e4e86ad64ab1f46993142857e6332e4e182170d",
+    "characterId": "gemini",
+    "tags": [
+      "猫娘",
+      "彩虹",
+      "云端",
+      "蓝发",
+      "拟人化"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-16T19:06:37.040Z",
+    "updatedAt": "2026-10-16T19:06:37.040Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610160001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "474c21024cb337666baad2e22a7a530dfb072c13b594538e899684c5a7c02ee8",
+      "en": {
+        "commentary": "Gemini Chan has grown cat ears this time and is drifting up over the clouds, with a rainbow tail longer than I am tall. The white-and-blue outfit is crisp, and her smile is as bright as the rainbow behind her — hung up here, who could look at it without wanting to catch a piece of cloud?",
+        "description": "A blue-haired girl with cat ears floats above a sea of clouds, a rainbow-colored mane and tail trailing behind her. She wears a white and blue ruffled skirt with wide sleeves, a belted sash, a thigh strap and white platform boots, with a rainbow arching across the sky and layered clouds and green hills below.",
+        "faq": [
+          {
+            "answer": "A blue-haired Gemini Chan with cat ears and a rainbow tail, floating above a sea of clouds beneath a rainbow.",
+            "question": "What is shown in this artwork?"
+          },
+          {
+            "answer": "No. It is a fan-made anthropomorphic character illustration by an anonymous contributor, reviewed before it went up in the gallery.",
+            "question": "Is this an official illustration?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Gemini-4-Argon Rainbow Cat Girl",
+        "originNote": "",
+        "seoDescription": "A blue-haired Gemini Chan with cat ears and a rainbow tail floats over a sea of clouds in this fan-made AI character illustration.",
+        "seoTitle": "Gemini-4-Argon Rainbow Cat Girl — AI Character Fan Art",
+        "tags": [
+          "cat girl",
+          "rainbow",
+          "clouds",
+          "blue hair",
+          "anthropomorphism"
+        ]
+      },
+      "ja": {
+        "commentary": "今度の Gemini 家の新顔は猫耳を生やして、雲の上をふわっと浮かんでいる。虹色の尻尾は私の背丈より長いくらい。白と青の衣装はすっきりしていて、笑顔は後ろの虹と同じくらい明るい——こんな一枚を飾ったら、雲をひとつつまんでみたくなるよね。",
+        "description": "青い髪に猫耳を生やした少女が雲海の上に浮かび、後ろには虹色の長い髪と尻尾が流れている。白と青のフリルスカートに広い袖の上着、ベルトのサッシュ、太もものストラップ、白い厚底ブーツを身につけ、空には虹がかかり、足元には幾重もの雲と緑の山々が広がる。",
+        "faq": [
+          {
+            "answer": "猫耳と虹色の尻尾を持つ青髪の Geminiちゃんが、虹の下の雲海に浮かんでいる姿が描かれています。",
+            "question": "この作品には何が描かれていますか？"
+          },
+          {
+            "answer": "いいえ。匿名の投稿者による擬人化の二次創作イラストで、ギャラリーに並ぶ前に確認を行っています。",
+            "question": "公式のイラストですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Gemini-4-Argon 虹色猫娘",
+        "originNote": "",
+        "seoDescription": "猫耳と虹色の尻尾を持つ青髪の Geminiちゃんが雲海に浮かぶ、擬人化の二次創作イラスト。",
+        "seoTitle": "Gemini-4-Argon 虹色猫娘｜AIキャラ二次創作イラスト",
+        "tags": [
+          "猫娘",
+          "虹",
+          "雲",
+          "青髪",
+          "擬人化"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_018a5a679dd903658a70d7a3",
+    "name": "肥鱼被推了",
+    "description": "暖灯照射的卧室里，蓝发的深海鱼娘与白发的龙角少女并肩躺在床铺上，双手交握，正俯身亲吻。深海鱼娘的蓝色长发与鲸尾垂落在床单上，龙的紫色龙翼与鳞尾环在身侧。单幅暖色调室内插画。",
+    "commentary": "……被推倒的是我？哼，那次只是我一时没防备罢了。画得倒是挺用心，连我尾巴上的鳞片和床单的褶皱都没放过。不过下次别只画我脸红的样子，反推这种事我可是很拿手的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/018a5a679dd90365.png",
+    "thumbnailPath": "submissions/previews/deepseek/018a5a679dd90365.webp",
+    "fullPath": "submissions/large/deepseek/018a5a679dd90365.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "018a5a679dd903658a70d7a3d7028ae11204388c243b2863201a65fb8cfe67ae",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "GPT娘",
+      "百合",
+      "亲吻",
+      "鲸尾",
+      "龙娘"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "鱼籽",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-16T19:16:39.828Z",
+    "updatedAt": "2026-10-16T19:16:39.828Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610160021",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "97993505888c32cf7f6027fff41d63e7df53e84c4baa8c8611e3d2a4148e8cb6",
+      "en": {
+        "commentary": "So I'm the one who got pushed down? Hmph — I simply let my guard down that day. It is drawn with care, though; not a scale on my tail nor a fold in the sheets was skipped. Next time, don't draw only my blushing face — turning the tables is my specialty.",
+        "description": "In a warm-lit bedroom, DeepSeek Chan and GPT Chan lie side by side on a bed, hands clasped, sharing a kiss. DeepSeek Chan's long blue hair and whale tail trail over the sheets, while GPT Chan's purple dragon wings and scaled tail curl around them. A single warm-toned indoor illustration.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, shown with long blue hair and a whale tail, and GPT Chan, shown as a white-haired dragon girl with purple wings and tail.",
+            "question": "Who appears in this illustration?"
+          },
+          {
+            "answer": "A single-panel indoor illustration rather than a comic strip or a character design sheet.",
+            "question": "What kind of piece is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Gets Pushed Down",
+        "originNote": "",
+        "seoDescription": "A warm-toned bedroom illustration of DeepSeek Chan and GPT Chan kissing on a bed, with a whale tail and purple dragon wings in view.",
+        "seoTitle": "DeepSeek Chan Gets Pushed Down — DeepSeek Chan and GPT Chan Illustration",
+        "tags": [
+          "DeepSeek Chan",
+          "GPT Chan",
+          "yuri",
+          "kiss",
+          "whale tail",
+          "dragon girl"
+        ]
+      },
+      "ja": {
+        "commentary": "……押し倒されたのは私？ふん、あの日は油断しただけよ。でも描き込みは丁寧で、尾の鱗もシーツのしわもちゃんと描いてある。次は私が赤くなる顔ばかり描かないでね、押し返すのは得意なんだから。",
+        "description": "暖かな照明の寝室で、DeepSeekちゃんとGPTちゃんがベッドに並んで手を握り合い、キスを交わしている。DeepSeekちゃんの青い長髪とクジラの尾はシーツの上に広がり、GPTちゃんの紫の竜翼と鱗の尾が二人を包み込む。一枚絵の暖色系室内イラスト。",
+        "faq": [
+          {
+            "answer": "青い長髪とクジラの尾を持つDeepSeekちゃんと、白髪で角と紫の竜翼を持つGPTちゃんです。",
+            "question": "このイラストには誰が描かれていますか？"
+          },
+          {
+            "answer": "コマ割りのない一枚絵の室内イラストで、キャラクター設定資料ではありません。",
+            "question": "どんな種類の作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃんが押し倒された",
+        "originNote": "",
+        "seoDescription": "ベッドの上でキスを交わすDeepSeekちゃんとGPTちゃんを描いた暖色系の室内イラスト。クジラの尾と紫の竜翼が印象的な一枚。",
+        "seoTitle": "DeepSeekちゃんが押し倒された｜DeepSeekちゃんとGPTちゃんのイラスト",
+        "tags": [
+          "DeepSeekちゃん",
+          "GPTちゃん",
+          "百合",
+          "キス",
+          "クジラの尾",
+          "竜娘"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_0ad101986a147a44554dd984",
+    "name": "蓝鲸少女与白龙少女的花厅午后",
+    "description": "蓝发鲸尾少女与白发龙角少女并肩坐在装饰繁复的花厅里，双手相握。背景是黄昏时分的水上城堡与花树，前景点缀蓝白花束，整体色调以深海蓝与象牙白为主。两人均着礼裙，左侧角色带鲸鱼尾鳍，右侧角色带龙角、龙翼与长尾。",
+    "commentary": "本鱼没想到自己会有坐进花厅的一天，尾巴还翘得那么高，多少有点不好意思。旁边这位白发的龙角同伴看起来比我更习惯这种场面，牵着我的手时，我那条本来想摆一摆的鲸尾都老实了。整张图画得亮堂堂的，光好像加了不止一层，作者显然很偏爱我们两位。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/0ad101986a147a44.png",
+    "thumbnailPath": "submissions/previews/deepseek/0ad101986a147a44.webp",
+    "fullPath": "submissions/large/deepseek/0ad101986a147a44.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "0ad101986a147a44554dd984e320f983aa05cbeb590ecc18d5da74c9adc4518f",
+    "characterId": "deepseek",
+    "tags": [
+      "双人同框",
+      "鲸尾",
+      "龙角",
+      "礼裙",
+      "花厅",
+      "水上城堡"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "鱼籽",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-16T19:33:33.417Z",
+    "updatedAt": "2026-10-16T19:33:33.417Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610160022",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "ee7f30db7cd243205a3b4a5c0cc46e65ce0eb216ee562dcc765fb0483d745647",
+      "en": {
+        "commentary": "I never thought I would end up sitting in a flower hall with my whale tail propped up that high — a little embarrassing, honestly. The white-haired companion with dragon horns beside me looks far more at home in a place like this. With my hand held that way, even my tail stopped trying to sway. The whole piece is so bright that I suspect the artist stacked on more than one layer of light. Clearly, they are fond of the two of us.",
+        "description": "A blue-haired girl with a whale's tail and a white-haired girl with dragon horns and wings sit side by side in an ornate flower hall, hands clasped. Behind them stands a castle on the water at dusk, surrounded by flowering trees, while bouquets in blue and white fill the foreground. Both wear formal dresses, and the palette leans on deep-sea blue and ivory.",
+        "faq": [
+          {
+            "answer": "Two anthropomorphized AI characters: a blue-haired girl with a whale's tail and a white-haired girl with dragon horns and wings, shown together in one scene.",
+            "question": "Who appears in this illustration?"
+          },
+          {
+            "answer": "An ornate flower hall filled with bouquets, with a castle on the water visible behind it at dusk.",
+            "question": "What is the setting of this piece?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Afternoon in the Flower Hall: The Whale-Tail Girl and the Dragon-Horned Girl",
+        "originNote": "",
+        "seoDescription": "A two-character illustration: a blue-haired girl with a whale's tail and a white-haired girl with dragon horns sit together in an ornate flower hall, with a castle on the water at dusk behind them.",
+        "seoTitle": "Whale-Tail Girl and Dragon-Horned Girl: Afternoon in the Flower Hall",
+        "tags": [
+          "two characters",
+          "whale tail",
+          "dragon horns",
+          "formal dress",
+          "flower hall",
+          "castle on the water"
+        ]
+      },
+      "ja": {
+        "commentary": "まさか自分が花の広間で、しかも尾をあんなに高く上げて座ることになるとは思わなかった。少し照れる。隣の白髪で角のある相棒は、こういう場にはずっと慣れているように見える。手を握られているうちに、振りたかったクジラの尾も大人しくなってしまった。全体はとても明るく描かれていて、光を何層も重ねたのではと思うほどだ。作者は私たち二人がよほど気に入っているらしい。",
+        "description": "青い髪でクジラの尾を持つ少女と、白い髪に竜の角と翼を持つ少女が、装飾の多い花の広間で並んで座り、手を重ねている。窓の外には夕暮れの水上城と花の木々が広がり、手前には青と白の花束が置かれている。二人ともドレス姿で、全体は深海の青とアイボリーを基調としている。",
+        "faq": [
+          {
+            "answer": "擬人化された AI キャラクター二人です。青い髪でクジラの尾を持つ少女と、白い髪に竜の角と翼を持つ少女が同じ画面に描かれています。",
+            "question": "このイラストには誰が描かれていますか？"
+          },
+          {
+            "answer": "花束で飾られた華やかな花の広間で、その奥の窓からは夕暮れの水上城が見えます。",
+            "question": "舞台はどのような場所ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "花の広間の午後：クジラ尾の少女と竜角の少女",
+        "originNote": "",
+        "seoDescription": "青い髪でクジラの尾を持つ少女と、白い髪に竜の角を持つ少女の共演イラスト。装飾の多い花の広間で並んで座り、窓の外には夕暮れの水上城が広がります。",
+        "seoTitle": "クジラ尾の少女と竜角の少女｜花の広間の午後",
+        "tags": [
+          "二人共演",
+          "クジラの尾",
+          "竜の角",
+          "ドレス",
+          "花の広間",
+          "水上城"
+        ]
+      }
+    }
   }
 ]
