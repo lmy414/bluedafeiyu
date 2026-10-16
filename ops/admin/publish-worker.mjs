@@ -436,7 +436,7 @@ export function writeSiteSnapshotFiles(cfg, files) {
   return written;
 }
 
-export async function downloadOriginals(cfg, snapshot, { fetchImpl, log = () => {} } = {}) {
+export async function downloadOriginals(cfg, snapshot, { fetchImpl, exec = defaultExec, log = () => {} } = {}) {
   const written = [];
   for (const item of snapshot.originals) {
     const { abs, rel } = repoPath(cfg.contentDir, item.targetPath, `原图 targetPath ${item.targetPath}`, ORIGINAL_ALLOW_PREFIXES);
@@ -447,10 +447,18 @@ export async function downloadOriginals(cfg, snapshot, { fetchImpl, log = () => 
       }
       throw new Error(`目标原图已存在且内容不同：${rel}`);
     }
-    const url = submissionRawUrl(cfg, item.submissionId);
-    const response = await fetchImpl(url, { headers: { Authorization: `Bearer ${cfg.submissionToken}` }, signal: timeoutSignal(cfg.httpTimeoutMs) });
-    if (!response.ok) throw new Error(`读取投稿原图 HTTP ${response.status}：${item.submissionId}`);
-    const buffer = Buffer.from(await response.arrayBuffer());
+    // 进程可能在推送后、状态回写前中断；临时原图此时已释放，内容仓提交仍是权威副本。
+    const committed = exec('git', ['-C', cfg.contentDir, 'show', `HEAD:${rel}`], { encoding: null, maxBuffer: 64 * 1024 * 1024 });
+    let buffer;
+    if (committed.status === 0) {
+      buffer = Buffer.from(committed.stdout);
+      logLine(log, `从内容仓提交恢复原图：${rel}`);
+    } else {
+      const url = submissionRawUrl(cfg, item.submissionId);
+      const response = await fetchImpl(url, { headers: { Authorization: `Bearer ${cfg.submissionToken}` }, signal: timeoutSignal(cfg.httpTimeoutMs) });
+      if (!response.ok) throw new Error(`读取投稿原图 HTTP ${response.status}：${item.submissionId}`);
+      buffer = Buffer.from(await response.arrayBuffer());
+    }
     if (sha256(buffer) !== item.sha256) throw new Error(`原图 sha256 不匹配：${rel}`);
     fs.mkdirSync(path.dirname(abs), { recursive: true });
     const temp = `${abs}.part-${process.pid}`;
@@ -748,7 +756,7 @@ export async function processPublishRequest({ request, env = process.env, deps =
 
     step = 'download';
     journal.step = step;
-    await downloadOriginals(cfg, snapshot, { fetchImpl, log });
+    await downloadOriginals(cfg, snapshot, { fetchImpl, exec, log });
 
     step = 'delete';
     journal.step = step;

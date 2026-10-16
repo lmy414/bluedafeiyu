@@ -12,6 +12,11 @@ EnvironmentFile=/etc/dafeiyu/admin-publish.env
 ExecStart=/usr/bin/node /srv/apps/dafeiyu-admin/src/ops/admin/publish-worker.mjs
 TimeoutStartSec=3600
 Nice=10
+# 限制预检构建及其子进程，进程退出后由下次发布检查回收中断批次。
+MemoryHigh=1024M
+MemoryMax=1280M
+MemorySwapMax=512M
+Environment="NODE_OPTIONS=--max-old-space-size=640"
 
 [Install]
 WantedBy=multi-user.target

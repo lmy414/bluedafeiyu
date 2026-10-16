@@ -99,6 +99,16 @@ test('失败：输出失败步骤和错误，退出码非零', async (t) => {
   assert.match(result.out, /健康检查失败/);
 });
 
+test('已有批次阻塞时返回错误并指出批次，不再静默成功', async t => {
+  const backend = await startBackend(t, {
+    plan: { hasChanges: true }, requestStatus: 409,
+    requestBody: { run: { runId: 'run-stuck', status: 'in_progress' } },
+  });
+  const result = await capture(io => main([], { env: envFor(backend), stdout: io.stdout, stderr: io.stderr }));
+  assert.equal(result.code, 1);
+  assert.match(result.err, /run-stuck.*in_progress/);
+});
+
 test('--sync-first：先同步投稿再读发布计划', async (t) => {
   const backend = await startBackend(t, { plan: { hasChanges: false }, syncStatus: 200 });
   const result = await capture((io) => main(['--sync-first'], { env: envFor(backend), stdout: io.stdout, stderr: io.stderr }));

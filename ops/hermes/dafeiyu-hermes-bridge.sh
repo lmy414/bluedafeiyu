@@ -29,6 +29,13 @@ sync_admin() {
 }
 
 if [[ "$action" == publish ]]; then
+  (
+    set -a
+    . /etc/dafeiyu/admin-bot.env
+    . /etc/dafeiyu/admin-publish.env
+    set +a
+    /usr/bin/node /srv/apps/dafeiyu-admin/src/ops/admin/recover-interrupted-publish.mjs --apply
+  )
   sync_admin -w 600
   set -a
   . /etc/dafeiyu/admin-bot.env

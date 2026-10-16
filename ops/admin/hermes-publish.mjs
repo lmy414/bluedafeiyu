@@ -199,7 +199,10 @@ async function requestPublish(cfg, fetchImpl) {
     method: 'POST',
     body: JSON.stringify({ trigger: 'bot' }),
   }, fetchImpl);
-  if (response.status === 409) return { conflict: true };
+  if (response.status === 409) {
+    const run = unwrapRun(data);
+    throw new Error(`发布被已有批次阻塞：${run.runId || '未知批次'}（${run.status || '未知状态'}）；请检查发布执行器`);
+  }
   if (!response.ok) {
     const detail = typeof data === 'object' && data ? (data.error || data.message || '') : data;
     throw new Error(`后台 POST ${new URL(url).pathname} HTTP ${response.status}${detail ? `：${detail}` : ''}`);
@@ -207,7 +210,7 @@ async function requestPublish(cfg, fetchImpl) {
   const run = unwrapRun(data);
   const runId = run.runId || run.id || data?.runId || data?.id;
   if (!runId) throw new Error('发布请求成功但没有返回 runId');
-  return { conflict: false, runId: String(runId) };
+  return { runId: String(runId) };
 }
 
 export async function main(argv = process.argv.slice(2), deps = {}) {
@@ -230,7 +233,6 @@ export async function main(argv = process.argv.slice(2), deps = {}) {
     const plan = await getJson(cfg, '/cms-api/publish/plan', fetchImpl);
     if (!planHasChanges(plan)) return 0;
     const requested = await requestPublish(cfg, fetchImpl);
-    if (requested.conflict) return 0;
     const run = await pollRun(cfg, requested.runId, fetchImpl, deps);
     const status = String(run.status || '').toLowerCase();
     if (status === 'succeeded') {
@@ -248,7 +250,7 @@ export async function main(argv = process.argv.slice(2), deps = {}) {
 const invokedDirectly = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
 if (invokedDirectly) {
   main().then((code) => { process.exitCode = code; }).catch((error) => {
-    stderr.write(`[hermes-publish] ${error.message}\n`);
+    process.stderr.write(`[hermes-publish] ${error.message}\n`);
     process.exitCode = 1;
   });
 }
