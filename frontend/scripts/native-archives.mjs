@@ -48,6 +48,11 @@ export function applyNativeArchives(document,api,base,snapshot){
     const lead=document.querySelector('.topic-hero .lede,.page-head .lede');if(lead)lead.textContent=c.summary;
     const page=base.match(/\/page\/(\d+)\.html$/)?.[1];
     const crumb=document.querySelector('.breadcrumbs > span:last-child');if(crumb)crumb.textContent=page?(en?'Page '+page:page+'ページ目'):c.name;
+    // 分页页的面包屑第一项是指回专题首页的链接，标题里带着「· AI 娘作品合集」的原始中文串，这里按专题译文改写。
+    for(const link of document.querySelectorAll('.breadcrumbs a')){
+      const id=link.getAttribute('href')?.match(/\/topics\/([^/]+)\.html$/)?.[1];
+      if(id===c.topic.id)link.textContent=c.name;
+    }
     const description=en?`${c.summary} This collection includes ${c.works.length} works. Each work retains its description, source, attribution and license information.`:`${c.summary} ${c.works.length}件の作品を収録し、各作品の説明、出典、クレジット、ライセンス情報を保持しています。`;
     return {title:c.title+(page?(en?' · Page ':' · ')+page+(en?'':'ページ目'):'')+' | DeepSeek Chan',description};
   }

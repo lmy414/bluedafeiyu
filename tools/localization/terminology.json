@@ -57,6 +57,50 @@
       "en": "MiMo Chan",
       "ja": "MiMoちゃん"
     },
+    "minimax": {
+      "en": "MiniMax Chan",
+      "ja": "MiniMaxちゃん"
+    },
+    "mistral": {
+      "en": "Mistral Chan",
+      "ja": "Mistralちゃん"
+    },
+    "llama": {
+      "en": "Llama Chan",
+      "ja": "Llamaちゃん"
+    },
+    "perplexity": {
+      "en": "Perplexity Chan",
+      "ja": "Perplexityちゃん"
+    },
+    "rwkv": {
+      "en": "RWKV Chan",
+      "ja": "RWKVちゃん"
+    },
+    "hunyuan": {
+      "en": "Hunyuan Chan",
+      "ja": "Hunyuanちゃん"
+    },
+    "git": {
+      "en": "Git Sisters",
+      "ja": "Git三姉妹"
+    },
+    "novelai": {
+      "en": "NovelAI Chan",
+      "ja": "NovelAIちゃん"
+    },
+    "huggingface": {
+      "en": "Hugging Face Chan",
+      "ja": "Hugging Faceちゃん"
+    },
+    "zcode": {
+      "en": "Zcode Chan",
+      "ja": "Zcodeちゃん"
+    },
+    "opencode": {
+      "en": "OpenCode Chan",
+      "ja": "OpenCodeちゃん"
+    },
     "other": {
       "en": "Other characters",
       "ja": "その他のキャラクター"

@@ -68,6 +68,8 @@ const SYNC_DIR_TARGETS = [
   "submissions/large",
   "owner-picks/previews",
   "data/blue-fish/previews",
+  // 作者型专题页的作者头像：按 topicId 命名（<topicId>.webp），内容仓库会提交该目录。
+  "author-avatars",
 ];
 
 const SYNC_TARGETS = [

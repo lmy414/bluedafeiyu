@@ -117,7 +117,9 @@ body.archive .topic-mosaic { height: 258px; padding: 20px; border: 1px dashed va
 body.archive .topic-mosaic img { height: 83%; }
 body.archive .author-line { padding-top: 17px; border-top: 1px dashed var(--j-line); }
 body.archive .author-initial { background: var(--j-soft); color: var(--j-blue); border: 1px solid var(--j-line); border-radius: 9px; font-size: 18px; }
+body.archive .author-avatar { flex: none; width: 56px; height: 56px; object-fit: cover; border: 1px solid var(--j-line); border-radius: 50%; background: var(--j-soft); }
 body.archive .author-line b { font-size: 14px; }
+body.archive .author-bio { margin-top: 3px; font-size: 12px; line-height: 1.5; color: var(--j-muted); }
 body.archive .topic-toc { margin-top: 22px; padding: 5px 0 13px; gap: 24px; border-color: var(--j-line); font-size: 13px; }
 body.archive .topic-toc>a { padding: 9px 0; color: var(--j-blue); }
 body.archive .topic-download-actions { margin: 22px 0 0; }

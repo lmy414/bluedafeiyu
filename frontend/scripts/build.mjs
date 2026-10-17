@@ -55,7 +55,7 @@ const copy = (relative, target = relative) => {
   fs.cpSync(from, to, {recursive:true, force:true});
 };
 for (const file of ['avatar.png','favicon.ico','favicon.png','qq-group.png','credits/shuangshuang.jpg','events/national-day-2026.webp','characters.json','categories.json','blue-fish-ids.json','topics.json','site-data.json','site-data.js','submissions/works.json','owner-picks/works.json']) copy(file);
-for (const dir of ['submissions/previews','submissions/large','owner-picks/previews']) copy(dir);
+for (const dir of ['submissions/previews','submissions/large','owner-picks/previews','author-avatars']) copy(dir);
 // data/blue-fish/previews is intentionally omitted; production serves its shared/data persistent copy.
 // 社交分享卡片：每页一张 1200×630 JPG，画面就是该页对应的作品（tools/og_cards.py，需 Python + Pillow）。
 // 缓存在 .build/og-cache，内容没变的卡片不重画。SKIP_OG=1 可跳过（页面里的 og:image 会指向不存在的图）。

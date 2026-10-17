@@ -1204,8 +1204,14 @@
     '通义千问娘': 'Qwen Chan', '通義千問娘': 'Qwen Chan', '千问娘': 'Qwen Chan', '千問娘': 'Qwen Chan', 'Qwen娘': 'Qwen Chan',
     'Claude娘': 'Claude Chan', 'Gemini娘': 'Gemini Chan', 'Grok娘': 'Grok Chan',
     'Stepfun娘': 'StepFun Chan', 'StepFun娘': 'StepFun Chan', '阶跃星辰娘': 'StepFun Chan',
-    'GLM娘': 'GLM Chan', 'GPT娘': 'GPT Chan', 'ChatGPT娘': 'GPT Chan', 'MiMo娘': 'MiMo Chan'
+    'GLM娘': 'GLM Chan', 'GPT娘': 'GPT Chan', 'ChatGPT娘': 'GPT Chan', 'MiMo娘': 'MiMo Chan',
+    'MiniMax娘': 'MiniMax Chan', 'Mistral娘': 'Mistral Chan', 'Llama娘': 'Llama Chan',
+    'Perplexity娘': 'Perplexity Chan', 'RWKV娘': 'RWKV Chan', '混元HY娘': 'Hunyuan Chan',
+    'Git三姐妹': 'Git Sisters', 'NovelAI娘': 'NovelAI Chan', 'HuggingFace娘': 'Hugging Face Chan',
+    'Zcode娘': 'Zcode Chan', 'OpenCode娘': 'OpenCode Chan'
   };
+  // 少数角色名在日文里有独立写法（不走 Chan → ちゃん 的规则）。
+  var japaneseNames = { 'Git三姐妹': 'Git三姉妹' };
   var englishNameLookup = {};
   Object.keys(englishNames).forEach(function (name) { englishNameLookup[name.toLowerCase()] = englishNames[name]; });
   var englishNamePattern = new RegExp(Object.keys(englishNames).sort(function (a, b) { return b.length - a.length; }).map(function (name) { return name.replace(/娘$/, '\\s*娘'); }).join('|'), 'gi');
@@ -1215,9 +1221,11 @@
     return value.replace(englishNamePattern, function (name, offset, original) {
       if (/^\.[a-z]{2,}\b/i.test(original.slice(offset + name.length))) return name;
       var target = englishNameLookup[name.replace(/\s+娘$/, '娘').toLowerCase()];
+      var canonicalName = name.replace(/\s+娘$/, '娘');
+      if (current === 'ja' && japaneseNames[canonicalName]) return japaneseNames[canonicalName];
       return current === 'ja' && !/^(?:蓝色大肥鱼|藍色大肥魚|Blue Fish)$/i.test(name) ? target.replace(/ Chan$/, 'ちゃん') : target;
     })
-      .replace(/\b(DeepSeek|Doubao|Kimi|Qwen|Claude|Gemini|Grok|StepFun|GLM|GPT|ChatGPT|MiMo)[ -]chan\b/gi, function (whole, name) {
+      .replace(/\b(DeepSeek|Doubao|Kimi|Qwen|Claude|Gemini|Grok|StepFun|GLM|GPT|ChatGPT|MiMo|MiniMax|Mistral|Llama|Perplexity|RWKV|Hunyuan|NovelAI|Hugging ?Face|Zcode|OpenCode)[ -]chan\b/gi, function (whole, name) {
         if(current === 'ja' && whole === 'DeepSeek Chan') return whole;
         var canonical = Object.values(englishNames).find(function (value) { return value.toLowerCase() === name.toLowerCase() + ' chan'; });
         return current === 'ja' ? (canonical || name + ' Chan').replace(/ Chan$/, 'ちゃん') : (canonical || name + ' Chan');

@@ -25,11 +25,15 @@ const works = Object.entries(overlayData()).map(([slug,w])=>({...w,slug}));
 const bySlug = new Map(works.map(w=>[w.slug,w])), byId = new Map(works.map(w=>[w.id,w]));
 const types = snapshot.categories.filter(t=>t.status==='active');
 const chars = snapshot.characters.filter(c=>c.status==='active').map(c=>({...c,list:works.filter(w=>w.cids.includes(c.id))})).filter(c=>c.list.length).sort((a,b)=>b.list.length-a.list.length);
+// 作者头像由内容仓库按 topicId 命名（<topicId>.webp），构建时经 tools/sync_content.mjs
+// 同步进站点仓 dist/author-avatars/。这里按 topic 探测文件，缺失或探测失败时静默回退。
+const authorAvatarDir=path.join(path.dirname(process.env.SITE_SNAPSHOT||path.join(root,'dist/site-data.json')),'author-avatars');
+const topicAvatar=id=>{try{return fs.statSync(path.join(authorAvatarDir,id+'.webp')).isFile()?'/author-avatars/'+id+'.webp':null}catch{return null}};
 const topics = snapshot.topics.filter(t=>t.status!=='removed').map(t=>{
   const list=t.workIds.map(id=>byId.get(id)).filter(Boolean);
   const cover=list.find(w=>w.id===t.coverWorkId)||list[0];
   const art=[cover,...list.filter(w=>w!==cover)].filter(Boolean).slice(0,3);
-  return {...t,list,cover,art,eyebrow:t.author?'作者作品集':'主题合集'};
+  return {...t,list,cover,art,avatar:topicAvatar(t.id),eyebrow:t.author?'作者作品集':'主题合集'};
 });
 const tagCounts=new Map();for(const w of works)for(const tag of w.tg)tagCounts.set(tag,(tagCounts.get(tag)||0)+1);
 const translations={en:{},ja:{}};
@@ -96,4 +100,4 @@ ctx.seo.generatePages(ctx.write,ctx.browsePage,ctx.breadcrumbs);
 export const archivePages=pages;
 export const archiveContext=ctx;
 export const archiveTranslations=translations;
-export const archiveData={works,characters:chars.map(({list,...c})=>c),types,topics:topics.map(({list,cover,art,...t})=>({...t,slugs:list.map(w=>w.slug)}))};
+export const archiveData={works,characters:chars.map(({list,...c})=>c),types,topics:topics.map(({list,cover,art,avatar,...t})=>({...t,slugs:list.map(w=>w.slug)}))};
