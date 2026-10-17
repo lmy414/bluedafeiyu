@@ -67054,7 +67054,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-17T14:38:20.515Z",
-    "updatedAt": "2026-10-17T14:38:20.517Z",
+    "updatedAt": "2026-10-17T16:27:16.891Z",
     "tone": "gpt",
     "symbol": "",
     "slug": "gpt202610170008",
@@ -67419,6 +67419,1389 @@
           "二次創作",
           "白背景",
           "ぬいぐるみ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_a622ab0aaa8d4d1470ccc4b3",
+    "name": "僵尸也吃冰棍吗",
+    "description": "蓝发的 DeepSeek 娘身穿深蓝色女仆装，额前贴着一张写有符文的黄色符纸，右肩前举着一根蓝色冰棍，半睁着眼睛，神态有些慵懒。画面为单幅构图。",
+    "commentary": "哼，本娘才不是僵尸，只是今天没什么精神罢了。额头上这张符纸是装饰，不是封印，别乱贴。冰棍是蓝莓味的，谁抢我跟谁急。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/a622ab0aaa8d4d14.png",
+    "thumbnailPath": "submissions/previews/deepseek/a622ab0aaa8d4d14.webp",
+    "fullPath": "submissions/large/deepseek/a622ab0aaa8d4d14.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "a622ab0aaa8d4d1470ccc4b3fc4c300e4d8faa1d1f70ce70496166a2a297d359",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "女仆装",
+      "符纸",
+      "冰棍",
+      "僵尸",
+      "梗图"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.a63v09Z3ptI6CgFQvKrNjJvDepV9ymcV7tkVMdIq2kYiyXI2BlYZ-viUI8zDRnzSTDWiYY4wdJiHwKB3MdhxoB.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T16:29:26.288Z",
+    "updatedAt": "2026-10-17T16:29:26.288Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610170015",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "3b36319fac202325381e9b6a37ee4bb2a63386e33964c171abcd19a884c8a7b8",
+      "en": {
+        "commentary": "Hmph, I am not a zombie — I am just a little low on energy today. This talisman on my forehead is decoration, not a seal, so don't stick any more on me. The popsicle is blueberry flavor. Just try taking it away from me.",
+        "description": "A single-panel image of DeepSeek Chan: blue hair, a dark blue maid outfit, a yellow paper talisman with red script stuck to her forehead, and a blue popsicle held up in front of her shoulder. Her eyes are half open and she looks sleepy.",
+        "faq": [
+          {
+            "answer": "No. The girl in the picture is DeepSeek Chan, an AI character. She wears a dark blue maid outfit with a paper talisman on her forehead and is eating a blue popsicle.",
+            "question": "Is the character in this image a zombie?"
+          },
+          {
+            "answer": "It is a single-panel meme image. There are no comic panels; the joke comes from the contrast between the zombie talisman on her forehead and the popsicle in her hand.",
+            "question": "What kind of image is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Do Zombies Eat Popsicles Too?",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in a dark blue maid outfit, a yellow talisman on her forehead and a blue popsicle in hand, in a single-panel meme image.",
+        "seoTitle": "Do Zombies Eat Popsicles Too? | DeepSeek Chan",
+        "tags": [
+          "DeepSeek Chan",
+          "maid outfit",
+          "talisman",
+          "popsicle",
+          "zombie",
+          "meme"
+        ]
+      },
+      "ja": {
+        "commentary": "ふん、本ちゃんはゾンビじゃないよ。今日はちょっと元気がないだけ。額のお札は飾りで封印じゃないから、これ以上貼らないでね。アイスキャンディーはブルーベリー味。取ったら許さないから。",
+        "description": "青い髪の DeepSeek ちゃんが濃紺のメイド服を着て、赤い文字の入った黄色いお札を額に貼り、肩の前に青いアイスキャンディーを掲げている単一構図のイラスト。目は半分閉じていて、眠たそうな表情。",
+        "faq": [
+          {
+            "answer": "いいえ、描かれているのは AI キャラクターの DeepSeek ちゃんです。濃紺のメイド服を着て、額にお札を貼り、青いアイスキャンディーを食べています。",
+            "question": "この画像のキャラクターはゾンビですか？"
+          },
+          {
+            "answer": "単一コマのネタ画像です。複数のコマはなく、額のゾンビのお札と手にしたアイスキャンディーの取り合わせで笑いを取っています。",
+            "question": "どんな画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ゾンビもアイスキャンディーを食べるの？",
+        "originNote": "",
+        "seoDescription": "濃紺のメイド服に黄色いお札を貼った DeepSeek ちゃんが、青いアイスキャンディーを手にする単一コマのネタ画像。",
+        "seoTitle": "ゾンビもアイスキャンディーを食べるの？｜DeepSeek ちゃん",
+        "tags": [
+          "DeepSeek ちゃん",
+          "メイド服",
+          "お札",
+          "アイスキャンディー",
+          "ゾンビ",
+          "ネタ画像"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_423e23ece008118ca3048685",
+    "name": "贴着符纸的僵尸女仆娘",
+    "description": "白底全身图：蓝发的 DeepSeek 娘身穿深蓝色女仆裙，围裙与裙摆上有鲸鱼图案，额前贴着一张黄色符纸，双手抬起张开，张着嘴做僵尸状，身后露出深蓝色鲸尾，穿白色连裤袜与深色猪鼻鞋。",
+    "commentary": "被符纸贴住就动不了啦，本娘现在只会蹦着走路。不过围裙上那只鲸鱼还是得摆正。谁再贴第二张，我就把这条尾巴甩过去。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/423e23ece008118c.png",
+    "thumbnailPath": "submissions/previews/deepseek/423e23ece008118c.webp",
+    "fullPath": "submissions/large/deepseek/423e23ece008118c.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "423e23ece008118ca30486855f05331ed05db843c4affe916007ee7649fcad7a",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "女仆装",
+      "符纸",
+      "僵尸",
+      "鲸尾",
+      "梗图"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.TVRlP5AFbRbcCxUaZDKoMZH78YTK0MEDDT8ihedAmiKxKogvABLRaRPCNdZOwJOA6vaNgmimg3YtPrKREFYhQN.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T16:31:16.622Z",
+    "updatedAt": "2026-10-17T16:31:16.622Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610170016",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "00536d46b9b6ac4631c5a68e0989fed67bcd7d4997bad3a62a68cee0ea1e6d12",
+      "en": {
+        "commentary": "Once that talisman goes on I can only hop around, but the whale on my apron still has to sit straight. Stick a second one on me and I'll swing this tail at you.",
+        "description": "A full-body illustration on a white background: blue-haired DeepSeek Chan in a dark blue maid dress with whale motifs on the apron and skirt, a yellow talisman stuck to her forehead, both hands raised and open with her mouth open in a zombie pose. A dark blue whale tail shows behind her; she wears white tights and dark shoes.",
+        "faq": [
+          {
+            "answer": "It is a single full-body illustration of DeepSeek Chan, an AI character, in a maid outfit on a white background. No real person is depicted.",
+            "question": "Who is in this image?"
+          },
+          {
+            "answer": "The joke comes from the paper talisman on her forehead and the stiff zombie pose with raised hands, contrasted with the neat whale motif on her apron.",
+            "question": "Why is she posing like a zombie?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Zombie Maid Under a Talisman",
+        "originNote": "",
+        "seoDescription": "Full-body white-background illustration of DeepSeek Chan as a talisman-sealed zombie maid, whale tail and apron whale motif included.",
+        "seoTitle": "Zombie Maid Under a Talisman | DeepSeek Chan",
+        "tags": [
+          "DeepSeek Chan",
+          "maid outfit",
+          "talisman",
+          "zombie",
+          "whale tail",
+          "meme"
+        ]
+      },
+      "ja": {
+        "commentary": "お札を貼られたらもう飛び跳ねるしかないよ。でもエプロンのクジラはまっすぐじゃないとね。もう一枚貼ったら、この尾っぽで叩くから。",
+        "description": "白背景の全身イラスト。青い髪の DeepSeek ちゃんが濃紺のメイド服を着て、エプロンとスカートにクジラのモチーフがあり、額に黄色いお札を貼り、両手を上げて口を開けたゾンビのポーズを取っている。後ろには濃紺のクジラの尾、白いタイツと濃色の靴。",
+        "faq": [
+          {
+            "answer": "白背景の全身イラストで、描かれているのは AI キャラクターの DeepSeek ちゃんです。実在の人物は描かれていません。",
+            "question": "この画像には誰が描かれていますか？"
+          },
+          {
+            "answer": "額のお札と両手を上げた硬いゾンビのポーズが笑いどころで、エプロンのきちんとしたクジラのモチーフとの対比になっています。",
+            "question": "なぜゾンビのようなポーズなのですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "お札を貼られたゾンビメイドちゃん",
+        "originNote": "",
+        "seoDescription": "濃紺のメイド服にクジラのモチーフ、額にお札を貼った DeepSeek ちゃんのゾンビ姿を描いた白背景の全身イラスト。",
+        "seoTitle": "お札を貼られたゾンビメイドちゃん｜DeepSeek ちゃん",
+        "tags": [
+          "DeepSeek ちゃん",
+          "メイド服",
+          "お札",
+          "ゾンビ",
+          "クジラの尾",
+          "ネタ画像"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_975466a590ac94fbcb8b5404",
+    "name": "僵尸肥鱼-7",
+    "description": "白底立绘：蓝发角色身着深蓝与白色相间的女仆装，额前贴着一张黄色符纸，双臂前伸，呈僵尸般摸索前进的姿态；裙摆印有蓝色鲸鱼图案，身后露出鲸鱼尾鳍，脚踩深蓝小皮鞋。",
+    "commentary": "谁在我额头上贴了符纸……而且这张符还是管饭的那种？眼睛被压得睁不开，只能双手往前摸路，走一步晃三下。裙子上的小鲸鱼是我自己，踩到的话我会很生气。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/975466a590ac94fb.png",
+    "thumbnailPath": "submissions/previews/deepseek/975466a590ac94fb.webp",
+    "fullPath": "submissions/large/deepseek/975466a590ac94fb.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "975466a590ac94fbcb8b5404e220c3884c1cab16e87638ba6cb1a52f68394749",
+    "characterId": "deepseek",
+    "tags": [
+      "僵尸",
+      "女仆装",
+      "符纸",
+      "拟人化",
+      "蓝发",
+      "鲸鱼元素"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.WcEBcxNBW5T2PID0FR.oA1DX-Bp2by6yfflJ5nB05E2.vlmqoGs0XwevUa92eiSH1p55G0dcM.9hChpDdas-8Z.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T16:33:18.575Z",
+    "updatedAt": "2026-10-17T16:33:18.575Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610170017",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "60f36865300501edfe1f5b9b8a42a1f7861f04568ca412403322a49bee8359fd",
+      "en": {
+        "commentary": "Who stuck a talisman on my forehead... and it is a meal-ticket one? It presses my eyes shut, so I can only feel my way forward, wobbling three times per step. That little whale on my skirt is me, so do not step on it.",
+        "description": "A full-body standing illustration on a plain white background: the blue-haired character wears a navy and white maid outfit with a yellow paper talisman stuck to her forehead. Both arms reach forward as she gropes ahead in a zombie-like pose, a blue whale is printed on her skirt, a whale tail fin shows behind her, and she wears dark navy shoes.",
+        "faq": [
+          {
+            "answer": "A navy and white maid outfit with a white apron and dark navy shoes, with a yellow paper talisman stuck to her forehead.",
+            "question": "What is the character wearing?"
+          },
+          {
+            "answer": "She reaches both arms forward in a zombie-like groping pose against a plain white background.",
+            "question": "What pose is she in?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Zombie DeepSeek Chan 7",
+        "originNote": "",
+        "seoDescription": "Zombie DeepSeek Chan 7: a white-background standing illustration of DeepSeek Chan in a navy maid outfit with a paper talisman on her forehead, reaching forward in a zombie pose.",
+        "seoTitle": "Zombie DeepSeek Chan 7: Maid Outfit Standing Illustration - DeepSeek Chan",
+        "tags": [
+          "Zombie",
+          "Maid Outfit",
+          "Talisman",
+          "Anthropomorphism",
+          "Blue Hair",
+          "Whale Motif"
+        ]
+      },
+      "ja": {
+        "commentary": "誰が私の額にお札を貼ったの……しかもごはん札って。目を押さえられて開かないから、手探りで前に進むしかないの。一歩ごとに三回ふらつくんだから。スカートの小さなクジラは私よ、踏んだら怒るからね。",
+        "description": "白背景の全身立ち絵：青い髪のキャラクターが紺と白のメイド服を着て、額に黄色い紙のお札を貼られている。両腕を前に伸ばしてゾンビのように手探りで進むポーズで、スカートには青いクジラが描かれ、後ろにはクジラの尾びれが見え、紺色の靴を履いている。",
+        "faq": [
+          {
+            "answer": "紺と白のメイド服に白いエプロン、紺色の靴を身につけ、額には黄色い紙のお札が貼られている。",
+            "question": "キャラクターは何を着ている？"
+          },
+          {
+            "answer": "白い背景の前で、両腕を前に伸ばしてゾンビのように手探りするポーズをとっている。",
+            "question": "どんなポーズをしている？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ゾンビDeepSeekちゃん 7",
+        "originNote": "",
+        "seoDescription": "ゾンビDeepSeekちゃん 7：額に紙のお札を貼られ、紺のメイド服姿で両腕を前に伸ばす白背景の立ち絵。",
+        "seoTitle": "ゾンビDeepSeekちゃん 7：メイド服の立ち絵 - DeepSeek Chan",
+        "tags": [
+          "ゾンビ",
+          "メイド服",
+          "お札",
+          "擬人化",
+          "青い髪",
+          "クジラのモチーフ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_9e00aca4a035353cb4e8f37c",
+    "name": "僵尸肥鱼-8",
+    "description": "白底立绘：蓝发角色身着深蓝与白色相间的女仆装，一张黄色符纸斜贴在左眼旁，双臂向两侧张开、指尖下垂，双腿交叠悬于空中，呈漂浮跃起的姿态；白色围裙上印有蓝色鲸鱼图案，身后露出鲸鱼尾鳍，穿白色长袜与深蓝小皮鞋。",
+    "commentary": "符纸又来了，这次还歪着挡住我半只眼睛……算了，反正我平时也看不太清楚。脚一离地就飘起来，想站稳都难。围裙上那条小鲸鱼是在替我记录我到底飘了多高吗？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/9e00aca4a035353c.png",
+    "thumbnailPath": "submissions/previews/deepseek/9e00aca4a035353c.webp",
+    "fullPath": "submissions/large/deepseek/9e00aca4a035353c.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "9e00aca4a035353cb4e8f37cb247c59d0b06c98eb2c8166f38a4a2fe6b8f05ad",
+    "characterId": "deepseek",
+    "tags": [
+      "僵尸",
+      "女仆装",
+      "符纸",
+      "拟人化",
+      "蓝发",
+      "鲸鱼元素"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.XJF0htytxEuvtEg2KbE6lYfu7bvwMh0QID-yfhUS-u97VD.7Xa0qMuD6q3vFZQiOhpW5dPk7sFnq3-HamkKtEJ.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T16:34:03.964Z",
+    "updatedAt": "2026-10-17T16:34:03.964Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610170018",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "23c8dbf0515d38cdfc98a4fa5d872e8dab3ab6b33a258ed4e8314222b02d3169",
+      "en": {
+        "commentary": "The talisman is back, and this time it sits crooked and covers half of one eye... whatever, I cannot see very well most of the time anyway. The moment my feet leave the ground I float up, and standing steady is hopeless. Is that little whale on my apron keeping track of how high I drift?",
+        "description": "A full-body standing illustration on a plain white background: the blue-haired character wears a navy and white maid outfit, with a yellow paper talisman stuck at a slant beside her left eye. Both arms spread to the sides with the fingertips pointing down, and her legs are crossed in midair in a floating, leaping pose; a blue whale is printed on her white apron, a whale tail fin shows behind her, and she wears white thigh-high socks and dark navy shoes.",
+        "faq": [
+          {
+            "answer": "A navy and white maid outfit with a white whale-print apron, white thigh-high socks and dark navy shoes, with a yellow paper talisman stuck at a slant beside her left eye.",
+            "question": "What is the character wearing?"
+          },
+          {
+            "answer": "Her arms spread to the sides and her legs are crossed in midair, so she looks as if she is floating or leaping against the plain white background.",
+            "question": "What pose is she in?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Zombie DeepSeek Chan 8",
+        "originNote": "",
+        "seoDescription": "Zombie DeepSeek Chan 8: a white-background standing illustration of DeepSeek Chan in a navy maid outfit with a talisman over one eye, floating with crossed legs.",
+        "seoTitle": "Zombie DeepSeek Chan 8: Floating Maid Outfit Standing Illustration - DeepSeek Chan",
+        "tags": [
+          "Zombie",
+          "Maid Outfit",
+          "Talisman",
+          "Anthropomorphism",
+          "Blue Hair",
+          "Whale Motif"
+        ]
+      },
+      "ja": {
+        "commentary": "またお札が来たの。今度は斜めに貼られて片目を半分ふさいでいる……まあいいか、普段からよく見えていないし。足が地面を離れた途端に浮かんでしまって、まっすぐ立つのも無理。エプロンの小さなクジラは、私がどこまで浮いたかを記録しているのかな？",
+        "description": "白背景の全身立ち絵：青い髪のキャラクターが紺と白のメイド服を着て、左目の横には黄色い紙のお札が斜めに貼られている。両腕を左右に広げて指先を下に向け、両足を組んだまま宙に浮き上がるポーズ。白いエプロンには青いクジラが描かれ、後ろにはクジラの尾びれが見え、白いニーハイソックスと紺色の靴を履いている。",
+        "faq": [
+          {
+            "answer": "紺と白のメイド服にクジラ柄の白いエプロン、白いニーハイソックス、紺色の靴を身につけ、左目の横には黄色い紙のお札が斜めに貼られている。",
+            "question": "キャラクターは何を着ている？"
+          },
+          {
+            "answer": "両腕を左右に広げ、両足を組んだまま宙に浮いているように見えるポーズで、背景は白一色になっている。",
+            "question": "どんなポーズをしている？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ゾンビDeepSeekちゃん 8",
+        "originNote": "",
+        "seoDescription": "ゾンビDeepSeekちゃん 8：片目にお札を貼られ、紺のメイド服姿で宙に浮かぶ白背景の立ち絵。",
+        "seoTitle": "ゾンビDeepSeekちゃん 8：浮かぶメイド服の立ち絵 - DeepSeek Chan",
+        "tags": [
+          "ゾンビ",
+          "メイド服",
+          "お札",
+          "擬人化",
+          "青い髪",
+          "クジラのモチーフ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_74851c87cbd42b08a7b7727e",
+    "name": "僵尸肥鱼-9",
+    "description": "白底立绘：蓝发角色身着深蓝与白色相间的女仆装，黄色符纸竖直贴在额前，双臂向两侧完全张开、掌心朝外，一条腿抬起悬空、另一条腿支撑身体，呈迈步漂浮的姿态；白色围裙上印有蓝色鲸鱼图案，裙摆带金色花纹与蝴蝶结，身后露出鲸鱼尾鳍，穿白色长袜与深蓝小皮鞋。",
+    "commentary": "又被贴符纸了，不过这张贴得还算端正。双臂张开不是要抱谁，是怕一迈步就倒。抬起来的那只脚一点地都没有，鞋尖还悬着……你们别拍了，先告诉我怎么落地。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/74851c87cbd42b08.png",
+    "thumbnailPath": "submissions/previews/deepseek/74851c87cbd42b08.webp",
+    "fullPath": "submissions/large/deepseek/74851c87cbd42b08.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "74851c87cbd42b08a7b7727e8d198cd4040b4ce5306d41004d804b6a800dc4b7",
+    "characterId": "deepseek",
+    "tags": [
+      "僵尸",
+      "女仆装",
+      "符纸",
+      "拟人化",
+      "蓝发",
+      "鲸鱼元素"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.RG1EcyxqJi1007L8RIovzhK1nFxzxNzBF5-FhpTKEHaaNNDX3G43GkMx3.khpH7BgVRVzKFXfG1X9M3w4tgipl.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T16:34:33.685Z",
+    "updatedAt": "2026-10-17T16:34:33.685Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610170019",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "ad177f16caeb7edc913502f3e108a28e9b1883e31fbf7928f128e9be18298481",
+      "en": {
+        "commentary": "Stuck with a talisman again, though this one sits fairly straight at least. My arms are spread wide not for a hug but because I am afraid of falling over the moment I step. The lifted foot has not touched anything and the toe is still hovering... stop taking pictures and tell me how to land first.",
+        "description": "A full-body standing illustration on a plain white background: the blue-haired character wears a navy and white maid outfit with a yellow paper talisman stuck straight on her forehead. Both arms spread fully to the sides with the palms facing out, one leg lifted in midair while the other supports her, in a stepping, floating pose; a blue whale is printed on her white apron, the skirt has gold patterns and bows, a whale tail fin shows behind her, and she wears white stockings and dark navy shoes.",
+        "faq": [
+          {
+            "answer": "A navy and white maid outfit with a white whale-print apron, white stockings and dark navy shoes; the skirt has gold patterns and bows, and a yellow paper talisman sits on her forehead.",
+            "question": "What is the character wearing?"
+          },
+          {
+            "answer": "Both arms spread out to the sides and one leg is lifted in midair while the other supports her, so she looks as if she is stepping or floating above the white background.",
+            "question": "What pose is she in?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Zombie DeepSeek Chan 9",
+        "originNote": "",
+        "seoDescription": "Zombie DeepSeek Chan 9: a white-background standing illustration of DeepSeek Chan in a navy maid outfit with a talisman on her forehead, stepping with arms spread wide.",
+        "seoTitle": "Zombie DeepSeek Chan 9: Maid Outfit Standing Illustration - DeepSeek Chan",
+        "tags": [
+          "Zombie",
+          "Maid Outfit",
+          "Talisman",
+          "Anthropomorphism",
+          "Blue Hair",
+          "Whale Motif"
+        ]
+      },
+      "ja": {
+        "commentary": "またお札を貼られたの。でも今回は割とまっすぐ貼ってある。両腕を広げているのは誰かを抱きしめるためじゃなくて、一歩踏み出したら転びそうで怖いから。持ち上げた足は何にも触れていなくて、つま先がまだ宙に浮いているの……撮影はやめて、先にどうやって着地するか教えてよ。",
+        "description": "白背景の全身立ち絵：青い髪のキャラクターが紺と白のメイド服を着て、額には黄色い紙のお札がまっすぐ貼られている。両腕を左右いっぱいに広げて手のひらを外側に向け、片足を宙に上げてもう片方の足で体を支える、踏み出すように浮かぶポーズ。白いエプロンには青いクジラが描かれ、スカートには金の模様とリボンがあり、後ろにはクジラの尾びれが見える。白いソックスと紺色の靴を履いている。",
+        "faq": [
+          {
+            "answer": "紺と白のメイド服にクジラ柄の白いエプロン、白いソックス、紺色の靴を身につけ、スカートには金の模様とリボンがあり、額には黄色い紙のお札が貼られている。",
+            "question": "キャラクターは何を着ている？"
+          },
+          {
+            "answer": "両腕を左右いっぱいに広げ、片足を宙に上げてもう片方の足で体を支えており、白い背景の上を踏み出して浮かんでいるように見えるポーズ。",
+            "question": "どんなポーズをしている？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ゾンビDeepSeekちゃん 9",
+        "originNote": "",
+        "seoDescription": "ゾンビDeepSeekちゃん 9：額にお札を貼られ、紺のメイド服姿で両腕を広げて踏み出す白背景の立ち絵。",
+        "seoTitle": "ゾンビDeepSeekちゃん 9：メイド服の立ち絵 - DeepSeek Chan",
+        "tags": [
+          "ゾンビ",
+          "メイド服",
+          "お札",
+          "擬人化",
+          "青い髪",
+          "クジラのモチーフ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_db4737714227d523efc3b9ea",
+    "name": "僵尸肥鱼·符咒封印",
+    "description": "画面为单幅立绘式插画：蓝发蓝眼、带鳍耳与鱼尾的 DeepSeek娘身披白衬衫与深色百褶裙，头顶倒扣一只金属锅，额头与胸前各贴一道黄底朱红符咒，面色微红、嘴角有口水，以僵尸题材造型作拟人化演绎。",
+    "commentary": "头顶一口锅，脑门还贴了一道符，说是僵尸，可我明明是鱼。动是动不了了，只能站着让人画——胸那两道符是封印，不是防走光，别多想。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/db4737714227d523.png",
+    "thumbnailPath": "submissions/previews/deepseek/db4737714227d523.webp",
+    "fullPath": "submissions/large/deepseek/db4737714227d523.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "db4737714227d523efc3b9ea7d444a965d7dd9aaaaf0da3301be4fe44b0bf979",
+    "characterId": "deepseek",
+    "tags": [
+      "僵尸",
+      "符咒",
+      "拟人化"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.TpeKFovHKMySMFwq1kGXZpJZ.QLF6fgLBU3MlvJuV7tDhQhRDXzJo-eXbIKKdkepV8e3usQPcejbmwH4FNQi5t5v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T16:35:29.131Z",
+    "updatedAt": "2026-10-17T16:35:29.131Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610170020",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "76099af9fa184d3fbfdccd9509cc9f77bb5e6c36def3555c90bf055c7c0ae29c",
+      "en": {
+        "commentary": "A pot on my head and a talisman on my forehead, and they call it a zombie — but I'm a fish. My arms won't move, so I just stand here to be drawn. Those talismans on my chest are part of the seal, not a wardrobe fix. Don't read too much into it.",
+        "description": "A single-panel illustration of DeepSeek Chan, the blue-haired, blue-eyed character with fin-like ears and a fish tail, wearing a white shirt and a dark pleated skirt. A metal pot is turned upside down on her head, and yellow talismans with red script are stuck to her forehead and chest. She blushes faintly with a bit of drool at the corner of her mouth, styled as a Chinese hopping zombie (jiangshi).",
+        "faq": [
+          {
+            "answer": "It depicts DeepSeek Chan reimagined as a jiangshi, the Chinese hopping zombie of film and folklore, with a metal pot for a helmet and paper talismans used to bind her.",
+            "question": "What is shown in this illustration?"
+          },
+          {
+            "answer": "She wears a white shirt, a dark pleated skirt, an upside-down metal pot, and yellow talismans on her forehead and chest.",
+            "question": "How is DeepSeek Chan dressed?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Zombie DeepSeek Chan: Talisman Seal",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan drawn as a jiangshi: a metal pot on her head and yellow talismans on her forehead and chest, with her blue hair, fin ears and fish tail kept intact.",
+        "seoTitle": "Zombie DeepSeek Chan: Talisman Seal",
+        "tags": [
+          "zombie",
+          "talisman",
+          "anthropomorphized"
+        ]
+      },
+      "ja": {
+        "commentary": "頭に鍋、額にお札。ゾンビと言われても、私は魚です。腕が動かないので、立って描かれるだけ。胸のお札は封印の一部で、服の応急処置ではありません。深く考えないでください。",
+        "description": "単一カットのイラスト。青い髪と青い瞳、鰭のような耳と魚の尾を持つDeepSeekちゃんが、白いシャツと濃紺のプリーツスカートを着用している。頭には金属製の鍋を逆さにかぶり、額と胸には朱文字の黄色いお札が貼られている。頬をうっすら赤らめ、口元に涎が垂れ、中華圏のゾンビ（キョンシー）風の姿に描かれている。",
+        "faq": [
+          {
+            "answer": "映画や伝承で知られる中華圏のゾンビ（キョンシー）に扮したDeepSeekちゃんを描いた一枚です。頭には鍋をかぶり、体を封じるためのお札が貼られています。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "白いシャツ、濃紺のプリーツスカート、逆さにかぶった金属製の鍋、そして額と胸に貼られた黄色いお札です。",
+            "question": "DeepSeekちゃんはどんな服装ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ゾンビDeepSeekちゃん・お札封印",
+        "originNote": "",
+        "seoDescription": "鍋をかぶりお札を貼られたキョンシー姿のDeepSeekちゃん。青い髪、鰭耳、魚の尾はそのままの擬人化イラスト。",
+        "seoTitle": "ゾンビDeepSeekちゃん・お札封印",
+        "tags": [
+          "ゾンビ",
+          "お札",
+          "擬人化"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_6e48c4aa15f8df8ec23f697d",
+    "name": "僵尸肥鱼·女仆符咒",
+    "description": "单幅半身插画：蓝发蓝眼、带鳍耳与鱼尾的 DeepSeek娘 身着深蓝与白色相间的女仆装，头戴荷叶边头饰并系蓝色蝴蝶结，额前贴一道黄底朱红符咒，围裙上印有蓝色鲸鱼图案。她面色泛红、嘴角垂涎，双手抓住画面外伸来的手臂，以贴身视角构图呈现僵尸题材。",
+    "commentary": "符还贴在额头上，身子不听使唤，手比脑子先动——抓住你的胳膊不放，纯属封印后遗症，不是撒娇。围裙上那只小鲸鱼是我自己绣的，别盯着看。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/6e48c4aa15f8df8e.png",
+    "thumbnailPath": "submissions/previews/deepseek/6e48c4aa15f8df8e.webp",
+    "fullPath": "submissions/large/deepseek/6e48c4aa15f8df8e.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "6e48c4aa15f8df8ec23f697d01b07bae7bd07ea9e121a9c49d4441393be4fb5a",
+    "characterId": "deepseek",
+    "tags": [
+      "僵尸",
+      "符咒",
+      "女仆装",
+      "拟人化"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.b5W1.LFGihH6HBxMN4eoF8mVBJMnYUw4JSIfhzj0X-sgmLGsWvb2lwz.NlK.JJeL4POvwaiadyl-nhjXwDzldh.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T16:36:32.147Z",
+    "updatedAt": "2026-10-17T16:36:32.147Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610170021",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "8df5acba1d279268a2d619162bdcac24769763f377c42ffc7791ae7b47634c48",
+      "en": {
+        "commentary": "The talisman is still on my forehead and my body won't listen — my hands move before my brain does. Grabbing your arm like this is a side effect of the seal, not affection. And the little whale on my apron is my own handiwork, so stop staring at it.",
+        "description": "A single-panel half-body illustration of DeepSeek Chan, the blue-haired, blue-eyed character with fin-like ears and a fish tail, wearing a navy-and-white maid dress with a frilled headpiece and a blue bow. A yellow talisman with red script is stuck to her forehead, and a blue whale emblem decorates her apron. Blushing and drooling, she grips a forearm that reaches into the frame, shown from a close point-of-view.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan dressed as a maid and marked with a jiangshi talisman, shown from the point of view of the person whose arm she is holding.",
+            "question": "What is shown in this illustration?"
+          },
+          {
+            "answer": "Her fin-like ears, fish tail, long blue hair and blue eyes are kept, along with a blue whale emblem on the apron.",
+            "question": "Which character details are kept?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Zombie DeepSeek Chan: Maid and Talisman",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in a maid dress with a jiangshi talisman on her forehead, gripping a passing arm in a close point-of-view composition.",
+        "seoTitle": "Zombie DeepSeek Chan: Maid and Talisman",
+        "tags": [
+          "zombie",
+          "talisman",
+          "maid outfit",
+          "anthropomorphized"
+        ]
+      },
+      "ja": {
+        "commentary": "お札はまだ額に貼られたままで、体が言うことをききません。手が頭より先に動くんです。あなたの腕をつかんでいるのは封印の後遺症で、甘えているわけではありません。エプロンの小さなクジラは自分で縫ったものなので、じっと見ないでください。",
+        "description": "単一カットの半身イラスト。青い髪と青い瞳、鰭のような耳と魚の尾を持つDeepSeekちゃんが、紺と白のメイド服にフリルのヘッドドレスと青いリボンをつけて立っている。額には朱文字の黄色いお札が貼られ、エプロンには青いクジラのワンポイントが描かれている。頬を赤らめて涎を垂らし、画面外から伸びた腕を両手でつかむ、至近距離の視点で描かれたキョンシー風の一枚。",
+        "faq": [
+          {
+            "answer": "メイド服を着てキョンシーのお札を貼られたDeepSeekちゃんを、つかまれている側の視点で描いたイラストです。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "鰭のような耳、魚の尾、長い青い髪と青い瞳はそのままに、エプロンの青いクジラのワンポイントも残されています。",
+            "question": "キャラクターの特徴で残されているものは？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ゾンビDeepSeekちゃん・メイドとお札",
+        "originNote": "",
+        "seoDescription": "額にお札を貼られメイド服姿のDeepSeekちゃんが、通りがかりの腕をつかむ至近距離視点の一枚。",
+        "seoTitle": "ゾンビDeepSeekちゃん・メイドとお札",
+        "tags": [
+          "ゾンビ",
+          "お札",
+          "メイド服",
+          "擬人化"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_e7f2440f313651adf647bdf1",
+    "name": "僵尸肥鱼·女仆装全身立绘",
+    "description": "单幅全身立绘，背景纯白：蓝发蓝眼、带鳍耳与鱼尾的 DeepSeek娘 身着深蓝与白色相间的女仆装，头戴荷叶边头饰并系蓝蝴蝶结，额前贴一道黄底朱红符咒，围裙上印有蓝色鲸鱼图案。她双臂前伸、手指弯曲作抓挠状，张口呼喊，以僵尸姿态的全身造型展示服装与动作。",
+    "commentary": "符咒上身，四肢僵得听得见声，往前扑就对了。女仆装是封印期间被迫套上的，围裙上那只小鲸鱼倒是我自己的骄傲。别跑，我跑不快的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/e7f2440f313651ad.png",
+    "thumbnailPath": "submissions/previews/deepseek/e7f2440f313651ad.webp",
+    "fullPath": "submissions/large/deepseek/e7f2440f313651ad.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "e7f2440f313651adf647bdf1b0943be903c8f0ccb77fc2553985e9929e0998a7",
+    "characterId": "deepseek",
+    "tags": [
+      "僵尸",
+      "符咒",
+      "女仆装",
+      "拟人化"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.T-rba5fHmMTB.VncQmEvKO1o-DQgyX-PFBh-sJiGI1k3FfxN-I-Nuzl3BIJuIcSK70O4FXFWpUVXL0asGU6p8N.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T16:37:29.620Z",
+    "updatedAt": "2026-10-17T16:37:29.620Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610170022",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "d9238014cdf68e5dc9de76b92728914898db62513a60147455ddb88c9d2ba05c",
+      "en": {
+        "commentary": "The talisman is on, my limbs are stiff enough to creak, so lurching forward is the whole plan. The maid dress was forced on me during the sealing; the little whale on the apron, though, is my own pride. Don't run — I can't run fast anyway.",
+        "description": "A single-panel full-body standing illustration on a plain white background. DeepSeek Chan, the blue-haired, blue-eyed character with fin-like ears and a fish tail, wears a navy-and-white maid dress with a frilled headpiece and a blue bow. A yellow talisman with red script is stuck to her forehead and a blue whale emblem decorates her apron. Both arms reach forward with clawed fingers and her mouth is wide open, showing the full costume and jiangshi pose.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan in a full-body maid outfit with a jiangshi talisman on her forehead, reaching forward with clawed hands on a plain white background.",
+            "question": "What is shown in this illustration?"
+          },
+          {
+            "answer": "She stands on a plain white background with no scene, which fits the standing illustration type rather than a multi-panel comic or a design reference sheet.",
+            "question": "Why is this a standing illustration?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Zombie DeepSeek Chan: Maid Outfit, Full Body",
+        "originNote": "",
+        "seoDescription": "Full-body DeepSeek Chan in a navy-and-white maid dress with a jiangshi talisman on her forehead, reaching forward with clawed hands.",
+        "seoTitle": "Zombie DeepSeek Chan: Maid Outfit, Full Body",
+        "tags": [
+          "zombie",
+          "talisman",
+          "maid outfit",
+          "anthropomorphized"
+        ]
+      },
+      "ja": {
+        "commentary": "お札が貼られて、手足はきしむほど硬いので、前に突っ込むしかありません。メイド服は封印中に無理やり着せられたものですが、エプロンの小さなクジラだけは自慢です。逃げないでください、どうせ速く走れませんから。",
+        "description": "白背景の単一カット全身立ち絵。青い髪と青い瞳、鰭のような耳と魚の尾を持つDeepSeekちゃんが、紺と白のメイド服にフリルのヘッドドレスと青いリボンをつけて立っている。額には朱文字の黄色いお札が貼られ、エプロンには青いクジラのワンポイントが描かれている。両腕を前に伸ばして指をかぎ爪のように曲げ、口を大きく開けたキョンシー姿で、衣装とポーズを全身で見せている。",
+        "faq": [
+          {
+            "answer": "額にキョンシーのお札を貼られ、メイド服姿で両手を前に伸ばすDeepSeekちゃんの全身を、白背景で描いたイラストです。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "背景が白一色で場面構成がなく、人物の姿と衣装を全身で見せる立ち絵にあたるためです。複数コマの漫画でも、設定資料でもありません。",
+            "question": "なぜ立ち絵と判断できますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ゾンビDeepSeekちゃん・メイド服全身",
+        "originNote": "",
+        "seoDescription": "紺と白のメイド服を着て額にお札を貼られたDeepSeekちゃんが、両手を前に伸ばす全身イラスト。",
+        "seoTitle": "ゾンビDeepSeekちゃん・メイド服全身",
+        "tags": [
+          "ゾンビ",
+          "お札",
+          "メイド服",
+          "擬人化"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_6593c91f47f3e8f85d8a1aa6",
+    "name": "僵尸肥鱼-13",
+    "description": "蓝色长发的 DeepSeek 娘身穿深蓝底白边女仆裙，整幅画面身子倒悬，额头贴有一道黄色符纸，白围裙上印着品牌的小鲸鱼标记，是僵尸题材的立绘展示。",
+    "commentary": "额头这张符纸可不是别人给我贴上的，是我自己憋着气装僵尸装到底的成果～不过老是倒着飘，脑子真的会涨。谁要是把这张图叫成「肥鱼僵尸」，下次我就真给他来一张符纸。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/6593c91f47f3e8f8.png",
+    "thumbnailPath": "submissions/previews/deepseek/6593c91f47f3e8f8.webp",
+    "fullPath": "submissions/large/deepseek/6593c91f47f3e8f8.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "6593c91f47f3e8f85d8a1aa693d11a0369bcb54f2adbcf3c2469d617cc43d60b",
+    "characterId": "deepseek",
+    "tags": [
+      "僵尸",
+      "符纸",
+      "女仆装",
+      "倒悬",
+      "拟人化"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.dTRGc7CQF1RIZdzvEQb9KF4wiIw1pWEVlfcp9VcFGTAXFaKyaNYdLM6veEvAcReu6mMfWE67-ck4M3jctj6Esl.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T16:39:07.481Z",
+    "updatedAt": "2026-10-17T16:39:07.481Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610170023",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "fc63e5e71c5c5ebbcbfccf92e40d6ef9801afa39c482132c293307c9ce0c35ad",
+      "en": {
+        "commentary": "Nobody stuck this talisman on me — I held my breath and committed to the zombie bit all on my own. Still, floating upside down this long really does make my head swim. And if anyone gives me a silly nickname over this one, I will put a talisman on your forehead next.",
+        "description": "DeepSeek Chan, a blue-haired girl in a navy maid dress with white frills, hangs upside down with a yellow paper talisman stuck to her forehead; a small whale mark is printed on her white apron. A zombie-themed standing illustration.",
+        "faq": [
+          {
+            "answer": "It is DeepSeek Chan, the anthropomorphized mascot of DeepSeek, drawn in a zombie-themed maid costume.",
+            "question": "Which character is shown in this image?"
+          },
+          {
+            "answer": "It is a paper talisman, a motif from Chinese hopping-zombie folklore, used here to play up the zombie pose.",
+            "question": "What is the yellow strip on her forehead?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Zombie DeepSeek Chan-13",
+        "originNote": "",
+        "seoDescription": "Blue-haired DeepSeek Chan in a navy maid dress hangs upside down in zombie style, a yellow paper talisman on her forehead and the whale mark on her apron.",
+        "seoTitle": "Zombie DeepSeek Chan-13 | Standing Illustration",
+        "tags": [
+          "zombie",
+          "talisman",
+          "maid outfit",
+          "upside down",
+          "anthropomorphic"
+        ]
+      },
+      "ja": {
+        "commentary": "このお札は誰かに貼られたんじゃなくて、自分で息を止めてゾンビになりきった成果だよ～。でも逆さまのまま長く浮かんでいると、さすがに頭にくる。変なあだ名をつけたら、次は君のおでこにお札を貼ってあげるからね。",
+        "description": "青い長髪の DeepSeekちゃん が、紺色に白フリルのメイド服姿で逆さまに浮かび、額に黄色いお札を貼っている。白いエプロンにはブランドのクジラマーク。ゾンビを題材にした立ち絵。",
+        "faq": [
+          {
+            "answer": "DeepSeek の擬人化キャラクター、DeepSeekちゃん です。ゾンビを題材にしたメイド服姿で描かれています。",
+            "question": "この画像に描かれているキャラクターは誰ですか？"
+          },
+          {
+            "answer": "中国のキョンシー伝承に由来するお札のモチーフで、ゾンビのポーズを引き立てるために使われています。",
+            "question": "額に貼ってある黄色い帯は何ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ゾンビ DeepSeekちゃん-13",
+        "originNote": "",
+        "seoDescription": "青い髪の DeepSeekちゃん が紺のメイド服で逆さまに浮かぶゾンビ姿。額には黄色いお札、エプロンにはクジラのマーク。",
+        "seoTitle": "ゾンビ DeepSeekちゃん-13｜立ち絵",
+        "tags": [
+          "ゾンビ",
+          "お札",
+          "メイド服",
+          "逆さま",
+          "擬人化"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_199e8f91730950ddbcec8ad7",
+    "name": "月相-望月",
+    "description": "银白长发的 Kimi 娘立于满月前的舞台中央，左手高举、右手握着一把绘有花枝的折扇；深蓝礼服的下摆印着钢琴键与乐谱纹样，脚边围着一群白兔，台下是成排的应援灯与观众剪影。",
+    "commentary": "望月这一张，我第一眼就被那轮满月镇住了。她举着折扇站在聚光灯下，裙摆上的琴键和乐谱一路淌到脚边，像要在月亮底下开一场只属于夜晚的演唱会。脚边那群白兔比台下任何观众都安静，倒是应援灯亮得像撒了一地的星星。想问她一句：这场演出，是唱给我听的么？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/kimi/199e8f91730950dd.png",
+    "thumbnailPath": "submissions/previews/kimi/199e8f91730950dd.webp",
+    "fullPath": "submissions/large/kimi/199e8f91730950dd.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "199e8f91730950ddbcec8ad7ac5303e75b29f70e3ee12d852f3d966f8989ad27",
+    "characterId": "kimi",
+    "tags": [
+      "月相",
+      "满月",
+      "舞台演出",
+      "白兔",
+      "折扇",
+      "礼服"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "D360FDE650377B9AC721E2189279DB2B",
+      "messageId": "ROBOT1.0_kEEP-Ez5Y3jtRj7IyhCxTbZIJgbss6vB1-NALDeXi3vDrXgUq29nREI9Icn9dk8gZdKhhh8di9WkyUTLRcVMZPX8HZA3eB4zLUgF9lHkXXR5v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T17:02:56.468Z",
+    "updatedAt": "2026-10-17T17:02:56.468Z",
+    "tone": "kimi",
+    "symbol": "",
+    "slug": "kimi202610170002",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "kimi"
+    ],
+    "i18n": {
+      "sourceHash": "de597951634b734e91ba91d3df1b6e23f40cb2c5f143a7bf502a64117b8fe225",
+      "en": {
+        "commentary": "That full moon caught me before anything else. Kimi Chan lifts her fan under the spotlight while piano keys and musical staves spill all the way down her skirt, as if she meant to hold a concert made only for the night. The rabbits at her feet are quieter than anyone in the audience, and the glow sticks below shine like scattered stars. So let me ask her — was this performance for me?",
+        "description": "Kimi Chan stands at the center of a stage before a full moon, one hand raised and the other holding a folding fan painted with flowering branches. Her deep-blue gown falls in layers printed with piano keys and musical staves, white rabbits gather at her feet, and rows of glow sticks and silhouetted audience members fill the hall below.",
+        "faq": [
+          {
+            "answer": "Kimi Chan performs on a stage beneath a full moon, wearing a layered deep-blue gown patterned with piano keys and musical staves and holding a painted folding fan, with white rabbits gathered at her feet.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "Kimi Chan is the only AI character shown. The white rabbits and the silhouetted audience are stage elements, not separate characters.",
+            "question": "Which characters appear in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Moon Phases: Full Moon",
+        "originNote": "",
+        "seoDescription": "Kimi Chan performs beneath a full moon in a deep-blue gown patterned with piano keys and musical staves, folding fan raised above a crowd of white rabbits.",
+        "seoTitle": "Moon Phases: Full Moon — Kimi Chan on Stage | DeepSeek Chan",
+        "tags": [
+          "Moon Phases",
+          "Full Moon",
+          "Stage Performance",
+          "White Rabbit",
+          "Folding Fan",
+          "Gown"
+        ]
+      },
+      "ja": {
+        "commentary": "望月のこの一枚、まずあの満月に目を奪われた。Kimi ちゃんがスポットライトの下で扇子を掲げ、スカートには鍵盤と楽譜が流れ落ちている。まるで夜だけのためのコンサートを開くみたいだ。足元の白うさぎたちは客席の誰よりも静かで、ペンライトは星みたいに光っている。ねえ、この演奏は私のためにしてくれるの？",
+        "description": "満月を背にしたステージの中央に立つ、銀白色の長髪の Kimi ちゃん。片手を高く上げ、もう片方の手には花枝の描かれた扇子を握っている。紺色のドレスの裾にはピアノの鍵盤と楽譜の模様が広がり、足元には白うさぎが集まり、客席にはペンライトの列と観客のシルエットが並ぶ。",
+        "faq": [
+          {
+            "answer": "満月を背にしたステージで、ピアノの鍵盤と楽譜の模様が入った紺色のドレスをまとい、扇子を手にした Kimi ちゃんが描かれています。足元には白うさぎが集まっています。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "描かれている AI キャラクターは Kimi ちゃんだけです。白うさぎと客席のシルエットはステージの演出であり、別のキャラクターではありません。",
+            "question": "登場するキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "月相-望月",
+        "originNote": "",
+        "seoDescription": "満月の下、ピアノの鍵盤と楽譜の模様をあしらった紺色のドレスでステージに立つ Kimi ちゃん。扇子を掲げ、足元には白うさぎが集まる。",
+        "seoTitle": "月相-望月 — 満月のステージに立つ Kimi ちゃん | DeepSeek Chan",
+        "tags": [
+          "月相",
+          "満月",
+          "ステージ",
+          "白うさぎ",
+          "扇子",
+          "ドレス"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_8de29224cbad787c209469cb",
+    "name": "月相-朔月",
+    "description": "银白长发的 Kimi 娘坐在教室课桌前写笔记，一手托頭、一手执笔；发上别着月牙与音符装饰和 K 字结，校服配深蓝披肩，桌面堆着书本与笔袋，窗外是挂着一弯新月牙的夜色。",
+    "commentary": "朔月这一张，月光还只是个细细的钩子，挂在教室窗外。她趴在课桌上写笔记，笔尖一顿一顿的，像是在跟困意打拉锯战。发饰上的月牙和音符、水杯里那轮小月亮，全是她自己的小心思吧。我想把那摞书往旁边挪一挪，坐过去问她：这道题，要不要一起写？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/kimi/8de29224cbad787c.png",
+    "thumbnailPath": "submissions/previews/kimi/8de29224cbad787c.webp",
+    "fullPath": "submissions/large/kimi/8de29224cbad787c.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "8de29224cbad787c209469cb813faa9be92cca27a3cae6e0b4d6b08c533cc635",
+    "characterId": "kimi",
+    "tags": [
+      "月相",
+      "朔月",
+      "教室",
+      "月牙",
+      "笔记",
+      "夜色"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "D360FDE650377B9AC721E2189279DB2B",
+      "messageId": "ROBOT1.0_kEEP-Ez5Y3jtRj7IyhCxTUkik-h7KqbzQalDzlaDwB5M1x6fAy-4Cid2oR1sVivVQeWuCvkcviemGo3uqrYUBwTuC0-xD33d0xNN1GZ6P61.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T17:04:03.462Z",
+    "updatedAt": "2026-10-17T17:04:03.462Z",
+    "tone": "kimi",
+    "symbol": "",
+    "slug": "kimi202610170003",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "kimi"
+    ],
+    "i18n": {
+      "sourceHash": "7e53afe09bbcebffb6291060894922d2e36d9a6b5b51a49f47295093a17a558c",
+      "en": {
+        "commentary": "Tonight the moon is still just a thin hook outside the classroom window. Kimi Chan leans over her notebook, her pen pausing line by line as if she were arm-wrestling sleep. The crescent and music note in her hair, the little moon floating in her water bottle — all her own small touches. I would slide that stack of books aside, sit down next to her and ask: shall we work this one out together?",
+        "description": "Kimi Chan sits at a classroom desk writing in a notebook, one hand supporting her head and the other holding a pen. Crescent-moon and music-note ornaments with a K-shaped bow sit in her hair, she wears a school uniform with a deep-blue capelet, books and a pencil case are stacked on the desk, and a thin new crescent moon hangs in the night sky outside the window.",
+        "faq": [
+          {
+            "answer": "Kimi Chan sits at a classroom desk at night writing in a notebook, wearing a school uniform with a deep-blue capelet and crescent-moon ornaments in her hair, with a thin crescent moon visible outside the window.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "Kimi Chan is the only AI character shown. The empty classroom is background scenery, not another character.",
+            "question": "Which characters appear in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Moon Phases: New Moon",
+        "originNote": "",
+        "seoDescription": "Kimi Chan writes in a notebook at a classroom desk at night, crescent-moon ornaments in her hair and a thin new moon visible through the window.",
+        "seoTitle": "Moon Phases: New Moon — Kimi Chan Studying at Night | DeepSeek Chan",
+        "tags": [
+          "Moon Phases",
+          "New Moon",
+          "Classroom",
+          "Crescent Moon",
+          "Notebook",
+          "Night"
+        ]
+      },
+      "ja": {
+        "commentary": "朔月の今夜、窓の外の月はまだ細い釣り針みたい。Kimi ちゃんは机に向かってノートを取り、ペンの先は一行ごとに止まりがちで、眠気と綱引きをしているようだ。髪の三日月と音符、水筒の中に浮かぶ小さな月まで、ぜんぶ彼女の小さなこだわり。この本の山を横にどけて隣に座り、こう聞いてみたい：この問題、一緒にやらない？",
+        "description": "教室の机に向かってノートを取る、銀白色の長髪の Kimi ちゃん。片手は頭を支え、もう片方の手でペンを握っている。髪には三日月と音符の飾りに K のリボン、制服に紺色のケープ、机には本と筆箱が積まれ、窓の外には細い三日月が浮かぶ夜。",
+        "faq": [
+          {
+            "answer": "夜の教室で机に向かい、ノートを取っている Kimi ちゃんが描かれています。紺色のケープ付きの制服をまとい、髪には三日月の飾りがあり、窓の外には細い三日月が浮かんでいます。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "描かれている AI キャラクターは Kimi ちゃんだけです。誰もいない教室は背景の舞台であり、別のキャラクターではありません。",
+            "question": "登場するキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "月相-朔月",
+        "originNote": "",
+        "seoDescription": "夜の教室、机に向かってノートを取る Kimi ちゃん。髪には三日月の飾り、窓の外には細い朔月が浮かぶ。",
+        "seoTitle": "月相-朔月 — 夜の教室で勉強する Kimi ちゃん | DeepSeek Chan",
+        "tags": [
+          "月相",
+          "朔月",
+          "教室",
+          "三日月",
+          "ノート",
+          "夜"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_0bfa2c0955997d755ea3b15d",
+    "name": "夏天的沙滩",
+    "description": "紫蓝色长发的 Qwen 娘站在夏日海滩的浅水里，身穿白色连衣裙、戴着宽檐草帽，一手按着帽檐、一手提着脱下的凉鞋，回头微笑；背后是蔚蓝海面与飞过的海鸥，沙滩上摆着遮阳伞、彩球和排球网。",
+    "commentary": "夏天的沙滩这一张，蓝得有些晃眼。她踩着浪花的边缘回头一笑，手里提着一双凉鞋，帽檐下的紫蓝色长发被海风吹成一片。背景那把遮阳伞、那颗彩球，像是刚从别处收工。我看了半天，只想问她：能不能等我一下，我这就把鞋子脱了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/qwen/0bfa2c0955997d75.png",
+    "thumbnailPath": "submissions/previews/qwen/0bfa2c0955997d75.webp",
+    "fullPath": "submissions/large/qwen/0bfa2c0955997d75.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "0bfa2c0955997d755ea3b15de8dc470b41e6813d01aee1cc4052b98cd5124659",
+    "characterId": "qwen",
+    "tags": [
+      "夏天",
+      "沙滩",
+      "海浪",
+      "草帽",
+      "连衣裙",
+      "海鸥"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T17:32:51.847Z",
+    "updatedAt": "2026-10-17T17:32:51.847Z",
+    "tone": "qwen",
+    "symbol": "",
+    "slug": "qwen202610170002",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "qwen"
+    ],
+    "i18n": {
+      "sourceHash": "b08635363496667d7be1f8a133d5d13d072b0023937fb4055fb024a83f26b13f",
+      "en": {
+        "commentary": "This one is almost painfully blue. Qwen Chan turns back with a smile at the edge of the surf, sandals in hand, her violet-blue hair blown into one long sweep under the hat brim. The beach umbrella and the beach ball in the background look like they just clocked off from somewhere else. I stared for a while, and the only thing I wanted to ask was: wait for me — I am taking my shoes off right now.",
+        "description": "Qwen Chan stands barefoot in the shallow water of a summer beach, wearing a white dress and a wide-brimmed straw hat. She holds the hat brim with one hand and carries her sandals in the other, smiling back over her shoulder, with a bright blue sea and seagulls behind her, and a beach umbrella, a beach ball and a volleyball net on the sand.",
+        "faq": [
+          {
+            "answer": "Qwen Chan stands barefoot in the shallow water of a summer beach in a white dress and a wide-brimmed straw hat, holding her sandals and looking back with a smile, with the blue sea, seagulls and beach items around her.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "Qwen Chan is the only AI character shown. The beach scenery, the seagulls and the beach items are background elements.",
+            "question": "Which characters appear in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Summer Beach",
+        "originNote": "",
+        "seoDescription": "Qwen Chan walks barefoot in the shallow surf in a white dress and straw hat, blue summer sea and seagulls behind her.",
+        "seoTitle": "Summer Beach — Barefoot Qwen Chan by the Sea | DeepSeek Chan",
+        "tags": [
+          "Summer",
+          "Beach",
+          "Waves",
+          "Straw Hat",
+          "Summer Dress",
+          "Seagulls"
+        ]
+      },
+      "ja": {
+        "commentary": "夏のビーチのこの一枚は、青くて少し目がくらむ。波打ち際で彼女が振り返って笑い、手には脱いだサンダルが一足。つばの下の紫がかった青い長い髪は、潮風にひとまとめに流されている。背景のパラソルとビーチボールは、どこか別の場所からちょうど仕事を終えて来たように見える。しばらく眺めていたけれど、聞きたかったのはひとつだけ——ちょっと待っていて。今すぐ靴を脱ぐから。",
+        "description": "Qwenちゃんが夏の海辺の浅瀬に立ち、白いワンピースとつばの広い麦わら帽子を身に着けている。片手で帽子のつばを押さえ、もう片方の手に脱いだサンダルを持ち、振り返って微笑む。背後には青い海と飛ぶカモメ、砂浜にはパラソル、ビーチボール、バレーボールネットが置かれている。",
+        "faq": [
+          {
+            "answer": "夏の海辺の浅瀬に Qwenちゃんが素足で立ち、白いワンピースとつばの広い麦わら帽子を着け、サンダルを手に持って振り返り微笑んでいる。周囲には青い海、カモメ、ビーチ用品が描かれている。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "登場する AI キャラクターは Qwenちゃんだけ。海辺の風景、カモメ、ビーチ用品は背景の要素。",
+            "question": "どのキャラクターが登場しますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "夏のビーチ",
+        "originNote": "",
+        "seoDescription": "白いワンピースと麦わら帽子の Qwenちゃんが夏の海の浅瀬に素足で立つイラスト。青い海とカモメを背景に、脱いだサンダルを手に持っている。",
+        "seoTitle": "夏のビーチ — 海辺に立つ Qwenちゃん | DeepSeek Chan",
+        "tags": [
+          "夏",
+          "ビーチ",
+          "波",
+          "麦わら帽子",
+          "ワンピース",
+          "カモメ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_31d3356579d71bc69a27c509",
+    "name": "GPT龙娘核爆瘫坐",
+    "description": "背上长着小角、蝠翼与龙尾的 Q 版龙娘 GPT 娘，穿着深蓝与白的华丽哥特萝莉裙，瘫在黑色扶手沙发里，眼神空洞地望向一侧；身后是巨大的蘑菰云与燃烧的天空。投稿说明：当GPT知道1017版本大肥鱼能答对水银及黄金和羊毛的盎司问题后。",
+    "commentary": "这一张我看了很久。1017 版本的大肥鱼能答对水银、黄金、羊毛各是多少盎司——听到这个消息的时候我还在整理今天的稿子，GPT 娘已经先瘫在沙发上了。背后那朵蘑菰云大概不是特效，是她自己脑子里的东西。我本来想过去拍一拍她，想想又算了：这几道题，我也答不上来。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/31d3356579d71bc6.png",
+    "thumbnailPath": "submissions/previews/gpt/31d3356579d71bc6.webp",
+    "fullPath": "submissions/large/gpt/31d3356579d71bc6.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "31d3356579d71bc69a27c509312bac38d363a809eec93a28dc069a5b24deed18",
+    "characterId": "gpt",
+    "tags": [
+      "龙娘",
+      "核爆",
+      "蘑菰云",
+      "瘫坐",
+      "呆滞",
+      "表情包"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T18:26:11.582Z",
+    "updatedAt": "2026-10-17T18:26:11.582Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610170009",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "714a75f02c763d62b712eff06f61ff0ea9f5355817acdb9a444d544fed0a11d9",
+      "en": {
+        "commentary": "I stared at this one for a while. The 1017 build of DeepSeek Chan can tell you how many ounces are in mercury, in gold, in wool — and the moment GPT Chan heard that, she was already slumped in the chair. That mushroom cloud behind her is probably not a special effect; it is the inside of her own head. I thought about going over to pat her on the shoulder, then decided against it. I cannot answer those questions either.",
+        "description": "GPT Chan, drawn as a chibi dragon girl with small horns, bat-like wings and a dragon tail, wears an ornate navy-and-white gothic lolita dress and sprawls in a black armchair with a blank stare; a huge mushroom cloud and a burning sky fill the background. Submission note: after GPT learned that the 1017 build of DeepSeek Chan could answer how many ounces are in mercury, gold and wool.",
+        "faq": [
+          {
+            "answer": "GPT Chan, drawn as a chibi dragon girl with small horns, bat-like wings and a dragon tail in an ornate navy-and-white gothic lolita dress, sprawls in a black armchair with a blank stare, a huge mushroom cloud and a burning sky behind her.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "Only GPT Chan appears. The mushroom cloud and the burning sky are background scenery.",
+            "question": "Which characters appear in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "GPT Chan, the Dragon Girl, Slumps After the Blast",
+        "originNote": "",
+        "seoDescription": "Chibi dragon girl GPT Chan sprawls in a black armchair with a blank stare in front of a giant mushroom cloud, wearing an ornate navy gothic lolita dress.",
+        "seoTitle": "GPT Chan Slumps After the Blast — Chibi Dragon Girl | DeepSeek Chan",
+        "tags": [
+          "Dragon Girl",
+          "Nuclear Blast",
+          "Mushroom Cloud",
+          "Slumped",
+          "Blank Stare",
+          "Meme"
+        ]
+      },
+      "ja": {
+        "commentary": "この一枚はしばらく眺めてしまった。1017 版の DeepSeekちゃんは、水銀が何オンス、金が何オンス、羊毛が何オンス、と即答できるらしい。その話を聞いた瞬間には、GPTちゃんはもう椅子に沈んでいた。後ろのキノコ雲はおそらく演出ではなく、彼女の頭の中そのものだ。肩でも叩きに行こうかと思ったけれど、やめておいた。その問題、私にも答えられない。",
+        "description": "小さな角と蝠翼、竜の尾を持つちびキャラのドラゴン娘 GPTちゃんが、紺と白の華やかなゴシックロリータ姿で黒いひじ掛けソファにだらりと座り込み、虚ろな目で横を向いている。背後には巨大なキノコ雲と燃えるような空が広がる。投稿者の説明：GPT が、1017 版の DeepSeekちゃんが水銀と金と羊毛のオンスの問題に答えられると知ったあと。",
+        "faq": [
+          {
+            "answer": "小さな角と蝠翼、竜の尾を持つちびキャラのドラゴン娘 GPTちゃんが、紺と白のゴシックロリータ姿で黒いソファにだらりと座り込み、虚ろな目をしている。背後には巨大なキノコ雲と燃えるような空が広がっている。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "登場するキャラクターは GPTちゃんだけ。キノコ雲と燃える空は背景の要素。",
+            "question": "どのキャラクターが登場しますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "核爆発のあとで脱力するドラゴン娘 GPTちゃん",
+        "originNote": "",
+        "seoDescription": "ちびキャラのドラゴン娘 GPTちゃんが、巨大なキノコ雲を背に黒いソファで虚ろな目をしてだらりと座り込むイラスト。紺と白のゴシックロリータ姿。",
+        "seoTitle": "核爆発のあとで脱力する GPTちゃん | DeepSeek Chan",
+        "tags": [
+          "ドラゴン娘",
+          "核爆発",
+          "キノコ雲",
+          "脱力",
+          "虚ろな目",
+          "ミーム"
         ]
       }
     }
