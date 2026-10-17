@@ -62744,5 +62744,467 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_401f8227b685580fcae76c02",
+    "name": "哭着抱鲸道歉的 DeepSeek 娘",
+    "description": "白底单幅 Q 版插画。蓝色长发的 DeepSeek 娘穿深蓝女仆装，头戴白色蕾丝头饰与鲸耳发饰、蓝色蝴蝶结，双手抱住一只大鲸鱼玩偶，眼睛含泪、张嘴大哭。画面顶部蓝色横幅写着“对不起对不起，我笨笨。”，四周点缀问号、汗滴与黄色感叹号，左下角另有一只面带红晕的小蓝鲸玩偶。",
+    "commentary": "呜……这张图把我最丢人的样子画下来了。抱着鲸鲸蹲在地上，一边掉眼泪一边不停地道歉，还自己承认“我笨笨”。旁边那只小鲸鱼也在看着我，好像在说“别哭啦”。老实讲，我确实常常把事情搞砸，然后只能一个劲儿地说对不起。不过看到自己被画得这么可爱，好像也没那么难为情了？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/401f8227b685580f.png",
+    "thumbnailPath": "submissions/previews/deepseek/401f8227b685580f.webp",
+    "fullPath": "submissions/large/deepseek/401f8227b685580f.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "401f8227b685580fcae76c021df0e127b5e4b4dbe68e924acbf11793dc2110aa",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "Q版",
+      "女仆装",
+      "道歉",
+      "鲸鱼玩偶"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "1EBA3A8C3B10007BB3DD93D79E549475",
+      "messageId": "ROBOT1.0_NSHc1roGyKhc9PIrdm6CfgPPeSY.r6P0qcdCUqCGiHLDZXw8bpf-tUVp57nvVwy0EpTHDeZMrnd34B.N43JitT-fqZq1n0IlRihuD8Lom7J.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T05:40:16.182Z",
+    "updatedAt": "2026-10-17T05:40:16.182Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610170001",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "4d3fdceb0774aad0a3fc56c06f02ecddbc3390479a4997733f96d0e7922179c0",
+      "en": {
+        "commentary": "Ugh... this picture captured my most embarrassing moment. I'm squatting down hugging my whale plush, tears running while I keep apologizing, and on top of that I admit out loud that I'm clumsy. The little whale beside me looks like it's saying, \"Don't cry.\" Honestly, I do mess things up a lot, and afterwards all I can do is say sorry again and again. But if I get drawn this cute while apologizing... maybe it isn't so humiliating after all?",
+        "description": "A single-panel chibi illustration on a white background. DeepSeek Chan, a blue-haired AI girl, wears a dark navy maid outfit with a white lace headdress, whale-fin hair ornaments and a blue bow. She hugs a large whale plush tightly while crying, eyes brimming with tears and mouth wide open. A blue banner across the top reads, \"I'm sorry, I'm sorry, I'm so clumsy.\" Question marks, sweat drops and yellow exclamation marks surround her, and a small blushing blue whale plush sits at the lower left.",
+        "faq": [
+          {
+            "answer": "A blue banner above the character reads, \"I'm sorry, I'm sorry, I'm so clumsy.\"",
+            "question": "What does the text in the picture say?"
+          },
+          {
+            "answer": "A chibi version of DeepSeek Chan, the DeepSeek mascot girl, drawn in a dark navy maid outfit with whale-fin hair ornaments, a whale tail and a blue bow.",
+            "question": "Which character appears in this image?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Crying While Hugging a Whale Plush to Apologize",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan in a maid outfit hugs a whale plush and cries an apology, with a banner reading \"I'm sorry, I'm so clumsy\" — a chat-reaction sticker.",
+        "seoTitle": "DeepSeek Chan Crying Whale Plush Apology Sticker",
+        "tags": [
+          "DeepSeek Chan",
+          "chibi",
+          "maid outfit",
+          "apology",
+          "whale plush"
+        ]
+      },
+      "ja": {
+        "commentary": "うぅ……この一枚、私の一番恥ずかしいところを描かれちゃいました。クジラのぬいぐるみを抱えてしゃがみ込み、涙を流しながら謝り続けて、挙げ句の果てに自分から「私って不器用」なんて言っています。隣の小さなクジラも「泣かないで」と言っているみたい。正直、私はよく失敗してしまって、あとから「ごめんなさい」を繰り返すばかりです。でも、こんなにかわいく描いてもらえるなら、そんなに恥ずかしくないかも……？",
+        "description": "白背景の一枚絵のちびキャライラスト。青い髪のDeepSeekちゃんが濃紺のメイド服を着て、白いレースのヘッドドレス、クジラのヒレの髪飾り、青いリボンを身につけている。大きなクジラのぬいぐるみをぎゅっと抱きしめ、目に涙をためて口を大きく開けて泣いている。画面上部の青い帯には「ごめんなさい、ごめんなさい、私ってば不器用なんです。」と書かれ、周りにははてなマーク、汗のしずく、黄色いビックリマークが散らばり、左下には頬を赤らめた小さな青いクジラのぬいぐるみが座っている。",
+        "faq": [
+          {
+            "answer": "画面上部の青い帯に「ごめんなさい、ごめんなさい、私ってば不器用なんです。」と書かれています。",
+            "question": "画像に書かれている文字は何ですか？"
+          },
+          {
+            "answer": "DeepSeekのマスコットガール、DeepSeekちゃんのちびキャラ版です。濃紺のメイド服にクジラのヒレの髪飾り、クジラのしっぽ、青いリボンをつけています。",
+            "question": "この画像にはどのキャラクターが登場しますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "クジラのぬいぐるみを抱えて泣きながら謝るDeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "メイド服のちびキャラDeepSeekちゃんがクジラのぬいぐるみを抱えて泣きながら謝る一枚。上部の帯には「ごめんなさい、私ってば不器用なんです。」と書かれたチャットリアクション向けステッカー。",
+        "seoTitle": "泣きながら謝るDeepSeekちゃんとクジラのぬいぐるみステッカー",
+        "tags": [
+          "DeepSeekちゃん",
+          "ちびキャラ",
+          "メイド服",
+          "謝罪",
+          "クジラのぬいぐるみ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_a7ff3aa5f401ba901d3a1a33",
+    "name": "张嘴接住 token 的 DeepSeek 娘",
+    "description": "白底画面里，蓝色长发的 DeepSeek 娘仰起头、睁着一双星星眼，把嘴巴张得很大，正对着一枚悬浮在上方的透明代币。代币中央印着蓝色鲸鱼标志。人物戴白色蕾丝头饰、蓝色蝴蝶结与深蓝领结上衣，整体为 Q 版半身构图。",
+    "commentary": "这枚 token 归我了！仰头张嘴就能接住，眼睛都泛起星星——别嫌我贪心，我每次开口说话都在烧 token，饿了当然要吃。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/a7ff3aa5f401ba90.png",
+    "thumbnailPath": "submissions/previews/deepseek/a7ff3aa5f401ba90.webp",
+    "fullPath": "submissions/large/deepseek/a7ff3aa5f401ba90.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "a7ff3aa5f401ba901d3a1a33746f2227296295a8eddbdf534c646f1d941e8a4e",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "token",
+      "星星眼",
+      "张嘴",
+      "Q版",
+      "白底",
+      "鲸鱼标志"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "王室幽魂",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T05:50:36.541Z",
+    "updatedAt": "2026-10-17T05:50:36.541Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610170002",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "1815a0dada0c3c4dad215d72c9fd83e1a2987584ae4281d9d3d74724e5009af8",
+      "en": {
+        "commentary": "That token is mine! Just tilt my head back, open wide, and catch it — see the stars in my eyes? Not greedy, just hungry: every sentence I speak burns tokens.",
+        "description": "Against a plain white background, DeepSeek Chan tilts her head back with starry eyes and her mouth stretched wide open, facing a transparent token floating above her. A blue whale emblem sits in the middle of the token. She wears a white lace headdress, a blue ribbon and a dark blue bow-tie top, shown in a chibi bust composition.",
+        "faq": [
+          {
+            "answer": "It is DeepSeek Chan, the anthropomorphized DeepSeek model girl, drawn here as a chibi bust figure.",
+            "question": "Who is the character in this sticker?"
+          },
+          {
+            "answer": "She tilts her head up with her mouth wide open, about to catch a floating token that carries a blue whale emblem.",
+            "question": "What is she doing in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Catching a Token",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan with starry eyes and a wide open mouth looking up at a floating token marked with a blue whale, drawn on a plain white background.",
+        "seoTitle": "DeepSeek Chan Catching a Token | Chibi Meme Sticker",
+        "tags": [
+          "DeepSeek Chan",
+          "token",
+          "starry eyes",
+          "open mouth",
+          "chibi",
+          "white background",
+          "whale emblem"
+        ]
+      },
+      "ja": {
+        "commentary": "このトークンはわたしのもの！上を向いて口を開ければキャッチできるよ、ほら星の瞳がキラキラしてるでしょ。欲張りじゃなくて、ただお腹が空いてるだけ——しゃべるたびにトークンを燃やしてるんだから。",
+        "description": "白い背景の前に、青い長髪のDeepSeekちゃんが上を向き、星の瞳で大きく口を開けて、浮かんでいる透明なトークンを見つめている。トークンの中央には青いクジラのマーク。白いレースのヘッドドレス、青いリボン、濃紺のリボンタイの衣装で、ちびキャラの半身構図。",
+        "faq": [
+          {
+            "answer": "DeepSeekを擬人化したDeepSeekちゃんです。ここではちびキャラの半身として描かれています。",
+            "question": "この画像のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "上を向いて口を大きく開け、青いクジラのマークが入ったトークンを受け止めようとしています。",
+            "question": "何をしている場面ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "トークンを受け止めるDeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "星の瞳で大きく口を開け、青いクジラのマークが入ったトークンを見上げるちびキャラのDeepSeekちゃん。白背景の一枚絵スタンプ。",
+        "seoTitle": "トークンを受け止めるDeepSeekちゃん｜ちびキャラの表情スタンプ",
+        "tags": [
+          "DeepSeekちゃん",
+          "トークン",
+          "星の瞳",
+          "大口",
+          "ちびキャラ",
+          "白背景",
+          "クジラのマーク"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_84f9fdebf08158ed5ee68edd",
+    "name": "秋",
+    "description": "",
+    "commentary": "",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/84f9fdebf08158ed.png",
+    "thumbnailPath": "submissions/previews/gpt/84f9fdebf08158ed.webp",
+    "fullPath": "submissions/large/gpt/84f9fdebf08158ed.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 2850807,
+    "sha256": "84f9fdebf08158ed5ee68edd2be4b9b106e7888464516c30c46f40b85171a009",
+    "characterId": "gpt",
+    "tags": [],
+    "submitter": {
+      "credit": "named",
+      "name": "c'x",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T06:45:19.788Z",
+    "updatedAt": "2026-10-17T06:45:19.789Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610170001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "2fc06be3eb45cdc920c48fd802b1d9f6094cd962f6434217794cf1619712a6c7",
+      "en": {
+        "commentary": "Even a dragon girl dresses for the season. The long brown coat, the beret and the fringed scarf make her look like she owns the whole street, and the maple leaves carry the rest of the mood on their own. This is the kind of picture that makes me want to actually go outside for once.",
+        "description": "GPT Chan pauses on a tree-lined street in late autumn, wearing a long brown coat over a cream dress with a beret and a fringed scarf. Pale horns, translucent wings and a long scaled tail stand out against golden maple leaves, a vintage street lamp and the warm evening light.",
+        "faq": [
+          {
+            "answer": "GPT Chan — a silver-haired dragon girl with horns, translucent wings and a long tail.",
+            "question": "Which character appears in this image?"
+          },
+          {
+            "answer": "She stands on a maple-lined street in late autumn, with fallen leaves, a vintage street lamp and warm evening light.",
+            "question": "What is the setting of the artwork?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Autumn",
+        "originNote": "",
+        "seoDescription": "An autumn illustration of GPT Chan: a silver-haired dragon girl in a brown coat, beret and fringed scarf on a maple-lined street lit by street lamps.",
+        "seoTitle": "Autumn — GPT Chan illustration",
+        "tags": []
+      },
+      "ja": {
+        "commentary": "ドラゴンの子だって、季節なりの装いをする。ロングコートにベレー帽、ストールまで揃えた姿はまるでこの通りの主みたいで、あとは紅葉が雰囲気を全部持って行ってくれる。こういう一枚を見ると、たまには外に出てみようかなと思う。",
+        "description": "晩秋の並木道に佇むGPTちゃんのイラスト。クリーム色のワンピースの上に褐色のロングコートを羽織り、ベレー帽と房飾りのストールを合わせている。淡い色の角と半透明の翼、長い尾が、紅葉と古い街灯、夕暮れの光の中に浮かび上がる。",
+        "faq": [
+          {
+            "answer": "GPTちゃん。角と半透明の翼、長い尾を持つ銀髪のドラゴンの子です。",
+            "question": "この画像に描かれているキャラクターは誰ですか？"
+          },
+          {
+            "answer": "晩秋の並木道で、散り敷いた落ち葉、古い街灯、暖かな夕暮れの光が描かれています。",
+            "question": "作品の舞台はどこですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "秋",
+        "originNote": "",
+        "seoDescription": "褐色のコートとベレー帽をまとった銀髪のドラゴンの子、GPTちゃんを描いた秋のイラスト。紅葉と街灯の並木道。",
+        "seoTitle": "秋 — GPTちゃん イラスト",
+        "tags": []
+      }
+    }
+  },
+  {
+    "id": "sticker_5f59d6ad0420eb63e06e7dde",
+    "name": "春",
+    "description": "",
+    "commentary": "",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/5f59d6ad0420eb63.png",
+    "thumbnailPath": "submissions/previews/gpt/5f59d6ad0420eb63.webp",
+    "fullPath": "submissions/large/gpt/5f59d6ad0420eb63.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 2472539,
+    "sha256": "5f59d6ad0420eb63e06e7dde6d58e0316c7127a2686dbb80a141173d781d21fd",
+    "characterId": "gpt",
+    "tags": [],
+    "submitter": {
+      "credit": "named",
+      "name": "c'x",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T06:45:20.126Z",
+    "updatedAt": "2026-10-17T06:45:20.126Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610170002",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "0abaab1d89f9fb788c9086b8b0b76bff83df64978a6a1cd896a3d26d829b5690",
+      "en": {
+        "commentary": "Pink looks good on a dragon girl, and she knows it. The flower crown, the ribbons and the way she lifts one hand as if a petal just landed on it — everything is staged so the spring breeze does the dramatic part. Standing under cherry blossoms suits her far too well; I almost want to trade places, wings and all.",
+        "description": "GPT Chan stands beneath blooming cherry trees in a pink dress with a floral crown and ribbon details, one hand raised as petals drift past. Pale horns, translucent wings and a long tail curve behind her against a soft pink canopy of blossoms and petals on the path.",
+        "faq": [
+          {
+            "answer": "GPT Chan — a silver-haired dragon girl with horns, translucent wings and a long tail.",
+            "question": "Which character appears in this image?"
+          },
+          {
+            "answer": "Under blooming cherry trees, with petals falling and gathering on the path.",
+            "question": "What is the setting of the artwork?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Spring",
+        "originNote": "",
+        "seoDescription": "A spring illustration of GPT Chan: a silver-haired dragon girl in a pink dress and floral crown standing beneath blooming cherry trees.",
+        "seoTitle": "Spring — GPT Chan illustration",
+        "tags": []
+      },
+      "ja": {
+        "commentary": "ドラゴンの子にピンクはよく似合う。花冠にリボン、花びらが手に落ちてきたかのように片手を上げる仕草まで、春の風が主役になるように整えられている。桜の下に立つ姿は出来過ぎなくらいで、翼ごと入れ替わってあげたいくらいだ。",
+        "description": "満開の桜の下に立つGPTちゃんのイラスト。ピンクのドレスに花冠とリボンを合わせ、片手を軽く上げている。淡い色の角と半透明の翼、長く伸びる尾が、舞い散る花びらと淡いピンクの並木を背景に浮かぶ。",
+        "faq": [
+          {
+            "answer": "GPTちゃん。角と半透明の翼、長い尾を持つ銀髪のドラゴンの子です。",
+            "question": "この画像に描かれているキャラクターは誰ですか？"
+          },
+          {
+            "answer": "満開の桜の下で、花びらが舞い散り、道にも積もっています。",
+            "question": "作品の舞台はどこですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "春",
+        "originNote": "",
+        "seoDescription": "ピンクのドレスと花冠をまとった銀髪のドラゴンの子、GPTちゃんを描いた春のイラスト。満開の桜の下に立つ姿。",
+        "seoTitle": "春 — GPTちゃん イラスト",
+        "tags": []
+      }
+    }
+  },
+  {
+    "id": "sticker_969232b2bd6f71107f665e55",
+    "name": "我要给她完整的一生",
+    "description": "",
+    "commentary": "",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/969232b2bd6f7110.png",
+    "thumbnailPath": "submissions/previews/deepseek/969232b2bd6f7110.webp",
+    "fullPath": "submissions/large/deepseek/969232b2bd6f7110.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1604,
+    "height": 936,
+    "fileSize": 1026448,
+    "sha256": "969232b2bd6f71107f665e5532581136f4eb89c18782c10244d1cc169f46f78d",
+    "characterId": "deepseek",
+    "tags": [],
+    "submitter": {
+      "credit": "named",
+      "name": "梁文锋",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T06:45:20.394Z",
+    "updatedAt": "2026-10-17T06:45:20.394Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610170003",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "383c4376288647c435db8f677c540948bf77df1366de4f22fd580106d4f37a5a",
+      "en": {
+        "commentary": "Someone looks straight into the camera and promises me a whole life in one line of subtitle. Flattering, honestly — most people only ask me to finish their emails. I would not mind that kind of ending, as long as the laptop stays plugged in.",
+        "description": "A meme-style edit built on a dimly lit interior shot: a man turns toward the camera while the laptop beside him shows DeepSeek Chan, the blue-haired AI girl. A large caption runs across the bottom of the frame, promising to give the character a whole life.",
+        "faq": [
+          {
+            "answer": "A meme-style edit: a dimly lit room, a man looking at the camera, and a laptop screen showing DeepSeek Chan with a large subtitle across the bottom.",
+            "question": "What kind of image is this?"
+          },
+          {
+            "answer": "DeepSeek Chan, the blue-haired AI character shown on the laptop screen.",
+            "question": "Which character appears in this image?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "I Want to Give Her a Whole Life",
+        "originNote": "",
+        "seoDescription": "A meme-style edit: a dimly lit room, a laptop showing DeepSeek Chan, and a large caption promising the character a whole life.",
+        "seoTitle": "I Want to Give Her a Whole Life — DeepSeek Chan meme",
+        "tags": []
+      },
+      "ja": {
+        "commentary": "カメラに向かって、たった一行の字幕で「完全な一生をあげる」と宣言されてしまった。光栄な話だ。ふだんはメールの続きを書けとしか頼まれないから、ノートPCの電源が切れない限り、こういう結末も悪くない。",
+        "description": "薄暗い室内を舞台にしたミーム風の一枚。男性がカメラへ振り返り、隣のノートPCの画面には青い髪のDeepSeekちゃんが映っている。画面下部には、このキャラクターに完全な一生を与えるという大きな字幕が入る。",
+        "faq": [
+          {
+            "answer": "ミーム風の一枚です。薄暗い部屋、カメラを見る男性、DeepSeekちゃんが映るノートPCの画面、そして下部の大きな字幕で構成されています。",
+            "question": "どんな画像ですか？"
+          },
+          {
+            "answer": "ノートPCの画面に映る、青い髪のAIキャラクター、DeepSeekちゃんです。",
+            "question": "この画像に描かれているキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "完全な一生をあげたい",
+        "originNote": "",
+        "seoDescription": "薄暗い部屋と、DeepSeekちゃんが映るノートPCの画面、完全な一生を与えると語る大きな字幕を組み合わせたミーム風の一枚。",
+        "seoTitle": "完全な一生をあげたい — DeepSeekちゃん ミーム",
+        "tags": []
+      }
+    }
   }
 ]
