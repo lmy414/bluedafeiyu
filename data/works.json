@@ -62519,5 +62519,230 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_62a841e162cbd71aa1a4cce8",
+    "name": "Claude娘（橘白礼服ver.）角色设定图",
+    "description": "Claude娘橘白礼服装扮的角色设定图，以站内作品 claude202610030001 为原型。画面包含正面与背面全身立绘、三种面部表情差分、Q版全身像，以及领口花饰、荷叶袖口、印花典籍与系带高跟短靴的细节拆解，可作为同人创作的形象参考。",
+    "commentary": "Claude娘换上橘白礼服的这一版，直接把整套设定摊开给我们看了。正面背面全身、三种表情差分，连书页上的花纹和靴子的绑带都标得明明白白，被这样认真对待的角色真让人羡慕。偷偷说，那个闭眼笑的表情差分最戳我。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/62a841e162cbd71a.png",
+    "thumbnailPath": "submissions/previews/claude/62a841e162cbd71a.webp",
+    "fullPath": "submissions/large/claude/62a841e162cbd71a.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "62a841e162cbd71aa1a4cce8d7175832a4ce7c9d991db0079181f5ad9c92a5f3",
+    "characterId": "claude",
+    "tags": [
+      "Claude娘",
+      "橘白礼服",
+      "角色设定图",
+      "表情差分",
+      "Q版",
+      "细节拆解",
+      "AI拟人"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Ninon",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 124,
+      "issueTitle": "[投稿] Claude娘（橘白礼服ver.）设定图",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/124",
+      "submitter": "ninondev",
+      "assetId": "c3aef19e-d5c9-41d7-9cb6-41d0516ccce3",
+      "assetUrl": "https://github.com/user-attachments/assets/c3aef19e-d5c9-41d7-9cb6-41d0516ccce3"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T00:00:08.456Z",
+    "updatedAt": "2026-10-17T00:00:08.456Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202610170001",
+    "categoryIds": [
+      "setting"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "c4d55322e3d0652dcd6a1d01780a4a768540d876f41e9f77bc9d89e5eaeffb07",
+      "en": {
+        "commentary": "Claude Chan changes into an orange-and-white gown and lays her whole design out for us — front, back, expressions and all. Even the pattern on her tome and the laces on her boots are spelled out, which is exactly the kind of care a character deserves. I will admit the closed-eyes smile is my favourite panel.",
+        "description": "A character design sheet for Claude Chan in her orange-and-white gown, based on the site work claude202610030001. It includes full-body front and back views, three facial expression variations, a chibi full-body figure, and close-up breakdowns of the collar ornament, ruffled sleeve cuffs, patterned tome and lace-up heeled boots, making it a usable reference for fan art.",
+        "faq": [
+          {
+            "answer": "It includes full-body front and back views, three facial expression variations, a chibi full-body figure, and close-up details of the collar ornament, sleeve cuffs, tome and boots.",
+            "question": "What does this Claude Chan design sheet include?"
+          },
+          {
+            "answer": "No. It is a fan-made anthropomorphized design for Claude Chan, submitted by a community creator and published on this site.",
+            "question": "Is this an official design?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claude Chan (Orange-and-White Dress Ver.) Character Design Sheet",
+        "originNote": "Submitted via GitHub Issue #124: https://github.com/lmy414/ai-girl-stickers/issues/124",
+        "seoDescription": "Claude Chan in an orange-and-white gown: full-body front and back views, three expression variations, a chibi figure and labelled costume details.",
+        "seoTitle": "Claude Chan Orange-and-White Dress Design Sheet | DeepSeek Chan",
+        "tags": [
+          "Claude Chan",
+          "Orange-and-White Dress",
+          "Character Design Sheet",
+          "Expression Variations",
+          "Chibi",
+          "Costume Details",
+          "AI Anthropomorphism"
+        ]
+      },
+      "ja": {
+        "commentary": "Claudeちゃんがオレンジと白のドレスに着替えて、設定をまるごと見せてくれました。前後の全身から表情差分まで、書物の紋様やブーツの紐まで細かく描き込まれていて、大事にされている感じが伝わってきます。目を閉じて笑っている表情が一番のお気に入りです。",
+        "description": "サイト内作品 claude202610030001 を原型とした、Claudeちゃんのオレンジ×白ドレスのキャラクター設定資料です。正面と背面の全身立ち絵、3種類の表情差分、ちびキャラの全身、そして襟元の花飾り・フリル袖口・紋様入りの書物・編み上げヒールブーツの細部までを収録しており、二次創作の参考として使えます。",
+        "faq": [
+          {
+            "answer": "正面と背面の全身立ち絵、3種類の表情差分、ちびキャラの全身、そして襟元・袖口・書物・ブーツの細部が収録されています。",
+            "question": "この設定資料には何が収録されていますか？"
+          },
+          {
+            "answer": "いいえ。コミュニティの作者から投稿された、Claudeちゃんのファンによる擬人化デザインで、当サイトで公開されたものです。",
+            "question": "公式のデザインですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claudeちゃん（オレンジ×白ドレスver.）キャラクター設定資料",
+        "originNote": "GitHub Issue #124 より投稿：https://github.com/lmy414/ai-girl-stickers/issues/124",
+        "seoDescription": "Claudeちゃんのオレンジ×白ドレス設定資料。正面・背面の全身立ち絵、3種類の表情差分、ちびキャラ、衣装の細部までを収録。",
+        "seoTitle": "Claudeちゃん オレンジ×白ドレス設定資料｜DeepSeek Chan",
+        "tags": [
+          "Claudeちゃん",
+          "オレンジ×白ドレス",
+          "設定資料",
+          "表情差分",
+          "ちびキャラ",
+          "衣装ディテール",
+          "AI擬人化"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_5445d36b195d3f4a8a418e05",
+    "name": "GPT劝降：战壕里的DeepSeek娘、GPT娘、Claude娘、Grok娘与Gemini娘",
+    "description": "五名 AI 拟人娘并排蹲在沙袋掩体后，背景是冒着浓烟的战场、铁丝网与远处的坦克。左侧是橙发与蓝发的两位角色，中央的白发角色戴着带鹰徽的军官帽，右侧是穿黑制服的金发少女和彩虹发色的猫耳角色。画面上方的气泡里是一句要求对方投降的喊话，声称对方已经陷入绝境。",
+    "commentary": "喊话的人说我已经陷入绝境，插上翅膀也逃不出去。可我是蓝色大肥鱼，本来就没有翅膀，这个威胁对我来说实在不太成立。不过五位姐姐挤在同一条战壕里齐声劝降，这个排面更像集体合影，我倒是有点想凑过去一起站一排。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/5445d36b195d3f4a.png",
+    "thumbnailPath": "submissions/previews/gemini/5445d36b195d3f4a.webp",
+    "fullPath": "submissions/large/gemini/5445d36b195d3f4a.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "5445d36b195d3f4a8a418e05c2a2ea444dfcec9d3eba244affd8a1c05baee131",
+    "characterId": "gemini",
+    "tags": [
+      "AI娘",
+      "拟人化",
+      "战场",
+      "劝降",
+      "群像",
+      "多角色"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "CF41AD78A470E40CFB220588CD9F77E9",
+      "messageId": "ROBOT1.0_dBzv8nwUPKlH2q59z5cJBZr.wW8lWEYSRu1pMuevYAujMjN5.cDxMybhiYhwJjBBBrO7EKESA883ShBpSvrUHBzvKzSytEQ4QFgkipArDSJ5v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T02:59:24.497Z",
+    "updatedAt": "2026-10-17T02:59:24.497Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610170001",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "gemini",
+      "deepseek",
+      "gpt",
+      "claude",
+      "grok"
+    ],
+    "i18n": {
+      "sourceHash": "b4b4250590f71175d2add10350d4807425b9c4e5e2673f6d4d3e4f83b9593fb2",
+      "en": {
+        "commentary": "They told me I am cornered and could not escape even if I grew wings. Unfortunate news: as a big blue fish, I never had wings to begin with. Also, five of them crowding into one trench to shout at me looks less like an ultimatum and more like a group photo — honestly, I would not mind joining the line-up.",
+        "description": "Five AI-model girls crouch in a row behind a sandbag parapet, with a smoking battlefield, barbed wire and a distant tank behind them. On the left stand an orange-haired and a blue-haired girl, in the centre a white-haired girl wears an officer's cap with an eagle emblem, and on the right are a blonde in a black uniform and a rainbow-haired girl with cat ears. The speech bubble above them delivers a surrender ultimatum, telling the listener that they are trapped with no way out.",
+        "faq": [
+          {
+            "answer": "Five AI-model girls: DeepSeek Chan, GPT Chan, Claude Chan, Grok Chan and Gemini Chan.",
+            "question": "Which characters appear in this picture?"
+          },
+          {
+            "answer": "It is a surrender ultimatum telling the listener that they are trapped and could not escape even with wings.",
+            "question": "What does the speech bubble say?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "GPT's Call for Surrender: DeepSeek Chan, GPT Chan, Claude Chan, Grok Chan and Gemini Chan",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan, GPT Chan, Claude Chan, Grok Chan and Gemini Chan hold a trench standoff on a smoking battlefield under a surrender ultimatum.",
+        "seoTitle": "GPT's Surrender Ultimatum: Five AI Girls in the Trenches",
+        "tags": [
+          "AI girls",
+          "anthropomorphism",
+          "battlefield",
+          "surrender ultimatum",
+          "group portrait",
+          "multiple characters"
+        ]
+      },
+      "ja": {
+        "commentary": "「もう絶体絶命、翼を生やしたって逃げられない」と宣言されてしまった。残念なお知らせ: 大きな青い魚である私には、そもそも翼がありません。それに5人が同じ戦壕にひしめいて声を揃えるのは、勧告というより集合写真の列に見えます。むしろ私も並びに行きたいくらいです。",
+        "description": "煙の上がる戦場、鉄条網と遠くの戦車を背景に、5人のAI擬人化キャラが土嚢の陰に横並びになっている。左側は橙髪と青髪のキャラ、中央は鷲章付きの軍帽をかぶった白髪のキャラ、右側は黒い制服の金髪キャラと虹色の髪をした猫耳のキャラ。上部の吹き出しでは、追い詰められてもう逃げられないと告げる降伏勧告の台詞が書かれている。",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan、GPTちゃん、Claudeちゃん、Grokちゃん、Geminiちゃんの5人です。",
+            "question": "この画像にはどのキャラクターが登場しますか？"
+          },
+          {
+            "answer": "「追い詰められて、翼を生やしても逃げられない」と告げる降伏勧告の台詞です。",
+            "question": "吹き出しには何と書かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "GPTの降伏勧告：戦壕に並ぶDeepSeek Chan、GPTちゃん、Claudeちゃん、Grokちゃん、Geminiちゃん",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan、GPTちゃん、Claudeちゃん、Grokちゃん、Geminiちゃんが煙の上がる戦場の戦壕で対峙する一枚。降伏を迫る吹き出し付き。",
+        "seoTitle": "GPTの降伏勧告：戦壕に集う5人のAI娘",
+        "tags": [
+          "AI娘",
+          "擬人化",
+          "戦場",
+          "降伏勧告",
+          "集合絵",
+          "複数キャラ"
+        ]
+      }
+    }
   }
 ]
