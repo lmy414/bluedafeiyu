@@ -6,7 +6,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useAdminApi } from './api'
 import { CHANNELS, formatDate, labelOf } from './constants'
 import type { CategoryDoc, CharacterDoc, MediaDoc, SubmissionDoc, WorkDoc } from './types'
-import { asObject, relationID } from './types'
+import { asObject, relationID, workOriginalURL } from './types'
 
 type DrawerItem =
   { kind: 'submission'; submission: SubmissionDoc } | { kind: 'work'; work: WorkDoc }
