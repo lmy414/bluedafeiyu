@@ -6,6 +6,7 @@ import { json, readJsonBody, requireWorker } from '../lib/endpoint-auth'
 import {
   contentOnly,
   draftOf,
+  jobDraftOf,
   fingerprint,
   loadVocabulary,
   RUNNABLE,
@@ -68,7 +69,7 @@ export async function agentHandler(req: PayloadRequest) {
       const jobs = await payload.find({
         collection: 'bulk-jobs',
         where: {
-          and: [{ status: { in: RUNNABLE } }, { operation: { in: ['ai-fill', 'translate'] } }],
+          and: [{ status: { in: RUNNABLE } }, { operation: { in: ['ai-fill', 'translate', 'manual-include'] } }],
         },
         sort: 'createdAt',
         depth: 0,
@@ -99,7 +100,7 @@ export async function agentHandler(req: PayloadRequest) {
     if (transactionID == null) throw fail('工具保存需要数据库事务', 500)
     const tx = { ...req, transactionID } as PayloadRequest
     let job = await findJob(payload, body.jobId, tx)
-    if (!job || !['ai-fill', 'translate'].includes(job.operation))
+    if (!job || !['ai-fill', 'translate', 'manual-include'].includes(job.operation))
       throw fail('Agent 任务不存在', 404)
     if (!RUNNABLE.includes(job.status) || job.cursor >= job.ids.length)
       throw fail('任务已结束或取消')
@@ -115,10 +116,7 @@ export async function agentHandler(req: PayloadRequest) {
     const doc = await targetDoc(payload, job.target, id, tx)
     if (!doc || fingerprint(doc, job.target) !== job.options.versions[id])
       throw fail('内容已修改，请取消旧任务后重新提交')
-    let draft = job.options.agent?.draft || {
-      ...draftOf(doc, job.target, vocab),
-      ...job.options.drafts?.[id],
-    }
+    let draft = job.options.agent?.draft || jobDraftOf(doc,job,vocab,id)
     if (body.action === 'claim') {
       if (
         !RUNNABLE.includes(job.status) ||
@@ -159,7 +157,7 @@ export async function agentHandler(req: PayloadRequest) {
         const checked = validateContent(body.content, vocab)
         if (!checked.ok || 'i18n' in body.content)
           throw fail(!checked.ok ? checked.errors.join('；') : '请分语言提交译文', 422)
-        const base = { ...draftOf(doc, job.target, vocab), ...job.options.drafts?.[id] }
+        const base = jobDraftOf(doc,job,vocab,id)
         if (
           job.operation === 'translate' &&
           Object.keys(contentOnly(base)).some(
@@ -167,12 +165,13 @@ export async function agentHandler(req: PayloadRequest) {
           )
         )
           throw fail('翻译任务不能修改中文字段', 422)
-        if (job.operation === 'ai-fill') {
+        if (['ai-fill', 'manual-include'].includes(job.operation)) {
           for (const key of [
             'name',
             'description',
             'commentary',
             'characterId',
+            'characterIds',
             'tags',
             'categoryIds',
           ]) {

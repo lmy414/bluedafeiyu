@@ -95,7 +95,7 @@ export function BulkTools({
     setSending(true)
     try {
       await mutate('/bulk/request', 'POST', {
-        operation,
+        operation: operation === 'write-fields' && target === 'works' ? 'ai-fill' : operation,
         target,
         ids,
         patch,
@@ -117,12 +117,6 @@ export function BulkTools({
       <button className="s3-button" onClick={() => open('write-fields')} type="button">
         批量写字段
       </button>
-      <button className="s3-button" onClick={() => open('ai-fill')} type="button">
-        AI 批量补写
-      </button>
-      <button className="s3-button" onClick={() => open('translate')} type="button">
-        批量翻译
-      </button>
       {target === 'submissions' ? (
         <button
           className="s3-button s3-button--warning"
@@ -136,13 +130,14 @@ export function BulkTools({
         open={Boolean(operation)}
         title={operation ? LABELS[operation] : ''}
         confirmLabel={sending ? '提交中…' : '提交后台任务'}
+        disabled={sending || !confirmed}
         onClose={() => {
           if (!sending) setOperation(null)
         }}
         onConfirm={() => void submit()}
       >
         <p>
-          已选择 {ids.length} 条。任务由服务器独立执行，关闭页面不会停止，结果保留在“批量任务”。
+          已选择 {ids.length} 条。人工收录会自动补全文案和英日译文。关闭页面后继续，结果统一在任务中心查看。
         </p>
         {operation === 'write-fields' ? (
           <>

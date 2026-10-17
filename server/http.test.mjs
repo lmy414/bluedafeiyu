@@ -1352,3 +1352,18 @@ test('并发保护：同一 id 飞行中重复触发只审核一次', async (t) 
     release();
   }
 });
+
+
+test('站长上传仅开放在鉴权管理口，上传去重并进入人工队列',async t=>{
+  const fixture=await setup(t);
+  const body=Buffer.from(JSON.stringify({name:'本地图片',character:'deepseek',categoryId:'meme',dataBase64:TINY_PNG.toString('base64'),actor:'本地工作站'}));
+  await withServer(fixture.publicHandler,async port=>{
+    const r=await call(port,{method:'POST',routePath:'/api/v1/admin-upload',headers:{'Content-Type':'application/json'},body});assert.equal(r.status,404);
+  });
+  await withServer(fixture.adminHandler,async port=>{
+    const denied=await call(port,{method:'POST',routePath:'/api/v1/admin-upload',headers:{'Content-Type':'application/json'},body});assert.equal(denied.status,401);
+    const options={method:'POST',routePath:'/api/v1/admin-upload',headers:{'Content-Type':'application/json',authorization:'Bearer admin-secret-value'},body};
+    const first=await call(port,options);assert.equal(first.status,201);const item=await fixture.queue.get(JSON.parse(first.body).id);assert.equal(item.state,'needs_manual');assert.equal(item.origin.actor,'本地工作站');
+    const second=await call(port,options);assert.equal(second.status,200);assert.equal(JSON.parse(second.body).id,item.id);
+  });
+});

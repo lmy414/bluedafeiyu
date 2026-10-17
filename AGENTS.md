@@ -35,6 +35,8 @@
 
 后台另提供受鉴权的专题 upsert 接口（`POST /cms-api/topics/upsert`，owner 或 bot 均可调用），只允许按严格白名单维护文案与作者元数据：`topicId`（查找键）、`name`/`summary` 与英日译名、`author`（省略保留、`null` 清空）、`status`、`order`；`works`、`cover`、`needsPublish` 等键一律 400 拒绝。**作品与封面只能由站长在后台关联**，机器人不得通过该接口改动；机器人也不能把已关联作品的专题改成草稿。一条 `active` 但没有任何作品的专题不会生成专题页面。
 
+本地机器人通道使用独立 `owner` 身份，与站长共用全部业务权限，可通过原生 REST API 关联专题作品、封面和排序。上述 `topics/upsert` 白名单和 `bot` 限制仍适用于旧服务机器人。上传、人工收录、内容编辑和发布统一从任务中心查询；人工收录在同一任务中完成缺失文案与英日翻译。接入方法见 `docs/本地机器人操作通道.md`。
+
 可选字段 `author` 表示「来源作者专题」，结构 `{ name, url?, bio?, channels: [{ platform, label?, url }] }`：`channels` 第一项即首选联系方式，每行 `platform` 与 `url` 必填，`url`（含 `author.url`）只接受 http/https；没有 `author` 时专题维持普通版式（`SubHead` + `Feed`），有 `author` 时前台改用独立作者版式并展示作者名（不做头像），缺作者名或首选渠道会直接构建失败。作者型专题记录按需创建，本仓库不预置。
 
 `dist/data/blue-fish/previews/` 不在这张表里：它是 `tools/sync_content.mjs` 从内容仓 `dist/data/blue-fish/previews/` **同步进来的首批预览图**；上表两张 blue-fish JSON 则是**站点仓 `data/` 的清单暂存副本**。三者都落在 `dist/data/`，而 Astro 发布步骤不复制 `dist/data/`，所以这批预览图与两张 JSON 都**不进发布包**；线上的首批预览图由 `DEPLOY_ROOT/shared/data` 持久副本硬链接提供（见「更新与发布」）。

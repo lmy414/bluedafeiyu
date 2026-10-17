@@ -5,18 +5,21 @@ import React, { useEffect, useState } from 'react'
 
 import { useAdminApi } from '../components/admin/api'
 import { useConsoleList, useConsoleVocabulary } from '../components/admin/useConsoleList'
-import { BulkJobsPanel, BulkTools } from '../components/admin/BulkTools'
+import { BulkTools } from '../components/admin/BulkTools'
 import { BulkBar } from '../components/admin/BulkBar'
 import { CHANNELS, WORK_STATUSES } from '../components/admin/constants'
 import { Modal } from '../components/admin/Modal'
 import { PageHeader } from '../components/admin/PageHeader'
 import { Pagination } from '../components/admin/Pagination'
+import { WorkDrawer } from '../components/admin/WorkDrawer'
+import { TaskLink } from '../components/admin/TaskLink'
 import { WorkCard } from '../components/admin/WorkCard'
 import type { WorkDoc } from '../components/admin/types'
 import { NO_AUTHOR } from '../components/admin/types'
 
 export function LibraryView() {
-  const { mutate } = useAdminApi()
+  const { get, mutate } = useAdminApi()
+  const [activeWork, setActiveWork] = useState<WorkDoc | null>(null)
   const { characters, categories, topics } = useConsoleVocabulary()
   const [channel, setChannel] = useState('')
   const [characterId, setCharacterId] = useState('')
@@ -128,7 +131,7 @@ export function LibraryView() {
           <WorkCard
             key={String(work.id)}
             metrics={work.metrics}
-            onOpen={() => toggle(work.workId)}
+            onOpen={() => { void get<WorkDoc>(`/works/${work.id}`, { depth: 2 }).then(setActiveWork).catch(e => setMessage(e.message)) }}
             onSelect={() => toggle(work.workId)}
             selected={selected.includes(work.workId)}
             work={work}
@@ -145,8 +148,9 @@ export function LibraryView() {
         <button className="s3-button s3-button--danger" onClick={() => setModal('delete')} type="button">删除</button>
       </BulkBar>
 
-      <BulkJobsPanel onCompleted={refresh} />
-      <Modal confirmLabel="保存分类" onClose={() => setModal(null)} onConfirm={() => void bulk('set-categories', { categoryIds: chosenCategories })} open={modal === 'category'} title="批量修改分类">
+      <TaskLink />
+      {activeWork ? <WorkDrawer key={String(activeWork.id)} item={{kind:"work",work:activeWork}} characters={characters} categories={categories} onClose={()=>setActiveWork(null)} onSaved={refresh} /> : null}
+      <Modal disabled={!chosenCategories.length} confirmLabel="保存分类" onClose={() => setModal(null)} onConfirm={() => void bulk('set-categories', { categoryIds: chosenCategories })} open={modal === 'category'} title="批量修改分类">
         <div className="s3-check-grid">
           {categories.map((category) => {
             const stableId = category.categoryId || String(category.id)
@@ -160,7 +164,7 @@ export function LibraryView() {
         </div>
       </Modal>
 
-      <Modal confirmLabel="加入专题" onClose={() => setModal(null)} onConfirm={() => void bulk('add-to-topic', { topicId })} open={modal === 'topic'} title="加入专题">
+      <Modal disabled={!topicId} confirmLabel="加入专题" onClose={() => setModal(null)} onConfirm={() => void bulk('add-to-topic', { topicId })} open={modal === 'topic'} title="加入专题">
         <label>
           选择专题
           <select onChange={(event) => setTopicId(event.target.value)} value={topicId}>
@@ -169,13 +173,12 @@ export function LibraryView() {
         </label>
       </Modal>
 
-      <Modal confirmLabel="确认删除" danger onClose={() => { setModal(null); setDeleteText('') }} onConfirm={() => { if (deleteText === '删除') void bulk('delete', { confirm: 'DELETE' }) }} open={modal === 'delete'} title="彻底删除作品">
+      <Modal disabled={deleteText !== "删除"} confirmLabel="确认删除" danger onClose={() => { setModal(null); setDeleteText('') }} onConfirm={() => { if (deleteText === '删除') void bulk('delete', { confirm: 'DELETE' }) }} open={modal === 'delete'} title="彻底删除作品">
         <p className="s3-danger-copy">删除会在下次发布时彻底移除作品和图片，不可恢复。</p>
         <label>
           请输入「删除」两个字以确认
           <input onChange={(event) => setDeleteText(event.target.value)} value={deleteText} />
         </label>
-        <button className="s3-button s3-button--danger" disabled={deleteText !== '删除'} onClick={() => void bulk('delete', { confirm: 'DELETE' })} type="button">我确认删除</button>
       </Modal>
     </Gutter>
   )

@@ -31,6 +31,8 @@ import { TakedownRequests } from '@/collections/TakedownRequests'
 import { requestAgentHandler } from '@/endpoints/request-agent'
 import { issueSnapshot } from '@/lib/rights-requests'
 import { fixtureI18n } from '../../../tools/localization/test-fixture.mjs'
+import { listTasks } from '@/endpoints/tasks'
+import { createDevice, devices, uploadWork } from '@/endpoints/automation'
 
 let payload: any, owner: any, bot: any, char: any, category: any, media: any, root: string, imageBytes: Buffer
 const request = (body: any, user = owner) => ({ payload, user, context: {}, json: async () => body, url: 'http://localhost' }) as any
@@ -61,7 +63,77 @@ beforeAll(async () => {
   const image = path.join(root, 'fixture.webp'); await fs.writeFile(image, bytes)
   media = await payload.create({ collection: 'media', data: { alt: '测试', mediaRole: 'preview' }, filePath: image, overrideAccess: true, context: { audit: false } })
 }, 30000)
-afterAll(async () => { await payload?.destroy(); payload?.db?.client?.close(); await fs.rm(root, { recursive: true, force: true, maxRetries: 10, retryDelay: 100 }) })
+afterAll(async () => { await payload?.destroy(); payload?.db?.client?.close(); await fs.rm(root, { recursive: true, force: true, maxRetries: 10, retryDelay: 100 }) }, 30000)
+
+
+describe('本地站长通道', () => {
+  it('独立设备使用原生 API Key 认证，并拥有站长的专题和内容管理权限', async () => {
+    expect((await createDevice({...request({name:'local'}),user:null})).status).toBe(401)
+    expect((await createDevice(request({name:'local'},bot))).status).toBe(403)
+    const response=await createDevice(request({name:'验收工作站'}))
+    expect(response.status).toBe(201)
+    const device=await response.json()
+    const auth=await payload.auth({headers:new Headers({Authorization:'users API-Key '+device.apiKey})})
+    expect(auth.user.role).toBe('owner')
+    const req={...request({}),user:auth.user}
+    const topic=await payload.create({collection:'topics',data:{topicId:'device-curated',name:'设备精选',summary:'本地设备权限验收',status:'draft',works:[],order:2},req,overrideAccess:false})
+    const work=await createWork('device_work')
+    const updated=await payload.update({collection:'topics',id:topic.id,data:{works:[work.id],cover:work.id},req,overrideAccess:false})
+    expect(updated.works[0].workId || updated.works[0]).toBe(work.workId)
+    expect((await devices(request({}))).status).toBe(200)
+    expect(JSON.stringify(await (await devices(request({}))).json())).not.toContain(device.apiKey)
+    const logs=await payload.find({collection:'audit-events',where:{targetId:{equals:String(topic.id)}},overrideAccess:true})
+    expect(logs.docs.some((e:any)=>e.actorName==='验收工作站'&&e.actorType==='ai')).toBe(true)
+    const userLogs=await payload.find({collection:'audit-events',where:{and:[{targetType:{equals:'users'}},{targetId:{equals:String(device.id)}}]},overrideAccess:true})
+    expect(JSON.stringify(userLogs)).not.toContain(device.apiKey)
+    await payload.delete({collection:'topics',id:topic.id,req,overrideAccess:false})
+    await payload.delete({collection:'works',id:work.id,req,overrideAccess:false})
+  })
+  it('上传仅桥接到受鉴权的原图队列，定向同步且不越过人工收录决定', async () => {
+    expect((await uploadWork(request({},bot))).status).toBe(403)
+    const digest=crypto.createHash('sha256').update(imageBytes).digest('hex'),id='sub_'+digest.slice(0,24)
+    process.env.SUBMISSION_ADMIN_TOKEN='automation-test-token'
+    const fetchMock=vi.fn(async(input:any,init:any)=>{
+      const url=new URL(String(input))
+      expect(init.headers.Authorization).toBe('Bearer automation-test-token')
+      if(url.pathname==='/api/v1/admin-upload'){
+        expect(JSON.parse(init.body).actor).toBeTruthy()
+        return Response.json({id,duplicate:false},{status:201})
+      }
+      if(url.pathname==='/api/v1/items'){
+        expect(url.searchParams.get('ids')).toBe(id)
+        return Response.json({items:[{id,sha256:digest,source:'manual',state:'needs_manual',format:'webp',mime:'image/webp',fields:{name:'设备上传',character:'deepseek',categoryId:'meme'},origin:{via:'owner-upload'},updatedAt:new Date().toISOString()}],nextCursor:null})
+      }
+      if(url.pathname.endsWith('/raw'))return new Response(imageBytes)
+      throw new Error('unexpected '+url)
+    })
+    vi.stubGlobal('fetch',fetchMock)
+    try {
+      const response=await uploadWork(request({dataBase64:imageBytes.toString('base64'),name:'设备上传',character:'deepseek',categoryId:'meme'}))
+      expect(response.status).toBe(201)
+      const doc=(await payload.find({collection:'submissions',where:{submissionId:{equals:id}},overrideAccess:true})).docs[0]
+      expect(doc.work).toBeFalsy();expect(doc.state).toBe('needs_manual')
+      await payload.delete({collection:'submissions',id:doc.id,overrideAccess:true,context:{audit:false}})
+    }finally{vi.unstubAllGlobals()}
+  })
+})
+
+describe('统一任务中心', () => {
+  it('拒绝访客和受限机器人，站长可查看多来源任务与分页', async () => {
+    expect((await listTasks({...request({}),user:null})).status).toBe(401)
+    expect((await listTasks(request({},bot))).status).toBe(403)
+    const doc=await createSubmission('sub_task_unified')
+    const job=await enqueue('manual-include','submissions',[doc.submissionId],{confirm:'MANUAL_INCLUDE'})
+    const result=await (await listTasks({...request({}),url:'http://localhost/?status=running'})).json()
+    expect(result.docs.some((t:any)=>t.sourceId===job.jobId)).toBe(true)
+    expect(result.docs.some((t:any)=>t.sourceId===String(doc.id))).toBe(false)
+    expect(JSON.stringify(result)).not.toContain('versions')
+    const detail=await (await listTasks({...request({}),url:'http://localhost/?task='+job.jobId})).json()
+    expect(detail.totalDocs).toBe(1)
+    await cancelBulkJob(request({jobId:job.jobId}))
+    await payload.update({collection:'submissions',id:doc.id,data:{state:'rejected'},overrideAccess:true,context:{audit:false}})
+  })
+})
 
 describe('轻量列表服务端分页', () => {
   it('只返回当前页；作者统计覆盖全部匹配记录；不输出大段译文', async () => {
@@ -224,6 +296,34 @@ describe('持久化批量任务', () => {
       expect(saved.legacyData.i18n.en).toEqual(i18n.en);expect(saved.name).toBe(content.name)
       expect((await call({action:'complete',...auth})).status).toBe(409)
     } finally {delete process.env.ADMIN_WORKER_TOKEN}
+  })
+  it('人工收录在一个任务里补齐译文，日文失败后保留英文并原位续做',async()=>{
+    const content={name:'统一收录标题',description:'人工说明',commentary:'人工点评',characterId:'deepseek',characterIds:['deepseek'],categoryIds:['meme'],tags:['测试']}
+    const originalBytes=await sharp({create:{width:13,height:13,channels:3,background:'#117733'}}).png().toBuffer()
+    const doc=await createSubmission('sub_one_click',{sha256:crypto.createHash('sha256').update(originalBytes).digest('hex'),editorial:content})
+    const job=await enqueue('manual-include','submissions',[doc.submissionId],{confirm:'MANUAL_INCLUDE'})
+    const oldToken=process.env.ADMIN_WORKER_TOKEN,oldSubmissionToken=process.env.SUBMISSION_ADMIN_TOKEN
+    process.env.ADMIN_WORKER_TOKEN='agent-flow-test';process.env.SUBMISSION_ADMIN_TOKEN='raw-flow-test'
+    const headers=new Headers({authorization:'Bearer agent-flow-test'})
+    const send=async(body:any)=>{const r=await agentHandler({...request({jobId:job.jobId,id:doc.submissionId,...body}),headers});return {status:r.status,...await r.json()}}
+    const raw=globalThis.fetch;vi.stubGlobal('fetch',vi.fn(async()=>new Response(new Uint8Array(originalBytes))))
+    const clock=vi.spyOn(Date,'now');let now=Date.now();clock.mockImplementation(()=>now)
+    try {
+      const listed=await send({action:'list'});expect(listed.jobs.some((j:any)=>j.jobId===job.jobId)).toBe(true)
+      let claim=await send({action:'claim'});let auth={token:claim.token}
+      expect((await agentHandler({...request({jobId:job.jobId,id:doc.submissionId,...auth,action:'image'}),headers})).status).toBe(200)
+      const draft=await send({action:'draft',...auth,content});const hash=draft.draft.i18n.sourceHash,locales=fixtureI18n(content.tags)
+      expect((await send({action:'locale',...auth,language:'en',sourceHash:hash,content:locales.en})).status).toBe(200)
+      expect((await send({action:'locale',...auth,language:'ja',sourceHash:hash,content:{...locales.ja,tags:[]}})).status).toBe(422)
+      expect((await payload.findByID({collection:'submissions',id:doc.id,overrideAccess:true})).work).toBeFalsy()
+      await send({action:'release',...auth,reason:'模拟日文失败'});now+=6*60*1000
+      claim=await send({action:'claim'});auth={token:claim.token};expect(claim.draft.i18n.en).toEqual(locales.en)
+      await agentHandler({...request({jobId:job.jobId,id:doc.submissionId,...auth,action:'image'}),headers})
+      await send({action:'locale',...auth,language:'ja',sourceHash:hash,content:locales.ja})
+      const end=await send({action:'complete',...auth});expect(end.result.status).toBe('succeeded')
+      const saved=await payload.findByID({collection:'submissions',id:doc.id,depth:1,overrideAccess:true})
+      expect(saved.work.status).toBe('pending');expect(saved.work.legacyData.i18n.en).toEqual(locales.en);expect(saved.review).toEqual(doc.review)
+    } finally {clock.mockRestore();vi.stubGlobal('fetch',raw);if(oldToken===undefined)delete process.env.ADMIN_WORKER_TOKEN;else process.env.ADMIN_WORKER_TOKEN=oldToken;if(oldSubmissionToken===undefined)delete process.env.SUBMISSION_ADMIN_TOKEN;else process.env.SUBMISSION_ADMIN_TOKEN=oldSubmissionToken}
   })
   it('单条空白草稿可以排队；Agent 无权覆盖已有人工字段', async () => {
     const doc=await createSubmission('sub_empty_draft')

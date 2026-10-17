@@ -874,7 +874,6 @@ export function createPublicHandler({
           limits: { maxBytes: cfg.maxBytes },
         });
       }
-
       if (req.method === 'POST' && url.pathname === '/api/v1/adapters/qq/events') {
         if (!qqAdapter) return sendJson(res, 503, { ok: false, error: 'QQ adapter unavailable' });
         let payload = {};
@@ -1006,6 +1005,18 @@ export function createAdminHandler({
       if (req.method === 'GET' && url.pathname === '/api/v1/health') {
         return sendJson(res, 200, { ok: true, summary: configSummary(cfg), stats: await queue.stats() });
       }
+      if (req.method === 'POST' && url.pathname === '/api/v1/admin-upload') {
+        const raw = await readBody(req, cfg.maxJsonBytes);
+        const body = JSON.parse(raw.toString('utf8'));
+        const checked = validateSubmissionFields(body, undefined, { characterMaxLength: cfg.characterMaxLength, siteRoot: cfg.siteRoot });
+        if (checked.error) return sendJson(res, 400, { ok: false, error: checked.error });
+        const buffer = decodeBase64Image(body.dataBase64, cfg.maxBytes);
+        const result = await queue.enqueue({ source: 'manual', sourceId: `owner:${sha256(buffer)}`, buffer, fields: checked.fields,
+          origin: { ...(body.origin && typeof body.origin === 'object' && !Array.isArray(body.origin) ? body.origin : {}), via: 'owner-upload', actor: String(body.actor || '站长').slice(0,120) } });
+        if (result.item.state === STATES.RECEIVED) await queue.transition(result.item.id, 'review.manual', { actor: 'owner-upload', reason: '站长上传，等待人工收录' });
+        return sendJson(res, result.status === 'created' ? 201 : 200, { ok: true, id: result.item.id, duplicate: result.status !== 'created' });
+      }
+
       if (req.method === 'GET' && url.pathname === '/api/v1/stats') {
         return sendJson(res, 200, { ok: true, stats: await queue.stats() });
       }

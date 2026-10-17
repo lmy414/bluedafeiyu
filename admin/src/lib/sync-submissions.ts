@@ -291,7 +291,7 @@ function mirrorUnchanged(existing: any, data: Record<string, any>): boolean {
 
 export async function syncSubmissions(
   payload: Payload,
-  options: { baseUrl?: string; dryRun?: boolean; limit?: number; source?: string; state?: string; token?: string; incremental?: boolean } = {},
+  options: { baseUrl?: string; dryRun?: boolean; limit?: number; source?: string; state?: string; token?: string; incremental?: boolean; ids?: string[] } = {},
 ) {
   const baseUrl = String(options.baseUrl || process.env.SUBMISSION_ADMIN_API_URL || 'http://127.0.0.1:8788').replace(/\/+$/, '')
   const token = options.token || process.env.SUBMISSION_ADMIN_TOKEN || ''
@@ -333,8 +333,8 @@ export async function syncSubmissions(
     errors: [] as string[],
   }
 
-  let ids: string[] | undefined
-  if (options.incremental && !options.source && !options.state) {
+  let ids: string[] | undefined = options.ids
+  if (!ids && options.incremental && !options.source && !options.state) {
     const versions = await requestJson(token, `${baseUrl}/api/v1/item-versions`)
     if (!Array.isArray(versions.items)) throw new Error('投稿版本摘要响应非法')
     const mirrors = new Map<string, any>()

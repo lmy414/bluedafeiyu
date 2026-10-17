@@ -34,6 +34,12 @@ description: 用原生工具审核蓝色大肥鱼投稿，补全中文字段，�
 7. 读取保存结果中的 sourceHash（工具简短回包的顶层字段）。分别撰写 en 和 ja，用 save_locale 分别校验、保存。英文成功但日文失败时只修日文，不重审图片。
 8. 用 finish 的 validate 检查，再 complete。只有工具确认成功才报告完成。complete 失败时查看错误并修正，不把最后回复当作写入证据。
 
+## 站长人工收录任务
+
+后台 `manual-include` 任务由站长明确提交，人工收录判断已保存在任务内。使用同一组 admin 工具补齐空白中文字段，生成缺失的英日译文，再 validate 和 complete。complete 会校验原图并创建待发布作品，无需再建翻译任务。已有人工文案、角色集合和类型必须保留。
+
+领取或重试时先检查返回草稿。`i18n.sourceHash` 与当前中文一致时，保留已经通过校验的语言，只处理缺失或失败的语言。技术问题用 release 保留当前草稿，原任务续做，不改人工收录决定。
+
 ## 多语言规则
 
 - 每种语言包含 name、description、commentary、tags、seoTitle、seoDescription、faq、originNote、licenseNote。FAQ 恰好两组 question/answer，只依据已知事实。

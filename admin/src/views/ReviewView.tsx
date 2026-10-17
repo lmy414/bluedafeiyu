@@ -5,7 +5,7 @@ import { useSearchParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import { useAdminApi } from '../components/admin/api'
 import { useConsoleList, useConsoleVocabulary } from '../components/admin/useConsoleList'
-import { BulkJobsPanel, BulkTools } from '../components/admin/BulkTools'
+import { BulkTools } from '../components/admin/BulkTools'
 import { BulkBar } from '../components/admin/BulkBar'
 import { CHANNELS, SUBMISSION_STATES, labelOf } from '../components/admin/constants'
 import { PageHeader } from '../components/admin/PageHeader'
@@ -13,6 +13,7 @@ import { Pagination } from '../components/admin/Pagination'
 import { WorkCard } from '../components/admin/WorkCard'
 import { WorkDrawer } from '../components/admin/WorkDrawer'
 import type { SubmissionDoc, WorkDoc } from '../components/admin/types'
+import { TaskLink } from '../components/admin/TaskLink'
 import { NO_AUTHOR, submissionImageURL } from '../components/admin/types'
 
 type ChannelFilter = 'all' | 'github-issue' | 'qq' | 'web'
@@ -37,7 +38,7 @@ export function ReviewView() {
   const [channel, setChannel] = useState<ChannelFilter>('all')
   const [mode, setMode] = useState<ReviewMode>(() => {
     const requested = searchParams.get('mode')
-    return MODE_TABS.some((tab) => tab.value === requested) ? (requested as ReviewMode) : 'pending'
+    return MODE_TABS.some((tab) => tab.value === requested) ? (requested as ReviewMode) : 'rejected'
   })
   const submissionMode = mode === 'rejected' || mode === 'reviewed' || mode === 'processing'
   const { characters, categories } = useConsoleVocabulary()
@@ -47,6 +48,7 @@ export function ReviewView() {
   const [page, setPage] = useState(1)
   const [author, setAuthor] = useState('')
   const [message, setMessage] = useState('')
+  useEffect(() => { const id=searchParams.get('item'); if(id && /^\d+$/.test(id)) void get<SubmissionDoc>(`/submissions/${id}`,{depth:2}).then(setActiveSubmission).catch(e=>setMessage(e.message)) },[get,searchParams])
   const { data, authors, loading, error, refresh } = useConsoleList<WorkDoc | SubmissionDoc>({
     kind: submissionMode ? 'submissions' : 'works',
     mode,
@@ -104,7 +106,7 @@ export function ReviewView() {
   return (
     <Gutter className="s3-admin-page">
       <PageHeader
-        description="列表仅加载当前页。多选后可批量编辑、翻译；人工收录必须确认已逐张复核，成功后进入待发布。"
+        description="先看图核对，再人工收录。文案、英日翻译与校验在同一个任务中自动完成。"
         title="投稿审核"
       />
       <div className="s3-tab-row">
@@ -297,9 +299,10 @@ export function ReviewView() {
           ) : null}
         </BulkBar>
       ) : null}
-      <BulkJobsPanel onCompleted={refresh} />
+      <TaskLink />
       {activeWork ? (
         <WorkDrawer
+          key={String(activeWork?.id || activeSubmission?.id)}
           categories={categories}
           characters={characters}
           item={{ kind: 'work', work: activeWork }}
@@ -309,6 +312,7 @@ export function ReviewView() {
       ) : null}
       {activeSubmission ? (
         <WorkDrawer
+          key={String(activeWork?.id || activeSubmission?.id)}
           categories={categories}
           characters={characters}
           item={{ kind: 'submission', submission: activeSubmission }}

@@ -3,7 +3,8 @@
 import { Gutter } from '@payloadcms/ui'
 import React, { useEffect, useMemo, useState } from 'react'
 
-import { useAdminApi } from '../components/admin/api'
+import { getAllDocs, useAdminApi } from '../components/admin/api'
+import { TaskLink } from '../components/admin/TaskLink'
 import { formatDate } from '../components/admin/constants'
 import { Modal } from '../components/admin/Modal'
 import { PageHeader } from '../components/admin/PageHeader'
@@ -30,18 +31,19 @@ export function PublishView() {
   const [confirming, setConfirming] = useState(false)
   const [message, setMessage] = useState('')
   const [loading, setLoading] = useState(true)
+  const [sending, setSending] = useState(false)
 
   async function loadPlan() {
     const [nextPlan, workResult, runResult] = await Promise.all([
       get<PublishPlan>('/publish/plan'),
-      get<ListResponse<WorkDoc>>('/works', { depth: 1, limit: 3000, pagination: false }),
+      getAllDocs<WorkDoc>(get, '/works', { depth: 1, 'where[needsPublish][equals]': true }),
       get<ListResponse<PublishRun>>('/publish-runs', { depth: 0, limit: 30, sort: '-requestedAt' }),
     ])
     setPlan(nextPlan)
-    setWorks(workResult.docs || [])
+    setWorks(workResult || [])
     setRuns(runResult.docs || [])
     const active = (runResult.docs || []).find((run) => ['queued', 'in_progress'].includes(run.status))
-    if (active) setActiveRunId(active.runId)
+    setActiveRunId(active?.runId || '')
   }
 
   useEffect(() => {
@@ -55,7 +57,7 @@ export function PublishView() {
       try {
         const result = await get<{ run: PublishRun }>('/publish/runs/' + encodeURIComponent(activeRunId))
         if (!stopped) setActiveRun(result.run)
-        if (!stopped && ['failed', 'succeeded'].includes(result.run.status)) void loadPlan()
+        if (!stopped && ['failed', 'succeeded'].includes(result.run.status)) { setActiveRunId(''); await loadPlan() }
       } catch (error) {
         if (!stopped) setMessage(error instanceof Error ? error.message : '发布状态读取失败')
       }
@@ -72,6 +74,8 @@ export function PublishView() {
   const workByID = useMemo(() => new Map(works.map((work) => [work.workId, work])), [works])
 
   async function requestPublish() {
+    if (sending) return
+    setSending(true)
     setConfirming(false)
     setMessage('正在创建发布批次…')
     try {
@@ -79,9 +83,11 @@ export function PublishView() {
       setActiveRun(null)
       setActiveRunId(result.runId)
       await loadPlan()
-      setMessage('发布请求已创建，执行器尚未接入时批次会停在 queued。')
+      setMessage('发布请求已创建，可在任务中心继续查看进度，关闭页面后仍会执行。')
     } catch (error) {
       setMessage(error instanceof Error ? error.message : '发布请求失败')
+    } finally {
+      setSending(false)
     }
   }
 
@@ -89,7 +95,7 @@ export function PublishView() {
     <Gutter className="s3-admin-page">
       <PageHeader
         actions={
-          <button className="s3-button s3-button--primary" disabled={!totalChanges || Boolean(activeRunId)} onClick={() => setConfirming(true)} type="button">
+          <button className="s3-button s3-button--primary" disabled={sending || !totalChanges || Boolean(activeRunId)} onClick={() => setConfirming(true)} type="button">
             {activeRunId ? '已有发布进行中' : '发布'}
           </button>
         }
@@ -137,12 +143,12 @@ export function PublishView() {
             <div><dt>结束</dt><dd>{formatDate(activeRun.finishedAt)}</dd></div>
             <div><dt>提交</dt><dd>{activeRun.commits ? JSON.stringify(activeRun.commits) : '未产生'}</dd></div>
           </dl>
-          <pre className="s3-log">{activeRun.log || activeRun.error || '暂无日志。'}</pre>
+          <TaskLink id={activeRun.runId} /><details><summary>查看技术日志</summary><pre className="s3-log">{activeRun.log || activeRun.error || '暂无日志。'}</pre></details>
         </section>
       ) : null}
 
-      <section className="s3-panel">
-        <div className="s3-panel-heading"><div><p className="s3-eyebrow">历史批次</p><h2>最近 30 次</h2></div></div>
+      <details className="s3-panel">
+        <summary>历史发布记录</summary>
         <div className="s3-table-wrap">
           <table className="s3-table">
             <thead><tr><th>批次</th><th>状态</th><th>请求时间</th><th>步骤</th><th>提交</th></tr></thead>
@@ -160,9 +166,9 @@ export function PublishView() {
             </tbody>
           </table>
         </div>
-      </section>
+      </details>
 
-      <Modal confirmLabel="确认发布" onClose={() => setConfirming(false)} onConfirm={() => void requestPublish()} open={confirming} title="确认发布">
+      <Modal disabled={sending} confirmLabel={sending ? '提交中…' : '确认发布'} onClose={() => setConfirming(false)} onConfirm={() => void requestPublish()} open={confirming} title="确认发布">
         <p>将创建发布批次并导出 {totalChanges} 项变更。该操作会通知发布执行器，确认后不能从后台撤销。</p>
       </Modal>
     </Gutter>

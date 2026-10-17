@@ -58,4 +58,5 @@ for (const file of migrationFiles) {
 }
 
 fs.copyFileSync(runnerSource, runnerTarget)
+fs.copyFileSync(path.join(scriptDir, 'provision-device.mjs'), path.join(targetRoot, 'provision-device.mjs'))
 console.log(`[admin-migrations] runner -> ${path.relative(adminRoot, runnerTarget)}`)

@@ -114,7 +114,7 @@ export default buildConfig({
     transactionOptions: { behavior: 'immediate' },
     busyTimeout: 5000,
     migrationDir: path.resolve(dirname, 'migrations'),
-    push: process.env.NODE_ENV !== 'production',
+    push: process.env.NODE_ENV !== 'production' && process.env.PAYLOAD_SCHEMA_PUSH !== 'false',
   }),
   sharp,
   i18n: {

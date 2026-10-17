@@ -13,13 +13,13 @@ export function actorName(user?: AnyUser | null): string {
 
 export function actorType(user?: AnyUser | null): 'ai' | 'human' | 'system' {
   if (!user) return 'system'
-  return user.role === 'bot' ? 'ai' : 'human'
+  return user.role === 'bot' || user.email?.endsWith('@automation.local') ? 'ai' : 'human'
 }
 
 function compactAuditValue(value: unknown): unknown {
   if (value === undefined) return undefined
   try {
-    return JSON.parse(JSON.stringify(value))
+    return JSON.parse(JSON.stringify(value, (key, entry) => /^(apiKey|password|salt|hash|resetPasswordToken|token|imageToken)$/i.test(key) ? '[redacted]' : entry))
   } catch {
     return String(value)
   }

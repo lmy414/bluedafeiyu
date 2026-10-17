@@ -6,6 +6,7 @@ GA4 作品浏览与下载统计的权限、配置、定时同步和验证步骤�
 
 ## 环境变量
 
+- `PAYLOAD_SCHEMA_PUSH=false`：本地验收复用已迁移数据库时关闭 dev push。生产始终关闭。
 - `DATABASE_URL`：SQLite 文件 URL，生产示例 `file:/srv/apps/dafeiyu-admin/data/admin.db`。
 - `PAYLOAD_SECRET`：Payload 加密密钥，必须独立配置。
 - `PAYLOAD_PUBLIC_SERVER_URL`：后台对外地址对应的站点 origin。
@@ -91,26 +92,29 @@ CLI 保留完整遍历，用于人工对账。
 
 ## 后台界面
 
-后台首页为业务概览，左侧业务导航依次为：概览、投稿审核、作品库、专题、发布、机器人；Payload 默认集合导航保留在下方作为高级入口。
+后台首页为任务中心。左侧导航保留任务中心、作品库、专题和设置，高级集合默认折叠。网页和本地机器人共用任务状态。
+
+任务中心按“待我处理、处理中、待发布、已完成、全部”分组。审核从任务详情直达对应图片，大图和审核理由在左，编辑表单在右。人工收录自动补齐缺失文案和英日译文，完成后进入待发布。发布计划仍由站长或本地站长身份确认。
 
 | 路由 | 用途 |
 |---|---|
-| `/admin` | 渠道待发布数、AI 拒绝/转人工、待发布改动和最近发布批次 |
+| `/admin` | 统一任务、步骤、逐项结果、失败重试和上传入口 |
 | `/admin/review` | 按渠道和状态审核作品，抽屉内编辑，支持移除/隐藏/收录；`?mode=rejected` 直达未处理人工列表，已关联作品的 AI 记录可在“已处理的 AI 记录”页签查看 |
 | `/admin/library` | 筛选、搜索、批量改分类、隐藏、恢复、删除和加入专题 |
 | `/admin/topics-board` | 专题三语文案、封面、作品选择、拖动排序和上线状态 |
 | `/admin/publish` | 发布计划、二次确认、批次轮询和历史记录 |
-| `/admin/bots` | 机器人启停与 API Key 重置（仅站长） |
+| `/admin/bots` | 本地站长身份、设备密钥、统计和原有服务机器人 |
 
 自定义视图通过 `admin.components.views` 注册；新增一级路由必须使用 `DefaultTemplate` 包住客户端视图，否则不会渲染后台导航。运行 `npm run generate:importmap` 后，自定义组件会写入 `src/app/(payload)/admin/importMap.js`。
 
 端到端测试使用隔离 SQLite：
 
 ```powershell
-$env:DATABASE_URL='file:E:/quick-site-studio/tmp/s3-admin/admin.db'
-$env:MEDIA_DIR='E:/quick-site-studio/tmp/s3-admin/media'
+$env:DATABASE_URL='file:E:/quick-site-studio/tmp/admin-usability-qa/admin.db'
+$env:S3_ADMIN_DATABASE_URL=$env:DATABASE_URL
+$env:MEDIA_DIR='E:/quick-site-studio/tmp/admin-usability-qa/media'
 $env:PAYLOAD_SECRET='s3-admin-local-secret'
-$env:ADMIN_PUBLISH_REQUEST_DIR='E:/quick-site-studio/tmp/s3-admin/run'
+$env:ADMIN_PUBLISH_REQUEST_DIR='E:/quick-site-studio/tmp/admin-usability-qa/run'
 $env:S3_ADMIN_OWNER_PASSWORD='<在本机测试库中设置的站长密码>'
 npm run dev -- --port 3100
 npm run test:e2e
@@ -121,18 +125,16 @@ Playwright 配置默认使用 `http://127.0.0.1:3100`，测试截图写入 `E:\q
 ## 列表与持久化批量任务
 
 作品库和投稿审核每页读取 48 条卡片摘要。筛选、搜索、作者统计和全局热度排序都在服务器执行。
-卡片不返回完整审核内容、英日译文和状态历史；点击条目后才读取详情。概览用数据库聚合统计。
+卡片不返回完整审核内容、英日译文和状态历史；点击条目后才读取详情。任务中心用数据库聚合统计。
 角色、类型和专题词表在当前后台会话中缓存 60 秒。
 
 多选后支持以下操作：
 
-- 批量写字段：只写勾选字段，所选条目使用同一值。可修改名称、说明、点评、标签、角色和类型。
-- AI 批量补写：逐图补写缺失字段并生成英日版本，保留已有内容。
-- 批量翻译：根据当前中文生成英日版本。有效译文默认跳过；覆盖需要确认。
-- 批量人工收录：仅限未关联作品的人工审核投稿。站长必须确认已逐张看图，字段、译文、预览和原图校验通过后才进入待发布。
+- 批量写字段：写入选中的字段。作品修改会在同一任务里补齐内容和英日版本。
+- 批量人工收录：确认所选图片后，补齐空白中文字段、生成英日译文，再校验预览和原图。
 
-每批最多 200 条，同时最多 5 个待执行任务。任务存入 `bulk-jobs`。补全和翻译由 Hermes Agent 原生工具处理；统一字段写入和已确认的人工收录由 systemd 执行器处理。
-关闭页面不会停止任务，服务重启后从已提交游标恢复。结果保留在界面的“批量任务”区域。
+界面不再提供独立补全、翻译入口。已有工具接口保留兼容。每批最多 200 条，同时最多 5 个待执行任务。任务存入现有 `bulk-jobs`。内容准备和人工收录由 Hermes Agent 原生工具处理，确定性字段写入由 systemd 执行器处理。
+关闭页面不会停止任务，服务重启后从已提交游标恢复。结果统一显示在任务中心。
 失败项可以单独重试；取消只停止尚未提交的条目。写入与进度推进共用事务，操作逐条记录审计。
 生成期间人工修改过的条目会失败，避免覆盖。投稿的人工编辑存入 `editorial`，同步不会覆盖草稿，原投稿和 AI 结论保留。
 
@@ -141,6 +143,7 @@ Playwright 配置默认使用 `http://127.0.0.1:3100`，测试截图写入 `E:\q
 接口均需站长身份，执行器接口需独立令牌：
 
 ```text
+GET  /cms-api/console/tasks?status=attention&page=1
 GET  /cms-api/console/list?kind=works&page=1&limit=48
 GET  /cms-api/console/authors?kind=works
 POST /cms-api/bulk/request
@@ -163,7 +166,11 @@ systemctl status dafeiyu-admin-bulk.service
 执行器复用 `/etc/dafeiyu/admin.env` 中的 `ADMIN_WORKER_TOKEN`，仅访问回环地址。
 迁移新增任务表、草稿字段、版本摘要字段和列表索引，不修改已发布内容。
 
-## 创建机器人
+## 本地机器人
+
+本地设备使用独立的 `owner` 身份，权限与站长相同。网页“设置 → 本地机器人”可创建、停用或轮换设备密钥。命令行配置见 [本地机器人操作通道](../docs/本地机器人操作通道.md)。
+
+## 创建服务机器人
 
 ```powershell
 npm run create:bot
@@ -178,7 +185,9 @@ npm run create:bot
 - 后台用户/机器人：`Authorization: users API-Key <key>`
 - 发布执行器：`Authorization: Bearer <ADMIN_WORKER_TOKEN>`
 
-机器人不能登录后台界面，不能管理用户，不能删除、隐藏或移除作品；可以读取投稿、作品、专题，通过普通作品 REST API 修改可编辑字段和分类，通过 `POST /cms-api/topics/upsert` 维护专题文案与作者元数据，也可以发起发布。机器人调用批量接口时目前只允许 `set-categories`。
+以下限制仅适用于原有 `bot` 服务身份；本地设备的 `owner` 身份具有站长权限。
+
+`bot` 不能登录后台界面，不能管理用户，不能删除、隐藏或移除作品；可以读取投稿、作品、专题，通过普通作品 REST API 修改可编辑字段和分类，通过 `POST /cms-api/topics/upsert` 维护专题文案与作者元数据，也可以发起发布。机器人调用批量接口时目前只允许 `set-categories`。
 
 ### 发布执行器接口
 

@@ -92,6 +92,12 @@ export function contentOnly(draft: any) {
   return Object.fromEntries(EDIT_KEYS.filter((key) => draft[key] !== undefined).map((key) => [key, draft[key]])) as any
 }
 
+export function jobDraftOf(doc: any, job: any, vocab: any, id: string) {
+  const draft = { ...draftOf(doc, job.target, vocab), ...(job.operation === 'write-fields' ? {} : job.options?.patch || {}), ...job.options?.drafts?.[id], ...job.options?.checkpoints?.[id] }
+  if (draft.characterIds?.length && !draft.characterIds.includes(draft.characterId)) draft.characterId = draft.characterIds[0]
+  return draft
+}
+
 export function fingerprint(doc: any, target: string) {
   const value =
     target === 'works'
@@ -184,7 +190,7 @@ export async function prepareJobItem(
     throw new Error('已删除或移除的作品不能批量编辑')
   if (job.target === 'submissions' && doc.work)
     return { doc, skipped: '已关联作品，不重复处理', data: null }
-  const draft = { ...draftOf(doc, job.target, vocab), ...job.options?.drafts?.[id] }
+  const draft = { ...jobDraftOf(doc, job, vocab, id), ...(agentContent || {}) }
   if (job.operation === 'write-fields') {
     const patch: any = validatePatch(job.options.patch, vocab)
     if (patch.characterIds) patch.characterId = patch.characterIds.includes(draft.characterId) ? draft.characterId : patch.characterIds[0]
@@ -204,11 +210,11 @@ export async function prepareJobItem(
     if (!['needs_manual', 'auto_rejected'].includes(doc.state))
       throw new Error('条目不是人工审核状态')
     const check = validateContent(contentOnly(draft), vocab)
-    if (!check.ok) throw new Error('请先补写字段：' + check.errors.join('；'))
+    if (!check.ok) throw new Error('收录内容不完整：' + check.errors.join('；'))
     if (!doc.sha256 || !doc.media) throw new Error('缺少原图摘要或预览，不能收录')
-    const i18n = doc.editorial?.i18n || doc.review?.content?.i18n
+    const i18n = agentContent?.i18n || doc.editorial?.i18n || doc.review?.content?.i18n
     if (!i18n || i18n.sourceHash !== sourceHash(draft))
-      throw new Error('请先批量翻译当前内容，再收录')
+      throw new Error('人工收录任务尚未完成当前内容的翻译')
     validateI18n(i18n, draft)
     const token = process.env.SUBMISSION_ADMIN_TOKEN
     if (!token || !/^sub_[A-Za-z0-9_-]{1,64}$/.test(doc.submissionId))
@@ -412,7 +418,7 @@ export async function stepJob(req: PayloadRequest, job: any, agentContent?: any)
         results,
         cursor,
         status,
-        ...(agentContent ? { options: { ...freshJob.options, agent: null } } : {}),
+        ...(agentContent ? { options: { ...freshJob.options, checkpoints: { ...freshJob.options.checkpoints, [id]: agentContent }, agent: null } } : {}),
         ...(cursor === ids.length ? { finishedAt: new Date().toISOString() } : {}),
       },
       overrideAccess: true,
@@ -469,7 +475,7 @@ export async function stepJob(req: PayloadRequest, job: any, agentContent?: any)
           results,
           cursor,
           status,
-          ...(agentContent ? { options: { ...current.options, agent: null } } : {}),
+          ...(agentContent ? { options: { ...current.options, checkpoints: { ...current.options.checkpoints, [id]: agentContent }, agent: null } } : {}),
           ...(cursor === ids.length ? { finishedAt: new Date().toISOString() } : {}),
         },
         overrideAccess: true,

@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 export function PageHeader({
   actions,
@@ -16,7 +17,14 @@ export function PageHeader({
         <h1>{title}</h1>
         {description ? <p className="s3-muted">{description}</p> : null}
       </div>
-      {actions ? <div className="s3-page-actions">{actions}</div> : null}
+      <div className="s3-page-actions">
+        {actions}
+        {title !== '\u4efb\u52a1\u4e2d\u5fc3' ? (
+          <Link className="s3-button s3-button--ghost" href="/admin">
+            任务中心
+          </Link>
+        ) : null}
+      </div>
     </header>
   )
 }

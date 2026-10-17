@@ -6,6 +6,8 @@ import React, { useEffect, useState } from 'react'
 import { useAdminApi } from '../components/admin/api'
 import { Modal } from '../components/admin/Modal'
 import { PageHeader } from '../components/admin/PageHeader'
+import { DeviceSettings } from '../components/admin/DeviceSettings'
+import { AnalyticsPanel } from '../components/admin/AnalyticsPanel'
 
 type BotUser = {
   displayName?: string
@@ -87,7 +89,10 @@ export function BotsView() {
 
   return (
     <Gutter className="s3-admin-page">
-      <PageHeader description="机器人只能使用 API Key 调用，不能登录后台界面。" title="机器人" />
+      <PageHeader description="管理本地机器、服务机器人与高级设置。" title="设置" />
+      <DeviceSettings />
+      <details className="s3-panel"><summary>站点统计</summary><AnalyticsPanel /></details>
+      <h2>服务机器人</h2>
       {message ? <p className="s3-notice">{message}</p> : null}
       {loading ? <p className="s3-loading">正在读取机器人账号…</p> : null}
       <section className="s3-bot-grid">

@@ -43,7 +43,7 @@ const summary = (job: any) => ({
   failed: (job.results || []).filter((r: any) => r.status === 'failed').length,
 })
 
-export async function createBulkJob(req: PayloadRequest): Promise<Response> {
+export async function createBulkJob(req: PayloadRequest, retryOf?: string, checkpoints?: Record<string, unknown>): Promise<Response> {
   const denied = ownerOnly(req)
   if (denied) return denied
   const body = await readJsonBody<any>(req)
@@ -102,7 +102,7 @@ export async function createBulkJob(req: PayloadRequest): Promise<Response> {
   if (active.totalDocs >= 5) return json({ error: '已有 5 个批量任务等待处理，请稍后提交' }, 429)
   let patch: any
   try {
-    if (body.operation === 'write-fields')
+    if (body.operation === 'write-fields' || (body.operation === 'ai-fill' && body.patch && Object.keys(body.patch).length))
       patch = validatePatch(body.patch, await loadVocabulary(req.payload))
   } catch (error) {
     return json({ error: (error as Error).message }, 400)
@@ -178,6 +178,8 @@ export async function createBulkJob(req: PayloadRequest): Promise<Response> {
           confirmed: body.confirm || null,
           drafts,
           suggestOnly: body.suggestOnly === true,
+          ...(retryOf ? { retryOf } : {}),
+          ...(checkpoints ? { checkpoints } : {}),
         },
         requestedBy: req.user!.id,
       },
@@ -304,11 +306,11 @@ export async function retryBulkJob(req: PayloadRequest) {
       patch: job.options.patch,
       force: job.options.force,
       confirm: job.options.confirmed,
-      drafts: job.options.drafts,
+      drafts: Object.fromEntries(ids.filter((id: string) => job.options.drafts?.[id]).map((id: string) => [id, job.options.drafts[id]])),
       suggestOnly: job.options.suggestOnly,
       requestId: crypto.randomUUID(),
     }),
-  } as PayloadRequest)
+  } as PayloadRequest, job.jobId, job.options.checkpoints)
 }
 
 let processing = false
@@ -323,7 +325,7 @@ export async function processNextBulkItem(req: PayloadRequest) {
       where: {
         and: [
           { status: { in: RUNNABLE } },
-          { operation: { in: ['write-fields', 'manual-include'] } },
+          { operation: { equals: 'write-fields' } },
         ],
       },
       limit: 1,

@@ -1,12 +1,12 @@
 'use client'
 
-import React, { useEffect, useMemo, useRef, useState } from 'react'
+import Link from 'next/link'
+import React, { useEffect, useRef, useState } from 'react'
 
 import { useAdminApi } from './api'
-import { CHANNELS, SUBMISSION_STATES, formatDate, labelOf } from './constants'
-import { StatusBadge } from './StatusBadge'
+import { CHANNELS, formatDate, labelOf } from './constants'
 import type { CategoryDoc, CharacterDoc, MediaDoc, SubmissionDoc, WorkDoc } from './types'
-import { asObject, relationID, workOriginalURL } from './types'
+import { asObject, relationID } from './types'
 
 type DrawerItem =
   { kind: 'submission'; submission: SubmissionDoc } | { kind: 'work'; work: WorkDoc }
@@ -36,7 +36,9 @@ function draftContent(form: FormState, categories: CategoryDoc[], characters: Ch
     description: form.description.trim(),
     commentary: form.commentary.trim(),
     characterId: characters.find((item) => String(item.id) === form.character)?.characterId || '',
-    characterIds: form.characters.map((id) => characters.find((item) => String(item.id) === id)?.characterId).filter(Boolean),
+    characterIds: form.characters
+      .map((id) => characters.find((item) => String(item.id) === id)?.characterId)
+      .filter(Boolean),
     categoryIds: categories
       .filter((item) => form.categories.includes(String(item.id)))
       .map((item) => String(item.categoryId || ''))
@@ -91,7 +93,9 @@ function initialForm(
         ? work.categories.map((value) => String(relationID(value)))
         : [],
       character: String(relationID(work.character) || ''),
-      characters: (work.characters?.length ? work.characters : [work.character]).map((value) => String(relationID(value) || '')).filter(Boolean),
+      characters: (work.characters?.length ? work.characters : [work.character])
+        .map((value) => String(relationID(value) || ''))
+        .filter(Boolean),
       commentary: work.commentary || '',
       description: work.description || '',
       name: work.name || '',
@@ -126,7 +130,17 @@ function initialForm(
   return {
     categories: categoryIds,
     character: character === undefined || character === null ? '' : String(character),
-    characters: (Array.isArray(source.characterIds) && source.characterIds.length ? source.characterIds : [rawCharacter]).map((raw) => characters.find((item) => String(item.id) === String(raw) || item.characterId === raw)?.id).filter((id) => id != null).map(String),
+    characters: (Array.isArray(source.characterIds) && source.characterIds.length
+      ? source.characterIds
+      : [rawCharacter]
+    )
+      .map(
+        (raw) =>
+          characters.find((item) => String(item.id) === String(raw) || item.characterId === raw)
+            ?.id,
+      )
+      .filter((id) => id != null)
+      .map(String),
     commentary: typeof source.commentary === 'string' ? source.commentary : '',
     description: typeof source.description === 'string' ? source.description : '',
     name: typeof source.name === 'string' ? source.name : '',
@@ -147,19 +161,17 @@ export function WorkDrawer({
   onClose: () => void
   onSaved: () => void
 }) {
-  const { apiRoute, get, mutate } = useAdminApi()
+  const { get, mutate } = useAdminApi()
   const submission = item.kind === 'submission' ? item.submission : undefined
   const work = item.kind === 'work' ? item.work : asObject<WorkDoc>(submission?.work)
-  const [form, setForm] = useState<FormState>(() => initialForm(item, categories, characters))
-  const currentForm = useRef(form)
-  currentForm.current = form
-  const [localizedSuggestion, setLocalizedSuggestion] = useState<Record<string, unknown> | null>(
-    null,
-  )
-  const [localizedDraft, setLocalizedDraft] = useState<string | null>(null)
-  const [events, setEvents] = useState<AuditEvent[]>([])
+  const [form, setForm] = useState(() => initialForm(item, categories, characters))
   const [saving, setSaving] = useState(false)
   const [message, setMessage] = useState('')
+  const [task, setTask] = useState('')
+  const [submitted, setSubmitted] = useState('')
+  const requestKeys = useRef(new Map<string, string>())
+  const formKey = JSON.stringify(form)
+  const [events, setEvents] = useState<AuditEvent[]>([])
   const [replyBody, setReplyBody] = useState(() => initialIssueReplyBody(submission))
   const [closeIssue, setCloseIssue] = useState(true)
   const [replyStateReason, setReplyStateReason] = useState<IssueReplyStateReason>(() =>
@@ -168,205 +180,54 @@ export function WorkDrawer({
   const [replying, setReplying] = useState(false)
   const [replyMessage, setReplyMessage] = useState('')
   const [replyError, setReplyError] = useState('')
-
-  const auditTarget = work?.workId || submission?.submissionId
-  useEffect(() => {
-    if (!auditTarget) return
-    void get<{ docs: AuditEvent[] }>('/audit-events', {
-      depth: 0,
-      limit: 20,
-      sort: '-createdAt',
-      'where[targetId][equals]': auditTarget,
-    }).then((result) => setEvents(result.docs || []))
-  }, [auditTarget, get])
-
-  const review = submission?.review || work?.review
   const image = work ? fullImageURL(work) : submission ? submissionImage(submission) : undefined
-  const originalURL = work ? workOriginalURL(work) : undefined
   const title = work?.name || submission?.title || '未命名投稿'
-  const origin = record(submission?.origin)
+  const review = submission?.review || work?.review
+  const origin = record(submission?.origin || work?.origin)
   const issue =
     typeof origin.issue === 'number' && Number.isSafeInteger(origin.issue) && origin.issue > 0
       ? origin.issue
       : undefined
   const issueUrl = typeof origin.issueUrl === 'string' ? origin.issueUrl : ''
-  const reviewContentPresent = Boolean(
-    submission && Object.keys(record(submission.review?.content)).length,
-  )
-  const history = useMemo(() => {
-    const stateHistory =
-      submission && Array.isArray(submission.stateHistory)
-        ? submission.stateHistory.map((entry, index) => ({
-            id: `submission-${index}`,
-            label: `${String(entry.from || '开始')} → ${String(entry.to || '未知')}`,
-            note: String(entry.reason || entry.actor || ''),
-            time: String(entry.at || ''),
-          }))
-        : []
-    const auditHistory = events.map((event) => ({
-      id: event.id,
-      label: event.action || '记录',
-      note: event.actorName || '',
-      time: event.createdAt || '',
-    }))
-    return [...stateHistory, ...auditHistory]
-  }, [events, submission])
-
-  function parsedTags(): string[] {
-    return form.tags
-      .split(/[,，\n]/)
-      .map((value) => value.trim())
-      .filter(Boolean)
-  }
-
-  async function save() {
-    if (!work) return
-    if (!form.characters.length) {
-      setMessage('请至少选择一个角色。')
-      return
-    }
-    if (form.categories.length !== 1) {
-      setMessage('请选择一个作品类型。')
-      return
-    }
-    setSaving(true)
-    setMessage('')
-    try {
-      await mutate(`/works/${encodeURIComponent(String(work.id))}`, 'PATCH', {
-        ...(localizedSuggestion
-          ? { legacyData: { ...(work.legacyData || {}), i18n: localizedSuggestion } }
-          : {}),
-        categories: form.categories.map(Number),
-        character: form.character ? Number(form.character) : undefined,
-        characters: form.characters.map(Number),
-        commentary: form.commentary,
-        description: form.description,
-        name: form.name,
-        tags: parsedTags().map((value) => ({ value })),
-      })
-      setMessage('保存成功，已标记为待发布。')
-      onSaved()
-    } catch (error) {
-      setMessage(error instanceof Error ? error.message : '保存失败')
-    } finally {
-      setSaving(false)
-    }
-  }
-
-  const [filling, setFilling] = useState(false)
-
-  async function requestAgentSuggestion(
-    body: Record<string, unknown>,
-  ): Promise<{ suggestion: Record<string, any>; errors?: string[] }> {
-    const queued = await mutate<{ job: { jobId: string }; suggestion?: Record<string, any> }>(
-      '/ai-fill',
-      'POST',
-      body,
-    )
-    // Compatibility for already-running old UI requests during deployment.
-    if (queued.suggestion) return { suggestion: queued.suggestion }
-    if (!queued.job?.jobId) throw new Error('Hermes 任务未创建')
-    window.dispatchEvent(new Event('s3-bulk-submitted'))
-    for (let attempt = 0; attempt < 450; attempt++) {
-      const response = await get<{
-        job: {
-          status: string
-          results: Array<{ suggestion?: Record<string, any>; message: string }>
-        }
-      }>('/bulk/jobs', { jobId: queued.job.jobId })
-      const job = response.job
-      if (['succeeded', 'partial', 'failed', 'cancelled'].includes(job.status)) {
-        const result = job.results?.[0]
-        if (result?.suggestion && !['cancelled', 'failed'].includes(job.status))
-          return { suggestion: result.suggestion }
-        throw new Error(result?.message || 'Hermes 任务未完成；请到批量任务查看')
-      }
-      await new Promise((resolve) => setTimeout(resolve, 2000))
-    }
-    throw new Error('Hermes 任务仍在后台处理；关闭页面不会取消，请到批量任务查看')
-  }
-
-  /** 只补当前表单里为空的字段；结果填进表单，仍需人工点保存/收录。 */
-  async function aiFill() {
-    const blankFields: string[] = []
-    if (!form.name.trim()) blankFields.push('name')
+  const originalURL = work ? workOriginalURL(work) : undefined
+  const canInclude =
+    submission && !submission.work && ['auto_rejected', 'needs_manual'].includes(submission.state)
+  const editable = Boolean(work || canInclude)
+  const formAtOpen = useRef(formKey)
+  const section = useRef<HTMLElement>(null)
+  const close = () => {
+    if (saving) return
     if (
-      !form.description.trim() ||
-      /^首批收录自蓝色大肥鱼档案馆|原投稿未逐张命名/.test(form.description.trim())
+      formKey !== formAtOpen.current &&
+      submitted !== formKey &&
+      !window.confirm('当前编辑尚未提交，确认关闭？')
     )
-      blankFields.push('description')
-    if (!form.commentary.trim()) blankFields.push('commentary')
-    if (!parsedTags().length) blankFields.push('tags')
-    if (!form.categories.length) blankFields.push('categories')
-    if (!blankFields.length) blankFields.push('i18n')
-    setFilling(true)
-    setMessage('已提交 Hermes，等待 Agent 逐项处理…')
-    try {
-      const result = await requestAgentSuggestion({
-        fields: blankFields,
-        draft: draftContent(form, categories, characters),
-        ...(work ? { workId: work.workId } : { submissionId: submission?.submissionId }),
-      })
-      const s = result.suggestion || {}
-      if (s.i18n) setLocalizedSuggestion(s.i18n)
-      const categoryIds = Array.isArray(s.categoryIds)
-        ? categories
-            .filter((item) => s.categoryIds.includes(String(item.categoryId)))
-            .map((item) => String(item.id))
-        : []
-      if (s.i18n)
-        setLocalizedDraft(
-          JSON.stringify(
-            draftContent(
-              {
-                ...form,
-                name: form.name.trim() ? form.name : s.name || form.name,
-                description:
-                  blankFields.includes('description') && s.description
-                    ? s.description
-                    : form.description,
-                commentary: form.commentary.trim()
-                  ? form.commentary
-                  : s.commentary || form.commentary,
-                tags: form.tags.trim()
-                  ? form.tags
-                  : Array.isArray(s.tags)
-                    ? s.tags.join(', ')
-                    : form.tags,
-                categories: form.categories.length ? form.categories : categoryIds,
-              },
-              categories,
-              characters,
-            ),
-          ),
-        )
-      setForm((current) => ({
-        ...current,
-        name: current.name.trim() ? current.name : s.name || current.name,
-        description:
-          blankFields.includes('description') && s.description
-            ? s.description
-            : current.description,
-        commentary: current.commentary.trim()
-          ? current.commentary
-          : s.commentary || current.commentary,
-        tags: current.tags.trim()
-          ? current.tags
-          : Array.isArray(s.tags)
-            ? s.tags.join(', ')
-            : current.tags,
-        categories: current.categories.length ? current.categories : categoryIds,
-      }))
-      const source = s.descriptionSource === 'author' ? '（说明取自作者原文）' : ''
-      const warn = result.errors?.length ? `；未补上：${result.errors.join('、')}` : ''
-      setMessage(`Hermes 已生成建议及英日版本${source}，请核对后保存${warn}`)
-    } catch (error) {
-      setMessage(error instanceof Error ? error.message : 'AI 补全失败')
-    } finally {
-      setFilling(false)
-    }
+      return
+    onClose()
   }
-  async function manualInclude() {
+  useEffect(() => {
+    const previous = document.activeElement as HTMLElement | null
+    const oldOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    section.current?.querySelector<HTMLButtonElement>('button')?.focus()
+    return () => {
+      document.body.style.overflow = oldOverflow
+      previous?.focus()
+    }
+  }, [])
+  useEffect(() => {
+    const target = work?.workId || submission?.submissionId
+    if (target)
+      void get<{ docs: AuditEvent[] }>('/audit-events', {
+        limit: 20,
+        sort: '-createdAt',
+        'where[targetId][equals]': target,
+      })
+        .then((r) => setEvents(r.docs || []))
+        .catch(() => {})
+  }, [get, work?.workId, submission?.submissionId])
+  async function submit() {
+    if (saving || submitted === formKey) return
     if (!form.characters.length) {
       setMessage('请至少选择一个角色。')
       return
@@ -375,48 +236,37 @@ export function WorkDrawer({
       setMessage('请选择一个作品类型。')
       return
     }
-    if (!submission) return
-    const content = draftContent(form, categories, characters)
-
+    const id = work?.workId || submission!.submissionId
+    const key = `${id}:${formKey}`
+    if (!requestKeys.current.has(key)) requestKeys.current.set(key, crypto.randomUUID())
     setSaving(true)
     setMessage('')
     try {
-      let i18n = localizedSuggestion
-      if (!i18n || localizedDraft !== JSON.stringify(content)) {
-        setMessage('正在为当前内容生成英文和日文版本…')
-        const result = await requestAgentSuggestion({
-          fields: ['i18n'],
-          draft: content,
-          submissionId: submission.submissionId,
-        })
-        i18n = result.suggestion?.i18n
-        if (!i18n) throw new Error('英文和日文版本未生成，请重试人工收录。')
-        setLocalizedSuggestion(i18n)
-        setLocalizedDraft(JSON.stringify(content))
-      }
-      if (
-        JSON.stringify(draftContent(currentForm.current, categories, characters)) !==
-        JSON.stringify(content)
-      ) {
-        throw new Error('生成期间内容已修改，请核对后重新人工收录。')
-      }
-      await mutate('/works/bulk', 'POST', {
-        action: 'manual-include',
-        confirm: 'MANUAL_INCLUDE',
-        content: { ...content, i18n },
-        submissionId: submission.submissionId,
+      const response = await mutate<{ job: { jobId: string } }>('/bulk/request', 'POST', {
+        operation: work ? 'ai-fill' : 'manual-include',
+        target: work ? 'works' : 'submissions',
+        ids: [id],
+        drafts: { [id]: draftContent(form, categories, characters) },
+        confirm: work ? 'WRITE' : 'MANUAL_INCLUDE',
+        requestId: requestKeys.current.get(key),
       })
-      setMessage('人工收录成功，已进入待发布；原始 AI 结论、状态未改写，操作已写入审计。')
+      setTask(response.job.jobId)
+      setSubmitted(formKey)
+      setMessage(
+        work
+          ? '修改任务已提交，文案校验和翻译会自动完成。'
+          : '人工收录任务已提交，补全文案、英日翻译和校验将自动完成，然后进入待发布。',
+      )
+      window.dispatchEvent(new Event('s3-bulk-submitted'))
       onSaved()
     } catch (error) {
-      setMessage(error instanceof Error ? error.message : '人工收录失败')
+      setMessage(error instanceof Error ? error.message : '提交失败，请重试')
     } finally {
       setSaving(false)
     }
   }
-
   async function replyToIssue() {
-    if (!submission || !issue) return
+    if (!submission || !issue || replying) return
     setReplying(true)
     setReplyMessage('')
     setReplyError('')
@@ -434,371 +284,308 @@ export function WorkDrawer({
       setReplying(false)
     }
   }
-
   return (
     <div className="s3-drawer-backdrop" role="presentation">
-      <aside aria-label="作品详情" className="s3-drawer">
+      <aside
+        ref={section}
+        role="dialog"
+        aria-modal="true"
+        aria-label="作品详情"
+        className="s3-drawer s3-review-editor"
+        onKeyDown={(event) => {
+          if (event.key === 'Escape') close()
+          if (event.key === 'Tab') {
+            const nodes = section.current?.querySelectorAll<HTMLElement>(
+              'button:not(:disabled),a[href],input:not(:disabled),select:not(:disabled),textarea:not(:disabled),summary',
+            )
+            if (!nodes?.length) return
+            const first = nodes[0],
+              last = nodes[nodes.length - 1]
+            if (event.shiftKey && document.activeElement === first) {
+              event.preventDefault()
+              last.focus()
+            } else if (!event.shiftKey && document.activeElement === last) {
+              event.preventDefault()
+              first.focus()
+            }
+          }
+        }}
+      >
         <header className="s3-drawer-header">
           <div>
-            <p className="s3-eyebrow">{work ? '作品审核' : '人工复审'}</p>
+            <p className="s3-eyebrow">{work ? '编辑作品' : '看图审核'}</p>
             <h2>{title}</h2>
           </div>
-          <button aria-label="关闭" className="s3-icon-button" onClick={onClose} type="button">
+          <button className="s3-icon-button" type="button" aria-label="关闭" onClick={close}>
             ×
           </button>
         </header>
-        <div className="s3-drawer-scroll">
-          <div className="s3-drawer-image">
-            {image ? <img alt={title} src={image} /> : <span>暂无预览图</span>}
+        <div className="s3-review-layout">
+          <div className="s3-review-image-pane">
+            <div className="s3-drawer-image">
+              {image ? <img alt={title} src={image} /> : <span>暂无预览图</span>}
+            </div>
             {originalURL ? (
-              <a className="s3-muted" href={originalURL} rel="noreferrer" target="_blank">
+              <a
+                className="s3-button s3-button--ghost"
+                href={originalURL}
+                target="_blank"
+                rel="noreferrer"
+              >
                 查看原图
               </a>
             ) : null}
-          </div>
-
-          {work ? (
-            <section className="s3-form-section">
-              <h3>编辑作品</h3>
-              <label>
-                名称
-                <input
-                  onChange={(event) => setForm({ ...form, name: event.target.value })}
-                  value={form.name}
-                />
-              </label>
-              <label>
-                说明
-                <textarea
-                  onChange={(event) => setForm({ ...form, description: event.target.value })}
-                  rows={3}
-                  value={form.description}
-                />
-              </label>
-              <label>
-                详情正文
-                <textarea
-                  onChange={(event) => setForm({ ...form, commentary: event.target.value })}
-                  rows={6}
-                  value={form.commentary}
-                />
-              </label>
-              <fieldset>
-                <legend>角色（至少一项）</legend>
-                <div className="s3-check-grid">
-                  {characters.map((character) => {
-                    const id = String(character.id)
-                    return <label className="s3-check" key={id}>
-                      <input type="checkbox" checked={form.characters.includes(id)} onChange={(event) => {
-                        const selected = event.target.checked ? [...form.characters, id] : form.characters.filter((value) => value !== id)
-                        setForm({ ...form, characters: selected, character: selected.includes(form.character) ? form.character : selected[0] || '' })
-                      }} />
-                      {character.name || character.characterId}
-                    </label>
-                  })}
-                </div>
-              </fieldset>
-              <fieldset>
-                <legend>作品类型（单选）</legend>
-                {submission?.fields?.categoryId ? (
-                  <p>
-                    投稿者选择：
-                    {categories.find((c) => c.categoryId === submission.fields?.categoryId)?.name ||
-                      String(submission.fields.categoryId)}
-                  </p>
-                ) : null}
-                <div className="s3-check-grid">
-                  {categories.map((category) => {
-                    const id = String(category.id)
-                    return (
-                      <label className="s3-check" key={id}>
-                        <input
-                          checked={form.categories.includes(id)}
-                          onChange={(event) =>
-                            setForm({
-                              ...form,
-                              categories: [id],
-                            })
-                          }
-                          name="work-type"
-                          type="radio"
-                        />
-                        {category.name || category.categoryId}
-                      </label>
-                    )
-                  })}
-                </div>
-              </fieldset>
-              <label>
-                标签（逗号分隔）
-                <input
-                  onChange={(event) => setForm({ ...form, tags: event.target.value })}
-                  value={form.tags}
-                />
-              </label>
-              <div className="s3-bulk-actions">
-                <button
-                  className="s3-button s3-button--secondary"
-                  disabled={filling || saving}
-                  onClick={() => void aiFill()}
-                  type="button"
-                >
-                  {filling ? 'AI 补全中…' : 'AI 补全与翻译'}
-                </button>
-                <button
-                  className="s3-button s3-button--primary"
-                  disabled={saving || filling}
-                  onClick={() => void save()}
-                  type="button"
-                >
-                  {saving ? '保存中…' : '保存修改'}
-                </button>
-              </div>
-              {message ? <p className="s3-notice">{message}</p> : null}
+            <p className="s3-muted">{labelOf(CHANNELS, work?.channel || submission?.source)}</p>
+            <section className="s3-review-reason">
+              <h3>AI 审核理由</h3>
+              <p>{String(review?.reason || review?.summary || '未记录，请核对图片与来源。')}</p>
             </section>
-          ) : null}
-
-          <section className="s3-form-section">
-            <h3>AI 审核理由</h3>
-            <p className="s3-rationale">
-              {String(review?.reason || review?.summary || '未记录 AI 理由')}
+            <p className="s3-muted">
+              作者：{String(origin.author || '未注明')} · 授权信息请核对来源记录
             </p>
-            <dl className="s3-detail-list">
-              <div>
-                <dt>结论</dt>
-                <dd>{String(review?.verdict || '未记录')}</dd>
-              </div>
-              <div>
-                <dt>置信度</dt>
-                <dd>
-                  {typeof review?.confidence === 'number'
-                    ? `${Math.round(review.confidence * 100)}%`
-                    : '未记录'}
-                </dd>
-              </div>
-              <div>
-                <dt>模型</dt>
-                <dd>{String(review?.model || '未记录')}</dd>
-              </div>
-              <div>
-                <dt>渠道</dt>
-                <dd>{labelOf(CHANNELS, work?.channel || submission?.source)}</dd>
-              </div>
-            </dl>
-          </section>
-
-          {submission ? (
-            <section className="s3-form-section">
-              <h3>人工复审收录</h3>
-              <p className="s3-muted">
-                {reviewContentPresent
-                  ? 'AI 已给出内容草案。请逐项核对后主动收录；原始 AI 结论不会改写。'
-                  : 'AI 未保留可用内容。可以点「AI 补全与翻译」让 AI 看图填写，核对后再收录。'}
+          </div>
+          <div className="s3-drawer-scroll s3-review-form-pane">
+            {editable ? (
+              <section className="s3-form-section">
+                <h3>{work ? '编辑作品' : '人工复审收录'}</h3>
+                <p className="s3-muted">
+                  核对角色和作品类型，确认后自动补齐必要文案与英日译文。人工填写的内容会保留。
+                </p>
+                <label>
+                  名称
+                  <input
+                    value={form.name}
+                    disabled={saving}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                  />
+                </label>
+                <label>
+                  说明
+                  <textarea
+                    rows={3}
+                    value={form.description}
+                    disabled={saving}
+                    placeholder="留空时自动补齐"
+                    onChange={(e) => setForm({ ...form, description: e.target.value })}
+                  />
+                </label>
+                <label>
+                  详情正文
+                  <textarea
+                    rows={5}
+                    value={form.commentary}
+                    disabled={saving}
+                    placeholder="留空时自动补齐"
+                    onChange={(e) => setForm({ ...form, commentary: e.target.value })}
+                  />
+                </label>
+                <fieldset>
+                  <legend>角色（至少一项）</legend>
+                  <div className="s3-check-grid">
+                    {characters.map((c) => {
+                      const id = String(c.id)
+                      return (
+                        <label className="s3-check" key={id}>
+                          <input
+                            type="checkbox"
+                            disabled={saving}
+                            checked={form.characters.includes(id)}
+                            onChange={(e) => {
+                              const next = e.target.checked
+                                ? [...form.characters, id]
+                                : form.characters.filter((v) => v !== id)
+                              setForm({
+                                ...form,
+                                characters: next,
+                                character: next.includes(form.character)
+                                  ? form.character
+                                  : next[0] || '',
+                              })
+                            }}
+                          />
+                          {c.name || c.characterId}
+                        </label>
+                      )
+                    })}
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>作品类型（单选）</legend>
+                  <div className="s3-check-grid">
+                    {categories.map((c) => {
+                      const id = String(c.id)
+                      return (
+                        <label className="s3-check" key={id}>
+                          <input
+                            type="radio"
+                            name="work-type"
+                            disabled={saving}
+                            checked={form.categories.includes(id)}
+                            onChange={() => setForm({ ...form, categories: [id] })}
+                          />
+                          {c.name || c.categoryId}
+                        </label>
+                      )
+                    })}
+                  </div>
+                </fieldset>
+                <label>
+                  标签（逗号分隔）
+                  <input
+                    disabled={saving}
+                    value={form.tags}
+                    onChange={(e) => setForm({ ...form, tags: e.target.value })}
+                  />
+                </label>
+              </section>
+            ) : (
+              <p className="s3-notice">
+                {submission?.work
+                  ? '这条投稿已关联作品，可在作品库查看。'
+                  : '这条投稿由系统处理中，任务中心会更新进度。'}
               </p>
-              <label>
-                名称
-                <input
-                  onChange={(event) => setForm({ ...form, name: event.target.value })}
-                  value={form.name}
-                />
-              </label>
-              <label>
-                说明
-                <textarea
-                  onChange={(event) => setForm({ ...form, description: event.target.value })}
-                  rows={3}
-                  value={form.description}
-                />
-              </label>
-              <label>
-                详情正文
-                <textarea
-                  onChange={(event) => setForm({ ...form, commentary: event.target.value })}
-                  rows={6}
-                  value={form.commentary}
-                />
-              </label>
-              <fieldset>
-                <legend>角色（至少一项）</legend>
-                <div className="s3-check-grid">
-                  {characters.map((character) => {
-                    const id = String(character.id)
-                    return <label className="s3-check" key={id}>
-                      <input type="checkbox" checked={form.characters.includes(id)} onChange={(event) => {
-                        const selected = event.target.checked ? [...form.characters, id] : form.characters.filter((value) => value !== id)
-                        setForm({ ...form, characters: selected, character: selected.includes(form.character) ? form.character : selected[0] || '' })
-                      }} />
-                      {character.name || character.characterId}
-                    </label>
-                  })}
-                </div>
-              </fieldset>
-              <fieldset>
-                <legend>作品类型（单选）</legend>
-                <div className="s3-check-grid">
-                  {categories.map((category) => {
-                    const id = String(category.id)
-                    return (
-                      <label className="s3-check" key={id}>
-                        <input
-                          checked={form.categories.includes(id)}
-                          onChange={(event) =>
-                            setForm({
-                              ...form,
-                              categories: [id],
-                            })
-                          }
-                          name="manual-work-type"
-                          type="radio"
-                        />
-                        {category.name || category.categoryId}
-                      </label>
-                    )
-                  })}
-                </div>
-              </fieldset>
-              <label>
-                标签（逗号分隔）
-                <input
-                  onChange={(event) => setForm({ ...form, tags: event.target.value })}
-                  value={form.tags}
-                />
-              </label>
-              <div className="s3-bulk-actions">
-                <button
-                  className="s3-button s3-button--secondary"
-                  disabled={filling || saving}
-                  onClick={() => void aiFill()}
-                  type="button"
-                >
-                  {filling ? 'AI 补全中…' : 'AI 补全与翻译'}
-                </button>
-                <button
-                  className="s3-button s3-button--primary"
-                  disabled={saving || filling}
-                  onClick={() => void manualInclude()}
-                  type="button"
-                >
-                  {saving ? '处理中…' : '人工收录'}
-                </button>
-              </div>
-              {message ? <p className="s3-notice">{message}</p> : null}
-            </section>
-          ) : null}
-
-          {submission && submission.source === 'github-issue' && issue ? (
-            <section className="s3-form-section">
-              <h3>回复 GitHub Issue</h3>
-              <p className="s3-muted">
-                Issue：
-                {issueUrl ? (
-                  <a href={issueUrl} rel="noreferrer" target="_blank">
-                    #{issue}
-                  </a>
-                ) : (
-                  `#${issue}`
-                )}
+            )}
+            {message ? (
+              <p className="s3-notice" role="status">
+                {message}
               </p>
-              <label>
-                回复内容
-                <textarea
-                  onChange={(event) => setReplyBody(event.target.value)}
-                  rows={5}
-                  value={replyBody}
-                />
-              </label>
-              <div className="s3-bulk-actions">
-                <button
-                  className="s3-button s3-button--ghost"
-                  onClick={() => setReplyBody(ISSUE_REPLY_REJECTED_TEMPLATE)}
-                  type="button"
-                >
-                  不收录模板
-                </button>
-                <button
-                  className="s3-button s3-button--ghost"
-                  onClick={() => setReplyBody(ISSUE_REPLY_ACCEPTED_TEMPLATE)}
-                  type="button"
-                >
-                  已收录模板
-                </button>
-              </div>
-              <fieldset>
-                <legend>关闭方式</legend>
-                <div className="s3-check-grid">
-                  <label className="s3-check">
-                    <input
-                      checked={replyStateReason === 'not_planned'}
-                      name="issue-reply-state-reason"
-                      onChange={() => setReplyStateReason('not_planned')}
-                      type="radio"
-                    />
-                    未收录（not_planned）
-                  </label>
-                  <label className="s3-check">
-                    <input
-                      checked={replyStateReason === 'completed'}
-                      name="issue-reply-state-reason"
-                      onChange={() => setReplyStateReason('completed')}
-                      type="radio"
-                    />
-                    已完成（completed）
-                  </label>
-                </div>
-              </fieldset>
-              <label className="s3-check">
-                <input
-                  checked={closeIssue}
-                  onChange={(event) => setCloseIssue(event.target.checked)}
-                  type="checkbox"
-                />
-                同时关闭 Issue
-              </label>
-              <button
-                className="s3-button s3-button--primary"
-                disabled={replying}
-                onClick={() => void replyToIssue()}
-                type="button"
+            ) : null}
+            {task ? (
+              <Link
+                className="s3-button s3-button--secondary"
+                href={`/admin?view=all&task=${encodeURIComponent(task)}`}
               >
-                {replying ? '发送中…' : '发送回复'}
-              </button>
-              {replyMessage ? <p className="s3-notice">{replyMessage}</p> : null}
-              {replyError ? <p className="s3-danger-copy">{replyError}</p> : null}
-            </section>
-          ) : null}
-
-          {submission ? (
-            <section className="s3-form-section">
-              <h3>投稿原始字段</h3>
-              <pre>{JSON.stringify(submission.fields || {}, null, 2)}</pre>
-              <p className="s3-muted">
-                状态：{SUBMISSION_STATES[submission.state] || submission.state}
-              </p>
-            </section>
-          ) : null}
-
-          <section className="s3-form-section">
-            <h3>状态与审计历史</h3>
-            {history.length ? (
-              <ol className="s3-history">
-                {history.map((entry) => (
-                  <li key={String(entry.id)}>
-                    <StatusBadge text={entry.label} />
-                    <span>{formatDate(entry.time)}</span>
-                    {entry.note ? <p>{entry.note}</p> : null}
+                查看收录与翻译任务
+              </Link>
+            ) : null}
+            <details className="s3-form-section">
+              <summary>来源、原始字段与操作历史</summary>
+              <pre className="s3-log">
+                {JSON.stringify(submission?.origin || work?.origin || {}, null, 2)}
+              </pre>
+              {submission ? (
+                <pre className="s3-log">{JSON.stringify(submission.fields || {}, null, 2)}</pre>
+              ) : null}
+              <ul>
+                {events.map((e) => (
+                  <li key={e.id}>
+                    {e.action} · {e.actorName} · {formatDate(e.createdAt)}
                   </li>
                 ))}
-              </ol>
-            ) : (
-              <p className="s3-muted">暂无状态历史。</p>
-            )}
-          </section>
+              </ul>
+            </details>
+            {submission && submission.source === 'github-issue' && issue ? (
+              <section className="s3-form-section">
+                <h3>回复 GitHub Issue</h3>
+                <p className="s3-muted">
+                  Issue：
+                  {issueUrl ? (
+                    <a href={issueUrl} rel="noreferrer" target="_blank">
+                      #{issue}
+                    </a>
+                  ) : (
+                    `#${issue}`
+                  )}
+                </p>
+                <label>
+                  回复内容
+                  <textarea
+                    onChange={(event) => setReplyBody(event.target.value)}
+                    rows={5}
+                    value={replyBody}
+                  />
+                </label>
+                <div className="s3-bulk-actions">
+                  <button
+                    className="s3-button s3-button--ghost"
+                    onClick={() => setReplyBody(ISSUE_REPLY_REJECTED_TEMPLATE)}
+                    type="button"
+                  >
+                    不收录模板
+                  </button>
+                  <button
+                    className="s3-button s3-button--ghost"
+                    onClick={() => setReplyBody(ISSUE_REPLY_ACCEPTED_TEMPLATE)}
+                    type="button"
+                  >
+                    已收录模板
+                  </button>
+                </div>
+                <fieldset>
+                  <legend>关闭方式</legend>
+                  <div className="s3-check-grid">
+                    <label className="s3-check">
+                      <input
+                        checked={replyStateReason === 'not_planned'}
+                        name="issue-reply-state-reason"
+                        onChange={() => setReplyStateReason('not_planned')}
+                        type="radio"
+                      />
+                      未收录（not_planned）
+                    </label>
+                    <label className="s3-check">
+                      <input
+                        checked={replyStateReason === 'completed'}
+                        name="issue-reply-state-reason"
+                        onChange={() => setReplyStateReason('completed')}
+                        type="radio"
+                      />
+                      已完成（completed）
+                    </label>
+                  </div>
+                </fieldset>
+                <label className="s3-check">
+                  <input
+                    checked={closeIssue}
+                    onChange={(event) => setCloseIssue(event.target.checked)}
+                    type="checkbox"
+                  />
+                  同时关闭 Issue
+                </label>
+                <button
+                  className="s3-button s3-button--primary"
+                  disabled={replying}
+                  onClick={() => void replyToIssue()}
+                  type="button"
+                >
+                  {replying ? '发送中…' : '发送回复'}
+                </button>
+                {replyMessage ? <p className="s3-notice">{replyMessage}</p> : null}
+                {replyError ? <p className="s3-danger-copy">{replyError}</p> : null}
+              </section>
+            ) : null}
+          </div>
         </div>
         <footer className="s3-drawer-footer">
-          <span className="s3-muted">API：{apiRoute}</span>
-          <button className="s3-button s3-button--ghost" onClick={onClose} type="button">
-            关闭
-          </button>
+          <span className="s3-muted">
+            {task ? '任务已保存，关闭页面后继续' : '收录完成后等待发布'}
+          </span>
+          <div className="s3-page-actions">
+            <button
+              className="s3-button s3-button--ghost"
+              type="button"
+              disabled={saving}
+              onClick={close}
+            >
+              关闭
+            </button>
+            {editable ? (
+              <button
+                className="s3-button s3-button--primary"
+                type="button"
+                disabled={saving || submitted === formKey}
+                onClick={() => void submit()}
+              >
+                {saving
+                  ? '提交中…'
+                  : submitted === formKey
+                    ? '任务已提交'
+                    : work
+                      ? '保存修改'
+                      : '人工收录'}
+              </button>
+            ) : null}
+          </div>
         </footer>
       </aside>
     </div>

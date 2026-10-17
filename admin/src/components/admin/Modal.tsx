@@ -6,6 +6,7 @@ export function Modal({
   children,
   confirmLabel = '确认',
   danger,
+  disabled,
   onClose,
   onConfirm,
   open,
@@ -14,6 +15,7 @@ export function Modal({
   children: React.ReactNode
   confirmLabel?: string
   danger?: boolean
+  disabled?: boolean
   onClose: () => void
   onConfirm: () => void
   open: boolean
@@ -31,6 +33,7 @@ export function Modal({
           </button>
           <button
             className={`s3-button ${danger ? 's3-button--danger' : 's3-button--primary'}`}
+            disabled={disabled}
             onClick={onConfirm}
             type="button"
           >

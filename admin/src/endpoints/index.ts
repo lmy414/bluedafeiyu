@@ -10,8 +10,12 @@ import { DashboardEndpoints } from './dashboard'
 import { IssueReplyEndpoints } from './issue-reply'
 import { PublishEndpoints } from './publish'
 import { RequestAgentEndpoints } from './request-agent'
+import { TaskEndpoints } from './tasks'
+import { AutomationEndpoints } from './automation'
 
 export const endpoints: Endpoint[] = [
+  ...TaskEndpoints,
+  ...AutomationEndpoints,
   ...ConsoleEndpoints,
   ...BulkJobEndpoints,
   ...AnalyticsEndpoints,
