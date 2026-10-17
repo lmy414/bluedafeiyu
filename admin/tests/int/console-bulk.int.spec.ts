@@ -119,6 +119,19 @@ describe('本地站长通道', () => {
 })
 
 describe('统一任务中心', () => {
+  it('后续成功发布会把旧失败归入已处理，同时保留真实失败记录', async () => {
+    const failed=await payload.create({collection:'publish-runs',data:{runId:'history-failed',status:'failed',step:'build',error:'历史构建失败',createdAt:'2026-10-01T00:00:00.000Z'},overrideAccess:true,context:{audit:false}})
+    const current=await payload.create({collection:'publish-runs',data:{runId:'history-current-failed',status:'failed',step:'build',createdAt:'2026-10-03T00:00:00.000Z'},overrideAccess:true,context:{audit:false}})
+    const success=await payload.create({collection:'publish-runs',data:{runId:'history-success',status:'succeeded',step:'complete',createdAt:'2026-10-02T00:00:00.000Z'},overrideAccess:true,context:{audit:false}})
+    try {
+      const pending=await (await listTasks({...request({}),url:'http://localhost/?kind=publish&status=attention'})).json()
+      expect(pending.docs.map((d:any)=>d.sourceId)).toEqual(['history-current-failed'])
+      const handled=await (await listTasks({...request({}),url:'http://localhost/?task=history-failed&status=completed'})).json()
+      expect(handled.docs[0].stage).toBe('superseded')
+      expect((await payload.findByID({collection:'publish-runs',id:failed.id,overrideAccess:true})).status).toBe('failed')
+    }finally{for(const doc of [failed,current,success])await payload.delete({collection:'publish-runs',id:doc.id,overrideAccess:true,context:{audit:false}})}
+  })
+
   it('拒绝访客和受限机器人，站长可查看多来源任务与分页', async () => {
     expect((await listTasks({...request({}),user:null})).status).toBe(401)
     expect((await listTasks(request({},bot))).status).toBe(403)

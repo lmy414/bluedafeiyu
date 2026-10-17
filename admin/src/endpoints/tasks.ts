@@ -18,8 +18,8 @@ SELECT 'bulk' AS kind,b.job_id AS sourceId,b.operation,b.operation || ' · ' || 
 FROM bulk_jobs b WHERE NOT EXISTS(SELECT 1 FROM bulk_jobs child WHERE json_extract(child.options,'$.retryOf')=b.job_id)
 UNION ALL
 SELECT 'publish',run_id,'publish','发布网站',
- CASE WHEN status='in_progress' THEN 'running' WHEN status='succeeded' THEN 'completed' ELSE status END,
- step,error,CASE WHEN status='succeeded' THEN 1 ELSE 0 END,1,coalesce(requested_at,created_at),updated_at,0,0,coalesce((SELECT display_name FROM users WHERE id=requested_by_id),'发布执行器'),'publish' FROM publish_runs
+ CASE WHEN status='in_progress' THEN 'running' WHEN status='succeeded' OR (status='failed' AND EXISTS(SELECT 1 FROM publish_runs newer WHERE newer.status='succeeded' AND newer.created_at>pr.created_at)) THEN 'completed' ELSE status END,
+ CASE WHEN status='failed' AND EXISTS(SELECT 1 FROM publish_runs newer WHERE newer.status='succeeded' AND newer.created_at>pr.created_at) THEN 'superseded' ELSE step END,error,CASE WHEN status='succeeded' THEN 1 ELSE 0 END,1,coalesce(requested_at,created_at),updated_at,0,0,coalesce((SELECT display_name FROM users WHERE id=requested_by_id),'发布执行器'),'publish' FROM publish_runs pr
 UNION ALL
 SELECT 'submission',cast(id AS TEXT),'submission',title,
  CASE WHEN state='publish_failed' THEN 'failed'

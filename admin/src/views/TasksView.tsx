@@ -24,6 +24,7 @@ const VIEWS = [
   { value: 'all', label: '全部' },
 ]
 const STAGES: Record<string, string> = {
+  superseded: '后续批次已成功发布，原失败记录保留',
   editing: '补齐必要文案',
   translating: '生成英日译文',
   ready: '校验并保存内容',
