@@ -37,6 +37,20 @@ beforeEach(() => {
 })
 afterEach(cleanup)
 describe('统一人工收录与编辑任务', () => {
+  it('首次直达时等待词表，加载后恢复已有角色和类型', async () => {
+    const view = render(
+      React.createElement(WorkDrawer, { ...props, categories: [], characters: [] }),
+    )
+    expect(screen.getByText('正在读取编辑选项…')).toBeTruthy()
+    expect(screen.queryByRole('button', { name: '人工收录' })).toBeNull()
+    view.rerender(React.createElement(WorkDrawer, props))
+    expect((screen.getByRole('checkbox', { name: 'DeepSeek' }) as HTMLInputElement).checked).toBe(
+      true,
+    )
+    expect((screen.getByRole('radio', { name: '插画' }) as HTMLInputElement).checked).toBe(true)
+    expect((screen.getByLabelText('名称') as HTMLInputElement).value).toBe('人工名称')
+  })
+
   it('一次收录提交持久任务，保留人工草稿，移除单独翻译入口', async () => {
     render(React.createElement(WorkDrawer, props))
     expect(screen.queryByRole('button', { name: 'AI 补全与翻译' })).toBeNull()

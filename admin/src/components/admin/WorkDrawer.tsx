@@ -148,19 +148,44 @@ function initialForm(
   }
 }
 
-export function WorkDrawer({
-  categories,
-  characters,
-  item,
-  onClose,
-  onSaved,
-}: {
+type WorkDrawerProps = {
   categories: CategoryDoc[]
   characters: CharacterDoc[]
   item: DrawerItem
   onClose: () => void
   onSaved: () => void
-}) {
+}
+
+export function WorkDrawer(props: WorkDrawerProps) {
+  if (!props.categories.length || !props.characters.length)
+    return (
+      <div className="s3-drawer-backdrop" role="presentation">
+        <aside
+          className="s3-drawer s3-review-editor"
+          role="dialog"
+          aria-modal="true"
+          aria-label="作品详情"
+          aria-busy="true"
+        >
+          <header className="s3-drawer-header">
+            <h2>正在读取编辑选项…</h2>
+            <button
+              type="button"
+              className="s3-icon-button"
+              aria-label="关闭"
+              onClick={props.onClose}
+            >
+              ×
+            </button>
+          </header>
+          <p className="s3-notice">角色和类型加载完成后显示原有选择。</p>
+        </aside>
+      </div>
+    )
+  return <WorkEditor {...props} />
+}
+
+function WorkEditor({ categories, characters, item, onClose, onSaved }: WorkDrawerProps) {
   const { get, mutate } = useAdminApi()
   const submission = item.kind === 'submission' ? item.submission : undefined
   const work = item.kind === 'work' ? item.work : asObject<WorkDoc>(submission?.work)
