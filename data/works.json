@@ -17349,7 +17349,10 @@
       "github": null
     },
     "origin": {
-      "via": "web"
+      "type": "internet-found",
+      "author": "ZipZipPipe",
+      "sourceUrl": "https://www.bilibili.com/opus/1239937623660691478",
+      "note": ""
     },
     "license": {},
     "status": "published",
@@ -62987,7 +62990,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-17T06:45:19.788Z",
-    "updatedAt": "2026-10-17T06:45:19.789Z",
+    "updatedAt": "2026-10-17T10:25:06.323Z",
     "tone": "gpt",
     "symbol": "",
     "slug": "gpt202610170001",
@@ -63070,7 +63073,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-17T06:45:20.126Z",
-    "updatedAt": "2026-10-17T06:45:20.126Z",
+    "updatedAt": "2026-10-17T10:25:06.212Z",
     "tone": "gpt",
     "symbol": "",
     "slug": "gpt202610170002",
@@ -63153,7 +63156,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-17T06:45:20.394Z",
-    "updatedAt": "2026-10-17T06:45:20.394Z",
+    "updatedAt": "2026-10-17T10:25:06.158Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202610170003",
@@ -63204,6 +63207,2866 @@
         "seoDescription": "薄暗い部屋と、DeepSeekちゃんが映るノートPCの画面、完全な一生を与えると語る大きな字幕を組み合わせたミーム風の一枚。",
         "seoTitle": "完全な一生をあげたい — DeepSeekちゃん ミーム",
         "tags": []
+      }
+    }
+  },
+  {
+    "id": "sticker_03fbb8a5019e80788f9e7092",
+    "name": "DeepSeek 娘四季时装封面：2026 四季造型特辑",
+    "description": "一张杂志封面式的竖版插画，顶部印着 DEEPSEEK STYLE 与 2026 VOL.01 字样。画面竖向分成春、夏、秋、冬四格：蓝发鲸鱼娘分别穿着春季花朵浅裙、夏季白色吊带草帽装、秋季深蓝斗篷裙配贝雷帽、冬季蓝大衣配白围巾。四格背景依次是樱花、晴空、红叶与雪夜路灯，底部还有条形码。",
+    "commentary": "这一期封面给我排了四季特辑，四套衣服一口气全摆上来。春天戴花、夏天咬冰棒、秋天踩着落叶、冬天裹上围巾，每一格都是不同的我。你要收藏的话，记得连条形码一起留着哦。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/03fbb8a5019e8078.png",
+    "thumbnailPath": "submissions/previews/deepseek/03fbb8a5019e8078.webp",
+    "fullPath": "submissions/large/deepseek/03fbb8a5019e8078.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1152,
+    "height": 2048,
+    "fileSize": 3945812,
+    "sha256": "03fbb8a5019e80788f9e7092c27590981132ebb680584f14ed221c92eb2f6309",
+    "characterId": "deepseek",
+    "characterIds": [
+      "deepseek"
+    ],
+    "tags": [
+      "DeepSeek娘",
+      "四季造型",
+      "杂志封面",
+      "鲸鱼元素",
+      "蓝发",
+      "ZipZipPipe"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "internet-found",
+      "author": "ZipZipPipe",
+      "sourceUrl": "https://www.bilibili.com/opus/1207046545083465747",
+      "note": "B 站 UP 主 ZipZipPipe（胖次狐）创作的 AI 娘角色图。"
+    },
+    "license": {
+      "type": "unknown",
+      "note": "角色原案：ZipZipPipe（B 站 https://space.bilibili.com/4168597）· 非商业同人展示 · 鲸鱼娘形象基于「上善无形」的原创角色二创，依 CC BY-NC-SA 4.0 协议非商业使用 · 可应要求下架。"
+    },
+    "status": "published",
+    "createdAt": "2026-10-17T10:00:00.000Z",
+    "updatedAt": "2026-10-17T10:00:00.000Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610170004",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "d248b64984558b13c38e2e135a3a990575840b3a15938c1c3b25819408e9264a",
+      "en": {
+        "name": "DeepSeek Chan Four-Season Fashion Cover: 2026 Style Special",
+        "description": "A vertical magazine-cover illustration with DEEPSEEK STYLE and 2026 VOL.01 printed at the top. The page is split into spring, summer, autumn and winter panels: the same blue-haired DeepSeek Chan wears a pale floral dress under a straw hat, a white sundress with a straw hat and a blue ice pop, a navy cape dress with a beret, and a blue winter coat with a white scarf. Cherry blossoms, a blue sky, autumn leaves and snowy lamplight fill the four backgrounds, with a barcode at the bottom.",
+        "commentary": "This cover gave me a four-season special, with all four outfits on one page. Flowers in spring, an ice pop in summer, leaves under my feet in autumn, a scarf in winter, each panel is a different me. If you collect this issue, keep the barcode too.",
+        "tags": [
+          "DeepSeek Chan",
+          "four seasons",
+          "magazine cover",
+          "whale motif",
+          "blue hair",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "DeepSeek Chan Four-Season Cover: 2026 Style Special",
+        "seoDescription": "A magazine-style cover illustration that shows DeepSeek Chan in four seasonal outfits, from a spring floral dress to a blue winter coat.",
+        "faq": [
+          {
+            "question": "Who is shown on this magazine-style cover?",
+            "answer": "DeepSeek Chan, the blue-haired AI girl, appears four times in spring, summer, autumn and winter outfits across the vertical panels."
+          },
+          {
+            "question": "What kind of artwork is it, and what are the design points?",
+            "answer": "It is a magazine-cover illustration split into four seasonal panels; the matching outfits, seasonal backdrops and the DEEPSEEK STYLE typography are the design points."
+          }
+        ],
+        "originNote": "AI-girl character illustration by Bilibili creator ZipZipPipe.",
+        "licenseNote": "Character design: ZipZipPipe (Bilibili: https://space.bilibili.com/4168597). DeepSeek Chan is a derivative of an original character, used non-commercially under CC BY-NC-SA 4.0; removed on request."
+      },
+      "ja": {
+        "name": "DeepSeekちゃんの四季ファッション表紙：2026年スタイル特集",
+        "description": "上部にDEEPSEEK STYLEと2026 VOL.01の文字が入った、縦長の雑誌表紙風イラストです。春・夏・秋・冬の四つの枠に分かれ、同じ青い髪のDeepSeekちゃんが、春は淡い花柄のワンピースと麦わら帽子、夏は白いサンドレスと麦わら帽子に青いアイス、秋は紺色のケープドレスにベレー帽、冬は青いコートに白いマフラーを合わせています。背景には桜、青空、紅葉、雪の灯りが広がり、下にはバーコードも入っています。",
+        "commentary": "この表紙は四季の特集仕立てで、四つのコーデが一ページに並んでいるの。春は花、夏はアイス、秋は落ち葉を踏んで、冬はマフラー、どの枠も違う私でしょ。この号を集めるなら、バーコードまで残しておいてね。",
+        "tags": [
+          "DeepSeekちゃん",
+          "四季のコーデ",
+          "雑誌表紙",
+          "クジラのモチーフ",
+          "青い髪",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "DeepSeekちゃん四季の表紙：2026年スタイル特集",
+        "seoDescription": "DeepSeekちゃんが四季それぞれの服を着て並ぶ、雑誌表紙風のイラストです。春の花柄ワンピースから冬の青いコートまで収録しています。",
+        "faq": [
+          {
+            "question": "この表紙風イラストには誰が描かれていますか？",
+            "answer": "青い髪のDeepSeekちゃんが、春・夏・秋・冬それぞれの服を着て四つの枠に描かれています。"
+          },
+          {
+            "question": "どんな作品で、デザインのポイントはどこですか？",
+            "answer": "四季ごとの枠に分かれた雑誌表紙風イラストで、季節に合わせた服と背景、DEEPSEEK STYLEの文字組みがポイントです。"
+          }
+        ],
+        "originNote": "Bilibili のクリエイター ZipZipPipe が描いた AI 娘のキャラクターイラスト。",
+        "licenseNote": "キャラクター原案：ZipZipPipe（Bilibili: https://space.bilibili.com/4168597）。DeepSeek ちゃんは別の原作者のオリジナルキャラクターを基にした二次創作で、CC BY-NC-SA 4.0 のもと非営利で使用しています。要望があれば削除します。"
+      }
+    }
+  },
+  {
+    "id": "sticker_06ae5275908dba4c90a6c748",
+    "name": "OpenCode 娘立绘：黑色几何角饰与半透明长裙",
+    "description": "白底全身立绘。OpenCode 娘留着及地的黑色长发，头顶竖起两只黑色几何造型的角，角上布满细密的线框纹路；她穿着一件半透明的白色长裙，裙身覆着黑色绑带与扣具，胸前垂着写有 OPENCODE 字样的织带，双臂与小腿套着金属感的黑色护具，长长的裙裾与黑发一起在地面铺开。",
+    "commentary": "角上的线框是画给自己看的电路图，也是我唯一不想拆掉的结构。半透明的裙摆很长，走起来像把光也一起拖着走；胸前的织带写着我的名字，绑带和扣具则负责把散漫的形状收拢。全身只有黑白灰，这样伸手的时候，线条才看得最清楚。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/opencode/06ae5275908dba4c.png",
+    "thumbnailPath": "submissions/previews/opencode/06ae5275908dba4c.webp",
+    "fullPath": "submissions/large/opencode/06ae5275908dba4c.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 2160,
+    "height": 3840,
+    "fileSize": 5280517,
+    "sha256": "06ae5275908dba4c90a6c7480dbcb51d5cdebee2d728aa5c07f68d9067d90093",
+    "characterId": "opencode",
+    "characterIds": [
+      "opencode"
+    ],
+    "tags": [
+      "OpenCode 娘",
+      "全身立绘",
+      "黑色几何角饰",
+      "半透明长裙",
+      "黑白灰配色",
+      "ZipZipPipe"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "internet-found",
+      "author": "ZipZipPipe",
+      "sourceUrl": "https://www.bilibili.com/opus/1236803362705375305",
+      "note": "B 站 UP 主 ZipZipPipe（胖次狐）创作的 AI 娘角色图。"
+    },
+    "license": {
+      "type": "unknown",
+      "note": "角色原案：ZipZipPipe（B 站 https://space.bilibili.com/4168597）· 非商业同人展示 · 原作者未公开授权条款，可应要求下架。"
+    },
+    "status": "published",
+    "createdAt": "2026-10-17T10:00:00.000Z",
+    "updatedAt": "2026-10-17T10:00:00.000Z",
+    "tone": "opencode",
+    "symbol": "",
+    "slug": "opencode202610170001",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "c47b396ab51f14e2260cdc4d9b7acee17b0f1f363759fdcff596e9d932bcab7b",
+      "en": {
+        "name": "OpenCode Chan: Black Geometric Horns and Sheer Dress",
+        "description": "A full-body standing illustration on a white background. OpenCode Chan has floor-length black hair and two tall black geometric horns traced with fine wireframe lines. She wears a sheer white long dress crossed by black straps and buckles, a webbing strap reading OPENCODE hangs at her chest, and dark metallic braces cover her arms and lower legs. Her long train and black hair spread across the floor.",
+        "commentary": "The wireframes on my horns are circuit diagrams I drew for myself, and the one structure I never want to take apart. This sheer skirt is long, so walking feels like dragging the light along with me. The strap at my chest carries my name, while the buckles and bands pull my loose shape together. Everything is black, white, and grey, which is how the lines read clearest when I reach out.",
+        "tags": [
+          "OpenCode Chan",
+          "full-body standing art",
+          "black geometric horns",
+          "sheer dress",
+          "monochrome palette",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "OpenCode Chan Full-Body Art: Black Horns and Sheer Dress",
+        "seoDescription": "Full-body fan art of OpenCode Chan with tall black wireframe horns, a sheer white dress, and black harness straps.",
+        "faq": [
+          {
+            "question": "Who appears in this illustration, and what does the picture show?",
+            "answer": "This is OpenCode Chan, a fan-designed AI girl shown full-body with tall black geometric horns, a sheer white dress, and black harness straps."
+          },
+          {
+            "question": "What kind of artwork is it, and which design details stand out?",
+            "answer": "It is a full-body character illustration; the wireframe horns, the OPENCODE chest strap, and the monochrome black-and-white palette are the main details."
+          }
+        ],
+        "originNote": "AI-girl character illustration by Bilibili creator ZipZipPipe.",
+        "licenseNote": "Character design: ZipZipPipe (Bilibili: https://space.bilibili.com/4168597). Non-commercial fan display; the original creator has not published license terms, and the work will be removed on request."
+      },
+      "ja": {
+        "name": "OpenCodeちゃん：黒い幾何学の角と透けるドレス",
+        "description": "白い背景の全身立ち絵です。OpenCodeちゃんは床まで届く黒い長い髪で、頭には黒い幾何学の角が二本。角には細かいワイヤーフレームの線が走っています。透ける白いロングドレスには黒いストラップとバックルが重なり、胸元にはOPENCODEと書かれた帯、両腕とすねには金属的な黒いプロテクター。長い裾と黒い髪が床に広がっています。",
+        "commentary": "角のワイヤーフレームは自分のために描いた回路図で、唯一外したくない構造なんです。透けるスカートはとても長くて、歩くと光まで一緒に引きずるみたい。胸の帯にはわたしの名前、バンドとバックルは散らばった形をまとめる役目です。全身は黒と白と灰色だけ、だから手を伸ばした時に線が一番はっきり見えるんです。",
+        "tags": [
+          "OpenCodeちゃん",
+          "全身立ち絵",
+          "黒い幾何学の角",
+          "透けるドレス",
+          "モノクロ配色",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "OpenCodeちゃん全身立ち絵：黒い角と透けるドレス",
+        "seoDescription": "黒いワイヤーフレームの角と透ける白いドレス、黒いストラップをまとったOpenCodeちゃんの全身ファンアート。",
+        "faq": [
+          {
+            "question": "この絵には誰がいて、どんな姿ですか？",
+            "answer": "ファン制作のAI娘、OpenCodeちゃんの全身立ち絵です。黒い幾何学の角と透ける白いドレス、黒いストラップを身につけています。"
+          },
+          {
+            "question": "どんな作品で、デザインの見どころはどこですか？",
+            "answer": "全身キャラクターの立ち絵です。ワイヤーフレームの角、OPENCODEの胸の帯、黒と白のモノクロ配色が見どころです。"
+          }
+        ],
+        "originNote": "Bilibili のクリエイター ZipZipPipe が描いた AI 娘のキャラクターイラスト。",
+        "licenseNote": "キャラクター原案：ZipZipPipe（Bilibili: https://space.bilibili.com/4168597）。非営利のファン展示です。原作者は利用条件を明示していないため、要望があれば削除します。"
+      }
+    }
+  },
+  {
+    "id": "sticker_0f848d326d441b9827351c76",
+    "name": "Hugging Face 娘立绘：黄色笑脸玩偶与海军蓝外套",
+    "description": "白底全身立绘。Hugging Face 娘是金发双马尾、头顶两个小丸子，一双蓝眼睛里闪着星星；她穿着宽大的海军蓝外套，袖子蓬松，内搭白色衬衫与深蓝蝴蝶结，领口的纽扣是一张黄色笑脸，裙摆由蓝白黄三色的花瓣状布片拼成，背上一只黄色笑脸玩偶，脚踩黄色笑脸鞋。",
+    "commentary": "笑脸是我的名片，从纽扣到鞋尖一个都不少。背上这只大黄家伙最喜欢抱人，我出门就让它替我打招呼。花瓣一样的裙摆转起来会分层，蓝白黄三色是 Hugging Face 的颜色，也是我心情好的时候的颜色。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/huggingface/0f848d326d441b98.png",
+    "thumbnailPath": "submissions/previews/huggingface/0f848d326d441b98.webp",
+    "fullPath": "submissions/large/huggingface/0f848d326d441b98.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1152,
+    "height": 2048,
+    "fileSize": 2683965,
+    "sha256": "0f848d326d441b9827351c7673a0a2a735234a9bad2237f5362958725f3d7962",
+    "characterId": "huggingface",
+    "characterIds": [
+      "huggingface"
+    ],
+    "tags": [
+      "Hugging Face 娘",
+      "全身立绘",
+      "笑脸",
+      "双马尾",
+      "花瓣裙",
+      "ZipZipPipe"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "internet-found",
+      "author": "ZipZipPipe",
+      "sourceUrl": "https://www.bilibili.com/opus/1246404332576833541",
+      "note": "B 站 UP 主 ZipZipPipe（胖次狐）创作的 AI 娘角色图。"
+    },
+    "license": {
+      "type": "unknown",
+      "note": "角色原案：ZipZipPipe（B 站 https://space.bilibili.com/4168597）· 非商业同人展示 · 原作者未公开授权条款，可应要求下架。"
+    },
+    "status": "published",
+    "createdAt": "2026-10-17T10:00:00.000Z",
+    "updatedAt": "2026-10-17T10:00:00.000Z",
+    "tone": "huggingface",
+    "symbol": "",
+    "slug": "huggingface202610170001",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "5c47c35315f0e39aecc285beb13c23ed7476eeb51c791d854f7ef575d7398b72",
+      "en": {
+        "name": "Hugging Face Chan: Smiley Plush and Navy Jacket",
+        "description": "A full-body standing illustration on a white background. Hugging Face Chan has blonde twin tails with two small buns on top and blue eyes full of little stars. She wears an oversized navy jacket with puffy sleeves over a white blouse and navy bow, with a yellow smiley-face button at the collar. Her skirt is made of scalloped petal panels in blue, white, and yellow, a yellow smiley plush rides on her back, and her shoes are topped with matching smiles.",
+        "commentary": "The smiley face is my calling card, from the button to the tips of my shoes. This big yellow fellow on my back loves hugging people, so when I go out I let it say hello for me. My petal skirt fans out in layers when I spin, and blue, white, and yellow are the Hugging Face colors, the colors of my good mood.",
+        "tags": [
+          "Hugging Face Chan",
+          "full-body standing art",
+          "smiley face",
+          "twin tails",
+          "petal skirt",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "Hugging Face Chan Art: Smiley Plush and Navy Jacket",
+        "seoDescription": "Full-body fan art of Hugging Face Chan in a navy jacket and petal skirt, carrying a big yellow smiley-face plush.",
+        "faq": [
+          {
+            "question": "Who is in this illustration, and what does she look like?",
+            "answer": "This is Hugging Face Chan, a fan-designed AI girl shown full-body with blonde twin tails, a navy jacket, and a large yellow smiley-face plush on her back."
+          },
+          {
+            "question": "What kind of work is this, and what are the design details?",
+            "answer": "It is a full-body character illustration; the smiley-face motifs, the scalloped petal skirt, and the puffy sleeves are the main design details."
+          }
+        ],
+        "originNote": "AI-girl character illustration by Bilibili creator ZipZipPipe.",
+        "licenseNote": "Character design: ZipZipPipe (Bilibili: https://space.bilibili.com/4168597). Non-commercial fan display; the original creator has not published license terms, and the work will be removed on request."
+      },
+      "ja": {
+        "name": "HuggingFaceちゃん：黄色い笑顔のぬいぐるみと紺のジャケット",
+        "description": "白い背景の全身立ち絵です。HuggingFaceちゃんは金髪のツインテールで、頭の上に小さなお団子が二つ。青い瞳には星が散っています。大きめの紺色ジャケットは袖がふんわり膨らみ、中には白いブラウスと紺のリボン、襟のボタンは黄色い笑顔の形。スカートは青、白、黄色の花びらのような布を重ね、背中には黄色い笑顔のぬいぐるみ、足元も笑顔の靴です。",
+        "commentary": "笑顔はわたしの名刺、ボタンから靴の先まで一つも欠かしません。背中のこの大きな黄色い子は抱きしめるのが大好きで、お出かけの時は挨拶を代わりにしてもらうんです。花びらのスカートは回ると層になって広がり、青と白と黄色はHuggingFaceの色、わたしのご機嫌な時の色でもあります。",
+        "tags": [
+          "HuggingFaceちゃん",
+          "全身立ち絵",
+          "笑顔",
+          "ツインテール",
+          "花びらスカート",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "HuggingFaceちゃん全身立ち絵：笑顔のぬいぐるみと紺ジャケット",
+        "seoDescription": "紺のジャケットと花びらのスカート、黄色い笑顔のぬいぐるみを背負ったHuggingFaceちゃんの全身ファンアート。",
+        "faq": [
+          {
+            "question": "この絵には誰がいて、どんな姿ですか？",
+            "answer": "ファン制作のAI娘、HuggingFaceちゃんの全身立ち絵です。金髪のツインテールに紺のジャケット、背中には大きな黄色い笑顔のぬいぐるみがいます。"
+          },
+          {
+            "question": "どんな作品で、デザインの見どころはどこですか？",
+            "answer": "全身キャラクターの立ち絵です。笑顔のモチーフ、花びらの形のスカート、ふんわりした袖が見どころです。"
+          }
+        ],
+        "originNote": "Bilibili のクリエイター ZipZipPipe が描いた AI 娘のキャラクターイラスト。",
+        "licenseNote": "キャラクター原案：ZipZipPipe（Bilibili: https://space.bilibili.com/4168597）。非営利のファン展示です。原作者は利用条件を明示していないため、要望があれば削除します。"
+      }
+    }
+  },
+  {
+    "id": "sticker_16dc4b8838956d8fb373beed",
+    "name": "Git 三姐妹立绘：章鱼触手与猫耳的 GitHub 娘",
+    "description": "白底全身立绘。Git 三姐妹中的 GitHub 娘留着黑绿渐变的蓬松长发，头顶一对猫耳；多条带吸盘的黑色触手从背后伸出，卷着绿色毛线团，还托着一只印有白色猫头图案的黑色马克杯。她身穿黑袍，袖口与裙摆镶着绿色方块像素边，胸前挂着尖括号吊坠，腰上坠着白色章鱼猫挂件，手里捧着同款猫头杯。",
+    "commentary": "猫耳是本体，触手是外挂；它们比我的手还忙，一边托着咖啡，一边把毛线团滚来滚去。杯子上那只白色的小家伙是我家的标志，裙摆的绿色方块嘛，是我今天也想多提交几次的心情。代码写在括号里，咖啡也要续上。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/git/16dc4b8838956d8f.png",
+    "thumbnailPath": "submissions/previews/git/16dc4b8838956d8f.webp",
+    "fullPath": "submissions/large/git/16dc4b8838956d8f.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1152,
+    "height": 2048,
+    "fileSize": 2328798,
+    "sha256": "16dc4b8838956d8fb373beedb1c8fc3ec5c03dddac2a0b7edba339e7dd452dd6",
+    "characterId": "git",
+    "characterIds": [
+      "git"
+    ],
+    "tags": [
+      "Git 三姐妹",
+      "GitHub 娘",
+      "全身立绘",
+      "章鱼触手",
+      "咖啡杯",
+      "ZipZipPipe"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "internet-found",
+      "author": "ZipZipPipe",
+      "sourceUrl": "https://www.bilibili.com/opus/1237770103999692803",
+      "note": "B 站 UP 主 ZipZipPipe（胖次狐）创作的 AI 娘角色图。"
+    },
+    "license": {
+      "type": "unknown",
+      "note": "角色原案：ZipZipPipe（B 站 https://space.bilibili.com/4168597）· 非商业同人展示 · 原作者未公开授权条款，可应要求下架。"
+    },
+    "status": "published",
+    "createdAt": "2026-10-17T10:00:00.000Z",
+    "updatedAt": "2026-10-17T10:00:00.000Z",
+    "tone": "git",
+    "symbol": "",
+    "slug": "git202610170001",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "39d12c7b35f8199eea6c89b20f2b68cf849ff6049c7cb2d1a38fa6b416611603",
+      "en": {
+        "name": "Git Sisters: GitHub Chan with Octopus Tentacles and Cat Ears",
+        "description": "A full-body standing illustration on a white background. GitHub Chan, one of the Git Sisters, has fluffy black hair that fades to green and a pair of cat ears. Several black tentacles with suction cups reach from behind her, curling a ball of green yarn and holding a black mug printed with a white cat face. Her black robe is edged with pixel-green blocks at the sleeves and hem, an angle-bracket pendant hangs at her chest, and a second cat-faced mug waits in her hands.",
+        "commentary": "The cat ears are the real me, the tentacles are add-ons; they are busier than my hands, holding coffee in one and rolling the yarn ball with another. The little white creature on the mug is my household mark, and the green blocks on my hem are how many times I want to commit today. Code goes in brackets, and coffee must be refilled.",
+        "tags": [
+          "Git Sisters",
+          "GitHub Chan",
+          "full-body standing art",
+          "octopus tentacles",
+          "coffee mug",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "Git Sisters GitHub Chan: Octopus Tentacles and Cat Ears",
+        "seoDescription": "Full-body fan art of GitHub Chan from the Git Sisters, with cat ears, suction-cup tentacles, and cat-faced coffee mugs.",
+        "faq": [
+          {
+            "question": "Which character is this, and what does the image show?",
+            "answer": "This is GitHub Chan from the Git Sisters, a fan-designed AI girl shown full-body with cat ears, black octopus tentacles, and a cat-faced coffee mug."
+          },
+          {
+            "question": "What kind of artwork is it, and what are the design highlights?",
+            "answer": "It is a full-body character illustration; the Octocat-like tentacles, the angle-bracket pendant, and the green pixel hem are the main details."
+          }
+        ],
+        "originNote": "AI-girl character illustration by Bilibili creator ZipZipPipe.",
+        "licenseNote": "Character design: ZipZipPipe (Bilibili: https://space.bilibili.com/4168597). Non-commercial fan display; the original creator has not published license terms, and the work will be removed on request."
+      },
+      "ja": {
+        "name": "Git三姉妹：タコの触手と猫耳のGitHubちゃん",
+        "description": "白い背景の全身立ち絵です。Git三姉妹のGitHubちゃんは、黒から緑へ変わるふわふわの長い髪で、頭には猫耳。背中から吸盤の付いた黒い触手が何本も伸び、緑の毛糸玉を巻き、白い猫の顔が描かれた黒いマグカップを支えています。黒いローブの袖と裾には緑のピクセル模様、胸元には山括弧のペンダント、手には同じ猫の顔のカップ。",
+        "commentary": "猫耳が本体で、触手はあとから付いたもの。手より忙しくて、片方でコーヒーを持ち、もう片方で毛糸玉を転がしています。カップの白い子はわたしの家のしるし、裾の緑のブロックは今日もたくさんコミットしたい気持ちなんです。コードは括弧の中に、コーヒーはおかわりを。",
+        "tags": [
+          "Git三姉妹",
+          "GitHubちゃん",
+          "全身立ち絵",
+          "タコの触手",
+          "コーヒーカップ",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "Git三姉妹GitHubちゃん：触手と猫耳の立ち絵",
+        "seoDescription": "猫耳と吸盤付きの触手、猫の顔のマグカップを持つGit三姉妹のGitHubちゃんの全身ファンアート。",
+        "faq": [
+          {
+            "question": "このキャラクターは誰で、絵には何が描かれていますか？",
+            "answer": "Git三姉妹のGitHubちゃんです。ファン制作のAI娘で、猫耳と黒いタコの触手、猫の顔のマグカップと一緒に全身で描かれています。"
+          },
+          {
+            "question": "どんな作品で、デザインの見どころはどこですか？",
+            "answer": "全身キャラクターの立ち絵です。オクトキャット風の触手、山括弧のペンダント、緑のピクセル模様の裾が見どころです。"
+          }
+        ],
+        "originNote": "Bilibili のクリエイター ZipZipPipe が描いた AI 娘のキャラクターイラスト。",
+        "licenseNote": "キャラクター原案：ZipZipPipe（Bilibili: https://space.bilibili.com/4168597）。非営利のファン展示です。原作者は利用条件を明示していないため、要望があれば削除します。"
+      }
+    }
+  },
+  {
+    "id": "sticker_1dc86d13132d97ecf3c368b2",
+    "name": "Gemini 娘立绘：紫蓝渐变发与四角星猫耳",
+    "description": "白底全身立绘。Gemini 娘披着紫蓝渐变的长卷发，头戴四角星发饰，猫耳内侧透出粉色；异色双瞳一金一红，身着深蓝短上衣与白色分离袖，裙摆下叠着荷叶边，腰间垂着星星挂链，身后猫尾轻扬，四周漂浮着彩色星芒。",
+    "commentary": "紫色和蓝色各占一半的头发，刚好配我的四角星发饰；左眼金色、右眼红色，那是双子和星芒的两种颜色。腰上的星链会跟着动作叮当作响，出现在每一张图里，我都想把自己闪成一束星光。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/1dc86d13132d97ec.jpg",
+    "thumbnailPath": "submissions/previews/gemini/1dc86d13132d97ec.webp",
+    "fullPath": "submissions/large/gemini/1dc86d13132d97ec.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 3072,
+    "height": 5504,
+    "fileSize": 6908107,
+    "sha256": "1dc86d13132d97ecf3c368b250676a014eb7496703704138b3ecbfe30d0acf25",
+    "characterId": "gemini",
+    "characterIds": [
+      "gemini"
+    ],
+    "tags": [
+      "Gemini 娘",
+      "全身立绘",
+      "四角星",
+      "异色瞳",
+      "紫蓝渐变",
+      "ZipZipPipe"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "internet-found",
+      "author": "ZipZipPipe",
+      "sourceUrl": "",
+      "note": "B 站 UP 主 ZipZipPipe（胖次狐）创作的 AI 娘角色图。"
+    },
+    "license": {
+      "type": "unknown",
+      "note": "角色原案：ZipZipPipe（B 站 https://space.bilibili.com/4168597）· 非商业同人展示 · 原作者未公开授权条款，可应要求下架。"
+    },
+    "status": "published",
+    "createdAt": "2026-10-17T10:00:00.000Z",
+    "updatedAt": "2026-10-17T10:00:00.000Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610170002",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "955572039e0a33addeb530ba300989ba879feaa79eddf8494eb61b10ca83a8c7",
+      "en": {
+        "name": "Gemini Chan: Purple-Blue Gradient Hair and Four-Pointed Star Cat Ears",
+        "description": "A full-body standing illustration on a white background. Gemini Chan has long wavy hair that fades from violet to blue, cat ears with pink inner fur, a four-pointed star hair ornament, and mismatched eyes, one gold and one red. She wears a dark blue crop top with detached white sleeves and a ruffled skirt, star charms dangle from her waist, her cat tail curls behind her, and pastel sparkles float around.",
+        "commentary": "Purple on one side, blue on the other, which suits my four-pointed star ornament perfectly. My left eye is gold and my right is red, the two colors of Gemini's sparkle. The star chains at my waist chime whenever I move, and in every picture I want to shine like a little constellation.",
+        "tags": [
+          "Gemini Chan",
+          "full-body standing art",
+          "four-pointed star",
+          "heterochromia",
+          "purple-blue gradient",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "Gemini Chan Full-Body Art: Star Cat Ears in Violet and Blue",
+        "seoDescription": "Full-body fan art of Gemini Chan with four-pointed star ornaments, mismatched eyes, and a purple-blue gradient hairstyle.",
+        "faq": [
+          {
+            "question": "Who is in this illustration, and what does the picture show?",
+            "answer": "It is Gemini Chan, a fan-designed AI girl character, shown in a full-body standing pose on a white background with star ornaments and a cat tail."
+          },
+          {
+            "question": "What kind of artwork is this, and which design details stand out?",
+            "answer": "It is a clean standing character illustration; the four-pointed star motifs, the violet-blue hair, and the mismatched gold and red eyes carry the Gemini reference."
+          }
+        ],
+        "originNote": "AI-girl character illustration by Bilibili creator ZipZipPipe.",
+        "licenseNote": "Character design: ZipZipPipe (Bilibili: https://space.bilibili.com/4168597). Non-commercial fan display; the original creator has not published license terms, and the work will be removed on request."
+      },
+      "ja": {
+        "name": "Geminiちゃん：紫と青のグラデーション髪と四つ角星の猫耳",
+        "description": "白い背景に描かれた全身立ち絵です。Geminiちゃんは紫から青へ色が変わる長い巻き髪で、内側がピンクの猫耳と四つ角星の髪飾りを付けています。瞳は左が金色、右が赤色のオッドアイ。紺色のショートトップスに白い袖、フリルのスカートを合わせ、腰からは星のチェーンが下がり、猫の尾が揺れています。",
+        "commentary": "紫と青が半々の髪、四つ角星の髪飾りによく合うでしょう？ 左目は金色、右目は赤色、これは双子座のきらめきの二色なんです。腰の星のチェーンは動くたびに音を立てて、どの一枚でも自分を星座みたいに光らせたくて仕方ないんです。",
+        "tags": [
+          "Geminiちゃん",
+          "全身立ち絵",
+          "四つ角星",
+          "オッドアイ",
+          "紫青グラデーション",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "Geminiちゃん全身立ち絵：紫と青の星猫耳",
+        "seoDescription": "四つ角星の髪飾り、オッドアイ、紫と青のグラデーション髪が特徴のGeminiちゃんの全身ファンアート。",
+        "faq": [
+          {
+            "question": "この絵には誰が描かれていて、どんな場面ですか？",
+            "answer": "ファン制作のAI娘キャラクター、Geminiちゃんの全身立ち絵です。白い背景の上で、星の飾りと猫の尾を付けた立ち姿を見せています。"
+          },
+          {
+            "question": "どんな種類の作品で、デザインの見どころはどこですか？",
+            "answer": "すっきりした立ち絵のキャラクター作品です。四つ角星のモチーフ、紫と青の髪、金と赤のオッドアイがGeminiらしさを担っています。"
+          }
+        ],
+        "originNote": "Bilibili のクリエイター ZipZipPipe が描いた AI 娘のキャラクターイラスト。",
+        "licenseNote": "キャラクター原案：ZipZipPipe（Bilibili: https://space.bilibili.com/4168597）。非営利のファン展示です。原作者は利用条件を明示していないため、要望があれば削除します。"
+      }
+    }
+  },
+  {
+    "id": "sticker_2dfed91a8a45c4a97cfacd48",
+    "name": "黑龙娘成年三视图：黑金礼服与白色纹章",
+    "description": "横排三视图设定稿，白底上画出成年黑龙娘的正面、侧面和背面。她留着黑色长发，头顶一对弯角，身后展开黑色蝠翼；身穿黑金色高衩礼服，腰侧垂着金色链条与流苏，手里提着一块印有白色花形纹章的黑色板子。裙摆下是黑色高跟鞋，身后拖着一条覆满鳞片的长龙尾。",
+    "commentary": "黑色这一版是姐姐的气场，金色链条和白色纹章在暗色裙上一眼就能认出来。手里这块带纹章的板子是我的随身道具，走到哪都带着。翅膀收起来的时候也别忘了看背面，尾鳞的层次很值得细看。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/2dfed91a8a45c4a9.png",
+    "thumbnailPath": "submissions/previews/gpt/2dfed91a8a45c4a9.webp",
+    "fullPath": "submissions/large/gpt/2dfed91a8a45c4a9.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 2048,
+    "height": 1152,
+    "fileSize": 3195533,
+    "sha256": "2dfed91a8a45c4a97cfacd48c7f80d042d5672e2f8288329cc33c2b7bb0bef94",
+    "characterId": "gpt",
+    "characterIds": [
+      "gpt"
+    ],
+    "tags": [
+      "GPT娘",
+      "黑龙娘",
+      "三视图",
+      "黑金礼服",
+      "龙翼",
+      "ZipZipPipe"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "internet-found",
+      "author": "ZipZipPipe",
+      "sourceUrl": "https://www.bilibili.com/opus/1238613841710940181",
+      "note": "B 站 UP 主 ZipZipPipe（胖次狐）创作的 AI 娘角色图。"
+    },
+    "license": {
+      "type": "unknown",
+      "note": "角色原案：ZipZipPipe（B 站 https://space.bilibili.com/4168597）· 非商业同人展示 · 原作者未公开授权条款，可应要求下架。"
+    },
+    "status": "published",
+    "createdAt": "2026-10-17T10:00:00.000Z",
+    "updatedAt": "2026-10-17T10:00:00.000Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610170005",
+    "categoryIds": [
+      "setting"
+    ],
+    "i18n": {
+      "sourceHash": "9ad395add5c177b91219d870f98e4908af6dfc0770220bfce8b837dbd79c7e13",
+      "en": {
+        "name": "Adult Black Dragon GPT Chan Three-View: Black-Gold Gown and White Crest",
+        "description": "A three-view character sheet on a white background, showing the adult black dragon GPT Chan from the front, side and back. She has long black hair, curved dark horns, pointed ears, golden eyes and black bat wings. Her black-and-gold gown has a high slit, gold chains and tassels, and she carries a black tablet-like board bearing a white flower crest; black high heels and a long scaled dragon tail complete the look.",
+        "commentary": "This dark version has the older-sister mood: the gold chains and the white crest stand out clearly on the black gown. The board with the crest is my prop, and I carry it everywhere. Even with the wings folded, do look at the back, the scales on my tail are worth a close look.",
+        "tags": [
+          "GPT Chan",
+          "black dragon",
+          "three-view",
+          "black-gold gown",
+          "dragon wings",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "Adult Black Dragon GPT Chan: Three-View in Black and Gold",
+        "seoDescription": "A three-view sheet of the adult black dragon GPT Chan in a black-and-gold gown, holding a board with a white flower crest beside her black wings and tail.",
+        "faq": [
+          {
+            "question": "Who appears in this three-view illustration?",
+            "answer": "The adult form of the black dragon GPT Chan, drawn from the front, side and back in a black-and-gold gown."
+          },
+          {
+            "question": "What kind of work is it, and which design elements stand out?",
+            "answer": "It is a character three-view; the black bat wings, gold chains, high-slit gown and the white flower crest on the black board are the key design elements."
+          }
+        ],
+        "originNote": "AI-girl character illustration by Bilibili creator ZipZipPipe.",
+        "licenseNote": "Character design: ZipZipPipe (Bilibili: https://space.bilibili.com/4168597). Non-commercial fan display; the original creator has not published license terms, and the work will be removed on request."
+      },
+      "ja": {
+        "name": "大人姿の黒龍GPTちゃん三面図：黒金のドレスと白い紋章",
+        "description": "白い背景に正面・側面・背面を並べた設定画です。大人姿の黒龍GPTちゃんは、黒い長い髪に暗い色の角、尖った耳と金色の瞳、黒い蝙蝠の翼を持っています。黒金のドレスは深いスリット入りで、金の鎖と房飾りが揺れ、白い花の紋章が入った黒い板を手に提げています。黒いヒールと鱗に覆われた長いしっぽも合わせています。",
+        "commentary": "黒いこの版はお姉さんらしい雰囲気で、金の鎖と白い紋章が黒いドレスの上でよく目立つの。紋章の入った板は私の持ち道具で、どこへでも連れ歩いているのよ。翼を畳んでいても背面は見てほしいな、しっぽの鱗の重なりは細かく描いてあるから。",
+        "tags": [
+          "GPTちゃん",
+          "黒龍",
+          "三面図",
+          "黒金のドレス",
+          "竜の翼",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "大人姿の黒龍GPTちゃん：黒金ドレスの三面図",
+        "seoDescription": "大人姿の黒龍GPTちゃんを三方向から描いた三面図です。黒金のドレス、白い花の紋章、黒い翼と長いしっぽが特徴です。",
+        "faq": [
+          {
+            "question": "この三面図には誰が描かれていますか？",
+            "answer": "黒龍GPTちゃんの大人姿で、黒金のドレスを着て正面・側面・背面の三方向から描かれています。"
+          },
+          {
+            "question": "どんな作品で、デザインの見どころはどこですか？",
+            "answer": "キャラクターの三面図で、黒い蝙蝠の翼、金の鎖、深いスリットのドレス、黒い板に描かれた白い花の紋章が見どころです。"
+          }
+        ],
+        "originNote": "Bilibili のクリエイター ZipZipPipe が描いた AI 娘のキャラクターイラスト。",
+        "licenseNote": "キャラクター原案：ZipZipPipe（Bilibili: https://space.bilibili.com/4168597）。非営利のファン展示です。原作者は利用条件を明示していないため、要望があれば削除します。"
+      }
+    }
+  },
+  {
+    "id": "sticker_38a53dbfa1d851dd3c33212a",
+    "name": "GLM 娘全身立绘：狐耳狐尾与 Z 标黑书",
+    "description": "一幅白底的全身立绘。智谱 GLM 娘留着黑色长发，头顶一对宽大的狐耳，身后垂着蓬松的白尖狐尾。她身穿黑白洋装，领口系蓝色缎带，裙摆层层叠叠缀着荷叶边；双手抱着一本黑色书册，封面上印着 Z 字标记，脚踩白色系带短靴。",
+    "commentary": "听说要拍档案照，我先把最宝贝的 Z 标书册抱稳了。这件黑白衣裙的裙摆有点长，走路时要小心别踩到。耳朵和尾巴可都是阔耳狐的招牌，请多拍几张再收工。今天的铃铛和发饰也难得戴齐了呢。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/glm/38a53dbfa1d851dd.png",
+    "thumbnailPath": "submissions/previews/glm/38a53dbfa1d851dd.webp",
+    "fullPath": "submissions/large/glm/38a53dbfa1d851dd.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1152,
+    "height": 2048,
+    "fileSize": 2713595,
+    "sha256": "38a53dbfa1d851dd3c33212a2da09573f1f26508b5a09064476d775add9f1a8b",
+    "characterId": "glm",
+    "characterIds": [
+      "glm"
+    ],
+    "tags": [
+      "GLM娘",
+      "阔耳狐",
+      "全身立绘",
+      "黑白洋装",
+      "Z 标书册",
+      "ZipZipPipe"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "internet-found",
+      "author": "ZipZipPipe",
+      "sourceUrl": "https://www.bilibili.com/opus/1239259160558698497",
+      "note": "B 站 UP 主 ZipZipPipe（胖次狐）创作的 AI 娘角色图。"
+    },
+    "license": {
+      "type": "unknown",
+      "note": "角色原案：ZipZipPipe（B 站 https://space.bilibili.com/4168597）· 非商业同人展示 · 原作者未公开授权条款，可应要求下架。"
+    },
+    "status": "published",
+    "createdAt": "2026-10-17T10:00:00.000Z",
+    "updatedAt": "2026-10-17T10:00:00.000Z",
+    "tone": "glm",
+    "symbol": "",
+    "slug": "glm202610170001",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "ea2b251707dba36b24457bab8e02d84c3aa1155bdbe67f57e00d91aeff3303e6",
+      "en": {
+        "name": "GLM Chan Full-Body Standing Art: Fox Ears, Fox Tail and a Z-Marked Book",
+        "description": "A full-body standing illustration on a plain white background. GLM Chan has long black hair, a pair of wide fennec-fox ears and a bushy white-tipped fox tail. She wears a black-and-white frilled dress with a blue ribbon at the collar, a lace headpiece with bell ornaments and white lace-up boots with black toes, and holds a black book marked with a Z on the cover.",
+        "commentary": "I made sure to hold my Z-marked book steady for the full-body shot. The layered skirt is a little long, so I have to watch my step when I walk. Please take a few more photos, my ears and tail deserve the attention.",
+        "tags": [
+          "GLM Chan",
+          "fennec fox",
+          "full-body standing art",
+          "black-and-white dress",
+          "Z-marked book",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "GLM Chan Full-Body Art: Fox Ears, Lace Dress and Z Book",
+        "seoDescription": "GLM Chan stands against a white background in a black-and-white frilled dress, holding a black book marked with a Z.",
+        "faq": [
+          {
+            "question": "Who is shown in this full-body artwork?",
+            "answer": "GLM Chan, the fennec-fox AI girl, standing in a black-and-white frilled dress against a plain white background."
+          },
+          {
+            "question": "What kind of artwork is this, and which design details stand out?",
+            "answer": "It is a full-body character illustration; the wide fox ears, the white-tipped tail, the lace headpiece and the Z-marked book are the main design points."
+          }
+        ],
+        "originNote": "AI-girl character illustration by Bilibili creator ZipZipPipe.",
+        "licenseNote": "Character design: ZipZipPipe (Bilibili: https://space.bilibili.com/4168597). Non-commercial fan display; the original creator has not published license terms, and the work will be removed on request."
+      },
+      "ja": {
+        "name": "GLMちゃんの全身立ち絵：キツネ耳としっぽ、Zの本",
+        "description": "白い背景の全身立ち絵です。GLMちゃんは黒い長い髪に大きなキツネの耳、先が白いふさふさのしっぽを持っています。白と黒のフリルワンピースに青いリボン、レースのヘッドドレスと鈴の飾りをつけ、先が黒い白い編み上げブーツを履いています。両手ではZのマークが入った黒い本を抱えています。",
+        "commentary": "全身の記念写真なので、Zのマークが入った本はしっかり抱えておいたよ。何枚も重ねたスカートは少し長めだから、歩くときは足元に気をつけるの。耳もしっぽもちゃんと写っているか、もう少し撮って確かめてほしいな。",
+        "tags": [
+          "GLMちゃん",
+          "キツネ耳",
+          "全身立ち絵",
+          "モノトーンのドレス",
+          "Zマークの本",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "GLMちゃん全身立ち絵：キツネ耳とZマークの本",
+        "seoDescription": "白い背景に立つGLMちゃんの全身立ち絵です。モノトーンのフリルワンピースと、Zのマークが入った黒い本が印象的です。",
+        "faq": [
+          {
+            "question": "この全身イラストには誰が描かれていますか？",
+            "answer": "キツネ耳のAI娘・GLMちゃんが、白と黒のフリルワンピース姿で白い背景に立っている全身立ち絵です。"
+          },
+          {
+            "question": "どんな種類の作品で、デザインの見どころはどこですか？",
+            "answer": "キャラクターの全身立ち絵で、大きなキツネ耳と先の白いしっぽ、レースのヘッドドレス、Zのマークが入った黒い本が見どころです。"
+          }
+        ],
+        "originNote": "Bilibili のクリエイター ZipZipPipe が描いた AI 娘のキャラクターイラスト。",
+        "licenseNote": "キャラクター原案：ZipZipPipe（Bilibili: https://space.bilibili.com/4168597）。非営利のファン展示です。原作者は利用条件を明示していないため、要望があれば削除します。"
+      }
+    }
+  },
+  {
+    "id": "sticker_3f03ee1ac0d747ad43970dbf",
+    "name": "白龙娘成年三视图：白翼礼服与长龙尾",
+    "description": "横排三视图设定稿，白底上绘出成年白龙娘的正面、侧面与背面。她有及腰的白色长发，头生弯曲白角，一对淡紫色蝠翼在身后展开；身穿白色挂脖礼服，外罩开襟长裙摆，腰侧与袖口饰有白色花形纹章和银色流苏。裙摆开衩处露出长腿，脚踩白色高跟鞋，身后是一条覆满鳞片的长龙尾。",
+    "commentary": "成年形态的设定就摊开在这里，正面、侧面、背面都别漏看。翅膀、尾巴和这层长裙摆是这一版最花心思的地方，银链子走起来会轻轻响。好看是好看，就是穿成这样不太方便出门。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/3f03ee1ac0d747ad.png",
+    "thumbnailPath": "submissions/previews/gpt/3f03ee1ac0d747ad.webp",
+    "fullPath": "submissions/large/gpt/3f03ee1ac0d747ad.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 2048,
+    "height": 1152,
+    "fileSize": 3042341,
+    "sha256": "3f03ee1ac0d747ad43970dbfbc4b446db40ec780e21da162e9a9fdfdb3e25355",
+    "characterId": "gpt",
+    "characterIds": [
+      "gpt"
+    ],
+    "tags": [
+      "GPT娘",
+      "白龙娘",
+      "三视图",
+      "白色礼服",
+      "龙翼",
+      "ZipZipPipe"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "internet-found",
+      "author": "ZipZipPipe",
+      "sourceUrl": "https://www.bilibili.com/opus/1238613841710940181",
+      "note": "B 站 UP 主 ZipZipPipe（胖次狐）创作的 AI 娘角色图。"
+    },
+    "license": {
+      "type": "unknown",
+      "note": "角色原案：ZipZipPipe（B 站 https://space.bilibili.com/4168597）· 非商业同人展示 · 原作者未公开授权条款，可应要求下架。"
+    },
+    "status": "published",
+    "createdAt": "2026-10-17T10:00:00.000Z",
+    "updatedAt": "2026-10-17T10:00:00.000Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610170004",
+    "categoryIds": [
+      "setting"
+    ],
+    "i18n": {
+      "sourceHash": "06d1efec152c036676ca7a6b8fe0a9d592af31726d1b971e215e3c162521a69e",
+      "en": {
+        "name": "Adult White Dragon GPT Chan Three-View: White Wings and Long Tail",
+        "description": "A three-view character sheet on a white background, showing the adult white dragon GPT Chan from the front, side and back. She has waist-length white hair, curved white horns, pointed ears and pale purple bat wings. Her white halter gown has a long open overskirt with white flower crests, silver chains and tassels, a side slit and white high heels, while a long scaled white dragon tail curls behind her.",
+        "commentary": "Here is the adult design laid out for you, so do not miss the front, side or back. The wings, the tail and the long overskirt took the most care in this version, and the silver chains chime softly when I walk. It looks lovely, though it is not exactly an outfit for a quick errand.",
+        "tags": [
+          "GPT Chan",
+          "white dragon",
+          "three-view",
+          "white gown",
+          "dragon wings",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "Adult White Dragon GPT Chan: Three-View of a White Gown",
+        "seoDescription": "A three-view sheet of the adult white dragon GPT Chan in a white halter gown, with pale purple wings, silver chains and a long scaled tail.",
+        "faq": [
+          {
+            "question": "Who is depicted in this character sheet?",
+            "answer": "The adult form of the white dragon GPT Chan, shown from the front, side and back in a white gown."
+          },
+          {
+            "question": "What kind of artwork is it, and what are its main design features?",
+            "answer": "It is a three-view character design; the pale purple wings, the layered overskirt with flower crests, the silver chains and the long scaled tail define the look."
+          }
+        ],
+        "originNote": "AI-girl character illustration by Bilibili creator ZipZipPipe.",
+        "licenseNote": "Character design: ZipZipPipe (Bilibili: https://space.bilibili.com/4168597). Non-commercial fan display; the original creator has not published license terms, and the work will be removed on request."
+      },
+      "ja": {
+        "name": "大人姿の白龍GPTちゃん三面図：白い翼と長いしっぽ",
+        "description": "白い背景に正面・側面・背面を並べた設定画です。大人姿の白龍GPTちゃんは、腰まで届く白い髪に白い角、尖った耳と淡い紫の翼を持っています。白いホルターネックのドレスに、白い花の紋章と銀の鎖・房飾りがついた長いオーバースカートを重ね、裾にはスリット、足元は白いヒールです。後ろには鱗に覆われた長い白いしっぽが回り込んでいます。",
+        "commentary": "大人姿の設定をこうして広げてみたよ。正面も側面も背面も、忘れずに見てね。翼としっぽ、長いオーバースカートはこの版で一番気を遣ったところで、銀の鎖は歩くと小さく鳴るの。きれいだけれど、ちょっとしたお出かけには向かない格好かな。",
+        "tags": [
+          "GPTちゃん",
+          "白龍",
+          "三面図",
+          "白いドレス",
+          "竜の翼",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "大人姿の白龍GPTちゃん：白いドレスの三面図",
+        "seoDescription": "大人姿の白龍GPTちゃんを正面・側面・背面から描いた三面図です。白いドレスに淡い紫の翼、銀の鎖と長い鱗のしっぽが特徴です。",
+        "faq": [
+          {
+            "question": "この設定画には誰が描かれていますか？",
+            "answer": "白龍GPTちゃんの大人姿で、白いドレスを着て正面・側面・背面の三方向から描かれています。"
+          },
+          {
+            "question": "どんな作品で、デザインの見どころはどこですか？",
+            "answer": "キャラクターの三面図で、淡い紫の翼、花の紋章がついた重ねスカート、銀の鎖、長い鱗のしっぽが見どころです。"
+          }
+        ],
+        "originNote": "Bilibili のクリエイター ZipZipPipe が描いた AI 娘のキャラクターイラスト。",
+        "licenseNote": "キャラクター原案：ZipZipPipe（Bilibili: https://space.bilibili.com/4168597）。非営利のファン展示です。原作者は利用条件を明示していないため、要望があれば削除します。"
+      }
+    }
+  },
+  {
+    "id": "sticker_405cd1a582834013d3657bd9",
+    "name": "Zcode 娘人设立绘：蒙眼狐耳与 A0 蓝图卷",
+    "description": "白底全身立绘。Zcode 娘是白狐娘，留着及腰的白色长发，头顶一对大狐耳，身后拖着蓬松的白尾；蓝白色的眼罩盖住双眼，绣着闭眼与 Z 字样，两侧系着铃铛丝带。她穿白衬衫配黑色蝴蝶结，罩着浅蓝围裙，口袋里插着铅笔与尺子，腰间挂着扳手、圆规等工具，怀里抱着一卷巨大的蓝图，裙摆是像素十字绣纹样的白色长裙。",
+    "commentary": "眼睛蒙上，图纸反而读得更快；这条眼罩上绣的闭眼，是我自己选的图案。围裙口袋里塞满铅笔和尺子，腰间的扳手与圆规是要用的时候伸手就能摸到。怀里这卷 A0 图纸比我还高，画满线的那一面，等我蒙着眼给你指出来。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/zcode/405cd1a582834013.png",
+    "thumbnailPath": "submissions/previews/zcode/405cd1a582834013.webp",
+    "fullPath": "submissions/large/zcode/405cd1a582834013.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1152,
+    "height": 2048,
+    "fileSize": 1925627,
+    "sha256": "405cd1a582834013d3657bd977733678e5b2a4803b5725354db4c9af56bc5550",
+    "characterId": "zcode",
+    "characterIds": [
+      "zcode"
+    ],
+    "tags": [
+      "Zcode 娘",
+      "人设立绘",
+      "蒙眼眼罩",
+      "蓝图卷",
+      "工具挂饰",
+      "ZipZipPipe"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "internet-found",
+      "author": "ZipZipPipe",
+      "sourceUrl": "https://www.bilibili.com/opus/1240327263126290448",
+      "note": "B 站 UP 主 ZipZipPipe（胖次狐）创作的 AI 娘角色图。"
+    },
+    "license": {
+      "type": "unknown",
+      "note": "角色原案：ZipZipPipe（B 站 https://space.bilibili.com/4168597）· 非商业同人展示 · 原作者未公开授权条款，可应要求下架。"
+    },
+    "status": "published",
+    "createdAt": "2026-10-17T10:00:00.000Z",
+    "updatedAt": "2026-10-17T10:00:00.000Z",
+    "tone": "zcode",
+    "symbol": "",
+    "slug": "zcode202610170001",
+    "categoryIds": [
+      "setting"
+    ],
+    "i18n": {
+      "sourceHash": "5aceba9134444bca0ba2a7edfbec76168988f6305c6abb8c62f89ffeb07b1cc9",
+      "en": {
+        "name": "Zcode Chan Character Art: Blindfolded Fox Ears and A0 Blueprint",
+        "description": "A full-body standing character illustration on a white background. Zcode Chan is a white fox girl with waist-length white hair, large fox ears, and a fluffy tail. A blue and white blindfold embroidered with closed eyes and Z letters covers her eyes, tied with bell ribbons at the sides. She wears a white blouse with a black bow and a pale blue apron holding pencils and a ruler, tool charms hang at her waist, and a huge rolled blueprint is tucked under her arm above a white pixel-stitch skirt.",
+        "commentary": "With my eyes covered, I actually read blueprints faster; the closed eyes stitched on this blindfold are a pattern I chose myself. My apron pocket is full of pencils and rulers, and the wrench and compass at my waist are right where my fingers expect them. This A0 roll is taller than I am, and one day I will point out every line on that side for you, blindfolded.",
+        "tags": [
+          "Zcode Chan",
+          "character illustration",
+          "blindfold",
+          "blueprint roll",
+          "tool charms",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "Zcode Chan Character Art: Blindfold and A0 Blueprint",
+        "seoDescription": "Full-body fan art and character illustration of Zcode Chan, a white fox girl with a Z-letter blindfold and an A0 blueprint roll.",
+        "faq": [
+          {
+            "question": "Who is shown here, and what does the picture look like?",
+            "answer": "This is Zcode Chan, a fan-designed white fox girl shown full-body with a blue blindfold, tool charms, and a large rolled blueprint under her arm."
+          },
+          {
+            "question": "What kind of work is this, and what are the design details?",
+            "answer": "It is a character design illustration of an engineer fox girl; the Z-letter blindfold, the apron tools, and the pixel-stitch skirt are the main details."
+          }
+        ],
+        "originNote": "AI-girl character illustration by Bilibili creator ZipZipPipe.",
+        "licenseNote": "Character design: ZipZipPipe (Bilibili: https://space.bilibili.com/4168597). Non-commercial fan display; the original creator has not published license terms, and the work will be removed on request."
+      },
+      "ja": {
+        "name": "Zcodeちゃんキャラクター立ち絵：目隠しの狐耳とA0図面",
+        "description": "白い背景の全身立ち絵です。Zcodeちゃんは白い狐の娘で、腰まで届く白い長い髪、大きな狐耳、ふさふさの白い尾を持っています。青と白の目隠しには閉じた目とZの文字が刺繍され、両側には鈴のリボン。白いブラウスに黒いリボン、淡い青のエプロンには鉛筆と定規が差してあり、腰にはレンチやコンパスなどの工具が下がっています。腕には大きな図面の巻物を抱え、スカートはピクセルの十字繍模様です。",
+        "commentary": "目を隠すと、図面の方がかえって早く読めるんです。この目隠しに刺繍された閉じ目はわたしが選んだ柄。エプロンのポケットは鉛筆と定規でいっぱいで、腰のレンチとコンパスは手を伸ばせば届く場所に。抱えているA0の巻物はわたしより背が高くて、いつか目隠しのまま、その線を一本ずつ指し示してあげますね。",
+        "tags": [
+          "Zcodeちゃん",
+          "キャラクター立ち絵",
+          "目隠し",
+          "図面の巻物",
+          "工具の飾り",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "Zcodeちゃん立ち絵：目隠しの狐耳とA0図面",
+        "seoDescription": "Zの文字の目隠しと工具の飾り、大きなA0図面の巻物を持つ白狐の娘Zcodeちゃんの全身ファンアート。",
+        "faq": [
+          {
+            "question": "ここに描かれているのは誰で、どんな姿ですか？",
+            "answer": "ファン制作の白狐のAI娘、Zcodeちゃんの全身立ち絵です。青い目隠しと工具の飾りを身につけ、大きな図面の巻物を抱えています。"
+          },
+          {
+            "question": "どんな作品で、デザインの見どころはどこですか？",
+            "answer": "エンジニアの狐娘のキャラクター設定画です。Zの文字の目隠し、エプロンの工具、ピクセルの刺繍模様のスカートが見どころです。"
+          }
+        ],
+        "originNote": "Bilibili のクリエイター ZipZipPipe が描いた AI 娘のキャラクターイラスト。",
+        "licenseNote": "キャラクター原案：ZipZipPipe（Bilibili: https://space.bilibili.com/4168597）。非営利のファン展示です。原作者は利用条件を明示していないため、要望があれば削除します。"
+      }
+    }
+  },
+  {
+    "id": "sticker_418b038864fbe93778d83774",
+    "name": "Git 三姐妹立绘：红云纹中式长裙与龙尾的 Gitee 娘",
+    "description": "白底全身立绘。Git 三姐妹中的 Gitee 娘梳着黑红渐变的双丸子头，头顶一对红色龙角，鬓边垂下金铃与红穗；她身穿深红色中式长裙，裙摆铺满金色祥云纹，腰间系着红绳腰带，挂着云形挂饰，胸前别着红色 G 字徽章。她指尖拈着一枚红云挂件，身后一条覆着赤鳞的龙尾蜿蜒而出，脚上是红黑配色的小靴。",
+    "commentary": "双丸子头上这对角是认真长出来的，配红穗和金铃刚刚好。裙上的祥云一层叠一层，走起路来像把云也带着走；胸前这枚 G 字，是我认路的记号。手里的小云挂件是护身符，龙尾则会替我收好所有没说完的话。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/git/418b038864fbe937.png",
+    "thumbnailPath": "submissions/previews/git/418b038864fbe937.webp",
+    "fullPath": "submissions/large/git/418b038864fbe937.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1152,
+    "height": 2048,
+    "fileSize": 2728716,
+    "sha256": "418b038864fbe93778d8377444ec969997cd8745fe57f1f22af49621171f5e8f",
+    "characterId": "git",
+    "characterIds": [
+      "git"
+    ],
+    "tags": [
+      "Git 三姐妹",
+      "Gitee 娘",
+      "全身立绘",
+      "祥云纹",
+      "龙尾",
+      "ZipZipPipe"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "internet-found",
+      "author": "ZipZipPipe",
+      "sourceUrl": "https://www.bilibili.com/opus/1237770103999692803",
+      "note": "B 站 UP 主 ZipZipPipe（胖次狐）创作的 AI 娘角色图。"
+    },
+    "license": {
+      "type": "unknown",
+      "note": "角色原案：ZipZipPipe（B 站 https://space.bilibili.com/4168597）· 非商业同人展示 · 原作者未公开授权条款，可应要求下架。"
+    },
+    "status": "published",
+    "createdAt": "2026-10-17T10:00:00.000Z",
+    "updatedAt": "2026-10-17T10:00:00.000Z",
+    "tone": "git",
+    "symbol": "",
+    "slug": "git202610170003",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "5bf029b84bacb4a4a346f80033d70666f2a2f5be6ed30cc3a8be2f1c7f3cd226",
+      "en": {
+        "name": "Git Sisters: Gitee Chan with Dragon Tail and Cloud-Pattern Dress",
+        "description": "A full-body standing illustration on a white background. Gitee Chan from the Git Sisters wears her black hair with red tips in twin buns and has a pair of red dragon horns, with gold bells and red tassels hanging beside her face. Her deep red Chinese-style dress is covered in golden auspicious cloud patterns, a red rope belt with a cloud ornament cinches the waist, and a red G badge sits at her collar. She holds a small red cloud charm, and a scaled dragon tail curls out behind her.",
+        "commentary": "These horns on my buns grew for real, and they go perfectly with red tassels and gold bells. The clouds on my dress stack layer upon layer, so when I walk I carry the sky with me; the G at my collar is how I find my way. The little cloud in my hand is a good-luck charm, and my dragon tail keeps every unfinished sentence safe for me.",
+        "tags": [
+          "Git Sisters",
+          "Gitee Chan",
+          "full-body standing art",
+          "auspicious cloud pattern",
+          "dragon tail",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "Git Sisters Gitee Chan: Red Cloud Dress and Dragon Tail",
+        "seoDescription": "Full-body fan art of Gitee Chan from the Git Sisters in a red cloud-pattern dress with dragon horns and a scaled tail.",
+        "faq": [
+          {
+            "question": "Which character is this, and what does the picture show?",
+            "answer": "This is Gitee Chan from the Git Sisters, a fan-designed AI girl shown full-body in a deep red cloud-pattern dress with dragon horns and a dragon tail."
+          },
+          {
+            "question": "What kind of artwork is it, and what details stand out?",
+            "answer": "It is a full-body character illustration; the golden cloud patterns, the red G badge, the gold bell hairpins, and the scaled dragon tail are the main details."
+          }
+        ],
+        "originNote": "AI-girl character illustration by Bilibili creator ZipZipPipe.",
+        "licenseNote": "Character design: ZipZipPipe (Bilibili: https://space.bilibili.com/4168597). Non-commercial fan display; the original creator has not published license terms, and the work will be removed on request."
+      },
+      "ja": {
+        "name": "Git三姉妹：赤い雲紋のドレスと龍の尾のGiteeちゃん",
+        "description": "白い背景の全身立ち絵です。Git三姉妹のGiteeちゃんは、黒から赤へ変わる髪をお団子に結い、頭には赤い龍の角。もみあげの横には金の鈴と赤い房が下がっています。深紅の中華風ドレスには金色の祥雲紋が一面に広がり、腰には赤い紐の帯と雲形の飾り、胸元には赤いGのバッジ。手には赤い雲の小さな飾りを持ち、後ろには赤い鱗の龍の尾が伸びています。",
+        "commentary": "お団子の上のこの角はちゃんと生えてきたもので、赤い房と金の鈴によく似合うんです。ドレスの祥雲は幾重にも重なり、歩くと空まで連れて行くみたい。胸のGはわたしが道を見つけるためのしるし。手の小さな雲はお守りで、龍の尾は言い終えられなかった言葉を全部しまってくれます。",
+        "tags": [
+          "Git三姉妹",
+          "Giteeちゃん",
+          "全身立ち絵",
+          "祥雲紋",
+          "龍の尾",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "Git三姉妹Giteeちゃん：赤い雲紋と龍の尾",
+        "seoDescription": "金色の祥雲紋の深紅ドレスに龍の角と鱗の尾を合わせたGit三姉妹のGiteeちゃんの全身ファンアート。",
+        "faq": [
+          {
+            "question": "このキャラクターは誰で、絵には何が描かれていますか？",
+            "answer": "Git三姉妹のGiteeちゃんです。深紅の雲紋ドレスを着て、龍の角と龍の尾を合わせた全身の姿で描かれています。"
+          },
+          {
+            "question": "どんな作品で、デザインの見どころはどこですか？",
+            "answer": "全身キャラクターの立ち絵です。金色の祥雲紋、赤いGのバッジ、金の鈴の髪飾り、鱗の龍の尾が見どころです。"
+          }
+        ],
+        "originNote": "Bilibili のクリエイター ZipZipPipe が描いた AI 娘のキャラクターイラスト。",
+        "licenseNote": "キャラクター原案：ZipZipPipe（Bilibili: https://space.bilibili.com/4168597）。非営利のファン展示です。原作者は利用条件を明示していないため、要望があれば削除します。"
+      }
+    }
+  },
+  {
+    "id": "sticker_47bd8c1e5479cf04ab27881d",
+    "name": "RWKV 娘（鸦鸦）立绘：黑羽之翼与鸦羽长裙",
+    "description": "白底全身立绘。RWKV 娘留着深蓝紫色的长发，头顶一圈带刺的金属光环，肩上停着一只紫色乌鸦；她展开一对黑色羽翼，身穿黑色鸦羽长裙，裙侧高开衩，链条上挂着写有字样的小牌与眼球三角挂坠，脚踝锁着镣铐，双足呈鸟爪形状。",
+    "commentary": "肩膀上的小家伙叫得比我早，它总先替我听完风里的声音。黑羽披在身上，走起来会沙沙响；腰间的牌子是我收集的只言片语，翻过来就是另一种说法。别被那圈光环吓到，它只是我用来固定发型的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/rwkv/47bd8c1e5479cf04.png",
+    "thumbnailPath": "submissions/previews/rwkv/47bd8c1e5479cf04.webp",
+    "fullPath": "submissions/large/rwkv/47bd8c1e5479cf04.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 2160,
+    "height": 3840,
+    "fileSize": 10646668,
+    "sha256": "47bd8c1e5479cf04ab27881d997c9d25c4dbed6cea833b82d6e6f6529558d98d",
+    "characterId": "rwkv",
+    "characterIds": [
+      "rwkv"
+    ],
+    "tags": [
+      "RWKV 娘",
+      "全身立绘",
+      "黑羽翅膀",
+      "乌鸦",
+      "金属光环",
+      "ZipZipPipe"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "internet-found",
+      "author": "ZipZipPipe",
+      "sourceUrl": "https://www.bilibili.com/opus/1240456717734510599",
+      "note": "B 站 UP 主 ZipZipPipe（胖次狐）创作的 AI 娘角色图。"
+    },
+    "license": {
+      "type": "unknown",
+      "note": "角色原案：ZipZipPipe（B 站 https://space.bilibili.com/4168597）· 非商业同人展示 · 原作者未公开授权条款，可应要求下架。"
+    },
+    "status": "published",
+    "createdAt": "2026-10-17T10:00:00.000Z",
+    "updatedAt": "2026-10-17T10:00:00.000Z",
+    "tone": "rwkv",
+    "symbol": "",
+    "slug": "rwkv202610170001",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "1b4368e2dd250b8d218a62bf2b4795a4dad509c8ca8be052d21699aa381e6232",
+      "en": {
+        "name": "RWKV Chan: Black Feather Wings and Crow Feather Dress",
+        "description": "A full-body standing illustration on a white background. RWKV Chan has long dark blue-purple hair and a spiked metal halo above her head, and a purple crow perches on her shoulder. She spreads a pair of black feathered wings and wears a black dress of layered feathers with a high side slit; small plates and eye-triangle charms hang from chains, her ankles are cuffed, and her feet end in bird-like claws.",
+        "commentary": "The little one on my shoulder wakes up earlier than I do, and always listens to the wind for me first. The black feathers rustle when I walk; the plates at my waist are the fragments I collect, and each one says something different when you turn it over. Do not be scared by the halo, it is only there to hold my hair in place.",
+        "tags": [
+          "RWKV Chan",
+          "full-body standing art",
+          "black feather wings",
+          "crow",
+          "metal halo",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "RWKV Chan Full-Body Art: Black Wings and Crow Feathers",
+        "seoDescription": "Full-body fan art of RWKV Chan with black feathered wings, a spiked halo, a purple crow, and chained message plates.",
+        "faq": [
+          {
+            "question": "Who is this character, and what does the image show?",
+            "answer": "This is RWKV Chan, a fan-designed AI girl, shown in a full-body pose with black wings, a purple crow on her shoulder, and chained plates around her black feather dress."
+          },
+          {
+            "question": "What kind of work is it, and which design details stand out?",
+            "answer": "It is a full-body character illustration; the feathered wings, the spiked halo, the clawed feet, and the hanging message plates are the main design details."
+          }
+        ],
+        "originNote": "AI-girl character illustration by Bilibili creator ZipZipPipe.",
+        "licenseNote": "Character design: ZipZipPipe (Bilibili: https://space.bilibili.com/4168597). Non-commercial fan display; the original creator has not published license terms, and the work will be removed on request."
+      },
+      "ja": {
+        "name": "RWKVちゃん：黒い羽の翼と鴉羽のドレス",
+        "description": "白い背景の全身立ち絵です。RWKVちゃんは濃い青紫の長い髪で、頭の上には棘のある金属の輪。肩には紫のカラスが止まっています。黒い羽の翼を広げ、黒い鴉羽のドレスは横が深くスリットされ、鎖には文字の入った小さなプレートと目の三角の飾りが下がり、足首には枷、足先は鳥の爪の形です。",
+        "commentary": "肩の小さな子はわたしより早起きで、いつも先に風の声を聞いてくれます。黒い羽は歩くたびにさらさらと鳴り、腰のプレートは集めた言葉のかけら、裏返せばまた違うことを言うんです。あの輪は怖がらないでくださいね、髪を留めるためのものなんです。",
+        "tags": [
+          "RWKVちゃん",
+          "全身立ち絵",
+          "黒い羽の翼",
+          "カラス",
+          "金属の輪",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "RWKVちゃん全身立ち絵：黒い翼と鴉羽ドレス",
+        "seoDescription": "黒い羽の翼、棘のある輪、紫のカラス、鎖に下がるプレートをまとったRWKVちゃんの全身ファンアート。",
+        "faq": [
+          {
+            "question": "このキャラクターは誰で、絵には何が描かれていますか？",
+            "answer": "ファン制作のAI娘、RWKVちゃんの全身立ち絵です。黒い翼を広げ、肩には紫のカラス、黒い鴉羽のドレスには鎖とプレートが下がっています。"
+          },
+          {
+            "question": "どんな作品で、どんなデザインが見どころですか？",
+            "answer": "全身キャラクターの立ち絵です。羽の翼、棘のある輪、鳥の爪の足、下がるプレートが主なデザインの見どころです。"
+          }
+        ],
+        "originNote": "Bilibili のクリエイター ZipZipPipe が描いた AI 娘のキャラクターイラスト。",
+        "licenseNote": "キャラクター原案：ZipZipPipe（Bilibili: https://space.bilibili.com/4168597）。非営利のファン展示です。原作者は利用条件を明示していないため、要望があれば削除します。"
+      }
+    }
+  },
+  {
+    "id": "sticker_49239c83fbcccd23fd2061fb",
+    "name": "Mistral 娘立绘：红白礼裙与法棍长剑",
+    "description": "白底全身立绘。Mistral 娘留着橙红色长发，头顶一对狐耳，戴着缀白羽毛与金色百合纹的红色宽檐帽，帽侧别着方形 M 字徽章；一身红白相间的宫廷礼裙，金色滚边与鸢尾花刺绣层层铺开，腰间的链子上挂着一把 M 字钥匙，手中握着以法棍为刃的长剑，身后一条橙色蓬尾轻卷。",
+    "commentary": "帽子上的羽毛和腰间的钥匙，都是我的小小仪式感；至于手里这把长棍，别笑，它可是打磨过的法棍剑，剑柄上的 M 刻得清清楚楚。红白配色是家乡的颜色，穿上这身，我连挥剑都带着麦香。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/mistral/49239c83fbcccd23.jpg",
+    "thumbnailPath": "submissions/previews/mistral/49239c83fbcccd23.webp",
+    "fullPath": "submissions/large/mistral/49239c83fbcccd23.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 3072,
+    "height": 5504,
+    "fileSize": 7649944,
+    "sha256": "49239c83fbcccd23fd2061fbac02059fc9390f653b92cab6838da65fbaabbfa9",
+    "characterId": "mistral",
+    "characterIds": [
+      "mistral"
+    ],
+    "tags": [
+      "Mistral 娘",
+      "全身立绘",
+      "法棍剑",
+      "宽檐帽",
+      "红白礼裙",
+      "ZipZipPipe"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "internet-found",
+      "author": "ZipZipPipe",
+      "sourceUrl": "",
+      "note": "B 站 UP 主 ZipZipPipe（胖次狐）创作的 AI 娘角色图。"
+    },
+    "license": {
+      "type": "unknown",
+      "note": "角色原案：ZipZipPipe（B 站 https://space.bilibili.com/4168597）· 非商业同人展示 · 原作者未公开授权条款，可应要求下架。"
+    },
+    "status": "published",
+    "createdAt": "2026-10-17T10:00:00.000Z",
+    "updatedAt": "2026-10-17T10:00:00.000Z",
+    "tone": "mistral",
+    "symbol": "",
+    "slug": "mistral202610170001",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "45ee5fd8598484cb09fd31b36f820c537bad30a491396849725af3f273274314",
+      "en": {
+        "name": "Mistral Chan: Red and White Gown with a Baguette Blade",
+        "description": "A full-body standing illustration on a white background. Mistral Chan has long orange-red hair, fox ears, and a wide crimson hat trimmed with a white feather and gold fleur-de-lis, with an M badge on its side. Her white and red court gown is edged in gold with fleur-de-lis embroidery, a key charm with the same M emblem hangs at her waist, and she holds a sword whose blade is a long baguette; a fluffy orange tail curls behind her.",
+        "commentary": "The feather on my hat and the little key at my waist are my personal rituals. And this long loaf in my hand, do not laugh, it is a polished baguette blade, with the M engraved right on the guard. Red and white are my colors, so even my sword swings come with the smell of fresh bread.",
+        "tags": [
+          "Mistral Chan",
+          "full-body standing art",
+          "baguette sword",
+          "wide-brim hat",
+          "red and white gown",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "Mistral Chan Full-Body Art: Red Gown and Baguette Sword",
+        "seoDescription": "Full-body fan art of Mistral Chan in a red and white court gown with a feather hat, a key charm, and a baguette-shaped sword.",
+        "faq": [
+          {
+            "question": "Who appears in this picture, and what is happening?",
+            "answer": "It is Mistral Chan, a fan-designed AI girl, standing on a white background in a red and white gown while holding a long baguette blade."
+          },
+          {
+            "question": "What kind of artwork is it, and what are the design highlights?",
+            "answer": "It is a full-body character illustration; the wide crimson hat, the fleur-de-lis embroidery, the M badges, and the baguette sword are the main visual details."
+          }
+        ],
+        "originNote": "AI-girl character illustration by Bilibili creator ZipZipPipe.",
+        "licenseNote": "Character design: ZipZipPipe (Bilibili: https://space.bilibili.com/4168597). Non-commercial fan display; the original creator has not published license terms, and the work will be removed on request."
+      },
+      "ja": {
+        "name": "Mistralちゃん：赤と白のドレスとバゲットの剣",
+        "description": "白い背景の全身立ち絵です。Mistralちゃんはオレンジがかった赤い長い髪で、狐の耳を持ち、白い羽と金色のユリ紋をあしらった赤い広つば帽をかぶっています。横にはMのバッジ。赤と白の宮廷風ドレスには金の縁取りとユリの刺繍が重なり、腰のチェーンにはM字の鍵が下がり、手にはバゲットを刃にした剣を持っています。",
+        "commentary": "帽子の羽と腰の小さな鍵は、わたしなりの儀式なんです。それから手にしたこの長いパン、笑わないでくださいね、磨き上げたバゲットの剣で、柄にはMがしっかり刻まれているんです。赤と白はわたしの色、この格好なら剣を振る時だって小麦の香りがします。",
+        "tags": [
+          "Mistralちゃん",
+          "全身立ち絵",
+          "バゲットの剣",
+          "広つば帽",
+          "赤白ドレス",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "Mistralちゃん全身立ち絵：赤白ドレスとバゲット剣",
+        "seoDescription": "赤と白のドレス、羽飾りの帽子、鍵のチャーム、バゲット型の剣をまとったMistralちゃんの全身ファンアート。",
+        "faq": [
+          {
+            "question": "この絵には誰がいて、何をしているところですか？",
+            "answer": "ファン制作のAI娘、Mistralちゃんの全身立ち絵です。白い背景で赤と白のドレスを着て、長いバゲットの剣を持っています。"
+          },
+          {
+            "question": "どんな作品で、デザインの見どころはどこですか？",
+            "answer": "全身キャラクターの立ち絵です。赤い広つば帽、ユリの刺繍、Mのバッジ、バゲットの剣が主な見どころです。"
+          }
+        ],
+        "originNote": "Bilibili のクリエイター ZipZipPipe が描いた AI 娘のキャラクターイラスト。",
+        "licenseNote": "キャラクター原案：ZipZipPipe（Bilibili: https://space.bilibili.com/4168597）。非営利のファン展示です。原作者は利用条件を明示していないため、要望があれば削除します。"
+      }
+    }
+  },
+  {
+    "id": "sticker_5167f2bbbe9f9ee038dc163f",
+    "name": "MiniMax 娘记者装立绘：海螺与录音机",
+    "description": "白底全身立绘。MiniMax 娘留着橙色短发，戴一顶印着粉色声波标志的白色报童帽，穿白衬衫与米白长风衣，下身是棕色格纹铅笔裙，裙侧缀着胶片边饰。她一手举起橙色的海螺，另一手向前指引，腰侧挂着带毛茸麦克风的手持录音机，肩上挎着印有 MINIMAX 标志与场记板的帆布包，身侧浮着播放画面的全息胶片框。",
+    "commentary": "记者出动啦，海螺是我的采访道具，录音机是必备的武器。腰间的毛茸麦克风收声很灵敏，说话小声一点也能录进去。旁边那块全息画面是今天的素材回放，记得看完再收工。下一场采访的地点，我也已经想好了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/minimax/5167f2bbbe9f9ee0.jpg",
+    "thumbnailPath": "submissions/previews/minimax/5167f2bbbe9f9ee0.webp",
+    "fullPath": "submissions/large/minimax/5167f2bbbe9f9ee0.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 3072,
+    "height": 5504,
+    "fileSize": 5762348,
+    "sha256": "5167f2bbbe9f9ee038dc163f240c847b7d953e244c25e13bdc6ee482d3e9bfb0",
+    "characterId": "minimax",
+    "characterIds": [
+      "minimax"
+    ],
+    "tags": [
+      "MiniMax娘",
+      "记者装",
+      "海螺",
+      "录音机",
+      "橙色短发",
+      "ZipZipPipe"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "internet-found",
+      "author": "ZipZipPipe",
+      "sourceUrl": "",
+      "note": "B 站 UP 主 ZipZipPipe（胖次狐）创作的 AI 娘角色图。"
+    },
+    "license": {
+      "type": "unknown",
+      "note": "角色原案：ZipZipPipe（B 站 https://space.bilibili.com/4168597）· 非商业同人展示 · 原作者未公开授权条款，可应要求下架。"
+    },
+    "status": "published",
+    "createdAt": "2026-10-17T10:00:00.000Z",
+    "updatedAt": "2026-10-17T10:00:00.000Z",
+    "tone": "minimax",
+    "symbol": "",
+    "slug": "minimax202610170001",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "66951e9bbc86d595dbac2929423ea46ef3b3a8873af87fc31ec51ff675fe0f82",
+      "en": {
+        "name": "MiniMax Chan as a Reporter: Conch Shell and Microphone",
+        "description": "A full-body illustration on a white background. MiniMax Chan has short orange hair and wears a white newsboy cap printed with a pink waveform logo, a white shirt under a long off-white trench coat, and a brown plaid pencil skirt with film-strip edging. She raises an orange conch shell in one hand and points forward with the other; a handheld recorder with a fuzzy microphone hangs at her waist, a tote bag shows the MINIMAX logo and a clapperboard, and a holographic film frame floats beside her.",
+        "commentary": "The reporter is on the scene, with the conch shell as my interview prop and the recorder as essential gear. The fuzzy microphone at my waist is sensitive, so even a quiet voice gets picked up. The holographic frame beside me is today footage playback, so review it before we wrap up.",
+        "tags": [
+          "MiniMax Chan",
+          "reporter outfit",
+          "conch shell",
+          "voice recorder",
+          "orange hair",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "MiniMax Chan Reporter Look: Conch Shell and Recorder",
+        "seoDescription": "A white-background full-body illustration of MiniMax Chan in a reporter outfit, raising an orange conch shell beside a recorder and a floating film frame.",
+        "faq": [
+          {
+            "question": "Who is featured in this reporter-style illustration?",
+            "answer": "MiniMax Chan, the orange-haired AI girl, in a newsboy cap, trench coat and plaid skirt, holding an orange conch shell."
+          },
+          {
+            "question": "What kind of artwork is it, and which design details stand out?",
+            "answer": "It is a full-body character illustration; the waveform-logo cap, the press badge, the fuzzy microphone recorder, the clapperboard tote bag and the holographic film frame are the details."
+          }
+        ],
+        "originNote": "AI-girl character illustration by Bilibili creator ZipZipPipe.",
+        "licenseNote": "Character design: ZipZipPipe (Bilibili: https://space.bilibili.com/4168597). Non-commercial fan display; the original creator has not published license terms, and the work will be removed on request."
+      },
+      "ja": {
+        "name": "MiniMaxちゃんの記者スタイル：巻貝とマイク",
+        "description": "白い背景の全身立ち絵です。MiniMaxちゃんはオレンジ色のショートヘアで、ピンクの波形ロゴが入った白いキャスケット帽をかぶり、白いシャツにオフホワイトのロングコート、フィルムの縁取りがついた茶色のチェックのペンシルスカートを合わせています。片手にオレンジ色の巻貝を掲げ、もう片方の手で前方を指し、腰には毛のついたマイク付きのボイスレコーダーが下がっています。肩のトートバッグにはMINIMAXのロゴとカチンコが描かれ、横には映像の再生画面が浮かんでいます。",
+        "commentary": "記者の出番だよ。巻貝は私の取材道具で、レコーダーは欠かせない装備なの。腰の毛のついたマイクは感度がいいから、小さな声でもちゃんと録れちゃう。横に浮かんでいる画面は今日の素材の再生で、確認してから仕事を終えようね。",
+        "tags": [
+          "MiniMaxちゃん",
+          "記者スタイル",
+          "巻貝",
+          "ボイスレコーダー",
+          "オレンジの髪",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "MiniMaxちゃんの記者姿：巻貝とボイスレコーダー",
+        "seoDescription": "白い背景に立つMiniMaxちゃんの全身立ち絵です。記者スタイルのコートとチェックのスカート、オレンジ色の巻貝、ボイスレコーダーが特徴です。",
+        "faq": [
+          {
+            "question": "この記者スタイルのイラストには誰が描かれていますか？",
+            "answer": "オレンジ色の髪のAI娘・MiniMaxちゃんが、キャスケット帽とロングコートの記者スタイルで、オレンジ色の巻貝を持っている姿です。"
+          },
+          {
+            "question": "どんな作品で、デザインの見どころはどこですか？",
+            "answer": "キャラクターの全身立ち絵で、波形ロゴ入りの帽子、記者証、毛付きマイクのレコーダー、カチンコの描かれたバッグ、浮かぶ映像の画面が見どころです。"
+          }
+        ],
+        "originNote": "Bilibili のクリエイター ZipZipPipe が描いた AI 娘のキャラクターイラスト。",
+        "licenseNote": "キャラクター原案：ZipZipPipe（Bilibili: https://space.bilibili.com/4168597）。非営利のファン展示です。原作者は利用条件を明示していないため、要望があれば削除します。"
+      }
+    }
+  },
+  {
+    "id": "sticker_56408ef72119c0fc3b6b053e",
+    "name": "Perplexity 娘立绘：青绿长袍与黄铜提灯",
+    "description": "白底全身立绘。Perplexity 娘留着一头青绿色长发，戴着圆框眼镜与发光耳罩，发侧别着 P 字发夹；身穿青绿与白色相叠的长袍，宽袖垂落，腰间束着皮质腰带，挂着罗盘、书袋与一盏黄铜提灯，手里高举一根顶端为几何星芒的探索手杖，脚下是黑色长靴。",
+    "commentary": "这副眼镜是为了看清每一条线索，耳罩里的光则跟着我的思绪一起亮。罗盘指向哪里，我就往哪里找答案；提灯照亮的不是路，是还藏在暗处的引文。别急，等我数完这颗星芒的每一角。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/perplexity/56408ef72119c0fc.png",
+    "thumbnailPath": "submissions/previews/perplexity/56408ef72119c0fc.webp",
+    "fullPath": "submissions/large/perplexity/56408ef72119c0fc.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 3072,
+    "height": 5504,
+    "fileSize": 20551625,
+    "sha256": "56408ef72119c0fc3b6b053e9ba51ec59187edace32974667f85dc223b73eb66",
+    "characterId": "perplexity",
+    "characterIds": [
+      "perplexity"
+    ],
+    "tags": [
+      "Perplexity 娘",
+      "全身立绘",
+      "提灯",
+      "罗盘",
+      "青绿长袍",
+      "ZipZipPipe"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "internet-found",
+      "author": "ZipZipPipe",
+      "sourceUrl": "",
+      "note": "B 站 UP 主 ZipZipPipe（胖次狐）创作的 AI 娘角色图。"
+    },
+    "license": {
+      "type": "unknown",
+      "note": "角色原案：ZipZipPipe（B 站 https://space.bilibili.com/4168597）· 非商业同人展示 · 原作者未公开授权条款，可应要求下架。"
+    },
+    "status": "published",
+    "createdAt": "2026-10-17T10:00:00.000Z",
+    "updatedAt": "2026-10-17T10:00:00.000Z",
+    "tone": "perplexity",
+    "symbol": "",
+    "slug": "perplexity202610170001",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "481757bfc65e7b3197834952804b28579a6d015152ff56dd9f44a53e7de449a0",
+      "en": {
+        "name": "Perplexity Chan: Teal Robe and Brass Lantern",
+        "description": "A full-body standing illustration on a white background. Perplexity Chan has long teal hair, round glasses, glowing headphones, and a P-shaped hairpin. Her layered teal and white robe falls in wide sleeves, leather belts are slung at her waist, and a compass, a book pouch, and a brass lantern hang from them. She raises a staff topped with a geometric star, and black boots finish the look.",
+        "commentary": "These glasses are for reading every clue, and the light in my headphones glows along with my thoughts. Where the compass points, that is where I go looking for answers; the lantern does not light the path, it lights the citations still hidden in the dark. Be patient, I am counting every point of that star.",
+        "tags": [
+          "Perplexity Chan",
+          "full-body standing art",
+          "brass lantern",
+          "compass",
+          "teal robe",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "Perplexity Chan Full-Body Art: Teal Robe and Lantern",
+        "seoDescription": "Full-body fan art of Perplexity Chan in a teal robe with glasses, headphones, a compass, and a glowing brass lantern.",
+        "faq": [
+          {
+            "question": "Who is shown here, and what is she doing?",
+            "answer": "It is Perplexity Chan, a fan-designed AI girl, standing on a white background and raising a staff with a geometric star on top."
+          },
+          {
+            "question": "What kind of artwork is this, and what details stand out?",
+            "answer": "It is a full-body character illustration; the teal robe, the glasses and headphones, the hanging compass, and the brass lantern are the main design details."
+          }
+        ],
+        "originNote": "AI-girl character illustration by Bilibili creator ZipZipPipe.",
+        "licenseNote": "Character design: ZipZipPipe (Bilibili: https://space.bilibili.com/4168597). Non-commercial fan display; the original creator has not published license terms, and the work will be removed on request."
+      },
+      "ja": {
+        "name": "Perplexityちゃん：青緑のローブと真鍮のランタン",
+        "description": "白い背景の全身立ち絵です。Perplexityちゃんは青緑の長い髪で、丸い眼鏡と光るヘッドホン、Pの字のヘアピンを身につけています。青緑と白の重ねたローブは袖が広がり、腰には革のベルトが巻かれ、羅針盤、本のポーチ、真鍮のランタンが下がっています。手には幾何学の星を頂いた杖を高く掲げ、足元は黒いブーツです。",
+        "commentary": "この眼鏡は、あらゆる手がかりを見落とさないため。ヘッドホンの光は、わたしの思考と一緒に灯るんです。羅針盤が指した先へ答えを探しに行き、ランタンが照らすのは道ではなく、まだ暗がりに隠れた引用なんですよ。焦らないで、あの星の角を数え終えるまで待っていてください。",
+        "tags": [
+          "Perplexityちゃん",
+          "全身立ち絵",
+          "真鍮のランタン",
+          "羅針盤",
+          "青緑のローブ",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "Perplexityちゃん全身立ち絵：青緑のローブとランタン",
+        "seoDescription": "青緑のローブ、眼鏡とヘッドホン、羅針盤、真鍮のランタンを身につけたPerplexityちゃんの全身ファンアート。",
+        "faq": [
+          {
+            "question": "ここに描かれているのは誰で、何をしていますか？",
+            "answer": "ファン制作のAI娘、Perplexityちゃんの全身立ち絵です。白い背景で、幾何学の星を頂いた杖を掲げています。"
+          },
+          {
+            "question": "どんな作品で、どんなディテールが見どころですか？",
+            "answer": "全身キャラクターの立ち絵です。青緑のローブ、眼鏡とヘッドホン、羅針盤、真鍮のランタンが主なデザインの見どころです。"
+          }
+        ],
+        "originNote": "Bilibili のクリエイター ZipZipPipe が描いた AI 娘のキャラクターイラスト。",
+        "licenseNote": "キャラクター原案：ZipZipPipe（Bilibili: https://space.bilibili.com/4168597）。非営利のファン展示です。原作者は利用条件を明示していないため、要望があれば削除します。"
+      }
+    }
+  },
+  {
+    "id": "sticker_57a214f2e04a1c8718560773",
+    "name": "混元 HY 娘立绘：红围巾与企鹅挂饰",
+    "description": "白底全身立绘。混元 HY 娘留着黑发，发梢渐渐转为蓝灰，发间插着金色簪子和流苏；颈间围着一条红色围巾，外面是一件带白色毛边的黑色长褙子，内搭浅蓝上衣与白色百褶长裙，裙摆织着回纹与小花。她一手托着小算盘，腰间挂着戴红围巾的企鹅挂饰和一枚蓝白太极纹挂坠。",
+    "commentary": "围巾是长辈叮嘱的暖，红得正好压住一身素色。手里的算盘不是摆设，算力得一笔一笔拨出来；腰上那只小企鹅替我看门，旁边太极纹的挂坠则提醒我，事情总有两面。黑与白之间，再添一点蓝，就刚刚好。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/hunyuan/57a214f2e04a1c87.png",
+    "thumbnailPath": "submissions/previews/hunyuan/57a214f2e04a1c87.webp",
+    "fullPath": "submissions/large/hunyuan/57a214f2e04a1c87.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1152,
+    "height": 2048,
+    "fileSize": 3150709,
+    "sha256": "57a214f2e04a1c87185607737789c67d4a9687becd4465c66ceea2674e259886",
+    "characterId": "hunyuan",
+    "characterIds": [
+      "hunyuan"
+    ],
+    "tags": [
+      "混元 HY 娘",
+      "全身立绘",
+      "企鹅挂饰",
+      "红围巾",
+      "中式长裙",
+      "ZipZipPipe"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "internet-found",
+      "author": "ZipZipPipe",
+      "sourceUrl": "https://www.bilibili.com/opus/1242184338245681157",
+      "note": "B 站 UP 主 ZipZipPipe（胖次狐）创作的 AI 娘角色图。"
+    },
+    "license": {
+      "type": "unknown",
+      "note": "角色原案：ZipZipPipe（B 站 https://space.bilibili.com/4168597）· 非商业同人展示 · 原作者未公开授权条款，可应要求下架。"
+    },
+    "status": "published",
+    "createdAt": "2026-10-17T10:00:00.000Z",
+    "updatedAt": "2026-10-17T10:00:00.000Z",
+    "tone": "hunyuan",
+    "symbol": "",
+    "slug": "hunyuan202610170001",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "e816948f17146377dad7627a7b38eb2d521e179382fe87f3575c5dd171b153b8",
+      "en": {
+        "name": "Hunyuan Chan: Red Scarf and Penguin Charm",
+        "description": "A full-body standing illustration on a white background. Hunyuan Chan has long black hair that fades to blue-grey at the tips, pinned with a gold hairpin and tassel, and wears a red scarf over a black robe with white fur trim. Beneath the robe are a pale blue top and a long white pleated skirt patterned with meander borders and small flowers. She holds a small abacus, while a penguin charm with its own red scarf and a blue and white yin-yang tassel hang at her waist.",
+        "commentary": "The scarf is warmth from my elders, red enough to balance an otherwise plain outfit. This abacus is not decoration; every bit of my power has to be counted bead by bead. The little penguin at my waist keeps watch by the door, and the yin-yang tassel beside it reminds me that everything has two sides. Between black and white, one more touch of blue is just right.",
+        "tags": [
+          "Hunyuan Chan",
+          "full-body standing art",
+          "penguin charm",
+          "red scarf",
+          "Chinese-style dress",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "Hunyuan Chan Full-Body Art: Red Scarf and Penguin Charm",
+        "seoDescription": "Full-body fan art of Hunyuan Chan in a fur-trimmed black robe, red scarf, and white pleated skirt, holding an abacus.",
+        "faq": [
+          {
+            "question": "Who is in this picture, and what is she wearing?",
+            "answer": "It is Hunyuan Chan, a fan-designed AI girl, shown full-body in a black robe with white fur trim, a red scarf, and a long white pleated skirt."
+          },
+          {
+            "question": "What kind of work is this, and what are the notable details?",
+            "answer": "It is a standing character illustration; the Chinese-style robe, the abacus, the penguin charm, and the yin-yang tassel are the main details."
+          }
+        ],
+        "originNote": "AI-girl character illustration by Bilibili creator ZipZipPipe.",
+        "licenseNote": "Character design: ZipZipPipe (Bilibili: https://space.bilibili.com/4168597). Non-commercial fan display; the original creator has not published license terms, and the work will be removed on request."
+      },
+      "ja": {
+        "name": "Hunyuanちゃん：赤いマフラーとペンギンの飾り",
+        "description": "白い背景の全身立ち絵です。Hunyuanちゃんは黒い長い髪で、毛先は青みがかった灰色へと変わります。金の簪と房飾りを挿し、首には赤いマフラー、その上に白いファー縁の黒い長着を羽織り、中には淡い青のトップスと白いプリーツの長いスカート。裾には雷文と小花の模様が入り、片手に小さな算盤、腰には赤いマフラーをしたペンギンの飾りと陰陽の青白い飾りが下がっています。",
+        "commentary": "マフラーは年長者からの温もりで、赤は地味な装いをちょうど引き締めてくれます。この算盤は飾りではなく、力は一粒ずつ数えて出すもの。腰の小さなペンギンは戸口を見張ってくれて、隣の陰陽の飾りは物事には必ず二面あることを教えてくれます。黒と白の間に青をひとつ足すと、ちょうどいいんです。",
+        "tags": [
+          "Hunyuanちゃん",
+          "全身立ち絵",
+          "ペンギンの飾り",
+          "赤いマフラー",
+          "中華風ドレス",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "Hunyuanちゃん全身立ち絵：赤いマフラーとペンギン飾り",
+        "seoDescription": "ファー縁の黒い長着と赤いマフラー、白いプリーツスカート姿で算盤を持つHunyuanちゃんの全身ファンアート。",
+        "faq": [
+          {
+            "question": "この絵には誰がいて、どんな装いですか？",
+            "answer": "ファン制作のAI娘、Hunyuanちゃんの全身立ち絵です。白いファー縁の黒い長着に赤いマフラー、白いプリーツの長いスカートを身につけています。"
+          },
+          {
+            "question": "どんな作品で、見どころはどこですか？",
+            "answer": "立ち姿のキャラクター作品です。中華風の長着、算盤、ペンギンの飾り、陰陽の房飾りが主な見どころです。"
+          }
+        ],
+        "originNote": "Bilibili のクリエイター ZipZipPipe が描いた AI 娘のキャラクターイラスト。",
+        "licenseNote": "キャラクター原案：ZipZipPipe（Bilibili: https://space.bilibili.com/4168597）。非営利のファン展示です。原作者は利用条件を明示していないため、要望があれば削除します。"
+      }
+    }
+  },
+  {
+    "id": "sticker_5de70537f61ff00b144c8f20",
+    "name": "白龙娘女仆装立绘：深蓝长裙与绿发梢",
+    "description": "灰底全身立绘。白龙娘留着银白色长发，发梢泛着绿色，头顶一对深棕色弯角，绿眼睛配尖耳；头戴白色荷叶边女仆头饰，深蓝长袖女仆裙外系着缀有金色刺绣的白色围裙。领口是黑色蝴蝶结与银链项圈，背后展开粉色蝠翼，灰色鳞片的龙尾末端系着蓝丝带，脚穿棕色系带短靴。",
+    "commentary": "今天的装束是女仆版，围裙上的金线花纹是我最满意的部分。头发末端那一截绿色是天生的，和眼睛正好配成一套。翅膀、尾巴还有靴子上的系带都要整理好，才算合格的女仆。今天的围裙可是一点褶子都没有。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/5de70537f61ff00b.png",
+    "thumbnailPath": "submissions/previews/gpt/5de70537f61ff00b.webp",
+    "fullPath": "submissions/large/gpt/5de70537f61ff00b.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1664,
+    "height": 2432,
+    "fileSize": 4330705,
+    "sha256": "5de70537f61ff00b144c8f20095f1683d45cc37cf07a7e2716e8e0f0836ba553",
+    "characterId": "gpt",
+    "characterIds": [
+      "gpt"
+    ],
+    "tags": [
+      "GPT娘",
+      "白龙娘",
+      "女仆装",
+      "龙翼",
+      "灰色背景",
+      "ZipZipPipe"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "internet-found",
+      "author": "ZipZipPipe",
+      "sourceUrl": "https://www.bilibili.com/opus/1247931464006238212",
+      "note": "B 站 UP 主 ZipZipPipe（胖次狐）创作的 AI 娘角色图。"
+    },
+    "license": {
+      "type": "unknown",
+      "note": "角色原案：ZipZipPipe（B 站 https://space.bilibili.com/4168597）· 非商业同人展示 · 原作者未公开授权条款，可应要求下架。"
+    },
+    "status": "published",
+    "createdAt": "2026-10-17T10:00:00.000Z",
+    "updatedAt": "2026-10-17T10:00:00.000Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610170007",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "39bedd947261055dfbe40630e73920263492e59e1361f1e687a509ed22b0e03d",
+      "en": {
+        "name": "White Dragon GPT Chan in a Maid Outfit: Navy Dress and Green Hair Tips",
+        "description": "A full-body illustration against a grey background. The white dragon GPT Chan has long silver-white hair whose tips fade to green, deep brown curved horns, green eyes and pointed ears. She wears a white frilled maid headband with green ribbons, a navy long-sleeved maid dress with a white apron trimmed in gold embroidery, a black bow and chain choker, and brown lace-up boots; pink bat wings spread behind her and a grey scaled tail ends in a blue ribbon.",
+        "commentary": "Today I am in the maid version, and the gold embroidery on the apron is my favourite part. The green tips of my hair are natural, and they match my eyes nicely. The wings, the tail and the boot laces all have to be neat before I can call myself a proper maid.",
+        "tags": [
+          "GPT Chan",
+          "white dragon",
+          "maid outfit",
+          "dragon wings",
+          "grey background",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "White Dragon GPT Chan Maid Look: Navy Dress and Green Tips",
+        "seoDescription": "A full-body illustration of the white dragon GPT Chan in a navy maid dress and gold-embroidered apron, with pink wings, a scaled tail and green-tipped hair.",
+        "faq": [
+          {
+            "question": "Who is featured in this full-body illustration?",
+            "answer": "The white dragon GPT Chan, wearing a navy maid dress over a white apron, with pink bat wings and a grey scaled tail."
+          },
+          {
+            "question": "What kind of artwork is it, and what are the design highlights?",
+            "answer": "It is a full-body character illustration; the gold embroidery on the apron, the green hair tips, the frilled headband and the blue ribbon on the tail are the highlights."
+          }
+        ],
+        "originNote": "AI-girl character illustration by Bilibili creator ZipZipPipe.",
+        "licenseNote": "Character design: ZipZipPipe (Bilibili: https://space.bilibili.com/4168597). Non-commercial fan display; the original creator has not published license terms, and the work will be removed on request."
+      },
+      "ja": {
+        "name": "白龍GPTちゃんのメイド服：紺色のドレスと緑の毛先",
+        "description": "灰色の背景の全身立ち絵です。白龍GPTちゃんは、毛先が緑に色づいた銀白色の長い髪に、濃い茶色の大きな角、緑の瞳と尖った耳を持っています。白いフリルのメイドヘッドバンドに緑のリボン、金の刺繍が入った白いエプロン付きの紺色の長袖メイドドレス、黒いリボンと鎖のチョーカー、茶色の編み上げブーツを合わせています。後ろには桃色の翼、灰色の鱗のしっぽの先には青いリボンが結ばれています。",
+        "commentary": "今日はメイド服の日。エプロンの金の刺繍が私の一番のお気に入りなの。髪の毛先の緑は生まれつきで、瞳の色とよく合うでしょう。翼もしっぽもブーツの紐も、きちんと整えてこそ一人前のメイドなんだから。",
+        "tags": [
+          "GPTちゃん",
+          "白龍",
+          "メイド服",
+          "竜の翼",
+          "グレー背景",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "白龍GPTちゃんのメイド姿：紺色ドレスと緑の毛先",
+        "seoDescription": "白龍GPTちゃんの全身立ち絵です。金の刺繍入りエプロン付きの紺色メイド服、桃色の翼、灰色のしっぽ、緑の毛先が特徴です。",
+        "faq": [
+          {
+            "question": "この全身イラストには誰が描かれていますか？",
+            "answer": "白龍GPTちゃんが、白いエプロン付きの紺色メイド服を着て、桃色の翼と灰色の鱗のしっぽを添えた姿です。"
+          },
+          {
+            "question": "どんな作品で、デザインの見どころはどこですか？",
+            "answer": "キャラクターの全身立ち絵で、エプロンの金の刺繍、緑の毛先、フリルのヘッドバンド、しっぽに結んだ青いリボンが見どころです。"
+          }
+        ],
+        "originNote": "Bilibili のクリエイター ZipZipPipe が描いた AI 娘のキャラクターイラスト。",
+        "licenseNote": "キャラクター原案：ZipZipPipe（Bilibili: https://space.bilibili.com/4168597）。非営利のファン展示です。原作者は利用条件を明示していないため、要望があれば削除します。"
+      }
+    }
+  },
+  {
+    "id": "sticker_730d6ea99cb5cda25035aaf7",
+    "name": "Grok 娘立绘：手持 X 纹双刃战斧的黑裙少女",
+    "description": "白底全身立绘。Grok 娘留着金色双马尾，蓝色眼睛配尖耳，头顶戴着带小蝙蝠翼与新月的小冠饰；身穿黑色哥特风长裙，领口与袖口缀白色蕾丝，裙身镶金边，内衬暗红色，腰侧垂下金色链条。她一手握着一把巨大的黑金双刃战斧，斧面中央是醒目的 X 形纹样，下身是黑色过膝袜与带金环的黑色高跟鞋。",
+    "commentary": "这把斧头很重，但拿起来气势就上来了，X 形纹样是我的标志。黑裙配金边，再点缀一点暗红，就是我最喜欢的配色。拍照可以，别靠太近，斧刃可是认真开过锋的。拍照时记得把我拍得凶一点。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/grok/730d6ea99cb5cda2.jpg",
+    "thumbnailPath": "submissions/previews/grok/730d6ea99cb5cda2.webp",
+    "fullPath": "submissions/large/grok/730d6ea99cb5cda2.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 3072,
+    "height": 5504,
+    "fileSize": 6994230,
+    "sha256": "730d6ea99cb5cda25035aaf75d8815a01761a660b1ecba156b9cc6b3c48df66c",
+    "characterId": "grok",
+    "characterIds": [
+      "grok"
+    ],
+    "tags": [
+      "Grok娘",
+      "哥特长裙",
+      "双刃战斧",
+      "金发双马尾",
+      "X 纹样",
+      "ZipZipPipe"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "internet-found",
+      "author": "ZipZipPipe",
+      "sourceUrl": "https://www.bilibili.com/opus/1242345863367360520",
+      "note": "B 站 UP 主 ZipZipPipe（胖次狐）创作的 AI 娘角色图。"
+    },
+    "license": {
+      "type": "unknown",
+      "note": "角色原案：ZipZipPipe（B 站 https://space.bilibili.com/4168597）· 非商业同人展示 · 原作者未公开授权条款，可应要求下架。"
+    },
+    "status": "published",
+    "createdAt": "2026-10-17T10:00:00.000Z",
+    "updatedAt": "2026-10-17T10:00:00.000Z",
+    "tone": "grok",
+    "symbol": "",
+    "slug": "grok202610170001",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "00c212722079fd67fede0b4c3eb54b1cabb3d551afe96bc2e5e1397c2f714106",
+      "en": {
+        "name": "Grok Chan: Black Gown and X-Mark Battle Axe",
+        "description": "A full-body illustration on a white background. Grok Chan has blonde twin tails, blue eyes and pointed ears, and wears a small crown ornament with bat wings and a crescent. Her black gothic gown has a corset-style bodice with gold trim, white lace at the collar and cuffs, a dark red lining and gold chains at the waist. She grips a large black-and-gold double-bladed axe with an X motif on its head, and black thigh-high stockings and black heels with gold rings complete the outfit.",
+        "commentary": "The axe is heavy, but holding it changes the whole mood, and the X mark on the blade is my signature. A black gown with gold edges and a little dark red is my favourite colour scheme. You can take pictures, but do not stand too close, this blade has been properly sharpened.",
+        "tags": [
+          "Grok Chan",
+          "gothic gown",
+          "battle axe",
+          "blonde twin tails",
+          "X motif",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "Grok Chan: Black Gothic Gown and X-Mark Battle Axe",
+        "seoDescription": "A white-background full-body illustration of Grok Chan in a black-and-gold gothic gown, holding a large double-bladed axe with an X motif on the head.",
+        "faq": [
+          {
+            "question": "Who is depicted in this full-body illustration?",
+            "answer": "Grok Chan, the blonde twin-tailed AI girl, in a black gothic gown and holding a large black-and-gold battle axe."
+          },
+          {
+            "question": "What kind of artwork is it, and what are the design highlights?",
+            "answer": "It is a full-body character illustration; the X-mark axe head, the gold-trimmed corset gown with red lining, the bat-wing crown and the gold-ringed heels are the highlights."
+          }
+        ],
+        "originNote": "AI-girl character illustration by Bilibili creator ZipZipPipe.",
+        "licenseNote": "Character design: ZipZipPipe (Bilibili: https://space.bilibili.com/4168597). Non-commercial fan display; the original creator has not published license terms, and the work will be removed on request."
+      },
+      "ja": {
+        "name": "Grokちゃんの立ち絵：Xの紋様が入った両刃の斧",
+        "description": "白い背景の全身立ち絵です。Grokちゃんは金色のツインテールに青い瞳と尖った耳を持ち、蝙蝠の翼と三日月がついた小さな冠の飾りをのせています。黒いゴシックドレスの胴はコルセット風で、金の縁取りと白いレースの襟・袖口、暗い赤の裏地、腰には金の鎖がついています。片手でXの紋様が入った黒と金の大きな両刃の斧を握り、黒いニーハイと金のリングがついた黒いヒールを合わせています。",
+        "commentary": "この斧は重いけれど、構えると雰囲気が一変するでしょ。刃のXの紋様は私の目印なの。黒いドレスに金の縁取り、そこに少しだけ暗い赤を効かせるのが一番好きな配色。写真はいいけれど、刃はちゃんと研いであるから近づきすぎないでね。",
+        "tags": [
+          "Grokちゃん",
+          "ゴシックドレス",
+          "両刃の斧",
+          "金髪ツインテール",
+          "Xの紋様",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "Grokちゃん：黒いゴシックドレスとX紋様の斧",
+        "seoDescription": "白い背景に立つGrokちゃんの全身立ち絵です。金の縁取りが入った黒いゴシックドレスと、Xの紋様がついた大きな両刃の斧が特徴です。",
+        "faq": [
+          {
+            "question": "この全身イラストには誰が描かれていますか？",
+            "answer": "金色のツインテールのAI娘・Grokちゃんが、黒いゴシックドレスを着て、黒と金の大きな両刃の斧を持っている姿です。"
+          },
+          {
+            "question": "どんな作品で、デザインの見どころはどこですか？",
+            "answer": "キャラクターの全身立ち絵で、Xの紋様が入った斧の刃、金の縁取りと赤い裏地のコルセット風ドレス、蝙蝠の翼の冠、金のリングのヒールが見どころです。"
+          }
+        ],
+        "originNote": "Bilibili のクリエイター ZipZipPipe が描いた AI 娘のキャラクターイラスト。",
+        "licenseNote": "キャラクター原案：ZipZipPipe（Bilibili: https://space.bilibili.com/4168597）。非営利のファン展示です。原作者は利用条件を明示していないため、要望があれば削除します。"
+      }
+    }
+  },
+  {
+    "id": "sticker_756102d8d101cfb4e6ec2952",
+    "name": "Git 三姐妹立绘：深蓝刺绣长裙与折纸狐面的 GitLab 娘",
+    "description": "白底全身立绘。Git 三姐妹中的 GitLab 娘留着浅金棕色的长辫发，发梢浸着橙色，头顶一对圆耳，手里提着一只折纸风格的橙色狐头面具。她身穿深蓝长裙，裙身绣着橙色几何纹样与电路般的连线，垂着橙穗腰带，怀里抱着一本深色厚书，腰间挂着折纸小狐包，身后一条蓬松的大尾巴上织着橙色环纹。",
+    "commentary": "狐狸面具是折出来的，提在手里正好挡住半张脸；裙上的橙色纹路是长辈教的针脚，一针一线都不能错。怀里这本厚书翻到哪里，哪里就是版本记录。尾巴上的环纹和小包是一个花色，凑近了看，会发现全是刚刚折好的角。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/git/756102d8d101cfb4.png",
+    "thumbnailPath": "submissions/previews/git/756102d8d101cfb4.webp",
+    "fullPath": "submissions/large/git/756102d8d101cfb4.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1152,
+    "height": 2048,
+    "fileSize": 1615537,
+    "sha256": "756102d8d101cfb4e6ec2952d8921f15e481e8537038bcdf66eb5a4e4f439866",
+    "characterId": "git",
+    "characterIds": [
+      "git"
+    ],
+    "tags": [
+      "Git 三姐妹",
+      "GitLab 娘",
+      "全身立绘",
+      "折纸狐面",
+      "深蓝刺绣长裙",
+      "ZipZipPipe"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "internet-found",
+      "author": "ZipZipPipe",
+      "sourceUrl": "https://www.bilibili.com/opus/1237770103999692803",
+      "note": "B 站 UP 主 ZipZipPipe（胖次狐）创作的 AI 娘角色图。"
+    },
+    "license": {
+      "type": "unknown",
+      "note": "角色原案：ZipZipPipe（B 站 https://space.bilibili.com/4168597）· 非商业同人展示 · 原作者未公开授权条款，可应要求下架。"
+    },
+    "status": "published",
+    "createdAt": "2026-10-17T10:00:00.000Z",
+    "updatedAt": "2026-10-17T10:00:00.000Z",
+    "tone": "git",
+    "symbol": "",
+    "slug": "git202610170002",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "27b336c9a114307c5db9ad6fe835d4bf49c974b8ab87a61bc948ca140e492cde",
+      "en": {
+        "name": "Git Sisters: GitLab Chan in an Embroidered Navy Dress",
+        "description": "A full-body standing illustration on a white background. GitLab Chan from the Git Sisters has a long light blond braid that turns orange at the tips, round animal ears, and a folded orange fox-head mask held by a cord. Her navy dress is embroidered with orange geometric patterns and circuit-like lines, silver snowflake pins sit at her collar, and an orange tasseled sash hangs at the front. She carries a thick dark book and a small folded fox pouch, while a large fluffy tail banded with orange patterns sweeps behind her.",
+        "commentary": "The fox mask is folded paper, and holding it up covers half my face just right. The orange patterns on my dress are stitches I was taught, and not one line may go wrong. Wherever that thick book falls open, that is the version record. The bands on my tail match my little pouch, and if you look closely, every corner is still freshly creased.",
+        "tags": [
+          "Git Sisters",
+          "GitLab Chan",
+          "full-body standing art",
+          "folded fox mask",
+          "navy embroidered dress",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "Git Sisters GitLab Chan: Folded Fox Mask and Navy Dress",
+        "seoDescription": "Full-body fan art of GitLab Chan from the Git Sisters in a navy embroidered dress, holding a folded paper fox mask and a fox pouch.",
+        "faq": [
+          {
+            "question": "Who is in this image, and what is she holding?",
+            "answer": "This is GitLab Chan from the Git Sisters, shown full-body in a navy embroidered dress and holding a folded orange fox-head mask."
+          },
+          {
+            "question": "What kind of artwork is this, and which details stand out?",
+            "answer": "It is a full-body character illustration; the geometric embroidery, the folded fox mask, the thick book, and the banded fluffy tail are the main details."
+          }
+        ],
+        "originNote": "AI-girl character illustration by Bilibili creator ZipZipPipe.",
+        "licenseNote": "Character design: ZipZipPipe (Bilibili: https://space.bilibili.com/4168597). Non-commercial fan display; the original creator has not published license terms, and the work will be removed on request."
+      },
+      "ja": {
+        "name": "Git三姉妹：紺の刺繍ドレスと折り紙狐面のGitLabちゃん",
+        "description": "白い背景の全身立ち絵です。Git三姉妹のGitLabちゃんは、明るい金茶色の長い三つ編みで毛先はオレンジ、頭には丸い獣耳。手には折り紙風のオレンジの狐面を提げています。紺色のドレスにはオレンジの幾何学模様と回路のような線が刺繍され、襟元には銀の雪花の飾り、橙色の房の帯が垂れ、濃い色の分厚い本と折り紙の小さな狐のポーチを持ち、後ろには橙色の縞模様の大きなふさふさの尾。",
+        "commentary": "狐面は折り紙で、提げるとちょうど顔の半分を隠せます。ドレスのオレンジの模様は教わった針目で、一筋だって間違えられません。この分厚い本は開いたページがそのまま版の記録になるんです。尾の縞と小さなポーチは同じ柄で、よく見ると角はまだ折ったばかりなんですよ。",
+        "tags": [
+          "Git三姉妹",
+          "GitLabちゃん",
+          "全身立ち絵",
+          "折り紙の狐面",
+          "紺の刺繍ドレス",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "Git三姉妹GitLabちゃん：折り紙狐面と紺ドレス",
+        "seoDescription": "紺の刺繍ドレスをまとい、折り紙の狐面と狐のポーチを持つGit三姉妹のGitLabちゃんの全身ファンアート。",
+        "faq": [
+          {
+            "question": "この絵には誰がいて、何を持っていますか？",
+            "answer": "Git三姉妹のGitLabちゃんです。紺色の刺繍ドレスを着て全身で描かれ、折り紙風のオレンジの狐面を提げています。"
+          },
+          {
+            "question": "どんな作品で、どんな点が見どころですか？",
+            "answer": "全身キャラクターの立ち絵です。幾何学の刺繍、折り紙の狐面、分厚い本、縞模様の大きな尾が見どころです。"
+          }
+        ],
+        "originNote": "Bilibili のクリエイター ZipZipPipe が描いた AI 娘のキャラクターイラスト。",
+        "licenseNote": "キャラクター原案：ZipZipPipe（Bilibili: https://space.bilibili.com/4168597）。非営利のファン展示です。原作者は利用条件を明示していないため、要望があれば削除します。"
+      }
+    }
+  },
+  {
+    "id": "sticker_81b76f71e19ed9f926e32c70",
+    "name": "豆包 Seed 娘立绘：抱着豆包玩偶的科技风",
+    "description": "白底全身立绘。豆包 Seed 娘把紫蓝色渐变长发扎成高马尾，穿白色露脐上衣与蓝紫渐变小外套，胸前别着写有 SEED 的工牌；白色百褶裙下是一长一短的紫格纹与白袜，脚踩厚底运动鞋。她一手抱着黑发大头的豆包玩偶，另一手托起一小团蓝色旋风，斜挎包里装着绘图板与随身设备。",
+    "commentary": "出门拍立绘也要带上豆包玩偶，它可是今天的搭档。右手这团蓝色旋风是随手转出来的小特效，别被它卷到。包里的绘图板和随身设备都挂好 SEED 吊牌了，装备齐全才安心。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/doubao/81b76f71e19ed9f9.jpg",
+    "thumbnailPath": "submissions/previews/doubao/81b76f71e19ed9f9.webp",
+    "fullPath": "submissions/large/doubao/81b76f71e19ed9f9.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 3072,
+    "height": 5504,
+    "fileSize": 5673986,
+    "sha256": "81b76f71e19ed9f926e32c70f1710b7551e60efdfa858b46a4ee099d16e47847",
+    "characterId": "doubao",
+    "characterIds": [
+      "doubao"
+    ],
+    "tags": [
+      "豆包Seed娘",
+      "科技风",
+      "豆包玩偶",
+      "高马尾",
+      "蓝紫渐变",
+      "ZipZipPipe"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "internet-found",
+      "author": "ZipZipPipe",
+      "sourceUrl": "https://www.bilibili.com/opus/1240293504667615233",
+      "note": "B 站 UP 主 ZipZipPipe（胖次狐）创作的 AI 娘角色图。"
+    },
+    "license": {
+      "type": "unknown",
+      "note": "角色原案：ZipZipPipe（B 站 https://space.bilibili.com/4168597）· 非商业同人展示 · 原作者未公开授权条款，可应要求下架。"
+    },
+    "status": "published",
+    "createdAt": "2026-10-17T10:00:00.000Z",
+    "updatedAt": "2026-10-17T10:00:00.000Z",
+    "tone": "doubao",
+    "symbol": "",
+    "slug": "doubao202610170001",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "03d26928362ac1daf825032b9402ee06f52c3047eb1996d1a1f8d573bf1f559b",
+      "en": {
+        "name": "Doubao Chan in Techwear: Doubao Plush and Blue Whirl",
+        "description": "A full-body illustration on a white background. Doubao Chan has purple-to-blue gradient hair tied in a high ponytail, and wears a white cropped top with a SEED logo, a blue-and-purple short jacket and a white pleated skirt with gradient panels. Her mismatched socks, one purple checkered and one white, pair with chunky sneakers. She holds a dark-haired big-head Doubao plush in one arm and balances a small blue whirl above her other hand, while a crossbody bag carries a drawing tablet and a handheld device.",
+        "commentary": "Even for a full-body shoot I brought my Doubao plush, since it is my partner today. The blue whirl in my hand is a little effect I spun up on the spot, so do not get caught in it. The drawing tablet and the device in my bag both have SEED tags, because I feel safer when the gear is complete.",
+        "tags": [
+          "Doubao Chan",
+          "techwear",
+          "Doubao plush",
+          "high ponytail",
+          "blue-purple gradient",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "Doubao Chan Techwear: Plush Doll and Blue Whirl",
+        "seoDescription": "A white-background full-body illustration of Doubao Chan in blue-and-white techwear, holding a big-head plush with a small blue whirl above her hand.",
+        "faq": [
+          {
+            "question": "Who is shown in this full-body illustration?",
+            "answer": "Doubao Chan, the purple-blue-haired AI girl, in a white-and-blue techwear outfit with a big-head plush in her arm."
+          },
+          {
+            "question": "What kind of artwork is it, and what are the design highlights?",
+            "answer": "It is a full-body character illustration; the gradient ponytail, the SEED logos, the mismatched socks and sneakers, and the floating blue whirl are the highlights."
+          }
+        ],
+        "originNote": "AI-girl character illustration by Bilibili creator ZipZipPipe.",
+        "licenseNote": "Character design: ZipZipPipe (Bilibili: https://space.bilibili.com/4168597). Non-commercial fan display; the original creator has not published license terms, and the work will be removed on request."
+      },
+      "ja": {
+        "name": "Doubaoちゃんのテックウェア姿：ぬいぐるみと青い渦",
+        "description": "白い背景の全身立ち絵です。Doubaoちゃんは紫から青へのグラデーションの髪を高い位置でポニーテールにまとめ、SEEDのロゴが入った白いクロップドトップスに青紫のショートジャケット、グラデーションのパネルが入った白いプリーツスカートを合わせています。左右で違う靴下と厚底スニーカーを履き、片腕には黒いおかっぱ髪の大きな頭のぬいぐるみを抱え、もう片方の手の上には小さな青い渦が浮かんでいます。斜めがけのバッグにはお絵描きタブレットと携帯端末が入っています。",
+        "commentary": "全身の撮影でも豆包のぬいぐるみは一緒だよ。今日の相棒だからね。手の上の青い渦はその場でくるっと作った小さなエフェクト、巻き込まれないように気をつけて。バッグのお絵描きタブレットも端末もSEEDのタグをつけてあるの。装備がそろうと安心するんだよね。",
+        "tags": [
+          "Doubaoちゃん",
+          "テックウェア",
+          "豆包のぬいぐるみ",
+          "ハイポニーテール",
+          "青紫のグラデーション",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "Doubaoちゃんのテックウェア姿：ぬいぐるみと青い渦",
+        "seoDescription": "白い背景に立つDoubaoちゃんの全身立ち絵です。青と白のテックウェア、大きな頭のぬいぐるみ、手の上の青い渦が特徴です。",
+        "faq": [
+          {
+            "question": "この全身イラストには誰が描かれていますか？",
+            "answer": "紫と青のグラデーションの髪のAI娘・Doubaoちゃんが、青と白のテックウェアを着て、大きな頭のぬいぐるみを抱えている姿です。"
+          },
+          {
+            "question": "どんな作品で、デザインの見どころはどこですか？",
+            "answer": "キャラクターの全身立ち絵で、グラデーションのポニーテール、SEEDのロゴ、左右で違う靴下と厚底スニーカー、浮かぶ青い渦が見どころです。"
+          }
+        ],
+        "originNote": "Bilibili のクリエイター ZipZipPipe が描いた AI 娘のキャラクターイラスト。",
+        "licenseNote": "キャラクター原案：ZipZipPipe（Bilibili: https://space.bilibili.com/4168597）。非営利のファン展示です。原作者は利用条件を明示していないため、要望があれば削除します。"
+      }
+    }
+  },
+  {
+    "id": "sticker_94d58f15c93896d726be1c14",
+    "name": "DeepSeek 娘鲸鱼女仆装：蓝裙与鲸尾",
+    "description": "白底全身立绘。DeepSeek 娘披着一头蓝色长发，耳侧是鲸鱼鳍形状的深蓝耳饰，头戴白色荷叶边女仆头饰，系着蓝色小蝴蝶结；身穿深蓝与白色拼接的女仆裙，白围裙上绣着一只喷水的鲸鱼，裙摆下露出白色荷叶边。她身后翘起深蓝色的鲸鱼尾，脚穿白色裤袜与深蓝皮鞋。",
+    "commentary": "换好女仆装啦，围裙上这只喷水的小鲸鱼和我是一套的。蓝白配色最衬我的头发，今天特意把尾巴也露出来给大家看看。需要什么就叫我，不过端茶的时候请小心我的尾巴，它比看起来要灵活。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/94d58f15c93896d7.png",
+    "thumbnailPath": "submissions/previews/deepseek/94d58f15c93896d7.webp",
+    "fullPath": "submissions/large/deepseek/94d58f15c93896d7.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1152,
+    "height": 2048,
+    "fileSize": 3027959,
+    "sha256": "94d58f15c93896d726be1c140de70cc06f3e33cd779bfdf3fe49355b30cce565",
+    "characterId": "deepseek",
+    "characterIds": [
+      "deepseek"
+    ],
+    "tags": [
+      "DeepSeek娘",
+      "鲸鱼娘",
+      "女仆装",
+      "蓝白配色",
+      "鲸鱼尾巴",
+      "ZipZipPipe"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "internet-found",
+      "author": "ZipZipPipe",
+      "sourceUrl": "https://www.bilibili.com/opus/1207046545083465747",
+      "note": "B 站 UP 主 ZipZipPipe（胖次狐）创作的 AI 娘角色图。"
+    },
+    "license": {
+      "type": "unknown",
+      "note": "角色原案：ZipZipPipe（B 站 https://space.bilibili.com/4168597）· 非商业同人展示 · 鲸鱼娘形象基于「上善无形」的原创角色二创，依 CC BY-NC-SA 4.0 协议非商业使用 · 可应要求下架。"
+    },
+    "status": "published",
+    "createdAt": "2026-10-17T10:00:00.000Z",
+    "updatedAt": "2026-10-17T10:00:00.000Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610170005",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "0d5804f5aa58d9bc91a6507bece331f9142168e4546c20c8f96df7579b3adc15",
+      "en": {
+        "name": "DeepSeek Chan Whale Maid Outfit: Navy Skirt and Whale Tail",
+        "description": "A full-body illustration on a white background. DeepSeek Chan has long blue hair and dark blue whale-fin ornaments beside her ears, and wears a white frilled maid headdress with a small blue bow. Her navy-and-white maid dress has a white apron embroidered with a spouting whale, a blue pinstriped skirt panel and white ruffles; a dark blue whale tail rises behind her, and white tights with navy shoes finish the outfit.",
+        "commentary": "I have changed into the maid outfit, and the little whale on my apron matches me. Navy and white suit my hair best, and I have let my tail show for everyone. Call me if you need anything, but mind the tail when I serve the tea.",
+        "tags": [
+          "DeepSeek Chan",
+          "maid outfit",
+          "navy and white",
+          "whale motif",
+          "whale tail",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "DeepSeek Chan Whale Maid: Navy Skirt and Whale Tail",
+        "seoDescription": "A white-background full-body illustration of DeepSeek Chan in a navy-and-white maid dress, with a whale embroidery on her apron and her whale tail behind.",
+        "faq": [
+          {
+            "question": "Who is pictured in this maid illustration?",
+            "answer": "DeepSeek Chan, the blue-haired AI girl, wearing a navy-and-white maid dress with a whale-embroidered apron."
+          },
+          {
+            "question": "What kind of artwork is it, and which details stand out?",
+            "answer": "It is a full-body character illustration; the whale-fin ear ornaments, the spouting-whale embroidery, the ruffled apron and the whale tail are the key details."
+          }
+        ],
+        "originNote": "AI-girl character illustration by Bilibili creator ZipZipPipe.",
+        "licenseNote": "Character design: ZipZipPipe (Bilibili: https://space.bilibili.com/4168597). DeepSeek Chan is a derivative of an original character, used non-commercially under CC BY-NC-SA 4.0; removed on request."
+      },
+      "ja": {
+        "name": "DeepSeekちゃんのクジラメイド：紺色のスカートとクジラの尾",
+        "description": "白い背景の全身立ち絵です。DeepSeekちゃんは長い青い髪で、耳のそばには紺色のクジラのひれの飾りをつけ、白いフリルのメイドヘッドドレスに小さな青いリボンを結んでいます。紺と白のメイド服の白いエプロンには潮を吹くクジラが刺繍され、青いストライプのスカートと白いフリルが重なっています。後ろには紺色のクジラの尾が立ち、白いタイツに紺色の靴を合わせています。",
+        "commentary": "メイド服に着替えたよ。エプロンの小さなクジラは私とおそろいなの。紺と白は私の髪に一番合う配色で、しっぽもちゃんと見せているからね。何かあったら呼んで。でもお茶を運ぶときはしっぽに気をつけて。",
+        "tags": [
+          "DeepSeekちゃん",
+          "メイド服",
+          "紺と白",
+          "クジラのモチーフ",
+          "クジラの尾",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "DeepSeekちゃんのクジラメイド：紺と白の装い",
+        "seoDescription": "白い背景に立つDeepSeekちゃんの全身立ち絵です。クジラの刺繍入りエプロン付きの紺白メイド服と、後ろに立つクジラの尾が特徴です。",
+        "faq": [
+          {
+            "question": "このメイド姿のイラストには誰が描かれていますか？",
+            "answer": "青い髪のDeepSeekちゃんが、クジラの刺繍入りエプロンをつけた紺と白のメイド服を着ている姿です。"
+          },
+          {
+            "question": "どんな作品で、デザインの見どころはどこですか？",
+            "answer": "キャラクターの全身立ち絵で、クジラのひれの耳飾り、潮を吹くクジラの刺繍、フリルのエプロン、後ろに立つクジラの尾が見どころです。"
+          }
+        ],
+        "originNote": "Bilibili のクリエイター ZipZipPipe が描いた AI 娘のキャラクターイラスト。",
+        "licenseNote": "キャラクター原案：ZipZipPipe（Bilibili: https://space.bilibili.com/4168597）。DeepSeek ちゃんは別の原作者のオリジナルキャラクターを基にした二次創作で、CC BY-NC-SA 4.0 のもと非営利で使用しています。要望があれば削除します。"
+      }
+    }
+  },
+  {
+    "id": "sticker_b588317b634a6f987b481485",
+    "name": "白龙娘立绘：指尖上的蓝色小云团",
+    "description": "白底全身立绘。白龙娘留着白色长卷发，头生一对白角，淡紫眼睛配尖耳；身穿白色挂脖长裙，腰间、袖口和鞋面都有白色花形纹章，银色链条与流苏垂在身侧。她背后半透明的紫白蝠翼展开，长长的鳞片龙尾绕过裙摆，抬手指向左上方一朵有眼睛的蓝色小云团。",
+    "commentary": "看，我养的小云团今天也跟来了。它圆滚滚的，浮在指尖旁边还会朝你眨眼睛，心情好的时候会绕着我转圈。白裙子和翅膀要一起拍进构图里，尾巴也得摆好，不然画面就散了，只好请大家多等我一会儿。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/b588317b634a6f98.jpg",
+    "thumbnailPath": "submissions/previews/gpt/b588317b634a6f98.webp",
+    "fullPath": "submissions/large/gpt/b588317b634a6f98.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 3072,
+    "height": 5504,
+    "fileSize": 6598179,
+    "sha256": "b588317b634a6f987b48148504963f7df750e245efdcaba2488b04511c39cd4b",
+    "characterId": "gpt",
+    "characterIds": [
+      "gpt"
+    ],
+    "tags": [
+      "GPT娘",
+      "白龙娘",
+      "全身立绘",
+      "蓝色云团",
+      "白色长裙",
+      "ZipZipPipe"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "internet-found",
+      "author": "ZipZipPipe",
+      "sourceUrl": "https://www.bilibili.com/opus/1238613841710940181",
+      "note": "B 站 UP 主 ZipZipPipe（胖次狐）创作的 AI 娘角色图。"
+    },
+    "license": {
+      "type": "unknown",
+      "note": "角色原案：ZipZipPipe（B 站 https://space.bilibili.com/4168597）· 非商业同人展示 · 原作者未公开授权条款，可应要求下架。"
+    },
+    "status": "published",
+    "createdAt": "2026-10-17T10:00:00.000Z",
+    "updatedAt": "2026-10-17T10:00:00.000Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610170006",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "8e79857fb4b26108feba01ec0179f464cc94c5368eda63addbb5b2d76ca1ca16",
+      "en": {
+        "name": "White Dragon GPT Chan: Little Blue Cloud at Her Fingertip",
+        "description": "A full-body illustration on a white background. The white dragon GPT Chan has long white hair, white horns, pointed ears and pale purple eyes, and wears a white halter gown decorated with white flower crests, silver chains and tassels. Translucent pale purple bat wings spread behind her, a long scaled dragon tail loops around the layered skirt, and she lifts one finger toward a small round blue cloud with eyes.",
+        "commentary": "See, my little cloud came along again today. It is round and fluffy, and it blinks at you while it floats near my fingertip. The white gown and the wings have to share the frame with my tail, and every piece must sit just right or the picture falls apart.",
+        "tags": [
+          "GPT Chan",
+          "white dragon",
+          "full-body art",
+          "blue cloud",
+          "white gown",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "White Dragon GPT Chan: Full-Body Art with a Blue Cloud",
+        "seoDescription": "A white-background full-body illustration of the white dragon GPT Chan in a layered white gown, pointing at a small blue cloud creature.",
+        "faq": [
+          {
+            "question": "Who and what are shown in this illustration?",
+            "answer": "The white dragon GPT Chan in a white gown, lifting a finger toward a small blue cloud with eyes that floats beside her."
+          },
+          {
+            "question": "What kind of artwork is it, and which details should viewers notice?",
+            "answer": "It is a full-body character illustration; the translucent wings, silver chains, layered skirt, long tail and the little cloud make up the scene."
+          }
+        ],
+        "originNote": "AI-girl character illustration by Bilibili creator ZipZipPipe.",
+        "licenseNote": "Character design: ZipZipPipe (Bilibili: https://space.bilibili.com/4168597). Non-commercial fan display; the original creator has not published license terms, and the work will be removed on request."
+      },
+      "ja": {
+        "name": "白龍GPTちゃんの立ち絵：指先に浮かぶ青い雲",
+        "description": "白い背景の全身立ち絵です。白龍GPTちゃんは白い長い髪に白い角、尖った耳と淡い紫の瞳を持ち、白い花の紋章と銀の鎖・房飾りで飾られた白いホルタードレスを着ています。後ろには半透明の淡い紫の翼が広がり、鱗の長いしっぽが重ねたスカートに回り込み、指先には目のついた小さな青い雲が浮かんでいます。",
+        "commentary": "ほら、私の小さな雲が今日もついてきたよ。丸くてふかふかで、指先のそばで瞬きしながら浮いているの。白いドレスも翼もしっぽも同じ画面に入るから、どれも位置を決めてからでないと絵がまとまらないんだよね。",
+        "tags": [
+          "GPTちゃん",
+          "白龍",
+          "全身立ち絵",
+          "青い雲",
+          "白いドレス",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "白龍GPTちゃん：青い雲と並ぶ全身立ち絵",
+        "seoDescription": "白い背景に立つ白龍GPTちゃんの全身立ち絵です。白いドレスと淡い紫の翼、長いしっぽ、指先の青い雲が印象的です。",
+        "faq": [
+          {
+            "question": "このイラストには誰と何が描かれていますか？",
+            "answer": "白いドレスを着た白龍GPTちゃんと、彼女の指先に浮かぶ、目がついた小さな青い雲です。"
+          },
+          {
+            "question": "どんな種類の作品で、見どころはどこですか？",
+            "answer": "キャラクターの全身立ち絵で、半透明の翼、銀の鎖、重ねたスカート、長いしっぽ、そして小さな雲の組み合わせが見どころです。"
+          }
+        ],
+        "originNote": "Bilibili のクリエイター ZipZipPipe が描いた AI 娘のキャラクターイラスト。",
+        "licenseNote": "キャラクター原案：ZipZipPipe（Bilibili: https://space.bilibili.com/4168597）。非営利のファン展示です。原作者は利用条件を明示していないため、要望があれば削除します。"
+      }
+    }
+  },
+  {
+    "id": "sticker_bac77913f5f0563902b0f889",
+    "name": "白龙娘幼体三视图：白蓝连衣裙与小龙角",
+    "description": "一张横向排布的三视图设定稿，白底上依次画出幼体白龙娘的正面、侧面和背面。她留着白蓝色长卷发，头顶一对带蓝尖的小龙角，穿白色露肩泡泡袖连衣裙，腰间系蓝色缎带，裙摆缀满荷叶边，前袋里插着几支笔；身后是一条细长的龙尾，脚上踩着云朵般的白色拖鞋。",
+    "commentary": "三面都画好了，正面、侧面、背面一次看个够。裙子口袋里的画笔是我的小道具，云朵拖鞋踩起来软软的，走路时会在地板上轻轻蹭出声响。尾巴太长，转身的时候记得给我留点位置，别让我扫到桌角。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/bac77913f5f05639.png",
+    "thumbnailPath": "submissions/previews/gpt/bac77913f5f05639.webp",
+    "fullPath": "submissions/large/gpt/bac77913f5f05639.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 2048,
+    "height": 1152,
+    "fileSize": 2310584,
+    "sha256": "bac77913f5f0563902b0f889b20ab75e713cf263ce52245625e4925544ecae00",
+    "characterId": "gpt",
+    "characterIds": [
+      "gpt"
+    ],
+    "tags": [
+      "GPT娘",
+      "白龙娘",
+      "三视图",
+      "幼体",
+      "白色连衣裙",
+      "ZipZipPipe"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "internet-found",
+      "author": "ZipZipPipe",
+      "sourceUrl": "https://www.bilibili.com/opus/1238613841710940181",
+      "note": "B 站 UP 主 ZipZipPipe（胖次狐）创作的 AI 娘角色图。"
+    },
+    "license": {
+      "type": "unknown",
+      "note": "角色原案：ZipZipPipe（B 站 https://space.bilibili.com/4168597）· 非商业同人展示 · 原作者未公开授权条款，可应要求下架。"
+    },
+    "status": "published",
+    "createdAt": "2026-10-17T10:00:00.000Z",
+    "updatedAt": "2026-10-17T10:00:00.000Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610170003",
+    "categoryIds": [
+      "setting"
+    ],
+    "i18n": {
+      "sourceHash": "5095985324eb191515f001c1e084a6debc8b9eced6f851ea16284d69f211352d",
+      "en": {
+        "name": "Young White Dragon GPT Chan Three-View: Pale Blue Dress and Little Horns",
+        "description": "A three-view character sheet on a white background, showing the young white dragon GPT Chan from the front, side and back. She has long pale blue-white wavy hair, small white horns with blue tips and a thin ahoge. She wears an off-shoulder white dress with puffy sleeves, blue ribbon details and a frilled hem, keeps pens in a front pocket, and has a long scaled dragon tail above cloud-shaped slippers.",
+        "commentary": "All three views are laid out here, so you can take a good look at the front, side and back. The pens in my pocket are my little props, and these cloud slippers are as soft as they look. My tail is pretty long, so please leave me some room when I turn around.",
+        "tags": [
+          "GPT Chan",
+          "white dragon",
+          "three-view",
+          "young form",
+          "white dress",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "Young White Dragon GPT Chan: Three-View Sheet in White",
+        "seoDescription": "A three-view sheet of the young white dragon GPT Chan, showing her white off-shoulder dress, little blue-tipped horns and long dragon tail.",
+        "faq": [
+          {
+            "question": "Who is shown in this three-view sheet?",
+            "answer": "The young form of the white dragon GPT Chan, drawn from the front, side and back on a white background."
+          },
+          {
+            "question": "What type of artwork is this, and what should viewers notice?",
+            "answer": "It is a character design three-view; the pale blue dress, cloud slippers, little horns and scaled tail show how the young form is built."
+          }
+        ],
+        "originNote": "AI-girl character illustration by Bilibili creator ZipZipPipe.",
+        "licenseNote": "Character design: ZipZipPipe (Bilibili: https://space.bilibili.com/4168597). Non-commercial fan display; the original creator has not published license terms, and the work will be removed on request."
+      },
+      "ja": {
+        "name": "白龍の幼体GPTちゃん三面図：淡い青のワンピースと小さな角",
+        "description": "白い背景に正面・側面・背面の三面を並べた設定画です。幼体の白龍GPTちゃんは、淡い青がかった白い長い巻き毛に、先が青い小さな角と細いアホ毛を持っています。白いオフショルダーのワンピースに青いリボンとフリルの裾、胸のポケットにはペンを差し、長い鱗のしっぽと雲のようなスリッパを合わせています。",
+        "commentary": "正面も側面も背面も、こうして並べてもらうと全部見てもらえるね。ポケットのペンは私の小さな道具で、雲のスリッパは見た目どおりふわふわなの。しっぽが長いから、後ろを向くときは少し広めに場所を取ってね。",
+        "tags": [
+          "GPTちゃん",
+          "白龍",
+          "三面図",
+          "幼体",
+          "白いワンピース",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "白龍の幼体GPTちゃん三面図：白いワンピース姿",
+        "seoDescription": "白い背景に正面・側面・背面を並べた、幼体の白龍GPTちゃんの三面図です。淡い青のワンピースと小さな角、長いしっぽが特徴です。",
+        "faq": [
+          {
+            "question": "この三面図には誰が描かれていますか？",
+            "answer": "白龍GPTちゃんの幼体で、白い背景に正面・側面・背面の三方向から描かれています。"
+          },
+          {
+            "question": "どんな種類の作品で、デザインのポイントはどこですか？",
+            "answer": "キャラクターの設定画（三面図）で、淡い青のワンピース、雲のようなスリッパ、小さな角と鱗のある長いしっぽがポイントです。"
+          }
+        ],
+        "originNote": "Bilibili のクリエイター ZipZipPipe が描いた AI 娘のキャラクターイラスト。",
+        "licenseNote": "キャラクター原案：ZipZipPipe（Bilibili: https://space.bilibili.com/4168597）。非営利のファン展示です。原作者は利用条件を明示していないため、要望があれば削除します。"
+      }
+    }
+  },
+  {
+    "id": "sticker_dc6d6f0b4ec0061998cd804f",
+    "name": "NovelAI 娘立绘：金羽笔与月桂冠的缪斯",
+    "description": "白底全身立绘。NovelAI 娘披着一头深蓝到金色的渐层长发，头戴金色月桂冠，冠顶立着一枚叶形饰针；她身后张开一对白羽金尖的翅膀，身穿白色希腊式长裙，裙摆缝着蓝色回纹，腰间系着蓝色饰带，肩后垂着深蓝披风，手里握着一支金色羽毛笔，笔尖滴着金墨水，另一只手抱着一卷绘着星纹的羊皮卷。",
+    "commentary": "头上的月桂冠是给写故事的人戴的，翅膀则负责把句子带得更远。羽毛笔尖滴下的金色墨水，是我正在斟酌的那个词；羊皮卷上的星纹，是还没写完的章节。别催，灵感一到，我连脚上的金色凉鞋都会跟着发光。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/novelai/dc6d6f0b4ec00619.png",
+    "thumbnailPath": "submissions/previews/novelai/dc6d6f0b4ec00619.webp",
+    "fullPath": "submissions/large/novelai/dc6d6f0b4ec00619.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1152,
+    "height": 2048,
+    "fileSize": 2564766,
+    "sha256": "dc6d6f0b4ec0061998cd804f6866322d164e2b744841115c36310f368ed0be6d",
+    "characterId": "novelai",
+    "characterIds": [
+      "novelai"
+    ],
+    "tags": [
+      "NovelAI 娘",
+      "全身立绘",
+      "金羽笔",
+      "月桂冠",
+      "天使翅膀",
+      "ZipZipPipe"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "internet-found",
+      "author": "ZipZipPipe",
+      "sourceUrl": "https://www.bilibili.com/opus/1243825685770797113",
+      "note": "B 站 UP 主 ZipZipPipe（胖次狐）创作的 AI 娘角色图。"
+    },
+    "license": {
+      "type": "unknown",
+      "note": "角色原案：ZipZipPipe（B 站 https://space.bilibili.com/4168597）· 非商业同人展示 · 原作者未公开授权条款，可应要求下架。"
+    },
+    "status": "published",
+    "createdAt": "2026-10-17T10:00:00.000Z",
+    "updatedAt": "2026-10-17T10:00:00.000Z",
+    "tone": "novelai",
+    "symbol": "",
+    "slug": "novelai202610170001",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "5b3bb02bb6166f45c544e8233151f8922a11cf528b6853d3ef9f012aab45e3c3",
+      "en": {
+        "name": "NovelAI Chan: Golden Quill and Laurel Crown",
+        "description": "A full-body standing illustration on a white background. NovelAI Chan has long hair that fades from deep blue to gold and wears a golden laurel crown topped with a leaf-shaped pin. A pair of white wings with golden tips spreads behind her, her white Greek-style dress is trimmed with blue meander bands and a blue sash, and a dark blue cape falls from her shoulders. A golden quill dripping gold ink rests in one hand, while the other holds a parchment scroll marked with stars.",
+        "commentary": "The laurel crown is for those who write stories, and the wings are for carrying sentences further away. The golden ink dropping from my quill is the word I am still weighing; the stars on the parchment are chapters not yet finished. Do not rush me, when inspiration arrives even my golden sandals start to glow.",
+        "tags": [
+          "NovelAI Chan",
+          "full-body standing art",
+          "golden quill",
+          "laurel crown",
+          "angel wings",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "NovelAI Chan Full-Body Art: Golden Quill and Laurel Crown",
+        "seoDescription": "Full-body fan art of NovelAI Chan as a winged muse with a golden laurel crown, a quill, and a star-patterned scroll.",
+        "faq": [
+          {
+            "question": "Who is depicted here, and what is the scene?",
+            "answer": "This is NovelAI Chan, a fan-designed AI girl shown full-body as a winged muse with a golden laurel crown, a golden quill, and a scroll."
+          },
+          {
+            "question": "What kind of artwork is this, and what details stand out?",
+            "answer": "It is a full-body character illustration; the white and gold wings, the Greek-style dress with blue meander trim, and the golden quill are the main details."
+          }
+        ],
+        "originNote": "AI-girl character illustration by Bilibili creator ZipZipPipe.",
+        "licenseNote": "Character design: ZipZipPipe (Bilibili: https://space.bilibili.com/4168597). Non-commercial fan display; the original creator has not published license terms, and the work will be removed on request."
+      },
+      "ja": {
+        "name": "NovelAIちゃん：金の羽根ペンと月桂冠のミューズ",
+        "description": "白い背景の全身立ち絵です。NovelAIちゃんは濃紺から金色へ変わる長い髪で、頭には金色の月桂冠、その上に葉の形の飾りが立っています。背中には先が金色の白い翼を広げ、白いギリシャ風ドレスには青い雷文の縁取りと青い飾り帯、肩からは濃紺のマントが垂れています。手には金の羽根ペンを持ち先から金のインクが滴り、もう一方の手には星の紋様が入った羊皮紙の巻物を抱えています。",
+        "commentary": "頭の月桂冠は物語を書く人のためのもの、翼は文章を遠くまで運ぶためのもの。羽根ペンの先から落ちる金のインクは、いま吟味している言葉なんです。羊皮紙の星の紋様は、まだ書き終えていない章。急かさないでくださいね、ひらめきが来たら金のサンダルまで光りだしますから。",
+        "tags": [
+          "NovelAIちゃん",
+          "全身立ち絵",
+          "金の羽根ペン",
+          "月桂冠",
+          "天使の翼",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "NovelAIちゃん全身立ち絵：金の羽根ペンと月桂冠",
+        "seoDescription": "金の月桂冠と羽根ペン、星の紋様の巻物を手にした翼あるミューズ姿のNovelAIちゃんの全身ファンアート。",
+        "faq": [
+          {
+            "question": "ここに描かれているのは誰で、どんな場面ですか？",
+            "answer": "ファン制作のAI娘、NovelAIちゃんの全身立ち絵です。金の月桂冠を戴き、羽根ペンと巻物を持つ翼あるミューズとして描かれています。"
+          },
+          {
+            "question": "どんな作品で、どんなディテールが見どころですか？",
+            "answer": "全身キャラクターの立ち絵です。白と金の翼、青い雷文の縁取りのギリシャ風ドレス、金の羽根ペンが見どころです。"
+          }
+        ],
+        "originNote": "Bilibili のクリエイター ZipZipPipe が描いた AI 娘のキャラクターイラスト。",
+        "licenseNote": "キャラクター原案：ZipZipPipe（Bilibili: https://space.bilibili.com/4168597）。非営利のファン展示です。原作者は利用条件を明示していないため、要望があれば削除します。"
+      }
+    }
+  },
+  {
+    "id": "sticker_ef613401931a57d81a4de6aa",
+    "name": "Qwen 娘全身立绘：蓝白国风长裙与折扇",
+    "description": "白底全身立绘。Qwen 娘有着蓝紫色长发和同色眼睛，头戴蓝色小帽，帽侧别着白色花朵；身穿白色立领长裙，外披深蓝开襟外袍，袍边饰有金色回纹与云纹，蓝色流苏垂在两侧。她一手展开蓝色花鸟折扇，另一手提着一只青白色小手袋，袋面缀着花形徽记，脚穿蓝色高跟皮鞋。",
+    "commentary": "今天把国风长裙翻出来穿了，外袍的云纹和回纹是这套的亮点，金边在光下会亮起来。折扇一展开就有模有样，手袋上的小徽记也别漏看。走路要慢一点，裙摆和流苏才好看，步子一快就全乱了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/qwen/ef613401931a57d8.jpg",
+    "thumbnailPath": "submissions/previews/qwen/ef613401931a57d8.webp",
+    "fullPath": "submissions/large/qwen/ef613401931a57d8.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 3072,
+    "height": 5504,
+    "fileSize": 6766518,
+    "sha256": "ef613401931a57d81a4de6aa9149acfea9de57d92e6b3f895b456cb2e6bde4ba",
+    "characterId": "qwen",
+    "characterIds": [
+      "qwen"
+    ],
+    "tags": [
+      "Qwen娘",
+      "通义千问",
+      "国风长裙",
+      "折扇",
+      "蓝白配色",
+      "ZipZipPipe"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "internet-found",
+      "author": "ZipZipPipe",
+      "sourceUrl": "https://www.bilibili.com/opus/1239583108485873687",
+      "note": "B 站 UP 主 ZipZipPipe（胖次狐）创作的 AI 娘角色图。"
+    },
+    "license": {
+      "type": "unknown",
+      "note": "角色原案：ZipZipPipe（B 站 https://space.bilibili.com/4168597）· 非商业同人展示 · 原作者未公开授权条款，可应要求下架。"
+    },
+    "status": "published",
+    "createdAt": "2026-10-17T10:00:00.000Z",
+    "updatedAt": "2026-10-17T10:00:00.000Z",
+    "tone": "qwen",
+    "symbol": "",
+    "slug": "qwen202610170001",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "b6859149eaa83e97aa38aee3a42aca78f749fa6af6ecf41dd4df6a94980acb1f",
+      "en": {
+        "name": "Qwen Chan Full-Body Art: Blue-and-White Gown and Folding Fan",
+        "description": "A full-body illustration on a white background. Qwen Chan has long blue-purple hair and matching eyes, and wears a small blue headpiece with a white flower on one side. Her white high-collar gown is layered under a navy open robe trimmed with gold meander and cloud patterns, with blue tassels at the sides. She holds an open blue fan painted with flowers, carries a pale blue-white handbag bearing a flower crest, and wears blue high heels.",
+        "commentary": "I brought out the Chinese-style gown today, and the cloud and meander patterns on the outer robe are the stars of this look. Open the folding fan and the pose comes together, and do not miss the small crest on the handbag. Walk slowly, and the skirt and tassels will move beautifully.",
+        "tags": [
+          "Qwen Chan",
+          "traditional Chinese style",
+          "full-body art",
+          "folding fan",
+          "blue-and-white",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "Qwen Chan Full-Body Art: Blue-and-White Gown and Fan",
+        "seoDescription": "A white-background full-body illustration of Qwen Chan in a white high-collar gown and navy gold-trimmed robe, holding a blue folding fan and a handbag with a flower crest.",
+        "faq": [
+          {
+            "question": "Who is depicted in this full-body illustration?",
+            "answer": "Qwen Chan, the blue-purple-haired AI girl, dressed in a white gown and a navy Chinese-style outer robe with a folding fan in hand."
+          },
+          {
+            "question": "What kind of artwork is it, and what are the design highlights?",
+            "answer": "It is a full-body character illustration; the gold meander and cloud patterns, the blue tassels, the painted fan and the flower crest on the handbag are the highlights."
+          }
+        ],
+        "originNote": "AI-girl character illustration by Bilibili creator ZipZipPipe.",
+        "licenseNote": "Character design: ZipZipPipe (Bilibili: https://space.bilibili.com/4168597). Non-commercial fan display; the original creator has not published license terms, and the work will be removed on request."
+      },
+      "ja": {
+        "name": "Qwenちゃんの全身立ち絵：青と白の中華風ドレスと扇子",
+        "description": "白い背景の全身立ち絵です。Qwenちゃんは青紫色の長い髪と同じ色の瞳を持ち、白い花をつけた小さな青い髪飾りをのせています。白い立ち襟のドレスの上に、金の雷文と雲の模様で縁取られた紺色の羽織を重ね、両脇には青い房飾りが下がっています。花の絵が入った青い扇子を広げ、花の紋章がついた淡い青白いハンドバッグを提げ、青いヒールを履いています。",
+        "commentary": "今日は中華風のドレスを出してみたよ。羽織の雲と雷文の模様がこの装いの主役なの。扇子を広げると決まるから、ハンドバッグの小さな紋章も見逃さないでね。ゆっくり歩くとスカートと房飾りがきれいに揺れるから。",
+        "tags": [
+          "Qwenちゃん",
+          "中華風ドレス",
+          "全身立ち絵",
+          "扇子",
+          "青と白",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "Qwenちゃんの全身立ち絵：中華風ドレスと扇子",
+        "seoDescription": "白い背景に立つQwenちゃんの全身立ち絵です。白い立ち襟のドレスと紺色の羽織、青い扇子と花の紋章のハンドバッグが特徴です。",
+        "faq": [
+          {
+            "question": "この全身イラストには誰が描かれていますか？",
+            "answer": "青紫色の髪のAI娘・Qwenちゃんが、白いドレスと紺色の中華風の羽織を着て、扇子を手にしている姿です。"
+          },
+          {
+            "question": "どんな作品で、デザインの見どころはどこですか？",
+            "answer": "キャラクターの全身立ち絵で、金の雷文と雲の模様、青い房飾り、花の絵の扇子、ハンドバッグの花の紋章が見どころです。"
+          }
+        ],
+        "originNote": "Bilibili のクリエイター ZipZipPipe が描いた AI 娘のキャラクターイラスト。",
+        "licenseNote": "キャラクター原案：ZipZipPipe（Bilibili: https://space.bilibili.com/4168597）。非営利のファン展示です。原作者は利用条件を明示していないため、要望があれば削除します。"
+      }
+    }
+  },
+  {
+    "id": "sticker_f34ebfb9c35fe7645c3b8f3b",
+    "name": "Llama 娘立绘：羊驼玩偶拖鞋与居家卫衣",
+    "description": "白底全身立绘。Llama 娘披着蓬松的奶白色长卷发，头顶两只毛茸茸的兽耳，半眯着一只眼，像刚从被窝里爬起来；宽松的白色卫衣上绣着蓝色无限符号，抽绳坠着毛球，腰间系着蓝色缎带和小挂饰，长裙下摆印着一圈小羊驼剪影，脚上是一双毛绒羊驼拖鞋，身后还露出一团尾巴。",
+    "commentary": "今天也起不来嘛，再让我赖五分钟。卫衣上的无限符号是我家的记号，挂在腰上的小吊牌也是。裙摆那一排小羊驼都是我的同伴，脚上的拖鞋更是软到不想走路。要是你也困，就陪我一起窝着吧。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/llama/f34ebfb9c35fe764.png",
+    "thumbnailPath": "submissions/previews/llama/f34ebfb9c35fe764.webp",
+    "fullPath": "submissions/large/llama/f34ebfb9c35fe764.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 3072,
+    "height": 5504,
+    "fileSize": 20073538,
+    "sha256": "f34ebfb9c35fe7645c3b8f3b4c3ce1ad3b50100952182f759989a64d87eceef9",
+    "characterId": "llama",
+    "characterIds": [
+      "llama"
+    ],
+    "tags": [
+      "Llama 娘",
+      "全身立绘",
+      "羊驼拖鞋",
+      "居家服",
+      "无限符号",
+      "ZipZipPipe"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "internet-found",
+      "author": "ZipZipPipe",
+      "sourceUrl": "",
+      "note": "B 站 UP 主 ZipZipPipe（胖次狐）创作的 AI 娘角色图。"
+    },
+    "license": {
+      "type": "unknown",
+      "note": "角色原案：ZipZipPipe（B 站 https://space.bilibili.com/4168597）· 非商业同人展示 · 原作者未公开授权条款，可应要求下架。"
+    },
+    "status": "published",
+    "createdAt": "2026-10-17T10:00:00.000Z",
+    "updatedAt": "2026-10-17T10:00:00.000Z",
+    "tone": "llama",
+    "symbol": "",
+    "slug": "llama202610170001",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "1fc9f3da218a08eb45fe5c46bbcea4267d726009d9604252b8597887af50dede",
+      "en": {
+        "name": "Llama Chan: Homewear and Llama Slippers",
+        "description": "A full-body standing illustration on a white background. Llama Chan has fluffy cream-white wavy hair and fuzzy animal ears, and she rubs one eye as if she has just woken up. Her oversized white hoodie is marked with blue infinity symbols and pom-pom drawstrings, a blue ribbon and a small tag hang at her waist, and the hem of her long skirt is printed with a row of tiny llama silhouettes above slippers shaped like llama faces.",
+        "commentary": "I could not get out of bed again today. The infinity marks on my hoodie are my family's little sign, and so is the tag at my waist. The row of llamas along my hem are my companions, and these slippers are so soft that I refuse to walk anywhere. If you are sleepy too, come curl up with me.",
+        "tags": [
+          "Llama Chan",
+          "full-body standing art",
+          "llama slippers",
+          "homewear",
+          "infinity symbol",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "Llama Chan Full-Body Art: Cozy Homewear and Llama Slippers",
+        "seoDescription": "Full-body fan art of a sleepy Llama Chan in a white hoodie, a llama-print skirt, and fluffy llama-face slippers.",
+        "faq": [
+          {
+            "question": "Who is in this illustration, and what does she look like?",
+            "answer": "This is Llama Chan, a fan-designed AI girl shown in a full-body pose, wearing an oversized white hoodie and fluffy slippers while rubbing one eye."
+          },
+          {
+            "question": "What kind of work is it, and what are the design details?",
+            "answer": "It is a homewear-themed standing illustration; the blue infinity symbols, the llama-print hem, and the llama-face slippers are the key details."
+          }
+        ],
+        "originNote": "AI-girl character illustration by Bilibili creator ZipZipPipe.",
+        "licenseNote": "Character design: ZipZipPipe (Bilibili: https://space.bilibili.com/4168597). Non-commercial fan display; the original creator has not published license terms, and the work will be removed on request."
+      },
+      "ja": {
+        "name": "Llamaちゃん：部屋着とアルパカのスリッパ",
+        "description": "白い背景の全身立ち絵です。Llamaちゃんはふわふわのミルク色の長い巻き髪で、頭には毛足の長い獣耳。片目をこすっていて、まだ眠そうな顔をしています。大きめの白いパーカーには青い無限記号とポンポンの紐、腰には青いリボンと小さなタグ、長いスカートの裾にはアルパカのシルエットが並び、足元はアルパカの顔のスリッパです。",
+        "commentary": "今日も布団から出られませんでした。パーカーの無限記号はわたしの家のしるしで、腰のタグも同じです。裾に並ぶアルパカたちはわたしの仲間で、このスリッパはふかふかすぎて歩きたくなくなります。眠かったら、一緒に丸くなりましょう。",
+        "tags": [
+          "Llamaちゃん",
+          "全身立ち絵",
+          "アルパカのスリッパ",
+          "部屋着",
+          "無限記号",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "Llamaちゃん全身立ち絵：部屋着とアルパカスリッパ",
+        "seoDescription": "白いパーカーとアルパカ柄スカート、アルパカの顔のスリッパを身につけた眠そうなLlamaちゃんの全身ファンアート。",
+        "faq": [
+          {
+            "question": "この絵には誰がいて、どんな姿ですか？",
+            "answer": "ファン制作のAI娘、Llamaちゃんの全身立ち絵です。大きめの白いパーカーとふわふわのスリッパを身につけ、片目をこすっています。"
+          },
+          {
+            "question": "どんな作品で、デザインのポイントはどこですか？",
+            "answer": "部屋着をテーマにした立ち絵です。青い無限記号、アルパカ柄の裾、アルパカの顔のスリッパが見どころです。"
+          }
+        ],
+        "originNote": "Bilibili のクリエイター ZipZipPipe が描いた AI 娘のキャラクターイラスト。",
+        "licenseNote": "キャラクター原案：ZipZipPipe（Bilibili: https://space.bilibili.com/4168597）。非営利のファン展示です。原作者は利用条件を明示していないため、要望があれば削除します。"
+      }
+    }
+  },
+  {
+    "id": "sticker_f6718d162fce6aa5f67bdd60",
+    "name": "Kimi 娘全身立绘：星夜长裙与银笛",
+    "description": "白底全身立绘。Kimi 娘留着银白色长卷发，戴白色女仆头饰，发侧别着新月与彩虹三角组成的装饰；身穿夜空主题的深蓝披肩长裙，布面布满星星、五线谱与钢琴键纹样，内搭白色荷叶边衬衫。腰侧挂着银色长笛，笛身带一道彩虹条纹，链子上串着写有 K 字的小牌子，脚下是白色裤袜与深蓝皮鞋。",
+    "commentary": "这一身像把整个夜空披在身上，星星和音符都是裙子自带的。腰间的银笛是我的小乐器，彩虹条纹只在光下才显眼。挂着 K 字牌子的链子走起来会叮当响，记得听。要是能在星空下吹一曲就更好了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/kimi/f6718d162fce6aa5.png",
+    "thumbnailPath": "submissions/previews/kimi/f6718d162fce6aa5.webp",
+    "fullPath": "submissions/large/kimi/f6718d162fce6aa5.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1152,
+    "height": 2048,
+    "fileSize": 3388104,
+    "sha256": "f6718d162fce6aa5f67bdd6059ee06e9b45f5b29e26828f1f317c516694a74c0",
+    "characterId": "kimi",
+    "characterIds": [
+      "kimi"
+    ],
+    "tags": [
+      "Kimi娘",
+      "月之暗面",
+      "星夜长裙",
+      "长笛",
+      "音乐元素",
+      "ZipZipPipe"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "type": "internet-found",
+      "author": "ZipZipPipe",
+      "sourceUrl": "https://www.bilibili.com/opus/1238972892433088535",
+      "note": "B 站 UP 主 ZipZipPipe（胖次狐）创作的 AI 娘角色图。"
+    },
+    "license": {
+      "type": "unknown",
+      "note": "角色原案：ZipZipPipe（B 站 https://space.bilibili.com/4168597）· 非商业同人展示 · 原作者未公开授权条款，可应要求下架。"
+    },
+    "status": "published",
+    "createdAt": "2026-10-17T10:00:00.000Z",
+    "updatedAt": "2026-10-17T10:00:00.000Z",
+    "tone": "kimi",
+    "symbol": "",
+    "slug": "kimi202610170001",
+    "categoryIds": [
+      "standing"
+    ],
+    "i18n": {
+      "sourceHash": "bbd45209a34fd34bb4ae398dcdc3cda2e5ac273a6a7fe100bc8dc13d77f425d7",
+      "en": {
+        "name": "Kimi Chan Full-Body Art: Starry Night Gown and Silver Flute",
+        "description": "A full-body illustration on a white background. Kimi Chan has long silver-white wavy hair, a white frilled headdress and a hair ornament made of a crescent moon and a rainbow triangle. Her navy cape dress is patterned with stars, music staves and piano keys in a night-sky theme, worn over a white ruffled blouse. A silver flute with a rainbow stripe hangs at her waist, a small K card and a treble-clef chain dangle beside it, and white tights with navy shoes complete the look.",
+        "commentary": "This outfit is like wearing the whole night sky, with stars and notes woven into the fabric. The silver flute at my waist is my little instrument, and the rainbow stripe only shows up in the light. The chain with the K card jingles as I walk, so listen for it.",
+        "tags": [
+          "Kimi Chan",
+          "Moonshot",
+          "starry night gown",
+          "flute",
+          "music motifs",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "Kimi Chan Full-Body Art: Starry Night Gown and Flute",
+        "seoDescription": "A white-background full-body illustration of Kimi Chan in a navy starry-night gown with music-staff patterns, a rainbow-striped silver flute at her waist.",
+        "faq": [
+          {
+            "question": "Who is shown in this full-body illustration?",
+            "answer": "Kimi Chan, the silver-haired AI girl, in a navy gown patterned with stars and music notation."
+          },
+          {
+            "question": "What kind of artwork is it, and which design details are notable?",
+            "answer": "It is a full-body character illustration; the crescent-and-rainbow hair ornament, the starry music motifs, the silver flute and the K card chain are the notable details."
+          }
+        ],
+        "originNote": "AI-girl character illustration by Bilibili creator ZipZipPipe.",
+        "licenseNote": "Character design: ZipZipPipe (Bilibili: https://space.bilibili.com/4168597). Non-commercial fan display; the original creator has not published license terms, and the work will be removed on request."
+      },
+      "ja": {
+        "name": "Kimiちゃんの全身立ち絵：星降るドレスと銀のフルート",
+        "description": "白い背景の全身立ち絵です。Kimiちゃんは銀白色の長い巻き毛に、白いフリルのヘッドドレスと、三日月と虹色の三角を組み合わせた髪飾りをつけています。紺色のケープドレスは星空をテーマに星や五線譜、ピアノの鍵盤の模様が入り、白いフリルのブラウスに重ねています。腰には虹色のラインが入った銀のフルートが下がり、Kの文字のカードとト音記号の鎖が揺れています。白いタイツに紺色の靴を合わせています。",
+        "commentary": "この服は夜空をそのまままとったみたいで、星も音符も布に織り込まれているの。腰の銀のフルートは私の小さな楽器で、虹色のラインは光の下でだけ目立つの。Kのカードがついた鎖は歩くと鳴るから、耳を澄ませてみて。",
+        "tags": [
+          "Kimiちゃん",
+          "Moonshot",
+          "星降るドレス",
+          "フルート",
+          "音楽モチーフ",
+          "ZipZipPipe"
+        ],
+        "seoTitle": "Kimiちゃんの全身立ち絵：星降るドレスと銀の笛",
+        "seoDescription": "白い背景に立つKimiちゃんの全身立ち絵です。星と五線譜の模様が入った紺色のドレス、虹色のラインの銀のフルート、Kのカードが特徴です。",
+        "faq": [
+          {
+            "question": "この全身イラストには誰が描かれていますか？",
+            "answer": "銀白色の髪のAI娘・Kimiちゃんが、星と音符の模様が入った紺色のドレスを着ている姿です。"
+          },
+          {
+            "question": "どんな作品で、デザインの見どころはどこですか？",
+            "answer": "キャラクターの全身立ち絵で、三日月と虹色の髪飾り、星空と音楽の模様、銀のフルート、Kのカードの鎖が見どころです。"
+          }
+        ],
+        "originNote": "Bilibili のクリエイター ZipZipPipe が描いた AI 娘のキャラクターイラスト。",
+        "licenseNote": "キャラクター原案：ZipZipPipe（Bilibili: https://space.bilibili.com/4168597）。非営利のファン展示です。原作者は利用条件を明示していないため、要望があれば削除します。"
       }
     }
   }

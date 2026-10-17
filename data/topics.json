@@ -122,5 +122,66 @@
         "summary": "構成主義の視覚スタイルを取り入れたAI娘作品を、サイト管理者が選んで収録する特集です。"
       }
     }
+  },
+  {
+    "id": "zipzippipe",
+    "name": "ZipZipPipe · AI娘设定图",
+    "summary": "收录 B 站 UP 主 ZipZipPipe（胖次狐）笔下的 AI 娘角色立绘与设定图，一次看清各家 AI 拟人角色的造型、服装与配色。",
+    "coverWorkId": "sticker_38a53dbfa1d851dd3c33212a",
+    "status": "active",
+    "order": 2,
+    "createdAt": "2026-10-17T10:49:06.311Z",
+    "updatedAt": "2026-10-17T10:49:06.311Z",
+    "workIds": [
+      "sticker_38a53dbfa1d851dd3c33212a",
+      "sticker_bac77913f5f0563902b0f889",
+      "sticker_3f03ee1ac0d747ad43970dbf",
+      "sticker_2dfed91a8a45c4a97cfacd48",
+      "sticker_b588317b634a6f987b481485",
+      "sticker_5de70537f61ff00b144c8f20",
+      "sticker_03fbb8a5019e80788f9e7092",
+      "sticker_94d58f15c93896d726be1c14",
+      "sticker_ef613401931a57d81a4de6aa",
+      "sticker_f6718d162fce6aa5f67bdd60",
+      "sticker_81b76f71e19ed9f926e32c70",
+      "sticker_5167f2bbbe9f9ee038dc163f",
+      "sticker_730d6ea99cb5cda25035aaf7",
+      "sticker_1dc86d13132d97ecf3c368b2",
+      "sticker_bec975c5feb5bb316bf80c25",
+      "sticker_49239c83fbcccd23fd2061fb",
+      "sticker_f34ebfb9c35fe7645c3b8f3b",
+      "sticker_56408ef72119c0fc3b6b053e",
+      "sticker_47bd8c1e5479cf04ab27881d",
+      "sticker_57a214f2e04a1c8718560773",
+      "sticker_16dc4b8838956d8fb373beed",
+      "sticker_756102d8d101cfb4e6ec2952",
+      "sticker_418b038864fbe93778d83774",
+      "sticker_dc6d6f0b4ec0061998cd804f",
+      "sticker_0f848d326d441b9827351c76",
+      "sticker_405cd1a582834013d3657bd9",
+      "sticker_06ae5275908dba4c90a6c748"
+    ],
+    "i18n": {
+      "en": {
+        "name": "ZipZipPipe · AI-Girl Character Art",
+        "summary": "A collection of AI-girl character illustrations and design sheets by Bilibili creator ZipZipPipe."
+      },
+      "ja": {
+        "name": "ZipZipPipe・AI娘キャラクター設定画",
+        "summary": "Bilibili のクリエイター ZipZipPipe が描く AI 娘キャラクターの立ち絵と設定画をまとめた特集です。"
+      }
+    },
+    "author": {
+      "name": "ZipZipPipe",
+      "url": "https://space.bilibili.com/4168597",
+      "bio": "はなはな",
+      "channels": [
+        {
+          "platform": "Bilibili",
+          "label": "哔哩哔哩",
+          "url": "https://space.bilibili.com/4168597"
+        }
+      ]
+    }
   }
 ]

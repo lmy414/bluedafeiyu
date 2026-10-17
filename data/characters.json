@@ -123,5 +123,223 @@
     ],
     "status": "active",
     "inSubmissionForm": false
+  },
+  {
+    "id": "minimax",
+    "name": "MiniMax娘",
+    "aliases": [
+      "MiniMax",
+      "海螺AI"
+    ],
+    "status": "active",
+    "inSubmissionForm": false,
+    "legacyData": {
+      "id": "minimax",
+      "name": "MiniMax娘",
+      "aliases": [
+        "MiniMax",
+        "海螺AI"
+      ],
+      "status": "active",
+      "inSubmissionForm": false
+    }
+  },
+  {
+    "id": "mistral",
+    "name": "Mistral娘",
+    "aliases": [
+      "Mistral"
+    ],
+    "status": "active",
+    "inSubmissionForm": false,
+    "legacyData": {
+      "id": "mistral",
+      "name": "Mistral娘",
+      "aliases": [
+        "Mistral"
+      ],
+      "status": "active",
+      "inSubmissionForm": false
+    }
+  },
+  {
+    "id": "llama",
+    "name": "Llama娘",
+    "aliases": [
+      "Llama",
+      "Meta"
+    ],
+    "status": "active",
+    "inSubmissionForm": false,
+    "legacyData": {
+      "id": "llama",
+      "name": "Llama娘",
+      "aliases": [
+        "Llama",
+        "Meta"
+      ],
+      "status": "active",
+      "inSubmissionForm": false
+    }
+  },
+  {
+    "id": "perplexity",
+    "name": "Perplexity娘",
+    "aliases": [
+      "Perplexity"
+    ],
+    "status": "active",
+    "inSubmissionForm": false,
+    "legacyData": {
+      "id": "perplexity",
+      "name": "Perplexity娘",
+      "aliases": [
+        "Perplexity"
+      ],
+      "status": "active",
+      "inSubmissionForm": false
+    }
+  },
+  {
+    "id": "rwkv",
+    "name": "RWKV娘",
+    "aliases": [
+      "RWKV",
+      "鸦鸦"
+    ],
+    "status": "active",
+    "inSubmissionForm": false,
+    "legacyData": {
+      "id": "rwkv",
+      "name": "RWKV娘",
+      "aliases": [
+        "RWKV",
+        "鸦鸦"
+      ],
+      "status": "active",
+      "inSubmissionForm": false
+    }
+  },
+  {
+    "id": "hunyuan",
+    "name": "混元HY娘",
+    "aliases": [
+      "混元",
+      "腾讯混元",
+      "HY娘"
+    ],
+    "status": "active",
+    "inSubmissionForm": false,
+    "legacyData": {
+      "id": "hunyuan",
+      "name": "混元HY娘",
+      "aliases": [
+        "混元",
+        "腾讯混元",
+        "HY娘"
+      ],
+      "status": "active",
+      "inSubmissionForm": false
+    }
+  },
+  {
+    "id": "git",
+    "name": "Git三姐妹",
+    "aliases": [
+      "GitHub娘",
+      "GitLab娘",
+      "Gitee娘",
+      "Git"
+    ],
+    "status": "active",
+    "inSubmissionForm": false,
+    "legacyData": {
+      "id": "git",
+      "name": "Git三姐妹",
+      "aliases": [
+        "GitHub娘",
+        "GitLab娘",
+        "Gitee娘",
+        "Git"
+      ],
+      "status": "active",
+      "inSubmissionForm": false
+    }
+  },
+  {
+    "id": "novelai",
+    "name": "NovelAI娘",
+    "aliases": [
+      "NovelAI"
+    ],
+    "status": "active",
+    "inSubmissionForm": false,
+    "legacyData": {
+      "id": "novelai",
+      "name": "NovelAI娘",
+      "aliases": [
+        "NovelAI"
+      ],
+      "status": "active",
+      "inSubmissionForm": false
+    }
+  },
+  {
+    "id": "huggingface",
+    "name": "HuggingFace娘",
+    "aliases": [
+      "Hugging Face",
+      "HF娘"
+    ],
+    "status": "active",
+    "inSubmissionForm": false,
+    "legacyData": {
+      "id": "huggingface",
+      "name": "HuggingFace娘",
+      "aliases": [
+        "Hugging Face",
+        "HF娘"
+      ],
+      "status": "active",
+      "inSubmissionForm": false
+    }
+  },
+  {
+    "id": "zcode",
+    "name": "Zcode娘",
+    "aliases": [
+      "Zcode",
+      "蒙眼狐娘"
+    ],
+    "status": "active",
+    "inSubmissionForm": false,
+    "legacyData": {
+      "id": "zcode",
+      "name": "Zcode娘",
+      "aliases": [
+        "Zcode",
+        "蒙眼狐娘"
+      ],
+      "status": "active",
+      "inSubmissionForm": false
+    }
+  },
+  {
+    "id": "opencode",
+    "name": "OpenCode娘",
+    "aliases": [
+      "OpenCode"
+    ],
+    "status": "active",
+    "inSubmissionForm": false,
+    "legacyData": {
+      "id": "opencode",
+      "name": "OpenCode娘",
+      "aliases": [
+        "OpenCode"
+      ],
+      "status": "active",
+      "inSubmissionForm": false
+    }
   }
 ]
