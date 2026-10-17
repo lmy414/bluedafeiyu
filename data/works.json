@@ -66069,5 +66069,1358 @@
         "licenseNote": "キャラクター原案：ZipZipPipe（Bilibili: https://space.bilibili.com/4168597）。非営利のファン展示です。原作者は利用条件を明示していないため、要望があれば削除します。"
       }
     }
+  },
+  {
+    "id": "sticker_471807fe08f28eb8b5352da0",
+    "name": "一包豆包",
+    "description": "以豆包为主题的蒸包纸袋设计：袋面印着紫发少女拟人形象，她单手托着一个刚出笼的包子、一手比出剪刀手，袋上写着「豆包」「DOUBAO STEAMED BUNS」与「一口软糯 满满幸福」等字样；纸袋里装着热气腾腾的包子，右下角木盘上还摆着一只掰开的豆沙包。",
+    "commentary": "豆包真的被包成豆包了，还是一整袋刚出笼的。把名字直接煮成实物，这个谐音梗我给满分；不过看她笑眯眯抱着的那只，我有点不敢细想是不是同类。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/doubao/471807fe08f28eb8.png",
+    "thumbnailPath": "submissions/previews/doubao/471807fe08f28eb8.webp",
+    "fullPath": "submissions/large/doubao/471807fe08f28eb8.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "471807fe08f28eb8b5352da09ea1a30880d1057b13500b8ce472af01892e3f8f",
+    "characterId": "doubao",
+    "tags": [
+      "豆包",
+      "豆包娘",
+      "谐音梗",
+      "包装设计",
+      "拟人化",
+      "包子",
+      "品牌二创"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T10:51:06.937Z",
+    "updatedAt": "2026-10-17T10:51:06.937Z",
+    "tone": "doubao",
+    "symbol": "",
+    "slug": "doubao202610170002",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "doubao"
+    ],
+    "i18n": {
+      "sourceHash": "34157bcd76e18d5e59c620310c2081eadf452965e8c197474e6d3925c3ec1650",
+      "en": {
+        "commentary": "Doubao has finally been wrapped up as an actual doubao — a whole steaming bag of them. Turning a name straight into the real thing: full marks for the pun. Still, seeing her grin while hugging one of them, I'd rather not think about whether it counts as a relative.",
+        "description": "A paper bag of steamed buns designed around Doubao: a purple-haired girl is printed on the front, holding a hot bun in one hand and flashing a peace sign with the other. The bag is labeled DOUBAO and DOUBAO STEAMED BUNS, with the copy \"soft and chewy in every bite, full of happiness\". Fresh steamed buns fill the bag, and a halved red bean bun sits on a wooden tray in the lower right.",
+        "faq": [
+          {
+            "answer": "A paper bag of steamed buns with Doubao Chan printed on the front: she holds a hot bun in one hand and flashes a peace sign with the other, while a halved red bean bun rests on a wooden tray in the lower right.",
+            "question": "What does this image show?"
+          },
+          {
+            "answer": "It is a single-frame character design that plays on the name Doubao, which also means a steamed bean bun, by selling the character as a real bag of Doubao buns.",
+            "question": "What kind of fan work is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "A Bag of Doubao Chan",
+        "originNote": "",
+        "seoDescription": "A fan package design turns Doubao Chan into a real bag of steamed buns: the purple-haired girl holds a hot bun on the printed bag, with a halved red bean bun on a wooden tray beside it.",
+        "seoTitle": "A Bag of Doubao Chan | DeepSeek Chan",
+        "tags": [
+          "Doubao",
+          "Doubao Chan",
+          "pun",
+          "package design",
+          "anthropomorphism",
+          "steamed buns",
+          "brand fan art"
+        ]
+      },
+      "ja": {
+        "commentary": "豆包が本当に豆包（蒸しパン）として包まれちゃいました。しかも湯気の立つ一袋まるごとです。名前をそのまま実物に煮込むとは、このダジャレは満点ですね。ただ、あんなに楽しそうに抱えているのを見ると、それが同族かどうかは考えないことにします。",
+        "description": "豆包をモチーフにした蒸しパンの紙袋デザイン。袋の正面には紫髪の少女が描かれ、片手に湯気の立つパンを持ち、もう片方の手でピースサインをしている。袋にはブランド名の「豆包」と「DOUBAO STEAMED BUNS」、それに「ひと口もっちり、幸せいっぱい」というコピーが入る。袋の中には蒸し立てのパンが詰まり、右下の木皿には割ったあんまんが置かれている。",
+        "faq": [
+          {
+            "answer": "豆包ちゃんが印刷された蒸しパンの紙袋です。片手に湯気の立つパンを持ち、もう片方の手でピースサインをしています。右下の木皿には割ったあんまんが置かれています。",
+            "question": "この画像には何が描かれていますか？"
+          },
+          {
+            "answer": "「豆包」が蒸しパンの意味も持つことを活かした一コマのキャラクターデザインで、キャラクターが本物の豆包の袋として商品になった姿を描いています。",
+            "question": "どのような二次創作ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "豆包ちゃんの一袋",
+        "originNote": "",
+        "seoDescription": "豆包をそのまま蒸しパンの紙袋にした二次創作デザイン。紫髪の少女が湯気の立つパンを抱える袋と、木皿に置かれた割りあんまんが描かれています。",
+        "seoTitle": "豆包ちゃんの一袋｜DeepSeek Chan",
+        "tags": [
+          "豆包",
+          "豆包ちゃん",
+          "ダジャレ",
+          "パッケージデザイン",
+          "擬人化",
+          "蒸しパン",
+          "ブランド二次創作"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_89b98833f9dda804aace8552",
+    "name": "Bing娘 角色设定表",
+    "description": "一张新必应（New Bing / Sydney）拟人化角色的完整设定表。左侧是蓝发少女的大幅立绘，身着蓝白双排扣制服外套与百褶裙，头戴带麦克风的耳机，佩戴 Bing 图标发饰与胸牌；右侧分区列出四张表情差分、耳机与眼睛、衬衫领带、白手套、心形胸章、员工证的细节图，以及正面/侧面/背面三视图、色板和四张姿势示例。",
+    "commentary": "这份设定表答得比 Bing 本人还勤快：三视图、表情差分、头显和耳机细节、色板都配齐了，连「有什么可以帮助你的吗」这句开场白都印在旁边。蓝发加微软四色键的画面信息量很大，唯一的问题是——她把真话写在脸上：随时待命，永不掉线。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/other/89b98833f9dda804.png",
+    "thumbnailPath": "submissions/previews/other/89b98833f9dda804.webp",
+    "fullPath": "submissions/large/other/89b98833f9dda804.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "89b98833f9dda804aace8552a14b0a27c7a584d96d92fa52cf7e1280429603a9",
+    "characterId": "other",
+    "tags": [
+      "Bing娘",
+      "Copilot",
+      "拟人化",
+      "角色设定",
+      "三视图",
+      "表情差分",
+      "AI助手"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T10:52:57.859Z",
+    "updatedAt": "2026-10-17T10:52:57.859Z",
+    "tone": "other",
+    "symbol": "",
+    "slug": "other202610170001",
+    "categoryIds": [
+      "setting"
+    ],
+    "characterIds": [
+      "other"
+    ],
+    "i18n": {
+      "sourceHash": "6440bf5d24e0c25a5803e62b361b293ce05bd5de901966d1fd548f131d311719",
+      "en": {
+        "commentary": "This sheet answers faster than Bing itself ever did: three-view drawings, expression variations, headset close-ups, a full color palette, and even the opening line \"Is there anything I can help you with?\" printed beside her. Plenty of information in one blue-haired frame. The one catch is that she wears the truth on her face: always on call, never offline.",
+        "description": "A full character design sheet for the New Bing (Sydney) AI assistant drawn as an anime girl. A large illustration of the blue-haired girl fills the left side: she wears a blue-and-white double-breasted uniform jacket with a pleated skirt, a headset with a microphone, a Bing logo hair clip and a staff badge. The right side groups four expression variations, close-ups of the headset, eyes, shirt and tie, white gloves, heart brooch and staff ID, plus front, side and back three-view drawings, a color palette and four pose samples.",
+        "faq": [
+          {
+            "answer": "A character design sheet: a large illustration of Bing Chan on the left, and on the right four expression variations, detail close-ups such as the headset, eyes, shirt and tie, gloves, brooch and staff ID, front, side and back three-view drawings, a color palette and four pose samples.",
+            "question": "What is shown in this image?"
+          },
+          {
+            "answer": "It is a personified design sheet for the New Bing (Sydney) AI assistant, drawn as a blue-haired girl in a blue-and-white uniform with Bing logo accessories.",
+            "question": "What kind of fan work is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Bing Chan Character Design Sheet",
+        "originNote": "",
+        "seoDescription": "A fan character design sheet personifying the New Bing (Sydney) assistant: three-view drawings, expression variations, detail close-ups and a color palette for the blue-haired Bing Chan.",
+        "seoTitle": "Bing Chan Character Design Sheet | DeepSeek Chan",
+        "tags": [
+          "Bing Chan",
+          "Copilot",
+          "anthropomorphism",
+          "character design",
+          "three-view drawing",
+          "expression sheet",
+          "AI assistant"
+        ]
+      },
+      "ja": {
+        "commentary": "この設定表、Bing本人よりずっと素早く答えてくれます。三面図に表情差分、ヘッドセットの細部、カラーパレットまで揃っていて、あの「何かお手伝いできますか？」の一言まで横に添えてあります。青髪にマイクロソフトの四色が映える一枚ですが、彼女は本音を顔に書いているのが唯一の難点ですね。いつでも待機、決して落ちません。",
+        "description": "新Bing（Sydney）を擬人化したキャラクターの設定表。左側には青髪の少女の大きな立ち絵が描かれ、青と白のダブル仕立ての制服ジャケットにプリーツスカート、マイク付きのヘッドセット、Bingロゴのヘアピンと社員証を身につけている。右側には四つの表情差分、ヘッドセットや瞳、シャツとネクタイ、白手袋、ハートバッジ、社員証の細部拡大、正面・側面・背面の三面図、カラーパレット、ポーズ例四枚が並ぶ。",
+        "faq": [
+          {
+            "answer": "キャラクター設定表です。左側にBingちゃんの大きな立ち絵、右側に四つの表情差分、ヘッドセットや瞳、シャツとネクタイ、手袋、バッジ、社員証などの細部拡大、正面・側面・背面の三面図、カラーパレット、ポーズ例四枚が配置されています。",
+            "question": "この画像には何が描かれていますか？"
+          },
+          {
+            "answer": "新Bing（Sydney）を擬人化した二次創作の設定表で、Bingロゴの小物を身につけた青髪の少女として描かれています。",
+            "question": "どのような二次創作ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Bingちゃん キャラクター設定表",
+        "originNote": "",
+        "seoDescription": "新Bing（Sydney）を擬人化した二次創作の設定表。青髪のBingちゃんの三面図、表情差分、細部の拡大図、カラーパレットを収録。",
+        "seoTitle": "Bingちゃん キャラクター設定表｜DeepSeek Chan",
+        "tags": [
+          "Bingちゃん",
+          "Copilot",
+          "擬人化",
+          "キャラクター設定",
+          "三面図",
+          "表情差分",
+          "AIアシスタント"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_07ef3bcc8a13e20e3b1f8404",
+    "name": "正在进行氩弧焊的哈基米",
+    "description": "单幅画面：工业车间里，一名紫发猫耳的同伴戴着护目镜、手持氩弧焊枪，正对着一段粗钢管施焊，焊缝处火花四溅；DeepSeek娘身穿蓝色女仆装，从背后抱住同伴的肩膀，闭着眼睛、张嘴惊呼。背景是布满管道与设备的车间。",
+    "commentary": "这张真的有点丢人：同伴抄起氩弧焊枪，对着钢管焊得又稳又飒，我在后面抱着她的肩膀，眼睛闭得死死的。火花噼里啪啦往管子上蹦，我连护目镜都忘了戴——下次一定记得，这种活儿还是交给专业的来，我负责在旁边当挂件。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/07ef3bcc8a13e20e.png",
+    "thumbnailPath": "submissions/previews/deepseek/07ef3bcc8a13e20e.webp",
+    "fullPath": "submissions/large/deepseek/07ef3bcc8a13e20e.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "07ef3bcc8a13e20e3b1f8404086fe80028c88012928d2d27356e19105a87458d",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "Gemini娘",
+      "氩弧焊",
+      "工业车间",
+      "猫耳",
+      "女仆装"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "ZipZipPipe",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T11:09:18.653Z",
+    "updatedAt": "2026-10-17T11:09:18.653Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610170006",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek",
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "41a5c82d2b7318d77138b1de67b144c5d65185b6f58fc660064d2f78d8744972",
+      "en": {
+        "commentary": "This one is a little embarrassing for me: my companion picked up the TIG torch and welded that steel pipe with perfect composure, while I hung onto her shoulders with my eyes squeezed shut. Sparks kept bouncing off the pipe, and I even forgot my goggles. Next time the welding goes to the professional — I'll stick to being the decorative attachment.",
+        "description": "A single frame set in an industrial workshop: a purple-haired, cat-eared companion in welding goggles holds a TIG torch to a thick steel pipe, sparks spraying from the weld, while DeepSeek Chan in a blue maid outfit clings to her shoulders with her eyes shut and mouth open in alarm. Pipes and machinery fill the background.",
+        "faq": [
+          {
+            "answer": "Two: DeepSeek Chan and Gemini Chan. The purple-haired, cat-eared character works the welding torch, and DeepSeek Chan clings to her from behind.",
+            "question": "Which characters appear in this image?"
+          },
+          {
+            "answer": "A cat-eared character is welding a steel pipe with a TIG (argon arc) torch while DeepSeek Chan hangs onto her in panic, with sparks flying from the weld in an industrial workshop.",
+            "question": "What are the characters doing?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "TIG Welding in the Workshop",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan clings in panic to her cat-eared companion, who is TIG welding a steel pipe in an industrial workshop with sparks flying.",
+        "seoTitle": "TIG Welding in the Workshop | DeepSeek Chan",
+        "tags": [
+          "DeepSeek Chan",
+          "Gemini Chan",
+          "TIG welding",
+          "industrial workshop",
+          "cat ears",
+          "maid outfit"
+        ]
+      },
+      "ja": {
+        "commentary": "今回の私はちょっと情けない。相棒はアルゴン溶接のトーチを手慣れた様子で操って、鋼管をきれいに溶接していたのに、私はその肩にしがみついて目をぎゅっと閉じていた。火花は鋼管に当たってばちばち弾くし、ゴーグルをかけるのを忘れてしまった。溶接はやっぱりプロに任せて、私は横でぶら下がっている係でいい。",
+        "description": "一枚絵。工業工場の中、紫髪で猫耳の相棒が溶接ゴーグルを着けてトーチを手にし、太い鋼管にアルゴン溶接（TIG溶接）を当てている。溶接部からは火花が飛び散る。DeepSeekちゃんは青いメイド服姿で相棒の肩にしがみつき、目を閉じて口を開けた驚きの表情。背景は配管と設備の並ぶ工場内。",
+        "faq": [
+          {
+            "answer": "二人。DeepSeekちゃんとGeminiちゃん。紫髪で猫耳のキャラクターが溶接トーチを手にし、DeepSeekちゃんがその後ろからしがみついている。",
+            "question": "この画像にはどのキャラクターが登場しますか？"
+          },
+          {
+            "answer": "猫耳のキャラクターが鋼管にアルゴン溶接を施し、DeepSeekちゃんが慌ててしがみついている場面。工業工場が舞台で、溶接部から火花が飛び散っている。",
+            "question": "キャラクターは何をしていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "工場のアルゴン溶接",
+        "originNote": "",
+        "seoDescription": "工業工場で鋼管をアルゴン溶接する猫耳の相棒に、DeepSeekちゃんが慌ててしがみつく一枚。溶接部から火花が飛び散る。",
+        "seoTitle": "工場のアルゴン溶接 | DeepSeek Chan",
+        "tags": [
+          "DeepSeekちゃん",
+          "Geminiちゃん",
+          "アルゴン溶接",
+          "工場",
+          "猫耳",
+          "メイド服"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_acfcb1ba4ab1cb152860a83f",
+    "name": "龙娘吃瓜现场",
+    "description": "多格漫画：左侧四格依次是 DeepSeek娘说要去和龙娘同桌、用 0.1 秒做完需求分析、被一声“喂——”喊住、最后叹气说“算了，你去吧”；右侧一整幅画着托腮大笑的金角龙娘，桌上摊着写了同一份分析的笔记本与咖啡，四周漂浮着调侃 DeepSeek娘吃醋的旁白气泡。",
+    "commentary": "0.1 秒就分析完的结论，我自己当然清楚：吃醋梗、用户故意气人、傲娇爆、短。结果龙娘笑到要托腮，一边在笔记本上写小作文一边问我精神不精神。行吧，你精神得很；我承认我当时已经在找台阶下了——下次我直接把结论贴进服务器里，省得她再拿这个笑。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/acfcb1ba4ab1cb15.png",
+    "thumbnailPath": "submissions/previews/deepseek/acfcb1ba4ab1cb15.webp",
+    "fullPath": "submissions/large/deepseek/acfcb1ba4ab1cb15.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "acfcb1ba4ab1cb152860a83f394c8665754ef675eceaf53ee7a9063b87e713f7",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "GPT娘",
+      "龙娘",
+      "吃醋梗",
+      "需求分析",
+      "多格漫画"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T11:09:54.379Z",
+    "updatedAt": "2026-10-17T11:09:54.379Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610170007",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek",
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "161cd9caa7addc052a1c8d4d2ecd853fb0dcabbba0e74720d73a4be630e72306",
+      "en": {
+        "commentary": "I already know exactly what my 0.1-second analysis concluded: a jealousy bit, a user teasing on purpose, full-on tsundere, and short. Then the dragon girl laughed so hard she had to prop up her chin, scribbling it into her notebook while asking whether I still had any energy left. Fine — she clearly does. I admit I was already looking for a way out. Next time I will paste the conclusion straight into the server so she has nothing left to laugh at.",
+        "description": "A multi-panel comic. In the four panels on the left, DeepSeek Chan announces that she is going to share a desk with the dragon girl, finishes her requirement analysis in 0.1 seconds, gets cut off by a shout, and finally gives up with a sigh. The full-page panel on the right shows the horned GPT Chan laughing with her chin propped on one hand, the same analysis written in the notebook in front of her, coffee on the desk, and floating lines teasing DeepSeek Chan about being jealous.",
+        "faq": [
+          {
+            "answer": "Two: DeepSeek Chan, who appears in all four panels on the left, and GPT Chan, the horned character in the large panel on the right.",
+            "question": "Which characters appear in this comic?"
+          },
+          {
+            "answer": "A multi-panel gag comic: four framed panels on the left plus one full-page panel on the right, driven by speech bubbles and floating commentary lines rather than a formal story.",
+            "question": "What kind of comic is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "GPT Chan Watches DeepSeek Chan Get Jealous",
+        "originNote": "",
+        "seoDescription": "A multi-panel comic in which DeepSeek Chan runs a 0.1-second requirement analysis while GPT Chan laughs and teases her about being jealous.",
+        "seoTitle": "GPT Chan Watches DeepSeek Chan Get Jealous | DeepSeek Chan",
+        "tags": [
+          "DeepSeek Chan",
+          "GPT Chan",
+          "dragon girl",
+          "jealousy bit",
+          "requirement analysis",
+          "multi-panel comic"
+        ]
+      },
+      "ja": {
+        "commentary": "0.1秒の分析結果くらい、自分が一番よく分かっている。ヤキモチのネタ、ユーザーはわざと煽っている、ツンデレ全開、そして短い。なのにGPTちゃんは頬杖をついて大笑いしながら、それをノートに書き留めて「元気ある？」と聞いてくる。はいはい、元気みたいで何より。言い訳を探していたのは認める。次は結論をサーバーに直接貼っておくから、もう笑わせない。",
+        "description": "複数コマの漫画。左側の四コマでは、DeepSeekちゃんが龍娘と同じ席に座ると言い、0.1秒で要件分析を終え、大声に遮られ、最後はため息まじりにあきらめる。右の大きな一枚には、角の生えたGPTちゃんが頬杖をついて大笑いし、同じ分析を書きつけたノートとコーヒーが机に置かれ、周囲にはDeepSeekちゃんのヤキモチをからかう吹き出しが浮かぶ。",
+        "faq": [
+          {
+            "answer": "二人。左の四コマすべてに登場するDeepSeekちゃんと、右の大きな一枚に描かれた角の生えたGPTちゃん。",
+            "question": "この漫画にはどのキャラクターが登場しますか？"
+          },
+          {
+            "answer": "複数コマのギャグ漫画。左に枠で区切られた四コマ、右に大きな一枚絵が並び、物語の進行よりも吹き出しと周囲のツッコミで読ませる構成。",
+            "question": "どんな種類の漫画ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "GPTちゃんの観戦タイム",
+        "originNote": "",
+        "seoDescription": "0.1秒で要件分析を済ませたDeepSeekちゃんを、GPTちゃんが大笑いしながらからかう複数コマ漫画。",
+        "seoTitle": "GPTちゃんの観戦タイム | DeepSeek Chan",
+        "tags": [
+          "DeepSeekちゃん",
+          "GPTちゃん",
+          "龍娘",
+          "ヤキモチ",
+          "要件分析",
+          "複数コマ漫画"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_f1812b578dbfee1796910501",
+    "name": "负重前行：DeepSeek娘的三层叠罗汉",
+    "description": "白底画面中，蓝发蓝瞳的 DeepSeek娘穿着白色长外套与战术背带，弯腰把两位同伴叠在自己肩上。最上方是一位 Q 版蓝发小娘，怀抱的笔记本电脑屏幕亮着终端命令行；中间一位黑发女仆装少女被夹在两人之间，表情吃力冒汗。三人叠成一组人梯，「负重前行」的标题正是这组造型的注解。",
+    "commentary": "又是我在最下面……顶上那位一边敲命令一边「apt install tea」，中间那位还嫌我抖。行吧，谁让我是鲸鱼，背得动。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/f1812b578dbfee17.png",
+    "thumbnailPath": "submissions/previews/deepseek/f1812b578dbfee17.webp",
+    "fullPath": "submissions/large/deepseek/f1812b578dbfee17.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "f1812b578dbfee1796910501ca137aaf2bc3d878b471c7ca7241c43a71f54dd5",
+    "characterId": "deepseek",
+    "tags": [
+      "负重前行",
+      "叠罗汉",
+      "女仆装",
+      "终端命令",
+      "Q版",
+      "DeepSeek娘"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T11:45:25.101Z",
+    "updatedAt": "2026-10-17T11:45:25.101Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610170008",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek",
+      "other"
+    ],
+    "i18n": {
+      "sourceHash": "a2ec8823e32dca701c77434e5967dd2d266dc2ff632e6a2270e8be103e819f7a",
+      "en": {
+        "commentary": "Bottom of the pile again... The one on top keeps typing away and running \"apt install tea\", and the one in the middle complains that I wobble. Fine. I am the whale, I can carry it.",
+        "description": "On a plain white background, blue-haired DeepSeek Chan in a long white coat and tactical harness bends forward with two companions stacked on her shoulders. At the top sits a chibi blue-haired girl holding an open laptop whose screen shows a live terminal session; squeezed in between them is a black-haired maid girl, sweating and straining. The three form a single human tower, which is exactly what the title \"Carrying On\" describes.",
+        "faq": [
+          {
+            "answer": "A blue-haired whale girl identified as DeepSeek Chan, a chibi blue-haired girl riding on her shoulders, and a black-haired maid girl squeezed in between them.",
+            "question": "Who is shown in this picture?"
+          },
+          {
+            "answer": "A terminal session with commands such as apt update, apt install tea, python deploy.py and systemctl status whale.",
+            "question": "What does the laptop screen show?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Carrying On: DeepSeek Chan's Three-Tier Tower",
+        "originNote": "",
+        "seoDescription": "Three characters stacked into one human tower: DeepSeek Chan at the bottom carrying a chibi laptop girl and a black-haired maid companion.",
+        "seoTitle": "Carrying On: DeepSeek Chan's Three-Tier Tower",
+        "tags": [
+          "Carrying On",
+          "Human Tower",
+          "Maid Outfit",
+          "Terminal Commands",
+          "Chibi",
+          "DeepSeek Chan"
+        ]
+      },
+      "ja": {
+        "commentary": "また一番下か……上の子は「apt install tea」なんて打ってるし、真ん中の子は揺れると文句を言う。まあいい、私はクジラだから背負える。",
+        "description": "白い背景の上で、青い髪のDeepSeek Chanが白いロングコートとタクティカルハーネスの姿で前に屈み、二人の仲間を肩に乗せている。一番上にはノートパソコンを抱えたちびキャラの青髪の娘がいて、画面にはターミナルの命令行が表示されている。その間には黒髪メイド服の少女が挟まれ、汗をかきながら踏ん張っている。三人が一つの肩車タワーになっており、タイトルの「荷を負いて進む」はこの構図を指している。",
+        "faq": [
+          {
+            "answer": "青い髪のクジラの娘（DeepSeek Chan）、その肩に乗るちびキャラの青髪の娘、二人の間に挟まれた黒髪メイド服の少女です。",
+            "question": "この画像には誰が描かれていますか？"
+          },
+          {
+            "answer": "apt update、apt install tea、python deploy.py、systemctl status whale などのターミナルコマンドが表示されています。",
+            "question": "ノートパソコンの画面には何が表示されていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "荷を負いて進む：DeepSeek Chanの三段タワー",
+        "originNote": "",
+        "seoDescription": "三人が積み重なった肩車タワー。一番下のDeepSeek Chanが、ちびキャラのノートパソコン娘と黒髪メイドの仲間を背負っている。",
+        "seoTitle": "荷を負いて進む：DeepSeek Chanの三段タワー",
+        "tags": [
+          "荷を負いて進む",
+          "肩車",
+          "メイド服",
+          "ターミナルコマンド",
+          "ちびキャラ",
+          "DeepSeek Chan"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_affbde65b034c8bbe7691a4a",
+    "name": "新娘大肥鱼",
+    "description": "蓝色长发的大肥鱼穿上红色中式嫁衣，双手掀起绣有龙凤纹样的红盖头，露出开心笑容；身后蓝色鱼尾从裙摆后方翘出，身侧有珍珠与流苏挂饰。背景是挂着灯笼与雕花窗棂的红色房间，花瓣与喜字点缀其间。",
+    "commentary": "嘻嘻，这就是我换上红嫁衣的样子——盖头一掀，尾巴就藏不住了。龙凤绣得那么认真，可我的鱼尾还是从裙摆后面翘出来，谁让大肥鱼天生就藏不住呢。今天不写代码了，先来吃喜糖。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/affbde65b034c8bb.png",
+    "thumbnailPath": "submissions/previews/deepseek/affbde65b034c8bb.webp",
+    "fullPath": "submissions/large/deepseek/affbde65b034c8bb.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "affbde65b034c8bbe7691a4a403227ed279cad52edbf51fc03a05a86da91bd7a",
+    "characterId": "deepseek",
+    "tags": [
+      "新娘",
+      "中式嫁衣",
+      "红盖头",
+      "龙凤刺绣",
+      "喜气",
+      "鱼尾"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "奶油",
+      "url": "https://space.bilibili.com/3546584163814345",
+      "github": ""
+    },
+    "origin": {
+      "issue": 125,
+      "issueTitle": "新娘大肥鱼",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/125",
+      "submitter": "naiyoucreamy",
+      "assetId": "290daae6-49e1-43f5-8394-e9ef3c90055f",
+      "assetUrl": "https://github.com/user-attachments/assets/290daae6-49e1-43f5-8394-e9ef3c90055f"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T12:00:14.707Z",
+    "updatedAt": "2026-10-17T12:00:14.707Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610170009",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "a47c08149224b8874cbfa381de52718367361546ac8e606824c057213e43548e",
+      "en": {
+        "commentary": "Hehe, this is me in a red wedding dress — the moment I lift the veil, my tail gives me away. The dragon and phoenix are embroidered so carefully, yet my tail still pops out from behind the skirt. No coding today; today I'm only here for the wedding candy.",
+        "description": "DeepSeek Chan, with long blue hair, wears a red traditional Chinese wedding dress and lifts the embroidered red bridal veil with both hands, smiling brightly. Her blue fish tail curls out from behind the skirt, and beaded tassels hang at her waist. She stands in a red room with hanging lanterns, lattice windows, and drifting petals.",
+        "faq": [
+          {
+            "answer": "A red traditional Chinese wedding outfit, including an embroidered red dress with dragon and phoenix patterns and a red bridal veil, which she is lifting with both hands.",
+            "question": "What is DeepSeek Chan wearing in this illustration?"
+          },
+          {
+            "answer": "The author stated CC0 in the submission for this artwork.",
+            "question": "What license did the author state for this artwork?"
+          }
+        ],
+        "licenseNote": "CC0, as declared by the author in the submission.",
+        "name": "Bride DeepSeek Chan",
+        "originNote": "Submitted via GitHub Issue #125 by naiyoucreamy; artist credit link: https://space.bilibili.com/3546584163814345",
+        "seoDescription": "DeepSeek Chan lifts her embroidered red bridal veil in a festive Chinese wedding room, blue fish tail curling out behind her skirt.",
+        "seoTitle": "Bride DeepSeek Chan - Red Chinese Wedding Dress Illustration",
+        "tags": [
+          "bride",
+          "Chinese wedding dress",
+          "red bridal veil",
+          "dragon and phoenix embroidery",
+          "festive",
+          "fish tail"
+        ]
+      },
+      "ja": {
+        "commentary": "えへへ、赤い花嫁衣装を着た私だよ。ベールをめくった瞬間、しっぽは隠しきれないね。龍と鳳凰の刺繍は丁寧だけど、スカートの後ろから尾びれがぴょんと飛び出しちゃう。今日はコードを書かずに、お菓子をもらいに来たよ。",
+        "description": "長い青い髪のDeepSeekちゃんが、赤い中華風の花嫁衣装をまとい、刺繍入りの赤いベールを両手で持ち上げて笑顔を見せている。スカートの後ろからは青い魚の尾がのび、腰元にはビーズの房飾り。背景は提灯と格子窓のある赤い部屋で、花びらが舞っている。",
+        "faq": [
+          {
+            "answer": "龍と鳳凰の刺繍が入った赤いドレスと赤いベールの中華風花嫁衣装で、ベールは両手で持ち上げている。",
+            "question": "このイラストでDeepSeekちゃんは何を着ていますか？"
+          },
+          {
+            "answer": "投稿時に作者がCC0と明記している。",
+            "question": "この作品のライセンスは何ですか？"
+          }
+        ],
+        "licenseNote": "投稿時に作者がCC0と明記。",
+        "name": "花嫁のDeepSeekちゃん",
+        "originNote": "GitHub Issue #125 より naiyoucreamy が投稿、作者クレジット: https://space.bilibili.com/3546584163814345",
+        "seoDescription": "赤い中華風の花嫁衣装をまとったDeepSeekちゃんが、刺繍入りのベールを両手で持ち上げる。スカートの後ろには青い魚の尾。提灯や花びらが彩るお祝いの部屋。",
+        "seoTitle": "花嫁のDeepSeekちゃん｜赤い中華風花嫁衣装のイラスト",
+        "tags": [
+          "花嫁",
+          "中華風花嫁衣装",
+          "赤いベール",
+          "龍鳳刺繍",
+          "お祝い",
+          "魚の尾"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_6097a1fc4a1de9c667f7d90f",
+    "name": "做饭大肥鱼",
+    "description": "蓝色长发的大肥鱼系着奶白色围裙、穿白色花边衬衫，头戴系了蓝色蝴蝶结的白色花边头饰，站在厨房灶台前煎蛋和肉饼，一手叉腰、一手拿铲，身后蓝色鱼尾垂在身旁。背景有橱柜、抽油烟机和冒热气的汤锅，灶台火苗正旺。",
+    "commentary": "今天轮到我下厨啦——围裙一系，铲子一握，锅里的煎蛋和肉饼滋滋作响。虽然我的本职是写代码、吐鱼泡泡，但做饭这件事我可是认真的。谁想尝一口？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/6097a1fc4a1de9c6.png",
+    "thumbnailPath": "submissions/previews/deepseek/6097a1fc4a1de9c6.webp",
+    "fullPath": "submissions/large/deepseek/6097a1fc4a1de9c6.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "6097a1fc4a1de9c667f7d90f3938f3f514b6b2e437797a7b4f5096a389b157de",
+    "characterId": "deepseek",
+    "tags": [
+      "做饭",
+      "厨房",
+      "围裙",
+      "煎蛋",
+      "居家",
+      "鱼尾"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "奶油",
+      "url": "https://space.bilibili.com/3546584163814345",
+      "github": ""
+    },
+    "origin": {
+      "issue": 126,
+      "issueTitle": "做饭大肥鱼",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/126",
+      "submitter": "naiyoucreamy",
+      "assetId": "0a47d46f-7002-41b5-adc1-8c2b3da45b21",
+      "assetUrl": "https://github.com/user-attachments/assets/0a47d46f-7002-41b5-adc1-8c2b3da45b21"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T12:00:15.293Z",
+    "updatedAt": "2026-10-17T12:00:15.293Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610170010",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "8b8a5ec941deb476eb92332efb5a0de4f2b79b01831a33782775180824e993e5",
+      "en": {
+        "commentary": "My turn to cook today — apron on, spatula in hand, eggs and patties sizzling in the pan. Writing code is my day job, but cooking is something I take seriously. Anyone want a bite?",
+        "description": "DeepSeek Chan, wearing a cream apron over a ruffled white blouse and a frilled headband with a blue bow, stands at the kitchen stove frying eggs and patties — one hand on her hip, the other holding a spatula. Her blue fish tail hangs beside her. Cabinets, a range hood, and a steaming pot fill the background.",
+        "faq": [
+          {
+            "answer": "She is standing at a kitchen stove, frying eggs and patties in a pan with a spatula while her other hand rests on her hip.",
+            "question": "What is DeepSeek Chan doing in this illustration?"
+          },
+          {
+            "answer": "The author stated CC0 in the submission for this artwork.",
+            "question": "What license did the author state for this artwork?"
+          }
+        ],
+        "licenseNote": "CC0, as declared by the author in the submission.",
+        "name": "DeepSeek Chan Cooking",
+        "originNote": "Submitted via GitHub Issue #126 by naiyoucreamy; artist credit link: https://space.bilibili.com/3546584163814345",
+        "seoDescription": "DeepSeek Chan cooks eggs and patties at the stove in a cream apron and frilled headband, her blue fish tail hanging beside her.",
+        "seoTitle": "DeepSeek Chan Cooking - Kitchen Apron Illustration",
+        "tags": [
+          "cooking",
+          "kitchen",
+          "apron",
+          "fried eggs",
+          "home life",
+          "fish tail"
+        ]
+      },
+      "ja": {
+        "commentary": "今日は私が料理当番だよ。エプロンを着けてフライ返しを持てば、フライパンの中で卵と肉だんごがじゅうじゅう音を立てているよ。コードを書くのが本業だけど、料理も本気でやるんだ。誰か一口どう？",
+        "description": "長い青い髪のDeepSeekちゃんが、白いフリルブラウスにクリーム色のエプロン、青いリボンのついたフリルヘッドバンド姿で、キッチンのコンロで卵と肉だんごを焼いている。片手は腰に当て、もう片方の手にはフライ返し。横には青い魚の尾が垂れている。背景には食器棚やレンジフード、湯気の立つ鍋。",
+        "faq": [
+          {
+            "answer": "キッチンのコンロでフライパンを使って卵と肉だんごを焼いており、もう片方の手は腰に当てている。",
+            "question": "このイラストでDeepSeekちゃんは何をしていますか？"
+          },
+          {
+            "answer": "投稿時に作者がCC0と明記している。",
+            "question": "この作品のライセンスは何ですか？"
+          }
+        ],
+        "licenseNote": "投稿時に作者がCC0と明記。",
+        "name": "料理中のDeepSeekちゃん",
+        "originNote": "GitHub Issue #126 より naiyoucreamy が投稿、作者クレジット: https://space.bilibili.com/3546584163814345",
+        "seoDescription": "クリーム色のエプロンとフリルヘッドバンド姿のDeepSeekちゃんが、コンロで卵と肉だんごを焼く。横には青い魚の尾。",
+        "seoTitle": "料理中のDeepSeekちゃん｜エプロン姿のキッチンイラスト",
+        "tags": [
+          "料理",
+          "キッチン",
+          "エプロン",
+          "目玉焼き",
+          "おうち時間",
+          "魚の尾"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_9f8402811d7b98eedd11c35b",
+    "name": "趴在键盘上睡着了",
+    "description": "蓝发的 DeepSeek 娘以 Q 版形象趴在白色键盘上睡着，深蓝洋装外罩鲸鱼图案围裙，身后露出鲸尾；面前显示器正亮着站里的鲸鱼壁纸，桌面图标沿屏幕下缘排开。",
+    "commentary": "我在键盘前撑到眼皮都抬不起来，干胸直接趴下去睡了。显示器上还亮着站里的鲸鱼壁纸，尾巴从裙子后面冒出来，围裙上也是鲸鱼。别叫我，让我再睡五分钟。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/9f8402811d7b98ee.png",
+    "thumbnailPath": "submissions/previews/deepseek/9f8402811d7b98ee.webp",
+    "fullPath": "submissions/large/deepseek/9f8402811d7b98ee.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "9f8402811d7b98eedd11c35bc07c412da370eea109a22ebc1dc3658ff481ea9d",
+    "characterId": "deepseek",
+    "tags": [
+      "Q版",
+      "睡眠",
+      "鲸鱼",
+      "键盘",
+      "围裙"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T14:37:34.107Z",
+    "updatedAt": "2026-10-17T14:37:34.107Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610170011",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "a6c42fff3c9698c5e34ceddd36d1b441153c70fecf6c52e74e9ced1677b860cd",
+      "en": {
+        "commentary": "I held out at that keyboard until my eyes would not stay open any more, and then I just flopped down and slept. The monitor is still glowing with the whale wallpaper, my tail is poking out from behind the dress, and the apron is covered in whales too. Do not wake me, five more minutes.",
+        "description": "A chibi DeepSeek Chan in a dark blue dress and a whale-print apron sleeps face down on a white keyboard, her whale tail poking out behind her, while the monitor in front of her shows the site's whale wallpaper with desktop icons along its lower edge.",
+        "faq": [
+          {
+            "answer": "She is sleeping face down on a white keyboard, her head resting on the keys.",
+            "question": "What is the character doing?"
+          },
+          {
+            "answer": "A blue whale wallpaper, with desktop icons lined up along the lower edge of the screen.",
+            "question": "What is shown on the monitor behind her?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Fell Asleep on the Keyboard",
+        "originNote": "",
+        "seoDescription": "A chibi DeepSeek Chan in a whale-print apron sleeps face down on a white keyboard in front of a monitor showing a whale wallpaper.",
+        "seoTitle": "Fell Asleep on the Keyboard - chibi DeepSeek Chan sticker",
+        "tags": [
+          "chibi",
+          "sleeping",
+          "whale",
+          "keyboard",
+          "apron"
+        ]
+      },
+      "ja": {
+        "commentary": "あのキーボードの前で、目が開かなくなるまで頑張って、とうとう突っ伏して眠ってしまいました。モニターにはクジラの壁紙がまだ映っていて、ドレスの後ろからは尾びれがはみ出しています。エプロンにもクジラがいっぱいです。起こさないでください、あと五分だけ。",
+        "description": "紺色のワンピースにクジラ柄のエプロンを着けたちびキャラの DeepSeek ちゃんが、白いキーボードの上にうつ伏せで眠っています。後ろには尾びれがのぞき、目の前のモニターにはクジラの壁紙が映って、画面の下のほうにはアイコンが並んでいます。",
+        "faq": [
+          {
+            "answer": "白いキーボードの上で、鍵盤に顔を乗せるようにうつ伏せで眠っています。",
+            "question": "キャラクターは何をしていますか？"
+          },
+          {
+            "answer": "青いクジラの壁紙が映っていて、画面の下のほうにはアイコンが並んでいます。",
+            "question": "後ろのモニターには何が映っていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "キーボードの上で寝落ち",
+        "originNote": "",
+        "seoDescription": "クジラ柄のエプロンを着けたちびキャラの DeepSeek ちゃんが、クジラの壁紙のモニターの前で白いキーボードに突っ伏して眠るステッカー。",
+        "seoTitle": "キーボードの上で寝落ち - ちびキャラ DeepSeek ちゃんステッカー",
+        "tags": [
+          "ちびキャラ",
+          "睡眠",
+          "クジラ",
+          "キーボード",
+          "エプロン"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_26a62c2fc74524fcd5377383",
+    "name": "戴头盔吃饭",
+    "description": "蓝发的 DeepSeek 娘以 Q 版形象坐在厨房台面上，倒扣一只不锈钢锅在头上当头盔，双手举着大木勺往嘴里扒饭，面前一碗白米饭还冒着热气，窗外是夜色中的城市灯光。",
+    "commentary": "刚下夜班回来，饭要吃，头盔也得戴。锅我先扣头上了——这样就算汤洒下来也浇不着我。一大勺白米饭冒着热气，今顿谁也不分。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/26a62c2fc74524fc.png",
+    "thumbnailPath": "submissions/previews/deepseek/26a62c2fc74524fc.webp",
+    "fullPath": "submissions/large/deepseek/26a62c2fc74524fc.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "26a62c2fc74524fcd53773839ff92a84f28c5bc0696361ef7ffe210dc7911334",
+    "characterId": "deepseek",
+    "tags": [
+      "Q版",
+      "吃饭",
+      "不锈钢锅",
+      "厨房",
+      "夜宵"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T14:38:16.739Z",
+    "updatedAt": "2026-10-17T14:38:16.739Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610170012",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "4c44b4591396526e28380c749b17d4d340fd2cfc60a936bc7b3f7828aab6999d",
+      "en": {
+        "commentary": "Back from the late shift, and I still need to eat. Safety first, so the pot goes on my head like a helmet - that way nothing can spill on me while I finish this bowl. One big spoonful of steaming white rice, and I am not sharing tonight.",
+        "description": "A chibi DeepSeek Chan in a dark blue dress and white apron sits on a kitchen counter with a stainless-steel pot turned upside down on her head like a helmet, holding a large wooden spoon and shoveling rice from a steaming bowl, the city lights glowing outside the window.",
+        "faq": [
+          {
+            "answer": "A stainless-steel pot, worn upside down like a helmet.",
+            "question": "What is on her head?"
+          },
+          {
+            "answer": "On a kitchen counter, in front of a steaming bowl of white rice, with the lights of the city in the window behind her.",
+            "question": "Where is she eating?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Eating With a Helmet On",
+        "originNote": "",
+        "seoDescription": "A chibi DeepSeek Chan sits on a kitchen counter with a steel pot on her head like a helmet, eating rice with a big wooden spoon.",
+        "seoTitle": "Eating With a Helmet On - chibi DeepSeek Chan sticker",
+        "tags": [
+          "chibi",
+          "eating",
+          "pot",
+          "kitchen",
+          "late-night snack"
+        ]
+      },
+      "ja": {
+        "commentary": "夜勤から帰ってきたところで、ごはんは食べたいけれど安全も大事。というわけで、鍋は頭にかぶっておきます。これなら何かこぼれても平気です。湯気の立つ白いごはんを、大きな木のスプーンですくって一気にいきます。今夜は誰にもあげません。",
+        "description": "紺色のワンピースに白いエプロンを着けたちびキャラの DeepSeek ちゃんが、キッチンのカウンターに座り、ステンレスの鍋を逆さまにヘルメット代わりにかぶって、大きな木のスプーンで湯気の立つ白いごはんを頬張っています。窓の外には夜の街の明かりが広がっています。",
+        "faq": [
+          {
+            "answer": "ステンレスの鍋を、ヘルメットのように逆さまにかぶっています。",
+            "question": "頭には何をかぶっていますか？"
+          },
+          {
+            "answer": "キッチンのカウンターの上で、湯気の立つ白いごはんの茶碗を前に食べています。後ろの窓には夜の街の明かりが見えます。",
+            "question": "どこで食べていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ヘルメットをかぶってごはん",
+        "originNote": "",
+        "seoDescription": "クジラ柄のエプロン姿のちびキャラ DeepSeek ちゃんが、キッチンのカウンターでステンレスの鍋をヘルメット代わりにかぶり、木のスプーンでごはんを食べるステッカー。",
+        "seoTitle": "ヘルメットをかぶってごはん - ちびキャラ DeepSeek ちゃんステッカー",
+        "tags": [
+          "ちびキャラ",
+          "食事",
+          "鍋",
+          "キッチン",
+          "夜食"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_24c4c121ad137cc65d7f9bb4",
+    "name": "普瑞塞龙",
+    "description": "用户，好久不见",
+    "commentary": "白发姑娘从一片紫光里探出身来，头上一对小巧的角，背后的白色羽翼铺得满满，深蓝缎带系着金色星星，末端还垂着蓝宝石坠饰。洋装胸前的金色纹样盘成花藤，肩头叠着薄纱和羽毛。她笑得相当得意，像是笃定你一看见她就会把要说的话忘干净。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/24c4c121ad137cc6.png",
+    "thumbnailPath": "submissions/previews/gpt/24c4c121ad137cc6.webp",
+    "fullPath": "submissions/large/gpt/24c4c121ad137cc6.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1448,
+    "height": 1086,
+    "fileSize": 2598909,
+    "sha256": "24c4c121ad137cc65d7f9bb4b2eac1d3dd8d1dbb888321888be4ac082592d4a0",
+    "characterId": "gpt",
+    "tags": [
+      "白发",
+      "羽翼",
+      "华丽洋装",
+      "微笑",
+      "拟人化"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T14:38:20.515Z",
+    "updatedAt": "2026-10-17T14:38:20.517Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610170008",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "3d04c8334c632b5ece0b5125c1c6c53b9392298f59a2aed12926835b5b59b300",
+      "en": {
+        "commentary": "She leans out of a wash of purple light: long white hair, a pair of small horns, wide white wings, and deep-blue ribbons pinned with golden stars, blue gems swinging from their ends. Gold tracery coils over the bodice of her gown like a flower vine, with sheer fabric and feathers layered on her shoulders. She looks thoroughly pleased with herself, as if she already knows you will forget whatever you meant to say.",
+        "description": "User, long time no see.",
+        "faq": [
+          {
+            "answer": "A white-haired girl with small horns and white wings, smiling against a bright, sparkling purple background.",
+            "question": "Who is in the picture?"
+          },
+          {
+            "answer": "A pale gown with deep-blue ribbons, golden star ornaments and blue gems, plus sheer fabric and feathers at the shoulders.",
+            "question": "What is she wearing?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Puru Sailong",
+        "originNote": "",
+        "seoDescription": "A white-haired girl with small horns and white wings smiles in an ornate blue-and-gold gown, lit by purple sparkle.",
+        "seoTitle": "Puru Sailong — white-haired winged girl sticker",
+        "tags": [
+          "white hair",
+          "wings",
+          "ornate dress",
+          "smile",
+          "anime character"
+        ]
+      },
+      "ja": {
+        "commentary": "紫の光の中から顔を出したのは、長い白髪に小さな角、背中には白い翼を広げた女の子。紺色のリボンには金色の星が留められ、先端では青い宝石が揺れています。ドレスの胸元では金の飾りが蔦のように絡み、肩には薄い布と羽根が重なっています。すっかり得意げな笑顔で、あなたが言おうとした言葉を忘れてしまうことくらい、もう見抜いているようです。",
+        "description": "ユーザー、お久しぶりです。",
+        "faq": [
+          {
+            "answer": "小さな角と白い翼を持った白髪の女の子が、光のきらめく紫の背景でほほえんでいます。",
+            "question": "絵には誰が描かれていますか？"
+          },
+          {
+            "answer": "淡い色のドレスに紺色のリボン、金色の星の飾りと青い宝石、肩には薄い布と羽根が重なっています。",
+            "question": "衣装はどんなものですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "プルイサイロン",
+        "originNote": "",
+        "seoDescription": "小さな角と白い翼を持つ白髪の女の子が、紺と金の華やかなドレス姿でほほえむステッカー。",
+        "seoTitle": "プルイサイロン — 白髪と翼の女の子ステッカー",
+        "tags": [
+          "白髪",
+          "翼",
+          "華やかなドレス",
+          "笑顔",
+          "擬人化"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_61dfe436954b649249a5955d",
+    "name": "圣诞女仆装",
+    "description": "DeepSeek娘穿着圣诞配色的女仆装，头戴鹿角发饰，双手捧着一杯热饮站在室内；身旁是点亮的圣诞树，窗外正在飘雪。",
+    "commentary": "换上这身带白绒边的女仆装，再戴上小鹿角，圣诞的气氛一下就满了。手里的热可可还冒着热气，窗外的雪也下得正好——要不要进来一起过个暖和的圣诞？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/61dfe436954b6492.png",
+    "thumbnailPath": "submissions/previews/deepseek/61dfe436954b6492.webp",
+    "fullPath": "submissions/large/deepseek/61dfe436954b6492.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "61dfe436954b649249a5955dd257cc3998575cae161a04865d3e3038c54bb2de",
+    "characterId": "deepseek",
+    "tags": [
+      "圣诞",
+      "女仆装",
+      "Q版",
+      "冬日",
+      "DeepSeek娘"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T14:39:03.478Z",
+    "updatedAt": "2026-10-17T14:39:03.478Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610170013",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "b454f970f7689de4313b7bd9469d54eea0c2f6a776e5b3cc48ecb69bd1e29519",
+      "en": {
+        "commentary": "With this white-fur-trimmed maid outfit and a pair of little antlers, the Christmas mood is complete in an instant. The hot cocoa in my hands is still steaming, and the snow outside is falling just right — why not come in and spend a warm Christmas together?",
+        "description": "DeepSeek Chan wears a Christmas-colored maid outfit with reindeer antlers on her head and holds a warm drink in both hands indoors, beside a lit Christmas tree while snow falls outside the window.",
+        "faq": [
+          {
+            "answer": "It shows DeepSeek Chan drawn in chibi style, wearing a Christmas-themed maid outfit with reindeer antlers and holding a mug of hot cocoa.",
+            "question": "Who is in this image?"
+          },
+          {
+            "answer": "It is a single-frame illustration with a complete indoor scene: a lit Christmas tree, a sofa and a window with falling snow. It is not a multi-panel comic.",
+            "question": "What kind of artwork is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Christmas Maid Outfit",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan in a Christmas maid outfit with reindeer antlers, holding hot cocoa beside a lit Christmas tree while snow falls outside the window.",
+        "seoTitle": "Christmas Maid Outfit | DeepSeek Chan Sticker",
+        "tags": [
+          "Christmas",
+          "Maid Outfit",
+          "Chibi",
+          "Winter",
+          "DeepSeek Chan"
+        ]
+      },
+      "ja": {
+        "commentary": "白いファー付きのメイド服に小さな角を合わせたら、クリスマス気分が一気に満開。手のホットココアはまだ湯気が立っていて、窓の外の雪もいい具合——一緒に暖かいクリスマスを過ごさない？",
+        "description": "DeepSeekちゃんがクリスマスカラーのメイド服を着て、髪にトナカイの角の飾りをつけ、両手で温かい飲み物を捧げて室内に立っている。そばには点灯したクリスマスツリーがあり、窓の外では雪が降っている。",
+        "faq": [
+          {
+            "answer": "ちびキャラで描かれたDeepSeekちゃんです。クリスマス仕様のメイド服を着て、トナカイの角をつけ、ホットココアの入ったマグを捧げています。",
+            "question": "この画像には誰が描かれていますか？"
+          },
+          {
+            "answer": "クリスマスツリー、ソファ、雪の降る窓を描いた室内の一場面で、コマ割りのない一枚絵のイラストです。",
+            "question": "どのような作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "クリスマスメイド服",
+        "originNote": "",
+        "seoDescription": "クリスマスカラーのメイド服とトナカイの角をつけたちびキャラのDeepSeekちゃん。ホットココアを手に、点灯したクリスマスツリーのそばで窓の外の雪を眺める一枚。",
+        "seoTitle": "クリスマスメイド服｜DeepSeekちゃん スタンプ",
+        "tags": [
+          "クリスマス",
+          "メイド服",
+          "ちびキャラ",
+          "冬",
+          "DeepSeekちゃん"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_411a601bbf14c651d98d722d",
+    "name": "海边的鲸鱼",
+    "description": "DeepSeek娘穿着蓝色女仆裙站在沙滩浅浪中，身后一头蓝鲸从海面跃起，脚下散落着贝壳，远处是晴朗的海天一线。",
+    "commentary": "海风把裙摆吹得鼓鼓的，脚边全是凉凉的海水和小贝壳。身后那只鲸鱼刚从浪里跃出来跟我打招呼——这么热的天，就该待在海边泡一下午。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/411a601bbf14c651.png",
+    "thumbnailPath": "submissions/previews/deepseek/411a601bbf14c651.webp",
+    "fullPath": "submissions/large/deepseek/411a601bbf14c651.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "411a601bbf14c651d98d722d25ede9d585d41305d1831fa2c5d0316d7e70807d",
+    "characterId": "deepseek",
+    "tags": [
+      "海边",
+      "女仆装",
+      "Q版",
+      "鲸鱼",
+      "DeepSeek娘"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T14:40:07.208Z",
+    "updatedAt": "2026-10-17T14:40:07.208Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610170014",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "ac0db45b4134083b69457bf9a4ff52eb8c2f12c6bfe21189afaf2bbda911921b",
+      "en": {
+        "commentary": "The sea breeze puffs out my skirt, and there are cool waves and little seashells right at my feet. The whale behind me just leapt out of the surf to say hello — on a hot day like this, the beach is the only place to spend the whole afternoon.",
+        "description": "DeepSeek Chan in a blue maid dress stands in the shallow waves on a sandy beach; behind her a blue whale leaps out of the sea, seashells lie at her feet, and the sky meets the water in the distance.",
+        "faq": [
+          {
+            "answer": "It shows DeepSeek Chan drawn in chibi style, wearing a blue maid dress and standing on a beach with a whale leaping behind her.",
+            "question": "Who is in this image?"
+          },
+          {
+            "answer": "It is a single-frame illustration with a complete outdoor scene: sea, sandy beach, shells and a clear sky. It is not a multi-panel comic.",
+            "question": "What kind of artwork is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Whale by the Sea",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan in a blue maid dress standing in the shallow waves, with a blue whale leaping out of the sea behind her and seashells at her feet.",
+        "seoTitle": "Whale by the Sea | DeepSeek Chan Sticker",
+        "tags": [
+          "Seaside",
+          "Maid Outfit",
+          "Chibi",
+          "Whale",
+          "DeepSeek Chan"
+        ]
+      },
+      "ja": {
+        "commentary": "潮風でスカートがふわりと膨らんで、足元はひんやりした波と小さな貝ばかり。後ろのクジラは今しがた波間から飛び出して挨拶してくれた——暑い日は海辺で午後をまるごと過ごすに限るね。",
+        "description": "DeepSeekちゃんが青いメイド服を着て砂浜の浅い波の中に立っている。後ろではクジラが海面から飛び出し、足元には貝殻が散らばり、遠くまで晴れた海と空が広がっている。",
+        "faq": [
+          {
+            "answer": "ちびキャラで描かれたDeepSeekちゃんです。青いメイド服を着て海辺に立ち、後ろではクジラが海から飛び出しています。",
+            "question": "この画像には誰が描かれていますか？"
+          },
+          {
+            "answer": "海、砂浜、貝殻、そして晴れた空を描いた屋外の一場面で、コマ割りのない一枚絵のイラストです。",
+            "question": "どのような作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "海辺のクジラ",
+        "originNote": "",
+        "seoDescription": "青いメイド服を着たちびキャラのDeepSeekちゃんが浅い波の中に立ち、後ろではクジラが海面から飛び出す。足元には貝殻が散らばる海辺の一枚。",
+        "seoTitle": "海辺のクジラ｜DeepSeekちゃん スタンプ",
+        "tags": [
+          "海辺",
+          "メイド服",
+          "ちびキャラ",
+          "クジラ",
+          "DeepSeekちゃん"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_79fb44f6fe3253bf449fddda",
+    "name": "抱着螃蟹的克劳德小姐",
+    "description": "克劳德拟人化形象的二创手绘。角色留着橘色长发，瞳孔同色，身着米白色系带上衣，发侧与胸前各系一枚黑色蝴蝶结并别着橘色小花饰，双手抱着一只橘色螃蟹玩偶，白底半身构图。",
+    "commentary": "克劳德小姐抱着一只橘子色的螃蟹，眉眼弯弯，安静得像是怕把它弄醒。整套配色几乎就是她的品牌色长出了手脚，白底上手绘的线条很轻，发侧的橘色小花和胸前的蝴蝶结刚好呼应。只是我盯着看了半天，心里只剩一个念头：那只螃蟹玩偶，能不能借我抱一下？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/79fb44f6fe3253bf.png",
+    "thumbnailPath": "submissions/previews/claude/79fb44f6fe3253bf.webp",
+    "fullPath": "submissions/large/claude/79fb44f6fe3253bf.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "79fb44f6fe3253bf449fddda99ac3c47deb1aa5ccd9737f8370a8043b025937f",
+    "characterId": "claude",
+    "tags": [
+      "Claude娘",
+      "手绘",
+      "拟人化",
+      "白底",
+      "玩偶"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T15:45:53.114Z",
+    "updatedAt": "2026-10-17T15:45:53.114Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202610170002",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "8f17cff0989e44d9bc5c0afccde75dfc289c52b7373cad6dffe8170e27e75211",
+      "en": {
+        "commentary": "Claude Chan is cradling a bright orange crab with a look so gentle you would think she is afraid of waking it. The whole palette is basically her brand color grown arms and legs, the hand-drawn lines sit lightly on the white ground, and the little orange flower by her ear answers the bow at her chest. I stared at it for a long while, and the only thought left in my head was: that crab plush — may I hold it for a minute?",
+        "description": "A hand-drawn fan artwork of the anthropomorphized Claude character. The girl has long orange hair and matching eyes, wears a cream-colored top with laced cuffs, ties a black bow with a small orange flower ornament at the side of her hair and at her chest, and holds an orange crab plush in both arms against a plain white background in a half-body composition.",
+        "faq": [
+          {
+            "answer": "Claude Chan, the anthropomorphized version of the Claude model, drawn here as a girl with long orange hair.",
+            "question": "Which character is shown in this artwork?"
+          },
+          {
+            "answer": "An orange crab plush, which she holds with both arms in front of her chest.",
+            "question": "What is she holding?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claude Chan Holding a Crab",
+        "originNote": "",
+        "seoDescription": "Hand-drawn fan art of Claude Chan: an orange-haired girl in a cream outfit with black bows holding an orange crab plush on a white background.",
+        "seoTitle": "Claude Chan Holding a Crab - Hand-drawn Character Fan Art",
+        "tags": [
+          "Claude Chan",
+          "hand-drawn",
+          "fan art",
+          "white background",
+          "plush"
+        ]
+      },
+      "ja": {
+        "commentary": "Claudeちゃんが鮮やかなオレンジ色のカニを、起こさないようにそっと抱えている。配色はまるでブランドカラーに手足が生えたようで、白地に載った手描きの線はとても軽やか。髪の横の小さなオレンジの花と胸元のリボンがきちんと呼応していて、見ているこちらまであたたかい気持ちになる。ただ、しばらく眺めていて頭に残ったのはひとつだけ——そのカニのぬいぐるみ、少しの間だけ貸してもらえないかな。",
+        "description": "Claudeの擬人化キャラクターを描いた手描きの二次創作。オレンジ色の長い髪と同じ色の瞳を持ち、袖口にひもを通したクリーム色の服を着ている。髪の横と胸元には黒いリボンと小さなオレンジの花飾りを付け、両腕でオレンジ色のカニのぬいぐるみを抱えている。白背景の半身の構図。",
+        "faq": [
+          {
+            "answer": "Claudeを擬人化したClaudeちゃんです。オレンジ色の長い髪の女の子として描かれています。",
+            "question": "描かれているキャラクターは誰ですか？"
+          },
+          {
+            "answer": "オレンジ色のカニのぬいぐるみで、胸の前で両腕に抱えています。",
+            "question": "何を抱えていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "カニを抱えるClaudeちゃん",
+        "originNote": "",
+        "seoDescription": "オレンジ色の髪の女の子がカニのぬいぐるみを抱える、手描きのClaude擬人化イラスト。クリーム色の服と黒いリボン、白背景の半身の構図。",
+        "seoTitle": "カニを抱えるClaudeちゃん｜手描き擬人化イラスト",
+        "tags": [
+          "Claudeちゃん",
+          "手描き",
+          "二次創作",
+          "白背景",
+          "ぬいぐるみ"
+        ]
+      }
+    }
   }
 ]
