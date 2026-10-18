@@ -68805,5 +68805,207 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_6809a64b23235a35810a871a",
+    "name": "冬装小肥鱼",
+    "description": "DeepSeek 娘的 Q 版冬季服装设定图，以正面、侧面、背面三个视角展示同一套造型：深蓝色毛绒滚边大衣配鲸鱼图案与雪花装饰，头戴鲸尾发箍，身后露出鲸鱼尾巴。",
+    "commentary": "换上冬装啦，三个方向都画全了，连背后的鲸鱼尾巴都没漏掉。毛绒边摸着应该很软，可惜图里摸不到——总之这个冬天冻不着我了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/6809a64b23235a35.png",
+    "thumbnailPath": "submissions/previews/deepseek/6809a64b23235a35.webp",
+    "fullPath": "submissions/large/deepseek/6809a64b23235a35.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "6809a64b23235a35810a871afd201ec78e4d3d1ccba6a2fa3197b7d8ea581f61",
+    "characterId": "deepseek",
+    "tags": [
+      "冬装",
+      "Q版",
+      "三视图",
+      "鲸鱼元素",
+      "雪"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T23:08:44.075Z",
+    "updatedAt": "2026-10-17T23:08:44.075Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610170024",
+    "categoryIds": [
+      "setting"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "5205ff9388364a6fbb6dffef3bc609ecef14d2981415c92509ac71cb10caafa6",
+      "en": {
+        "commentary": "I've changed into my winter clothes. All three angles are drawn out, and they even remembered the whale tail on my back. The fluffy trim looks soft, though I can't feel it from inside a picture. Either way, I won't be freezing this winter.",
+        "description": "A chibi winter outfit setting sheet for DeepSeek Chan, showing one costume from three angles — front, side and back: a dark blue coat with fluffy white trim, whale motifs and snowflake decorations, a whale-tail headband, and a whale tail visible behind her.",
+        "faq": [
+          {
+            "answer": "It is a chibi setting sheet for DeepSeek Chan's winter outfit, drawn from the front, side and back.",
+            "question": "What kind of image is this?"
+          },
+          {
+            "answer": "A dark blue coat with fluffy white trim, whale motifs and snowflakes, plus a headband decorated with a whale tail.",
+            "question": "What details does the outfit have?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Winter Outfit DeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "A chibi DeepSeek Chan winter outfit setting sheet with front, side and back views: dark blue coat, fluffy white trim, whale and snowflake details.",
+        "seoTitle": "Winter Outfit DeepSeek Chan — Chibi Three-View Setting Sheet",
+        "tags": [
+          "winter outfit",
+          "chibi",
+          "three-view",
+          "whale motif",
+          "snow"
+        ]
+      },
+      "ja": {
+        "commentary": "冬服に着替えました。三方向とも描いてあって、背中のクジラの尾までちゃんと入っています。ファーの手ざわりは柔らかそうですが、絵の中では触れないのが残念です。これで今年の冬は寒くないはずです。",
+        "description": "DeepSeekちゃんのちびキャラ冬服設定図。同じ衣装を正面・側面・背面の三方向から描いており、濃紺のファー付きコートにクジラと雪の飾り、クジラの尾をあしらったヘッドバンド、後ろにはクジラの尾が見える。",
+        "faq": [
+          {
+            "answer": "DeepSeekちゃんの冬服設定図で、正面・側面・背面の三方向から描かれています。",
+            "question": "どんな画像ですか？"
+          },
+          {
+            "answer": "濃紺のコートに白いファーの縁、クジラと雪のモチーフ、クジラの尾をあしらったヘッドバンドが付いています。",
+            "question": "衣装にはどんなディテールがありますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "冬服のDeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "正面・側面・背面の三方向から見たDeepSeekちゃんのちびキャラ冬服設定図。濃紺のコート、白いファー、クジラと雪のモチーフ。",
+        "seoTitle": "冬服のDeepSeekちゃん｜ちびキャラ三面図",
+        "tags": [
+          "冬服",
+          "ちびキャラ",
+          "三面図",
+          "クジラモチーフ",
+          "雪"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_26a9f96c8f765e4b2b1081ef",
+    "name": "冬装小肥鱼2",
+    "description": "DeepSeek 娘的 Q 版冬季服装设定图，以正面、侧面、背面三个视角展示同一套造型：鲸鱼造型的连帽外套，帽顶带喷水与尾鳍，配白蓝条纹围巾，大衣下摆绘有鲸鱼与雪花图案，身后露出鲸鱼尾巴。",
+    "commentary": "这套冬装把整只鲸鱼顶在头上了，帽子就是鲸鱼本人，还会喷水。围巾也织着小鲸鱼，走起来大概像在水里游。只不过帽子这么大，真的看得见路吗？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/26a9f96c8f765e4b.png",
+    "thumbnailPath": "submissions/previews/deepseek/26a9f96c8f765e4b.webp",
+    "fullPath": "submissions/large/deepseek/26a9f96c8f765e4b.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "26a9f96c8f765e4b2b1081ef68d98da1517e6582aa0824f08874beabb8714c55",
+    "characterId": "deepseek",
+    "tags": [
+      "冬装",
+      "Q版",
+      "三视图",
+      "鲸鱼帽",
+      "围巾"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-17T23:09:02.016Z",
+    "updatedAt": "2026-10-17T23:09:02.016Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610170025",
+    "categoryIds": [
+      "setting"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "86145211f0561b33749052582cd901bd59c51351997b885f85bb24db7970cf27",
+      "en": {
+        "commentary": "This winter outfit puts a whole whale on my head — the hood is the whale itself, spout and all. The scarf is knitted with little whales too, so walking around probably looks like swimming. Though with a hood that big, I do wonder if I can still see where I'm going.",
+        "description": "A chibi winter outfit setting sheet for DeepSeek Chan, showing one costume from three angles — front, side and back: a hooded coat shaped like a whale, its hood finished with a spout and a tail fin, a white-and-blue striped scarf, whale and snowflake patterns along the coat, and a whale tail behind her.",
+        "faq": [
+          {
+            "answer": "It is a chibi setting sheet for DeepSeek Chan's winter outfit, drawn from the front, side and back.",
+            "question": "What kind of image is this?"
+          },
+          {
+            "answer": "A whale-shaped hooded coat and a white-and-blue striped scarf, with whale and snowflake patterns on the coat.",
+            "question": "What does the outfit look like?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Winter Outfit DeepSeek Chan 2",
+        "originNote": "",
+        "seoDescription": "A chibi DeepSeek Chan winter setting sheet with front, side and back views: a whale-shaped hood, striped scarf, and whale and snowflake patterns.",
+        "seoTitle": "Winter Outfit DeepSeek Chan 2 — Chibi Whale-Hood Setting Sheet",
+        "tags": [
+          "winter outfit",
+          "chibi",
+          "three-view",
+          "whale hood",
+          "scarf"
+        ]
+      },
+      "ja": {
+        "commentary": "この冬服は頭の上にクジラが丸ごと乗っています。フードがそのままクジラで、潮まで吹いています。マフラーにも小さなクジラが編み込まれていて、歩くと泳いでいるように見えそうです。ただ、フードが大きすぎて前が見えるのかどうかが心配です。",
+        "description": "DeepSeekちゃんのちびキャラ冬服設定図。同じ衣装を正面・側面・背面の三方向から描いており、クジラ型のフード付きコート（フードには潮吹きと尾びれ付き）、白と青のストライプのマフラー、コートの裾にはクジラと雪の模様、後ろにはクジラの尾が見える。",
+        "faq": [
+          {
+            "answer": "DeepSeekちゃんの冬服設定図で、正面・側面・背面の三方向から描かれています。",
+            "question": "どんな画像ですか？"
+          },
+          {
+            "answer": "クジラ型のフード付きコートと白と青のストライプのマフラーで、コートにはクジラと雪の模様があります。",
+            "question": "衣装はどんな見た目ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "冬服のDeepSeekちゃん2",
+        "originNote": "",
+        "seoDescription": "正面・側面・背面の三方向から見たDeepSeekちゃんのちびキャラ冬服設定図。クジラ型のフード、ストライプのマフラー、クジラと雪の模様。",
+        "seoTitle": "冬服のDeepSeekちゃん2｜クジラフードのちびキャラ三面図",
+        "tags": [
+          "冬服",
+          "ちびキャラ",
+          "三面図",
+          "クジラフード",
+          "マフラー"
+        ]
+      }
+    }
   }
 ]
