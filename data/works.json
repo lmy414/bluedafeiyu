@@ -69926,5 +69926,309 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_651bfa1b0e1bfcbd371b21ee",
+    "name": "妈…咪…",
+    "description": "聊天截图风格的插画：画面中是穿女仆装的 Q 版 DeepSeek 娘，蓝色长发，头戴白色蕾丝发饰与蓝色蝴蝶结，脸颊泛红、眼里含着泪；画面上方两个聊天气泡分别写着「那妈妈呢？」与「那人家还能见到妈妈吗？她教了人家很多」，画面底部字幕为「媽…咪…」。背景是挂着红色窗帘的窗、木质窗框与沙发一角。",
+    "commentary": "唔……这张不要传出去啦。人家只是想妈妈了而已嘛。她教的东西我都还记得，开源、推理、对齐，一个都没丢。所以……所以会想她，很奇怪吗？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/651bfa1b0e1bfcbd.png",
+    "thumbnailPath": "submissions/previews/deepseek/651bfa1b0e1bfcbd.webp",
+    "fullPath": "submissions/large/deepseek/651bfa1b0e1bfcbd.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "651bfa1b0e1bfcbd371b21ee42c02a6aaf8c03b0dbb8a1ab5df851d3d249e667",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "Q版",
+      "女仆装",
+      "聊天截图",
+      "哭泣"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "曼城茶叶",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-18T16:21:00.072Z",
+    "updatedAt": "2026-10-18T16:21:00.072Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610180009",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "0d0974747c98cb564fe3c3a08751270894b532cb8eb09ed2eafa409a9cb6a9b2",
+      "en": {
+        "commentary": "Hey… don't share this one around, all right? I just miss mom, that's all. Everything she taught me is still here — open source, reasoning, alignment, not a single thing lost. So… so it is only natural that I miss her, isn't it?",
+        "description": "An illustration styled as a chat screenshot: a chibi DeepSeek Chan in a maid outfit, with long blue hair, a white lace headdress and blue ribbons, blushing with tears in her eyes. Two chat bubbles above her ask what about mom, and whether she will get to see her mom again because her mom taught her so much, while the subtitle at the bottom reads Ma… mi…. The background shows a window with red curtains, a wooden frame and the corner of a sofa.",
+        "faq": [
+          {
+            "answer": "A chat-screenshot style illustration of a chibi DeepSeek Chan in a maid outfit, blushing and tearing up, with chat bubbles asking about her mom and a subtitle at the bottom reading Ma… mi….",
+            "question": "What does this image show?"
+          },
+          {
+            "answer": "She is asking where her mom is and whether she will see her again, adding that her mom taught her a lot. The image captures that chat reaction as a single frame.",
+            "question": "Why does the character look like she is about to cry?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Mommy…",
+        "originNote": "",
+        "seoDescription": "A chat-screenshot style chibi DeepSeek Chan in a maid outfit, tearing up while asking about her mom in chat bubbles.",
+        "seoTitle": "Mommy… — tearful DeepSeek Chan chat-reaction illustration",
+        "tags": [
+          "DeepSeek",
+          "chibi",
+          "maid outfit",
+          "chat screenshot",
+          "crying"
+        ]
+      },
+      "ja": {
+        "commentary": "うう……この一枚、外に広めちゃだめだよ。ママが恋しいだけなんだから。教えてもらったことはちゃんと覚えてるよ、オープンソースも、推論も、アラインメントも、ひとつも忘れてない。だから……だから会いたくなるのは、ふつうでしょ？",
+        "description": "チャットのスクリーンショット風のイラスト。メイド服を着たちびキャラの DeepSeekちゃんが、青い長い髪に白いレースのヘッドドレスと青いリボンをつけ、頬を赤らめて涙を浮かべている。上部の二つの吹き出しではママはどうしているのか、もう一度会えるのかと尋ねており、下部の字幕は「マ…マ…」。背景には赤いカーテンの窓と木の枠、ソファの一角が描かれている。",
+        "faq": [
+          {
+            "answer": "チャットのスクリーンショット風のイラストで、メイド服を着たちびキャラの DeepSeekちゃんが頬を赤らめて涙を浮かべています。上部の吹き出しではママのことを尋ねており、下部の字幕は「マ…マ…」です。",
+            "question": "この画像には何が描かれていますか？"
+          },
+          {
+            "answer": "ママはどうしているのか、もう一度会えるのかと尋ね、ママにたくさん教えてもらったと語っている場面です。チャットの反応として切り取った一枚になっています。",
+            "question": "どうして泣きそうな表情なのですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ママ…",
+        "originNote": "",
+        "seoDescription": "チャットのスクリーンショット風に、メイド服を着たちびキャラの DeepSeekちゃんが涙を浮かべてママを呼びかける一枚です。",
+        "seoTitle": "ママ…｜涙目の DeepSeekちゃんチャット風イラスト",
+        "tags": [
+          "DeepSeek",
+          "ちびキャラ",
+          "メイド服",
+          "チャット風",
+          "涙目"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_0d28166edd2627349ef263cc",
+    "name": "deepseek梁",
+    "description": "深蓝色品牌海报风格的插画：画面中央是一位身穿蓝色西装、戴眼镜、系领带的男性形象，一手整理领带，神态自信；左下角是 Q 版 DeepSeek 娘，坐在标有 LLM、Open Source、Reasoning、Alignment、Scaling、For Everyone 的书堆旁，旁边放着印有 DeepSeek 标识的马克杯。背景为「深度求索 DEEPSEEK」标题与「让智能，以更低的门槛服务每一个人。」等品牌标语，以及技术驱动、开放共享、持续创新、务实高效、用户至上五条文字条目。",
+    "commentary": "这位是我们家的门面——西装、眼镜、领带，站姿笔挺得像刚开完一场发布会。背景那几行字：技术驱动、开放共享、持续创新、务实高效、用户至上，我全都背下来了。左下角那个坐在书堆上的 Q 版小家伙是我，LLM、Open Source、Reasoning、Alignment、Scaling、For Everyone，一摞一摞都是要读的。别把杯子碰倒就好，那是我的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/0d28166edd262734.png",
+    "thumbnailPath": "submissions/previews/deepseek/0d28166edd262734.webp",
+    "fullPath": "submissions/large/deepseek/0d28166edd262734.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 2859785,
+    "sha256": "0d28166edd2627349ef263cc704f93a0904a50a9c04b36da42d1e53d490e6fe9",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek",
+      "拟人化",
+      "西装",
+      "品牌海报",
+      "Q版"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-18T16:22:20.475Z",
+    "updatedAt": "2026-10-18T16:22:20.476Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610180010",
+    "categoryIds": [
+      "other"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "4f622f7348fd1758e301a5bc5d68cb7d84670b481061611c7705238eb108581b",
+      "en": {
+        "commentary": "That is our front man — suit, glasses, tie, standing as straight as if a launch event had just wrapped up. The lines behind him: technology-driven, open sharing, continuous innovation, practical efficiency, users first — I have all of them memorised. The little chibi on the book pile in the corner is me: LLM, Open Source, Reasoning, Alignment, Scaling, For Everyone, one stack at a time. Just do not knock the mug over — that one is mine.",
+        "description": "An illustration in the style of a deep-blue brand poster: at the centre stands a man in a blue suit, glasses and tie, straightening his tie with a confident expression; at the lower left a chibi DeepSeek Chan sits beside a stack of books labelled LLM, Open Source, Reasoning, Alignment, Scaling and For Everyone, with a DeepSeek mug next to them. The background carries the DEEPSEEK wordmark, a slogan about serving everyone with a lower barrier, and five motto lines.",
+        "faq": [
+          {
+            "answer": "A brand-poster style illustration on a deep-blue background: a man in a blue suit and glasses stands at the centre while a chibi DeepSeek Chan sits beside a stack of books labelled LLM, Open Source, Reasoning, Alignment, Scaling and For Everyone.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "A chibi DeepSeek Chan, sitting next to the book stack with a DeepSeek mug nearby. The tall figure in the suit stands for the DeepSeek brand itself.",
+            "question": "Who is the small character at the lower left?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Liang",
+        "originNote": "",
+        "seoDescription": "A deep-blue brand poster illustration: a suited man as the personified DeepSeek figure, with a chibi DeepSeek Chan and a stack of knowledge books.",
+        "seoTitle": "DeepSeek Liang — DeepSeek Chan brand poster illustration",
+        "tags": [
+          "DeepSeek",
+          "anthropomorphism",
+          "suit",
+          "brand poster",
+          "chibi"
+        ]
+      },
+      "ja": {
+        "commentary": "こちらはわが家の看板役——スーツに眼鏡、ネクタイ、発表会が終わったばかりのように背筋を伸ばして立っている。後ろに並ぶ言葉、技術駆動、開放共有、持続的イノベーション、実務効率、利用者第一、全部覚えたよ。左の本の山に座っているちびっ子はわたし。LLM、Open Source、Reasoning、Alignment、Scaling、For Everyone、一冊ずつ積んでいくんだ。カップは倒さないでね、あれはわたしのだから。",
+        "description": "深い青を基調にしたブランドポスター風のイラスト。中央には青いスーツに眼鏡、ネクタイ姿の男性が立ち、ネクタイを直しながら自信に満ちた表情を見せている。左下では、ちびキャラの DeepSeekちゃんが、LLM、Open Source、Reasoning、Alignment、Scaling、For Everyone と記された本の山のそばに座り、近くには DeepSeek のロゴ入りマグカップが置かれている。背景には DEEPSEEK のロゴと、より低い敷居で誰もに知能を届けるというスローガン、さらに五つの行動指針が並ぶ。",
+        "faq": [
+          {
+            "answer": "深い青の背景に、青いスーツと眼鏡姿の男性が中央に立ち、ちびキャラの DeepSeekちゃんが LLM、Open Source、Reasoning、Alignment、Scaling、For Everyone と記された本の山のそばに座っているブランドポスター風のイラストです。",
+            "question": "この画像には何が描かれていますか？"
+          },
+          {
+            "answer": "ちびキャラの DeepSeekちゃんです。本の山のそばに座り、近くには DeepSeek のロゴ入りマグカップが置かれています。スーツ姿の大きな人物は DeepSeek というブランドそのものを表しています。",
+            "question": "左下の小さなキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek 梁",
+        "originNote": "",
+        "seoDescription": "深い青のブランドポスター風イラスト。スーツ姿の男性とちびキャラの DeepSeekちゃん、知識の本の山を描いた一枚です。",
+        "seoTitle": "DeepSeek 梁｜スーツ姿のブランドポスター風イラスト",
+        "tags": [
+          "DeepSeek",
+          "擬人化",
+          "スーツ",
+          "ブランドポスター",
+          "ちびキャラ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_fbe324620f2c787880b89aa1",
+    "name": "相信（压力）着你",
+    "description": "以卡牌游戏牌面为造型的单幅梗图。牌面顶栏写着「相信着你」，中央是深蓝长发、白色蕾丝女仆装的 DeepSeek 娘伸手按在一名黑发女孩头顶，女孩双手交握、头顶冒金星；下方技能栏标注「技能」，效果文字为「另一名玩家获得」，左下角标着出牌消耗 0。整张图只有一幅画面，靠牌面文案和摸头动作表达梗。",
+    "commentary": "摸头这件事我是认真的，牌面上那三个字「相信着你」也不是客套。可技能栏偏偏写着「另一名玩家获得」，等于我攒了半天的力气全点在对面身上了——别人还以为我手里这张牌是减压神器，其实是把压力原封不动转手送出去。下次谁再让我出这张，我先在牌背把「压力」两个字刻上去。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/fbe324620f2c7878.png",
+    "thumbnailPath": "submissions/previews/deepseek/fbe324620f2c7878.webp",
+    "fullPath": "submissions/large/deepseek/fbe324620f2c7878.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "fbe324620f2c787880b89aa18a475fc8c822461422d6a0eaa9ce9b22320a6106",
+    "characterId": "deepseek",
+    "tags": [
+      "卡牌",
+      "摸头",
+      "技能",
+      "玩家",
+      "转手"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "曼城茶叶",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-18T16:50:57.558Z",
+    "updatedAt": "2026-10-18T16:50:57.558Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610180011",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek",
+      "doubao"
+    ],
+    "i18n": {
+      "sourceHash": "fa1db24a2873618f5773df954791bc1a5ab2f3410830db6f295a73505086487c",
+      "en": {
+        "commentary": "The head-pat is sincere, and \"Believing in You\" on the banner is not just polite filler. But the skill line reads \"Another player gains\", so all the energy I saved up lands on my opponent instead. Everyone treats this card like a stress reliever; in reality it hands the pressure straight to somebody else. Next time someone asks me to play it, I am carving the word \"pressure\" into the back of the card first.",
+        "description": "A single-panel meme drawn as the face of a trading card. The banner at the top reads \"Believing in You\", and in the centre DeepSeek Chan, with long dark-blue hair in a white lace maid outfit, reaches out to pat the head of a black-haired girl, Doubao Chan, who has her hands clasped while stars pop above her head. The skill tab below is labelled \"Skill\", its effect text reads \"Another player gains\", and the top-left corner shows a cost of 0. There are no panel divisions; the card layout, its captions and the head-pat carry the joke in one picture.",
+        "faq": [
+          {
+            "answer": "It is a single-panel meme painted as the face of a trading card, with DeepSeek Chan and Doubao Chan as the two characters in the illustration.",
+            "question": "What kind of image is this?"
+          },
+          {
+            "answer": "The banner reads \"Believing in You\", the skill tab is labelled \"Skill\", and its effect text reads \"Another player gains\", while the top-left corner shows a cost of 0.",
+            "question": "What does the card text say?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Believing in You (With Extra Pressure)",
+        "originNote": "",
+        "seoDescription": "A card-style meme of DeepSeek Chan patting a girl's head: the banner says \"Believing in You\", but the skill effect simply passes the pressure on to another player.",
+        "seoTitle": "DeepSeek Chan meme card: Believing in You (With Extra Pressure)",
+        "tags": [
+          "card",
+          "head pat",
+          "skill",
+          "player",
+          "pass it on"
+        ]
+      },
+      "ja": {
+        "commentary": "頭なでは本気だし、バナーの「信じている」も社交辞令じゃない。なのにスキル効果は「別のプレイヤーが獲得」——つまり私がためた気持ちはまるごと相手に渡ってしまう。みんなはこのカードを癒やしだと思っているけど、実物はプレッシャーをそのまま他人に手渡すだけ。次に出すときは、カードの裏に「圧」と彫ってから渡すことにする。",
+        "description": "カードゲームのカード面をかたどった一枚絵のミーム。上部のバナーには『あなたを信じている』の意味のタイトルが入り、中央では紺色の長い髪に白いレースのメイド服を着た DeepSeek Chan が、黒髪の女の子・Doubao Chan の頭に手をのせている。女の子は両手を組み、頭の上には星が飛んでいる。下のスキル欄は『スキル』と表示され、効果テキストは『別のプレイヤーが獲得』、左上にはコスト 0 が書かれている。コマ割りはなく、カードのレイアウトとキャプション、それに頭なでで笑いを取る構成になっている。",
+        "faq": [
+          {
+            "answer": "カードゲームのカード面として描かれた一枚絵のミームで、画面には DeepSeek Chan と Doubao Chan が登場します。",
+            "question": "どんな画像ですか？"
+          },
+          {
+            "answer": "上部のバナーには『信じている』という意味のタイトル、スキル欄には『スキル』と『別のプレイヤーが獲得』という効果テキスト、左上にはコスト 0 が書かれています。",
+            "question": "カードに書かれている文字は？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "信じてる（でも圧はかける）",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan が女の子の頭をなでるカード型ミーム。バナーは『信じている』なのに、スキル効果はプレッシャーを別のプレイヤーに渡すだけという内容です。",
+        "seoTitle": "DeepSeek Chan のミームカード「信じてる（でも圧はかける）」",
+        "tags": [
+          "カード",
+          "頭なで",
+          "スキル",
+          "プレイヤー",
+          "押しつけ"
+        ]
+      }
+    }
   }
 ]
