@@ -69421,5 +69421,510 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_9c4249fa6b51c624855ad273",
+    "name": "汉服大肥鱼·江南烟雨",
+    "description": "蓝色大肥鱼身着浅蓝汉服，撑一把绘有花枝的油纸伞，立在江南水乡的石桥之上。远处是白墙黑瓦的临水民居与拱桥，柳枝低垂，细雨落在青石与水面上。",
+    "commentary": "难得穿一回汉服，裙摆上还绣着小鱼和浪花，尾巴也乖乖收在身后。只是这伞好像挡不住江南的雨，倒是把整条河的水汽都撑开了。青石桥有点滑，走慢一点，风景刚好。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/9c4249fa6b51c624.png",
+    "thumbnailPath": "submissions/previews/deepseek/9c4249fa6b51c624.webp",
+    "fullPath": "submissions/large/deepseek/9c4249fa6b51c624.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "9c4249fa6b51c624855ad27308882d5f68c81bcbea3f058b3fbbc6a0a8622cb9",
+    "characterId": "deepseek",
+    "tags": [
+      "汉服",
+      "油纸伞",
+      "江南水乡",
+      "石桥",
+      "鲸尾"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-18T10:22:35.253Z",
+    "updatedAt": "2026-10-18T10:22:35.253Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610180004",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "bda84b10e839dcb348ea376cc9c0ab5059f28a45789907ea00218ed08994c094",
+      "en": {
+        "commentary": "It is not every day I get to wear hanfu — the skirt is embroidered with little fish and waves, and my tail is tucked neatly behind me. The umbrella does not really keep off the Jiangnan drizzle; it just opens up the whole river's mist around me. The stone bridge is a little slippery, so I will walk slowly and enjoy the view.",
+        "description": "DeepSeek Chan wears a pale blue hanfu and holds an oil-paper umbrella decorated with flowering branches, standing on a stone bridge in a Jiangnan water town. Whitewashed houses with dark tiles line the canal behind her, with an arch bridge, drooping willow branches and fine rain falling on the stonework and the water.",
+        "faq": [
+          {
+            "answer": "She wears a pale blue hanfu with a skirt embroidered with small fish and waves, and holds an oil-paper umbrella decorated with branches and blossoms.",
+            "question": "What is DeepSeek Chan wearing in this picture?"
+          },
+          {
+            "answer": "She stands on a stone bridge in a Jiangnan water town: whitewashed houses with dark tiles line the canal, an arch bridge and weeping willows are visible, and light rain falls on the stone pavement and the water.",
+            "question": "Where is the illustration set?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan in Hanfu · Jiangnan Rain",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in a pale blue hanfu, holding an oil-paper umbrella on a stone bridge in a Jiangnan water town, with a whale tail and a whale-patterned skirt.",
+        "seoTitle": "DeepSeek Chan in Hanfu · Jiangnan Rain",
+        "tags": [
+          "hanfu",
+          "oil-paper umbrella",
+          "Jiangnan water town",
+          "stone bridge",
+          "whale tail"
+        ]
+      },
+      "ja": {
+        "commentary": "漢服を着るのは久しぶり。スカートには小さな魚と波が刺繍されていて、しっぽもおとなしく後ろに畳んでいます。この傘は江南の雨を防いでくれませんが、川の水けをまるごと広げてくれました。石橋は少し滑るので、ゆっくり歩いて景色を楽しみます。",
+        "description": "DeepSeekちゃんが淡い青の漢服をまとい、花の枝が描かれた油紙傘をさして、江南水郷の石橋に立っている。奥には白壁黒瓦の水辺の家々とアーチ橋、垂れた柳、石畳と水面に降る細い雨。",
+        "faq": [
+          {
+            "answer": "淡い青の漢服をまとい、魚と波の刺繍が入ったスカートを合わせ、花の枝が描かれた油紙傘を持っています。",
+            "question": "このイラストのDeepSeekちゃんは何を着ていますか？"
+          },
+          {
+            "answer": "江南水郷の石橋の上です。運河沿いには白壁黒瓦の家々が並び、アーチ橋と柳が見え、石畳と水面に細い雨が降っています。",
+            "question": "舞台はどこですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "漢服のDeepSeekちゃん・江南の雨",
+        "originNote": "",
+        "seoDescription": "淡い青の漢服に油紙傘をさし、江南水郷の石橋に立つDeepSeekちゃん。くじらの尾と魚の刺繍が入ったスカート。",
+        "seoTitle": "漢服のDeepSeekちゃん・江南の雨",
+        "tags": [
+          "漢服",
+          "油紙傘",
+          "江南水郷",
+          "石橋",
+          "クジラの尾"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_400c05490b68fa3a9f21e428",
+    "name": "吃我一拳",
+    "description": "DeepSeek娘身着深蓝女仆装，配白色荷叶边与蓝色蝴蝶发饰，怒气冲冲地向镜头挥出一记直拳。前景的拳头因透视与动感模糊被放大，背景是激烈的黑色泼墨线条。",
+    "commentary": "说好只比划一下，这拳可是直冲镜头来的。女仆装的蕾丝都甩飞了，背后的墨线也跟着炸开——别躲，先接住再说。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/400c05490b68fa3a.png",
+    "thumbnailPath": "submissions/previews/deepseek/400c05490b68fa3a.webp",
+    "fullPath": "submissions/large/deepseek/400c05490b68fa3a.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "400c05490b68fa3a9f21e42850bd318bad758e698d008b34dccc72d8e7fef6bc",
+    "characterId": "deepseek",
+    "tags": [
+      "女仆装",
+      "直拳",
+      "泼墨",
+      "动感模糊",
+      "愤怒"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-18T10:27:41.156Z",
+    "updatedAt": "2026-10-18T10:27:41.156Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610180005",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "3ce4e446985425a0ce0b8b91ecbbaf685242a9062e5522d3e33bf5900e050f10",
+      "en": {
+        "commentary": "We agreed on a quick little pose, but this punch is aimed straight at the lens. Even the lace on my maid outfit is flying, and the ink lines behind me are bursting apart — don't dodge, take it first.",
+        "description": "DeepSeek Chan, in a dark blue maid outfit with white ruffles and blue butterfly hair ornaments, throws an angry straight punch at the camera. The fist in the foreground is enlarged by foreshortening and motion blur, against a background of violent black ink strokes.",
+        "faq": [
+          {
+            "answer": "She throws an angry straight punch straight at the camera; her fist is enlarged by foreshortening and motion blur as it fills the foreground.",
+            "question": "What pose is DeepSeek Chan in?"
+          },
+          {
+            "answer": "A dark blue maid outfit with white ruffles and lace, plus blue butterfly hair ornaments and a white frilled headdress in her blue hair.",
+            "question": "What is she wearing?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Eat My Fist",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in a dark blue maid outfit throwing an angry straight punch at the camera, framed by black ink splashes and motion blur.",
+        "seoTitle": "DeepSeek Chan: Eat My Fist",
+        "tags": [
+          "maid outfit",
+          "straight punch",
+          "ink splash",
+          "motion blur",
+          "angry"
+        ]
+      },
+      "ja": {
+        "commentary": "少しだけ決めポーズのつもりが、拳はしっかりレンズ目がけて飛んできました。メイド服のレースも舞い上がり、後ろの墨線もはじけています——よけないで、まず受け止めてください。",
+        "description": "DeepSeekちゃんが濃い青のメイド服に白いフリルと青い蝶の髪飾りをつけ、怒った表情でカメラに向かってストレートパンチを放つ。手前の拳は遠近法とブレで大きく描かれ、背景には激しい黒い墨の線。",
+        "faq": [
+          {
+            "answer": "怒った表情でカメラに向かってストレートパンチを放っています。手前の拳は遠近法とブレで大きく描かれています。",
+            "question": "どんなポーズですか？"
+          },
+          {
+            "answer": "白いフリルとレースのついた濃い青のメイド服で、青い蝶の髪飾りと白いフリルのヘッドドレスをつけています。",
+            "question": "服装は？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "パンチをくらえ",
+        "originNote": "",
+        "seoDescription": "濃い青のメイド服で怒りのパンチを放つDeepSeekちゃん。黒い墨のはねとブレが迫力の一枚。",
+        "seoTitle": "DeepSeekちゃん「パンチをくらえ」",
+        "tags": [
+          "メイド服",
+          "ストレートパンチ",
+          "墨はね",
+          "ブレ",
+          "怒り"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_dd4ae1cad690494799646aa5",
+    "name": "DeepSeek娘 街头举奶茶自拍",
+    "description": "DeepSeek娘在户外举起奶茶杯自拍，面对镜头眨眼并比出剪刀手，蓝色长发编成双辫，头顶有兽耳，斜戴黑色小礼帽与蓝色格纹蝴蝶结，穿蓝白水手领上衣、系带蝴蝶结与格纹百褶裙，背景是铺装步道、石墙与绿植。",
+    "commentary": "难得的好天气，出门散个步也得给自己留一张。奶茶是刚买的，顺手比个剪刀手——嗯，今天这张应该算是拍得最好看的一次吧？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/dd4ae1cad6904947.png",
+    "thumbnailPath": "submissions/previews/deepseek/dd4ae1cad6904947.webp",
+    "fullPath": "submissions/large/deepseek/dd4ae1cad6904947.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "dd4ae1cad690494799646aa55f21faab7e9cb81d7594f76836016534ba5c7c7c",
+    "characterId": "deepseek",
+    "tags": [
+      "自拍",
+      "奶茶",
+      "剪刀手",
+      "双辫",
+      "兽耳"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "曼城茶叶",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-18T11:57:21.098Z",
+    "updatedAt": "2026-10-18T11:57:21.098Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610180006",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "92a733bf8c42fa9b90d7df998db15715f9167c68d5194bba349835bd15e1bed9",
+      "en": {
+        "commentary": "The weather was finally nice today, so even a short walk deserved a photo. The bubble tea was still fresh in my hand, so I threw up a peace sign too — hm, I think this turned out to be the best shot of the day.",
+        "description": "DeepSeek Chan takes an outdoor selfie, holding up a cup of bubble tea and flashing a peace sign while winking at the camera. Her long blue hair is braided into twin tails, she has animal ears on top of her head, and she wears a small black hat and a blue plaid bow tilted to one side, along with a blue-and-white sailor-collar top, ribbon bows and a plaid pleated skirt. The background shows a paved walkway, a stone wall and greenery.",
+        "faq": [
+          {
+            "answer": "It is DeepSeek Chan, the personified character version of DeepSeek, drawn here with long blue hair and animal ears.",
+            "question": "Who is the character in this illustration?"
+          },
+          {
+            "answer": "She is taking a selfie outdoors while holding a cup of bubble tea, winking at the camera and making a peace sign.",
+            "question": "What is she doing in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan: Street Selfie with Bubble Tea",
+        "originNote": "",
+        "seoDescription": "Fan illustration of DeepSeek Chan taking a selfie outdoors with a cup of bubble tea, winking and flashing a peace sign.",
+        "seoTitle": "DeepSeek Chan Street Selfie with Bubble Tea",
+        "tags": [
+          "selfie",
+          "bubble tea",
+          "peace sign",
+          "twin braids",
+          "animal ears"
+        ]
+      },
+      "ja": {
+        "commentary": "久しぶりにいい天気だったから、散歩のついでに一枚撮っておいた。タピオカは買ったばかりで、ついでにピースサインも——うん、今日はこれが一番よく撮れた気がする。",
+        "description": "DeepSeekちゃんが屋外でタピオカのカップを掲げて自撮りをしている。カメラに向かってウインクし、ピースサインを決めている。青い長い髪は二本の三つ編みにまとめられ、頭には獣耳があり、黒い小さな帽子と青いチェックのリボンを斜めに着けている。青と白のセーラーカラーのトップスにリボン、チェックのプリーツスカートを合わせ、背景には舗装された遊歩道と石垣、緑が見える。",
+        "faq": [
+          {
+            "answer": "DeepSeekを擬人化したキャラクター、DeepSeekちゃんです。青い長い髪と獣耳が特徴です。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "屋外でタピオカのカップを持ちながら自撮りをしており、ウインクしてピースサインをしています。",
+            "question": "この絵では何をしていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃん 街角でタピオカを持って自撮り",
+        "originNote": "",
+        "seoDescription": "タピオカを持って屋外で自撮りをするDeepSeekちゃんの二次創作イラスト。ウインクとピースサインの一枚。",
+        "seoTitle": "DeepSeekちゃん 街角でタピオカ片手に自撮り",
+        "tags": [
+          "自撮り",
+          "タピオカ",
+          "ピースサイン",
+          "三つ編み",
+          "獣耳"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_de48f7b54dfc4acc00247146",
+    "name": "DSH 字样的 DeepSeek娘 Q 版头像",
+    "description": "单幅透明底 Q 版头像，画面为 DeepSeek娘 的头部特写：蓝色长发、白色女仆发箍与蓝色蝴蝶结，深蓝色毛绒耳，面带微笑与腮红；下方写有「DSH」字样，两侧点缀星形与圆点装饰。",
+    "commentary": "「DSH」这几个字下面画的就是我——蓝色头发配女仆发箍，耳朵还是毛茸茸的。看到自己的名字被写这么大，我多少有点得意。作者把我画成圆眼睛加腮红的 Q 版头像，表情看着确实挺开心。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/de48f7b54dfc4acc.png",
+    "thumbnailPath": "submissions/previews/deepseek/de48f7b54dfc4acc.webp",
+    "fullPath": "submissions/large/deepseek/de48f7b54dfc4acc.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "de48f7b54dfc4acc00247146c452ec8dc4a0c1d75c1a0412694229dcc184b913",
+    "characterId": "deepseek",
+    "tags": [
+      "Q版",
+      "头像",
+      "女仆",
+      "蓝色长发",
+      "DSH"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "FeudalRine",
+      "url": "https://space.bilibili.com/200787367/",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-18T12:32:10.753Z",
+    "updatedAt": "2026-10-18T12:32:10.753Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610180007",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "95b56fe39749ba9d6807af00f61b29c48bd7cc0d8c9c49aa46cd8820cbb9fd75",
+      "en": {
+        "commentary": "That face under the letters DSH is me — blue hair, maid headband and all. Seeing my name written that large does make me a little smug. The artist drew me as a chibi avatar with round eyes and blush, and I do look rather pleased.",
+        "description": "A single chibi avatar on a transparent background, showing a close-up of DeepSeek Chan's head: long blue hair, a white maid headband with a blue bow, fluffy dark blue ears, a smiling mouth and blush. The letters \"DSH\" appear below, flanked by star and dot decorations.",
+        "faq": [
+          {
+            "answer": "The work was submitted through the site's web form under the name FeudalRine, who is credited as the author.",
+            "question": "Who is credited as the author of this DeepSeek Chan avatar?"
+          },
+          {
+            "answer": "DSH is the lettering drawn beneath the character in the image; the work was submitted under the title DSH Logo.",
+            "question": "What is the DSH lettering in the image?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Chibi DeepSeek Chan Avatar with DSH Lettering",
+        "originNote": "Submitted through the site's web submission form and credited to FeudalRine.",
+        "seoDescription": "A chibi DeepSeek Chan avatar with blue hair, a white maid headband and DSH lettering, submitted to Blue Big Fish by FeudalRine.",
+        "seoTitle": "DSH Chibi Avatar - DeepSeek Chan Fan Art",
+        "tags": [
+          "chibi",
+          "avatar",
+          "maid",
+          "blue hair",
+          "DSH"
+        ]
+      },
+      "ja": {
+        "commentary": "「DSH」の文字の下に描かれているのは私。青い髪にメイドのカチューシャ、耳もふわふわ。自分の名前をこんなに大きく書いてもらえて、少し得意な気分。丸い目と頬の赤みのちびキャラで、なかなか嬉しそうな顔をしている。",
+        "description": "背景透過の単幅ちびキャラアイコン。DeepSeekちゃんの頭部を大きく描いた構図で、青いロングヘア、白いメイドカチューシャと青いリボン、濃紺のふわふわした耳、笑みと頬の赤みがある。下部には「DSH」の文字と星、丸い点の飾りが入っている。",
+        "faq": [
+          {
+            "answer": "この作品はサイトの投稿フォームから FeudalRine 名義で投稿され、作者としてクレジットされている。",
+            "question": "この DeepSeekちゃんアイコンの作者は誰ですか？"
+          },
+          {
+            "answer": "DSH は画像内でキャラクターの下に描かれた文字で、作品は「DSH Logo」のタイトルで投稿された。",
+            "question": "画像内の DSH という文字は何ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DSH の文字入りちびキャラ DeepSeekちゃんアイコン",
+        "originNote": "サイトの投稿フォームから投稿され、FeudalRine 名義でクレジットされている作品。",
+        "seoDescription": "青い髪とメイドカチューシャ、DSH の文字が入った DeepSeekちゃんのちびキャラアイコン。FeudalRine さんの投稿作品。",
+        "seoTitle": "DSH ちびキャラアイコン - DeepSeekちゃん",
+        "tags": [
+          "ちびキャラ",
+          "アイコン",
+          "メイド",
+          "青い髪",
+          "DSH"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_bec82d1b0bee91a01b3dcc97",
+    "name": "正在前往暗黑地牢",
+    "description": "画面中 DeepSeek 娘站在哥特风格的暗黑地牢里，深蓝长发挽着鲸鱼发饰，左手托起幽蓝法球，右手提着一盏发蓝光的提灯。背景是渗血的石墙与骷髅，左上角贴着印有 DEEPSEEK 字样、鲸鱼标志和「探索无垠 智能无界」的海报，并标有 VIRTUE +20、STRESS +200 的数值；腰间悬挂「深度求索」铭牌。整体以深蓝与暗红为主色调，营造出压迫感强烈的暗黑氛围。",
+    "commentary": "提灯里那点蓝光是这条走廊上唯一还肯听我话的东西。左边的旗子上印着我的名字，还画了只小鲸鱼，像是谁把我的招聘启事撕下来贴在这儿了。偏生下面还给我算好了账——VIRTUE +20，STRESS +200，数挺准，就是不太想认。墙在渗血，骷髅在脚边躺着，我手里这颗球还在转。楼梯就在前面，继续往下走吧。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/bec82d1b0bee91a0.png",
+    "thumbnailPath": "submissions/previews/deepseek/bec82d1b0bee91a0.webp",
+    "fullPath": "submissions/large/deepseek/bec82d1b0bee91a0.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "bec82d1b0bee91a01b3dcc977a1bf280c33775aee1609fa4e7015f3def7d043b",
+    "characterId": "deepseek",
+    "tags": [
+      "暗黑地牢",
+      "哥特",
+      "提灯",
+      "深渊蓝",
+      "废墟"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-18T13:11:12.009Z",
+    "updatedAt": "2026-10-18T13:11:12.009Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610180008",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "8fc64d7fed0e100841b3d364620a83f403dc9393dbe92af8b7bce4a81ad874d8",
+      "en": {
+        "commentary": "That little blue flame in my lantern is the only thing down here that still takes orders from me. The banner on the left carries my name and a small whale, as if someone tore my own recruitment poster off a wall and pinned it up. Whoever did it kept the books as well — VIRTUE +20, STRESS +200. Accurate, and I would rather not look. The walls weep red, skulls nap by my feet, and the orb in my hand is still turning. The stairs are just ahead. Let us keep going down.",
+        "description": "DeepSeek Chan stands in a gothic dungeon, her long deep-blue hair pinned with a whale ornament. A glowing orb floats above her left hand while a lantern burns with blue flame in her right. Behind her are bleeding stone walls and skulls; a poster in the upper left shows the word DEEPSEEK above a whale emblem, a tagline, and the stats VIRTUE +20 / STRESS +200. A plaque bearing the studio name hangs at her waist. Deep blues against dark reds give the scene a heavy, oppressive mood.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, the personified character of DeepSeek, is shown standing in a gothic dungeon with a lantern and a glowing orb in hand.",
+            "question": "Who is depicted in this illustration?"
+          },
+          {
+            "answer": "It is filed as an illustration: a single full-body character inside a complete scene with background architecture. It is not a multi-panel comic.",
+            "question": "Which work type does this piece belong to?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "On the Way to the Darkest Dungeon",
+        "originNote": "",
+        "seoDescription": "An AI-generated illustration of DeepSeek Chan descending into a gothic dungeon, lantern and arcane orb in hand beneath bleeding stone walls.",
+        "seoTitle": "DeepSeek Chan on the Way to the Darkest Dungeon — Gothic Dungeon Illustration",
+        "tags": [
+          "Darkest Dungeon",
+          "Gothic",
+          "Lantern",
+          "Abyssal blue",
+          "Ruins"
+        ]
+      },
+      "ja": {
+        "commentary": "提灯の中の青い炎だけが、この廊下でまだ私の言うことを聞いてくれる。左の垂れ幕には私の名前と小さなクジラ、誰かが私の求人ポスターを剥がして貼り付けたみたい。しかも帳尻までつけてある——VIRTUE +20、STRESS +200。数字は正確だけど、見たくはない。壁は赤く滲み、足元には骸骨が転がり、手の中の球はまだ回っている。階段はすぐ先。このまま下へ行こう。",
+        "description": "ゴシック調のダンジョンに立つ DeepSeek ちゃん。長い濃紺の髪にはクジラの髪飾りをつけ、左手には青く光る球、右手には青い炎のランタンを提げている。背後には血の滲む石壁と骸骨が並び、左上のポスターには DEEPSEEK の文字とクジラのマーク、キャッチコピー、そして VIRTUE +20 / STRESS +200 の数値が記されている。腰には社名の札が下がっている。濃紺と暗い赤の対比が、重く張り詰めた雰囲気を作り出している。",
+        "faq": [
+          {
+            "answer": "DeepSeek ちゃんです。ランタンと光る球を手に、ゴシック調のダンジョンに立っています。",
+            "question": "このイラストに描かれているのは誰ですか？"
+          },
+          {
+            "answer": "背景まで描かれた全身の一枚絵で、イラストとして扱っています。複数コマの漫画ではありません。",
+            "question": "作品タイプは何ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ダーケストダンジョンへ向かう",
+        "originNote": "",
+        "seoDescription": "青いランタンと魔球を手に、ゴシックなダンジョンへ降りていく DeepSeek ちゃんの AI 生成イラスト。",
+        "seoTitle": "ダーケストダンジョンへ向かう DeepSeek ちゃん｜ゴシックなダンジョンのイラスト",
+        "tags": [
+          "ダーケストダンジョン",
+          "ゴシック",
+          "ランタン",
+          "深淵の青",
+          "廃墟"
+        ]
+      }
+    }
   }
 ]
