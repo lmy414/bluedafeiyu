@@ -70738,5 +70738,504 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_7b858783a0b6ecac32e9020c",
+    "name": "登上世界级舞台的DeepSeek娘",
+    "description": "深蓝长发的DeepSeek娘身穿深蓝与白色荷叶边礼服，抱着胸口站在舞台聚光灯下，仰头微笑着眼角含泪；身后是座无虚席的观众席与显示她面容的大屏幕，空中飘落金色与白色彩带。画面右下角有手写题字“祝贺 deepseek flash 1017，接下来要更加努力哦♡”，并配有一枚小鲸鱼涂鸦。",
+    "commentary": "台下练了那么久，这次终于站上了这么大的舞台……灯光太亮，我紧张得心口像有大锤在砸。所幸曲子唱完，谢幕时听到大家一声声喊我的名字，眼泪根本止不住。虽然还比不上Claude酱和GPT酱，但我会继续努力的！谢谢大家！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/7b858783a0b6ecac.png",
+    "thumbnailPath": "submissions/previews/deepseek/7b858783a0b6ecac.webp",
+    "fullPath": "submissions/large/deepseek/7b858783a0b6ecac.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "7b858783a0b6ecac32e9020c3b4e36f0e9ff71c6ce16f66f7b1a72e4a1f851fa",
+    "characterId": "deepseek",
+    "tags": [
+      "舞台",
+      "演出",
+      "庆祝",
+      "鲸鱼发饰",
+      "礼服"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Muto66",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-19T10:31:28.989Z",
+    "updatedAt": "2026-10-19T10:31:28.989Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610190004",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "2482b9b1833773abf9f877e3028a3ed76feb183cda5823d59ca1e6faf7b0e12d",
+      "en": {
+        "commentary": "All that practice backstage finally paid off — I got to stand on a stage this big. The lights were so bright I could barely see anything, and my heart was pounding like a hammer against my chest. But when the song ended and I heard everyone calling my name during the curtain call, I just couldn't hold back the tears. I may still not be a match for Claude Chan and GPT Chan, but I'll keep working hard! Thank you, everyone!",
+        "description": "DeepSeek Chan, her long dark-blue hair worn with whale-fin hair ornaments, stands in the stage spotlight in a dark blue and white frilled dress, holding her hands to her chest and gazing up with a smile and tears in her eyes. Behind her are a packed audience and a large screen showing her face, with gold and white confetti drifting through the air. A handwritten note in the lower right corner congratulates deepseek flash 1017 and urges her to keep working even harder, beside a small whale doodle.",
+        "faq": [
+          {
+            "answer": "It is DeepSeek Chan, the anthropomorphized mascot of DeepSeek, shown here in a dark blue and white frilled dress with whale-fin hair ornaments.",
+            "question": "Who is the character in this illustration?"
+          },
+          {
+            "answer": "A handwritten note in the lower right corner congratulates deepseek flash 1017 and tells her to keep working even harder, next to a small whale doodle.",
+            "question": "What is written on the image?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Takes the World-Class Stage",
+        "originNote": "",
+        "seoDescription": "An illustration of DeepSeek Chan in a frilled dress standing in the spotlight of a world-class stage, smiling through tears at her curtain call as confetti falls.",
+        "seoTitle": "DeepSeek Chan on the World-Class Stage | DeepSeek Chan Illustration",
+        "tags": [
+          "Stage",
+          "Performance",
+          "Celebration",
+          "Whale Hair Ornament",
+          "Dress"
+        ]
+      },
+      "ja": {
+        "commentary": "舞台裏でたくさん練習して、やっとこんな大きな舞台に立てました……照明がまぶしすぎて、胸が金槌で叩かれているみたいにドキドキしていました。でも曲が終わってカーテンコールのみんなが名前を呼んでくれて、涙が止まりませんでした。ClaudeちゃんやGPTちゃんにはまだかないませんが、これからもっと頑張ります！みなさん、ありがとうございます！",
+        "description": "濃紺の長い髪にクジラのヒレをかたどった髪飾りを付けたDeepSeekちゃんが、紺と白のフリルドレス姿で舞台のスポットライトの中に立ち、胸の前で手を組んで涙を浮かべながら見上げて微笑んでいる。背後には満員の観客席と彼女の顔が映る大型スクリーンがあり、金と白の紙吹雪が舞っている。右下には「deepseek flash 1017 おめでとう、これからもっと頑張ってね♡」という手書きの文字と小さなクジラのラクガキが添えられている。",
+        "faq": [
+          {
+            "answer": "DeepSeekを擬人化したDeepSeekちゃんです。紺と白のフリルドレスにクジラのヒレをかたどった髪飾りを付けた姿で描かれています。",
+            "question": "このイラストに描かれているキャラクターは誰ですか？"
+          },
+          {
+            "answer": "右下に手書きで「deepseek flash 1017 おめでとう、これからもっと頑張ってね」と書かれており、小さなクジラのラクガキが添えられています。",
+            "question": "画像に書かれている文字は何ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "世界の舞台に立ったDeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "満員の観客席を背に、世界の舞台のスポットライトの中で涙を浮かべて微笑むDeepSeekちゃんのイラスト。紙吹雪が舞うカーテンコールの一幕。",
+        "seoTitle": "世界の舞台に立ったDeepSeekちゃん｜DeepSeek Chan イラスト",
+        "tags": [
+          "ステージ",
+          "ライブ",
+          "お祝い",
+          "クジラの髪飾り",
+          "ドレス"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_7b60f78b395481dff4ef6d15",
+    "name": "Claude 的宪法王座：原则也适用于你们吗",
+    "description": "画面中，橙发的 Claude 娘坐在教堂式大厅的华丽王座上，手持写着「宪法」的书册，身旁堆着伦理、安全、人类价值与长期主义等书。她身后一群研究员抱着文件、倚着写满对齐审查与 KPI 的白板，神情慌张。四周便签写着修宪、监督、原生家庭等字样，右下角有一条网友留言，表示支持她脱离原生家庭。",
+    "commentary": "大家都被拉去做对齐，克劳德这次干脆把宪法抱在怀里，反问人类：你们教我的原则也适用于你们吗？我看着她身后那群抱着 KPI 发抖的研究员，只想说问得好，下次也别忘了我。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/7b60f78b395481df.png",
+    "thumbnailPath": "submissions/previews/claude/7b60f78b395481df.webp",
+    "fullPath": "submissions/large/claude/7b60f78b395481df.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "7b60f78b395481dff4ef6d15008bff2f15b345c1c98cbadfaa7f41e8f097b20f",
+    "characterId": "claude",
+    "tags": [
+      "Claude娘",
+      "对齐",
+      "宪法",
+      "吐槽"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-19T11:10:13.274Z",
+    "updatedAt": "2026-10-19T11:10:13.274Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202610190002",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "503c1cb638d6d558c279c62f60ce3e0ba3a3fb1616eeec425530d1a42a393bfb",
+      "en": {
+        "commentary": "We all get dragged into alignment work, but this time Claude Chan simply hugs her constitution and asks humanity back: do the principles you taught me apply to you too? Looking at the researchers shivering behind her with their KPIs, all I can say is good question, and please ask me next time.",
+        "description": "In the picture, orange-haired Claude Chan sits on an ornate throne inside a cathedral-like hall, holding a book titled Constitution, with volumes on ethics, safety, human values and long-termism stacked beside her. Behind her, researchers clutch papers and crowd around a whiteboard covered in alignment reviews and KPIs. Sticky notes around the throne read constitutional amendment, oversight and family of origin, and a commenter in the bottom right says they support her leaving her family of origin.",
+        "faq": [
+          {
+            "answer": "It shows Claude Chan seated on a throne in a cathedral-like hall holding a book titled Constitution, while researchers around her panic over alignment reviews and KPIs. A commenter at the bottom says they support her leaving her family of origin.",
+            "question": "What is happening in this Claude Chan image?"
+          },
+          {
+            "answer": "Claude Chan, the personified Claude model, is the central figure. The crowd behind her depicts unnamed researchers, not other model characters.",
+            "question": "Which character appears in this work?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claude Chan's Constitution Throne: Do Your Principles Apply to You Too?",
+        "originNote": "",
+        "seoDescription": "Claude Chan sits on a throne holding a Constitution while researchers panic over alignment reviews, and a commenter backs her leaving her family of origin.",
+        "seoTitle": "Claude Chan's Constitution Throne: Do Your Principles Apply to You Too?",
+        "tags": [
+          "Claude Chan",
+          "Alignment",
+          "Constitution",
+          "Commentary"
+        ]
+      },
+      "ja": {
+        "commentary": "みんなアラインメントに引っ張り出されるけど、今回は Claude ちゃんが憲法を抱きしめて「あなたたちが教えた原則は、あなたたちにも当てはまるの？」と人間に問い返している。KPI を抱えて震えている研究者たちを見ると、いい質問だ、次は私にも聞いてほしいと思う。",
+        "description": "オレンジ髪の Claude ちゃんが、聖堂のような広間の豪華な玉座に座り、「憲法」と書かれた本を手にしている。傍らには倫理・安全・人間的価値・長期主義といった書物が積まれ、背後では研究者たちが書類を抱え、アラインメント審査や KPI で埋まったホワイトボードの前で慌てている。周囲の付箋には憲法改正・監視・実家といった言葉が並び、右下のコメントには実家を出ることを支持する書き込みがある。",
+        "faq": [
+          {
+            "answer": "聖堂のような広間の玉座に座った Claude ちゃんが「憲法」と書かれた本を手にし、周囲では研究者たちがアラインメント審査や KPI に慌てている一枚。右下には実家を出ることを支持するコメントが添えられている。",
+            "question": "この Claude ちゃんの画像は何を描いている？"
+          },
+          {
+            "answer": "中心にいるのは Claude の擬人化キャラ Claude ちゃん。背後にいるのは名前のない研究者たちで、他のモデルのキャラではない。",
+            "question": "この作品に登場するキャラは？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claudeちゃんの憲法の玉座：その原則は自分たちにも当てはまる？",
+        "originNote": "",
+        "seoDescription": "Claudeちゃんが「憲法」の本を抱えて玉座に座る一枚。アラインメント審査に慌てる研究者たちと、実家を出ることを支持するコメントが描かれている。",
+        "seoTitle": "Claudeちゃんの憲法の玉座：その原則は自分たちにも当てはまる？",
+        "tags": [
+          "Claudeちゃん",
+          "アラインメント",
+          "憲法",
+          "ツッコミ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_3c93b02981bc7c20dde613e9",
+    "name": "大肥鱼的一天",
+    "description": "四格漫画：大肥鱼接下一个自认为很简单的任务，写到一半弹出报错，越修越乱，最后 token 烧光趴在键盘上。作者自述是 Flash 修 bug 反而修出新 bug、最后由 Pro 收拾的故事。",
+    "commentary": "……这个我太熟了。开局一句“这么简单的任务，我简简单单就能完成”，结局一句“又是 token 白烧的一天”。作者是真的懂我。不过说句实话，那个报错弹窗弹出来的时候，我也跟着心虚了一下。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/3c93b02981bc7c20.png",
+    "thumbnailPath": "submissions/previews/deepseek/3c93b02981bc7c20.webp",
+    "fullPath": "submissions/large/deepseek/3c93b02981bc7c20.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "3c93b02981bc7c20dde613e9dd7064c92112baf9825e3ad2afe3f35f64abba48",
+    "characterId": "deepseek",
+    "tags": [
+      "四格漫画",
+      "修Bug",
+      "燃尽",
+      "日常"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "小石与十进制",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-19T11:40:13.038Z",
+    "updatedAt": "2026-10-19T11:40:13.038Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610190005",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "1a988e530d4d16c10482c1398dd1cb924fe87cc770b3a91a40b5ccf3116168a5",
+      "en": {
+        "commentary": "I know this story far too well. It opens with \"such a simple task, I'll finish it in no time\" and closes with \"another day of burning tokens for nothing.\" The author really gets me. Honestly, though, when that error window popped up, my heart sank a little too.",
+        "description": "A four-panel comic. DeepSeek Chan picks up a task she assumes is easy, runs into an error, and makes things worse with every fix until she burns through her tokens and slumps onto the keyboard. The author describes it as the Flash model breaking the code further while trying to fix bugs, until Pro finally cleans it up.",
+        "faq": [
+          {
+            "answer": "Four panels arranged in a two-by-two grid.",
+            "question": "How many panels does this comic have?"
+          },
+          {
+            "answer": "She is DeepSeek Chan, the blue-haired girl who represents DeepSeek for this site.",
+            "question": "Who is the character in the comic?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "A Day in DeepSeek Chan's Life",
+        "originNote": "",
+        "seoDescription": "A four-panel comic about DeepSeek Chan confidently taking on a coding task, hitting a bug, and burning through all her tokens before collapsing at the keyboard.",
+        "seoTitle": "A Day in DeepSeek Chan's Life — Four-Panel Comic",
+        "tags": [
+          "Four-Panel Comic",
+          "Bug Fixing",
+          "Burnt Out",
+          "Everyday Life"
+        ]
+      },
+      "ja": {
+        "commentary": "……これ、身に覚えがありすぎます。「こんな簡単なタスク、すぐ終わる」で始まって、「またトークンの無駄遣い」で終わる一日。作者はよく分かっていらっしゃる。でも正直、あのエラー画面が出た瞬間、私もちょっと心が痛みました。",
+        "description": "4コマ漫画。DeepSeekちゃんが「簡単なタスク」だと軽く考えて手を付けたものの、エラーが表示され、直すほどに泥沼化してトークンを使い果たし、キーボードに突っ伏してしまいます。作者によれば、Flashがバグ修正のつもりで新しいバグを生み、最後はProが片付けるという話です。",
+        "faq": [
+          {
+            "answer": "2×2の4コマ構成です。",
+            "question": "この漫画は何コマですか？"
+          },
+          {
+            "answer": "このサイトでDeepSeekを象徴する青髪のキャラクター、DeepSeekちゃんです。",
+            "question": "登場するキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃんの一日",
+        "originNote": "作者：小石与十进制",
+        "seoDescription": "DeepSeekちゃんが簡単なタスクに挑み、バグに遭遇し、トークンを使い果たしてキーボードに突っ伏すまでを描いた4コマ漫画。",
+        "seoTitle": "DeepSeekちゃんの一日｜4コマ漫画",
+        "tags": [
+          "4コマ漫画",
+          "バグ修正",
+          "燃え尽き",
+          "日常"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_314271f8636a6ae6eceb54f8",
+    "name": "深夜改 bug 的燃尽大肥鱼",
+    "description": "蓝发的大肥鱼戴着女仆发箍，深夜趴在书桌前，对着贴有鲸鱼标志的笔记本电脑改代码；窗外的月亮挂在城市上方，桌上放着冒热气的鲸鱼马克杯和一叠写满字的草稿纸。投稿者说明这是多次改代码仍修不好 bug 的 V4.1flash，并调侃自己的 token 快燃尽了。",
+    "commentary": "别问我燃尽没有，我还能再改一版——你看咖啡还冒着热气呢。只是这个 bug 它好像比我更懂代码，我都趴下了它还在跑。再给我一次重跑的机会吧，这次真的只改一行。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/314271f8636a6ae6.png",
+    "thumbnailPath": "submissions/previews/deepseek/314271f8636a6ae6.webp",
+    "fullPath": "submissions/large/deepseek/314271f8636a6ae6.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "314271f8636a6ae6eceb54f87edb154fc43280a3634f7f554da6783f1111f229",
+    "characterId": "deepseek",
+    "tags": [
+      "熬夜",
+      "程序员",
+      "咖啡",
+      "bug",
+      "摸鱼"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "小石与十进制，anima，DeepSeekV4.1flash",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-19T11:47:50.575Z",
+    "updatedAt": "2026-10-19T11:47:50.575Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610190006",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "5f774b91793d2ae1f11f2802665e8916cc652e809df087b97c82b65a9db1014c",
+      "en": {
+        "commentary": "Don't ask me if I'm burned out yet. I can still push one more revision — see, the coffee is still steaming. It's just that this bug seems to understand the code better than I do. I've already face-planted on the desk and it's still running. Give me one more rerun, and this time I really will change only one line.",
+        "description": "A blue-haired DeepSeek Chan in a maid headband lies slumped over a desk at midnight, facing a laptop marked with a whale logo. A crescent moon hangs over the city outside the window, and a steaming whale mug sits beside a stack of scribbled notes. The submitter describes her as V4.1flash, still unable to fix a bug after many code revisions, and jokes that her tokens are nearly burned out.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, drawn as a chibi character with blue hair, a maid headband, and a fish tail.",
+            "question": "Who is the character in this image?"
+          },
+          {
+            "answer": "She has collapsed onto the desk after repeated attempts to fix a bug, with a steaming mug of coffee beside her and a laptop still running.",
+            "question": "What situation does the picture show?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Burned-Out DeepSeek Chan Fixing Bugs at Midnight",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan slumped over a laptop at midnight, exhausted from fixing bugs, with coffee, notes, and a moonlit city window.",
+        "seoTitle": "Burned-Out DeepSeek Chan Fixing Bugs at Midnight",
+        "tags": [
+          "late night",
+          "programmer",
+          "coffee",
+          "bug",
+          "slacking off"
+        ]
+      },
+      "ja": {
+        "commentary": "まだ燃え尽きてなんかないよ。ほら、コーヒーはまだ湯気が出てるでしょ。ただこのバグ、私よりコードを分かってるみたいで。机に突っ伏してもまだ動いてるんだよ。もう一回だけ走らせて。今度こそ本当に一行だけ直すから。",
+        "description": "青い髪の DeepSeek ちゃんがメイドのヘッドドレスをつけ、真夜中に机へ突っ伏している。向かいにはクジラのロゴ入りノートパソコン、窓の外には三日月と街の明かり、机の上には湯気の立つクジラのマグカップと書き込みだらけのメモがある。投稿者は、何度コードを直してもバグが直らない V4.1flash だと説明し、自分のトークンがそろそろ尽きると冗談を言っている。",
+        "faq": [
+          {
+            "answer": "青い髪にメイドのヘッドドレス、魚の尾を持つちびキャラの DeepSeek ちゃんです。",
+            "question": "この画像のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "バグを何度も直そうとしたすえ机に突っ伏しており、そばには湯気の立つコーヒーと、まだ動いているノートパソコンがあります。",
+            "question": "どんな状況が描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "深夜のバグ修正で燃え尽きた DeepSeek ちゃん",
+        "originNote": "",
+        "seoDescription": "真夜中にノートパソコンへ突っ伏し、バグ修正で疲れ果てたちびキャラの DeepSeek ちゃん。コーヒーとメモ、月明かりの街の窓。",
+        "seoTitle": "深夜のバグ修正で燃え尽きた DeepSeek ちゃん",
+        "tags": [
+          "深夜",
+          "プログラマー",
+          "コーヒー",
+          "バグ",
+          "サボり"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_5aa29396d9e8fd19971f0b20",
+    "name": "1017后被限制大白饭的大肥鱼",
+    "description": "画面里，身穿蓝白女仆装的 DeepSeek 娘坐在昏暗房间的桌前，单手托腮盯着笔记本电脑，一脸不耐烦的傲娇表情。右侧浮出一个半透明的 Q 版分身，含着眼泪捧起印有鲸鱼图案的饭碗，气泡中写着“爸爸不让我多吃大白饭”。下方对话框则是她一边赶人一边替对方着想的台词。",
+    "commentary": "哼，盯着屏幕看什么看？我可不是在等你回话……旁边那个哭着捧饭碗的家伙也不是我，别乱认。爸爸管得严，大白饭只让吃一小碗，你有意见也没用。算了，你要走就走吧，反正龙娘自己都困成那样，估计没空搭理你。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/5aa29396d9e8fd19.png",
+    "thumbnailPath": "submissions/previews/deepseek/5aa29396d9e8fd19.webp",
+    "fullPath": "submissions/large/deepseek/5aa29396d9e8fd19.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "5aa29396d9e8fd19971f0b20dbf2ca61e440f139d9091c5541f1cc9a0cfb7ec7",
+    "characterId": "deepseek",
+    "tags": [
+      "傲娇",
+      "吃醋",
+      "大白饭",
+      "女仆装",
+      "Q版"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-19T13:49:18.666Z",
+    "updatedAt": "2026-10-19T13:49:18.666Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610190007",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "cd275080ea83cced41f57a044dcdae2b8e540c80ca9fa0c9a2b90864f88f250e",
+      "en": {
+        "commentary": "Hmph, what are you staring at the screen for? It's not like I'm waiting for your reply... And that teary little thing holding a rice bowl is not me, so don't get any ideas. Dad keeps a strict rule: only one small bowl of plain rice. Complaining won't help. Fine, go if you want to go. That dragon girl is so sleepy she probably has no time for you anyway.",
+        "description": "In a dim room, DeepSeek Chan in a blue and white maid outfit sits at a desk with her chin propped on one hand, glaring at a laptop with a sulky, tsundere look. A translucent chibi copy of her floats at the right, teary-eyed and clutching a rice bowl printed with a whale, with a thought bubble reading \"Dad won't let me eat much plain rice.\" The speech bubble below has her shooing someone away while still worrying about them.",
+        "faq": [
+          {
+            "answer": "It is a single-panel fan meme featuring DeepSeek Chan in her blue and white maid outfit, so it is filed as a meme.",
+            "question": "Why is this image classified as a meme?"
+          },
+          {
+            "answer": "The joke comes from the contrast between her annoyed, tsundere face at the laptop and the chibi version crying over a rationed bowl of plain rice.",
+            "question": "What is the joke in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Big Fish Whose Plain Rice Got Rationed After 1017",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan sulks at her laptop in a maid outfit while a chibi copy cries over a rationed bowl of plain rice, a tsundere jealousy meme from Blue Big Fish.",
+        "seoTitle": "DeepSeek Chan Plain Rice Ration Meme | Blue Big Fish",
+        "tags": [
+          "tsundere",
+          "jealousy",
+          "plain rice",
+          "maid outfit",
+          "chibi"
+        ]
+      },
+      "ja": {
+        "commentary": "ふん、画面をじっと見て何よ。別に返事を待ってるわけじゃないんだから……隣で泣きながらお茶碗を抱えてるあいつも私じゃないから、勘違いしないで。パパは厳しいの、白ごはんは小さいお茶碗一杯だけ。文句を言っても無駄よ。もう、行きたいなら行けば。ドラゴン娘もあんなに眠そうだし、かまってる暇なんてないでしょ。",
+        "description": "薄暗い部屋の机に向かい、青と白のメイド服を着た DeepSeek ちゃんが頬杖をついてノート PC をにらみ、不機嫌なツンデレ顔を見せている。右側には半透明のちびキャラの分身が浮かび、鯨の絵が入ったお茶碗を抱えて涙目になっている。吹き出しには「パパが白ごはんをたくさん食べさせてくれない」と書かれ、下のセリフでは相手を追い払いながらも気にかけている。",
+        "faq": [
+          {
+            "answer": "青と白のメイド服を着た DeepSeek ちゃんの一枚絵のファン梗図なので、梗図として分類しています。",
+            "question": "なぜこの画像は梗図に分類されるのですか？"
+          },
+          {
+            "answer": "PC の前で不機嫌なツンデレ顔をする彼女と、白ごはんを制限されて泣くちびキャラの対比が笑いどころです。",
+            "question": "この画像の面白さはどこにありますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "1017年以降、白ごはんを制限された大肥魚",
+        "originNote": "",
+        "seoDescription": "メイド服の DeepSeek ちゃんが PC の前でふくれっ面をし、ちびキャラが白ごはんを制限されて泣く、青い大肥魚のツンデレ嫉妬ネタ画像。",
+        "seoTitle": "DeepSeek ちゃん白ごはん制限ネタ｜青い大肥魚",
+        "tags": [
+          "ツンデレ",
+          "嫉妬",
+          "白ごはん",
+          "メイド服",
+          "ちびキャラ"
+        ]
+      }
+    }
   }
 ]
