@@ -70063,7 +70063,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-18T16:22:20.475Z",
-    "updatedAt": "2026-10-18T16:22:20.476Z",
+    "updatedAt": "2026-10-18T22:17:23.808Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202610180010",
@@ -70227,6 +70227,106 @@
           "スキル",
           "プレイヤー",
           "押しつけ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_b15a098e8f62d0340ee97d75",
+    "name": "1017大胜利",
+    "description": "蓝发鲸耳的 DeepSeek 娘身穿深蓝女仆装，在庭院里举镜自拍，眨眼并比出胜利手势；她身后两名同伴面朝下趴在地上，头顶浮着晕眩的螺旋符号，画面形成鲜明的胜负对比。",
+    "commentary": "十月十七，大胜利！难得三人同框，镜头里当然只有本小姐最上镜——身后那两位先趴着缓缓，照片我先收好，等她们醒了再说。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/b15a098e8f62d034.png",
+    "thumbnailPath": "submissions/previews/deepseek/b15a098e8f62d034.webp",
+    "fullPath": "submissions/large/deepseek/b15a098e8f62d034.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "b15a098e8f62d0340ee97d75b01147f97ebec29153fac06f280789a9e444ad9e",
+    "characterId": "deepseek",
+    "tags": [
+      "自拍",
+      "女仆装",
+      "胜利手势",
+      "晕眩"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "cirnumia",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-19T00:28:53.782Z",
+    "updatedAt": "2026-10-19T00:28:53.782Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610190001",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude",
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "9f9846059c647475eab3034791e317c0ff76b58f1ce2f430eecba86a47c2498e",
+      "en": {
+        "commentary": "October 17 — a great victory! It is rare for all three of us to share one shot, and of course I am the only one who looks good in it. Those two behind me can lie there and catch their breath; I will hold on to the photo and show them once they wake up.",
+        "description": "DeepSeek Chan, a blue-haired girl with whale ears and tail, wears a navy maid outfit and takes a selfie in a courtyard, winking and flashing a victory sign. Behind her, two companions lie face down on the ground with dizzy spirals spinning above their heads, forming a clear winner-versus-loser contrast.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan is in the foreground taking a selfie. Claude Chan and GPT Chan appear collapsed in the background.",
+            "question": "Which characters appear in this sticker?"
+          },
+          {
+            "answer": "It plays on a \"great victory\" gag: DeepSeek Chan cheerfully takes a triumphant selfie while the other two girls lie dizzy on the ground.",
+            "question": "What is the joke behind this picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "October 17: A Great Victory",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan snaps a victory selfie in a courtyard while Claude Chan and GPT Chan lie dizzy behind her — an AI girl meme sticker.",
+        "seoTitle": "DeepSeek Chan Victory Selfie — October 17, A Great Victory",
+        "tags": [
+          "selfie",
+          "maid outfit",
+          "victory sign",
+          "dizzy"
+        ]
+      },
+      "ja": {
+        "commentary": "10月17日は大勝利！ 三人そろって同じ写真に収まるなんて珍しいけど、映えるのは当然この私だけ。後ろの二人はしばらく寝かせておいて、写真は私が預かっておくね。目が覚めたら見せてあげる。",
+        "description": "青い髪にクジラの耳としっぽを持つ DeepSeek ちゃんが、紺色のメイド服姿で中庭で自撮りをし、ウインクしながらブイサインを決めている。後ろでは仲間の二人がうつ伏せに倒れ、頭の上にぐるぐるのマークが浮かんでいる。",
+        "faq": [
+          {
+            "answer": "手前で自撮りをしているのが DeepSeek ちゃんです。後ろに倒れているのが Claude ちゃんと GPT ちゃんです。",
+            "question": "この画像にはどのキャラクターが登場しますか？"
+          },
+          {
+            "answer": "「大勝利」のギャグを描いた一枚です。DeepSeek ちゃんが得意げに勝利の自撮りをする一方、ほかの二人は目を回して地面に倒れています。",
+            "question": "この画像の面白さはどこにありますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "10月17日 大勝利",
+        "originNote": "",
+        "seoDescription": "中庭で勝利の自撮りをする DeepSeek ちゃんと、その後ろで目を回して倒れている Claude ちゃん・GPT ちゃんのAI娘スタンプ。",
+        "seoTitle": "DeepSeek ちゃんの勝利の自撮り｜10月17日 大勝利",
+        "tags": [
+          "自撮り",
+          "メイド服",
+          "ブイサイン",
+          "めまい"
         ]
       }
     }
