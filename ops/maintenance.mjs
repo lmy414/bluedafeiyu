@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { hostname } from 'node:os';
 import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
@@ -8,10 +9,10 @@ export const REPORT_ROOT = '/var/lib/dafeiyu-maintenance';
 export const RELEASE_GROUPS = [
   { root: '/srv/www/dafeiyu/releases', current: '/srv/www/dafeiyu/current', pattern: /^\d{8}-\d{6}$/ },
   { root: '/srv/apps/dafeiyu-admin/releases', current: '/srv/apps/dafeiyu-admin/app', pattern: /^admin-[a-f0-9]+-\d{8}-\d{6}-\d+$/ },
-  { root: '/srv/www/codex/releases', current: '/srv/www/codex/current', pattern: /^\d{8}-\d{6}$/ },
 ];
+export const HEALTH_URLS = ['https://xn--pssy23gqgbz2d718b.com/'];
 export const FILE_RULES = [
-  ...['/var/log/nginx', '/var/log/letsencrypt', '/var/log/dshregistry', '/srv/www/dafeiyu/logs',
+  ...['/var/log/nginx', '/var/log/letsencrypt', '/srv/www/dafeiyu/logs',
     '/srv/apps/dafeiyu-admin/logs', '/srv/apps/hermes-studio/data/logs'].map((root) => ({ root, days: 30, archivedOnly: true })),
   { root: '/root/.npm/_cacache', days: 14 },
   { root: '/root/.npm/_logs', days: 30 },
@@ -101,18 +102,18 @@ export function runCommand(command, args, { timeout = 180000 } = {}) {
     });
   });
 }
-async function diskUsage() {
-  const data = await fs.statfs('/');
+export async function diskUsage(directory, statfs = fs.statfs) {
+  const data = await statfs(directory);
   const used = (data.blocks - data.bfree) * data.bsize;
   const available = data.bavail * data.bsize;
-  return { used, available, percent: Math.ceil(used / (used + available) * 100) };
+  return { path: directory, used, available, percent: Math.ceil(used / (used + available) * 100) };
 }
 export function formatReport(report) {
   const gib = (value) => (Number(value || 0) / 1073741824).toFixed(2);
   const time = new Date(report.finishedAt || report.startedAt).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false });
   const lines = [
     `服务器定期维护｜${report.status === 'success' ? '完成' : report.status === 'dry-run' ? '清理预览' : '存在失败项'}`,
-    `服务器：aliyun-hk｜时间：${time}`,
+    `服务器：${report.serverName || '未记录'}｜时间：${time}`,
     `过期原图${report.status === 'dry-run' ? '候选' : '清理'}：${report.status === 'dry-run' ? report.originals?.due || 0 : report.originals?.released || 0} 条（保留 14 天，投稿记录保留）`,
     `旧发布版本：${report.releases?.reduce((sum, item) => sum + item.count, 0) || 0} 个（各保留当前版本及最近两个历史版本）`,
     `过期日志和缓存：${report.files?.reduce((sum, item) => sum + item.count, 0) || 0} 个文件`,
@@ -123,9 +124,11 @@ export function formatReport(report) {
   for (const error of report.errors || []) lines.push(`失败：${error.step}｜${error.message}`);
   return lines.join('\n');
 }
-export async function maintain({ apply = false, command = runCommand, releaseGroups = RELEASE_GROUPS, fileRules = FILE_RULES } = {}) {
-  const report = { schema: 'dafeiyu-maintenance/1', startedAt: new Date().toISOString(), status: 'running', errors: [], releases: [], files: [] };
-  report.before = await diskUsage();
+export async function maintain({ apply = false, command = runCommand, releaseGroups = RELEASE_GROUPS, fileRules = FILE_RULES,
+  diskPath = process.env.MAINTENANCE_DISK_PATH || '/srv/apps/dafeiyu',
+  serverName = process.env.MAINTENANCE_SERVER_NAME || hostname(), healthUrls = HEALTH_URLS } = {}) {
+  const report = { schema: 'dafeiyu-maintenance/1', serverName, startedAt: new Date().toISOString(), status: 'running', errors: [], releases: [], files: [] };
+  report.before = await diskUsage(diskPath);
   async function step(name, fn) {
     try { return await fn(); } catch (error) { report.errors.push({ step: name, message: String(error.message).slice(0, 1000) }); return null; }
   }
@@ -164,13 +167,13 @@ export async function maintain({ apply = false, command = runCommand, releaseGro
     });
     const errorsBeforeHealth = report.errors.length;
     await step('服务检查', () => command('/usr/bin/systemctl', ['is-active', 'nginx', 'dafeiyu-admin', 'dafeiyu-submission']));
-    for (const url of ['https://feiyufans.com/', 'https://codex.dshregistry.xyz/', 'https://dshregistry.xyz/']) await step(`网站检查：${url}`, async () => {
+    for (const url of healthUrls) await step(`网站检查：${url}`, async () => {
       const status = (await command('/usr/bin/curl', ['--max-time', '15', '-s', '-o', '/dev/null', '-w', '%{http_code}', url])).trim();
       if (status !== '200') throw new Error(`HTTP ${status}`);
     });
     report.healthOk = report.errors.length === errorsBeforeHealth;
   }
-  report.after = await diskUsage();
+  report.after = await diskUsage(diskPath);
   report.finishedAt = new Date().toISOString();
   report.status = report.errors.length ? 'partial' : apply ? 'success' : 'dry-run';
   return report;
@@ -179,10 +182,8 @@ export async function readReport({ reportRoot = REPORT_ROOT, now = Date.now() } 
   const report = JSON.parse(await fs.readFile(path.join(reportRoot, 'latest.json'), 'utf8'));
   const age = now - Date.parse(report.finishedAt || '');
   if (!Number.isFinite(age) || age > 20 * 60 * 60 * 1000 || age < -60000) throw new Error('没有最近 20 小时内的维护报告，请检查定时任务，不能把旧报告当成本次完成');
-  const local = new Date(now + 8 * 3600000);
-  let lastScheduledRun = Date.UTC(local.getUTCFullYear(), local.getUTCMonth(), local.getUTCDate(), 4, 15) - 8 * 3600000;
-  if (now < lastScheduledRun) lastScheduledRun -= DAY;
-  if (Date.parse(report.startedAt || report.finishedAt) < lastScheduledRun) throw new Error('04:15 的本轮维护尚未产生报告，请检查定时任务，旧报告不会重新投递');
+  const lastScheduledRun = Math.floor((now - 15 * 60000) / 3600000) * 3600000 + 15 * 60000;
+  if (Date.parse(report.startedAt || report.finishedAt) < lastScheduledRun) throw new Error('每小时 15 分的本轮维护尚未产生报告，请检查定时任务，旧报告不会重新投递');
   return report;
 }
 async function main() {
@@ -194,7 +195,7 @@ async function main() {
       const report = await readReport();
       console.log(args.includes('--json') ? JSON.stringify(report) : formatReport(report));
     } catch (error) {
-      console.log(`服务器定期维护｜报告异常\n服务器：aliyun-hk\n${error.message}`);
+      console.log(`服务器定期维护｜报告异常\n服务器：${process.env.MAINTENANCE_SERVER_NAME || hostname()}\n${error.message}`);
       process.exitCode = 1;
     }
     return;

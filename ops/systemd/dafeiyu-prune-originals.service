@@ -1,5 +1,5 @@
 [Unit]
-Description=蓝色大肥鱼 · 每日清理过期原图、旧发布版本、日志和缓存
+Description=蓝色大肥鱼 · 清理过期原图、旧发布版本、日志和缓存
 After=dafeiyu-submission.service
 
 [Service]

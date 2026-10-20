@@ -1,8 +1,8 @@
 [Unit]
-Description=蓝色大肥鱼 · 每日清理过期投稿原图
+Description=蓝色大肥鱼 · 每小时清理过期文件和旧发布版本
 
 [Timer]
-OnCalendar=*-*-* 04:15:00
+OnCalendar=*-*-* *:15:00
 Persistent=true
 Unit=dafeiyu-prune-originals.service
 

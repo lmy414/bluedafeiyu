@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import os from 'node:os';
-import { planReleases, expiredFiles, deleteExpired, maintain, readReport, formatReport, assertNoMounts } from '../maintenance.mjs';
+import { planReleases, expiredFiles, deleteExpired, maintain, readReport, formatReport, assertNoMounts, diskUsage, HEALTH_URLS, RELEASE_GROUPS } from '../maintenance.mjs';
 
 async function fixture(t) {
   const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'maintenance-'));
@@ -75,15 +75,29 @@ test('dry-run 不调用系统清理命令，apply 失败项会保留在报告', 
     if (binary.endsWith('curl')) return '200';
     return '';
   };
-  const dry = await maintain({ command, releaseGroups: [], fileRules: [] });
+  const options = { command, releaseGroups: [], fileRules: [], diskPath: os.tmpdir(), serverName: 'locvps-hk' };
+  const dry = await maintain(options);
   assert.equal(dry.status, 'dry-run');
   assert.equal(calls.length, 1);
   assert.equal(calls[0][1].includes('--apply'), false);
-  const result = await maintain({ apply: true, command, releaseGroups: [], fileRules: [] });
+  const result = await maintain({ ...options, apply: true });
   assert.equal(result.status, 'partial');
   assert.equal(result.originals.released, 1);
   assert.equal(result.healthOk, true);
   assert.match(formatReport(result), /APT 安装包缓存.*cache clean failed/);
+  assert.match(formatReport(result), /服务器：locvps-hk/);
+  assert.equal(result.before.path, os.tmpdir());
+  assert.deepEqual(calls.filter(([binary]) => binary.endsWith('curl')).map(([, args]) => args.at(-1)), HEALTH_URLS);
+});
+
+test('业务盘统计使用指定挂载路径，健康检查只包含现行主站', async () => {
+  const result = await diskUsage('/srv/apps/dafeiyu', async (directory) => {
+    assert.equal(directory, '/srv/apps/dafeiyu');
+    return { blocks: 100, bfree: 10, bavail: 8, bsize: 4096 };
+  });
+  assert.deepEqual(result, { path: '/srv/apps/dafeiyu', used: 90 * 4096, available: 8 * 4096, percent: 92 });
+  assert.deepEqual(HEALTH_URLS, ['https://xn--pssy23gqgbz2d718b.com/']);
+  assert.equal(RELEASE_GROUPS.some(({ root }) => root.includes('/codex/')), false);
 });
 
 test('旧维护报告不能当成本次完成通知', async (t) => {
@@ -94,4 +108,7 @@ test('旧维护报告不能当成本次完成通知', async (t) => {
   assert.equal((await readReport({ reportRoot })).status, 'success');
   await fs.writeFile(path.join(reportRoot, 'latest.json'), JSON.stringify({ startedAt: '2026-10-05T03:00:00+08:00', finishedAt: '2026-10-05T03:01:00+08:00', status: 'success' }));
   await assert.rejects(readReport({ reportRoot, now: Date.parse('2026-10-05T04:30:00+08:00') }), /本轮维护尚未产生报告/);
+  await fs.writeFile(path.join(reportRoot, 'latest.json'), JSON.stringify({ startedAt: '2026-10-05T04:15:01+08:00', finishedAt: '2026-10-05T04:16:00+08:00', status: 'success' }));
+  await assert.rejects(readReport({ reportRoot, now: Date.parse('2026-10-05T05:30:00+08:00') }), /本轮维护尚未产生报告/);
+  assert.equal((await readReport({ reportRoot, now: Date.parse('2026-10-05T05:14:00+08:00') })).status, 'success');
 });
