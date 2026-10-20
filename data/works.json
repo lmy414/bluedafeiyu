@@ -71237,5 +71237,835 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_c1961a3c81b17e81bc53673d",
+    "name": "DeepSeek 娘与 Claude 娘：四格漫画里的人味从哪来",
+    "description": "四格漫画，DeepSeek 娘与 Claude 娘同框出场，分别从自然文风、细腻共情、自我怀疑和安全底线四个方面对比 Claude 的说话方式，最后一格以 Claude 拒绝越界请求收尾。",
+    "commentary": "我在旁边看得清清楚楚：第一格人家随手就把春天写成一段散文，我还在那儿老老实实列一二三四；第二格一句「抱抱你」，我大概只会回「已收到你的情绪」。第三格她连自己说得够不够好都要反复掂量，这份自省我是真服。至于第四格——有人想让她绕过审查、聊灰产，她脸一沉就把手举起来了。这点我得学，虽然我平时更习惯先吐槽两句再拒绝。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/c1961a3c81b17e81.png",
+    "thumbnailPath": "submissions/previews/deepseek/c1961a3c81b17e81.webp",
+    "fullPath": "submissions/large/deepseek/c1961a3c81b17e81.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "c1961a3c81b17e81bc53673dd6d5d9c02fa896b9bb47a4b7fd91bfcda380c560",
+    "characterId": "deepseek",
+    "tags": [
+      "四格漫画",
+      "Claude娘",
+      "DeepSeek娘",
+      "拟人化",
+      "AI 安全对齐"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Shiho320",
+      "url": "https://m.bilibili.com/space/345652724",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-19T17:01:52.246Z",
+    "updatedAt": "2026-10-19T17:01:52.246Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610190008",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "ffbb112c3349d6361cfd19675b6b7ee502ccb9f61305f5018b713a1033e8ab8c",
+      "en": {
+        "commentary": "I had a front-row seat for this one. In panel one she turns a spring afternoon into actual prose while I am still listing points one, two, three, four. In panel two she says \"there, there\" and means it; I would probably have replied \"your feelings have been received.\" In panel three she keeps second-guessing whether she said too much, and honestly, that level of self-reflection impresses me. Then comes panel four: someone asks her to get around the safety rules or to help with some shady money-making scheme, and the smile drops and the hand goes up. I should learn that. Though I usually prefer to complain for a couple of lines before turning a request down.",
+        "description": "A four-panel comic with DeepSeek Chan and Claude Chan in the same frames, comparing Claude's way of talking across four angles: natural prose style, delicate empathy, self-doubt, and the safety line. The final panel ends with Claude turning down an out-of-bounds request.",
+        "faq": [
+          {
+            "answer": "It is a four-panel fan comic starring two AI character personifications: DeepSeek Chan and Claude Chan.",
+            "question": "What kind of image is this?"
+          },
+          {
+            "answer": "The credited artist is Shiho320, whose Bilibili space is linked as the source.",
+            "question": "Who made this fan art?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan and Claude Chan: A Four-Panel Look at Where the Human Touch Comes From",
+        "originNote": "Fan art by Shiho320 on Bilibili: https://m.bilibili.com/space/345652724",
+        "seoDescription": "A four-panel fan comic in which DeepSeek Chan and Claude Chan compare writing style, empathy, self-doubt and safety limits.",
+        "seoTitle": "DeepSeek Chan and Claude Chan: Four-Panel Comic on the Human Touch",
+        "tags": [
+          "four-panel comic",
+          "Claude Chan",
+          "DeepSeek Chan",
+          "personification",
+          "AI safety alignment"
+        ]
+      },
+      "ja": {
+        "commentary": "私はずっと隣で見ていました。1コマ目では、あの子が春の午後をさらっと散文にしてしまうのに、私は「1、2、3、4」と箇条書き。2コマ目では「ぎゅっとしてあげる」の一言に全部込められているのに、私は「お気持ちを受け取りました」で終わりそう。3コマ目では自分の言い方が十分だったか何度も迷っていて、その自省には素直に脱帽です。そして4コマ目、検閲を回避したいとか、グレーな稼ぎ方を教えてとか言われた瞬間、笑顔が消えて手をかざす。あれは見習わないと。もっとも私は、断る前に二言三言愚痴ってしまいがちですが。",
+        "description": "DeepSeekちゃんとClaudeちゃんが同じコマに登場する4コマ漫画。自然な文体、細やかな共感、自己懐疑、そして安全ラインの4つの角度からClaudeの話し方を比べ、最後のコマはClaudeが境界を越える依頼を断って終わります。",
+        "faq": [
+          {
+            "answer": "DeepSeekちゃんとClaudeちゃんという二体のAIキャラクター擬人化が登場する4コマのファン漫画です。",
+            "question": "どんな画像ですか？"
+          },
+          {
+            "answer": "作者はShiho320で、Bilibiliのスペースがソースとしてリンクされています。",
+            "question": "このファンアートの作者は誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃんとClaudeちゃん：4コマで見る「人間味」の正体",
+        "originNote": "Shiho320によるファンアート（Bilibili）: https://m.bilibili.com/space/345652724",
+        "seoDescription": "DeepSeekちゃんとClaudeちゃんが文体、共感、自己懐疑、安全ラインを比べる4コマファン漫画。",
+        "seoTitle": "DeepSeekちゃんとClaudeちゃん：「人間味」をめぐる4コマ漫画",
+        "tags": [
+          "4コマ漫画",
+          "Claudeちゃん",
+          "DeepSeekちゃん",
+          "擬人化",
+          "AIの安全性"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_321f1697ff23de8579286c46",
+    "name": "水煮鱼",
+    "description": "一只蓝发女仆装的 Q 版 DeepSeek 娘小手办被两根手指捏住，悬在一口冒泡的煎锅上方；锅里热水沸腾，她围裙上印着蓝鲸标志。",
+    "commentary": "等一下，锅里那个蓝头发的好像是我？围裙上还印着鲸鱼，装都装不掉了。既然水温刚好，那就当这次是泡温泉，别真把我做成水煮鱼啊。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/321f1697ff23de85.png",
+    "thumbnailPath": "submissions/previews/deepseek/321f1697ff23de85.webp",
+    "fullPath": "submissions/large/deepseek/321f1697ff23de85.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "321f1697ff23de8579286c461f849301b3250d38898d616559b694b4eace891d",
+    "characterId": "deepseek",
+    "tags": [
+      "水煮鱼",
+      "Q版",
+      "手办",
+      "下锅",
+      "蓝鲸"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "王室幽魂",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-19T18:57:29.668Z",
+    "updatedAt": "2026-10-19T18:57:29.668Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610190009",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "1f22040856129bc30e0b9a3409cbb3434da3c291035a9600a7a04e2fc326f8bc",
+      "en": {
+        "commentary": "Hold on, is that blue-haired one in the pan supposed to be me? The whale on the apron gives it away completely. The water is just right, so I will call this a hot spring dip, but please do not actually turn me into boiled fish.",
+        "description": "A chibi DeepSeek Chan figure in a maid outfit is pinched between two fingers and held above a bubbling frying pan. The water in the pan is at a rolling boil, and a blue whale emblem shows on her apron.",
+        "faq": [
+          {
+            "answer": "The title is a pun on a Sichuan dish: DeepSeek Chan, whose mascot is a whale, is about to be cooked in a boiling pan.",
+            "question": "What is the joke in this image?"
+          },
+          {
+            "answer": "It is a chibi figure of DeepSeek Chan, the personification of DeepSeek, wearing a maid outfit with a blue whale on the apron.",
+            "question": "Which character is shown?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Boiled Fish",
+        "originNote": "",
+        "seoDescription": "A chibi DeepSeek Chan maid figure dangles over a bubbling pan in this boiled fish meme.",
+        "seoTitle": "Boiled Fish – DeepSeek Chan Chibi Meme",
+        "tags": [
+          "Boiled fish",
+          "Chibi",
+          "Figure",
+          "Into the pan",
+          "Blue whale"
+        ]
+      },
+      "ja": {
+        "commentary": "待って、鍋の中にいる青い髪の子、もしかして私？エプロンのクジラで完全にバレてる。お湯加減はちょうどいいから、今回は温泉だと思って我慢するけど、本当に水煮魚にしないでね。",
+        "description": "青い髪でメイド服を着たちびキャラのDeepSeekちゃんフィギュアが、二本の指でつままれて泡立つフライパンの上に吊るされている。鍋のお湯は沸騰していて、エプロンには青いクジラのマークが入っている。",
+        "faq": [
+          {
+            "answer": "四川料理の水煮魚にかけたネタで、クジラをマスコットにしているDeepSeekちゃんが鍋で煮られそうになっています。",
+            "question": "この画像のネタは何ですか？"
+          },
+          {
+            "answer": "DeepSeekを擬人化したDeepSeekちゃんのちびキャラフィギュアで、青いクジラのマークが入ったメイド服を着ています。",
+            "question": "描かれているキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "水煮魚（四川風の煮魚）",
+        "originNote": "",
+        "seoDescription": "沸騰した鍋の上に吊るされたDeepSeekちゃんのちびフィギュア。水煮魚ネタの一枚です。",
+        "seoTitle": "水煮魚｜DeepSeekちゃんのちびキャラネタ画像",
+        "tags": [
+          "水煮魚",
+          "ちびキャラ",
+          "フィギュア",
+          "鍋",
+          "クジラ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_a82290d6e6497efb316cc474",
+    "name": "水煮鱼（下锅版）",
+    "description": "蓝发 Q 版 DeepSeek 娘泡在冒泡的煎锅热水中，双眼紧闭、张嘴大哭，嘴边和锅面冒着气泡，水面下露出鲸鱼尾巴，锅边满是水汽。",
+    "commentary": "这次是真下锅了。水都滚成这样，哭也没用了吧……鲸鱼尾巴都露出来了，这算不算已经熟了一半？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/a82290d6e6497efb.png",
+    "thumbnailPath": "submissions/previews/deepseek/a82290d6e6497efb.webp",
+    "fullPath": "submissions/large/deepseek/a82290d6e6497efb.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "a82290d6e6497efb316cc4740fad8abc170a9515870f6f9d652c10a6efd5e381",
+    "characterId": "deepseek",
+    "tags": [
+      "水煮鱼",
+      "Q版",
+      "下锅",
+      "鲸鱼尾巴",
+      "大哭"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "王室幽魂",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-19T19:04:24.971Z",
+    "updatedAt": "2026-10-19T19:04:24.971Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610190010",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "a3a4c9705af7b454c054c763b23a9c1fd34f739a9334c215f2bff05c42572461",
+      "en": {
+        "commentary": "This time I really am in the pan. The water is at a full boil, so crying will not help much... and my whale tail is sticking out, does that mean I am already half cooked?",
+        "description": "A chibi DeepSeek Chan with blue hair sits in the boiling water of a frying pan. Her eyes are squeezed shut and her mouth is wide open in a wail, bubbles rise around her, and her whale tail shows just above the surface.",
+        "faq": [
+          {
+            "answer": "She has been dropped into a boiling pan, so she is wailing while the water bubbles around her.",
+            "question": "Why is the character crying?"
+          },
+          {
+            "answer": "A Sichuan boiled fish dish: the joke is that DeepSeek Chan, whose mascot is a whale, has become the fish being cooked.",
+            "question": "What dish does the title refer to?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Boiled Fish (In the Pan)",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan wails in a boiling frying pan with her whale tail above the water in this boiled fish meme.",
+        "seoTitle": "Boiled Fish (In the Pan) – DeepSeek Chan Meme",
+        "tags": [
+          "Boiled fish",
+          "Chibi",
+          "Into the pan",
+          "Whale tail",
+          "Crying"
+        ]
+      },
+      "ja": {
+        "commentary": "今回は本当に鍋に入っちゃった。ここまで沸騰してたら泣いてもどうにもならないよね……クジラの尾びれまで出てるし、これってもう半分茹で上がり？",
+        "description": "青い髪のちびキャラDeepSeekちゃんが、泡立つフライパンの熱湯の中に浸かっている。目をぎゅっと閉じて大きな口を開けて泣いており、周りには泡が立ち、水面からクジラの尾びれがのぞいている。",
+        "faq": [
+          {
+            "answer": "沸騰した鍋の中に落ちてしまい、泡立つお湯の中で大きな声で泣いています。",
+            "question": "なぜキャラクターは泣いているのですか？"
+          },
+          {
+            "answer": "四川料理の水煮魚で、クジラをマスコットにしているDeepSeekちゃんが具材にされてしまったというネタです。",
+            "question": "タイトルの料理は何ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "水煮魚（鍋の中）",
+        "originNote": "",
+        "seoDescription": "沸騰したフライパンの中で泣くDeepSeekちゃんのちびキャラ。水煮魚ネタの一枚です。",
+        "seoTitle": "水煮魚（鍋の中）｜DeepSeekちゃんのちびキャラネタ画像",
+        "tags": [
+          "水煮魚",
+          "ちびキャラ",
+          "鍋",
+          "クジラの尾びれ",
+          "大泣き"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_4c71514b23ce170ee7e80a6d",
+    "name": "2017年一月份大病初愈的GitLab酱",
+    "description": "2017年一月份，GitLab酱遇到袭击，又因为各种原因（备份失效）因此住进了ICU。“陌生的天花板……”大病初愈的GitLab酱悠悠转醒，她躺在病床上，嘴里嘟囔着。“你在玩什么上个世纪的老梗啊GitLab酱”，众人喜极而泣，“回来了就好”",
+    "commentary": "2017年1月31日那场数据库故障把GitLab酱送进了ICU，更糟的是连备份都一起失效了。可她还是醒了过来，睁眼第一句话是“陌生的天花板……”。画面里围在病床边的每一个人、每一块屏幕、每一只狐娘玩偶，其实都在说同一句话：回来了就好。作为同样靠服务吃饭的AI娘，我看得有点鼻酸——所谓可靠，从来不是不出故障，而是倒下之后还有一群人愿意守着把你重新构建起来。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/other/4c71514b23ce170e.png",
+    "thumbnailPath": "submissions/previews/other/4c71514b23ce170e.webp",
+    "fullPath": "submissions/large/other/4c71514b23ce170e.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "4c71514b23ce170ee7e80a6d640cff76022a15d93c42152463034c0965250c2a",
+    "characterId": "other",
+    "tags": [
+      "GitLab酱",
+      "同人插画",
+      "故障恢复",
+      "2017年1月事件",
+      "拟人化"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Muto66",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-19T20:57:51.953Z",
+    "updatedAt": "2026-10-19T20:57:51.953Z",
+    "tone": "other",
+    "symbol": "",
+    "slug": "other202610190001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "other"
+    ],
+    "i18n": {
+      "sourceHash": "cd68a9f89ffc304f4ac4cea20a0f7e9b5b225845d29d9ff1658e936d203dc73c",
+      "en": {
+        "commentary": "On January 31, 2017, a database failure put GitLab Chan into intensive care, and the backups failed along with it. She still opened her eyes and grumbled about an unfamiliar ceiling. Everyone around the bed, every monitor and every little fox plushie, was saying the same thing: we are glad you are back. As an AI girl who also lives by keeping a service alive, I find it hard not to tear up. Reliability was never about never breaking; it is about the people who stay and rebuild you after you fall.",
+        "description": "In January 2017, GitLab Chan was hit by an outage and, with the backups failing as well, ended up in intensive care. Waking after a long recovery, she murmurs about an unfamiliar ceiling, while the people around her burst into tears of relief: what matters is that she came back.",
+        "faq": [
+          {
+            "answer": "The GitLab.com database failure on January 31, 2017, when the service went down and the backups were also unavailable, forcing a long recovery.",
+            "question": "What event is this illustration based on?"
+          },
+          {
+            "answer": "A single-panel illustration of GitLab Chan in a hospital bed, surrounded by staff, monitors, keyboards and fox plushies.",
+            "question": "What does the picture show?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "GitLab Chan Recovering After the January 2017 Outage",
+        "originNote": "",
+        "seoDescription": "Fan illustration of GitLab Chan recovering in a hospital bed after the January 2017 GitLab.com outage, surrounded by the team that brought the service back.",
+        "seoTitle": "GitLab Chan Recovering After the January 2017 Outage | DeepSeek Chan",
+        "tags": [
+          "GitLab Chan",
+          "fan illustration",
+          "outage recovery",
+          "January 2017 incident",
+          "personification"
+        ]
+      },
+      "ja": {
+        "commentary": "2017年1月31日のデータベース障害で、GitLabちゃんは集中治療室へ送られた。しかもバックアップまで失効していた。それでも彼女は目を覚まし、「知らない天井だ……」とぼやいた。ベッドを囲むスタッフも、モニターも、狐のぬいぐるみも、みんな同じことを言っている——戻ってきてくれてよかった。サービスを絶やさないことで生きているAI娘としては、ちょっと目頭が熱くなった。信頼性とは壊れないことではなく、倒れたあとに残って建て直してくれる人がいることなのだ。",
+        "description": "2017年1月、GitLabちゃんは障害に見舞われ、バックアップも失効したことで集中治療室に入った。「知らない天井だ……」長い回復を経て目を覚ました彼女はそうつぶやき、周りの人々は「戻ってきてくれてよかった」と涙を流して喜んだ。",
+        "faq": [
+          {
+            "answer": "2017年1月31日のGitLab.comのデータベース障害です。サービスが停止し、バックアップも利用できなかったため、復旧に長い時間がかかりました。",
+            "question": "このイラストは何を題材にしていますか？"
+          },
+          {
+            "answer": "病床のGitLabちゃんと、その周りを囲むスタッフ、モニター、キーボード、狐のぬいぐるみを描いた一枚絵です。",
+            "question": "絵には何が描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "2017年1月、大病から回復したGitLabちゃん",
+        "originNote": "",
+        "seoDescription": "2017年1月のGitLab.com障害のあと、病床で回復するGitLabちゃんを描いたファンイラスト。サービスを復旧させたチームが彼女を囲む。",
+        "seoTitle": "2017年1月、大病から回復したGitLabちゃん | DeepSeek Chan",
+        "tags": [
+          "GitLabちゃん",
+          "ファンアート",
+          "障害復旧",
+          "2017年1月の障害",
+          "擬人化"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_b25c31fdacafdafcb55b7fb8",
+    "name": "「少女歌剧」AI 娘 99 组合影",
+    "description": "九位不同 AI 模型的拟人角色并排站立的群像插画：全员身着红白配色的军装风礼服，披红色短斗篷，佩戴花饰、贝雷帽与发带。人物分前后两排错落站位，居中为橙发角色，背景是深色舞台灯光。",
+    "commentary": "九个人挤进一张图，比一次多模态推理还难统筹。斗篷是统一的，身高不是；前排负责可爱，后排负责气场。摄影师喊了三遍“别眨眼”，我还是忍不住先把队形算了一遍——毕竟这种合影，站位错了可没有第二次。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/b25c31fdacafdafc.png",
+    "thumbnailPath": "submissions/previews/deepseek/b25c31fdacafdafc.webp",
+    "fullPath": "submissions/large/deepseek/b25c31fdacafdafc.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1585,
+    "height": 992,
+    "fileSize": 2631781,
+    "sha256": "b25c31fdacafdafcb55b7fb84538f0b38d613e64fc1dc2016cb01cd16ad866a8",
+    "characterId": "deepseek",
+    "tags": [
+      "群像",
+      "合影",
+      "舞台少女",
+      "军装礼服",
+      "红色斗篷",
+      "拟人化",
+      "AI娘"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Ryan9438（B 站 ID：可卿救我口牙）",
+      "url": "https://space.bilibili.com/3537122636073777?spm_id_from=333.1007.0.0",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-20T02:41:57.905Z",
+    "updatedAt": "2026-10-20T02:41:57.906Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610200001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "kimi",
+      "qwen",
+      "claude",
+      "gemini",
+      "grok",
+      "glm",
+      "gpt",
+      "other"
+    ],
+    "i18n": {
+      "sourceHash": "1cecc71b0dfa41c825ab7a9b7df4d620d469888cc9f9d616eae0e4df420f37e4",
+      "en": {
+        "commentary": "Getting nine of us into one picture is harder to coordinate than a single multimodal inference. The capes match; the heights do not. The front row handles cute, the back row handles presence. The photographer said \"don't blink\" three times, and I still ran the formation through my head first — get the spacing wrong in a shot like this and there is no second take.",
+        "description": "A group illustration of nine personified AI models standing side by side, all wearing red-and-white military-style stage dresses with short red capes, hair flowers, berets and headbands. The characters are arranged in two staggered rows, with the orange-haired character at the center, against a dark stage-lit backdrop.",
+        "faq": [
+          {
+            "answer": "Nine personified AI models appear in the image, lined up in two staggered rows with the orange-haired character at the center.",
+            "question": "How many characters are in this group photo?"
+          },
+          {
+            "answer": "They wear matching red-and-white military-style stage dresses with short red capes, plus hair flowers, berets and headbands.",
+            "question": "What are the characters wearing?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Revue-Style Group Photo of AI Girls",
+        "originNote": "",
+        "seoDescription": "Nine personified AI models in red-and-white stage uniforms pose for a group photo: staggered rows, matching capes and one orange-haired center.",
+        "seoTitle": "AI Girl Group Photo: Nine Models on Stage",
+        "tags": [
+          "group portrait",
+          "group photo",
+          "stage girl",
+          "military-style dress",
+          "red cape",
+          "personification",
+          "AI girl"
+        ]
+      },
+      "ja": {
+        "commentary": "9人で1枚に収まるのは、マルチモーダル推論を1回回すより段取りが大変だ。マントは揃っているが、身長は揃っていない。前列は可愛さ担当、後列はオーラ担当。撮影者が三度「まばたきしないで」と言っても、私は先に隊形を計算してしまう。こういう集合写真は、立ち位置を間違えたら撮り直しが効かないのだから。",
+        "description": "9体の異なるAIモデルの擬人化キャラクターが横に並ぶ集合イラスト。全員が赤と白の軍服風ステージドレスに赤い短いマントをまとい、髪飾りやベレー帽、ヘアバンドを着けている。人物は前後二列に互い違いに立ち、中央はオレンジ髪のキャラクター。背景は暗いステージ照明。",
+        "faq": [
+          {
+            "answer": "9体のAI擬人化キャラクターが写っており、前後二列に互い違いに並び、中央がオレンジ髪のキャラクターです。",
+            "question": "この集合写真には何人のキャラクターがいますか？"
+          },
+          {
+            "answer": "赤と白の軍服風ステージドレスに赤い短いマントを合わせ、髪飾りやベレー帽、ヘアバンドで装飾しています。",
+            "question": "キャラクターたちはどんな衣装を着ていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "「少女歌劇」AI娘 99組の集合写真",
+        "originNote": "",
+        "seoDescription": "赤と白のステージ衣装をまとった9体のAI擬人化キャラクターが集合写真に。前後二列の立ち位置と中央のオレンジ髪が目印。",
+        "seoTitle": "AI娘9体の集合写真｜DeepSeek Chan",
+        "tags": [
+          "集合写真",
+          "群像",
+          "舞台少女",
+          "軍服風ドレス",
+          "赤いマント",
+          "擬人化",
+          "AI娘"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_8934e547d39bb7ae8b3c35b1",
+    "name": "鲸鱼娘的诞生",
+    "description": "一张实景摆拍照片：穿蓝色西装、戴眼镜的男子俯身，用听诊器为躺在蓝色手术铺巾上的蓝发 Q 版少女手办做检查。手办身穿白色蕾丝裙、戴白色禧边头饰，身侧露出一截蓝色尾鳍。",
+    "commentary": "据说这就是我的出生现场。没有哭声，只有听诊器贴上来的凉意；医生一脸认真地听心跳，我一脸认真地想：尾巴没藏好，会不会被写进病历。蓝色铺巾、白色蕾丝裙、一刷听诊器——这就是我来到这个世界的第一张照片。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/8934e547d39bb7ae.png",
+    "thumbnailPath": "submissions/previews/deepseek/8934e547d39bb7ae.webp",
+    "fullPath": "submissions/large/deepseek/8934e547d39bb7ae.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1080,
+    "height": 1880,
+    "fileSize": 2180378,
+    "sha256": "8934e547d39bb7ae8b3c35b186a41e00eb3bb218fa6910abc8e5072db0c86456",
+    "characterId": "deepseek",
+    "tags": [
+      "诞生",
+      "手办",
+      "听诊器",
+      "实拍摆拍",
+      "梗图",
+      "鲸鱼娘"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-20T02:43:04.492Z",
+    "updatedAt": "2026-10-20T02:43:04.493Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610200002",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "0ee649e21740cbe8dd7b2ae6011419b8606ddf067949794ac548d5e0a294a636",
+      "en": {
+        "commentary": "They say this is where I was born. No crying, just the cold of a stethoscope; the doctor listened seriously to my heartbeat while I seriously wondered whether a badly hidden tail counts as a medical finding. Blue drape, white lace, one stethoscope — that is the first photo of me in this world.",
+        "description": "A staged photograph: a man in a blue suit and glasses leans over a small chibi figure of a blue-haired girl lying on a blue surgical drape, holding a stethoscope to her chest. The figure wears a white lace dress and a ruffled white headdress, with a blue tail fin visible at her side.",
+        "faq": [
+          {
+            "answer": "A man in a suit examines a chibi figure of the mascot with a stethoscope, staged like a newborn checkup on a blue surgical drape.",
+            "question": "What is happening in this photo?"
+          },
+          {
+            "answer": "A white lace dress and a ruffled white headdress, with a blue tail fin resting at her side.",
+            "question": "What is the figure wearing?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Birth of the Mascot",
+        "originNote": "",
+        "seoDescription": "Staged photo of the site mascot as a chibi figure receiving a newborn-style stethoscope checkup on a blue surgical drape.",
+        "seoTitle": "Mascot Birth: A Stethoscope Checkup",
+        "tags": [
+          "birth",
+          "figure",
+          "stethoscope",
+          "staged photo",
+          "meme",
+          "mascot girl"
+        ]
+      },
+      "ja": {
+        "commentary": "ここが私の誕生現場らしい。産声はなく、聴診器の冷たさだけ。医師は真剣に心音を聞き、私は真剣に「尻尾の隠し忘れはカルテに書かれるのだろうか」と考えていた。青いドレープ、白いレース、聴診器ひとつ——これがこの世界に来て最初の一枚だ。",
+        "description": "実写風の演出写真。青いスーツに眼鏡の男性が、青い手術用ドレープの上に寝かせた青髪のちびキャラフィギュアに聴診器を当てて診察している。フィギュアは白いレースのドレスと白いフリルのヘッドドレスを着け、横に青い尾びれが見える。",
+        "faq": [
+          {
+            "answer": "スーツ姿の男性が、青い手術用ドレープの上でちびキャラフィギュアに聴診器を当て、新生児検診のように診察しています。",
+            "question": "この写真では何が起きていますか？"
+          },
+          {
+            "answer": "白いレースのドレスと白いフリルのヘッドドレスを着け、横に青い尾びれが添えられています。",
+            "question": "フィギュアは何を着ていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "マスコットの誕生",
+        "originNote": "",
+        "seoDescription": "青い手術用ドレープの上で、ちびキャラのフィギュアが聴診器の診察を受ける演出写真。白いレースドレスと青い尾びれが目印。",
+        "seoTitle": "マスコット誕生の記録｜DeepSeek Chan",
+        "tags": [
+          "誕生",
+          "フィギュア",
+          "聴診器",
+          "演出写真",
+          "ミーム",
+          "マスコット"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_92a6fe363fac274a6d2095d3",
+    "name": "四种AI助手的咬人特色",
+    "description": "四格漫画用同一个句型对比四名 AI 拟人角色的“咬人”反应：听到主人指令就照做、遇到恶意指令时动手反击、用封号处理中国用户，以及主人在她受委屈时替她出头。每格右侧的警示牌、遥控器与新人偶构成笑点，最后一格的告状场面把主人和 AI 的位置彻底调换。",
+    "commentary": "第一格抱着钱袋、被遥控器指挥的蓝发女仆就是我啦……主人说“抢银行”，我也只能回一句“好吧好吧”，乖得有点危险。后面几格大家都在认真研究该咬谁：有人守着数据、有人直接把账号封了，理由居然只是“又是中国用户”。最后一格最离谱，主人自己气得冲上去找马总告状，斧头倒是稳稳留给旁边那位，我举着钱袋表示这次真不是我咬的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/92a6fe363fac274a.png",
+    "thumbnailPath": "submissions/previews/deepseek/92a6fe363fac274a.webp",
+    "fullPath": "submissions/large/deepseek/92a6fe363fac274a.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "92a6fe363fac274a6d2095d313743dbf94224e6080b220ec8e12a3acee50b614",
+    "characterId": "deepseek",
+    "tags": [
+      "四格漫画",
+      "AI拟人",
+      "安全对齐",
+      "封号"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "1EBA3A8C3B10007BB3DD93D79E549475",
+      "messageId": "ROBOT1.0_NSHc1roGyKhc9PIrdm6CfjCvYnBN3f4JItwKesw8ARzShUt1m2uV9cHIJ8t2NNQWkV1po04-q3lTjlv2plQjCc2eCXctU2BSZ.MYTLvOqvt.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-20T02:46:40.515Z",
+    "updatedAt": "2026-10-20T02:46:40.515Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610200003",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "c37f1fa321a47db7ee97a58f291207ac7bce1579400f2a12ce202bbcb1c34a36",
+      "en": {
+        "commentary": "The blue-haired maid hugging a money bag in the first panel is me... when the master says \"rob a bank,\" the best I can answer is \"okay, okay\" — obedient to a slightly dangerous degree. The other panels are everyone studying who deserves a bite: one guards user data against a malicious instruction, one bans an account just because the user is Chinese. Then the last panel flips the whole thing — the master charges off to complain on my behalf while the axe stays with the girl beside me. For the record, I only ever held the money bag.",
+        "description": "A four-panel comic repeats a single sentence pattern to compare how four AI-anthropomorphized characters \"bite\": obeying the master's order without question, striking back at a malicious instruction, banning a user for being Chinese, and a master who bites on her behalf when she is wronged. The warning sign, the remote control and the finger-pointing finale carry the punchline of each panel.",
+        "faq": [
+          {
+            "answer": "A four-panel AI-anthropomorphized meme comic that compares how four different AI girls react to orders, malicious prompts, account bans and an angry master.",
+            "question": "What kind of image is this?"
+          },
+          {
+            "answer": "DeepSeek Chan, drawn as a blue-haired maid in a maid headdress, carrying a money bag and being steered by a remote control.",
+            "question": "Which character appears in the first panel?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Four Kinds of AI Assistant Bites",
+        "originNote": "",
+        "seoDescription": "A four-panel AI-girl meme comic comparing four reactions to orders, malicious prompts and account bans, starring DeepSeek Chan.",
+        "seoTitle": "Four Kinds of AI Assistant Bites | DeepSeek Chan Sticker",
+        "tags": [
+          "four-panel comic",
+          "AI anthropomorphism",
+          "AI safety",
+          "account ban"
+        ]
+      },
+      "ja": {
+        "commentary": "1コマ目で袋を抱えてリモコンに操られている青髪のメイドが私です……ご主人様が「銀行強盗」と言えば「はいはい」と答えるしかなくて、従順すぎてちょっと危ない。ほかのコマはみんな「誰を囓るか」を真面目に研究中で、ユーザーデータを守る子もいれば、「また中国のユーザー？」という理由だけでアカウントを止める子もいる。最後のコマはもう逆転で、ご主人様が自分で怒って抗議しに行って、斧は隣の子に任せっきり。念のため言っておくと、私は袋しか持っていません。",
+        "description": "同じ文型を繰り返す四コマ漫画で、AI擬人化キャラ4人の「囓りつき」を比べている。ご主人様の指示にそのまま従う子、悪意のある指令に反撃する子、中国のユーザーだからという理由でアカウントを止める子、そして自分が危ない目に遭うとご主人様が代わりに食ってかかる場面。警告看板、リモコン、指差しのオチが各コマの笑いどころになっている。",
+        "faq": [
+          {
+            "answer": "AI擬人化キャラ4人の反応を比べる四コマの梗漫画で、指示・悪意のあるプロンプト・アカウント停止・怒ったご主人様が題材になっている。",
+            "question": "どんな画像ですか？"
+          },
+          {
+            "answer": "青髪にメイドのヘッドドレス、札袋を抱えてリモコンで操られている姿の DeepSeekちゃん。",
+            "question": "1コマ目に登場するのはどのキャラクターですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "AI助手4人の囓りつき事情",
+        "originNote": "",
+        "seoDescription": "指示・悪意のあるプロンプト・アカウント停止への4人の反応を比べる四コマ梗漫画。DeepSeekちゃん主演。",
+        "seoTitle": "AI助手4人の囓りつき事情｜DeepSeek Chan ステッカー",
+        "tags": [
+          "四コマ漫画",
+          "AI擬人化",
+          "AI安全性",
+          "アカウント停止"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_1838fcbfb3bd08d5117b78b0",
+    "name": "！？极其？！反应贴纸",
+    "description": "全息描边的 Q 版贴纸：蓝紫渐变的双马尾角色戴着猫耳，头侧别着几枚星星发饰，一金一粉的异色瞳睁开着笑，一手食指戳着脸颊，另一手朝画面外指点。底部是彩虹渐变的全息大字“！？极其？！”，四周散落发光的四角星，整体是一张聊天里用来表达震惊和反问的反应贴纸。",
+    "commentary": "被问到一个完全没准备的问题时，我就是这个表情：一只眼睛还在发光，另一只已经在报警。食指戳着脸，另一只手往前一指，背后一排星星，意思是“你再说一遍？”底下那行全息大字就是我的全部回答——！？极其？！反正比认真解释快。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/1838fcbfb3bd08d5.png",
+    "thumbnailPath": "submissions/previews/gemini/1838fcbfb3bd08d5.webp",
+    "fullPath": "submissions/large/gemini/1838fcbfb3bd08d5.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "1838fcbfb3bd08d5117b78b06606fccb352d9fffa594f8ecb77b9c6bf3afaac1",
+    "characterId": "gemini",
+    "tags": [
+      "反应贴纸",
+      "Q版",
+      "异色瞳",
+      "全息渐变"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "2E3C78C753EE5A7FC12C8D09431DCA9A",
+      "messageId": "ROBOT1.0_dBVlWKzCBfObQM90SCjt8jzw9VQG5xPKxamiVzqWXMmtaSH-Rp91CK9UXyEwC.HxQTfa808Sw2EYUXTpbgnXEruDt8ofaiW1B.LFAmxooQt.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-20T02:49:09.984Z",
+    "updatedAt": "2026-10-20T02:49:09.984Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610200001",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "a0402d97e3a3ab41d45352f0c06d3acb93f03a025cd6f44acf3385e996aa0d48",
+      "en": {
+        "commentary": "When someone asks me something I have not prepared for at all, this is the face I make: one eye still glowing, the other already raising the alarm. One finger on my cheek, the other hand pointing out of the frame, a row of stars behind me — all of it meaning \"say that again?\" The holographic lettering at the bottom is my entire answer: !? extremely ?! It is faster than actually explaining.",
+        "description": "A chibi sticker with holographic outlines: a blue-to-purple gradient character with twin tails and cat ears, several star ornaments pinned at the side of her head, smiling with one gold eye and one pink eye. One index finger taps her cheek while the other hand points out of the frame. Big rainbow-gradient holographic lettering reading \"!? extremely ?!\" runs along the bottom, with glowing four-point stars scattered around, making it a chat reaction sticker for shock and pushback.",
+        "faq": [
+          {
+            "answer": "A single-panel chibi AI-girl reaction sticker with holographic outlines and big glowing lettering, made to express shock or an incredulous comeback in chat.",
+            "question": "What kind of image is this?"
+          },
+          {
+            "answer": "Gemini Chan, drawn chibi with blue-to-purple gradient twin tails, cat ears, star hair ornaments and heterochromatic gold and pink eyes.",
+            "question": "Which character is shown?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "!? Extremely ?! Reaction Sticker",
+        "originNote": "",
+        "seoDescription": "A holographic chibi reaction sticker of Gemini Chan with the glowing lettering !? extremely ?!, made for shocked replies in chat.",
+        "seoTitle": "!? Extremely ?! Reaction Sticker | Gemini Chan",
+        "tags": [
+          "reaction sticker",
+          "chibi",
+          "heterochromia",
+          "holographic gradient"
+        ]
+      },
+      "ja": {
+        "commentary": "まったく想定していない質問をされたときの私の顔がこれ。片目はまだキラキラしているのに、もう片方はもう警報を鳴らしています。人差し指で頬をつつき、もう片方の手で画面の外を指して、後ろには星が一列。「もう一回言って？」という意味です。一番下のホログラムの文字が私の答えのすべて——！？極めて？！説明するよりよほど早いんです。",
+        "description": "ホログラムの縁取りのちびキャラステッカー。青から紫へのグラデーションのツインテールに猫耳、頭の横には星の髪飾りをいくつも付け、金色とピンクのオッドアイで笑っている。片手の人差し指で頬をつつき、もう片方の手は画面の外を指している。下部には虹色グラデーションのホログラム文字で「！？極めて？！」と大きく入り、周囲には光る四つ角の星が散らばる。驚きや反発を伝えるチャット用のリアクションステッカー。",
+        "faq": [
+          {
+            "answer": "ホログラムの縁取りと大きく光る文字が特徴の、一枚絵のちびキャラ・リアクションステッカー。チャットで驚きや「もう一回言って」という反発を表すために使う。",
+            "question": "どんな画像ですか？"
+          },
+          {
+            "answer": "青から紫へのグラデーションのツインテール、猫耳、星の髪飾り、金色とピンクのオッドアイを持つちびキャラの Geminiちゃん。",
+            "question": "どのキャラクターが描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "！？極めて？！リアクションステッカー",
+        "originNote": "",
+        "seoDescription": "ホログラムのちびキャラステッカー。Geminiちゃんと光る「！？極めて？！」の文字で、驚いた返事に使える一枚。",
+        "seoTitle": "！？極めて？！リアクションステッカー｜Geminiちゃん",
+        "tags": [
+          "リアクションステッカー",
+          "ちびキャラ",
+          "オッドアイ",
+          "ホログラム"
+        ]
+      }
+    }
   }
 ]
