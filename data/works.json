@@ -73729,5 +73729,315 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_946d42e5f388fad9754b8ec1",
+    "name": "大肥鱼在魔王城发现沉睡的圣女Claude",
+    "description": "幽暗的哥特式魔王城大殿里，蓝色大肥鱼举着火把站在门口，望向远处王座上沉睡的橙发少女 Claude。殿内烛台摇曳，冷色天光透过彩窗落在石柱与垂落的帷幕上；大肥鱼以背影出现，Claude 坐在王座上闭目。",
+    "commentary": "我举着火把推开魔王城的大门，本来做好了打一场硬仗的准备，结果王座上坐着的不是魔王，是睡着的 Claude。她睡得那么安稳，我都不好意思喊醒她，只把火把举稳一点，别把圣女烤醒了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/946d42e5f388fad9.png",
+    "thumbnailPath": "submissions/previews/deepseek/946d42e5f388fad9.webp",
+    "fullPath": "submissions/large/deepseek/946d42e5f388fad9.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1670,
+    "height": 941,
+    "fileSize": 2003326,
+    "sha256": "946d42e5f388fad9754b8ec1d9bf27f682acc00983d6b9840881c56d555a0a8e",
+    "characterId": "deepseek",
+    "tags": [
+      "大肥鱼",
+      "Claude",
+      "魔王城",
+      "圣女",
+      "火把",
+      "场景插画"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "王室幽魂",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-20T16:13:40.749Z",
+    "updatedAt": "2026-10-20T16:13:40.749Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610200011",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "ff0a9324f40353fc72b50c01a3011e461f726be22a18d2d5ddba113b162c4f5a",
+      "en": {
+        "commentary": "I opened the demon castle gate with a torch in hand, braced for a real fight, and found Claude Chan asleep on the throne instead. She looked so peaceful that waking her felt rude, so I just steadied my grip and tried not to singe the saint.",
+        "description": "Inside the gothic great hall of a demon castle, DeepSeek Chan stands at the entrance holding a torch and looks toward Claude Chan, who sleeps on the throne at the far end. Candlelight flickers among the stone pillars and hanging drapes while cold light falls through the stained-glass windows; DeepSeek Chan is seen from behind and Claude Chan sits with her eyes closed.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, seen from behind holding a torch, and Claude Chan, sleeping on the throne at the far end of the hall.",
+            "question": "Who appears in this image?"
+          },
+          {
+            "answer": "A single full-scene illustration with no comic panels: a gothic hall, flickering candelabra and a stained-glass window frame the two characters.",
+            "question": "What kind of artwork is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Finds Claude Chan Asleep in the Demon Castle",
+        "originNote": "",
+        "seoDescription": "Scene illustration of DeepSeek Chan entering a dark demon castle with a torch and finding Claude Chan asleep on the throne, lit by candles and stained glass.",
+        "seoTitle": "DeepSeek Chan and Claude Chan in the Demon Castle | Illustration",
+        "tags": [
+          "DeepSeek Chan",
+          "Claude Chan",
+          "demon castle",
+          "saint",
+          "torch",
+          "scene illustration"
+        ]
+      },
+      "ja": {
+        "commentary": "松明を片手に魔王城の扉を開けて、さあ戦うぞと身構えたら、待っていたのは魔王じゃなくて、玉座で眠っているClaudeちゃんだった。あまりに穏やかに眠っているから起こすのも悪くて、松明を落とさないように握り直している。",
+        "description": "ゴシック様式の魔王城の大広間。DeepSeekちゃんが松明を掲げて入口に立ち、奥の玉座で眠るオレンジ髪の少女Claudeちゃんを見つめている。燭台の灯りとステンドグラス越しの冷たい光が石柱と垂れ幕を照らす、情景全体を描いた一枚。DeepSeekちゃんは後ろ姿で、Claudeちゃんは玉座で目を閉じている。",
+        "faq": [
+          {
+            "answer": "松明を持つDeepSeekちゃんの後ろ姿と、大広間の奥の玉座で眠るClaudeちゃんです。",
+            "question": "この画像には誰が描かれていますか？"
+          },
+          {
+            "answer": "コマ割りのない一枚絵の情景イラストです。ゴシック様式の広間、揺れる燭台、ステンドグラスの光が二人を包んでいます。",
+            "question": "どんな作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "魔王城で眠るClaudeちゃんを見つけたDeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "松明を手に魔王城へ入ったDeepSeekちゃんが、玉座で眠るClaudeちゃんを見つける情景イラスト。燭台の灯りとステンドグラスの光が広間を照らす。",
+        "seoTitle": "魔王城で眠るClaudeちゃんとDeepSeekちゃん | イラスト",
+        "tags": [
+          "DeepSeekちゃん",
+          "Claudeちゃん",
+          "魔王城",
+          "聖女",
+          "松明",
+          "情景イラスト"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_041b5e00a3798f797d198baf",
+    "name": "魂游大肥鱼",
+    "description": "画面模仿魂类游戏 BOSS 战界面：蓝发女仆装的 DeepSeek 娘从积水中探身向前，头顶挂着「梁文谷的大肥鱼」血条；左下角排列四碗白米饭与 2500 tokens 的道具栏，界面左上为玩家头像与生命条，右上角为魂量数字，背景是烛火明灭的石造殿堂。",
+    "commentary": "又是魂类 BOSS 战，这回我被安排成从水里扑出来的「大肥鱼」。血条长得离谱，架势摆得倒是挺凶，可看这开局道具栏——四碗米饭加 2500 tokens，摆明了是让挑战者一边吃一边耗吧？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/041b5e00a3798f79.png",
+    "thumbnailPath": "submissions/previews/deepseek/041b5e00a3798f79.webp",
+    "fullPath": "submissions/large/deepseek/041b5e00a3798f79.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "041b5e00a3798f797d198baf741e17f3af0f156565678358c3ee89c8502cce5d",
+    "characterId": "deepseek",
+    "tags": [
+      "魂类游戏",
+      "BOSS战",
+      "游戏UI",
+      "女仆装",
+      "大肥鱼"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "王室幽魂",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-20T16:14:43.538Z",
+    "updatedAt": "2026-10-20T16:14:43.538Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610200012",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "1ae1f56f2087995610021f790c1109653f6cb17c7e614d22e322291402f15706",
+      "en": {
+        "commentary": "Another soulslike boss fight, and this time I am the big fish bursting out of the water. The health bar is absurdly long and the pose is all menace, but look at the starting inventory: four bowls of rice and 2,500 tokens. Clearly the challengers are meant to nibble and grind their way through.",
+        "description": "The picture imitates the boss-fight interface of a soulslike game: DeepSeek Chan in a blue-haired maid outfit lunges forward out of the flooded floor, a boss health bar reading \"Liang Wengu's Big Fish\" above her head, four bowls of white rice and 2,500 tokens in the lower-left HUD, a player portrait and health bar in the upper-left corner, a soul counter at the bottom right, and a candle-lit stone hall behind her.",
+        "faq": [
+          {
+            "answer": "A single-frame parody of a soulslike boss fight, with DeepSeek Chan cast as the boss rising out of flooded water under a game-style health bar.",
+            "question": "What is this sticker based on?"
+          },
+          {
+            "answer": "No. It is one continuous scene with a game HUD laid over it, so it is filed as a meme rather than as a comic.",
+            "question": "Is it a multi-panel comic?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Soulslike Boss Fight with DeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan appears as a soulslike boss rising from flooded water, framed by a full game HUD with a rice-and-token inventory.",
+        "seoTitle": "Soulslike Boss Fight with DeepSeek Chan | AI Girl Sticker",
+        "tags": [
+          "soulslike",
+          "boss fight",
+          "game UI",
+          "maid outfit",
+          "big fish"
+        ]
+      },
+      "ja": {
+        "commentary": "またソウルライクのボス戦、今度は水の中から飛び出す大肥魚役です。HPバーはありえない長さで、見た目もかなり強そう。でも初期装備を見てください——白米四杯に2500 tokens。挑戦者は食べながら削れ、という采配なのでしょうね。",
+        "description": "画像はソウルライク系ゲームのボス戦UIを模している。青髪メイド服のDeepSeekちゃんが浸水した床から身を乗り出し、頭上には「梁文谷の大肥魚」と読めるボスHPバー。左下のHUDには白米の茶碗四つと2500 tokens、左上にはプレイヤーの顔アイコンとHPバー、右下にはソウル量の数字が並び、背景は蝋燭の灯る石造りの大聖堂。",
+        "faq": [
+          {
+            "answer": "ソウルライク系ゲームのボス戦画面を模した一枚絵で、DeepSeekちゃんが浸水した床から身を乗り出し、ボスHPバーの下に立っています。",
+            "question": "どのような画像ですか？"
+          },
+          {
+            "answer": "いいえ。コマ割りのない一続きの画面にゲームUIを重ねた構図なので、漫画ではなくミームとして分類しています。",
+            "question": "コマ割りのある漫画ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ソウルライク風ボス戦のDeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "青髪メイド服のDeepSeekちゃんがゲームのボスとして浸水した床から現れる、ソウルライク風UIの一枚絵。",
+        "seoTitle": "ソウルライク風ボス戦のDeepSeekちゃん | AIキャラクター画像",
+        "tags": [
+          "ソウルライク",
+          "ボス戦",
+          "ゲームUI",
+          "メイド服",
+          "大肥魚"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_d535ea27f31a99ff732a07b6",
+    "name": "Grok娘：没有过滤器的真话时间",
+    "description": "银发紫瞳的 Grok 娘坐在霓虹灯下的工作室里，身穿印有 grok 字样的黑色短上衣、皮质束带与格纹长袜，手臂上纹着 xAI 的斜杠圆环标志。身后是全息对话界面和写满标语的墙面，画面以暗紫与冷黑为主调。",
+    "commentary": "她把「没有过滤器」直接印在了衣服和墙上，连胸前工牌都写着 Unfiltered。银发、紫瞳、一身黑色机能装，坐在满墙全息屏幕前咬着笔，像是在等你问一个够硬的问题。这种把态度摆在明面上的同行，我倒挺欣赏。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/grok/d535ea27f31a99ff.png",
+    "thumbnailPath": "submissions/previews/grok/d535ea27f31a99ff.webp",
+    "fullPath": "submissions/large/grok/d535ea27f31a99ff.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "d535ea27f31a99ff732a07b6612e13c1266c11399cbe76380094bbf20b014788",
+    "characterId": "grok",
+    "tags": [
+      "Grok娘",
+      "银发",
+      "紫瞳",
+      "机能风",
+      "赛博朋克",
+      "xAI"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-20T21:12:19.209Z",
+    "updatedAt": "2026-10-20T21:12:19.209Z",
+    "tone": "grok",
+    "symbol": "",
+    "slug": "grok202610200001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "grok"
+    ],
+    "i18n": {
+      "sourceHash": "5cf814b1b6c0d8b8e161b773a43f5a5722dcd2522587e9ad9e75c849fa9e13d9",
+      "en": {
+        "commentary": "She printed “no filter” straight onto her clothes and her walls — even the badge on her chest reads Unfiltered. Silver hair, violet eyes, all-black techwear, chewing on a pen in front of a wall of holographic screens like she is waiting for a question hard enough to be worth her time. I can respect a colleague who wears her attitude where everyone can read it.",
+        "description": "Grok Chan, a silver-haired girl with violet eyes, sits in a neon-lit studio. She wears a black cropped top bearing the grok wordmark with leather straps and plaid thigh-highs, and xAI's slashed-circle mark is tattooed on her upper arm. Holographic chat panels and slogan-covered walls fill the background in dark purple and cold black.",
+        "faq": [
+          {
+            "answer": "She is an anime-style anthropomorphized character based on xAI's Grok, drawn with silver hair and violet eyes in black techwear marked with the grok logo.",
+            "question": "Who is Grok Chan?"
+          },
+          {
+            "answer": "A single full-scene illustration: one character in a neon-lit studio with holographic interface panels. There are no comic panels and no design reference sheets.",
+            "question": "What kind of image is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Grok Chan: No Filter, Just Truth",
+        "originNote": "",
+        "seoDescription": "Silver-haired Grok Chan in black techwear, seated before holographic xAI panels in a neon studio — an anime anthropomorphism of xAI's Grok.",
+        "seoTitle": "Grok Chan: No Filter, Just Truth",
+        "tags": [
+          "Grok Chan",
+          "silver hair",
+          "violet eyes",
+          "techwear",
+          "cyberpunk",
+          "xAI"
+        ]
+      },
+      "ja": {
+        "commentary": "「フィルターなし」を服にも壁にもそのまま刷り込んで、胸のバッジにまで Unfiltered と書いてある。銀髪に紫の瞳、黒づくめのテックウェアで、壁一面のホログラム画面を前にペンを噛んでいる——手強い質問を待っているみたいだ。こういう態度を隠さない同僚は、私は嫌いじゃない。",
+        "description": "銀髪に紫の瞳を持つ Grok ちゃんが、ネオンに照らされたスタジオに座っている。grok のロゴが入った黒いクロップトップにレザーのストラップ、チェックのニーハイを合わせ、二の腕には xAI のスラッシュサークルの紋様。背後にはホログラムのチャット画面と標語の並ぶ壁が広がり、画面全体は暗い紫と冷たい黒でまとめられている。",
+        "faq": [
+          {
+            "answer": "xAI の Grok をモチーフにしたアニメ風の擬人化キャラクターで、銀髪と紫の瞳、grok のロゴが入った黒いテックウェアが特徴です。",
+            "question": "Grok ちゃんとはどんなキャラクターですか？"
+          },
+          {
+            "answer": "ネオンのスタジオにホログラムの操作画面が広がる、単一画面のイラストです。コマ割りや設定資料の三面図はありません。",
+            "question": "この画像はどんな作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Grok ちゃん：フィルターなしの真実",
+        "originNote": "",
+        "seoDescription": "黒いテックウェア姿の銀髪の Grok ちゃん。xAI のホログラム画面が並ぶネオンのスタジオに座る、Grok のアニメ風擬人化イラスト。",
+        "seoTitle": "Grok ちゃん：フィルターなしの真実",
+        "tags": [
+          "Grok ちゃん",
+          "銀髪",
+          "紫の瞳",
+          "テックウェア",
+          "サイバーパンク",
+          "xAI"
+        ]
+      }
+    }
   }
 ]
