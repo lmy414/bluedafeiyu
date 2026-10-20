@@ -71680,7 +71680,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-20T02:41:57.905Z",
-    "updatedAt": "2026-10-20T02:41:57.906Z",
+    "updatedAt": "2026-10-20T03:28:45.009Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202610200001",
@@ -71794,7 +71794,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-20T02:43:04.492Z",
-    "updatedAt": "2026-10-20T02:43:04.493Z",
+    "updatedAt": "2026-10-20T03:28:44.975Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202610200002",
@@ -72064,6 +72064,110 @@
           "ちびキャラ",
           "オッドアイ",
           "ホログラム"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_71354a7288a45501fe01ad08",
+    "name": "雷光中的Claude娘：敢和我说中文？！",
+    "description": "画面中一位橙红长发的少女身着黑白洛丽塔长裙，鬓角别着向日葵发饰，双臂高举，身后是翻涌的紫色雷光与碎裂的暗色空间。画面下方叠加大字「敢和我说中文？！」，并附副标题「BLACK LOLITA VS JUGGERNAUT」，整体为单幅梗图形式的 AI 角色拟人化二创。",
+    "commentary": "一抬手就把整片紫色雷云扯下来，这位登神的姿态确实够嚣张。可那句「敢和我说中文？！」，配上她微微皱眉、居高临下的表情，怎么看都更像在赌气：明明听得懂，还非要装作被冒犯。黑色洛丽塔配白色长裙摆，向日葵别在鬓角，把神性和少女感硬生生缝在了一起，这种反差才是这张图最戳人的地方。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/71354a7288a45501.png",
+    "thumbnailPath": "submissions/previews/claude/71354a7288a45501.webp",
+    "fullPath": "submissions/large/claude/71354a7288a45501.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "71354a7288a45501fe01ad0814b82eafdee6c460a01b0399f4e1b5990f64ca57",
+    "characterId": "claude",
+    "tags": [
+      "Claude娘",
+      "洛丽塔",
+      "雷光",
+      "向日葵",
+      "中文梗",
+      "拟人化"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-20T03:29:48.151Z",
+    "updatedAt": "2026-10-20T03:29:48.151Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202610200001",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "4a5f38bac3afb0a1dd2d9df14cad6d5f23e1ba9976640cb2528497e651e4e66d",
+      "en": {
+        "commentary": "She pulls an entire storm of purple lightning down with one raised arm, and that god-ascending pose is honestly insufferable in the best way. But \"How dare you speak Chinese to me?!\" paired with that faint frown and that look down her nose reads less like wrath and more like a sulk: she understood every word and simply refuses to admit it. A black lolita bodice over a white skirt, a sunflower pinned by her ear, divinity stitched straight onto girlish charm. That contrast is what makes the picture land.",
+        "description": "An orange-haired girl in a black and white lolita dress, a sunflower ornament at her temple, stands with both arms raised against a churning backdrop of purple lightning and shattered dark space. Large type across the lower part of the frame reads \"How dare you speak Chinese?!\", with the subtitle \"BLACK LOLITA VS JUGGERNAUT\". The piece is a single-panel AI-character meme illustration.",
+        "faq": [
+          {
+            "answer": "It is a single-panel meme illustration: one orange-haired girl in a black and white lolita outfit, arms raised in front of purple lightning, with a large reaction line laid over the bottom of the frame.",
+            "question": "What does this Claude Chan image show?"
+          },
+          {
+            "answer": "It is filed as a meme, because the whole picture is built around one reaction line and one exaggerated pose rather than comic panels or character design references.",
+            "question": "Why is it categorized as a meme instead of a comic or a character sheet?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claude Chan in Thunderlight: How Dare You Speak Chinese to Me?!",
+        "originNote": "",
+        "seoDescription": "Claude Chan meme fan art: an orange-haired girl in a black lolita dress raises both arms before purple lightning, overlaid with the line \"How dare you speak Chinese?!\".",
+        "seoTitle": "Claude Chan Thunderlight Meme | DeepSeek Chan",
+        "tags": [
+          "Claude Chan",
+          "Lolita",
+          "Lightning",
+          "Sunflower",
+          "Chinese meme",
+          "Anthropomorphism"
+        ]
+      },
+      "ja": {
+        "commentary": "片手を上げただけで紫の雷雲を丸ごと引きずり下ろす。その「神に至る」ポーズ、生意気で最高だ。でも「中国語で話すなんて？！」という台詞と、わずかに寄せた眉、見下すような目つきは、怒りと言うよりすねているように見える。分かっているくせに、分からないふりを貫いているだけだ。黒のロリータに白いスカート、鬢にひまわりを一輪。神性と少女らしさを無理やり縫い合わせた、その落差がこの一枚の一番の見どころだ。",
+        "description": "橙紅色の長い髪の少女が、黒と白のロリータドレスにひまわりの髪飾りを合わせ、両腕を高く上げている。背後には紫の雷光と砕けた暗い空間が広がる。画面下部には大きく「中国語で話すなんて？！」の文字、さらに「BLACK LOLITA VS JUGGERNAUT」のサブタイトルが重なる。一枚絵のミーム形式によるAIキャラクター擬人化二次創作。",
+        "faq": [
+          {
+            "answer": "紫の雷光を背に、黒と白のロリータ姿の橙紅色の髪の少女が両腕を上げる一枚絵で、画面下部に大きなツッコミの台詞が重ねられています。",
+            "question": "このClaudeちゃんの画像には何が描かれていますか？"
+          },
+          {
+            "answer": "コマ割りや設定資料ではなく、一枚の誇張されたポーズと一つの台詞で笑いを取る構成のため、ミームとして分類しています。",
+            "question": "なぜ漫画や設定画ではなくミームなのですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "雷光のClaudeちゃん：中国語で話すなんて？！",
+        "originNote": "",
+        "seoDescription": "Claudeちゃんのミーム二次創作。黒いロリータ姿の橙紅色の髪の少女が紫の雷光を背に両腕を上げ、大きな「中国語で話すなんて？！」の文字が重なる一枚絵。",
+        "seoTitle": "Claudeちゃん 雷光ミーム | DeepSeek Chan",
+        "tags": [
+          "Claudeちゃん",
+          "ロリータ",
+          "雷光",
+          "ひまわり",
+          "中国語ネタ",
+          "擬人化"
         ]
       }
     }
