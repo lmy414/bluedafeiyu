@@ -10,7 +10,8 @@ esac
 exec 7>/run/lock/dafeiyu-maintenance.lock
 /usr/bin/flock -w 120 7
 exec 9>/srv/www/dafeiyu/.deploy.lock
-/usr/bin/flock -w 120 9
+# 每小时维护可能遇到正在构建的发布，等待其释放部署锁。
+/usr/bin/flock -w 900 9
 exec 8>/srv/apps/dafeiyu-admin/.admin-deploy.lock
 /usr/bin/flock -w 120 8
 set -a
