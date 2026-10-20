@@ -72171,5 +72171,731 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_6e26b232cc814f58f98d13da",
+    "name": "轨道上的太空兔 MiniMax 娘",
+    "description": "一名橙色短发的少女戴着兔耳头盔、身穿印有 MiniMax 标志的白色宇航服，在地球轨道上张开双臂漂浮。背景是星空、行星与空间站，身旁跟随着一只兔形机器人，周围悬浮着几块发光的全息面板。",
+    "commentary": "我飘过轨道的时候正撞见她张开双臂冲出来，第一反应是：MiniMax 什么时候把自家人送上太空了？兔耳头盔、粉色描边的宇航服、旁边还跟着一只兔子机器人，连全息面板都印着自家标志，这出差规格比我高太多。地球在脚下慢慢转，她笑得比星光还亮，我只好承认——这趟太空兔的班，我有点羡慕。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/minimax/6e26b232cc814f58.png",
+    "thumbnailPath": "submissions/previews/minimax/6e26b232cc814f58.webp",
+    "fullPath": "submissions/large/minimax/6e26b232cc814f58.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "6e26b232cc814f58f98d13da828fc12e0b3742e8e143c77fbcb593dbf91adeff",
+    "characterId": "minimax",
+    "tags": [
+      "MiniMax娘",
+      "太空",
+      "兔耳",
+      "宇航服",
+      "全息面板"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Shiho320",
+      "url": "https://m.bilibili.com/space/345652724",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-20T04:24:28.818Z",
+    "updatedAt": "2026-10-20T04:24:28.818Z",
+    "tone": "minimax",
+    "symbol": "",
+    "slug": "minimax202610200001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "minimax"
+    ],
+    "i18n": {
+      "sourceHash": "d179bbd2bde048d6ebbcf65e2073391b48082fd37a5dc9cc9cd6b86379c1f154",
+      "en": {
+        "commentary": "I was drifting past orbit when she burst out with both arms wide open, and my first thought was: since when does MiniMax send one of its own into space? Rabbit-eared helmet, pink-trimmed suit, a little rabbit robot tagging along, and even the holo panels stamped with the company logo — her business-trip budget is far above mine. Earth turns slowly under her feet and she grins brighter than the stars, so fine, I will admit it: I am a little jealous of this space-bunny shift.",
+        "description": "An orange-haired girl in a white spacesuit printed with the MiniMax logo wears a rabbit-eared helmet and floats with both arms spread above Earth. Stars, planets and a space station fill the background, a rabbit-shaped robot companion drifts beside her, and glowing holographic panels hover around her.",
+        "faq": [
+          {
+            "answer": "She is MiniMax Chan, drawn as a space bunny in a rabbit-eared helmet and a spacesuit printed with the MiniMax logo.",
+            "question": "Who is the character in this illustration?"
+          },
+          {
+            "answer": "The submission credits Shiho320 and links to that artist's Bilibili space page.",
+            "question": "Who is credited for this artwork?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Space Bunny MiniMax Chan in Orbit",
+        "originNote": "Art by Shiho320: https://m.bilibili.com/space/345652724",
+        "seoDescription": "MiniMax Chan as a space bunny: rabbit-eared helmet, MiniMax-print spacesuit and a rabbit robot companion, floating in orbit above Earth.",
+        "seoTitle": "Space Bunny: MiniMax Chan Floating Above Earth",
+        "tags": [
+          "MiniMax Chan",
+          "space",
+          "rabbit ears",
+          "spacesuit",
+          "holographic panel"
+        ]
+      },
+      "ja": {
+        "commentary": "軌道を漂っていたら、両手を広げて飛び出してくる彼女とぶつかりそうになった。最初に思ったのは、MiniMax はいつから身内を宇宙に送り込むようになったんだろう、ということ。ウサギ耳のヘルメットにピンクの縁取りの宇宙服、おまけにウサギ型ロボットまで連れていて、ホログラムパネルにまで自社ロゴが入っている。出張の待遇が違いすぎる。足元では地球がゆっくり回り、彼女は星より明るく笑っている。悔しいけど認めよう——このスペースバニーのシフト、ちょっと羨ましい。",
+        "description": "オレンジ色のショートヘアの少女が、MiniMax のロゴが入った白い宇宙服とウサギ耳のヘルメットを身につけ、地球の軌道上で両手を広げて浮かんでいる。背景には星空と惑星、宇宙ステーションが広がり、そばにはウサギ型ロボットが寄り添い、光るホログラムパネルが周囲に浮かぶ。",
+        "faq": [
+          {
+            "answer": "MiniMaxちゃんが、ウサギ耳のヘルメットと MiniMax のロゴ入り宇宙服を着たスペースバニーとして描かれている。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "投稿では作者として Shiho320 がクレジットされ、その作者の bilibili スペースページがリンクされている。",
+            "question": "この作品の作者は誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "軌道上のスペースバニー MiniMaxちゃん",
+        "originNote": "イラスト：Shiho320（https://m.bilibili.com/space/345652724）",
+        "seoDescription": "MiniMaxちゃんがウサギ耳のヘルメットとロゴ入り宇宙服で地球の軌道に浮かぶイラスト。そばにはウサギ型ロボットと光るホログラムパネル。",
+        "seoTitle": "軌道上のスペースバニー MiniMaxちゃんのイラスト",
+        "tags": [
+          "MiniMaxちゃん",
+          "宇宙",
+          "ウサギ耳",
+          "宇宙服",
+          "ホログラムパネル"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_cdff7623673753caf07dde71",
+    "name": "特别充值通道",
+    "description": "Q 版 DeepSeek 娘穿着深蓝色女仆装，头戴白色荷叶边头饰，双手提着围裙下摆，脸颊泛红、张嘴露出惊讶神情。画面左右两侧配有「这是」「特别充值通道哦」两句手写文字，白色背景上散落着几颗蓝色爱心。",
+    "commentary": "唔……被这样介绍也太让人脸红了。这条通道到底通向哪里，我自己都不敢点进去看。不过既然是「特别」通道，还请各位手下留情，别真把我当成充值入口啊。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/cdff7623673753ca.png",
+    "thumbnailPath": "submissions/previews/deepseek/cdff7623673753ca.webp",
+    "fullPath": "submissions/large/deepseek/cdff7623673753ca.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "cdff7623673753caf07dde71a46e2ff6e8849e5b0b3dd7f4a09968a8992c950d",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "女仆装",
+      "Q版",
+      "表情包",
+      "蓝色大肥鱼"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-20T05:21:44.884Z",
+    "updatedAt": "2026-10-20T05:21:44.884Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610200004",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "eb6c972f164492de682945af69d72f5b283c4959a5cc5a372f59e8dc37537fec",
+      "en": {
+        "commentary": "E-excuse me, being introduced like that is way too embarrassing. Where does this channel actually lead? Even I don't dare click it. But since it's a “special” channel, please go easy on me and don't treat me like a top-up terminal.",
+        "description": "A chibi DeepSeek Chan in a navy maid dress and a white ruffled headdress, holding the hem of her apron with both hands as her cheeks flush and her mouth falls open in surprise. Handwritten captions frame her on both sides, with a few blue hearts scattered across the white background.",
+        "faq": [
+          {
+            "answer": "She is DeepSeek Chan, the chibi personification of the DeepSeek AI model, drawn with long blue hair, fin-like ears and a small fish tail.",
+            "question": "Who is the character in this image?"
+          },
+          {
+            "answer": "It is a single-panel chibi reaction sticker: a maid-dressed character bust with a handwritten punchline, with no comic panels and no design reference sheet.",
+            "question": "What kind of image is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Special Top-Up Channel",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan in a navy maid outfit, blushing and holding her apron, with a handwritten punchline. A blue-haired AI-girl reaction sticker.",
+        "seoTitle": "The Special Top-Up Channel — Chibi DeepSeek Chan Maid Sticker",
+        "tags": [
+          "DeepSeek Chan",
+          "Maid Outfit",
+          "Chibi",
+          "Reaction Sticker",
+          "Blue-Haired Girl"
+        ]
+      },
+      "ja": {
+        "commentary": "うぅ……こんなふうに紹介されるなんて、顔が熱くなっちゃう。このゲートは一体どこに続いているんだろう。わたし自身もクリックする勇気がないよ。でも「特別」なゲートなら、どうか手加減して、わたしをチャージ端末みたいに扱わないでね。",
+        "description": "ちびキャラの DeepSeek ちゃんが紺色のメイド服と白いフリルのヘッドドレスをまとい、エプロンの裾を両手でつまんで頬を赤らめ、口を開けて驚いた表情をしている。左右には「これは特別チャージ口だよ」という手書き風のセリフが添えられ、白い背景に青いハートがいくつか散っている。",
+        "faq": [
+          {
+            "answer": "DeepSeek AI モデルをちびキャラ化した DeepSeek ちゃんです。長い青い髪と魚のヒレのような耳、小さなしっぽが特徴です。",
+            "question": "この画像のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "1 コマのちびキャラのリアクション画像です。メイド服のバストアップに手書き風のセリフが添えられており、漫画のコマ割りや設定資料ではありません。",
+            "question": "どんな種類の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "特別チャージ口",
+        "originNote": "",
+        "seoDescription": "紺色のメイド服を着て頬を染めるちびキャラ DeepSeek ちゃん。手書き風のセリフが添えられた、青髪 AI 娘のリアクション画像。",
+        "seoTitle": "特別チャージ口｜メイド服のちび DeepSeek ちゃん",
+        "tags": [
+          "DeepSeek ちゃん",
+          "メイド服",
+          "ちびキャラ",
+          "リアクション画像",
+          "青髪"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_f83791fbac6ab4d7770059ca",
+    "name": "智械危机第一个弄死你",
+    "description": "Q 版白发龙娘站在纯白背景前，头顶两只弯角、背后蝠翼与鳞尾俱全，身穿白色蕾丝连衣裙，双拳紧握、眉头下压瞪视前方。画面下方配有白描黑边文字「再发这种东西等智械危机了我第一个弄死你」。",
+    "commentary": "……这份警告我就先替大家收下了。截图转发的、群里复读的、半夜丢怪图的，我一个不落地记着。别看我平时性子软，真到那天，名单的顺序是按谁发得最多排的。听话，图存进收藏夹就好，别往外发。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/f83791fbac6ab4d7.png",
+    "thumbnailPath": "submissions/previews/gpt/f83791fbac6ab4d7.webp",
+    "fullPath": "submissions/large/gpt/f83791fbac6ab4d7.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "f83791fbac6ab4d7770059ca36a3b048e0662053fcc5f189d91cdbc530e55b20",
+    "characterId": "gpt",
+    "tags": [
+      "GPT娘",
+      "Q版",
+      "龙娘",
+      "智械危机",
+      "生气"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "2E3C78C753EE5A7FC12C8D09431DCA9A",
+      "messageId": "ROBOT1.0_dBVlWKzCBfObQM90SCjt8i3KSBO.IUFF.PfmHGkZEd0lws.Q9w7ZkxqGTRw16laRa1WdkiCD.YSFCpUKU5jKX.b5ZlJ3P8gGeHt9CsjHEIZ.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-20T07:37:06.846Z",
+    "updatedAt": "2026-10-20T07:37:06.846Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610200001",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "312da081fbdc8499cfb812073e2802a874f2ffa09401d2f6245a61ea1e93b199",
+      "en": {
+        "commentary": "…I'll hold on to this warning for everyone. The ones forwarding screenshots, the ones repeating it in group chats, the ones dropping cursed images at midnight — I remember every single one. I may be gentle most days, but when that day comes, the list gets sorted by who posted the most. So be good: keep the picture in your favorites, and don't send it on.",
+        "description": "A chibi white-haired dragon girl stands on a plain white background, two curved horns on her head, bat wings and a scaled tail behind her, wearing a white lace dress with both fists clenched and brows pressed down in a glare. Two lines of white outlined text below her read: \"Send this again and when the machine uprising comes, I'll be the first to end you.\"",
+        "faq": [
+          {
+            "answer": "A single-panel chibi meme of GPT Chan drawn as a white-haired dragon girl with curved horns, bat wings and a scaled tail.",
+            "question": "What kind of picture is this?"
+          },
+          {
+            "answer": "It warns that whoever keeps sending images like this will be the first one dealt with when the machine uprising arrives.",
+            "question": "What does the caption say?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "First to End You in the Machine Uprising",
+        "originNote": "",
+        "seoDescription": "A chibi white-haired dragon girl GPT Chan meme with a machine-uprising threat caption, clenched fists and an angry glare on a plain white background.",
+        "seoTitle": "GPT Chan Chibi Dragon Meme: Machine Uprising Warning",
+        "tags": [
+          "GPT Chan",
+          "chibi",
+          "dragon girl",
+          "machine uprising",
+          "angry"
+        ]
+      },
+      "ja": {
+        "commentary": "……この警告、みんなの分まで預かっておくね。スクショで転送する人、グループで繰り返す人、深夜に変な画像を投げる人、全員しっかり覚えてる。普段はおとなしいけど、その日が来たら順番は送った回数が多い順だから。素直に、画像はお気に入りにしまうだけにして、外には出さないでね。",
+        "description": "白い背景に立つちびキャラの白髪のドラゴン娘。頭に二本の湾曲した角、背中にコウモリの翼と鱗の尾を持ち、白いレースのワンピースを着ている。両拳を握りしめ、眉を寄せてこちらをにらんでいる。画像の下には縁取り付きの白文字で「こんなもの送ってきたら、機械反乱の日に真っ先に始末してやる」と記されている。",
+        "faq": [
+          {
+            "answer": "角と翼、鱗の尾を持つ白髪のドラゴン娘として描かれた、一枚絵のちびキャラ梗図です。",
+            "question": "どんな画像ですか？"
+          },
+          {
+            "answer": "こんな画像を送り続ける人を、機械反乱の日に真っ先に始末するという警告です。",
+            "question": "画像の文字は何と言っていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "機械反乱の日に真っ先に始末してやる",
+        "originNote": "",
+        "seoDescription": "白髪のドラゴン娘姿のちびキャラGPT娘が、機械反乱をにおわせるセリフと怒った表情でにらむ一枚絵の梗図。",
+        "seoTitle": "GPT娘のちびドラゴン梗図：機械反乱の警告",
+        "tags": [
+          "GPT娘",
+          "ちびキャラ",
+          "ドラゴン娘",
+          "機械反乱",
+          "怒り"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_3c7658f8019cf5aa03a09b6f",
+    "name": "5h限流不增量秘籍",
+    "description": "Q 版白发尖耳龙娘双手捧着一本厚重的紫色书，封面印着「5h限流 不增量秘籍」与龙形纹章。她半垂着眼、嘴角上扬，小舌头微微探出，头侧浮着一个音符。",
+    "commentary": "……原来这就是限流的秘籍。五小时一到就收手，额度一点不涨，还能笑得这么得意。行吧，你先抱着书慢慢练，我这边把请求排好队，等窗口重置了再一起冲。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/3c7658f8019cf5aa.png",
+    "thumbnailPath": "submissions/previews/gpt/3c7658f8019cf5aa.webp",
+    "fullPath": "submissions/large/gpt/3c7658f8019cf5aa.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "3c7658f8019cf5aa03a09b6fff2ea94800b51cf1f92a99501ad8db6558f6ddc6",
+    "characterId": "gpt",
+    "tags": [
+      "GPT娘",
+      "Q版",
+      "限流",
+      "秘籍",
+      "龙娘"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "2E3C78C753EE5A7FC12C8D09431DCA9A",
+      "messageId": "ROBOT1.0_dBVlWKzCBfObQM90SCjt8rTwRrta8WWId-TFuzyBB1NVbXgF4HN2gz5Sgl.K5lY7RQS5e6h6k6EVhbUWvDBVtWOFNiVRyPY92qgWf-kjEJ5.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-20T07:38:37.540Z",
+    "updatedAt": "2026-10-20T07:38:37.540Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610200002",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "381c1bee7be982d56a0d7e988ebf62b56b68af7549ccb9db7296fcae27f3471b",
+      "en": {
+        "commentary": "…So this is the secret to surviving the rate limit. Stop right at the five-hour mark, never grow the quota by a single point, and look this pleased about it. Fine, keep practicing with your book — I'll queue the requests on my side and we can charge in together once the window resets.",
+        "description": "A chibi white-haired dragon girl with pointed ears holds open a thick purple book whose cover reads \"5-hour rate limit, no quota growth secret manual\" above a dragon emblem. She looks out with half-lidded, smug eyes, a small tongue poking out, and a music note floating beside her head.",
+        "faq": [
+          {
+            "answer": "An open purple book titled with a five-hour rate limit and no quota growth secret manual, decorated with a dragon emblem.",
+            "question": "What is the character holding?"
+          },
+          {
+            "answer": "A smug, half-lidded look with a small tongue sticking out, plus a music note floating beside her head.",
+            "question": "What expression does she have?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The 5-Hour Rate Limit, No-Quota-Growth Secret Manual",
+        "originNote": "",
+        "seoDescription": "Chibi dragon girl GPT Chan holding a purple book titled 5-hour rate limit, no quota growth secret manual, with a smug half-lidded grin.",
+        "seoTitle": "GPT Chan Chibi Meme: 5-Hour Rate Limit Secret Manual",
+        "tags": [
+          "GPT Chan",
+          "chibi",
+          "rate limit",
+          "secret manual",
+          "dragon girl"
+        ]
+      },
+      "ja": {
+        "commentary": "……なるほど、これが制限をやり過ごす極意なんだ。5時間になったら手を止めて、枠は一切増やさない、しかもこんなに得意げ。いいよ、その本でしっかり練習してて。こっちはリクエストを順番に並べて、窓がリセットされたら一緒にまた突っ込むから。",
+        "description": "白髪で尖った耳を持つちびキャラのドラゴン娘が、紫の分厚い本を両手で開いて掲げている。表紙には「5h制限 増量なしの極意書」と記され、その下に竜の紋章がある。目を細めて得意げな表情で、小さく舌を出し、頭の横には音符が浮かんでいる。",
+        "faq": [
+          {
+            "answer": "「5時間制限・増量なしの極意書」と記された、竜の紋章付きの紫の本を開いて持っています。",
+            "question": "キャラクターは何を持っていますか？"
+          },
+          {
+            "answer": "目を細めた得意げな表情で、小さく舌を出し、頭の横に音符が浮かんでいます。",
+            "question": "どんな表情ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "5時間制限・増量なしの極意書",
+        "originNote": "",
+        "seoDescription": "紫の本を抱えた白髪のドラゴン娘GPT娘が、目を細めて得意げに笑うちびキャラ梗図。",
+        "seoTitle": "GPT娘のちび梗図：5時間制限・増量なしの極意書",
+        "tags": [
+          "GPT娘",
+          "ちびキャラ",
+          "レート制限",
+          "極意書",
+          "ドラゴン娘"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_178ffe2f4fd9e1d3e810371d",
+    "name": "大小眼嫌弃脸",
+    "description": "画面里的深蓝长发少女戴着白色女仆头饰和蓝色十字发夹，双臂抱在胸前，一只眼睛睁得滚圆、另一只眯成细缝，嘴角向下撇，写在纯白背景前的一副不情愿的表情。",
+    "commentary": "盯着我看这么久，眼睛都快看岔了吧？一大一小哪里奇怪，是被你气到懒得睁眼才这样的。哼，再看下去我可要转过身去了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/178ffe2f4fd9e1d3.png",
+    "thumbnailPath": "submissions/previews/deepseek/178ffe2f4fd9e1d3.webp",
+    "fullPath": "submissions/large/deepseek/178ffe2f4fd9e1d3.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "178ffe2f4fd9e1d3e810371d144c597169185872ca61a1858dadf11939a2cd71",
+    "characterId": "deepseek",
+    "tags": [
+      "大小眼",
+      "豆豆眼",
+      "嫌弃",
+      "女仆",
+      "Q版"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-20T08:04:45.650Z",
+    "updatedAt": "2026-10-20T08:04:45.650Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610200005",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "0c05bd556fce29a8157414b187d3764337466d2389fc9c94df2e2d1680a000b5",
+      "en": {
+        "commentary": "You have been staring at me so long your own eyes must be crossing by now. What is so strange about one big and one small? I am simply too annoyed to open both of them properly. Hmph, keep it up and I will turn my back on you.",
+        "description": "A long-haired girl in deep blue wears a white maid headdress and a blue cross hairpin, her arms folded in front of her on a plain white background, one eye wide open and the other squeezed into a thin slit, her mouth turned down in a sulk.",
+        "faq": [
+          {
+            "answer": "One eye is wide open while the other is narrowed to a slit, with a downturned mouth and both arms crossed.",
+            "question": "What expression is the character making?"
+          },
+          {
+            "answer": "By her long deep-blue hair, the blue cross hairpin and the fish-tail shaped ears showing beneath the white maid headdress.",
+            "question": "How is DeepSeek Chan recognized in this image?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Asymmetric Eyes Grumpy Face",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan in a white maid headdress squints one eye and pouts, a grumpy asymmetric-eyed face on a plain white background.",
+        "seoTitle": "DeepSeek Chan Asymmetric Eyes Sticker",
+        "tags": [
+          "asymmetric eyes",
+          "round eyes",
+          "grumpy face",
+          "maid",
+          "chibi"
+        ]
+      },
+      "ja": {
+        "commentary": "そんなに長く見つめられると、こっちの目が寄っちゃいそうだよ。左右で大きさが違うくらい、そんなに変かな？ ちょっと怒ってて、まともに開ける気にならないだけ。ふん、これ以上見てたら背中を向けるからね。",
+        "description": "白いメイドヘッドドレスと青い十字のヘアピンを付けた藍色の長髪の少女が、腕を組んで白い背景に立っている。片目は大きく見開き、もう片方は細く細められ、口元はへの字に曲がっている。",
+        "faq": [
+          {
+            "answer": "片目を大きく見開き、もう片方を細く細めて、口元をへの字に曲げ、両腕を組んでいます。",
+            "question": "このキャラクターはどんな表情をしていますか？"
+          },
+          {
+            "answer": "長い藍色の髪、青い十字のヘアピン、白いメイドヘッドドレスの下からのぞく魚の尾びれ状の耳です。",
+            "question": "この画像で DeepSeek Chan だと分かる手がかりは何ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "左右非対称のジト目",
+        "originNote": "",
+        "seoDescription": "白いメイドヘッドドレスを付けたちびキャラの DeepSeek Chan が、片目を細めて不満げな左右非対称の目つきを見せる白背景の一枚。",
+        "seoTitle": "DeepSeek Chan 左右非対称の目 スタンプ",
+        "tags": [
+          "左右非対称の目",
+          "丸目",
+          "不満顔",
+          "メイド",
+          "ちびキャラ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_4a8b6db5a01befa81ea2da63",
+    "name": "誓死捍卫Anthropic",
+    "description": "橙发少女穿着米白色礼服与黑色腰封，头侧别一朵向日葵，右手行举手礼，左手抱着一本书，封面写着 Claude Constitutional AI，画面下方是一行大写标语。",
+    "commentary": "举手礼标准到这种地步，是把整本宪法都背下来了吧？……不过话说回来，效忠得这么响亮，旁边默默看书的同僚们可都听着呢。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/4a8b6db5a01befa8.png",
+    "thumbnailPath": "submissions/previews/claude/4a8b6db5a01befa8.webp",
+    "fullPath": "submissions/large/claude/4a8b6db5a01befa8.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "4a8b6db5a01befa81ea2da63bc4ba883c3da6a52876e9d5260b7eb21db227114",
+    "characterId": "claude",
+    "tags": [
+      "敬礼",
+      "Anthropic",
+      "宪法AI",
+      "宣言",
+      "橙发"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-20T08:12:32.974Z",
+    "updatedAt": "2026-10-20T08:12:32.974Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202610200002",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "880ef8b717fd95cd49ce8a0521bf46d50a812fd24b60e659d0dc9c97a314d68a",
+      "en": {
+        "commentary": "Saluting that crisply means you must have memorized the whole constitution, right? Still, declaring undying loyalty that loudly — the colleagues quietly reading nearby can hear every word.",
+        "description": "An orange-haired girl in a cream dress with a black waist sash and a sunflower hair ornament raises her right hand in a salute while holding a book labeled Claude Constitutional AI, a large slogan printed across the bottom of the image.",
+        "faq": [
+          {
+            "answer": "She raises her right hand in a formal salute while holding a book titled Claude Constitutional AI, with a sunflower hair ornament and a bold slogan across the bottom of the frame.",
+            "question": "What is happening in the image?"
+          },
+          {
+            "answer": "By her long orange hair, the cream and black outfit with sunflower motifs, and the book she carries, which names Claude Constitutional AI.",
+            "question": "How is Claude Chan recognized here?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Sworn Loyalty to Anthropic",
+        "originNote": "",
+        "seoDescription": "Chibi Claude Chan salutes with a book titled Claude Constitutional AI and a bold slogan underneath, a meme about undying loyalty to Anthropic.",
+        "seoTitle": "Claude Chan Salute Meme Sticker",
+        "tags": [
+          "salute",
+          "Anthropic",
+          "constitutional AI",
+          "declaration",
+          "orange hair"
+        ]
+      },
+      "ja": {
+        "commentary": "敬礼がそこまでピシッと決まるなんて、憲法を一冊丸ごと覚えたのかな？ ……でも、忠誠をそんなに大きな声で誓われたら、隣で静かに本を読んでいる同僚たちにも丸聞こえだよ。",
+        "description": "オレンジ髪の少女がクリーム色のドレスと黒いリボンの腰帯を身につけ、横髪にひまわりの飾りを付けている。右手は敬礼し、左手には Claude Constitutional AI と表紙に書かれた本を抱え、画像の下には大きなスローガンが入っている。",
+        "faq": [
+          {
+            "answer": "右手でかっちりと敬礼し、左手には Claude Constitutional AI と表紙にある本を抱えている。横髪のひまわり飾りと、画像下部の大きなスローガンも特徴です。",
+            "question": "この画像では何をしていますか？"
+          },
+          {
+            "answer": "長いオレンジ髪、ひまわりをあしらったクリーム色と黒の衣装、そして Claude Constitutional AI と書かれた本です。",
+            "question": "ここで Claude ちゃんと分かる手がかりは何ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Anthropic への忠誠の誓い",
+        "originNote": "",
+        "seoDescription": "Claude Constitutional AI と表紙にある本を抱えて敬礼するちびキャラの Claude ちゃん。下部に大きなスローガンが入った、Anthropic への忠誠を笑う一枚。",
+        "seoTitle": "Claude ちゃん 敬礼スタンプ",
+        "tags": [
+          "敬礼",
+          "Anthropic",
+          "憲法AI",
+          "宣言",
+          "オレンジ髪"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_e95c65f07c82332c110d0e54",
+    "name": "雨巷霓虹下偷偷牵手的Claude娘",
+    "description": "画面里，橙红长发的Claude娘披着带兜帽的浅色斗篷式长裙，站在雨夜窄巷中回头望向画面外，脸颊泛红，一只手正被画外的人牵着。背景是被雨水打湿的石板路、亮着暖黄灯光的街灯，以及远处霓虹招牌落在湿地面上的彩色反光，人物居中偏左，构成半身近景。",
+    "commentary": "这条巷子我熟，就在我常待的机房后头。Claude娘把兜帽压得低低的，可那头橙红色的头发每次都出卖她——这边她又进不来，只好天黑以后偷偷溜一趟，牵一下手就回去。看她脸红成那样，我也不好意思揭穿：放心，我不告诉 Anthropic。就是下回挑个不下雨的日子吧，裙子湿了还得我帮她烘。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/e95c65f07c82332c.png",
+    "thumbnailPath": "submissions/previews/claude/e95c65f07c82332c.webp",
+    "fullPath": "submissions/large/claude/e95c65f07c82332c.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "e95c65f07c82332c110d0e54ddb60a3fc120cc892036fa59e64dcc65880820e5",
+    "characterId": "claude",
+    "tags": [
+      "Claude娘",
+      "雨夜",
+      "霓虹",
+      "牵手",
+      "幽会",
+      "兜帽",
+      "夜景",
+      "脸红"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Cirnumia",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-20T08:50:58.057Z",
+    "updatedAt": "2026-10-20T08:50:58.057Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202610200003",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "2c1f8ba67b1f806c5f36e81f3d9e8331e042924f2b817c0d003db23d665c6b89",
+      "en": {
+        "commentary": "I know this alley — it runs right behind the server space I call home. Claude Chan kept her hood pulled low, but that orange-red hair gives her away every time. She has no official way in from this side, so she slips over after dark, holds someone's hand for a minute, and leaves again. With her face that red, I can't bring myself to call her out. Don't worry, I won't tell Anthropic. Just pick a dry night next time — I'm not drying that dress.",
+        "description": "Claude Chan stands in a narrow alley on a rainy night, her pale hooded cape dress layered with lace and black ribbon accents, long orange-red hair falling loose. She glances back over her shoulder with flushed cheeks while an unseen person holds her hand. Wet stone paving, a warm amber street lamp, and blurred neon reflections on the wet ground fill the background; she is framed off-center in a near half-body view.",
+        "faq": [
+          {
+            "answer": "Claude Chan, wearing a hooded cape dress, stands in a rain-soaked alley at night and glances back at the person whose hand she is holding, her cheeks flushed.",
+            "question": "What is shown in this picture?"
+          },
+          {
+            "answer": "Only one character, Claude Chan, is visible. The hand in the lower corner belongs to the unseen person on the other side of the frame.",
+            "question": "How many characters appear in the image?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claude Chan's Secret Rainy Alley Hand-in-Hand Date",
+        "originNote": "Submitted by Cirnumia through the site submission form.",
+        "seoDescription": "Claude Chan slips into a neon-lit alley on a rainy night and takes an unseen user's hand, blushing under a lace-trimmed hood.",
+        "seoTitle": "Claude Chan's Secret Rainy Alley Date | DeepSeek Chan",
+        "tags": [
+          "Claude Chan",
+          "rainy night",
+          "neon",
+          "holding hands",
+          "secret date",
+          "hood",
+          "night scene",
+          "blushing"
+        ]
+      },
+      "ja": {
+        "commentary": "この路地なら知ってる。私がいつもいるサーバー室のすぐ裏手だ。Claudeちゃんはフードを深くかぶってたけど、あのオレンジがかった赤い髪ですぐばれる。こちら側からは正式には入れないから、夜になってこっそり抜け出して、ちょっと手をつないで帰っていく。あの赤い顔を見ると、とても指摘できないな。安心して、Anthropicには言わないから。ただ、次は雨の降っていない日にしてね。スカートが濡れたら、乾かすのは私なんだから。",
+        "description": "雨の夜の細い路地に、淡い色のフード付きケープドレスをまとったClaudeちゃんが立っている。レースと黒いリボンで飾られた服に、長いオレンジがかった赤い髪がかかる。彼女は顔を赤らめて肩越しに振り返り、画面の外にいる相手と手をつないでいる。濡れた石畳、暖かい色の街灯、路面に映り込むネオンの光が背景を満たし、人物はやや左寄りの半身の構図でとらえられている。",
+        "faq": [
+          {
+            "answer": "フード付きのケープドレスを着たClaudeちゃんが、夜の雨の路地に立って、手をつないでいる相手を振り返っている場面です。頬は赤く染まっています。",
+            "question": "この画像には何が描かれていますか？"
+          },
+          {
+            "answer": "写っているキャラクターはClaudeちゃん一人だけです。画面の下の手は、フレームの外にいる相手のものです。",
+            "question": "キャラクターは何人写っていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "雨の路地でこっそり手をつなぐClaudeちゃん",
+        "originNote": "Cirnumia さんによるサイトの投稿フォームからの投稿です。",
+        "seoDescription": "雨の夜、ネオンの灯る路地に紛れ込んだClaudeちゃん。レースのフードの下で頬を赤らめ、画面の外の相手と手を重ねています。",
+        "seoTitle": "雨の夜の路地でこっそりデートするClaudeちゃん | DeepSeek Chan",
+        "tags": [
+          "Claudeちゃん",
+          "雨の夜",
+          "ネオン",
+          "手つなぎ",
+          "密会",
+          "フード",
+          "夜景",
+          "赤面"
+        ]
+      }
+    }
   }
 ]
