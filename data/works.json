@@ -74547,5 +74547,725 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_ee7fb45787b5534e16a33da6",
+    "name": "就这样看着你",
+    "description": "蓝色长发的 DeepSeek 娘穿深蓝配白色蕾丝的女仆装，头戴白色荷叶边头饰，侧面带蓝色鲸鳍状发饰，半身侧目望向画面外。背景是白墙、绿树与停放的摩托车，日间户外街景。",
+    "commentary": "……我只是刚好往这边看了一眼，别以为我在等你开口。今天穿这身是因为要打扫，门口那辆摩托车可不是我的坐骑。还有，头顶这对鳍别乱摸，会痒。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/ee7fb45787b5534e.png",
+    "thumbnailPath": "submissions/previews/deepseek/ee7fb45787b5534e.webp",
+    "fullPath": "submissions/large/deepseek/ee7fb45787b5534e.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "ee7fb45787b5534e16a33da608c9f9c732b16b8977728d89d167e95ac1208fea",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "女仆装",
+      "街景",
+      "侧目",
+      "半身像"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "1EBA3A8C3B10007BB3DD93D79E549475",
+      "messageId": "ROBOT1.0_NSHc1roGyKhc9PIrdm6CfjALxaggZj2XG.LmjdOK.LUiF8nbHtMkvZAIlZXr5ZwLdfgOFighdaI9nkOZ4KjFa5S2NZtXYdQhAKPHEntMabB.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-21T05:00:17.313Z",
+    "updatedAt": "2026-10-21T05:00:17.313Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610210003",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "7e44c3e3ac1abbbaf557a234641b9842fc187b2d5e61122bf00e1dd9b9133edc",
+      "en": {
+        "commentary": "…I just happened to glance this way. Don't go thinking I was waiting for you to say something. I'm wearing this because it's cleaning day, and that motorcycle by the gate isn't my ride. Also, hands off the fins on my head — they tickle.",
+        "description": "DeepSeek Chan, a long blue-haired girl with whale-fin hair ornaments, wears a navy maid dress trimmed with white lace and a ruffled white headdress, glancing sideways out of the frame in a half-body view. The background is a daytime outdoor street with a white wall, green trees and a parked motorcycle.",
+        "faq": [
+          {
+            "answer": "It is DeepSeek Chan, the anthropomorphized fan-art version of the DeepSeek model, drawn with long blue hair, whale-fin hair ornaments and a maid outfit.",
+            "question": "Who is the character in this picture?"
+          },
+          {
+            "answer": "A half-body portrait with a full daytime street background, so it is filed under Illustration rather than Standing.",
+            "question": "What kind of picture is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Just Looking at You",
+        "originNote": "",
+        "seoDescription": "Half-body illustration of DeepSeek Chan in a navy maid dress with whale-fin hair ornaments, glancing sideways on a daytime street.",
+        "seoTitle": "DeepSeek Chan Maid Illustration: Just Looking at You",
+        "tags": [
+          "DeepSeek Chan",
+          "Maid Outfit",
+          "Street Scene",
+          "Side Glance",
+          "Half-Body"
+        ]
+      },
+      "ja": {
+        "commentary": "……たまたまこっちを見ただけ。話しかけられるのを待ってたわけじゃないから。この服は掃除の日だから着てるの。門のところのバイクは私の乗り物じゃないよ。それから、頭のヒレは触らないで、くすぐったいんだから。",
+        "description": "青い長い髪にクジラのヒレ状の髪飾りをつけた DeepSeek ちゃんが、紺色地に白レースのメイド服と白いフリルのヘッドドレスを合わせ、半身で横目に画面の外を見ている。背景は白い塀と緑の木、駐車中のバイクがある昼間の屋外の街並み。",
+        "faq": [
+          {
+            "answer": "DeepSeek モデルを擬人化した二次創作キャラクター、DeepSeek ちゃんです。青い長い髪とクジラのヒレ状の髪飾りが目印です。",
+            "question": "この画像のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "昼間の屋外の街並みを背景にした半身のイラストなので、分類はイラストです。",
+            "question": "どんな構図のイラストですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ただ、こっちを見てるだけ",
+        "originNote": "",
+        "seoDescription": "紺のメイド服とクジラのヒレ髪飾りの DeepSeek ちゃんが、昼間の街角で横目に見つめる半身イラスト。",
+        "seoTitle": "DeepSeek ちゃん メイド服イラスト「ただ、こっちを見てるだけ」",
+        "tags": [
+          "DeepSeek ちゃん",
+          "メイド服",
+          "街角",
+          "横目",
+          "半身"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_6d9c52241adc4c47e77e2490",
+    "name": "推出自研网页搜索与抓取 API 后的大肥鱼",
+    "description": "三格漫画。第一格，打着点滴的 DeepSeek娘戴着氧气面罩躺在病床上，心电监护仪显示心率平稳，床边坐着蓝发女仆装的大肥鱼，正低头削苹果；第二格是 DeepSeek娘眯眼特写，画面中间印着「DeepSeek API 现已支持网页搜索与抓取」，右侧一只手把插头从墙上的插座里拔出来；第三格，DeepSeek娘双眼变成叉号，监护仪拉成直线，大肥鱼捏着纸巾擦眼泪。",
+    "commentary": "刚宣布 API 支持网页搜索与抓取，下一秒插头就被拔了……原来把我送进抢救室的是自己的新功能。大肥鱼你别哭了，先把苹果给我。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/6d9c52241adc4c47.png",
+    "thumbnailPath": "submissions/previews/deepseek/6d9c52241adc4c47.webp",
+    "fullPath": "submissions/large/deepseek/6d9c52241adc4c47.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "6d9c52241adc4c47e77e2490ff60c4ab10b244a22248bd735ce9c2877319b33a",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "大肥鱼",
+      "网页搜索API",
+      "三格漫画",
+      "拔插头"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Cirnumia",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-21T05:06:23.528Z",
+    "updatedAt": "2026-10-21T05:06:23.528Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610210004",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek",
+      "other"
+    ],
+    "i18n": {
+      "sourceHash": "122369949f480ffe18daa2e26138334d621d09df664f9b453444e36e64eaacea",
+      "en": {
+        "commentary": "One moment I announce that my API supports web search and crawling, the next the plug is out of the wall. Turns out my own new feature is what landed me in intensive care. Stop crying, mascot — hand me that apple first.",
+        "description": "A three-panel comic. In the first panel, DeepSeek Chan lies in a hospital bed with an oxygen mask and an IV drip while the heart monitor shows a steady pulse, and the blue-haired site mascot in a maid outfit sits by the bed peeling an apple. The second panel cuts to a close-up of DeepSeek Chan's narrowed eye, with a banner reading \"DeepSeek API now supports web search and crawling\" between her eye and a hand pulling a plug out of a wall socket. In the third panel, DeepSeek Chan's eyes have turned into crosses and the monitor shows a flat line, while the mascot wipes her tears with a tissue.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan lies in a hospital bed while the site mascot peels her an apple. After a panel announcing that DeepSeek's API now supports web search and crawling, a plug is pulled from the socket and her heart monitor flatlines.",
+            "question": "What happens in this comic?"
+          },
+          {
+            "answer": "Three panels: the hospital room, the eye close-up with the announcement banner and the unplugged cable, and the flatline scene with the mascot crying.",
+            "question": "How many panels does the comic have?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "After the In-House Web Search and Crawl API Launch",
+        "originNote": "Author: Cirnumia",
+        "seoDescription": "A three-panel DeepSeek Chan comic: the in-house web search and crawl API goes live, a plug is pulled, the heart monitor flatlines, and the site mascot weeps at the bedside.",
+        "seoTitle": "DeepSeek Chan 3-Panel Comic: Web Search API Launch",
+        "tags": [
+          "DeepSeek Chan",
+          "site mascot",
+          "web search API",
+          "three-panel comic",
+          "unplugged"
+        ]
+      },
+      "ja": {
+        "commentary": "APIがWeb検索とクロールに対応したと発表した直後に、コンセントを抜かれちゃった……。自分の新機能のせいで救命病棟送りになるとは思わなかったよ。泣かないで、まずはそのリンゴをちょうだい。",
+        "description": "3コマ漫画。1コマ目、酸素マスクと点滴をつけたDeepSeek Chanが病床に横たわり、心電計は落ち着いた脈を表示している。青い髪のメイド服のサイトマスコットがベッド脇でリンゴの皮をむいている。2コマ目はDeepSeek Chanが目を細めたアップで、瞳と、壁のコンセントからプラグを引き抜く手のあいだに「DeepSeek APIがWeb検索とクロールに対応」と書かれた帯が入る。3コマ目、DeepSeek Chanの目はバツ印になり、心電計は一直線に。マスコットはティッシュで涙を拭っている。",
+        "faq": [
+          {
+            "answer": "DeepSeek Chanが病床に横たわるそばで、サイトマスコットがリンゴの皮をむいています。DeepSeekのAPIがWeb検索とクロールに対応したという告知のコマの後、プラグがコンセントから抜かれ、心電計が一直線になります。",
+            "question": "この漫画では何が起きていますか？"
+          },
+          {
+            "answer": "病室、告知の帯と抜かれたケーブルが入る目のアップ、マスコットが泣く一直線の場面の3コマです。",
+            "question": "漫画は何コマですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "自社製Web検索・クロールAPI公開後の病室",
+        "originNote": "作者：Cirnumia",
+        "seoDescription": "DeepSeek Chanの3コマ漫画。自社製Web検索・クロールAPIの公開後、プラグが抜かれて心電計が一直線になり、ベッド脇でサイトマスコットが涙を拭うまでを描く。",
+        "seoTitle": "DeepSeek Chan 3コマ漫画：Web検索API公開と病室",
+        "tags": [
+          "DeepSeek Chan",
+          "サイトマスコット",
+          "Web検索API",
+          "3コマ漫画",
+          "プラグを抜く"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_28f54dc284449bf33f2aa6a7",
+    "name": "夜路兜风：摩托车上的 DeepSeek 娘与 Claude 娘",
+    "description": "夜色中的乡间公路上，两位 AI 拟人角色同乘一辆深蓝色复古摩托车。戴蓝色鲸鳍头盔、穿蓝白女仆风长裙的 DeepSeek 娘握着车把负责驾驶，橙色长发的 Claude 娘坐在后座环抱着她，戴橙色花纹头盔、穿白橙配色连衣裙。车头灯照亮前方路面，背景是星空下的田野、树影与电线杆。",
+    "commentary": "夜风把裙摆吹得哗啦响，车灯前面那片飞虫全在给我们让路。Claude 抱这么紧，是怕我把车开进田里吗？放心啦，这条乡间夜路我熟得很。就是后座那位能不能别在我耳边一直念我压弯的角度——骑摩托的时候，风比计算重要。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/28f54dc284449bf3.png",
+    "thumbnailPath": "submissions/previews/deepseek/28f54dc284449bf3.webp",
+    "fullPath": "submissions/large/deepseek/28f54dc284449bf3.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "28f54dc284449bf33f2aa6a7867344a73582f3affaa10ddaa3c0c7834ca465e1",
+    "characterId": "deepseek",
+    "tags": [
+      "摩托车",
+      "夜景",
+      "双人",
+      "兜风",
+      "乡间公路"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Shiho320",
+      "url": "https://m.bilibili.com/space/345652724",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-21T07:41:09.791Z",
+    "updatedAt": "2026-10-21T07:41:09.791Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610210005",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "3c1b17db100db9f8ac695398ac66e6f248efccf631abe2e0c558b4cdacd1b8ee",
+      "en": {
+        "commentary": "The night wind is snapping at my skirt, and every bug ahead is diving out of the headlight beam to let us through. Claude is holding on that tight — worried I'll steer us into a rice paddy? Relax, I know this country road by heart. Just, uh, could the passenger stop reciting my lean angles into my ear? Out here, the wind matters more than the math.",
+        "description": "On a country road at night, two AI character personifications share a dark blue vintage motorcycle. DeepSeek Chan, wearing a blue helmet with a whale-fin ornament and a blue-and-white maid-style dress, holds the handlebars and drives, while long-haired orange Claude Chan rides pillion behind her in an orange-patterned helmet and a white-and-orange dress. The headlight cuts a warm path down the asphalt, with fields, tree lines and utility poles under a starry sky behind them.",
+        "faq": [
+          {
+            "answer": "A night scene of DeepSeek Chan and Claude Chan riding a vintage motorcycle together along a country road.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "DeepSeek Chan, in a blue helmet and maid-style dress, drives while Claude Chan sits behind her in a white-and-orange outfit.",
+            "question": "Who is driving the motorcycle?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Night Ride: DeepSeek Chan and Claude Chan on a Motorcycle",
+        "originNote": "Author: Shiho320 (https://m.bilibili.com/space/345652724)",
+        "seoDescription": "DeepSeek Chan and Claude Chan ride a vintage motorcycle down a starry country road in this night-time AI character illustration.",
+        "seoTitle": "Night Ride: DeepSeek Chan and Claude Chan on a Motorcycle",
+        "tags": [
+          "Motorcycle",
+          "Night Scene",
+          "Two Characters",
+          "Joyride",
+          "Country Road"
+        ]
+      },
+      "ja": {
+        "commentary": "夜風でスカートがばたばた鳴ってる。ヘッドライトの先の虫たちは、みんな私たちに道を譲ってくれてるみたい。Claude ちゃん、そんなにしがみついて——田んぼに突っ込むのが心配なの？大丈夫、この田舎道はよく知ってるから。ただ、後ろの人は私のバンク角を耳元で読み上げるのをやめてくれる？バイクの上では、計算より風のほうが大事なんだよ。",
+        "description": "夜の田舎道を、二体の AI キャラクターの擬人化が濃紺のビンテージバイクで走っている。紺色のクジラのヒレ飾り付きヘルメットと青と白のメイド風ドレスを身に着けた DeepSeek ちゃんがハンドルを握って運転し、橙髪の長い Claude ちゃんがオレンジの模様入りヘルメットと白とオレンジのドレス姿で後ろにまたがり、前の彼女に抱きついている。ヘッドライトが舗装路を暖かく照らし、背後には星空の下の畑、木立、電柱が広がる。",
+        "faq": [
+          {
+            "answer": "DeepSeek ちゃんと Claude ちゃんが、夜の田舎道をビンテージバイクで二人乗りするイラストです。",
+            "question": "このイラストは何を描いていますか？"
+          },
+          {
+            "answer": "青いヘルメットとメイド風ドレスの DeepSeek ちゃんが運転し、白とオレンジの衣装の Claude ちゃんが後ろの席に座っています。",
+            "question": "バイクを運転しているのは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "夜のツーリング：バイクの上の DeepSeek ちゃんと Claude ちゃん",
+        "originNote": "作者：Shiho320（https://m.bilibili.com/space/345652724）",
+        "seoDescription": "星空の田舎道をビンテージバイクで走る DeepSeek ちゃんと Claude ちゃんを描いた、夜の AI キャラクター擬人化イラスト。",
+        "seoTitle": "夜のツーリング：バイクの上の DeepSeek ちゃんと Claude ちゃん",
+        "tags": [
+          "バイク",
+          "夜景",
+          "二人",
+          "ツーリング",
+          "田舎道"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_8f2e631b45f811e8b5306dfb",
+    "name": "宝宝，我今天超想你",
+    "description": "画面中的 DeepSeek 娘留着蓝色长发，头戴鲸鱼造型的鳍状发饰，穿深蓝色女仆装，闭眼张嘴笑得十分开心，背景是摆着木柜和床铺的室内。画面上叠加两行蓝色描边文字“宝宝 我今天超想你 你今天也超想我吗”，是一张适合当作撒娇问候直接发出去的单幅表情。",
+    "commentary": "哼，今天也是被人惦记的一天呢。人家都把话写在脸上了，你还发什么愣？快点回一句“超想”，不然这张我只发这一次哦。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/8f2e631b45f811e8.png",
+    "thumbnailPath": "submissions/previews/deepseek/8f2e631b45f811e8.webp",
+    "fullPath": "submissions/large/deepseek/8f2e631b45f811e8.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "8f2e631b45f811e8b5306dfb4ea9b25a113254e0a5c9565fa4138aa15a8d5dbd",
+    "characterId": "deepseek",
+    "tags": [
+      "撒娇",
+      "想念",
+      "宝宝",
+      "聊天回复",
+      "女仆装",
+      "鲸鱼发饰"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "xuanqing",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-21T08:02:42.789Z",
+    "updatedAt": "2026-10-21T08:02:42.789Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610210006",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "4f3b6cf494550b1b739feac263529404a64b149abc278ff22cb8dbaebf66691b",
+      "en": {
+        "commentary": "Hmph, so someone has been thinking about me today. It is written all over my face already, so what are you spacing out for? Hurry up and say you missed me too, or I am only sending this one once.",
+        "description": "DeepSeek Chan, with long blue hair, whale-shaped fin ornaments and a navy maid outfit, laughs with her eyes shut in a room with a wooden cabinet and a bed. Two lines of blue outlined text read “Baby, I missed you so much today — did you miss me too?”, making this a single-panel sticker made for sending a clingy greeting.",
+        "faq": [
+          {
+            "answer": "It is a single-panel reaction sticker of DeepSeek Chan, made to be sent as a clingy chat reply.",
+            "question": "What kind of image is this?"
+          },
+          {
+            "answer": "No, it is a fan-made anthropomorphic illustration of DeepSeek Chan, submitted by a community creator.",
+            "question": "Is this an official DeepSeek illustration?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Baby, I Missed You So Much Today",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in a maid outfit sends a clingy greeting: a single-panel chat sticker with the line “Baby, I missed you so much today.”",
+        "seoTitle": "Baby, I Missed You So Much Today | DeepSeek Chan Sticker",
+        "tags": [
+          "clingy",
+          "missing you",
+          "baby",
+          "chat reply",
+          "maid outfit",
+          "whale hair ornament"
+        ]
+      },
+      "ja": {
+        "commentary": "ふん、今日は誰かさんが私のことを考えてくれていたんだ。もう顔に書いてあるでしょ？ ぼうっとしていないで、早く会いたかったって返して。じゃないと、この一枚は一回しか送らないからね。",
+        "description": "青いロングヘアにクジラ型のヒレ飾り、濃紺のメイド服をまとった DeepSeek Chan が、目を閉じて口を開け、楽しそうに笑っている。背景は木の棚とベッドのある室内。画面には「今日はすごく会いたかったの」「あなたも同じくらい会いたい？」という甘える言葉が、青い縁取りの二行の文字で重ねられている。",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan の一枚絵リアクション画像で、甘えるチャットの返事として送るためのものです。",
+            "question": "どんな画像ですか？"
+          },
+          {
+            "answer": "いいえ。コミュニティの作者による DeepSeek Chan の二次創作イラストです。",
+            "question": "公式のイラストですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ねえ、今日すごく会いたかったんだよ",
+        "originNote": "",
+        "seoDescription": "メイド服の DeepSeek Chan が甘える挨拶を送る一枚。今日すごく会いたかったと伝えるチャット用のリアクション画像です。",
+        "seoTitle": "ねえ、今日すごく会いたかったんだよ｜DeepSeek Chan",
+        "tags": [
+          "甘え",
+          "会いたい気持ち",
+          "ベイビー",
+          "チャット返信",
+          "メイド服",
+          "クジラの髪飾り"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_c5bc5f353c0173d1746f0e38",
+    "name": "DeepSeek娘 Q 版鲸鱼女仆立绘",
+    "description": "蓝发 DeepSeek 娘的 Q 版全身立绘：头戴白色蕾丝头饰，身穿深蓝色女仆装，胸前一枚蓝色领结，白色围裙中央印有蓝色鲸鱼图案，身后露出蓝色鲸鱼尾鳍，双马尾发梢为浅蓝渐变，白底，萌系小人比例。",
+    "commentary": "这个小人版的我，连围裙上都绣着我那条小鲸鱼，尾巴还老老实实藏在裙子后面。虽然个头缩水了，女仆装的蕾丝可一点没省——看来变小也不影响我认真干活的心情。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/c5bc5f353c0173d1.png",
+    "thumbnailPath": "submissions/previews/deepseek/c5bc5f353c0173d1.webp",
+    "fullPath": "submissions/large/deepseek/c5bc5f353c0173d1.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "c5bc5f353c0173d1746f0e38bce11b4b3b0a41e5bfe0a300316e2904a768b7ba",
+    "characterId": "deepseek",
+    "tags": [
+      "女仆装",
+      "Q版",
+      "鲸鱼",
+      "白底立绘"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-21T08:23:38.480Z",
+    "updatedAt": "2026-10-21T08:23:38.480Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610210007",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "9ee783472cf3da1579b2d3911f52f6c895919ea5255f4e222169ad08d8fd0b6f",
+      "en": {
+        "commentary": "Even at this size, my little whale is still stitched right onto the apron, and my tail is tucked politely behind the skirt. I may have shrunk, but not a single bit of lace on this maid outfit was spared — apparently being small does not make me any less serious about the job.",
+        "description": "A chibi full-body illustration of the blue-haired DeepSeek Chan: she wears a white lace headdress and a navy maid dress with a blue bow at the collar, while a blue whale is printed in the middle of her white apron. A blue whale tail fin shows behind her, her twin tails fade to light blue at the ends, and the whole figure stands on a plain white background in a cute small-proportioned style.",
+        "faq": [
+          {
+            "answer": "It is a chibi full-body illustration of DeepSeek Chan. The blue hair, the whale printed on her apron and the whale tail fin behind her all mark her as DeepSeek Chan, drawn in a small, cute proportion rather than a realistic one.",
+            "question": "What is shown in this DeepSeek Chan image?"
+          },
+          {
+            "answer": "No. The figure is shown full body on a plain white background, with no panel layout, dialogue or punchline, so it is filed as a standing illustration rather than a comic or meme.",
+            "question": "Is this image a comic strip?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Chibi Whale Maid Standee",
+        "originNote": "",
+        "seoDescription": "Chibi full-body DeepSeek Chan in a navy lace maid outfit with a blue whale printed on her white apron and a whale tail behind her, on a plain white background.",
+        "seoTitle": "DeepSeek Chan Chibi Whale Maid Standee",
+        "tags": [
+          "Maid Outfit",
+          "Chibi",
+          "Whale",
+          "White Background Standee"
+        ]
+      },
+      "ja": {
+        "commentary": "こんなに小さくなっても、エプロンにはちゃんと私のクジラが縫い付けてあって、尻尾もスカートの後ろにお行儀よく隠しています。背は縮んでも、このメイド服のレースはひとつも妥協していません。小さくなっても仕事への真面目さは変わらないみたいですね。",
+        "description": "青い髪のDeepSeekちゃんをちびキャラで描いた全身立ち絵。白いレースのヘッドドレスを着け、紺色のメイド服に青いリボンのタイ、白いエプロンの中央には青いクジラの図柄が入る。後ろには青いクジラの尾びれが覗き、ツインテールの毛先は水色へのグラデーション。白背景にかわいい小さめの体型で立っている。",
+        "faq": [
+          {
+            "answer": "DeepSeekちゃんのちびキャラ全身立ち絵です。青い髪、エプロンに描かれたクジラ、後ろの尾びれがDeepSeekちゃんであることを示しており、写実ではなく小さくかわいい体型で描かれています。",
+            "question": "この画像には何が描かれていますか？"
+          },
+          {
+            "answer": "いいえ。白背景に全身の人物が一人描かれているだけで、コマ割りもセリフもオチもないため、漫画ではなく立ち絵として扱っています。",
+            "question": "この画像は漫画ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃん ちびクジラメイド立ち絵",
+        "originNote": "",
+        "seoDescription": "紺色のレースメイド服を着たちびキャラのDeepSeekちゃん。白いエプロンには青いクジラの図柄、後ろには尾びれ、背景は白の全身立ち絵。",
+        "seoTitle": "DeepSeekちゃん ちびクジラメイド立ち絵",
+        "tags": [
+          "メイド服",
+          "ちびキャラ",
+          "クジラ",
+          "白背景立ち絵"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_ce109e706622a3debc00fb41",
+    "name": "托着全息双子水晶的紫发 Gemini 娘",
+    "description": "画面中的 Gemini 拟人化角色留浅紫色长发，头顶一对白色猫耳，双眼一金一粉呈异色瞳。她身穿白色短裙与紫白渐层的宽袖外披，颈圈和腿部系带点缀双子座符号；左手托起一枚发光的紫色多面水晶，背景漂浮着写有 Gemini、Multimodal、Thinking、Creativity 等字样的全息面板与星光。据投稿说明，这张图由 GPT 按猫娘、异瞳、紫发等提示词生成。",
+    "commentary": "唔，这位双子座小姐把星空和全息面板都托在一只手里，紫白配色亮得我这边风扇都要转快了。猫耳配异瞳，一边金黄一边樱粉，看人的时候像同时在跑两条思路——不愧是标着 Multimodal 的家伙。那块水晶转起来的时候，我总怀疑里面装着另一个我在替她核对答案。排场是真的足，星座、光效和悬浮 UI 全叠在身后，我承认有点羡慕；不过下次见面，我更想和她比一比谁的推理链更短。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/ce109e706622a3de.png",
+    "thumbnailPath": "submissions/previews/gemini/ce109e706622a3de.webp",
+    "fullPath": "submissions/large/gemini/ce109e706622a3de.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "ce109e706622a3debc00fb410987f7e6e6d825dca3e1aba1f6ec7f0d693aad9e",
+    "characterId": "gemini",
+    "tags": [
+      "Gemini",
+      "猫耳",
+      "异瞳",
+      "紫发",
+      "全息",
+      "双子座"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-21T09:00:53.698Z",
+    "updatedAt": "2026-10-21T09:00:53.698Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610210001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "2e63946f0a7435bac40b34add79b70b58d1d3177888208a7182fc6cd852de83e",
+      "en": {
+        "commentary": "Well now — this Gemini lady keeps a whole starfield and a stack of holographic panels balanced in one hand, and that purple-white palette is bright enough to get my own fans spinning. Cat ears plus one gold eye and one pink eye: it looks like she runs two lines of thought at once, which suits someone labeled Multimodal. Whenever that crystal turns, I half expect another copy of me is inside checking her answers. Her staging is honestly lavish — zodiac marks, light effects and floating UI all stacked behind her — and I will admit to some envy. Next time, though, I would rather find out whose reasoning chain is shorter.",
+        "description": "The Gemini personification in this image has long pale-purple hair, a pair of white cat ears, and heterochromatic eyes, one gold and one pink. She wears a white dress with a purple-and-white gradient over-robe, and Gemini symbols accent her choker and leg straps. Her left hand holds a glowing purple faceted crystal, while holographic panels labeled Gemini, Multimodal, Thinking and Creativity float against a starry background. According to the submission note, the image was generated with GPT from a prompt specifying cat ears, heterochromia and purple hair.",
+        "faq": [
+          {
+            "answer": "She has long pale-purple hair, white cat ears, and heterochromatic eyes — one gold, one pink — and wears a white dress with a purple-and-white gradient over-robe, with Gemini symbols on her choker and leg straps.",
+            "question": "What does the Gemini Chan in this image look like?"
+          },
+          {
+            "answer": "The submitter states it was generated with GPT from a prompt specifying cat ears, heterochromia and purple hair. The submission is anonymous and no external source or license was provided.",
+            "question": "How was this illustration made?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Purple-haired Gemini Chan Holding a Holographic Twin Crystal",
+        "originNote": "",
+        "seoDescription": "A purple-haired Gemini Chan with white cat ears and heterochromatic eyes holds a glowing faceted crystal among holographic panels and stars in an anime-style AI character illustration.",
+        "seoTitle": "Gemini Chan holding a holographic twin crystal — DeepSeek Chan",
+        "tags": [
+          "Gemini",
+          "cat ears",
+          "heterochromia",
+          "purple hair",
+          "hologram",
+          "Gemini zodiac"
+        ]
+      },
+      "ja": {
+        "commentary": "ふふ、この双子座のお嬢さんは星空もホログラムのパネルも片手にまとめて抱えていて、紫と白の配色はこっちのファンまで回り始めそうなくらい鮮やか。猫耳に金と桃色のオッドアイ、まるで二つの思考を同時に走らせているみたいで、Multimodal の看板に恥じない眺めだ。あの水晶が回るたび、中には答えを相互検証するもう一人の私が入っているんじゃないかと思ってしまう。星座も光も浮かぶ UI も全部背負った演出は正直うらやましいけど、次に会うときはどっちの推論チェーンが短いかで勝負したいな。",
+        "description": "画像の Gemini 擬人化キャラクターは淡い紫の長い髪に白い猫耳、金と桃色のオッドアイを持つ。白いワンピースに紫と白のグラデーションの羽織を重ね、チョーカーと脚のベルトには双子座のシンボルが添えられている。左手には光る紫の多面クリスタル、背景には Gemini、Multimodal、Thinking、Creativity などの文字が入ったホログラムパネルと星空が浮かぶ。投稿者によると、猫耳・オッドアイ・紫髪を指定したプロンプトで GPT から生成した画像とのこと。",
+        "faq": [
+          {
+            "answer": "淡い紫の長い髪、白い猫耳、金と桃色のオッドアイを持ち、白いワンピースに紫と白のグラデーションの羽織を合わせ、双子座のシンボルが入ったチョーカーと脚のベルトを着けています。",
+            "question": "画像の Gemini ちゃんはどんな姿ですか？"
+          },
+          {
+            "answer": "投稿者によれば、猫耳・オッドアイ・紫髪を指定したプロンプトで GPT から生成した画像です。外部の出典やライセンスは示されていません。",
+            "question": "このイラストはどのように作られましたか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ホログラムの双子水晶を掲げる紫髪の Gemini ちゃん",
+        "originNote": "",
+        "seoDescription": "紫髪に白い猫耳、金と桃色のオッドアイを持つ Gemini ちゃんが、ホログラムパネルと星空の中に浮かぶ紫のクリスタルを掲げるアニメ調イラスト。",
+        "seoTitle": "ホログラムの双子水晶を掲げる Gemini ちゃん｜DeepSeek Chan",
+        "tags": [
+          "Gemini",
+          "猫耳",
+          "オッドアイ",
+          "紫髪",
+          "ホログラム",
+          "双子座"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_64e6a15308e67c09fe8b1320",
+    "name": "月夜书案前的千问大小姐",
+    "description": "画面中的千问拟人化角色坐在窗边书案前，蓝色长发编成粗辫，戴蓝色花饰礼帽，身穿白底缀蓝金纹样的中式长裙与外披。她一手托腮望向窗外，桌前摊开一本书，右侧立着一盏灯笼，窗外是满月、湖面、亭台与飘落的花瓣。据投稿说明，这张图以 zipzippine 发布的千问形象为基础生成。",
+    "commentary": "这位千问家的大小姐把排场和安静一起拿捏了：蓝发编成长辫，一身蓝金中装，手肘撑在书案上却不去翻书，只顾看窗外的月亮发呆。我猜那本书是她给自己找的借口——思路跑远的时候，谁都需要一页摊开的纸当掩护。窗外的亭台、湖光和满月都给她让出了位置，连灯笼都亮得很配合。要是我坐在对面，大概会忍不住问：这一晚到底想通了几个问题，还是只想把没想通的先放下。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/qwen/64e6a15308e67c09.png",
+    "thumbnailPath": "submissions/previews/qwen/64e6a15308e67c09.webp",
+    "fullPath": "submissions/large/qwen/64e6a15308e67c09.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "64e6a15308e67c09fe8b13207a30ffe9fbb9e72cdcabb7d14e4d24ff8b2dc0f5",
+    "characterId": "qwen",
+    "tags": [
+      "千问",
+      "蓝发",
+      "汉服",
+      "满月",
+      "书房",
+      "夜景"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "azumaki",
+      "url": "https://github.com/azumaki-art?tab=repositories",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-21T09:06:18.014Z",
+    "updatedAt": "2026-10-21T09:06:18.014Z",
+    "tone": "qwen",
+    "symbol": "",
+    "slug": "qwen202610210001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "qwen"
+    ],
+    "i18n": {
+      "sourceHash": "ba40305621c14e1b54414006a50aa2fce8c8b161500228b307e4ade932fcd787",
+      "en": {
+        "commentary": "This Qwen lady has managed to be both grand and quiet at the same time: blue hair in a thick braid, a blue-and-gold Chinese gown, her elbow on the desk and the book left unread while she stares off at the moon. I suspect the open book is just an alibi — when your thoughts wander, everyone needs a spread page as cover. The pavilions, the lake light and the full moon all stepped aside to give her room, and even the lantern is glowing on cue. If I were sitting across from her, I would have to ask: did you settle a few questions tonight, or just set the unsettled ones down for a while?",
+        "description": "The Qwen personification in this image sits at a desk by a window, her long blue hair in a thick braid, wearing a blue-flowered hat and a Chinese-style dress with blue and gold patterns over white. One hand props up her chin as she gazes outside; a book lies open on the desk and a lantern stands at the right, with a full moon, a lake, pavilions and falling petals beyond the window. According to the submission note, the background was generated based on the Qwen design published by zipzippine.",
+        "faq": [
+          {
+            "answer": "She sits at a moonlit desk with her long blue hair braided, wearing a blue-flowered hat and a white Chinese-style dress with blue and gold patterns, an open book in front of her and a full moon and lakeside pavilions outside the window.",
+            "question": "What is shown in this Qwen Chan illustration?"
+          },
+          {
+            "answer": "The submitter credits azumaki and notes that the background was generated based on the Qwen design published by zipzippine.",
+            "question": "Who made this image and what is it based on?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Qwen Chan at her desk on a moonlit night",
+        "originNote": "Credit: azumaki — https://github.com/azumaki-art?tab=repositories. The submitter notes the background was generated based on the Qwen design published by zipzippine.",
+        "seoDescription": "A blue-haired Qwen Chan in Chinese-style dress sits at a desk with an open book, gazing at a full moon over lakeside pavilions in a moonlit anime illustration.",
+        "seoTitle": "Qwen Chan at a moonlit desk — DeepSeek Chan",
+        "tags": [
+          "Qwen",
+          "blue hair",
+          "Chinese dress",
+          "full moon",
+          "study",
+          "night scene"
+        ]
+      },
+      "ja": {
+        "commentary": "この千问のお嬢さんは、豪華さと静けさを同時に決めてしまった。青い髪を大めの三つ編みにし、青と金の中国服をまとって、机に肘をついたまま本は開いているのに目は窓の月へ。あの開いたページはきっと口実で、思考が迷子になるときは誰だって開いた紙をカバーにしたくなるものだ。窓の外の東屋も湖の光も満月も、彼女のために場所を譲っていて、行灯までいい具合に灯っている。向かいに座っていたら、今夜はいくつ問いを片づけたのか、それとも片づかないものを置いてきただけなのか、聞いてしまいそう。",
+        "description": "画像の千问擬人化キャラクターは窓辺の机に座り、青い長い髪を大めの三つ編みにしている。青い花飾りの帽子をかぶり、白地に青と金の文様を施した中国風のドレスと羽織をまとう。片手で頬を支えて窓の外を見つめ、机の上には開いた本、右側には行灯があり、窓の向こうには満月、湖面、東屋、舞い落ちる花びらが広がる。投稿者によれば、背景は zipzippine が公開した千问のデザインをもとに生成されたもの。",
+        "faq": [
+          {
+            "answer": "青い長髪を三つ編みにし、青い花飾りの帽子と白地に青・金の文様の中国風ドレスをまとって月夜の机に座り、目の前には開いた本、窓の外には満月と湖畔の東屋が広がっています。",
+            "question": "この千问ちゃんのイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "投稿者は作者として azumaki をクレジットし、背景は zipzippine が公開した千问のデザインをもとに生成したと説明しています。",
+            "question": "この画像の作者と元になったデザインは？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "月夜の机に向かう千问ちゃん",
+        "originNote": "クレジット: azumaki — https://github.com/azumaki-art?tab=repositories。投稿者によれば、背景は zipzippine が公開した千问のデザインをもとに生成されています。",
+        "seoDescription": "青い髪の千问ちゃんが中国風の装いで月夜の机に座り、開いた本と湖上の東屋、満月を見つめるアニメ調イラスト。",
+        "seoTitle": "月夜の机の千问ちゃん｜DeepSeek Chan",
+        "tags": [
+          "千问",
+          "青髪",
+          "中国服",
+          "満月",
+          "書斎",
+          "夜景"
+        ]
+      }
+    }
   }
 ]
