@@ -1,4 +1,5 @@
 import {workCharacterIds} from '../../tools/work-characters.mjs';
+import {characterSearchAliases} from '../src/lib/landing-copy.mjs';
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const kind=(api,id)=>api.fmt('v2.type.'+id,id);
 function context(base,api,snapshot){
@@ -17,7 +18,9 @@ function context(base,api,snapshot){
   if(!character&&!category)return null;
   const works=snapshot.works.filter(w=>(!character||workCharacterIds(w).includes(character.id))&&(!type||w.categoryIds?.includes(type)));
   const name=character?api.characterName(character.id,character.name):api.current==='en'?'AI characters':'AIキャラクター';
-  const title=type?(api.current==='en'?name+' · '+kind(api,type):name+'の'+kind(api,type)):(api.current==='en'?name+' fan art archive':name+'の二次創作アーカイブ');
+  const alias=character&&characterSearchAliases[character.id]?.[api.current==='en'?1:2];
+  const displayName=name+(alias?(api.current==='en'?' ('+alias+')':'（'+alias+'）'):'');
+  const title=type?(api.current==='en'?displayName+' · '+kind(api,type):displayName+'の'+kind(api,type)):(api.current==='en'?displayName+' fan art archive':displayName+'の二次創作アーカイブ');
   return {character,type,works,name,title};
 }
 export function nativeArchiveName(base,api,snapshot){
@@ -60,7 +63,7 @@ export function applyNativeArchives(document,api,base,snapshot){
   const heading=document.querySelector('main h1');
   if(heading){
     (c.type?heading.querySelector('.marker-highlight')||heading:heading).textContent=c.type?c.title:c.name;
-    if(!c.type){const small=document.createElement('small');small.textContent=en?'Fan art archive':'二次創作アーカイブ';heading.appendChild(small);}
+    if(!c.type){const small=document.createElement('small');small.textContent=en?' Fan art archive':'二次創作アーカイブ';heading.appendChild(small);}
   }
   const page=base.match(/\/page\/(\d+)\.html$/)?.[1];
   const crumb=document.querySelector('.breadcrumbs > span:last-child');if(crumb)crumb.textContent=page?(en?'Page '+page:page+'ページ目'):c.title;
@@ -107,5 +110,7 @@ export function applyNativeArchives(document,api,base,snapshot){
     }
   }
   const lead=document.querySelector('.page-head .lede');if(lead)lead.textContent=description;
-  return {title:c.title+(page?(en?' · Page ':' · ')+page+(en?'':'ページ目'):'')+' | DeepSeek Chan',description};
+  const searchAlias=c.character&&characterSearchAliases[c.character.id]?.[en?1:2];
+  if(searchAlias)description+=(en?' Search this character as '+searchAlias+'.':'「'+searchAlias+'」の名前でも探せます。');
+  return {title:c.title+(page?(en?' · Page ':' · ')+page+(en?'':'ページ目'):'')+' | '+(en&&c.character?'Blue Dafeiyu':'DeepSeek Chan'),description};
 }

@@ -153,3 +153,10 @@ body.archive.journal-home .home-shortcuts { margin-top:25px; }
   body.archive.journal-home .journal-mount-1 { top:32px; }
 }
 @keyframes journal-feature-enter { from { opacity:.45; translate:8px 0; } to { opacity:1; translate:0 0; } }
+/* Weekly download highlights reuse the archive card and original-download handler. */
+.home-downloads-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.home-download-pick{min-width:0}
+.home-download-action{margin-top:12px}
+.home-download-action .button{width:100%;justify-content:center}
+@media(max-width:900px){.home-downloads-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.home-downloads-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.home-download-action .button{padding-inline:10px}}

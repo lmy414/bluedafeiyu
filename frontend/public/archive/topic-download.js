@@ -1,6 +1,6 @@
 import { topicMembers, archiveName, downloadMembers, zipMembers, DownloadLimitError } from './topic-zip.js?v=1';
 
-export function installTopicDownloads({ load, tx, toast }) {
+export function installTopicDownloads({ load, tx, toast, loadZip = () => import(/* @vite-ignore */ '/vendor/fflate/fflate-0.8.2.js') }) {
   const dialog = document.querySelector('#topic-download-dialog');
   const status = dialog.querySelector('[data-topic-status]');
   const progress = dialog.querySelector('[data-topic-progress]');
@@ -21,6 +21,8 @@ export function installTopicDownloads({ load, tx, toast }) {
     old.opener.focus();
   }
   function track(current) {
+    if (current.tracked) return;
+    current.tracked = true;
     if (typeof window.gtag === 'function') window.gtag('event', 'topic_download', {
       topic_id: current.topic.id, image_count: current.files.size,
       failed_count: current.works.length - current.files.size, transport_type: 'beacon',
@@ -104,7 +106,7 @@ export function installTopicDownloads({ load, tx, toast }) {
     dialog.showModal();
     close.focus();
     try {
-      const [data, library] = await Promise.all([load(), import(/* @vite-ignore */ '/vendor/fflate/fflate-0.8.2.js')]);
+      const [data, library] = await Promise.all([load(), loadZip()]);
       if (session !== current) return;
       Object.assign(current, topicMembers(data, opener.dataset.downloadTopic), { zip: library.zip });
       dialog.querySelector('h2').textContent = (window.SiteLang ? window.SiteLang.contentText(current.topic.name) : current.topic.name) + ' · ' + tx('d.zipTitle','专题原图打包');

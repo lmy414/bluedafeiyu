@@ -10,6 +10,13 @@ export function homeMeta(count, locale = 'zh') {
   return { title, description };
 }
 
+// Search phrases requested in the SEO issues; Chinese uses the source alias verbatim.
+export const characterSearchAliases = {
+  gpt: ['GPT龙娘', 'GPT Dragon Girl', 'GPTドラゴン娘'],
+  claude: ['Claude娘化', 'Claude personification', 'Claudeの擬人化'],
+  deepseek: ['鲸鱼娘', 'whale girl', 'クジラの少女'],
+};
+
 export const characterIntros = {
   deepseek: ['DeepSeek娘也叫蓝色大肥鱼、大肥鱼、鲸鱼娘或哦鲸鲸。这里按类型整理她的社区二创，既能找聊天表情包，也能沿插画、立绘和漫画认识不同作者笔下的鲸鱼娘。', 'DeepSeek Chan is the whale girl also known in Chinese fan communities as Blue Dafeiyu. Explore her reaction images, illustrations, character designs and comics, and compare interpretations by different creators.', 'DeepSeekちゃんは、コミュニティで藍色大肥魚とも呼ばれるクジラの少女です。スタンプ、イラスト、設定画、漫画から、さまざまな作者による姿を探せます。'],
   gpt: ['GPT娘是社区对 GPT、ChatGPT 的拟人化二创称呼。这个档案集中展示已收录的 GPT娘作品；多角色同框作品也会出现在相应角色档案中，来源与设定以作品详情为准。', 'GPT Chan is a fan personification of GPT and ChatGPT. Browse the archived works, including crossovers with other AI characters, and check each work for its original design and source.', 'GPTちゃんは、GPTやChatGPTを擬人化したファンキャラクターです。他のAIキャラクターとの共演を含む収録作品を探し、各作品のデザインと出典を確認できます。'],

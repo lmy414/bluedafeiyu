@@ -41,7 +41,8 @@
     "id": "claude",
     "name": "Claude娘",
     "aliases": [
-      "Claude"
+      "Claude",
+      "Claude娘化"
     ],
     "status": "active",
     "inSubmissionForm": true
@@ -90,7 +91,8 @@
     "aliases": [
       "GPT",
       "ChatGPT",
-      "OpenAI"
+      "OpenAI",
+      "GPT龙娘"
     ],
     "status": "active",
     "inSubmissionForm": true

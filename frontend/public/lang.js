@@ -38,7 +38,7 @@
       "v2.licenseShort.submitter-permission": "Submitter permission",
       "page.work.title": "{name} - {character} {kindId} | DeepSeek Chan",
       "page.work.desc": "View {name}, a {kindId} featuring {character}. Check attribution and image permissions, view the full-size image, download the original and discuss the work.",
-      "page.characterDetail.title": "{name} stickers and fan art | DeepSeek Chan",
+      "page.characterDetail.title": "{name} stickers and fan art | Blue Dafeiyu",
       "page.characterDetail.desc": "Browse {count} AI-girl fan works featuring {name}. View images, check their sources and download originals.",
       "page.categoryDetail.title": "{name} works | DeepSeek Chan",
       "page.categoryDetail.desc": "Browse {count} AI-girl fan works in {name}. View full-size images and check sources and permissions.",

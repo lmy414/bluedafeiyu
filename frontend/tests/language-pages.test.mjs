@@ -39,7 +39,7 @@ test('每个公开 HTML 的四种语言版本、canonical 和相互 hreflang 都
 });
 
 test('HTML 在执行 JS 前已翻译，导航与分页留在当前语言且资产共用根路径', () => {
-  const labels = ['关于', '關於', 'About', 'このサイトについて'];
+  const labels = ['蓝色大肥鱼是什么？', '藍色大肥魚是什麼？', 'About', 'このサイトについて'];
   for (const [i, locale] of LOCALES.entries()) {
     const document = read(localizedPath('/about.html', locale));
     assert.equal(document.querySelector('main h1').textContent, labels[i]);

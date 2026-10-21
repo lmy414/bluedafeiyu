@@ -3,7 +3,7 @@ import { workBySlug, ogCard, ORIGIN, SITE } from './v2.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { seoContext, seoTitle } from './seo.mjs';
-import { homeMeta, guides, guidePath } from './landing-copy.mjs';
+import { homeMeta, guides, guidePath, characterSearchAliases } from './landing-copy.mjs';
 
 export const pageURL = (base, n) => n === 1 ? base :
   (base === '/browse.html' ? '/page/' : base.replace(/\.html$/, '/page/')) + n + '.html';
@@ -20,7 +20,8 @@ export function createSEO(ctx) {
   for (const t of types) add('/categories/' + t.id + '.html', works.filter(w => w.k.includes(t.id)), 'AI 娘' + kindNames[t.id], 'type', { type: t.id });
   for (const c of chars) {
     const availableKinds = types.filter(t => c.list.some(w => w.k.includes(t.id))).map(t => kindNames[t.id]);
-    add('/characters/' + c.id + '.html', c.list, c.name + availableKinds.slice(0, 3).join('、') + '档案', 'character', { character: c });
+    const alias = characterSearchAliases[c.id]?.[0];
+    add('/characters/' + c.id + '.html', c.list, c.name + (alias ? `（${alias}）` : '') + availableKinds.slice(0, 3).join('、') + '档案', 'character', { character: c });
     for (const t of types) {
       const list = c.list.filter(w => w.k.includes(t.id));
       if (list.length) add('/characters/' + c.id + '/' + t.id + '.html', list, c.name + kindNames[t.id], 'character-type', { character: c, type: t.id });

@@ -87,6 +87,16 @@ export async function localizeHtml(html, base, locale, snapshot) {
   program.runInNewContext({ window, document, URL, URLSearchParams, WeakMap, Promise, CustomEvent: parsed.CustomEvent });
   await window.SiteLang.setLang(locale.id, false);
   const api = window.SiteLang;
+  if (locale.id === 'zh-Hant' && /^\/characters\/deepseek(?:\/[^?#]*)?\.html$/.test(base)) {
+    const trail = document.querySelector('.breadcrumbs');
+    if (trail) {
+      const brand = document.createElement('a');
+      brand.setAttribute('href', '/'); brand.textContent = '藍色大肥魚';
+      const separator = document.createElement('span');
+      separator.setAttribute('aria-hidden', 'true'); separator.textContent = '/';
+      trail.prepend(brand, separator);
+    }
+  }
   // These dictionaries contain only English/Japanese overrides. Chinese
   // pages use their rendered copy; Traditional Chinese uses OpenCC at runtime.
   if (!['en','ja'].includes(locale.id)) {

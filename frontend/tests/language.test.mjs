@@ -101,7 +101,10 @@ test('英文统一站名和所有 AI 娘的 Chan 名称，模板变量和动态�
   const expected = {
     deepseek: 'DeepSeek Chan', doubao: 'Doubao Chan', kimi: 'Kimi Chan', qwen: 'Qwen Chan',
     claude: 'Claude Chan', gemini: 'Gemini Chan', grok: 'Grok Chan', stepfun: 'StepFun Chan',
-    glm: 'GLM Chan', gpt: 'GPT Chan', mimo: 'MiMo Chan'
+    glm: 'GLM Chan', gpt: 'GPT Chan', mimo: 'MiMo Chan', minimax: 'MiniMax Chan',
+    mistral: 'Mistral Chan', llama: 'Llama Chan', perplexity: 'Perplexity Chan', rwkv: 'RWKV Chan',
+    hunyuan: 'Hunyuan Chan', novelai: 'NovelAI Chan', huggingface: 'Hugging Face Chan',
+    zcode: 'Zcode Chan', opencode: 'OpenCode Chan'
   };
   const characters = JSON.parse(fs.readFileSync(new URL('../../data/characters.json', import.meta.url), 'utf8'));
   for (const character of characters.filter(c => c.name.endsWith('娘'))) {

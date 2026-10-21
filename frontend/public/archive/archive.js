@@ -1,6 +1,6 @@
 import {renderWorkCard} from './work-card.js?v=4';
 import {copyImage} from './image-copy.js?v=1';
-import {installTopicDownloads} from './topic-download.js?v=3';
+import {installTopicDownloads} from './topic-download.js?v=4';
 import {loadArchiveData} from './data-loader.js?v=1';
 (() => {
   'use strict';
