@@ -6,7 +6,7 @@ export const Creators: CollectionConfig = {
   admin: { group: '投稿审核', useAsTitle: 'name', defaultColumns: ['name', 'homepage', 'intro', 'status', 'lastSyncedAt', 'error'] },
   access: { read: isOwner, create: () => false, update: isOwner, delete: () => false },
   hooks: { beforeChange: [({ data, originalDoc, context }) => {
-    if (originalDoc && !context?.skipNeedsPublish && ((data.intro !== undefined && data.intro !== originalDoc.intro) || (data.status !== undefined && data.status !== originalDoc.status && ['paused', 'active'].includes(originalDoc.status)))) data.needsPublish = true;
+    if (originalDoc?.id && !context?.skipNeedsPublish && ((data.intro !== undefined && data.intro !== originalDoc.intro) || (data.status !== undefined && data.status !== originalDoc.status && ['paused', 'active'].includes(originalDoc.status)))) data.needsPublish = true;
     return data;
   }] },
   fields: [

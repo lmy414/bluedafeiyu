@@ -33,6 +33,7 @@ describe('Bilibili 作者登记、发现、AI 审核与公开导出', () => {
     await registerCreator(payload, registration, req)
     await registerCreator(payload, { ...registration, intro: '试图覆盖原介绍' }, req)
     expect((await one('creators')).intro).toBe(registration.intro)
+    expect((await one('creators')).needsPublish).toBe(false)
     expect((await one('creators')).homepage).toBe(`https://space.bilibili.com/${uid}`)
     expect((await payload.count({ collection: 'creators', overrideAccess: true })).totalDocs).toBe(1)
   })
