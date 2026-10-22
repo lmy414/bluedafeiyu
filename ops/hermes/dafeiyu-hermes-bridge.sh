@@ -36,6 +36,8 @@ if [[ "$action" == publish ]]; then
     set +a
     /usr/bin/node /srv/apps/dafeiyu-admin/src/ops/admin/recover-interrupted-publish.mjs --apply
   )
+  # Frequent video releases reuse the existing current + two-history retention.
+  /usr/local/sbin/dafeiyu-maintenance release-apply >/dev/null
   sync_admin -w 600
   set -a
   . /etc/dafeiyu/admin-bot.env

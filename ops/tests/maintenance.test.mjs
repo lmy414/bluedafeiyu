@@ -90,6 +90,15 @@ test('dry-run 不调用系统清理命令，apply 失败项会保留在报告', 
   assert.deepEqual(calls.filter(([binary]) => binary.endsWith('curl')).map(([, args]) => args.at(-1)), HEALTH_URLS);
 });
 
+test('频繁发布的版本清理不触碰原图、缓存或系统日志', async () => {
+  const calls = [];
+  const result = await maintain({ apply: true, releasesOnly: true, releaseGroups: [], fileRules: [{ root: '/must-not-be-read', days: 1 }], diskPath: os.tmpdir(), command: async (cmd, args) => { calls.push(cmd); return cmd.endsWith('curl') ? '200' : ''; } });
+  assert.equal(result.status, 'success');
+  assert.equal(result.originals, undefined);
+  assert.equal(result.files.length, 0);
+  assert.deepEqual(calls, ['/usr/bin/systemctl', ...HEALTH_URLS.map(() => '/usr/bin/curl')]);
+});
+
 test('业务盘统计使用指定挂载路径，健康检查只包含现行主站', async () => {
   const result = await diskUsage('/srv/apps/dafeiyu', async (directory) => {
     assert.equal(directory, '/srv/apps/dafeiyu');

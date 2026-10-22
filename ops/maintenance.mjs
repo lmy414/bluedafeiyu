@@ -124,7 +124,7 @@ export function formatReport(report) {
   for (const error of report.errors || []) lines.push(`失败：${error.step}｜${error.message}`);
   return lines.join('\n');
 }
-export async function maintain({ apply = false, command = runCommand, releaseGroups = RELEASE_GROUPS, fileRules = FILE_RULES,
+export async function maintain({ apply = false, releasesOnly = false, command = runCommand, releaseGroups = RELEASE_GROUPS, fileRules = FILE_RULES,
   diskPath = process.env.MAINTENANCE_DISK_PATH || '/srv/apps/dafeiyu',
   serverName = process.env.MAINTENANCE_SERVER_NAME || hostname(), healthUrls = HEALTH_URLS } = {}) {
   const report = { schema: 'dafeiyu-maintenance/1', serverName, startedAt: new Date().toISOString(), status: 'running', errors: [], releases: [], files: [] };
@@ -132,7 +132,7 @@ export async function maintain({ apply = false, command = runCommand, releaseGro
   async function step(name, fn) {
     try { return await fn(); } catch (error) { report.errors.push({ step: name, message: String(error.message).slice(0, 1000) }); return null; }
   }
-  await step('原图清理', async () => {
+  if (!releasesOnly) await step('原图清理', async () => {
     const args = ['-u', 'dafeiyu', '--preserve-environment', '--', '/usr/bin/node', '/srv/apps/dafeiyu/source/server/cli.mjs', 'prune-originals', '--days', '14', '--json'];
     if (apply) args.push('--apply');
     const results = JSON.parse(await command('/usr/sbin/runuser', args));
@@ -154,14 +154,14 @@ export async function maintain({ apply = false, command = runCommand, releaseGro
     }
     report.releases.push({ root: group.root, keep: plan.keep, count, paths: plan.remove });
   });
-  for (const rule of fileRules) await step(`过期文件：${rule.root}`, async () => {
+  for (const rule of (releasesOnly ? [] : fileRules)) await step(`过期文件：${rule.root}`, async () => {
     const files = await expiredFiles(rule);
     const result = apply ? await deleteExpired(files) : { count: files.length, bytes: files.reduce((sum, file) => sum + file.bytes, 0) };
     report.files.push({ root: rule.root, days: rule.days, ...result });
   });
   if (apply) {
-    await step('APT 安装包缓存', () => command('/usr/bin/apt-get', ['clean']));
-    await step('systemd 历史日志', async () => {
+    if (!releasesOnly) await step('APT 安装包缓存', () => command('/usr/bin/apt-get', ['clean']));
+    if (!releasesOnly) await step('systemd 历史日志', async () => {
       await command('/usr/bin/journalctl', ['--rotate']);
       await command('/usr/bin/journalctl', ['--vacuum-time=14d', '--vacuum-size=200M']);
     });
@@ -188,7 +188,7 @@ export async function readReport({ reportRoot = REPORT_ROOT, now = Date.now() } 
 }
 async function main() {
   const args = process.argv.slice(2);
-  if (args.some((arg) => !['--apply', '--report', '--json'].includes(arg))) throw new Error('只接受 --apply、--report 和 --json');
+  if (args.some((arg) => !['--apply', '--report', '--json', '--releases-only'].includes(arg))) throw new Error('只接受 --apply、--report、--json 和 --releases-only');
   if (args.includes('--apply') && args.includes('--report')) throw new Error('--apply 与 --report 不能同时使用');
   if (args.includes('--report')) {
     try {
@@ -201,8 +201,8 @@ async function main() {
     return;
   }
   const apply = args.includes('--apply');
-  const report = await maintain({ apply });
-  if (apply) {
+  const report = await maintain({ apply, releasesOnly: args.includes('--releases-only') });
+  if (apply && !args.includes('--releases-only')) {
     await fs.mkdir(REPORT_ROOT, { recursive: true, mode: 0o700 });
     const temporary = path.join(REPORT_ROOT, `latest.${process.pid}.tmp`);
     await fs.writeFile(temporary, JSON.stringify(report, null, 2) + '\n', { mode: 0o600 });

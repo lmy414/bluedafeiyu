@@ -5,6 +5,8 @@ case "$1" in
   report) exec /usr/bin/node /usr/local/lib/dafeiyu-maintenance/maintenance.mjs --report ;;
   plan) mode=() ;;
   apply) mode=(--apply) ;;
+  release-apply) mode=(--apply --releases-only) ;;
+  release-plan) mode=(--releases-only) ;;
   *) echo 'invalid action' >&2; exit 64 ;;
 esac
 exec 7>/run/lock/dafeiyu-maintenance.lock
