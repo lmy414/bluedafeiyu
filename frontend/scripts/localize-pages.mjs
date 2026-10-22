@@ -175,7 +175,7 @@ export async function localizeHtml(html, base, locale, snapshot) {
         const guide = guides.find(g=>guidePath(g)===route);
         if (guide) value.name = localizedCopy(guide.name,locale.id);
         else if (route === '/category.html') value.name = document.title;
-        else if (route === '/videos.html' || route.startsWith('/creators/')) value.name = document.title;
+        else if (route === '/videos.html' || route === '/creators.html' || route.startsWith('/creators/')) value.name = document.title;
       }
       if (base === '/index.html' && ['WebSite','Organization'].includes(value['@type'])) {
         value.name = locale.id === 'en' ? 'DeepSeek Chan' : locale.id === 'zh' ? '蓝色大肥鱼' : '藍色大肥魚';
