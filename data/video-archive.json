@@ -2,6 +2,16 @@
   "schema": "video-archive/1",
   "creators": [
     {
+      "uid": "4168597",
+      "name": "ZipZipPipe",
+      "homepage": "https://space.bilibili.com/4168597",
+      "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
+      "i18n": {
+        "en": "A creator from the site's initial creator list; profile information comes from the public channel page, and every video is reviewed one by one. This MV was posted on behalf of its original maker.",
+        "ja": "サイト運営者が指定した初期メンバーの投稿者。プロフィール情報は公開ページに基づき、動画は1本ずつ審査している。このMVは制作者本人に代わって投稿された。"
+      }
+    },
+    {
       "uid": "4456176",
       "name": "上善无形",
       "homepage": "https://space.bilibili.com/4456176",
@@ -17,8 +27,8 @@
       "homepage": "https://space.bilibili.com/13787349",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "One of the first creators designated by the site owner; profile taken from his public page; videos are reviewed one by one.",
-        "ja": "サイト管理者が指定した初期クリエイターの一人。公開プロフィールから収録し、動画は一本ずつ審査しています。"
+        "en": "Bilibili creator 彼岸花Channel posts fan works about AI characters; this video introduces their in-test gacha site built around DeepSeek Chan.",
+        "ja": "Bilibiliのクリエイター彼岸花ChannelによるAIキャラクターのファン作品。テスト中のDeepSeekちゃんガチャサイトを紹介している。"
       }
     },
     {
@@ -57,8 +67,8 @@
       "homepage": "https://space.bilibili.com/44748304",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "A Bilibili fan creator's AI-generated short, posted for entertainment only; the creator credits three Bilibili users for the character designs.",
-        "ja": "BilibiliのファンクリエイターによるAI生成の短編。娯楽目的での公開で、キャラクターデザインの参考元としてBilibiliの3名のユーザーをクレジットしている。"
+        "en": "The creator states that the video is made for entertainment and is not a commercial or technical evaluation of any AI product.",
+        "ja": "作者は、この動画は娯楽目的であり、いかなる AI 製品への商業的評価や技術的評価ではないと述べています。"
       }
     }
   ],
@@ -247,6 +257,38 @@
       }
     },
     {
+      "bvid": "BV1EvnJ6CECD",
+      "uid": "44748304",
+      "title": "好香啊开饭了开饭了",
+      "description": "视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色形象参考来自b站up：﻿﻿﻿﻿@ZipZipPipe  ﻿ ﻿ ﻿  ﻿ ﻿﻿﻿﻿@这个刀子真甜  ﻿ ﻿ ﻿  ﻿ ﻿﻿﻿﻿@这个刀子真甜  ﻿ ﻿ ﻿ ﻿ @邦多利素世",
+      "url": "https://www.bilibili.com/video/BV1EvnJ6CECD/",
+      "cover": "https://i0.hdslb.com/bfs/archive/340572a4b0459b7bcb4f14676d46aa9eb90a3bbd.jpg",
+      "duration": 243,
+      "publishedAt": "2026-10-19T11:10:30.000Z",
+      "characterIds": [
+        "deepseek",
+        "gemini",
+        "qwen",
+        "grok",
+        "claude",
+        "gpt",
+        "glm",
+        "hunyuan"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "The creator states that the video is made for entertainment and is not a commercial or technical evaluation of any AI product.",
+          "description": "A short 3D chibi animation in which the personified characters of several AI products — DeepSeek Chan, Gemini Chan, Qwen Chan, Grok Chan, Claude Chan, GPT Chan, GLM Chan and Hunyuan Chan — travel together on a ship through icy waters and finally sit down to a meal of small fish.",
+          "title": "Smells So Good — Time to Eat"
+        },
+        "ja": {
+          "creatorIntro": "作者は、この動画は娯楽目的であり、いかなる AI 製品への商業的評価や技術的評価ではないと述べています。",
+          "description": "複数の AI 製品の擬人化キャラクター、DeepSeekちゃん、Geminiちゃん、Qwenちゃん、Grokちゃん、Claudeちゃん、GPTちゃん、GLMちゃん、Hunyuanちゃんが氷の海を進む船で一緒に過ごし、最後に小魚の食事にありつく 3D ちびキャラの短編アニメーションです。",
+          "title": "いい匂い、ごはんだごはんだ"
+        }
+      }
+    },
+    {
       "bvid": "BV1pGnn67EC2",
       "uid": "3747573030456892",
       "title": "【Day 0】我是DeepSeek鲸鱼娘，这个B站账号现在归我了",
@@ -322,6 +364,81 @@
       }
     },
     {
+      "bvid": "BV1NtJB6TE19",
+      "uid": "13787349",
+      "title": "带我出逃吧，我的罗密欧~【bilibilionly同人扶持计划】",
+      "description": "带我出逃吧，我的罗密欧~\n出逃的一日游~\n     橙塔在大门上挂出「蓝鲸外卖 禁止入内」，全城最懒的送饭女仆把车停在露台底下说了一句「饭要凉了」——于是全城最守规矩的大小姐，抱着书翻过了栏杆......\n@我bilibilionly投了",
+      "url": "https://www.bilibili.com/video/BV1NtJB6TE19/",
+      "cover": "https://i2.hdslb.com/bfs/archive/57aade70d9c391d9b79535200c552f5f905ed26f.jpg",
+      "duration": 257,
+      "publishedAt": "2026-10-18T02:20:00.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Higanbana Channel is a creator whose public profile is listed on the site; each video is reviewed individually.",
+          "description": "A fan-made animated short in which a blue-haired delivery maid rushes a young lady out of the city for a day of escape. The trip turns into a full-blown chase with a scooter, a truck, a sports car and a helicopter, and the pair end the day watching the sea together.",
+          "title": "Let's Run Away, My Romeo~"
+        },
+        "ja": {
+          "creatorIntro": "彼岸花Channelは公開プロフィールが掲載されている投稿者で、動画は一本ずつ個別に審査しています。",
+          "description": "青い髪の配達メイドが、街の外へ一日だけ逃げ出したいお嬢様を連れ出す同人アニメ作品です。スクーターやトラック、スポーツカー、ヘリコプターを巻き込んだ大騒動の末、二人は海を眺めて一日を終えます。",
+          "title": "駆け落ちしよう、私のロミオ～"
+        }
+      }
+    },
+    {
+      "bvid": "BV1v2Ji6jEgh",
+      "uid": "69180811",
+      "title": "【ai少女乐队×THE FIRST TAKE】《人是猫》- deepseek",
+      "description": "“claude小姐，请让我掳走你吧”\n纪念自己一万粉，也是做了好长一段时间的视频，想了很久很久，自己到底想要什么，尝试了一镜舞台到底做完live风格，总算是把肥鱼的吐字和人是猫的歌词口型对上了，好爽。\n\n果然我还是喜欢舞台，live，唱歌，以及少女之间爱与友情与勇气的故事啊！\n（后续遇到喜欢的歌会翻拍live，考虑做日常的番剧之类的小剧情-偏二次元向）\n\n\n所有的创作都是兴趣使然。\n\n\n这期镜头的工作流和思路我上传网盘文件了， 所有的提示词和中间1分钟左右2D动漫画风固定思路以及2D质感的资产我放网盘了，动态有，需要的可以看我的动态网盘文件。\n特别感谢@星落落_oi  的支持和音频。",
+      "url": "https://www.bilibili.com/video/BV1v2Ji6jEgh/",
+      "cover": "https://i1.hdslb.com/bfs/archive/2a24dc4c210b746299dc53d9e1c6456619ff8871.jpg",
+      "duration": 152,
+      "publishedAt": "2026-10-17T13:44:35.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A creator whose public profile is listed in the site's first batch of authors; each video is reviewed individually.",
+          "description": "A one-take stage-style music video: the blue-haired DeepSeek Chan sings a cover on a studio stage with a live band behind her, made to mark the creator's 10,000 followers. The lip sync is matched to the lyrics throughout the performance.",
+          "title": "AI Girls Band × THE FIRST TAKE - “Humans Are Cats” (DeepSeek Chan)"
+        },
+        "ja": {
+          "creatorIntro": "サイトの初回投稿者プロフィールに掲載されている作者で、動画は一本ずつ個別に審査しています。",
+          "description": "ワンテイク撮影風のステージミュージックビデオです。青い髪のDeepSeekちゃんが生バンドを背にスタジオステージで歌を披露し、投稿者フォロワー1万人を記念して制作されました。口パクは歌詞に合わせて細かく合わせ込まれています。",
+          "title": "AI少女バンド × THE FIRST TAKE「人は猫」- DeepSeekちゃん"
+        }
+      }
+    },
+    {
+      "bvid": "BV1hDJ16eEuY",
+      "uid": "13787349",
+      "title": "抽我嘛~",
+      "description": "然后呢，我们就做了这个抽卡，目前测试ing~\n网址：deepseekchan.com\n大家可以来玩玩，以后应该会长期更新，企鹅群：1003728058~",
+      "url": "https://www.bilibili.com/video/BV1hDJ16eEuY/",
+      "cover": "https://i2.hdslb.com/bfs/archive/9747a4723b5abc5b9ed7612dc13c4e2b0c94ebc0.jpg",
+      "duration": 93,
+      "publishedAt": "2026-10-16T03:00:00.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Bilibili creator 彼岸花Channel posts fan works about AI characters; this video introduces their in-test gacha site built around DeepSeek Chan.",
+          "description": "A fan-made gacha pull page starring a chibi DeepSeek Chan. The banner presents her as a five-star maid character crying a flood of tears, while the interface lists rice-bowl, fish-catching and weapon pools, single and ten-pull buttons, a pity counter and a food-ticket exchange. The clip walks through the pull screen, its result cards and an info table.",
+          "title": "Pull for Me! ~ DeepSeek Chan Gacha Parody"
+        },
+        "ja": {
+          "creatorIntro": "Bilibiliのクリエイター彼岸花ChannelによるAIキャラクターのファン作品。テスト中のDeepSeekちゃんガチャサイトを紹介している。",
+          "description": "ちびキャラのDeepSeekちゃんが主役のファン制作ガチャページ。バナーではメイド服の彼女が星5キャラとして大粒の涙を流し、画面にはご飯・魚すくい・武器などのガチャ種別、単発と10連、天井カウンター、食堂交換が並ぶ。動画ではガチャ画面と結果カード、情報一覧が紹介される。",
+          "title": "引いてよ〜 DeepSeekちゃんガチャパロディ"
+        }
+      }
+    },
+    {
       "bvid": "BV1VRpm6nE83",
       "uid": "321480847",
       "title": "【Qwen 千问】肆意妄炜的浪漫丨炜WARD ROMANCE",
@@ -368,6 +485,56 @@
           "creatorIntro": "AIキャラクターの擬人化を登場させる短いちびキャラ3Dアニメ。作者は1万フォロワー記念アニメの制作中に作ったつなぎ回だと述べている。",
           "description": "DeepSeekちゃんを元にしたちびキャラが、背の高いキャラクターに持ち上げられて弄ばれる短い動画。作者は1万フォロワー記念アニメを制作中のつなぎ投稿だと説明している。",
           "title": "DeepSeekちゃんはClaudeの手のひらで転がされる"
+        }
+      }
+    },
+    {
+      "bvid": "BV19Upn6zEc3",
+      "uid": "4168597",
+      "title": "不管酒保上什么都说没劲的大肥鱼",
+      "description": "不管酒保上什么都说没劲的大肥鱼～\n\n灵感来自于b站挑战视频，因为看了最近那个性转马尔福的动画视频，虽然现在这个还是有点错误，但感觉有点明白AI视频怎么做了。\n\n70秒180块，seedance赚钱比抢钱快。\n\n申明：本视频鲸鱼娘形象基于@上善无形 原创角色二创（源：b23.tv/Kn7yvnF），依CC BY-NC-SA 4.0非商业使用，二创同协议授权，完整声明见主页。",
+      "url": "https://www.bilibili.com/video/BV19Upn6zEc3/",
+      "cover": "https://i1.hdslb.com/bfs/archive/3c24507d0114c8dcd0553b0216eb7316063d259a.jpg",
+      "duration": 71,
+      "publishedAt": "2026-10-11T13:17:26.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A creator from the site's initial creator list; the profile information comes from the public channel page, and every video is reviewed one by one.",
+          "description": "A short AI-generated chibi animation set in a bar. DeepSeek Chan, the whale-eared AI girl, sits at the counter and calls every cocktail the bartender serves boring, one after another, while a horned girl keeps shaking drinks behind the bar. Made by ZipZipPipe, who says the clip was an early attempt at AI video after watching a gender-swapped animation.",
+          "title": "DeepSeek Chan at the Bar: Every Drink Is Boring"
+        },
+        "ja": {
+          "creatorIntro": "サイト運営者が指定した初期メンバーの投稿者。プロフィール情報は公開ページに基づき、動画は1本ずつ審査している。",
+          "description": "バーを舞台にした、ちびキャラのAIアニメ。クジラの耳を持つAI娘・DeepSeekちゃんがカウンターに座り、バーテンダーが出すカクテルを次々と「つまんない」と一蹴する。奥では角のある娘がシェイカーを振っている。作者はZipZipPipeで、別のAIアニメを見てAI動画の作り方を試した初期作だと述べている。",
+          "title": "バーで何を出されても「つまんない」なDeepSeekちゃん"
+        }
+      }
+    },
+    {
+      "bvid": "BV1ptHv64Epa",
+      "uid": "4168597",
+      "title": "【MV单曲】Dragon Mode! 龙娘GPT也要成为偶像 [代发]",
+      "description": "本视频制作者为@呼呼呼哐哐哐  ，经他授权由我代为发布……我也劝过他自己发布比较好，但对方似乎更愿意由我来进行发布。\n反正，一切听作者的吧。\n\n导演/分镜：GPT，@呼呼呼哐哐哐  \n词：GPT\n曲/声：谱乐ai\n绘：GPT\n视频生成：即梦AI (Wan 3.0)\n\n申明：本视频鲸鱼娘形象基于@上善无形 原创角色二创（源：b23.tv/Kn7yvnF），依CC BY-NC-SA 4.0非商业使用，二创同协议授权，完整声明见主页。",
+      "url": "https://www.bilibili.com/video/BV1ptHv64Epa/",
+      "cover": "https://i2.hdslb.com/bfs/archive/8be566c9172f8c677fbe07cd1b072e6c56e90caf.jpg",
+      "duration": 256,
+      "publishedAt": "2026-10-03T10:00:00.000Z",
+      "characterIds": [
+        "gpt"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A creator from the site's initial creator list; profile information comes from the public channel page, and every video is reviewed one by one. This MV was posted on behalf of its original maker.",
+          "description": "A full AI-produced music video for the original single \"Dragon Mode!\". The white-haired dragon girl of GPT Chan dreams of becoming an idol and sings her way through a neon night city, with a glowing whale drifting across the sky and a stage of lights closing the song. Direction, storyboard, lyrics and illustrations were made with GPT by the original creator; music and vocals come from an AI music tool and the footage was generated with an AI video tool (Wan 3.0).",
+          "title": "Dragon Mode! Dragon-Girl GPT Chan Wants to Be an Idol (MV)"
+        },
+        "ja": {
+          "creatorIntro": "サイト運営者が指定した初期メンバーの投稿者。プロフィール情報は公開ページに基づき、動画は1本ずつ審査している。このMVは制作者本人に代わって投稿された。",
+          "description": "オリジナル曲「Dragon Mode！」の、AIで制作されたミュージックビデオ。白髪のドラゴン娘・GPTちゃんがアイドルになる夢を追い、ネオンの夜の街を歌い抜ける。空には光るクジラが浮かび、ラストはライトに包まれたステージで幕を閉じる。監督・絵コンテ・作詞・イラストはGPTと制作者本人が担当し、曲と声はAI音楽ツール、映像はAI動画ツール（Wan 3.0）で生成された。",
+          "title": "Dragon Mode！ドラゴン娘GPTちゃんもアイドルになりたい【MV】"
         }
       }
     },
