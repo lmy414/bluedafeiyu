@@ -3,6 +3,8 @@ import { homeMeta, guides, guidePath, localizedCopy } from '../src/lib/landing-c
 import { aboutSEO, aboutDescription, aboutQuestions } from '../src/lib/about-copy.mjs';
 import {applyNativeContent} from './native-content.mjs';
 import {nativeArchiveName} from './native-archives.mjs';
+import {videoArchive} from '../src/lib/video-archive.mjs';
+import {videoCopy} from '../src/lib/video-copy.mjs';
 import path from 'node:path';
 import vm from 'node:vm';
 import { parseHTML } from 'linkedom';
@@ -70,6 +72,22 @@ function pageMeta(document, api, base, snapshot, archive) {
     document.title = locale === 'zh-Hant' && base !== '/index.html' ? converter(landing.title) : landing.title;
     setMeta(document, 'meta[name="description"]', locale === 'zh-Hant' && base !== '/index.html' ? converter(landing.description) : landing.description);
     for (const selector of ['meta[property="og:image:alt"]','meta[name="twitter:image:alt"]']) setMeta(document,selector,document.title);
+  }
+  // Restore canonical credits after generic language substitutions, which may
+  // otherwise translate a character alias embedded inside an uploader's name.
+  if (base === '/videos.html' || base.startsWith('/creators/')) {
+    const index = locale === 'en' ? 1 : locale === 'ja' ? 2 : 0;
+    const copy = key => locale === 'zh-Hant' ? converter(videoCopy[key][index]) : videoCopy[key][index];
+    const creator = videoArchive.creators.find(c => base === `/creators/bilibili-${c.uid}.html`);
+    if (locale !== 'zh') {
+      document.title = (creator ? creator.name + ' · ' + copy('creatorProfile') : copy('videoTitle')) + ' | Blue Dafeiyu';
+      setMeta(document, 'meta[name="description"]', copy('videoLead'));
+    }
+    if (creator && document.querySelector('main h1')) document.querySelector('main h1').textContent = creator.name;
+    for (const c of videoArchive.creators) {
+      for (const link of document.querySelectorAll(`a[href="/creators/bilibili-${c.uid}.html"]`)) link.textContent = c.name;
+    }
+    for (const selector of ['meta[property="og:image:alt"]', 'meta[name="twitter:image:alt"]']) setMeta(document, selector, document.title);
   }
   const desc = document.querySelector('meta[name="description"]')?.getAttribute('content') || '';
   if (locale !== 'zh') {

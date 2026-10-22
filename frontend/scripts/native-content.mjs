@@ -1,7 +1,6 @@
 import {applyNativeArchives} from './native-archives.mjs';
 import {aboutCopy,aboutQuestions} from '../src/lib/about-copy.mjs';
 import { videoArchive } from '../src/lib/video-archive.mjs';
-import { videoCopy } from '../src/lib/video-copy.mjs';
 const escape=value=>String(value||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function applyNativeContent(document,api,base,snapshot) {
   const native=['en','ja'].includes(api.current);
@@ -14,12 +13,6 @@ export function applyNativeContent(document,api,base,snapshot) {
   for (const el of document.querySelectorAll('[data-creator-intro]')) {
     const c = videoArchive.creators.find(c => c.uid === el.getAttribute('data-creator-intro'));
     if(c?.i18n?.[api.current]) el.textContent = c.i18n[api.current];
-  }
-  if (base === '/videos.html' || base.startsWith('/creators/')) {
-    const index = api.current === 'en' ? 1 : 2;
-    const creator = videoArchive.creators.find(c => base === `/creators/bilibili-${c.uid}.html`);
-    document.title = (creator ? creator.name + ' · ' + videoCopy.creatorProfile[index] : videoCopy.videoTitle[index]) + ' | Blue Dafeiyu';
-    document.querySelector('meta[name="description"]')?.setAttribute('content', videoCopy.videoLead[index]);
   }
   // Keep the approved brand wording in the visible FAQ identical to its schema.
   for(const el of document.querySelectorAll('[data-i18n^="d.about."]')) {
@@ -69,9 +62,6 @@ export function applyNativeContent(document,api,base,snapshot) {
     if(el.tagName==='META'&&!/image|url/.test(el.getAttribute('name')||el.getAttribute('property')||''))el.setAttribute('content',api.contentText(el.getAttribute('content')));
   }
   for(const meta of document.querySelectorAll('meta[property="og:image:alt"],meta[name="twitter:image:alt"]'))meta.setAttribute('content',value ? value.description||value.name : nativeText(meta.getAttribute('content')));
-  if (base === '/videos.html' || base.startsWith('/creators/')) {
-    for (const meta of document.querySelectorAll('meta[property="og:image:alt"],meta[name="twitter:image:alt"]')) meta.setAttribute('content', document.title);
-  }
   const author=document.querySelector('.work-facts > div:first-child dd');if(author?.textContent==='原作者未标注')author.textContent=api.contentText(author.textContent);
   const archive=applyNativeArchives(document,api,base,snapshot);
   if(archive)for(const meta of document.querySelectorAll('meta[property="og:image:alt"],meta[name="twitter:image:alt"]'))meta.setAttribute('content',archive.title);
