@@ -150,6 +150,7 @@ export async function videoAgent(payload, input, req, { client = createBilibiliC
     validateReview(input.review, v, new Set(chars.docs.map(c => c.characterId)));
     const status = { pass: 'approved', reject: 'rejected', manual: 'manual' }[input.review.verdict];
     await save(payload, 'videos', id, { status, review: { ...input.review, sourceHash: videoHash(v.source), reviewedAt: new Date(now).toISOString(), reviewer: 'hermes' }, lease: null, needsPublish: status === 'approved' }, tx);
+    if (status === 'approved') await save(payload, 'creators', typeof v.creator === 'object' ? v.creator.id : v.creator, { needsPublish: true }, tx);
     return { ok: true, id, status };
   });
 }

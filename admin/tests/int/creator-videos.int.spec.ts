@@ -68,6 +68,7 @@ describe('Bilibili 作者登记、发现、AI 审核与公开导出', () => {
     await expect(videoAgent(payload, { ...input, review: { ...review, isFanwork: false } }, req)).rejects.toThrow('仅明确属于')
     await expect(videoAgent(payload, { ...input, review: { ...review, sourceHash: 'stale' } }, req)).rejects.toThrow('仅明确属于')
     expect((await videoAgent(payload, input, req)).status).toBe('approved')
+    expect((await one('creators')).needsPublish).toBe(true)
     const archive = publicVideoArchive([await one('creators')], [await one('videos')])
     expect(archive.videos).toHaveLength(1)
     expect(archive.creators[0].name).toBe(source.creatorName)
