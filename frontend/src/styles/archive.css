@@ -2,18 +2,12 @@
 @import '../../public/tokens.css';
 @import '../../public/archive/original-tools.css';
 @import '../../public/archive/layout.css';
-@import '../../public/archive/original-theme.css';
 @import '../../public/archive/seo-content.css';
 @import '../../public/archive/preview.css';
 @import '../../public/archive/image-actions.css';
 @import '../../public/archive/filter-select.css';
 @import '../../public/archive/group.css';
 @import '../../public/archive/document.css';
-@import '../../public/archive/readability.css';
-@import '../../public/archive/journal-journal.css';
-@import '../../public/archive/journal-details.css';
-@import '../../public/archive/journal-first-screen.css';
-@import '../../public/archive/journal-home.css';
-@import '../../public/archive/journal-ui.css';
-/* Bilibili metadata cards use the existing panel and button styles. */
-.video-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:24px;margin:28px 0}.video-card{min-width:0}.video-card img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}.video-card h2{font-size:1.1rem;line-height:1.6;overflow-wrap:anywhere}.video-description{white-space:pre-wrap;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}#creator-registration{scroll-margin-top:32px}#creator-registration textarea{width:100%;box-sizing:border-box;resize:vertical}#creator-registration .form-actions{flex-wrap:wrap}
+
+@import '../../public/archive/demo-design.css';
+@import '../../public/archive/demo-production.css';

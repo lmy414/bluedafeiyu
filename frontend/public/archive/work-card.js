@@ -7,9 +7,9 @@ export function renderWorkCard(work, {url = value => value, translate = (_key,va
   const roleLinks = roles.map(role => `<a data-character-id="${esc(role.id)}" href="${esc(url('/characters/' + role.id + '.html'))}"><i class="role-dot" style="--role:${esc(role.color)}"></i>${esc(names(role.name))}</a>`).join('');
   const kinds = work.k.map(id => `<span data-i18n="v2.type.${esc(id)}">${esc(translate('v2.type.' + id, kindNames[id] || id))}</span>`).join(' · ');
   const preview = esc(translate('d.quickView','预览') + ' ' + names(work.n));
-  return `<article class="work-card" data-slug="${esc(work.slug)}">
-    <a class="work-art" href="${href}"><img src="${esc(work.i)}" alt="${esc(names(work.d || work.n))}" width="${work.w || 480}" height="${work.h || 480}" loading="${eager ? 'eager' : 'lazy'}" decoding="async"><span class="type-label">${kinds}</span></a>
-    <button class="quick-view" type="button" data-preview="${esc(work.slug)}" aria-label="${preview}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="m15 15 6 6"/></svg></button>
-    <div class="work-text"><a class="work-title" href="${href}">${esc(names(work.n))}</a><div class="card-meta"><div class="card-roles">${roleLinks}</div><time>${esc(work.dt)}</time></div></div>
+  return `<article class="work-card art-card" data-slug="${esc(work.slug)}">
+    <a class="work-art art-media" href="${href}"><img src="${esc(work.i)}" alt="${esc(names(work.d || work.n))}" width="${work.w || 480}" height="${work.h || 480}" loading="${eager ? 'eager' : 'lazy'}" decoding="async">${work.lk ? `<span class="art-license" title="${esc(translate('license.' + work.lk,work.lt || ''))}">${esc(translate('v2.licenseShort.' + work.lk,work.ls || work.lt || ''))}</span>` : ''}<span class="type-label art-kind">${kinds}</span></a>
+    <button class="quick-view card-preview" type="button" data-preview="${esc(work.slug)}" aria-label="${preview}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="m15 15 6 6"/></svg></button>
+    <div class="work-text art-copy"><a class="work-title art-title" href="${href}">${esc(names(work.n))}</a><div class="card-meta art-meta"><div class="card-roles">${roleLinks}</div><time title="${esc(work.dt)}">${esc(work.dt?.slice(5))}</time></div><p class="image-stats" data-work-stats="${esc(work.id)}"></p></div>
   </article>`;
 }
