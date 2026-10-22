@@ -2,7 +2,9 @@
   "downloadHighlights": {
     "startDate": "2026-10-12",
     "endDate": "2026-10-18",
-    "slugs": ["deepseek202609300025"]
+    "slugs": [
+      "deepseek202609300025"
+    ]
   },
   "featuredSlugs": [
     "deepseek202610030026",
@@ -11,8 +13,29 @@
     "gpt202610030001"
   ],
   "characterCovers": {
-    "deepseek": "deepseek202610030017",
+    "deepseek": "deepseek202610170005",
     "claude": "claude202610030001",
-    "gpt": "gpt202609290002"
+    "gpt": "gpt202610170006",
+    "gemini": "gemini202610170002",
+    "kimi": "kimi202610170001",
+    "other": "other202610210001",
+    "qwen": "qwen202610170001",
+    "glm": "glm202610170001",
+    "grok": "grok202610170001",
+    "doubao": "doubao202610170001",
+    "owner-picks": "owner-picks202609190004",
+    "stepfun": "stepfun202609210001",
+    "mimo": "mimo202609230001",
+    "git": "git202610170001",
+    "minimax": "minimax202610170001",
+    "mistral": "mistral202610170001",
+    "llama": "llama202610170001",
+    "perplexity": "perplexity202610170001",
+    "rwkv": "rwkv202610170001",
+    "hunyuan": "hunyuan202610170001",
+    "novelai": "novelai202610170001",
+    "huggingface": "huggingface202610170001",
+    "zcode": "zcode202610170001",
+    "opencode": "opencode202610170001"
   }
 }

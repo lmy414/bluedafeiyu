@@ -21,6 +21,7 @@ import {createGuidePages} from "../components/archive/GuidePages.mjs";
 import { aboutCopy, aboutQuestions } from './about-copy.mjs';
 import { videoCopy } from './video-copy.mjs';
 import { createVideoPages } from '../components/archive/VideoPages.mjs';
+import { createDemoPages } from './demo-design.mjs';
 const root = process.env.SITE_SOURCE || path.resolve(process.cwd(), '..');
 const read = name => JSON.parse(fs.readFileSync(path.join(root, 'frontend/src/data', name), 'utf8'));
 const works = Object.entries(overlayData()).map(([slug,w])=>({...w,slug}));
@@ -83,6 +84,13 @@ for (const [key,en,ja] of [
   ['copyStill','Still image copied. Download the original for animation.','静止画像をコピーしました。アニメーションは元画像をダウンロードしてください。'],
   ['copyImageFail','Could not copy. Try again or download the original.','コピーできませんでした。再試行するか元画像をダウンロードしてください。']
 ]) { translations.en['d.'+key]=en; translations.ja['d.'+key]=ja; }
+for(const [key,en,ja] of [
+ ['imageSubmit','Submit an image','画像作品を投稿'],
+ ['submissionMode','Submission type','投稿方法'],
+ ['releaseTitle','New frontend and automatic video publishing','新しいフロントエンドと動画の自動公開'],
+ ['releaseLayout','New layouts for discovery, community, characters, creators and information pages, with mobile and dark-mode support.','ホーム、コミュニティ、キャラクター、作者、案内ページを刷新。モバイルとダークモードに対応。'],
+ ['releaseFlow','Creator registration, RSSHub discovery, AI review and automatic publishing are connected, with release notifications sent to the Feishu group.','作者登録、RSSHubによる検出、AI審査、自動公開を接続。公開結果はFeishuグループに通知します。']
+]){translations.en['d.design.'+key]=en;translations.ja['d.design.'+key]=ja;}
 const ctx={works,bySlug,chars,topics,types,snapshot,translations,editorial:read('discovery.json'),modelVendors:read('model-vendors.json').vendors,commonTags:[...tagCounts].sort((a,b)=>b[1]-a[1]).slice(0,16)};
 Object.assign(ctx,createPrimitives(ctx));
 for(const factory of [createWorkCards,createCollectionCards,createCharacterCards,createListing]) Object.assign(ctx,factory(ctx));
@@ -100,6 +108,7 @@ createCommunityPage(ctx);
 createEventPage(ctx);
 createUtilityPages(ctx);
 createVideoPages(ctx);
+createDemoPages(ctx,pages);
 ctx.seo.generatePages(ctx.write,ctx.browsePage,ctx.breadcrumbs);
 export const archivePages=pages;
 export const archiveContext=ctx;

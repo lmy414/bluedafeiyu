@@ -1,4 +1,8 @@
 ---
 // Shared paper and form primitives for the existing informational pages.
+import {decorateDocument} from '../../lib/demo-design.mjs';
+import {archiveContext} from '../../lib/archive.mjs';
+const key=Astro.url.pathname.split('/').pop().replace('.html','');
+const content=await Astro.slots.render('default');
 ---
-<div class="document-page"><slot /></div>
+<div class="document-page" set:html={['about','changelog'].includes(key)?decorateDocument(content,key,archiveContext):content} />

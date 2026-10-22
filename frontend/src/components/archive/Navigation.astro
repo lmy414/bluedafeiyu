@@ -12,8 +12,8 @@ const { icon, works } = archiveContext;
   </a>
   <button class="mobile-close icon-button" data-menu-close aria-label="关闭菜单"><Fragment set:html={icon('close')} /></button>
   <p class="nav-label" data-i18n="d.explore">逛一逛</p>
-  <nav class="main-nav">
-    {navigation.map(item => <a href={item.href} aria-current={active === item.id ? 'page' : undefined}>
+  <nav class="main-nav primary-nav">
+    {navigation.map(item => <a class:list={['nav-link',{'is-active':active===item.id}]} href={item.href} aria-current={active === item.id ? 'page' : undefined}>
       <Fragment set:html={icon(item.icon)} /><span data-i18n={item.key}>{item.label}</span>
       {item.id === 'browse' && <small>{works.length}</small>}
     </a>)}

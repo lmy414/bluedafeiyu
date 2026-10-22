@@ -63,9 +63,9 @@ function pageMeta(document, api, base, snapshot, archive) {
   if (base === '/index.html') landing = homeMeta(snapshot.works.filter(w=>w.status === 'published').length, locale);
   if (base === '/about.html') landing = { title: localizedCopy(aboutSEO,locale), description: localizedCopy(aboutDescription,locale) };
   const guide = guides.find(g => guidePath(g) === base);
-  if (guide) landing = { title: localizedCopy(guide.name,locale) + (locale === 'en' ? ' | Blue Dafeiyu' : locale === 'ja' ? ' | 藍色大肥魚' : ' — 蓝色大肥鱼'), description: localizedCopy(guide.summary,locale) };
+  if (guide) landing = { title: localizedCopy(guide.name,locale) + (locale === 'en' ? ' | DeepSeek Chan' : locale === 'ja' ? ' | 藍色大肥魚' : ' — 蓝色大肥鱼'), description: localizedCopy(guide.summary,locale) };
   if (base === '/category.html' && ['en','ja'].includes(locale)) landing = {
-    title: locale === 'en' ? 'AI Girl Character Guide: DeepSeek, GPT, Claude & More | Blue Dafeiyu' : 'AI娘キャラクター図鑑：DeepSeek・GPT・Claudeほか | 藍色大肥魚',
+    title: locale === 'en' ? 'AI Girl Character Guide: DeepSeek, GPT, Claude & More | DeepSeek Chan' : 'AI娘キャラクター図鑑：DeepSeek・GPT・Claudeほか | 藍色大肥魚',
     description: locale === 'en' ? 'Find AI girl memes, illustrations and comics by character. Explore separate archives for DeepSeek, GPT, Claude, GLM, Gemini and Kimi, with sources and license information.' : 'AIキャラクターのスタンプ、イラスト、漫画を探せます。DeepSeek、GPT、Claude、GLM、Gemini、Kimiのアーカイブで、作品の出典と利用許諾をご覧ください。'
   };
   if (landing) {
@@ -80,7 +80,7 @@ function pageMeta(document, api, base, snapshot, archive) {
     const copy = key => locale === 'zh-Hant' ? converter(videoCopy[key][index]) : videoCopy[key][index];
     const creator = videoArchive.creators.find(c => base === `/creators/bilibili-${c.uid}.html`);
     if (locale !== 'zh') {
-      document.title = (creator ? creator.name + ' · ' + copy('creatorProfile') : copy('videoTitle')) + ' | Blue Dafeiyu';
+      document.title = (creator ? creator.name + ' · ' + copy('creatorProfile') : copy('videoTitle')) + ' | DeepSeek Chan';
       setMeta(document, 'meta[name="description"]', copy('videoLead'));
     }
     if (creator && document.querySelector('main h1')) document.querySelector('main h1').textContent = creator.name;
@@ -89,6 +89,8 @@ function pageMeta(document, api, base, snapshot, archive) {
     }
     for (const selector of ['meta[property="og:image:alt"]', 'meta[name="twitter:image:alt"]']) setMeta(document, selector, document.title);
   }
+  if(base==='/creators.html' && ['en','ja'].includes(locale)) {document.title=(locale==='en'?'Creators':'クリエイター')+' | DeepSeek Chan';setMeta(document,'meta[name="description"]',locale==='en'?'Explore the creators and their published AI-girl fan art and videos.':'AI娘の二次創作を手がける作者と公開作品をご覧ください。');for(const selector of ['meta[property="og:image:alt"]','meta[name="twitter:image:alt"]'])setMeta(document,selector,document.title);}
+  if(locale==='en')document.title=document.title.replaceAll('Blue Dafeiyu','DeepSeek Chan');
   const desc = document.querySelector('meta[name="description"]')?.getAttribute('content') || '';
   if (locale !== 'zh') {
     for (const selector of ['meta[property="og:title"]', 'meta[name="twitter:title"]', 'meta[itemprop="name"]']) setMeta(document, selector, document.title);
@@ -176,7 +178,7 @@ export async function localizeHtml(html, base, locale, snapshot) {
         else if (route === '/videos.html' || route.startsWith('/creators/')) value.name = document.title;
       }
       if (base === '/index.html' && ['WebSite','Organization'].includes(value['@type'])) {
-        value.name = locale.id === 'en' ? 'Blue Dafeiyu' : locale.id === 'zh' ? '蓝色大肥鱼' : '藍色大肥魚';
+        value.name = locale.id === 'en' ? 'DeepSeek Chan' : locale.id === 'zh' ? '蓝色大肥鱼' : '藍色大肥魚';
         if (value['@type'] === 'WebSite') value.description = desc;
       }
     }
