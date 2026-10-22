@@ -51,7 +51,7 @@ export function validateLocalizedProse(text, language, fieldPath, protectedNames
     '',
   )
   if (
-    /Whale[ -]?(?:Chan|Girl)/i.test(namesOnly) ||
+    /Whale[ -]?Chan/i.test(namesOnly) ||
     /Blue Fish|Fat Fish|鯨娘|鲸娘|鲸鱼娘/.test(namesOnly) ||
     /\b(?:DeepSeek|Claude|GPT|Gemini|Qwen|Kimi|Doubao|Grok|GLM|StepFun|MiMo)[- ]chan\b/i.test(
       namesOnly,

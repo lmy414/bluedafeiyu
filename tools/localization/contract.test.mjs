@@ -6,6 +6,14 @@ import {parseReviewResponse} from '../../server/review.mjs';
 import {validateContent as bridge} from '../../server/bridge.mjs';
 const source={name:'探头',description:'露出脑袋',commentary:'让我看看',tags:['探头','可爱'],characterId:'deepseek',categoryIds:['meme']};
 const vocabulary={ok:true,characterIds:new Set(['deepseek']),categoryIds:new Set(['meme'])};
+
+test('descriptive whale girl wording remains valid beside the canonical name; alias-only titles remain rejected', () => {
+  const value=fixtureI18n(source.tags);
+  value.en.seoDescription='A whale girl fan illustration featuring DeepSeek Chan.';
+  assert.equal(validateI18n(value,source).en.seoDescription,value.en.seoDescription);
+  value.en.name='Whale Girl';
+  assert.throws(()=>validateI18n(value,source),/Whale alias/);
+});
 test('v2 retains validated translations through review and bridge, v1 historical content stays readable',()=>{
   const payload={schema:'submission-ai-content/2',verdict:'pass',confidence:0.95,reason:'valid',content:{...source,i18n:fixtureI18n(source.tags)}};
   const reviewed=parseReviewResponse(payload,{vocabulary});assert.equal(reviewed.verdict,'pass');
