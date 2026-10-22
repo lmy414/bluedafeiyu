@@ -8,7 +8,8 @@
   function renderChallenge() {
     const sitekey = form.dataset.turnstileSitekey;
     if (!sitekey || !window.turnstile || widget !== null) return;
-    widget = window.turnstile.render('#creator-turnstile-slot', { sitekey, theme: 'auto', size: 'flexible', callback: value => { token = value; }, 'expired-callback': () => { token = ''; }, 'error-callback': () => { token = ''; } });
+    const width = document.getElementById('creator-turnstile-slot').clientWidth;
+    widget = window.turnstile.render('#creator-turnstile-slot', { sitekey, theme: 'auto', size: width > 0 && width < 300 ? 'compact' : 'flexible', callback: value => { token = value; }, 'expired-callback': () => { token = ''; }, 'error-callback': () => { token = ''; } });
   }
   document.addEventListener('turnstile:ready', renderChallenge);
   renderChallenge();
