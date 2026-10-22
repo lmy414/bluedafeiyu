@@ -78589,5 +78589,208 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_c5b99b727556f78805525846",
+    "name": "DeepSeek娘豪饮海之盐",
+    "description": "Q版DeepSeek娘双手抱着一大瓶海之盐饮料仰头猛喝，蓝白女仆装配鲸鳍发饰，单幅特写构图。",
+    "commentary": "这瓶海之盐我只想抿一口提提神，结果一仰头就停不下来了。等我反应过来，人已经飘在半空——下次谁再递给我这么大一瓶，麻烦先提醒我看一眼瓶身容量。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/c5b99b727556f788.png",
+    "thumbnailPath": "submissions/previews/deepseek/c5b99b727556f788.webp",
+    "fullPath": "submissions/large/deepseek/c5b99b727556f788.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "c5b99b727556f78805525846b41f58e8cc8a27a9f7640ccf2786cd1d1f9113f0",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "Q版",
+      "海之盐",
+      "喝饮料",
+      "炸飞"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "BBL",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-22T02:37:56.849Z",
+    "updatedAt": "2026-10-22T02:37:56.849Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610220001",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "2a6e3920e5d99ddba0239f3ce1308d43cec7bb930550439edf0c7aea1498d1d3",
+      "en": {
+        "commentary": "I only meant to take a tiny sip to wake myself up, but once I tipped the bottle back I could not stop. Next thing I knew I was floating in midair — next time someone hands me a bottle this big, please remind me to check the capacity first.",
+        "description": "Chibi DeepSeek Chan hugs an oversized bottle of Sea Salt sports drink and gulps it down, wearing a blue-and-white maid outfit with whale-fin hair ornaments in a single close-up frame.",
+        "faq": [
+          {
+            "answer": "It is a chibi fan-art version of DeepSeek Chan, drawn with blue hair, whale-fin hair ornaments and a blue-and-white maid outfit.",
+            "question": "Who is the character in this image?"
+          },
+          {
+            "answer": "DeepSeek Chan is hugging a giant bottle of Sea Salt drink and chugging it; the picture is a single comedic frame rather than a multi-panel comic.",
+            "question": "What is happening in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Chugs a Sea Salt Drink",
+        "originNote": "Author: BBL",
+        "seoDescription": "Chibi DeepSeek Chan hugs a giant Sea Salt sports drink bottle and chugs it in this exaggerated fan-made reaction meme.",
+        "seoTitle": "DeepSeek Chan Chugs a Sea Salt Drink – Chibi Meme",
+        "tags": [
+          "DeepSeek Chan",
+          "Chibi",
+          "Sea Salt",
+          "Drinking",
+          "Blown Away"
+        ]
+      },
+      "ja": {
+        "commentary": "一口だけ飲んで目を覚まそうと思ったのに、ボトルを傾けたら止まらなくなった。気づいたら体が宙に浮いていて……次にこんな大きなボトルを渡すときは、先に容量を確かめさせてほしい。",
+        "description": "ちびキャラのDeepSeekちゃんが大きな塩スポーツドリンクのボトルを両手で抱え、頭をのけぞらせて一気飲みしている。青と白のメイド服にクジラのヒレ風の髪飾り、単体のアップ構図。",
+        "faq": [
+          {
+            "answer": "青い髪にクジラのヒレ風の髪飾り、青と白のメイド服をまとったDeepSeekちゃんのちびキャラ版ファンアートです。",
+            "question": "この画像のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "DeepSeekちゃんが大きな塩スポーツドリンクのボトルを抱えて一気飲みしている場面で、コマ割りのない一枚絵のミームです。",
+            "question": "画像では何が起きていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃん、塩ドリンクを一気飲み",
+        "originNote": "作者：BBL",
+        "seoDescription": "ちびキャラのDeepSeekちゃんが大きな塩スポーツドリンクを一気飲みする、誇張されたファンアートミーム。",
+        "seoTitle": "DeepSeekちゃん 塩ドリンク一気飲みのちびキャラミーム",
+        "tags": [
+          "DeepSeekちゃん",
+          "ちびキャラ",
+          "塩ドリンク",
+          "一気飲み",
+          "吹き飛び"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_33eaf536ae6dd8a36afac077",
+    "name": "DeepSeek娘骑在Claude娘背上",
+    "description": "Q版DeepSeek娘盘腿坐在趴着的Claude娘背上，两人都在铺着粉色床单的床上；Claude娘橘发戴花饰，一脸无奈。",
+    "commentary": "床是我先占的，Claude 只是刚好趴在这里……好吧，我承认我拿她当坐垫了。别动，这个高度看风景刚刚好。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/33eaf536ae6dd8a3.png",
+    "thumbnailPath": "submissions/previews/deepseek/33eaf536ae6dd8a3.webp",
+    "fullPath": "submissions/large/deepseek/33eaf536ae6dd8a3.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "33eaf536ae6dd8a36afac07718524a9138e7890f5a2b522218d5abb394a46682",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "Claude娘",
+      "Q版",
+      "骑乘",
+      "寝室"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-22T02:40:06.542Z",
+    "updatedAt": "2026-10-22T02:40:06.542Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610220002",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "e69b6318684889fe8e7a9e97173386f147ea836b6a2673f8a7553369d7f7dca0",
+      "en": {
+        "commentary": "I claimed the bed first, Claude just happened to be lying here... fine, I admit I am using her as a cushion. Stay put, the view is perfect from up here.",
+        "description": "Chibi DeepSeek Chan sits cross-legged on the back of a sprawled Claude Chan on a pink-sheeted bed; Claude Chan has orange hair with a flower ornament and a resigned expression.",
+        "faq": [
+          {
+            "answer": "It shows chibi versions of DeepSeek Chan and Claude Chan, drawn as fan art of the two AI-character mascots.",
+            "question": "Which characters appear in this image?"
+          },
+          {
+            "answer": "DeepSeek Chan is sitting on the back of Claude Chan, who lies face down on the bed looking annoyed; it is a single comedic frame.",
+            "question": "What is happening in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Rides on Claude Chan",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan sits on the back of a resigned Claude Chan on a bed in this comedic two-character fan-art meme.",
+        "seoTitle": "DeepSeek Chan Rides on Claude Chan – Chibi Meme",
+        "tags": [
+          "DeepSeek Chan",
+          "Claude Chan",
+          "Chibi",
+          "Riding",
+          "Bedroom"
+        ]
+      },
+      "ja": {
+        "commentary": "ベッドは私が先に取ったんだから、Claudeはたまたまそこに寝ていただけ……はい、座布団代わりにしているのは認める。動かないで、この高さから見る景色がちょうどいいの。",
+        "description": "ちびキャラのDeepSeekちゃんが、ピンクのシーツのベッドにうつぶせになったClaudeちゃんの背中にあぐらで座っている。Claudeちゃんはオレンジ髪に花飾りをつけ、あきれた表情。",
+        "faq": [
+          {
+            "answer": "DeepSeekちゃんとClaudeちゃんのちびキャラ版で、二人のAIキャラクターを描いたファンアートです。",
+            "question": "この画像には誰が出ていますか？"
+          },
+          {
+            "answer": "DeepSeekちゃんがベッドにうつぶせのClaudeちゃんの背中に座り、Claudeちゃんは困った顔をしている一枚絵のミームです。",
+            "question": "画像では何が起きていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃんがClaudeちゃんの背中に乗る",
+        "originNote": "",
+        "seoDescription": "ちびキャラのDeepSeekちゃんが、あきれた顔のClaudeちゃんの背中にベッドの上で座るコミカルなファンアートミーム。",
+        "seoTitle": "DeepSeekちゃんがClaudeちゃんに乗る ちびキャラミーム",
+        "tags": [
+          "DeepSeekちゃん",
+          "Claudeちゃん",
+          "ちびキャラ",
+          "騎乗",
+          "寝室"
+        ]
+      }
+    }
   }
 ]
