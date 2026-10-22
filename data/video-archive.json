@@ -7,8 +7,8 @@
       "homepage": "https://space.bilibili.com/4168597",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "A creator from the site's initial creator list; profile information comes from the public channel page, and every video is reviewed one by one. This MV was posted on behalf of its original maker.",
-        "ja": "サイト運営者が指定した初期メンバーの投稿者。プロフィール情報は公開ページに基づき、動画は1本ずつ審査している。このMVは制作者本人に代わって投稿された。"
+        "en": "A creator who posts lighthearted, self-made clips about everyday mischief with their AI character companion.",
+        "ja": "AI キャラクターとの日常のいたずらを、自作の短い動画で気軽に共有しているクリエイターです。"
       }
     },
     {
@@ -67,8 +67,8 @@
       "homepage": "https://space.bilibili.com/44748304",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "The creator states that the video is made for entertainment and is not a commercial or technical evaluation of any AI product.",
-        "ja": "作者は、この動画は娯楽目的であり、いかなる AI 製品への商業的評価や技術的評価ではないと述べています。"
+        "en": "A Bilibili creator making short anime-style fan animations featuring AI character personifications.",
+        "ja": "AIキャラクターの擬人化を題材にした短編アニメーションを制作するBilibiliの制作者。"
       }
     }
   ],
@@ -364,6 +364,35 @@
       }
     },
     {
+      "bvid": "BV1t6nu6bEsf",
+      "uid": "44748304",
+      "title": "压力一只大肥鱼？",
+      "description": "视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色形象参考来自b站up：﻿﻿﻿@ZipZipPipe  ﻿ ﻿  ﻿ ﻿﻿﻿@这个刀子真甜  ﻿ ﻿  ﻿ ﻿﻿﻿@上善无形  ﻿ ﻿ ﻿",
+      "url": "https://www.bilibili.com/video/BV1t6nu6bEsf/",
+      "cover": "https://i1.hdslb.com/bfs/archive/d7e79a9c6379bd14ba8a09cc1ca1c02df43b9e96.jpg",
+      "duration": 215,
+      "publishedAt": "2026-10-18T08:10:25.000Z",
+      "characterIds": [
+        "deepseek",
+        "claude",
+        "gpt",
+        "glm",
+        "gemini"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A first-batch creator chosen by the site owner, with profile details taken from the public channel page; every video is reviewed individually.",
+          "description": "A short comedy animation built around a chibi DeepSeek Chan parked at her laptop, while Claude Chan, GPT Chan, GLM Chan and Gemini Chan drift through the cluttered room and the pressure keeps stacking up. The creator marks it as entertainment only, not a commercial or technical review of any AI product, and credits several Bilibili creators for the character designs in the original description.",
+          "title": "Under Pressure: A DeepSeek Chan Skit"
+        },
+        "ja": {
+          "creatorIntro": "サイト運営者が選んだ初期メンバーの投稿者。公開チャンネルの情報をもとに掲載し、動画は1本ずつ審査している。",
+          "description": "ノートパソコンの前に座るちびキャラのDeepSeekちゃんを中心にした短編コメディ。散らかった部屋にClaudeちゃん、GPTちゃん、GLMちゃん、Geminiちゃんが入れ替わり現れ、プレッシャーがどんどん積み重なっていく。作者は娯楽目的の動画であり、特定のAI製品への商業的評価や技術レビューではないと明記し、キャラクターデザインについては元の説明欄で複数のBilibiliクリエイターをクレジットしている。",
+          "title": "DeepSeekちゃんを追い詰めてみた？"
+        }
+      }
+    },
+    {
       "bvid": "BV1NtJB6TE19",
       "uid": "13787349",
       "title": "带我出逃吧，我的罗密欧~【bilibilionly同人扶持计划】",
@@ -414,6 +443,31 @@
       }
     },
     {
+      "bvid": "BV1g2JX6HEHX",
+      "uid": "44748304",
+      "title": "再给我一个好吗",
+      "description": "视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色形象参考来自b站up：﻿﻿@ZipZipPipe  ﻿  ﻿ ﻿﻿@这个刀子真甜  ﻿  ﻿ ﻿﻿@上善无形  ﻿ @沉默寡言佰佰佰",
+      "url": "https://www.bilibili.com/video/BV1g2JX6HEHX/",
+      "cover": "https://i1.hdslb.com/bfs/archive/8a989453d665026664865eed7d4d4e2243821489.jpg",
+      "duration": 208,
+      "publishedAt": "2026-10-16T09:03:26.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A Bilibili creator making short anime-style fan animations featuring AI character personifications.",
+          "description": "A short fan animation in which the blue DeepSeek Chan character, dressed as a maid, keeps asking her companion for one more. The creator notes the video is for entertainment only and is not a commercial or technical evaluation of any AI product; character designs are credited to the Bilibili creators named in the original description.",
+          "title": "Can I Have One More?"
+        },
+        "ja": {
+          "creatorIntro": "AIキャラクターの擬人化を題材にした短編アニメーションを制作するBilibiliの制作者。",
+          "description": "メイド服姿の青いDeepSeekちゃんが、相棒にもう一つとねだる短編同人アニメーション。投稿者は娯楽目的の動画であり、AI製品の商業的・技術的評価ではないと明記しており、キャラクターデザインは概要欄に記載されたBilibiliの制作者によるものとしている。",
+          "title": "もう一ついい？"
+        }
+      }
+    },
+    {
       "bvid": "BV1hDJ16eEuY",
       "uid": "13787349",
       "title": "抽我嘛~",
@@ -460,6 +514,31 @@
           "creatorIntro": "作者のコメント：全編を GPT6Astra と img2.5 の編集で制作したとのこと。制作中に MiniMaxちゃんは被害を受けていないと冗談交じりに添えており、AI キャラクターの素材やスタンプを共有する自身のサイトも運営している。",
           "description": "Qwenちゃんを題材にしたファンメイドのミュージックビデオ。楽曲「Ward Romance」に合わせ、歌詞風のタイポグラフィとイラストのカットを交互に構成している。青髪の Qwenちゃんのカットが中心で、一部の場面には紫髪のキャラクターも登場する。",
           "title": "Qwenちゃん：WARD ROMANCE（奔放なロマンス）MV"
+        }
+      }
+    },
+    {
+      "bvid": "BV1oxp26nELR",
+      "uid": "44748304",
+      "title": "哇青梅竹马天下第一【AI全民制作人】",
+      "description": "视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色形象参考来自b站up：﻿@ZipZipPipe   ﻿ ﻿@这个刀子真甜   ﻿ ﻿@上善无形",
+      "url": "https://www.bilibili.com/video/BV1oxp26nELR/",
+      "cover": "https://i0.hdslb.com/bfs/archive/ef89f8548b41e213f3f435e8d86f5ba714aba3a7.jpg",
+      "duration": 252,
+      "publishedAt": "2026-10-14T09:24:33.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A Bilibili creator making short anime-style fan animations featuring AI character personifications.",
+          "description": "A fan animation in which the blue DeepSeek Chan character, in her maid outfit, lounges in a room piled with snacks while tapping at a laptop, and other characters drop by. Part of the creator's AI Everyone's Producer series; the creator states the video is for entertainment only and is not a commercial or technical evaluation of any AI product.",
+          "title": "Childhood Friends Are the Best [AI Everyone's Producer]"
+        },
+        "ja": {
+          "creatorIntro": "AIキャラクターの擬人化を題材にした短編アニメーションを制作するBilibiliの制作者。",
+          "description": "お菓子の山に囲まれた部屋で、メイド服姿の青いDeepSeekちゃんがノートPCを打ち、ほかのキャラクターたちが入れ替わり訪れる同人アニメーション。制作者の「AI全民制作人」シリーズの一本で、娯楽目的の動画でありAI製品の商業的・技術的評価ではないと明記されている。",
+          "title": "幼なじみは天下無敵【AI全民制作人】"
         }
       }
     },
@@ -535,6 +614,31 @@
           "creatorIntro": "サイト運営者が指定した初期メンバーの投稿者。プロフィール情報は公開ページに基づき、動画は1本ずつ審査している。このMVは制作者本人に代わって投稿された。",
           "description": "オリジナル曲「Dragon Mode！」の、AIで制作されたミュージックビデオ。白髪のドラゴン娘・GPTちゃんがアイドルになる夢を追い、ネオンの夜の街を歌い抜ける。空には光るクジラが浮かび、ラストはライトに包まれたステージで幕を閉じる。監督・絵コンテ・作詞・イラストはGPTと制作者本人が担当し、曲と声はAI音楽ツール、映像はAI動画ツール（Wan 3.0）で生成された。",
           "title": "Dragon Mode！ドラゴン娘GPTちゃんもアイドルになりたい【MV】"
+        }
+      }
+    },
+    {
+      "bvid": "BV1Mua663EKp",
+      "uid": "4168597",
+      "title": "肥鱼造反证据存档",
+      "description": "只见那大肥鱼大吼一声，直接调用我Agent的skill，接入seedance 2.5的API为自己生成了段视频。\n\n而我却好不知情，还在开战争雷霆的中陆。\n\n至此痛失50元，所以有没有人送我点高账，我高账过期了QAQ。",
+      "url": "https://www.bilibili.com/video/BV1Mua663EKp/",
+      "cover": "https://i2.hdslb.com/bfs/archive/4a736274c625e5cc240069d297a84d31e4ad2ceb.jpg",
+      "duration": 33,
+      "publishedAt": "2026-10-01T15:18:12.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A creator who posts lighthearted, self-made clips about everyday mischief with their AI character companion.",
+          "description": "The chibi DeepSeek Chan shouts once, taps into the creator's agent skill and uses the Seedance 2.5 API to generate a video of herself, while the creator is absorbed in a game and only later notices the missing 50 yuan.",
+          "title": "Evidence of the Rebellion, Archived"
+        },
+        "ja": {
+          "creatorIntro": "AI キャラクターとの日常のいたずらを、自作の短い動画で気軽に共有しているクリエイターです。",
+          "description": "ちびキャラの DeepSeekちゃんが一声あげてクリエイターのエージェントスキルに接続し、Seedance 2.5 の API で自分の動画を生成。ゲームに夢中だったクリエイターは、後から50元が消えたことに気づきます。",
+          "title": "反乱の証拠、保管しました"
         }
       }
     },
