@@ -1,9 +1,26 @@
 import {applyNativeArchives} from './native-archives.mjs';
 import {aboutCopy,aboutQuestions} from '../src/lib/about-copy.mjs';
+import { videoArchive } from '../src/lib/video-archive.mjs';
+import { videoCopy } from '../src/lib/video-copy.mjs';
 const escape=value=>String(value||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function applyNativeContent(document,api,base,snapshot) {
   const native=['en','ja'].includes(api.current);
   if(!native)return;
+  const videoById = new Map(videoArchive.videos.map(v => [v.bvid, v]));
+  for (const card of document.querySelectorAll('[data-video-bvid]')) {
+    const value = videoById.get(card.getAttribute('data-video-bvid'))?.i18n?.[api.current];
+    if (value) { card.querySelector('[data-video-title]').textContent = value.title; card.querySelector('[data-video-description]').textContent = value.description; }
+  }
+  for (const el of document.querySelectorAll('[data-creator-intro]')) {
+    const c = videoArchive.creators.find(c => c.uid === el.getAttribute('data-creator-intro'));
+    if(c?.i18n?.[api.current]) el.textContent = c.i18n[api.current];
+  }
+  if (base === '/videos.html' || base.startsWith('/creators/')) {
+    const index = api.current === 'en' ? 1 : 2;
+    const creator = videoArchive.creators.find(c => base === `/creators/bilibili-${c.uid}.html`);
+    document.title = (creator ? creator.name + ' · ' + videoCopy.creatorProfile[index] : videoCopy.videoTitle[index]) + ' | Blue Dafeiyu';
+    document.querySelector('meta[name="description"]')?.setAttribute('content', videoCopy.videoLead[index]);
+  }
   // Keep the approved brand wording in the visible FAQ identical to its schema.
   for(const el of document.querySelectorAll('[data-i18n^="d.about."]')) {
     const key=el.getAttribute('data-i18n').slice('d.about.'.length), index=api.current==='en'?1:2;
@@ -41,7 +58,7 @@ export function applyNativeContent(document,api,base,snapshot) {
     const schema=document.createElement('script');schema.type='application/ld+json';schema.textContent=JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',inLanguage:api.current,mainEntity:value.faq.map(q=>({'@type':'Question',name:q.question,acceptedAnswer:{'@type':'Answer',text:q.answer}}))}).replace(/</g,'\\u003c');document.head.appendChild(schema);
   }
   // These names are actual credits, not site branding or prose.
-  const identities=new Set(['上善无形',...(snapshot.topics||[]).map(t=>t.author?.name),...snapshot.works.flatMap(w=>[w.origin?.author,w.submitter?.name])].filter(v=>v&&v.length>1&&!['本人','原作者未标注','上游清单导入','蓝色大肥鱼'].includes(v)));
+  const identities=new Set(['上善无形',...videoArchive.creators.map(c => c.name),...(snapshot.topics||[]).map(t=>t.author?.name),...snapshot.works.flatMap(w=>[w.origin?.author,w.submitter?.name])].filter(v=>v&&v.length>1&&!['本人','原作者未标注','上游清单导入','蓝色大肥鱼'].includes(v)));
   const protectedText='.work-facts dd,.work-detail .source-note,[data-i18n="v2.cm.owner"],.author-profile h1,.author-name,.topic-author b,.topic-author .author-initial';
   const authoredText='.work-card,.detail-info h1,.detail-info .tags,.work-description,.fish-comment p,.detail-role,.breadcrumbs > span:last-child,.detail-image img,.work-facts small,[data-work-faq]';
   for(const el of document.querySelectorAll('*')) {
@@ -52,6 +69,9 @@ export function applyNativeContent(document,api,base,snapshot) {
     if(el.tagName==='META'&&!/image|url/.test(el.getAttribute('name')||el.getAttribute('property')||''))el.setAttribute('content',api.contentText(el.getAttribute('content')));
   }
   for(const meta of document.querySelectorAll('meta[property="og:image:alt"],meta[name="twitter:image:alt"]'))meta.setAttribute('content',value ? value.description||value.name : nativeText(meta.getAttribute('content')));
+  if (base === '/videos.html' || base.startsWith('/creators/')) {
+    for (const meta of document.querySelectorAll('meta[property="og:image:alt"],meta[name="twitter:image:alt"]')) meta.setAttribute('content', document.title);
+  }
   const author=document.querySelector('.work-facts > div:first-child dd');if(author?.textContent==='原作者未标注')author.textContent=api.contentText(author.textContent);
   const archive=applyNativeArchives(document,api,base,snapshot);
   if(archive)for(const meta of document.querySelectorAll('meta[property="og:image:alt"],meta[name="twitter:image:alt"]'))meta.setAttribute('content',archive.title);

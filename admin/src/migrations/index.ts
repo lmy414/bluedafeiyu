@@ -8,8 +8,10 @@ import * as migration_20261010_000000_agent_progress from './20261010_000000_age
 import * as migration_20261010_010000_rights_agent from './20261010_010000_rights_agent';
 
 import * as migration_20261011_000000_work_characters from './20261011_000000_work_characters';
+import * as migration_20261022_000000_creator_videos from './20261022_000000_creator_videos';
 
 export const migrations = [
+  // Existing migrations keep their order; the new migration is appended below.
   // Additive migration; existing editorial data and queue state stay unchanged.
   {
     up: migration_20260929_033658_initial.up,
@@ -43,4 +45,5 @@ export const migrations = [
   },
   { up: migration_20261010_010000_rights_agent.up, down: migration_20261010_010000_rights_agent.down, name: '20261010_010000_rights_agent' },
   { up: migration_20261011_000000_work_characters.up, down: migration_20261011_000000_work_characters.down, name: '20261011_000000_work_characters' },
+  { up: migration_20261022_000000_creator_videos.up, down: migration_20261022_000000_creator_videos.down, name: '20261022_000000_creator_videos' },
 ];

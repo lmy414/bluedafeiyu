@@ -141,6 +141,7 @@ export type PublishPlan = {
   restored: PublishPlanItem[]
   summary: Record<string, number>
   topics: PublishPlanItem[]
+  videos: PublishPlanItem[]
   updated: PublishPlanItem[]
 }
 

@@ -12,8 +12,10 @@ import { PublishEndpoints } from './publish'
 import { RequestAgentEndpoints } from './request-agent'
 import { TaskEndpoints } from './tasks'
 import { AutomationEndpoints } from './automation'
+import { VideoEndpoints } from './videos'
 
 export const endpoints: Endpoint[] = [
+  ...VideoEndpoints,
   ...TaskEndpoints,
   ...AutomationEndpoints,
   ...ConsoleEndpoints,

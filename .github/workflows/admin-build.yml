@@ -6,6 +6,7 @@ on:
       - main
       - feat/admin-console
       - feat/hermes-agent-editorial
+      - feat/bilibili-creator-registration
     paths:
       - 'admin/**'
   workflow_dispatch:

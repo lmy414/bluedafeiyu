@@ -3,6 +3,7 @@ import V2 from '../layouts/Archive.astro';
 import { SITE } from '../lib/v2.mjs';
 import DocumentPage from '../components/archive/DocumentPage.astro';
 import SubmissionForm from '../components/SubmissionForm.astro';
+import CreatorRegistration from '../components/CreatorRegistration.astro';
 ---
 <V2 title="AI娘表情包投稿 - 站内快速投稿与 GitHub 表单 | 蓝色大肥鱼" desc="提交 AI 娘表情包，上传图片、填写名称、角色和作品类型并选择是否署名；署名时填写名字，个人主页链接和说明可选。站内快速投稿与 GitHub 表单均可，作品类型会在审核时核对，来源与授权由维护者补齐。" path="/submit.html" active="submit" bodyPage="submit" pageStyles={["/page-styles/submit.css?v=2"]} robots="noindex,follow">
 <DocumentPage>
@@ -83,6 +84,7 @@ import SubmissionForm from '../components/SubmissionForm.astro';
       </div>
     </div>
 
+    <CreatorRegistration />
     <h2 class="section-label" data-i18n="submit.form.title">快速投稿</h2>
     <div class="panel form-sheet">
       <span class="tape-strip" aria-hidden="true"></span>
@@ -94,6 +96,7 @@ import SubmissionForm from '../components/SubmissionForm.astro';
     <p class="note" data-i18n="submit.note2">投稿不会立即上线：维护者会看图核对作品类型，补充 Tag、来源和授权信息，审核通过后批量发布；期间可能会向你确认信息。</p>
 </DocumentPage>
 <Fragment slot="scripts">
-    <script is:inline src="/page-scripts/submit-0.js?v=8" async></script>
+    <script is:inline src="/page-scripts/submit-0.js?v=9" async></script>
+    <script is:inline src="/page-scripts/creator-registration.js?v=1" defer></script>
 </Fragment>
 </V2>

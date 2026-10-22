@@ -267,7 +267,7 @@
         turnstileScript.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
         turnstileScript.async = true;
         turnstileScript.defer = true;
-        turnstileScript.onload = renderTurnstile;
+        turnstileScript.onload = function () { renderTurnstile(); document.dispatchEvent(new Event('turnstile:ready')); };
         document.head.appendChild(turnstileScript);
       }
 

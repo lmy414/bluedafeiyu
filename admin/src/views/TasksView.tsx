@@ -37,6 +37,11 @@ const STAGES: Record<string, string> = {
   needs_manual: '需要人工复核',
   awaiting_publish: '等待发布',
   reply_queued: '等待回写结果',
+  active: '持续同步作者的公开视频',
+  approved: 'AI 审核通过',
+  rejected: '未通过收录审核',
+  manual: '证据不足，待复核',
+  paused: '作者同步已暂停',
 }
 export function TasksView() {
   const params = useSearchParams(),
@@ -276,7 +281,7 @@ export function TasksView() {
                   {TASK_STATUSES.find((s) => s.value === selected.status)?.label}
                 </span>
               </div>
-              {selected.kind === 'submission' ? <p>{selected.title}</p> : null}
+              {['submission', 'creator', 'video'].includes(selected.kind) ? <p>{selected.title}</p> : null}
               <p className="s3-muted">
                 发起人：{selected.actor || '站长'} · 更新于 {formatDate(selected.updatedAt)}
               </p>

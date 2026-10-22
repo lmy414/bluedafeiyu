@@ -17,6 +17,7 @@ async function startBackend(t, state) {
       res.writeHead(status, { 'content-type': 'application/json' });
       res.end(JSON.stringify(body));
     };
+    if (req.method === 'POST' && url.pathname === '/cms-api/videos/sync') return send(200, { ok: true, stats: { creators: 0, discovered: 0, errors: [] } });
     if (req.method === 'POST' && url.pathname === '/cms-api/submissions/sync') {
       return send(state.syncStatus || 200, state.syncBody || { ok: true });
     }

@@ -19,6 +19,8 @@ import {createEventPage} from "../components/archive/EventPage.mjs";
 import {createUtilityPages} from "../components/archive/UtilityPages.mjs";
 import {createGuidePages} from "../components/archive/GuidePages.mjs";
 import { aboutCopy, aboutQuestions } from './about-copy.mjs';
+import { videoCopy } from './video-copy.mjs';
+import { createVideoPages } from '../components/archive/VideoPages.mjs';
 const root = process.env.SITE_SOURCE || path.resolve(process.cwd(), '..');
 const read = name => JSON.parse(fs.readFileSync(path.join(root, 'frontend/src/data', name), 'utf8'));
 const works = Object.entries(overlayData()).map(([slug,w])=>({...w,slug}));
@@ -37,6 +39,7 @@ const topics = snapshot.topics.filter(t=>t.status!=='removed').map(t=>{
 });
 const tagCounts=new Map();for(const w of works)for(const tag of w.tg)tagCounts.set(tag,(tagCounts.get(tag)||0)+1);
 const translations={en:{},ja:{}};
+for (const [key, row] of Object.entries(videoCopy)) { translations.en['d.' + key] = row[1]; translations.ja['d.' + key] = row[2]; }
 for (const [key, values] of Object.entries(aboutCopy)) {
   translations.en['d.about.'+key] = values[1]; translations.ja['d.about.'+key] = values[2];
 }
@@ -96,6 +99,7 @@ createSearchPage(ctx);
 createCommunityPage(ctx);
 createEventPage(ctx);
 createUtilityPages(ctx);
+createVideoPages(ctx);
 ctx.seo.generatePages(ctx.write,ctx.browsePage,ctx.breadcrumbs);
 export const archivePages=pages;
 export const archiveContext=ctx;

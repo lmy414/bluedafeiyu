@@ -33,6 +33,7 @@ import { submissionAttribution } from '../admin/src/lib/attribution.mjs';
 import { reviewQueuedItem } from './review.mjs';
 import { validateContent as validateReviewContent } from './bridge.mjs';
 import { agentAction } from './agent.mjs';
+import { forwardCreatorRegistration } from './creator-registration.mjs';
 import { validateCharacterSelection } from './characters.mjs';
 
 const LOOPBACK_HOSTS = new Set(['127.0.0.1', '::1', 'localhost']);
@@ -822,6 +823,7 @@ export function createPublicHandler({
   bridge = null,
   characters = [],
   turnstileVerify = null,
+  creatorRegistrar = forwardCreatorRegistration,
   now = () => Date.now(),
   logger = console,
 } = {}) {
@@ -889,6 +891,23 @@ export function createPublicHandler({
         /* 只入队，不自动审核：内置 AI 自动触发已关闭，结论由内部审核接口回写。 */
         const result = await qqAdapter.handleInbound({ authorization: req.headers.authorization || '', payload });
         return sendJson(res, result.code, result.body);
+      }
+
+      if (req.method === 'POST' && url.pathname === '/api/v1/creators') {
+        const clientIp = resolveClientIp(req, cfg.trustedProxyCidrs);
+        const limit = allowRate(clientIp);
+        if (!limit.allowed) return sendJson(res, 429, { ok: false, error: '提交过于频繁，请稍后重试' });
+        if (!/^application\/json(?:;|$)/i.test(req.headers['content-type'] || '')) return sendJson(res, 415, { ok: false, error: '请使用 JSON 提交' });
+        let input;
+        try { input = JSON.parse((await readBody(req, 4096)).toString('utf8')); }
+        catch { return sendJson(res, 400, { ok: false, error: '登记内容无效或超过上限' }); }
+        if (cfg.turnstile.enabled) {
+          let verified = false;
+          try { verified = Boolean(input.turnstileToken && verifyTurnstile && await verifyTurnstile(String(input.turnstileToken), { remoteip: clientIp })); } catch { /* fail closed */ }
+          if (!verified) return sendJson(res, 403, { ok: false, error: '请完成人机验证' });
+        }
+        try { return sendJson(res, 202, await creatorRegistrar(input, cfg)); }
+        catch (error) { return sendJson(res, error.status || 400, { ok: false, error: error.message }); }
       }
 
       if (req.method === 'POST' && url.pathname === '/api/v1/submissions') {

@@ -73,6 +73,8 @@ export interface Config {
     categories: Category;
     submissions: Submission;
     works: Work;
+    creators: Creator;
+    videos: Video;
     topics: Topic;
     'takedown-requests': TakedownRequest;
     'publish-runs': PublishRun;
@@ -92,6 +94,8 @@ export interface Config {
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
     submissions: SubmissionsSelect<false> | SubmissionsSelect<true>;
     works: WorksSelect<false> | WorksSelect<true>;
+    creators: CreatorsSelect<false> | CreatorsSelect<true>;
+    videos: VideosSelect<false> | VideosSelect<true>;
     topics: TopicsSelect<false> | TopicsSelect<true>;
     'takedown-requests': TakedownRequestsSelect<false> | TakedownRequestsSelect<true>;
     'publish-runs': PublishRunsSelect<false> | PublishRunsSelect<true>;
@@ -511,6 +515,75 @@ export interface PublishRun {
   error?: string | null;
   startedAt?: string | null;
   finishedAt?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "creators".
+ */
+export interface Creator {
+  id: number;
+  uid: string;
+  homepage: string;
+  name: string;
+  intro: string;
+  status: 'queued' | 'active' | 'paused';
+  syncPage?: number | null;
+  syncLease?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  lastSyncedAt?: string | null;
+  retryAt?: string | null;
+  error?: string | null;
+  needsPublish?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "videos".
+ */
+export interface Video {
+  id: number;
+  bvid: string;
+  creator: number | Creator;
+  title: string;
+  source:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  status: 'queued' | 'reviewing' | 'approved' | 'rejected' | 'manual' | 'hidden';
+  review?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  lease?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  needsPublish?: boolean | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -1003,6 +1076,41 @@ export interface WorksSelect<T extends boolean = true> {
   legacySource?: T;
   legacyOrder?: T;
   legacyData?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "creators_select".
+ */
+export interface CreatorsSelect<T extends boolean = true> {
+  uid?: T;
+  homepage?: T;
+  name?: T;
+  intro?: T;
+  status?: T;
+  syncPage?: T;
+  syncLease?: T;
+  lastSyncedAt?: T;
+  retryAt?: T;
+  error?: T;
+  needsPublish?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "videos_select".
+ */
+export interface VideosSelect<T extends boolean = true> {
+  bvid?: T;
+  creator?: T;
+  title?: T;
+  source?: T;
+  status?: T;
+  review?: T;
+  lease?: T;
+  needsPublish?: T;
   updatedAt?: T;
   createdAt?: T;
 }

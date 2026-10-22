@@ -9,6 +9,8 @@ import { buildConfig, getPayload } from 'payload'
 import sharp from 'sharp'
 import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest'
 import { Users } from '@/collections/Users'
+import { Creators } from '@/collections/Creators'
+import { Videos } from '@/collections/Videos'
 import { BulkJobs } from '@/collections/BulkJobs'
 import { Works } from '@/collections/Works'
 import { Submissions } from '@/collections/Submissions'
@@ -52,7 +54,7 @@ async function enqueue(operation: string, target: string, ids: string[], extras:
 beforeAll(async () => {
   root = await fs.mkdtemp(path.join(os.tmpdir(), 'console-bulk-'))
   process.env.MEDIA_DIR = path.join(root, 'media')
-  const config = buildConfig({ collections: [Users, BulkJobs, Works, Submissions, Categories, Characters, { ...Media, upload: { ...(Media.upload as any), staticDir: process.env.MEDIA_DIR } }, Topics, PublishRuns, AuditEvents, TakedownRequests], db: sqliteAdapter({ client: { url: `file:${path.join(root, 'test.db').replace(/\\/g, '/')}` }, push: true, transactionOptions: { behavior: 'immediate' } }), secret: 'console-bulk-test', sharp })
+  const config = buildConfig({ collections: [Users, Creators, Videos, BulkJobs, Works, Submissions, Categories, Characters, { ...Media, upload: { ...(Media.upload as any), staticDir: process.env.MEDIA_DIR } }, Topics, PublishRuns, AuditEvents, TakedownRequests], db: sqliteAdapter({ client: { url: `file:${path.join(root, 'test.db').replace(/\\/g, '/')}` }, push: true, transactionOptions: { behavior: 'immediate' } }), secret: 'console-bulk-test', sharp })
   payload = await getPayload({ config })
   owner = await payload.create({ collection: 'users', data: { email: 'owner@bulk.test', password: 'test-password', role: 'owner' }, overrideAccess: true, context: { audit: false } })
   bot = { id: owner.id, role: 'bot' }

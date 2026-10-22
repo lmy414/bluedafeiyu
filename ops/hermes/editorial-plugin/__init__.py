@@ -14,7 +14,7 @@ _budgets = {}
 
 
 def bridge(action, args):
-    if args.get('target') not in ('submission', 'admin', 'requests'):
+    if args.get('target') not in ('submission', 'admin', 'requests', 'videos'):
         return {'ok': False, 'error': 'target must be submission, admin or requests'}
     payload = {**args, 'action': action}
     encoded = json.dumps(payload, ensure_ascii=False).encode('utf-8')
@@ -95,7 +95,7 @@ def handle(action, args, **kwargs):
 
 
 STRING = {'type': 'string'}
-COMMON = {'target': {'type': 'string', 'enum': ['submission', 'admin', 'requests']}, 'id': STRING, 'jobId': STRING, 'token': STRING}
+COMMON = {'target': {'type': 'string', 'enum': ['submission', 'admin', 'requests', 'videos']}, 'id': STRING, 'jobId': STRING, 'token': STRING, 'imagePart': {'type': 'string', 'enum': ['cover', 'storyboard']}}
 CONTENT = {'type': 'object', 'additionalProperties': False, 'properties': {
     'name': STRING, 'description': STRING, 'commentary': STRING, 'characterId': STRING,
     'characterIds': {'type': 'array', 'items': STRING, 'minItems': 1, 'uniqueItems': True},
@@ -122,6 +122,7 @@ def action_handle(args, **kwargs):
 
 def register(ctx):
     tools = [
+        ('dafeiyu_save_video', 'For target videos only. Complete an individual video review after reading its cover AND storyboard with dafeiyu_read imagePart. Only clear AI-character fan works pass. News, tutorials, software demos and unrelated animation do not pass. Missing evidence uses manual.', {'review': {'type': 'object', 'additionalProperties': False, 'properties': {'verdict': {'type': 'string', 'enum': ['pass', 'reject', 'manual']}, 'reason': STRING, 'sourceHash': STRING, 'isAiCharacter': {'type': 'boolean'}, 'isFanwork': {'type': 'boolean'}, 'confidence': {'type': 'number', 'minimum': 0, 'maximum': 1}, 'characterIds': {'type': 'array', 'items': STRING}, 'i18n': {'type': 'object', 'properties': {lang: {'type': 'object', 'properties': {'title': STRING, 'description': STRING, 'creatorIntro': STRING}, 'required': ['title', 'description', 'creatorIntro']} for lang in ('en', 'ja')}, 'required': ['en', 'ja']}}, 'required': ['verdict', 'reason']}}, partial(handle, 'complete'), ['target', 'id', 'token', 'review']),
         ('dafeiyu_tasks', 'List tasks or read authoritative character/category rules. No generation.', {'action': {'type': 'string', 'enum': ['list', 'rules', 'sync']}}, action_handle, ['target', 'action']),
         ('dafeiyu_claim', 'Claim exactly one task. Save the returned token and pass it to every subsequent tool. No model call.', {}, partial(handle, 'claim'), ['target']),
         ('dafeiyu_read', 'Read a claimed task or attach its image directly to your native vision context. Never calls an auxiliary model.', {'action': {'type': 'string', 'enum': ['get', 'image']}}, action_handle, ['target', 'id', 'token', 'action']),

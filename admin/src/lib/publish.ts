@@ -13,7 +13,8 @@ export type PublishPlan = {
   restored: any[]
   deleted: any[]
   topics: any[]
-  summary: { added: number; updated: number; hidden: number; restored: number; deleted: number; topics: number }
+  videos: any[]
+  summary: { added: number; updated: number; hidden: number; restored: number; deleted: number; topics: number; videos?: number }
 }
 
 function briefWork(doc: any) {
@@ -25,9 +26,11 @@ function briefTopic(doc: any) {
 }
 
 export async function buildPublishPlan(payload: Payload): Promise<PublishPlan> {
-  const [works, topics] = await Promise.all([
+  const [works, topics, videos, creators] = await Promise.all([
     (payload as any).find({ collection: 'works', depth: 0, limit: 2000, overrideAccess: true, pagination: false }),
     (payload as any).find({ collection: 'topics', depth: 0, limit: 1000, overrideAccess: true, pagination: false }),
+    (payload as any).find({ collection: 'videos', where: { needsPublish: { equals: true } }, depth: 0, overrideAccess: true, pagination: false }),
+    (payload as any).find({ collection: 'creators', where: { needsPublish: { equals: true } }, depth: 0, overrideAccess: true, pagination: false }),
   ])
   const plan: PublishPlan = {
     added: [],
@@ -36,6 +39,7 @@ export async function buildPublishPlan(payload: Payload): Promise<PublishPlan> {
     restored: [],
     deleted: [],
     topics: [],
+    videos: [...videos.docs.map((v: any) => ({ id: v.id, name: v.title, status: v.status })), ...creators.docs.map((c: any) => ({ id: c.id, name: c.name, status: c.status }))],
     summary: { added: 0, updated: 0, hidden: 0, restored: 0, deleted: 0, topics: 0 },
   }
   for (const work of works.docs) {
@@ -56,6 +60,7 @@ export async function buildPublishPlan(payload: Payload): Promise<PublishPlan> {
     restored: plan.restored.length,
     deleted: plan.deleted.length,
     topics: plan.topics.length,
+    ...(plan.videos.length ? { videos: plan.videos.length } : {}),
   }
   return plan
 }
@@ -133,8 +138,13 @@ export async function buildPublishSnapshot(payload: Payload, run: any): Promise<
   const deletions = allWorks.docs
     .filter((work: any) => work.status === 'deleted')
     .map((work: any) => ({ workId: work.workId, kind: work.kind, contentPaths: contentPathsForWork(work) }))
-  const files = await exportSiteData(payload, { originalUrlByWorkId, treatPendingAsPublished: true })
+  const videoRecords: { creators: any[]; videos: any[] } = { creators: [], videos: [] }
+  for (const collection of ['videos', 'creators'] as const) videoRecords[collection] = (await (payload as any).find({ collection, depth: 0, pagination: false, overrideAccess: true })).docs
+  const files = await exportSiteData(payload, { originalUrlByWorkId, treatPendingAsPublished: true, videoRecords })
   const versions = Object.fromEntries(allWorks.docs.filter((w: any) => w.needsPublish).map((w: any) => [w.workId, w.updatedAt]))
+  for (const collection of ['videos', 'creators']) {
+    for (const doc of videoRecords[collection as 'videos' | 'creators']) if (doc.needsPublish) versions[`${collection}:${doc.id}`] = doc.updatedAt
+  }
   return { runId: run.runId, files, originals, deletions, summary: plan.summary, versions }
 }
 
@@ -224,6 +234,13 @@ export async function applyPublishStatus(
         req: { transactionID },
       })
       updatedTopics += 1
+    }
+    for (const collection of ['videos', 'creators']) {
+      const docs = await (payload as any).find({ collection, where: { needsPublish: { equals: true } }, depth: 0, pagination: false, overrideAccess: true, req: { transactionID } })
+      for (const doc of docs.docs) {
+        if (run.plannedChanges?.snapshotVersions?.[`${collection}:${doc.id}`] !== doc.updatedAt) continue
+        await (payload as any).update({ collection, id: doc.id, data: { needsPublish: false }, overrideAccess: true, context: { videoAgent: true, skipNeedsPublish: true }, req: { transactionID } })
+      }
     }
     await (payload.db as any).commitTransaction(transactionID)
   } catch (error) {

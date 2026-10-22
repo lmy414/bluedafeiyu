@@ -18,6 +18,8 @@ import { TakedownRequests } from './collections/TakedownRequests'
 import { Topics } from './collections/Topics'
 import { Users } from './collections/Users'
 import { Works } from './collections/Works'
+import { Creators } from './collections/Creators'
+import { Videos } from './collections/Videos'
 import { endpoints } from './endpoints'
 
 const filename = fileURLToPath(import.meta.url)
@@ -94,6 +96,8 @@ export default buildConfig({
     Categories,
     Submissions,
     Works,
+    Creators,
+    Videos,
     Topics,
     TakedownRequests,
     PublishRuns,

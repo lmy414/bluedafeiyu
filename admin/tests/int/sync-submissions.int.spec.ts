@@ -19,6 +19,8 @@ import { PublishRuns } from '@/collections/PublishRuns'
 import { Submissions } from '@/collections/Submissions'
 import { Topics } from '@/collections/Topics'
 import { Users } from '@/collections/Users'
+import { Creators } from '@/collections/Creators'
+import { Videos } from '@/collections/Videos'
 import { Works } from '@/collections/Works'
 import { exportSiteData } from '@/lib/export-site-data'
 import { applyPublishStatus } from '@/lib/publish'
@@ -99,6 +101,7 @@ beforeAll(async () => {
   const dbPath = path.join(tempRoot, 'admin.db')
   const config = buildConfig({
     collections: [
+      Creators, Videos,
       Characters,
       Categories,
       AuditEvents,

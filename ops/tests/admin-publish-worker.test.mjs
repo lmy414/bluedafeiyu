@@ -97,6 +97,7 @@ async function makeWorkspace(t, { works = [], contentFiles = {} } = {}) {
     'data/categories.json': `${JSON.stringify([{ id: 'meme', name: '梗图', status: 'active' }], null, 2)}\n`,
     'data/topics.json': '[]\n',
     'data/blue-fish-editorial.json': '[]\n',
+    'data/video-archive.json': '{"schema":"video-archive/1","creators":[],"videos":[]}\n',
     'data/blue-fish-ids.json': '[]\n',
   };
   const contentBase = {

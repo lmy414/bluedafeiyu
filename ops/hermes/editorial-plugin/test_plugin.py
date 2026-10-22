@@ -31,13 +31,15 @@ class PluginTests(unittest.TestCase):
             self.assertNotIn('$(touch /tmp/unsafe)', ' '.join(command))
             self.assertIn('$(touch /tmp/unsafe)', run.call_args.kwargs['input'].decode())
 
-    def test_all_eight_tools_are_registered_with_strict_schemas(self):
+    def test_editorial_and_video_tools_are_registered_with_strict_schemas(self):
         class Context:
             def __init__(self): self.tools = []
             def register_tool(self, **kwargs): self.tools.append(kwargs)
         ctx = Context()
         plugin.register(ctx)
-        self.assertEqual(len(ctx.tools), 8)
+        self.assertIn('dafeiyu_save_video', {t['name'] for t in ctx.tools})
+        video = next(t for t in ctx.tools if t['name'] == 'dafeiyu_save_video')
+        self.assertIn('videos', video['schema']['parameters']['properties']['target']['enum'])
         self.assertTrue(all(t['toolset'] == 'dafeiyu_editorial' for t in ctx.tools))
         self.assertTrue(all(t['schema']['parameters']['additionalProperties'] is False for t in ctx.tools))
 

@@ -12,13 +12,14 @@ import { StatusBadge } from '../components/admin/StatusBadge'
 import type { ListResponse, PublishPlan, PublishPlanItem, PublishRun, WorkDoc } from '../components/admin/types'
 import { workImageURL } from '../components/admin/types'
 
-const PLAN_SECTIONS: Array<{ key: keyof Pick<PublishPlan, 'added' | 'deleted' | 'hidden' | 'restored' | 'topics' | 'updated'>; label: string }> = [
+const PLAN_SECTIONS: Array<{ key: keyof Pick<PublishPlan, 'added' | 'deleted' | 'hidden' | 'restored' | 'topics' | 'updated' | 'videos'>; label: string }> = [
   { key: 'added', label: '新增作品' },
   { key: 'updated', label: '修改作品' },
   { key: 'hidden', label: '隐藏作品' },
   { key: 'restored', label: '恢复作品' },
   { key: 'deleted', label: '删除作品' },
   { key: 'topics', label: '专题变更' },
+  { key: 'videos', label: '视频与作者变更' },
 ]
 
 export function PublishView() {

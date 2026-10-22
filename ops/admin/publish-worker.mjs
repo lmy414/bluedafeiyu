@@ -40,6 +40,7 @@ export const SNAPSHOT_SITE_FILES = [
   'data/categories.json',
   'data/topics.json',
   'data/blue-fish-editorial.json',
+  'data/video-archive.json',
 ];
 export const SITE_ALLOWLIST = [...SNAPSHOT_SITE_FILES, 'data/blue-fish-ids.json'];
 export const CONTENT_ALLOW_PREFIXES = [
@@ -163,6 +164,10 @@ function normalizeSummary(value) {
     const number = Number(value[key]);
     if (!Number.isSafeInteger(number) || number < 0) throw new Error(`snapshot.summary.${key} 必须是非负整数`);
     summary[key] = number;
+  }
+  if (value?.videos !== undefined) {
+    if (!Number.isSafeInteger(value.videos) || value.videos < 0) throw new Error('snapshot.summary.videos 必须是非负整数');
+    if (value.videos) summary.videos = value.videos;
   }
   return summary;
 }

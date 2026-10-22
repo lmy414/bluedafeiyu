@@ -37,9 +37,19 @@ SELECT 'rights',cast(id AS TEXT),request_type,request_id,
  WHEN status='investigating' THEN 'running' ELSE 'attention' END,
  coalesce(json_extract(agent_progress,'$.stage'),status),json_extract(agent_progress,'$.lastError'),0,0,created_at,updated_at,0,0,'申请人','rights' FROM takedown_requests
 UNION ALL
+SELECT 'creator',cast(id AS TEXT),'creator',name,
+ CASE WHEN status='paused' THEN 'completed' WHEN error IS NOT NULL AND error<>'' THEN 'attention' WHEN status='queued' THEN 'queued' ELSE 'completed' END,
+ status,error,0,0,created_at,updated_at,0,0,'Bilibili 作者','creators' FROM creators
+UNION ALL
+SELECT 'video',cast(id AS TEXT),'video',title,
+ CASE WHEN status='approved' AND needs_publish=1 THEN 'ready' WHEN status IN ('approved','rejected','hidden') THEN 'completed' WHEN status='manual' THEN 'attention' WHEN status='reviewing' THEN 'running' ELSE 'queued' END,
+ status,json_extract(review,'$.reason'),0,0,created_at,updated_at,0,0,'Bilibili','videos' FROM videos
+UNION ALL
 SELECT 'changes','pending','changes','全部待发布内容','ready','pending',NULL,0,count(*),min(createdAt),max(updatedAt),0,0,'站长 / 机器人','publish'
 FROM (SELECT created_at AS createdAt,updated_at AS updatedAt FROM works WHERE needs_publish=1
- UNION ALL SELECT created_at,updated_at FROM topics WHERE needs_publish=1) HAVING count(*)>0
+ UNION ALL SELECT created_at,updated_at FROM topics WHERE needs_publish=1
+ UNION ALL SELECT created_at,updated_at FROM videos WHERE needs_publish=1
+ UNION ALL SELECT created_at,updated_at FROM creators WHERE needs_publish=1) HAVING count(*)>0
 `
 
 export async function listTasks(req: PayloadRequest): Promise<Response> {
@@ -104,7 +114,9 @@ export async function listTasks(req: PayloadRequest): Promise<Response> {
   const docs: ConsoleTask[] = rows.map((row) => {
     const type = row.kind as TaskKind
     const href =
-      type === 'submission'
+      type === 'creator' || type === 'video'
+        ? `/admin/collections/${type === 'creator' ? 'creators' : 'videos'}/${encodeURIComponent(row.sourceId)}`
+        : type === 'submission'
         ? `/admin/review?mode=${row.status === 'attention' && ['auto_rejected', 'needs_manual'].includes(row.stage) ? 'rejected' : row.status === 'completed' ? 'reviewed' : 'processing'}&item=${encodeURIComponent(row.sourceId)}`
         : type === 'rights'
           ? `/admin/collections/takedown-requests/${encodeURIComponent(row.sourceId)}`

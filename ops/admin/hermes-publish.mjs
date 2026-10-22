@@ -97,6 +97,7 @@ export function normalizeSummary(value) {
     restored: pick('restored'),
     deleted: pick('deleted', ['removed']),
     topics: pick('topics'),
+    ...(pick('videos') ? { videos: pick('videos') } : {}),
   };
 }
 
@@ -230,6 +231,9 @@ export async function main(argv = process.argv.slice(2), deps = {}) {
       return 0;
     }
     if (args.syncFirst) await syncSubmissions(cfg, fetchImpl);
+    // Video discovery is bounded and durable. Upstream errors must not block image publication.
+    const videoSync = await apiRequest(cfg, '/cms-api/videos/sync', { method: 'POST', body: '{}' }, fetchImpl);
+    if (!videoSync.response.ok) stderr.write('[hermes-publish] 视频同步暂未完成，登记记录等待下次重试\n');
     const plan = await getJson(cfg, '/cms-api/publish/plan', fetchImpl);
     if (!planHasChanges(plan)) return 0;
     const requested = await requestPublish(cfg, fetchImpl);

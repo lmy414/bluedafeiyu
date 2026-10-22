@@ -7,6 +7,7 @@ import type { Payload } from 'payload'
 
 import { isPlaceholderDescription } from './placeholder'
 import { safeHomepage } from './attribution.mjs'
+import { publicVideoArchive } from './video-library.mjs'
 
 export const SITE_DATA_FILES = [
   'data/works.json',
@@ -15,6 +16,7 @@ export const SITE_DATA_FILES = [
   'data/categories.json',
   'data/topics.json',
   'data/blue-fish-editorial.json',
+  'data/video-archive.json',
 ] as const
 
 export type SiteDataFile = (typeof SITE_DATA_FILES)[number]
@@ -28,6 +30,7 @@ const FILE_EOL: Record<SiteDataFile, string> = {
   'data/categories.json': '\r\n',
   'data/topics.json': '\n',
   'data/blue-fish-editorial.json': '\r\n',
+  'data/video-archive.json': '\n',
 }
 
 const WORK_FIELD_ORDER = [
@@ -335,6 +338,8 @@ export function buildSiteDataTexts(input: {
   characters: any[]
   categories: any[]
   topics: any[]
+  creators?: any[]
+  videos?: any[]
   editorialSnapshot?: any
   originalUrlByWorkId?: Record<string, string>
   treatPendingAsPublished?: boolean
@@ -360,26 +365,31 @@ export function buildSiteDataTexts(input: {
     'data/categories.json': serializeJson(categories, FILE_EOL['data/categories.json']),
     'data/topics.json': serializeJson(topics, FILE_EOL['data/topics.json']),
     'data/blue-fish-editorial.json': editorialText(input.works, input.editorialSnapshot),
+    'data/video-archive.json': serializeJson(publicVideoArchive(input.creators || [], input.videos || []), '\n'),
   }
 }
 
 export async function exportSiteData(
   payload: Payload,
-  options: { originalUrlByWorkId?: Record<string, string>; treatPendingAsPublished?: boolean } = {},
+  options: { originalUrlByWorkId?: Record<string, string>; treatPendingAsPublished?: boolean; videoRecords?: { creators: any[]; videos: any[] } } = {},
 ): Promise<SiteDataTexts> {
   const api = payload as any
-  const [works, characters, categories, topics, snapshots] = await Promise.all([
+  const [works, characters, categories, topics, snapshots, creators, videos] = await Promise.all([
     api.find({ collection: 'works', depth: 2, limit: 2000, overrideAccess: true, pagination: false }),
     api.find({ collection: 'characters', depth: 0, limit: 1000, overrideAccess: true, pagination: false }),
     api.find({ collection: 'categories', depth: 0, limit: 1000, overrideAccess: true, pagination: false }),
     api.find({ collection: 'topics', depth: 2, limit: 1000, overrideAccess: true, pagination: false }),
     api.find({ collection: 'legacy-snapshots', where: { key: { equals: 'blue-fish-editorial' } }, limit: 1, overrideAccess: true }),
+    options.videoRecords ? Promise.resolve({ docs: options.videoRecords.creators }) : api.find({ collection: 'creators', pagination: false, depth: 0, overrideAccess: true }),
+    options.videoRecords ? Promise.resolve({ docs: options.videoRecords.videos }) : api.find({ collection: 'videos', pagination: false, depth: 0, overrideAccess: true }),
   ])
   return buildSiteDataTexts({
     works: works.docs,
     characters: characters.docs,
     categories: categories.docs,
     topics: topics.docs,
+    creators: creators.docs,
+    videos: videos.docs,
     editorialSnapshot: snapshots.docs[0],
     originalUrlByWorkId: options.originalUrlByWorkId,
     treatPendingAsPublished: options.treatPendingAsPublished,

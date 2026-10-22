@@ -12,6 +12,8 @@ export const TASK_STATUSES = [
 export const TASK_KINDS = [
   { value: '', label: '所有类型' },
   { value: 'submission', label: '投稿处理' },
+  { value: 'creator', label: '作者登记' },
+  { value: 'video', label: '视频审核' },
   { value: 'bulk', label: '内容加工' },
   { value: 'publish', label: '站点发布' },
   { value: 'changes', label: '待发布内容' },
@@ -24,6 +26,8 @@ export const OPERATIONS: Record<string, string> = {
   translate: '生成多语言',
   'manual-include': '人工收录',
   submission: '投稿处理',
+  creator: 'Bilibili 作者登记',
+  video: 'AI 娘二创视频审核',
   publish: '站点发布',
   changes: '确认并发布内容',
   takedown: '下架申请',
