@@ -120,7 +120,7 @@
       "qq.open": "Join group",
       "qq.join": "Join the QQ group",
       "qq.scan": "Scan to join",
-      "qq.qrAlt": "QR code to join the DeepSeek Chan QQ community (group number 1003728058)",
+      "qq.qrAlt": "QR code to join the DeepSeek Chan QQ community (group number 1074853711)",
       "alt.work": "\u201c{name}\u201d — {character} {kindId} fan art",
 
       "page.index.title": "DeepSeek Chan - AI-Girl Fan Stickers, Memes & Character Art Downloads",
@@ -667,7 +667,7 @@
       "qq.open": "参加",
       "qq.join": "QQ グループに参加",
       "qq.scan": "QRコードで参加",
-      "qq.qrAlt": "QQグループ「AAAA肥鱼批发市场」（グループ番号 1003728058）への参加用QRコード",
+      "qq.qrAlt": "QQグループ「AAAA肥鱼批发市场」（グループ番号 1074853711）への参加用QRコード",
       "alt.work": "《{name}》{character}{kindId}、AI娘二次創作画像",
 
       "page.index.title": "DeepSeek Chan - AI娘スタンプ・DeepSeek娘ネタ画・二次創作イラスト集",
