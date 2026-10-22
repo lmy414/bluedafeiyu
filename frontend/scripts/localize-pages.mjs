@@ -83,9 +83,9 @@ function pageMeta(document, api, base, snapshot, archive) {
       document.title = (creator ? creator.name + ' · ' + copy('creatorProfile') : copy('videoTitle')) + ' | DeepSeek Chan';
       setMeta(document, 'meta[name="description"]', copy('videoLead'));
     }
-    if (creator && document.querySelector('main h1')) document.querySelector('main h1').textContent = creator.name;
+    if (creator && document.querySelector('main h1')) (document.querySelector('main h1 [data-creator-name]') || document.querySelector('main h1')).textContent = creator.name;
     for (const c of videoArchive.creators) {
-      for (const link of document.querySelectorAll(`a[href="/creators/bilibili-${c.uid}.html"]`)) link.textContent = c.name;
+      for (const link of document.querySelectorAll(`a[href="/creators/bilibili-${c.uid}.html"]`)) (link.querySelector('[data-creator-name]') || link).textContent = c.name;
     }
     for (const selector of ['meta[property="og:image:alt"]', 'meta[name="twitter:image:alt"]']) setMeta(document, selector, document.title);
   }

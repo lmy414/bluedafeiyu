@@ -21,13 +21,14 @@ test('creator identity survives role-name translation in title, credits and shar
   videoArchive.creators = [creator];
   videoArchive.videos = [{bvid: 'BV1bvnE69ETy', uid: creator.uid, characterIds: ['deepseek'], i18n: {en: {title: 'Big Fat Fish Teaches You Quantitative Trading', description: 'A DeepSeek Chan skit.'}, ja: {title: 'DeepSeekちゃんの寸劇', description: '短い寸劇です。'}}}];
   try {
-    const html = `<html><head><title>${creator.name} · 作者视频档案</title><link rel="canonical" href="${ORIGIN}${route}"><meta name="description" content="作者介绍"><meta property="og:title"><meta name="twitter:title"><meta property="og:image:alt"><script type="application/ld+json">${JSON.stringify({'@type': 'WebPage', name: creator.name, url: ORIGIN + route})}</script></head><body data-i18n-page="videos"><main><h1>${creator.name}</h1><a href="${route}">${creator.name}</a></main></body></html>`;
+    const html = `<html><head><title>${creator.name} · 作者视频档案</title><link rel="canonical" href="${ORIGIN}${route}"><meta name="description" content="作者介绍"><meta property="og:title"><meta name="twitter:title"><meta property="og:image:alt"><script type="application/ld+json">${JSON.stringify({'@type': 'WebPage', name: creator.name, url: ORIGIN + route})}</script></head><body data-i18n-page="videos"><main><h1><img class="creator-avatar" src="/creator-avatars/test.jpg" alt=""><span data-creator-name>${creator.name}</span></h1><a href="${route}"><img class="creator-avatar" src="/creator-avatars/test.jpg" alt=""><span data-creator-name>${creator.name}</span></a></main></body></html>`;
     for (const locale of LOCALES) {
       const withVideo = html.replace('</main>', '<article data-video-bvid="BV1bvnE69ETy"><h2 data-video-title>大肥鱼教你玩量化</h2><p data-video-description>同人短片</p></article></main>');
       const {document} = parseHTML(await localizeHtml(withVideo, route, locale, {works: [], characters: [], topics: []}));
       assert.ok(document.title.startsWith(creator.name + ' · '), locale.id);
       assert.equal(document.querySelector('main h1').textContent, creator.name, locale.id);
       assert.equal(document.querySelector('main a').textContent, creator.name, locale.id);
+      assert.equal(document.querySelectorAll('.creator-avatar').length,2,locale.id+' must preserve avatars');
       assert.equal(document.querySelector('meta[property="og:image:alt"]').getAttribute('content'), document.title);
       if (locale.id !== 'zh') {
         for (const selector of ['meta[property="og:title"]', 'meta[name="twitter:title"]']) assert.equal(document.querySelector(selector).getAttribute('content'), document.title);
