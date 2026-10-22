@@ -17,6 +17,7 @@ body:has(.group-dialog[open]) { overflow: hidden; }
 .group-close { position: absolute; top: 12px; right: 12px; width: 32px; height: 32px; }
 .group-dialog h2 { margin: 0 24px 8px; font-family: var(--font-marker), var(--font-sans); font-size: 24px; }
 .group-lede { margin: 0; color: var(--text-secondary); font-size: var(--text-sm); }
+.group-notice { margin: 12px 0 0; color: var(--text-secondary); font-size: var(--text-sm); line-height: 1.7; text-align: left; }
 .group-qr { margin: 22px auto 14px; }
 .group-qr img { display: block; width: min(240px, 100%); height: auto; margin: auto; border-radius: var(--radius-sm); }
 .group-qr figcaption { margin-top: 10px; color: var(--text-secondary); font-size: var(--text-xs); }

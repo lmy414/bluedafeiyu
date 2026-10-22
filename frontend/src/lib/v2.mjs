@@ -10,7 +10,13 @@ export const PAGE_SIZE = 24;
 
 // 站点信息（沿用原站 about / QqModal / WorkInfo 的内容）
 export const SITE = {
-  group: { name: 'AAAA肥鱼批发市场', number: '1074853711', url: 'https://qm.qq.com/q/THMPEsD42I', qr: '/qq-group.png?v=1074853711' },
+  group: {
+    name: 'AAAA肥鱼批发市场',
+    number: '1074853711',
+    url: 'https://qm.qq.com/q/THMPEsD42I',
+    qr: '/qq-group.png?v=1074853711',
+    notice: '原群被不知名原因爆破，特此开新群。大家聊天时请遵守群聊规范。'
+  },
   repoContent: 'https://github.com/lmy414/ai-girl-stickers',
   repoSource: 'https://github.com/lmy414/bluedafeiyu',
   takedown: 'https://github.com/lmy414/ai-girl-stickers/issues/new?template=takedown-request.yml',

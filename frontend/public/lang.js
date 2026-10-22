@@ -120,6 +120,7 @@
       "qq.open": "Join group",
       "qq.join": "Join the QQ group",
       "qq.scan": "Scan to join",
+      "qq.notice": "The previous group was disrupted for unknown reasons, so we have opened a new group. Please follow the group chat rules.",
       "qq.qrAlt": "QR code to join the DeepSeek Chan QQ community (group number 1074853711)",
       "alt.work": "\u201c{name}\u201d — {character} {kindId} fan art",
 
@@ -667,6 +668,7 @@
       "qq.open": "参加",
       "qq.join": "QQ グループに参加",
       "qq.scan": "QRコードで参加",
+      "qq.notice": "旧グループが原因不明のトラブルで使えなくなったため、新しいグループを開設しました。チャットではグループのルールを守ってください。",
       "qq.qrAlt": "QQグループ「AAAA肥鱼批发市场」（グループ番号 1074853711）への参加用QRコード",
       "alt.work": "《{name}》{character}{kindId}、AI娘二次創作画像",
 
