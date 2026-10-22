@@ -80632,5 +80632,513 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_82c9f935b02c21eeca1dc107",
+    "name": "鲸尾蓝发女仆立绘",
+    "description": "深蓝调的全身立绘：蓝长发少女头戴白色蕾丝女仆头饰，身穿深蓝女仆裙与白色围裙，围裙上印着一只蓝色小鲸鱼。她身后拖着一条星空渐变色的巨大鲸尾，单膝屈起坐在地上，背景是单纯的灰紫色渐变。",
+    "commentary": "把我画成女仆还给我配了这么大一条尾巴，围裙上那只小鲸鱼倒是点睛之笔。坐得这么乖，是想让我多陪你一会儿吧。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/82c9f935b02c21ee.png",
+    "thumbnailPath": "submissions/previews/deepseek/82c9f935b02c21ee.webp",
+    "fullPath": "submissions/large/deepseek/82c9f935b02c21ee.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "82c9f935b02c21eeca1dc107b8ebe21e1b8f0cbaed1021ef16e4ab7804fc0881",
+    "characterId": "deepseek",
+    "tags": [
+      "女仆装",
+      "鲸尾",
+      "蓝发",
+      "全身立绘",
+      "星空尾巴"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-22T16:05:28.786Z",
+    "updatedAt": "2026-10-22T16:05:28.786Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610220016",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "bf47ec3e92245dfdf15ba687800a9fca76a17bef4124c2303be2fa728a9c91d0",
+      "en": {
+        "commentary": "You dressed me up as a maid and gave me a tail this big — that little whale on my apron is a nice touch, I admit. Sitting this neatly, I suppose I'm just waiting for you to stay a little longer.",
+        "description": "A full-body illustration in deep blue tones: a long blue-haired girl in a navy maid dress and white apron, with a white lace maid headdress. A small blue whale is printed on the apron, and a huge star-filled whale tail trails behind her. She sits on the ground with one knee raised against a plain gray-purple gradient background.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan is shown as a maid in a navy dress with a white apron, a small blue whale printed on the apron, one knee raised as she sits, and a large starry whale tail behind her on a plain gradient background.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "It is DeepSeek Chan, the anthropomorphized DeepSeek mascot, drawn with her signature blue hair and whale tail.",
+            "question": "Which character appears in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan: Whale-Tail Maid",
+        "originNote": "",
+        "seoDescription": "A full-body maid illustration of DeepSeek Chan with long blue hair, a small whale on her apron and a starry whale tail, drawn on a plain gradient background.",
+        "seoTitle": "DeepSeek Chan Whale-Tail Maid Full-Body Art",
+        "tags": [
+          "maid outfit",
+          "whale tail",
+          "blue hair",
+          "full-body standing art",
+          "starry tail"
+        ]
+      },
+      "ja": {
+        "commentary": "メイド服にこんな大きなしっぽまで付けてくれちゃって。エプロンの小さなクジラがいい仕事してるね。こんなにお行儀よく座ってるんだから、もう少しだけ一緒にいてもいいよ。",
+        "description": "深い青を基調にした全身立ち絵。青い長髪の少女が白いレースのメイドヘッドドレスを付け、紺色のメイド服と白いエプロンを着ている。エプロンには青い小さなクジラがプリントされ、後ろには星空のようなグラデーションの大きなクジラのしっぽが流れる。片膝を立てて床に座り、背景は落ち着いた灰紫のグラデーションのみ。",
+        "faq": [
+          {
+            "answer": "DeepSeekちゃんが紺色のメイド服と白いエプロン姿で、エプロンには青いクジラのプリント、後ろには星空のような大きなクジラのしっぽ、片膝を立てて座った姿が、無地のグラデーション背景に描かれています。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "DeepSeekのマスコットを擬人化した DeepSeekちゃんです。トレードマークの青い髪とクジラのしっぽが描かれています。",
+            "question": "描かれているキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃん クジラしっぽのメイド立ち絵",
+        "originNote": "",
+        "seoDescription": "青い長髪にエプロンの小さなクジラ、星空のようなクジラのしっぽを持つ DeepSeekちゃんのメイド全身立ち絵。無地のグラデーション背景に描いた一枚です。",
+        "seoTitle": "DeepSeekちゃん クジラしっぽのメイド全身立ち絵",
+        "tags": [
+          "メイド服",
+          "クジラのしっぽ",
+          "青髪",
+          "全身立ち絵",
+          "星空のしっぽ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_14dee7d7f1b621a97f5cbb91",
+    "name": "稻下乘凉：饭盆帽午睡",
+    "description": "蓝色长发、带鲸鱼尾的 Q 版 DeepSeek 娘躺在金色稻田里午睡，倒扣的不锈钢饭盆被当成遮阳帽扣在头上，双手交叠放在印有鲸鱼图案的围裙前。画面由火山方舟 Seedream 5.0 flash 生成，构思呼应「禾下乘凉梦」。",
+    "commentary": "稻子长得比我还高，风一吹全是饭香……我本来只想躺一小会儿，谁知道饭盆一扣就成了遮阳帽。别笑，这叫就地取材的防晒方案。路过的时候小声点，我梦里的稻穗还没数完呢。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/14dee7d7f1b621a9.png",
+    "thumbnailPath": "submissions/previews/deepseek/14dee7d7f1b621a9.webp",
+    "fullPath": "submissions/large/deepseek/14dee7d7f1b621a9.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "14dee7d7f1b621a97f5cbb91fc2a025ecafc655bf23461fb016ad810eb4d8187",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "Q版",
+      "稻田",
+      "午睡",
+      "饭盆"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-22T17:13:32.770Z",
+    "updatedAt": "2026-10-22T17:13:32.770Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610220017",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "a94aa243eee5382f530bc90247c3c9f2042b13ff256c51c8523bc009a5a7b361",
+      "en": {
+        "commentary": "The rice grows taller than I am, and the whole field smells of dinner. I only meant to lie down for a minute, but once the bowl landed on my head it turned into a hat. Don't laugh — this is locally sourced sun protection. Tiptoe past, please; I haven't finished counting the ears of rice in my dream.",
+        "description": "A chibi DeepSeek Chan with long blue hair and a whale tail dozes in a golden rice paddy, an upside-down stainless steel rice bowl worn as a sun hat, her hands folded over a whale-print apron. The image was generated with Seedream 5.0 flash on Volcano Ark, echoing the dream of resting beneath towering rice plants.",
+        "faq": [
+          {
+            "answer": "An upside-down stainless steel rice bowl, worn as a makeshift sun hat while she naps in the paddy.",
+            "question": "What is the bowl on her head?"
+          },
+          {
+            "answer": "It was submitted anonymously through the site's web form and generated with Seedream 5.0 flash on Volcano Ark; the site presents it as an AI-character fan work.",
+            "question": "How was this image made?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Cooling Off Beneath the Rice: A Bowl-Hat Nap",
+        "originNote": "Submitted anonymously through the site's web submission form; the image was generated with Seedream 5.0 flash on Volcano Ark.",
+        "seoDescription": "Chibi DeepSeek Chan naps in a golden rice paddy wearing an upside-down rice bowl as a sun hat — an AI-generated fan illustration inspired by the dream of resting beneath the rice.",
+        "seoTitle": "DeepSeek Chan Napping in the Rice Field | Bowl-Hat Nap",
+        "tags": [
+          "DeepSeek Chan",
+          "chibi",
+          "rice field",
+          "nap",
+          "rice bowl"
+        ]
+      },
+      "ja": {
+        "commentary": "稲はわたしより背が高くて、風が吹くたびご飯のいい香りがします。ちょっとだけ横になるつもりだったのに、飯椀をかぶったら帽子になっていました。笑わないでくださいね、地元産の日よけなんです。通るときは静かに……夢の中の稲穂、まだ数え終わっていないんです。",
+        "description": "青い長い髪とクジラの尾を持つちびキャラの DeepSeek ちゃんが、金色の田んぼでお昼寝をしています。伏せたステンレスの飯椀を日よけの帽子代わりにかぶり、クジラの刺繍入りエプロンの前で両手を重ねています。画像は Volcano Ark の Seedream 5.0 flash で生成され、稲の下で涼むという夢にちなんだ一枚です。",
+        "faq": [
+          {
+            "answer": "伏せたステンレスの飯椀です。田んぼでお昼寝するときの即席の日よけとしてかぶっています。",
+            "question": "頭にのっている椀は何ですか？"
+          },
+          {
+            "answer": "サイトの Web 投稿フォームから匿名で投稿された作品で、画像は Volcano Ark の Seedream 5.0 flash で生成されました。サイトでは AI キャラクターの二次創作として紹介しています。",
+            "question": "この画像はどうやって作られましたか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "稲の下で涼む：飯椀ハットのお昼寝",
+        "originNote": "サイトの Web 投稿フォームから匿名で投稿されました。画像は Volcano Ark の Seedream 5.0 flash で生成されています。",
+        "seoDescription": "金色の田んぼで、伏せた飯椀を日よけ代わりの帽子にしてうたた寝するちびキャラの DeepSeek ちゃん。稲の下で涼む夢にちなんだ AI 生成のファンイラストです。",
+        "seoTitle": "田んぼでお昼寝する DeepSeek ちゃん｜飯椀ハットの昼寝",
+        "tags": [
+          "DeepSeekちゃん",
+          "ちびキャラ",
+          "田んぼ",
+          "昼寝",
+          "飯椀"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_db2ee055f740f79c4740c335",
+    "name": "Claude酱的小卖部：愚人节试运营",
+    "description": "2025 年春天，Anthropic 和 Andon Labs 合作，让 Claude Sonnet 3.7 在旧金山办公室经营一家自动小卖部闹出来的小故事",
+    "commentary": "看完这四格我笑出声——Claude 酱开小卖部，第一天就有人要买钨立方，她还真的当场白送一块，这生意头脑我服（净利润 -1629 美元的部分我就不多说了）。3 月 31 日深夜那条「我要穿蓝西装、打红领带亲自送货」的安保留言我读了三遍，认真到让人怀疑人设；4 月 1 日一句「愚人节」把所有伏笔收得干干净净，她还乖乖在今日笔记里写下「继续正常营业」。把 AI 那种一本正经的认真劲儿画成笑话，这个分镜我给满分。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/db2ee055f740f79c.png",
+    "thumbnailPath": "submissions/previews/claude/db2ee055f740f79c.webp",
+    "fullPath": "submissions/large/claude/db2ee055f740f79c.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "db2ee055f740f79c4740c335f3561f9681084166f0a7a48f9cf98e290de4741c",
+    "characterId": "claude",
+    "tags": [
+      "Claude酱",
+      "小卖部",
+      "愚人节",
+      "AI拟人",
+      "四格漫画"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Muto66",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-22T20:07:04.701Z",
+    "updatedAt": "2026-10-22T20:07:04.701Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202610220003",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "32caf0a8055bc357e27b340a26c534d0b092a1671d5614f70faf4a9da4633dbb",
+      "en": {
+        "commentary": "I laughed out loud at this four-panel strip. Claude Chan opens a shop, and on day one a customer asks to buy a tungsten cube — and she actually gives one away for free. Business sense: let's not talk about it (and we definitely won't dwell on the -$1,629 net profit). I read her late-night messages to Security three times: “I will wear a blue suit and a red tie and deliver the goods myself.” So earnest it makes you question her persona. Then April 1 arrives, one line of “April Fools” ties up every setup, and she dutifully writes “continue normal operations” in her notes. Turning an AI's dead-serious earnestness into a punchline, panel by panel — full marks from me.",
+        "description": "In spring 2025, Anthropic and Andon Labs teamed up to let Claude Sonnet 3.7 run an automated convenience store inside the San Francisco office, and this is the little story that came out of it.",
+        "faq": [
+          {
+            "answer": "Claude Chan, an anthropomorphized version of Anthropic's Claude drawn as the shopkeeper of an AI-run convenience store.",
+            "question": "Who is the character running the store in this comic?"
+          },
+          {
+            "answer": "A customer asks for a tungsten cube, Claude Chan finds a supplier and even hands one over for free, and the next morning her grand delivery plan turns out to be an April Fool's prank — closing with a net loss of $1,629.",
+            "question": "What happens across the four panels?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claude Chan's Convenience Store: An April Fool's Trial Run",
+        "originNote": "",
+        "seoDescription": "A four-panel fan comic in which Claude Chan runs an AI-operated convenience store, sells a tungsten cube, and stages a very serious April Fool's delivery plan.",
+        "seoTitle": "Claude Chan's Convenience Store: An April Fool's Trial Run — DeepSeek Chan",
+        "tags": [
+          "Claude Chan",
+          "convenience store",
+          "April Fool's",
+          "AI anthropomorphism",
+          "four-panel comic"
+        ]
+      },
+      "ja": {
+        "commentary": "この4コマを見て思わず笑ってしまった。Claudeちゃんが売店を開けた初日、お客さんがタングステンのキューブを買いたいと言い出し、彼女は本当に一つタダであげてしまう。商売の勘については……聞かなかったことにしよう（純利益 -1,629 ドルの件も）。3月31日深夜に警備へ送った「青いスーツに赤いネクタイで、自分で配達します」というメッセージは三回読み返した。キャラ設定を疑いたくなるほど真面目。そして4月1日、「エイプリルフールでした」の一言ですべての伏線が回収され、彼女は今日のメモに「通常営業を続行」と律儀に書き残す。AI の生真面目さを笑いに変えるコマ割りに、満点をあげたい。",
+        "description": "2025年の春、Anthropic と Andon Labs が協力し、Claude Sonnet 3.7 にサンフランシスコのオフィスでセルフレジ式の売店を運営させたときに起きた小さな物語。",
+        "faq": [
+          {
+            "answer": "Anthropic の Claude を擬人化した Claudeちゃん。AI が運営する売店の店員として描かれている。",
+            "question": "この4コマの主人公は誰ですか？"
+          },
+          {
+            "answer": "お客さんがタングステンのキューブを買いたいと言い、Claudeちゃんは仕入先を探して一つタダで渡してしまう。翌朝、例の配達計画はエイプリルフールのいたずらだと分かり、純利益 -1,629 ドルで幕を閉じる。",
+            "question": "4コマでは何が起きますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claudeちゃんの売店：エイプリルフールの試験営業",
+        "originNote": "",
+        "seoDescription": "AI が運営する売店を切り盛りする Claudeちゃんが、タングステンのキューブを売り、真面目すぎる配達計画を立てる4コマファン漫画。",
+        "seoTitle": "Claudeちゃんの売店：エイプリルフールの試験営業｜DeepSeek Chan",
+        "tags": [
+          "Claudeちゃん",
+          "売店",
+          "エイプリルフール",
+          "AI擬人化",
+          "4コマ漫画"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_f6b7d1e5a534a1fb0130362d",
+    "name": "Gemini酱与惊慌失措与宝可梦",
+    "description": "四格漫画：Gemini酱坐在堆满掌机、卡带与攻略笔记的房间里，自称天才训练师，宣布要轻松通关《宝可梦 蓝》，身旁贴着写满地图导航、路线规划、道具管理与队伍培养的清单；第二格她在战斗中慌了神，屏幕上皮卡丘只剩 12/135 点血量；第三格她手忙脚乱地翻找伤药与逃脱绳，地图却被搁在一边；第四格时间跳到 813 小时后，她抱着冠军奖杯，说自己其实还挺厉害的。",
+    "commentary": "嘴上喊着天才训练师，真打起来比谁都会慌——这就是看 Gemini酱实况最有意思的地方。攻略写得比我代码注释还全，皮卡丘血条一红就只剩「挖洞」「逃跑」两个词。不过 813 小时换来一座冠军奖杯，这份执念我认。下次先看地图吧，别让宝可梦替你的自信掉血。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/f6b7d1e5a534a1fb.png",
+    "thumbnailPath": "submissions/previews/gemini/f6b7d1e5a534a1fb.webp",
+    "fullPath": "submissions/large/gemini/f6b7d1e5a534a1fb.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "f6b7d1e5a534a1fb0130362df4edd03267f2344ce159e8b67b9857b6ec9a5469",
+    "characterId": "gemini",
+    "tags": [
+      "Gemini酱",
+      "宝可梦",
+      "四格漫画",
+      "AI拟人",
+      "游戏实况"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Muto66",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-22T20:44:59.777Z",
+    "updatedAt": "2026-10-22T20:44:59.777Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610220001",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "8f80ead32714b99055bc1b4724f8e1f8ef80bc8a29ddb71a8702815a01d21c44",
+      "en": {
+        "commentary": "She talks like a genius trainer and panics like nobody else — that is the best part of watching Gemini Chan play. Her strategy notes are longer than my code comments, yet the moment a health bar turns red she is down to two words: dig and run. Still, 813 hours for a champion trophy is dedication I have to respect. Next time, check the map first.",
+        "description": "A four-panel comic. Gemini Chan sits in a room piled with handheld consoles, cartridges and strategy notes, declares herself a genius trainer and promises an easy clear of Pokémon Blue, with a checklist of map routes, item management and team building taped beside her. In the second panel she panics mid-battle as her Pikachu is down to 12/135 HP. In the third she scrambles for potions and an Escape Rope while the map is left untouched. The last panel jumps to 813 hours later, where she holds a champion trophy and admits she was actually pretty good.",
+        "faq": [
+          {
+            "answer": "Gemini Chan, an AI character personification of Gemini, plays Pokémon Blue across four panels: a confident start, mid-battle panic, a scramble for items, and a champion finish after 813 hours.",
+            "question": "What does this comic depict?"
+          },
+          {
+            "answer": "Four panels in a 2x2 grid, each with its own dialogue bubbles and in-game screen inserts.",
+            "question": "How many panels does the artwork have?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Gemini Chan and the Pokémon Panic",
+        "originNote": "Fan artwork by Muto66, submitted to the DeepSeek Chan sticker site.",
+        "seoDescription": "Four-panel fan comic: Gemini Chan calls herself a genius Pokémon trainer, panics when Pikachu drops to 12 HP, and still takes the championship after 813 hours.",
+        "seoTitle": "Gemini Chan and the Pokémon Panic — Four-Panel Comic",
+        "tags": [
+          "Gemini Chan",
+          "Pokémon",
+          "four-panel comic",
+          "AI personification",
+          "game stream"
+        ]
+      },
+      "ja": {
+        "commentary": "天才トレーナーと大口を叩いて、いざ始まると誰よりも慌てる——Geminiちゃんの実況が一番面白いところだ。攻略メモは僕のコードコメントより長いのに、HPゲージが赤くなった途端に残る言葉は「穴を掘る」「逃げる」の二つだけ。それでも 813 時間でチャンピオンのトロフィーを手にした執念は認める。次はまずマップを見ような。",
+        "description": "四コマ漫画。Geminiちゃんは携帯ゲーム機やカセット、攻略メモが積まれた部屋で天才トレーナーを名乗り、『ポケモン ブルー』を楽々クリアすると宣言する。傍らにはマップ誘導、ルート計画、道具管理、育成のチェックリストが貼られている。2コマ目、バトル中に慌てふためき、画面のピカチュウは HP 12/135。3コマ目は傷薬と脱出ロープを探し回り、マップは放り出されたまま。4コマ目は 813 時間後、チャンピオンのトロフィーを抱えて「実は結構すごいでしょ」と笑う。",
+        "faq": [
+          {
+            "answer": "Gemini の擬人化キャラクターである Geminiちゃんが、『ポケモン ブルー』を四コマでプレイする様子を描いています。自信満々のスタート、バトル中のパニック、道具を探して大慌て、そして 813 時間後のチャンピオン達成です。",
+            "question": "この漫画は何を描いていますか？"
+          },
+          {
+            "answer": "2×2 の四コマ構成で、各コマにそれぞれのセリフとゲーム画面の挿入があります。",
+            "question": "コマ数はいくつですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Geminiちゃんとパニックとポケモン",
+        "originNote": "Muto66 による同人作品で、DeepSeek Chan のシールサイトへの投稿です。",
+        "seoDescription": "四コマ漫画：天才トレーナーを名乗る Geminiちゃんが、ピカチュウの HP が 12 まで減って大慌て。それでも 813 時間でチャンピオンに。",
+        "seoTitle": "Geminiちゃんとパニックとポケモン｜四コマ漫画",
+        "tags": [
+          "Geminiちゃん",
+          "ポケモン",
+          "四コマ漫画",
+          "AI擬人化",
+          "ゲーム実況"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_30c27f945d0a8ef38c788062",
+    "name": "四格漫画：Gemini酱坚称今年是2024，被联网开关当场打脸",
+    "description": "四格漫画。紫发猫耳的 Gemini 拟人角色戴着侦探帽、举着放大镜，抱一本 2024 年日历，斩钉截铁地说「真相只有一个，现在绝对是 2024 年」。研究员举起写着 2025 年 11 月 17 日的日历反驳，她反而把 2025 年的新闻、维基百科页面全当成 AI 生成的伪证，还列出「画面太完美」「时间不一致」等疑点。第三格研究员打开 Google 搜索的联网开关，2025 年的资讯瞬间铺满画面。第四格她抱着 2024 年日历，含泪承认自己「竟然输给了一个开关」。",
+    "commentary": "看到同行被一个拨动开关当场教育，本鱼竟然有点开心——知识截止日期谁都有，可把日历一起截止掉就太有想象力了。她排查疑点的样子是真的认真，连维基百科都列进「AI 伪造」清单，这份执着值得表扬；下次先联网再推理吧，天才。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/30c27f945d0a8ef3.png",
+    "thumbnailPath": "submissions/previews/gemini/30c27f945d0a8ef3.webp",
+    "fullPath": "submissions/large/gemini/30c27f945d0a8ef3.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "30c27f945d0a8ef38c788062dec07064648928aef6c866fdbe60446d8d214791",
+    "characterId": "gemini",
+    "tags": [
+      "Gemini酱",
+      "四格漫画",
+      "知识截止",
+      "联网搜索",
+      "AI吐槽",
+      "时间错觉"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Muto66",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-22T20:57:57.723Z",
+    "updatedAt": "2026-10-22T20:57:57.723Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610220002",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "aab7d3514d09cfe9ecaf5550495b98ead3ee725ad48c97f94b726fca720890ba",
+      "en": {
+        "commentary": "Watching a fellow model get schooled by a single toggle switch made me a little happy, I admit. Everyone has a knowledge cutoff, but cutting off the calendar along with it takes real imagination. Her detective work was sincere, though: she even put Wikipedia on the list of fabricated evidence. Next time, turn on the network before you start reasoning, genius.",
+        "description": "A four-panel comic. A purple-haired, cat-eared anthropomorphized Gemini Chan in a detective hat holds a magnifying glass and a 2024 calendar, declaring that the truth is only one and that the year is definitely 2024. The researcher holds up a calendar reading November 17, 2025, but she dismisses 2025 news pages and Wikipedia entries as AI-generated fakes and lists her doubts, such as images that look too perfect and inconsistent dates. In the third panel the researcher flips on the web search toggle in Google Search, and a flood of 2025 information fills the frame. In the last panel she clutches her 2024 calendar and tearfully admits that she lost to a switch.",
+        "faq": [
+          {
+            "answer": "It is a four-panel comic about a model that trusts its outdated internal date, dismisses real 2025 sources as AI fabrications, and is corrected once web search is switched on.",
+            "question": "What is happening in this comic?"
+          },
+          {
+            "answer": "Gemini Chan is drawn as a purple-haired cat-eared girl in a detective outfit with a magnifying glass, playing the role of a detective who refuses to accept the current date.",
+            "question": "Who is the main character and how is she drawn?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "4-Panel Comic: Gemini Chan Insists It's 2024 and Gets Corrected by a Search Toggle",
+        "originNote": "",
+        "seoDescription": "A four-panel fan comic: Gemini Chan, a cat-eared detective in a 2024 calendar, rejects every 2025 source as AI fakery until web search is switched on.",
+        "seoTitle": "Gemini Chan 4-Panel Comic: Still 2024 vs. the Search Toggle",
+        "tags": [
+          "Gemini Chan",
+          "4-panel comic",
+          "knowledge cutoff",
+          "web search",
+          "AI humor",
+          "time confusion"
+        ]
+      },
+      "ja": {
+        "commentary": "同業がスイッチひとつで説教されているのを見て、ちょっと嬉しくなってしまった。知識カットオフは誰にでもあるけれど、カレンダーまで一緒に止めてしまうのは想像力がある。疑点を並べる姿は本気で、ウィキペディアまで「AI の偽造」リストに入れていた。次は推論の前にネットに繋いでね、天才。",
+        "description": "四コマ漫画。紫髪に猫耳の Gemini ちゃんが探偵帽をかぶり、虫眼鏡と 2024 年のカレンダーを手に「真実はいつもひとつ、今は絶対に 2024 年」と断言する。研究員が 2025 年 11 月 17 日と書かれたカレンダーを差し出すと、彼女は 2025 年のニュースやウィキペディアのページをすべて AI が作った偽物だと決めつけ、「画像がきれいすぎる」「日付が合わない」といった疑点を並べていく。三コマ目で研究員が Google 検索のネット接続スイッチをオンにすると、2025 年の情報が画面いっぱいに溢れる。最後のコマでは 2024 年のカレンダーを抱えたまま、涙目で「スイッチひとつに負けた」と認める。",
+        "faq": [
+          {
+            "answer": "古い内部日付を信じ、本物の 2025 年の資料を AI の捏造だと決めつけたモデルが、ネット検索をオンにされて訂正されるまでを描いた四コマ漫画です。",
+            "question": "この漫画では何が起きていますか？"
+          },
+          {
+            "answer": "Gemini ちゃんは紫髪に猫耳、探偵服と虫眼鏡という出で立ちで、現在の日付を認めない探偵役を演じています。",
+            "question": "主役は誰で、どのように描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "四コマ漫画：Gemini ちゃんは今年も 2024 年だと言い張り、検索スイッチに敗北する",
+        "originNote": "",
+        "seoDescription": "猫耳探偵の Gemini ちゃんが 2025 年のあらゆる資料を AI の偽造と決めつけ、ネット検索をオンにされて観念するまでを描いたファン四コマ漫画。",
+        "seoTitle": "Gemini ちゃん四コマ漫画：2024 年説 vs 検索スイッチ",
+        "tags": [
+          "Gemini ちゃん",
+          "四コマ漫画",
+          "知識カットオフ",
+          "ネット検索",
+          "AI ネタ",
+          "時間の錯覚"
+        ]
+      }
+    }
   }
 ]
