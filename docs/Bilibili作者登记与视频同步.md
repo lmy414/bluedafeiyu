@@ -40,10 +40,12 @@ AI 使用既有 Hermes 主模型和原生视觉能力。先读取标题、简介
 
 ## RSSHub 与飞书通知
 
-`ops/rsshub/package-lock.json` 固定 RSSHub 版本。服务只监听 `127.0.0.1:1200`，只暴露健康检查和 Bilibili 作者投稿路由。运行时通过 `/etc/dafeiyu/rsshub.env` 指定 Chromium 路径，登录会话保存在只允许服务用户读取的 `/etc/dafeiyu/rsshub-session.json`，不进入仓库或日志。
+`ops/rsshub/package-lock.json` 固定 RSSHub 版本。服务只监听 `127.0.0.1:1200`，只暴露健康检查和 Bilibili 作者投稿路由。运行时通过 `/etc/dafeiyu/rsshub.env` 指定 Chromium 路径和 `RSSHUB_SESSION_FILE`。当前生产会话路径为 `/etc/dafeiyu/rsshub/session.json`，文件权限为 `0640 root:dafeiyu-admin`；未配置路径时才使用默认的 `/etc/dafeiyu/rsshub-session.json`。会话不进入仓库或日志。会话失效会保留任务并通知群，恢复登录后继续重试。
 
 沿用发布服务已有的飞书应用及群配置。新作者、新视频、审核结果、同步故障与恢复发送群通知；发布执行器在部署与健康检查完成后报告上线结果，并分别列出作者和视频变更数。审核通过通知明确标注“等待自动发布”，避免将入队误报为上线。
 
 `FEISHU_NOTIFY_OUTBOX_DIR` 指向 `/srv/apps/dafeiyu-admin/run/feishu-outbox`。消息先落盘，失败由每分钟任务续发，成功保存飞书 `message_id`。事件使用稳定 UUID，收到回执后不重复发送。状态快照保存于同目录上级的 `video-notify-state.json`。网络结果不明时使用相同 UUID 重试；飞书自身的去重窗口有限，长时间故障后的重试仍可能重复。
 
 排查时先检查 `dafeiyu-rsshub` 和 `dafeiyu-video-cycle.timer`、后台作者错误与审核状态，再检查原有发布批次。不要通过改数据库状态绕过预览帧审核。首次部署后必须验收真实投稿发现、审核和公开页面，以及飞书返回的消息回执。
+
+每 5 分钟检查发布队列不等于每 5 分钟必定上线。发布仍需完成全站构建、多语言校验和健康检查；已有批次执行时，后续变更留到下一批。首批积压视频按审核额度逐步处理。发布前沿用维护脚本清理超出保留数量的旧发布包，保留当前版本及两份历史版本，不清理原图。
