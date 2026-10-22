@@ -24,13 +24,16 @@ export async function registerCreator(payload, input, req) {
 }
 export async function syncVideoCreators(payload, req, { client = createBilibiliClient(), now = Date.now(), limit = 1 } = {}) {
   const deadline = Date.now() + 25_000;
-  const creators = await payload.find({ collection: 'creators', where: { status: { in: ['queued', 'active'] } }, sort: 'lastSyncedAt', limit: 100, depth: 0, overrideAccess: true });
+  const creators = await payload.find({ collection: 'creators', where: { and: [
+    { status: { in: ['queued', 'active'] } },
+    { or: [{ retryAt: { exists: false } }, { retryAt: { less_than_equal: new Date(now).toISOString() } }] },
+  ] }, sort: 'lastSyncedAt', limit: 100, depth: 0, overrideAccess: true });
   const stats = { creators: 0, discovered: 0, errors: [] };
   for (const creator of creators.docs.filter(c => !c.retryAt || Date.parse(c.retryAt) <= now).slice(0, limit)) {
     const token = crypto.randomUUID();
     const claimed = await transaction(payload, req, async tx => {
       const current = await payload.findByID({ collection: 'creators', id: creator.id, depth: 0, overrideAccess: true, req: tx });
-      if (current.status === 'paused' || current.syncLease?.expiresAt > now) return false;
+      if (current.status === 'paused' || current.syncLease?.expiresAt > now || Date.parse(current.retryAt) > now) return false;
       await save(payload, 'creators', creator.id, { syncLease: { token, expiresAt: now + LEASE_MS } }, tx);
       return true;
     });

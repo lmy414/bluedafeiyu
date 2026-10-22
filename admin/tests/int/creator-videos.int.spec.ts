@@ -104,4 +104,18 @@ describe('Bilibili 作者登记、发现、AI 审核与公开导出', () => {
     const result = publicVideoArchive([await one('creators')], [candidate])
     expect(result.videos).toEqual([])
   })
+  it('超过 100 位作者处于退避期时，后面的到期作者仍能继续同步', async () => {
+    const c = await one('creators')
+    const now = Date.now()
+    for (let i = 0; i < 101; i++) {
+      const otherUid = String(9000000 + i)
+      await payload.create({ collection: 'creators', data: { uid: otherUid, homepage: `https://space.bilibili.com/${otherUid}`, name: '等待重试', intro: '同人动画', status: 'queued', retryAt: new Date(now + 3600000).toISOString() }, overrideAccess: true })
+    }
+    await payload.update({ collection: 'creators', id: c.id, data: { retryAt: null }, overrideAccess: true })
+    const client: any = { page: async (nextUid: string) => { expect(nextUid).toBe(uid); return { items: [], hasMore: false } } }
+    const stats = await syncVideoCreators(payload, req, { client, now })
+    expect(stats.creators).toBe(1)
+    expect(stats.errors).toEqual([])
+    expect((await one('creators', { uid: { equals: uid } })).lastSyncedAt).toBe(new Date(now).toISOString())
+  })
 })
