@@ -103,6 +103,7 @@ test('缓存 tenant_access_token，并发送纯文本消息体', async () => {
   assert.match(texts[2], /runId：run_1/);
   assert.match(texts[2], /新增：1｜修改：2｜隐藏：3｜删除：4｜专题：5/);
   assert.match(texts[2], /视频变更：3｜作者变更：2/);
+  assert.ok(texts[2].includes('视频入口：https://example.com/dafeiyu/videos.html'));
   assert.match(texts[2], /站点：https:\/\/example\.com\/dafeiyu/);
 
   assert.match(texts[3], /❌ 上线失败/);

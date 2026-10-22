@@ -78,6 +78,7 @@ function publishedText({ ok, runId, summary, error, siteUrl } = {}) {
     `新增：${summaryCount(summary, 'added')}｜修改：${summaryCount(summary, 'updated')}｜隐藏：${summaryCount(summary, 'hidden')}｜删除：${summaryCount(summary, 'deleted')}｜专题：${summaryCount(summary, 'topics')}｜视频变更：${summaryCount(summary, 'videos')}｜作者变更：${summaryCount(summary, 'creators')}`,
     success ? `站点：${filled(siteUrl)}` : `错误：${filled(error?.message || error, '未知错误')}`,
   ];
+  if (success && summaryCount(summary, 'videos') > 0 && siteUrl) lines.push(`视频入口：${String(siteUrl).replace(/\/+$/, '')}/videos.html`);
   return lines.join('\n');
 }
 
