@@ -37,6 +37,33 @@ function invalid(path, message) {
   throw Object.assign(new Error(`${path}: ${message}`), { code: 'LOCALIZATION_INVALID', path })
 }
 
+export function validateLocalizedProse(text, language, fieldPath, protectedNames = []) {
+  if (
+    /(?:javascript|vbscript|data)\s*:|\bon[a-z]+\s*=|<\/?[A-Za-z!]|[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/u.test(
+      text,
+    )
+  )
+    invalid(fieldPath, 'Unsafe localized prose')
+  let prose = text
+  for (const name of protectedNames) prose = prose.split(name).join('')
+  const namesOnly = prose.replace(
+    /\b(?:DeepSeek|Claude|GPT|Gemini|Qwen|Kimi|Doubao|Grok|GLM|StepFun|MiMo) Chan\b/g,
+    '',
+  )
+  if (
+    /Whale[ -]?(?:Chan|Girl)/i.test(namesOnly) ||
+    /Blue Fish|Fat Fish|鯨娘|鲸娘|鲸鱼娘/.test(namesOnly) ||
+    /\b(?:DeepSeek|Claude|GPT|Gemini|Qwen|Kimi|Doubao|Grok|GLM|StepFun|MiMo)[- ]chan\b/i.test(
+      namesOnly,
+    )
+  )
+    invalid(fieldPath, 'Wrong character terminology')
+  if (language === 'en' && /[\u3400-\u9fff]/u.test(prose))
+    invalid(fieldPath, 'Chinese left in English prose')
+  if (language === 'ja' && /鲸|蓝|这|图|们|什么|机翻/u.test(prose))
+    invalid(fieldPath, 'Simplified Chinese left in Japanese prose')
+}
+
 /** A language can be validated and saved independently. Never invokes a model. */
 export function validateLocale(entry, language, original = {}) {
   const path = `i18n.${language}`
@@ -82,33 +109,7 @@ export function validateLocale(entry, language, original = {}) {
   const protectedNames = [...new Set([original.origin?.author, original.submitter?.name].filter(
     (v) => typeof v === 'string' && v.trim(),
   ))].sort((a, b) => b.length - a.length)
-  for (const [key, text] of texts) {
-    if (
-      /(?:javascript|vbscript|data)\s*:|\bon[a-z]+\s*=|<\/?[A-Za-z!]|[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/u.test(
-        text,
-      )
-    )
-      invalid(`${path}.${key}`, 'Unsafe localized prose')
-    let prose = text
-    if (['originNote', 'licenseNote'].includes(key))
-      for (const name of protectedNames) prose = prose.split(name).join('')
-    const namesOnly = prose.replace(
-      /\b(?:DeepSeek|Claude|GPT|Gemini|Qwen|Kimi|Doubao|Grok|GLM|StepFun|MiMo) Chan\b/g,
-      '',
-    )
-    if (
-      /Whale[ -]?Chan/i.test(namesOnly) ||
-      /Blue Fish|Fat Fish|鯨娘|鲸娘|鲸鱼娘/.test(namesOnly) ||
-      /\b(?:DeepSeek|Claude|GPT|Gemini|Qwen|Kimi|Doubao|Grok|GLM|StepFun|MiMo)[- ]chan\b/i.test(
-        namesOnly,
-      )
-    )
-      invalid(`${path}.${key}`, 'Wrong character terminology')
-    if (language === 'en' && /[\u3400-\u9fff]/u.test(prose))
-      invalid(`${path}.${key}`, 'Chinese left in English prose')
-    if (language === 'ja' && /鲸|蓝|这|图|们|什么|机翻/u.test(prose))
-      invalid(`${path}.${key}`, 'Simplified Chinese left in Japanese prose')
-  }
+  for (const [key, text] of texts) validateLocalizedProse(text, language, `${path}.${key}`, ['originNote', 'licenseNote'].includes(key) ? protectedNames : [])
   if (
     language === 'en' &&
     /whale[ -]?girl/i.test(entry.name) &&

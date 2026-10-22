@@ -1,18 +1,23 @@
 import {applyNativeArchives} from './native-archives.mjs';
 import {aboutCopy,aboutQuestions} from '../src/lib/about-copy.mjs';
 import { videoArchive } from '../src/lib/video-archive.mjs';
+import { videoTerminology } from '../src/lib/video-terminology.mjs';
 const escape=value=>String(value||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function applyNativeContent(document,api,base,snapshot) {
   const native=['en','ja'].includes(api.current);
   if(!native)return;
   const videoById = new Map(videoArchive.videos.map(v => [v.bvid, v]));
+  const creatorNames = videoArchive.creators.map(c => c.name);
   for (const card of document.querySelectorAll('[data-video-bvid]')) {
-    const value = videoById.get(card.getAttribute('data-video-bvid'))?.i18n?.[api.current];
-    if (value) { card.querySelector('[data-video-title]').textContent = value.title; card.querySelector('[data-video-description]').textContent = value.description; }
+    const video = videoById.get(card.getAttribute('data-video-bvid'));
+    const value = video?.i18n?.[api.current];
+    if (value) {
+      for (const field of ['title', 'description']) card.querySelector(`[data-video-${field}]`).textContent = videoTerminology(value[field], api.current, video.characterIds, creatorNames);
+    }
   }
   for (const el of document.querySelectorAll('[data-creator-intro]')) {
     const c = videoArchive.creators.find(c => c.uid === el.getAttribute('data-creator-intro'));
-    if(c?.i18n?.[api.current]) el.textContent = c.i18n[api.current];
+    if(c?.i18n?.[api.current]) el.textContent = videoTerminology(c.i18n[api.current], api.current, videoArchive.videos.filter(v => v.uid === c.uid).flatMap(v => v.characterIds), creatorNames);
   }
   // Keep the approved brand wording in the visible FAQ identical to its schema.
   for(const el of document.querySelectorAll('[data-i18n^="d.about."]')) {

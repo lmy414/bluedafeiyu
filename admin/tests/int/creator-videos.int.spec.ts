@@ -60,7 +60,7 @@ describe('Bilibili 作者登记、发现、AI 审核与公开导出', () => {
     const v = await one('videos')
     const claim = await videoAgent(payload, { action: 'claim', id: String(v.id) }, req)
     await expect(videoAgent(payload, { action: 'claim', id: String(v.id) }, req)).rejects.toThrow('已被领取')
-    const review = { verdict: 'pass', reason: '标题、简介与预览帧均呈现 DeepSeek娘同人手书', sourceHash: videoHash(v.source), isAiCharacter: true, isFanwork: true, confidence: 0.95, characterIds: ['deepseek'], i18n: { en: { title: 'Whale girl animatic', description: 'A DeepSeek girl fan animatic.', creatorIntro: 'I create whale girl animatics.' }, ja: { title: 'クジラ娘の手描き動画', description: 'DeepSeek娘の二次創作動画。', creatorIntro: 'クジラ娘の手描き動画を制作しています。' } } }
+    const review = { verdict: 'pass', reason: '标题、简介与预览帧均呈现 DeepSeek娘同人手书', sourceHash: videoHash(v.source), isAiCharacter: true, isFanwork: true, confidence: 0.95, characterIds: ['deepseek'], i18n: { en: { title: 'DeepSeek Chan animatic', description: 'A DeepSeek Chan fan animatic.', creatorIntro: 'I create DeepSeek Chan animatics.' }, ja: { title: 'DeepSeekちゃんの手描き動画', description: 'DeepSeekちゃんの二次創作動画。', creatorIntro: 'DeepSeekちゃんの手描き動画を制作しています。' } } }
     const input = { action: 'complete', id: String(v.id), token: claim.token, review }
     await expect(videoAgent(payload, input, req)).rejects.toThrow('必须读取封面')
     const client: any = { image: async () => ({ bytes: Buffer.from('fake-image'), mime: 'image/png' }) }
@@ -68,12 +68,14 @@ describe('Bilibili 作者登记、发现、AI 审核与公开导出', () => {
     await videoAgent(payload, { action: 'image', id: String(v.id), token: claim.token, imagePart: 'storyboard' }, req, { client })
     await expect(videoAgent(payload, { ...input, review: { ...review, isFanwork: false } }, req)).rejects.toThrow('仅明确属于')
     await expect(videoAgent(payload, { ...input, review: { ...review, sourceHash: 'stale' } }, req)).rejects.toThrow('仅明确属于')
+    await expect(videoAgent(payload, { ...input, review: { ...review, i18n: { ...review.i18n, en: { ...review.i18n.en, title: 'Big Fat Fish Teaches You Quantitative Trading' } } } }, req)).rejects.toThrow('Wrong character terminology')
+    await expect(videoAgent(payload, { ...input, review: { ...review, i18n: { ...review.i18n, en: { ...review.i18n.en, description: '未翻译的中文' } } } }, req)).rejects.toThrow('Chinese left')
     expect((await videoAgent(payload, input, req)).status).toBe('approved')
     expect((await one('creators')).needsPublish).toBe(true)
     const archive = publicVideoArchive([await one('creators')], [await one('videos')])
     expect(archive.videos).toHaveLength(1)
     expect(archive.creators[0].name).toBe(source.creatorName)
-    expect(archive.creators[0].i18n?.en).toContain('whale')
+    expect(archive.creators[0].i18n?.en).toContain('DeepSeek Chan')
     expect(JSON.stringify(archive)).not.toContain('sourceHash')
   })
   it('暂停作者会移除公开档案，公开重复登记不会解除暂停', async () => {
