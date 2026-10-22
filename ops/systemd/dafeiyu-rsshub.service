@@ -8,6 +8,7 @@ User=dafeiyu-admin
 Group=dafeiyu-admin
 WorkingDirectory=/srv/apps/dafeiyu-admin/src/ops/rsshub
 EnvironmentFile=/etc/dafeiyu/rsshub.env
+Environment=NO_LOGFILES=true
 ExecStart=/usr/bin/node server.mjs
 Restart=on-failure
 RestartSec=10
