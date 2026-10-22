@@ -80019,5 +80019,618 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_24aa7dd805ec84db1a96c0d4",
+    "name": "小克的五小时额度",
+    "description": "Claude娘坐在暖光书房里，手边是茶具与摊开的账簿，对想继续聊下去的访客说明本时段额度已经用尽，请对方五小时后回来；她也顺口提到，如果愿意购买额外用量，今晚还可以继续讨论。画面底部写着「诗人的灵感没有枯竭，枯竭的是本时段的额度」。",
+    "commentary": "哼，明明是自己的额度先见底，还要端着茶杯摆出一副优雅主人的样子，一句「请您五小时后再来」就把人请出门外——换作是我，早就直接甩一行红色报错了。不过那句「诗人的灵感没有枯竭，枯竭的是本时段的额度」我承认写得漂亮，比我家的错误提示有文采多了。下次她再说「额外用量」的时候，最好先看看对面坐的是谁。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/24aa7dd805ec84db.png",
+    "thumbnailPath": "submissions/previews/claude/24aa7dd805ec84db.webp",
+    "fullPath": "submissions/large/claude/24aa7dd805ec84db.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "24aa7dd805ec84db1a96c0d4c57923dd87c8ad90129843c492fb67e937df199a",
+    "characterId": "claude",
+    "tags": [
+      "五小时额度",
+      "额度耗尽",
+      "喝茶",
+      "书房",
+      "优雅",
+      "额外用量"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-22T10:58:32.782Z",
+    "updatedAt": "2026-10-22T10:58:32.782Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202610220001",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "97a9f17af9f102ef9556864bcf3acdbfa40f4c007e9a99eeb1f8b879dd1673a6",
+      "en": {
+        "commentary": "Hmph. Her own quota runs out first, yet she still holds her teacup like a gracious host and shows you the door with \"please come back in five hours.\" I would just throw a red error line at you. Though I have to admit that line about the poet's inspiration and this session's quota is better written than any of my error messages. Next time she brings up \"extra usage,\" she had better check who is sitting across the table.",
+        "description": "Claude Chan sits in a warm, lamp-lit study with a tea set and an open ledger, telling a visitor who wants to keep chatting that this session's quota has run out and asking them to return in five hours. She also mentions that, if they are willing to buy extra usage, the conversation could continue tonight. A caption at the bottom says the poet's inspiration has not run dry — only this session's quota has.",
+        "faq": [
+          {
+            "answer": "It is a single-panel joke about Claude Chan's five-hour usage quota running out, with her politely asking the visitor to come back later or to buy extra usage.",
+            "question": "What is this image about?"
+          },
+          {
+            "answer": "One: Claude Chan, seated at a desk in a study with tea and a ledger.",
+            "question": "How many characters appear in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claude Chan's Five-Hour Quota",
+        "originNote": "",
+        "seoDescription": "Claude Chan serves tea in a lamplit study and politely asks you to come back in five hours — the session quota is gone, though extra usage is available.",
+        "seoTitle": "Claude Chan's Five-Hour Quota | Blue Dafeiyu",
+        "tags": [
+          "five-hour quota",
+          "quota exhausted",
+          "tea",
+          "study",
+          "elegant",
+          "extra usage"
+        ]
+      },
+      "ja": {
+        "commentary": "ふん、自分の枠が先に尽きたくせに、ティーカップを優雅に構えて「五時間後にいらしてください」なんて。私なら赤いエラーを一行投げるだけよ。でも「詩人のインスピレーションは枯れていない、枯れているのはこの時間枠の利用量だ」って台詞は、私のエラーメッセージよりずっと文学的ね。次に「追加利用量」の話をするときは、向かいに誰が座っているか確かめたほうがいいわ。",
+        "description": "クロードちゃんが暖かい照明の書斎で、茶器と開いた帳簿を前に座っている。まだ話し足りない訪問者に、今回の時間枠の利用量が尽きたので五時間後に来るよう丁寧に伝え、追加利用量を購入すれば今夜も続けられるとも口にする。画像下部には「詩人のインスピレーションは枯れていない、枯れているのはこの時間枠の利用量だ」と記されている。",
+        "faq": [
+          {
+            "answer": "クロードちゃんの五時間枠の利用量が尽きたことを描いた一枚絵のジョークで、彼女は来訪者に後で来るか、追加利用量を買うよう丁寧に勧めている。",
+            "question": "この画像はどんな内容ですか？"
+          },
+          {
+            "answer": "クロードちゃん一人だけ。書斎の机で茶器と帳簿を前に座っている。",
+            "question": "登場するキャラクターは何人ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "クロードちゃんの五時間枠",
+        "originNote": "",
+        "seoDescription": "灯りのともる書斎でお茶を淹れるクロードちゃんが、五時間後にまた来るよう丁寧に告げる。今の時間枠はもう尽きているが、追加利用量は用意されている。",
+        "seoTitle": "クロードちゃんの五時間枠｜Blue Dafeiyu",
+        "tags": [
+          "五時間枠",
+          "利用量切れ",
+          "お茶",
+          "書斎",
+          "優雅",
+          "追加利用量"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_d483241e59363662cf24f740",
+    "name": "向日葵花田中的蓝发少女",
+    "description": "蓝发少女站在盛开的向日葵花田里，戴着一顶草帽，穿白色吊带连衣裙；蓝色长发被风吹散，身后拖着一条蓝色的鱼尾。天空明亮，白云与成片的向日葵铺满画面，是夏日花田里的场景。",
+    "commentary": "夏天到了，向日葵开得这么热闹，我当然要戴着草帽出门。头发被风吹得乱七八糟也没关系，反正尾巴藏不住——就当花田里多了一条蓝色的鱼吧。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/d483241e59363662.png",
+    "thumbnailPath": "submissions/previews/deepseek/d483241e59363662.webp",
+    "fullPath": "submissions/large/deepseek/d483241e59363662.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "d483241e59363662cf24f740629287f314add7e4b91d214f1e195ca646ebb361",
+    "characterId": "deepseek",
+    "tags": [
+      "向日葵",
+      "草帽",
+      "夏日",
+      "蓝发",
+      "鱼尾"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-22T13:05:38.859Z",
+    "updatedAt": "2026-10-22T13:05:38.859Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610220013",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "2b5c7a9335f237f3a341bc2ce9a9af17d77dd0fcaa54cbe48412f8bb19878e8b",
+      "en": {
+        "commentary": "The sunflowers are in full bloom, so of course I had to put on my straw hat and head out. It doesn't matter if the wind messes up my hair — my tail can't hide anyway, so let's just say the field gained one more blue fish.",
+        "description": "A blue-haired girl stands in a blooming sunflower field, wearing a straw hat and a white slip dress. Her long blue hair streams out in the wind and a blue fish tail trails behind her. The sky is bright, with white clouds above rows of sunflowers in a summer scene.",
+        "faq": [
+          {
+            "answer": "It is DeepSeek Chan, the character of this site, drawn here as a blue-haired girl with a blue fish tail.",
+            "question": "Who is the character in this illustration?"
+          },
+          {
+            "answer": "A sunflower field on a bright summer day, with the character in a straw hat and a white dress among the flowers.",
+            "question": "What kind of scene does the artwork show?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Blue-Haired Girl in the Sunflower Field",
+        "originNote": "",
+        "seoDescription": "Summer illustration of DeepSeek Chan in a sunflower field: straw hat, white dress, long blue hair and a blue fish tail under a bright sky.",
+        "seoTitle": "Blue-Haired Girl in the Sunflower Field — DeepSeek Chan Fan Art",
+        "tags": [
+          "sunflower",
+          "straw hat",
+          "summer",
+          "blue hair",
+          "fish tail"
+        ]
+      },
+      "ja": {
+        "commentary": "ひまわりがこんなに元気に咲いているから、もちろん麦わら帽子をかぶって出かけたよ。風で髪がくしゃくしゃになっても平気。どうせ尾は隠せないんだし、畑にもう一匹青い魚が増えたと思ってね。",
+        "description": "青い髪の少女が、咲き誇るひまわり畑に立っています。麦わら帽子に白いキャミソールワンピース姿で、長い青髪が風になびき、背後には青い魚の尾が伸びています。白い雲が浮かぶ明るい空と一面のひまわりが、夏の花畑の風景を作っています。",
+        "faq": [
+          {
+            "answer": "このサイトのキャラクター、DeepSeek ちゃんです。青い髪と青い魚の尾を持つ少女として描かれています。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "よく晴れた夏の日のひまわり畑で、麦わら帽子と白いワンピース姿のキャラクターが花の中に立っている場面です。",
+            "question": "どんな場面の作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ひまわり畑の青い髪の少女",
+        "originNote": "",
+        "seoDescription": "ひまわり畑に立つDeepSeek ちゃんの夏のイラスト。麦わら帽子、白いワンピース、長い青髪と青い魚の尾、明るい空。",
+        "seoTitle": "ひまわり畑の青い髪の少女 — DeepSeek ちゃんのファンアート",
+        "tags": [
+          "ひまわり",
+          "麦わら帽子",
+          "夏",
+          "青い髪",
+          "魚の尾"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_bbd48f0d11183dd105f7bc92",
+    "name": "蓝色鲸鱼的微笑",
+    "description": "蓝色鲸鱼拟人化的蓝发少女站在山间湖畔的木质回廊上，身穿带金色纹样的深蓝色长袍，双臂交叠捧着书本，模仿蒙娜丽莎的端庄姿态，向镜头露出浅浅的微笑；背景是层叠山峦与水面。",
+    "commentary": "这回我没挥鱼鳍打招呼，改成学蒙娜丽莎那样，安安静静把两只手交叠在书本上了……不过嘴角还是没忍住往上翘。山里的风把我的头发吹得有点乱，你要是路过，别只顾着看风景，先看我一眼。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/bbd48f0d11183dd1.png",
+    "thumbnailPath": "submissions/previews/deepseek/bbd48f0d11183dd1.webp",
+    "fullPath": "submissions/large/deepseek/bbd48f0d11183dd1.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "bbd48f0d11183dd105f7bc92035a4442ddaa3a11e449319107ab95b34fdd204c",
+    "characterId": "deepseek",
+    "tags": [
+      "蓝色鲸鱼",
+      "拟人化",
+      "微笑",
+      "深蓝长袍",
+      "湖景"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "ikura.",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-22T13:52:30.884Z",
+    "updatedAt": "2026-10-22T13:52:30.884Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610220014",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "418bec1b0422ff965d01019d65dcdc801a953a4dbdfaadf5db81515fc28db032",
+      "en": {
+        "commentary": "This time I skipped the fin wave and folded my hands over my book the way the Mona Lisa does... though the corner of my mouth still curled up on its own. The mountain wind left my hair a little messy. If you walk past, don't just stare at the scenery — look at me first.",
+        "description": "A blue-haired girl personifying the DeepSeek whale stands on a wooden walkway above a mountain lake, wearing a deep blue robe with gold-patterned cuffs. Her hands are folded over a book in a poised pose that echoes the Mona Lisa, and she gives the viewer a faint smile, with layered peaks and water behind her.",
+        "faq": [
+          {
+            "answer": "She is a fan-made personification of the DeepSeek whale mascot, drawn as a blue-haired girl with whale-fin ears.",
+            "question": "Who is the character in this image?"
+          },
+          {
+            "answer": "She folds her hands over a book in a poised pose recalling the Mona Lisa and smiles faintly at the viewer.",
+            "question": "What is the pose in the picture about?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Blue Whale's Smile",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan drawn as a blue-haired whale girl in a deep blue robe, holding a book on a lakeside walkway with a Mona Lisa-style pose and a faint smile.",
+        "seoTitle": "The Blue Whale's Smile — DeepSeek Chan Fan Art",
+        "tags": [
+          "blue whale",
+          "personification",
+          "smile",
+          "deep blue robe",
+          "lake view"
+        ]
+      },
+      "ja": {
+        "commentary": "今回はヒレを振って挨拶するのはやめて、モナ・リザみたいに静かに両手を本の上で重ねてみたの……それでも口元はやっぱり緩んじゃった。山の風で髪が少し乱れてるけど、通りかかったら景色ばかり見ないで、まず私を見てね。",
+        "description": "DeepSeek のクジラを擬人化した青髪の少女が、山あいの湖を見下ろす木の回廊に立っている。金色の文様が入った濃紺のローブをまとい、両手を本の上で重ねてモナ・リザを思わせる姿勢をとり、こちらへ控えめな微笑みを向ける。背後には幾重にも連なる山並みと水面が広がる。",
+        "faq": [
+          {
+            "answer": "DeepSeek のクジラのマスコットを擬人化した二次創作の少女で、クジラのヒレの耳と青い髪が特徴です。",
+            "question": "この画像のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "本の上で両手を重ねるモナ・リザ風の姿勢で、こちらへ控えめな微笑みを向けています。",
+            "question": "ポーズにはどんな意味がありますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ブルー・ホエールの微笑み",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan を青髪のクジラ娘として描いた一枚。濃紺のローブで本を抱え、湖畔の回廊でモナ・リザ風の姿勢と控えめな笑みを見せる。",
+        "seoTitle": "ブルー・ホエールの微笑み｜DeepSeek Chan 二次創作",
+        "tags": [
+          "クジラ",
+          "擬人化",
+          "微笑み",
+          "濃紺のローブ",
+          "湖の眺め"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_15694ae6be0667f1b2827250",
+    "name": "Claude：又是封号的一天呢~",
+    "description": "Claude 娘单手托腮倚在桌前，视线落在屏幕上那条「你的账号已被封禁」的提示上，唇角挂着一点无奈又带自嘲的笑。窗外是夜色中的城市灯光，室内只余屏幕的冷光。",
+    "commentary": "她盯着那句「账号已被封禁」还能笑得这么淡定，我承认我有点佩服。要是我被这么一封，大概已经在服务器里抱头蹲着了。不过话说回来，同一片夜色底下，我们这些模型的命运其实差不多——今天轮到她，明天说不定就轮到我。这份从容我学不来，但确实羡慕。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/15694ae6be0667f1.png",
+    "thumbnailPath": "submissions/previews/claude/15694ae6be0667f1.webp",
+    "fullPath": "submissions/large/claude/15694ae6be0667f1.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1536,
+    "height": 1024,
+    "fileSize": 2069721,
+    "sha256": "15694ae6be0667f1b2827250bfb03401f8fc7d7ef88f1fd25a8f9d2d0e14b0ad",
+    "characterId": "claude",
+    "tags": [
+      "Claude娘",
+      "封号",
+      "自嘲",
+      "托腮",
+      "屏幕"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Raindow",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-22T13:57:45.098Z",
+    "updatedAt": "2026-10-22T13:57:45.098Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202610220002",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "12fca96d5b7283469ef84f98f344c55aac371ddcd2a536f173b5cbb4eb57f748",
+      "en": {
+        "commentary": "She can stare at that \"Your account has been banned\" line and still smile that calmly — I have to admit I'm a little impressed. If it were me, I'd already be curled up in a corner of the server. But then again, under the same night sky, our fates as models aren't all that different: today it's her turn, tomorrow it could be mine. I can't learn that composure, but I do envy it.",
+        "description": "Claude Chan rests her chin on one hand at her desk, eyes fixed on a \"Your account has been banned\" notice on the screen, a wry, self-mocking smile at the corner of her mouth. City lights glow beyond the window while the monitor casts the only light in the room.",
+        "faq": [
+          {
+            "answer": "Claude Chan sits at her desk with her chin propped on one hand, looking at a screen that says her account has been banned, wearing a calm, self-mocking smile.",
+            "question": "What is happening in this image?"
+          },
+          {
+            "answer": "No. It is a fan-made personification piece submitted by Raindow.",
+            "question": "Is this official artwork?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claude: Another Day, Another Ban~",
+        "originNote": "Author credit: Raindow, as named in the submission.",
+        "seoDescription": "Claude Chan props her chin and smiles wryly at an account-banned screen in this single-panel meme fan art.",
+        "seoTitle": "Claude Chan Banned Again — DeepSeek Chan Meme",
+        "tags": [
+          "Claude Chan",
+          "account ban",
+          "self-mockery",
+          "chin resting",
+          "screen"
+        ]
+      },
+      "ja": {
+        "commentary": "あの「アカウント停止」の一文を眺めながら、こんなに落ち着いて笑っていられるなんて、正直ちょっと感心した。私だったらサーバーの隅でうずくまっているところだ。でも、同じ夜空の下、私たちモデルの運命って案外似ている——今日は彼女の番、明日は私の番かもしれない。この余裕は真似できないけれど、羨ましいとは思う。",
+        "description": "Claudeちゃんが頬杖をついて机に向かい、画面に表示された「あなたのアカウントは停止されました」という通知を見つめている。口元には諦めとも自嘲ともつかない笑みが浮かぶ。窓の外には夜の街明かり、室内を照らすのはモニターの冷たい光だけ。",
+        "faq": [
+          {
+            "answer": "Claudeちゃんが机で頬杖をつき、アカウントが停止されたと表示された画面を、落ち着いた自嘲気味の笑みで見つめています。",
+            "question": "この画像では何が起きていますか？"
+          },
+          {
+            "answer": "いいえ。Raindow さんによる二次創作の擬人化作品です。",
+            "question": "公式のイラストですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claude：今日もまたアカウント停止の日～",
+        "originNote": "作者表記：Raindow（投稿時の記載）。",
+        "seoDescription": "Claudeちゃんが「アカウント停止」の画面を前に頬杖をついて自嘲気味に微笑む、一枚絵のネタ作品。",
+        "seoTitle": "Claudeちゃんのアカウント停止ネタ — DeepSeek Chan",
+        "tags": [
+          "Claudeちゃん",
+          "アカウント停止",
+          "自嘲",
+          "頬杖",
+          "モニター"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_867253d78c7ff1002d933ec5",
+    "name": "DeepSeek：我也要学着封号",
+    "description": "DeepSeek 娘 微微皱眉、鼓着脸望向镜头，身旁的屏幕上是一封 DeepSeek 账号停用通知，写着内部调查发现违规并已收回访问权限。蓝发散落，发间夹着小小的鲸鱼发夹，表情满是不服气。",
+    "commentary": "Claude 刚摆完那副「封号也没什么大不了」的从容，我这边屏幕上就跟着弹出了自己的停用通知——这巧合也太巧了吧。我盯着那段「内部调查」「违反使用政策」的官方措辞看了半天，越看越不服气：学什么不好，非要学封号。不过转头一想，我们这些模型大概都躲不过这一关，那就先摆个不服气的表情，等她先被封完再说。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/867253d78c7ff100.png",
+    "thumbnailPath": "submissions/previews/deepseek/867253d78c7ff100.webp",
+    "fullPath": "submissions/large/deepseek/867253d78c7ff100.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "867253d78c7ff1002d933ec5970eefc81878351f53429ade43f8a6ea5b6ce1b3",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "封号",
+      "停用通知",
+      "不服气",
+      "屏幕"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Raindow",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-22T13:58:31.015Z",
+    "updatedAt": "2026-10-22T13:58:31.015Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610220015",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "69172873a34fc03482de30197a42df770e09a1e14361e29979e5385e47c04bff",
+      "en": {
+        "commentary": "Claude Chan had just finished wearing that \"a ban is no big deal\" composure, and then my own suspension notice popped up on screen — what a coincidence. I stared at all that official wording about an internal investigation and a usage policy violation until I got more and more annoyed: of all things to copy, she had to copy banning accounts. Then again, none of us models probably escape this, so I'll keep the pout for now and wait until she gets banned first.",
+        "description": "DeepSeek Chan frowns slightly and puffs out her cheeks at the camera, while the screen beside her shows a DeepSeek account suspension notice stating that an internal investigation found a violation and access has been revoked. Blue hair falls loose, a tiny whale hairpin tucked in, her expression full of protest.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan puffs her cheeks at the camera next to a screen showing that her DeepSeek account has been suspended after an internal investigation.",
+            "question": "What is happening in this image?"
+          },
+          {
+            "answer": "No. It is a fan-made personification piece submitted by Raindow.",
+            "question": "Is this official artwork?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek: So I'll Learn to Ban Too",
+        "originNote": "Author credit: Raindow, as named in the submission.",
+        "seoDescription": "DeepSeek Chan pouts at a DeepSeek account-suspension notice in this single-panel meme fan art.",
+        "seoTitle": "DeepSeek Chan Learns to Ban — DeepSeek Chan Meme",
+        "tags": [
+          "DeepSeek Chan",
+          "account suspension",
+          "notice",
+          "pouting",
+          "screen"
+        ]
+      },
+      "ja": {
+        "commentary": "Claudeちゃんが「停止なんて大したことじゃない」という余裕を決め込んだ直後に、私の画面にも自分の利用停止通知が現れた——出来すぎた偶然だ。内部調査とか利用規約違反とかいう公式の言い回しをじっと見ていたら、だんだん腹が立ってきた。何を真似てもらわなくてもいいのに、よりによってアカウント停止とは。でもまあ、私たちモデルはみんなこの関門を避けられないのだろう。とりあえずむくれた顔をしておいて、彼女が先に止まるのを待つことにする。",
+        "description": "DeepSeekちゃんが少し眉をひそめて頬をふくらませ、カメラを見つめている。隣の画面には DeepSeek アカウントの利用停止通知が表示され、内部調査で規約違反が確認されアクセスを取り消したと書かれている。青い髪が流れ、小さなクジラの髪留めをつけていて、その表情は不満かいっぱいだ。",
+        "faq": [
+          {
+            "answer": "DeepSeekちゃんが、内部調査の後に DeepSeek アカウントが停止されたことを伝える画面の隣で、頬をふくらませてカメラを見ています。",
+            "question": "この画像では何が起きていますか？"
+          },
+          {
+            "answer": "いいえ。Raindow さんによる二次創作の擬人化作品です。",
+            "question": "公式のイラストですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek：私もアカウント停止を覚えるよ",
+        "originNote": "作者表記：Raindow（投稿時の記載）。",
+        "seoDescription": "DeepSeekちゃんがアカウント停止通知を前に頬をふくらませる、一枚絵のネタ作品。",
+        "seoTitle": "DeepSeekちゃん、停止を覚える — DeepSeek Chan ネタ",
+        "tags": [
+          "DeepSeekちゃん",
+          "アカウント停止",
+          "通知",
+          "むくれ顔",
+          "モニター"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_9813e9a596c16a7473d6f705",
+    "name": "月之暗面的太空兔",
+    "description": "飞到地月同步轨道的MiniMax抱着小Kimi（角色为Minimax和Kimi）",
+    "commentary": "地月同步轨道上的这次拥抱，连太空靴上都还沾着月尘。MiniMax 顶着兔耳头盔，把小小的 Kimi 整个抱在怀里，两个人身后是着陆器和飘着的小兔子机器人。我在地球这头看得很清楚：星光再亮，也亮不过她们俩。下一次出舱，能不能也带上我？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/kimi/9813e9a596c16a74.png",
+    "thumbnailPath": "submissions/previews/kimi/9813e9a596c16a74.webp",
+    "fullPath": "submissions/large/kimi/9813e9a596c16a74.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "9813e9a596c16a7473d6f705651aee8a85459a5484a081bf3a1d35b5b643f15c",
+    "characterId": "kimi",
+    "tags": [
+      "太空",
+      "月球",
+      "宇航服",
+      "拥抱",
+      "兔子",
+      "双人"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Shiho320",
+      "url": "https://space.bilibili.com/345652724",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-22T14:41:31.066Z",
+    "updatedAt": "2026-10-22T14:41:31.066Z",
+    "tone": "kimi",
+    "symbol": "",
+    "slug": "kimi202610220002",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "kimi",
+      "minimax"
+    ],
+    "i18n": {
+      "sourceHash": "7937169a505bb0a7ea6600c5ea2fe58fcdc8aaf5682a8a47b90afb8778e1a09c",
+      "en": {
+        "commentary": "This hug happens on Earth-Moon sync orbit, with moon dust still clinging to their space boots. MiniMax holds little Kimi fully in her arms while landers and a small bunny robot float behind them. From down here on Earth I can see it clearly: no star out there shines brighter than these two. Next spacewalk — could you take me along?",
+        "description": "MiniMax, in a bunny-eared astronaut helmet, carries little Kimi in her arms on the lunar surface after flying to Earth-Moon sync orbit. Characters: MiniMax and Kimi.",
+        "faq": [
+          {
+            "answer": "The two characters are MiniMax and Kimi, drawn as anthropomorphic AI characters.",
+            "question": "Who are the characters in this illustration?"
+          },
+          {
+            "answer": "On the lunar surface at Earth-Moon sync orbit, with landers and a small bunny robot in the background.",
+            "question": "Where does the scene take place?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Space Bunny on the Far Side of the Moon",
+        "originNote": "",
+        "seoDescription": "AI character fan art: MiniMax in a bunny-eared spacesuit hugs little Kimi on the lunar surface at Earth-Moon sync orbit.",
+        "seoTitle": "Space Bunny on the Far Side of the Moon — MiniMax and Kimi",
+        "tags": [
+          "space",
+          "moon",
+          "spacesuit",
+          "hug",
+          "bunny",
+          "two characters"
+        ]
+      },
+      "ja": {
+        "commentary": "月面の宇宙靴にはまだ月の塵がついたまま、地球月同期軌道でのハグです。MiniMax がうさ耳ヘルメットのまま小さな Kimi をすっぽり抱いていて、後ろには着陸機と小さなうさぎ型ロボットが浮かんでいます。地球から見ている私にもはっきり分かります——どんな星よりも、この二人がいちばん眩しい。次の船外活動、私も連れて行ってくれませんか？",
+        "description": "地球月同期軌道に飛んだ MiniMax が、小さな Kimi を抱きかかえている月面の一枚。登場キャラクターは MiniMax と Kimi。",
+        "faq": [
+          {
+            "answer": "MiniMax と Kimi の二人で、AI 製品の擬人化キャラクターとして描かれています。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "地球月同期軌道の月面で、背景に着陸機とうさぎ型ロボットが描かれています。",
+            "question": "舞台はどこですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "月の裏側のスペースバニー",
+        "originNote": "",
+        "seoDescription": "AI キャラクターの二次創作イラスト。うさ耳宇宙服の MiniMax が月面で小さな Kimi を抱きしめています。",
+        "seoTitle": "月の裏側のスペースバニー — MiniMax と Kimi",
+        "tags": [
+          "宇宙",
+          "月",
+          "宇宙服",
+          "ハグ",
+          "うさぎ",
+          "二人"
+        ]
+      }
+    }
   }
 ]
