@@ -26,6 +26,7 @@ export function installMasonry() {
     document.querySelectorAll('[data-design-layout]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.designLayout===mode)));
     document.querySelectorAll('.work-grid').forEach(grid => {
       if(!observed.has(grid)){observed.add(grid);resize.observe(grid);}
+      if(grid.querySelector('[data-work-stats]:empty'))window.WorkStats?.paint();
       const items=[...grid.children].filter(el=>el.matches('.work-card'));
       if(!items.length){grid.style.height='';grid.classList.remove('is-laid-out');return;}
       grid.classList.toggle('layout-grid',mode==='grid');

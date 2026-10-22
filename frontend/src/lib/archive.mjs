@@ -39,7 +39,7 @@ const topics = snapshot.topics.filter(t=>t.status!=='removed').map(t=>{
   return {...t,list,cover,art,avatar:topicAvatar(t.id),eyebrow:t.author?'作者作品集':'主题合集'};
 });
 const tagCounts=new Map();for(const w of works)for(const tag of w.tg)tagCounts.set(tag,(tagCounts.get(tag)||0)+1);
-const translations={en:{},ja:{}};
+const translations={en:{'d.navigationToggle':'Toggle navigation'},ja:{'d.navigationToggle':'ナビゲーションを切り替え'}};
 for (const [key, row] of Object.entries(videoCopy)) { translations.en['d.' + key] = row[1]; translations.ja['d.' + key] = row[2]; }
 for (const [key, values] of Object.entries(aboutCopy)) {
   translations.en['d.about.'+key] = values[1]; translations.ja['d.about.'+key] = values[2];

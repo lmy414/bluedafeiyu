@@ -4,7 +4,6 @@ import { navigation } from './nav-items.mjs';
 import RepositoryLinks from './RepositoryLinks.astro';
 const { active = "" } = Astro.props;
 const { icon, works } = archiveContext;
-archiveContext.tr('navigationToggle','折叠或展开导航','Toggle navigation','ナビゲーションを切り替え');
 ---
 <aside class="sidebar" id="sidebar">
   <a class="brand" href="/">
