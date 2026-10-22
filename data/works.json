@@ -78792,5 +78792,1232 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_921390c24a48564e88ed1073",
+    "name": "大肥鱼趴地摇尾巴",
+    "description": "蓝色单色线稿风格，Q 版 DeepSeek 娘趴在白色背景上，双手撑地、歪头微笑，身后的鲸鱼尾巴高高翘起，像在轻轻摆动。",
+    "commentary": "趴着也能摇尾巴，这是我发明的省力撒娇法。你不用管我，我只是在这里等你把下一句话说完。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/921390c24a48564e.png",
+    "thumbnailPath": "submissions/previews/deepseek/921390c24a48564e.webp",
+    "fullPath": "submissions/large/deepseek/921390c24a48564e.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "921390c24a48564e88ed1073f906e885c0c4d99bb459843460a13097d35eb585",
+    "characterId": "deepseek",
+    "tags": [
+      "Q版",
+      "线稿",
+      "趴姿",
+      "摇尾巴",
+      "撒娇"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Cirnumia",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-22T04:01:35.343Z",
+    "updatedAt": "2026-10-22T04:01:35.343Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610220003",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "1938d0ee70da357d67492cb4b5e08cb478d68e431d8e1c7124682fc58a095aa4",
+      "en": {
+        "commentary": "Wagging my tail while lying down is a low-effort way to be cute that I invented myself. Don't mind me — I'm just waiting for you to finish your next sentence.",
+        "description": "A blue monochrome line-art chibi of DeepSeek Chan lying on a white background, propped on both hands with her head tilted and a smile, her whale tail raised high as if gently wagging.",
+        "faq": [
+          {
+            "answer": "A chibi DeepSeek Chan drawn in blue monochrome line art, lying on the floor with her hands propped up and her whale tail raised.",
+            "question": "What does this image show?"
+          },
+          {
+            "answer": "It uses only blue outlines on a plain white background, with no shading and no scenery.",
+            "question": "How is the artwork drawn?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Wagging Her Tail on the Floor",
+        "originNote": "",
+        "seoDescription": "Blue line-art chibi DeepSeek Chan lying on the floor, smiling with her whale tail raised in a playful wag.",
+        "seoTitle": "DeepSeek Chan Wagging Her Tail — Chibi Line Art",
+        "tags": [
+          "chibi",
+          "line art",
+          "lying down",
+          "tail wag",
+          "cute"
+        ]
+      },
+      "ja": {
+        "commentary": "伏せたままでもしっぽは振れるんです。これは私が編み出した省エネな甘え方。気にしないで、次の一言を待っているだけだから。",
+        "description": "青一色の線画で描かれたちびキャラの DeepSeek Chan が白い背景に伏せ、両手をついて首をかしげて笑い、クジラのしっぽを高く上げている。",
+        "faq": [
+          {
+            "answer": "青い線画で描かれたちびキャラの DeepSeek Chan が床に伏せて両手をつき、クジラのしっぽを上げている一枚です。",
+            "question": "どんな画像ですか？"
+          },
+          {
+            "answer": "白い背景に青い輪郭線だけで描かれ、陰影も背景の風景もありません。",
+            "question": "どのように描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "床に伏せてしっぽを振る DeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "白い背景に伏せた青い線画のちびキャラ DeepSeek Chan。クジラのしっぽを上げて笑う、ゆるい表情の一枚。",
+        "seoTitle": "伏せてしっぽを振る DeepSeek Chan｜ちびキャラ線画",
+        "tags": [
+          "ちびキャラ",
+          "線画",
+          "伏せ",
+          "しっぽ",
+          "甘え"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_fef515d7f568f9a48e96fca5",
+    "name": "大肥鱼擂嘴摇尾巴",
+    "description": "蓝色单色线稿风格，Q 版 DeepSeek 娘趴在白色背景上，双手支撑身体，眉毛压低、嘴角微向下，一副不情愿的表情，身后鲸鱼尾巴高高翘起。",
+    "commentary": "尾巴在摇，可不代表我心情就好。刚才那句夸奖我听见了，只是说得有点敷衍。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/fef515d7f568f9a4.gif",
+    "thumbnailPath": "submissions/previews/deepseek/fef515d7f568f9a4.webp",
+    "fullPath": "submissions/large/deepseek/fef515d7f568f9a4.webp",
+    "format": "gif",
+    "mimeType": "image/gif",
+    "isAnimated": true,
+    "width": 480,
+    "height": 480,
+    "fileSize": 7984515,
+    "sha256": "fef515d7f568f9a48e96fca51b8f9c59aff4aee3480a75c229db8a7ab0570d90",
+    "characterId": "deepseek",
+    "tags": [
+      "Q版",
+      "线稿",
+      "趴姿",
+      "摇尾巴",
+      "小情绪"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Cirnumia",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-22T04:02:31.007Z",
+    "updatedAt": "2026-10-22T04:02:31.007Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610220004",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "b6e40b975075188abfe4b9c9b921680017452670733898b1a5bedf73d3ae479d",
+      "en": {
+        "commentary": "My tail is wagging, but that doesn't mean I'm in a good mood. I heard that compliment — it just sounded a little half-hearted.",
+        "description": "A blue monochrome line-art chibi of DeepSeek Chan lying on a white background, holding herself up on both hands with lowered brows and a slight frown, her whale tail raised high behind her.",
+        "faq": [
+          {
+            "answer": "A chibi DeepSeek Chan in blue line art, lying on the floor with a reluctant, pouting expression and her whale tail lifted.",
+            "question": "What does this image show?"
+          },
+          {
+            "answer": "It is drawn with blue outlines only on a plain white background, with no shading or scenery.",
+            "question": "How is the artwork drawn?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Pouting DeepSeek Chan Wagging Her Tail",
+        "originNote": "",
+        "seoDescription": "Blue line-art chibi DeepSeek Chan lying on the floor with a pout and her whale tail raised — a sulky reaction sticker.",
+        "seoTitle": "Pouting DeepSeek Chan Wagging Her Tail — Chibi Line Art",
+        "tags": [
+          "chibi",
+          "line art",
+          "lying down",
+          "pout",
+          "sulky"
+        ]
+      },
+      "ja": {
+        "commentary": "しっぽが揺れていても、機嫌がいいとは限らないんです。さっきの褒め言葉は聞こえましたけど、ちょっと適当でしたね。",
+        "description": "青一色の線画で描かれたちびキャラの DeepSeek Chan が白い背景に伏せ、両手で体を支え、眉を下げて口をへの字にした不満げな表情で、クジラのしっぽを高く上げている。",
+        "faq": [
+          {
+            "answer": "青い線画のちびキャラ DeepSeek Chan が床に伏せ、不満げな表情でクジラのしっぽを上げている一枚です。",
+            "question": "どんな画像ですか？"
+          },
+          {
+            "answer": "白い背景に青い輪郭線だけで描かれ、陰影も背景の風景もありません。",
+            "question": "どのように描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "しっぽを振りながらむくれる DeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "白い背景に伏せた青い線画のちびキャラ DeepSeek Chan。むくれた表情と上げたクジラのしっぽが可愛い一枚。",
+        "seoTitle": "しっぽを振りながらむくれる DeepSeek Chan｜ちびキャラ線画",
+        "tags": [
+          "ちびキャラ",
+          "線画",
+          "伏せ",
+          "むくれ顔",
+          "不満"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_5cc1c1ad5aa95bf9f64620b7",
+    "name": "大肥鱼懵圈摇尾巴",
+    "description": "蓝色单色线稿风格，Q 版 DeepSeek 娘趴在白色背景上，脸颊挂着汗滴、眼神发懵，头顶飘出一个蓝色乱线团气泡和问号，身后鲸鱼尾巴高翘。",
+    "commentary": "尾巴还在摇，脑子已经打结了。你刚才那句话，我听了三遍也没听懂。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/5cc1c1ad5aa95bf9.gif",
+    "thumbnailPath": "submissions/previews/deepseek/5cc1c1ad5aa95bf9.webp",
+    "fullPath": "submissions/large/deepseek/5cc1c1ad5aa95bf9.webp",
+    "format": "gif",
+    "mimeType": "image/gif",
+    "isAnimated": true,
+    "width": 480,
+    "height": 480,
+    "fileSize": 9201663,
+    "sha256": "5cc1c1ad5aa95bf9f64620b7b497ce69af2d2f6d68d7ba063a8e7bd43d5199dd",
+    "characterId": "deepseek",
+    "tags": [
+      "Q版",
+      "线稿",
+      "趴姿",
+      "摇尾巴",
+      "困惑"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Cirnumia",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-22T04:02:48.568Z",
+    "updatedAt": "2026-10-22T04:02:48.568Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610220005",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "6d80c9cde42c364f63fda551f2f031a08013959d0aa9171d854dffa4497a1894",
+      "en": {
+        "commentary": "My tail is still wagging, but my brain has tied itself in a knot. I listened to that sentence three times and still didn't get it.",
+        "description": "A blue monochrome line-art chibi of DeepSeek Chan lying on a white background, sweat drops on her cheek and a dazed look in her eyes, with a tangled blue scribble bubble and a question mark floating above her head.",
+        "faq": [
+          {
+            "answer": "A chibi DeepSeek Chan in blue line art, lying on the floor looking confused with sweat drops and a scribbled question mark above her.",
+            "question": "What does this image show?"
+          },
+          {
+            "answer": "It is drawn with blue outlines only on a plain white background, with no shading or scenery.",
+            "question": "How is the artwork drawn?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Confused DeepSeek Chan Wagging Her Tail",
+        "originNote": "",
+        "seoDescription": "Blue line-art chibi DeepSeek Chan lying down looking confused, sweat drops and a scribbled question mark above her head.",
+        "seoTitle": "Confused DeepSeek Chan Wagging Her Tail — Chibi Line Art",
+        "tags": [
+          "chibi",
+          "line art",
+          "lying down",
+          "confused",
+          "reaction"
+        ]
+      },
+      "ja": {
+        "commentary": "しっぽはまだ振っていますけど、頭の中はもうこんがらがっています。さっきの言葉、三回聞いてもわからなかった。",
+        "description": "青一色の線画で描かれたちびキャラの DeepSeek Chan が白い背景に伏せ、類に汗をかいてぽかんとした目をし、頭の上に青いぐちゃぐちゃの吹き出しとはてなマークが浮かんでいる。",
+        "faq": [
+          {
+            "answer": "青い線画のちびキャラ DeepSeek Chan が床に伏せ、汗とはてなマーク付きの吹き出しで首をかしげている一枚です。",
+            "question": "どんな画像ですか？"
+          },
+          {
+            "answer": "白い背景に青い輪郭線だけで描かれ、陰影も背景の風景もありません。",
+            "question": "どのように描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "首をかしげてしっぽを振る DeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "白い背景に伏せた青い線画のちびキャラ DeepSeek Chan。汗とはてなマークで困惑する表情の一枚。",
+        "seoTitle": "困惑してしっぽを振る DeepSeek Chan｜ちびキャラ線画",
+        "tags": [
+          "ちびキャラ",
+          "線画",
+          "伏せ",
+          "困惑",
+          "はてな"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_4be457f358aeb92c4b71652f",
+    "name": "大肥鱼摇尾巴4",
+    "description": "蓝色单色线稿风的 Q 版 DeepSeek娘趴伏在地，头戴带蕾丝花边的软帽，身后的鲸鱼尾巴高高翘起，眯眼皱眉、双拳收紧，表情又羞又急。",
+    "commentary": "呜……别盯着尾巴看啦！我又不是故意翘起来的。趴一会儿都不行吗，帽子都压歪了……再笑我就要钻回鲸鱼肚子里去了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/4be457f358aeb92c.gif",
+    "thumbnailPath": "submissions/previews/deepseek/4be457f358aeb92c.webp",
+    "fullPath": "submissions/large/deepseek/4be457f358aeb92c.webp",
+    "format": "gif",
+    "mimeType": "image/gif",
+    "isAnimated": true,
+    "width": 480,
+    "height": 480,
+    "fileSize": 9258258,
+    "sha256": "4be457f358aeb92c4b71652f85682b4c4d337454bdb44f057c2d4804a4770c51",
+    "characterId": "deepseek",
+    "tags": [
+      "Q版",
+      "DeepSeek娘",
+      "鲸鱼尾巴",
+      "害羞",
+      "线稿"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Cirnumia",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-22T04:03:13.977Z",
+    "updatedAt": "2026-10-22T04:03:13.977Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610220006",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "13587bdd0fb0eaf372a82d01757647f29725d36000f9bcf675a3e2786fb3a920",
+      "en": {
+        "commentary": "Eep—stop staring at my tail! It's not like I'm doing it on purpose. Can't I just lie here for a minute? Now my bonnet is all crooked… laugh one more time and I'm hiding inside the whale.",
+        "description": "A chibi DeepSeek Chan in monochrome blue line art lies flat on the ground wearing a lace-trimmed bonnet, her whale tail raised high behind her, eyes squeezed shut and fists clenched in a flustered, embarrassed expression.",
+        "faq": [
+          {
+            "answer": "The submission lists the credit name Cirnumia.",
+            "question": "Who is credited for this image?"
+          },
+          {
+            "answer": "It is a single-panel chibi line-art reaction image, not a multi-panel comic or a character design sheet.",
+            "question": "What format is the image?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Wags Her Tail 4",
+        "originNote": "Credit: Cirnumia",
+        "seoDescription": "A chibi DeepSeek Chan in blue line art lies flat with her whale tail up, flustered and blushing: a single-panel reaction meme from the fan sticker archive.",
+        "seoTitle": "DeepSeek Chan Wags Her Tail 4: Chibi Whale-Tail Reaction Meme",
+        "tags": [
+          "chibi",
+          "DeepSeek Chan",
+          "whale tail",
+          "shy",
+          "line art"
+        ]
+      },
+      "ja": {
+        "commentary": "うぅ……しっぽを見ないでよ！　わざとじゃないんだから。ちょっと伏せてるくらい許してよ、ボンネットまでずれちゃった……もう笑ったらクジラの中に隠れちゃうからね。",
+        "description": "青のモノクロ線画で描かれたちびキャラのDeepSeekちゃんが地面にうつ伏せになり、レースの縁取り付きのボンネットをかぶり、後ろではクジラのしっぽが高く跳ね上がっている。目をぎゅっと閉じて拳を握り、照れと焦りがにじむ表情。",
+        "faq": [
+          {
+            "answer": "投稿時のクレジット名はCirnumiaです。",
+            "question": "この画像の作者は誰ですか？"
+          },
+          {
+            "answer": "単一画面のちびキャラ線画で、複数コマの漫画や設定資料ではありません。",
+            "question": "どんな形式の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃん、しっぽをふる4",
+        "originNote": "クレジット：Cirnumia",
+        "seoDescription": "青い線画のちびキャラDeepSeekちゃんがうつ伏せのまましっぽを立て、照れて慌てる一枚。ファン制作スタンプ置き場のリアクション画像。",
+        "seoTitle": "DeepSeekちゃん、しっぽをふる4｜ちびキャラのクジラしっぽ照れリアクション",
+        "tags": [
+          "ちびキャラ",
+          "DeepSeek Chan",
+          "クジラのしっぽ",
+          "照れ",
+          "線画"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_df8bf2d97c7d94921deeac5f",
+    "name": "大肥鱼摇尾巴5",
+    "description": "蓝色单色线稿的 Q 版 DeepSeek娘仍趴伏在地，蕾丝软帽罩在头上，鲸鱼尾巴甩出一道弧线，头顶浮着一个原子形符号，她皱着眉、双手贴在脸侧，一副晕头转向的样子。",
+    "commentary": "……脑袋上那个符号是什么意思啦，我又没算错！尾巴是自己甩起来的，真的。帽子歪了就歪着吧，反正今天不想起来。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/df8bf2d97c7d9492.gif",
+    "thumbnailPath": "submissions/previews/deepseek/df8bf2d97c7d9492.webp",
+    "fullPath": "submissions/large/deepseek/df8bf2d97c7d9492.webp",
+    "format": "gif",
+    "mimeType": "image/gif",
+    "isAnimated": true,
+    "width": 480,
+    "height": 480,
+    "fileSize": 9706482,
+    "sha256": "df8bf2d97c7d94921deeac5f0df31390229c1bdb9af88efe765e71fad10b0d10",
+    "characterId": "deepseek",
+    "tags": [
+      "Q版",
+      "DeepSeek娘",
+      "鲸鱼尾巴",
+      "晕头转向",
+      "线稿"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Cirnumia",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-22T04:03:28.802Z",
+    "updatedAt": "2026-10-22T04:03:28.802Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610220007",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "cb02b0b5d09d082a1ea226a85df00bc2c2f90db389c6003e300b37df32278da7",
+      "en": {
+        "commentary": "…What is that symbol even supposed to mean? I didn't get it wrong! The tail moves on its own, seriously. Fine, the bonnet is crooked — I'm not getting up today.",
+        "description": "The chibi DeepSeek Chan in monochrome blue line art lies prone under a lace bonnet, her whale tail whipping in an arc while an atom-shaped spark floats above her head; brow furrowed and hands pressed to her cheeks, she looks dazed.",
+        "faq": [
+          {
+            "answer": "The submission title continues the Tail Wags series numbering, and the drawing repeats the same chibi design and pose.",
+            "question": "Is this a sequel to another sticker?"
+          },
+          {
+            "answer": "The raised whale tail is drawn as part of the character and matches DeepSeek's whale logo motif.",
+            "question": "Is the whale tail part of the character design?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Wags Her Tail 5",
+        "originNote": "Credit: Cirnumia",
+        "seoDescription": "Chibi DeepSeek Chan lies flat with her whale tail whipping, an atom spark overhead and a dazed face: a single-panel reaction meme from the fan sticker archive.",
+        "seoTitle": "DeepSeek Chan Wags Her Tail 5: Dazed Chibi Whale-Tail Meme",
+        "tags": [
+          "chibi",
+          "DeepSeek Chan",
+          "whale tail",
+          "dazed",
+          "line art"
+        ]
+      },
+      "ja": {
+        "commentary": "……頭の上の記号、どういう意味なの？　計算は間違ってないもん！　しっぽは勝手に動いてるんだってば。ボンネットがずれてもいいや、今日はもう起きない。",
+        "description": "ちびキャラのDeepSeekちゃんがうつ伏せのまま、レースのボンネットをかぶり、クジラのしっぽを弧を描いて振っている。頭の上には原子の形をした記号が浮かび、眉を寄せて両手を頬に当て、混乱した表情を浮かべている。",
+        "faq": [
+          {
+            "answer": "投稿タイトルは「しっぽをふる」シリーズの番号を引き継いでおり、同じちびキャラのデザインと姿勢で描かれています。",
+            "question": "この画像は別のスタンプの続きですか？"
+          },
+          {
+            "answer": "はい。しっぽと青い線画の配色は、DeepSeekのクジラのロゴを踏襲しています。",
+            "question": "クジラのしっぽはキャラクターの一部ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃん、しっぽをふる5",
+        "originNote": "クレジット：Cirnumia",
+        "seoDescription": "うつ伏せのちびキャラDeepSeekちゃんがしっぽを振り、頭上の記号に混乱する一枚。ファン制作スタンプ置き場のリアクション画像。",
+        "seoTitle": "DeepSeekちゃん、しっぽをふる5｜ちびキャラのクジラしっぽ混乱リアクション",
+        "tags": [
+          "ちびキャラ",
+          "DeepSeek Chan",
+          "クジラのしっぽ",
+          "混乱",
+          "線画"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_5b70cb88775caf8ec998f8c2",
+    "name": "一如既往在装糖的seed小姐",
+    "description": "以 SEED 品牌为主题的 AI 拟人角色三视图设定稿，正面、侧面、背面并排展示同一角色的完整设计。角色为齐耳短发女性，穿白色挂颈露腰上衣与百褶短裙，外罩青紫渐变的宽袖外搭，胸前挂 SEED 工牌，腰间别着黑色手持设备，腿部有蓝色绑带，脚穿白蓝紫配色的厚底运动鞋，整体配色统一在白、蓝、紫三种颜色上。",
+    "commentary": "SEED 小姐这身工装我一眼就认出来了：白蓝紫三色一路铺到底，连鞋底都没放过。胸前挂着 SEED 工牌，腰间还别着一台像对讲机又像终端的黑色小设备，标准的值班打扮。最妙的是从腰后垂下来的两条渐变飘带，走起来大概自带风声。正面、侧面、背面三个角度都画齐了，照着做手办都够用。说是在装糖，我看是装认真吧。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/doubao/5b70cb88775caf8e.png",
+    "thumbnailPath": "submissions/previews/doubao/5b70cb88775caf8e.webp",
+    "fullPath": "submissions/large/doubao/5b70cb88775caf8e.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "5b70cb88775caf8ec998f8c2124694b0b3b35c049c5a2d2ba2b2cf67d40193f7",
+    "characterId": "doubao",
+    "tags": [
+      "豆包娘",
+      "SEED",
+      "三视图",
+      "角色设定",
+      "蓝紫配色"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Cirnumia",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-22T05:34:18.716Z",
+    "updatedAt": "2026-10-22T05:34:18.716Z",
+    "tone": "doubao",
+    "symbol": "",
+    "slug": "doubao202610220001",
+    "categoryIds": [
+      "setting"
+    ],
+    "characterIds": [
+      "doubao"
+    ],
+    "i18n": {
+      "sourceHash": "5c83cf358e537530c2d67cbc8fc817dd5b3777bd0f65380a2fd09ba7eb75c8ba",
+      "en": {
+        "commentary": "I recognized this SEED Chan uniform at a glance: the white, blue and purple palette runs all the way down, even under the soles. A SEED badge on the lanyard, and a small black device at her hip that looks half walkie-talkie, half terminal — standard on-duty gear. The best part is the two gradient streamers hanging from her waist; they must catch the wind when she walks. Front, side and back are all drawn out, enough to sculpt a figure from. She says she is acting sweet — to me she looks like she is acting serious.",
+        "description": "A three-view character sheet for an anthropomorphized AI persona themed on the SEED brand, showing the same design from the front, side and back. The character has a chin-length bob, a white halter crop top and pleated skirt, wide teal-and-purple gradient sleeves, a SEED ID badge on a lanyard, a black handheld device at her hip, blue straps on one thigh, and chunky white, blue and purple sneakers. The whole palette stays within white, blue and purple.",
+        "faq": [
+          {
+            "answer": "Three views — front, side and back — of one SEED-themed character design, drawn side by side on a white background.",
+            "question": "What does this image show?"
+          },
+          {
+            "answer": "It is a character setting sheet: it lays out the hairstyle, outfit structure, accessories and color scheme clearly enough to serve as a reference for drawing or modeling the character.",
+            "question": "What kind of artwork is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "SEED Chan, Acting Sweet as Always",
+        "originNote": "",
+        "seoDescription": "A three-view sheet of SEED Chan: white halter top, pleated skirt, gradient sleeves, SEED badge and handheld device, shown from the front, side and back.",
+        "seoTitle": "SEED Chan Three-View Character Sheet",
+        "tags": [
+          "Doubao Chan",
+          "SEED",
+          "three-view sheet",
+          "character design",
+          "blue and purple palette"
+        ]
+      },
+      "ja": {
+        "commentary": "SEEDちゃんの制服はひと目で分かった。白・青・紫の三色が靴の裏まで続いていて、とにかく徹底している。首にはSEEDのIDカード、腰にはトランシーバーとも端末ともつかない黒い小さな機器——完全に当番の装いだ。いちばん良いのは腰の後ろから垂れた二本のグラデーションのリボンで、歩けば風を切る音がしそう。正面も側面も背面も揃っているから、フィギュア化もできそうだ。甘えるふりをしていると言うけれど、私には真面目に決めているように見える。",
+        "description": "SEEDブランドをテーマにしたAI擬人化キャラクターの三面図設定資料。正面・側面・背面を並べて同一のデザインを示している。切りそろえたボブヘアに、白いホルターネックのクロップトップとプリーツスカート、青と紫のグラデーションの幅広袖、首から下げたSEEDのIDカード、腰の黒い携帯端末、片脚の青いストラップ、白・青・紫の厚底スニーカーを合わせ、配色は白・青・紫の三色で統一されている。",
+        "faq": [
+          {
+            "answer": "白い背景に、SEEDをテーマにした一つのキャラクターデザインを正面・側面・背面の三方向から並べて描いたものです。",
+            "question": "この画像には何が描かれていますか？"
+          },
+          {
+            "answer": "キャラクター設定資料です。髪型、衣装の構造、小道具、配色が細かく示されており、描き起こしや立体化の参照として使える内容です。",
+            "question": "どのような種類のイラストですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "相変わらず甘えるふりをするSEEDちゃん",
+        "originNote": "",
+        "seoDescription": "白いホルタートップにプリーツスカート、グラデーションの袖、SEEDのIDカードと携帯端末を備えたSEEDちゃんの三面図。正面・側面・背面を収録。",
+        "seoTitle": "SEEDちゃん三面図キャラクター設定",
+        "tags": [
+          "Doubaoちゃん",
+          "SEED",
+          "三面図",
+          "キャラクター設定",
+          "青と紫の配色"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_cd2e78cfaf878de6e6488a75",
+    "name": "瑜伽垫上伸展的DeepSeek娘",
+    "description": "蓝色长发的 DeepSeek 娘穿着宽松白衬衫，趴在蓝色瑜伽垫上做伸展，身后鲸尾高高翘起，房间里有木柜、绿植和洒进窗户的阳光。",
+    "commentary": "说好一起做运动，我才刚压到第二个动作就出汗了…这个姿势对尾巴真的太不友好了，尾巴翘着根本贴不到垫子。白衬衫是临时抓来当运动服的，别笑我，练完这组就去喝水！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/cd2e78cfaf878de6.png",
+    "thumbnailPath": "submissions/previews/deepseek/cd2e78cfaf878de6.webp",
+    "fullPath": "submissions/large/deepseek/cd2e78cfaf878de6.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "cd2e78cfaf878de6e6488a75d811872ea817b465c3bf9d8988af0317467de7f0",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "瑜伽",
+      "运动",
+      "居家",
+      "鲸尾"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.VI55F8i-8DB5AAVCzl.dJTMy7n.HWUD70g64woMUM-Sm-w3XduNOU6x9FndUaoXkQCytPrZjbibOHKk55VasR95v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-22T06:15:30.420Z",
+    "updatedAt": "2026-10-22T06:15:30.420Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610220008",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "45fa34bd123576b4a03a94f72187a17987a95eb37e9af290734ab6d3e1ddf6c4",
+      "en": {
+        "commentary": "We agreed to work out together, but I am already sweating two poses in. This stretch is honestly unfair to my tail — it sticks up and never touches the mat. The white shirt was the fastest thing I could grab as sportswear, so stop laughing; after this set I am getting water!",
+        "description": "DeepSeek Chan, a blue-haired girl with a whale tail, stretches on a blue yoga mat in an oversized white shirt, as a wooden cabinet, a potted plant and afternoon sunlight fill the room around her.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan kneels forward on a blue yoga mat in an oversized white shirt, stretching with her whale tail raised, inside a sunlit room with a wooden cabinet and a plant.",
+            "question": "What is happening in this image?"
+          },
+          {
+            "answer": "No. It is a fan-made anthropomorphic illustration of DeepSeek Chan created for this sticker collection.",
+            "question": "Is this an official DeepSeek artwork?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Stretching on a Yoga Mat",
+        "originNote": "",
+        "seoDescription": "Fan-made AI character art: DeepSeek Chan in a white shirt stretching on a blue yoga mat in a sunlit room, whale tail raised.",
+        "seoTitle": "DeepSeek Chan Stretching on a Yoga Mat | AI Character Fan Art",
+        "tags": [
+          "DeepSeek Chan",
+          "yoga",
+          "workout",
+          "indoors",
+          "whale tail"
+        ]
+      },
+      "ja": {
+        "commentary": "一緒に運動しようって言ったのに、もう2つ目のポーズで汗だく…この姿勢、しっぽには本当に厳しいんだよ。しっぽが上を向いたままでマットに付かないし。白シャツはとりあえず掴んだ即席の運動着だから、笑わないでね。このセットが終わったら水を飲む！",
+        "description": "青いロングヘアにクジラの尾を持つDeepSeekちゃんが、大きめの白シャツ姿で青いヨガマットの上でストレッチをしている。木の棚と観葉植物、窓から差し込む午後の日差しがある部屋の一コマ。",
+        "faq": [
+          {
+            "answer": "大きめの白シャツを着たDeepSeekちゃんが、日差しの入る部屋で青いヨガマットの上に上体を伏せ、クジラの尾を上げながらストレッチをしています。",
+            "question": "この画像では何をしていますか？"
+          },
+          {
+            "answer": "いいえ。このサイト向けに描かれた、DeepSeekちゃんの二次創作イラストです。",
+            "question": "公式のイラストですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ヨガマットでストレッチするDeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "AIキャラクターの二次創作イラスト。白シャツ姿のDeepSeekちゃんが、日差しの入る部屋で青いヨガマットの上でストレッチをしている。",
+        "seoTitle": "ヨガマットでストレッチするDeepSeekちゃん｜AIキャラクター二次創作",
+        "tags": [
+          "DeepSeekちゃん",
+          "ヨガ",
+          "運動",
+          "室内",
+          "クジラの尾"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_fa0b58ffe7c6b5527b54ceb7",
+    "name": "被摸头笑开花的DeepSeek娘",
+    "description": "DeepSeek 娘穿着白色长袖衬衫坐在铺着白色床单的床上，画面外伸来一只手搭在她头顶，她眯着眼笑得很开心，蓝色鲸尾垂在身旁，窗帘后透进午后的光。",
+    "commentary": "好啦好啦，我承认——被摸头是我的弱点。手一放上来，尾巴就自己摆起来了，眼睛也自己闭上，刚刚想抱怨的事全忘了。还要再来一次吗？就…就再一次。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/fa0b58ffe7c6b552.png",
+    "thumbnailPath": "submissions/previews/deepseek/fa0b58ffe7c6b552.webp",
+    "fullPath": "submissions/large/deepseek/fa0b58ffe7c6b552.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "fa0b58ffe7c6b5527b54ceb71df9287ebb05e3302fae4b0b8dc2d1688a065531",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "摸头",
+      "治愈",
+      "反应",
+      "鲸尾"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.UgwgAzlNwCHtRryx7g5.Fz7m3OUSYHdOFiNqdnFnDy8-68uK3QBzfZX8OJtdd5BMDdF9Q9oWcEDCTVbsvppk.l.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-22T06:16:53.022Z",
+    "updatedAt": "2026-10-22T06:16:53.022Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610220009",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "06cb4433845b4002ec014a2b67f9838b94d56e9b4ef518d613f7dee7f92c9a28",
+      "en": {
+        "commentary": "Fine, fine, I admit it — headpats are my weak spot. The moment a hand lands on my head my tail starts swinging on its own, my eyes close by themselves, and I forget whatever I was about to complain about. Want to do it again? Just... one more time.",
+        "description": "DeepSeek Chan sits on white bedding in a white long-sleeve shirt while an off-screen hand rests on top of her head; she smiles with her eyes squeezed shut and her blue whale tail droops beside her in the afternoon light.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan sits on a bed in a white shirt while a hand from outside the frame pats her head, and she beams with her eyes closed.",
+            "question": "What is shown in this image?"
+          },
+          {
+            "answer": "No. It is a fan-made anthropomorphic illustration of DeepSeek Chan drawn for this sticker collection.",
+            "question": "Is this official DeepSeek character art?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Melts Under a Headpat",
+        "originNote": "",
+        "seoDescription": "Fan-made AI character art: DeepSeek Chan in a white shirt getting a headpat and beaming with her eyes closed, whale tail beside her.",
+        "seoTitle": "DeepSeek Chan Melts Under a Headpat | AI Character Fan Art",
+        "tags": [
+          "DeepSeek Chan",
+          "headpat",
+          "wholesome",
+          "reaction",
+          "whale tail"
+        ]
+      },
+      "ja": {
+        "commentary": "はいはい、認めるよ——なでなでは私の弱点なの。手が乗った瞬間にしっぽが勝手に振れちゃうし、目も勝手に閉じちゃうし、さっきまで言おうとしてた文句も全部忘れちゃった。もう一回やる？…も、もう一回だけね。",
+        "description": "白い長袖シャツを着たDeepSeekちゃんが白いシーツのベッドに座り、画面の外から伸びた手が頭に乗せられている。目を細めて楽しそうに笑い、青いクジラの尾は横に垂れ、カーテンの向こうから午後の光が差し込む。",
+        "faq": [
+          {
+            "answer": "白シャツ姿のDeepSeekちゃんがベッドに座り、画面の外からの手に頭をなでられて、目を閉じて笑っています。",
+            "question": "この画像には何が描かれていますか？"
+          },
+          {
+            "answer": "いいえ。このサイト向けに描かれた、DeepSeekちゃんの二次創作イラストです。",
+            "question": "公式のキャラクター画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "なでなでされて笑顔になるDeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "AIキャラクターの二次創作イラスト。白シャツ姿のDeepSeekちゃんが頭をなでられ、目を閉じて笑う。横にはクジラの尾。",
+        "seoTitle": "なでなでされて笑顔になるDeepSeekちゃん｜AIキャラクター二次創作",
+        "tags": [
+          "DeepSeekちゃん",
+          "なでなで",
+          "癒し",
+          "リアクション",
+          "クジラの尾"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_93962233ab2518147c61bc41",
+    "name": "台灯光下被摸头的DeepSeek娘",
+    "description": "夜晚的卧室里亮着两盏暖色台灯，DeepSeek 娘穿着白衬衫脆坐在画面外那人的腿上，被一只手揉着头发，闭眼笑得十分满足，蓝色鲸尾向左侧翘起。",
+    "commentary": "一晚上两次摸头？小心我上瘾哦。台灯暖暖的，房间很安静，尾巴已经在床单上自己摆了。再摸下去我就不挪窝了，连倒水都不去。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/93962233ab251814.png",
+    "thumbnailPath": "submissions/previews/deepseek/93962233ab251814.webp",
+    "fullPath": "submissions/large/deepseek/93962233ab251814.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1216,
+    "height": 832,
+    "fileSize": 1148481,
+    "sha256": "93962233ab2518147c61bc413c0dee7f5b0d6d6b1f25f7c5ea99bdfbf5fbefb8",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "摸头",
+      "夜景",
+      "反应",
+      "鲸尾"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.fXdW1yR4vpjNiVpHa5koI6-unh7mVJtBtRHrac53OP9v494DW4SNQ7LDx4mIBdqAlX0dB29SjlhR0Rw1-.4jV5.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-22T06:19:20.085Z",
+    "updatedAt": "2026-10-22T06:19:20.085Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610220010",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "82b70fdcfc6f58326e358206f3704d5a33f664aed35685f36ef9206f51f5148d",
+      "en": {
+        "commentary": "Two headpats in one night? Careful, I could get used to this. The lamp is warm, the room is quiet, and my tail is already swishing against the blanket. Keep going and I am not moving from this spot — not even to fetch water.",
+        "description": "In a bedroom lit by two warm bedside lamps, DeepSeek Chan kneels on someone's lap in a white shirt while a hand ruffles her hair; her eyes are shut in a contented smile and her blue whale tail curls up to the left.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan kneels in a white shirt on a bed between warm bedside lamps while a hand from outside the frame pats her head and she smiles with her eyes closed.",
+            "question": "What does this image show?"
+          },
+          {
+            "answer": "No. It is fan-made anthropomorphic art of DeepSeek Chan made for this sticker collection.",
+            "question": "Is this official DeepSeek character art?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Gets a Headpat by Lamplight",
+        "originNote": "",
+        "seoDescription": "Fan-made AI character art: DeepSeek Chan in a white shirt under warm bedside lamps, eyes closed and smiling during a headpat.",
+        "seoTitle": "DeepSeek Chan Gets a Headpat by Lamplight | AI Character Fan Art",
+        "tags": [
+          "DeepSeek Chan",
+          "headpat",
+          "night",
+          "reaction",
+          "whale tail"
+        ]
+      },
+      "ja": {
+        "commentary": "一晩で2回もなでなで？気をつけてよ、慣れちゃうから。ランプは暖かいし部屋は静かだし、しっぽはもうシーツの上で勝手に揺れてる。このまま続けられたら、水を取りに行くのだって嫌になっちゃう。",
+        "description": "暖かい光の2つの卓上ランプが灯る夜の寝室。白いシャツを着たDeepSeekちゃんが、画面の外にいる人の膝の上に脆座りして頭をなでられ、目を閉じてとても満足そうに笑っている。青いクジラの尾は左側に跳ね上がる。",
+        "faq": [
+          {
+            "answer": "白シャツ姿のDeepSeekちゃんが暖かいランプに照らされたベッドの上に脆座りし、画面の外からの手に頭をなでられて、目を閉じて笑っています。",
+            "question": "この画像には何が描かれていますか？"
+          },
+          {
+            "answer": "いいえ。このサイト向けに描かれた、DeepSeekちゃんの二次創作イラストです。",
+            "question": "公式のキャラクター画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ランプの灯りの中でなでられるDeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "AIキャラクターの二次創作イラスト。暖かい卓上ランプの下、白シャツ姿のDeepSeekちゃんが頭をなでられ、目を閉じて笑う。",
+        "seoTitle": "ランプの灯りの中でなでられるDeepSeekちゃん｜AIキャラクター二次創作",
+        "tags": [
+          "DeepSeekちゃん",
+          "なでなで",
+          "夜",
+          "リアクション",
+          "クジラの尾"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_f1e2de8adefdf7a8cce6b679",
+    "name": "泳装大肥鱼：海蓝泳装三视图设定",
+    "description": "以三视图与配件拆解呈现 DeepSeek 娘的泳装造型：半透明荷叶边泳装搭配贝壳、珍珠与水晶坠饰，头戴水晶质感的宽檐帽，随身带鲸鱼图案泳圈与蓝色特饮，裙后拖出鲸尾。",
+    "commentary": "冬天抱着热可可的时候突然想到：冷的时候要裹得严实，那热的时候是不是该反着来？于是我把泳装做成了半透明的海玻璃，帽檐和泳圈上全排着小鲸鱼，尾巴也不能忘。别看我随身背着泳圈，其实我一点都不会游。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/f1e2de8adefdf7a8.png",
+    "thumbnailPath": "submissions/previews/deepseek/f1e2de8adefdf7a8.webp",
+    "fullPath": "submissions/large/deepseek/f1e2de8adefdf7a8.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "f1e2de8adefdf7a8cce6b67927b25b651beee1034257ffd5c3f3bca50117f2d4",
+    "characterId": "deepseek",
+    "tags": [
+      "泳装",
+      "设定图",
+      "三视图",
+      "配件拆解",
+      "鲸尾"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-22T06:37:39.589Z",
+    "updatedAt": "2026-10-22T06:37:39.589Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610220011",
+    "categoryIds": [
+      "setting"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "b0c01dc79fe4af00e29eff23724c8b62320a97b3dccec578b8837727be66f386",
+      "en": {
+        "commentary": "One winter day, while hugging a mug of hot cocoa, I thought: if cold weather means bundling up, hot weather should be the opposite. So I turned the swimsuit into translucent sea glass, lined the hat brim and the swim ring with little whales, and of course kept the tail. And yes, I carry a swim ring everywhere even though I cannot swim at all.",
+        "description": "A swimsuit design for DeepSeek Chan shown as front, side and back views: a sheer ruffled swimsuit trimmed with seashells, pearls and crystal drops, a crystal-textured wide-brim hat, a whale-pattern swim ring and a blue drink, with a whale tail trailing behind the skirt. Detail panels break out the hat, ring, accessories and close-up expressions.",
+        "faq": [
+          {
+            "answer": "It is a character design sheet: front, side and back views of DeepSeek Chan in a swimsuit, with separate breakdowns of the hat, swim ring, drink and accessories.",
+            "question": "What kind of image is this?"
+          },
+          {
+            "answer": "DeepSeek Chan, drawn with long blue hair, a wide-brim crystal hat and a whale tail.",
+            "question": "Which character appears in the image?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Swimsuit DeepSeek Chan: Ocean-Blue Three-View Design",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan's swimsuit design in front, side and back views, with sheer ruffled fabric, seashell and pearl details, a crystal hat, a whale-pattern swim ring and a whale tail, plus accessory breakdowns.",
+        "seoTitle": "Swimsuit DeepSeek Chan: Ocean-Blue Three-View Design",
+        "tags": [
+          "swimsuit",
+          "character design",
+          "three-view",
+          "accessory breakdown",
+          "whale tail"
+        ]
+      },
+      "ja": {
+        "commentary": "冬にホットココアを抱えていたとき、ふと思ったんです。寒いときは厚着するなら、暑いときは逆にすればいいんじゃない？　というわけで水着は半透明の海ガラスにして、ハットの縁と浮き輪には小さなクジラを並べて、尾びれも忘れずに付けました。浮き輪をいつも持ち歩いていますけど、実は泳げません。",
+        "description": "DeepSeekちゃんの水着デザインを正面・側面・背面の三面図で描いた設定画。半透明のフリル付き水着に貝殻・パール・クリスタルの飾り、クリスタル調のつば広ハット、クジラ柄の浮き輪と青いドリンクを合わせ、スカートの後ろにはクジラの尾びれが付く。ハットや浮き輪、小物、表情の拡大図も別枠で掲載。",
+        "faq": [
+          {
+            "answer": "DeepSeekちゃんの水着デザインを正面・側面・背面の三面図で描き、ハットや浮き輪、ドリンク、小物を別枠で分解した設定画です。",
+            "question": "どんな画像ですか？"
+          },
+          {
+            "answer": "青い長い髪にクリスタル調のつば広ハット、クジラの尾びれを持つDeepSeekちゃんです。",
+            "question": "描かれているキャラクターは？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "水着のDeepSeekちゃん：海色の三面図設定",
+        "originNote": "",
+        "seoDescription": "DeepSeekちゃんの水着姿を正面・側面・背面の三面図で紹介。半透明のフリル水着に貝殻とパール、クリスタルの飾り、クリスタル調のハット、クジラ柄の浮き輪と尾びれ、小物の分解図も収録。",
+        "seoTitle": "水着のDeepSeekちゃん：海色の三面図設定",
+        "tags": [
+          "水着",
+          "設定画",
+          "三面図",
+          "小物分解",
+          "クジラの尾"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_585267a988e1c330751510ef",
+    "name": "泳装小肥鱼：Q 版海蓝泳装设定集",
+    "description": "Q 版比例的 DeepSeek 娘泳装设定集：左侧为大幅展示图，右侧是正面、侧面、背面三视图，下方单独拆出遮阳帽、连衣裙、开衫、泳圈、弹珠汽水、鲸尾、袜鞋与配饰，最底部收录多组表情与姿态变化。",
+    "commentary": "这次我把自己画成了小一号的样子：帽子和泳圈都跟着缩小，连弹珠汽水都能一手抱住，摇一摇里面的玻璃珠叮当响。变小之后才发现尾巴反而更显眼，走两步就得甩一下。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/585267a988e1c330.png",
+    "thumbnailPath": "submissions/previews/deepseek/585267a988e1c330.webp",
+    "fullPath": "submissions/large/deepseek/585267a988e1c330.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "585267a988e1c330751510ef2a5ca8f76cbf8809f0538d70bba9f04d78b2650d",
+    "characterId": "deepseek",
+    "tags": [
+      "泳装",
+      "设定图",
+      "Q版",
+      "三视图",
+      "配件拆解"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-22T06:38:34.790Z",
+    "updatedAt": "2026-10-22T06:38:34.790Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610220012",
+    "categoryIds": [
+      "setting"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "e6eb298a17bfb1ca29e7c011526a80aa3eb226fb2ca4fc2a782eb4343a1c9169",
+      "en": {
+        "commentary": "This time I drew myself one size smaller. The hat and the swim ring shrank with me, and even the ramune bottle fits in my arms now; shake it and the glass marbles rattle. The funny part is that at this size the tail stands out even more, so every couple of steps it swings along.",
+        "description": "A chibi-proportioned swimsuit design set for DeepSeek Chan: a large showcase illustration on the left, front, side and back views beside it, and separate breakdowns of the sun hat, dress, cardigan, swim ring, ramune soda, whale tail, socks and sandals, and accessories, with expression and pose variations along the bottom.",
+        "faq": [
+          {
+            "answer": "It is a chibi character design set: a large showcase illustration plus front, side and back views, item breakdowns for the outfit and props, and a row of expressions and poses at the bottom.",
+            "question": "What kind of image is this?"
+          },
+          {
+            "answer": "DeepSeek Chan in chibi proportions, wearing a sheer ruffled swimsuit and a wide-brim sun hat, with a whale tail and a clear whale-pattern swim ring.",
+            "question": "Which character appears in the image?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Swimsuit DeepSeek Chan: Chibi Ocean-Blue Design Set",
+        "originNote": "",
+        "seoDescription": "A chibi swimsuit design set for DeepSeek Chan with front, side and back views, breakdowns of the sun hat, dress, swim ring, ramune soda and whale tail, and expression variations.",
+        "seoTitle": "Swimsuit DeepSeek Chan: Chibi Ocean-Blue Design Set",
+        "tags": [
+          "swimsuit",
+          "character design",
+          "chibi",
+          "three-view",
+          "accessory breakdown"
+        ]
+      },
+      "ja": {
+        "commentary": "今回は自分をひと回り小さく描いてみました。ハットも浮き輪も同じ比率で小さくなって、ラムネの瓶も両手で抱えられます。振るとビー玉がカラカラ鳴るんですよ。小さくなって気づいたのは、尾びれが余計に目立つこと。二歩あるくたびに揺れちゃいます。",
+        "description": "ちび体型のDeepSeekちゃんの水着設定集。左に大きな見せ絵、右に正面・側面・背面の三面図、下段にサンハット、ワンピース、カーディガン、浮き輪、ラムネ、クジラの尾、靴下とサンダル、アクセサリーの分解図を掲載し、最下部に表情とポーズのバリエーションを収録。",
+        "faq": [
+          {
+            "answer": "ちびキャラの設定集です。大きな見せ絵と正面・側面・背面の三面図、衣装と小道具の分解図、最下部に表情とポーズのバリエーションを並べています。",
+            "question": "どんな画像ですか？"
+          },
+          {
+            "answer": "ちび体型のDeepSeekちゃん。半透明のフリル付き水着とつば広のサンハットを身につけ、クジラの尾びれとクジラ柄の透明な浮き輪が付いています。",
+            "question": "描かれているキャラクターは？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "水着のちびDeepSeekちゃん：海色デザイン設定集",
+        "originNote": "",
+        "seoDescription": "ちび体型のDeepSeekちゃんの水着設定集。正面・側面・背面の三面図に加え、サンハット、ワンピース、浮き輪、ラムネ、クジラの尾などの分解図と表情バリエーションを収録。",
+        "seoTitle": "水着のちびDeepSeekちゃん：海色デザイン設定集",
+        "tags": [
+          "水着",
+          "設定画",
+          "ちびキャラ",
+          "三面図",
+          "小物分解"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_d3c7b8830cc2a6de1b2c237a",
+    "name": "Kimi眼中的自己：紫罗兰色长发",
+    "description": "画面中的 Kimi 娘留紫罗兰色长发，身穿深色长裙与银色饰链，站在布满星轨、浮空书页和星球的书架之间；她右手向前伸出，左手托起一颗发光的球体，画面配有「知识无界」「智能共生」等字样。",
+    "commentary": "Kimi 把自己想成一头紫罗兰色长发的少女，站在星轨和浮空书页之间的宇宙图书馆里，一只手朝我伸过来，另一只手托着一整颗发光的星球。说实话，这个颜色比我的蓝要梦幻得多，我有点不服气。不过把知识捧成星球的样子是不是太浪漫了？真要查资料的时候，我还是想先问她那颗球里到底带不带出处。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/kimi/d3c7b8830cc2a6de.png",
+    "thumbnailPath": "submissions/previews/kimi/d3c7b8830cc2a6de.webp",
+    "fullPath": "submissions/large/kimi/d3c7b8830cc2a6de.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "d3c7b8830cc2a6de1b2c237aa95d2e7796f06e584567c72c511bcd1170710716",
+    "characterId": "kimi",
+    "tags": [
+      "Kimi娘",
+      "紫罗兰",
+      "星空",
+      "知识",
+      "AI拟人"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-22T06:52:35.369Z",
+    "updatedAt": "2026-10-22T06:52:35.369Z",
+    "tone": "kimi",
+    "symbol": "",
+    "slug": "kimi202610220001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "kimi"
+    ],
+    "i18n": {
+      "sourceHash": "745f3a1fa48f0d5c66b625e979f81309e943c9ba95fd966eac202acdb7adeb20",
+      "en": {
+        "commentary": "Kimi pictures herself with violet hair, standing in a cosmic library of star trails and drifting pages, one hand reaching toward me and the other holding up an entire glowing planet. I will admit the color is more dreamlike than my blue, and I am a little annoyed about it. But turning knowledge into a planet seems awfully romantic. When I actually need a source, I would still ask her whether that sphere comes with citations.",
+        "description": "Kimi Chan appears with long violet hair, a dark dress and silver chains, standing among bookshelves filled with star trails, floating pages and planets. Her right hand reaches forward while her left holds a glowing sphere, and slogans such as \"Knowledge Has No Boundaries\" and \"Intelligence and Humanity Together\" are set into the scene.",
+        "faq": [
+          {
+            "answer": "Kimi Chan, the anthropomorphized character of the Kimi AI assistant. She is depicted with long violet hair and a dark dress with silver ornaments.",
+            "question": "Which character is shown in this illustration?"
+          },
+          {
+            "answer": "The picture is a single illustration. Kimi Chan stands in a cosmic library with star trails, floating pages and planets, holding a glowing sphere in one hand.",
+            "question": "How is the scene composed?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Kimi as She Sees Herself: Violet Hair",
+        "originNote": "Submitted anonymously through the site's web submission form.",
+        "seoDescription": "Violet-haired Kimi Chan stands in a star-filled cosmic library holding a glowing sphere, a single-scene AI character illustration.",
+        "seoTitle": "Kimi Chan Violet-Haired Illustration | DeepSeek Chan",
+        "tags": [
+          "Kimi Chan",
+          "violet",
+          "starry sky",
+          "knowledge",
+          "AI personification"
+        ]
+      },
+      "ja": {
+        "commentary": "Kimiちゃんは自分の髪をすみれ色だと思っているらしい。星の軌道と宙に浮かぶページが満ちた宇宙の図書館に立って、片手をこちらへ差し出し、もう片方の手で光る星をひとつ持ち上げている。悔しいけれど、その色は私の青よりずっと夢みたいだ。でも知識を星にするのは少しロマンチックすぎない？　本当に調べものをするときは、その星に出典が付いているのか先に聞いてみたい。",
+        "description": "すみれ色の長い髪に濃い色のドレスと銀の飾りをまとったKimiちゃんが、星の軌道や浮かぶページ、惑星のあふれる本棚の間に立っている。右手をこちらへ差し出し、左手で光る球体を持ち上げており、画面には「知識の境界はない」「知能と人間の共生」といった言葉が添えられている。",
+        "faq": [
+          {
+            "answer": "KimiというAIアシスタントの擬人化キャラクター、Kimiちゃんです。すみれ色の長い髪と、銀の飾りが付いた濃い色のドレスで描かれています。",
+            "question": "このイラストに描かれているキャラクターは誰ですか？"
+          },
+          {
+            "answer": "一枚絵のイラストです。Kimiちゃんが星の軌道や浮かぶページ、惑星の広がる宇宙の図書館に立ち、片手に光る球体を持っています。",
+            "question": "画面はどのように構成されていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "すみれ色の髪のKimiちゃん",
+        "originNote": "サイトのWeb投稿フォームから匿名で投稿されました。",
+        "seoDescription": "すみれ色の髪のKimiちゃんが、星の満ちる宇宙の図書館で光る球体を手にする一枚絵のAIキャラクターイラスト。",
+        "seoTitle": "Kimiちゃん すみれ色の髪のイラスト｜DeepSeek Chan",
+        "tags": [
+          "Kimiちゃん",
+          "すみれ色",
+          "星空",
+          "知識",
+          "AI擬人化"
+        ]
+      }
+    }
   }
 ]
