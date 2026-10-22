@@ -1,0 +1,10 @@
+[Unit]
+Description=Check Bilibili creators and Feishu delivery every minute
+
+[Timer]
+OnBootSec=90s
+OnUnitInactiveSec=60s
+Unit=dafeiyu-video-cycle.service
+
+[Install]
+WantedBy=timers.target

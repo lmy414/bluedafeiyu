@@ -2,7 +2,7 @@ export const videoCopy = {
   creatorTitle: ['视频创作者登记', 'Register as a video creator', '動画クリエイター登録'],
   creatorLead: ['当前仅开放 Bilibili。登记你自己的主页和一句话创作说明，下一次更新时同步公开视频。后台 AI 逐条审核，只收录 AI 娘二创视频。', 'Bilibili is currently the only supported platform. Register your own profile and a short introduction. Public videos are discovered during the next update and reviewed individually by AI. Only fan videos featuring personified AI characters enter the archive.', '現在は Bilibili のみ対応しています。ご自身のプロフィールと創作内容の紹介を登録すると、次回の更新時に公開動画を確認します。AI が動画ごとに審査し、AI娘の二次創作動画のみを収録します。'],
   creatorPlayback: ['本站展示封面、简介和作者信息，点击前往 Bilibili 播放。登记不代表主页全部内容都会收录，证据不足的视频会留待复核。', 'The archive shows thumbnails, descriptions and creator credits. Videos play on Bilibili. Registration does not guarantee inclusion; videos without sufficient evidence remain under review.', '本サイトにはサムネイル、概要、作者情報を掲載し、再生は Bilibili で行います。登録した全動画が収録されるわけではありません。判断材料が足りない動画は確認待ちになります。'],
-  creatorHomepage: ['你的 Bilibili 主页链接', 'Your Bilibili profile URL', 'ご自身の Bilibili プロフィール URL'],
+  creatorHomepage: ['Bilibili UID 或主页链接', 'Your Bilibili UID or profile URL', 'Bilibili UID またはプロフィール URL'],
   creatorIntro: ['一句话创作说明', 'A short introduction to your work', '創作内容の短い紹介'],
   creatorIntroHint: ['用 200 字以内介绍你创作的内容，例如角色动画、同人手书或 AI 娘二创短片。', 'Describe what you create in up to 200 characters, such as character animation, fan-made animatics or AI girl fan videos.', 'キャラクターアニメ、手描き動画、AI娘の二次創作短編など、創作内容を200文字以内で紹介してください。'],
   creatorConfirm: ['我确认这是我自己的主页，同意本站同步公开作品信息、保留作者署名并链接到原视频。', 'I confirm this is my own profile and agree to the archive indexing public video information with creator credits and links to the original videos.', '自分のプロフィールであることを確認し、作者名と元動画へのリンクを付けて公開作品の情報を収録することに同意します。'],

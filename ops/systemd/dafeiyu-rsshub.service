@@ -1,0 +1,22 @@
+[Unit]
+Description=RSSHub Bilibili recent-video source (loopback only)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=dafeiyu-admin
+Group=dafeiyu-admin
+WorkingDirectory=/srv/apps/dafeiyu-admin/src/ops/rsshub
+EnvironmentFile=/etc/dafeiyu/rsshub.env
+ExecStart=/usr/bin/node server.mjs
+Restart=on-failure
+RestartSec=10
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/srv/apps/dafeiyu-admin/run
+MemoryMax=900M
+
+[Install]
+WantedBy=multi-user.target

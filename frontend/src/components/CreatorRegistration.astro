@@ -7,9 +7,9 @@ const sitekey = (import.meta.env.PUBLIC_TURNSTILE_SITEKEY || '').trim();
     <p class="lede" data-i18n="d.creatorLead">当前仅开放 Bilibili。登记你自己的主页和一句话创作说明，下一次更新时同步公开视频。后台 AI 逐条审核，只收录 AI 娘二创视频。</p>
     <p class="note" data-i18n="d.creatorPlayback">本站展示封面、简介和作者信息，点击前往 Bilibili 播放。登记不代表主页全部内容都会收录，证据不足的视频会留待复核。</p>
     <form id="creator-registration-form" class="form" data-turnstile-sitekey={sitekey || undefined}>
-      <div class="form-row"><label for="creator-homepage" data-i18n="d.creatorHomepage">你的 Bilibili 主页链接</label><input id="creator-homepage" name="homepage" type="url" maxlength="300" placeholder="https://space.bilibili.com/123456" autocomplete="url" required /></div>
+      <div class="form-row"><label for="creator-homepage" data-i18n="d.creatorHomepage">Bilibili UID 或主页链接</label><input id="creator-homepage" name="homepage" type="text" maxlength="300" placeholder="https://space.bilibili.com/123456" autocomplete="url" required /></div>
       <div class="form-row"><label for="creator-intro" data-i18n="d.creatorIntro">一句话创作说明</label><textarea id="creator-intro" name="intro" maxlength="200" rows="3" required aria-describedby="creator-intro-hint"></textarea><span id="creator-intro-hint" class="hint" data-i18n="d.creatorIntroHint">用 200 字以内介绍你创作的内容，例如角色动画、同人手书或 AI 娘二创短片。</span></div>
-      <label class="checkbox-row"><input type="checkbox" name="confirm" required /><span data-i18n="d.creatorConfirm">我确认这是我自己的主页，同意本站同步公开作品信息、保留作者署名并链接到原视频。</span></label>
+      <p class="note"><span data-i18n="d.creatorConfirm">我确认这是我自己的主页，同意本站同步公开作品信息、保留作者署名并链接到原视频。</span></p>
       <div id="creator-turnstile-slot"></div>
       <div class="form-actions"><button class="btn primary" type="submit" data-i18n="d.creatorSubmit">登记并加入同步队列</button><p id="creator-registration-status" class="form-status" role="status" aria-live="polite" hidden></p></div>
     </form>

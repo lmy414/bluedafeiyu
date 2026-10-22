@@ -4,7 +4,7 @@ import { createServer } from 'node:http';
 import { createPublicHandler } from './http.mjs';
 import { forwardCreatorRegistration } from './creator-registration.mjs';
 const input = { homepage: 'https://space.bilibili.com/4168597', intro: 'AI 娘同人手书', confirm: true };
-test('作者登记严格校验平台和本人确认，使用固定回环接口且不公开后台记录', async () => {
+test('作者登记严格校验平台，支持 UID，使用固定回环接口且不公开后台记录', async () => {
   let calls = 0;
   const client = async (url, options) => {
     calls++; assert.equal(url, 'http://127.0.0.1:3100/cms-api/video-registrations');
@@ -12,8 +12,8 @@ test('作者登记严格校验平台和本人确认，使用固定回环接口�
     return Response.json({ ok: true, id: 'private-db-id', previousIntro: 'private' }, { status: 202 });
   };
   await assert.rejects(forwardCreatorRegistration({ ...input, homepage: 'https://evil.test/1' }, { adminToken: 'test-private-token' }, client));
-  await assert.rejects(forwardCreatorRegistration({ ...input, confirm: false }, { adminToken: 'test-private-token' }, client));
   assert.equal(calls, 0);
+  assert.deepEqual(await forwardCreatorRegistration({ homepage: '4168597', intro: input.intro }, { adminToken: 'test-private-token' }, client), { ok: true, status: 'queued' });
   assert.deepEqual(await forwardCreatorRegistration(input, { adminToken: 'test-private-token' }, client), { ok: true, status: 'queued' });
 });
 test('公开作者入口沿用 Origin、人机验证与限流；后台失败不伪装为登记成功', async t => {

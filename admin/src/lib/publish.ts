@@ -14,7 +14,7 @@ export type PublishPlan = {
   deleted: any[]
   topics: any[]
   videos: any[]
-  summary: { added: number; updated: number; hidden: number; restored: number; deleted: number; topics: number; videos?: number }
+  summary: { added: number; updated: number; hidden: number; restored: number; deleted: number; topics: number; videos?: number; creators?: number }
 }
 
 function briefWork(doc: any) {
@@ -60,7 +60,8 @@ export async function buildPublishPlan(payload: Payload): Promise<PublishPlan> {
     restored: plan.restored.length,
     deleted: plan.deleted.length,
     topics: plan.topics.length,
-    ...(plan.videos.length ? { videos: plan.videos.length } : {}),
+    ...(videos.docs.length ? { videos: videos.docs.length } : {}),
+    ...(creators.docs.length ? { creators: creators.docs.length } : {}),
   }
   return plan
 }

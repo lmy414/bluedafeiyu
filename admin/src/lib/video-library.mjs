@@ -23,7 +23,7 @@ export async function registerCreator(payload, input, req) {
   });
 }
 export async function syncVideoCreators(payload, req, { client = createBilibiliClient(), now = Date.now(), limit = 1 } = {}) {
-  const deadline = Date.now() + 25_000;
+  let deadline = Date.now() + 25_000;
   const creators = await payload.find({ collection: 'creators', where: { and: [
     { status: { in: ['queued', 'active'] } },
     { or: [{ retryAt: { exists: false } }, { retryAt: { less_than_equal: new Date(now).toISOString() } }] },
@@ -42,6 +42,8 @@ export async function syncVideoCreators(payload, req, { client = createBilibiliC
     try {
       const page = Math.max(1, Number(creator.syncPage) || 1);
       const batch = await client.page(creator.uid, page);
+      // RSSHub may need a browser cold start; the detail budget starts afterwards.
+      deadline = Date.now() + 25_000;
       let authorName = creator.name;
       let pageComplete = true, fresh = 0;
       for (const item of batch.items) {
@@ -93,6 +95,12 @@ function validateReview(review, video, allowedIds) {
 }
 export async function videoAgent(payload, input, req, { client = createBilibiliClient(), now = Date.now() } = {}) {
   if (input.action === 'sync') return { ok: true, stats: await syncVideoCreators(payload, req, { client, now }) };
+  if (input.action === 'status') {
+    const creators = await payload.find({ collection: 'creators', pagination: false, depth: 0, overrideAccess: true });
+    const videos = await payload.find({ collection: 'videos', pagination: false, depth: 0, overrideAccess: true });
+    return { ok: true, creators: creators.docs.map(c => ({ uid: c.uid, name: c.name, status: c.status, error: c.error || '', lastSyncedAt: c.lastSyncedAt })),
+      videos: videos.docs.map(v => ({ bvid: v.bvid, title: v.title, uid: v.source.uid, status: v.status, reason: v.review?.reason || '' })) };
+  }
   if (input.action === 'rules') {
     const chars = await payload.find({ collection: 'characters', where: { status: { equals: 'active' } }, pagination: false, depth: 0, overrideAccess: true });
     return { ok: true, characters: chars.docs.map(c => ({ id: c.characterId, name: c.name })),
@@ -158,5 +166,5 @@ export function publicVideoArchive(creators, videos) {
   return { schema: 'video-archive/1', creators: [...active.values()].filter(c => ids.has(c.uid)).map(c => {
     const sample = videos.find(v => v.source.uid === c.uid && v.status === 'approved' && v.source.creatorIntro === c.intro && v.review?.i18n);
     return { uid: c.uid, name: c.name, homepage: `https://space.bilibili.com/${c.uid}`, intro: c.intro, ...(sample ? { i18n: { en: sample.review.i18n.en.creatorIntro, ja: sample.review.i18n.ja.creatorIntro } } : {}) };
-  }), videos: items.sort((a,b) => b.publishedAt.localeCompare(a.publishedAt)) };
+  }).sort((a, b) => ({ '4168597': 0, '4456176': 1 }[a.uid] ?? 2) - ({ '4168597': 0, '4456176': 1 }[b.uid] ?? 2)), videos: items.sort((a,b) => b.publishedAt.localeCompare(a.publishedAt)) };
 }

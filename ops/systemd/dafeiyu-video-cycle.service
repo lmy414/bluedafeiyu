@@ -1,0 +1,17 @@
+[Unit]
+Description=Discover Bilibili videos and deliver Feishu queue updates
+After=dafeiyu-admin.service dafeiyu-rsshub.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=/srv/apps/dafeiyu-admin/src
+EnvironmentFile=/etc/dafeiyu/admin-publish.env
+Environment=FEISHU_NOTIFY_OUTBOX_DIR=/srv/apps/dafeiyu-admin/run/feishu-outbox
+ExecStart=/usr/bin/flock -n /run/lock/dafeiyu-video-cycle.lock /usr/bin/node ops/admin/video-cycle.mjs
+TimeoutStartSec=240
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/srv/apps/dafeiyu-admin/run
+MemoryMax=192M

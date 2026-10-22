@@ -17,13 +17,14 @@
     event.preventDefault();
     if (busy || !form.reportValidity()) return;
     const data = new FormData(form);
-    let url; try { url = new URL(String(data.get('homepage')).trim()); } catch { show('creatorUrlError', '请填写完整的 Bilibili 作者主页链接。'); return; }
+    const raw = String(data.get('homepage')).trim();
+    let url; try { url = new URL(/^[1-9]\d{0,16}$/.test(raw) ? 'https://space.bilibili.com/' + raw : raw); } catch { show('creatorUrlError', '请填写完整的 Bilibili 作者主页链接。'); return; }
     if (url.protocol !== 'https:' || url.hostname !== 'space.bilibili.com' || url.username || url.password || url.port || !/^\/[1-9]\d{0,16}(?:\/(?:upload\/)?video)?\/?$/.test(url.pathname)) { show('creatorUrlError', '当前仅开放 Bilibili，请填写 https://space.bilibili.com/数字UID。'); return; }
     if (form.dataset.turnstileSitekey && !token) { show('creatorChallenge', '请先完成人机验证。'); return; }
     busy = true; button.disabled = true;
     show('creatorSending', '正在提交登记…', true);
     try {
-      const response = await fetch('/api/v1/creators', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ homepage: url.href, intro: String(data.get('intro')).trim(), confirm: data.get('confirm') === 'on', turnstileToken: token }), signal: AbortSignal.timeout(20_000) });
+      const response = await fetch('/api/v1/creators', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ homepage: url.href, intro: String(data.get('intro')).trim(), turnstileToken: token }), signal: AbortSignal.timeout(20_000) });
       const result = await response.json();
       if (!response.ok || result.ok !== true) throw new Error('registration failed');
       form.reset(); show('creatorSuccess', '登记已收到。下一次更新时同步公开视频，AI 审核通过后展示。', true);

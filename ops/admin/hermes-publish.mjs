@@ -98,6 +98,7 @@ export function normalizeSummary(value) {
     deleted: pick('deleted', ['removed']),
     topics: pick('topics'),
     ...(pick('videos') ? { videos: pick('videos') } : {}),
+    ...(pick('creators') ? { creators: pick('creators') } : {}),
   };
 }
 
@@ -153,7 +154,7 @@ function resultSummary(run) {
 function successText(run, summary, cfg) {
   const siteCommit = commitValue(run.commits?.site) || commitValue(run.commits?.siteHash) || commitValue(run.siteCommit);
   const lines = [
-    `发布成功：新增 ${summary.added}、修改 ${summary.updated}、隐藏 ${summary.hidden}、删除 ${summary.deleted}、专题 ${summary.topics}。`,
+    `发布成功：新增 ${summary.added}、修改 ${summary.updated}、隐藏 ${summary.hidden}、删除 ${summary.deleted}、专题 ${summary.topics}、视频 ${summary.videos || 0}、作者 ${summary.creators || 0}。`,
     `站点提交：${shortHash(siteCommit)}`,
     `线上地址：${onlineUrl(run, cfg)}`,
   ];

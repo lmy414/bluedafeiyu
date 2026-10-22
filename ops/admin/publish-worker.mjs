@@ -169,6 +169,10 @@ function normalizeSummary(value) {
     if (!Number.isSafeInteger(value.videos) || value.videos < 0) throw new Error('snapshot.summary.videos 必须是非负整数');
     if (value.videos) summary.videos = value.videos;
   }
+  if (value?.creators !== undefined) {
+    if (!Number.isSafeInteger(value.creators) || value.creators < 0) throw new Error('snapshot.summary.creators 必须是非负整数');
+    if (value.creators) summary.creators = value.creators;
+  }
   return summary;
 }
 

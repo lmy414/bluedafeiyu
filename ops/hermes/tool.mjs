@@ -13,7 +13,7 @@ export async function runTool(input, env = process.env, fetchImpl = fetch) {
   if (input.action === 'sync' && submission) throw new Error('sync only permits admin');
   const response = await fetchImpl(base.replace(/\/$/, '') + (submission ? '/api/v1/internal/agent' : input.target === 'videos' ? '/cms-api/video-agent' : input.target === 'requests' ? '/cms-api/request-agent' : input.action === 'sync' ? '/cms-api/submissions/sync' : '/cms-api/agent'), {
     method: 'POST', headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json', ...(input.target === 'requests' && env.SUBMISSION_GITHUB_TOKEN ? { 'X-GitHub-Read-Token': env.SUBMISSION_GITHUB_TOKEN } : {}) },
-    body: JSON.stringify(input), signal: AbortSignal.timeout(60_000),
+    body: JSON.stringify(input), signal: AbortSignal.timeout(input.target === 'videos' && input.action === 'sync' ? 175_000 : 60_000),
   });
   if (input.action === 'image' && response.ok && response.headers.get('content-type')?.startsWith('image/')) {
     const bytes = Buffer.from(await response.arrayBuffer());

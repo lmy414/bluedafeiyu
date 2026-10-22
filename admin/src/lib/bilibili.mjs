@@ -1,11 +1,13 @@
 import crypto from 'node:crypto';
+import { rsshubPage } from './rsshub.mjs';
 
 // Public read API contract cross-checked against yt-dlp's maintained Bilibili extractor.
 // https://github.com/yt-dlp/yt-dlp/blob/master/yt_dlp/extractor/bilibili.py
 const MIXIN = [46,47,18,2,53,8,23,32,15,50,10,31,58,3,45,35,27,43,5,49,33,9,42,19,29,28,14,39,12,38,41,13,37,48,7,16,24,55,40,61,26,17,0,1,60,51,30,4,22,25,54,21,56,59,6,63,57,62,11,36,20,34,44,52];
 export const BVID = /^BV[1-9A-HJ-NP-Za-km-z]{10}$/;
 export function normalizeCreator(input) {
-  const raw = typeof input?.homepage === 'string' ? input.homepage.trim() : '';
+  const value = String(input?.homepage || input?.uid || '').trim();
+  const raw = /^[1-9]\d{0,16}$/.test(value) ? `https://space.bilibili.com/${value}` : value;
   if (raw.length > 300 || /[\\\s]/.test(raw)) throw new Error('请填写 Bilibili 作者主页链接');
   let url; try { url = new URL(raw); } catch { throw new Error('请填写完整的 Bilibili 作者主页链接'); }
   const match = url.pathname.match(/^\/([1-9]\d{0,16})(?:\/(?:upload\/)?video)?\/?$/);
@@ -13,7 +15,6 @@ export function normalizeCreator(input) {
     throw new Error('当前仅开放 Bilibili，请填写 https://space.bilibili.com/数字UID');
   const intro = typeof input.intro === 'string' ? input.intro.trim() : '';
   if (!intro || [...intro].length > 200 || /[\u0000-\u001f\u007f<>]/.test(intro)) throw new Error('请用 1～200 字说明你创作的内容');
-  if (input.confirm !== true) throw new Error('请确认登记的是你自己的主页，并同意同步公开作品信息');
   return { uid: match[1], homepage: `https://space.bilibili.com/${match[1]}`, intro };
 }
 export function safeBiliImage(value) {
@@ -47,17 +48,13 @@ export function createBilibiliClient({ fetchImpl = fetch, cookie = process.env.B
   return {
     async page(uid, page = 1) {
       if (!/^[1-9]\d{0,16}$/.test(uid) || !Number.isSafeInteger(page) || page < 1 || page > 10000) throw new Error('作者或分页参数非法');
-      const nav = await json('/x/web-interface/nav');
-      const query = signWbi({ mid: uid, pn: page, ps: 30, order: 'pubdate', platform: 'web', web_location: '333.1387', tid: 0, keyword: '' }, nav.wbi_img.img_url, nav.wbi_img.sub_url);
-      const data = await json('/x/space/wbi/arc/search', query);
-      if (!Array.isArray(data?.list?.vlist) || !Number.isSafeInteger(data?.page?.count)) throw new Error('Bilibili 视频列表结构异常');
-      return { items: data.list.vlist, hasMore: page * 30 < data.page.count };
+      return rsshubPage(uid, { fetchImpl });
     },
     async video(bvid, uid) {
       if (!BVID.test(bvid)) throw new Error('视频编号非法');
       let v;
       try { v = await json('/x/web-interface/view', new URLSearchParams({ bvid })); }
-      catch (error) { if (error.code === -404 || error.code === 62002) error.code = 'VIDEO_UNAVAILABLE'; throw error; }
+      catch (error) { if (error.code === -404 || error.code === 62002 || error.code === 62012) error.code = 'VIDEO_UNAVAILABLE'; throw error; }
       if (String(v?.owner?.mid) !== uid || v.bvid !== bvid || v.state !== 0 || !v.title || !v.cid) throw Object.assign(new Error('视频不可用或不属于登记作者'), { code: 'VIDEO_UNAVAILABLE' });
       let storyboard = null;
       try {

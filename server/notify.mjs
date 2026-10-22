@@ -1,3 +1,4 @@
+import { deliverNotification, flushNotifications } from './notify-outbox.mjs';
 /* server/notify.mjs —— 投稿服务的飞书群通知（零依赖、尽力而为）
  *
  * 只发群消息，不走私聊。三项 FEISHU_NOTIFY_* 环境变量缺任一即关闭；
@@ -74,7 +75,7 @@ function publishedText({ ok, runId, summary, error, siteUrl } = {}) {
   const lines = [
     success ? '🚀 上线成功' : '❌ 上线失败',
     `runId：${filled(runId, '(无)')}`,
-    `新增：${summaryCount(summary, 'added')}｜修改：${summaryCount(summary, 'updated')}｜隐藏：${summaryCount(summary, 'hidden')}｜删除：${summaryCount(summary, 'deleted')}｜专题：${summaryCount(summary, 'topics')}`,
+    `新增：${summaryCount(summary, 'added')}｜修改：${summaryCount(summary, 'updated')}｜隐藏：${summaryCount(summary, 'hidden')}｜删除：${summaryCount(summary, 'deleted')}｜专题：${summaryCount(summary, 'topics')}｜视频变更：${summaryCount(summary, 'videos')}｜作者变更：${summaryCount(summary, 'creators')}`,
     success ? `站点：${filled(siteUrl)}` : `错误：${filled(error?.message || error, '未知错误')}`,
   ];
   return lines.join('\n');
@@ -153,10 +154,10 @@ export function createNotifier({ env = process.env, fetchImpl = globalThis.fetch
     }
   }
 
-  async function send(text) {
+  async function send(text, uuid) {
     try {
       const token = await tenantAccessToken();
-      await requestJson(MESSAGE_URL, {
+      const response = await requestJson(MESSAGE_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json; charset=utf-8',
@@ -164,18 +165,24 @@ export function createNotifier({ env = process.env, fetchImpl = globalThis.fetch
         },
         body: JSON.stringify({
           receive_id: chatId,
+          ...(uuid ? { uuid } : {}),
           msg_type: 'text',
           content: JSON.stringify({ text: String(text ?? '') }),
         }),
       });
+      if (!response?.data?.message_id) throw new Error('飞书没有返回消息回执');
+      return { ok: true, messageId: response.data.message_id };
     } catch (error) {
       warn(`飞书群通知失败：${error?.message || error}`);
+      return { ok: false };
     }
   }
 
   return {
     enabled: true,
     send,
+    event: (key, text) => deliverNotification(env.FEISHU_NOTIFY_OUTBOX_DIR, key, text, send),
+    flush: () => flushNotifications(env.FEISHU_NOTIFY_OUTBOX_DIR, send),
     received(item) {
       return send(receivedText(item));
     },
@@ -183,7 +190,7 @@ export function createNotifier({ env = process.env, fetchImpl = globalThis.fetch
       return send(reviewedText(item, detail));
     },
     published(detail) {
-      return send(publishedText(detail));
+      return deliverNotification(env.FEISHU_NOTIFY_OUTBOX_DIR, `publish:${detail.runId}:${detail.ok}`, publishedText(detail), send);
     },
   };
 }

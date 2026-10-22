@@ -67,7 +67,7 @@ test('缓存 tenant_access_token，并发送纯文本消息体', async () => {
   await notifier.published({
     ok: true,
     runId: 'run_1',
-    summary: { added: 1, updated: 2, hidden: 3, restored: 9, deleted: 4, topics: 5 },
+    summary: { added: 1, updated: 2, hidden: 3, restored: 9, deleted: 4, topics: 5, videos: 3, creators: 2 },
     siteUrl: 'https://example.com/dafeiyu',
   });
   await notifier.published({ ok: false, runId: 'run_2', summary: {}, error: '部署失败' });
@@ -102,6 +102,7 @@ test('缓存 tenant_access_token，并发送纯文本消息体', async () => {
   assert.match(texts[2], /🚀 上线成功/);
   assert.match(texts[2], /runId：run_1/);
   assert.match(texts[2], /新增：1｜修改：2｜隐藏：3｜删除：4｜专题：5/);
+  assert.match(texts[2], /视频变更：3｜作者变更：2/);
   assert.match(texts[2], /站点：https:\/\/example\.com\/dafeiyu/);
 
   assert.match(texts[3], /❌ 上线失败/);

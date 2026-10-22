@@ -28,7 +28,7 @@ afterAll(async () => { await payload?.destroy(); payload?.db?.client?.close(); a
 describe('Bilibili 作者登记、发现、AI 审核与公开导出', () => {
   it('仅接受 Bilibili 自己的主页，重复登记不覆盖资料或恢复暂停作者', async () => {
     for (const homepage of ['https://space.bilibili.com.evil.test/123', 'http://space.bilibili.com/123', 'https://space.bilibili.com@evil.test/123', 'https://www.bilibili.com/video/BV1GnYi63Ews/', 'https://space.bilibili.com:123/123']) expect(() => normalizeCreator({ ...registration, homepage })).toThrow()
-    expect(() => normalizeCreator({ ...registration, confirm: false })).toThrow()
+    expect(normalizeCreator({ homepage: uid, intro: registration.intro }).uid).toBe(uid)
     expect(() => normalizeCreator({ ...registration, intro: '<script>alert(1)</script>' })).toThrow()
     await registerCreator(payload, registration, req)
     await registerCreator(payload, { ...registration, intro: '试图覆盖原介绍' }, req)
