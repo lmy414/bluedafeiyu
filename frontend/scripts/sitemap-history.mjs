@@ -44,7 +44,7 @@ function timestamp(value, now) {
 }
 
 // The previous published sitemap and HTML are the history; no separate mutable database is needed.
-export function readSitemapHistory(directory, { origin, now = new Date() }) {
+export function readSitemapHistory(directory, { origin, now = new Date(), known = new Map() }) {
   const records = new Map();
   let seeded = 0;
   const sitemap = path.join(directory, 'sitemap.xml');
@@ -62,17 +62,18 @@ export function readSitemapHistory(directory, { origin, now = new Date() }) {
     // First rollout has no historical lastmod. Preserve the current release's real file time as a baseline.
     const lastmod = timestamp(prior || fs.statSync(file).mtime.toISOString(), now);
     if (!prior) seeded++;
-    records.set(url.pathname, { fingerprint: pageFingerprint(fs.readFileSync(file, 'utf8')), lastmod });
+    records.set(url.pathname, { fingerprint: known.get(url.pathname)?.fingerprint || pageFingerprint(fs.readFileSync(file, 'utf8')), lastmod });
   }
   return { records, seeded };
 }
 
-export function updateSitemapHistory(paths, directory, previous, { now = new Date() } = {}) {
+export function updateSitemapHistory(paths, directory, previous, { now = new Date(), unchangedPaths = new Set() } = {}) {
   const lastmods = new Map();
+  const records = new Map();
   let changed = 0, unchanged = 0, added = 0;
   for (const pathname of paths) {
-    const fingerprint = pageFingerprint(fs.readFileSync(pageFile(directory, pathname), 'utf8'));
     const prior = previous.records.get(pathname);
+    const fingerprint = unchangedPaths.has(pathname) && prior ? prior.fingerprint : pageFingerprint(fs.readFileSync(pageFile(directory, pathname), 'utf8'));
     if (prior?.fingerprint === fingerprint) {
       lastmods.set(pathname, timestamp(prior.lastmod, now));
       unchanged++;
@@ -80,6 +81,7 @@ export function updateSitemapHistory(paths, directory, previous, { now = new Dat
       lastmods.set(pathname, now.toISOString());
       if (prior) changed++; else added++;
     }
+    records.set(pathname,{fingerprint,lastmod:lastmods.get(pathname)});
   }
-  return { lastmods, changed, unchanged, added, seeded: previous.seeded };
+  return { lastmods, records, changed, unchanged, added, seeded: previous.seeded };
 }

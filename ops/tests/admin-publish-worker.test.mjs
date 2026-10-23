@@ -524,7 +524,7 @@ test('新增一张图：下载、派生、构建校验、提交白名单、推�
   assert.equal(state.submissionCalls, 1);
   assert.deepEqual(state.submissionPaths, ['/api/v1/items/sub_one/raw']);
   assert.equal(state.submissionAuth, 'Bearer submission-token');
-  const install = exec.calls.findIndex(c => c.cmd === 'npm' && c.args.join(' ') === 'ci --prefix frontend');
+  const install = exec.calls.findIndex(c => c.cmd === 'node' && c.args[0] === 'tools/install_frontend.mjs');
   const build = exec.calls.findIndex(c => c.cmd === 'node' && c.args[0] === 'tools/build_site.mjs');
   assert.ok(install >= 0 && install < build, '按锁文件安装前端依赖后才执行构建');
 

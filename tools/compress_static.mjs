@@ -136,6 +136,7 @@ function walk(dirAbs, relPrefix, out) {
     .readdirSync(dirAbs, { withFileTypes: true })
     .sort((a, b) => (a.name < b.name ? -1 : a.name > b.name ? 1 : 0));
   for (const entry of entries) {
+    if (entry.name.startsWith('.build-')) continue;
     const rel = relPrefix === "" ? entry.name : `${relPrefix}/${entry.name}`;
     const abs = path.join(dirAbs, entry.name);
     if (entry.isDirectory()) {
@@ -166,6 +167,7 @@ function main() {
   let skippedSmall = 0;
   let gzipped = 0;
   let written = 0;
+  let reused = 0;
   let skippedLarger = 0;
   let rawTotal = 0;
   let gzTotal = 0;
@@ -178,7 +180,16 @@ function main() {
       continue;
     }
     considered += 1;
-    const gz = zlib.gzipSync(raw, { level });
+    let gz;
+    const previous=process.env.SITE_PREVIOUS_DIR;
+    const candidates=[`${file.abs}.gz`,...(previous?[path.join(previous,file.rel+'.gz')]:[])];
+    for(const candidate of candidates) {
+      try {
+        const cached=fs.readFileSync(candidate);
+        if(zlib.gunzipSync(cached).equals(raw)){gz=cached;reused++;break;}
+      } catch { /* Missing or corrupt compressed data is regenerated. */ }
+    }
+    gz ||= zlib.gzipSync(raw, { level });
     rawTotal += raw.length;
 
     if (gz.length >= raw.length) {
@@ -200,6 +211,7 @@ function main() {
   }
 
   rows.sort((a, b) => b.raw - a.raw);
+  log(`复用已验证的压缩产物：${reused}，其余按当前内容重新压缩`);
   for (const row of rows.slice(0, 20)) {
     log(
       `  ${row.rel}  ${formatBytes(row.raw)} → ${formatBytes(row.gz)}（省 ${row.ratio}%）`,

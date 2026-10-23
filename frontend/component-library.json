@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "componentRoots": [
+    "src/components",
+    "public/components"
+  ],
+  "styleAssets": {
+    "public/styles.css": {
+      "owner": "src/components/library/styles.css"
+    },
+    "public/tokens.css": {
+      "owner": "src/components/library/styles.css"
+    },
+    "public/v2.css": {
+      "owner": "src/components/library/styles.css"
+    },
+    "public/archive/demo-design.css": {
+      "owner": "src/components/library/styles.css"
+    },
+    "public/archive/demo-production.css": {
+      "owner": "src/components/library/styles.css"
+    },
+    "public/archive/document.css": {
+      "owner": "src/components/library/styles.css"
+    },
+    "public/archive/filter-select.css": {
+      "owner": "src/components/library/styles.css"
+    },
+    "public/archive/group.css": {
+      "owner": "src/components/library/styles.css"
+    },
+    "public/archive/image-actions.css": {
+      "owner": "src/components/library/styles.css"
+    },
+    "public/archive/journal-details.css": {
+      "owner": "src/components/library/styles.css"
+    },
+    "public/archive/journal-first-screen.css": {
+      "owner": "src/components/library/styles.css"
+    },
+    "public/archive/journal-home.css": {
+      "owner": "src/components/library/styles.css"
+    },
+    "public/archive/journal-journal.css": {
+      "owner": "src/components/library/styles.css"
+    },
+    "public/archive/journal-ui.css": {
+      "owner": "src/components/library/styles.css"
+    },
+    "public/archive/layout.css": {
+      "owner": "src/components/library/styles.css"
+    },
+    "public/archive/original-theme.css": {
+      "owner": "src/components/library/styles.css"
+    },
+    "public/archive/original-tools.css": {
+      "owner": "src/components/library/styles.css"
+    },
+    "public/archive/preview.css": {
+      "owner": "src/components/library/styles.css"
+    },
+    "public/archive/readability.css": {
+      "owner": "src/components/library/styles.css"
+    },
+    "public/archive/seo-content.css": {
+      "owner": "src/components/library/styles.css"
+    },
+    "public/page-styles/404.css": {
+      "owner": "src/components/library/styles.css"
+    },
+    "public/page-styles/about.css": {
+      "owner": "src/components/pages/AboutPage.astro"
+    },
+    "public/page-styles/category-landing.css": {
+      "owner": "src/components/library/styles.css"
+    },
+    "public/page-styles/category.css": {
+      "owner": "src/components/library/styles.css"
+    },
+    "public/page-styles/changelog.css": {
+      "owner": "src/components/pages/ChangelogPage.astro"
+    },
+    "public/page-styles/event.css": {
+      "owner": "src/components/library/styles.css"
+    },
+    "public/page-styles/index.css": {
+      "owner": "src/components/library/styles.css"
+    },
+    "public/page-styles/projects.css": {
+      "owner": "src/components/library/styles.css"
+    },
+    "public/page-styles/submit.css": {
+      "owner": "src/components/pages/SubmitPage.astro"
+    },
+    "public/page-styles/topics.css": {
+      "owner": "src/components/library/styles.css"
+    },
+    "public/page-styles/work.css": {
+      "owner": "src/components/library/styles.css"
+    }
+  }
+}

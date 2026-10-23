@@ -50,7 +50,7 @@
       if (searchSort === 'random') for (var j = hit.length - 1; j > 0; j--) { var k = Math.floor(Math.random() * (j + 1)); var temp = hit[j]; hit[j] = hit[k]; hit[k] = temp; }
       count.textContent = words.length ? T('v2.found', '找到 {count} 件', { count: hit.length }) : T('v2.typeToSearch', '输入关键词开始搜索');
       res.innerHTML = hit.map(function (r) {
-        return '<article class="media-card"><a href="' + esc(P('/works/' + r.s + '.html')) + '" data-work="' + esc(r.s) + '"><div class="ph"' + (r.w && r.h ? ' style="aspect-ratio:' + r.w + '/' + r.h + '"' : '') + '><img loading="lazy" src="' + esc(r.i) + '" alt="' + esc(r.n) + '"><span class="badge">' + esc(kindText(r.k) || T('v2.work', '作品')) + '</span></div><div class="meta"><h3>' + esc(r.n) + '</h3><p><span class="who"><i></i>' + esc(r.c) + '</span></p><p class="work-stats" data-work-stats="' + esc(r.id) + '"></p></div></a></article>';
+        return '<article class="media-card"><a href="' + esc(P('/works/' + r.s + '.html')) + '" data-work="' + esc(r.s) + '"><div class="ph"' + SiteComponents.aspectAttributes(r.w,r.h) + '><img loading="lazy" src="' + esc(r.i) + '" alt="' + esc(r.n) + '"><span class="badge">' + esc(kindText(r.k) || T('v2.work', '作品')) + '</span></div><div class="meta"><h3>' + esc(r.n) + '</h3><p><span class="who"><i></i>' + esc(r.c) + '</span></p><p class="work-stats" data-work-stats="' + esc(r.id) + '"></p></div></a></article>';
       }).join('');
       document.dispatchEvent(new CustomEvent('v2:dom'));
     };
@@ -86,7 +86,7 @@
     var place = function (list) { list.forEach(function (c) { var m = cols[0]; cols.forEach(function (col) { if (col.offsetHeight < m.offsetHeight) m = col; }); m.appendChild(c); }); };
     var layout = function () {
       var n = colCount(); if (n === cols.length) return;
-      feedEl.classList.add('js-masonry'); feedEl.style.setProperty('--cols', n);
+      feedEl.classList.add('js-masonry'); SiteComponents.columns(feedEl,n);
       cols = []; for (var i = 0; i < n; i++) { var d = document.createElement('div'); d.className = 'mcol'; cols.push(d); }
       feedEl.replaceChildren.apply(feedEl, cols); place(cards);
     };
@@ -298,7 +298,7 @@
       var fact = function (k, v) { return '<div><dt>' + esc(k) + '</dt><dd>' + v + '</dd></div>'; };
       var cta = document.getElementById('group-cta-tpl');
       var src = T(ORIGIN_KEY[w.ok] || 'origin.unknown', ORIGIN_ZH[w.ok] || ORIGIN_ZH.unknown);
-      info.innerHTML = '<a class="who big" href="' + esc(P('/characters/' + w.cid + '.html')) + '" style="--c:' + esc(w.col) + '"><i></i>' + esc(w.c) + '</a>' +
+      info.innerHTML = '<a class="who big" href="' + esc(P('/characters/' + w.cid + '.html')) + '" ' + SiteComponents.roleAttributes(w.col) + '><i></i>' + esc(w.c) + '</a>' +
         '<h2 id="wm-title">' + esc(w.n) + '</h2>' + (w.cm ? '<blockquote class="wm-quote">' + esc(w.cm) + '</blockquote>' : '') + (w.d ? '<p class="desc">' + esc(w.d) + '</p>' : '') +
         '<p class="work-stats" data-work-stats="' + esc(w.id) + '"></p>' +
         '<div class="acts"><a class="btn btn-ink" data-download-work="' + esc(w.id) + '" href="' + esc(w.o) + '" target="_blank" rel="noopener">' + esc(T('work.download', '下载原图')) + (w.f ? ' · ' + esc(w.f) : '') + (w.s ? ' ' + esc(w.s) : '') + '</a>' +
@@ -338,11 +338,11 @@
       img.onload = img.onerror = null;
       img.removeAttribute('src');
       stageEl.classList.add('is-loading'); stageEl.classList.toggle('has-dim', dim);
-      if (dim) { img.width = w.w; img.height = w.h; img.style.setProperty('--r', String(w.w / w.h)); img.style.setProperty('--w', w.w + 'px'); }
-      else { img.removeAttribute('width'); img.removeAttribute('height'); img.style.removeProperty('--r'); img.style.removeProperty('--w'); }
-      img.style.backgroundImage = thumb ? 'url("' + thumb.replace(/["\\]/g, encodeURIComponent) + '")' : '';
+      if (dim) { img.width = w.w; img.height = w.h; SiteComponents.previewImage(img,w.w,w.h); }
+      else { img.removeAttribute('width'); img.removeAttribute('height'); SiteComponents.previewImage(img,0,0); }
+      SiteComponents.previewImage(img,w.w,w.h,thumb);
       var src = w.l;
-      img.onload = function () { if (img.getAttribute('src') !== src) return; stageEl.classList.remove('is-loading'); img.style.backgroundImage = ''; };
+      img.onload = function () { if (img.getAttribute('src') !== src) return; stageEl.classList.remove('is-loading'); SiteComponents.previewImage(img,w.w,w.h); };
       img.onerror = function () { if (img.getAttribute('src') === src) stageEl.classList.remove('is-loading'); };
       img.src = src; img.alt = w.d || w.n;
       if (img.complete && img.naturalWidth) img.onload();

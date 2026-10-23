@@ -15,14 +15,14 @@
       function openModal() {
         lastFocus = document.activeElement;
         modal.hidden = false;
-        document.body.style.overflow = "hidden";
+        SiteComponents.scrollLock(true);
         var closeBtn = modal.querySelector("[data-qq-close].btn");
         if (closeBtn) closeBtn.focus();
       }
 
       function closeModal() {
         modal.hidden = true;
-        document.body.style.overflow = "";
+        SiteComponents.scrollLock(false);
         if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
       }
 
@@ -52,8 +52,8 @@
             var ta = document.createElement("textarea");
             ta.value = QQ_NUMBER;
             ta.setAttribute("readonly", "");
-            ta.style.position = "fixed";
-            ta.style.opacity = "0";
+            SiteComponents.clipboardField(ta);
+
             document.body.appendChild(ta);
             ta.select();
             var ok = document.execCommand("copy");

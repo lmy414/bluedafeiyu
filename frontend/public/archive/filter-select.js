@@ -64,11 +64,7 @@
     const below = bottom - rect.bottom - 12, above = rect.top - Math.max(12,top + 8);
     const up = below < 240 && above > below;
     const height = Math.min(332, up ? above : below);
-    control.panel.style.width = width + 'px';
-    control.panel.style.maxHeight = Math.max(90, height) + 'px';
-    control.panel.style.left = Math.max(12, Math.min(rect.left, innerWidth - width - 12)) + 'px';
-    control.panel.style.top = up ? 'auto' : rect.bottom + 8 + 'px';
-    control.panel.style.bottom = up ? innerHeight - rect.top + 8 + 'px' : 'auto';
+    SiteComponents.popover(control.panel, {width, height:Math.max(90,height), left:Math.max(12,Math.min(rect.left,innerWidth-width-12)), top:up?null:rect.bottom+8, bottom:up?innerHeight-rect.top+8:null});
     control.panel.hidden = false; control.button.setAttribute('aria-expanded', 'true');
     active(control, control.select.selectedIndex);
   }

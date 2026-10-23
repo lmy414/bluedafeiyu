@@ -1,0 +1,129 @@
+---
+import V2 from '../../layouts/Archive.astro';
+import { SITE } from '../../lib/v2.mjs';
+import DocumentPage from '../archive/DocumentPage.astro';
+import AcknowledgementCard from '../archive/AcknowledgementCard.astro';
+import { site, works } from '../../lib/site.mjs';
+import { workCharacterIds } from '../../../../tools/work-characters.mjs';
+import { aboutCopy, aboutQuestions, aboutSEO, aboutDescription } from '../../lib/about-copy.mjs';
+const deepseekCount = works.filter(w => workCharacterIds(w).includes('deepseek')).length;
+const characters = site.characters.filter(c => c.status === 'active' && works.some(w => workCharacterIds(w).includes(c.id)));
+const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', inLanguage: 'zh-CN', mainEntity: aboutQuestions.map(row => ({ '@type': 'Question', name: row[0], acceptedAnswer: { '@type': 'Answer', text: row[3] } })) };
+---
+<V2 title={aboutSEO[0]} desc={aboutDescription[0]} path="/about.html" active="about" bodyPage="about" pageStyles={["/page-styles/about.css"]} robots="index,follow" schemas={[faqSchema]}>
+<DocumentPage>
+
+    <h1 class="page-title" data-i18n="about.h1">蓝色大肥鱼是什么？</h1>
+    <p class="lede" data-i18n="about.lede">蓝色大肥鱼是一个非官方同人整理项目，讲清楚它是干什么的、版权归谁、以及我们不收集你的哪些数据。</p>
+
+    <div class="about-columns">
+    <div class="about-main">
+    <h2 class="section-label" id="what-is-blue-dafeiyu" data-i18n="d.about.whatTitle">{aboutCopy.whatTitle[0]}</h2>
+    <div class="panel about-card tilt-l"><div class="prose">
+      <p data-i18n="d.about.whatText">{aboutCopy.whatText[0]}</p>
+      <p><a href="https://news.17173.com/content/08212026/094421441.shtml" target="_blank" rel="noopener noreferrer" data-i18n="d.about.source">{aboutCopy.source[0]}</a></p>
+      <p><a href="/characters/deepseek.html" data-character-name="deepseek" data-character-label="DeepSeek娘">DeepSeek娘</a></p>
+    </div></div>
+    <h2 class="section-label" data-i18n="about.site.title">关于本站</h2>
+    <div class="panel about-card tilt-l">
+      <div class="prose">
+        <p><span data-i18n="about.site.p1a">「蓝色大肥鱼」是收集 </span><strong data-i18n="about.site.p1b">AI 娘二创表情包</strong><span data-i18n="about.site.p1c">的开放档案：作品按角色归档，支持按名称、Tag 与角色别名检索；每张作品都有独立详情页，可以查看来源与授权、下载原图，还带一个独立的评论区。更新日志见页脚。</span></p>
+        <p><span data-i18n="about.site.p2a">你能在这里做的事：按角色与分类浏览全部作品；用关键词搜名称、Tag 或别名；进详情页拿原图；在作品下留言讨论；也可以把自己的作品</span><a href="/submit.html" data-i18n="about.site.p2link">投稿</a><span data-i18n="about.site.p2b">进来。</span></p>
+        <p data-about-count><span data-i18n="d.about.countLabel">{aboutCopy.countLabel[0]}</span> <b>{works.length}</b> <span data-i18n="d.about.countUnit">{aboutCopy.countUnit[0]}</span> <b>{deepseekCount}</b> <span data-i18n="d.about.countEnd">{aboutCopy.countEnd[0]}</span></p>
+        <h3 data-i18n="d.about.charactersTitle">{aboutCopy.charactersTitle[0]}</h3>
+        <div class="role-entry-links">{characters.map(c => <a class="tag" href={'/characters/'+c.id+'.html'} data-character-name={c.id} data-character-label={c.name}>{c.name}</a>)}</div>
+      </div>
+    </div>
+
+    <h2 class="section-label" id="faq" data-i18n="d.about.faqTitle">{aboutCopy.faqTitle[0]}</h2>
+    <div class="panel about-card"><div class="reading-faq">{aboutQuestions.map((row,i) => <details><summary data-i18n={'d.about.faq.'+i+'.q'}>{row[0]}</summary><div><p data-i18n={'d.about.faq.'+i+'.a'}>{row[3]}</p>{i === 2 && <a class="text-link" href="/submit.html" data-i18n="nav.submit">投稿</a>}{i === 1 && <a class="text-link" href="#licensing" data-i18n="about.rights.acquireTitle">如何取得图片使用许可</a>}</div></details>)}</div></div>
+
+    <h2 class="section-label" id="license" data-i18n="about.license.title">许可与版权</h2>
+    <div class="panel about-card tilt-r">
+      <div class="prose">
+        <p><span data-i18n="about.license.p1a">本站的</span><strong data-i18n="about.license.p1b">程序代码</strong><span data-i18n="about.license.p1c">以 </span><span class="term">MIT</span><span data-i18n="about.license.p1d"> 协议发布，随便用。</span></p>
+        <p><span data-i18n="about.license.p2a">但投稿或被收录的</span><strong><span data-i18n="about.license.p2b">表情包不会因为进了本站仓库就自动获得 </span><span class="term">MIT</span><span data-i18n="about.license.p2b2"> 授权</span></strong><span data-i18n="about.license.p2c">——图片的著作权始终归原作者所有。能不能用、怎么用，以每张作品详情页标注的来源与授权为准。</span></p>
+        <p data-i18n="about.license.p3">标注为「授权状态不明」的作品，请先联系原作者取得许可，勿直接商用。</p>
+        <ul class="plain-list">
+          <li id="license-unknown" data-i18n="about.rights.unknown">授权状态不明：本站未确认图片的使用许可；收录和提供下载不代表授予转载、改编或商业使用权。</li>
+          <li id="license-submitter-permission" data-i18n="about.rights.submitter">投稿者确认授权收录与下载：仅记录投稿者对本站收录和下载的许可，其他用途需向权利人另行确认。</li>
+          <li id="license-author-permission" data-i18n="about.rights.author">原作者明确授权：具体允许的用途以作品的授权备注为准；未明确允许的用途请联系原作者。</li>
+          <li id="license-cc0" data-i18n="about.rights.cc0">CC0 公共领域：作品记录标注为 CC0；使用时仍需核实原始声明及第三方权利。</li>
+          <li id="license-cc-by" data-i18n="about.rights.by">CC BY 署名：遵守原作者声明的署名条件；协议版本以原始声明为准，本站不推定版本。</li>
+          <li id="license-cc-by-nc" data-i18n="about.rights.byNc">CC BY-NC 署名·非商用：遵守署名和非商业使用条件；协议版本以原始声明为准，商业用途需另行取得许可。</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="section-label" id="licensing" data-i18n="about.rights.acquireTitle">如何取得图片使用许可</h2>
+    <div class="panel about-card tilt-l"><div class="prose">
+      <p data-i18n="about.rights.acquireBody">打开对应作品，查看来源作者、来源链接和授权备注，通过原作者的公开主页或原始发布页面联系权利人，并说明作品链接、用途及是否商用。作者或来源未标注时，可通过下方「署名与删除申请」提交作品链接，请维护者协助核实来源；本站无法代未知权利人授权。</p>
+    </div></div>
+
+    <h2 class="section-label" id="analytics" data-i18n="about.privacy.title">统计与隐私</h2>
+    <div class="panel about-card tilt-l">
+      <ul class="plain-list">
+        <li><span data-i18n="about.privacy.li1a">本站使用 </span><span class="term">Google Analytics 4</span><span data-i18n="about.privacy.li1c"> 统计聚合的页面访问、来源、设备与性能数据，用于发现加载问题和改进页面；Google 可能设置第一方分析 Cookie。</span></li>
+        <li><span class="marker-highlight" data-i18n="about.privacy.li2a">广告个性化、Google Signals 与广告存储均已关闭</span><span data-i18n="about.privacy.li2c">；本站不建立账号画像；作品浏览和下载点击只做聚合统计，用于公开展示和排序。</span></li>
+        <li><span data-i18n="about.privacy.li3a">Google Fonts 会从 Google 字体服务加载；评论托管在 </span><span class="term">GitHub Discussions</span><span data-i18n="about.privacy.li3c">，本站不自行保存评论者身份。</span></li>
+      </ul>
+    </div>
+
+    <h2 class="section-label" data-i18n="section.comments">评论</h2>
+    <div class="panel about-card tilt-r">
+      <div class="prose">
+        <p><span data-i18n="about.comments.p1a">评论由 </span><span class="term">GitHub Discussions</span><span data-i18n="about.comments.p1c">（</span><span class="term">Giscus</span><span data-i18n="about.comments.p1d">）托管，需要登录 GitHub 账号才能发言；一张作品对应一个独立讨论串，互不串台。</span></p>
+      </div>
+    </div>
+
+    <h2 class="section-label" data-i18n="about.credits.title">致谢</h2>
+    <div class="panel about-card tilt-l">
+      <div class="prose">
+        <p data-i18n="about.credits.p">感谢以下创作者为本站所收录角色提供设计基础：</p>
+        <ul class="plain-list">
+          <li><a href="https://space.bilibili.com/4456176" target="_blank" rel="noopener">上善无形</a><span data-i18n="about.credits.design">：角色设计；</span></li>
+          <li><a href="https://space.bilibili.com/4168597" target="_blank" rel="noopener">ZipZipPipe</a><span data-i18n="about.credits.redesign">：角色二次设计。</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <section aria-labelledby="special-thanks-title" id="special-thanks">
+      <h2 class="section-label" id="special-thanks-title" data-i18n="d.specialThanks">特别致谢</h2>
+      <AcknowledgementCard name="霜霜" href="https://wldss.cn/" avatar="/credits/shuangshuang.jpg" />
+    </section>
+
+    <h2 class="section-label" data-i18n="about.takedown.title">署名与删除</h2>
+    <div class="panel about-card sticky-note tilt-r">
+      <span class="tape-strip" aria-hidden="true"></span>
+      <div class="prose">
+        <p data-i18n="about.takedown.p1">原作者需要补署名、修改来源信息或下架作品，走 GitHub 上的「署名与删除申请」表单，维护者会尽快处理。</p>
+        <p><span data-i18n="about.takedown.p2a">收到有效的版权投诉后，会</span><strong data-i18n="about.takedown.p2b">先下架相关作品，再核实情况</strong><span data-i18n="about.takedown.p2c">。</span></p>
+      </div>
+      <p class="action-row">
+        <a class="btn primary hover-wiggle" href="https://github.com/lmy414/ai-girl-stickers/issues/new?template=takedown-request.yml" target="_blank" rel="noopener">
+        <svg class="icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 2.5H13.5V6.5" /><path d="M13.5 2.5 7.5 8.5" /><path d="M12 9.5V13.5H2.5V4H6.5" /></svg>
+        <span data-i18n="about.takedown.btn">打开署名与删除申请</span>
+        </a>
+      </p>
+    </div>
+    </div>
+
+    <aside class="about-aside" aria-labelledby="about-group-title">
+      <h2 class="section-label" id="about-group-title" data-i18n="about.group.title">交流群</h2>
+      <div class="panel about-card group-card tilt-l">
+        <div class="prose">
+          <p><span data-i18n="about.group.a">本站的 QQ 群叫「{SITE.group.name}」，群号 </span><span class="marker-highlight qq-number">{SITE.group.number}</span><span data-i18n="about.group.c">。QQ 里搜这个号码就能进；想聊图、催更、报 Bug，或者单纯过来看看鱼，都欢迎。</span></p>
+        </div>
+        <figure class="group-qr">
+          <img src={SITE.group.qr} alt={`QQ 群「${SITE.group.name}」（群号 ${SITE.group.number}）的加入二维码`} width="492" height="492" loading="lazy" decoding="async" data-i18n-attr="alt:qq.qrAlt" />
+          <figcaption data-i18n="qq.scan">扫码进群</figcaption>
+        </figure>
+        <a class="btn primary" href={SITE.group.url} target="_blank" rel="noopener" data-i18n="qq.join">点击加入 QQ 群</a>
+      </div>
+    </aside>
+    </div>
+</DocumentPage>
+<Fragment slot="scripts">
+  <script is:inline src="/page-scripts/about-0.js"></script>
+</Fragment>
+</V2>

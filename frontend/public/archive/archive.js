@@ -41,7 +41,7 @@ import {loadArchiveData} from './data-loader.js?v=1';
       catch {
         const field = document.createElement('textarea');
         field.value = button.dataset.groupCopy;
-        field.style.cssText = 'position:fixed;opacity:0;pointer-events:none';
+        SiteComponents.clipboardField(field);
         groupDialog.append(field);
         try { field.select(); if (!document.execCommand('copy')) throw Error('copy'); }
         finally { field.remove(); }
@@ -184,14 +184,14 @@ import {loadArchiveData} from './data-loader.js?v=1';
       const w=localized(original);
       previewMode=mode;previewSlugs=[...new Set($$('.work-card').map(el=>el.dataset.slug))];if(!previewSlugs.includes(slug))previewSlugs=[slug];previewIndex=previewSlugs.indexOf(slug);
       dialog.dataset.previewMode=mode;
-      if(!dialog.open){previewFocus=document.activeElement;dialog.showModal();document.body.style.overflow='hidden';}
+      if(!dialog.open){previewFocus=document.activeElement;dialog.showModal();SiteComponents.scrollLock(true);}
       if(mode==='image'){previewBody.innerHTML=`<div class="preview-zoom"><img src="${esc(w.l)}" alt="${esc(w.d||w.n)}" width="${w.w}" height="${w.h}"></div>`;}
       else{previewBody.innerHTML=`
         <header class="preview-heading">${previewIcon('image')}<span>${esc(tx('d.previewTitle','作品预览'))}</span><small>QUICK VIEW</small></header>
         <div class="preview-content">
           <div class="preview-art"><figure class="preview-photo"><img src="${esc(w.l)}" alt="${esc(w.d||w.n)}" width="${w.w}" height="${w.h}"></figure></div>
           <div class="preview-info">
-            <div class="preview-topline">${w.roles.map(role=>`<a class="preview-role" data-character-id="${esc(role.id)}" href="${localURL(`/characters/${esc(role.id)}.html`)}"><i class="role-dot" style="--role:${esc(role.color)}"></i>${esc(role.name)}${previewIcon('arrow')}</a>`).join('')}<span class="preview-kind">${w.k.map(id=>esc(tx('v2.type.'+id,id))).join(' · ')}</span></div>
+            <div class="preview-topline">${w.roles.map(role=>`<a class="preview-role" data-character-id="${esc(role.id)}" href="${localURL(`/characters/${esc(role.id)}.html`)}">${SiteComponents.roleDot(role.color)}${esc(role.name)}${previewIcon('arrow')}</a>`).join('')}<span class="preview-kind">${w.k.map(id=>esc(tx('v2.type.'+id,id))).join(' · ')}</span></div>
             <h2>${esc(w.n)}</h2>
             <div class="preview-note"><span class="eyebrow">${esc(tx("d.fishComment","大肥鱼说"))}</span><p>${esc(w.cm||w.d)}</p></div>
             ${w.tg.length?`<div class="tags preview-tags">${w.tg.slice(0,6).map((t,i)=>`<a class="tag" href="${localURL(`/search.html?q=${encodeURIComponent(w.sourceTags?.[i]||t)}`)}"><span aria-hidden="true">#</span>${esc(names(t))}</a>`).join('')}</div>`:''}
@@ -205,7 +205,7 @@ import {loadArchiveData} from './data-loader.js?v=1';
       $('[data-preview-close]').focus();
     }catch{toast(tx('d.loadFail','数据加载失败，请刷新页面。'));}
   }
-  function closePreview(){dialog.close();document.body.style.overflow='';previewFocus?.focus();}
+  function closePreview(){dialog.close();SiteComponents.scrollLock(false);previewFocus?.focus();}
   document.addEventListener('click',e=>{const el=e.target.closest('[data-preview]');if(el)preview(el.dataset.preview);const image=e.target.closest('[data-image-open]');if(image)preview(image.dataset.imageOpen,'image');const step=e.target.closest('[data-preview-step]');if(step){const slug=previewSlugs[previewIndex+Number(step.dataset.previewStep)];if(slug)preview(slug);}});
   $('[data-preview-close]').addEventListener('click',closePreview);dialog.addEventListener('cancel',e=>{e.preventDefault();closePreview();});dialog.addEventListener('click',e=>{const r=dialog.getBoundingClientRect();if(e.target===dialog&&(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom))closePreview();});
   document.addEventListener('keydown',e=>{if(dialog.open&&previewMode==='work'&&['ArrowLeft','ArrowRight'].includes(e.key)){const slug=previewSlugs[previewIndex+(e.key==='ArrowRight'?1:-1)];if(slug){e.preventDefault();preview(slug);}}});

@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import {writeOrReuse} from './incremental.mjs';
 import path from 'node:path';
 import { parseHTML } from 'linkedom';
 import { imageRights } from '../src/lib/image-metadata.mjs';
@@ -106,8 +107,9 @@ export function createAiDocuments(snapshot) {
   return { documents, llms, counts: { works: works.length, characters: roleFiles.length, categories: typeFiles.length, topics: topicFiles.length } };
 }
 
-export function writeAiContent(out, snapshot) {
+export function writeAiContent(out, snapshot, {previousDir,previousState} = {}) {
   const result = createAiDocuments(snapshot);
+  let written=0,reused=0;
   for (const route of ['/about.html', '/submit.html']) {
     result.documents.set(route + '.md', documentMarkdown(fs.readFileSync(path.join(out, route.slice(1)), 'utf8'), route));
   }
@@ -116,8 +118,8 @@ export function writeAiContent(out, snapshot) {
     if (!fs.existsSync(html)) throw new Error(`AI 阅读入口没有对应公开页面：${route}`);
     const target = path.join(out, route.slice(1));
     fs.mkdirSync(path.dirname(target), { recursive: true });
-    fs.writeFileSync(target, content);
+    if (writeOrReuse(out,route.slice(1),content,previousDir,previousState)) written++;else reused++;
   }
-  fs.writeFileSync(path.join(out, 'llms.txt'), result.llms);
-  return { ...result.counts, documents: result.documents.size, bytes: Buffer.byteLength(result.llms) };
+  if(writeOrReuse(out,'llms.txt',result.llms,previousDir,previousState)) written++;else reused++;
+  return { ...result.counts, documents: result.documents.size, bytes: Buffer.byteLength(result.llms),written,reused };
 }

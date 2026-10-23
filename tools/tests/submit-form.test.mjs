@@ -18,7 +18,7 @@ import test from "node:test";
 import { fileURLToPath } from "node:url";
 
 const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const SUBMIT_HTML = path.join(REPO_ROOT, "frontend", "out", "submit.html");
+const SUBMIT_HTML = path.join(process.env.SITE_OUT_DIR || path.join(REPO_ROOT, ".build", "site"), "submit.html");
 const SUBMIT_FORM_ASTRO = path.join(REPO_ROOT, "frontend", "src", "components", "SubmissionForm.astro");
 const SCRIPT_JS = path.join(REPO_ROOT, "frontend", "public", "page-scripts", "submit-0.js");
 const LANG_JS = path.join(REPO_ROOT, "frontend", "public", "lang.js");

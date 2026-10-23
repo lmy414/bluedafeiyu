@@ -1,0 +1,10 @@
+---
+import Archive from '../../layouts/Archive.astro';
+import {archiveContext} from '../../lib/archive.mjs';
+const {works,button,grid,sectionHead}=archiveContext;
+---
+<Archive title="站内组件预览" desc="开发环境中的组件与状态示例。" path="/dev/components" active="" robots="noindex,nofollow">
+  <header class="page-head"><p class="eyebrow">COMPONENT LIBRARY</p><h1>站内组件预览</h1><p>检查桌面、手机和深色模式。页面通过组件参数选择样式。</p></header>
+  <section class="section"><Fragment set:html={sectionHead('按钮与链接')} /><div class="detail-actions"><Fragment set:html={button('#cards','主要操作','primary')+button('#cards','普通操作')+button('#cards','小号操作','small')} /></div></section>
+  <section class="section" id="cards"><Fragment set:html={sectionHead('作品卡片与网格')+grid(works.slice(0,8),'',true)} /></section>
+</Archive>

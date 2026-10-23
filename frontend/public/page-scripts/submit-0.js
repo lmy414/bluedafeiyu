@@ -306,8 +306,8 @@
           var ta = document.createElement("textarea");
           ta.value = QQ_NUMBER;
           ta.setAttribute("readonly", "");
-          ta.style.position = "fixed";
-          ta.style.opacity = "0";
+          SiteComponents.clipboardField(ta);
+
           document.body.appendChild(ta);
           ta.select();
           var ok = document.execCommand("copy");

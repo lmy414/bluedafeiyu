@@ -825,14 +825,26 @@ export function runToolchain(cfg, exec, workDir) {
   });
   if (cfg.buildCheck) {
     // 工作树可能刚快进到新增前端依赖的版本，构建前按锁文件同步依赖。
-    runCmd(exec, 'npm', ['ci', '--prefix', 'frontend'], { cwd: cfg.siteDir });
+    runCmd(exec, cfg.node, ['tools/install_frontend.mjs'], { cwd: cfg.siteDir });
     const out = path.join(workDir, 'build-check');
+    const buildEnv={...process.env,CONTENT_DIR:cfg.contentDir};
+    if(cfg.deploy && cfg.deployRoot) {
+      const current=path.join(cfg.deployRoot,'current');
+      try {
+        const real=fs.realpathSync(current),relative=path.relative(path.resolve(cfg.deployRoot),real);
+        if(relative && !relative.startsWith('..') && !path.isAbsolute(relative)) {
+          buildEnv.SITE_PREVIOUS_DIR=real;
+          buildEnv.SITE_PREVIOUS_STATE=path.join(cfg.deployRoot,'build-state',path.basename(real)+'.json');
+        }
+      }catch{ /* A first release has no successful baseline yet. */ }
+    }
     fs.rmSync(out, { recursive: true, force: true });
     runCmd(exec, cfg.node, ['tools/build_site.mjs', '--content-dir', cfg.contentDir, '--out', out, '--force-clean'], {
       cwd: cfg.siteDir,
-      env: { ...process.env, CONTENT_DIR: cfg.contentDir },
+      env: buildEnv,
     });
-    fs.rmSync(out, { recursive: true, force: true });
+    if(cfg.deploy){cfg.prebuiltDir=out;cfg.prebuiltRoot=path.resolve(workDir);}
+    else fs.rmSync(out, { recursive: true, force: true });
   }
 }
 
@@ -886,7 +898,8 @@ export function runDeploy(cfg, exec, log) {
     args = [runner];
   }
   log(`运行部署：${command} ${args.join(' ')}`);
-  runCmd(exec, command, args, { env: process.env });
+  runCmd(exec, command, args, { env: {...process.env,...(cfg.prebuiltDir?{PUBLISH_PREBUILT_DIR:cfg.prebuiltDir}:{})} });
+  if(cfg.prebuiltDir && cfg.prebuiltRoot && path.resolve(cfg.prebuiltDir)===path.join(cfg.prebuiltRoot,'build-check'))fs.rmSync(cfg.prebuiltDir,{recursive:true,force:true});
 }
 
 export function markPublished(cfg, digest, batchId, atIso) {

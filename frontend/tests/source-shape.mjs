@@ -25,5 +25,5 @@ for(const script of ['archive.js','filter-select.js','work-card.js']){
 if(!app.includes("'term':'sticker-'+btn.dataset.comments"))throw new Error('评论没有按 sticker-<id> 映射');
 if(app.includes('previewOnly')||app.includes('art-file'))throw new Error('DEMO 投稿处理器混入正式站');
 if(!read('src/lib/archive.mjs').includes('overlayData()'))throw new Error('页面未使用权威数据');
-if(!read('src/lib/archive-seo.mjs').includes('imageMetadata(workBySlug.get(w.slug)'))throw new Error('未复用正式版权元数据');
+if(!read('src/components/archive/SEO.mjs').includes('imageMetadata(workBySlug.get(w.slug)'))throw new Error('未复用正式版权元数据');
 console.log('Archive components preserve authoritative data, static detail, analytics and frozen comment IDs');

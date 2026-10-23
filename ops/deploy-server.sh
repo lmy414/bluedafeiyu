@@ -41,7 +41,7 @@ die() {
 # ---------------------------------------------------------------- 配置加载
 
 CONFIG_FILE="${DEPLOY_ENV:-}"
-CONFIG_VARS=(DEPLOY_ROOT SOURCE_DIR REPO_URL BRANCH HEALTH_URL CONTENT_REPO_URL CONTENT_BRANCH CONTENT_DIR SHARED_DATA_DIR RELEASES_DIR CURRENT_LINK PRECOMPRESS BUILD_MEMORY_MAX_MB BUILD_NODE_HEAP_MB BUILD_MIN_AVAILABLE_MB)
+CONFIG_VARS=(DEPLOY_ROOT SOURCE_DIR REPO_URL BRANCH HEALTH_URL CONTENT_REPO_URL CONTENT_BRANCH CONTENT_DIR SHARED_DATA_DIR RELEASES_DIR CURRENT_LINK PRECOMPRESS BUILD_FULL BUILD_MEMORY_MAX_MB BUILD_NODE_HEAP_MB BUILD_MIN_AVAILABLE_MB)
 
 # 先记住当前已经通过环境变量给出的值，读完配置文件后再覆盖回去（环境变量优先）。
 declare -A __preset=()
@@ -200,18 +200,35 @@ guarded_build() {
     node "${SOURCE_DIR}/ops/build-resource-runner.mjs" "${label}" "$@"
 }
 
-# Astro is a build-only dependency; install the locked frontend toolchain before touching current.
-# Existing node_modules can be stale across versions, so npm ci is required for each release.
-log "安装前端构建依赖：npm ci --prefix ${SOURCE_DIR}/frontend"
-if ! guarded_build dependencies npm ci --prefix "${SOURCE_DIR}/frontend" --no-audit --no-fund; then
+# Verify the lock file, Node runtime and installed direct dependencies before reuse.
+log "校验前端构建依赖（锁文件或运行环境变化时执行 npm ci）"
+if ! guarded_build dependencies node "${SOURCE_DIR}/tools/install_frontend.mjs"; then
   die "Astro 构建依赖安装失败，未改动 current"
 fi
 
 log "运行构建：node ${SOURCE_DIR}/tools/build_site.mjs --content-dir ${CONTENT_DIR} --out ${STAGING_DIR}/site"
-if ! SITE_PREVIOUS_DIR="${CURRENT_LINK}" guarded_build site node "${SOURCE_DIR}/tools/build_site.mjs" --content-dir "${CONTENT_DIR}" --out "${STAGING_DIR}/site"; then
+BUILD_STATE_DIR="${DEPLOY_ROOT}/build-state"
+mkdir -p "${BUILD_STATE_DIR}"
+PREVIOUS_RELEASE="$(readlink -f "${CURRENT_LINK}" 2>/dev/null || true)"
+PREVIOUS_STATE="${BUILD_STATE_DIR}/$(basename "${PREVIOUS_RELEASE:-missing}").json"
+BUILD_FLAGS=()
+case "${BUILD_FULL:-0}" in
+  1|true|TRUE) BUILD_FLAGS+=(--full) ;;
+  0|false|FALSE) ;;
+  *) die "BUILD_FULL 必须为 0/1/true/false" ;;
+esac
+if ! SITE_PREVIOUS_DIR="${CURRENT_LINK}" SITE_PREVIOUS_STATE="${PREVIOUS_STATE}" SITE_REUSE_ASSETS=1 guarded_build site node "${SOURCE_DIR}/tools/build_site.mjs" --content-dir "${CONTENT_DIR}" --out "${STAGING_DIR}/site" "${BUILD_FLAGS[@]}"; then
   die "构建失败，未改动 current"
 fi
 log "构建完成：${STAGING_DIR}/site"
+
+# Cached HTML can still reference the preceding release's fingerprinted bundles.
+# Keep those immutable URLs available while the CDN's HTML cache expires.
+if [ -d "${PREVIOUS_RELEASE}/_astro" ]; then
+  mkdir -p "${STAGING_DIR}/site/_astro"
+  cp -an "${PREVIOUS_RELEASE}/_astro/." "${STAGING_DIR}/site/_astro/"
+  log "保留旧页面仍可能引用的带指纹静态资源"
+fi
 
 # ------------------------------------------------- 预压缩（默认开启；必须在 chmod / 删 .build-output / cp -al 之前）
 # PRECOMPRESS 默认 1：给刚构建好的产物生成同名 .gz，供 nginx `gzip_static on` 直接回发，
@@ -221,7 +238,7 @@ log "构建完成：${STAGING_DIR}/site"
 # 提醒：脚本只生成 .gz，不会自动改服务器 nginx 配置；必须人工启用 `gzip_static on` 才会用到。
 if [ "${PRECOMPRESS_ENABLED}" = "1" ]; then
   log "预压缩产物文本资源：node ${SOURCE_DIR}/tools/compress_static.mjs --dir ${STAGING_DIR}/site --precompress"
-  if ! guarded_build compress node "${SOURCE_DIR}/tools/compress_static.mjs" --dir "${STAGING_DIR}/site" --precompress; then
+  if ! SITE_PREVIOUS_DIR="${CURRENT_LINK}" guarded_build compress node "${SOURCE_DIR}/tools/compress_static.mjs" --dir "${STAGING_DIR}/site" --precompress; then
     die "预压缩失败，未改动 current"
   fi
   PRECOMPRESSED_COUNT="$(find "${STAGING_DIR}/site" -type f -name '*.gz' | wc -l | tr -d ' ')" || PRECOMPRESSED_COUNT="unknown"
@@ -231,12 +248,15 @@ fi
 # ------------------------------------------------- 权限（必须在 cp -al 之前）
 
 log "设置产物权限：目录 755、文件 644（此时产物里还没有 data）"
-find "${STAGING_DIR}/site" -type d -exec chmod 755 {} +
-find "${STAGING_DIR}/site" -type f -exec chmod 644 {} +
+find "${STAGING_DIR}/site" -type d ! -perm 755 -exec chmod 755 {} +
+find "${STAGING_DIR}/site" -type f ! -perm 644 -exec chmod 644 {} +
 
 # 产物根上的 .build-output 是 tools/build.mjs 的内部标记（只给本地构建识别用），
 # 不随发布产物上线。必须放在 cp -al 之前删，之后就不能再 chmod / 改动产物了。
 rm -f "${STAGING_DIR}/site/.build-output"
+mv "${STAGING_DIR}/site/.build-state.json" "${BUILD_STATE_DIR}/${STAMP}.json"
+mv "${STAGING_DIR}/site/.build-plan.json" "${LOG_DIR}/build-plan-${STAMP}.json"
+chmod 600 "${BUILD_STATE_DIR}/${STAMP}.json" "${LOG_DIR}/build-plan-${STAMP}.json"
 
 # 站点要托管的首批图片（dist/data/）不在发布产物里：build.mjs 会跳过 data/，
 # 线上统一由 DEPLOY_ROOT/shared/data 这份持久副本硬链接进每个 release。
@@ -266,6 +286,7 @@ for required in \
   "${STAGING_DIR}/site/404.html" \
   "${STAGING_DIR}/site/submissions/works.json" \
   "${STAGING_DIR}/site/site-data.json" \
+  "${STAGING_DIR}/site/build-info.json" \
   "${STAGING_DIR}/site/sitemap.xml" \
   "${STAGING_DIR}/site/google653ce5fe960a5fb0.html"; do
   if [ ! -f "${required}" ]; then

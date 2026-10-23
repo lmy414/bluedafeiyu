@@ -10,6 +10,7 @@ import GroupDialog from '../components/archive/GroupDialog.astro';
 import { hasAiMarkdown } from '../../scripts/ai-content.mjs';
 import '../styles/archive.css';
 import themeScript from '../../public/theme.js?raw';
+import componentRuntime from '../../public/components/runtime.js?raw';
 const { title, desc, path = '/', active = '', bodyPage = active, og, type = 'website', shareDesc = '',
   robots = 'index,follow', canonical = '', pageStyles = [], bodyAttrs = {}, schemas = [] } = Astro.props;
 const refined=!['/browse.html','/videos.html'].includes(path) && !path.startsWith('/categories/');
@@ -24,6 +25,7 @@ const refined=!['/browse.html','/videos.html'].includes(path) && !path.startsWit
     {hasAiMarkdown(path) && <link rel="alternate" href={path + '.md'} type="text/markdown" title="简体中文 Markdown" />}
     <link rel="icon" href="/favicon.png" />
     <script is:inline set:html={themeScript}></script>
+    <script is:inline set:html={componentRuntime}></script>
     {pageStyles.map(href => <link rel="stylesheet" {href} />)}
     <script is:inline src="/archive-labels.js?v=8" defer></script>
     <script is:inline src="/archive-copy.js?v=20261023-3" defer></script>
@@ -47,9 +49,9 @@ const refined=!['/browse.html','/videos.html'].includes(path) && !path.startsWit
     <PreviewDialog />
     <TopicDownloadDialog />
     <GroupDialog />
-    <script is:inline src="/work-stats.js?v=20261023-3" defer></script>
+    <script is:inline src="/work-stats.js?v=20261023-components-1" defer></script>
     <script src="../scripts/archive-entry.js"></script>
-    <script is:inline src="/archive/filter-select.js?v=2" defer></script>
+    <script is:inline src="/archive/filter-select.js?v=3" defer></script>
 
 
     <slot name="scripts" />

@@ -2,6 +2,7 @@
 import { archiveContext } from "../../lib/archive.mjs";
 import { navigation } from './nav-items.mjs';
 import RepositoryLinks from './RepositoryLinks.astro';
+import {navigationCountPlaceholder} from '../library/navigation-count.mjs';
 const { active = "" } = Astro.props;
 const { icon, works } = archiveContext;
 ---
@@ -16,7 +17,7 @@ const { icon, works } = archiveContext;
   <nav class="main-nav primary-nav">
     {navigation.map(item => <a class:list={['nav-link',{'is-active':active===item.id}]} href={item.href} title={item.label} aria-label={item.label} data-i18n-attr={`title:${item.key},aria-label:${item.key}`} aria-current={active === item.id ? 'page' : undefined}>
       <Fragment set:html={icon(item.icon)} /><span data-i18n={item.key}>{item.label}</span>
-      {item.id === 'browse' && <small>{works.length}</small>}
+      {item.id === 'browse' && <small data-library-work-total>{import.meta.env.DEV ? works.length : navigationCountPlaceholder}</small>}
     </a>)}
   </nav>
   <div class="sidebar-bottom">

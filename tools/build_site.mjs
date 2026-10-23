@@ -37,16 +37,18 @@ function parseArgs(argv) {
       contentDir = arg.slice("--content-dir=".length);
     } else if (arg === "-h" || arg === "--help") {
       process.stdout.write(
-        "用法：node tools/build_site.mjs --content-dir <内容仓库根目录> [--out <目录>] [--force-clean]\n",
+        "用法：node tools/build_site.mjs --content-dir <内容仓库根目录> [--out <目录>] [--previous <目录>] [--full] [--plan-only] [--force-clean]\n",
       );
       process.exit(0);
-    } else if (arg === "--out" || arg === "--force-clean") {
+    } else if (arg === "--full" || arg === "--plan-only") {
+      passthrough.push(arg);
+    } else if (arg === "--out" || arg === "--previous" || arg === "--force-clean") {
       if (arg === "--force-clean") forceClean = true;
       else passthrough.push(arg);
-      if (arg === "--out") {
+      if (arg === "--out" || arg === "--previous") {
         const value = argv[i + 1];
         if (value === undefined || value.startsWith("--")) {
-          fail("--out 后面必须跟一个目录路径");
+          fail(`${arg} 后面必须跟一个目录路径`);
         }
         passthrough.push(value);
         i += 1;
@@ -92,6 +94,7 @@ function main() {
   const { contentDir, passthrough, forceClean } = parseArgs(process.argv.slice(2));
   log(`代码仓库：${REPO_ROOT}`);
   log(`内容仓库：${contentDir}`);
+  runStep("frontend/scripts/check-components.mjs", [], contentDir);
   runStep("tools/stage_data.mjs", [], contentDir);
   runStep("tools/sync_content.mjs", ["--content-dir", contentDir], contentDir);
   runStep("tools/build_site_snapshot.mjs", [], contentDir);

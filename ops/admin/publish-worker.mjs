@@ -303,7 +303,7 @@ export function resolveWorkerConfig(env = process.env) {
     siteBranch: baseBranch,
     contentBranch: env.CONTENT_BRANCH || baseBranch,
     remote: env.PUBLISH_REMOTE || 'origin',
-    buildCheck: true, // 后台发布必须做一次完整构建校验；这里不沿用旧批处理的 dry-run 开关。
+    buildCheck: true, // 发布前构建并审计；部署核对输入后复用已验证产物。
     deployRoot: env.PUBLISH_DEPLOY_ROOT || env.DEPLOY_ROOT || '',
     deployCmd: env.PUBLISH_DEPLOY_CMD || '',
     deployRunner: env.PUBLISH_DEPLOY_RUNNER || '',

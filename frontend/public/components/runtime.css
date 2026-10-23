@@ -1,0 +1,2 @@
+.component-scroll-locked { overflow: hidden; }
+.component-clipboard-field { position: fixed; opacity: 0; pointer-events: none; }

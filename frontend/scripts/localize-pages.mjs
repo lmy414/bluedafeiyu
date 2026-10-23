@@ -218,7 +218,7 @@ export async function localizeHtml(html, base, locale, snapshot) {
   return document.toString();
 }
 
-export async function buildLanguagePages(out, snapshot) {
+export async function buildLanguagePages(out, snapshot, baseFiles = null) {
   const missing=snapshot.works.filter(w=>!w.i18n?.en||!w.i18n?.ja);
   if(missing.length) throw new Error('Native English/Japanese work content missing or stale: '+missing.map(w=>w.id).join(', '));
   program = new vm.Script(fs.readFileSync(path.join(out, 'archive-copy.js'), 'utf8')+'\n'+fs.readFileSync(path.join(out, 'archive-labels.js'), 'utf8') + '\n' + source, { filename: 'lang.js' });
@@ -230,7 +230,8 @@ export async function buildLanguagePages(out, snapshot) {
       else if (item.name.endsWith('.html')) files.push(file);
     }
   }
-  walk(out);
+  if (baseFiles) files.push(...baseFiles.map(file=>path.join(out,file)));
+  else walk(out);
   let count = 0;
   for (const file of files) {
     const html = fs.readFileSync(file, 'utf8');

@@ -100,6 +100,10 @@ node tools/tests/migration.test.mjs --content-dir <内容仓>         # 迁移�
 
 ## Git 流程
 
+公开前端的业务页面必须引用站内组件库。缺少组件或变体时先维护组件库，再在页面引用。禁止在页面、业务模板和普通脚本中手写内联 CSS 或直接改写元素样式。必要的动态尺寸、定位与颜色由组件内部封装，入口为 `frontend/public/components/runtime.js`。新增 CSS 必须归属组件；现有兼容样式的归属见 `frontend/component-library.json`。构建与提交前执行 `npm --prefix frontend run check:components`。说明与命令见 `docs/前端组件库与增量构建.md`。
+
+站点默认增量构建。每次发布先计算影响范围，使用上次成功发布的基线，复用未变化的页面及资源。首次构建、公共依赖变化或基线不可靠时允许完整重建，并记录原因。不要删除 `.build/astro-cache/` 来处理普通更新。显式完整重建使用 `--full`，`--force-clean` 只控制旧输出目录的清理。修改构建或组件边界时必须执行增量集成测试，对照同一输入的完整构建结果。
+
 1. 从最新 `main` 开功能分支，用 `feat/`、`fix/`、`docs/`、`chore/` 前缀；
 2. **显式列文件名暂存，禁止 `git add -A` 和 `git add .`**；
 3. 本地构建过一遍，并起服务在浏览器里验收；

@@ -108,14 +108,19 @@ if __name__ == '__main__':
     jobs = json.load(open(sys.argv[1], encoding='utf-8')); out, base, logo_path = sys.argv[2], sys.argv[3], sys.argv[4]
     os.makedirs(out, exist_ok=True)
     logo = Image.open(logo_path).convert('RGBA')
+    # File contents, renderer and fonts determine the cache, not copied mtimes.
+    def digest_file(filename):
+        with open(filename, 'rb') as stream:
+            return hashlib.sha256(stream.read()).hexdigest()
+    renderer_key = [digest_file(__file__), digest_file(logo_path), digest_file(FONT_B), digest_file(FONT_R)]
     made, failed = 0, []
     for j in jobs:
         dst = os.path.join(out, j['id'] + '.jpg')
-        key = json.dumps(j, ensure_ascii=False, sort_keys=True)
         stamp = os.path.join(out, j['id'] + '.key')
         try:
             src = source(j['img'], base, out)
-            if os.path.exists(dst) and os.path.exists(stamp) and open(stamp, encoding='utf-8').read() == key and os.path.getmtime(dst) >= os.path.getmtime(src):
+            key = json.dumps([j, renderer_key, digest_file(src)], ensure_ascii=False, sort_keys=True)
+            if os.path.exists(dst) and os.path.exists(stamp) and open(stamp, encoding='utf-8').read() == key:
                 continue   # 内容没变就不重画
             card(j, src, dst + '.tmp', logo); os.replace(dst + '.tmp', dst)
             open(stamp, 'w', encoding='utf-8').write(key); made += 1

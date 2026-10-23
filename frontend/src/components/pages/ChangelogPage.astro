@@ -1,0 +1,195 @@
+---
+import V2 from '../../layouts/Archive.astro';
+import DocumentPage from '../archive/DocumentPage.astro';
+---
+<V2 title="更新日志 - 蓝色大肥鱼网站改版与收录记录" desc="查看蓝色大肥鱼 AI娘表情包站的页面改版、数据迁移、作品收录、SEO 和性能优化记录。" path="/changelog.html" active="changelog" bodyPage="changelog" pageStyles={["/page-styles/changelog.css"]} robots="index,follow">
+<DocumentPage>
+
+    <h1 class="page-title" data-i18n="changelog.h1">更新日志</h1>
+    <p class="lede" data-i18n="changelog.lede">本站的变更记录，大事小事都记一笔。</p>
+
+    <ol class="timeline">
+      <li class="tl-item"><article class="panel entry-card"><div class="entry-head"><span class="date-sticker">2026-10-23</span><h2 data-i18n="d.design.migrationTitle">Demo 组件迁移与浏览体验修复</h2></div><ul class="entry-points"><li data-i18n="d.design.migrationBrowse">补齐图片瀑布流、图库标签、图片预览与当前浏览器内的收藏。</li><li data-i18n="d.design.migrationCreators">作者档案展示真实头像、图片与视频作品，完善搜索、排序和作品翻阅。</li><li data-i18n="d.design.migrationPages">统一导航、字号与阅读层级，修复社群、活动和说明页，适配桌面、手机与四种语言。</li></ul></article></li>
+      <li class="tl-item"><article class="panel entry-card"><div class="entry-head"><span class="date-sticker">2026-10-23</span><h2 data-i18n="d.design.releaseTitle">新版前台与自动视频收录上线</h2></div><ul class="entry-points"><li data-i18n="d.design.releaseLayout">首页、社群、角色、创作者与说明页面采用新版布局，完善手机端和深色模式。</li><li data-i18n="d.design.releaseFlow">作者登记、RSSHub 同步、AI 审核与自动发布已接通，上线结果发送到飞书群。</li></ul></article></li><li class="tl-item">
+        <article class="panel entry-card tilt-r">
+          <div class="entry-head"><span class="date-sticker">2026-10-23</span><h2 class="card-title entry-title" data-i18n="d.videoReleaseTitle">作者登记、视频同步与自动发布</h2></div>
+          <ul class="entry-points">
+            <li data-i18n="d.videoReleaseRegister">填写 Bilibili UID 或主页链接和一句话说明，即可加入同步队列。</li>
+            <li data-i18n="d.videoReleaseSync">接入 RSSHub 发现近期投稿，逐条检查作者归属、封面和预览帧，只收录 AI 娘二创。</li>
+            <li data-i18n="d.videoReleasePublish">审核通过的视频与作者资料自动进入发布队列，审核和上线结果同步到飞书群。</li>
+          </ul>
+        </article>
+      </li>
+      <li class="tl-item">
+        <article class="panel entry-card tilt-l">
+          <span class="tape-strip" aria-hidden="true"></span>
+          <div class="entry-head">
+            <span class="date-sticker">2026-10-04</span>
+            <h2 class="card-title entry-title">新版前台与主题浏览</h2>
+          </div>
+          <ul class="entry-points">
+            <li>上线发现首页、角色档案、主题合集与完整作品详情，保留原有作品地址和评论记录。</li>
+            <li>图库统一使用“再看一些”连续浏览；筛选栏、下拉框和预览弹窗共用组件。</li>
+            <li>延续网格纸与手绘纸卡主题，支持手机、黑夜模式和四种界面语言。</li>
+          </ul>
+        </article>
+      </li>
+      <li class="tl-item">
+        <article class="panel entry-card tilt-r">
+          <span class="tape-strip" aria-hidden="true"></span>
+          <div class="entry-head">
+            <span class="date-sticker">2026-09-29</span>
+            <h2 class="card-title entry-title"><span class="marker-highlight">站内投稿</span>加入人机验证与限速</h2>
+          </div>
+          <ul class="entry-points">
+            <li>站内快速投稿表单接入 Cloudflare Turnstile 人机验证，多数情况下自动通过，必要时点一下即可。</li>
+            <li>每个 IP 每小时最多提交 10 次，超出会提示稍后再试。</li>
+            <li>验证框固定为浅色，和站点配色保持一致。</li>
+          </ul>
+        </article>
+      </li>
+      <li class="tl-item">
+        <article class="panel entry-card tilt-l">
+          <span class="tape-strip" aria-hidden="true"></span>
+          <div class="entry-head">
+            <span class="date-sticker">2026-09-29</span>
+            <h2 class="card-title entry-title"><span class="marker-highlight">QQ 群投稿</span>开放</h2>
+          </div>
+          <ul class="entry-points">
+            <li>在投稿群里 @机器人，发送「投稿 标题 角色」并在同一条消息里附图即可投稿，参数不对会逐项提醒。</li>
+            <li>角色名支持常用别名，也认「娘」后缀，比如 deepseek娘。</li>
+            <li>群投稿每个自然小时共 10 张，整点重置，回复里会显示本小时剩余次数。</li>
+            <li>站内、GitHub、QQ 三个入口的投稿统一进入审核队列，审核通过后批量发布。</li>
+          </ul>
+        </article>
+      </li>
+      <li class="tl-item">
+        <article class="panel entry-card tilt-r">
+          <span class="tape-strip" aria-hidden="true"></span>
+          <div class="entry-head">
+            <span class="date-sticker">2026-09-28</span>
+            <h2 class="card-title entry-title"><span class="marker-highlight">前台</span>迁移到 Astro</h2>
+          </div>
+          <ul class="entry-points">
+            <li>全部页面改用 Astro 静态构建，页面结构和访问地址保持不变。</li>
+            <li>旧的页面生成脚本已清理下线。</li>
+          </ul>
+        </article>
+      </li>
+      <li class="tl-item">
+        <article class="panel entry-card tilt-l">
+          <span class="tape-strip" aria-hidden="true"></span>
+          <div class="entry-head">
+            <span class="date-sticker">2026-09-27</span>
+            <h2 class="card-title entry-title"><span class="marker-highlight">专题页</span>上线，首页新增专题轮播</h2>
+          </div>
+          <ul class="entry-points">
+            <li>新增专题页，按主题把相关作品串在一起看。</li>
+            <li>首页加入专题轮播，最新专题一眼可见。</li>
+          </ul>
+        </article>
+      </li>
+      <li class="tl-item">
+        <article class="panel entry-card tilt-l">
+          <span class="tape-strip" aria-hidden="true"></span>
+          <div class="entry-head">
+            <span class="date-sticker">2026-09-26</span>
+            <h2 class="card-title entry-title"><span class="marker-highlight">英语 / 日语</span>界面支持上线</h2>
+          </div>
+          <ul class="entry-points">
+            <li>新增英语与日语界面，顶栏右侧「中 / EN / 日」贴纸一键切换，选择记忆在本机，也认 ?lang= 参数与浏览器语言。</li>
+            <li>七个手写页与 250 个详情页的界面文案全部接入翻译层；分类名、品类词、来源与授权标签同步翻译。</li>
+            <li>作品名、Tag 与详情页正文是内容数据，保持中文原文；日文下自动切用日文字体栈。</li>
+          </ul>
+        </article>
+      </li>
+      <li class="tl-item">
+        <article class="panel entry-card tilt-l">
+          <span class="tape-strip" aria-hidden="true"></span>
+          <div class="entry-head">
+            <span class="date-sticker">2026-09-25</span>
+            <h2 class="card-title entry-title"><span class="marker-highlight">投稿表单</span>简化</h2>
+          </div>
+          <ul class="entry-points">
+            <li>GitHub 投稿现在只需上传图片、填写图片名称和角色，一句话说明可选。</li>
+            <li>Tag、分类、来源、授权和详情页正文改由维护者看图审核时补齐，投稿者不用先理解完整收录契约。</li>
+            <li>站内快速投稿与飞书通道仍未开放，当前真实入口仍是 GitHub Issue 表单。</li>
+          </ul>
+        </article>
+      </li>
+      <li class="tl-item">
+        <article class="panel entry-card tilt-r">
+          <span class="tape-strip" aria-hidden="true"></span>
+          <div class="entry-head">
+            <span class="date-sticker">2026-09-25</span>
+            <h2 class="card-title entry-title"><span class="marker-highlight">自定义 404</span>页上线</h2>
+          </div>
+          <ul class="entry-points">
+            <li>新增站点自己的 404 页：大号 404、几条可能原因，以及回首页 / 翻分类 / 去投稿三个出口。</li>
+            <li>页面照旧返回 404 状态码并标记 noindex，不会被搜索引擎当成正常页面收进去。</li>
+            <li>404 页与其它静态页一样参与 gzip 预压缩与构建校验；产物里少了它，构建和发布都会直接失败。</li>
+          </ul>
+        </article>
+      </li>
+      <li class="tl-item">
+        <article class="panel entry-card tilt-l">
+          <span class="tape-strip" aria-hidden="true"></span>
+          <div class="entry-head">
+            <span class="date-sticker">2026-09-25</span>
+            <h2 class="card-title entry-title"><span class="marker-highlight">逐张视觉复核</span>重分类，新增漫画分类</h2>
+          </div>
+          <ul class="entry-points">
+            <li>191 件作品全部重看一遍图，按实际画面重分到梗图 / 插画 / 设定图 / 漫画。</li>
+            <li>新立「漫画」分类，收多格分镜、连环画与条漫。</li>
+            <li>详情页正文改为蓝色大肥鱼第一人称评价，逐张手写。</li>
+            <li>首批 59 件当时没有名字与标签、一直没上线的图，这次看图补齐名字与标签后全部收编，作品总数 191 → 250。</li>
+            <li>这 59 张的原图转为本站自托管，下载不再依赖上游档案馆。</li>
+            <li>修掉标题与图片 alt 里标签与「AI娘二创」粘连的问题（如 glmAI娘二创 → glm AI娘二创）。</li>
+          </ul>
+        </article>
+      </li>
+      <li class="tl-item">
+        <article class="panel entry-card tilt-r">
+          <span class="tape-strip" aria-hidden="true"></span>
+          <div class="entry-head">
+            <span class="date-sticker">2026-09-22</span>
+            <h2 class="card-title entry-title"><span class="marker-highlight">架构边界</span>基准与数据边界落地</h2>
+          </div>
+          <ul class="entry-points">
+            <li>新增《架构边界》规范基准。</li>
+            <li>角色与分类迁出代码为 JSON 清单。</li>
+            <li>构建补引用完整性断言。</li>
+          </ul>
+        </article>
+      </li>
+      <li class="tl-item">
+        <article class="panel entry-card tilt-r">
+          <div class="entry-head">
+            <span class="date-sticker">2026-09-22</span>
+            <h2 class="card-title entry-title">第三批<span class="marker-highlight">投稿收录</span>（#19–#22）</h2>
+          </div>
+          <ul class="entry-points">
+            <li>收录 6 张图。</li>
+            <li>新立 Stepfun 娘与 GLM 娘两个角色。</li>
+          </ul>
+        </article>
+      </li>
+      <li class="tl-item">
+        <article class="panel entry-card tilt-l">
+          <span class="tape-strip" aria-hidden="true"></span>
+          <div class="entry-head">
+            <span class="date-sticker">2026-09-21</span>
+            <h2 class="card-title entry-title">第一期<span class="marker-highlight">加载优化</span>落地</h2>
+          </div>
+          <ul class="entry-points">
+            <li>投稿补缩略图与详情图派生。</li>
+            <li>发布包 73.7 MB → 8.3 MB。</li>
+          </ul>
+        </article>
+      </li>
+    </ol>
+    <p class="note" data-i18n="changelog.note">本页为节选示例；完整变更记录已归档到仓库 archive/2026-09-24/CHANGELOG.md。</p>
+</DocumentPage>
+<Fragment slot="scripts">
+</Fragment>
+</V2>

@@ -2,6 +2,8 @@
 // v2 布局：左侧导航（手机端为左侧抽屉）+ 顶部搜索 + 正文。所有页面共用。
 // 资源一律用根路径（/xxx），同一布局可放在任意层级的页面里。
 import V2Meta from '../components/v2/V2Meta.astro';
+import {accentAttributes} from '../components/library/style-values.mjs';
+import componentRuntime from '../../public/components/runtime.js?raw';
 import SiteFooter from '../components/SiteFooter.astro';
 import EventPopup from '../components/v2/EventPopup.astro';
 import { SITE, GH_ICON, EVENT } from '../lib/v2.mjs';
@@ -10,12 +12,14 @@ const SECTION_OF = { works: 'gallery', characters: 'gallery', collections: 'gall
 const section = SECTION_OF[active] || '';
 const gallery = [['works', '作品', '/index.html', 'v2.nav.works'], ['characters', '角色', '/characters.html', 'v2.nav.characters'], ['collections', '合集', '/topics.html', 'v2.nav.collections']];
 const communityNav = [['community', '加入社群', '/community.html', 'v2.joinGroup'], ['event', '最新活动', EVENT.href, 'v2.nav.events']];
-const bodyStyle = accent ? '--c:' + accent + ';--role-tab-ink:var(--on-art)' : undefined;
+const bodyAttributes = accentAttributes(accent);
 ---
 <!doctype html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
+  <script is:inline set:html={componentRuntime}></script>
+  <link rel="stylesheet" href="/components/runtime.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script is:inline>document.documentElement.classList.add('js')</script>
   <script is:inline src="/theme.js?v=1"></script>
@@ -31,7 +35,7 @@ const bodyStyle = accent ? '--c:' + accent + ';--role-tab-ink:var(--on-art)' : u
   <script is:inline src="/analytics.js" defer></script>
   <slot name="head" />
 </head>
-<body class="v2" data-i18n-page={bodyPage} style={bodyStyle}>
+<body class="v2" data-i18n-page={bodyPage} {...bodyAttributes}>
   <a class="skip" href="#main" data-i18n="v2.skip">跳到正文</a>
   <div class="app">
     <aside class="sidebar" id="site-drawer" aria-label="站点导航" data-i18n-attr="aria-label:v2.siteNav">
@@ -82,8 +86,8 @@ const bodyStyle = accent ? '--c:' + accent + ';--role-tab-ink:var(--on-art)' : u
   </div>
   <template id="group-cta-tpl"><aside class="group-cta" aria-label="加入社群" data-i18n-attr="aria-label:v2.joinGroup"><img src={SITE.group.qr} alt={'QQ 群「' + SITE.group.name + '」二维码'} width="88" height="88" loading="lazy" data-i18n-attr="alt:qq.qrAlt" /><div><b data-i18n="v2.cta.title">加入「{SITE.group.name}」</b><p><span data-i18n="v2.cta.text">聊图、催更、投稿、参加活动。QQ 群号</span> <span class="qq-no">{SITE.group.number}</span></p><p class="cta-acts"><a class="btn btn-ink btn-sm" href={SITE.group.url} target="_blank" rel="noopener" data-i18n="qq.join">点击加入 QQ 群</a><button type="button" class="btn btn-ink btn-sm" data-copy-text={SITE.group.number} data-i18n="qq.copy">复制群号</button><a class="btn btn-line btn-sm" href="/community.html" data-i18n="v2.cta.more">社群介绍</a></p></div></aside></template>
   <EventPopup />
-  <script is:inline src="/work-stats.js?v=4" defer></script>
-  <script is:inline src="/v2.js?v=8" defer></script>
+  <script is:inline src="/work-stats.js?v=20261023-components-1" defer></script>
+  <script is:inline src="/v2.js?v=9" defer></script>
   <slot name="scripts" />
 </body>
 </html>

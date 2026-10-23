@@ -1,0 +1,7 @@
+---
+import Preview from '../../components/library/Preview.astro';
+export function getStaticPaths() {
+  return import.meta.env.DEV ? [{params:{preview:'components'}}] : [];
+}
+---
+<Preview />

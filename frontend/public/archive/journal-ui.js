@@ -39,8 +39,8 @@
     if(!enabled()||!desktop.matches||(!collapsed&&link!==toggle))return;
     hideTip();activeLink=link;oldDescription=link.getAttribute('aria-describedby');
     tip.textContent=link.dataset.jTooltip||link.getAttribute('aria-label');tip.hidden=false;
-    const rect=link.getBoundingClientRect();tip.style.left=`${sidebar.getBoundingClientRect().right+12}px`;
-    tip.style.top=`${Math.min(innerHeight-tip.offsetHeight-12,Math.max(12,rect.top+(rect.height-tip.offsetHeight)/2))}px`;
+    const rect=link.getBoundingClientRect();
+    SiteComponents.tooltip(tip,sidebar.getBoundingClientRect().right+12,Math.min(innerHeight-tip.offsetHeight-12,Math.max(12,rect.top+(rect.height-tip.offsetHeight)/2)));
     link.setAttribute('aria-describedby',[oldDescription,tip.id].filter(Boolean).join(' '));
   }
   function sync(){
