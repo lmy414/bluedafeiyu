@@ -1,4 +1,4 @@
-"""Run inside the existing Hermes container; preserve execution and delivery settings."""
+"""Keep collection/review frequent; publish through the existing six-hour job."""
 import json
 import os
 from datetime import datetime
@@ -12,5 +12,7 @@ home = Path(os.environ.get('HERMES_HOME', '/home/agent/.hermes'))
 backup = home / 'backups' / ('video-publish-' + datetime.now().strftime('%Y%m%d-%H%M%S'))
 backup.mkdir(parents=True, mode=0o700)
 (backup / 'publish-job.json').write_text(json.dumps(job, ensure_ascii=False, indent=2))
-updated = update_job(job['id'], {'schedule': '*/5 * * * *', 'enabled': True})
+# Use the original Asia/Shanghai publishing windows. Review and discovery keep
+# their own schedules; changing this job must not make them wait for publication.
+updated = update_job(job['id'], {'schedule': '0 0,6,12,18 * * *', 'enabled': True})
 print(json.dumps({k: updated.get(k) for k in ['id', 'name', 'schedule', 'next_run_at', 'enabled', 'no_agent']}, ensure_ascii=False))
