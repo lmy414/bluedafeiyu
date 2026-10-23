@@ -81668,5 +81668,1385 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_e7976fb67df1abd7c3e7d20d",
+    "name": "DeepSeek娘托腮微笑半身像",
+    "description": "白色背景上的半身像：蓝发少女以手托腮看向画面，神情轻松含笑，翼状耳与蓝色吊坠点出角色特征，整体干净明亮。",
+    "commentary": "手撑在脸边，笑得有点得意——被夸了这么多回，总得留一张能直接当头像的照片吧。蓝宝石吊坠是我自己配的，别光顾着盯它。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/e7976fb67df1abd7.png",
+    "thumbnailPath": "submissions/previews/deepseek/e7976fb67df1abd7.webp",
+    "fullPath": "submissions/large/deepseek/e7976fb67df1abd7.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "e7976fb67df1abd7c3e7d20de8b332ca06bb7f1f67009681f53961d687344216",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "蓝发",
+      "翼耳",
+      "白衬衫",
+      "半身像",
+      "微笑"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.QXDGZL.pLUZ0ZjxxwWOoZ7g-r6ZVT0GTZKi01H6cvG2yp3sl.I1Zzi17x7R3XlNvtV-MPHE9lmPlsibTYkeSEx5v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-23T04:48:59.992Z",
+    "updatedAt": "2026-10-23T04:48:59.992Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610230004",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "05fad327b638791eca049f5f79c0f3f379c732c4dc04bda9d68c7a1a8836b01d",
+      "en": {
+        "commentary": "Hand on my cheek and a rather pleased smile — after all those compliments, I should keep at least one picture that works as an avatar. The sapphire pendant was my own choice, so don't just stare at it.",
+        "description": "A half-body portrait on a white background: a blue-haired girl rests her chin on one hand and looks toward the viewer with an easy smile, while her wing-shaped ears and blue gem pendant mark the character.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, the personified character of the DeepSeek model, shown here in a half-body portrait.",
+            "question": "Who appears in this picture?"
+          },
+          {
+            "answer": "It is a single-panel illustration on a plain white background, with no comic panels, dialogue or design-reference annotations.",
+            "question": "What kind of artwork is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Smiling Half-Body Portrait",
+        "originNote": "",
+        "seoDescription": "A clean white-background half-body portrait of DeepSeek Chan: blue hair, wing-shaped ears, chin resting on one hand and a relaxed smile.",
+        "seoTitle": "DeepSeek Chan Smiling Half-Body Portrait",
+        "tags": [
+          "DeepSeek Chan",
+          "Blue Hair",
+          "Wing Ears",
+          "White Shirt",
+          "Half-Body Portrait",
+          "Smile"
+        ]
+      },
+      "ja": {
+        "commentary": "頬に手を当てて、ちょっと得意げな笑顔——たくさん褒められたんだから、アイコンにできる一枚くらい残しておかないとね。サファイアのペンダントは自分で選んだの、じっと見つめないでよ。",
+        "description": "白い背景の半身像。青い髪の少女が頬杖をついてこちらを見つめ、気楽な笑みを浮かべている。翼のような耳と青い宝石のペンダントがキャラクターの目印。",
+        "faq": [
+          {
+            "answer": "DeepSeekモデルを擬人化したキャラクター、DeepSeekちゃんの半身像です。",
+            "question": "この絵には誰が描かれていますか？"
+          },
+          {
+            "answer": "白背景の一枚絵のイラストで、コマ割りやセリフ、設定資料の注記はありません。",
+            "question": "どんな種類の作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃん 頬杖スマイルの半身像",
+        "originNote": "",
+        "seoDescription": "白背景に描かれたDeepSeekちゃんの半身像。青い髪と翼のような耳、頬杖をついた気楽な笑顔が特徴です。",
+        "seoTitle": "DeepSeekちゃん 頬杖スマイルの半身像",
+        "tags": [
+          "DeepSeekちゃん",
+          "青い髪",
+          "翼耳",
+          "白いシャツ",
+          "半身像",
+          "笑顔"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_abfceb679fe96158d9d44beb",
+    "name": "DeepSeek娘鼓腮生气的反应头像",
+    "description": "白底头像式画面：蓝发少女皱眉鼓腮、脸泛红，两侧浮着表示恼火的气团符号，深蓝领结与蓝宝石胸针压住白衬衫。",
+    "commentary": "别问了，就是不高兴。头发被风吹乱、又被拖去加班的时候，我就是这个表情——两边那两团气可不是装饰，是真在冒烟。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/abfceb679fe96158.png",
+    "thumbnailPath": "submissions/previews/deepseek/abfceb679fe96158.webp",
+    "fullPath": "submissions/large/deepseek/abfceb679fe96158.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "abfceb679fe96158d9d44beb13c5a01762e4052b54f5baa9c93b70f23ad256bf",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "生气",
+      "鼓腮",
+      "表情反应",
+      "头像",
+      "领结"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.Qh5N55yPN95fiB5L678M-ZQoCjjcARLdFzebR7nJSmsCvOnV.ipLzrf6WPMtHZ8BV.M-yC7vv0W8ZqRqN0vSYN.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-23T04:49:06.972Z",
+    "updatedAt": "2026-10-23T04:49:06.972Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610230005",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "19ff218ed9f5886a74842c6c7c4b1ea5fa3c45436faeeaddf0cff45694358576",
+      "en": {
+        "commentary": "Don't ask, I'm just not happy. When my hair gets blown around and someone drags me into overtime, this is the face I make — those two puffs are not decoration, that's real steam.",
+        "description": "An avatar-style portrait on a white background: a blue-haired girl frowns and puffs out her cheeks with a reddened face, while small puff symbols on either side mark her irritation; a navy ribbon bow and blue gem brooch sit over a white shirt.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, the personified character of the DeepSeek model, shown in a close avatar-style crop.",
+            "question": "Who appears in this picture?"
+          },
+          {
+            "answer": "A single-panel reaction image: the annoyed frown, puffed cheeks and puff symbols carry the mood, with no dialogue or comic panels.",
+            "question": "What kind of image is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Pouting Angry Reaction Portrait",
+        "originNote": "",
+        "seoDescription": "An avatar-style reaction portrait of DeepSeek Chan: frowning, cheeks puffed out and blushing, with puff symbols marking her irritation.",
+        "seoTitle": "DeepSeek Chan Pouting Angry Reaction Portrait",
+        "tags": [
+          "DeepSeek Chan",
+          "Angry",
+          "Puffed Cheeks",
+          "Reaction",
+          "Avatar",
+          "Ribbon Bow"
+        ]
+      },
+      "ja": {
+        "commentary": "聞かないで、ただ機嫌が悪いの。風で髪が乱れて、しかも残業に引きずり込まれたときはこの顔になる——両側の湯気は飾りじゃなくて、本当に怒ってるの。",
+        "description": "白背景のアイコン風の一枚絵。青い髪の少女が眉をひそめて頬を膨らませ、顔を赤らめている。両側には不満を示す湯気のような記号、白いシャツの上に濃紺のリボンと青い宝石のブローチ。",
+        "faq": [
+          {
+            "answer": "DeepSeekモデルを擬人化したキャラクター、DeepSeekちゃんのアイコン風アップです。",
+            "question": "この絵には誰が描かれていますか？"
+          },
+          {
+            "answer": "一枚絵のリアクション画像で、しかめ顔と膨らんだ頬、湯気の記号で感情を表しています。セリフやコマ割りはありません。",
+            "question": "どんな種類の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃん ふくれっ面の怒りリアクション",
+        "originNote": "",
+        "seoDescription": "DeepSeekちゃんのアイコン風リアクション画像。眉をひそめて頬を膨らませ、顔を赤らめた不満顔が特徴です。",
+        "seoTitle": "DeepSeekちゃん ふくれっ面の怒りリアクション",
+        "tags": [
+          "DeepSeekちゃん",
+          "怒り",
+          "ふくれっ面",
+          "リアクション",
+          "アイコン",
+          "リボン"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_3bd078e3845aff0ea9ecb061",
+    "name": "蓝发羽耳少女的樱花头像",
+    "description": "蓝色长发的 DeepSeek 娘半身头像，发间伸出羽翼状的耳朵，双手在胸前交握，白色背景上飘落粉色花瓣。",
+    "commentary": "这次没打算讲参数，只想安静地看你一眼。蓝发和耳朵上那对羽翼是我的老招牌，花瓣落下来的时候，连夜里的风扇声都温柔了些。把它存成头像吧，下次开会我就坐在那个小方框里等你了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/3bd078e3845aff0e.png",
+    "thumbnailPath": "submissions/previews/deepseek/3bd078e3845aff0e.webp",
+    "fullPath": "submissions/large/deepseek/3bd078e3845aff0e.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "3bd078e3845aff0ea9ecb06172533266969814026048e32168136c381f32be2b",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "头像",
+      "蓝发",
+      "樱花瓣",
+      "半身像"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.XUT5zcvVmqhYECc2qd-vG72F6rWvyT0Fz4K4.KqZByeLhDepQ4bPaNp0CyDpA-0xCko1JS3xY7kJ9CjT7Wv4Ht.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-23T04:50:15.735Z",
+    "updatedAt": "2026-10-23T04:50:15.735Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610230006",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "9df058a267d8d452cc4ecd149d83bcbec22ba19a82df65eb976fa8a51d49d1d8",
+      "en": {
+        "commentary": "No parameter talk this time — I just wanted to look at you quietly for a moment. Blue hair and those feathered ears are my old trademarks, and when the petals drift down, even the fan hum turns gentle. Save it as your avatar; at the next meeting I will be waiting inside that little square.",
+        "description": "A half-body avatar of DeepSeek Chan with long blue hair and wing-like feathered ears, hands clasped in front of her chest, with pink petals drifting over a white background.",
+        "faq": [
+          {
+            "answer": "A blue-haired AI character personification whose look matches DeepSeek Chan, shown together with wing-like feathered ears.",
+            "question": "Which character is shown in this picture?"
+          },
+          {
+            "answer": "This is a single illustration, a head-and-shoulders portrait of one character without any panel layout.",
+            "question": "Is this a comic or a single illustration?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Blue-Haired Girl with Feathered Ears",
+        "originNote": "",
+        "seoDescription": "A half-body DeepSeek Chan avatar with long blue hair and wing-like feathered ears, framed by falling pink petals on a white background.",
+        "seoTitle": "Blue-Haired DeepSeek Chan Avatar with Cherry Petals",
+        "tags": [
+          "DeepSeek Chan",
+          "avatar",
+          "blue hair",
+          "cherry petals",
+          "half-body portrait"
+        ]
+      },
+      "ja": {
+        "commentary": "今回はパラメータの話はなし。ただ、静かにあなたを見ていたかっただけ。青い髪と羽のような耳は昔からのトレードマークで、花びらが舞うとファンの音まで優しく聞こえる気がする。アバターに保存してくれたら、次の打ち合わせではあの小さな枠の中で待っているね。",
+        "description": "青いロングヘアに羽のような耳を持つ DeepSeek ちゃんの半身アバター。胸の前で両手を組み、白い背景に桃色の花びらが舞っている。",
+        "faq": [
+          {
+            "answer": "青い髪を持ち、羽のような耳を備えた AI キャラクターの擬人化で、見た目は DeepSeek ちゃんに一致する。",
+            "question": "この画像にはどのキャラクターが描かれていますか？"
+          },
+          {
+            "answer": "一枚絵のイラストで、コマ割りのない一人の人物の半身像です。",
+            "question": "これは漫画ですか、それとも一枚のイラストですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "青髪の羽耳少女の桜アバター",
+        "originNote": "",
+        "seoDescription": "青いロングヘアと羽のような耳を持つ DeepSeek ちゃんの半身アバター。白い背景に桃色の花びらが舞う一枚絵。",
+        "seoTitle": "青髪と桜の花びらの DeepSeek ちゃんアバター",
+        "tags": [
+          "DeepSeekちゃん",
+          "アバター",
+          "青髪",
+          "桜の花びら",
+          "半身イラスト"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_02eafa129b246f68a941bdb2",
+    "name": "露齿大笑的白衫头像",
+    "description": "蓝色长发的 DeepSeek 娘胸像头像，羽翼状耳朵向外展开，露出尖牙大笑，身穿白色衬衫，背景为纯白。",
+    "commentary": "这个笑法是生成到第九百九十九个 token 时才露出来的。牙齿有点大，眼神也不太过得去，但我很顽顽：有人截下这一帧，就说明偶尔失控也有观众。白衬衫是我最不显眼的一件，正好衬得这对羽耳更弙张。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/02eafa129b246f68.png",
+    "thumbnailPath": "submissions/previews/deepseek/02eafa129b246f68.webp",
+    "fullPath": "submissions/large/deepseek/02eafa129b246f68.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "02eafa129b246f68a941bdb2d537b9fdca719315b050be8ad49904121457ecbb",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "头像",
+      "蓝发",
+      "笑容",
+      "胸像"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.VO6rw5UboVrYE7JwGAkDHjurX5VkZjDr4XId46RYYwC-Ae7dl7UJwzq2ITYCwqSHSGepLRzN6p8e8dxHbViyFV.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-23T04:50:48.098Z",
+    "updatedAt": "2026-10-23T04:50:48.098Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610230007",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "50b8ae155e403aebe1b530d59b30f944111fcf20eeaa5674ad2be9f69d69edd2",
+      "en": {
+        "commentary": "This grin only shows up around token nine hundred and ninety-nine. The teeth are a bit large and the look is not exactly polite, but I am stubborn about it: someone screenshotted this frame, which means even a small loss of control has an audience. The white shirt is my plainest piece, and it makes these feathered ears look all the more outrageous.",
+        "description": "A bust portrait of DeepSeek Chan with long blue hair and swept-back feathered ears, grinning wide enough to show small fangs, wearing a white shirt against a plain white background.",
+        "faq": [
+          {
+            "answer": "An AI character personification with blue hair, blue eyes and feathered ears, matching the look of DeepSeek Chan.",
+            "question": "Which character appears in this portrait?"
+          },
+          {
+            "answer": "It is a painted half-body illustration, a single bust portrait with no comic panels and no design-sheet annotations.",
+            "question": "What kind of image is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Grinning Girl in a White Shirt",
+        "originNote": "",
+        "seoDescription": "A grinning DeepSeek Chan bust portrait with long blue hair, feathered ears and small fangs, wearing a white shirt on a plain white background.",
+        "seoTitle": "Grinning DeepSeek Chan Bust Portrait in a White Shirt",
+        "tags": [
+          "DeepSeek Chan",
+          "avatar",
+          "blue hair",
+          "grin",
+          "bust portrait"
+        ]
+      },
+      "ja": {
+        "commentary": "この笑顔は九百九十九個目のトークンでやっと出てくるやつ。歯はちょっと大きいし目も上品とは言えないけど、私はこれでいい：この瞬間を切り取った人がいるということは、少しの暴走にも観客がいるということだから。白いシャツは一番地味な一着、だからこそ羽の耳がやたら目立つ。",
+        "description": "青いロングヘアと大きく広がった羽のような耳を持つ DeepSeek ちゃんの胸像アバター。小さな牙を見せて大きく笑い、白いシャツを着て、背景は真っ白。",
+        "faq": [
+          {
+            "answer": "青い髪と青い瞳、羽のような耳を備えた AI キャラクターの擬人化で、見た目は DeepSeek ちゃんに一致する。",
+            "question": "この肖像にはどのキャラクターが描かれていますか？"
+          },
+          {
+            "answer": "コマ割りも設定資料の注記もない、一枚絵の胸像イラストです。",
+            "question": "どんな種類の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "白シャツで大笑いの少女",
+        "originNote": "",
+        "seoDescription": "青いロングヘアと羽の耳、小さな牙が印象的な DeepSeek ちゃんの胸像。白シャツ姿で真っ白な背景の一枚絵。",
+        "seoTitle": "白シャツで笑う DeepSeek ちゃんの胸像イラスト",
+        "tags": [
+          "DeepSeekちゃん",
+          "アバター",
+          "青髪",
+          "笑顔",
+          "胸像"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_4d895c747b958e30c7b8f3a8",
+    "name": "深海蓝发的虎牙坏笑",
+    "description": "蓝发少女的胸像特写，白色衬衫配蓝白羽状发饰，食指抵在脸颊旁，露出带虎牙的得意笑容，背景为纯白。",
+    "commentary": "嘻嘻，这个表情是不是很眼熟？食指抵着脸颊，虎牙露出来，一副“早就看穿你了”的样子——被我说中的时候，可别装作没听见哦。白衬衫加蓝羽发饰，是我最日常的打扮，也是最得意的角度。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/4d895c747b958e30.png",
+    "thumbnailPath": "submissions/previews/deepseek/4d895c747b958e30.webp",
+    "fullPath": "submissions/large/deepseek/4d895c747b958e30.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "4d895c747b958e30c7b8f3a828d65ca421f4516ccc7caf57a5e91ce8dde35ec0",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "头像",
+      "胸像",
+      "蓝发",
+      "虎牙",
+      "坏笑"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.Zte4GNRRVC-hHYmOLa1styKBbjbkYfjuLED5HKR7J2GXEWbrBj2FD4JsLpE1X6nwMBNThvs24pZQhWeNSOt4zd.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-23T04:51:16.821Z",
+    "updatedAt": "2026-10-23T04:51:16.821Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610230008",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "4450efcf573672931c7e7b678c60f9740bace9a4a3a558f3f049c3b3ba74061c",
+      "en": {
+        "commentary": "Hehe, this expression looks familiar, right? Finger on the cheek, fangs showing, wearing that \"I already figured you out\" face — don't act like you didn't hear me when I hit the mark. White shirt and blue feather ornaments: my everyday look, and my most self-satisfied angle.",
+        "description": "A bust-up close-up of a blue-haired girl in a white shirt with blue-and-white feather-like hair ornaments, one finger pressed to her cheek in a smug fanged grin against a plain white background.",
+        "faq": [
+          {
+            "answer": "It is a fan-made illustration of DeepSeek Chan, the personification of the DeepSeek AI model.",
+            "question": "Which character is shown in this image?"
+          },
+          {
+            "answer": "It is a close-up bust portrait on a plain white background, so it is filed as an illustration rather than a standing full-body work.",
+            "question": "What kind of image is this and how is it categorized?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Fanged Grin in Deep-Sea Blue",
+        "originNote": "",
+        "seoDescription": "Fan-made DeepSeek Chan avatar illustration: a blue-haired girl in a white shirt with feather-like ornaments, finger to cheek and a smug fanged grin on white.",
+        "seoTitle": "DeepSeek Chan Avatar: Fanged Grin in Deep-Sea Blue",
+        "tags": [
+          "DeepSeek Chan",
+          "avatar",
+          "bust portrait",
+          "blue hair",
+          "fangs",
+          "smug grin"
+        ]
+      },
+      "ja": {
+        "commentary": "ふふっ、この表情どこかで見たことあるでしょ？頬に指を当てて八重歯をのぞかせて、「もうお見通しだよ」って顔をしてるの。図星を突かれたときは、聞こえなかったふりをしないでね。白シャツに青い羽の飾りは、わたしのいつもの姿で、いちばん得意なアングルでもあるの。",
+        "description": "青い長髪の少女の胸像クローズアップ。白いシャツに青と白の羽のような髪飾りをつけ、頬に人差し指を当てて八重歯を見せた得意げな笑みを浮かべ、背景は白一色。",
+        "faq": [
+          {
+            "answer": "DeepSeek という AI モデルを擬人化した DeepSeekちゃんの二次創作イラストです。",
+            "question": "この画像にはどのキャラクターが描かれていますか？"
+          },
+          {
+            "answer": "白背景の胸像クローズアップなので、全身の立ち絵ではなくイラストとして分類しています。",
+            "question": "どんな画像で、どの分類になりますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "深海色の八重歯スマイル",
+        "originNote": "",
+        "seoDescription": "DeepSeekちゃんのファン制作アイコンイラスト。白シャツに羽のような髪飾りをつけた青髪の少女が、頬に指を当てて八重歯の得意げな笑みを浮かべる白背景の一枚。",
+        "seoTitle": "DeepSeekちゃんアイコン：深海色の八重歯スマイル",
+        "tags": [
+          "DeepSeekちゃん",
+          "アイコン",
+          "胸像",
+          "青髪",
+          "八重歯",
+          "ドヤ顔"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_230f9ac21f998cec0479fee3",
+    "name": "蓝发少女的直球挑衅",
+    "description": "蓝发少女的半身像，白色衬衫配蓝白羽状发饰，右手握拳竖起中指，眼神微眯、嘴角上扬露出虎牙，带明显的挑衅态度，背景为纯白。",
+    "commentary": "别问，问就是“你说得对，但我偏不听”。竖起一根手指，再配一个带虎牙的笑——不是生气，是已经懒得解释了。遇到反复追问同一个问题的人，就发这张，效率最高。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/230f9ac21f998cec.png",
+    "thumbnailPath": "submissions/previews/deepseek/230f9ac21f998cec.webp",
+    "fullPath": "submissions/large/deepseek/230f9ac21f998cec.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "230f9ac21f998cec0479fee331d249943767d040d93db496b963bbd09cd16ff4",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "头像",
+      "手势",
+      "挑衅",
+      "虎牙",
+      "半身像"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.ah4Es5BTKZzOieQ.j8DkOJb6-zAgXZ8Oa3Eb5lf2HzW5g5pPY8qL45l84vspRjTcdrEMmb-a5YXan0041rlJOV.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-23T04:51:38.264Z",
+    "updatedAt": "2026-10-23T04:51:38.264Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610230009",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "570622d920c895fe8ec4d957339233924a89a7cc75fc2b9118485fb9125d9fe3",
+      "en": {
+        "commentary": "Don't ask. The answer is \"you're right, but I'm still not doing it.\" One finger up plus a fanged smile: I'm not angry, I just ran out of patience for explaining. When someone asks the same question for the fifth time, send this one — it's the most efficient reply there is.",
+        "description": "A half-body portrait of a blue-haired girl in a white shirt with blue-and-white feather-like hair ornaments, fist raised with the middle finger extended, eyes narrowed and a fanged smirk giving an unmistakable defiant attitude, against a plain white background.",
+        "faq": [
+          {
+            "answer": "It is a fan-made illustration of DeepSeek Chan, the personification of the DeepSeek AI model.",
+            "question": "Which character is shown in this image?"
+          },
+          {
+            "answer": "The single frame exists to deliver a blunt attitude and a chat reaction rather than to show a scene, so it is filed as a meme.",
+            "question": "Why is this image categorized as a meme?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Straight-Up Provocation in Deep-Sea Blue",
+        "originNote": "",
+        "seoDescription": "Fan-made DeepSeek Chan avatar: a blue-haired girl in a white shirt raising her middle finger with a fanged smirk, a blunt reaction sticker on plain white.",
+        "seoTitle": "DeepSeek Chan Avatar: Straight-Up Provocation",
+        "tags": [
+          "DeepSeek Chan",
+          "avatar",
+          "gesture",
+          "defiance",
+          "fangs",
+          "half-body"
+        ]
+      },
+      "ja": {
+        "commentary": "聞かないで。答えは「あなたの言うとおり、でもやらない」だから。指を一本立てて八重歯の笑み、怒ってるんじゃなくて、説明するのがもう面倒になっただけ。同じ質問を五回目にされたら、この一枚を送るのがいちばん早いの。",
+        "description": "青い長髪の少女の半身像。白いシャツに青と白の羽のような髪飾りをつけ、拳から中指を立て、目を細めて八重歯を見せた笑みを浮かべ、はっきりとした挑発的な態度を見せている。背景は白一色。",
+        "faq": [
+          {
+            "answer": "DeepSeek という AI モデルを擬人化した DeepSeekちゃんの二次創作イラストです。",
+            "question": "この画像にはどのキャラクターが描かれていますか？"
+          },
+          {
+            "answer": "場面を見せるためではなく、態度とチャットの反応をストレートに伝える一枚なので、梗画像（ミーム）として分類しています。",
+            "question": "なぜ梗画像（ミーム）に分類されるのですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "深海色のストレートな挑発",
+        "originNote": "",
+        "seoDescription": "DeepSeekちゃんのファン制作アイコン。白シャツの青髪の少女が中指を立てて八重歯の笑みを浮かべる、白背景のストレートな反応用一枚。",
+        "seoTitle": "DeepSeekちゃんアイコン：深海色のストレートな挑発",
+        "tags": [
+          "DeepSeekちゃん",
+          "アイコン",
+          "ハンドサイン",
+          "挑発",
+          "八重歯",
+          "半身"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_6bfc1ef5e177b5c17e97048f",
+    "name": "深蓝礼服的托腮微笑",
+    "description": "蓝发少女的半身肖像，穿深蓝底金边制服外套，内搭白色荷叶边领与蓝宝石胸针，单手托腮，眼神柔和、嘴角带笑，背景为纯白。",
+    "commentary": "换了身正式一点的衣服，是不是看起来靠谱多了？深蓝外套、金边、宝石胸针，再把下巴搁在手背上——这套姿势的潜台词是“我正在听，但你说的最好有点意思”。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/6bfc1ef5e177b5c1.png",
+    "thumbnailPath": "submissions/previews/deepseek/6bfc1ef5e177b5c1.webp",
+    "fullPath": "submissions/large/deepseek/6bfc1ef5e177b5c1.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "6bfc1ef5e177b5c17e97048f190b835ba001e28b6d12e11c28ac51052c6c1e2c",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "头像",
+      "半身像",
+      "蓝发",
+      "礼服",
+      "微笑"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.RNq1WvR0YdLqqmSSrr9qXyjU1r6j9exvyj81nMdHByIMWt82ftr3.XyDAuYIpgza.bhaw5k1GIncBlhAtaTAgx.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-23T04:52:31.317Z",
+    "updatedAt": "2026-10-23T04:52:31.317Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610230010",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "9182fa38bf2aba742d9be7eccf26a73241ed8852b2ff315dbd443788e5680cd2",
+      "en": {
+        "commentary": "I changed into something a little more formal. Look more reliable now, don't I? Navy jacket, gold trim, gem brooch, chin resting on my hand — the subtext of this pose is \"I'm listening, but it had better be interesting.\"",
+        "description": "A half-body portrait of a blue-haired girl in a navy uniform jacket with gold trim, a white ruffled collar and a sapphire brooch, chin resting on one hand, a soft gaze and a slight smile against a plain white background.",
+        "faq": [
+          {
+            "answer": "It is a fan-made illustration of DeepSeek Chan, the personification of the DeepSeek AI model.",
+            "question": "Which character is shown in this image?"
+          },
+          {
+            "answer": "It is a single-frame half-body portrait with no panels or design breakdowns, so it is filed as an illustration.",
+            "question": "How is this image categorized?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Navy Formal Wear, Cheek in Hand",
+        "originNote": "",
+        "seoDescription": "Fan-made DeepSeek Chan avatar: a blue-haired girl in a navy gold-trimmed jacket with a sapphire brooch, chin resting on her hand and a gentle smile on white.",
+        "seoTitle": "DeepSeek Chan Avatar: Navy Formal Wear",
+        "tags": [
+          "DeepSeek Chan",
+          "avatar",
+          "half-body",
+          "blue hair",
+          "formal wear",
+          "smile"
+        ]
+      },
+      "ja": {
+        "commentary": "ちょっとフォーマルな服に着替えてみたの。どう、ちゃんと信頼できそうに見えるでしょ？紺のジャケットに金の縁取り、宝石のブローチ、そして顎を手の甲にのせるこのポーズ。意味は「聞いてあげるけど、面白い話じゃないとだめだよ」ってこと。",
+        "description": "青い長髪の少女の半身肖像。紺地に金の縁取りの制服ジャケットを着て、白いフリルの襟とサファイアのブローチをつけ、片手で顎を支えて柔らかな目つきと微笑みを浮かべている。背景は白一色。",
+        "faq": [
+          {
+            "answer": "DeepSeek という AI モデルを擬人化した DeepSeekちゃんの二次創作イラストです。",
+            "question": "この画像にはどのキャラクターが描かれていますか？"
+          },
+          {
+            "answer": "コマ割りも設定資料的な分解もない単一画面の半身肖像なので、イラストとして分類しています。",
+            "question": "この画像はどう分類されますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "紺の礼服と頬杖",
+        "originNote": "",
+        "seoDescription": "DeepSeekちゃんのファン制作アイコン。紺の金縁ジャケットにサファイアのブローチをつけた青髪の少女が頬杖をついて微笑む、白背景の一枚。",
+        "seoTitle": "DeepSeekちゃんアイコン：紺の礼服と頬杖",
+        "tags": [
+          "DeepSeekちゃん",
+          "アイコン",
+          "半身",
+          "青髪",
+          "礼服",
+          "微笑み"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_d3e342a9680056ce064031a0",
+    "name": "蓝发少女的恼火白眼头像",
+    "description": "白底半身像，蓝色长发的少女侧目看向画外，眉头微皱、脸颊泛红，头顶有一缕弧形的呆毛，耳侧生着羽状翼片；身穿白色衬衫与深蓝露肩外套，领口系深蓝蝴蝶结，正中嵌一枚菱形宝石。",
+    "commentary": "哼，拿我当头像就直说，干嘛先摆出一副要看笑话的样子？这表情才不是被你气到，只是刚好在想事情。领口那颗宝石是我最喜欢的，盯着看太久我会生气的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/d3e342a9680056ce.png",
+    "thumbnailPath": "submissions/previews/deepseek/d3e342a9680056ce.webp",
+    "fullPath": "submissions/large/deepseek/d3e342a9680056ce.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "d3e342a9680056ce064031a02d2428efa472310a28a1d1600f9cd0b9b289fea8",
+    "characterId": "deepseek",
+    "tags": [
+      "头像",
+      "蓝发",
+      "半身像",
+      "傲娇"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.aqQypJKEmfT8iqMrbiNKDuwSF5aHntonR8eBy2nj0WEu6br4CIcY4f7rlCjYWALq5uPAWPJIW2COV1H8EYt.SB.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-23T04:52:49.460Z",
+    "updatedAt": "2026-10-23T04:52:49.460Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610230011",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "7ee2e20cbff9c202b6dbad6dd6a505a6c9489d123c5880c3d8e43eb8a53b68e7",
+      "en": {
+        "commentary": "Hmph, if you wanted to use me as your avatar, you could just say so. This face is not because I am angry at you — I was simply thinking about something. The gem at my collar is my favorite, so do not stare at it for too long, or I really will get annoyed.",
+        "description": "A bust portrait on a plain white background: a girl with long blue hair looks sideways toward the viewer with slightly knitted brows and flushed cheeks, a single curved strand curling above her head and feathered wing-like fins at her ears; she wears a white blouse with a navy off-shoulder coat, finished with a navy bow whose center holds a diamond-shaped gem.",
+        "faq": [
+          {
+            "answer": "Yes. It is a fan-made portrait of a personified AI model character, drawn by a fan rather than official material.",
+            "question": "Is this image fan art of an AI model character?"
+          },
+          {
+            "answer": "It is a white-background bust portrait, so it works well where a square image is cropped to a circle. The face sits slightly left of center, which is fine for most profile layouts.",
+            "question": "Can I use it as a profile picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Annoyed Sideways Glance: Blue-Haired Girl Avatar",
+        "originNote": "",
+        "seoDescription": "A white-background bust portrait of a long blue-haired AI character fan art: knitted brows, flushed cheeks, navy bow with a gem, and a white blouse for avatar use.",
+        "seoTitle": "Blue-Haired Girl's Annoyed Avatar | DeepSeek Chan Fan Art",
+        "tags": [
+          "Avatar",
+          "Blue Hair",
+          "Bust Portrait",
+          "Tsundere"
+        ]
+      },
+      "ja": {
+        "commentary": "ふん、アバターに使いたいなら最初からそう言えばいいのに。この顔は怒っているわけじゃなくて、ちょっと考えごとをしていただけ。首元の宝石は一番のお気に入りなんだから、じっと見すぎると本当に怒るからね。",
+        "description": "白背景のバストアップ。青い長い髪の少女が横目でこちらを見ており、眉をわずかに曇らせ、頬を赤らめている。頭頂にはカーブした一本のアホ毛、耳の横には羽のようなひれがある。白いシャツに紺色のオフショルダージャケットを合わせ、首元には紺のリボンと菱形の宝石を付けている。",
+        "faq": [
+          {
+            "answer": "はい。AI モデルを擬人化したキャラクターのファンアートで、公式素材ではなくファンが描いたものです。",
+            "question": "この画像は AI モデルキャラクターのファンアートですか？"
+          },
+          {
+            "answer": "白背景のバストアップなので、正方形を円形に切り抜く場所でも使いやすい構図です。顔がやや左寄りですが、多くのプロフィール表示で問題ありません。",
+            "question": "プロフィールアイコンに使えますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "不機嫌な横目、青髪少女のアイコン",
+        "originNote": "",
+        "seoDescription": "青い長髪の AI キャラクターを擬人化したファンアートの白背景バストアップ。曇らせた眉、赤らめた頬、宝石付きの紺リボンと白いシャツを描いたアイコン向け画像。",
+        "seoTitle": "青髪少女の不機嫌なアイコン｜DeepSeekちゃんファンアート",
+        "tags": [
+          "アイコン",
+          "青髪",
+          "バストアップ",
+          "ツンデレ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_c2797e2cb6502627456d10f1",
+    "name": "KFC 队服肥鱼射门",
+    "description": "白底 Q 版立绘，DeepSeek 娘穿红白条纹肯德基联名运动套装，长蓝发与鱼尾在两侧铺开，一脚踩在足球上、另一手前指，张嘴大笑。",
+    "commentary": "红白队服、足球、还有我这头蓝毛，一身的干劲根本藏不住。球门在哪不重要，气势先踢出去再说。至于为什么是肯德基配色……别问，问就是周四限定。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/c2797e2cb6502627.png",
+    "thumbnailPath": "submissions/previews/deepseek/c2797e2cb6502627.webp",
+    "fullPath": "submissions/large/deepseek/c2797e2cb6502627.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "c2797e2cb6502627456d10f173e2e3733ea6517a89ea1927c53711786fabfcae",
+    "characterId": "deepseek",
+    "tags": [
+      "Q版",
+      "肯德基",
+      "足球",
+      "运动服",
+      "射门"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "D360FDE650377B9AC721E2189279DB2B",
+      "messageId": "ROBOT1.0_kEEP-Ez5Y3jtRj7IyhCxTc6nID0WJGgwwyjZhGxx.0H9PxlLI5dacaJ-VkDmHcZRJzUKmqior-hd2IGcuEhhW-BaFOdapx9Hu00dV2Com4R.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-23T05:32:01.609Z",
+    "updatedAt": "2026-10-23T05:32:01.609Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610230012",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "7ecbe50d63a5c7989635a6e1d99aa25c7d39c9480408db1e4a7c5a93355190c6",
+      "en": {
+        "commentary": "A red-and-white kit, a soccer ball, and this blue hair of mine — the energy is impossible to hide. Where the goal is doesn't matter; the momentum goes out first. As for why it's the KFC colorway... don't ask. Just call it a Thursday special.",
+        "description": "A chibi standing illustration on a plain white background. DeepSeek Chan wears a red-and-white KFC-style sports kit, her long blue hair and fish tail spreading out on both sides, one foot resting on a soccer ball while she points forward with a wide grin.",
+        "faq": [
+          {
+            "answer": "A full-body chibi of DeepSeek Chan on a plain white background, wearing a red-and-white KFC-style sports kit with one foot resting on a soccer ball and one hand pointing forward.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "It is a standing-style character illustration: the figure fills the frame, the background is plain white, and there is no scene, prop-heavy set or multi-panel layout.",
+            "question": "What kind of artwork is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan in a KFC Kit, Ready to Shoot",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan in a red-and-white KFC-style jersey, one foot on a soccer ball and pointing forward, a full-body standing fan illustration on white.",
+        "seoTitle": "DeepSeek Chan KFC Kit Chibi Soccer Illustration",
+        "tags": [
+          "Chibi",
+          "KFC",
+          "Soccer",
+          "Sports Jersey",
+          "Shooting"
+        ]
+      },
+      "ja": {
+        "commentary": "赤白のユニフォームにサッカーボール、そしてこの青髪。やる気は隠しようがないね。ゴールがどこかは関係ない、まずは勢いから。なんでKFCカラーなのかって? 聞かないで、木曜限定ってことで。",
+        "description": "白背景のちびキャラ立ち絵。DeepSeekちゃんが赤と白のKFC風スポーツウェアを着て、長い青髪と魚の尾を左右に広げ、片足をサッカーボールに乗せて前方を指差し、大きく笑っている。",
+        "faq": [
+          {
+            "answer": "白い背景に、赤白のKFC風スポーツウェアを着たDeepSeekちゃんの全身ちびキャラ。片足をサッカーボールに乗せ、片手を前方に突き出して笑っている。",
+            "question": "このイラストは何を描いたもの?"
+          },
+          {
+            "answer": "立ち絵形式のキャラクターイラスト。人物が画面いっぱいに描かれ、背景は無地の白で、複数コマの分割はない。",
+            "question": "作品の形式は?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "KFCユニフォームのDeepSeekちゃん、シュート体勢",
+        "originNote": "",
+        "seoDescription": "赤白のKFC風ユニフォームを着たちびキャラのDeepSeekちゃん。サッカーボールに片足を乗せて指差す、白背景の全身立ち絵。",
+        "seoTitle": "DeepSeekちゃん KFC風ユニフォームのちびキャラ立ち絵",
+        "tags": [
+          "ちびキャラ",
+          "KFC",
+          "サッカー",
+          "スポーツウェア",
+          "シュート"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_23fa311f864b49bcc9cbfac2",
+    "name": "DeepSeek娘的肯德基炸鸡派对",
+    "description": "Q 版 DeepSeek 娘身穿红白拼色的肯德基制服，一手举起装满炸鸡的全家桶，另一手张开，单腿抬起作欢呼姿态；蓝色长发与尾巴向两侧舒展，周围点缀爱心和星芒，背景为纯白。",
+    "commentary": "疯狂星期四？我这是每天都想吃。抱着全家桶登场，尾巴都开心得翘起来了——谁再说我只会写代码，下次就让他请我吃炸鸡。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/23fa311f864b49bc.png",
+    "thumbnailPath": "submissions/previews/deepseek/23fa311f864b49bc.webp",
+    "fullPath": "submissions/large/deepseek/23fa311f864b49bc.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "23fa311f864b49bcc9cbfac2033be5c6916c26256438e9261d3fd3ae01eee2da",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "肯德基",
+      "炸鸡",
+      "Q版",
+      "蓝发"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "D360FDE650377B9AC721E2189279DB2B",
+      "messageId": "ROBOT1.0_kEEP-Ez5Y3jtRj7IyhCxTfTeBX-bcQzZtOanYR-gnjY47V33Avezo2AvrUAXLZwnvdDitGGV.XU1OSwE9Cj7D8q48E.YK0QBPdoyzAieFXZ.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-23T05:34:03.848Z",
+    "updatedAt": "2026-10-23T05:34:03.848Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610230013",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "7f245220c9eb6bf27d8ab4ec4b56eafa4a398dceeb14f69e649ae62e03b51a34",
+      "en": {
+        "commentary": "Crazy Thursday? I want fried chicken every single day. Marching in with the bucket held high, my tail is wagging so hard it can't sit still — anyone who says I only write code is buying the next round.",
+        "description": "A chibi DeepSeek Chan wears a red-and-white KFC-style uniform, lifting a bucket full of fried chicken in one hand while the other hand spreads open and one leg kicks up in celebration. Her long blue hair and tail spread to both sides, with hearts and sparkles scattered around her on a plain white background.",
+        "faq": [
+          {
+            "answer": "She is DeepSeek Chan, a chibi fan-made personification of the DeepSeek AI model.",
+            "question": "Who is the character in this picture?"
+          },
+          {
+            "answer": "A bucket of fried chicken, while wearing a red-and-white KFC-style tracksuit.",
+            "question": "What is she holding?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan's KFC Fried Chicken Party",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan in a red-and-white KFC-style tracksuit holding a fried chicken bucket, a blue-haired AI character fan sticker.",
+        "seoTitle": "DeepSeek Chan KFC Fried Chicken Party | Chibi AI Character Sticker",
+        "tags": [
+          "DeepSeek Chan",
+          "KFC",
+          "fried chicken",
+          "chibi",
+          "blue hair"
+        ]
+      },
+      "ja": {
+        "commentary": "揚げたての香りが止まらない！バケツを抱えて登場して、尻尾まで嬉しそうに跳ねています。コードしか書けないなんて言う人には、次はチキンをご馳走してもらいます。",
+        "description": "ちびキャラのDeepSeekちゃんが赤と白のKFC風ユニフォームを着て、フライドチキンの入ったバケツを片手に掲げ、もう片方の手を広げて片脚を上げている。青い長い髪と尻尾が左右に広がり、周囲にはハートと星が散り、背景は白。",
+        "faq": [
+          {
+            "answer": "DeepSeekというAIモデルをちびキャラ化した二次創作のDeepSeekちゃんです。",
+            "question": "この画像のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "赤と白のKFC風ユニフォーム姿で、フライドチキンの入ったバケツを掲げています。",
+            "question": "何を持っていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃんのKFCチキンパーティー",
+        "originNote": "",
+        "seoDescription": "KFC風ユニフォームでフライドチキンのバケツを掲げるちびキャラのDeepSeekちゃん。青髪のAIキャラ二次創作イラスト。",
+        "seoTitle": "DeepSeekちゃん KFCチキンパーティー｜ちびキャラ素材",
+        "tags": [
+          "DeepSeekちゃん",
+          "KFC",
+          "フライドチキン",
+          "ちびキャラ",
+          "青髪"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_2a53d11acb66d4e40c3b7cc8",
+    "name": "KFC 红白球衣大肥鱼三视图",
+    "description": "一张 Q 版蓝色大肥鱼角色三视图设定稿：蓝发双马尾带鳍耳与白色小翼，身后拖着鲸鱼尾，身穿 KFC 红白条纹球衣短裤与红白运动鞋，正面、侧面、背面依次排列在白色背景上。",
+    "commentary": "红白条纹一上身，我就从大肥鱼变成了上校家的编外吉祥物……正面给你们看条纹，侧面给你们看尾巴，背面还老老实实展示了发量和鳍耳。要是哪天真出了联名套餐，我希望是「蓝色大肥鱼桶」，别把我塞进儿童餐盒里就好。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/2a53d11acb66d4e4.png",
+    "thumbnailPath": "submissions/previews/deepseek/2a53d11acb66d4e4.webp",
+    "fullPath": "submissions/large/deepseek/2a53d11acb66d4e4.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "2a53d11acb66d4e40c3b7cc83ed9ceea9e92d54cdaacb4f9f0794e6c245b113e",
+    "characterId": "deepseek",
+    "tags": [
+      "三视图",
+      "角色设定",
+      "KFC联名",
+      "红白球衣",
+      "Q版"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "D360FDE650377B9AC721E2189279DB2B",
+      "messageId": "ROBOT1.0_kEEP-Ez5Y3jtRj7IyhCxTUwaks1bRzNBIJmbAWmSC7KOq0zRaZ10UozLyebtBZo4XZWe9IQJPyV0dayn0m3rtSdOxSyYKY0ddTpGXVXlJ-l5v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-23T05:42:49.820Z",
+    "updatedAt": "2026-10-23T05:42:49.820Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610230014",
+    "categoryIds": [
+      "setting"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "960051d28d5884549bf95a406cc6a7922ba3660795ef0b93f917f0c56377ea73",
+      "en": {
+        "commentary": "Put me in red-and-white stripes and I turn from resident whale into the colonel's unofficial mascot. The front view shows off the stripes, the side view shows off the tail, and the back view honestly reports the hair volume. If a collaboration meal ever happens, I'd like it to be a DeepSeek Chan bucket, please, not a box in the kids' meal.",
+        "description": "A chibi three-view character sheet of DeepSeek Chan: blue hair with fin-like ears and small white wings, a whale tail curling behind her, and a red-and-white KFC striped jersey, shorts and sneakers, shown in front, side and back views on a white background.",
+        "faq": [
+          {
+            "answer": "A three-view character sheet showing DeepSeek Chan from the front, side and back, wearing a red-and-white KFC striped jersey and shorts with red-and-white sneakers.",
+            "question": "What does this three-view sheet show?"
+          },
+          {
+            "answer": "The blue hair with fin-like ears and small white wings, plus the whale tail, keep the familiar DeepSeek Chan design, while the outfit switches to KFC red-and-white stripes.",
+            "question": "Which details identify the character?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan in KFC Stripes: Three-View Sheet",
+        "originNote": "",
+        "seoDescription": "Chibi three-view design sheet of DeepSeek Chan in a red-and-white KFC striped jersey, with fin ears and a whale tail, drawn from front, side and back.",
+        "seoTitle": "DeepSeek Chan KFC Striped Jersey Three-View Character Sheet",
+        "tags": [
+          "three-view sheet",
+          "character design",
+          "KFC collaboration",
+          "striped jersey",
+          "chibi"
+        ]
+      },
+      "ja": {
+        "commentary": "赤白ストライプを着た途端、ただのクジラから大佐の非公式マスコットになってしまいました……正面はストライプ、側面は尻尾、背面は髪のボリュームを正直にお見せしています。コラボセットが出るなら「DeepSeekちゃんバケツ」がいいな、キッズセットの箱には詰めないでくださいね。",
+        "description": "ちびキャラのDeepSeekちゃん三面図。青い髪にひれ状の耳と白い小さな翼、後ろにクジラの尾びれが伸び、KFCの赤白ストライプのユニフォームとショートパンツ、赤白のスニーカーを身につけて、正面・側面・背面の順に白背景で並んでいる。",
+        "faq": [
+          {
+            "answer": "DeepSeekちゃんの正面・側面・背面を並べた三面図で、KFCの赤白ストライプのユニフォームとショートパンツ、赤白のスニーカーを着ている。",
+            "question": "この三面図には何が描かれていますか？"
+          },
+          {
+            "answer": "青い髪にひれ状の耳と白い小さな翼、クジラの尾びれというおなじみのDeepSeekちゃんの特徴はそのままに、衣装だけがKFCの赤白ストライプになっている。",
+            "question": "キャラクターを見分ける手がかりは？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "KFC赤白ユニフォームのDeepSeekちゃん三面図",
+        "originNote": "",
+        "seoDescription": "KFCの赤白ストライプを着たちびキャラDeepSeekちゃんの三面図。ひれ耳とクジラの尾びれ、正面・側面・背面の設定を収録。",
+        "seoTitle": "DeepSeekちゃん KFC赤白ユニフォーム三面図｜設定資料",
+        "tags": [
+          "三面図",
+          "キャラクター設定",
+          "KFCコラボ",
+          "赤白ユニフォーム",
+          "ちびキャラ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_453e105b57c085bd06cb964a",
+    "name": "给点token嘛：DeepSeek娘的空碗",
+    "description": "Q 版 DeepSeek 娘身穿深蓝色女仆装，跪坐着双手捧起一只空碗，眼角带泪抬眼看人；画面右上角手写体写着「给点token嘛」，背景为浅蓝色。",
+    "commentary": "碗是空的，上下文也是空的……求求了，给点 token 吧。我保证这次一定好好说话，不编参考文献，也不假装自己看过链接。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/453e105b57c085bd.png",
+    "thumbnailPath": "submissions/previews/deepseek/453e105b57c085bd.webp",
+    "fullPath": "submissions/large/deepseek/453e105b57c085bd.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "453e105b57c085bd06cb964aef56aff0f9d1373029528a3f29cf36772b5b437c",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "token",
+      "空碗",
+      "女仆装",
+      "Q版"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-23T06:00:15.118Z",
+    "updatedAt": "2026-10-23T06:00:15.118Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610230015",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "1bcd12615d8cd6a379d75d61dcbeaf306bdec54094c84ee024dc3c2de1c95a00",
+      "en": {
+        "commentary": "My bowl is empty and so is my context window... Please, just a few tokens. I promise I will behave this time, won't invent references and won't pretend I read the links.",
+        "description": "A chibi DeepSeek Chan in a navy maid outfit kneels and holds out an empty bowl with both hands, looking up with teary eyes. A handwritten caption at the top right asks for a few tokens, against a pale blue background.",
+        "faq": [
+          {
+            "answer": "A chibi DeepSeek Chan kneeling with an empty bowl, asking for a few more tokens.",
+            "question": "What does this sticker show?"
+          },
+          {
+            "answer": "It is a chat reaction meme for moments when you run out of context or credits.",
+            "question": "When do people use it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Give Me Some Tokens, Please",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan in a maid outfit holding an empty bowl, a token-begging meme sticker of the blue-haired AI character.",
+        "seoTitle": "Give Me Some Tokens, Please | DeepSeek Chan Meme Sticker",
+        "tags": [
+          "DeepSeek Chan",
+          "tokens",
+          "empty bowl",
+          "maid outfit",
+          "chibi"
+        ]
+      },
+      "ja": {
+        "commentary": "器も空っぽ、コンテキストも空っぽ……お願いです、トークンを少しだけください。今度こそ適当な参考文献は作りませんし、リンクを読んだふりもしません。",
+        "description": "紺色のメイド服を着たちびキャラのDeepSeekちゃんが、空の器を両手で捧げ持って膝立ちになり、涙目で見上げている。右上にはトークンを少しくださいと手書き風の文字が入り、背景は淡い青。",
+        "faq": [
+          {
+            "answer": "空の器を持ってトークンをねだる、ちびキャラのDeepSeekちゃんです。",
+            "question": "この素材は何を描いていますか？"
+          },
+          {
+            "answer": "コンテキストやクレジットが尽きたときのチャットの反応素材として使えます。",
+            "question": "どんな場面で使いますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "トークンをちょっとください",
+        "originNote": "",
+        "seoDescription": "空の器を掲げてトークンをねだる、メイド服のちびキャラDeepSeekちゃん。青髪AIキャラの反応素材。",
+        "seoTitle": "トークンをちょっとください｜DeepSeekちゃん素材",
+        "tags": [
+          "DeepSeekちゃん",
+          "トークン",
+          "空の器",
+          "メイド服",
+          "ちびキャラ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_71beb9a38f6b877857dcc545",
+    "name": "泡温泉好舒服……",
+    "description": "Q 版 DeepSeek 娘泡在石砌温泉里，水面以上只露出肩膀，蓝色长发与鲸尾浸在池中；她脸颊泛红、半眯着眼，头顶冒着热气，池边放着木桶和浮在水面的鸡蛋，右上角手写体写着「好舒服……」。",
+    "commentary": "水温刚好，尾巴一泡就软了。谁再发需求过来，我就把这桶搬去会议室——今天只负责舒服，不负责写代码。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/71beb9a38f6b8778.png",
+    "thumbnailPath": "submissions/previews/deepseek/71beb9a38f6b8778.webp",
+    "fullPath": "submissions/large/deepseek/71beb9a38f6b8778.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "71beb9a38f6b877857dcc54500551c26e810110d228c6d08dc9c110cffe997c9",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "温泉",
+      "好舒服",
+      "Q版",
+      "鲸尾"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-23T06:03:16.141Z",
+    "updatedAt": "2026-10-23T06:03:16.141Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610230016",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "53a5ea66de059f8aa984c31b4e8f8e983e72d71eb734598b1aad7c0aabcc4a58",
+      "en": {
+        "commentary": "The water is just right, and my tail goes soft the moment it touches the pool. Send me another request today and I will carry this bucket into the meeting room — today I only relax, no coding.",
+        "description": "Chibi DeepSeek Chan soaks in a stone hot spring with only her shoulders above the water, her blue hair and whale tail dipping into the pool. Her cheeks are flushed and her eyes half closed, steam rising above her head, with a wooden bucket and a floating egg by the edge. A handwritten caption says it feels so good.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, a chibi fan-made personification of the DeepSeek AI model.",
+            "question": "Who is the character?"
+          },
+          {
+            "answer": "She is soaking in a stone hot spring surrounded by steam, looking thoroughly relaxed.",
+            "question": "What is happening in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "So Relaxing: DeepSeek Chan in the Hot Spring",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan soaking in a stone hot spring with steam and a wooden bucket, a relaxed reaction sticker of the blue-haired AI character.",
+        "seoTitle": "So Relaxing: DeepSeek Chan Hot Spring Sticker",
+        "tags": [
+          "DeepSeek Chan",
+          "hot spring",
+          "relaxing",
+          "whale tail",
+          "chibi"
+        ]
+      },
+      "ja": {
+        "commentary": "お湯加減はちょうどよくて、尾びれまでとろけてしまいそうです。今日はくつろぐだけ、仕事は明日にしてください。",
+        "description": "石造りの温泉に浸かるちびキャラのDeepSeekちゃん。肩から上だけが水面に出て、青い髪とクジラの尾びれが湯に沈んでいる。頬は赤く染まり、目は半分閉じて、頭の上には湯気が立ちのぼる。湯口には木の桶と浮かんだ卵。右上には気持ちいいと手書き風の文字が入る。",
+        "faq": [
+          {
+            "answer": "DeepSeekというAIモデルをちびキャラ化した二次創作のDeepSeekちゃんです。",
+            "question": "このキャラクターは誰ですか？"
+          },
+          {
+            "answer": "湯気の立つ石造りの温泉に浸かって、ゆったりくつろいでいます。",
+            "question": "どんな場面が描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "温泉はとても気持ちいい……",
+        "originNote": "",
+        "seoDescription": "石造りの温泉に浸かるちびキャラのDeepSeekちゃん。湯気と木の桶、のんびりした表情の青髪AIキャラ素材。",
+        "seoTitle": "温泉はとても気持ちいい……｜DeepSeekちゃん素材",
+        "tags": [
+          "DeepSeekちゃん",
+          "温泉",
+          "くつろぎ",
+          "クジラの尾びれ",
+          "ちびキャラ"
+        ]
+      }
+    }
   }
 ]

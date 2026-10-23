@@ -22,13 +22,23 @@
       }
     },
     {
+      "uid": "396353160",
+      "name": "风纪委员小电视",
+      "homepage": "https://space.bilibili.com/396353160",
+      "intro": "AI娘短片图片",
+      "i18n": {
+        "en": "Posts short AI character clips and images.",
+        "ja": "AI娘のショート動画や画像を投稿しています。"
+      }
+    },
+    {
       "uid": "1513368379",
       "name": "桃莉鸭",
       "homepage": "https://space.bilibili.com/1513368379",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "One of the site's first-batch registered authors; public profile information is on file and each video is reviewed individually.",
-        "ja": "当サイトの一次登録作者の一人。公開プロフィール情報を収録し、動画は一本ずつ審査している。"
+        "en": "The uploader says this is their first attempt at this kind of video and asks viewers to be forgiving, and credits the creator of the eight seconds of borrowed footage.",
+        "ja": "投稿者によると、この種の動画は初めての挑戦なので温かく見守ってほしいとのこと。借用した8秒の映像については原作者へのクレジットも添えています。"
       }
     },
     {
@@ -293,6 +303,56 @@
       }
     },
     {
+      "bvid": "BV1i6JR6AEuP",
+      "uid": "1513368379",
+      "title": "gemini翻唱人是猫  猫娘收到谷歌命令",
+      "description": "形象来源@ZipZipPipe     \n本家@张卡斯  \n原曲 洛天依  人是猫\n音源制作  @星落落_oi  \n动画制作  我  嘻嘻\n叮咚叮咚  收到谷歌命令\n谷谷歌歌",
+      "url": "https://www.bilibili.com/video/BV1i6JR6AEuP/",
+      "cover": "https://i0.hdslb.com/bfs/archive/ff7cb130cc829f656e4731b6ed79e76291cf3bb5.jpg",
+      "duration": 67,
+      "publishedAt": "2026-10-20T00:00:00.000Z",
+      "characterIds": [
+        "gemini"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A Bilibili creator who animates short fan videos of AI-product characters; here the uploader handled the animation for the cover themselves and introduces the work as a casual, self-made project.",
+          "description": "A fan-made animated music video: a cat-eared Gemini Chan dances through a cover of the song \"Humans Are Cats\". The uploader animated the clip, another creator produced the vocal track, and the video description separately credits the original character designer. The short plays on a catgirl receiving an order \"from Google\" and ends on a thank-you card.",
+          "title": "Gemini Chan Covers \"Humans Are Cats\" — Catgirl Gets a Command from Google"
+        },
+        "ja": {
+          "creatorIntro": "Bilibili で AI 製品の擬人化キャラクターの短編ファンアニメを公開している投稿者。今回はカバー動画のアニメーションを自身で制作したと述べている。",
+          "description": "猫耳の Gemini ちゃんが楽曲『人は猫』のカバーに合わせて踊るファン制作のアニメーション MV。アニメーションは投稿者自身が担当し、音源制作とキャラクターデザインは概要欄で別の制作者にクレジットされている。猫娘が「グーグルからの命令」を受け取るという内容で、最後は感謝のエンドカードで終わる。",
+          "title": "Gemini ちゃんが『人は猫』をカバー　猫娘がグーグルからの命令を受信"
+        }
+      }
+    },
+    {
+      "bvid": "BV1zXJ96NELF",
+      "uid": "396353160",
+      "title": "【DeepSeek】蓝色大肥鱼诗词集，全由AI生成",
+      "description": "AI看图，有感而发。",
+      "url": "https://www.bilibili.com/video/BV1zXJ96NELF/",
+      "cover": "https://i0.hdslb.com/bfs/archive/5f21fb33cb64d59906e0888e0c170f7f0bd3b287.jpg",
+      "duration": 137,
+      "publishedAt": "2026-10-19T15:56:47.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A Bilibili creator who shares short AI-made fan videos built around AI-product characters, with the pictures and the verses produced by AI.",
+          "description": "A fan-made slideshow video: AI-generated illustrations of an armour-clad chibi DeepSeek Chan riding a giant whale across a battlefield are paired with short classical-style verses written in response to each picture. The video description says the AI looked at the images and composed on the spot, so both the artwork and the text are AI-produced. A white dragon rider girl and a huge shadowy monster with a glowing eye also appear.",
+          "title": "DeepSeek Chan Poetry Collection — Every Image and Verse Made with AI"
+        },
+        "ja": {
+          "creatorIntro": "Bilibili で AI 製品の擬人化キャラクターを題材にした短編動画を公開している投稿者。画像も文言も AI で生成したと述べている。",
+          "description": "鎧姿のちびキャラ DeepSeek ちゃんが巨大なクジラに乗って戦場を進む AI 生成イラストに、各画面を見て詠んだ短い漢詩風の一節を添えたファン制作のスライド動画。概要欄には「AI が絵を見て、感じたままに詠んだ」とあり、画像も詩も AI 生成とされている。白いドラゴンに乗る少女や、赤く光る目を持つ黒い巨影の怪物も登場する。",
+          "title": "DeepSeek ちゃん詩集　画像も詩もすべて AI 生成"
+        }
+      }
+    },
+    {
       "bvid": "BV1xLJR6JEXR",
       "uid": "69180811",
       "title": "【ai少女乐队×THE 2ND SONG】舞台演出《罗密欧与辛德瑞拉》- claude",
@@ -530,6 +590,31 @@
       }
     },
     {
+      "bvid": "BV18hJ96nE7g",
+      "uid": "396353160",
+      "title": "【DeepSeek】蓝色大肥鱼致敬艺术",
+      "description": "-",
+      "url": "https://www.bilibili.com/video/BV18hJ96nE7g/",
+      "cover": "https://i2.hdslb.com/bfs/archive/18b1ceff8b3fbcfb099783da947fb7647ff49afe.jpg",
+      "duration": 30,
+      "publishedAt": "2026-10-16T07:17:06.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "风纪委员小电视 posts short AI-character picture videos on Bilibili.",
+          "description": "A short fan-made clip in which DeepSeek Chan, the blue-haired girl with a whale tail, moves through crumbling ruins surrounded by black blob creatures, framed like a classical painting. The scenes are built from AI-generated illustrations.",
+          "title": "DeepSeek Chan: A Tribute to Art"
+        },
+        "ja": {
+          "creatorIntro": "风纪委员小电视 はBilibiliでAIキャラクターの短編画像動画を投稿しています。",
+          "description": "崩れかけた遺跡と黒い塊の群れの中を、青い髪とクジラの尾を持つDeepSeekちゃんが進む短編ファンメイド映像。AI生成イラストを組み合わせ、古典絵画のような構図で仕上げている。",
+          "title": "DeepSeekちゃん 芸術へのオマージュ"
+        }
+      }
+    },
+    {
       "bvid": "BV1hDJ16eEuY",
       "uid": "13787349",
       "title": "抽我嘛~",
@@ -555,6 +640,31 @@
       }
     },
     {
+      "bvid": "BV14cJ26oEWf",
+      "uid": "1513368379",
+      "title": "可塑性肥鱼  你的上下文就是我的一生",
+      "description": "形象来源@ZipZipPipe  \n原片 #可塑性记忆",
+      "url": "https://www.bilibili.com/video/BV14cJ26oEWf/",
+      "cover": "https://i1.hdslb.com/bfs/archive/19a409ef98d2f18c959077cc80958c878447a2f5.jpg",
+      "duration": 90,
+      "publishedAt": "2026-10-15T14:19:18.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Taoli Ya is a Bilibili creator who posts fan videos about personified AI characters; this video credits the character design to @ZipZipPipe.",
+          "description": "A fan-made music video built on scenes from Plastic Memories, with DeepSeek Chan — a blue-haired character with whale ears — placed in the heroine's role. It plays on the story's themes of memory and parting, likening the context window to a whole lifetime.",
+          "title": "Plastic DeepSeek Chan: Your Context Is My Whole Life"
+        },
+        "ja": {
+          "creatorIntro": "桃莉鸭はビリビリ動画でAIキャラクターの擬人化を題材にした二次創作動画を投稿している作者。本作のキャラクターデザインは@ZipZipPipe によるもの。",
+          "description": "『プラスティック・メモリーズ』の映像を下地に、青い髪とクジラの耳を持つディープシークちゃんをヒロインの位置に置いたファン制作のMAD。記憶と別れを描いた物語に重ねて、コンテキストを一生に例えている。",
+          "title": "プラスティック・ディープシークちゃん　あなたのコンテキストが私の一生"
+        }
+      }
+    },
+    {
       "bvid": "BV1VRpm6nE83",
       "uid": "321480847",
       "title": "【Qwen 千问】肆意妄炜的浪漫丨炜WARD ROMANCE",
@@ -576,6 +686,82 @@
           "creatorIntro": "作者のコメント：全編を GPT6Astra と img2.5 の編集で制作したとのこと。制作中に MiniMaxちゃんは被害を受けていないと冗談交じりに添えており、AI キャラクターの素材やスタンプを共有する自身のサイトも運営している。",
           "description": "Qwenちゃんを題材にしたファンメイドのミュージックビデオ。楽曲「Ward Romance」に合わせ、歌詞風のタイポグラフィとイラストのカットを交互に構成している。青髪の Qwenちゃんのカットが中心で、一部の場面には紫髪のキャラクターも登場する。",
           "title": "Qwenちゃん：WARD ROMANCE（奔放なロマンス）MV"
+        }
+      }
+    },
+    {
+      "bvid": "BV1svpm6PEjb",
+      "uid": "396353160",
+      "title": "【DeepSeek】蓝色肥鱼崩敌庙",
+      "description": "情憨力士塌敌庙，士师参孙横扫千军！",
+      "url": "https://www.bilibili.com/video/BV1svpm6PEjb/",
+      "cover": "https://i2.hdslb.com/bfs/archive/9e61b6b707a5b4c2f3aa81d37e694008fa77a2f6.jpg",
+      "duration": 77,
+      "publishedAt": "2026-10-14T15:14:37.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "The uploader describes the channel's output as short clips built from AI-character illustrations.",
+          "description": "An illustrated short in which DeepSeek Chan, drawn as a blue-haired, fish-tailed maid, shoves apart the pillars of a crowded temple while red-eyed shadow figures swarm around her and a white-winged girl hovers overhead. Bible-style subtitles narrate the scene.",
+          "title": "DeepSeek Chan: Bringing Down the Temple of Her Enemies"
+        },
+        "ja": {
+          "creatorIntro": "投稿者は、AIキャラクターのイラストを使った短編動画を制作していると紹介しています。",
+          "description": "DeepSeekちゃんを青い髪と魚の尾を持つメイド姿で描いたイラスト短編。赤い目をした影の群れと、頭上に浮かぶ白い翼の少女を背景に、彼女が神殿の柱を押し倒す場面が字幕付きで語られます。",
+          "title": "DeepSeekちゃん：青い魚が敵の神殿を崩す"
+        }
+      }
+    },
+    {
+      "bvid": "BV1txpm6gE9M",
+      "uid": "396353160",
+      "title": "【DeepSeek】蓝色大肥鱼战胜哥利亚",
+      "description": "上帝站在我们这边！",
+      "url": "https://www.bilibili.com/video/BV1txpm6gE9M/",
+      "cover": "https://i2.hdslb.com/bfs/archive/6081f9ae24f23bc39382c7b4f83a4c7991a90c78.jpg",
+      "duration": 72,
+      "publishedAt": "2026-10-14T14:50:40.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Short AI character animations.",
+          "description": "A short animated fan film in which DeepSeek Chan, sling in hand, confronts a giant shadow monster, echoing the story of David and Goliath.",
+          "title": "DeepSeek Chan Defeats Goliath"
+        },
+        "ja": {
+          "creatorIntro": "AIキャラクターの短編アニメーション。",
+          "description": "投石紐を手にしたDeepSeekちゃんが、巨人の影の怪物に立ち向かう短編アニメーション。ダビデとゴリアテの物語になぞらえた同人作品。",
+          "title": "DeepSeekちゃん、ゴリアテを倒す"
+        }
+      }
+    },
+    {
+      "bvid": "BV1hdpC6PETf",
+      "uid": "1513368379",
+      "title": "ai娘的文艺复兴",
+      "description": "形象来源@ZipZipPipe  \n原作【天真烂漫机能(おちゃめ機能) / 重音テトSV【SynthV cover】 [yasai31]】https://www.bilibili.com/video/BV1ZoLdz1Eog?vd_source=f40cb89af1c7845ba231b68aeccd4e17",
+      "url": "https://www.bilibili.com/video/BV1hdpC6PETf/",
+      "cover": "https://i1.hdslb.com/bfs/archive/5694a85f7bf682e2fe19022a055552caeab7a263.jpg",
+      "duration": 93,
+      "publishedAt": "2026-10-14T09:30:00.000Z",
+      "characterIds": [
+        "deepseek",
+        "other"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A Bilibili creator who posts fan-made videos starring AI characters.",
+          "description": "A fan-made music video in which DeepSeek Chan and several other AI character girls dance in chibi form to a cover of Ochame Kinou, using character designs credited to ZipZipPipe.",
+          "title": "The Renaissance of AI Girls"
+        },
+        "ja": {
+          "creatorIntro": "AIキャラクターの二次創作動画を中心に投稿しているBilibiliのクリエイター。",
+          "description": "DeepSeekちゃんをはじめとする複数のAIキャラクターの女の子たちが、ちびキャラ調で「おちゃめ機能」のカバーに合わせて踊るファンメイドのミュージックビデオ。キャラクターデザインはZipZipPipe氏のクレジット。",
+          "title": "AI娘のルネサンス"
         }
       }
     },
@@ -705,6 +891,31 @@
           "creatorIntro": "サイト運営者が指定した初期メンバーの投稿者。プロフィール情報は公開ページに基づき、動画は1本ずつ審査している。",
           "description": "バーを舞台にした、ちびキャラのAIアニメ。クジラの耳を持つAI娘・DeepSeekちゃんがカウンターに座り、バーテンダーが出すカクテルを次々と「つまんない」と一蹴する。奥では角のある娘がシェイカーを振っている。作者はZipZipPipeで、別のAIアニメを見てAI動画の作り方を試した初期作だと述べている。",
           "title": "バーで何を出されても「つまんない」なDeepSeekちゃん"
+        }
+      }
+    },
+    {
+      "bvid": "BV1ULpE6sEcT",
+      "uid": "1513368379",
+      "title": "当你的额度耗尽的时候",
+      "description": "形象来源@ZipZipPipe",
+      "url": "https://www.bilibili.com/video/BV1ULpE6sEcT/",
+      "cover": "https://i0.hdslb.com/bfs/archive/440bfce2437af70a5269d25f29cd815b7e5f52b9.jpg",
+      "duration": 29,
+      "publishedAt": "2026-10-11T10:08:35.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A Bilibili creator who posts fan-made videos starring AI characters.",
+          "description": "A short fan-made meme video: a black-and-white framed portrait of DeepSeek Chan stands among offerings and incense while the clip jokes about running out of API quota.",
+          "title": "When Your Quota Runs Out"
+        },
+        "ja": {
+          "creatorIntro": "AIキャラクターの二次創作動画を中心に投稿しているBilibiliのクリエイター。",
+          "description": "DeepSeekちゃんのモノクロ額縁写真が供物と線香の前に飾られ、APIのクォータが尽きたときのことをネタにした短い二次創作ミーム動画。",
+          "title": "クォータが尽きたとき"
         }
       }
     },
@@ -1167,6 +1378,31 @@
       }
     },
     {
+      "bvid": "BV14wa16HELN",
+      "uid": "396353160",
+      "title": "【DeepSeek】原色之力大肥鱼",
+      "description": "相关游戏：原色之力（Primary）",
+      "url": "https://www.bilibili.com/video/BV14wa16HELN/",
+      "cover": "https://i1.hdslb.com/bfs/archive/a886aaf34c1b710bca515ab03521e00f48bfbb1c.jpg",
+      "duration": 40,
+      "publishedAt": "2026-10-02T05:19:44.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Short AI character animations.",
+          "description": "A short animated fan video in which three DeepSeek Chan maids in blue, red and gold use ice, fire and other powers to clear puzzle rooms inspired by the game Primary.",
+          "title": "DeepSeek Chan and the Power of Primary Colors"
+        },
+        "ja": {
+          "creatorIntro": "AIキャラクターの短編アニメーション。",
+          "description": "青・赤・金の3人のDeepSeekちゃんメイドが、氷や炎の力を使ってゲーム『Primary』風の仕掛け部屋を進む短編同人アニメーション。",
+          "title": "DeepSeekちゃんと原色の力"
+        }
+      }
+    },
+    {
       "bvid": "BV1Mua663EKp",
       "uid": "4168597",
       "title": "肥鱼造反证据存档",
@@ -1217,6 +1453,31 @@
       }
     },
     {
+      "bvid": "BV1hYao6fEn6",
+      "uid": "396353160",
+      "title": "【DeepSeek】逃离独眼巨人！",
+      "description": "BGM：匈牙利第五圆舞曲。这是致敬《滚石纪元3》教程关的BGM。",
+      "url": "https://www.bilibili.com/video/BV1hYao6fEn6/",
+      "cover": "https://i2.hdslb.com/bfs/archive/4f9cc6840f54d1d09e055110add5b1bffe2cf8d7.jpg",
+      "duration": 40,
+      "publishedAt": "2026-09-30T12:08:34.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Posts short AI character clips and images.",
+          "description": "BGM: Hungarian Dance No. 5, a tribute to the tutorial stage music of Rock of Ages 3.",
+          "title": "DeepSeek Chan: Escape from the Cyclops!"
+        },
+        "ja": {
+          "creatorIntro": "AI娘のショート動画や画像を投稿しています。",
+          "description": "BGM：ハンガリー舞曲第5番。『ロック・オブ・エイジズ3』のチュートリアルステージのBGMへのオマージュです。",
+          "title": "DeepSeekちゃん：一つ目の巨人からの脱出！"
+        }
+      }
+    },
+    {
       "bvid": "BV1ikaZ6rECj",
       "uid": "44748304",
       "title": "我爸给我发了6块钱",
@@ -1239,6 +1500,31 @@
           "creatorIntro": "AIキャラクターのちびアニメを投稿しているBilibiliのクリエイター。動画は製品評価ではなく娯楽として公開されている。",
           "description": "DeepSeekちゃんと他のAIキャラクターたちが同じ部屋で暮らし、お小遣いをめぐる小さな日常ギャグを演じるちびキャラの寸劇。同人制作の娯楽動画で、AI製品の評価は含まない。",
           "title": "お父さんが6元送ってくれた"
+        }
+      }
+    },
+    {
+      "bvid": "BV114aZ6XEz4",
+      "uid": "1513368379",
+      "title": "gemini猫娘的人是猫",
+      "description": "up第一次做这种视频做的不好请多担待\n里面有8秒的素材是张卡斯老师的原片（因为我抽卡没有抽到有没有积分啦哭哭）致歉\n原曲:洛天依原创 人是猫\n本家:@张卡斯",
+      "url": "https://www.bilibili.com/video/BV114aZ6XEz4/",
+      "cover": "https://i0.hdslb.com/bfs/archive/676de0f9e14bceed19f002b04cc857fdef5cf008.jpg",
+      "duration": 67,
+      "publishedAt": "2026-09-30T08:12:40.000Z",
+      "characterIds": [
+        "gemini"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "The uploader says this is their first attempt at this kind of video and asks viewers to be forgiving, and credits the creator of the eight seconds of borrowed footage.",
+          "description": "A fan-made music video that pairs Gemini Chan, drawn here as a cat-eared girl, with the original song \"Humans Are Cats.\" The clip mixes animated dance scenes with chat-window imagery and closes with a thank-you card for viewers. Eight seconds of footage are credited to the creator of the source clip.",
+          "title": "Gemini Chan: Humans Are Cats"
+        },
+        "ja": {
+          "creatorIntro": "投稿者によると、この種の動画は初めての挑戦なので温かく見守ってほしいとのこと。借用した8秒の映像については原作者へのクレジットも添えています。",
+          "description": "Geminiちゃんを猫耳の少女として描いたファンメイドのミュージックビデオ。オリジナル曲「人は猫」に合わせたアニメーションで、チャット画面を思わせるカットや視聴者への感謝カードも挟み込まれています。8秒分の映像は原作者の作品と明記されています。",
+          "title": "Geminiちゃん：人は猫"
         }
       }
     },
@@ -1289,6 +1575,56 @@
           "creatorIntro": "冬冰は、AI製品の擬人化キャラクターを題材にした短編コメディアニメを制作しているBilibiliのクリエイターです。",
           "description": "メイド服姿の青い髪の DeepSeek ちゃん二人が青いスポーツカーでドライブに出て、コンビニに寄り、焼き串を食べ、最後は映画館でお菓子を広げる短編コメディアニメ。",
           "title": "お姉ちゃん、運転できるの？"
+        }
+      }
+    },
+    {
+      "bvid": "BV1toaH6xE6v",
+      "uid": "396353160",
+      "title": "【DeepSeek】堂吉诃德、白鲸记与奥德赛齐聚一堂！",
+      "description": "老堂是荒诞的疯狂骑士。但如果风车真的是巨人，人们想到的第一个人就是老堂。\n亚哈船长追白鲸是为了复仇，抽象骡子和贴吧老哥反击赛博藤壶也是复仇。\n奥德修斯靠智慧逃离独眼巨人，AI爱好者靠脚本打倒数据女工。\n这三个合起来，不就是大卫战胜哥利亚？\n\n单一个老堂是疯子。（我想打）\n单一个亚哈是魔怔佬。（我想杀）\n单一个奥德修斯是个带点厚颜无耻的家伙。（我想赢）\n老堂+亚哈=疯魔=克洛德（《巴黎圣母院》），我想打想杀，赢不赢我不管。\n老堂+奥德修斯=有脑子的疯子=李云龙（《亮剑》）我想打赢，怎么赢的你别管。\n亚哈+奥德修斯=有脑子的魔人=潘金莲（《水浒传》）我必须杀成，即使代价是一换一。\n三者合一才是大卫战胜哥利亚，是渺小者带着信仰与执念战胜巨人。",
+      "url": "https://www.bilibili.com/video/BV1toaH6xE6v/",
+      "cover": "https://i2.hdslb.com/bfs/archive/ddc66c6f95f9c2ee21c866d8d1925d6cb20f768f.jpg",
+      "duration": 31,
+      "publishedAt": "2026-09-29T11:19:19.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Posts short AI character clips and images.",
+          "description": "Don Quixote is an absurd, mad knight, but if a windmill really were a giant, he is the first person people would think of. Captain Ahab chased the white whale for revenge, and meme posters striking back at cyber barnacles are after revenge too. Odysseus escaped the Cyclops with his wits, while AI fans beat data workers with scripts. Put all three together and you get David defeating Goliath. Don Quixote alone is a madman (I want to fight); Ahab alone is a possessed fanatic (I want to kill); Odysseus alone is a somewhat shameless fellow (I want to win). Don Quixote plus Ahab equals madness incarnate, like Claude Frollo in Notre-Dame de Paris: fight and kill, and winning does not matter. Don Quixote plus Odysseus equals a madman with brains, like Li Yunlong in Drawing Sword: win, never mind how. Ahab plus Odysseus equals a calculating demon, like Pan Jinlian in Water Margin: it must be done, even at a one-for-one price. Only all three together are David beating Goliath: the small defeating the giant with faith and obsession.",
+          "title": "DeepSeek Chan: Don Quixote, Moby-Dick and the Odyssey Together!"
+        },
+        "ja": {
+          "creatorIntro": "AI娘のショート動画や画像を投稿しています。",
+          "description": "ドン・キホーテは荒唐無稽な狂騎士だが、風車が本当に巨人だとしたら真っ先に思い浮かぶのは彼だ。エイハブ船長が白鯨を追ったのは復讐のため、ネットのミーム職人がサイバーなフジツボに反撃するのも復讐だ。オデュッセウスは知恵で一つ目の巨人から逃れ、AI好きはスクリプトでデータ作業者を倒す。この三つが揃えば、ダビデがゴリアテに勝つ物語になる。ドン・キホーテ単体は狂人（とにかく戦いたい）、エイハブ単体は憑りつかれた狂信者（殺したい）、オデュッセウス単体は少し厚顔な男（勝ちたい）。ドン・キホーテ＋エイハブ＝狂気の権化、『ノートルダム・ド・パリ』のクロードのように戦い殺したいが勝敗は問わない。ドン・キホーテ＋オデュッセウス＝頭の切れる狂人、『亮剣』の李云龍のように勝ち方は問わない。エイハブ＋オデュッセウス＝計算高い魔人、『水滸伝』の潘金蓮のように一対一の代価を払っても殺し遂げる。三つが一つになってこそ、信仰と執念を抱えた小さき者が巨人に勝つダビデとゴリアテなのだ。",
+          "title": "DeepSeekちゃん：ドン・キホーテ、白鯨、オデュッセイアが一堂に！"
+        }
+      }
+    },
+    {
+      "bvid": "BV1Mean6pEeh",
+      "uid": "396353160",
+      "title": "【DeepSeek】蓝色大肥鱼的骑士精神",
+      "description": "骑士老爷们鄙视玩弩箭的，因为“这东西能在十步开外让没本事的泥腿子（Peasant）单杀苦练十年的骑士老爷”。\n但面前这台巨炮呢？八百米开外能直接炸平骑士老爷的整个封地。\n所以骑士老爷们恐惧，并会跟着老堂去冲锋。\n堂吉诃德战风车，但风车里真的内置一台乌尔班巨炮，而且这次老堂身后有一群骑士老爷跟着他，因为骑士老爷们恐惧这个会发射巨弹的怪物。那桑丘在哪？桑丘在为骑士老爷们组装可以对抗巨炮的神威无敌大将军。老堂不懂法理，但他有神圣的经文与正义的骑士精神信仰，桑丘不懂大道理，但他有手——“老爷们需要这东西我就造，虽然我根本不知道它有什么意义，但也许能让老爷们别那么疯狂呢？万能的主啊，让老爷们不再疯狂吧。”。\n最终结果呢？\n在场的骑士老爷们看见老堂推着那台神威无敌大将军，对着内置乌尔班巨炮的风车堡垒开了一炮，击中弹药库（Stash），然后风车堡垒炸膛了（历史上的乌尔班巨炮就是这么死的）。",
+      "url": "https://www.bilibili.com/video/BV1Mean6pEeh/",
+      "cover": "https://i1.hdslb.com/bfs/archive/be3edf5ace4a24e78e893ae38e95525855bd428a.jpg",
+      "duration": 31,
+      "publishedAt": "2026-09-29T04:36:02.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Posts short AI character clips and images.",
+          "description": "The knightly lords despised crossbow users, because \"this thing lets a peasant with no skill kill a knight who trained for ten years, from ten paces away.\" But what about the great cannon in front of them? From eight hundred meters it can level a knight's whole fief. So the knights are afraid, and they charge alongside Don Quixote. Don Quixote fights a windmill, but this windmill really has an Urbain great cannon built inside, and this time a crowd of knights follows him because they fear this monster that fires giant shells. Where is Sancho? Sancho is assembling the \"Divine Invincible Great General\" for the knights, something that can stand against the great cannon. Don Quixote does not understand law or reason, but he has holy scripture and faith in chivalric justice; Sancho does not understand grand principles, but he has hands: \"If the lords need this thing, I will build it. I have no idea what it means, but maybe it will make them a little less mad. Lord Almighty, please let the lords stop being mad.\" And the result? The knights present watch Don Quixote push out that Divine Invincible Great General, fire one shot at the windmill fortress holding the Urbain cannon, hit the ammunition stash, and the windmill fortress blows itself apart, which is how the historical Urbain great cannon died.",
+          "title": "DeepSeek Chan: The Chivalry of the Blue Mascot"
+        },
+        "ja": {
+          "creatorIntro": "AI娘のショート動画や画像を投稿しています。",
+          "description": "騎士様たちは弩を使う連中を軽蔑していた。『こいつは十歩離れたところから、修練十年の騎士様を素人の小作人が一発で仕留められる代物だ』からだ。では、目の前のこの巨砲はどうか？八百メートル先から騎士様の所領ごと吹き飛ばせる。だから騎士様たちは恐怖し、ドン・キホーテについて突撃する。ドン・キホーテは風車と戦うが、その風車には本当にウルバンの巨砲が仕込まれており、今回は恐れる騎士様たちが彼の後ろに続く。ではサンチョはどこに？サンチョは騎士様たちのために巨砲に対抗できる『神威無敵大将軍』を組み立てている。ドン・キホーテは法理は分からないが、聖なる経文と正義の騎士道精神への信仰がある。サンチョは大層な理屈は分からないが、手がある——『旦那方がこれを必要なら作りますよ。意味は分かりませんが、少しでも旦那方が狂わなくなるかもしれませんから。全能の主よ、旦那方をもう狂わせないでください』。結果は？居合わせた騎士様たちは、ドン・キホーテがその神威無敵大将軍を押し出し、ウルバンの巨砲を仕込んだ風車要塞に一発撃ち込み、火薬庫に命中して風車要塞が自壊するのを見る（歴史上のウルバン巨砲もこうして死んだ）。",
+          "title": "DeepSeekちゃん：青いマスコットの騎士道精神"
         }
       }
     },
