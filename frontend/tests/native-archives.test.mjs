@@ -1,6 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {parseHTML} from 'linkedom';
+import {createCreatorViews} from '../src/components/archive/CreatorViews.mjs';
+import {summarizeAuditFailure} from '../../tools/localization/audit-summary.mjs';
 import {applyNativeArchives,nativeArchiveName} from '../scripts/native-archives.mjs';
 import {localizeHtml,LOCALES,ORIGIN} from '../scripts/localize-pages.mjs';
 import fs from 'node:fs';
@@ -113,5 +115,48 @@ test('publication audit protects overlapping full credits regardless of new subm
   const result=spawnSync(process.execPath,[audit,temp],{encoding:'utf8'});
   assert.equal(result.status,1);
   assert.deepEqual(JSON.parse(fs.readFileSync(path.join(temp,'native-localization-audit.json'))).problems.map(p=>p.text),['确实未翻译的中文']);
+ }finally{fs.rmSync(temp,{recursive:true,force:true});}
+});
+
+test('creator avatar initials stay decorative without exempting untranslated body text',()=>{
+ const temp=fs.mkdtempSync(path.join(os.tmpdir(),'dafeiyu-avatar-audit-'));
+ try{
+  const escape=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const {avatar}=createCreatorViews({esc:escape,tr:(_key,zh)=>zh,icon:()=>'',card:()=>'',videoCard:()=>'',pageHead:()=>'',write:()=>{},breadcrumbs:()=>'',button:()=>''},[]);
+  const creator={name:'风纪委员小电视'};
+  const initials=['','large','profile'].map(size=>avatar(creator,size)).join('');
+  const {document}=parseHTML('<main>'+initials+'</main>');
+  for(const el of document.querySelectorAll('.avatar')){
+   assert.equal(el.textContent,'');
+   assert.equal(el.getAttribute('data-creator-initial'),'风');
+   assert.equal(el.getAttribute('aria-hidden'),'true');
+  }
+  assert.equal(parseHTML(avatar({...creator,avatar:'/creator-avatars/test.jpg'})).document.querySelector('.avatar').hasAttribute('data-creator-initial'),false);
+  assert.equal(parseHTML(avatar({name:'🐟作者'})).document.querySelector('.avatar').getAttribute('data-creator-initial'),'🐟');
+  fs.writeFileSync(path.join(temp,'site-data.json'),JSON.stringify({works:[{origin:{author:creator.name}}],topics:[]}));
+  for(const lang of ['en','ja']){
+   fs.mkdirSync(path.join(temp,lang),{recursive:true});
+   fs.writeFileSync(path.join(temp,lang,'index.html'),'<html><head><title>Creators</title></head><body>'+initials+'<p>'+creator.name+'</p></body></html>');
+  }
+  const audit=path.resolve(import.meta.dirname,'../../tools/localization/audit-pages.mjs');
+  const valid=spawnSync(process.execPath,[audit,temp],{encoding:'utf8'});
+  assert.equal(valid.status,0,valid.stdout+valid.stderr);
+  const english=path.join(temp,'en/index.html');
+  fs.writeFileSync(english,fs.readFileSync(english,'utf8').replace('</body>','<p>风</p></body>'));
+  const untranslated=spawnSync(process.execPath,[audit,temp],{encoding:'utf8'});
+  assert.equal(untranslated.status,1);
+  assert.deepEqual(JSON.parse(fs.readFileSync(path.join(temp,'native-localization-audit.json'))).problems.map(p=>p.text),['风']);
+ }finally{fs.rmSync(temp,{recursive:true,force:true});}
+});
+
+test('build failure summaries expose current audit causes and ignore stale reports',()=>{
+ const temp=fs.mkdtempSync(path.join(os.tmpdir(),'dafeiyu-audit-summary-'));
+ try{
+  const report=path.join(temp,'audit.json'),startedAt=Date.now()-1000;
+  fs.writeFileSync(report,JSON.stringify({problems:[{file:'en/creators/test.html',kind:'body',text:'风\nextra'}]}));
+  assert.match(summarizeAuditFailure(report,startedAt),/英日页面审计失败（1 处）：en\/creators\/test.html \[body\] 风 extra/);
+  assert.equal(summarizeAuditFailure(report,Date.now()+1000),'');
+  fs.writeFileSync(report,'corrupt');
+  assert.equal(summarizeAuditFailure(report,startedAt),'');
  }finally{fs.rmSync(temp,{recursive:true,force:true});}
 });

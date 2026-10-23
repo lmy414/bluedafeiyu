@@ -1,6 +1,7 @@
 /* Preserve the published cascade while bundling/minifying it through Astro. */
 @import '../../../public/tokens.css';
 @import '../../../public/components/runtime.css';
+@import '../archive/CreatorAvatar.css';
 @import '../../../public/archive/original-tools.css';
 @import '../../../public/archive/layout.css';
 @import '../../../public/archive/seo-content.css';

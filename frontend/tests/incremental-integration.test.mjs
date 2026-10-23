@@ -20,7 +20,7 @@ test('real Astro builds: no-op, edits, additions, removals, cold-cache fallback 
  for(const name of ['frontend/src','frontend/public','frontend/scripts','frontend/package.json','frontend/package-lock.json','frontend/astro.config.mjs','frontend/component-library.json','tools','admin/src/lib','data','package.json','dist'])copy(name);
  fs.symlinkSync(path.join(root,'frontend/node_modules'),path.join(fixture,'frontend/node_modules'),process.platform==='win32'?'junction':'dir');
  const videos=path.join(fixture,'data/video-archive.json');
- const videoData=JSON.parse(fs.readFileSync(videos,'utf8'));videoData.videos=[];videoData.creators=[];fs.writeFileSync(videos,JSON.stringify(videoData));
+ const videoData=JSON.parse(fs.readFileSync(videos,'utf8'));videoData.videos=[];videoData.creators=[{uid:'396353160',name:'风纪委员小电视',homepage:'https://space.bilibili.com/396353160',intro:''}];fs.writeFileSync(videos,JSON.stringify(videoData));
  const original=JSON.parse(fs.readFileSync(path.join(root,'dist/site-data.json'),'utf8'));
  const candidates=original.works.filter(work=>{
    const image=work.displayUrl||work.fullPath||work.thumbUrl||work.thumbnailPath||'';

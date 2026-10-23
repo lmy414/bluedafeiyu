@@ -7,6 +7,7 @@ import { spawnSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { summarizeAuditFailure } from "./localization/audit-summary.mjs";
 
 const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(SCRIPT_DIR, "..");
@@ -77,6 +78,7 @@ function runStep(scriptRel, extraArgs, contentDir) {
     fail(`找不到子步骤脚本：${scriptAbs}`);
   }
   log(`运行 ${scriptRel}${extraArgs.length ? " " + extraArgs.join(" ") : ""}`);
+  const startedAt = Date.now();
   const result = spawnSync(process.execPath, [scriptAbs, ...extraArgs], {
     cwd: REPO_ROOT,
     stdio: "inherit",
@@ -86,7 +88,8 @@ function runStep(scriptRel, extraArgs, contentDir) {
     fail(`${scriptRel} 启动失败：${result.error.message}`);
   }
   if (result.status !== 0) {
-    fail(`${scriptRel} 退出码 ${result.status === null ? "null" : result.status}，构建中止`);
+    const detail = scriptRel === 'frontend/scripts/build.mjs' ? summarizeAuditFailure(path.join(REPO_ROOT, '.build/native-localization-audit.json'), startedAt) : '';
+    fail(`${scriptRel} 退出码 ${result.status === null ? "null" : result.status}，构建中止${detail ? '：' + detail : ''}`);
   }
 }
 
