@@ -17,6 +17,9 @@ import {createSearchPage} from "../components/archive/SearchPage.mjs";
 import {createCommunityPage} from "../components/archive/CommunityPage.mjs";
 import {createEventPage} from "../components/archive/EventPage.mjs";
 import {createUtilityPages} from "../components/archive/UtilityPages.mjs";
+import {createFriendWall} from '../components/archive/FriendWall.mjs';
+import {friendLinks} from './friend-links.mjs';
+import {shareCopy} from './share-copy.mjs';
 import {createGuidePages} from "../components/archive/GuidePages.mjs";
 import { aboutCopy, aboutQuestions } from './about-copy.mjs';
 import { videoCopy } from './video-copy.mjs';
@@ -43,6 +46,7 @@ const topics = snapshot.topics.filter(t=>t.status!=='removed').map(t=>{
 const tagCounts=new Map();for(const w of works)for(const tag of w.tg)tagCounts.set(tag,(tagCounts.get(tag)||0)+1);
 const translations={en:{'d.navigationToggle':'Toggle navigation','d.saveWork':'Save work','d.saveCreator':'Save creator','d.saved':'Saved','d.unsave':'Remove from saved','d.savedTitle':'Saved works','d.storageUnavailable':'Your browser could not save this item.'},ja:{'d.navigationToggle':'ナビゲーションを切り替え','d.saveWork':'作品を保存','d.saveCreator':'作者を保存','d.saved':'保存済み','d.unsave':'お気に入りから削除','d.savedTitle':'お気に入り','d.storageUnavailable':'ブラウザーに保存できませんでした。'}};
 for (const [key, row] of Object.entries(videoCopy)) { translations.en['d.' + key] = row[1]; translations.ja['d.' + key] = row[2]; }
+for (const [key, row] of Object.entries(shareCopy)) { translations.en['d.' + key] = row[1]; translations.ja['d.' + key] = row[2]; }
 for (const [key, values] of Object.entries(aboutCopy)) {
   translations.en['d.about.'+key] = values[1]; translations.ja['d.about.'+key] = values[2];
 }
@@ -58,7 +62,7 @@ for(const [key, en, ja] of [
   ['siteSearch','Search works, characters, creators or tags','作品・キャラクター・作者・タグを検索'],
   ['viewLarge','View image','画像を見る'],['longImage','Long image · view full','長い画像・全体を見る'],
   ['specialThanks','Special thanks','特別な感謝'],['visitWebsite','Visit website','サイトを見る'],
-  ['brandName','DeepSeek Chan','藍色大肥魚'],['discover','Discover','見つける'],['gallery','All works','作品一覧'],['brandSub','AI-girl fan art archive','AI娘の二次創作アーカイブ'],
+  ['brandName','DeepSeek Chan','藍色大肥魚'],['discover','Discover','見つける'],['gallery','All images','画像一覧'],['brandSub','AI-girl fan art archive','AI娘の二次創作アーカイブ'],
   ['explore','EXPLORE','ブラウズ'],['sideText','A home for every delightful image.','楽しい一枚を、大切に。'],['nonOfficial','Unofficial fan archive','非公式ファンアーカイブ'],
   ['footerText','AI-girl fan art archive · Images belong to their creators','AI娘の二次創作アーカイブ · 画像の権利は原作者に帰属します'],['rights','Sources & permissions','出典と利用許諾'],
   ['curated','Curated order','掲載順'],['selectRole','Select a character','キャラクターを選択'],['quickView','Quick preview','プレビュー'],['copyFail','Could not copy. Please copy manually.','コピーできませんでした。手動でコピーしてください。'],
@@ -102,7 +106,7 @@ for(const [key,en,ja] of [
  ['releaseFlow','Creator registration, RSSHub discovery, AI review and automatic publishing are connected, with release notifications sent to the Feishu group.','作者登録、RSSHubによる検出、AI審査、自動公開を接続。公開結果はFeishuグループに通知します。']
 ]){translations.en['d.design.'+key]=en;translations.ja['d.design.'+key]=ja;}
 for(const work of works)work.owners=topics.filter(t=>t.author&&t.list.some(w=>w.id===work.id)).map(t=>{const uid=t.author.channels.map(c=>c.url.match(/space\.bilibili\.com\/(\d+)/)?.[1]).find(Boolean);return {name:t.author.name,href:'/creators/'+(uid?'bilibili-'+uid:t.id)+'.html'};});
-const ctx={works,bySlug,chars,topics,types,snapshot,localizationInputs:videoArchive,translations,editorial:read('discovery.json'),modelVendors:read('model-vendors.json').vendors,commonTags:[...tagCounts].sort((a,b)=>b[1]-a[1]).slice(0,16)};
+const ctx={works,bySlug,chars,topics,types,snapshot,localizationInputs:{videoArchive,friendLinks},translations,editorial:read('discovery.json'),modelVendors:read('model-vendors.json').vendors,commonTags:[...tagCounts].sort((a,b)=>b[1]-a[1]).slice(0,16)};
 Object.assign(ctx,createPrimitives(ctx));
 for(const factory of [createWorkCards,createCollectionCards,createCharacterCards,createListing]) Object.assign(ctx,factory(ctx));
 ctx.seo=createSEO(ctx);
@@ -118,6 +122,7 @@ createSearchPage(ctx);
 createCommunityPage(ctx);
 createEventPage(ctx);
 createUtilityPages(ctx);
+createFriendWall(ctx);
 Object.assign(ctx,createVideoPages(ctx));
 createDemoPages(ctx,pages);
 ctx.seo.generatePages(ctx.write,ctx.browsePage,ctx.breadcrumbs);

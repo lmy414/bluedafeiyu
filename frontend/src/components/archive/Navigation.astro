@@ -5,6 +5,7 @@ import RepositoryLinks from './RepositoryLinks.astro';
 import {navigationCountPlaceholder} from '../library/navigation-count.mjs';
 const { active = "" } = Astro.props;
 const { icon, works } = archiveContext;
+const isActive = item => active === item.id || (item.id === 'browse' && ['characters', 'topics'].includes(active));
 ---
 <aside class="sidebar" id="sidebar">
   <a class="brand" href="/">
@@ -12,10 +13,10 @@ const { icon, works } = archiveContext;
     <span><strong data-i18n="d.brandName">蓝色大肥鱼</strong><small data-i18n="d.brandSub">AI 娘二创开放档案</small></span>
   </a>
   <button class="mobile-close icon-button" data-menu-close aria-label="关闭菜单"><Fragment set:html={icon('close')} /></button>
-  <button class="sidebar-collapse icon-button" type="button" data-sidebar-collapse data-i18n-attr="aria-label:d.navigationToggle" aria-label="折叠或展开导航" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16m7-11-3 3 3 3"/></svg></button>
+  <button class="sidebar-collapse icon-button" type="button" data-sidebar-collapse data-i18n-attr="aria-label:d.navigationToggle" aria-label="折叠或展开导航" aria-controls="sidebar" aria-expanded="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16m7-11-3 3 3 3"/></svg></button>
   <p class="nav-label" data-i18n="d.explore">逛一逛</p>
   <nav class="main-nav primary-nav">
-    {navigation.map(item => <a class:list={['nav-link',{'is-active':active===item.id}]} href={item.href} title={item.label} aria-label={item.label} data-i18n-attr={`title:${item.key},aria-label:${item.key}`} aria-current={active === item.id ? 'page' : undefined}>
+    {navigation.map(item => <a class:list={['nav-link',{'is-active':isActive(item)}]} href={item.href} title={item.label} aria-label={item.label} data-i18n-attr={`title:${item.key},aria-label:${item.key}`} aria-current={isActive(item) ? 'page' : undefined}>
       <Fragment set:html={icon(item.icon)} /><span data-i18n={item.key}>{item.label}</span>
       {item.id === 'browse' && <small data-library-work-total>{import.meta.env.DEV ? works.length : navigationCountPlaceholder}</small>}
     </a>)}

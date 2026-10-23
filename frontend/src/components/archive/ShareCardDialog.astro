@@ -1,0 +1,16 @@
+---
+import {archiveContext} from '../../lib/archive.mjs';
+const {icon} = archiveContext;
+---
+<dialog id="share-card-dialog" class="share-card-dialog" aria-labelledby="share-card-title">
+  <button type="button" class="dialog-close icon-button" data-share-close aria-label="关闭" data-i18n-attr="aria-label:d.zipClose"><Fragment set:html={icon('close',22)} /></button>
+  <h2 id="share-card-title" data-i18n="d.shareCard">分享卡片</h2>
+  <p data-i18n="d.shareInvite">如果觉得好用，就把站点分享给其他人吧～</p>
+  <div class="share-card-art"><img data-share-image width="1200" height="630" alt="分享卡片" data-i18n-attr="alt:d.shareCard" hidden /></div>
+  <p data-share-status role="status" aria-live="polite"></p>
+  <div class="share-card-actions">
+    <button type="button" class="button primary" data-share-copy disabled><Fragment set:html={icon('image',17)} /><span data-i18n="d.shareCopy">复制卡片</span></button>
+    <a class="button" data-share-save download="share-card.jpg" aria-disabled="true"><Fragment set:html={icon('download',17)} /><span data-i18n="d.shareSave">保存卡片</span></a>
+    <button type="button" class="button" data-share-link><Fragment set:html={icon('link',17)} /><span data-i18n="d.shareLink">复制链接</span></button>
+  </div>
+</dialog>

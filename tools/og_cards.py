@@ -102,6 +102,7 @@ def card(job, src, dst, logo):
     lg = logo.copy(); lg.thumbnail((56, 56)); im.paste(lg, (x, H - 104), lg)
     d.text((x + 70, H - 106), '蓝色大肥鱼', INK, font=font(FONT_B, 30))
     d.text((x + 70, H - 68), 'AI 娘二创图库', (74, 92, 128), font=font(FONT_R, 22))
+    d.text((x + 70, H - 42), '访问：蓝色大肥鱼.com', BLUE, font=font(FONT_B, 24))
     im.save(dst, 'JPEG', quality=86, optimize=True, progressive=True)
 
 if __name__ == '__main__':

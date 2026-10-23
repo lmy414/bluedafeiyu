@@ -1,4 +1,4 @@
-async function imagePNG(url) {
+export async function imagePNG(url) {
   const response = await fetch(url, { credentials: 'omit', signal: AbortSignal.timeout(30000) });
   if (!response.ok) throw new Error('image');
   const source = await response.blob();
@@ -14,13 +14,18 @@ async function imagePNG(url) {
   } finally { bitmap.close(); }
 }
 
-export function copyImage(url) {
+export function copyPNG(png) {
   if (!globalThis.isSecureContext || !navigator.clipboard?.write || !globalThis.ClipboardItem) {
     return Promise.reject(new Error('unsupported'));
   }
+  try { return navigator.clipboard.write([new ClipboardItem({ 'image/png': png })]); }
+  catch (error) { return Promise.reject(error); }
+}
+
+export function copyImage(url) {
+  if (!globalThis.isSecureContext || !navigator.clipboard?.write || !globalThis.ClipboardItem) return Promise.reject(new Error('unsupported'));
   // Call write during the click; Safari awaits the promised PNG without losing user activation.
   const png = imagePNG(url);
   png.catch(() => {});
-  try { return navigator.clipboard.write([new ClipboardItem({ 'image/png': png })]); }
-  catch (error) { return Promise.reject(error); }
+  return copyPNG(png);
 }

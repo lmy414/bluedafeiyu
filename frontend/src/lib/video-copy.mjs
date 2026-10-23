@@ -18,7 +18,7 @@ export const videoCopy = {
   creatorSuccess: ['登记已收到。下一次更新时同步公开视频，AI 审核通过后展示。', 'Registration received. Public videos will be checked during the next update and listed after AI approval.', '登録を受け付けました。次回更新時に公開動画を確認し、AI 審査を通過した動画を掲載します。'],
   creatorFailure: ['登记未能确认，请稍后重试；重复提交不会重复登记或覆盖已有资料。', 'Registration could not be confirmed. Try again later; repeat submissions will not duplicate or overwrite an existing registration.', '登録を確認できませんでした。後で再試行してください。再送信しても重複登録や既存情報の上書きは行いません。'],
   videoTitle: ['AI 娘二创视频', 'AI girl fan videos', 'AI娘の二次創作動画'],
-  videoNav: ['视频与作者', 'Videos & creators', '動画と作者'],
+  videoNav: ['视频', 'Videos', '動画'],
   videoLead: ['收录已通过 AI 审核的 AI 娘二创视频，保留作者署名、原视频链接与创作说明。当前仅开放 Bilibili。', 'Explore approved fan videos featuring personified AI characters, with creator credits, original links and introductions. Bilibili is currently the only supported platform.', 'AI 審査を通過した AI娘の二次創作動画を、作者名、元動画のリンク、創作紹介とともに収録しています。現在は Bilibili のみ対応しています。'],
   videoEmpty: ['视频档案正在等待首批审核通过的作品。你可以先登记自己的 Bilibili 主页。', 'The video archive is waiting for its first approved works. You can register your Bilibili profile now.', '最初の審査通過作品をお待ちしています。ご自身の Bilibili プロフィールを登録できます。'],
   videoPlay: ['前往 Bilibili 播放', 'Watch on Bilibili', 'Bilibili で再生'],

@@ -1,4 +1,6 @@
 import { imageMetadata } from '../../lib/image-metadata.mjs';
+import {shareCardId,shareCardImageURL} from '../../../public/components/share-card-model.js';
+import {workShareCopy} from './share-card-content.mjs';
 import { workBySlug, ogCard, ORIGIN, SITE } from '../../lib/v2.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -38,7 +40,7 @@ export function createSEO(ctx) {
     '/events/national-day-2026.html': ['2026 国庆前台设计征集：规则与投稿入口 — 蓝色大肥鱼', '查看蓝色大肥鱼 2026 国庆前台设计征集的参加方式、奖项、截止时间、活动仓库和投稿展览。'],
     '/about.html': ['关于蓝色大肥鱼：图片来源、版权与使用许可', '了解 AI 娘二创档案的整理方式、图片署名与授权状态、统计与隐私，以及补署名和下架申请流程。'],
     '/changelog.html': ['蓝色大肥鱼更新日志：内容收录与站点变更', '查阅蓝色大肥鱼正式站点的历史更新记录，了解作品收录、功能和维护变更。查看正式站点的内容收录与功能变更。'],
-    '/projects.html': ['蓝色大肥鱼相关项目与图片来源仓库', '访问图片存档仓库、站点源码、首批上游图片档案和前台设计展览，了解作品整理与创作的相关项目。'],
+    '/projects.html': ['友情链接墙 — 蓝色大肥鱼', '按项目类、网站类浏览蓝色大肥鱼的友情链接，发现相关项目、图片来源与创作网站。'],
     '/404.html': ['页面不存在 — 蓝色大肥鱼', '这个页面不存在或作品已下架。返回作品档案，按角色与类型继续寻找图片。'],
     '/category.html': ['AI 娘角色图鉴：DeepSeek娘、GPT娘、Claude娘与更多 — 蓝色大肥鱼', '按角色寻找 AI 娘表情包、插画和漫画。进入 DeepSeek娘、GPT娘、Claude娘、GLM娘、Gemini娘和 Kimi娘的独立档案，查看来源与授权。']
   };
@@ -103,7 +105,9 @@ export function createSEO(ctx) {
       ] };
     }
     const breadcrumb = { '@type': 'BreadcrumbList', itemListElement: trail.map(([name, p], i) => ({ '@type': 'ListItem', position: i + 1, name, item: full(p) })) };
-    const record = { url: canonicalPath, canonical, title, description: desc, image: full(image), og: ogCard('archive-' + (url === '/index.html' ? 'home' : url.replace(/[^a-z0-9-]/gi, '-')), { displayUrl: image, description: w?.d || title, name: w?.n || title }, title, w?.c || c?.character?.name || 'AI 娘二创档案', c?.type || ''), indexOnPublish,
+    const share = w ? workShareCopy(w) : {title,sub:c?.character?.name || 'AI 娘二创档案',tag:c?.type || '',quote:false};
+    const shareMeta = ogCard(shareCardId(url), { displayUrl: image, description: w?.d || title, name: w?.n || title }, share.title, share.sub, share.tag, share.quote);
+    const record = { ...(w ? {shareCardCopy:share} : {}), url: canonicalPath, canonical, title, description: desc, image: full(image), og: {...shareMeta,image:shareCardImageURL(url)}, indexOnPublish,
       robots: indexOnPublish && (!c || c.n === 1) ? 'index,follow' : 'noindex,follow', schemas: [schema, ...(url === '/index.html' ? [] : [breadcrumb])], collectionBase: c?.base || null, total: c?.list.length || 0, page: c?.n || 1 };
     return record;
   }

@@ -10,7 +10,9 @@ const source=read('src/pages/works/[slug].astro');
 if(source.includes('readLegacy'))throw new Error('作品页仍使用 readLegacy');
 if(!source.includes('ArchivePage')||!source.includes('archivePages'))throw new Error('作品路由未使用共用页面组件');
 const detail=read('src/components/archive/WorkPages.mjs');
-for(const need of ['data-static-work','sticker-${esc(w.id)}','data-download-work','w.rights.creditText','w.rights.copyrightNotice'])if(!detail.includes(need))throw new Error('作品详情缺少 '+need);
+for(const need of ['data-static-work','sticker-${esc(w.id)}','renderWorkActions(w)','w.rights.creditText','w.rights.copyrightNotice'])if(!detail.includes(need))throw new Error('作品详情缺少 '+need);
+const actions=read('public/components/work-actions.js');
+for(const need of ['data-download-work','data-copy-img','data-copy-link','renderSaveButton','renderShareButton'])if(!actions.includes(need))throw new Error('作品操作栏缺少 '+need);
 for(const file of fs.readdirSync(path.join(root,'src/pages')).filter(x=>x.endsWith('.astro'))){
  const content=read('src/pages/'+file);
  if(content.includes('readLegacy'))throw new Error(`${file} 仍加载旧整页`);

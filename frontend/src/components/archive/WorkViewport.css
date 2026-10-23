@@ -1,0 +1,9 @@
+@media(min-width:761px){
+  body.archive .work-detail>.work-stage{position:sticky;top:155px;align-self:start}
+  body.archive .work-stage .detail-image-open{min-height:0;padding:14px}
+  body.archive .work-stage .detail-image-open img{width:auto;max-width:100%;height:auto;max-height:calc(100dvh - 235px);object-fit:contain}
+}
+@media(min-width:761px) and (max-width:1100px){
+  body.archive .work-detail>.work-stage{top:205px}
+  body.archive .work-stage .detail-image-open img{max-height:calc(100dvh - 285px)}
+}

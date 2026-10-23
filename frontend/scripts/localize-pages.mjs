@@ -62,6 +62,10 @@ function pageMeta(document, api, base, snapshot, archive) {
   let landing;
   if (base === '/index.html') landing = homeMeta(snapshot.works.filter(w=>w.status === 'published').length, locale);
   if (base === '/about.html') landing = { title: localizedCopy(aboutSEO,locale), description: localizedCopy(aboutDescription,locale) };
+  if (base === '/projects.html') landing = {
+    title: ({zh:'友情链接墙 — 蓝色大肥鱼','zh-Hant':'友情連結牆 — 藍色大肥魚',en:'Friend Link Wall | DeepSeek Chan',ja:'リンクウォール | 藍色大肥魚'})[locale],
+    description: ({zh:'按项目类、网站类浏览友情链接，发现有趣的项目与网站。','zh-Hant':'按專案類、網站類瀏覽友情連結，發現有趣的專案與網站。',en:'Browse friend links by projects and websites, and discover interesting places connected to the archive.',ja:'プロジェクトとウェブサイトに分けたリンク集から、アーカイブにつながる楽しい場所を見つけましょう。'})[locale]
+  };
   const guide = guides.find(g => guidePath(g) === base);
   if (guide) landing = { title: localizedCopy(guide.name,locale) + (locale === 'en' ? ' | DeepSeek Chan' : locale === 'ja' ? ' | 藍色大肥魚' : ' — 蓝色大肥鱼'), description: localizedCopy(guide.summary,locale) };
   if (base === '/category.html' && ['en','ja'].includes(locale)) landing = {
@@ -104,6 +108,13 @@ function pageMeta(document, api, base, snapshot, archive) {
 export async function localizeHtml(html, base, locale, snapshot) {
   const parsed = parseHTML(html);
   const document = parsed.document;
+  // Templates stay inert in browsers. Expose their contents only while baking
+  // translations so later pages keep native text and localized links.
+  const deferred = [...document.querySelectorAll('template[data-feed-rest],noscript[data-feed-noscript]')].map(node => {
+    const content = document.createElement('div');
+    content.innerHTML = node.innerHTML; node.replaceWith(content);
+    return {node, content};
+  });
   const window = { location: new URL(ORIGIN + base), navigator: { languages: ['zh-CN'] },
     localStorage: { getItem() { return null; }, setItem() {} }, OpenCC: { Converter: () => converter } };
   program.runInNewContext({ window, document, URL, URLSearchParams, WeakMap, Promise, CustomEvent: parsed.CustomEvent });
@@ -176,7 +187,7 @@ export async function localizeHtml(html, base, locale, snapshot) {
         const route = new URL(archivePath,ORIGIN).pathname.replace(/^\/(en|ja)(?=\/)/,'');
         const guide = guides.find(g=>guidePath(g)===route);
         if (guide) value.name = localizedCopy(guide.name,locale.id);
-        else if (route === '/category.html') value.name = document.title;
+        else if (route === '/category.html' || route === '/projects.html') value.name = document.title;
         else if (route === '/saved.html' || route === '/videos.html' || route === '/creators.html' || route.startsWith('/creators/')) value.name = document.title;
       }
       if (base === '/index.html' && ['WebSite','Organization'].includes(value['@type'])) {
@@ -215,6 +226,7 @@ export async function localizeHtml(html, base, locale, snapshot) {
     fallback.innerHTML = '<details class="lang-fallback"><summary class="lang-trigger">◎ ' + locale.label + ' ⌄</summary><div class="lang-menu">' + LOCALES.map(other => '<a class="lang-option" href="' + escape(localizedPath(base, other)) + '" lang="' + other.html + '">' + other.label + '</a>').join('') + '</div></details>';
     host.appendChild(fallback);
   }
+  for (const {node,content} of deferred) {node.innerHTML = content.innerHTML; content.replaceWith(node);}
   return document.toString();
 }
 

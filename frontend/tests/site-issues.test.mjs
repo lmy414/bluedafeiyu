@@ -48,16 +48,28 @@ test('Chinese and English character titles and descriptions include the requeste
   }
 });
 
-test('weekly gallery selection retains report dates, real slugs and original-download tracking',()=>{
+test('image navigation has exactly three existing routes and original-download tracking survives',()=>{
   for(const locale of LOCALES){
-    const gallery=read(localizedPath('/browse.html',locale));
-    const weekly=gallery.querySelector('[data-archive-view="weekly"]');
-    assert.ok(weekly);
-    const form=gallery.querySelector('[data-weekly-slugs]');
-    assert.match(form.getAttribute('data-weekly-slugs'),/deepseek202609300025/);
-    assert.match(gallery.querySelector('[data-weekly-period]').textContent,/2026-10-12.*2026-10-18/);
+    const routes=['/browse.html','/characters.html','/topics.html'];
+    for(const route of routes){
+      const page=read(localizedPath(route,locale));
+      const tabs=[...page.querySelectorAll('.gallery-tabs a')];
+      assert.deepEqual(tabs.map(a=>a.getAttribute('href')),routes.map(r=>localizedPath(r,locale)));
+      assert.equal(tabs.filter(a=>a.getAttribute('aria-current')==='page').length,1);
+      assert.equal(tabs.find(a=>a.getAttribute('aria-current')==='page').getAttribute('href'),localizedPath(route,locale));
+      assert.equal(page.querySelector('[data-archive-view],[data-archive-sort],[data-weekly-slugs],[data-weekly-period]'),null);
+      const sidebar=[...page.querySelectorAll('.main-nav a')].map(a=>a.getAttribute('href'));
+      assert.ok(!sidebar.includes(localizedPath('/characters.html',locale)));
+      assert.ok(!sidebar.includes(localizedPath('/topics.html',locale)));
+    }
     const detail=read(localizedPath('/works/deepseek202609300025.html',locale));
     const download=detail.querySelector('[data-download-work]');
     assert.ok(download.dataset.downloadWork);assert.ok(download.getAttribute('href'));
+    assert.equal(detail.querySelector('meta[property="og:image"]').getAttribute('content'),'https://xn--pssy23gqgbz2d718b.com/og/archive--works-deepseek202609300025-html.jpg?v=20261023-4');
+    assert.ok(detail.querySelector('meta[property="og:image:alt"]').getAttribute('content'));
   }
+  const gallery=read('/browse.html');
+  assert.equal(gallery.querySelector('main h1').textContent,'全部图片');
+  assert.equal(gallery.querySelector('.main-nav a[href="/browse.html"] span').textContent,'全部图片');
+  assert.equal(gallery.querySelector('.main-nav a[href="/videos.html"] span').textContent,'视频');
 });

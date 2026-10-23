@@ -1,0 +1,1 @@
+.sidebar-nav-tooltip{position:fixed;z-index:1000;max-width:240px;padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);box-shadow:var(--shadow);font:500 13px/1.6 var(--font);pointer-events:none}

@@ -1,0 +1,52 @@
+/* Keep the same card components, with smaller media and less surrounding space. */
+body.archive .work-grid{--columns:6;--gap:14px;margin:18px 0}
+body.archive .video-grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:18px 12px;margin:18px 0}
+body.archive .work-text{padding:9px 10px 8px}
+body.archive .card-meta{margin-top:6px;padding-top:6px}
+body.archive .work-grid.layout-grid .work-art{height:195px}
+body.archive.refined .page-head{margin:28px 0 24px}
+body.archive.refined .role-grid.character-index-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+body.archive.refined .role-art.character-art{height:190px!important;padding:16px}
+body.archive.refined .role-body.character-copy{padding:15px 17px}
+body.archive.refined .role-body h3{font-size:18px}
+body.archive.refined .collection-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+body.archive.refined .collection-art{height:180px;padding:16px}
+body.archive.refined .collection-copy{padding:18px}
+body.archive.refined .collection-copy :is(h2,h3){font-size:20px}
+body.archive.refined .creator-directory-grid{gap:18px}
+body.archive.refined .creator-row-card{padding:20px}
+body.archive.refined .creator-row-heading{margin-bottom:16px}
+body.archive.refined .portal-entry{min-height:215px;padding:20px}
+body.archive.refined .portal-entry h2{font-size:24px;margin:20px 0 10px}
+body.archive.refined .portal-topic-slider .paper-feature{min-height:210px}
+body.archive.refined .portal-topic-slider .feature-copy{padding:23px}
+body.archive.refined .portal-topic-slider .feature-copy h2{font-size:24px}
+body.archive.refined .portal-secondary>a{padding:18px 16px}
+body.archive.refined .registration-entry{padding:14px 18px;margin-bottom:20px}
+body.archive.refined .work-detail{gap:24px}
+body.archive.refined .work-information{padding:20px}
+body.archive.refined .synced-prose .live-info-card{padding:20px}
+.friend-wall-grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:16px}
+.friend-wall-card{padding:20px}
+.friend-wall-mark{width:42px;height:42px;margin-bottom:14px}
+.friend-wall-card h3{font-size:18px}
+.friend-wall-card p{font-size:13px;margin-bottom:16px}
+@media(max-width:1479px){body.archive .work-grid{--columns:5}body.archive .video-grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media(max-width:1179px){body.archive .work-grid{--columns:4}body.archive .video-grid{grid-template-columns:repeat(4,minmax(0,1fr))}body.archive.refined .role-grid.character-index-grid{grid-template-columns:repeat(3,minmax(0,1fr))}body.archive.refined .collection-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:960px){body.archive .work-grid{--columns:3}body.archive .video-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){
+  body.archive .work-grid{--columns:2;--gap:10px}
+  body.archive .video-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 10px}
+  body.archive .work-text{padding:8px}
+  body.archive.refined .role-grid.character-index-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  body.archive.refined .role-art.character-art{height:150px!important;padding:12px}
+  body.archive.refined .role-body.character-copy{padding:12px}
+  body.archive.refined .role-body h3{font-size:17px}
+  body.archive.refined .collection-grid{grid-template-columns:1fr;gap:16px}
+  body.archive.refined .collection-art{height:175px}
+  body.archive.refined .creator-row-card{padding:16px}
+  body.archive.refined .portal-entry{min-height:185px;padding:17px}
+  body.archive.refined .portal-entry h2{font-size:22px;margin:15px 0 8px}
+  body.archive.refined .portal-topic-slider .feature-copy{padding:18px}
+  body.archive.refined .work-information{padding:18px}
+}
