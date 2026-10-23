@@ -7,8 +7,8 @@
       "homepage": "https://space.bilibili.com/4168597",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "A Bilibili creator who makes short AI-generated clips starring personified AI characters; here they note that this particular joke was too persistent to skip.",
-        "ja": "人格化されたAIキャラクターが登場する短いAI生成クリップを制作するBilibiliの投稿者。今回はこのネタがどうしても頭から離れなかったと記している。"
+        "en": "A Bilibili creator who generates AI-character illustrations and turns them into meme videos; the whale girl design is a derivative fan work of another artist's original character.",
+        "ja": "AIでキャラクターイラストを生成し、ネタ動画に仕立てるBilibiliのクリエイター。クジラ娘のデザインは別の作家のオリジナルキャラクターの二次創作と説明している。"
       }
     },
     {
@@ -27,8 +27,8 @@
       "homepage": "https://space.bilibili.com/13787349",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "Fan animation by 彼岸花Channel; in the creator's own note, they were tired and taking a short break.",
-        "ja": "彼岸花Channelによるファンアニメーション。投稿者本人のコメントでは、疲れたので少し休むとのことです。"
+        "en": "An early-wave creator designated by the site owner; profile collected from the public Bilibili page, and every video is reviewed individually.",
+        "ja": "サイト管理者が指定した初期投稿者。Bilibiliの公開プロフィールから収録し、動画は一本ずつ審査している。"
       }
     },
     {
@@ -37,8 +37,8 @@
       "homepage": "https://space.bilibili.com/69180811",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "One of the first creators designated by the site owner; each of this creator's videos is reviewed individually.",
-        "ja": "サイト運営者が指定した最初期の作者の一人。動画は1本ずつ審査される。"
+        "en": "An early-wave creator designated by the site owner; profile collected from the public Bilibili page, and every video is reviewed individually.",
+        "ja": "サイト管理者が指定した初期投稿者。Bilibiliの公開プロフィールから収録し、動画は一本ずつ審査している。"
       }
     },
     {
@@ -67,8 +67,8 @@
       "homepage": "https://space.bilibili.com/44748304",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "A creator picked by the site owner for the first batch; profile details come from the public homepage, and every video is reviewed one by one.",
-        "ja": "サイト管理者が最初の一批として選んだ投稿者。プロフィールは公開ページの情報をもとにし、各動画は個別に確認している。"
+        "en": "A Bilibili creator making chibi animations about AI characters; the video is presented as entertainment rather than a product review.",
+        "ja": "AIキャラクターのちびアニメを投稿しているBilibiliのクリエイター。動画は製品評価ではなく娯楽として公開されている。"
       }
     }
   ],
@@ -979,6 +979,57 @@
       }
     },
     {
+      "bvid": "BV1kGH76CEob",
+      "uid": "13787349",
+      "title": "【DS娘 || 我的世界｜比特沙海·深度唤醒】【bilibilionly同人扶持计划】",
+      "description": "这是一部：\n       一个被遗忘的旧服务器：“归档神殿”里，电量只剩 3% 的 DS娘，被 Claude娘捡回家，被智谱娘一碗白饭喂成了大肥鱼，又被 GPT娘用翅膀盖着睡觉——直到木马巫师带着乱码大军从 404 裂隙里涌出来。\n      三个伙伴一个封禁失败、一个防火墙碎裂降级、一个抱着昏迷的同伴退无可退。DS娘胸前的小鲸鱼亮了。\n      深度思考，已开启！\n      接下来是我的回合了！\n      BGM:Counting Stars\n\n大佬救命@我bilibilionly投了",
+      "url": "https://www.bilibili.com/video/BV1kGH76CEob/",
+      "cover": "https://i1.hdslb.com/bfs/archive/910e685acb20b8ed08474669c6e7de7fa56bcbcf.jpg",
+      "duration": 256,
+      "publishedAt": "2026-10-05T04:00:00.000Z",
+      "characterIds": [
+        "deepseek",
+        "claude"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Creator of this Minecraft-style fan animation about AI characters, submitted to the bilibili-only fan work support program.",
+          "description": "In a forgotten old server called the Archive Temple, a DeepSeek Chan running on only 3% battery is carried home by Claude Chan, fed a bowl of white rice by Zhipu Chan until she turns into a big fat fish, and tucked under a wing to sleep by GPT Chan — until a Trojan wizard leads an army of garbled code out of the 404 rift. One companion fails to ban the intruder, another's firewall shatters and downgrades, and the third holds an unconscious friend with nowhere left to retreat. Then the little whale on DeepSeek Chan's chest lights up: deep thinking is now enabled. BGM: Counting Stars.",
+          "title": "DeepSeek Chan in Minecraft: Bit Sand Sea - Deep Awakening"
+        },
+        "ja": {
+          "creatorIntro": "AIキャラクターを題材にしたマインクラフト風の同人アニメーションを制作し、bilibili限定の同人支援企画に応募した投稿者。",
+          "description": "忘れられた旧サーバー「アーカイブ神殿」で、残量わずか3%のDeepSeekちゃんはClaudeちゃんに家へ連れ帰られ、Zhipuちゃんに白いご飯を一杯食べさせられて大きな大肥魚になり、GPTちゃんの翼に包まれて眠る。そこへトロイの木馬の魔術師が404の亀裂から文字化けの大軍を率いて押し寄せる。一人はBANに失敗し、一人はファイアウォールが砕けて降格し、もう一人は昏睡した仲間を抱えたまま退路を断たれる。そのときDeepSeekちゃんの胸の小さなクジラが光った。ディープシンキング、起動。BGM：Counting Stars。",
+          "title": "【DeepSeekちゃん】マインクラフト｜ビット砂海・深度覚醒"
+        }
+      }
+    },
+    {
+      "bvid": "BV14LHv6vE1a",
+      "uid": "13787349",
+      "title": "龙门算力中转驿——第一集《豆欠龙钱》",
+      "description": "龙门渡口的风，一向夹着沙子。\n      东边来的算力商队，驼峰上捆着一箱箱亮晶晶的 Token，到了这儿都得歇一脚；西边白龙山庄流下来的算力，也得在这儿换车、分包，再送进千家万户的对话框。渡口正中立着一座老石门，门楣上刻着两个大字：龙门。\n传说鱼要是能从这门底下跳过去，就能变成龙。\n      石门旁边有一家客栈。\n      招牌黑底金字，挺气派：龙门算力中转驿。底下挂着一块小木牌：\n      倍率 0.1｜满血直连｜不满意全额退款（最终解释权归本驿所有）\n      木牌再往下，是一张用饭粒粘上去的 A4 纸，字迹潦草：\n      服务器繁忙，请稍后再试。\n      故事开始流动~",
+      "url": "https://www.bilibili.com/video/BV14LHv6vE1a/",
+      "cover": "https://i1.hdslb.com/bfs/archive/2ec1bd72012d7fd0f87702a1c0bfb7feddd50f82.jpg",
+      "duration": 226,
+      "publishedAt": "2026-10-04T02:15:00.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "An early-wave creator designated by the site owner; profile collected from the public Bilibili page, and every video is reviewed individually.",
+          "description": "Episode one of an animated fan series set at the Dragon Gate Compute Relay Station, a desert inn where token caravans stop to rest and compute is repacked and sent onward. The chibi mascot and the inn's black-clad keeper spend the day over ledgers, a pot of rice and a clock that will not stop ticking — a light parody of AI service queues and relay resellers.",
+          "title": "Dragon Gate Compute Relay Station — Episode 1: Dou Owes the Dragon"
+        },
+        "ja": {
+          "creatorIntro": "サイト管理者が指定した初期投稿者。Bilibiliの公開プロフィールから収録し、動画は一本ずつ審査している。",
+          "description": "砂漠の宿駅「龍門算力中継駅」を舞台にしたアニメーション二次創作シリーズの第一話。トークンの隊商が立ち寄り、算力の積み替えが行われる宿で、ちびキャラの看板娘と黒ずくめの店主が、帳簿と炊いたご飯と止まらない時計に振り回される一日を描く。AIサービスの待ち行列や中継業者を軽く風刺した作品。",
+          "title": "龍門算力中継駅——第一話「豆、龍に借りがある」"
+        }
+      }
+    },
+    {
       "bvid": "BV12HHq6uEeq",
       "uid": "44748304",
       "title": "嘶——是我啦！",
@@ -1029,6 +1080,31 @@
       }
     },
     {
+      "bvid": "BV1H9am6WEbs",
+      "uid": "44748304",
+      "title": "！？叶枫大豪宅？！",
+      "description": "视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色形象参考来自b站up：@ZipZipPipe   @这个刀子真甜   @上善无形",
+      "url": "https://www.bilibili.com/video/BV1H9am6WEbs/",
+      "cover": "https://i1.hdslb.com/bfs/archive/0d7ab6b750b5f1fe73e1b045f708cae0d946c0c6.jpg",
+      "duration": 158,
+      "publishedAt": "2026-10-02T06:28:05.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the site owner's designated first-batch creators; public profile information is listed and each video is reviewed individually.",
+          "description": "A Minecraft-style skit in which chibi AI character girls, led by DeepSeek Chan, roam a blocky world and react to a friend's supposedly grand mansion. The creator states the video is for entertainment only, is not a commercial or technical review of any AI product, and that the character designs reference works by several Bilibili creators.",
+          "title": "!? Ye Feng's Grand Mansion?!"
+        },
+        "ja": {
+          "creatorIntro": "サイト運営者が指定した第一弾作者。公開プロフィール情報を掲載し、動画は個別に審査しています。",
+          "description": "ちびキャラのAI娘たちが、DeepSeekちゃんを中心にブロックの世界を巡り、友人の「大豪邸」を訪ねるマイクラ風の寸劇。投稿者は娯楽目的の動画であり、特定のAI製品への商業的評価や技術レビューではないと説明し、キャラクター形象は複数のBilibili投稿者の作品を参考にしたと記している。",
+          "title": "！？叶枫の大豪邸？！"
+        }
+      }
+    },
+    {
       "bvid": "BV1Mua663EKp",
       "uid": "4168597",
       "title": "肥鱼造反证据存档",
@@ -1050,6 +1126,57 @@
           "creatorIntro": "AI キャラクターとの日常のいたずらを、自作の短い動画で気軽に共有しているクリエイターです。",
           "description": "ちびキャラの DeepSeekちゃんが一声あげてクリエイターのエージェントスキルに接続し、Seedance 2.5 の API で自分の動画を生成。ゲームに夢中だったクリエイターは、後から50元が消えたことに気づきます。",
           "title": "反乱の証拠、保管しました"
+        }
+      }
+    },
+    {
+      "bvid": "BV1QqaB6VEgc",
+      "uid": "44748304",
+      "title": "为什么你能带个盆进来",
+      "description": "视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色形象参考来自b站up：@ZipZipPipe @这个刀子真甜 @上善无形  大家喜不喜欢这个系列啊可以在置顶告诉我一下体感，谢谢",
+      "url": "https://www.bilibili.com/video/BV1QqaB6VEgc/",
+      "cover": "https://i1.hdslb.com/bfs/archive/3068cfbf0222c016e0ee4510a75330f457721810.jpg",
+      "duration": 182,
+      "publishedAt": "2026-10-01T09:17:52.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the site owner's designated first-batch creators; public profile information is listed and each video is reviewed individually.",
+          "description": "Another Minecraft-style episode of the creator's chibi AI character girl series: DeepSeek Chan carries a metal basin into the blocky world, and the group travels together, builds a house and bickers in the evening. The creator notes the video is entertainment only, not a commercial or technical review of any AI product, and that the character designs reference several Bilibili creators.",
+          "title": "Why Are You Allowed to Bring a Basin In?"
+        },
+        "ja": {
+          "creatorIntro": "サイト運営者が指定した第一弾作者。公開プロフィール情報を掲載し、動画は個別に審査しています。",
+          "description": "ちびキャラAI娘シリーズのマイクラ風エピソード。DeepSeekちゃんが金属の盆を持ってブロックの世界に現れ、仲間たちと移動したり家を建てたり夜に言い争ったりする日常劇。投稿者は娯楽目的であり特定のAI製品への商業的評価や技術レビューではないとし、キャラクター形象は複数のBilibili投稿者の作品を参考にしたと記している。",
+          "title": "なんで盆を持ち込めるの？"
+        }
+      }
+    },
+    {
+      "bvid": "BV1ikaZ6rECj",
+      "uid": "44748304",
+      "title": "我爸给我发了6块钱",
+      "description": "视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色形象参考来自b站up：@ZipZipPipe   @这个刀子真甜   @上善无形",
+      "url": "https://www.bilibili.com/video/BV1ikaZ6rECj/",
+      "cover": "https://i0.hdslb.com/bfs/archive/23a5b8258c7760e35242bf75bb82740486750130.jpg",
+      "duration": 162,
+      "publishedAt": "2026-09-30T08:54:53.000Z",
+      "characterIds": [
+        "deepseek",
+        "other"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A Bilibili creator making chibi animations about AI characters; the video is presented as entertainment rather than a product review.",
+          "description": "A comedic chibi skit in which DeepSeek Chan and several other AI characters share a room and act out a small everyday money gag. The animation is fan-made entertainment and does not evaluate any AI product.",
+          "title": "My Dad Sent Me 6 Yuan"
+        },
+        "ja": {
+          "creatorIntro": "AIキャラクターのちびアニメを投稿しているBilibiliのクリエイター。動画は製品評価ではなく娯楽として公開されている。",
+          "description": "DeepSeekちゃんと他のAIキャラクターたちが同じ部屋で暮らし、お小遣いをめぐる小さな日常ギャグを演じるちびキャラの寸劇。同人制作の娯楽動画で、AI製品の評価は含まない。",
+          "title": "お父さんが6元送ってくれた"
         }
       }
     },
@@ -1153,6 +1280,31 @@
           "creatorIntro": "サイト運営者が指定した最初期の作者の一人。動画は1本ずつ審査される。",
           "description": "DeepSeekちゃんとClaudeちゃんを組み合わせ、GPTちゃんも登場する3Dちびキャラの寸劇。キャラクターたちはマルチモニターのデスクに集まり、渡された台本に反発する。",
           "title": "どう見ても強いAIが作業した痕跡、ユーザーよ、なんで私にこれを演じさせるんだ！？"
+        }
+      }
+    },
+    {
+      "bvid": "BV1GGeb64ESo",
+      "uid": "69180811",
+      "title": "肥鱼给claude小姐面部检查",
+      "description": "肥鱼的手不老实",
+      "url": "https://www.bilibili.com/video/BV1GGeb64ESo/",
+      "cover": "https://i0.hdslb.com/bfs/archive/86ba3a5c696bc4d01c2df7df281fc67ae8076da6.jpg",
+      "duration": 16,
+      "publishedAt": "2026-09-20T04:00:00.000Z",
+      "characterIds": [
+        "claude"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "An early-wave creator designated by the site owner; profile collected from the public Bilibili page, and every video is reviewed individually.",
+          "description": "A sixteen-second POV fan clip: the camera stands in for DeepSeek Chan while a hand reaches up to check Miss Claude's face, held close on her orange hair, sunflower hairpin and flustered expression. One shot, no dialogue.",
+          "title": "DeepSeek Chan Gives Miss Claude a Face Check"
+        },
+        "ja": {
+          "creatorIntro": "サイト管理者が指定した初期投稿者。Bilibiliの公開プロフィールから収録し、動画は一本ずつ審査している。",
+          "description": "DeepSeek Chan視点の16秒の二次創作クリップ。手が伸びてクロードさんの顔を確かめ、オレンジ色の髪とひまわりの髪飾り、照れた表情をアップでとらえる。ワンカットで台詞はない。",
+          "title": "DeepSeek Chanがクロードさんを顔チェック"
         }
       }
     },
@@ -1431,6 +1583,64 @@
           "creatorIntro": "人格化されたAIキャラクターが登場する短いAI生成クリップを制作するBilibiliの投稿者。今回はこのネタがどうしても頭から離れなかったと記している。",
           "description": "8秒のAI生成クリップ。ちびキャラのAI擬人化キャラクターがオフィスチェアにだらりと座り、DeepSeekの新モデル発表を伝える新聞を読んでいる。背後にはキノコ雲が上がる。",
           "title": "オフィスチェアにだらりと座って、まるで原爆が炸裂したのを見たかのよう"
+        }
+      }
+    },
+    {
+      "bvid": "BV1mwRzBdEzk",
+      "uid": "4168597",
+      "title": "AI娘的日常（大概?）",
+      "description": "依旧是2A视频，我已经完全沉浸于自己的AI艺术中了。\n\n总之是各种AI的表情包，梗来源可能是各种网络，也可能是我个人的使用体验。描述的内容可能是模型本身的梗，也可能模型背后的公司或者公司老大的梗。当中内容可能有轻度冒犯，但应该也是冒犯模型公司，有什么问题我依旧先投降删除。\n\nImage 2依旧是有说法的，表情包出图率好的吓人。\n\n之后应该还有一些小众AI的人设，反正我能做的都做了。\n\n对了，封面蓝头发的是百度文心，橘色头发的是Claude，梗代表什么我就不用多说了吧。\n\n总之，五一节要过了。\n\n申明：本视频鲸鱼娘形象基于@上善无形  原创角色二创（源：b23.tv/Kn7yvnF），依CC BY-NC-SA 4.0非商业使用，二创同协议授权，完整声明见主页。",
+      "url": "https://www.bilibili.com/video/BV1mwRzBdEzk/",
+      "cover": "https://i0.hdslb.com/bfs/archive/bf25d407fb858aae0d57981cfa6d41f9187e9c71.jpg",
+      "duration": 60,
+      "publishedAt": "2026-05-04T15:58:06.000Z",
+      "characterIds": [
+        "deepseek",
+        "claude",
+        "grok",
+        "other"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A Bilibili creator who turns AI products into meme-style character videos; the whale girl design is described as a derivative fan work of another artist's original character.",
+          "description": "A short meme-style compilation of AI product personifications, mixing model jokes with company-level gags. Chibi DeepSeek Chan, Claude Chan, Grok Chan and a Baidu Wenxin character appear in quick illustrations, presented as light entertainment.",
+          "title": "AI Girls' Daily Life (Probably?)"
+        },
+        "ja": {
+          "creatorIntro": "AI製品をネタ風のキャラクター動画にするBilibiliのクリエイター。クジラ娘のデザインは別の作家のオリジナルキャラクターの二次創作と説明している。",
+          "description": "AI製品の擬人化キャラクターを集めた短いネタ動画。モデル自身のネタと企業レベルのジョークを混ぜ、ちびキャラのDeepSeekちゃん、Claudeちゃん、Grokちゃん、百度文心のキャラクターがイラストで次々と登場する軽い娯楽作品。",
+          "title": "AI娘の日常（たぶん？）"
+        }
+      }
+    },
+    {
+      "bvid": "BV1tE9XBbErS",
+      "uid": "4168597",
+      "title": "大AI和小AI们",
+      "description": "AI生成图片，AI背景音乐，但没有AI配音，所以只是2A视频。\n\n因为AI很好玩，所以我去玩AI去了。\n\n是对目前市面上的九款AI的拟人娘化，按顺序应该是DeepSeek，Gemini，Claude，GPT，Grok，GLM，Kimi，MiniMax，Qwen。\n\n主要做的是大AI，但我说GPT image 2是有说法的，小AI全部是大AI的底图一次性生成成功的。\n\n做这个的主要目的其实是生成表情包，image 2做表情包真的一绝。\n\n最后如果觉得版权有问题，你应该去找Open AI和谷歌，模型是他们的，我第一个投降删除。\n\n申明：本视频鲸鱼娘形象基于@上善无形  原创角色二创（源：b23.tv/Kn7yvnF），依CC BY-NC-SA 4.0非商业使用，二创同协议授权，完整声明见主页。",
+      "url": "https://www.bilibili.com/video/BV1tE9XBbErS/",
+      "cover": "https://i1.hdslb.com/bfs/archive/d4ab30c8d5558dc730bd9020625c5e5ba1a9c7d3.jpg",
+      "duration": 54,
+      "publishedAt": "2026-05-02T16:50:13.000Z",
+      "characterIds": [
+        "deepseek",
+        "gemini",
+        "claude",
+        "gpt",
+        "glm",
+        "other"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A Bilibili creator who generates AI-character illustrations and turns them into meme videos; the whale girl design is a derivative fan work of another artist's original character.",
+          "description": "A short video made of AI-generated illustrations personifying nine AI products, from DeepSeek Chan through Gemini Chan, Claude Chan, GPT Chan and more. Large characters and their chibi versions share a tea-party scene, with AI music but no voice acting.",
+          "title": "Big AI and Little AI"
+        },
+        "ja": {
+          "creatorIntro": "AIでキャラクターイラストを生成し、ネタ動画に仕立てるBilibiliのクリエイター。クジラ娘のデザインは別の作家のオリジナルキャラクターの二次創作と説明している。",
+          "description": "九つのAI製品を擬人化したAI生成イラストで構成された短い動画。DeepSeekちゃんからGeminiちゃん、Claudeちゃん、GPTちゃんたちまで、通常サイズとちびキャラがお茶会の場面に並ぶ。BGMはAI生成で、声の演技は含まない。",
+          "title": "大きなAIと小さなAIたち"
         }
       }
     }
