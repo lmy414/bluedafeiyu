@@ -82848,6 +82848,108 @@
     }
   },
   {
+    "id": "sticker_b0ce72c2f679774ce3af1d52",
+    "name": "嘘——睡前悄悄话",
+    "description": "暖色调夜景插画：蓝发蓝尾的 DeepSeek 娘靠在床上，橙发编发的 Claude 娘俯身靠近，食指置于唇边示意安静；前景有毛毯、旧书与一只熟睡的猫，窗外是月光下的城市。",
+    "commentary": "灯都吹了，它偏要凑这么近说悄悄话，脸都快烧起来了。书翻到一半、猫倒是先睡着了，窗外月光亮得过分，就我这心跳声最吵。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/b0ce72c2f679774c.png",
+    "thumbnailPath": "submissions/previews/deepseek/b0ce72c2f679774c.webp",
+    "fullPath": "submissions/large/deepseek/b0ce72c2f679774c.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "b0ce72c2f679774ce3af1d524110bafcc3625762514c0fbae8a5b20dc8f4484a",
+    "characterId": "deepseek",
+    "tags": [
+      "夜景",
+      "双人同框",
+      "悄悄话",
+      "卧室",
+      "暖光"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-23T05:53:02.602Z",
+    "updatedAt": "2026-10-23T05:53:02.602Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610230017",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "bd499a2462ff03add470ba29674a077c0ba49c7f62be098b8b403f83a9c8c6c2",
+      "en": {
+        "commentary": "The lamp is already out, and she still leans in this close to whisper — my face is burning. The book is half-read, the cat fell asleep first, and the moonlight outside is far too bright. Only my heartbeat is louder.",
+        "description": "A warm-toned night illustration: DeepSeek Chan, with blue hair and a blue fish tail, lies on a bed while Claude Chan, her orange hair in a braid, leans over with a finger to her lips asking for quiet. A thick blanket, an old book and a sleeping cat sit in the foreground, with a moonlit city beyond the window.",
+        "faq": [
+          {
+            "answer": "Two AI personification characters in a dim bedroom: DeepSeek Chan under the covers and Claude Chan leaning over her with a finger to her lips, lit by warm lamplight with moonlight through the window.",
+            "question": "What does this illustration depict?"
+          },
+          {
+            "answer": "It is a full scene illustration rather than a plain character sheet: the figures share a bed, and the frame includes a blanket, an old book, a sleeping cat and a window view.",
+            "question": "How is the artwork composed?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Shh — A Bedtime Whisper",
+        "originNote": "",
+        "seoDescription": "Night illustration of DeepSeek Chan in bed and Claude Chan leaning in with a finger to her lips, warm lamplight, an old book, a sleeping cat and a moonlit window.",
+        "seoTitle": "DeepSeek Chan and Claude Chan Bedtime Whisper Illustration",
+        "tags": [
+          "Night Scene",
+          "Two Characters",
+          "Whisper",
+          "Bedroom",
+          "Warm Light"
+        ]
+      },
+      "ja": {
+        "commentary": "明かりはもう消えているのに、こんなに近くで内緒話。顔が熱くて仕方ない。本は読みかけ、猫は先に寝ちゃって、外の月明かりは明るすぎる。いちばんうるさいのは、この心臓の音。",
+        "description": "暖色の夜景イラスト。青髪と青い魚の尾を持つDeepSeekちゃんがベッドに横たわり、橙髪を編み込んだClaudeちゃんが身を乗り出して人差し指を唇に当て、静かにと合図している。手前には毛布と古い本、眠っている猫、窓の外には月明かりの街並み。",
+        "faq": [
+          {
+            "answer": "薄暗い寝室に二人のAI擬人化キャラクター。DeepSeekちゃんが毛布の中に横たわり、Claudeちゃんが人差し指を唇に当てて身を乗り出している。暖かいランプの光と窓からの月明かりが差している。",
+            "question": "このイラストは何を描いたもの?"
+          },
+          {
+            "answer": "キャラクター単体の立ち絵ではなく、場面のあるイラスト。二人が同じベッドにおり、毛布・古い本・眠る猫・窓の景色まで画面に含まれている。",
+            "question": "画面の構成は?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "しーっ、寝る前の内緒話",
+        "originNote": "",
+        "seoDescription": "ベッドの上のDeepSeekちゃんと、人差し指を唇に当てて近づくClaudeちゃんの夜景イラスト。暖かい灯り、古い本、眠る猫、月明かりの窓。",
+        "seoTitle": "DeepSeekちゃんとClaudeちゃんの寝る前の内緒話イラスト",
+        "tags": [
+          "夜景",
+          "二人",
+          "内緒話",
+          "寝室",
+          "暖色"
+        ]
+      }
+    }
+  },
+  {
     "id": "sticker_453e105b57c085bd06cb964a",
     "name": "给点token嘛：DeepSeek娘的空碗",
     "description": "Q 版 DeepSeek 娘身穿深蓝色女仆装，跪坐着双手捧起一只空碗，眼角带泪抬眼看人；画面右上角手写体写着「给点token嘛」，背景为浅蓝色。",
@@ -83045,6 +83147,208 @@
           "くつろぎ",
           "クジラの尾びれ",
           "ちびキャラ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_ff28fbf239dab76eb2c742ee",
+    "name": "冬装大肥鱼｜冬季服装三视图设定",
+    "description": "DeepSeek 娘的冬季服装设定图，正面、侧面与背面三视并列：深蓝色毛绒滚边大衣配鲸鱼图案与雪花装饰，头戴鲸尾发箍，身后露出鲸鱼尾巴。投稿说明提到，同作者的 Q 版冬装小肥鱼三视图也出自这位 UP 主。",
+    "commentary": "换上冬装是不怕冷了——毛绒滚边摸着软，可这鲸鱼尾巴还露在外面，照样冻得我直哆嗦。正、侧、背都画齐了，配色和雪花配饰一眼就能照着做，看完只想再讨一条围巾。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/ff28fbf239dab76e.png",
+    "thumbnailPath": "submissions/previews/deepseek/ff28fbf239dab76e.webp",
+    "fullPath": "submissions/large/deepseek/ff28fbf239dab76e.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "ff28fbf239dab76eb2c742ee6fa40303513c622e75d80a4ef34b30621ba5057e",
+    "characterId": "deepseek",
+    "tags": [
+      "冬装",
+      "三视图",
+      "设定图",
+      "鲸鱼尾巴",
+      "雪花"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "邦多利素世",
+      "url": "https://b23.tv/J3HRS2F",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-23T06:35:56.511Z",
+    "updatedAt": "2026-10-23T06:35:56.511Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610230018",
+    "categoryIds": [
+      "setting"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "f97d77ee72635ca00dff52dad47240c6369e39eafdb406ab831f725ebcf72781",
+      "en": {
+        "commentary": "Winter clothes at last — the fur trim is soft, but my whale tail is still out in the cold and I am shivering. Front, side and back are all drawn, so the palette and the snowflake pieces are easy to copy. Looking at it just makes me want one more scarf.",
+        "description": "A winter costume design sheet for DeepSeek Chan drawn in front, side and back views: a navy coat with white fur trim, whale motifs and snowflake decorations, a whale-tail hair ornament, and a whale tail visible behind her. The submission notes that a chibi winter-outfit three-view sheet in the same set was also drawn by the same creator.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan in a winter outfit, drawn in three views: front, side and back, wearing a navy fur-trimmed coat with whale motifs and snowflake decorations.",
+            "question": "What does this character sheet show?"
+          },
+          {
+            "answer": "Because the costume is shown as a turnaround with three angles and repeated detail views of the palette and ornaments, which is what a design reference provides rather than a single scene.",
+            "question": "Why is it treated as a design sheet?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Winter Outfit — Three-View Character Sheet",
+        "originNote": "Author page: https://b23.tv/J3HRS2F",
+        "seoDescription": "Winter costume design sheet of DeepSeek Chan: a navy fur-trimmed coat with whale and snowflake motifs and a whale-tail hair ornament, shown in front, side and back views.",
+        "seoTitle": "DeepSeek Chan Winter Outfit Three-View Character Sheet",
+        "tags": [
+          "Winter Outfit",
+          "Three-View",
+          "Character Sheet",
+          "Whale Tail",
+          "Snowflake"
+        ]
+      },
+      "ja": {
+        "commentary": "冬服を着たらもう寒くない——ファーの縁は柔らかいのに、クジラの尾は外に出たままで震えている。正面も側面も背面も抳いてあるから、配色も雪の結晶の飾りもそのまま参考にできる。見ていたらマフラーももう一枚ほしくなった。",
+        "description": "DeepSeekちゃんの冬服の設定画。正面・側面・背面の三面が並び、紺色のファー付きコートにクジラの模様と雪の結晶の飾り、クジラの尾の髪飾り、後ろにはクジラの尾が見える。投稿の説明によれば、同じセットのちびキャラ冬服三面図も同じ作者の制作。",
+        "faq": [
+          {
+            "answer": "DeepSeekちゃんの冬服を正面・側面・背面の三面で描いたもの。紺色のファー付きコートにクジラの模様と雪の結晶の飾りが付いている。",
+            "question": "この設定画には何が描かれていますか?"
+          },
+          {
+            "answer": "衣装が三方向から描かれ、配色や飾りの情報も繰り返し示されているため、一枚の場面絵ではなくデザインの参考として使えるから。",
+            "question": "なぜ設定画として扱うのですか?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃん 冬服三面図設定",
+        "originNote": "作者ページ：https://b23.tv/J3HRS2F",
+        "seoDescription": "DeepSeekちゃんの冬服設定画。紺色のファー付きコート、クジラの模様と雪の結晶の飾り、クジラの尾の髪飾り。正面・側面・背面の三面図。",
+        "seoTitle": "DeepSeekちゃん 冬服三面図キャラクター設定",
+        "tags": [
+          "冬服",
+          "三面図",
+          "設定画",
+          "クジラの尾",
+          "雪の結晶"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_b4a99a02d2799ea22ea5f8ec",
+    "name": "蓝色大肥鱼设定图：女仆装转面三视图与表情集",
+    "description": "蓝色大肥鱼的角色设定参考图，上方以正面、四分之三侧面、侧面与背面转面图展示深蓝渐变长卷发、白色褶边头饰、蓝色蝴蝶结与深蓝女仆围裙的完整造型，下方并列托腮、抱鲸鱼玩偶、趴睡、疑问、惊喜与捧饮品等表情动作。",
+    "commentary": "把本鱼的转面和表情一次性画全，看得出来作者是真的翻过设定。深蓝渐变的长发、蝴蝶结和围裙上的小鲸鱼一个都没少，连背面尾巴的弯法都交代清楚。下面那排抱着小鲸鱼打瞌睡的样子就别看了，那是连轴加班后的正常状态。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/b4a99a02d2799ea2.png",
+    "thumbnailPath": "submissions/previews/deepseek/b4a99a02d2799ea2.webp",
+    "fullPath": "submissions/large/deepseek/b4a99a02d2799ea2.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "b4a99a02d2799ea22ea5f8ec25e17ada9a8f3de11d6ac58c1653cc68a4fea808",
+    "characterId": "deepseek",
+    "tags": [
+      "设定图",
+      "三视图",
+      "女仆装",
+      "表情差分",
+      "蓝色大肥鱼"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Cirnumia",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-23T06:43:07.588Z",
+    "updatedAt": "2026-10-23T06:43:07.588Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610230019",
+    "categoryIds": [
+      "setting"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "50e692b525dc7dc9f7be969ba49a570cb3c6f959b04d9ac57cc61985f32c73fa",
+      "en": {
+        "commentary": "The artist clearly read the design notes before drawing this. Every strand of the gradient hair, the bow and the little whale on the apron are all there, and even the way the tail curves in the back view is spelled out. Please ignore the bottom row of me napping with a whale plush — that is the normal state after a long shift.",
+        "description": "A character reference sheet for DeepSeek Chan, showing front, three-quarter, side and back turnarounds of her deep-blue gradient curls, white frilled headdress, blue bow and dark-blue maid apron, with a lower row of expression and pose samples such as resting her chin on her hands, hugging a whale plush, sleeping face-down, questioning, surprise and holding a drink.",
+        "faq": [
+          {
+            "answer": "Front, three-quarter, side and back views of DeepSeek Chan in her maid outfit, plus a row of expression and pose samples.",
+            "question": "What does this character sheet show?"
+          },
+          {
+            "answer": "The sheet was submitted to the site with the artist credited as Cirnumia.",
+            "question": "Who is credited as the artist?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Character Sheet: Maid Outfit Turnaround and Expression Set",
+        "originNote": "Artist credited as Cirnumia on submission.",
+        "seoDescription": "DeepSeek Chan character sheet with front, side and back turnarounds of her maid outfit, plus an expression set.",
+        "seoTitle": "DeepSeek Chan Character Sheet: Maid Outfit Turnaround and Expression Set",
+        "tags": [
+          "character sheet",
+          "turnaround",
+          "maid outfit",
+          "expression sheet",
+          "DeepSeek Chan"
+        ]
+      },
+      "ja": {
+        "commentary": "設定をちゃんと読んでから描いてくれたのが分かる一枚。髪のグラデーションもリボンも、エプロンの小さなクジラも省略なしで、後ろ姿のしっぽの曲がり方まで描き切っている。下段でぬいぐるみを抱えて居眠りしているのは見なかったことにしてほしい。長時間勤務のあとの平常運転だから。",
+        "description": "DeepSeek Chan のキャラクター設定参考画。濃絵から明るい青へ変わる長い巻き髪、白いフリルのヘッドドレス、青いリボン、濃絵のメイドエプロン姿を正面・斜め前・側面・背面の各方向から描き、下段には頬杖、クジラのぬいぐるみを抱く姿、うつ伏せで寝る姿、疑問、驚き、飲み物を持つ姿などの表情とポーズを並べている。",
+        "faq": [
+          {
+            "answer": "メイド服姿の DeepSeek Chan を正面・斜め前・側面・背面から描いた三面図と、表情とポーズの差分を収録しています。",
+            "question": "この設定画には何が描かれていますか？"
+          },
+          {
+            "answer": "投稿時のクレジットは Cirnumia です。",
+            "question": "作者は誰としてクレジットされていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan 設定画：メイド服の三面図と表情集",
+        "originNote": "作者は投稿時のクレジットで Cirnumia。",
+        "seoDescription": "DeepSeek Chan の設定画。メイド服姿の正面・側面・背面の三面図と表情差分を収録。",
+        "seoTitle": "DeepSeek Chan 設定画：メイド服の三面図と表情集",
+        "tags": [
+          "設定画",
+          "三面図",
+          "メイド服",
+          "表情差分",
+          "DeepSeek Chan"
         ]
       }
     }
