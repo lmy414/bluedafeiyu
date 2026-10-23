@@ -1,5 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import vm from 'node:vm';
 import {parseHTML} from 'linkedom';
 import {shareCardId,shareCardImageURL,SHARE_CARD_VERSION,renderShareButton} from '../public/components/share-card-model.js';
 import {workShareCopy} from '../src/components/archive/share-card-content.mjs';
@@ -13,6 +15,25 @@ import {decorateDocument} from '../src/components/archive/PageComposition.mjs';
 import {localizeHtml,LOCALES,ORIGIN} from '../scripts/localize-pages.mjs';
 import {videoArchive} from '../src/lib/video-archive.mjs';
 import {renderArchiveTabs} from '../src/components/archive/ArchiveTabs.mjs';
+
+test('copying a work link preserves its selected work and current language on details and previews',async()=>{
+  const script=fs.readFileSync(new URL('../public/archive/archive.js',import.meta.url),'utf8').replace(/^import .+;\r?\n/gm,'');
+  for(const prefix of ['','/en','/ja','/zh-hant'])for(const current of ['/works/selected.html','/browse.html']){
+    const {document,window}=parseHTML('<html><body><aside id="sidebar"></aside><div class="main-wrap"><div data-work-actions><button data-copy-link="/works/selected.html">Copy</button><p data-image-copy-status></p></div></div><dialog id="group-dialog"></dialog><dialog id="preview-dialog"><div id="preview-body"></div><button data-preview-close></button></dialog><div id="toast"></div></body></html>');
+    const copied=[];
+    const lang={fmt:(_key,fallback)=>fallback,url:href=>prefix+href.replace(/^\/(?:en|ja|zh-hant)(?=\/)/,'')};
+    const context={document,window:{SiteLang:lang},SiteLang:lang,URL,URLSearchParams,
+      navigator:{clipboard:{writeText:async value=>{copied.push(value);}}},
+      location:{pathname:prefix+current,search:'',hash:''},
+      matchMedia:()=>({matches:false,addEventListener(){}}),addEventListener(){},
+      performance:{getEntriesByType:()=>[]},loadArchiveData:async()=>({works:[]}),installTopicDownloads(){},
+      setTimeout,clearTimeout,CustomEvent:window.CustomEvent,Event:window.Event};
+    vm.runInNewContext(script,context);
+    document.querySelector('[data-copy-link]').click();
+    await Promise.resolve();
+    assert.deepEqual(copied,['https://xn--pssy23gqgbz2d718b.com'+prefix+'/works/selected.html']);
+  }
+});
 
 test('the image archive reuses exactly three page links without altering their URLs',()=>{
   const ctx={tr:(_key,zh)=>zh,old:(_key,zh)=>zh};

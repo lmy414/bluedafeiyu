@@ -85,7 +85,7 @@ import {loadArchiveData} from './data-loader.js?v=1';
     if(event.key==='Escape'&&document.body.classList.contains('menu-open'))menu(false);
     if(event.key==='Tab'&&document.body.classList.contains('menu-open')){const items=$$('.sidebar a,.sidebar button').filter(x=>x.offsetParent);const first=items[0],last=items.at(-1);if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}}
   });
-  document.addEventListener('click',e=>{const copyEl=e.target.closest('[data-copy]');if(copyEl)copy(copyEl.dataset.copy);const link=e.target.closest('[data-copy-link]');if(link)copy(new URL(link.dataset.copyLink||location.pathname,'https://xn--pssy23gqgbz2d718b.com').href,link.closest('[data-work-actions]')?.querySelector('[data-image-copy-status]'));});
+  document.addEventListener('click',e=>{const copyEl=e.target.closest('[data-copy]');if(copyEl)copy(copyEl.dataset.copy);const link=e.target.closest('[data-copy-link]');if(link)copy(new URL(localURL(link.dataset.copyLink||location.pathname),'https://xn--pssy23gqgbz2d718b.com').href,link.closest('[data-work-actions]')?.querySelector('[data-image-copy-status]'));});
   // All list controls use the same frozen public dataset and preserve their state in the URL.
   const listPage=document.body.hasAttribute('data-list-page'),searchPage=document.body.hasAttribute('data-search-page');
   if(listPage||searchPage){
