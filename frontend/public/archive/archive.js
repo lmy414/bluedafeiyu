@@ -1,4 +1,4 @@
-import {renderWorkCard} from './work-card.js?v=4';
+import {renderWorkCard} from './work-card.js?v=20261023-3';
 import {copyImage} from './image-copy.js?v=1';
 import {installTopicDownloads} from './topic-download.js?v=4';
 import {loadArchiveData} from './data-loader.js?v=1';
@@ -91,19 +91,22 @@ import {loadArchiveData} from './data-loader.js?v=1';
     let dataset,all=[],filtered=[],shown=24;
     const pageNumber=Number(document.body.dataset.pageNumber)||1;
     const pageStart=(pageNumber-1)*24;
-    const defaultState={character:document.body.dataset.character||'',type:document.body.dataset.type||'',sort:document.body.dataset.sort||'latest'};
+    const defaultState={view:'',character:document.body.dataset.character||'',type:document.body.dataset.type||'',sort:document.body.dataset.sort||'latest'};
     const form=$('#filter-form'),params=new URLSearchParams(location.search),query=$('#search-q'),result=$('#results'),count=$('#result-count');
     // Transient sort/filter states use the fragment, so the gallery does not
     // expose an unbounded family of indexable query combinations. Old shared
     // query URLs are still accepted and normalized when the page is ready.
-    for(const [key,value] of new URLSearchParams(location.hash.slice(1))) if(['character','type','sort','q'].includes(key))params.set(key,value);
+    for(const [key,value] of new URLSearchParams(location.hash.slice(1))) if(['character','type','sort','q','view'].includes(key))params.set(key,value);
+    let view=params.get('view')==='weekly'?'weekly':'';
+    const weeklySlugs=JSON.parse(document.querySelector('[data-weekly-slugs]')?.dataset.weeklySlugs||'[]');
     const selected={character:document.body.dataset.character||'',type:document.body.dataset.type||'',sort:document.body.dataset.sort||'latest'};
     for(const name of ['character','type','sort'])if(params.has(name))selected[name]=params.get(name);
     const setCharacters=value=>{const ids=String(value||'').split(',').filter(Boolean);for(const option of form.elements.character.options)option.selected=option.value?ids.includes(option.value):!ids.length;};
     for(const [name,value]of Object.entries(selected))if(form.elements[name]){if(name==='character')setCharacters(value);else form.elements[name].value=value;}
     const sourceQuery=params.get('q')||'',displayQuery=names(sourceQuery);
     if(query)query.value=displayQuery;
-    const getState=()=>({q:query ? (query.value.trim()===displayQuery ? sourceQuery : query.value.trim()) : '',character:[...form.elements.character.selectedOptions].map(option=>option.value).filter(Boolean).join(','),type:form.elements.type.value,sort:form.elements.sort.value});
+    const getState=()=>({view,q:query ? (query.value.trim()===displayQuery ? sourceQuery : query.value.trim()) : '',character:[...form.elements.character.selectedOptions].map(option=>option.value).filter(Boolean).join(','),type:form.elements.type.value,sort:form.elements.sort.value});
+    if(view==='weekly'){form.elements.sort.querySelector('[value=curated]').hidden=false;form.elements.sort.value=params.get('sort')||'curated';}
     const listBase=document.body.dataset.listBase||basePath(location.pathname);
     const globalArchive=listBase==='/browse.html'||listBase.startsWith('/categories/');
     const categoryURL=()=>{
@@ -111,6 +114,7 @@ import {loadArchiveData} from './data-loader.js?v=1';
       const fragment=new URLSearchParams();
       if(state.character)fragment.set('character',state.character);
       if(state.sort!=='latest')fragment.set('sort',state.sort);
+      if(state.view)fragment.set('view',state.view);
       url.hash=fragment.toString();
       return url;
     };
@@ -122,7 +126,11 @@ import {loadArchiveData} from './data-loader.js?v=1';
       document.dispatchEvent(new Event('archive:filter-sync'));
       const state=getState(),words=state.q.toLocaleLowerCase().split(/\s+/).filter(Boolean);
       const characters=state.character.split(',').filter(Boolean);
-      filtered=all.filter(w=>characters.every(id=>w.cids.includes(id))&&(!state.type||w.k.includes(state.type))&&words.every(word=>{const roles=dataset.characters.filter(c=>w.cids.includes(c.id));const text=[w.n,w.c,w.d,w.cm,...w.roles.map(role=>role.name),...roles.flatMap(role=>role.aliases||[]),...w.tg,...w.tg.map(names)].join(' ');const l=localized(w);return (text+' '+[l.n,l.c,l.d,l.cm,...l.roles.map(role=>role.name),...l.tg].join(' ')).toLocaleLowerCase().includes(word);}));
+      filtered=all.filter(w=>(view!=='weekly'||weeklySlugs.includes(w.slug))&&characters.every(id=>w.cids.includes(id))&&(!state.type||w.k.includes(state.type))&&words.every(word=>{const roles=dataset.characters.filter(c=>w.cids.includes(c.id));const text=[w.n,w.c,w.d,w.cm,...w.roles.map(role=>role.name),...roles.flatMap(role=>role.aliases||[]),...w.tg,...w.tg.map(names)].join(' ');const l=localized(w);return (text+' '+[l.n,l.c,l.d,l.cm,...l.roles.map(role=>role.name),...l.tg].join(' ')).toLocaleLowerCase().includes(word);}));
+      if(view==='weekly' && state.sort==='curated'){const ranks=new Map(weeklySlugs.map((slug,i)=>[slug,i]));filtered.sort((a,b)=>ranks.get(a.slug)-ranks.get(b.slug));}
+      document.querySelectorAll('[data-archive-sort]').forEach(tab=>tab.classList.toggle('is-active',!view&&tab.dataset.archiveSort===state.sort));
+      document.querySelector('[data-archive-view]')?.classList.toggle('is-active',view==='weekly');
+      if(document.querySelector('[data-weekly-period]'))document.querySelector('[data-weekly-period]').hidden=view!=='weekly';
       if(state.sort==='popular'||state.sort==='downloads')filtered.sort((a,b)=>(window.WorkStats?.metric(b.id,state.sort)||0)-(window.WorkStats?.metric(a.id,state.sort)||0));
       if(state.sort==='random'){
         if(reshuffle||!render.randomOrder){render.randomOrder=filtered.map(w=>w.slug);for(let i=render.randomOrder.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[render.randomOrder[i],render.randomOrder[j]]=[render.randomOrder[j],render.randomOrder[i]];}}
@@ -143,6 +151,7 @@ import {loadArchiveData} from './data-loader.js?v=1';
       more.hidden=start+shown>=filtered.length;
       more.closest('.load-more-wrap').hidden=more.hidden;
     }
+    document.querySelector('.gallery-tabs')?.addEventListener('click',event=>{const tab=event.target.closest('[data-archive-sort],[data-archive-view]');if(!tab)return;event.preventDefault();view=tab.dataset.archiveView||'';const curated=form.elements.sort.querySelector('[value=curated]');curated.hidden=!view;form.elements.sort.value=view?'curated':tab.dataset.archiveSort;update();});
     function update(){shown=24;if(pageNumber>1){location.assign(localURL(stateURL().href));return;}setURL();if(dataset)render();}
     form.addEventListener('change',event=>{
       if(event.target.name==='type'&&globalArchive){location.assign(localURL(categoryURL().href));return;}
@@ -152,7 +161,7 @@ import {loadArchiveData} from './data-loader.js?v=1';
       }
       update();
     });form.addEventListener('submit',e=>e.preventDefault());
-    document.addEventListener('click',e=>{if(e.target.closest('[data-reset]')){setCharacters(document.body.dataset.character||'');form.elements.type.value=document.body.dataset.type||'';form.elements.sort.value=document.body.dataset.sort||'latest';if(query)query.value='';update();}});
+    document.addEventListener('click',e=>{if(e.target.closest('[data-reset]')){view='';setCharacters(document.body.dataset.character||'');form.elements.type.value=document.body.dataset.type||'';form.elements.sort.value=document.body.dataset.sort||'latest';if(query)query.value='';update();}});
     $('#search-form')?.addEventListener('submit',e=>{e.preventDefault();update();});
     let timer;query?.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(update,220);});
     $('[data-load-more]').addEventListener('click',()=>{shown+=24;render(false,true);});

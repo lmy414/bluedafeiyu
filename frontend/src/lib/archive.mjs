@@ -39,7 +39,7 @@ const topics = snapshot.topics.filter(t=>t.status!=='removed').map(t=>{
   return {...t,list,cover,art,avatar:topicAvatar(t.id),eyebrow:t.author?'作者作品集':'主题合集'};
 });
 const tagCounts=new Map();for(const w of works)for(const tag of w.tg)tagCounts.set(tag,(tagCounts.get(tag)||0)+1);
-const translations={en:{'d.navigationToggle':'Toggle navigation'},ja:{'d.navigationToggle':'ナビゲーションを切り替え'}};
+const translations={en:{'d.navigationToggle':'Toggle navigation','d.saveWork':'Save work','d.saveCreator':'Save creator','d.saved':'Saved','d.unsave':'Remove from saved','d.savedTitle':'Saved works','d.storageUnavailable':'Your browser could not save this item.'},ja:{'d.navigationToggle':'ナビゲーションを切り替え','d.saveWork':'作品を保存','d.saveCreator':'作者を保存','d.saved':'保存済み','d.unsave':'お気に入りから削除','d.savedTitle':'お気に入り','d.storageUnavailable':'ブラウザーに保存できませんでした。'}};
 for (const [key, row] of Object.entries(videoCopy)) { translations.en['d.' + key] = row[1]; translations.ja['d.' + key] = row[2]; }
 for (const [key, values] of Object.entries(aboutCopy)) {
   translations.en['d.about.'+key] = values[1]; translations.ja['d.about.'+key] = values[2];
@@ -51,8 +51,12 @@ for (const [i, row] of aboutQuestions.entries()) {
   }
 }
 for(const [key, en, ja] of [
+  ['allRoles','All characters','すべてのキャラクター'],['allTypes','All types','すべての種類'],
+  ['galleryTabs','Image archive views','画像の表示方法'],
+  ['siteSearch','Search works, characters, creators or tags','作品・キャラクター・作者・タグを検索'],
+  ['viewLarge','View image','画像を見る'],['longImage','Long image · view full','長い画像・全体を見る'],
   ['specialThanks','Special thanks','特別な感謝'],['visitWebsite','Visit website','サイトを見る'],
-  ['discover','Discover','見つける'],['gallery','All works','作品一覧'],['brandSub','AI-girl fan art archive','AI娘の二次創作アーカイブ'],
+  ['brandName','DeepSeek Chan','藍色大肥魚'],['discover','Discover','見つける'],['gallery','All works','作品一覧'],['brandSub','AI-girl fan art archive','AI娘の二次創作アーカイブ'],
   ['explore','EXPLORE','ブラウズ'],['sideText','A home for every delightful image.','楽しい一枚を、大切に。'],['nonOfficial','Unofficial fan archive','非公式ファンアーカイブ'],
   ['footerText','AI-girl fan art archive · Images belong to their creators','AI娘の二次創作アーカイブ · 画像の権利は原作者に帰属します'],['rights','Sources & permissions','出典と利用許諾'],
   ['curated','Curated order','掲載順'],['selectRole','Select a character','キャラクターを選択'],['quickView','Quick preview','プレビュー'],['copyFail','Could not copy. Please copy manually.','コピーできませんでした。手動でコピーしてください。'],
@@ -85,12 +89,17 @@ for (const [key,en,ja] of [
   ['copyImageFail','Could not copy. Try again or download the original.','コピーできませんでした。再試行するか元画像をダウンロードしてください。']
 ]) { translations.en['d.'+key]=en; translations.ja['d.'+key]=ja; }
 for(const [key,en,ja] of [
+ ['migrationTitle','Demo components and browsing updates','Demo コンポーネントと閲覧体験の更新'],
+ ['migrationBrowse','Restored image masonry, gallery tabs, image previews and browser-local saved items.','画像の段組み、ギャラリーのタブ、プレビュー、ブラウザー内のお気に入りを整備しました。'],
+ ['migrationCreators','Creator profiles now show real avatars, image and video archives, search, sorting and work previews.','作者の実際のアイコン、画像と動画の作品集、検索、並び替え、作品プレビューを追加しました。'],
+ ['migrationPages','Aligned navigation, typography, community and information pages across desktop, mobile and four languages.','ナビゲーション、文字組み、コミュニティと案内ページを、デスクトップ・モバイル・4言語で統一しました。'],
  ['imageSubmit','Submit an image','画像作品を投稿'],
  ['submissionMode','Submission type','投稿方法'],
  ['releaseTitle','New frontend and automatic video publishing','新しいフロントエンドと動画の自動公開'],
  ['releaseLayout','New layouts for discovery, community, characters, creators and information pages, with mobile and dark-mode support.','ホーム、コミュニティ、キャラクター、作者、案内ページを刷新。モバイルとダークモードに対応。'],
  ['releaseFlow','Creator registration, RSSHub discovery, AI review and automatic publishing are connected, with release notifications sent to the Feishu group.','作者登録、RSSHubによる検出、AI審査、自動公開を接続。公開結果はFeishuグループに通知します。']
 ]){translations.en['d.design.'+key]=en;translations.ja['d.design.'+key]=ja;}
+for(const work of works)work.owners=topics.filter(t=>t.author&&t.list.some(w=>w.id===work.id)).map(t=>{const uid=t.author.channels.map(c=>c.url.match(/space\.bilibili\.com\/(\d+)/)?.[1]).find(Boolean);return {name:t.author.name,href:'/creators/'+(uid?'bilibili-'+uid:t.id)+'.html'};});
 const ctx={works,bySlug,chars,topics,types,snapshot,translations,editorial:read('discovery.json'),modelVendors:read('model-vendors.json').vendors,commonTags:[...tagCounts].sort((a,b)=>b[1]-a[1]).slice(0,16)};
 Object.assign(ctx,createPrimitives(ctx));
 for(const factory of [createWorkCards,createCollectionCards,createCharacterCards,createListing]) Object.assign(ctx,factory(ctx));
@@ -107,7 +116,7 @@ createSearchPage(ctx);
 createCommunityPage(ctx);
 createEventPage(ctx);
 createUtilityPages(ctx);
-createVideoPages(ctx);
+Object.assign(ctx,createVideoPages(ctx));
 createDemoPages(ctx,pages);
 ctx.seo.generatePages(ctx.write,ctx.browsePage,ctx.breadcrumbs);
 export const archivePages=pages;

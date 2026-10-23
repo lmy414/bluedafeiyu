@@ -12,7 +12,7 @@ import vm from 'node:vm';
 const chars=[{id:'deepseek',name:'DeepSeek娘',aliases:[],list:Array(100)},{id:'gpt',name:'GPT娘',aliases:[],list:Array(30)}];
 const works=[{cid:'deepseek',cids:['deepseek'],slug:'single'},{cid:'deepseek',cids:['deepseek','gpt'],slug:'both'}];
 const escape=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const ctx={works,chars,types:[],esc:escape,tr:(_key,zh)=>zh,old:(_key,zh)=>zh};
+const ctx={works,chars,types:[],icon:()=>'',esc:escape,tr:(_key,zh)=>zh,old:(_key,zh)=>zh};
 
 test('single-character records normalize without changing IDs, paths or slugs',()=>{
  const legacy={id:'frozen-id',slug:'frozen-slug',characterId:'deepseek',path:'originals/deepseek/frozen.png'};
@@ -25,7 +25,7 @@ test('character options and counts are scoped to the full collection, including 
  const {document}=parseHTML(filters('','','curated',works));
  const role=document.querySelector('select[name=character]');
  assert.ok(role.hasAttribute('multiple'));
- assert.deepEqual([...role.querySelectorAll('option')].map(o=>o.textContent),['全部','DeepSeek娘 (2)','GPT娘 (1)']);
+ assert.deepEqual([...role.querySelectorAll('option')].map(o=>o.textContent),['全部角色','DeepSeek娘 (2)','GPT娘 (1)']);
  assert.match(document.querySelector('#character-filter-help').textContent,/全部所选角色（AND）/);
  const single=parseHTML(filters('','','curated',works.slice(0,1))).document;
  assert.equal(single.querySelector('option[value=gpt]'),null);
@@ -35,7 +35,7 @@ test('the browser filter uses AND rather than OR for multiple characters',()=>{
  const source=fs.readFileSync(new URL('../public/archive/archive.js',import.meta.url),'utf8');
  const expression=source.match(/filtered=all\.filter\(([^\n]+)\);/)[1];
  const all=[{slug:'a',cids:['deepseek'],k:['meme']},{slug:'b',cids:['gpt'],k:['meme']},{slug:'both',cids:['deepseek','gpt'],k:['meme']}];
- const filtered=vm.runInNewContext('all.filter('+expression+')',{all,characters:['deepseek','gpt'],state:{type:''},words:[]});
+ const filtered=vm.runInNewContext('all.filter('+expression+')',{all,view:'all',weeklySlugs:[],characters:['deepseek','gpt'],state:{type:''},words:[]});
  assert.deepEqual(Array.from(filtered,w=>w.slug),['both']);
 });
 test('cards show every role link without changing the frozen detail URL',()=>{

@@ -10,11 +10,12 @@ const work = i => ({ id: 'stable_'+i, slug: 'work-'+i, n: '同名:/图片', c: '
 const bytes = i => new Uint8Array([i, 37, 255]);
 const response = value => new Response(value, { headers: { 'Content-Type':'image/png' } });
 
-test('optional homepage topic card keeps download button separate from its navigation link',()=>{
+test('collection card keeps its ZIP button separate from the archive navigation link',()=>{
  const {collectionCard}=createCollectionCards({esc:String,old:(_key,text)=>text,icon:()=>'',tr:(_key,text)=>text});
  const topic={id:'x',name:'合集',summary:'介绍',list:[{i:'/image.png',w:10,h:10}]};
  const ordinary=parseHTML(collectionCard(topic)).document;
- assert.equal(ordinary.querySelectorAll('[data-download-topic]').length,0);
+ assert.equal(ordinary.querySelectorAll('[data-download-topic]').length,1);
+ assert.equal(ordinary.querySelector('a button'),null);
  const home=parseHTML(collectionCard(topic,{download:true})).document;
  assert.equal(home.querySelector('[data-download-topic]').dataset.downloadTopic,'x');
  assert.ok(home.querySelector('a[href="/topics/x.html"]'));

@@ -39,3 +39,20 @@ test('creator identity survives role-name translation in title, credits and shar
     }
   } finally { videoArchive.creators = before; videoArchive.videos = beforeVideos; }
 });
+
+
+test('creator labels and title-only video previews survive localization on the saved page', async()=>{
+  const creator={uid:'3747573030456892',name:'DeepSeek鲸鱼娘在运营'};
+  const before=videoArchive.creators,beforeVideos=videoArchive.videos;
+  videoArchive.creators=[creator];
+  videoArchive.videos=[{bvid:'BV1bvnE69ETy',uid:creator.uid,characterIds:['deepseek'],i18n:{en:{title:'A short DeepSeek Chan clip',description:'Fan work.'},ja:{title:'DeepSeekちゃんの短編',description:'二次創作です。'}}}];
+  try{
+    const html=`<html><head><title>Saved</title><link rel="canonical" href="${ORIGIN}/saved.html"><meta name="description"><meta property="og:title"><meta name="twitter:title"><meta property="og:image:alt"></head><body data-i18n-page="saved"><main><h1>Saved</h1><a aria-label="${creator.name}" data-creator-label="${creator.name}"><img alt=""></a><article data-video-bvid="BV1bvnE69ETy"><b data-video-title>Video</b></article></main></body></html>`;
+    for(const locale of LOCALES.filter(l=>['en','ja'].includes(l.id))){
+      const {document}=parseHTML(await localizeHtml(html,'/saved.html',locale,{works:[],characters:[],topics:[]}));
+      assert.equal(document.querySelector('[data-creator-label]').getAttribute('aria-label'),creator.name);
+      assert.equal(document.querySelector('[data-video-title]').textContent,videoArchive.videos[0].i18n[locale.id].title);
+      assert.equal(document.title,(locale.id==='en'?'Saved works':'お気に入り')+' | DeepSeek Chan');
+    }
+  }finally{videoArchive.creators=before;videoArchive.videos=beforeVideos;}
+});

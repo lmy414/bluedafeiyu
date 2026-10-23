@@ -8,7 +8,12 @@
   function paint() {
     document.querySelectorAll('[data-work-stats]').forEach(function (el) {
       var metrics = snapshot && snapshot.available ? snapshot.works[el.getAttribute('data-work-stats')] || { views: 0, downloads: 0 } : null;
-      el.textContent = T('stats.counts', '浏览 {views} · 下载 {downloads}', { views: metrics ? count(metrics.views) : '—', downloads: metrics ? count(metrics.downloads) : '—' });
+      var label = T('stats.counts', '浏览 {views} · 下载 {downloads}', { views: metrics ? count(metrics.views) : '—', downloads: metrics ? count(metrics.downloads) : '—' });
+      var parts = label.split(' · ');
+      if (el.classList.contains('image-stats') && parts.length === 2) {
+        var paths = ['<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/>','<path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/>'];
+        el.innerHTML = parts.map(function (part,index) {return '<span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">'+paths[index]+'</svg>'+esc(part)+'</span>';}).join('');
+      } else el.textContent = label;
       el.title = metrics ? T('stats.updated', '统计更新：{date}；下载为按钮点击次数', { date: new Date(snapshot.syncedAt).toLocaleString() }) : T('stats.unavailable', '统计尚未同步');
     });
     document.querySelectorAll('[data-stats-note]').forEach(function (el) {

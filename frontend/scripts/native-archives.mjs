@@ -63,7 +63,7 @@ export function applyNativeArchives(document,api,base,snapshot){
   const heading=document.querySelector('main h1');
   if(heading){
     (c.type?heading.querySelector('.marker-highlight')||heading:heading).textContent=c.type?c.title:c.name;
-    if(!c.type){const small=document.createElement('small');small.textContent=en?' Fan art archive':'二次創作アーカイブ';heading.appendChild(small);}
+
   }
   const page=base.match(/\/page\/(\d+)\.html$/)?.[1];
   const crumb=document.querySelector('.breadcrumbs > span:last-child');if(crumb)crumb.textContent=page?(en?'Page '+page:page+'ページ目'):c.title;

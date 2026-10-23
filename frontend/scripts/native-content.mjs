@@ -12,7 +12,10 @@ export function applyNativeContent(document,api,base,snapshot) {
     const video = videoById.get(card.getAttribute('data-video-bvid'));
     const value = video?.i18n?.[api.current];
     if (value) {
-      for (const field of ['title', 'description']) card.querySelector(`[data-video-${field}]`).textContent = videoTerminology(value[field], api.current, video.characterIds, creatorNames);
+      for (const field of ['title', 'description']) {
+        const target=card.querySelector(`[data-video-${field}]`);
+        if(target)target.textContent=videoTerminology(value[field], api.current, video.characterIds, creatorNames);
+      }
     }
   }
   for (const el of document.querySelectorAll('[data-creator-intro]')) {

@@ -16,11 +16,13 @@ test('homepage and mobile navigation work before scripts and keep production han
   for(const prefix of ['', 'en/','ja/','zh-hant/']){
     const {document}=parseHTML(fs.readFileSync(path.join(out,prefix+'index.html'),'utf8'));
     assert.equal(document.querySelectorAll('.mobile-bottom a').length,5,prefix);
-    assert.ok(document.querySelector('.mobile-bottom a[href$="/submit.html"]'));
-    const topics=document.querySelectorAll('.journal-slide');assert.ok(topics.length>=2);
-    assert.equal(document.querySelectorAll('.journal-slide:not([hidden])').length,1);
-    assert.equal(document.querySelectorAll('.journal-popular .work-card').length,4);
-    assert.ok(document.querySelector('.journal-slide [data-download-topic]'));
+    assert.ok(document.querySelector('.mobile-bottom a[href$="/saved.html"]'));
+    const topics=document.querySelectorAll('[data-design-slide]');assert.ok(topics.length>=2);
+    assert.equal(document.querySelectorAll('[data-design-slide]:not([hidden])').length,1);
+    assert.equal(document.querySelectorAll('.portal-primary > a').length,2);
+    assert.equal(document.querySelectorAll('.portal-secondary > a').length,3);
+    assert.ok(document.querySelector('[data-design-slide] a[href*="/topics/"]'));
+    assert.ok(document.querySelector('.portal-participate a[href$="/submit.html"]'));
     assert.ok(document.querySelector('script[src="/analytics.js"]'));
     assert.equal(document.querySelector('#demo-toolbar'),null);
     assert.equal(document.querySelector('script[src*="/demo/"]'),null);

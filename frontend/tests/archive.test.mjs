@@ -114,15 +114,16 @@ test('all works keep static detail, live analytics IDs and comment threads',()=>
  }
 });
 
-test('topic downloads exist on topic pages and homepage only, independent of rendered cards',()=>{
+test('topic downloads are available from complete topic archives and collection cards',()=>{
  const data=JSON.parse(fs.readFileSync(path.join(out,'archive-data.json'),'utf8'));
  for(const topic of data.topics){
   const doc=read('topics/'+topic.id+'.html');
   assert.equal(doc.querySelector('[data-download-topic]').getAttribute('data-download-topic'),topic.id);
   assert.ok(topic.slugs.length>=doc.querySelectorAll('#results .work-card').length);
  }
- assert.equal(read('index.html').querySelector('[data-download-topic]').getAttribute('data-download-topic'),'maojing');
- for(const file of ['browse.html','search.html','topics.html','characters/deepseek.html']) assert.equal(read(file).querySelectorAll('[data-download-topic]').length,0,file);
+ assert.ok(read('index.html').querySelector('[data-design-slide] a[href="/topics/maojing.html"]')); 
+ for(const file of ['browse.html','search.html']) assert.equal(read(file).querySelectorAll('[data-download-topic]').length,0,file);
+ for(const card of read('topics.html').querySelectorAll('.collection-download-card')){assert.ok(card.querySelector('[data-download-topic]'));assert.equal(card.querySelector('a button'),null);}
  assert.ok(data.works.every(w=>Number.isFinite(w.bytes)&&w.bytes>=0));
  for(const prefix of ['', 'en/', 'ja/', 'zh-hant/']){
   const doc=read(prefix+'topics/maojing.html');

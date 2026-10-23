@@ -1,6 +1,5 @@
 export function createCollectionCards(ctx) {
-  const { topics, esc, old, icon, card, tr } = ctx;
-const collectionCard = (t, {download=false} = {}) => `${download?'<article class="collection-card collection-card-download">':''}<a class="${download?'collection-link':'collection-card'}" href="/topics/${esc(t.id)}.html"><div class="collection-art">${(t.art||t.list.slice(0,3)).map(w=>`<img src="${esc(w.i)}" alt="" loading="lazy" width="${w.w}" height="${w.h}">`).join('')}</div><div class="collection-body"><span class="eyebrow">${esc(t.eyebrow || '主题合集')}</span><h3>${esc(t.name)}</h3><p>${esc(t.summary)}</p><div class="collection-foot"><span>${t.list.length} ${old('v2.work','作品')}</span>${icon('arrow',19)}</div></div></a>${download?`<button class="button small collection-download" type="button" data-download-topic="${esc(t.id)}">${icon('download',16)}${tr('zipDownload','打包下载原图','Download originals ZIP','元画像をZIPでダウンロード')}</button></article>`:''}`;
-
-  return { collectionCard };
+  const {esc,old,icon,tr}=ctx;
+  const collectionCard=(topic,{download=true}={})=>`<article class="collection-download-card"><a class="collection-card" href="/topics/${esc(topic.id)}.html"><div class="collection-art">${(topic.art||topic.list.slice(0,3)).map(work=>`<img src="${esc(work.i)}" alt="" loading="lazy" width="${work.w}" height="${work.h}">`).join('')}</div><div class="collection-copy"><span class="eyebrow">${topic.author?tr('creatorCollection','作者作品集','Creator collection','作者の作品集'):tr('curatedCollection','主题精选','Curated collection','テーマコレクション')}</span><h2>${esc(topic.name)}</h2><p>${esc(topic.summary)}</p><span class="collection-count">${topic.list.length} ${old('v2.work','作品')}${icon('arrow',17)}</span></div></a>${download?`<button class="button" type="button" data-download-topic="${esc(topic.id)}">${icon('download',16)}${tr('zipDownload','打包下载原图','Download originals ZIP','元画像をZIPでダウンロード')}</button>`:''}</article>`;
+  return {collectionCard};
 }

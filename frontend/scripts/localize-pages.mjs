@@ -80,7 +80,7 @@ function pageMeta(document, api, base, snapshot, archive) {
     const copy = key => locale === 'zh-Hant' ? converter(videoCopy[key][index]) : videoCopy[key][index];
     const creator = videoArchive.creators.find(c => base === `/creators/bilibili-${c.uid}.html`);
     if (locale !== 'zh') {
-      document.title = (creator ? creator.name + ' · ' + copy('creatorProfile') : copy('videoTitle')) + ' | DeepSeek Chan';
+      document.title = (base.startsWith('/creators/') ? (creator?.name || document.querySelector('main h1')?.textContent || '') + ' · ' + copy('creatorProfile') : copy('videoTitle')) + ' | DeepSeek Chan';
       setMeta(document, 'meta[name="description"]', copy('videoLead'));
     }
     if (creator && document.querySelector('main h1')) (document.querySelector('main h1 [data-creator-name]') || document.querySelector('main h1')).textContent = creator.name;
@@ -90,6 +90,8 @@ function pageMeta(document, api, base, snapshot, archive) {
     for (const selector of ['meta[property="og:image:alt"]', 'meta[name="twitter:image:alt"]']) setMeta(document, selector, document.title);
   }
   if(base==='/creators.html' && ['en','ja'].includes(locale)) {document.title=(locale==='en'?'Creators':'クリエイター')+' | DeepSeek Chan';setMeta(document,'meta[name="description"]',locale==='en'?'Explore the creators and their published AI-girl fan art and videos.':'AI娘の二次創作を手がける作者と公開作品をご覧ください。');for(const selector of ['meta[property="og:image:alt"]','meta[name="twitter:image:alt"]'])setMeta(document,selector,document.title);}
+  for(const el of document.querySelectorAll('[data-creator-label]'))el.setAttribute('aria-label',el.getAttribute('data-creator-label'));
+  if(base==='/saved.html'&&['en','ja'].includes(locale)){document.title=(locale==='en'?'Saved works':'お気に入り')+' | DeepSeek Chan';setMeta(document,'meta[name="description"]',locale==='en'?'Your saved images and creators stay in this browser.':'お気に入りの画像と作者は、このブラウザーにのみ保存されます。');for(const selector of ['meta[property="og:image:alt"]','meta[name="twitter:image:alt"]'])setMeta(document,selector,document.title);}
   if(locale==='en')document.title=document.title.replaceAll('Blue Dafeiyu','DeepSeek Chan');
   const desc = document.querySelector('meta[name="description"]')?.getAttribute('content') || '';
   if (locale !== 'zh') {
@@ -175,7 +177,7 @@ export async function localizeHtml(html, base, locale, snapshot) {
         const guide = guides.find(g=>guidePath(g)===route);
         if (guide) value.name = localizedCopy(guide.name,locale.id);
         else if (route === '/category.html') value.name = document.title;
-        else if (route === '/videos.html' || route === '/creators.html' || route.startsWith('/creators/')) value.name = document.title;
+        else if (route === '/saved.html' || route === '/videos.html' || route === '/creators.html' || route.startsWith('/creators/')) value.name = document.title;
       }
       if (base === '/index.html' && ['WebSite','Organization'].includes(value['@type'])) {
         value.name = locale.id === 'en' ? 'DeepSeek Chan' : locale.id === 'zh' ? '蓝色大肥鱼' : '藍色大肥魚';

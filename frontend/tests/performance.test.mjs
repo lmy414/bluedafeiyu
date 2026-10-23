@@ -24,7 +24,7 @@ test('localized catalogs retain search, preview and original download data for e
       if(locale!=='zh')assert.deepEqual(work.i18n[locale],original.i18n[locale]);
     }
     for(const topic of data.topics)assert.deepEqual(topicMembers(data,topic.id).works.map(w=>w.id),topicMembers(publicData,topic.id).works.map(w=>w.id));
-    assert.ok(zlib.gzipSync(Buffer.from(JSON.stringify(data))).length < (locale==='zh'?330000:650000),locale+' payload budget');
+    assert.ok(zlib.gzipSync(Buffer.from(JSON.stringify(data))).length < (locale==='zh'?300:580)*data.works.length,locale+' payload budget');
   }
   assert.ok(publicData.works.every(w=>w.rights?.license),'Public rights metadata retained');
 });
@@ -40,7 +40,7 @@ test('small homepage catalog gives identical real popularity results and localiz
     assert.deepEqual(work.tg,original.tg,'Traditional Chinese card conversion retains its tag array');
     for(const locale of ['en','ja'])assert.equal(work.i18n[locale].name,original.i18n[locale].name);
   }
-  assert.ok(zlib.gzipSync(Buffer.from(JSON.stringify(home))).length<100000,'Home does not fetch the full catalog');
+  assert.ok(zlib.gzipSync(Buffer.from(JSON.stringify(home))).length<110*home.works.length,'Compact catalog stays within 110 compressed bytes per submission');
 });
 
 test('homepage bundles styles and keeps lower galleries lazy in all four languages',()=>{
@@ -51,7 +51,7 @@ test('homepage bundles styles and keeps lower galleries lazy in all four languag
     assert.match(styles[0].getAttribute('href'),/^\/_astro\/.+\.css$/);
     const images=[...document.querySelectorAll('img')];
     assert.equal(images.filter(img=>img.getAttribute('fetchpriority')==='high').length,1);
-    const recent=document.querySelector('.home-shortcuts').nextElementSibling;
+    const recent=document.querySelector('.portal-curated');
     assert.equal(recent.querySelectorAll('img[loading=eager]').length,0);
     assert.ok(document.querySelector('script[type=module][src^="/_astro/"]'));
     for(const name of ['archive-copy','archive-labels'])assert.equal(!!document.querySelector(`script[src^="/${name}.js"]`),['en/','ja/'].includes(prefix),prefix+' runtime dictionaries');

@@ -8,9 +8,9 @@ import {characterSearchAliases} from '../src/lib/landing-copy.mjs';
 const out=process.env.SITE_OUT_DIR||path.resolve(import.meta.dirname,'../../.build/site');
 const read=route=>parseHTML(fs.readFileSync(path.join(out,route.endsWith('/')?route.slice(1)+'index.html':route.slice(1)),'utf8')).document;
 
-test('Traditional home brand subtitle and every DeepSeek archive breadcrumb link to the Traditional home',()=>{
+test('Traditional shared brand and DeepSeek archive breadcrumbs link to the Traditional home',()=>{
   const doc=read('/zh-hant/');
-  const subtitle=doc.querySelector('.home-brand-lede');
+  const subtitle=doc.querySelector('.brand strong');
   assert.ok(subtitle.textContent.includes('藍色大肥魚'));
   assert.equal(subtitle.closest('details'),null);
   const directory=path.join(out,'zh-hant/characters');
@@ -29,14 +29,14 @@ test('about headings answer the brand question in Simplified and Traditional Chi
   assert.equal(read('/zh-hant/about.html').querySelector('main h1').textContent,'藍色大肥魚是什麼？');
 });
 
-test('all English character pages use Blue Dafeiyu and separate the character name from the heading subtitle',()=>{
+test('English character pages use DeepSeek Chan and keep compact character headings',()=>{
   const directory=path.join(out,'en/characters');
   for(const file of fs.readdirSync(directory,{recursive:true}).filter(file=>file.endsWith('.html'))){
     const doc=read('/en/characters/'+file.replaceAll('\\','/'));
-    assert.ok(doc.title.endsWith(' | Blue Dafeiyu'),file+': '+doc.title);
-    assert.doesNotMatch(doc.title,/\| DeepSeek Chan/);
+    assert.ok(doc.title.endsWith(' | DeepSeek Chan'),file+': '+doc.title);
+    assert.doesNotMatch(doc.title,/\| Blue Dafeiyu/);
   }
-  assert.equal(read('/en/characters/gemini.html').querySelector('main h1').textContent,'Gemini Chan Fan art archive');
+  assert.equal(read('/en/characters/gemini.html').querySelector('main h1').textContent,'Gemini Chan');
 });
 
 test('Chinese and English character titles and descriptions include the requested search aliases',()=>{
@@ -48,14 +48,16 @@ test('Chinese and English character titles and descriptions include the requeste
   }
 });
 
-test('homepage download highlight is static in every language, has the report week and retains work-download tracking',()=>{
+test('weekly gallery selection retains report dates, real slugs and original-download tracking',()=>{
   for(const locale of LOCALES){
-    const section=read(localizedPath('/',locale)).querySelector('#popular-downloads');
-    assert.ok(section);
-    assert.equal(section.hidden,false);
-    assert.ok(section.textContent.includes('2026-10-12'));assert.ok(section.textContent.includes('2026-10-18'));
-    assert.ok(section.querySelector('a[href="'+locale.prefix+'/works/deepseek202609300025.html"]'));
-    const download=section.querySelector('[data-download-work]');
+    const gallery=read(localizedPath('/browse.html',locale));
+    const weekly=gallery.querySelector('[data-archive-view="weekly"]');
+    assert.ok(weekly);
+    const form=gallery.querySelector('[data-weekly-slugs]');
+    assert.match(form.getAttribute('data-weekly-slugs'),/deepseek202609300025/);
+    assert.match(gallery.querySelector('[data-weekly-period]').textContent,/2026-10-12.*2026-10-18/);
+    const detail=read(localizedPath('/works/deepseek202609300025.html',locale));
+    const download=detail.querySelector('[data-download-work]');
     assert.ok(download.dataset.downloadWork);assert.ok(download.getAttribute('href'));
   }
 });

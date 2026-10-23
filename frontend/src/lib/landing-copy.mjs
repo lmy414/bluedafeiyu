@@ -3,7 +3,7 @@ export function homeMeta(count, locale = 'zh') {
   const copy = {
     zh: ['蓝色大肥鱼（大肥鱼）— DeepSeek娘表情包与 AI 娘二创图库', `蓝色大肥鱼（大肥鱼、鲸鱼娘）是 DeepSeek娘的社区昵称。本站是非官方同人档案，收录 ${count} 件 AI 娘表情包、梗图、插画与漫画，可按角色找图、下载原图并查看来源与授权。`],
     'zh-Hant': ['藍色大肥魚（大肥魚）— DeepSeek娘表情包與 AI 娘二創圖庫', `藍色大肥魚（大肥魚、鯨魚娘）是 DeepSeek娘的社群暱稱。本站是非官方同人檔案，收錄 ${count} 件 AI 娘表情包、梗圖、插畫與漫畫，可依角色找圖、下載原圖並查看來源與授權。`],
-    en: ['蓝色大肥鱼 Blue Dafeiyu — DeepSeek Chan Memes & AI Girl Fan Art Archive', `Blue Dafeiyu (蓝色大肥鱼) is a community nickname for DeepSeek Chan. Explore ${count} archived AI girl memes, stickers, illustrations and comics, with original downloads, sources and license information.`],
+    en: ['蓝色大肥鱼 DeepSeek Chan — DeepSeek Chan Memes & AI Girl Fan Art Archive', `DeepSeek Chan (蓝色大肥鱼) is an unofficial community fan art archive. Explore ${count} archived AI girl memes, stickers, illustrations and comics, with original downloads, sources and license information.`],
     ja: ['藍色大肥魚 — DeepSeekちゃんのスタンプ・AI娘ファンアート集', `藍色大肥魚はDeepSeekちゃんのコミュニティでの愛称です。${count}件のAIキャラクターのスタンプ、ミーム、イラスト、漫画を収録する非公式アーカイブ。元画像、出典、利用許諾を確認できます。`],
   };
   const [title, description] = copy[locale] || copy.zh;

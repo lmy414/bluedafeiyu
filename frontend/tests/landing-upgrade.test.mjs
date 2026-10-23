@@ -27,7 +27,7 @@ test('home SEO uses published counts, brand aliases and a localized working sear
     assert.equal(search.pathname,locale.prefix+'/search.html');
     assert.equal(search.searchParams.get('q'),'鲸鱼娘');
     assert.equal(organization.logo,ORIGIN+'/favicon.png');
-    assert.ok(!organization.name.includes('DeepSeek'));
+    assert.equal(organization.name,locale.id==='en'?'DeepSeek Chan':['zh-Hant','ja'].includes(locale.id)?'藍色大肥魚':'蓝色大肥鱼');
   }
 });
 
@@ -38,7 +38,7 @@ test('about facts and visible FAQs match structured data in all languages', () =
     assert.deepEqual(count,[snapshot.works.length,snapshot.works.filter(w=>workCharacterIds(w).includes('deepseek')).length]);
     assert.ok(doc.querySelector('#what-is-blue-dafeiyu'));
     const schema = JSON.parse(doc.querySelector('script[type="application/ld+json"]').textContent);
-    const details = [...doc.querySelectorAll('.reading-faq details')];
+    const details = [...doc.querySelectorAll('.live-reading-faq details')];
     assert.equal(details.length,4);
     assert.deepEqual(schema.mainEntity.map(x=>[x.name,x.acceptedAnswer.text]),details.map(x=>[x.querySelector('summary').textContent,x.querySelector('p').textContent]));
     for (const anchor of ['license','licensing','analytics','special-thanks']) assert.ok(doc.getElementById(anchor));

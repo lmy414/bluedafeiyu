@@ -55,7 +55,8 @@ export function createSEO(ctx) {
   function description(c) {
     if (c.kind === 'topic') return `${c.topic.summary} 本合集收录 ${c.list.length} 件作品，保留每张图片的说明、来源、署名与授权记录。`;
     const aliases = c.character?.aliases?.length ? `（现有别名：${c.character.aliases.join('、')}）` : '';
-    const subject = c.character ? c.character.name + aliases : 'AI 娘';
+    const searchAlias = characterSearchAliases[c.character?.id]?.[0];
+    const subject = c.character ? c.character.name + aliases + (searchAlias ? `（${searchAlias}）` : '') : 'AI 娘';
     const scope = c.type ? kindNames[c.type] : '表情包、插画、设定图与漫画';
     return `浏览 ${subject}的${scope}，本栏收录 ${c.list.length} 件作品。查看图片说明、原图、来源及使用许可，或继续按${c.type ? '角色' : '类型'}寻找相关作品。`;
   }
@@ -65,7 +66,7 @@ export function createSEO(ctx) {
     let title = main[url]?.[0] || fallback + ' — 蓝色大肥鱼';
     let desc = main[url]?.[1] || options.desc || '';
     let image = '/avatar.png', schema, trail = [['蓝色大肥鱼', '/']];
-    let indexOnPublish = !['/search.html', '/404.html', '/category.html', '/submit.html'].includes(url);
+    let indexOnPublish = !['/search.html', '/404.html', '/category.html', '/submit.html', '/saved.html'].includes(url);
     if (c) {
       title = c.name + (c.n > 1 ? ` · 第 ${c.n} 页` : '') + ' — 蓝色大肥鱼';
       desc = description(c) + (c.n > 1 ? ` 当前为第 ${c.n} 页。` : '');

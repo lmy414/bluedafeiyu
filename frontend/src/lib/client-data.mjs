@@ -1,6 +1,6 @@
 // Public pages keep complete editorial records; interactions receive only the
 // fields they use. Chinese search terms stay available in every locale.
-const workFields = ['id','slug','n','c','cid','cids','roles','col','i','l','w','h','d','cm','o','f','s','bytes','lk','lt','ln','k','tg','dt'];
+const workFields = ['owners','id','slug','n','c','cid','cids','roles','col','i','l','w','h','d','cm','o','f','s','bytes','lk','lt','ls','ln','k','tg','dt'];
 const translationFields = ['name','description','commentary','tags','licenseNote'];
 const pick = (value, fields) => Object.fromEntries(fields.filter(key => Object.hasOwn(value, key)).map(key => [key,value[key]]));
 
