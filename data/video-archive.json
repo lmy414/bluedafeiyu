@@ -57,8 +57,8 @@
       "homepage": "https://space.bilibili.com/69180811",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "An early-wave creator designated by the site owner; profile collected from the public Bilibili page, and every video is reviewed individually.",
-        "ja": "サイト管理者が指定した初期投稿者。Bilibiliの公開プロフィールから収録し、動画は一本ずつ審査している。"
+        "en": "黑猫勇者 is a Bilibili creator who makes short anime-style fan animations about AI models.",
+        "ja": "黑猫勇者 は、AIモデルを題材にしたアニメ調の短編二次創作を手がけるBilibiliのクリエイター。"
       }
     },
     {
@@ -93,6 +93,31 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV19knb6fEs2",
+      "uid": "69180811",
+      "title": "《没落模型claude》",
+      "description": "灵感来源：Anthropic负债",
+      "url": "https://www.bilibili.com/video/BV19knb6fEs2/",
+      "cover": "https://i1.hdslb.com/bfs/archive/917c1590807bb4e947c16b44f24e40f7de2c9ebc.jpg",
+      "duration": 83,
+      "publishedAt": "2026-10-23T06:45:10.000Z",
+      "characterIds": [
+        "claude"
+      ],
+      "i18n": {
+        "en": {
+          "title": "The Fallen Model Claude",
+          "description": "A short anime-style fan animation in which Claude Chan, the anthropomorphized Claude model, faces her decline inside a grand old mansion, a premise inspired by Anthropic's debt troubles.",
+          "creatorIntro": "黑猫勇者 is a Bilibili creator who makes short anime-style fan animations about AI models."
+        },
+        "ja": {
+          "title": "落ちぶれたモデルClaude",
+          "description": "古い洋館を舞台に、擬人化されたClaudeモデル「Claudeちゃん」の没落を描いたアニメ調の短編二次創作。Anthropicの負債が着想元。",
+          "creatorIntro": "黑猫勇者 は、AIモデルを題材にしたアニメ調の短編二次創作を手がけるBilibiliのクリエイター。"
+        }
+      }
+    },
     {
       "bvid": "BV1vLn263EWT",
       "uid": "1513368379",
