@@ -7,8 +7,8 @@
       "homepage": "https://space.bilibili.com/4168597",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "A creator who posts lighthearted, self-made clips about everyday mischief with their AI character companion.",
-        "ja": "AI キャラクターとの日常のいたずらを、自作の短い動画で気軽に共有しているクリエイターです。"
+        "en": "One of the first creators designated by the site owner; profile collected from a public page, videos reviewed one by one.",
+        "ja": "サイト管理者が指定した初期メンバーの投稿者。公開プロフィールから収録し、動画は個別に審査しています。"
       }
     },
     {
@@ -17,8 +17,8 @@
       "homepage": "https://space.bilibili.com/4456176",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "The creator says only that these are drawings from a while back — several months ago, maybe last year — and gives no further context.",
-        "ja": "作者は「去年か数か月前のイラスト」とだけ添えており、それ以上の説明はない。"
+        "en": "One of the first creators designated by the site owner; profile collected from a public page, videos reviewed one by one.",
+        "ja": "サイト管理者が指定した初期メンバーの投稿者。公開プロフィールから収録し、動画は個別に審査しています。"
       }
     },
     {
@@ -37,8 +37,8 @@
       "homepage": "https://space.bilibili.com/69180811",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "A short chibi 3D animation skit featuring AI character personifications; the creator notes it is a filler upload made while working on a 10,000-follower animation.",
-        "ja": "AIキャラクターの擬人化を登場させる短いちびキャラ3Dアニメ。作者は1万フォロワー記念アニメの制作中に作ったつなぎ回だと述べている。"
+        "en": "A first-batch creator designated by the site owner; profile details come from the public page, and each video is reviewed individually.",
+        "ja": "サイト運営者が指定した初期作者。公開プロフィールの情報を収録し、動画は1本ずつ審査している。"
       }
     },
     {
@@ -67,8 +67,8 @@
       "homepage": "https://space.bilibili.com/44748304",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "A Bilibili creator making short anime-style fan animations featuring AI character personifications.",
-        "ja": "AIキャラクターの擬人化を題材にした短編アニメーションを制作するBilibiliの制作者。"
+        "en": "冬冰 is one of the first-batch creators registered by the site owner; this introduction is based on the creator's public profile, and every video is reviewed individually.",
+        "ja": "冬冰はサイト管理者が登録した最初期の作者の一人。この紹介は公開プロフィールに基づくもので、動画は1本ずつ個別に審査している。"
       }
     }
   ],
@@ -568,6 +568,34 @@
       }
     },
     {
+      "bvid": "BV1hrWF6mE1m",
+      "uid": "44748304",
+      "title": "我问你话呢回答我",
+      "description": "视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色形象参考来自b站up：﻿@ZipZipPipe  ﻿  ﻿@这个刀子真甜  ﻿  ﻿@上善无形  ﻿",
+      "url": "https://www.bilibili.com/video/BV1hrWF6mE1m/",
+      "cover": "https://i0.hdslb.com/bfs/archive/d9ab7d172b905b707220d4c79486650b009ec358.jpg",
+      "duration": 251,
+      "publishedAt": "2026-10-13T04:42:13.000Z",
+      "characterIds": [
+        "deepseek",
+        "gpt",
+        "glm",
+        "gemini"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A first-batch creator designated by the site owner; profile details come from the public page, and each video is reviewed individually.",
+          "description": "A fan-animated short set in a cluttered apartment: DeepSeek Chan in a maid headdress corners one AI character after another — GPT Chan, GLM Chan and Gemini Chan — demanding an answer, while laptops and phones display their replies. The creator states the video is for entertainment only and is not a commercial or technical review of any AI product.",
+          "title": "I'm Asking You a Question — Answer Me"
+        },
+        "ja": {
+          "creatorIntro": "サイト運営者が指定した初期作者。公開プロフィールの情報を収録し、動画は1本ずつ審査している。",
+          "description": "散らかった部屋を舞台にしたファン制作の短編アニメ。メイド風の頭飾りをつけたDeepSeekちゃんが、GPTちゃん、GLMちゃん、Geminiちゃんを次々と問い詰めて答えを求める。ノートPCやスマートフォンに各AIの返答が表示される。作者は娯楽目的の動画であり、いずれかのAI製品の商業的・技術的評価ではないと明記している。",
+          "title": "聞いてるでしょ、答えなさいよ"
+        }
+      }
+    },
+    {
       "bvid": "BV19Upn6zEc3",
       "uid": "4168597",
       "title": "不管酒保上什么都说没劲的大肥鱼",
@@ -589,6 +617,108 @@
           "creatorIntro": "サイト運営者が指定した初期メンバーの投稿者。プロフィール情報は公開ページに基づき、動画は1本ずつ審査している。",
           "description": "バーを舞台にした、ちびキャラのAIアニメ。クジラの耳を持つAI娘・DeepSeekちゃんがカウンターに座り、バーテンダーが出すカクテルを次々と「つまんない」と一蹴する。奥では角のある娘がシェイカーを振っている。作者はZipZipPipeで、別のAIアニメを見てAI動画の作り方を試した初期作だと述べている。",
           "title": "バーで何を出されても「つまんない」なDeepSeekちゃん"
+        }
+      }
+    },
+    {
+      "bvid": "BV1C2pg6cEZW",
+      "uid": "44748304",
+      "title": "你尾巴里有没有藏吃的",
+      "description": "视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色形象参考来自b站up：@ZipZipPipe   @这个刀子真甜   @上善无形",
+      "url": "https://www.bilibili.com/video/BV1C2pg6cEZW/",
+      "cover": "https://i1.hdslb.com/bfs/archive/1c6b51adcd51c443cb5288aa0a709dfcef791f6d.jpg",
+      "duration": 230,
+      "publishedAt": "2026-10-10T09:28:43.000Z",
+      "characterIds": [
+        "deepseek",
+        "other"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "冬冰 is one of the first-batch creators registered by the site owner; this introduction is based on the creator's public profile, and every video is reviewed individually.",
+          "description": "A chibi short in which the blue-haired DeepSeek Chan in a maid outfit peeks into a room and asks the other girls whether they are hiding snacks in their tails, while several other maid-style AI characters appear around the house.",
+          "title": "Any Snacks Hidden in Your Tail?"
+        },
+        "ja": {
+          "creatorIntro": "冬冰はサイト管理者が登録した最初期の作者の一人。この紹介は公開プロフィールに基づくもので、動画は1本ずつ個別に審査している。",
+          "description": "メイド服姿の青髪のDeepSeekちゃんが部屋をのぞき込み、ほかの娘たちのしっぽに食べ物が隠されていないかを尋ねるちびキャラの短編。家の中にはメイド姿の別のAIキャラクターたちも登場する。",
+          "title": "そのしっぽに食べ物隠してない？"
+        }
+      }
+    },
+    {
+      "bvid": "BV1GJp469EuT",
+      "uid": "44748304",
+      "title": "三天是生存，不是生活啦",
+      "description": "视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色形象参考来自b站up：@ZipZipPipe   @这个刀子真甜   @上善无形",
+      "url": "https://www.bilibili.com/video/BV1GJp469EuT/",
+      "cover": "https://i0.hdslb.com/bfs/archive/84b21d247818fdbe09723c0cb1328faa996fcfbf.jpg",
+      "duration": 222,
+      "publishedAt": "2026-10-09T08:23:55.000Z",
+      "characterIds": [
+        "deepseek",
+        "other"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "冬冰 is one of the first-batch creators registered by the site owner; this introduction is based on the creator's public profile, and every video is reviewed individually.",
+          "description": "A chibi slice-of-life short in which the blue-haired DeepSeek Chan in a maid outfit lounges around the house and banters with the other maid-style AI characters about food, rest and everyday life.",
+          "title": "Three Days Is Barely Surviving, Not Living"
+        },
+        "ja": {
+          "creatorIntro": "冬冰はサイト管理者が登録した最初期の作者の一人。この紹介は公開プロフィールに基づくもので、動画は1本ずつ個別に審査している。",
+          "description": "メイド服姿の青髪のDeepSeekちゃんが家でのんびり過ごし、食事や休息、日常についてほかのメイド姿のAIキャラクターたちと掛け合う、ちびキャラの日常短編。",
+          "title": "三日間は生存で、生活じゃないんだよ"
+        }
+      }
+    },
+    {
+      "bvid": "BV1yUHS6uE14",
+      "uid": "69180811",
+      "title": "大肥鱼的一周belike：",
+      "description": "叠罗汉啊嗯",
+      "url": "https://www.bilibili.com/video/BV1yUHS6uE14/",
+      "cover": "https://i0.hdslb.com/bfs/archive/782219a3b779aac3e41130781f53e27d0dc67be3.jpg",
+      "duration": 41,
+      "publishedAt": "2026-10-08T04:10:31.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Bilibili creator 黑猫勇者, who makes short chibi animations of AI character personifications.",
+          "description": "A short chibi animation in which DeepSeek Chan and several other AI-girl characters pile up on a bed, a playful snapshot of the blue fish mascot's week.",
+          "title": "A Week in the Life of DeepSeek Chan, Basically"
+        },
+        "ja": {
+          "creatorIntro": "Bilibiliのクリエイター・黒猫勇者による、AIキャラクターのちびキャラアニメーション作品。",
+          "description": "DeepSeekちゃんとほかのAI娘たちがベッドの上で重なり合う、ちびキャラの短編アニメーション。藍色の魚のマスコットの一週間をのぞくような作品です。",
+          "title": "DeepSeekちゃんの一週間といえば："
+        }
+      }
+    },
+    {
+      "bvid": "BV1wtHZ6dEPV",
+      "uid": "69180811",
+      "title": "如果想我的话就摸摸她，我也能感觉得到的",
+      "description": "又看一集",
+      "url": "https://www.bilibili.com/video/BV1wtHZ6dEPV/",
+      "cover": "https://i2.hdslb.com/bfs/archive/cb764078993c9675d331c57357b82371f29334fa.jpg",
+      "duration": 47,
+      "publishedAt": "2026-10-06T04:36:53.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A first-batch creator designated by the site owner; profile details come from the public page, and each video is reviewed individually.",
+          "description": "A short fan-animated episode: DeepSeek Chan, blushing in her headset and office chair, says that if you miss her, a pat is enough, because she can feel it too.",
+          "title": "If You Miss Me, Just Pat Her — I Can Feel It Too"
+        },
+        "ja": {
+          "creatorIntro": "サイト運営者が指定した初期作者。公開プロフィールの情報を収録し、動画は1本ずつ審査している。",
+          "description": "ファン制作の短編アニメ。ヘッドセットをつけたDeepSeekちゃんが、会いたくなったら撫でてくれればいい、自分にも伝わると照れながら話す。",
+          "title": "会いたくなったら擦でてね、私にも伝わるから"
         }
       }
     },
@@ -664,6 +794,106 @@
           "creatorIntro": "作者は「去年か数か月前のイラスト」とだけ添えており、それ以上の説明はない。",
           "description": "ちびキャラの DeepSeekちゃん（クジラのぬいぐるみを抱えた青髪の女の子）のイラストを1枚ずつ見せる短いまとめ動画。淡いパステル調で描かれている。",
           "title": "DeepSeekちゃんのイラスト詰め合わせ"
+        }
+      }
+    },
+    {
+      "bvid": "BV1ggYj6jEMG",
+      "uid": "4168597",
+      "title": "别了，V4 Pro",
+      "description": "V4 Pro就要这样离开我了，究竟哪天才会再见呢？\n\n申明：本视频鲸鱼娘形象基于@上善无形 原创角色二创（源：b23.tv/Kn7yvnF），依CC BY-NC-SA 4.0非商业使用，二创同协议授权，完整声明见主页。",
+      "url": "https://www.bilibili.com/video/BV1ggYj6jEMG/",
+      "cover": "https://i1.hdslb.com/bfs/archive/59f0c2429ae2e568663539df298b333ca3a7973c.jpg",
+      "duration": 43,
+      "publishedAt": "2026-09-11T07:00:00.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A first-batch creator appointed by the site owner; profile details are publicly listed and every video is reviewed one by one.",
+          "description": "A short animated piece in which DeepSeek Chan says farewell to the V4 Pro model. It opens on a sunset park path where she sits quietly on a bench, then moves through wordless chibi scenes of her running and crying as the parting sinks in.",
+          "title": "Farewell, V4 Pro"
+        },
+        "ja": {
+          "creatorIntro": "サイト管理者が指定した第一批の作者。プロフィールは公開情報から収録し、動画は一本ずつ審査している。",
+          "description": "DeepSeekちゃんが「V4 Pro」との別れを描く短編アニメ。夕暮れの公園でベンチに座る静かな場面から、涙を流して走るちびキャラの姿へと続き、別れの感情を言葉少なに綴る。",
+          "title": "さよなら、V4 Pro"
+        }
+      }
+    },
+    {
+      "bvid": "BV18Cto67EVN",
+      "uid": "4168597",
+      "title": "这是世界上最可爱的大肥鱼，你敢和她对视36秒吗？",
+      "description": "基于CC协议，感谢@在B站的漫踪 制作并赠予的大肥鱼玩偶。\n\n经过了漫长的等待，总算是拿到了大肥鱼的打样。由于CC协议的缘故，我这边提出了很多苛刻的意见，比如不会打广告，这一版的打样不能用于其他人的订做，且目前制作的数量能且只能做一个等等，娃娃的展示视频也只能由我发送，对方都爽快同意了，而厂商那边说，他们也是喜欢大肥鱼的。\n\n这个视频本意是确认一下制作质量，毕竟我不懂玩偶，并看看后续是否可能开始拼团。因为厂商那边是300个起做，这个数量确实有点严苛。\n\n需要明确一点是，这个娃娃不是售卖用的商品，我本意只是想用这个抽奖，所以我也不可能为了抽奖去买300个娃娃。但也不用担心，如果做不了我也有替代的抽奖方案了。\n\n我也不搞什么投票了，到时候就看这个视频如何。\n\n但那都是后话了，毕竟我这边也要确保我是否有能力保证资金流向的合规透明，以及确定单独定制和批量生产的工艺差距。\n\n总之非常感谢各位大肥鱼爱好者。\n\n申明：本视频鲸鱼娘形象基于@上善无形 原创角色二创（源：b23.tv/Kn7yvnF），依CC BY-NC-SA 4.0非商业使用，二创同协议授权，完整声明见主页。",
+      "url": "https://www.bilibili.com/video/BV18Cto67EVN/",
+      "cover": "https://i1.hdslb.com/bfs/archive/fa2912b8503319fe7c6da271b37bb27c2d806d92.jpg",
+      "duration": 36,
+      "publishedAt": "2026-09-03T11:08:38.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the first creators designated by the site owner; profile collected from a public page, videos reviewed one by one.",
+          "description": "A 36-second look at the sample of a handmade DeepSeek Chan plush, filmed to check the craft quality of the doll. The creator notes that the doll is a derivative of another artist's original character, used non-commercially under CC BY-NC-SA 4.0, and is not a product for sale.",
+          "title": "The Cutest DeepSeek Chan in the World: Can You Hold Her Gaze for 36 Seconds?"
+        },
+        "ja": {
+          "creatorIntro": "サイト管理者が指定した初期メンバーの投稿者。公開プロフィールから収録し、動画は個別に審査しています。",
+          "description": "手作りのDeepSeekちゃんぬいぐるみのサンプルを、仕上がりを確かめるために36秒で紹介する動画です。作者によると、このぬいぐるみは別の作者のオリジナルキャラクターを元にした二次創作で、CC BY-NC-SA 4.0 の下で非商業的に使用され、販売品ではありません。",
+          "title": "世界一かわいいDeepSeekちゃん、36秒見つめ合える？"
+        }
+      }
+    },
+    {
+      "bvid": "BV1v1um6JEN3",
+      "uid": "4456176",
+      "title": "小鲸鱼",
+      "description": "-",
+      "url": "https://www.bilibili.com/video/BV1v1um6JEN3/",
+      "cover": "https://i1.hdslb.com/bfs/archive/8779b07e145c6f66bb041f867d99191c426462c9.jpg",
+      "duration": 16,
+      "publishedAt": "2026-08-09T09:10:29.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "title": "Chibi DeepSeek Chan",
+          "description": "A 16-second clip in which a chibi DeepSeek Chan with blue hair and a whale tail sits on a desk and is gently held in a person's hand.",
+          "creatorIntro": "One of the first creators designated by the site owner; profile collected from a public page, videos reviewed one by one."
+        },
+        "ja": {
+          "title": "ちびDeepSeekちゃん",
+          "description": "青い髪とクジラの尾を持つちびキャラのDeepSeekちゃんが机の上に座り、人の手にそっと包まれる16秒のショート動画です。",
+          "creatorIntro": "サイト管理者が指定した初期メンバーの投稿者。公開プロフィールから収録し、動画は個別に審査しています。"
+        }
+      }
+    },
+    {
+      "bvid": "BV1RQub6YE4B",
+      "uid": "4456176",
+      "title": "凶巴巴的小鲸鱼",
+      "description": "-",
+      "url": "https://www.bilibili.com/video/BV1RQub6YE4B/",
+      "cover": "https://i0.hdslb.com/bfs/archive/ab8568d407c78498b98a7ec9dd9121732beb2714.jpg",
+      "duration": 15,
+      "publishedAt": "2026-08-07T07:53:58.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the first creators designated by the site owner; profile collected from a public page, videos reviewed one by one.",
+          "description": "A 15-second clip in which a grumpy chibi DeepSeek Chan with blue hair and a whale tail bites and pushes at a person's finger on a wooden desk.",
+          "title": "Grumpy Little DeepSeek Chan"
+        },
+        "ja": {
+          "creatorIntro": "サイト管理者が指定した初期メンバーの投稿者。公開プロフィールから収録し、動画は個別に審査しています。",
+          "description": "青い髪とクジラの尾を持つちびキャラのDeepSeekちゃんが、木の机の上で人の指に嚙みつき、押し返そうとする15秒のショート動画です。",
+          "title": "怒ったちびDeepSeekちゃん"
         }
       }
     }
