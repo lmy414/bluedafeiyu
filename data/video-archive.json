@@ -17,8 +17,8 @@
       "homepage": "https://space.bilibili.com/4456176",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "One of the first creators designated by the site owner; profile collected from a public page, videos reviewed one by one.",
-        "ja": "サイト管理者が指定した初期メンバーの投稿者。公開プロフィールから収録し、動画は個別に審査しています。"
+        "en": "Bilibili creator 上善无形 uploaded this short fan animation to their channel.",
+        "ja": "Bilibili の投稿者・上善无形による短編の二次創作アニメです。"
       }
     },
     {
@@ -67,8 +67,8 @@
       "homepage": "https://space.bilibili.com/44748304",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "冬冰 is one of the first-batch creators registered by the site owner; this introduction is based on the creator's public profile, and every video is reviewed individually.",
-        "ja": "冬冰はサイト管理者が登録した最初期の作者の一人。この紹介は公開プロフィールに基づくもので、動画は1本ずつ個別に審査している。"
+        "en": "A Bilibili creator who makes short fan animations with chibi characters. The video description states the content is for entertainment only and is not a commercial or technical evaluation of any AI product, and credits the character designs to other Bilibili creators.",
+        "ja": "ちびキャラを使った短い二次創作アニメを制作するBilibiliのクリエイター。動画概要欄では、内容は娯楽目的のみで、いかなるAI製品への商業的評価や技術的評価でもないと述べ、キャラクター形象の参考元として他のBilibiliクリエイターをクレジットしている。"
       }
     }
   ],
@@ -778,6 +778,56 @@
       }
     },
     {
+      "bvid": "BV1o9HC6rEua",
+      "uid": "44748304",
+      "title": "你们吃的很开心嘛",
+      "description": "视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色形象参考来自b站up：@ZipZipPipe   @这个刀子真甜   @上善无形",
+      "url": "https://www.bilibili.com/video/BV1o9HC6rEua/",
+      "cover": "https://i0.hdslb.com/bfs/archive/e2428e7f95e336fdcf04cd20797f80f1aff81575.jpg",
+      "duration": 183,
+      "publishedAt": "2026-10-07T08:58:53.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A Bilibili creator who makes short fan animations with chibi characters. The video description states the content is for entertainment only and is not a commercial or technical evaluation of any AI product, and credits the character designs to other Bilibili creators.",
+          "description": "A Minecraft-style fan animation in which chibi personifications of AI products gather in a blocky stone room to cook and eat together. The blue-haired DeepSeek Chan, wearing a metal basin as a helmet, holds up a slab of red jelly food and asks the others whether they are enjoying their meal.",
+          "title": "You're Eating Pretty Happily, Aren't You"
+        },
+        "ja": {
+          "creatorIntro": "ちびキャラを使った短い二次創作アニメを制作するBilibiliのクリエイター。動画概要欄では、内容は娯楽目的のみで、いかなるAI製品への商業的評価や技術的評価でもないと述べ、キャラクター形象の参考元として他のBilibiliクリエイターをクレジットしている。",
+          "description": "ブロック状の石の部屋にAI製品のちびキャラたちが集まり、一緒に料理をして食事をするMinecraft風の二次創作アニメ。青い髪のDeepSeekちゃんは金属製のボウルを兜のようにかぶり、赤いゼリー状の食べ物を掲げて、みんな楽しく食べているのかと尋ねる。",
+          "title": "みんな美味しそうに食べてるね"
+        }
+      }
+    },
+    {
+      "bvid": "BV1RTpw6REzy",
+      "uid": "44748304",
+      "title": "真的是糖味的",
+      "description": "视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色形象参考来自b站up：@ZipZipPipe @这个刀子真甜 @上善无形",
+      "url": "https://www.bilibili.com/video/BV1RTpw6REzy/",
+      "cover": "https://i0.hdslb.com/bfs/archive/1a462673bec2515c4ed0e4f07733e8f149e3645f.jpg",
+      "duration": 208,
+      "publishedAt": "2026-10-06T12:39:18.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A Bilibili creator who makes short fan animations with chibi characters. The video description states the content is for entertainment only and is not a commercial or technical evaluation of any AI product, and credits the character designs to other Bilibili creators.",
+          "description": "A Minecraft-style fan animation featuring chibi personifications of AI products. DeepSeek Chan, still wearing her metal basin helmet, walks through a stone dungeon holding a green slime-like block, then joins other chibi characters on a beach; she keeps insisting that what she tasted really is sweet.",
+          "title": "It Really Tastes Like Candy"
+        },
+        "ja": {
+          "creatorIntro": "ちびキャラを使った短い二次創作アニメを制作するBilibiliのクリエイター。動画概要欄では、内容は娯楽目的のみで、いかなるAI製品への商業的評価や技術的評価でもないと述べ、キャラクター形象の参考元として他のBilibiliクリエイターをクレジットしている。",
+          "description": "AI製品のちびキャラたちが登場するMinecraft風の二次創作アニメ。金属製のボウルをかぶったDeepSeekちゃんは、緑色のスライムのような塊を手に石造りのダンジョンを歩き、その後は海辺で他のちびキャラたちと合流する。彼女は食べたものが本当に甘い味だったと言い張る。",
+          "title": "本当に飴の味がするんだよ"
+        }
+      }
+    },
+    {
       "bvid": "BV1wtHZ6dEPV",
       "uid": "69180811",
       "title": "如果想我的话就摸摸她，我也能感觉得到的",
@@ -1002,6 +1052,81 @@
           "creatorIntro": "サイト管理者が指定した初期メンバーの投稿者。公開プロフィールから収録し、動画は個別に審査しています。",
           "description": "青い髪とクジラの尾を持つちびキャラのDeepSeekちゃんが、木の机の上で人の指に嚙みつき、押し返そうとする15秒のショート動画です。",
           "title": "怒ったちびDeepSeekちゃん"
+        }
+      }
+    },
+    {
+      "bvid": "BV1RGuJ6MEfC",
+      "uid": "4456176",
+      "title": "小鲸鱼蹦蹦跳跳",
+      "description": "-",
+      "url": "https://www.bilibili.com/video/BV1RGuJ6MEfC/",
+      "cover": "https://i1.hdslb.com/bfs/archive/1f8e92a6e85c7295bbf2f34faee0267ad7dbda72.jpg",
+      "duration": 11,
+      "publishedAt": "2026-08-06T11:54:39.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A Bilibili creator who posts short clips of chibi characters. This video has no description or self-introduction from the creator.",
+          "description": "A short chibi animation of DeepSeek Chan, the blue-haired character with fin-like ears and a whale tail, hopping across a wooden table in a sunlit room.",
+          "title": "The Little Whale Hops Around"
+        },
+        "ja": {
+          "creatorIntro": "ちびキャラの短いクリップを投稿しているBilibiliのクリエイター。この動画には概要欄の説明もクリエイターの自己紹介もない。",
+          "description": "青い髪に魚のひれ状の耳とクジラの尾を持つDeepSeekちゃんが、日の差す部屋の木のテーブルの上をぴょんぴょんと跳ねる短いちびキャラアニメ。",
+          "title": "小さなクジラがぴょんぴょん跳ねる"
+        }
+      }
+    },
+    {
+      "bvid": "BV1kvu76yELt",
+      "uid": "4456176",
+      "title": "小鲸鱼吃白饭",
+      "description": "-",
+      "url": "https://www.bilibili.com/video/BV1kvu76yELt/",
+      "cover": "https://i0.hdslb.com/bfs/archive/58ca9d84753cb9e8ed8b524891a2536230a81719.jpg",
+      "duration": 11,
+      "publishedAt": "2026-08-06T07:16:01.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Bilibili creator 上善无形 uploaded this short fan animation to their channel.",
+          "description": "An 11-second chibi fan animation. A tiny blue-haired girl with fin-shaped ears and a whale tail toddles across a sunlit wooden desk, past a glass of water, an open book and a cat mug.",
+          "title": "The Little Whale Eats Plain Rice"
+        },
+        "ja": {
+          "creatorIntro": "Bilibili の投稿者・上善无形による短編の二次創作アニメです。",
+          "description": "11 秒のちびキャラ二次創作アニメ。青い髪にヒレ状の耳とクジラの尾を持つ小さな女の子が、日当たりの良い木の机の上を、コップや開いた本、猫のマグカップの横でちょこちょこと歩きます。",
+          "title": "小鯨ちゃんの白ごはん"
+        }
+      }
+    },
+    {
+      "bvid": "BV1tBuA6jEQN",
+      "uid": "4456176",
+      "title": "小鲸鱼吃桃",
+      "description": "-",
+      "url": "https://www.bilibili.com/video/BV1tBuA6jEQN/",
+      "cover": "https://i2.hdslb.com/bfs/archive/1082ab1c5be221106301c17cd90952ab7e138c01.jpg",
+      "duration": 11,
+      "publishedAt": "2026-08-04T13:34:15.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Bilibili creator 上善无形 uploaded this short fan animation to their channel.",
+          "description": "An 11-second anime-style fan short. A close-up of the blue-haired girl with fin-shaped ears, a peach held at her chin, set against a soft pink background.",
+          "title": "The Little Whale Eats a Peach"
+        },
+        "ja": {
+          "creatorIntro": "Bilibili の投稿者・上善无形による短編の二次創作アニメです。",
+          "description": "11 秒のアニメ調二次創作ショート。ヒレ状の耳を持つ青い髪の女の子の顔のアップで、あごの下に桃を抱えたまま、淡いピンクの背景に包まれています。",
+          "title": "小鯨ちゃんと桃"
         }
       }
     }
