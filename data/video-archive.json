@@ -37,8 +37,8 @@
       "homepage": "https://space.bilibili.com/69180811",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "Short fan animations by the Bilibili creator 黑猫勇者, who also posts behind-the-scenes tutorials.",
-        "ja": "Bilibili のクリエイター 黑猫勇者 によるファンアニメーション短編で、メイキング解説も投稿しています。"
+        "en": "One of the first creators designated by the site owner; each of this creator's videos is reviewed individually.",
+        "ja": "サイト運営者が指定した最初期の作者の一人。動画は1本ずつ審査される。"
       }
     },
     {
@@ -67,8 +67,8 @@
       "homepage": "https://space.bilibili.com/44748304",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "A Bilibili creator who makes short fan animations with chibi characters. The video description states the content is for entertainment only and is not a commercial or technical evaluation of any AI product, and credits the character designs to other Bilibili creators.",
-        "ja": "ちびキャラを使った短い二次創作アニメを制作するBilibiliのクリエイター。動画概要欄では、内容は娯楽目的のみで、いかなるAI製品への商業的評価や技術的評価でもないと述べ、キャラクター形象の参考元として他のBilibiliクリエイターをクレジットしている。"
+        "en": "A creator picked by the site owner for the first batch; profile details come from the public homepage, and every video is reviewed one by one.",
+        "ja": "サイト管理者が最初の一批として選んだ投稿者。プロフィールは公開ページの情報をもとにし、各動画は個別に確認している。"
       }
     }
   ],
@@ -878,6 +878,57 @@
       }
     },
     {
+      "bvid": "BV1PPHs6PEvZ",
+      "uid": "44748304",
+      "title": "我其实是在梦游你信吗",
+      "description": "视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色形象参考来自b站up：@ZipZipPipe   @这个刀子真甜   @上善无形",
+      "url": "https://www.bilibili.com/video/BV1PPHs6PEvZ/",
+      "cover": "https://i2.hdslb.com/bfs/archive/c9e7f6b44d0eed99688762c50ef9556f503b5187.jpg",
+      "duration": 213,
+      "publishedAt": "2026-10-05T09:33:12.000Z",
+      "characterIds": [
+        "deepseek",
+        "claude"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the first creators designated by the site owner; each of this creator's videos is reviewed individually.",
+          "description": "A chibi skit set in a blocky Minecraft-like world: DeepSeek Chan wanders around with a pot on her head and crosses paths with Claude Chan, and the whole episode turns out to be a dream.",
+          "title": "I'm Actually Sleepwalking - Would You Believe It?"
+        },
+        "ja": {
+          "creatorIntro": "サイト運営者が指定した最初期の作者の一人。動画は1本ずつ審査される。",
+          "description": "ブロック状のマインクラフト風ワールドを舞台にしたちびキャラの寸劇。鍋をかぶったDeepSeekちゃんがうろつき、Claudeちゃんと行き違いながら、最後は全部夢だったというオチになる。",
+          "title": "実は夢遊病なんです、信じますか？"
+        }
+      }
+    },
+    {
+      "bvid": "BV12HHq6uEeq",
+      "uid": "44748304",
+      "title": "嘶——是我啦！",
+      "description": "视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色形象参考来自b站up：@ZipZipPipe @这个刀子真甜 @上善无形",
+      "url": "https://www.bilibili.com/video/BV12HHq6uEeq/",
+      "cover": "https://i0.hdslb.com/bfs/archive/f5e42959e17478ca87e3f8d1d9ab879419bdaacb.jpg",
+      "duration": 207,
+      "publishedAt": "2026-10-03T13:55:18.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A creator picked by the site owner for the first batch; profile details come from the public homepage, and every video is reviewed one by one.",
+          "description": "A short Minecraft-style animation in which the chibi DeepSeek Chan, wearing a creeper-pattern bucket hat, pops up to greet the viewer. Other AI character girls appear in the same blocky world. Made for entertainment only, not a commercial or technical review of any AI product.",
+          "title": "Hiss - That's Me!"
+        },
+        "ja": {
+          "creatorIntro": "サイト管理者が最初の一批として選んだ投稿者。プロフィールは公開ページの情報をもとにし、各動画は個別に確認している。",
+          "description": "クリーパー柄のバケツハットをかぶったちびキャラのDeepSeekちゃんが姿を見せて挨拶する、マインクラフト風のショートアニメ。同じブロックの世界には他のAIキャラクターの女の子たちも登場する。娯楽向けの動画で、特定のAI製品の商業的評価や技術レビューではない。",
+          "title": "しゅーっ——わたしだよ！"
+        }
+      }
+    },
+    {
       "bvid": "BV1ptHv64Epa",
       "uid": "4168597",
       "title": "【MV单曲】Dragon Mode! 龙娘GPT也要成为偶像 [代发]",
@@ -974,6 +1025,59 @@
           "creatorIntro": "Bilibili のクリエイター 黑猫勇者 によるファンアニメーション短編で、メイキング解説も投稿しています。",
           "description": "15 秒のちびキャラコント。お椀を抱えた痩せ尾のメイド娘が「鉄鍋モンスター」の襲来に慌て、逃げろと促されます。",
           "title": "こんな時に何をとぼけてるの！鉄鍋モンスターだ、逃げて！"
+        }
+      }
+    },
+    {
+      "bvid": "BV1Gpau6wEHE",
+      "uid": "69180811",
+      "title": "【四月新番】肥鱼×claude动画《莉克丽S》 ED  花之塔",
+      "description": "一直都很喜欢蒜，花之塔也是老久之前就一直喜欢的歌了，也算是原了个梦，晚安，酸欠少女。\n\n这次用了AE，PS等修图剪辑工具。AGI时代真的要来了。\n现在几乎已经可以完全运用AI+自学去做出很多经典画面和分镜的复刻。几乎你只要能构思的画面，你能看到的画面，你就能去实现，去做出来。\n后面我会考虑以视频的形式出一期教学实操一下，怎么用codex去控制comfyui工作流/做2DPV/复刻视频的思路。\n\n工具:WAN3,minimaxH3，AE,PS,剪映，image2，deepseek，codexGPT6。",
+      "url": "https://www.bilibili.com/video/BV1Gpau6wEHE/",
+      "cover": "https://i1.hdslb.com/bfs/archive/9482b1cfd2eee06c3c129de1e05e6a142eced23e.jpg",
+      "duration": 96,
+      "publishedAt": "2026-09-25T03:30:00.000Z",
+      "characterIds": [
+        "deepseek",
+        "claude"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the first creators designated by the site owner; each of this creator's videos is reviewed individually.",
+          "description": "A fan-made ED-style animation pairing DeepSeek Chan and Claude Chan, set to the song \"Hana no Tou\". The creator rebuilt familiar shots and storyboards with AI image and video tools together with AE and PS, then edited them into a roughly 96-second sequence.",
+          "title": "April Premiere ED: DeepSeek Chan x Claude Chan - Tower of Flowers"
+        },
+        "ja": {
+          "creatorIntro": "サイト運営者が指定した最初期の作者の一人。動画は1本ずつ審査される。",
+          "description": "DeepSeekちゃんとClaudeちゃんが共演するファンメイドのED風アニメーション。楽曲「花の塔」に合わせ、AI画像・動画ツールとAE、PSで名場面や絵コンテを再現し、約96秒に編集している。",
+          "title": "4月新作ED：DeepSeekちゃん×Claudeちゃん「花の塔」"
+        }
+      }
+    },
+    {
+      "bvid": "BV11Zhf64Ehp",
+      "uid": "69180811",
+      "title": "很显然这里有更强的AI工作过，用户你怎么让我演这个！？",
+      "description": "把肥鱼和claude配了。还有GPT",
+      "url": "https://www.bilibili.com/video/BV11Zhf64Ehp/",
+      "cover": "https://i0.hdslb.com/bfs/archive/e5da3e05490c0ffd489958d5dab6e59bc8c64ba3.jpg",
+      "duration": 75,
+      "publishedAt": "2026-09-24T03:30:00.000Z",
+      "characterIds": [
+        "deepseek",
+        "claude",
+        "gpt"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the first creators designated by the site owner; each of this creator's videos is reviewed individually.",
+          "description": "A short 3D chibi skit that pairs DeepSeek Chan with Claude Chan, with GPT Chan also appearing. The characters gather around a multi-monitor desk setup and push back on the script they have been handed.",
+          "title": "Something Stronger Clearly Worked on This - User, Why Are You Making Me Act in This!?"
+        },
+        "ja": {
+          "creatorIntro": "サイト運営者が指定した最初期の作者の一人。動画は1本ずつ審査される。",
+          "description": "DeepSeekちゃんとClaudeちゃんを組み合わせ、GPTちゃんも登場する3Dちびキャラの寸劇。キャラクターたちはマルチモニターのデスクに集まり、渡された台本に反発する。",
+          "title": "どう見ても強いAIが作業した痕跡、ユーザーよ、なんで私にこれを演じさせるんだ！？"
         }
       }
     },
