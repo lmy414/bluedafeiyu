@@ -11,6 +11,7 @@ import os from 'node:os';
 import path from 'node:path';
 
 import { SNAPSHOT_SITE_FILES, main, releasePublishedOriginals, resolveWorkerConfig } from '../admin/publish-worker.mjs';
+import { runToolchain, runDeploy } from '../publish-batch.mjs';
 
 const TINY_PNG = Buffer.from(
   'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8DwHwAFAAH/q842iQAAAABJRU5ErkJggg==',
@@ -461,6 +462,35 @@ test('未配置 PUBLISH_ORIGINAL_BASE_URL 时使用 GitHub 默认基址', async 
   assert.doesNotMatch(calls[0].url, /undefined/);
 });
 
+test('后台请求使用正式基线并保留预检产物，不继承旧收录器的关闭开关', async (t) => {
+  const ws = await makeWorkspace(t);
+  const previous = path.join(ws.deployRoot, 'releases', 'baseline');
+  fs.mkdirSync(previous, { recursive: true });
+  fs.symlinkSync(previous, path.join(ws.deployRoot, 'current'), process.platform === 'win32' ? 'junction' : 'dir');
+  const cfg = resolveWorkerConfig(envFor(ws, { url: 'http://127.0.0.1:1' }, {
+    AUTO_PUBLISH_ENABLED: 'false', PUBLISH_PUSH_ENABLED: 'false', PUBLISH_DEPLOY_ENABLED: 'false',
+  }));
+  assert.equal(cfg.dryRun, false);
+  assert.equal(cfg.push, true);
+  assert.equal(cfg.deploy, true);
+  assert.equal(cfg.mode, 'live');
+  const calls = [];
+  const exec = (command, args, options) => {
+    calls.push({ command, args, options });
+    if (args[0] === 'tools/build_site.mjs') fs.mkdirSync(path.join(cfg.workDir, 'build-check'), { recursive: true });
+    return ok();
+  };
+  runToolchain(cfg, exec, cfg.workDir);
+  const build = calls.find(call => call.args[0] === 'tools/build_site.mjs');
+  assert.equal(build.options.env.SITE_PREVIOUS_DIR, fs.realpathSync(previous));
+  assert.equal(build.options.env.SITE_PREVIOUS_STATE, path.join(ws.deployRoot, 'build-state', 'baseline.json'));
+  assert.equal(build.options.env.SITE_REUSE_ASSETS, '1');
+  assert.equal(fs.existsSync(cfg.prebuiltDir), true);
+  runDeploy(cfg, exec, () => {});
+  assert.equal(calls.at(-1).options.env.PUBLISH_PREBUILT_DIR, cfg.prebuiltDir);
+  assert.equal(fs.existsSync(cfg.prebuiltDir), false);
+});
+
 test('无变更 noop：跳过提交、推送和部署，状态上报 succeeded', async (t) => {
   const runId = 'run-noop';
   const ws = await makeWorkspace(t, { works: [baselineRecord()] });
@@ -468,7 +498,12 @@ test('无变更 noop：跳过提交、推送和部署，状态上报 succeeded',
   const backend = await startBackend(t, state);
   const submission = await startSubmissionService(t, state);
   state.snapshot = snapshotFrom(ws, runId);
-  const exec = makeFakeExec(state);
+  const fakeExec = makeFakeExec(state);
+  const exec = (command, args, options) => {
+    const result = fakeExec(command, args, options);
+    if (args[0] === 'tools/build_site.mjs' && result.status === 0) fs.mkdirSync(path.join(ws.intake, 'work', 'build-check'), { recursive: true });
+    return result;
+  };
   writeRequest(ws, runId);
 
   const result = await capture(() => main(['--run', runId], {
@@ -483,6 +518,7 @@ test('无变更 noop：跳过提交、推送和部署，状态上报 succeeded',
   assert.equal(state.deployRuns || 0, 0);
   assert.equal(state.statuses.at(-1).status, 'succeeded');
   assert.match(state.statuses.at(-1).log, /无变更/);
+  assert.equal(fs.existsSync(path.join(ws.intake, 'work', 'build-check')), false);
 });
 
 test('新增一张图：下载、派生、构建校验、提交白名单、推送和部署成功', async (t) => {

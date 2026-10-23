@@ -23,6 +23,7 @@ import { pathToFileURL } from 'node:url';
 
 import {
   acquirePublishLock,
+  clearPrebuilt,
   ensureRepoClean,
   markPublished,
   readLatestUnfinishedJournal,
@@ -294,6 +295,12 @@ export function resolveWorkerConfig(env = process.env) {
   if (!submissionToken) throw new Error('必须指定 SUBMISSION_ADMIN_TOKEN');
   return {
     ...base,
+    // Authenticated backend requests always commit, push and deploy.
+    // Legacy intake defaults must not disable release-baseline and artifact reuse.
+    dryRun: false,
+    push: true,
+    deploy: true,
+    mode: 'live',
     originalBaseUrl,
     apiUrl,
     token,
@@ -826,6 +833,7 @@ export async function processPublishRequest({ request, env = process.env, deps =
       }
       result.releasePath = currentReleasePath(cfg);
       result.healthCheck = { ok: true, noop: true, url: cfg.healthUrl || null };
+      clearPrebuilt(siteCfg);
       await postRunStatus(cfg, runId, {
         status: 'succeeded',
         step: 'done',

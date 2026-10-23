@@ -900,6 +900,10 @@ export function runDeploy(cfg, exec, log) {
   }
   log(`运行部署：${command} ${args.join(' ')}`);
   runCmd(exec, command, args, { env: {...process.env,...(cfg.prebuiltDir?{PUBLISH_PREBUILT_DIR:cfg.prebuiltDir}:{})} });
+  clearPrebuilt(cfg);
+}
+
+export function clearPrebuilt(cfg) {
   if(cfg.prebuiltDir && cfg.prebuiltRoot && path.resolve(cfg.prebuiltDir)===path.join(cfg.prebuiltRoot,'build-check'))fs.rmSync(cfg.prebuiltDir,{recursive:true,force:true});
 }
 
