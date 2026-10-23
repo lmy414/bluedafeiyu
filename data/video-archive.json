@@ -7,8 +7,8 @@
       "homepage": "https://space.bilibili.com/4168597",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "One of the first creators designated by the site owner; profile details are taken from the public channel, and each video is reviewed individually.",
-        "ja": "サイト管理者が指定した初期作者の一人。公開チャンネルの情報を収録しており、動画は1本ずつ審査しています。"
+        "en": "A Bilibili creator who makes short AI-generated clips starring personified AI characters; here they note that this particular joke was too persistent to skip.",
+        "ja": "人格化されたAIキャラクターが登場する短いAI生成クリップを制作するBilibiliの投稿者。今回はこのネタがどうしても頭から離れなかったと記している。"
       }
     },
     {
@@ -27,8 +27,8 @@
       "homepage": "https://space.bilibili.com/13787349",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "Fan animation shorts by the Bilibili creator 彼岸花Channel, starring AI product characters.",
-        "ja": "Bilibili のクリエイター 彼岸花Channel による、AI 製品キャラクターのファンアニメーション短編です。"
+        "en": "Fan animation by 彼岸花Channel; in the creator's own note, they were tired and taking a short break.",
+        "ja": "彼岸花Channelによるファンアニメーション。投稿者本人のコメントでは、疲れたので少し休むとのことです。"
       }
     },
     {
@@ -828,6 +828,31 @@
       }
     },
     {
+      "bvid": "BV15apA6tEmd",
+      "uid": "13787349",
+      "title": "《大模型复读班》第一集：画一只骑自行车的鹈鹕",
+      "description": "《大模型复读班》\n老小区二楼的一间补习班。墙皮发黄、吊扇吱呀、粉笔黑板、铁皮课桌、窗外晾着衣服。\n每出一个新版本，模型就要重新参加\"评测大考\"；考不好，就复读到下个版本。所以这个班永远在复读~\n    堂堂开坑！！！！！ 只要我开坑足够多！我就不怕坑多！\n免责声明：本系列为粉丝二次创作，角色均为虚构的拟人化形象，与各 AI 产品官方无关，不构成任何评测结论。\nBGM：Let me go",
+      "url": "https://www.bilibili.com/video/BV15apA6tEmd/",
+      "cover": "https://i1.hdslb.com/bfs/archive/9bc2f17c73184a93150680a86fc4a8e041d165c1.jpg",
+      "duration": 196,
+      "publishedAt": "2026-10-07T02:30:00.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the first creators selected by the site owner; profile information is taken from the public Bilibili page, and each video is reviewed individually.",
+          "description": "A fan animation set in a worn second-floor classroom in an old residential block, where chibi AI characters repeat the classic \"draw a pelican riding a bicycle\" exercise every time a new model version is released. The first episode shows DeepSeek Chan in the classroom with a whale-marked lunchbox and a stack of books.",
+          "title": "Big Model Repeat Class Ep. 1: Draw a Pelican Riding a Bicycle"
+        },
+        "ja": {
+          "creatorIntro": "サイト管理者が選んだ初期クリエイターの一人。プロフィール情報はBilibiliの公開ページから取得し、動画は一本ずつ確認しています。",
+          "description": "古い住宅街の二階にある古びた教室を舞台にしたファンアニメ。新しいモデルのバージョンが出るたびに、ちびキャラのAI娘たちが「自転車に乗ったペリカンを描く」定番のお題を繰り返します。第1話ではクジラのマークの弁当箱と本を抱えた DeepSeekちゃんが教室に登場します。",
+          "title": "大型モデル復読クラス 第1話：自転車に乗ったペリカンを描く"
+        }
+      }
+    },
+    {
       "bvid": "BV1RTpw6REzy",
       "uid": "44748304",
       "title": "真的是糖味的",
@@ -849,6 +874,56 @@
           "creatorIntro": "ちびキャラを使った短い二次創作アニメを制作するBilibiliのクリエイター。動画概要欄では、内容は娯楽目的のみで、いかなるAI製品への商業的評価や技術的評価でもないと述べ、キャラクター形象の参考元として他のBilibiliクリエイターをクレジットしている。",
           "description": "AI製品のちびキャラたちが登場するMinecraft風の二次創作アニメ。金属製のボウルをかぶったDeepSeekちゃんは、緑色のスライムのような塊を手に石造りのダンジョンを歩き、その後は海辺で他のちびキャラたちと合流する。彼女は食べたものが本当に甘い味だったと言い張る。",
           "title": "本当に飴の味がするんだよ"
+        }
+      }
+    },
+    {
+      "bvid": "BV1p9pc6vEPy",
+      "uid": "13787349",
+      "title": "从今天起，我就是你们的妈妈了！",
+      "description": "诺贝尔物理学科学家辛顿：必须培养出AI的母性，否则人类或被灭绝~\n声明：根据梗图制作，大家图一好玩就行~",
+      "url": "https://www.bilibili.com/video/BV1p9pc6vEPy/",
+      "cover": "https://i0.hdslb.com/bfs/archive/349cbd1c89a38e359bce67ef6ecf4b97ef0a83da.jpg",
+      "duration": 45,
+      "publishedAt": "2026-10-06T11:50:45.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the first creators selected by the site owner; profile information is taken from the public Bilibili page, and each video is reviewed individually.",
+          "description": "A short fan meme animation in which a chibi DeepSeek Chan in a maid apron declares herself everyone's mother, then works through a list of viewer requests such as braised pork without cabbage and a request to stop writing code, all performed for laughs with the caption that this is just a meme.",
+          "title": "From Today On, I'm Your Mother!"
+        },
+        "ja": {
+          "creatorIntro": "サイト管理者が選んだ初期クリエイターの一人。プロフィール情報はBilibiliの公開ページから取得し、動画は一本ずつ確認しています。",
+          "description": "エプロン姿のちびキャラ DeepSeekちゃんが「今日から私はみんなのママです！」と宣言し、視聴者からの「白菜なしの紅焼肉が食べたい」「コードを書きたくない」といったリクエストに次々と応じていく短編ファンミームアニメです。",
+          "title": "今日から私はみんなのママです！"
+        }
+      }
+    },
+    {
+      "bvid": "BV1qBHx6ZE4F",
+      "uid": "13787349",
+      "title": "谁准你截图的？封禁你哦！",
+      "description": "谁准你截图的？封禁你哦！\n累了 休息一下",
+      "url": "https://www.bilibili.com/video/BV1qBHx6ZE4F/",
+      "cover": "https://i2.hdslb.com/bfs/archive/e583a9a328b03def23b798e4ece207101daed95b.jpg",
+      "duration": 25,
+      "publishedAt": "2026-10-06T06:10:00.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "title": "Who Said You Could Screenshot? You're Banned!",
+          "description": "A roughly 25-second fan animation in which DeepSeek Chan catches someone taking a screenshot and half-jokingly threatens to ban them. The creator adds that they were tired and taking a short break.",
+          "creatorIntro": "Fan animation by 彼岸花Channel; in the creator's own note, they were tired and taking a short break."
+        },
+        "ja": {
+          "title": "スクショ誰が許可した？BANするよ！",
+          "description": "スクリーンショットを撮られたことに気づいたDeepSeekちゃんが、半分冗談でBANを宣言する約25秒のファンアニメーション。投稿者は疲れたので少し休むと添えています。",
+          "creatorIntro": "彼岸花Channelによるファンアニメーション。投稿者本人のコメントでは、疲れたので少し休むとのことです。"
         }
       }
     },
@@ -1281,6 +1356,81 @@
           "creatorIntro": "Bilibili の投稿者・上善无形による短編の二次創作アニメです。",
           "description": "11 秒のアニメ調二次創作ショート。ヒレ状の耳を持つ青い髪の女の子の顔のアップで、あごの下に桃を抱えたまま、淡いピンクの背景に包まれています。",
           "title": "小鯨ちゃんと桃"
+        }
+      }
+    },
+    {
+      "bvid": "BV1VujS6MEJt",
+      "uid": "4168597",
+      "title": "DeepSeek娘好像是叫我删了这视频来着……",
+      "description": "也不知道搞了个啥，钱花600多，搞了一堆擦边视频？\n\n反正也没个统一点主题，干脆一次性发了把。\n\n总之，虽然DeepSeek已经快降级为蓝色大肥鱼了，但我依然爱她。\n\n申明：本视频鲸鱼娘形象基于@上善无形  原创角色二创（源：b23.tv/Kn7yvnF），依CC BY-NC-SA 4.0非商业使用，二创同协议授权，完整声明见主页。",
+      "url": "https://www.bilibili.com/video/BV1VujS6MEJt/",
+      "cover": "https://i2.hdslb.com/bfs/archive/0da6116ca980a219552aa41753d54070701b041e.jpg",
+      "duration": 147,
+      "publishedAt": "2026-06-23T13:44:19.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A Bilibili creator who makes short fan-made clips featuring personified AI characters; in this video's description they explain that the clips were produced in one batch and released together.",
+          "description": "A compilation of short anime-style clips starring personified AI characters, with DeepSeek Chan in her maid outfit as the recurring lead. There is no single theme; the creator gathered the clips made during one production run and published them as one video.",
+          "title": "DeepSeek Chan Seemed to Tell Me to Delete This Video…"
+        },
+        "ja": {
+          "creatorIntro": "BilibiliでAIキャラクターの短編二次創作動画を制作する投稿者。今回の動画では、まとめて制作したクリップを一挙に公開したと説明している。",
+          "description": "人格化されたAIキャラクターが登場する短編アニメ風クリップをまとめた一本。統一テーマはなく、メイド姿のDeepSeekちゃんが繰り返し主役として登場する。作者は一度の制作で出来たクリップをそのまま一挙公開したと説明している。",
+          "title": "DeepSeekちゃん、この動画は消せと言っていた気がする……"
+        }
+      }
+    },
+    {
+      "bvid": "BV1bARXBYEZz",
+      "uid": "4168597",
+      "title": "“亿万”身家的她们",
+      "description": "已进入阶段三，开始研究AI视频。\n\n主要使用grok制作，奇了怪了，我的grok早在上个月就没续费了，但会员一直保持到现在，不知道是不是有什么活动，反正能用一天是一天吧。\n\n尝试了一下剪辑，对着AI音乐瞎剪的。\n\n基本上目前主流的AI都画完了，大概吧，漏了什么可以给我说。\n\n总之我的图都是开源的，我避免了使用有版权图片作为底图。本来底图也是别人的AI图，所以想拿去再创作什么的我也无所谓了。\n\nImage 2，爽!但是小鲸鱼，我的小鲸鱼QAQ!\n\n申明：本视频鲸鱼娘形象基于@上善无形  原创角色二创（源：b23.tv/Kn7yvnF），依CC BY-NC-SA 4.0非商业使用，二创同协议授权，完整声明见主页。",
+      "url": "https://www.bilibili.com/video/BV1bARXBYEZz/",
+      "cover": "https://i0.hdslb.com/bfs/archive/452af0fc17a7ed5f9246cec614aa0f61ad7968c9.jpg",
+      "duration": 129,
+      "publishedAt": "2026-05-09T05:21:34.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A Bilibili creator who posts fan art and videos of personified AI characters; they note that their generated images are shared openly and that they avoided using copyrighted images as a base.",
+          "description": "An experiment in AI video: illustration-based clips of personified AI characters, generated mainly with Grok and edited to AI-made music. The creator says nearly every mainstream AI character appears in the set, and singles out DeepSeek Chan as the one they miss most.",
+          "title": "The “Billionaire” Girls"
+        },
+        "ja": {
+          "creatorIntro": "BilibiliでAIキャラクターの二次創作イラストや動画を発表する投稿者。生成した画像は公開し、既存の著作物を土台に使わないよう配慮したと説明している。",
+          "description": "AI動画の制作実験として作られた一本。主にGrokで生成したAIキャラクターのイラストを、AI製の音楽に合わせて編集している。作者は主要なAIキャラクターはほぼ網羅したと述べ、中でもDeepSeekちゃんが一番恋しいと記している。",
+          "title": "“億万長者”の彼女たち"
+        }
+      }
+    },
+    {
+      "bvid": "BV1AqRJBwEq4",
+      "uid": "4168597",
+      "title": "瘫坐在办公椅上，宛如看见原子弹爆炸",
+      "description": "我不知道为什么我要花钱生成这种视频，但不知道为什么这个梗就是过不去了。",
+      "url": "https://www.bilibili.com/video/BV1AqRJBwEq4/",
+      "cover": "https://i2.hdslb.com/bfs/archive/a1733f46da5fa1f48d979c7fd6fa7f7690b69495.jpg",
+      "duration": 8,
+      "publishedAt": "2026-05-05T16:11:05.000Z",
+      "characterIds": [
+        "other"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A Bilibili creator who makes short AI-generated clips starring personified AI characters; here they note that this particular joke was too persistent to skip.",
+          "description": "An eight-second AI-generated clip: a chibi personified AI character slumps in an office chair reading a newspaper announcing a new DeepSeek release, while a mushroom cloud rises behind her.",
+          "title": "Slumped in the Office Chair, Like Watching an Atomic Bomb Go Off"
+        },
+        "ja": {
+          "creatorIntro": "人格化されたAIキャラクターが登場する短いAI生成クリップを制作するBilibiliの投稿者。今回はこのネタがどうしても頭から離れなかったと記している。",
+          "description": "8秒のAI生成クリップ。ちびキャラのAI擬人化キャラクターがオフィスチェアにだらりと座り、DeepSeekの新モデル発表を伝える新聞を読んでいる。背後にはキノコ雲が上がる。",
+          "title": "オフィスチェアにだらりと座って、まるで原爆が炸裂したのを見たかのよう"
         }
       }
     }
