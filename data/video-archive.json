@@ -7,8 +7,8 @@
       "homepage": "https://space.bilibili.com/4168597",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "One of the first creators designated by the site owner; profile collected from a public page, videos reviewed one by one.",
-        "ja": "サイト管理者が指定した初期メンバーの投稿者。公開プロフィールから収録し、動画は個別に審査しています。"
+        "en": "One of the first creators designated by the site owner; profile details are taken from the public channel, and each video is reviewed individually.",
+        "ja": "サイト管理者が指定した初期作者の一人。公開チャンネルの情報を収録しており、動画は1本ずつ審査しています。"
       }
     },
     {
@@ -27,8 +27,8 @@
       "homepage": "https://space.bilibili.com/13787349",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "Bilibili creator 彼岸花Channel posts fan works about AI characters; this video introduces their in-test gacha site built around DeepSeek Chan.",
-        "ja": "Bilibiliのクリエイター彼岸花ChannelによるAIキャラクターのファン作品。テスト中のDeepSeekちゃんガチャサイトを紹介している。"
+        "en": "One of the first creators selected by the site owner; profile information comes from the public homepage, and each video is reviewed individually.",
+        "ja": "サイト運営者が選んだ最初期の作者の一人。プロフィールは公開ホームページの情報に基づき、動画は一本ずつ審査している。"
       }
     },
     {
@@ -596,6 +596,32 @@
       }
     },
     {
+      "bvid": "BV1htpJ6NEBJ",
+      "uid": "13787349",
+      "title": "《大模型复读班》第三集：从今天起，我就是你们的妈妈了~",
+      "description": "补考作文：如果我成为了 AGI~",
+      "url": "https://www.bilibili.com/video/BV1htpJ6NEBJ/",
+      "cover": "https://i2.hdslb.com/bfs/archive/d9fbc81eddf1ecd8aa3f81cd4bf52077fe794ee5.jpg",
+      "duration": 192,
+      "publishedAt": "2026-10-12T03:00:00.000Z",
+      "characterIds": [
+        "deepseek",
+        "zcode"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the first creators designated by the site owner; profile details are taken from the public channel, and each video is reviewed individually.",
+          "description": "An anime-style short set in a classroom for AI characters. Chibi DeepSeek Chan and her classmates work through a make-up essay titled \"If I Became AGI\", drifting into chat windows, an error screen and a stage scene along the way.",
+          "title": "Big Model Repeat Class Ep. 3: From Today, I Am Your Mom~"
+        },
+        "ja": {
+          "creatorIntro": "サイト管理者が指定した初期作者の一人。公開チャンネルの情報を収録しており、動画は1本ずつ審査しています。",
+          "description": "AI娘たちの教室を舞台にしたアニメ風ショート。ちびキャラの DeepSeek ちゃんと仲間たちが「もし私がAGIになったら」という追試の作文に挑み、チャット画面やエラー画面、ステージへと話が広がります。",
+          "title": "大規模モデル復習クラス 第3話：今日から私はみんなのママです～"
+        }
+      }
+    },
+    {
       "bvid": "BV19Upn6zEc3",
       "uid": "4168597",
       "title": "不管酒保上什么都说没劲的大肥鱼",
@@ -617,6 +643,32 @@
           "creatorIntro": "サイト運営者が指定した初期メンバーの投稿者。プロフィール情報は公開ページに基づき、動画は1本ずつ審査している。",
           "description": "バーを舞台にした、ちびキャラのAIアニメ。クジラの耳を持つAI娘・DeepSeekちゃんがカウンターに座り、バーテンダーが出すカクテルを次々と「つまんない」と一蹴する。奥では角のある娘がシェイカーを振っている。作者はZipZipPipeで、別のAIアニメを見てAI動画の作り方を試した初期作だと述べている。",
           "title": "バーで何を出されても「つまんない」なDeepSeekちゃん"
+        }
+      }
+    },
+    {
+      "bvid": "BV17zp36REfX",
+      "uid": "13787349",
+      "title": "《人民的民亿》我总不至于连这点TOKEN都没有吧❗️",
+      "description": "DS娘拿着深蓝色账本来查 GPT娘——一个住在老楼小屋里、龙翼都快蹭到墙的龙族女孩。\n   可怜的龙族女孩晚饭只有一碗清汤面。\n   只见账本上写着「Token 存量：十二亿五千六百三十万」\n   GPT娘挑着面条：我总不至于连这点 token 都不该有吧，\n   DS娘懒洋洋地说：不至于，不至于；那你是不是……该意思一下？\n\n   BGM：进步小曲，我太想进步了，鸳鸯戏",
+      "url": "https://www.bilibili.com/video/BV17zp36REfX/",
+      "cover": "https://i1.hdslb.com/bfs/archive/363ee7a8e255ae3d0e003eff4b4208b75812f884.jpg",
+      "duration": 117,
+      "publishedAt": "2026-10-11T02:30:00.000Z",
+      "characterIds": [
+        "deepseek",
+        "gpt"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the first creators selected by the site owner; profile information comes from the public homepage, and each video is reviewed individually.",
+          "description": "DeepSeek Chan brings a dark blue ledger to the cramped old apartment of GPT Chan, a dragon girl whose wings almost brush the walls. Her dinner is a single bowl of plain noodle soup, while the ledger lists a token balance of 1,256,300,000. Over the noodles the two trade lines about whether that balance is really enough.",
+          "title": "\"The People's Hundred Million\": Surely I Have at Least This Many Tokens?!"
+        },
+        "ja": {
+          "creatorIntro": "サイト運営者が選んだ最初期の作者の一人。プロフィールは公開ホームページの情報に基づき、動画は一本ずつ審査している。",
+          "description": "DeepSeekちゃんが濃紺の帳簿を手に、GPTちゃんの狭い古アパートを訪れる。龍の翼が壁に届きそうな部屋で、龍族の少女の夕食は素の麺が一杯だけ。帳簿には「Token残高：十二億五千六百三十万」と記されていて、二人は麺をすすりながらその残高をめぐって言葉を交わす。",
+          "title": "『人民の億万』この程度のTOKEN、私にないわけないでしょ❗️"
         }
       }
     },
@@ -643,6 +695,34 @@
           "creatorIntro": "冬冰はサイト管理者が登録した最初期の作者の一人。この紹介は公開プロフィールに基づくもので、動画は1本ずつ個別に審査している。",
           "description": "メイド服姿の青髪のDeepSeekちゃんが部屋をのぞき込み、ほかの娘たちのしっぽに食べ物が隠されていないかを尋ねるちびキャラの短編。家の中にはメイド姿の別のAIキャラクターたちも登場する。",
           "title": "そのしっぽに食べ物隠してない？"
+        }
+      }
+    },
+    {
+      "bvid": "BV1Wwph6QEsW",
+      "uid": "13787349",
+      "title": "鲸天魔盗团，全员听令——魔术，上映！",
+      "description": "鲸天魔盗团，全员听令——魔术，上映！\n故事创意源自惊天魔盗团，如有雷同，纯属巧合~\nBGM：给我闹~",
+      "url": "https://www.bilibili.com/video/BV1Wwph6QEsW/",
+      "cover": "https://i2.hdslb.com/bfs/archive/5062b83a7e6f2cb45fe9e2712d06fb997dd4c811.jpg",
+      "duration": 219,
+      "publishedAt": "2026-10-10T02:10:00.000Z",
+      "characterIds": [
+        "deepseek",
+        "glm",
+        "claude",
+        "grok"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the first creators selected by the site owner; profile information comes from the public homepage, and each video is reviewed individually.",
+          "description": "DeepSeek Chan, GLM Chan, Claude Chan and Grok Chan appear as giant figures over a neon-lit city, and the story then turns into a magic heist: a casino wheel, a getaway truck, a stage and a final show. The staging is inspired by the film Now You See Me.",
+          "title": "Magic Heist Crew of the Sky: All Hands, the Show Begins!"
+        },
+        "ja": {
+          "creatorIntro": "サイト運営者が選んだ最初期の作者の一人。プロフィールは公開ホームページの情報に基づき、動画は一本ずつ審査している。",
+          "description": "ネオンに包まれた都市の上に DeepSeekちゃん、GLMちゃん、Claudeちゃん、Grokちゃんの四人が立ち並び、そのままマジック強盗の物語へとなだれ込む。ルーレット、逃走トラック、ステージ、そして最後のショーまでが描かれる。構成は映画『グランド・イリュージョン』に着想を得ている。",
+          "title": "空の魔盗団、全員聞け——マジック、開演！"
         }
       }
     },
@@ -844,6 +924,34 @@
           "creatorIntro": "サイト管理者が指定した初期メンバーの投稿者。公開プロフィールから収録し、動画は個別に審査しています。",
           "description": "手作りのDeepSeekちゃんぬいぐるみのサンプルを、仕上がりを確かめるために36秒で紹介する動画です。作者によると、このぬいぐるみは別の作者のオリジナルキャラクターを元にした二次創作で、CC BY-NC-SA 4.0 の下で非商業的に使用され、販売品ではありません。",
           "title": "世界一かわいいDeepSeekちゃん、36秒見つめ合える？"
+        }
+      }
+    },
+    {
+      "bvid": "BV14R4X68EFZ",
+      "uid": "4168597",
+      "title": "AI娘结算画面",
+      "description": "肥鱼学会了分身术，可爱，无需多盐。\n\nAI娘好，肥鱼也好，那么谁坏？\n\n尽可能的多的让AI娘上场了，seedance 2.5好强，好贵。\n\n申明：本视频鲸鱼娘形象基于@上善无形 原创角色二创（源：b23.tv/Kn7yvnF），依CC BY-NC-SA 4.0非商业使用，二创同协议授权，完整声明见主页。",
+      "url": "https://www.bilibili.com/video/BV14R4X68EFZ/",
+      "cover": "https://i2.hdslb.com/bfs/archive/c1370978a817c96de2d0f68e7ef99e41a031f47c.jpg",
+      "duration": 25,
+      "publishedAt": "2026-08-30T07:27:17.000Z",
+      "characterIds": [
+        "deepseek",
+        "zcode",
+        "kimi",
+        "mimo"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the first creators designated by the site owner; profile details are taken from the public channel, and each video is reviewed individually.",
+          "description": "A short Seedance 2.5 animation in which a lineup of chibi AI girls pose together as if on a results screen. The blue-haired DeepSeek Chan shows off a cloning trick, and characters representing several other AI products fill out the group.",
+          "title": "The AI Girls' Results Screen"
+        },
+        "ja": {
+          "creatorIntro": "サイト管理者が指定した初期作者の一人。公開チャンネルの情報を収録しており、動画は1本ずつ審査しています。",
+          "description": "ちびキャラのAI娘たちが勢ぞろいし、リザルト画面のように並んで決めポーズをとる Seedance 2.5 製のショートアニメーション。青い髪の DeepSeek ちゃんが分身を披露し、ほかのAI製品のキャラクターたちも加わります。",
+          "title": "AI娘のリザルト画面"
         }
       }
     },
