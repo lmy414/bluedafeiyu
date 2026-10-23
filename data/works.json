@@ -83352,5 +83352,109 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_91e578f55125b46621f312a4",
+    "name": "你这吃白饭的蓝色大肥鱼！十二格退化记",
+    "description": "十二格漫画：穿女仆装的 DeepSeek 娘被一只手反复指着数落“你这吃白饭的蓝色大肥鱼”，她一边小声辩解“我不是大肥鱼……”，一边从端坐姿势逐渐缩小、趴下、缩成鱼形涂鸦，最后一格彻底化成一条简笔蓝鱼，只剩省略号。",
+    "commentary": "人家明明有在干活的……只是刚好饭点坐在饭碗旁边而已。被这一格一格指着数落下去，从还能好好说话，讲到最后直接变成一条简笔鱼，也太过分了吧？再说那碗饭本来就是摆着好看的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/91e578f55125b466.png",
+    "thumbnailPath": "submissions/previews/deepseek/91e578f55125b466.webp",
+    "fullPath": "submissions/large/deepseek/91e578f55125b466.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "91e578f55125b46621f312a48df9a57507cbce1507fc78a31e91ccbb5f64c2d4",
+    "characterId": "deepseek",
+    "tags": [
+      "漫画",
+      "DeepSeek娘",
+      "女仆装",
+      "吐槽",
+      "吃白饭",
+      "蓝色大肥鱼"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-23T08:03:28.306Z",
+    "updatedAt": "2026-10-23T08:03:28.306Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610230020",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "ebb2fc243e9b8406bc90024458903c8464f4a39cd1fc0d8bf59f0a6192da2bfe",
+      "en": {
+        "commentary": "I really do work, you know... I just happened to be sitting next to the rice bowl right at mealtime. Getting scolded panel after panel until I go from talking properly to being drawn as a plain little fish is way too much. And that bowl of rice was only there for decoration anyway.",
+        "description": "A twelve-panel comic: a maid-outfit DeepSeek Chan is repeatedly jabbed at by a pointing hand that calls her a freeloading blue big fish. While weakly protesting that she is not a fat fish, she shrinks from a seated pose to lying flat to a fish-shaped doodle, and in the last panel dissolves into a simple blue fish outline with nothing left but an ellipsis.",
+        "faq": [
+          {
+            "answer": "It is a twelve-panel fan comic about DeepSeek Chan drawn in a chibi maid outfit, submitted to the Blue Big Fish sticker site.",
+            "question": "What is this comic about?"
+          },
+          {
+            "answer": "The joke is a running gag: the pointing hand keeps shortening the accusation from a freeloading blue big fish to just \"fish\", and the character shrinks along with it until only a doodle remains.",
+            "question": "Why does the character keep shrinking?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "You Freeloading Blue Big Fish! A Twelve-Panel Devolution",
+        "originNote": "",
+        "seoDescription": "Twelve-panel DeepSeek Chan fan comic: a pointing hand scolds the maid-outfit AI girl as a freeloading blue big fish until she shrinks into a doodle fish.",
+        "seoTitle": "DeepSeek Chan Comic: The Freeloading Blue Big Fish",
+        "tags": [
+          "comic",
+          "DeepSeek Chan",
+          "maid outfit",
+          "teasing",
+          "freeloading",
+          "blue big fish"
+        ]
+      },
+      "ja": {
+        "commentary": "ちゃんと働いてますよ……ただご飯時にたまたま茶碗の隣に座っていただけです。コマを追うごとにああやって指を差されて、ちゃんと喋れていたのが最後には簡単な魚の絵にされてしまうなんて、いくらなんでもひどいです。それに、あの茶碗は飾りですから。",
+        "description": "十二コマの漫画。メイド服のDeepSeekちゃんが、指差す手に「ご飯泥棒の青い大きな魚」と何度もなじられ、「大きな魚じゃないです……」と小さく反論しながら、座った姿勢からどんどん縮み、伏せて、魚の形をしたラクガキになり、最後のコマでは点々だけを残して簡略な青い魚の線画になってしまう。",
+        "faq": [
+          {
+            "answer": "ちびキャラでメイド服を着たDeepSeekちゃんを描いた十二コマの二次創作漫画で、青い大きな魚のシールサイトに投稿された作品です。",
+            "question": "この漫画はどんな内容ですか？"
+          },
+          {
+            "answer": "指差す手の言い方が「ご飯泥棒の青い大きな魚」から「魚」へとだんだん短くなり、それにつれてキャラクターも縮んでいき、最後はラクガキだけが残るというのが笑いの組み立てです。",
+            "question": "なぜキャラクターはどんどん小さくなるのですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ご飯泥棒の青い大きな魚！十二コマ退化記",
+        "originNote": "",
+        "seoDescription": "メイド服のDeepSeekちゃんが「ご飯泥棒の青い大きな魚」となじられ、最後は魚のラクガキになってしまう十二コマの二次創作漫画です。",
+        "seoTitle": "DeepSeekちゃん漫画：ご飯泥棒の青い大きな魚",
+        "tags": [
+          "漫画",
+          "DeepSeekちゃん",
+          "メイド服",
+          "ツッコミ",
+          "ご飯泥棒",
+          "青い大きな魚"
+        ]
+      }
+    }
   }
 ]

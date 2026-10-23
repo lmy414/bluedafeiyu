@@ -87,12 +87,42 @@
       "homepage": "https://space.bilibili.com/44748304",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "One of the first creators designated by the site owner, with public profile details recorded; each video is reviewed individually.",
-        "ja": "サイト運営者が指名した最初期の作者の一人で、公開プロフィールの情報を収録。動画は一本ずつ審査しています。"
+        "en": "Creates AI-character animation shorts for fun. States that the video is for entertainment only and does not represent a commercial evaluation or technical review of any AI product, and credits the character designs to Bilibili creators.",
+        "ja": "AIキャラクターのアニメーション作品を制作。動画は娯楽目的であり、いずれのAI製品に対する商業的評価や技術的レビューではないと明記し、キャラクターデザインの参考元としてBilibiliのクリエイターをクレジットしている。"
       }
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1Tonb6JExo",
+      "uid": "44748304",
+      "title": "可是它长得本来就像饭盆嘛！【AI全民制作人】",
+      "description": "视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色形象参考来自b站up：﻿﻿﻿﻿﻿﻿@ZipZipPipe   ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿﻿﻿﻿﻿﻿@这个刀子真甜   ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿﻿﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿﻿@邦多利素世   ﻿ ﻿",
+      "url": "https://www.bilibili.com/video/BV1Tonb6JExo/",
+      "cover": "https://i1.hdslb.com/bfs/archive/f7b65e5b016638f1be1b769040613efb66a881ab.jpg",
+      "duration": 219,
+      "publishedAt": "2026-10-23T07:12:04.000Z",
+      "characterIds": [
+        "deepseek",
+        "hunyuan",
+        "grok",
+        "claude",
+        "gemini",
+        "qwen"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Creates AI-character animation shorts for fun. States that the video is for entertainment only and does not represent a commercial evaluation or technical review of any AI product, and credits the character designs to Bilibili creators.",
+          "description": "A 3D animated short in which personified AI products gather on a sea platform, where DeepSeek Chan is teased over a satellite dish that looks just like a food bowl. Hunyuan Chan, Grok Chan, Claude Chan, Gemini Chan and Qwen Chan also appear.",
+          "title": "But It Really Did Look Like a Food Bowl!"
+        },
+        "ja": {
+          "creatorIntro": "AIキャラクターのアニメーション作品を制作。動画は娯楽目的であり、いずれのAI製品に対する商業的評価や技術的レビューではないと明記し、キャラクターデザインの参考元としてBilibiliのクリエイターをクレジットしている。",
+          "description": "AI製品を擬人化したキャラクターたちが海上プラットフォームに集まり、ご飯茶碗そっくりのパラボラアンテナをめぐってDeepSeekちゃんがいじられる3Dアニメーション作品。混元ちゃん、Grokちゃん、Claudeちゃん、Geminiちゃん、Qwenちゃんも登場する。",
+          "title": "でも元々ご飯茶碗みたいな形なんだもん！"
+        }
+      }
+    },
     {
       "bvid": "BV19knb6fEs2",
       "uid": "69180811",
