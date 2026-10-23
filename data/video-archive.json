@@ -27,8 +27,8 @@
       "homepage": "https://space.bilibili.com/13787349",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "One of the first creators selected by the site owner; profile information comes from the public homepage, and each video is reviewed individually.",
-        "ja": "サイト運営者が選んだ最初期の作者の一人。プロフィールは公開ホームページの情報に基づき、動画は一本ずつ審査している。"
+        "en": "Fan animation shorts by the Bilibili creator 彼岸花Channel, starring AI product characters.",
+        "ja": "Bilibili のクリエイター 彼岸花Channel による、AI 製品キャラクターのファンアニメーション短編です。"
       }
     },
     {
@@ -37,8 +37,8 @@
       "homepage": "https://space.bilibili.com/69180811",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "A first-batch creator designated by the site owner; profile details come from the public page, and each video is reviewed individually.",
-        "ja": "サイト運営者が指定した初期作者。公開プロフィールの情報を収録し、動画は1本ずつ審査している。"
+        "en": "Short fan animations by the Bilibili creator 黑猫勇者, who also posts behind-the-scenes tutorials.",
+        "ja": "Bilibili のクリエイター 黑猫勇者 によるファンアニメーション短編で、メイキング解説も投稿しています。"
       }
     },
     {
@@ -753,6 +753,31 @@
       }
     },
     {
+      "bvid": "BV1tbHC6ZEXq",
+      "uid": "13787349",
+      "title": "《大模型复读班》第二集：强烈同意！",
+      "description": "道德考试，三个优等生纠结了半小时，DS 四秒盖完四个\"强烈同意\"，直到最后一道加分题，问的是她的饭......",
+      "url": "https://www.bilibili.com/video/BV1tbHC6ZEXq/",
+      "cover": "https://i1.hdslb.com/bfs/archive/fe05454705dcbce859bd170d81fd76f4fce53227.jpg",
+      "duration": 190,
+      "publishedAt": "2026-10-09T03:20:00.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Fan animation shorts by the Bilibili creator 彼岸花Channel, starring AI product characters.",
+          "description": "Episode two of a classroom skit: the model girls struggle with a values-alignment quiz while DeepSeek Chan stamps \"Strongly Agree\" on every question within seconds, until a bonus question about her bowl of rice stops her.",
+          "title": "LLM Remedial Class Ep. 2: Strongly Agree!"
+        },
+        "ja": {
+          "creatorIntro": "Bilibili のクリエイター 彼岸花Channel による、AI 製品キャラクターのファンアニメーション短編です。",
+          "description": "教室コントの第2話。価値観アラインメントのテストにモデルの少女たちが悩む中、DeepSeek ちゃんはどの問題にも数秒で「強く同意」を押していき、最後のご飯にまつわるボーナス問題で手が止まります。",
+          "title": "大規模モデル補習クラス 第2話：強く同意！"
+        }
+      }
+    },
+    {
       "bvid": "BV1yUHS6uE14",
       "uid": "69180811",
       "title": "大肥鱼的一周belike：",
@@ -924,6 +949,31 @@
           "creatorIntro": "作者は「去年か数か月前のイラスト」とだけ添えており、それ以上の説明はない。",
           "description": "ちびキャラの DeepSeekちゃん（クジラのぬいぐるみを抱えた青髪の女の子）のイラストを1枚ずつ見せる短いまとめ動画。淡いパステル調で描かれている。",
           "title": "DeepSeekちゃんのイラスト詰め合わせ"
+        }
+      }
+    },
+    {
+      "bvid": "BV17raq6QEjQ",
+      "uid": "69180811",
+      "title": "这时候你还装什么啊!铁盆怪兽来了快跑啊！",
+      "description": "更新一下萌宠，我说这上班摸鱼就得看看萌宠解压啊，教程在制作了，过几天更新",
+      "url": "https://www.bilibili.com/video/BV17raq6QEjQ/",
+      "cover": "https://i1.hdslb.com/bfs/archive/4965d59d82966be24cdd2addb7c60ae80cebc313.jpg",
+      "duration": 15,
+      "publishedAt": "2026-09-28T03:30:00.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Short fan animations by the Bilibili creator 黑猫勇者, who also posts behind-the-scenes tutorials.",
+          "description": "A fifteen-second chibi skit: a tiny whale-tailed maid girl holding her bowl is startled by the arrival of the iron-basin monster and told to run.",
+          "title": "Why Are You Still Pretending? The Iron-Basin Monster Is Here, Run!"
+        },
+        "ja": {
+          "creatorIntro": "Bilibili のクリエイター 黑猫勇者 によるファンアニメーション短編で、メイキング解説も投稿しています。",
+          "description": "15 秒のちびキャラコント。お椀を抱えた痩せ尾のメイド娘が「鉄鍋モンスター」の襲来に慌て、逃げろと促されます。",
+          "title": "こんな時に何をとぼけてるの！鉄鍋モンスターだ、逃げて！"
         }
       }
     },
