@@ -37,6 +37,6 @@ export function decorateDocument(html,key,ctx) {
     submission.insertAdjacentHTML('afterbegin','<span class="participation-number">01</span>');feedback.insertAdjacentHTML('afterbegin','<span class="participation-number">03</span>');grid.replaceChildren(submission,video,feedback);activity.className='community-activity';grid.after(activity);
   }
   if(key==='about')for(const n of b.querySelectorAll('.tilt-l,.tilt-r'))n.classList.remove('tilt-l','tilt-r');
-  if(key==='events'){const figure=b.querySelector('figure');if(figure&&figure.nextElementSibling){const box=document.createElement('div');box.className='designed-event-hero';const next=figure.nextElementSibling;figure.before(box);box.append(next,figure);}}
+  if(key==='events'){const hero=b.querySelector('.event-hero');if(hero){hero.className='designed-event-hero';const figure=hero.querySelector('figure');if(figure)hero.append(figure);}}
   return `<nav class="document-sections">${nav.map(([id,z,en,ja])=>`<a href="/${id}.html" ${id.startsWith(key)?'aria-current="page" class="is-active"':''}>${tr('doc.'+id,z,en,ja)}</a>`).join('')}</nav><div class="document-reader"><article class="synced-prose" data-live-document="${key}">${b.innerHTML}</article></div>`;
 }
