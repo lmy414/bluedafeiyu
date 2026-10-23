@@ -16,6 +16,7 @@ test('homepage and mobile navigation work before scripts and keep production han
   for(const prefix of ['', 'en/','ja/','zh-hant/']){
     const {document}=parseHTML(fs.readFileSync(path.join(out,prefix+'index.html'),'utf8'));
     assert.equal(document.querySelectorAll('.mobile-bottom a').length,5,prefix);
+    assert.ok(document.querySelector('.mobile-bottom.mobile-nav'),'Uses the Demo mobile layout');
     assert.ok(document.querySelector('.mobile-bottom a[href$="/saved.html"]'));
     const topics=document.querySelectorAll('[data-design-slide]');assert.ok(topics.length>=2);
     assert.equal(document.querySelectorAll('[data-design-slide]:not([hidden])').length,1);
