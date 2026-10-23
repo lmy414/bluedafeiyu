@@ -835,6 +835,7 @@ export function runToolchain(cfg, exec, workDir) {
         if(relative && !relative.startsWith('..') && !path.isAbsolute(relative)) {
           buildEnv.SITE_PREVIOUS_DIR=real;
           buildEnv.SITE_PREVIOUS_STATE=path.join(cfg.deployRoot,'build-state',path.basename(real)+'.json');
+          buildEnv.SITE_REUSE_ASSETS='1';
         }
       }catch{ /* A first release has no successful baseline yet. */ }
     }

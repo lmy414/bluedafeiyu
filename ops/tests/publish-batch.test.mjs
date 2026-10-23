@@ -32,10 +32,40 @@ import {
   readReadyEntries,
   resolvePublishConfig,
   runBatch,
+  runToolchain,
+  runDeploy,
   sniffImage,
 } from '../publish-batch.mjs';
 import { QQ_GROUP_ORIGIN } from '../../server/adapters/qq.mjs';
 import { checkTemplateSync } from '../../tools/sync_issue_template.mjs';
+
+test('发布预检复用正式资源，保留产物至部署成功；失败时可重试', async (t) => {
+  const ws = await makeWorkspace(t);
+  const deployRoot = path.join(ws.root, 'deploy');
+  const previous = path.join(deployRoot, 'releases', 'baseline');
+  fs.mkdirSync(previous, { recursive: true });
+  fs.symlinkSync(previous, path.join(deployRoot, 'current'), process.platform === 'win32' ? 'junction' : 'dir');
+  const workDir = path.join(ws.root, 'work');
+  const out = path.join(workDir, 'build-check');
+  const cfg = { siteDir: ws.site, contentDir: ws.content, node: 'node', python: 'python3', buildCheck: true, deploy: true, deployRoot, deployCmd: 'true' };
+  const calls = [];
+  const exec = (command, args, options) => {
+    calls.push({ command, args, options });
+    if (args[0] === 'tools/build_site.mjs') fs.mkdirSync(out, { recursive: true });
+    return { status: 0, stdout: '', stderr: '' };
+  };
+  runToolchain(cfg, exec, workDir);
+  const build = calls.find(call => call.args[0] === 'tools/build_site.mjs');
+  assert.equal(build.options.env.SITE_PREVIOUS_DIR, fs.realpathSync(previous));
+  assert.equal(build.options.env.SITE_PREVIOUS_STATE, path.join(deployRoot, 'build-state', 'baseline.json'));
+  assert.equal(build.options.env.SITE_REUSE_ASSETS, '1');
+  assert.equal(fs.existsSync(out), true);
+  assert.throws(() => runDeploy(cfg, () => ({ status: 1, stderr: 'retryable deployment failure' }), () => {}));
+  assert.equal(fs.existsSync(out), true);
+  runDeploy(cfg, exec, () => {});
+  assert.equal(calls.at(-1).options.env.PUBLISH_PREBUILT_DIR, out);
+  assert.equal(fs.existsSync(out), false);
+});
 
 test('角色模板校验要求 multiple，类型仍维持单选', () => {
   const characters = [{ id: 'deepseek', name: 'DeepSeek娘', inSubmissionForm: true }];
