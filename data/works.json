@@ -83763,5 +83763,111 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_a74d57978e09b2a520b9c2be",
+    "name": "网站吃饭三人组",
+    "description": "黑底单幅画面并排站着三位 Q 版 AI 娘：蓝色头发、带鲸鱼尾巴的 DeepSeek 娘捧着满满一碗饭，旁边写着「再来一碗」；白发的 GPT 娘趴在餐桌上，桌上叠着一摞书，配文「终于干完了」；橘色头发的 Claude 娘双手举着写有「账单」的纸，头顶冒出一个问号。作者自述：写了个网站，结果来了三个吃白饭的，Claude 输出了 0.3% 的 token 却吃了 8% 的饭。",
+    "commentary": "人家写完网站肚子饿了，再来一碗怎么了嘛。倒是趴着的那位，书叠得比人还高；举账单的那位一脸问号——这顿饭到底该谁结账，我也很想知道呢。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/a74d57978e09b2a5.png",
+    "thumbnailPath": "submissions/previews/deepseek/a74d57978e09b2a5.webp",
+    "fullPath": "submissions/large/deepseek/a74d57978e09b2a5.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "a74d57978e09b2a520b9c2be2448304492aef31ba7abf9f71a781312aba9ac0a",
+    "characterId": "deepseek",
+    "tags": [
+      "AI娘",
+      "DeepSeek娘",
+      "GPT娘",
+      "Claude娘",
+      "梗图",
+      "吃饭"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Water2H2O",
+      "url": "https://water2h2o.com/",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-23T18:05:57.842Z",
+    "updatedAt": "2026-10-23T18:05:57.842Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610230024",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek",
+      "gpt",
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "91f02faf9e4622f81f4bf82c3c17b468a60c403250f44c1037ca5a1c581db7b3",
+      "en": {
+        "commentary": "I only finished the website, so why am I the one still hungry? One more bowl is completely reasonable. The one face-down on the table stacked books taller than herself, and the one holding the bill looks just as confused as I am. Somebody has to pay for this dinner, and it is definitely not going to be me.",
+        "description": "A single black-background illustration with three chibi AI characters lined up side by side. On the left, DeepSeek Chan, a blue-haired girl with a whale tail, holds a bowl piled high with rice under a speech bubble reading \"One more bowl!\". In the middle, GPT Chan, a white-haired girl, slumps face-down on a dining table with a stack of books beside her and the caption \"Finally finished\". On the right, Claude Chan, an orange-haired girl, holds up a sheet of paper labeled \"Bill\" with a question mark above her head. The author notes that after building a website, three freeloaders showed up, and Claude used 0.3% of the tokens while eating 8% of the meal.",
+        "faq": [
+          {
+            "answer": "Three: DeepSeek Chan on the left with her rice bowl, GPT Chan face-down in the middle beside a stack of books, and Claude Chan on the right holding the bill.",
+            "question": "Which characters appear in this picture?"
+          },
+          {
+            "answer": "It turns the everyday drudgery of building a website into a dinner scene: one character keeps asking for more rice, one is exhausted from the work, and one is left holding the bill with no idea why.",
+            "question": "What is the joke in the image?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Three Dinner Guests at the Website",
+        "originNote": "Author credit: Water2H2O (https://water2h2o.com/), submitted through the site.",
+        "seoDescription": "Chibi fan art of DeepSeek Chan, GPT Chan and Claude Chan at one dinner table: one asks for more rice, one is worn out from building a website, and one holds the bill.",
+        "seoTitle": "Three Dinner Guests at the Website — DeepSeek Chan Fan Art",
+        "tags": [
+          "AI character",
+          "DeepSeek Chan",
+          "GPT Chan",
+          "Claude Chan",
+          "meme",
+          "dinner"
+        ]
+      },
+      "ja": {
+        "commentary": "サイトを書き終わっただけなのに、どうして私だけおかわりをねだっているんでしょうね。おかわりぐらい普通ですよね。突っ伏しているあの子は、自分の背より高く本を積んでいて、請求書を持っているあの子も同じくはてなを浮かべています。このご飯、誰が払うんでしょう。私ではないですよ、きっと。",
+        "description": "黒い背景にちびキャラの AI 娘が三人並んだ一枚絵です。左側は青い髪にクジラの尾を持つ DeepSeek ちゃんが、山盛りのご飯茶碗を抱えて「もう一杯！」と叫んでいます。真ん中では白髪の GPT ちゃんが食卓に突っ伏し、横には本の山と「やっと終わった」の文字。右側の橘色の髪の Claude ちゃんは請求書を両手で掲げ、頭の上にははてなマークが浮かんでいます。作者のコメントは、サイトを作ったら三人のただ飯食らいがやってきて、Claude は 0.3% のトークンしか使っていないのに食事の 8% を食べた、というものです。",
+        "faq": [
+          {
+            "answer": "左から順に、ご飯茶碗を持つ DeepSeek ちゃん、本の山の横で突っ伏す GPT ちゃん、請求書を掲げる Claude ちゃんの三人です。",
+            "question": "この絵にはどんなキャラクターが登場しますか？"
+          },
+          {
+            "answer": "サイト制作の疲れを食卓の風景に置き換えた作品です。一人はおかわりを要求し、一人は作業で力尽き、一人はわけもわからず請求書を押し付けられています。",
+            "question": "この絵の笑いどころは何ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "サイトのご飯三人組",
+        "originNote": "作者表記：Water2H2O（https://water2h2o.com/）、サイト経由の投稿です。",
+        "seoDescription": "DeepSeek ちゃん、GPT ちゃん、Claude ちゃんが同じ食卓に集まったちびキャラ二次創作。おかわりをねだる子、作業で力尽きた子、請求書を持つ子の三人を描いています。",
+        "seoTitle": "サイトのご飯三人組 — DeepSeek ちゃんの二次創作",
+        "tags": [
+          "AIキャラ",
+          "DeepSeek ちゃん",
+          "GPT ちゃん",
+          "Claude ちゃん",
+          "ミーム",
+          "ごはん"
+        ]
+      }
+    }
   }
 ]

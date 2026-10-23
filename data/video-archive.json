@@ -37,8 +37,8 @@
       "homepage": "https://space.bilibili.com/1513368379",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "The uploader says this is their first attempt at this kind of video and asks viewers to be forgiving, and credits the creator of the eight seconds of borrowed footage.",
-        "ja": "投稿者によると、この種の動画は初めての挑戦なので温かく見守ってほしいとのこと。借用した8秒の映像については原作者へのクレジットも添えています。"
+        "en": "Taoliyа is a Bilibili creator who draws AI-model characters into a Blue Archive-style school setting and posts behind-the-scenes notes about generation prompts.",
+        "ja": "桃莉鸭は、中国のAIモデルをモチーフにしたキャラクターをブルーアーカイブ風の学園設定で描くBilibiliの制作者。生成プロンプトの調整の裏話も投稿している。"
       }
     },
     {
@@ -93,6 +93,32 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV16fna6yE5t",
+      "uid": "1513368379",
+      "title": "agi档案   国模agi对策委员会",
+      "description": "形象原作者@ZipZipPipe    \n原片  #碧蓝档案\n游戏碧蓝档案\n我真的受不了  提示词有问题  一直都好糊啊  我要杀了gpt qwq",
+      "url": "https://www.bilibili.com/video/BV16fna6yE5t/",
+      "cover": "https://i1.hdslb.com/bfs/archive/10548fd70a6079c2f317e64135d4b18cd1a138f5.jpg",
+      "duration": 91,
+      "publishedAt": "2026-10-23T15:46:33.000Z",
+      "characterIds": [
+        "deepseek",
+        "other"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Taoliyа is a Bilibili creator who draws AI-model characters into a Blue Archive-style school setting and posts behind-the-scenes notes about generation prompts.",
+          "description": "A Blue Archive-inspired school fan animation that reimagines Chinese AI models as anime girls, with the blue-haired DeepSeek character leading the cast. Character design credited to @ZipZipPipe. The creator notes that the generation prompts kept producing blurry frames.",
+          "title": "AGI Archive — Domestic Model AGI Countermeasures Committee"
+        },
+        "ja": {
+          "creatorIntro": "桃莉鸭は、中国のAIモデルをモチーフにしたキャラクターをブルーアーカイブ風の学園設定で描くBilibiliの制作者。生成プロンプトの調整の裏話も投稿している。",
+          "description": "ブルーアーカイブ風の学園を舞台に、中国のAIモデルを少女化して描いた二次創作アニメーション。青髪のDeepSeek娘を中心に複数のキャラクターが登場する。キャラクター原案は@ZipZipPipe。制作者は生成プロンプトの調整に苦戦し、画面がぼやけてしまうとこぼしている。",
+          "title": "AGIアーカイブ 中国AIモデルAGI対策委員会"
+        }
+      }
+    },
     {
       "bvid": "BV1Tonb6JExo",
       "uid": "44748304",
