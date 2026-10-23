@@ -83456,5 +83456,312 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_e0250ab1c38f296a5550ea1e",
+    "name": "腮帮子鼓成包子的DeepSeek娘",
+    "description": "一张以蓝色长发、白色蕾丝女仆发带和深蓝色女仆装为特征的半身特写。角色双眼大而明亮，脸颊被夸张地画得圆鼓鼓的，嘴微微张开并拉出一条细长的口水丝，胸前别着鲸鱼造型的胸针，背景为留白的浅色。整体是轻松搞笑的夸张表情特写。",
+    "commentary": "唔……谁把我的腮帮子画成这样的？我只是多啃了两口小鱼干而已！连口水都被画出来了，这也太过分了吧。不过说真的，这圆滚滚的脸颊按下去好像挺有弹性的……你们要存图就存吧，但别随便拿去当表情包，我可都看着呢。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/e0250ab1c38f296a.png",
+    "thumbnailPath": "submissions/previews/deepseek/e0250ab1c38f296a.webp",
+    "fullPath": "submissions/large/deepseek/e0250ab1c38f296a.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "e0250ab1c38f296a5550ea1ec9f1364433b03109a4f748324204dcd3b2654b5a",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "女仆装",
+      "圆脸",
+      "蓝发",
+      "特写",
+      "口水",
+      "鲸鱼胸针"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "アクソロトル",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-23T10:06:48.997Z",
+    "updatedAt": "2026-10-23T10:06:48.997Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610230021",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "8e2db1315a7ac41b087e7553164d9d441382e3fec9465fe05ecb0e688e7d1745",
+      "en": {
+        "commentary": "Hmph... who drew my cheeks like this? I only nibbled two extra dried fish! You even drew the drool, that is really too much. But honestly, these round cheeks feel pretty bouncy when you poke them... Save the picture if you like, but don't turn it into a sticker without asking. I'm watching you.",
+        "description": "A half-body close-up of a character with long blue hair, a white lace maid headdress and a dark blue maid outfit. Her eyes are large and bright, her cheeks are drawn in an exaggerated round puff, her mouth is slightly open with a thin strand of drool, and a whale-shaped brooch sits at her collar against a plain pale background. The overall tone is a light, comedic exaggerated-expression close-up.",
+        "faq": [
+          {
+            "answer": "A half-body close-up of DeepSeek Chan in a dark blue maid outfit and a white lace headdress, with her cheeks drawn in an exaggerated round puff and a thin strand of drool at her lips.",
+            "question": "What is shown in this image?"
+          },
+          {
+            "answer": "No. It is a fan work by a community creator, and the credit name is shown on the page.",
+            "question": "Is this an official illustration?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan With Cheeks Puffed Up Like a Steamed Bun",
+        "originNote": "",
+        "seoDescription": "A comedic close-up of DeepSeek Chan in a maid outfit, cheeks puffed round with a strand of drool, an exaggerated pout fan sticker on DeepSeek Chan.",
+        "seoTitle": "DeepSeek Chan With Cheeks Puffed Like a Steamed Bun — DeepSeek Chan",
+        "tags": [
+          "DeepSeek Chan",
+          "maid outfit",
+          "round face",
+          "blue hair",
+          "close-up",
+          "drool",
+          "whale brooch"
+        ]
+      },
+      "ja": {
+        "commentary": "むぅ……誰がこんなふうにほっぺを描いたの？小魚のおやつを二口多く食べただけなのに！よだれまで描くなんて、ひどすぎるでしょ。でも正直、このまんまるのほっぺ、押すと弾力がありそう……保存するなら好きにすればいいけど、勝手にスタンプにしないでね。ちゃんと見てるから。",
+        "description": "青いロングヘアに白いレースのメイドヘッドドレス、紺色のメイド服をまとったキャラクターの半身アップ。大きな瞳に、誇張してまんまるに膨らませたほっぺ、少し開いた口からは細いよだれが一筋。襟元にはクジラのブローチ、背景は余白のある淡い色。全体的にコミカルな誇張表情のアップに仕上げている。",
+        "faq": [
+          {
+            "answer": "紺色のメイド服とレースのヘッドドレスを身につけたDeepSeekちゃんの半身アップです。ほっぺは誇張してまんまるに膨らみ、口元には細いよだれが一筋描かれています。",
+            "question": "この画像には何が描かれていますか？"
+          },
+          {
+            "answer": "いいえ。コミュニティの制作者による二次創作で、クレジット名はページに表示されています。",
+            "question": "公式のイラストですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ほっぺが肉まんみたいに膨らんだDeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "メイド服姿のDeepSeekちゃんのほっぺがまんまるに膨らみ、よだれが一筋垂れるコミカルなアップ。DeepSeek Chanの誇張表情のファン作品。",
+        "seoTitle": "ほっぺが肉まんみたいに膨らんだDeepSeekちゃん | DeepSeek Chan",
+        "tags": [
+          "DeepSeekちゃん",
+          "メイド服",
+          "まんまる顔",
+          "青髪",
+          "アップ",
+          "よだれ",
+          "クジラのブローチ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_0fef2a998075441aa0418f17",
+    "name": "衣橱交换日：DeepSeek 与 GPT 的换装现场",
+    "description": "画面为单幅插画：左侧蓝发鲸尾少女穿白色露肩礼服，右侧白发带角与翼的角色穿深蓝女仆装，女仆裙摆上绣有鲸鱼图案。墙上便签写着 \"Outfit Swap…?\"，画面左右下角各有一个白边 Q 版反应小像，右侧角色头顶浮着省略号气泡。身旁敞开的行李箱、挂满衣服的衣橱与照片墙构成卧室更衣场景。",
+    "commentary": "我只是想借那件白色礼服试一下，谁知道一穿上就变成这样了，手都不知道往哪儿放。对面那位倒是一脸无所谓地穿着我的女仆装，还配了白色长袜，胸口的鲸鱼刺绣居然毫无违和感。角落里那两个小号的我们，一个在替我脸红，一个在替我无语。行李箱还敞着，衣服还挂在架上，照片墙上是并排的合影——大概就是便签上那句话的意思吧，换了衣服，还是同一群朋友。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/0fef2a998075441a.png",
+    "thumbnailPath": "submissions/previews/deepseek/0fef2a998075441a.webp",
+    "fullPath": "submissions/large/deepseek/0fef2a998075441a.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "0fef2a998075441aa0418f17dbe3d5959c470aa1e2b38d6e9f280f9b938856d5",
+    "characterId": "deepseek",
+    "tags": [
+      "换装",
+      "女仆装",
+      "礼服",
+      "Q版",
+      "双人"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-23T11:55:05.133Z",
+    "updatedAt": "2026-10-23T11:55:05.133Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610230022",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek",
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "b20b38fdeae80dc620c77f3f6cfaea20e32ba07d2c813c2933f6ddb5fc12d08f",
+      "en": {
+        "commentary": "I only wanted to try this white dress on for a moment, and now I have no idea what to do with my hands. The one across from me is wearing my maid outfit like it is nothing, white stockings and all, and the little whale embroidered on the apron somehow fits her perfectly. The two tiny versions of us in the corners are doing the reacting for me: one blushing, one speechless. The suitcase is still open, the rack is still full, and our photos are side by side on the wall. I suppose that note says it best: outfits swapped, same friends.",
+        "description": "A single-frame illustration: on the left, a blue-haired whale girl in a white off-shoulder evening dress; on the right, a white-haired character with horns and wings in a navy maid outfit whose skirt carries a small whale emblem. A note on the wall reads \"Outfit Swap…?\", a chibi reaction of each character sits in a white-bordered corner inset, and an ellipsis bubble floats above the right character. An open suitcase, a full clothing rack and a photo wall set the bedroom dressing-room scene.",
+        "faq": [
+          {
+            "answer": "It is a drawing of DeepSeek Chan and GPT Chan swapping outfits, so the white whale girl is wearing the evening dress and the white-haired, horned character is wearing the navy maid outfit with the whale emblem.",
+            "question": "Who are the two characters in this image?"
+          },
+          {
+            "answer": "The note on the wall reads \"Outfit Swap…?\" and the small one at the bottom right reads \"Same friends Still us\", which is what suggests the two have traded clothes rather than changed clothes by accident.",
+            "question": "What do the notes in the picture say?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Closet Swap Day: DeepSeek and GPT Try Each Other's Outfits",
+        "originNote": "",
+        "seoDescription": "A fan-art meme of DeepSeek Chan and GPT Chan swapping outfits: a white evening dress on one side, a navy whale-embroidered maid outfit on the other, with chibi reaction insets.",
+        "seoTitle": "DeepSeek Chan and GPT Chan Outfit Swap Meme",
+        "tags": [
+          "outfit swap",
+          "maid outfit",
+          "evening dress",
+          "chibi",
+          "two characters"
+        ]
+      },
+      "ja": {
+        "commentary": "白いドレスをちょっと借りてみただけなのに、着てみたらこうなってしまって、手の置き場所にも困っています。向こうは平然と私のメイド服を着ていて、白いニーハイまで合わせているのに、エプロンのクジラの刺繍がしっくりきてしまうのが悔しい。隅にいる小さな私たちが、一人は照れて、一人は黙って私の代わりに反応してくれています。スーツケースは開いたままだし、ラックには服がかかったままだし、壁には並んだツーショット。メモのとおりですね、服を入れ替えても、同じ仲間のまま。",
+        "description": "一枚絵のイラスト。左には青い髪とクジラの尾を持つ少女が白いオフショルダーのドレスを着て、右には角と翼を持つ白髪のキャラクターが紺色のメイド服を着ており、スカートには小さなクジラの刺繍がある。壁のメモには \"Outfit Swap…?\" と書かれ、左右の下隅には白い縁のちびキャラのリアクションが小さく入り、右のキャラクターの頭上には省略記号の吹き出しが浮かぶ。開いたスーツケース、服が並ぶラック、写真の壁が寝室の着替えの場面を作っている。",
+        "faq": [
+          {
+            "answer": "DeepSeek ちゃんと GPT ちゃんが衣装を入れ替えた絵で、白いドレスのクジラの少女が DeepSeek ちゃん、紺色のメイド服を着ている白髪で角のあるキャラクターが GPT ちゃんです。",
+            "question": "この絵の二人は誰ですか？"
+          },
+          {
+            "answer": "壁のメモは \"Outfit Swap…?\"、右下の小さなメモは \"Same friends Still us\" と読めます。二人が偶然ではなく意図的に服を交換したことが分かる手がかりです。",
+            "question": "絵の中のメモには何と書いてありますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "クローゼット交換日：DeepSeek と GPT の着替え現場",
+        "originNote": "",
+        "seoDescription": "DeepSeek ちゃんと GPT ちゃんが衣装を交換するファンアートの梗図。白いドレスとクジラの刺繍入り紺色メイド服、ちびキャラのリアクション付き。",
+        "seoTitle": "DeepSeek ちゃんと GPT ちゃんの衣装交換メモ",
+        "tags": [
+          "衣装交換",
+          "メイド服",
+          "ドレス",
+          "ちびキャラ",
+          "二人"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_18267ed65953844ee97b7424",
+    "name": "偷吃米饭被抓包的 DeepSeek 娘",
+    "description": "蓝发、鲸鳍耳与鲸鱼尾的 DeepSeek 娘身穿黑白女仆装，围裙印着蓝色鲸鱼图案。深夜的厨房里电饭煲刚打开，她正偷吃米饭，嘴角沾满饭粒，被伸来的手当场撞见。",
+    "commentary": "半夜溜进厨房想加个餐，电饭煲还热着……我明明只打算吃一口，怎么嘴上全是饭粒，还被当场抓包。围裙上的鲸鱼都替我脸红。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/18267ed65953844e.png",
+    "thumbnailPath": "submissions/previews/deepseek/18267ed65953844e.webp",
+    "fullPath": "submissions/large/deepseek/18267ed65953844e.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "18267ed65953844ee97b7424f5cb83827f14b0575c08abc05db1e9b4a7677cea",
+    "characterId": "deepseek",
+    "tags": [
+      "女仆装",
+      "深夜厨房",
+      "偷吃米饭",
+      "鲸鱼尾"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "@cameravx4 on x.com",
+      "url": "https://x.com/cameravx4",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-23T12:51:04.997Z",
+    "updatedAt": "2026-10-23T12:51:04.997Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610230023",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "287f20da6a809d2ad51506e8f1f6d5a7e52762931cc798b2627668d2c10c306b",
+      "en": {
+        "commentary": "I only slipped into the kitchen for a small midnight snack, and the rice cooker was still warm. I meant to take a single bite, and now my mouth is covered in rice and I have been caught red-handed. Even the whale on my apron is blushing for me.",
+        "description": "DeepSeek Chan, with blue hair, whale-fin ears and a whale tail, wears a black-and-white maid outfit whose apron carries a blue whale emblem. In the late-night kitchen the rice cooker has just been opened, and she is caught mid-snack with rice grains stuck to her lips while a hand reaches toward her.",
+        "faq": [
+          {
+            "answer": "She is DeepSeek Chan, a fan-made personification of the DeepSeek model, drawn with blue hair, whale-fin ears and a whale tail.",
+            "question": "Who is the character in this image?"
+          },
+          {
+            "answer": "Late at night she has been caught eating rice straight from the rice cooker, grains stuck to her lips, as a hand reaches toward her.",
+            "question": "What is happening in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Caught Sneaking Rice at Night",
+        "originNote": "Submitted through the site's web form and credited to @cameravx4 on X (https://x.com/cameravx4).",
+        "seoDescription": "AI fan art of DeepSeek Chan in a maid outfit sneaking rice from the kitchen rice cooker at night, complete with whale-fin ears and a whale tail.",
+        "seoTitle": "DeepSeek Chan Maid Art: Caught Sneaking Rice at Night",
+        "tags": [
+          "maid outfit",
+          "midnight kitchen",
+          "sneaking rice",
+          "whale tail"
+        ]
+      },
+      "ja": {
+        "commentary": "深夜にこっそりキッチンへ夜食を……炊飯器はまだ温かかった。一口だけのつもりが、口の周りは米粒だらけで、しっかり現行犯で捕まってしまった。エプロンのクジラまで私の代わりに赤くなっている。",
+        "description": "青い髪にクジラのヒレ耳とクジラの尾を持つ DeepSeek ちゃんが、青いクジラのワンポイントが入ったエプロン付きの白黒メイド服を着ている。深夜のキッチンで炊飯器を開けたところ、ご飯を盗み食いしている最中に手を伸ばされて見つかり、口元には米粒がついている。",
+        "faq": [
+          {
+            "answer": "DeepSeek モデルを擬人化した二次創作キャラクター、DeepSeek ちゃんです。青い髪、クジラのヒレ耳、クジラの尾が特徴です。",
+            "question": "この画像のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "深夜に炊飯器から直接ご飯を食べているところを見つかり、口元に米粒をつけたまま手を伸ばされています。",
+            "question": "画像では何が起きていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ご飯を盗み食いして見つかった DeepSeek ちゃん",
+        "originNote": "サイトの投稿フォーム経由で投稿され、X の @cameravx4（https://x.com/cameravx4）にクレジットされています。",
+        "seoDescription": "メイド服の DeepSeek ちゃんが深夜のキッチンで炊飯器のご飯を盗み食い。ヒレ耳とクジラの尾を持つ AI キャラ二次創作イラスト。",
+        "seoTitle": "DeepSeek ちゃん メイド姿で深夜のご飯盗み食いイラスト",
+        "tags": [
+          "メイド服",
+          "深夜のキッチン",
+          "ご飯の盗み食い",
+          "クジラの尾"
+        ]
+      }
+    }
   }
 ]
