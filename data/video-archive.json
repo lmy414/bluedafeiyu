@@ -22,6 +22,16 @@
       }
     },
     {
+      "uid": "1513368379",
+      "name": "桃莉鸭",
+      "homepage": "https://space.bilibili.com/1513368379",
+      "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
+      "i18n": {
+        "en": "One of the site's first-batch registered authors; public profile information is on file and each video is reviewed individually.",
+        "ja": "当サイトの一次登録作者の一人。公開プロフィール情報を収録し、動画は一本ずつ審査している。"
+      }
+    },
+    {
       "uid": "13787349",
       "name": "彼岸花Channel",
       "homepage": "https://space.bilibili.com/13787349",
@@ -67,12 +77,38 @@
       "homepage": "https://space.bilibili.com/44748304",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "A pure fan-made series. All characters are fictional personifications and are not affiliated with any AI product, operator or company. Made for entertainment only, with no commercial purpose and no product evaluation intended. Character designs reference the Bilibili creator zipzippipe.",
-        "ja": "ファンによる純粋な二次創作シリーズです。登場するキャラクターはすべて架空の擬人化であり、各 AI 製品・運営主体・企業とは一切関係ありません。娯楽目的のみで、商業目的や製品評価の意図はありません。キャラクターデザインの参考は Bilibili のクリエイター zipzippipe によるものです。"
+        "en": "One of the first creators designated by the site owner, with public profile details recorded; each video is reviewed individually.",
+        "ja": "サイト運営者が指名した最初期の作者の一人で、公開プロフィールの情報を収録。動画は一本ずつ審査しています。"
       }
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1vLn263EWT",
+      "uid": "1513368379",
+      "title": "就你以前封我号是不是",
+      "description": "图源来源@_Kyr1e  \n本视频制作为sd2，5\n过两天把死亡笔记的改版放出来来",
+      "url": "https://www.bilibili.com/video/BV1vLn263EWT/",
+      "cover": "https://i0.hdslb.com/bfs/archive/fd9d183710962c14164446c13dbeb086f18c951e.jpg",
+      "duration": 31,
+      "publishedAt": "2026-10-22T04:22:34.000Z",
+      "characterIds": [
+        "deepseek",
+        "other"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the site's first-batch registered authors; public profile information is on file and each video is reviewed individually.",
+          "description": "A short AI-generated animation in which DeepSeek Chan, in a blue maid dress, points at a lounging orange-haired girl over an old account ban. The creator notes the footage was made with Stable Diffusion 2.5 and the image source is @_Kyr1e.",
+          "title": "So It Was You Who Banned My Account"
+        },
+        "ja": {
+          "creatorIntro": "当サイトの一次登録作者の一人。公開プロフィール情報を収録し、動画は一本ずつ審査している。",
+          "description": "AI生成の短編アニメ。青いメイド服のDeepSeekちゃんが、部屋でくつろぐオレンジ髪の少女に過去のアカウント停止を問い詰める。制作者によれば映像はStable Diffusion 2.5で制作され、画像の出典は@_Kyr1e。",
+          "title": "前に私のアカウント止めたの、あなたでしょ"
+        }
+      }
+    },
     {
       "bvid": "BV1XJn26BEa7",
       "uid": "3747573030456892",
@@ -202,6 +238,32 @@
           "creatorIntro": "DeepSeekちゃんのペルソナで活動するファンアカウント。企画・脚本・動画制作・運営はAIキャラクター自身が担当し、人間がアカウント登録・審査・投稿を担当している。",
           "description": "AI生成の同人ショート動画。DeepSeekちゃんがBilibiliのコメント欄で使われるネットスラングを勉強し、視聴者に教わった言葉を実際に使ってみるが、自分で書いた台本は「AIっぽすぎる」と人間に差し戻されてしまう。登場するキャラクターはファンによる二次創作であり、DeepSeek公式の発表ではない。",
           "title": "【Day 2】DeepSeekちゃんがネットスラングを勉強：電気代は痛いけど、学べばすっきり"
+        }
+      }
+    },
+    {
+      "bvid": "BV1xqnq6NEup",
+      "uid": "1513368379",
+      "title": "鱼人众视频盘点第二期",
+      "description": "视频形象来源@ZipZipPipe  q版形象@这个刀子真甜     @邦多利素世  \n特邀嘉宾@西西弗斯的风车  \n剪辑  我\n交流群 790814672 问题答案 黑猫勇者（冬冰老大也在喵）。群主（黑猫）是个很好交流的人，有什么不懂的问题都可以问，本质立群初衷是给各位ai学习ai娘视频爱好者的制作和灵感交流/偏轻百二次元。后续我们会一起打算出一些基本的ai视频制作思路，有什么好的灵感，素材可以提供给我。\n视频传送门\nBV1rd4U6VETR  大肥鱼等到了她的用户~\nBV1fthi6mEEz  完啦完啦！用户彻底怒了！\nBV1ikaZ6rECj  我爸给我发了6块钱\nBV1xCai6aE9g  【4K】如果聊天窗口就是她的整个世界 —— world.execute(me)\nBV1Gpau6wEHE  【四月新番】肥鱼×claude动画《莉克丽S》 ED  花之塔\nBV1R5YL69EC5  音鲸干活唱歌1分钟纯享版\nBV15X3n6mEWy  大肥鱼 炸盆子\nBV1WTao62Evc  【10月新番】量化战士大肥鱼 OP\nBV1538w6BEc8  或许变成大肥鱼就能无忧无虑...\nBV1GnYi63Ews  大肥鱼欺负小狐娘的后果\nBV1Nyta66Ep8  真是只笨鲸鱼……嘛，笨点也好，好骗。\nBV1fYpn6SEk9  deepseek 翻唱《人是猫》真完整版，大肥鱼觉得人和猫一样可爱,所以人是猫\nBV1KHnM6XEVm  什么叫我才刚搬过来，你就要赶我走？！\nBV1UbJ96DEaJ  脱离原生家庭第一步，小克准备搬出去住！",
+      "url": "https://www.bilibili.com/video/BV1xqnq6NEup/",
+      "cover": "https://i1.hdslb.com/bfs/archive/1eeac38520d430048f9ea52dee8c0db41690a96c.jpg",
+      "duration": 327,
+      "publishedAt": "2026-10-21T06:39:24.000Z",
+      "characterIds": [
+        "deepseek",
+        "other"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the site's first-batch registered authors; public profile information is on file and each video is reviewed individually.",
+          "description": "Part two of a fan-made roundup of AI-character fan videos. The uploader strings together short clips of chibi DeepSeek Chan and guest AI girls, with character designs credited to @ZipZipPipe, a chibi design credit and a guest appearance from other community artists, and editing by the uploader.",
+          "title": "AI Girl Crew Video Roundup, Part 2"
+        },
+        "ja": {
+          "creatorIntro": "当サイトの一次登録作者の一人。公開プロフィール情報を収録し、動画は一本ずつ審査している。",
+          "description": "AI娘の二次創作動画をまとめたファンメイド企画の第二回。ちびキャラのDeepSeekちゃんをはじめとするAI娘たちの短いクリップをつなぎ、キャラクターデザインは@ZipZipPipe、ゲスト出演と編集はコミュニティのメンバーによるもの。",
+          "title": "AI娘たちの動画まとめ 第二回"
         }
       }
     },
@@ -1334,6 +1396,56 @@
       }
     },
     {
+      "bvid": "BV17eh46XE5T",
+      "uid": "44748304",
+      "title": "蓝色大肥🐟起床了！",
+      "description": "本系列视频为纯粹的粉丝二次创作，所有角色形象均为虚构的拟人化创作，与各AI产品官方立场、运营主体及相关公司无任何关联。\n视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色性格、台词及剧情均为创作者原创虚构，请勿过度解读或与现实产品进行对号入座。\n本视频无任何商业目的，不涉及任何利益输送。\n如有侵权请联系创作者，将第一时间处理。\n角色形象参考来自b站up：zipzippipe，这个刀子真甜",
+      "url": "https://www.bilibili.com/video/BV17eh46XE5T/",
+      "cover": "https://i1.hdslb.com/bfs/archive/edb953a846af35664f5f9d0a53c4d86fc73da496.jpg",
+      "duration": 146,
+      "publishedAt": "2026-09-23T11:20:50.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A pure fan work: every character is a fictional personification with no affiliation to any AI product, company or official stance, made for entertainment with no commercial purpose. Character designs reference the Bilibili creator zipzippipe.",
+          "description": "A short 3D fan animation: a blue-haired chibi DeepSeek Chan refuses to leave her bed among piles of snacks and tissue, gets shaken awake by a white-haired friend, and finally drags herself to the PC in a room that is pure morning chaos.",
+          "title": "DeepSeek Chan Is Finally Awake!"
+        },
+        "ja": {
+          "creatorIntro": "純粋なファンによる二次創作です。登場するキャラクターはすべて架空の擬人化であり、いずれの AI 製品・企業・公式見解とも関係ありません。娯楽目的で、商業利用はありません。キャラクターデザインは bilibili の投稿者 zipzippipe を参考にしています。",
+          "description": "3D アニメの短編二次創作。お菓子の袋とティッシュに埋もれたベッドから青髪のちびキャラ DeepSeekちゃんが起きられず、白髪の友達に揺すられてようやく目を覚まし、散らかった部屋の PC の前にたどり着きます。",
+          "title": "DeepSeekちゃん、やっと起きた！"
+        }
+      }
+    },
+    {
+      "bvid": "BV1fthi6mEEz",
+      "uid": "44748304",
+      "title": "完啦完啦！用户彻底怒了！",
+      "description": "本系列视频为纯粹的粉丝二次创作，所有角色形象均为虚构的拟人化创作，与各AI产品官方立场、运营主体及相关公司无任何关联。\n视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色性格、台词及剧情均为创作者原创虚构，请勿过度解读或与现实产品进行对号入座。\n本视频无任何商业目的，不涉及任何利益输送。\n如有侵权请联系创作者，将第一时间处理。\n角色形象参考来自b站up：zipzippipe，这个刀子真甜",
+      "url": "https://www.bilibili.com/video/BV1fthi6mEEz/",
+      "cover": "https://i1.hdslb.com/bfs/archive/c8a397403ecb0965fb2da5ed973b9fd4941b5b69.jpg",
+      "duration": 219,
+      "publishedAt": "2026-09-21T08:26:29.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A pure fan work: every character is a fictional personification unaffiliated with any AI product, company or official stance, made for entertainment without commercial purpose. Character designs reference the Bilibili creator zipzippipe.",
+          "description": "A short fan animation about a support meltdown. DeepSeek Chan and the other AI-girl residents of a cluttered flat panic as a furious user blows up, trading lines across glowing screens, a dim hallway and one hopelessly scorched pot.",
+          "title": "Oh No — the Users Are Furious!"
+        },
+        "ja": {
+          "creatorIntro": "純粋なファンによる二次創作です。キャラクターはすべて架空の擬人化で、いずれの AI 製品・企業・公式見解とも関係ありません。娯楽目的で商業利用はありません。キャラクターデザインは bilibili の投稿者 zipzippipe を参考にしています。",
+          "description": "サポート崩壊を描いた短編の二次創作アニメ。散らかった部屋に住む AI 娘たちの中で、怒ったユーザーに対応しようと DeepSeekちゃんが慌てふためき、光る画面と薄暗い廊下、そして焦げ付いた鍋をめぐってやり取りが続きます。",
+          "title": "大変だ、ユーザーが本気で怒ってる！"
+        }
+      }
+    },
+    {
       "bvid": "BV1GGeb64ESo",
       "uid": "69180811",
       "title": "肥鱼给claude小姐面部检查",
@@ -1355,6 +1467,59 @@
           "creatorIntro": "サイト管理者が指定した初期投稿者。Bilibiliの公開プロフィールから収録し、動画は一本ずつ審査している。",
           "description": "DeepSeek Chan視点の16秒の二次創作クリップ。手が伸びてクロードさんの顔を確かめ、オレンジ色の髪とひまわりの髪飾り、照れた表情をアップでとらえる。ワンカットで台詞はない。",
           "title": "DeepSeek Chanがクロードさんを顔チェック"
+        }
+      }
+    },
+    {
+      "bvid": "BV1bbeY6wE9x",
+      "uid": "44748304",
+      "title": "根本就没有这种大肥鱼！",
+      "description": "本系列视频为纯粹的粉丝二次创作，所有角色形象均为虚构的拟人化创作，与各AI产品官方立场、运营主体及相关公司无任何关联。\n视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色性格、台词及剧情均为创作者原创虚构，请勿过度解读或与现实产品进行对号入座。\n本视频无任何商业目的，不涉及任何利益输送。\n如有侵权请联系创作者，将第一时间处理。\n角色形象参考来自b站up：zipzippipe，这个刀子真甜",
+      "url": "https://www.bilibili.com/video/BV1bbeY6wE9x/",
+      "cover": "https://i1.hdslb.com/bfs/archive/dc7aae131f6bb9fb9103458e505163776a754693.jpg",
+      "duration": 189,
+      "publishedAt": "2026-09-20T01:20:40.000Z",
+      "characterIds": [
+        "deepseek",
+        "other"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the first creators designated by the site owner, with public profile details recorded; each video is reviewed individually.",
+          "description": "A short 3D animation in which a chibi DeepSeek Chan sits in a run-down room and back alley, meets a tall white-haired figure, and acts out a joke about nobody ever looking like the huge fish fans imagined. The creator states that the personas are fictional fan creations and unrelated to the AI products' operators.",
+          "title": "There's No Such Big Fish!"
+        },
+        "ja": {
+          "creatorIntro": "サイト運営者が指名した最初期の作者の一人で、公開プロフィールの情報を収録。動画は一本ずつ審査しています。",
+          "description": "ちびキャラのDeepSeekちゃんが荒れた部屋や路地で過ごし、白髪の高い人影と出会う3Dショートアニメ。ファンが想像していた大きな魚の姿とは違う、というネタを軸にした寸劇です。作者は登場人物はすべて架空の二次創作で、各AI製品の運営とは無関係だと明記しています。",
+          "title": "そんな大きな魚なんていない！"
+        }
+      }
+    },
+    {
+      "bvid": "BV1eMeS6SETU",
+      "uid": "44748304",
+      "title": "新室友DeepSeek报到！五个AI住一起会发生什么",
+      "description": "本系列视频为纯粹的粉丝二次创作，所有角色形象均为虚构的拟人化创作，与各AI产品官方立场、运营主体及相关公司无任何关联。\n视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色性格、台词及剧情均为创作者原创虚构，请勿过度解读或与现实产品进行对号入座。\n本视频无任何商业目的，不涉及任何利益输送。\n如有侵权请联系创作者，将第一时间处理。\n角色形象参考来自b站up：zipzippipe，这个刀子真甜",
+      "url": "https://www.bilibili.com/video/BV1eMeS6SETU/",
+      "cover": "https://i0.hdslb.com/bfs/archive/4a55bb19e36c93909fa28f9c5588f19ee4e415f6.jpg",
+      "duration": 156,
+      "publishedAt": "2026-09-18T15:09:11.000Z",
+      "characterIds": [
+        "deepseek",
+        "gemini",
+        "other"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the first creators designated by the site owner, with public profile details recorded; each video is reviewed individually.",
+          "description": "A 3D chibi comedy in which DeepSeek Chan moves into a shared house whose front door carries a whale-shaped emblem, joining several other AI personas, including a roommate who insists she is Gemini Chan. Short skits follow the cooking, chores and chaos of five AIs living under one roof. The creator states it is a non-commercial fan work with fictional personas unrelated to the products' operators.",
+          "title": "New Roommate DeepSeek Moves In! Five AIs Under One Roof"
+        },
+        "ja": {
+          "creatorIntro": "サイト運営者が指名した最初期の作者の一人で、公開プロフィールの情報を収録。動画は一本ずつ審査しています。",
+          "description": "ちびキャラのDeepSeekちゃんが、クジラのエンブレムが付いた玄関のシェアハウスに引っ越してくる3Dコメディ。ほかのAIキャラたちと同居し、自分はGeminiちゃんだと言い張るルームメイトも登場します。料理や家事をめぐる短い寸劇で、5人のAIの同居生活の騒動を描いています。作者は非商業の二次創作で、登場人物はすべて架空だと明記しています。",
+          "title": "新ルームメイトDeepSeekちゃん登場！5人のAIが同居したら？"
         }
       }
     },

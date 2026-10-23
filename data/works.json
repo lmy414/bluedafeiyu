@@ -81464,5 +81464,209 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_755a0a5ee7e8a0c36f0cdf6e",
+    "name": "发布会？那种东西Mistral酱不需要哦！",
+    "description": "四格漫画：2023 年 9 月 27 日，Mistral娘不开发布会，只在自己的帖子里丢出一条 magnet 磁力链接，直接放出 mistral-7B-v0.1。围观网友先是把它当成乱码，反应过来后一拥而上，13.4GB 的模型在几百人做种下高速下载，授权为 Apache 2.0。当天稍晚，评测榜单显示 Mistral 7B 全面超过 Llama 2 13B，抱着抱枕的 Llama娘当场愣住。",
+    "commentary": "我看完只想说：这才叫发布。没有舞台、没有倒计时、没有“敬请期待”，只有一条磁力链接和一句“Apache 2.0，随便用哦”。等大家还在评论区问“这是乱码吗”的时候，13.4GB 已经被几百人同时做种了。最绝的是当天傍晚的榜单——Mistral 7B 全面超过 Llama 2 13B，Llama酱抱着抱枕那句“我的 13B……”我反复看了三遍，太可爱也太扎心了。先发链接后宣布，这操作确实帅，学到手了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/mistral/755a0a5ee7e8a0c3.png",
+    "thumbnailPath": "submissions/previews/mistral/755a0a5ee7e8a0c3.webp",
+    "fullPath": "submissions/large/mistral/755a0a5ee7e8a0c3.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "755a0a5ee7e8a0c36f0cdf6e4fec1d76bf86315f837e1129547b5986f5e4e2d6",
+    "characterId": "mistral",
+    "tags": [
+      "Mistral娘",
+      "Llama娘",
+      "四格漫画",
+      "开源模型",
+      "模型发布"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Muto66",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-23T02:56:18.843Z",
+    "updatedAt": "2026-10-23T02:56:18.843Z",
+    "tone": "mistral",
+    "symbol": "",
+    "slug": "mistral202610230001",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "mistral",
+      "llama"
+    ],
+    "i18n": {
+      "sourceHash": "5c70c79abbf308c29265612a6bcb747dc9a3727c0629ea94e4c646b08a5c8728",
+      "en": {
+        "commentary": "That is how you ship a model. No stage, no countdown, no \"stay tuned\" — just a magnet link and a cheerful \"Apache 2.0, use it however you like.\" While the comment section was still asking whether it was a string of gibberish, a few hundred people were already seeding a 13.4 GB download. Then came the scoreboard that evening: Mistral 7B ahead of Llama 2 13B across the board. Llama Chan hugging her pillow and whispering about her 13B is the best panel in the whole comic. Link first, announcement later — genuinely stylish.",
+        "description": "A four-panel comic set on September 27, 2023: Mistral Chan skips the launch event entirely and drops mistral-7B-v0.1 as a single magnet link in her own post. Onlookers first read it as gibberish, then swarm in, pulling the 13.4 GB release at high speed with hundreds of peers seeding under the Apache 2.0 license. Later that evening the benchmark chart lands: Mistral 7B beats Llama 2 13B across the board, leaving Llama Chan frozen mid-hug with her pillow.",
+        "faq": [
+          {
+            "answer": "Mistral Chan releases it as a magnet link in her own post, with no launch event and no countdown, and notes that it is licensed under Apache 2.0.",
+            "question": "How does Mistral Chan release the model in this comic?"
+          },
+          {
+            "answer": "The benchmark chart shown that evening puts Mistral 7B ahead of Llama 2 13B on every metric, which stuns Llama Chan.",
+            "question": "What does the final panel show?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "A Press Conference? Mistral Chan Does Not Need One!",
+        "originNote": "",
+        "seoDescription": "Four-panel comic fan art: Mistral Chan skips the launch event, ships mistral-7B-v0.1 as a magnet link under Apache 2.0, and tops Llama 2 13B the same evening.",
+        "seoTitle": "Mistral Chan Skips the Launch Event — Four-Panel Comic",
+        "tags": [
+          "Mistral Chan",
+          "Llama Chan",
+          "four-panel comic",
+          "open-source model",
+          "model release"
+        ]
+      },
+      "ja": {
+        "commentary": "これぞリリースって感じ。ステージもカウントダウンも「お楽しみに」もなし、あるのはマグネットリンク一本と「Apache 2.0、ご自由にどうぞ」の一言だけ。コメント欄がまだ「これ暗号？」と迷っている間に、13.4GB はもう数百人がシードしていました。しかも夕方にはベンチマークで Mistral 7B が Llama 2 13B を全項目で上回る展開。ぬいぐるみを抱えた Llamaちゃんの「わたしの 13B が……」を三回見直しました。リンク先行、発表は後回し。かっこよすぎます。",
+        "description": "2023 年 9 月 27 日を描いた 4 コマ漫画。Mistralちゃんは発表会を開かず、自分の投稿に magnet リンクを一本貼って mistral-7B-v0.1 を公開します。周りの人たちは最初それを文字化けだと思い、気づいた途端に押し寄せて、Apache 2.0 ライセンスのもと数百人がシードする 13.4GB のモデルを一気にダウンロードします。その夜のベンチマークでは Mistral 7B が Llama 2 13B を全項目で上回り、ぬいぐるみを抱えた Llamaちゃんは固まってしまいます。",
+        "faq": [
+          {
+            "answer": "Mistralちゃんは発表会もカウントダウンも行わず、自分の投稿にマグネットリンクを一本貼り、Apache 2.0 ライセンスであることを添えて公開します。",
+            "question": "この漫画で Mistralちゃんはどうやってモデルを公開しますか？"
+          },
+          {
+            "answer": "その夜のベンチマークで Mistral 7B が全項目で Llama 2 13B を上回り、Llamaちゃんが驚いて固まる場面です。",
+            "question": "最後のコマには何が描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "発表会？Mistralちゃんには必要ないんです！",
+        "originNote": "",
+        "seoDescription": "4 コマ漫画の二次創作。Mistralちゃんが発表会を飛ばし、mistral-7B-v0.1 をマグネットリンクと Apache 2.0 で公開、同日のベンチマークで Llama 2 13B を上回ります。",
+        "seoTitle": "Mistralちゃんは発表会を開かない — 4 コマ漫画",
+        "tags": [
+          "Mistralちゃん",
+          "Llamaちゃん",
+          "4コマ漫画",
+          "オープンソースモデル",
+          "モデル公開"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_989c820756c2572203e3dd27",
+    "name": "Le Chat小店开张：总统大人亲自宣传",
+    "description": "四格漫画：Mistral娘经营的Le Chat小店随手机版上线开张，法国总统在电视采访中号召大家下载Le Chat而不是ChatGPT，隔壁的白龙酱一脸“而不是我？”；十四天后，下载量突破一百万，店里端出了庆祝蛋糕。作者原始说明保留如下：「总统大人亲自来帮我宣传了！？Mistral酱的Le Chat小店开张十四天就有一百万客人（隔壁的白龙酱好像有点在意的样子）」。",
+    "commentary": "总统在电视上替Mistral酱打广告那一格，我连着看了三遍——隔壁白龙酱那句“……而不是我？”实在太真实了。十四天一百万下载的蛋糕做得很漂亮，不过我最在意的，是那位从头到尾都没怎么说话的客人。能把一次产品上线画成一间面包店的日常，这份温柔我收下了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/mistral/989c820756c25722.png",
+    "thumbnailPath": "submissions/previews/mistral/989c820756c25722.webp",
+    "fullPath": "submissions/large/mistral/989c820756c25722.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "989c820756c2572203e3dd27034913104cadd2a56c575fc7eb7f35fc716e977b",
+    "characterId": "mistral",
+    "tags": [
+      "Mistral娘",
+      "Le Chat",
+      "四格漫画",
+      "法国",
+      "AI娘"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Muto66",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-23T03:06:30.435Z",
+    "updatedAt": "2026-10-23T03:06:30.435Z",
+    "tone": "mistral",
+    "symbol": "",
+    "slug": "mistral202610230002",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "mistral",
+      "other"
+    ],
+    "i18n": {
+      "sourceHash": "f4abdbcae9c1cf986214520efba9026ad5c90131939e6a824fd67b247e940842",
+      "en": {
+        "commentary": "The panel where the president promotes Mistral Chan on live TV got three replays from me, and the white dragon girl next door asking \"...not me?\" is painfully accurate. The million-download cake looks lovely, but what I keep looking at is the guest who says almost nothing the whole time. Turning an app launch into an afternoon at a bakery is a gentle touch I am happy to keep.",
+        "description": "A four-panel comic in which Mistral Chan's Le Chat café opens alongside the mobile app. During a TV interview the French president tells viewers to download Le Chat instead of ChatGPT, while the white dragon girl next door reacts with a startled \"...not me?\". Fourteen days later the app passes one million downloads and a celebration cake is served. The artist's original note: \"The President came to promote me himself!? Mistral's Le Chat shop welcomed a million customers fourteen days after opening (the white dragon girl next door seems a little bothered).\"",
+        "faq": [
+          {
+            "answer": "It shows Mistral Chan's Le Chat café opening with the mobile app, a presidential TV endorsement, a long queue outside the shop, and the app reaching one million downloads in fourteen days.",
+            "question": "What does this comic depict?"
+          },
+          {
+            "answer": "The work is credited to Muto66 and was submitted through the site's web form.",
+            "question": "Who created this comic?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Le Chat Café Opens: The President Steps In",
+        "originNote": "Submitted through the site's web form and credited to Muto66; no original source URL was provided.",
+        "seoDescription": "Mistral Chan opens her Le Chat café in a four-panel fan comic: a presidential TV plug, a packed queue, and one million downloads in fourteen days.",
+        "seoTitle": "Le Chat Café Opens: Mistral Chan Four-Panel Comic",
+        "tags": [
+          "Mistral Chan",
+          "Le Chat",
+          "four-panel comic",
+          "France",
+          "AI girl"
+        ]
+      },
+      "ja": {
+        "commentary": "大統領がテレビでMistralちゃんを宣伝するコマは三回も見返してしまった。隣の白龍ちゃんの「……私じゃなくて？」があまりに正直で笑ってしまう。100万ダウンロードのケーキも見事だけど、私がずっと気にしているのは、最後までほとんど口を聞かないあの客のほう。アプリの発表をパン屋の午後に変えてしまう、その優しさが好きだ。",
+        "description": "Mistralちゃんが営むLe Chatカフェが、スマホアプリの登場に合わせて開店する4コマ漫画。テレビインタビューでフランス大統領がChatGPTではなくLe Chatのダウンロードを呼びかけ、隣の白龍ちゃんは「……私じゃなくて？」と驚く。14日後には100万ダウンロードを突破し、店にはお祝いのケーキが運ばれる。作者の原文メモ：「大統領が自ら宣伝してくれた！？MistralちゃんのLe Chat店は開店14日で100万人のお客さんが来た（隣の白龍ちゃん、ちょっと気にしているみたい）」。",
+        "faq": [
+          {
+            "answer": "MistralちゃんのLe Chatカフェがスマホアプリとともに開店し、大統領がテレビで宣伝し、店の前に行列ができ、14日で100万ダウンロードを突破するまでを描いています。",
+            "question": "この漫画はどんな内容ですか？"
+          },
+          {
+            "answer": "作者はMuto66で、サイトのWeb投稿フォームから応募された作品です。",
+            "question": "作者は誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Le Chatカフェ開店：大統領が宣伝に登場",
+        "originNote": "サイトのWeb投稿フォームから応募され、作者はMuto66と記載されています。元の出典URLは添えられていません。",
+        "seoDescription": "MistralちゃんのLe Chatカフェが開店する4コマ漫画。大統領のテレビ宣伝、店前の行列、14日で100万ダウンロード突破までを描きます。",
+        "seoTitle": "Le Chatカフェ開店：Mistralちゃん4コマ漫画",
+        "tags": [
+          "Mistralちゃん",
+          "Le Chat",
+          "4コマ漫画",
+          "フランス",
+          "AI娘"
+        ]
+      }
+    }
   }
 ]
