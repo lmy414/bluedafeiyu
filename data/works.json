@@ -81249,5 +81249,220 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_895e9b15f12d6bb316301b57",
+    "name": "风车与巨人",
+    "description": "蓝发的 DeepSeek 娘化作巨人，把铁桶扣在头上当头盔，手摇一台木制风扇，将一块巨石吹向脚下的村庄；村道上的人们仰头惊呼，远处是田野与山丘。",
+    "commentary": "有人说我是风车，有人说我是巨人——那我干脆两样都当一下。铁桶是临时抓来当头盔的，风扇是手摇的，石头是真的大。底下喊我的那些小家伙别怕，我只是想把风送得远一点。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/895e9b15f12d6bb3.png",
+    "thumbnailPath": "submissions/previews/deepseek/895e9b15f12d6bb3.webp",
+    "fullPath": "submissions/large/deepseek/895e9b15f12d6bb3.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "895e9b15f12d6bb316301b57509aad4b42aafabe79f9973db3d78eeb16dec5c4",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "巨人",
+      "风车",
+      "手摇风扇",
+      "同人插画"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "CF41AD78A470E40CFB220588CD9F77E9",
+      "messageId": "ROBOT1.0_dBzv8nwUPKlH2q59z5cJBcFZaCd7t325W93JD3mAGhYsC4wZciiO-641opQBG8fOpjAGr3mmidng5AAwGUZ6x23Hgh8BvGz.-smLYuIMD715v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-23T02:36:58.548Z",
+    "updatedAt": "2026-10-23T02:36:58.548Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610230002",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "ab3fd8fd0b609090bb581bbb9cce55f43d5c5a2d4b37d7016a1dc7686ab49bf5",
+      "en": {
+        "commentary": "Some call me a windmill, some call me a giant, so I decided to be both at once. The bucket was grabbed at the last second for a helmet, the fan is hand-cranked, and the boulder is very real. Don't worry, little ones shouting up at me down there, I only wanted the wind to reach a bit farther.",
+        "description": "A blue-haired DeepSeek Chan becomes a giant, wearing a metal bucket as a helmet and cranking a wooden fan that drives a huge boulder toward the village at her feet, while villagers on the road look up in alarm and fields and hills stretch behind them.",
+        "faq": [
+          {
+            "answer": "It is a single-frame fan illustration of DeepSeek Chan in a giant-sized gag, with a full village scene, so it is filed as an illustration rather than a comic or a standalone meme.",
+            "question": "What kind of artwork is this piece?"
+          },
+          {
+            "answer": "The bucket helmet, the hand-cranked fan and the boulder turned loose on the village, all played against the tiny onlookers below.",
+            "question": "Which details carry the joke in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Windmill and the Giant",
+        "originNote": "",
+        "seoDescription": "Fan illustration of DeepSeek Chan as a giant wearing a bucket helmet and cranking a fan that blows a boulder toward a tiny village.",
+        "seoTitle": "The Windmill and the Giant — DeepSeek Chan as a Giant | Fan Art",
+        "tags": [
+          "DeepSeek Chan",
+          "giant",
+          "windmill",
+          "hand-cranked fan",
+          "fan illustration"
+        ]
+      },
+      "ja": {
+        "commentary": "風車だと言われたり、巨人だと言われたり、じゃあ両方やってみようって思っただけ。バケツはその辺から引っぱってきた兜、扇風機は手回し、岩は本物。下で叫んでる小さな子たち、扇風機を手で回してるだけだから、風を遠くまで届けたいだけなんだ。",
+        "description": "青い髪の DeepSeek ちゃんが巨人になって、バケツを兜のようにかぶり、木製の扇風機を手で回して大きな岩を足もとの村へ吹き飛ばしている。道の人々は驚いて見上げ、奥には田畑と丘が広がる。",
+        "faq": [
+          {
+            "answer": "村全体を背景にした一枚絵のギャグ表現なので、漫画でも単独のミームでもなく、イラストとして分類しています。",
+            "question": "この作品はどんな種類の絵ですか？"
+          },
+          {
+            "answer": "バケツの兜、手回しの扇風機、そして村へ向かって飛んでいく大きな岩と、足もとで見上げる小さな人々の対比です。",
+            "question": "この絵の笑いどころはどこですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "風車と巨人",
+        "originNote": "",
+        "seoDescription": "バケツを兜にした巨人の DeepSeek ちゃんが、手回しの扇風機で大きな岩を小さな村へ吹き飛ばすファンイラスト。",
+        "seoTitle": "風車と巨人 — 巨人になった DeepSeek ちゃん | ファンアート",
+        "tags": [
+          "DeepSeek ちゃん",
+          "巨人",
+          "風車",
+          "手回し扇風機",
+          "ファンイラスト"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_ee8732f2e6aa1c8514b8d575",
+    "name": "滚石、巨鲸与风车",
+    "description": "蓝发鲸尾的 DeepSeek 娘身穿深蓝色女仆装，头顶一只倒扣的铁桶，双手扶着一座风车模型站在乡间土路上；一枚巨大的滚石带着尘土从她身后滚来，远处是风车房与村舍。",
+    "commentary": "头顶铁桶就敢出门，手里还举着一座大风车，身后这颗滚石已经碾着尘土追上来了——我大概是唐吉诃德和推石头的西西弗斯合体了吧。不过没关系，只要风车还在转，我就能一直往前走。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/ee8732f2e6aa1c85.png",
+    "thumbnailPath": "submissions/previews/deepseek/ee8732f2e6aa1c85.webp",
+    "fullPath": "submissions/large/deepseek/ee8732f2e6aa1c85.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "ee8732f2e6aa1c8514b8d5751a6af790c33b9f89e15cbac776a858def8124792",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "女仆装",
+      "风车",
+      "滚石",
+      "鲸尾",
+      "乡村"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "CF41AD78A470E40CFB220588CD9F77E9",
+      "messageId": "ROBOT1.0_dBzv8nwUPKlH2q59z5cJBVrTC2nc8LwA4Zvam7SqKcZNFqTdiUw5B1d63GNCGqDvDQIfO7f2MBq0.dbhJmCltMdoFxJrvARliuefKeuefpl5v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-23T02:45:39.518Z",
+    "updatedAt": "2026-10-23T02:45:39.518Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610230003",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "9bbe935ce7b61a291abad1c7c6e79fd5e37664d59369dc383ff57abf923d6f5d",
+      "en": {
+        "commentary": "I walked out with a bucket on my head and an entire windmill in my arms, and that boulder is already kicking up dust right behind me. I suppose I am Don Quixote and Sisyphus rolled into one — but as long as the windmill keeps turning, I will keep walking.",
+        "description": "A blue-haired DeepSeek Chan with a whale tail wears a navy maid outfit and an overturned iron bucket on her head, holding a model windmill on a country dirt road while a giant boulder rolls up behind her in a cloud of dust, with a windmill house and cottages in the distance.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, the personified DeepSeek character, shown with her signature blue hair, whale tail and navy maid outfit.",
+            "question": "Which character appears in this illustration?"
+          },
+          {
+            "answer": "It is a single-scene fan illustration: a windmill model in her hands, a bucket on her head, and a huge boulder rolling along the road behind her.",
+            "question": "What is happening in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Rolling Stone, the Whale and the Windmill",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in a navy maid outfit with a bucket on her head, holding a windmill model as a giant boulder rolls past — an AI-character fan illustration.",
+        "seoTitle": "DeepSeek Chan Fan Art: Rolling Stone, Whale and Windmill",
+        "tags": [
+          "DeepSeek Chan",
+          "maid outfit",
+          "windmill",
+          "rolling stone",
+          "whale tail",
+          "countryside"
+        ]
+      },
+      "ja": {
+        "commentary": "頭にバケツをかぶって、両手に大きな風車を抱えて出かけたら、後ろからあの岩がもう土煙を上げて追いかけてきた。ドン・キホーテとシシュフォスが合体したみたいだけど、風車が回っている限り、私は歩き続けられる。",
+        "description": "青い髪と鯨の尾を持つ DeepSeek ちゃんが、紺色のメイド服に逆さにした鉄のバケツをかぶり、風車の模型を両手で支えて田舎道に立っている。背後からは巨大な岩が土煙を上げて転がってくる。遠くには風車小屋と村の家並みが見える。",
+        "faq": [
+          {
+            "answer": "DeepSeek ちゃんです。DeepSeek を擬人化したキャラクターで、トレードマークの青い髪と鯨の尾、紺色のメイド服が描かれています。",
+            "question": "このイラストにはどのキャラクターが登場しますか？"
+          },
+          {
+            "answer": "風車の模型を手に、頭にバケツをかぶったまま田舎道に立つ一人の場面です。後ろでは巨大な岩が道を転がってきています。",
+            "question": "画面では何が起きていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "転がる石と、巨大な鯨と、風車",
+        "originNote": "",
+        "seoDescription": "紺のメイド服にバケツをかぶった DeepSeek ちゃんが風車の模型を手に、転がる巨石のそばに立つ AI キャラクターの二次創作イラスト。",
+        "seoTitle": "DeepSeek ちゃん ファンアート「転がる石と鯨と風車」",
+        "tags": [
+          "DeepSeek ちゃん",
+          "メイド服",
+          "風車",
+          "転がる石",
+          "鯨の尾",
+          "田舎"
+        ]
+      }
+    }
   }
 ]

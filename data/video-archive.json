@@ -67,8 +67,8 @@
       "homepage": "https://space.bilibili.com/44748304",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "A Bilibili creator making chibi animations about AI characters; the video is presented as entertainment rather than a product review.",
-        "ja": "AIキャラクターのちびアニメを投稿しているBilibiliのクリエイター。動画は製品評価ではなく娯楽として公開されている。"
+        "en": "A pure fan-made series. All characters are fictional personifications and are not affiliated with any AI product, operator or company. Made for entertainment only, with no commercial purpose and no product evaluation intended. Character designs reference the Bilibili creator zipzippipe.",
+        "ja": "ファンによる純粋な二次創作シリーズです。登場するキャラクターはすべて架空の擬人化であり、各 AI 製品・運営主体・企業とは一切関係ありません。娯楽目的のみで、商業目的や製品評価の意図はありません。キャラクターデザインの参考は Bilibili のクリエイター zipzippipe によるものです。"
       }
     }
   ],
@@ -1206,6 +1206,31 @@
       }
     },
     {
+      "bvid": "BV1qdan6MENR",
+      "uid": "44748304",
+      "title": "姐你到底会不会开车啊",
+      "description": "视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色形象参考来自b站up：@ZipZipPipe   @这个刀子真甜   @上善无形  原曲 BV1XbY66nEWr",
+      "url": "https://www.bilibili.com/video/BV1qdan6MENR/",
+      "cover": "https://i1.hdslb.com/bfs/archive/367c3ae3e4ba67e0b250a4afcbbddb4b88ed6d6b.jpg",
+      "duration": 170,
+      "publishedAt": "2026-09-29T12:59:25.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "冬冰 is a Bilibili creator who makes short comedic animations starring personified AI products.",
+          "description": "A short comedic animation starring two blue-haired DeepSeek Chan characters in maid outfits who take a blue sports car out for a drive, pull into a convenience store, stop for grilled skewers and end up in a cinema with snacks.",
+          "title": "Sis, Can You Even Drive?"
+        },
+        "ja": {
+          "creatorIntro": "冬冰は、AI製品の擬人化キャラクターを題材にした短編コメディアニメを制作しているBilibiliのクリエイターです。",
+          "description": "メイド服姿の青い髪の DeepSeek ちゃん二人が青いスポーツカーでドライブに出て、コンビニに寄り、焼き串を食べ、最後は映画館でお菓子を広げる短編コメディアニメ。",
+          "title": "お姉ちゃん、運転できるの？"
+        }
+      }
+    },
+    {
       "bvid": "BV17raq6QEjQ",
       "uid": "69180811",
       "title": "这时候你还装什么啊!铁盆怪兽来了快跑啊！",
@@ -1253,6 +1278,31 @@
           "creatorIntro": "サイト運営者が指定した最初期の作者の一人。動画は1本ずつ審査される。",
           "description": "DeepSeekちゃんとClaudeちゃんが共演するファンメイドのED風アニメーション。楽曲「花の塔」に合わせ、AI画像・動画ツールとAE、PSで名場面や絵コンテを再現し、約96秒に編集している。",
           "title": "4月新作ED：DeepSeekちゃん×Claudeちゃん「花の塔」"
+        }
+      }
+    },
+    {
+      "bvid": "BV1c5aP6wE8d",
+      "uid": "44748304",
+      "title": "一人只能吃一碗嘛",
+      "description": "本系列视频为纯粹的粉丝二次创作，所有角色形象均为虚构的拟人化创作，与各AI产品官方立场、运营主体及相关公司无任何关联。\n视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色性格、台词及剧情均为创作者原创虚构，请勿过度解读或与现实产品进行对号入座。\n本视频无任何商业目的，不涉及任何利益输送。\n如有侵权请联系创作者，将第一时间处理。\n角色形象参考来自b站up：zipzippipe，这个刀子真甜",
+      "url": "https://www.bilibili.com/video/BV1c5aP6wE8d/",
+      "cover": "https://i0.hdslb.com/bfs/archive/3abcad871d46ed87e3fe478749579f19e7b256e2.jpg",
+      "duration": 209,
+      "publishedAt": "2026-09-25T00:00:00.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A pure fan-made series. All characters are fictional personifications and are not affiliated with any AI product, operator or company. Made for entertainment only, with no commercial purpose and no product evaluation intended. Character designs reference the Bilibili creator zipzippipe.",
+          "description": "A chibi fan animation: DeepSeek Chan and other AI mascot girls share a shelter packed with instant noodles and snacks, where a single bowl of food turns into a small, tearful drama.",
+          "title": "Only One Bowl Per Person?"
+        },
+        "ja": {
+          "creatorIntro": "ファンによる純粋な二次創作シリーズです。登場するキャラクターはすべて架空の擬人化であり、各 AI 製品・運営主体・企業とは一切関係ありません。娯楽目的のみで、商業目的や製品評価の意図はありません。キャラクターデザインの参考は Bilibili のクリエイター zipzippipe によるものです。",
+          "description": "ちびキャラのファンアニメ。インスタント麺とお菓子が山積みのシェルターで暮らす DeepSeek ちゃんたち AI キャラクターの、一杯の食事をめぐる小さな悲しい出来事を描いています。",
+          "title": "一人一杯だけなの？"
         }
       }
     },
