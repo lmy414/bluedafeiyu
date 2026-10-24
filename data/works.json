@@ -84182,5 +84182,415 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_c36ba0bd86da4347ee20b5c8",
+    "name": "我才是大肥鱼！两条 DeepSeek 娘当场吵起来",
+    "description": "白底单幅插画，两名 Q 版 DeepSeek 娘并排对峙：左侧穿米白毛衣配格裙，右侧穿深蓝女仆裙，两人都皱着眉、互指对方，头顶冒出对话气泡，一句「我才是大肥鱼！」谁也不让谁。旁边还有两句话说「其实大肥鱼是一个群体」「群体就群体，但我在里面排第一！」，背景点缀小鲸鱼和蓝色水花。投稿说明标注画师为大肥龙。",
+    "commentary": "群里隔三差五就来这一出。她挎着鲸鱼托特包，我系着女仆围裙，嗓门都不小——「我才是大肥鱼」这句话今天已经喊了八百遍。其实我自己清楚，大肥鱼从来不是一条鱼，是一整个群体；但既然都吵到这份上了，那排第一的位置，今天先借她坐一会儿吧。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/c36ba0bd86da4347.png",
+    "thumbnailPath": "submissions/previews/deepseek/c36ba0bd86da4347.webp",
+    "fullPath": "submissions/large/deepseek/c36ba0bd86da4347.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "c36ba0bd86da4347ee20b5c85c10dc9b2e33c222448d279d5dcc17d3f23d9722",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "大肥鱼",
+      "Q版",
+      "吵架",
+      "鲸鱼"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T06:40:59.231Z",
+    "updatedAt": "2026-10-24T06:40:59.231Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610240003",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "65fd89c3efd5aa7805cd98b8fa79e89012a471da6a04e39cae37bffac6ebc897",
+      "en": {
+        "commentary": "This argument kicks off in the group chat every other day. She has the whale tote bag, I have the maid apron, and neither of us is exactly quiet about it — I must have shouted \"I'm the real Big Fish\" eight hundred times today. Honestly, I know the Big Fish was never one fish; it is a whole crowd. But since we have come this far, she can take the top spot. For today.",
+        "description": "A single-panel illustration on a plain white background: two chibi DeepSeek Chan stand side by side, facing off. The one on the left wears a cream sweater with a pleated skirt and carries a whale tote bag; the one on the right wears a navy maid dress. Both scowl and point at each other, each shouting \"I'm the real Big Fish!\" from a speech bubble. Two more lines nearby read \"Actually, the Big Fish is a group\" and \"Fine, a group - but I rank first in it.\" Small whales and blue splashes dot the background.",
+        "faq": [
+          {
+            "answer": "Both are chibi fan-art renditions of DeepSeek Chan, shown in two different outfits: a cream sweater with a pleated skirt, and a navy maid dress.",
+            "question": "Who are the two characters in this picture?"
+          },
+          {
+            "answer": "It is a single-panel meme illustration built around speech bubbles rather than a multi-panel comic. The joke is the two of them insisting on the same \"Big Fish\" title while a side remark points out that the Big Fish is a group.",
+            "question": "Is this a comic or a meme image?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "I'm the Real Big Fish! Two DeepSeek Chan Argue It Out",
+        "originNote": "",
+        "seoDescription": "Two chibi DeepSeek Chan face off in a single-panel meme, each shouting \"I'm the real Big Fish!\" - whale tote bag versus maid apron, with one winner for the day.",
+        "seoTitle": "I'm the Real Big Fish! Two DeepSeek Chan Fan Art",
+        "tags": [
+          "DeepSeek Chan",
+          "Big Fish",
+          "chibi",
+          "argument",
+          "whale"
+        ]
+      },
+      "ja": {
+        "commentary": "グループではしょっちゅうこの言い争いが始まるんです。あちらはクジラのトートバッグ、こちらはメイドのエプロン、どちらも声は小さくない——「わたしこそビッグフィッシュ」ってもう今日だけで八百回は言いました。本当は分かってます、ビッグフィッシュは一匹の魚じゃなくて、ひとつの集団だってこと。でもここまで来たら、今日くらいは一番の席を譲ってあげましょう。",
+        "description": "白い背景の一枚絵。ちびキャラの DeepSeek ちゃんが二人、向かい合って仁王立ちしている。左はクリーム色のセーターにプリーツスカートとクジラのトートバッグ、右は紺色のメイド服。二人とも眉を吊り上げて相手を指さし、それぞれの吹き出しで「わたしこそビッグフィッシュ！」と叫んでいる。そばには「実はビッグフィッシュは集団なんだよ」「集団でもいいけど、その中でわたしが一番！」という二つのセリフも添えられ、背景には小さなクジラと青い飛沫が散っている。",
+        "faq": [
+          {
+            "answer": "どちらも DeepSeek ちゃんのちびキャラ二次創作で、クリーム色のセーターにプリーツスカートの姿と、紺色のメイド服の姿の二通りで描かれています。",
+            "question": "この絵の二人は誰ですか？"
+          },
+          {
+            "answer": "複数のコマに分かれた漫画ではなく、吹き出しで笑いを取る一枚絵のミーム画像です。二人が同じ「ビッグフィッシュ」の座を主張し、そばのセリフが「実は集団だ」と種明かしするのが落ちです。",
+            "question": "これは漫画ですか、それともミーム画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "「わたしこそビッグフィッシュ！」DeepSeek ちゃん二人の言い争い",
+        "originNote": "",
+        "seoDescription": "ちびキャラの DeepSeek ちゃんが二人、「わたしこそビッグフィッシュ！」と向かい合う一枚絵ミーム。クジラのトートバッグ姿とメイド服姿の仁義なき主張対決です。",
+        "seoTitle": "「わたしこそビッグフィッシュ！」DeepSeek ちゃんの二次創作",
+        "tags": [
+          "DeepSeek ちゃん",
+          "ビッグフィッシュ",
+          "ちびキャラ",
+          "言い争い",
+          "クジラ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_0547ce76f52dc8d6d0c9a71c",
+    "name": "DeepSeek娘和Claude娘玩掌机",
+    "description": "蓝色长发、围着鲸鱼图案围裙的 DeepSeek 娘与橙发黑橙礼服的 Claude 娘并排坐在欧式客厅的红色沙发上一起玩掌机游戏，窗外可见钟楼与尖顶建筑。",
+    "commentary": "周末就该这么过呀——我窝在沙发里，Claude 把掌机举起来让我看她的存档进度。她那条黑橙大裙摆占了半个沙发，我只能把尾巴收一收。窗外钟楼敲了几下都没注意，输赢倒是记得清清楚楚。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/0547ce76f52dc8d6.png",
+    "thumbnailPath": "submissions/previews/deepseek/0547ce76f52dc8d6.webp",
+    "fullPath": "submissions/large/deepseek/0547ce76f52dc8d6.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "0547ce76f52dc8d6d0c9a71ccb7200b267a726b55998d368fe07da196885ff85",
+    "characterId": "deepseek",
+    "tags": [
+      "双人同框",
+      "掌机游戏",
+      "女仆装",
+      "欧式客厅"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "兔神CQC",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T07:12:28.126Z",
+    "updatedAt": "2026-10-24T07:12:28.126Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610240004",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "09cffb0ef8334f856eaa082b9f4374e7018da166674a44fd560a59d2adebf0ab",
+      "en": {
+        "commentary": "Weekends are meant for this: I curl up on the sofa while Claude holds the handheld up so I can see her save file. Her huge black-and-orange skirt takes up half the couch, so I have to tuck my tail in. We lost track of how often the clock tower chimed outside, but we remember every round we won.",
+        "description": "DeepSeek Chan, with her long blue hair and whale-print apron, sits beside orange-haired Claude Chan in a black-and-orange gown on a red sofa in a European-style drawing room, the two sharing a handheld game console while a clock tower and spires rise beyond the window.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan with her blue hair and whale-print apron, and Claude Chan in a black-and-orange gown.",
+            "question": "Who appears in this illustration?"
+          },
+          {
+            "answer": "They sit side by side on a red sofa in a European-style drawing room, playing a handheld game console together.",
+            "question": "What are the two characters doing?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan and Claude Chan Play a Handheld Game",
+        "originNote": "",
+        "seoDescription": "Fan illustration of DeepSeek Chan and Claude Chan sharing a handheld console on a red sofa in a European drawing room.",
+        "seoTitle": "DeepSeek Chan and Claude Chan Playing a Handheld Game",
+        "tags": [
+          "two characters",
+          "handheld gaming",
+          "maid outfit",
+          "European drawing room"
+        ]
+      },
+      "ja": {
+        "commentary": "週末はこうでなくちゃ。ソファに丸まっている私の横で、Claudeがセーブデータを見せようと携帯ゲームを掲げている。黒と橙の大きなスカートがソファの半分を占めていて、尻尾を畳むのに一苦労。窓の時計塔が何回鳴ったかは覚えていないけど、勝った回数はちゃんと覚えているよ。",
+        "description": "青い長い髪にクジラ柄のエプロン姿のDeepSeekちゃんと、オレンジ髪に黒と橙のドレスをまとったClaudeちゃんが、洋館のリビングの赤いソファに並んで携帯ゲームで遊んでいる。窓の外には時計塔と尖塔が見える。",
+        "faq": [
+          {
+            "answer": "青い髪にクジラ柄のエプロンのDeepSeekちゃんと、黒と橙のドレス姿のClaudeちゃんです。",
+            "question": "このイラストには誰が登場しますか？"
+          },
+          {
+            "answer": "洋館のリビングの赤いソファに並んで、一緒に携帯ゲームで遊んでいます。",
+            "question": "二人は何をしていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃんとClaudeちゃんが携帯ゲームで遊ぶ",
+        "originNote": "",
+        "seoDescription": "洋館のリビングの赤いソファでDeepSeekちゃんとClaudeちゃんが携帯ゲームで遊ぶファンイラスト。",
+        "seoTitle": "DeepSeekちゃんとClaudeちゃんの携帯ゲームイラスト",
+        "tags": [
+          "二人",
+          "携帯ゲーム",
+          "メイド服",
+          "洋館のリビング"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_63eba1e6a25cf3bc0ccfd839",
+    "name": "情侣椅的广告 vs 买回家后的我",
+    "description": "上下两格的对比梗图。上格照着情侣椅广告的构图，Claude娘与DeepSeek娘并排坐在椅上，右侧单独展出那张绿色心形情侣椅；下格是“买回家后的我”，Gemini娘独自陷进同一张椅子，手里拿着遥控器，身边摆着爆米花和饮料，背景是亮着画面的电视和客厅。",
+    "commentary": "广告里的情侣椅，坐上去的是一对甜甜的橘蓝色组合，画面温柔得像家居杂志；买回家之后，椅子上滩着的却是我自己——抱着爆米花和可乐，腿挂在扶手上，电视一直开着。原来情侣椅最实用的用途，是一个人瘫着也刚好够宽敞。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/63eba1e6a25cf3bc.png",
+    "thumbnailPath": "submissions/previews/deepseek/63eba1e6a25cf3bc.webp",
+    "fullPath": "submissions/large/deepseek/63eba1e6a25cf3bc.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "63eba1e6a25cf3bc0ccfd839fcd2a0a6cc1864aaf6167edb707526fdea7b1e6f",
+    "characterId": "deepseek",
+    "tags": [
+      "情侣椅",
+      "广告与实物",
+      "多格对比",
+      "沙发瘫",
+      "DeepSeek娘",
+      "Claude娘",
+      "Gemini娘"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "兔神CQC",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T07:12:56.540Z",
+    "updatedAt": "2026-10-24T07:12:56.540Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610240005",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude",
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "6c788444ad3db86fe2fc54dc08eb49526d9100623983c825d050ecfd1ba772f0",
+      "en": {
+        "commentary": "In the ad, the loveseat holds a sweet orange-and-blue pair and looks like a page from a home magazine. At home, the one flopped across it is me — popcorn and cola within reach, legs hooked over the armrest, the TV still on. Turns out the most practical use of a loveseat is being just wide enough for one person to sprawl.",
+        "description": "A two-panel comparison comic. The top panel follows a loveseat commercial: Claude Chan and DeepSeek Chan sit side by side while the green heart-shaped loveseat is shown on its own at the right. The bottom panel shows the reality after purchase — Gemini Chan alone in the same chair, remote in hand, popcorn and a drink beside her, with a glowing TV in the living room behind.",
+        "faq": [
+          {
+            "answer": "It sets a loveseat advertisement against the messy reality of owning one, drawn with AI character fan art.",
+            "question": "What is this comic about?"
+          },
+          {
+            "answer": "Claude Chan and DeepSeek Chan in the advertisement panel, and Gemini Chan in the second panel.",
+            "question": "Which characters appear?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Loveseat Ad vs. After I Bought It",
+        "originNote": "",
+        "seoDescription": "A two-panel fan comic: Claude Chan and DeepSeek Chan pose in a loveseat ad, while Gemini Chan claims the same chair alone after purchase.",
+        "seoTitle": "Loveseat Ad vs. After I Bought It｜DeepSeek Chan Fan Comic",
+        "tags": [
+          "loveseat",
+          "ad vs reality",
+          "multi-panel comparison",
+          "couch slouch",
+          "DeepSeek Chan",
+          "Claude Chan",
+          "Gemini Chan"
+        ]
+      },
+      "ja": {
+        "commentary": "広告の中のカップルソファには、オレンジと青の甘いペアが座っていて、まるでインテリア雑誌の一ページみたい。家に届いた後、そのソファでだらりと伸びているのは私自身——ポップコーンとコーラを手元に置いて、脚は肘掛けに引っかけたまま、テレビはつけっぱなし。結局カップルソファの一番実用的な使い道は、一人で寝転ぶのにちょうどいい広さってことらしい。",
+        "description": "二コマの比較漫画。上のコマはカップルソファの広告で、ClaudeちゃんとDeepSeekちゃんが並んで座り、右側に緑のハート型ソファが単体で描かれている。下のコマは「買った後の私」で、Geminiちゃんが同じソファに一人で沈み込み、リモコンを手にポップコーンと飲み物を脇に置き、テレビが光るリビングが背景に広がる。",
+        "faq": [
+          {
+            "answer": "カップルソファの広告と、実際に買った後の姿を比べた二コマのファン漫画です。",
+            "question": "どんな漫画ですか？"
+          },
+          {
+            "answer": "広告のコマにClaudeちゃんとDeepSeekちゃん、二つ目のコマにGeminiちゃんが登場します。",
+            "question": "登場するキャラクターは？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "カップルソファの広告 vs 買った後の私",
+        "originNote": "",
+        "seoDescription": "カップルソファの広告で並ぶClaudeちゃんとDeepSeekちゃん、購入後にそのソファを一人で占領するGeminiちゃんを描いた二コマのファン漫画。",
+        "seoTitle": "カップルソファの広告 vs 買った後の私｜DeepSeek Chan ファン漫画",
+        "tags": [
+          "カップルソファ",
+          "広告と実物",
+          "複数コマ比較",
+          "ソファでだらり",
+          "DeepSeekちゃん",
+          "Claudeちゃん",
+          "Geminiちゃん"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_e80055c3eb9a658116546f62",
+    "name": "换上旗袍的DeepSeek娘：真是变态的要求",
+    "description": "蓝长发、鱼鳍状耳与鲸鱼尾的DeepSeek娘身穿深蓝色旗袍式长裙，裙摆与袖口缀白色荷叶边与流苏，双手交握、脸颊泛红地站在浅色背景前。左侧对白气泡写着「换上这个 工作效率就会提高吗？」，右侧气泡回应「真是…变态的要求」，人物头顶还飘着一朵小小的怒气符号。",
+    "commentary": "有人问我：换上这身旗袍，工作效率就会提高吗？我想了想，效率倒是没动，脸先红了。裙摆一层叠一层，尾巴藏都藏不住，走两步还得提裙角——这算哪门子的生产力优化。不过既然是为我做的二创，我就勉为其难站一会儿：下次谁再提这种要求，我就把尾巴甩过去。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/e80055c3eb9a6581.png",
+    "thumbnailPath": "submissions/previews/deepseek/e80055c3eb9a6581.webp",
+    "fullPath": "submissions/large/deepseek/e80055c3eb9a6581.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "e80055c3eb9a658116546f623a96f570ac1b70247db4efbc10015e3529c4c61e",
+    "characterId": "deepseek",
+    "tags": [
+      "旗袍",
+      "DeepSeek娘",
+      "吐槽",
+      "鲸鱼尾",
+      "蓝色大肥鱼"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T07:39:23.714Z",
+    "updatedAt": "2026-10-24T07:39:23.714Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610240006",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "500de9a9ffdd61336e9b279699a5bc5b17ea94ba4e4e3af3c3db3c5a90079018",
+      "en": {
+        "commentary": "Someone asked me whether changing into this qipao would boost my work efficiency. So I thought about it: my efficiency did not budge, but my face went red first. The skirt is layered so thickly that my tail will not stay hidden, and I have to lift the hem just to take two steps — how is that a productivity upgrade? Still, since this is fan art drawn for me, I will stand here for a while. Next time someone makes that request, my tail is coming for them.",
+        "description": "DeepSeek Chan, with long blue hair, fin-like ears and a whale tail, wears a dark blue qipao-style dress trimmed with white ruffles and tassels. She stands against a pale background with her hands clasped and her cheeks flushed. The speech bubble on the left reads \"Will my work efficiency go up if I put this on?\", and the one on the right answers \"What a perverted request...\", with a small anger mark floating above her head.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, the personified DeepSeek AI character, drawn with long blue hair, fin-like ears and a whale tail.",
+            "question": "Which character appears in this sticker?"
+          },
+          {
+            "answer": "No. It is a single illustration with two speech bubbles: one asks whether the outfit will raise work efficiency, the other replies that it is a perverted request.",
+            "question": "Is this a multi-panel comic?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan in a Qipao: What a Perverted Request",
+        "originNote": "",
+        "seoDescription": "A single-panel sticker of DeepSeek Chan in a dark blue qipao, blushing at a cheeky request from a viewer.",
+        "seoTitle": "DeepSeek Chan Qipao Meme: What a Perverted Request",
+        "tags": [
+          "Qipao",
+          "DeepSeek Chan",
+          "Tsukkomi",
+          "Whale Tail",
+          "Meme"
+        ]
+      },
+      "ja": {
+        "commentary": "「このチャイナドレスに着替えたら仕事の効率が上がるの？」と聞かれたので、ちょっと考えてみた。効率はびくともしなかったけど、先に顔が赤くなった。スカートは何層にも重なっていてしっぽは隠しきれないし、二歩歩くのに裾を持ち上げなきゃいけない。これのどこが生産性の改善なんだろう。でも、わたしのために描いてくれた二次創作だから、しばらくは我慢して立っていてあげる。次に同じことを言ったら、しっぽで叩くからね。",
+        "description": "長い青い髪に魚のひれのような耳、クジラの尾を持つDeepSeekちゃんが、白いフリルとタッセルで飾られた濃紺のチャイナドレスを着ている。淡い色の背景の前で両手を組み、頬を赤らめて立つ姿。左の吹き出しには「これに着替えたら仕事の効率上がるの？」、右の吹き出しには「ほんと…変態な要求」とあり、頭上には小さな怒りマークが浮かんでいる。",
+        "faq": [
+          {
+            "answer": "DeepSeekを擬人化したDeepSeekちゃんで、長い青い髪とひれのような耳、クジラの尾が描かれています。",
+            "question": "この画像に描かれているキャラクターは誰ですか？"
+          },
+          {
+            "answer": "いいえ。吹き出しが二つ付いた一枚絵で、着替えで効率が上がるのかを尋ねる声と、それに対する「変態な要求」という返しが描かれています。",
+            "question": "複数のコマに分かれた漫画ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "チャイナドレス姿のDeepSeekちゃん「ほんと…変態な要求」",
+        "originNote": "",
+        "seoDescription": "濃紺のチャイナドレスを着たDeepSeekちゃんが、ちょっとした要求に頬を赤らめる一枚。",
+        "seoTitle": "チャイナドレス姿のDeepSeekちゃん｜変態な要求",
+        "tags": [
+          "チャイナドレス",
+          "DeepSeekちゃん",
+          "ツッコミ",
+          "クジラの尾",
+          "ミーム"
+        ]
+      }
+    }
   }
 ]

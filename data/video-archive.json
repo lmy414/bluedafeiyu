@@ -47,8 +47,8 @@
       "homepage": "https://space.bilibili.com/13787349",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "An early-wave creator designated by the site owner; profile collected from the public Bilibili page, and every video is reviewed individually.",
-        "ja": "サイト管理者が指定した初期投稿者。Bilibiliの公開プロフィールから収録し、動画は一本ずつ審査している。"
+        "en": "One of the creators initially designated by the site owner; profile information is taken from their public homepage, and each video is reviewed individually.",
+        "ja": "サイト運営者が最初に指定した作者の一人。公開プロフィールの情報を収録し、動画は1本ずつ審査しています。"
       }
     },
     {
@@ -93,6 +93,31 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1RHn86wEtq",
+      "uid": "13787349",
+      "title": "为了弥补AI娘没有抽卡的乐趣，我们制作了AI娘抽卡模拟器❗️并添加了捕鱼游戏❗️",
+      "description": "深海里住着一条爱嘟囔的鲸鱼女仆 DS娘，她只肯为一直喊她、一直管饭的人浮上来......\n          本次更新内容：添加了更多五星角色，添加了更多三星四星角色，弥补了抽卡不会歪的遗憾\n          并且更新游戏玩法：内置捕鱼大作战！来一场痛痛快快的捕鱼游戏吧！\n          依旧保留：无限货币功能，自由调节抽卡池保底功能！\n          感谢@镜花Mirror  共同开发和支持\n          游戏网址：deepseekchan.com\n         顺便宣传一下DS娘网址，里面有大量表情包、梗图，也欢迎大家上传更多的梗图和表情包：https:/蓝色大肥鱼.com",
+      "url": "https://www.bilibili.com/video/BV1RHn86wEtq/",
+      "cover": "https://i0.hdslb.com/bfs/archive/4968d5a1ed4b3a851508f8d691a08906d7212f6a.jpg",
+      "duration": 103,
+      "publishedAt": "2026-10-24T02:00:00.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the creators initially designated by the site owner; profile information is taken from their public homepage, and each video is reviewed individually.",
+          "description": "A grumbling maid from the deep sea, DeepSeek Chan only surfaces for the person who keeps calling her and keeps her fed. This update adds more five-star characters as well as more three- and four-star characters, so pulls can finally land off-banner. It also adds a fishing minigame, while unlimited currency and freely adjustable pity settings remain. The game was co-developed with another fan creator credited in the original video.",
+          "title": "We Made an AI Character Gacha Simulator — and Added a Fishing Game"
+        },
+        "ja": {
+          "creatorIntro": "サイト運営者が最初に指定した作者の一人。公開プロフィールの情報を収録し、動画は1本ずつ審査しています。",
+          "description": "深海に住む、つぶやき好きのメイドのDeepSeekちゃん。ずっと名前を呼び、ずっと食事を用意してくれる相手にだけ浮かんでくる——。今回のアップデートでは星5キャラクターを増やし、星3・星4キャラクターも追加。ガチャで狙い以外のキャラクターが出る楽しみも加わりました。さらに漁獲ミニゲームも追加。無制限の通貨機能と、ガチャの天井設定の自由調整はそのまま残しています。@镜花Mirror と共同で開発・サポートしました。",
+          "title": "AI娘のガチャを楽しむために、AI娘ガチャシミュレーターを作りました❗️漁獲ゲームも追加❗️"
+        }
+      }
+    },
     {
       "bvid": "BV16fna6yE5t",
       "uid": "1513368379",
