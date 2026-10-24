@@ -32,6 +32,8 @@
 
 `server/adapters/github.mjs` 复用本目录 `core.mjs` 里同一套 Issue 解析函数，两处字段口径一致。
 
+两条 GitHub 接收路径共用 ZIP 容器校验，限制与恢复步骤见 [GitHub ZIP 投稿](../../docs/GitHub-ZIP投稿.md)。本工具逐张写入 `staged` 私有中转；线上自动 AI 初审应走 `node server/cli.mjs pull-issues`，ZIP 接收不生成 `ready`，不直接收录。
+
 ## 清单来源与内容仓
 
 - **权威清单读站点仓 `data/`**：`data/characters.json`、`data/works.json`、

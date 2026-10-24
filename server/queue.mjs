@@ -87,8 +87,8 @@ export function resolveExtension(buffer, hint) {
   if (!format) throw new Error('文件头不是已知图片格式，拒绝入库');
   const rawHint = String(hint || '').toLowerCase();
   if (rawHint && !ALLOWED_IMAGE_EXT.has(rawHint)) throw new Error(`不支持的图片格式：${rawHint}`);
-  if (rawHint && rawHint !== '.jpg' && rawHint !== '.jpeg') {
-    const hintFormat = rawHint === '.apng' ? 'png' : rawHint.slice(1);
+  if (rawHint) {
+    const hintFormat = rawHint === '.apng' ? 'png' : ['.jpg', '.jpeg'].includes(rawHint) ? 'jpeg' : rawHint.slice(1);
     if (hintFormat !== format) throw new Error(`文件内容像 ${format}，扩展名却是 ${rawHint}，拒绝入库`);
   }
   if (rawHint === '.apng' && format === 'png') return { format, ext: '.apng', mime: MIME_BY_FORMAT.png };
@@ -363,13 +363,14 @@ export async function createQueue(cfg, { now = () => Date.now(), reviewTimeoutMs
   async function list({ state, source, sources, limit, after } = {}) {
     let items = await listItems();
     if (state) items = items.filter((item) => item.state === state);
-    if (source) items = items.filter((item) => item.source === source || (item.sourceIds || []).some((sid) => sid.startsWith(`${source}:`)));
+    const sourcePrefix = (value) => value === 'github-issue' ? 'github:' : `${value}:`;
+    if (source) items = items.filter((item) => item.source === source || (item.sourceIds || []).some((sid) => sid.startsWith(sourcePrefix(source))));
     /* sources 是 source 的多值版：内部取「web + github」这类跨来源待审条目时用。
      * 合并条目的 sourceIds 前缀也算命中，避免同图合并后漏掉来源。 */
     if (Array.isArray(sources) && sources.length > 0) {
       const wanted = new Set(sources.map((entry) => String(entry)));
       items = items.filter((item) => wanted.has(item.source)
-        || (item.sourceIds || []).some((sid) => wanted.has(String(sid).split(':')[0])));
+        || (item.sourceIds || []).some((sid) => [...wanted].some((entry) => String(sid).startsWith(sourcePrefix(entry)))));
     }
     const compare = (a, b) => String(a.createdAt).localeCompare(String(b.createdAt)) || String(a.id).localeCompare(String(b.id));
     items.sort(compare);

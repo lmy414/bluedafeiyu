@@ -233,3 +233,53 @@ test('main 未注入 checkPage 时用 HEAD 检查作品页', async () => {
   assert.deepEqual(heads, [['https://xn--pssy23gqgbz2d718b.com/works/deepseek-test.html', 'HEAD']]);
   assert.equal(backend.calls.find((call) => call.method === 'PATCH').body.state_reason, 'completed');
 });
+const ZIP_ATTACHMENT = 'https://github.com/user-attachments/files/33829687/gemini.zip';
+function zipMember(index, { count = 2, ...options } = {}) {
+  const item = queueItem(options);
+  item.sourceIds = [`github:lmy414/ai-girl-stickers#64:file-33829687:zip:${'f'.repeat(64)}:${count}:${index}`];
+  return item;
+}
+
+test('ZIP 未接收、部分入队或尚有待审成员时，不能按无图片关闭', async () => {
+  const source = issue({ body: `[gemini.zip](${ZIP_ATTACHMENT})`, created_at: '2026-09-29T01:00:00Z' });
+  for (const items of [[], [zipMember(0, { state: 'auto_rejected' })],
+    [zipMember(0, { state: 'auto_rejected' }), zipMember(1, { hash: 'c'.repeat(64), state: 'received' })]]) {
+    const { backend, result } = await runReconcile({ issues: [source], items });
+    assert.equal(result.skipped, 1);
+    assert.equal(result.closed, 0);
+    assert.equal(backend.calls.some((c) => ['POST', 'PATCH'].includes(c.method)), false);
+  }
+});
+
+test('ZIP 所有成员有最终结果才回复：混合收录/AI拒绝逐图说明，不复用旧无附件结论', async () => {
+  const source = issue({ body: `[gemini.zip](${ZIP_ATTACHMENT})` });
+  const { backend, result } = await runReconcile({ issues: [source], items: [
+    zipMember(0, { hash: PUBLISHED_HASH }),
+    zipMember(1, { state: 'auto_rejected', reason: '不符合投稿要求' }),
+  ], meta: [metaFor(PUBLISHED_HASH)], works: [workFor(PUBLISHED_HASH)],
+  comments: { 64: [{ user: { login: 'lmy414' }, body: `未检测到图片附件 ${MARKER}` }] } });
+  assert.equal(result.commented, 1);
+  assert.equal(result.closed, 1);
+  const comment = backend.calls.find((c) => c.method === 'POST').body.body;
+  assert.match(comment, /已收录/);
+  assert.match(comment, /第 2 张未通过（AI 审核）：不符合投稿要求/);
+  assert.equal(backend.calls.find((c) => c.method === 'PATCH').body.state_reason, 'completed');
+});
+
+test('ZIP 重复内容合并至一个条目仍核对全部成员，无需重复审核', async () => {
+  const item = zipMember(0, { state: 'auto_rejected', reason: '不符合要求' });
+  item.sourceIds.push(zipMember(1).sourceIds[0]);
+  const { backend, result } = await runReconcile({ issues: [issue({ body: `[zip](${ZIP_ATTACHMENT})` })], items: [item] });
+  assert.equal(result.closed, 1);
+  assert.equal(result.rejected, 2);
+  assert.match(backend.calls.find((c) => c.method === 'POST').body.body, /第 2 张/);
+});
+
+test('ZIP 与已上线网页投稿 SHA 相同，仍可按真实作品页核实收录结果', async () => {
+  const item = zipMember(0, { count: 1, hash: PUBLISHED_HASH });
+  item.source = 'web';
+  const { result } = await runReconcile({ issues: [issue({ body: `[zip](${ZIP_ATTACHMENT})` })],
+    items: [item], meta: [{ ...metaFor(PUBLISHED_HASH), source: 'web' }], works: [workFor(PUBLISHED_HASH)] });
+  assert.equal(result.closed, 1);
+  assert.equal(result.commented, 1);
+});
