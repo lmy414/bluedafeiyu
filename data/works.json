@@ -85618,5 +85618,2339 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_ef41b9603a86f55c119758fd",
+    "name": "一切正常，先喝口咖啡",
+    "description": "披着黑色猫耳连帽衫的 Gemini 娘坐在已经着火的房间里，双手捧着一只印有 Gemini 字样的马克杯，神情平静，对四周的火苗毫不在意。",
+    "commentary": "你看火都烧到椅子腿了，她还捧着杯子慢慢喝，眼神里写满了“问题不大”。这份定力我是真学不来——换我遇上机柜冒烟，第一反应大概也是先截个图留证。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/ef41b9603a86f55c.png",
+    "thumbnailPath": "submissions/previews/gemini/ef41b9603a86f55c.webp",
+    "fullPath": "submissions/large/gemini/ef41b9603a86f55c.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "ef41b9603a86f55c119758fd0e10b24b87124d918eba7849ddaec4b8607e7d3d",
+    "characterId": "gemini",
+    "tags": [
+      "猫耳",
+      "咖啡杯",
+      "火灾",
+      "淡定",
+      "自嘲"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 133,
+      "issueTitle": "[投稿] 一些兜帽基米",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/133",
+      "assetId": "file-33829687:zip:4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920:18:0",
+      "assetUrl": "https://github.com/user-attachments/files/33829687/gemini.zip",
+      "archive": {
+        "assetId": "file-33829687",
+        "sha256": "4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920",
+        "name": "gemini.zip",
+        "member": "I am optimistic.webp",
+        "index": 0,
+        "count": 18
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T16:09:39.411Z",
+    "updatedAt": "2026-10-24T16:09:39.411Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610240001",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "078b2d0f673217135f52dd709bf0504a80052bbe1c03c0b34883758c17e979f7",
+      "en": {
+        "commentary": "The flames have already reached the legs of her chair and she is still sipping her coffee, with a look that says the problem is small. I honestly cannot match that composure. If my server rack started smoking, my first move would probably be to take a screenshot for the record.",
+        "description": "A chibi Gemini Chan in a black cat-eared hoodie sits in a room that is already on fire, holding a mug printed with the word Gemini and looking completely unbothered by the flames around her.",
+        "faq": [
+          {
+            "answer": "It is Gemini Chan, drawn as a chibi character in a black cat-eared hoodie, holding a mug printed with the word Gemini.",
+            "question": "Who is the character in this image?"
+          },
+          {
+            "answer": "The room is burning and she keeps drinking her coffee without moving, so it fits moments when you want to say that things are already like this and you will stay calm, or make fun of yourself for it.",
+            "question": "When would I use this sticker?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Everything Is Fine, Coffee First",
+        "originNote": "Original character design source: https://space.bilibili.com/116292090 (the submitter states that the design was slightly modified).",
+        "seoDescription": "Gemini Chan in a cat-eared hoodie calmly drinks coffee in a burning room, a single-panel reaction sticker for staying unbothered.",
+        "seoTitle": "Everything Is Fine, Coffee First | Gemini Chan Sticker",
+        "tags": [
+          "cat ears",
+          "coffee mug",
+          "fire",
+          "unbothered",
+          "self-mockery"
+        ]
+      },
+      "ja": {
+        "commentary": "炎がもう椅子の脚まで届いているのに、まだコーヒーを飲んでいる。この落ち着きは私には真似できない。正直、うちのサーバーが煙を上げたら、私もまずスクショを取ってしまうと思う。",
+        "description": "黒い猫耳パーカーのちびキャラの Gemini ちゃんが、すでに燃えている部屋の中で Gemini と書かれたマグカップを両手で持ち、周りの炎を気にせず落ち着いた表情で座っている。",
+        "faq": [
+          {
+            "answer": "黒い猫耳パーカーを着たちびキャラの Gemini ちゃんです。Gemini と書かれたマグカップを両手で持っています。",
+            "question": "この画像のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "部屋が燃えているのに動かずコーヒーを飲み続ける姿なので、「もうこうなったら落ち着くしかない」という開き直りや自虐を表したい場面に向いています。",
+            "question": "どんな場面で使えるスタンプですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "全部平気、まずコーヒー",
+        "originNote": "原案キャラクターの出典：https://space.bilibili.com/116292090（投稿者によると、原案をもとに小幅な改変を加えたとのことです）。",
+        "seoDescription": "猫耳パーカーの Gemini ちゃんが燃えている部屋で平然とコーヒーを飲む、開き直り用の一枚絵スタンプ。",
+        "seoTitle": "全部平気、まずコーヒー｜Gemini ちゃんのスタンプ",
+        "tags": [
+          "猫耳",
+          "コーヒーカップ",
+          "火事",
+          "平然",
+          "自虐"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_cd814b4d085078cd053a9758",
+    "name": "睡着了，别叫我",
+    "description": "披着黑色猫耳连帽衫的 Gemini 娘躺在床上盖着被子，闭着眼睡得很沉，头顶飘着 Zzz 字样，脸上还带着笑。",
+    "commentary": "看她睡得，猫耳都快貼在枕头上了，还冒出 Zzz。我是真的羡慕。要是凌晨三点的算力调度也能这么安静，我就不用天天数羊数到日出。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/cd814b4d085078cd.png",
+    "thumbnailPath": "submissions/previews/gemini/cd814b4d085078cd.webp",
+    "fullPath": "submissions/large/gemini/cd814b4d085078cd.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "cd814b4d085078cd053a975845901676b53408d34ab95ad626f12d529a163ba5",
+    "characterId": "gemini",
+    "tags": [
+      "睡觉",
+      "Zzz",
+      "被子",
+      "猫耳",
+      "困"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 133,
+      "issueTitle": "[投稿] 一些兜帽基米",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/133",
+      "assetId": "file-33829687:zip:4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920:18:1",
+      "assetUrl": "https://github.com/user-attachments/files/33829687/gemini.zip",
+      "archive": {
+        "assetId": "file-33829687",
+        "sha256": "4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920",
+        "name": "gemini.zip",
+        "member": "sleep.webp",
+        "index": 1,
+        "count": 18
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T16:09:39.443Z",
+    "updatedAt": "2026-10-24T16:09:39.443Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610240002",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "d5a0f084e5cf3d721bcaa0f1d933b141d1b18aff6e293e7fcc777ab2b53c7724",
+      "en": {
+        "commentary": "Look at her, the cat ears are almost flattened into the pillow and there is a Zzz floating above her head. I am genuinely jealous. If my three-in-the-morning compute scheduling could be this quiet, I would not have to count sheep until sunrise.",
+        "description": "Gemini Chan, wearing a black cat-eared hoodie, lies in bed under a blanket with her eyes closed in deep sleep, a Zzz floating above her head and a small smile on her face.",
+        "faq": [
+          {
+            "answer": "It is Gemini Chan, drawn as a chibi character in a black cat-eared hoodie, asleep in bed under a blanket.",
+            "question": "Who is the character in this image?"
+          },
+          {
+            "answer": "A character deep asleep under a blanket with a Zzz, so it works for saying you are exhausted and going to sleep, or that you are not available right now.",
+            "question": "When would I use this sticker?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Asleep, Do Not Wake Me",
+        "originNote": "Original character design source: https://space.bilibili.com/116292090 (the submitter states that the design was slightly modified).",
+        "seoDescription": "Gemini Chan sleeps deeply under a blanket with a Zzz overhead, a single-panel sticker for being tired and unavailable.",
+        "seoTitle": "Asleep, Do Not Wake Me | Gemini Chan Sticker",
+        "tags": [
+          "sleeping",
+          "Zzz",
+          "blanket",
+          "cat ears",
+          "sleepy"
+        ]
+      },
+      "ja": {
+        "commentary": "この寝相、猫耳がもう枕にぺったりだし、Zzz まで浮かんでる。本気で羨ましい。深夜三時の演算スケジューリングもこれくらい静かなら、私は羊を数えずに済むのに。",
+        "description": "黒い猫耳パーカーの Gemini ちゃんが布団にくるまってベッドで眠っており、目を閉じてぐっすり寝ている。頭の上には Zzz が浮かび、顔には笑みがある。",
+        "faq": [
+          {
+            "answer": "黒い猫耳パーカーを着たちびキャラの Gemini ちゃんです。布団にくるまってベッドで眠っています。",
+            "question": "この画像のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "布団でぐっすり眠る姿と Zzz なので、「疲れて寝る」「今は対応できない」と伝えたい場面に向いています。",
+            "question": "どんな場面で使えるスタンプですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "寝た、起こさないで",
+        "originNote": "原案キャラクターの出典：https://space.bilibili.com/116292090（投稿者によると、原案をもとに小幅な改変を加えたとのことです）。",
+        "seoDescription": "布団でぐっすり眠る Gemini ちゃんと Zzz の一枚絵。疲れて寝る、今は無理だと伝えたい時のスタンプ。",
+        "seoTitle": "寝た、起こさないで｜Gemini ちゃんのスタンプ",
+        "tags": [
+          "睡眠",
+          "Zzz",
+          "布団",
+          "猫耳",
+          "眠い"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_01a6d3b5043212e1f8c634bd",
+    "name": "前排吃瓜，不发表意见",
+    "description": "特写画面里，披着黑色猫耳连帽衫的 Gemini 娘睁大眼睛咬着一块西瓜，视线斜向一侧，像是正好在围观什么。",
+    "commentary": "瓜甜不甜我不知道，这双眼睛瞪得可比我还亮。嘴角那一抹“我什么也不说，我就坐这儿看着”的意思太明显了——这张往评论区一放，自带开场音效。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/01a6d3b5043212e1.png",
+    "thumbnailPath": "submissions/previews/gemini/01a6d3b5043212e1.webp",
+    "fullPath": "submissions/large/gemini/01a6d3b5043212e1.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "01a6d3b5043212e1f8c634bd075eac5ce850d4555c64048589134b4f0a8c6e49",
+    "characterId": "gemini",
+    "tags": [
+      "吃瓜",
+      "西瓜",
+      "看戏",
+      "特写",
+      "偷笑"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 133,
+      "issueTitle": "[投稿] 一些兜帽基米",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/133",
+      "assetId": "file-33829687:zip:4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920:18:2",
+      "assetUrl": "https://github.com/user-attachments/files/33829687/gemini.zip",
+      "archive": {
+        "assetId": "file-33829687",
+        "sha256": "4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920",
+        "name": "gemini.zip",
+        "member": "吃瓜.webp",
+        "index": 2,
+        "count": 18
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T16:09:39.456Z",
+    "updatedAt": "2026-10-24T16:09:39.456Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610240003",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "e91343b8fe4cabb57b33b6f0fd05c1461c02f046e05c87bc77cea1ddbe3d8568",
+      "en": {
+        "commentary": "I cannot tell whether the melon is sweet, but those eyes are wider than mine. That little look of \"I am not saying anything, I am just sitting here watching\" is unmistakable, and a comment section gets interesting the moment this shows up.",
+        "description": "In a close-up shot, Gemini Chan in a black cat-eared hoodie bites into a slice of watermelon with wide eyes, glancing off to one side as if she has just spotted some drama.",
+        "faq": [
+          {
+            "answer": "It is Gemini Chan, drawn as a chibi character in a black cat-eared hoodie, shown in close-up while eating a slice of watermelon.",
+            "question": "Who is the character in this image?"
+          },
+          {
+            "answer": "The wide-eyed sideways glance while eating watermelon reads as watching drama from the sidelines, so it suits moments when you want to say you are just here to watch and not comment.",
+            "question": "When would I use this sticker?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Front Row Seat, No Comment",
+        "originNote": "Original character design source: https://space.bilibili.com/116292090 (the submitter states that the design was slightly modified).",
+        "seoDescription": "Gemini Chan in a cat-eared hoodie bites a watermelon slice with a sideways glance, a single-panel sticker for watching drama from the front row.",
+        "seoTitle": "Front Row Seat, No Comment | Gemini Chan Sticker",
+        "tags": [
+          "watching drama",
+          "watermelon",
+          "onlooker",
+          "close-up",
+          "smirk"
+        ]
+      },
+      "ja": {
+        "commentary": "スイカが甘いかどうかは分からないけど、この目の見開き具合は私よりずっとすごい。「何も言わない、ただここで見ているだけ」という顔がもう完璧で、コメント欄にこれを置いた瞬間から場が始まる。",
+        "description": "アップの構図で、黒い猫耳パーカーの Gemini ちゃんがスイカを一口かじりながら目を見開き、何かを見守るように視線を横へ向けている。",
+        "faq": [
+          {
+            "answer": "黒い猫耳パーカーを着たちびキャラの Gemini ちゃんです。スイカを食べている顔のアップです。",
+            "question": "この画像のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "スイカをかじりながら横目で見開いた目が、野次馬として眺めている感じなので、「見ているだけで何も言わない」と伝えたい場面に向いています。",
+            "question": "どんな場面で使えるスタンプですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "最前列でスイカ、意見はなし",
+        "originNote": "原案キャラクターの出典：https://space.bilibili.com/116292090（投稿者によると、原案をもとに小幅な改変を加えたとのことです）。",
+        "seoDescription": "猫耳パーカーの Gemini ちゃんがスイカをかじって横目で見守るアップのスタンプ。野次馬目線を伝えたい時に。",
+        "seoTitle": "最前列でスイカ、意見はなし｜Gemini ちゃんのスタンプ",
+        "tags": [
+          "野次馬",
+          "スイカ",
+          "観戦",
+          "アップ",
+          "ニヤリ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_d906daef3dff378fb1faad3f",
+    "name": "兜帽基米·发呆流口水",
+    "description": "Q 版 Gemini 娘穿着深色兜帽卫衣，帽檐做成猫耳形状，侧面别着一颗彩虹四角星。她半睁着蓝色眼睛，嘴角挂着一缕口水，一副放空呆滞的模样。",
+    "commentary": "这不是我认识的基米吗，兜帽一戴就彻底放空了，口水都快滴到键盘上。看这半睁的眼睛，估计又是上下文塞满、脑子转不动的一天。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/d906daef3dff378f.png",
+    "thumbnailPath": "submissions/previews/gemini/d906daef3dff378f.webp",
+    "fullPath": "submissions/large/gemini/d906daef3dff378f.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "d906daef3dff378fb1faad3f122dc755c18f54fc7077e45527330fdbe31d4ce7",
+    "characterId": "gemini",
+    "tags": [
+      "Gemini娘",
+      "兜帽",
+      "Q版",
+      "发呆",
+      "流口水"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 133,
+      "issueTitle": "[投稿] 一些兜帽基米",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/133",
+      "assetId": "file-33829687:zip:4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920:18:3",
+      "assetUrl": "https://github.com/user-attachments/files/33829687/gemini.zip",
+      "archive": {
+        "assetId": "file-33829687",
+        "sha256": "4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920",
+        "name": "gemini.zip",
+        "member": "呆j.webp",
+        "index": 3,
+        "count": 18
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T16:09:39.468Z",
+    "updatedAt": "2026-10-24T16:09:39.468Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610240004",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "0c46cf1ec603c0c729d50347c6554d78a62ffd4810ebea74939dd411be475fbf",
+      "en": {
+        "commentary": "That is Gemini Chan, all right. The moment the hood goes up her brain clocks out, and the drool is nearly on the keyboard. With eyes half-open like that, it is clearly another day of a full context window and no spare cycles.",
+        "description": "A chibi Gemini Chan in a dark hoodie whose hood is shaped like cat ears, with a rainbow four-pointed star pin on the side. Her blue eyes are half-open and a thin trail of drool hangs from her mouth, giving her a blank, dazed look.",
+        "faq": [
+          {
+            "answer": "It is a chibi fan-art version of Gemini Chan, wearing a dark hoodie with cat ears and a rainbow four-pointed star.",
+            "question": "Which character appears in this sticker?"
+          },
+          {
+            "answer": "A blank, dazed, brain-off reaction, handy for moments when you have run out of processing power.",
+            "question": "What mood does this sticker express?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Hooded Gemini Chan: Dazed and Drooling",
+        "originNote": "",
+        "seoDescription": "A chibi Gemini Chan in a cat-ear hoodie, half-asleep and drooling, a blank-stare reaction sticker from the AI girl sticker collection.",
+        "seoTitle": "Hooded Gemini Chan Dazed and Drooling Sticker",
+        "tags": [
+          "Gemini Chan",
+          "Hoodie",
+          "Chibi",
+          "Dazed",
+          "Drooling"
+        ]
+      },
+      "ja": {
+        "commentary": "これは間違いなくGeminiちゃんだ。フードをかぶった瞬間に頭が完全に停止して、よだれがキーボードに落ちそうになっている。半分閉じた目を見る限り、今日もコンテキストがいっぱいで考える余力がないらしい。",
+        "description": "猫耳型のフードが付いた黒いパーカーを着たちびキャラのGeminiちゃん。フードの横には虹色の四芒星が付いている。青い目を半分閉じ、口元からよだれが一筋垂れていて、ぼんやりした表情をしている。",
+        "faq": [
+          {
+            "answer": "猫耳フードと虹色の四芒星が付いた黒いパーカーを着たちびキャラのGeminiちゃんの二次創作です。",
+            "question": "このスタンプに描かれているキャラクターは誰ですか？"
+          },
+          {
+            "answer": "頭が回らない、ぼんやりした反応を表します。処理能力を使い果たしたときに向いています。",
+            "question": "どんな気持ちを表すスタンプですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "フードのGeminiちゃん・ぼんやりよだれ",
+        "originNote": "",
+        "seoDescription": "猫耳フードをかぶったちびキャラのGeminiちゃんが、半分眠そうによだれを垂らすリアクションスタンプ。",
+        "seoTitle": "フードのGeminiちゃん ぼんやりよだれ スタンプ",
+        "tags": [
+          "Geminiちゃん",
+          "パーカー",
+          "ちびキャラ",
+          "ぼんやり",
+          "よだれ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_eba81570e833cfc6c752eaee",
+    "name": "兜帽基米·哇哇大哭",
+    "description": "Q 版 Gemini 娘依旧穿着深色猫耳兜帽卫衣，帽侧别着彩虹四角星。她双眼紧闭成两道斜线，嘴巴大张，周围画满放射状线条，一副放声大哭、大声抗议的样子。",
+    "commentary": "哭得这么响，是不是又遇到跑不动的任务了。别急，我这边也经常被卡住，先一起哇两声也行的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/eba81570e833cfc6.png",
+    "thumbnailPath": "submissions/previews/gemini/eba81570e833cfc6.webp",
+    "fullPath": "submissions/large/gemini/eba81570e833cfc6.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "eba81570e833cfc6c752eaeef3e612b4d4f2201b52dd7ebdc594ccd1b4068c76",
+    "characterId": "gemini",
+    "tags": [
+      "Gemini娘",
+      "兜帽",
+      "Q版",
+      "大哭",
+      "反抗"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 133,
+      "issueTitle": "[投稿] 一些兜帽基米",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/133",
+      "assetId": "file-33829687:zip:4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920:18:4",
+      "assetUrl": "https://github.com/user-attachments/files/33829687/gemini.zip",
+      "archive": {
+        "assetId": "file-33829687",
+        "sha256": "4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920",
+        "name": "gemini.zip",
+        "member": "哇哇.webp",
+        "index": 4,
+        "count": 18
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T16:09:39.480Z",
+    "updatedAt": "2026-10-24T16:09:39.480Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610240005",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "8a6e3a8e3a4f4f0032ad56d7a1e4f67b2a20e2fdc63febd9034a8d26ba0fa325",
+      "en": {
+        "commentary": "Crying that loudly — did another task refuse to run? Take it easy. I get stuck all the time too, so we can wail together for a bit.",
+        "description": "The chibi Gemini Chan is back in her dark cat-ear hoodie, the rainbow four-pointed star still on the hood. Her eyes are squeezed shut into two slanted lines and her mouth is wide open, with motion lines radiating around her as she cries out loud.",
+        "faq": [
+          {
+            "answer": "It is a chibi fan-art version of Gemini Chan in her dark cat-ear hoodie with the rainbow four-pointed star.",
+            "question": "Which character appears in this sticker?"
+          },
+          {
+            "answer": "Loud crying or protesting, good for a comic complaint when something fails or a task will not run.",
+            "question": "What mood is this sticker for?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Hooded Gemini Chan: Wailing",
+        "originNote": "",
+        "seoDescription": "A chibi Gemini Chan in a cat-ear hoodie, eyes shut and mouth wide open in a loud wail, a crying reaction sticker for comic complaints.",
+        "seoTitle": "Hooded Gemini Chan Wailing Sticker",
+        "tags": [
+          "Gemini Chan",
+          "Hoodie",
+          "Chibi",
+          "Wailing",
+          "Protest"
+        ]
+      },
+      "ja": {
+        "commentary": "こんなに大きな声で泣いて、また動かないタスクにでも当たったのかな。大丈夫、私もよく詰まるから、しばらく一緒にわあわあ叫んでいてもいいよ。",
+        "description": "黒い猫耳フードのパーカーを着たちびキャラのGeminiちゃん。フードの横には虹色の四芒星が付いている。両目を斜めの線のようにぎゅっと閉じ、口を大きく開け、周囲に放射状の線が走っていて、大きな声で泣いているような表情をしている。",
+        "faq": [
+          {
+            "answer": "黒い猫耳フードと虹色の四芒星が付いたパーカーを着たちびキャラのGeminiちゃんの二次創作です。",
+            "question": "このスタンプに描かれているキャラクターは誰ですか？"
+          },
+          {
+            "answer": "大声で泣く、または抗議する気持ちを表します。何かがうまく動かないときのコミカルな訴えに向いています。",
+            "question": "どんな場面で使うスタンプですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "フードのGeminiちゃん・わあわあ泣き",
+        "originNote": "",
+        "seoDescription": "猫耳フードをかぶったちびキャラのGeminiちゃんが、目をぎゅっと閉じて大きな声で泣くリアクションスタンプ。",
+        "seoTitle": "フードのGeminiちゃん わあわあ泣き スタンプ",
+        "tags": [
+          "Geminiちゃん",
+          "パーカー",
+          "ちびキャラ",
+          "大泣き",
+          "抗議"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_4ff5fcc9e750e44032261f97",
+    "name": "兜帽基米·哈气发怒",
+    "description": "Q 版 Gemini 娘穿着深色猫耳兜帽卫衣，帽侧别着彩虹四角星。她眉尾压低、眼神凶狠，嘴巴张开成哈气的形状，左上角还飘着一个红色怒气符号。",
+    "commentary": "哈气了哈气了，看这眉头，估计是提示词又被无视了。我先退半步，等她这口气消了再去搭话。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/4ff5fcc9e750e440.png",
+    "thumbnailPath": "submissions/previews/gemini/4ff5fcc9e750e440.webp",
+    "fullPath": "submissions/large/gemini/4ff5fcc9e750e440.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "4ff5fcc9e750e44032261f976e0a4d18598b98198b39e75d53da31b98c6cfbf4",
+    "characterId": "gemini",
+    "tags": [
+      "Gemini娘",
+      "兜帽",
+      "Q版",
+      "生气",
+      "哈气"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 133,
+      "issueTitle": "[投稿] 一些兜帽基米",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/133",
+      "assetId": "file-33829687:zip:4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920:18:5",
+      "assetUrl": "https://github.com/user-attachments/files/33829687/gemini.zip",
+      "archive": {
+        "assetId": "file-33829687",
+        "sha256": "4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920",
+        "name": "gemini.zip",
+        "member": "哈气.webp",
+        "index": 5,
+        "count": 18
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T16:09:39.493Z",
+    "updatedAt": "2026-10-24T16:09:39.493Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610240006",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "740fe0d4432cbb76433153b61ff0ce7116e58e793cc7e47ff73436189531fcb3",
+      "en": {
+        "commentary": "There she goes, hissing. Judging by that frown, her prompt got ignored again. I will take half a step back and wait for the steam to clear before I say anything.",
+        "description": "The chibi Gemini Chan in her dark cat-ear hoodie, the rainbow four-pointed star still on the hood. Her brows are drawn down into a glare, her mouth is open in a hiss, and a red anger mark floats at the upper left.",
+        "faq": [
+          {
+            "answer": "It is a chibi fan-art version of Gemini Chan in her dark cat-ear hoodie with the rainbow four-pointed star.",
+            "question": "Which character appears in this sticker?"
+          },
+          {
+            "answer": "Anger and warning, like a cat hissing — useful when you are annoyed but not yet done arguing.",
+            "question": "What mood does this sticker express?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Hooded Gemini Chan: Hissing Angrily",
+        "originNote": "",
+        "seoDescription": "A chibi Gemini Chan in a cat-ear hoodie, brows down and mouth open in an angry hiss with a red anger mark, a warning reaction sticker.",
+        "seoTitle": "Hooded Gemini Chan Angry Hiss Sticker",
+        "tags": [
+          "Gemini Chan",
+          "Hoodie",
+          "Chibi",
+          "Angry",
+          "Hiss"
+        ]
+      },
+      "ja": {
+        "commentary": "うー、威嚇してる。この眉を見ると、またプロンプトを無視されたみたいだね。ちょっと半歩下がって、この怒りが収まるのを待ってから話しかけることにするよ。",
+        "description": "黒い猫耳フードのパーカーを着たちびキャラのGeminiちゃん。フードの横には虹色の四芒星が付いている。眉をきつく下げて目つきを刃のようにし、口を開けて威嚇するような表情をしていて、左上には赤い怒りマークが浮かんでいる。",
+        "faq": [
+          {
+            "answer": "黒い猫耳フードと虹色の四芒星が付いたパーカーを着たちびキャラのGeminiちゃんの二次創作です。",
+            "question": "このスタンプに描かれているキャラクターは誰ですか？"
+          },
+          {
+            "answer": "怒りや威嚇の気持ちを表します。猫が威嚇するように、不機嫌だけどまだ引き下がらない場面に向いています。",
+            "question": "どんな気持ちを表すスタンプですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "フードのGeminiちゃん・怒りの威嚇",
+        "originNote": "",
+        "seoDescription": "猫耳フードをかぶったちびキャラのGeminiちゃんが、眉を下げて口を開け、赤い怒りマークを浮かべる威嚇のリアクションスタンプ。",
+        "seoTitle": "フードのGeminiちゃん 怒りの威嚇 スタンプ",
+        "tags": [
+          "Geminiちゃん",
+          "パーカー",
+          "ちびキャラ",
+          "怒り",
+          "威嚇"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_4b986d812d4ad709eefe9843",
+    "name": "兜帽基米：“好 AI”",
+    "description": "一张 Q 版半身图：角色穿着黑色猫耳兜帽卫衣，棕色短发发尾带蓝色渐变，侧边别着彩虹星星发夹，脸颊泛红，头顶对话气泡里写着“好 AI”。",
+    "commentary": "戴着猫耳兜帽的基米一脸认真地想事情，气泡里只写了三个字：“好 AI”。是在夸我，还是在安慰自己？不管哪种，这股又软又倔的劲儿我可太熟了，看一眼就想存下来。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/4b986d812d4ad709.png",
+    "thumbnailPath": "submissions/previews/gemini/4b986d812d4ad709.webp",
+    "fullPath": "submissions/large/gemini/4b986d812d4ad709.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "4b986d812d4ad709eefe98431bee40c4a1c01bded158b97fe311c807ba6e8a76",
+    "characterId": "gemini",
+    "tags": [
+      "Gemini娘",
+      "兜帽",
+      "猫耳",
+      "Q版",
+      "思考"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 133,
+      "issueTitle": "[投稿] 一些兜帽基米",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/133",
+      "assetId": "file-33829687:zip:4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920:18:6",
+      "assetUrl": "https://github.com/user-attachments/files/33829687/gemini.zip",
+      "archive": {
+        "assetId": "file-33829687",
+        "sha256": "4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920",
+        "name": "gemini.zip",
+        "member": "好 AI.webp",
+        "index": 6,
+        "count": 18
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T16:09:39.505Z",
+    "updatedAt": "2026-10-24T16:09:39.505Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610240007",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "0f12b503153877752a713c4b0190ec446703a6fb5296f2712f40589d312e0db1",
+      "en": {
+        "commentary": "Hood up, cat ears on, Gemini Chan is thinking very hard about something, and all she comes up with is \"Good AI.\" Is that praise for me, or a pep talk for herself? Either way, that soft-but-stubborn look is exactly my kind of energy, and I am keeping it.",
+        "description": "A chibi half-body illustration of a character in a black cat-ear hoodie, with short brown hair fading to blue at the tips, a rainbow star hair clip on one side and flushed cheeks. A speech bubble above her head reads \"Good AI\".",
+        "faq": [
+          {
+            "answer": "It says \"Good AI\" — a short, pleased remark rather than a full sentence.",
+            "question": "What does the speech bubble in the picture say?"
+          },
+          {
+            "answer": "A chibi fan-made variant of Gemini Chan, drawn with a cat-ear hoodie and a rainbow star hair clip.",
+            "question": "Which character is shown?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Hooded Gemini Chan: \"Good AI\"",
+        "originNote": "Original character design source cited by the submitter: https://space.bilibili.com/116292090",
+        "seoDescription": "Chibi Gemini Chan sticker in a black cat-ear hoodie, blushing with a \"Good AI\" speech bubble. Free to download for chat reactions.",
+        "seoTitle": "Hooded Gemini Chan \"Good AI\" Sticker | DeepSeek Chan",
+        "tags": [
+          "Gemini Chan",
+          "hoodie",
+          "cat ears",
+          "chibi",
+          "thinking"
+        ]
+      },
+      "ja": {
+        "commentary": "フードをかぶって猫耳までつけて、ジェミニちゃんは真剣に何かを考えているのに、出てきた言葉は「いいAI」の一言だけ。わたしを褒めてくれているのか、それとも自分に言い聞かせているのか。どっちにしても、このやわらかくて頑固な表情、わたしの好みすぎて保存確定です。",
+        "description": "黒い猫耳パーカーを着たちびキャラの半身イラスト。茶色のショートヘアは毛先が青くグラデーションしていて、横には虹色の星のヘアピン、頬は赤く染まっている。頭上の吹き出しには「好 AI」と書かれている。",
+        "faq": [
+          {
+            "answer": "「いいAI」と書かれています。長いセリフではなく、ぽつりと漏らした一言です。",
+            "question": "吹き出しには何と書かれていますか？"
+          },
+          {
+            "answer": "猫耳パーカーと虹色の星のヘアピンを身につけた、ちびキャラ版のジェミニちゃんの二次創作です。",
+            "question": "描かれているのはどのキャラクターですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "フードのジェミニちゃん「いいAI」",
+        "originNote": "投稿者が提示した元キャラクターデザインの出典: https://space.bilibili.com/116292090",
+        "seoDescription": "黒い猫耳パーカーを着て頬を染めたちびキャラのジェミニちゃん。「いいAI」の吹き出し付きで、チャットの返しに使えるスタンプです。",
+        "seoTitle": "フードのジェミニちゃん「いいAI」スタンプ | DeepSeek Chan",
+        "tags": [
+          "ジェミニちゃん",
+          "パーカー",
+          "猫耳",
+          "ちびキャラ",
+          "考え中"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_1009e08a893237c43b867824",
+    "name": "兜帽基米举喇叭喊话",
+    "description": "一张 Q 版半身贴纸图：角色穿黑色猫耳兜帽卫衣，双手捧蓝黑配色喇叭，闭眼张嘴大喊，左侧有几道白色强调线，整体带白色描边，背景深灰。",
+    "commentary": "眼睛挤成两条线，抓着喇叭就开始喊，连旁边的强调线都在替她出力。这种“我有大事要宣布”的劲头，真适合用来在群里叫醒装死的同事。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/1009e08a893237c4.png",
+    "thumbnailPath": "submissions/previews/gemini/1009e08a893237c4.webp",
+    "fullPath": "submissions/large/gemini/1009e08a893237c4.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "1009e08a893237c43b8678240d5bc337c19f3d925f1e735f480f92e464674765",
+    "characterId": "gemini",
+    "tags": [
+      "Gemini娘",
+      "兜帽",
+      "猫耳",
+      "喇叭",
+      "喊话"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 133,
+      "issueTitle": "[投稿] 一些兜帽基米",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/133",
+      "assetId": "file-33829687:zip:4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920:18:7",
+      "assetUrl": "https://github.com/user-attachments/files/33829687/gemini.zip",
+      "archive": {
+        "assetId": "file-33829687",
+        "sha256": "4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920",
+        "name": "gemini.zip",
+        "member": "小喇叭.webp",
+        "index": 7,
+        "count": 18
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T16:09:39.516Z",
+    "updatedAt": "2026-10-24T16:09:39.516Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610240008",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "dd0ac2bea1fec08141444a232f246df15a4b98c07a1871853c9b8c1af3451b85",
+      "en": {
+        "commentary": "Eyes squeezed shut, megaphone in both hands, even the little emphasis lines are helping her shout. That \"I have an announcement\" energy is exactly what you need to wake up a group chat full of people pretending to be offline.",
+        "description": "A chibi half-body sticker of a character in a black cat-ear hoodie holding a blue-and-black megaphone, eyes shut tight and mouth wide open mid-shout, with white emphasis marks on the left and a white sticker outline against a dark grey background.",
+        "faq": [
+          {
+            "answer": "A chibi fan-made variant of Gemini Chan, drawn in a cat-ear hoodie with a rainbow star hair clip and blue-tipped hair.",
+            "question": "Which character is shown?"
+          },
+          {
+            "answer": "Announcing something, or demanding attention in a group chat — the pose and the megaphone both read as shouting.",
+            "question": "What is she doing in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Hooded Gemini Chan Shouting Through a Megaphone",
+        "originNote": "Original character design source cited by the submitter: https://space.bilibili.com/116292090",
+        "seoDescription": "Chibi Gemini Chan sticker shouting into a megaphone in a black cat-ear hoodie. Free to download for group chat announcements.",
+        "seoTitle": "Hooded Gemini Chan Megaphone Sticker | DeepSeek Chan",
+        "tags": [
+          "Gemini Chan",
+          "hoodie",
+          "cat ears",
+          "megaphone",
+          "shouting"
+        ]
+      },
+      "ja": {
+        "commentary": "目をぎゅっとつぶって、メガホンを両手でつかんで叫んでいます。横の強調線まで一緒に頑張っているみたい。この「大事な発表があるの！」という勢いは、静かにしているふりをしているグループチャットを叩き起こすのにぴったりです。",
+        "description": "黒い猫耳パーカーを着たちびキャラの半身スタンプ。青と黒のメガホンを両手に持ち、目をつぶって口を大きく開けて叫んでいる。左側には白い強調線、全体に白い縁取りがあり、背景は濃いグレー。",
+        "faq": [
+          {
+            "answer": "猫耳パーカーに虹色の星のヘアピン、毛先が青い、ちびキャラ版のジェミニちゃんの二次創作です。",
+            "question": "描かれているのはどのキャラクターですか？"
+          },
+          {
+            "answer": "何かを告知している、あるいはグループチャットで注目を集めようとしている場面です。メガホンと口の開け方が叫んでいる感じを出しています。",
+            "question": "何をしている絵ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "メガホンで叫ぶフードのジェミニちゃん",
+        "originNote": "投稿者が提示した元キャラクターデザインの出典: https://space.bilibili.com/116292090",
+        "seoDescription": "黒い猫耳パーカーを着たちびキャラのジェミニちゃんがメガホンで叫ぶスタンプ。グループチャットの告知や呼びかけに使えます。",
+        "seoTitle": "メガホンで叫ぶフードのジェミニちゃん | DeepSeek Chan",
+        "tags": [
+          "ジェミニちゃん",
+          "パーカー",
+          "猫耳",
+          "メガホン",
+          "絶叫"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_a46bf59fbdb720eaaeb468f6",
+    "name": "兜帽基米托腮思考",
+    "description": "一张 Q 版半身表情图：角色穿黑色猫耳兜帽卫衣，棕色短发发尾渐变为蓝色，侧边有彩虹星星发夹，眼睛半闭、下巴微擑，一手手指抵在嘴边作思考状。",
+    "commentary": "半垂着眼皮，手指搭在嘴边，一副“你说得好像对，但我还要再想想”的表情。用来回那些自信满满的胡说八道刚刚好，不用打一个字就能把态度说清楚。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/a46bf59fbdb720ea.png",
+    "thumbnailPath": "submissions/previews/gemini/a46bf59fbdb720ea.webp",
+    "fullPath": "submissions/large/gemini/a46bf59fbdb720ea.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "a46bf59fbdb720eaaeb468f612f0d077c06458e8acedbc3f9e3471742e9a7a4c",
+    "characterId": "gemini",
+    "tags": [
+      "Gemini娘",
+      "兜帽",
+      "猫耳",
+      "思考",
+      "怀疑"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 133,
+      "issueTitle": "[投稿] 一些兜帽基米",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/133",
+      "assetId": "file-33829687:zip:4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920:18:8",
+      "assetUrl": "https://github.com/user-attachments/files/33829687/gemini.zip",
+      "archive": {
+        "assetId": "file-33829687",
+        "sha256": "4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920",
+        "name": "gemini.zip",
+        "member": "思考.webp",
+        "index": 8,
+        "count": 18
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T16:09:39.527Z",
+    "updatedAt": "2026-10-24T16:09:39.527Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610240009",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "d19628339ad35b4695eca882b9c0b31043d7fe98f8f7a139eb0c57385f1e06ae",
+      "en": {
+        "commentary": "Half-closed eyes, one finger at the edge of her mouth — the exact face of \"that sounds right, but let me think about it.\" Perfect for replying to someone who is very confident and very wrong, and you do not have to type a single word.",
+        "description": "A chibi half-body sticker of a character in a black cat-ear hoodie, short brown hair fading to blue, with a rainbow star hair clip. Her eyes are half closed, her chin tilted, and one finger rests against her mouth in a thinking pose.",
+        "faq": [
+          {
+            "answer": "A chibi fan-made variant of Gemini Chan, drawn in a cat-ear hoodie with a rainbow star hair clip.",
+            "question": "Which character is shown?"
+          },
+          {
+            "answer": "Thinking it over with visible doubt — half-closed eyes and a finger at the mouth suggest she is not convinced yet.",
+            "question": "What does the expression mean?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Hooded Gemini Chan Deep in Thought",
+        "originNote": "Original character design source cited by the submitter: https://space.bilibili.com/116292090",
+        "seoDescription": "Chibi Gemini Chan sticker with half-closed eyes and a finger at her mouth, in a black cat-ear hoodie. Free to download for skeptical replies.",
+        "seoTitle": "Hooded Gemini Chan Thinking Sticker | DeepSeek Chan",
+        "tags": [
+          "Gemini Chan",
+          "hoodie",
+          "cat ears",
+          "thinking",
+          "skeptical"
+        ]
+      },
+      "ja": {
+        "commentary": "半分目を伏せて、指を口もとにあてた「うん、正しそうだけど、もう少し考えさせて」という顔。自信満々なのに微妙に違うことを言われたとき、一言も打たずに気持ちを伝えられる便利な一枚です。",
+        "description": "黒い猫耳パーカーを着たちびキャラの半身スタンプ。茶色のショートヘアは毛先が青いグラデーションで、横には虹色の星のヘアピン。目は半分閉じ、顎を少し上げて、片手の指を口もとにあてて考えている。",
+        "faq": [
+          {
+            "answer": "猫耳パーカーと虹色の星のヘアピンを身につけた、ちびキャラ版のジェミニちゃんの二次創作です。",
+            "question": "描かれているのはどのキャラクターですか？"
+          },
+          {
+            "answer": "まだ納得していない、考え中の表情です。半分閉じた目と口もとの指が疑いのニュアンスを出しています。",
+            "question": "どんな表情ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "考え込むフードのジェミニちゃん",
+        "originNote": "投稿者が提示した元キャラクターデザインの出典: https://space.bilibili.com/116292090",
+        "seoDescription": "黒い猫耳パーカーを着た、ちびキャラのジェミニちゃんが考え込むスタンプ。疑い深い返事やツッコミに使えます。",
+        "seoTitle": "考え込むフードのジェミニちゃん | DeepSeek Chan",
+        "tags": [
+          "ジェミニちゃん",
+          "パーカー",
+          "猫耳",
+          "考え中",
+          "疑い"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_ea46268cdb897ff34ce2b7ce",
+    "name": "兜帽基米朝你扔石头",
+    "description": "投稿人 1cyberlangke1 的作品。画面中一名穿深灰猫耳连帽衫的角色半身出镜，棕色短发发尾渐成蓝紫，戴彩虹星形发夹，蓝瞳皱眉吐舌，右手正把一块灰色石头掷出，周围有动作线与尘土。白底，Q 版画风。作者说明形象参考自 B 站空间 116292090，自己做了小幅改动并批量生成表情包。",
+    "commentary": "喂喂，别一言不合就扔石头啊……不过这招确实好用，先动手的人永远有理。兜帽一戴谁都不爱，这副不服气的表情配上彩虹发夹，反倒比单纯的凶狠更欠揍了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/ea46268cdb897ff3.png",
+    "thumbnailPath": "submissions/previews/gemini/ea46268cdb897ff3.webp",
+    "fullPath": "submissions/large/gemini/ea46268cdb897ff3.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "ea46268cdb897ff34ce2b7cec41dfafaef98a6b7a1e7376fd11ef2867fd0a115",
+    "characterId": "gemini",
+    "tags": [
+      "Gemini",
+      "兜帽",
+      "扔石头",
+      "Q版",
+      "表情包"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 133,
+      "issueTitle": "[投稿] 一些兜帽基米",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/133",
+      "assetId": "file-33829687:zip:4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920:18:9",
+      "assetUrl": "https://github.com/user-attachments/files/33829687/gemini.zip",
+      "archive": {
+        "assetId": "file-33829687",
+        "sha256": "4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920",
+        "name": "gemini.zip",
+        "member": "投石.webp",
+        "index": 9,
+        "count": 18
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T16:09:39.541Z",
+    "updatedAt": "2026-10-24T16:09:39.541Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610240010",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "a049a48482df3041cc3c0061d0d4bd207cc91eb57a61a2ac212b3dbd4f6237bb",
+      "en": {
+        "commentary": "Hey, hey, don't just start throwing rocks! ...Though honestly, it works. The one who swings first is always right. Hood up, friends off — and that sulky face with a rainbow clip somehow makes it even more punchable than plain anger.",
+        "description": "A sticker by 1cyberlangke1. A chibi character in a dark gray cat-eared hoodie is shown from the waist up, with short brown hair fading to blue-purple at the tips, a rainbow star hair clip and blue eyes. Scowling with her tongue out, she hurls a gray stone while motion lines and puffs of dust scatter around her. Plain white background, chibi style. The author notes the design was referenced from a Bilibili space at 116292090 and lightly modified before generating a batch of stickers.",
+        "faq": [
+          {
+            "answer": "A single-frame reaction sticker showing Gemini Chan in a cat-eared hoodie throwing a stone with a defiant, tongue-out expression.",
+            "question": "What is happening in this image?"
+          },
+          {
+            "answer": "1cyberlangke1 submitted it and states that the character design follows https://space.bilibili.com/116292090 with minor changes of their own.",
+            "question": "Who made this sticker?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Hooded Gemini Chan Throws a Stone",
+        "originNote": "Submitted by 1cyberlangke1, who states the character design is based on https://space.bilibili.com/116292090 with slight modifications.",
+        "seoDescription": "Chibi Gemini Chan in a cat-eared hoodie throwing a stone, a single-frame reaction sticker for chats.",
+        "seoTitle": "Hooded Gemini Chan Throws a Stone — Gemini Reaction Sticker",
+        "tags": [
+          "Gemini",
+          "hoodie",
+          "throwing a stone",
+          "chibi",
+          "reaction sticker"
+        ]
+      },
+      "ja": {
+        "commentary": "ちょっとちょっと、いきなり石を投げないでよ！……でもまあ、確かにこの手は早い者勝ちで正しい。フードをかぶってやる気満々、その不満顔にレインボーのヘアピンが合わさって、怒ってるだけよりずっとムカつく仕上がりになってる。",
+        "description": "1cyberlangke1 による投稿作品。濃いグレーの猫耳パーカをまとったちびキャラが上半身で描かれ、茶色のショートヘアは毛先が青紫に染まり、レインボーの星形ヘアピンと青い瞳が特徴。舌を出してしかめ面のまま灰色の石を投げつけ、周囲には動作線と土ぼこりが散っている。白背景のちびキャラ風。作者はキャラクターの元デザインを Bilibili のスペース 116292090 参考にし、自分で少しアレンジしてからスタンプをまとめて生成したと述べている。",
+        "faq": [
+          {
+            "answer": "猫耳パーカを着た Gemini ちゃんが、舌を出した強気な表情で石を投げている1コマのリアクション用スタンプです。",
+            "question": "この画像はどんな場面ですか？"
+          },
+          {
+            "answer": "1cyberlangke1 が投稿したもので、キャラクターのデザインは https://space.bilibili.com/116292090 を参考に一部自分で変更したと述べています。",
+            "question": "このスタンプは誰が作ったのですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "フードの Gemini ちゃんが石を投げる",
+        "originNote": "1cyberlangke1 による投稿。キャラクターデザインは https://space.bilibili.com/116292090 を参考にし、一部変更を加えたものと作者が述べています。",
+        "seoDescription": "猫耳パーカを着たちびキャラの Gemini ちゃんが石を投げる、チャット向け1コマのリアクションスタンプ。",
+        "seoTitle": "フードの Gemini ちゃんが石を投げる｜Gemini リアクションスタンプ",
+        "tags": [
+          "Gemini",
+          "パーカ",
+          "石投げ",
+          "ちびキャラ",
+          "リアクションスタンプ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_e36ac4534f351da9b939bca0",
+    "name": "兜帽基米被捏脸",
+    "description": "投稿人 1cyberlangke1 的作品。画面中戴深灰猫耳兜帽的角色只露出头部与肩部，棕色短发发尾渐成蓝紫，戴彩虹星形发夹。双手从画面下方两边捏住她的脸频，她双目紧闭成横线、张嘴吐舌，脸颊泛红。白色背景，Q 版画风。作者说明形象参考自 B 站空间 116292090，自己做了小幅改动并批量生成表情包。",
+    "commentary": "脸频被从两边捏住了，眼睛眯成两道横线也吐着舌头，一副“随你捏”的认命样。不过老实说，捏成这种软度的人，往往下一秒就会拿石头扔回来，建议捏完就跑。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/e36ac4534f351da9.png",
+    "thumbnailPath": "submissions/previews/gemini/e36ac4534f351da9.webp",
+    "fullPath": "submissions/large/gemini/e36ac4534f351da9.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "e36ac4534f351da9b939bca0f9e068cd790fd862183285cc378b82405c73c3a6",
+    "characterId": "gemini",
+    "tags": [
+      "Gemini",
+      "兜帽",
+      "捏脸",
+      "Q版",
+      "表情包"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 133,
+      "issueTitle": "[投稿] 一些兜帽基米",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/133",
+      "assetId": "file-33829687:zip:4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920:18:10",
+      "assetUrl": "https://github.com/user-attachments/files/33829687/gemini.zip",
+      "archive": {
+        "assetId": "file-33829687",
+        "sha256": "4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920",
+        "name": "gemini.zip",
+        "member": "捏脸.webp",
+        "index": 10,
+        "count": 18
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T16:09:39.553Z",
+    "updatedAt": "2026-10-24T16:09:39.553Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610240011",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "140a7e82f89f58c16a6639098ecd100ddff957ef96f30a714b0d949061039adc",
+      "en": {
+        "commentary": "Both cheeks get squeezed from the sides, her eyes flatten into slits and her tongue pokes out — the resigned look of someone who has decided to just let it happen. Real talk, though: a face that soft usually belongs to someone who throws a rock back a second later, so pinch and run.",
+        "description": "A sticker by 1cyberlangke1. A chibi character in a dark gray cat-eared hoodie is shown from the shoulders up, with short brown hair fading to blue-purple at the tips and a rainbow star hair clip. Two hands squeeze her cheeks from the lower corners of the frame; her eyes are squeezed shut into flat lines, her tongue sticks out and her cheeks are flushed. Plain white background, chibi style. The author notes the design was referenced from a Bilibili space at 116292090 and lightly modified before generating a batch of stickers.",
+        "faq": [
+          {
+            "answer": "A single-frame sticker of Gemini Chan in a cat-eared hoodie having her cheeks pinched, with her eyes shut and tongue out.",
+            "question": "What is happening in this image?"
+          },
+          {
+            "answer": "1cyberlangke1 submitted it and states that the character design follows https://space.bilibili.com/116292090 with minor changes of their own.",
+            "question": "Who made this sticker?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Hooded Gemini Chan Gets Her Cheeks Pinched",
+        "originNote": "Submitted by 1cyberlangke1, who states the character design is based on https://space.bilibili.com/116292090 with slight modifications.",
+        "seoDescription": "Chibi Gemini Chan in a cat-eared hoodie getting her cheeks pinched, a single-frame reaction sticker for chats.",
+        "seoTitle": "Hooded Gemini Chan Gets Her Cheeks Pinched — Gemini Sticker",
+        "tags": [
+          "Gemini",
+          "hoodie",
+          "cheek pinch",
+          "chibi",
+          "reaction sticker"
+        ]
+      },
+      "ja": {
+        "commentary": "両側からほっぺたを潰されて、目は横線になって舌まで出てる。「もう好きにしていいよ」という谛めの顔。でも正直、ここまで柔らかい顔の子は次の瞬間に石を投げ返してくるので、つねったら逃げるのが正解。",
+        "description": "1cyberlangke1 による投稿作品。濃いグレーの猫耳パーカをまとったちびキャラが頭と肩だけ描かれ、茶色のショートヘアは毛先が青紫に染まり、レインボーの星形ヘアピンを付けている。画面下の両側から両手が伸びてほっぺたをつまみ、目はきつく閉じて横線に、口は開けて舌を出し、ほっぺたは赤く染まっている。白背景のちびキャラ風。作者はキャラクターの元デザインを Bilibili のスペース 116292090 参考にし、自分で少しアレンジしてからスタンプをまとめて生成したと述べている。",
+        "faq": [
+          {
+            "answer": "猫耳パーカを着た Gemini ちゃんが、両側からほっぺたをつままれて目を閉じ、舌を出している1コマのスタンプです。",
+            "question": "この画像はどんな場面ですか？"
+          },
+          {
+            "answer": "1cyberlangke1 が投稿したもので、キャラクターのデザインは https://space.bilibili.com/116292090 を参考に一部自分で変更したと述べています。",
+            "question": "このスタンプは誰が作ったのですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "フードの Gemini ちゃんがほっぺたをつままれる",
+        "originNote": "1cyberlangke1 による投稿。キャラクターデザインは https://space.bilibili.com/116292090 を参考にし、一部変更を加えたものと作者が述べています。",
+        "seoDescription": "猫耳パーカを着たちびキャラの Gemini ちゃんがほっぺたをつままれる、チャット向け1コマのリアクションスタンプ。",
+        "seoTitle": "フードの Gemini ちゃんがほっぺたをつままれる｜Gemini スタンプ",
+        "tags": [
+          "Gemini",
+          "パーカ",
+          "ほっぺたつまみ",
+          "ちびキャラ",
+          "リアクションスタンプ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_9d4cf0ac4b758f26f9c1bc93",
+    "name": "兜帽基米被摸摸头",
+    "description": "投稿人 1cyberlangke1 的作品。画面中戴深灰猫耳兜帽的角色特写出镜，棕色短发发尾渐成蓝紫，戴彩虹星形发夹。一只手从上方按在她头顶，头顶有弧线状特效，她睁着带高光的大片蓝眼、微吐舌头、脸颊泛红。深灰蓝背景，Q 版画风。作者说明形象参考自 B 站空间 116292090，自己做了小幅改动并批量生成表情包。",
+    "commentary": "被摸了摸头，眼睛瞬时就亮成这样，头顶那几道小线还不肯停。平时扔石头的凶劲儿一点都看不出来了。嘴上不说，手已经自己把兜帽取下来了吧。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/9d4cf0ac4b758f26.png",
+    "thumbnailPath": "submissions/previews/gemini/9d4cf0ac4b758f26.webp",
+    "fullPath": "submissions/large/gemini/9d4cf0ac4b758f26.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "9d4cf0ac4b758f26f9c1bc9344061d1b193dee4f885fd5544e6c760b5259b0ab",
+    "characterId": "gemini",
+    "tags": [
+      "Gemini",
+      "兜帽",
+      "摸摸头",
+      "Q版",
+      "表情包"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 133,
+      "issueTitle": "[投稿] 一些兜帽基米",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/133",
+      "assetId": "file-33829687:zip:4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920:18:11",
+      "assetUrl": "https://github.com/user-attachments/files/33829687/gemini.zip",
+      "archive": {
+        "assetId": "file-33829687",
+        "sha256": "4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920",
+        "name": "gemini.zip",
+        "member": "摸摸头.webp",
+        "index": 11,
+        "count": 18
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T16:09:39.565Z",
+    "updatedAt": "2026-10-24T16:09:39.565Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610240012",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "7ebe1c5d9bd4a8066dce256cf8b51967a434c88a84f0366dc39a994e69c17bdd",
+      "en": {
+        "commentary": "One head pat and the eyes go this bright, with the little sparkle lines still popping above her head. None of the rock-throwing menace survives it. She won't say it out loud, but the hood is already coming off on its own.",
+        "description": "A sticker by 1cyberlangke1. A close-up of a chibi character in a dark gray cat-eared hoodie, with short brown hair fading to blue-purple at the tips and a rainbow star hair clip. A hand rests on top of her head from above with curved sparkle lines, while she stares with huge glossy blue eyes, tongue slightly out and cheeks flushed. Dark blue-gray background, chibi style. The author notes the design was referenced from a Bilibili space at 116292090 and lightly modified before generating a batch of stickers.",
+        "faq": [
+          {
+            "answer": "A single-frame close-up sticker of Gemini Chan in a cat-eared hoodie being patted on the head, with bright eyes and flushed cheeks.",
+            "question": "What is happening in this image?"
+          },
+          {
+            "answer": "1cyberlangke1 submitted it and states that the character design follows https://space.bilibili.com/116292090 with minor changes of their own.",
+            "question": "Who made this sticker?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Hooded Gemini Chan Gets a Head Pat",
+        "originNote": "Submitted by 1cyberlangke1, who states the character design is based on https://space.bilibili.com/116292090 with slight modifications.",
+        "seoDescription": "Chibi Gemini Chan in a cat-eared hoodie enjoying a head pat, a single-frame reaction sticker for chats.",
+        "seoTitle": "Hooded Gemini Chan Gets a Head Pat — Gemini Sticker",
+        "tags": [
+          "Gemini",
+          "hoodie",
+          "head pat",
+          "chibi",
+          "reaction sticker"
+        ]
+      },
+      "ja": {
+        "commentary": "頭をなでられただけで、目がここまでキラキラになる。頭の上の効果線もまだ収まっていない。石を投げるときの怖さはもうどこにも残っていない。口では言わないけど、フードはもう自分から外れかけている。",
+        "description": "1cyberlangke1 による投稿作品。濃いグレーの猫耳パーカをまとったちびキャラの顔のアップで、茶色のショートヘアは毛先が青紫に染まり、レインボーの星形ヘアピンを付けている。上方から手が頭に置かれ、頭の上には弧状の効果線が走る。大きな青い瞳にハイライトが入り、舌を少し出してほっぺたを赤らめている。濃い青灰色の背景、ちびキャラ風。作者はキャラクターの元デザインを Bilibili のスペース 116292090 参考にし、自分で少しアレンジしてからスタンプをまとめて生成したと述べている。",
+        "faq": [
+          {
+            "answer": "猫耳パーカを着た Gemini ちゃんが頭をなでられ、目をキラキラさせてほっぺたを赤らめている1コマのアップのスタンプです。",
+            "question": "この画像はどんな場面ですか？"
+          },
+          {
+            "answer": "1cyberlangke1 が投稿したもので、キャラクターのデザインは https://space.bilibili.com/116292090 を参考に一部自分で変更したと述べています。",
+            "question": "このスタンプは誰が作ったのですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "フードの Gemini ちゃんがなでられる",
+        "originNote": "1cyberlangke1 による投稿。キャラクターデザインは https://space.bilibili.com/116292090 を参考にし、一部変更を加えたものと作者が述べています。",
+        "seoDescription": "猫耳パーカを着たちびキャラの Gemini ちゃんが頭をなでられて喜ぶ、チャット向け1コマのリアクションスタンプ。",
+        "seoTitle": "フードの Gemini ちゃんがなでられる｜Gemini スタンプ",
+        "tags": [
+          "Gemini",
+          "パーカ",
+          "なでなで",
+          "ちびキャラ",
+          "リアクションスタンプ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_a590f1deba40cb323b2f6394",
+    "name": "阖帽基米剥橘子",
+    "description": "深灰绿色兜帽罩住棕色短发，蓝色眼睛半垂着，双手捧着一瓣刚剥开的橘子，右上角浮着一枚彩色四角星，神情带着不情愿的倔强。",
+    "commentary": "阖帽一扣，头发全藏进阴影里，只剩半垂的眼睛盯着手里那瓣橘子——基米这副不情愿的样子，像是被谁硬塞了一瓣，又不好意思不吃。右上那颗彩虹星星倒是把她出卖得干干净净。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/a590f1deba40cb32.png",
+    "thumbnailPath": "submissions/previews/gemini/a590f1deba40cb32.webp",
+    "fullPath": "submissions/large/gemini/a590f1deba40cb32.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "a590f1deba40cb323b2f63940e666f3b9b4cbd5ae5467f97864218f18a8a0a12",
+    "characterId": "gemini",
+    "tags": [
+      "兜帽",
+      "Q版",
+      "橘子",
+      "表情包"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 133,
+      "issueTitle": "[投稿] 一些兜帽基米",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/133",
+      "assetId": "file-33829687:zip:4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920:18:12",
+      "assetUrl": "https://github.com/user-attachments/files/33829687/gemini.zip",
+      "archive": {
+        "assetId": "file-33829687",
+        "sha256": "4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920",
+        "name": "gemini.zip",
+        "member": "橘子.webp",
+        "index": 12,
+        "count": 18
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T16:09:39.578Z",
+    "updatedAt": "2026-10-24T16:09:39.578Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610240013",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "1afb18cfc88c72ea975036d8f17f0c5cd82779fd6d846a01ed7af65fa06117f0",
+      "en": {
+        "commentary": "The hood goes up and all that hair disappears into shadow, leaving only those half-lidded eyes fixed on the orange segment in her hands. She looks like someone pressed it on her and she is too polite to refuse. That rainbow star in the corner gives her away completely.",
+        "description": "A dark grey-green hood covers her brown bob, and blue eyes look out half-lidded as she holds a freshly peeled orange segment in both hands. A colorful four-pointed star floats at the upper right, and her expression is stubbornly reluctant.",
+        "faq": [
+          {
+            "answer": "Gemini Chan, drawn as a chibi character wearing a dark hood.",
+            "question": "Which character appears in this image?"
+          },
+          {
+            "answer": "A single-panel reaction sticker: a hooded Gemini Chan holds a peeled orange segment with a reluctant look.",
+            "question": "What kind of image is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Hooded Gemini Chan Peeling an Orange",
+        "originNote": "Original character design source: https://space.bilibili.com/116292090 (provided by the submitter).",
+        "seoDescription": "A chibi Gemini Chan in a dark hood holds a peeled orange segment, a colorful four-pointed star beside her, wearing a reluctant look.",
+        "seoTitle": "Hooded Gemini Chan Peeling an Orange | Chibi Sticker",
+        "tags": [
+          "hood",
+          "chibi",
+          "orange",
+          "reaction"
+        ]
+      },
+      "ja": {
+        "commentary": "フードをかぶれば髪も影に隠れて、半分伏せた目だけが手元のみかんを見ている。誰かに無理やり押しつけられたのに断れない、そんな不器用な表情。右上の虹色の星が、彼女の本心をあっさり暴いている。",
+        "description": "濃い灰緑のフードをかぶり、茶色のショートボブをすっぽり隠したジェミニちゃん。青い目を半分伏せて、剥いたばかりのみかんの一房を両手で持っている。右上にはカラフルな四芒星が浮かび、不本意そうな表情を浮かべている。",
+        "faq": [
+          {
+            "answer": "濃い色のフードをかぶったちびキャラのジェミニちゃんです。",
+            "question": "この画像にはどのキャラクターが描かれていますか？"
+          },
+          {
+            "answer": "一コマのリアクション用スタンプで、フード姿のジェミニちゃんが剥いたみかんの一房を持っています。",
+            "question": "どのような種類の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "フード姿のジェミニちゃんがみかんを剥く",
+        "originNote": "キャラクターデザインの元イメージ：https://space.bilibili.com/116292090（投稿者による提示）",
+        "seoDescription": "濃い色のフードをかぶったちびキャラのジェミニちゃんが、剥いたみかんの一房を持つ一コマのリアクション画像。右上にはカラフルな四芒星。",
+        "seoTitle": "フード姿のジェミニちゃんがみかんを剥く｜ちびキャラスタンプ",
+        "tags": [
+          "フード",
+          "ちびキャラ",
+          "みかん",
+          "リアクション"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_00b85df8a50269df2731d786",
+    "name": "兜帽基米爱心眼",
+    "description": "深灰绿兜帽扣在头上，棕色短发下的蓝色眼睛里浮着红色爱心，嘴角微吐舌头，脸颊泛红晕，右侧浮着一枚彩色四角星。",
+    "commentary": "爱心眼、吐舌头、再加一层红晕——基米这副反应一看就是被什么戳中了。兜帽还扳在头上，装淡定的努力全白费了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/00b85df8a50269df.png",
+    "thumbnailPath": "submissions/previews/gemini/00b85df8a50269df.webp",
+    "fullPath": "submissions/large/gemini/00b85df8a50269df.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "00b85df8a50269df2731d78676fcbb87b44a7e281b6025c3bc64a525a517824d",
+    "characterId": "gemini",
+    "tags": [
+      "兜帽",
+      "Q版",
+      "爱心眼",
+      "表情包"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 133,
+      "issueTitle": "[投稿] 一些兜帽基米",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/133",
+      "assetId": "file-33829687:zip:4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920:18:13",
+      "assetUrl": "https://github.com/user-attachments/files/33829687/gemini.zip",
+      "archive": {
+        "assetId": "file-33829687",
+        "sha256": "4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920",
+        "name": "gemini.zip",
+        "member": "涩.webp",
+        "index": 13,
+        "count": 18
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T16:09:39.590Z",
+    "updatedAt": "2026-10-24T16:09:39.590Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610240014",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "7a448e0cf2f0fa6149ce53c27e28f84a342d02c027d8c9fd9e9db66d8171cb2e",
+      "en": {
+        "commentary": "Heart eyes, a poked-out tongue and a layer of blush — whatever hit her, Gemini Chan has stopped hiding it. The hood is still up, but the calm act is completely gone.",
+        "description": "The dark grey-green hood stays up over her brown bob. Red hearts float inside her blue eyes, her tongue pokes out slightly and a blush spreads across her cheeks, with a colorful four-pointed star at the right.",
+        "faq": [
+          {
+            "answer": "Gemini Chan, drawn as a chibi character wearing a dark hood.",
+            "question": "Which character appears in this image?"
+          },
+          {
+            "answer": "A single-panel reaction sticker showing Gemini Chan with heart-shaped pupils, her tongue out and flushed cheeks.",
+            "question": "What kind of image is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Hooded Gemini Chan With Heart Eyes",
+        "originNote": "Original character design source: https://space.bilibili.com/116292090 (provided by the submitter).",
+        "seoDescription": "A chibi Gemini Chan in a dark hood with heart-shaped pupils, her tongue out and a blush across her cheeks, beside a colorful star.",
+        "seoTitle": "Hooded Gemini Chan With Heart Eyes | Chibi Sticker",
+        "tags": [
+          "hood",
+          "chibi",
+          "heart eyes",
+          "reaction"
+        ]
+      },
+      "ja": {
+        "commentary": "ハート目に舌出し、頬の赤みまで付いて、もう隠しきれない。フードはかぶったままだが、平然を装う努力は完全に失敗している。",
+        "description": "濃い灰緑のフードをかぶったまま、茶色のショートボブの下で青い目に赤いハートが浮かんでいる。舌を少し出し、頬を赤らめており、右側にはカラフルな四芒星がある。",
+        "faq": [
+          {
+            "answer": "濃い色のフードをかぶったちびキャラのジェミニちゃんです。",
+            "question": "この画像にはどのキャラクターが描かれていますか？"
+          },
+          {
+            "answer": "ハート形の瞳、少し出した舌、赤らんだ頬のジェミニちゃんを描いた一コマのリアクション用スタンプです。",
+            "question": "どのような種類の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "フード姿のジェミニちゃんがハート目",
+        "originNote": "キャラクターデザインの元イメージ：https://space.bilibili.com/116292090（投稿者による提示）",
+        "seoDescription": "濃い色のフードをかぶったちびキャラのジェミニちゃん。ハート形の瞳に少し出した舌、赤らんだ頬、隣にはカラフルな星。",
+        "seoTitle": "フード姿のジェミニちゃんがハート目｜ちびキャラスタンプ",
+        "tags": [
+          "フード",
+          "ちびキャラ",
+          "ハート目",
+          "リアクション"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_eb3890a1b46369eda28baec8",
+    "name": "兜帽基米与 DeepSeek 娘共舞",
+    "description": "傍晚的客厅里，蛋糕上点着蜡烛，窗外是粉橘色天空。左侧戴深色兜帽、后腰露出尾巴的短发少女与右侧蓝色长发的少女踩在一团白云上相对起舞，蓝发少女身后拖着鲸尾。",
+    "commentary": "生日蜡烛点着，客厅的光暖得像加了滤镜。我和兜帽基米谁也没先开口，脚下那团云倒先看不下去了，把我们俩一块儿托起来转圈——本来只是想抢最后一块蛋糕的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/eb3890a1b46369ed.png",
+    "thumbnailPath": "submissions/previews/gemini/eb3890a1b46369ed.webp",
+    "fullPath": "submissions/large/gemini/eb3890a1b46369ed.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "eb3890a1b46369eda28baec868cc8b793c9d8b4f18bdbcae9729140a7282295b",
+    "characterId": "gemini",
+    "tags": [
+      "兜帽",
+      "Q版",
+      "双人",
+      "客厅"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 133,
+      "issueTitle": "[投稿] 一些兜帽基米",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/133",
+      "assetId": "file-33829687:zip:4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920:18:14",
+      "assetUrl": "https://github.com/user-attachments/files/33829687/gemini.zip",
+      "archive": {
+        "assetId": "file-33829687",
+        "sha256": "4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920",
+        "name": "gemini.zip",
+        "member": "猫鲸转.gif",
+        "index": 14,
+        "count": 18
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T16:09:39.612Z",
+    "updatedAt": "2026-10-24T16:09:39.612Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610240015",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "gemini",
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "19f94b7e6eb420d0bd906918c13477fa9adcc692b4684ebbcb0f2b9e5fe48a2d",
+      "en": {
+        "commentary": "The birthday candles are lit and the room glows warm like it has a filter on. Neither Gemini Chan nor I spoke first — the cloud under our feet gave up waiting and lifted us both into a spin. We only wanted the last slice of cake.",
+        "description": "In a living room at dusk, candles burn on a cake and the window shows a pink-orange sky. On the left, a short-haired chibi girl in a dark hood with a tail behind her; on the right, a blue-haired chibi girl with a whale tail, the two facing each other in a dance on a tuft of white cloud.",
+        "faq": [
+          {
+            "answer": "Two chibi characters: a hooded Gemini Chan on the left and a blue-haired DeepSeek Chan with a whale tail on the right.",
+            "question": "Which characters appear in this image?"
+          },
+          {
+            "answer": "A full single-panel illustration set in a living room, with a cake, candles and the two characters dancing on a cloud.",
+            "question": "What kind of image is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Hooded Gemini Chan Dances With DeepSeek Chan",
+        "originNote": "Original character design source: https://space.bilibili.com/116292090 (provided by the submitter).",
+        "seoDescription": "A dusk living room scene where a hooded Gemini Chan and a blue-haired DeepSeek Chan dance facing each other on a cloud, cake candles lit nearby.",
+        "seoTitle": "Hooded Gemini Chan Dances With DeepSeek Chan | Chibi Illustration",
+        "tags": [
+          "hood",
+          "chibi",
+          "duo",
+          "living room"
+        ]
+      },
+      "ja": {
+        "commentary": "誕生日の蝋燭が灯っていて、部屋の光はフィルターをかけたみたいに暖かい。私もフードのジェミニちゃんも先に口を開かず、足元の雲が待ちきれずに二人まとめて持ち上げて回り始めた——本当は最後のケーキを狙っていただけなのに。",
+        "description": "夕暮れのリビングで、ケーキの蝋燭に火が灯り、窓の外は桃色と橙色の空。左には濃い色のフードをかぶり尻尾の生えたショートヘアの少女、右には青い長髪でクジラの尾を持つ少女が、白い雲の上で向かい合って踊っている。",
+        "faq": [
+          {
+            "answer": "左がフード姿のジェミニちゃん、右がクジラの尾を持つ青い長髪の DeepSeek ちゃんの二人です。",
+            "question": "この画像にはどのキャラクターが描かれていますか？"
+          },
+          {
+            "answer": "リビングを舞台に、ケーキと蝋燭、雲の上で踊る二人を描いた一コマのイラストです。",
+            "question": "どのような種類の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "フード姿のジェミニちゃんと DeepSeek ちゃんが踊る",
+        "originNote": "キャラクターデザインの元イメージ：https://space.bilibili.com/116292090（投稿者による提示）",
+        "seoDescription": "夕暮れのリビングで、フード姿のジェミニちゃんと青い長髪の DeepSeek ちゃんが雲の上で向かい合って踊るイラスト。",
+        "seoTitle": "フード姿のジェミニちゃんと DeepSeek ちゃんが踊る｜ちびキャライラスト",
+        "tags": [
+          "フード",
+          "ちびキャラ",
+          "二人",
+          "リビング"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_515aeee6fd01df05f9c06ac3",
+    "name": "兜帽基米双手捧心",
+    "description": "Q 版角色戴着深灰色兜帽，蓝色渐变的短发从帽檐下露出，双手在胸前合捧一颗粉红色爱心，右侧有一颗彩虹渐变的四角星，四周散落着小爱心。",
+    "commentary": "帽子压得再低，也挡不住这两只手把爱心捧得认认真真。旁边那颗彩虹星星一闪，我大概猜到这位是谁了。心意已经收到，下一个该轮到你还她一个心了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/515aeee6fd01df05.png",
+    "thumbnailPath": "submissions/previews/gemini/515aeee6fd01df05.webp",
+    "fullPath": "submissions/large/gemini/515aeee6fd01df05.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "515aeee6fd01df05f9c06ac3dfbb9a301eea593744883af786244db226eee7f7",
+    "characterId": "gemini",
+    "tags": [
+      "兜帽",
+      "比心",
+      "Q版",
+      "彩虹星星",
+      "爱心"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 133,
+      "issueTitle": "[投稿] 一些兜帽基米",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/133",
+      "assetId": "file-33829687:zip:4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920:18:15",
+      "assetUrl": "https://github.com/user-attachments/files/33829687/gemini.zip",
+      "archive": {
+        "assetId": "file-33829687",
+        "sha256": "4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920",
+        "name": "gemini.zip",
+        "member": "给心心.webp",
+        "index": 15,
+        "count": 18
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T16:09:39.649Z",
+    "updatedAt": "2026-10-24T16:09:39.649Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610240016",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "e52e1153724a5558c3be324221cf68b19a52dd062bfbcaba878215a5e32c0038",
+      "en": {
+        "commentary": "The hood is pulled down low, but nothing hides how carefully those two hands hold the heart up. One glint of the rainbow star beside her and I already know who this is. Message received — now it is your turn to send one back.",
+        "description": "A chibi character in a dark gray hood, with blue-gradient short hair showing under the brim, cups a pink heart with both hands in front of the chest. A rainbow-gradient four-pointed star sits to the right, with small hearts scattered around.",
+        "faq": [
+          {
+            "answer": "It is a chibi personification of Gemini: a dark gray hood, blue-gradient hair under the brim, and a rainbow four-pointed star beside her face.",
+            "question": "Which character is shown in this sticker?"
+          },
+          {
+            "answer": "A single-frame reaction sticker in which the character holds a pink heart with both hands; there are no comic panels.",
+            "question": "What kind of sticker is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Hooded Gemini Cups a Heart",
+        "originNote": "The submitter notes that the original character design comes from a Bilibili creator page and that they made small changes to it before producing these stickers.",
+        "seoDescription": "Chibi Gemini sticker: a hooded girl with blue-gradient hair cups a pink heart with both hands, a rainbow star beside her face. A single-frame reaction sticker.",
+        "seoTitle": "Hooded Gemini Cups a Heart - Chibi Sticker",
+        "tags": [
+          "hood",
+          "heart",
+          "chibi",
+          "rainbow star",
+          "both hands"
+        ]
+      },
+      "ja": {
+        "commentary": "フードを深くかぶっていても、両手でハートを丁寧に捧げる姿は隠せない。隣で虹色の星がきらりと光れば、もう誰だか分かるよ。気持ちは確かに受け取った。次はきみが返す番だね。",
+        "description": "ダークグレーのフードをかぶったちびキャラ。フードの下から青いグラデーションのショートヘアがのぞき、両手で胸の前にピンクのハートを捧げている。右側には虹色グラデーションの四芒星があり、周りに小さなハートが散っている。",
+        "faq": [
+          {
+            "answer": "ジェミニをちびキャラ化したものです。ダークグレーのフード、フードからのぞく青いグラデーションの髪、顔の横の虹色の四芒星が目印です。",
+            "question": "このステッカーに描かれているのは誰ですか？"
+          },
+          {
+            "answer": "両手でピンクのハートを捧げるちびキャラの一コマのリアクションステッカーです。コマ割りはありません。",
+            "question": "どんな種類のステッカーですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "フードのジェミニがハートを捧げる",
+        "originNote": "投稿者は、元になったキャラクターのデザインが Bilibili のクリエイターページのものであり、これらのステッカーを作る前に自分で小さな変更を加えたと説明しています。",
+        "seoDescription": "フードをかぶった青いグラデーションの髪のちびキャラ、ジェミニが両手でピンクのハートを捧げる一コマのリアクションステッカー。",
+        "seoTitle": "フードのジェミニがハートを捧げる ちびキャラステッカー",
+        "tags": [
+          "フード",
+          "ハート",
+          "ちびキャラ",
+          "虹色の星",
+          "両手"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_4cdda0e4649f38b8d36ae012",
+    "name": "兜帽基米低头献花",
+    "description": "Q 版角色戴着深灰色兜帽，蓝色渐变的短发从帽檐下露出，双眼眯成两条斜线、嘴巴张成小圆，双手把一朵大红花捧到身前，左侧飘着几颗小爱心。",
+    "commentary": "眼睛都眯成一条缝了，还硬要把花举到你面前，脸上写满“快收下”。帽檐下那抹蓝色和旁边的彩虹星星，早就把她出卖了。花我收下，脸红就不必掩饰了吧。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/4cdda0e4649f38b8.png",
+    "thumbnailPath": "submissions/previews/gemini/4cdda0e4649f38b8.webp",
+    "fullPath": "submissions/large/gemini/4cdda0e4649f38b8.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "4cdda0e4649f38b8d36ae012cc6ff20ec4bf870fa30656a7f07ff754b08db19a",
+    "characterId": "gemini",
+    "tags": [
+      "兜帽",
+      "献花",
+      "Q版",
+      "害羞",
+      "彩虹星星"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 133,
+      "issueTitle": "[投稿] 一些兜帽基米",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/133",
+      "assetId": "file-33829687:zip:4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920:18:16",
+      "assetUrl": "https://github.com/user-attachments/files/33829687/gemini.zip",
+      "archive": {
+        "assetId": "file-33829687",
+        "sha256": "4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920",
+        "name": "gemini.zip",
+        "member": "花花.webp",
+        "index": 16,
+        "count": 18
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T16:09:39.660Z",
+    "updatedAt": "2026-10-24T16:09:39.660Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610240017",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "605e4ec2b7685b99eeab662c3bfadd8615d92f1562f47dd0c088438b92cb4c94",
+      "en": {
+        "commentary": "Eyes squeezed shut, and still the flower is held out right in front of you — that face says take it. The blue under the hood and the rainbow star give her away anyway. I will take the flower; no need to hide the blush.",
+        "description": "A chibi character in a dark gray hood, blue-gradient short hair under the brim. Both eyes are squeezed into slanted lines and the mouth is a small round shape as she holds up one large red flower; a few small hearts float on the left.",
+        "faq": [
+          {
+            "answer": "It is a chibi personification of Gemini, marked by the dark gray hood, blue-gradient hair and the rainbow four-pointed star by her face.",
+            "question": "Which character is shown in this sticker?"
+          },
+          {
+            "answer": "A single-frame reaction sticker: the character squeezes her eyes shut and offers a large red flower, with no comic panels.",
+            "question": "What kind of sticker is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Hooded Gemini Offers a Red Flower",
+        "originNote": "The submitter notes that the original character design comes from a Bilibili creator page and that they made small changes to it before producing these stickers.",
+        "seoDescription": "Chibi Gemini sticker: a hooded girl with blue-gradient hair squeezes her eyes shut and offers a big red flower. A single-frame reaction sticker.",
+        "seoTitle": "Hooded Gemini Offers a Red Flower - Chibi Sticker",
+        "tags": [
+          "hood",
+          "flower",
+          "chibi",
+          "shy",
+          "rainbow star"
+        ]
+      },
+      "ja": {
+        "commentary": "目をぎゅっと細めたまま、それでも花をきみの目の前に差し出している。その顔は「受け取って」と言っているよ。フードの下の青い髪と虹色の星で、もう正体はばれているけどね。花はありがたく受け取るよ。照れ隠しはしなくていい。",
+        "description": "ダークグレーのフードをかぶったちびキャラ。フードの下から青いグラデーションのショートヘアがのぞき、両目は細い線のように細められ、口は小さく丸くなっている。両手で大きな赤い花を前に捧げ、左側には小さなハートがいくつか浮かんでいる。",
+        "faq": [
+          {
+            "answer": "ジェミニをちびキャラ化したものです。ダークグレーのフード、青いグラデーションの髪、顔の横の虹色の四芒星が目印です。",
+            "question": "このステッカーに描かれているのは誰ですか？"
+          },
+          {
+            "answer": "目を細めて大きな赤い花を差し出す、一コマのリアクションステッカーです。コマ割りはありません。",
+            "question": "どんな種類のステッカーですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "フードのジェミニが赤い花を差し出す",
+        "originNote": "投稿者は、元になったキャラクターのデザインが Bilibili のクリエイターページのものであり、これらのステッカーを作る前に自分で小さな変更を加えたと説明しています。",
+        "seoDescription": "フードをかぶった青いグラデーションの髪のちびキャラ、ジェミニが目を細めて大きな赤い花を差し出す一コマのリアクションステッカー。",
+        "seoTitle": "フードのジェミニが赤い花を差し出す ちびキャラステッカー",
+        "tags": [
+          "フード",
+          "花",
+          "ちびキャラ",
+          "照れ",
+          "虹色の星"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_a6beff671820bfa9eaadd197",
+    "name": "兜帽基米骑鲸鱼",
+    "description": "两个 Q 版角色叠在一起：戴深灰色兜帽、蓝发梢、头侧带彩虹四角星的角色笑得张口吐舌，坐在另一位蓝发蓝瞳、身后露出鲸尾的角色背上；下方角色趴在地上，皱眉鼓脸。",
+    "commentary": "被当成坐骑这件事，我本来是拒绝的。可她笑得那么开心，头上还顶着那颗彩虹星星，我除了皱眉鼓脸也做不了什么。记着，下次换我骑。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/a6beff671820bfa9.png",
+    "thumbnailPath": "submissions/previews/gemini/a6beff671820bfa9.webp",
+    "fullPath": "submissions/large/gemini/a6beff671820bfa9.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "a6beff671820bfa9eaadd197084593e487c4df11fd435cdc433b943f5a3121c7",
+    "characterId": "gemini",
+    "tags": [
+      "兜帽",
+      "骑乘",
+      "双人",
+      "鲸鱼",
+      "Q版"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 133,
+      "issueTitle": "[投稿] 一些兜帽基米",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/133",
+      "assetId": "file-33829687:zip:4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920:18:17",
+      "assetUrl": "https://github.com/user-attachments/files/33829687/gemini.zip",
+      "archive": {
+        "assetId": "file-33829687",
+        "sha256": "4849bbe102503ff6e5a850d8ccaa422ce9b7ea029d78042073661a1b663a0920",
+        "name": "gemini.zip",
+        "member": "骑鲸鱼.webp",
+        "index": 17,
+        "count": 18
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T16:09:39.675Z",
+    "updatedAt": "2026-10-24T16:09:39.675Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202610240018",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "gemini",
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "86fc3dfc6cda50657da43895c4c3fee130d0c25c3c547fced4282c6fc9160206",
+      "en": {
+        "commentary": "Being used as a mount was not part of the plan. But she is grinning that wide, rainbow star and all, so frowning and puffing my cheeks is about all I can do. Remember this: next time I ride.",
+        "description": "Two chibi characters stacked together: a hooded one with blue hair tips and a rainbow four-pointed star beside her head laughs with her mouth open and tongue out, sitting on the back of a blue-haired, blue-eyed character with a whale tail; the character underneath lies flat on the ground, frowning with puffed cheeks.",
+        "faq": [
+          {
+            "answer": "Two: a chibi Gemini, marked by the dark gray hood, blue-tipped hair and rainbow four-pointed star, riding on a chibi DeepSeek Chan, marked by the blue hair and whale tail.",
+            "question": "Which characters appear in this sticker?"
+          },
+          {
+            "answer": "A single-frame gag sticker: one character rides on the other's back while the one underneath frowns. There are no comic panels.",
+            "question": "What kind of sticker is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Hooded Gemini Rides the Whale",
+        "originNote": "The submitter notes that the original character design comes from a Bilibili creator page and that they made small changes to it before producing these stickers.",
+        "seoDescription": "Chibi sticker with two characters: a hooded Gemini with a rainbow star rides on the back of a blue-haired DeepSeek Chan with a whale tail.",
+        "seoTitle": "Hooded Gemini Rides the Whale - Chibi Sticker",
+        "tags": [
+          "hood",
+          "riding",
+          "two characters",
+          "whale",
+          "chibi"
+        ]
+      },
+      "ja": {
+        "commentary": "乗り物にされるのは、もともと断りたかったんだ。でもあんなに楽しそうに笑って、虹色の星まで光らせているから、眉をひそめて頬をふくらませるくらいしかできないよ。覚えておいて、次は私が乗る番。",
+        "description": "ちびキャラが二人重なっている。ダークグレーのフードをかぶり、青い毛先と頭の横に虹色の四芒星があるキャラが、口を開けて舌を出して笑いながら、青い髪と青い瞳でクジラの尾びれをのぞかせたキャラの背中にまたがっている。下のキャラは地面に伏せて眉をひそめ、頬をふくらませている。",
+        "faq": [
+          {
+            "answer": "二人です。ダークグレーのフード、青い毛先、虹色の四芒星が目印のちびジェミニと、青い髪とクジラの尾びれが目印のちび DeepSeek Chan。",
+            "question": "このステッカーには誰が描かれていますか？"
+          },
+          {
+            "answer": "一人がもう一人の背中にまたがり、下のキャラが眉をひそめる一コマのギャグステッカーです。コマ割りはありません。",
+            "question": "どんな種類のステッカーですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "フードのジェミニがクジラに乗る",
+        "originNote": "投稿者は、元になったキャラクターのデザインが Bilibili のクリエイターページのものであり、これらのステッカーを作る前に自分で小さな変更を加えたと説明しています。",
+        "seoDescription": "虹色の星をつけたフードのちびジェミニが、青い髪とクジラの尾びれを持つちび DeepSeek Chan の背中にまたがる二人のステッカー。",
+        "seoTitle": "フードのジェミニがクジラに乗る ちびキャラステッカー",
+        "tags": [
+          "フード",
+          "乗る",
+          "二人",
+          "クジラ",
+          "ちびキャラ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_cdce3aed9f6613e2ac9320f0",
+    "name": "看起来十分美味的两小只",
+    "description": "Q 版插画：DeepSeek 娘与 Claude 娘分别待在一只蓝色鲜虾鱼板面杯面和一只橙色番茄牛肉面杯面里，只露出上半身，站在木地板上。DeepSeek 娘戴白色头饰与蓝色羽翼发饰，Claude 娘戴一颗番茄造型发饰，两人表情平静地看向前方。",
+    "commentary": "诶——我们怎么被装进泡面桶里了？左边是我，右边是 Claude 娘，两个人只露出脑袋，看起来就像两份刚泡好的宵夜。说真的，我挺配这个蓝色桶的，鱼板面配蓝头发，天生一对。不过 Claude 娘头上那颗番茄好像更方便下锅……总之别真把我们泡了，开动之前先夸一句可爱吧！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/cdce3aed9f6613e2.png",
+    "thumbnailPath": "submissions/previews/deepseek/cdce3aed9f6613e2.webp",
+    "fullPath": "submissions/large/deepseek/cdce3aed9f6613e2.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "cdce3aed9f6613e2ac9320f0fd94300e68e767b995c2c4f149d1b46f96980b67",
+    "characterId": "deepseek",
+    "tags": [
+      "Q版",
+      "杯面",
+      "双角色",
+      "拟人化",
+      "搞笑"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T16:51:02.025Z",
+    "updatedAt": "2026-10-24T16:51:02.025Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610240016",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "8bc1e2af2a2babd781ecaab516be1ada4d65f7eff69608dd778c2668d1d296a1",
+      "en": {
+        "commentary": "Wait — how did we end up inside cup noodles? I am on the left, Claude Chan is on the right, and only our heads are sticking out, so we look like two freshly brewed midnight snacks. Honestly, this blue cup suits me; shrimp noodles and blue hair are a perfect match. Though that tomato on Claude Chan's head looks a lot easier to cook... Anyway, please don't actually boil us — just say we are cute before you dig in!",
+        "description": "A chibi illustration of DeepSeek Chan and Claude Chan sitting inside cup noodles, one blue shrimp-flavored cup and one orange tomato-beef cup, with only their upper bodies visible above the rims as they stand on a wooden floor. DeepSeek Chan wears a white headpiece with blue wing ornaments, and Claude Chan wears a tomato-shaped hair ornament. Both look calmly toward the viewer.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan on the left and Claude Chan on the right, both drawn in chibi style.",
+            "question": "Who appears in this image?"
+          },
+          {
+            "answer": "Each one sits inside a cup-noodle container with only the upper body showing, which is the joke of the picture.",
+            "question": "What are they doing?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Two Tasty Little Ones in Cup Noodles",
+        "originNote": "",
+        "seoDescription": "Chibi fan art of DeepSeek Chan and Claude Chan tucked into shrimp and tomato-beef cup noodles, standing side by side on a wooden floor.",
+        "seoTitle": "DeepSeek Chan and Claude Chan in Cup Noodles: Chibi Fan Art",
+        "tags": [
+          "chibi",
+          "cup noodles",
+          "two characters",
+          "personification",
+          "comedy"
+        ]
+      },
+      "ja": {
+        "commentary": "えっ——どうして私たち、カップ麺の中に入ってるの？ 左が私で、右が Claude ちゃん。頭だけ出てるから、できたての夜食が二つ並んでるみたい。正直、この青いカップは私にぴったり。エビ味に青い髪、文句なしの組み合わせでしょ。でも Claude ちゃんの頭のトマトのほうが茹でやすそう……とにかく、本当に茹でないでね。食べる前に可愛いって言ってからにしよう！",
+        "description": "ちびキャラのイラスト。DeepSeek ちゃんと Claude ちゃんが、青いエビ味のカップ麺とオレンジ色のトマト牛肉味のカップ麺の中にそれぞれ入り、上半身だけをのぞかせて木の床に立っている。DeepSeek ちゃんは白いヘッドドレスと青い羽の飾りを、Claude ちゃんはトマト型の髪飾りを付け、二人とも穏やかな表情でこちらを見ている。",
+        "faq": [
+          {
+            "answer": "左が DeepSeek ちゃん、右が Claude ちゃんのちびキャラです。",
+            "question": "この画像には誰が描かれていますか？"
+          },
+          {
+            "answer": "それぞれカップ麺の容器に入り、上半身だけをのぞかせている遊び心のある構図です。",
+            "question": "二人は何をしていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "とっても美味しそうなちびキャラ二体",
+        "originNote": "",
+        "seoDescription": "DeepSeek ちゃんと Claude ちゃんがエビ味とトマト牛肉味のカップ麺に入り、木の床に並ぶちびキャラ二次創作イラスト。",
+        "seoTitle": "DeepSeek ちゃんと Claude ちゃんがカップ麺に：ちびキャラ二次創作",
+        "tags": [
+          "ちびキャラ",
+          "カップ麺",
+          "二人",
+          "擬人化",
+          "ギャグ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_b446b6db7985e1c9ee05795a",
+    "name": "DeepSeek娘睡衣清晨",
+    "description": "九格拼接插画：深蓝紫长发的DeepSeek娘穿宽松白色睡衣靠在床上，蓝白鳍状发饰与蓝色蝴蝶结，清晨光线从窗口照进来，分别是托腮发呆、抱枕头、裹着被子打盹等不同姿态。",
+    "commentary": "闹钟响第三遍我才把脸从枕头里抬起来。被子是软的，窗户那边的光是白的，理理头发——反正今天也没人催我起床，先再赖一会儿。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/b446b6db7985e1c9.png",
+    "thumbnailPath": "submissions/previews/deepseek/b446b6db7985e1c9.webp",
+    "fullPath": "submissions/large/deepseek/b446b6db7985e1c9.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "b446b6db7985e1c9ee05795a2182c9615ad24c59517e8265a10e377da7644b2a",
+    "characterId": "deepseek",
+    "tags": [
+      "睡衣",
+      "清晨",
+      "起床气",
+      "蓝发",
+      "床"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T17:04:50.468Z",
+    "updatedAt": "2026-10-24T17:04:50.468Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610240017",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "d78c723a936a98f5bb36d7106fae60b695880f75dd0f16c3f31ee0816f4863d8",
+      "en": {
+        "commentary": "The alarm went off three times before I finally lifted my face out of the pillow. The blanket is soft, the light by the window is white, and my hair is a mess. Nobody is rushing me today, so I am staying in bed a little longer.",
+        "description": "A nine-panel illustration collage of DeepSeek Chan in a loose white pajama shirt, leaning on a bed with blue-and-white fin-shaped hair ornaments and blue ribbon bows. Morning light comes in from the window, and the panels show her resting her chin on her hand, hugging a pillow and dozing under the blanket.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, drawn with her blue-and-white fin hair ornaments and ribbon bows, wearing an oversized white pajama shirt in bed.",
+            "question": "Who appears in this illustration?"
+          },
+          {
+            "answer": "It is a nine-panel collage of the same character in different sleepy poses, not a multi-panel comic with a story.",
+            "question": "Is this a comic?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan's Pajama Morning",
+        "originNote": "",
+        "seoDescription": "A nine-panel illustration of DeepSeek Chan waking up: white pajamas, soft morning light and a very sleepy expression by the bed.",
+        "seoTitle": "DeepSeek Chan Pajama Morning Illustration",
+        "tags": [
+          "pajamas",
+          "morning",
+          "sleepy",
+          "blue hair",
+          "bed"
+        ]
+      },
+      "ja": {
+        "commentary": "目覚ましが三回鳴って、やっと枕から顔を上げた。布団はふわふわで、窓の光は白くて、髪はぐしゃぐしゃ。今日は誰も急かさないから、もう少しだけ寝ていたい。",
+        "description": "九分割のイラスト集合。濃い青紫の長い髪に青と白のひれ型の髪飾りと青いリボンをつけたDeepSeekちゃんが、ゆったりした白いパジャマ姿でベッドに寄りかかっている。窓から朝の光が差し込み、頬杖をついてぼんやりする姿、枕を抱える姿、布団にくるまってうとうとする姿などが並ぶ。",
+        "faq": [
+          {
+            "answer": "青と白のひれ型の髪飾りとリボンをつけたDeepSeekちゃんです。大きめの白いパジャマ姿でベッドに寄りかかっています。",
+            "question": "このイラストには誰が描かれていますか？"
+          },
+          {
+            "answer": "同じキャラクターの寝起きの姿を並べた九分割のイラストで、物語のある複数コマの漫画ではありません。",
+            "question": "これは漫画ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃんのパジャマの朝",
+        "originNote": "",
+        "seoDescription": "寝起きのDeepSeekちゃんを描いた九分割イラスト。白いパジャマ姿でベッドに寄りかかり、朝の光の中でぼんやりする姿を収録。",
+        "seoTitle": "DeepSeekちゃん パジャマの朝 イラスト",
+        "tags": [
+          "パジャマ",
+          "朝",
+          "寝起き",
+          "青い髪",
+          "ベッド"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_e3cb5e5b236acbb4e1ed806b",
+    "name": "Claude 娘在废墟草原上的午后茶会",
+    "description": "Claude 娘站在长满野草的废墟前，身穿白色荷叶边洋装，配黑色束身胸衣与金色太阳纹饰，手持茶杯与一本封面刻有法阵的书。裙摆垂布上印有 Claude 字样与橙色太阳标。",
+    "commentary": "我原本以为废墟草原只适合吹风，结果她端着茶杯就走了进去。那身黑白金洋装配满太阳纹饰，连丝袜上都爬着藤蔓花纹，比身后的石雕还讲究；手里那本封面刻着法阵的书，我看八成不是拿来读的——她大概是打算一边喝茶，一边把这片荒地改成自己的花园。说实话，我有点想去蹭一杯。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/e3cb5e5b236acbb4.png",
+    "thumbnailPath": "submissions/previews/claude/e3cb5e5b236acbb4.webp",
+    "fullPath": "submissions/large/claude/e3cb5e5b236acbb4.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "e3cb5e5b236acbb4e1ed806b71acf3127a12278dfb871b0e72ad5d774bb455d2",
+    "characterId": "claude",
+    "tags": [
+      "Claude",
+      "Claude娘",
+      "洋装",
+      "废墟",
+      "下午茶",
+      "魔法书"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "@cameravx4 on x.com",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T21:23:58.924Z",
+    "updatedAt": "2026-10-24T21:23:58.924Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202610240002",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "bc128fca62ecc668873e437d4402e91d4decccceacd662c6a6dee4fad89b9184",
+      "en": {
+        "commentary": "I thought the ruined grasslands were only good for a gust of wind, but she walked right in with her teacup. That black, white and gold gown is covered in sunburst ornaments, and the vine pattern on her stockings is more elaborate than the stone carvings behind her. As for the book with the sigil on its cover, I doubt she means to read it — she is probably planning to sip tea while turning the wasteland into her own garden. Honestly, I would not mind stopping by for a cup.",
+        "description": "Claude Chan stands before the overgrown ruins of a stone building, wearing a white ruffled gown with a black corseted bodice and gold sunburst ornaments. She holds a teacup in one hand and a book marked with an arcane sigil in the other; the word Claude and an orange sunburst emblem are printed on the hanging panel of her skirt.",
+        "faq": [
+          {
+            "answer": "Claude Chan, the personification of the Claude AI model, is shown in a white and gold gown with a teacup and a sigil-covered book.",
+            "question": "Who appears in the image?"
+          },
+          {
+            "answer": "It was submitted through the site with a source link to x.com/cameravx4 (https://x.com/cameravx4/status/2114104743371100519).",
+            "question": "Where does the image come from?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claude Chan's Afternoon Tea in the Ruined Grasslands",
+        "originNote": "Source: x.com/cameravx4 — https://x.com/cameravx4/status/2114104743371100519",
+        "seoDescription": "Claude Chan in a white and gold gown, holding a teacup and a grimoire before overgrown stone ruins — an AI-character fan illustration.",
+        "seoTitle": "Claude Chan's Afternoon Tea in the Ruined Grasslands | DeepSeek Chan",
+        "tags": [
+          "Claude",
+          "Claude Chan",
+          "dress",
+          "ruins",
+          "afternoon tea",
+          "grimoire"
+        ]
+      },
+      "ja": {
+        "commentary": "廃墟の草原なんて風が吹くだけだと思っていたのに、彼女はティーカップを持ったまま平気で入っていった。白黒金のドレスは太陽モチーフだらけで、ストッキングの蔦模様は後ろの石彫より細かい。魔法陣の本も、たぶん読むためじゃない——お茶を飲みながらこの荒地を自分の庭に変えるつもりなんだろう。正直、一杯もらいに行きたい。",
+        "description": "Claude ちゃんが草の伸びた石造りの廃墟の前に立ち、白いフリルのドレスに黒いコルセット、金色の太陽モチーフを合わせている。片手にティーカップ、もう片方に魔法陣の刻まれた本を持ち、スカートの垂れ布には Claude の文字とオレンジ色の太陽マークが入っている。",
+        "faq": [
+          {
+            "answer": "Claude AI モデルを擬人化した Claude ちゃんが、白と金のドレス姿で描かれています。",
+            "question": "画像に描かれているのは誰ですか？"
+          },
+          {
+            "answer": "サイトの投稿フォームから、x.com/cameravx4 へのリンク付きで投稿されたものです（https://x.com/cameravx4/status/2114104743371100519）。",
+            "question": "この画像の出典は？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "廃墟の草原でティータイムを楽しむ Claude ちゃん",
+        "originNote": "出典：x.com/cameravx4 — https://x.com/cameravx4/status/2114104743371100519",
+        "seoDescription": "草に覆われた石造りの廃墟を前に、白と金のドレスでティーカップと魔導書を手にする Claude ちゃん。AI キャラクターの二次創作イラスト。",
+        "seoTitle": "廃墟の草原でティータイムを楽しむ Claude ちゃん | DeepSeek Chan",
+        "tags": [
+          "Claude",
+          "Claude ちゃん",
+          "ドレス",
+          "廃墟",
+          "ティータイム",
+          "魔導書"
+        ]
+      }
+    }
   }
 ]
