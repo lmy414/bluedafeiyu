@@ -4,6 +4,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
+import { archiveMembers, assetIdOf, extractAttachments } from '../tools/intake/github-attachments.mjs';
 import { rightsComments, rightsIssueHash, rightsIssueSnapshot, verifyRightsPublication, acknowledgeRightsReply, reportRightsConflict } from './rights-publication.mjs';
 
 export const REPO = 'lmy414/ai-girl-stickers';
@@ -14,7 +15,6 @@ export const DEFAULT_REPLY_DIR = '/srv/apps/dafeiyu-admin/run/issue-replies';
 const META_DIR = process.env.INTAKE_ROOT ? path.join(process.env.INTAKE_ROOT, 'meta') : '/srv/apps/dafeiyu/intake/meta';
 const WORKS_FILE = process.env.PUBLISH_SITE_DIR ? path.join(process.env.PUBLISH_SITE_DIR, 'data', 'works.json') : '/srv/apps/dafeiyu/source/data/works.json';
 const API = 'https://api.github.com';
-const ATTACHMENT_URL = /https:\/\/github\.com\/user-attachments\/assets\/[0-9a-fA-F-]+/g;
 const ISSUE_URL = /^https:\/\/github\.com\/lmy414\/ai-girl-stickers\/issues\/(\d+)$/;
 const ID_PATTERN = /^sticker_[0-9a-f]{24}$/;
 const HOUR_MS = 60 * 60 * 1000;
@@ -79,16 +79,7 @@ function timeoutSignal(ms) {
 }
 
 function attachmentUrls(body) {
-  return [...new Set(String(body || '').match(ATTACHMENT_URL) || [])];
-}
-
-function assetIdOf(url) {
-  try {
-    const match = new URL(String(url)).pathname.match(/\/user-attachments\/assets\/([^/?#]+)/);
-    return match ? decodeURIComponent(match[1]) : '';
-  } catch {
-    return '';
-  }
+  return extractAttachments(body);
 }
 
 function matchingItem(items, issueNo, attachmentUrl) {
@@ -125,7 +116,9 @@ function rejectionOf(item) {
 async function evaluateAttachment({ item, metaBySha, worksBySha, checkPage, log }) {
   const digest = String(item?.sha256 || '');
   const metaEntry = metaBySha.get(digest);
-  if (metaEntry?.status === 'published' && metaEntry.source === 'github-issue' && /^[a-f0-9]{64}$/.test(digest)) {
+  // matchingItem/archiveMembers already proved this Issue's source association.
+  // A SHA-deduplicated image may originally have arrived through web or QQ.
+  if (metaEntry?.status === 'published' && /^[a-f0-9]{64}$/.test(digest)) {
     const work = worksBySha.get(digest);
     if (validWork(work, digest)) {
       let online = false;
@@ -192,21 +185,27 @@ export async function reconcile({
       const published = [];
       let pending = false;
       if (urls.length > 0) {
-        for (const [index, url] of urls.entries()) {
-          const item = matchingItem(items, number, url);
-          const decision = await evaluateAttachment({
-            item,
-            metaBySha,
-            worksBySha,
-            checkPage: typeof checkPage === 'function' ? checkPage : async () => false,
-            log,
-          });
-          if (decision.kind === 'pending') {
-            pending = true;
-            break;
+        let position = 0;
+        for (const url of urls) {
+          const parent = `github:${REPO}#${number}:${assetIdOf(url)}`;
+          const members = archiveMembers(items, parent);
+          // A ZIP requires all declared members, even when deduplication merged
+          // them into pre-existing queue entries. Missing/failed imports stay open.
+          const archive = /\.zip$/i.test(new URL(url).pathname) || items.some((item) => (item.sourceIds || []).some((id) => String(id).startsWith(`${parent}:zip:`)));
+          if (archive && !members) { pending = true; break; }
+          for (const item of members || [matchingItem(items, number, url)]) {
+            position++;
+            const decision = await evaluateAttachment({ item,
+              metaBySha,
+              worksBySha,
+              checkPage: typeof checkPage === 'function' ? checkPage : async () => false,
+              log,
+            });
+            if (decision.kind === 'pending') { pending = true; break; }
+            if (decision.kind === 'published') published.push(decision);
+            if (decision.kind === 'rejected') rejected.push({ position, label: decision.label, reason: decision.reason });
           }
-          if (decision.kind === 'published') published.push(decision);
-          if (decision.kind === 'rejected') rejected.push({ position: index + 1, label: decision.label, reason: decision.reason });
+          if (pending) break;
         }
       }
       if (pending) {
@@ -216,7 +215,8 @@ export async function reconcile({
 
       const comments = await request(`/repos/${REPO}/issues/${number}/comments?per_page=100`);
       if (!Array.isArray(comments) || comments.length >= 100) throw new Error('评论列表无法完整核验，留待重试');
-      const alreadyCommented = comments.some((comment) => comment.user?.login === 'lmy414' && comment.body?.includes(MARKER));
+      const alreadyCommented = comments.some((comment) => comment.user?.login === 'lmy414' && comment.body?.includes(MARKER)
+        && !(urls.length > 0 && comment.body.includes('未检测到图片附件')));
       if (!alreadyCommented) {
         await request(`/repos/${REPO}/issues/${number}/comments`, {
           method: 'POST',

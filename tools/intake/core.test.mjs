@@ -478,3 +478,19 @@ test('只有 JSON 清单、缺图片目录的不算内容仓', async (t) => {
 
   assert.equal(await looksLikeContentRepo(dir), false);
 });
+
+test('维护者 intake 路径同样支持 ZIP：逐图 staged、SHA 去重、不写 ready 或公开目录', async (t) => {
+  const { zip } = await import('./fixtures/zip.mjs');
+  const url = 'https://github.com/user-attachments/files/33829687/gemini.zip';
+  const bytes = zip([{ name: '图一.png' }, { name: '重复.png' }, { name: '二.png', data: Buffer.concat([TINY_PNG, Buffer.from('two')]) }]);
+  const entry = { number: 133, labels: ['sticker-submission'], title: '图集', body: `[gemini.zip](${url})`, user: { login: 'someone' } };
+  const cfg = await makeCfg(t, { fetchImpl: async (target) => new Response(String(target).startsWith('https://api.github.com/') ? JSON.stringify(entry) : bytes) });
+  const results = await pullIssueAttachments(cfg, { issue: 133 });
+  assert.deepEqual(results.map((r) => r.status), ['staged', 'duplicate', 'staged']);
+  const items = await listItems(cfg);
+  assert.equal(items.length, 2);
+  assert.equal(items.every((item) => item.status === 'staged'), true);
+  assert.equal(items.every((item) => item.origin.archive.count === 3), true);
+  assert.equal(items.every((item) => !item.targetPath), true);
+  assert.equal((await pullIssueAttachments(cfg, { issue: 133 })).every((r) => r.status === 'duplicate'), true);
+});

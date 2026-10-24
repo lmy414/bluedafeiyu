@@ -606,3 +606,93 @@ test('整个拉取过程只读：绝不发非 GET 请求去关闭 / 改写 Issue
   assert.ok(fetchImpl.calls.length > 0);
   assert.ok(fetchImpl.calls.every((call) => call.method === 'GET'), '拉取过程必须是只读的 GET');
 });
+
+// ZIP support intentionally enters the same received -> AI review flow as a single image.
+const ZIP_URL = 'https://github.com/user-attachments/files/33829687/gemini.zip';
+const ZIP_ISSUE = { ...LABELED_ISSUE, number: 133, state: 'closed', body: LABELED_ISSUE.body.replace(`![image](${ASSET})`, `[表情包.zip](${ZIP_URL})`) };
+const zipFixture = await import('../../tools/intake/fixtures/zip.mjs');
+
+test('ZIP 投稿：逐图入队、包内/跨来源去重、重拉不下载；Closed Issue 可定向补接收', async (t) => {
+  const bytes = zipFixture.zip([{ name: '一.png' }, { name: 'sub/重复.png' }, { name: '二.png', data: Buffer.concat([TINY_PNG, Buffer.from('two')]) }]);
+  const calls = [];
+  const fetchImpl = async (url, options) => {
+    calls.push({ url: String(url), options });
+    if (String(url).startsWith(API)) return new Response(JSON.stringify(ZIP_ISSUE));
+    return new Response(bytes);
+  };
+  const { queue, adapter } = await setup(t, { fetchImpl });
+  const first = await queue.enqueue({ source: 'web', sourceId: 'web:earlier-image', buffer: TINY_PNG, ext: '.png' });
+  const results = await adapter.pullIssues({ issue: 133 });
+  assert.deepEqual(results.map((r) => r.status), ['duplicate_hash', 'duplicate_hash', 'staged']);
+  assert.equal((await queue.list()).length, 2);
+  assert.equal((await queue.get(first.item.id)).sourceIds.length, 3);
+  const filtered = await queue.list({ source: 'github-issue' });
+  assert.equal(filtered.length, 2, '跨来源 SHA 去重后的条目仍能从 GitHub 审核列表读取');
+  assert.equal((await queue.list({ sources: ['github-issue'] })).length, 2);
+  for (const item of filtered) {
+    assert.equal(item.state, 'received');
+    assert.equal(item.review, null);
+    assert.deepEqual(await queue.readImage(item.id), item.id === first.item.id ? TINY_PNG : Buffer.concat([TINY_PNG, Buffer.from('two')]));
+  }
+  const { agentAction } = await import('../agent.mjs');
+  const tasks = await agentAction(queue, 'list', {}, {});
+  assert.equal(tasks.items.length, 2, 'ZIP 图片正常交给现有 Hermes AI 领取，不默认转人工');
+  const imported = filtered.find((item) => item.id !== first.item.id);
+  assert.equal(imported.origin.archive.member, '二.png');
+  assert.equal(imported.origin.archive.count, 3);
+  assert.equal(imported.origin.archive.assetId, 'file-33829687');
+  assert.equal((await adapter.pullIssues({ issue: 133 })).every((r) => r.status === 'duplicate_source'), true);
+  assert.equal(calls.filter((c) => c.url === ZIP_URL).length, 1);
+  assert.equal(calls.find((c) => c.url === ZIP_URL).options.headers.Authorization, undefined);
+  assert.equal(await adapter.readCursor(), null, '定向补接收不移动增量游标');
+});
+
+test('ZIP 某成员非法：整包不入队，其他单图继续；失败不得推进游标', async (t) => {
+  const bad = zipFixture.zip([{ name: 'good.png' }, { name: '../evil.png' }]);
+  const issue = { ...ZIP_ISSUE, body: `${ZIP_ISSUE.body}\n![正常单图](${ASSET})` };
+  const { queue, adapter } = await setup(t, { logger: { error() {} }, fetchImpl: async (url) => {
+    if (String(url).startsWith(API)) return new Response(JSON.stringify([issue]));
+    return new Response(url === ZIP_URL ? bad : TINY_PNG);
+  } });
+  await adapter.writeCursor('2026-10-01T00:00:00Z');
+  const results = await adapter.pullIssues();
+  assert.equal(results.some((r) => r.status === 'failed' && /ZIP/.test(r.error)), true);
+  assert.equal((await queue.list()).length, 1);
+  assert.equal((await adapter.readCursor()).since, '2026-10-01T00:00:00Z');
+});
+
+test('ZIP 中途入队失败：重拉补齐，已成功成员不重复创建', async (t) => {
+  const bytes = zipFixture.zip([{ name: 'one.png' }, { name: 'two.png', data: Buffer.concat([TINY_PNG, Buffer.from('new')]) }]);
+  const { cfg, queue } = await setup(t);
+  let calls = 0;
+  let fail = true;
+  const injected = { ...queue, enqueue: async (input) => {
+    if (input.origin.archive.index === 1 && fail) { fail = false; throw new Error('磁盘暂时不可写'); }
+    return queue.enqueue(input);
+  } };
+  const adapter = createGithubAdapter(cfg, { queue: injected, logger: { error() {} }, fetchImpl: async (url) => {
+    if (String(url).startsWith(API)) return new Response(JSON.stringify(ZIP_ISSUE));
+    calls++; return new Response(bytes);
+  } });
+  assert.equal((await adapter.pullIssues({ issue: 133 })).some((r) => r.status === 'failed'), true);
+  assert.equal((await queue.list()).length, 1);
+  assert.equal((await adapter.pullIssues({ issue: 133 })).filter((r) => r.status === 'staged').length, 1);
+  assert.equal((await queue.list()).length, 2);
+  await adapter.pullIssues({ issue: 133 });
+  assert.equal(calls, 2);
+});
+
+test('GitHub ZIP 白名单只放行附件路径；下载超时覆盖响应体并取消流', async () => {
+  assert.equal(isAllowedAttachmentUrl(ZIP_URL), true);
+  assert.equal(isAllowedAttachmentUrl('https://objects.githubusercontent.com/github-production-repository-file-5c1aeb/1370984242/33829687'), true);
+  for (const value of ['https://github.com/evil.zip', 'https://github.com/user-attachments/files/1/', 'https://github.com/user-attachments/files/1/a/evil.zip', 'https://evil.example/gemini.zip', 'https://objects.githubusercontent.com/other/1/2']) {
+    assert.equal(isAllowedAttachmentUrl(value), false);
+  }
+  let cancelled = false;
+  const stream = new ReadableStream({ cancel() { cancelled = true; } });
+  await assert.rejects(() => fetchWithLimits(async () => new Response(stream), ZIP_URL,
+    { maxBytes: 200, timeoutMs: 25, allowUrl: isAllowedAttachmentUrl }), /超时/);
+  assert.equal(cancelled, true);
+  await assert.rejects(() => fetchWithLimits(async () => new Response(Buffer.alloc(201)), ZIP_URL,
+    { maxBytes: 200, timeoutMs: 100, allowUrl: isAllowedAttachmentUrl }), /大小上限/);
+});
