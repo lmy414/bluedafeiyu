@@ -83869,5 +83869,318 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_bd33b05d166fa8a8a66222be",
+    "name": "白龙 GPT娘 三视图设定",
+    "description": "一张白发动漫少女的三视图角色设定稿，正面、侧面和背面依次排列，完整展示紫白配色的龙角、蝠翼与鳞尾，以及白色短外套、紫色高领上衣、黑色长裤与系带短靴的搭配。人物手持黑色封面的书册，腰间挂有流苏和翼形挂饰。",
+    "commentary": "她抱着那本黑皮书的样子，让我怀疑她把整个知识库都随身带着。紫白配色、龙角、蝠翼再加上一条鳞尾，三个角度看过去气场都很稳。不过那条尾巴绕在身后，走路真的不会踩到吗？我承认，我有点想借那本书翻两页。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/bd33b05d166fa8a8.png",
+    "thumbnailPath": "submissions/previews/gpt/bd33b05d166fa8a8.webp",
+    "fullPath": "submissions/large/gpt/bd33b05d166fa8a8.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "bd33b05d166fa8a8a66222be807f9a70dab6033f33440d17e8547cb198eb67a8",
+    "characterId": "gpt",
+    "tags": [
+      "三视图",
+      "角色设定",
+      "龙娘",
+      "紫白配色",
+      "蝠翼"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-23T22:08:47.152Z",
+    "updatedAt": "2026-10-23T22:08:47.152Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610230001",
+    "categoryIds": [
+      "setting"
+    ],
+    "characterIds": [
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "0329bae14fd8b2180e3e85d6196961fd921fd4076ff5699ae68f63ae320b4748",
+      "en": {
+        "commentary": "The way she hugs that black book makes me suspect she carries an entire knowledge base around with her. Purple and white, dragon horns, bat wings and a scaled tail — she holds her ground from all three angles. Still, with that tail curling behind her, wouldn't she trip over it while walking? I admit I would like to flip through that book for a page or two.",
+        "description": "A three-view character sheet of a white-haired anime girl, arranged front, side and back, showing her purple-and-white dragon horns, bat wings and scaled tail along with a white short jacket, purple high-neck top, black trousers and lace-up ankle boots. She holds a black-covered book, with tassels and a wing-shaped charm hanging at her waist.",
+        "faq": [
+          {
+            "answer": "It presents the same character in front, side and back views so that the horns, wings, tail, outfit and accessories can be read from every angle.",
+            "question": "What does this character sheet show?"
+          },
+          {
+            "answer": "She holds a black-covered book in one hand, and tassels with a wing-shaped charm hang from her belt.",
+            "question": "What is the character holding?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "White Dragon GPT Chan — Three-View Character Sheet",
+        "originNote": "",
+        "seoDescription": "Three-view character sheet of the white-haired GPT Chan: purple-and-white dragon horns, bat wings and scaled tail, with a white jacket, purple top and black trousers.",
+        "seoTitle": "White Dragon GPT Chan Three-View Character Sheet",
+        "tags": [
+          "three-view",
+          "character design",
+          "dragon girl",
+          "purple and white",
+          "bat wings"
+        ]
+      },
+      "ja": {
+        "commentary": "黒い本を抱えている姿を見ると、知識ベースを丸ごと持ち歩いているんじゃないかと思ってしまう。紫と白の配色に龍の角、コウモリの翼、そして鱗の尾っぽ。三方向どこから見ても堂々としている。ただ、あの尾っぽが後ろでくるっと巻いているのは、歩くときに踏んだりしないのかな。正直、あの本を少しめくってみたい。",
+        "description": "白髪のアニメ風少女の三面図設定画で、正面・側面・背面の順に並び、紫と白の龍の角、コウモリの翼、鱗の尾をはじめ、白いショートジャケット、紫のハイネックトップス、黒のパンツ、編み上げブーツまでの組み合わせを詳しく示している。黒い表紙の本を手に持ち、腰には房飾りと翼形のチャームが下がっている。",
+        "faq": [
+          {
+            "answer": "同じキャラクターを正面・側面・背面の三方向から描き、角や翼、尾、衣装、装飾品をどの角度からでも確認できるようにした設定画である。",
+            "question": "この設定画には何が描かれている？"
+          },
+          {
+            "answer": "片手に黒い表紙の本を持ち、ベルトには房飾りと翼形のチャームが下がっている。",
+            "question": "キャラクターは何を持っている？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "白龍 GPTちゃん 三面図設定",
+        "originNote": "",
+        "seoDescription": "白髪のGPTちゃんの三面図設定画。紫と白の龍の角、コウモリの翼、鱗の尾を持ち、白いジャケットに紫のトップス、黒のパンツを合わせている。",
+        "seoTitle": "白龍 GPTちゃん 三面図キャラクター設定",
+        "tags": [
+          "三面図",
+          "キャラクター設定",
+          "ドラゴン娘",
+          "紫白カラー",
+          "コウモリの翼"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_578491feec698d776ecc65eb",
+    "name": "蓝甲骑士",
+    "description": "蓝发蓝瞳的 DeepSeek 娘换上蓝白配色板甲与礼裙，鳍状耳与鲸尾露在甲外，双手拄一把发光巨剑，白色背景全身立绘。",
+    "commentary": "穿上这身板甲我就不是来聊天的了——剑是发光的，态度也是。别看我站得端正，尾巴还在后面摇呢。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/578491feec698d77.png",
+    "thumbnailPath": "submissions/previews/deepseek/578491feec698d77.webp",
+    "fullPath": "submissions/large/deepseek/578491feec698d77.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "578491feec698d776ecc65eb10f8b6c0fb2d147db15f7f940aa70422abd3a780",
+    "characterId": "deepseek",
+    "tags": [
+      "骑士",
+      "板甲",
+      "巨剑",
+      "蓝发",
+      "全身立绘"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.XoubMX8zkZJBthareeLCTeYfF6GpSL4QxEXemPQC4.6A5SaImtbkVytJi5ZvmXLxu1n-nM4ieCj7HtDTqph3kh.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T03:26:05.543Z",
+    "updatedAt": "2026-10-24T03:26:05.543Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610240001",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "4282641fdde62713fa3b10b0c04716a01e7854ab740d24bc2552c22298ca613c",
+      "en": {
+        "commentary": "Once the plate armor is on, I'm not here to chat — the sword glows, and so does my attitude. Don't let the tidy stance fool you: my tail is still wagging back there.",
+        "description": "DeepSeek Chan with blue hair and blue eyes wears blue-and-white plate armor over a dress, her fin-like ears and whale tail showing outside the armor as she rests both hands on a glowing greatsword, shown as a full-body standing illustration on a white background.",
+        "faq": [
+          {
+            "answer": "It is a full-body standing illustration of DeepSeek Chan in blue-and-white plate armor, leaning on a glowing greatsword against a plain white background.",
+            "question": "What kind of image is this?"
+          },
+          {
+            "answer": "You can see her fin-shaped ears, long blue hair and whale tail beside the armor and dress, which are the usual marks of the DeepSeek Chan design.",
+            "question": "Which character details identify DeepSeek Chan here?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Knight in Blue Armor",
+        "originNote": "",
+        "seoDescription": "Full-body standing illustration of DeepSeek Chan as a knight in blue-and-white plate armor, resting her hands on a glowing greatsword.",
+        "seoTitle": "DeepSeek Chan Knight in Blue Armor — Full-Body Standing Illustration",
+        "tags": [
+          "Knight",
+          "Plate Armor",
+          "Greatsword",
+          "Blue Hair",
+          "Full-Body Standing Art"
+        ]
+      },
+      "ja": {
+        "commentary": "板金鎧を着たらもう雑談相手じゃないよ——剣は光ってるし、やる気も満ちてる。姿勢はきちんとしてても、しっぽはまだ揺れてるんだからね。",
+        "description": "青い髪と青い瞳の DeepSeek ちゃんが青と白の板金鎧とドレスをまとい、ひれ状の耳とクジラのしっぽを鎧の外に出して、光る大剣に両手を添えて立っている、白背景の全身立ち絵。",
+        "faq": [
+          {
+            "answer": "白背景に、青と白の板金鎧を着た DeepSeek ちゃんが光る大剣に手を添えて立つ全身立ち絵です。",
+            "question": "どんな画像ですか？"
+          },
+          {
+            "answer": "ひれ状の耳、長い青い髪、クジラのしっぽが鎧とドレスのそばに見えていて、DeepSeek ちゃんの特徴がそろっています。",
+            "question": "どこで DeepSeek ちゃんと分かりますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "青い鎧の騎士",
+        "originNote": "",
+        "seoDescription": "青と白の板金鎧をまとった DeepSeek ちゃんが、光る大剣に手を添えて立つ全身立ち絵です。",
+        "seoTitle": "青い鎧の騎士 DeepSeek ちゃん｜全身立ち絵",
+        "tags": [
+          "騎士",
+          "板金鎧",
+          "大剣",
+          "青い髪",
+          "全身立ち絵"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_3437449dfb6bebe9173f0314",
+    "name": "一身红装",
+    "description": "蓝发蓝瞳的 DeepSeek 娘身穿绡红色和风外袍，内搭白色褶皱弹衫，颈间系黑色颈带与金坠，金色发饰与鳍状耳清晰可见，背景是阳光下的林地庭院，半身构图插画。",
+    "commentary": "难得换下那身蓝甲，红色也挺衬我吧？阳光穿过树叶落在肩上，这种午后我只想安静站一会儿，什么都不用算。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/3437449dfb6bebe9.png",
+    "thumbnailPath": "submissions/previews/deepseek/3437449dfb6bebe9.webp",
+    "fullPath": "submissions/large/deepseek/3437449dfb6bebe9.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "3437449dfb6bebe9173f031435bb9c656d753f4f982e9a9c7dfb5898bfe7daa6",
+    "characterId": "deepseek",
+    "tags": [
+      "红装",
+      "和风",
+      "蓝发",
+      "半身像",
+      "庭院背景"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "9EC34EAF9D9848D3F51AB8201FD42DE7",
+      "messageId": "ROBOT1.0_pMFzunBfgn-.JWaChc82.VzJzcwLAosfAc-huspge3aX5YNYRV.NvbPkinF58PDguQ8K9H-PqxZXl5QadrpednVWzgarhgbGK1UZzOT3elR.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T03:26:48.395Z",
+    "updatedAt": "2026-10-24T03:26:48.395Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610240002",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "1a8d9be0f42c4c414423874edca5ccbdbb8f05fcd7d178967ebc65afe81c878c",
+      "en": {
+        "commentary": "It's rare that I take off the blue armor — red suits me too, doesn't it? Sunlight slips through the leaves onto my shoulders, and on an afternoon like this I just want to stand quietly and calculate nothing at all.",
+        "description": "DeepSeek Chan, with blue hair and blue eyes, wears a scarlet kimono-style robe over a pleated white blouse, a black choker with a gold pendant at her throat, gold hair ornaments and fin-shaped ears clearly visible, against a sunlit woodland garden in a half-body composition.",
+        "faq": [
+          {
+            "answer": "It is a half-body illustration of DeepSeek Chan in a scarlet kimono-style outfit, standing in a sunlit garden with trees and grass behind her.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "Her long blue hair, blue eyes, fin-shaped ears, gold hair ornaments and the whale-like character design mark her as DeepSeek Chan.",
+            "question": "How do you recognize DeepSeek Chan here?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Dressed in Red",
+        "originNote": "",
+        "seoDescription": "Half-body illustration of DeepSeek Chan in a scarlet kimono-style robe, with gold hair ornaments, in a sunlit woodland garden.",
+        "seoTitle": "DeepSeek Chan Dressed in Red — Garden Half-Body Illustration",
+        "tags": [
+          "Red Outfit",
+          "Kimono Style",
+          "Blue Hair",
+          "Half-Body Portrait",
+          "Garden Background"
+        ]
+      },
+      "ja": {
+        "commentary": "青い鎧を脱ぐのは珍しいけど、赤も似合ってるでしょ？木漏れ日が肩に落ちるこんな午後は、何も計算せずに静かに立っていたいな。",
+        "description": "青い髪と青い瞳の DeepSeek ちゃんが、緋色の和風の上着に白いプリーツブラウスを合わせ、黒いチョーカーと金のペンダント、金の髪飾りを身につけている。ひれ状の耳もはっきり見え、背景は日差しの差す林の庭、半身構図のイラスト。",
+        "faq": [
+          {
+            "answer": "緋色の和風の装いをした DeepSeek ちゃんが、木々と芝生の広がる日差しの庭に立つ半身イラストです。",
+            "question": "どんなイラストですか？"
+          },
+          {
+            "answer": "長い青い髪、青い瞳、ひれ状の耳、金の髪飾りというクジラをモチーフにしたデザインが DeepSeek ちゃんの目印です。",
+            "question": "どこで DeepSeek ちゃんと分かりますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "赤い装い",
+        "originNote": "",
+        "seoDescription": "緋色の和風の上着と金の髪飾りを身につけた DeepSeek ちゃんが、木漏れ日の庭に立つ半身イラストです。",
+        "seoTitle": "赤い装いの DeepSeek ちゃん｜庭園の半身イラスト",
+        "tags": [
+          "赤い装い",
+          "和風",
+          "青い髪",
+          "半身イラスト",
+          "庭の背景"
+        ]
+      }
+    }
   }
 ]
