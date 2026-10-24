@@ -1,0 +1,191 @@
+/* ==========================================================================
+   蓝色大肥鱼 · 密度 v2 原型覆盖层（仅原型用；实施方案落在 CardDensity.css v2）
+   加载顺序：站内打包 CSS 之后加载，同特异性后到胜出。
+   选择器带 body.archive.refined 前缀，用于压过 demo-production 皮肤的同类规则。
+   范围：≥761px 桌面端；<760px 移动端维持现状。
+   颜色/字体族不动，只动几何：字号、间距、圆角、列数、图高。
+   ========================================================================== */
+
+/* ---------------------------------------------------------- A. 顶栏与页头 */
+@media (min-width: 761px) {
+  body.archive.refined .topbar { min-height: 0; height: auto; padding: 8px 28px; }
+
+  /* ------------------------------------------------------- B. 主页 hero */
+  body.archive.refined .portal-heading { margin: 0 0 14px; padding: 14px 0 12px; }
+  body.archive.refined .portal-heading h1 {
+    font-size: clamp(20px, 1.75vw, 25px);
+    line-height: 1.3;
+    margin: 6px 0;
+  }
+  body.archive.refined .portal-heading > div > p:last-of-type { font-size: 12px; }
+  body.archive.refined .portal-welcome-actions .button {
+    min-height: 34px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  body.archive.refined .portal-edition { min-width: 190px; padding: 0 0 0 24px; }
+  body.archive.refined .portal-edition > span { font-size: 12px; }
+  body.archive.refined .portal-edition dl { gap: 16px; margin: 8px 0; }
+  body.archive.refined .portal-edition dd { font-size: 18px; }
+
+  /* --------------------------------------------------- C. 两张大入口卡 */
+  body.archive.refined .portal-primary { gap: 14px; }
+  body.archive.refined .portal-entry { min-height: 0; padding: 13px 16px; border-radius: 8px; }
+  body.archive.refined .portal-entry-icon { width: 26px; height: 26px; border-radius: 6px; }
+  body.archive.refined .portal-entry-icon svg { width: 15px; height: 15px; }
+  body.archive.refined .portal-entry h2 { font-size: 17px; margin: 8px 0 4px; }
+  body.archive.refined .portal-entry > p { font-size: 11px; line-height: 1.6; }
+  body.archive.refined .portal-image-strip { height: 84px; bottom: 12px; right: 14px; }
+  body.archive.refined .portal-image-strip img { height: 72px; }
+  body.archive.refined .portal-video-art { width: min(40%, 150px); bottom: 12px; right: 14px; }
+  body.archive.refined .portal-video-art img { width: 100%; height: 100%; }
+
+  /* ------------------------------------------------------- D. 次级入口 */
+  body.archive.refined .portal-secondary { gap: 12px; margin: 14px 0 16px; }
+  body.archive.refined .portal-secondary > a { padding: 11px 14px; gap: 10px; }
+  body.archive.refined .portal-secondary > a > svg:first-child { width: 18px; height: 18px; }
+  body.archive.refined .portal-secondary h2 { font-size: 14px; }
+  body.archive.refined .portal-secondary p { font-size: 10px; margin-top: 2px; }
+  body.archive.refined .portal-secondary small { font-size: 10px; }
+
+  /* ------------------------------------------------- E. 专题精选滑块 */
+  body.archive.refined .portal-topic-slider .paper-feature { min-height: 0; }
+  body.archive.refined .portal-topic-slider .feature-copy { padding: 13px 18px; }
+  body.archive.refined .portal-topic-slider .feature-copy h2 { font-size: 19px; margin: 4px 0 5px; }
+  body.archive.refined .portal-topic-slider .feature-copy > p:not(.eyebrow) {
+    font-size: 11px;
+    line-height: 1.6;
+    max-width: none;
+  }
+  body.archive.refined .portal-topic-slider .photo-print { width: 108px; height: 100px; }
+  body.archive.refined .portal-topic-slider .feature-prints { gap: 10px; }
+  body.archive.refined .live-topic-controls { margin-top: 8px; }
+
+  /* ------------------------------------------------------- F. 参与导航 */
+  body.archive.refined .portal-participate { margin-top: 18px; padding: 14px 0; }
+  body.archive.refined .portal-participate a { font-size: 13px; }
+  body.archive.refined .portal-participate a > svg:first-child { width: 16px; height: 16px; }
+
+  /* ------------------------------------------------- G. 最新作品直达区 */
+  body.archive.refined .home-latest { margin-top: 20px; }
+  body.archive.refined .home-latest .home-latest-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  body.archive.refined .home-latest .home-latest-head h2 { font-size: 16px; margin: 0; }
+  body.archive.refined .home-latest .home-latest-head a { font-size: 12px; color: var(--blue); }
+  body.archive.refined .home-latest .work-grid { --columns: 6; --gap: 12px; margin: 0; display: grid; }
+  body.archive.refined .home-latest .work-art {
+    height: 150px;
+    aspect-ratio: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--soft);
+  }
+  body.archive.refined .home-latest .work-art img { width: 100%; height: 100%; object-fit: contain; }
+  body.archive.refined .home-latest .work-text { padding: 7px 8px 6px; }
+  body.archive.refined .home-latest .work-title { font-size: 12px; margin: 0; line-height: 1.45; }
+
+  /* ------------------------------------------------------ H. 说明面板 */
+  body.archive.refined .intro-panel { padding: 16px 20px; margin-top: 22px; }
+  body.archive.refined .intro-panel h2 { font-size: 16px; margin: 0 0 8px; }
+  body.archive.refined .role-entry-links a { min-height: 34px; padding: 6px 10px; font-size: 11px; }
+  body.archive.refined .reading-faq summary { font-size: 13px; }
+  body.archive.refined .share-site-invite { padding: 14px 0; font-size: 13px; }
+
+  /* ------------------------------------------- I. refined 内页页头与卡片 */
+  body.archive.refined .page-head { margin: 20px 0 16px; }
+  body.archive.refined .page-head h1 {
+    font-size: clamp(21px, 1.9vw, 27px);
+    margin: 6px 0 8px;
+  }
+  body.archive.refined .page-title { font-size: clamp(21px, 1.9vw, 27px); }
+  body.archive.refined .role-grid.character-index-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+  }
+  body.archive.refined .role-art.character-art { height: 150px !important; padding: 12px; }
+  body.archive.refined .role-body.character-copy { padding: 10px 12px; }
+  body.archive.refined .role-body h3 { font-size: 15px; }
+  body.archive.refined .collection-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+  body.archive.refined .collection-art { height: 140px; padding: 12px; }
+  body.archive.refined .collection-copy { padding: 12px 14px; }
+  body.archive.refined .collection-copy :is(h2, h3) { font-size: 16px; }
+  body.archive.refined .creator-row-card { padding: 14px 16px; }
+  body.archive.refined .creator-row-heading { margin-bottom: 10px; }
+  body.archive.refined .work-information { padding: 14px 16px; }
+  body.archive.refined .work-detail { gap: 18px; }
+}
+
+/* ------------------------------------------- J. 图库列数（browse/videos） */
+body.archive .work-grid { --columns: 6; --gap: 12px; margin: 16px 0; }
+body.archive .video-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px 10px; margin: 16px 0; }
+body.archive .work-text { padding: 8px 9px 7px; }
+body.archive .card-meta { margin-top: 5px; padding-top: 5px; }
+@media (max-width: 1479px) {
+  body.archive .work-grid { --columns: 6; }
+  body.archive .video-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+}
+@media (max-width: 1179px) {
+  body.archive .work-grid { --columns: 5; }
+  body.archive .video-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+@media (max-width: 960px) {
+  body.archive .work-grid { --columns: 4; }
+  body.archive .video-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+/* ==========================================================================
+   全站一级页面（≥761px）
+   ========================================================================== */
+
+/* ------------------------------- K. 页头（含非 refined 的 browse/videos） */
+@media (min-width: 761px) {
+  body.archive:not(.refined) .page-head { margin: 18px 0 14px; }
+  body.archive:not(.refined) .page-head h1 { font-size: 24px; margin: 4px 0; }
+  body.archive main { padding-bottom: 28px; }
+  body.archive.refined main { padding-bottom: 28px; }
+
+  /* ------------------------------------ L. 登记条 / 分享条（refined 与否统一） */
+  body.archive .registration-entry { padding: 10px 14px; margin-bottom: 14px; }
+  body.archive.refined .registration-entry { padding: 10px 14px; margin-bottom: 14px; }
+  body.archive .share-site-invite { padding: 14px 0; font-size: 13px; }
+
+  /* --------------------------------------------------- M. 视频页（非 refined） */
+  body.archive .video-list-toolbar { margin: 12px 0; }
+
+  /* ------------------------------------------------- N. 专题合集页（refined） */
+  body.archive.refined .section-tabs { margin: 0 0 14px; }
+
+  /* ------------------------------------------------------- O. 创作者目录页 */
+  body.archive.refined .creator-directory-tools { margin-bottom: 12px; }
+  body.archive.refined .creator-row-card .avatar.large { width: 38px; height: 38px; }
+  body.archive.refined .creator-work-rail { gap: 10px; }
+  body.archive.refined .creator-work-rail img { height: 100px; width: auto; }
+
+  /* ------------------------------------------------- P. 文档型页面（社群/友链/活动/关于/日志） */
+  body.archive.refined .document-sections { margin-bottom: 12px; }
+  body.archive.refined .live-info-card { padding: 14px 16px; }
+  body.archive.refined .synced-prose .live-info-card { padding: 14px 16px; }
+  body.archive.refined .friend-wall-grid {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 205px), 1fr));
+    gap: 12px;
+  }
+  body.archive.refined .friend-wall-card { padding: 14px; }
+  body.archive.refined .friend-wall-mark { width: 34px; height: 34px; margin-bottom: 10px; }
+  body.archive.refined .friend-wall-card h3 { font-size: 15px; }
+  body.archive.refined .friend-wall-card p { font-size: 12px; margin-bottom: 10px; }
+  body.archive.refined .form-sheet { padding: 20px; }
+
+  /* --------------------------------- Q. 分类目录页（role-grid 基础款，仅旧 category 页） */
+  body.archive.refined[data-legacy-category] .role-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+  }
+  body.archive.refined[data-legacy-category] .role-art { height: 150px; padding: 12px; }
+  body.archive.refined[data-legacy-category] .role-body { padding: 10px 12px; }
+  body.archive.refined[data-legacy-category] .role-body h3 { font-size: 15px; }
+}
