@@ -13,10 +13,10 @@ export const RELEASE_GROUPS = [
 export const HEALTH_URLS = ['https://xn--pssy23gqgbz2d718b.com/'];
 export const FILE_RULES = [
   ...['/var/log/nginx', '/var/log/letsencrypt', '/srv/www/dafeiyu/logs',
-    '/srv/apps/dafeiyu-admin/logs', '/srv/apps/hermes-studio/data/logs'].map((root) => ({ root, days: 30, archivedOnly: true })),
+    '/srv/apps/dafeiyu-admin/logs', '/srv/apps/hermes-studio/data/logs'].map((root) => ({ root, days: 3, archivedOnly: true })),
   { root: '/root/.npm/_cacache', days: 14 },
   { root: '/root/.npm/_logs', days: 30 },
-  ...['web', 'exec', 'terminal-output', 'terminal', 'screenshots', 'vision'].map((name) => ({ root: `/srv/apps/hermes-studio/data/cache/${name}`, days: 7 })),
+  ...['web', 'exec', 'terminal-output', 'terminal', 'screenshots', 'vision'].map((name) => ({ root: `/srv/apps/hermes-studio/data/cache/${name}`, days: 3 })),
   { root: '/tmp/node-compile-cache', days: 7 },
 ];
 async function optionalStat(file) {
@@ -51,7 +51,7 @@ export async function planReleases(group) {
   }
   if (!entries.includes(active)) throw new Error(`当前版本未通过校验：${active}`);
   const newest = entries.filter((file) => file !== active).sort((a, b) => releaseDate(path.basename(b)).localeCompare(releaseDate(path.basename(a))) || b.localeCompare(a));
-  const keep = [active, ...newest.slice(0, 2)];
+  const keep = [active, ...newest.slice(0, 1)];
   return { root: group.root, current: group.current, active, keep, remove: entries.filter((file) => !keep.includes(file)).sort() };
 }
 export async function expiredFiles(rule, { now = Date.now() } = {}) {
@@ -114,8 +114,8 @@ export function formatReport(report) {
   const lines = [
     `服务器定期维护｜${report.status === 'success' ? '完成' : report.status === 'dry-run' ? '清理预览' : '存在失败项'}`,
     `服务器：${report.serverName || '未记录'}｜时间：${time}`,
-    `过期原图${report.status === 'dry-run' ? '候选' : '清理'}：${report.status === 'dry-run' ? report.originals?.due || 0 : report.originals?.released || 0} 条（保留 14 天，投稿记录保留）`,
-    `旧发布版本：${report.releases?.reduce((sum, item) => sum + item.count, 0) || 0} 个（各保留当前版本及最近两个历史版本）`,
+    `过期原图${report.status === 'dry-run' ? '候选' : '清理'}：${report.status === 'dry-run' ? report.originals?.due || 0 : report.originals?.released || 0} 条（保留 3 天，投稿记录保留）`,
+    `旧发布版本：${report.releases?.reduce((sum, item) => sum + item.count, 0) || 0} 个（各保留当前版本及最近一个历史版本）`,
     `过期日志和缓存：${report.files?.reduce((sum, item) => sum + item.count, 0) || 0} 个文件`,
     `本轮释放：${gib((report.after?.available || 0) - (report.before?.available || 0))} GiB`,
     `磁盘：${report.after?.percent ?? report.before?.percent ?? '?'}%｜剩余：${gib(report.after?.available || report.before?.available)} GiB`,
@@ -133,7 +133,7 @@ export async function maintain({ apply = false, releasesOnly = false, command = 
     try { return await fn(); } catch (error) { report.errors.push({ step: name, message: String(error.message).slice(0, 1000) }); return null; }
   }
   if (!releasesOnly) await step('原图清理', async () => {
-    const args = ['-u', 'dafeiyu', '--preserve-environment', '--', '/usr/bin/node', '/srv/apps/dafeiyu/source/server/cli.mjs', 'prune-originals', '--days', '14', '--json'];
+    const args = ['-u', 'dafeiyu', '--preserve-environment', '--', '/usr/bin/node', '/srv/apps/dafeiyu/source/server/cli.mjs', 'prune-originals', '--days', '3', '--json'];
     if (apply) args.push('--apply');
     const results = JSON.parse(await command('/usr/sbin/runuser', args));
     if (!Array.isArray(results)) throw new Error('原图清理返回格式不正确');

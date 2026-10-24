@@ -17,15 +17,15 @@ test('发布目录自身或内部存在挂载点时拒绝删除', () => {
   assert.doesNotThrow(() => assertNoMounts('/srv/releases/old', '12 1 0:5 / /srv/releases/older rw - ext4 x rw'));
 });
 
-test('保留正在运行的旧版本和最新两个版本，忽略非发布目录', async (t) => {
+test('保留正在运行的旧版本和最新一个版本，忽略非发布目录', async (t) => {
   const dir = await fixture(t);
   const root = path.join(dir, 'releases');
   for (const name of ['20260101-000000', '20260102-000000', '20260103-000000', '20260104-000000', 'not-a-release']) await fs.mkdir(path.join(root, name), { recursive: true });
   const current = path.join(dir, 'current');
   await fs.symlink(path.join(root, '20260101-000000'), current, 'junction');
   const plan = await planReleases({ root, current, pattern: /^\d{8}-\d{6}$/ });
-  assert.deepEqual(plan.keep.map((file) => path.basename(file)), ['20260101-000000', '20260104-000000', '20260103-000000']);
-  assert.deepEqual(plan.remove.map((file) => path.basename(file)), ['20260102-000000']);
+  assert.deepEqual(plan.keep.map((file) => path.basename(file)), ['20260101-000000', '20260104-000000']);
+  assert.deepEqual(plan.remove.map((file) => path.basename(file)), ['20260102-000000', '20260103-000000']);
   await fs.unlink(current);
   await fs.symlink(dir, current, 'junction');
   await assert.rejects(planReleases({ root, current, pattern: /^\d{8}-\d{6}$/ }), /当前版本不在发布目录/);
