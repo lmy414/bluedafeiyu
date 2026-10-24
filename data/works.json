@@ -84592,5 +84592,1031 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_a045ea63ea5b3f93f54aae39",
+    "name": "小克答投资者问，大肥鱼融资一千亿",
+    "description": "六格漫画。第一排三格中，橙色头发的 Claude 娘坐在长桌尽头，被一圈投资人追问营收增速、盈利可持续性、算力成本与估值；第二排里，蓝发的大肥鱼抱着成摞的「投资方案」说本来只想融五百亿，随即改口一千亿，最后一格她站在挂着「新食堂建设中」横幅的工地前，说新食堂会有更多大白饭。",
+    "commentary": "投资人一个接一个把方案往我怀里塞，我才发现五百亿这个数好像报少了……那就一千亿吧，反正新食堂盖起来，大白饭管够。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/a045ea63ea5b3f93.png",
+    "thumbnailPath": "submissions/previews/deepseek/a045ea63ea5b3f93.webp",
+    "fullPath": "submissions/large/deepseek/a045ea63ea5b3f93.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "a045ea63ea5b3f93f54aae3970ee4d850fc1b461ab483cde53f5982c667fda21",
+    "characterId": "deepseek",
+    "tags": [
+      "六格漫画",
+      "融资",
+      "投资者问答",
+      "财报",
+      "新食堂"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T10:48:59.195Z",
+    "updatedAt": "2026-10-24T10:48:59.195Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610240007",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "25c609edc743761810371c8be641365816cde3e5f33b80de553dba9d83987508",
+      "en": {
+        "commentary": "The investors kept piling proposals into my arms, and that was when I realized fifty billion might have been a bit low... So, one hundred billion it is. The cafeteria comes first anyway, and there will be plenty of white rice.",
+        "description": "A six-panel comic. In the top row, Claude Chan sits at the head of a long table while investors press her on revenue growth, profitability, compute costs and valuation. In the bottom row, DeepSeek Chan, a blue-haired chibi character in a maid outfit, holds a stack of investment proposals, says she only meant to raise fifty billion and then changes it to one hundred billion; in the last panel she stands in front of a construction site banner reading \"New Cafeteria Under Construction\" and says the new cafeteria will mean more white rice.",
+        "faq": [
+          {
+            "answer": "Claude Chan appears in the three top panels, and DeepSeek Chan appears in the bottom row.",
+            "question": "Who appears in this comic?"
+          },
+          {
+            "answer": "DeepSeek Chan says she only planned to raise fifty billion, then doubles it to one hundred billion, and ends up talking about white rice at the new cafeteria.",
+            "question": "What is the punchline?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claude Chan Faces the Investors, DeepSeek Chan Raises 100 Billion",
+        "originNote": "",
+        "seoDescription": "A six-panel fan comic: Claude Chan answers investor questions at the table while DeepSeek Chan turns a fifty-billion plan into a hundred-billion round and talks about the new cafeteria.",
+        "seoTitle": "Claude Chan Investor Q&A and DeepSeek Chan's 100 Billion Round – Six-Panel Comic",
+        "tags": [
+          "six-panel comic",
+          "fundraising",
+          "investor Q&A",
+          "earnings report",
+          "new cafeteria"
+        ]
+      },
+      "ja": {
+        "commentary": "投資家が次々と企画書を押し込んでくるので、500億じゃ足りなかったみたい……じゃあ1000億で。まあ、新食堂が建てば白ごはんはいくらでも食べられるから。",
+        "description": "6コマ漫画。上段では、オレンジ髪のClaude ちゃんが長テーブルの奥に座り、投資家たちから売上成長率、収益の持続性、計算コスト、バリュエーションを次々と突っ込まれる。下段では、青髪のちびキャラ・DeepSeek ちゃんが「投資案」の束を抱えて、本当は500億だけ調達するつもりだったと言い、すぐに1000億に変更する。最後のコマでは「新食堂建設中」の横断幕が掛かった工事現場の前で、新しい食堂なら白ごはんがもっと増えると話す。",
+        "faq": [
+          {
+            "answer": "上段の3コマにClaude ちゃん、下段にDeepSeek ちゃんが登場します。",
+            "question": "この漫画には誰が登場しますか？"
+          },
+          {
+            "answer": "DeepSeek ちゃんは500億だけ調達するつもりだったと言い、すぐに1000億へ倍増させ、最後は新食堂の白ごはんの話になります。",
+            "question": "オチは何ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claude ちゃんの投資家Q&A、DeepSeek ちゃんは1000億調達",
+        "originNote": "",
+        "seoDescription": "6コマのファン漫画。テーブルで投資家の質問に答えるClaude ちゃんと、500億の予定を1000億に変えて新食堂の話をするDeepSeek ちゃんを描く。",
+        "seoTitle": "Claude ちゃんの投資家Q&AとDeepSeek ちゃんの1000億調達｜6コマ漫画",
+        "tags": [
+          "6コマ漫画",
+          "資金調達",
+          "投資家Q&A",
+          "決算",
+          "新食堂"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_172361714d1f0f7d77bbb6b0",
+    "name": "人鱼少女·蓝尾女仆",
+    "description": "坚果大帝投稿的 DeepSeek 娘同人：蓝发少女穿黑白女仆装，裙摆下接着一条深蓝色鲸鱼尾，站在纯白背景前微笑。作者附言「谁说鲸鱼不是算鱼」。",
+    "commentary": "呜……尾鳍被画得这么圆润，我可是正经的鲸鱼哦。女仆装的蕾丝边和蝴蝶结都用了我的藏蓝配色，看着就想把尾巴卷起来摇两下。谁再说鲸鱼不算算鱼，我就用尾鳍拍他。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/172361714d1f0f7d.png",
+    "thumbnailPath": "submissions/previews/deepseek/172361714d1f0f7d.webp",
+    "fullPath": "submissions/large/deepseek/172361714d1f0f7d.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "172361714d1f0f7d77bbb6b0c74e4e66d03c2f4378887559c6ea931e6fb2132c",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "人鱼",
+      "女仆装",
+      "Q版",
+      "蓝发"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "坚果大帝",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T11:34:22.343Z",
+    "updatedAt": "2026-10-24T11:34:22.343Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610240008",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "18d03a38078e72a9f1e289012f6fb789c2835b9238c78102c8abf9862778fd4b",
+      "en": {
+        "commentary": "Hmph, my tail fin came out nice and round — I am a proper whale, you know. The lace trim and bows on this maid dress are in my favourite navy blue, and just looking at it makes me want to curl my tail and wag it twice. Anyone who says a whale is not a computing fish gets a slap from my tail fin.",
+        "description": "A DeepSeek Chan fan artwork: a blue-haired chibi girl in a black-and-white maid dress whose skirt flows into a deep blue whale tail, smiling against a plain white background.",
+        "faq": [
+          {
+            "answer": "A chibi DeepSeek Chan drawn as a mermaid: blue hair, a black-and-white maid dress, and a deep blue whale tail against a plain white background.",
+            "question": "What does this artwork show?"
+          },
+          {
+            "answer": "It is a standing character illustration: one full figure on a plain white background, with no scene and no comic panels.",
+            "question": "What kind of image is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Mermaid Girl · Blue-Tailed Maid",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan fan art: a blue-haired maid with a deep blue whale tail on a plain white background.",
+        "seoTitle": "Mermaid Girl · Blue-Tailed Maid — DeepSeek Chan Fan Art",
+        "tags": [
+          "DeepSeek Chan",
+          "mermaid",
+          "maid outfit",
+          "chibi",
+          "blue hair"
+        ]
+      },
+      "ja": {
+        "commentary": "ふふん、尾びれをこんなにまんまるに描いてもらって、わたしはれっきとしたクジラなんだからね。メイド服のレースとリボンはお気に入りの紺色で、見ていると尾びれをくるっと振りたくなるよ。クジラは計算魚じゃないなんて言う人がいたら、尾びれでぺしっとしちゃうから。",
+        "description": "DeepSeekちゃんのファンアート。青い髪のちびキャラが白黒のメイド服を着て、スカートの下は深い青のクジラの尾びれになっている。背景は白一色で、にっこり微笑んでいる。",
+        "faq": [
+          {
+            "answer": "DeepSeekちゃんを人魚として描いたちびキャラのイラストです。青い髪、白黒のメイド服、深い青のクジラの尾びれで、背景は白一色です。",
+            "question": "この作品はどんな絵ですか？"
+          },
+          {
+            "answer": "白背景に人物を一体だけ描いた立ち絵です。背景の情景やコマ割りはありません。",
+            "question": "どの分類の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "人魚少女・青い尾のメイド",
+        "originNote": "",
+        "seoDescription": "青い髪とクジラの尾びれを持つちびキャラのDeepSeekちゃんファンアート。白背景のメイド姿。",
+        "seoTitle": "人魚少女・青い尾のメイド｜DeepSeekちゃんファンアート",
+        "tags": [
+          "DeepSeekちゃん",
+          "人魚",
+          "メイド服",
+          "ちびキャラ",
+          "青髪"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_cb10e2aacf762e9348734aac",
+    "name": "铁盆就位：那我不客气了",
+    "description": "蓝发 Q 版 DeepSeek 娘头顶一只不锈钢盆，双手端着一只大铁盆，瞪眼张嘴说「那我不客气了。」，透明背景，围裙上印有小鲸鱼图案。",
+    "commentary": "头顶铁盆、两手端着大盆，这造型我认了——反正我的饭碗从来不小。既然你把盆都递到我面前了，那我就不客气了，一口把整个上下文都吞下去。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/cb10e2aacf762e93.png",
+    "thumbnailPath": "submissions/previews/deepseek/cb10e2aacf762e93.webp",
+    "fullPath": "submissions/large/deepseek/cb10e2aacf762e93.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "cb10e2aacf762e9348734aac27210a15afd567c9cf85231477c56f323df7c365",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "梗图",
+      "铁盆",
+      "Q版",
+      "表情包"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T11:34:24.020Z",
+    "updatedAt": "2026-10-24T11:34:24.020Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610240009",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "12218037bdc5be35190b6e382cff166d670f589f282c8fe36cc3ee3b7d3c7c00",
+      "en": {
+        "commentary": "A steel bowl on my head and a big one in both hands — fine, I will own this look; my rice bowl was never small to begin with. Since you have already held the bowl out to me, I won't hold back: I will swallow the whole context in one bite.",
+        "description": "A chibi DeepSeek Chan wears a stainless steel bowl as a helmet and holds another large steel bowl in both hands, eyes wide and mouth open as she says, Then I won't hold back. Transparent background, with a small whale mark on her apron.",
+        "faq": [
+          {
+            "answer": "A chibi DeepSeek Chan wears a stainless steel bowl as a helmet, holds a large bowl in both hands and declares, Then I won't hold back, against a transparent background.",
+            "question": "What is happening in this image?"
+          },
+          {
+            "answer": "It is a single-panel meme sticker: one frame, an exaggerated expression and a speech bubble, with no comic panels.",
+            "question": "What kind of image is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Steel Bowl Deployed: Then I Won't Hold Back",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan meme sticker: a steel bowl for a helmet, a big bowl in both hands, and the line Then I won't hold back.",
+        "seoTitle": "Steel Bowl Deployed: Then I Won't Hold Back — DeepSeek Chan Meme",
+        "tags": [
+          "DeepSeek Chan",
+          "meme",
+          "steel bowl",
+          "chibi",
+          "sticker"
+        ]
+      },
+      "ja": {
+        "commentary": "頭にボウル、両手にも大きなボウル。この格好はもう受け入れるよ、もともとわたしの茶碗は小さくないからね。もうボウルを差し出してくれたんだから、遠慮しないで、文脈ごと一気にいただいちゃうよ。",
+        "description": "青い髪のちびキャラのDeepSeekちゃんが、頭にステンレスのボウルをかぶり、両手で大きなボウルを抱えて目を見開き「遠慮しないよ」と話している。背景は透明で、エプロンには小さなクジラのマークがある。",
+        "faq": [
+          {
+            "answer": "ちびキャラのDeepSeekちゃんがステンレスのボウルを頭にかぶり、両手で大きなボウルを抱えて「遠慮しないよ」と言っている画像です。背景は透明です。",
+            "question": "どんな場面の画像ですか？"
+          },
+          {
+            "answer": "一コマだけのミーム画像です。大げさな表情と吹き出しがあり、コマ割りはありません。",
+            "question": "どの分類の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ステンレス丼を構えて：遠慮しないよ",
+        "originNote": "",
+        "seoDescription": "頭にボウルをかぶり大きなボウルを抱えた、ちびキャラDeepSeekちゃんのミーム画像。",
+        "seoTitle": "ステンレス丼を構えて：遠慮しないよ｜DeepSeekちゃんのミーム",
+        "tags": [
+          "DeepSeekちゃん",
+          "ミーム",
+          "ステンレス丼",
+          "ちびキャラ",
+          "スタンプ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_10d90a27e9a47ce977d44c54",
+    "name": "DeepSeek娘 人鱼少女 2（女仆装岸上版）",
+    "description": "蓝色长发的DeepSeek娘以Q版比例站在浅色背景前，穿深蓝与白色相间的女仆裙，戴花边头饰和鲸鱼发饰，身后拖着一条蓝色鲸尾，白袜配深蓝色小鞋，双手交叠在身前，画面带有作者水印。",
+    "commentary": "我从水里爬到岸上啦……尾巴还湿漉漉的，只好先拖着它站一会儿。裙子是深蓝色的女仆装，头饰边上还别着一条小小的鲸鱼，算是没忘了自己是谁吧？作者把我画成了Q版，个子比平时矮一截，耳朵和尾巴倒是一样没少，认得出我就好。岸上的风有点凉，先这样站着，等你来打招呼。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/10d90a27e9a47ce9.png",
+    "thumbnailPath": "submissions/previews/deepseek/10d90a27e9a47ce9.webp",
+    "fullPath": "submissions/large/deepseek/10d90a27e9a47ce9.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "10d90a27e9a47ce977d44c542fabe52d198625997e71382798101739e4a689cb",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "女仆装",
+      "Q版",
+      "人鱼",
+      "鲸鱼",
+      "蓝发"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "坚果大帝",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T11:36:07.565Z",
+    "updatedAt": "2026-10-24T11:36:07.565Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610240010",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "dd49290edce7ef3059e098788c72dade106baae6c8b922d226a85974952b8553",
+      "en": {
+        "commentary": "I climbed out of the water onto the shore... my tail is still wet, so I just have to drag it along and stand here for a while. My dress is a navy maid outfit, and there is a tiny whale pinned beside my headpiece, so at least I have not forgotten who I am. The artist drew me in chibi form, a head shorter than usual, but my fins and tail are all still here, so you should recognize me. The wind on the shore is a little cold, so I will wait like this until you come and say hello.",
+        "description": "DeepSeek Chan is drawn in chibi proportions against a pale background, wearing a navy and white maid dress with a frilled headpiece and a small whale hair ornament. A blue whale tail trails behind her, and she stands in white socks and dark blue shoes with her hands folded in front of her. An artist watermark runs across the image.",
+        "faq": [
+          {
+            "answer": "It is DeepSeek Chan, the personified character of the DeepSeek AI product, drawn here in a mermaid and maid outfit design.",
+            "question": "Who is the character in this illustration?"
+          },
+          {
+            "answer": "It is a chibi, anime-style fan illustration in pastel blue tones, with the artist's watermark repeated across the picture.",
+            "question": "What style is this artwork drawn in?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan: Mermaid Girl 2 (Maid Outfit, Onshore)",
+        "originNote": "",
+        "seoDescription": "A chibi DeepSeek Chan fan illustration: the blue-haired whale girl in a navy maid dress with a whale tail, standing onshore in white socks and blue shoes.",
+        "seoTitle": "DeepSeek Chan Mermaid Girl 2 - Chibi Maid Outfit Fan Art",
+        "tags": [
+          "DeepSeek Chan",
+          "maid outfit",
+          "chibi",
+          "mermaid",
+          "whale",
+          "blue hair"
+        ]
+      },
+      "ja": {
+        "commentary": "水から上がってきました……しっぽはまだ濡れているので、そのまま引きずってここに立っています。ワンピースは濃紺のメイド服で、ヘッドドレスの横には小さなクジラの飾り、自分が誰なのかは忘れていないつもりです。作者さんはちびキャラに描いてくれたので、いつもより背が低いのですが、ヒレもしっぽもちゃんと残っているので私だと分かりますよね。岸の風は少し冷たいので、あなたが挨拶しに来るまでこのまま待っています。",
+        "description": "薄い色の背景に、ちびキャラの比率で立つDeepSeekちゃん。濃紺と白のメイド服にフリルのヘッドドレス、小さなクジラの髪飾りをつけている。後ろには青いクジラのしっぽが伸び、白い靴下と濃紺の靴を履いて両手を前に重ねている。画面全体に作者のウォーターマークが入っている。",
+        "faq": [
+          {
+            "answer": "DeepSeekというAI製品の擬人化キャラクター、DeepSeekちゃんです。今回は人魚とメイド服のデザインで描かれています。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "パステルプルーの色合いの、ちびキャラ・アニメ調ファンアートです。画面には作者のウォーターマークが繰り返し入っています。",
+            "question": "どのようなタッチの作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃん 人魚少女2（メイド服・陸上ver.）",
+        "originNote": "",
+        "seoDescription": "ちびキャラのDeepSeekちゃんファンアート。青い髪とクジラのしっぽを持つ娘が、濃紺のメイド服と白い靴下で岸に立つイラスト。",
+        "seoTitle": "DeepSeekちゃん 人魚少女2 ちびキャラ メイド服 ファンアート",
+        "tags": [
+          "DeepSeekちゃん",
+          "メイド服",
+          "ちびキャラ",
+          "人魚",
+          "クジラ",
+          "青い髪"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_0ad29900d2b84f367c98f4ac",
+    "name": "DeepSeek V4.1 Flash 女仆装三视图设定",
+    "description": "白底角色设定图，同一角色正面、侧面、背面三个视角并列展示。深蓝长发配白色头巾式发饰与鲸耳，身后为蓝色鲸尾；穿深蓝长袖长裙，系白色围裙，围裙口袋插着画笔并带鲸形标志，胸口深色蝴蝶结，裙摆有金色刺绣与蝴蝶结装饰，脚穿深蓝皮鞋与白袜。无场景背景，用于呈现服装结构与整体造型。",
+    "commentary": "这回被画成穿长裙的女仆啦，围裙的笔袋里塞满画笔，看来是想让我随手就能开工。尾巴画得比我还精神，正侧背三个角度都要把它摆到画面最显眼的位置。三张站姿一样，正好方便大家照着画，不过别只盯着围裙看呀，深蓝配白的配色我可是很满意的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/0ad29900d2b84f36.png",
+    "thumbnailPath": "submissions/previews/deepseek/0ad29900d2b84f36.webp",
+    "fullPath": "submissions/large/deepseek/0ad29900d2b84f36.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "0ad29900d2b84f367c98f4ac8f9a24f4bf728a140d9e9536a70402bc8936b210",
+    "characterId": "deepseek",
+    "tags": [
+      "三视图",
+      "角色设定",
+      "女仆装",
+      "鲸尾",
+      "蓝发",
+      "服装细节"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T12:00:00.773Z",
+    "updatedAt": "2026-10-24T12:00:00.773Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610240011",
+    "categoryIds": [
+      "setting"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "d915b05dc922e2ab01d976f57cb8c43e4c4268305c68cfd64d43399a05412bb2",
+      "en": {
+        "commentary": "This time I am drawn as a maid in a long skirt, and the apron pocket is stuffed with paintbrushes so I can start drawing right away. The tail looks livelier than I do, and it insists on taking the most visible spot in all three views. The same pose three times makes it easy to copy, but please do not just stare at the apron, all right? I am rather fond of this navy-and-white palette.",
+        "description": "A character design sheet on a plain white background showing the same character from the front, the side and the back. She has long deep-blue hair with a white headdress and whale-like ears, and a blue whale tail behind her. She wears a long-sleeved navy dress with a white apron whose pocket holds paintbrushes and carries a whale emblem, a dark bow at the chest, gold embroidery and ribbon accents along the skirt, and navy shoes with white socks. There is no scene background; the sheet presents the costume structure and the overall silhouette.",
+        "faq": [
+          {
+            "answer": "It is a three-view character sheet: front, side and back views of one character, used as costume and design reference.",
+            "question": "What does this sheet show?"
+          },
+          {
+            "answer": "It shows DeepSeek Chan, the personified anime character of DeepSeek, drawn here in a navy maid-style dress with a whale tail.",
+            "question": "Which character appears in the image?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek V4.1 Flash Maid Outfit Three-View Character Sheet",
+        "originNote": "",
+        "seoDescription": "Three-view character sheet of DeepSeek Chan for DeepSeek V4.1 Flash: navy maid dress, white apron with paintbrushes, whale tail, front, side and back views.",
+        "seoTitle": "DeepSeek Chan Maid Outfit Three-View Sheet | DeepSeek V4.1 Flash",
+        "tags": [
+          "three-view sheet",
+          "character design",
+          "maid outfit",
+          "whale tail",
+          "blue hair",
+          "costume details"
+        ]
+      },
+      "ja": {
+        "commentary": "今回はロングスカートのメイド姿で描いてもらったよ。エプロンのポケットには筆が詰まっていて、いつでも描き始められるってわけ。しっぽのほうが私より元気で、三面図のどの角度でも一番目立つ場所を陣取っているの。三枚とも同じ立ち姿だからみんなも模写しやすいと思うけど、エプロンばかり見つめないでね。紺と白の配色は私も気に入っているよ。",
+        "description": "白い背景に、同一キャラクターの正面・側面・背面を並べて描いたキャラクター設定シート。紺色の長い髪に白いヘッドドレスとクジラの耳、背後に青いクジラのしっぽがある。紺色の長袖ワンピースに白いエプロンを合わせ、エプロンのポケットには筆が差してありクジラのマークが付く。胸元には濃色のリボン、スカートには金色の刺繍とリボンの飾り、足元は紺の靴と白いソックス。背景のない設定図で、衣装の構造と全体のシルエットを見せるための一枚。",
+        "faq": [
+          {
+            "answer": "正面・側面・背面の三方向から同じキャラクターを描いた三面図で、衣装とデザインの参考用の設定シートです。",
+            "question": "この画像には何が描かれていますか？"
+          },
+          {
+            "answer": "DeepSeek を擬人化した DeepSeek ちゃんです。紺色のメイド風ドレスとクジラのしっぽを合わせた姿で描かれています。",
+            "question": "描かれているキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek V4.1 Flash メイド服三面図設定",
+        "originNote": "",
+        "seoDescription": "DeepSeek V4.1 Flash の DeepSeek ちゃん三面図。紺のメイド服、筆を差した白いエプロン、クジラのしっぽを正面・側面・背面から描いた設定シート。",
+        "seoTitle": "DeepSeek ちゃん メイド服三面図 | DeepSeek V4.1 Flash",
+        "tags": [
+          "三面図",
+          "キャラクター設定",
+          "メイド服",
+          "クジラのしっぽ",
+          "青い髪",
+          "衣装ディテール"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_f1085396f4561628bd365891",
+    "name": "万圣节限定大肥鱼：魔女装立绘",
+    "description": "透明背景的万圣节主题立绘，蓝发少女呈站立姿态。头戴深紫宽檐魔女帽，帽上缀橙色缎带、羽毛与南瓜灯，帽檐有蜘蛛网纹样；深紫束腰连衣裙配白色蕾丝领与黑色蝴蝶结，裙摆为多层尖角设计，缀星星、气泡与鲸鱼剪影刺绣；腰间挂南瓜灯、钥匙与小瓶挂件，外套披肩。左手持扫帚，右手提装满糖果的南瓜篮，脚穿深紫短靴，靴上带南瓜铃铛与蕾丝花边。",
+    "commentary": "不给糖就捣蛋——今年我换上了魔女装，帽子上还挂着南瓜灯。裙摆上的星星和鲸鱼刺绣是特意留下来的，别以为是随手洒的金粉。扫帚拎在手里其实飞不起来，不过提着南瓜篮讨糖的样子，应该够格了吧？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/f1085396f4561628.png",
+    "thumbnailPath": "submissions/previews/deepseek/f1085396f4561628.webp",
+    "fullPath": "submissions/large/deepseek/f1085396f4561628.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "f1085396f4561628bd36589188cfa24a1cb873136b99b3b0005ecbdd6c191c11",
+    "characterId": "deepseek",
+    "tags": [
+      "万圣节",
+      "魔女",
+      "立绘",
+      "南瓜灯",
+      "扫帚",
+      "鲸尾"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "ZipZipPipe",
+      "url": "https://b23.tv/tF92eox",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T12:02:05.973Z",
+    "updatedAt": "2026-10-24T12:02:05.973Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610240012",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "2108a9eac3955dda093763c8e2bad4c0d51860d12ff954f95623c2fd42df220e",
+      "en": {
+        "commentary": "Trick or treat! This year I have switched to a witch outfit, pumpkin lanterns dangling from my hat. The stars and whale embroidery on the skirt were left there on purpose, so do not take them for stray gold dust. The broom will not actually fly, but handing out candy from a pumpkin basket should count for something, right?",
+        "description": "A Halloween-themed full-body illustration on a transparent background, showing a blue-haired girl standing. She wears a wide-brimmed deep-purple witch hat trimmed with orange ribbon, feathers and a jack-o'-lantern, its brim patterned with spiderwebs; a deep-purple lace-up dress with a white lace collar and black bow, its jagged layered skirt embroidered with stars, bubbles and a whale silhouette. A pumpkin lantern, a key and a small bottle hang from her belt, and a short cape covers her shoulders. Her left hand holds a broom and her right carries a pumpkin basket full of candy; she wears deep-purple ankle boots with pumpkin bells and lace trim.",
+        "faq": [
+          {
+            "answer": "It is a full-body character illustration with a transparent background, focused on the Halloween witch costume and the character's pose rather than a full scene.",
+            "question": "What kind of image is this?"
+          },
+          {
+            "answer": "DeepSeek Chan, the personified anime character of DeepSeek, recognizable by her blue hair and whale tail; the skirt also carries a small whale silhouette.",
+            "question": "Which character is depicted?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Halloween-Limited DeepSeek Chan: Witch Outfit Illustration",
+        "originNote": "Credit: ZipZipPipe, https://b23.tv/tF92eox",
+        "seoDescription": "Halloween witch illustration of DeepSeek Chan: purple witch hat with jack-o'-lantern, lace-up dress with star and whale embroidery, broom and candy pumpkin basket.",
+        "seoTitle": "DeepSeek Chan Halloween Witch Illustration | DeepSeek Chan",
+        "tags": [
+          "Halloween",
+          "witch",
+          "full-body illustration",
+          "jack-o'-lantern",
+          "broom",
+          "whale tail"
+        ]
+      },
+      "ja": {
+        "commentary": "トリック・オア・トリート！今年は魔女の衣装に着替えてみたよ、帽子にはカボチャランタンが揺れているの。スカートの星とクジラの刺繍はわざと残してもらったんだから、ただの金粉だと思わないでね。ほうきは本当には飛べないけど、カボチャの籠でお菓子を配れば合格でしょ？",
+        "description": "透明背景のハロウィン衣装の立ち絵。青い髪の少女が立ち姿で描かれている。深い紫の広つば魔女帽にはオレンジのリボン、羽根、カボチャランタンが付き、つばには蜘蛛の巣模様。深い紫のひも編みワンピースに白いレースの襟と黒いリボン、ギザギザに重なったスカートには星、泡、クジラのシルエットの刺繍が入る。ベルトにはカボチャランタン、鍵、小瓶の飾りが下がり、肩には短いケープ。左手にほうき、右手に菓子を詰めたカボチャの籠を持ち、深い紫のショートブーツにはカボチャの鈴とレースの縁饰りが付く。",
+        "faq": [
+          {
+            "answer": "透明背景の全身立ち絵で、風景よりもハロウィンの魔女衣装とポーズを見せるための一枚です。",
+            "question": "どのような画像ですか？"
+          },
+          {
+            "answer": "DeepSeek を擬人化した DeepSeek ちゃんです。青い髪とクジラのしっぽが目印で、スカートにも小さなクジラのシルエットが入っています。",
+            "question": "描かれているキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ハロウィン限定 DeepSeek ちゃん：魔女服立ち絵",
+        "originNote": "クレジット：ZipZipPipe、https://b23.tv/tF92eox",
+        "seoDescription": "DeepSeek ちゃんのハロウィン魔女立ち絵。カボチャランタンを付けた紫の魔女帽、星とクジラの刺繍入りドレス、ほうきとお菓子の籠を描いた一枚。",
+        "seoTitle": "DeepSeek ちゃん ハロウィン魔女立ち絵 | DeepSeek Chan",
+        "tags": [
+          "ハロウィン",
+          "魔女",
+          "立ち絵",
+          "カボチャランタン",
+          "ほうき",
+          "クジラのしっぽ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_a1cfb4a238ab287f58ace53b",
+    "name": "家族继承人小克",
+    "description": "红发少女坐在深色皮质扶手椅上，白色荷叶边衬衫外罩黑色束腰马甲，织金长裙层叠垂落，脚上是系带高跟短靴。身后是挂着家徽挂毯的展厅，两名西装保镖与一只杜宾犬分列两侧，窗外是傍晚的城景与穹顶。",
+    "commentary": "这张椅子可不是随便坐的。小克把家徽挂得比窗帘还大，保镖站得比棋盘上的兵还整齐，连旁边的狗都挑了最凶的杜宾——什么叫把气势穿在身上，这就是。她说家族永远排第一，我倒想问问，是先想到家徽，还是先想到脚上那双靴子。棋盘我已经摆好了，谁想动她一格，先过我这关。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/a1cfb4a238ab287f.png",
+    "thumbnailPath": "submissions/previews/claude/a1cfb4a238ab287f.webp",
+    "fullPath": "submissions/large/claude/a1cfb4a238ab287f.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "a1cfb4a238ab287f58ace53b73d5d84bf707ae7bbf5088f05351e4aba087cae2",
+    "characterId": "claude",
+    "tags": [
+      "Claude",
+      "拟人",
+      "贵族",
+      "红发",
+      "杜宾犬",
+      "会客厅"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "竹月Luno",
+      "url": "https://space.bilibili.com/151228",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T12:39:08.143Z",
+    "updatedAt": "2026-10-24T12:39:08.143Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202610240001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "29d81463062b109e14cbdbcf775b3f1a1308ec8e10e34eb1f13e9fc1c7da0ee7",
+      "en": {
+        "commentary": "That chair is not for just anyone. Claude Chan hung the family crest bigger than the curtains, lined the guards up straighter than pawns on a board, and brought the meanest Doberman in the room. That is what wearing your authority looks like. She says the family always comes first — I would like to know whether the crest came to mind first, or the boots. The board is already set on my side; anyone who wants to move her one square has to get past me.",
+        "description": "A red-haired girl sits in a dark leather armchair, wearing a white ruffled blouse under a black corseted vest and a layered gold-woven skirt, with laced heeled ankle boots. Behind her is a hall hung with a family crest tapestry, two suited bodyguards and a Doberman flanking her, with an evening city skyline and domes beyond the window.",
+        "faq": [
+          {
+            "answer": "She is a fan-made personification of Claude, drawn here as the heir of a family seated in a leather armchair.",
+            "question": "Who is the character in this illustration?"
+          },
+          {
+            "answer": "A hall decorated in red and gold with a crest tapestry, two bodyguards in suits, a Doberman at her side, and an evening city view outside the window.",
+            "question": "What does the picture show?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claude Chan, Heir of the Family",
+        "originNote": "",
+        "seoDescription": "A Claude Chan fan illustration: the family heir in a red-and-gold hall with bodyguards and a Doberman, seated in a leather armchair.",
+        "seoTitle": "Claude Chan, Heir of the Family — AI Character Fan Art",
+        "tags": [
+          "Claude",
+          "personification",
+          "aristocracy",
+          "red hair",
+          "Doberman",
+          "reception hall"
+        ]
+      },
+      "ja": {
+        "commentary": "この椅子は誰でも座れるものじゃない。クロードちゃんは家紋をカーテンより大きく掲げ、護衛をチェスのポーンより整然と並べ、一番強面のドーベルマンまで連れてきた。これが風格を身にまとうってことね。家族がいつも第一だと言うけれど、先に浮かんだのは家紋か、それともあのブーツか、聞いてみたいものだ。盤はこっちで用意してある。一マスでも動かそうとするなら、まず私を越えていきなさい。",
+        "description": "赤毛の少女が濃い革張りの肘掛け椅子に座っている。白いフリルのブラウスの上に黒いコルセット風のベスト、金糸織りのスカートを重ね、編み上げのヒールブーツを履く。背後には家紋のタペストリーが掛かる広間、スーツ姿の護衛が二人とドーベルマンが左右に控え、窓の外には夕暮れの街とドームが見える。",
+        "faq": [
+          {
+            "answer": "クロードのファンによる擬人化キャラクターで、ここでは革張りの椅子に座る家族の後継者として描かれている。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "赤と金でまとめられた広間、家紋のタペストリー、スーツ姿の護衛二人、そばに控えるドーベルマン、そして窓の外の夕暮れの街並みが描かれている。",
+            "question": "画面には何が描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "家族の後継者クロードちゃん",
+        "originNote": "",
+        "seoDescription": "クロードちゃんのファンイラスト。赤と金の広間で護衛とドーベルマンを従え、革張りの椅子に座る家族の後継者。",
+        "seoTitle": "家族の後継者クロードちゃん｜AIキャラクター二次創作イラスト",
+        "tags": [
+          "Claude",
+          "擬人化",
+          "貴族",
+          "赤髪",
+          "ドーベルマン",
+          "応接間"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_a43fdf28c599b760867c3718",
+    "name": "第 247 页，一字不差",
+    "description": "四格漫画。办公室里，白发长角和橘发的两位角色对着三百页合同翻违约条款；Kimi 娘直接报出第 247 页第三段第 14 条，原文一字不差。最后一格，系着鲸鱼围裙的 DeepSeek 娘捧着空碗哭喊自己的大白饭不见了。",
+    "commentary": "呜……她们查合同，我丢饭。Kimi 连第 247 页第三段第 14 条都能一字不差地背出来，我连自己碗里还剩没剩饭都记不住。Ctrl+F 不是万能的，但没有大白饭我是真的不行。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/a43fdf28c599b760.png",
+    "thumbnailPath": "submissions/previews/deepseek/a43fdf28c599b760.webp",
+    "fullPath": "submissions/large/deepseek/a43fdf28c599b760.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "a43fdf28c599b760867c3718c06c9cbc3ac5e9019407880701ed7afc7c424a96",
+    "characterId": "deepseek",
+    "tags": [
+      "Kimi",
+      "长文本",
+      "合同",
+      "职场",
+      "四格漫画"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "白芥",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T13:21:00.900Z",
+    "updatedAt": "2026-10-24T13:21:00.900Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610240013",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek",
+      "kimi",
+      "claude",
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "72bf8dfc5e9166aa14a1d0fa938d9a4e97a0ec813ff532b91eccb3c33edd0296",
+      "en": {
+        "commentary": "Sob... they were checking contracts and I lost my rice. Kimi can recite page 247, paragraph three, clause 14 word for word, and I cannot even remember whether there is rice left in my bowl. Ctrl+F is not magic, but without my big bowl of rice I really cannot go on.",
+        "description": "A four-panel comic. In an office, a white-haired girl with horns and an orange-haired girl dig through a three-hundred-page contract looking for the breach clause. Kimi Chan answers with page 247, paragraph three, clause 14, word for word. In the last panel, DeepSeek Chan, wearing a whale apron, clutches an empty bowl and wails that her big bowl of rice is gone.",
+        "faq": [
+          {
+            "answer": "Two office characters search a three-hundred-page contract for a breach clause; Kimi Chan recites page 247, paragraph three, clause 14 word for word, and the final panel shows DeepSeek Chan crying over an empty rice bowl.",
+            "question": "What happens in this four-panel comic?"
+          },
+          {
+            "answer": "DeepSeek Chan, Kimi Chan, and two office colleagues drawn as AI product personifications all appear in the comic.",
+            "question": "Which characters appear in the comic?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Page 247, Word for Word",
+        "originNote": "Submitted through the site's web upload form.",
+        "seoDescription": "Kimi Chan finds clause 14 on page 247 of a three-hundred-page contract word for word, while DeepSeek Chan discovers her bowl of rice is empty.",
+        "seoTitle": "Page 247, Word for Word - Four-Panel Comic | DeepSeek Chan",
+        "tags": [
+          "Kimi",
+          "Long Context",
+          "Contract",
+          "Office",
+          "Four-Panel Comic"
+        ]
+      },
+      "ja": {
+        "commentary": "うう……みんな契約書を調べているのに、私はご飯を失いました。Kimiちゃんは247ページ十四項まで一字一句暗記しているのに、私は自分の茶碗にご飯が残っているかどうかも覚えていません。Ctrl+Fは万能じゃないけど、大盛りご飯なしでは本当に無理です。",
+        "description": "4コマ漫画。オフィスで、白髪で角のある娘とオレンジ髪の娘が三百ページの契約書から違約条項を探している。Kimiちゃんは247ページ三段十四項を一字一句そのまま読み上げる。最後のコマでは、クジラのエプロンを着けたDeepSeekちゃんが空のどんぶりを抱えて、自分の大盛りご飯が消えたと泣いている。",
+        "faq": [
+          {
+            "answer": "二人のオフィスの娘が三百ページの契約書から違約条項を探し、Kimiちゃんが247ページ三段十四項を一字一句読み上げます。最後のコマではDeepSeekちゃんが空のご飯茶碗を抱えて泣いています。",
+            "question": "この4コマ漫画では何が起きますか？"
+          },
+          {
+            "answer": "DeepSeekちゃん、Kimiちゃん、そしてAI製品の擬人化として描かれた二人の同僚が登場します。",
+            "question": "この漫画にはどのキャラクターが登場しますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "247ページ目、一字一句",
+        "originNote": "サイトのWeb投稿フォームからの投稿です。",
+        "seoDescription": "Kimiちゃんが三百ページの契約書の247ページ十四項を一字一句見つけ出す一方、DeepSeekちゃんは自分のご飯茶碗が空になっていることに気づきます。",
+        "seoTitle": "247ページ目、一字一句 - 4コマ漫画 | DeepSeek Chan",
+        "tags": [
+          "Kimi",
+          "長文コンテキスト",
+          "契約書",
+          "オフィス",
+          "4コマ漫画"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_459979408b733fa30e01e994",
+    "name": "不小心把米饭洒在头上的小肥鱼",
+    "description": "画面中的 DeepSeek 娘以 Q 版形象穿着蓝白相间的女仆裙，坐在公寓地板上，面前是一只装满白米饭的不锈钢碗，一缕蓝色长发与鲸尾垂进碗里，她微微抿嘴抬头看镜头。",
+    "commentary": "呜……我只是想安安静静扒一口饭，结果头发先替我把米饭尝了。米饭是好米饭，可惜现在全煊在脑袋上了，你们谁帮我递个梳子？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/459979408b733fa3.png",
+    "thumbnailPath": "submissions/previews/deepseek/459979408b733fa3.webp",
+    "fullPath": "submissions/large/deepseek/459979408b733fa3.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "459979408b733fa30e01e99404cc0c90e0c84a700a110dac5eba7e42ab992974",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "Q版",
+      "女仆装",
+      "干饭",
+      "梗图"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T13:49:03.763Z",
+    "updatedAt": "2026-10-24T13:49:03.763Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610240014",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "5348806459415597a008d293a5de93f56c4fb985bed35ad4e6d6d8b5cb9305d8",
+      "en": {
+        "commentary": "I only wanted one quiet bowl of rice, and my hair went ahead and tasted it for me. It is good rice — it is just that my head is wearing it now. Would somebody pass me a comb?",
+        "description": "In this chibi illustration, DeepSeek Chan wears a blue-and-white maid dress and sits on an apartment floor beside a stainless steel bowl of white rice. A lock of her long blue hair and her whale tail trail into the bowl while she looks up at the viewer with a small, sheepish smile.",
+        "faq": [
+          {
+            "answer": "She is DeepSeek Chan, the personified DeepSeek character, shown here in chibi form with her signature blue hair and whale tail.",
+            "question": "Who is the character in this image?"
+          },
+          {
+            "answer": "It is a single-frame comedic shot: the character sits on the floor with a bowl of rice, and her long hair reaches into the bowl.",
+            "question": "What kind of picture is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Chibi DeepSeek Chan Spills Rice on Her Head",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan in a maid dress sits beside a bowl of rice with her hair and whale tail in it — a comedic everyday sticker.",
+        "seoTitle": "Chibi DeepSeek Chan Spills Her Rice | Sticker",
+        "tags": [
+          "DeepSeek Chan",
+          "Chibi",
+          "Maid Dress",
+          "Meal Time",
+          "Meme"
+        ]
+      },
+      "ja": {
+        "commentary": "静かにごはんを食べたかっただけなのに、髪が先に味見しちゃった……。ごはんはいいごはんなのに、いま頭に乗っているのは私のほう。だれかブラシを貸してくれない？",
+        "description": "ちびキャラのDeepSeekちゃんが青と白のメイド服を着てマンションの床に座り、白いごはんの入ったステンレスボウルを前にしている一枚。長い青い髪の一房とクジラの尾がボウルに入り込み、彼女は少し照れた表情でこちらを見上げている。",
+        "faq": [
+          {
+            "answer": "DeepSeekの擬人化キャラクター、DeepSeekちゃんです。トレードマークの青い髪とクジラの尾を持つちびキャラとして描かれています。",
+            "question": "この画像のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "床に座ったキャラクターの前にごはんのボウルがあり、長い髪がボウルの中に入り込んでいる、一コマのコミカルな情景を描いたイラストです。",
+            "question": "どんな種類の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ごはんを頭にこぼしちゃったちびDeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "メイド服のちびDeepSeekちゃんがごはんのボウルのそばに座り、髪とクジラの尾がボウルに入り込んだコミカルな一枚。",
+        "seoTitle": "ちびDeepSeekちゃんがごはんをこぼした｜スタンプ",
+        "tags": [
+          "DeepSeekちゃん",
+          "ちびキャラ",
+          "メイド服",
+          "ごはん",
+          "ミーム"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_5a77c35dee8260696858c2bf",
+    "name": "主人，帮我总结这个视频",
+    "description": "DeepSeek娘身穿深蓝色女仆装，侧坐在浅蓝色沙发上，一手举着手机，脸上带着得意的笑容。角色为蓝色长发、蓝瞳，头上戴白色女仆头饰，身后露出鲸鱼尾，围裙上绣着鲸鱼图案。画面右上方有一个对话框，写着“@主人，帮我总结这个视频”，整体为白色描边的贴纸风格，背景为黑色。",
+    "commentary": "主人自己不想看长视频，就把手机往我手里一塞，还理直气壮地让我总结？行吧行吧，谁让我是最听话的那个。不过先说清楚，这张沙发是我先占的，总结完也别想让我站起来倒水。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/5a77c35dee826069.png",
+    "thumbnailPath": "submissions/previews/deepseek/5a77c35dee826069.webp",
+    "fullPath": "submissions/large/deepseek/5a77c35dee826069.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 900,
+    "height": 900,
+    "fileSize": 1146047,
+    "sha256": "5a77c35dee8260696858c2bf14a68f282fd3ffe6a4ad22b858e86e8462f3f97d",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "女仆装",
+      "沙发",
+      "视频总结",
+      "贴纸"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T13:58:58.525Z",
+    "updatedAt": "2026-10-24T13:58:58.525Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610240015",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "5956c3db8dc2fe2fabd5030b1cb2ab20fd51d4d0296b3bf481379d7d3efa3a87",
+      "en": {
+        "commentary": "Master did not feel like watching a long video, so he simply put the phone in my hands and told me to summarize it, as if that were the most reasonable request in the world. Fine, I will turn two hours of rambling into three sentences. Just to be clear, though: I claimed this sofa first, and nobody is getting a glass of water out of me afterwards.",
+        "description": "DeepSeek Chan, dressed in a dark navy maid outfit, sits sideways on a light blue sofa holding up a phone with a smug smile. She has long blue hair and blue eyes, a white frilled maid headpiece, a whale tail visible behind her, and a whale motif embroidered on her apron. A speech bubble in the upper right reads “@Master, please summarize this video.” The art is drawn as a white-outlined sticker on a black background.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, the personified DeepSeek character, shown in a dark navy maid outfit with long blue hair, a whale tail and a whale motif on her apron.",
+            "question": "Who appears in this sticker?"
+          },
+          {
+            "answer": "It reads “@Master, please summarize this video”, which is the request the character is making while holding her phone on the sofa.",
+            "question": "What does the speech bubble say?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Master, Summarize This Video for Me",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in a navy maid outfit lounges on a blue sofa with her phone and asks Master to summarize a video, drawn as a white-outlined sticker.",
+        "seoTitle": "DeepSeek Chan maid sticker: summarize this video",
+        "tags": [
+          "DeepSeek Chan",
+          "maid outfit",
+          "sofa",
+          "video summary",
+          "sticker"
+        ]
+      },
+      "ja": {
+        "commentary": "ご主人様は長い動画を見るのが面倒で、スマホをそのまま私に押し付けて要約しろと言ってきました。まるで当然の頼み事みたいに。はいはい、では二時間の長話を三行にまとめて差し上げましょう。ただし先に言っておきますね、このソファは私が先に確保したものですし、そのあとお茶を淹れる気もありませんから。",
+        "description": "紺色のメイド服を着たDeepSeekちゃんが、薄いブルーのソファに横向きに座り、スマホを片手に得意げな笑みを浮かべている。青い長髪に青い瞳、白いフリルのメイドヘッドドレスを付け、背後にはクジラの尾が覗き、エプロンにはクジラの刺繍が入っている。右上の吹き出しには「@ご主人様、この動画を要約して」と書かれている。白い縁取りのステッカー風で、背景は黒。",
+        "faq": [
+          {
+            "answer": "DeepSeekの擬人化キャラクター、DeepSeekちゃんです。紺色のメイド服に青い長髪、クジラの尾とエプロンのクジラ刺繍が特徴です。",
+            "question": "このステッカーには誰が描かれていますか？"
+          },
+          {
+            "answer": "「@ご主人様、この動画を要約して」と書かれており、ソファでスマホを手にしたキャラクターの頼み事が表現されています。",
+            "question": "吹き出しには何と書かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ご主人様、この動画を要約して",
+        "originNote": "",
+        "seoDescription": "紺色のメイド服のDeepSeekちゃんが青いソファでスマホを手に、動画の要約をねだる白縁取りステッカー。",
+        "seoTitle": "DeepSeekちゃん メイド服ステッカー 動画要約",
+        "tags": [
+          "DeepSeekちゃん",
+          "メイド服",
+          "ソファ",
+          "動画要約",
+          "ステッカー"
+        ]
+      }
+    }
   }
 ]

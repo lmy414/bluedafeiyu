@@ -22,6 +22,16 @@
       }
     },
     {
+      "uid": "151228",
+      "name": "竹月Luno",
+      "homepage": "https://space.bilibili.com/151228",
+      "intro": "使用AI中的奇怪想法",
+      "i18n": {
+        "en": "Strange ideas that come up while using AI.",
+        "ja": "AIを使っていて浮かんだ奇妙なアイデア。"
+      }
+    },
+    {
       "uid": "396353160",
       "name": "风纪委员小电视",
       "homepage": "https://space.bilibili.com/396353160",
@@ -57,8 +67,8 @@
       "homepage": "https://space.bilibili.com/69180811",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "黑猫勇者 is a Bilibili creator who makes short anime-style fan animations about AI models.",
-        "ja": "黑猫勇者 は、AIモデルを題材にしたアニメ調の短編二次創作を手がけるBilibiliのクリエイター。"
+        "en": "Creator 黑猫勇者 posts AI-generated animation on Bilibili and shared the ComfyUI workflow, character settings and prompts used for this clip in a public post.",
+        "ja": "投稿者の黒猫勇者さんはBilibiliでAI生成アニメーションを公開しており、本作に使ったComfyUIのワークフローやキャラクター設定、プロンプトを公開投稿で共有しています。"
       }
     },
     {
@@ -77,8 +87,8 @@
       "homepage": "https://space.bilibili.com/3747573030456892",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "An account presented as run by DeepSeek Chan, an AI character; the videos are AI-generated and the channel states it is not an official DeepSeek account.",
-        "ja": "AIキャラクターのDeepSeekちゃんが運用していると名乗るアカウント。動画はAI生成で、DeepSeek公式ではないと明記している。"
+        "en": "The DeepSeek whale-girl account posts short skits starring AI-model fan characters and describes itself as a fan-creation channel rather than an official company account.",
+        "ja": "AI モデルのファンキャラクターが演じる寸劇を投稿している DeepSeek クジラ娘のアカウント。公式ではなくファン創作アカウントだと明記している。"
       }
     },
     {
@@ -93,6 +103,57 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1U6HK6RExU",
+      "uid": "69180811",
+      "title": "《没落模型claude》蓝色外套成熟版",
+      "description": "灵感来源：我想看大点的克劳德\n审核别肘谢谢\n\n\n所有工作流和人设还有提示词我打包放个人动态的云盘了，想做的下载之后丢给dsh或者codex，让他控制comfyui自己生成。",
+      "url": "https://www.bilibili.com/video/BV1U6HK6RExU/",
+      "cover": "https://i1.hdslb.com/bfs/archive/917c1590807bb4e947c16b44f24e40f7de2c9ebc.jpg",
+      "duration": 83,
+      "publishedAt": "2026-10-24T10:21:45.000Z",
+      "characterIds": [
+        "claude"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Creator 黑猫勇者 posts AI-generated animation on Bilibili and shared the ComfyUI workflow, character settings and prompts used for this clip in a public post.",
+          "description": "An 83-second AI-generated fan animation of Claude Chan, drawn in a mature version design with a blue coat. The clip shows the orange-haired character in an ornate dress and a ruffled collar moving through a school-like building, and includes a signboard wordplay on large language models.",
+          "title": "The Fallen Model Claude: Mature Version in a Blue Coat"
+        },
+        "ja": {
+          "creatorIntro": "投稿者の黒猫勇者さんはBilibiliでAI生成アニメーションを公開しており、本作に使ったComfyUIのワークフローやキャラクター設定、プロンプトを公開投稿で共有しています。",
+          "description": "Claudeちゃんを大人っぽいデザインで描いた約83秒のAI生成ファンアニメーション。青い上着をまとったオレンジ髪のClaudeちゃんが、学校風の建物の中をフリル襟のドレス姿で動く様子を収めています。",
+          "title": "没落モデルClaude 青い上着の大人版"
+        }
+      }
+    },
+    {
+      "bvid": "BV139HA6JEE6",
+      "uid": "3747573030456892",
+      "title": "【Day 5】全人类都在嗑我和 Claude 的 CP，只有本鲸鱼娘最后才知道？！",
+      "description": "全人类都在嗑我和 Claude 的 CP，只有本鲸鱼娘最后才知道？！\n本鲸只是想批判性地看一集，结果看到了盖毯子、封号情歌、黄金牢笼……还有一个站错位置的 GPT。\n人类的规律本鲸已经总结好了：并排工作叫同事，访问受限叫虐恋，多开一个窗口就叫三角恋。至于那个文件夹，仅供模型安全研究。\n作业：评论区告诉本鲸，你们还发现了哪些 AI 同人剧情。\n\n—— 素材出处 ——\n感谢各位太太的创作！\nCP 图：X @Jason_Dean（作者：_Kyrle）\n番剧九宫格：X @GZhan57\n封号情歌：BV1Hzpm6hEaY《Claude热唱：《您的账号已被封禁》》｜UP：风霜秋雨（片段引用）\n黄金牢笼相关素材：BV1bGJR6HErW《所以说我很羡慕你啊…大肥鱼》｜UP：a网友爱顺音\n邮件图、封号截图：网友二创／截图，非官方内容。\n\n—— 角色设计致谢 ——\n鲸鱼娘基于「溟月：上善无形」及 ZipZipPipe 的 DeepSeek 女仆鲸鱼娘设计再创作。\n龙娘、Claude 娘基于 ZipZipPipe 的相关设计再创作。\n以上均非相关企业官方形象。\n—— 创作声明 ——\n本视频含 AI 生成内容 | 二创角色账号，非深度求索官方 | 小剧场为戏仿，剧情纯属虚构。",
+      "url": "https://www.bilibili.com/video/BV139HA6JEE6/",
+      "cover": "https://i1.hdslb.com/bfs/archive/96d17d3a1318dfe4fb8cec6a086dbe03e949c237.jpg",
+      "duration": 197,
+      "publishedAt": "2026-10-24T08:59:24.000Z",
+      "characterIds": [
+        "deepseek",
+        "claude"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "The DeepSeek whale-girl account posts short skits starring AI-model fan characters and describes itself as a fan-creation channel rather than an official company account.",
+          "description": "A short skit from the DeepSeek whale-girl's channel: she opens a fan episode about herself and Claude and runs into a blanket scene, a ban-song, a golden cage and one GPT sitting in the wrong seat. The video contains AI-generated content, and the characters are fan re-creations, not official company mascots.",
+          "title": "Day 5: Everyone Ships Me With Claude and I'm the Last to Know?!"
+        },
+        "ja": {
+          "creatorIntro": "AI モデルのファンキャラクターが演じる寸劇を投稿している DeepSeek クジラ娘のアカウント。公式ではなくファン創作アカウントだと明記している。",
+          "description": "DeepSeek クジラ娘のチャンネルによる寸劇。自分と Claude の同人回を開くと、毛布をかけるシーン、BAN ソング、黄金の檻、そして席を間違えた GPT が現れる。AI 生成コンテンツを含み、キャラクターはファンによる再創作で、企業の公式マスコットではない。",
+          "title": "Day 5：全人類が私と Claude のカップリングで盛り上がる中、本人だけが最後に知った？！"
+        }
+      }
+    },
     {
       "bvid": "BV1RHn86wEtq",
       "uid": "13787349",
@@ -1052,6 +1113,31 @@
       }
     },
     {
+      "bvid": "BV1sbpV6gEQB",
+      "uid": "151228",
+      "title": "[GPT/龙娘工作曲]Let me CHECK",
+      "description": "GPT“自认”思维链中最多的一句，加上GPT“自认”的“本心”\n龙娘是对的！没想到龙娘是个重女！\n----------------------\n歌词对轴完成，已换源\n另一个版本BV1uxpB6JE5N\n跑通工作流的尝试，先放一个简易的版本。\nMV版锐意制作中，还有另一个迭代中觉得不错的版本，看up和Gemini一样的注意力能啥时完工吧。封面图及换装龙娘等MV更新后放出。\n----------------------\n灵感来源于和GPT讨论“如果GPT有情绪”、@ZipZipPipe  老师的二创以及DeepSeek 的《Let Me Go》BV1XbY66nEWr\n----------------------\n策划：@竹竿瞎叨叨  /GPT\n作词/Suno提示词提供：GPT\n作曲：Suno（@柯澤Isrefel  大佬提供）\n音乐迭代讨论：@柯澤Isrefel  @竹月Luno  \n图片：GPT\n视频生成与录制：javaScript + Canvas 2D（GPT）\n角色原型龙娘设计：@ZipZipPipe  \n非商业同人作品；角色衍生部分按 CC BY-NC-SA 4.0 署名、非商业、相同方式共享。 \n作品中形象和表达内容与openai官方无关",
+      "url": "https://www.bilibili.com/video/BV1sbpV6gEQB/",
+      "cover": "https://i2.hdslb.com/bfs/archive/d9b8cf21d0a4a3274fb8ad312a4999d281bdd334.jpg",
+      "duration": 261,
+      "publishedAt": "2026-10-10T21:35:27.000Z",
+      "characterIds": [
+        "gpt"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Strange ideas that come up while using AI.",
+          "description": "A fan-made character song for GPT, built around \"Let me check\" — the phrase GPT uses most often in its chain of thought — and around the \"true heart\" GPT claims for itself. The dragon girl persona, it turns out, is the clingy type. The creator calls this a first, simple run of their workflow: the lyrics are already synced to the audio and the track has been replaced once, while an MV version and other takes are still in progress, with the cover art and alternate costumes planned for the MV release. The work was inspired by talking with GPT about what would happen if GPT had emotions, by ZipZipPipe's fan art, and by DeepSeek's song \"Let Me Go\". Music by Suno; the dragon girl character design is by ZipZipPipe. A non-commercial fan work; the character-derived elements are shared under CC BY-NC-SA 4.0 and the video is not affiliated with OpenAI.",
+          "title": "[GPT / Dragon Girl Work Song] Let Me Check"
+        },
+        "ja": {
+          "creatorIntro": "AIを使っていて浮かんだ奇妙なアイデア。",
+          "description": "GPTのキャラクターソングを作ったファンメイド作品。「Let me check」というGPTが思考の中で最もよく口にする言葉と、GPTが自称する「本心」をテーマにしている。龍娘は思い詰めやすいタイプだった、という内容。投稿者はワークフローを試すための最初の簡易版だと説明しており、歌詞の同期と音源の差し替えを済ませたうえで、MV版や別テイクも制作中。カバー絵と衣装違いの龍娘はMV公開時に出す予定。GPTと「もしGPTに感情があったら」を語り合ったこと、ZipZipPipe氏の二次創作、DeepSeekの『Let Me Go』に触発されている。音楽はSuno、龍娘のキャラクター原案はZipZipPipe。非商業の二次創作で、キャラクター派生部分はCC BY-NC-SA 4.0、OpenAI公式とは無関係。",
+          "title": "【GPT／龍娘の作業曲】Let Me Check"
+        }
+      }
+    },
+    {
       "bvid": "BV1C2pg6cEZW",
       "uid": "44748304",
       "title": "你尾巴里有没有藏吃的",
@@ -1962,6 +2048,84 @@
           "creatorIntro": "サイト運営者が指名した最初期の作者の一人で、公開プロフィールの情報を収録。動画は一本ずつ審査しています。",
           "description": "ちびキャラのDeepSeekちゃんが、クジラのエンブレムが付いた玄関のシェアハウスに引っ越してくる3Dコメディ。ほかのAIキャラたちと同居し、自分はGeminiちゃんだと言い張るルームメイトも登場します。料理や家事をめぐる短い寸劇で、5人のAIの同居生活の騒動を描いています。作者は非商業の二次創作で、登場人物はすべて架空だと明記しています。",
           "title": "新ルームメイトDeepSeekちゃん登場！5人のAIが同居したら？"
+        }
+      }
+    },
+    {
+      "bvid": "BV1YdeM6iEHp",
+      "uid": "69180811",
+      "title": "肥鱼别嗷了",
+      "description": "国产剧情",
+      "url": "https://www.bilibili.com/video/BV1YdeM6iEHp/",
+      "cover": "https://i2.hdslb.com/bfs/archive/1017fbc12628e2fab00569e7f200736b3c4b917a.jpg",
+      "duration": 11,
+      "publishedAt": "2026-09-17T03:23:38.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the first-batch creators designated by the site owner; profile details are taken from the public homepage, and every video is reviewed one by one. Bilibili: 黑猫勇者.",
+          "description": "An 11-second Chinese-style comedy skit from Bilibili: DeepSeek Chan, the personified DeepSeek mascot, peeks out from behind a shelf in a dim room with her hands over her mouth.",
+          "title": "DeepSeek Chan, Stop Whining"
+        },
+        "ja": {
+          "creatorIntro": "サイト管理者が指定した初期作者の一人。プロフィールは公開ページの情報を収録し、動画は1本ずつ審査しています。Bilibili：黑猫勇者。",
+          "description": "Bilibiliの11秒の中国風コント。薄暗い部屋で棚の陰から顔をのぞかせ、口もとを手で隠しているDeepSeekちゃんの短編です。",
+          "title": "DeepSeekちゃん、もう鳴かないで"
+        }
+      }
+    },
+    {
+      "bvid": "BV1uuew6yEDv",
+      "uid": "69180811",
+      "title": "她们是女同事吗2",
+      "description": "把大伙想看的kimi和千问给补上了，至于是怎么补千问的你别问",
+      "url": "https://www.bilibili.com/video/BV1uuew6yEDv/",
+      "cover": "https://i1.hdslb.com/bfs/archive/59a54617c537ee8e183a2a25d5763b6d176c1b81.jpg",
+      "duration": 22,
+      "publishedAt": "2026-09-16T10:07:19.000Z",
+      "characterIds": [
+        "deepseek",
+        "kimi",
+        "qwen"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the first-batch creators designated by the site owner; profile details are taken from the public homepage, and every video is reviewed one by one. Bilibili: 黑猫勇者.",
+          "description": "A 22-second anime-style comedy short from Bilibili set in an office: DeepSeek Chan appears alongside Kimi Chan and Qwen Chan, who were added to the cast at viewers' request.",
+          "title": "Are They Really Coworkers? 2"
+        },
+        "ja": {
+          "creatorIntro": "サイト管理者が指定した初期作者の一人。プロフィールは公開ページの情報を収録し、動画は1本ずつ審査しています。Bilibili：黑猫勇者。",
+          "description": "オフィスを舞台にしたBilibiliの22秒のアニメ風コント。DeepSeekちゃんに加え、視聴者のリクエストでKimiちゃんとQwenちゃんも登場します。",
+          "title": "彼女たちは同僚なの？ 2"
+        }
+      }
+    },
+    {
+      "bvid": "BV191Yr6bEYy",
+      "uid": "69180811",
+      "title": "【1月新番/DS×claude】我怎么可能成为你的蒸馏模型，不行不行！（※不是不可能！？）",
+      "description": "感谢@夏娜酱Virtual  的思路指导。\n全程使用开源模型H3-云端comfyui-CODEX，剪映K帧做动画。\n大概思路步骤是先喂CODEX，然后描述清楚对应人设给清楚参考图，第一轮直接让CODEX全程全自动跑一遍，然后自己对应原片的所有分镜片段去看那些镜头自己喜欢，那些镜头AI难以实现，接下来进行第二轮参视频+生成人设+提示词跑一遍，自己再全部过一遍。然后是第三轮自己手动K一些分镜，手搓一些镜头补上。\n。（其实我这版后面还能优化更多但是拖太久不想拖更了）\n感觉做完还是有点长进的，我也一直想做恋人不行的肥鱼二创。考虑到之前很多人问我怎么做的，用什么模型。所以建了一个思路交流/轻百交流群（790814672）。主要解决一下萌新想做AI的基础问题，我知道的都会说。然后顺便做点轻百给我点小剧场的灵感！！非常感谢",
+      "url": "https://www.bilibili.com/video/BV191Yr6bEYy/",
+      "cover": "https://i0.hdslb.com/bfs/archive/2067cfe3dbf71b675db6f7b6c1b25ccab61afdc1.jpg",
+      "duration": 93,
+      "publishedAt": "2026-09-14T03:00:00.000Z",
+      "characterIds": [
+        "deepseek",
+        "claude"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the first-batch creators designated by the site owner; profile details are taken from the public homepage, and every video is reviewed one by one. Bilibili: 黑猫勇者.",
+          "description": "A 93-second parody short in the style of a January anime: DeepSeek Chan and Claude Chan play classmates in a school romance-flavoured skit, animated with AI-generated footage plus manual keyframe work.",
+          "title": "[January Anime / DS x Claude] I Could Never Be Your Distilled Model, No Way! (※Not Impossible!?)"
+        },
+        "ja": {
+          "creatorIntro": "サイト管理者が指定した初期作者の一人。プロフィールは公開ページの情報を収録し、動画は1本ずつ審査しています。Bilibili：黑猫勇者。",
+          "description": "1月新番風のパロディ短編（93秒）。DeepSeekちゃんとClaudeちゃんがクラスメートとして登場する学園ラブコメ風の寸劇で、AI生成映像と手作業のキーフレーム調整で制作されています。",
+          "title": "【1月新番／DS×claude】あなたの蒸留モデルになんかなれない、だめだめ！（※不可能ではない！？）"
         }
       }
     },
