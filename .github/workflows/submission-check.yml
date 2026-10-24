@@ -1,0 +1,34 @@
+name: Submission intake safety checks
+
+on:
+  push:
+    paths:
+      - 'server/**'
+      - 'tools/intake/**'
+      - 'ops/issue-reconcile.mjs'
+      - 'ops/tests/issue-reconcile.test.mjs'
+      - '.github/workflows/submission-check.yml'
+  pull_request:
+    paths:
+      - 'server/**'
+      - 'tools/intake/**'
+      - 'ops/issue-reconcile.mjs'
+      - 'ops/tests/issue-reconcile.test.mjs'
+      - '.github/workflows/submission-check.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [22, 24]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Test attachment intake, queue, review and publication boundaries
+        run: node --test server/*.test.mjs server/adapters/*.test.mjs tools/intake/*.test.mjs ops/tests/issue-reconcile.test.mjs ops/tests/publish-batch.test.mjs ops/tests/hermes-publish.test.mjs ops/hermes/tests/hermes.test.mjs

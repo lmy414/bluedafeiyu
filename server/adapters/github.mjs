@@ -26,6 +26,10 @@
  */
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { archiveMembers, archiveSourceId, attachmentName, isAllowedAttachmentUrl } from '../../tools/intake/github-attachments.mjs';
+import { extractZipImages, isZip, ZIP_LIMITS } from '../../tools/intake/zip.mjs';
+import { resolveExtension, sha256 } from '../queue.mjs';
+export { isAllowedAttachmentUrl } from '../../tools/intake/github-attachments.mjs';
 
 import {
   assetIdOf,
@@ -42,28 +46,9 @@ export const GITHUB_ATTACHMENT_HOSTS = Object.freeze([
   'private-user-images.githubusercontent.com',
 ]);
 
-/* GitHub 近期附件会从按区域命名的 S3 用户附件域名签名重定向。
- * 只允许 GitHub 官方 user-asset 形态，不能放开整个 s3.amazonaws.com。 */
-const GITHUB_PRODUCTION_ASSET_HOST = /^github-production-user-asset-[a-z0-9-]+\.s3\.amazonaws\.com$/i;
-
 /* 游标文件的结构版本与默认文件名。只落时间戳、仓库与计数，绝不含密钥。 */
 export const GITHUB_STATE_SCHEMA = 'submission-server/github-pull/1';
 export const GITHUB_STATE_FILE_NAME = 'github-issues.json';
-
-/** 附件地址白名单：https、默认端口、且命中 GitHub 附件域名与路径。 */
-export function isAllowedAttachmentUrl(value) {
-  let url;
-  try {
-    url = new URL(String(value));
-  } catch {
-    return false;
-  }
-  if (url.protocol !== 'https:') return false;
-  if (url.port !== '') return false;
-  if (url.username || url.password) return false;
-  if (url.hostname === 'github.com') return url.pathname.startsWith('/user-attachments/assets/');
-  return GITHUB_ATTACHMENT_HOSTS.includes(url.hostname) || GITHUB_PRODUCTION_ASSET_HOST.test(url.hostname);
-}
 
 /**
  * 是否可以把 GitHub API token 发给这个地址。只认「协议 https + host（含端口）与配置
@@ -119,21 +104,27 @@ export function backoffDelayMs(attempt, { retryBaseMs = 500, retryMaxMs = 8000, 
   return Math.min(exponential, retryMaxMs);
 }
 
-async function readCapped(response, maxBytes, url) {
+async function readCapped(response, maxBytes, url, signal) {
   const safe = redactUrl(url);
   const contentLength = Number(response.headers.get('content-length') || 0);
-  if (contentLength > maxBytes) throw new Error(`附件超过大小上限 ${maxBytes} 字节：${safe}`);
+  if (contentLength > maxBytes) {
+    await response.body?.cancel().catch(() => {});
+    throw new Error(`附件超过大小上限 ${maxBytes} 字节：${safe}`);
+  }
   if (!response.body) {
     const buffer = Buffer.from(await response.arrayBuffer());
     if (buffer.length > maxBytes) throw new Error(`附件超过大小上限 ${maxBytes} 字节：${safe}`);
     return buffer;
   }
   const reader = response.body.getReader();
+  const abort = () => { reader.cancel().catch(() => {}); };
+  signal?.addEventListener('abort', abort, { once: true });
   const chunks = [];
   let total = 0;
   try {
     for (;;) {
       const { done, value } = await reader.read();
+      if (signal?.aborted) throw new Error(`附件下载超时：${safe}`);
       if (done) break;
       total += value.byteLength;
       if (total > maxBytes) {
@@ -143,6 +134,7 @@ async function readCapped(response, maxBytes, url) {
       chunks.push(Buffer.from(value));
     }
   } finally {
+    signal?.removeEventListener('abort', abort);
     reader.releaseLock?.();
   }
   return Buffer.concat(chunks, total);
@@ -173,31 +165,32 @@ export async function fetchWithLimits(fetchImpl, startUrl, {
         reject(new Error(`附件下载超时：${safe}`));
       }, timeoutMs);
     });
-    let response;
     try {
-      response = await Promise.race([
-        fetchImpl(current, { headers, redirect: 'manual', signal: controller.signal }),
+      // Keep the timer alive through body consumption, not just response headers.
+      const result = await Promise.race([
+        (async () => {
+          const response = await fetchImpl(current, { headers, redirect: 'manual', signal: controller.signal });
+          if (response.status >= 300 && response.status < 400) {
+            const location = response.headers.get('location');
+            await response.body?.cancel().catch(() => {});
+            if (!location) throw new Error(`附件返回重定向但没有 Location：${safe}`);
+            const next = new URL(location, current).toString();
+            if (allowUrl && !allowUrl(next)) throw new Error(`附件重定向到白名单外的地址，拒绝：${redactUrl(next)}`);
+            return { next };
+          }
+          if (!response.ok) throw new Error(`附件下载失败 ${response.status}：${safe}`);
+          return { buffer: await readCapped(response, maxBytes, current, controller.signal), finalUrl: current };
+        })(),
         timeout,
       ]);
+      if (result.next) { current = result.next; continue; }
+      return result;
     } catch (error) {
       if (/超时|abort/i.test(String(error && error.message))) throw new Error(`附件下载超时：${safe}`);
       throw new Error(`附件下载失败：${error.message}：${safe}`);
     } finally {
       clearTimeout(timer);
     }
-
-    if (response.status >= 300 && response.status < 400) {
-      const location = response.headers.get('location');
-      if (!location) throw new Error(`附件返回重定向但没有 Location：${safe}`);
-      const next = new URL(location, current).toString();
-      if (allowUrl && !allowUrl(next)) {
-        throw new Error(`附件重定向到白名单外的地址，拒绝：${redactUrl(next)}`);
-      }
-      current = next;
-      continue;
-    }
-    if (!response.ok) throw new Error(`附件下载失败 ${response.status}：${safe}`);
-    return { buffer: await readCapped(response, maxBytes, current), finalUrl: current };
   }
   throw new Error(`附件重定向超过上限 ${maxRedirects} 次：${redactUrl(startUrl)}`);
 }
@@ -384,15 +377,35 @@ export function createGithubAdapter(cfg, {
           results.push({ issue: entry.number, url: safeUrl, status: 'duplicate_source', item: existing });
           continue;
         }
+        const knownMembers = archiveMembers(await queue.list({ source: 'github-issue' }), sourceId);
+        if (knownMembers) {
+          results.push(...knownMembers.map((item) => ({ issue: entry.number, url: safeUrl, status: 'duplicate_source', item })));
+          continue;
+        }
+        const name = attachmentName(safeUrl);
         const { buffer } = await fetchWithLimits(fetchImpl, url, {
-          maxBytes,
+          maxBytes: path.extname(name).toLowerCase() === '.zip' ? ZIP_LIMITS.maxArchiveBytes : maxBytes,
           timeoutMs,
           maxRedirects,
           headers: { 'User-Agent': 'blue-fish-submission-server' }, // 附件不带 token
           allowUrl: isAllowedAttachmentUrl,
         });
-        let name = '';
-        try { name = decodeURIComponent(new URL(safeUrl).pathname.split('/').pop() || ''); } catch { name = ''; }
+        if (isZip(buffer, name)) {
+          if (path.extname(name) && path.extname(name).toLowerCase() !== '.zip') throw new Error('ZIP 容器扩展名不一致');
+          const images = extractZipImages(buffer, { maxImageBytes: maxBytes, validateImage: resolveExtension });
+          const archiveSha256 = sha256(buffer);
+          for (const [index, image] of images.entries()) {
+            const memberSourceId = archiveSourceId(sourceId, archiveSha256, images.length, index);
+            const result = await queue.enqueue({ source: 'github-issue', sourceId: memberSourceId,
+              buffer: image.buffer, ext: image.ext, fields,
+              origin: { ...origin, assetId: `${assetId}:zip:${archiveSha256}:${images.length}:${index}`,
+                archive: { assetId, sha256: archiveSha256, name, member: image.name, index, count: images.length } },
+            });
+            results.push({ issue: entry.number, url: safeUrl, member: image.name,
+              status: result.status === 'created' ? 'staged' : result.status, item: result.item });
+          }
+          continue;
+        }
         const result = await queue.enqueue({
           source: 'github-issue',
           sourceId,
@@ -481,7 +494,7 @@ export function createGithubAdapter(cfg, {
     }
 
     /* 只有整轮翻页没有半途抛错才写游标；写入的起点是这一轮看到的最大 updated_at。 */
-    if (persist) {
+    if (persist && !results.some((result) => result.status === 'failed')) {
       await writeCursor(maxUpdated || startedAt, { lastIssue: lastNumber, count: issueCount });
     }
     return results;

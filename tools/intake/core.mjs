@@ -24,6 +24,9 @@ import { existsSync } from 'node:fs';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { assetIdOf, attachmentName, extractAttachments, isAllowedAttachmentUrl } from './github-attachments.mjs';
+import { extractZipImages, isZip, ZIP_LIMITS } from './zip.mjs';
+export { assetIdOf, extractAttachments, isAllowedAttachmentUrl } from './github-attachments.mjs';
 
 export const SCHEMA = 'intake/1';
 export const DEFAULT_MAX_BYTES = 16 * 1024 * 1024;
@@ -626,28 +629,6 @@ function redactValue(value) {
   return value;
 }
 
-/* 附件域名白名单（与 server/adapters/github.mjs 的 isAllowedAttachmentUrl 一致）：
- * https-only、默认端口、不得带凭据；github.com 只允许 /user-attachments/assets/。 */
-const ATTACHMENT_HOSTS = new Set([
-  'github.com',
-  'user-images.githubusercontent.com',
-  'private-user-images.githubusercontent.com',
-]);
-
-export function isAllowedAttachmentUrl(value) {
-  let url;
-  try {
-    url = new URL(String(value));
-  } catch {
-    return false;
-  }
-  if (url.protocol !== 'https:') return false;
-  if (url.port !== '') return false;
-  if (url.username || url.password) return false;
-  if (url.hostname === 'github.com') return url.pathname.startsWith('/user-attachments/assets/');
-  return ATTACHMENT_HOSTS.has(url.hostname);
-}
-
 function apiBaseUrl(cfg) {
   try {
     return new URL(cfg.apiBase);
@@ -765,30 +746,6 @@ export function parseIssueForm(body) {
     sections[label] = /^_No response_$/i.test(value) ? '' : value;
   }
   return sections;
-}
-
-const ATTACHMENT_PATTERNS = [
-  /https:\/\/github\.com\/user-attachments\/assets\/[0-9a-fA-F-]+/g,
-  /https:\/\/user-images\.githubusercontent\.com\/[^\s)"'<>\]]+/g,
-  /https:\/\/private-user-images\.githubusercontent\.com\/[^\s)"'<>\]]+/g,
-];
-
-export function extractAttachments(body) {
-  const text = String(body || '');
-  const found = [];
-  for (const pattern of ATTACHMENT_PATTERNS) {
-    for (const url of text.match(pattern) || []) {
-      if (!found.includes(url)) found.push(url);
-    }
-  }
-  return found;
-}
-
-export function assetIdOf(url) {
-  const assets = String(url).match(/\/user-attachments\/assets\/([0-9a-fA-F-]+)/);
-  if (assets) return assets[1];
-  const legacy = String(url).match(/user-images\.githubusercontent\.com\/\d+\/([^/]+)\//);
-  return legacy ? legacy[1] : String(url);
 }
 
 const FIELD_LABELS = {
@@ -960,7 +917,26 @@ export async function pullIssueAttachments(cfg, { issue = null, state = 'open', 
           results.push({ issue: entry.number, url: safeUrl, status: 'duplicate', item: existing, sha256: existing.sha256 });
           continue;
         }
-        const buffer = await downloadAttachment(cfg, rawUrl);
+        const name = attachmentName(rawUrl);
+        const zipHint = path.extname(name).toLowerCase() === '.zip';
+        const buffer = await downloadAttachment(zipHint ? { ...cfg, maxBytes: ZIP_LIMITS.maxArchiveBytes } : cfg, rawUrl);
+        if (isZip(buffer, name)) {
+          if (path.extname(name) && !zipHint) throw new Error('ZIP 容器扩展名不一致');
+          const images = extractZipImages(buffer, { maxImageBytes: cfg.maxBytes, validateImage: (data, ext) => {
+            const expected = ext === '.apng' ? 'png' : ['.jpg', '.jpeg'].includes(ext) ? 'jpeg' : ext.slice(1);
+            if (sniffImageFormat(data) !== expected) throw new Error('文件头与图片扩展名不一致');
+          } });
+          const archiveSha256 = sha256(buffer);
+          for (const [index, image] of images.entries()) {
+            const result = await stageBuffer(cfg, image.buffer, {
+              source: 'github-issue', fields, name: image.name,
+              origin: { ...origin, assetId: `${origin.assetId}:zip:${archiveSha256}:${images.length}:${index}`,
+                archive: { assetId: origin.assetId, sha256: archiveSha256, name, member: image.name, index, count: images.length } },
+            });
+            results.push({ issue: entry.number, url: safeUrl, member: image.name, ...result });
+          }
+          continue;
+        }
         const result = await stageBuffer(cfg, buffer, {
           source: 'github-issue',
           fields,

@@ -118,6 +118,8 @@ node --test "server/**/*.test.mjs"
 公开投稿支持 `multipart/form-data`（表单上传一张图）或 `application/json`
 （`{ name, character, description, filename, dataBase64 }`）。
 
+GitHub Issue 渠道另支持 ZIP 图片集：最多 100 张，压缩包 32 MiB、单图 16 MiB、解压总量 64 MiB。每张仍单独校验、SHA 去重并进入现有 Hermes AI 审核，不默认转人工，也不由接收逻辑直接发布。安全边界、失败重试和历史投稿补接收见 [GitHub ZIP 投稿](../docs/GitHub-ZIP投稿.md)。
+
 ## 状态机与人工边界
 
 ```text
