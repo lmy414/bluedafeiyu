@@ -80,15 +80,48 @@ test('friend wall preserves existing destinations, classifies links, and rejects
   createFriendWall({esc:escape,tr:(_key,zh)=>zh,pageHead:()=>'',icon:()=>'',write:(...args)=>{page=args;}});
   assert.equal(page[0],'/projects.html');
   const {document}=parseHTML(page[3]);
-  assert.equal(document.querySelectorAll('.friend-wall-card').length,4);
+  assert.equal(document.querySelectorAll('.friend-wall-card').length,friendLinks.length);
   const decorated=parseHTML(decorateDocument(page[3],'projects')).document;
-  assert.equal(decorated.querySelectorAll('.friend-wall-card').length,4);
-  assert.equal(document.querySelectorAll('[data-friend-section="project"] .friend-wall-card').length,3);
-  assert.equal(document.querySelectorAll('[data-friend-section="website"] .friend-wall-card').length,1);
-  assert.deepEqual([...document.querySelectorAll('.friend-wall-card')].map(a=>a.href),friendLinks.map(row=>row.url));
+  assert.equal(decorated.querySelectorAll('.friend-wall-card').length,friendLinks.length);
+  for(const category of ['project','website'])assert.equal(document.querySelectorAll(`[data-friend-section="${category}"] .friend-wall-card`).length,friendLinks.filter(row=>row.category===category).length);
+  assert.deepEqual([...document.querySelectorAll('.friend-wall-card')].map(a=>a.href),['project','website'].flatMap(category=>friendLinks.filter(row=>row.category===category).map(row=>row.url)));
+  for(const link of document.querySelectorAll('.friend-wall-card')){
+    assert.equal(link.target,'_blank');
+    assert.ok(link.rel.split(' ').includes('noopener'));
+    assert.ok(link.rel.split(' ').includes('noreferrer'));
+  }
   const valid=structuredClone(friendLinks[0]);
   for(const patch of [{url:'javascript:alert(1)'},{url:'https://user:password@example.test/'},{category:'unknown'},{id:'../bad'},{i18n:{}}])assert.throws(()=>validateFriendLinks([{...valid,...patch}]));
   assert.throws(()=>validateFriendLinks([valid,valid]));
+  assert.throws(()=>validateFriendLinks([valid,{...valid,id:'duplicate-url',url:valid.url+'/#section'}]),/URL 重复/);
+  assert.doesNotThrow(()=>validateFriendLinks([{...valid,id:'legacy-record'}]));
+});
+
+test('Coco and water2H2O appear in their categories with native copy in all four languages',async()=>{
+  const coco=friendLinks.find(row=>row.id==='cc-coco');
+  const blog=friendLinks.find(row=>row.id==='water2h2o');
+  assert.equal(coco.category,'project');assert.equal(coco.url,'https://github.com/ninondev/cc-coco');
+  assert.equal(blog.category,'website');assert.equal(blog.url,'https://water2h2o.com');
+  for(const locale of ['en','ja'])assert.equal(coco.i18n[locale].name,'Coco');
+  const escape=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  for(const locale of LOCALES){
+    let page;
+    createFriendWall({esc:escape,icon:()=>'',pageHead:()=>'<h1>Friends</h1>',write:(...args)=>{page=args;},
+      tr:(key,zh,en,ja)=>`<span data-i18n="d.${key}">${escape(({en,ja})[locale.id]||zh)}</span>`});
+    const html=`<html><head><title>Friends</title><link rel="canonical" href="${ORIGIN}/projects.html"><meta name="description"></head><body data-archive><main>${page[3]}</main></body></html>`;
+    const {document}=parseHTML(await localizeHtml(html,'/projects.html',locale,{works:[],characters:[],topics:[]}));
+    assert.equal(document.querySelectorAll('.friend-wall-card').length,friendLinks.length);
+    for(const row of [coco,blog]){
+      const link=[...document.querySelectorAll(`[data-friend-section="${row.category}"] .friend-wall-card`)].find(a=>a.href===row.url);
+      assert.ok(link);
+      if(['en','ja'].includes(locale.id)){
+        assert.equal(link.querySelector('h3').textContent,row.i18n[locale.id].name);
+        assert.equal(link.querySelector('p').textContent,row.i18n[locale.id].description);
+      }else if(locale.id==='zh-Hant'){
+        assert.match(link.querySelector('p').textContent,row===coco?/桌寵/:/個人部落格/);
+      }
+    }
+  }
 });
 
 test('video cover uses a bounded WebP derivative without rewriting unrelated image hosts',()=>{
