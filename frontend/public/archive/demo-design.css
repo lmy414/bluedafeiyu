@@ -1796,13 +1796,6 @@ body.refined .live-prize-number span { font-size:15px; }
 body.refined .live-source-note { font-size:12px; padding:10px 0; }
 body.refined .live-event-timeline>div { display:grid; grid-template-columns:140px 1fr; padding:13px 0; }
 
-/* Reading has a measured line length; the directory sits alongside it. */
-body.refined .synced-prose[data-live-document="about"] { display:grid; grid-template-columns:minmax(0,760px) 190px; gap:40px; justify-content:center; align-items:start; }
-body.refined .synced-prose[data-live-document="about"]>.document-contents { grid-column:2; grid-row:1; position:sticky; top:95px; display:flex; flex-direction:column; align-items:flex-start; gap:0; padding:0 0 0 20px; border:0; border-left:1px solid var(--line); background:none; box-shadow:none; border-radius:0; }
-body.refined .document-contents a { display:block; padding:7px 0; font-size:12px; color:var(--muted); background:none; border:0; }
-body.refined .document-contents a:hover { color:var(--blue); }
-body.refined .synced-prose[data-live-document="about"]>.live-document-page { grid-column:1; grid-row:1; min-width:0; }
-body.refined .live-document-page>.live-lede { padding:0 0 25px; border-bottom:1px solid var(--line); margin:0; font-size:15px; }
 body.refined .live-about-main .reading-section { padding-top:28px; margin:0 0 8px; }
 body.refined .live-about-main h2 { margin:0 0 14px; }
 body.refined .live-about-card { padding:0; border:0; background:none; box-shadow:none; transform:none; }
@@ -1928,7 +1921,6 @@ body.refined .registration-heading h2 { font-size:24px; }
   body.refined .synced-prose .live-info-card { padding:20px; }
   body.refined .designed-event-hero { gap:25px; grid-template-columns:minmax(0,1fr) 240px; padding:27px; }
   body.refined .designed-event-hero>figure img { height:250px; }
-  body.refined .synced-prose[data-live-document="about"] { grid-template-columns:minmax(0,1fr) 165px; gap:25px; }
   body.refined .creator-row-bio { display:none; }
   body.refined .character-index-grid .character-art { height:205px; }
   body.refined .live-submit-layout,body.refined .registration-layout { gap:22px; grid-template-columns:minmax(0,1fr) 260px; }
@@ -1979,9 +1971,6 @@ body.refined .registration-heading h2 { font-size:24px; }
   body.refined .designed-event-hero { display:flex; flex-direction:column; align-items:stretch; padding:24px; gap:23px; }
   body.refined .designed-event-hero>figure img { height:230px; }
   body.refined .designed-event-hero .live-lede { font-size:17px; }
-  body.refined .synced-prose[data-live-document="about"] { display:flex; flex-direction:column; gap:24px; }
-  body.refined .synced-prose[data-live-document="about"]>.document-contents { position:static; display:flex; flex-direction:row; flex-wrap:wrap; gap:4px 18px; padding:15px 18px; border:1px solid var(--line); border-radius:9px; background:var(--paper); width:100%; }
-  body.refined .document-contents a { font-size:12px; padding:4px 0; }
   body.refined .synced-prose .live-project-grid { grid-template-columns:1fr; gap:16px; }
   body.refined .live-project-card { min-height:210px; padding:25px; }
   body.refined .live-entry-card { padding:20px; }
