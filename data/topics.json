@@ -183,5 +183,45 @@
         }
       ]
     }
+  },
+  {
+    "id": "hooded-gemini",
+    "name": "兜帽基米",
+    "summary": "收录匿名投稿者在投稿 #133 中提交的 18 件兜帽基米二创，包含 17 张 WebP 和 1 张 GIF。原形象来源为古明四季（Bilibili UID 116292090）；投稿者说明略作改动后生成这批表情包。原包未附版权声明或开放许可，使用前请查看各作品的来源与授权说明。",
+    "coverWorkId": "sticker_a6beff671820bfa9eaadd197",
+    "status": "active",
+    "order": 3,
+    "createdAt": "2026-10-25T08:46:50.974Z",
+    "updatedAt": "2026-10-25T08:46:50.974Z",
+    "workIds": [
+      "sticker_ef41b9603a86f55c119758fd",
+      "sticker_cd814b4d085078cd053a9758",
+      "sticker_01a6d3b5043212e1f8c634bd",
+      "sticker_d906daef3dff378fb1faad3f",
+      "sticker_eba81570e833cfc6c752eaee",
+      "sticker_4ff5fcc9e750e44032261f97",
+      "sticker_4b986d812d4ad709eefe9843",
+      "sticker_1009e08a893237c43b867824",
+      "sticker_a46bf59fbdb720eaaeb468f6",
+      "sticker_ea46268cdb897ff34ce2b7ce",
+      "sticker_e36ac4534f351da9b939bca0",
+      "sticker_9d4cf0ac4b758f26f9c1bc93",
+      "sticker_a590f1deba40cb323b2f6394",
+      "sticker_00b85df8a50269df2731d786",
+      "sticker_eb3890a1b46369eda28baec8",
+      "sticker_515aeee6fd01df05f9c06ac3",
+      "sticker_4cdda0e4649f38b8d36ae012",
+      "sticker_a6beff671820bfa9eaadd197"
+    ],
+    "i18n": {
+      "en": {
+        "name": "Hooded Gemini Chan",
+        "summary": "All 18 works from submission #133: 17 WebP images and one GIF. The anonymous submitter credits the original character design to Bilibili creator UID 116292090 and states that they slightly modified it to generate these reaction images. The ZIP includes no copyright statement or open license; check each work’s source and permissions before use."
+      },
+      "ja": {
+        "name": "フードのGeminiちゃん",
+        "summary": "投稿 #133 の全18作品（WebP 17枚・GIF 1枚）を収録。元デザインの出典は Bilibili UID 116292090 で、匿名の投稿者が一部を変更してスタンプを生成したと申告しています。ZIPに著作権の声明やオープンライセンスは付属していません。利用前に各作品の出典と利用許諾をご確認ください。"
+      }
+    }
   }
 ]
