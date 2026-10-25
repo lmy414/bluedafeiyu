@@ -29,7 +29,7 @@ const { title, desc, path = '/', active = '', bodyPage = active, og, type = 'web
     {pageStyles.map(href => <link rel="stylesheet" {href} />)}
     <script is:inline src="/archive-labels.js?v=20261025-1" defer></script>
     <script is:inline src="/archive-copy.js?v=20261025-1" defer></script>
-    <script is:inline src="/lang.js?v=23" defer></script>
+    <script is:inline src="/lang.js?v=24" defer></script>
     <script is:inline src="/analytics.js" defer></script>
     {schemas.map(schema => <script is:inline type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, '\\u003c')} />)}
     <slot name="head" />

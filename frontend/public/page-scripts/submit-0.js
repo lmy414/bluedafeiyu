@@ -21,6 +21,7 @@
       var characterChoices = document.getElementById("character-choices");
       var selectedCharacters = function () { return Array.from(characterChoices.querySelectorAll('input:checked')).map(function (input) { return input.value; }); };
       var typeSelect = document.getElementById("f-type");
+      var nonAiCheckbox = document.getElementById("f-non-ai");
       var typeHint = document.getElementById("type-hint");
       var creditSelect = document.getElementById("f-credit");
       var creditFields = document.getElementById("credit-fields");
@@ -173,6 +174,7 @@
         data.append("character", selectedCharacters()[0]);
         data.append("characterIds", JSON.stringify(selectedCharacters()));
         data.append("categoryId", typeSelect.value);
+        if (nonAiCheckbox && nonAiCheckbox.checked) data.append("nonAi", "true");
         data.append("description", descInput.value.trim());
         data.append("credit", creditSelect.value);
         if (creditSelect.value === "named") {

@@ -214,6 +214,18 @@ test('审核桥接保留署名字段，并独立保留来源', async (t) => {
   assert.equal(meta.origin.sourceUrl, origin.sourceUrl);
 });
 
+test('审核后的非 AI 分类与原投稿声明一并进入中转，继续等待人工发布', async t=>{
+  const {queue,bridge,intakeRoot}=await setup(t);
+  const item=await seedPassed(queue,{fields:{nonAi:true},suffix:'non-ai'});
+  assert.equal((await bridge.bridgeItem(item.id)).status,'ready');
+  const meta=JSON.parse(await fs.readFile(path.join(intakeRoot,'meta',`${item.sha256}.json`),'utf8'));
+  assert.equal(meta.fields.nonAi,true);
+  assert.ok(meta.fields.tags.includes('非AI'));
+  assert.ok(meta.content.tags.includes('非AI'));
+  assert.deepEqual(meta.content.categoryIds,['meme']);
+  assert.equal((await queue.get(item.id)).state,STATES.AUTO_PASSED);
+});
+
 test('QQ 来源 pass 后中转 meta 用 origin.type=qq-group 与 license=unknown，不需要来源/授权字段', async (t) => {
   const { queue, bridge, intakeRoot } = await setup(t);
   /* 故意只给群/用户/消息号、不带 type/via：模拟老条目，验证桥接兜底成稳定枚举。 */
