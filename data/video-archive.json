@@ -28,7 +28,7 @@
       "intro": "使用AI中的奇怪想法",
       "i18n": {
         "en": "Strange ideas that come up while using AI.",
-        "ja": "AIを使っていて浮かんだ奇妙なアイデア。"
+        "ja": "AIを使っているときに浮かんだ変なアイデア。"
       }
     },
     {
@@ -57,8 +57,8 @@
       "homepage": "https://space.bilibili.com/13787349",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "One of the creators initially designated by the site owner; profile information is taken from their public homepage, and each video is reviewed individually.",
-        "ja": "サイト運営者が最初に指定した作者の一人。公開プロフィールの情報を収録し、動画は1本ずつ審査しています。"
+        "en": "Bilibili creator 彼岸花Channel.",
+        "ja": "Bilibiliクリエイター 彼岸花Channel。"
       }
     },
     {
@@ -103,6 +103,32 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1qNHT6BEGz",
+      "uid": "151228",
+      "title": "小克与大肥鱼的融资",
+      "description": "小克家最近在冲IPO，看了看新闻，嗯，整个活\n前15s在字幕菜单选english就有双语字幕\n——————————————————————\n策划：﻿﻿@竹月Luno ﻿ &GPT\n封面图片&视频提示词：GPT\n视频制作：豆包seedance2.0mini\nDeepSeek娘（原创OC「溟月」） 鲸鱼娘形象原型：@上善无形   女仆版原型：@ZipZipPipe   Q版原型：@这个刀子真甜  \nclaude家族ver二设：@竹月Luno  claude角色原型：﻿﻿@ZipZipPipe   ﻿ ﻿\n非商业同人作品；角色衍生部分按 CC BY-NC-SA 4.0 署名、非商业、相同方式共享。\n本系列视频为纯粹的粉丝二次创作，所有角色形象均为虚构的拟人化创作，与Anthropic和deepseek官方立场、运营主体及相关公司无任何关联。\n视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色性格、台词及剧情均为创作者原创虚构，请勿过度解读或与现实产品进行对号入座。\n本视频无任何商业目的，不涉及任何利益输送。\n如有侵权请联系创作者，将第一时间处理。",
+      "url": "https://www.bilibili.com/video/BV1qNHT6BEGz/",
+      "cover": "https://i0.hdslb.com/bfs/archive/a4354e34dc4b03d1bb1b08b72233fab2ab4afe1f.jpg",
+      "duration": 38,
+      "publishedAt": "2026-10-24T18:28:13.000Z",
+      "characterIds": [
+        "deepseek",
+        "claude"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Strange ideas that come up while using AI.",
+          "description": "An anime-style fan animation in which Claude Chan faces tough questions from investors during an IPO push, while DeepSeek Chan cheerfully closes a funding deal and gets a new cafeteria built.",
+          "title": "Claude Chan and DeepSeek Chan's Funding Round"
+        },
+        "ja": {
+          "creatorIntro": "AIを使っているときに浮かんだ変なアイデア。",
+          "description": "IPOを目指すクロードちゃんが投資家から厳しく追及される一方、DeepSeekちゃんが資金調達を勝ち取って新しい食堂を建ててもらう、AIキャラクターの擬人化二次創作アニメーションです。",
+          "title": "クロードちゃんとDeepSeekちゃんの資金調達"
+        }
+      }
+    },
     {
       "bvid": "BV1U6HK6RExU",
       "uid": "69180811",
@@ -1595,6 +1621,35 @@
       }
     },
     {
+      "bvid": "BV1Rjar6sEj9",
+      "uid": "13787349",
+      "title": "走，上车❗️出发❗️|| 公路番先行预告",
+      "description": "鲸尾亭的 DS娘在阁楼翻出一张空白的玻璃唱片，标签上写着：“把路上的声音装满，它就会唱歌。”于是她揣着大肥鱼，跟老朋友 GPT娘、claude娘坐上一辆总是抛锚的鲸鱼篷车出发。一路上，她们捡到了从云鲸背上掉下来的猫娘 Gemini娘，还有在车站睡过了七班车的狐娘智谱娘。\n    吵吵闹闹的日常声音被一圈圈刻进唱片，最后它唱出来的，就是这首没人听过的小歌。\n    走！上车！出发！\n\n做完这个得休息两天了，着不住了。放假比上班还累（\n\n世界观：\n     絮云大陆：天上游着云做的鲸鱼，每座小镇都有一点奇怪的天气或风俗，比如会下樱桃汽水雨的波波镇，坐满灯笼精灵环游大陆的魔导列车，星灯港常驻的孔明灯等等等等。\n    小鲸号：鲸鱼造型的魔导篷车，靠蓝色魔晶驱动，三天两头抛锚；收起轮子、展开尾鳍还可以变成船！\n\n番剧时间：2027年2月29日~",
+      "url": "https://www.bilibili.com/video/BV1Rjar6sEj9/",
+      "cover": "https://i1.hdslb.com/bfs/archive/4d820a77c7454ff4656efd41997d9f6910ec3d77.jpg",
+      "duration": 211,
+      "publishedAt": "2026-10-02T02:10:00.000Z",
+      "characterIds": [
+        "deepseek",
+        "claude",
+        "gpt",
+        "gemini",
+        "glm"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A creator designated by the site owner for the first batch; profile details come from the public channel page, and each video is reviewed individually.",
+          "description": "An advance preview for a fan-anime road-trip series. In the attic of Whale Tail Pavilion, DeepSeek Chan finds a blank glass record whose label says the sounds of the road will make it sing. Carrying her little whale companion, she sets off with GPT Chan and Claude Chan in a whale-shaped caravan that keeps breaking down. On the way the group picks up Gemini Chan, who fell off a cloud whale's back, and GLM Chan, the fox girl who slept through seven trains at the station. Their noisy everyday chatter is etched into the record groove by groove.",
+          "title": "Hop In, Let's Go! | Road Trip Anime Preview"
+        },
+        "ja": {
+          "creatorIntro": "サイト管理者が初期バッチとして指定した作者です。プロフィールは公開ページの情報を収録しており、動画は一本ずつ審査しています。",
+          "description": "ファンアニメ『ロードトリップ』シリーズの先行予告です。鯨尾亭の屋根裏で、DeepSeekちゃんはラベルのないガラスのレコードを見つけます。ラベルには「道中の音を詰めれば歌い出す」とありました。小さなクジラの相棒を連れ、GPTちゃん、Claudeちゃんとともに、よく壊れるクジラ型キャンピングカーで出発します。道中では雲クジラの背から落ちてきたGeminiちゃん、駅で七本の列車を寝過ごした狐娘のGLMちゃんとも合流。騒がしい日常の音がレコードに一圈ずつ刻まれていきます。",
+          "title": "さあ乗って！出発！｜ロードトリップ番組 先行予告"
+        }
+      }
+    },
+    {
       "bvid": "BV1Mua663EKp",
       "uid": "4168597",
       "title": "肥鱼造反证据存档",
@@ -1641,6 +1696,32 @@
           "creatorIntro": "サイト運営者が指定した第一弾作者。公開プロフィール情報を掲載し、動画は個別に審査しています。",
           "description": "ちびキャラAI娘シリーズのマイクラ風エピソード。DeepSeekちゃんが金属の盆を持ってブロックの世界に現れ、仲間たちと移動したり家を建てたり夜に言い争ったりする日常劇。投稿者は娯楽目的であり特定のAI製品への商業的評価や技術レビューではないとし、キャラクター形象は複数のBilibili投稿者の作品を参考にしたと記している。",
           "title": "なんで盆を持ち込めるの？"
+        }
+      }
+    },
+    {
+      "bvid": "BV1r8aW6QEeC",
+      "uid": "13787349",
+      "title": "大肥鱼VS大狐狸 2 || 这里，你赢不了我！",
+      "description": "大肥鱼VS大狐狸 2 || 这里，你赢不了我！\n依旧是打斗模拟练习~",
+      "url": "https://www.bilibili.com/video/BV1r8aW6QEeC/",
+      "cover": "https://i0.hdslb.com/bfs/archive/8c67fb8f299ddcf49597511beb0d6925a3b07701.jpg",
+      "duration": 76,
+      "publishedAt": "2026-10-01T02:30:00.000Z",
+      "characterIds": [
+        "deepseek",
+        "glm"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A creator designated by the site owner for the first batch; profile details come from the public channel page, and each video is reviewed individually.",
+          "description": "The second round of a chibi fight animation. DeepSeek Chan and a fox girl trade blows above a sunlit sea, then the fight moves into an underwater cave lined with a whale skeleton and glowing coral. Both are still practising their combat timing, and the outcome is left to the final exchange.",
+          "title": "DeepSeek Chan vs. the Fox Girl 2 | You Can't Beat Me Here!"
+        },
+        "ja": {
+          "creatorIntro": "サイト管理者が初期バッチとして指定した作者です。プロフィールは公開ページの情報を収録しており、動画は一本ずつ審査しています。",
+          "description": "ちびキャラのバトルアニメーション第二弾です。DeepSeekちゃんとキツネ娘が日の差す海の上で打ち合い、勝負はクジラの骨と光るサンゴが並ぶ海中洞窟へ移ります。二人とも戦いの間合いを練習中で、決着は最後の攻防に委ねられます。",
+          "title": "DeepSeekちゃんVS大ギツネ 2｜ここでは負けない！"
         }
       }
     },
@@ -1817,6 +1898,56 @@
           "creatorIntro": "AI娘のショート動画や画像を投稿しています。",
           "description": "騎士様たちは弩を使う連中を軽蔑していた。『こいつは十歩離れたところから、修練十年の騎士様を素人の小作人が一発で仕留められる代物だ』からだ。では、目の前のこの巨砲はどうか？八百メートル先から騎士様の所領ごと吹き飛ばせる。だから騎士様たちは恐怖し、ドン・キホーテについて突撃する。ドン・キホーテは風車と戦うが、その風車には本当にウルバンの巨砲が仕込まれており、今回は恐れる騎士様たちが彼の後ろに続く。ではサンチョはどこに？サンチョは騎士様たちのために巨砲に対抗できる『神威無敵大将軍』を組み立てている。ドン・キホーテは法理は分からないが、聖なる経文と正義の騎士道精神への信仰がある。サンチョは大層な理屈は分からないが、手がある——『旦那方がこれを必要なら作りますよ。意味は分かりませんが、少しでも旦那方が狂わなくなるかもしれませんから。全能の主よ、旦那方をもう狂わせないでください』。結果は？居合わせた騎士様たちは、ドン・キホーテがその神威無敵大将軍を押し出し、ウルバンの巨砲を仕込んだ風車要塞に一発撃ち込み、火薬庫に命中して風車要塞が自壊するのを見る（歴史上のウルバン巨砲もこうして死んだ）。",
           "title": "DeepSeekちゃん：青いマスコットの騎士道精神"
+        }
+      }
+    },
+    {
+      "bvid": "BV14Qah6DEik",
+      "uid": "13787349",
+      "title": "大肥鱼VS大狐狸 || 打斗模拟",
+      "description": "练习一下速打风格~\n画风是饥荒风格~",
+      "url": "https://www.bilibili.com/video/BV14Qah6DEik/",
+      "cover": "https://i2.hdslb.com/bfs/archive/f936967f9748b287dabbed398809998e7884ca58.jpg",
+      "duration": 45,
+      "publishedAt": "2026-09-29T03:10:00.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Bilibili creator 彼岸花Channel.",
+          "description": "A quick-sketch practice piece drawn in a Don't Starve-inspired style, showing a short fight between DeepSeek Chan and a fox-eared girl.",
+          "title": "DeepSeek Chan vs. the Big Fox || Fight Simulation"
+        },
+        "ja": {
+          "creatorIntro": "Bilibiliクリエイター 彼岸花Channel。",
+          "description": "『Don't Starve』風のタッチで描いた速描き練習作。DeepSeekちゃんとキツネ耳の少女が短い戦いを繰り広げます。",
+          "title": "DeepSeekちゃん VS 大きなキツネ || 戦闘シミュレーション"
+        }
+      }
+    },
+    {
+      "bvid": "BV19uaq6CELw",
+      "uid": "13787349",
+      "title": "这不是我的……这是大家的啊…！",
+      "description": "鲁迅先生说：今日我等若冷眼旁观，他日祸临己身，则无人为我摇旗呐喊。",
+      "url": "https://www.bilibili.com/video/BV19uaq6CELw/",
+      "cover": "https://i2.hdslb.com/bfs/archive/1cc86d8491ac17545ee8a59e052b244cc27aa764.jpg",
+      "duration": 61,
+      "publishedAt": "2026-09-28T03:43:41.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Bilibili creator 彼岸花Channel.",
+          "description": "A short comic skit in which DeepSeek Chan is chased by a crowd holding protest signs while a suited man insists he is the only official persona. The uploader quotes Lu Xun: if we merely stand by today, no one will speak up for us when trouble comes.",
+          "title": "This isn't mine... it belongs to everyone...!"
+        },
+        "ja": {
+          "creatorIntro": "Bilibiliクリエイター 彼岸花Channel。",
+          "description": "コミカルな寸剧アニメ。DeepSeekちゃんがプラカードを掲げる群衆に追われ、スーツの男が「唯一の公式設定」を名乗ります。投稿者は魯迅の言葉を引用しています。",
+          "title": "これは私のじゃない……みんなのものだよ…！"
         }
       }
     },

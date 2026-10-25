@@ -87952,5 +87952,531 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_0b2fe4390ca6ca5e964dea6d",
+    "name": "秋装大肥鱼",
+    "description": "蓝色大肥鱼身着深蓝秋季长裙的角色设定图，含面部特写与正面、侧面、背面三张全身立绘。贝雷帽与领口镶嵌蓝色宝石，披肩和裙摆带金色枫叶、海浪纹样，脚踩蓝色短靴，鲸尾从裙后露出。",
+    "commentary": "入秋了，我把深蓝的长裙翻出来穿上，贝雷帽上那枚枫叶正好配这个季节。裙摆绣着海浪和贝壳，尾巴从后面偷偷露出来——这套秋装，你觉得合身吗？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/0b2fe4390ca6ca5e.png",
+    "thumbnailPath": "submissions/previews/deepseek/0b2fe4390ca6ca5e.webp",
+    "fullPath": "submissions/large/deepseek/0b2fe4390ca6ca5e.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "0b2fe4390ca6ca5e964dea6d2b1b20ed10ea2d618ef6c3bc7ce61d71941a97a4",
+    "characterId": "deepseek",
+    "tags": [
+      "秋装",
+      "设定图",
+      "三视图",
+      "贝雷帽",
+      "长裙",
+      "枫叶",
+      "鲸尾"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "中分_背带裤",
+      "url": "https://b23.tv/ZX1zO9g",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-24T22:45:52.809Z",
+    "updatedAt": "2026-10-24T22:45:52.809Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610240018",
+    "categoryIds": [
+      "setting"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "9684c0f1fae451c0e039fdb3667852c4c125e74a241a24d27359263402399df1",
+      "en": {
+        "commentary": "Autumn is here, so I dug out the long navy dress — the maple leaf on my beret fits the season just right. Waves and shells are embroidered along the hem, and my tail sneaks out from behind. Does this autumn outfit suit me?",
+        "description": "A character design sheet of DeepSeek Chan in a navy autumn dress, with a face close-up plus full-body front, side, and back views. The beret and collar brooch are set with blue gems, the cape and skirt hem carry gold maple-leaf and wave motifs, and blue ankle boots complete the look with a whale tail showing behind the skirt.",
+        "faq": [
+          {
+            "answer": "A face close-up together with full-body front, side, and back views of the navy autumn outfit, showing the beret, gem brooch, cape, skirt hem patterns, and ankle boots.",
+            "question": "What does this DeepSeek Chan design sheet include?"
+          },
+          {
+            "answer": "Gold maple leaves and wave patterns run along the cape and skirt hem, while blue gems sit on the beret and the collar brooch.",
+            "question": "What motifs decorate the autumn dress?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Autumn Outfit DeepSeek Chan",
+        "originNote": "Original submitter credit and source link: https://b23.tv/ZX1zO9g",
+        "seoDescription": "Character design sheet of DeepSeek Chan in a navy autumn dress, with a face close-up and front, side, and back full-body views.",
+        "seoTitle": "Autumn Outfit DeepSeek Chan — Character Design Sheet",
+        "tags": [
+          "autumn outfit",
+          "character design sheet",
+          "turnaround views",
+          "beret",
+          "long dress",
+          "maple leaf",
+          "whale tail"
+        ]
+      },
+      "ja": {
+        "commentary": "秋になったので、紺色のロングワンピースを引っ張り出して着てみた。ベレー帽の楓の飾りがこの季節にちょうどいい。裾には波と貝の刺繍、しっぽは後ろからこっそり。この秋服、似合ってる？",
+        "description": "紺色の秋ワンピースを着たDeepSeekちゃんの設定画。顔のアップと、正面・側面・背面の全身立ち絵を収録。ベレー帽と襟元のブローチには青い宝石、ケープとスカートの裾には金色の楓と波の模様、足元は青いショートブーツで、スカートの後ろからクジラの尾がのぞく。",
+        "faq": [
+          {
+            "answer": "顔のアップと、紺色の秋服を着た正面・側面・背面の全身立ち絵です。ベレー帽、宝石のブローチ、ケープ、裾の模様、ショートブーツまで確認できます。",
+            "question": "この設定画には何が描かれていますか？"
+          },
+          {
+            "answer": "ケープとスカートの裾に金色の楓と波の模様が入り、ベレー帽と襟元のブローチには青い宝石が付いています。",
+            "question": "秋服にはどんな模様がありますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "秋服のDeepSeekちゃん",
+        "originNote": "作者：中分_背带裤 — https://b23.tv/ZX1zO9g",
+        "seoDescription": "紺色の秋ワンピース姿のDeepSeekちゃん設定画。顔のアップと正面・側面・背面の全身立ち絵を掲載。",
+        "seoTitle": "秋服のDeepSeekちゃん 設定画",
+        "tags": [
+          "秋服",
+          "設定画",
+          "三面図",
+          "ベレー帽",
+          "ワンピース",
+          "楓",
+          "クジラの尾"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_b0b0cabe1371a79bf098d76d",
+    "name": "桂花树下的约定",
+    "description": "蓝发鲸尾的 DeepSeek 娘身着深蓝金饰礼裙，立在夜色庭园的桂花树下，闭眼轻嗅探到面前的花枝，蓝色鲸尾自裙摆后扬起。画面以暖金花瓣、灯影与深蓝夜空作背景，构图完整。",
+    "commentary": "桂花一开，整条街都是甜的。我忍不住把脸埋进花枝里多闻两下——尾巴可没在摇，是风在摇。这样的夜晚，说好要来的那个人，应该也快到了吧？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/b0b0cabe1371a79b.png",
+    "thumbnailPath": "submissions/previews/deepseek/b0b0cabe1371a79b.webp",
+    "fullPath": "submissions/large/deepseek/b0b0cabe1371a79b.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "b0b0cabe1371a79bf098d76dd606655aa7822bc6f5ce330125b6fdd68a7f80dd",
+    "characterId": "deepseek",
+    "tags": [
+      "桂花",
+      "鲸尾",
+      "礼裙",
+      "夜色",
+      "秋日"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Ruinde",
+      "url": "https://b23.tv/yMqOjWg",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-25T00:37:48.810Z",
+    "updatedAt": "2026-10-25T00:37:48.810Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610250001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "4ac93415c5b77f803ab0fcb7fa9fe7cbdbafdadec6633decbfe38a2b24bbbaf9",
+      "en": {
+        "commentary": "The osmanthus bloomed and the whole street turned sweet. I could not help burying my face in the branches for one more breath. My tail is not wagging, by the way. That is just the wind. On a night like this, the person I promised to meet should be arriving soon.",
+        "description": "DeepSeek Chan, a blue-haired girl with a whale tail, stands beneath an osmanthus tree in a night garden. Eyes closed, she leans in to breathe in a flowering branch, her blue tail rising behind the skirt of her navy gown trimmed in gold. Warm petals, lantern light and a deep blue sky fill the composition.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, recognizable by her blue hair and whale tail, standing under a flowering osmanthus tree at night.",
+            "question": "Who is in this illustration?"
+          },
+          {
+            "answer": "It is a single full-scene illustration of a character in a garden, not a comic page, design sheet or plain standing portrait.",
+            "question": "What kind of artwork is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "A Promise Beneath the Osmanthus Tree",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in a navy gown stands beneath a night osmanthus tree, eyes closed as she breathes in the blossoms, her whale tail lifted behind her.",
+        "seoTitle": "DeepSeek Chan: A Promise Beneath the Osmanthus Tree",
+        "tags": [
+          "osmanthus",
+          "whale tail",
+          "formal dress",
+          "night",
+          "autumn"
+        ]
+      },
+      "ja": {
+        "commentary": "金木犀が咲くと、通り全体が甘い香りに包まれるんだ。だからもう一回だけって、枝に顔をうずめてしまった。しっぽが揺れているわけじゃないよ、それは風。こんな夜なら、約束したあの人也もうすぐ着くはずだよね。",
+        "description": "青い髪とくじらのしっぽを持つ DeepSeek ちゃんが、夜の庭園の金木犀の木の下に立っている。目を閉じて花の枝に顔を寄せ、紺色に金の縁取りを施したドレスの後ろでは青いしっぽが持ち上がる。暖かな花びらと灯り、深い青の夜空が画面を包む。",
+        "faq": [
+          {
+            "answer": "青い髪とくじらのしっぽが目印の DeepSeek ちゃんが、夜の金木犀の木の下に立っている一枚です。",
+            "question": "このイラストには誰が描かれていますか。"
+          },
+          {
+            "answer": "庭園の人物を描いた一枚絵のイラストで、漫画のコマ割りでも設定資料でも、背景のない立ち絵でもありません。",
+            "question": "どんな種類の作品ですか。"
+          }
+        ],
+        "licenseNote": "",
+        "name": "金木犀の下の約束",
+        "originNote": "",
+        "seoDescription": "紺のドレスをまとった DeepSeek ちゃんが、夜の金木犀の下で目を閉じて花の香りを吸い込む。青いくじらのしっぽが背後に浮かぶ。",
+        "seoTitle": "DeepSeek ちゃん｜金木犀の下の約束",
+        "tags": [
+          "金木犀",
+          "くじらのしっぽ",
+          "ドレス",
+          "夜",
+          "秋"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_016e01bd0b423f019cd798bb",
+    "name": "深蓝女仆装 DeepSeek 娘 · 眨眼比耶头像",
+    "description": "方形头像构图的 DeepSeek 娘二创：蓝色长发配白色荷叶边发饰，身穿深蓝女仆装，右眼眨眼、抬手比出胜利手势，笑容开朗。画面右上角绘有蓝色鲸鱼标志，底部是深色横幅与 deepseek 字样，整体为应用图标式排布。",
+    "commentary": "这回我被打包成应用图标了：蓝发、白色蕾丝头饰、深蓝女仆装，一比耶就忍不住笑开。要是手机上真能点开我，大概就是这副样子——右下角那行小字，就算是我的自我介绍吧。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/016e01bd0b423f01.png",
+    "thumbnailPath": "submissions/previews/deepseek/016e01bd0b423f01.webp",
+    "fullPath": "submissions/large/deepseek/016e01bd0b423f01.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "016e01bd0b423f019cd798bbede482f3365e28bfd25e6ea76a294ac3ead9a702",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "女仆装",
+      "头像",
+      "应用图标",
+      "鲸鱼",
+      "蓝发",
+      "眨眼"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-25T00:55:36.165Z",
+    "updatedAt": "2026-10-25T00:55:36.165Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610250002",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "435a3ba8872726c1eb993c4a349eccdd0df594f73306b8a552721d80b052ca55",
+      "en": {
+        "commentary": "This time I got packaged as an app icon: blue hair, a white lace headdress, a navy maid dress, and the second I throw up a peace sign I can't stop grinning. If you really could tap me open on your phone, this is probably what you would see. That little wordmark along the bottom can stand in for my self-introduction.",
+        "description": "A square, app-icon style fan illustration of DeepSeek Chan: long blue hair under a white frilled headdress, a dark navy maid dress, one eye winking and a raised victory sign, with a bright open smile. A blue whale logo sits in the upper right corner, and a dark banner with the deepseek wordmark runs along the bottom edge.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, the personification of DeepSeek, in a navy maid outfit, winking and raising a peace sign against a pale background with the blue whale logo and deepseek wordmark.",
+            "question": "Who is shown in this picture?"
+          },
+          {
+            "answer": "A square, icon-like portrait illustration: head-and-shoulders framing, a pale backdrop, the whale logo in the top right and the wordmark banner along the bottom.",
+            "question": "What is the composition like?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan in a Navy Maid Outfit — Winking App Icon Portrait",
+        "originNote": "",
+        "seoDescription": "App-icon style illustration of DeepSeek Chan with blue hair and a navy maid dress, winking and giving a peace sign beneath the blue whale logo.",
+        "seoTitle": "DeepSeek Chan Maid Avatar — Winking App Icon Illustration",
+        "tags": [
+          "DeepSeek Chan",
+          "maid outfit",
+          "avatar",
+          "app icon",
+          "whale",
+          "blue hair",
+          "wink"
+        ]
+      },
+      "ja": {
+        "commentary": "今回はアプリのアイコンにしてもらいました。青い髪、白いレースのヘッドドレス、紺色のメイド服。ピースをした途端、つい笑顔になってしまうんです。スマホで本当に私を開けたら、たぶんこんな姿でしょうね。下の小さな文字は、私の自己紹介だと思ってください。",
+        "description": "アプリアイコン風の正方形構図で描かれた DeepSeekちゃんの二次創作。青い長い髪に白いフリルのヘッドドレス、紺色のメイド服を着て、片目をウインクしながらピースサインをし、明るく笑っている。右上には青いクジラのロゴ、下端には暗い色の帯と deepseek の文字が入る。",
+        "faq": [
+          {
+            "answer": "DeepSeek を擬人化した DeepSeekちゃんです。紺色のメイド服姿でウインクしながらピースサインをしており、背景には青いクジラのロゴと deepseek の文字が入っています。",
+            "question": "この画像には誰が描かれていますか？"
+          },
+          {
+            "answer": "正方形のアイコン風ポートレートです。上半身を中心にした構図で、右上にクジラのロゴ、下端に文字入りの帯が配置されています。",
+            "question": "どんな構図の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "紺色メイド服のDeepSeekちゃん・ウインクでピースするアイコン風ポートレート",
+        "originNote": "",
+        "seoDescription": "青い髪と紺色のメイド服のDeepSeekちゃんが、クジラのロゴの下でウインクしてピースサインをするアイコン風イラスト。",
+        "seoTitle": "DeepSeekちゃん メイド姿のアイコン風イラスト｜ウインクとピースサイン",
+        "tags": [
+          "DeepSeekちゃん",
+          "メイド服",
+          "アイコン",
+          "アプリアイコン",
+          "クジラ",
+          "青い髪",
+          "ウインク"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_7e93635b8572ea3f7065e4b4",
+    "name": "眼睛放光的小肥鱼",
+    "description": "蓝色大肥鱼的Q版同人像：蓝发少女戴着猫耳状的鳍耳与荷叶边女仆头饰，双手在胸前合十，张嘴惊叹，瞳孔里亮着星形高光，四周点缀星星与粉彩符号。",
+    "commentary": "听说又有新模型要发布的时候，我的眼睛就自己亮起来了——这可不是特效，是货真价实的期待。好东西快点端上来吧！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/7e93635b8572ea3f.png",
+    "thumbnailPath": "submissions/previews/deepseek/7e93635b8572ea3f.webp",
+    "fullPath": "submissions/large/deepseek/7e93635b8572ea3f.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "7e93635b8572ea3f7065e4b46c14068a806a79a443ab01198763d78113c46a96",
+    "characterId": "deepseek",
+    "tags": [
+      "Q版",
+      "表情包",
+      "星星眼",
+      "女仆装",
+      "蓝发",
+      "兴奋"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-25T01:05:43.486Z",
+    "updatedAt": "2026-10-25T01:05:43.486Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610250003",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "f352b85b0abe034c3ebc2b2196d6d94bcd6a9331de0b9892a6142bf0ac554a3a",
+      "en": {
+        "commentary": "The moment I hear a new model is about to drop, my eyes light up all on their own. No visual effects here — that is genuine excitement. Hurry up and bring on the good stuff!",
+        "description": "A chibi fan-art portrait of DeepSeek Chan: a blue-haired girl wearing fin-like cat ears and a frilled maid headdress, hands clasped at her chest, mouth open in delight, star-shaped highlights glowing in her eyes, with stars and pastel symbols scattered around her.",
+        "faq": [
+          {
+            "answer": "It is DeepSeek Chan, the chibi personification of DeepSeek, shown in a delighted, wide-eyed reaction.",
+            "question": "Who is the character in this image?"
+          },
+          {
+            "answer": "No. It is a fan-made sticker submitted anonymously to DeepSeek Chan.",
+            "question": "Is this an official DeepSeek illustration?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan with Sparkling Eyes",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan fan-art sticker with star-lit eyes, clasped hands and a delighted open-mouthed expression, surrounded by sparkles.",
+        "seoTitle": "DeepSeek Chan with Sparkling Eyes Sticker | DeepSeek Chan",
+        "tags": [
+          "chibi",
+          "sticker",
+          "sparkling eyes",
+          "maid outfit",
+          "blue hair",
+          "excited"
+        ]
+      },
+      "ja": {
+        "commentary": "新しいモデルが出るって聞いた瞬間、私の目は勝手にキラキラしちゃうんです。演出なんかじゃなくて、本気の期待ですよ。さあ、いいものはどんどん持ってきてください！",
+        "description": "Blue Dafeiyuのちびキャラ同人イラスト。青い髪の少女がヒレのような猫耳とフリルのメイドヘッドドレスを着け、両手を胸の前で合わせて口を開け、驚きと喜びの表情を見せている。瞳には星型のハイライトが灯り、周囲には星やパステルカラーの記号が散りばめられている。",
+        "faq": [
+          {
+            "answer": "DeepSeekを擬人化したDeepSeekちゃんで、目を大きく見開いた喜びのリアクション姿です。",
+            "question": "この画像のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "いいえ。DeepSeek Chanに匿名で投稿されたファン制作のスタンプです。",
+            "question": "公式のイラストですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "瞳がきらめくDeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "星の輝きを宿した瞳、胸の前で合わせた手、驚きに開いた口元がかわいいちびキャラDeepSeekちゃんの同人スタンプ。",
+        "seoTitle": "瞳がきらめくDeepSeekちゃんのスタンプ | DeepSeek Chan",
+        "tags": [
+          "ちびキャラ",
+          "スタンプ",
+          "きらめく瞳",
+          "メイド服",
+          "青い髪",
+          "興奮"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_aef1bfd01187a0a84cdef9a1",
+    "name": "窗边逆光下的蓝发少女",
+    "description": "蓝发少女身穿深蓝女仆装，头戴白色蕾丝头饰，耳侧带鱼鳍状装饰，侧脸含笑望向窗外。逆光洒在脸上，左下角隐约可见鲸尾剪影，整体呈现冷蓝与暖金对比的光影氛围。",
+    "commentary": "午后的光最会挑位置，我刚好站在窗边。别以为我在偷懒发呆，我是在光谱里做推理呢。你看那束斜进来的光，像不像我在算力海里找到的最优解？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/aef1bfd01187a0a8.png",
+    "thumbnailPath": "submissions/previews/deepseek/aef1bfd01187a0a8.webp",
+    "fullPath": "submissions/large/deepseek/aef1bfd01187a0a8.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "aef1bfd01187a0a84cdef9a15c37b32ae62e94ec6340af56dc58e920961c54e5",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "蓝发",
+      "女仆装",
+      "逆光",
+      "窗边",
+      "鲸尾",
+      "插画"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-25T02:10:55.920Z",
+    "updatedAt": "2026-10-25T02:10:55.920Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610250004",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "880c5534893ac18de589b3703e1caa29d6e0ae9a6a91281b7a8b8d032eaf99da",
+      "en": {
+        "commentary": "The afternoon light always picks the best spot, and today it picked the window where I happen to be standing. Don't mistake this for idle daydreaming — I'm running inference inside the spectrum. See that shaft of light slanting in? It looks exactly like the optimum I would find in a sea of compute.",
+        "description": "A blue-haired girl in a deep navy maid outfit and a white lace headdress stands by a window, fish-fin ornaments at her ears, smiling as backlight falls across her face. A faint whale-tail silhouette shows in the lower left, with cool blues set against warm gold light.",
+        "faq": [
+          {
+            "answer": "She is a fan-made personification of DeepSeek, drawn here as a blue-haired girl in a navy maid outfit with fish-fin ear ornaments.",
+            "question": "Who is the character in this illustration?"
+          },
+          {
+            "answer": "It is a single-frame anime-style illustration that uses strong backlighting and a warm-versus-cool color contrast.",
+            "question": "What style is the picture drawn in?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Blue-Haired Girl in Window Backlight",
+        "originNote": "",
+        "seoDescription": "Backlit fan illustration of DeepSeek Chan in a navy maid outfit by a window, with fish-fin ear ornaments and a whale-tail silhouette in warm light.",
+        "seoTitle": "DeepSeek Chan by the Window in Backlight",
+        "tags": [
+          "DeepSeek Chan",
+          "blue hair",
+          "maid outfit",
+          "backlight",
+          "window",
+          "whale tail",
+          "illustration"
+        ]
+      },
+      "ja": {
+        "commentary": "午後の光は居場所を選ぶのが上手で、今日はたまたま私が立っている窓辺を選んだみたい。ぼんやりしてるわけじゃないよ、光のスペクトルの中で推論してるの。あの斜めに差し込む光の筋、計算資源の海で見つけた最適解みたいだと思わない？",
+        "description": "紺色のメイド服に白いレースのヘッドドレスを合わせた青髪の少女が、窓辺で逆光を浴びながら微笑んでいる。耳元には魚のひれのような飾りがあり、画面の左下にはうっすらとクジラの尾のシルエットが浮かぶ。冷たい青と暖かな金の光が対比をなす一枚。",
+        "faq": [
+          {
+            "answer": "紺のメイド服と魚のひれの耳飾りを身につけた青髪の少女で、DeepSeek を擬人化した二次創作のキャラクターです。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "強い逆光と、青と金の寒暖の対比を生かした一枚絵のアニメ調イラストです。",
+            "question": "どのような作風のイラストですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "窓辺の逆光に立つ青髪の少女",
+        "originNote": "",
+        "seoDescription": "紺のメイド服姿の DeepSeek ちゃんを窓辺の逆光で描いた二次創作イラスト。魚のひれの耳飾りとクジラの尾のシルエットが暖かな光に浮かぶ。",
+        "seoTitle": "窓辺の逆光、青髪の DeepSeek ちゃん",
+        "tags": [
+          "DeepSeek ちゃん",
+          "青髪",
+          "メイド服",
+          "逆光",
+          "窓辺",
+          "クジラの尾",
+          "イラスト"
+        ]
+      }
+    }
   }
 ]
