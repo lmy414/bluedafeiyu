@@ -90,7 +90,7 @@ import {matchesCreationMethod} from './creation-method.js';
   // All list controls use the same frozen public dataset and preserve their state in the URL.
   const listPage=document.body.hasAttribute('data-list-page'),searchPage=document.body.hasAttribute('data-search-page');
   if(listPage||searchPage){
-    let dataset,all=[],filtered=[],shown=24;
+    let dataset,searchIndex,all=[],filtered=[],shown=24;
     const pageNumber=Number(document.body.dataset.pageNumber)||1;
     const pageStart=(pageNumber-1)*24;
     const defaultState={character:document.body.dataset.character||'',type:document.body.dataset.type||'',sort:document.body.dataset.sort||'latest',creation:''};
@@ -101,7 +101,7 @@ import {matchesCreationMethod} from './creation-method.js';
     for(const [key,value] of new URLSearchParams(location.hash.slice(1))) if(['character','type','sort','q','creation'].includes(key))params.set(key,value);
     const selected={character:document.body.dataset.character||'',type:document.body.dataset.type||'',sort:document.body.dataset.sort||'latest',creation:''};
     for(const name of ['character','type','sort','creation'])if(params.has(name))selected[name]=params.get(name);
-    if(!['latest','random',...(defaultState.sort==='curated'?['curated']:[])].includes(selected.sort))selected.sort=defaultState.sort;
+    if(!['latest','random',...(searchPage?['relevance']:[]),...(defaultState.sort==='curated'?['curated']:[])].includes(selected.sort))selected.sort=defaultState.sort;
     if(!['','non-ai'].includes(selected.creation))selected.creation='';
     const setCharacters=value=>{const ids=String(value||'').split(',').filter(Boolean);for(const option of form.elements.character.options)option.selected=option.value?ids.includes(option.value):!ids.length;};
     for(const [name,value]of Object.entries(selected))if(form.elements[name]){if(name==='character')setCharacters(value);else form.elements[name].value=value;}
@@ -124,9 +124,10 @@ import {matchesCreationMethod} from './creation-method.js';
     const setURL=()=>{const state=getState();history.replaceState({...history.state,filters:state},'',localURL(stateURL().href));};
     function render(reshuffle=true,append=false){
       document.dispatchEvent(new Event('archive:filter-sync'));
-      const state=getState(),words=state.q.toLocaleLowerCase().split(/\s+/).filter(Boolean);
+      const state=getState(),scores=state.q&&searchIndex?searchIndex.search(state.q):null;
       const characters=state.character.split(',').filter(Boolean);
-      filtered=all.filter(w=>matchesCreationMethod(w,state.creation)&&characters.every(id=>w.cids.includes(id))&&(!state.type||w.k.includes(state.type))&&words.every(word=>{const roles=dataset.characters.filter(c=>w.cids.includes(c.id));const text=[w.n,w.c,w.d,w.cm,...w.roles.map(role=>role.name),...roles.flatMap(role=>role.aliases||[]),...w.tg,...w.tg.map(names)].join(' ');const l=localized(w);return (text+' '+[l.n,l.c,l.d,l.cm,...l.roles.map(role=>role.name),...l.tg].join(' ')).toLocaleLowerCase().includes(word);}));
+      filtered=all.filter(w=>matchesCreationMethod(w,state.creation)&&characters.every(id=>w.cids.includes(id))&&(!state.type||w.k.includes(state.type))&&(!scores||scores.has(w.id)));
+      if(state.sort==='relevance'&&scores)filtered.sort((a,b)=>scores.get(b.id)-scores.get(a.id));
       if(state.sort==='popular'||state.sort==='downloads')filtered.sort((a,b)=>(window.WorkStats?.metric(b.id,state.sort)||0)-(window.WorkStats?.metric(a.id,state.sort)||0));
       if(state.sort==='random'){
         if(reshuffle||!render.randomOrder){render.randomOrder=filtered.map(w=>w.slug);for(let i=render.randomOrder.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[render.randomOrder[i],render.randomOrder[j]]=[render.randomOrder[j],render.randomOrder[i]];}}
@@ -147,7 +148,7 @@ import {matchesCreationMethod} from './creation-method.js';
       more.hidden=start+shown>=filtered.length;
       more.closest('.load-more-wrap').hidden=more.hidden;
     }
-    function update(){shown=24;if(pageNumber>1){location.assign(localURL(stateURL().href));return;}setURL();if(dataset)render();}
+    function update(){clearTimeout(timer);shown=24;if(pageNumber>1){location.assign(localURL(stateURL().href));return;}setURL();if(dataset)render();}
     form.addEventListener('change',event=>{
       if(event.target.name==='type'&&globalArchive){location.assign(localURL(categoryURL().href));return;}
       if(event.target.name==='character'&&document.body.dataset.character&&!getState().character.split(',').includes(document.body.dataset.character)){
@@ -158,10 +159,30 @@ import {matchesCreationMethod} from './creation-method.js';
     });form.addEventListener('submit',e=>e.preventDefault());
     document.addEventListener('click',e=>{if(e.target.closest('[data-reset]')){setCharacters(document.body.dataset.character||'');form.elements.type.value=document.body.dataset.type||'';form.elements.sort.value=document.body.dataset.sort||'latest';form.elements.creation.value='';if(query)query.value='';update();}});
     $('#search-form')?.addEventListener('submit',e=>{e.preventDefault();update();});
-    let timer;query?.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(update,220);});
+    let timer,composing=false;
+    const scheduleSearch=()=>{clearTimeout(timer);timer=setTimeout(update,150);};
+    query?.addEventListener('compositionstart',()=>{composing=true;clearTimeout(timer);});
+    query?.addEventListener('compositionend',()=>{composing=false;scheduleSearch();});
+    query?.addEventListener('input',event=>{if(!composing&&!event.isComposing)scheduleSearch();});
     $('[data-load-more]').addEventListener('click',()=>{shown+=24;render(false,true);});
     document.addEventListener('site:langchange',()=>{if(dataset)render(false);});
-    load().then(async d=>{if(['popular','downloads'].includes(form.elements.sort.value))await window.WorkStats?.ready;dataset=d;const slugs=result.dataset.list?JSON.parse(result.dataset.list):null;all=slugs?slugs.map(s=>d.works.find(w=>w.slug===s)).filter(Boolean):d.works;shown=history.state?.feedVersion===6?history.state.feedShown||24:24;if(['popular','downloads'].includes(form.elements.sort.value)&&!window.WorkStats?.available())form.elements.sort.value=defaultState.sort;if(['character','type','sort','view','creation'].some(name=>params.has(name)))setURL();render();if(performance.getEntriesByType('navigation')[0]?.type==='back_forward'){try{const y=Number(sessionStorage.getItem('bluefish-scroll:'+location.pathname+location.search));if(y)requestAnimationFrame(()=>requestAnimationFrame(()=>scrollTo(0,y)));}catch{}}}).catch(()=>{count.textContent=tx('d.loadFail','数据加载失败，请刷新页面。');});
+    load().then(async d=>{
+      if(searchPage){
+        const {createSearchIndex}=await import('./search.js');
+        searchIndex=createSearchIndex(d.works,d.characters,{characterName:(id,name)=>window.SiteLang?SiteLang.characterName(id,name):name});
+      }
+      if(['popular','downloads'].includes(form.elements.sort.value))await window.WorkStats?.ready;
+      dataset=d;
+      const slugs=result.dataset.list?JSON.parse(result.dataset.list):null;
+      all=slugs?slugs.map(s=>d.works.find(w=>w.slug===s)).filter(Boolean):d.works;
+      shown=history.state?.feedVersion===6?history.state.feedShown||24:24;
+      if(['popular','downloads'].includes(form.elements.sort.value)&&!window.WorkStats?.available())form.elements.sort.value=defaultState.sort;
+      if(['character','type','sort','view','creation'].some(name=>params.has(name)))setURL();
+      render();
+      if(performance.getEntriesByType('navigation')[0]?.type==='back_forward'){
+        try{const y=Number(sessionStorage.getItem('bluefish-scroll:'+location.pathname+location.search));if(y)requestAnimationFrame(()=>requestAnimationFrame(()=>scrollTo(0,y)));}catch{}
+      }
+    }).catch(()=>{count.textContent=tx('d.loadFail','数据加载失败，请刷新页面。');});
   }
   if(document.body.hasAttribute('data-legacy-category')){
     const p=new URLSearchParams(location.hash.slice(1)),c=p.get('c'),s=p.get('s'),q=p.get('q'),safe=v=>/^[a-z0-9-]+$/i.test(v||'');
