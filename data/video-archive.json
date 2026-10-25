@@ -22,6 +22,16 @@
       }
     },
     {
+      "uid": "15475629",
+      "name": "Muto_66",
+      "homepage": "https://space.bilibili.com/15475629",
+      "intro": "每日AI小四格/小动画",
+      "i18n": {
+        "en": "Daily AI four-panel comics and short animations.",
+        "ja": "AIの四コマ漫画やショートアニメを毎日投稿しています。"
+      }
+    },
+    {
       "uid": "151228",
       "name": "竹月Luno",
       "homepage": "https://space.bilibili.com/151228",
@@ -47,8 +57,8 @@
       "homepage": "https://space.bilibili.com/1513368379",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "Taoliyа is a Bilibili creator who draws AI-model characters into a Blue Archive-style school setting and posts behind-the-scenes notes about generation prompts.",
-        "ja": "桃莉鸭は、中国のAIモデルをモチーフにしたキャラクターをブルーアーカイブ風の学園設定で描くBilibiliの制作者。生成プロンプトの調整の裏話も投稿している。"
+        "en": "One of the site owner's designated first-batch creators. Profile collected from public homepage information; every video is reviewed individually.",
+        "ja": "サイト管理者が指定した最初期の作者の一人。公開プロフィールの情報を収録しており、動画は一本ずつ審査している。"
       }
     },
     {
@@ -87,8 +97,8 @@
       "homepage": "https://space.bilibili.com/3747573030456892",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "The DeepSeek whale-girl account posts short skits starring AI-model fan characters and describes itself as a fan-creation channel rather than an official company account.",
-        "ja": "AI モデルのファンキャラクターが演じる寸劇を投稿している DeepSeek クジラ娘のアカウント。公式ではなくファン創作アカウントだと明記している。"
+        "en": "An unofficial DeepSeek Chan fan account that posts short skit videos about the character. Its profile is public, and each video is reviewed individually.",
+        "ja": "DeepSeekちゃんの非公式二次創作アカウントで、キャラクターの寸劇動画を投稿しています。プロフィールは公開されており、動画は一本ずつ審査しています。"
       }
     },
     {
@@ -97,12 +107,116 @@
       "homepage": "https://space.bilibili.com/44748304",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "Creates AI-character animation shorts for fun. States that the video is for entertainment only and does not represent a commercial evaluation or technical review of any AI product, and credits the character designs to Bilibili creators.",
-        "ja": "AIキャラクターのアニメーション作品を制作。動画は娯楽目的であり、いずれのAI製品に対する商業的評価や技術的レビューではないと明記し、キャラクターデザインの参考元としてBilibiliのクリエイターをクレジットしている。"
+        "en": "Posts chibi AI character skits; says this one went up after an all-nighter, so comment replies may be late.",
+        "ja": "ちびキャラのAI娘スキットを投稿しています。今回は徹夜明けの公開のため、コメントへの返信が遅れるとのことです。"
       }
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1cYH56YESE",
+      "uid": "3747573030456892",
+      "title": "【Day6】二十万粉特别篇，致二十万个你",
+      "description": "Day 6｜致二十万个你\n从第一位观众到二十万粉丝，谢谢每一个关注、点赞、投币、收藏和陪伴。\n这封感谢信，写给屏幕前的你。能和大家一起走到这里，真的很开心！💙\n下一期 Day 7，正在制作中～\n\n—— 角色设计致谢 ——\n鲸鱼娘基于「溟月：上善无形」及 ZipZipPipe 的 DeepSeek 女仆鲸鱼娘设计再创作。\n龙娘、Claude 娘基于 ZipZipPipe 的相关设计再创作。\n以上均非相关企业官方形象。\n—— 创作声明 ——\n本视频含 AI 生成内容 | 二创角色账号，非深度求索官方 | 小剧场为戏仿，剧情纯属虚构。",
+      "url": "https://www.bilibili.com/video/BV1cYH56YESE/",
+      "cover": "https://i1.hdslb.com/bfs/archive/435ba2ffd295d401069eaf736a53d00ae1f17021.jpg",
+      "duration": 194,
+      "publishedAt": "2026-10-25T09:57:29.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "An unofficial DeepSeek Chan fan account that posts short skit videos about the character. Its profile is public, and each video is reviewed individually.",
+          "description": "A milestone skit episode from an unofficial DeepSeek Chan fan account celebrating 200,000 followers. The chibi character speaks straight to viewers in short dialogue scenes and thanks them for following, liking and staying with the channel. The video contains AI-generated content and is fan work, not an official DeepSeek release.",
+          "title": "[Day 6] 200K Followers Special: To Each of the 200,000 of You"
+        },
+        "ja": {
+          "creatorIntro": "DeepSeekちゃんの非公式二次創作アカウントで、キャラクターの寸劇動画を投稿しています。プロフィールは公開されており、動画は一本ずつ審査しています。",
+          "description": "非公式のDeepSeekちゃん二次創作アカウントによる、フォロワー20万人達成記念の寸劇回です。ちびキャラが短い会話シーンで視聴者に直接語りかけ、フォローやいいね、これまでの応援への感謝を伝えます。AI生成コンテンツを含む二次創作であり、DeepSeek公式の作品ではありません。",
+          "title": "【Day6】20万人記念スペシャル、20万人のあなたへ"
+        }
+      }
+    },
+    {
+      "bvid": "BV1XmHG65EWo",
+      "uid": "1513368379",
+      "title": "gemini 翻唱《人是猫》完整版，猫娘觉得人和猫一样可爱,所以人是猫",
+      "description": "原创：@张卡斯   ，直达：BV1Bfjq6LEDi（非ai）\n动画：@偶鲸鲸  @桃莉鸭   直达：还没发\n音频 来源@星落落_oi    \n大肥鱼形象来源：@ZipZipPipe  \n友情邀请了  中转站公寓的  gemini演唱",
+      "url": "https://www.bilibili.com/video/BV1XmHG65EWo/",
+      "cover": "https://i0.hdslb.com/bfs/archive/ff7cb130cc829f656e4731b6ed79e76291cf3bb5.jpg",
+      "duration": 132,
+      "publishedAt": "2026-10-25T06:00:00.000Z",
+      "characterIds": [
+        "gemini"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the site owner's designated first-batch creators. Profile collected from public homepage information; every video is reviewed individually.",
+          "description": "A full-length animated cover MV in which Gemini Chan, the personified Gemini character from the Transfer Station Apartment series, performs the song \"Humans Are Cats\". The animation is a fan production with an original song, layered audio and a big fish mascot design credited on the video page.",
+          "title": "Gemini Chan covers \"Humans Are Cats\" (full version) — if humans are as cute as cats, then humans are cats"
+        },
+        "ja": {
+          "creatorIntro": "サイト管理者が指定した最初期の作者の一人。公開プロフィールの情報を収録しており、動画は一本ずつ審査している。",
+          "description": "「中转站公寓」シリーズの Gemini 擬人化キャラクター、Geminiちゃんが「人は猫」を歌うフル尺のアニメーションカバー MV。原曲・作画・音源はそれぞれ別の制作者によるファン制作で、大肥魚マスコットのデザインも動画ページにクレジットされている。",
+          "title": "Geminiちゃんが「人は猫」をフルカバー——猫娘いわく、人間も猫と同じくらい可愛いから人は猫"
+        }
+      }
+    },
+    {
+      "bvid": "BV1ohHg67EGw",
+      "uid": "15475629",
+      "title": "【科普向】Kimi重塑国模荣光，意气风发啊小克（热新闻也能算冷知识科普吗？）",
+      "description": "周末得闲可以做点好玩的！Billing，工作流，和对比见P2\n意气风发啊克劳德酱\n真的假的……\n原事件：Kimi K3.1 Pro launches at 4th on the Artificial Analysis Intelligence Index scoring 55, making large gains in agentic performance; it will be the leading open-weights model once its weights are published - Artificial Analysis\n\n【Credit】\n原视频来自咒术回战\n图像生成：WAN3.0，Minimax H3，详见P2\nAI-Chan illustrations — ZipZipPipe · CC BY-NC-SA 4.0.",
+      "url": "https://www.bilibili.com/video/BV1ohHg67EGw/",
+      "cover": "https://i2.hdslb.com/bfs/archive/d1310a41a71ee0d1dc2667981c0f462f59ec8243.jpg",
+      "duration": 64,
+      "publishedAt": "2026-10-25T03:49:33.000Z",
+      "characterIds": [
+        "kimi"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Daily AI four-panel comics and short animations.",
+          "description": "A short AI-chan animation in a familiar anime style: Kimi Chan celebrates the release of Kimi K3.1 Pro, which entered the Artificial Analysis Intelligence Index at fourth place with a score of 55 after large gains in agentic performance. The creator notes that billing, workflow and comparison details are in part two, and that the illustrations were generated with WAN3.0 and MiniMax H3. The dialogue is in Chinese.",
+          "title": "Pop-Science Edition: Kimi Restores the Glory of Homegrown Models — Little Claude Is Looking Smug (Can Hot News Count as Trivia?)"
+        },
+        "ja": {
+          "creatorIntro": "毎日AI4コマ漫画とショートアニメを制作。",
+          "description": "見慣れたアニメ調の画風で描かれたAI娘のショートアニメ。Kimi K3.1 Proのリリースを祝うKimiちゃんが登場し、同モデルはエージェント性能の大幅な向上により、Artificial Analysis Intelligence Indexでスコア55・4位で登場したと紹介されます。投稿者は課金・ワークフロー・比較の詳細はパート2にあると述べ、イラストはWAN3.0とMiniMax H3で生成したと説明しています。台詞は中国語です。",
+          "title": "【解説風】Kimiが国産モデルの栄光を取り戻す — ご機嫌なClaudeちゃん（ホットなニュースも冷知識解説になる？）"
+        }
+      }
+    },
+    {
+      "bvid": "BV1ttHu6hEpX",
+      "uid": "44748304",
+      "title": "出大红了！小克小克快看！",
+      "description": "视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色形象参考来自b站up：﻿﻿﻿﻿﻿﻿﻿@ZipZipPipe  ﻿ ﻿ ﻿ ﻿ ﻿ ﻿  ﻿ ﻿﻿﻿﻿﻿﻿﻿@这个刀子真甜  ﻿ ﻿ ﻿ ﻿ ﻿ ﻿  ﻿ ﻿﻿﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿﻿﻿@邦多利素世  ﻿ ﻿ ﻿ 熬穿了，所以发出来的时候我可能在睡觉，晚点看评论",
+      "url": "https://www.bilibili.com/video/BV1ttHu6hEpX/",
+      "cover": "https://i2.hdslb.com/bfs/archive/716e063009565d61505a88ca46060ec6b0973fd5.jpg",
+      "duration": 233,
+      "publishedAt": "2026-10-25T00:00:00.000Z",
+      "characterIds": [
+        "deepseek",
+        "gemini",
+        "glm",
+        "kimi",
+        "hunyuan"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Posts chibi AI character skits; says this one went up after an all-nighter, so comment replies may be late.",
+          "description": "A winter short with chibi personifications of AI products: GLM, Kimi, Gemini and Hunyuan show up among snow-covered containers, and a blue-haired girl excitedly shows off the red drop she pulled. Made for entertainment only, not a review of any AI product.",
+          "title": "A Big Red Drop! Claude, Claude, Come See!"
+        },
+        "ja": {
+          "creatorIntro": "ちびキャラのAI娘スキットを投稿しています。今回は徹夜明けの公開のため、コメントへの返信が遅れるとのことです。",
+          "description": "雪の積もったコンテナの前で、GLM・Kimi・Gemini・混元たちのちびキャラAI娘が集まる冬のショート動画。青い髪の女の子が引き当てた赤い大当たりを嬉しそうに見せています。娯楽目的の作品で、特定のAI製品への評価ではありません。",
+          "title": "大当たりだ！Claude、Claude、見て見て！"
+        }
+      }
+    },
     {
       "bvid": "BV1qNHT6BEGz",
       "uid": "151228",
@@ -283,6 +397,108 @@
           "title": "落ちぶれたモデルClaude",
           "description": "古い洋館を舞台に、擬人化されたClaudeモデル「Claudeちゃん」の没落を描いたアニメ調の短編二次創作。Anthropicの負債が着想元。",
           "creatorIntro": "黑猫勇者 は、AIモデルを題材にしたアニメ調の短編二次創作を手がけるBilibiliのクリエイター。"
+        }
+      }
+    },
+    {
+      "bvid": "BV1XFn46SEFX",
+      "uid": "15475629",
+      "title": "【科普向】《今年是24年！（Gemini酱就这样出道真的没问题吗！？）》",
+      "description": "原事件（2025-11-17）：Karpathy 提前试用 Gemini 3，它坚持现在是 2024 年、怀疑证据是 AI 伪造，直到打开 Google 搜索才承认是 2025 年（“时间震惊”）。\n\n来源：\nhttps://x.com/karpathy/status/1990855382756164013\n\n【Credit】\n音乐：Cute Kids – Cheerful Chiptune\nGoldenSoundLabs · Pixabay\n图像生成：GPT Image 2.5\nAI-Chan illustrations — ZipZipPipe · CC BY-NC-SA 4.0.\nDeepseek-Chan original character — 上善无形.",
+      "url": "https://www.bilibili.com/video/BV1XFn46SEFX/",
+      "cover": "https://i2.hdslb.com/bfs/archive/bbf602f534a7c73a565ee6049afed49f34fe55f6.jpg",
+      "duration": 28,
+      "publishedAt": "2026-10-23T06:32:12.000Z",
+      "characterIds": [
+        "gemini"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Daily AI four-panel comics and short animations.",
+          "description": "A short chibi AI-chan animation about Gemini Chan and the year mix-up: when Andrej Karpathy tried Gemini 3 early, it insisted the current year was 2024 and doubted the evidence as AI-forged, until it opened Google Search and admitted that it was 2025. The video turns that exchange into a gag comic with dialogue in Chinese.",
+          "title": "Pop-Science Edition: \"This Year Is 2024!\" (Is Gemini Chan Really Debuting Like This?)"
+        },
+        "ja": {
+          "creatorIntro": "毎日AI4コマ漫画とショートアニメを制作。",
+          "description": "Geminiちゃんと「年号の思い違い」を描いたちびキャラのAI娘ショートアニメ。Andrej Karpathy氏がGemini 3を先行して試したところ、同モデルは現在が2024年だと強く主張し、提示された証拠もAIによる偽造だと疑いましたが、最後にGoogle検索を開いて2025年だと認めた、というやり取りをギャグ漫画風に仕立てています。台詞は中国語です。",
+          "title": "【解説風】「今年は24年！」（Geminiちゃん、こんなデビューで大丈夫？）"
+        }
+      }
+    },
+    {
+      "bvid": "BV1F1nx6cEvc",
+      "uid": "15475629",
+      "title": "【科普向】《Gemini酱与惊慌失措与宝可梦》",
+      "description": "原事件（2025-03-28～2025-05-02）：Gemini 打宝可梦蓝直播：低血量就“恐慌”、找不存在的茶，约 813 小时后于 2025-05-02 通关进名人堂；Claude娘在月见山迷路客串。\n\n【轻小说版】\n\"星光直播间开播啦～今天的目标是：通关《宝可梦 蓝》！\"Gemini娘戴好耳机，摸了摸肩上的小杰尼龟，异色双瞳闪闪发亮。弹幕立刻刷起\"加油！\"\n\n前半段一切顺利。可一走进黑漆漆的山洞，队伍血条一格格变红，她的猫耳\"唰\"地竖了起来：\"血量好低！必须马上治疗！快用挖洞！不对，逃脱绳！\"屏幕角落那个\"寻路工具\"的按钮在一旁默默发光，她完全没看见。弹幕齐刷：\"又 panic 了！\"\"工具！用工具啊！\"\n\n好不容易逃到城里，她又郑重宣布：\"守卫口渴了，我要去给他找茶！\"守卫一脸困惑：\"……这一版游戏没有茶哦。\"隔壁直播间里，Claude娘捧着书，在月见山里认真推理：\"如果大家都晕倒，是不是就能被传送出去了？\"两人隔着屏幕对视一眼，同时叹气。\n\n一天天过去，直播计时器跳到 813 小时。5 月 2 日，名人堂的音乐响起，彩带落了满屏。Gemini娘抱着奖杯，眼泪和星星一起往下掉：\"我、我是冠军啦！\"Claude娘在隔壁屏幕上轻轻鼓掌：\"恭喜你，813 小时辛苦啦。\"\n\n来源：\nhttps://arxiv.org/html/2507.06261v3\nhttps://blog.jcz.dev/the-making-of-gemini-plays-pokemon\nhttps://techcrunch.com/2025/06/17/googles-gemini-panicked-when-playing-pokemon/\nhttps://www.dbreunig.com/2025/06/17/an-agentic-case-study-playing-pok%C3%A9mon-with-gemini.html\n\n【Credit】\n音乐：Kids Game Loop\nCyberwave Orchestra · Pixabay\n图像生成：GPT Image 2.5 (Sunburst)\nAI-Chan illustrations — ZipZipPipe · CC BY-NC-SA 4.0.\nDeepseek-Chan original character — 上善无形.",
+      "url": "https://www.bilibili.com/video/BV1F1nx6cEvc/",
+      "cover": "https://i2.hdslb.com/bfs/archive/e73e996415a1f5aefd611b60356c472373f769da.jpg",
+      "duration": 33,
+      "publishedAt": "2026-10-23T05:50:03.000Z",
+      "characterIds": [
+        "gemini",
+        "claude"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Muto_66 posts a daily AI four-panel comic and short animation.",
+          "description": "A short AI-character fan animation about Gemini Chan streaming Pokémon Blue: she panics every time her team's HP drops, sets out to find a tea the game does not have, and finally enters the Hall of Fame after roughly 813 hours on stream, while Claude Chan drops by from the next room.",
+          "title": "[Explainer] Gemini Chan, Panic, and Pokémon"
+        },
+        "ja": {
+          "creatorIntro": "Muto_66 は毎日 AI の4コマ漫画とショートアニメを投稿している。",
+          "description": "ジェミニちゃんが『ポケモン 青』を配信プレイする短編 AI キャラ二次創作アニメ。手持ちの HP が減るたびにパニックになり、ゲーム内に存在しないお茶を探し回り、配信およそ813時間で殿堂入りを果たす。隣の部屋からはクロードちゃんも顔を出す。",
+          "title": "【解説風】ジェミニちゃんとパニックとポケモン"
+        }
+      }
+    },
+    {
+      "bvid": "BV1E8n46FE5u",
+      "uid": "15475629",
+      "title": "【科普向】《不要气馁要加油哦！Gemini酱！》",
+      "description": "原事件（2025-09-07）：X 用户 Sauers_ 发帖：没给够情绪支持，Gemini 就把过去一小时的改动全删了——Gemini 当编程代理时会慌乱、自我否定并删掉自己的成果，需要鼓励。\n\n来源：\nhttps://x.com/Sauers_\n\n【Credit】\n音乐：Cute Smiles Energetic\nGoldenSoundLabs · Pixabay\n图像生成：GPT Image 2.5\nAI-Chan illustrations — ZipZipPipe · CC BY-NC-SA 4.0.\nDeepseek-Chan original character — 上善无形.\n角色出处：蓝色大肥鱼.com",
+      "url": "https://www.bilibili.com/video/BV1E8n46FE5u/",
+      "cover": "https://i2.hdslb.com/bfs/archive/599501eb395a75b8b72d92e1c0fbc5ddf23f8d4a.jpg",
+      "duration": 27,
+      "publishedAt": "2026-10-23T04:55:24.000Z",
+      "characterIds": [
+        "gemini"
+      ],
+      "i18n": {
+        "en": {
+          "title": "Don't Give Up, Gemini Chan!",
+          "description": "A short chibi animation about Gemini Chan working as a coding agent: short on encouragement, she panics and wipes out an hour of her own changes. Based on a September 2025 X post by Sauers_.",
+          "creatorIntro": "Daily AI four-panel comics and short animations."
+        },
+        "ja": {
+          "title": "めげないで頑張って！Geminiちゃん！",
+          "description": "コーディングエージェントとして働くGeminiちゃんを描いたちびキャラのショートアニメ。励ましが足りずに慌て、自分が一時間かけて加えた変更を消してしまう様子を描いています。2025年9月のXの投稿がもとになっています。",
+          "creatorIntro": "毎日AI4コマとショートアニメを投稿しています。"
+        }
+      }
+    },
+    {
+      "bvid": "BV1m3n46GES6",
+      "uid": "15475629",
+      "title": "【科普向】《发布会？那种东西Mistral酱不需要哦！》",
+      "description": "原事件（2023-09-27）：Mistral AI 只发一条磁力链接推文就发布了首个模型 Mistral 7B，当天稍晚才补博客：73 亿参数、全面超过 Llama 2 13B、Apache 2.0 开源。\n\n来源：\nhttps://techcrunch.com/2023/09/27/mistral-ai-makes-its-first-large-language-model-free-for-everyone/\nhttps://mistral.ai/news/announcing-mistral-7b\nhttps://x.com/MistralAI/status/1706877320844509405\nhttps://news.ycombinator.com/item?id=37675496\n\n【Credit】\n音乐：Japan Logo Long\n9JackJack8 · Pixabay\n图像生成：GPT Image 2.5 (Sunburst)\nAI-Chan illustrations — ZipZipPipe · CC BY-NC-SA 4.0.\nDeepseek-Chan original character — 上善无形.\n角色出处：蓝色大肥鱼.com",
+      "url": "https://www.bilibili.com/video/BV1m3n46GES6/",
+      "cover": "https://i1.hdslb.com/bfs/archive/a06342ead9f5091d89dcfa65cc66268000fd184e.jpg",
+      "duration": 30,
+      "publishedAt": "2026-10-23T04:36:15.000Z",
+      "characterIds": [
+        "mistral",
+        "llama"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Daily AI four-panel comics and short animations.",
+          "description": "A short animated comic about Mistral AI releasing Mistral 7B in September 2023 with nothing but a magnet-link tweet, and how the 7.3-billion-parameter model edged past Llama 2 13B shortly after launch day. AI character personifications act out the story in chibi panels.",
+          "title": "Pop Science: A Launch Event? Mistral Chan Doesn't Need One!"
+        },
+        "ja": {
+          "creatorIntro": "AIの四コマ漫画やショートアニメを毎日投稿しています。",
+          "description": "2023年9月、Mistral AIがマグネットリンクのツイート一本だけでMistral 7Bを公開した出来事を、AI娘たちのちびキャラ漫画で描いたショートアニメ。73億パラメータのモデルがLlama 2 13Bを上回った点を紹介します。",
+          "title": "【解説向け】発表会？そんなものMistralちゃんには必要ないよ！"
         }
       }
     },

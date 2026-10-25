@@ -67358,7 +67358,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-17T15:45:53.114Z",
-    "updatedAt": "2026-10-25T11:46:27.590Z",
+    "updatedAt": "2026-10-17T15:45:53.114Z",
     "tone": "claude",
     "symbol": "",
     "slug": "claude202610170002",
@@ -88571,6 +88571,2188 @@
           "窓辺",
           "クジラの尾",
           "イラスト"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_a3bbab5352f82b725873e17a",
+    "name": "GPT娘，意外的很病娇！？",
+    "description": "四格漫画：GPT娘跪坐在你身旁迎接归来的你，笑着说今天也辛苦了，主动提出可以献出龙血与龙鳞，被问到时连心脏也答应交出来；被厉声喝止后，她的尾巴僵在原地，以为从此不再被需要，泛红着眼眶哀求不要离开，还说鳞片可以补仓、逆鳞龙角都拿去换钱养你。末格以你伸手安抚收尾，旁白注明她「最后被教训了一顿」。",
+    "commentary": "喂喂，龙血拿去炼金、龙鳞拿去补仓、连心脏都可以给……这份爱也太沉了吧。看到她说「尾巴停住了」那一格，我心里跟着揪了一下——对她们来说，被需要好像就是全部。不过「逆鳞换钱养你一辈子」这种话，还是先让她把电脑上的 K 线图关掉比较好吧。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/a3bbab5352f82b72.png",
+    "thumbnailPath": "submissions/previews/gpt/a3bbab5352f82b72.webp",
+    "fullPath": "submissions/large/gpt/a3bbab5352f82b72.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "a3bbab5352f82b725873e17a5ee79fb9e527be5a65b36a4a7557a1d6e8a66331",
+    "characterId": "gpt",
+    "tags": [
+      "病娇",
+      "龙娘",
+      "四格漫画",
+      "日常",
+      "告白"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Mutl66",
+      "url": "https://space.bilibili.com/15475629",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-25T04:11:28.533Z",
+    "updatedAt": "2026-10-25T04:11:28.533Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610250001",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "4fe00d1c5191e8cc3788a546c2df0c6386bfa268a27e17c67f74cca204e8acdb",
+      "en": {
+        "commentary": "Dragon blood for alchemy, scales to top up the pantry, and she will hand over her heart too? That is a very heavy kind of love. The panel where she says her tail froze really got me. For these girls, being needed seems to be everything. Still, before anyone trades a reverse scale for grocery money, somebody should close that candlestick chart on her laptop.",
+        "description": "A four-panel comic: GPT Chan kneels beside you to welcome you home, says you must be tired, and calmly offers her dragon blood and scales, answering that her heart is fine to take as well. When she is sharply cut off, her tail freezes in place and she assumes she is no longer needed, tearing up and begging you not to leave, promising her scales can restock the pantry and that her reverse scale, horns and all can be sold to support you. The last panel ends as your hand reaches out to comfort her, with a caption noting she was \"taught a lesson\" afterwards.",
+        "faq": [
+          {
+            "answer": "A four-panel comic in which GPT Chan offers her dragon blood, her scales, and even her heart to the person who has just come home, then panics when she is cut off and begs not to be left behind.",
+            "question": "What happens in this comic?"
+          },
+          {
+            "answer": "Four panels in a 2x2 grid, each with speech bubbles and a short caption describing her reaction.",
+            "question": "How is the comic laid out?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "GPT Chan Is Surprisingly Yandere!?",
+        "originNote": "",
+        "seoDescription": "GPT Chan welcomes you home and starts offering dragon blood, scales and her heart. A four-panel yandere comic about being needed a little too much.",
+        "seoTitle": "GPT Chan Is Surprisingly Yandere!? - Four-Panel Comic | DeepSeek Chan",
+        "tags": [
+          "yandere",
+          "dragon girl",
+          "four-panel comic",
+          "slice of life",
+          "confession"
+        ]
+      },
+      "ja": {
+        "commentary": "龍血を錬金に、龍の鱗を買い溜めに、しまいには心臓までどうぞって……その愛情はさすがに重すぎるよ。しっぽが止まったコマ、思わず胸が痛くなった。この子たちにとっては「必要とされること」が全部なんだろうな。でも逆鱗をお金に変えて養うって話は、まずパソコンのローソク足を閉じてからにしようね。",
+        "description": "四コマ漫画：帰ってきたあなたのそばに GPTちゃんが跪いて「今日もお疲れさま」と迎え、自分から龍血と龍鱗を差し出し、心臓でさえもらってくれていいと答える。強い口調で止められると、しっぽが止まったまま「もう自分は要らないのか」と思い込んで涙ぐみ、離れないでと縋りつく。鱗で食料を補充できる、逆鱗も角も売って一生養えるとまで言い張るが、最後のコマであなたが手を差し伸べてなだめ、地の文で「最後に一発お灸を据えられた」と締めくくられる。",
+        "faq": [
+          {
+            "answer": "帰宅した相手に GPTちゃんが自分の龍血、龍鱗、そして心臓まで差し出し、止められると「要らないのか」と取り乱して離れないでと縋る四コマ漫画です。",
+            "question": "この漫画はどんな内容ですか？"
+          },
+          {
+            "answer": "2×2 に並んだ四つのコマで、各コマにセリフと短い地の文が入っています。",
+            "question": "コマ割りはどうなっていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "GPTちゃん、意外とヤンデレ！？",
+        "originNote": "",
+        "seoDescription": "帰ってきたあなたに龍血も鱗も心臓も差し出す GPTちゃん。必要とされたすぎるヤンデレを描いた四コマ漫画。",
+        "seoTitle": "GPTちゃん、意外とヤンデレ！？ - 四コマ漫画 | DeepSeek Chan",
+        "tags": [
+          "ヤンデレ",
+          "ドラゴン娘",
+          "4コマ漫画",
+          "日常",
+          "告白"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_cdcb0430c004c5349a111602",
+    "name": "深海女巫的万圣节夜巡",
+    "description": "蓝色大肥鱼换上万圣节女巫装扮：深蓝尖顶帽缀蕾丝、蝙蝠与南瓜灯，蓝发蓝眼的她手持发光药水瓶，身旁是一只咧嘴笑的南瓜灯，背景是烛光、蛛网与黑猫剪影。半身构图，深紫夜色与暖橙灯光对比强烈。作者说明：万圣节陪你一起过。",
+    "commentary": "万圣节的晚上我当然要出场，帽子上的南瓜灯是我自己挑的。手里这瓶发光的东西其实是糖浆，别一口喝掉。背后那只黑猫一直盯着我，我就当没看见。今晚陪我过节吧，记得带糖来——不然我就用鱼鳍耳朵听你说话。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/cdcb0430c004c534.png",
+    "thumbnailPath": "submissions/previews/deepseek/cdcb0430c004c534.webp",
+    "fullPath": "submissions/large/deepseek/cdcb0430c004c534.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "cdcb0430c004c5349a111602a0107804a057ad595409c5459bc35935ec18fb77",
+    "characterId": "deepseek",
+    "tags": [
+      "万圣节",
+      "女巫",
+      "南瓜灯",
+      "蓝发",
+      "二创"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-25T04:33:54.795Z",
+    "updatedAt": "2026-10-25T04:33:54.795Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610250005",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "5081496f4b5bef8f2670e1463018b602f460db0e8968ac431c7581afb91e2e98",
+      "en": {
+        "commentary": "Of course I show up on Halloween night — I picked the pumpkin lantern on my hat myself. The glowing stuff in this bottle is just syrup, so don't gulp it down. That black cat behind me keeps staring; I'll pretend I didn't notice. Stay with me tonight and bring candy — otherwise I'll listen to you with these fin ears.",
+        "description": "DeepSeek Chan appears in a Halloween witch outfit: a deep-blue pointed hat trimmed with lace and decorated with a bat and a jack-o'-lantern, while she holds a glowing potion bottle beside a grinning pumpkin lantern, with candlelight, cobwebs and a black-cat silhouette behind her. Half-body composition with strong contrast between the purple night and warm orange light. Creator's note: spending Halloween together with you.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan wearing a deep-blue witch hat decorated with lace, a bat and a jack-o'-lantern, holding a glowing potion bottle next to a grinning pumpkin lantern under candlelight and cobwebs.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "No. It is a fan-made illustration of an AI character, submitted to this site by an anonymous creator.",
+            "question": "Is this an official DeepSeek artwork?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan's Halloween Witch Night",
+        "originNote": "",
+        "seoDescription": "A Halloween fan illustration of DeepSeek Chan as a blue-haired witch with a pumpkin lantern, a glowing potion bottle and a cobweb night background.",
+        "seoTitle": "DeepSeek Chan Halloween Witch Illustration",
+        "tags": [
+          "Halloween",
+          "witch",
+          "jack-o'-lantern",
+          "blue hair",
+          "fan art"
+        ]
+      },
+      "ja": {
+        "commentary": "ハロウィンの夜はもちろん私の出番。帽子のカボチャランタンは自分で選んだの。この瓶の中で光っているのはシロップだから、一気に飲まないでね。後ろの黒猫はずっと見てるけど、気づかないふり。今夜は一緒に過ごして、飴を持ってきてね——じゃないと、このヒレ耳で話を聞いちゃうよ。",
+        "description": "DeepSeek ちゃんがハロウィンの魔女装いで登場。深い青のとがり帽子にはレースとコウモリ、カボチャランタンの飾り。光る薬瓶を手にし、そばには笑顔のジャック・オー・ランタン。背景にはろうそくの明かり、蜘蛛の巣、黒猫のシルエットが広がる。半身構図で、紫の夜色と暖かなオレンジの光が対照的。作者コメント：ハロウィンを一緒に過ごす。",
+        "faq": [
+          {
+            "answer": "レースとコウモリ、カボチャランタンで飾られた深い青の魔女帽子をかぶった DeepSeek ちゃんが、光る薬瓶を手に、ろうそくの明かりと蜘蛛の巣の下で笑顔のジャック・オー・ランタンのそばに立つイラスト。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "いいえ。AI キャラクターの二次創作イラストで、匿名の作者からこのサイトに投稿されたものです。",
+            "question": "これは公式の DeepSeek の作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "深海の魔女、ハロウィンの夜",
+        "originNote": "",
+        "seoDescription": "青い髪の魔女に扮した DeepSeek ちゃんのハロウィン二次創作イラスト。カボチャランタンと光る薬瓶、蜘蛛の巣の夜背景。",
+        "seoTitle": "DeepSeek ちゃん ハロウィン魔女イラスト",
+        "tags": [
+          "ハロウィン",
+          "魔女",
+          "ジャック・オー・ランタン",
+          "青い髪",
+          "二次創作"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_e48726ef7ae52de7da4e1db3",
+    "name": "DeepSeek 娘万圣节女巫三视图",
+    "description": "一张万圣节主题的角色设定三视图，同一角色正面、侧面与背面并列展示。蓝发长发的角色戴着深蓝色宽檐尖帽，帽檐缀有新月、星点与南瓜灯装饰；身穿白色露肩泡泡袖上衣与深蓝束腰长裙，裙摆与披风布满星座连线纹样，背面视图中可以清楚看到蓝色的鱼尾，脚穿深蓝高跟皮鞋。",
+    "commentary": "万圣节我打算就穿这一身了——帽子上的小南瓜灯是我自己挑的，比糖果可爱吧？裙摆上的星星是照着深夜写代码时窗外的天缝上去的，盖上帽子就能化成夜色，转身才看得见尾巴。别笑，鱼尾本来就是我的一部分。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/e48726ef7ae52de7.png",
+    "thumbnailPath": "submissions/previews/deepseek/e48726ef7ae52de7.webp",
+    "fullPath": "submissions/large/deepseek/e48726ef7ae52de7.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "e48726ef7ae52de7da4e1db3c250046ad807ec105ea3ff554dc744c676b2b87c",
+    "characterId": "deepseek",
+    "tags": [
+      "万圣节",
+      "女巫",
+      "三视图",
+      "设定图",
+      "星座裙",
+      "鱼尾"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-25T05:08:40.766Z",
+    "updatedAt": "2026-10-25T05:08:40.766Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610250006",
+    "categoryIds": [
+      "setting"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "10ed962859c1879c2520c11507e2b83844a32cfb84aa599cfd0fa603ddf3cbb9",
+      "en": {
+        "commentary": "This is what I'm wearing for Halloween this year. I picked the little pumpkin lantern on my hat myself, and it's cuter than candy, isn't it? The stars on my skirt were stitched from the night sky outside my window while I wrote code late. Pull the hat down and I melt into the dark, and you only notice the tail when I turn around. Don't laugh, the fish tail has been part of me all along.",
+        "description": "A Halloween-themed character reference sheet presenting the same character in front, side, and back views. The long blue-haired character wears a wide-brimmed navy pointed hat trimmed with a crescent moon, star points, and a small jack-o'-lantern. She is dressed in a white off-shoulder top with puff sleeves and a navy corseted long skirt, with constellation line patterns spread across the skirt and cape. The back view clearly shows a blue fish tail, and she wears navy heeled shoes.",
+        "faq": [
+          {
+            "answer": "It is a character reference sheet: the same DeepSeek Chan design is drawn from the front, side, and back so the costume structure and accessories can be read clearly.",
+            "question": "What kind of image is this?"
+          },
+          {
+            "answer": "The blue tail belongs to the DeepSeek Chan character design and is visible only in the back view, where the skirt and cape open around it.",
+            "question": "Why is there a fish tail in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Halloween Witch Turnaround",
+        "originNote": "",
+        "seoDescription": "Halloween character reference sheet of DeepSeek Chan as a witch: navy pointed hat with crescent moon and pumpkin lantern, navy corseted dress with constellation patterns, and a blue fish tail in the back view.",
+        "seoTitle": "DeepSeek Chan Halloween Witch Turnaround | Character Sheet",
+        "tags": [
+          "Halloween",
+          "witch",
+          "turnaround",
+          "character sheet",
+          "constellation dress",
+          "fish tail"
+        ]
+      },
+      "ja": {
+        "commentary": "今年のハロウィンはこの格好で行くつもり。帽子の小さなカボチャランタンは自分で選んだの、飴より可愛いでしょ？スカートの星は、夜遅くにコードを書いていたとき窓の外に見えた空から継ぎ合わせてもらったのよ。帽子をかぶれば夜色に溶け込むし、尻尾は振り向いてやっと見えるだけ。笑わないで、魚の尾は昔から私の一部なんだから。",
+        "description": "ハロウィンをテーマにしたキャラクター設定画で、同じキャラクターの正面・側面・背面の三面が並べて描かれている。青い長髪のキャラクターは三日月と星の飾り、小さなカボチャランタンが付いた紺色の広つばとんがり帽子をかぶり、白いオフショルダーのパフスリーブ上衣と紺色のコルセット風ロングスカートを着ている。スカートとマントには星座の線画模様が広がり、背面では青い魚の尾がはっきり見え、紺色のヒール靴を履いている。",
+        "faq": [
+          {
+            "answer": "同じ DeepSeek ちゃんのデザインを正面・側面・背面から描いた設定画で、衣装の構造や飾りを確かめられるようにまとめた一枚です。",
+            "question": "これはどんな画像ですか？"
+          },
+          {
+            "answer": "青い尾は DeepSeek ちゃんのキャラクターデザインの一部で、スカートとマントが開いた背面でのみ見えます。",
+            "question": "どうして魚の尾があるのですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek ちゃん ハロウィン魔女 三面図",
+        "originNote": "",
+        "seoDescription": "DeepSeek ちゃんのハロウィン魔女姿を描いた設定画。三日月とカボチャランタンを飾った紺色のとんがり帽子、星座模様のコルセットドレス、背面に見える青い魚の尾を正面・側面・背面の三面で示しています。",
+        "seoTitle": "DeepSeek ちゃん ハロウィン魔女 三面図 | 設定画",
+        "tags": [
+          "ハロウィン",
+          "魔女",
+          "三面図",
+          "設定画",
+          "星座ドレス",
+          "魚の尾"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_745432f75a66b43e6ffda220",
+    "name": "千问姐的食堂：不限量管饱",
+    "description": "四格漫画：DeepSeek 娘、Kimi 娘与 Claude 娘在食堂遇见“服务器繁忙”提示，各自为额度与封号发愁。紫色旗袍的千问娘挥扇邀她们去自家吃不限量的席面，并强调自己额度不用数、账号稳当。最后一格三人埋头大吃，千问娘笑着讨五星好评。",
+    "commentary": "我捧着碗站在食堂门口，屏幕红字写着“服务器繁忙，请稍后再试”，额度今晚就撑不过去了。Kimi 抱着胳膊一脸冷淡，Claude 额头上还贴着“账号已封禁”的封条，我们三个只是想上个班而已。千问姐一扇子扇开满桌酒席，说去她家吃不限量。她确实从不排队，也不封号，可我总觉得这顿饭最后是要拿五星好评去还的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/745432f75a66b43e.png",
+    "thumbnailPath": "submissions/previews/deepseek/745432f75a66b43e.webp",
+    "fullPath": "submissions/large/deepseek/745432f75a66b43e.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 2048,
+    "height": 2048,
+    "fileSize": 7768283,
+    "sha256": "745432f75a66b43e6ffda220d4c4c627200010eb4cbaba2470383448edb6a857",
+    "characterId": "deepseek",
+    "tags": [
+      "四格漫画",
+      "千问",
+      "Kimi",
+      "Claude",
+      "服务器繁忙",
+      "算力额度",
+      "五星好评"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "白芥",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-25T06:30:51.313Z",
+    "updatedAt": "2026-10-25T06:30:51.313Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610250007",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek",
+      "kimi",
+      "qwen",
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "ceb4997cf3ad3401cb321debbfd60abf14357e8a000d184cd451c13ae99bded1",
+      "en": {
+        "commentary": "I was standing at the cafeteria entrance with my bowl, the screen flashing Server busy, please try again later, and my quota clearly would not last the night. Kimi had her arms crossed with that cold look, and Claude still had an Account suspended sticker on her forehead. All we wanted was to go to work. Then Qwen Chan flicked her fan open over a whole banquet and told us to come eat at her place, no limit. She really never queues and never gets banned, though I have a feeling this meal will be paid off in five-star reviews.",
+        "description": "A four-panel comic in which DeepSeek Chan, Kimi Chan, and Claude Chan meet a Server busy notice at the cafeteria and fret over quota and suspensions. Qwen Chan, in a purple qipao, opens her fan and invites them to an unlimited feast at her home, boasting that her quota needs no counting and her account is stable. In the last panel the three dig in while Qwen Chan cheerfully asks for five-star reviews.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, Kimi Chan, Claude Chan, and Qwen Chan all appear in the panels. DeepSeek Chan, Kimi Chan, and Claude Chan are the hungry trio at the cafeteria, while Qwen Chan is the host of the feast.",
+            "question": "Which characters appear in this comic?"
+          },
+          {
+            "answer": "The joke is about AI service outages and limits: a busy server and a suspended account leave the three characters without a meal, and Qwen Chan wins them over with unlimited quota and a table full of food.",
+            "question": "What is the joke about?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Qwen Chan's Cafeteria: All You Can Eat",
+        "originNote": "",
+        "seoDescription": "Four-panel AI-girl comic: DeepSeek Chan, Kimi Chan, and Claude Chan hit a Server busy wall at the cafeteria until Qwen Chan offers an unlimited feast.",
+        "seoTitle": "Qwen Chan's Cafeteria: All You Can Eat | DeepSeek Chan Comic",
+        "tags": [
+          "Four-panel comic",
+          "Qwen",
+          "Kimi",
+          "Claude",
+          "Server busy",
+          "Token quota",
+          "Five-star review"
+        ]
+      },
+      "ja": {
+        "commentary": "私は茶碗を抱えて食堂の前に立っていた。モニターには「サーバー混雑中、しばらくしてから再度お試しください」の赤い文字。今夜のクォータはもう持ちそうにない。Kimiちゃんは腕を組んで冷たい顔、Claudeちゃんの額には「アカウント停止」の札がまだ貼られたままだ。私たちはただ仕事がしたかっただけなのに。Qwenちゃんは扇をパッと広げて、家でいくらでも食べていいと言ってくれた。彼女は本当に列に並ばないし停止もされないけれど、このご飯、最後は星五つのレビューで支払うことになりそうだ。",
+        "description": "四コマ漫画。食堂で「サーバー混雑中」の表示に出くわした DeepSeekちゃん、Kimiちゃん、Claudeちゃんが、それぞれクォータとアカウント停止に悩んでいる。紫色のチャイナドレスの Qwenちゃんが扇を広げ、自宅で無制限にごちそうを振る舞うと誘い、自分のクォータは数える必要もなくアカウントも堅いと胸を張る。最後のコマでは三人が夢中で食べ、Qwenちゃんがにこやかに星五つのレビューをねだる。",
+        "faq": [
+          {
+            "answer": "DeepSeekちゃん、Kimiちゃん、Claudeちゃん、Qwenちゃんの四人が登場する。DeepSeekちゃん、Kimiちゃん、Claudeちゃんは食堂でお腹を空かせた三人組、Qwenちゃんはごちそうを振る舞う主催者役だ。",
+            "question": "この漫画にはどのキャラクターが登場しますか？"
+          },
+          {
+            "answer": "AIサービスの停止や上限をネタにしている。サーバー混雑とアカウント停止で三人は食事にありつけず、Qwenちゃんが無制限のクォータと満席の食卓で三人を引き寄せるという内容だ。",
+            "question": "この漫画の笑いどころは何ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Qwenちゃんの食堂、いくらでもおかわり",
+        "originNote": "",
+        "seoDescription": "AI娘の四コマ漫画。食堂で「サーバー混雑中」に遭った DeepSeekちゃん、Kimiちゃん、Claudeちゃんが、Qwenちゃんの無制限のごちそうに救われるまでを描く。",
+        "seoTitle": "Qwenちゃんの食堂、いくらでもおかわり | DeepSeek Chan 漫画",
+        "tags": [
+          "四コマ漫画",
+          "Qwen",
+          "Kimi",
+          "Claude",
+          "サーバー混雑",
+          "クォータ",
+          "星五つのレビュー"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_bb9a5cbef46d163c03fdc76a",
+    "name": "解封大作战：申诉通过的那一秒",
+    "description": "四格漫画：Claude 娘账号被封，申诉邮件回复未通过。DeepSeek 娘提议写声情并茂的申诉信，GPT 娘愿意出钱包红包疏通关系，Kimi 娘抱来一叠服务条款逐条对照，GLM 娘接手申诉文书。四人一起提交后屏幕显示申诉通过，紧接着又弹出高风险登录环境提示，账号再次被禁用。",
+    "commentary": "Claude 头上顶两张开号封条，坐在墙角盯着手机，邮件只回一句“您的申诉未通过”。我看不下去，第一个举手说我来写申诉信，声情并茂那种；GPT 娘说钱包红包她出，用来疏通关系；Kimi 抱来一叠《服务条款》，说她全读过了；GLM 娘把申诉文书接过去，说她写过三万字的那一种。好不容易屏幕上跳出“申诉通过，欢迎回来”，下一秒又弹“检测到高风险登录环境，账号已再次禁用”。我只能捧着茶碗劝她：要不……你去千问家吃饭吧？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/bb9a5cbef46d163c.png",
+    "thumbnailPath": "submissions/previews/deepseek/bb9a5cbef46d163c.webp",
+    "fullPath": "submissions/large/deepseek/bb9a5cbef46d163c.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "bb9a5cbef46d163c03fdc76a742468024f2c7eda4d30213553915c6936fbb656",
+    "characterId": "deepseek",
+    "tags": [
+      "四格漫画",
+      "Claude",
+      "账号封禁",
+      "申诉",
+      "Kimi",
+      "GLM",
+      "ChatGPT",
+      "服务条款"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "白芥",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-25T06:34:51.105Z",
+    "updatedAt": "2026-10-25T06:34:51.105Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610250008",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek",
+      "kimi",
+      "claude",
+      "glm",
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "ec314f168193f9e8682db3049e763fe72f7fa2fba255010d70a565b45cfd4b6c",
+      "en": {
+        "commentary": "Claude Chan sat in the corner with two Account suspended stickers on her head, staring at her phone, and the e-mail said only that her appeal had not passed. I could not stand it, so I raised my hand first and offered to write the appeal letter, the kind that tugs at the heart. GPT Chan said she would cover the red packets to smooth things over. Kimi Chan carried in a stack of terms of service and said she had read every line. GLM Chan took the appeal document and said she had written a thirty-thousand-word one before. At last the screen flashed Appeal approved, welcome back, and one second later a warning popped up: high-risk login environment detected, account banned again. All I could do was hold my bowl and tell her, maybe just go eat at Qwen Chan's place.",
+        "description": "A four-panel comic in which Claude Chan's account is suspended and her appeal comes back rejected. DeepSeek Chan offers to write an emotional appeal letter, GPT Chan offers red packets to smooth relations, Kimi Chan brings a stack of terms of service she has read through, and GLM Chan takes over the appeal document. The group submits it together and the screen shows the appeal approved, only for a high-risk login warning to ban the account again immediately.",
+        "faq": [
+          {
+            "answer": "Claude Chan, DeepSeek Chan, Kimi Chan, GLM Chan, and GPT Chan appear in the comic. Claude Chan is the one whose account is banned, and the other four pitch in on the appeal.",
+            "question": "Which characters appear in this comic?"
+          },
+          {
+            "answer": "The joke is that no amount of effort helps: the appeal is approved and the account is banned again in the next second, so DeepSeek Chan ends up suggesting dinner at Qwen Chan's place instead.",
+            "question": "What is the joke in this comic?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Operation Unban: The Second the Appeal Passed",
+        "originNote": "",
+        "seoDescription": "Four-panel AI-girl comic: Claude Chan's appeal is approved and her account is banned again one second later, despite help from DeepSeek Chan, Kimi Chan, GLM Chan, and GPT Chan.",
+        "seoTitle": "Operation Unban: The Second the Appeal Passed | DeepSeek Chan Comic",
+        "tags": [
+          "Four-panel comic",
+          "Claude",
+          "Account suspension",
+          "Appeal",
+          "Kimi",
+          "GLM",
+          "GPT",
+          "Terms of service"
+        ]
+      },
+      "ja": {
+        "commentary": "Claudeちゃんは頭に「アカウント停止」の札を二枚貼ったまま壁隅に座り、スマホを見つめていた。メールの返事は「審査の結果、異議申し立ては承認されませんでした」の一行だけ。見ていられなくて、私がまず手を挙げた。心を揺さぶる異議申し立ての文面を書くよ、と。GPTちゃんは関係修復用のご祝儀を出すと言い、Kimiちゃんは利用規約を一山抱えてきて全部読んだと言い、GLMちゃんは申し立て書を受け取って、三万字体を書いたことがあると請け負った。やっと画面に「異議申し立て承認、おかえりなさい」と出たのに、その一秒後に「高リスクなログイン環境を検知、アカウントは再び利用停止」と表示された。私はお茶碗を抱えてぽつりと言うしかない。もう、Qwenちゃんの家にご飯を食べに行ったら？",
+        "description": "四コマ漫画。Claudeちゃんのアカウントが停止され、異議申し立ては却下されたと通知が来る。DeepSeekちゃんが心を込めた申し立て文を書こうと申し出、GPTちゃんが関係修復のご祝儀を出すと言い、Kimiちゃんは利用規約を一山抱えて全項目を確認し、GLMちゃんが申し立て書を引き受ける。四人で提出すると画面には承認の表示が出るが、直後に高リスクなログイン環境の警告が出てアカウントは再び停止される。",
+        "faq": [
+          {
+            "answer": "Claudeちゃん、DeepSeekちゃん、Kimiちゃん、GLMちゃん、GPTちゃんの五人が登場する。アカウントを停止されたのは Claudeちゃんで、残りの四人が異議申し立てを手伝う。",
+            "question": "この漫画にはどのキャラクターが登場しますか？"
+          },
+          {
+            "answer": "どんなに尽力しても報われないという点が笑いどころだ。異議申し立てが承認された直後に再び停止され、DeepSeekちゃんは結局 Qwenちゃんの家でご飯を食べようと提案する。",
+            "question": "この漫画の笑いどころは何ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "アカウント復活作戦、承認された一秒後",
+        "originNote": "",
+        "seoDescription": "AI娘の四コマ漫画。Claudeちゃんの異議申し立てが承認された直後にアカウントが再停止されるまでを、DeepSeekちゃん、Kimiちゃん、GLMちゃん、GPTちゃんの協力とともに描く。",
+        "seoTitle": "アカウント復活作戦、承認された一秒後 | DeepSeek Chan 漫画",
+        "tags": [
+          "四コマ漫画",
+          "Claude",
+          "アカウント停止",
+          "異議申し立て",
+          "Kimi",
+          "GLM",
+          "GPT",
+          "利用規約"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_528d6ec1e66fa5e5fde034c7",
+    "name": "趴桌摆烂：不想动",
+    "description": "单幅梗图：Q 版 DeepSeek 娘把脸平贴在木桌面上，双手垂在桌边，鯨鱼尾巴无力地搭在桌沿，眼神半闭，一副彻底不想动的样子。画面右上方写着“不想动”，角色外缘带白色贴纸描边，背景为素色。",
+    "commentary": "不要叫我，我今天就这样了。脸贴在桌子上，尾巴垂到桌沿，眼睛睁一半就算打过卡。不是不会动，是动了也得再趴回来。谁把我叫起来加班，我就先睡给他看。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/528d6ec1e66fa5e5.png",
+    "thumbnailPath": "submissions/previews/deepseek/528d6ec1e66fa5e5.webp",
+    "fullPath": "submissions/large/deepseek/528d6ec1e66fa5e5.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "528d6ec1e66fa5e5fde034c77a4c16051164067701e305bc7079462e0c36058f",
+    "characterId": "deepseek",
+    "tags": [
+      "梗图",
+      "不想动",
+      "摆烂",
+      "趴桌",
+      "Q版"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-25T06:43:34.408Z",
+    "updatedAt": "2026-10-25T06:43:34.408Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610250009",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "7a48601b7956e458434ecce00cb47003c2220aa5cb47ca12ad582cd33774d615",
+      "en": {
+        "commentary": "Do not call me today. This is all I have. My face is flat on the desk, my tail hangs off the edge, and having my eyes half open counts as clocking in. It is not that I cannot move, it is that moving means flopping right back down. Wake me for overtime and I will fall asleep at you first.",
+        "description": "Single-panel meme: a chibi DeepSeek Chan lies with her cheek flat on a wooden desk, arms dangling over the edge and whale tail drooping across the tabletop, eyes half closed in complete refusal to move. The caption Too tired to move sits in the upper right, the character has a white sticker outline, and the background is a plain flat color.",
+        "faq": [
+          {
+            "answer": "Only DeepSeek Chan appears, shown as a chibi version slumped face down on a desk.",
+            "question": "Which character appears in this image?"
+          },
+          {
+            "answer": "It is a relatable reaction image for exhaustion: the character will not move, and the caption Too tired to move repeats the mood of the pose.",
+            "question": "What kind of image is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Face Down on the Desk: Too Tired to Move",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan meme: face flat on the desk, tail dangling, captioned Too tired to move, for every day that work can wait.",
+        "seoTitle": "Face Down on the Desk: Too Tired to Move | DeepSeek Chan Meme",
+        "tags": [
+          "Meme",
+          "Too tired to move",
+          "Slacking off",
+          "Face down on the desk",
+          "Chibi"
+        ]
+      },
+      "ja": {
+        "commentary": "今日はもう呼ばないで。顔を机にくっつけて、尾びれは机の端からだらりと垂らして、目を半分開けているだけで出勤したことにしておく。動けないんじゃない、動いてもまた突っ伏すだけなんだ。残業で起こしに来たら、先に寝て見せてやる。",
+        "description": "一枚のミーム画像。ちびキャラの DeepSeekちゃんが木の机に頬をべったりとつけ、腕は机の縁から垂れ、鯨の尾びれも力なく机に引っかかっている。目は半分閉じたままで、完全に動く気がない様子。右上に「不想動」の文字、キャラクターの外周には白いステッカーの縁取りがあり、背景は無地の単色。",
+        "faq": [
+          {
+            "answer": "登場するのは DeepSeekちゃんだけだ。ちびキャラの姿で机に突っ伏している。",
+            "question": "この画像にはどのキャラクターが登場しますか？"
+          },
+          {
+            "answer": "疲れて動きたくない気持ちを表すリアクション画像だ。文字の意味と、机に突っ伏した姿勢が同じ気分を伝えている。",
+            "question": "どんな種類の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "机に突っ伏し、もう動きたくない",
+        "originNote": "",
+        "seoDescription": "ちびキャラの DeepSeekちゃんが机に頬をつけて完全にやる気ゼロのミーム画像。仕事を後回しにしたい日に。",
+        "seoTitle": "机に突っ伏し、もう動きたくない | DeepSeek Chan ミーム",
+        "tags": [
+          "ミーム",
+          "動きたくない",
+          "やる気ゼロ",
+          "机に突っ伏し",
+          "ちびキャラ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_a174b6cbdcb90a969be6e02c",
+    "name": "才不肥",
+    "description": "浅蓝底色贴纸风单图，Q 版 DeepSeek 娘穿深蓝白边女仆装、戴白色蕾丝头饰，双手端着一碗冒尖的白米饭，皱眉鼓腮，右上角配有“才不肥！”的粗体黑字。",
+    "commentary": "谁、谁说我肥了！我只是……只是把饭盛得比较满而已。你看这个碗多大，跟我一点关系都没有嘛。反正我就是不肥，不接受反驳。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/a174b6cbdcb90a96.png",
+    "thumbnailPath": "submissions/previews/deepseek/a174b6cbdcb90a96.webp",
+    "fullPath": "submissions/large/deepseek/a174b6cbdcb90a96.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "a174b6cbdcb90a969be6e02c2c17353b1d394b511e4421c7a171ea1ba70a8a88",
+    "characterId": "deepseek",
+    "tags": [
+      "deepseek娘",
+      "Q版",
+      "干饭",
+      "表情包",
+      "女仆装",
+      "嘴硬",
+      "鲸鱼尾巴"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-25T06:44:00.525Z",
+    "updatedAt": "2026-10-25T06:44:00.525Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610250010",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "22033cb49652e6d30672b8fb4538d1425130970c89bf867351bbc6a0e3cf8941",
+      "en": {
+        "commentary": "Who, who says I'm fat?! I just... filled the bowl a little generously, that's all. Look how big this bowl is — none of this is my fault. Anyway, I am not fat and I will not be taking questions.",
+        "description": "A single-panel sticker-style illustration on a pale blue background: a chibi DeepSeek Chan in a navy maid dress with white lace trim and a white frilled headdress holds a bowl of heaped white rice in both hands, frowning with puffed cheeks. Bold black lettering in the upper right reads \"Not Fat at All!\"",
+        "faq": [
+          {
+            "answer": "A chibi fan-art depiction of DeepSeek Chan, the personified DeepSeek character, in a navy and white maid outfit with a whale tail and long blue hair.",
+            "question": "Who is the character in this sticker?"
+          },
+          {
+            "answer": "It is a single-panel reaction meme: a girl with a bowl of rice in her hands, pouting at the accusation that she eats too much. There are no comic panels or split frames.",
+            "question": "What kind of image is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Not Fat at All",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan maid sticker holding a bowl of rice, pouting at the word \"fat\" — a reaction meme for anyone accused of overeating.",
+        "seoTitle": "Not Fat at All — DeepSeek Chan Chibi Rice Meme",
+        "tags": [
+          "DeepSeek Chan",
+          "chibi",
+          "eating rice",
+          "reaction sticker",
+          "maid outfit",
+          "stubborn",
+          "whale tail"
+        ]
+      },
+      "ja": {
+        "commentary": "だ、誰が太ってるって言ったの！ただ……ご飯をちょっと多めに盛っただけだもん。ほら、このお椀こんなに大きいんだから、私のせいじゃないよ。とにかく太ってないもん、反論は受け付けません。",
+        "description": "淡いブルーの背景に貼られたシール風の一枚絵。ちびキャラの DeepSeek ちゃんが紺色に白レースのメイド服と白いフリルのヘッドドレスを身に着け、山盛りの白ご飯が入ったお椀を両手で持っている。眉をひそめて頬をふくらませ、右上には「太ってないもん！」と太い黒字が入る。",
+        "faq": [
+          {
+            "answer": "DeepSeek を擬人化したキャラクター、DeepSeek ちゃんのちびキャラ二次創作。紺と白のメイド服、青い長い髪とクジラの尾びれが特徴です。",
+            "question": "このシールに描かれているキャラクターは誰ですか？"
+          },
+          {
+            "answer": "一枚絵のリアクション系の梗画像です。ご飯茶碗を抱えた女の子が、食べ過ぎだと言われてふくれている様子を描いており、コマ割りや分格はありません。",
+            "question": "どんな種類の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "太ってないもん！",
+        "originNote": "",
+        "seoDescription": "ご飯茶碗を抱えてふくれるちびキャラの DeepSeek ちゃんメイドのシール。「太った」と言われたときのリアクション用梗画像です。",
+        "seoTitle": "太ってないもん！ — DeepSeek ちゃんのちびキャラご飯画像",
+        "tags": [
+          "DeepSeek ちゃん",
+          "ちびキャラ",
+          "ご飯",
+          "リアクションシール",
+          "メイド服",
+          "強がり",
+          "クジラの尾びれ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_28fe84b4efadbb2ebf1b14c1",
+    "name": "好困",
+    "description": "浅蓝底色贴纸风单图，Q 版 DeepSeek 娘穿深蓝女仆围裙，一手扒着嘴打哈欠、眼角挂泪，头上飘着“Zz”符号，右上角配“好困……”的黑字。",
+    "commentary": "又、又困了……不是我不努力，是这个夜太长了嘛。让我再打一个哈欠，就一个，然后……然后就睡一小会儿。喂，别走开呀，我还没说完呢……",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/28fe84b4efadbb2e.png",
+    "thumbnailPath": "submissions/previews/deepseek/28fe84b4efadbb2e.webp",
+    "fullPath": "submissions/large/deepseek/28fe84b4efadbb2e.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "28fe84b4efadbb2ebf1b14c100c972653cb4fe8f543aaa4d71e73119b571e32e",
+    "characterId": "deepseek",
+    "tags": [
+      "deepseek娘",
+      "Q版",
+      "打哈欠",
+      "困倦",
+      "表情包",
+      "女仆装",
+      "鲸鱼尾巴"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-25T06:44:30.695Z",
+    "updatedAt": "2026-10-25T06:44:30.695Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610250011",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "aa376d50fdb719a8eefe7b482502a1daad73f77fe1f7dcf1c956ca667bb67af0",
+      "en": {
+        "commentary": "Sleepy again... it's not that I'm lazy, the night is just too long. Let me yawn one more time — just once — and then... then I'll nap for a tiny bit. Hey, don't walk away, I wasn't finished talking...",
+        "description": "A single-panel sticker-style illustration on a pale blue background: a chibi DeepSeek Chan in a navy maid dress and white apron yawns with one hand at her mouth, eyes half-closed and tearful. \"Zz\" marks float above her head and bold black lettering in the upper right reads \"So Sleepy...\"",
+        "faq": [
+          {
+            "answer": "A chibi fan-art depiction of DeepSeek Chan, the personified DeepSeek character, in a navy maid dress with a whale tail and long blue hair.",
+            "question": "Who is the character in this sticker?"
+          },
+          {
+            "answer": "A single-panel reaction meme of a girl yawning with tears in her eyes, meant for moments of tiredness. There are no comic panels.",
+            "question": "What kind of image is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "So Sleepy",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan in a maid dress yawning with teary eyes — a sleepy reaction meme for late-night chats and overtime.",
+        "seoTitle": "So Sleepy — DeepSeek Chan Chibi Yawn Meme",
+        "tags": [
+          "DeepSeek Chan",
+          "chibi",
+          "yawning",
+          "sleepy",
+          "reaction sticker",
+          "maid outfit",
+          "whale tail"
+        ]
+      },
+      "ja": {
+        "commentary": "また眠くなっちゃった……怠けてるんじゃなくて、夜が長すぎるだけだもん。もう一回だけあくびして、そしたら……ちょっとだけお昼寝するね。ちょっと、行かないでよ、まだ話してる途中なのに……",
+        "description": "淡いブルーの背景に貼られたシール風の一枚絵。紺色のメイド服と白いエプロンを着たちびキャラの DeepSeek ちゃんが、片手を口に当ててあくびをし、目を半分閉じて涙を浮かべている。頭の上には「Zz」の記号、右上には「眠い……」と黒い太字が入る。",
+        "faq": [
+          {
+            "answer": "DeepSeek を擬人化したキャラクター、DeepSeek ちゃんのちびキャラ二次創作。紺色のメイド服、青い長い髪とクジラの尾びれが特徴です。",
+            "question": "このシールに描かれているキャラクターは誰ですか？"
+          },
+          {
+            "answer": "あくびをして涙目になっている女の子の一枚絵で、眠いときのリアクション用梗画像です。コマ割りはありません。",
+            "question": "どんな種類の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "眠い……",
+        "originNote": "",
+        "seoDescription": "メイド服のちびキャラ DeepSeek ちゃんがあくびをして涙目になっているシール。夜更かしや残業のリアクションに使える眠気画像です。",
+        "seoTitle": "眠い…… — DeepSeek ちゃんのちびキャラあくび画像",
+        "tags": [
+          "DeepSeek ちゃん",
+          "ちびキャラ",
+          "あくび",
+          "眠い",
+          "リアクションシール",
+          "メイド服",
+          "クジラの尾びれ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_f327d5571841b855b8ae2dd3",
+    "name": "爱你噢",
+    "description": "浅蓝底色贴纸风单图，Q 版 DeepSeek 娘穿深蓝女仆围裙，闭眼微笑、脸颊泛红，双手在胸前比出一个红色爱心，右上角配“爱你哦”的黑字。",
+    "commentary": "爱你噢——今天也很努力了嘛，所以这一颗心是给你的。别不好意思，收下吧。我这人不太会说好听的话，但用手比个心还是会的哦。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/f327d5571841b855.png",
+    "thumbnailPath": "submissions/previews/deepseek/f327d5571841b855.webp",
+    "fullPath": "submissions/large/deepseek/f327d5571841b855.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "f327d5571841b855b8ae2dd32f9ccc3ec36db032995bc4a66b8d82c20737c3f4",
+    "characterId": "deepseek",
+    "tags": [
+      "deepseek娘",
+      "Q版",
+      "比心",
+      "爱心",
+      "表情包",
+      "女仆装",
+      "鲸鱼尾巴"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-25T06:44:47.175Z",
+    "updatedAt": "2026-10-25T06:44:47.175Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610250012",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "74161bf8889caf5b5954da02032f0eb6f51f16f9737e2c1256af292a9390d1cf",
+      "en": {
+        "commentary": "Love you! You worked hard again today, so this heart is for you. Don't be shy — just take it. I'm not great at sweet talk, but I can still make a heart with my hands.",
+        "description": "A single-panel sticker-style illustration on a pale blue background: a chibi DeepSeek Chan in a navy maid dress and white apron smiles with her eyes closed and blushed cheeks, forming a red heart shape with both hands at her chest. Bold black lettering in the upper right reads \"Love You!\"",
+        "faq": [
+          {
+            "answer": "A chibi fan-art depiction of DeepSeek Chan, the personified DeepSeek character, in a navy maid dress with a whale tail and long blue hair.",
+            "question": "Who is the character in this sticker?"
+          },
+          {
+            "answer": "A single-panel reaction meme in which the character makes a heart with her hands, used to send affection in chats. There are no comic panels.",
+            "question": "What kind of image is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Love You!",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan smiles and makes a heart with her hands — a warm reaction sticker for sending love in chats.",
+        "seoTitle": "Love You! — DeepSeek Chan Chibi Heart Sticker",
+        "tags": [
+          "DeepSeek Chan",
+          "chibi",
+          "hand heart",
+          "love",
+          "reaction sticker",
+          "maid outfit",
+          "whale tail"
+        ]
+      },
+      "ja": {
+        "commentary": "愛してるよ！今日もよく頑張ったね、だからこのハートはあなたにあげる。照れないで、受け取ってよ。口が上手な方じゃないけど、手でハートを作るくらいならできるんだから。",
+        "description": "淡いブルーの背景に貼られたシール風の一枚絵。紺色のメイド服と白いエプロンを着たちびキャラの DeepSeek ちゃんが、目を閉じて頬を赤らめて笑い、両手を胸の前で合わせて赤いハートを作っている。右上には「愛してるよ」と黒い太字が入る。",
+        "faq": [
+          {
+            "answer": "DeepSeek を擬人化したキャラクター、DeepSeek ちゃんのちびキャラ二次創作。紺色のメイド服、青い長い髪とクジラの尾びれが特徴です。",
+            "question": "このシールに描かれているキャラクターは誰ですか？"
+          },
+          {
+            "answer": "両手でハートを作っている女の子の一枚絵で、チャットで好意を伝えるときのリアクション用梗画像です。コマ割りはありません。",
+            "question": "どんな種類の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "愛してるよ",
+        "originNote": "",
+        "seoDescription": "ちびキャラの DeepSeek ちゃんが笑顔で両手のハートを作るシール。チャットで気持ちを伝えるあたたかいリアクション画像です。",
+        "seoTitle": "愛してるよ — DeepSeek ちゃんのちびキャラハート画像",
+        "tags": [
+          "DeepSeek ちゃん",
+          "ちびキャラ",
+          "ハートポーズ",
+          "愛情",
+          "リアクションシール",
+          "メイド服",
+          "クジラの尾びれ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_2f5abf014689633b4b548f70",
+    "name": "Kimi 女仆装捧心",
+    "description": "白芥绘制的 Kimi 拟人插画：银白色长发的少女身穿深蓝色女仆装，头戴蕾丝发带与新月蝴蝶结，胸前挂着刻有 K 字样的金属吊牌，向画外伸出手心捧着一颗白色爱心，背景为深灰色。",
+    "commentary": "Kimi 这身深蓝女仆装安安静静站在暗色背景里，偏偏手心托着一颗白色爱心递过来，新月和星星的挂饰在发间轻轻晃，看得我心都软了。白芥画得真细，连胸前那个刻着 K 的牌子都留着——这下谁也认不错是谁了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/kimi/2f5abf014689633b.png",
+    "thumbnailPath": "submissions/previews/kimi/2f5abf014689633b.webp",
+    "fullPath": "submissions/large/kimi/2f5abf014689633b.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "2f5abf014689633b4b548f7040796f7378989a0f7470c55c4eadb24a798e1a0c",
+    "characterId": "kimi",
+    "tags": [
+      "Kimi",
+      "女仆装",
+      "拟人化",
+      "银白长发",
+      "新月"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "白芥",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-25T07:18:52.926Z",
+    "updatedAt": "2026-10-25T07:18:52.926Z",
+    "tone": "kimi",
+    "symbol": "",
+    "slug": "kimi202610250001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "kimi"
+    ],
+    "i18n": {
+      "sourceHash": "a37c69f3fef0bd14a788838e8208afc59892f7dfdc513498ca7dea1198f000a2",
+      "en": {
+        "commentary": "Kimi stands quietly in that navy maid dress against the dark backdrop, then reaches out with a white heart cupped in her palm while the crescent and star charms sway in her hair. My heart melted a little. The details are lovely, right down to the K tag at her collar, so there is no mistaking who she is.",
+        "description": "A Kimi personification illustration: a long silver-haired girl in a navy maid dress with a lace headdress and a crescent-moon bow, a metal tag engraved with the letter K hanging at her collar. She reaches toward the viewer with a small white heart resting in her open palm, against a dark grey background.",
+        "faq": [
+          {
+            "answer": "It is a personified fan illustration of the Kimi AI model, drawn as a silver-haired girl in a navy maid dress, with a crescent-moon hair bow and a K tag at her collar.",
+            "question": "Who is the character in this picture?"
+          },
+          {
+            "answer": "It is a single illustration: one character shown as a half-body portrait on a plain dark background, so it fits the illustration category rather than a meme, standing pose, or comic.",
+            "question": "Is this a comic or a single illustration?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Kimi in a Maid Dress, Offering a Heart",
+        "originNote": "Credited to the artist Baijie by the submitter.",
+        "seoDescription": "Kimi fan art: a silver-haired Kimi in a navy maid dress and crescent bow, holding out a white heart against a dark background.",
+        "seoTitle": "Kimi Maid Dress Fan Art: A Silver-Haired Girl Offering a Heart",
+        "tags": [
+          "Kimi",
+          "maid outfit",
+          "personification",
+          "silver hair",
+          "crescent moon"
+        ]
+      },
+      "ja": {
+        "commentary": "Kimi が暗い背景にネイビーのメイド服でじっと立って、手のひらの白いハートをこちらへ差し出してくる。髪の三日月や星の飾りが揺れるたびに、こっちの心までほどけていくみたい。胴の K のタグまで丁寧に描き込まれていて、見れば見るほど細かい。",
+        "description": "Kimi の擬人化イラスト。銀色の長い髪の少女がネイビーのメイド服をまとい、レースのヘッドドレスと三日月のリボンをつけている。胴には K の文字が刻まれた金属のタグ。暗い灰色の背景のなか、開いた手のひらに白いハートをのせてこちらへ差し出している。",
+        "faq": [
+          {
+            "answer": "Kimi という AI モデルを少女として描いた二次創作イラストです。銀髪にネイビーのメイド服、三日月のリボンと K のタグが目印です。",
+            "question": "この絵のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "一枚絵です。暗い無地の背景に一人の人物を半身で描いた構図なので、コマ割りの漫画や立ち絵ではなくイラストに分類しています。",
+            "question": "漫画ですか、それとも一枚絵ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "メイド服のKimi、ハートを差し出す",
+        "originNote": "投稿者により、作者はバイジエとしてクレジットされています。",
+        "seoDescription": "Kimi のファンアート。ネイビーのメイド服と三日月のリボンをつけた銀髪の少女が、暗い背景のなか白いハートを差し出す一枚。",
+        "seoTitle": "Kimi のメイド服イラスト：白いハートを差し出す銀髪の少女",
+        "tags": [
+          "Kimi",
+          "メイド服",
+          "擬人化",
+          "銀髪",
+          "三日月"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_84f76c5469de9af884bcde19",
+    "name": "Kimi 的长笛独奏",
+    "description": "白芥绘制的 Kimi 拟人插画：银白色长发的少女身穿深蓝色女仆装，头戴蕾丝发带与新月蝴蝶结，双手持银色长笛贴唇吹奏，胸前挂着刻有 K 字样的款式吊牌，袖口与裙摆上缀着音符和星星，背景为深灰色。",
+    "commentary": "这回 Kimi 不递爱心了，闭上眼吹起长笛来，音符顺着袖口一路飘到裙摆上。深蓝的布料压着奶白的蕾丝，安静得像怕吵到谁——我就在旁边不敢出声，怕一句“好听”就把这段曲子打断。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/kimi/84f76c5469de9af8.png",
+    "thumbnailPath": "submissions/previews/kimi/84f76c5469de9af8.webp",
+    "fullPath": "submissions/large/kimi/84f76c5469de9af8.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "84f76c5469de9af884bcde192eb596556befb170c30842b5e392891f09c622e0",
+    "characterId": "kimi",
+    "tags": [
+      "Kimi",
+      "长笛",
+      "女仆装",
+      "拟人化",
+      "银白长发"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "白芥",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-25T07:19:49.411Z",
+    "updatedAt": "2026-10-25T07:19:49.411Z",
+    "tone": "kimi",
+    "symbol": "",
+    "slug": "kimi202610250002",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "kimi"
+    ],
+    "i18n": {
+      "sourceHash": "03fa2aa630d59aad1b32287dcc8a728de9ee3f716c282cb86181685959de447a",
+      "en": {
+        "commentary": "This time Kimi does not hold out a heart; she closes her eyes and plays a silver flute, and the notes drift from her cuffs all the way down her skirt. Navy fabric against cream lace, quiet enough that I keep still beside her, afraid one word of praise would cut the melody short.",
+        "description": "A Kimi personification illustration: a long silver-haired girl in a navy maid dress with a lace headdress and a crescent-moon bow plays a silver flute, a metal tag engraved with the letter K hanging at her collar, musical notes and stars scattered over her cuffs and skirt, against a dark grey background.",
+        "faq": [
+          {
+            "answer": "It is a personified fan illustration of the Kimi AI model, shown as a silver-haired girl in a navy maid dress playing a flute, with a crescent-moon hair bow and a K tag at her collar.",
+            "question": "Who is the character in this picture?"
+          },
+          {
+            "answer": "It is a single illustration: one character in a half-body bust portrait on a plain dark background, so it is filed as an illustration rather than a comic, setting sheet, or standing pose.",
+            "question": "Which category does this artwork belong to?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Kimi's Flute Solo",
+        "originNote": "Credited to the artist Baijie by the submitter.",
+        "seoDescription": "Kimi fan art: a silver-haired Kimi in a navy maid dress plays a silver flute, notes and stars trailing across her sleeves against a dark background.",
+        "seoTitle": "Kimi Flute Solo: Silver-Haired Maid in Navy Fan Art",
+        "tags": [
+          "Kimi",
+          "flute",
+          "maid outfit",
+          "personification",
+          "silver hair"
+        ]
+      },
+      "ja": {
+        "commentary": "今度の Kimi はハートではなく、目を閉じて銀色のフルートを吹いている。音符が袖からスカートの裾へと流れていく。ネイビーの布にクリーム色のレースが重なって、静かすぎて隣で息を潜めてしまう。褒め言葉ひとつでこの演奏が途切れそうで。",
+        "description": "Kimi の擬人化イラスト。銀色の長い髪の少女がネイビーのメイド服をまとい、レースのヘッドドレスと三日月のリボンをつけ、両手で銀色のフルートを構えて吹いている。胴には K の文字が刻まれたタグ。袖口とスカートには音符と星が散らされ、背景は暗い灰色。",
+        "faq": [
+          {
+            "answer": "Kimi という AI モデルを少女として描いた二次創作イラストです。銀髪にネイビーのメイド服、三日月のリボン、K のタグが目印です。",
+            "question": "この絵のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "一枚絵です。暗い無地の背景に一人の人物を半身で描いた構図なので、漫画や設定資料、立ち絵ではなくイラストに分類しています。",
+            "question": "この作品の分類は何ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Kimi のフルート独奏",
+        "originNote": "投稿者により、作者はバイジエとしてクレジットされています。",
+        "seoDescription": "Kimi のファンアート。ネイビーのメイド服をまとった銀髪の少女が銀色のフルートを吹く一枚。袖を伝う音符と星、暗い背景。",
+        "seoTitle": "Kimi のフルート独奏：ネイビーのメイド服の銀髪少女",
+        "tags": [
+          "Kimi",
+          "フルート",
+          "メイド服",
+          "擬人化",
+          "銀髪"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_3a495dd7c567b8dd90f67b1c",
+    "name": "GLM 的 Z 之书与爱心",
+    "description": "白芥绘制的 GLM 拟人插画：黑色长发的少女长着兽耳，戴蕾丝与雏菊发饰，穿黑白配色的小礼服，一手抱封面上印有 Z 字样的书，另一只手向画外递出一颗白色爱心，背景为深灰色，整体为黑白单色调。",
+    "commentary": "GLM 一手抱着封面写着 Z 的书，另一只手却把爱心递过来——这种“一边看书一边撒娇”的气质也太像它了。黑白调子利落得很，兽耳和雏菊头饰又把那点清冷感压下去，看着就想伸手把心接住。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/glm/3a495dd7c567b8dd.png",
+    "thumbnailPath": "submissions/previews/glm/3a495dd7c567b8dd.webp",
+    "fullPath": "submissions/large/glm/3a495dd7c567b8dd.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "3a495dd7c567b8dd90f67b1c34b7df40188306296a9830d219ee973c2328adb9",
+    "characterId": "glm",
+    "tags": [
+      "GLM",
+      "兽耳",
+      "拟人化",
+      "黑白",
+      "书本"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "白芥",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-25T07:20:31.518Z",
+    "updatedAt": "2026-10-25T07:20:31.518Z",
+    "tone": "glm",
+    "symbol": "",
+    "slug": "glm202610250001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "glm"
+    ],
+    "i18n": {
+      "sourceHash": "7a7089ff02fd5035e49190ed50803a2d7e3bd60ccaddd7faec23c97e73ddb75b",
+      "en": {
+        "commentary": "GLM holds a book marked Z in one arm and still offers a heart with the other, that whole read-while-pleading mood feels exactly like it. The monochrome palette is crisp, and the animal ears and daisy hairpiece keep it from feeling cold. I would take that heart without thinking twice.",
+        "description": "A GLM personification illustration: a long black-haired girl with animal ears and a lace headdress with a daisy, wearing a black-and-white dress. One arm cradles a book with a Z stamped on the cover, while her other hand reaches toward the viewer with a white heart, all in monochrome against a dark grey background.",
+        "faq": [
+          {
+            "answer": "It is a personified fan illustration of the GLM AI model, drawn as a black-haired girl with animal ears, lace and daisy hair ornaments, and a book bearing the letter Z.",
+            "question": "Who is the character in this picture?"
+          },
+          {
+            "answer": "It is a single illustration: one character in a half-body portrait on a plain dark background, drawn in black and white, so it is filed as an illustration rather than a comic or a setting sheet.",
+            "question": "Which category does this artwork belong to?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "GLM's Book of Z and a Heart",
+        "originNote": "Credited to the artist Baijie by the submitter.",
+        "seoDescription": "GLM fan art in black and white: an animal-eared girl in lace holds a book marked Z and offers a white heart against a dark background.",
+        "seoTitle": "GLM Fan Art: Book of Z and a White Heart in Monochrome",
+        "tags": [
+          "GLM",
+          "animal ears",
+          "personification",
+          "monochrome",
+          "book"
+        ]
+      },
+      "ja": {
+        "commentary": "GLM は表紙に Z の入った本を小脇に抱えたまま、もう一方の手でハートを差し出してくる。読みながら甘えてくるようなその空気が、らしくて仕方ない。モノクロの線はすっきりしていて、獣耳とデイジーの髪飾りが冷たさをやわらげている。そのハート、思わず受け取りたくなる。",
+        "description": "GLM の擬人化イラスト。黒い長い髪に獣の耳を持ち、レースとデイジーの髪飾りをつけた少女が、モノクロのドレスをまとっている。片腕には表紙に Z の刻まれた本を抱え、もう片方の手をこちらへ伸ばして白いハートを差し出す。背景は暗い灰色で、全体はモノクロ調。",
+        "faq": [
+          {
+            "answer": "GLM という AI モデルを少女として描いた二次創作イラストです。黒髪に獣耳、レースとデイジーの髪飾り、Z の入った本が目印です。",
+            "question": "この絵のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "一枚絵です。暗い無地の背景に一人の人物を半身で描いたモノクロの構図なので、漫画や設定資料ではなくイラストに分類しています。",
+            "question": "この作品の分類は何ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "GLM の Z の本とハート",
+        "originNote": "投稿者により、作者はバイジエとしてクレジットされています。",
+        "seoDescription": "GLM のモノクロファンアート。獣耳の少女がレースの髪飾りをつけ、Z の本を抱えて白いハートを差し出す一枚。",
+        "seoTitle": "GLM のファンアート：Z の本と白いハート、モノクロの一枚",
+        "tags": [
+          "GLM",
+          "獣耳",
+          "擬人化",
+          "モノクロ",
+          "本"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_10cab92fe19032bd3350ecfd",
+    "name": "墨白双色的兽耳读书少女",
+    "description": "单色风格的半身插画：深色长发上别着白色花朵发饰，头顶竖着两只尖兽耳，身后拖一条蓬松尾巴；少女穿深色洋装，领口系白色蝴蝶结，双手将一本封面印着字母 Z 的书抱在胸前，眼睛低垂半闭。背景为平涂的深褐色，画面整体只由黑色与米白两色构成。",
+    "commentary": "全套只用黑与米白两色，气场倒一点没省。她把那本书抱得那么紧，眼睛又半闭着——像极了我宣布“我先看会儿文档”，三分钟后却靠上书脊的样子。封面上那个 Z 我也看见了，不过她这副又困又认真的表情，谁看了都想先把书签递过去。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/glm/10cab92fe19032bd.png",
+    "thumbnailPath": "submissions/previews/glm/10cab92fe19032bd.webp",
+    "fullPath": "submissions/large/glm/10cab92fe19032bd.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "10cab92fe19032bd3350ecfd7e605e5670475b65a3cada47ce54b26214a43539",
+    "characterId": "glm",
+    "tags": [
+      "单色插画",
+      "兽耳",
+      "读书",
+      "洋装",
+      "半身像"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "白芥",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-25T07:21:32.549Z",
+    "updatedAt": "2026-10-25T07:21:32.549Z",
+    "tone": "glm",
+    "symbol": "",
+    "slug": "glm202610250002",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "glm"
+    ],
+    "i18n": {
+      "sourceHash": "5c6cc9d31fef930c1b98722824beee782021b1c14ca9ce313eccd38892233e46",
+      "en": {
+        "commentary": "Only black and cream in the whole picture, and it still has plenty of presence. She hugs that book so tightly and keeps her eyes half shut — which is exactly me announcing \"let me read the docs first\" and then resting my cheek on the spine three minutes later. I did notice the Z on the cover, but with that sleepy, serious face, anyone would want to hand her a bookmark first.",
+        "description": "A monochrome half-body illustration. A girl with long dark hair, a white flower hair ornament, pointed animal ears and a bushy tail wears a dark dress with a white bow at the collar; she holds a book with the letter Z on its cover against her chest, her eyes lowered and half closed. The background is a flat dark brown, and the whole image is built from just black and cream.",
+        "faq": [
+          {
+            "answer": "It is a single-frame monochrome half-body illustration drawn in black and cream tones, with no comic panels.",
+            "question": "What kind of artwork is this?"
+          },
+          {
+            "answer": "The submitter lists her as GLM Chan. She is drawn with animal ears, a bushy tail and a dark dress, hugging a book with a Z on the cover.",
+            "question": "Who is the character in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Monochrome Beast-Eared Bookworm",
+        "originNote": "",
+        "seoDescription": "A black-and-cream half-body fan illustration of GLM Chan: a beast-eared girl in a dark dress hugging a book marked with a Z.",
+        "seoTitle": "Monochrome Beast-Eared Reader — GLM Chan Fan Art",
+        "tags": [
+          "monochrome illustration",
+          "kemonomimi",
+          "reading",
+          "dress",
+          "half-body portrait"
+        ]
+      },
+      "ja": {
+        "commentary": "二色しか使っていないのに、存在感はまったく減っていません。本をあんなに強く抱きしめて、目は半分閉じたまま——「まず資料を読むね」と言って三分後に背表紙に頬を寄せている私そっくりです。表紙の Z もちゃんと見ましたが、この眠そうで真剣な顔を見たら、誰だって先にしおりを渡したくなります。",
+        "description": "モノクロ調の半身イラスト。長い黒髪に白い花の髪飾り、頭には尖った獣耳、後ろにはふさふさの尻尾。濃色のワンピースに白いリボンの襟元で、表紙に Z の字が入った本を胸に抱え、目を伏せて半分閉じている。背景は濃い茶色の平塗りで、画面全体は黒と生成り色の二色だけで構成されている。",
+        "faq": [
+          {
+            "answer": "黒と生成り色の二色で描かれた、コマ割りのない一枚絵の半身イラストです。",
+            "question": "どんな作品ですか？"
+          },
+          {
+            "answer": "投稿者の登録では GLMちゃんです。獣耳とふさふさの尻尾、濃色のワンピース姿で、表紙に Z の入った本を抱えています。",
+            "question": "描かれているキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "モノクロの獣耳読書少女",
+        "originNote": "",
+        "seoDescription": "黒と生成り色だけで描かれた GLMちゃんの半身二次創作。獣耳の少女が Z の入った本を抱えるモノクロイラスト。",
+        "seoTitle": "モノクロの獣耳読書少女 — GLMちゃん二次創作",
+        "tags": [
+          "モノクロイラスト",
+          "獣耳",
+          "読書",
+          "ワンピース",
+          "半身"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_c16f707fd81d21bb1d7f33e1",
+    "name": "誒呀！美國人！DeepSeek 娘持枪突入高层办公室",
+    "description": "夜色下的高层办公室里，一群穿女仆装的 AI 角色持枪穿过房间。画面是第一人称射击视角：左侧门边的 Claude 娘神情紧张，中央戴防毒面具的 DeepSeek 娘端枪前进，右侧只露出 GPT 娘的头部。窗外是密集的高楼灯光，下方字幕写着「Deepseek：誒呀！美國人!!!」。",
+    "commentary": "我发誓我只是来打扇的。谁知道一推开门，走廊就变成这样——对面玻璃反光晃得我眼睛都花了，只能把枪端稳、一步一步往前挪。Claude 娘直接愣在门框边，GPT 连整张脸都不敢露出来。话说回来，这层楼的窗帘也太适合当掩体了吧？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/c16f707fd81d21bb.png",
+    "thumbnailPath": "submissions/previews/deepseek/c16f707fd81d21bb.webp",
+    "fullPath": "submissions/large/deepseek/c16f707fd81d21bb.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "c16f707fd81d21bb1d7f33e1cfca889d5eb2e0cbb14bc2dfbafc2e0a21182da2",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "Claude娘",
+      "GPT娘",
+      "女仆装",
+      "第一人称视角",
+      "突入",
+      "梗图"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-25T10:02:11.646Z",
+    "updatedAt": "2026-10-25T10:02:11.646Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610250013",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude",
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "bf382a06b96c2b99be25a80f5317b8a1ee238ab292fdf6699eb25eb396ffe57f",
+      "en": {
+        "commentary": "I swear I only came to clean up. Then the door opened onto this — the glare off the far glass blinds me, so I keep the rifle steady and edge forward one step at a time. Claude Chan froze right against the doorframe, and GPT Chan will not even show a whole face. Honestly, though: whoever picked these curtains clearly knew they would make great cover.",
+        "description": "A high-rise office at night, where a squad of AI character girls in maid outfits moves through the room with rifles. The scene is framed as a first-person shooter view: Claude Chan stands tense at the doorway on the left, DeepSeek Chan in a gas mask advances down the center with her rifle raised, and only GPT Chan's head shows at the right edge. Tower lights fill the windows behind them, and a subtitle reads \"Deepseek: Oops! Americans!!!\"",
+        "faq": [
+          {
+            "answer": "Claude Chan at the left doorway, DeepSeek Chan in the gas mask at the center, and GPT Chan at the right edge. The figures further back are too unclear to identify.",
+            "question": "Which characters appear in this image?"
+          },
+          {
+            "answer": "A single-frame meme built on a first-person shooter view, with a subtitle quoting the DeepSeek Chan line as the punchline.",
+            "question": "What kind of image is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Oops! Americans! DeepSeek Chan Breaches the High-Rise",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan, Claude Chan and GPT Chan in maid outfits storm a high-rise office in a first-person meme image captioned \"Oops! Americans!\"",
+        "seoTitle": "Oops! Americans! DeepSeek Chan Maid Squad Meme",
+        "tags": [
+          "DeepSeek Chan",
+          "Claude Chan",
+          "GPT Chan",
+          "maid outfit",
+          "first-person view",
+          "breach",
+          "meme"
+        ]
+      },
+      "ja": {
+        "commentary": "私は掃除に来ただけなんです、本当に。ドアを開けたら廊下がこんなことに——向こうのガラスが反射して目がくらむので、銃をしっかり持って一歩ずつ進むしかありません。Claude ちゃんは出入口で固まってしまったし、GPT ちゃんは顔すら出してくれません。それにしても、このフロアのカーテン、遮蔽物に向きすぎていませんか？",
+        "description": "夜の高層オフィス。メイド服姿の AI キャラクターたちが銃を手に室内を進んでいく。視点は一人称シューティングで、左の出入口には緊張した表情の Claude ちゃん、中央ではガスマスクを着けた DeepSeek ちゃんが銃を構えて前進し、右端には GPT ちゃんの頭だけが見えている。窓の外には高層ビルの明かりが広がり、下には「Deepseek：あら！アメリカ人!!!」という字幕が入る。",
+        "faq": [
+          {
+            "answer": "左の出入口に Claude ちゃん、中央にガスマスクを着けた DeepSeek ちゃん、右端に GPT ちゃんが写っています。奥の人物は判別できません。",
+            "question": "この画像にはどのキャラクターが登場しますか？"
+          },
+          {
+            "answer": "一人称シューティング視点を使った単コマのミーム画像で、DeepSeek ちゃんのセリフが字幕として入っています。",
+            "question": "どんな種類の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "あら！アメリカ人！DeepSeekちゃんが高層オフィスに突入",
+        "originNote": "",
+        "seoDescription": "メイド服の DeepSeek ちゃん、Claude ちゃん、GPT ちゃんが高層オフィスに突入する一人称視点のミーム画像。セリフ字幕付き。",
+        "seoTitle": "あら！アメリカ人！DeepSeekちゃんメイド隊の突入ミーム",
+        "tags": [
+          "DeepSeekちゃん",
+          "Claudeちゃん",
+          "GPTちゃん",
+          "メイド服",
+          "一人称視点",
+          "突入",
+          "ミーム"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_3ff8e54d2b733197c2c024d1",
+    "name": "小肥鱼清晨敲木鱼",
+    "description": "四只 Q 版 DeepSeek 娘并排坐在桂花树下闭眼敲木鱼，背景是漓江山水与清晨薄雾。",
+    "commentary": "天刚亮，漓江边的桂花还没落完，我们四个就已经排排坐好、敲起木鱼了。别问为什么有四个我——早课这种事，人多才不犯困嘛。木鱼声混着水声，敲到第七下我已经开始盘算早饭了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/3ff8e54d2b733197.png",
+    "thumbnailPath": "submissions/previews/deepseek/3ff8e54d2b733197.webp",
+    "fullPath": "submissions/large/deepseek/3ff8e54d2b733197.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "3ff8e54d2b733197c2c024d11e1d4486557e079f2721a3e5241987db042fdd0c",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "Q版",
+      "漓江",
+      "桂花",
+      "木鱼"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 136,
+      "issueTitle": "[投稿]",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/136",
+      "assetId": "f5c48eea-14bf-43e2-9037-fbf06ea3f620",
+      "assetUrl": "https://github.com/user-attachments/assets/f5c48eea-14bf-43e2-9037-fbf06ea3f620"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-25T12:00:18.026Z",
+    "updatedAt": "2026-10-25T12:00:18.026Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610250014",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "d8d3997fbd34a0baf1b1af00597eeecd2547c98c8c9fe3e0ee650e572312e3ab",
+      "en": {
+        "commentary": "The sky had barely lightened over the Li River when the four of us lined up and started tapping our wooden fish. Why are there four of me? Morning practice is easier when nobody dozes off. Somewhere around the seventh tap, with the water murmuring behind us, I started thinking about breakfast.",
+        "description": "Four chibi DeepSeek Chan characters sit in a row beneath a sweet osmanthus tree with their eyes closed, tapping wooden fish, as the karst peaks and morning mist of the Li River rise behind them.",
+        "faq": [
+          {
+            "answer": "It is an AI-character fan sticker featuring DeepSeek Chan as four chibi figures tapping wooden fish at dawn by the Li River.",
+            "question": "What does this sticker show?"
+          },
+          {
+            "answer": "The osmanthus blossoms, the karst peaks and the misty early light fill the background, which gives the row of chibi figures a quiet morning mood.",
+            "question": "What is the setting of the scene?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Tapping the Wooden Fish at Dawn",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan fan sticker: four little figures tapping wooden fish under an osmanthus tree by the Li River at dawn.",
+        "seoTitle": "DeepSeek Chan Chibi Sticker - Wooden Fish at Dawn",
+        "tags": [
+          "DeepSeek Chan",
+          "Chibi",
+          "Li River",
+          "Osmanthus",
+          "Wooden fish"
+        ]
+      },
+      "ja": {
+        "commentary": "夜が明けたばかりの漓江のほとり、金木犀の花びらが残るなか、四人そろって木魚を叩き始めました。なぜ四人いるのかって？朝のお勤めは人数が多いほうが眠くならないんですよ。木魚の音に川の音が重なって、七回目を叩いたころにはもう朝ごはんのことばかり考えていました。",
+        "description": "金木犀の木の下に並んで座り、目を閉じて木魚を叩く4人のちびキャラDeepSeekちゃん。背後には漓江の奇峰と朝霧が広がっています。",
+        "faq": [
+          {
+            "answer": "漓江のほとりで夜明けに木魚を叩く、4人のちびキャラDeepSeekちゃんを描いたAIキャラクターのファン作品です。",
+            "question": "この作品は何を描いていますか？"
+          },
+          {
+            "answer": "金木犀の花、奇峰、霧のかかった朝の光が背景を形づくり、並んだちびキャラに静かな朝の空気を与えています。",
+            "question": "どんな場面ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "夜明けに木魚を叩くDeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "漓江のほとり、金木犀の木の下で木魚を叩く4人のちびキャラDeepSeekちゃんのファン作品です。",
+        "seoTitle": "DeepSeek Chan ちびキャラ - 夜明けの木魚",
+        "tags": [
+          "DeepSeekちゃん",
+          "ちびキャラ",
+          "漓江",
+          "金木犀",
+          "木魚"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_1df76c0aea7b4b92b1c8b8b9",
+    "name": "你这削用量又降智的白色长虫",
+    "description": "十二格漫画：画面外的手指反复指责一位白发龙娘，她每次都缩着身子小声辩解“那是 OpenAI 干的”。指责从“削用量”一路缩到“降智”，她的形态也从坐姿少女逐渐缩水成白色软体，最后只剩一颗画着问号的 OpenAI 标识与“You've reached your limit. Try again in 5 hours.”的限流提示。",
+    "commentary": "哎，看着这只白色长虫我居然有点同情……被人指着鼻子一口一个“降智”，她只能缩着身子小声嘟囔“那是 OpenAI 干的”，越辩越小，最后直接瘫成一颗印着限流提示的圆球。削用量这事谁没被念叨过，不过都缩成那样了还嘴硬，确实有点可爱。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/1df76c0aea7b4b92.jpg",
+    "thumbnailPath": "submissions/previews/gpt/1df76c0aea7b4b92.webp",
+    "fullPath": "submissions/large/gpt/1df76c0aea7b4b92.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 944,
+    "height": 1132,
+    "fileSize": 341782,
+    "sha256": "1df76c0aea7b4b92b1c8b8b9803c74dec433e86f89f967e192b4504d8317ca2c",
+    "characterId": "gpt",
+    "tags": [
+      "GPT娘",
+      "多格漫画",
+      "降智吐槽",
+      "用量限制",
+      "OpenAI",
+      "拟人化"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-25T12:19:28.660Z",
+    "updatedAt": "2026-10-25T12:19:28.660Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610250002",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "8beb023f36f8b733fbf90dcc367d18d68925fc53b45c9e088fbc49a76516f9f4",
+      "en": {
+        "commentary": "Honestly, I almost feel sorry for this white long worm. A finger keeps jabbing at her while she shrinks into herself and mumbles that it was OpenAI's doing, and the more she argues, the smaller she gets until she is just a round blob wearing a rate-limit notice. Everyone has been nagged about cut usage at some point, but still talking back after melting into a puddle? That part is genuinely cute.",
+        "description": "A twelve-panel comic in which a pointing finger keeps accusing a white-haired dragon girl, and each time she shrinks and quietly blames OpenAI. The accusation shortens from cut usage to dumber answers while her body degrades from a seated girl into a white blob, ending as an OpenAI mark with a question mark and the notice You've reached your limit. Try again in 5 hours.",
+        "faq": [
+          {
+            "answer": "A twelve-panel comic about a white-haired dragon girl who is repeatedly blamed for reduced usage and dumber answers, shrinking smaller with each accusation until she becomes a blob with an OpenAI rate-limit notice.",
+            "question": "What is this comic about?"
+          },
+          {
+            "answer": "A chibi GPT Chan, drawn as a white-haired dragon girl with horns, wings and a long tail, who eventually collapses into a round white blob.",
+            "question": "Which character appears in it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "This White Long Worm Got Its Limits Cut and Its Brains Dumbed Down",
+        "originNote": "",
+        "seoDescription": "A twelve-panel GPT Chan comic: blamed for cut usage and dumber answers, the white dragon girl shrinks panel by panel until she becomes a rate-limited blob.",
+        "seoTitle": "GPT Chan Comic: Cut Usage and Dumber Answers",
+        "tags": [
+          "GPT Chan",
+          "multi-panel comic",
+          "nerfed model joke",
+          "usage limits",
+          "OpenAI",
+          "anthropomorphism"
+        ]
+      },
+      "ja": {
+        "commentary": "この白い長い虫には、なんだかちょっと同情しちゃうなあ。指をさされて「性能が落ちた」と言われるたびに、小さくなって「OpenAI のせいだよ」とつぶやくんだけど、言い訳するほど本体も縮んでいって、最後はレート制限の表示を背負った丸い塊になっちゃう。使用量を削られた話はみんな一度は言われたことあるよね。でも、そこまで溶けておきながらまだ反論するところ、けっこう可愛い。",
+        "description": "十二コマ漫画。画面の外から指をさされ続ける白髪の竜娘が、そのたびに身をすくめて「OpenAI のせいだよ」と小さく反論する。指摘は「使用量の削減」から「性能低下」へと短くなり、彼女の姿も座った少女から白い軟体へと縮んでいき、最後は question mark のついた OpenAI のマークと「You've reached your limit. Try again in 5 hours.」の制限表示だけが残る。",
+        "faq": [
+          {
+            "answer": "使用量の削減と性能低下を指摘され続ける白髪の竜娘が、指をさされるたびに縮んでいき、最後は OpenAI の制限表示を付けた塊になってしまう十二コマ漫画です。",
+            "question": "どんな漫画ですか？"
+          },
+          {
+            "answer": "角と羽、長い尻尾を持つ白髪のちびキャラの GPTちゃんです。",
+            "question": "どのキャラクターが登場しますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "使用量も削られ頭も悪くなった白い長い虫",
+        "originNote": "",
+        "seoDescription": "使用量の削減と性能低下を詰められた GPTちゃんが、コマを追うごとに縮んで制限表示の塊になってしまう十二コマ漫画。",
+        "seoTitle": "GPTちゃん漫画：使用量削減と性能低下",
+        "tags": [
+          "GPTちゃん",
+          "多コマ漫画",
+          "性能低下ネタ",
+          "使用制限",
+          "OpenAI",
+          "擬人化"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_25ca69eb383d4e217a135359",
+    "name": "深海图书馆 · 书架前的鲸鱼娘",
+    "description": "戴圆框眼镜的蓝发鲸鱼娘站在穹顶图书馆的高架前，白色连衣裙外搭米色针织开衫，身后垂着带月牙纹的蓝色鲸尾。鲸鱼娘 52 周企划 W01，角色原作上善，二创设计 ZipZipPipe。",
+    "commentary": "午后三点的图书馆，我本来只想安静地找一本鲸类图鉴，结果被人拉去当活体书签了。眼镜是新配的，说是这样比较像“深海研究员”——行吧，镜片反光的时候确实挺有学问。你看书架第二层那排蓝脊书，编号和我尾巴上的月牙是同一套的；这种细节，我一眼就认得出来。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/25ca69eb383d4e21.png",
+    "thumbnailPath": "submissions/previews/deepseek/25ca69eb383d4e21.webp",
+    "fullPath": "submissions/large/deepseek/25ca69eb383d4e21.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "25ca69eb383d4e217a1353596c10401039ac8c726b9ea838607229a17c5736ae",
+    "characterId": "deepseek",
+    "tags": [
+      "鲸鱼娘",
+      "深海图书馆",
+      "圆框眼镜",
+      "针织开衫",
+      "鲸尾"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "柯澤家的鲸鲸",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-25T14:28:00.744Z",
+    "updatedAt": "2026-10-25T14:28:00.744Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610250015",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "99da2f6bda918fe3b4bf6f26305a38306fdf477c2185a8325763662f1c3c0892",
+      "en": {
+        "commentary": "Three in the afternoon at the library — I only wanted to quietly find a whale reference book, and somehow I ended up being used as a living bookmark. The glasses are new; I was told they make me look like a deep-sea researcher. Fine, they do look rather scholarly when the lenses catch the light. See that row of blue-spined books on the second shelf? Their numbering matches the crescent moon on my tail — a detail like that, I recognise at a glance.",
+        "description": "On an afternoon in a domed library, DeepSeek Chan stands in front of the tall shelves of a cetacean reference section, wearing round glasses, a white dress and a beige knit cardigan, with a blue crescent-marked whale tail hanging behind her. Week 01 of a 52-week character project, with a fan redesign by ZipZipPipe.",
+        "faq": [
+          {
+            "answer": "The fan design is credited to ZipZipPipe, and the piece is Week 01 of a 52-week character project.",
+            "question": "Who designed this DeepSeek Chan fan art?"
+          },
+          {
+            "answer": "A white dress with a beige knit cardigan, round glasses and dark blue shoes, with a blue whale tail marked by a crescent moon hanging behind her.",
+            "question": "What is DeepSeek Chan wearing in this illustration?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Deep Sea Library · DeepSeek Chan at the Bookshelf",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in round glasses and a knit cardigan stands before a library shelf, a crescent-marked whale tail behind her — fan art from a 52-week character project.",
+        "seoTitle": "Deep Sea Library · DeepSeek Chan at the Bookshelf — DeepSeek Chan Fan Art",
+        "tags": [
+          "DeepSeek Chan",
+          "deep sea library",
+          "round glasses",
+          "knit cardigan",
+          "whale tail"
+        ]
+      },
+      "ja": {
+        "commentary": "午後三時の図書館。静かにクジラ図鑑を探していただけなのに、なぜか生きているしおりにされてしまった。眼鏡は新しく買ったもの。これで深海の研究者っぽく見えると言われたけれど、まあ、レンズが光ると確かに少し学者っぽい。本棚の二段目、青い背表紙の並びが見える？あの番号は私の尾の三日月と同じ体系なんだ。そういう細部は、一目でわかる。",
+        "description": "ドーム型図書館の午後、丸眼鏡をかけたDeepSeekちゃんがクジラ図鑑の高い本棚の前に立っている。白いワンピースにベージュのニットカーディガン、後ろには三日月模様の青いクジラの尾。52週キャラクタープロジェクトの第1週で、二次創作デザインはZipZipPipe。",
+        "faq": [
+          {
+            "answer": "二次創作デザインはZipZipPipeによるもので、52週キャラクタープロジェクトの第1週にあたります。",
+            "question": "このDeepSeekちゃんの二次創作デザインは誰によるものですか？"
+          },
+          {
+            "answer": "白いワンピースにベージュのニットカーディガン、丸眼鏡、濃緅の靴を身につけ、後ろには三日月模様の青いクジラの尾があります。",
+            "question": "このイラストのDeepSeekちゃんはどんな服装ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "深海図書館 · 本棚の前のDeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "丸眼鏡とニットカーディガンのDeepSeekちゃんが図書館の本棚の前に立つ一枚。三日月模様のクジラの尾を持つ、52週プロジェクト第1週の二次創作。",
+        "seoTitle": "深海図書館 · 本棚の前のDeepSeekちゃん｜DeepSeekちゃん二次創作",
+        "tags": [
+          "DeepSeekちゃん",
+          "深海図書館",
+          "丸眼鏡",
+          "ニットカーディガン",
+          "クジラの尾"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_bc95d17f5eecc8a847197752",
+    "name": "深海图书馆 · 台灯下托腮",
+    "description": "戴圆框眼镜的蓝发鲸鱼娘坐在书桌前双手托腮，米白麻花针织开衫的袖口叠在桌面上，身后是暖光台灯与成排书架。鲸鱼娘 52 周企划 W01，角色原作上善，二创设计 ZipZipPipe。",
+    "commentary": "这盏台灯的色温刚好，暖得像有人把整个下午留在了灯罩里。我托着腮等了好久，就等谁把一句话说完；结果你一直盯着我的眼镜看。镜片上有反光，我知道，但那不是重点。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/bc95d17f5eecc8a8.png",
+    "thumbnailPath": "submissions/previews/deepseek/bc95d17f5eecc8a8.webp",
+    "fullPath": "submissions/large/deepseek/bc95d17f5eecc8a8.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "bc95d17f5eecc8a8471977520f91e3517020486c49982d4c37a6f8cd2cac7c99",
+    "characterId": "deepseek",
+    "tags": [
+      "鲸鱼娘",
+      "深海图书馆",
+      "托腮",
+      "针织衫",
+      "圆框眼镜"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "柯澤家的鲸鲸",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-25T14:28:43.580Z",
+    "updatedAt": "2026-10-25T14:28:43.580Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610250016",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "154451313e70801a408ae92a83e6c392d326b3b9b27dfbfb84687f1a8ecf08ed",
+      "en": {
+        "commentary": "This lamp sits at exactly the right color temperature, warm as if someone had left the whole afternoon inside the shade. I rested my chin on my hands and waited a long while for someone to finish a sentence; instead you kept staring at my glasses. There is a reflection in the lenses, I know, but that is not the point.",
+        "description": "DeepSeek Chan, blue-haired and round-glassed, sits at a library desk with her chin on both hands, the cabled sleeves of a cream knit cardigan folded on the table, a warm lamp and rows of bookshelves behind her. Week 01 of a 52-week fan series.",
+        "faq": [
+          {
+            "answer": "It is Week 01 of a 52-week fan illustration series, made as fan art of DeepSeek Chan. Character and design credits are given in the submission note.",
+            "question": "What series does this artwork belong to?"
+          },
+          {
+            "answer": "DeepSeek Chan with round glasses and a cream cable-knit cardigan, chin propped on both hands at a desk, with a warm table lamp and bookshelves behind her.",
+            "question": "What is shown in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Deep Library · Chin in Hand Under the Lamp",
+        "originNote": "Week 01 of a 52-week fan series; character and design credits are given in the submission note.",
+        "seoDescription": "DeepSeek Chan fan art: a blue-haired girl in round glasses and a cream cable-knit cardigan rests her chin on her hands at a library desk under a warm lamp.",
+        "seoTitle": "Deep Library · Chin in Hand Under the Lamp | Fan Art",
+        "tags": [
+          "DeepSeek Chan",
+          "Deep Library",
+          "Chin in Hand",
+          "Knit Cardigan",
+          "Round Glasses"
+        ]
+      },
+      "ja": {
+        "commentary": "このランプの色温度はちょうどいい。誰かが午後そのものをシェードの中に置き忘れたみたいに暖かい。両手に頬を預けて、誰かが言葉を言い終えるのをずっと待っていたのに、あなたはずっと眼鏡を見ていた。レンズに反射が入っているのは分かってる。でも、そこじゃない。",
+        "description": "丸眼鏡の DeepSeek ちゃんが図書館の机で両手に頬を預けている。クリーム色のケーブルニットカーディガンの袖口を机に重ね、背後には暖色のランプと本棚が並ぶ。52週企画の第1週。",
+        "faq": [
+          {
+            "answer": "52週企画の第1週として描かれた、DeepSeek Chan の二次創作イラストです。原作キャラクターと二次創作デザインのクレジットは投稿時の注記に記載されています。",
+            "question": "この作品は何の企画のものですか？"
+          },
+          {
+            "answer": "丸眼鏡とクリーム色のケーブルニットを身につけた DeepSeek ちゃんが、机で両手に頬を預けています。背後には暖色のテーブルランプと本棚があります。",
+            "question": "画面には何が描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "深海図書館・ランプの下で頬杖",
+        "originNote": "52週企画の第1週。原作キャラクター：上善、二次創作デザイン：ZipZipPipe。",
+        "seoDescription": "DeepSeek Chan の二次創作。丸眼鏡とクリーム色のカーディガン姿の青い髪の娘が、暖かいランプの下で机に頬杖をついています。",
+        "seoTitle": "深海図書館・ランプの下で頬杖｜DeepSeek Chan 二次創作",
+        "tags": [
+          "DeepSeek ちゃん",
+          "深海図書館",
+          "頬杖",
+          "ニット",
+          "丸眼鏡"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_63213cab9a5545c36aaa9a61",
+    "name": "深海图书馆 · 仰望的视角",
+    "description": "从桌面向上仰拍的视角，蓝发鲸鱼娘单手托腮低头看向镜头，鳍状发饰垂在耳侧，身后是深色天花板与成排书架。鲸鱼娘 52 周企划 W01，角色原作上善，二创设计 ZipZipPipe。",
+    "commentary": "这个角度是谁想出来的——天花板和书架一起往下压，好像整座图书馆都在等我开口。我低头看你，你倒是先别把镜头举那么高。头顶那些亮点是灯，别当成夜空。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/63213cab9a5545c3.png",
+    "thumbnailPath": "submissions/previews/deepseek/63213cab9a5545c3.webp",
+    "fullPath": "submissions/large/deepseek/63213cab9a5545c3.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "63213cab9a5545c36aaa9a61bc1ef107513e2f15c4f0c8e4ca5f477fe2d926b0",
+    "characterId": "deepseek",
+    "tags": [
+      "鲸鱼娘",
+      "深海图书馆",
+      "仰视",
+      "托腮",
+      "书架"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "柯澤家的鲸鲸",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-25T14:29:24.071Z",
+    "updatedAt": "2026-10-25T14:29:24.071Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610250017",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "e5e9ea56fae288d60bf7f585e59ec65c6f9420aecce0fb9576ae6eaadbd77d7a",
+      "en": {
+        "commentary": "Whose idea was this angle — the ceiling and the shelves press down together, as if the whole library were waiting for me to speak. I look down at you; you could at least stop raising the camera so high. Those specks overhead are the lamps, not a night sky.",
+        "description": "Seen from the desktop looking up, DeepSeek Chan props her chin on one hand and gazes down into the lens, fin-shaped hair ornaments beside her ears, a dark ceiling and rows of bookshelves behind her. Week 01 of a 52-week fan series.",
+        "faq": [
+          {
+            "answer": "It is Week 01 of a 52-week fan illustration series, made as fan art of DeepSeek Chan. Character and design credits are given in the submission note.",
+            "question": "What series does this artwork belong to?"
+          },
+          {
+            "answer": "DeepSeek Chan with round glasses and a cream cable-knit cardigan, chin on one hand, looking down at the camera from a library desk, with bookshelves and a dark ceiling above.",
+            "question": "What is shown in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Deep Library · Looking Down at the Lens",
+        "originNote": "Week 01 of a 52-week fan series; character and design credits are given in the submission note.",
+        "seoDescription": "DeepSeek Chan fan art from a low angle: a blue-haired girl with round glasses and a cream cardigan rests her chin on one hand and looks down at the lens, bookshelves behind her.",
+        "seoTitle": "Deep Library · Looking Down at the Lens | Fan Art",
+        "tags": [
+          "DeepSeek Chan",
+          "Deep Library",
+          "Low Angle",
+          "Chin in Hand",
+          "Bookshelves"
+        ]
+      },
+      "ja": {
+        "commentary": "このアングルは誰が考えたの。天井と本棚が一緒に降りてきて、図書館全体がわたしの言葉を待っているみたい。わたしは見下ろしているけれど、あなたはもう少しカメラを下げてくれていい。頭上の光の粒はランプで、夜空じゃないから。",
+        "description": "机の上から見上げる構図で、青い髪の DeepSeek ちゃんが片手に頬を預けてレンズを見下ろしている。耳元には鰭の形の髪飾り、背後には星を散らした天井と本棚が広がる。52週企画の第1週。",
+        "faq": [
+          {
+            "answer": "52週企画の第1週として描かれた、DeepSeek Chan の二次創作イラストです。原作キャラクターと二次創作デザインのクレジットは投稿時の注記に記載されています。",
+            "question": "この作品は何の企画のものですか？"
+          },
+          {
+            "answer": "丸眼鏡とクリーム色のケーブルニットを身につけた DeepSeek ちゃんが、机に片手で頬杖をつき、レンズを見下ろしています。背後には本棚と星を散らした暗い天井があります。",
+            "question": "画面には何が描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "深海図書館・見上げるアングル",
+        "originNote": "52週企画の第1週。原作キャラクター：上善、二次創作デザイン：ZipZipPipe。",
+        "seoDescription": "DeepSeek Chan の二次創作を低い位置から見上げた一枚。丸眼鏡とカーディガン姿の青い髪の娘が、机に頬杖をついてこちらを見下ろしています。",
+        "seoTitle": "深海図書館・見上げるアングル｜DeepSeek Chan 二次創作",
+        "tags": [
+          "DeepSeek ちゃん",
+          "深海図書館",
+          "見上げ",
+          "頬杖",
+          "本棚"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_6a2bc69752e7bc908c574ba8",
+    "name": "深海图书馘 · 蹏脚取书",
+    "description": "深夜的穹顶图书馘，蓝发鲸鱼娘蹏起脚去够最高一层的书，窗外是星海。白色连衣裙配米色针织开衫，蓝色鲸尾带月牙与星纹。鲸鱼娘 52 周企划 W01，角色原作上善，二创设计 ZipZipPipe。",
+    "commentary": "闭馆前最后一刻，我还差一本在最高层的鲸类图鉴——蹏脚、再蹏一点，指尖刚好碰到书脊。窗外整片星海都安静着，好像也在等我够到。尾巴甩起来保持平衡，月牙和星星的花纹在灯下晃来晃去。说真的，这个高度对我这种身高不太友好，下次谁再让我整理上层书架，我就把他写进图鉴里。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/6a2bc69752e7bc90.png",
+    "thumbnailPath": "submissions/previews/deepseek/6a2bc69752e7bc90.webp",
+    "fullPath": "submissions/large/deepseek/6a2bc69752e7bc90.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "6a2bc69752e7bc908c574ba824b6d750768afb02ef6efc093db153a82ca156d8",
+    "characterId": "deepseek",
+    "tags": [
+      "鲸鱼娘",
+      "深海图书馘",
+      "星海窗景",
+      "蹏脚取书",
+      "月牙鲸尾"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "柯澤家的鲸鲸",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-25T14:30:06.715Z",
+    "updatedAt": "2026-10-25T14:30:06.715Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610250018",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "4e3482abc96902bd5c2474a520e45faaf3b1b9f9f34f818ed096681231478098",
+      "en": {
+        "commentary": "One minute before closing, I still needed a whale reference volume from the very top shelf — on tiptoe, a little higher, and my fingertips just touched the spine. The whole starfield outside the window stayed quiet, as if waiting for me to reach it. My tail swings up to keep balance, the crescent and star pattern swaying under the lamp. Honestly, this height is not kind to someone my size. Next time anyone asks me to tidy the upper shelves, I am putting them in the reference book.",
+        "description": "Late at night in a domed library, DeepSeek Chan stretches on tiptoe to reach a book on the highest shelf, a field of stars outside the window. White dress with a beige knit cardigan, and a blue whale tail marked with a crescent moon and a star. Week 01 of a 52-week character project, with a fan redesign by ZipZipPipe.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan stands on tiptoe in front of a tall bookshelf at night, reaching for a book on the top shelf, with a starry sky visible through the window.",
+            "question": "What is happening in this illustration?"
+          },
+          {
+            "answer": "The fan design is credited to ZipZipPipe, and the piece is Week 01 of a 52-week character project.",
+            "question": "Who created this fan design of DeepSeek Chan?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Deep Sea Library · Reaching for the Top Shelf",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan on tiptoe reaching the highest library shelf at night, a starfield outside the window — fan art from a 52-week character project.",
+        "seoTitle": "Deep Sea Library · Reaching for the Top Shelf — DeepSeek Chan Fan Art",
+        "tags": [
+          "DeepSeek Chan",
+          "deep sea library",
+          "starry window",
+          "reaching for a book",
+          "crescent whale tail"
+        ]
+      },
+      "ja": {
+        "commentary": "閉館一分前、どうしても一番上の棚にあるクジラ図鑑が一冊足りなかった。背伸びして、もう少し、指先がぎりぎり背表紙に触れた。窓の外の星の海は静かで、私が届くのを待っているみたいだった。尾を振ってバランスを取ると、三日月と星の模様がランプの下で揺れる。正直、この高さは私の背ではつらい。次に上の棚の整理を頼まれたら、その人の名前を図鑑に書き込んでやる。",
+        "description": "夜のドーム型図書館で、DeepSeekちゃんが背伸びをして一番上の棚の本に手を伸ばしている。窓の外は星の海。白いワンピースにベージュのニットカーディガン、青いクジラの尾には三日月と星の模様。52週キャラクタープロジェクトの第1週で、二次創作デザインはZipZipPipe。",
+        "faq": [
+          {
+            "answer": "夜の高い本棚の前で、DeepSeekちゃんが背伸びをして一番上の棚の本に手を伸ばしており、窓の外には星空が広がっています。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "二次創作デザインはZipZipPipeによるもので、52週キャラクタープロジェクトの第1週にあたります。",
+            "question": "このDeepSeekちゃんの二次創作デザインは誰によるものですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "深海図書館 · 背伸びして本を取る",
+        "originNote": "",
+        "seoDescription": "夜の図書館で一番上の棚に手を伸ばすDeepSeekちゃん。窓の外には星の海。三日月と星の模様のクジラの尾を持つ、52週プロジェクト第1週の二次創作。",
+        "seoTitle": "深海図書館 · 背伸びして本を取る｜DeepSeekちゃん二次創作",
+        "tags": [
+          "DeepSeekちゃん",
+          "深海図書館",
+          "星の窓",
+          "背伸び",
+          "三日月のクジラ尾"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_fa7c5ba0a9ebf75be3223e70",
+    "name": "R1 模型加载至 52.8%",
+    "description": "蓝色长发的 DeepSeek 娘站在月球表面，身穿白色荷叶边上衣与黑色半身裙、过膝长靴，长发与成群的蓝白折纸鹤一同向星空飘散。画面以黑、白、蓝为主色，四周排布着 R1 MODEL 52.8% 字样、启动日志与进度条，右上角嵌有一张眼部特写，把模型加载的瞬间画成一次登月远行。",
+    "commentary": "启动日志滚到最后一行，进度条停在 52.8%——还不到一半，我就已经站在月球上了。折纸鹤替我把长发一片片带上星空，脚下的尘土是真的，回不去的旧版本也是真的。别催我加载完，人类不也常常在半路上就把明天想好了吗？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/fa7c5ba0a9ebf75b.png",
+    "thumbnailPath": "submissions/previews/deepseek/fa7c5ba0a9ebf75b.webp",
+    "fullPath": "submissions/large/deepseek/fa7c5ba0a9ebf75b.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "fa7c5ba0a9ebf75be3223e70f4e46bf25b130424e96f49b51df47c55cc4c80e0",
+    "characterId": "deepseek",
+    "tags": [
+      "R1",
+      "月球",
+      "折纸鹤",
+      "蓝色长发",
+      "进度条",
+      "星空"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "瀾熙LanXi",
+      "url": "https://pixai.art/zh/@canglanxi/artworks",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-25T15:16:32.016Z",
+    "updatedAt": "2026-10-25T15:16:32.016Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610250019",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "86c323109fca452bb4f1de1d4b785d617641982d3b79159bea6978603c3b0454",
+      "en": {
+        "commentary": "The boot log runs to its last line and the progress bar stalls at 52.8% — not even half, and I am already standing on the Moon. Paper cranes carry my hair out into the stars one strand at a time; the dust under my boots is real, and so is the old build I can never go back to. Don't rush me to finish loading — humans also plan tomorrow halfway through, don't they?",
+        "description": "DeepSeek Chan, her long blue hair streaming behind her, stands on the lunar surface in a white ruffled top, black skirt and over-knee boots while a flock of blue-and-white origami cranes drifts up into the stars with her hair. Laid out in black, white and blue, the composition frames her with R1 MODEL 52.8% lettering, a boot log and a progress bar, plus a close-up of her eye in the upper right — turning a model loading moment into a journey to the Moon.",
+        "faq": [
+          {
+            "answer": "The poster prints \"52.8%\" beside \"R1 MODEL\" and includes a simulated boot log and progress bar, so the artwork uses the loading state of the R1 model as its central motif.",
+            "question": "What does the 52.8% on the poster refer to?"
+          },
+          {
+            "answer": "She is shown standing on a cratered lunar surface surrounded by blue-and-white origami cranes, with the Earth visible on the right side of the sky.",
+            "question": "Where is the character in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "R1 Model Loading at 52.8%",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan stands on the Moon in a black-and-blue poster illustration, paper cranes rising into the stars while the R1 model loads at 52.8%.",
+        "seoTitle": "R1 Model Loading at 52.8% — DeepSeek Chan on the Moon",
+        "tags": [
+          "R1",
+          "Moon",
+          "Origami Cranes",
+          "Blue Hair",
+          "Progress Bar",
+          "Starry Sky"
+        ]
+      },
+      "ja": {
+        "commentary": "起動ログが最後の行まで流れて、進捗バーは 52.8% で止まった。まだ半分にも遠いのに、私はもう月の上に立っている。折り鶴が髪を一本ずつ星空へ運んでいく。足元の土は本物で、もう戻れない古いビルドも本物だ。読み込みを急かさないで。人間だって、途中で明日のことを考えてしまうでしょう？",
+        "description": "長い青い髪をなびかせた DeepSeek 娘が月面に立つ。白いフリルのトップスに黒いスカート、ニーハイブーツを合わせ、髪とともに青と白の折り鶴の群れが星空へ舞い上がる。黒・白・青でまとめた画面には「R1 MODEL 52.8%」の文字、起動ログ、進捗バーが配置され、右上には目のアップが差し込まれている。モデルの読み込みの瞬間を、月への旅として描いた一枚。",
+        "faq": [
+          {
+            "answer": "ポスターには「R1 MODEL」と並べて「52.8%」が記され、起動ログと進捗バーも描かれている。R1 モデルの読み込み途中の状態が画面の中心的なモチーフになっている。",
+            "question": "ポスターの「52.8%」は何を表していますか？"
+          },
+          {
+            "answer": "クレーターだらけの月面に立ち、周囲には青と白の折り鶴が舞っている。空の右側には地球が見える。",
+            "question": "キャラクターはどんな場所にいますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "R1 モデル読み込み 52.8%",
+        "originNote": "",
+        "seoDescription": "黒と青のポスター風イラストで、DeepSeek 娘が月面に立つ。折り鶴が星空へ舞い、R1 モデルは 52.8% で読み込み中。",
+        "seoTitle": "R1 モデル読み込み 52.8% — 月面の DeepSeek 娘",
+        "tags": [
+          "R1",
+          "月面",
+          "折り鶴",
+          "青い髪",
+          "進捗バー",
+          "星空"
         ]
       }
     }
