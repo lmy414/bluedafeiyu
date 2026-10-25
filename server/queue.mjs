@@ -97,13 +97,15 @@ export function resolveExtension(buffer, hint) {
 
 function normalizeFields(fields = {}) {
   const attribution = submissionAttribution(fields);
+  const tags = Array.isArray(fields.tags) ? fields.tags.map((tag) => String(tag)).filter(Boolean).slice(0, 20) : [];
   return {
     name: String(fields.name || '').slice(0, 200),
     description: String(fields.description || '').slice(0, 2000),
     character: String(fields.character || fields.characterIds?.[0] || ''),
     ...(fields.characterIds !== undefined ? { characterIds: normalizedCharacterIds(fields, 'character') } : {}),
     ...(fields.categoryId ? { categoryId: String(fields.categoryId).trim() } : {}),
-    tags: Array.isArray(fields.tags) ? fields.tags.map((tag) => String(tag)).filter(Boolean).slice(0, 20) : [],
+    tags: fields.nonAi === true && !tags.includes('非AI') ? [...tags.slice(0, 19), '非AI'] : tags,
+    ...(fields.nonAi === true ? { nonAi: true } : {}),
     ...(attribution ? { credit: attribution.credit, creditName: attribution.name, creditUrl: attribution.url } : {}),
     ...(fields.extra && typeof fields.extra === 'object' ? { extra: fields.extra } : {}),
   };
@@ -138,6 +140,19 @@ function normalizeReviewContent(content, original = {}) {
     tags: list(content.tags, REVIEW_CONTENT_LIMITS.tags, REVIEW_CONTENT_LIMITS.tagLength),
   };
   if ('i18n' in content) normalized.i18n = validateI18n(content.i18n, { ...normalized, origin: original.origin, submitter: submissionAttribution(original.fields) });
+  // Preserve the submitter's explicit method statement after content review.
+  if (original.fields?.nonAi === true && !normalized.tags.includes('非AI')) {
+    normalized.tags = [...normalized.tags.slice(0, REVIEW_CONTENT_LIMITS.tags - 1), '非AI'];
+    if (normalized.i18n) {
+      normalized.i18n = {
+        ...normalized.i18n,
+        ...Object.fromEntries([['en', 'non-AI'], ['ja', '非AI']].map(([locale, tag]) => [locale, {
+          ...normalized.i18n[locale], tags: [...normalized.i18n[locale].tags.slice(0, REVIEW_CONTENT_LIMITS.tags - 1), tag],
+        }])),
+      };
+      normalized.i18n = validateI18n(normalized.i18n, { ...normalized, origin: original.origin, submitter: submissionAttribution(original.fields) });
+    }
+  }
   return normalized;
 }
 

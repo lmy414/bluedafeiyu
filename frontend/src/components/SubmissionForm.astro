@@ -37,6 +37,10 @@ const turnstileSitekey = (import.meta.env.PUBLIC_TURNSTILE_SITEKEY || "").trim()
         <span class="hint" id="type-hint" aria-live="polite" data-i18n="submit.form.typeHint">每张图只能选择一个类型；不好判断时选择“其他”。</span>
       </div>
       <div class="form-row">
+        <label class="checkbox-row"><input type="checkbox" id="f-non-ai" name="nonAi" value="true" aria-describedby="non-ai-hint" /><span data-i18n="submit.form.nonAi">非 AI 生成（可选）</span></label>
+        <span class="hint" id="non-ai-hint" data-i18n="submit.form.nonAiHint">如果本次投稿的作品均通过手绘等非 AI 生成方式完成，可以勾选此项。审核收录后，将归入“非 AI 创作”分类。</span>
+      </div>
+      <div class="form-row">
         <label for="f-credit"><span data-i18n="submit.form.credit">是否署名</span><span class="req-mark">*</span></label>
         <select id="f-credit" name="credit" required>
           <option value="anonymous" data-i18n="submit.form.anonymous">不署名</option>

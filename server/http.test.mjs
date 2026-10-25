@@ -215,6 +215,28 @@ test('multipart 投稿成功，公开响应不含 sha / 内部路径', async (t)
 const zipUpload = data => ({ field: 'image', filename: 'collection.ZIP', type: 'application/octet-stream', data });
 const distinctPng = n => Buffer.concat([TINY_PNG, Buffer.from(String(n))]);
 
+test('非 AI 声明可选，multipart/JSON 保留 true，未选不推断且非法值拒绝入队', async t => {
+  for(const [nonAi,valid,selected] of [[undefined,true,false],['true',true,true],['false',true,false],['',true,false],['yes',false,false],[1,false,false]]){
+    const {publicHandler,queue}=await setup(t);
+    await withServer(publicHandler,async port=>{
+      const fields={name:'测试图',character:'deepseek',categoryId:'illustration',...(nonAi!==undefined?{nonAi}:{})};
+      const res=await submit(port,{fields});
+      assert.equal(res.status,valid?201:400,res.body.toString());
+      const items=await queue.list();
+      assert.equal(items.length,valid?1:0);
+      if(valid){assert.equal(items[0].fields.nonAi,selected?true:undefined);assert.deepEqual(items[0].fields.tags,selected?['非AI']:[]);assert.equal(items[0].fields.categoryId,'illustration');assert.notEqual(items[0].state,STATES.APPROVED);}
+    });
+  }
+  for(const nonAi of [true,false]){
+    const {publicHandler,queue}=await setup(t);
+    await withServer(publicHandler,async port=>{
+      const res=await submit(port,{raw:{name:'JSON测试',character:'deepseek',categoryId:'meme',nonAi,dataBase64:TINY_PNG.toString('base64')}});
+      assert.equal(res.status,201,res.body.toString());
+      assert.equal((await queue.list())[0].fields.nonAi,nonAi?true:undefined);
+    });
+  }
+});
+
 test('网页 ZIP 复用 Issue 解包：保留原图、公共字段、来源并进入 Hermes 待审列表', async t => {
   let reviews = 0;
   const { publicHandler, queue } = await setup(t, {
@@ -225,7 +247,7 @@ test('网页 ZIP 复用 Issue 解包：保留原图、公共字段、来源并�
   const files = [TINY_PNG, distinctPng(1)];
   await withServer(publicHandler, async port => {
     const res = await submit(port, { file: zipUpload(zip(files.map((data, i) => ({ name: `图集/表情${i}.png`, data })))),
-      fields: { name: '表情集', character: 'deepseek', categoryId: 'meme', description: '同一图集', credit: 'named', creditName: '投稿者' } });
+      fields: { name: '表情集', character: 'deepseek', categoryId: 'meme', description: '同一图集', credit: 'named', creditName: '投稿者', nonAi: 'true' } });
     assert.equal(res.status, 201, res.body.toString());
     assert.deepEqual(JSON.parse(res.body), { ok: true, count: 2, created: 2, duplicates: 0 });
     const items = await queue.list();
@@ -236,6 +258,7 @@ test('网页 ZIP 复用 Issue 解包：保留原图、公共字段、来源并�
       assert.equal(item.source, 'web');
       assert.equal(item.fields.name, '表情集');
       assert.equal(item.fields.creditName, '投稿者');
+      assert.equal(item.fields.nonAi, true);
       assert.equal(item.origin.archive.member, `图集/表情${index}.png`);
       assert.equal(item.origin.archive.count, 2);
       assert.match(item.sourceIds[0], /^web:zip:[a-f0-9]{64}:2:[01]$/);

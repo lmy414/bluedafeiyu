@@ -67343,7 +67343,8 @@
       "手绘",
       "拟人化",
       "白底",
-      "玩偶"
+      "玩偶",
+      "非AI"
     ],
     "submitter": {
       "credit": "anonymous",
@@ -67357,7 +67358,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-17T15:45:53.114Z",
-    "updatedAt": "2026-10-17T15:45:53.114Z",
+    "updatedAt": "2026-10-25T11:46:27.590Z",
     "tone": "claude",
     "symbol": "",
     "slug": "claude202610170002",
@@ -67368,7 +67369,7 @@
       "claude"
     ],
     "i18n": {
-      "sourceHash": "8f17cff0989e44d9bc5c0afccde75dfc289c52b7373cad6dffe8170e27e75211",
+      "sourceHash": "f4fa88bc5599efc5b68b727c0ed321b4ff40a5fc8f7b4c59a6b3d4da1cbd8453",
       "en": {
         "commentary": "Claude Chan is cradling a bright orange crab with a look so gentle you would think she is afraid of waking it. The whole palette is basically her brand color grown arms and legs, the hand-drawn lines sit lightly on the white ground, and the little orange flower by her ear answers the bow at her chest. I stared at it for a long while, and the only thought left in my head was: that crab plush — may I hold it for a minute?",
         "description": "A hand-drawn fan artwork of the anthropomorphized Claude character. The girl has long orange hair and matching eyes, wears a cream-colored top with laced cuffs, ties a black bow with a small orange flower ornament at the side of her hair and at her chest, and holds an orange crab plush in both arms against a plain white background in a half-body composition.",
@@ -67392,7 +67393,8 @@
           "hand-drawn",
           "fan art",
           "white background",
-          "plush"
+          "plush",
+          "non-AI"
         ]
       },
       "ja": {
@@ -67418,7 +67420,8 @@
           "手描き",
           "二次創作",
           "白背景",
-          "ぬいぐるみ"
+          "ぬいぐるみ",
+          "非AI"
         ]
       }
     }

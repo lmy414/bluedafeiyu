@@ -9,7 +9,7 @@ const root = path.resolve(import.meta.dirname, '../..');
 const html = fs.readFileSync(path.join(process.env.SITE_OUT_DIR || path.join(root, '.build/site'), 'submit.html'), 'utf8');
 const script = fs.readFileSync(path.join(root, 'frontend/public/page-scripts/submit-0.js'), 'utf8');
 
-async function useForm({ file = new File(['zip bytes'], 'collection.ZIP', { type: 'application/octet-stream' }), status = 201,
+async function useForm({ file = new File(['zip bytes'], 'collection.ZIP', { type: 'application/octet-stream' }), status = 201, nonAi = false,
   payload = { ok: true, count: 3, created: 2, duplicates: 1 } } = {}) {
   const { document, Event } = parseHTML(html).window;
   const form = document.querySelector('#submission-form');
@@ -24,6 +24,7 @@ async function useForm({ file = new File(['zip bytes'], 'collection.ZIP', { type
   Object.defineProperty(type, 'value', { value: 'meme' });
   Object.defineProperty(type, 'selectedOptions', { value: [type.querySelector('option[value="meme"]')] });
   Object.defineProperty(document.querySelector('#f-credit'), 'value', { value: 'anonymous' });
+  document.querySelector('#f-non-ai').checked = nonAi;
   for (const checkbox of document.querySelectorAll('[id^="f-confirm-"]')) checkbox.checked = true;
   let resets = 0;
   form.reset = () => { resets++; };
@@ -48,10 +49,31 @@ test('网页表单接受浏览器通用 MIME 的 ZIP，保留字段并显示新�
   assert.equal(request.body.get('image').name, 'collection.ZIP');
   assert.equal(request.body.get('name'), '测试图集');
   assert.equal(request.body.get('categoryId'), 'meme');
+  assert.equal(request.body.get('nonAi'), null);
   assert.deepEqual(JSON.parse(request.body.get('characterIds')), ['deepseek']);
   assert.match(result.text, /已接收 3 张：新投稿 2 张，重复 1 张/);
   assert.equal(result.resets, 1);
   assert.equal(result.button.disabled, false);
+});
+
+test('非 AI 生成是独立的可选项，单图和 ZIP 均仅在勾选后传递声明', async () => {
+  for(const file of [new File(['zip'], 'set.zip'), new File(['png'], 'art.png', {type:'image/png'})]){
+    const result=await useForm({file,nonAi:true});
+    assert.equal(result.requests.length,1);
+    assert.equal(result.requests[0].body.get('nonAi'),'true');
+    assert.equal(result.requests[0].body.get('categoryId'),'meme');
+    assert.equal(result.document.querySelector('#f-non-ai').hasAttribute('required'),false);
+  }
+  for(const prefix of ['', 'en/', 'ja/', 'zh-hant/']){
+    const file=path.join(process.env.SITE_OUT_DIR||path.join(root,'.build/site'),prefix+'submit.html');
+    const page=parseHTML(fs.readFileSync(file,'utf8')).document;
+    assert.ok(page.querySelector('input[name="nonAi"]'));
+    assert.equal(page.querySelector('input[name="nonAi"]').hasAttribute('checked'),false);
+    const help=page.querySelector('#non-ai-hint').textContent;
+    assert.ok(help.length>30);
+    if(prefix==='en/')assert.match(help,/all works|Non-AI/);
+    if(prefix==='ja/')assert.match(help,/すべての作品/);
+  }
 });
 
 test('ZIP 和单图采用不同前端大小限制，空文件和其他格式不发请求', async () => {

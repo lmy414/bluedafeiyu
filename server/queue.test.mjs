@@ -310,6 +310,37 @@ test('非法英日内容在队列落盘前拒绝，保留原审核状态', async
   assert.equal((await queue.get(item.id)).review, null);
 });
 
+test('投稿者非 AI 声明跨重启保留，审核内容自动补齐分类与英日标签而不改变审核状态', async t=>{
+  const {queue,cfg}=await setup(t);
+  for(const selected of [false,true]){
+    const {item}=await queue.enqueue({source:'web',sourceId:`web:non-ai-${selected}`,buffer:Buffer.concat([TINY_PNG,Buffer.from(String(selected))]),fields:{nonAi:selected}});
+    const content={name:'探头',description:'DeepSeek娘探头。',commentary:'让我看看。',characterId:'deepseek',categoryIds:['meme'],tags:['探头'],i18n:fixtureI18n(['探头'])};
+    const before=structuredClone(content);
+    await queue.attachReview(item.id,{verdict:'pass',confidence:.95,content});
+    const stored=await (await createQueue(cfg)).get(item.id);
+    assert.equal(stored.fields.nonAi,selected?true:undefined);
+    assert.deepEqual(stored.fields.tags,selected?['非AI']:[],'人工收录同样能读取投稿者声明的标签');
+    assert.equal(stored.state,STATES.RECEIVED);
+    assert.deepEqual(stored.review.content.categoryIds,['meme']);
+    assert.deepEqual(stored.review.content.tags,selected?['探头','非AI']:['探头']);
+    assert.equal(stored.review.content.i18n.en.tags.length,selected?2:1);
+    if(selected){assert.equal(stored.review.content.i18n.en.tags.at(-1),'non-AI');assert.equal(stored.review.content.i18n.ja.tags.at(-1),'非AI');}
+    assert.deepEqual(content,before,'补充自声明不修改原始 AI 输出');
+  }
+});
+
+test('非 AI 标签补充遵守 20 个标签上限，并保持英日标签顺序一致', async t=>{
+  const {queue}=await setup(t);
+  const {item}=await queue.enqueue({source:'web',sourceId:'web:non-ai-full',buffer:TINY_PNG,fields:{nonAi:true}});
+  const tags=Array.from({length:20},(_,i)=>`标签${i}`);
+  const content={name:'探头',description:'DeepSeek娘探头。',commentary:'让我看看。',characterId:'deepseek',categoryIds:['meme'],tags,i18n:fixtureI18n(tags)};
+  await queue.attachReview(item.id,{verdict:'pass',confidence:.95,content});
+  const stored=(await queue.get(item.id)).review.content;
+  assert.deepEqual(stored.tags,[...tags.slice(0,19),'非AI']);
+  assert.equal(stored.i18n.en.tags.length,20);assert.equal(stored.i18n.ja.tags.length,20);
+  assert.equal(stored.i18n.en.tags.at(-1),'non-AI');assert.equal(stored.i18n.ja.tags.at(-1),'非AI');
+});
+
 test('attachReview 没有 content 时只记摘要，不无中生有', async (t) => {
   const { queue, cfg } = await setup(t);
   const { item } = await queue.enqueue({ source: 'web', sourceId: 'web:nocontent', buffer: TINY_PNG, fields: { name: 'r' } });

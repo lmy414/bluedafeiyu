@@ -79,7 +79,7 @@ test('non-AI search is discoverable and uses an explicitly documented hand-drawn
   const archive=JSON.parse(fs.readFileSync(path.join(out,'archive-data.json'),'utf8'));
   const tagged=archive.works.filter(w=>w.tg.includes('非AI'));
   assert.ok(tagged.some(w=>w.slug==='deepseek202610210008'));
-  assert.ok(!tagged.some(w=>w.slug==='claude202610170002'),'hand-drawn style alone is not provenance');
+  assert.ok(tagged.some(w=>w.slug==='claude202610170002'),'the maintainer-confirmed hand-drawn work is included');
   for(const locale of LOCALES){
     const page=read(localizedPath('/search.html',locale));
     const link=page.querySelector('[data-non-ai-entry]');

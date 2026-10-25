@@ -326,9 +326,11 @@ function validateSubmissionFields(fields, characters, { characterMaxLength = 64,
   const categoryId = typeof fields.categoryId === 'string' ? fields.categoryId.trim() : '';
   const vocabulary = loadContentVocabulary(siteRoot);
   if (!categoryId || !vocabulary.ok || !vocabulary.categoryIds.has(categoryId)) return { error: '请选择一个有效的作品类型' };
+  if (fields.nonAi !== undefined && ![true, false, 'true', 'false', ''].includes(fields.nonAi)) return { error: '非 AI 生成选项必须为布尔值' };
+  const nonAi = fields.nonAi === true || fields.nonAi === 'true';
   try {
     const attribution = submissionAttribution(fields);
-    return { fields: { name, character, characterIds: selected.value.characterIds, description, categoryId, ...(attribution ? { credit: attribution.credit, creditName: attribution.name, creditUrl: attribution.url } : {}) } };
+    return { fields: { name, character, characterIds: selected.value.characterIds, description, categoryId, ...(nonAi ? { nonAi: true } : {}), ...(attribution ? { credit: attribution.credit, creditName: attribution.name, creditUrl: attribution.url } : {}) } };
   } catch (error) { return { error: error.message }; }
 }
 
@@ -946,7 +948,7 @@ export function createPublicHandler({
           const raw = await readBody(req, cfg.maxBytes);
           let payload = {};
           try { payload = raw.length ? JSON.parse(raw.toString('utf8')) : {}; } catch { return sendJson(res, 400, { ok: false, error: 'invalid json' }); }
-          fields = { name: payload.name, character: payload.character, ...(Object.hasOwn(payload, 'characterIds') ? { characterIds: payload.characterIds } : {}), description: payload.description, categoryId: payload.categoryId, credit: payload.credit, creditName: payload.creditName, creditUrl: payload.creditUrl };
+          fields = { name: payload.name, character: payload.character, ...(Object.hasOwn(payload, 'characterIds') ? { characterIds: payload.characterIds } : {}), description: payload.description, categoryId: payload.categoryId, nonAi: payload.nonAi, credit: payload.credit, creditName: payload.creditName, creditUrl: payload.creditUrl };
           try {
             fileBuffer = decodeBase64Image(payload.dataBase64, cfg.maxBytes);
           } catch (error) {

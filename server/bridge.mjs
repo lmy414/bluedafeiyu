@@ -302,6 +302,7 @@ export async function createBridge({
           character: check.value.characterId,
           characterIds: check.value.characterIds,
           tags: check.value.tags,
+          ...(item.fields?.nonAi === true ? { nonAi: true } : {}),
           ...(item.fields?.credit ? { credit: item.fields.credit, creditName: item.fields.creditName, creditUrl: item.fields.creditUrl } : {}),
         },
         content: check.value,
