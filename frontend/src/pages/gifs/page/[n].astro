@@ -1,0 +1,12 @@
+---
+import ArchivePage from "../../../components/archive/ArchivePage.astro";
+import { archivePages } from "../../../lib/archive.mjs";
+export function getStaticPaths() {
+  return [...archivePages].flatMap(([url,page]) => {
+    const match = url.match(/^\/gifs\/page\/(\d+)\.html$/);
+    return match ? [{params:{n:match[1]},props:{page}}] : [];
+  });
+}
+const {page} = Astro.props;
+---
+<ArchivePage page={page} />

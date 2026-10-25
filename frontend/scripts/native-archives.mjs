@@ -1,8 +1,10 @@
 import {workCharacterIds} from '../../tools/work-characters.mjs';
 import {characterSearchAliases} from '../src/lib/landing-copy.mjs';
+import {isGifWork} from '../public/archive/work-format.js';
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const kind=(api,id)=>api.fmt('v2.type.'+id,id);
 function context(base,api,snapshot){
+  if(/^\/gifs(?:\/page\/\d+)?\.html$/.test(base))return {format:'gif',works:snapshot.works.filter(isGifWork),name:api.current==='en'?'GIFs':'GIFアニメ',title:api.current==='en'?'AI Girl GIF Archive':'AI娘のGIFアニメ'};
   const topicId=base.match(/^\/topics\/([^/]+)(?:\/page\/\d+)?\.html$/)?.[1];
   const topic=topicId&&(snapshot.topics||[]).find(t=>t.id===topicId);
   if(topic){
@@ -46,6 +48,15 @@ export function applyNativeArchives(document,api,base,snapshot){
     if(id)link.textContent=en?roleName(id)+' stickers and fan art':roleName(id)+'のネタ画像・二次創作';
   }
   const c=context(base,api,snapshot);if(!c)return null;
+  if(c.format==='gif'){
+    const page=base.match(/\/page\/(\d+)\.html$/)?.[1];
+    for(const link of document.querySelectorAll('.breadcrumbs a[href="/gifs.html"]'))link.textContent=c.name;
+    const crumb=document.querySelector('.breadcrumbs > span:last-child');if(crumb)crumb.textContent=page?(en?'Page '+page:page+'ページ目'):c.name;
+    const description=en?`Explore ${c.works.length} AI girl works with GIF originals. Filter by character and work type, check sources and permissions, and download originals for the full animation.`:`GIF形式の元画像を持つAI娘の二次創作を${c.works.length}件収録。キャラクターや作品の種類で絞り込み、出典と利用許諾を確認して元画像をダウンロードできます。`;
+    const heading=document.querySelector('main h1');if(heading)heading.textContent=c.name;
+    const lead=document.querySelector('.page-head .lede');if(lead)lead.textContent=description;
+    return {title:c.title+(page?(en?' · Page ':' · ')+page+(en?'':'ページ目'):'')+' | DeepSeek Chan',description};
+  }
   if(c.topic){
     const heading=document.querySelector('main h1');if(heading)heading.textContent=c.name;
     const lead=document.querySelector('.topic-hero .lede,.page-head .lede');if(lead)lead.textContent=c.summary;

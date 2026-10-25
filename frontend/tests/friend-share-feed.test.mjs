@@ -35,14 +35,14 @@ test('copying a work link preserves its selected work and current language on de
   }
 });
 
-test('the image archive reuses exactly three page links without altering their URLs',()=>{
+test('the image archive reuses all four page links without altering their URLs',()=>{
   const ctx={tr:(_key,zh)=>zh,old:(_key,zh)=>zh};
-  for(const active of ['browse','characters','topics']){
+  for(const active of ['browse','characters','topics','gifs']){
     const {document}=parseHTML(renderArchiveTabs(active,ctx));
     const links=[...document.querySelectorAll('a')];
-    assert.deepEqual(links.map(a=>[a.textContent,a.href]),[['全部','/browse.html'],['角色','/characters.html'],['合集','/topics.html']]);
+    assert.deepEqual(links.map(a=>[a.textContent,a.href]),[['全部','/browse.html'],['角色','/characters.html'],['合集','/topics.html'],['GIF 动图','/gifs.html']]);
     assert.equal(document.querySelectorAll('[aria-current="page"]').length,1);
-    assert.equal(links[['browse','characters','topics'].indexOf(active)].getAttribute('aria-current'),'page');
+    assert.equal(links[['browse','characters','topics','gifs'].indexOf(active)].getAttribute('aria-current'),'page');
   }
 });
 

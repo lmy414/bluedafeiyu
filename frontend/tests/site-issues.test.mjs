@@ -92,9 +92,9 @@ test('non-AI search is discoverable and uses an explicitly documented hand-drawn
   }
 });
 
-test('image navigation has exactly three existing routes and original-download tracking survives',()=>{
+test('image navigation exposes all four archive views and original-download tracking survives',()=>{
   for(const locale of LOCALES){
-    const routes=['/browse.html','/characters.html','/topics.html'];
+    const routes=['/browse.html','/characters.html','/topics.html','/gifs.html'];
     for(const route of routes){
       const page=read(localizedPath(route,locale));
       const tabs=[...page.querySelectorAll('.gallery-tabs a')];
