@@ -6,6 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { seoContext, seoTitle } from '../../lib/seo.mjs';
 import { homeMeta, guides, guidePath, characterSearchAliases } from '../../lib/landing-copy.mjs';
+import {isGifWork} from '../../../public/archive/work-format.js';
 
 export const pageURL = (base, n) => n === 1 ? base :
   (base === '/browse.html' ? '/page/' : base.replace(/\.html$/, '/page/')) + n + '.html';
@@ -19,6 +20,7 @@ export function createSEO(ctx) {
   const collections = new Map();
   const add = (base, list, name, kind, extra = {}) => collections.set(base, { base, list, name, kind, ...extra });
   add('/browse.html', works, 'AI 娘表情包与二创作品', 'browse');
+  add('/gifs.html', works.filter(isGifWork), 'AI 娘 GIF 动图', 'gif');
   for (const t of types) add('/categories/' + t.id + '.html', works.filter(w => w.k.includes(t.id)), 'AI 娘' + kindNames[t.id], 'type', { type: t.id });
   for (const c of chars) {
     const availableKinds = types.filter(t => c.list.some(w => w.k.includes(t.id))).map(t => kindNames[t.id]);
@@ -55,6 +57,7 @@ export function createSEO(ctx) {
     return collections.has(base) ? { ...collections.get(base), n: Number(match[2]) } : null;
   }
   function description(c) {
+    if (c.kind === 'gif') return `按原图 GIF 格式自动归集 ${c.list.length} 件 AI 娘二创，保留原有作品类型。按角色和类型筛选，查看来源与授权，下载原图欣赏完整动画。`;
     if (c.kind === 'topic') return `${c.topic.summary} 本合集收录 ${c.list.length} 件作品，保留每张图片的说明、来源、署名与授权记录。`;
     const aliases = c.character?.aliases?.length ? `（现有别名：${c.character.aliases.join('、')}）` : '';
     const searchAlias = characterSearchAliases[c.character?.id]?.[0];
