@@ -45,6 +45,8 @@ export function applyNativeContent(document,api,base,snapshot) {
   if(work&&value) {
     const set=(selector,text)=>{const el=document.querySelector(selector);if(el)el.textContent=text;};
     set('main h1',value.name);set('.work-description',value.description);set('.fish-comment p',value.commentary);
+    const originNote=document.querySelector('[data-origin-note-text]');
+    if(originNote){if(value.originNote)originNote.textContent=value.originNote;else originNote.closest('[data-origin-note]')?.remove();}
     set('.breadcrumbs > span:last-child',value.name);
     for(const role of document.querySelectorAll('.detail-role')){const id=role.getAttribute('data-character-id')||work.characterId,dot=role.querySelector('i');role.replaceChildren();if(dot)role.appendChild(dot);role.appendChild(document.createTextNode(api.characterName(id,id)));}
     document.querySelector('.detail-image img')?.setAttribute('alt',value.description||value.name);
