@@ -1,0 +1,116 @@
+/* Public archive theme. Legacy names are aliases, never a second palette. */
+:root {
+  color-scheme: light;
+  --ground: #f6f8fa;
+  --paper: #ffffff;
+  --ink: #203b50;
+  --muted: #526b7d;
+  --line: #dce5eb;
+  --soft: #eef4f7;
+  --blue: #256e9b;
+  --blue-soft: #e6f1f8;
+  --on-blue: #ffffff;
+  --blue-hover: #1c5c84;
+  --control-line: #849aa9;
+  --shadow: 0 8px 30px #163b5814;
+  --shadow-control: 0 1px 3px #163b580a;
+  --sidebar: 218px;
+  --shell-max: 1300px;
+  --gutter: 40px;
+  --control-height: 40px;
+  --radius-control: 8px;
+  --radius-card: 12px;
+  --radius-work: 8px;
+  --font: var(--font-sans);
+  --mono: var(--font-mono);
+
+  --text-primary: var(--ink);
+  --text-secondary: var(--muted);
+  --text-tertiary: var(--muted);
+  --text-inverse: var(--on-blue);
+  --brand: var(--blue);
+  --brand-hover: var(--blue-hover);
+  --brand-ink: var(--on-blue);
+  --brand-soft: var(--blue-soft);
+  --accent: var(--blue);
+  --accent-soft: var(--blue-soft);
+  --bg-app: var(--ground);
+  --bg-surface: var(--paper);
+  --bg-raised: var(--paper);
+  --bg-inset: var(--soft);
+  --bg-stage: var(--soft);
+  --bg-hover: var(--soft);
+  --border-default: var(--line);
+  --border-subtle: var(--line);
+  --border-strong: var(--control-line);
+  --shadow-1: var(--shadow-control);
+  --shadow-2: var(--shadow);
+  --shadow-3: var(--shadow);
+  --shadow-paper-sm: var(--shadow-control);
+  --shadow-paper: var(--shadow);
+  --shadow-paper-lg: var(--shadow);
+  --shadow-tape: var(--shadow-control);
+  --ink-70: var(--muted);
+  --ink-45: var(--muted);
+  --paper-card: var(--paper);
+  --marker: var(--blue);
+  --marker-soft: var(--blue-soft);
+  --sticky-1: var(--blue-soft);
+  --sticky-2: var(--soft);
+  --sticky-3: var(--paper);
+  --grid-line: var(--line);
+  --page: var(--ground);
+  --blue-pale: var(--blue-soft);
+  --blue-deep: var(--blue-hover);
+  --warm: var(--soft);
+  --tape: var(--blue-soft);
+  --j-ground: var(--ground);
+  --j-paper: var(--paper);
+  --j-ink: var(--ink);
+  --j-muted: var(--muted);
+  --j-line: var(--line);
+  --j-blue: var(--blue);
+  --j-soft: var(--soft);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ground: #111c25;
+  --paper: #1a2a35;
+  --ink: #e4eef4;
+  --muted: #a3b9c9;
+  --line: #304450;
+  --soft: #213642;
+  --blue: #9ad4f2;
+  --blue-soft: #203d50;
+  --on-blue: #102a3a;
+  --blue-hover: #b9e4fa;
+  --control-line: #728b9d;
+  --shadow: 0 8px 30px #00000033;
+  --shadow-control: 0 1px 3px #0000001a;
+  /* These names also exist in the legacy dark tokens; reset them here. */
+  --brand-ink: var(--on-blue);
+  --brand-hover: var(--blue-hover);
+  --border-default: var(--line);
+  --border-strong: var(--control-line);
+  --shadow-paper-sm: var(--shadow-control);
+  --shadow-paper: var(--shadow);
+  --shadow-paper-lg: var(--shadow);
+  --shadow-tape: var(--shadow-control);
+  --ink-70: var(--muted);
+  --ink-45: var(--muted);
+  --paper-card: var(--paper);
+  --marker: var(--blue);
+  --marker-soft: var(--blue-soft);
+  --sticky-1: var(--blue-soft);
+  --sticky-2: var(--soft);
+  --sticky-3: var(--paper);
+  --grid-line: var(--line);
+}
+
+@media (max-width: 1100px) {
+  :root { --gutter: 24px; }
+}
+@media (max-width: 760px) {
+  :root { --gutter: 16px; --control-height: 44px; }
+}

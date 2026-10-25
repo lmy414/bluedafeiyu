@@ -1,0 +1,7 @@
+---
+import {renderPageHeading} from './PageHeading.mjs';
+const {eyebrow = '', title = '', description = '', titleKey, descriptionKey} = Astro.props;
+const escape = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+const copy = (text, key) => key ? `<span data-i18n="${escape(key)}">${escape(text)}</span>` : escape(text);
+---
+<Fragment set:html={renderPageHeading({eyebrow:escape(eyebrow),title:copy(title,titleKey),description:copy(description,descriptionKey)})} />

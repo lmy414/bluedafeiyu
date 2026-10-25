@@ -14,7 +14,6 @@ import themeScript from '../../public/theme.js?raw';
 import componentRuntime from '../../public/components/runtime.js?raw';
 const { title, desc, path = '/', active = '', bodyPage = active, og, type = 'website', shareDesc = '',
   robots = 'index,follow', canonical = '', pageStyles = [], bodyAttrs = {}, schemas = [] } = Astro.props;
-const refined=!['/browse.html','/videos.html'].includes(path) && !path.startsWith('/categories/');
 ---
 <!doctype html>
 <html lang="zh-CN">
@@ -35,7 +34,7 @@ const refined=!['/browse.html','/videos.html'].includes(path) && !path.startsWit
     {schemas.map(schema => <script is:inline type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, '\\u003c')} />)}
     <slot name="head" />
   </head>
-  <body class:list={['archive', {refined,'journal-home':active==='home'}]} data-design-version="20261023-4" data-archive data-i18n-page={bodyPage} data-page={active} {...bodyAttrs}>
+  <body class:list={['archive', 'refined', {'journal-home':active==='home'}]} data-design-version="20261025-1" data-archive data-i18n-page={bodyPage} data-page={active} {...bodyAttrs}>
     <a class="skip-link" href="#main" data-i18n="v2.skip">跳到正文</a>
     <Navigation {active} />
     <div class="menu-scrim" data-menu-close hidden></div>

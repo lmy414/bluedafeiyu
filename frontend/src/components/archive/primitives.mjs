@@ -1,3 +1,5 @@
+import {renderPageHeading} from './PageHeading.mjs';
+
 export function createPrimitives(ctx) {
 const { translations, modelVendors } = ctx;
 const esc = value => String(value ?? "").replace(/[&<>"']/g, s => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[s]);
@@ -17,7 +19,7 @@ const tagLink = tag => `<a class="tag" href="/search.html?q=${encodeURIComponent
 const workHref = w => '/works/' + w.slug + '.html';
 const sectionHead = (title, sub = '', link = '', label = '') => `<div class="section-head"><div><h2><span class="marker-highlight">${title}</span></h2>${sub ? `<p>${sub}</p>` : ''}</div>${link ? `<a class="text-link" href="${link}">${label || tr('viewAll','查看全部','View all','すべて見る')}${icon('arrow',17)}</a>` : ''}</div>`;
 const breadcrumbs = rows => `<nav class="breadcrumbs" aria-label="当前位置">${rows.map(([name,href])=>href ? `<a href="${href}">${name}</a>` : `<span>${name}</span>`).join('<span aria-hidden="true">/</span>')}</nav>`;
-const pageHead = (eyebrow, title, desc = '', extra = '') => `<header class="page-head"><div><p class="eyebrow">${eyebrow}</p><h1><span class="marker-highlight">${title}</span></h1>${desc ? `<p class="lede">${desc}</p>`:''}</div>${extra}</header>`;
+const pageHead = (eyebrow, title, desc = '', extra = '') => renderPageHeading({eyebrow, title, description:desc, extra});
 
 return {esc, absolute, tr, old, icon, button, tagLink, workHref, sectionHead, breadcrumbs, pageHead, modelVendorLine};
 }

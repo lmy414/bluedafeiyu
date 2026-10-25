@@ -3,6 +3,7 @@ import { parseHTML } from 'linkedom';
 import { videoArchive } from '../../lib/video-archive.mjs';
 import {archiveCreators} from '../../lib/creators.mjs';
 import {createCreatorViews} from './CreatorViews.mjs';
+import {renderPageHeading} from './PageHeading.mjs';
 
 // The reviewed Demo's composition, populated exclusively from the production archive.
 export function createDemoPages(ctx, pages) {
@@ -97,19 +98,26 @@ export function decorateDocument(html,key,ctx) {
     if(hero){hero.className='designed-event-hero';const figure=hero.querySelector('figure');if(figure)hero.append(figure);}
   }
 
-  let heading=body.querySelector('.page-head');
-  if(heading){
-    heading.className='page-head page-heading';
-    const label=heading.querySelector('.eyebrow');if(label)label.innerHTML=tr('siteCommunity','站点与社区','SITE & COMMUNITY','サイトとコミュニティ');
-    heading.remove();
-  }else{
-    const title=body.querySelector('h1');
-    heading=element('header','page-head page-heading');
-    const copy=element('div','');heading.append(copy);
-    const label=element('p','eyebrow');label.innerHTML=tr('siteCommunity','站点与社区','SITE & COMMUNITY','サイトとコミュニティ');copy.append(label);
-    if(title){title.className='';copy.append(title);}
-  }
+  const originalHeading=body.querySelector('.page-head');
+  const title=originalHeading?.querySelector('h1') || body.querySelector('h1');
+  const description=originalHeading?.querySelector('.lede,.live-lede') ||
+    (title?.nextElementSibling?.matches('.lede,.live-lede') ? title.nextElementSibling : null);
+  // Preserve translation and anchor attributes when moving the introductory copy.
+  const inlineCopy=node=>{
+    if(!node)return '';
+    const span=document.createElement('span');
+    for(const attr of node.attributes)if(attr.name!=='class')span.setAttribute(attr.name,attr.value);
+    span.innerHTML=node.innerHTML;
+    node.remove();
+    return span.outerHTML;
+  };
+  const heading=renderPageHeading({
+    eyebrow:tr('siteCommunity','站点与社区','SITE & COMMUNITY','サイトとコミュニティ'),
+    title:inlineCopy(title),
+    description:inlineCopy(description)
+  });
+  originalHeading?.remove();
   for(const node of body.querySelectorAll('[class]'))for(const cls of [...node.classList])if(!cls.startsWith('live-')&&node.classList.contains('live-'+cls))node.classList.remove(cls);
   const nav=[['community','社群','Community','コミュニティ','roles'],['about','关于与版权','About & copyright','このサイトについて','book'],['events/national-day-2026','活动','Events','イベント','spark'],['projects','友情链接','Friend links','リンク集','link'],['changelog','更新日志','Changelog','更新履歴','pin']];
-  return `<nav class="document-sections" aria-label="站点与社区" data-i18n-attr="aria-label:d.design.siteCommunity">${nav.map(([id,z,en,ja,ic])=>`<a href="/${id}.html" ${id.startsWith(key)?'aria-current="page" class="is-active"':''}>${icon(ic)}${tr('doc.'+id,z,en,ja)}</a>`).join('')}</nav>${heading.outerHTML}<div class="document-layout"><div class="document-reader"><article class="synced-prose" data-live-document="${key}">${body.innerHTML}</article></div></div>`;
+  return `${heading}<nav class="document-sections section-tabs" aria-label="站点与社区" data-i18n-attr="aria-label:d.design.siteCommunity">${nav.map(([id,z,en,ja,ic])=>`<a href="/${id}.html" ${id.startsWith(key)?'aria-current="page" class="is-active"':''}>${icon(ic)}${tr('doc.'+id,z,en,ja)}</a>`).join('')}</nav><div class="document-layout"><div class="document-reader"><article class="synced-prose" data-live-document="${key}">${body.innerHTML}</article></div></div>`;
 }

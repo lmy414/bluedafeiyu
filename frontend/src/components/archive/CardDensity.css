@@ -13,8 +13,6 @@
   body.archive.refined .topbar { min-height: 0; height: auto; padding: 8px 28px; }
   body.archive main { padding-bottom: 28px; }
   body.archive.refined main { padding-bottom: 28px; }
-  body.archive:not(.refined) .page-head { margin: 18px 0 14px; }
-  body.archive:not(.refined) .page-head h1 { font-size: 24px; margin: 4px 0; }
 
   /* ------------------------------------------------------- B. 主页 hero */
   body.archive.refined .portal-heading { margin: 0 0 14px; padding: 14px 0 12px; }

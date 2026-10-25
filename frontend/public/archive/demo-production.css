@@ -1,5 +1,4 @@
 /* Production contracts remain intact; this bridges the reviewed Demo's class names. */
-body.archive.refined{--j-ground:var(--ground);--j-paper:var(--paper);--j-ink:var(--ink);--j-muted:var(--muted);--j-line:var(--line);--j-blue:var(--blue);--j-soft:var(--soft);--brand-soft:var(--blue-soft);--bg-app:var(--ground);--bg-surface:var(--paper);--text-primary:var(--ink);--text-secondary:var(--muted);--border-default:var(--line);--font:system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;--mono:ui-monospace,monospace;background:var(--ground);color:var(--ink)}
 body.archive.refined main{width:100%;max-width:1300px;margin:0 auto;padding:0 40px 48px;min-width:0}
 body.archive.refined .main-wrap{min-width:0}body.archive.refined .sidebar{background:var(--paper);border-right:1px solid var(--line)}
 body.archive.refined .topbar{background:var(--ground);border-bottom:1px solid var(--line)}
@@ -55,7 +54,7 @@ body.archive.refined .site-footer{margin:45px 0 0;padding:28px 0;border-top:1px 
 
 @media(min-width:761px){body.archive.refined .mobile-menu,body.archive.refined .mobile-brand{display:none}body.archive.refined .side-note{display:none}}
 /* Production selectors retain their data/event contracts while using Demo geometry. */
-body.archive{--j-ground:var(--ground);--j-paper:var(--paper);--j-ink:var(--ink);--j-muted:var(--muted);--j-line:var(--line);--j-blue:var(--blue);--j-soft:var(--soft);--bg-app:var(--ground);--bg-surface:var(--paper);--text-primary:var(--ink);--text-secondary:var(--muted);--border-default:var(--line);font:14px/1.7 var(--font);background:var(--ground);color:var(--ink)}
+body.archive{font:14px/1.7 var(--font);background:var(--ground);color:var(--ink)}
 body.archive :is(h1,h2,h3,h4,button,input,select,textarea){font-family:var(--font);text-shadow:none}
 body.archive [hidden]{display:none!important}
 body.archive .main-wrap{margin-left:218px;min-width:0}
