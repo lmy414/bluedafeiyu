@@ -5,12 +5,13 @@ const turnstileSitekey = (import.meta.env.PUBLIC_TURNSTILE_SITEKEY || "").trim()
 ---
 <form class="form" id="submission-form" novalidate data-api-endpoint="/api/v1/submissions" data-turnstile-sitekey={turnstileSitekey || undefined}>
       <div class="form-row">
-        <label for="f-files"><span data-i18n="submit.form.files">图片文件</span><span class="req-mark">*</span></label>
-        <span class="hint" data-i18n="submit.form.filesHint">支持 PNG / JPG / GIF / WebP / APNG，单张不超过 10 MB；请传原图，别传带聊天框的截图。</span>
-        <input type="file" id="f-files" name="image" accept="image/png,image/jpeg,image/gif,image/webp,image/apng" required />
+        <label for="f-files"><span data-i18n="submit.form.files">图片或 ZIP 压缩包</span><span class="req-mark">*</span></label>
+        <span class="hint" id="files-hint" data-i18n="submit.form.filesHint">支持 PNG / JPG / GIF / WebP / APNG 原图（单张 ≤ 10 MiB），或 ZIP 图片集（≤ 32 MiB、最多 100 张，包内单图 ≤ 16 MiB，解压总量 ≤ 64 MiB）。</span>
+        <input type="file" id="f-files" name="image" accept="image/png,image/jpeg,image/gif,image/webp,image/apng,.zip,application/zip,application/x-zip-compressed" aria-describedby="files-hint archive-hint" required />
+        <span class="hint" id="archive-hint" data-i18n="submit.form.archiveHint">ZIP 仅可包含图片，不支持加密或嵌套压缩包。包内图片共用本次填写的信息，每张独立审核并自动去重。</span>
       </div>
       <div class="form-row">
-        <label for="f-name"><span data-i18n="submit.form.name">图片名称</span><span class="req-mark">*</span></label>
+        <label for="f-name"><span data-i18n="submit.form.name">图片 / 图集名称</span><span class="req-mark">*</span></label>
         <input type="text" id="f-name" name="name" autocomplete="off" maxlength="120" required />
       </div>
       <div class="form-row">
@@ -66,7 +67,7 @@ const turnstileSitekey = (import.meta.env.PUBLIC_TURNSTILE_SITEKEY || "").trim()
           <span class="group-label"><span data-i18n="submit.form.confirmLabel">提交前确认</span><span class="req-mark">*</span></span>
           <span class="hint" data-i18n="submit.form.confirmHint">三条全部勾选后才能提交。</span>
         </div>
-        <label class="checkbox-row"><input type="checkbox" id="f-confirm-1" name="confirmRights" required /><span data-i18n="submit.confirm1">我确认自己有权提交这张图片，或已获原作者允许。</span></label>
+        <label class="checkbox-row"><input type="checkbox" id="f-confirm-1" name="confirmRights" required /><span data-i18n="submit.confirm1">我确认自己有权提交本次全部图片，或已获原作者允许。</span></label>
         <label class="checkbox-row"><input type="checkbox" id="f-confirm-2" name="confirmReview" required /><span data-i18n="submit.confirm2">同意维护者核实后收录，并在收到版权要求时修改信息或删除。</span></label>
         <label class="checkbox-row"><input type="checkbox" id="f-confirm-3" name="confirmFanProject" required /><span data-i18n="submit.confirm3">知道本站是非官方同人整理项目，图片著作权始终归原作者。</span></label>
       </div>

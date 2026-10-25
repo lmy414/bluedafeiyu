@@ -111,14 +111,14 @@ node --test "server/**/*.test.mjs"
 
 | 来源 | 入口 | 鉴权与边界 |
 | --- | --- | --- |
-| 网页公开投稿 | `POST /api/v1/submissions` | 匿名；严格 Origin/CORS、限流、大小/魔数/字段校验；响应只回 `{ok,id,status}` |
+| 网页公开投稿 | `POST /api/v1/submissions` | 匿名；严格 Origin/CORS、限流、大小/魔数/字段校验；单图只回 `{ok,id,status}`，ZIP 只回接收计数 |
 | QQ 群入站 | `POST /api/v1/adapters/qq/events` | 必须开启且配令牌 + 群白名单；**不连接任何未配置机器人**（纯被动入站） |
 | GitHub Issue 附件 | `node server/cli.mjs pull-issues` 或管理端 `POST /api/v1/pull-issues` | 只拉 `sticker-submission` 标签；附件域名白名单、限制跳转/大小/超时；token 最小权限 |
 
-公开投稿支持 `multipart/form-data`（表单上传一张图）或 `application/json`
+公开投稿支持 `multipart/form-data`（表单上传一张图或一个 ZIP 图片集）或 `application/json`
 （`{ name, character, description, filename, dataBase64 }`）。
 
-GitHub Issue 渠道另支持 ZIP 图片集：最多 100 张，压缩包 32 MiB、单图 16 MiB、解压总量 64 MiB。每张仍单独校验、SHA 去重并进入现有 Hermes AI 审核，不默认转人工，也不由接收逻辑直接发布。安全边界、失败重试和历史投稿补接收见 [GitHub ZIP 投稿](../docs/GitHub-ZIP投稿.md)。
+网页与 GitHub Issue 共用 ZIP 图片集解包：最多 100 张，压缩包 32 MiB、单图 16 MiB（配置更低时取较小值）、解压总量 64 MiB。每张仍单独校验、SHA 去重并进入现有 Hermes AI 审核，不默认转人工，也不由接收逻辑直接发布。网页 ZIP 的字段、响应、代理体积要求及发布验收见 [网页 ZIP 投稿](../docs/网页ZIP投稿.md)；安全边界和历史 Issue 补接收见 [GitHub ZIP 投稿](../docs/GitHub-ZIP投稿.md)。JSON/base64 接口保持单图契约。
 
 ## 状态机与人工边界
 

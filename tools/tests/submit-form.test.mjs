@@ -7,7 +7,7 @@
 // 用法：
 //   node --test tools/tests/submit-form.test.mjs
 //
-// 覆盖：endpoint 可配置、控件解除 disabled、必填 name 属性、单文件格式与 10 MB 校验、
+// 覆盖：endpoint 可配置、控件解除 disabled、必填 name 属性、单图与 ZIP 的格式及大小校验、
 // 三条确认必勾选、FormData POST、turnstileToken 字段、Turnstile sitekey 构建注入与失败重置、
 // 按钮状态文案、不回显内部信息，以及 GitHub 入口与「审核后批量发布」文案仍在。
 
@@ -96,9 +96,14 @@ test("三个确认项与 turnstileToken 字段都在表单里", () => {
   assert.match(script, /data\.append\("turnstileToken"/);
 });
 
-test("单文件格式与 10 MB 前端校验", () => {
-  assert.match(form, /accept="image\/png,image\/jpeg,image\/gif,image\/webp,image\/apng"/);
+test("单图和 ZIP 入口、独立大小上限与整包说明", () => {
+  assert.match(form, /accept="image\/png,image\/jpeg,image\/gif,image\/webp,image\/apng,\.zip,application\/zip,application\/x-zip-compressed"/);
+  assert.doesNotMatch(form.match(/<input[^>]*id="f-files"[^>]*>/)?.[0] || '', /\bmultiple\b/);
+  assert.match(form, /id="archive-hint"/);
+  assert.match(form, /100 张/);
+  assert.match(form, /64 MiB/);
   assert.match(script, /MAX_BYTES\s*=\s*10\s*\*\s*1024\s*\*\s*1024/);
+  assert.match(script, /MAX_ARCHIVE_BYTES\s*=\s*32\s*\*\s*1024\s*\*\s*1024/);
   assert.match(script, /files\.length\s*===\s*0/);
   assert.match(script, /file\.size\s*>\s*MAX_BYTES/);
   assert.match(script, /ALLOWED_TYPES/);
@@ -121,7 +126,7 @@ test("按钮 loading / 成功 / 失败三种提示都有词典 key", () => {
 });
 
 test("提交失败后重置 Turnstile token，403 走同一失败分支", () => {
-  assert.match(script, /else \{\s*resetTurnstile\(\);\s*var mapped = errorForStatus\(outcome\.response\.status\);/);
+  assert.match(script, /else \{\s*resetTurnstile\(\);\s*var mapped = errorForStatus\(outcome\.response\.status, outcome\.payload\);/);
   assert.match(script, /\.catch\(function \(\) \{\s*resetTurnstile\(\);/);
 });
 
@@ -138,7 +143,7 @@ test("GitHub 入口与「审核后批量发布」文案保留", () => {
 
 test("en / ja 词典覆盖页内 script 用到的全部 submit.form.* key", () => {
   const keys = new Set();
-  for (const m of script.matchAll(/(?:t|SiteLang\.fmt)\("(submit\.[^"]+)"/g)) keys.add(m[1]);
+  for (const m of script.matchAll(/"(submit\.form\.[A-Za-z0-9]+(?:\.[A-Za-z0-9]+)*)"/g)) keys.add(m[1]);
   assert.ok(keys.size > 0, "没有解析到任何 submit.* key");
   for (const key of keys) {
     const hits = lang.split(`"${key}":`).length - 1;

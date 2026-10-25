@@ -30,6 +30,8 @@ import {
   summarizeContentErrors,
 } from './http.mjs';
 import { createQqAdapter } from './adapters/qq.mjs';
+import { zip } from '../tools/intake/fixtures/zip.mjs';
+import { ZIP_LIMITS } from '../tools/intake/zip.mjs';
 
 const TINY_PNG = Buffer.from(
   'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8DwHwAFAAH/q842iQAAAABJRU5ErkJggg==',
@@ -207,6 +209,154 @@ test('multipart 投稿成功，公开响应不含 sha / 内部路径', async (t)
     assert.ok(!('sha256' in body));
     assert.ok(!res.body.toString().includes('objects'));
     assert.equal((await queue.list()).length, 1);
+  });
+});
+
+const zipUpload = data => ({ field: 'image', filename: 'collection.ZIP', type: 'application/octet-stream', data });
+const distinctPng = n => Buffer.concat([TINY_PNG, Buffer.from(String(n))]);
+
+test('网页 ZIP 复用 Issue 解包：保留原图、公共字段、来源并进入 Hermes 待审列表', async t => {
+  let reviews = 0;
+  const { publicHandler, queue } = await setup(t, {
+    env: { SUBMISSION_HERMES_REVIEW_TOKEN: HERMES_TOKEN },
+    client: async () => { reviews++; throw new Error('不应在上传时调用审核'); },
+    bridge: { enabled: true, async bridgeItem() { throw new Error('不应在上传时桥接发布'); } },
+  });
+  const files = [TINY_PNG, distinctPng(1)];
+  await withServer(publicHandler, async port => {
+    const res = await submit(port, { file: zipUpload(zip(files.map((data, i) => ({ name: `图集/表情${i}.png`, data })))),
+      fields: { name: '表情集', character: 'deepseek', categoryId: 'meme', description: '同一图集', credit: 'named', creditName: '投稿者' } });
+    assert.equal(res.status, 201, res.body.toString());
+    assert.deepEqual(JSON.parse(res.body), { ok: true, count: 2, created: 2, duplicates: 0 });
+    const items = await queue.list();
+    assert.equal(items.length, 2);
+    for (const item of items) {
+      const { index } = item.origin.archive;
+      assert.equal(item.state, STATES.RECEIVED);
+      assert.equal(item.source, 'web');
+      assert.equal(item.fields.name, '表情集');
+      assert.equal(item.fields.creditName, '投稿者');
+      assert.equal(item.origin.archive.member, `图集/表情${index}.png`);
+      assert.equal(item.origin.archive.count, 2);
+      assert.match(item.sourceIds[0], /^web:zip:[a-f0-9]{64}:2:[01]$/);
+      const raw = await call(port, { routePath: `/api/v1/internal/submissions/${item.id}/raw`, headers: { authorization: `Bearer ${HERMES_TOKEN}` } });
+      assert.equal(raw.status, 200);
+      assert.deepEqual(raw.body, files[index]);
+    }
+    const pending = await call(port, { routePath: '/api/v1/internal/submissions?state=received&sources=web', headers: { authorization: `Bearer ${HERMES_TOKEN}` } });
+    assert.equal(JSON.parse(pending.body).items.length, 2);
+    assert.equal(reviews, 0);
+  });
+});
+
+test('网页 ZIP 同包重复、跨渠道和重传按 SHA 合并，不覆盖已有信息', async t => {
+  const { publicHandler, queue } = await setup(t);
+  const original = await queue.enqueue({ source: 'github-issue', sourceId: 'github:existing', buffer: TINY_PNG, fields: { name: '原始名称' } });
+  const file = zipUpload(zip([{ name: 'a.png' }, { name: 'b.png' }, { name: 'c.png', data: distinctPng(1) }]));
+  await withServer(publicHandler, async port => {
+    const first = await submit(port, { file });
+    assert.deepEqual(JSON.parse(first.body), { ok: true, count: 3, created: 1, duplicates: 2 });
+    const second = await submit(port, { file });
+    assert.equal(second.status, 200);
+    assert.deepEqual(JSON.parse(second.body), { ok: true, count: 3, created: 0, duplicates: 3 });
+  });
+  assert.equal((await queue.list()).length, 2);
+  const item = await queue.get(original.item.id);
+  assert.equal(item.fields.name, '原始名称');
+  assert.equal(item.sourceIds.length, 3);
+});
+
+test('网页 ZIP 部分入队失败不报成功，重传补齐而不重复审核', async t => {
+  const { deps, queue } = await setup(t);
+  let calls = 0;
+  const handler = createPublicHandler({ ...deps, queue: { enqueue: async args => {
+    if (++calls === 2) throw new Error('disk failure at /private/secret');
+    return queue.enqueue(args);
+  } } });
+  const file = zipUpload(zip([{ name: 'a.png' }, { name: 'b.png', data: distinctPng(2) }]));
+  await withServer(handler, async port => {
+    const first = await submit(port, { file });
+    assert.equal(first.status, 503);
+    assert.deepEqual(JSON.parse(first.body), { ok: false, code: 'ARCHIVE_RETRY', error: '图集接收未完成，请重试' });
+    assert.equal((await queue.list()).length, 1);
+    const retry = await submit(port, { file });
+    assert.deepEqual(JSON.parse(retry.body), { ok: true, count: 2, created: 1, duplicates: 1 });
+    assert.equal((await queue.list()).length, 2);
+  });
+});
+
+test('网页 ZIP 任一成员不安全或超限时整包不入队，错误不泄露原文', async t => {
+  const bad = [
+    { name: '../secret.png' }, { name: 'bad.txt' }, { name: 'nested.zip', data: zip([{ name: 'x.png' }]) },
+    { name: 'bad.png', data: Buffer.from('not an image') }, { name: 'fake.jpg' },
+    { name: 'bad.png', flags: 1 }, { name: 'bad.png', crc: 0 },
+    { name: 'bad.png', size: ZIP_LIMITS.maxImageBytes + 1 },
+  ];
+  const { publicHandler, queue } = await setup(t, { env: { SUBMISSION_RATE_MAX: '100' } });
+  await withServer(publicHandler, async port => {
+    for (const entry of bad) {
+      const res = await submit(port, { file: zipUpload(zip([{ name: 'good.png' }, entry])) });
+      assert.equal(res.status, 400, res.body.toString());
+      assert.equal(JSON.parse(res.body).code, 'INVALID_ARCHIVE');
+      assert.doesNotMatch(res.body.toString(), /secret|sha256|objects|sourceIds/);
+      assert.equal((await queue.list()).length, 0);
+    }
+    const tooMany = await submit(port, { file: zipUpload(zip(Array.from({ length: 101 }, (_, i) => ({ name: `${i}.png` })))) });
+    assert.equal(tooMany.status, 400);
+    const renamed = await submit(port, { file: { ...zipUpload(zip([{ name: 'x.png' }])), filename: 'fake.png' } });
+    assert.equal(renamed.status, 400);
+    assert.equal((await queue.list()).length, 0);
+  });
+});
+
+test('网页 ZIP 恰好 100 张可接收；自定义更低单图限制仍生效', async t => {
+  const { publicHandler, queue } = await setup(t);
+  await withServer(publicHandler, async port => {
+    const res = await submit(port, { file: zipUpload(zip(Array.from({ length: 100 }, (_, i) => ({ name: `${i}.png`, data: distinctPng(i) })))) });
+    assert.deepEqual(JSON.parse(res.body), { ok: true, count: 100, created: 100, duplicates: 0 });
+    assert.equal((await queue.list()).length, 100);
+  });
+  const low = await setup(t, { env: { SUBMISSION_MAX_BYTES: String(TINY_PNG.length) } });
+  await withServer(low.publicHandler, async port => {
+    assert.equal((await submit(port, { file: zipUpload(zip([{ name: 'x.png', data: distinctPng(1) }])) })).status, 400);
+    assert.equal((await low.queue.list()).length, 0);
+    // Multipart headers do not consume the image's own byte budget.
+    assert.equal((await submit(port)).status, 201);
+  });
+});
+
+test('网页 ZIP 同样受 Origin、人机验证和请求限流约束，未验证不能解包入队', async t => {
+  const { publicHandler, queue } = await setup(t, { env: { SUBMISSION_TURNSTILE_SECRET: 'test-secret', SUBMISSION_RATE_MAX: '2' }, turnstileVerify: async token => token === 'valid' });
+  const file = zipUpload(zip([{ name: 'x.png' }]));
+  await withServer(publicHandler, async port => {
+    assert.equal((await submit(port, { file, origin: 'https://evil.example' })).status, 403);
+    assert.equal((await submit(port, { file })).status, 403);
+    assert.equal((await queue.list()).length, 0);
+    assert.equal((await submit(port, { file, fields: { name: '图集', character: 'deepseek', categoryId: 'meme', turnstileToken: 'valid' } })).status, 201);
+    assert.equal((await submit(port, { file })).status, 429);
+  });
+});
+
+test('multipart 二进制中的边界文本不截断 ZIP 成员，仍要求有效结束分隔符', () => {
+  const data = Buffer.concat([TINY_PNG, Buffer.from('----bluefishboundary7f3a\r\n------bluefishboundary7f3a-fake\r\n')]);
+  const file = zipUpload(zip([{ name: 'x.png', data, method: 0 }]));
+  const { body, boundary } = multipartBody({}, file);
+  const parsed = parseMultipartForm(body, `multipart/form-data; boundary=${boundary}`);
+  assert.deepEqual(parsed.files[0].data, file.data);
+  assert.throws(() => parseMultipartForm(body.subarray(0, body.length - 8), `multipart/form-data; boundary=${boundary}`), /未正常结束/);
+});
+
+test('网页 ZIP 恰好 32 MiB 加表单头可接收，超限文件和请求体返回 413', async t => {
+  const overhead = zip([{ name: 'a.png', data: Buffer.alloc(0), method: 0 }, { name: 'b.png', data: Buffer.alloc(0), method: 0 }]).length;
+  const a = Buffer.alloc(ZIP_LIMITS.maxImageBytes); TINY_PNG.copy(a);
+  const b = Buffer.alloc(ZIP_LIMITS.maxArchiveBytes - a.length - overhead); TINY_PNG.copy(b); b[b.length - 1] = 1;
+  const archive = zip([{ name: 'a.png', data: a, method: 0 }, { name: 'b.png', data: b, method: 0 }]);
+  assert.equal(archive.length, ZIP_LIMITS.maxArchiveBytes);
+  const { publicHandler } = await setup(t);
+  await withServer(publicHandler, async port => {
+    assert.equal((await submit(port, { file: zipUpload(archive) })).status, 201);
+    assert.equal((await submit(port, { file: zipUpload(Buffer.concat([archive, Buffer.from([0])])) })).status, 413);
+    assert.equal((await submit(port, { file: zipUpload(Buffer.alloc(ZIP_LIMITS.maxArchiveBytes + 128 * 1024)) })).status, 413);
   });
 });
 

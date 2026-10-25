@@ -171,7 +171,7 @@
 
       "submit.h1": "Submit",
       "submit.lede":
-        "Submit your AI character fan art here or through GitHub: upload an image, enter its name and character, select one work type, and choose whether to display credit. A note is optional. Maintainers check the information and publish approved submissions in batches.",
+        "Submit AI character fan works as one image or a ZIP image collection here, or use GitHub. Enter the image or collection name, characters and work type, and choose whether to display credit. A note is optional. Images are reviewed individually and approved works are published in batches.",
       "submit.guide.title": "Submission guide",
       "submit.what.a": "This site collects ",
       "submit.what.b": "humanized fan stickers of AI characters",
@@ -188,13 +188,13 @@
         "For anything not covered above we use common sense, and maintainers keep the final say on whether a work is archived.",
       "submit.format.a": "Format requirements:",
       "submit.format.b":
-        " PNG / JPG / GIF / WebP / APNG, up to 10 MB per image; upload the original whenever possible — avoid chat-window screenshots or recompressed copies.",
+        "Original images: up to 10 MiB each. ZIP: up to 32 MiB, 100 images, 16 MiB per image inside the ZIP and 64 MiB uncompressed in total. Please upload originals.",
       "submit.onlyTitle": "When submitting you only need to:",
       "submit.onlyBody":
         "Upload an image, enter its name and character, choose one work type and decide whether to show your name. A credited name is required when selected; your homepage and a short note are optional. Maintainers verify the type and add tags, sources, permissions and detail-page text.",
       "submit.confirmTitle": "You must confirm three items before submitting:",
       "submit.confirm1":
-        "I confirm I have the right to submit this image, or have obtained the original author's permission.",
+        "I confirm I have the right to submit every image in this submission, or have obtained the original author's permission.",
       "submit.confirm2":
         "I agree that maintainers may archive it after verification, and edit its info or remove it upon a copyright request.",
       "submit.confirm3":
@@ -219,10 +219,15 @@
       "submit.form.title": "Quick submit",
       "submit.form.noticeA": "On-site quick submit is open",
       "submit.form.noticeB": " · submissions are queued for review and published in batches once approved",
-      "submit.form.files": "Image files",
+      "submit.form.files": "Image or ZIP archive",
+      "submit.form.archiveHint": "ZIPs may contain images only, with no encryption or nested archives. All images share the information entered here. Each is reviewed individually and duplicates are skipped automatically.",
+      "submit.form.archiveSuccess": "Received {count} images: {created} new, {duplicates} duplicates. New images will be reviewed individually and approved works published in batches.",
+      "submit.form.err.archiveSize": "The ZIP archive must not exceed 32 MiB.",
+      "submit.form.err.archiveInvalid": "The ZIP did not pass validation. Use an unencrypted ZIP containing only images: up to 100 images, 16 MiB per image and 64 MiB uncompressed in total. Nested archives are not supported.",
+      "submit.form.err.archiveRetry": "The collection has not been fully received. Keep your file and try again; images already received will be skipped automatically.",
       "submit.form.filesHint":
-        "PNG / JPG / GIF / WebP / APNG, up to 10 MB each; send the original file, not a chat screenshot.",
-      "submit.form.name": "Image name",
+        "PNG / JPG / GIF / WebP / APNG originals (up to 10 MiB each), or a ZIP collection (up to 32 MiB, 100 images, 16 MiB per image inside the ZIP and 64 MiB uncompressed in total).",
+      "submit.form.name": "Image / collection name",
       "submit.form.desc": "One-line note",
       "submit.form.character": "Characters",
       "submit.form.charactersHint": "Select all characters appearing in the image. Multiple selections are allowed.",
@@ -245,17 +250,17 @@
       "submit.form.success":
         "Submitted — thank you! Approved works are published in batches after review.",
       "submit.form.turnstileHint": "Please complete the human verification before submitting.",
-      "submit.form.err.fileRequired": "Choose an image first.",
-      "submit.form.err.fileCount": "Only one image can be submitted at a time.",
-      "submit.form.err.fileType": "Only PNG / JPG / GIF / WebP / APNG are supported.",
-      "submit.form.err.fileSize": "A single image must not exceed 10 MB.",
-      "submit.form.err.fileEmpty": "The image is empty — please choose another file.",
-      "submit.form.err.name": "Enter an image name of no more than 120 characters.",
+      "submit.form.err.fileRequired": "Choose one image or ZIP archive first.",
+      "submit.form.err.fileCount": "Submit only one image or ZIP archive at a time.",
+      "submit.form.err.fileType": "Only PNG / JPG / GIF / WebP / APNG images or ZIP archives are supported.",
+      "submit.form.err.fileSize": "A single image must not exceed 10 MiB.",
+      "submit.form.err.fileEmpty": "The file is empty. Please choose another file.",
+      "submit.form.err.name": "Enter an image or collection name of no more than 120 characters.",
       "submit.form.err.character": "Choose a character.",
       "submit.form.err.desc": "The note must not exceed 500 characters.",
       "submit.form.err.confirm": "Please tick all three confirmations first.",
       "submit.form.err.turnstile": "Please complete the human verification first.",
-      "submit.form.err.tooLarge": "The image exceeds the size limit — compress it and try again.",
+      "submit.form.err.tooLarge": "The file exceeds the size limit. Check the image or ZIP size and try again.",
       "submit.form.err.rejected":
         "The submission was not accepted. Please try again later or use the GitHub form.",
       "submit.form.err.busy": "Too many submissions: each IP can submit up to 10 times per hour. Please try again later.",
@@ -720,7 +725,7 @@
 
       "submit.h1": "投稿",
       "submit.lede":
-        "AIキャラクターの二次創作をこのページまたはGitHubから投稿できます。画像・名前・キャラを入力し、作品の種類を一つ選び、クレジット表記の有無を選んでください。説明は任意です。メンテナーが審査し、承認後にまとめて公開します。",
+        "AIキャラクターの二次創作を、画像1枚またはZIP画像集で投稿できます。GitHubフォームも利用できます。画像・画像集の名前、キャラクター、作品の種類とクレジットの有無を入力してください。説明は任意です。画像は1枚ずつ審査し、承認後にまとめて公開します。",
       "submit.guide.title": "投稿ガイド",
       "submit.what.a": "当サイトが収録するのは",
       "submit.what.b": "AIキャラの擬人化二次創作スタンプ",
@@ -735,13 +740,13 @@
         "書かれていない境界は常識で判断します。収録するかどうかの最終決定はメンテナーが行います。",
       "submit.format.a": "フォーマット：",
       "submit.format.b":
-        "PNG / JPG / GIF / WebP / APNG、1 枚 10 MB まで。できるだけ元画像をアップロードし、チャット画面のスクショや再圧縮した画像は避けてください。",
+        "元画像は1枚10 MiBまで。ZIPは32 MiB・100枚まで、ZIP内の画像は1枚16 MiBまで、展開後の合計は64 MiBまで。元画像をアップロードしてください。",
       "submit.onlyTitle": "投稿時に必要なもの：",
       "submit.onlyBody":
         "画像、名前、キャラクターを入力し、作品の種類を一つ選び、名前を公開するか選択してください。名前を公開する場合は名前が必須です。ホームページと説明は任意です。管理者が種類を確認し、タグ、出所、利用許諾、詳細文を補います。",
       "submit.confirmTitle": "送信前に次の 3 つに同意してください：",
       "submit.confirm1":
-        "この画像を投稿する権利を持ち、または原作者の許諾を得ていることを確認します。",
+        "今回のすべての画像を投稿する権利を持ち、または原作者の許諾を得ていることを確認します。",
       "submit.confirm2":
         "メンテナーが確認後に収録すること、著作権の申し立てがあれば情報修正や削除が行われることに同意します。",
       "submit.confirm3":
@@ -766,10 +771,15 @@
       "submit.form.title": "クイック投稿",
       "submit.form.noticeA": "サイト内クイック投稿を開放しました",
       "submit.form.noticeB": " · 投稿は審査キューに入り、承認後にまとめて公開されます",
-      "submit.form.files": "画像ファイル",
+      "submit.form.files": "画像またはZIPファイル",
+      "submit.form.archiveHint": "ZIPには画像のみを入れてください。暗号化や入れ子の圧縮ファイルは利用できません。入力した情報は画像集全体に適用され、1枚ずつ審査し、重複は自動で除外します。",
+      "submit.form.archiveSuccess": "{count}枚を受け付けました（新規{created}枚、重複{duplicates}枚）。新規画像は1枚ずつ審査し、承認後にまとめて公開します。",
+      "submit.form.err.archiveSize": "ZIPファイルは32 MiB以下にしてください。",
+      "submit.form.err.archiveInvalid": "ZIPの検証に失敗しました。暗号化せず画像のみを入れ、100枚・1枚16 MiB・展開後の合計64 MiB以内にしてください。入れ子の圧縮ファイルは利用できません。",
+      "submit.form.err.archiveRetry": "画像集の受け付けが完了していません。ファイルを保持して再送してください。受け付け済みの画像は自動で重複を除外します。",
       "submit.form.filesHint":
-        "PNG / JPG / GIF / WebP / APNG、1 枚 10 MB まで。元画像をアップロードし、チャット画面のスクショは避けてください。",
-      "submit.form.name": "画像の名前",
+        "PNG / JPG / GIF / WebP / APNGの元画像（1枚10 MiBまで）、またはZIP画像集（32 MiB・100枚まで、ZIP内は1枚16 MiBまで、展開後の合計64 MiBまで）。",
+      "submit.form.name": "画像・画像集の名前",
       "submit.form.desc": "ひとこと説明",
       "submit.form.character": "キャラクター",
       "submit.form.charactersHint": "画像に登場するキャラクターをすべて選択してください。複数選択できます。",
@@ -791,17 +801,17 @@
       "submit.form.submitting": "送信中…",
       "submit.form.success": "送信しました。ありがとうございます！承認後にまとめて公開されます。",
       "submit.form.turnstileHint": "送信の前に人機認証を完了してください。",
-      "submit.form.err.fileRequired": "まず画像を選択してください。",
-      "submit.form.err.fileCount": "一度に送信できる画像は 1 枚だけです。",
-      "submit.form.err.fileType": "PNG / JPG / GIF / WebP / APNG のみ対応しています。",
-      "submit.form.err.fileSize": "画像 1 枚は 10 MB 以下にしてください。",
-      "submit.form.err.fileEmpty": "画像が空です。別のファイルを選択してください。",
-      "submit.form.err.name": "画像の名前を 120 文字以内で入力してください。",
+      "submit.form.err.fileRequired": "画像1枚またはZIPファイルを選択してください。",
+      "submit.form.err.fileCount": "一度に投稿できるのは画像1枚またはZIPファイル1個です。",
+      "submit.form.err.fileType": "PNG / JPG / GIF / WebP / APNG画像、またはZIPファイルに対応しています。",
+      "submit.form.err.fileSize": "画像1枚は10 MiB以下にしてください。",
+      "submit.form.err.fileEmpty": "ファイルが空です。別のファイルを選択してください。",
+      "submit.form.err.name": "画像または画像集の名前を120文字以内で入力してください。",
       "submit.form.err.character": "キャラを選択してください。",
       "submit.form.err.desc": "説明は 500 文字以内にしてください。",
       "submit.form.err.confirm": "先に 3 つの確認すべてにチェックしてください。",
       "submit.form.err.turnstile": "先に人機認証を完了してください。",
-      "submit.form.err.tooLarge": "画像がサイズ上限を超えています。圧縮して再試行してください。",
+      "submit.form.err.tooLarge": "ファイルがサイズ上限を超えています。画像またはZIPのサイズを確認してください。",
       "submit.form.err.rejected":
         "投稿は受け付けられませんでした。しばらくして再試行するか、GitHub フォームをご利用ください。",
       "submit.form.err.busy": "送信が多すぎます：1 つの IP につき 1 時間に最大 10 回まで投稿できます。しばらくしてから再試行してください。",

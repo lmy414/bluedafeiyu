@@ -3,7 +3,7 @@
  * 两个监听口，职责与信任级别完全不同：
  *
  *   1. **公开入口**（public）：给网页投稿表单用。匿名、限流、严格 Origin/CORS、
- *      字段/格式/魔数/大小校验，响应只回 { ok, id, status }，
+ *      字段/格式/魔数/大小校验，单图只回 { ok, id, status }，ZIP 只回接收计数，
  *      **绝不泄露内部路径、sha256、AI 原始结果或存储根**。
  *   2. **管理入口**（admin）：只绑回环、必须配 SUBMISSION_ADMIN_TOKEN，
  *      Bearer 常量时间鉴权；列表 / 原图 / 审核 / 决定 / 拉取 Issue 都在这里。
@@ -28,7 +28,9 @@ import { createServer } from 'node:http';
 import path from 'node:path';
 
 import { AI_CONTENT_SCHEMA, DEFAULT_TURNSTILE_TIMEOUT_MS, configSummary, isIpAddress, isTrustedProxy, loadContentVocabulary, normalizeIp } from './config.mjs';
-import { SOURCES, STATES, sha256 } from './queue.mjs';
+import { SOURCES, STATES, resolveExtension, sha256 } from './queue.mjs';
+import { archiveSourceId } from '../tools/intake/github-attachments.mjs';
+import { extractZipImages, isZip, ZIP_LIMITS } from '../tools/intake/zip.mjs';
 import { submissionAttribution } from '../admin/src/lib/attribution.mjs';
 import { reviewQueuedItem } from './review.mjs';
 import { validateContent as validateReviewContent } from './bridge.mjs';
@@ -37,6 +39,9 @@ import { forwardCreatorRegistration } from './creator-registration.mjs';
 import { validateCharacterSelection } from './characters.mjs';
 
 const LOOPBACK_HOSTS = new Set(['127.0.0.1', '::1', 'localhost']);
+// File bytes and multipart framing have separate budgets: a full 32 MiB ZIP
+// must still fit after the browser adds field headers and metadata.
+const MULTIPART_OVERHEAD_BYTES = 64 * 1024;
 
 /** Cloudflare Turnstile 服务端校验地址（公开、无需鉴权，走服务端 secret）。 */
 export const TURNSTILE_VERIFY_URL = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
@@ -132,13 +137,17 @@ export function parseMultipartForm(buffer, contentType, { maxBytes = Infinity, m
     if (buffer[index] === 0x2d && buffer[index + 1] === 0x2d) break;
     // 跳过 CRLF
     if (buffer[index] === 0x0d && buffer[index + 1] === 0x0a) index += 2;
-    const next = buffer.indexOf(delimiter, index);
+    // Binary images/ZIPs may contain the boundary text. Only a framed MIME
+    // delimiter followed by CRLF or the closing "--" ends a part.
+    const framed = Buffer.concat([Buffer.from('\r\n'), delimiter]);
+    let next = buffer.indexOf(framed, index);
+    while (next >= 0) {
+      const suffix = buffer.subarray(next + framed.length, next + framed.length + 2).toString('latin1');
+      if (suffix === '\r\n' || suffix === '--') break;
+      next = buffer.indexOf(framed, next + 1);
+    }
     if (next < 0) throw new Error('multipart 未正常结束');
     let chunk = buffer.subarray(index, next);
-    // 去掉结尾 CRLF
-    if (chunk.length >= 2 && chunk[chunk.length - 2] === 0x0d && chunk[chunk.length - 1] === 0x0a) {
-      chunk = chunk.subarray(0, chunk.length - 2);
-    }
     const headerEnd = chunk.indexOf('\r\n\r\n');
     if (headerEnd < 0) throw new Error('multipart part 缺少头部');
     const rawHeaders = chunk.subarray(0, headerEnd).toString('latin1');
@@ -151,7 +160,7 @@ export function parseMultipartForm(buffer, contentType, { maxBytes = Infinity, m
     };
     parts.push(part);
     if (parts.length > maxParts) throw new Error(`multipart part 数超过上限 ${maxParts}`);
-    index = next + delimiter.length;
+    index = next + framed.length;
   }
 
   const fields = {};
@@ -873,7 +882,7 @@ export function createPublicHandler({
           internalReview: cfg.internalReview.enabled ? 'enabled' : 'disabled',
           qq: cfg.qq.enabled ? 'enabled' : 'disabled',
           github: { repo: cfg.github.repo, label: cfg.github.label, token: cfg.github.token ? 'configured' : 'absent' },
-          limits: { maxBytes: cfg.maxBytes },
+          limits: { maxBytes: cfg.maxBytes, zip: { ...ZIP_LIMITS, maxImageBytes: Math.min(cfg.maxBytes, ZIP_LIMITS.maxImageBytes) } },
         });
       }
       if (req.method === 'POST' && url.pathname === '/api/v1/adapters/qq/events') {
@@ -920,13 +929,19 @@ export function createPublicHandler({
         const contentType = String(req.headers['content-type'] || '');
         let fields = {};
         let fileBuffer = null;
+        let filename = '';
+        let multipart = false;
 
         if (/multipart\/form-data/i.test(contentType)) {
-          const raw = await readBody(req, cfg.maxBytes);
-          const parsed = parseMultipartForm(raw, contentType, { maxBytes: cfg.maxBytes });
+          multipart = true;
+          const maxBodyBytes = Math.max(cfg.maxBytes, ZIP_LIMITS.maxArchiveBytes) + MULTIPART_OVERHEAD_BYTES;
+          const raw = await readBody(req, maxBodyBytes);
+          const parsed = parseMultipartForm(raw, contentType, { maxBytes: maxBodyBytes });
           fields = parsed.fields;
-          if (parsed.files.length !== 1) return sendJson(res, 400, { ok: false, error: '必须且只能上传一张图片' });
+          if (parsed.files.length !== 1) return sendJson(res, 400, { ok: false, error: '必须且只能上传一张图片或一个 ZIP 压缩包' });
           fileBuffer = parsed.files[0].data;
+          filename = parsed.files[0].filename;
+          if (raw.length - fileBuffer.length > MULTIPART_OVERHEAD_BYTES) return sendJson(res, 413, { ok: false, error: '表单字段超过大小上限' });
         } else if (/application\/json/i.test(contentType)) {
           const raw = await readBody(req, cfg.maxBytes);
           let payload = {};
@@ -958,7 +973,42 @@ export function createPublicHandler({
 
         const checked = validateSubmissionFields(fields, characters, { characterMaxLength: cfg.characterMaxLength, siteRoot: cfg.siteRoot });
         if (checked.error) return sendJson(res, 400, { ok: false, error: checked.error });
-        if (!fileBuffer || fileBuffer.length === 0) return sendJson(res, 400, { ok: false, error: '图片内容为空' });
+        if (!fileBuffer || fileBuffer.length === 0) return sendJson(res, 400, { ok: false, error: '文件内容为空' });
+
+        if (isZip(fileBuffer, filename)) {
+          if (!multipart || path.extname(filename).toLowerCase() !== '.zip') {
+            return sendJson(res, 400, { ok: false, code: 'INVALID_ARCHIVE', error: 'ZIP 请使用 multipart/form-data 上传，文件扩展名须为 .zip' });
+          }
+          if (fileBuffer.length > ZIP_LIMITS.maxArchiveBytes) return sendJson(res, 413, { ok: false, error: 'ZIP 超过大小上限' });
+          let images;
+          try {
+            // Reuse Issue intake's reader. Validate the entire archive before
+            // writing any member; never extract member paths onto disk.
+            images = extractZipImages(fileBuffer, { maxImageBytes: cfg.maxBytes, validateImage: resolveExtension });
+          } catch (error) {
+            logger.warn?.(`网页 ZIP 校验失败：${error.message}`);
+            return sendJson(res, 400, { ok: false, code: 'INVALID_ARCHIVE', error: 'ZIP 校验失败，请检查格式、图片和大小限制' });
+          }
+          const archiveSha256 = sha256(fileBuffer);
+          let created = 0;
+          try {
+            for (const [index, image] of images.entries()) {
+              const result = await queue.enqueue({
+                source: 'web',
+                sourceId: archiveSourceId('web', archiveSha256, images.length, index),
+                buffer: image.buffer, ext: image.ext, fields: checked.fields,
+                origin: { via: 'web', archive: { sha256: archiveSha256, member: image.name, index, count: images.length } },
+              });
+              if (result.status === 'created') created++;
+            }
+          } catch (error) {
+            // A disk/queue failure may have accepted only part of the archive.
+            // Stable member source IDs make the next full upload safe to retry.
+            logger.error?.(`网页 ZIP 入队未完成：${error.message}`);
+            return sendJson(res, 503, { ok: false, code: 'ARCHIVE_RETRY', error: '图集接收未完成，请重试' });
+          }
+          return sendJson(res, created ? 201 : 200, { ok: true, count: images.length, created, duplicates: images.length - created });
+        }
 
         const digest = sha256(fileBuffer);
         const result = await queue.enqueue({
