@@ -224,7 +224,7 @@ test('非 AI 声明可选，multipart/JSON 保留 true，未选不推断且非�
       assert.equal(res.status,valid?201:400,res.body.toString());
       const items=await queue.list();
       assert.equal(items.length,valid?1:0);
-      if(valid){assert.equal(items[0].fields.nonAi,selected?true:undefined);assert.equal(items[0].fields.categoryId,'illustration');assert.notEqual(items[0].state,STATES.APPROVED);}
+      if(valid){assert.equal(items[0].fields.nonAi,selected?true:undefined);assert.deepEqual(items[0].fields.tags,selected?['非AI']:[]);assert.equal(items[0].fields.categoryId,'illustration');assert.notEqual(items[0].state,STATES.APPROVED);}
     });
   }
   for(const nonAi of [true,false]){

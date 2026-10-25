@@ -319,6 +319,7 @@ test('投稿者非 AI 声明跨重启保留，审核内容自动补齐分类与�
     await queue.attachReview(item.id,{verdict:'pass',confidence:.95,content});
     const stored=await (await createQueue(cfg)).get(item.id);
     assert.equal(stored.fields.nonAi,selected?true:undefined);
+    assert.deepEqual(stored.fields.tags,selected?['非AI']:[],'人工收录同样能读取投稿者声明的标签');
     assert.equal(stored.state,STATES.RECEIVED);
     assert.deepEqual(stored.review.content.categoryIds,['meme']);
     assert.deepEqual(stored.review.content.tags,selected?['探头','非AI']:['探头']);
