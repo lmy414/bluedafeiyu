@@ -11,6 +11,7 @@
     "sync": "node tools/sync_content.mjs",
     "snapshot": "node tools/build_site_snapshot.mjs",
     "build": "node tools/build_site.mjs",
+    "build:api": "node tools/build_open_api.mjs",
     "test:frontend": "node --test tools/tests/submit-form.test.mjs && npm --prefix frontend test",
     "prepare-works": "node tools/prepare_works.mjs",
     "template": "node tools/sync_issue_template.mjs",

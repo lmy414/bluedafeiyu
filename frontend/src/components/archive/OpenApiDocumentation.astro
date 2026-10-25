@@ -1,0 +1,39 @@
+---
+import {openApiCopy as copy, openApiRoutes, openApiFields} from '../../lib/open-api-copy.mjs';
+import './OpenApiDocumentation.css';
+const base = 'https://xn--pssy23gqgbz2d718b.com/open-api/v1/';
+const parts = value => value.split(' · ');
+---
+<h2 class="section-label" id="open-data-api" data-i18n="d.about.apiTitle">{copy.apiTitle[0]}</h2>
+<div class="panel about-card" data-open-api-docs>
+  <div class="prose">
+    <p data-i18n="d.about.apiIntro">{copy.apiIntro[0]}</p>
+    <h3 data-i18n="d.about.apiBase">{copy.apiBase[0]}</h3>
+    <p><code>{base}</code></p>
+    <p><a href={base + 'index.json'} data-i18n="d.about.apiEntry">{copy.apiEntry[0]}</a> · <a href={base + 'manifest.json'}><code>manifest.json</code></a> · <a href={base + 'works.json'}><code>works.json</code></a></p>
+    <h3 data-i18n="d.about.apiRoutesTitle">{copy.apiRoutesTitle[0]}</h3>
+    <div data-api-table-wrap>
+      <table>
+        <thead><tr><th scope="col" data-i18n="d.about.apiPathHeader">{copy.apiPathHeader[0]}</th><th scope="col" data-i18n="d.about.apiMeaningHeader">{copy.apiMeaningHeader[0]}</th></tr></thead>
+        <tbody>{openApiRoutes.map(([routes, key]) => <tr><td>{parts(routes).map(route => <code data-api-path>{route}</code>)}</td><td data-i18n={'d.about.' + key}>{copy[key][0]}</td></tr>)}</tbody>
+      </table>
+    </div>
+    <p data-i18n="d.about.apiParameters">{copy.apiParameters[0]}</p>
+    <p data-i18n="d.about.apiFilters">{copy.apiFilters[0]}</p>
+    <details>
+      <summary data-i18n="d.about.apiResponseTitle">{copy.apiResponseTitle[0]}</summary>
+      <p data-i18n="d.about.apiEnvelope">{copy.apiEnvelope[0]}</p>
+      <div data-api-table-wrap>
+        <table>
+          <thead><tr><th scope="col" data-i18n="d.about.apiFieldHeader">{copy.apiFieldHeader[0]}</th><th scope="col" data-i18n="d.about.apiMeaningHeader">{copy.apiMeaningHeader[0]}</th></tr></thead>
+          <tbody>{openApiFields.map(([fields, key]) => <tr><td>{parts(fields).map(field => <code data-api-path>{field}</code>)}</td><td data-i18n={'d.about.' + key}>{copy[key][0]}</td></tr>)}</tbody>
+        </table>
+      </div>
+    </details>
+    <h3 data-i18n="d.about.apiSyncTitle">{copy.apiSyncTitle[0]}</h3>
+    <p data-i18n="d.about.apiSync">{copy.apiSync[0]}</p>
+    <p data-i18n="d.about.apiConsistency">{copy.apiConsistency[0]}</p>
+    <p data-i18n="d.about.apiErrors">{copy.apiErrors[0]}</p>
+    <p data-i18n="d.about.apiRights">{copy.apiRights[0]}</p>
+  </div>
+</div>

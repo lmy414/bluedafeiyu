@@ -8,6 +8,7 @@ const identities=[...new Set(['上善无形',...videoArchive.creators.map(c=>c.n
 const problems=[];let pages=0,details=0;
 function remaining(text) {let result=String(text||'');for(const name of identities)result=result.replaceAll(name,'');return result.replaceAll('投稿','');}
 function scan(dir,lang) {for(const entry of fs.readdirSync(dir,{withFileTypes:true})){
+  if(entry.name==='.rsync-tmp')continue;
   const file=path.join(dir,entry.name);if(entry.isDirectory()){scan(file,lang);continue;}if(!entry.name.endsWith('.html'))continue;
   const {document}=parseHTML(fs.readFileSync(file,'utf8'));pages++;
   const slug=document.body?.getAttribute('data-work-slug'),work=slug&&snapshot.works.find(w=>w.slug===slug),native=work?.i18n?.[lang];

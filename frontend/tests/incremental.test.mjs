@@ -5,12 +5,22 @@ import os from 'node:os';
 import path from 'node:path';
 import zlib from 'node:zlib';
 import {spawnSync} from 'node:child_process';
-import {hash,makePlan,verifyPrevious,safeFile,readState,copyImmutableAsset,STATE_VERSION} from '../scripts/incremental.mjs';
+import {hash,makePlan,verifyPrevious,safeFile,readState,copyImmutableAsset,STATE_VERSION,filesIn,outputHashes} from '../scripts/incremental.mjs';
 import {createPageModel} from '../src/components/library/page-model.mjs';
 import {createWorkPages} from '../src/components/archive/WorkPages.mjs';
 import {finalizeNavigationCount} from '../src/components/library/navigation-count.mjs';
 
 const inputs={code:'code',build:'build',content:'content',runtime:'runtime'};
+test('transfer temporary files never enter artifact inventories or release hashes',()=>{
+ const dir=fs.mkdtempSync(path.join(os.tmpdir(),'bluefish-transfer-'));
+ try {
+  fs.mkdirSync(path.join(dir,'en/.rsync-tmp'),{recursive:true});
+  fs.writeFileSync(path.join(dir,'en/.rsync-tmp/unfinished.html'),'incomplete transfer');
+  fs.writeFileSync(path.join(dir,'en/about.html'),'published content');
+  assert.deepEqual(filesIn(dir),['en/about.html']);
+  assert.deepEqual(Object.keys(outputHashes(dir)),['en/about.html']);
+ }finally{fs.rmSync(dir,{recursive:true,force:true});}
+});
 test('immutable asset reuse never rewrites the prior release when a later image changes',()=>{
  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'bluefish-incremental-'));
  const originalEnv=process.env.SITE_REUSE_ASSETS;

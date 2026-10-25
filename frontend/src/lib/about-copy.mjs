@@ -1,4 +1,6 @@
+import {openApiCopy} from './open-api-copy.mjs';
 export const aboutCopy = {
+  ...openApiCopy,
   whatTitle: ['蓝色大肥鱼是什么？', 'What is Blue Dafeiyu?', '藍色大肥魚とは？'],
   whatText: ['“蓝色大肥鱼”是 DeepSeek娘的社区昵称，也常被叫作“大肥鱼”“鲸鱼娘”或“哦鲸鲸”。据 17173 的报道，有网友把 DeepSeek 的蓝鲸标志交给模型辨认，模型给出了“蓝色大肥鱼”的评价，这个称呼随后在社区流传。这里讲的是社区玩梗与二创，不是官方角色设定。', 'Blue Dafeiyu is a community nickname for DeepSeek Chan, the whale girl. According to a report by 17173, a user asked DeepSeek to identify its blue whale logo and the model described it as a big blue plump fish. The name then spread through fan communities. This is a community meme and fan interpretation, not an official character design.', '藍色大肥魚は、クジラの少女DeepSeekちゃんのコミュニティでの愛称です。17173の報道によると、ユーザーがDeepSeekの青いクジラのロゴをモデルに見せたところ、大きく太った青い魚という評価が返り、この呼び名が広まりました。コミュニティのミームと二次創作であり、公式キャラクター設定ではありません。'],
   source: ['阅读昵称由来的报道（17173，2026 年 8 月 21 日）', 'Read the report on the nickname (17173, August 21, 2026)', '愛称の由来に関する報道（17173、2026年8月21日）'],

@@ -237,6 +237,7 @@ export async function buildLanguagePages(out, snapshot, baseFiles = null) {
   const files = [];
   function walk(dir) {
     for (const item of fs.readdirSync(dir, { withFileTypes: true })) {
+      if (item.name === '.rsync-tmp') continue;
       const file = path.join(dir, item.name);
       if (item.isDirectory()) walk(file);
       else if (item.name.endsWith('.html')) files.push(file);

@@ -3,6 +3,7 @@ import V2 from '../../layouts/Archive.astro';
 import { SITE } from '../../lib/v2.mjs';
 import DocumentPage from '../archive/DocumentPage.astro';
 import AcknowledgementCard from '../archive/AcknowledgementCard.astro';
+import OpenApiDocumentation from '../archive/OpenApiDocumentation.astro';
 import { site, works } from '../../lib/site.mjs';
 import { workCharacterIds } from '../../../../tools/work-characters.mjs';
 import { aboutCopy, aboutQuestions, aboutSEO, aboutDescription } from '../../lib/about-copy.mjs';
@@ -37,6 +38,8 @@ const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', inLang
 
     <h2 class="section-label" id="faq" data-i18n="d.about.faqTitle">{aboutCopy.faqTitle[0]}</h2>
     <div class="panel about-card"><div class="reading-faq">{aboutQuestions.map((row,i) => <details><summary data-i18n={'d.about.faq.'+i+'.q'}>{row[0]}</summary><div><p data-i18n={'d.about.faq.'+i+'.a'}>{row[3]}</p>{i === 2 && <a class="text-link" href="/submit.html" data-i18n="nav.submit">投稿</a>}{i === 1 && <a class="text-link" href="#licensing" data-i18n="about.rights.acquireTitle">如何取得图片使用许可</a>}</div></details>)}</div></div>
+
+    <OpenApiDocumentation />
 
     <h2 class="section-label" id="license" data-i18n="about.license.title">许可与版权</h2>
     <div class="panel about-card tilt-r">

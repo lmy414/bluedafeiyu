@@ -8,7 +8,8 @@ export const STATE_FILE = '.build-state.json';
 export const hash = value => crypto.createHash('sha256').update(typeof value === 'string' || Buffer.isBuffer(value) ? value : JSON.stringify(value)).digest('hex');
 export function filesIn(dir, base = dir) {
   if (!fs.existsSync(dir)) return [];
-  return fs.readdirSync(dir, {withFileTypes:true}).sort((a,b)=>a.name.localeCompare(b.name,'en')).flatMap(entry => {
+  // Directory transfers may leave in-flight rsync files beside real artifacts.
+  return fs.readdirSync(dir, {withFileTypes:true}).filter(entry=>entry.name!=='.rsync-tmp').sort((a,b)=>a.name.localeCompare(b.name,'en')).flatMap(entry => {
     const file = path.join(dir,entry.name);
     return entry.isDirectory() ? filesIn(file,base) : entry.isFile() ? [path.relative(base,file).split(path.sep).join('/')] : [];
   });

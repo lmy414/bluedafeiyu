@@ -1,0 +1,13 @@
+[data-open-api-docs] { min-width: 0; }
+[data-open-api-docs] code { overflow-wrap: anywhere; font-size: var(--text-xs); }
+[data-open-api-docs] [data-api-path] { display: block; }
+[data-open-api-docs] [data-api-table-wrap] { max-width: 100%; overflow-x: auto; margin-block: var(--space-4); }
+[data-open-api-docs] table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+[data-open-api-docs] :is(th, td) { padding: var(--space-3); border-bottom: 1px solid var(--border-default); text-align: start; vertical-align: top; }
+[data-open-api-docs] th { color: var(--text-secondary); font-weight: 600; }
+[data-open-api-docs] td:first-child { width: 46%; }
+[data-open-api-docs] summary { cursor: pointer; font-weight: 600; }
+[data-open-api-docs] details { margin-block: var(--space-5); padding-block: var(--space-3); border-block: 1px solid var(--border-default); }
+@media (max-width: 760px) {
+  [data-open-api-docs] :is(th, td) { padding: var(--space-2); }
+}

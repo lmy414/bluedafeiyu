@@ -7,6 +7,7 @@ import {fileURLToPath} from 'node:url';
 import {buildLanguagePages,languageSitemap,localizedPath,LOCALES,ORIGIN} from './localize-pages.mjs';
 import {readSitemapHistory,updateSitemapHistory} from './sitemap-history.mjs';
 import {writeAiContent} from './ai-content.mjs';
+import {writeOpenApi} from './open-api.mjs';
 import {STATE_VERSION,STATE_FILE,readState,verifyPrevious,hash,makePlan,outputHashes,copyArtifact,copyImmutableAsset,filesIn} from './incremental.mjs';
 import {finalizeNavigationCount} from '../src/components/library/navigation-count.mjs';
 
@@ -71,7 +72,7 @@ fs.mkdirSync(path.dirname(out),{recursive:true});
 const stage=fs.mkdtempSync(path.join(path.dirname(out),'.build-pending-'));
 let completed=false;
 try {
- let history=previousState?.sitemap||{},ai={},localized=0,reusedAssets=0,navigationUpdates=0;
+ let history=previousState?.sitemap||{},ai={},openApi={},localized=0,reusedAssets=0,navigationUpdates=0;
  if(plan.mode==='noop') {
   for(const name of Object.keys(previousState.outputs)) {
     const source=path.join(previous,name),target=path.join(stage,name);
@@ -81,9 +82,18 @@ try {
  } else {
   run(path.join(frontend,'scripts/prepare-language-assets.mjs'));
   process.env.SITE_BUILD_PLAN_FILE=planFile;
+  // Astro's incremental cache restores current routes into a fresh output. Old
+  // output can retain deleted routes, including files from an unsuccessful build.
+  // Keep .build/astro-cache intact; only discard this generated working directory.
+  fs.rmSync(astroOut,{recursive:true,force:true});
   run(astro,['build',...(plan.mode==='full'?['--force']:[])],frontend);
   plan=JSON.parse(fs.readFileSync(planFile,'utf8'));
-  fs.cpSync(astroOut,stage,{recursive:true,mode:fs.constants.COPYFILE_FICLONE});
+  fs.cpSync(astroOut,stage,{recursive:true,mode:fs.constants.COPYFILE_FICLONE,filter:source=>!source.split(path.sep).includes('.rsync-tmp')});
+  // Astro can restore a cached removed page before pruning its cache. The
+  // current route plan, plus explicitly public HTML files, defines the release.
+  for(const file of filesIn(stage).filter(name=>name.endsWith('.html'))) {
+    if(!Object.hasOwn(plan.routes,'/'+file)&&!fs.existsSync(path.join(frontend,'public',file)))fs.rmSync(path.join(stage,file));
+  }
   const copy=(relative)=>{
    const source=path.join(dist,relative);
    if(!fs.existsSync(source))throw Error('Missing staged asset '+relative);
@@ -128,6 +138,8 @@ try {
   }
   ai=writeAiContent(stage,snapshot,{previousDir:plan.mode==='full'?null:previous,previousState});
   console.log('[ai-content] '+JSON.stringify(ai));
+  openApi=writeOpenApi(stage,snapshot,{previousDir:plan.mode==='full'?null:previous,previousState});
+  console.log('[open-api] '+JSON.stringify(openApi));
   // Retain complete audits; the expensive page render/localization steps are incremental.
   run(path.join(root,'tools/localization/audit-pages.mjs'),[stage,path.join(root,'.build/native-localization-audit.json')]);
   const urls=bases.filter(file=>{
@@ -148,7 +160,7 @@ try {
   }
  }
  const git=(dir)=>spawnSync('git',['-C',dir,'rev-parse','HEAD'],{encoding:'utf8'}).stdout?.trim()||null;
- const report={version:STATE_VERSION,mode:preflight?'prebuilt':plan.mode,reasons:preflight?['validated-prebuilt-artifact']:plan.reasons,preflight,sourceCommit:git(root),contentCommit:process.env.CONTENT_DIR?git(process.env.CONTENT_DIR):null,planned:preflight?.planned||{changed:plan.changed.length,reused:plan.reused.length,removed:plan.removed.length,sharedChanges:plan.sharedChanges},rendered:(plan.rendered||[]).length,localized,reusedAssets,navigationUpdates,markdown:ai,seconds:Number(((performance.now()-started)/1000).toFixed(2))};
+ const report={version:STATE_VERSION,mode:preflight?'prebuilt':plan.mode,reasons:preflight?['validated-prebuilt-artifact']:plan.reasons,preflight,sourceCommit:git(root),contentCommit:process.env.CONTENT_DIR?git(process.env.CONTENT_DIR):null,planned:preflight?.planned||{changed:plan.changed.length,reused:plan.reused.length,removed:plan.removed.length,sharedChanges:plan.sharedChanges},rendered:(plan.rendered||[]).length,localized,reusedAssets,navigationUpdates,markdown:ai,openApi,seconds:Number(((performance.now()-started)/1000).toFixed(2))};
  const state={version:STATE_VERSION,inputs:plan.inputs,routes:plan.routes,outputs:outputHashes(stage),sitemap:history};
  fs.writeFileSync(path.join(stage,STATE_FILE),JSON.stringify(state));
  fs.writeFileSync(path.join(stage,'.build-plan.json'),JSON.stringify(plan,null,2));

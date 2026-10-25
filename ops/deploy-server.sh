@@ -286,6 +286,9 @@ for required in \
   "${STAGING_DIR}/site/404.html" \
   "${STAGING_DIR}/site/submissions/works.json" \
   "${STAGING_DIR}/site/site-data.json" \
+  "${STAGING_DIR}/site/open-api/v1/index.json" \
+  "${STAGING_DIR}/site/open-api/v1/manifest.json" \
+  "${STAGING_DIR}/site/open-api/v1/works/page/1.json" \
   "${STAGING_DIR}/site/build-info.json" \
   "${STAGING_DIR}/site/sitemap.xml" \
   "${STAGING_DIR}/site/google653ce5fe960a5fb0.html"; do
@@ -293,7 +296,7 @@ for required in \
     die "产物缺少必需文件：${required}"
   fi
 done
-log "产物校验通过：首页 / 自定义 404 / 首批数据 / 投稿清单 / site-data / sitemap / Google 验证文件均存在"
+log "产物校验通过：首页 / 自定义 404 / 首批数据 / 投稿清单 / site-data / 开放 API / sitemap / Google 验证文件均存在"
 
 # ---------------------------------------------------------------- nginx
 
@@ -383,7 +386,7 @@ check_ok() {
 }
 
 HEALTH_FAILED=""
-for path in "/" "/en/" "/ja/" "/zh-hant/" "/robots.txt" "/submissions/works.json" "/site-data.json" "/sitemap.xml" "/google653ce5fe960a5fb0.html" "/${WORK_REL}" "/en/${WORK_REL}" "/ja/${WORK_REL}" "/zh-hant/${WORK_REL}" "/vendor/opencc/cn2t-1.4.2.js"; do
+for path in "/" "/en/" "/ja/" "/zh-hant/" "/robots.txt" "/submissions/works.json" "/site-data.json" "/open-api/v1/index.json" "/open-api/v1/manifest.json" "/open-api/v1/works/page/1.json" "/sitemap.xml" "/google653ce5fe960a5fb0.html" "/${WORK_REL}" "/en/${WORK_REL}" "/ja/${WORK_REL}" "/zh-hant/${WORK_REL}" "/vendor/opencc/cn2t-1.4.2.js"; do
   if ! check_ok "${HEALTH_URL}${path}"; then
     HEALTH_FAILED="${HEALTH_URL}${path}"
     break

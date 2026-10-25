@@ -191,6 +191,12 @@ python -m http.server 5173 -d .build/site
 
 构建结果在 `.build/site/`。前台细节见 [`frontend/README.md`](frontend/README.md)，自动化部署和服务器配置见 [`docs/`](docs/)。
 
+## 开放数据接口
+
+公开图片作品同时导出为纯静态 JSON API，入口为 `/open-api/v1/index.json`。支持全量与分页读取、单件详情、角色、六种作品类型、标签、人工专题、作者作品集和角色与类型交集；原图地址沿用现有外部来源。
+
+调用格式见站内 [关于页「开放数据接口」](https://xn--pssy23gqgbz2d718b.com/about.html#open-data-api) 和 [接口维护说明](docs/静态开放API.md)。不提供客户端程序示例。
+
 ## 投稿与版权
 
 这是一个非官方同人整理项目。投稿可走站内投稿页、QQ 群机器人或图片仓 GitHub Issue 表单；署名更正与下架申请仍走 GitHub Issue 表单。具体规则见 [`CONTRIBUTING.md`](https://github.com/lmy414/ai-girl-stickers/blob/main/CONTRIBUTING.md)。
