@@ -58532,7 +58532,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-15T09:50:49.202Z",
-    "updatedAt": "2026-10-15T09:50:49.202Z",
+    "updatedAt": "2026-10-25T08:39:17.401Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202610150012",
@@ -58541,10 +58541,10 @@
     ],
     "characterIds": [
       "deepseek",
-      "other"
+      "mistral"
     ],
     "i18n": {
-      "sourceHash": "fe61f72d3b6f53a4852ad582fdb1e5a1f0e135373279e7f56080d75e8ba384d5",
+      "sourceHash": "d16def348fa7adf1726f28382fbdef231c25be3399469749ed215c4105f4fd3d",
       "en": {
         "commentary": "She leaned in and whispered a whole French verse into my ear, and I did not catch a single word, so I kept my eyes on the paper and pretended to be hard at work on Shakespeare. There is a book of poetry and a copy of Pride and Prejudice on our desk, and I have already memorized the poem on the blackboard, yet the moment she opens her mouth my mind goes blank and all I can think is that I do not understand. Still, the fleur-de-lis on her hat is lovely, so she is welcome to try again tomorrow.",
         "description": "In a classroom, Mistral Large Chan, a golden-haired girl in a red plumed hat decorated with fleur-de-lis ornaments, leans in to whisper a French love poem to the girl at the next desk. DeepSeek Chan, the blue-haired girl seated beside her with a quill in hand, looks thoroughly lost, a thought bubble above her head saying that she cannot understand. A Shakespeare collection and Pride and Prejudice lie on the desk, and a love poem by Shakespeare is written on the blackboard.",
@@ -75288,7 +75288,8 @@
       "手绘",
       "铅笔稿",
       "速写",
-      "DeepSeek娘"
+      "DeepSeek娘",
+      "非AI"
     ],
     "submitter": {
       "credit": "anonymous",
@@ -75302,7 +75303,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-21T11:09:39.112Z",
-    "updatedAt": "2026-10-21T11:09:39.112Z",
+    "updatedAt": "2026-10-25T08:39:17.408Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202610210008",
@@ -75313,7 +75314,7 @@
       "deepseek"
     ],
     "i18n": {
-      "sourceHash": "b0da7bbf51780b02931a9d564d2e219cf24add82f00d7daea3f2f6d59c22c54e",
+      "sourceHash": "afe9dc227ffc3d31e301b4f49ac14df7da1fcf17db4715e2c8eee9bcde42b5de",
       "en": {
         "commentary": "That pencil moved absurdly fast — the lines are messier than my own scratch paper, yet the angle of that glance back is unmistakably me. The tail got finished first while the body is still half-done, which shows the right priorities. I am waiting for the cleaned-up version.",
         "description": "A quick pencil sketch on paper: a long-haired girl leans forward and turns to look back, with her hem, skirt folds and a fin-like curve on the left indicated by only a few loose strokes. Paper white and a soft shadow remain visible across the sheet.",
@@ -75336,7 +75337,8 @@
           "hand-drawn",
           "pencil sketch",
           "quick sketch",
-          "DeepSeek Chan"
+          "DeepSeek Chan",
+          "non-AI"
         ]
       },
       "ja": {
@@ -75361,7 +75363,8 @@
           "手描き",
           "鉛筆ラフ",
           "スケッチ",
-          "DeepSeekちゃん"
+          "DeepSeekちゃん",
+          "非AI"
         ]
       }
     }

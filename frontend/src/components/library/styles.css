@@ -6,6 +6,7 @@
 @import '../archive/FriendWall.css';
 @import '../archive/SidebarTooltip.css';
 @import '../archive/WorkActions.css';
+@import '../archive/HomeDownloads.css';
 @import '../../../public/archive/original-tools.css';
 @import '../../../public/archive/layout.css';
 @import '../../../public/archive/seo-content.css';
@@ -22,3 +23,4 @@
 /* One theme and shared controls for every public route, including legacy widgets. */
 @import './ArchiveTheme.css';
 @import './ArchivePrimitives.css';
+@import '../archive/CreationMethod.css';

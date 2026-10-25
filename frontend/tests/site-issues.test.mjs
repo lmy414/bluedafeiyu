@@ -13,6 +13,7 @@ test('Traditional shared brand and DeepSeek archive breadcrumbs link to the Trad
   const subtitle=doc.querySelector('.brand strong');
   assert.ok(subtitle.textContent.includes('藍色大肥魚'));
   assert.equal(subtitle.closest('details'),null);
+  assert.ok(doc.querySelector('.portal-heading').textContent.includes('藍色大肥魚'));
   const directory=path.join(out,'zh-hant/characters');
   const routes=fs.readdirSync(directory,{recursive:true}).filter(file=>/^deepseek(?:\/|\\|\.html)/.test(file)&&file.endsWith('.html'));
   assert.ok(routes.length>2);
@@ -29,12 +30,12 @@ test('about headings answer the brand question in Simplified and Traditional Chi
   assert.equal(read('/zh-hant/about.html').querySelector('main h1').textContent,'藍色大肥魚是什麼？');
 });
 
-test('English character pages use DeepSeek Chan and keep compact character headings',()=>{
+test('English character pages use Blue Dafeiyu and keep compact character headings',()=>{
   const directory=path.join(out,'en/characters');
   for(const file of fs.readdirSync(directory,{recursive:true}).filter(file=>file.endsWith('.html'))){
     const doc=read('/en/characters/'+file.replaceAll('\\','/'));
-    assert.ok(doc.title.endsWith(' | DeepSeek Chan'),file+': '+doc.title);
-    assert.doesNotMatch(doc.title,/\| Blue Dafeiyu/);
+    assert.ok(doc.title.endsWith(' | Blue Dafeiyu'),file+': '+doc.title);
+    assert.doesNotMatch(doc.title,/ChanFan|\| DeepSeek Chan/);
   }
   assert.equal(read('/en/characters/gemini.html').querySelector('main h1').textContent,'Gemini Chan');
 });
@@ -45,6 +46,49 @@ test('Chinese and English character titles and descriptions include the requeste
     const alias=locale.id==='en'?aliases[1]:locale.id==='zh-Hant'?({gpt:'GPT龍娘',claude:'Claude娘化',deepseek:'鯨魚娘'})[id]:aliases[0];
     assert.ok(doc.title.includes(alias),locale.id+': '+doc.title);
     assert.ok(doc.querySelector('meta[name="description"]').getAttribute('content').includes(alias),locale.id+': '+id);
+  }
+});
+
+test('the current homepage exposes the weekly download pick and tracks its original-download link in every language',()=>{
+  const archive=JSON.parse(fs.readFileSync(path.join(out,'archive-data.json'),'utf8'));
+  const work=archive.works.find(w=>w.slug==='deepseek202609300025');
+  for(const locale of LOCALES){
+    const section=read(localizedPath('/',locale)).querySelector('#popular-downloads');
+    assert.ok(section,locale.id);
+    const download=section.querySelector('[data-download-work]');
+    assert.equal(download.dataset.downloadWork,work.id);
+    assert.equal(download.getAttribute('href'),work.o);
+    assert.deepEqual([...section.querySelectorAll('.section-head time')].map(t=>t.textContent),['2026-10-12','2026-10-18']);
+    assert.ok(section.querySelector(`a[href="${localizedPath('/works/'+work.slug+'.html',locale)}"]`));
+  }
+});
+
+test('the Mistral correction preserves the DeepSeek co-star and the published URL',()=>{
+  const archive=JSON.parse(fs.readFileSync(path.join(out,'archive-data.json'),'utf8'));
+  const work=archive.works.find(w=>w.slug==='deepseek202610150012');
+  assert.equal(work.id,'sticker_9d10b178a9f645d4bc1d6857');
+  assert.deepEqual(work.cids,['deepseek','mistral']);
+  for(const locale of LOCALES){
+    const page=read(localizedPath('/works/'+work.slug+'.html',locale));
+    assert.ok(page.querySelector(`main a[href="${localizedPath('/characters/mistral.html',locale)}"]`));
+    assert.ok(page.querySelector(`main a[href="${localizedPath('/characters/deepseek.html',locale)}"]`));
+  }
+});
+
+test('non-AI search is discoverable and uses an explicitly documented hand-drawn work',()=>{
+  const archive=JSON.parse(fs.readFileSync(path.join(out,'archive-data.json'),'utf8'));
+  const tagged=archive.works.filter(w=>w.tg.includes('非AI'));
+  assert.ok(tagged.some(w=>w.slug==='deepseek202610210008'));
+  assert.ok(!tagged.some(w=>w.slug==='claude202610170002'),'hand-drawn style alone is not provenance');
+  for(const locale of LOCALES){
+    const page=read(localizedPath('/search.html',locale));
+    const link=page.querySelector('[data-non-ai-entry]');
+    assert.equal(link.getAttribute('href'),localizedPath('/search.html',locale)+'?q='+encodeURIComponent('非AI'));
+    assert.ok(page.querySelector('[data-non-ai-note]').textContent.length>20);
+    assert.ok(page.querySelector('select[name="creation"] option[value="non-ai"]'));
+    const explanation=page.querySelector('#creation-filter-help');
+    assert.ok(explanation.textContent.length>20);
+    assert.equal(explanation.classList.contains('filter-help'),false,'the scope explanation must remain visible');
   }
 });
 

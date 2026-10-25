@@ -3,6 +3,7 @@ import {renderWorkCard} from './work-card.js?v=20261023-3';
 import {copyImage} from './image-copy.js?v=1';
 import {installTopicDownloads} from './topic-download.js?v=4';
 import {loadArchiveData} from './data-loader.js?v=1';
+import {matchesCreationMethod} from './creation-method.js';
 (() => {
   'use strict';
   const $ = (selector, parent = document) => parent.querySelector(selector);
@@ -92,26 +93,27 @@ import {loadArchiveData} from './data-loader.js?v=1';
     let dataset,all=[],filtered=[],shown=24;
     const pageNumber=Number(document.body.dataset.pageNumber)||1;
     const pageStart=(pageNumber-1)*24;
-    const defaultState={character:document.body.dataset.character||'',type:document.body.dataset.type||'',sort:document.body.dataset.sort||'latest'};
+    const defaultState={character:document.body.dataset.character||'',type:document.body.dataset.type||'',sort:document.body.dataset.sort||'latest',creation:''};
     const form=$('#filter-form'),params=new URLSearchParams(location.search),query=$('#search-q'),result=$('#results'),count=$('#result-count');
     // Transient sort/filter states use the fragment, so the gallery does not
     // expose an unbounded family of indexable query combinations. Old shared
     // query URLs are still accepted and normalized when the page is ready.
-    for(const [key,value] of new URLSearchParams(location.hash.slice(1))) if(['character','type','sort','q'].includes(key))params.set(key,value);
-    const selected={character:document.body.dataset.character||'',type:document.body.dataset.type||'',sort:document.body.dataset.sort||'latest'};
-    for(const name of ['character','type','sort'])if(params.has(name))selected[name]=params.get(name);
+    for(const [key,value] of new URLSearchParams(location.hash.slice(1))) if(['character','type','sort','q','creation'].includes(key))params.set(key,value);
+    const selected={character:document.body.dataset.character||'',type:document.body.dataset.type||'',sort:document.body.dataset.sort||'latest',creation:''};
+    for(const name of ['character','type','sort','creation'])if(params.has(name))selected[name]=params.get(name);
     if(!['latest','random',...(defaultState.sort==='curated'?['curated']:[])].includes(selected.sort))selected.sort=defaultState.sort;
+    if(!['','non-ai'].includes(selected.creation))selected.creation='';
     const setCharacters=value=>{const ids=String(value||'').split(',').filter(Boolean);for(const option of form.elements.character.options)option.selected=option.value?ids.includes(option.value):!ids.length;};
     for(const [name,value]of Object.entries(selected))if(form.elements[name]){if(name==='character')setCharacters(value);else form.elements[name].value=value;}
     const sourceQuery=params.get('q')||'',displayQuery=names(sourceQuery);
     if(query)query.value=displayQuery;
-    const getState=()=>({q:query ? (query.value.trim()===displayQuery ? sourceQuery : query.value.trim()) : '',character:[...form.elements.character.selectedOptions].map(option=>option.value).filter(Boolean).join(','),type:form.elements.type.value,sort:form.elements.sort.value});
+    const getState=()=>({q:query ? (query.value.trim()===displayQuery ? sourceQuery : query.value.trim()) : '',character:[...form.elements.character.selectedOptions].map(option=>option.value).filter(Boolean).join(','),type:form.elements.type.value,sort:form.elements.sort.value,creation:form.elements.creation.value});
     const listBase=document.body.dataset.listBase||basePath(location.pathname);
     const globalArchive=listBase==='/browse.html'||listBase.startsWith('/categories/');
     const categoryURL=()=>{
       const state=getState(),url=new URL(state.type?'/categories/'+state.type+'.html':'/browse.html',location.origin);
       const fragment=new URLSearchParams();
-      if(state.character)fragment.set('character',state.character);
+      if(state.character)fragment.set('character',state.character);if(state.creation)fragment.set('creation',state.creation);
       if(state.sort!=='latest')fragment.set('sort',state.sort);
       url.hash=fragment.toString();
       return url;
@@ -124,13 +126,13 @@ import {loadArchiveData} from './data-loader.js?v=1';
       document.dispatchEvent(new Event('archive:filter-sync'));
       const state=getState(),words=state.q.toLocaleLowerCase().split(/\s+/).filter(Boolean);
       const characters=state.character.split(',').filter(Boolean);
-      filtered=all.filter(w=>characters.every(id=>w.cids.includes(id))&&(!state.type||w.k.includes(state.type))&&words.every(word=>{const roles=dataset.characters.filter(c=>w.cids.includes(c.id));const text=[w.n,w.c,w.d,w.cm,...w.roles.map(role=>role.name),...roles.flatMap(role=>role.aliases||[]),...w.tg,...w.tg.map(names)].join(' ');const l=localized(w);return (text+' '+[l.n,l.c,l.d,l.cm,...l.roles.map(role=>role.name),...l.tg].join(' ')).toLocaleLowerCase().includes(word);}));
+      filtered=all.filter(w=>matchesCreationMethod(w,state.creation)&&characters.every(id=>w.cids.includes(id))&&(!state.type||w.k.includes(state.type))&&words.every(word=>{const roles=dataset.characters.filter(c=>w.cids.includes(c.id));const text=[w.n,w.c,w.d,w.cm,...w.roles.map(role=>role.name),...roles.flatMap(role=>role.aliases||[]),...w.tg,...w.tg.map(names)].join(' ');const l=localized(w);return (text+' '+[l.n,l.c,l.d,l.cm,...l.roles.map(role=>role.name),...l.tg].join(' ')).toLocaleLowerCase().includes(word);}));
       if(state.sort==='popular'||state.sort==='downloads')filtered.sort((a,b)=>(window.WorkStats?.metric(b.id,state.sort)||0)-(window.WorkStats?.metric(a.id,state.sort)||0));
       if(state.sort==='random'){
         if(reshuffle||!render.randomOrder){render.randomOrder=filtered.map(w=>w.slug);for(let i=render.randomOrder.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[render.randomOrder[i],render.randomOrder[j]]=[render.randomOrder[j],render.randomOrder[i]];}}
         const ranks=new Map(render.randomOrder.map((slug,i)=>[slug,i]));filtered.sort((a,b)=>ranks.get(a.slug)-ranks.get(b.slug));
       }
-      if(searchPage&&!state.q&&!state.character&&!state.type){count.textContent=tx('d.searchPrompt','输入关键词开始查找。');result.innerHTML='';$('#search-discovery').hidden=false;$('[data-load-more]').hidden=true;$('.load-more-wrap').hidden=true;return;}
+      if(searchPage&&!state.q&&!state.character&&!state.type&&!state.creation){count.textContent=tx('d.searchPrompt','输入关键词开始查找。');result.innerHTML='';$('#search-discovery').hidden=false;$('[data-load-more]').hidden=true;$('.load-more-wrap').hidden=true;return;}
       if(searchPage)$('#search-discovery').hidden=true;
       count.textContent=tx('d.resultCounts','{count} 件作品',{count:filtered.length})+(state.q?' · “'+(query?.value||state.q)+'”':'');
       const changed=Object.entries(defaultState).some(([name,value])=>state[name]!==value)||!!state.q;
@@ -150,16 +152,16 @@ import {loadArchiveData} from './data-loader.js?v=1';
       if(event.target.name==='type'&&globalArchive){location.assign(localURL(categoryURL().href));return;}
       if(event.target.name==='character'&&document.body.dataset.character&&!getState().character.split(',').includes(document.body.dataset.character)){
         const state=getState();const url=new URL('/browse.html',location.origin);
-        const fragment=new URLSearchParams();if(state.character)fragment.set('character',state.character);if(state.type)fragment.set('type',state.type);if(state.sort!=='latest')fragment.set('sort',state.sort);url.hash=fragment.toString();location.assign(localURL(url.href));return;
+        const fragment=new URLSearchParams();if(state.character)fragment.set('character',state.character);if(state.creation)fragment.set('creation',state.creation);if(state.type)fragment.set('type',state.type);if(state.sort!=='latest')fragment.set('sort',state.sort);url.hash=fragment.toString();location.assign(localURL(url.href));return;
       }
       update();
     });form.addEventListener('submit',e=>e.preventDefault());
-    document.addEventListener('click',e=>{if(e.target.closest('[data-reset]')){setCharacters(document.body.dataset.character||'');form.elements.type.value=document.body.dataset.type||'';form.elements.sort.value=document.body.dataset.sort||'latest';if(query)query.value='';update();}});
+    document.addEventListener('click',e=>{if(e.target.closest('[data-reset]')){setCharacters(document.body.dataset.character||'');form.elements.type.value=document.body.dataset.type||'';form.elements.sort.value=document.body.dataset.sort||'latest';form.elements.creation.value='';if(query)query.value='';update();}});
     $('#search-form')?.addEventListener('submit',e=>{e.preventDefault();update();});
     let timer;query?.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(update,220);});
     $('[data-load-more]').addEventListener('click',()=>{shown+=24;render(false,true);});
     document.addEventListener('site:langchange',()=>{if(dataset)render(false);});
-    load().then(async d=>{if(['popular','downloads'].includes(form.elements.sort.value))await window.WorkStats?.ready;dataset=d;const slugs=result.dataset.list?JSON.parse(result.dataset.list):null;all=slugs?slugs.map(s=>d.works.find(w=>w.slug===s)).filter(Boolean):d.works;shown=history.state?.feedVersion===6?history.state.feedShown||24:24;if(['popular','downloads'].includes(form.elements.sort.value)&&!window.WorkStats?.available())form.elements.sort.value=defaultState.sort;if(['character','type','sort','view'].some(name=>params.has(name)))setURL();render();if(performance.getEntriesByType('navigation')[0]?.type==='back_forward'){try{const y=Number(sessionStorage.getItem('bluefish-scroll:'+location.pathname+location.search));if(y)requestAnimationFrame(()=>requestAnimationFrame(()=>scrollTo(0,y)));}catch{}}}).catch(()=>{count.textContent=tx('d.loadFail','数据加载失败，请刷新页面。');});
+    load().then(async d=>{if(['popular','downloads'].includes(form.elements.sort.value))await window.WorkStats?.ready;dataset=d;const slugs=result.dataset.list?JSON.parse(result.dataset.list):null;all=slugs?slugs.map(s=>d.works.find(w=>w.slug===s)).filter(Boolean):d.works;shown=history.state?.feedVersion===6?history.state.feedShown||24:24;if(['popular','downloads'].includes(form.elements.sort.value)&&!window.WorkStats?.available())form.elements.sort.value=defaultState.sort;if(['character','type','sort','view','creation'].some(name=>params.has(name)))setURL();render();if(performance.getEntriesByType('navigation')[0]?.type==='back_forward'){try{const y=Number(sessionStorage.getItem('bluefish-scroll:'+location.pathname+location.search));if(y)requestAnimationFrame(()=>requestAnimationFrame(()=>scrollTo(0,y)));}catch{}}}).catch(()=>{count.textContent=tx('d.loadFail','数据加载失败，请刷新页面。');});
   }
   if(document.body.hasAttribute('data-legacy-category')){
     const p=new URLSearchParams(location.hash.slice(1)),c=p.get('c'),s=p.get('s'),q=p.get('q'),safe=v=>/^[a-z0-9-]+$/i.test(v||'');

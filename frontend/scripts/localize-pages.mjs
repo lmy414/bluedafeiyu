@@ -96,7 +96,7 @@ function pageMeta(document, api, base, snapshot, archive) {
   if(base==='/creators.html' && ['en','ja'].includes(locale)) {document.title=(locale==='en'?'Creators':'クリエイター')+' | DeepSeek Chan';setMeta(document,'meta[name="description"]',locale==='en'?'Explore the creators and their published AI-girl fan art and videos.':'AI娘の二次創作を手がける作者と公開作品をご覧ください。');for(const selector of ['meta[property="og:image:alt"]','meta[name="twitter:image:alt"]'])setMeta(document,selector,document.title);}
   for(const el of document.querySelectorAll('[data-creator-label]'))el.setAttribute('aria-label',el.getAttribute('data-creator-label'));
   if(base==='/saved.html'&&['en','ja'].includes(locale)){document.title=(locale==='en'?'Saved works':'お気に入り')+' | DeepSeek Chan';setMeta(document,'meta[name="description"]',locale==='en'?'Your saved images and creators stay in this browser.':'お気に入りの画像と作者は、このブラウザーにのみ保存されます。');for(const selector of ['meta[property="og:image:alt"]','meta[name="twitter:image:alt"]'])setMeta(document,selector,document.title);}
-  if(locale==='en')document.title=document.title.replaceAll('Blue Dafeiyu','DeepSeek Chan');
+  if(locale==='en'&&!base.startsWith('/characters/'))document.title=document.title.replaceAll('Blue Dafeiyu','DeepSeek Chan');
   const desc = document.querySelector('meta[name="description"]')?.getAttribute('content') || '';
   if (locale !== 'zh') {
     for (const selector of ['meta[property="og:title"]', 'meta[name="twitter:title"]', 'meta[itemprop="name"]']) setMeta(document, selector, document.title);

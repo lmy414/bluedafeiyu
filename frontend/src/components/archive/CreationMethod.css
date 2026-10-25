@@ -1,0 +1,5 @@
+body.archive .filter-bar .filter-fields{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));width:100%;min-width:0;flex:1 1 100%;gap:12px}
+body.archive .filter-bar .filter-fields>label,body.archive .filter-bar .filter-fields>label:first-child{display:flex;flex-direction:column;align-items:stretch;gap:6px;min-width:0;flex:none}
+body.archive .filter-bar .filter-fields select,body.archive .filter-bar .filter-fields .filter-select,body.archive .filter-bar .filter-fields .filter-select-button{width:100%;min-width:0;max-width:100%}
+body.archive .creation-method-note{flex:1 0 100%;grid-column:1/-1;margin:0;font-size:12px;line-height:1.7}
+@media(max-width:600px){body.archive .filter-bar .filter-fields{grid-template-columns:repeat(2,minmax(0,1fr))}}
