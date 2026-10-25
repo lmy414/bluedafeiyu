@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {parseHTML} from 'linkedom';
 import {workCharacterIds} from '../../tools/work-characters.mjs';
 import {createListing} from '../src/components/archive/Listing.mjs';
+import {matchesCreationMethod} from '../public/archive/creation-method.js';
 import {renderWorkCard} from '../public/archive/work-card.js';
 import {applyNativeContent} from '../scripts/native-content.mjs';
 import {createAiDocuments} from '../scripts/ai-content.mjs';
@@ -34,9 +35,10 @@ test('character options and counts are scoped to the full collection, including 
 test('the browser filter uses AND rather than OR for multiple characters',()=>{
  const source=fs.readFileSync(new URL('../public/archive/archive.js',import.meta.url),'utf8');
  const expression=source.match(/filtered=all\.filter\(([^\n]+)\);/)[1];
- const all=[{slug:'a',cids:['deepseek'],k:['meme']},{slug:'b',cids:['gpt'],k:['meme']},{slug:'both',cids:['deepseek','gpt'],k:['meme']}];
- const filtered=vm.runInNewContext('all.filter('+expression+')',{all,view:'all',weeklySlugs:[],characters:['deepseek','gpt'],state:{type:''},words:[]});
- assert.deepEqual(Array.from(filtered,w=>w.slug),['both']);
+ const all=[{slug:'a',cids:['deepseek'],k:['meme'],tg:['非AI']},{slug:'b',cids:['gpt'],k:['meme']},{slug:'both',cids:['deepseek','gpt'],k:['meme'],tg:['非AI']},{slug:'both-ai',cids:['deepseek','gpt'],k:['meme']}];
+ const filter=creation=>vm.runInNewContext('all.filter('+expression+')',{all,matchesCreationMethod,characters:['deepseek','gpt'],state:{type:'',creation},words:[]});
+ assert.deepEqual(Array.from(filter(''),w=>w.slug),['both','both-ai']);
+ assert.deepEqual(Array.from(filter('non-ai'),w=>w.slug),['both']);
 });
 test('cards show every role link without changing the frozen detail URL',()=>{
  const work={slug:'frozen',n:'Fixture',d:'Fixture',cid:'deepseek',c:'DeepSeek娘',col:'#123',roles:[{id:'deepseek',name:'DeepSeek娘',color:'#123'},{id:'gpt',name:'GPT娘',color:'#456'}],k:['meme'],i:'/fixture.webp',w:1,h:1,dt:'2026.10.11'};

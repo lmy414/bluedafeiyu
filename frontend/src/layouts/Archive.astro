@@ -27,8 +27,8 @@ const { title, desc, path = '/', active = '', bodyPage = active, og, type = 'web
     <script is:inline set:html={themeScript}></script>
     <script is:inline set:html={componentRuntime}></script>
     {pageStyles.map(href => <link rel="stylesheet" {href} />)}
-    <script is:inline src="/archive-labels.js?v=8" defer></script>
-    <script is:inline src="/archive-copy.js?v=20261023-4" defer></script>
+    <script is:inline src="/archive-labels.js?v=20261025-1" defer></script>
+    <script is:inline src="/archive-copy.js?v=20261025-1" defer></script>
     <script is:inline src="/lang.js?v=23" defer></script>
     <script is:inline src="/analytics.js" defer></script>
     {schemas.map(schema => <script is:inline type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, '\\u003c')} />)}
