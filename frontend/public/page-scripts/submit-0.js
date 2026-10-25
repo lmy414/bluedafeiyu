@@ -1,14 +1,16 @@
 
     // 站内快速投稿：前端校验 → multipart POST 到投稿 API（默认同源 /api/v1/submissions，
-    // 可用表单的 data-api-endpoint 覆盖）。只看响应的 ok 字段判定成功，绝不回显
+    // 可用表单的 data-api-endpoint 覆盖）。成功核对 ok，ZIP 另核对计数，绝不回显
     // 服务器内部路径、sha256 或 AI 结果；失败一律给本地化的通用文案。
     // Turnstile 为可选：表单挂 data-turnstile-sitekey 时才加载控件并回传 turnstileToken。
     (function () {
       var MAX_BYTES = 10 * 1024 * 1024;
+      var MAX_ARCHIVE_BYTES = 32 * 1024 * 1024;
       var MAX_NAME = 120;
       var MAX_DESC = 500;
       var DEFAULT_ENDPOINT = "/api/v1/submissions";
       var TIMEOUT_MS = 60000;
+      var ARCHIVE_TIMEOUT_MS = 180000;
       var ALLOWED_TYPES = { "image/png": 1, "image/jpeg": 1, "image/gif": 1, "image/webp": 1, "image/apng": 1 };
       var ALLOWED_EXT = { png: 1, jpg: 1, jpeg: 1, gif: 1, webp: 1, apng: 1 };
 
@@ -53,8 +55,8 @@
         statusEl.className = "form-status " + (lastStatus.kind === "ok" ? "is-ok" : "is-error");
         statusEl.textContent = t(lastStatus.key, lastStatus.fallback, lastStatus.params);
       }
-      function setStatus(kind, key, fallback) {
-        lastStatus = { kind: kind, key: key, fallback: fallback };
+      function setStatus(kind, key, fallback, params) {
+        lastStatus = { kind: kind, key: key, fallback: fallback, params: params };
         renderStatus();
       }
       function clearStatus() { lastStatus = null; renderStatus(); }
@@ -76,25 +78,29 @@
       function validate() {
         var files = fileInput.files;
         if (!files || files.length === 0) {
-          return { key: "submit.form.err.fileRequired", fallback: "请先选择一张图片。", field: fileInput };
+          return { key: "submit.form.err.fileRequired", fallback: "请先选择一张图片或一个 ZIP 压缩包。", field: fileInput };
         }
         if (files.length > 1) {
-          return { key: "submit.form.err.fileCount", fallback: "一次只能提交一张图片。", field: fileInput };
+          return { key: "submit.form.err.fileCount", fallback: "一次只能提交一张图片或一个 ZIP 压缩包。", field: fileInput };
         }
         var file = files[0];
         var type = String(file.type || "").toLowerCase();
-        if (!ALLOWED_TYPES[type] && !(!type && ALLOWED_EXT[extOf(file.name)])) {
-          return { key: "submit.form.err.fileType", fallback: "只支持 PNG / JPG / GIF / WebP / APNG 格式。", field: fileInput };
+        var archive = extOf(file.name) === "zip";
+        if (!archive && !ALLOWED_TYPES[type] && !(!type && ALLOWED_EXT[extOf(file.name)])) {
+          return { key: "submit.form.err.fileType", fallback: "只支持 PNG / JPG / GIF / WebP / APNG 图片或 ZIP 压缩包。", field: fileInput };
         }
-        if (file.size > MAX_BYTES) {
-          return { key: "submit.form.err.fileSize", fallback: "单张图片不能超过 10 MB。", field: fileInput };
+        if (archive && file.size > MAX_ARCHIVE_BYTES) {
+          return { key: "submit.form.err.archiveSize", fallback: "ZIP 压缩包不能超过 32 MiB。", field: fileInput };
+        }
+        if (!archive && file.size > MAX_BYTES) {
+          return { key: "submit.form.err.fileSize", fallback: "单张图片不能超过 10 MiB。", field: fileInput };
         }
         if (file.size === 0) {
-          return { key: "submit.form.err.fileEmpty", fallback: "图片内容为空，请重新选择。", field: fileInput };
+          return { key: "submit.form.err.fileEmpty", fallback: "文件内容为空，请重新选择。", field: fileInput };
         }
         var name = nameInput.value.trim();
         if (!name || name.length > MAX_NAME) {
-          return { key: "submit.form.err.name", fallback: "请填写图片名称，且不超过 120 字。", field: nameInput };
+          return { key: "submit.form.err.name", fallback: "请填写图片或图集名称，且不超过 120 字。", field: nameInput };
         }
         if (!selectedCharacters().length) {
           return { key: "submit.form.err.character", fallback: "请选择角色。", field: characterChoices.querySelector('input') };
@@ -133,9 +139,11 @@
         return null;
       }
 
-      /* 只按 HTTP 状态给通用文案，不回显服务器返回的任何正文。 */
-      function errorForStatus(status) {
-        if (status === 413) return { key: "submit.form.err.tooLarge", fallback: "图片超过大小上限，请压缩后重试。" };
+      /* 仅识别固定错误码与 HTTP 状态，不回显服务端错误原文。 */
+      function errorForStatus(status, payload) {
+        if (payload && payload.code === "INVALID_ARCHIVE") return { key: "submit.form.err.archiveInvalid", fallback: "ZIP 校验未通过：请使用未加密、仅含图片的 ZIP，最多 100 张，包内单图 ≤ 16 MiB、解压总量 ≤ 64 MiB；不支持嵌套压缩包。" };
+        if (payload && payload.code === "ARCHIVE_RETRY") return { key: "submit.form.err.archiveRetry", fallback: "图集尚未完整接收，请保留文件并重试；已接收的图片会自动去重。" };
+        if (status === 413) return { key: "submit.form.err.tooLarge", fallback: "文件超过大小上限，请检查单图或 ZIP 的大小后重试。" };
         if (status === 403) return { key: "submit.form.err.rejected", fallback: "提交未被接受，请稍后重试或改用 GitHub 投稿表单。" };
         if (status === 429) return { key: "submit.form.err.busy", fallback: "提交过于频繁：每个 IP 每小时最多投稿 10 次，请稍后再试。" };
         if (status === 400) return { key: "submit.form.err.invalid", fallback: "提交信息未通过校验，请检查后重试。" };
@@ -158,6 +166,7 @@
 
       function submitForm() {
         var endpoint = form.getAttribute("data-api-endpoint") || DEFAULT_ENDPOINT;
+        var archive = extOf(fileInput.files[0].name) === "zip";
         var data = new FormData();
         data.append("image", fileInput.files[0], fileInput.files[0].name);
         data.append("name", nameInput.value.trim());
@@ -179,7 +188,7 @@
         clearStatus();
 
         var controller = typeof AbortController !== "undefined" ? new AbortController() : null;
-        var timer = controller ? window.setTimeout(function () { controller.abort(); }, TIMEOUT_MS) : null;
+        var timer = controller ? window.setTimeout(function () { controller.abort(); }, archive ? ARCHIVE_TIMEOUT_MS : TIMEOUT_MS) : null;
 
         fetch(endpoint, {
           method: "POST",
@@ -195,14 +204,23 @@
           })
           .then(function (outcome) {
             if (outcome.response.ok && outcome.payload && outcome.payload.ok === true) {
+              if (archive && !validArchiveCounts(outcome.payload)) {
+                resetTurnstile();
+                setStatus("error", "submit.form.err.archiveRetry", "图集尚未完整接收，请保留文件并重试；已接收的图片会自动去重。");
+                return;
+              }
               form.reset();
               updateTypeHint();
               updateCredit();
               resetTurnstile();
-              setStatus("ok", "submit.form.success", "提交成功，感谢！维护者审核通过后会批量发布。");
+              if (archive) {
+                setStatus("ok", "submit.form.archiveSuccess", "已接收 {count} 张：新投稿 {created} 张，重复 {duplicates} 张。新投稿将逐张审核，通过后批量发布。", { count: outcome.payload.count, created: outcome.payload.created, duplicates: outcome.payload.duplicates });
+              } else {
+                setStatus("ok", "submit.form.success", "提交成功，感谢！审核通过后会批量发布。");
+              }
             } else {
               resetTurnstile();
-              var mapped = errorForStatus(outcome.response.status);
+              var mapped = errorForStatus(outcome.response.status, outcome.payload);
               setStatus("error", mapped.key, mapped.fallback);
             }
           })
@@ -215,6 +233,13 @@
             if (timer) window.clearTimeout(timer);
             finish();
           });
+      }
+
+      function validArchiveCounts(payload) {
+        return Number.isInteger(payload.count) && payload.count >= 1 && payload.count <= 100
+          && Number.isInteger(payload.created) && payload.created >= 0
+          && Number.isInteger(payload.duplicates) && payload.duplicates >= 0
+          && payload.created + payload.duplicates === payload.count;
       }
 
       labelIdle();
