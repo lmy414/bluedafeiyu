@@ -36,7 +36,7 @@ test('the browser filter uses AND rather than OR for multiple characters',()=>{
  const source=fs.readFileSync(new URL('../public/archive/archive.js',import.meta.url),'utf8');
  const expression=source.match(/filtered=all\.filter\(([^\n]+)\);/)[1];
  const all=[{slug:'a',cids:['deepseek'],k:['meme'],tg:['非AI']},{slug:'b',cids:['gpt'],k:['meme']},{slug:'both',cids:['deepseek','gpt'],k:['meme'],tg:['非AI']},{slug:'both-ai',cids:['deepseek','gpt'],k:['meme']}];
- const filter=creation=>vm.runInNewContext('all.filter('+expression+')',{all,matchesCreationMethod,characters:['deepseek','gpt'],state:{type:'',creation},words:[]});
+ const filter=creation=>vm.runInNewContext('all.filter('+expression+')',{all,matchesCreationMethod,characters:['deepseek','gpt'],state:{type:'',creation},scores:null});
  assert.deepEqual(Array.from(filter(''),w=>w.slug),['both','both-ai']);
  assert.deepEqual(Array.from(filter('non-ai'),w=>w.slug),['both']);
 });
