@@ -71,7 +71,7 @@ for(const [key, en, ja] of [
   ['noResultsDesc','Try fewer filters, another keyword, or browse a character.','条件を減らすか、キーワードを変えてください。'],
   ['loadFail','Could not load data. Please refresh.','データを読み込めませんでした。再読み込みしてください。'],
   ['fullDetail','View full details','詳細を見る'],['prevWork','Previous image','前の画像'],['nextWork','Next image','次の画像'],
-  ['previewTitle','Work preview','作品プレビュー'],['previewFormat','Original format','元画像の形式'],['previewSize','File size','ファイルサイズ'],['previewPermission','Usage permission','利用許諾'],['previewNavigation','Browse preview images','プレビュー画像を切り替え'],
+  ['previewTitle','Work preview','作品プレビュー'],['previewClose','Close preview','プレビューを閉じる'],['previewFormat','Original format','元画像の形式'],['previewSize','File size','ファイルサイズ'],['previewPermission','Usage permission','利用許諾'],['previewNavigation','Browse preview images','プレビュー画像を切り替え'],
   ['fileTooLarge','Images must be 10 MB or smaller.','画像は10 MB以下にしてください。'],['fileType','Please choose a supported image format.','対応する画像形式を選んでください。'],
   ['commentsFail','Comments could not load. Please try again later.','コメントを読み込めませんでした。後でもう一度お試しください。']
 ]){translations.en['d.'+key]=en;translations.ja['d.'+key]=ja;}

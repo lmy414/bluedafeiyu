@@ -26,7 +26,7 @@ test('copying a work link preserves its selected work and current language on de
       navigator:{clipboard:{writeText:async value=>{copied.push(value);}}},
       location:{pathname:prefix+current,search:'',hash:''},
       matchMedia:()=>({matches:false,addEventListener(){}}),addEventListener(){},
-      performance:{getEntriesByType:()=>[]},loadArchiveData:async()=>({works:[]}),installTopicDownloads(){},
+      performance:{getEntriesByType:()=>[]},loadArchiveData:async()=>({works:[]}),installTopicDownloads(){},installWorkPreview(){},
       setTimeout,clearTimeout,CustomEvent:window.CustomEvent,Event:window.Event};
     vm.runInNewContext(script,context);
     document.querySelector('[data-copy-link]').click();

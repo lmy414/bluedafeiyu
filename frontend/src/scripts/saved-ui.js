@@ -27,6 +27,7 @@ document.addEventListener('click',event=>{
   }
 });
 document.addEventListener('saved:change',paint);
+document.addEventListener('preview:render',paint);
 document.addEventListener('site:langchange',schedule);
 window.addEventListener('storage',()=>{paint();document.dispatchEvent(new Event('saved:change'));});
 new MutationObserver(schedule).observe(document.querySelector('main'),{childList:true,subtree:true});

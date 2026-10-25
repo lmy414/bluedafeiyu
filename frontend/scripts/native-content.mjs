@@ -38,7 +38,7 @@ export function applyNativeContent(document,api,base,snapshot) {
     const w=bySlug.get(card.getAttribute('data-slug')),value=localized(w);if(!value)continue;
     card.querySelector('.work-title').textContent=value.name;
     card.querySelector('img')?.setAttribute('alt',value.description||value.name);
-    card.querySelector('[data-preview]')?.setAttribute('aria-label',api.fmt('d.quickView','Preview')+' '+value.name);
+    for(const trigger of card.querySelectorAll('[data-preview][aria-label]'))trigger.setAttribute('aria-label',api.fmt('d.quickView','Preview')+' '+value.name);
     for(const role of card.querySelectorAll('.card-meta a')){const id=role.getAttribute('data-character-id')||w.characterId,dot=role.querySelector('i');role.replaceChildren();if(dot)role.appendChild(dot);role.appendChild(document.createTextNode(api.characterName(id,id)));}
   }
   const work=bySlug.get(base.match(/^\/works\/([^/]+)\.html$/)?.[1]),value=localized(work);

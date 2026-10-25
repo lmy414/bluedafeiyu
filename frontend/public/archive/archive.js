@@ -1,4 +1,4 @@
-import {renderWorkActions} from '../components/work-actions.js';
+import {installWorkPreview} from '../components/work-preview.js';
 import {renderWorkCard} from './work-card.js?v=20261023-3';
 import {copyImage} from './image-copy.js?v=1';
 import {installTopicDownloads} from './topic-download.js?v=4';
@@ -167,44 +167,7 @@ import {matchesCreationMethod} from './creation-method.js';
     const p=new URLSearchParams(location.hash.slice(1)),c=p.get('c'),s=p.get('s'),q=p.get('q'),safe=v=>/^[a-z0-9-]+$/i.test(v||'');
     if(q)location.replace(localURL('/search.html?q='+encodeURIComponent(q)));else if(safe(c))location.replace(localURL('/characters/'+c+(safe(s)?'/'+s:'')+'.html'));else if(safe(s))location.replace(localURL('/categories/'+s+'.html'));
   }
-  // Quick preview is separate from the full, directly accessible work page.
-  const dialog=$('#preview-dialog'),previewBody=$('#preview-body');let previewSlugs=[],previewIndex=0,previewFocus,previewMode='work';
-  const previewIcon = name => {
-    const paths={image:'<rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8" cy="8" r="1.5"/><path d="m21 15-5-5L5 21"/>',arrow:'<path d="M5 12h14m-5-5 5 5-5 5"/>',back:'<path d="M19 12H5m5-5-5 5 5 5"/>',download:'<path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/>'};
-    return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths[name]}</svg>`;
-  };
-  async function preview(slug,mode='work'){
-    try{
-      const d=await load(),original=d.works.find(w=>w.slug===slug);if(!original)return;
-      const w=localized(original);
-      previewMode=mode;previewSlugs=[...new Set($$('.work-card').map(el=>el.dataset.slug))];if(!previewSlugs.includes(slug))previewSlugs=[slug];previewIndex=previewSlugs.indexOf(slug);
-      dialog.dataset.previewMode=mode;
-      if(!dialog.open){previewFocus=document.activeElement;dialog.showModal();SiteComponents.scrollLock(true);}
-      if(mode==='image'){previewBody.innerHTML=`${renderWorkActions(w,{preview:true,translate:tx,url:localURL})}<div class="preview-zoom"><img src="${esc(w.l)}" alt="${esc(w.d||w.n)}" width="${w.w}" height="${w.h}"></div>`;}
-      else{previewBody.innerHTML=`
-        <header class="preview-heading">${previewIcon('image')}<span>${esc(tx('d.previewTitle','作品预览'))}</span><a class="preview-detail-link" href="${localURL('/works/'+w.slug+'.html')}">${esc(tx('d.fullDetail','查看完整详情'))}</a></header>
-        ${renderWorkActions(w,{preview:true,translate:tx,url:localURL})}
-        <div class="preview-content">
-          <div class="preview-art"><figure class="preview-photo"><img src="${esc(w.l)}" alt="${esc(w.d||w.n)}" width="${w.w}" height="${w.h}"></figure></div>
-          <div class="preview-info">
-            <div class="preview-topline">${w.roles.map(role=>`<a class="preview-role" data-character-id="${esc(role.id)}" href="${localURL(`/characters/${esc(role.id)}.html`)}">${SiteComponents.roleDot(role.color)}${esc(role.name)}${previewIcon('arrow')}</a>`).join('')}<span class="preview-kind">${w.k.map(id=>esc(tx('v2.type.'+id,id))).join(' · ')}</span></div>
-            <h2>${esc(w.n)}</h2>
-            <div class="preview-note"><span class="eyebrow">${esc(tx("d.fishComment","大肥鱼说"))}</span><p>${esc(w.cm||w.d)}</p></div>
-            ${w.tg.length?`<div class="tags preview-tags">${w.tg.slice(0,6).map((t,i)=>`<a class="tag" href="${localURL(`/search.html?q=${encodeURIComponent(w.sourceTags?.[i]||t)}`)}"><span aria-hidden="true">#</span>${esc(names(t))}</a>`).join('')}</div>`:''}
-            <dl class="preview-facts"><div><dt>${esc(tx('d.previewFormat','原图格式'))}</dt><dd>${esc(w.f)}</dd></div><div><dt>${esc(tx('d.previewSize','文件大小'))}</dt><dd>${esc(w.s)}</dd></div><div class="preview-permission"><dt>${esc(tx('d.previewPermission','使用许可'))}</dt><dd>${esc(tx('license.'+w.lk,w.lt))}</dd></div></dl>
-
-          </div>
-        </div>
-        <nav class="preview-nav" aria-label="${esc(tx('d.previewNavigation','作品切换'))}"><button class="preview-step" data-preview-step="-1" ${previewIndex===0?'disabled':''}>${previewIcon('back')}${esc(tx('d.prevWork','上一张'))}</button><span class="preview-position"><b>${String(previewIndex+1).padStart(2,'0')}</b><span>/</span>${String(previewSlugs.length).padStart(2,'0')}</span><button class="preview-step" data-preview-step="1" ${previewIndex===previewSlugs.length-1?'disabled':''}>${esc(tx('d.nextWork','下一张'))}${previewIcon('arrow')}</button></nav>`;}
-      if(mode==='work')document.dispatchEvent(new CustomEvent('work:show',{detail:{id:w.id}}));
-      dialog.scrollTop=0;
-      $('[data-preview-close]').focus();
-    }catch{toast(tx('d.loadFail','数据加载失败，请刷新页面。'));}
-  }
-  function closePreview(){dialog.close();SiteComponents.scrollLock(false);previewFocus?.focus();}
-  document.addEventListener('click',e=>{const el=e.target.closest('[data-preview]');if(el)preview(el.dataset.preview);const image=e.target.closest('[data-image-open]');if(image)preview(image.dataset.imageOpen,'image');const step=e.target.closest('[data-preview-step]');if(step){const slug=previewSlugs[previewIndex+Number(step.dataset.previewStep)];if(slug)preview(slug);}});
-  $('[data-preview-close]').addEventListener('click',closePreview);dialog.addEventListener('cancel',e=>{e.preventDefault();closePreview();});dialog.addEventListener('click',e=>{const r=dialog.getBoundingClientRect();if(e.target===dialog&&(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom))closePreview();});
-  document.addEventListener('keydown',e=>{if(!document.querySelector('#share-card-dialog')?.open&&dialog.open&&previewMode==='work'&&['ArrowLeft','ArrowRight'].includes(e.key)){const slug=previewSlugs[previewIndex+(e.key==='ArrowRight'?1:-1)];if(slug){e.preventDefault();preview(slug);}}});
+  installWorkPreview({load,localize:localized,translate:tx,url:localURL,names,toast});
   document.addEventListener('click',e=>{const btn=e.target.closest('[data-comments]');if(!btn)return;btn.disabled=true;const script=document.createElement('script');script.src='https://giscus.app/client.js';const attrs={'repo':'lmy414/lmy414-blog-comments','repo-id':'R_kgDOTUvnVw','category':'Announcements','category-id':'DIC_kwDOTUvnV84DF4fs','mapping':'specific','term':'sticker-'+btn.dataset.comments,'reactions-enabled':'1','input-position':'bottom','theme':document.documentElement.dataset.theme||'light','lang':({zh:'zh-CN','zh-Hant':'zh-TW',en:'en',ja:'ja'})[window.SiteLang?.current||'zh']};for(const[key,value]of Object.entries(attrs))script.setAttribute('data-'+key,value);script.crossOrigin='anonymous';script.async=true;script.onerror=()=>{btn.disabled=false;toast(tx('d.commentsFail','评论暂时无法加载，请稍后重试。'));};$('#comments-container').append(script);btn.hidden=true;});
   // Restore the list position when returning from a detail page in the same tab.
   if(document.body.dataset.workId)document.dispatchEvent(new CustomEvent('work:show',{detail:{id:document.body.dataset.workId}}));

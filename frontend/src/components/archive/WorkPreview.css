@@ -1,0 +1,51 @@
+/* The same preview shell is used by gallery, creator and saved image cards. */
+body.archive.refined .preview-dialog {
+  width: min(1040px, calc(100vw - 32px));
+  max-width: calc(100vw - 32px);
+  max-height: calc(100dvh - 32px);
+  padding: 0;
+}
+body.archive.refined .preview-heading {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  min-height: 64px;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 12px 64px 12px 20px;
+  background: var(--bg-raised);
+  border-color: var(--border-default);
+}
+body.archive.refined .preview-heading > span { flex: 1; min-width: 0; }
+body.archive.refined .preview-heading .preview-detail-link {
+  flex-shrink: 0;
+  margin: 0;
+  min-height: 40px;
+  padding: 8px 12px;
+  color: var(--brand);
+  font: var(--weight-medium) var(--text-xs)/var(--leading-snug) var(--font-sans);
+  white-space: nowrap;
+}
+body.archive.refined .preview-dialog .dialog-close {
+  top: 12px;
+  z-index: 7;
+  width: 40px;
+  height: 40px;
+  margin: 12px 12px -52px 0;
+}
+body.archive.refined .preview-toolbar { position: static; }
+body.archive.refined .preview-dialog .preview-content { gap: 0; }
+body.archive.refined .preview-dialog .preview-nav { justify-content: space-between; }
+body.archive.refined [data-preview]:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 3px;
+}
+@media (max-width: 760px) {
+  body.archive.refined .preview-dialog {
+    width: calc(100vw - 16px);
+    max-width: calc(100vw - 16px);
+    max-height: calc(100dvh - 16px);
+  }
+  body.archive.refined .preview-heading { padding-left: 14px; font-size: var(--text-xs); }
+  body.archive.refined .preview-heading > svg { display: none; }
+}

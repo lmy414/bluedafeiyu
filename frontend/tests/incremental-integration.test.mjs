@@ -27,7 +27,12 @@ test('real Astro builds: no-op, edits, additions, removals, cold-cache fallback 
    return image && !image.startsWith('http') && fs.existsSync(path.join(root,'dist',decodeURIComponent(image).replace(/^\//,'')));
  });
  assert.ok(candidates.length>24,'integration fixtures need 25 complete local images');
- const sample=structuredClone({...original,works:candidates.slice(0,24),topics:[]});
+ // Editorial guides require these characters even when the newest 24 works
+ // all belong to the same character. Keep the fixture independent of intake order.
+ const required=['deepseek','gemini'].map(id=>candidates.find(w=>(w.characterIds||[w.characterId]).includes(id)));
+ assert.ok(required.every(Boolean),'integration fixtures need the guide characters');
+ const ordered=[...new Map([...required,...candidates].map(w=>[w.id,w])).values()];
+ const sample=structuredClone({...original,works:ordered.slice(0,24),topics:[]});
  // Keep the search page's fixed suggestions translated in the deliberately small catalog.
  const fixtureTags=work=>{
    work.tags=['DeepSeek','晚安','摸摸头','哈气','女仆','工作','Claude'];
@@ -66,8 +71,8 @@ test('real Astro builds: no-op, edits, additions, removals, cold-cache fallback 
  write(edited);
  const increment=build('edited','component',[],{PUBLISH_PREBUILT_DIR:initial.out});assert.equal(increment.report.mode,'incremental');assert.ok(increment.report.rendered<initial.report.rendered,'unaffected pages must be restored');
  const reference=build('edited-full','component',['--full']);sameArtifacts(increment.out,reference.out,'incremental edits equal a clean full build');
- const added=structuredClone(edited);added.works.push(fixtureTags(structuredClone(candidates[24])));write(added);
- const addition=build('added','edited');assert.equal(addition.report.mode,'incremental');assert.ok(fs.existsSync(path.join(addition.out,'works',candidates[24].slug+'.html')));
+ const added=structuredClone(edited);added.works.push(fixtureTags(structuredClone(ordered[24])));write(added);
+ const addition=build('added','edited');assert.equal(addition.report.mode,'incremental');assert.ok(fs.existsSync(path.join(addition.out,'works',ordered[24].slug+'.html')));
  const removed=structuredClone(added);const hidden=removed.works.shift();write(removed);
  const deletion=build('removed','added');assert.equal(deletion.report.mode,'incremental');
  for(const prefix of ['','en/','ja/','zh-hant/'])assert.equal(fs.existsSync(path.join(deletion.out,prefix+'works/'+hidden.slug+'.html')),false);
