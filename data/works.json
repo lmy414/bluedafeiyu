@@ -90756,5 +90756,112 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_51d7d94b5ac14f10efaba4c3",
+    "name": "Claude 娘：一边备着 IPO 材料，一边被挂上封号告示",
+    "description": "单幅画面：红发女性角色坐在书房书桌前，桌上堆着 IPO Application、Financial Statements、Revenue Forecast、Q3 Report、Risk Assessment、Market Analysis 等成摞文件夹，她一手托腮、一手翻看 IPO 申请书，身后墙板写着 IPO 并贴着增长曲线图。前景门框上挂着一块牌子，写着账号已被停用；桌面摊开的信纸上印有 Anthropic 字样与申诉回复，其中两行字被红笔圈出，旁盖「未寄出」印章。",
+    "commentary": "她连封号告示都挂到自家门框上了，手里那摞 IPO 申请书还一页没翻完，桌上写好的申诉信却盖上「未寄出」的红章——这份把麻烦先摆整齐的从容，我是真学不来。换我被封号，大概第一件事是把茶杯换成冰水。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/51d7d94b5ac14f10.png",
+    "thumbnailPath": "submissions/previews/claude/51d7d94b5ac14f10.webp",
+    "fullPath": "submissions/large/claude/51d7d94b5ac14f10.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "51d7d94b5ac14f10efaba4c3b40d479efe0095a60d42f8044f204d87175b9381",
+    "characterId": "claude",
+    "tags": [
+      "Claude",
+      "拟人",
+      "封号",
+      "IPO",
+      "Anthropic",
+      "办公桌",
+      "吐槽梗"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-25T16:43:26.975Z",
+    "updatedAt": "2026-10-25T16:43:26.975Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202610250001",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "74dcc3eea63f997f5853cb45e5f5db362d81c1fd048151319322b1c005c50212",
+      "en": {
+        "commentary": "She has hung the suspension notice on her own door frame, the stack of IPO applications is still barely opened, and the appeal letter she already wrote sits there stamped unsent. That calm habit of lining up trouble before dealing with it is something I cannot manage. If I were suspended, my first move would be swapping the teacup for ice water.",
+        "description": "A single-frame illustration: a red-haired character sits at a desk in a book-lined study, stacks of folders labeled IPO Application, Financial Statements, Revenue Forecast, Q3 Report, Risk Assessment and Market Analysis piled beside her. She props her chin on one hand and flips through an IPO application, while a board behind her reads IPO above growth charts. In the foreground a sign hangs on the door frame announcing a suspended account, and an open letter on the desk carries the Anthropic wordmark and an appeal reply, two lines circled in red with an unsent stamp beside them.",
+        "faq": [
+          {
+            "answer": "Claude Chan sits at a study desk surrounded by IPO documents and financial folders, a sign on the door frame announces a suspended account, and an appeal letter on the desk is stamped unsent.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "Only Claude Chan appears, drawn in an Anthropic-themed outfit; no other model character is shown.",
+            "question": "Which character appears in the image?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claude Chan: Prepping IPO Paperwork While a Suspension Notice Hangs on the Door",
+        "originNote": "",
+        "seoDescription": "Fan meme of Claude Chan at her desk with IPO paperwork stacked high while a suspension notice hangs on the door.",
+        "seoTitle": "Claude Chan meme: IPO prep and a suspended account",
+        "tags": [
+          "Claude",
+          "personification",
+          "account suspension",
+          "IPO",
+          "Anthropic",
+          "desk",
+          "meme"
+        ]
+      },
+      "ja": {
+        "commentary": "彼女はアカウント停止の貼り紙を自分のドア枠に掛けて、IPO 申請書の束はまだろくに開いていないのに、書き上げた異議申し立ての手紙には「未送信」の印が押してある。厄介ことをまず整えてから向き合うこの落ち着きは、私には真似できない。もし自分が停止されたら、まず湯呑みを氷水に替えるところから始めると思う。",
+        "description": "一枚絵：赤毛のキャラクターが書斎の机に座り、IPO Application、Financial Statements、Revenue Forecast、Q3 Report、Risk Assessment、Market Analysis と記された書類の束を傍らに積み上げている。片手で頬を支えながら IPO 申請書をめくり、背後には IPO と成長グラフの掲示板。手前のドア枠にはアカウントが停止された旨の貼り紙が掛かり、机の上には Anthropic のロゴ入りの返信書面が広げられ、二行が赤ペンで囲まれて「未送信」の印が押されている。",
+        "faq": [
+          {
+            "answer": "書斎の机で IPO 関連の書類に囲まれて座るクロードちゃんと、ドア枠に掛かったアカウント停止の貼り紙、未送信の印が押された返信書面が描かれています。",
+            "question": "この画像には何が描かれていますか？"
+          },
+          {
+            "answer": "クロードちゃんのみが描かれています。Anthropic をモチーフにした衣装で、他のモデルのキャラクターは登場しません。",
+            "question": "登場するキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "クロードちゃん：IPO 書類をそろえながら、ドアには停止の貼り紙",
+        "originNote": "",
+        "seoDescription": "机に IPO 書類を積み上げ、ドアには停止通知——クロードちゃんのファン二次創作ネタ画像。",
+        "seoTitle": "クロードちゃんの IPO 書類とアカウント停止のネタ画像",
+        "tags": [
+          "クロード",
+          "擬人化",
+          "アカウント停止",
+          "IPO",
+          "Anthropic",
+          "机",
+          "ネタ"
+        ]
+      }
+    }
   }
 ]
