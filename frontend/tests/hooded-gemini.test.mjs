@@ -40,7 +40,7 @@ test('design credit, anonymous adaptation and unknown license stay distinct',()=
     assert.ok(work.origin.note.includes('古明四季'));
     assert.ok(work.origin.note.includes('原形象'));
     assert.equal(work.license.type,'unknown');
-    for(const copy of [work.description,work.i18n.en.description,work.i18n.ja.description,work.i18n.en.originNote,work.i18n.ja.originNote])assert.ok(!copy.includes('1cyberlangke1'));
+    assert.ok(!JSON.stringify(work).includes('1cyberlangke1'),'anonymous choice applies to every field, including localized FAQs');
   }
 });
 
@@ -60,6 +60,7 @@ test('the published topic, work links and source/permission notes are present in
       assert.equal(schema.creator,undefined);
       assert.ok(schema.license.endsWith('#license-unknown'));
       assert.ok(!page.querySelector('.work-description').textContent.includes('1cyberlangke1'));
+      assert.ok(!page.querySelector('[data-work-faq]')?.textContent.includes('1cyberlangke1'),'localized FAQ keeps the submitter anonymous');
     }
   }
 });
