@@ -1,6 +1,7 @@
 ---
 // 页面 SEO 与社交分享字段。og = { image, alt }，image 为站内路径（/og/xxx.jpg）
 import { ORIGIN } from '../../lib/v2.mjs';
+import AppleTouchIcons from '../AppleTouchIcons.astro';
 const { title, desc, path = '/', type = 'website', og, shareDesc = '', robots = 'index,follow', canonical = '' } = Astro.props;
 const url = canonical || ORIGIN + path;
 const share = shareDesc || desc;
@@ -8,6 +9,7 @@ const img = og ? ORIGIN + og.image : ORIGIN + '/favicon.png';
 const large = Boolean(og);
 ---
 <title>{title}</title>
+<AppleTouchIcons />
 <meta name="description" content={desc} />
 <meta name="robots" content={robots} />
 <link rel="canonical" href={url} />

@@ -58,6 +58,12 @@ test('real Astro builds: no-op, edits, additions, removals, cold-cache fallback 
  }
  write(sample);
  const initial=build('initial',null,['--full']);assert.equal(initial.report.mode,'full');
+ for(const name of ['apple-touch-icon.png','apple-touch-icon-precomposed.png']) {
+   const png=fs.readFileSync(path.join(initial.out,name));
+   assert.equal(png.toString('hex',0,8),'89504e470d0a1a0a');
+   assert.equal(png.readUInt32BE(16),180);assert.equal(png.readUInt32BE(20),180);
+ }
+ for(const prefix of ['','en/','ja/','zh-hant/'])assert.ok(fs.readFileSync(path.join(initial.out,prefix,'index.html'),'utf8').includes('href="/apple-touch-icon.png"'));
  const apiRoot='open-api/v1/';
  const readApi=(release,file)=>JSON.parse(fs.readFileSync(path.join(release.out,apiRoot,file),'utf8'));
  assert.equal(readApi(initial,'works.json').total,sample.works.length);

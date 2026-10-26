@@ -1,6 +1,7 @@
 ---
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import AppleTouchIcons from '../components/AppleTouchIcons.astro';
 const {active='',bodyPage,rootPath='',categoryId}=Astro.props;
 ---
 <!doctype html>
@@ -8,6 +9,7 @@ const {active='',bodyPage,rootPath='',categoryId}=Astro.props;
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <AppleTouchIcons />
   <slot name="head" />
 </head>
 <body data-i18n-page={bodyPage} data-category-id={categoryId}>
