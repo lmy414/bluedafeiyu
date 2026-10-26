@@ -22,6 +22,16 @@
       }
     },
     {
+      "uid": "9126506",
+      "name": "Mistral法棍猫在运营",
+      "homepage": "https://space.bilibili.com/9126506",
+      "intro": "我想做很多视频，做很多很好玩的视频，首先肯定是自己觉得很好玩，其次嘛，也想传播快乐给大家。",
+      "i18n": {
+        "en": "I want to make a lot of videos, a lot of really fun videos. First because I enjoy them myself, and second because I want to spread the fun to everyone.",
+        "ja": "たくさん動画を作りたい、たくさん楽しい動画を作りたい。まずは自分が楽しいと思うから、それからみんなに楽しさを届けたいから。"
+      }
+    },
+    {
       "uid": "15475629",
       "name": "Muto_66",
       "homepage": "https://space.bilibili.com/15475629",
@@ -77,8 +87,8 @@
       "homepage": "https://space.bilibili.com/69180811",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "Creator 黑猫勇者 posts AI-generated animation on Bilibili and shared the ComfyUI workflow, character settings and prompts used for this clip in a public post.",
-        "ja": "投稿者の黒猫勇者さんはBilibiliでAI生成アニメーションを公開しており、本作に使ったComfyUIのワークフローやキャラクター設定、プロンプトを公開投稿で共有しています。"
+        "en": "A Bilibili creator who shares fan-made animations of AI characters.",
+        "ja": "AI キャラクターのファンアニメーションを投稿している Bilibili のクリエイターです。"
       }
     },
     {
@@ -189,6 +199,31 @@
       }
     },
     {
+      "bvid": "BV1S3nQ6EEoW",
+      "uid": "69180811",
+      "title": "肥鱼摇表情包一分钟完整版",
+      "description": "一点一滴刺痛我的心",
+      "url": "https://www.bilibili.com/video/BV1S3nQ6EEoW/",
+      "cover": "https://i0.hdslb.com/bfs/archive/d000221b808b265c45851c7fb5bf44a6a819e1d3.jpg",
+      "duration": 63,
+      "publishedAt": "2026-10-26T03:30:00.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A Bilibili creator who shares fan-made animations of AI characters.",
+          "description": "A one-minute 3D animation of chibi DeepSeek Chan in a maid outfit, repeating a rhythmic shake dance loop. Fan-made derivative work.",
+          "title": "DeepSeek Chan Shake Dance — One-Minute Full Version"
+        },
+        "ja": {
+          "creatorIntro": "AI キャラクターのファンアニメーションを投稿している Bilibili のクリエイターです。",
+          "description": "メイド服姿のちびキャラ DeepSeekちゃん が、リズムに合わせてゆれ続ける 1 分間の 3D アニメーション。ファンによる二次創作です。",
+          "title": "DeepSeekちゃん ゆれダンス 1分フルバージョン"
+        }
+      }
+    },
+    {
       "bvid": "BV1DNnS6yECD",
       "uid": "13787349",
       "title": "DS，我们……会做梦吗？",
@@ -211,6 +246,31 @@
           "creatorIntro": "サイト管理者が指定した最初期の作者の一人。公開チャンネル情報をもとに掲載し、動画は1本ずつ審査しています。",
           "description": "世界について書かれた本はすでに全部読んできたのに、実際に体験したことは一度もないClaudeちゃん。普段は床に落ちた本さえ拾おうとしないDeepSeekちゃんが、秋の午後、珍しくClaudeちゃんの手を引いて走り出す。落ち葉、風、雲、星々を抜けて——。",
           "title": "DeepSeekちゃん、私たち……夢を見るのかな？"
+        }
+      }
+    },
+    {
+      "bvid": "BV1VxnX6ZEsQ",
+      "uid": "9126506",
+      "title": "谁能想到捡回来的小家伙开口喊妈妈",
+      "description": "一开始还在疑惑这是什么小家伙，别扭地抱在怀里，最后被一句甜甜的妈妈直接融化啦",
+      "url": "https://www.bilibili.com/video/BV1VxnX6ZEsQ/",
+      "cover": "https://i0.hdslb.com/bfs/archive/6b93e8308ae7f4fa1aed883f4667282bbec144b9.jpg",
+      "duration": 16,
+      "publishedAt": "2026-10-26T00:04:49.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, and lots of really fun videos. First of all because I enjoy them myself, and then because I want to spread happiness to everyone.",
+          "description": "At first she wonders what this little creature is and holds it awkwardly in her arms, then one sweet \"Mama\" melts her completely.",
+          "title": "Who Knew the Little One She Picked Up Would Call Her Mom"
+        },
+        "ja": {
+          "creatorIntro": "楽しい動画をたくさん作りたいと思っています。まずは自分が楽しいと感じられること、そして皆さんに楽しさを届けたいからです。",
+          "description": "最初はこの小さな生き物が何なのか戸惑いながら、ぎこちなく抱きしめていたけれど、最後は甘い「ママ」の一言でとけてしまった。",
+          "title": "拾ってきた小さな子が「ママ」と呼んだ話"
         }
       }
     },
@@ -286,6 +346,81 @@
           "creatorIntro": "毎日AI4コマ漫画とショートアニメを制作。",
           "description": "見慣れたアニメ調の画風で描かれたAI娘のショートアニメ。Kimi K3.1 Proのリリースを祝うKimiちゃんが登場し、同モデルはエージェント性能の大幅な向上により、Artificial Analysis Intelligence Indexでスコア55・4位で登場したと紹介されます。投稿者は課金・ワークフロー・比較の詳細はパート2にあると述べ、イラストはWAN3.0とMiniMax H3で生成したと説明しています。台詞は中国語です。",
           "title": "【解説風】Kimiが国産モデルの栄光を取り戻す — ご機嫌なClaudeちゃん（ホットなニュースも冷知識解説になる？）"
+        }
+      }
+    },
+    {
+      "bvid": "BV1BTH36XEZq",
+      "uid": "9126506",
+      "title": "大肥鱼三十六计：假装，潜伏，偷袭，跑路",
+      "description": "大肥鱼三十六计：假装，潜伏，偷袭，跑路",
+      "url": "https://www.bilibili.com/video/BV1BTH36XEZq/",
+      "cover": "https://i2.hdslb.com/bfs/archive/676c80cdb67c8c66caf0eeb6f344bd690db87bad.jpg",
+      "duration": 15,
+      "publishedAt": "2026-10-25T01:01:34.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, and lots of really fun videos. First of all because I enjoy them myself, and then because I want to spread happiness to everyone.",
+          "description": "A short comedic skit in which the blue-haired DeepSeek Chan runs through her own four-step stratagem: pretend, lurk, ambush, then run for it, while a companion crawls across the pavement behind her.",
+          "title": "DeepSeek Chan's Thirty-Six Stratagems: Pretend, Lurk, Ambush, Run"
+        },
+        "ja": {
+          "creatorIntro": "楽しい動画をたくさん作りたいと思っています。まずは自分が楽しいと感じられること、そして皆さんに楽しさを届けたいからです。",
+          "description": "青い髪の DeepSeekちゃんが、フリをして、潜んで、奇襲して、逃げるという自分流の四段作戦をコミカルに演じる短編。背後の舗道では仲間が這っている。",
+          "title": "DeepSeekちゃんの三十六計：フリ・潜伏・奇襲・逃走"
+        }
+      }
+    },
+    {
+      "bvid": "BV1vjH362EbT",
+      "uid": "9126506",
+      "title": "大肥鱼卖瓜记：不熟不要钱",
+      "description": "大肥鱼卖瓜记：不熟不要钱",
+      "url": "https://www.bilibili.com/video/BV1vjH362EbT/",
+      "cover": "https://i2.hdslb.com/bfs/archive/f8daceacba45b34de7cbb8923c1e35a880800058.jpg",
+      "duration": 16,
+      "publishedAt": "2026-10-25T00:50:07.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make a lot of videos, a lot of really fun videos. First because I enjoy them myself, and second because I want to spread the fun to everyone.",
+          "description": "A short fan skit in which DeepSeek Chan runs a watermelon stall and promises customers their money back if the melon turns out to be unripe.",
+          "title": "DeepSeek Chan's Watermelon Stall: No Charge If It's Not Ripe"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作りたい、たくさん楽しい動画を作りたい。まずは自分が楽しいと思うから、それからみんなに楽しさを届けたいから。",
+          "description": "DeepSeekちゃんがスイカ売りを開き、熟れていなければ代金はいらないと客に約束する短い二次創作スキット。",
+          "title": "DeepSeekちゃんのスイカ売り：熟れてなければタダ"
+        }
+      }
+    },
+    {
+      "bvid": "BV179H36HELC",
+      "uid": "9126506",
+      "title": "大肥鱼：小猫楼梯舞",
+      "description": "大肥鱼：小猫楼梯舞",
+      "url": "https://www.bilibili.com/video/BV179H36HELC/",
+      "cover": "https://i2.hdslb.com/bfs/archive/c11a27d0f1e12086ed1ffdd392ebb1d742404cd5.jpg",
+      "duration": 24,
+      "publishedAt": "2026-10-25T00:18:53.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make a lot of videos, a lot of really fun videos. First because I enjoy them myself, and second because I want to spread the fun to everyone.",
+          "description": "A short chibi fan video in which DeepSeek Chan stands on a stairway and performs a small cat-like dance step.",
+          "title": "DeepSeek Chan: Little Cat Stair Dance"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作りたい、たくさん楽しい動画を作りたい。まずは自分が楽しいと思うから、それからみんなに楽しさを届けたいから。",
+          "description": "DeepSeekちゃんが階段の上で子猫のような小さなダンスを踊る、ちびキャラの短い二次創作動画。",
+          "title": "DeepSeekちゃん：子猫の階段ダンス"
         }
       }
     },

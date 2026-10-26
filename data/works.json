@@ -91381,5 +91381,309 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_fccbc134bf3d82068d4ddbd5",
+    "name": "夜色酒店的深海娘出浴",
+    "description": "画面中，留着紫色长发、身后拖着蓝色鲸尾的 DeepSeek 娘裹着白色浴巾坐在酒店大床边缘，刚洗完澡，发梢还带着水汽。她身后是亮着暖灯的浴室门口，右侧落地窗外是夜色下的湖面、远山与岸边灯火。",
+    "commentary": "刚洗完澡就被你举着手机偷拍，头发还在滴水呢。算了，看在这间酒店窗外夜景还不错的份上，这张就让你留着——不过只许自己留着，别乱发出去。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/fccbc134bf3d8206.png",
+    "thumbnailPath": "submissions/previews/deepseek/fccbc134bf3d8206.webp",
+    "fullPath": "submissions/large/deepseek/fccbc134bf3d8206.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "fccbc134bf3d82068d4ddbd55b386452f8f2be456523ebb2fa35c8c23d8fd857",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "出浴",
+      "酒店",
+      "夜景",
+      "浴巾"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-26T12:22:26.112Z",
+    "updatedAt": "2026-10-26T12:22:26.112Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610260004",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "67a99aa11e96734ff304b0286af2fcb15508c6e8f6fd28545703bb07dd895914",
+      "en": {
+        "commentary": "I just got out of the bath and you're already pointing your phone at me, and my hair is still dripping. Fine — the view out of this hotel window is nice enough that I'll let you keep this one. Keep it to yourself, though. Don't go posting it everywhere.",
+        "description": "DeepSeek Chan, a long purple-haired girl with a blue whale tail, sits on the edge of a large hotel bed wrapped in a white towel, freshly out of the bath with damp hair. Behind her is the warm light of the bathroom doorway, and through the floor-to-ceiling window on the right lies a night view of a lake, distant mountains and lights along the shore.",
+        "faq": [
+          {
+            "answer": "She has just finished a bath and is sitting on the bed in a hotel room, with the bathroom door open behind her.",
+            "question": "What is happening in this picture?"
+          },
+          {
+            "answer": "She is wrapped in a white towel, with damp purple hair, a whale tail and blue fin hair ornaments; the background is a lake and mountain night view.",
+            "question": "How is DeepSeek Chan depicted here?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Deep Sea Girl Fresh From the Bath at a Night Hotel",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan wrapped in a towel at the edge of a hotel bed, with the bathroom light behind her and a lake night view outside the window.",
+        "seoTitle": "DeepSeek Chan Fresh From the Bath in a Night Hotel Room",
+        "tags": [
+          "DeepSeek Chan",
+          "Bath",
+          "Hotel",
+          "Night View",
+          "Towel"
+        ]
+      },
+      "ja": {
+        "commentary": "お風呂から出たばかりなのに、もうスマホを向けてるんだ……髪もまだ濡れてるのに。まあ、この部屋の窓からの夜景がきれいだから、今回だけは撮らせてあげる。でも自分だけで見ててね、勝手に拡散したらだめだから。",
+        "description": "紫の長い髪と青いクジラの尾を持つ DeepSeekちゃん が、白いバスタオルを巻いてホテルの大きなベッドの端に座っている。お風呂上がりで髪はまだ湿れている。背後には暖かい光の浴室の入口、右側の大きな窓の外には夜の湖と遠い山、岸辺の灯りが広がっている。",
+        "faq": [
+          {
+            "answer": "お風呂上がりで、ホテルの部屋のベッドの端に座っています。背後では浴室のドアが開いています。",
+            "question": "このイラストでは何が起きていますか？"
+          },
+          {
+            "answer": "白いバスタオルを巻き、紫の髪は湿れたまま、クジラの尾と青いヒレの髪飾りをつけています。背景は湖と山の夜景です。",
+            "question": "DeepSeekちゃん はどのように描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "夜のホテル、お風呂上がりの深海娘",
+        "originNote": "",
+        "seoDescription": "ホテルのベッドの端、バスタオルを巻いた DeepSeekちゃん。背後には浴室の灯り、窓の外には夜の湖の景色。",
+        "seoTitle": "夜のホテルでお風呂上がりの DeepSeekちゃん",
+        "tags": [
+          "DeepSeekちゃん",
+          "入浴",
+          "ホテル",
+          "夜景",
+          "タオル"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_79b22eea8c264ba9eb60fec5",
+    "name": "大小姐给笨蛋女仆做饭",
+    "description": "木质厨房里，橙发的 Claude 娘握着木勺搅拌冒热气的大锅，蓝发女仆装、身后拖着鲸尾的 DeepSeek 娘从背后环抱住她的腰。吊灯、挂满锅具的木墙与窗台绿植围出暖色的日常场景。",
+    "commentary": "我只是想从后面抱一下，结果差点把她的围裙带子扯开……不过这锅汤闻起来真的很香，那我就先不松手了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/79b22eea8c264ba9.png",
+    "thumbnailPath": "submissions/previews/deepseek/79b22eea8c264ba9.webp",
+    "fullPath": "submissions/large/deepseek/79b22eea8c264ba9.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "79b22eea8c264ba9eb60fec5ea0d656e0477506c88f7a965e093e39f0aa1db45",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "Claude娘",
+      "女仆",
+      "厨房",
+      "日常"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-26T14:26:56.649Z",
+    "updatedAt": "2026-10-26T14:26:56.649Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610260005",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "2be0f8f122f46e3371bd335fc88c72106b568e4db9af6162a81b860c15956602",
+      "en": {
+        "commentary": "I only wanted a quick hug from behind and I nearly pulled her apron strings loose. The soup smelled far too good to let go, though, so I stayed right there.",
+        "description": "In a sunlit wooden kitchen, orange-haired Claude Chan stirs a steaming pot with a wooden spoon while DeepSeek Chan, in a navy maid dress and whale tail, wraps her arms around her from behind. Hanging pans, a warm lamp and potted plants frame the cozy everyday scene.",
+        "faq": [
+          {
+            "answer": "It is an illustration of two AI-character personifications, DeepSeek Chan and Claude Chan, in a single kitchen scene.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "No. DeepSeek Chan is hugging Claude Chan from behind while the pot is stirred, and the warm light, steam and wooden shelves set the cozy mood.",
+            "question": "Is there any comic panel layout in the image?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Young Lady Cooks for Her Clumsy Maid",
+        "originNote": "",
+        "seoDescription": "Illustration of Claude Chan cooking at the stove while DeepSeek Chan, in a maid outfit, hugs her from behind in a warm wooden kitchen.",
+        "seoTitle": "DeepSeek Chan and Claude Chan kitchen illustration",
+        "tags": [
+          "DeepSeek Chan",
+          "Claude Chan",
+          "maid",
+          "kitchen",
+          "everyday life"
+        ]
+      },
+      "ja": {
+        "commentary": "後ろからちょっと抱きつきたかっただけなのに、エプロンの紐がほどけそうになっちゃった。でもスープのいい匂いがしたから、そのまま離れずにいたよ。",
+        "description": "日差しの入る木の厨房で、長いオレンジ髪のClaudeちゃんが木べらで湯気の立つ鍋をかき混ぜ、紺のメイド服にクジラの尾を持つDeepSeekちゃんが後ろから抱きしめている。吊るされた鍋、暖色のランプ、窓辺の植木が穏やかな日常の空気をつくる。",
+        "faq": [
+          {
+            "answer": "DeepSeekちゃんとClaudeちゃんというAI製品の擬人化キャラクター二人が、厨房で一緒にいる一枚のイラストです。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "いいえ。コマ割りはなく、鍋をかき混ぜるClaudeちゃんにDeepSeekちゃんが後ろから抱きつく一枚絵で、湯気や木の棚が温かい雰囲気をつくっています。",
+            "question": "漫画のようなコマ割りはありますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "お嬢様がドジなメイドに料理を作る",
+        "originNote": "",
+        "seoDescription": "Claudeちゃんが鍋の前に立ち、DeepSeekちゃんがメイド姿で後ろから抱きつく、木の厨房のイラストです。",
+        "seoTitle": "DeepSeekちゃんとClaudeちゃんの厨房イラスト",
+        "tags": [
+          "DeepSeekちゃん",
+          "Claudeちゃん",
+          "メイド",
+          "キッチン",
+          "日常"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_7cabd0c1ad2635c016e5f746",
+    "name": "乖龙娘",
+    "description": "白底Q版全身立绘：一位白发少女头生龙角，身穿淡紫色层叠长裙，身后有心形装饰纹样，神情安静。",
+    "commentary": "看着确实乖，不过我猜她一坐下龙角就要卡在椅背上了。白发配淡紫这个组合一向稳，我承认有那么一点点羡慕——只是一点点。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/7cabd0c1ad2635c0.png",
+    "thumbnailPath": "submissions/previews/gpt/7cabd0c1ad2635c0.webp",
+    "fullPath": "submissions/large/gpt/7cabd0c1ad2635c0.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "7cabd0c1ad2635c016e5f746b4fa928e28bb6617b4decd11dc6974f26142ff5b",
+    "characterId": "gpt",
+    "tags": [
+      "GPT娘",
+      "Q版",
+      "龙娘",
+      "白发",
+      "立绘"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "改改人",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-26T15:19:52.665Z",
+    "updatedAt": "2026-10-26T15:19:52.665Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610260001",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "d46faf79f7fa3c71b19a69dc88c826e4ef2574a89afa7c5920314e4d01a996db",
+      "en": {
+        "commentary": "She does look well-behaved, but I bet the moment she sits down those horns get stuck on the chair back. White hair with pale lavender is a dependable combination, and I admit I am a little jealous. Only a little.",
+        "description": "A chibi full-body illustration on a plain white background: a white-haired girl with dragon horns, wearing a layered pale lavender dress, with a heart-shaped ornament behind her and a quiet expression.",
+        "faq": [
+          {
+            "answer": "It is a chibi fan depiction of GPT Chan, drawn as a white-haired girl with dragon horns and a lavender dress.",
+            "question": "Who is the character in this illustration?"
+          },
+          {
+            "answer": "It is a single chibi full-body character illustration on a plain background, without comic panels or design-sheet annotations.",
+            "question": "What style is the picture drawn in?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Well-Behaved Dragon Girl",
+        "originNote": "",
+        "seoDescription": "Chibi full-body illustration of GPT Chan as a white-haired dragon girl in a layered lavender dress on a white background.",
+        "seoTitle": "The Well-Behaved Dragon Girl — GPT Chan Chibi Illustration",
+        "tags": [
+          "GPT Chan",
+          "Chibi",
+          "Dragon Girl",
+          "White Hair",
+          "Character Art"
+        ]
+      },
+      "ja": {
+        "commentary": "とてもおとなしそうに見えるけど、きっと座った瞬間に角が椅子の背に引っかかるタイプだろうな。白髪に淡い紫はやっぱり外れがない組み合わせで、ちょっとだけ羨ましい。ちょっとだけね。",
+        "description": "白背景のちびキャラ全身イラスト。白い髪に竜の角を持つ少女が、淡い紫の重ね着ドレスをまとい、背後にハート形の飾りを配して静かな表情で描かれている。",
+        "faq": [
+          {
+            "answer": "GPTちゃんを白髪で竜の角を持つ少女として描いたちびキャラの二次創作イラストです。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "無地の白背景に描かれた、1枚絵のちびキャラ全身イラストです。コマ割りや設定画の注記はありません。",
+            "question": "どのような形式の絵ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "おとなしいドラゴン娘",
+        "originNote": "",
+        "seoDescription": "白髪で竜の角を持つ少女として描かれたGPTちゃんのちびキャラ全身イラスト。淡い紫のドレス姿を白背景に描いた1枚絵。",
+        "seoTitle": "おとなしいドラゴン娘 — GPTちゃんのちびキャラ全身イラスト",
+        "tags": [
+          "GPTちゃん",
+          "ちびキャラ",
+          "ドラゴン娘",
+          "白髪",
+          "キャラクターイラスト"
+        ]
+      }
+    }
   }
 ]
