@@ -19,7 +19,8 @@ export const LOCALES = [
 ];
 const source = fs.readFileSync(new URL('../public/lang.js', import.meta.url), 'utf8');
 let program = new vm.Script(source, { filename: 'lang.js' });
-const converter = Converter({ from: 'cn', to: 'twp' });
+const convertTraditional = Converter({ from: 'cn', to: 'twp' });
+const converter = text => convertTraditional(String(text ?? '')).replace(/孃/g, '娘');
 const normalizeHome = p => p === '/index.html' ? '/' : p;
 export const localizedPath = (base, locale) => locale.prefix + normalizeHome(base);
 const escape = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&apos;' }[c]));

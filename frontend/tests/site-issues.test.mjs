@@ -30,6 +30,15 @@ test('about headings answer the brand question in Simplified and Traditional Chi
   assert.equal(read('/zh-hant/about.html').querySelector('main h1').textContent,'藍色大肥魚是什麼？');
 });
 
+test('Traditional home, about and character pages preserve the community spelling 娘',()=>{
+  for(const route of ['/zh-hant/','/zh-hant/about.html','/zh-hant/characters/claude.html','/zh-hant/characters/deepseek.html']) {
+    const doc=read(route);
+    assert.doesNotMatch(doc.querySelector('main').textContent,/孃/,route);
+    assert.doesNotMatch(doc.title+doc.querySelector('meta[name="description"]').getAttribute('content'),/孃/,route);
+    for(const script of doc.querySelectorAll('script[type="application/ld+json"]'))assert.doesNotMatch(script.textContent,/孃/,route);
+  }
+});
+
 test('English character pages use Blue Dafeiyu and keep compact character headings',()=>{
   const directory=path.join(out,'en/characters');
   for(const file of fs.readdirSync(directory,{recursive:true}).filter(file=>file.endsWith('.html'))){

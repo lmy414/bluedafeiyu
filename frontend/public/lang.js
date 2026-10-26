@@ -1192,7 +1192,8 @@
     'v2.tagline': 'AI 娘二創圖庫'
   };
 
-  function traditional(text) { return converter ? converter(String(text == null ? '' : text)) : text; }
+  // OpenCC's literary 孃 is not the community's character name spelling.
+  function traditional(text) { return converter ? converter(String(text == null ? '' : text)).replace(/孃/g, '娘') : text; }
   function loadTraditional() {
     if (converter) return Promise.resolve();
     if (window.OpenCC) { converter = window.OpenCC.Converter({ from: 'cn', to: 'twp' }); return Promise.resolve(); }

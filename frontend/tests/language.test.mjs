@@ -96,6 +96,17 @@ test('按需加载繁体，静态属性、动态变量转换且简英繁往返�
   assert.equal(page.input.getAttribute('placeholder'), '搜索作品、角色、别名或 Tag');
   assert.equal(page.scripts.length, 1);
 });
+
+test('繁体角色名在静态文案和动态内容中始终保留娘',async()=>{
+  const page=boot();const pending=page.api.setLang('zh-Hant');page.finishLoad();await pending;
+  for(const text of ['DeepSeek娘','Claude娘','鲸鱼娘','AI 娘二创']) {
+    const converted=page.api.contentText(text);
+    assert.ok(converted.includes('娘'),converted);assert.doesNotMatch(converted,/孃/);
+    assert.doesNotMatch(page.api.fmt('new.role.copy',text),/孃/);
+  }
+  const work=page.api.localWork({n:'DeepSeek娘',d:'鲸鱼娘',cm:'Claude娘',c:'DeepSeek娘',tg:['AI娘']});
+  assert.equal(work.n,'DeepSeek娘');assert.equal(work.d,'鯨魚娘');assert.equal(work.cm,'Claude娘');
+});
 test('英文统一站名和所有 AI 娘的 Chan 名称，模板变量和动态卡片同样生效', async () => {
   const page = boot({ baked: 'en', pathname: '/en/browse.html' });
   const expected = {
