@@ -22,6 +22,15 @@ test('English character SEO preserves the site brand through final localization'
   }
 });
 
+test('Japanese character, type and pagination titles share the Japanese site brand',async()=>{
+  for(const base of ['/characters/doubao.html','/characters/doubao/meme.html','/characters/doubao/page/2.html']) {
+    const html='<html><head><title>豆包娘 — 蓝色大肥鱼</title><link rel="canonical" href="'+ORIGIN+base+'"><meta name="description" content="角色档案"><meta property="og:title"><meta name="twitter:title"></head><body data-archive data-i18n-page="characterDetail">'+role+'</body></html>';
+    const {document}=parseHTML(await localizeHtml(html,base,LOCALES.find(l=>l.id==='ja'),snapshot));
+    assert.ok(document.title.endsWith(' | 藍色大肥魚'),base+': '+document.title);
+    for(const selector of ['meta[property="og:title"]','meta[name="twitter:title"]'])assert.equal(document.querySelector(selector).getAttribute('content'),document.title);
+  }
+});
+
 test('new topics use saved translations in collection cards, page SEO and breadcrumb schemas',async()=>{
  const topic={id:'new-style',name:'全新视觉专题',summary:'由站长精选的全新视觉作品。',workIds:['fixture'],i18n:{en:{name:'New Visual Style',summary:'A new visual collection selected by the site owner.'},ja:{name:'新しい視覚スタイル',summary:'管理者が選んだ新しい視覚スタイルの作品集です。'}}};
  const fixture={...snapshot,topics:[topic],works:[{...snapshot.works[0],id:'fixture'}]};
