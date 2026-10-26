@@ -49,6 +49,19 @@ test('Chinese and English character titles and descriptions include the requeste
   }
 });
 
+test('character descriptions merge search aliases into a single non-repeating list',()=>{
+  for(const locale of LOCALES) {
+    const directory=path.join(out,locale.prefix.slice(1),'characters');
+    for(const file of fs.readdirSync(directory,{recursive:true}).filter(file=>file.endsWith('.html'))) {
+      const doc=read(locale.prefix+'/characters/'+file.replaceAll('\\','/'));
+      const description=doc.querySelector('meta[name="description"]').getAttribute('content');
+      assert.doesNotMatch(description,/）\s*（/,locale.id+': '+file);
+      const list=description.match(/（(?:现有别名|現有別名)：([^）]+)）/)?.[1]?.split('、');
+      if(list)assert.equal(new Set(list).size,list.length,locale.id+': '+file);
+    }
+  }
+});
+
 test('the homepage supplies a complete editorial download row and original-download tracking in every language',()=>{
   const archive=JSON.parse(fs.readFileSync(path.join(out,'archive-data.json'),'utf8'));
   const work=archive.works.find(w=>w.slug==='deepseek202609300025');

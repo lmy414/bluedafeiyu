@@ -59,9 +59,9 @@ export function createSEO(ctx) {
   function description(c) {
     if (c.kind === 'gif') return `按原图 GIF 格式自动归集 ${c.list.length} 件 AI 娘二创，保留原有作品类型。按角色和类型筛选，查看来源与授权，下载原图欣赏完整动画。`;
     if (c.kind === 'topic') return `${c.topic.summary} 本合集收录 ${c.list.length} 件作品，保留每张图片的说明、来源、署名与授权记录。`;
-    const aliases = c.character?.aliases?.length ? `（现有别名：${c.character.aliases.join('、')}）` : '';
     const searchAlias = characterSearchAliases[c.character?.id]?.[0];
-    const subject = c.character ? c.character.name + aliases + (searchAlias ? `（${searchAlias}）` : '') : 'AI 娘';
+    const aliases = [...new Set([...(c.character?.aliases || []), searchAlias].map(value=>String(value||'').trim()).filter(value=>value&&value!==c.character?.name))];
+    const subject = c.character ? c.character.name + (aliases.length ? `（现有别名：${aliases.join('、')}）` : '') : 'AI 娘';
     const scope = c.type ? kindNames[c.type] : '表情包、插画、设定图与漫画';
     return `浏览 ${subject}的${scope}，本栏收录 ${c.list.length} 件作品。查看图片说明、原图、来源及使用许可，或继续按${c.type ? '角色' : '类型'}寻找相关作品。`;
   }
