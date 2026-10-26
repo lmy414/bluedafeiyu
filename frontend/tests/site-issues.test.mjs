@@ -30,6 +30,18 @@ test('about headings answer the brand question in Simplified and Traditional Chi
   assert.equal(read('/zh-hant/about.html').querySelector('main h1').textContent,'藍色大肥魚是什麼？');
 });
 
+test('the DeepSeek character page exposes its introduction and whale-girl guide in the hero',()=>{
+  for(const locale of LOCALES) {
+    const doc=read(localizedPath('/characters/deepseek.html',locale));
+    const hero=doc.querySelector('.character-hero'),intro=hero.querySelector('.lede');
+    assert.ok(intro,locale.id);assert.equal(intro.closest('details'),null);
+    assert.ok(intro.querySelector(`a[href="${localizedPath('/topics/deepseek-whale.html',locale)}"]`));
+    if(locale.id==='zh')assert.equal(hero.querySelector('h1').textContent,'DeepSeek娘（鲸鱼娘）表情包');
+    if(locale.id==='zh-Hant')assert.equal(hero.querySelector('h1').textContent,'DeepSeek娘（鯨魚娘）表情包');
+    if(['zh','zh-Hant'].includes(locale.id))assert.equal(intro.textContent.split('。').length-1,3);
+  }
+});
+
 test('the family-reunion work links to the homepage and whale-girl archive before its description',()=>{
   for(const locale of LOCALES) {
     const doc=read(localizedPath('/works/deepseek202610080009.html',locale));

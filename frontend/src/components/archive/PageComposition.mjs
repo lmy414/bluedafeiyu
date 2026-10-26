@@ -37,7 +37,10 @@ export function createDemoPages(ctx, pages) {
         const details=document.createElement('details');details.className='character-introduction';
         details.innerHTML=`<summary>${t('characterIntroduction','角色介绍与收录说明','Character introduction and archive notes','キャラクター紹介と収録について')}${icon('chevron',13)}</summary>`;
         const info=document.createElement('div');info.className='character-info';details.append(info);
-        for(const node of [...hero.querySelectorAll('.model-vendor,.lede,.tags,.source-note')])info.append(node);
+        for(const node of [...hero.querySelectorAll('.model-vendor,.lede,.tags,.source-note')]){
+          if(character?.id==='deepseek'&&node.matches('.lede'))continue;
+          info.append(node);
+        }
         const reading=document.querySelector('.role-reading');if(reading)details.append(reading);
         hero.after(details);
         const highlights=[...document.body.children].find(node=>node.matches('.section')&&!node.id&&node.querySelector('.work-grid'));
