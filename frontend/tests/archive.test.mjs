@@ -73,6 +73,12 @@ test('lists share one filter bar and a crawlable load-more chain',()=>{
  assert.equal(all.querySelectorAll('#filter-form').length,1);
  assert.equal(all.querySelectorAll('#results .work-card').length,24);
  assert.ok(all.querySelector('noscript a[href="/page/2.html"]'));
+ for(const prefix of ['','en/','ja/','zh-hant/']){
+  const doc=read(prefix+'browse.html');
+  assert.deepEqual([...doc.querySelectorAll('select[name=sort] option')].map(option=>option.getAttribute('value')),['latest','popular','downloads','random']);
+  assert.deepEqual([...doc.querySelectorAll('select[name=direction] option')].map(option=>option.getAttribute('value')),['desc','asc']);
+  assert.equal(doc.querySelector('[data-design-layout]'),null);
+ }
  for(const file of ['page/2.html','characters/deepseek/page/3.html','topics/maojing/page/2.html']){
   const doc=read(file);
   assert.equal(doc.querySelectorAll('#results .work-card').length,24,file);

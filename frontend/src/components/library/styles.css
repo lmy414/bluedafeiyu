@@ -6,7 +6,6 @@
 @import '../archive/FriendWall.css';
 @import '../archive/SidebarTooltip.css';
 @import '../archive/WorkActions.css';
-@import '../archive/HomeDownloads.css';
 @import '../../../public/archive/original-tools.css';
 @import '../../../public/archive/layout.css';
 @import '../../../public/archive/seo-content.css';
@@ -25,3 +24,5 @@
 @import './ArchivePrimitives.css';
 @import '../archive/CreationMethod.css';
 @import '../archive/WorkPreview.css';
+@import '../archive/Listing.css';
+@import '../archive/HomeDownloads.css';

@@ -1,10 +1,12 @@
 import {installMasonry} from './masonry.mjs';
 import {installPagedFeeds} from '../../public/components/paged-feed.js';
 import {installSidebarTooltip} from '../../public/components/sidebar-tooltip.js';
+import {installHomeDownloads} from '../../public/components/home-downloads.js';
 import './saved-ui.js';
 installMasonry();
 installPagedFeeds();
 installSidebarTooltip();
+installHomeDownloads();
 
 for (const slider of document.querySelectorAll('[data-design-slider]')) {
   const slides=[...slider.querySelectorAll('[data-design-slide]')];

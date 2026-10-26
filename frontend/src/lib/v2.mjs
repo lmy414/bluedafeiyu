@@ -134,7 +134,7 @@ export function overlayData() {
     d: w.description || '', cm: w.commentary || '', o: w.originalUrl || w.path, f: String(w.format || '').toUpperCase(), s: fmtSize(w.fileSize), bytes: Number(w.fileSize) || 0,
     lk: w.lic, ls: LICENSE[w.lic][0], lt: LICENSE[w.lic][1], ln: w.license?.note || '', a: w.author, k: w.cats, ts: w.typeShort || '作品', tg: w.tagsShown,
     au: w.authorUrl, ac: w.attribution.explicit, sa: imageRights(w).creator, rights: imageRights(w),
-    ok: w.originKind, su: w.originLink, dt: fmtDate(w.createdAt), id: w.id
+    ok: w.originKind, su: w.originLink, dt: fmtDate(w.createdAt), at: Date.parse(w.createdAt) || 0, id: w.id
   }]));
 }
 // 搜索索引（/search-index.json）：只含检索字段

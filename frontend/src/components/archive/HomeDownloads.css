@@ -1,6 +1,10 @@
 .home-downloads-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
-.home-download-pick{min-width:0}
+.home-download-pick{min-width:0;display:flex;flex-direction:column}
+.home-download-pick>.work-card{flex:1}
+body.archive .home-download-pick .work-art{height:220px;display:flex;align-items:center;justify-content:center}
+body.archive .home-download-pick .work-art img{height:100%;width:100%;object-fit:contain}
+body.archive .home-download-pick .work-art.is-long img{object-fit:contain}
 .home-download-action{margin-top:12px}
 .home-download-action .button{width:100%;justify-content:center}
-@media(max-width:900px){.home-downloads-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:900px){.home-downloads-list{grid-template-columns:repeat(2,minmax(0,1fr))}body.archive .home-download-pick .work-art{height:180px}}
 @media(max-width:480px){.home-downloads-list{gap:14px}.home-download-action .button{padding-inline:10px}}

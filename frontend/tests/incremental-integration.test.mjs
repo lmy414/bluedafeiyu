@@ -6,8 +6,9 @@ import {spawnSync} from 'node:child_process';
 import {outputHashes} from '../scripts/incremental.mjs';
 
 const root=path.resolve(import.meta.dirname,'../..');
-function sameArtifacts(left,right,message) {
+function sameArtifacts(left,right,message,untrackedRight=[]) {
  const a=outputHashes(left),b=outputHashes(right);
+ for(const name of untrackedRight)delete b[name];
  const differences=[...new Set([...Object.keys(a),...Object.keys(b)])].filter(name=>a[name]!==b[name]);
  assert.deepEqual(differences,[],message);
 }
@@ -64,14 +65,19 @@ test('real Astro builds: no-op, edits, additions, removals, cold-cache fallback 
  for(const locale of ['en','ja','zh-hant'])assert.ok(fs.readFileSync(path.join(initial.out,locale,'about.html'),'utf8').includes('data-open-api-docs'));
  const extra=path.join(initial.out,'not-a-release-artifact.txt');fs.writeFileSync(extra,'temporary, unverified file');
  const noop=build('noop','initial');assert.equal(noop.report.mode,'noop');assert.equal(noop.report.rendered,0);
- assert.equal(fs.existsSync(path.join(noop.out,path.basename(extra))),false);fs.unlinkSync(extra);sameArtifacts(noop.out,initial.out,'no-op artifacts');
+ assert.equal(fs.existsSync(path.join(noop.out,path.basename(extra))),false);
+ sameArtifacts(noop.out,initial.out,'no-op artifacts',[path.basename(extra)]);
  const orphan=path.join(fixture,'frontend/out/works/orphan-from-failed-build.html');
  fs.writeFileSync(orphan,'<html><body>未发布的临时作品</body></html>');
  const prebuilt=build('prebuilt','missing-baseline',[],{PUBLISH_PREBUILT_DIR:initial.out});
- assert.equal(prebuilt.report.mode,'prebuilt');assert.equal(prebuilt.report.rendered,0);sameArtifacts(prebuilt.out,initial.out,'validated preflight reuse');
+ assert.equal(prebuilt.report.mode,'prebuilt');assert.equal(prebuilt.report.rendered,0);
+ assert.equal(fs.existsSync(path.join(prebuilt.out,path.basename(extra))),false);
+ sameArtifacts(prebuilt.out,initial.out,'validated preflight reuse',[path.basename(extra)]);
  const about=path.join(fixture,'frontend/src/components/pages/AboutPage.astro');
- fs.appendFileSync(about,'\n<!-- component cache verification -->\n');
+ // Exercise a rendered component change, rather than a compiler-optional comment.
+ fs.writeFileSync(about,fs.readFileSync(about,'utf8').replace('<DocumentPage>','<DocumentPage><span hidden data-component-cache-verification></span>'));
  const component=build('component','noop');assert.equal(component.report.mode,'incremental');assert.ok(component.report.rendered<initial.report.rendered);
+ assert.ok(fs.readFileSync(path.join(component.out,'about.html'),'utf8').includes('data-component-cache-verification'));
  assert.equal(fs.existsSync(path.join(component.out,'works/orphan-from-failed-build.html')),false);
  const componentFull=build('component-full','noop',['--full']);sameArtifacts(component.out,componentFull.out,'component artifacts');
  const edited=structuredClone(sample),work=edited.works.at(-1);
@@ -91,8 +97,11 @@ test('real Astro builds: no-op, edits, additions, removals, cold-cache fallback 
  assert.equal(fs.existsSync(path.join(deletion.out,apiRoot,'works/'+hidden.id+'.json')),false);
  assert.ok(!readApi(deletion,'manifest.json').items.some(w=>w.id===hidden.id));
  const deletionReference=build('removed-full','added',['--full']);sameArtifacts(deletion.out,deletionReference.out,'incremental removals equal a clean full build');
- const broken=path.join(deletion.out,'en/works/'+removed.works[0].slug+'.html');fs.unlinkSync(broken);
- const recovered=build('recovered','removed');assert.equal(recovered.report.mode,'full');assert.match(recovered.report.reasons.join(','),/baseline-artifact-missing/);
+ const missing='en/works/'+removed.works[0].slug+'.html';
+ const incomplete=path.join(fixture,'.build/removed-missing');
+ fs.cpSync(deletion.out,incomplete,{recursive:true,mode:fs.constants.COPYFILE_FICLONE,filter:source=>source!==path.join(deletion.out,missing)});
+ assert.equal(fs.existsSync(path.join(incomplete,missing)),false);
+ const recovered=build('recovered','removed-missing');assert.equal(recovered.report.mode,'full');assert.match(recovered.report.reasons.join(','),/baseline-artifact-missing/);
  const before=outputHashes(recovered.out);
  const failure=spawnSync(process.execPath,[path.join(fixture,'frontend/scripts/build.mjs'),'--out',recovered.out,'--full'],{cwd:path.join(fixture,'frontend'),env:{...process.env,SITE_SNAPSHOT:snapshot,SOURCE_DATE_EPOCH:epoch,PYTHON:'missing-python-for-failure-check'},encoding:'utf8',maxBuffer:8*1024*1024,timeout:240000});
  assert.notEqual(failure.status,0);assert.deepEqual(outputHashes(recovered.out),before,'failed replacement preserves every prior artifact');

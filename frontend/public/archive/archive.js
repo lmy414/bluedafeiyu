@@ -4,6 +4,7 @@ import {copyImage} from './image-copy.js?v=1';
 import {installTopicDownloads} from './topic-download.js?v=4';
 import {loadArchiveData} from './data-loader.js?v=1';
 import {matchesCreationMethod} from './creation-method.js';
+import {orderWorks, shuffledSlugs} from '../components/work-order.js';
 (() => {
   'use strict';
   const $ = (selector, parent = document) => parent.querySelector(selector);
@@ -93,21 +94,22 @@ import {matchesCreationMethod} from './creation-method.js';
     let dataset,searchIndex,all=[],filtered=[],shown=24;
     const pageNumber=Number(document.body.dataset.pageNumber)||1;
     const pageStart=(pageNumber-1)*24;
-    const defaultState={character:document.body.dataset.character||'',type:document.body.dataset.type||'',sort:document.body.dataset.sort||'latest',creation:''};
+    const defaultState={character:document.body.dataset.character||'',type:document.body.dataset.type||'',sort:document.body.dataset.sort||'latest',direction:document.body.dataset.sort==='curated'?'asc':'desc',creation:''};
     const form=$('#filter-form'),params=new URLSearchParams(location.search),query=$('#search-q'),result=$('#results'),count=$('#result-count');
     // Transient sort/filter states use the fragment, so the gallery does not
     // expose an unbounded family of indexable query combinations. Old shared
     // query URLs are still accepted and normalized when the page is ready.
-    for(const [key,value] of new URLSearchParams(location.hash.slice(1))) if(['character','type','sort','q','creation'].includes(key))params.set(key,value);
-    const selected={character:document.body.dataset.character||'',type:document.body.dataset.type||'',sort:document.body.dataset.sort||'latest',creation:''};
-    for(const name of ['character','type','sort','creation'])if(params.has(name))selected[name]=params.get(name);
-    if(!['latest','random',...(searchPage?['relevance']:[]),...(defaultState.sort==='curated'?['curated']:[])].includes(selected.sort))selected.sort=defaultState.sort;
+    for(const [key,value] of new URLSearchParams(location.hash.slice(1))) if(['character','type','sort','direction','q','creation'].includes(key))params.set(key,value);
+    const selected={...defaultState};
+    for(const name of ['character','type','sort','direction','creation'])if(params.has(name))selected[name]=params.get(name);
+    if(!['latest','popular','downloads','random',...(searchPage?['relevance']:[]),...(defaultState.sort==='curated'?['curated']:[])].includes(selected.sort))selected.sort=defaultState.sort;
+    if(!['asc','desc'].includes(selected.direction))selected.direction=defaultState.direction;
     if(!['','non-ai'].includes(selected.creation))selected.creation='';
     const setCharacters=value=>{const ids=String(value||'').split(',').filter(Boolean);for(const option of form.elements.character.options)option.selected=option.value?ids.includes(option.value):!ids.length;};
     for(const [name,value]of Object.entries(selected))if(form.elements[name]){if(name==='character')setCharacters(value);else form.elements[name].value=value;}
     const sourceQuery=params.get('q')||'',displayQuery=names(sourceQuery);
     if(query)query.value=displayQuery;
-    const getState=()=>({q:query ? (query.value.trim()===displayQuery ? sourceQuery : query.value.trim()) : '',character:[...form.elements.character.selectedOptions].map(option=>option.value).filter(Boolean).join(','),type:form.elements.type.value,sort:form.elements.sort.value,creation:form.elements.creation.value});
+    const getState=()=>({q:query ? (query.value.trim()===displayQuery ? sourceQuery : query.value.trim()) : '',character:[...form.elements.character.selectedOptions].map(option=>option.value).filter(Boolean).join(','),type:form.elements.type.value,sort:form.elements.sort.value,direction:form.elements.direction.value,creation:form.elements.creation.value});
     const listBase=document.body.dataset.listBase||basePath(location.pathname);
     const globalArchive=listBase==='/browse.html'||listBase.startsWith('/categories/');
     const categoryURL=()=>{
@@ -115,6 +117,7 @@ import {matchesCreationMethod} from './creation-method.js';
       const fragment=new URLSearchParams();
       if(state.character)fragment.set('character',state.character);if(state.creation)fragment.set('creation',state.creation);
       if(state.sort!=='latest')fragment.set('sort',state.sort);
+      if(state.direction!=='desc')fragment.set('direction',state.direction);
       url.hash=fragment.toString();
       return url;
     };
@@ -122,17 +125,13 @@ import {matchesCreationMethod} from './creation-method.js';
     if(globalArchive&&params.has('type')&&selected.type!==defaultState.type){location.replace(localURL(categoryURL().href));return;}
     const stateURL=()=>{const state=getState(),url=new URL(document.body.dataset.listBase||basePath(location.pathname),location.origin),fragment=new URLSearchParams();for(const[name,value]of Object.entries(state))if(value&&value!==defaultState[name]){if(searchPage&&name==='q')url.searchParams.set(name,value);else fragment.set(name,value);}url.hash=fragment.toString();return url;};
     const setURL=()=>{const state=getState();history.replaceState({...history.state,filters:state},'',localURL(stateURL().href));};
-    function render(reshuffle=true,append=false){
+    function render(reshuffle=false,append=false){
       document.dispatchEvent(new Event('archive:filter-sync'));
       const state=getState(),scores=state.q&&searchIndex?searchIndex.search(state.q):null;
       const characters=state.character.split(',').filter(Boolean);
       filtered=all.filter(w=>matchesCreationMethod(w,state.creation)&&characters.every(id=>w.cids.includes(id))&&(!state.type||w.k.includes(state.type))&&(!scores||scores.has(w.id)));
-      if(state.sort==='relevance'&&scores)filtered.sort((a,b)=>scores.get(b.id)-scores.get(a.id));
-      if(state.sort==='popular'||state.sort==='downloads')filtered.sort((a,b)=>(window.WorkStats?.metric(b.id,state.sort)||0)-(window.WorkStats?.metric(a.id,state.sort)||0));
-      if(state.sort==='random'){
-        if(reshuffle||!render.randomOrder){render.randomOrder=filtered.map(w=>w.slug);for(let i=render.randomOrder.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[render.randomOrder[i],render.randomOrder[j]]=[render.randomOrder[j],render.randomOrder[i]];}}
-        const ranks=new Map(render.randomOrder.map((slug,i)=>[slug,i]));filtered.sort((a,b)=>ranks.get(a.slug)-ranks.get(b.slug));
-      }
+      if(state.sort==='random'&&(reshuffle||!render.randomOrder))render.randomOrder=shuffledSlugs(all);
+      filtered=orderWorks(filtered,{...state,scores,metric:(id,mode)=>window.WorkStats?.metric(id,mode)||0,randomOrder:render.randomOrder});
       if(searchPage&&!state.q&&!state.character&&!state.type&&!state.creation){count.textContent=tx('d.searchPrompt','输入关键词开始查找。');result.innerHTML='';$('#search-discovery').hidden=false;$('[data-load-more]').hidden=true;$('.load-more-wrap').hidden=true;return;}
       if(searchPage)$('#search-discovery').hidden=true;
       count.textContent=tx('d.resultCounts','{count} 件作品',{count:filtered.length})+(state.q?' · “'+(query?.value||state.q)+'”':'');
@@ -143,21 +142,21 @@ import {matchesCreationMethod} from './creation-method.js';
         const current=$$('.work-card',existingGrid).length;
         existingGrid.insertAdjacentHTML('beforeend',filtered.slice(start+current,start+shown).map(card).join(''));
       }else result.innerHTML=filtered.length?drawGrid(filtered.slice(start,start+shown)):`<div class="empty-state"><h2>${esc(tx('d.noResults','还没找到合适的作品。'))}</h2><p>${esc(tx('d.noResultsDesc','试试减少条件、换个关键词，或按角色继续逛。'))}</p><button class="button" type="button" data-reset>${esc(tx('d.clear','清除条件'))}</button><a class="button primary" href="${localURL("/characters.html")}">${esc(tx('v2.nav.characters','角色'))}</a></div>`;
-      history.replaceState({...history.state,feedShown:shown,feedVersion:6},'');
+      history.replaceState({...history.state,feedShown:shown,feedVersion:7},'');
       const more=$('[data-load-more]');
       more.hidden=start+shown>=filtered.length;
       more.closest('.load-more-wrap').hidden=more.hidden;
     }
-    function update(){clearTimeout(timer);shown=24;if(pageNumber>1){location.assign(localURL(stateURL().href));return;}setURL();if(dataset)render();}
+    function update(reshuffle=false){clearTimeout(timer);shown=24;if(pageNumber>1){location.assign(localURL(stateURL().href));return;}setURL();if(dataset)render(reshuffle);}
     form.addEventListener('change',event=>{
       if(event.target.name==='type'&&globalArchive){location.assign(localURL(categoryURL().href));return;}
       if(event.target.name==='character'&&document.body.dataset.character&&!getState().character.split(',').includes(document.body.dataset.character)){
         const state=getState();const url=new URL('/browse.html',location.origin);
-        const fragment=new URLSearchParams();if(state.character)fragment.set('character',state.character);if(state.creation)fragment.set('creation',state.creation);if(state.type)fragment.set('type',state.type);if(state.sort!=='latest')fragment.set('sort',state.sort);url.hash=fragment.toString();location.assign(localURL(url.href));return;
+        const fragment=new URLSearchParams();if(state.character)fragment.set('character',state.character);if(state.creation)fragment.set('creation',state.creation);if(state.type)fragment.set('type',state.type);if(state.sort!=='latest')fragment.set('sort',state.sort);if(state.direction!=='desc')fragment.set('direction',state.direction);url.hash=fragment.toString();location.assign(localURL(url.href));return;
       }
-      update();
+      update(event.target.name==='sort');
     });form.addEventListener('submit',e=>e.preventDefault());
-    document.addEventListener('click',e=>{if(e.target.closest('[data-reset]')){setCharacters(document.body.dataset.character||'');form.elements.type.value=document.body.dataset.type||'';form.elements.sort.value=document.body.dataset.sort||'latest';form.elements.creation.value='';if(query)query.value='';update();}});
+    document.addEventListener('click',e=>{if(e.target.closest('[data-reset]')){setCharacters(defaultState.character);form.elements.type.value=defaultState.type;form.elements.sort.value=defaultState.sort;form.elements.direction.value=defaultState.direction;form.elements.creation.value='';if(query)query.value='';update();}});
     $('#search-form')?.addEventListener('submit',e=>{e.preventDefault();update();});
     let timer,composing=false;
     const scheduleSearch=()=>{clearTimeout(timer);timer=setTimeout(update,150);};
@@ -175,9 +174,9 @@ import {matchesCreationMethod} from './creation-method.js';
       dataset=d;
       const slugs=result.dataset.list?JSON.parse(result.dataset.list):null;
       all=slugs?slugs.map(s=>d.works.find(w=>w.slug===s)).filter(Boolean):d.works;
-      shown=history.state?.feedVersion===6?history.state.feedShown||24:24;
+      shown=history.state?.feedVersion===7?history.state.feedShown||24:24;
       if(['popular','downloads'].includes(form.elements.sort.value)&&!window.WorkStats?.available())form.elements.sort.value=defaultState.sort;
-      if(['character','type','sort','view','creation'].some(name=>params.has(name)))setURL();
+      if(['character','type','sort','direction','view','creation'].some(name=>params.has(name)))setURL();
       render();
       if(performance.getEntriesByType('navigation')[0]?.type==='back_forward'){
         try{const y=Number(sessionStorage.getItem('bluefish-scroll:'+location.pathname+location.search));if(y)requestAnimationFrame(()=>requestAnimationFrame(()=>scrollTo(0,y)));}catch{}

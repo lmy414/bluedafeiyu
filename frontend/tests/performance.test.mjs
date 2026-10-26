@@ -6,6 +6,7 @@ import zlib from 'node:zlib';
 import {parseHTML} from 'linkedom';
 import {rankSubmissions} from '../public/archive/journal-ranking.js';
 import {topicMembers} from '../public/archive/topic-zip.js';
+import {selectDownloadHighlights} from '../public/components/home-downloads.js';
 
 const root=path.resolve(import.meta.dirname,'../..');
 const out=process.env.SITE_OUT_DIR||path.join(root,'.build/site');
@@ -56,4 +57,17 @@ test('homepage bundles styles and keeps lower galleries lazy in all four languag
     assert.ok(document.querySelector('script[type=module][src^="/_astro/"]'));
     for(const name of ['archive-copy','archive-labels'])assert.equal(!!document.querySelector(`script[src^="/${name}.js"]`),['en/','ja/'].includes(prefix),prefix+' runtime dictionaries');
   }
+});
+
+test('compact downloads catalog keeps all published works, originals and translations without the full descriptions',()=>{
+  const data=read('archive-downloads.json');
+  assert.deepEqual(data.works.map(work=>work.id),publicData.works.map(work=>work.id));
+  const stats={available:true,works:Object.fromEntries(publicData.works.map((work,i)=>[work.id,{downloads:i%17}]))};
+  assert.deepEqual(selectDownloadHighlights(data.works,stats).map(work=>work.id),selectDownloadHighlights(publicData.works,stats).map(work=>work.id));
+  for(const [i,work] of data.works.entries()){
+    const original=publicData.works[i];
+    assert.equal(work.o,original.o);
+    for(const locale of ['en','ja'])assert.equal(work.i18n[locale].name,original.i18n[locale].name);
+  }
+  assert.ok(zlib.gzipSync(Buffer.from(JSON.stringify(data))).length<180*data.works.length,'download ranking uses a compact lazy catalog');
 });

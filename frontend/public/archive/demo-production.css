@@ -87,8 +87,6 @@ body.archive .filter-bar{display:flex;flex-wrap:wrap;align-items:end;gap:12px}
 body.archive .filter-fields{flex:1 1 620px}body.archive .filter-fields>label{display:grid;grid-template-columns:minmax(0,1fr);gap:6px;white-space:nowrap}
 body.archive .filter-help{flex-basis:100%;margin:0}body.archive .filter-fields .filter-select{width:100%}
 
-body.archive .layout-toggle{display:flex;border:1px solid var(--line);border-radius:7px;padding:3px;gap:3px;background:var(--paper)}body.archive .layout-toggle button{font-size:11px;padding:6px 9px;border-radius:4px;white-space:nowrap}body.archive .layout-toggle button[aria-pressed=true]{background:var(--blue-soft);color:var(--blue)}
-body.archive .work-grid.layout-grid .work-art{height:230px}body.archive .work-grid.layout-grid .work-art img{height:100%;object-fit:contain}body.archive .work-grid.layout-grid .work-title{min-height:42px}
 body.archive .filter-bar{border:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);border-radius:0;background:transparent;padding:18px 0}.filter-help{display:none}
 
 /* Shared Demo shell: one sidebar, one content gutter, readable type scale. */
@@ -133,8 +131,6 @@ body.archive .work-art.is-long{height:400px}body.archive .work-art.is-long img{h
 body.archive .art-owner{display:flex;gap:4px;font-size:10px;color:var(--muted);margin-top:5px}
 body.archive .saved-entry{display:inline-flex;align-items:center;gap:6px;font-size:12px;white-space:nowrap}
 body.archive .sidebar-bottom{margin-top:auto}body.archive.sidebar-collapsed .sidebar-bottom span,body.archive.sidebar-collapsed .sidebar-bottom .copyright{display:none}
-body.archive .layout-toggle button{display:flex;align-items:center;justify-content:center;gap:5px;width:32px;height:30px;padding:5px;font-size:0}
-body.archive .layout-toggle button>span{font-size:0}body.archive .layout-toggle button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
 body.archive .gallery-tabs{margin:26px 0 12px}body.archive .gallery-tabs a{padding:12px 0;font-size:14px}
 body.archive .creator-row-card .avatar-link{flex-shrink:0}body.archive .creator-row-identity h2{font-size:20px}
 body.archive .creator-row-card .creator-row-navigation .text-link{white-space:nowrap}

@@ -49,7 +49,7 @@ test('Chinese and English character titles and descriptions include the requeste
   }
 });
 
-test('the current homepage exposes the weekly download pick and tracks its original-download link in every language',()=>{
+test('the homepage supplies a complete editorial download row and original-download tracking in every language',()=>{
   const archive=JSON.parse(fs.readFileSync(path.join(out,'archive-data.json'),'utf8'));
   const work=archive.works.find(w=>w.slug==='deepseek202609300025');
   for(const locale of LOCALES){
@@ -58,7 +58,10 @@ test('the current homepage exposes the weekly download pick and tracks its origi
     const download=section.querySelector('[data-download-work]');
     assert.equal(download.dataset.downloadWork,work.id);
     assert.equal(download.getAttribute('href'),work.o);
-    assert.deepEqual([...section.querySelectorAll('.section-head time')].map(t=>t.textContent),['2026-10-12','2026-10-18']);
+    const picks=[...section.querySelectorAll('.home-download-pick')];
+    assert.equal(picks.length,4,locale.id+' complete row');
+    assert.equal(new Set(picks.map(pick=>pick.querySelector('[data-download-work]').dataset.downloadWork)).size,4);
+    assert.ok(section.querySelector('[data-home-download-note]'));
     assert.ok(section.querySelector(`a[href="${localizedPath('/works/'+work.slug+'.html',locale)}"]`));
   }
 });
