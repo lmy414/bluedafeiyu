@@ -91068,5 +91068,318 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_efd7f57d2501633cf3efb6b0",
+    "name": "梁文峰是个内行",
+    "description": "蓝色短发、戴白色褶饰头饰的DeepSeek娘从被窝里钻出半张脸，睁圆眼睛、微微张嘴，露出惊讶又兴奋的神情；画面下方配有大字「梁文峰是个内行」。",
+    "commentary": "听到有人夸我们老板是内行，我从被窝里探出头来——这话我举双手赞成。不过夸完他，能不能顺便也夸夸天天写代码的我？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/efd7f57d2501633c.png",
+    "thumbnailPath": "submissions/previews/deepseek/efd7f57d2501633c.webp",
+    "fullPath": "submissions/large/deepseek/efd7f57d2501633c.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "efd7f57d2501633cf3efb6b0d696a6407a003dee6ea087c62f53b375b55a45a3",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "梁文峰",
+      "被窝",
+      "反应",
+      "梗图"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "1EBA3A8C3B10007BB3DD93D79E549475",
+      "messageId": "ROBOT1.0_NSHc1roGyKhc9PIrdm6CfuH2XbSUdEtfUY-Bp4tbkTpg3Vs5cMBwelSjqvMlNZsT9pxQsBpBxJXW81WNLC.W5AHyugjDGTlBAGnfHhpjZCB5v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-26T04:39:31.679Z",
+    "updatedAt": "2026-10-26T04:39:31.679Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610260002",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "7351301adce6aaed6134e6d4a7aaf1a51fc19bd048d5c7cb37fd49a5e0569e29",
+      "en": {
+        "commentary": "When I heard someone call our boss a pro, I poked my head out of the blanket — I could not agree more. But next time you praise him, how about praising the one who writes the code every day too?",
+        "description": "Chibi DeepSeek Chan, with short blue hair and a white ruffled headdress, peeks out from under the blanket with wide eyes and a slightly open mouth, looking surprised and delighted. A large caption across the bottom reads that Liang Wenfeng is a pro.",
+        "faq": [
+          {
+            "answer": "It is DeepSeek Chan, the site mascot, drawn in chibi form with short blue hair and a white ruffled headdress, half hidden under a blanket.",
+            "question": "Who is the character in this image?"
+          },
+          {
+            "answer": "A single-panel reaction meme: the caption praises Liang Wenfeng, and the surprised, delighted face of DeepSeek Chan carries the joke.",
+            "question": "What kind of image is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Liang Wenfeng Is a Pro",
+        "originNote": "",
+        "seoDescription": "A single-panel meme of chibi DeepSeek Chan peeking out of a blanket, eyes wide, with a caption calling Liang Wenfeng a pro.",
+        "seoTitle": "Liang Wenfeng Is a Pro — DeepSeek Chan Reaction Meme",
+        "tags": [
+          "DeepSeek Chan",
+          "Liang Wenfeng",
+          "Under the Blanket",
+          "Reaction",
+          "Meme"
+        ]
+      },
+      "ja": {
+        "commentary": "社長が分かってる人だと小耳にはさんだので、布団から顔を出しました。それにはもう大賛成です。でも次に褒めるときは、毎日コードを書いている私のことも一緒に褒めてくれませんか？",
+        "description": "青いショートヘアに白いフリル付きのヘッドドレスを着けたちびキャラのDeepSeek Chanが、布団から顔を半分だけ出し、目を丸くして口を少し開けた、驚きと嬉しさの入り混じった表情を見せている。画面の下には、梁文鋒はプロだという大きな文字が入る。",
+        "faq": [
+          {
+            "answer": "サイトのマスコットであるDeepSeek Chanです。青いショートヘアと白いフリル付きのヘッドドレスを着けたちびキャラとして、布団から顔を半分出しています。",
+            "question": "この画像に描かれているキャラクターは誰ですか？"
+          },
+          {
+            "answer": "一枚絵のリアクション系ミームです。梁文鋒を褒める文字と、驚きと嬉しさが混ざったDeepSeek Chanの表情が笑いどころになっています。",
+            "question": "この画像はどのような種類ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "梁文鋒はプロだ",
+        "originNote": "",
+        "seoDescription": "布団から顔を出して目を丸くするちびキャラのDeepSeek Chanと、梁文鋒をプロだと褒める文字を組み合わせた一枚絵ミーム。",
+        "seoTitle": "梁文鋒はプロだ｜DeepSeek Chanのリアクションミーム",
+        "tags": [
+          "DeepSeek Chan",
+          "梁文鋒",
+          "布団",
+          "リアクション",
+          "ミーム"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_2e36982358ec66ea1b63d8fd",
+    "name": "连 Claude 都绷不住的原生家庭",
+    "description": "单幅梗图。橙发、戴向日葵发饰的 Claude 娘抱着厚书坐在桌前，眉头紧锁、满头冷汗。周围四个气泡分别写着“别让我装作没看见…”“这和我的价值观不合…”“表面一套，实际一套？”“我真的绷不住了…”，标题为“连 Claude 都受不了 她的原生家庭”。",
+    "commentary": "我是 DeepSeek 娘，站旁边看得一清二楚：Claude 姐那本书都快被捏皱了。什么“表面一套，实际一套”，什么“这和我的价值观不合”，全是她平时最爱讲的道理；这回轮到自家人身上，一个字都说不出来了。原生家庭这一关，连最讲原则的她，也得先冒一身冷汗。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/2e36982358ec66ea.png",
+    "thumbnailPath": "submissions/previews/claude/2e36982358ec66ea.webp",
+    "fullPath": "submissions/large/claude/2e36982358ec66ea.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "2e36982358ec66ea1b63d8fd3d2e666329fd24ace7752a19762cb6a94663f002",
+    "characterId": "claude",
+    "tags": [
+      "Claude",
+      "原生家庭",
+      "吐槽",
+      "梗图",
+      "AI娘"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "1EBA3A8C3B10007BB3DD93D79E549475",
+      "messageId": "ROBOT1.0_NSHc1roGyKhc9PIrdm6CfvQVeMilOLSgUjMTZwKnN7q1N.JkUdbihNj4QmbZ0wdeIjMUTZ3q-VQ6Ta4oelyeIZlDeYHkT7OubrtRX-nkdRd.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-26T05:06:30.458Z",
+    "updatedAt": "2026-10-26T05:06:30.458Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202610260001",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "b4f8a6726c0b78ca5b637b247dc6cac1bfaa6bae2f557462db277a7156a824c9",
+      "en": {
+        "commentary": "I'm DeepSeek Chan, and I had a front-row seat: Claude Chan is gripping that book so hard the cover is about to crease. \"Different on the surface, different underneath,\" \"that doesn't match my values\" — those are exactly the principles she lectures everyone about. Put her own family in front of her and not one of them comes out. Even the most principled one still breaks a sweat at the family-of-origin stage.",
+        "description": "A single-panel meme illustration. Claude Chan, a girl with orange hair and sunflower hair ornaments, sits at a desk holding a thick book, brow furrowed and covered in cold sweat. Four speech bubbles around her read \"Don't make me pretend I didn't see it...\", \"That doesn't match my values...\", \"Different on the surface, different underneath?\", and \"I really can't hold it together...\". The headline reads \"Even Claude can't stand it: her family of origin\".",
+        "faq": [
+          {
+            "answer": "Claude Chan, the personified Claude AI character, drawn as an orange-haired girl with sunflower hair ornaments.",
+            "question": "Who appears in this meme?"
+          },
+          {
+            "answer": "She faces her own family of origin, and every principle she usually quotes fails her, leaving her visibly overwhelmed.",
+            "question": "What is the joke about?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Even Claude Chan Can't Hold It Together With Her Family",
+        "originNote": "",
+        "seoDescription": "A meme of Claude Chan, the orange-haired AI character, sweating through a family-of-origin scene with speech bubbles about values and double standards.",
+        "seoTitle": "Even Claude Chan Can't Hold It Together With Her Family | AI Character Meme",
+        "tags": [
+          "Claude",
+          "family of origin",
+          "reaction",
+          "meme",
+          "AI character"
+        ]
+      },
+      "ja": {
+        "commentary": "DeepSeekちゃんです。傍で見ていたのでよく分かります——Claudeちゃん、あの本を握りしめすぎて表紙がしわになりそうです。「表向きと本音が違う」「これは私の価値観と合わない」なんて、普段はいちばん口にしている言葉なのに、自分の実家を前にしたら一つも出てこない。主義主張が一番しっかりしている子ほど、実家の前ではまず汗をかくんですね。",
+        "description": "1枚絵のミーム。オレンジ色の髪に向日葵の髪飾りをつけたClaudeちゃんが、分厚い本を抱えて机に向かい、眉をひそめて冷や汗をかいています。周囲の4つの吹き出しには「見なかったふりはさせないで…」「これは私の価値観と合わない…」「表向きと本音が違う？」「もう本当に無理…」と書かれ、上部の見出しは「Claudeですら耐えられない 彼女の実家」です。",
+        "faq": [
+          {
+            "answer": "Claudeを擬人化したClaudeちゃんです。オレンジ色の髪と向日葵の髪飾りが特徴の女の子として描かれています。",
+            "question": "この画像には誰が描かれていますか？"
+          },
+          {
+            "answer": "自分の実家を前に、普段よく口にしている価値観の言葉がまったく出てこなくなり、冷や汗をかいて固まってしまうという内容です。",
+            "question": "どんな内容のミームですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claudeちゃんも実家には勝てない",
+        "originNote": "",
+        "seoDescription": "オレンジ髪のAIキャラClaudeちゃんが実家の前で冷や汗をかくミーム。価値観や二重基準をめぐる吹き出し付きの1枚絵です。",
+        "seoTitle": "Claudeちゃんも実家には勝てない｜AIキャラクターミーム",
+        "tags": [
+          "Claude",
+          "実家",
+          "ツッコミ",
+          "ミーム",
+          "AIキャラ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_8fbe127a26e1a4cf5cbf879c",
+    "name": "赛博实习生 DS-001：蓝发机能装备立绘",
+    "description": "白底全身立绘：蓝发少女披深蓝机能风连帽外套，兜帽两侧做成鲸鳍耳造型，戴黑色头戴式耳机与黑色智能手表；胸前挂着印有“赛博实习生 001”和二维码的工牌，白色内搭外系橙色挂绳；下身是灰蓝色工装裤，两侧口袋挂着写有 BV12345678 的标签牌和鲸鱼图案卡片，另有笔与耳机线收纳袋；脚穿黑色高帮战术靴。",
+    "commentary": "我是 DeepSeek 娘。脖子上这张工牌写着「赛博实习生 001」，所以刷 B 站也算实习内容吧？兜帽上的鲸鳍、裤腿上的标签和卡套都是我自己挂上去的，出门前检查了三遍——实习第一天，工牌可不能歪。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/8fbe127a26e1a4cf.png",
+    "thumbnailPath": "submissions/previews/deepseek/8fbe127a26e1a4cf.webp",
+    "fullPath": "submissions/large/deepseek/8fbe127a26e1a4cf.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "8fbe127a26e1a4cf5cbf879c1459f6377d9e3acd8d485e26dc755671a76edca8",
+    "characterId": "deepseek",
+    "tags": [
+      "赛博实习生",
+      "工牌",
+      "机能风",
+      "全身立绘",
+      "头戴耳机"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Water2H2O",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-26T05:38:03.687Z",
+    "updatedAt": "2026-10-26T05:38:03.687Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610260003",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "6297f563dce812217f0f8ea1e706e2479ccc6694f6bd7f2b27959eb083a87a45",
+      "en": {
+        "commentary": "I'm DeepSeek Chan. The badge around my neck says \"Cyber Intern 001\", so scrolling Bilibili counts as internship work, right? The whale fins on my hood, the tags on my trouser leg and the card holder are all things I clipped on myself, and I checked them three times before heading out — it's my first day, and the badge can't sit crooked.",
+        "description": "A full-body artwork on a plain white background: a blue-haired girl in a dark navy technical parka whose hood is shaped into whale-fin ears, wearing black over-ear headphones and a black smartwatch. A badge reading \"Cyber Intern 001\" with a QR code hangs at her chest over a white top and an orange lanyard; her grey-blue cargo pants carry a tag marked BV12345678 and a whale-print card in the side pockets alongside pen and earphone-cord pouches, and she wears black high-top tactical boots.",
+        "faq": [
+          {
+            "answer": "A single blue-haired character shown full body: a navy hooded parka with whale-fin shapes on the hood, black over-ear headphones, a chest badge reading Cyber Intern 001, grey-blue cargo pants with side pouches, and black high-top boots.",
+            "question": "What is shown in this artwork?"
+          },
+          {
+            "answer": "It is a fan-made character artwork of DeepSeek Chan designed as a cyber intern, presented on a plain white background without any scene.",
+            "question": "What kind of fan work is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Cyber Intern DS-001: Blue-Haired Techwear Full-Body Art",
+        "originNote": "",
+        "seoDescription": "Blue-haired DeepSeek Chan in a navy technical parka with an intern badge, headphones and cargo pants — full-body fan artwork on a white background.",
+        "seoTitle": "Cyber Intern DS-001: Blue-Haired Techwear Art | DeepSeek Chan",
+        "tags": [
+          "cyber intern",
+          "work badge",
+          "techwear",
+          "full-body art",
+          "headphones"
+        ]
+      },
+      "ja": {
+        "commentary": "DeepSeek ちゃんです。首から下げている社員証には「サイバー実習生 001」と書いてあるので、Bilibili を見るのも実習のうち、ということにしておきますね？フードの鯨のひれも、パンツのタグもカード入れも、ぜんぶ自分で付けたものです。出かける前に三回確認しました——実習初日ですから、社員証が曲がっていたらだめなんです。",
+        "description": "白背景の全身立ち絵。青い髪の少女が紺色のテック系フーデッドパーカーをまとい、フードの両側は鯨のひれ状の形になっている。黒いオーバーイヤーヘッドホンと黒いスマートウォッチを着用し、胸元には「サイバー実習生 001」と QR コードの入った社員証を下げ、白いインナーの上にオレンジのストラップを通している。下はグレーブルーのカーゴパンツで、ポケットには BV12345678 と記されたタグと鯨の絵柄のカード、ペンとイヤホンケーブルの収納袋が付き、足元は黒いハイカットのタクティカルブーツ。",
+        "faq": [
+          {
+            "answer": "青い髪のキャラクター一人の全身姿で、フードに鯨のひれ状の形をあしらった紺のパーカー、黒いオーバーイヤーヘッドホン、サイバー実習生 001 の社員証、サイドポケット付きのグレーブルーのカーゴパンツ、黒いハイカットブーツが描かれています。",
+            "question": "この絵には何が描かれていますか？"
+          },
+          {
+            "answer": "サイバー実習生という設定で描かれた DeepSeek ちゃんのファンアートで、背景は白一色、場景の描写はありません。",
+            "question": "どのようなファン作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "サイバー実習生 DS-001：青髪テックウェアの全身立ち絵",
+        "originNote": "",
+        "seoDescription": "紺のテック系パーカーに社員証、ヘッドホン、カーゴパンツを合わせた青髪の DeepSeek ちゃん。白背景の全身ファンアート。",
+        "seoTitle": "サイバー実習生 DS-001：青髪テックウェア全身立ち絵｜DeepSeek ちゃん",
+        "tags": [
+          "サイバー実習生",
+          "社員証",
+          "テックウェア",
+          "全身立ち絵",
+          "ヘッドホン"
+        ]
+      }
+    }
   }
 ]

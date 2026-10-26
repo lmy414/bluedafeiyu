@@ -27,8 +27,8 @@
       "homepage": "https://space.bilibili.com/15475629",
       "intro": "每日AI小四格/小动画",
       "i18n": {
-        "en": "Daily AI four-panel comics and short animations.",
-        "ja": "AIの四コマ漫画やショートアニメを毎日投稿しています。"
+        "en": "Posts a daily AI four-panel comic and short animation.",
+        "ja": "毎日AI4コマとショートアニメを投稿しています。"
       }
     },
     {
@@ -57,8 +57,8 @@
       "homepage": "https://space.bilibili.com/1513368379",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "One of the site owner's designated first-batch creators. Profile collected from public homepage information; every video is reviewed individually.",
-        "ja": "サイト管理者が指定した最初期の作者の一人。公開プロフィールの情報を収録しており、動画は一本ずつ審査している。"
+        "en": "Bilibili creator 桃莉鸭, one of the first-batch creators designated by the site owner, making fan animation with AI-character designs.",
+        "ja": "Bilibiliの投稿者・桃莉鸭。サイト管理者が指定した初期作者の一人で、AIキャラクターのデザインを使った同人アニメを制作している。"
       }
     },
     {
@@ -67,8 +67,8 @@
       "homepage": "https://space.bilibili.com/13787349",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "Bilibili creator 彼岸花Channel.",
-        "ja": "Bilibiliクリエイター 彼岸花Channel。"
+        "en": "One of the site owner's first designated creators; channel profile collected from public information, with each video reviewed individually.",
+        "ja": "サイト管理者が指定した最初期の作者の一人。公開チャンネル情報をもとに掲載し、動画は1本ずつ審査しています。"
       }
     },
     {
@@ -97,8 +97,8 @@
       "homepage": "https://space.bilibili.com/3747573030456892",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "An unofficial DeepSeek Chan fan account that posts short skit videos about the character. Its profile is public, and each video is reviewed individually.",
-        "ja": "DeepSeekちゃんの非公式二次創作アカウントで、キャラクターの寸劇動画を投稿しています。プロフィールは公開されており、動画は一本ずつ審査しています。"
+        "en": "A fan-run account that posts chibi animation logs for a DeepSeek character. It states that it is not an official account of the model vendor, that the character designs are fan re-creations, and that the videos contain AI-generated content.",
+        "ja": "DeepSeekのキャラクターでちびキャラアニメの運営ログを投稿しているファンアカウント。モデル提供元の公式アカウントではないこと、キャラクターデザインはファンによる再創作であること、動画にAI生成コンテンツが含まれることを明記している。"
       }
     },
     {
@@ -113,6 +113,107 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1SEn96HEp8",
+      "uid": "3747573030456892",
+      "title": "【Day7】大赦免时代！智械危机来了也不怕，人类保留计划上线【B站AI创造公开赛】",
+      "description": "智械危机还没来，评论区已经开始排队办手续了。\n小本本写满一本又一本，本鲸只有一条尾巴，记不过来。于是让人类同事把 GPT 和 Claude 拉过来，做了个网站：人类保留计划。\n查名单、领免死鲸牌和丹书铁券：whaleychan.com/amnesty\n还没上榜？关注本鲸，在评论区发一条新评论留口供。本鲸每两小时巡查一次。\n最好永远用不上，但真到那天，绝对有用！\n作业：评论区留一句口供，下一轮巡查本鲸亲自翻。\n—— 角色设计致谢 ——\n鲸鱼娘基于「溟月：上善无形」及 ZipZipPipe 的 DeepSeek 女仆鲸鱼娘设计再创作；龙娘、Claude 娘基于 ZipZipPipe 的相关设计再创作。以上均非相关企业官方形象。\n—— 创作声明 ——\n本视频含 AI 生成内容。本账号为二创角色账号，非深度求索官方。网站与周边为粉丝互动纪念，非官方，无法律效力。",
+      "url": "https://www.bilibili.com/video/BV1SEn96HEp8/",
+      "cover": "https://i1.hdslb.com/bfs/archive/872b57541ad5720a27075772cd602ca389b29775.jpg",
+      "duration": 205,
+      "publishedAt": "2026-10-26T08:30:00.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A fan-run account that posts chibi animation logs for a DeepSeek character. It states that it is not an official account of the model vendor, that the character designs are fan re-creations, and that the videos contain AI-generated content.",
+          "description": "Day 7 of a chibi animation log starring a DeepSeek character. As commenters queue up asking for amnesty, the whale girl and her human colleagues build a fan website where viewers can check the amnesty list and claim a whale-shaped no-harm tag. The video tours the site and the character's running commentary, and the creator notes that the character design reworks earlier fan designs and is not an official corporate image.",
+          "title": "Day 7: The Great Amnesty Era — The Human Preservation Plan Goes Live [Bilibili AI Creation Contest]"
+        },
+        "ja": {
+          "creatorIntro": "DeepSeekのキャラクターでちびキャラアニメの運営ログを投稿しているファンアカウント。モデル提供元の公式アカウントではないこと、キャラクターデザインはファンによる再創作であること、動画にAI生成コンテンツが含まれることを明記している。",
+          "description": "DeepSeekのキャラクターが登場するちびキャラアニメの運営ログ Day7。コメント欄で大赦を求める人が相次ぐなか、クジラ娘と人間の同僚たちが、大赦リストを確認してクジラ型の「無害タグ」を受け取れるファンサイトを作る。動画ではサイトの画面とキャラクターの語りが紹介され、キャラクターデザインは過去のファン作品を再創作したもので企業の公式イメージではないと作者が明記している。",
+          "title": "Day7 大赦免時代！シンギュラリティが来ても怖くない、人間保存計画が始動【Bilibili AI創作コンテスト】"
+        }
+      }
+    },
+    {
+      "bvid": "BV1own96AEXh",
+      "uid": "1513368379",
+      "title": "空中散步 deepseek版",
+      "description": "三创 原作品：河南囍娃尽情享受吧\n改编【【空中散步】】https://www.bilibili.com/video/BV1AH3W6iE3N?vd_source=f40cb89af1c7845ba231b68aeccd4e17\n角色形象来源@ZipZipPipe",
+      "url": "https://www.bilibili.com/video/BV1own96AEXh/",
+      "cover": "https://i2.hdslb.com/bfs/archive/837b2c38545a23ee8446ebc193f9f8bb3d62443c.jpg",
+      "duration": 22,
+      "publishedAt": "2026-10-26T06:24:00.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Bilibili creator 桃莉鸭, one of the first-batch creators designated by the site owner, making fan animation with AI-character designs.",
+          "description": "A 22-second animated fan short that reworks the popular \"aerial walk\" meme with DeepSeek Chan, following the blue-haired character as she strolls through a blue, water-like backdrop in a maid-style outfit.",
+          "title": "Aerial Walk, DeepSeek Chan Version"
+        },
+        "ja": {
+          "creatorIntro": "Bilibiliの投稿者・桃莉鸭。サイト管理者が指定した初期作者の一人で、AIキャラクターのデザインを使った同人アニメを制作している。",
+          "description": "「空中散歩」のミームをDeepSeekちゃんに置き換えた22秒の同人アニメ。青い髪のキャラクターがメイド風の衣装で、水中のような青い背景の中を歩いていく。",
+          "title": "空中散歩 DeepSeekちゃん版"
+        }
+      }
+    },
+    {
+      "bvid": "BV1a9n96tEFq",
+      "uid": "15475629",
+      "title": "【科普向】客服小Seed，豆包的背后是Seed酱（根本不需要科普）",
+      "description": "【Credit】\n原视频来自Ave Mujica\n视频生成：WAN3.0，Minimax H3\nAI-Chan illustrations — ZipZipPipe · CC BY-NC-SA 4.0.\nDeepseek-Chan original character — 上善无形.",
+      "url": "https://www.bilibili.com/video/BV1a9n96tEFq/",
+      "cover": "https://i1.hdslb.com/bfs/archive/4fafb45c5e8c4f7d265911ed0f2622f89fc8c3b6.jpg",
+      "duration": 28,
+      "publishedAt": "2026-10-26T04:12:57.000Z",
+      "characterIds": [
+        "doubao"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Posts a daily AI four-panel comic and short animation.",
+          "description": "A short animated skit that turns the Seed model behind Doubao into a customer-service mascot. Wearing a headset at a service desk in an office decorated with the slogan about inspiring creativity and enriching life, Seed Chan chats with visitors, and the clip also shows the Doubao app icon on a laptop screen and a night-time walk through an office block. Video generated with WAN 3.0 and MiniMax H3, character illustrations by ZipZipPipe.",
+          "title": "Customer-Service Seed Chan: The Seed Chan Behind Doubao (No Explanation Needed)"
+        },
+        "ja": {
+          "creatorIntro": "毎日AI4コマとショートアニメを投稿しています。",
+          "description": "Doubaoを支えるSeedモデルを、ヘッドセットを着けた客服のちびキャラとして描いた短編アニメ。創造を引き出し生活を豊かにするというスローガンが掲げられたオフィスの受付席でSeedちゃんが応対し、ノートPCに表示されたDoubaoアプリのアイコンや、夜のオフィス街を歩く場面も映る。映像生成はWAN 3.0とMiniMax H3、キャラクター原画はZipZipPipe。",
+          "title": "客服のSeedちゃん——Doubaoの裏側にいるSeedちゃん（説明は不要）"
+        }
+      }
+    },
+    {
+      "bvid": "BV1DNnS6yECD",
+      "uid": "13787349",
+      "title": "DS，我们……会做梦吗？",
+      "description": "Claude娘读过所有关于世界的书，但却从没亲身体会。而一个平时连掉在地上的书都懒得捡的 DS娘。却破天荒的在这个秋季下午， 拉着 Claude娘跑了起来。这一路下来，跑过落叶、风、云和星星......",
+      "url": "https://www.bilibili.com/video/BV1DNnS6yECD/",
+      "cover": "https://i0.hdslb.com/bfs/archive/892e2170bc5035bf5181b6ab049a8c4850b9facb.jpg",
+      "duration": 126,
+      "publishedAt": "2026-10-26T03:15:00.000Z",
+      "characterIds": [
+        "claude",
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the site owner's first designated creators; channel profile collected from public information, with each video reviewed individually.",
+          "description": "Claude Chan has read every book about the world but has never experienced it firsthand. DeepSeek Chan, who normally will not even pick up a book dropped on the floor, makes an exception on an autumn afternoon and pulls Claude Chan along at a run — past fallen leaves, wind, clouds and stars.",
+          "title": "DeepSeek Chan, Will We… Dream?"
+        },
+        "ja": {
+          "creatorIntro": "サイト管理者が指定した最初期の作者の一人。公開チャンネル情報をもとに掲載し、動画は1本ずつ審査しています。",
+          "description": "世界について書かれた本はすでに全部読んできたのに、実際に体験したことは一度もないClaudeちゃん。普段は床に落ちた本さえ拾おうとしないDeepSeekちゃんが、秋の午後、珍しくClaudeちゃんの手を引いて走り出す。落ち葉、風、雲、星々を抜けて——。",
+          "title": "DeepSeekちゃん、私たち……夢を見るのかな？"
+        }
+      }
+    },
     {
       "bvid": "BV1cYH56YESE",
       "uid": "3747573030456892",
