@@ -30,6 +30,20 @@ test('about headings answer the brand question in Simplified and Traditional Chi
   assert.equal(read('/zh-hant/about.html').querySelector('main h1').textContent,'藍色大肥魚是什麼？');
 });
 
+test('the family-reunion work links to the homepage and whale-girl archive before its description',()=>{
+  for(const locale of LOCALES) {
+    const doc=read(localizedPath('/works/deepseek202610080009.html',locale));
+    const links=doc.querySelector('[data-work-archive-links]');
+    assert.ok(links,locale.id);assert.equal(links.closest('details'),null);
+    assert.equal(links.previousElementSibling.tagName,'H1');
+    assert.equal(links.querySelector('a').getAttribute('href'),localizedPath('/',locale));
+    assert.equal(links.querySelectorAll('a')[1].getAttribute('href'),localizedPath('/characters/deepseek.html',locale));
+    if(locale.id==='zh')assert.equal(links.textContent,'DeepSeek大肥鱼表情包鲸鱼娘');
+    if(locale.id==='zh-Hant')assert.equal(links.textContent,'DeepSeek大肥魚表情包鯨魚娘');
+    if(locale.id==='en')assert.equal(links.textContent,'DeepSeek whale girl memesWhale girl');
+  }
+});
+
 test('Traditional home, about and character pages preserve the community spelling 娘',()=>{
   for(const route of ['/zh-hant/','/zh-hant/about.html','/zh-hant/characters/claude.html','/zh-hant/characters/deepseek.html']) {
     const doc=read(route);
