@@ -1,4 +1,5 @@
 import {renderWorkActions} from './work-actions.js';
+import {workImageURL} from './work-image.js';
 
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
 const icon = name => {
@@ -44,7 +45,8 @@ export function installWorkPreview({load, localize = w => w, translate:tx, url, 
       if (currentRequest !== request) return;
       const original = data.works.find(w => w.slug === slug);
       if (!original) throw Error('Work unavailable');
-      const w = localize(original);
+      const localized = localize(original);
+      const w = {...localized, l: workImageURL(localized.l)};
       slugs = nextSlugs.includes(slug) ? nextSlugs : [slug];
       index = slugs.indexOf(slug);
       mode = nextMode;

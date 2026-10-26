@@ -4,6 +4,7 @@ import { works as published, site, categories, topics as allTopics, byWorkId } f
 import { workAttribution } from '../../../admin/src/lib/attribution.mjs';
 import { imageRights } from './image-metadata.mjs';
 import { workCharacterIds } from '../../../tools/work-characters.mjs';
+import { workImages } from '../../public/components/work-image.js';
 
 export const ORIGIN = 'https://xn--pssy23gqgbz2d718b.com';
 export const PAGE_SIZE = 24;
@@ -99,7 +100,7 @@ export const works = published
     const attribution = workAttribution(w);
     return {
       ...w, char, roles, cats, tagsShown: normTags(w.tags),
-      thumb: asset(w.thumbUrl || w.thumbnailPath), large: asset(w.displayUrl || w.fullPath || w.thumbUrl),
+      thumb: workImages(w).thumbUrl, large: workImages(w).displayUrl,
       typeShort: cats.map(id => typeById.get(id).short).join(' · '),
       lic: licKey(w), originKind: originType(w.origin), originLink: originUrl(w.origin),
       attribution,

@@ -11,6 +11,7 @@ import fs from "node:fs";
 import {sourceHash,validateI18n} from "./localization/contract.mjs";
 import { isSingleWorkType } from '../admin/src/lib/work-types.mjs';
 import { workCharacterIds } from './work-characters.mjs';
+import { workImages } from '../frontend/public/components/work-image.js';
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -59,14 +60,14 @@ function main() {
     ? new Map(Object.entries(readJson(editorialPath)))
     : new Map();
   const works = [];
+  const imageExists = value => /^https?:/.test(value) || fs.existsSync(path.join(DIST, decodeURIComponent(value).replace(/^\/+/, '')));
 
   for (const record of [...submissions, ...ownerPicks]) {
     if (record.status !== "published") continue;
     works.push({
       ...record,
       categoryIds: Array.isArray(record.categoryIds) && record.categoryIds.length ? record.categoryIds : kindFor(record),
-      thumbUrl: String(record.thumbnailPath || "").replace(/^\/+/, ""),
-      displayUrl: String(record.fullPath || record.thumbnailPath || "").replace(/^\/+/, ""),
+      ...workImages(record, imageExists),
       originalUrl: String(record.path || ""),
       source: record.id.startsWith("sticker_op_") ? "owner-picks" : "submission"
     });

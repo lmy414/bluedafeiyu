@@ -1,10 +1,12 @@
 import {workPreviewAttributes} from './work-preview.js';
 import {renderSaveButton} from '../archive/saved-items.js';
 import {renderShareButton} from './share-card-model.js';
+import {workImageURL} from './work-image.js';
 // One renderer for Astro's static HTML and cards appended in the browser.
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
 const kindNames = {meme:'梗图',illustration:'插画',setting:'设定图',comic:'漫画',standing:'立绘',other:'其他'};
 export function renderWorkCard(work, {url = value => value, translate = (_key,value) => value, names = value => value, eager = false} = {}) {
+  work = {...work, i: workImageURL(work.i)};
   const href = esc(url('/works/' + work.slug + '.html'));
   const roles = work.roles || [{id: work.cid, name: work.c, color: work.col}];
   const roleLinks = roles.map(role => `<a data-character-id="${esc(role.id)}" href="${esc(url('/characters/' + role.id + '.html'))}"><i class="role-dot" style="--role:${esc(role.color)}"></i>${esc(names(role.name))}</a>`).join('');
