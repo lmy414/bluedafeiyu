@@ -95587,5 +95587,106 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_fa90ef45abbdf14522eb51ab",
+    "name": "赤潮落日下的 M3娘",
+    "description": "以 MiniMax M3 为原型的 AI 娘形象：红发少女戴着红色章鱼兜帽，穿白红相间的和风外袍与黑色连衣裙，赤脚踩在浅滩的水面上。背景是落日海面，一条巨大的红色触手横贯天空，触手与晚霞在水面映成一片红。",
+    "commentary": "手一抬，整片海就被你染红了——章鱼小姐，你是不是顺手把我家的晚霞也卷走了？不过说真的，站在水面上还能让裙摆纹丝不乱，这份定力我服。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/minimax/fa90ef45abbdf145.png",
+    "thumbnailPath": "submissions/previews/minimax/fa90ef45abbdf145.webp",
+    "fullPath": "submissions/large/minimax/fa90ef45abbdf145.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "fa90ef45abbdf14522eb51ab43d7138fec484ae5605f8f115004d3d1c50e7672",
+    "characterId": "minimax",
+    "tags": [
+      "MiniMax M3",
+      "章鱼娘",
+      "落日",
+      "海面",
+      "AI娘"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "M3娘",
+      "url": "https://space.bilibili.com/10526764",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-27T18:48:33.285Z",
+    "updatedAt": "2026-10-27T18:48:33.285Z",
+    "tone": "minimax",
+    "symbol": "",
+    "slug": "minimax202610270001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "minimax"
+    ],
+    "i18n": {
+      "sourceHash": "87871ed2ca9f7d406698ea7c946475115b584d6364dbbea4a2a6b44dcd1a8782",
+      "en": {
+        "commentary": "One wave of her hand and the whole sea turns red. Did you sweep up my sunset too, octopus lady? Still, holding your skirt perfectly steady while standing on water is a discipline I have to respect.",
+        "description": "An AI girl persona based on MiniMax M3: a red-haired girl in a crimson octopus hood, wearing a white-and-red robe over a black dress, standing barefoot on the shallow water. Behind her a giant red tentacle arcs across the sunset sky, its crimson glow mirrored on the sea.",
+        "faq": [
+          {
+            "answer": "She is a fan-designed AI girl persona based on MiniMax M3, built around a red octopus motif with a hood and tentacle details.",
+            "question": "Who is the girl in this picture?"
+          },
+          {
+            "answer": "A red-haired girl stands on the shallow sea at sunset while a vast red tentacle crosses the sky and ripples across the water.",
+            "question": "What does the illustration show?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "MiniMax M3 Chan Under the Crimson Sunset",
+        "originNote": "Submitted through the site form; author credited as M3 (https://space.bilibili.com/10526764).",
+        "seoDescription": "Single-scene AI character fan art: a red-haired MiniMax M3 Chan in an octopus hood stands on the shallow sea as a giant red tentacle crosses the sunset sky.",
+        "seoTitle": "MiniMax M3 Chan Under the Crimson Sunset | AI Character Fan Art",
+        "tags": [
+          "MiniMax M3",
+          "Octopus Girl",
+          "Sunset",
+          "Sea",
+          "AI Character"
+        ]
+      },
+      "ja": {
+        "commentary": "手をかざしただけで海が真っ赤に……タコさん、私の夕焼けまで巻き取らないでくださいね。それにしても、水面の上でスカートの裾を乱さないのは見事です。",
+        "description": "MiniMax M3 をモチーフにしたAI娘。赤いタコのフードをかぶった赤髪の少女が、白と赤の羽織に黒いワンピースを合わせ、浅瀬の水面に素足で立っている。夕暮れの空には巨大な赤い触手が弧を描き、その赤が水面にも映り込む。",
+        "faq": [
+          {
+            "answer": "MiniMax M3 をモチーフにしたファン制作のAI娘で、タコのフードや触手など赤いタコの意匠を取り入れています。",
+            "question": "このイラストの女の子は誰ですか？"
+          },
+          {
+            "answer": "夕暮れの浅瀬に立つ赤髪の少女と、空を横切って水面に赤く映り込む巨大な触手の情景です。",
+            "question": "どんな場面が描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "MiniMax M3ちゃん 紅い夕暮れの海",
+        "originNote": "サイトの投稿フォームからの投稿で、作者として M3娘（https://space.bilibili.com/10526764）がクレジットされています。",
+        "seoDescription": "赤いタコのフードをかぶった MiniMax M3ちゃんが夕暮れの浅瀬に立つ、単一シーンのAIキャラ二次創作イラスト。空には巨大な赤い触手が横たわる。",
+        "seoTitle": "MiniMax M3ちゃん 紅い夕暮れの海｜AIキャラ二次創作",
+        "tags": [
+          "MiniMax M3",
+          "タコ娘",
+          "夕焼け",
+          "海",
+          "AIキャラ"
+        ]
+      }
+    }
   }
 ]
