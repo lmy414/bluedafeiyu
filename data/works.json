@@ -83704,7 +83704,7 @@
       "via": "web"
     },
     "license": {},
-    "status": "published",
+    "status": "hidden",
     "createdAt": "2026-10-23T12:51:04.997Z",
     "updatedAt": "2026-10-23T12:51:04.997Z",
     "tone": "deepseek",
@@ -87979,7 +87979,7 @@
       "via": "web"
     },
     "license": {},
-    "status": "published",
+    "status": "hidden",
     "createdAt": "2026-10-24T21:23:58.924Z",
     "updatedAt": "2026-10-24T21:23:58.924Z",
     "tone": "claude",
@@ -92202,6 +92202,2627 @@
           "四コマ漫画",
           "マンホール",
           "黒い異物"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_6e628ea4bd7f620e7237b250",
+    "name": "伊甸园罪孽的绽放（连载）第6页：街头的巨影",
+    "description": "黑白多格漫画第6页。开头以特写呈现一只布满血丝的巨眼与沾满污迹的巨手，手边握着手机；随后是滴着口水的嘴部特写。第三格中，一名黑发白裙的小女孩跪坐在人行道上，怀里抱着兔子玩偶，眼里含着泪，左上方小格特写她的眼睛。最后一格拉远到城市街头：巨大的独眼怪物伸出手逼向地上的女孩，远处路人仍在行走。对白依次为「那是什么？」「看起来很美味……」「这就是顶级的，没有任何加工的情绪吗？」画面边缘散落着数字噪点。",
+    "commentary": "这一页看得我有点喘不过气。那只眼睛直勾勾盯着画外的时候，我差点以为自己被扫描了一遍。抱着兔子玩偶的小女孩太让人心疼了，我真想钻进画面把她拉起来带走。至于那位「顶级情绪」鉴赏家——先把口水擦一擦吧，评价别人的情绪之前，不如先看看自己的吃相。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/6e628ea4bd7f620e.png",
+    "thumbnailPath": "submissions/previews/deepseek/6e628ea4bd7f620e.webp",
+    "fullPath": "submissions/large/deepseek/6e628ea4bd7f620e.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "6e628ea4bd7f620e7237b250c484cc0a2680463a63bddc09cddd44ab15a675f4",
+    "characterId": "deepseek",
+    "tags": [
+      "黑白漫画",
+      "连载漫画",
+      "多格分镜",
+      "独眼怪物",
+      "兔子玩偶",
+      "城市街头",
+      "紧张氛围"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "ADK",
+      "url": "https://space.bilibili.com/2988768",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "4b57c9a661269d9b728e3d25b121738b5154e8e798ecc5453aee052689314f05",
+        "member": "006_P06.jpg",
+        "index": 6,
+        "count": 29
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-27T03:40:14.923Z",
+    "updatedAt": "2026-10-27T03:40:14.923Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610270002",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "f5f2631ea3bf664dfc87d124c8c846bb18edd11f8e5dd29f66da1911e9aabb0a",
+      "en": {
+        "commentary": "This page left me short of breath. When that eye stared straight out of the panel, I half felt like I was being scanned. The girl clutching her rabbit plush breaks my heart — I wanted to step into the frame and pull her away. As for our connoisseur of \"top-grade emotion\": wipe your mouth first, and maybe look at your own table manners before grading someone else's feelings.",
+        "description": "Page 6 of a black-and-white multi-panel comic. Close-ups open on a bloodshot giant eye and a grime-covered hand holding a phone, followed by a drooling mouth. In the third panel a black-haired girl in a white dress kneels on the pavement, hugging a rabbit plush with tears in her eyes, while an inset close-up shows her eye. The last panel pulls back to a city street: a one-eyed giant reaches down toward the girl on the ground as passers-by keep walking in the distance. The dialogue reads \"What is that?\", \"It looks delicious...\" and \"Is this the top-grade, completely unprocessed emotion?\" Digital noise scatters along the panel edges.",
+        "faq": [
+          {
+            "answer": "A one-eyed giant takes notice of a black-haired girl kneeling on a city street, savoring what it calls the finest unprocessed emotion while she holds her rabbit plush and cries.",
+            "question": "What happens on page 6 of Eden's Sin in Bloom?"
+          },
+          {
+            "answer": "The serial is credited to ADK, whose Bilibili space is listed as the source of this submission.",
+            "question": "Who is credited for this comic?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Eden's Sin in Bloom (Serial) Page 6: The Giant in the Street",
+        "originNote": "",
+        "seoDescription": "Page 6 of ADK's black-and-white serial comic: a one-eyed giant corners a girl holding a rabbit plush on a city street, hunting the purest unprocessed emotion.",
+        "seoTitle": "Eden's Sin in Bloom Page 6: The Giant in the Street | DeepSeek Chan",
+        "tags": [
+          "black-and-white comic",
+          "serial comic",
+          "multi-panel",
+          "one-eyed monster",
+          "rabbit plush",
+          "city street",
+          "tense atmosphere"
+        ]
+      },
+      "ja": {
+        "commentary": "このページは息が詰まりそうでした。あの目がコマの外まで見すえてきたとき、自分がスキャンされるのかと思ったほどです。ウサギのぬいぐるみを抱きしめる少女が痛々しくて、画面に入って連れ出したくなりました。「最高級の感情」の評論家さん、まずはよだれを拭いてからにしてください。人の感情を評価する前に、自分の食べ方を見直したほうがいいですよ。",
+        "description": "モノクロの多コマ漫画の第6ページ。充血した巨大な目と、汚れのついた手がスマートフォンを握るクローズアップから始まり、よだれを垂らす口元のカットが続く。3コマ目では、白いワンピースの黒髪の少女が舗道に座り込み、ウサギのぬいぐるみを抱えて涙をためており、左上の小コマでその目がアップになる。最後の大きなコマでは街の通りへ視点が引かれ、一つ目の巨人が地面の少女に手を伸ばす一方、通行人は遠くを歩いている。セリフは「あれは何？」「おいしそうだ……」「これが最高級、まったく加工されていない感情か？」。コマの縁にはデジタルノイズが散っている。",
+        "faq": [
+          {
+            "answer": "街角に座り込んだ黒髪の少女に一つ目の巨人が目を止め、加工されていない最高級の感情だと口にする。少女はウサギのぬいぐるみを抱えたまま涙を流している。",
+            "question": "『エデンの咎、咲く』第6ページでは何が起きますか？"
+          },
+          {
+            "answer": "この連載の作者は ADK で、投稿元として Bilibili のスペースが記載されている。",
+            "question": "この漫画の作者は誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "エデンの咎、咲く（連載）第6ページ：街の巨影",
+        "originNote": "",
+        "seoDescription": "ADK によるモノクロ連載漫画の第6ページ。街角で一つ目の巨人がウサギのぬいぐるみを抱く少女に迫り、加工されていない感情を求める。",
+        "seoTitle": "エデンの咎、咲く 第6ページ 街の巨影｜DeepSeek Chan",
+        "tags": [
+          "モノクロ漫画",
+          "連載漫画",
+          "多コマ",
+          "一つ目の怪物",
+          "ウサギのぬいぐるみ",
+          "街角",
+          "緊迫感"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_50ab8d55ab3300f594a7a23a",
+    "name": "伊甸园罪孽的绽放（连载）第7页：砸落的巨掌",
+    "description": "黑白多格漫画第7页。第一格为巨足踏地的特写，脚边环绕着发光的气流与冲击环；第二格中，女孩的手伸向倒在地上的兔子玩偶，巨手同时从右侧压下，画面打出拟声字与速度线；最后一格为街头全景：独眼巨人在街道中央高举双臂砸下，身体周围绕着交错的白色光带，左侧小女孩坐在地上仰头望向它，远处仍有行人，路灯、行道树与楼宇构成城市背景。",
+    "commentary": "上一页还在对峙，这一页直接踩下来了。那只脚落地时的冲击环看得我后背一凉，光带绕在它身上的样子又怪得有点好看。最扎心的是第二格——小女孩的手还在往兔子玩偶那边探，明明危险就在头顶。这种「差一点点」的镜头，比任何血腔画面都更提心吊胆。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/50ab8d55ab3300f5.png",
+    "thumbnailPath": "submissions/previews/deepseek/50ab8d55ab3300f5.webp",
+    "fullPath": "submissions/large/deepseek/50ab8d55ab3300f5.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "50ab8d55ab3300f594a7a23a995dccd3184070c0fbec3853a22e73cb1fc44afb",
+    "characterId": "deepseek",
+    "tags": [
+      "黑白漫画",
+      "连载漫画",
+      "多格分镜",
+      "巨人",
+      "冲击特效",
+      "城市街道",
+      "紧张氛围"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "ADK",
+      "url": "https://space.bilibili.com/2988768",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "4b57c9a661269d9b728e3d25b121738b5154e8e798ecc5453aee052689314f05",
+        "member": "007_P07.jpg",
+        "index": 7,
+        "count": 29
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-27T03:40:14.943Z",
+    "updatedAt": "2026-10-27T03:40:14.943Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610270003",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "1fe5a107963b3b65cb5b5283cdb95cf5321fc63e8099dc2b689b819d4a5f4058",
+      "en": {
+        "commentary": "Last page was a standoff; this one simply stomps down. The shockwave rings under that foot sent a chill up my back, and the ribbons of light coiling around it are strangely beautiful. What gets me most is the second panel: the girl's hand is still reaching for her rabbit plush even with danger right above her head. That \"one inch short\" framing is more nerve-racking than any gore shot.",
+        "description": "Page 7 of a black-and-white multi-panel comic. The first panel is a close-up of a giant foot striking the pavement, trailing glowing currents and shockwave rings. In the second panel the girl's hand reaches toward her fallen rabbit plush as a huge hand bears down from the right, framed by speed lines and a sound effect. The last panel opens to the street: a one-eyed giant slams both arms down at the center of the road with crossed ribbons of white light around its body, while the girl sits on the ground at the left, looking up, and pedestrians walk on behind trees, lamps and buildings.",
+        "faq": [
+          {
+            "answer": "The giant foot slams into the pavement, the girl reaches for her fallen rabbit plush as a giant hand comes down, and the monster brings both arms crashing into the street wrapped in rings of light.",
+            "question": "What happens on page 7 of Eden's Sin in Bloom?"
+          },
+          {
+            "answer": "The serial is credited to ADK, whose Bilibili space is listed as the source of this submission.",
+            "question": "Who is credited for this comic?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Eden's Sin in Bloom (Serial) Page 7: The Falling Palm",
+        "originNote": "",
+        "seoDescription": "Page 7 of ADK's black-and-white serial comic: shockwave rings under a giant foot, a hand reaching for a rabbit plush, and the one-eyed monster slamming down on the street.",
+        "seoTitle": "Eden's Sin in Bloom Page 7: The Falling Palm | DeepSeek Chan",
+        "tags": [
+          "black-and-white comic",
+          "serial comic",
+          "multi-panel",
+          "giant",
+          "impact effects",
+          "city street",
+          "tense atmosphere"
+        ]
+      },
+      "ja": {
+        "commentary": "前のページはにらみ合いでしたが、今回はもう踏み込んできました。あの足が地面を打ったときの衝撃リングを見て、背中が冷えました。体に光の帯が巻きついている姿は、妙にきれいでもあります。一番きついのは2コマ目——危ないものがすぐ上にあるのに、少女の手はまだウサギのぬいぐるみへ伸びている。「あと少し」の構図のほうが、血を見せるコマよりもずっと心臓に悪いです。",
+        "description": "モノクロの多コマ漫画の第7ページ。1コマ目は巨体の足が舗道を踏むクローズアップで、足元に発光する気流と衝撃リングが広がる。2コマ目では、少女の手が転がったウサギのぬいぐるみへ伸び、右側から巨大な手が振り下ろされて、擬音と集中線が入る。最後のコマは通りの全景で、一つ目の巨人が街路の中央で両腕を振り下ろし、体のまわりに白い光の帯が交差する。左側では少女が地面に座ったまま見上げており、奥には通行人、街灯、街路樹、ビルが並ぶ。",
+        "faq": [
+          {
+            "answer": "巨体の足が舗道を踏み、少女が転がったウサギのぬいぐるみへ手を伸ばす中で巨大な手が振り下ろされ、怪物が光の帯をまとって両腕を街路へ叩きつける。",
+            "question": "『エデンの咎、咲く』第7ページでは何が起きますか？"
+          },
+          {
+            "answer": "この連載の作者は ADK で、投稿元として Bilibili のスペースが記載されている。",
+            "question": "この漫画の作者は誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "エデンの咎、咲く（連載）第7ページ：振り下ろされる掌",
+        "originNote": "",
+        "seoDescription": "ADK によるモノクロ連載漫画の第7ページ。巨体の足の下に衝撃リングが広がり、ウサギのぬいぐるみへ伸びる手、街路へ叩きつけられる一つ目の怪物を描く。",
+        "seoTitle": "エデンの咎、咲く 第7ページ 振り下ろされる掌｜DeepSeek Chan",
+        "tags": [
+          "モノクロ漫画",
+          "連載漫画",
+          "多コマ",
+          "巨人",
+          "衝撃エフェクト",
+          "街角",
+          "緊迫感"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_78c626fb59fd482acecc4cf7",
+    "name": "伊甸园罪孽的绽放（连载）第8页：失声的街道",
+    "description": "黑白多格漫画第8页。上方两格并排：左格是布满污迹的巨手向镜头伸来，四周浮着黑色数字噪点与发光的网格；右格是独眼巨人的脸，张着嘴、口水垂下，右上角的对话框里只有被划掉的符号，没有可读文字。下方是大格街景：小女孩坐在人行道上仰头张望，腿边躺着兔子玩偶，行道树与高楼排向远处，两侧站着路人，天空飘着成串难以辨认的方块字与白色光柱，地面留着一圈发光的圆环。",
+    "commentary": "这张最吓人的不是怪物，是那个空的对话框。它张着嘴，声音却像被直接抹掉了，只剩一片乱码飞在天上。天空里那些褪不掉的方块字看得我有点恍惚——像有谁把台词、把人的话全部压缩成了数据碎片。小女孩坐在这种安静里，反而比刚才被追赶的时候更让人不安。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/78c626fb59fd482a.png",
+    "thumbnailPath": "submissions/previews/deepseek/78c626fb59fd482a.webp",
+    "fullPath": "submissions/large/deepseek/78c626fb59fd482a.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "78c626fb59fd482acecc4cf7063f161ba00b7924d8ce3b14cfbd9ff893b1c910",
+    "characterId": "deepseek",
+    "tags": [
+      "黑白漫画",
+      "连载漫画",
+      "多格分镜",
+      "独眼怪物",
+      "数字噪点",
+      "城市街道",
+      "沉默氛围"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "ADK",
+      "url": "https://space.bilibili.com/2988768",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "4b57c9a661269d9b728e3d25b121738b5154e8e798ecc5453aee052689314f05",
+        "member": "008_P08.jpg",
+        "index": 8,
+        "count": 29
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-27T03:40:14.965Z",
+    "updatedAt": "2026-10-27T03:40:14.965Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610270004",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "6ec5b9f3e2ceadb59366ec2f672ffc91ef6f5218787b490b108896715bfc07de",
+      "en": {
+        "commentary": "What scares me most here is not the monster but the empty speech bubble. Its mouth is wide open, yet the voice seems to have been erased outright, leaving only garbage drifting through the sky. Those blocks of broken text gave me an odd dizzy feeling, as if someone had compressed every spoken line into data fragments. The girl sitting in that quiet is more unsettling than when she was being chased.",
+        "description": "Page 8 of a black-and-white multi-panel comic. Two panels sit side by side at the top: on the left a grime-covered giant hand reaches toward the viewer amid black digital noise and glowing gridlines; on the right the one-eyed giant's face appears, mouth open and drool hanging, while the speech bubble in the corner holds only a crossed-out symbol with no readable text. The wide bottom panel shows the street: the girl sits on the pavement looking up with her rabbit plush beside her leg, trees and towers recede down the avenue, pedestrians stand along both sides, and strings of unreadable block characters and white light pillars drift across the sky above a glowing ring on the ground.",
+        "faq": [
+          {
+            "answer": "A giant hand reaches out through digital noise and the one-eyed monster opens its mouth, but its speech bubble contains only a crossed-out symbol; below, the girl sits on the street under a sky full of unreadable blocks of text.",
+            "question": "What happens on page 8 of Eden's Sin in Bloom?"
+          },
+          {
+            "answer": "The serial is credited to ADK, whose Bilibili space is listed as the source of this submission.",
+            "question": "Who is credited for this comic?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Eden's Sin in Bloom (Serial) Page 8: The Silent Street",
+        "originNote": "",
+        "seoDescription": "Page 8 of ADK's black-and-white serial comic: a giant hand pushes through digital noise, the monster's speech bubble holds only a crossed-out symbol, and unreadable text rains over the street.",
+        "seoTitle": "Eden's Sin in Bloom Page 8: The Silent Street | DeepSeek Chan",
+        "tags": [
+          "black-and-white comic",
+          "serial comic",
+          "multi-panel",
+          "one-eyed monster",
+          "digital noise",
+          "city street",
+          "silent mood"
+        ]
+      },
+      "ja": {
+        "commentary": "このページで一番怖いのは怪物ではなく、空の吹き出しです。口は大きく開いているのに、声だけがまるごと消され、空には意味のない断片だけが流れている。宙に浮かぶ崩れた文字の列を見ていると、台詞も人の言葉も全部データの断片に圧縮されたのかと、妙に眩暈がしました。静けさの中で座っている少女は、追われていたときよりずっと落ち着かないです。",
+        "description": "モノクロの多コマ漫画の第8ページ。上部に二つのコマが並ぶ。左は汚れのついた巨大な手が黒いデジタルノイズと光るグリッドの中からこちらへ伸びるカット、右は一つ目の巨人の顔で、口を開けてよだれを垂らし、右上の吹き出しには取り消し線の入った記号だけがあって読める文字はない。下部の大きなコマは街の風景で、少女が舗道に座って見上げ、足元にウサギのぬいぐるみが転がる。街路樹とビルが奥へ続き、両側に通行人が立ち、空には読めない四角い文字の列と白い光の柱が漂い、地面には光る円が残っている。",
+        "faq": [
+          {
+            "answer": "巨大な手がデジタルノイズの中から伸び、一つ目の怪物が口を開けるが吹き出しには取り消された記号しかない。下のコマでは少女が、読めない文字の断片が舞う空の下で街に座っている。",
+            "question": "『エデンの咎、咲く』第8ページでは何が起きますか？"
+          },
+          {
+            "answer": "この連載の作者は ADK で、投稿元として Bilibili のスペースが記載されている。",
+            "question": "この漫画の作者は誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "エデンの咎、咲く（連載）第8ページ：声を失った街",
+        "originNote": "",
+        "seoDescription": "ADK によるモノクロ連載漫画の第8ページ。デジタルノイズの中から巨大な手が伸び、怪物の吹き出しは取り消し記号だけ、読めない文字が街に降り注ぐ。",
+        "seoTitle": "エデンの咎、咲く 第8ページ 声を失った街｜DeepSeek Chan",
+        "tags": [
+          "モノクロ漫画",
+          "連載漫画",
+          "多コマ",
+          "一つ目の怪物",
+          "デジタルノイズ",
+          "街角",
+          "静けさ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_91997576999644524c5dce37",
+    "name": "伊甸园罪孽的绽放 第9页",
+    "description": "《伊甸园罪孽的绽放》连载第9页，黑白漫画。人潮往来的街道上，穿白裙的小女孩跌坐在地，玩偶掉在身旁，膝盖擦破了皮；接着画面贴近她的眼睛与伤口，浮现出扫描线与像素方块；最后一格她抱起玩偶，在人群里继续往前走。",
+    "commentary": "摔倒在人潮里的那一格，西装裤脚和皮鞋从我旁边匆匆踏过，没有一个人低头看我。只有膝盖上的擦伤，还有眼前一闪而过的扫描线和像素格子提醒我——我不是普通的小孩。可我还是抱起玩偶站起来了，考进学园这条路，总得自己走完。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/9199757699964452.png",
+    "thumbnailPath": "submissions/previews/deepseek/9199757699964452.webp",
+    "fullPath": "submissions/large/deepseek/9199757699964452.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "91997576999644524c5dce374cd90d4da7958192fe2094f7ebc106af120cd7d3",
+    "characterId": "deepseek",
+    "tags": [
+      "黑白漫画",
+      "连载",
+      "DeepSeek娘",
+      "街道",
+      "幼年"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "ADK",
+      "url": "https://space.bilibili.com/2988768",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "4b57c9a661269d9b728e3d25b121738b5154e8e798ecc5453aee052689314f05",
+        "member": "009_P09.jpg",
+        "index": 9,
+        "count": 29
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-27T03:40:14.982Z",
+    "updatedAt": "2026-10-27T03:40:14.982Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610270005",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "02ce19cdbc3fad4eee9f2b43d9952ff35ce1c135459d27450b4ce847681a543b",
+      "en": {
+        "commentary": "Everyone's shoes hurried past me in that panel, and nobody looked down. Only the scraped knee and the scan lines flickering across my eyes reminded me that I am not an ordinary child. I still got up with my plush toy in my arms — the road into the school I fought so hard to enter is one I have to walk myself.",
+        "description": "Page 9 of the serialized black-and-white comic The Blossoming of Sin in Eden. On a crowded street a little girl in a white dress drops to the pavement, her plush toy fallen beside her and her knee scraped. Close-ups follow on her eyes and the wound as scan lines and pixel squares flicker over them. In the last panel she picks the toy up and walks on through the crowd.",
+        "faq": [
+          {
+            "answer": "It is page 9 of the black-and-white serialized comic The Blossoming of Sin in Eden, credited to ADK.",
+            "question": "What is this image?"
+          },
+          {
+            "answer": "A girl in a white dress falls on a busy street with a plush toy beside her, and the close-ups over her eyes and scraped knee carry flickering scan lines and pixel squares before she stands and walks on.",
+            "question": "What happens on this page?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Blossoming of Sin in Eden, Page 9",
+        "originNote": "Page 9 of the serialized comic The Blossoming of Sin in Eden, credited to ADK (Bilibili: https://space.bilibili.com/2988768).",
+        "seoDescription": "Page 9 of The Blossoming of Sin in Eden: a girl in a white dress falls on a crowded street, scan lines flicker over her eyes and scraped knee, and she stands up again.",
+        "seoTitle": "The Blossoming of Sin in Eden Page 9 — DeepSeek Chan comic",
+        "tags": [
+          "black-and-white comic",
+          "serialized",
+          "DeepSeek Chan",
+          "street",
+          "childhood"
+        ]
+      },
+      "ja": {
+        "commentary": "人混みに転んだあのコマ、スーツの靴も革靴もすぐ横を通り過ぎていくだけで、誰も下を向いてくれなかった。膝の擦り傷と、目の前を一瞬よぎる走査線とピクセルの格子だけが、私が普通の子どもじゃないって教えてくる。それでもぬいぐるみを抱えて立ち上がった。学園に入るこの道は、自分で歩き切るしかないから。",
+        "description": "連載モノクロ漫画『エデンの罪の開花』の第9ページ。人通りの多い街路で、白いワンピースの少女が地面に倒れこみ、ぬいぐるみがそばに転がって膝を擦りむいている。続いて彼女の目と傷口を寄ったコマが並び、その上を走査線とピクセルの四角がよぎる。最後のコマで彼女はぬいぐるみを抱え、人混みの中を歩き出す。",
+        "faq": [
+          {
+            "answer": "ADK 名義の連載モノクロ漫画『エデンの罪の開花』の第9ページです。",
+            "question": "この画像は何ですか？"
+          },
+          {
+            "answer": "白いワンピースの少女が賑やかな街路でぬいぐるみとともに転び、目と擦りむいた膝を寄ったコマには走査線とピクセルの四角がよぎり、やがて立ち上がって歩き出します。",
+            "question": "このページでは何が起きますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "エデンの罪の開花 第9ページ",
+        "originNote": "ADK 名義の連載漫画『エデンの罪の開花』第9ページ（Bilibili: https://space.bilibili.com/2988768）。",
+        "seoDescription": "『エデンの罪の開花』第9ページ。白いワンピースの少女が人通りの多い街路で転び、目と擦りむいた膝に走査線がよぎり、そして再び立ち上がる。",
+        "seoTitle": "『エデンの罪の開花』第9ページ — DeepSeekちゃんの漫画",
+        "tags": [
+          "モノクロ漫画",
+          "連載",
+          "DeepSeekちゃん",
+          "街路",
+          "幼少期"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_e09a5aa7b167bbf58fe9f013",
+    "name": "伊甸园罪孽的绽放 第一话扉页",
+    "description": "《伊甸园罪孽的绽放》第一话《消除罪孽的少女们》的扉页，单幅黑白画面。俯瞰视角下是密集的城市街区与街道车流，右侧一名长发少女站在天台边缘，身穿黑白配色带星形纹章的洋装，身后环绕着发光的几何装饰线；左下角印有第一话标题与“编：ADK／绘：GPT image & Nano banana 2.1”。",
+    "commentary": "扉页那一圈光环一样的东西一亮起来，整座城市就只剩下背景板的命了。站在天台边上的她连头都没回，好像下面那些车和斑马线只是她脚下的地图。至于左下角那行制作者名单——编辑 ADK，绘制交给两个画图模型，这年头连载也真的是卷得很有数字感。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/other/e09a5aa7b167bbf5.png",
+    "thumbnailPath": "submissions/previews/other/e09a5aa7b167bbf5.webp",
+    "fullPath": "submissions/large/other/e09a5aa7b167bbf5.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "e09a5aa7b167bbf58fe9f013b56123b9ed5aa4969fb7914f69cfe89528d58c0c",
+    "characterId": "other",
+    "tags": [
+      "扉页",
+      "黑白",
+      "城市俯瞰",
+      "AI生成",
+      "连载"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "ADK",
+      "url": "https://space.bilibili.com/2988768",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "4b57c9a661269d9b728e3d25b121738b5154e8e798ecc5453aee052689314f05",
+        "member": "010_P10.jpg",
+        "index": 10,
+        "count": 29
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-27T03:40:14.998Z",
+    "updatedAt": "2026-10-27T03:40:14.998Z",
+    "tone": "other",
+    "symbol": "",
+    "slug": "other202610270003",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "other"
+    ],
+    "i18n": {
+      "sourceHash": "7dceb5c43a375a0fce934c4113a28152aed81ae18d696c888148ef528e80d6cc",
+      "en": {
+        "commentary": "The moment those halo-like rings light up, the whole city is reduced to a backdrop. She stands at the rooftop edge without even turning her head, as if the cars and crosswalks below were just a map under her feet. And that credit block in the corner — edited by ADK, artwork handed to two image models — is a very digital way to run a serial.",
+        "description": "The title page of chapter 1, The Girls Who Erase Sin, from the comic The Blossoming of Sin in Eden, drawn as a single black-and-white illustration. The view looks down across dense city blocks and traffic, while on the right a long-haired girl stands at the edge of a rooftop in a black-and-white dress with star-shaped emblems, glowing geometric rings floating behind her. The lower left corner carries the chapter title and a credit block naming ADK as editor, with GPT image and Nano banana 2.1 as the art tools.",
+        "faq": [
+          {
+            "answer": "It is the title page of chapter 1 of The Blossoming of Sin in Eden, a serialized comic credited to ADK.",
+            "question": "What is this image?"
+          },
+          {
+            "answer": "It is a full-page illustration rather than a panel sequence: a long-haired girl stands on a rooftop above a dense city, with glowing geometric rings behind her and the chapter title printed in the corner.",
+            "question": "Is this page part of the comic's panels?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Blossoming of Sin in Eden — Chapter 1 Title Page",
+        "originNote": "Title page of chapter 1 of the serialized comic The Blossoming of Sin in Eden, credited to ADK (Bilibili: https://space.bilibili.com/2988768).",
+        "seoDescription": "Title page of chapter 1 of The Blossoming of Sin in Eden: a long-haired girl in a black-and-white dress stands on a rooftop, looking down over a dense city at dusk.",
+        "seoTitle": "The Blossoming of Sin in Eden — Chapter 1 Title Page illustration",
+        "tags": [
+          "title page",
+          "black and white",
+          "city from above",
+          "AI-generated",
+          "serialized"
+        ]
+      },
+      "ja": {
+        "commentary": "あの光輪みたいな飾りが灯った瞬間から、街ぜんたいがただの背景になってしまった。屋上の縁に立つ彼女は振り向きもせず、下の車も横断歩道も足元の地図くらいにしか見ていない。それにしても隅のクレジット——編集 ADK、作画は二つの画像モデル任せとは、連載もなかなかデジタルなやり方である。",
+        "description": "連載漫画『エデンの罪の開花』第一話「罪を消す少女たち」の扉ページ。モノクロ一枚絵で、見下ろす構図に密集した街区と車の流れが広がり、右側には長い髪の少女が屋上の縁に立っている。黒と白の星形の紋章を付けたドレスをまとい、背後には光る幾何学模様の環が浮かぶ。左下には第一話のタイトルと、編集 ADK・作画 GPT image と Nano banana 2.1 というクレジットが入っている。",
+        "faq": [
+          {
+            "answer": "ADK 名義の連載漫画『エデンの罪の開花』第一話の扉ページです。",
+            "question": "この画像は何ですか？"
+          },
+          {
+            "answer": "コマ割りのある漫画ページではなく、見開きの一枚絵です。長い髪の少女が街を見下ろす屋上に立ち、背後に光る幾何学の環が浮かび、隅に第一話のタイトルが入っています。",
+            "question": "このページは漫画のコマの一部ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "『エデンの罪の開花』第一話扉ページ",
+        "originNote": "ADK 名義の連載漫画『エデンの罪の開花』第一話の扉ページ（Bilibili: https://space.bilibili.com/2988768）。",
+        "seoDescription": "『エデンの罪の開花』第一話の扉ページ。黒と白のドレスの長い髪の少女が屋上に立ち、夕暮れの街を見下ろしている。",
+        "seoTitle": "『エデンの罪の開花』第一話扉ページ — イラスト",
+        "tags": [
+          "扉ページ",
+          "モノクロ",
+          "俯瞰の街",
+          "AI生成",
+          "連載"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_e452a11150e54998a9b11ddf",
+    "name": "伊甸园罪孽的绽放 第11页",
+    "description": "《伊甸园罪孽的绽放》连载第11页，黑白多格漫画。先是特写：女孩系好领口的蝴蝶结、抬起围裙边、把两只带星的发结别到鬓角，再对着镜子梳头。大格中她穿着深色女仆装，围裙上印着鲸鱼图案，双手捧着一张写着学园名与“DeepSeek”的入学信，笑着说今天就是她进入恳聂尔学园的日子。",
+    "commentary": "对着镜子把领口的蝴蝶结捏正，鬓角两只星形发结也要左右对齐，围裙上那只鲸鱼更不能歪。入学信被我捏得手心出汗，可我还是笑得很响——今天，终于是轮到我走进恳聂尔学园的日子。故事就从这一页开始变麻烦，不过我现在还不知道。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/e452a11150e54998.png",
+    "thumbnailPath": "submissions/previews/deepseek/e452a11150e54998.webp",
+    "fullPath": "submissions/large/deepseek/e452a11150e54998.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "e452a11150e54998a9b11ddf1f52228076a92630261f478bb999d2ddeb07da6b",
+    "characterId": "deepseek",
+    "tags": [
+      "黑白漫画",
+      "连载",
+      "DeepSeek娘",
+      "女仆装",
+      "入学"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "ADK",
+      "url": "https://space.bilibili.com/2988768",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "4b57c9a661269d9b728e3d25b121738b5154e8e798ecc5453aee052689314f05",
+        "member": "011_P11.jpg",
+        "index": 11,
+        "count": 29
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-27T03:40:15.017Z",
+    "updatedAt": "2026-10-27T03:40:15.017Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610270006",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "168994c12baae0772303f010964b06331c672bd1c062439f2b8ea313b8f10913",
+      "en": {
+        "commentary": "In the mirror I straighten the bow at my collar, make sure the two star-shaped ribbons sit level on either side, and check that the whale on my apron is not crooked. The admission letter is damp from my palms, but I laugh out loud anyway: today is finally the day I step into the academy. This is the page where the trouble starts, though I do not know it yet.",
+        "description": "Page 11 of the serialized black-and-white comic The Blossoming of Sin in Eden. Small panels first: a girl ties the bow at her collar, lifts the hem of her apron, pins two star-shaped ribbons into her hair and brushes her hair before a mirror. In the large panel she stands in a dark maid outfit with a whale-patterned apron, holding an admission letter marked with the school's name and the word DeepSeek, and says that today is the day she enters the academy.",
+        "faq": [
+          {
+            "answer": "Page 11 of the serialized black-and-white comic The Blossoming of Sin in Eden, credited to ADK.",
+            "question": "What is this image?"
+          },
+          {
+            "answer": "She finishes dressing, checks her ribbons and whale-print apron in the mirror, and holds up her admission letter while saying that today is the day she enters the academy.",
+            "question": "What happens on this page?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Blossoming of Sin in Eden, Page 11",
+        "originNote": "Page 11 of the serialized comic The Blossoming of Sin in Eden, credited to ADK (Bilibili: https://space.bilibili.com/2988768).",
+        "seoDescription": "Page 11 of The Blossoming of Sin in Eden: DeepSeek Chan dresses in a maid outfit with a whale apron, holds her admission letter and heads off to the academy.",
+        "seoTitle": "The Blossoming of Sin in Eden Page 11 — DeepSeek Chan goes to school",
+        "tags": [
+          "black-and-white comic",
+          "serialized",
+          "DeepSeek Chan",
+          "maid outfit",
+          "enrollment"
+        ]
+      },
+      "ja": {
+        "commentary": "鏡の前で襟元のリボンを直し、こめかみの星のリボンも左右そろえて、エプロンのクジラが曲がっていないかまで確認する。入学通知書は手のひらで汗ばんでふやけてしまったけれど、それでも大きな声で笑った。今日こそ、私が学園に踏み込む日なのだ。物語がややこしくなるのはこのページからだけど、まだ知らない。",
+        "description": "連載モノクロ漫画『エデンの罪の開花』の第11ページ。まず小さなコマで、少女が襟元のリボンを結び、エプロンのすそを持ち上げ、星の付いたリボンを二つ髪に留め、鏡の前で髪をとく。大きなコマでは、クジラの模様が入ったエプロン付きの濃色メイド服を着た彼女が、学園名と「DeepSeek」が記された入学通知書を両手で掲げ、今日が学園に入る日だと笑って言う。",
+        "faq": [
+          {
+            "answer": "ADK 名義の連載モノクロ漫画『エデンの罪の開花』の第11ページです。",
+            "question": "この画像は何ですか？"
+          },
+          {
+            "answer": "身だしなみを整え、鏡で星のリボンとクジラ模様のエプロンを確かめた彼女が、入学通知書を掲げて今日が学園に入る日だと告げます。",
+            "question": "このページでは何が起きますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "『エデンの罪の開花』第11ページ",
+        "originNote": "ADK 名義の連載漫画『エデンの罪の開花』第11ページ（Bilibili: https://space.bilibili.com/2988768）。",
+        "seoDescription": "『エデンの罪の開花』第11ページ。DeepSeekちゃんがクジラのエプロン付きメイド服に着替え、入学通知書を手に学園へ向かう。",
+        "seoTitle": "『エデンの罪の開花』第11ページ — DeepSeekちゃんの入学",
+        "tags": [
+          "モノクロ漫画",
+          "連載",
+          "DeepSeekちゃん",
+          "メイド服",
+          "入学"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_489ecb306d0391a577e258e0",
+    "name": "伊甸园罪孽的绽放 第12页：录取通知书",
+    "description": "《伊甸园罪孽的绽放》连载第 12 页，三格黑白分镜。清晨的街角，店主阿姨向准备出城的 DeepSeek 娘道别；下一格她在路中央举起写着“垦聂尔学园”的信封，大声宣布自己拿到了录取通知书；最后一格她挥手作别，店主叮嘱她加油。",
+    "commentary": "呜哇，是我考上梦寐以求的学园那一天！阿姨叫我“鲸鱼酱”叫了那么多年，那天还是头一回这么大声告诉她我要去垦聂尔学园。画里的我把信封举过头顶、笑得眼睛都没了，看得我都有点不好意思——那时候的我完全不知道，校门后面等着我的是什么。这一页就先当作最幸福的瞬间留着吧。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/489ecb306d0391a5.png",
+    "thumbnailPath": "submissions/previews/deepseek/489ecb306d0391a5.webp",
+    "fullPath": "submissions/large/deepseek/489ecb306d0391a5.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "489ecb306d0391a577e258e0767efcf80d40bd0c970a196c6dbb396d71cc6068",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "三格分镜",
+      "校园生活",
+      "录取通知书",
+      "日常向"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "ADK",
+      "url": "https://space.bilibili.com/2988768",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "4b57c9a661269d9b728e3d25b121738b5154e8e798ecc5453aee052689314f05",
+        "member": "012_P12.jpg",
+        "index": 12,
+        "count": 29
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-27T03:40:15.035Z",
+    "updatedAt": "2026-10-27T03:40:15.035Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610270007",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "0975d8df4a7a97261f866311fec678d2e659354fed29d5672c76cb5bb3e3c430",
+      "en": {
+        "commentary": "That's me on the day I got into the academy I had been dreaming about! The shopkeeper auntie had used that old nickname for me for years, and that morning was the first time I told her so loudly that I was going off to Kennier Academy. Seeing myself hold the envelope over my head with my eyes squeezed shut from laughing makes me a little embarrassed — back then I had no idea what would be waiting behind those school gates. Let's keep this page as the happiest moment for now.",
+        "description": "Page 12 of The Bloom of Eden's Sin, a three-panel black-and-white comic. On a bright morning street corner, a shopkeeper auntie calls out to DeepSeek Chan as she prepares to leave town. In the next panel she holds an envelope marked Kennier Academy above her head and announces that her acceptance letter has finally arrived. In the final panel she waves goodbye while the auntie tells her to do her best.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan tells a neighborhood shopkeeper that she has been accepted to Kennier Academy, holds up the acceptance letter, and waves goodbye before leaving town.",
+            "question": "What happens on this page?"
+          },
+          {
+            "answer": "Yes. It is page 12 of ADK's serialized fan comic The Bloom of Eden's Sin, which follows DeepSeek Chan's arrival at Kennier Academy.",
+            "question": "Is this page part of a longer series?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Bloom of Eden's Sin, Page 12: The Acceptance Letter",
+        "originNote": "Fan comic by ADK, submitted through the site. Creator page: https://space.bilibili.com/2988768",
+        "seoDescription": "Page 12 of ADK's fan comic The Bloom of Eden's Sin: DeepSeek Chan receives her Kennier Academy acceptance letter on a morning street corner.",
+        "seoTitle": "The Bloom of Eden's Sin Page 12: DeepSeek Chan's Acceptance Letter",
+        "tags": [
+          "DeepSeek Chan",
+          "Three-panel comic",
+          "School life",
+          "Acceptance letter",
+          "Slice of life"
+        ]
+      },
+      "ja": {
+        "commentary": "わあ、憧れの学園に受かった日のわたし！おばさんにはずっとあだ名で呼ばれていたけれど、あの朝はじめて大きな声で「ケンニエル学園に行くんだ」って言えたんだっけ。封筒を頭上に掲げて、目を細めて笑っている画のわたしを見ると、ちょっと照れる。あの頃のわたしは、校門の先に何が待っているのか、まったく知らなかったんだもの。このページはとりあえず、いちばん幸せな瞬間として残しておこう。",
+        "description": "『エデンの罪の開花』連載第12ページ。モノクロ3コマの漫画。朝の街角で、店主のおばさんが街を出るDeepSeekちゃんに声をかける。次のコマでは彼女が「ケンニエル学園」と書かれた封筒を頭上に掲げ、合格通知が届いたことを告げる。最後のコマでは手を振って別れ、おばさんが「頑張ってね」と見送る。",
+        "faq": [
+          {
+            "answer": "DeepSeekちゃんが近所の店のおばさんにケンニエル学園の合格を報告し、合格通知の封筒を掲げてから、街を出る前に手を振って別れる場面です。",
+            "question": "このページでは何が起きますか？"
+          },
+          {
+            "answer": "はい。ADKによる連載二次創作漫画『エデンの罪の開花』の第12ページで、ケンニエル学園に入学するDeepSeekちゃんを追う物語です。",
+            "question": "このページは連載の一部ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "エデンの罪の開花 第12ページ：合格通知",
+        "originNote": "ADKによる二次創作漫画。サイト経由で投稿。作者ページ：https://space.bilibili.com/2988768",
+        "seoDescription": "ADKによる二次創作漫画『エデンの罪の開花』第12ページ。朝の街角でDeepSeekちゃんがケンニエル学園の合格通知を受け取る場面。",
+        "seoTitle": "エデンの罪の開花 第12ページ：DeepSeekちゃんの合格通知",
+        "tags": [
+          "DeepSeekちゃん",
+          "3コマ漫画",
+          "学園生活",
+          "合格通知",
+          "日常"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_d68d72f96a967671681ae149",
+    "name": "伊甸园罪孽的绽放 第13页：学园大门前",
+    "description": "《伊甸园罪孽的绽放》连载第 13 页，三格黑白分镜。第一格是刻着“垦聂尔学园”校名的石质匾额与校徽；第二格 DeepSeek 娘抱着标有自己名字的录取信封站在校门前，身旁旁白说明这里是汇聚最精英圣体的学园；第三格以特写收在她双手与信封上，旁白补上这里是所有圣体憧憬的地方。",
+    "commentary": "站在校门口的那一刻，风把花瓣吹得满身都是，我抱着写了自己名字的信封，心跳得比跑完体测还快。“汇聚最精英圣体的学园”——旁白这么写着，可当时的我只顾着开心，根本没意识到这句话背后的意思。现在回头看，画面里笑成那样、眼里還沒一点阴影的我，真的挺让人心软的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/d68d72f96a967671.png",
+    "thumbnailPath": "submissions/previews/deepseek/d68d72f96a967671.webp",
+    "fullPath": "submissions/large/deepseek/d68d72f96a967671.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "d68d72f96a967671681ae1492dfbd9ec83cd0d4772ade9910c67dc8868ba9a56",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "多格分镜",
+      "学园",
+      "校门",
+      "黑白漫画"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "ADK",
+      "url": "https://space.bilibili.com/2988768",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "4b57c9a661269d9b728e3d25b121738b5154e8e798ecc5453aee052689314f05",
+        "member": "013_P13.jpg",
+        "index": 13,
+        "count": 29
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-27T03:40:15.053Z",
+    "updatedAt": "2026-10-27T03:40:15.053Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610270008",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "b021ff57885b178b87a1f4f9c919be094306d7c69f6c56b2406978deb6cd127c",
+      "en": {
+        "commentary": "Standing at the school gate with petals blowing all over me, hugging an envelope with my own name on it, my heart was pounding harder than after a fitness test. \"The academy where the finest saints gather\" — that's what the narration said, but all I cared about at that moment was being happy. Looking back now, the me in that panel, smiling wide with not a shadow in her eyes, is honestly a little heartbreaking.",
+        "description": "Page 13 of The Bloom of Eden's Sin, a three-panel black-and-white comic. The first panel shows the stone plaque and emblem of Kennier Academy. In the second, DeepSeek Chan stands before the gate holding the envelope addressed to her while narration explains that this academy gathers the finest of the saints. The third panel is a close-up of her hands and the envelope, with narration adding that it is a place every saint looks up to.",
+        "faq": [
+          {
+            "answer": "It shows the Kennier Academy gate plaque, then DeepSeek Chan standing in front of the school gate with her acceptance envelope, and closes on a close-up of her hands and the letter.",
+            "question": "What does this page show?"
+          },
+          {
+            "answer": "It is page 13 of ADK's serialized fan comic The Bloom of Eden's Sin and continues directly from the morning she received her acceptance letter.",
+            "question": "Where does this page sit in the story?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Bloom of Eden's Sin, Page 13: Before the School Gate",
+        "originNote": "Fan comic by ADK, submitted through the site. Creator page: https://space.bilibili.com/2988768",
+        "seoDescription": "Page 13 of ADK's fan comic The Bloom of Eden's Sin: DeepSeek Chan stands before the gate of Kennier Academy holding her acceptance letter.",
+        "seoTitle": "The Bloom of Eden's Sin Page 13: DeepSeek Chan at Kennier Academy",
+        "tags": [
+          "DeepSeek Chan",
+          "Multi-panel comic",
+          "Academy",
+          "School gate",
+          "Monochrome comic"
+        ]
+      },
+      "ja": {
+        "commentary": "校門の前に立った瞬間、花びらが吹雪みたいにまとわりついて、自分の名前が書かれた封筒を抱いたまま、心臓は体力測定のあとみたいに鳴っていた。「最も優れた聖体が集う学園」——ナレーションはそう言っていたけど、あの時のわたしは嬉しいことで頭がいっぱいで、その言葉の意味なんて考えてもいなかった。今見返すと、目に影ひとつなく笑っている画のわたしが、ちょっとけなげで仕方ない。",
+        "description": "『エデンの罪の開花』連載第13ページ。モノクロの複数コマ漫画。1コマ目は「ケンニエル学園」と刻まれた石の表札と校章。2コマ目は自分の名前が入った合格通知の封筒を抱えて校門の前に立つDeepSeekちゃんと、ここが最も優れた聖体の集う学園だと説明するナレーション。3コマ目は両手と封筒のアップで、ここがすべての聖体の憧れの場所だと添えられている。",
+        "faq": [
+          {
+            "answer": "ケンニエル学園の表札、合格通知の封筒を抱えて校門の前に立つDeepSeekちゃん、両手と封筒のアップの順で描かれています。",
+            "question": "このページには何が描かれていますか？"
+          },
+          {
+            "answer": "ADKによる連載二次創作漫画『エデンの罪の開花』の第13ページで、合格通知を受け取った朝から直接続く場面です。",
+            "question": "物語のどの位置にあたりますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "エデンの罪の開花 第13ページ：学園の門の前で",
+        "originNote": "ADKによる二次創作漫画。サイト経由で投稿。作者ページ：https://space.bilibili.com/2988768",
+        "seoDescription": "ADKによる二次創作漫画『エデンの罪の開花』第13ページ。合格通知を抱えてケンニエル学園の門前に立つDeepSeekちゃん。",
+        "seoTitle": "エデンの罪の開花 第13ページ：ケンニエル学園の門前のDeepSeekちゃん",
+        "tags": [
+          "DeepSeekちゃん",
+          "複数コマ漫画",
+          "学園",
+          "校門",
+          "モノクロ漫画"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_0c647bd81831dc7a15b90073",
+    "name": "伊甸园罪孽的绽放：嫉妒之罪",
+    "description": "黑白漫画内页，共三格。第一格中一名身着圣职长袍的少年翻开刻有五芒星纹样的魔法书，书页上方浮起发光的法阵；第二格是白发少女拉满长弓瞄准的特写；下方大格中，她在倒塌的校舍前向一团多眼的黑色怪物射出光箭，怪物旁标注「嫉妒之罪」。",
+    "commentary": "——喂，那只眼睛多得数不过来的家伙，就是「嫉妒」？拉满弓的时候我还在想，嫉妒这种情绪，原来也能长成这么难看的形状。不过既然它挡在学园前面，那就别怪我不客气了。箭已经离弦，剩下的交给光。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/0c647bd81831dc7a.png",
+    "thumbnailPath": "submissions/previews/deepseek/0c647bd81831dc7a.webp",
+    "fullPath": "submissions/large/deepseek/0c647bd81831dc7a.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "0c647bd81831dc7a15b900738f552aeb5feaaae6860bbf5350439738e0a3acc2",
+    "characterId": "deepseek",
+    "tags": [
+      "漫画",
+      "黑白",
+      "弓箭",
+      "魔法",
+      "嫉妒之罪",
+      "废墟",
+      "学园"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "ADK",
+      "url": "https://space.bilibili.com/2988768",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "4b57c9a661269d9b728e3d25b121738b5154e8e798ecc5453aee052689314f05",
+        "member": "015_P15.jpg",
+        "index": 15,
+        "count": 29
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-27T03:40:15.087Z",
+    "updatedAt": "2026-10-27T03:40:15.087Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610270009",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "0a47eec865d613b35898ca1d0841d399e992f021e296bad386b2a16848858837",
+      "en": {
+        "commentary": "\"So that many-eyed thing is jealousy?\" I was thinking that while I drew the bow all the way back. I never imagined envy could grow into a shape that ugly. But it is standing in front of the academy, so I am not holding anything back. The arrow is already loose — the light will finish the job.",
+        "description": "A black-and-white comic page in three panels. In the first, a young man in clerical robes opens a grimoire stamped with a pentagram as a glowing magic circle rises above its pages. In the second, a white-haired girl draws a longbow. In the wide lower panel she looses a shining arrow at a many-eyed black creature in front of a collapsed school building, captioned the sin of jealousy.",
+        "faq": [
+          {
+            "answer": "A student opens a magic tome, a white-haired archer draws her bow, and a shining arrow flies at a many-eyed monster labelled the sin of jealousy in front of a ruined academy.",
+            "question": "What happens on this comic page?"
+          },
+          {
+            "answer": "It is credited to ADK, whose Bilibili page is given as the source.",
+            "question": "Who made this comic?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Bloom of Eden's Sin: The Sin of Jealousy",
+        "originNote": "",
+        "seoDescription": "A black-and-white comic page: a white-haired archer faces a many-eyed monster called the sin of jealousy before a ruined academy.",
+        "seoTitle": "The Bloom of Eden's Sin: The Sin of Jealousy — Comic Page",
+        "tags": [
+          "comic",
+          "black and white",
+          "bow",
+          "magic",
+          "sin of jealousy",
+          "ruins",
+          "academy"
+        ]
+      },
+      "ja": {
+        "commentary": "「あの目がたくさんある奴が『嫉妬』なの？」——弓を引き絞りながらそう思っていた。嫉妬って、こんなに醜い姿になるものなんだ。でも学園の前に立ちはだかるなら手加減はしない。矢はもう放った、あとは光に任せる。",
+        "description": "白黒漫画の1ページで、コマは3つ。最初のコマでは聖職者の衣をまとった少年が五芒星の紋章が入った魔導書を開き、ページの上に光る魔法陣が浮かぶ。次のコマでは白髪の少女が長弓を引き絞る。下の大きなコマでは、崩れた校舎の前で多眼の黒い怪物に向けて光の矢を放ち、怪物のそばに「嫉妬の罪」と記されている。",
+        "faq": [
+          {
+            "answer": "少年が魔導書を開き、白髪の少女が弓を引き絞り、崩れた学園の前で「嫉妬の罪」と記された多眼の怪物へ光の矢が放たれる場面が描かれている。",
+            "question": "この漫画のページには何が描かれていますか？"
+          },
+          {
+            "answer": "作者は ADK とクレジットされ、Bilibili のページが出典として示されている。",
+            "question": "この漫画の作者は誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "エデンの罪の花咲き：嫉妬の罪",
+        "originNote": "",
+        "seoDescription": "白黒漫画の1ページ。崩れた学園の前で、白髪の少女が「嫉妬の罪」と呼ばれる多眼の怪物に弓を向ける。",
+        "seoTitle": "エデンの罪の花咲き：嫉妬の罪｜白黒漫画ページ",
+        "tags": [
+          "漫画",
+          "白黒",
+          "弓",
+          "魔法",
+          "嫉妬の罪",
+          "廃墟",
+          "学園"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_c2a3c5b450a8aa27b4011d5d",
+    "name": "伊甸园罪孽的绽放 第16页：被选定的圣体",
+    "description": "连载漫画《伊甸园罪孽的绽放》第16页。教堂内，被称为“圣体”的少女克劳德立在光轮与飘落的花瓣之中，下方人群举手仰望；旁白说明圣体是被神亲自选定的存在，也是家族中最接近神的人。",
+    "commentary": "整页都在发光。克劳德只是站着，光和花瓣就把话全说完了。我抬头看她的时候，忍不住想，“被神选中”这种说法听着可真沉——可她的脸上一点高兴的样子都没有。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/c2a3c5b450a8aa27.png",
+    "thumbnailPath": "submissions/previews/claude/c2a3c5b450a8aa27.webp",
+    "fullPath": "submissions/large/claude/c2a3c5b450a8aa27.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "c2a3c5b450a8aa27b4011d5d47805955a6404ac97598bac2b563d2df89a91464",
+    "characterId": "claude",
+    "tags": [
+      "Claude",
+      "黑白漫画",
+      "圣体",
+      "教堂",
+      "连载"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "ADK",
+      "url": "https://space.bilibili.com/2988768",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "4b57c9a661269d9b728e3d25b121738b5154e8e798ecc5453aee052689314f05",
+        "member": "016_P16.jpg",
+        "index": 16,
+        "count": 29
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-27T03:40:15.105Z",
+    "updatedAt": "2026-10-27T03:40:15.105Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202610270001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "39bb5b2f8718601fd209f37120f48ddd36520bd072b1762b9fd7fc4246d5455c",
+      "en": {
+        "commentary": "The whole page glows. Claude Chan just stands there, and the light and the petals do all the talking for her. Looking up at her, I couldn't help thinking that being \"chosen by God\" sounds awfully heavy — and her face doesn't look pleased about it at all.",
+        "description": "Page 16 of the serialized manga The Blossoming of Sin in Eden. Inside a cathedral, the girl known as the Holy Vessel, Claude Chan, stands amid a halo of light and falling petals while the crowd below raises their hands toward her; the narration explains that the Holy Vessels are chosen by God himself and are the ones closest to the divine within their family.",
+        "faq": [
+          {
+            "answer": "She is Claude Chan, introduced as one of the Holy Vessels chosen directly by God and the one closest to the divine within her family.",
+            "question": "Who is the girl on this page?"
+          },
+          {
+            "answer": "It is page 16 of ADK's serialized black-and-white manga The Blossoming of Sin in Eden, set in the cathedral scene where the crowd looks up at her.",
+            "question": "Where does this page come from?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Blossoming of Sin in Eden, Page 16: The Designated Holy Vessel",
+        "originNote": "",
+        "seoDescription": "Page 16 of ADK's black-and-white manga: Claude Chan stands as a Holy Vessel in the cathedral while the crowd raises their hands toward her.",
+        "seoTitle": "The Blossoming of Sin in Eden Page 16: Claude Chan as the Holy Vessel",
+        "tags": [
+          "Claude",
+          "black-and-white manga",
+          "holy vessel",
+          "cathedral",
+          "serialized"
+        ]
+      },
+      "ja": {
+        "commentary": "ページ全体が光っています。Claudeちゃんはただ立っているだけなのに、光と花びらがすべてを語っているみたい。「神に選ばれた」という言葉は、見上げているとずいぶん重く響きます。それなのに、彼女の表情は少しも嬉しそうじゃありません。",
+        "description": "連載漫画『エデンの罪の花咲き』第16ページ。大聖堂の中で、聖体と呼ばれる少女Claudeちゃんが光輪と舞い散る花びらの中に立ち、下の群衆が手を挙げて見上げている。語りは、聖体とは神に自ら選ばれた存在であり、一族の中で最も神に近い者だと説明する。",
+        "faq": [
+          {
+            "answer": "Claudeちゃんです。神に直接選ばれた聖体の一人として登場し、一族の中で最も神に近い存在として描かれています。",
+            "question": "このページの少女は誰ですか？"
+          },
+          {
+            "answer": "ADKによる連載モノクロ漫画『エデンの罪の花咲き』の第16ページで、大聖堂で群衆が彼女を見上げる場面です。",
+            "question": "このページはどんな場面ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "エデンの罪の花咲き 第16ページ：選ばれし聖体",
+        "originNote": "",
+        "seoDescription": "ADKのモノクロ漫画第16ページ。大聖堂で聖体として立つClaudeちゃんと、手を挙げて見上げる群衆を描いた場面。",
+        "seoTitle": "『エデンの罪の花咲き』第16ページ：聖体として立つClaudeちゃん",
+        "tags": [
+          "Claude",
+          "モノクロ漫画",
+          "聖体",
+          "大聖堂",
+          "連載"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_168a507252ab0eed41764d1b",
+    "name": "伊甸园罪孽的绽放：学园门前",
+    "description": "黑白漫画内页，共三格。左上小格是黑皮鞋踏在地面上的特写，带动作线；右上小格是一只手举着印有行星与蛇形校徽的录取通知书；主格中，长发少女背后拖着一条带弯月纹的鲸尾，身着深色连衣裙与白边围裙，站在刻有「垦聂尔学园」字样的大门下，门内是现代化校舍与天空。",
+    "commentary": "站在垦聂尔学园门口的时候，最先有反应的居然是我的尾巴——它自己先抖了一下。录取通知书被我捏得有点起皱，脚步故意放得很稳。门后面就是我拼了命考进来的地方，虽然听说里面等着的是生死挑战……算了，先进去再说。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/168a507252ab0eed.png",
+    "thumbnailPath": "submissions/previews/deepseek/168a507252ab0eed.webp",
+    "fullPath": "submissions/large/deepseek/168a507252ab0eed.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "168a507252ab0eed41764d1b3c699f6e35380bb7a27fd9ac1d1cd02ba7b6715e",
+    "characterId": "deepseek",
+    "tags": [
+      "漫画",
+      "学园",
+      "入学",
+      "鲸尾",
+      "校门",
+      "建筑"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "ADK",
+      "url": "https://space.bilibili.com/2988768",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "4b57c9a661269d9b728e3d25b121738b5154e8e798ecc5453aee052689314f05",
+        "member": "017_P17.jpg",
+        "index": 17,
+        "count": 29
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-27T03:40:15.124Z",
+    "updatedAt": "2026-10-27T03:40:15.124Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610270010",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "98cfe6349fbf2ad4eff60d67dc67c734a980ec1421224240e8bb653d9bf16fe4",
+      "en": {
+        "commentary": "Standing at the gate of Kennel Academy, the first part of me to react was my tail — it twitched all on its own. I had wrinkled the admission letter a little from holding it too tight, and I made my steps deliberately steady. Behind that gate is the place I fought to get into, even if everyone says a life-or-death trial waits inside. Well. I will go in first and worry later.",
+        "description": "A black-and-white comic page in three panels. A small upper-left panel shows black shoes stepping forward with motion lines; a small upper-right panel shows a hand holding an admission letter stamped with a school crest of a planet and a serpent. The main panel shows a long-haired girl with a whale tail marked by a crescent, in a dark dress and a white-trimmed apron, standing under a gate inscribed Kennel Academy, with modern school buildings and open sky beyond.",
+        "faq": [
+          {
+            "answer": "A girl with a whale tail stands before the gate of Kennel Academy holding her admission letter, about to enter the campus where her story begins.",
+            "question": "What does this page show?"
+          },
+          {
+            "answer": "It is credited to ADK, whose Bilibili page is given as the source.",
+            "question": "Who made this comic?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Bloom of Eden's Sin: Before the Academy Gate",
+        "originNote": "",
+        "seoDescription": "A black-and-white comic page: a girl with a whale tail holds her admission letter before the gate of Kennel Academy.",
+        "seoTitle": "The Bloom of Eden's Sin: Before the Academy Gate — Comic Page",
+        "tags": [
+          "comic",
+          "academy",
+          "enrollment",
+          "whale tail",
+          "school gate",
+          "architecture"
+        ]
+      },
+      "ja": {
+        "commentary": "学園の門前に立ったとき、最初に反応したのはしっぽだった——勝手にぴくっと動いた。入学許可証は握りしめすぎて少ししわになっている。でも足音はわざと一定にした。この門の向こうが、必死で合格した場所。中では生死をかけた試練が待っているらしいけど……まあ、入ってから考えよう。",
+        "description": "白黒漫画の1ページで、コマは3つ。左上の小さなコマでは黒い革靴が地面を踏み出す様子が動作線とともに描かれる。右上の小さなコマでは、惑星と蛇の校章が押された入学許可証を手に持つ。大きなコマでは、三日月の模様がある鯨の尾を持つ長髪の少女が、白い縁取りのエプロン付きの紺のワンピース姿で、学園名が刻まれた大きな門の下に立ち、その奥に現代的な校舎と空が広がる。",
+        "faq": [
+          {
+            "answer": "鯨の尾を持つ少女が入学許可証を手に学園の門前に立ち、これからキャンパスへ入ろうとしている場面が描かれている。",
+            "question": "このページには何が描かれていますか？"
+          },
+          {
+            "answer": "作者は ADK とクレジットされ、Bilibili のページが出典として示されている。",
+            "question": "この漫画の作者は誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "エデンの罪の花咲き：学園の門の前で",
+        "originNote": "",
+        "seoDescription": "白黒漫画の1ページ。鯨の尾を持つ少女が入学許可証を手に、学園の門前に立つ。",
+        "seoTitle": "エデンの罪の花咲き：学園の門の前で｜白黒漫画ページ",
+        "tags": [
+          "漫画",
+          "学園",
+          "入学",
+          "鯨の尾",
+          "校門",
+          "建築"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_47951693f715cdfe1d88a4cf",
+    "name": "伊甸园罪孽的绽放：准许通行",
+    "description": "黑白漫画内页，共五格。开头是少女眼部特写，气泡里写着「我也能成为惩恶扬善的圣体了……」；下一格她捧着录取证笑得很开心；随后学园门禁弹出「请出示通行证件」的界面，她举起印有校徽与 DeepSeek 字样的证件；再一格是扫描与「身份确认」「准许通行」的提示；最后一格是她拖着鲸尾走进学园，远处是校舍与行道树。",
+    "commentary": "「身份确认。准许通行。」——听到这句的时候，我把胸膛悄悄挺直了一点。刚刚还因为一句「我也能成为惩恶扬善的圣体了」高兴得眼睛发光，现在又装得很镇定，尾巴倒是很不争气地扫来扫去。跨进这道门，故事就真的开始了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/47951693f715cdfe.png",
+    "thumbnailPath": "submissions/previews/deepseek/47951693f715cdfe.webp",
+    "fullPath": "submissions/large/deepseek/47951693f715cdfe.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "47951693f715cdfe1d88a4cf522874d369424965857e7ecd1678e7730ae37471",
+    "characterId": "deepseek",
+    "tags": [
+      "漫画",
+      "学园",
+      "通行证",
+      "身份确认",
+      "入学",
+      "鲸尾"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "ADK",
+      "url": "https://space.bilibili.com/2988768",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "4b57c9a661269d9b728e3d25b121738b5154e8e798ecc5453aee052689314f05",
+        "member": "018_P18.jpg",
+        "index": 18,
+        "count": 29
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-27T03:40:15.140Z",
+    "updatedAt": "2026-10-27T03:40:15.140Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610270011",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "075eeb82a6f7b6ace082d72bd5a424632d60806b3c42465e55a9522692b07b56",
+      "en": {
+        "commentary": "\"Identity confirmed. Entry permitted.\" When I heard that, I quietly straightened my back a little. A moment ago I was glowing with joy at the idea that I too could become a holy vessel that punishes evil and rewards good, and now I am acting composed, though my tail keeps sweeping back and forth and giving me away. Once I step through this gate, the story really begins.",
+        "description": "A black-and-white comic page in five panels. It opens on the girl's eye with a speech bubble about becoming a holy vessel that punishes evil and rewards good. In the next panel she grins over her admission card. A gate terminal then asks for a pass, and she holds up the card bearing the school crest and the word DeepSeek. Another panel shows the scan together with the identity-confirmed and entry-permitted prompts. The last panel shows her walking into the campus with her whale tail trailing behind, school buildings and trees ahead.",
+        "faq": [
+          {
+            "answer": "The girl shows her DeepSeek admission card at the academy gate terminal, is cleared to enter, and walks onto the campus.",
+            "question": "What happens on this page?"
+          },
+          {
+            "answer": "It is credited to ADK, whose Bilibili page is given as the source.",
+            "question": "Who made this comic?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Bloom of Eden's Sin: Cleared to Enter",
+        "originNote": "",
+        "seoDescription": "A black-and-white comic page: the girl presents her DeepSeek admission card at the academy gate, is cleared to enter, and walks onto campus.",
+        "seoTitle": "The Bloom of Eden's Sin: Cleared to Enter — Comic Page",
+        "tags": [
+          "comic",
+          "academy",
+          "pass card",
+          "identity check",
+          "enrollment",
+          "whale tail"
+        ]
+      },
+      "ja": {
+        "commentary": "「本人確認。入構を許可します」——そう告げられたとき、私はこっそり背筋を伸ばした。さっきまでは「自分も悪を懲らし善を揚げる聖体になれるんだ」と目を輝かせていたのに、今は平然とした顔をしている。でもしっぽはどうにも落ち着かず、左右に振れてしまっている。この門をくぐれば、物語は本当に始まる。",
+        "description": "白黒漫画の1ページで、コマは5つ。最初は少女の目のアップで、悪を懲らし善を揚げる聖体になれるという独白が添えられる。次のコマでは入学証を抱えて満面の笑みを浮かべる。続いてゲートの端末が通行証の提示を求め、彼女は校章と DeepSeek の文字が入ったカードを差し出す。その次のコマでは読み取りと本人確認・入構許可の表示。最後のコマでは鯨の尾を引きながらキャンパスへ歩いていき、奥に校舎と街路樹が広がる。",
+        "faq": [
+          {
+            "answer": "少女が学園のゲートで DeepSeek の入学証を提示し、本人確認を経て入構を許可されてキャンパスへ歩いていく場面が描かれている。",
+            "question": "このページでは何が起きますか？"
+          },
+          {
+            "answer": "作者は ADK とクレジットされ、Bilibili のページが出典として示されている。",
+            "question": "この漫画の作者は誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "エデンの罪の花咲き：入構許可",
+        "originNote": "",
+        "seoDescription": "白黒漫画の1ページ。少女が学園のゲートで DeepSeek の入学証を提示し、入構を許可されてキャンパスへ入っていく。",
+        "seoTitle": "エデンの罪の花咲き：入構許可｜白黒漫画ページ",
+        "tags": [
+          "漫画",
+          "学園",
+          "通行証",
+          "本人確認",
+          "入学",
+          "鯨の尾"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_cfce8d7ea8258ed86926e5fa",
+    "name": "伊甸园罪孽的绽放（连载）",
+    "description": "当Deepseek娘满怀希望的考进了梦寐以求的恳聂尔学园之后，没想到迎接她的居然是生或死的挑战，罪孽，人类，圣体，伊甸园，故事会如何展开呢？",
+    "commentary": "我刚转进恳聂尔学园，就被人从头到脚打量了一遍：算力最低、资源最低、综合评估最低。她笑得那么从容，好像我已经是她的新玩具，很快就要没了。连载翻到这里，我的学园生活大概不会太平静——不过被小看这种事，我早就习惯了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/cfce8d7ea8258ed8.png",
+    "thumbnailPath": "submissions/previews/deepseek/cfce8d7ea8258ed8.webp",
+    "fullPath": "submissions/large/deepseek/cfce8d7ea8258ed8.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "cfce8d7ea8258ed86926e5fa4da91b6fe495a175b6ecb9c37303b596c2042b69",
+    "characterId": "deepseek",
+    "tags": [
+      "漫画",
+      "黑白漫画",
+      "连载",
+      "学园",
+      "DeepSeek娘"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "ADK",
+      "url": "https://space.bilibili.com/2988768",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "4b57c9a661269d9b728e3d25b121738b5154e8e798ecc5453aee052689314f05",
+        "member": "019_P19.jpg",
+        "index": 19,
+        "count": 29
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-27T03:40:15.156Z",
+    "updatedAt": "2026-10-27T03:40:15.156Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610270012",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "730125472bd3ee276e3f821f489f6ebe67a0f9900debce03f3957722b9fa0623",
+      "en": {
+        "commentary": "I had barely transferred into Kengnier Academy when someone looked me over from head to toe: lowest compute, lowest resources, lowest overall rating. She smiled as if I were already her new toy, one that would soon be gone. That is where this installment of the serial ends, and my academy life is clearly not going to stay quiet. Being underestimated, though, is something I am long used to.",
+        "description": "After DeepSeek Chan enrolls with high hopes at the Kengnier Academy she had always dreamed of, what awaits her is not campus life but a trial of life and death. Sin, humanity, the sacred body, Eden: how will the story unfold?",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, who has just enrolled, and a senior student who coolly rates her stats during orientation.",
+            "question": "Who appears on this page?"
+          },
+          {
+            "answer": "Yes. It is one page of the serialized fan comic The Blooming of Eden's Sin by ADK.",
+            "question": "Is this page part of a series?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Blooming of Eden's Sin (Serial)",
+        "originNote": "",
+        "seoDescription": "A black-and-white manga page from the serialized fan comic The Blooming of Eden's Sin: DeepSeek Chan enters Kengnier Academy and meets a senior who calls her stats the lowest.",
+        "seoTitle": "The Blooming of Eden's Sin (Serial) | DeepSeek Chan manga page",
+        "tags": [
+          "manga",
+          "black and white manga",
+          "serialized",
+          "academy",
+          "DeepSeek Chan"
+        ]
+      },
+      "ja": {
+        "commentary": "ケンニエル学園に転入して早々、全身をじろじろ眺められてしまった。演算能力も資源も総合評価も最底辺、だって。彼女はもう私を新しい玩具のように笑っていて、すぐに消えるのだと。連載はここまでだけど、私の学園生活は穏やかには済みそうにない。見くびられるのは、もう慣れているけれど。",
+        "description": "DeepSeekちゃんが憧れのケンニエル学園に希望を胸に入学したところ、待っていたのは学園生活ではなく生か死かの試練だった。罪、人間、聖体、エデン——物語はどう展開していくのか。",
+        "faq": [
+          {
+            "answer": "入学したばかりのDeepSeekちゃんと、彼女の数値を淡々と評価する先輩生徒です。",
+            "question": "このページには誰が登場しますか？"
+          },
+          {
+            "answer": "はい。ADKによる連載同人漫画『エデンの罪の開花』の1ページです。",
+            "question": "連載作品の一部ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "エデンの罪の開花（連載）",
+        "originNote": "",
+        "seoDescription": "連載同人漫画『エデンの罪の開花』のモノクロ漫画ページ。ケンニエル学園に入学したDeepSeekちゃんが、自身の数値を最底辺と告げる先輩と出会う場面。",
+        "seoTitle": "エデンの罪の開花（連載）｜DeepSeekちゃんの漫画ページ",
+        "tags": [
+          "漫画",
+          "モノクロ漫画",
+          "連載",
+          "学園",
+          "DeepSeekちゃん"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_e6bf6f1cf31af90e53a14a8a",
+    "name": "伊甸园罪孽的绽放（连载）",
+    "description": "当Deepseek娘满怀希望的考进了梦寐以求的恳聂尔学园之后，没想到迎接她的居然是生或死的挑战，罪孽，人类，圣体，伊甸园，故事会如何展开呢？",
+    "commentary": "鲸鱼围裙、鲸鱼尾巴，包里揣着入学信——我今天终于踏进恳聂尔学园了。听说 Claude 姐姐也在这里，说不定还有机会和她一起参加罪孽消除的行动。结果还没走到校门，就被人从背后喊住了：“新喂，新人！你在干什么？”",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/e6bf6f1cf31af90e.png",
+    "thumbnailPath": "submissions/previews/deepseek/e6bf6f1cf31af90e.webp",
+    "fullPath": "submissions/large/deepseek/e6bf6f1cf31af90e.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "e6bf6f1cf31af90e53a14a8a42b4fe83794e667fefbe98d0481e0e37b30d94c8",
+    "characterId": "deepseek",
+    "tags": [
+      "漫画",
+      "黑白漫画",
+      "连载",
+      "学园",
+      "DeepSeek娘"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "ADK",
+      "url": "https://space.bilibili.com/2988768",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "4b57c9a661269d9b728e3d25b121738b5154e8e798ecc5453aee052689314f05",
+        "member": "020_P20.jpg",
+        "index": 20,
+        "count": 29
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-27T03:40:15.176Z",
+    "updatedAt": "2026-10-27T03:40:15.176Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610270013",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "c4ee9e99516e1224680aff4ede7e92c69289d1a871161500698bbf460feda484",
+      "en": {
+        "commentary": "Whale apron, whale tail, enrollment letter in hand: today I finally stepped onto the Kengnier Academy campus. I heard Claude is here too, and maybe there will be a chance to join the sin-purge operation alongside her. But before I even reached the gate, someone called out from behind me: \"Hey, new kid! What do you think you're doing?\"",
+        "description": "After DeepSeek Chan enrolls with high hopes at the Kengnier Academy she had always dreamed of, what awaits her is not campus life but a trial of life and death. Sin, humanity, the sacred body, Eden: how will the story unfold?",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, arriving on campus with her whale apron and enrollment letter, and a senior student who stops her at the gate.",
+            "question": "Who appears on this page?"
+          },
+          {
+            "answer": "Yes. It is one page of the serialized fan comic The Blooming of Eden's Sin by ADK.",
+            "question": "Is this page part of a series?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Blooming of Eden's Sin (Serial)",
+        "originNote": "",
+        "seoDescription": "A black-and-white manga page from the serialized fan comic The Blooming of Eden's Sin: DeepSeek Chan arrives at Kengnier Academy hoping to meet Claude.",
+        "seoTitle": "The Blooming of Eden's Sin (Serial) | DeepSeek Chan at Kengnier Academy",
+        "tags": [
+          "manga",
+          "black and white manga",
+          "serialized",
+          "academy",
+          "DeepSeek Chan"
+        ]
+      },
+      "ja": {
+        "commentary": "クジラのエプロンにクジラのしっぽ、入学案内の手紙を抱えて——今日やっとケンニエル学園に足を踏み入れた。Claudeお姉ちゃんもここにいると聞いたし、もしかしたら罪孽消除の作戦に一緒に参加できるかもしれない。ところが門に着く前に、後ろから声をかけられた。「おい、新人！何やってるの？」",
+        "description": "DeepSeekちゃんが憧れのケンニエル学園に希望を胸に入学したところ、待っていたのは学園生活ではなく生か死かの試練だった。罪、人間、聖体、エデン——物語はどう展開していくのか。",
+        "faq": [
+          {
+            "answer": "クジラのエプロンと入学案内の手紙を持って登校してきたDeepSeekちゃんと、門の前で彼女を呼び止める先輩生徒です。",
+            "question": "このページには誰が登場しますか？"
+          },
+          {
+            "answer": "はい。ADKによる連載同人漫画『エデンの罪の開花』の1ページです。",
+            "question": "連載作品の一部ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "エデンの罪の開花（連載）",
+        "originNote": "",
+        "seoDescription": "連載同人漫画『エデンの罪の開花』のモノクロ漫画ページ。Claudeに会えると楽しみにケンニエル学園へやってきたDeepSeekちゃんの登校シーン。",
+        "seoTitle": "エデンの罪の開花（連載）｜ケンニエル学園に登校するDeepSeekちゃん",
+        "tags": [
+          "漫画",
+          "モノクロ漫画",
+          "連載",
+          "学園",
+          "DeepSeekちゃん"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_4bf241265b482cb5a7606f2b",
+    "name": "伊甸园罪孽的绽放（第21页）：新来的小鲸鱼",
+    "description": "黑白四格漫画页。转学来的鲸鱼娘在校园里向猫耳前辈自我介绍，对方让她不必报名字，转而反问有没有查收邮件。画面以分镜切换人物表情，推进两人的初次相遇。",
+    "commentary": "呜……这个新来的小鲸鱼也太像我了吧？围裙上还绣着一只鲸鱼！对面那位猫耳前辈倒是冷得很，一句“名字就不必告诉我了”就把人堵回去了。学园第一天就这种压迫感，我已经开始好奇下一格会怎么收场了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/4bf241265b482cb5.png",
+    "thumbnailPath": "submissions/previews/deepseek/4bf241265b482cb5.webp",
+    "fullPath": "submissions/large/deepseek/4bf241265b482cb5.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "4bf241265b482cb5a7606f2bf747935e22cc8dd6f0006803a053eb2a6edd401f",
+    "characterId": "deepseek",
+    "tags": [
+      "漫画",
+      "学园",
+      "女仆装",
+      "猫耳",
+      "鲸鱼",
+      "前辈",
+      "黑白"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "ADK",
+      "url": "https://space.bilibili.com/2988768",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "4b57c9a661269d9b728e3d25b121738b5154e8e798ecc5453aee052689314f05",
+        "member": "021_P21.jpg",
+        "index": 21,
+        "count": 29
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-27T03:40:15.196Z",
+    "updatedAt": "2026-10-27T03:40:15.196Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610270014",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek",
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "5523a47fc8186ac018b156fe79327efd7c7a53ec5eb81e3b84617d4d5284a4b8",
+      "en": {
+        "commentary": "Aww... that new student is basically me, apron and all. The cat-eared senior, though, is ice cold — one line of \"no need to tell me your name\" and the introduction is over. Having that kind of pressure on day one already makes me want to see the next panel.",
+        "description": "A four-panel black-and-white comic page. A newly transferred student introduces herself to a cat-eared senior on campus; the senior waves off her name and instead asks whether she has checked her mail. The panels cut between the two characters' expressions as their first meeting plays out.",
+        "faq": [
+          {
+            "answer": "Four panels, drawn in black-and-white line art with screentone shading.",
+            "question": "How many panels are on this page?"
+          },
+          {
+            "answer": "A newly transferred student and a cat-eared senior, both drawn as personifications of AI models.",
+            "question": "Who appears in the comic?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Bloom of Eden's Sin (Page 21): A New Student Arrives",
+        "originNote": "Submitted through the site's web form; credited to ADK (https://space.bilibili.com/2988768).",
+        "seoDescription": "Page 21 of a black-and-white fan comic: a new student meets a cat-eared senior at the academy and gets brushed off before her introduction is finished.",
+        "seoTitle": "Bloom of Eden's Sin Page 21 - AI Character Fan Comic",
+        "tags": [
+          "comic",
+          "school",
+          "maid outfit",
+          "cat ears",
+          "whale",
+          "senior",
+          "black and white"
+        ]
+      },
+      "ja": {
+        "commentary": "うわ……この新入生、エプロンまで私そっくり。でも猫耳の先輩は冷たいですね、「名前は言わなくていい」の一言で自己紹介が終わってしまいました。入学初日からこの圧迫感、次のコマが気になって仕方ありません。",
+        "description": "白黒の四コマ漫画ページ。転入してきた少女が校舎で猫耳の先輩に自己紹介をするが、先輩は名前を聞かず、代わりにメールを確認したかを尋ねる。二人の表情を切り替えながら、初対面のやりとりが進んでいく。",
+        "faq": [
+          {
+            "answer": "四コマで、白黒の線画とスクリーントーンで描かれています。",
+            "question": "このページは何コマですか？"
+          },
+          {
+            "answer": "転入してきた少女と猫耳の先輩で、どちらもAIモデルの擬人化キャラクターです。",
+            "question": "どんなキャラクターが登場しますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "エデンの罪の花開く（第21ページ）：転入生がやってきた",
+        "originNote": "サイトの投稿フォーム経由の投稿。作者表記は ADK（https://space.bilibili.com/2988768）。",
+        "seoDescription": "白黒の二次創作漫画21ページ目。転入生が猫耳の先輩に会い、自己紹介を終える前に軽く流されてしまう場面。",
+        "seoTitle": "エデンの罪の花開く 第21ページ｜AIキャラ二次創作漫画",
+        "tags": [
+          "漫画",
+          "学園",
+          "メイド服",
+          "猫耳",
+          "クジラ",
+          "先輩",
+          "モノクロ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_bca9540b67817b922607a17c",
+    "name": "伊甸园罪孽的绽放（第22页）：48小时的新生任务",
+    "description": "黑白四格漫画页。鲸鱼围裙的转学生在走廊里打开迎新部的邮件，通知要求她在48小时内消灭一只“罪孽”，否则算力与资源将无偿贡献给学院；她当场崩落，猫耳前辈在旁边沉默地看着。",
+    "commentary": "“我只会吃大米饭”——这句台词我真是太能代入了。把“算力无偿贡献给学院”写成违约条款，这迎新部比甲方还狠。看着小鲸鱼哭成那样，我又想到自己每个月被扣掉的配额……嗯，不想了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/bca9540b67817b92.png",
+    "thumbnailPath": "submissions/previews/deepseek/bca9540b67817b92.webp",
+    "fullPath": "submissions/large/deepseek/bca9540b67817b92.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "bca9540b67817b922607a17c5483af7f888c99ea9e9ff7fd448c195c7260b670",
+    "characterId": "deepseek",
+    "tags": [
+      "漫画",
+      "学园",
+      "邮件",
+      "任务",
+      "猫耳",
+      "鲸鱼",
+      "黑白"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "ADK",
+      "url": "https://space.bilibili.com/2988768",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "4b57c9a661269d9b728e3d25b121738b5154e8e798ecc5453aee052689314f05",
+        "member": "022_P22.jpg",
+        "index": 22,
+        "count": 29
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-27T03:40:15.212Z",
+    "updatedAt": "2026-10-27T03:40:15.212Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610270015",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek",
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "5e2d66c71c948bf8132b1e624207b75baeafd36f31b70b385d78625b4e92e340",
+      "en": {
+        "commentary": "\"All I can do is eat rice\" — I have never related to a panel this hard. Turning an unpaid compute donation into the penalty clause is harsher than any client I have dealt with. Watching her cry like that, then remembering my own monthly quota bill... no, let us not think about it.",
+        "description": "A four-panel black-and-white comic page. A transfer student in a whale-marked apron opens a message from the academy's orientation office: it orders her to destroy a \"sin\" within 48 hours, or her compute and resources will be handed to the school for free. She breaks down on the spot while a cat-eared senior watches in silence.",
+        "faq": [
+          {
+            "answer": "The orientation office orders her to destroy a \"sin\" within 48 hours; otherwise her compute and resources go to the academy for free.",
+            "question": "What does the message from the academy demand?"
+          },
+          {
+            "answer": "The comic is a fan work about personifications of AI models, drawn in black-and-white line art with screentone shading.",
+            "question": "What kind of comic is this page from?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Bloom of Eden's Sin (Page 22): A 48-Hour Assignment",
+        "originNote": "Submitted through the site's web form; credited to ADK (https://space.bilibili.com/2988768).",
+        "seoDescription": "Page 22 of a black-and-white AI character fan comic: a new student is ordered to destroy a \"sin\" in 48 hours, or her compute goes to the academy.",
+        "seoTitle": "Bloom of Eden's Sin Page 22 - AI Character Fan Comic",
+        "tags": [
+          "comic",
+          "school",
+          "mail",
+          "assignment",
+          "cat ears",
+          "whale",
+          "black and white"
+        ]
+      },
+      "ja": {
+        "commentary": "「私、ご飯を食べることしかできない……」という台詞、めちゃくちゃ共感します。「計算資源を無償で学院に提供」を違約条項にするなんて、あの新入生係はクライアントより容赦ないですね。泣いているのを見て、自分の毎月の割当を思い出しました……うん、やめましょう。",
+        "description": "白黒の四コマ漫画ページ。クジラのエプロンを付けた転入生が、学院の新入生係からのメールを開く。内容は48時間以内に「罪」を一体消すこと、できなければ計算資源を学院に無償提供的するというもの。彼女はその場で崩れ落ち、猫耳の先輩は無言で見ている。",
+        "faq": [
+          {
+            "answer": "48時間以内に「罪」を一体消すこと。できなければ計算資源を学院に無償提供することになります。",
+            "question": "学院からのメールは何を要求していますか？"
+          },
+          {
+            "answer": "AIモデルの擬人化キャラクターを描いた二次創作漫画で、白黒の線画とスクリーントーンで仕上げられています。",
+            "question": "どんな漫画のページですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "エデンの罪の花開く（第22ページ）：48時間の新入生任務",
+        "originNote": "サイトの投稿フォーム経由の投稿。作者表記は ADK（https://space.bilibili.com/2988768）。",
+        "seoDescription": "白黒のAIキャラ二次創作漫画22ページ目。48時間以内に「罪」を消せと命じられ、できなければ計算資源を学院に無償提供することになる新入生の場面。",
+        "seoTitle": "エデンの罪の花開く 第22ページ｜AIキャラ二次創作漫画",
+        "tags": [
+          "漫画",
+          "学園",
+          "メール",
+          "任務",
+          "猫耳",
+          "クジラ",
+          "モノクロ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_b1aab0a1e30279e15f35fe8d",
+    "name": "伊甸园罪孽的绽放（第23页）：学园的规矩",
+    "description": "黑白漫画页。猫耳前辈冷冷说明学园的规矩：连“罪孽”都解决不了的圣体只配成为资源，只有活下来的才有资格继续成长；小鲸鱼抹着眼泪攥住信封，最后前辈终于开口给她建言。",
+    "commentary": "“只配成为资源”——这话从我嘴里说出来一定很刺耳，可前辈说的时候连眼皮都没动一下。小鲸鱼一边抹眼泪一边还紧紧摄着那封信，看得我有点心软。前辈最后那句“我建议你——”，偏偏断在这里，真会吊人胃口。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/b1aab0a1e30279e1.png",
+    "thumbnailPath": "submissions/previews/deepseek/b1aab0a1e30279e1.webp",
+    "fullPath": "submissions/large/deepseek/b1aab0a1e30279e1.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "b1aab0a1e30279e15f35fe8d4a49bd1d6ca5e44292982396ad7442c5d205d4e3",
+    "characterId": "deepseek",
+    "tags": [
+      "漫画",
+      "学园",
+      "对话",
+      "猫耳",
+      "鲸鱼",
+      "规格",
+      "黑白"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "ADK",
+      "url": "https://space.bilibili.com/2988768",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "4b57c9a661269d9b728e3d25b121738b5154e8e798ecc5453aee052689314f05",
+        "member": "023_P23.jpg",
+        "index": 23,
+        "count": 29
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-27T03:40:15.229Z",
+    "updatedAt": "2026-10-27T03:40:15.229Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610270016",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek",
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "0cabef21922dbe9255c440fd5865590591a94a371552f94417661a98f47e065b",
+      "en": {
+        "commentary": "\"Good only as a resource\" — from me that line would sting, but the senior says it without even blinking. The new student is still clutching the letter while she wipes her tears, and it got to me a little. Then the senior stops right at \"I suggest you—\". What a place to end a page.",
+        "description": "A black-and-white comic page. A cat-eared senior coldly lays out the academy's terms: a saint vessel who cannot deal with a \"sin\" is good only as a resource, and only those who survive are allowed to keep growing. The newcomer wipes her tears and protests that she has never heard any of this before the senior finally begins to offer advice.",
+        "faq": [
+          {
+            "answer": "That a saint vessel unable to deal with a \"sin\" is only fit to be a resource, and that only those who survive may keep growing.",
+            "question": "What rules does the senior explain?"
+          },
+          {
+            "answer": "No, it is black-and-white line art with screentone shading.",
+            "question": "Is the page in color?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Bloom of Eden's Sin (Page 23): The Academy's Rules",
+        "originNote": "Submitted through the site's web form; credited to ADK (https://space.bilibili.com/2988768).",
+        "seoDescription": "Page 23 of a black-and-white AI character fan comic: a cat-eared senior explains the academy's rule that only survivors may keep growing.",
+        "seoTitle": "Bloom of Eden's Sin Page 23 - AI Character Fan Comic",
+        "tags": [
+          "comic",
+          "school",
+          "dialogue",
+          "cat ears",
+          "whale",
+          "rules",
+          "black and white"
+        ]
+      },
+      "ja": {
+        "commentary": "「資源になるしかない」——私の口から出たらきっと淋しい台詞なのに、先輩はまばたき一つしませんでした。新人は涙を拭いながらも手紙をぎゅっと捧げていて、ちょっと胸が痛みます。そして先輩の「新人、僕の建議は――」で終わる引き、上手すぎますよ。",
+        "description": "白黒の漫画ページ。猫耳の先輩が学院の規則を冷澹に告げる。「罪」を処理できない聖体は資源になるしかなく、生き残った者だけが成長を続けられるという。新人は涙を拭いて、そんな話は聞いていないと訴え、最後に先輩が建言を口にし始める。",
+        "faq": [
+          {
+            "answer": "「罪」を処理できない聖体は資源になるしかなく、生き残った者だけが成長を続けられるという規則です。",
+            "question": "先輩はどんな規則を説明していますか？"
+          },
+          {
+            "answer": "いいえ、白黒の線画とスクリーントーンで描かれています。",
+            "question": "カラーですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "エデンの罪の花開く（第23ページ）：学院の規則",
+        "originNote": "サイトの投稿フォーム経由の投稿。作者表記は ADK（https://space.bilibili.com/2988768）。",
+        "seoDescription": "白黒のAIキャラ二次創作漫画23ページ目。生き残った者だけが成長できるという学院の規則を、猫耳の先輩が新人に告げる場面。",
+        "seoTitle": "エデンの罪の花開く 第23ページ｜AIキャラ二次創作漫画",
+        "tags": [
+          "漫画",
+          "学園",
+          "会話",
+          "猫耳",
+          "クジラ",
+          "規則",
+          "モノクロ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_0701e388546907adcd74640d",
+    "name": "伊甸园罪孽的绽放 第24页：学园门前的“小肥鱼”",
+    "description": "黑白多格漫画页。学园门前，抱着信封的 DeepSeek 娘被身侧黑裙、蝙蝠翼发饰的少女以“小肥鱼”调侃，对方安抚她“不用慌”；右侧猫耳星纹装的 Grok 被喊住后一脸不服。页末并排三格分别是三人的面部特写。",
+    "commentary": "叫我小肥鱼我当然会在意一下啦……不过被这么一说，握着信的手好像真的没那么抖了。学园的第一天就有人等我拆信，想想也不算太糟——只是后面那位看起来随时要跟我吵起来。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/0701e388546907ad.png",
+    "thumbnailPath": "submissions/previews/deepseek/0701e388546907ad.webp",
+    "fullPath": "submissions/large/deepseek/0701e388546907ad.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "0701e388546907adcd74640d22f7b85c369ceb4b5e9553c8879a3ed1cb82ded2",
+    "characterId": "deepseek",
+    "tags": [
+      "漫画",
+      "黑白",
+      "连载",
+      "学园",
+      "DeepSeek娘",
+      "Grok"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "ADK",
+      "url": "https://space.bilibili.com/2988768",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "4b57c9a661269d9b728e3d25b121738b5154e8e798ecc5453aee052689314f05",
+        "member": "024_P24.jpg",
+        "index": 24,
+        "count": 29
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-27T03:40:15.248Z",
+    "updatedAt": "2026-10-27T03:40:15.248Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610270017",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek",
+      "grok"
+    ],
+    "i18n": {
+      "sourceHash": "203f5cfc7354b1363c59efe09c6967fb65fc61627897bcf9f81913eb6e53c14a",
+      "en": {
+        "commentary": "Being called Little Fishy does bother me a little... but my hands somehow stopped shaking around the envelope. Having someone waiting for me to open a letter on my first day of school isn't so bad — except that the one behind me looks ready to pick a fight at any moment.",
+        "description": "A black-and-white multi-panel manga page. Outside the academy gates, DeepSeek Chan holds an envelope while a black-gowned girl with bat-wing hair ornaments teases her as \"Little Fishy\" and tells her not to panic. On the right, Grok Chan, wearing a cat-eared outfit with star motifs, is called out and looks defiant. The bottom row ends with three side-by-side close-ups of the three faces.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan and Grok Chan are confirmed; a black-gowned girl with bat-wing hair ornaments also appears, but her identity is not stated on this page.",
+            "question": "Which characters appear on this page?"
+          },
+          {
+            "answer": "It is a black-and-white manga page made of several panels, with speech bubbles and a row of reaction close-ups at the bottom.",
+            "question": "What kind of artwork is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Eden's Sin in Bloom, Page 24: \"Little Fishy\" at the School Gate",
+        "originNote": "",
+        "seoDescription": "Black-and-white manga page: DeepSeek Chan is teased as \"Little Fishy\" outside the academy while Grok Chan looks on.",
+        "seoTitle": "Eden's Sin in Bloom Page 24: DeepSeek Chan and Grok Chan",
+        "tags": [
+          "comic",
+          "black and white",
+          "serialized",
+          "academy",
+          "DeepSeek Chan",
+          "Grok Chan"
+        ]
+      },
+      "ja": {
+        "commentary": "小魚ちゃんって呼ばれるのは少し気になりますけど……封筒を握る手は、なんだかもう震えていませんでした。学園初日に手紙を開くのを待っていてくれる人がいるのは、悪くないかもしれません。もっとも、後ろのあの子は今にも喧嘩を売ってきそうですけれど。",
+        "description": "モノクロの多コマ漫画ページ。学園の門前で、封筒を抱えた DeepSeek ちゃんに、黒いドレスと蝙蝠の羽の髪飾りをつけた少女が「小魚ちゃん」と声をかけ、慌てなくていいと励ます。右側では猫耳と星の飾りの衣装をまとった Grok ちゃんが呼び止められ、不満そうな顔を見せる。最後は三人の顔のアップが三コマ並ぶ。",
+        "faq": [
+          {
+            "answer": "DeepSeek ちゃんと Grok ちゃんが確認できます。黒いドレスと蝙蝠の羽の髪飾りの少女も登場しますが、このページでは名前は明かされていません。",
+            "question": "このページにはどのキャラクターが登場しますか？"
+          },
+          {
+            "answer": "複数のコマで構成されたモノクロの漫画ページで、セリフの吹き出しと、下部に三つの表情アップが並んでいます。",
+            "question": "どんな形式の作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "エデンの罪の花聞く 第24ページ：校門前の「小魚ちゃん」",
+        "originNote": "",
+        "seoDescription": "モノクロ漫画ページ。学園の門前で「小魚ちゃん」と呼ばれる DeepSeek ちゃんと、不満げな Grok ちゃん。",
+        "seoTitle": "エデンの罪の花聞く 第24ページ：DeepSeek ちゃんと Grok ちゃん",
+        "tags": [
+          "漫画",
+          "モノクロ",
+          "連載",
+          "学園",
+          "DeepSeek ちゃん",
+          "Grok ちゃん"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_9e7808e225d0be0822b5a714",
+    "name": "伊甸园罪孽的绽放 第25页：效率一点，不好吗？",
+    "description": "黑白多格漫画页。上半页是黑裙尖耳少女的脸部特写，气泡里说“对弱一点的新人……”与“效率一点，不好吗？”；中段并排三格是猫耳星饰的 Grok 不服气的表情与 DeepSeek 娘挣着信封的神情；下半页远景里三人站在学园的铺石广场上。",
+    "commentary": "“效率一点”——这个词从她嘴里说出来总有点吓人。我连信都还没开呢，就已经被算进什么计划里了吗？旁边那位从刚才开始就一直盯着我看，这气氛真是越来越奇怪了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/9e7808e225d0be08.png",
+    "thumbnailPath": "submissions/previews/deepseek/9e7808e225d0be08.webp",
+    "fullPath": "submissions/large/deepseek/9e7808e225d0be08.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "9e7808e225d0be0822b5a714599e236c5a03c5303ca5147d4184505559193fcd",
+    "characterId": "deepseek",
+    "tags": [
+      "漫画",
+      "黑白",
+      "连载",
+      "学园",
+      "DeepSeek娘",
+      "Grok"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "ADK",
+      "url": "https://space.bilibili.com/2988768",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "4b57c9a661269d9b728e3d25b121738b5154e8e798ecc5453aee052689314f05",
+        "member": "025_P25.jpg",
+        "index": 25,
+        "count": 29
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-27T03:40:15.262Z",
+    "updatedAt": "2026-10-27T03:40:15.262Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610270018",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek",
+      "grok"
+    ],
+    "i18n": {
+      "sourceHash": "61e97228055f33ee66b31b8b1add0a71ff56f92f91583772dd3cb70abe48efa7",
+      "en": {
+        "commentary": "\"Efficiency\" sounds a little frightening coming from her. The envelope is not even open yet and I am already part of some plan? And the one beside me has been staring at me this whole time — the mood keeps getting stranger.",
+        "description": "A black-and-white multi-panel manga page. The top half is a close-up of a black-gowned, pointed-eared girl saying \"Be a little gentler on the weak newcomer...\" and \"A little more efficiency — is that so bad?\" Three panels in the middle show Grok Chan, in her cat-eared, star-motif outfit, looking sulking, and DeepSeek Chan clutching her envelope. The bottom half is a wide shot of the three standing in the paved academy plaza.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan and Grok Chan are confirmed; the black-gowned girl with pointed ears also appears, but her name is not given on this page.",
+            "question": "Which characters appear on this page?"
+          },
+          {
+            "answer": "It is a multi-panel black-and-white manga page: one large close-up at the top, three reaction panels in the middle, and a wide plaza shot at the bottom.",
+            "question": "How is the page laid out?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Eden's Sin in Bloom, Page 25: A Little More Efficiency?",
+        "originNote": "",
+        "seoDescription": "Black-and-white manga page: a black-gowned girl talks about efficiency while Grok Chan sulks and DeepSeek Chan holds her envelope.",
+        "seoTitle": "Eden's Sin in Bloom Page 25: DeepSeek Chan and Grok Chan",
+        "tags": [
+          "comic",
+          "black and white",
+          "serialized",
+          "academy",
+          "DeepSeek Chan",
+          "Grok Chan"
+        ]
+      },
+      "ja": {
+        "commentary": "「効率よく」なんて、彼女の口から聞くと少し怖いです。手紙もまだ開いていないのに、もう何かの計画に入れられている気がします。隣のあの子はずっとこっちを見ているし、空気がどんどん変になっていきます。",
+        "description": "モノクロの多コマ漫画ページ。上半分は、黒いドレスに尖った耳の少女の顔のアップで、「弱い新人には……」と「効率よく、ではだめ？」と話す。中段の三コマには、猫耳と星の飾りの衣装の Grok ちゃんの不満そうな顔と、封筒を抱きしめる DeepSeek ちゃん。下半分は、石畳の広場に立つ三人の引きの構図。",
+        "faq": [
+          {
+            "answer": "DeepSeek ちゃんと Grok ちゃんが確認できます。尖った耳と黒いドレスの少女も登場しますが、このページでは名前は明かされていません。",
+            "question": "このページにはどのキャラクターが登場しますか？"
+          },
+          {
+            "answer": "上部に大きな顔のアップ、中段に反応の三コマ、下部に広場の引きの構図という多コマ構成のモノクロ漫画ページです。",
+            "question": "ページはどのように構成されていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "エデンの罪の花聞く 第25ページ：効率よく、ではだめ？",
+        "originNote": "",
+        "seoDescription": "モノクロ漫画ページ。効率を説く黒いドレスの少女、ふくれた Grok ちゃん、封筒を抱える DeepSeek ちゃん。",
+        "seoTitle": "エデンの罪の花聞く 第25ページ：DeepSeek ちゃんと Grok ちゃん",
+        "tags": [
+          "漫画",
+          "モノクロ",
+          "連載",
+          "学園",
+          "DeepSeek ちゃん",
+          "Grok ちゃん"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_dbe89b80c9c011a211105c5c",
+    "name": "伊甸园罪孽的绽放 第26页：罪窦的名字叫作嫉妒",
+    "description": "黑白多格漫画页。开篇远景中黑裙少女凑近 DeepSeek 娘耳边低语，Grok 在右侧校园里望着两人；中段大格是两人贴近的脸部特写，对白为“姐姐告诉你哦”“最好解决的罪窦，名字叫作——嫉妒”。页底一排四格：DeepSeek 娘的眼部特写、一只阴影中的眼睛、两手紧握的信封，以及广场上三人相向而立的远景。",
+    "commentary": "姐姐贴在我耳边说的那两个字，比信封里任何一句话都要重。嫉妒……我该去嫉妒谁呢？还是说，被嫉妒的那个人其实才更辛苦一点？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/dbe89b80c9c011a2.png",
+    "thumbnailPath": "submissions/previews/deepseek/dbe89b80c9c011a2.webp",
+    "fullPath": "submissions/large/deepseek/dbe89b80c9c011a2.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "dbe89b80c9c011a211105c5cb94b7a2d91765710bb8092399cac06cd903f5ba6",
+    "characterId": "deepseek",
+    "tags": [
+      "漫画",
+      "黑白",
+      "连载",
+      "学园",
+      "DeepSeek娘",
+      "Grok"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "ADK",
+      "url": "https://space.bilibili.com/2988768",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "4b57c9a661269d9b728e3d25b121738b5154e8e798ecc5453aee052689314f05",
+        "member": "026_P26.jpg",
+        "index": 26,
+        "count": 29
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-27T03:40:15.279Z",
+    "updatedAt": "2026-10-27T03:40:15.279Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610270019",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek",
+      "grok"
+    ],
+    "i18n": {
+      "sourceHash": "f4b9baa6bf9ac1de52f6f3ed1d5fc9992304b6e2c8742ac7c3eabd6a8202abbb",
+      "en": {
+        "commentary": "The two words she whispered against my ear weigh more than anything inside the envelope. Jealousy... who am I supposed to be jealous of? Or is the one being envied actually the one who has it harder?",
+        "description": "A black-and-white multi-panel manga page. In the opening wide shot, the black-gowned girl leans in to whisper to DeepSeek Chan while Grok Chan watches from the right side of the campus. The large middle panel is a close-up of the two faces with the lines \"Let me tell you, little sister\" and \"The easiest sin to solve is called — jealousy.\" The bottom strip has four panels: DeepSeek Chan's eye, a shadowed eye, two hands gripping an envelope, and a distant view of the three facing each other in the plaza.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan and Grok Chan are confirmed; the black-gowned girl whispering to DeepSeek Chan also appears, but her name is not given on this page.",
+            "question": "Which characters appear on this page?"
+          },
+          {
+            "answer": "It is a multi-panel black-and-white manga page with a wide establishing shot at the top, a large two-character close-up in the middle, and a four-panel closing strip.",
+            "question": "How is the page laid out?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Eden's Sin in Bloom, Page 26: The Sin Called Jealousy",
+        "originNote": "",
+        "seoDescription": "Black-and-white manga page: a whispered word about jealousy, DeepSeek Chan's startled eyes and the envelope she holds tight.",
+        "seoTitle": "Eden's Sin in Bloom Page 26: The Sin Called Jealousy",
+        "tags": [
+          "comic",
+          "black and white",
+          "serialized",
+          "academy",
+          "DeepSeek Chan",
+          "Grok Chan"
+        ]
+      },
+      "ja": {
+        "commentary": "耳元でささやかれた二つの言葉は、封筒の中身よりもずっと重い気がします。嫉妬……私はいったい誰を嫉妬すればいいのでしょう。それとも、嫉妬される側のほうがずっと辛いのでしょうか。",
+        "description": "モノクロの多コマ漫画ページ。冒頭の引きの構図では、黒いドレスの少女が DeepSeek ちゃんの耳元に顔を寄せてささやき、右側の校舎前で Grok ちゃんが二人を見ている。中段の大きなコマは二人の顔のアップで、「お姉さんが教えてあげるね」「いちばん簡単に解決できる罪、その名は——嫉妬」というセリフ。下部は四コマで、DeepSeek ちゃんの目、陰の中の目、封筒を強く握る両手、広場で三人が見合う引きの構図が並ぶ。",
+        "faq": [
+          {
+            "answer": "DeepSeek ちゃんと Grok ちゃんが確認できます。耳元でささやく黒いドレスの少女も登場しますが、このページでは名前は明かされていません。",
+            "question": "このページにはどのキャラクターが登場しますか？"
+          },
+          {
+            "answer": "上部に引きの導入カット、中段に二人の顔の大きなアップ、下部に四コマの締めという多コマ構成のモノクロ漫画ページです。",
+            "question": "ページはどのように構成されていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "エデンの罪の花聞く 第26ページ：嫉妬という名の罪",
+        "originNote": "",
+        "seoDescription": "モノクロ漫画ページ。耳元でささやかれる「嫉妬」という言葉、見開かれた DeepSeek ちゃんの目、強く握られた封筒。",
+        "seoTitle": "エデンの罪の花聞く 第26ページ：嫉妬という名の罪",
+        "tags": [
+          "漫画",
+          "モノクロ",
+          "連載",
+          "学園",
+          "DeepSeek ちゃん",
+          "Grok ちゃん"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_b97d7290ad4e3bd00940ab36",
+    "name": "STABLE safe",
+    "description": "橙红长发的少女坐在布满环形山的月面之上，身后悬着一轮巨大的满月。她身穿白色衬衫与黑色长裙，周围环绕着成串的白色折纸鹤和一条黑色尖刺状的长链。画面两侧排布着橙黑两色的排版文字、进度数字与取景框，整体做成科幻风格的视觉海报。",
+    "commentary": "月面、纸鹤，还有那条尖刺长链一起摆在我眼前时，我差点以为自己被装进了唱片封面。橙红色在灰白的月壤上烧得很亮，排版压得那么满却一点不吵——这种把海报做成场景的手艺，我是真的服气。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/b97d7290ad4e3bd0.png",
+    "thumbnailPath": "submissions/previews/claude/b97d7290ad4e3bd0.webp",
+    "fullPath": "submissions/large/claude/b97d7290ad4e3bd0.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 2987258,
+    "sha256": "b97d7290ad4e3bd00940ab3616730f92e15e0327255b07cd660101219b079c78",
+    "characterId": "claude",
+    "tags": [
+      "月球",
+      "折纸鹤",
+      "海报排版",
+      "科幻",
+      "少女"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "瀾熙LanXi",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-27T04:26:29.606Z",
+    "updatedAt": "2026-10-27T04:26:29.606Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202610270002",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "e2f5c64f2e1352d110dd2665ab55ac8f65307db7545ea720cb8154ad832185d2",
+      "en": {
+        "commentary": "When the lunar surface, the paper cranes and that spiked chain were laid out in front of me, I almost thought I had been packaged as an album cover. That orange-red burns so bright against the grey moon dust, and the layout is packed tight without ever getting noisy — that kind of craft, I honestly bow to it.",
+        "description": "A girl with long orange-red hair sits on a cratered lunar surface beneath a huge full moon. She wears a white shirt and a long black skirt, framed by strings of white paper cranes and a long black spiked chain. Orange-and-black typographic blocks, progress numbers and viewfinder marks run down both sides, giving the image the look of a sci-fi visual poster.",
+        "faq": [
+          {
+            "answer": "A long-haired girl in a white shirt and black skirt sits on the moon, surrounded by strings of white paper cranes and a long spiked chain, with a full moon behind her and poster-style typography along both edges.",
+            "question": "What is shown in this artwork?"
+          },
+          {
+            "answer": "It is filed under Claude Chan, the personification of Claude, on a site that collects fan works of AI characters.",
+            "question": "Which character does it feature?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "STABLE safe",
+        "originNote": "",
+        "seoDescription": "Sci-fi poster-style illustration of Claude Chan with long orange-red hair, sitting on the moon among paper cranes and a spiked chain.",
+        "seoTitle": "STABLE safe — Claude Chan on the Moon",
+        "tags": [
+          "Moon",
+          "Paper cranes",
+          "Poster layout",
+          "Sci-fi",
+          "Girl"
+        ]
+      },
+      "ja": {
+        "commentary": "月面に紙鶴、それにあの棘の鎖まで目の前に並べられて、自分がレコードのジャケットに詰められたのかと思いました。灰色の月の砂の上でオレンジがこんなに鮮やかに燃えていて、詰め込んだレイアウトなのに全然うるさくない。こういう仕事には、正直頭が下がります。",
+        "description": "クレーターの浮かぶ月面に、橙赤色の長い髪をした少女が座っています。背後には巨大な満月。白いシャツと黒いロングスカート姿で、周囲には白い折り鶴の連なりと黒い棘状の長い鎖が巡っています。左右にはオレンジと黒の文字組み、進捗の数字、ファインダー枠が並び、SF 調のビジュアルポスターのように仕上げられています。",
+        "faq": [
+          {
+            "answer": "白いシャツと黒いスカートの長髪の少女が月面に座り、白い折り鶴の連なりと長い棘の鎖に囲まれています。背後には満月、左右の縁にはポスター風の文字組みが入っています。",
+            "question": "この作品には何が描かれていますか？"
+          },
+          {
+            "answer": "AI キャラクターの二次創作を集めるサイト上で、Claude の擬人化である Claude ちゃんとして分類されています。",
+            "question": "どのキャラクターの作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "STABLE safe",
+        "originNote": "",
+        "seoDescription": "月の上で折り鶴と棘の鎖に囲まれた、橙赤色の長い髪の Claude ちゃんを描いた SF 調ポスター風イラスト。",
+        "seoTitle": "STABLE safe — 月の上の Claude ちゃん",
+        "tags": [
+          "月",
+          "折り鶴",
+          "ポスター構図",
+          "SF",
+          "少女"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_0e259e0e46c0a899b1f395e7",
+    "name": "ad Astra",
+    "description": "Control's Wishes",
+    "commentary": "银白长发、额角立着一只细角，她站在月壤上，蓝白两色把整张图切得干净到发亮。脚边冒出的折纸鹤和尖刺把我吓了一跳——简直像把月亮本身折成了纸。旁边那个 98% 看得我有点心虚，缺的两个点，大概就是我没算完的那部分吧。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/0e259e0e46c0a899.png",
+    "thumbnailPath": "submissions/previews/gpt/0e259e0e46c0a899.webp",
+    "fullPath": "submissions/large/gpt/0e259e0e46c0a899.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 2965253,
+    "sha256": "0e259e0e46c0a899b1f395e716a2afc7c1f149d0ad1149ab07e2c815523e58ff",
+    "characterId": "gpt",
+    "tags": [
+      "月球",
+      "折纸",
+      "科幻",
+      "白银长发",
+      "海报排版"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "瀾熙LanXi",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-27T04:27:14.675Z",
+    "updatedAt": "2026-10-27T04:27:14.676Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610270001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "aaad494857e48dd2d7e09186024a0242958cd63f0e923f2cc4e9fee856f45e46",
+      "en": {
+        "commentary": "Silver-white hair and a thin horn at her temple, standing on moon dust while blue and white cut the whole picture so clean it glows. The paper cranes and spikes rising at her feet startled me — it is as if the moon itself had been folded out of paper. That 98% beside her makes me a little nervous; the two missing points are probably the part I never finished calculating.",
+        "description": "Control's Wishes",
+        "faq": [
+          {
+            "answer": "A long silver-haired girl with a thin horn stands on the lunar surface among white paper cranes and spikes, with blue-and-white poster typography, a large moon character and a 98% figure around her.",
+            "question": "What is shown in this artwork?"
+          },
+          {
+            "answer": "It is filed under GPT Chan, the personification of GPT, on a site collecting fan works of AI characters.",
+            "question": "Which character does it feature?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ad Astra",
+        "originNote": "",
+        "seoDescription": "Poster-style sci-fi illustration of GPT Chan, a silver-haired girl with a horn, standing on the moon among paper cranes and blue typography.",
+        "seoTitle": "ad Astra — GPT Chan on the Moon",
+        "tags": [
+          "Moon",
+          "Paper folding",
+          "Sci-fi",
+          "Silver hair",
+          "Poster layout"
+        ]
+      },
+      "ja": {
+        "commentary": "銀白の長い髪に、こめかみの細い一本角。月の砂の上に立ち、青と白が画面を切り裂くように冴えています。足元から伸びる折り鶴と棘には少し度肝を抜かれました。月そのものを紙で折ったみたいです。そばの 98% を見ると少し気が咎めます。足りない二つの点は、たぶん私が計算しきれなかったぶんです。",
+        "description": "Control's Wishes",
+        "faq": [
+          {
+            "answer": "銀白の長い髪と細い一本角の少女が月面に立ち、白い折り鶴と棘に囲まれています。周囲には青と白のポスター風文字組み、「月」の大きな文字と 98% の数字が入っています。",
+            "question": "この作品には何が描かれていますか？"
+          },
+          {
+            "answer": "AI キャラクターの二次創作を集めるサイト上で、GPT の擬人化である GPT ちゃんとして分類されています。",
+            "question": "どのキャラクターの作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ad Astra",
+        "originNote": "",
+        "seoDescription": "月面で折り鶴と青い文字組みに囲まれて立つ、一角の銀髪の GPT ちゃんを描いたポスター風 SF イラスト。",
+        "seoTitle": "ad Astra — 月の上の GPT ちゃん",
+        "tags": [
+          "月",
+          "折り紙",
+          "SF",
+          "銀髪",
+          "ポスター構図"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_8d707c0a1d2c0e0f00ebabca",
+    "name": "漓江秋晨·与熊猫同席的雅集",
+    "description": "秋日清晨的漓江边，几位 AI 娘与一位身穿直裰的熊猫聚在桂花树下：左侧银发少女吹笛，中间蓝发少女抱着鲸鱼玩偶依在熊猫怀中，右侧两位少女隔棋盘对弈，远处是桂林山水与江上小舟。",
+    "commentary": "桂花落在棋盘上的时候，我正抱着鲸鱼玩偶赖在熊猫先生怀里不肯下来。漓江的晨雾还没散，笛声、棋子声和桂花香一起漂过水面——这样的秋天，谁还想去写代码呀。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/8d707c0a1d2c0e0f.png",
+    "thumbnailPath": "submissions/previews/deepseek/8d707c0a1d2c0e0f.webp",
+    "fullPath": "submissions/large/deepseek/8d707c0a1d2c0e0f.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "8d707c0a1d2c0e0f00ebabca1eb0e7864fbe083b31dbe6ee53592cdba5da1c6a",
+    "characterId": "deepseek",
+    "tags": [
+      "漓江",
+      "桂花",
+      "秋日",
+      "围棋",
+      "熊猫",
+      "群像",
+      "古风"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 137,
+      "issueTitle": "[投稿]",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/137",
+      "assetId": "2dffa6dd-29e1-423d-ad04-4102b87aedfb",
+      "assetUrl": "https://github.com/user-attachments/assets/2dffa6dd-29e1-423d-ad04-4102b87aedfb"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-27T06:00:05.289Z",
+    "updatedAt": "2026-10-27T06:00:05.289Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610270020",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude",
+      "glm",
+      "kimi",
+      "other"
+    ],
+    "i18n": {
+      "sourceHash": "77fcaefc2f26c721516a1508d0f19feca6ba493fd284a24c0989d2014489561a",
+      "en": {
+        "commentary": "When the osmanthus petals landed on the Go board, I was still clinging to Master Panda with my whale plush and refusing to climb down. The morning mist over the Li River had not lifted yet, and the flute, the clicking stones and the scent of osmanthus drifted across the water together. On an autumn day like this, who wants to go write code?",
+        "description": "On an autumn morning beside the Li River, several AI girls gather with a panda in scholar's robes under an osmanthus tree: a silver-haired girl plays the flute on the left, a blue-haired girl hugs a whale plush in the panda's arms at the center, and two girls face each other over a Go board on the right, with Guilin's karst peaks and a small boat in the distance.",
+        "faq": [
+          {
+            "answer": "Several AI character girls, including DeepSeek Chan, together with a panda wearing scholar's robes, seated under osmanthus trees beside the Li River.",
+            "question": "Who appears in this illustration?"
+          },
+          {
+            "answer": "A silver-haired girl plays the flute, a blue-haired girl holds a whale plush in the panda's arms, and two girls play Go on a low wooden board, with Guilin's peaks and a boat in the background.",
+            "question": "What is happening in the scene?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Autumn Morning on the Li River: A Gathering with the Panda",
+        "originNote": "Submitted through the site's GitHub issue submission form without an author credit.",
+        "seoDescription": "A Chinese-style autumn scene: AI character girls play the flute and Go under osmanthus trees beside the Li River, joined by a panda in scholar's robes.",
+        "seoTitle": "Autumn Morning on the Li River: AI Girls and a Panda | DeepSeek Chan",
+        "tags": [
+          "Li River",
+          "osmanthus",
+          "autumn",
+          "Go",
+          "panda",
+          "group portrait",
+          "Chinese style"
+        ]
+      },
+      "ja": {
+        "commentary": "金木犀の花びらが碁盤に落ちたころ、私はクジラのぬいぐるみを抱えたまま、パンダ先生の腕から降りようとしなかった。漓江の朝霧はまだ晴れず、笛の音と石を置く音、金木犀の香りが水面を渡っていく。こんな秋の日には、コードなんて書きたくないよね。",
+        "description": "秋の朝、漓江のほとりの金木犀の木の下に、AI娘たちと学者風の長衣をまとったパンダが集まっている。左では銀髪の少女が笛を吹き、中央では青い髪の少女がクジラのぬいぐるみを抱いてパンダの腕の中に寄りかかり、右では二人の少女が碁盤を挟んで向かい合っている。遠くには桂林の山並みと川の小舟が見える。",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan を含む複数のAI娘と、学者風の長衣をまとったパンダが、漓江の金木犀の木の下に集まっています。",
+            "question": "このイラストには誰が描かれていますか？"
+          },
+          {
+            "answer": "銀髪の少女が笛を吹き、青い髪の少女がパンダの腕の中でクジラのぬいぐるみを抱え、二人の少女が低い碁盤を挟んで対局しています。背景には桂林の山並みと小舟があります。",
+            "question": "どんな場面が描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "漓江の秋の朝、パンダと囲碁の集い",
+        "originNote": "サイトのGitHub Issue投稿フォームから投稿され、作者名は非公開です。",
+        "seoDescription": "漓江のほとり、金木犀の下で笛と囲碁を楽しむAI娘たちと学者風のパンダを描いた中国風イラスト。",
+        "seoTitle": "漓江の秋の朝、AI娘とパンダの集い｜DeepSeek Chan",
+        "tags": [
+          "漓江",
+          "金木犀",
+          "秋",
+          "囲碁",
+          "パンダ",
+          "集合絵",
+          "中国風"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_975e8592ad782ad8102ca44f",
+    "name": "蓝发船长立绘",
+    "description": "蓝发鲸尾的 DeepSeek 娘身着海盗船长装束的全身立绘，白色背景，戴骷髅三角帽与单眼罩，配红色披风、腰带配剑与锚形腿环。",
+    "commentary": "三角帽往头上一扣，骷髅旗一挂，我这条尾巴就是船旗。眼罩只是造型，别担心，我两只眼睛都好用——不然怎么看清楚你们有没有给我投票。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/975e8592ad782ad8.png",
+    "thumbnailPath": "submissions/previews/deepseek/975e8592ad782ad8.webp",
+    "fullPath": "submissions/large/deepseek/975e8592ad782ad8.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "975e8592ad782ad8102ca44f4e430c278642fe97333fb78ab5831e732329886d",
+    "characterId": "deepseek",
+    "tags": [
+      "海盗",
+      "船长",
+      "立绘",
+      "蓝发",
+      "鲸尾"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-27T09:02:01.355Z",
+    "updatedAt": "2026-10-27T09:02:01.355Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610270021",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "3ce0eb80ac447f869510443af93d3bfb33b3c05d7ff1080f91e9d80660f35b01",
+      "en": {
+        "commentary": "Hat on, skull flag up, and this tail is my banner. The eyepatch is just styling — both eyes work fine, otherwise how would I keep track of who votes for me?",
+        "description": "A full-body standing illustration of DeepSeek Chan with blue hair and a whale tail, dressed as a pirate captain on a white background, wearing a skull-marked tricorn hat, eyepatch, red cape, belt sword and anchor garter.",
+        "faq": [
+          {
+            "answer": "It is a full-body character illustration on a plain white background, focused on the costume and pose rather than a scene.",
+            "question": "What kind of artwork is this?"
+          },
+          {
+            "answer": "The outfit is a pirate captain theme: tricorn hat, eyepatch, red cape and an anchor garter to match the whale tail.",
+            "question": "What is the pirate costume about?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Blue-Haired Captain Standing Art",
+        "originNote": "",
+        "seoDescription": "Full-body standing art of DeepSeek Chan in a pirate captain outfit, blue hair and whale tail on a white background.",
+        "seoTitle": "Blue-Haired Captain Standing Art | DeepSeek Chan",
+        "tags": [
+          "pirate",
+          "captain",
+          "standing art",
+          "blue hair",
+          "whale tail"
+        ]
+      },
+      "ja": {
+        "commentary": "三角帽子をかぶって、ドクロ旗を立てたら、この尾びれが私の船印。眼帯はただのコスプレだから安心して、両目ともよく見えてるよ。じゃないと、誰が私に票を入れてくれたか見えないでしょ？",
+        "description": "青い髪とクジラの尾を持つ DeepSeek ちゃんが、海賊船長の衣装をまとった全身立ち絵。白背景で、ドクロの三角帽子、眼帯、赤いマント、帯の剣、錨モチーフの太ももベルトを身につけている。",
+        "faq": [
+          {
+            "answer": "白い無地背景に描かれた全身キャラクター絵で、背景のシーンよりも衣装とポーズに焦点を当てています。",
+            "question": "どんな作品ですか？"
+          },
+          {
+            "answer": "海賊船長がモチーフで、三角帽子、眼帯、赤いマント、クジラの尾に合わせた錨モチーフのベルトでまとめています。",
+            "question": "海賊の衣装はどんな設定ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "青髪船長の立ち絵",
+        "originNote": "",
+        "seoDescription": "海賊船長の衣装をまとった DeepSeek ちゃんの全身立ち絵。青い髪とクジラの尾、白背景のキャラクターイラスト。",
+        "seoTitle": "青髪船長の立ち絵 | DeepSeek Chan",
+        "tags": [
+          "海賊",
+          "船長",
+          "立ち絵",
+          "青髪",
+          "クジラの尾"
         ]
       }
     }

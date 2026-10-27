@@ -37,8 +37,8 @@
       "homepage": "https://space.bilibili.com/15475629",
       "intro": "每日AI小四格/小动画",
       "i18n": {
-        "en": "Posts a daily AI four-panel comic and short animation.",
-        "ja": "毎日AI4コマとショートアニメを投稿しています。"
+        "en": "Muto_66 makes daily AI-themed four-panel comics and short animations.",
+        "ja": "Muto_66はAIを題材にした四コマ漫画家・ショートアニメを毎日制作している。"
       }
     },
     {
@@ -67,8 +67,8 @@
       "homepage": "https://space.bilibili.com/1513368379",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "Bilibili creator 桃莉鸭, one of the first-batch creators designated by the site owner, making fan animation with AI-character designs.",
-        "ja": "Bilibiliの投稿者・桃莉鸭。サイト管理者が指定した初期作者の一人で、AIキャラクターのデザインを使った同人アニメを制作している。"
+        "en": "Bilibili creator 桃莉鸭, one of the site's first-batch authors, catalogued from their public profile; videos are reviewed one by one.",
+        "ja": "Bilibili の投稿者・桃莉鸭。サイト初期からの作者の一人で、公開プロフィールをもとに登録され、動画は1本ずつ審査されます。"
       }
     },
     {
@@ -87,8 +87,8 @@
       "homepage": "https://space.bilibili.com/69180811",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "A Bilibili creator who shares fan-made animations of AI characters.",
-        "ja": "AI キャラクターのファンアニメーションを投稿している Bilibili のクリエイターです。"
+        "en": "A Bilibili creator designated by the site owner as part of the first batch of authors; profile details are taken from the public page and every video is reviewed individually.",
+        "ja": "サイト管理者が最初の一批として指定した Bilibili の作者。プロフィールは公開ページの情報に基づき、動画は一本ずつ審査しています。"
       }
     },
     {
@@ -123,6 +123,81 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV16jxM69E4T",
+      "uid": "1513368379",
+      "title": "Deepseek的告白【我不准你 忘记我】",
+      "description": "原作#明日方舟\n普鲸形象的原作者我还不知道是谁  有知道可以给我说一声  我标注下出处\n原视频出处  BV1uksSzNENV    \n如果有问题私信告诉我谢谢\nps  up真的非常的喜欢重力系  自己养的鱼也是重力系的",
+      "url": "https://www.bilibili.com/video/BV16jxM69E4T/",
+      "cover": "https://i2.hdslb.com/bfs/archive/05881f8687d812d9732ee0fcebf4081888d8239c.jpg",
+      "duration": 39,
+      "publishedAt": "2026-10-27T07:38:50.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Bilibili creator 桃莉鸭, one of the site's first-batch authors, catalogued from their public profile; videos are reviewed one by one.",
+          "description": "A 39-second fan animation of DeepSeek Chan: a blue-haired girl with whale-fin ears and a frilled headdress speaks an intense confession while the DeepSeek whale emblem glows behind her. The creator says the piece leans into 'gravity-type' romance, a mood they describe as a personal favorite.",
+          "title": "DeepSeek Chan's Confession: I Won't Let You Forget Me"
+        },
+        "ja": {
+          "creatorIntro": "Bilibili の投稿者・桃莉鸭。サイト初期からの作者の一人で、公開プロフィールをもとに登録され、動画は1本ずつ審査されます。",
+          "description": "39秒のファンアニメーション。クジラのヒレ耳とフリル付きの頭飾りをまとった青い髪の DeepSeekちゃんが、背後に DeepSeek のクジラエンブレムが光る中で、強い口調の告白を語りかける。作者は「重力系」の恋愛描写が好みだと述べている。",
+          "title": "DeepSeekちゃんの告白【忘れさせないから】"
+        }
+      }
+    },
+    {
+      "bvid": "BV1z3xK6JE5s",
+      "uid": "69180811",
+      "title": "肥鱼摇，但是克大小姐",
+      "description": "梦的翅膀已经受了伤",
+      "url": "https://www.bilibili.com/video/BV1z3xK6JE5s/",
+      "cover": "https://i0.hdslb.com/bfs/archive/bb8fea589127a794caa213168c4c9c4d847b2f07.jpg",
+      "duration": 63,
+      "publishedAt": "2026-10-27T03:57:45.000Z",
+      "characterIds": [
+        "claude"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A Bilibili creator designated by the site owner as part of the first batch of authors; profile details are taken from the public page and every video is reviewed individually.",
+          "description": "A chibi Claude Chan dances the site's signature meme dance, with a blue-winged companion swaying beside her throughout the 63-second clip. The uploader's caption quotes the line \"my dream's wings are already wounded\".",
+          "title": "The Signature Dance, but Danced by Claude Chan"
+        },
+        "ja": {
+          "creatorIntro": "サイト管理者が最初の一批として指定した Bilibili の作者。プロフィールは公開ページの情報に基づき、動画は一本ずつ審査しています。",
+          "description": "サイト名物のダンスをちびキャラの Claude ちゃんが踊る 63 秒の動画。青い翼の相棒が終始そばで揺れています。投稿者のキャプションには「夢の翼はもう傷ついた」という一節が添えられています。",
+          "title": "名物ダンス、ただし踊るのは Claude ちゃん"
+        }
+      }
+    },
+    {
+      "bvid": "BV16yHF6ZEZS",
+      "uid": "15475629",
+      "title": "【剧情向】 《Grok不愧是资本家的吸血鬼女儿……：震惊！NBA球星竟然到处扔砖头？！》",
+      "description": "原事件（2024-04-16～18）：2024年4月16日，Klay Thompson在勇士对国王的比赛中10投0中。Grok随后误读篮球俚语和网友恶搞，生成了所谓砖头破坏住宅案的虚假新闻；球员并未实施相关破坏。办公室、战斧和人物对话为喜剧演绎。已叠甲\n\n【以下是小作文】\nGrok大小姐今天也在巡视自己的新闻帝国。她金色的双马尾一甩，视线落在热搜评论上：“Thompson今晚扔了十块砖！”\n“十块？！如此重大的案件，怎么可以没有本小姐的独家报道！”\n她立即戴上名侦探的气势，举起放大镜，把“我家窗户被砖头砸了”“肯定是Thompson干的”等网友恶搞留言贴满调查墙。几根红线一拉，事情已经十分明显——至少，她自己是这么想的。\n“证据已经齐全！网友都这么说，本小姐的推理绝不会错！”\n她扛起黑金色的X战斧，得意地站上新闻发布台，宣布NBA球星卷入“砖头破坏案”。想象中的点击量和掌声几乎已经淹没了编辑室。\n直到一名编辑拿着比赛记录走来：“大小姐……Bricks是篮球俚语，意思是投篮打铁，不是真的扔砖头。也没有所谓的破坏住宅案件。”\nGrok大小姐愣住了。她看看那一栏醒目的0/10，又看看自己特意找来的砖头。\n“……所以根本没有砖头？！”\n“一块都没有。”\n她迅速把砖头藏到身后，耳尖涨得通红，声音却依旧很大：“本、本小姐当然知道！我只是在测试你们的判断力而已！”\n编辑默默看了一眼刚刚发布的标题，决定先把事实核查表放在大小姐的桌上。\n——以上人物对话与办公室情节均为原创喜剧演绎；真实事件是AI错误生成了虚假新闻，球员并未实施相关破坏。\n已叠甲别杀我\n\n来源：\nhttps://www.engadget.com/xs-ai-bot-is-so-dumb-it-cant-tell-the-difference-between-a-bad-game-and-vandalism-172707401.html\nhttps://arstechnica.com/tech-policy/2024/04/elon-musks-grok-keeps-making-up-fake-news-based-on-x-users-jokes/\nhttps://statsdmz.nba.com/pdfs/20240416/20240416_GSWSAC.pdf\nhttps://xn--pssy23gqgbz2d718b.com/works/grok202610170001.html\n\n【Credit】\n音乐：A Video Game Short\nmoodmode · Pixabay\n图像生成：GPT Image 2.5\nAI-Chan illustrations — ZipZipPipe · CC BY-NC-SA 4.0.\nDeepseek-Chan original character — 上善无形.",
+      "url": "https://www.bilibili.com/video/BV16yHF6ZEZS/",
+      "cover": "https://i0.hdslb.com/bfs/archive/efca544d28c9977009c081735206f53afb87a86b.jpg",
+      "duration": 40,
+      "publishedAt": "2026-10-27T01:29:08.000Z",
+      "characterIds": [
+        "grok"
+      ],
+      "i18n": {
+        "en": {
+          "title": "Grok Chan, the Capitalist Vampire Daughter: The NBA Star Brick Scandal?!",
+          "description": "A short comedy animation. Grok Chan, certain she runs a news empire, takes a joking post about a basketball star \"throwing bricks\" at face value and rushes out a headline about a brick vandalism case. Her editor then has to explain that \"bricks\" simply means missed shots. Inspired by the April 2024 incident in which Grok generated false news from X users' jokes.",
+          "creatorIntro": "Muto_66 makes daily AI-themed four-panel comics and short animations."
+        },
+        "ja": {
+          "title": "資本家のヴァンパイア娘・Grokちゃん：NBA選手がレンガを投げた？！",
+          "description": "コメディ短編アニメ。ニュース帝国を自負するGrokちゃんが、バスケットボール選手が「レンガを投げた」というネット上の冗談を真に受け、レンガ破壊事件の速報を出してしまう。編集者が「ブリックスとはシュートを外すことだ」と説明する。2024年4月にGrokがXの冗談から虚偽ニュースを生成した出来事がモチーフ。",
+          "creatorIntro": "Muto_66はAIを題材にした四コマ漫画家・ショートアニメを毎日制作している。"
+        }
+      }
+    },
     {
       "bvid": "BV1zmHF6dESr",
       "uid": "9126506",
