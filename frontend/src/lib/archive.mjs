@@ -27,6 +27,7 @@ import { createVideoPages } from '../components/archive/VideoPages.mjs';
 import { createDemoPages } from './demo-design.mjs';
 import {createPageModel} from '../components/library/page-model.mjs';
 import {videoArchive} from './video-archive.mjs';
+import {events} from './events.mjs';
 const root = process.env.SITE_SOURCE || path.resolve(process.cwd(), '..');
 const read = name => JSON.parse(fs.readFileSync(path.join(root, 'frontend/src/data', name), 'utf8'));
 const works = Object.entries(overlayData()).map(([slug,w])=>({...w,slug}));
@@ -107,7 +108,7 @@ for(const [key,en,ja] of [
  ['releaseFlow','Creator registration, RSSHub discovery, AI review and automatic publishing are connected, with release notifications sent to the Feishu group.','作者登録、RSSHubによる検出、AI審査、自動公開を接続。公開結果はFeishuグループに通知します。']
 ]){translations.en['d.design.'+key]=en;translations.ja['d.design.'+key]=ja;}
 for(const work of works)work.owners=topics.filter(t=>t.author&&t.list.some(w=>w.id===work.id)).map(t=>{const uid=t.author.channels.map(c=>c.url.match(/space\.bilibili\.com\/(\d+)/)?.[1]).find(Boolean);return {name:t.author.name,href:'/creators/'+(uid?'bilibili-'+uid:t.id)+'.html'};});
-const ctx={works,bySlug,chars,topics,types,snapshot,localizationInputs:{videoArchive,friendLinks},translations,editorial:read('discovery.json'),modelVendors:read('model-vendors.json').vendors,commonTags:[...tagCounts].sort((a,b)=>b[1]-a[1]).slice(0,16)};
+const ctx={works,bySlug,chars,topics,types,snapshot,localizationInputs:{videoArchive,friendLinks,events},translations,editorial:read('discovery.json'),modelVendors:read('model-vendors.json').vendors,commonTags:[...tagCounts].sort((a,b)=>b[1]-a[1]).slice(0,16)};
 Object.assign(ctx,createPrimitives(ctx));
 for(const factory of [createWorkCards,createCollectionCards,createCharacterCards,createListing]) Object.assign(ctx,factory(ctx));
 ctx.seo=createSEO(ctx);

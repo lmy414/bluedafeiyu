@@ -5,6 +5,7 @@ import {applyNativeContent} from './native-content.mjs';
 import {nativeArchiveName} from './native-archives.mjs';
 import {videoArchive} from '../src/lib/video-archive.mjs';
 import {videoCopy} from '../src/lib/video-copy.mjs';
+import {eventPageMetadata} from '../src/lib/events.mjs';
 import path from 'node:path';
 import vm from 'node:vm';
 import { parseHTML } from 'linkedom';
@@ -61,6 +62,8 @@ function pageMeta(document, api, base, snapshot, archive) {
     setMeta(document, 'meta[name="description"]', converter(document.querySelector('meta[name="description"]')?.getAttribute('content') || ''));
   }
   let landing;
+  const eventMeta = eventPageMetadata(base, locale);
+  if (eventMeta) landing = eventMeta;
   if (base === '/index.html') landing = homeMeta(snapshot.works.filter(w=>w.status === 'published').length, locale);
   if (base === '/about.html') landing = { title: localizedCopy(aboutSEO,locale), description: localizedCopy(aboutDescription,locale) };
   if (base === '/projects.html') landing = {
@@ -176,6 +179,13 @@ export async function localizeHtml(html, base, locale, snapshot) {
       const entity=entitySlug && snapshot.works.find(w=>w.slug===entitySlug)?.i18n?.[locale.id];
       if(entity && value.name) value.name=entity.name;
       const archivePath=String(value.url||value.item||'');
+      if (archivePath) {
+        const eventMeta = eventPageMetadata(new URL(archivePath, ORIGIN).pathname.replace(/^\/(en|ja)(?=\/)/, ''), locale.id);
+        if (eventMeta) {
+          if (value.name) value.name = eventMeta.name;
+          if (value.description) value.description = eventMeta.description;
+        }
+      }
       if(value.name&&['en','ja'].includes(locale.id)&&archivePath){
         const name=nativeArchiveName(new URL(archivePath,ORIGIN).pathname.replace(/^\/(en|ja)/,''),api,snapshot);if(name)value.name=name;
       }

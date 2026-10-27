@@ -38,7 +38,7 @@ export const EVENT = {
   id: 'national-day-2026',
   href: '/events/national-day-2026.html',
   img: '/events/national-day-2026.webp', imgW: 720, imgH: 900,
-  popupUntil: '2026-11-07T23:59:59+08:00',
+  popupUntil: '2026-10-26T23:59:59+08:00',
   repo: 'https://github.com/lmy414/bluedafeiyu-design-2026',
   gallery: 'https://lmy414.github.io/bluedafeiyu-design-2026/'
 };

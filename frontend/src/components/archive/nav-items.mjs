@@ -6,5 +6,5 @@ export const navigation = [
   { id: 'weekly', href: 'https://weekly.xn--pssy23gqgbz2d718b.com/', icon: 'book', key: 'd.weeklyNav', label: 'AI 娘周刊' },
   { id: 'community', href: '/community.html', icon: 'heart', key: 'v2.nav.community', label: '社群' },
   { id: 'projects', href: '/projects.html', icon: 'link', key: 'd.friendsTitle', label: '友情链接' },
-  { id: 'event', href: '/events/national-day-2026.html', icon: 'spark', key: 'v2.nav.events', label: '最新活动' }
+  { id: 'event', href: '/events.html', icon: 'spark', key: 'v2.nav.events', label: '活动' }
 ];

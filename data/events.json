@@ -1,0 +1,15 @@
+[
+  {
+    "id": "national-day-2026",
+    "status": "archived",
+    "href": "/events/national-day-2026.html",
+    "title": ["2026 国庆 · 网站前台设计征集", "2026 National Day · Website Design Contest", "2026年国慶節・サイトデザイン募集"],
+    "summary": ["一起探索 AI 娘二创站的不同样子，留下大家的设计与创作。", "Explore the community’s ideas for an AI-girl fan art site and revisit the submitted designs.", "AI娘の二次創作サイトのさまざまな姿を、みんなのデザインとともに振り返ります。"],
+    "statusLabel": ["征集已结束 · 结果待公布", "Submissions closed · Results pending", "募集終了・結果発表待ち"],
+    "deadline": "2026-10-26T23:59:59+08:00",
+    "cover": {"src": "/events/national-day-2026.webp", "width": 720, "height": 900},
+    "coverAlt": ["鲸鱼娘举着国庆快乐的表情包", "Whale girl holding a Happy National Day sign", "国慶節のお祝いを掲げるクジラの少女"],
+    "repository": "https://github.com/lmy414/bluedafeiyu-design-2026",
+    "exhibition": "https://lmy414.github.io/bluedafeiyu-design-2026/"
+  }
+]

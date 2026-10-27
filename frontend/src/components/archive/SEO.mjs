@@ -7,6 +7,7 @@ import path from 'node:path';
 import { seoContext, seoTitle } from '../../lib/seo.mjs';
 import { homeMeta, guides, guidePath, characterSearchAliases } from '../../lib/landing-copy.mjs';
 import {isGifWork} from '../../../public/archive/work-format.js';
+import {events, eventPaths, eventsByStatus, defaultEventStatus, eventPageMetadata} from '../../lib/events.mjs';
 
 export const pageURL = (base, n) => n === 1 ? base :
   (base === '/browse.html' ? '/page/' : base.replace(/\.html$/, '/page/')) + n + '.html';
@@ -39,13 +40,16 @@ export function createSEO(ctx) {
     '/search.html': ['搜索 AI 娘作品、角色与标签 — 蓝色大肥鱼', '用作品名、角色别名、图片说明或标签查找已收录的 AI 娘作品，并按角色与作品类型筛选。'],
     '/submit.html': ['投稿 AI 娘二创作品：来源与授权填写指南 — 蓝色大肥鱼', '了解 AI 娘图片投稿需要填写的角色、作品类型、原始来源、署名和授权信息。站内投稿和 GitHub 表单均会进入审核队列。'],
     '/community.html': [`${SITE.group.name}社群与公开交流入口 — 蓝色大肥鱼`, `查看${SITE.group.name} QQ 交流群、站长公开账号和二创交流入口，分享作品、参加活动或反馈归档问题。`],
-    '/events/national-day-2026.html': ['2026 国庆前台设计征集：规则与投稿入口 — 蓝色大肥鱼', '查看蓝色大肥鱼 2026 国庆前台设计征集的参加方式、奖项、截止时间、活动仓库和投稿展览。'],
     '/about.html': ['关于蓝色大肥鱼：图片来源、版权与使用许可', '了解 AI 娘二创档案的整理方式、图片署名与授权状态、统计与隐私，以及补署名和下架申请流程。'],
     '/changelog.html': ['蓝色大肥鱼更新日志：内容收录与站点变更', '查阅蓝色大肥鱼正式站点的历史更新记录，了解作品收录、功能和维护变更。查看正式站点的内容收录与功能变更。'],
     '/projects.html': ['友情链接墙 — 蓝色大肥鱼', '按项目类、网站类浏览蓝色大肥鱼的友情链接，发现相关项目、图片来源与创作网站。'],
     '/404.html': ['页面不存在 — 蓝色大肥鱼', '这个页面不存在或作品已下架。返回作品档案，按角色与类型继续寻找图片。'],
     '/category.html': ['AI 娘角色图鉴：DeepSeek娘、GPT娘、Claude娘与更多 — 蓝色大肥鱼', '按角色寻找 AI 娘表情包、插画和漫画。进入 DeepSeek娘、GPT娘、Claude娘、GLM娘、Gemini娘和 Kimi娘的独立档案，查看来源与授权。']
   };
+  for (const url of ['/events.html', ...Object.values(eventPaths), ...events.map(event => event.href)]) {
+    const meta = eventPageMetadata(url);
+    main[url] = [meta.title, meta.description];
+  }
   for (const guide of guides) main[guidePath(guide)] = [guide.name[0] + ' — 蓝色大肥鱼', guide.summary[0]];
   const full = p => /^https?:/.test(p) ? p : ORIGIN + p;
   const json = value => JSON.stringify(value).replace(/</g, '\\u003c');
@@ -106,6 +110,16 @@ export function createSEO(ctx) {
         { '@type': 'Organization', '@id': ORIGIN + '/#organization', url: ORIGIN + '/', name: '蓝色大肥鱼',
           alternateName: ['大肥鱼', '大肥魚', '藍色大肥魚', 'Blue Dafeiyu'], logo: ORIGIN + '/favicon.png', sameAs: [SITE.repoSource, SITE.repoContent] }
       ] };
+      if (['/events.html', ...Object.values(eventPaths)].includes(url)) {
+        const status = url === eventPaths.current ? 'current' : url === eventPaths.archived ? 'archived' : defaultEventStatus;
+        schema['@type'] = 'CollectionPage';
+        schema.mainEntity = {'@type': 'ItemList', numberOfItems: eventsByStatus(status).length, itemListElement: eventsByStatus(status).map((event, i) => ({'@type': 'ListItem', position: i + 1, item: {'@type': 'WebPage', name: event.title[0], url: full(event.href), image: full(event.cover.src)}}))};
+      }
+      const event = events.find(item => item.href === url);
+      if (event) {
+        image = event.cover.src;
+        trail.splice(1, 0, ['往期活动回顾', eventPaths.archived]);
+      }
     }
     const breadcrumb = { '@type': 'BreadcrumbList', itemListElement: trail.map(([name, p], i) => ({ '@type': 'ListItem', position: i + 1, name, item: full(p) })) };
     const share = w ? workShareCopy(w) : {title,sub:c?.character?.name || 'AI 娘二创档案',tag:c?.type || '',quote:false};

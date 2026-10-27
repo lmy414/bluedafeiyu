@@ -11,7 +11,7 @@ const { title, desc, path = '/', type = 'website', og = null, shareDesc = '', ac
 const SECTION_OF = { works: 'gallery', characters: 'gallery', collections: 'gallery', community: 'community', event: 'community' };
 const section = SECTION_OF[active] || '';
 const gallery = [['works', '作品', '/index.html', 'v2.nav.works'], ['characters', '角色', '/characters.html', 'v2.nav.characters'], ['collections', '合集', '/topics.html', 'v2.nav.collections']];
-const communityNav = [['community', '加入社群', '/community.html', 'v2.joinGroup'], ['event', '最新活动', EVENT.href, 'v2.nav.events']];
+const communityNav = [['community', '加入社群', '/community.html', 'v2.joinGroup'], ['event', '活动', '/events.html', 'v2.nav.events']];
 const bodyAttributes = accentAttributes(accent);
 ---
 <!doctype html>

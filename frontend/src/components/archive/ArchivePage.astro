@@ -8,7 +8,7 @@ attrs['data-archive-count'] = meta.total;
 const bodyPage = page.url.startsWith('/works/') ? 'work' :
   /^\/characters\/.+/.test(page.url) ? 'characterDetail' :
   /^\/categories\/.+/.test(page.url) ? 'categoryDetail' :
-  /^\/topics\/.+/.test(page.url) ? 'topicDetail' : page.active === 'home' ? 'index' : page.active;
+  /^\/topics\/.+/.test(page.url) ? 'topicDetail' : page.active === 'event' ? 'events' : page.active === 'home' ? 'index' : page.active;
 const firstSchema = meta.schemas[0];
 if (firstSchema['@type'] === 'ImageObject') attrs['data-work-id'] = page.content.match(/data-comment-term="sticker-([^"]+)"/)?.[1];
 ---
