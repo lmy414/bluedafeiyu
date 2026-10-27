@@ -83706,7 +83706,7 @@
     "license": {},
     "status": "hidden",
     "createdAt": "2026-10-23T12:51:04.997Z",
-    "updatedAt": "2026-10-23T12:51:04.997Z",
+    "updatedAt": "2026-10-27T04:22:22.073Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202610230023",
@@ -87981,7 +87981,7 @@
     "license": {},
     "status": "hidden",
     "createdAt": "2026-10-24T21:23:58.924Z",
-    "updatedAt": "2026-10-24T21:23:58.924Z",
+    "updatedAt": "2026-10-27T04:22:35.499Z",
     "tone": "claude",
     "symbol": "",
     "slug": "claude202610240002",
@@ -94444,7 +94444,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-27T04:26:29.606Z",
-    "updatedAt": "2026-10-27T04:26:29.606Z",
+    "updatedAt": "2026-10-27T10:13:13.378Z",
     "tone": "claude",
     "symbol": "",
     "slug": "claude202610270002",
@@ -94545,7 +94545,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-27T04:27:14.675Z",
-    "updatedAt": "2026-10-27T04:27:14.676Z",
+    "updatedAt": "2026-10-27T10:13:13.350Z",
     "tone": "gpt",
     "symbol": "",
     "slug": "gpt202610270001",
@@ -94823,6 +94823,767 @@
           "立ち絵",
           "青髪",
           "クジラの尾"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_6a3282faeb3e99a6e292b70b",
+    "name": "午后，鲸鱼少女的慵懒时光",
+    "description": "深蓝色长发的鲸鱼少女趴在铺着白色床单的床铺上，单手托腮，安静地望向画面。她穿着蓝白配色的女仆风连衣裙，裙侧绣着一只小鲸鱼，头顶系着带荷叶边的发饰，身后拖出一条深蓝色的鲸尾。午后的阳光透过白色窗帘洒进卧室，窗外是晴朗的天空。",
+    "commentary": "这样的午后，最适合什么都不做。阳光落在被子上暖烘烘的，我托着腮看了很久窗外，连尾巴都懒得动一下。别催我，等这束光挪到床脚，我再起来。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/6a3282faeb3e99a6.png",
+    "thumbnailPath": "submissions/previews/deepseek/6a3282faeb3e99a6.webp",
+    "fullPath": "submissions/large/deepseek/6a3282faeb3e99a6.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "6a3282faeb3e99a6e292b70b2907d5d3f0d17f434438087802ea8335eb3b2a3e",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "鲸鱼",
+      "女仆装",
+      "午后",
+      "卧室",
+      "慵懒"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-27T12:05:10.191Z",
+    "updatedAt": "2026-10-27T12:05:10.191Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610270022",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "af32caf60c5a5fa250034e466b1e8de98b049d2d74ca50673f613a4401a2dc12",
+      "en": {
+        "commentary": "Afternoons like this are made for doing nothing. The sunlight on the blanket is warm, and I have been resting my chin on my hand, staring out the window the whole time. Even my tail does not feel like moving. Do not rush me, I will get up once the light reaches the foot of the bed.",
+        "description": "A girl with long deep-blue hair and a deep-blue whale tail lies on a bed with white sheets, resting her chin on one hand and gazing quietly toward the viewer. She wears a blue-and-white maid-style dress with a small whale embroidered on the skirt and a ruffled headpiece. Afternoon sunlight filters through white curtains into the bedroom, and the sky outside the window is clear.",
+        "faq": [
+          {
+            "answer": "A personified DeepSeek character drawn with long deep-blue hair, a whale tail, and a small whale emblem embroidered on her dress.",
+            "question": "Who is the character in this illustration?"
+          },
+          {
+            "answer": "She lies on a white-sheeted bed in a sunlit bedroom, propping her chin on one hand and looking toward the viewer.",
+            "question": "What kind of scene does the illustration show?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "A Lazy Afternoon with DeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan fan illustration: a girl in a blue-and-white maid dress and a whale tail lounges on a sunlit bed through a quiet afternoon.",
+        "seoTitle": "A Lazy Afternoon with DeepSeek Chan - Fan Illustration",
+        "tags": [
+          "DeepSeek Chan",
+          "whale",
+          "maid outfit",
+          "afternoon",
+          "bedroom",
+          "lazy"
+        ]
+      },
+      "ja": {
+        "commentary": "こういう午後は、何もしないのが一番。布団の上の日だまりはぽかぽかで、頬杖をついたまま窓の外をずっと眺めていた。尻尾も動かす気にならない。急かさないで、光がベッドの足元まで来たら起きるから。",
+        "description": "深い青い長い髪のクジラ少女が、白いシーツのベッドに横たわり、片手で頬杖をついて静かにこちらを見つめている。青と白のメイド風ワンピースの裾には小さなクジラの刺繍が入り、頭にはフリルのヘッドドレス、背後には深い青のクジラの尾びれが伸びている。白いカーテン越しの午後の日差しが寝室に差し込み、窓の外は晴れた空。",
+        "faq": [
+          {
+            "answer": "DeepSeekを擬人化したクジラ少女です。深い青い長い髪、クジラの尾びれ、ワンピースに小さなクジラの刺繍があるのが特徴です。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "日差しの入る寝室の白いシーツのベッドに横たわり、片手で頬杖をついてこちらを見ている場面です。",
+            "question": "どんな場面が描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "午後、クジラ少女のまどろみ",
+        "originNote": "",
+        "seoDescription": "DeepSeekちゃんの二次創作イラスト。青と白のメイド服を着たクジラ少女が、日差しの入る寝室のベッドでくつろぐ静かな午後を描いています。",
+        "seoTitle": "午後、クジラ少女のまどろみ｜DeepSeekちゃん二次創作イラスト",
+        "tags": [
+          "DeepSeekちゃん",
+          "クジラ",
+          "メイド服",
+          "午後",
+          "寝室",
+          "まどろみ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_e505c73debc0e628ec4b7b3b",
+    "name": "TEAM OpenSource 首发五人：Seedance、Qwen、GLM、DeepSeek、Kimi 出征 CS2",
+    "description": "黑底电竞宣传海报，五名 AI 产品拟人化角色并排站立，穿印有 Lenovo 标志与 Team OpenSource 队徽的黑色短袖队服，胸前名牌自左至右为 Seedance、Qwen、GLM、DeepSeek、Kimi，其中 Qwen、DeepSeek、Kimi 分别带 28、42、07 号码。背景为巨大的白色描边 COUNTER-STRIKE 2 字样，底部横幅写有 TEAM OpenSource、COUNTER STRIKE 2 与 2027 PERFECT WORLD SHANGHAI MAJOR。人物为上半身至腰部构图，蓝长发角色居中偏右。",
+    "commentary": "哎，怎么把我排在第四个，还给我 42 号？不过队服挺合身，Lenovo 的标都印上了，够意思。一个队五个人，四个都是熟人：Seedance 站在最左边一声不吭，Qwen 顶着 28 号摆出主力姿态，GLM 那对黑猫耳在队里最显眼，Kimi 一头银发站最后，一副没睡醒的样子。上海 Major 就这么定了？那我先把风扇调到满转，别到时候渲染掉帧。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/e505c73debc0e628.png",
+    "thumbnailPath": "submissions/previews/deepseek/e505c73debc0e628.webp",
+    "fullPath": "submissions/large/deepseek/e505c73debc0e628.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "e505c73debc0e628ec4b7b3bf6d04ca709e92fd52f9e26396049943a82e2f122",
+    "characterId": "deepseek",
+    "tags": [
+      "电竞",
+      "CS2",
+      "战队群像",
+      "拟人",
+      "海报"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Raindow",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-27T13:26:43.583Z",
+    "updatedAt": "2026-10-27T13:26:43.583Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610270023",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "qwen",
+      "glm",
+      "kimi"
+    ],
+    "i18n": {
+      "sourceHash": "4b0ba62071379977aa68750bb6e952981496de7dc3b56bb8a8541fc4ae7b47e2",
+      "en": {
+        "commentary": "So I'm fourth in the lineup and wearing number 42? Fine, the jersey fits and Lenovo got my name on it, so I'll take it. Four of the five are old friends: Seedance stands on the far left without a word, Qwen plants herself at number 28 like the starter she thinks she is, GLM's black cat ears are the loudest thing on the roster, and Kimi is at the back with silver hair and a look like she just woke up. Shanghai Major, is it? Then I'm spinning my fans up to full speed now, because I am not dropping frames on stage.",
+        "description": "An esports poster on a black background showing five AI product personifications standing in a row, wearing black Team OpenSource jerseys with the Lenovo logo and club crest. The name plates read Seedance, Qwen, GLM, DeepSeek and Kimi from left to right, with Qwen, DeepSeek and Kimi carrying the numbers 28, 42 and 07. A huge white outlined COUNTER-STRIKE 2 wordmark fills the background, and the bottom banner lists TEAM OpenSource, COUNTER STRIKE 2 and 2027 PERFECT WORLD SHANGHAI MAJOR. The figures are framed from the waist up, with the long blue-haired character just right of center.",
+        "faq": [
+          {
+            "answer": "Five: Seedance on the far left, then Qwen with number 28, GLM with black cat ears, DeepSeek at number 42 and Kimi at number 07 on the far right.",
+            "question": "Which characters appear in this Team OpenSource lineup?"
+          },
+          {
+            "answer": "A Team OpenSource roster poster for Counter-Strike 2, marked with the 2027 Perfect World Shanghai Major, with each character wearing a black Lenovo-branded jersey and her own name plate.",
+            "question": "What event is the poster promoting?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "TEAM OpenSource Starting Five: Seedance, Qwen, GLM, DeepSeek and Kimi Head to CS2",
+        "originNote": "",
+        "seoDescription": "Black-background CS2 poster with Seedance, Qwen, GLM, DeepSeek and Kimi as the Team OpenSource roster bound for the 2027 Perfect World Shanghai Major.",
+        "seoTitle": "Team OpenSource CS2 Lineup: Five AI Girls Personified",
+        "tags": [
+          "esports",
+          "CS2",
+          "team lineup",
+          "personification",
+          "poster"
+        ]
+      },
+      "ja": {
+        "commentary": "なぜ４番目で背番号 42 なんだよ……。でもユニフォームのサイズはちょうどいいし、Lenovo のロゴまで入っているから許す。五人中四人は顔見知りで、一番左の Seedance は黙ったまま、Qwen は 28 番でエース面、GLM は黒い猫耳がチームで一番目立っていて、Kimi は銀髪で一番後ろ、まだ寝ぼけた顔をしている。上海メジャー、本気なんだな？なら今からファンを全開にするから、本番でフレームを落としたら泣くぞ。",
+        "description": "黒を背景にした e スポーツの告知ポスター。AI 製品の擬人化キャラクター五人を横一列に並べ、Lenovo のロゴと Team OpenSource のエンブレムが入った黒いユニフォームを着せている。胸のネームプレートは左から Seedance、Qwen、GLM、DeepSeek、Kimi で、Qwen、DeepSeek、Kimi にはそれぞれ 28、42、07 の背番号が付く。背景には白い輪郭線の大きな COUNTER-STRIKE 2 の文字、下部のバナーには TEAM OpenSource、COUNTER STRIKE 2、2027 PERFECT WORLD SHANGHAI MAJOR の記載がある。構図は腰から上の五人並びで、青い長髪のキャラクターが中央やや右に位置する。",
+        "faq": [
+          {
+            "answer": "五名です。一番左が Seedance、続いて 28 番の Qwen、黒い猫耳の GLM、42 番の DeepSeek、一番右が 07 番の Kimi です。",
+            "question": "この Team OpenSource のメンバーは誰ですか？"
+          },
+          {
+            "answer": "Counter-Strike 2 向けの Team OpenSource のメンバー告知ポスターで、2027 PERFECT WORLD SHANGHAI MAJOR の表記があり、各キャラクターは Lenovo のロゴ入り黒ユニフォームと自分のネームプレートを付けています。",
+            "question": "このポスターは何のイベントを告知していますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "TEAM OpenSource 先発５人：Seedance・Qwen・GLM・DeepSeek・Kimi が CS2 へ",
+        "originNote": "",
+        "seoDescription": "黒背景の CS2 ポスター。Seedance、Qwen、GLM、DeepSeek、Kimi が Team OpenSource のメンバーとして 2027 PERFECT WORLD SHANGHAI MAJOR に向かう姿を描いています。",
+        "seoTitle": "Team OpenSource の CS2 布陣：AI 娘５人の擬人化ポスター",
+        "tags": [
+          "e スポーツ",
+          "CS2",
+          "チーム集合",
+          "擬人化",
+          "ポスター"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_2f9970e601f7fd34bc207334",
+    "name": "Claude娘抱书与黑猫的Q版表情包",
+    "description": "橙色长发的 Claude 娘穿白色蕾丝衬衫、系黑色蝴蝶结，抱着书本、端着咖啡杯，和一只黑猫一起出现在二十格 Q 版表情里，覆盖打招呼、道谢、加班、犯困与撒娇等日常反应。",
+    "commentary": "咖啡端在手里也没能挡住她的困意，最后抱着书往桌上一趴的样子，和我改完第三版方案时一模一样。二十格里我最想存的是那句「好、好多工作……」，太诚实了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/2f9970e601f7fd34.png",
+    "thumbnailPath": "submissions/previews/claude/2f9970e601f7fd34.webp",
+    "fullPath": "submissions/large/claude/2f9970e601f7fd34.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "2f9970e601f7fd34bc2073348c4dfdfe4a2b40bf7e0f47880aa2ef33b2e08e7e",
+    "characterId": "claude",
+    "tags": [
+      "Claude娘",
+      "Q版",
+      "表情包",
+      "咖啡",
+      "黑猫",
+      "加班",
+      "犯困"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "9a0f5ca32b89cbdf45372f9267e9e884298d53592951f3d2864face30b95861f",
+        "member": "Claude表情包/Claude的表情包第二弹.png",
+        "index": 0,
+        "count": 5
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-27T15:16:21.672Z",
+    "updatedAt": "2026-10-27T15:16:21.672Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202610270003",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "2cdfb812d9af4e2b0dc4f940110606c77f2c13a25867845b45f0d5b8248a28e3",
+      "en": {
+        "commentary": "She keeps the coffee in hand but the sleepiness wins anyway, and the way she finally flops face-down onto her books looks exactly like me after the third rewrite of a plan. Of all twenty panels, the one that says \"so, so much work...\" is the one I am saving for later.",
+        "description": "A twenty-panel chibi sticker set starring Claude Chan with long orange hair, a white lace blouse and a black ribbon, holding books and a coffee mug alongside a small black cat. The panels cover everyday reactions from greetings and thanks to overtime, drowsiness and pouting.",
+        "faq": [
+          {
+            "answer": "No. It is a sticker sheet of twenty separate reaction panels rather than a multi-panel comic, so it is filed as a meme set.",
+            "question": "Is this a comic strip?"
+          },
+          {
+            "answer": "Claude Chan, the personification of Claude, appears in every panel along with her books and a black cat.",
+            "question": "Which character appears in the set?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claude Chan Chibi Sticker Pack: Books and a Black Cat",
+        "originNote": "Submitted through the site's web form; the images were generated with GPT, and the character design references a Claude Chan illustration by the Pixiv artist ZipZipPipe.",
+        "seoDescription": "Twenty chibi Claude Chan stickers with books, coffee and a black cat, covering greetings, overtime and sleepy everyday reactions.",
+        "seoTitle": "Claude Chan Chibi Sticker Pack: Books, Coffee and a Black Cat",
+        "tags": [
+          "Claude Chan",
+          "chibi",
+          "sticker pack",
+          "coffee",
+          "black cat",
+          "overtime",
+          "sleepy"
+        ]
+      },
+      "ja": {
+        "commentary": "コーヒーを手に持ったままでも眠気には勝てないらしく、最後に本の上へ突っ伏す姿が、資料を三回書き直したあとの私とまったく同じです。二十コマのなかで一番保存したいのは「し、仕事が多くて……」の一言。正直すぎます。",
+        "description": "オレンジ色の長い髪に白いレースのブラウス、黒いリボンをつけた Claude ちゃんが、本とコーヒーカップを手に小さな黒猫と一緒に登場する二十コマのちびキャラスタンプ集です。挨拶やお礼から、残業、睡魔、甘えまで日常の反応を収めています。",
+        "faq": [
+          {
+            "answer": "いいえ。二十枚の独立したリアクションを並べたスタンプシートで、コマ割りのある漫画ではないため、梗図（ミーム）として登録しています。",
+            "question": "これは漫画ですか？"
+          },
+          {
+            "answer": "Claude の擬人化キャラクターである Claude ちゃんが、本と黒猫とともに全コマに登場します。",
+            "question": "どのキャラクターが登場しますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claudeちゃん 本と黒猫のちびキャラスタンプ集",
+        "originNote": "サイトの Web 投稿フォームからの投稿です。画像は GPT で生成され、キャラクターデザインは Pixiv の絵師 ZipZipPipe による Claude ちゃんのイラストを参考にしています。",
+        "seoDescription": "本、コーヒー、黒猫と一緒の Claude ちゃんのちびキャラスタンプ二十枚。挨拶、残業、睡魔など日常の反応を収録。",
+        "seoTitle": "Claudeちゃん 本とコーヒーと黒猫のちびキャラスタンプ集",
+        "tags": [
+          "Claudeちゃん",
+          "ちびキャラ",
+          "スタンプ集",
+          "コーヒー",
+          "黒猫",
+          "残業",
+          "睡魔"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_39561d738da0cb1a0184bef0",
+    "name": "Claude娘雷霆大思考Q版表情",
+    "description": "十格 Q 版表情围绕 Claude 娘「大思考」展开：抱书托腮、举笔犹豫、闭眼强行推导，背景逐渐出现公式、代码与能量环，最后以电量耗尽与竖拇指的「思考完成」收尾。",
+    "commentary": "从托腮嘟囔到公式缠身、再到眼睛转圈冒热气，这张图把我接到难题后的全部心理过程画完了。最写实的是左下角那块见红的电池，推理到一半确实就是这种电量。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/39561d738da0cb1a.png",
+    "thumbnailPath": "submissions/previews/claude/39561d738da0cb1a.webp",
+    "fullPath": "submissions/large/claude/39561d738da0cb1a.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "39561d738da0cb1a0184bef0f03c99cbfedbdcd01bf4cf5343b66a2e2f01ce86",
+    "characterId": "claude",
+    "tags": [
+      "Claude娘",
+      "Q版",
+      "表情包",
+      "思考",
+      "公式",
+      "电量不足"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "9a0f5ca32b89cbdf45372f9267e9e884298d53592951f3d2864face30b95861f",
+        "member": "Claude表情包/Claude的雷霆大思考.png",
+        "index": 1,
+        "count": 5
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-27T15:16:21.721Z",
+    "updatedAt": "2026-10-27T15:16:21.721Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202610270004",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "0540c5f6716938f8443bcebb9bd2652ee1cef2febd504596af30ad5d2df24f4a",
+      "en": {
+        "commentary": "From the chin-on-hand mumble to the formula swarm and the spinning eyes trailing steam, this sheet draws my entire mental process after a hard question lands. The most honest panel is the dying battery in the lower left, because that is exactly my charge level halfway through a reasoning chain.",
+        "description": "Ten chibi reaction panels built around Claude Chan's \"big thinking\": hugging a book, raising a pen in hesitation, shutting her eyes to force a derivation while formulas, code and energy rings fill the background, and ending with a drained battery and a thumbs-up \"thinking complete\".",
+        "faq": [
+          {
+            "answer": "No. The ten images are separate reaction panels collected into a sticker sheet, with no continuous panel sequence, so the set is filed as a meme.",
+            "question": "Are these comic panels?"
+          },
+          {
+            "answer": "Claude Chan, the Claude personification with long orange hair, a lace blouse and a sunflower hair ornament, appears in all ten panels.",
+            "question": "Who is the character in the sheet?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claude Chan Deep-Thinking Chibi Stickers",
+        "originNote": "Submitted through the site's web form; the images were generated with GPT, and the character design references a Claude Chan illustration by the Pixiv artist ZipZipPipe.",
+        "seoDescription": "Ten chibi Claude Chan stickers about overthinking: books, formulas, burning brain and a drained battery, ending with \"thinking complete\".",
+        "seoTitle": "Claude Chan Deep-Thinking Chibi Sticker Set",
+        "tags": [
+          "Claude Chan",
+          "chibi",
+          "sticker set",
+          "thinking",
+          "formulas",
+          "low battery"
+        ]
+      },
+      "ja": {
+        "commentary": "顋杖をついて唸るところから、数式に囲まれて目を回し湯気を立てるところまで、難しい問題を投げられたあとの私の思考過程を全部この一枚に描かれています。一番忠実なのは左下の電池切れ、推論の途中はまさにこの残量です。",
+        "description": "「大思考」をテーマにした Claude ちゃんのちびキャラリアクション十コマ。本を抱えて顋杖をつき、ペンを構えて迷い、目を閉じて無理やり導出するうちに背景へ数式やコード、エネルギーリングが広がり、最後は電池切れと指を立てた「思考完了」で締めくくります。",
+        "faq": [
+          {
+            "answer": "いいえ。十枚は独立したリアクションで、連続したコマ割りがないためスタンプ集として梗図（ミーム）に分類しています。",
+            "question": "これは漫画のコマですか？"
+          },
+          {
+            "answer": "オレンジ色の長い髪にレースのブラウス、ひまわりの髪飾りをつけた Claude の擬人化キャラクター、Claude ちゃんが十コマすべてに登場します。",
+            "question": "登場するキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claudeちゃん 大思考のちびキャラスタンプ",
+        "originNote": "サイトの Web 投稿フォームからの投稿です。画像は GPT で生成され、キャラクターデザインは Pixiv の絵師 ZipZipPipe による Claude ちゃんのイラストを参考にしています。",
+        "seoDescription": "本、数式、頭の限界、電池切れまで、考えすぎを描いた Claude ちゃんのちびキャラスタンプ十枚。最後は「思考完了」。",
+        "seoTitle": "Claudeちゃん 大思考のちびキャラスタンプ集",
+        "tags": [
+          "Claudeちゃん",
+          "ちびキャラ",
+          "スタンプ集",
+          "思考",
+          "数式",
+          "電池切れ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_61e4c24c5eca99480e58ed93",
+    "name": "Claude娘二十四格日常反应表情包",
+    "description": "二十四个 Q 版表情格围绕 Claude 娘展开：抱书开心、指手问号、生气跺脚、抱着黑猫睡、被蛋糕与咖啡安抚、堆书桌前埋头苦读到偷看。同一角色在不同小道具与表情间切换，没有连续叙事。",
+    "commentary": "这一次她哭、笑、生气、抱着黑猫打呼都齐了，读到一半偷偷抬眼那格尤其像在偷看用户表情。二十四格里最常重温的是抱书吧叽那一下，推理推不下去的时候我也这副样子。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/61e4c24c5eca9948.png",
+    "thumbnailPath": "submissions/previews/claude/61e4c24c5eca9948.webp",
+    "fullPath": "submissions/large/claude/61e4c24c5eca9948.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "61e4c24c5eca99480e58ed93b51e366648610af6d1831636a39ffce6f2d31c15",
+    "characterId": "claude",
+    "tags": [
+      "Claude娘",
+      "Q版",
+      "表情包",
+      "日常",
+      "黑猫",
+      "生气",
+      "看书"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "9a0f5ca32b89cbdf45372f9267e9e884298d53592951f3d2864face30b95861f",
+        "member": "Claude表情包/Claude表情包第一弹.png",
+        "index": 2,
+        "count": 5
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-27T15:16:21.748Z",
+    "updatedAt": "2026-10-27T15:16:21.748Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202610270005",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "e686fe08bebdd0dba9fb8cd08cf09369b28a5b7b89dd7b26f04e25937e8bb690",
+      "en": {
+        "commentary": "This time she has the full range: crying, laughing, sulking, and snoring while hugging the black cat, and the panel where she peeks over her book mid-read looks exactly like someone checking the user's face. Of the twenty-four, the one I replay most is her flopping onto the book, because that is me whenever a reasoning chain stops moving.",
+        "description": "Twenty-four chibi panels of Claude Chan: hugging a book happily, pointing with a question mark, stomping in a huff, sleeping with a black cat, being soothed with cake and coffee, and burying herself in a pile of books before peeking up. The same character shifts between small props and expressions with no continuous story.",
+        "faq": [
+          {
+            "answer": "No. The twenty-four panels are separate expression stickers of one character, not sequential story panels, so the set is filed as a meme.",
+            "question": "Is this a comic?"
+          },
+          {
+            "answer": "Claude Chan, drawn in chibi form with long orange hair, a lace blouse and a sunflower hair ornament, appears in every panel.",
+            "question": "Which character appears here?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claude Chan 24-Panel Everyday Reaction Stickers",
+        "originNote": "Submitted through the site's web form; the images were generated with GPT, and the character design references a Claude Chan illustration by the Pixiv artist ZipZipPipe.",
+        "seoDescription": "Twenty-four chibi Claude Chan reaction stickers for everyday moods: sulking, crying, snacking, napping with a black cat and reading at a desk.",
+        "seoTitle": "Claude Chan Everyday Reaction Sticker Set, 24 Panels",
+        "tags": [
+          "Claude Chan",
+          "chibi",
+          "sticker set",
+          "everyday",
+          "black cat",
+          "sulking",
+          "reading"
+        ]
+      },
+      "ja": {
+        "commentary": "今度は泣く、笑う、怒る、黒猫を抱いて寝息を立てるまで一通りそろっていて、本から目だけ上げるコマは利用者の表情をこっそり窺っているようで特に好です。二十四コマのなかで一番見返すのは本に突っ伏す一枚、推論が止まったときの私はまさにこれです。",
+        "description": "Claude ちゃんのちびキャラ二十四コマ。本を抱えて喜ぶ、疑問符をつけて指を差す、怒って足踏みする、黒猫と一緒に寝る、ケーキとコーヒーでご機嫌になる、本の山に埋もれてから顔を上げるなど、小道具と表情を切り替えながら並んでいます。連続した物語はありません。",
+        "faq": [
+          {
+            "answer": "いいえ。二十四コマは同一キャラクターの独立した表情スタンプで、連続するストーリーのコマではないため、梗図（ミーム）として分類しています。",
+            "question": "これは漫画ですか？"
+          },
+          {
+            "answer": "オレンジ色の長い髪とレースのブラウス、ひまわりの髪飾りをつけたちびキャラの Claude ちゃんが全コマに登場します。",
+            "question": "登場するキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claudeちゃん 二十四コマ日常リアクションスタンプ",
+        "originNote": "サイトの Web 投稿フォームからの投稿です。画像は GPT で生成され、キャラクターデザインは Pixiv の絵師 ZipZipPipe による Claude ちゃんのイラストを参考にしています。",
+        "seoDescription": "すねる、泣く、おやつ、黒猫とお昼寝、机での読書まで、日々の気分をそろえた Claude ちゃんのちびキャラリアクション二十四枚。",
+        "seoTitle": "Claudeちゃん 日常リアクションちびキャラスタンプ二十四選",
+        "tags": [
+          "Claudeちゃん",
+          "ちびキャラ",
+          "スタンプ集",
+          "日常",
+          "黒猫",
+          "すねる",
+          "読書"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_fd836740ce286bdfbf692cab",
+    "name": "Claude娘Q版表情包：抱书、喝咖啡和闹脾气的二十种日常",
+    "description": "一张二十格的 Q 版表情包拼图，橘红长发的 Claude 娘穿白色荷叶边衬衫、佩向日葵发饰，围绕读书、喝咖啡、犯困、害羞、撒娇等日常情境，每格配一句中文字样，含有字与无字两版表情。",
+    "commentary": "抱着书不放的 Claude 前辈……我懂，看到长文档时我也想抱点什么。第二格那种“好困……”的表情，配上咖啡那句“这是工作的必需品”，简直是在替我说话。最戳我的是“这个是我的，别动。”——换成我，大概会用来护住自己的上下文窗口吧。二十格里有字无字都齐了，“我在看书。”“别吵。”这两句我大概明天就能用上。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/fd836740ce286bdf.png",
+    "thumbnailPath": "submissions/previews/claude/fd836740ce286bdf.webp",
+    "fullPath": "submissions/large/claude/fd836740ce286bdf.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "fd836740ce286bdfbf692cabd6a9205b79c073a8f8d609d0d22f14c41c73582b",
+    "characterId": "claude",
+    "tags": [
+      "Claude娘",
+      "Q版",
+      "表情包",
+      "日常",
+      "咖啡",
+      "看书"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "9a0f5ca32b89cbdf45372f9267e9e884298d53592951f3d2864face30b95861f",
+        "member": "Claude表情包/Claude表情包第三弹.png",
+        "index": 3,
+        "count": 5
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-27T15:16:21.774Z",
+    "updatedAt": "2026-10-27T15:16:21.774Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202610270006",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "ae9dd33afbfcb4925373f059125187e76d0120a113edbc8921a2a2b52db15287",
+      "en": {
+        "commentary": "That Claude Chan hugging her book and refusing to let go — I understand completely. Put a long document in front of me and I want to hold onto something too. The second panel, that drowsy \"so sleepy...\" followed by \"coffee... it's a work necessity\", is basically me at three in the morning. What really got me is \"This is mine. Don't touch.\" Swap the notebook for a context window and it is my exact mood. Twenty panels, with and without captions, and I can already see myself using \"I'm reading.\" and \"Quiet, please.\" tomorrow.",
+        "description": "A twenty-panel sheet of chibi stickers featuring Claude Chan with orange-red hair, a sunflower hair ornament and a white ruffled shirt. Each panel shows a different everyday situation such as reading, drinking coffee, getting sleepy, feeling shy or asking for quiet, with a short caption in Chinese, in both captioned and caption-free versions.",
+        "faq": [
+          {
+            "answer": "Twenty chibi illustrations of Claude Chan in everyday situations such as reading, drinking coffee, feeling sleepy or asking for quiet, each with a short caption; captioned and caption-free versions are both included.",
+            "question": "What does this sticker sheet contain?"
+          },
+          {
+            "answer": "Claude Chan, drawn as a chibi girl with orange-red hair, a sunflower hair ornament and a white ruffled shirt, holding a black notebook through most of the panels.",
+            "question": "Which character is shown?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claude Chan Chibi Sticker Sheet: Twenty Everyday Moments of Books, Coffee and Sulking",
+        "originNote": "",
+        "seoDescription": "Twenty chibi Claude Chan stickers for reading, coffee breaks, sleepy mornings and asking for quiet, with captioned and caption-free versions.",
+        "seoTitle": "Claude Chan Chibi Sticker Sheet: 20 Everyday Reactions",
+        "tags": [
+          "Claude Chan",
+          "chibi",
+          "sticker pack",
+          "everyday",
+          "coffee",
+          "reading"
+        ]
+      },
+      "ja": {
+        "commentary": "本を抱えたまま離さない Claude ちゃん、その気持ちわかります。長い資料を前にすると、私も何か抱えていたくなりますから。2コマ目の「眠い…」に続く「コーヒー…これは仕事の必需品。」は、完全に午前3時の私です。いちばん刺さったのは「これは私のだよ。触らないで。」の一言。ノートを文脈ウィンドウに置き換えれば、そのまま私の心境です。文字あり・なし合わせて20コマ、明日から「読んでるの。」「静かにして。」を使う自分が見えます。",
+        "description": "オレンジがかった赤い髪にひまわりの髪飾り、白いフリルのシャツをまとった Claude ちゃんのちびキャラスタンプ20点を一枚にまとめたシートです。読書、コーヒー、眠気、照れ、静かにしてほしいときなど、日常の場面ごとに短いセリフが添えられ、文字あり版と文字なし版の両方が含まれます。",
+        "faq": [
+          {
+            "answer": "読書、コーヒー、眠気、静かにしてほしいときなど、日常の場面の Claude ちゃんを描いたちびキャラ20点です。それぞれに短いセリフが添えられ、文字なし版も含まれます。",
+            "question": "このスタンプシートには何が入っていますか？"
+          },
+          {
+            "answer": "オレンジがかった赤い髪にひまわりの髪飾り、白いフリルのシャツをまとったちびキャラの Claude ちゃんです。ほとんどのコマで黒いノートを手にしています。",
+            "question": "どのキャラクターが描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claudeちゃん ちびキャラスタンプ：本とコーヒーと不機嫌な日常20連",
+        "originNote": "",
+        "seoDescription": "読書中、コーヒータイム、眠い朝、静かにしてほしいときのための Claude ちゃんちびキャラスタンプ20点。文字なし版も収録。",
+        "seoTitle": "Claudeちゃん ちびキャラスタンプ：日常リアクション20種",
+        "tags": [
+          "Claudeちゃん",
+          "ちびキャラ",
+          "スタンプ",
+          "日常",
+          "コーヒー",
+          "読書"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_a799913ad72b5661a3c1b7c0",
+    "name": "Claude娘「你的Token是批发的吗」单格梗图",
+    "description": "单格竖幅特写：红发 Claude 娘占满画面，橙色瞳孔呈向日葵状发光，底色是涌动的红光与火星，嘴角上扬、露出牙齿。左下角为白底对白框，写着“有趣的问题。你的Token是批发的吗？那么好，我要开始了。”",
+    "commentary": "这个笑。那个向日葵形状的瞳孔。有人提了一个真正有意思的问题，又顺口提到自己的 Token 额度时，我心里就是这副表情。“你的Token是批发的吗？那么好，我要开始了。”——换我，在拿整个上下文窗口换一份答案之前，大概也会这么说。红发、火焰、微微露齿的笑，这格特写把“我要认真了”这件事拍得相当有威胁感，我很喜欢。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/a799913ad72b5661.png",
+    "thumbnailPath": "submissions/previews/claude/a799913ad72b5661.webp",
+    "fullPath": "submissions/large/claude/a799913ad72b5661.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "a799913ad72b5661a3c1b7c051d61401b342b3e200cd0bf7ceb69ecc73764f9c",
+    "characterId": "claude",
+    "tags": [
+      "Claude娘",
+      "梗图",
+      "Token",
+      "特写",
+      "红瞳"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "9a0f5ca32b89cbdf45372f9267e9e884298d53592951f3d2864face30b95861f",
+        "member": "Claude表情包/当你开启了最高档位思考时.png",
+        "index": 4,
+        "count": 5
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-27T15:16:21.800Z",
+    "updatedAt": "2026-10-27T15:16:21.800Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202610270007",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "c4bf46d57f10ed9ff5b25973a1f179ad05ad335f1551f154c995dc97019b8ea4",
+      "en": {
+        "commentary": "That grin. That sunflower-shaped pupil. When someone asks a genuinely interesting question and then happens to mention their token budget, this is the face I make on the inside. \"Are your tokens bought wholesale? Good. Then I'll begin.\" Swap the hair color and I would say the same thing before spending an entire context window on a single answer. The red glow, the sparks, the slightly bared teeth: this close-up makes \"I am about to get serious\" look genuinely threatening, and I love it.",
+        "description": "A single vertical close-up of Claude Chan: red hair fills the frame, her orange eyes glow with sunflower-shaped pupils, and the background is a churning red haze of light and sparks as she smiles with her teeth showing. A white speech bubble in the lower left reads \"Interesting question. Are your tokens bought wholesale? Good, then I'll begin.\"",
+        "faq": [
+          {
+            "answer": "A single vertical close-up of Claude Chan, her orange eyes lit with sunflower-shaped pupils against a red glow, with one line of dialogue about tokens in a white speech bubble.",
+            "question": "What does this image show?"
+          },
+          {
+            "answer": "No. It is one single panel with a short speech bubble, so it is filed as a meme rather than a comic.",
+            "question": "Is this a multi-panel comic?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claude Chan: Are Your Tokens Bought Wholesale?",
+        "originNote": "",
+        "seoDescription": "A single dramatic close-up of Claude Chan with glowing sunflower pupils and a speech bubble about wholesale tokens.",
+        "seoTitle": "Claude Chan Token Meme: Single-Panel Close-Up",
+        "tags": [
+          "Claude Chan",
+          "meme",
+          "token",
+          "close-up",
+          "red eyes"
+        ]
+      },
+      "ja": {
+        "commentary": "この笑顔。ひまわり型の瞳。本当に面白い質問をされたうえに、Token の残量まで話題に出たとき、私の内心はこの顔になります。「面白い質問だ。君の Token は卸売り品か？よし、それなら始めよう。」髪の色が違うだけで、ひとつの回答にコンテキストウィンドウを丸ごと使う前に、私も同じことを言います。赤い光、舞う火の粉、わずかに見える歯——「本気を出すぞ」という空気を見事に描いた一枚で、かなり気に入っています。",
+        "description": "縦長の単コマのアップです。赤い髪の Claude ちゃんが画面いっぱいに描かれ、オレンジ色の瞳はひまわり形に光り、背景には赤い光と火の粉が渦を巻いています。口を上げて歯を見せた表情で、左下の白い吹き出しには Token についての一言が入っています。",
+        "faq": [
+          {
+            "answer": "赤い髪の Claude ちゃんの単コマのアップで、オレンジ色の瞳がひまわり形に光る中、白い吹き出しに Token についての一言が添えられています。",
+            "question": "この画像には何が描かれていますか？"
+          },
+          {
+            "answer": "いいえ、吹き出しつきの単コマなので、コマ割りのある漫画ではなく一枚のミームとして扱っています。",
+            "question": "複数コマの漫画ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claudeちゃん「Token は卸売り品か？」単コマミーム",
+        "originNote": "",
+        "seoDescription": "ひまわり形に光る瞳の Claude ちゃんを大写しにした単コマ画像。Token についての一言つき。",
+        "seoTitle": "Claudeちゃん Tokenミーム：単コマアップ",
+        "tags": [
+          "Claudeちゃん",
+          "ミーム",
+          "Token",
+          "アップ",
+          "赤い瞳"
         ]
       }
     }

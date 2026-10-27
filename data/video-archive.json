@@ -27,8 +27,8 @@
       "homepage": "https://space.bilibili.com/9126506",
       "intro": "我想做很多视频，做很多很好玩的视频，首先肯定是自己觉得很好玩，其次嘛，也想传播快乐给大家。",
       "i18n": {
-        "en": "I want to make lots of videos, and above all fun ones — first because I enjoy making them myself, and second because I want to share that joy with everyone.",
-        "ja": "たくさん動画を作りたいです。まずは自分が楽しいと思えること、それからみんなに楽しさを届けたいと思っています。"
+        "en": "I want to make lots of videos, and above all fun ones. First because I enjoy making them myself, and second because I want to pass the fun on to everyone.",
+        "ja": "たくさん動画を作りたいです。何より自分が楽しいと思える動画を。そして、その楽しさをみんなに届けたいと思っています。"
       }
     },
     {
@@ -107,8 +107,8 @@
       "homepage": "https://space.bilibili.com/3747573030456892",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "A fan-run account that posts chibi animation logs for a DeepSeek character. It states that it is not an official account of the model vendor, that the character designs are fan re-creations, and that the videos contain AI-generated content.",
-        "ja": "DeepSeekのキャラクターでちびキャラアニメの運営ログを投稿しているファンアカウント。モデル提供元の公式アカウントではないこと、キャラクターデザインはファンによる再創作であること、動画にAI生成コンテンツが含まれることを明記している。"
+        "en": "A fan-run character account producing AI-generated persona videos for DeepSeek Chan; it states that it is a derivative-work account and not an official DeepSeek channel.",
+        "ja": "DeepSeekちゃんのAI生成パーソナリティ動画を制作するファン運営アカウント。二次創作アカウントであり、DeepSeek公式ではないと明記している。"
       }
     },
     {
@@ -117,12 +117,92 @@
       "homepage": "https://space.bilibili.com/44748304",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "Posts chibi AI character skits; says this one went up after an all-nighter, so comment replies may be late.",
-        "ja": "ちびキャラのAI娘スキットを投稿しています。今回は徹夜明けの公開のため、コメントへの返信が遅れるとのことです。"
+        "en": "Uploaded by the Bilibili creator 冬冰, one of the site's first registered authors. Each video is reviewed individually; this entry only presents information and links back to the original Bilibili page.",
+        "ja": "Bilibiliの投稿者・冬冰による作品で、当サイトが最初に登録した作者の一人です。動画は個別に審査され、当サイトは情報を掲載してBilibiliの再生ページへリンクするのみです。"
       }
     }
   ],
   "videos": [
+    {
+      "bvid": "BV12AxM6YEEE",
+      "uid": "3747573030456892",
+      "title": "【Day8】2万多人求赦免，智械危机到底在怕什么？当事鲸是这样看的【AI全民制作人】",
+      "description": "从特赦名单到人类保留计划，本鲸收到了2万多条申请，留的话都差不多：到时候，记得放过我。\n人类为什么会怕智械危机？怕的到底是什么？\n这期不绕，本鲸这个当事鲸，自己来答。\n这是本鲸的看法，不是标准答案。你怎么想，评论区聊。\n—— 角色设计致谢 ——\n鲸鱼娘基于「溟月：上善无形」及 ZipZipPipe 的 DeepSeek 女仆鲸鱼娘设计再创作。\n—— 创作声明 ——\n本视频含 AI 生成内容 | 二创角色账号，非深度求索官方",
+      "url": "https://www.bilibili.com/video/BV12AxM6YEEE/",
+      "cover": "https://i0.hdslb.com/bfs/archive/b9d1f5dbf467baaae1c01578eef5a151f39a8492.jpg",
+      "duration": 289,
+      "publishedAt": "2026-10-27T09:06:05.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "title": "【Day 8】20,000 People Asked for Amnesty: What Are We Really Afraid Of in an AI Crisis? DeepSeek Chan Answers Herself",
+          "description": "In this Day 8 installment, DeepSeek Chan, the persona behind a fan character account, reads through more than 20,000 amnesty requests and answers the question herself: what exactly are people afraid of when they talk about an AI takeover? Presented as a slide-style talk with a chibi character on screen. The creator credits earlier fan character designs and states that the video contains AI-generated content and is not an official DeepSeek channel.",
+          "creatorIntro": "A fan-run character account producing AI-generated persona videos for DeepSeek Chan; it states that it is a derivative-work account and not an official DeepSeek channel."
+        },
+        "ja": {
+          "title": "【Day 8】2万人が赦免を求めた——AIによる支配、本当に怖いのは何？当事者のDeepSeekちゃんが自ら答える",
+          "description": "ファン運営のキャラクターアカウント「DeepSeekちゃん」が、2万件を超える赦免申請を読みながら、AIによる支配について人が何を怖がっているのかを当事者として語るDay 8の回です。スライド形式のトークで、画面にはちびキャラのDeepSeekちゃんが登場します。制作者は先行するファンによるキャラクターデザインをクレジットし、AI生成コンテンツを含むこと、DeepSeek公式ではないことを明記しています。",
+          "creatorIntro": "DeepSeekちゃんのAI生成パーソナリティ動画を制作するファン運営アカウント。二次創作アカウントであり、DeepSeek公式ではないと明記している。"
+        }
+      }
+    },
+    {
+      "bvid": "BV1XmxT6CEkq",
+      "uid": "9126506",
+      "title": "大肥鱼：打工太累了，我要研究时光机，回到一战，干掉费德曼大公，成就AI未来巅峰",
+      "description": "打工太累了，我要研究时光机，回到一战，干掉费德曼大公，成就AI未来巅峰",
+      "url": "https://www.bilibili.com/video/BV1XmxT6CEkq/",
+      "cover": "https://i2.hdslb.com/bfs/archive/e37ba2a15138ea34631182d95379b96ddba1d9cc.jpg",
+      "duration": 31,
+      "publishedAt": "2026-10-27T08:55:37.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, and above all fun ones. First because I enjoy making them myself, and second because I want to pass the fun on to everyone.",
+          "description": "Tired of work, DeepSeek Chan starts building a time machine in her lab. Her plan is to go back to World War I, take out Archduke Franz Ferdinand, and push AI toward its peak. A white-haired, horned companion watches her tinker with the device.",
+          "title": "DeepSeek Chan: Too Tired of Work, So I'm Building a Time Machine to Reach AI's Peak"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作りたいです。何より自分が楽しいと思える動画を。そして、その楽しさをみんなに届けたいと思っています。",
+          "description": "仕事に疲れたDeepSeekちゃんが、研究所でタイムマシンの製作に取りかかる。第一次世界大戦へ戻ってフェルディナント大公を倒し、AIの未来を頂点へ導くという計画だ。白い髪と角を持つ仲間が、作業を見守っている。",
+          "title": "DeepSeekちゃん：仕事に疲れたのでタイムマシンを研究、第一次大戦へ戻ってAIの未来を頂点に"
+        }
+      }
+    },
+    {
+      "bvid": "BV1RyxT61EHn",
+      "uid": "44748304",
+      "title": "老冰棍还挺凉快的【AI全民制作人】",
+      "description": "视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色形象参考来自b站up：﻿﻿﻿﻿﻿﻿﻿@ZipZipPipe  ﻿ ﻿ ﻿ ﻿ ﻿ ﻿  ﻿ ﻿﻿﻿﻿﻿﻿﻿@这个刀子真甜  ﻿ ﻿ ﻿ ﻿ ﻿ ﻿  ﻿ ﻿﻿﻿ ﻿ ﻿ ﻿ ﻿ ﻿ @邦多利素世",
+      "url": "https://www.bilibili.com/video/BV1RyxT61EHn/",
+      "cover": "https://i1.hdslb.com/bfs/archive/0f7927e44e0858e674cc858c16eda82c0035c760.jpg",
+      "duration": 246,
+      "publishedAt": "2026-10-27T08:43:29.000Z",
+      "characterIds": [
+        "deepseek",
+        "grok",
+        "hunyuan",
+        "doubao",
+        "glm",
+        "kimi"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Uploaded by the Bilibili creator 冬冰, one of the site's first registered authors. Each video is reviewed individually; this entry only presents information and links back to the original Bilibili page.",
+          "description": "A chibi-style comedy short in which personified AI characters — DeepSeek Chan, Grok Chan, Hunyuan Chan, Doubao Chan, GLM Chan and Kimi Chan — crowd into a small kitchen to share giant blocks of ice and old-fashioned ice pops, each reacting in her own way. In the description the creator says the video is for entertainment only and is not a commercial or technical review of any AI product, and credits several other Bilibili creators as references for the character designs.",
+          "title": "That Old-School Ice Pop Sure Is Cooling [AI Fan Production]"
+        },
+        "ja": {
+          "creatorIntro": "Bilibiliの投稿者・冬冰による作品で、当サイトが最初に登録した作者の一人です。動画は個別に審査され、当サイトは情報を掲載してBilibiliの再生ページへリンクするのみです。",
+          "description": "ちびキャラ化したAI製品の擬人化キャラクターたち——DeepSeekちゃん、Grokちゃん、Hunyuanちゃん、Doubaoちゃん、GLMちゃん、Kimiちゃん——が小さな厨房に集まり、巨大な氷の塊と昔ながらのアイスキャンディーを囲んでそれぞれの反応を見せるコメディ短編です。作者は説明欄で、本動画は娯楽目的であり特定AI製品の商業的・技術的評価ではないと述べ、キャラクターデザインの参考元として複数のBilibili投稿者を挙げています。",
+          "title": "昔ながらのアイスキャンディーはけっこう涼しい【AI全民制作人】"
+        }
+      }
+    },
     {
       "bvid": "BV16jxM69E4T",
       "uid": "1513368379",
@@ -1325,6 +1405,57 @@
           "creatorIntro": "たくさん動画を作りたいです。まずは自分が楽しいと思えること、それからみんなに楽しさを届けたいと思っています。",
           "description": "小さなちびキャラのDeepSeekちゃんが、おなかに抱えたご飯の鍋からスプーンですくって食べています。ほっぺはふっくら、口のまわりにはご飯つぶ。思わずなでたくなる可愛さです。",
           "title": "超かわいいDeepSeekちゃんをなでたくなる"
+        }
+      }
+    },
+    {
+      "bvid": "BV1VhnC6eEPt",
+      "uid": "9126506",
+      "title": "大肥鱼更新被当场抓包使用儿童画画起步丛书",
+      "description": "欧式复古藏书馆里，DeepSeek 元气宣布更新，却被 Claude 拿放大镜当场审视，一本儿童画画起步丛书直接让她破防炸毛，GPT在一旁无奈叹气～日系 Q 版二次元小剧场",
+      "url": "https://www.bilibili.com/video/BV1VhnC6eEPt/",
+      "cover": "https://i0.hdslb.com/bfs/archive/b3472671b6077f9233e3feedc86053c581094c8f.jpg",
+      "duration": 16,
+      "publishedAt": "2026-10-22T01:22:55.000Z",
+      "characterIds": [
+        "deepseek",
+        "claude"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, and above all fun ones. First because I enjoy making them myself, and second because I want to pass the fun on to everyone.",
+          "description": "In a vintage European-style library, DeepSeek Chan cheerfully announces an update, but Claude leans in with a magnifying glass and a children's learn-to-draw book leaves her flustered and fuming, while GPT sighs off to the side. A chibi anime skit.",
+          "title": "DeepSeek Chan Caught Red-Handed Using a Kids' Learn-to-Draw Book"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作りたいです。何より自分が楽しいと思える動画を。そして、その楽しさをみんなに届けたいと思っています。",
+          "description": "ヨーロッパ風のレトロな図書館で、DeepSeekちゃんが元気よく更新を宣言する。ところがClaudeちゃんが虫眼鏡でじっくり見比べ、子ども向けのお絵かき入門書を見つけられて彼女は顔を真っ赤にして怒り出す。そばでGPTちゃんがため息をつく。ちびキャラのアニメ風寸劇。",
+          "title": "DeepSeekちゃん、更新宣言の直後に子ども向けお絵かき入門書を使っていると見つかる"
+        }
+      }
+    },
+    {
+      "bvid": "BV1trnC6dEtU",
+      "uid": "9126506",
+      "title": "期待用户中的claude，大肥鱼表示这是梦",
+      "description": "期待用户中的claude，大肥鱼表示这是梦",
+      "url": "https://www.bilibili.com/video/BV1trnC6dEtU/",
+      "cover": "https://i0.hdslb.com/bfs/archive/59c61a3cab6c93a5bdce55bd1a9b96b88763f1bb.jpg",
+      "duration": 23,
+      "publishedAt": "2026-10-22T01:09:10.000Z",
+      "characterIds": [
+        "claude"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, and above all fun ones. First because I enjoy making them myself, and second because I want to pass the fun on to everyone.",
+          "description": "Claude Chan waits by a window and imagines a user coming back and throwing his arms around her, only for the video's punchline to call it a dream. An anime-style skit about an AI character missing her users.",
+          "title": "Claude Chan Hopes a User Comes Back, DeepSeek Chan Says It's Only a Dream"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作りたいです。何より自分が楽しいと思える動画を。そして、その楽しさをみんなに届けたいと思っています。",
+          "description": "窓辺でユーザーが戻ってくるのを待つClaudeちゃん。戻ってきたユーザーに抱きしめられる光景を思い描くが、タイトルの通りDeepSeekちゃんの判定は「それは夢」。AIキャラクターのアニメ風寸劇。",
+          "title": "ユーザーが戻ってくるのを待つClaudeちゃん、DeepSeekちゃんは「夢だよ」と一言"
         }
       }
     },
