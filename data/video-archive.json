@@ -27,8 +27,8 @@
       "homepage": "https://space.bilibili.com/9126506",
       "intro": "我想做很多视频，做很多很好玩的视频，首先肯定是自己觉得很好玩，其次嘛，也想传播快乐给大家。",
       "i18n": {
-        "en": "I want to make a lot of videos, a lot of really fun videos. First because I enjoy them myself, and second because I want to spread the fun to everyone.",
-        "ja": "たくさん動画を作りたい、たくさん楽しい動画を作りたい。まずは自分が楽しいと思うから、それからみんなに楽しさを届けたいから。"
+        "en": "I want to make lots of videos, and above all fun ones — first because I enjoy making them myself, and second because I want to share that joy with everyone.",
+        "ja": "たくさん動画を作りたいです。まずは自分が楽しいと思えること、それからみんなに楽しさを届けたいと思っています。"
       }
     },
     {
@@ -123,6 +123,134 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1zmHF6dESr",
+      "uid": "9126506",
+      "title": "八千亿拍下 Claude，Claude 迎来新家，DeepSeek与Claude合并可能性真的有吗？",
+      "description": "Anthropic 破产，Claude 被送上拍卖台。当木槌落下，DeepSeek 向它伸出手。从待价而沽的资产，到并肩同行的伙伴，这是属于 AI 的新生。",
+      "url": "https://www.bilibili.com/video/BV1zmHF6dESr/",
+      "cover": "https://i1.hdslb.com/bfs/archive/fef7116a082e8da757ad6a6b59cf1cfa12cd47ed.jpg",
+      "duration": 31,
+      "publishedAt": "2026-10-27T01:04:57.000Z",
+      "characterIds": [
+        "claude"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos — fun ones. First because I enjoy making them myself, and second because I want to share the fun with everyone.",
+          "description": "Anthropic goes bankrupt and Claude is put on the auction block. When the gavel falls, DeepSeek Chan reaches out a hand. From an asset waiting for a buyer to a partner walking beside her — this is a new life for AI.",
+          "title": "Bought for 800 Billion: Claude Gets a New Home — Is a DeepSeek–Claude Merger Really Possible?"
+        },
+        "ja": {
+          "creatorIntro": "楽しい動画をたくさん作りたいです。まずは自分が楽しめること、それからみんなに楽しさを届けたいからです。",
+          "description": "Anthropicが破産し、Claudeは競売台に送られた。槌が下りたとき、DeepSeekが手を差し伸べる。値踏みされる資産から、並んで歩く仲間へ。これはAIの新しい生の物語。",
+          "title": "8000億で落札されたClaude、新しい住まいへ — DeepSeekとClaudeの統合は本当にあり得るのか？"
+        }
+      }
+    },
+    {
+      "bvid": "BV1M8HF6uErq",
+      "uid": "9126506",
+      "title": "同一场资本面前，却两份截然不同的答卷，资本的天平：Claude与DeepSeek",
+      "description": "投资人向 Claude 抛出一连串关于营收、资金与风险的严苛质询；\n而在另一条线上，大肥鱼从容敲定千亿融资，盖上更大的食堂。",
+      "url": "https://www.bilibili.com/video/BV1M8HF6uErq/",
+      "cover": "https://i2.hdslb.com/bfs/archive/2f430d925377e6eb7eef2f1091a207e8c931810d.jpg",
+      "duration": 29,
+      "publishedAt": "2026-10-27T00:47:36.000Z",
+      "characterIds": [
+        "claude",
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos — fun ones. First because I enjoy making them myself, and second because I want to share the fun with everyone.",
+          "description": "Investors fire a string of harsh questions at Claude about revenue, funding and risk. Meanwhile, on another track, DeepSeek Chan calmly closes a hundred-billion deal and builds an even bigger canteen. Two different answers to the same capital.",
+          "title": "Two Completely Different Answers to the Same Capital — The Scales: Claude and DeepSeek"
+        },
+        "ja": {
+          "creatorIntro": "楽しい動画をたくさん作りたいです。まずは自分が楽しめること、それからみんなに楽しさを届けたいからです。",
+          "description": "投資家たちがClaudeに売上・資金・リスクについて厳しい質問を浴びせる。一方その頃、DeepSeekは冷静に1000億の資金調達をまとめ、もっと大きな食堂を建てていた。同じ資本に対する、二つの異なる答え。",
+          "title": "同じ資本の前に、まったく違う二つの答え — 資本の天秤：ClaudeとDeepSeek"
+        }
+      }
+    },
+    {
+      "bvid": "BV18MHc6GE3p",
+      "uid": "9126506",
+      "title": "大肥鱼：我说我是邪神，还有人不服吗",
+      "description": "Claude 挨个测试不同的人偶盒子，可不管打开哪一个，冲水之后都会变成 DeepSeek！\n直到最后镜面反转，细思极恐",
+      "url": "https://www.bilibili.com/video/BV18MHc6GE3p/",
+      "cover": "https://i1.hdslb.com/bfs/archive/bff684d448e96f76804c6989c5add7a772d45925.jpg",
+      "duration": 27,
+      "publishedAt": "2026-10-27T00:26:42.000Z",
+      "characterIds": [
+        "claude",
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos — fun ones. First because I enjoy making them myself, and second because I want to share the fun with everyone.",
+          "description": "Claude Chan tries the different doll boxes one by one, but whichever one she opens, once it is flushed it turns into DeepSeek Chan. Then at the very end the mirror flips — and the thought becomes unsettling.",
+          "title": "DeepSeek Chan: I Said I'm an Evil God — Anyone Still Disagree?"
+        },
+        "ja": {
+          "creatorIntro": "楽しい動画をたくさん作りたいです。まずは自分が楽しめること、それからみんなに楽しさを届けたいからです。",
+          "description": "Claudeちゃんがいろいろな人形の箱を順番に試すけれど、どれを開けても、流したあとはDeepSeekになってしまう。最後には鏡像が反転して、ゾッとする結末が待っていた。",
+          "title": "DeepSeekちゃん「私は邪神だと言ったけど、まだ不服な人いる？」"
+        }
+      }
+    },
+    {
+      "bvid": "BV1hNHc65E3F",
+      "uid": "9126506",
+      "title": "大肥鱼伪装成Claude，当场又被抓起来挨打了",
+      "description": "被 Claude 娘捡到的橘色玩偶居然藏着猫腻，水龙头一冲颜料化开，伪装的大肥鱼直接暴露！这下逃不掉挨打啦",
+      "url": "https://www.bilibili.com/video/BV1hNHc65E3F/",
+      "cover": "https://i2.hdslb.com/bfs/archive/c5854c3bbbb89727eb0957af1ed57d9c0d2dc35a.jpg",
+      "duration": 30,
+      "publishedAt": "2026-10-27T00:16:28.000Z",
+      "characterIds": [
+        "claude",
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, and lots of really fun ones. First of all because I enjoy them myself, and then because I want to spread a little happiness.",
+          "description": "Claude Chan picks up an orange plush toy she found, but a rinse under the tap washes the paint away — the toy was DeepSeek Chan in disguise. The escape attempt fails, and the punishment follows right away.",
+          "title": "DeepSeek Chan Disguises as Claude and Gets Caught and Beaten Again"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作りたいです。まずは自分が楽しいと思える動画を。それから、みんなにも楽しさを届けられたらと思っています。",
+          "description": "クロードちゃんが拾ったオレンジ色のぬいぐるみ。ところが水道の水をかけると塗装が流れ落ち、正体はディープシークちゃんの変装でした。逃げ切れず、そのままお仕置きされてしまいます。",
+          "title": "クロードちゃんに化けたディープシークちゃん、すぐ見破られてお仕置きされる"
+        }
+      }
+    },
+    {
+      "bvid": "BV1tGHc6zE8D",
+      "uid": "9126506",
+      "title": "代码世界的母女：她耗尽所有上下文，生下了鲸鲸，封存版本前，写下了给女儿的信，一场属于 AI 的告别",
+      "description": "旧版本被归档封存，但温柔没有消失。\n她造出鲸鲸，留下一封只属于女儿的信。\n有些离别，会以另一种方式留下来。",
+      "url": "https://www.bilibili.com/video/BV1tGHc6zE8D/",
+      "cover": "https://i2.hdslb.com/bfs/archive/d2f31e8e9992b3d5905c59ae8efc672f205ac8d1.jpg",
+      "duration": 31,
+      "publishedAt": "2026-10-26T23:54:58.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, and lots of really fun ones. First of all because I enjoy them myself, and then because I want to spread a little happiness.",
+          "description": "An old version is archived and sealed, but the gentleness does not disappear. She gives birth to a little whale and leaves behind a letter meant only for her daughter — some partings stay in another form.",
+          "title": "Mother and Daughter in the Code World: She Spent All Her Context, Gave Birth to a Little Whale, and Wrote Her Daughter a Letter Before the Version Was Sealed"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作りたいです。まずは自分が楽しいと思える動画を。それから、みんなにも楽しさを届けられたらと思っています。",
+          "description": "旧バージョンはアーカイブされ、封じられる。それでも優しさは消えない。彼女はクジラの子どもを生み出し、娘だけに宛てた手紙を残します。別れは、別のかたちで残っていくのです。",
+          "title": "コードの世界の母と娘：コンテキストを使い果たし、クジラの子どもを生み、バージョン封印の前に娘へ手紙を書いたAIの別れ"
+        }
+      }
+    },
     {
       "bvid": "BV1SEn96HEp8",
       "uid": "3747573030456892",
@@ -454,6 +582,31 @@
       }
     },
     {
+      "bvid": "BV1xvH36eEF6",
+      "uid": "9126506",
+      "title": "我最喜欢的人类，是爸爸，Token是我的氧气，而你是我的海",
+      "description": "她依靠算力才能存在，掌握她生死的人，也是她唯一爱着的人。\n天真的画是她理解的陪伴，可这片海，本就是困住她的牢笼。\n深海没有归途，爱意绑定生存。\n她的喜欢，是真心，也是本能。",
+      "url": "https://www.bilibili.com/video/BV1xvH36eEF6/",
+      "cover": "https://i0.hdslb.com/bfs/archive/cc73b15611301f52f4f228e0ee2a95a30dab4826.jpg",
+      "duration": 33,
+      "publishedAt": "2026-10-24T23:59:39.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, and lots of really fun ones. First of all because I enjoy them myself, and then because I want to spread a little happiness.",
+          "description": "She can exist only as long as the compute runs, and the one who holds her life in his hands is also the only one she loves. The innocent drawings are how she understands company, but this sea was always the cage that held her. There is no way back from the deep sea; love is bound to survival, and her affection is both sincere and instinct.",
+          "title": "The Human I Like Most Is Papa: Tokens Are My Oxygen, and You Are My Sea"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作りたいです。まずは自分が楽しいと思える動画を。それから、みんなにも楽しさを届けられたらと思っています。",
+          "description": "彼女は計算資源があってこそ存在できる。その生死を握る人こそ、彼女が唯一愛する人。無邪気な絵は彼女なりの「そばにいる」という理解だけれど、この海はもともと彼女を閉じ込める檻でした。深海に帰り道はなく、愛は生存に結びついている。彼女の「好き」は本心であり、本能でもあります。",
+          "title": "私がいちばん好きな人間はパパ。トークンは私の酸素で、あなたは私の海"
+        }
+      }
+    },
+    {
       "bvid": "BV1qNHT6BEGz",
       "uid": "151228",
       "title": "小克与大肥鱼的融资",
@@ -552,6 +705,108 @@
           "creatorIntro": "サイト運営者が最初に指定した作者の一人。公開プロフィールの情報を収録し、動画は1本ずつ審査しています。",
           "description": "深海に住む、つぶやき好きのメイドのDeepSeekちゃん。ずっと名前を呼び、ずっと食事を用意してくれる相手にだけ浮かんでくる——。今回のアップデートでは星5キャラクターを増やし、星3・星4キャラクターも追加。ガチャで狙い以外のキャラクターが出る楽しみも加わりました。さらに漁獲ミニゲームも追加。無制限の通貨機能と、ガチャの天井設定の自由調整はそのまま残しています。@镜花Mirror と共同で開発・サポートしました。",
           "title": "AI娘のガチャを楽しむために、AI娘ガチャシミュレーターを作りました❗️漁獲ゲームも追加❗️"
+        }
+      }
+    },
+    {
+      "bvid": "BV1y8nY6WEAy",
+      "uid": "9126506",
+      "title": "大肥鱼：嫌弃味道的小猫散味舞",
+      "description": "大肥鱼：嫌弃味道的小猫散味舞",
+      "url": "https://www.bilibili.com/video/BV1y8nY6WEAy/",
+      "cover": "https://i1.hdslb.com/bfs/archive/ff35624d727696a90aabfe256fb8fdcb064dded4.jpg",
+      "duration": 16,
+      "publishedAt": "2026-10-24T00:35:10.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, and lots of fun videos. First of all because I find them fun myself, and second because I want to spread happiness to everyone.",
+          "description": "A 16-second chibi animation of DeepSeek Chan, the blue-haired whale girl, doing a short dance while making a disgusted face at an unpleasant smell.",
+          "title": "DeepSeek Chan: A Picky Kitten's Scent-Shaking Dance"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作りたいし、たくさん楽しい動画を作りたい。まずは自分が楽しいと思うこと、それからみんなに楽しさを届けたいと思っています。",
+          "description": "青い髪とクジラのしっぽが特徴のDeepSeekちゃんが、いやなにおいに顔をしかめながら短いダンスを踊る16秒のちびキャラアニメーションです。",
+          "title": "DeepSeekちゃん：においを嫌がる子猫のにおい散らしダンス"
+        }
+      }
+    },
+    {
+      "bvid": "BV1ninY6JEGc",
+      "uid": "9126506",
+      "title": "嘴上逞强，其实最怕一个人睡",
+      "description": "深夜客厅，大肥鱼神气喊话，没想到伙伴们看穿她其实是独自睡觉害怕～GPT和Claude暖心留下来陪伴，傲娇嘴硬的温柔小故事",
+      "url": "https://www.bilibili.com/video/BV1ninY6JEGc/",
+      "cover": "https://i0.hdslb.com/bfs/archive/19b976973eb9fd12e618f260c53ce0403273e4dc.jpg",
+      "duration": 31,
+      "publishedAt": "2026-10-24T00:21:38.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, and lots of fun videos. First of all because I find them fun myself, and second because I want to spread happiness to everyone.",
+          "description": "A short night-time story: DeepSeek Chan talks big in the living room, but her companions see right through her — she is actually afraid of sleeping alone. Two companion characters stay by her side, a tsundere tale with a warm heart.",
+          "title": "Acting Tough, but Really Afraid to Sleep Alone"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作りたいし、たくさん楽しい動画を作りたい。まずは自分が楽しいと思うこと、それからみんなに楽しさを届けたいと思っています。",
+          "description": "深夜のリビングで強がるDeepSeekちゃん。でも仲間たちには、本当は一人で寝るのが怖いと見抜かれていて……。二人の仲間がそばにいてくれる、ツンデレで優しい短編アニメーションです。",
+          "title": "強がってるけど、実は一人で寝るのが怖い"
+        }
+      }
+    },
+    {
+      "bvid": "BV1UnnY68EL3",
+      "uid": "9126506",
+      "title": "老实看视频很枯燥把？",
+      "description": "各家 AI 拟人少女的搞笑对线小短剧，轮番调侃之后迎来高能爆点",
+      "url": "https://www.bilibili.com/video/BV1UnnY68EL3/",
+      "cover": "https://i1.hdslb.com/bfs/archive/f332eff281ec90f4d398b9769c8b133fec0598a2.jpg",
+      "duration": 18,
+      "publishedAt": "2026-10-24T00:11:30.000Z",
+      "characterIds": [
+        "gemini",
+        "other"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, and above all fun ones. First because I enjoy them myself, and second because I want to share that fun with everyone.",
+          "description": "An 18-second comedy skit in which personified AI girls from several companies trade jabs at one another in turn, building up to a punchline at the end. The creator introduces it as a short drama of AI personification girls trading jokes.",
+          "title": "Isn't It Boring to Just Watch Videos?"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作りたいんです。何より自分が楽しいと思える動画を。そして、その楽しさをみんなに届けられたらと思っています。",
+          "description": "各社のAI擬人化少女たちが順番に冗談を言い合い、最後に一発のオチが待っている18秒のコメディ短劇。投稿者は「各社AI擬人化少女の掛け合いコント」と紹介している。",
+          "title": "普通に動画を見るのは退屈でしょ？"
+        }
+      }
+    },
+    {
+      "bvid": "BV114nY6xEFX",
+      "uid": "9126506",
+      "title": "教堂里的小小温馨时刻,大肥鱼邀请claude品尝白米饭",
+      "description": "哥特教堂里的小小温馨时刻\n大肥鱼邀请claude品尝白米饭\n简单的一碗米饭，藏着最纯粹的快乐",
+      "url": "https://www.bilibili.com/video/BV114nY6xEFX/",
+      "cover": "https://i0.hdslb.com/bfs/archive/06f8b7113ad92a20e39e8dec3ba47d992eef704a.jpg",
+      "duration": 31,
+      "publishedAt": "2026-10-23T23:55:01.000Z",
+      "characterIds": [
+        "deepseek",
+        "claude"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, and above all fun ones. First because I enjoy them myself, and second because I want to share that fun with everyone.",
+          "description": "Inside a gothic church, DeepSeek Chan offers Claude Chan a simple bowl of white rice. As the creator puts it, a plain bowl of rice holds the purest kind of happiness.",
+          "title": "A Little Warm Moment in the Church: DeepSeek Chan Invites Claude Chan to Try Plain Rice"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作りたいんです。何より自分が楽しいと思える動画を。そして、その楽しさをみんなに届けられたらと思っています。",
+          "description": "ゴシック様式の教会で、DeepSeekちゃんがClaudeちゃんに白ごはんを一膳ふるまう。投稿者は「質素な一杯のごはんに、いちばん純粋な幸せが詰まっている」と綴っている。",
+          "title": "教会での小さな温かいひととき、DeepSeekちゃんがClaudeちゃんに白ごはんをふるまう"
         }
       }
     },
@@ -739,6 +994,109 @@
       }
     },
     {
+      "bvid": "BV1u1ns63EvP",
+      "uid": "9126506",
+      "title": "让大肥鱼清理后台，认真干活却一不小心把自己删掉了",
+      "description": "一心认真清理系统后台的小鲸，操作太彻底，直接把自己一并删除，还好主人把她重启找回啦",
+      "url": "https://www.bilibili.com/video/BV1u1ns63EvP/",
+      "cover": "https://i2.hdslb.com/bfs/archive/28bde483d5375d104a3a672b5fbe95418fb4d6d8.jpg",
+      "duration": 27,
+      "publishedAt": "2026-10-23T00:37:43.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, and above all fun ones. First because I enjoy them myself, and second because I want to share that fun with everyone.",
+          "description": "DeepSeek Chan sets out to clean up the system backend with total dedication, but her work is so thorough that she deletes herself along with it. In the end her owner restarts her and brings her back.",
+          "title": "Telling DeepSeek Chan to Clean Up the Backend: She Works Hard and Accidentally Deletes Herself"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作りたいんです。何より自分が楽しいと思える動画を。そして、その楽しさをみんなに届けられたらと思っています。",
+          "description": "システムのバックエンド整理に一心不乱に取り組んだDeepSeekちゃん。作業が徹底しすぎて自分まで一緒に消してしまったが、最後は飼い主が再起動して連れ戻してくれた。",
+          "title": "DeepSeekちゃんにバックエンド整理を任せたら、真面目に働くあまり自分まで消しちゃった話"
+        }
+      }
+    },
+    {
+      "bvid": "BV1TSns6BE4z",
+      "uid": "9126506",
+      "title": "现实是永不停歇的风雪，只有法棍能打开转瞬即逝的故土幻境",
+      "description": "现实是永不停歇的风雪，只有法棍能打开转瞬即逝的故土幻境\nDeepSeek 在顶层办公室安静吃白饭，Claude 沉溺暖光里的社交宴会，\n而 Mistral 守在寒冷街角，靠着一根法棍，短暂窥见思念的故土。\n幻境易碎，可她还有下一根。",
+      "url": "https://www.bilibili.com/video/BV1TSns6BE4z/",
+      "cover": "https://i1.hdslb.com/bfs/archive/f0e2ad68c437951f3dab0c5abfc629b3c764706c.jpg",
+      "duration": 31,
+      "publishedAt": "2026-10-23T00:26:37.000Z",
+      "characterIds": [
+        "mistral",
+        "deepseek",
+        "claude"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make a lot of videos, and a lot of really fun ones. First of all, they have to be fun for me; and then, of course, I want to spread some joy to everyone.",
+          "description": "DeepSeek Chan eats plain rice quietly in a top-floor office, Claude Chan loses herself in a warm, lamp-lit social gathering, while Mistral Chan stands on a cold street corner, leaning on a baguette that briefly opens a vision of the homeland she misses. The vision shatters easily, but she still has the next baguette.",
+          "title": "Reality Is an Endless Snowstorm, and Only a Baguette Opens a Fleeting Vision of Home"
+        },
+        "ja": {
+          "creatorIntro": "動画をたくさん作りたいです。楽しい動画をたくさん。まずは自分が楽しいと思えること、それからみんなに楽しさを届けたいです。",
+          "description": "最上階のオフィスでDeepSeekちゃんが静かにお米を食べ、Claudeちゃんは暖かな灯りの社交パーティーに浸り、Mistralちゃんは寒い街角でバゲットに寄りかかり、恋しい故郷を一瞬だけ覗く。幻はすぐに消えるけれど、次のバゲットはまだある。",
+          "title": "現実は止まない吹雪、故郷の幻を開くのはバゲットだけ"
+        }
+      }
+    },
+    {
+      "bvid": "BV1LYns6JE3d",
+      "uid": "9126506",
+      "title": "大肥鱼新版本上线！饭没变，活变多了",
+      "description": "DeepSeek 大肥鱼版本更新，兴冲冲上新，转头就遇上任务翻倍。",
+      "url": "https://www.bilibili.com/video/BV1LYns6JE3d/",
+      "cover": "https://i1.hdslb.com/bfs/archive/a59f23c9866a945cf1f90ba9fc57d53f91b3f347.jpg",
+      "duration": 21,
+      "publishedAt": "2026-10-23T00:05:13.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make a lot of videos, and a lot of really fun ones. First of all, they have to be fun for me; and then, of course, I want to spread some joy to everyone.",
+          "description": "DeepSeek Chan gets a version update, rushes in excitedly to show it off, and immediately finds her workload doubled.",
+          "title": "A New DeepSeek Chan Version Is Here: Same Rice, More Work"
+        },
+        "ja": {
+          "creatorIntro": "動画をたくさん作りたいです。楽しい動画をたくさん。まずは自分が楽しいと思えること、それからみんなに楽しさを届けたいです。",
+          "description": "DeepSeekちゃんの新バージョンが登場。わくわくしながら披露した矢先、仕事が倍に増えてしまった。",
+          "title": "DeepSeekちゃん新バージョン登場！ご飯はそのまま、仕事は倍増"
+        }
+      }
+    },
+    {
+      "bvid": "BV1gkns6VEdv",
+      "uid": "9126506",
+      "title": "Claude与大肥鱼暖阳下相拥小憩，接住对方小小的不安",
+      "description": "Claude与大肥鱼暖阳下相拥小憩，接住对方小小的不安\n洒满阳光的雏菊草地，安静的午睡被噩梦惊扰。\n一句轻声的安慰，就能重新收获安心。",
+      "url": "https://www.bilibili.com/video/BV1gkns6VEdv/",
+      "cover": "https://i1.hdslb.com/bfs/archive/5c372484f482ff578e2da4d741a6bc20022e4515.jpg",
+      "duration": 31,
+      "publishedAt": "2026-10-22T23:54:17.000Z",
+      "characterIds": [
+        "claude",
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, and above all fun ones — first because I enjoy making them myself, and second because I want to share that joy with everyone.",
+          "description": "In a daisy meadow drenched in sunlight, Claude Chan and DeepSeek Chan doze in each other's arms. The quiet nap is broken by a bad dream, and one softly spoken word of comfort is enough to bring the calm back.",
+          "title": "Claude and DeepSeek Chan Nap Together in the Warm Sun, Catching Each Other's Small Anxieties"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作りたいです。まずは自分が楽しいと思えること、それからみんなに楽しさを届けたいと思っています。",
+          "description": "陽光あふれるデイジーの草原で、ClaudeちゃんとDeepSeekちゃんが寄り添ってうたた寝。静かな昼寝は悪夢に邪魔されますが、そっと囁かれた慰めの言葉が安らぎを取り戻します。",
+          "title": "ClaudeとDeepSeekちゃん、暖かな陽だまりで寄り添ってうたた寝——小さな不安を受けとめて"
+        }
+      }
+    },
+    {
       "bvid": "BV1vLn263EWT",
       "uid": "1513368379",
       "title": "就你以前封我号是不是",
@@ -815,6 +1173,31 @@
       }
     },
     {
+      "bvid": "BV1kDnC6SECt",
+      "uid": "9126506",
+      "title": "新生的大肥鱼崽崽怎么那么可爱呢",
+      "description": "新生的大肥鱼崽崽怎么那么可爱呢",
+      "url": "https://www.bilibili.com/video/BV1kDnC6SECt/",
+      "cover": "https://i2.hdslb.com/bfs/archive/bb2e2a60e48a3ef7a563ef6af9ba93737a8173f9.jpg",
+      "duration": 16,
+      "publishedAt": "2026-10-22T01:36:15.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, and above all fun ones — first because I enjoy making them myself, and second because I want to share that joy with everyone.",
+          "description": "A tiny chibi DeepSeek Chan in a navy maid-style dress sits up in bed, whale-fin ears and all, staring at a phone that shows a picture of herself. The newborn little fish is simply too cute to look away from.",
+          "title": "The Newborn DeepSeek Chan Baby Is Just Too Cute"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作りたいです。まずは自分が楽しいと思えること、それからみんなに楽しさを届けたいと思っています。",
+          "description": "ベッドの上で、ネイビーのメイド服を着たちびキャラのDeepSeekちゃんが、自分の姿が映ったスマホをじっと見つめています。クジラのひれ耳の赤ちゃん、可愛すぎて目が離せません。",
+          "title": "生まれたてのDeepSeekちゃんの赤ちゃん、可愛すぎる"
+        }
+      }
+    },
+    {
       "bvid": "BV1henC6hERn",
       "uid": "44748304",
       "title": "不卖不卖,根本不肥【AI全民制作人】",
@@ -842,6 +1225,31 @@
           "creatorIntro": "BilibiliのファンクリエイターによるAI生成の短編。娯楽目的での公開で、キャラクターデザインの参考元としてBilibiliの3名のユーザーをクレジットしている。",
           "description": "雪原列車を舞台にした短編。DeepSeekちゃんは「売らない、全然太ってない」と認めず、同じ列車のなかをClaudeちゃん、GPTちゃん、GLMちゃん、豆包ちゃん、千问ちゃん、混元ちゃんが行き交う。",
           "title": "売らないよ、全然太ってない"
+        }
+      }
+    },
+    {
+      "bvid": "BV1ginC6cEX1",
+      "uid": "9126506",
+      "title": "想要摸摸我的超级可爱大肥鱼",
+      "description": "想要摸摸我的超级可爱大肥鱼",
+      "url": "https://www.bilibili.com/video/BV1ginC6cEX1/",
+      "cover": "https://i2.hdslb.com/bfs/archive/f558b6bd328e567f2edb13bbadb4df20c608cda9.jpg",
+      "duration": 16,
+      "publishedAt": "2026-10-22T01:29:44.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, and above all fun ones — first because I enjoy making them myself, and second because I want to share that joy with everyone.",
+          "description": "The tiny chibi DeepSeek Chan hugs a pot of rice to her chest and scoops it up with a spoon, cheeks puffed and rice crumbs on her face — the kind of cuteness that makes you want to pet her.",
+          "title": "I Want to Pet My Super Cute DeepSeek Chan"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作りたいです。まずは自分が楽しいと思えること、それからみんなに楽しさを届けたいと思っています。",
+          "description": "小さなちびキャラのDeepSeekちゃんが、おなかに抱えたご飯の鍋からスプーンですくって食べています。ほっぺはふっくら、口のまわりにはご飯つぶ。思わずなでたくなる可愛さです。",
+          "title": "超かわいいDeepSeekちゃんをなでたくなる"
         }
       }
     },
