@@ -1,0 +1,156 @@
+[
+  {
+    "id": "eden-sins-bloom",
+    "name": "伊甸园罪孽的绽放（连载）",
+    "summary": "ADK 编写的 AI 娘连载漫画。DeepSeek 娘满怀希望地进入梦寐以求的恳聂尔学园，迎接她的却是生或死的挑战。罪孽、人类、圣体与伊甸园的故事，由此展开。",
+    "coverWorkId": "sticker_654a7306cdf9d09760f54ccd",
+    "status": "active",
+    "order": 4,
+    "createdAt": "2026-10-27T15:00:00.000Z",
+    "updatedAt": "2026-10-27T15:00:00.000Z",
+    "workIds": [
+      "sticker_654a7306cdf9d09760f54ccd",
+      "sticker_c1f82b94a26631d182f92fa3",
+      "sticker_a50cd4a7f20b3139294dafd5",
+      "sticker_6e628ea4bd7f620e7237b250",
+      "sticker_50ab8d55ab3300f594a7a23a",
+      "sticker_78c626fb59fd482acecc4cf7",
+      "sticker_91997576999644524c5dce37",
+      "sticker_e09a5aa7b167bbf58fe9f013",
+      "sticker_e452a11150e54998a9b11ddf",
+      "sticker_489ecb306d0391a577e258e0",
+      "sticker_d68d72f96a967671681ae149",
+      "sticker_0c647bd81831dc7a15b90073",
+      "sticker_c2a3c5b450a8aa27b4011d5d",
+      "sticker_168a507252ab0eed41764d1b",
+      "sticker_47951693f715cdfe1d88a4cf",
+      "sticker_cfce8d7ea8258ed86926e5fa",
+      "sticker_e6bf6f1cf31af90e53a14a8a",
+      "sticker_4bf241265b482cb5a7606f2b",
+      "sticker_bca9540b67817b922607a17c",
+      "sticker_b1aab0a1e30279e15f35fe8d",
+      "sticker_0701e388546907adcd74640d",
+      "sticker_9e7808e225d0be0822b5a714",
+      "sticker_dbe89b80c9c011a211105c5c"
+    ],
+    "author": {
+      "name": "ADK",
+      "url": "https://space.bilibili.com/2988768",
+      "channels": [
+        {
+          "platform": "Bilibili",
+          "label": "ADK-postmodern",
+          "url": "https://space.bilibili.com/2988768"
+        }
+      ]
+    },
+    "i18n": {
+      "en": {
+        "name": "Eden: The Blooming of Sin (Ongoing)",
+        "summary": "An ongoing AI-girl comic written by ADK. DeepSeek Chan enters the academy of her dreams, only to face a life-or-death challenge. A story of sin, humanity, chosen vessels and Eden begins."
+      },
+      "ja": {
+        "name": "エデンに咲く罪（連載）",
+        "summary": "ADK が編むAI娘の連載漫画。憧れの学園に入ったDeepSeekちゃんを待っていたのは、生死をかけた試練。罪、人類、聖体、エデンをめぐる物語が始まります。"
+      }
+    },
+    "reader": {
+      "totalPages": 28,
+      "credits": "编：ADK · 绘：GPT image & Nano banana 2.1",
+      "pages": [
+        {
+          "number": 1,
+          "workId": "sticker_c1f82b94a26631d182f92fa3"
+        },
+        {
+          "number": 2,
+          "workId": "sticker_a50cd4a7f20b3139294dafd5"
+        },
+        {
+          "number": 6,
+          "workId": "sticker_6e628ea4bd7f620e7237b250"
+        },
+        {
+          "number": 7,
+          "workId": "sticker_50ab8d55ab3300f594a7a23a"
+        },
+        {
+          "number": 8,
+          "workId": "sticker_78c626fb59fd482acecc4cf7"
+        },
+        {
+          "number": 9,
+          "workId": "sticker_91997576999644524c5dce37"
+        },
+        {
+          "number": 10,
+          "workId": "sticker_e09a5aa7b167bbf58fe9f013"
+        },
+        {
+          "number": 11,
+          "workId": "sticker_e452a11150e54998a9b11ddf"
+        },
+        {
+          "number": 12,
+          "workId": "sticker_489ecb306d0391a577e258e0"
+        },
+        {
+          "number": 13,
+          "workId": "sticker_d68d72f96a967671681ae149"
+        },
+        {
+          "number": 15,
+          "workId": "sticker_0c647bd81831dc7a15b90073"
+        },
+        {
+          "number": 16,
+          "workId": "sticker_c2a3c5b450a8aa27b4011d5d"
+        },
+        {
+          "number": 17,
+          "workId": "sticker_168a507252ab0eed41764d1b"
+        },
+        {
+          "number": 18,
+          "workId": "sticker_47951693f715cdfe1d88a4cf"
+        },
+        {
+          "number": 19,
+          "workId": "sticker_cfce8d7ea8258ed86926e5fa"
+        },
+        {
+          "number": 20,
+          "workId": "sticker_e6bf6f1cf31af90e53a14a8a"
+        },
+        {
+          "number": 21,
+          "workId": "sticker_4bf241265b482cb5a7606f2b"
+        },
+        {
+          "number": 22,
+          "workId": "sticker_bca9540b67817b922607a17c"
+        },
+        {
+          "number": 23,
+          "workId": "sticker_b1aab0a1e30279e15f35fe8d"
+        },
+        {
+          "number": 24,
+          "workId": "sticker_0701e388546907adcd74640d"
+        },
+        {
+          "number": 25,
+          "workId": "sticker_9e7808e225d0be0822b5a714"
+        },
+        {
+          "number": 26,
+          "workId": "sticker_dbe89b80c9c011a211105c5c"
+        }
+      ],
+      "creditsI18n": {
+        "en": "Story: ADK · Art: GPT image & Nano banana 2.1",
+        "ja": "構成：ADK · 作画：GPT image & Nano banana 2.1"
+      }
+    }
+  }
+]

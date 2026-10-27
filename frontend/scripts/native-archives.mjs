@@ -27,12 +27,17 @@ function context(base,api,snapshot){
 }
 export function nativeArchiveName(base,api,snapshot){
   const c=context(base,api,snapshot),page=base.match(/\/page\/(\d+)\.html$/)?.[1];
+  if(c?.topic?.reader)return c.name+(page?(api.current==='en'?' · Original page '+page:'・原稿 '+page+' ページ'):(api.current==='en'?' · Cover & contents':'・表紙と目次'));
   return c?c.title+(page?(api.current==='en'?' · Page '+page:' · '+page+'ページ目'):''):undefined;
 }
 export function applyNativeArchives(document,api,base,snapshot){
   const language=api.current;
   if(!['en','ja'].includes(language))return null;
   const en=language==='en';
+  for(const section of document.querySelectorAll('[data-comic-topic]')){
+    const topic=(snapshot.topics||[]).find(topic=>topic.id===section.getAttribute('data-comic-topic'));
+    if(topic)section.querySelector('h2').textContent=topic.i18n?.[language]?.name||api.contentText(topic.name);
+  }
   const roleName=id=>api.characterName(id,snapshot.characters.find(c=>c.id===id)?.name||id);
   // Aliases are character identifiers; use the canonical localized identity for names in non-Latin scripts.
   const aliases=c=>[...new Set((c.aliases||[]).map(a=>/[\u3400-\u9fff]/u.test(a)?roleName(c.id):a))].filter(a=>a!==roleName(c.id));
@@ -66,6 +71,17 @@ export function applyNativeArchives(document,api,base,snapshot){
     for(const link of document.querySelectorAll('.breadcrumbs a')){
       const id=link.getAttribute('href')?.match(/\/topics\/([^/]+)\.html$/)?.[1];
       if(id===c.topic.id)link.textContent=c.name;
+    }
+    if(c.topic.reader){
+      for(const nav of document.querySelectorAll('.comic-pages,.comic-navigation'))nav.setAttribute('aria-label',c.name);
+      if(crumb)crumb.textContent=page?(en?'Original page '+page:'原稿 '+page+' ページ'):c.name;
+      const credits=document.querySelector('.comic-credits');
+      if(credits)credits.textContent=c.topic.reader.creditsI18n?.[language]||c.topic.reader.credits;
+      for(const image of document.querySelectorAll('[data-comic-work] img')){
+        const work=snapshot.works.find(work=>work.id===image.closest('[data-comic-work]').getAttribute('data-comic-work'));
+        if(work)image.setAttribute('alt',work.i18n?.[language]?.name||c.name);
+      }
+      return {title:nativeArchiveName(base,api,snapshot)+' | DeepSeek Chan',description:c.summary+(page?(en?` Original page ${page} of ${c.topic.reader.totalPages}.`:` 原稿 ${page} / ${c.topic.reader.totalPages} ページ。`):'')};
     }
     const description=en?`${c.summary} This collection includes ${c.works.length} works. Each work retains its description, source, attribution and license information.`:`${c.summary} ${c.works.length}件の作品を収録し、各作品の説明、出典、クレジット、ライセンス情報を保持しています。`;
     return {title:c.title+(page?(en?' · Page ':' · ')+page+(en?'':'ページ目'):'')+' | DeepSeek Chan',description};

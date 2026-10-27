@@ -40,7 +40,7 @@ const authorAvatarDir=path.join(path.dirname(process.env.SITE_SNAPSHOT||path.joi
 const topicAvatar=id=>{try{return fs.statSync(path.join(authorAvatarDir,id+'.webp')).isFile()?'/author-avatars/'+id+'.webp':null}catch{return null}};
 const topics = snapshot.topics.filter(t=>t.status!=='removed').map(t=>{
   const list=t.workIds.map(id=>byId.get(id)).filter(Boolean);
-  const cover=list.find(w=>w.id===t.coverWorkId)||list[0];
+  const cover=list.find(w=>w.id===t.coverWorkId)||(t.reader?null:list[0]);
   const art=[cover,...list.filter(w=>w!==cover)].filter(Boolean).slice(0,3);
   return {...t,list,cover,art,avatar:topicAvatar(t.id),eyebrow:t.author?'作者作品集':'主题合集'};
 });

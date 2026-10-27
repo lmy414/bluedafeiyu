@@ -33,6 +33,8 @@
 
 视频另有 `data/video-archive.json`，由后台只导出通过 AI 审核的视频及作者公开资料，前端构建直接读取。它不加入图片作品和六种图片类型。作者登记、公开接口、审核队列及维护方式见 `docs/Bilibili作者登记与视频同步.md`。未审视频、领取令牌和失败记录不得导出。
 
+连载漫画专题的显式编排保存在 `data/serial-topics.json`，构建时覆盖同 ID 的 CMS 专题或追加缺失专题，避免后续后台导出移除已编排连载。该清单仅用于站长指定的连载，不按作者或标签自动归集。`reader.totalPages` 是原稿总页数，`reader.pages` 显式关联原稿页码与稳定作品 ID；封面不占正文页码，未发布页保留缺页提示。页面使用组件库 `ComicSeries.mjs` 输出封面目录和 `/topics/<id>/page/<原稿页码>.html`，无需 JavaScript 即可前后翻页。补页前仍需正常审核收录，再将新作品 ID 与原页码写入清单。头像沿用内容仓 `dist/author-avatars/<id>.webp`。
+
 专题收录的作品由站长人工精选，**不要自动把作品批量归进专题**；专题元数据可由 owner/bot 经后台 upsert 接口创建或更新，本仓库不预置具体专题记录。每条字段：`id`（kebab-case，发布后冻结，用于 `topics/<id>.html`；旧 hash 链接仍可用）、`name`、`summary`、`coverWorkId`、`status`（`active` 才上线）、`order`（升序）、`createdAt`/`updatedAt`、`workIds`（显式收录的作品 id，按此顺序展示）。构建时下架或不存在的 `workIds` 会被跳过并警告，封面失效退回首张，收录清空的专题不上线。
 
 后台另提供受鉴权的专题 upsert 接口（`POST /cms-api/topics/upsert`，owner 或 bot 均可调用），只允许按严格白名单维护文案与作者元数据：`topicId`（查找键）、`name`/`summary` 与英日译名、`author`（省略保留、`null` 清空）、`status`、`order`；`works`、`cover`、`needsPublish` 等键一律 400 拒绝。**作品与封面只能由站长在后台关联**，机器人不得通过该接口改动；机器人也不能把已关联作品的专题改成草稿。一条 `active` 但没有任何作品的专题不会生成专题页面。

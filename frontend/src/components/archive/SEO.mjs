@@ -32,7 +32,7 @@ export function createSEO(ctx) {
       if (list.length) add('/characters/' + c.id + '/' + t.id + '.html', list, c.name + kindNames[t.id], 'character-type', { character: c, type: t.id });
     }
   }
-  for (const t of topics) add('/topics/' + t.id + '.html', t.list, t.name + ' · AI 娘作品合集', 'topic', { topic: t });
+  for (const t of topics.filter(t => !t.reader)) add('/topics/' + t.id + '.html', t.list, t.name + ' · AI 娘作品合集', 'topic', { topic: t });
   const main = {
     '/index.html': Object.values(homeMeta(works.length)),
     '/characters.html': ['AI 娘角色档案：DeepSeek娘、GPT娘与更多角色 — 蓝色大肥鱼', `浏览 ${chars.length} 位有作品的 AI 娘角色，查看名字、现有别名和代表作品，进入各角色的表情包、插画、设定图与漫画档案。`],
@@ -121,11 +121,29 @@ export function createSEO(ctx) {
         trail.splice(1, 0, ['往期活动回顾', eventPaths.archived]);
       }
     }
+    if (options.comic) {
+      const topic = topics.find(t => t.id === options.comic.topicId);
+      const number = options.comic.number;
+      const workId = topic.reader.pages.find(page => page.number === number)?.workId;
+      const sheet = number ? topic.list.find(work => work.id === workId) : topic.cover;
+      const base = '/topics/' + topic.id + '.html';
+      title = topic.name + (number ? ` · 原稿第 ${number} 页` : ' · 封面与目录') + ' — 蓝色大肥鱼';
+      desc = topic.summary + (number ? ` 原稿第 ${number} 页，共 ${topic.reader.totalPages} 页。` : ' 按原稿页码翻页阅读。');
+      image = sheet?.l || topic.cover?.l || topic.list[0].l;
+      indexOnPublish = !!sheet;
+      schema = { '@type': number && sheet ? 'ComicStory' : 'CollectionPage', '@id': canonical + '#page', url:canonical, name:topic.name, description:desc, inLanguage:'zh-CN', ...(sheet?{image:full(image)}:{}), ...(number?{pagination:String(number)}:{}), author:{'@type':'Person',name:topic.author.name,url:topic.author.url}, isPartOf:{'@type':'CreativeWorkSeries',name:topic.name,url:full(base)} };
+      trail = [['蓝色大肥鱼','/'],['主题合集','/topics.html'],[topic.name,base],...(number?[[`原稿第 ${number} 页`,url]]:[])];
+    }
     const breadcrumb = { '@type': 'BreadcrumbList', itemListElement: trail.map(([name, p], i) => ({ '@type': 'ListItem', position: i + 1, name, item: full(p) })) };
     const share = w ? workShareCopy(w) : {title,sub:c?.character?.name || 'AI 娘二创档案',tag:c?.type || '',quote:false};
     const shareMeta = ogCard(shareCardId(url), { displayUrl: image, description: w?.d || title, name: w?.n || title }, share.title, share.sub, share.tag, share.quote);
     const record = { ...(w ? {shareCardCopy:share} : {}), url: canonicalPath, canonical, title, description: desc, image: full(image), og: {...shareMeta,image:shareCardImageURL(url)}, indexOnPublish,
       robots: indexOnPublish && (!c || c.n === 1) ? 'index,follow' : 'noindex,follow', schemas: [schema, ...(url === '/index.html' ? [] : [breadcrumb])], collectionBase: c?.base || null, total: c?.list.length || 0, page: c?.n || 1 };
+    if (options.comic) {
+      record.collectionBase = '/topics/' + options.comic.topicId + '.html';
+      record.page = options.comic.number;
+      record.total = topics.find(topic => topic.id === options.comic.topicId).reader.totalPages;
+    }
     return record;
   }
   function pagination(c, n = 1) {

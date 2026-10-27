@@ -215,7 +215,7 @@ export async function localizeHtml(html, base, locale, snapshot) {
       const index = locale.id === 'en' ? 1 : locale.id === 'ja' ? 2 : 0;
       data.mainEntity = aboutQuestions.map(row=>({ '@type':'Question', name: index === 0 && locale.id === 'zh-Hant' ? converter(row[0]) : row[index], acceptedAnswer:{ '@type':'Answer', text: index === 0 && locale.id === 'zh-Hant' ? converter(row[3]) : row[index+3] } }));
     }
-    if (locale.id !== 'zh' && ['WebSite','WebPage','CollectionPage'].includes(data['@type'])) {
+    if (locale.id !== 'zh' && ['WebSite','WebPage','CollectionPage','ComicStory'].includes(data['@type'])) {
       data.name=document.title;
       data.description=desc;
     }

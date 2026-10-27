@@ -38,7 +38,7 @@ test('active topics produce static pages with a shared collection layout and ori
  for(const topic of topics){
   const doc=html(`topics/${topic.id}.html`);
   assert.ok(doc.includes('href="/works/'),`${topic.id} 应有作品入口`);
-  assert.ok(doc.includes('work-grid'),`${topic.id} 应展示作品流`);
+  assert.ok(doc.includes(topic.reader?'data-comic-reader':'work-grid'),`${topic.id} 应展示作品流或连载阅读页`);
   if(topic.author){
    // 作者型专题：作者名、首选渠道 URL 与独立版式标记都要出现在页面上。
    // 快照里的 & 到了 HTML 属性 / 文本里会转义成 &amp;，两种都认。

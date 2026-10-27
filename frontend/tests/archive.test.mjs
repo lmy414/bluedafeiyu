@@ -17,11 +17,12 @@ test('selected topic covers lead collection artwork without changing member orde
   const coverId=memberIds.includes(topic.coverWorkId)?topic.coverWorkId:memberIds[0];
   const cover=data.works.find(work=>work.id===coverId);
   const doc=read('topics/'+topic.id+'.html');
-  assert.equal(doc.querySelector('.topic-mosaic img').getAttribute('src'),cover.i,topic.id+' hero cover');
+  assert.equal(doc.querySelector(topic.reader?'.comic-sheet img':'.topic-mosaic img').getAttribute('src'),topic.reader?cover.l:cover.i,topic.id+' hero cover');
   assert.equal(index.querySelector(`a[href="/topics/${topic.id}.html"] .collection-art img`).getAttribute('src'),cover.i,topic.id+' collection card cover');
   const homeCard=home.querySelector(`.collection-grid a[href="/topics/${topic.id}.html"] .collection-art img`);
   if(homeCard)assert.equal(homeCard.getAttribute('src'),cover.i,topic.id+' homepage card cover');
-  assert.deepEqual([...doc.querySelectorAll('#results .work-card')].map(card=>card.getAttribute('data-slug')),memberIds.slice(0,24).map(id=>data.works.find(work=>work.id===id).slug),topic.id+' curated order');
+  if(topic.reader)assert.deepEqual(data.topics.find(t=>t.id===topic.id).reader.pages,topic.reader.pages,topic.id+' original page order');
+  else assert.deepEqual([...doc.querySelectorAll('#results .work-card')].map(card=>card.getAttribute('data-slug')),memberIds.slice(0,24).map(id=>data.works.find(work=>work.id===id).slug),topic.id+' curated order');
   const sharePath=new URL(doc.querySelector('meta[property="og:image"]').getAttribute('content')).pathname;
   const shareJob=jobs.find(job=>job.id===path.basename(sharePath,'.jpg'));
   assert.ok(shareJob,topic.id+' share card job');
@@ -94,6 +95,7 @@ test('lists share one filter bar and a crawlable load-more chain',()=>{
 test('collection filter counts only include its own full member list',()=>{
  const data=JSON.parse(fs.readFileSync(path.join(out,'archive-data.json'),'utf8'));
  for(const topic of data.topics){
+  if(topic.reader){assert.equal(read('topics/'+topic.id+'.html').querySelector('#filter-form'),null,'serial reading order cannot be filtered or shuffled');continue;}
   const members=topic.slugs.map(slug=>data.works.find(w=>w.slug===slug));
   const counts=new Map();for(const work of members)for(const id of work.cids)counts.set(id,(counts.get(id)||0)+1);
   for(const prefix of ['','en/','ja/','zh-hant/']){

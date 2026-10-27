@@ -7,6 +7,7 @@
 // 写：dist/site-data.json、dist/site-data.js。幂等、无网络、确定性。
 //     上游 EDMOK/blue-fish-archive 的原图 URL 与既有投稿/owner-picks 原图 path 都不改写。
 
+import {mergeTopicSources, normalizeComicReader} from "./comic-series.mjs";
 import fs from "node:fs";
 import {sourceHash,validateI18n} from "./localization/contract.mjs";
 import { isSingleWorkType } from '../admin/src/lib/work-types.mjs';
@@ -162,7 +163,7 @@ function main() {
     characters,
     // 分类直接取本仓库 data/categories.json（此前这里硬编码过一份，加分类要改两处就漏了）
     categories: categories.filter((item) => item.status === "active"),
-    topics: buildTopics(readJson(path.join(DIST, "topics.json")), unique),
+    topics: buildTopics(mergeTopicSources(readJson(path.join(DIST, "topics.json")), readJson(path.join(DIST, "data/serial-topics.json"))), unique),
     works: unique
   };
   const json = `${JSON.stringify(snapshot, null, 2)}\n`;
@@ -251,8 +252,9 @@ function buildTopics(list, works) {
       workIds.push(workId);
     }
     if (!workIds.length) { console.warn(`[snapshot] 专题 ${id} 没有可用作品，本次不上线`); continue; }
-    const coverWorkId = workIds.includes(topic.coverWorkId) ? topic.coverWorkId : workIds[0];
+    const coverWorkId = workIds.includes(topic.coverWorkId) ? topic.coverWorkId : (topic.reader ? "" : workIds[0]);
     const i18n = normalizeTopicI18n(topic.i18n);
+    const reader = normalizeComicReader(topic.reader, workIds, topic.coverWorkId);
     const author = normalizeTopicAuthor(topic.author, id);
     topics.push({
       id,
@@ -261,6 +263,7 @@ function buildTopics(list, works) {
       ...(Object.keys(i18n).length ? { i18n } : {}),
       // 无 author 时连键都不加，快照形状与原来完全一致
       ...(author ? { author } : {}),
+      ...(reader ? { reader } : {}),
       coverWorkId,
       order: Number(topic.order) || 0,
       updatedAt: String(topic.updatedAt || topic.createdAt || ""),
