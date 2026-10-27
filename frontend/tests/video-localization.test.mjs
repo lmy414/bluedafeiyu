@@ -52,7 +52,7 @@ test('creator labels and title-only video previews survive localization on the s
       const {document}=parseHTML(await localizeHtml(html,'/saved.html',locale,{works:[],characters:[],topics:[]}));
       assert.equal(document.querySelector('[data-creator-label]').getAttribute('aria-label'),creator.name);
       assert.equal(document.querySelector('[data-video-title]').textContent,videoArchive.videos[0].i18n[locale.id].title);
-      assert.equal(document.title,(locale.id==='en'?'Saved works':'お気に入り')+' | DeepSeek Chan');
+      assert.equal(document.title,locale.id==='en'?'Saved works | DeepSeek Chan':'お気に入り | 藍色大肥魚');
     }
   }finally{videoArchive.creators=before;videoArchive.videos=beforeVideos;}
 });
