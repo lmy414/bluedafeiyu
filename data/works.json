@@ -96842,5 +96842,109 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_9b5d11f1d763abd2233651c7",
+    "name": "曼布利诺金头盔",
+    "description": "蓝色长发的 DeepSeek 娘穿着深蓝女仆裙与白色围裙，头顶倒扣一只铁锅当作头盔，双手摊开摆出欢迎姿势，身后露出鲸鱼尾巴，白底全身立绘。",
+    "commentary": "又是风车又是巨人，这回连头盔都给我扣上了——曼布利诺的金头盔，说到底不就是口锅嘛。不过既然戴上它就能当骑士，那我就勉为其难出征一趟，先去附近找找有没有会转的风车。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/9b5d11f1d763abd2.png",
+    "thumbnailPath": "submissions/previews/deepseek/9b5d11f1d763abd2.webp",
+    "fullPath": "submissions/large/deepseek/9b5d11f1d763abd2.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "9b5d11f1d763abd2233651c76550632cefdb4c8eff79099231a5a10b65a63322",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "女仆装",
+      "Q版",
+      "鲸鱼尾巴",
+      "白底立绘",
+      "铁锅"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-28T10:46:08.761Z",
+    "updatedAt": "2026-10-28T10:46:08.761Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610280005",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "e194c9902275679ed9e1c27f27ee5c21e684dbbfd3a107f37f41aaf2893e6b3b",
+      "en": {
+        "commentary": "Windmills and giants again, and this time they have put a helmet on me. The golden helmet of Mambrino is, when you get down to it, just a pot. But if wearing it makes me a knight, I suppose I will ride out — right after I find a windmill that actually turns.",
+        "description": "DeepSeek Chan, a blue-haired girl in a navy maid dress and white apron, stands on a plain white background with an iron pot overturned on her head like a helmet, both hands spread in a welcoming gesture and a whale tail curling out behind her.",
+        "faq": [
+          {
+            "answer": "It is DeepSeek Chan, the personification of DeepSeek, drawn in a navy maid dress with a whale tail and a small whale motif on her apron.",
+            "question": "Who is the character in this picture?"
+          },
+          {
+            "answer": "The title and the submitter's note point to the golden helmet of Mambrino from Don Quixote, a barber's basin that the knight mistakes for a helmet.",
+            "question": "What does the pot on her head refer to?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Golden Helmet of Mambrino",
+        "originNote": "",
+        "seoDescription": "A chibi DeepSeek Chan in a navy maid dress wears an overturned iron pot as the golden helmet of Mambrino, shown in full-body standing art on a white background.",
+        "seoTitle": "The Golden Helmet of Mambrino — DeepSeek Chan Chibi Standing Art",
+        "tags": [
+          "DeepSeek Chan",
+          "maid outfit",
+          "chibi",
+          "whale tail",
+          "white background standing art",
+          "iron pot"
+        ]
+      },
+      "ja": {
+        "commentary": "また風車に巨人、今度は兜まで被らされた。マンブリーノの金の兜って、要するに鍋のことだよね。でもこれを被れば騎士になれるなら、仕方なく出征してくるよ。まずはちゃんと回ってくれる風車を探さないと。",
+        "description": "青い髪の DeepSeek ちゃんが紺色のメイド服と白いエプロン姿で白背景に立ち、頭には鉄鍋を逆さに被って兜に見立てている。両手を広げて迎える仕草で、背後にはクジラの尾びれがのぞく全身立ち絵。",
+        "faq": [
+          {
+            "answer": "DeepSeek を擬人化した DeepSeek ちゃんだ。紺色のメイド服を着ており、クジラの尾びれとエプロンのクジラ模様が見える。",
+            "question": "この画像のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "投稿タイトルと説明にあるドン・キホーテの「マンブリーノの金の兜」で、騎士が兜と勘違いする理髪師の鉢を指している。",
+            "question": "頭の鍋は何を表していますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "マンブリーノの金の兜",
+        "originNote": "",
+        "seoDescription": "紺のメイド服を着たちびキャラの DeepSeek ちゃんが、鉄鍋をマンブリーノの金の兜に見立てて被る、白背景の全身立ち絵。",
+        "seoTitle": "マンブリーノの金の兜｜DeepSeek ちゃんちびキャラ立ち絵",
+        "tags": [
+          "DeepSeek ちゃん",
+          "メイド服",
+          "ちびキャラ",
+          "クジラのしっぽ",
+          "白背景立ち絵",
+          "鉄鍋"
+        ]
+      }
+    }
   }
 ]

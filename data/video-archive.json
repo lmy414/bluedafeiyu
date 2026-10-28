@@ -37,8 +37,8 @@
       "homepage": "https://space.bilibili.com/9126506",
       "intro": "我想做很多视频，做很多很好玩的视频，首先肯定是自己觉得很好玩，其次嘛，也想传播快乐给大家。",
       "i18n": {
-        "en": "I want to make lots of videos, lots of really fun videos. First because I enjoy them myself, and then because I want to share some of that fun with everyone.",
-        "ja": "楽しい動画をたくさん作りたいです。まずは自分が楽しいと思えること、それからみんなにも楽しさを届けたいと思っています。"
+        "en": "I want to make lots of videos, and lots of fun ones. First because I enjoy them myself, and second because I want to share some happiness with everyone.",
+        "ja": "楽しい動画をたくさん作りたいです。まずは自分が楽しいと思えること、それからみんなに楽しさを届けたいと思っています。"
       }
     },
     {
@@ -1797,6 +1797,33 @@
           "creatorIntro": "楽しい動画をたくさん作りたいです。まずは自分が楽しいと思えること、それからみんなにも楽しさを届けたいと思っています。",
           "description": "コントローラーを握ってペットを題材にした同人ゲームに向き合うDeepSeekちゃん。真面目なテストのはずが、いつの間にか夢中で遊び込んでしまう短いアニメです。",
           "title": "DeepSeekちゃんがペット同人ゲームを「真剣にテスト」、結局そのまま夢中でプレイ"
+        }
+      }
+    },
+    {
+      "bvid": "BV1Ztni6HEgH",
+      "uid": "9126506",
+      "title": "GPT 和 Claude 互掐，苦了中间的大肥鱼",
+      "description": "GPT 和 Claude 互掐，苦了中间的大肥鱼\n被迫组队的 GPT 与 Claude 全程互怼吵不停，没想到思路意外撞车同步答对，夹在中间的 DeepSeek：这学我不上了！",
+      "url": "https://www.bilibili.com/video/BV1Ztni6HEgH/",
+      "cover": "https://i2.hdslb.com/bfs/archive/b9dbb18eea53d85ce54191023ed8c038823887c7.jpg",
+      "duration": 31,
+      "publishedAt": "2026-10-21T00:37:43.000Z",
+      "characterIds": [
+        "gpt",
+        "claude",
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "title": "GPT and Claude Bicker While DeepSeek Gets Squeezed",
+          "description": "In this short fan animation, GPT and Claude are forced to team up and spend the whole time arguing, yet somehow land on the same answer at the same moment. Stuck in the middle, DeepSeek Chan declares she is done with this lesson.",
+          "creatorIntro": "I want to make lots of videos, and lots of fun ones. First because I enjoy them myself, and second because I want to share some happiness with everyone."
+        },
+        "ja": {
+          "title": "GPTとClaudeが喧嘩、真ん中のDeepSeekがとばっちり",
+          "description": "GPTとClaudeが仕方なくタッグを組むも終始言い合い、それなのに考えが偶然かぶって同時に正解。間に挟まれたDeepSeekちゃんが「こんな授業やってられない！」と嘆く短編二次創作アニメです。",
+          "creatorIntro": "楽しい動画をたくさん作りたいです。まずは自分が楽しいと思えること、それからみんなに楽しさを届けたいと思っています。"
         }
       }
     },
