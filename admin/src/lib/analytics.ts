@@ -2,7 +2,7 @@ import crypto from 'node:crypto'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 
-export type WorkMetrics = { views: number; downloads: number }
+export type WorkMetrics = { views: number; downloads: number; detailViews?: number; previewViews?: number; unclassifiedViews?: number }
 export type AnalyticsSnapshot = {
   version: 1
   propertyId: string
@@ -12,6 +12,9 @@ export type AnalyticsSnapshot = {
   works: Record<string, WorkMetrics>
   limited: boolean
   unassigned: number
+  pageViews?: number
+  timeZone?: string
+  viewTypeAvailable?: boolean
 }
 
 type Env = Record<string, string | undefined>
@@ -20,8 +23,16 @@ type Report = {
   dimensionHeaders?: { name: string }[]
   metricHeaders?: { name: string }[]
   rows?: { dimensionValues: { value: string }[]; metricValues: { value: string }[] }[]
-  metadata?: { dataLossFromOtherRow?: boolean; subjectToThresholding?: boolean; samplingMetadatas?: unknown[] }
+  metadata?: { dataLossFromOtherRow?: boolean; subjectToThresholding?: boolean; samplingMetadatas?: unknown[]; timeZone?: string }
 }
+
+const isLimited = (report: Report) => Boolean(report.metadata?.dataLossFromOtherRow || report.metadata?.subjectToThresholding || report.metadata?.samplingMetadatas?.length)
+function eventCount(raw: string | undefined) {
+  const count = Number(raw)
+  if (!/^\d+$/.test(raw || '') || !Number.isSafeInteger(count) || count < 0) throw new Error('GA4 返回无效的事件数量')
+  return count
+}
+const emptyMetrics = () => ({ views: 0, downloads: 0, detailViews: 0, previewViews: 0, unclassifiedViews: 0 })
 
 export function analyticsConfig(env: Env = process.env) {
   const propertyId = env.GA4_PROPERTY_ID || ''
@@ -59,7 +70,7 @@ async function requestJSON(url: string, init: RequestInit, fetchImpl: typeof fet
   catch { throw new Error('GA4 请求超时或网络不可达') }
   if (!response.ok) {
     // Google 的原始错误可能包含配置和令牌；只给后台返回固定说明。
-    throw new Error(`GA4 请求失败（HTTP ${response.status}），请检查 API、查看者权限及 work_id 自定义维度`)
+    throw new Error(`GA4 请求失败（HTTP ${response.status}），请检查 API、查看者权限及自定义维度`)
   }
   return response.json()
 }
@@ -89,46 +100,69 @@ export async function accessToken(credentialsFile: string, fetchImpl: typeof fet
   return result.access_token
 }
 
-export async function fetchWorkMetrics({ propertyId, streamId = '15814452848', startDate, token, fetchImpl = fetch }: {
-  propertyId: string; streamId?: string; startDate: string; token: string; fetchImpl?: typeof fetch
+export async function fetchWorkMetrics({ propertyId, streamId = '15814452848', startDate, token, viewTypeAvailable = false, fetchImpl = fetch }: {
+  propertyId: string; streamId?: string; startDate: string; token: string; viewTypeAvailable?: boolean; fetchImpl?: typeof fetch
 }): Promise<Pick<AnalyticsSnapshot, 'works' | 'limited' | 'unassigned'>> {
   const works: Record<string, WorkMetrics> = Object.create(null)
+  const dimensions = ['customEvent:work_id', 'eventName', ...(viewTypeAvailable ? ['customEvent:view_type'] : [])]
   let offset = 0, limited = false, unassigned = 0
   for (;;) {
     const report = await requestJSON(`https://analyticsdata.googleapis.com/v1beta/properties/${propertyId}:runReport`, {
       method: 'POST', headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({
         dateRanges: [{ startDate, endDate: 'today' }],
-        dimensions: [{ name: 'customEvent:work_id' }, { name: 'eventName' }],
+        dimensions: dimensions.map(name => ({ name })),
         metrics: [{ name: 'eventCount' }],
         dimensionFilter: { andGroup: { expressions: [
           { filter: { fieldName: 'eventName', inListFilter: { values: ['work_view', 'work_download'] } } },
           { filter: { fieldName: 'streamId', stringFilter: { matchType: 'EXACT', value: streamId } } },
         ] } },
-        orderBys: [{ dimension: { dimensionName: 'customEvent:work_id' } }, { dimension: { dimensionName: 'eventName' } }],
+        orderBys: dimensions.map(dimensionName => ({ dimension: { dimensionName } })),
         limit: '10000', offset: String(offset),
       }),
     }, fetchImpl) as Report
-    if (report.dimensionHeaders?.map(x => x.name).join(',') !== 'customEvent:work_id,eventName' || report.metricHeaders?.[0]?.name !== 'eventCount') {
+    if (report.dimensionHeaders?.map(x => x.name).join(',') !== dimensions.join(',') || report.metricHeaders?.[0]?.name !== 'eventCount') {
       throw new Error('GA4 返回的统计字段不匹配')
     }
-    limited ||= Boolean(report.metadata?.dataLossFromOtherRow || report.metadata?.subjectToThresholding || report.metadata?.samplingMetadatas?.length)
+    limited ||= isLimited(report)
     const rows = report.rows || []
     for (const row of rows) {
       const id = row.dimensionValues?.[0]?.value, event = row.dimensionValues?.[1]?.value
-      const rawCount = row.metricValues?.[0]?.value
-      const count = Number(rawCount)
-      if (!/^\d+$/.test(rawCount || '') || !Number.isSafeInteger(count) || count < 0) throw new Error('GA4 返回无效的事件数量')
+      const count = eventCount(row.metricValues?.[0]?.value)
       if (event !== 'work_view' && event !== 'work_download') throw new Error('GA4 返回非作品统计事件')
       if (!id || !/^[A-Za-z0-9_-]{1,100}$/.test(id) || id === '__proto__' || id === 'constructor') { unassigned += count; continue }
-      const metrics = works[id] ||= { views: 0, downloads: 0 }
+      const metrics = works[id] ||= emptyMetrics()
       metrics[event === 'work_view' ? 'views' : 'downloads'] += count
+      if (event === 'work_view') {
+        const viewType = viewTypeAvailable ? row.dimensionValues?.[2]?.value : undefined
+        const key = viewType === 'detail' ? 'detailViews' : viewType === 'preview' ? 'previewViews' : 'unclassifiedViews'
+        metrics[key]! += count
+      }
     }
     offset += rows.length
     if (offset >= (report.rowCount || 0)) break
     if (!rows.length || offset > 1_000_000) throw new Error('GA4 分页结果不完整，保留上次统计')
   }
   return { works, limited, unassigned }
+}
+
+/** 页面 PV 单独查询本站流的 page_view，不与作品浏览相加。 */
+export async function fetchPageMetrics({ propertyId, streamId, startDate, token, fetchImpl = fetch }: {
+  propertyId: string; streamId: string; startDate: string; token: string; fetchImpl?: typeof fetch
+}) {
+  const report = await requestJSON(`https://analyticsdata.googleapis.com/v1beta/properties/${propertyId}:runReport`, {
+    method: 'POST', headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      dateRanges: [{ startDate, endDate: 'today' }], metrics: [{ name: 'eventCount' }],
+      dimensionFilter: { andGroup: { expressions: [
+        { filter: { fieldName: 'eventName', stringFilter: { matchType: 'EXACT', value: 'page_view' } } },
+        { filter: { fieldName: 'streamId', stringFilter: { matchType: 'EXACT', value: streamId } } },
+      ] } },
+    }),
+  }, fetchImpl) as Report
+  if (report.metricHeaders?.map(x => x.name).join(',') !== 'eventCount' || report.dimensionHeaders?.length || (report.rows?.length || 0) > 1 || (report.rowCount || 0) > 1) throw new Error('GA4 返回的页面统计字段不匹配')
+  if (!report.rows?.length && report.rowCount) throw new Error('GA4 页面统计结果不完整')
+  return { pageViews: report.rows?.length ? eventCount(report.rows[0].metricValues?.[0]?.value) : 0, timeZone: report.metadata?.timeZone, limited: isLimited(report) }
 }
 
 const inFlight = new Map<string, Promise<AnalyticsSnapshot>>()
@@ -141,8 +175,14 @@ export async function syncAnalytics(env: Env = process.env, fetchImpl: typeof fe
   if (active) return active
   const pending = (async () => {
     const token = await accessToken(cfg.credentialsFile, fetchImpl)
-    const metrics = await fetchWorkMetrics({ propertyId: cfg.propertyId, streamId: cfg.streamId, startDate: cfg.startDate, token, fetchImpl })
-    const snapshot: AnalyticsSnapshot = { version: 1, propertyId: cfg.propertyId, streamId: cfg.streamId, startDate: cfg.startDate, syncedAt: new Date().toISOString(), ...metrics }
+    const metadata = await requestJSON(`https://analyticsdata.googleapis.com/v1beta/properties/${cfg.propertyId}/metadata`, {
+      method: 'GET', headers: { Authorization: `Bearer ${token}` },
+    }, fetchImpl)
+    if (!Array.isArray(metadata.dimensions)) throw new Error('GA4 返回的维度元数据无效')
+    const viewTypeAvailable = metadata.dimensions.some((dimension: { apiName: string }) => dimension.apiName === 'customEvent:view_type')
+    const args = { propertyId: cfg.propertyId, streamId: cfg.streamId, startDate: cfg.startDate, token, fetchImpl }
+    const [metrics, pages] = await Promise.all([fetchWorkMetrics({ ...args, viewTypeAvailable }), fetchPageMetrics(args)])
+    const snapshot: AnalyticsSnapshot = { version: 1, propertyId: cfg.propertyId, streamId: cfg.streamId, startDate: cfg.startDate, syncedAt: new Date().toISOString(), ...metrics, ...pages, limited: metrics.limited || pages.limited, viewTypeAvailable }
     await fs.mkdir(path.dirname(cfg.cacheFile), { recursive: true })
     const temporary = `${cfg.cacheFile}.${crypto.randomUUID()}.tmp`
     try {
@@ -157,11 +197,15 @@ export async function syncAnalytics(env: Env = process.env, fetchImpl: typeof fe
 
 export function publishedMetrics(snapshot: AnalyticsSnapshot | null, ids: string[]) {
   const works: Record<string, WorkMetrics> = Object.create(null)
-  if (snapshot) for (const id of ids) works[id] = snapshot.works[id] || { views: 0, downloads: 0 }
+  if (snapshot) for (const id of ids) {
+    const item = snapshot.works[id]
+    works[id] = item ? { ...item, detailViews: item.detailViews ?? 0, previewViews: item.previewViews ?? 0, unclassifiedViews: item.unclassifiedViews ?? item.views } : emptyMetrics()
+  }
   return {
     available: Boolean(snapshot), startDate: snapshot?.startDate || null, syncedAt: snapshot?.syncedAt || null,
     stale: snapshot ? Date.now() - Date.parse(snapshot.syncedAt) > 24 * 3600_000 : false,
     limited: Boolean(snapshot?.limited || snapshot?.unassigned), works,
-    totals: Object.values(works).reduce((sum, item) => ({ views: sum.views + item.views, downloads: sum.downloads + item.downloads }), { views: 0, downloads: 0 }),
+    pageViews: snapshot?.pageViews ?? null, timeZone: snapshot?.timeZone ?? null, viewTypeAvailable: Boolean(snapshot?.viewTypeAvailable),
+    totals: Object.values(works).reduce<ReturnType<typeof emptyMetrics>>((sum, item) => ({ views: sum.views + item.views, downloads: sum.downloads + item.downloads, detailViews: sum.detailViews + (item.detailViews || 0), previewViews: sum.previewViews + (item.previewViews || 0), unclassifiedViews: sum.unclassifiedViews + (item.unclassifiedViews || 0) }), emptyMetrics()),
   }
 }

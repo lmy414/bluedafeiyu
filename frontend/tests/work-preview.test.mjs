@@ -13,7 +13,7 @@ function fixture({load,prefix=''} = {}) {
   const {document,window} = parseHTML(`<html><body><div class="work-grid" id="one">${works.slice(0,2).map(w=>renderWorkCard(w)).join('')}</div><div class="work-grid" id="two">${renderWorkCard(works[2])}</div><dialog id="preview-dialog"><button data-preview-close>Close</button><div id="preview-body"></div></dialog><dialog id="share-card-dialog"></dialog></body></html>`);
   const dialog = document.querySelector('#preview-dialog'), locks = [], views = [], errors = [];
   let focused;
-  document.addEventListener('work:show',event=>views.push(event.detail.id));
+  document.addEventListener('work:show',event=>{assert.equal(event.detail.viewType,'preview');views.push(event.detail.id);});
   for (const node of document.querySelectorAll('a,button')) node.focus = options => {focused={node,options};};
   dialog.showModal = () => {dialog.open=true;};
   dialog.close = () => {dialog.open=false;dialog.dispatchEvent(new window.Event('close'));};

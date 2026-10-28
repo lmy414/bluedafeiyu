@@ -356,7 +356,7 @@
         current = slug;
         setStage(slug, w);
         render(slug, w);
-        if (changed) document.dispatchEvent(new CustomEvent('work:show', { detail: { id: w.id } }));
+        if (changed) document.dispatchEvent(new CustomEvent('work:show', { detail: { id: w.id, viewType: 'preview' } }));
         info.scrollTop = 0; panel.scrollTop = 0;
         box.querySelector('.prev').hidden = box.querySelector('.next').hidden = list.length < 2;
         history.replaceState(Object.assign({}, history.state || {}, { wm: slug }), '', workUrl(slug));

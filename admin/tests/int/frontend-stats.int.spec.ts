@@ -11,6 +11,7 @@ const { JSDOM } = createRequire(import.meta.url)('jsdom') as {
 const publicDir = path.resolve(import.meta.dirname, '../../../frontend/public')
 const statsScript = fs.readFileSync(path.join(publicDir, 'work-stats.js'), 'utf8')
 const siteScript = fs.readFileSync(path.join(publicDir, 'v2.js'), 'utf8')
+const componentsScript = fs.readFileSync(path.join(publicDir, 'components/runtime.js'), 'utf8')
 const settle = async () => { for (let i = 0; i < 8; i++) await new Promise(resolve => setTimeout(resolve, 0)) }
 
 function browser({ available = true, direct = false, defaultDownloads = false } = {}) {
@@ -30,7 +31,7 @@ function browser({ available = true, direct = false, defaultDownloads = false } 
     scrollTo: () => {},
     IntersectionObserver: class { observe() {} unobserve() {} disconnect() {} },
   })
-  win.eval(statsScript); win.eval(siteScript)
+  win.eval(componentsScript); win.eval(statsScript); win.eval(siteScript)
   return { win, events, requests, dom }
 }
 
@@ -53,13 +54,13 @@ describe('前台作品统计与完整列表排序', () => {
     await settle()
     win.document.querySelector<HTMLElement>('[data-work="w0"]')!.click(); await settle()
     expect(events.filter(e => e[1] === 'work_view')).toHaveLength(1)
-    expect(events[0][2]).toMatchObject({ work_id: 'w0' })
+    expect(events[0][2]).toMatchObject({ work_id: 'w0', view_type: 'preview' })
     win.document.dispatchEvent(new win.CustomEvent('site:langchange')); await settle()
     expect(events.filter(e => e[1] === 'work_view')).toHaveLength(1)
     win.document.querySelector('[data-download-work]')!.dispatchEvent(new win.MouseEvent('click', { bubbles: true }))
     expect(events.filter(e => e[1] === 'work_download')[0][2]).toMatchObject({ work_id: 'w0' })
     win.document.querySelector<HTMLElement>('.wm .next')!.click(); await settle()
-    expect(events.filter(e => e[1] === 'work_view')[1][2]).toMatchObject({ work_id: 'w1' })
+    expect(events.filter(e => e[1] === 'work_view')[1][2]).toMatchObject({ work_id: 'w1', view_type: 'preview' })
     dom.window.close()
   })
 

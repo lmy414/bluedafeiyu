@@ -74,7 +74,7 @@ export function installWorkPreview({load, localize = w => w, translate:tx, url, 
             </div>
           </div>
           <nav class="preview-nav" aria-label="${esc(tx('d.previewNavigation','作品切换'))}"><button type="button" class="preview-step" data-preview-step="-1" ${index===0?'disabled':''}>${icon('back')}${esc(tx('d.prevWork','上一张'))}</button><span class="preview-position"><b>${String(index+1).padStart(2,'0')}</b><span>/</span>${String(slugs.length).padStart(2,'0')}</span><button type="button" class="preview-step" data-preview-step="1" ${index===slugs.length-1?'disabled':''}>${esc(tx('d.nextWork','下一张'))}${icon('arrow')}</button></nav>`;
-        doc.dispatchEvent(new doc.defaultView.CustomEvent('work:show',{detail:{id:w.id}}));
+        doc.dispatchEvent(new doc.defaultView.CustomEvent('work:show',{detail:{id:w.id,viewType:'preview'}}));
       }
       doc.dispatchEvent(new doc.defaultView.Event('preview:render'));
       dialog.scrollTop = 0;

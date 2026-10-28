@@ -190,7 +190,7 @@ import {orderWorks, shuffledSlugs} from '../components/work-order.js';
   installWorkPreview({load,localize:localized,translate:tx,url:localURL,names,toast});
   document.addEventListener('click',e=>{const btn=e.target.closest('[data-comments]');if(!btn)return;btn.disabled=true;const script=document.createElement('script');script.src='https://giscus.app/client.js';const attrs={'repo':'lmy414/lmy414-blog-comments','repo-id':'R_kgDOTUvnVw','category':'Announcements','category-id':'DIC_kwDOTUvnV84DF4fs','mapping':'specific','term':'sticker-'+btn.dataset.comments,'reactions-enabled':'1','input-position':'bottom','theme':document.documentElement.dataset.theme||'light','lang':({zh:'zh-CN','zh-Hant':'zh-TW',en:'en',ja:'ja'})[window.SiteLang?.current||'zh']};for(const[key,value]of Object.entries(attrs))script.setAttribute('data-'+key,value);script.crossOrigin='anonymous';script.async=true;script.onerror=()=>{btn.disabled=false;toast(tx('d.commentsFail','评论暂时无法加载，请稍后重试。'));};$('#comments-container').append(script);btn.hidden=true;});
   // Restore the list position when returning from a detail page in the same tab.
-  if(document.body.dataset.workId)document.dispatchEvent(new CustomEvent('work:show',{detail:{id:document.body.dataset.workId}}));
+  if(document.body.dataset.workId)document.dispatchEvent(new CustomEvent('work:show',{detail:{id:document.body.dataset.workId,viewType:'detail'}}));
   const scrollKey='bluefish-scroll:'+location.pathname+location.search;
   addEventListener('pagehide',()=>{try{sessionStorage.setItem(scrollKey,String(scrollY));}catch{}});
   const back=performance.getEntriesByType('navigation')[0]?.type==='back_forward';if(back){try{const y=Number(sessionStorage.getItem(scrollKey));if(y)setTimeout(()=>scrollTo(0,y),250);}catch{}}

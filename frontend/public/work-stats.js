@@ -23,9 +23,11 @@
     });
     document.querySelectorAll('[data-sort="popular"], [data-sort="downloads"], #filter-form option[value="popular"], #filter-form option[value="downloads"]').forEach(function (el) { el.disabled = !(snapshot && snapshot.available); });
   }
-  function track(name, id) {
+  function track(name, id, viewType) {
     if (!/^[A-Za-z0-9_-]{1,100}$/.test(id || '')) return;
-    if (typeof window.gtag === 'function') window.gtag('event', name, { work_id: id, send_to: 'G-4LWN9Z2WT2', transport_type: 'beacon' });
+    var params = { work_id: id, send_to: 'G-4LWN9Z2WT2', transport_type: 'beacon' };
+    if (name === 'work_view') params.view_type = viewType === 'detail' || viewType === 'preview' ? viewType : 'unknown';
+    if (typeof window.gtag === 'function') window.gtag('event', name, params);
   }
   var ready = fetch('/cms-api/analytics/public', { credentials: 'omit', signal: AbortSignal.timeout(10000) }).then(function (r) { if (!r.ok) throw new Error(); return r.json(); }).then(function (data) { snapshot = data; paint(); return data; }).catch(function () { paint(); return null; });
   window.WorkStats = {
@@ -42,7 +44,7 @@
       return '<article class="media-card" ' + SiteComponents.mediaAttributes(w.col,w.cs) + ' data-k="' + esc((w.k || []).join(' ')) + '"><a href="' + esc(href) + '" data-work="' + esc(slug) + '"><div class="ph"' + SiteComponents.aspectAttributes(w.w,w.h) + '><img loading="lazy" decoding="async" src="' + esc(w.i || w.l) + '" alt="' + esc(w.d || w.n) + '"' + (w.w && w.h ? ' width="' + w.w + '" height="' + w.h + '"' : '') + '><span class="lic" data-lic="' + esc(w.lk) + '" title="' + esc(licenseFull) + '">' + esc(licenseShort) + '</span><span class="badge">' + esc(type) + '</span>' + (w.s ? '<span class="dl">↓ ' + esc(w.s) + '</span>' : '') + '</div><div class="meta"><h3>' + esc(w.n) + '</h3><p>' + (noChar ? '' : '<span class="who"><i></i>' + esc(w.c) + '</span>') + '<span>' + esc(w.dt) + '</span></p><p class="work-stats" data-work-stats="' + esc(w.id) + '"></p></div></a></article>';
     },
   };
-  document.addEventListener('work:show', function (e) { track('work_view', e.detail.id); paint(); });
+  document.addEventListener('work:show', function (e) { track('work_view', e.detail?.id, e.detail?.viewType); paint(); });
   document.addEventListener('click', function (e) { var link = e.target.closest('[data-download-work]'); if (link) track('work_download', link.getAttribute('data-download-work')); });
   document.addEventListener('v2:dom', paint);
   document.addEventListener('site:langchange', paint);
