@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | `page_view` | 实际页面访问，沿用 Google tag 的页面采集 | 页面 URL；普通预览弹窗不额外发送 PV |
 | `work_view` | 访问作品详情页、打开作品预览、左右切换预览作品 | `work_id` 沿用作品稳定 ID；`view_type` 为 `detail`（详情）或 `preview`（预览） |
-| `work_download` | 点击“下载原图” | 同上 |
+| `work_download` | 点击“下载原图” | `work_id`，沿用作品稳定 ID；不带 `view_type` |
 | `topic_download` | 专题原图 ZIP 发起保存，包括自动保存和手动保存 | `topic_id`，沿用专题固定 ID；同时带 `image_count` 和 `failed_count` |
 
 专题下载事件只发往网站衡量 ID `G-4LWN9Z2WT2`。取消打包或全部图片下载失败时不计事件。保存部分图片时，`failed_count` 记录未取到的图片数。事件表示浏览器发起保存，不能证明文件已经落到设备；手动重复保存会重复计数。
