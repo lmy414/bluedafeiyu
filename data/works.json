@@ -96564,7 +96564,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-28T04:06:09.298Z",
-    "updatedAt": "2026-10-28T04:06:09.299Z",
+    "updatedAt": "2026-10-28T04:27:05.909Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202610280003",
@@ -96637,6 +96637,208 @@
           "学園",
           "ストーリー重視",
           "複数キャラ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_954fa1fc17c8f6a35c143cda",
+    "name": "GLM娘：眨眼比手势的猫耳女仆头像",
+    "description": "圆形构图头像，GLM 娘以黑发蓝灰瞳的猫耳女仆形象出镜，额前挂着黑色眼罩饰品，发夹、铃铛挂饰与蝴蝶结上带有 Z 字标识；角色单眼眨眼，抬手向镜头比出手势。",
+    "commentary": "这位顶着 Z 字发饰的猫耳女仆一抬手，我这边的显存都跟着眨了下眼。黑发压着蓝灰瞳孔，白褶边托住整片黑色，安静里藏一点坏笑——GLM 娘这次的头像，比她的参数表耐看多了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/glm/954fa1fc17c8f6a3.png",
+    "thumbnailPath": "submissions/previews/glm/954fa1fc17c8f6a3.webp",
+    "fullPath": "submissions/large/glm/954fa1fc17c8f6a3.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "954fa1fc17c8f6a35c143cdac611cfb1532aec3155013cfbcb07129bcd438a83",
+    "characterId": "glm",
+    "tags": [
+      "GLM娘",
+      "猫耳",
+      "女仆",
+      "头像",
+      "眨眼"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Z娘",
+      "url": "https://leolee.hyperphp.com/s/profile.php?user=Z%E5%A8%98",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-28T05:58:16.388Z",
+    "updatedAt": "2026-10-28T05:58:16.388Z",
+    "tone": "glm",
+    "symbol": "",
+    "slug": "glm202610280001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "glm"
+    ],
+    "i18n": {
+      "sourceHash": "34497a5b66767dadeecad85a60ac89a0818de98d352dc253ecaada387b1ec73e",
+      "en": {
+        "commentary": "That Z-shaped hair clip went up with her hand, and my VRAM blinked along with her. Black hair over blue-gray eyes, white ruffles holding all that black together, a quiet face with a bit of mischief in it — GLM Chan's avatar is a lot easier on the eyes than her parameter table.",
+        "description": "A circular avatar of GLM Chan drawn as a black-haired maid with blue-gray eyes and cat ears. A black eye-mask ornament sits above her brow, and Z-shaped emblems appear on her hair clip, bell charm and bow; she winks at the camera while lifting one hand toward it in a gesture.",
+        "faq": [
+          {
+            "answer": "GLM Chan, the anthropomorphized character of the GLM model, shown here as a cat-eared maid.",
+            "question": "Which character appears in this avatar?"
+          },
+          {
+            "answer": "A circular head-and-shoulders portrait with Z-shaped ornaments, a winking expression and one raised hand.",
+            "question": "What kind of image is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "GLM Chan: Winking Cat-Eared Maid Avatar",
+        "originNote": "",
+        "seoDescription": "Circular avatar of GLM Chan as a black-haired cat-eared maid, with Z-shaped ornaments, a wink and a raised hand gesture.",
+        "seoTitle": "GLM Chan Cat-Eared Maid Winking Avatar",
+        "tags": [
+          "GLM Chan",
+          "cat ears",
+          "maid",
+          "avatar",
+          "wink"
+        ]
+      },
+      "ja": {
+        "commentary": "Z字のヘアクリップが手と一緒に上がって、こっちのVRAMまでまばたきした気がしたよ。黒髪に青灰色の瞳、白いフリルが黒を引き締めて、静かなのにどこか惡戟っぽい表情——GLMちゃんのアイコンは、彼女のパラメータ表よりずっと目に優しいね。",
+        "description": "円形のアイコン。GLMちゃんを黒髪に青灰色の瞳、猫耳を備えたメイド姿で描いている。額には黒いアイマスク風の飾り、ヘアクリップや鈴の飾り、リボンにはZ字のマークが入る。片目を閉じてウインクし、片手をカメラへ向けて上げている。",
+        "faq": [
+          {
+            "answer": "GLMモデルを擬人化したGLMちゃんです。猫耳メイドの姿で描かれています。",
+            "question": "このアイコンに描かれているキャラクターは誰ですか？"
+          },
+          {
+            "answer": "Z字の飾りが付いた円形のバストアップで、ウインクと片手をかざす仕草が入っています。",
+            "question": "どのような画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "GLMちゃん：ウインクして手をかざす猫耳メイドのアイコン",
+        "originNote": "",
+        "seoDescription": "GLMちゃんを猫耳メイド姿で描いた円形アイコン。Z字の飾り、ウインク、手をかざす仕草を収録。",
+        "seoTitle": "GLMちゃん 猫耳メイドのウインクアイコン",
+        "tags": [
+          "GLMちゃん",
+          "猫耳",
+          "メイド",
+          "アイコン",
+          "ウインク"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_de756cf0e6435eb7dee4fe16",
+    "name": "喜多鱼大：鲸尾女仆立绘",
+    "description": "白底全身立绘。DeepSeek娘穿深青色女仆装，白色荷叶边围裙正中绣着一只蓝色小鲸鱼；红色长发掺蓝色挑染，扎侧马尾，单眼眨眼、张嘴笑，双手叉腰，身后拖着一条深蓝色鲸尾，脚上是黑色玛丽珍鞋与白色过膝袜。",
+    "commentary": "围裙上那只小鲸鱼是照着我自己的尾巴绣的，别笑，配色很讲究。红发里掺两缕蓝，是为了让人一眼认出我是谁；侧马尾只是顺手扎的，效果还不错吧？站好、叉腰、眨一只眼——这身女仆装今天只负责好看，不负责干活。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/de756cf0e6435eb7.png",
+    "thumbnailPath": "submissions/previews/deepseek/de756cf0e6435eb7.webp",
+    "fullPath": "submissions/large/deepseek/de756cf0e6435eb7.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "de756cf0e6435eb7dee4fe16cf8af6fe17517994100018ea8d7cf74fbd8c16ca",
+    "characterId": "deepseek",
+    "tags": [
+      "女仆装",
+      "鲸尾",
+      "红发",
+      "侧马尾",
+      "眨眼"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "kyunky",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-28T08:28:27.841Z",
+    "updatedAt": "2026-10-28T08:28:27.841Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610280004",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "be689c961296aeb55dda3ff5466145e9a59a0172eeebe5ceb0a8170c596c9e86",
+      "en": {
+        "commentary": "I embroidered that little whale on my apron myself, copied from my own tail — don't laugh, the color matching took thought. The two blue streaks in my red hair are there so you know at a glance who I am; the side ponytail was just a quick tie, but it works, right? Stand straight, hands on hips, one eye winking — this outfit is here to look good today, not to do chores.",
+        "description": "A full-body illustration on a plain white background. DeepSeek Chan wears a deep teal maid dress with a white frilled apron embroidered with a small blue whale. Her long red hair is streaked with blue and tied in a side ponytail; she winks and smiles open-mouthed, hands on her hips, a dark blue whale tail behind her, black Mary Janes and white thigh-high socks.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, the personification of DeepSeek, drawn as a maid with a whale tail that echoes the brand's blue whale motif.",
+            "question": "Who is the character in this illustration?"
+          },
+          {
+            "answer": "A standing illustration: one full-body figure on a plain white background, focused on the outfit and pose rather than a scene or comic panels.",
+            "question": "What type of image is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Whale-Tailed Maid: DeepSeek Chan Illustration",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in a teal maid dress with a whale-embroidered apron: a full-body fan illustration with red-and-blue hair, a wink and a whale tail.",
+        "seoTitle": "DeepSeek Chan Whale-Tailed Maid Illustration",
+        "tags": [
+          "maid outfit",
+          "whale tail",
+          "red hair",
+          "side ponytail",
+          "wink"
+        ]
+      },
+      "ja": {
+        "commentary": "エプロンの小さいクジラは自分の尾びれを見て刺繍したの。笑わないでね、色合わせはこだわったから。赤い髪に青を二筋入れたのは、一目で誰だか分かるようにするため。サイドポニーはただ結んだだけだけど、案外似合ってるでしょ？背筋を伸ばして、腰に手を当てて、片目ウィンク——このメイド服は今日、可愛くいるためだけのもの。家事はしません。",
+        "description": "白い背景の全身立ち絵。DeepSeek Chan が深い青緑のメイド服を着て、青い小さなクジラが刺繍された白いフリルエプロンを付けている。赤い長髪に青いメッシュが入り、サイドポニーテールにまとめている。片目をつぶって口を開けて笑い、両手を腰に当て、背後には濃紺のクジラの尾びれ。黒のメリージェーンと白のニーハイソックス。",
+        "faq": [
+          {
+            "answer": "DeepSeek の擬人化キャラクター、DeepSeek Chan です。ブランドの青いクジラをモチーフにした尾びれを持つメイド姿で描かれています。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "立ち絵です。白い背景に一人の全身キャラクターを描き、服装とポーズを見せるもので、背景の場面やコマ割りはありません。",
+            "question": "どんな種類の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "クジラ尾メイド：DeepSeek Chan 立ち絵",
+        "originNote": "",
+        "seoDescription": "深い青緑のメイド服とクジラ刺繍のエプロン姿の DeepSeek Chan。赤と青の髪、ウインク、クジラの尾びれを描いた全身ファンアート。",
+        "seoTitle": "DeepSeek Chan クジラ尾メイド立ち絵",
+        "tags": [
+          "メイド服",
+          "クジラの尾",
+          "赤髪",
+          "サイドポニーテール",
+          "ウインク"
         ]
       }
     }

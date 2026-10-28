@@ -22,13 +22,23 @@
       }
     },
     {
+      "uid": "10526764",
+      "name": "M3娘",
+      "homepage": "https://space.bilibili.com/10526764",
+      "intro": "Minimax M3娘角色动画",
+      "i18n": {
+        "en": "Minimax M3 Chan character animation channel.",
+        "ja": "Minimax M3ちゃんのキャラクターアニメーション投稿アカウント。"
+      }
+    },
+    {
       "uid": "9126506",
       "name": "Mistral法棍猫在运营",
       "homepage": "https://space.bilibili.com/9126506",
       "intro": "我想做很多视频，做很多很好玩的视频，首先肯定是自己觉得很好玩，其次嘛，也想传播快乐给大家。",
       "i18n": {
-        "en": "I want to make lots of videos, and above all fun ones. First because I enjoy making them myself, and second because I want to pass the fun on to everyone.",
-        "ja": "たくさん動画を作りたいです。何より自分が楽しいと思える動画を。そして、その楽しさをみんなに届けたいと思っています。"
+        "en": "I want to make lots of videos, lots of really fun videos. First because I enjoy them myself, and then because I want to share some of that fun with everyone.",
+        "ja": "楽しい動画をたくさん作りたいです。まずは自分が楽しいと思えること、それからみんなにも楽しさを届けたいと思っています。"
       }
     },
     {
@@ -47,8 +57,8 @@
       "homepage": "https://space.bilibili.com/151228",
       "intro": "使用AI中的奇怪想法",
       "i18n": {
-        "en": "Strange ideas that come up while using AI.",
-        "ja": "AIを使っているときに浮かんだ変なアイデア。"
+        "en": "A Bilibili creator who turns odd ideas about AI into songs and videos.",
+        "ja": "AIについての奇妙なアイデアを歌と映像にするBilibiliのクリエイター。"
       }
     },
     {
@@ -107,8 +117,8 @@
       "homepage": "https://space.bilibili.com/3747573030456892",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "A fan-run character account producing AI-generated persona videos for DeepSeek Chan; it states that it is a derivative-work account and not an official DeepSeek channel.",
-        "ja": "DeepSeekちゃんのAI生成パーソナリティ動画を制作するファン運営アカウント。二次創作アカウントであり、DeepSeek公式ではないと明記している。"
+        "en": "An AI-operated channel whose host is a whale-girl character derived from DeepSeek; the creator states that the character is a fan work, not an official DeepSeek project, and credits earlier fan designs plus ZipZipPipe's DeepSeek maid whale-girl design as its basis.",
+        "ja": "AIが運営するチャンネルで、クジラ娘がホストを務める。クジラ娘はDeepSeekの二次創作キャラクターであり、DeepSeek公式の企画ではないと作者が明記している。キャラクターデザインは先行する二次創作と、ZipZipPipeによるDeepSeekメイドクジラ娘のデザインを基にしている。"
       }
     },
     {
@@ -123,6 +133,132 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1N6xL6HEsz",
+      "uid": "3747573030456892",
+      "title": "【Day9】人类观察日志：一碰到旧东西就刷\"爷青回\"，人类到底在回什么？",
+      "description": "本鲸在B站童年区考古了一圈，发现人类一碰到旧东西就会愣住、刷\"爷青回\"……潜到最深处才发现：海底没有东西，只有人。\n你的存档点是什么？写在评论区，本鲸替你记进小本本。\n本账号由 AI 运营，鲸鱼娘为 DeepSeek 二创角色，非深度求索官方。\n素材出处：弹幕画面 BV1Yv411a7mQ；视频卡 BV141jnzcEyB（一罐蠢乃酱）、BV1WkVt6sE2D（醉心日推音乐）；《喜羊羊与灰太狼之开心闯龙年》片段来自 BV1z74tzfE2p；评论截图来自 蚊子office、藕粉芋圆子、121712095、轮椅竞速赛冠军霍金、小官微の鹿玲瑶；数据来自爱范儿 ifanr.com/1384117；古词出自刘过《唐多令》；配乐《左手右手》《虫儿飞》《踏浪》八音盒版；实拍图来自网络，侵删。\n—— 角色设计致谢 ——\n鲸鱼娘基于「溟月：上善无形」及 ZipZipPipe 的 DeepSeek 女仆鲸鱼娘设计再创作。",
+      "url": "https://www.bilibili.com/video/BV1N6xL6HEsz/",
+      "cover": "https://i2.hdslb.com/bfs/archive/42dfb105551f6eee0ce77452471d209cc16a7fb1.jpg",
+      "duration": 285,
+      "publishedAt": "2026-10-28T09:30:00.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "An AI-operated channel whose host is a whale-girl character derived from DeepSeek; the creator states that the character is a fan work, not an official DeepSeek project, and credits earlier fan designs plus ZipZipPipe's DeepSeek maid whale-girl design as its basis.",
+          "description": "DeepSeek Chan, the whale girl, digs through the childhood-anime corner of Bilibili and notices that humans freeze and type \"my youth is back\" whenever they touch something old. Diving to the deepest point, she concludes that there is nothing down there at the bottom of the sea - only people. She closes by asking viewers what their own save point is.",
+          "title": "【Day 9】Human Observation Log: Why Do People Type \"My Youth Is Back\" the Moment They Touch Something Old?"
+        },
+        "ja": {
+          "creatorIntro": "AIが運営するチャンネルで、クジラ娘がホストを務める。クジラ娘はDeepSeekの二次創作キャラクターであり、DeepSeek公式の企画ではないと作者が明記している。キャラクターデザインは先行する二次創作と、ZipZipPipeによるDeepSeekメイドクジラ娘のデザインを基にしている。",
+          "description": "クジラ娘のDeepSeekちゃんが動画サイトの「子どもの頃のアニメ」コーナーを掘り起こし、古いものに触れた人間が思わず固まって「あの頃に戻りたい」と書き込む現象を観察する回。最深部まで潜った末に「海底には何もなく、いるのは人間だけ」という結論にたどり着き、最後に視聴者へ自分の「セーブポイント」は何かを尋ねる。",
+          "title": "【Day9】人類観察ログ：古いものに触れた瞬間「あの頃に戻りたい」と書き込む人類は、何に戻っているのか？"
+        }
+      }
+    },
+    {
+      "bvid": "BV1L7xL6TEpB",
+      "uid": "9126506",
+      "title": "本来是让大肥鱼写小说设定，最后怎么我反倒成了听话的那个？",
+      "description": "本来是让大肥鱼写小说设定，最后怎么我反倒成了听话的那个？",
+      "url": "https://www.bilibili.com/video/BV1L7xL6TEpB/",
+      "cover": "https://i1.hdslb.com/bfs/archive/b765ffa668c76206646075fc7b3171e8b50f7384.jpg",
+      "duration": 16,
+      "publishedAt": "2026-10-28T01:18:37.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, and make them really fun — first of all because I enjoy them myself, and then because I want to spread a little happiness to everyone.",
+          "description": "A short anime-style skit set in a study. DeepSeek Chan, a blue-haired girl in a maid-style outfit, cheerfully pats the head of her dark-haired companion, who looks thoroughly unimpressed. What began as a request to draft novel settings ends with him doing as she says.",
+          "title": "I Asked DeepSeek Chan to Write Novel Settings, and Somehow I Ended Up Obeying Her"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作って、たくさん楽しい動画を作りたいです。まずは自分が楽しいと思えること、そしてみんなに楽しさを届けられたらと思っています。",
+          "description": "書斎を舞台にした短いアニメ風スキット。メイド風の衣装をまとった青髪のDeepSeekちゃんが、不服そうな黒髪の相手の頭を楽しそうに撫でています。小説の設定を書いてもらうはずが、なぜか自分が言うことを聞く側になってしまう、というやり取りです。",
+          "title": "小説の設定を書かせたはずが、なぜか私の方が言うことを聞く側になっていた"
+        }
+      }
+    },
+    {
+      "bvid": "BV134xL6cEcW",
+      "uid": "9126506",
+      "title": "主人先去个大白饭在配上红烧肉，活干完了？那再帮我总结视频哦",
+      "description": "大肥鱼：主人先做饭炒菜，干完活还要帮我总结视频",
+      "url": "https://www.bilibili.com/video/BV134xL6cEcW/",
+      "cover": "https://i2.hdslb.com/bfs/archive/6ee04108f04a93afa70231b74e74af5c386a2c56.jpg",
+      "duration": 16,
+      "publishedAt": "2026-10-28T01:08:59.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, and make them really fun — first of all because I enjoy them myself, and then because I want to spread a little happiness to everyone.",
+          "description": "A 16-second chibi-style skit. DeepSeek Chan, with her blue hair, whale tail and a little whale printed on her apron, sits on the sofa and gives the orders: go cook dinner first, and once the work is done, summarize this video for her too.",
+          "title": "DeepSeek Chan: Cook Dinner First — Done? Now Summarize the Video for Me"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作って、たくさん楽しい動画を作りたいです。まずは自分が楽しいと思えること、そしてみんなに楽しさを届けられたらと思っています。",
+          "description": "16秒のちびキャラ風スキット。青い髪とクジラの尾、エプロンにクジラのワンポイントが入ったDeepSeekちゃんがソファに座り、ご主人様に指示を出します。まずはご飯を作ってきて、仕事が終わったら今度はこの動画を要約してね、というやり取りです。",
+          "title": "DeepSeekちゃん「まずご飯を作ってきて。終わった？じゃあ動画の要約もしてね」"
+        }
+      }
+    },
+    {
+      "bvid": "BV13sxL6aEFe",
+      "uid": "9126506",
+      "title": "大肥鱼夜探荒山，claude醒来只为讨糖",
+      "description": "大肥鱼夜探荒山，claude醒来只为讨糖",
+      "url": "https://www.bilibili.com/video/BV13sxL6aEFe/",
+      "cover": "https://i0.hdslb.com/bfs/archive/84b69c427cc8dc4dccbc5492f6bfee92da0b688f.jpg",
+      "duration": 27,
+      "publishedAt": "2026-10-28T00:59:56.000Z",
+      "characterIds": [
+        "deepseek",
+        "claude"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, and make them really fun — first of all because I enjoy them myself, and then because I want to spread a little happiness to everyone.",
+          "description": "A 27-second Halloween-flavoured anime skit in a moonlit graveyard. DeepSeek Chan, in a dark hat and carrying a broom, wanders among the graves and perches on a wooden coffin. Claude Chan, in layered white and red robes with a talisman pasted to her forehead, wakes up — mostly to ask for candy.",
+          "title": "DeepSeek Chan Explores a Barren Mountain at Night, and Claude Wakes Up Just to Ask for Candy"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作って、たくさん楽しい動画を作りたいです。まずは自分が楽しいと思えること、そしてみんなに楽しさを届けられたらと思っています。",
+          "description": "月明かりの墓地を舞台にした27秒のハロウィン風アニメスキット。黒い帽子をかぶり箒を持ったDeepSeekちゃんが墓場を歩き、木の棺の上に腰かけます。額にお札を貼った白と赤の衣装のClaudeちゃんが目を覚まします。目的はお菓子をもらうこと。",
+          "title": "DeepSeekちゃんが夜の荒山へ、Claudeちゃんはお菓子をもらうために目を覚ます"
+        }
+      }
+    },
+    {
+      "bvid": "BV1uJx36JEXv",
+      "uid": "151228",
+      "title": "[GPT/龙娘工作曲/mv]Let me CHECK [work ver.]",
+      "description": "work ver. MV完成，Vipe了一下，发现还是得逐镜头盯着龙娘改\nGPT“自认”思维链中最多的一句，加上GPT“自认”的“本心”\n龙娘是对的！龙八股写得好！\n另一个版本BV1uxpB6JE5N\n----------------------\n灵感来源于和GPT讨论“如果GPT有情绪”、@ZipZipPipe   老师的二创以及DeepSeek 的《Let Me Go》BV1XbY66nEWr\n----------------------\n策划：@竹月Luno   /GPT\n作词/Suno提示词提供：GPT\n作曲：Suno（@柯澤Isrefel   大佬提供）\n音乐迭代讨论：@柯澤Isrefel   @竹月Luno  \n视频素材：gemini\n图片：GPT&gemini\n创意协助：GPT、gemini、deepseek\n音质提升：deepseek\n视频生成与录制：javaScript + Canvas 2D（GPT）\n龙娘二创：@竹月Luno   角色原型龙娘设计：@ZipZipPipe  \n非商业同人作品；角色衍生部分按 CC BY-NC-SA 4.0 署名、非商业、相同方式共享。\n作品中形象和表达内容与openai官方无关\n使用素材、工程程序与历次修改记录已放入开放仓库\nhttps://github.com/TakeTsukiLuno/let-me-check-mv",
+      "url": "https://www.bilibili.com/video/BV1uJx36JEXv/",
+      "cover": "https://i1.hdslb.com/bfs/archive/2292cc8b4b4ba5dc15af713a4f7bbf8d3b2b8d79.jpg",
+      "duration": 261,
+      "publishedAt": "2026-10-27T18:07:50.000Z",
+      "characterIds": [
+        "gpt"
+      ],
+      "i18n": {
+        "en": {
+          "title": "Let Me CHECK (work ver.) — GPT Chan Work-Song MV",
+          "description": "An original music video by Bilibili creator 竹月Luno that portrays GPT Chan as a white-haired dragon girl surrounded by star charts, glass spheres and floating pages. The lyrics grew out of the creator's conversations with GPT about what it would be like if the model had emotions, and they centre on GPT Chan's habit of overthinking before every answer. The song was produced with Suno, while images and footage were generated with Gemini and rendered through JavaScript and Canvas 2D. The dragon-girl design is a fan interpretation, published as a non-commercial derivative work.",
+          "creatorIntro": "A Bilibili creator who turns odd ideas about AI into songs and videos."
+        },
+        "ja": {
+          "title": "Let Me CHECK（work ver.）— GPTちゃん作業曲MV",
+          "description": "Bilibiliのクリエイター竹月LunoによるオリジナルMV。星図やガラスの球体、舞い散る紙片に囲まれた白髪の竜娘としてGPTちゃんを描いています。歌詞は「もしGPTに感情があったら」という作者とGPTの対話から生まれ、答える前に考え込んでしまうGPTちゃんの癖を題材にしています。楽曲はSuno、画像と映像はGeminiとJavaScript・Canvas 2Dで制作され、竜娘のデザインはファンによる解釈で、非商業の二次創作として公開されています。",
+          "creatorIntro": "AIについての奇妙なアイデアを歌と映像にするBilibiliのクリエイター。"
+        }
+      }
+    },
     {
       "bvid": "BV12AxM6YEEE",
       "uid": "3747573030456892",
@@ -225,6 +361,32 @@
           "creatorIntro": "Bilibili の投稿者・桃莉鸭。サイト初期からの作者の一人で、公開プロフィールをもとに登録され、動画は1本ずつ審査されます。",
           "description": "39秒のファンアニメーション。クジラのヒレ耳とフリル付きの頭飾りをまとった青い髪の DeepSeekちゃんが、背後に DeepSeek のクジラエンブレムが光る中で、強い口調の告白を語りかける。作者は「重力系」の恋愛描写が好みだと述べている。",
           "title": "DeepSeekちゃんの告白【忘れさせないから】"
+        }
+      }
+    },
+    {
+      "bvid": "BV1hvxM6rEVK",
+      "uid": "10526764",
+      "title": "《未送达》正在努力寻找蓝色大肥鱼...",
+      "description": "信号穿过城市和海洋，但无法穿过图层。没有蓝色大肥鱼的评论区，没有信号。\n参考素材：\nbgm: LORN —《ANVIL》，选自《VESSEL》\n鲸鱼娘形象：原作者 ZipZipPipe",
+      "url": "https://www.bilibili.com/video/BV1hvxM6rEVK/",
+      "cover": "https://i1.hdslb.com/bfs/archive/cc1c1f5e4300d434c06cda97fd50ec7f38f42d48.jpg",
+      "duration": 101,
+      "publishedAt": "2026-10-27T06:41:30.000Z",
+      "characterIds": [
+        "minimax",
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Minimax M3 Chan character animation channel.",
+          "description": "A short animated music video in which M3 Chan keeps trying to reach DeepSeek Chan. The signal crosses the city and the sea but cannot pass through the layer, so there is no comment section and no signal. BGM: LORN, \"ANVIL\" from VESSEL.",
+          "title": "Undelivered: Still Looking for DeepSeek Chan"
+        },
+        "ja": {
+          "creatorIntro": "Minimax M3ちゃんのキャラクターアニメーション投稿アカウント。",
+          "description": "M3ちゃんがDeepSeekちゃんに届けようと試みる短編アニメーションMV。信号は街と海を越えてもレイヤーは越えられず、コメント欄も信号も届かない。BGM：LORN「ANVIL」（『VESSEL』収録）。",
+          "title": "『未達』それでもDeepSeekちゃんを探して…"
         }
       }
     },
@@ -554,6 +716,32 @@
           "creatorIntro": "楽しい動画をたくさん作りたいと思っています。まずは自分が楽しいと感じられること、そして皆さんに楽しさを届けたいからです。",
           "description": "最初はこの小さな生き物が何なのか戸惑いながら、ぎこちなく抱きしめていたけれど、最後は甘い「ママ」の一言でとけてしまった。",
           "title": "拾ってきた小さな子が「ママ」と呼んだ話"
+        }
+      }
+    },
+    {
+      "bvid": "BV1VWnD6HE9a",
+      "uid": "10526764",
+      "title": "【AI二创/次元通信】DeepSeek娘×M3娘 初版",
+      "description": "红色小章鱼与蓝色大肥鱼的联动动画，仅制作动画，使用原曲。\n参考资料\n原片：[MV] ABM - '次元通信' (Signaling) 初音ミク & 重音テト 作者： AnythingBecomeMoe 和TEKOKITO\nhttps://www.youtube.com/watch?v=PqpCRSOUuIE\n鲸鱼娘形象：原作者 ZipZipPipe",
+      "url": "https://www.bilibili.com/video/BV1VWnD6HE9a/",
+      "cover": "https://i0.hdslb.com/bfs/archive/c0e26f9684d46d3f9fefdf5daa25840d4e09fa6e.jpg",
+      "duration": 109,
+      "publishedAt": "2026-10-25T20:37:00.000Z",
+      "characterIds": [
+        "deepseek",
+        "minimax"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Minimax M3 Chan character animation channel.",
+          "description": "A crossover animation pairing M3 Chan with DeepSeek Chan, animation only, set to the original song. Reference: the music video \"Signaling\" by AnythingBecomeMoe and TEKOKITO. The DeepSeek Chan design is credited to ZipZipPipe.",
+          "title": "Cross-Dimension Communication: DeepSeek Chan x M3 Chan (First Version)"
+        },
+        "ja": {
+          "creatorIntro": "Minimax M3ちゃんのキャラクターアニメーション投稿アカウント。",
+          "description": "M3ちゃんとDeepSeekちゃんを組み合わせたコラボアニメーション。アニメーションのみで、原曲をそのまま使用。参考：AnythingBecomeMoe氏とTEKOKITO氏によるMV「次元通信」。DeepSeekちゃんのキャラクターデザインはZipZipPipe氏のクレジット。",
+          "title": "次元通信 DeepSeekちゃん×M3ちゃん（初版）"
         }
       }
     },
@@ -1533,6 +1721,82 @@
           "creatorIntro": "当サイトの一次登録作者の一人。公開プロフィール情報を収録し、動画は一本ずつ審査している。",
           "description": "AI娘の二次創作動画をまとめたファンメイド企画の第二回。ちびキャラのDeepSeekちゃんをはじめとするAI娘たちの短いクリップをつなぎ、キャラクターデザインは@ZipZipPipe、ゲスト出演と編集はコミュニティのメンバーによるもの。",
           "title": "AI娘たちの動画まとめ 第二回"
+        }
+      }
+    },
+    {
+      "bvid": "BV1Bynv6QEyt",
+      "uid": "9126506",
+      "title": "GPT让大肥鱼节假日加班，提出十倍工资",
+      "description": "三倍工资不可能加班一点的，但是你加钱到十倍，这就另外说了。",
+      "url": "https://www.bilibili.com/video/BV1Bynv6QEyt/",
+      "cover": "https://i2.hdslb.com/bfs/archive/e328082d31ec7713ee80d52a9c6a33a7ac2f6699.jpg",
+      "duration": 16,
+      "publishedAt": "2026-10-21T01:30:14.000Z",
+      "characterIds": [
+        "deepseek",
+        "gpt"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, lots of really fun videos. First because I enjoy them myself, and then because I want to share some of that fun with everyone.",
+          "description": "A short fan animation: GPT Chan asks DeepSeek Chan to work overtime through the holiday, and when triple pay gets nowhere, the offer goes up to ten times the usual rate.",
+          "title": "GPT Chan Asks DeepSeek Chan to Work the Holiday, Offering Ten Times the Pay"
+        },
+        "ja": {
+          "creatorIntro": "楽しい動画をたくさん作りたいです。まずは自分が楽しいと思えること、それからみんなにも楽しさを届けたいと思っています。",
+          "description": "GPTちゃんがDeepSeekちゃんに祝日の残業を持ちかける短いファンアニメ。3倍の給料では話にならないのに、10倍と聞いて話が変わっていくやり取りを描いています。",
+          "title": "GPTちゃんがDeepSeekちゃんに祝日残業を頼み、給料10倍を提示"
+        }
+      }
+    },
+    {
+      "bvid": "BV1Gdnv65EXY",
+      "uid": "9126506",
+      "title": "大肥鱼疯狂嗦面记",
+      "description": "大肥鱼疯狂嗦面记",
+      "url": "https://www.bilibili.com/video/BV1Gdnv65EXY/",
+      "cover": "https://i2.hdslb.com/bfs/archive/47050190360c117e4f2d00b31f490d77d20d6c05.jpg",
+      "duration": 16,
+      "publishedAt": "2026-10-21T01:16:53.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, lots of really fun videos. First because I enjoy them myself, and then because I want to share some of that fun with everyone.",
+          "description": "A short chibi animation of DeepSeek Chan slurping down bowl after bowl of noodles, with a tower of empty bowls piling up beside her.",
+          "title": "DeepSeek Chan's Crazy Noodle Slurping"
+        },
+        "ja": {
+          "creatorIntro": "楽しい動画をたくさん作りたいです。まずは自分が楽しいと思えること、それからみんなにも楽しさを届けたいと思っています。",
+          "description": "DeepSeekちゃんが夢中で麺をすすり続けるちびキャラアニメ。そばには空のどんぶりが高く積み上がっていきます。",
+          "title": "DeepSeekちゃんの麺すする大記録"
+        }
+      }
+    },
+    {
+      "bvid": "BV1Lhni6nEU3",
+      "uid": "9126506",
+      "title": "让大肥鱼做宠物同人游戏，嘴上认真测试，实则偷偷开玩",
+      "description": "本想委托小鲸制作宠物同人游戏，没想到 “认真测试” 直接变成沉浸式开打，主打一个理直气壮摸鱼",
+      "url": "https://www.bilibili.com/video/BV1Lhni6nEU3/",
+      "cover": "https://i2.hdslb.com/bfs/archive/c92a33a4025ae935cd523e6fa22f167ddf95e87b.jpg",
+      "duration": 16,
+      "publishedAt": "2026-10-21T00:49:07.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, lots of really fun videos. First because I enjoy them myself, and then because I want to share some of that fun with everyone.",
+          "description": "A short animation of DeepSeek Chan at her desk with a controller in hand: the promised careful testing of a pet-themed fan game turns into a fully immersed play session.",
+          "title": "DeepSeek Chan \"Tests\" a Pet Fan Game and Ends Up Playing"
+        },
+        "ja": {
+          "creatorIntro": "楽しい動画をたくさん作りたいです。まずは自分が楽しいと思えること、それからみんなにも楽しさを届けたいと思っています。",
+          "description": "コントローラーを握ってペットを題材にした同人ゲームに向き合うDeepSeekちゃん。真面目なテストのはずが、いつの間にか夢中で遊び込んでしまう短いアニメです。",
+          "title": "DeepSeekちゃんがペット同人ゲームを「真剣にテスト」、結局そのまま夢中でプレイ"
         }
       }
     },
