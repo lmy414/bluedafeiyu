@@ -7,11 +7,14 @@
     "status": "active",
     "order": 4,
     "createdAt": "2026-10-27T15:00:00.000Z",
-    "updatedAt": "2026-10-27T15:00:00.000Z",
+    "updatedAt": "2026-10-28T04:04:46.509Z",
     "workIds": [
       "sticker_654a7306cdf9d09760f54ccd",
       "sticker_c1f82b94a26631d182f92fa3",
       "sticker_a50cd4a7f20b3139294dafd5",
+      "sticker_25c2f1fbb1c52cf6bff2e255",
+      "sticker_1f292641aa123f352a3b9433",
+      "sticker_5334e8a1be05b7d0b41b90dc",
       "sticker_6e628ea4bd7f620e7237b250",
       "sticker_50ab8d55ab3300f594a7a23a",
       "sticker_78c626fb59fd482acecc4cf7",
@@ -20,6 +23,7 @@
       "sticker_e452a11150e54998a9b11ddf",
       "sticker_489ecb306d0391a577e258e0",
       "sticker_d68d72f96a967671681ae149",
+      "sticker_136261f06f673a56574001e8",
       "sticker_0c647bd81831dc7a15b90073",
       "sticker_c2a3c5b450a8aa27b4011d5d",
       "sticker_168a507252ab0eed41764d1b",
@@ -31,7 +35,9 @@
       "sticker_b1aab0a1e30279e15f35fe8d",
       "sticker_0701e388546907adcd74640d",
       "sticker_9e7808e225d0be0822b5a714",
-      "sticker_dbe89b80c9c011a211105c5c"
+      "sticker_dbe89b80c9c011a211105c5c",
+      "sticker_a4578f3ad0806ebadb3f92f4",
+      "sticker_04b5a2d2ab9e17d11862f50b"
     ],
     "author": {
       "name": "ADK",
@@ -67,6 +73,18 @@
           "workId": "sticker_a50cd4a7f20b3139294dafd5"
         },
         {
+          "number": 3,
+          "workId": "sticker_25c2f1fbb1c52cf6bff2e255"
+        },
+        {
+          "number": 4,
+          "workId": "sticker_1f292641aa123f352a3b9433"
+        },
+        {
+          "number": 5,
+          "workId": "sticker_5334e8a1be05b7d0b41b90dc"
+        },
+        {
           "number": 6,
           "workId": "sticker_6e628ea4bd7f620e7237b250"
         },
@@ -97,6 +115,10 @@
         {
           "number": 13,
           "workId": "sticker_d68d72f96a967671681ae149"
+        },
+        {
+          "number": 14,
+          "workId": "sticker_136261f06f673a56574001e8"
         },
         {
           "number": 15,
@@ -145,6 +167,14 @@
         {
           "number": 26,
           "workId": "sticker_dbe89b80c9c011a211105c5c"
+        },
+        {
+          "number": 27,
+          "workId": "sticker_a4578f3ad0806ebadb3f92f4"
+        },
+        {
+          "number": 28,
+          "workId": "sticker_04b5a2d2ab9e17d11862f50b"
         }
       ],
       "creditsI18n": {

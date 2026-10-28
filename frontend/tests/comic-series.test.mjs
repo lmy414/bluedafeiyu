@@ -18,13 +18,13 @@ test('explicit serial selection preserves ZIP page numbers, cover, title and nam
   assert.equal(serial.author.url,'https://space.bilibili.com/2988768');
   assert.equal(selected[0].origin.archive.index,0);
   assert.equal(serial.coverWorkId,selected[0].id);
-  assert.equal(selected.length,23);
+  assert.equal(selected.length,29);
   for(const page of serial.reader.pages){
     const work=selected.find(work=>work.id===page.workId);
     assert.equal(page.number,work.origin.archive.index);
     assert.equal(work.submitter.name,'ADK');
   }
-  assert.deepEqual(serial.reader.pages.map(page=>page.number),[1,2,6,7,8,9,10,11,12,13,15,16,17,18,19,20,21,22,23,24,25,26]);
+  assert.deepEqual(serial.reader.pages.map(page=>page.number),Array.from({length:28},(_,i)=>i+1));
 });
 
 test('CMS exports cannot remove a curated serial; unpublished pages retain their original gaps',()=>{
