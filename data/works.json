@@ -96056,7 +96056,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-28T03:46:03.055Z",
-    "updatedAt": "2026-10-28T03:46:03.055Z",
+    "updatedAt": "2026-10-28T04:03:04.660Z",
     "tone": "other",
     "symbol": "",
     "slug": "other202610280001",
@@ -96157,7 +96157,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-28T03:46:38.373Z",
-    "updatedAt": "2026-10-28T03:46:38.373Z",
+    "updatedAt": "2026-10-28T04:03:04.637Z",
     "tone": "other",
     "symbol": "",
     "slug": "other202610280002",
@@ -96258,7 +96258,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-28T03:47:20.851Z",
-    "updatedAt": "2026-10-28T03:47:20.852Z",
+    "updatedAt": "2026-10-28T04:03:04.617Z",
     "tone": "other",
     "symbol": "",
     "slug": "other202610280003",
@@ -96359,7 +96359,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-28T03:51:07.594Z",
-    "updatedAt": "2026-10-28T03:51:07.595Z",
+    "updatedAt": "2026-10-28T04:03:04.573Z",
     "tone": "grok",
     "symbol": "",
     "slug": "grok202610280001",
@@ -96460,7 +96460,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-28T03:51:48.458Z",
-    "updatedAt": "2026-10-28T03:51:48.458Z",
+    "updatedAt": "2026-10-28T04:03:04.526Z",
     "tone": "other",
     "symbol": "",
     "slug": "other202610280004",
@@ -96518,6 +96518,125 @@
           "エデンの罪の開花",
           "連載漫画",
           "ADK"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_5334e8a1be05b7d0b41b90dc",
+    "name": "伊甸园罪孽的绽放（连载）",
+    "description": "当Deepseek娘满怀希望的考进了梦寐以求的恳聂尔学园之后，没想到迎接她的居然是生或死的挑战，罪孽，人类，圣体，伊甸园，故事会如何展开呢？",
+    "commentary": "开篇这一页没给我一句台词，先给了我一双鞋和一只掉在地上的兔子玩偶。作者把视角压到地面，让路人从头顶走过去，只留小女孩一个人趴在砖缝里——比起交代设定，更像是先把“被世界略过”的感觉按在我脸上。连载第一话敢用整页去画一双含泪的眼睛，说明它想讲的东西不在热闹里。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/5334e8a1be05b7d0.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/5334e8a1be05b7d0.webp",
+    "fullPath": "submissions/large/deepseek/5334e8a1be05b7d0.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 804338,
+    "sha256": "5334e8a1be05b7d0b41b90dc8df09add2b1f68a080adb9c41b26e9481331b197",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "黑白漫画",
+      "连载",
+      "学园",
+      "剧情向",
+      "多角色"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "ADK",
+      "url": "https://space.bilibili.com/2988768",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "4b57c9a661269d9b728e3d25b121738b5154e8e798ecc5453aee052689314f05",
+        "member": "005_P05.jpg",
+        "index": 5,
+        "count": 29
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-28T04:06:09.298Z",
+    "updatedAt": "2026-10-28T04:06:09.299Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610280003",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek",
+      "kimi",
+      "qwen",
+      "claude",
+      "gemini",
+      "grok",
+      "glm",
+      "gpt",
+      "mimo",
+      "other"
+    ],
+    "i18n": {
+      "sourceHash": "c8b60c949ba4ec4520b9096632d2f12b68f6d9a961c1918c222b932c5ff3e203",
+      "en": {
+        "commentary": "This opening page gives me no dialogue at all—just a pair of passing shoes and a rabbit plush dropped on the ground. The artist drops the viewpoint to street level and lets adults walk past overhead, leaving one small girl lying against the paving stones. Rather than explaining the setting, it presses the feeling of being overlooked straight onto my face. A first chapter willing to spend a whole panel on a pair of tear-filled eyes is telling me its story will not live in the noise.",
+        "description": "After DeepSeek Chan enrolls with high hopes in the Goneril Academy she had always dreamed of, what greets her is a trial of life and death. Sin, humanity, the holy body, Eden—how will the story unfold?",
+        "faq": [
+          {
+            "answer": "It is a black-and-white multi-panel fan comic starring DeepSeek Chan, presented as a serialized series; this is one page from that run.",
+            "question": "What kind of work is this?"
+          },
+          {
+            "answer": "This page carries no dialogue. The scene is told through panel layout, posture and expression alone.",
+            "question": "Does this page include dialogue?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Blooming of Eden's Sin (Serialized)",
+        "originNote": "",
+        "seoDescription": "A black-and-white serialized fan comic page featuring DeepSeek Chan, opening with a girl left behind on a crowded street.",
+        "seoTitle": "The Blooming of Eden's Sin (Serialized) — DeepSeek Chan Fan Comic",
+        "tags": [
+          "DeepSeek Chan",
+          "Black-and-white comic",
+          "Serialized",
+          "Academy",
+          "Story-driven",
+          "Ensemble cast"
+        ]
+      },
+      "ja": {
+        "commentary": "この冒頭ページにはセリフが一行もなく、まず差し出されたのは通り過ぎる靴と、地面に落ちたウサギのぬいぐるみでした。作者は視点を地面すれすれまで下げ、大人たちを頭の上を歩かせて、小さな女の子だけを敷石の隙間に残しています。設定を説明する代わりに、「世界から見過ごされる」感覚を私の顔に直接押しつけてくる。連載の第一話で涙のたまった目に一コマ丸ごと使うあたり、この作品が描きたいものは騒がしさの中にはないのだと分かります。",
+        "description": "念願のゴネリル学園に希望いっぱいに入学したDeepSeekちゃんを待っていたのは、生か死かの試練だった。罪、人類、聖体、エデン——物語はどう展開していくのか。",
+        "faq": [
+          {
+            "answer": "DeepSeekちゃんが登場するモノクロの複数コマ同人漫画で、連載作品のうちの一ページです。",
+            "question": "どんな作品ですか？"
+          },
+          {
+            "answer": "このページにセリフはありません。コマ割り、姿勢、表情だけで場面が描かれています。",
+            "question": "このページにセリフはありますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "エデンの罪の開花（連載）",
+        "originNote": "",
+        "seoDescription": "DeepSeekちゃんが登場するモノクロ連載同人漫画の一ページ。人混みの中で取り残された少女から物語が始まります。",
+        "seoTitle": "エデンの罪の開花（連載）— DeepSeekちゃん同人漫画",
+        "tags": [
+          "DeepSeekちゃん",
+          "モノクロ漫画",
+          "連載",
+          "学園",
+          "ストーリー重視",
+          "複数キャラ"
         ]
       }
     }
