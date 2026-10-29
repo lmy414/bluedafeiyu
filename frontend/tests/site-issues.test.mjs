@@ -107,8 +107,9 @@ test('the homepage supplies a complete editorial download row and original-downl
     assert.equal(download.dataset.downloadWork,work.id);
     assert.equal(download.getAttribute('href'),work.o);
     const picks=[...section.querySelectorAll('.home-download-pick')];
-    assert.equal(picks.length,4,locale.id+' complete row');
-    assert.equal(new Set(picks.map(pick=>pick.querySelector('[data-download-work]').dataset.downloadWork)).size,4);
+    assert.equal(picks.length,6,locale.id+' complete row');
+    assert.equal(new Set(picks.map(pick=>pick.querySelector('[data-download-work]').dataset.downloadWork)).size,6);
+    assert.equal(section.querySelectorAll('[data-work-downloads]').length,6);
     assert.ok(section.querySelector('[data-home-download-note]'));
     assert.ok(section.querySelector(`a[href="${localizedPath('/works/'+work.slug+'.html',locale)}"]`));
   }
@@ -167,4 +168,22 @@ test('image navigation exposes all four archive views and original-download trac
   assert.equal(gallery.querySelector('main h1').textContent,'全部图片');
   assert.equal(gallery.querySelector('.main-nav a[href="/browse.html"] span').textContent,'全部图片');
   assert.equal(gallery.querySelector('.main-nav a[href="/videos.html"] span').textContent,'视频');
+});
+
+
+test('every initial gallery card exposes its original download before scripts in all languages',()=>{
+  const archive=JSON.parse(fs.readFileSync(path.join(out,'archive-data.json'),'utf8'));
+  const works=new Map(archive.works.map(work=>[work.slug,work]));
+  for(const locale of LOCALES){
+    const cards=[...read(localizedPath('/browse.html',locale)).querySelectorAll('#results .work-card')];
+    assert.equal(cards.length,24,locale.id);
+    for(const card of cards){
+      const work=works.get(card.getAttribute('data-slug'));
+      const link=card.querySelector('.card-download-action');
+      assert.ok(link,locale.id+' '+work.slug);
+      assert.equal(link.getAttribute('data-download-work'),work.id);
+      assert.equal(link.getAttribute('href'),new URL(work.o,'https://xn--pssy23gqgbz2d718b.com').href);
+      assert.equal(link.closest('[data-preview]'),null);
+    }
+  }
 });

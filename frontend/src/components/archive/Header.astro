@@ -1,21 +1,38 @@
 ---
 import { archiveContext } from "../../lib/archive.mjs";
-import { SITE } from '../../lib/v2.mjs';
+const { active = '' } = Astro.props;
 const { icon } = archiveContext;
+const path = Astro.url.pathname;
+const selected = path.includes('/categories/comic') ? 'comic' : active;
+const links = [
+  {id:'browse',href:'/browse.html',icon:'image',key:'d.gallery',label:'图库'},
+  {id:'comic',href:'/categories/comic.html',icon:'book',key:'v2.type.comic',label:'漫画'},
+  {id:'videos',href:'/videos.html',icon:'video',key:'d.videoNav',label:'视频'},
+  {id:'characters',href:'/characters.html',icon:'roles',key:'v2.nav.characters',label:'角色'},
+  {id:'topics',href:'/topics.html',icon:'book',key:'nav.topics',label:'合集'},
+  {id:'creators',href:'/creators.html',icon:'roles',key:'d.design.creators',label:'创作者'},
+  {id:'event',href:'/events.html',icon:'spark',key:'v2.nav.events',label:'活动'}
+];
 ---
 <header class="topbar">
-  <button class="mobile-menu icon-button" data-menu aria-label="打开菜单" aria-controls="sidebar" aria-expanded="false"><Fragment set:html={icon('menu')} /></button>
-  <a class="mobile-brand" href="/"><img src="/avatar.png" width="25" height="25" alt="蓝色大肥鱼" /></a>
+  <button type="button" class="mobile-menu icon-button" data-menu aria-label="打开菜单" data-i18n-attr="aria-label:v2.openMenu" aria-controls="sidebar" aria-expanded="false"><Fragment set:html={icon('menu')} /></button>
+  <a class="top-brand" href="/" aria-label="蓝色大肥鱼" data-i18n-attr="aria-label:d.brandName"><img src="/avatar.png" width="34" height="34" alt="" /><span><b data-i18n="d.brandName">蓝色大肥鱼</b><small data-i18n="d.brandSub">AI 娘二创开放档案</small></span></a>
+  <nav class="top-channel-nav" aria-label="主导航" data-i18n-attr="aria-label:d.primaryNavigation">
+    {links.map(item => <a href={item.href} aria-current={selected===item.id?'page':undefined}><Fragment set:html={icon(item.icon,16)} /><span data-i18n={item.key}>{item.label}</span></a>)}
+    <details class="ecosystem-menu"><summary><Fragment set:html={icon('grid',16)} /><span data-i18n="d.ecosystem">生态</span></summary><div class="ecosystem-panel">
+      <a href="/community.html" data-i18n="v2.nav.community">社群</a><a href="https://weekly.xn--pssy23gqgbz2d718b.com/" data-i18n="d.weeklyNav">AI 娘周刊</a><a href="/projects.html" data-i18n="d.friendsTitle">友情链接</a><a href="/open-api/v1/index.json" data-i18n="d.openData">开放数据</a><a href="/llms.txt">llms.txt</a><a href="/about.html" data-i18n="nav.about">关于</a><a href="/changelog.html" data-i18n="footer.changelog">更新日志</a>
+    </div></details>
+  </nav>
   <form class="top-search feed-search" action="/search.html" role="search">
-    <label class="sr" for="top-q" data-i18n="v2.searchLabel">搜索作品</label><Fragment set:html={icon('search',19)} />
+    <label class="sr" for="top-q" data-i18n="v2.searchLabel">搜索作品</label><Fragment set:html={icon('search',18)} />
     <input type="search" id="top-q" name="q" placeholder="搜索作品、角色、作者或标签" data-i18n-attr="placeholder:d.siteSearch" autocomplete="off" /><kbd>/</kbd>
   </form>
+  <a class="mobile-search icon-button" href="/search.html" aria-label="搜索作品" data-i18n-attr="aria-label:v2.searchLabel"><Fragment set:html={icon('search',19)} /></a>
   <div class="top-tools top-actions">
-    <a class="saved-entry" href="/saved.html"><Fragment set:html={icon('heart',18)} /><span data-i18n="d.savedTitle">我的收藏</span></a>
-    <button type="button" class="button small top-group" data-group-open aria-haspopup="dialog" aria-controls="group-dialog"><Fragment set:html={icon('roles',16)} /><span data-i18n="qq.open">加群</span></button>
-    <a class="button small top-github" href={SITE.repoContent} target="_blank" rel="noopener" title="内容与投稿仓库" data-i18n-attr="title:footer.content">GitHub</a>
     <button class="icon-button" data-theme-toggle hidden><Fragment set:html={icon('moon',19)} /></button>
     <div class="topnav" data-lang-host></div>
+    <a class="saved-entry" href="/saved.html" title="我的收藏" data-i18n-attr="title:d.savedTitle"><Fragment set:html={icon('heart',18)} /><span class="sr" data-i18n="d.savedTitle">我的收藏</span></a>
+    <button type="button" class="button small top-group" data-group-open aria-haspopup="dialog" aria-controls="group-dialog"><Fragment set:html={icon('roles',16)} /><span data-i18n="qq.open">加群</span></button>
     <a class="button primary small top-submit" href="/submit.html"><Fragment set:html={icon('upload',16)} /><span data-i18n="nav.submit">投稿</span></a>
   </div>
 </header>

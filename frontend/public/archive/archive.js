@@ -72,7 +72,7 @@ import {orderWorks, shuffledSlugs} from '../components/work-order.js';
       .finally(() => {button.disabled = false;button.removeAttribute('aria-busy');});
   });
   let menuPrevious;
-  const mobileQuery=matchMedia('(max-width:760px)');
+  const mobileQuery=matchMedia('(max-width:1250px)');
   const sidebar=$('#sidebar');
   function syncDrawer(){const open=document.body.classList.contains('menu-open');sidebar.inert=mobileQuery.matches&&!open;$('.main-wrap').inert=mobileQuery.matches&&open;}
   syncDrawer();mobileQuery.addEventListener('change',syncDrawer);
@@ -83,7 +83,7 @@ import {orderWorks, shuffledSlugs} from '../components/work-order.js';
   }
   $('[data-menu]')?.addEventListener('click',()=>menu(true));$$('[data-menu-close]').forEach(el=>el.addEventListener('click',()=>menu(false)));
   document.addEventListener('keydown',event=>{
-    if(event.key==='/'&&!/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)){event.preventDefault();$('#top-q').focus();}
+    if(event.key==='/'&&!event.target.closest?.('input,textarea,select,[contenteditable]:not([contenteditable="false"])')){event.preventDefault();const input=['#top-q','#home-q','#search-q'].map(selector=>$(selector)).find(node=>node&&node.getClientRects().length);if(input)input.focus();else location.assign(localURL('/search.html'));}
     if(event.key==='Escape'&&document.body.classList.contains('menu-open'))menu(false);
     if(event.key==='Tab'&&document.body.classList.contains('menu-open')){const items=$$('.sidebar a,.sidebar button').filter(x=>x.offsetParent);const first=items[0],last=items.at(-1);if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}}
   });

@@ -20,7 +20,7 @@ test('localized catalogs retain search, preview and original download data for e
     assert.deepEqual(data.works.map(work=>work.id),publicData.works.map(work=>work.id));
     for(const [i,work] of data.works.entries()){
       const original=publicData.works[i];
-      for(const field of ['id','slug','n','d','cm','cids','roles','tg','o','l','f','s','bytes','lk','lt','ln','k','dt'])assert.deepEqual(work[field],original[field],`${locale} ${work.id} ${field}`);
+      for(const field of ['id','slug','n','d','cm','cids','roles','tg','o','l','f','s','bytes','lk','lt','ln','sa','su','k','dt'])assert.deepEqual(work[field],original[field],`${locale} ${work.id} ${field}`);
       assert.deepEqual(Object.keys(work.i18n||{}),locale==='zh'?[]:[locale]);
       if(locale!=='zh')assert.deepEqual(work.i18n[locale],original.i18n[locale]);
     }

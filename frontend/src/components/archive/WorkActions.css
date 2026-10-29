@@ -5,3 +5,10 @@ body.archive [data-work-actions] .image-copy-status:not(:empty){margin-top:8px}
 body.archive .preview-toolbar{position:sticky;top:0;z-index:4;padding:14px 22px;background:var(--paper);border-bottom:1px solid var(--line)}
 body.archive .preview-heading .preview-detail-link{margin-left:auto;margin-right:32px;color:var(--blue);font:600 12px/1.6 var(--font)}
 @media(max-width:760px){body.archive .work-action-bar{top:60px;padding:10px;margin-bottom:14px}body.archive [data-work-actions] .detail-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}body.archive [data-work-actions] .button{min-height:40px;font-size:12px;justify-content:center;padding:8px}body.archive .preview-toolbar{padding:10px 14px}}
+
+/* Downloads on listing cards are native links and need no preview or script. */
+body.archive.refined .work-card .card-download-action{position:absolute;z-index:4;top:46px;right:8px;display:flex;width:auto;min-height:34px;margin:0;padding:6px 8px;border-radius:8px;background:var(--paper);box-shadow:var(--shadow);font-size:12px;justify-content:center}
+body.archive.refined .creator-preview-item{position:relative;min-width:0;display:flex;flex-direction:column}
+body.archive.refined .creator-preview-item .creator-work-preview{flex:1;min-width:0}
+body.archive.refined .creator-download-action{position:absolute;z-index:2;top:7px;right:7px;width:auto;min-height:34px;margin:0;padding:6px 8px;background:var(--paper);font-size:12px;justify-content:center;white-space:nowrap}
+body.archive.refined .work-card :is(.card-save,.quick-view,.card-share){opacity:1}

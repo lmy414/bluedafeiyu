@@ -64,7 +64,7 @@ for(const [key, en, ja] of [
   ['viewLarge','View image','画像を見る'],['longImage','Long image · view full','長い画像・全体を見る'],
   ['specialThanks','Special thanks','特別な感謝'],['visitWebsite','Visit website','サイトを見る'],
   ['brandName','DeepSeek Chan','藍色大肥魚'],['discover','Discover','見つける'],['gallery','All images','画像一覧'],['brandSub','AI-girl fan art archive','AI娘の二次創作アーカイブ'],
-  ['weeklyNav','AI Girl Weekly','AI娘ウィークリー'],
+  ['weeklyNav','AI Girl Weekly','AI娘ウィークリー'],['ecosystem','Explore','関連サイト'],['openData','Open data','オープンデータ'],['primaryNavigation','Main navigation','メインナビゲーション'],['quickNavigation','Quick navigation','クイックナビゲーション'],
   ['explore','EXPLORE','ブラウズ'],['sideText','A home for every delightful image.','楽しい一枚を、大切に。'],['nonOfficial','Unofficial fan archive','非公式ファンアーカイブ'],
   ['footerText','AI-girl fan art archive · Images belong to their creators','AI娘の二次創作アーカイブ · 画像の権利は原作者に帰属します'],['rights','Sources & permissions','出典と利用許諾'],
   ['curated','Curated order','掲載順'],['selectRole','Select a character','キャラクターを選択'],['quickView','Quick preview','プレビュー'],['copyFail','Could not copy. Please copy manually.','コピーできませんでした。手動でコピーしてください。'],
@@ -72,6 +72,7 @@ for(const [key, en, ja] of [
   ['noResultsDesc','Try fewer filters, another keyword, or browse a character.','条件を減らすか、キーワードを変えてください。'],
   ['loadFail','Could not load data. Please refresh.','データを読み込めませんでした。再読み込みしてください。'],
   ['fullDetail','View full details','詳細を見る'],['prevWork','Previous image','前の画像'],['nextWork','Next image','次の画像'],
+  ['previewAuthorUnknown','Original author not recorded','原作者は未記載'],['previewSourceUnknown','Source not recorded','出典は未記載'],['previewBack','Back to preview','プレビューに戻る'],['previewZoom','Enlarge image','画像を拡大'],
   ['previewTitle','Work preview','作品プレビュー'],['previewClose','Close preview','プレビューを閉じる'],['previewFormat','Original format','元画像の形式'],['previewSize','File size','ファイルサイズ'],['previewPermission','Usage permission','利用許諾'],['previewNavigation','Browse preview images','プレビュー画像を切り替え'],
   ['fileTooLarge','Images must be 10 MB or smaller.','画像は10 MB以下にしてください。'],['fileType','Please choose a supported image format.','対応する画像形式を選んでください。'],
   ['commentsFail','Comments could not load. Please try again later.','コメントを読み込めませんでした。後でもう一度お試しください。']

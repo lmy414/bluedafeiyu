@@ -43,3 +43,14 @@ test('information-page migration removes competing layout classes while retainin
   assert.ok(document.querySelector('.about-community'));assert.equal(document.querySelector('.panel'),null);
   assert.ok(document.body.textContent.includes('Credit must remain.'));
 });
+
+
+test('image cards expose a real original-download link without opening a preview',()=>{
+ const work={id:'id',slug:'slug',n:'Title',i:'/image.webp',o:'https://example.test/original.png',k:['meme'],dt:'2026.10.23',roles:[]};
+ const {document}=parseHTML(renderWorkCard(work));
+ const link=document.querySelector('.card-download-action');
+ assert.equal(link.getAttribute('href'),work.o);
+ assert.equal(link.getAttribute('data-download-work'),work.id);
+ assert.equal(link.closest('[data-preview]'),null);
+ assert.equal(parseHTML(renderWorkCard({...work,o:'javascript:alert(1)'})).document.querySelector('.card-download-action'),null);
+});

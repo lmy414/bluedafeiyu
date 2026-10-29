@@ -45,10 +45,12 @@ test('random ordering stays stable on append and filter changes; the direction r
   assert.deepEqual(ids(orderWorks(works,{sort:'curated'})),ids(works).reverse());
 });
 
-test('download highlights include four measured published works, ignore unknown or removed IDs, and use download counts',()=>{
-  const selected=selectDownloadHighlights(works,snapshot);
+test('download highlights include six measured published works, ignore unknown or removed IDs, and use download counts',()=>{
+  const extra={id:'f',slug:'f',dt:'2026-10-25',createdAt:'2026-10-25T00:00:00Z'};
+  const measured={...snapshot,works:{...snapshot.works,f:{views:0,downloads:2}}};
+  const selected=selectDownloadHighlights([...works,extra],measured);
   assert.equal(selected.length,DOWNLOAD_HIGHLIGHT_COUNT);
-  assert.deepEqual(ids(selected),['d','b','c','e']);
+  assert.deepEqual(ids(selected),['d','b','c','e','f','a']);
   assert.deepEqual(selectDownloadHighlights(works,{available:false,works:snapshot.works}),[]);
   assert.deepEqual(selectDownloadHighlights(works,{available:true,works:{a:{downloads:0},b:{views:1000}}}),[]);
   assert.deepEqual(ids(selectDownloadHighlights(works,{available:true,works:{a:{downloads:5},b:{views:1000}}})),['a']);
@@ -76,10 +78,10 @@ test('the masonry installer ignores a saved grid preference and always packs int
   }finally{for(const [key,descriptor] of Object.entries(before))if(descriptor)Object.defineProperty(globalThis,key,descriptor);else delete globalThis[key];}
 });
 
-test('the download component replaces its whole fallback row using real counts and keeps four originals when statistics fail',async()=>{
+test('the download component replaces its whole fallback row using real counts and keeps the available originals when statistics fail',async()=>{
   const catalog=works.map(work=>({...work,c:'DeepSeek',cid:'deepseek',roles:[],k:['meme'],tg:[],n:work.slug,i:'/image.webp',o:'https://example.test/'+work.id+'.png',w:400,h:400}));
   for(const available of [true,false]){
-    const fallback=catalog.slice(0,4).map(work=>renderDownloadPick(work)).join('');
+    const fallback=catalog.slice(0,DOWNLOAD_HIGHLIGHT_COUNT).map(work=>renderDownloadPick(work)).join('');
     const {document,window}=parseHTML(`<html lang="zh-CN"><body><section data-home-downloads><h2 data-home-download-title>精选作品</h2><p data-home-download-note>下载统计暂不可用时，展示这组精选作品。</p><div class="home-downloads-list">${fallback}</div></section></body></html>`);
     window.WorkStats={ready:Promise.resolve({...snapshot,available,syncedAt:'2026-10-27T01:00:00Z'}),paint(){}};
     let requests=0;
@@ -88,12 +90,12 @@ test('the download component replaces its whole fallback row using real counts a
     try{
       for(const [key,value] of Object.entries(overrides))Object.defineProperty(globalThis,key,{value,writable:true,configurable:true});
       installHomeDownloads();await new Promise(resolve=>setImmediate(resolve));
-      assert.equal(document.querySelectorAll('.home-download-pick').length,4);
+      assert.equal(document.querySelectorAll('.home-download-pick').length,catalog.length);
       assert.equal(requests,available?1:0,'the compact catalog is only needed for an available ranking');
       const title=document.querySelector('[data-home-download-title]').textContent;
       assert.equal(title,available?'热门下载':'精选作品');
       if(available){
-        assert.deepEqual([...document.querySelectorAll('[data-download-work]')].map(link=>link.dataset.downloadWork),['d','b','c','e']);
+        assert.deepEqual([...document.querySelectorAll('[data-download-work]')].map(link=>link.dataset.downloadWork),['d','b','c','e','a']);
         assert.doesNotMatch(document.querySelector('[data-home-download-note]').textContent,/\{date\}/);
       }
     }finally{for(const [key,descriptor] of Object.entries(before))if(descriptor)Object.defineProperty(globalThis,key,descriptor);else delete globalThis[key];}

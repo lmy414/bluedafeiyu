@@ -1,14 +1,17 @@
 ---
 import { archiveContext } from "../../lib/archive.mjs";
-import { navigation } from './nav-items.mjs';
 const { active = "" } = Astro.props;
 const { icon } = archiveContext;
+const path = Astro.url.pathname;
+const links = [
+  {id:'home',href:'/',icon:'home',key:'d.discover',label:'首页'},
+  {id:'browse',href:'/browse.html',icon:'image',key:'d.gallery',label:'图库'},
+  {id:'comic',href:'/categories/comic.html',icon:'book',key:'v2.type.comic',label:'漫画'},
+  {id:'videos',href:'/videos.html',icon:'video',key:'d.videoNav',label:'视频'},
+  {id:'saved',href:'/saved.html',icon:'heart',key:'d.savedTitle',label:'收藏'}
+];
+const selected = path.includes('/categories/comic') ? 'comic' : active;
 ---
-<nav class="mobile-bottom mobile-nav" aria-label="快捷导航">
-  {navigation.slice(0,4).map(item => <a href={item.href} aria-current={active === item.id ? 'page' : undefined}>
-    <Fragment set:html={icon(item.icon,19)} /><span data-i18n={item.key}>{item.label}</span>
-  </a>)}
-  <a class="mobile-saved" href="/saved.html" aria-current={active==='saved'?'page':undefined}>
-    <Fragment set:html={icon('heart',19)} /><span data-i18n="d.savedTitle">我的收藏</span>
-  </a>
+<nav class="mobile-bottom mobile-nav" aria-label="快捷导航" data-i18n-attr="aria-label:d.quickNavigation">
+  {links.map(item => <a href={item.href} aria-current={selected===item.id?'page':undefined}><Fragment set:html={icon(item.icon,19)} /><span data-i18n={item.key}>{item.label}</span></a>)}
 </nav>

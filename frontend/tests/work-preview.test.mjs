@@ -6,7 +6,7 @@ import {installWorkPreview,workPreviewAttributes} from '../public/components/wor
 import {createCreatorViews} from '../src/components/archive/CreatorViews.mjs';
 import {applyNativeContent} from '../scripts/native-content.mjs';
 
-const work = slug => ({slug,id:'id-'+slug,n:'Title '+slug,d:'Description',i:'/thumb.webp',l:'/large.webp',o:'/original.gif',w:400,h:400,k:['meme'],roles:[{id:'deepseek',name:'DeepSeek',color:'#36f'}],tg:[],dt:'2026.10.26',f:'GIF',s:'40 KB',lk:'unknown',lt:'Unknown',owners:[{name:'Artist',href:'/creators/artist.html'}]});
+const work = slug => ({slug,id:'id-'+slug,n:'Title '+slug,d:'Description',i:'/thumb.webp',l:'/large.webp',o:'/original.gif',w:400,h:400,k:['meme'],roles:[{id:'deepseek',name:'DeepSeek',color:'#36f'}],tg:[],dt:'2026.10.26',f:'GIF',s:'40 KB',sa:'Artist',su:'https://example.test/source',lk:'unknown',lt:'Unknown',owners:[{name:'Artist',href:'/creators/artist.html'}]});
 const flush = () => new Promise(resolve => setImmediate(resolve));
 function fixture({load,prefix=''} = {}) {
   const works = ['a','b','c'].map(work);
@@ -67,6 +67,8 @@ test('ordinary image and title clicks open the preview; only its detail link fol
   assert.equal(f.document.querySelector('.preview-info h2').textContent,'Title b');
   assert.equal(f.document.querySelector('[data-copy-link]').dataset.copyLink,'/ja/works/b.html');
   assert.equal(f.document.querySelector('[data-copy-img]').dataset.copyAnimated,'true');
+  assert.match(f.document.querySelector('.preview-facts').textContent,/Artist/);
+  assert.equal(f.document.querySelector('.preview-facts a').getAttribute('href'),'https://example.test/source');
 });
 
 test('modified clicks and independent save, share, author and role actions keep their browser behavior',async()=>{
@@ -123,6 +125,38 @@ test('creator overview rails use the same preview attributes for images while vi
   const {creatorCard}=createCreatorViews(ctx,[creator]);
   const {document}=parseHTML(creatorCard(creator));
   assert.equal(document.querySelector('.creator-work-preview[data-preview]').dataset.preview,'a');
+  assert.equal(document.querySelector('.creator-preview-item [data-download-work]').getAttribute('href'),'https://xn--pssy23gqgbz2d718b.com/original.gif');
   const video=document.querySelector('.creator-work-preview[data-video-bvid]');
   assert.equal(video.hasAttribute('data-preview'),false);assert.equal(video.target,'_blank');
+});
+
+
+test('zoom entered from a preview returns to the same work on Escape',async()=>{
+  const f=fixture();f.click(f.document.querySelector('.work-art'));await flush();
+  f.click(f.document.querySelector('[data-preview-zoom]'));await flush();
+  assert.ok(f.document.querySelector('.preview-zoom img'));
+  assert.ok(f.document.querySelector('[data-preview-back]'));
+  f.dialog.dispatchEvent(new f.window.Event('cancel',{cancelable:true}));await flush();
+  assert.equal(f.dialog.open,true);
+  assert.equal(f.document.querySelector('.preview-info h2').textContent,'Title a');
+  assert.equal(f.locks.at(-1),true);
+  assert.deepEqual(f.views,['id-a'],'returning from zoom does not count another view');
+});
+
+
+test('latest homepage cards navigate the full latest row rather than a single work',async()=>{
+  const f=fixture();
+  f.document.querySelector('#one').className='home-works-grid';
+  f.click(f.document.querySelector('#one [data-slug="a"] .work-art'));await flush();
+  assert.equal(f.document.querySelector('.preview-position').textContent,'01/02');
+  f.click(f.document.querySelector('[data-preview-step="1"]'));await flush();
+  assert.equal(f.document.querySelector('.preview-info h2').textContent,'Title b');
+});
+
+
+test('native close clears zoom history before opening a standalone image',async()=>{
+  const f=fixture();f.click(f.document.querySelector('.work-art'));await flush();
+  f.click(f.document.querySelector('[data-preview-zoom]'));await flush();
+  f.dialog.close();await f.controller.open('b','image');
+  assert.equal(f.document.querySelector('[data-preview-back]'),null);
 });

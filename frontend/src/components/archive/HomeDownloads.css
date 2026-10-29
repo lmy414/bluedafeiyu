@@ -1,10 +1,21 @@
-.home-downloads-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
-.home-download-pick{min-width:0;display:flex;flex-direction:column}
-.home-download-pick>.work-card{flex:1}
-body.archive .home-download-pick .work-art{height:220px;display:flex;align-items:center;justify-content:center}
-body.archive .home-download-pick .work-art img{height:100%;width:100%;object-fit:contain}
-body.archive .home-download-pick .work-art.is-long img{object-fit:contain}
-.home-download-action{margin-top:12px}
-.home-download-action .button{width:100%;justify-content:center}
-@media(max-width:900px){.home-downloads-list{grid-template-columns:repeat(2,minmax(0,1fr))}body.archive .home-download-pick .work-art{height:180px}}
-@media(max-width:480px){.home-downloads-list{gap:14px}.home-download-action .button{padding-inline:10px}}
+/* Latest and popular works share the same aligned card layout. */
+body.archive.refined :is(.home-works-grid,.home-downloads-list){display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
+body.archive.refined .home-download-pick{min-width:0;display:flex;flex-direction:column}
+body.archive.refined .home-download-pick>.work-card{flex:1}
+body.archive.refined .home-download-pick .work-art,
+body.archive.refined .home-latest .home-download-pick .work-art{height:auto;aspect-ratio:1;display:flex;align-items:center;justify-content:center;background:var(--soft)}
+body.archive.refined .home-download-pick .work-art img,
+body.archive.refined .home-download-pick .work-art.is-long img{width:100%;height:100%;aspect-ratio:auto;object-fit:contain;object-position:center}
+body.archive.refined .home-download-pick .work-text{padding:9px}
+body.archive.refined .home-download-pick .work-title{font-size:12px;line-height:1.45}
+body.archive.refined .home-download-pick .card-meta{margin-top:5px;padding-top:5px;min-width:0}
+body.archive.refined .home-download-pick .card-roles{display:flex;flex-wrap:nowrap;overflow:hidden;min-width:0}
+body.archive.refined .home-download-pick .card-roles a{flex:none}
+body.archive.refined .home-download-pick .art-owner{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+body.archive.refined .home-download-pick .image-stats{display:none}
+.home-card-download{position:absolute;right:8px;bottom:8px;z-index:2;padding:3px 7px;border-radius:999px;color:#fff;background:#10243acc;font-size:11px;line-height:1.5;white-space:nowrap}
+.home-download-action{margin-top:8px}
+.home-download-action .button{width:100%;justify-content:center;min-height:36px;padding:7px;font-size:12px}
+@media(max-width:1100px){body.archive.refined :is(.home-works-grid,.home-downloads-list){grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:760px){body.archive.refined :is(.home-works-grid,.home-downloads-list){grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}}
+@media(max-width:480px){body.archive.refined :is(.home-works-grid,.home-downloads-list){grid-template-columns:repeat(2,minmax(0,1fr))}}

@@ -13,7 +13,6 @@ const isActive = item => active === item.id || (item.id === 'browse' && ['charac
     <span><strong data-i18n="d.brandName">蓝色大肥鱼</strong><small data-i18n="d.brandSub">AI 娘二创开放档案</small></span>
   </a>
   <button class="mobile-close icon-button" data-menu-close aria-label="关闭菜单"><Fragment set:html={icon('close')} /></button>
-  <button class="sidebar-collapse icon-button" type="button" data-sidebar-collapse data-i18n-attr="aria-label:d.navigationToggle" aria-label="折叠或展开导航" aria-controls="sidebar" aria-expanded="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16m7-11-3 3 3 3"/></svg></button>
   <p class="nav-label" data-i18n="d.explore">逛一逛</p>
   <nav class="main-nav primary-nav">
     {navigation.map(item => <a class:list={['nav-link',{'is-active':isActive(item)}]} href={item.href} title={item.label} aria-label={item.label} data-i18n-attr={`title:${item.key},aria-label:${item.key}`} aria-current={isActive(item) ? 'page' : undefined}>
@@ -22,6 +21,9 @@ const isActive = item => active === item.id || (item.id === 'browse' && ['charac
     </a>)}
   </nav>
   <div class="sidebar-bottom">
+    <a href="/characters.html"><Fragment set:html={icon('roles',18)} /><span data-i18n="v2.nav.characters">角色</span></a>
+    <a href="/topics.html"><Fragment set:html={icon('book',18)} /><span data-i18n="nav.topics">合集</span></a>
+    <a href="/submit.html"><Fragment set:html={icon('upload',18)} /><span data-i18n="nav.submit">投稿</span></a>
     <a href="/saved.html" title="我的收藏" data-i18n-attr="title:d.savedTitle"><Fragment set:html={icon('heart',18)} /><span data-i18n="d.savedTitle">我的收藏</span></a>
     <a href="https://github.com/lmy414/bluedafeiyu" target="_blank" rel="noopener noreferrer" title="站点源码" data-i18n-attr="title:footer.site"><Fragment set:html={icon('github',18)} /><span data-i18n="footer.site">站点源码</span></a>
     <p class="copyright" data-i18n="d.nonOfficial">非官方同人整理项目</p>

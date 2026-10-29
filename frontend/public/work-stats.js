@@ -16,6 +16,11 @@
       } else el.textContent = label;
       el.title = metrics ? T('stats.updated', '统计更新：{date}；下载为按钮点击次数', { date: new Date(snapshot.syncedAt).toLocaleString() }) : T('stats.unavailable', '统计尚未同步');
     });
+    document.querySelectorAll('[data-work-downloads]').forEach(function (el) {
+      var metrics = snapshot && snapshot.available ? snapshot.works[el.getAttribute('data-work-downloads')] || { downloads: 0 } : null;
+      el.textContent = T('stats.downloads', '下载 {downloads}', { downloads: metrics ? count(metrics.downloads) : '—' });
+      el.title = metrics ? T('stats.updated', '统计更新：{date}；下载为按钮点击次数', { date: new Date(snapshot.syncedAt).toLocaleString() }) : T('stats.unavailable', '统计尚未同步');
+    });
     document.querySelectorAll('[data-stats-note]').forEach(function (el) {
       el.textContent = snapshot && snapshot.available
         ? T('stats.note', '统计始于 {start}，更新于 {date}；下载为按钮点击次数', { start: snapshot.startDate, date: new Date(snapshot.syncedAt).toLocaleString() }) + (snapshot.stale ? ' · ' + T('stats.stale', '统计更新延迟') : '') + (snapshot.limited ? ' · ' + T('stats.limited', '部分统计受 GA4 汇总限制') : '')

@@ -139,3 +139,15 @@ test('topic downloads are available from complete topic archives and collection 
   assert.ok(!doc.querySelector('a button'),'No button nested inside a link');
  }
 });
+
+
+test('public JSON-LD blocks declare the schema.org context in every language',()=>{
+ for(const prefix of ['', 'en/', 'ja/', 'zh-hant/']){
+  for(const route of ['index.html','community.html','browse.html','characters/deepseek.html','works/deepseek202609300025.html']){
+   const doc=read(prefix+route);
+   const blocks=[...doc.querySelectorAll('script[type="application/ld+json"]')];
+   assert.ok(blocks.length,prefix+route);
+   for(const block of blocks)assert.equal(JSON.parse(block.textContent)['@context'],'https://schema.org',prefix+route);
+  }
+ }
+});

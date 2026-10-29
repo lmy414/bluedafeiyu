@@ -20,7 +20,10 @@ test('homepage and mobile navigation work before scripts and keep production han
     assert.ok(document.querySelector('.mobile-bottom a[href$="/saved.html"]'));
     const topics=document.querySelectorAll('[data-design-slide]');assert.ok(topics.length>=2);
     assert.equal(document.querySelectorAll('[data-design-slide]:not([hidden])').length,1);
-    assert.equal(document.querySelectorAll('.portal-primary > a').length,2);
+    assert.equal(document.querySelectorAll('.portal-primary > a').length,3);
+    assert.ok(document.querySelector('.portal-primary a[href$="/categories/comic.html"]'));
+    assert.equal(document.querySelectorAll('.home-latest .home-download-pick').length,18);
+    assert.equal(document.querySelectorAll('.home-latest [data-work-downloads]').length,18);
     assert.equal(document.querySelectorAll('.portal-secondary > a').length,3);
     assert.ok(document.querySelector('[data-design-slide] a[href*="/topics/"]'));
     assert.ok(document.querySelector('.portal-participate a[href$="/submit.html"]'));

@@ -138,7 +138,7 @@ export function createSEO(ctx) {
     const share = w ? workShareCopy(w) : {title,sub:c?.character?.name || 'AI 娘二创档案',tag:c?.type || '',quote:false};
     const shareMeta = ogCard(shareCardId(url), { displayUrl: image, description: w?.d || title, name: w?.n || title }, share.title, share.sub, share.tag, share.quote);
     const record = { ...(w ? {shareCardCopy:share} : {}), url: canonicalPath, canonical, title, description: desc, image: full(image), og: {...shareMeta,image:shareCardImageURL(url)}, indexOnPublish,
-      robots: indexOnPublish && (!c || c.n === 1) ? 'index,follow' : 'noindex,follow', schemas: [schema, ...(url === '/index.html' ? [] : [breadcrumb])], collectionBase: c?.base || null, total: c?.list.length || 0, page: c?.n || 1 };
+      robots: indexOnPublish && (!c || c.n === 1) ? 'index,follow' : 'noindex,follow', schemas: [schema, ...(url === '/index.html' ? [] : [breadcrumb])].map(item => ({'@context':'https://schema.org', ...item})), collectionBase: c?.base || null, total: c?.list.length || 0, page: c?.n || 1 };
     if (options.comic) {
       record.collectionBase = '/topics/' + options.comic.topicId + '.html';
       record.page = options.comic.number;

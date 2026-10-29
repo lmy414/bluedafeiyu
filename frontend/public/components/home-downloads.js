@@ -1,7 +1,8 @@
 import {renderWorkCard} from './work-card.js';
 import {orderWorks} from './work-order.js';
+import {renderDownloadLink} from './work-actions.js';
 
-export const DOWNLOAD_HIGHLIGHT_COUNT = 4;
+export const DOWNLOAD_HIGHLIGHT_COUNT = 6;
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
 
 export function selectDownloadHighlights(works, snapshot) {
@@ -11,8 +12,8 @@ export function selectDownloadHighlights(works, snapshot) {
   return orderWorks(measured, {sort:'downloads', metric:id => snapshot.works[id].downloads}).slice(0, DOWNLOAD_HIGHLIGHT_COUNT);
 }
 
-export function renderDownloadPick(work, {card = renderWorkCard, label = '下载原图'} = {}) {
-  return `<div class="home-download-pick">${card(work)}<div class="home-download-action"><a class="button primary" data-download-work="${esc(work.id)}" href="${esc(work.o)}" target="_blank" rel="noopener"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>${label}</a></div></div>`;
+export function renderDownloadPick(work, {card = w => renderWorkCard(w,{showDownloads:true,directDownload:false}), label = '下载原图'} = {}) {
+  return `<div class="home-download-pick">${card(work)}<div class="home-download-action">${renderDownloadLink(work,{label})}</div></div>`;
 }
 
 export function installHomeDownloads() {
@@ -24,7 +25,7 @@ export function installHomeDownloads() {
     if (!ranked) return;
     const card = work => renderWorkCard(window.SiteLang?.localWork(work) || work, {
       url:href => window.SiteLang?.url(href) || href,
-      translate:tx, names:value => window.SiteLang?.contentText(value) || value
+      translate:tx, names:value => window.SiteLang?.contentText(value) || value, showDownloads:true,directDownload:false
     });
     section.querySelector('.home-downloads-list').innerHTML = ranked.map(work => renderDownloadPick(work, {card, label:esc(tx('d.popularDownloadOriginal','下载原图'))})).join('');
     const title = section.querySelector('[data-home-download-title]');

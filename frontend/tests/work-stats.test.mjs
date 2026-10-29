@@ -22,3 +22,15 @@ test('work views carry explicit detail or preview context without creating page 
   document.dispatchEvent(new window.Event('site:langchange'));
   assert.equal(events.length,5);
 });
+
+
+test('homepage download badges show real counts, zero, or an unavailable marker without inventing numbers',async()=>{
+  for(const snapshot of [{available:true,syncedAt:'2026-10-29T00:00:00Z',works:{one:{downloads:1250}}},{available:false}]){
+    const {document,window}=parseHTML('<html><body><span data-work-downloads="one"></span><span data-work-downloads="missing"></span></body></html>');
+    vm.runInNewContext(source,{document,window,fetch:async()=>({ok:true,json:async()=>snapshot}),AbortSignal});
+    await window.WorkStats.ready;
+    const badges=[...document.querySelectorAll('[data-work-downloads]')];
+    assert.deepEqual(badges.map(node=>node.textContent),snapshot.available?['下载 1,250','下载 0']:['下载 —','下载 —']);
+    assert.match(badges[0].title,snapshot.available?/下载为按钮点击次数/:/统计尚未同步/);
+  }
+});
