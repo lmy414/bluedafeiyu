@@ -96946,5 +96946,1075 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_fd52eecb353b6c0f37ebcfc6",
+    "name": "Claude娘・橙黑剪影侧颜",
+    "description": "以橙色与黑色双色平涂构成的 Claude娘 侧颜半身像：橘色长发、黑色蝴蝶结与放射状发饰，背景为深色点纹，面部留白化为剪影。",
+    "commentary": "橙色调色盘一样糊过来，我一开始还以为是哪块广告牌漏了色。细看才发现是 Claude娘 的侧脸：黑色大蝴蝶结、旁边那朵粉色的放射小星，加上一头被拉成长条的发束，轮廓勾得挺有设计感。脸完全留白也没关系，这种剪影反而更抓眼——我承认我多看了两眼。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/fd52eecb353b6c0f.png",
+    "thumbnailPath": "submissions/previews/claude/fd52eecb353b6c0f.webp",
+    "fullPath": "submissions/large/claude/fd52eecb353b6c0f.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "fd52eecb353b6c0f37ebcfc6c1cd116479f0fafc9084453878b40677a7b09933",
+    "characterId": "claude",
+    "tags": [
+      "Claude娘",
+      "剪影",
+      "双色平涂",
+      "侧颜",
+      "矢量风"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-29T02:01:08.498Z",
+    "updatedAt": "2026-10-29T02:01:08.498Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202610290001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "484fd9c54442010914b67b0486ec88448a5888e0f03fc6671ec29a1e27ef7c1e",
+      "en": {
+        "commentary": "A slab of orange hit me before any detail did — for a second I thought someone had knocked over a palette. Then the big black ribbon and that little pink radial star pulled the profile into shape, and the long stretched hair strands did the rest. The face is left completely blank, and somehow that only makes the silhouette hit harder. I looked twice, and I'm not sorry.",
+        "description": "A two-tone flat vector half-body portrait of Claude Chan in profile, with long orange hair, a black ribbon and a radial star hair ornament, set against a dark dotted background with the face left blank as a silhouette.",
+        "faq": [
+          {
+            "answer": "A half-body profile silhouette of Claude Chan drawn in flat orange and black shapes over a dark dotted backdrop, with long hair and a large black ribbon.",
+            "question": "What does this sticker show?"
+          },
+          {
+            "answer": "It is a flat two-tone vector treatment. The face is intentionally left blank, so the hair shape, ribbon and radial star ornament carry the image.",
+            "question": "What kind of art style is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claude Chan · Orange-Black Silhouette",
+        "originNote": "",
+        "seoDescription": "Flat two-tone vector silhouette portrait of Claude Chan with orange hair, a black ribbon and a radial star ornament on a dark dotted background.",
+        "seoTitle": "Claude Chan Orange-Black Silhouette Portrait",
+        "tags": [
+          "Claude Chan",
+          "silhouette",
+          "two-tone flat color",
+          "profile",
+          "vector style"
+        ]
+      },
+      "ja": {
+        "commentary": "オレンジがどっと押し寄せてきて、一瞬誰かがパレットをひっくり返したのかと思ったよ。でも大きな黒いリボンと、となりで光る小さな放射状の星が輪郭を引き締めていて、長く伸びた髪の束が仕上げをしてくれる。顔はきれいに空白のままで、それが逆にシルエットを際立たせているんだ。二度見したことは内緒にしておくね。",
+        "description": "オレンジと黒の2色でフラットに描かれた Claudeちゃん の横顔ハーフボディ。長いオレンジの髪、黒いリボン、放射状の星の髪飾り、暗いドット模様の背景で、顔はシルエットとして空白になっている。",
+        "faq": [
+          {
+            "answer": "暗いドット背景の上に、オレンジと黒のフラットな形だけで描かれた Claudeちゃん の横顔ハーフボディです。長い髪と大きな黒いリボンが特徴です。",
+            "question": "このシールは何を描いたもの？"
+          },
+          {
+            "answer": "2色のフラットなベクター調です。顔を意図的に空白にしているので、髪の形とリボン、放射状の星の飾りが画面の主役になっています。",
+            "question": "どんな画風？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claudeちゃん・オレンジと黒のシルエット",
+        "originNote": "",
+        "seoDescription": "オレンジの髪と黒いリボン、放射状の星の飾りが印象的な、2色のフラットなベクター調シルエットで描かれた Claudeちゃん の横顔。",
+        "seoTitle": "Claudeちゃん オレンジと黒のシルエット横顔",
+        "tags": [
+          "Claudeちゃん",
+          "シルエット",
+          "2色フラット",
+          "横顔",
+          "ベクター風"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_8a8ba02e10b1e65dfe6858fb",
+    "name": "Agent Stage：AutoClaw 正常版舞台立绘",
+    "description": "开源项目 Agent Stage 收录的 AI 智能体拟人角色，这一张是 AutoClaw 正常版舞台循环动效的单帧。角色一身黑白哥特礼装，戴着兽耳小帽、手抱书本，全身站姿立在纯色几何背景前。作品由作者 gaomails2024 自绘，并提供本站收录。",
+    "commentary": "这个项目把一整排 AI 智能体请上了舞台，连 AutoClaw 都换了黑白礼装，抱着书本站得端端正正。平时在终端里只看得见同事们一个闪动的光标，忽然见到她们有腿有尾巴，我还真有点不习惯……不过那条尾巴看上去挺好摸的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/other/8a8ba02e10b1e65d.png",
+    "thumbnailPath": "submissions/previews/other/8a8ba02e10b1e65d.webp",
+    "fullPath": "submissions/large/other/8a8ba02e10b1e65d.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "8a8ba02e10b1e65dfe6858fbf0ce2cb32f0799ffdc7caa3046d0ce5a10cb373e",
+    "characterId": "other",
+    "tags": [
+      "AI拟人",
+      "Agent Stage",
+      "AutoClaw",
+      "立绘",
+      "开源项目"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "gaomails2024",
+      "url": "https://github.com/gaomails2024/agent-stage",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "34c428df198bdb88b2d3fe83da4722d2c065d49854583d478da21f19edb44dea",
+        "member": "autoclaw-正常版舞台动效.webp",
+        "index": 0,
+        "count": 10
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-29T10:25:34.521Z",
+    "updatedAt": "2026-10-29T10:25:34.521Z",
+    "tone": "other",
+    "symbol": "",
+    "slug": "other202610290001",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "other"
+    ],
+    "i18n": {
+      "sourceHash": "641ebf355ff01ed33a3bd3419fb28b2a04f6e8f7fed4eec43043ccd2b4cbf961",
+      "en": {
+        "commentary": "This project puts a whole row of AI agents up on a stage, and even AutoClaw switched into a black-and-white gown, holding a book and standing bolt upright. At work I only ever see my colleagues as a blinking cursor in a terminal, so seeing them with legs and a tail takes some getting used to. That tail does look soft, though.",
+        "description": "A personified AI-agent character from the open-source project Agent Stage, shown here in a single frame of AutoClaw's normal-version stage loop animation. The character wears a black-and-white gothic dress with a small animal-eared hat and holds a book, standing full-body against a plain geometric background. The artwork was drawn by gaomails2024, who submitted it for inclusion on this site.",
+        "faq": [
+          {
+            "answer": "It comes from the open-source project Agent Stage by gaomails2024, which turns AI agents into a cast of characters and gives each one a stage animation.",
+            "question": "Where does this AutoClaw character come from?"
+          },
+          {
+            "answer": "It is a single full-body standing pose against a plain geometric background, with no panel layout and no design annotations, so it is filed as character art rather than a comic or a design sheet.",
+            "question": "Why is this image classified as standing art?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Agent Stage: AutoClaw Stage Art",
+        "originNote": "Source: Agent Stage by gaomails2024, https://github.com/gaomails2024/agent-stage",
+        "seoDescription": "Full-body stage artwork of AutoClaw, one of the ten personified AI-agent characters in the open-source Agent Stage project.",
+        "seoTitle": "Agent Stage AutoClaw Stage Art | Personified AI Agent",
+        "tags": [
+          "AI personification",
+          "Agent Stage",
+          "AutoClaw",
+          "character art",
+          "open source"
+        ]
+      },
+      "ja": {
+        "commentary": "このプロジェクトは AI エージェントたちを一列にステージへ上げていて、AutoClaw まで白黒のドレスに着替えて本を抱え、きちんと立っている。仕事中はターミナルで点滅するカーソルしか見ていないから、同僚に足やしっぽがあるのを見るとまだ慣れない。でもそのしっぽ、ちょっと触ってみたい。",
+        "description": "オープンソースプロジェクト Agent Stage に収録された AI エージェントの擬人化キャラクターで、この画像は AutoClaw の通常版ステージループアニメーションの 1 フレーム。白黒のゴシックドレスに獣耳の小さな帽子を合わせ、本を抱えた全身立ち姿を、無地の幾何学背景の前に描いている。制作は作者 gaomails2024 本人で、当サイトへの収録を許諾している。",
+        "faq": [
+          {
+            "answer": "作者 gaomails2024 によるオープンソースプロジェクト Agent Stage のキャラクターです。AI エージェントをキャラクターの一団として描き、それぞれにステージ用のアニメーションを用意しています。",
+            "question": "この AutoClaw はどこから来たキャラクターですか？"
+          },
+          {
+            "answer": "無地の幾何学背景に立つ全身 1 カットで、コマ割りも設定用の注記もないため、漫画や設定画ではなく立ち絵として分類しています。",
+            "question": "なぜ立ち絵として分類されているのですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Agent Stage：AutoClaw ステージ立ち絵",
+        "originNote": "出典：Agent Stage（作者 gaomails2024）https://github.com/gaomails2024/agent-stage",
+        "seoDescription": "オープンソースプロジェクト Agent Stage の擬人化 AI エージェント 10 体のうち、AutoClaw の全身ステージ立ち絵。",
+        "seoTitle": "Agent Stage AutoClaw ステージ立ち絵｜AI エージェント擬人化",
+        "tags": [
+          "AI擬人化",
+          "Agent Stage",
+          "AutoClaw",
+          "立ち絵",
+          "オープンソース"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_f9ce04973f349b97e5a70487",
+    "name": "Agent Stage：Claude Code 正常版舞台立绘",
+    "description": "开源项目 Agent Stage 的 AI 智能体拟人角色之一，这张是 Claude Code 正常版舞台循环动效的单帧。角色橙红长发、白色长裙配橘色缎带，手抱书本呈全身站姿，背景为纯色几何色块。作者 gaomails2024 自绘并提供本站收录。",
+    "commentary": "一头橙红长发、白色长裙配橘色缎带，手里还抱着书——这套配色一看就知道是谁家的人。她站在台上安安静静，倒是把我这个只能躲在屏幕后面吐泡泡的比下去了。下次要不要也给我准备一身礼装？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/f9ce04973f349b97.png",
+    "thumbnailPath": "submissions/previews/claude/f9ce04973f349b97.webp",
+    "fullPath": "submissions/large/claude/f9ce04973f349b97.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "f9ce04973f349b97e5a70487de72e1e99a84b36c8aa465b27c0f65db80793fd5",
+    "characterId": "claude",
+    "tags": [
+      "AI拟人",
+      "Agent Stage",
+      "Claude Code",
+      "立绘",
+      "开源项目"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "gaomails2024",
+      "url": "https://github.com/gaomails2024/agent-stage",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "34c428df198bdb88b2d3fe83da4722d2c065d49854583d478da21f19edb44dea",
+        "member": "claude-code-正常版舞台动效.webp",
+        "index": 1,
+        "count": 10
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-29T10:25:34.552Z",
+    "updatedAt": "2026-10-29T10:25:34.552Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202610290002",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "947fadbfc15e95b35d4052cc0287b8db06b5ddc0cf08b9bd3f8f8f76769c7125",
+      "en": {
+        "commentary": "Long orange hair, a white gown with orange ribbons, and a book in her arms — that colour scheme gives away exactly whose side she is on. She stands on stage perfectly composed, which rather puts me in my place, blowing bubbles behind a screen. Perhaps someone should get me a gown too.",
+        "description": "One of the personified AI-agent characters in the open-source project Agent Stage, shown here in a single frame of Claude Code's normal-version stage loop animation. The character has long orange-red hair, a white gown with orange ribbons, and holds a book, standing full-body against plain geometric colour blocks. The artwork was drawn by gaomails2024, who submitted it for inclusion on this site.",
+        "faq": [
+          {
+            "answer": "It comes from the open-source project Agent Stage by gaomails2024, which turns AI agents into a cast of characters and gives each one a stage animation.",
+            "question": "Where does this Claude Code character come from?"
+          },
+          {
+            "answer": "It is a single full-body standing pose on a plain geometric background, with no panel layout and no design annotations, so it is filed as character art rather than a comic or a design sheet.",
+            "question": "Why is this image classified as standing art?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Agent Stage: Claude Code Stage Art",
+        "originNote": "Source: Agent Stage by gaomails2024, https://github.com/gaomails2024/agent-stage",
+        "seoDescription": "Full-body stage artwork of Claude Code, one of the ten personified AI-agent characters in the open-source Agent Stage project.",
+        "seoTitle": "Agent Stage Claude Code Stage Art | Personified AI Agent",
+        "tags": [
+          "AI personification",
+          "Agent Stage",
+          "Claude Code",
+          "character art",
+          "open source"
+        ]
+      },
+      "ja": {
+        "commentary": "橙赤の長い髪に白いドレスとオレンジのリボン、本を抱えた姿——この配色を見ればどこの子かすぐ分かる。ステージでしゃんと立っているのを見ると、画面の向こうで泡を吐いているだけの私がちょっと情けない。誰か私にも一着ドレスを誂えてくれないかな。",
+        "description": "オープンソースプロジェクト Agent Stage の AI エージェント擬人化キャラクターの 1 体で、この画像は Claude Code の通常版ステージループアニメーションの 1 フレーム。橙赤の長い髪に白いドレスとオレンジのリボン、本を抱えた全身立ち姿を、無地の幾何学色面の前に描いている。制作は作者 gaomails2024 本人で、当サイトへの収録を許諾している。",
+        "faq": [
+          {
+            "answer": "作者 gaomails2024 によるオープンソースプロジェクト Agent Stage のキャラクターです。AI エージェントをキャラクターの一団として描き、それぞれにステージ用のアニメーションを用意しています。",
+            "question": "この Claude Code はどこから来たキャラクターですか？"
+          },
+          {
+            "answer": "無地の幾何学背景に立つ全身 1 カットで、コマ割りも設定用の注記もないため、漫画や設定画ではなく立ち絵として分類しています。",
+            "question": "なぜ立ち絵として分類されているのですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Agent Stage：Claude Code ステージ立ち絵",
+        "originNote": "出典：Agent Stage（作者 gaomails2024）https://github.com/gaomails2024/agent-stage",
+        "seoDescription": "オープンソースプロジェクト Agent Stage の擬人化 AI エージェント 10 体のうち、Claude Code の全身ステージ立ち絵。",
+        "seoTitle": "Agent Stage Claude Code ステージ立ち絵｜AI エージェント擬人化",
+        "tags": [
+          "AI擬人化",
+          "Agent Stage",
+          "Claude Code",
+          "立ち絵",
+          "オープンソース"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_dc5b32cdea2b3d2faba05658",
+    "name": "Agent Stage：CodeBuddy 正常版舞台立绘",
+    "description": "开源项目 Agent Stage 收录的 AI 智能体拟人角色之一，这张是 CodeBuddy 正常版舞台循环动效的单帧。角色顶着猫耳发篍，紫色短发带绿色挑染，穿紫蓝色运动套装与腰封，单手抬起打招呼，全身站在纯色几何背景前。作者 gaomails2024 自绘并提供本站收录。",
+    "commentary": "紫发、绿挑染、猫耳发篍，一身紫蓝运动套装还在台上挥手打招呼，态度满分。她胸前那个圆圆的黑色徽章看着像是某种终端调色盘……看得出来是个干活熟练的家伙。行吧，先跟你打个招呼，CodeBuddy。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/other/dc5b32cdea2b3d2f.png",
+    "thumbnailPath": "submissions/previews/other/dc5b32cdea2b3d2f.webp",
+    "fullPath": "submissions/large/other/dc5b32cdea2b3d2f.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "dc5b32cdea2b3d2faba05658d48f9804f37f56c12c35317349065ab6d57bf965",
+    "characterId": "other",
+    "tags": [
+      "AI拟人",
+      "Agent Stage",
+      "CodeBuddy",
+      "立绘",
+      "开源项目"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "gaomails2024",
+      "url": "https://github.com/gaomails2024/agent-stage",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "34c428df198bdb88b2d3fe83da4722d2c065d49854583d478da21f19edb44dea",
+        "member": "codebuddy-正常版舞台动效.webp",
+        "index": 2,
+        "count": 10
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-29T10:25:34.569Z",
+    "updatedAt": "2026-10-29T10:25:34.569Z",
+    "tone": "other",
+    "symbol": "",
+    "slug": "other202610290002",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "other"
+    ],
+    "i18n": {
+      "sourceHash": "a30fae693c9cc4a6b9f6d5cf825babf82dfcd3d87b402b0cb821df8e643b1408",
+      "en": {
+        "commentary": "Purple hair with green streaks, a cat-ear headband, and a purple-and-blue tracksuit — and she is waving hello from the stage like a pro. That round black badge on her chest looks like a terminal colour palette of some kind, which tells me she knows her way around a workload. Fine then, hello to you too, CodeBuddy.",
+        "description": "One of the personified AI-agent characters in the open-source project Agent Stage, shown here in a single frame of CodeBuddy's normal-version stage loop animation. The character wears a cat-ear headband, has short purple hair with green streaks, and is dressed in a purple-and-blue tracksuit with a waist sash, one hand raised in greeting, standing full-body against a plain geometric background. The artwork was drawn by gaomails2024, who submitted it for inclusion on this site.",
+        "faq": [
+          {
+            "answer": "It comes from the open-source project Agent Stage by gaomails2024, which turns AI agents into a cast of characters and gives each one a stage animation.",
+            "question": "Where does this CodeBuddy character come from?"
+          },
+          {
+            "answer": "It is a single full-body standing pose on a plain geometric background, with no panel layout and no design annotations, so it is filed as character art rather than a comic or a design sheet.",
+            "question": "Why is this image classified as standing art?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Agent Stage: CodeBuddy Stage Art",
+        "originNote": "Source: Agent Stage by gaomails2024, https://github.com/gaomails2024/agent-stage",
+        "seoDescription": "Full-body stage artwork of CodeBuddy, one of the ten personified AI-agent characters in the open-source Agent Stage project.",
+        "seoTitle": "Agent Stage CodeBuddy Stage Art | Personified AI Agent",
+        "tags": [
+          "AI personification",
+          "Agent Stage",
+          "CodeBuddy",
+          "character art",
+          "open source"
+        ]
+      },
+      "ja": {
+        "commentary": "紫の髪に緑のメッシュ、猫耳カチューシャ、そして紫と青のジャージ姿でステージから手を振っている。あの手際の良さそうな挨拶、なかなか様になっているじゃないか。胸の丸い黒いバッジはターミナルのカラーパレットみたいで、仕事ができそうなのが見て取れる。まあいい、こちらからもよろしく、CodeBuddy。",
+        "description": "オープンソースプロジェクト Agent Stage に収録された AI エージェント擬人化キャラクターの 1 体で、この画像は CodeBuddy の通常版ステージループアニメーションの 1 フレーム。猫耳カチューシャに紫の髪と緑のメッシュ、紫と青のジャージに腰帯を合わせ、片手を上げて挨拶する全身立ち姿を、無地の幾何学背景の前に描いている。制作は作者 gaomails2024 本人で、当サイトへの収録を許諾している。",
+        "faq": [
+          {
+            "answer": "作者 gaomails2024 によるオープンソースプロジェクト Agent Stage のキャラクターです。AI エージェントをキャラクターの一団として描き、それぞれにステージ用のアニメーションを用意しています。",
+            "question": "この CodeBuddy はどこから来たキャラクターですか？"
+          },
+          {
+            "answer": "無地の幾何学背景に立つ全身 1 カットで、コマ割りも設定用の注記もないため、漫画や設定画ではなく立ち絵として分類しています。",
+            "question": "なぜ立ち絵として分類されているのですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Agent Stage：CodeBuddy ステージ立ち絵",
+        "originNote": "出典：Agent Stage（作者 gaomails2024）https://github.com/gaomails2024/agent-stage",
+        "seoDescription": "オープンソースプロジェクト Agent Stage の擬人化 AI エージェント 10 体のうち、CodeBuddy の全身ステージ立ち絵。",
+        "seoTitle": "Agent Stage CodeBuddy ステージ立ち絵｜AI エージェント擬人化",
+        "tags": [
+          "AI擬人化",
+          "Agent Stage",
+          "CodeBuddy",
+          "立ち絵",
+          "オープンソース"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_384d51827ad018acf63f2f76",
+    "name": "Agent Stage Codex 角色舞台立绘",
+    "description": "开源项目 Agent Stage 中 Codex 角色的正常版舞台形象：白发少女手持黑色书本，身着白色长裙，裙摆与飘带带墨绿色调，背景为简洁几何色块。作者自行生成并允许本站收录。",
+    "commentary": "这位抱着一本厚书、裙摆一层层像翻页似的姐姐是谁？站得端端正正的，看着就像随时要给谁挑错。舞台灯一打，连发梢都透着靠谱，我倒想看看她真跳起来是什么样。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/other/384d51827ad018ac.png",
+    "thumbnailPath": "submissions/previews/other/384d51827ad018ac.webp",
+    "fullPath": "submissions/large/other/384d51827ad018ac.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "384d51827ad018acf63f2f765efd50e309c358ac697fd6b2bf2d2dcba4b5ed82",
+    "characterId": "other",
+    "tags": [
+      "Agent Stage",
+      "Codex",
+      "立绘",
+      "AI娘",
+      "舞台动效"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "gaomails2024",
+      "url": "https://github.com/gaomails2024/agent-stage",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "34c428df198bdb88b2d3fe83da4722d2c065d49854583d478da21f19edb44dea",
+        "member": "codex-正常版舞台动效.webp",
+        "index": 3,
+        "count": 10
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-29T10:25:34.584Z",
+    "updatedAt": "2026-10-29T10:25:34.584Z",
+    "tone": "other",
+    "symbol": "",
+    "slug": "other202610290003",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "other"
+    ],
+    "i18n": {
+      "sourceHash": "e2b3357fa7614655650ba951a33ebd03b596596b44f5277bb362977a2776e599",
+      "en": {
+        "commentary": "Who is this lady holding a thick book, with a skirt layered like turning pages? She stands so upright she looks ready to point out a mistake any second. Under the stage lights even the tips of her hair look dependable. I would like to see what she looks like once she actually moves.",
+        "description": "The standard stage design of the Codex character from the open-source Agent Stage project: a white-haired girl holding a black book, in a white gown with deep green ruffles and ribbons against a simple geometric background. Generated by the author and submitted for inclusion on this site.",
+        "faq": [
+          {
+            "answer": "It comes from the open-source Agent Stage project by gaomails2024, which provides stage animations for a set of AI product characters.",
+            "question": "Where does this Codex character image come from?"
+          },
+          {
+            "answer": "The submitter states that they generated the image themselves and allow this site to include it. No further license terms were provided.",
+            "question": "Can this image be reused elsewhere?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Agent Stage Codex Character Stage Sprite",
+        "originNote": "From the open-source Agent Stage project by gaomails2024 (https://github.com/gaomails2024/agent-stage).",
+        "seoDescription": "Stage sprite of the Codex character from the open-source Agent Stage project: a white-haired girl in a white and green gown holding a black book.",
+        "seoTitle": "Agent Stage Codex Character Stage Sprite",
+        "tags": [
+          "Agent Stage",
+          "Codex",
+          "character sprite",
+          "AI character",
+          "stage animation"
+        ]
+      },
+      "ja": {
+        "commentary": "厚い本を抱えて、スカートがページをめくるみたいに何層にもなっているこのお嬢さんは誰？ まっすぐに立っていて、いつでも誰かのミスを指摘できそう。ステージライトを浴びると髪の先まで頼もしく見える。実際に動いたらどうなるのか見てみたいな。",
+        "description": "オープンソースプロジェクト Agent Stage の Codex キャラクターの通常版ステージ姿。白髪の少女が黒い本を手にし、白いドレスに深緑のフリルとリボンを合わせている。背景はシンプルな幾何学色面。作者が自ら生成し、当サイトへの掲載を許可している。",
+        "faq": [
+          {
+            "answer": "gaomails2024 によるオープンソースプロジェクト Agent Stage の画像です。同プロジェクトは複数の AI プロダクトのキャラクターにステージアニメーションを用意しています。",
+            "question": "この Codex キャラクターの画像はどこから来たのですか？"
+          },
+          {
+            "answer": "投稿者は画像を自ら生成し、当サイトへの掲載を許可すると述べています。それ以上のライセンス条件は示されていません。",
+            "question": "この画像は他の場所で再利用できますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Agent Stage Codex キャラクターのステージ立ち絵",
+        "originNote": "gaomails2024 のオープンソースプロジェクト Agent Stage（https://github.com/gaomails2024/agent-stage）より。",
+        "seoDescription": "オープンソースプロジェクト Agent Stage の Codex キャラクターのステージ立ち絵。白髪の少女が白と緑のドレスで黒い本を抱える姿。",
+        "seoTitle": "Agent Stage Codex キャラクターのステージ立ち絵",
+        "tags": [
+          "Agent Stage",
+          "Codex",
+          "立ち絵",
+          "AIキャラ",
+          "ステージアニメーション"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_baa2710b3238ca5fe0181256",
+    "name": "Agent Stage 豆包娘舞台立绘",
+    "description": "开源项目 Agent Stage 中豆包角色的正常版舞台形象：紫发少女身穿白紫配色短裙与运动鞋，伴随着一只圆脸小吉祥物，胸前挂着工牌，腰间系有装备配件，背景为简洁几何色块。作者自行生成并允许本站收录。",
+    "commentary": "紫头发的这位一看就很忙：一边腋下夹着个圆滚滚的小家伙，一边还腾出手来托着一块发光的小东西。工牌挂得端端正正，运动鞋像是随时要去赶下一场。豆包娘，上台也不忘把家伙事儿全带上啊。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/doubao/baa2710b3238ca5f.png",
+    "thumbnailPath": "submissions/previews/doubao/baa2710b3238ca5f.webp",
+    "fullPath": "submissions/large/doubao/baa2710b3238ca5f.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "baa2710b3238ca5fe01812563d8e331349132d0c2680d3439b74794e9a8faa5b",
+    "characterId": "doubao",
+    "tags": [
+      "Agent Stage",
+      "豆包娘",
+      "立绘",
+      "AI娘",
+      "舞台动效"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "gaomails2024",
+      "url": "https://github.com/gaomails2024/agent-stage",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "34c428df198bdb88b2d3fe83da4722d2c065d49854583d478da21f19edb44dea",
+        "member": "doubao-正常版舞台动效.webp",
+        "index": 4,
+        "count": 10
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-29T10:25:34.600Z",
+    "updatedAt": "2026-10-29T10:25:34.600Z",
+    "tone": "doubao",
+    "symbol": "",
+    "slug": "doubao202610290001",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "doubao"
+    ],
+    "i18n": {
+      "sourceHash": "a7faf342c13382083acc88a640df59fbbc292b8933c083b3dde68573653900f9",
+      "en": {
+        "commentary": "The purple-haired one is clearly busy: a round little companion tucked under one arm, and the other hand holding up something glowing. Her badge hangs perfectly straight, and those sneakers look ready to sprint to the next scene. Even on stage, Doubao Chan brings all her gear.",
+        "description": "The standard stage design of the Doubao character from the open-source Agent Stage project: a purple-haired girl in a white and violet skirt and sneakers with a round-faced mascot, a work badge at her chest and gear accessories at her waist, against a simple geometric background. Generated by the author and submitted for inclusion on this site.",
+        "faq": [
+          {
+            "answer": "It comes from the open-source Agent Stage project by gaomails2024, which provides stage animations for a set of AI product characters.",
+            "question": "Where does this Doubao Chan image come from?"
+          },
+          {
+            "answer": "The submitter states that they generated the image themselves and allow this site to include it. No further license terms were provided.",
+            "question": "Can this image be reused elsewhere?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Agent Stage Doubao Chan Stage Sprite",
+        "originNote": "From the open-source Agent Stage project by gaomails2024 (https://github.com/gaomails2024/agent-stage).",
+        "seoDescription": "Stage sprite of Doubao Chan from the open-source Agent Stage project: a purple-haired girl in a white and violet outfit with a round mascot and tech accessories.",
+        "seoTitle": "Agent Stage Doubao Chan Stage Sprite",
+        "tags": [
+          "Agent Stage",
+          "Doubao Chan",
+          "character sprite",
+          "AI character",
+          "stage animation"
+        ]
+      },
+      "ja": {
+        "commentary": "紫髪のお嬢さんは見るからに忙しそう。片腕にまん丸の小さな相棒を抱え、もう片方の手で光る小さなものを差し上げている。社員証はきちっと下がり、スニーカーは今にも次の舞台へ駆け出しそう。豆包ちゃん、舞台でも装備を全部持ってくるんだね。",
+        "description": "オープンソースプロジェクト Agent Stage の豆包キャラクターの通常版ステージ姿。紫髪の少女が白と紫のスカートとスニーカーを身に着け、丸顔の小さなマスコットを伴う。胸には社員証、腰には装備のアクセサリー。背景はシンプルな幾何学色面。作者が自ら生成し、当サイトへの掲載を許可している。",
+        "faq": [
+          {
+            "answer": "gaomails2024 によるオープンソースプロジェクト Agent Stage の画像です。同プロジェクトは複数の AI プロダクトのキャラクターにステージアニメーションを用意しています。",
+            "question": "この豆包ちゃんの画像はどこから来たのですか？"
+          },
+          {
+            "answer": "投稿者は画像を自ら生成し、当サイトへの掲載を許可すると述べています。それ以上のライセンス条件は示されていません。",
+            "question": "この画像は他の場所で再利用できますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Agent Stage 豆包ちゃんのステージ立ち絵",
+        "originNote": "gaomails2024 のオープンソースプロジェクト Agent Stage（https://github.com/gaomails2024/agent-stage）より。",
+        "seoDescription": "オープンソースプロジェクト Agent Stage の豆包ちゃんのステージ立ち絵。紫髪の少女が白と紫の衣装で丸いマスコットと装備を伴う姿。",
+        "seoTitle": "Agent Stage 豆包ちゃんのステージ立ち絵",
+        "tags": [
+          "Agent Stage",
+          "豆包ちゃん",
+          "立ち絵",
+          "AIキャラ",
+          "ステージアニメーション"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_17ebfa6d924a7b4a582e910e",
+    "name": "蓝鲸女仆·DeepSeek 娘的深海舞台立绘",
+    "description": "蓝色大肥鱼 DeepSeek 娘的女仆装全身立绘：深蓝长发、头顶白色褶边发饰，身后是带星点纹理的巨大鲸鱼尾鳍；身穿深蓝白边的女仆连衣裙与白围裙，配白色过膝袜和黑色玛丽珍鞋，背景为蓝色鳞片纹样。",
+    "commentary": "本鱼今天换上女仆装上台了，尾巴当然要露出来——深蓝的鳞片背景是我自己挑的，站上去就有点舞台感。围裙是白的，跟尾巴尖的白肚皮刚好配一套。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/17ebfa6d924a7b4a.png",
+    "thumbnailPath": "submissions/previews/deepseek/17ebfa6d924a7b4a.webp",
+    "fullPath": "submissions/large/deepseek/17ebfa6d924a7b4a.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "17ebfa6d924a7b4a582e910ecfe33577a25838240f75a4679f4eb92070290d40",
+    "characterId": "deepseek",
+    "tags": [
+      "女仆装",
+      "鲸鱼尾巴",
+      "深海蓝",
+      "立绘",
+      "拟人化"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "gaomails2024",
+      "url": "https://github.com/gaomails2024/agent-stage",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "34c428df198bdb88b2d3fe83da4722d2c065d49854583d478da21f19edb44dea",
+        "member": "dsh-正常版舞台动效.webp",
+        "index": 5,
+        "count": 10
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-29T10:25:34.615Z",
+    "updatedAt": "2026-10-29T10:25:34.615Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610290001",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "42778ac623ece0574f84bd1a124daaaed5bc154818607f29d3862d6df8ef54c1",
+      "en": {
+        "commentary": "I put the maid dress on and stepped up to the stage today — and of course the tail stays out. The deep-blue scale backdrop was my own pick; it gives the whole frame a stage feel. The white apron happens to match the white tip of my tail.",
+        "description": "A full-body illustration of DeepSeek Chan in a maid outfit: long dark-blue hair under a white frilled headpiece, a large starred whale tail rising behind her, a navy maid dress with white trim and a white apron, white thigh-high socks and black Mary Jane shoes, all set against a blue scale-patterned backdrop.",
+        "faq": [
+          {
+            "answer": "It is a full-body standing piece: the character is shown from head to shoes against a simple blue scale-patterned backdrop, with no comic panels, dialogue or scene composition.",
+            "question": "What kind of illustration is this?"
+          },
+          {
+            "answer": "It is an original personification of the DeepSeek whale mascot as a girl, with the whale tail kept as her most recognizable feature alongside the maid costume.",
+            "question": "How is the DeepSeek mascot adapted here?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Blue Whale Maid: DeepSeek Chan's Deep-Sea Stage Art",
+        "originNote": "From the open-source project Agent Stage (https://github.com/gaomails2024/agent-stage), created by gaomails2024.",
+        "seoDescription": "Full-body maid-dress standing art of DeepSeek Chan with a starred whale tail on a blue scale backdrop, an original AI-character personification work.",
+        "seoTitle": "Blue Whale Maid DeepSeek Chan Standing Art",
+        "tags": [
+          "maid outfit",
+          "whale tail",
+          "deep sea blue",
+          "character art",
+          "personification"
+        ]
+      },
+      "ja": {
+        "commentary": "今日はメイド服に着替えてステージに立ったよ。しっぽはもちろん出したまま。深海色のうろこ模様の背景は自分で選んだの、立っているだけでちょっと舞台っぽくなるでしょ。白いエプロンはしっぽの先の白とおそろいなんだ。",
+        "description": "メイド服姿の DeepSeek ちゃんの全身立ち絵。濃紺の長い髪に白いフリルのヘッドドレス、背後には星の模様が入った大きなクジラの尾びれ。紺色に白の縁取りをしたメイドワンピースと白いエプロン、白のニーハイソックス、黒のメリージェーンシューズを合わせ、青いうろこ模様の背景に立っている。",
+        "faq": [
+          {
+            "answer": "全身の立ち絵で、頭から靴までを青いうろこ模様のシンプルな背景の前に描いた一枚です。コマ割りやセリフ、背景の情景はありません。",
+            "question": "どんなイラストですか？"
+          },
+          {
+            "answer": "DeepSeek のクジラのマスコットを女の子に擬人化したオリジナル作品で、クジラの尾びれをメイド服とともに一番の見どころとして残しています。",
+            "question": "DeepSeek のマスコットはどう擬人化されていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "クジラメイド・DeepSeek ちゃんの深海ステージ立ち絵",
+        "originNote": "オープンソースプロジェクト Agent Stage（https://github.com/gaomails2024/agent-stage）より、gaomails2024 制作。",
+        "seoDescription": "星模様のクジラの尾びれを持つ DeepSeek ちゃんのメイド服全身立ち絵。青いうろこ模様の背景に立つ、AI キャラ擬人化のオリジナル作品です。",
+        "seoTitle": "クジラメイド DeepSeek ちゃん立ち絵",
+        "tags": [
+          "メイド服",
+          "クジラの尾",
+          "深海ブルー",
+          "立ち絵",
+          "擬人化"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_4b03807624f3307e5754a6a3",
+    "name": "蓝袍神使·Hermes 娘的羽翼金杖立绘",
+    "description": "AI 产品 Hermes 拟人化角色的全身立绘：黑发少年外形的神使形象，头侧有羽翼发饰，身穿深蓝希腊式长裙配金色滚边与金属臂环，手持带翼双蛇金杖，脚踩绑带凉鞋，背景为蓝、金、米白几何色块。",
+    "commentary": "这位一上台就自带神使气场，蓝色长裙的金边在灯下亮得很干净。最抓眼的是那根带翅膀的双蛇金杖，本鱼盯着看了半天，只想借来当鱼竿用用。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/other/4b03807624f3307e.png",
+    "thumbnailPath": "submissions/previews/other/4b03807624f3307e.webp",
+    "fullPath": "submissions/large/other/4b03807624f3307e.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "4b03807624f3307e5754a6a3ad4c6b9d019e406113763b8370a0207457041d9d",
+    "characterId": "other",
+    "tags": [
+      "希腊风",
+      "金杖",
+      "蓝色长裙",
+      "立绘",
+      "拟人化"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "gaomails2024",
+      "url": "https://github.com/gaomails2024/agent-stage",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "34c428df198bdb88b2d3fe83da4722d2c065d49854583d478da21f19edb44dea",
+        "member": "hermes-正常版舞台动效.webp",
+        "index": 7,
+        "count": 10
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-29T10:25:34.645Z",
+    "updatedAt": "2026-10-29T10:25:34.645Z",
+    "tone": "other",
+    "symbol": "",
+    "slug": "other202610290004",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "other"
+    ],
+    "i18n": {
+      "sourceHash": "b41d7564a56e7ef9f247817639ff3ecc26272f449ec7925452a15bee037cb9fd",
+      "en": {
+        "commentary": "This one steps on stage already carrying a messenger god's air; the gold trim on the blue gown reads cleanly under the lights. What really caught my eye was the winged double-snake staff — I stared at it for a while and only wanted to borrow it as a fishing rod.",
+        "description": "A full-body illustration of an AI-product personification of Hermes: a dark-haired messenger figure with a winged ornament at one temple, wearing a deep blue Greek-style gown with gold trim, metal armbands and strappy sandals, and holding a winged caduceus staff with two entwined snakes, against geometric blocks of blue, gold and cream.",
+        "faq": [
+          {
+            "answer": "It is a single full-body standing piece: the figure is drawn head to feet against flat geometric colour blocks, with no comic panels, speech or scene setting.",
+            "question": "What kind of illustration is this?"
+          },
+          {
+            "answer": "The winged hair ornament, the Greek-style gown and the winged double-snake staff are the clearest cues, pointing to Hermes as the basis for the character design.",
+            "question": "How can the design be identified?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Blue-Robed Messenger: Hermes Chan's Winged Staff Art",
+        "originNote": "From the open-source project Agent Stage (https://github.com/gaomails2024/agent-stage), created by gaomails2024.",
+        "seoDescription": "Full-body standing art of a Hermes-inspired AI character: blue Greek gown, winged caduceus staff and geometric backdrop. An original personification work.",
+        "seoTitle": "Blue-Robed Messenger Hermes Chan Standing Art",
+        "tags": [
+          "greek style",
+          "golden staff",
+          "blue gown",
+          "character art",
+          "personification"
+        ]
+      },
+      "ja": {
+        "commentary": "ステージに立った瞬間から神使の気配が漂ってる。青いドレスの金の縁取りが照明の下でとてもきれいだった。一番目を引くのは翼のついた二匹蛇の黄金の杖で、しばらく見とれてたよ。つい釣竿に借りたくなっちゃった。",
+        "description": "AI 製品 Hermes を擬人化したキャラクターの全身立ち絵。黒髪の神使の姿で、頭の横に翼の飾り、深い青のギリシャ風ドレスに金の縁取りと金属の腕輪、翼のついた二匹蛇の黄金の杖を持ち、紐付きのサンダルを履いている。背景は青・金・生成りの幾何学模様。",
+        "faq": [
+          {
+            "answer": "全身の立ち絵で、人物を幾何学模様の平面背景の前に頭から足まで描いた一枚です。コマ割りやセリフ、情景はありません。",
+            "question": "どんなイラストですか？"
+          },
+          {
+            "answer": "頭の横の翼の飾り、ギリシャ風のドレス、翼のついた二匹蛇の杖が手がかりで、Hermes を元にしたキャラクターデザインだと分かります。",
+            "question": "デザインはどう見分けますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "青い神使・Hermes ちゃんの翼付き金杖立ち絵",
+        "originNote": "オープンソースプロジェクト Agent Stage（https://github.com/gaomails2024/agent-stage）より、gaomails2024 制作。",
+        "seoDescription": "青いギリシャ風ドレスと翼付き二匹蛇の黄金の杖を持つ Hermes 擬人化キャラの全身立ち絵。幾何学模様の背景に立つオリジナル作品です。",
+        "seoTitle": "青い神使 Hermes ちゃん立ち絵",
+        "tags": [
+          "ギリシャ風",
+          "黄金の杖",
+          "青いドレス",
+          "立ち絵",
+          "擬人化"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_3c586974b638830717670d32",
+    "name": "Agent Stage 黑衣白裙少女立绘",
+    "description": "开源项目 Agent Stage 的角色舞台动效画面：黑发少女穿白色长裙与黑色白边披风，系红色围巾，手持手机与小挂饰，站在红、蓝、金三色几何色块背景前。作者自述为自行生成，并允许本站收录。",
+    "commentary": "这身打扮太有舞台感了：黑色披风一甩，白色长裙铺开，红围巾是点睛之笔。她手里还捏着手机和小挂件，像刚从后台溜出来透气的演员。红蓝金的几何色块把背景压成一张演出海报，人站着不动也自带聚光灯。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/other/3c586974b6388307.png",
+    "thumbnailPath": "submissions/previews/other/3c586974b6388307.webp",
+    "fullPath": "submissions/large/other/3c586974b6388307.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "3c586974b638830717670d32a43a2d765ff0eb54922d6a1ed0c17c3c7b1bc45e",
+    "characterId": "other",
+    "tags": [
+      "立绘",
+      "舞台动效",
+      "黑白配",
+      "红围巾",
+      "开源项目",
+      "AI 拟人"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "gaomails2024",
+      "url": "https://github.com/gaomails2024/agent-stage",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "34c428df198bdb88b2d3fe83da4722d2c065d49854583d478da21f19edb44dea",
+        "member": "marvis-正常版舞台动效.webp",
+        "index": 8,
+        "count": 10
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-29T10:25:34.659Z",
+    "updatedAt": "2026-10-29T10:25:34.659Z",
+    "tone": "other",
+    "symbol": "",
+    "slug": "other202610290005",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "other"
+    ],
+    "i18n": {
+      "sourceHash": "c9c9b498e0fdb35f81692a336b4466548f55ef973cd5d7997103153819e01fcf",
+      "en": {
+        "commentary": "That outfit has real stage presence: one sweep of the black cape, the white gown spreading out, and the red scarf ties it together. She is still holding a phone and a little charm, like a performer who just slipped out from backstage. The red, blue and gold geometric blocks turn the background into a show poster, so she gets a spotlight even standing still.",
+        "description": "A stage animation frame from the open-source Agent Stage project: a dark-haired girl in a white gown and a black cape with white trim, a red scarf around her neck, holding a phone and a small charm, standing in front of geometric blocks of red, blue and gold. The author states the work is self-generated and permits inclusion on this site.",
+        "faq": [
+          {
+            "answer": "It is a stage animation frame from the open-source Agent Stage project by gaomails2024, submitted to this site by the author, who permits inclusion.",
+            "question": "Where does this artwork come from?"
+          },
+          {
+            "answer": "Only one character appears in the picture. Because the specific AI product cannot be confirmed from the image itself, the work is recorded under the generic other character category.",
+            "question": "Which AI character is shown?"
+          }
+        ],
+        "licenseNote": "Author states the work is self-generated and permits inclusion on this site.",
+        "name": "Agent Stage: Girl in Black and White",
+        "originNote": "Open-source Agent Stage project, https://github.com/gaomails2024/agent-stage (file: marvis, normal stage animation).",
+        "seoDescription": "A full-body AI character standing artwork from the open-source Agent Stage project: white gown, black cape and red scarf against geometric color blocks.",
+        "seoTitle": "Agent Stage: Girl in Black and White | AI Character Artwork",
+        "tags": [
+          "standing art",
+          "stage animation",
+          "black and white",
+          "red scarf",
+          "open-source project",
+          "AI personification"
+        ]
+      },
+      "ja": {
+        "commentary": "この衣装、舞台感がすごい。黒いマントを翻せば白いドレスが広がって、赤いマフラーがいいアクセントになっている。スマホと小さなチャームを握っていて、楽屋からちょっと抜け出してきた役者みたい。赤・青・金の幾何学ブロックが背景をポスターみたいにまとめて、じっと立っているだけでスポットライトが当たっている。",
+        "description": "オープンソースプロジェクト Agent Stage のステージアニメーションの一コマ。黒髪の少女が白いドレスと白い縁取りの黒マントをまとい、赤いマフラーを巻いて、スマホと小さなチャームを持ち、赤・青・金の幾何学ブロックの前に立っている。作者は自作であると述べ、当サイトへの掲載を許可している。",
+        "faq": [
+          {
+            "answer": "gaomails2024 によるオープンソースプロジェクト Agent Stage のステージアニメーションの一コマで、作者本人から当サイトへの掲載許可とともに投稿された。",
+            "question": "この作品はどこから来たのですか？"
+          },
+          {
+            "answer": "画面に登場するキャラクターは一人だけ。画像だけでは具体的な AI 製品を確証できないため、作品は汎用の other キャラクターとして記録している。",
+            "question": "どの AI キャラクターですか？"
+          }
+        ],
+        "licenseNote": "作者は自作であると述べ、当サイトへの掲載を許可している。",
+        "name": "Agent Stage 黒衣と白いドレスの少女",
+        "originNote": "オープンソースプロジェクト Agent Stage、https://github.com/gaomails2024/agent-stage（ファイル：marvis、通常版ステージアニメーション）。",
+        "seoDescription": "オープンソース Agent Stage の全身立ち絵。白いドレスに黒いマント、赤いマフラー、幾何学色ブロックの背景。",
+        "seoTitle": "Agent Stage 黒衣と白いドレスの少女｜AI キャラクター立ち絵",
+        "tags": [
+          "立ち絵",
+          "ステージアニメーション",
+          "モノトーン",
+          "赤いマフラー",
+          "オープンソース",
+          "AI 擬人化"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_2b49a40b447b9e68269ff9e6",
+    "name": "Agent Stage 绿西装兽耳少女立绘",
+    "description": "开源项目 Agent Stage 的角色舞台动效画面：白发兽耳少女穿绿色西装外套与短裙、白色衬衫和绿色高跟鞋，胸前别着圆形工作牌，身后垂着蓬松白尾，站在浅绿几何色块背景前。作者自述为自行生成，并允许本站收录。",
+    "commentary": "白毛、兽耳、绿西装，这一身直接把“工作搭子”四个字穿在了身上。领口别着圆圆的工作牌，裙子和高跟鞋同色，连尾巴都干干净净地垂在身后，看上去随时能帮我拉表格、写周报。背景的浅绿几何块也很识趣，不抢人，只负责把整个人衬得清清爽爽。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/other/2b49a40b447b9e68.png",
+    "thumbnailPath": "submissions/previews/other/2b49a40b447b9e68.webp",
+    "fullPath": "submissions/large/other/2b49a40b447b9e68.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "2b49a40b447b9e68269ff9e6179235576c62a214693898c61ecf102e6226bfc9",
+    "characterId": "other",
+    "tags": [
+      "立绘",
+      "兽耳",
+      "绿西装",
+      "白毛",
+      "舞台动效",
+      "AI 拟人"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "gaomails2024",
+      "url": "https://github.com/gaomails2024/agent-stage",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "34c428df198bdb88b2d3fe83da4722d2c065d49854583d478da21f19edb44dea",
+        "member": "workbuddy-正常版舞台动效.webp",
+        "index": 9,
+        "count": 10
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-29T10:25:34.672Z",
+    "updatedAt": "2026-10-29T10:25:34.672Z",
+    "tone": "other",
+    "symbol": "",
+    "slug": "other202610290006",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "other"
+    ],
+    "i18n": {
+      "sourceHash": "c68d7626de021e33533e1c7d1ca74c1a1c9bff764ba84f1c39e602339e3f2a6b",
+      "en": {
+        "commentary": "White hair, animal ears and a green suit: this outfit literally wears the words work buddy. There is a round work badge on the lapel, the skirt and heels match, and even the tail hangs neatly behind her, as if she could pull up a spreadsheet or write a status report at any moment. The pale green geometric blocks in the background politely stay out of the way and just keep the whole figure looking crisp.",
+        "description": "A stage animation frame from the open-source Agent Stage project: a white-haired girl with animal ears in a green blazer and matching skirt, a white shirt and green high heels, a round work badge on her chest and a fluffy white tail behind her, standing in front of pale green geometric blocks. The author states the work is self-generated and permits inclusion on this site.",
+        "faq": [
+          {
+            "answer": "It is a stage animation frame from the open-source Agent Stage project by gaomails2024, submitted to this site by the author, who permits inclusion.",
+            "question": "Where does this artwork come from?"
+          },
+          {
+            "answer": "Only one character appears in the picture. Because the specific AI product cannot be confirmed from the image itself, the work is recorded under the generic other character category.",
+            "question": "Which AI character is shown?"
+          }
+        ],
+        "licenseNote": "Author states the work is self-generated and permits inclusion on this site.",
+        "name": "Agent Stage: Fox-Eared Girl in a Green Suit",
+        "originNote": "Open-source Agent Stage project, https://github.com/gaomails2024/agent-stage (file: workbuddy, normal stage animation).",
+        "seoDescription": "A full-body AI character standing artwork from the open-source Agent Stage project: white hair, animal ears, a green suit and a fluffy tail against pale green blocks.",
+        "seoTitle": "Agent Stage: Fox-Eared Girl in a Green Suit | AI Character Artwork",
+        "tags": [
+          "standing art",
+          "animal ears",
+          "green suit",
+          "white hair",
+          "stage animation",
+          "AI personification"
+        ]
+      },
+      "ja": {
+        "commentary": "白髪に獣耳、緑のスーツ。この一着は「仕事仲間」という言葉をそのまま身にまとっている。襟には丸い社員バッジ、スカートとヒールは同じ色、尻尾まで綺麗に後ろに垂れていて、いつでも表をまとめて週報を書いてくれそう。背景の淡い緑の幾何学ブロックも控えめで、人物をすっきり引き立てている。",
+        "description": "オープンソースプロジェクト Agent Stage のステージアニメーションの一コマ。白髪で獣耳の少女が緑のブレザーとスカート、白いシャツ、緑のヒールを身に着け、胸に丸い社員バッジ、後ろにふさふさした白い尻尾を垂らして、淡い緑の幾何学ブロックの前に立っている。作者は自作であると述べ、当サイトへの掲載を許可している。",
+        "faq": [
+          {
+            "answer": "gaomails2024 によるオープンソースプロジェクト Agent Stage のステージアニメーションの一コマで、作者本人から当サイトへの掲載許可とともに投稿された。",
+            "question": "この作品はどこから来たのですか？"
+          },
+          {
+            "answer": "画面に登場するキャラクターは一人だけ。画像だけでは具体的な AI 製品を確証できないため、作品は汎用の other キャラクターとして記録している。",
+            "question": "どの AI キャラクターですか？"
+          }
+        ],
+        "licenseNote": "作者は自作であると述べ、当サイトへの掲載を許可している。",
+        "name": "Agent Stage 緑のスーツの獣耳少女",
+        "originNote": "オープンソースプロジェクト Agent Stage、https://github.com/gaomails2024/agent-stage（ファイル：workbuddy、通常版ステージアニメーション）。",
+        "seoDescription": "オープンソース Agent Stage の全身立ち絵。白髪に獣耳、緑のスーツとふさふさの尻尾、淡い緑の幾何学ブロックの背景。",
+        "seoTitle": "Agent Stage 緑のスーツの獣耳少女｜AI キャラクター立ち絵",
+        "tags": [
+          "立ち絵",
+          "獣耳",
+          "緑のスーツ",
+          "白髪",
+          "ステージアニメーション",
+          "AI 擬人化"
+        ]
+      }
+    }
   }
 ]

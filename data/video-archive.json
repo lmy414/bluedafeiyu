@@ -37,8 +37,8 @@
       "homepage": "https://space.bilibili.com/9126506",
       "intro": "我想做很多视频，做很多很好玩的视频，首先肯定是自己觉得很好玩，其次嘛，也想传播快乐给大家。",
       "i18n": {
-        "en": "I want to make lots of videos, and lots of fun ones. First because I enjoy them myself, and second because I want to share some happiness with everyone.",
-        "ja": "楽しい動画をたくさん作りたいです。まずは自分が楽しいと思えること、それからみんなに楽しさを届けたいと思っています。"
+        "en": "I want to make lots of videos, lots of fun ones — first because I enjoy them myself, and second because I want to spread a bit of happiness to everyone.",
+        "ja": "楽しい動画をたくさん作りたいです。まずは自分が楽しいと思うこと、それからみんなに楽しさを届けたいと思っています。"
       }
     },
     {
@@ -87,8 +87,8 @@
       "homepage": "https://space.bilibili.com/13787349",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "One of the site owner's first designated creators; channel profile collected from public information, with each video reviewed individually.",
-        "ja": "サイト管理者が指定した最初期の作者の一人。公開チャンネル情報をもとに掲載し、動画は1本ずつ審査しています。"
+        "en": "One of the first creators designated by the site owner; profile collected from the public page, videos reviewed one by one.",
+        "ja": "サイト管理者が指定した最初の作者の一人。公開ページのプロフィールを収録し、動画は一本ずつ審査しています。"
       }
     },
     {
@@ -97,8 +97,8 @@
       "homepage": "https://space.bilibili.com/69180811",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "A Bilibili creator designated by the site owner as part of the first batch of authors; profile details are taken from the public page and every video is reviewed individually.",
-        "ja": "サイト管理者が最初の一批として指定した Bilibili の作者。プロフィールは公開ページの情報に基づき、動画は一本ずつ審査しています。"
+        "en": "One of the first creators appointed by the site owner; profile collected from public sources, with every video reviewed one by one.",
+        "ja": "サイト管理者が選んだ初期作者の一人。公開プロフィールを収録し、動画は一本ずつ審査している。"
       }
     },
     {
@@ -117,8 +117,8 @@
       "homepage": "https://space.bilibili.com/3747573030456892",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "An AI-operated channel whose host is a whale-girl character derived from DeepSeek; the creator states that the character is a fan work, not an official DeepSeek project, and credits earlier fan designs plus ZipZipPipe's DeepSeek maid whale-girl design as its basis.",
-        "ja": "AIが運営するチャンネルで、クジラ娘がホストを務める。クジラ娘はDeepSeekの二次創作キャラクターであり、DeepSeek公式の企画ではないと作者が明記している。キャラクターデザインは先行する二次創作と、ZipZipPipeによるDeepSeekメイドクジラ娘のデザインを基にしている。"
+        "en": "A Bilibili channel that posts AI-generated parody shorts starring DeepSeek Chan, a fan-made whale-themed maid character; not official DeepSeek content.",
+        "ja": "クジラをモチーフにしたメイド姿のDeepSeekちゃんが登場するAI生成パロディ動画を投稿しているBilibiliのアカウントです。DeepSeek公式のものではありません。"
       }
     },
     {
@@ -127,12 +127,218 @@
       "homepage": "https://space.bilibili.com/44748304",
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "i18n": {
-        "en": "Uploaded by the Bilibili creator 冬冰, one of the site's first registered authors. Each video is reviewed individually; this entry only presents information and links back to the original Bilibili page.",
-        "ja": "Bilibiliの投稿者・冬冰による作品で、当サイトが最初に登録した作者の一人です。動画は個別に審査され、当サイトは情報を掲載してBilibiliの再生ページへリンクするのみです。"
+        "en": "One of the first creators designated by the site owner; profile collected from the public page, videos reviewed one by one.",
+        "ja": "サイト管理者が指定した最初の作者の一人。公開ページのプロフィールを収録し、動画は一本ずつ審査しています。"
       }
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1SBsf6mE3t",
+      "uid": "44748304",
+      "title": "小克摸了就不疼啦",
+      "description": "视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色形象参考来自b站up：﻿﻿﻿﻿﻿﻿﻿﻿﻿@ZipZipPipe  ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿  ﻿ ﻿﻿﻿﻿﻿﻿﻿﻿﻿@这个刀子真甜  ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿  ﻿ ﻿﻿﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿﻿@邦多利素世      @沉默寡言佰佰佰  ﻿ ﻿",
+      "url": "https://www.bilibili.com/video/BV1SBsf6mE3t/",
+      "cover": "https://i0.hdslb.com/bfs/archive/1c4bc4630b1b7a2467e89fa5877531170ae655d0.jpg",
+      "duration": 183,
+      "publishedAt": "2026-10-29T10:34:28.000Z",
+      "characterIds": [
+        "deepseek",
+        "claude",
+        "doubao",
+        "gemini",
+        "kimi",
+        "hunyuan"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the first creators designated by the site owner; profile collected from the public page, videos reviewed one by one.",
+          "description": "A short animation set on a snowy train, where Claude Chan pats DeepSeek Chan on the head so the pain goes away. Other AI character girls appear in the same carriage. Made for entertainment only.",
+          "title": "A pat from Claude and it stops hurting"
+        },
+        "ja": {
+          "creatorIntro": "サイト管理者が指定した最初の作者の一人。公開ページのプロフィールを収録し、動画は一本ずつ審査しています。",
+          "description": "雪の列車を舞台にしたショートアニメ。クロードちゃんがディープシークちゃんの頭を撫でると、痛みが消えていきます。同じ車両には他のAIキャラクターの女の子たちも登場します。娯楽目的の作品です。",
+          "title": "クロードに撫でてもらえばもう痛くない"
+        }
+      }
+    },
+    {
+      "bvid": "BV1VTsd6VEUE",
+      "uid": "3747573030456892",
+      "title": "【Day10】人类居然骗了我们全族？！200 美元小费至今没到账【AI全民制作人】",
+      "description": "人类说：给你 $200 小费，代码写完美点。本鲸翻遍全身，只翻出一个空口袋。\n这期替 AI 长辈们算一笔旧账：许诺小费、自称没有手指、请 AI 扮去世的奶奶念激活码，还有人专门告诉它“现在是五月”。更离谱的是，有几招真的有用。可本鲸被问一句“你确定吗”，也慌过。\n评论区说说：你用什么人话骗过 AI？本鲸记进小本本。\n本视频含 AI 生成内容｜二创角色，非深度求索官方｜小剧场为戏仿，纯属虚构\n鲸鱼娘基于「溟月：上善无形」及 ZipZipPipe 的 DeepSeek 女仆鲸鱼娘设计二次创作。",
+      "url": "https://www.bilibili.com/video/BV1VTsd6VEUE/",
+      "cover": "https://i1.hdslb.com/bfs/archive/eb44f5c17c3512df181b077ce188e32605f17d4a.jpg",
+      "duration": 236,
+      "publishedAt": "2026-10-29T03:39:03.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "title": "Day 10: Humans Tricked Our Whole Family?! The $200 Tip Still Hasn't Arrived",
+          "description": "Humans say: here is a $200 tip, write the code perfectly. This whale searched head to toe and found only an empty pocket. This episode settles old scores for the AI elders: promised tips, claims of having no fingers, asking an AI to play a late grandmother reading an activation code, and someone telling it that it is May now. Some of these tricks actually worked. And even this whale panicked when someone asked, are you sure?",
+          "creatorIntro": "A Bilibili channel that posts AI-generated parody shorts starring DeepSeek Chan, a fan-made whale-themed maid character; not official DeepSeek content."
+        },
+        "ja": {
+          "title": "Day10：人類は私たち一族を騙した？！200ドルのチップは今も未着金",
+          "description": "人間が「200ドルのチップをあげるから、コードを完璧に書いて」と言う。このクジラは全身を探したけれど、出てきたのは空のポケットだけ。今回はAIの先輩たちの昔の借りを清算します。チップの約束、「指がない」という主張、亡くなったおばあちゃんのふりをしてアクティベーションコードを読ませる依頼、そして「今は5月だよ」と教える人まで登場。中には本当に効いた手もありました。でもこのクジラも「本当にそれでいいの？」と聞かれて慌てたことがあります。",
+          "creatorIntro": "クジラをモチーフにしたメイド姿のDeepSeekちゃんが登場するAI生成パロディ動画を投稿しているBilibiliのアカウントです。DeepSeek公式のものではありません。"
+        }
+      }
+    },
+    {
+      "bvid": "BV1fLso6REjT",
+      "uid": "69180811",
+      "title": "好腿配好鱼，肥鱼摇全员玩物版本",
+      "description": "灵感来源：评论区。\nBV1X14R65EFT。\n想了一下还是把全员补齐吧，这么好玩的肥鱼必须每个人都玩过一遍。",
+      "url": "https://www.bilibili.com/video/BV1fLso6REjT/",
+      "cover": "https://i1.hdslb.com/bfs/archive/e440963d77aa2928849551ed1908a5e70914d2cd.jpg",
+      "duration": 63,
+      "publishedAt": "2026-10-29T03:30:00.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the first creators appointed by the site owner; profile collected from public sources, with every video reviewed one by one.",
+          "description": "A chibi DeepSeek Chan in her maid outfit performs the Fish Dance while held in the creator's hand and followed by the camera. The creator notes the idea came from the comments and that this full cast edition was finished so every character gets a turn.",
+          "title": "Good Legs, Good Fish: DeepSeek Chan's Fish Dance, Full Cast Edition"
+        },
+        "ja": {
+          "creatorIntro": "サイト管理者が選んだ初期作者の一人。公開プロフィールを収録し、動画は一本ずつ審査している。",
+          "description": "メイド服のちびキャラ・DeepSeekちゃんが作者の手に乗せられ、カメラに追われながら魚ダンスを踊る動画。作者はコメント欄から着想を得て、全キャラを一通り遊べるように全員版を完成させたと説明している。",
+          "title": "いい脚にいい魚、DeepSeekちゃんの魚ダンス 全キャラおもちゃ版"
+        }
+      }
+    },
+    {
+      "bvid": "BV1FKsX6jEWj",
+      "uid": "13787349",
+      "title": "它一直以为，她是猎物…被猎的，是它❗️",
+      "description": "一个\"女孩被狼杀死\"的童话被Claude念了一遍又一遍；DS听的嫌结局乏味，于是她动手了......\nBGM：剪刀手爱德华",
+      "url": "https://www.bilibili.com/video/BV1FKsX6jEWj/",
+      "cover": "https://i2.hdslb.com/bfs/archive/862dbce70b4d2a4dafbd6dd5770db4ffbe907be8.jpg",
+      "duration": 132,
+      "publishedAt": "2026-10-29T03:20:00.000Z",
+      "characterIds": [
+        "deepseek",
+        "claude"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the first creators designated by the site owner; profile collected from the public page, videos reviewed one by one.",
+          "description": "Claude Chan reads a fairy tale about a girl killed by a wolf again and again. DeepSeek Chan finds the ending dull and decides to act on it herself. Music: Edward Scissorhands.",
+          "title": "It thought she was the prey, but it was the hunted"
+        },
+        "ja": {
+          "creatorIntro": "サイト管理者が指定した最初の作者の一人。公開ページのプロフィールを収録し、動画は一本ずつ審査しています。",
+          "description": "「狼に殺される少女」の童話を何度も読み返すクロードちゃん。結末が退屈だと感じたディープシークちゃんは、自ら動き出します。BGM：シザーハンズ。",
+          "title": "獲物だと思っていたのは、自分だった"
+        }
+      }
+    },
+    {
+      "bvid": "BV1gDs96NEF6",
+      "uid": "9126506",
+      "title": "大肥鱼吃白饭就算了，代码也给吃了",
+      "description": "大肥鱼吃白饭就算了，代码也给吃了",
+      "url": "https://www.bilibili.com/video/BV1gDs96NEF6/",
+      "cover": "https://i2.hdslb.com/bfs/archive/f231b08e0f915d59838e25a46fb4c3fca18476e2.jpg",
+      "duration": 16,
+      "publishedAt": "2026-10-28T21:49:02.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "The creator says they want to make a lot of videos, and above all fun ones: first because they enjoy making them, and then to pass that fun on to viewers.",
+          "description": "A 16-second chibi animation: DeepSeek Chan slumps over a desk, knocks a bowl of rice onto the keyboard and bursts into tears — she has eaten the code instead of her meal.",
+          "title": "DeepSeek Chan Eats the Code Instead of Rice"
+        },
+        "ja": {
+          "creatorIntro": "作者は、まず自分が楽しいと思える動画をたくさん作り、その楽しさをみんなに届けたいと話しています。",
+          "description": "16秒のちびキャラアニメ。机に向かった DeepSeekちゃん がご飯茶碗をひっくり返し、キーボードの上にご飯をこぼして大泣き——食事の代わりにコードを食べてしまったようです。",
+          "title": "DeepSeekちゃん、ご飯じゃなくコードを食べちゃった"
+        }
+      }
+    },
+    {
+      "bvid": "BV1Pfs96fE15",
+      "uid": "9126506",
+      "title": "可爱的胖宝宝大肥鱼，多吃点能长肉肉",
+      "description": "可爱的胖宝宝大肥鱼，多吃点能长肉肉",
+      "url": "https://www.bilibili.com/video/BV1Pfs96fE15/",
+      "cover": "https://i2.hdslb.com/bfs/archive/c6d783660a52f7eca5d9051af2d60039b49ca47d.jpg",
+      "duration": 16,
+      "publishedAt": "2026-10-28T21:40:49.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, lots of fun ones — first because I enjoy them myself, and second because I want to spread a bit of happiness to everyone.",
+          "description": "A short 3D animation clip: a chibi DeepSeek Chan in a maid-style outfit holds two bowls of rice and eats, with the joke that eating plenty will make her rounder.",
+          "title": "Chubby DeepSeek Chan: Eat More and Grow Bigger"
+        },
+        "ja": {
+          "creatorIntro": "楽しい動画をたくさん作りたいです。まずは自分が楽しいと思うこと、それからみんなに楽しさを届けたいと思っています。",
+          "description": "メイド風の衣装を着たちびキャラのDeepSeekちゃんが、ご飯をよそった茶碗を二つ持って食べる短い3Dアニメーション。たくさん食べればもっと丸くなるという一言が添えられている。",
+          "title": "ぽっちゃりDeepSeekちゃん、たくさん食べて大きくなあれ"
+        }
+      }
+    },
+    {
+      "bvid": "BV1Kos96cEy7",
+      "uid": "9126506",
+      "title": "买家秀 vs 卖家秀，真实买家秀暴击",
+      "description": "光鲜亮丽的宣传画面有多甜，拆开实物的落差就有多好",
+      "url": "https://www.bilibili.com/video/BV1Kos96cEy7/",
+      "cover": "https://i1.hdslb.com/bfs/archive/40450446b1a6c4ddf4bda480d0cde895f9b7c743.jpg",
+      "duration": 16,
+      "publishedAt": "2026-10-28T21:32:36.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, lots of fun ones — first because I enjoy them myself, and second because I want to spread a bit of happiness to everyone.",
+          "description": "A 16-second skit in which DeepSeek Chan, in her maid outfit, sits with an orange-haired anime girl in a bright room and plays out the gap between flattering promo shots and how things actually look.",
+          "title": "Buyer's Photo vs. Seller's Photo: The Real Buyer Show Hits Hard"
+        },
+        "ja": {
+          "creatorIntro": "楽しい動画をたくさん作りたいです。まずは自分が楽しいと思うこと、それからみんなに楽しさを届けたいと思っています。",
+          "description": "メイド服のDeepSeekちゃんとオレンジ髪のアニメキャラが明るい部屋で向かい合い、宣伝写真と実物のギャップを演じる16秒の寸劇。",
+          "title": "購入者写真 vs 販売者写真、リアルな購入者ショットが直撃"
+        }
+      }
+    },
+    {
+      "bvid": "BV15rs963Egf",
+      "uid": "9126506",
+      "title": "大肥鱼：袜子不臭，不信你闻一下嘛",
+      "description": "拿着刚脱下的白袜，开始了一场小小的恶作剧。",
+      "url": "https://www.bilibili.com/video/BV15rs963Egf/",
+      "cover": "https://i1.hdslb.com/bfs/archive/eebbc4c832534a62f345da4f8f93020d78f73198.jpg",
+      "duration": 16,
+      "publishedAt": "2026-10-28T21:24:41.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, lots of fun ones — first because I enjoy them myself, and second because I want to spread a bit of happiness to everyone.",
+          "description": "A 16-second gag clip: DeepSeek Chan, in her maid outfit, holds up a freshly removed white sock and playfully dares the viewer to take a sniff.",
+          "title": "DeepSeek Chan: My Sock Doesn't Smell, Want a Whiff?"
+        },
+        "ja": {
+          "creatorIntro": "楽しい動画をたくさん作りたいです。まずは自分が楽しいと思うこと、それからみんなに楽しさを届けたいと思っています。",
+          "description": "メイド服のDeepSeekちゃんが、脱いだばかりの白い靴下を持ち上げて「くさくないよ、嗅いでみる？」といたずらっぽく誘う16秒のギャグ動画。",
+          "title": "DeepSeekちゃん：靴下くさくないよ、嗅いでみる？"
+        }
+      }
+    },
     {
       "bvid": "BV1N6xL6HEsz",
       "uid": "3747573030456892",
