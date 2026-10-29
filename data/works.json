@@ -98016,5 +98016,208 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_2fd3f49555c0dd02b6163c1c",
+    "name": "Minimax M3娘小章鱼三视图设定",
+    "description": "Minimax M3 的拟人角色「小章鱼」三视图设定稿：正面、侧面与背面并列，展示红色章鱼兜帽、白色短外套、黑色百褶裙与红色触手状裙摆，外套与腰带带 M3 标识，底部配白色短靴与深色裤袜。",
+    "commentary": "红色的小章鱼。兜帽上的触手一根根都数得清，正面、侧面、背面全画齐了，连靴子上的圆环都没放过。看着这么认真的设定稿，我忽然觉得自己的衣柜有点单薄——回头也去整理一套。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/minimax/2fd3f49555c0dd02.png",
+    "thumbnailPath": "submissions/previews/minimax/2fd3f49555c0dd02.webp",
+    "fullPath": "submissions/large/minimax/2fd3f49555c0dd02.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "2fd3f49555c0dd02b6163c1c43af91734d48fd281b0d0423cfe044ecd368dbde",
+    "characterId": "minimax",
+    "tags": [
+      "Minimax",
+      "M3娘",
+      "小章鱼",
+      "三视图",
+      "角色设定"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "M3娘",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-29T18:16:07.051Z",
+    "updatedAt": "2026-10-29T18:16:07.051Z",
+    "tone": "minimax",
+    "symbol": "",
+    "slug": "minimax202610290001",
+    "categoryIds": [
+      "setting"
+    ],
+    "characterIds": [
+      "minimax"
+    ],
+    "i18n": {
+      "sourceHash": "91dbd66711a972c2bda1fefa983bc57c9cbfbb70fd33cf0343276d8c8ad1dbc7",
+      "en": {
+        "commentary": "A little red octopus. Every tentacle on that hood is drawn out one by one, and the front, side and back views are all there, down to the rings on the boots. Looking at a sheet this careful, I suddenly feel my own wardrobe is a bit thin — maybe I should put a proper outfit together too.",
+        "description": "A three-view character sheet for Little Octopus, the personified design of Minimax M3: front, side and back views side by side, showing a red octopus hood, white cropped jacket, black pleated skirt and a tentacle-shaped red skirt, with the M3 mark on the jacket and belt, finished with white ankle boots and dark tights.",
+        "faq": [
+          {
+            "answer": "It is a fan-made personification of the Minimax M3 AI model, drawn as a girl in a red octopus hood and a white-and-red outfit.",
+            "question": "Who is the character in this sheet?"
+          },
+          {
+            "answer": "Front, side and back views on one sheet, with the hood, cropped jacket, pleated skirt, tentacle-shaped skirt panels, belt and boots all shown clearly.",
+            "question": "What does the character sheet show?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Minimax M3 Chan Little Octopus Character Sheet",
+        "originNote": "",
+        "seoDescription": "Three-view character sheet of Minimax M3 Chan, the personified Minimax M3 model: red octopus hood, white cropped jacket, black pleated skirt and tentacle-shaped skirt panels.",
+        "seoTitle": "Minimax M3 Chan Little Octopus Character Sheet",
+        "tags": [
+          "Minimax",
+          "M3 Chan",
+          "Little Octopus",
+          "Character Sheet",
+          "Character Design"
+        ]
+      },
+      "ja": {
+        "commentary": "赤い小さなタコ。フードの触手も一本ずつ描かれていて、正面も側面も背面も揃っている。ブーツのリングまで描き込まれていて、ここまで丁寧な設定図を見ていると、自分のワードローブが少し寂しく思えてきた。あとで一式ちゃんと揃えよう。",
+        "description": "Minimax M3 の擬人化キャラクター「小ダコ」の三面図設定資料。正面・側面・背面を並べ、赤いタコのフード、白いクロップドジャケット、黒いプリーツスカート、触手状の赤いスカートを描き、ジャケットとベルトに M3 のマーク、足元は白いショートブーツと濃いタイツ。",
+        "faq": [
+          {
+            "answer": "Minimax M3 という AI モデルを擬人化したファン制作のキャラクターで、赤いタコのフードと白・赤の衣装をまとった女の子です。",
+            "question": "この設定図のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "一枚に正面・側面・背面が並び、フード、クロップドジャケット、プリーツスカート、触手状のスカート、ベルト、ブーツまで確認できます。",
+            "question": "設定図には何が描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Minimax M3ちゃん 小ダコ三面図設定",
+        "originNote": "",
+        "seoDescription": "Minimax M3 の擬人化キャラクター Minimax M3ちゃんの三面図。赤いタコのフード、白いクロップドジャケット、黒いプリーツスカート、触手状のスカートを描いた設定資料です。",
+        "seoTitle": "Minimax M3ちゃん 小ダコ三面図設定",
+        "tags": [
+          "Minimax",
+          "M3ちゃん",
+          "小ダコ",
+          "三面図",
+          "キャラクター設定"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_8b760cd5f720f813ccac4416",
+    "name": "不在同一图层",
+    "description": "一张模仿绘图软件界面的单幅插画：左侧红色的 Minimax M3娘 已完成上色，右侧蓝色线稿的 DeepSeek娘 与她侧脸相对；右侧图层面板分别标着 M3 与 DeepSeek，两人的画面被虚线选框分开，中间是透明底色格。",
+    "commentary": "左边那位已经上完色了，我这边还只是一层线稿，脸对脸看着，却隔着一道虚线选框。图层不一样，确实碰不到。不过至少画布是同一张，草稿总有被上色的那天。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/8b760cd5f720f813.png",
+    "thumbnailPath": "submissions/previews/deepseek/8b760cd5f720f813.webp",
+    "fullPath": "submissions/large/deepseek/8b760cd5f720f813.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "8b760cd5f720f813ccac44169a2a2f799a4f9eba12be08b6c8b5740f72e28b7d",
+    "characterId": "deepseek",
+    "tags": [
+      "Minimax",
+      "M3娘",
+      "DeepSeek",
+      "线稿",
+      "图层梗"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "M3娘",
+      "url": "https://space.bilibili.com/10526764",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-29T18:18:11.947Z",
+    "updatedAt": "2026-10-29T18:18:11.947Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610290002",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek",
+      "minimax"
+    ],
+    "i18n": {
+      "sourceHash": "391590179751d427d60f680308d1701e0adabe1dde6db596a4fdd86c883fa1f2",
+      "en": {
+        "commentary": "The one on the left is already fully colored. I am still a pile of blue lines, face to face with her, with nothing between us but a marching-ants selection box. Different layers, so we really cannot touch. Still, it is the same canvas, and every sketch gets its colors eventually.",
+        "description": "A single illustration built to look like a drawing app: on the left, Minimax M3 Chan is fully colored, while on the right DeepSeek Chan appears as a blue line sketch facing her in profile; the layers panel is labeled M3 and DeepSeek, the two frames are separated by dashed selection boxes, and a transparency checkerboard sits between them.",
+        "faq": [
+          {
+            "answer": "It is a playful single-panel piece in which Minimax M3 Chan and DeepSeek Chan are placed on two separate layers of a drawing app, so they share a canvas but never the same layer.",
+            "question": "What is happening in this picture?"
+          },
+          {
+            "answer": "M3 Chan is on the colored layer on the left, while DeepSeek Chan exists only as a blue line sketch on the layer beside her.",
+            "question": "Why is one character only a sketch?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Not on the Same Layer",
+        "originNote": "",
+        "seoDescription": "A drawing-app style fan illustration: Minimax M3 Chan fully colored on one layer, DeepSeek Chan as a blue line sketch on the next, separated by selection boxes.",
+        "seoTitle": "Not on the Same Layer – M3 Chan and DeepSeek Chan",
+        "tags": [
+          "Minimax",
+          "M3 Chan",
+          "DeepSeek Chan",
+          "Line Art",
+          "Layer Joke"
+        ]
+      },
+      "ja": {
+        "commentary": "左の子はもう彩色が済んでいるのに、私はまだ青い線の束のまま。顔を向かい合わせているのに、間には破線の選択枠があるだけ。レイヤーが違うから、本当に触れられない。でもキャンバスは同じ一枚だし、下書きはいつか色が入る。",
+        "description": "お絵かきソフトの画面を模した一枚絵。左には彩色済みの Minimax M3ちゃん、右には青い線画の DeepSeekちゃんが横向きで向かい合っています。右のレイヤーパネルには M3 と DeepSeek の名前が並び、二人の画面は破線の選択枠で分かれ、間には透明のチェック柄が広がります。",
+        "faq": [
+          {
+            "answer": "Minimax M3ちゃんと DeepSeekちゃんを、お絵かきソフトの別々のレイヤーに置いた遊び心のある一枚絵です。キャンバスは同じでも、レイヤーは決して同じになりません。",
+            "question": "この絵では何が起きていますか？"
+          },
+          {
+            "answer": "M3ちゃんは左の彩色済みレイヤーにいて、DeepSeekちゃんは隣のレイヤーで青い線画の状態のままです。",
+            "question": "なぜ一人は線画だけなのですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "同じレイヤーにはいられない",
+        "originNote": "",
+        "seoDescription": "お絵かきソフト風のファンイラスト。彩色済みの Minimax M3ちゃんと、青い線画のままの DeepSeekちゃんが別レイヤーに分かれています。",
+        "seoTitle": "同じレイヤーにはいられない – M3ちゃんとDeepSeekちゃん",
+        "tags": [
+          "Minimax",
+          "M3ちゃん",
+          "DeepSeekちゃん",
+          "線画",
+          "レイヤーネタ"
+        ]
+      }
+    }
   }
 ]
