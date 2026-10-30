@@ -5,6 +5,7 @@ export function renderSectionTabs(active, tabs, {label, key, className = ''}) {
 export function renderArchiveTabs(active, {tr, old}) {
   const tabs = [
     ['browse', '/browse.html', tr('archiveAll', '全部', 'All', 'すべて')],
+    ['serials', '/serials.html', tr('archiveSerials', '连载', 'Series', '連載')],
     ['characters', '/characters.html', old('v2.nav.characters', '角色')],
     ['topics', '/topics.html', old('v2.nav.collections', '合集')],
     ['gifs', '/gifs.html', tr('archiveGifs', 'GIF 动图', 'GIFs', 'GIFアニメ')]

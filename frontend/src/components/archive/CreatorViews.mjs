@@ -7,7 +7,7 @@ import {renderSaveButton} from '../../../public/archive/saved-items.js';
 export function createCreatorViews(ctx, creators) {
   const {esc:e, tr, icon, card, videoCard, pageHead, write, breadcrumbs, button} = ctx;
   const t=(key,zh,en,ja)=>tr('design.'+key,zh,en,ja);
-  const avatar=(c,size='')=>`<span class="avatar ${size}" aria-hidden="true"${c.avatar?'':` data-creator-initial="${e(Array.from(c.name)[0]||'')}"`}>${c.avatar ? `<img src="${e(c.avatar)}" width="64" height="64" alt="" loading="lazy">` : ''}</span>`;
+  const avatar=(c,size='')=>`<span class="avatar ${size}" aria-hidden="true"${c.avatar?'':` data-creator-initial="${e(Array.from(c.name)[0]||'')}"`}>${c.avatar ? `<img src="${e(c.avatar)}" width="64" height="64" alt="" loading="lazy" referrerpolicy="no-referrer">` : ''}</span>`;
   const units=()=>t('workUnit','件作品','works','作品');
   const preview = media => {
     const video=media.kind==='video', item=media.item;

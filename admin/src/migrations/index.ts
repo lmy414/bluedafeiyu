@@ -9,6 +9,7 @@ import * as migration_20261010_010000_rights_agent from './20261010_010000_right
 
 import * as migration_20261011_000000_work_characters from './20261011_000000_work_characters';
 import * as migration_20261022_000000_creator_videos from './20261022_000000_creator_videos';
+import * as migration_20261030_000000_creator_avatar from './20261030_000000_creator_avatar';
 
 export const migrations = [
   // Existing migrations keep their order; the new migration is appended below.
@@ -46,4 +47,5 @@ export const migrations = [
   { up: migration_20261010_010000_rights_agent.up, down: migration_20261010_010000_rights_agent.down, name: '20261010_010000_rights_agent' },
   { up: migration_20261011_000000_work_characters.up, down: migration_20261011_000000_work_characters.down, name: '20261011_000000_work_characters' },
   { up: migration_20261022_000000_creator_videos.up, down: migration_20261022_000000_creator_videos.down, name: '20261022_000000_creator_videos' },
+  { up: migration_20261030_000000_creator_avatar.up, down: migration_20261030_000000_creator_avatar.down, name: '20261030_000000_creator_avatar' },
 ];

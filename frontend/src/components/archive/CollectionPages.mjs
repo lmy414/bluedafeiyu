@@ -1,8 +1,10 @@
 import { guideLinks } from './GuidePages.mjs';
 import {renderArchiveTabs} from './ArchiveTabs.mjs';
 import {createComicSeries} from './ComicSeries.mjs';
+import {createComicArchive} from './ComicArchive.mjs';
 export function createCollectionPages(ctx) {
   const { works, topics, esc, tr, old, icon, button, grid, sectionHead, collectionCard, breadcrumbs, pageHead, filters, write } = ctx;
+createComicArchive(ctx);
 write('/topics.html','合集','topics',`${pageHead(tr('topicsLabel','主题小册 / COLLECTIONS','COLLECTIONS / THEMES','テーマ集 / COLLECTIONS'),tr('topicsTitle','一组作品，一种心情。','One collection, one mood.','作品をまとめて、気分をひとつ。'),tr('topicsLead','按作者、日常场景和主题，把喜欢的图连起来看。','Explore connected works by creator, everyday moments and themes.','作者、日常の場面、テーマごとに作品を楽しめます。'))}${renderArchiveTabs('topics',ctx)}<section>${sectionHead(tr('publishedTopics','已上线合集','Published collections','公開中のコレクション'))}<div class="collection-grid">${topics.map(collectionCard).join('')}</div></section><section class="section intro-panel">${sectionHead(tr('guide.label','专题导览','Fan art guides','ファンアートガイド'))}${guideLinks(ctx)}</section>`);
 for(const t of topics) {
   if (t.reader) { createComicSeries(ctx,t); continue; }

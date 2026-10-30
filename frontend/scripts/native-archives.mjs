@@ -4,7 +4,11 @@ import {isGifWork} from '../public/archive/work-format.js';
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const kind=(api,id)=>api.fmt('v2.type.'+id,id);
 function context(base,api,snapshot){
-  if(/^\/gifs(?:\/page\/\d+)?\.html$/.test(base))return {format:'gif',works:snapshot.works.filter(isGifWork),name:api.current==='en'?'GIFs':'GIFアニメ',title:api.current==='en'?'AI Girl GIF Archive':'AI娘のGIFアニメ'};
+  const galleryWorks=()=>{
+    const serialIds=new Set((snapshot.topics||[]).filter(topic=>topic.reader).flatMap(topic=>topic.workIds));
+    return snapshot.works.filter(work=>!serialIds.has(work.id));
+  };
+  if(/^\/gifs(?:\/page\/\d+)?\.html$/.test(base))return {format:'gif',works:galleryWorks().filter(isGifWork),name:api.current==='en'?'GIFs':'GIFアニメ',title:api.current==='en'?'AI Girl GIF Archive':'AI娘のGIFアニメ'};
   const topicId=base.match(/^\/topics\/([^/]+)(?:\/page\/\d+)?\.html$/)?.[1];
   const topic=topicId&&(snapshot.topics||[]).find(t=>t.id===topicId);
   if(topic){
@@ -18,7 +22,7 @@ function context(base,api,snapshot){
   const character=role&&snapshot.characters.find(c=>c.id===role[1]);
   const type=category?.[1]||(role?.[2]&&role[2]!=='page'?role[2]:null);
   if(!character&&!category)return null;
-  const works=snapshot.works.filter(w=>(!character||workCharacterIds(w).includes(character.id))&&(!type||w.categoryIds?.includes(type)));
+  const works=galleryWorks().filter(w=>(!character||workCharacterIds(w).includes(character.id))&&(!type||w.categoryIds?.includes(type)));
   const name=character?api.characterName(character.id,character.name):api.current==='en'?'AI characters':'AIキャラクター';
   const alias=character&&characterSearchAliases[character.id]?.[api.current==='en'?1:2];
   const displayName=name+(alias?(api.current==='en'?' ('+alias+')':'（'+alias+'）'):'');
@@ -26,6 +30,7 @@ function context(base,api,snapshot){
   return {character,type,works,name,title};
 }
 export function nativeArchiveName(base,api,snapshot){
+  if(base==='/serials.html')return api.current==='en'?'Comic series':'連載漫画';
   const c=context(base,api,snapshot),page=base.match(/\/page\/(\d+)\.html$/)?.[1];
   if(c?.topic?.reader)return c.name+(page?(api.current==='en'?' · Original page '+page:'・原稿 '+page+' ページ'):(api.current==='en'?' · Cover & contents':'・表紙と目次'));
   return c?c.title+(page?(api.current==='en'?' · Page '+page:' · '+page+'ページ目'):''):undefined;
@@ -34,6 +39,7 @@ export function applyNativeArchives(document,api,base,snapshot){
   const language=api.current;
   if(!['en','ja'].includes(language))return null;
   const en=language==='en';
+  if(base==='/serials.html')return {title:en?'AI Girl Comic Series | DeepSeek Chan':'AI娘の連載漫画 | 藍色大肥魚',description:en?'Explore AI girl comic series and read each story in its original page order.':'AI娘の連載漫画を表紙から開き、原稿のページ順に読み進めます。'};
   for(const section of document.querySelectorAll('[data-comic-topic]')){
     const topic=(snapshot.topics||[]).find(topic=>topic.id===section.getAttribute('data-comic-topic'));
     if(topic)section.querySelector('h2').textContent=topic.i18n?.[language]?.name||api.contentText(topic.name);
@@ -118,7 +124,7 @@ export function applyNativeArchives(document,api,base,snapshot){
       if(w)link.textContent=native(w).tags[w.tags.indexOf(tag)];
     }
     const section=document.querySelector('.role-reading');
-    if(section){
+    if(section && c.works.length){
       const counts=snapshot.categories.map(t=>[t,c.works.filter(w=>w.categoryIds.includes(t.id)).length]).filter(([,n])=>n);
       const frequencies=new Map();for(const w of c.works)w.tags.forEach((tag,i)=>{const prev=frequencies.get(tag);frequencies.set(tag,{count:(prev?.count||0)+1,text:prev?.text||native(w).tags[i]});});
       const tags=[...frequencies.values()].sort((a,b)=>b.count-a.count).slice(0,4).map(t=>t.text).join(en?', ':'、');

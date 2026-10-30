@@ -73,6 +73,28 @@ test('real Astro builds: no-op, edits, additions, removals, cold-cache fallback 
  const noop=build('noop','initial');assert.equal(noop.report.mode,'noop');assert.equal(noop.report.rendered,0);
  assert.equal(fs.existsSync(path.join(noop.out,path.basename(extra))),false);
  sameArtifacts(noop.out,initial.out,'no-op artifacts',[path.basename(extra)]);
+ const serialSample=structuredClone(sample);
+ const [cover,page]=serialSample.works;
+ serialSample.characters.push({id:'series-only',name:'Series Only',aliases:[],status:'active'});
+ page.characterIds=[...new Set([...(page.characterIds||[page.characterId]),'series-only'])];
+ serialSample.topics=[{id:'integration-series',name:'测试连载',summary:'按原稿页码阅读故事。',coverWorkId:cover.id,workIds:[cover.id,page.id],i18n:{en:{name:'Test series',summary:'Read the story in its original page order.'},ja:{name:'テスト連載',summary:'原稿のページ順に物語を読みます。'}},reader:{totalPages:1,credits:'',pages:[{number:1,workId:page.id}]}}];
+ write(serialSample);
+ const serialIncremental=build('serial-added','noop');assert.equal(serialIncremental.report.mode,'incremental');
+ const serialGallery=fs.readFileSync(path.join(serialIncremental.out,'browse.html'),'utf8');
+ assert.ok(!serialGallery.includes('data-slug="'+cover.slug+'"'));
+ assert.ok(!serialGallery.includes('data-slug="'+page.slug+'"'));
+ assert.ok(fs.readFileSync(path.join(serialIncremental.out,'serials.html'),'utf8').includes('data-comic-series="integration-series"'));
+ for(const prefix of ['','en/','ja/','zh-hant/']){
+   const emptyRole=fs.readFileSync(path.join(serialIncremental.out,prefix,'characters/series-only.html'),'utf8');
+   assert.ok(emptyRole.includes('href="/'+prefix+'serials.html"'));
+   assert.ok(!emptyRole.includes('data-slug="'+page.slug+'"'));
+   assert.ok(fs.existsSync(path.join(serialIncremental.out,prefix,'works',page.slug+'.html')));
+   const ordinaryRole=fs.readFileSync(path.join(serialIncremental.out,prefix,'characters/deepseek.html'),'utf8');
+   assert.ok(!ordinaryRole.includes('data-slug="'+cover.slug+'"'));
+   assert.ok(!ordinaryRole.includes('data-slug="'+page.slug+'"'));
+ }
+ const serialFull=build('serial-added-full','noop',['--full']);sameArtifacts(serialIncremental.out,serialFull.out,'serial membership incremental artifacts');
+ write(sample);
  const orphan=path.join(fixture,'frontend/out/works/orphan-from-failed-build.html');
  fs.writeFileSync(orphan,'<html><body>未发布的临时作品</body></html>');
  const prebuilt=build('prebuilt','missing-baseline',[],{PUBLISH_PREBUILT_DIR:initial.out});

@@ -10,7 +10,8 @@ export function createListing(ctx) {
   }
   function browsePage(list, base, title, type = '', char = '', n = 1, intro = '') {
     const galleryTabs=['/browse.html','/gifs.html'].includes(base)?renderArchiveTabs(base==='/gifs.html'?'gifs':'browse',ctx):'';
-    const sliced = list.slice((n - 1) * 24, n * 24);
+    const page = Math.min(n, Math.max(1, Math.ceil(list.length / 24)));
+    const sliced = list.slice((page - 1) * 24, page * 24);
     return `${pageHead(tr('archiveLabel','作品档案 / ARCHIVE','ARCHIVE / WORKS','作品アーカイブ / ARCHIVE'),title,intro || tr('browseLead','按角色与类型找图，或让随机顺序带你逛逛。','Filter by character and type, or explore in random order.','キャラクターや種類で絞り込むか、ランダムに楽しめます。'))}${galleryTabs}${filters(char,type,base.startsWith('/topics/')?'curated':'latest',list)}<div class="results-line"><p id="result-count" aria-live="polite">${list.length} ${old('v2.work','作品')}</p><small data-stats-note>${tr('statsSnapshot','下载量指按钮点击次数','Downloads count button clicks','ダウンロード数はボタンのクリック数')}</small></div><div id="results" data-list="${esc(JSON.stringify(list.map(w=>w.slug)))}">${grid(sliced,'',true)}</div><div class="load-more-wrap"><button class="button" type="button" data-load-more hidden>${tr('loadMore','再看一些','Load more','もっと見る')}</button></div><div class="related-note">${icon('book',23)}<p>${tr('tryTopics','想一次看完同一组作品？去合集里逛逛。','Want a themed selection? Explore the collections.','テーマに沿って楽しむなら、コレクションへ。')}</p><a class="text-link" href="/topics.html">${old('v2.nav.collections','合集')}${icon('arrow',16)}</a></div>`;
   }
   return { filters, browsePage };

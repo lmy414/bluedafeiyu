@@ -14,22 +14,23 @@ export const pageURL = (base, n) => n === 1 ? base :
 const kindNames = { meme: '表情包与梗图', illustration: '二创插画', setting: '设定图', comic: '漫画', standing: '立绘', other: '其他作品' };
 
 export function createSEO(ctx) {
-  const { works, chars, topics, types, esc, grid, button, sectionHead, tr, out } = ctx;
+  const { works, galleryWorks, chars, topics, types, esc, grid, button, sectionHead, tr, out } = ctx;
   // Reviewed against the source previews; preserve archive names and distinguish actual scenes only.
   const titleScenes = JSON.parse(fs.readFileSync(path.join(process.env.SITE_SOURCE || path.resolve(process.cwd(), '..'), 'frontend/src/data/work-title-scenes.json'), 'utf8'));
   const workMap = new Map(works.map(w => ['/works/' + w.slug + '.html', w]));
   const collections = new Map();
   const add = (base, list, name, kind, extra = {}) => collections.set(base, { base, list, name, kind, ...extra });
-  add('/browse.html', works, 'AI 娘表情包与二创作品', 'browse');
-  add('/gifs.html', works.filter(isGifWork), 'AI 娘 GIF 动图', 'gif');
-  for (const t of types) add('/categories/' + t.id + '.html', works.filter(w => w.k.includes(t.id)), 'AI 娘' + kindNames[t.id], 'type', { type: t.id });
+  add('/browse.html', galleryWorks, 'AI 娘表情包与二创作品', 'browse', {routeCount:Math.ceil(works.length/24)});
+  add('/gifs.html', galleryWorks.filter(isGifWork), 'AI 娘 GIF 动图', 'gif', {routeCount:Math.ceil(works.filter(isGifWork).length/24)});
+  for (const t of types) add('/categories/' + t.id + '.html', galleryWorks.filter(w => w.k.includes(t.id)), 'AI 娘' + kindNames[t.id], 'type', { type: t.id, routeCount:Math.ceil(works.filter(w => w.k.includes(t.id)).length/24) });
   for (const c of chars) {
     const availableKinds = types.filter(t => c.list.some(w => w.k.includes(t.id))).map(t => kindNames[t.id]);
     const alias = characterSearchAliases[c.id]?.[0];
-    add('/characters/' + c.id + '.html', c.list, c.name + (alias ? `（${alias}）` : '') + availableKinds.slice(0, 3).join('、') + '档案', 'character', { character: c });
+    add('/characters/' + c.id + '.html', c.list, c.name + (alias ? `（${alias}）` : '') + availableKinds.slice(0, 3).join('、') + '档案', 'character', { character: c, routeCount:Math.ceil(c.allList.length/24) });
     for (const t of types) {
       const list = c.list.filter(w => w.k.includes(t.id));
-      if (list.length) add('/characters/' + c.id + '/' + t.id + '.html', list, c.name + kindNames[t.id], 'character-type', { character: c, type: t.id });
+      const oldList = c.allList.filter(w => w.k.includes(t.id));
+      if (oldList.length) add('/characters/' + c.id + '/' + t.id + '.html', list, c.name + kindNames[t.id], 'character-type', { character: c, type: t.id, routeCount:Math.ceil(oldList.length/24) });
     }
   }
   for (const t of topics.filter(t => !t.reader)) add('/topics/' + t.id + '.html', t.list, t.name + ' · AI 娘作品合集', 'topic', { topic: t });
@@ -37,6 +38,7 @@ export function createSEO(ctx) {
     '/index.html': Object.values(homeMeta(works.length)),
     '/characters.html': ['AI 娘角色档案：DeepSeek娘、GPT娘与更多角色 — 蓝色大肥鱼', `浏览 ${chars.length} 位有作品的 AI 娘角色，查看名字、现有别名和代表作品，进入各角色的表情包、插画、设定图与漫画档案。`],
     '/topics.html': ['AI 娘主题合集与作者作品集 — 蓝色大肥鱼', '浏览猫鲸作者作品集与日常场景选题，按问候、工作、安慰和角色初见阅读作品。主题合集保留作品来源、署名与授权记录。'],
+    '/serials.html': ['AI 娘连载漫画 — 蓝色大肥鱼', '浏览已收录的 AI 娘连载漫画，从封面进入，按原稿页码阅读故事。'],
     '/search.html': ['搜索 AI 娘作品、角色与标签 — 蓝色大肥鱼', '用作品名、角色别名、图片说明或标签查找已收录的 AI 娘作品，并按角色与作品类型筛选。'],
     '/submit.html': ['投稿 AI 娘二创作品：来源与授权填写指南 — 蓝色大肥鱼', '了解 AI 娘图片投稿需要填写的角色、作品类型、原始来源、署名和授权信息。站内投稿和 GitHub 表单均会进入审核队列。'],
     '/community.html': [`${SITE.group.name}社群与公开交流入口 — 蓝色大肥鱼`, `查看${SITE.group.name} QQ 交流群、站长公开账号和二创交流入口，分享作品、参加活动或反馈归档问题。`],
@@ -79,7 +81,8 @@ export function createSEO(ctx) {
     if (c) {
       title = c.name + (c.n > 1 ? ` · 第 ${c.n} 页` : '') + ' — 蓝色大肥鱼';
       desc = description(c) + (c.n > 1 ? ` 当前为第 ${c.n} 页。` : '');
-      const visible = c.list.slice((c.n - 1) * 24, c.n * 24);
+      const visiblePage = Math.min(c.n, Math.max(1, Math.ceil(c.list.length / 24)));
+      const visible = c.list.slice((visiblePage - 1) * 24, visiblePage * 24);
       image = (c.kind === 'topic' && c.n === 1 ? c.topic.cover?.l : visible[0]?.l) || visible[0]?.l || image;
       if (c.character) trail.push(['角色档案', '/characters.html']);
       else if (c.kind === 'topic') trail.push(['主题合集', '/topics.html']);
@@ -88,7 +91,7 @@ export function createSEO(ctx) {
       trail.push([c.name, c.base]);
       if (c.n > 1) trail.push([`第 ${c.n} 页`, url]);
       schema = { '@type': 'CollectionPage', '@id': canonical + '#page', url: canonical, name: c.name, description: desc, inLanguage: 'zh-CN', mainEntity: {
-        '@type': 'ItemList', itemListElement: visible.map((item, i) => ({ '@type': 'ListItem', position: (c.n - 1) * 24 + i + 1, item: { '@type': 'CreativeWork', name: item.n, url: full('/works/' + item.slug + '.html'), image: full(item.i) } }))
+        '@type': 'ItemList', itemListElement: visible.map((item, i) => ({ '@type': 'ListItem', position: (visiblePage - 1) * 24 + i + 1, item: { '@type': 'CreativeWork', name: item.n, url: full('/works/' + item.slug + '.html'), image: full(item.i) } }))
       } };
       indexOnPublish = c.n === 1 && !(c.kind === 'character-type' && c.list.length < 2);
     } else if (w) {
@@ -110,6 +113,12 @@ export function createSEO(ctx) {
         { '@type': 'Organization', '@id': ORIGIN + '/#organization', url: ORIGIN + '/', name: '蓝色大肥鱼',
           alternateName: ['大肥鱼', '大肥魚', '藍色大肥魚', 'Blue Dafeiyu'], logo: ORIGIN + '/favicon.png', sameAs: [SITE.repoSource, SITE.repoContent] }
       ] };
+      if (url === '/serials.html') {
+        const serials = topics.filter(topic => topic.reader);
+        schema['@type'] = 'CollectionPage';
+        schema.mainEntity = {'@type':'ItemList',numberOfItems:serials.length,itemListElement:serials.map((topic,i)=>({'@type':'ListItem',position:i+1,item:{'@type':'CreativeWorkSeries',name:topic.name,url:full('/topics/'+topic.id+'.html'),...(topic.cover?{image:full(topic.cover.i)}:{})}}))};
+        image = serials[0]?.cover?.l || image;
+      }
       if (['/events.html', ...Object.values(eventPaths)].includes(url)) {
         const status = url === eventPaths.current ? 'current' : url === eventPaths.archived ? 'archived' : defaultEventStatus;
         schema['@type'] = 'CollectionPage';
@@ -131,8 +140,8 @@ export function createSEO(ctx) {
       desc = topic.summary + (number ? ` 原稿第 ${number} 页，共 ${topic.reader.totalPages} 页。` : ' 按原稿页码翻页阅读。');
       image = sheet?.l || topic.cover?.l || topic.list[0].l;
       indexOnPublish = !!sheet;
-      schema = { '@type': number && sheet ? 'ComicStory' : 'CollectionPage', '@id': canonical + '#page', url:canonical, name:topic.name, description:desc, inLanguage:'zh-CN', ...(sheet?{image:full(image)}:{}), ...(number?{pagination:String(number)}:{}), author:{'@type':'Person',name:topic.author.name,url:topic.author.url}, isPartOf:{'@type':'CreativeWorkSeries',name:topic.name,url:full(base)} };
-      trail = [['蓝色大肥鱼','/'],['主题合集','/topics.html'],[topic.name,base],...(number?[[`原稿第 ${number} 页`,url]]:[])];
+      schema = { '@type': number && sheet ? 'ComicStory' : 'CollectionPage', '@id': canonical + '#page', url:canonical, name:topic.name, description:desc, inLanguage:'zh-CN', ...(sheet?{image:full(image)}:{}), ...(number?{pagination:String(number)}:{}), ...(topic.author?.name?{author:{'@type':'Person',name:topic.author.name,...(topic.author.url?{url:topic.author.url}:{})}}:{}), isPartOf:{'@type':'CreativeWorkSeries',name:topic.name,url:full(base)} };
+      trail = [['蓝色大肥鱼','/'],['连载漫画','/serials.html'],[topic.name,base],...(number?[[`原稿第 ${number} 页`,url]]:[])];
     }
     const breadcrumb = { '@type': 'BreadcrumbList', itemListElement: trail.map(([name, p], i) => ({ '@type': 'ListItem', position: i + 1, name, item: full(p) })) };
     const share = w ? workShareCopy(w) : {title,sub:c?.character?.name || 'AI 娘二创档案',tag:c?.type || '',quote:false};
@@ -156,6 +165,7 @@ export function createSEO(ctx) {
     return `<div class="reading-faq">${rows.map(([q, a]) => `<details><summary>${esc(q)}</summary><div>${a}</div></details>`).join('')}</div>`;
   }
   function roleNotes(c) {
+    if (!c.list.length) return `<section class="section intro-panel role-reading">${sectionHead(tr('roleArchive','二创作品档案','Fan art archive','二次創作アーカイブ'))}<p>${tr('serialOnlyRoleHint','这个角色目前只有连载作品，可以前往连载专区阅读。','This character currently appears in comic series. Explore them in the series archive.','このキャラクターの作品は現在連載のみです。連載コーナーからお読みください。')}</p>${button('/serials.html',tr('comic.archiveTitle','连载漫画','Comic series','連載漫画'),'small')}</section>`;
     const counts = types.map(t => [t, c.list.filter(w => w.k.includes(t.id)).length]).filter(([, n]) => n);
     const tags = new Map();for (const w of c.list) for (const tag of w.tg) tags.set(tag, (tags.get(tag) || 0) + 1);
     const common = [...tags].sort((a, b) => b[1] - a[1]).slice(0, 4).map(([t]) => t);
@@ -181,7 +191,7 @@ export function createSEO(ctx) {
       const firstSection = content.indexOf('<section class="section"');
       content = content.slice(0, firstSection) + roleNotes(c.character) + content.slice(firstSection);
     }
-    if (c?.kind === 'character-type' || c?.kind === 'type') {
+    if ((c?.kind === 'character-type' || c?.kind === 'type') && c.list.length) {
       const heading = kindNames[c.type], sample = c.list.slice(0, 3).map(w => `《${w.n}》`).join('、');
       content += `<section class="section intro-panel">${sectionHead('这一栏可以怎样看？')}<p>本栏整理${esc(c.character?.name || 'AI 娘')}的${esc(heading)}，包括${esc(sample)}等已收录作品。${c.type === 'comic' ? '漫画包含多格分镜，可以表达反应、对比或笑点，建议进入详情放大阅读。' : c.type === 'setting' ? '不同作品由不同作者创作，设定内容以来源中的说明为准。' : c.type === 'meme' ? '可以按台词、情绪和聊天场景继续搜索，再查看作品详情选择原图。' : '进入作品详情可查看完整构图、原始来源和作者署名。'}</p><a class="text-link" href="${c.character ? '/characters/' + c.character.id + '.html' : '/characters.html'}">${esc(c.character ? '回到' + c.character.name + '角色档案' : '按角色继续找作品')}</a></section>`;
     }
@@ -199,10 +209,12 @@ export function createSEO(ctx) {
     return content;
   }
   function generatePages(write, browsePage, breadcrumbs) {
-    for (const c of collections.values()) for (let n = 2; n <= Math.ceil(c.list.length / 24); n++) {
-      let body = breadcrumbs([[c.name, c.base], [`第 ${n} 页`]]) + browsePage(c.list, c.base, esc(c.name), c.type || '', c.character?.id || '', n, description(c));
+    for (const c of collections.values()) for (let n = 2; n <= Math.max(Math.ceil(c.list.length / 24), c.routeCount || 0); n++) {
+      const page = Math.min(n, Math.max(1, Math.ceil(c.list.length / 24)));
+      const moved = page !== n ? `<p class="source-note">${tr('lastAvailablePage','此页已更新，显示最后一页作品。','This page has changed. Showing the last available page.','ページが更新されたため、最後のページを表示しています。')}</p>` : '';
+      let body = breadcrumbs([[c.name, c.base], [`第 ${n} 页`]]) + moved + browsePage(c.list, c.base, esc(c.name), c.type || '', c.character?.id || '', n, description(c));
       body = body.replace(/<nav class="pagination"[\s\S]*?<\/nav>/, '') + pagination(c, n);
-      const attrs = `data-list-page data-page-number="${n}" data-list-base="${c.base}" ${c.character ? `data-character="${c.character.id}"` : ''} ${c.type ? `data-type="${c.type}"` : ''} ${c.kind === 'topic' ? 'data-sort="curated"' : ''}`;
+      const attrs = `data-list-page data-page-number="${page}" data-list-base="${c.base}" ${c.character ? `data-character="${c.character.id}"` : ''} ${c.type ? `data-type="${c.type}"` : ''} ${c.kind === 'topic' ? 'data-sort="curated"' : ''}`;
       write(pageURL(c.base, n), c.name, c.kind === 'topic' ? 'topics' : c.character ? 'characters' : 'browse', body, { attrs });
     }
   }

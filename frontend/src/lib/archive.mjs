@@ -33,7 +33,6 @@ const read = name => JSON.parse(fs.readFileSync(path.join(root, 'frontend/src/da
 const works = Object.entries(overlayData()).map(([slug,w])=>({...w,slug}));
 const bySlug = new Map(works.map(w=>[w.slug,w])), byId = new Map(works.map(w=>[w.id,w]));
 const types = snapshot.categories.filter(t=>t.status==='active');
-const chars = snapshot.characters.filter(c=>c.status==='active').map(c=>({...c,list:works.filter(w=>w.cids.includes(c.id))})).filter(c=>c.list.length).sort((a,b)=>b.list.length-a.list.length);
 // 作者头像由内容仓库按 topicId 命名（<topicId>.webp），构建时经 tools/sync_content.mjs
 // 同步进站点仓 dist/author-avatars/。这里按 topic 探测文件，缺失或探测失败时静默回退。
 const authorAvatarDir=path.join(path.dirname(process.env.SITE_SNAPSHOT||path.join(root,'dist/site-data.json')),'author-avatars');
@@ -44,6 +43,12 @@ const topics = snapshot.topics.filter(t=>t.status!=='removed').map(t=>{
   const art=[cover,...list.filter(w=>w!==cover)].filter(Boolean).slice(0,3);
   return {...t,list,cover,art,avatar:topicAvatar(t.id),eyebrow:t.author?'作者作品集':'主题合集'};
 });
+const serialWorkIds = new Set(topics.filter(topic=>topic.reader).flatMap(topic=>topic.workIds));
+const galleryWorks = works.filter(work=>!serialWorkIds.has(work.id));
+const chars = snapshot.characters.filter(c=>c.status==='active').map(c=>{
+  const allList=works.filter(w=>w.cids.includes(c.id));
+  return {...c,allList,list:allList.filter(w=>!serialWorkIds.has(w.id))};
+}).filter(c=>c.allList.length).sort((a,b)=>b.list.length-a.list.length);
 const tagCounts=new Map();for(const w of works)for(const tag of w.tg)tagCounts.set(tag,(tagCounts.get(tag)||0)+1);
 const translations={en:{'d.navigationToggle':'Toggle navigation','d.saveWork':'Save work','d.saveCreator':'Save creator','d.saved':'Saved','d.unsave':'Remove from saved','d.savedTitle':'Saved works','d.storageUnavailable':'Your browser could not save this item.'},ja:{'d.navigationToggle':'ナビゲーションを切り替え','d.saveWork':'作品を保存','d.saveCreator':'作者を保存','d.saved':'保存済み','d.unsave':'お気に入りから削除','d.savedTitle':'お気に入り','d.storageUnavailable':'ブラウザーに保存できませんでした。'}};
 for (const [key, row] of Object.entries(videoCopy)) { translations.en['d.' + key] = row[1]; translations.ja['d.' + key] = row[2]; }
@@ -108,7 +113,7 @@ for(const [key,en,ja] of [
  ['releaseFlow','Creator registration, RSSHub discovery, AI review and automatic publishing are connected, with release notifications sent to the Feishu group.','作者登録、RSSHubによる検出、AI審査、自動公開を接続。公開結果はFeishuグループに通知します。']
 ]){translations.en['d.design.'+key]=en;translations.ja['d.design.'+key]=ja;}
 for(const work of works)work.owners=topics.filter(t=>t.author&&t.list.some(w=>w.id===work.id)).map(t=>{const uid=t.author.channels.map(c=>c.url.match(/space\.bilibili\.com\/(\d+)/)?.[1]).find(Boolean);return {name:t.author.name,href:'/creators/'+(uid?'bilibili-'+uid:t.id)+'.html'};});
-const ctx={works,bySlug,chars,topics,types,snapshot,localizationInputs:{videoArchive,friendLinks,events},translations,editorial:read('discovery.json'),modelVendors:read('model-vendors.json').vendors,commonTags:[...tagCounts].sort((a,b)=>b[1]-a[1]).slice(0,16)};
+const ctx={works,galleryWorks,serialWorkIds,bySlug,chars,topics,types,snapshot,localizationInputs:{videoArchive,friendLinks,events},translations,editorial:read('discovery.json'),modelVendors:read('model-vendors.json').vendors,commonTags:[...tagCounts].sort((a,b)=>b[1]-a[1]).slice(0,16)};
 Object.assign(ctx,createPrimitives(ctx));
 for(const factory of [createWorkCards,createCollectionCards,createCharacterCards,createListing]) Object.assign(ctx,factory(ctx));
 ctx.seo=createSEO(ctx);
@@ -131,4 +136,4 @@ ctx.seo.generatePages(ctx.write,ctx.browsePage,ctx.breadcrumbs);
 export const archivePages=pages;
 export const archiveContext=ctx;
 export const archiveTranslations=translations;
-export const archiveData={works,characters:chars.map(({list,...c})=>c),types,topics:topics.map(({list,cover,art,avatar,...t})=>({...t,slugs:list.map(w=>w.slug)}))};
+export const archiveData={works,characters:chars.map(({list,allList,...c})=>c),types,topics:topics.map(({list,cover,art,avatar,...t})=>({...t,slugs:list.map(w=>w.slug)}))};

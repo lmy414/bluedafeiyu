@@ -1,6 +1,6 @@
 import crypto from 'node:crypto';
 import { validateLocalizedProse } from './localization.mjs';
-import { BVID, createBilibiliClient, normalizeCreator } from './bilibili.mjs';
+import { BVID, createBilibiliClient, normalizeCreator, optionalBiliImage } from './bilibili.mjs';
 
 const LEASE_MS = 10 * 60 * 1000;
 const fail = (message, status = 409) => Object.assign(new Error(message), { status });
@@ -40,20 +40,33 @@ export async function syncVideoCreators(payload, req, { client = createBilibiliC
     });
     if (!claimed) continue;
     stats.creators++;
+    let authorName = creator.name;
+    let authorAvatar = optionalBiliImage(creator.avatar);
+    let profileAvatar = '';
     try {
+      // Refresh profile independently of the video feed; neither failure erases the other.
+      try {
+        if (typeof client.creator === 'function') {
+          const profile = await client.creator(creator.uid);
+          if (profile?.name) authorName = String(profile.name).slice(0,120);
+          profileAvatar = optionalBiliImage(profile?.avatar);
+          authorAvatar = profileAvatar || authorAvatar;
+        }
+      } catch { /* Retry the profile on the next normal sync. */ }
       const page = Math.max(1, Number(creator.syncPage) || 1);
       const batch = await client.page(creator.uid, page);
       // RSSHub may need a browser cold start; the detail budget starts afterwards.
       deadline = Date.now() + 25_000;
-      let authorName = creator.name;
       let pageComplete = true, fresh = 0;
       for (const item of batch.items) {
         if (!BVID.test(item.bvid || '')) continue;
         if (await findOne(payload, 'videos', { bvid: { equals: item.bvid } })) continue;
         if (fresh >= 3 || Date.now() > deadline) { pageComplete = false; break; }
-        let source;
-        try { source = await client.video(item.bvid, creator.uid); }
+        let found;
+        try { found = await client.video(item.bvid, creator.uid); }
         catch (error) { if (error.code === 'VIDEO_UNAVAILABLE') continue; throw error; }
+        const { creatorAvatar, ...source } = found;
+        authorAvatar = profileAvatar || optionalBiliImage(creatorAvatar) || authorAvatar;
         source.creatorIntro = creator.intro;
         await transaction(payload, req, async tx => {
           const current = await payload.findByID({ collection: 'creators', id: creator.id, depth: 0, overrideAccess: true, req: tx });
@@ -69,7 +82,7 @@ export async function syncVideoCreators(payload, req, { client = createBilibiliC
       await transaction(payload, req, async tx => {
         const current = await payload.findByID({ collection: 'creators', id: creator.id, depth: 0, overrideAccess: true, req: tx });
         if (current.syncLease?.token !== token || current.status === 'paused') return;
-        await save(payload, 'creators', creator.id, { name: authorName, status: 'active', syncPage: !pageComplete ? page : batch.hasMore ? page + 1 : 1,
+        await save(payload, 'creators', creator.id, { name: authorName, ...(authorAvatar && authorAvatar !== current.avatar ? { avatar: authorAvatar } : {}), status: 'active', syncPage: !pageComplete ? page : batch.hasMore ? page + 1 : 1,
           lastSyncedAt: new Date(now).toISOString(), retryAt: new Date(now + (pageComplete && !batch.hasMore ? 30 : 5) * 60_000).toISOString(), error: null, syncLease: null }, tx);
       });
     } catch (error) {
@@ -77,7 +90,13 @@ export async function syncVideoCreators(payload, req, { client = createBilibiliC
       stats.errors.push({ uid: creator.uid, error: message });
       await transaction(payload, req, async tx => {
         const current = await payload.findByID({ collection: 'creators', id: creator.id, depth: 0, overrideAccess: true, req: tx });
-        if (current.syncLease?.token === token) await save(payload, 'creators', creator.id, { error: message, retryAt: new Date(now + 60 * 60_000).toISOString(), syncLease: null }, tx);
+        if (current.syncLease?.token === token) {
+          const profile = current.status === 'paused' ? {} : {
+            ...(authorName && authorName !== creator.name && authorName !== current.name ? { name: authorName } : {}),
+            ...(authorAvatar && authorAvatar !== current.avatar ? { avatar: authorAvatar } : {}),
+          };
+          await save(payload, 'creators', creator.id, { ...profile, error: message, retryAt: new Date(now + 60 * 60_000).toISOString(), syncLease: null }, tx);
+        }
       });
     }
   }
@@ -169,6 +188,7 @@ export function publicVideoArchive(creators, videos) {
   const ids = new Set(items.map(v => v.uid));
   return { schema: 'video-archive/1', creators: [...active.values()].filter(c => ids.has(c.uid)).map(c => {
     const sample = videos.find(v => v.source.uid === c.uid && v.status === 'approved' && v.source.creatorIntro === c.intro && v.review?.i18n);
-    return { uid: c.uid, name: c.name, homepage: `https://space.bilibili.com/${c.uid}`, intro: c.intro, ...(sample ? { i18n: { en: sample.review.i18n.en.creatorIntro, ja: sample.review.i18n.ja.creatorIntro } } : {}) };
+    const avatar = optionalBiliImage(c.avatar);
+    return { uid: c.uid, name: c.name, homepage: `https://space.bilibili.com/${c.uid}`, intro: c.intro, ...(avatar ? { avatar } : {}), ...(sample ? { i18n: { en: sample.review.i18n.en.creatorIntro, ja: sample.review.i18n.ja.creatorIntro } } : {}) };
   }).sort((a, b) => ({ '4168597': 0, '4456176': 1 }[a.uid] ?? 2) - ({ '4168597': 0, '4456176': 1 }[b.uid] ?? 2)), videos: items.sort((a,b) => b.publishedAt.localeCompare(a.publishedAt)) };
 }

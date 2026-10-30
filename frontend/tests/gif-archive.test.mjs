@@ -29,7 +29,8 @@ test('GIF grouping preserves the single work type and localizes route metadata, 
 test('all image tabs link to GIFs, and the static GIF archive contains exactly the GIF originals',()=>{
   const out=process.env.SITE_OUT_DIR||path.resolve(import.meta.dirname,'../../.build/site');
   const catalog=JSON.parse(fs.readFileSync(path.join(out,'archive-data.json'),'utf8'));
-  const gifs=catalog.works.filter(isGifWork);
+  const serialIds=new Set(catalog.topics.filter(topic=>topic.reader).flatMap(topic=>topic.workIds));
+  const gifs=catalog.works.filter(work=>!serialIds.has(work.id)&&isGifWork(work));
   assert.ok(gifs.length>0);
   for(const locale of LOCALES){
     const read=route=>parseHTML(fs.readFileSync(path.join(out,localizedPath(route,locale).slice(1)),'utf8')).document;

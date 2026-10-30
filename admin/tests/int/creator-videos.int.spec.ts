@@ -2,6 +2,7 @@
 import fs from 'node:fs/promises'
 import os from 'node:os'
 import path from 'node:path'
+import { DatabaseSync } from 'node:sqlite'
 import { buildConfig, getPayload } from 'payload'
 import { sqliteAdapter } from '@payloadcms/db-sqlite'
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
@@ -12,11 +13,13 @@ import { Characters } from '@/collections/Characters'
 import { AuditEvents } from '@/collections/AuditEvents'
 import { registerCreator, syncVideoCreators, videoAgent, publicVideoArchive, videoHash } from '@/lib/video-library.mjs'
 import { normalizeCreator, createBilibiliClient } from '@/lib/bilibili.mjs'
+import { up as addCreatorAvatar, down as removeCreatorAvatar } from '@/migrations/20261030_000000_creator_avatar'
 
 let payload: any, root: string
 const req = { context: {} }
 const uid = '4168597', bvid = 'BV1GnYi63Ews'
-const source = { uid, bvid, title: '鲸鱼娘手书', description: 'DeepSeek娘同人短片', url: `https://www.bilibili.com/video/${bvid}/`, cover: 'https://i0.hdslb.com/bfs/archive/cover.jpg', creatorName: '作者甲', publishedAt: '2026-10-22T00:00:00.000Z', duration: 30, storyboard: { image: 'https://i0.hdslb.com/bfs/videoshot/shot.jpg', frames: 10 } }
+const avatar = 'https://i0.hdslb.com/bfs/face/creator.jpg'
+const source = { uid, bvid, title: '鲸鱼娘手书', description: 'DeepSeek娘同人短片', url: `https://www.bilibili.com/video/${bvid}/`, cover: 'https://i0.hdslb.com/bfs/archive/cover.jpg', creatorName: '作者甲', creatorAvatar: avatar, publishedAt: '2026-10-22T00:00:00.000Z', duration: 30, storyboard: { image: 'https://i0.hdslb.com/bfs/videoshot/shot.jpg', frames: 10 } }
 const registration = { homepage: `https://space.bilibili.com/${uid}?spm_id_from=test`, intro: '创作鲸鱼娘同人手书', confirm: true }
 const one = async (collection: string, where = {}) => (await payload.find({ collection, where, overrideAccess: true, depth: 0 })).docs[0]
 beforeAll(async () => {
@@ -38,9 +41,11 @@ describe('Bilibili 作者登记、发现、AI 审核与公开导出', () => {
     expect((await payload.count({ collection: 'creators', overrideAccess: true })).totalDocs).toBe(1)
   })
   it('发现视频只入队；风控保存重试状态，成功重试按 BV 号去重', async () => {
-    const bad = await syncVideoCreators(payload, req, { client: { page: async () => { throw new Error('Bilibili 返回 -352，稍后重试') } } as any })
+    const bad = await syncVideoCreators(payload, req, { client: { creator: async () => ({ name: source.creatorName, avatar }), page: async () => { throw new Error('Bilibili 返回 -352，稍后重试') } } as any })
     expect(bad.errors).toHaveLength(1)
     const c = await one('creators')
+    expect(c.avatar).toBe(avatar)
+    expect(c.name).toBe(source.creatorName)
     expect(c.lastSyncedAt).toBeFalsy()
     expect(c.retryAt).toBeTruthy()
     await payload.update({ collection: 'creators', id: c.id, data: { retryAt: null }, overrideAccess: true })
@@ -48,9 +53,28 @@ describe('Bilibili 作者登记、发现、AI 审核与公开导出', () => {
     expect((await syncVideoCreators(payload, req, { client })).discovered).toBe(1)
     const v = await one('videos')
     expect(v.status).toBe('queued')
+    expect((await one('creators')).avatar).toBe(avatar)
+    expect(v.source.creatorAvatar).toBeUndefined()
     expect(publicVideoArchive([await one('creators')], [v]).videos).toEqual([])
     await payload.update({ collection: 'creators', id: c.id, data: { retryAt: null }, overrideAccess: true })
     expect((await syncVideoCreators(payload, req, { client })).discovered).toBe(0)
+  })
+  it('读取作者卡片时核验 UID、规范头像地址并拒绝不可信来源', async () => {
+    const make = (card: any) => createBilibiliClient({ fetchImpl: async (url: string) => {
+      expect(url).toContain('/x/web-interface/card?mid=' + uid)
+      return new Response(JSON.stringify({ code: 0, data: { card } }))
+    } })
+    await expect(make({ mid: Number(uid), name: '作者甲', face: '//i0.hdslb.com/bfs/face/creator.jpg' }).creator(uid)).resolves.toEqual({ name: '作者甲', avatar })
+    await expect(make({ mid: Number(uid), name: '作者甲', face: 'https://evil.test/avatar.jpg' }).creator(uid)).resolves.toEqual({ name: '作者甲', avatar: '' })
+    await expect(make({ mid: 999, name: '其他人', face: avatar }).creator(uid)).rejects.toThrow('不匹配')
+    await expect(make({ mid: Number(uid), face: avatar }).creator('../123')).rejects.toThrow('UID 非法')
+  })
+  it('视频详情提供头像时可作为作者资料的补充，不影响预览帧失败处理', async () => {
+    const client = createBilibiliClient({ fetchImpl: async (url: string) => {
+      const data = url.includes('/x/player/videoshot') ? { code: -1 } : { code: 0, data: { bvid, owner: { mid: Number(uid), name: '作者甲', face: avatar }, state: 0, title: source.title, desc: source.description, pic: source.cover, cid: 123, pubdate: 1792636800, duration: 30 } }
+      return new Response(JSON.stringify(data))
+    } })
+    await expect(client.video(bvid, uid)).resolves.toMatchObject({ creatorName: '作者甲', creatorAvatar: avatar, storyboard: null })
   })
   it('平台视频详情必须属于登记作者', async () => {
     const client = createBilibiliClient({ fetchImpl: async () => new Response(JSON.stringify({ code: 0, data: { ...source, owner: { mid: 999, name: '其他人' }, state: 0, cid: 123 } })) })
@@ -75,8 +99,53 @@ describe('Bilibili 作者登记、发现、AI 审核与公开导出', () => {
     const archive = publicVideoArchive([await one('creators')], [await one('videos')])
     expect(archive.videos).toHaveLength(1)
     expect(archive.creators[0].name).toBe(source.creatorName)
+    expect(archive.creators[0].avatar).toBe(avatar)
     expect(archive.creators[0].i18n?.en).toContain('DeepSeek Chan')
     expect(JSON.stringify(archive)).not.toContain('sourceHash')
+  })
+  it('已登记作者没有新视频时也补齐或更新头像，失败保留原头像并继续同步', async () => {
+    const c = await one('creators')
+    await payload.update({ collection: 'creators', id: c.id, data: { avatar: null, needsPublish: false, retryAt: null }, overrideAccess: true, context: { skipNeedsPublish: true } })
+    const client: any = { page: async () => ({ items: [], hasMore: false }), creator: async () => ({ name: source.creatorName, avatar }) }
+    expect((await syncVideoCreators(payload, req, { client })).errors).toEqual([])
+    let updated = await one('creators')
+    expect(updated.avatar).toBe(avatar)
+    expect(updated.needsPublish).toBe(true)
+    expect(publicVideoArchive([updated], [await one('videos')]).creators[0].avatar).toBe(avatar)
+    await payload.update({ collection: 'creators', id: c.id, data: { needsPublish: false, retryAt: null }, overrideAccess: true, context: { skipNeedsPublish: true } })
+    client.creator = async () => { throw new Error('Bilibili 头像暂不可用') }
+    expect((await syncVideoCreators(payload, req, { client })).errors).toEqual([])
+    updated = await one('creators')
+    expect(updated.avatar).toBe(avatar)
+    expect(updated.needsPublish).toBe(false)
+    await payload.update({ collection: 'creators', id: c.id, data: { retryAt: null }, overrideAccess: true })
+    client.creator = async () => ({ name: source.creatorName, avatar: 'https://evil.test/avatar.jpg' })
+    expect((await syncVideoCreators(payload, req, { client })).errors).toEqual([])
+    expect((await one('creators')).avatar).toBe(avatar)
+    const exported = publicVideoArchive([{ ...updated, avatar: 'https://evil.test/avatar.jpg' }], [await one('videos')])
+    expect(exported.creators[0].avatar).toBeUndefined()
+    await payload.update({ collection: 'creators', id: c.id, data: { retryAt: null, needsPublish: false }, overrideAccess: true, context: { skipNeedsPublish: true } })
+    const nextAvatar = 'https://i1.hdslb.com/bfs/face/new.jpg'
+    client.creator = async () => ({ name: source.creatorName, avatar: nextAvatar })
+    client.page = async () => { throw new Error('订阅暂不可用') }
+    expect((await syncVideoCreators(payload, req, { client })).errors).toHaveLength(1)
+    updated = await one('creators')
+    expect(updated.avatar).toBe(nextAvatar)
+    expect(updated.needsPublish).toBe(true)
+    expect(updated.error).toContain('订阅暂不可用')
+  })
+  it('增量迁移保留旧作者记录并允许回退', async () => {
+    const db = new DatabaseSync(':memory:')
+    try {
+      db.exec("CREATE TABLE creators(id INTEGER PRIMARY KEY, uid TEXT NOT NULL, name TEXT NOT NULL); INSERT INTO creators VALUES(1,'4168597','作者甲');")
+      const migration = { db: { run: async (statement: any) => db.exec(statement.queryChunks.map((chunk: any) => chunk.value?.join('') || '').join('')) } } as any
+      await addCreatorAvatar(migration)
+      expect(db.prepare('SELECT uid,name,avatar FROM creators').get()).toMatchObject({ uid, name: '作者甲', avatar: null })
+      db.prepare('UPDATE creators SET avatar=? WHERE id=1').run(avatar)
+      expect(db.prepare('SELECT avatar FROM creators').get()).toMatchObject({ avatar })
+      await removeCreatorAvatar(migration)
+      expect(db.prepare('SELECT uid,name FROM creators').get()).toMatchObject({ uid, name: '作者甲' })
+    } finally { db.close() }
   })
   it('暂停作者会移除公开档案，公开重复登记不会解除暂停', async () => {
     const c = await one('creators')

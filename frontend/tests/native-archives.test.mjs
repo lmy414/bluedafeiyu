@@ -149,7 +149,10 @@ test('creator avatar initials stay decorative without exempting untranslated bod
    assert.equal(el.getAttribute('data-creator-initial'),'风');
    assert.equal(el.getAttribute('aria-hidden'),'true');
   }
-  assert.equal(parseHTML(avatar({...creator,avatar:'/creator-avatars/test.jpg'})).document.querySelector('.avatar').hasAttribute('data-creator-initial'),false);
+  const withAvatar=parseHTML(avatar({...creator,avatar:'https://i0.hdslb.com/bfs/face/test.jpg'})).document.querySelector('.avatar');
+  assert.equal(withAvatar.hasAttribute('data-creator-initial'),false);
+  assert.equal(withAvatar.querySelector('img').getAttribute('src'),'https://i0.hdslb.com/bfs/face/test.jpg');
+  assert.equal(withAvatar.querySelector('img').getAttribute('referrerpolicy'),'no-referrer');
   assert.equal(parseHTML(avatar({name:'🐟作者'})).document.querySelector('.avatar').getAttribute('data-creator-initial'),'🐟');
   fs.writeFileSync(path.join(temp,'site-data.json'),JSON.stringify({works:[{origin:{author:creator.name}}],topics:[]}));
   for(const lang of ['en','ja']){

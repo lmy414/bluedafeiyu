@@ -50,7 +50,8 @@ test('compact catalogs preserve interaction fields and download members, and acc
 
 test('small homepage catalog gives identical real popularity results and localized card titles',()=>{
   const home=read('archive-home.json');
-  const ids=snapshot.works.filter(w=>w.source==='submission'&&w.status==='published').map(w=>w.id);
+  const serialIds=new Set(publicData.topics.filter(topic=>topic.reader).flatMap(topic=>topic.workIds));
+  const ids=snapshot.works.filter(w=>w.source==='submission'&&w.status==='published'&&!serialIds.has(w.id)).map(w=>w.id);
   assert.deepEqual(new Set(home.works.map(w=>w.id)),new Set(ids));
   const stats={available:true,works:Object.fromEntries(publicData.works.map((w,i)=>[w.id,{views:i%13,downloads:i%5}]))};
   assert.deepEqual(rankSubmissions(home.works,ids,stats).map(w=>w.id),rankSubmissions(publicData.works,ids,stats).map(w=>w.id));
@@ -77,13 +78,15 @@ test('homepage bundles styles and keeps lower galleries lazy in all four languag
   }
 });
 
-test('compact downloads catalog keeps all published works, originals and translations without the full descriptions',()=>{
+test('compact downloads catalog keeps eligible works, originals and translations without the full descriptions',()=>{
   const data=read('archive-downloads.json');
-  assert.deepEqual(data.works.map(work=>work.id),publicData.works.map(work=>work.id));
+  const serialIds=new Set(publicData.topics.filter(topic=>topic.reader).flatMap(topic=>topic.workIds));
+  const eligible=publicData.works.filter(work=>!serialIds.has(work.id));
+  assert.deepEqual(data.works.map(work=>work.id),eligible.map(work=>work.id));
   const stats={available:true,works:Object.fromEntries(publicData.works.map((work,i)=>[work.id,{downloads:i%17}]))};
-  assert.deepEqual(selectDownloadHighlights(data.works,stats).map(work=>work.id),selectDownloadHighlights(publicData.works,stats).map(work=>work.id));
+  assert.deepEqual(selectDownloadHighlights(data.works,stats).map(work=>work.id),selectDownloadHighlights(eligible,stats).map(work=>work.id));
   for(const [i,work] of data.works.entries()){
-    const original=publicData.works[i];
+    const original=eligible[i];
     assert.equal(work.o,original.o);
     for(const locale of ['en','ja'])assert.equal(work.i18n[locale].name,original.i18n[locale].name);
   }

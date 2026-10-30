@@ -527,6 +527,7 @@ export interface Creator {
   uid: string;
   homepage: string;
   name: string;
+  avatar?: string | null;
   intro: string;
   status: 'queued' | 'active' | 'paused';
   syncPage?: number | null;
@@ -1087,6 +1088,7 @@ export interface CreatorsSelect<T extends boolean = true> {
   uid?: T;
   homepage?: T;
   name?: T;
+  avatar?: T;
   intro?: T;
   status?: T;
   syncPage?: T;

@@ -6,13 +6,18 @@ export const Creators: CollectionConfig = {
   admin: { group: '投稿审核', useAsTitle: 'name', defaultColumns: ['name', 'homepage', 'intro', 'status', 'lastSyncedAt', 'error'] },
   access: { read: isOwner, create: () => false, update: isOwner, delete: () => false },
   hooks: { beforeChange: [({ data, originalDoc, context }) => {
-    if (originalDoc?.id && !context?.skipNeedsPublish && ((data.intro !== undefined && data.intro !== originalDoc.intro) || (data.status !== undefined && data.status !== originalDoc.status && ['paused', 'active'].includes(originalDoc.status)))) data.needsPublish = true;
+    if (!originalDoc?.id || context?.skipNeedsPublish) return data
+    const introChanged = data.intro !== undefined && data.intro !== originalDoc.intro
+    const statusChanged = data.status !== undefined && data.status !== originalDoc.status && ['paused', 'active'].includes(originalDoc.status)
+    const profileChanged = originalDoc.status === 'active' && ((data.name !== undefined && data.name !== originalDoc.name) || (data.avatar !== undefined && data.avatar !== originalDoc.avatar))
+    if (introChanged || statusChanged || profileChanged) data.needsPublish = true;
     return data;
   }] },
   fields: [
     { name: 'uid', type: 'text', required: true, unique: true, admin: { readOnly: true } },
     { name: 'homepage', label: '登记主页', type: 'text', required: true, admin: { readOnly: true } },
     { name: 'name', label: '平台作者名', type: 'text', required: true, admin: { readOnly: true } },
+    { name: 'avatar', label: '平台头像', type: 'text', admin: { readOnly: true } },
     { name: 'intro', label: '一句话创作说明（本人声明）', type: 'textarea', required: true, maxLength: 200, admin: { readOnly: true } },
     { name: 'status', label: '同步状态', type: 'select', required: true, defaultValue: 'queued', index: true,
       options: [{ label: '等待下次更新', value: 'queued' }, { label: '持续同步', value: 'active' }, { label: '已暂停', value: 'paused' }] },

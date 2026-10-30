@@ -2,10 +2,11 @@ import {DOWNLOAD_HIGHLIGHT_COUNT, renderDownloadPick} from '../../../public/comp
 // Real download rankings are filled lazily from the public statistics snapshot.
 // The static fallback always supplies a complete, explicitly editorial row.
 export function homeDownloadSection(ctx) {
-  const { editorial, bySlug, works:allWorks, tr, card } = ctx;
+  const { editorial, bySlug, galleryWorks, tr, card } = ctx;
   const selection = editorial.downloadHighlights;
-  const candidates = [...(selection?.slugs || []), ...(editorial.featuredSlugs || []), ...allWorks.map(work => work.slug)];
-  const works = [...new Set(candidates)].map(slug => bySlug.get(slug)).filter(Boolean).slice(0, DOWNLOAD_HIGHLIGHT_COUNT);
+  const eligible = new Set(galleryWorks.map(work => work.id));
+  const candidates = [...(selection?.slugs || []), ...(editorial.featuredSlugs || []), ...galleryWorks.map(work => work.slug)];
+  const works = [...new Set(candidates)].map(slug => bySlug.get(slug)).filter(work => work && eligible.has(work.id)).slice(0, DOWNLOAD_HIGHLIGHT_COUNT);
   if (!works.length) return '';
   tr('popularDownloads','热门下载','Popular downloads','人気のダウンロード');
   tr('popularDownloadsBasis','按累计下载点击量排序；下载量为按钮点击次数。','Ordered by total download-button clicks.','ダウンロードボタンの累計クリック数順です。');

@@ -1,0 +1,6 @@
+---
+import ArchivePage from "../components/archive/ArchivePage.astro";
+import { archivePages } from "../lib/archive.mjs";
+const page = archivePages.get("/serials.html");
+---
+<ArchivePage page={page} />

@@ -25,6 +25,9 @@ export function safeBiliImage(value) {
   url.protocol = 'https:';
   return url.href;
 }
+export function optionalBiliImage(value) {
+  try { return value ? safeBiliImage(value) : ''; } catch { return ''; }
+}
 export function signWbi(params, img, sub, timestamp = Math.round(Date.now() / 1000)) {
   const key = [img, sub].map(v => new URL(v).pathname.split('/').pop().split('.')[0]).join('');
   if (!/^[a-f0-9]{64}$/i.test(key)) throw new Error('Bilibili 签名信息不可用');
@@ -46,6 +49,13 @@ export function createBilibiliClient({ fetchImpl = fetch, cookie = process.env.B
     return result.data;
   }
   return {
+    async creator(uid) {
+      if (!/^[1-9]\d{0,16}$/.test(uid)) throw new Error('作者 UID 非法');
+      const profile = await json('/x/web-interface/card', new URLSearchParams({ mid: uid }));
+      const card = profile?.card;
+      if (String(card?.mid) !== uid) throw new Error('平台返回的作者资料与登记 UID 不匹配');
+      return { name: String(card.name || '').slice(0,120), avatar: optionalBiliImage(card.face) };
+    },
     async page(uid, page = 1) {
       if (!/^[1-9]\d{0,16}$/.test(uid) || !Number.isSafeInteger(page) || page < 1 || page > 10000) throw new Error('作者或分页参数非法');
       return rsshubPage(uid, { fetchImpl });
@@ -63,7 +73,7 @@ export function createBilibiliClient({ fetchImpl = fetch, cookie = process.env.B
           storyboard = { image: safeBiliImage(shots.image[0]), frames: shots.index.length, columns: Number(shots.img_x_len), rows: Number(shots.img_y_len) };
       } catch { /* Evidence stays absent; AI may reject/manual, never approve without frames. */ }
       return { bvid, uid, title: String(v.title).slice(0,200), description: String(v.desc || '').slice(0,4000),
-        cover: safeBiliImage(v.pic), url: `https://www.bilibili.com/video/${bvid}/`, creatorName: String(v.owner.name).slice(0,120),
+        cover: safeBiliImage(v.pic), url: `https://www.bilibili.com/video/${bvid}/`, creatorName: String(v.owner.name).slice(0,120), creatorAvatar: optionalBiliImage(v.owner.face),
         publishedAt: new Date(v.pubdate * 1000).toISOString(), duration: Math.max(0, Number(v.duration) || 0), storyboard };
     },
     async image(url) {
