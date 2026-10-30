@@ -12,6 +12,15 @@ test('empty or invalid image names use a real shared placeholder', () => {
   }
 });
 
+test('cards reserve actual thumbnail dimensions even when original metadata is missing', () => {
+  const work={slug:'missing-original-size',i:'/preview.webp',k:['comic'],roles:[],w:0,h:0,p:[120,480]};
+  const image=parseHTML(renderWorkCard(work)).document.querySelector('img');
+  assert.equal(image.getAttribute('width'),'120');
+  assert.equal(image.getAttribute('height'),'480');
+  assert.ok(image.closest('.work-art').classList.contains('is-long'));
+  assert.equal(work.w,0,'presentation dimensions never replace original metadata');
+});
+
 test('valid recorded paths survive character changes; missing derivatives reuse an existing size', () => {
   const thumbnailPath = 'submissions/previews/other/source.webp';
   const fullPath = 'submissions/large/other/source.webp';

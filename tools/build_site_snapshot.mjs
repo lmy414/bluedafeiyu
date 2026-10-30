@@ -15,6 +15,7 @@ import { workCharacterIds } from './work-characters.mjs';
 import { workImages } from '../frontend/public/components/work-image.js';
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { spawnSync } from 'node:child_process';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = path.join(ROOT, "dist");
@@ -140,6 +141,19 @@ function main() {
     seen.add(work.id);
     return true;
   }).sort((a, b) => String(b.createdAt).localeCompare(String(a.createdAt)) || String(b.slug).localeCompare(String(a.slug)));
+
+  // Card geometry comes from the actual derivatives, even when legacy records
+  // have no original dimensions. Original metadata and frozen paths stay intact.
+  const mediaPaths = [...new Set(unique.flatMap(work => [work.thumbUrl, work.displayUrl]).filter(value => value && !/^https?:/.test(value)))];
+  const probe = spawnSync(process.env.PYTHON || 'python3', [path.join(ROOT, 'tools/image_dimensions.py'), DIST], {
+    input: JSON.stringify(mediaPaths), encoding: 'utf8', maxBuffer: 4 * 1024 * 1024,
+  });
+  if (probe.error || probe.status !== 0) throw new Error('图片占位尺寸读取失败：' + (probe.error?.message || probe.stderr));
+  const dimensions = JSON.parse(probe.stdout);
+  for (const work of unique) {
+    if (dimensions[work.thumbUrl]) work.thumbSize = dimensions[work.thumbUrl];
+    if (dimensions[work.displayUrl]) work.displaySize = dimensions[work.displayUrl];
+  }
 
   const allowedTypes = new Set(categories.filter(c => c.status === 'active').map(c => c.id));
   const allowedCharacters = new Set(characters.filter(c => c.status === 'active').map(c => c.id));

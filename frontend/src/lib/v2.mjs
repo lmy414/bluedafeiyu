@@ -131,7 +131,7 @@ export const pageHref = (base, n) => (n === 1 ? base : base.replace(/(index)?\.h
 export function overlayData() {
   return Object.fromEntries(works.map(w => [w.slug, {
     i18n: Object.fromEntries(Object.entries(w.i18n || {}).filter(([lang])=>['en','ja'].includes(lang)).map(([lang,value])=>[lang,{...value,tags:w.tagsShown.map(t=>value.tags[w.tags.indexOf(t)])}])),
-    n: w.name, c: w.char.name, cid: w.characterId, cids: w.roles.map(role => role.id), roles: w.roles.map(({id,name,color}) => ({id,name,color})), col: w.char.color, cs: w.char.soft, i: w.thumb, l: w.large, w: w.width, h: w.height,
+    n: w.name, c: w.char.name, cid: w.characterId, cids: w.roles.map(role => role.id), roles: w.roles.map(({id,name,color}) => ({id,name,color})), col: w.char.color, cs: w.char.soft, i: w.thumb, l: w.large, w: w.width, h: w.height, p: w.thumbSize, v: w.displaySize,
     d: w.description || '', cm: w.commentary || '', o: w.originalUrl || w.path, f: String(w.format || '').toUpperCase(), s: fmtSize(w.fileSize), bytes: Number(w.fileSize) || 0,
     lk: w.lic, ls: LICENSE[w.lic][0], lt: LICENSE[w.lic][1], ln: w.license?.note || '', a: w.author, k: w.cats, ts: w.typeShort || '作品', tg: w.tagsShown,
     au: w.authorUrl, ac: w.attribution.explicit, sa: imageRights(w).creator, rights: imageRights(w),

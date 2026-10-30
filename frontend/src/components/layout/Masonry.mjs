@@ -11,6 +11,25 @@ export function masonryPositions(heights, columns, width, gap) {
   return {positions, height: heights.length ? Math.max(...bottoms) - gap : 0};
 }
 
+function layoutInitialMasonry(positions) {
+  const grid = document.currentScript.previousElementSibling;
+  const items = [...grid.children].filter(item => item.matches('.work-card,.video-card') && !item.hidden);
+  if (!items.length) return;
+  const css = getComputedStyle(grid), columns = Number(css.getPropertyValue('--columns')) || 4;
+  const gap = parseFloat(css.getPropertyValue('--gap')) || 18;
+  const width = (grid.clientWidth - gap * (columns - 1)) / columns;
+  if (width <= 0) return;
+  SiteComponents.masonryWidth(items, width);
+  const result = positions(items.map(item => item.offsetHeight), columns, width, gap);
+  grid.classList.add('is-laid-out');
+  SiteComponents.masonryPlace(grid, items, result);
+}
+
+// Inline only at the component boundary: no module fetch is needed for the first layout.
+export function initialMasonryScript() {
+  return `<script>(${layoutInitialMasonry.toString()})(${masonryPositions.toString()});</script>`;
+}
+
 export function installMasonry() {
   const observed = new WeakSet();
   let frame;

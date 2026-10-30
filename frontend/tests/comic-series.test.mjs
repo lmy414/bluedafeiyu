@@ -43,7 +43,7 @@ test('CMS exports cannot remove a curated serial; unpublished pages retain their
 
 test('reader renders each original page separately with both boundaries and explicit missing-page states',()=>{
   const pages=new Map();
-  const list=serial.workIds.map(id=>({id,slug:id,n:id,l:'/image.webp',w:1000,h:1500}));
+  const list=serial.workIds.map(id=>({id,slug:id,n:id,l:'/image.webp',w:0,h:0,v:[1000,1500]}));
   const topic={...serial,list,cover:list[0],avatar:'/author-avatars/eden-sins-bloom.webp'};
   const ctx={esc:String,tr:(_key,zh)=>zh,icon:()=>'',button:(url,label)=>`<a href="${url}">${label}</a>`,breadcrumbs:()=>'',write:(url,title,active,content,options)=>pages.set(url,{content,options})};
   createComicSeries(ctx,topic);
@@ -59,7 +59,11 @@ test('reader renders each original page separately with both boundaries and expl
     if(number>0)assert.ok(nav.querySelector(`a[href="${comicPageURL(topic.id,number-1)}"]`));
     if(number<28)assert.ok(nav.querySelector(`a[href="${comicPageURL(topic.id,number+1)}"]`));
     const workId=number?serial.reader.pages.find(page=>page.number===number)?.workId:serial.coverWorkId;
-    if(workId)assert.equal(document.querySelector('.comic-sheet').getAttribute('data-comic-work'),workId);
+    if(workId){
+      assert.equal(document.querySelector('.comic-sheet').getAttribute('data-comic-work'),workId);
+      assert.equal(document.querySelector('.comic-sheet img').getAttribute('width'),'1000');
+      assert.equal(document.querySelector('.comic-sheet img').getAttribute('height'),'1500');
+    }
     else {assert.equal(document.querySelector('.comic-sheet'),null);assert.ok(document.querySelector('.comic-unavailable'));}
   }
 });

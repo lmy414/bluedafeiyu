@@ -6,6 +6,8 @@ import zlib from 'node:zlib';
 import {parseHTML} from 'linkedom';
 import {rankSubmissions} from '../public/archive/journal-ranking.js';
 import {topicMembers} from '../public/archive/topic-zip.js';
+import {packArchiveCatalog,unpackArchiveCatalog} from '../public/components/archive-catalog.js';
+import {clientArchiveData} from '../src/lib/client-data.mjs';
 import {selectDownloadHighlights} from '../public/components/home-downloads.js';
 
 const root=path.resolve(import.meta.dirname,'../..');
@@ -16,22 +18,34 @@ const snapshot=JSON.parse(fs.readFileSync(path.join(root,'dist/site-data.json'),
 
 test('localized catalogs retain search, preview and original download data for every work',()=>{
   for(const locale of ['zh','en','ja']){
-    const data=read(`archive-data/${locale}.json`);
+    const wire=read(`archive-catalog/${locale}.json`);
+    const data=unpackArchiveCatalog(wire);
     assert.deepEqual(data.works.map(work=>work.id),publicData.works.map(work=>work.id));
+    assert.deepEqual(read(`archive-data/${locale}.json`).works.map(work=>work.id),data.works.map(work=>work.id),'cached clients retain the object catalog');
     for(const [i,work] of data.works.entries()){
       const original=publicData.works[i];
-      for(const field of ['id','slug','n','d','cm','cids','roles','tg','o','l','f','s','bytes','lk','lt','ln','k','dt'])assert.deepEqual(work[field],original[field],`${locale} ${work.id} ${field}`);
+      for(const field of ['id','slug','n','d','cm','cids','roles','p','v','tg','o','l','f','s','bytes','lk','lt','ln','k','dt'])assert.deepEqual(work[field],original[field],`${locale} ${work.id} ${field}`);
       assert.deepEqual(Object.keys(work.i18n||{}),locale==='zh'?[]:[locale]);
       if(locale!=='zh')assert.deepEqual(work.i18n[locale],original.i18n[locale]);
     }
     for(const topic of data.topics)assert.deepEqual(topicMembers(data,topic.id).works.map(w=>w.id),topicMembers(publicData,topic.id).works.map(w=>w.id));
     // Bound the actual catalog transfer. Editorial text length can grow without
     // changing the number of works, so a fixed per-work average is misleading.
-    const compressedBytes=zlib.gzipSync(Buffer.from(JSON.stringify(data))).length;
+    const compressedBytes=zlib.gzipSync(Buffer.from(JSON.stringify(wire))).length;
     const transferBudget=locale==='zh'?512*1024:1024*1024;
     assert.ok(compressedBytes<=transferBudget,`${locale} catalog: ${compressedBytes} compressed bytes exceeds ${transferBudget}`);
   }
   assert.ok(publicData.works.every(w=>w.rights?.license),'Public rights metadata retained');
+});
+
+test('compact catalogs preserve interaction fields and download members, and accept older catalogs',()=>{
+  for(const locale of ['zh','en','ja']){
+    const projected=clientArchiveData(publicData,locale);
+    assert.deepEqual(unpackArchiveCatalog(packArchiveCatalog(projected)),JSON.parse(JSON.stringify(projected)));
+  }
+  assert.equal(unpackArchiveCatalog(publicData),publicData);
+  assert.throws(()=>unpackArchiveCatalog({schema:'archive-client/2',fields:['id','id'],works:[]}),/Invalid archive/);
+  assert.throws(()=>unpackArchiveCatalog({schema:'archive-client/2',fields:['id'],works:[[]]}),/Invalid archive row/);
 });
 
 test('small homepage catalog gives identical real popularity results and localized card titles',()=>{

@@ -148,6 +148,7 @@
 /* ------------------------------------------- J. 图库列数（browse/videos） */
 body.archive .work-grid { --columns: 6; --gap: 12px; margin: 16px 0; }
 body.archive .video-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px 10px; margin: 16px 0; }
+body.archive .work-card .work-art:not(.is-long) img { aspect-ratio: var(--ratio, 1); }
 body.archive .work-text { padding: 8px 9px 7px; }
 body.archive .card-meta { margin-top: 5px; padding-top: 5px; }
 @media (max-width: 1479px) {
