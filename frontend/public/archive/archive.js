@@ -125,7 +125,7 @@ import {orderWorks, shuffledSlugs} from '../components/work-order.js';
     if(globalArchive&&params.has('type')&&selected.type!==defaultState.type){location.replace(localURL(categoryURL().href));return;}
     const stateURL=()=>{const state=getState(),url=new URL(document.body.dataset.listBase||basePath(location.pathname),location.origin),fragment=new URLSearchParams();for(const[name,value]of Object.entries(state))if(value&&value!==defaultState[name]){if(searchPage&&name==='q')url.searchParams.set(name,value);else fragment.set(name,value);}url.hash=fragment.toString();return url;};
     const setURL=()=>{const state=getState();history.replaceState({...history.state,filters:state},'',localURL(stateURL().href));};
-    function render(reshuffle=false,append=false){
+    function render(reshuffle=false,append=false,preserveInitial=false){
       document.dispatchEvent(new Event('archive:filter-sync'));
       const state=getState(),scores=state.q&&searchIndex?searchIndex.search(state.q):null;
       const characters=state.character.split(',').filter(Boolean);
@@ -138,10 +138,12 @@ import {orderWorks, shuffledSlugs} from '../components/work-order.js';
       const changed=Object.entries(defaultState).some(([name,value])=>state[name]!==value)||!!state.q;
       const start=changed?0:pageStart;
       const existingGrid=$('.work-grid',result);
+      const visible=filtered.slice(start,start+shown);
+      const sameCards=preserveInitial&&existingGrid&&existingGrid.children.length===visible.length&&visible.every((work,index)=>existingGrid.children[index].dataset.slug===work.slug);
       if(append&&existingGrid){
         const current=$$('.work-card',existingGrid).length;
         existingGrid.insertAdjacentHTML('beforeend',filtered.slice(start+current,start+shown).map(card).join(''));
-      }else result.innerHTML=filtered.length?drawGrid(filtered.slice(start,start+shown)):`<div class="empty-state"><h2>${esc(tx('d.noResults','还没找到合适的作品。'))}</h2><p>${esc(tx('d.noResultsDesc','试试减少条件、换个关键词，或按角色继续逛。'))}</p><button class="button" type="button" data-reset>${esc(tx('d.clear','清除条件'))}</button><a class="button primary" href="${localURL("/characters.html")}">${esc(tx('v2.nav.characters','角色'))}</a></div>`;
+      }else if(!sameCards)result.innerHTML=filtered.length?drawGrid(visible):`<div class="empty-state"><h2>${esc(tx('d.noResults','还没找到合适的作品。'))}</h2><p>${esc(tx('d.noResultsDesc','试试减少条件、换个关键词，或按角色继续逛。'))}</p><button class="button" type="button" data-reset>${esc(tx('d.clear','清除条件'))}</button><a class="button primary" href="${localURL("/characters.html")}">${esc(tx('v2.nav.characters','角色'))}</a></div>`;
       history.replaceState({...history.state,feedShown:shown,feedVersion:7},'');
       const more=$('[data-load-more]');
       more.hidden=start+shown>=filtered.length;
@@ -177,7 +179,7 @@ import {orderWorks, shuffledSlugs} from '../components/work-order.js';
       shown=history.state?.feedVersion===7?history.state.feedShown||24:24;
       if(['popular','downloads'].includes(form.elements.sort.value)&&!window.WorkStats?.available())form.elements.sort.value=defaultState.sort;
       if(['character','type','sort','direction','view','creation'].some(name=>params.has(name)))setURL();
-      render();
+      render(false,false,true);
       if(performance.getEntriesByType('navigation')[0]?.type==='back_forward'){
         try{const y=Number(sessionStorage.getItem('bluefish-scroll:'+location.pathname+location.search));if(y)requestAnimationFrame(()=>requestAnimationFrame(()=>scrollTo(0,y)));}catch{}
       }

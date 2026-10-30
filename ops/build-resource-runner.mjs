@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {spawn} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
+import {assertBuildDiskSpace} from './build-disk-space.mjs';
 
 export function memorySample(procRoot='/proc',cgroupRoot='/sys/fs/cgroup'){
   let availableMiB=null,currentMiB=null,peakMiB=null,swapMiB=null;
@@ -17,6 +18,7 @@ export function memorySample(procRoot='/proc',cgroupRoot='/sys/fs/cgroup'){
   return {availableMiB,currentMiB,peakMiB,swapMiB};
 }
 export async function runGuarded(label,command,args,env=process.env){
+  if (env.BUILD_DISK_PATH) console.log('[build-disk] '+JSON.stringify(assertBuildDiskSpace([env.BUILD_DISK_PATH], {minimumMiB:Number(env.BUILD_MIN_DISK_MB || 2048)})));
   const heap=Number(env.BUILD_NODE_HEAP_MB||640);
   if(!Number.isInteger(heap)||heap<256||heap>4096)throw Error('Invalid BUILD_NODE_HEAP_MB');
   const before=memorySample();

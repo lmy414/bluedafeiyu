@@ -15,7 +15,7 @@ const works=Array.from({length:60},(_,i)=>({id:'id-'+i,slug:'work-'+String(i).pa
 const stats={available:true,works:Object.fromEntries(works.map((work,i)=>[work.id,{views:(i*7)%61,downloads:(i*13)%61}]))};
 const flush=()=>new Promise(resolve=>setImmediate(resolve));
 
-async function fixture({url='https://archive.test/browse.html',available=true,curated=false,statsReady=Promise.resolve(stats)}={}) {
+async function fixture({url='https://archive.test/browse.html',available=true,curated=false,statsReady=Promise.resolve(stats),initialCards=false}={}) {
   const {document,window}=parseHTML(fs.readFileSync(path.join(out,'browse.html'),'utf8'));
   // linkedom deliberately omits form state; provide native selection semantics
   // while exercising the actual page controls, events, URLs and archive script.
@@ -31,6 +31,8 @@ async function fixture({url='https://archive.test/browse.html',available=true,cu
   });
   Object.defineProperty(form,'elements',{value:controls});
   document.querySelector('#results').dataset.list=JSON.stringify(works.map(work=>work.slug));
+  if(initialCards)document.querySelector('#results').innerHTML='<div class="work-grid">'+orderWorks(works,{sort:'latest',direction:'desc'}).slice(0,24).map(work=>renderWorkCard(work,{eager:true})).join('')+'</div>';
+  const initialNodes=[...document.querySelectorAll('#results .work-card')];
   const location=new URL(url),navigations=[];
   location.assign=href=>navigations.push(href);location.replace=href=>navigations.push(href);
   const history={state:null,replaceState(state,_title,href){this.state=state;if(href)location.href=href;}};
@@ -41,8 +43,17 @@ async function fixture({url='https://archive.test/browse.html',available=true,cu
   const visible=()=>[...document.querySelectorAll('#results .work-card')].map(card=>card.dataset.slug);
   const select=(name,value)=>{controls[name].value=value;controls[name].dispatchEvent(new window.Event('change',{bubbles:true}));};
   const click=selector=>document.querySelector(selector).dispatchEvent(new window.Event('click',{bubbles:true}));
-  return {document,controls,location,history,visible,select,click,navigations};
+  return {document,controls,location,history,visible,select,click,navigations,initialNodes};
 }
+
+test('loading the catalog retains matching static cards and their eager images, then filters normally',async()=>{
+  const f=await fixture({initialCards:true});
+  assert.ok(f.initialNodes.every((node,index)=>node===f.document.querySelectorAll('#results .work-card')[index]));
+  assert.equal(f.document.querySelector('#results img').getAttribute('loading'),'eager');
+  f.select('direction','asc');
+  assert.notEqual(f.document.querySelector('#results .work-card'),f.initialNodes[0]);
+  assert.deepEqual(f.visible(),works.slice(0,24).map(work=>work.slug));
+});
 
 test('real archive controls apply all metric/time directions, retain fragments and append the next correctly ordered page',async()=>{
   const f=await fixture();

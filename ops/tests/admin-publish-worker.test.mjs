@@ -494,6 +494,10 @@ test('后台请求使用正式基线并保留预检产物，不继承旧收录�
 test('无变更 noop：跳过提交、推送和部署，状态上报 succeeded', async (t) => {
   const runId = 'run-noop';
   const ws = await makeWorkspace(t, { works: [baselineRecord()] });
+  writeJson(path.join(ws.deployRoot, 'current', 'build-info.json'), {
+    sourceCommit: runGit(ws.site, ['rev-parse', 'HEAD']).trim(),
+    contentCommit: runGit(ws.content, ['rev-parse', 'HEAD']).trim(),
+  });
   const state = { statuses: [], snapshot: null };
   const backend = await startBackend(t, state);
   const submission = await startSubmissionService(t, state);
@@ -520,6 +524,32 @@ test('无变更 noop：跳过提交、推送和部署，状态上报 succeeded',
   assert.match(state.statuses.at(-1).log, /无变更/);
   assert.equal(fs.existsSync(path.join(ws.intake, 'work', 'build-check')), false);
 });
+
+for (const scenario of ['missing-release', 'outdated-release', 'deploy-failure']) {
+  test(`Git 无新增但发布未完成：${scenario} 必须部署成功后才能回写`, async t => {
+    const runId = 'run-recover-' + scenario;
+    const ws = await makeWorkspace(t, {works:[baselineRecord()]});
+    if (scenario !== 'missing-release') writeJson(path.join(ws.deployRoot, 'current', 'build-info.json'), {sourceCommit:'old',contentCommit:'old'});
+    const state = {statuses:[],snapshot:snapshotFrom(ws,runId),failDeploy:scenario==='deploy-failure'};
+    const backend = await startBackend(t,state);
+    const exec = makeFakeExec(state);
+    writeRequest(ws,runId);
+    const result = await capture(()=>main(['--run',runId],{env:envFor(ws,backend),exec,fetchImpl:makePublishFetch(state),runIssueReconcile:()=>{}}));
+    const output = JSON.parse(result.out);
+    assert.equal(state.deployRuns,1);
+    assert.equal(exec.calls.some(call=>call.cmd==='git'&&call.args.includes('commit')),false);
+    assert.equal(output.commits.site,runGit(ws.site,['rev-parse','HEAD']).trim());
+    if(state.failDeploy){
+      assert.equal(result.code,1);
+      assert.equal(output.status,'failed');
+      assert.equal(state.statuses.some(status=>status.status==='succeeded'),false);
+    }else{
+      assert.equal(result.code,0,result.err);
+      assert.equal(output.status,'succeeded');
+      assert.equal(state.statuses.at(-1).status,'succeeded');
+    }
+  });
+}
 
 test('新增一张图：下载、派生、构建校验、提交白名单、推送和部署成功', async (t) => {
   const runId = 'run-add';

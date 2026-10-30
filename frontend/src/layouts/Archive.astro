@@ -1,6 +1,7 @@
 ---
 import V2Meta from '../components/v2/V2Meta.astro';
 import Navigation from '../components/archive/Navigation.astro';
+import SidebarState from '../components/archive/SidebarState.astro';
 import Header from '../components/archive/Header.astro';
 import Footer from '../components/archive/Footer.astro';
 import MobileNav from '../components/archive/MobileNav.astro';
@@ -35,6 +36,7 @@ const { title, desc, path = '/', active = '', bodyPage = active, og, type = 'web
     <slot name="head" />
   </head>
   <body class:list={['archive', 'refined', {'journal-home':active==='home'}]} data-design-version="20261025-1" data-archive data-i18n-page={bodyPage} data-page={active} {...bodyAttrs}>
+    <SidebarState />
     <a class="skip-link" href="#main" data-i18n="v2.skip">跳到正文</a>
     <Navigation {active} />
     <div class="menu-scrim" data-menu-close hidden></div>

@@ -36,20 +36,6 @@ if(tabs.length){
   select(new URLSearchParams(location.search).get('media')==='video'||location.hash==='#creator-registration'?'video':'image');
 }
 
-const sidebarToggle=document.querySelector('[data-sidebar-collapse]');
-if(sidebarToggle){
-  const apply=collapsed=>{
-    document.body.classList.toggle('sidebar-collapsed',collapsed);
-    sidebarToggle.setAttribute('aria-expanded',String(!collapsed));
-    window.dispatchEvent(new Event('resize'));
-  };
-  try{apply(localStorage.getItem('bluefish-sidebar')==='collapsed');}catch{apply(false);}
-  sidebarToggle.addEventListener('click',()=>{
-    const collapsed=!document.body.classList.contains('sidebar-collapsed');apply(collapsed);
-    try{localStorage.setItem('bluefish-sidebar',collapsed?'collapsed':'expanded');}catch{}
-  });
-}
-
 const friendFilters=[...document.querySelectorAll('[data-friend-filter]')];
 if(friendFilters.length){
   const select=()=>{

@@ -41,6 +41,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 
 import { resolveConfig } from '../tools/intake/core.mjs';
 import { submissionAttribution } from '../admin/src/lib/attribution.mjs';
+import { assertBuildDiskSpace } from './build-disk-space.mjs';
 
 export const PUBLISH_SCHEMA = 'publish-batch/1';
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -812,6 +813,7 @@ function updateWorksManifest(cfg, items, originalText) {
 }
 
 export function runToolchain(cfg, exec, workDir) {
+  assertBuildDiskSpace([cfg.siteDir, cfg.contentDir, workDir, cfg.deployRoot]);
   // 先确认服务器真能跑派生图（Pillow），避免写坏清单后才发现缺依赖。
   runCmd(exec, cfg.python, ['-c', 'import PIL, sys; sys.exit(0)'], { cwd: cfg.siteDir });
   runCmd(exec, cfg.node, ['tools/prepare_works.mjs'], { cwd: cfg.siteDir });

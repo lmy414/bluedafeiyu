@@ -660,6 +660,16 @@ function currentReleasePath(cfg) {
   }
 }
 
+function deployedCheckoutMatches(cfg, exec) {
+  try {
+    const release = currentReleasePath(cfg);
+    if (!release) return false;
+    const info = readJsonFile(path.join(release, 'build-info.json'), '线上构建记录');
+    return info.sourceCommit === (gitCmd(exec, cfg.siteDir, ['rev-parse', 'HEAD']).stdout || '').trim()
+      && info.contentCommit === (gitCmd(exec, cfg.contentDir, ['rev-parse', 'HEAD']).stdout || '').trim();
+  } catch { return false; }
+}
+
 function markSnapshotPublished(cfg, snapshot, runId, atIso) {
   for (const item of snapshot.originals) {
     const meta = path.join(cfg.intake.metaDir, `${item.sha256}.json`);
@@ -818,7 +828,8 @@ export async function processPublishRequest({ request, env = process.env, deps =
       content: contentChanges.files.length ? contentChanges.files : journal.files.content,
     };
 
-    if (siteChanges.files.length === 0 && contentChanges.files.length === 0) {
+    const noChanges = siteChanges.files.length === 0 && contentChanges.files.length === 0;
+    if (noChanges && deployedCheckoutMatches(cfg, exec)) {
       result.status = 'succeeded';
       result.step = 'noop';
       result.log = '无变更';
@@ -854,8 +865,16 @@ export async function processPublishRequest({ request, env = process.env, deps =
     step = 'commit';
     journal.step = step;
     const message = `feat: 后台发布 ${runId}（新增 ${result.summary.added}、修改 ${result.summary.updated}、隐藏 ${result.summary.hidden}、删除 ${result.summary.deleted}、专题 ${result.summary.topics}）`;
-    result.commits.content = stagedAndCommit(contentCfg, exec, 'content', contentChanges.changes, message);
-    result.commits.site = stagedAndCommit(siteCfg, exec, 'site', siteChanges.changes, message);
+    if (noChanges) {
+      logLine(log, '清单已在 Git 中，但线上版本尚未部署；继续部署并验证后再回写成功');
+      result.commits = {
+        site: (gitCmd(exec, cfg.siteDir, ['rev-parse', 'HEAD']).stdout || '').trim(),
+        content: (gitCmd(exec, cfg.contentDir, ['rev-parse', 'HEAD']).stdout || '').trim(),
+      };
+    } else {
+      result.commits.content = stagedAndCommit(contentCfg, exec, 'content', contentChanges.changes, message);
+      result.commits.site = stagedAndCommit(siteCfg, exec, 'site', siteChanges.changes, message);
+    }
     journal.commits = result.commits;
 
     step = 'push';
