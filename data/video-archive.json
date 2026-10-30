@@ -22,6 +22,16 @@
       }
     },
     {
+      "uid": "551427187",
+      "name": "更吹落星如雨06",
+      "homepage": "https://space.bilibili.com/551427187",
+      "intro": "主要是一些漫画，ai视频的二创，未来考虑写小说",
+      "i18n": {
+        "en": "The creator mainly makes manga and AI-video fan works, and plans to write novels.",
+        "ja": "主に漫画とAI動画の二次創作を制作しており、今後は小説も書く予定。"
+      }
+    },
+    {
       "uid": "10526764",
       "name": "M3娘",
       "homepage": "https://space.bilibili.com/10526764",
@@ -160,6 +170,31 @@
           "creatorIntro": "サイト管理者が指定した最初の作者の一人。公開ページのプロフィールを収録し、動画は一本ずつ審査しています。",
           "description": "雪の列車を舞台にしたショートアニメ。クロードちゃんがディープシークちゃんの頭を撫でると、痛みが消えていきます。同じ車両には他のAIキャラクターの女の子たちも登場します。娯楽目的の作品です。",
           "title": "クロードに撫でてもらえばもう痛くない"
+        }
+      }
+    },
+    {
+      "bvid": "BV1xhxF6GEX7",
+      "uid": "551427187",
+      "title": "公园里的鲸鱼娘",
+      "description": "-",
+      "url": "https://www.bilibili.com/video/BV1xhxF6GEX7/",
+      "cover": "https://i1.hdslb.com/bfs/archive/eab7ac5d9aee77461521c3d63150c015eb385ba1.jpg",
+      "duration": 21,
+      "publishedAt": "2026-10-29T08:27:50.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "The creator mainly makes manga and AI-video fan works, and plans to write novels.",
+          "description": "A short AI-anime fan video: a blue-haired whale girl with a whale tail and fin-like ears meets a boy in a park at sunset, and the two end up standing side by side by the water.",
+          "title": "The Whale Girl in the Park"
+        },
+        "ja": {
+          "creatorIntro": "主に漫画とAI動画の二次創作を制作しており、今後は小説も書く予定。",
+          "description": "夕暮れの公園で、クジラの尾びれとひれ耳を持つ青髪のクジラ娘が少年と出会い、最後は水辺に並んで立つ二人の姿で締めくくられる短編AIアニメ二次創作。",
+          "title": "公園のクジラ娘"
         }
       }
     },
