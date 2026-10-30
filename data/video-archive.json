@@ -24,6 +24,17 @@
       }
     },
     {
+      "uid": "169511987",
+      "name": "Rose丶mi",
+      "homepage": "https://space.bilibili.com/169511987",
+      "intro": "AIGC 二创",
+      "avatar": "https://i2.hdslb.com/bfs/face/2038f2c5c79dbc4d922339a049454e0e30744eb1.jpg",
+      "i18n": {
+        "en": "A Bilibili creator who describes their output as AIGC fan creation.",
+        "ja": "AIGCの二次創作だと自ら説明しているBilibiliの投稿者。"
+      }
+    },
+    {
       "uid": "1419502844",
       "name": "Starysoor",
       "homepage": "https://space.bilibili.com/1419502844",
@@ -168,6 +179,31 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1Rzxq6hErB",
+      "uid": "169511987",
+      "title": "大肥鱼的万圣节穿搭",
+      "description": "-",
+      "url": "https://www.bilibili.com/video/BV1Rzxq6hErB/",
+      "cover": "https://i2.hdslb.com/bfs/archive/68a06e088d3453ece7d0f2ff7ce907de365e67fe.jpg",
+      "duration": 21,
+      "publishedAt": "2026-10-30T12:10:24.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A Bilibili creator who describes their output as AIGC fan creation.",
+          "description": "A 21-second AI-generated fan clip: DeepSeek Chan in a Halloween witch outfit — wide-brimmed hat with a pumpkin charm, white ruffled blouse and dark corset dress — posing under a full moon with bats and the sea behind her.",
+          "title": "DeepSeek Chan's Halloween Outfit"
+        },
+        "ja": {
+          "creatorIntro": "AIGCの二次創作だと自ら説明しているBilibiliの投稿者。",
+          "description": "21秒のAI生成ファン動画。DeepSeekちゃんがハロウィンの魔女コーデ——カボチャのチャームが付いたつば広ハット、白いフリルブラウス、黒いコルセットドレス——で、満月とコウモリ、海を背景にポーズをとる。",
+          "title": "DeepSeekちゃんのハロウィンコーデ"
+        }
+      }
+    },
     {
       "bvid": "BV1zSxP61EVk",
       "uid": "69180811",
