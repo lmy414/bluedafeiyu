@@ -60,8 +60,8 @@ describe('Bilibili 作者登记、发现、AI 审核与公开导出', () => {
     expect((await syncVideoCreators(payload, req, { client })).discovered).toBe(0)
   })
   it('读取作者卡片时核验 UID、规范头像地址并拒绝不可信来源', async () => {
-    const make = (card: any) => createBilibiliClient({ fetchImpl: async (url: string) => {
-      expect(url).toContain('/x/web-interface/card?mid=' + uid)
+    const make = (card: any) => createBilibiliClient({ fetchImpl: async (input: unknown) => {
+      expect(String(input)).toContain('/x/web-interface/card?mid=' + uid)
       return new Response(JSON.stringify({ code: 0, data: { card } }))
     } })
     await expect(make({ mid: Number(uid), name: '作者甲', face: '//i0.hdslb.com/bfs/face/creator.jpg' }).creator(uid)).resolves.toEqual({ name: '作者甲', avatar })
@@ -70,8 +70,8 @@ describe('Bilibili 作者登记、发现、AI 审核与公开导出', () => {
     await expect(make({ mid: Number(uid), face: avatar }).creator('../123')).rejects.toThrow('UID 非法')
   })
   it('视频详情提供头像时可作为作者资料的补充，不影响预览帧失败处理', async () => {
-    const client = createBilibiliClient({ fetchImpl: async (url: string) => {
-      const data = url.includes('/x/player/videoshot') ? { code: -1 } : { code: 0, data: { bvid, owner: { mid: Number(uid), name: '作者甲', face: avatar }, state: 0, title: source.title, desc: source.description, pic: source.cover, cid: 123, pubdate: 1792636800, duration: 30 } }
+    const client = createBilibiliClient({ fetchImpl: async (input: unknown) => {
+      const data = String(input).includes('/x/player/videoshot') ? { code: -1 } : { code: 0, data: { bvid, owner: { mid: Number(uid), name: '作者甲', face: avatar }, state: 0, title: source.title, desc: source.description, pic: source.cover, cid: 123, pubdate: 1792636800, duration: 30 } }
       return new Response(JSON.stringify(data))
     } })
     await expect(client.video(bvid, uid)).resolves.toMatchObject({ creatorName: '作者甲', creatorAvatar: avatar, storyboard: null })
