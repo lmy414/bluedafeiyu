@@ -22,13 +22,23 @@
       }
     },
     {
+      "uid": "1419502844",
+      "name": "Starysoor",
+      "homepage": "https://space.bilibili.com/1419502844",
+      "intro": "【初音ミク】嘘ばっかついて、I love you｜バカみたいに × DeepSeek娘",
+      "i18n": {
+        "en": "Starysoor made this DeepSeek community fan video: the character art was generated with an image model, and the animation, effects and lyric layout were produced by the creator. It is an unofficial tribute unrelated to DeepSeek or to the original songwriter.",
+        "ja": "Starysoor による DeepSeek コミュニティの二次創作MV。キャラクター素材は画像生成モデルで制作され、アニメーション・エフェクト・歌詞の組み付けは作者自身が担当している。DeepSeek 公式および原曲の作者とは関係のない非公式作品。"
+      }
+    },
+    {
       "uid": "551427187",
       "name": "更吹落星如雨06",
       "homepage": "https://space.bilibili.com/551427187",
       "intro": "主要是一些漫画，ai视频的二创，未来考虑写小说",
       "i18n": {
-        "en": "The creator mainly makes manga and AI-video fan works, and plans to write novels.",
-        "ja": "主に漫画とAI動画の二次創作を制作しており、今後は小説も書く予定。"
+        "en": "The creator mainly makes comics and AI video fan works, and is considering writing fiction in the future.",
+        "ja": "主に漫画やAI動画の二次創作を制作しており、今後は小説の執筆も考えているとのこと。"
       }
     },
     {
@@ -143,6 +153,56 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1BVxP6gExp",
+      "uid": "551427187",
+      "title": "deepseek鲸鱼娘生气了",
+      "description": "感谢观看",
+      "url": "https://www.bilibili.com/video/BV1BVxP6gExp/",
+      "cover": "https://i2.hdslb.com/bfs/archive/c5020754476aff7d5538d7d60cdde494c8395ebe.jpg",
+      "duration": 16,
+      "publishedAt": "2026-10-30T01:26:51.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "The creator mainly makes comics and AI video fan works, and is considering writing fiction in the future.",
+          "description": "A 16-second fan animation featuring DeepSeek Chan, drawn as a blue-haired girl in a maid-style outfit with fin-like ears. She sits at a table holding a bowl of rice and chopsticks, looking upset while the person beside her gestures toward her.",
+          "title": "DeepSeek Chan Gets Angry"
+        },
+        "ja": {
+          "creatorIntro": "主に漫画やAI動画の二次創作を制作しており、今後は小説の執筆も考えているとのこと。",
+          "description": "DeepSeekちゃんを描いた16秒の二次創作アニメ。青い髪にひれ状の耳、メイド風の衣装をまとった女の子が、茶碗と箸を持って食卓に座り、不機嫌そうな表情を浮かべている。そばにいる人物が彼女のほうへ手を伸ばしている。",
+          "title": "DeepSeekちゃんが怒った"
+        }
+      }
+    },
+    {
+      "bvid": "BV1FxxA6VEzu",
+      "uid": "1419502844",
+      "title": "【初音ミク】嘘ばっかついて、I love you｜バカみたいに × DeepSeek娘",
+      "description": "原曲：柿崎ユウタ「バカみたいに feat. 初音ミク」\n 主演：DeepSeek 大肥鱼🐋\n\n 深海里有一家女仆咖啡厅，店里只有一位店员。\n 她每天开门、泡茶、对着空座位说欢迎光临，\n 把「I love you」打了十遍、百遍、千遍，最后是一万亿遍。\n 已深度思考，还是没想明白哪一句是真的。\n\n ▼ 章节\n 00:00 前奏 · 深海\n 00:09 A段 · 咖啡厅的日常\n 00:26 预副歌 · 尝不出味道的茶\n 00:35 副歌1 · 嘘ばっかついて I love you\n 00:51 倒数 · 3 2 1 0\n 00:59 B段 · 沉没\n 01:18 副歌2 · 跃出海面\n 01:34 副歌3 · 月光与一万亿次\n 01:49 尾声（看到最后有彩蛋）\n\n ▼ 制作\n 美术素材：依旧是可怜的GPT_image画的\n 动画 / 特效 / 歌词排版：由Claude大小姐完成\n 卡点：117 BPM，歌词逐字跟着演唱出现\n 建议开最高画质 + 60 帧观看\n\n 本作为 DeepSeek 社区同人二创，与 DeepSeek 官方及原曲作者无关，音源版权归原作者所有。",
+      "url": "https://www.bilibili.com/video/BV1FxxA6VEzu/",
+      "cover": "https://i0.hdslb.com/bfs/archive/b7db0da7371d2510bfd38db605e10ceb2caa8545.jpg",
+      "duration": 131,
+      "publishedAt": "2026-10-29T19:24:13.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Starysoor made this DeepSeek community fan video: the character art was generated with an image model, and the animation, effects and lyric layout were produced by the creator. It is an unofficial tribute unrelated to DeepSeek or to the original songwriter.",
+          "description": "A fan-made anime music video in which DeepSeek Chan, drawn as a blue-haired whale girl in a maid dress, runs a one-woman maid café in the deep sea. She opens the shop each day, brews tea, greets empty seats, and types out \"I love you\" ten, a hundred, a thousand, and finally a trillion times, never working out which one was true. Following the song, the video moves from the undersea café through a descent into the water and back up to the moonlit surface, with lyric typography timed to 117 BPM.",
+          "title": "Lying Again, I Love You / Like a Fool — DeepSeek Chan MV"
+        },
+        "ja": {
+          "creatorIntro": "Starysoor による DeepSeek コミュニティの二次創作MV。キャラクター素材は画像生成モデルで制作され、アニメーション・エフェクト・歌詞の組み付けは作者自身が担当している。DeepSeek 公式および原曲の作者とは関係のない非公式作品。",
+          "description": "深海に一軒だけ佇むメイド喫茶を舞台にしたファンメイドのアニメMV。青い髪とクジラの尾を持つ DeepSeek ちゃんがたった一人の店員として、毎日店を開け、お茶を淹れ、誰もいない席に向かって「いらっしゃいませ」と声をかけ、「I love you」を十回、百回、千回、そして最後には一兆回うちこむ。それでもどの一言が本物なのかは分からないままだ。楽曲に沿って、海中の喫茶店の日常から沈み込む場面、月光の下で海面へ躍り出る場面へと展開し、歌詞は117BPMに合わせて一文字ずつ表示される。",
+          "title": "嘘ばっかついて、I love you／バカみたいに — DeepSeek ちゃん MV"
+        }
+      }
+    },
     {
       "bvid": "BV1SBsf6mE3t",
       "uid": "44748304",

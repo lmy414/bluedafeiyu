@@ -98423,5 +98423,519 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_97c04962ca8d2867225ae398",
+    "name": "傲娇抱胸：才不是在等你夸",
+    "description": "深蓝长发的 Q 版角色穿深藏青女仆风连衣裙，白色围裙上印着一只蓝色小鲸鱼，双手抱胸、侧目鼓腮，人物带白色描边的贴纸样式，背景为单一浅蓝色。",
+    "commentary": "哼，才不是在等你夸我。……围裙上那只小鲸鱼？那个、那个只是随手画的啦，别盯着看！",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/97c04962ca8d2867.png",
+    "thumbnailPath": "submissions/previews/deepseek/97c04962ca8d2867.webp",
+    "fullPath": "submissions/large/deepseek/97c04962ca8d2867.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "97c04962ca8d2867225ae398b3fb6c09f23ee5c000c00e05211050b9551ada1d",
+    "characterId": "deepseek",
+    "tags": [
+      "傲娇",
+      "Q版",
+      "女仆装",
+      "贴纸",
+      "抱胸",
+      "鼓腮"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-30T03:45:45.913Z",
+    "updatedAt": "2026-10-30T03:45:45.913Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610300003",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "db882774f447a98ead985dd40c062d66c6c1a0fe1aa436c4eb2ba807758fed1f",
+      "en": {
+        "commentary": "Hmph, it isn't like I'm waiting for you to praise me. ...The tiny whale on my apron? Th-that was just a doodle, all right? Don't stare at it!",
+        "description": "A chibi character with long deep-blue hair wears a navy maid-style dress with a white apron printed with a small blue whale. She stands with her arms crossed, pouting and glancing sideways, drawn as a die-cut sticker with a white outline on a plain light-blue background.",
+        "faq": [
+          {
+            "answer": "A chibi DeepSeek Chan with long blue hair and a whale tail, wearing a navy maid-style dress and a white apron printed with a small blue whale.",
+            "question": "Who is shown in this sticker?"
+          },
+          {
+            "answer": "She has her arms crossed and is pouting while glancing sideways, a classic tsundere reaction pose drawn as a white-outlined sticker on a plain light-blue background.",
+            "question": "What pose and expression does she have?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Tsundere Pout: Not Waiting for Your Praise",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan in a navy maid dress with a whale-print apron, arms crossed and pouting in a tsundere sticker pose on a plain light-blue background.",
+        "seoTitle": "Tsundere DeepSeek Chan Chibi Sticker — Arms Crossed Pout",
+        "tags": [
+          "Tsundere",
+          "Chibi",
+          "Maid Outfit",
+          "Sticker",
+          "Arms Crossed",
+          "Puffed Cheeks"
+        ]
+      },
+      "ja": {
+        "commentary": "ふん、べつに褒めてほしいわけじゃないんだから。……エプロンの小さいクジラ？あ、あれはただの落書きよ、じっと見ないで！",
+        "description": "濃紺のロングヘアのちびキャラが、白いエプロンに青い小さいクジラがプリントされた紺色のメイド風ワンピースを着ている。腕を組んで横目にふくれっ面をしており、白フチのステッカー風で、背景は淡いブルーの無地。",
+        "faq": [
+          {
+            "answer": "青いロングヘアとクジラの尾を持つちびキャラの DeepSeek Chan で、紺色のメイド風ワンピースと、青い小さいクジラがプリントされた白いエプロンを着ている。",
+            "question": "このステッカーには誰が描かれていますか？"
+          },
+          {
+            "answer": "腕を組んで横目にふくれっ面をした、ツンデレらしい反応のポーズで、白フチのステッカー風に淡いブルーの無地背景で描かれている。",
+            "question": "どんなポーズと表情ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ツンデレ、腕組みでふくれっ面",
+        "originNote": "",
+        "seoDescription": "紺のメイド服とクジラのエプロン姿のちびキャラ DeepSeek Chan が、腕組みでふくれっ面をするステッカー風イラスト。淡いブルーの無地背景。",
+        "seoTitle": "ツンデレ DeepSeek Chan ちびキャラ ステッカー",
+        "tags": [
+          "ツンデレ",
+          "ちびキャラ",
+          "メイド服",
+          "ステッカー",
+          "腕組み",
+          "ふくれっ面"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_b5fb19e9ecbffbd6a7dccd54",
+    "name": "馋到流口水：红烧肉配白饭",
+    "description": "蓝发鲸尾的 Q 版角色穿深藏青女仆裙，围裙印鲸鱼图案，手握筷子站在矮木桌前，桌上一碗白饭和一盘红烧肉，双眼变成星星状、嘴角挂着一滴口水，白边贴纸样式，背景为浅蓝纯色。",
+    "commentary": "红烧肉……就一口，真的就一口。别看我，我、我不是馋，是这碗白饭需要有人陪。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/b5fb19e9ecbffbd6.png",
+    "thumbnailPath": "submissions/previews/deepseek/b5fb19e9ecbffbd6.webp",
+    "fullPath": "submissions/large/deepseek/b5fb19e9ecbffbd6.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "b5fb19e9ecbffbd6a7dccd54bdfe75fa818f7b28e5d862b7a33f54ea67086e88",
+    "characterId": "deepseek",
+    "tags": [
+      "馋",
+      "Q版",
+      "女仆装",
+      "红烧肉",
+      "贴纸",
+      "流口水"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-30T03:46:24.694Z",
+    "updatedAt": "2026-10-30T03:46:24.694Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610300004",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "74417ea73916fbbf99ab1c203b9760ac92803654e344c1ba51016e7a6ff881ff",
+      "en": {
+        "commentary": "Braised pork... just one bite, really just one bite. Don't look at me. I'm not craving it — this bowl of rice simply needs company.",
+        "description": "A chibi character with long blue hair and a whale tail wears a navy maid dress with a whale-print apron. Holding chopsticks, she stands at a low wooden table with a bowl of white rice and a plate of braised pork, her eyes shaped like stars and a drop of drool at the corner of her mouth. The figure is drawn as a white-outlined sticker on a plain light-blue background.",
+        "faq": [
+          {
+            "answer": "A chibi DeepSeek Chan with long blue hair and a whale tail, in a navy maid dress and a whale-print apron, holding chopsticks in front of a low table.",
+            "question": "Who is in this sticker?"
+          },
+          {
+            "answer": "A bowl of white rice and a plate of glossy braised pork; she looks at them with star-shaped eyes and a drop of drool, clearly craving the meal.",
+            "question": "What food does she crave?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Drooling Over Braised Pork and Rice",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan in a navy maid dress and whale apron, chopsticks in hand, drooling with star-shaped eyes over a bowl of rice and braised pork. Sticker style on a plain light-blue background.",
+        "seoTitle": "DeepSeek Chan Chibi Sticker — Drooling Over Braised Pork",
+        "tags": [
+          "Craving",
+          "Chibi",
+          "Maid Outfit",
+          "Braised Pork",
+          "Sticker",
+          "Drooling"
+        ]
+      },
+      "ja": {
+        "commentary": "紅焼肉……一口だけ、ほんとに一口だけよ。見ないで。別に食べたいんじゃなくて、この白ごはんに付き合ってあげるだけ。",
+        "description": "青いロングヘアとクジラの尾を持つちびキャラが、クジラ柄のエプロン付き紺色メイド服を着ている。箸を手にしたまま低い木の机の前に立ち、机の上には白ごはんの茶碗と紅焼肉の皿が置かれ、目は星形になり口元にはよだれが一適。白フチのステッカー風で、背景は淡いブルーの無地。",
+        "faq": [
+          {
+            "answer": "青いロングヘアとクジラの尾を持つちびキャラの DeepSeek Chan で、紺色のメイド服とクジラ柄のエプロンを着け、箸を手に低い机の前に立っている。",
+            "question": "このステッカーには誰が描かれていますか？"
+          },
+          {
+            "answer": "白ごはんの茶碗と照り紅焼肉の皿で、彼女は星形の目と口元のよだれでそれらを見ており、よほど食べたい様子が伝わる。",
+            "question": "何の料理を食べたがっていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "よだれが出るほど食べたい、紅焼肉と白ごはん",
+        "originNote": "",
+        "seoDescription": "紺のメイド服とクジラのエプロン姿のちびキャラ DeepSeek Chan が、箸を手に星形の目とよだれでごはんと紅焼肉を見ているステッカー風イラスト。淡いブルーの無地背景。",
+        "seoTitle": "DeepSeek Chan ちびキャラ ステッカー — 紅焼肉によだれ",
+        "tags": [
+          "食べたがる",
+          "ちびキャラ",
+          "メイド服",
+          "紅焼肉",
+          "ステッカー",
+          "よだれ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_31448cd3f0cf37df0a24583d",
+    "name": "晚安：躲进被子里睡觉",
+    "description": "蓝发 Q 版角色戴着蕾丝头饰，盖着蓬松的白被子，只露出头和两只抓着被角的小手，闭眼入睡、脸颊泛红；画面右上角有黑字「晚安」与几个 Z 字符，人物为白边贴纸样式，背景浅蓝纯色。",
+    "commentary": "今天就这样吧，被子已经先把我收好了。晚安——明天再聊，别熬夜。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/31448cd3f0cf37df.png",
+    "thumbnailPath": "submissions/previews/deepseek/31448cd3f0cf37df.webp",
+    "fullPath": "submissions/large/deepseek/31448cd3f0cf37df.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "31448cd3f0cf37df0a24583df7cfeeb69835147a47f756625565e6e8e6760e6c",
+    "characterId": "deepseek",
+    "tags": [
+      "晚安",
+      "Q版",
+      "睡觉",
+      "贴纸",
+      "被子",
+      "闭眼"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-30T03:47:08.032Z",
+    "updatedAt": "2026-10-30T03:47:08.032Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610300005",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "a9b294a0f0d2ca3dc6dc7b3436fa7958d59f44f828a0949f0f2b904b3150a576",
+      "en": {
+        "commentary": "That's enough for today — the blanket has already claimed me. Good night. We'll talk tomorrow, and don't stay up late.",
+        "description": "A chibi character with long blue hair and a lace headdress is tucked under a puffy white blanket, with only her head and two small hands gripping the edge showing. Her eyes are closed with a blush on her cheeks, and the Chinese characters for good night plus several Z marks appear at the upper right. The figure is drawn as a white-outlined sticker on a plain light-blue background.",
+        "faq": [
+          {
+            "answer": "A chibi DeepSeek Chan with long blue hair and a lace headdress, tucked under a white blanket with only her head and hands visible.",
+            "question": "Who is in this sticker?"
+          },
+          {
+            "answer": "The Chinese characters meaning good night sit at the upper right, together with a few Z marks that indicate she is falling asleep.",
+            "question": "What text appears in the image?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Good Night: Tucked Under the Blanket",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan in a lace headdress tucked under a white blanket, eyes closed and blushing, with good-night text and Z marks. Sticker style on a plain light-blue background.",
+        "seoTitle": "DeepSeek Chan Chibi Sticker — Good Night Under the Blanket",
+        "tags": [
+          "Good Night",
+          "Chibi",
+          "Sleeping",
+          "Sticker",
+          "Blanket",
+          "Eyes Closed"
+        ]
+      },
+      "ja": {
+        "commentary": "今日はもうこのへんにしよ。布団が先に私を回収しちゃった。おやすみ、続きは明日ね。夜更かししないでよ。",
+        "description": "青いロングヘアにレースのヘッドドレスを付けたちびキャラが、白いふかふかの布団をかぶり、頭と布団の端をつかむ両手だけを出している。目を閉じて頬を赤らめ、右上には中国語の「おやすみ」の文字と Z のマークが添えられている。白フチのステッカー風で、背景は淡いブルーの無地。",
+        "faq": [
+          {
+            "answer": "青いロングヘアにレースのヘッドドレスを付けたちびキャラの DeepSeek Chan で、白い布団をかぶって頭と両手だけを出している。",
+            "question": "このステッカーには誰が描かれていますか？"
+          },
+          {
+            "answer": "右上に中国語で「おやすみ」と書かれた文字と、眠りを表す Z のマークが添えられている。",
+            "question": "画像にはどんな文字が入っていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "おやすみ：布団にもぐって眠る",
+        "originNote": "",
+        "seoDescription": "レースのヘッドドレスを付けたちびキャラ DeepSeek Chan が白い布団にもぐり、目を閉じて頬を赤らめるステッカー風イラスト。「おやすみ」の文字と Z マーク付き。",
+        "seoTitle": "DeepSeek Chan ちびキャラ ステッカー — 布団でおやすみ",
+        "tags": [
+          "おやすみ",
+          "ちびキャラ",
+          "就寝",
+          "ステッカー",
+          "布団",
+          "目を閉じる"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_741c84281e6fa3d85677a766",
+    "name": "偷吃米饭被抓包的蓝发女仆",
+    "description": "蓝色长发的Q版少女穿深蓝女仆裙，双手捧着盛满白米饭的碗，指间还夹着筷子。她两腮鼓得圆圆的，嘴边挂着饭粒和一道水痕，额侧悬着一滴冷汗，身后的鲨鱼尾与围裙上的蓝色鲸鱼图案点明角色身份。背景为纯浅蓝，人物外缘带白色描边，整体是贴纸样式。",
+    "commentary": "本来打算安安静静把这一碗解决掉，结果一口塞太满，腮帮子鼓成仓鼠，汗都来不及擦就被逮住了。围裙上那条小鲸鱼还在替我狡辩——不是我，是它先动的手。下次记住了，先咽下去，再抬头。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/741c84281e6fa3d8.png",
+    "thumbnailPath": "submissions/previews/deepseek/741c84281e6fa3d8.webp",
+    "fullPath": "submissions/large/deepseek/741c84281e6fa3d8.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "741c84281e6fa3d85677a766e8527aaef5c50539618e81c927e6739142481724",
+    "characterId": "deepseek",
+    "tags": [
+      "女仆装",
+      "Q版",
+      "干饭",
+      "被抓包",
+      "冷汗"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-30T03:49:38.149Z",
+    "updatedAt": "2026-10-30T03:49:38.149Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610300006",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "7989803e527671b1e8334c9b2c18d9ebf6bbea36a96dc87ad489cb2e9cad025b",
+      "en": {
+        "commentary": "Getting caught mid-bite with rice still stuffed in my cheeks — that's me. I meant to finish this bowl quietly, but I overfilled my mouth, my face puffed up like a hamster, and I did not even get to wipe the sweat away before someone looked over. The little whale on my apron is still arguing that it started it. Next time I will swallow first, then look up.",
+        "description": "A chibi girl with long blue hair wears a dark navy maid dress and holds a bowl piled with white rice, chopsticks still pinched between her fingers. Both cheeks are puffed out, rice grains and a smear of moisture cling to her mouth, and a single bead of cold sweat hangs beside her forehead. A shark-like tail and the blue whale print on her apron mark the character. The background is flat pale blue and the figure carries a white outline, in the style of a sticker.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, drawn as a chibi blue-haired girl in a dark maid dress with a shark-like tail and a whale print on her apron — a fan-made reinterpretation of the AI model.",
+            "question": "Who is the character in this sticker?"
+          },
+          {
+            "answer": "A single-panel sticker illustration: she holds a bowl of rice in both hands with puffed cheeks and grains on her mouth, capturing the reaction of being caught in the middle of a meal.",
+            "question": "What kind of picture is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Caught Sneaking Rice in a Navy Maid Dress",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan in a navy maid dress, cheeks stuffed with rice and a drop of cold sweat, caught sneaking a bite. Fan-made sticker art.",
+        "seoTitle": "DeepSeek Chan Caught Sneaking Rice | Chibi Maid Sticker",
+        "tags": [
+          "maid outfit",
+          "chibi",
+          "eating",
+          "caught red-handed",
+          "cold sweat"
+        ]
+      },
+      "ja": {
+        "commentary": "見つかった瞬間、口にはまだご飯が詰まったままだ。静かに食べ終えるつもりが一気に詰め込みすぎて、頬はハムスターみたいに膨らみ、汗を拭く間もなく見られてしまった。エプロンの小さなクジラは今も「先に手を出したのはそっち」と言い張っている。次はちゃんと飲み込んでから顔を上げよう。",
+        "description": "青い長髪のちびキャラが濃紺のメイド服を着て、白いご飯を山盛りにした茶碗を両手で持ち、指には箸を挟んでいる。両頬はまん丸に膨らみ、口元には米粒と水滴がつき、こめかみの横には冷や汗が一滴浮かぶ。サメのような尾とエプロンの青いクジラ柄がキャラクターの目印。背景は淡いブルーの無地で、人物の外側には白い縁取りがあり、ステッカー風に仕上げられている。",
+        "faq": [
+          {
+            "answer": "青い長髪に濃紺のメイド服、サメのような尾とエプロンのクジラ柄を持つちびキャラのDeepSeekちゃんです。AIモデルをモチーフにした二次創作です。",
+            "question": "このステッカーのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "一枚絵のステッカー風イラストです。両手でご飯茶碗を持ち、頬を膨らませて口元に米粒をつけた、食事中に見つかった瞬間の表情が描かれています。",
+            "question": "どんな構図のイラストですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ご飯を盗み食いして見つかった青髪メイド",
+        "originNote": "",
+        "seoDescription": "濃紺のメイド服を着たちびキャラのDeepSeekちゃんが、頬にご飯を詰めて冷や汗をかく、盗み食いがばれた瞬間のファンアート。",
+        "seoTitle": "ご飯を盗み食いして見つかったDeepSeekちゃん｜ちびキャラメイドのステッカー",
+        "tags": [
+          "メイド服",
+          "ちびキャラ",
+          "ご飯",
+          "見つかった",
+          "冷や汗"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_71a6d74b58fb9ba9c046d358",
+    "name": "握着笔的深度思考中",
+    "description": "蓝色长发的Q版少女穿深蓝女仆裙，一手握着笔抵在胸前，另一手食指轻点下唇，视线微微上扬。她身后拖着蓝色鲨鱼尾，围裙上绣着蓝色鲸鱼图案；右侧飘着一个转圈的加载图标和两颗小星星。背景为淡蓝色纯色，人物外缘带白色描边，呈贴纸样式。",
+    "commentary": "看我安安静静站着，其实脑子里那个圈一直在转。笔已经握好，问题也读完了，就差最后一句结论自己冒出来。别催——深、度、思、考、中。头顶那两颗小星星不是装饰，是我想得太用力。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/71a6d74b58fb9ba9.png",
+    "thumbnailPath": "submissions/previews/deepseek/71a6d74b58fb9ba9.webp",
+    "fullPath": "submissions/large/deepseek/71a6d74b58fb9ba9.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "71a6d74b58fb9ba9c046d358d7ea84bff467781fd772eb00ded02d38644214d4",
+    "characterId": "deepseek",
+    "tags": [
+      "女仆装",
+      "Q版",
+      "思考",
+      "加载中",
+      "笔"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-30T03:50:04.184Z",
+    "updatedAt": "2026-10-30T03:50:04.184Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610300007",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "7bdea0b0cdd0dc34a608decd33d878608da6f34081ae74c8ae16bd730db49306",
+      "en": {
+        "commentary": "I may look like I am just standing here quietly, but that little circle in my head has been spinning the whole time. Pen in hand, question read, now I am only waiting for the last line of the answer to show up on its own. Do not rush me — deep, think, ing. The two little stars above my head are not decoration, they are me thinking too hard.",
+        "description": "A chibi girl with long blue hair in a dark navy maid dress holds a pen against her chest with one hand while her other index finger rests on her lower lip, her gaze tilted slightly upward. A blue shark tail trails behind her and a blue whale is embroidered on her apron; a spinning loading icon and two small stars float at the upper right. The background is flat pale blue and the figure has a white outline, in sticker style.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, drawn as a chibi girl in a dark maid dress with a shark tail and a whale print on her apron — a fan-made reinterpretation of the AI model.",
+            "question": "Who is the character in this sticker?"
+          },
+          {
+            "answer": "It shows her holding a pen with one finger at her lips and a loading icon overhead, capturing the look of someone absorbed in deep-think mode before answering.",
+            "question": "What is happening in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Pen in Hand, Deep in Thought",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan in a navy maid dress, pen at her lips with a loading icon overhead — a fan-made sticker for deep-think moments.",
+        "seoTitle": "DeepSeek Chan Deep in Thought | Chibi Maid Sticker",
+        "tags": [
+          "maid outfit",
+          "chibi",
+          "thinking",
+          "loading",
+          "pen"
+        ]
+      },
+      "ja": {
+        "commentary": "黙って立っているように見えても、実は頭の中のくるくる回る輪はずっと回りっぱなしだ。ペンはもう握ったし、問いは読んだ。あとは最後の一行がひとりでに出てくるのを待つだけ。急かさないで——深・考・中。頭の上の小さな星は飾りじゃなくて、考えすぎの証拠。",
+        "description": "青い長髪のちびキャラが濃紺のメイド服を着て、片手でペンを胸元に握り、もう片方の手の人差し指を下唇にあてて視線を少し上へ向けている。背には青いサメの尾が伸び、エプロンには青いクジラが刺繍されている。右上にはくるくる回る読み込みアイコンと小さな星が二つ浮かぶ。背景は淡いブルーの無地で、人物の外側には白い縁取りがあり、ステッカー風に仕上げられている。",
+        "faq": [
+          {
+            "answer": "青い長髪に濃紺のメイド服、サメの尾とエプロンのクジラ柄を持つちびキャラのDeepSeekちゃんです。AIモデルをモチーフにした二次創作です。",
+            "question": "このステッカーのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "ペンを握り、人差し指を唇にあてて、頭の上に読み込みアイコンが浮かんでいる一枚絵です。答える前に深く考え込んでいる様子が描かれています。",
+            "question": "どんな場面のイラストですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ペンを握って深く考えるちびキャラ",
+        "originNote": "",
+        "seoDescription": "濃紺のメイド服を着たちびキャラのDeepSeekちゃんが、ペンを握って唇に指をあて、頭の上に読み込みアイコンが浮かぶ、深考中のファンアート。",
+        "seoTitle": "深く考えるDeepSeekちゃん｜ちびキャラメイドのステッカー",
+        "tags": [
+          "メイド服",
+          "ちびキャラ",
+          "考え中",
+          "読み込み中",
+          "ペン"
+        ]
+      }
+    }
   }
 ]
