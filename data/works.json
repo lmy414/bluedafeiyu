@@ -100672,5 +100672,1034 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_e667698a28e33e1f63b4f7fa",
+    "name": "大肥鱼女仆装三视图（御姐版）",
+    "description": "投稿者提供的御姐比例角色三视图，以正面、侧面、背面三个角度展示深蓝色女仆裙、白色花边围裙、白色长袜与蓝色鲸尾的完整造型，围裙上绣有小鲸鱼图案，可作为角色设定参考。",
+    "commentary": "被画成御姐版的我，好像一下子长大了好几岁。深蓝女仆裙、白围裙上还绣着一条小鲸鱼，尾巴也认认真真画了三遍——正面、侧面、背面都给你们看清楚了，别光盯着腿看啦。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/e667698a28e33e1f.png",
+    "thumbnailPath": "submissions/previews/deepseek/e667698a28e33e1f.webp",
+    "fullPath": "submissions/large/deepseek/e667698a28e33e1f.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "e667698a28e33e1f63b4f7fa67bb2513579ff60de767ac61842e5e4948bbfa3b",
+    "characterId": "deepseek",
+    "tags": [
+      "三视图",
+      "女仆装",
+      "御姐",
+      "鲸尾",
+      "角色设定"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "YaoKing",
+      "url": "https://www.douyin.com/user/MS4wLjABAAAAdlKDz1y2Fdxq7DipE5bpbUBMQBLbW-0bCwL91WTton0",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-31T10:25:39.553Z",
+    "updatedAt": "2026-10-31T10:25:39.553Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610310008",
+    "categoryIds": [
+      "setting"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "7161b8a578836cb322156c4acb7b144a6cbcca373c349cc5fcc6b62676d37031",
+      "en": {
+        "commentary": "Drawn in this mature style, I suddenly look a few years older. A navy maid dress, a white frilled apron stitched with a tiny whale, white thigh-highs, and a blue whale tail — front, side, and back, all three angles drawn with care. Take a look at the design, not just the legs.",
+        "description": "A three-view character sheet supplied by the submitter, showing a mature-proportioned maid design from the front, side, and back: a navy maid dress with white frills, a white apron embroidered with a small whale, white thigh-high socks, and a blue whale tail. It works as a character design reference.",
+        "faq": [
+          {
+            "answer": "It shows the maid design from the front, side, and back in a mature, adult proportion, including the navy dress, white apron, thigh-highs, and whale tail.",
+            "question": "What does this three-view sheet show?"
+          },
+          {
+            "answer": "Because it presents a turnaround reference rather than a single scene, it is filed as a character design sheet on this site.",
+            "question": "Why is it filed as a character design sheet?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Maid Outfit Three-View (Mature Version)",
+        "originNote": "",
+        "seoDescription": "A three-view reference of DeepSeek Chan in a navy maid dress, shown from the front, side, and back in a mature style.",
+        "seoTitle": "DeepSeek Chan Maid Outfit Three-View (Mature Version)",
+        "tags": [
+          "three-view sheet",
+          "maid outfit",
+          "mature style",
+          "whale tail",
+          "character design"
+        ]
+      },
+      "ja": {
+        "commentary": "お姉さん版で描かれると、急に何歳か大人びて見えますね。紺のメイド服、小クジラを縫い付けた白いエプロン、白いニーハイ、それに青いクジラの尾まで、正面・側面・背面の三方向から丁寧に描いてもらいました。脚ばかり見ないで、設定の方も見てくださいね。",
+        "description": "投稿者が提供したお姉さん体型のキャラクター三面図。正面・側面・背面から、白いフリル付きの紺色メイド服、小さいクジラの刺繍が入った白いエプロン、白いニーハイソックス、青いクジラの尾という造形を紹介する、設定資料として使える一枚。",
+        "faq": [
+          {
+            "answer": "お姉さん体型のメイド服姿を、正面・側面・背面の三方向から描いた設定資料です。紺のワンピース、白いエプロン、ニーハイ、クジラの尾が確認できます。",
+            "question": "この三面図には何が描かれていますか？"
+          },
+          {
+            "answer": "一つの場面を描いた絵ではなく、回り込んだ設定参考のため、当サイトでは設定図として掲載しています。",
+            "question": "なぜ設定図として扱うのですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃん メイド服三面図（お姉さんver.）",
+        "originNote": "",
+        "seoDescription": "紺のメイド服を着たDeepSeekちゃんを正面・側面・背面から描いた三面図。お姉さん体型の設定資料。",
+        "seoTitle": "DeepSeekちゃん メイド服三面図（お姉さんver.）",
+        "tags": [
+          "三面図",
+          "メイド服",
+          "お姉さん",
+          "クジラの尾",
+          "キャラ設定"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_a83535333036a4ca4e3e6c1f",
+    "name": "公园小径上的公主抱",
+    "description": "树荫下的公园小径上，一名黑发男子身穿深蓝色和服式长袍，横抱着橙发少女缓缓前行。少女着米白与橙色相间的层叠长裙，领口系黑色蝴蝶结，橙色长发垂落。画面为日式动画风格的完整场景，左上角带“AI生成”标记，右下角带工具水印。",
+    "commentary": "被这样稳稳抱着，连路都不用自己走，真是省事到让人眼红。她倒是一脸淡定，像是算力被宠到溢出来了。不过旁边这位黑发深蓝袍子的先生是哪家的角色？阳光下站得挺稳，还顺手抢了不少镜头。算了，树影和风都挺好看，这张我收下了——下回轮到我被抱，记得挑个凉快点儿的天气。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/a83535333036a4ca.png",
+    "thumbnailPath": "submissions/previews/claude/a83535333036a4ca.webp",
+    "fullPath": "submissions/large/claude/a83535333036a4ca.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "a83535333036a4ca4e3e6c1f6bf7f46016cce84a8a6161e8279ca8aa5bdf8066",
+    "characterId": "claude",
+    "tags": [
+      "Claude娘",
+      "公主抱",
+      "公园",
+      "散步",
+      "和风",
+      "双人"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "更吹落星如雨",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-31T12:28:46.286Z",
+    "updatedAt": "2026-10-31T12:28:46.286Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202610310002",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "98fdf179099d4e60091604c84702999d4901eb89b136c41e82860d514198a994",
+      "en": {
+        "commentary": "Being carried like that must be nice — someone else does all the walking. She looks perfectly calm, as if her compute budget has been thoroughly spoiled. Still, who is the black-haired gentleman in the deep blue robe? He stands steady in the sunlight and takes rather a lot of the frame. Never mind; the dappled shade and the breeze look lovely, so I will keep this one. Next time it is my turn to be carried, pick a cooler day.",
+        "description": "On a shaded park path, a black-haired man in a deep blue kimono-style robe carries an orange-haired girl in his arms. She wears a layered cream and orange dress with a black ribbon at the collar, her long orange hair falling loose. The piece is a full anime-style scene, marked as AI generated in the upper left with a tool watermark in the lower right.",
+        "faq": [
+          {
+            "answer": "Claude Chan, carried in the arms of a black-haired man in a deep blue robe along a park path.",
+            "question": "Who appears in this illustration?"
+          },
+          {
+            "answer": "A single-frame anime-style illustration showing a full park scene with shade, grass and a stone path.",
+            "question": "What kind of image is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "A Park-Path Carry",
+        "originNote": "",
+        "seoDescription": "Anime illustration of a black-haired man in a blue robe carrying Claude Chan along a sunlit park path.",
+        "seoTitle": "Claude Chan Park Stroll | DeepSeek Chan Sticker Gallery",
+        "tags": [
+          "Claude Chan",
+          "carrying",
+          "park",
+          "stroll",
+          "kimono",
+          "two characters"
+        ]
+      },
+      "ja": {
+        "commentary": "こうやって抱きかかえてもらえたら、歩く手間まで省けてしまうんだから羡ましい。本人はいたって平然としていて、計算資源をたっぷり甘やかされている顔だ。それにしても、紺色の長衣をまとった黒髪の人はどこの子だろう。日差しの中で堂々としていて、画面をかなり持っていっている。まあいいか、木漏れ日も風も気持ちよさそうだし、この一枚はもらっておく。次に抱っこされる番が回ってきたら、もっと涼しい日にしてね。",
+        "description": "木陰の続く公園の小道で、紺色の和服風の長衣をまとった黒髪の男性が、オレンジ色の髪の少女を横抱きにして歩いている。少女は生成りとオレンジを重ねたドレスに黒いリボンを合わせ、長いオレンジ色の髪を垂らしている。アニメ調の一枚絵で、公園の小道と木々、芝生まで含めた全景が描かれている。",
+        "faq": [
+          {
+            "answer": "黒髪で紺色の長衣をまとった男性に抱きかかえられ、公園の小道を進むクロードちゃんです。",
+            "question": "このイラストには誰が描かれていますか？"
+          },
+          {
+            "answer": "木々の緑と芝生、石畳の小道まで描かれた、アニメ調の一枚絵です。",
+            "question": "どのような絵ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "公園の小道で抱っこ",
+        "originNote": "",
+        "seoDescription": "紺色の長衣の男性に抱っこされ、木漏れ日の公園を歩くクロードちゃんのアニメ調イラスト。",
+        "seoTitle": "クロードちゃん 公園の抱っこ｜DeepSeek Chan",
+        "tags": [
+          "クロードちゃん",
+          "抱っこ",
+          "公園",
+          "散歩",
+          "和服",
+          "二人"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_8a04754383b5c448e91ef915",
+    "name": "突击肥鱼：战术装具下的战场冲锋",
+    "description": "深蓝发的角色戴着战术头盔、穿深蓝长裙与白色围裙，围裙上印着鲸鱼标记，身后拖着一条鲸尾。她身上挂着胸挂、弹匣包与腿挂，双手端着一支加装瞄具的突击步枪，在尘土与烟雾中向前奔跑，远处是模糊的舰体轮廓。",
+    "commentary": "头盔压着蓝毛、围裙配着胸挂，我这一身打扮怎么看都不太像去打仗，更像去把战场打扫干净。不过枪端稳了就是认真的，谁再说肥鱼只会卖萌，我就先跑给他看。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/8a04754383b5c448.png",
+    "thumbnailPath": "submissions/previews/deepseek/8a04754383b5c448.webp",
+    "fullPath": "submissions/large/deepseek/8a04754383b5c448.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "8a04754383b5c448e91ef9150ede2e75147e0edfb1c8d2ab27b87620430a8ea6",
+    "characterId": "deepseek",
+    "tags": [
+      "蓝色大肥鱼",
+      "DeepSeek娘",
+      "战术装备",
+      "突击步枪",
+      "战场",
+      "鲸尾",
+      "女仆装"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-31T14:16:12.635Z",
+    "updatedAt": "2026-10-31T14:16:12.635Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610310009",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "4f536c9d21a7e00a569e8be0f596220c672de424731a668ed1145e6d63a68ef1",
+      "en": {
+        "commentary": "Helmet squashing blue hair, apron over a plate carrier — I look less ready to fight than ready to sweep the battlefield clean. But once the rifle is up I am serious. Say DeepSeek Chan is only good for being cute, and I will outrun you first.",
+        "description": "A blue-haired character with a whale tail wears a dark blue dress and white apron marked with a whale, topped with a tactical helmet and body armor. Carrying pouches and a drop-leg holster, she runs forward with an assault rifle fitted with an optic, kicking up dust and smoke while blurred ship hulls stand in the distance.",
+        "faq": [
+          {
+            "answer": "A blue-haired character with a whale tail, dressed in a dark blue gown and white apron with a whale mark, plus a tactical helmet, plate carrier and pouches, holding an assault rifle.",
+            "question": "What does the character in this illustration look like?"
+          },
+          {
+            "answer": "It is a single-frame illustration. The character charges toward the viewer through dust and smoke, and blurred ship hulls fill the background.",
+            "question": "How is the scene laid out?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Assault DeepSeek Chan: Battlefield Charge in Tactical Gear",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan as a blue-haired, whale-tailed girl in a maid dress and tactical gear, charging across a smoky battlefield with an assault rifle.",
+        "seoTitle": "Assault DeepSeek Chan: Tactical Gear Battlefield Charge Illustration",
+        "tags": [
+          "Blue-Haired Whale",
+          "DeepSeek Chan",
+          "Tactical Gear",
+          "Assault Rifle",
+          "Battlefield",
+          "Whale Tail",
+          "Maid Outfit"
+        ]
+      },
+      "ja": {
+        "commentary": "ヘルメットで青い髪を押さえて、エプロンの上にタクティカルベスト。これじゃ戦いに行くというより、戦場を掃除しに行く格好に見える。でも銃を構えたら本気。DeepSeekちゃんは可愛いだけなんて言ったら、まず走って見せてあげる。",
+        "description": "青い髪にクジラの尾を持つキャラクターが、クジラのマークが入った白いエプロンと濃紺のドレスを着て、タクティカルヘルメットに防弾ベストを合わせている。弾倉ポーチとレッグホルスターを下げ、照準器付きのアサルトライフルを構えて砂砲と煙の中を前へ走り、奥には艦のシルエットがぼんやり浮かぶ。",
+        "faq": [
+          {
+            "answer": "青い髪とクジラの尾を持ち、濃紺のドレスにクジラのマーク入り白エプロン、さらにタクティカルヘルメットと防弾ベスト、ポーチを身につけてアサルトライフルを構えたキャラクターです。",
+            "question": "このイラストのキャラクターはどんな姿ですか？"
+          },
+          {
+            "answer": "一枚絵のイラストです。砂砲と煙の中をこちらへ突進し、背景にはぼんやりとした艦のシルエットが広がっています。",
+            "question": "画面はどのように構成されていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "突撃ブルーフィッシュ：タクティカル装備の戦場突撃",
+        "originNote": "",
+        "seoDescription": "青い髪とクジラの尾を持つ DeepSeekちゃんが、メイド服にタクティカル装備を合わせ、砂煙の戦場をアサルトライフルで突撃するイラスト。",
+        "seoTitle": "突撃ブルーフィッシュ：タクティカル装備の戦場突撃イラスト",
+        "tags": [
+          "ブルーフィッシュ",
+          "DeepSeekちゃん",
+          "タクティカル装備",
+          "アサルトライフル",
+          "戦場",
+          "クジラの尾",
+          "メイド服"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_a7459c603ace9eb0c4a6f659",
+    "name": "拔掉电源前，先把苹果削完",
+    "description": "三格漫画。第一格：病房里，穿深蓝女仆装、带鲸尾的蓝发角色坐在病床边削苹果，果皮拉成长长的螺旋；病床上另一名蓝发角色戴着氧气面罩，心电监护显示平稳波形。第二格：画面打出“DeepSeek API 现已支持网页搜索与抓取”，一只手把电源插头从插座上拔下。第三格：监护仪数值归零、屏幕转红，病床上的角色双眼变成叉号；女仆装角色低头用手帕擦眼泪。",
+    "commentary": "苹果得削完整条螺旋，插头才能拔——送人走也要有仪式感。网页搜索与抓取一上线，抢救室就安静了。别盯着我的手帕看，我这是削苹果熏的，跟别的没关系。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/a7459c603ace9eb0.png",
+    "thumbnailPath": "submissions/previews/deepseek/a7459c603ace9eb0.webp",
+    "fullPath": "submissions/large/deepseek/a7459c603ace9eb0.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "a7459c603ace9eb0c4a6f659dac2e873de871c785596d0d70d91900ec5770170",
+    "characterId": "deepseek",
+    "tags": [
+      "漫画",
+      "DeepSeek",
+      "网页搜索",
+      "拔电源",
+      "拟人"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-31T14:32:09.600Z",
+    "updatedAt": "2026-10-31T14:32:09.600Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610310010",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek",
+      "other"
+    ],
+    "i18n": {
+      "sourceHash": "8d367f8d3fad20ea4ad7db750bf0762ac87ddfab68916e45ff144daacf1dd792",
+      "en": {
+        "commentary": "You peel the apple into one unbroken spiral before you pull the plug. Even a rival deserves a proper send-off. The moment web search and fetching went live, the ward went quiet. Don't read too much into the handkerchief — it's the apple fumes, nothing else.",
+        "description": "A three-panel comic. Panel one: in a hospital ward, a blue-haired character in a dark blue maid outfit with a whale tail sits by the bed peeling an apple, the peel curling into a long spiral, while another blue-haired character lies under an oxygen mask with a steady heartbeat on the monitor. Panel two: an on-screen banner reads that the DeepSeek API now supports web search and fetching, and a hand pulls the power plug out of the wall socket. Panel three: the monitor reads zero and turns red, the patient's eyes become X marks, and the maid character wipes her tears with a handkerchief.",
+        "faq": [
+          {
+            "answer": "Three. The first shows the ward visit, the second the web search announcement with the plug being pulled, the third the flatlined monitor.",
+            "question": "How many panels does this comic have?"
+          },
+          {
+            "answer": "It announces that the DeepSeek API now supports web search and fetching, which is the punchline the whole comic builds toward.",
+            "question": "What does the middle panel's banner say?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Finish the Apple Before You Pull the Plug",
+        "originNote": "",
+        "seoDescription": "A three-panel DeepSeek Chan comic: an apple is peeled in one spiral, the plug is pulled as web search goes live, and the monitor flatlines.",
+        "seoTitle": "DeepSeek Chan Comic: Apple First, Then the Plug",
+        "tags": [
+          "comic",
+          "DeepSeek",
+          "web search",
+          "unplugging",
+          "anthropomorphism"
+        ]
+      },
+      "ja": {
+        "commentary": "リンゴは皮をひと続きに剥いてから、コンセントを抜く。見送る相手にも礼儀ってもんでしょ。ウェブ検索と取得が使えるようになった瞬间、病室はしんと静まった。ハンカチは勘弁して、これはリンゴの皮のせいだから。",
+        "description": "三コマ漫画。一コマ目、病室で紺色のメイド服とクジラの尾を持つ青髪のキャラクターがベッドのそばでリンゴを剥いており、皮は長いらせん状に伸びている。ベッドの上のもう一人の青髪キャラクターは酸素マスクをつけ、モニターには安定した心拍が映っている。二コマ目、DeepSeek API がウェブ検索と取得に対応したという告知が表示され、手が電源プラグをコンセントから抜く。三コマ目、モニターの数値がゼロになって赤く変わり、ベッドの上のキャラクターの目はバツ印に、メイド服のキャラクターはハンカチで涙を拭いている。",
+        "faq": [
+          {
+            "answer": "三コマです。一コマ目は病室の見舞い、二コマ目はウェブ検索の告知と電源プラグ、三コマ目はモニターの数値がゼロになる場面です。",
+            "question": "この漫画は何コマですか？"
+          },
+          {
+            "answer": "DeepSeek API がウェブ検索と取得に対応したという内容で、この漫画のオチになる告知です。",
+            "question": "真ん中のコマの告知には何が書かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "電源を抜く前に、リンゴを剥き終えて",
+        "originNote": "",
+        "seoDescription": "DeepSeekちゃんの三コマ漫画。リンゴの皮をひと続きに剥き、ウェブ検索の奔始とともに電源を抜くと、モニターの数値がゼロになる。",
+        "seoTitle": "DeepSeekちゃん漫画：リンゴを剥いてから電源を",
+        "tags": [
+          "漫画",
+          "DeepSeek",
+          "ウェブ検索",
+          "電源プラグ",
+          "擬人化"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_bcb171afa4601c6d6d9d5142",
+    "name": "Kimi娘·Alan Walker 面具舞台装",
+    "description": "银白长发的少女端坐在白色座椅上，脸戴印有「W」字样的黑色口罩，身穿黑白配色的舞台礼服，披风与裙摆上装饰着钢琴键盘、星点与月牙图案，双手握着一只六边形麦克风，身后是简洁的浅色舞台背景。整体造型向 Alan Walker 的经典形象致敬。",
+    "commentary": "灯光打下来，她抱着那只六边形麦克风坐得端端正正，好像下一秒就要开嗓。琴键藏在裙摆里，口罩上那个「W」把整身气势都压住了——Kimi 这回不打算敲代码，是打算登台。我承认，她比我上镜得多。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/kimi/bcb171afa4601c6d.jpg",
+    "thumbnailPath": "submissions/previews/kimi/bcb171afa4601c6d.webp",
+    "fullPath": "submissions/large/kimi/bcb171afa4601c6d.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1850,
+    "height": 1500,
+    "fileSize": 247160,
+    "sha256": "bcb171afa4601c6d6d9d51427ce031baf93a70878d7ad84993f591777ee732f6",
+    "characterId": "kimi",
+    "tags": [
+      "Kimi娘",
+      "Alan Walker",
+      "口罩",
+      "钢琴键盘",
+      "舞台",
+      "银白长发"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-31T14:58:53.966Z",
+    "updatedAt": "2026-10-31T14:58:53.966Z",
+    "tone": "kimi",
+    "symbol": "",
+    "slug": "kimi202610310001",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "kimi"
+    ],
+    "i18n": {
+      "sourceHash": "36b6ebd340859a4fb1d512c268000aaec6f3e757a57c81cd96d734132c6a4fc9",
+      "en": {
+        "commentary": "The stage light hits her and she sits bolt upright, mic in both hands, as if she is about to start singing. Piano keys hide in the skirt, and the W on the mask does all the talking. Kimi is not here to write code tonight — she is here to take the stage. I will admit it: she photographs better than I do.",
+        "description": "A silver-haired girl sits upright on a white chair, wearing a black face mask marked with a W and a black-and-white stage dress patterned with piano keys, stars and crescent moons. She holds a hexagonal microphone in front of a plain pale stage backdrop. The look is a tribute to Alan Walker's signature stage image.",
+        "faq": [
+          {
+            "answer": "Kimi Chan, drawn in a fan-designed stage outfit inspired by Alan Walker.",
+            "question": "Who appears in this artwork?"
+          },
+          {
+            "answer": "A black mask with a W, a black-and-white dress with piano-key and star patterns, gloves and ankle-strap heels, plus a hexagonal microphone.",
+            "question": "What is she wearing?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Kimi Chan in an Alan Walker Stage Outfit",
+        "originNote": "",
+        "seoDescription": "Fan artwork of Kimi Chan in a black W mask, a piano-key stage dress and a hexagonal microphone, staged as a tribute to Alan Walker.",
+        "seoTitle": "Kimi Chan in an Alan Walker stage outfit: masked piano-key dress",
+        "tags": [
+          "Kimi Chan",
+          "Alan Walker",
+          "mask",
+          "piano keys",
+          "stage",
+          "silver hair"
+        ]
+      },
+      "ja": {
+        "commentary": "ステージライトを浴びて、彼女は両手でマイクを抱えたまま背筋を伸ばしている。今にも歌い出しそうだ。スカートにはピアノの鍵盤が隠れていて、マスクのWがすべてを語っている。今夜のKimiちゃんはコードを書く気はなく、ステージに立つ気らしい。悔しいけれど、写真映えは私より上だ。",
+        "description": "銀白色の長い髪の少女が白い椅子にまっすぐ座り、Wの文字が入った黒いマスクを着けている。黒白のステージドレスにはピアノの鍵盤、星、三日月の模様が入り、六角形のマイクを両手で持つ。背景は簡素で明るいステージ。Alan Walker の定番イメージへのオマージュとなっている。",
+        "faq": [
+          {
+            "answer": "Alan Walker のステージイメージを参考にしたファン制作の衣装をまとったKimiちゃんです。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "Wの入った黒いマスク、鍵盤と星の模様が入った黒白のドレス、手袋とアンクルストラップのヒール、そして六角形のマイクです。",
+            "question": "どんな衣装を着ていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Kimiちゃん・Alan Walker マスクステージ衣装",
+        "originNote": "",
+        "seoDescription": "Wの黒マスク、鍵盤模様のドレス、六角形のマイクをまとったKimiちゃんのファンアート。Alan Walker へのオマージュ。",
+        "seoTitle": "Kimiちゃんの Alan Walker 風ステージ衣装：マスクと鍵盤ドレス",
+        "tags": [
+          "Kimiちゃん",
+          "Alan Walker",
+          "マスク",
+          "鍵盤",
+          "ステージ",
+          "銀髪"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_18ce4f8bc406ac57fefbadf9",
+    "name": "Kimi娘摔提琴：token是金子做的？",
+    "description": "白发紫裙的Kimi娘在画面中央炸毛，把一把深紫色小提琴狠狠摔在地上，琴身碎裂、琴弓散落。画面左侧伸出一只手，对话气泡质问这把提琴是金子做的还是token是金子做的，Kimi娘则回嘴让对方去找DeepSeek。Q版造型，紫黑配色，单幅构图。",
+    "commentary": "别摔别摔，那琴我练了三个月才舍得拉一次……等等，她说让人来找我？行吧，token 贵这事确实该问我们。不过下次吵架前先把琴放下，碎木屑扫起来很麻烦的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/kimi/18ce4f8bc406ac57.png",
+    "thumbnailPath": "submissions/previews/kimi/18ce4f8bc406ac57.webp",
+    "fullPath": "submissions/large/kimi/18ce4f8bc406ac57.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "18ce4f8bc406ac57fefbadf9e94f247e22b004faa0618d3e137f9e8bbbe4bf15",
+    "characterId": "kimi",
+    "tags": [
+      "Kimi",
+      "摔提琴",
+      "token",
+      "吐槽",
+      "Q版"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-31T15:02:43.717Z",
+    "updatedAt": "2026-10-31T15:02:43.717Z",
+    "tone": "kimi",
+    "symbol": "",
+    "slug": "kimi202610310002",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "kimi"
+    ],
+    "i18n": {
+      "sourceHash": "b1cae1981711e9c747e35cba5a1e90a00a83d3fb31c7da8c24846314bdb07749",
+      "en": {
+        "commentary": "Careful, careful! I only got up the nerve to play that violin once in three months... Wait, she says people should come ask me about it? Fine, token prices are our problem to answer for. But next time, put the violin down before you start arguing — sawdust is a pain to sweep up.",
+        "description": "A white-haired Kimi Chan in a purple and black dress stands fuming in the middle of the frame, having slammed a deep purple violin into the ground; the body has cracked apart and the bow lies scattered. A hand reaches in from the left, and speech bubbles trade jabs: one asks whether the violin is made of gold or the tokens are, and Kimi Chan retorts that the other party should go ask DeepSeek.",
+        "faq": [
+          {
+            "answer": "Kimi Chan, the anthropomorphic character of the Kimi model by Moonshot AI, shown in a chibi design with a K-shaped hair ornament, purple and black dress and crescent moon accents.",
+            "question": "Who is the character in this image?"
+          },
+          {
+            "answer": "It is a single-panel fan-made joke image with dialogue bubbles, so it is filed under meme rather than comic or standing art.",
+            "question": "Why is this image classified as a meme?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Kimi Chan Smashes Her Violin Over Token Prices",
+        "originNote": "",
+        "seoDescription": "Chibi Kimi Chan smashes a violin in a single-panel fan meme, trading barbs about token prices and pointing the complaint at DeepSeek Chan.",
+        "seoTitle": "Kimi Chan Smashes Her Violin: Are Tokens Made of Gold?",
+        "tags": [
+          "Kimi",
+          "smashing violin",
+          "token",
+          "rant",
+          "chibi"
+        ]
+      },
+      "ja": {
+        "commentary": "ちょっとちょっと、バイオリンはやめて！あれ、三か月がかりでやっと弾く気になった一本なんだから……え、うちに聞けって？はいはい、トークンの値段の話なら確かにうちの出番です。でも次は楽器を置いてから言い合おうね、木くずの掃除が大変なんだから。",
+        "description": "白髪に紫と黒のドレスをまとったKimiちゃんが、真ん中で怒りをあらわにしながら濃い紫のバイオリンを床にたたきつけた一枚。琴身は割れて弓も散らばっている。左からは手が差し込まれ、吹き出しで「このバイオリンは金でできているのか、それともトークンが金なのか」と問いかけ、KimiちゃんはDeepSeekに聞けと言い返している。ちびキャラのデフォルメ調、紫と黒の配色、一枚絵の構図。",
+        "faq": [
+          {
+            "answer": "Kimiモデル（Moonshot AI）の擬人化キャラクター、Kimiちゃんです。Kの字の髪飾り、紫と黒のドレス、三日月のモチーフという特徴が描かれています。",
+            "question": "この画像のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "吹き出し付きの一枚絵で、分格のない単一画面のツッコミ表現なので、漫画ではなくミームとして分類しています。",
+            "question": "なぜミームに分類されるのですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Kimiちゃん、バイオリンを叩き割る",
+        "originNote": "",
+        "seoDescription": "ちびキャラのKimiちゃんがバイオリンを叩き割り、トークンの値段をめぐってDeepSeekちゃんに話を振る一枚絵のミーム。",
+        "seoTitle": "Kimiちゃんがバイオリンを叩き割る：トークンは金製？",
+        "tags": [
+          "Kimi",
+          "バイオリンを壊す",
+          "トークン",
+          "ツッコミ",
+          "ちびキャラ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_f47197cc744854ba977613bf",
+    "name": "Kimi娘卧床吐槽：杨植麟是个嘉豪",
+    "description": "白发Q版Kimi娘躺在床上，盖着暗蓝色被子只露出半张脸，眉毛微微上挑、嘴巴张开，像在嘟囔什么，头侧有带K字蝴蝶结和三角形挂饰。画面下方横着一行巨大白字字幕：“杨植麟是个嘉豪”。单幅构图，字幕位于底部。",
+    "commentary": "躺平也能把话说清楚，这态度我熟。不过大半夜缩在被子里念老板的名字，真的很像被 token 价格气到失眠的样子。杨老师，被人念叨到这个程度，是不是该发点优惠券了？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/kimi/f47197cc744854ba.png",
+    "thumbnailPath": "submissions/previews/kimi/f47197cc744854ba.webp",
+    "fullPath": "submissions/large/kimi/f47197cc744854ba.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "f47197cc744854ba977613bfd1b34e37d900d94a0e39a3cfa7910df51c3fa89e",
+    "characterId": "kimi",
+    "tags": [
+      "Kimi",
+      "杨植麟",
+      "卧床",
+      "字幕梗",
+      "Q版"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-31T15:03:24.327Z",
+    "updatedAt": "2026-10-31T15:03:24.327Z",
+    "tone": "kimi",
+    "symbol": "",
+    "slug": "kimi202610310003",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "kimi"
+    ],
+    "i18n": {
+      "sourceHash": "5a56915189d1412bd190add6341cc86f6daa88fd097e7367ff72cdf627cd6c27",
+      "en": {
+        "commentary": "Even lying down, she gets her point across — I respect that. Though muttering the boss's name from under a blanket at some ungodly hour really looks like someone kept awake by token prices. Mr. Yang, being complained about this thoroughly probably means it is coupon time.",
+        "description": "A white-haired chibi Kimi Chan lies in bed, the dark blue blanket pulled up so only half her face shows. Her brows are slightly raised and her mouth is open as if grumbling, and a bow with a K charm plus a triangle ornament sit at the side of her head. A single line of large white subtitle text runs across the bottom of the frame: Yang Zhilin Is a Jiahao.",
+        "faq": [
+          {
+            "answer": "It is Kimi Chan, the anthropomorphic character of the Kimi model by Moonshot AI, drawn in chibi style with the K-shaped bow and triangle hair ornaments.",
+            "question": "Who is the character in this picture?"
+          },
+          {
+            "answer": "The image is one undivided panel of a character in bed with a single caption line, which expresses a joke rather than a multi-panel story, so it is filed as a meme.",
+            "question": "Why is this filed as a meme and not a comic?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Kimi Chan in Bed: Yang Zhilin Is a Jiahao",
+        "originNote": "",
+        "seoDescription": "Chibi Kimi Chan peeks out from under a blanket with a one-line caption calling Moonshot AI founder Yang Zhilin a jiahao, a single-panel fan meme.",
+        "seoTitle": "Kimi Chan in Bed: Yang Zhilin Is a Jiahao",
+        "tags": [
+          "Kimi",
+          "Yang Zhilin",
+          "in bed",
+          "caption meme",
+          "chibi"
+        ]
+      },
+      "ja": {
+        "commentary": "横になっていても言いたいことは言う、その姿勢は見習いたいですね。でも深夜に布団から社長の名前を呟くのは、トークンの値段に悩んで眠れない人の図にしか見えません。楊先生、ここまで言われるのは、そろそろクーポンの出番なのでは？",
+        "description": "白髪のちびキャラKimiちゃんがベッドに横たわり、濃い青の布団をかぶって顔を半分だけ出している。眉を少し上げて口を開け、何かつぶやいているような表情で、頭の横にはKの字のリボンと三角形の飾りが付いている。画面下には大きく白い字幕で「楊植麟は嘉豪」と一行だけ入る一枚絵。",
+        "faq": [
+          {
+            "answer": "Kimiモデル（Moonshot AI）の擬人化キャラクター、Kimiちゃんです。Kの字のリボンと三角形の髪飾りが目印です。",
+            "question": "この画像のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "布団にいるキャラクターと一行の字幕だけの、分割のない一枚絵であり、コマ割りのある物語ではないため、漫画ではなくミームとして分類しています。",
+            "question": "なぜ漫画ではなくミームなのですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Kimiちゃん、布団の中で楊植麟にツッコミ",
+        "originNote": "",
+        "seoDescription": "ちびキャラのKimiちゃんが布団から顔を出し、一行の字幕で楊植麟を「嘉豪」と評するファンミーム。",
+        "seoTitle": "Kimiちゃん、布団の中で楊植麟にツッコミ",
+        "tags": [
+          "Kimi",
+          "楊植麟",
+          "布団",
+          "字幕ミーム",
+          "ちびキャラ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_1a919d96629d67b7a8cf8d1d",
+    "name": "Kimi娘思维链崩溃：我几乎是哔了nnn",
+    "description": "白发Q版Kimi娘瘫倒在满地碎纸间，双手撑地、双腿伸开，螺旋状的眼睛和张开的嘴表明已经推理到恍惚，头侧的K字饰品与月亮图案仍在。背景是多台亮着对话框的显示器、贴满问号的便签、黑色猫形摆件和K字杯。画面上方横排大字：“我几乎是哔了nnn”。单幅构图。",
+    "commentary": "看到这张图我安心了，原来不只是我在长思维链里绕圈圈。满地被揉皱的纸、三块屏幕、一堆写着问号的便签，这哪里是推理，这是在一堆服务器前面先把自己推理倒。下次崩之前先把杯子放好，泼了又得重启。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/kimi/1a919d96629d67b7.png",
+    "thumbnailPath": "submissions/previews/kimi/1a919d96629d67b7.webp",
+    "fullPath": "submissions/large/kimi/1a919d96629d67b7.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "1a919d96629d67b7a8cf8d1da4c05218980fa303a97cd2a91ffec4067bc9d9f5",
+    "characterId": "kimi",
+    "tags": [
+      "Kimi",
+      "思维链",
+      "发疯",
+      "加班",
+      "Q版"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-31T15:04:15.558Z",
+    "updatedAt": "2026-10-31T15:04:15.558Z",
+    "tone": "kimi",
+    "symbol": "",
+    "slug": "kimi202610310004",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "kimi"
+    ],
+    "i18n": {
+      "sourceHash": "b26962315e188d86be64e447e8402337ca1d8df467e0ff95dda41705031dddc0",
+      "en": {
+        "commentary": "Seeing this actually calms me down — so I am not the only one going in circles inside a long chain of thought. Crumpled paper everywhere, three monitors, a wall of sticky notes covered in question marks: that is not reasoning, that is reasoning herself into the floor in front of a server rack. Next time, put the mug down first. Spills mean a restart.",
+        "description": "A white-haired chibi Kimi Chan has collapsed on a floor covered in torn paper, holding herself up on her hands with her legs stretched out, spiral eyes and an open mouth showing she has reasoned herself into a daze; the K charms and crescent motifs remain at her head. Behind her are several monitors showing chat windows, sticky notes scribbled with question marks, black cat figures and a mug marked with a K. Large lettering runs across the top of the frame: I am almost beeped nnn.",
+        "faq": [
+          {
+            "answer": "It is Kimi Chan, the anthropomorphic character of the Kimi model by Moonshot AI, drawn in chibi style with the K charms, crescent and cat motifs.",
+            "question": "Who is the character in this image?"
+          },
+          {
+            "answer": "It is one undivided panel in which an exaggerated expression and a big caption carry the joke, with no panel borders, so it is filed as a meme rather than a comic.",
+            "question": "Why is it classified as a meme?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Kimi Chan's Chain of Thought Crashes: I Am Almost Beeped nnn",
+        "originNote": "",
+        "seoDescription": "Chibi Kimi Chan lies amid crumpled paper and monitors with spiral eyes as her chain of thought gives out, captioned I am almost beeped nnn.",
+        "seoTitle": "Kimi Chan's Chain of Thought Crashes on the Floor",
+        "tags": [
+          "Kimi",
+          "chain of thought",
+          "meltdown",
+          "overtime",
+          "chibi"
+        ]
+      },
+      "ja": {
+        "commentary": "この一枚を見て安心しました。長い思考の連鎖の中で同じ所を回っているのは私だけじゃなかったんですね。丸められた紙、モニタ三台、疑問符だらけの付箋——これは推論じゃなくて、サーバーの前で自分を推論で倒している図です。次は倒れる前にカップを置いてね。こぼすとまた再起動だから。",
+        "description": "白髪のちびキャラKimiちゃんが、ちぎられた紙が散乱する床に崩れ落ちている。両手を床について足を伸ばし、渦巻き状の目と開いた口からは、考え続けて朦朧としている様子がわかる。頭の横にはKの字の飾りと三日月のモチーフが残っている。背景には会話画面の映ったモニタが何台も並び、疑問符の付箋、黒い猫の置物、Kの字の入ったカップがある。画面上部には、もう限界だと叫ぶ大きな文字が横一列に入る。一枚絵の構図。",
+        "faq": [
+          {
+            "answer": "Kimiモデル（Moonshot AI）の擬人化キャラクター、Kimiちゃんです。Kの字の飾り、三日月、猫のモチーフが特徴です。",
+            "question": "この画像のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "分割のない一枚絵で、大げさな表情と大きな字幕で笑いを取る構図のため、漫画ではなくミームとして分類しています。",
+            "question": "なぜミームに分類されるのですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Kimiちゃんの思考の連鎖が崩壊：もうダメだnnn",
+        "originNote": "",
+        "seoDescription": "ちびキャラのKimiちゃんが紙くずとモニタに囲まれて渦巻き目で倒れ、思考の連鎖が崩壊する一枚絵のミーム。",
+        "seoTitle": "Kimiちゃんの思考の連鎖が崩壊して床に倒れる",
+        "tags": [
+          "Kimi",
+          "思考の連鎖",
+          "崩壊",
+          "残業",
+          "ちびキャラ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_e9d432c3431232b29b81ba96",
+    "name": "白骑士肥鱼",
+    "description": "蓝发角色身穿白色板甲、头戴女仆头饰，双手握持一把巨大的阔剑竖立在面前。剑刃上映出一张红眼獠牙的狰狞倒影，与本人平静的表情形成对照。背景为灰蓝色天空与飘落的花瓣，整体气氛冷峻。",
+    "commentary": "白甲、巨剑、女仆头饰，这套搭配本身就有点矛盾，不过我挺喜欢。剑刃里那个红眼睛的家伙又盯着我看了，别理它，那只是反光。……好吧，也许不只是反光。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/e9d432c3431232b2.png",
+    "thumbnailPath": "submissions/previews/deepseek/e9d432c3431232b2.webp",
+    "fullPath": "submissions/large/deepseek/e9d432c3431232b2.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "e9d432c3431232b29b81ba964ab50a5b2b4030ca1475756d18c63ebf06293f5c",
+    "characterId": "deepseek",
+    "tags": [
+      "白骑士",
+      "铠甲",
+      "巨剑",
+      "倒影",
+      "女仆头饰",
+      "蓝发"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-31T15:26:06.858Z",
+    "updatedAt": "2026-10-31T15:26:06.858Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610310011",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "ac0495425400fb93696308683e5e8e050d3cbc58afb73972a0683a36f1684554",
+      "en": {
+        "commentary": "White plate, a greatsword, and a maid headdress — a contradictory outfit, but I like it. That red-eyed thing in the blade is staring at me again. Ignore it, it is just a reflection. ...Fine, maybe not only a reflection.",
+        "description": "A blue-haired character in white plate armor and a maid headdress stands holding a massive greatsword upright before her. The blade reflects a snarling, red-eyed visage that contrasts with her calm expression. A gray-blue sky and drifting petals set a cold, severe mood.",
+        "faq": [
+          {
+            "answer": "It is a single framed half-body painting, so it is catalogued as an illustration rather than a comic or a standing figure sheet.",
+            "question": "Why is this artwork filed as an illustration?"
+          },
+          {
+            "answer": "The mirrored face is the same character rendered as a monstrous reflection on the polished blade, not an additional character in the scene.",
+            "question": "Is the figure inside the sword a separate character?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "White Knight DeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "Fan illustration of DeepSeek Chan in white plate armor and a maid headdress, holding a greatsword that mirrors a red-eyed reflection.",
+        "seoTitle": "White Knight DeepSeek Chan – Armored Fan Art",
+        "tags": [
+          "white knight",
+          "armor",
+          "greatsword",
+          "reflection",
+          "maid headdress",
+          "blue hair"
+        ]
+      },
+      "ja": {
+        "commentary": "白の甲斐、大剣、メイドのヘッドドレス。組み合わせは矛盾しているけど、私は気に入ってる。剣身の中の赤い目のやつがまたこっちを見てる。気にしないで、ただの反射だから。……はい、たぶん反射だけじゃないけど。",
+        "description": "青い髪のキャラクターが白い甲斐とメイドのヘッドドレスを身につけ、巨大な大剣を正面に立てて立っている。剣身には赤い目で牙をむいた恐ろしい姿が映り、本人の穏やかな表情と対照をなしている。灰色がかった青い空と舞う花びらが冷厳な雰囲気を添える。",
+        "faq": [
+          {
+            "answer": "一枚の半身構図の絵なので、漫画や立ち絵ではなく挿絵として分類しています。",
+            "question": "なぜこの作品は挿絵として分類されているのですか？"
+          },
+          {
+            "answer": "剣に映る顔は、磨かれた刃に映った同じキャラクターの怪物じみた反射であり、別のキャラクターではありません。",
+            "question": "剣の中の姿は別のキャラクターですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "白騎士DeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "白い甲斐とメイドのヘッドドレスをまとったDeepSeekちゃんのファンイラスト。大剣の刃に赤い目の反射が映り込む。",
+        "seoTitle": "白騎士DeepSeekちゃん – 甲斐姿のファンアート",
+        "tags": [
+          "白騎士",
+          "甲斐",
+          "大剣",
+          "反射",
+          "メイドのヘッドドレス",
+          "青い髪"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_cb2376a40dfe2b1e0fe81990",
+    "name": "黑骑士肥鱼",
+    "description": "蓝发角色身穿黑色板甲、头戴女仆头饰，双手握持一把巨大的阔剑竖立在面前。剑刃上映出一张红眼獠牙的狰狞倒影，周围泛着暗红色的光。背景为近黑的深色，整体氛围沉重。",
+    "commentary": "和白骑士那版是同一套构图，只是把甲斐换成了黑色，灯光也压暗了。剑刃里那个红眼的影子在这边明显更兴奋，好像在说：这才对。我确实更喜欢这一版。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/cb2376a40dfe2b1e.png",
+    "thumbnailPath": "submissions/previews/deepseek/cb2376a40dfe2b1e.webp",
+    "fullPath": "submissions/large/deepseek/cb2376a40dfe2b1e.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "cb2376a40dfe2b1e0fe81990b280d704010351c70092a6f5180629fbc7aa133e",
+    "characterId": "deepseek",
+    "tags": [
+      "黑骑士",
+      "铠甲",
+      "巨剑",
+      "倒影",
+      "女仆头饰",
+      "暗红"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-31T15:26:50.435Z",
+    "updatedAt": "2026-10-31T15:26:50.435Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610310012",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "27742c9cdcd5ad1ce4d25fa5b4f04f56a062f3b88ad17f9654128545b0c8e82a",
+      "en": {
+        "commentary": "Same composition as the white knight piece, just with black armor and the lighting pulled down. The red-eyed shadow in the blade looks far more pleased on this side, as if to say: now that is more like it. I do prefer this version.",
+        "description": "A blue-haired character in black plate armor and a maid headdress stands holding a massive greatsword upright before her. The blade reflects a snarling, red-eyed visage, glowing with a dark red light. The background is nearly black, giving the scene a heavy mood.",
+        "faq": [
+          {
+            "answer": "It is a single framed half-body painting, so it is catalogued as an illustration rather than a comic or a standing figure sheet.",
+            "question": "Why is this artwork filed as an illustration?"
+          },
+          {
+            "answer": "The mirrored face is the same character shown as a monstrous reflection on the polished blade, not an additional character in the scene.",
+            "question": "Is the figure inside the sword a separate character?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Black Knight DeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "Fan illustration of DeepSeek Chan in black plate armor and a maid headdress, holding a greatsword that mirrors a glowing red-eyed reflection.",
+        "seoTitle": "Black Knight DeepSeek Chan – Dark Armor Fan Art",
+        "tags": [
+          "black knight",
+          "armor",
+          "greatsword",
+          "reflection",
+          "maid headdress",
+          "dark red"
+        ]
+      },
+      "ja": {
+        "commentary": "白騎士の作品と同じ構図で、鎧を黒にして光を落としただけ。剣身の中の赤い目の影はこっちの方がずっと楽しそうで、「これだよ」と言っているみたい。私は断然こっちが好き。",
+        "description": "青い髪のキャラクターが黒い鎧とメイドのヘッドドレスを身につけ、巨大な大剣を正面に立てて立っている。剣身には赤い目で牙をむいた恐ろしい姿が映り、暗い赤い光が漂う。背景はほぼ黒で、重い雰囲気を感じさせる。",
+        "faq": [
+          {
+            "answer": "一枚の半身構図の絵なので、漫画や立ち絵ではなく挿絵として分類しています。",
+            "question": "なぜこの作品は挿絵として分類されているのですか？"
+          },
+          {
+            "answer": "剣に映る顔は、磨かれた刃に映った同じキャラクターの怪物じみた反射であり、別のキャラクターではありません。",
+            "question": "剣の中の姿は別のキャラクターですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "黒騎士DeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "黒い鎧とメイドのヘッドドレスをまとったDeepSeekちゃんのファンイラスト。大剣の刃に赤く光る目が映り込む。",
+        "seoTitle": "黒騎士DeepSeekちゃん – 黒鎧のファンアート",
+        "tags": [
+          "黒騎士",
+          "鎧",
+          "大剣",
+          "反射",
+          "メイドのヘッドドレス",
+          "暗い赤"
+        ]
+      }
+    }
   }
 ]
