@@ -74,8 +74,8 @@
       "intro": "我想做很多视频，做很多很好玩的视频，首先肯定是自己觉得很好玩，其次嘛，也想传播快乐给大家。",
       "avatar": "https://i2.hdslb.com/bfs/face/e3445be765ec330ac29b07c328496e44ec04077a.jpg",
       "i18n": {
-        "en": "I want to make lots of videos, lots of fun ones. First because I find them fun myself, and second because I want to spread some joy around.",
-        "ja": "楽しい動画をたくさん作りたいです。まずは自分が楽しいと思えること、それからみんなに楽しさを届けたいからです。"
+        "en": "I want to make lots of videos, lots of fun videos. First because I enjoy them myself, and second because I want to spread a little joy.",
+        "ja": "たくさん動画を作りたいです。楽しい動画をたくさん。まず自分が楽しめること、それからみんなに楽しさを届けたいからです。"
       }
     },
     {
@@ -85,8 +85,8 @@
       "intro": "每日AI小四格/小动画",
       "avatar": "https://i0.hdslb.com/bfs/face/6f8600ad3d37069ef5106eaf96e7d5a936ba8c50.jpg",
       "i18n": {
-        "en": "Muto_66 makes daily AI-themed four-panel comics and short animations.",
-        "ja": "Muto_66はAIを題材にした四コマ漫画家・ショートアニメを毎日制作している。"
+        "en": "Muto_66 posts a daily AI-themed four-panel comic and short animations.",
+        "ja": "Muto_66 は毎日AI題材の四コマ漫画やショートアニメを投稿しています。"
       }
     },
     {
@@ -173,12 +173,117 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i1.hdslb.com/bfs/face/e11401d7d7cc97ee445d65617b48644b44f7fc42.jpg",
       "i18n": {
-        "en": "One of the first creators designated by the site owner; profile collected from the public page, videos reviewed one by one.",
-        "ja": "サイト管理者が指定した最初の作者の一人。公開ページのプロフィールを収録し、動画は一本ずつ審査しています。"
+        "en": "A creator whose fan animations place AI product characters in short everyday slice-of-life scenes.",
+        "ja": "AI製品のキャラクターたちを日常のワンシーンで描く二次創作アニメを制作している投稿者。"
       }
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1c8xz6jEg9",
+      "uid": "9126506",
+      "title": "大肥鱼励志减肥的一天，是不是你的减肥日常？立志减脂、抵抗诱惑，最后妥协",
+      "description": "从信心满满到妥协投降，发誓今天一定要瘦！减脂人一天的精神状态大公开",
+      "url": "https://www.bilibili.com/video/BV1c8xz6jEg9/",
+      "cover": "https://i0.hdslb.com/bfs/archive/905b644fe18a072a21e53cc78d807e215571ca02.jpg",
+      "duration": 28,
+      "publishedAt": "2026-10-31T00:09:49.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, lots of fun ones. First of all because I enjoy making them myself, and then because I want to spread a little happiness.",
+          "description": "From full confidence to total surrender: she swears today is the day she gets thin. A comic look at a dieter's state of mind as she resists temptation and finally gives in.",
+          "title": "DeepSeek Chan's Diet Day"
+        },
+        "ja": {
+          "creatorIntro": "楽しい動画をたくさん作りたいです。まずは自分が楽しめること、それからみんなに楽しさを届けられたらいいなと思っています。",
+          "description": "やる気満々から降参まで。今日こそ痩せると誓ったダイエット中の女の子の精神状態を、誘惑と戦いながら最後は折れてしまう様子とともに描く。",
+          "title": "ディープシークちゃんのダイエットな一日"
+        }
+      }
+    },
+    {
+      "bvid": "BV1gMxz6hED3",
+      "uid": "44748304",
+      "title": "小克你最好了",
+      "description": "视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色形象参考来自b站up：﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿@ZipZipPipe  ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿  ﻿ ﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿@这个刀子真甜  ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿  ﻿ ﻿﻿﻿ ﻿ ﻿ ﻿ ﻿﻿﻿@邦多利素世  ﻿     ﻿",
+      "url": "https://www.bilibili.com/video/BV1gMxz6hED3/",
+      "cover": "https://i1.hdslb.com/bfs/archive/b8915929eb15acf25590a5725a25197523aa7848.jpg",
+      "duration": 230,
+      "publishedAt": "2026-10-31T00:00:00.000Z",
+      "characterIds": [
+        "claude",
+        "gemini",
+        "gpt",
+        "grok",
+        "doubao",
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A creator whose fan animations place AI product characters in short everyday slice-of-life scenes.",
+          "description": "A short fan animation: a blue-haired character girl in a maid outfit brings back breakfast from Doubao's breakfast shop and shares it with Claude Chan, Gemini Chan, GPT Chan, Grok Chan and the others, with small everyday exchanges between the characters along the way.",
+          "title": "Claude Chan, You're the Best"
+        },
+        "ja": {
+          "creatorIntro": "AI製品のキャラクターたちを日常のワンシーンで描く二次創作アニメを制作している投稿者。",
+          "description": "青い髪のメイド服のキャラクター娘が、豆包の朝食屋で買ってきた朝食をクロードちゃん、Geminiちゃん、GPTちゃん、Grokちゃんたちに配る、日常のやりとりを描いた短編二次創作アニメです。",
+          "title": "クロードちゃんが一番"
+        }
+      }
+    },
+    {
+      "bvid": "BV1CNx66HEJi",
+      "uid": "9126506",
+      "title": "对着不同年龄的大肥鱼喊妈妈，反差直接拉满",
+      "description": "喊蓝色大肥鱼妈妈，8 岁、18 岁、28 岁的反应差距好大",
+      "url": "https://www.bilibili.com/video/BV1CNx66HEJi/",
+      "cover": "https://i2.hdslb.com/bfs/archive/b3c3b8609118ddd7560e2e0bc633fc3d05131e75.jpg",
+      "duration": 31,
+      "publishedAt": "2026-10-30T23:57:13.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, lots of fun videos. First because I enjoy them myself, and second because I want to spread a little joy.",
+          "description": "A short clip that calls the blue fish DeepSeek Chan \"Mom\" at ages 8, 18 and 28, with wildly different reactions each time.",
+          "title": "Calling DeepSeek Chan \"Mom\" at Different Ages — the Contrast Is Wild"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作りたいです。楽しい動画をたくさん。まず自分が楽しめること、それからみんなに楽しさを届けたいからです。",
+          "description": "青い魚のDeepSeekちゃんに「ママ」と呼びかける動画です。8歳・18歳・28歳で反応がまったく違います。",
+          "title": "年齢別のDeepSeekちゃんに「ママ」と呼びかけてみた、ギャップが凄い"
+        }
+      }
+    },
+    {
+      "bvid": "BV1Ysx66BEvg",
+      "uid": "15475629",
+      "title": "【科普向】《断网43秒害GitHub酱织了一整天毛线》",
+      "description": "原事件（2018-10-21）：2018年10月21日，GitHub例行维护换光纤设备时东海岸断网43秒，触发MySQL跨海岸切换，为保数据一致从备份恢复，服务降级24小时11分钟。\n\n以下是小作文\n周日下午，GitHub娘捧着猫头马克杯，触手们照常一边续咖啡一边滚毛线团。机房里，维修小哥正在换一台坏掉的光纤设备：\"例行维护，马上就好～\"\n\n咔哒——东边的网线断了。四十三秒，只够喝两口咖啡。可就在这四十三秒里，管家机器人 Orchestrator 认真地举手投票：\"东边联系不上啦，主库搬去西边！\"网线一接好，所有新数据就呼呼地往西边织。GitHub娘低头一看，手里的毛线团已经变成了两团：东边那团多了几针，西边那团也多了几针，谁也接不上谁。\"等、等一下！东边还有几秒没同步的呀！\"\n\n深夜，状态灯变成了红色。GitHub娘贴上\"Webhook 暂停\"\"Pages 暂停\"的告示，把所有触手都伸了出去，一根一根地解毛线。工程师盯着备份下载的进度条直叹气：\"好几个 TB……怎么这么慢！\"GitHub娘咬牙：\"数据安全第一，宁可慢一点！\"\n\n第二天傍晚，最后一个积压任务处理完，状态灯终于变回绿色。GitHub娘趴在桌上，身边堆满空咖啡杯，触手软成一摊：\"网络只眨了四十三秒眼……我却织了一整天毛线。\"小黑猫默默在她头顶放了一块写着\"24h11m\"的小牌子。\n\n来源：\nhttps://github.blog/news-insights/company-news/oct21-post-incident-analysis/\nhttps://www.geekwire.com/2018/43-second-outage-key-network-connection-staggered-githubs-services-day/\nhttps://www.theregister.com/on-prem/2018/10/23/unexpected-mysql-database-meltdown-fingered-in-githubs-24-hour-website-wobble/1231536\n\n【Credit】\n音乐：Cute Kids – Cheerful Chiptune\nGoldenSoundLabs · Pixabay\n图像生成：GPT Image 2.5 (Sunburst)\nAI-Chan illustrations — ZipZipPipe · CC BY-NC-SA 4.0.\nDeepseek-Chan original character — 上善无形.",
+      "url": "https://www.bilibili.com/video/BV1Ysx66BEvg/",
+      "cover": "https://i1.hdslb.com/bfs/archive/c3967d99148c0e4b083f760741d709a47cc73ce2.jpg",
+      "duration": 28,
+      "publishedAt": "2026-10-30T22:43:34.000Z",
+      "characterIds": [
+        "git"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Muto_66 posts a daily AI-themed four-panel comic and short animations.",
+          "description": "A 28-second chibi animation retelling the GitHub incident of October 21, 2018: a routine fiber hardware swap cut the East Coast link for 43 seconds, which triggered a MySQL cross-coast failover and a restore from backup that left services degraded for 24 hours and 11 minutes. GitHub Chan, drawn with octopus tentacles and cat ears, untangles the mess while an orchestrator robot and a black cat keep her company.",
+          "title": "[Explainer] 43 Seconds Offline Made GitHub Chan Knit All Day"
+        },
+        "ja": {
+          "creatorIntro": "Muto_66 は毎日AI題材の四コマ漫画やショートアニメを投稿しています。",
+          "description": "2018年10月21日のGitHub障害を描いた約28秒のちびキャラアニメです。定例のファイバー機器交換で東海岸の回線が43秒だけ切れ、MySQLの海岸間切り替えとバックアップからの復旧が走った結果、サービスは24時間11分にわたって縮退運転となりました。タコの触手と猫耳をもつGitHubちゃんが、オーケストレーターのロボットと黒猫に見守られながら事後処理に追われます。",
+          "title": "【解説】43秒の断線でGitHubちゃんが一日中毛糸を編んだ話"
+        }
+      }
+    },
     {
       "bvid": "BV1Rzxq6hErB",
       "uid": "169511987",

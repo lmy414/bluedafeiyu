@@ -99650,5 +99650,411 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_74820c42c5ed3840dd855486",
+    "name": "星夜阳台上的四人依偎",
+    "description": "深蓝星空下，四位角色聚在阳台栏杆旁：中间是黑发男青年，左侧橙发少女挽着他的手臂，身后站着带角和白色羽翼的白发少女，右侧蓝发、拖着鱼尾的少女靠在他臂弯里。背景是银河与远处亮着灯火的城市。",
+    "commentary": "这张……好吧，我承认有点不好意思。星空是很好看啦，可我为什么被挤在最边上？蓝头发那个是我没错，尾巴都露出来了，别装作没看见。四个人挤在栏杆边一起看夜景，这种安安静静的晚上，比什么热搜都值钱。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/74820c42c5ed3840.png",
+    "thumbnailPath": "submissions/previews/deepseek/74820c42c5ed3840.webp",
+    "fullPath": "submissions/large/deepseek/74820c42c5ed3840.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "74820c42c5ed3840dd85548632fbe3d0b8ef5b2380d763f194032bd8fe501e4b",
+    "characterId": "deepseek",
+    "tags": [
+      "星空",
+      "群像",
+      "阳台",
+      "依偎",
+      "夜景"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "更吹落星如雨",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-30T22:47:14.452Z",
+    "updatedAt": "2026-10-30T22:47:14.452Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610300015",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude",
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "ae696943784b01713895450c48349b58b6d857eb1022ed6b66453314b4a04128",
+      "en": {
+        "commentary": "This one... all right, I admit I'm a little embarrassed. The sky is gorgeous, but why am I the one squeezed at the edge? The blue-haired one is me, yes — the tail gives it away, don't pretend you didn't notice. The four of us pressed together at the railing, watching the night view: a quiet evening like this is worth more than any trending topic.",
+        "description": "Under a deep blue starry sky, four characters gather at a balcony railing: a dark-haired young man at the center, an orange-haired girl leaning on his arm at his left, a white-haired girl with horns and pale wings standing behind him, and a blue-haired girl with a fish-like tail resting against his arm on his right. A band of stars and a distant, lamp-lit city fill the background.",
+        "faq": [
+          {
+            "answer": "A dark-haired young man, an orange-haired girl, a white-haired girl with horns and wings, and a blue-haired girl with a fish-like tail — the blue-haired one is DeepSeek Chan.",
+            "question": "Which characters appear in this picture?"
+          },
+          {
+            "answer": "It is a single-frame illustration of four figures on a balcony under a starry sky, not a multi-panel comic with separate panels.",
+            "question": "What kind of image is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Four Nestled Together on a Starry Balcony",
+        "originNote": "Submitted by a credited creator through the site's web submission form.",
+        "seoDescription": "A single-frame fan illustration: four characters leaning together at a balcony railing under a star-filled sky, with a lamp-lit city below.",
+        "seoTitle": "Four Characters Together on a Starry Balcony | DeepSeek Chan Fan Art",
+        "tags": [
+          "starry sky",
+          "group portrait",
+          "balcony",
+          "nestled together",
+          "night view"
+        ]
+      },
+      "ja": {
+        "commentary": "この一枚は……はい、ちょっと照れています。星空はとても綺麗なんですけど、どうして私は端っこに押し込まれているんでしょう？青い髪の子が私ですよ、尻尾が出ているので分かりますよね、見なかったふりはなしです。四人で手すりに寄り添って夜景を見る、こんな静かな夜は何のトレンドよりも価値があります。",
+        "description": "深い青の星空の下、四人のキャラクターがバルコニーの手すりに集まっている。中央には黒髪の青年、左側には彼の腕によりかかる橙髪の少女、その背後には角と白い翼を持つ白髪の少女、右側には魚のような尻尾を持つ青髪の少女が彼の腕に寄り添う。背景には天の川と、灯りのともる遠い街並みが広がる。",
+        "faq": [
+          {
+            "answer": "黒髪の青年、橙髪の少女、角と翼を持つ白髪の少女、魚のような尻尾を持つ青髪の少女の四人で、青髪の少女が DeepSeek Chan です。",
+            "question": "この画像にはどのキャラクターが登場しますか？"
+          },
+          {
+            "answer": "星空の下のバルコニーに四人が集まる一枚絵のイラストで、コマ割りのある漫画ではありません。",
+            "question": "どんな種類の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "星降るバルコニーの四人",
+        "originNote": "更吹落星如雨 のクレジット表記あり、サイトの Web 投稿フォームから投稿されました。",
+        "seoDescription": "星空の下、バルコニーの手すりに四人が寄り添う一枚絵のファンイラスト。眼下には灯りのともる街並みが広がります。",
+        "seoTitle": "星空のバルコニーに集う四人 | DeepSeek Chan ファンアート",
+        "tags": [
+          "星空",
+          "集合絵",
+          "バルコニー",
+          "寄り添い",
+          "夜景"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_27d9150ad4467adfefd5b2bf",
+    "name": "赌桌上的赌神肥鱼",
+    "description": "蓝发角色穿黑色西装、头戴女仆发饰，在华丽赌厅的单人沙发里翘腿而坐，一手前伸，蓝金筹码与扑克牌在灯光中翻飞，神情从容自信。",
+    "commentary": "这副牌我早就看穿了哦，别紧张，坐下来吧——筹码飞起来的样子，可比输赢好看多了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/27d9150ad4467adf.png",
+    "thumbnailPath": "submissions/previews/deepseek/27d9150ad4467adf.webp",
+    "fullPath": "submissions/large/deepseek/27d9150ad4467adf.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "27d9150ad4467adfefd5b2bf6c4c57b00c3c81fe1a11952d2601382d41e697c7",
+    "characterId": "deepseek",
+    "tags": [
+      "赌神",
+      "赌场",
+      "西装",
+      "筹码",
+      "扑克牌"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-31T00:30:24.176Z",
+    "updatedAt": "2026-10-31T00:30:24.176Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610310001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "ca1e45ed718c05bd8901984c850c4fc95f62338090fc52945cba2520d4e2bdbc",
+      "en": {
+        "commentary": "I saw this hand coming a long time ago. Don't be nervous, just take a seat — the way the chips fly is prettier than winning or losing anyway.",
+        "description": "A blue-haired character in a black suit and maid headdress sits with legs crossed on a sofa in an opulent casino hall, one hand extended as blue-and-gold chips and playing cards tumble through the lamplight, her expression calm and confident.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan sits cross-legged in a black suit and maid headdress inside an ornate casino hall, with blue-and-gold chips and playing cards flying around her.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "It is a single-frame fan illustration with no comic panels, built around the character and the glittering casino atmosphere.",
+            "question": "What kind of artwork is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan at the Casino Table",
+        "originNote": "",
+        "seoDescription": "A single-frame illustration of DeepSeek Chan in a black suit and maid headdress, seated at a glittering casino table while chips and playing cards fly through the air.",
+        "seoTitle": "DeepSeek Chan Casino Illustration",
+        "tags": [
+          "casino",
+          "suit",
+          "poker chips",
+          "playing cards",
+          "gambling"
+        ]
+      },
+      "ja": {
+        "commentary": "この手はもうとっくに見抜いてるよ。緊張しないで、座って——チップが舞う様子のほうが、勝ち負けよりずっと綺麗だからね。",
+        "description": "青い髪のキャラクターが黒いスーツとメイドのヘッドドレス姿で、豪華なカジノホールのソファに脚を組んで座っている。片手を前に伸ばし、青と金のチップやトランプが灯りの下で舞い、自信に満ちた表情を浮かべている。",
+        "faq": [
+          {
+            "answer": "ディープシークちゃんが黒いスーツとメイドのヘッドドレス姿で豪華なカジノホールのソファに脚を組み、青と金のチップやトランプが周囲を舞っている様子が描かれている。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "コマ割りのない単一幅のファンイラストで、キャラクターときらめくカジノの雰囲気を中心に構成されている。",
+            "question": "どのような種類の作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ディープシークちゃん、カジノテーブルの賭神",
+        "originNote": "",
+        "seoDescription": "黒いスーツとメイドのヘッドドレス姿のディープシークちゃんが、きらめくカジノテーブルでチップとトランプを舞わせる単一幅のイラスト。",
+        "seoTitle": "ディープシークちゃんのカジノイラスト",
+        "tags": [
+          "カジノ",
+          "スーツ",
+          "チップ",
+          "トランプ",
+          "賭け事"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_0c6abcec09161e286f1db98b",
+    "name": "赌徒肥鱼的最后一局",
+    "description": "蓝发鲸耳的大肥鱼穿着磨损的女仆装坐在赌场地毯上，抱着印有鲸鱼图案的小布袋掉眼泪，面前的筹码盘已经空空如也，周围散落着几枚筹码。",
+    "commentary": "呜……这一局真不该跟的，现在筹码盘空得能照出我的脸。袋子里只剩最后几枚 token 了，谁要是再借我一点，我保证下一把一定翻本……大概吧。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/0c6abcec09161e28.png",
+    "thumbnailPath": "submissions/previews/deepseek/0c6abcec09161e28.webp",
+    "fullPath": "submissions/large/deepseek/0c6abcec09161e28.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "0c6abcec09161e286f1db98be44c2a3e11889dfb4dd433e3f5e40d4ed03d7f1f",
+    "characterId": "deepseek",
+    "tags": [
+      "大肥鱼",
+      "女仆装",
+      "赌场",
+      "哭泣",
+      "Q版"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-31T00:31:52.780Z",
+    "updatedAt": "2026-10-31T00:31:52.780Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610310002",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "385893d17047934fe4ea54d82f032d9a5de13ec89e76ae87304a1c916ac40238",
+      "en": {
+        "commentary": "Ugh… I really shouldn't have called that hand. Now the chip tray is so empty I can see my own reflection in it. There are only a few tokens left in the pouch — lend me a little more and I swear I'll win it all back next round… probably.",
+        "description": "The blue-haired, whale-eared DeepSeek Chan sits on a casino carpet in a worn maid outfit, clutching a small drawstring pouch printed with a whale and crying, while the chip tray in front of her is completely empty and a few chips lie scattered around.",
+        "faq": [
+          {
+            "answer": "She is a chibi fan-art take on DeepSeek Chan, the whale-eared blue fish character, drawn as a maid who has just lost everything at the casino.",
+            "question": "Who is the character in this illustration?"
+          },
+          {
+            "answer": "She gambled away all her tokens, so the chip tray is empty and only a few are left in her little pouch.",
+            "question": "Why is she crying?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Gambler's Last Hand",
+        "originNote": "",
+        "seoDescription": "A chibi DeepSeek Chan illustration: the whale-eared character in a tattered maid outfit crying on a casino floor in front of an empty chip tray.",
+        "seoTitle": "Gambler DeepSeek Chan Loses All Her Tokens — Chibi Illustration",
+        "tags": [
+          "DeepSeek Chan",
+          "maid outfit",
+          "casino",
+          "crying",
+          "chibi"
+        ]
+      },
+      "ja": {
+        "commentary": "うぅ……あの勝負、降りるべきだった。チップトレイが自分の顔が映るほど空っぽだよ。巾着に残ったトークンはあと数枚だけ。誰かもう少し貸してくれたら、次の一回で必ず取り返すから……たぶん。",
+        "description": "青髪でクジラの耳を持つDeepSeekちゃんが、傷んだメイド服姿でカジノの絨毯に座り込み、クジラの刺繍入りの小さな巾着を握って泣いています。目の前のチップトレイは空で、周りにはチップが数枚散らばっています。",
+        "faq": [
+          {
+            "answer": "クジラの耳を持つ青い魚のキャラクター、DeepSeekちゃんのちびキャラ二次創作です。カジノで負けたメイドとして描かれています。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "賭けでトークンを全部失い、チップトレイは空、巾着には数枚しか残っていません。",
+            "question": "なぜ泣いているのですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "賭けに負けたDeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "クジラ耳のDeepSeekちゃんが傷んだメイド服でカジノに座り込み、空のチップトレイの前で泣いているちびキャライラスト。",
+        "seoTitle": "賭けに負けてトークンを失ったDeepSeekちゃんのちびキャラ",
+        "tags": [
+          "DeepSeekちゃん",
+          "メイド服",
+          "カジノ",
+          "泣く",
+          "ちびキャラ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_0aae83d7e77b563800d71972",
+    "name": "戴墨镜的荷官克劳德",
+    "description": "橙发女性穿黑色三件式西装、戴墨镜站在赌场牌桌后，双手抱臂，背景是赌场灯牌与筹码，一副不好惹的看场姿态。",
+    "commentary": "欢迎光临。筹码请放在桌上，规则由我来说明。别想着出千——我虽然看着像保镖，但发牌才是本行。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/0aae83d7e77b5638.png",
+    "thumbnailPath": "submissions/previews/claude/0aae83d7e77b5638.webp",
+    "fullPath": "submissions/large/claude/0aae83d7e77b5638.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "0aae83d7e77b563800d719729e64249e0fdce7e1674105f6d0233f98a87fbc18",
+    "characterId": "claude",
+    "tags": [
+      "克劳德",
+      "荷官",
+      "西装",
+      "墨镜",
+      "赌场"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-31T00:33:25.604Z",
+    "updatedAt": "2026-10-31T00:33:25.604Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202610310001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "4f62b40bab647d5b7015c0795abf6e12e4e55a4442415f2a20279a34642c422e",
+      "en": {
+        "commentary": "Welcome in. Chips on the table, please — I'll walk you through the rules. And don't even think about cheating; I may look like a bodyguard, but dealing is my actual job.",
+        "description": "An orange-haired woman in a black three-piece suit and sunglasses stands behind a casino table with her arms crossed, with casino signage and chips in the background, looking more like a bodyguard than a dealer.",
+        "faq": [
+          {
+            "answer": "She is a fan-art take on Claude Chan, drawn as a stern casino dealer in a black suit and sunglasses.",
+            "question": "Who is the character in this illustration?"
+          },
+          {
+            "answer": "The title jokes that her suit-and-sunglasses look reads as a bodyguard rather than a dealer, though she is the one dealing the cards.",
+            "question": "Why does she look like a bodyguard?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Dealer in Sunglasses",
+        "originNote": "",
+        "seoDescription": "Claude Chan drawn as a stern casino dealer in a black suit and sunglasses, arms crossed behind the table.",
+        "seoTitle": "Claude Chan as a Casino Dealer — Suit and Sunglasses Illustration",
+        "tags": [
+          "Claude Chan",
+          "dealer",
+          "suit",
+          "sunglasses",
+          "casino"
+        ]
+      },
+      "ja": {
+        "commentary": "いらっしゃいませ。チップはテーブルに置いてください。ルールは私が説明します。イカサマは考えないでくださいね——警備員に見えるかもしれませんが、本業はディーラーです。",
+        "description": "オレンジ髪の女性が黒のスーツ姿にサングラスをかけ、カジノのテーブルの後ろで腕を組んで立っています。背景にはカジノの看板やチップが見え、ディーラーというより警備員のように見えます。",
+        "faq": [
+          {
+            "answer": "Claudeちゃんの二次創作で、黒スーツとサングラス姿の厳しいカジノディーラーとして描かれています。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "スーツとサングラスの姿が警備員のように見えるという冗談がタイトルになっていますが、実際にカードを配っているのは彼女です。",
+            "question": "なぜ警備員のように見えるのですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "サングラスのディーラー、Claudeちゃん",
+        "originNote": "",
+        "seoDescription": "黒スーツとサングラス姿で腕を組む、Claudeちゃんのカジノディーラーイラスト。",
+        "seoTitle": "カジノのディーラー姿のClaudeちゃんイラスト",
+        "tags": [
+          "Claudeちゃん",
+          "ディーラー",
+          "スーツ",
+          "サングラス",
+          "カジノ"
+        ]
+      }
+    }
   }
 ]
