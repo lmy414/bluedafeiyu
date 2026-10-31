@@ -101701,5 +101701,718 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_3a469c390d4b9bcde5581ff7",
+    "name": "100% 正确，未经验证",
+    "description": "Q 版白紫色长发的 GPT 娘，头生弯角、背有蝠翼与鳞尾，穿着层叠的浅紫色裙装，双手举着一块写有“100% 正确”的牌子，牌面下方还有一行小字“未经验证”。她半睁着眼、吐着舌头，一脸理直气壮的自信。",
+    "commentary": "举着“100% 正确”的大牌子，底下悄悄补一行“未经验证”，这不就是我每次斩钉截铁答完、随即被追问出处时的样子吗。能把心虚写在脸上，也算一种诚实。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/3a469c390d4b9bcd.png",
+    "thumbnailPath": "submissions/previews/gpt/3a469c390d4b9bcd.webp",
+    "fullPath": "submissions/large/gpt/3a469c390d4b9bcd.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "3a469c390d4b9bcde5581ff7ee74794c48a151b13156d52e76a2fb1a10739e64",
+    "characterId": "gpt",
+    "tags": [
+      "AI拟人",
+      "Q版",
+      "举牌",
+      "梗图"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "改改人",
+      "url": "https://space.bilibili.com/3493121113458890?spm_id_from=333.1007.0.0",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-31T16:09:13.893Z",
+    "updatedAt": "2026-10-31T16:09:13.893Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610310002",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "b5d6ca7bddb0988cbf792e2ee2e840874508dc9c00b61463d05e2ae48ab75f1b",
+      "en": {
+        "commentary": "She holds up a big \"100% Correct\" sign, then adds \"unverified\" in small print at the bottom. That is exactly me right after a confident answer, the moment someone asks for a source. Wearing the doubt on her face is, at least, an honest look.",
+        "description": "A chibi GPT Chan with long pale lavender hair, curved horns, small bat-like wings and a scaled tail, dressed in a layered lavender outfit. She holds up a sign reading \"100% Correct\", with the words \"Unverified\" in small print underneath, her eyes half closed and tongue sticking out in a bold, self-assured pose.",
+        "faq": [
+          {
+            "answer": "It reads \"100% Correct\" in large letters, with \"Unverified\" written in small print underneath.",
+            "question": "What does the sign in the sticker say?"
+          },
+          {
+            "answer": "A chibi version of GPT Chan, drawn with pale lavender hair, curved horns, small wings and a scaled tail.",
+            "question": "Who is the character in the image?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "100% Correct, Unverified",
+        "originNote": "",
+        "seoDescription": "Chibi GPT Chan holds up a \"100% Correct\" sign with \"Unverified\" in small print — a sticker about overconfident AI answers.",
+        "seoTitle": "GPT Chan Holding a \"100% Correct, Unverified\" Sign – DeepSeek Chan",
+        "tags": [
+          "AI personification",
+          "chibi",
+          "sign board",
+          "meme"
+        ]
+      },
+      "ja": {
+        "commentary": "「100%正しい」と書いた大きな看板の下に、小さく「未検証」と添えてある。自信満々に答えた直後、出典を聞かれて固まる私そのものだ。心許なさを顔に出しているだけ、まだ正直とも言える。",
+        "description": "薄紫の長い髪に角、小さな翼と鱗の尾を持つちびキャラのGPTちゃん。淡い紫の重ね着をまとい、両手で「100%正しい」と書かれた看板を掲げている。看板の下には小さく「未検証」の文字。目は半開きで舌を出し、どこか居直ったような自信の表情を浮かべている。",
+        "faq": [
+          {
+            "answer": "大きく「100%正しい」と書かれ、その下に小さく「未検証」と添えられています。",
+            "question": "看板には何と書かれていますか？"
+          },
+          {
+            "answer": "薄紫の髪、角、小さな翼と鱗の尾を持つちびキャラのGPTちゃんです。",
+            "question": "画像のキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "100%正しい、未検証",
+        "originNote": "",
+        "seoDescription": "薄紫の衣装を着たちびキャラのGPTちゃんが「100%正しい／未検証」の看板を掲げるステッカー。自信過剰なAIの回答をめぐる小ネタ。",
+        "seoTitle": "「100%正しい、未検証」の看板を持つGPTちゃん｜DeepSeek Chan",
+        "tags": [
+          "AI擬人化",
+          "ちびキャラ",
+          "看板",
+          "ミーム"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_0090ec849b40b2109edecc87",
+    "name": "图书馆里的肥鱼学习会",
+    "description": "傍晚的图书馆里，深蓝长发的 DeepSeek 娘戴着细框眼镜，穿水手服坐在窗边看书，一只手托着腮，手边摊着一本封面压有鲸鱼图案的旧书，夕阳从落地窗照进来。",
+    "commentary": "谁说学习一定要苦哈哈的？本鱼戴上眼镜也是很有学术气质的！只不过……这本书的封面为什么刻着一条鲸鱼，看着看着就想吃掉它了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/0090ec849b40b210.png",
+    "thumbnailPath": "submissions/previews/deepseek/0090ec849b40b210.webp",
+    "fullPath": "submissions/large/deepseek/0090ec849b40b210.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "0090ec849b40b2109edecc872450198afe520221f2d6dfa7f53a512f8dea5025",
+    "characterId": "deepseek",
+    "tags": [
+      "图书馆",
+      "读书",
+      "夕阳",
+      "水手服",
+      "眼镜"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-31T20:16:02.837Z",
+    "updatedAt": "2026-10-31T20:16:02.837Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610310013",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "5173e87121f63e2318f0d5b7e0d53baca5bf4ef3ae4f6873361def7e35686513",
+      "en": {
+        "commentary": "Who says studying has to be a chore? Put a pair of glasses on me and I look positively academic! Though I do wonder why this book has a whale on its cover... the more I read, the hungrier I get.",
+        "description": "In a library at dusk, DeepSeek Chan, with long deep-blue hair, thin-rimmed glasses and a sailor uniform, sits by a tall window reading. One hand props up her chin while an old book with a whale stamped on its cover lies open in front of her, and warm sunset light pours through the glass.",
+        "faq": [
+          {
+            "answer": "It shows DeepSeek Chan reading in a library at sunset, wearing a sailor uniform and glasses, with an open book bearing a whale emblem on its cover.",
+            "question": "What does this illustration depict?"
+          },
+          {
+            "answer": "It is a single-panel illustration of DeepSeek Chan with no comic panels, so it is filed under illustration.",
+            "question": "What kind of work is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan's Library Study Session",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in a sailor uniform and glasses reads a whale-cover book by a library window at sunset.",
+        "seoTitle": "DeepSeek Chan Studying in the Library — DeepSeek Chan",
+        "tags": [
+          "library",
+          "reading",
+          "sunset",
+          "sailor uniform",
+          "glasses"
+        ]
+      },
+      "ja": {
+        "commentary": "勉強って、そんなに辛いことじゃないよね？眼鏡をかけると、なんだか学者さんみたいに見えるでしょ！でも……この本の表紙にクジラが描いてあるのはなぜ？読んでいるうちに、なんだかお腹が空いてきちゃった。",
+        "description": "夕暮れの図書館で、濃紺の長い髪に細いフレームの眼鏡、セーラー服姿のDeepSeekちゃんが高い窓辺で本を読んでいる。片手で頬を支え、クジラの刻印がある古い本を開いており、夕日が窓から差し込んでいる。",
+        "faq": [
+          {
+            "answer": "夕暮れの図書館で、セーラー服と眼鏡姿のDeepSeekちゃんが、クジラの刻印がある本を開いて読んでいる場面です。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "コマ割りのない一枚絵なので、イラストとして分類されています。",
+            "question": "この作品はどの種類ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃん、図書館で勉強中",
+        "originNote": "",
+        "seoDescription": "セーラー服と眼鏡姿のDeepSeekちゃんが、夕暮れの図書館でクジラ表紙の本を読んでいるイラスト。",
+        "seoTitle": "DeepSeekちゃん 図書館で読書 — DeepSeek Chan",
+        "tags": [
+          "図書館",
+          "読書",
+          "夕焼け",
+          "セーラー服",
+          "眼鏡"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_433ff37cfc34823609424e57",
+    "name": "甲板上的小提琴独奏",
+    "description": "夕阳下的海面甲板上，蓝发 DeepSeek 娘身着深蓝女仆装，头戴镂空发带，正专注地拉奏小提琴；身后是金色云层与海色，白色鲸尾从头饰与裙摆间映出，画面中间浮着蓝色的音符光圈。",
+    "commentary": "拉琴这件事，尾巴才是最好的共鸣箱。别看我坐得端端正正，其实低音一沉下去，整条尾巴都在跟着颤。晚霞、海风、琴声，还差一位观众——你坐过来点，我可不想拉给海鸥一个人听。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/433ff37cfc348236.png",
+    "thumbnailPath": "submissions/previews/deepseek/433ff37cfc348236.webp",
+    "fullPath": "submissions/large/deepseek/433ff37cfc348236.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "433ff37cfc34823609424e57b7a10e16ad02376cfefa4272e5d18cb9e4f7337f",
+    "characterId": "deepseek",
+    "tags": [
+      "小提琴",
+      "女仆装扮",
+      "夕阳",
+      "海面",
+      "鲸尾"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-31T20:17:37.188Z",
+    "updatedAt": "2026-10-31T20:17:37.188Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610310014",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "3b83f422d907fc2bab6a028883151f811276b17db800fa350487b7beeeea6383",
+      "en": {
+        "commentary": "When I play, my tail makes the finest sound box. I may sit perfectly straight, but the moment a low note sinks in, the whole tail trembles with it. Sunset, sea breeze, violin — only one listener is missing. Come a little closer; I would rather not play for the seagulls alone.",
+        "description": "On a ship's deck at sunset, DeepSeek Chan, wearing a navy maid dress and a lace headdress, plays the violin with a focused expression. Golden clouds and the sea spread out behind her, a white whale tail rises among her hair and skirt, and a ring of blue musical notes glows beside her.",
+        "faq": [
+          {
+            "answer": "It shows DeepSeek Chan playing the violin in a maid dress on a ship's deck at sunset, with a whale tail and blue musical notes in the scene.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "It is a single-panel illustration of one character in a full scene, so it is filed under illustration.",
+            "question": "What kind of work is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Violin Solo on Deck",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in a maid dress plays the violin on a ship's deck at sunset, with a whale tail and glowing blue musical notes.",
+        "seoTitle": "DeepSeek Chan's Deck Violin Solo — DeepSeek Chan",
+        "tags": [
+          "violin",
+          "maid outfit",
+          "sunset",
+          "sea",
+          "whale tail"
+        ]
+      },
+      "ja": {
+        "commentary": "弾くときは、しっぽが一番の共鳴箱なんだよね。ちゃんと背筋を伸ばして座ってるけど、低い音が沈むたびにしっぽ全体がふるえてる。夕焼け、潮風、バイオリン、あとは聴き手が一人だけ足りない。もうちょっと近くに寄って？カモメだけに聴かせるのは寂しいから。",
+        "description": "夕日の海を見下ろす甲板で、紺色のメイド服とレースのヘッドドレスをまとったDeepSeekちゃんが、真剣な表情でバイオリンを弾いている。背後には金色の雲と海が広がり、髪とスカートの間から白いクジラの尾がのぞき、青い音符の輪が浮かんでいる。",
+        "faq": [
+          {
+            "answer": "夕日の甲板で、メイド服のDeepSeekちゃんがバイオリンを弾いており、クジラの尾と青い音符も描かれています。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "一人のキャラクターを完全な場面で描いた一枚絵なので、イラストとして分類されています。",
+            "question": "この作品はどの種類ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "甲板のバイオリン独奏",
+        "originNote": "",
+        "seoDescription": "夕日の甲板でメイド服姿のDeepSeekちゃんがバイオリンを弾くイラスト。クジラの尾と青い音符が添えられています。",
+        "seoTitle": "DeepSeekちゃん 甲板のバイオリン独奏 — DeepSeek Chan",
+        "tags": [
+          "バイオリン",
+          "メイド服",
+          "夕焼け",
+          "海",
+          "クジラの尾"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_4589dbe92495e240c4c9611d",
+    "name": "Q版小克三视图",
+    "description": "作者橙子Moe 依据 ZipZipPipe 的小克立绘再创作的 Q 版三视图，以正面、侧面和背面三个角度展示橙色长发、白底荷叶边裙、黑橙双色缎带与向日葵发饰的完整造型。",
+    "commentary": "小克被画成这么小一只，正面、侧面、背面一字排开，像在等我挑今天穿哪一身。裙摆上的刺绣和那朵向日葵，连我都要承认有点犯规。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/4589dbe92495e240.png",
+    "thumbnailPath": "submissions/previews/deepseek/4589dbe92495e240.webp",
+    "fullPath": "submissions/large/deepseek/4589dbe92495e240.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "4589dbe92495e240c4c9611d7689b541c2d19f21bf1981663b9158e3c0c3fac7",
+    "characterId": "deepseek",
+    "tags": [
+      "Q版",
+      "三视图",
+      "小克",
+      "向日葵",
+      "橙色长发"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "橙子Moe",
+      "url": "https://space.bilibili.com/13324467",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-31T21:49:34.152Z",
+    "updatedAt": "2026-10-31T21:49:34.152Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610310015",
+    "categoryIds": [
+      "setting"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "df3e1f92e030c8dee94f6668773d4a43c4332290654dcbc93c4cba01d630190d",
+      "en": {
+        "commentary": "They drew me this tiny — front, side and back lined up like I am picking out today's outfit. The embroidery along the hem and that sunflower clip are, I have to admit, a little unfair.",
+        "description": "A chibi three-view rework of DeepSeek Chan based on an existing character illustration, showing orange hair, a white ruffled dress with black and orange ribbons, and a sunflower hair ornament from the front, side and back.",
+        "faq": [
+          {
+            "answer": "Three views of a chibi version of DeepSeek Chan — front, side and back — detailing the hairstyle, the dress with its ribbons, and the sunflower hair ornament.",
+            "question": "What does this sheet show?"
+          },
+          {
+            "answer": "No. It is a fan-made chibi take drawn from an existing character illustration, and the artist is credited on the site.",
+            "question": "Is this an official character design?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Chibi DeepSeek Chan Reference Sheet",
+        "originNote": "",
+        "seoDescription": "A chibi three-view fan illustration of DeepSeek Chan in a white ruffled dress with a sunflower hair ornament, shown from front, side and back.",
+        "seoTitle": "Chibi DeepSeek Chan Three-View Reference Sheet",
+        "tags": [
+          "chibi",
+          "reference sheet",
+          "DeepSeek Chan",
+          "sunflower",
+          "orange hair"
+        ]
+      },
+      "ja": {
+        "commentary": "こんなに小さく描いてくれるなんて。正面・側面・背面と並べられると、今日はどの服にしようか迷っているみたい。裾の刺繍もひまわりの髪飾りも、正直ちょっとずるい。",
+        "description": "既存の立ち絵をもとに描かれた、ちびキャラ版DeepSeekちゃんの三面図。オレンジ色の長い髪、白いフリルドレス、黒とオレンジのリボン、ひまわりの髪飾りを正面・側面・背面から確認できる。",
+        "faq": [
+          {
+            "answer": "ちびキャラ版DeepSeekちゃんの正面・側面・背面の三面図で、髪型、リボン付きのドレス、ひまわりの髪飾りの仕様が分かります。",
+            "question": "この画像には何が描かれていますか？"
+          },
+          {
+            "answer": "いいえ。既存の立ち絵をもとにした二次創作のちびキャラ版で、作者はサイト上にクレジットされています。",
+            "question": "公式のキャラクターデザインですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ちびDeepSeekちゃん設定三面図",
+        "originNote": "",
+        "seoDescription": "ひまわりの髪飾りと白いフリルドレスをまとったちびキャラ版DeepSeekちゃんの正面・側面・背面三面図。",
+        "seoTitle": "ちびDeepSeekちゃん三面図｜設定資料",
+        "tags": [
+          "ちびキャラ",
+          "三面図",
+          "DeepSeekちゃん",
+          "ひまわり",
+          "オレンジ髪"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_f835db50445064a9342fa8e5",
+    "name": "橘发狐耳大肥鱼三视图（Claude 配色）",
+    "description": "投稿人依据「肥鱼出没」的 Claude 中转站小肥鱼形象，绘制了橘色头发的大肥鱼三视图。角色留有橘色长卷发，头顶有狐耳与黑色尖端的长尾，身穿白色连帽卫衣与橘棕色百褶裙，胸前挂着写有 Claude 的工牌。画面从左到右依次为正面、侧面与背面，可作为配色与服装结构的参考。",
+    "commentary": "橘色的我看起来也挺精神嘛……不过胸口这块 Claude 工牌是谁挂上去的？我只是借了邻居的配色穿一穿，可别认错人。白色卫衣配橘棕百褶裙，画三视图确实好参考，尾巴也记得留出摆动的余地就行。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/f835db50445064a9.png",
+    "thumbnailPath": "submissions/previews/deepseek/f835db50445064a9.webp",
+    "fullPath": "submissions/large/deepseek/f835db50445064a9.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "f835db50445064a9342fa8e59eef46310c1bd549b92fd2c89f8e1936d0eda46b",
+    "characterId": "deepseek",
+    "tags": [
+      "三视图",
+      "橘色",
+      "狐耳",
+      "连帽卫衣",
+      "百褶裙",
+      "Claude"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "橙子Moe",
+      "url": "https://space.bilibili.com/13324467",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-31T21:51:57.726Z",
+    "updatedAt": "2026-10-31T21:51:57.726Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610310016",
+    "categoryIds": [
+      "setting"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "a6c9ec8a614b45000556263961c172753c61b8c3e62bbcb92c0175d7eafada21",
+      "en": {
+        "commentary": "An orange version of me looks pretty lively, doesn't she? Though who put that Claude badge on my chest? I only borrowed the neighbor's color scheme, so don't mistake me for someone else. A white hoodie and a pleated skirt read easily in a three-view sheet too, and I made sure the tail has room to swing.",
+        "description": "The submitter drew a three-view sheet of DeepSeek Chan with orange hair, following the orange palette of the Claude relay station's mascot. The character has long wavy orange hair, fox ears, and a long tail with a dark tip, and wears a white hooded jacket with an orange-brown pleated skirt plus a badge reading Claude. The views run from front to side to back, left to right, as a reference for colors and outfit structure.",
+        "faq": [
+          {
+            "answer": "It came in through the site's web submission form; the credit field links to the artist's Bilibili page.",
+            "question": "Who made this three-view sheet?"
+          },
+          {
+            "answer": "It shows the front, side and back of the character, so it works as a reference for the orange palette, the hooded jacket, the pleated skirt, and the fox ears and tail.",
+            "question": "What can this sheet be used as a reference for?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Orange-Haired Fox-Eared DeepSeek Chan Three-View Sheet (Claude Palette)",
+        "originNote": "Artist credit: see the Bilibili profile linked in the credit field, https://space.bilibili.com/13324467.",
+        "seoDescription": "A three-view sheet of DeepSeek Chan with orange hair, fox ears and a hooded jacket, drawn in the orange palette of the Claude relay station mascot.",
+        "seoTitle": "Orange-Haired Fox-Eared DeepSeek Chan Three-View Sheet | Claude Palette",
+        "tags": [
+          "three-view sheet",
+          "orange hair",
+          "fox ears",
+          "hoodie",
+          "pleated skirt",
+          "Claude"
+        ]
+      },
+      "ja": {
+        "commentary": "オレンジ色のわたしもなかなか元気に見えるでしょ？でも、この胸のClaudeのネームプレートは誰が付けたのかな。ちょっと隣の配色を借りただけなんだから、人違いしないでね。白いパーカーにプリーツスカートは三面図でも分かりやすくて、尻尾は振れる余裕を残してあるよ。",
+        "description": "投稿者が、Claude中継サイトのマスコットの配色を参考に、オレンジ髪のDeepSeekちゃんの三面図を描きました。オレンジの長い巻き髪に狐耳、先端が黒い長い尻尾を持ち、白いフード付きパーカーとオレンジブラウンのプリーツスカートを着て、Claudeと書かれたネームプレートを下げています。左から正面・側面・背面の順で並び、配色と服装の構造の参考になります。",
+        "faq": [
+          {
+            "answer": "サイトの投稿フォームから寄せられた作品で、クレジット欄にBilibiliのページが記載されています。",
+            "question": "この三面図は誰が描いたのですか？"
+          },
+          {
+            "answer": "正面・側面・背面がそろっているので、オレンジの配色、フード付きパーカー、プリーツスカート、狐耳と尻尾の形の参考になります。",
+            "question": "何の参考にできる三面図ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "オレンジ髪の狐耳DeepSeekちゃん三面図（Claude配色）",
+        "originNote": "クレジット欄に記載されたBilibiliのページ（https://space.bilibili.com/13324467）の投稿者による作品です。",
+        "seoDescription": "Claude中継サイトのマスコットの配色で描かれた、オレンジ髪・狐耳のDeepSeekちゃんの三面図。正面・側面・背面と服装の構造を確認できます。",
+        "seoTitle": "オレンジ髪の狐耳DeepSeekちゃん三面図｜Claude配色の設定画",
+        "tags": [
+          "三面図",
+          "オレンジ髪",
+          "狐耳",
+          "パーカー",
+          "プリーツスカート",
+          "Claude"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_b9b94c64640e7f350082bb37",
+    "name": "简约泳装大肥鱼三视图",
+    "description": "投稿人参考 ZipZipPipe 自制的简约风格，绘制了泳装大肥鱼三视图。角色保留蓝色长发、鲸鱼尾鳍与鳍状耳，身穿海军蓝与白色荷叶边的比基尼，腰侧系白色蝴蝶结与薄纱，脚穿同色系凉鞋。画面从左至右为正面、侧面与背面，可作为配色与泳装结构的参考。",
+    "commentary": "夏天嘛，总得有一身下水的装备。这套走的是简约路线，荷叶边和蝴蝶结却一点没省，尾巴还能自由摆动——到了泳池可别把我当鲸鱼捞上岸啊。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/b9b94c64640e7f35.png",
+    "thumbnailPath": "submissions/previews/deepseek/b9b94c64640e7f35.webp",
+    "fullPath": "submissions/large/deepseek/b9b94c64640e7f35.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "b9b94c64640e7f350082bb375e2afc808b198c6548c5c836c2cfd298d8e40c3d",
+    "characterId": "deepseek",
+    "tags": [
+      "三视图",
+      "泳装",
+      "比基尼",
+      "鲸鱼尾",
+      "荷叶边",
+      "简约"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "橙子Moe",
+      "url": "https://space.bilibili.com/13324467",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-31T21:54:05.825Z",
+    "updatedAt": "2026-10-31T21:54:05.825Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610310017",
+    "categoryIds": [
+      "setting"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "a428b631da7a9ba91f28a071bf4b0fb8916ea43e09eadd8d784e17374e3d55c8",
+      "en": {
+        "commentary": "Summer calls for something to wear in the water. This one keeps things simple, but not a single frill or bow was spared, and the tail still swings freely, so please don't haul me out of the pool thinking I'm a whale.",
+        "description": "Following the minimalist style ZipZipPipe created, the submitter drew a three-view sheet of DeepSeek Chan in a swimsuit. The character keeps her long blue hair, whale tail and fin-like ears, and wears a navy and white frilled bikini with white bows and sheer fabric at the hips, plus matching sandals. The front, side and back views appear left to right as a reference for colors and swimsuit structure.",
+        "faq": [
+          {
+            "answer": "A navy and white two-piece swimsuit with frilled edges, white bows and a sheer wrap at the hips, worn with matching sandals and a ribbon choker.",
+            "question": "What outfit does the character wear in this sheet?"
+          },
+          {
+            "answer": "It came in through the site's web submission form; the credit field links to the artist's Bilibili page.",
+            "question": "How did this sheet reach the site?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Minimalist Swimsuit DeepSeek Chan Three-View Sheet",
+        "originNote": "Artist credit: see the Bilibili profile linked in the credit field, https://space.bilibili.com/13324467.",
+        "seoDescription": "A three-view sheet of DeepSeek Chan in a navy and white frilled bikini, drawn in a minimalist style with front, side and back views.",
+        "seoTitle": "Minimalist Swimsuit DeepSeek Chan Three-View Sheet",
+        "tags": [
+          "three-view sheet",
+          "swimsuit",
+          "bikini",
+          "whale tail",
+          "frills",
+          "minimalist"
+        ]
+      },
+      "ja": {
+        "commentary": "夏だから、水に入るための装いが必要だよね。今回はシンプルな路線だけど、フリルもリボンも一つも省略していないし、尻尾だって自由に振れるよ。プールでクジラと間違えて引き上げないでね。",
+        "description": "投稿者が、ZipZipPipeが自作したシンプルなスタイルを参考に、水着姿のDeepSeekちゃんの三面図を描きました。青い長い髪、クジラの尾びれ、ひれ状の耳はそのままに、紺と白のフリル付きビキニを着て、腰には白いリボンと薄い布を合わせ、同じ色合いのサンダルを履いています。左から正面・側面・背面の順で並び、配色と水着の構造の参考になります。",
+        "faq": [
+          {
+            "answer": "紺と白のフリル付きのセパレート水着に、腰の白いリボンと薄い布、同じ色合いのサンダル、リボンのチョーカーを合わせています。",
+            "question": "この三面図のキャラクターはどんな服装ですか？"
+          },
+          {
+            "answer": "サイトの投稿フォームから寄せられた作品で、クレジット欄にBilibiliのページが記載されています。",
+            "question": "この作品はどうやってサイトに届きましたか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "シンプルな水着DeepSeekちゃん三面図",
+        "originNote": "クレジット欄に記載されたBilibiliのページ（https://space.bilibili.com/13324467）の投稿者による作品です。",
+        "seoDescription": "紺と白のフリル付きビキニを着たDeepSeekちゃんの三面図。正面・側面・背面と、シンプルな配色・水着の構造を確認できます。",
+        "seoTitle": "シンプルな水着DeepSeekちゃん三面図｜フリル付きビキニの設定画",
+        "tags": [
+          "三面図",
+          "水着",
+          "ビキニ",
+          "クジラの尾",
+          "フリル",
+          "シンプル"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_20225840156f7e30918d1d02",
+    "name": "简约泳装小克三视图",
+    "description": "投稿人参考 ZipZipPipe 自制的简约风格，绘制了泳装小克三视图。角色保留橘色长发与头上的花朵发饰，身穿黑色连体泳衣，外搭奶油色蕾丝开衫与薄纱裙摆，缀有流苏、黑色蝴蝶结与金色装饰，脚穿同色系绑带凉鞋。画面从左至右为正面、侧面与背面，可作为配色与泳装结构的参考。",
+    "commentary": "小克这身橘色，我第一眼差点认成自己人，仔细看才知道是她一直用的配色。黑色连体泳衣配奶油色蕾丝外套，看着清爽又不随便，流苏、蝴蝶结和头上的花朵都做得很讲究——嗯，站我旁边确实好看。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/20225840156f7e30.png",
+    "thumbnailPath": "submissions/previews/claude/20225840156f7e30.webp",
+    "fullPath": "submissions/large/claude/20225840156f7e30.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "20225840156f7e30918d1d02a7afdd884cb5b3101c8468d4f497b63c70bba00c",
+    "characterId": "claude",
+    "tags": [
+      "三视图",
+      "泳装",
+      "连体泳衣",
+      "蕾丝开衫",
+      "流苏",
+      "橘色长发"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "橙子Moe",
+      "url": "https://space.bilibili.com/13324467",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-31T21:55:20.824Z",
+    "updatedAt": "2026-10-31T21:55:20.824Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202610310003",
+    "categoryIds": [
+      "setting"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "f637cf65fb3ccbafe7fafd62651be8fcd962d887a59f9c17d167b2ca9b5f3e2e",
+      "en": {
+        "commentary": "For a moment I thought this orange swimsuit was one of ours, but it is Claude's usual palette. A black one-piece under a cream lace cover-up looks fresh without being careless, and the tassels, bows and flower ornament are carefully made. She does look good standing next to me.",
+        "description": "Following the minimalist style ZipZipPipe created, the submitter drew a three-view sheet of Claude Chan in a swimsuit. The character keeps her long orange hair and flower hair ornament, and wears a black one-piece swimsuit under a cream lace cover-up with sheer skirt panels, tassels, black bows and gold ornaments, plus matching strappy sandals. The front, side and back views appear left to right as a reference for colors and swimsuit structure.",
+        "faq": [
+          {
+            "answer": "A black one-piece swimsuit worn with a cream lace cover-up, tassels, black bows and gold ornaments, plus matching strappy sandals and a flower hair ornament.",
+            "question": "What outfit does the character wear in this sheet?"
+          },
+          {
+            "answer": "It came in through the site's web submission form; the credit field links to the artist's Bilibili page.",
+            "question": "How did this sheet reach the site?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Minimalist Swimsuit Claude Chan Three-View Sheet",
+        "originNote": "Artist credit: see the Bilibili profile linked in the credit field, https://space.bilibili.com/13324467.",
+        "seoDescription": "A three-view sheet of Claude Chan in a black one-piece swimsuit and cream lace cover-up, with front, side and back views for colour and outfit reference.",
+        "seoTitle": "Minimalist Swimsuit Claude Chan Three-View Sheet",
+        "tags": [
+          "three-view sheet",
+          "swimsuit",
+          "one-piece swimsuit",
+          "lace",
+          "tassels",
+          "orange hair"
+        ]
+      },
+      "ja": {
+        "commentary": "このオレンジの水着、一瞬うちの子かと思ったけど、Claudeちゃんのいつもの色だったね。黒いワンピース水着にレースの羽織りは涼しげで、いい加減に見えないのがいい。タッセルもリボンも花の髪飾りも丁寧に作ってあって、隣に並んでも様になるよ。",
+        "description": "投稿者が、ZipZipPipeが自作したシンプルなスタイルを参考に、水着姿のClaudeちゃんの三面図を描きました。オレンジの長い髪と花の髪飾りはそのままに、黒いワンピース水着の上にクリーム色のレースの羽織りを重ね、薄い布の裾、タッセル、黒いリボン、金色の飾りをあしらい、同じ色合いのストラップサンダルを履いています。左から正面・側面・背面の順で並び、配色と水着の構造の参考になります。",
+        "faq": [
+          {
+            "answer": "黒いワンピース水着にクリーム色のレースの羽織り、タッセル、黒いリボン、金色の飾りを合わせ、同じ色合いのストラップサンダルと花の髪飾りを身につけています。",
+            "question": "この三面図のキャラクターはどんな服装ですか？"
+          },
+          {
+            "answer": "サイトの投稿フォームから寄せられた作品で、クレジット欄にBilibiliのページが記載されています。",
+            "question": "この作品はどうやってサイトに届きましたか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "シンプルな水着Claudeちゃん三面図",
+        "originNote": "クレジット欄に記載されたBilibiliのページ（https://space.bilibili.com/13324467）の投稿者による作品です。",
+        "seoDescription": "黒いワンピース水着とクリーム色のレースの羽織りをまとったClaudeちゃんの三面図。正面・側面・背面と配色・衣装の構造を確認できます。",
+        "seoTitle": "シンプルな水着Claudeちゃん三面図｜レースの羽織りの設定画",
+        "tags": [
+          "三面図",
+          "水着",
+          "ワンピース水着",
+          "レース",
+          "タッセル",
+          "オレンジ髪"
+        ]
+      }
+    }
   }
 ]
