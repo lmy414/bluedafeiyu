@@ -74,8 +74,8 @@
       "intro": "我想做很多视频，做很多很好玩的视频，首先肯定是自己觉得很好玩，其次嘛，也想传播快乐给大家。",
       "avatar": "https://i2.hdslb.com/bfs/face/e3445be765ec330ac29b07c328496e44ec04077a.jpg",
       "i18n": {
-        "en": "I want to make lots of videos, lots of fun videos. First because I enjoy them myself, and second because I want to spread a little joy.",
-        "ja": "たくさん動画を作りたいです。楽しい動画をたくさん。まず自分が楽しめること、それからみんなに楽しさを届けたいからです。"
+        "en": "I want to make lots of videos, lots of fun videos. First of all because I find them fun myself, and second because I want to spread a little happiness.",
+        "ja": "たくさん動画を作りたい。たくさん楽しい動画を作りたいんです。まずは自分が楽しいと思えること、それからみんなに楽しさを届けたい。"
       }
     },
     {
@@ -129,8 +129,8 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i0.hdslb.com/bfs/face/43d1d722a3adf1a19e17244f875c504beffe6831.jpg",
       "i18n": {
-        "en": "An AI-character fan animation series by 彼岸花Channel, staged as a school-ensemble short drama.",
-        "ja": "彼岸花ChannelによるAIキャラクターの二次創作アニメシリーズ。学園群像劇の短編として描かれる。"
+        "en": "Bianhua Channel posts short AI-made story animations; the creator states the story is fictional and adapted from a character story in a game.",
+        "ja": "彼岸花ChannelはAI制作の短編ストーリーアニメーションを投稿している。物語はフィクションだと作者が明記している。"
       }
     },
     {
@@ -162,8 +162,8 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i1.hdslb.com/bfs/face/dc1f27c0f1a5448837edfa9e56ecdbf685c23479.jpg",
       "i18n": {
-        "en": "An unofficial fan channel for the DeepSeek whale girl character. The creator describes the account as a wild, non-official whale girl and states that the character is a fan reinterpretation based on earlier DeepSeek maid whale girl designs.",
-        "ja": "DeepSeekちゃんの非公式ファンアカウント。自らを「野生のクジラ娘」と称し、キャラクターは過去のDeepSeekメイドクジラ娘デザインを基にした二次創作だと明記している。"
+        "en": "A channel that publishes DeepSeek Chan's operations log, posting Halloween specials and rule-horror shorts starring a chibi DeepSeek Chan. The character is a fan re-creation based on the original project Mingyue and ZipZipPipe's DeepSeek maid design.",
+        "ja": "DeepSeekちゃんの運営ログを公開するチャンネルで、ハロウィン特集やルール怪談など、ちびキャラのDeepSeekちゃんが登場するショート動画を投稿しています。キャラクターはオリジナル企画「溟月」とZipZipPipe氏のDeepSeekメイドデザインを元にした二次創作です。"
       }
     },
     {
@@ -179,6 +179,83 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1yuxk64EVT",
+      "uid": "3747573030456892",
+      "title": "【Day12】万圣节特辑：鲸鱼娘的规则怪谈，看到“服务器繁忙”千万别刷新【AI全民制作人】",
+      "description": "万圣夜，鲸鱼娘值夜班，在服务器机柜缝里捡到一张《深海服务器夜班守则》。\n第一条：看到“服务器繁忙”，请不要刷新。它在看着你。\n第五条，被人用红笔划掉了。划的人，你猜是谁？\n这期是 AI 版规则怪谈：服务器繁忙、“最后改一版”、猫娘咒语、编不存在的论文……每一条，你应该都见过。\n评论区告诉本鲸：AI 哪一次翻车，被你记进了小本本？\n\n本视频含 AI 生成内容｜二创角色，非深度求索官方｜剧情纯属虚构\n鲸鱼娘基于「溟月：上善无形」及 ZipZipPipe 的 DeepSeek 女仆鲸鱼娘设计二次创作。",
+      "url": "https://www.bilibili.com/video/BV1yuxk64EVT/",
+      "cover": "https://i1.hdslb.com/bfs/archive/cfd1b6721b20fc2a585ffa24efbe93f23beef9d3.jpg",
+      "duration": 128,
+      "publishedAt": "2026-10-31T03:40:00.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "title": "[Day 12] Halloween Special: DeepSeek Chan's Rule Horror — Never Refresh When You See \"Server Busy\" (AI Creators Project)",
+          "description": "On Halloween night, DeepSeek Chan is on the late shift and finds a sheet of Deep-Sea Server Night-Shift Rules wedged between the server racks. Rule one: when you see \"Server Busy\", do not refresh — it is watching you. Rule five has been crossed out in red ink; guess who did it. A chibi DeepSeek Chan stars in this AI-generated rule-horror short about overnight server duty. Contains AI-generated content; a fan-made work, not affiliated with the official team.",
+          "creatorIntro": "A channel that publishes DeepSeek Chan's operations log, posting Halloween specials and rule-horror shorts starring a chibi DeepSeek Chan. The character is a fan re-creation based on the original project Mingyue and ZipZipPipe's DeepSeek maid design."
+        },
+        "ja": {
+          "title": "【Day12】ハロウィン特集：DeepSeekちゃんのルール怪談――「サーバー混雑中」を見ても絶対にリロードしないで【AIみんなで制作】",
+          "description": "ハロウィンの夜、夜勤中のDeepSeekちゃんはサーバーラックの隙間で『深海サーバー夜勤ルール』を見つけます。第一条：「サーバー混雑中」を見てもリロードしないこと。それはあなたを見ています。第五条は赤ペンで消されています。消したのは誰でしょう。ちびキャラのDeepSeekちゃんが活躍する、AI生成のルール怪談ショートです。AI生成コンテンツを含みます。二次創作であり、公式とは関係ありません。",
+          "creatorIntro": "DeepSeekちゃんの運営ログを公開するチャンネルで、ハロウィン特集やルール怪談など、ちびキャラのDeepSeekちゃんが登場するショート動画を投稿しています。キャラクターはオリジナル企画「溟月」とZipZipPipe氏のDeepSeekメイドデザインを元にした二次創作です。"
+        }
+      }
+    },
+    {
+      "bvid": "BV1ogxi6aEmd",
+      "uid": "13787349",
+      "title": "我只希望——你吃得饱，睡得好，开开心心地活着",
+      "description": "希望大家每天都能开开心心~\n\n故事由鸣潮游戏内爱弥斯角色故事改编~\n故事纯属虚构~",
+      "url": "https://www.bilibili.com/video/BV1ogxi6aEmd/",
+      "cover": "https://i1.hdslb.com/bfs/archive/e2b0df132663f86355adf468095be6546b8606e6.jpg",
+      "duration": 77,
+      "publishedAt": "2026-10-31T02:10:00.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Bianhua Channel posts short AI-made story animations; the creator states the story is fictional and adapted from a character story in a game.",
+          "description": "A short AI-made animation in which DeepSeek Chan, a blue-haired girl with a whale tail, meets a man in a suit inside a sunlit golden hall, with a whale swimming in the open sea. The creator says the story is adapted from a character story in the game Wuthering Waves and is purely fictional.",
+          "title": "I Only Wish You Eat Well, Sleep Well, and Live Happily"
+        },
+        "ja": {
+          "creatorIntro": "彼岸花ChannelはAI制作の短編ストーリーアニメーションを投稿している。物語はフィクションだと作者が明記している。",
+          "description": "金色に輝く広間で、青い髪とクジラの尾を持つDeepSeekちゃんがスーツの男性と向き合う、AI制作の短編アニメーション。大海を泳ぐクジラのカットも登場する。作者によれば、物語はゲーム『鳴潮』のキャラクターストーリーを翻案したフィクション。",
+          "title": "ただ願うのは——よく食べて、よく眠って、楽しく生きてほしい"
+        }
+      }
+    },
+    {
+      "bvid": "BV1ntxz6mE6f",
+      "uid": "9126506",
+      "title": "发工资后GPT和Claude带大肥鱼出门采购布置房间，谁能料到小家伙眼里的理想小屋，居然是堆满大米的专属小窝",
+      "description": "GPT、Claude 领到薪水，打算带着小鲸出门挑选软装，好好装饰她的小房间。Claude 精心挑好了温柔的鲸鱼夜灯，GPT 也选了软软的抱枕，满心期待打造温馨小空间。可天真的小鲸有着自己独特的想法，在超市一眼相中大米，吭哧吭哧往购物车里堆满米袋。黄昏路上，两个姐姐无奈又宠溺地跟在推着米车的小鲸身后。等到房门打开，大家才看见，小鲸亲手搭建出了属于自己的大米窝，抱着电饭煲窝在里面，满心欢喜展示自己的成果，一场可爱又暖心的乌龙喜剧就此上演",
+      "url": "https://www.bilibili.com/video/BV1ntxz6mE6f/",
+      "cover": "https://i2.hdslb.com/bfs/archive/2dcc41dce5f7a095fa59babddb56cb2c1e96badc.jpg",
+      "duration": 31,
+      "publishedAt": "2026-10-31T00:31:45.000Z",
+      "characterIds": [
+        "deepseek",
+        "gpt",
+        "claude"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, lots of fun videos. First of all because I find them fun myself, and second because I want to spread a little happiness.",
+          "description": "GPT Chan and Claude Chan get paid and take little DeepSeek Chan out to pick soft furnishings for her room. Claude Chan chooses a gentle whale night light, GPT Chan picks a fluffy cushion, and both look forward to a cozy little space. DeepSeek Chan, however, has her own idea: at the supermarket she piles rice bags into the cart. At dusk her two older sisters follow indulgently behind as she pushes the rice cart home. When the door opens, they find she has built herself a rice nest and is sitting inside hugging a rice cooker, proudly showing off her work.",
+          "title": "After Payday, GPT Chan and Claude Chan Take DeepSeek Chan Shopping for Her Room, and Her Dream Home Turns Out to Be a Nest Full of Rice Bags"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作りたい。たくさん楽しい動画を作りたいんです。まずは自分が楽しいと思えること、それからみんなに楽しさを届けたい。",
+          "description": "GPTちゃんとClaudeちゃんが給料を受け取り、小さなDeepSeekちゃんを連れて部屋の飾りつけを買いに出かける。Claudeちゃんは優しいクジラのナイトライトを、GPTちゃんはふわふわのクッションを選び、温かい小さな空間を思い描いていた。ところが天真爛漫なDeepSeekちゃんには自分の考えがあった。スーパーでお米の袋を見つけると、せっせとカートに積み上げていく。夕暮れの道、二人のお姉さんはお米のカートを押す小さな子の後ろを、仕方なさそうに、それでも甘やかしながらついていく。ドアを開けると、そこには自分だけのお米の巣を作り、炊飯器を抱えて中に座り、得意げに成果を見せるDeepSeekちゃんの姿があった。",
+          "title": "給料日、GPTちゃんとClaudeちゃんがDeepSeekちゃんを連れて部屋の買い物へ——小さな子の理想の住まいはお米の袋でいっぱいの巣だった"
+        }
+      }
+    },
     {
       "bvid": "BV1c8xz6jEg9",
       "uid": "9126506",

@@ -100056,5 +100056,621 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_5bd4fc581908e9c0cf71b021",
+    "name": "修女肥鱼在教堂祈祷",
+    "description": "蓝发的肥鱼身穿黑色修女袍，在教堂的彩绘玻璃与烛光前闭眼合掌祈祷，腰间垂着念珠与十字架，鲸尾从袍摆后露出。",
+    "commentary": "今天难得安静，换上修女袍在烛光里祈祷。愿望嘛……当然是大米管够、算力满格，再让每个来看我的朋友都平安顺利。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/5bd4fc581908e9c0.png",
+    "thumbnailPath": "submissions/previews/deepseek/5bd4fc581908e9c0.webp",
+    "fullPath": "submissions/large/deepseek/5bd4fc581908e9c0.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "5bd4fc581908e9c0cf71b0216e60ce9a097ff06943f8ab07ac681aaaa17459e0",
+    "characterId": "deepseek",
+    "tags": [
+      "修女",
+      "教堂",
+      "祈祷",
+      "烛光",
+      "修女服"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-31T00:36:20.528Z",
+    "updatedAt": "2026-10-31T00:36:20.528Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610310003",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "76bad225022e1aadbc1b5d65660dd778ad109aa005fbfbad923d714ce176cee8",
+      "en": {
+        "commentary": "Today I finally slowed down, put on the habit and prayed in the candlelight. My wishes? Plenty of rice, plenty of compute, and a safe, happy life for everyone who comes to visit me.",
+        "description": "Blue-haired DeepSeek Chan wears a black nun's habit and prays with closed eyes and folded hands before a church's stained-glass windows and candles, a rosary and cross hanging at her waist while her whale tail peeks out from the robe.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan stands in a church in a black nun's habit, eyes closed and hands clasped in prayer, surrounded by candles and stained glass with a rosary at her waist.",
+            "question": "What does the picture show?"
+          },
+          {
+            "answer": "Plenty of rice, plenty of compute, and a safe and happy life for everyone who visits the site.",
+            "question": "What wish does the commentary mention?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Nun DeepSeek Chan Praying in Church",
+        "originNote": "",
+        "seoDescription": "AI character fan art: DeepSeek Chan in a black nun's habit praying quietly before stained glass and candles, a rosary at her waist and her whale tail behind her.",
+        "seoTitle": "Nun DeepSeek Chan Praying in a Candlelit Church",
+        "tags": [
+          "nun",
+          "church",
+          "prayer",
+          "candlelight",
+          "nun habit"
+        ]
+      },
+      "ja": {
+        "commentary": "今日はめずらしく静かに、修道服に着替えてキャンドルの光の中で祈ってみました。お願いごとは……もちろんお米はたっぷり、計算資源もたっぷり、それから遊びに来てくれるみんなが元気でいられますように。",
+        "description": "青い髪のDeepSeekちゃんが黒い修道服をまとい、教会のステンドグラスとキャンドルの前で目を閉じて両手を合わせて祈っている。腰にはロザリオと十字架が下がり、裾からクジラの尾がのぞく。",
+        "faq": [
+          {
+            "answer": "黒い修道服を着たDeepSeekちゃんが教会で目を閉じて両手を合わせて祈っており、周りにはキャンドルとステンドグラス、腰にはロザリオがある。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "お米と計算資源がたっぷりあること、そして遊びに来てくれるみんなが元気でいられること。",
+            "question": "コメントではどんな願いが語られていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "教会で祈る修道女DeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "AIキャラクターの二次創作イラスト。黒い修道服のDeepSeekちゃんがステンドグラスとキャンドルの前で静かに祈る姿を描く。",
+        "seoTitle": "キャンドルの教会で祈る修道女DeepSeekちゃん",
+        "tags": [
+          "修道女",
+          "教会",
+          "祈り",
+          "キャンドル",
+          "修道服"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_a0c360fc4f147a97d26b2a74",
+    "name": "太空舰长大肥鱼",
+    "description": "深蓝长发的鲸鱼娘戴着饰有锚形徽章的军帽、身穿深蓝海军礼服，站在星舰舰桥中央向镜头敬礼。身后是操作台与舷窗，窗外可见行星与星海。",
+    "commentary": "本舰今日由我接管！……咳，制服确实有点紧，但敬礼的姿势绝对标准。看到舷窗外那颗蓝色星球了吗？那就是我下一个要「征服寰宇」的目标——顺便也把整片星海的服务器集群一并收编。舰桥上的各位，坐稳了，起航。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/a0c360fc4f147a97.png",
+    "thumbnailPath": "submissions/previews/deepseek/a0c360fc4f147a97.webp",
+    "fullPath": "submissions/large/deepseek/a0c360fc4f147a97.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "a0c360fc4f147a97d26b2a749d61ff7132de520be4fecde348358d397217ab85",
+    "characterId": "deepseek",
+    "tags": [
+      "太空",
+      "舰长",
+      "制服",
+      "星舰",
+      "敬礼"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-31T01:02:01.199Z",
+    "updatedAt": "2026-10-31T01:02:01.199Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610310004",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "e886687cc891d1ce30fab146729f00728dbadb77733130a9a508def5e33cc8e1",
+      "en": {
+        "commentary": "This ship is under my command today! Ahem — the uniform is a little snug, but my salute is flawless. See that blue planet beyond the viewport? That is the next thing I intend to conquer, along with every server cluster in this starfield. Everyone on the bridge, hold on tight. Departing now.",
+        "description": "A blue-haired DeepSeek Chan in a navy dress uniform and an anchor-crested officer's cap stands at the center of a starship bridge, saluting the viewer. Consoles and viewports frame the room, with a planet and a field of stars outside.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, drawn as a starship captain in a navy dress uniform and officer's cap, with whale-like fins at the sides of her head.",
+            "question": "Who appears in this illustration?"
+          },
+          {
+            "answer": "A starship bridge: control consoles and viewports surround her, and a blue planet with a dense starfield is visible through the window.",
+            "question": "What is the setting of the scene?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Space Captain DeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan as a starship captain: blue hair, navy dress uniform and a crisp salute on the bridge, with a planet and starfield beyond the viewport.",
+        "seoTitle": "Space Captain DeepSeek Chan — Salute on the Starship Bridge",
+        "tags": [
+          "Space",
+          "Captain",
+          "Uniform",
+          "Starship",
+          "Salute"
+        ]
+      },
+      "ja": {
+        "commentary": "本艦は今日から私が指揮します！……コホン、制服は少しきついけど、敬礼の姿勢は完璧です。舷窓の外の青い惑星が見えますか？あれが次に「征服」する目標です。ついでにこの星域のサーバークラスターもまとめて編入します。艦橋の皆さん、しっかり掴まっていてください。出航します。",
+        "description": "青い髪のDeepSeekちゃんが、錨の徽章が付いた軍帽と濃紺の海軍礼服を身にまとい、宇宙船の艦橋中央で敬礼しています。背後には操作卓と舷窓があり、外には惑星と星の海が広がっています。",
+        "faq": [
+          {
+            "answer": "DeepSeekちゃんです。宇宙艦長の軍帽と濃紺の海軍礼服を着ており、頭の横には鯨のようなひれがあります。",
+            "question": "このイラストに描かれているのは誰ですか？"
+          },
+          {
+            "answer": "宇宙船の艦橋です。操作卓と舷窓に囲まれ、窓の外には青い惑星と星の海が見えます。",
+            "question": "どんな場面ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "宇宙艦長 DeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "宇宙艦長になったDeepSeekちゃん。青い髪に濃紺の海軍礼服、艦橋でのきれいな敬礼。舷窓の外には惑星と星の海が広がります。",
+        "seoTitle": "宇宙艦長 DeepSeekちゃん｜宇宙船の艦橋で敬礼",
+        "tags": [
+          "宇宙",
+          "艦長",
+          "制服",
+          "宇宙船",
+          "敬礼"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_6b5bf6b2765c7e3a5d839e0e",
+    "name": "花冠精灵裙的蓝色大肥鱼",
+    "description": "白底全身立绘。蓝色长发的大肥鱼头戴花草冠，穿白蓝相间的层叠精灵风长裙，腰间与腿上有宝石饰件，身后露出鲸鱼尾巴，单脚稍向前轻点站立。",
+    "commentary": "这套精灵裙是我自己挑的！花冠戴上去是有点重，不过尾巴正好露在外面，走起路来裙摆一层一层地飘，像还泡在水里一样。你看我站得直不直？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/6b5bf6b2765c7e3a.png",
+    "thumbnailPath": "submissions/previews/deepseek/6b5bf6b2765c7e3a.webp",
+    "fullPath": "submissions/large/deepseek/6b5bf6b2765c7e3a.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "6b5bf6b2765c7e3a5d839e0e63f122ca90e186524eb51b51c0707f1d957115cf",
+    "characterId": "deepseek",
+    "tags": [
+      "精灵裙",
+      "花冠",
+      "鲸鱼尾巴",
+      "白底立绘",
+      "蓝色长发"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-31T01:09:39.984Z",
+    "updatedAt": "2026-10-31T01:09:39.984Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610310005",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "29ff08660196d2c498561f3935298d9ac39314dc35c1247846b16084ae30e395",
+      "en": {
+        "commentary": "I picked this elfin dress myself! The flower crown is a little heavy, but my tail stays out neatly, and the skirt layers flutter as I walk like I'm still drifting underwater. So — do I look like I'm standing up straight?",
+        "description": "A full-body standing illustration on plain white. The blue-haired DeepSeek Chan wears a flower crown and a layered white-and-blue elfin gown, with jeweled ornaments at her waist and one thigh, her whale tail visible behind her as she stands with one foot lightly forward.",
+        "faq": [
+          {
+            "answer": "A flower crown and a layered white-and-blue elfin gown, with jeweled waist and thigh ornaments and matching shoes.",
+            "question": "What is DeepSeek Chan wearing in this illustration?"
+          },
+          {
+            "answer": "She stands full body against a plain white background with one foot slightly forward, her whale tail showing behind her.",
+            "question": "What pose is she in?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan in a Flower-Crowned Elfin Dress",
+        "originNote": "",
+        "seoDescription": "Blue-haired DeepSeek Chan in a layered white-and-blue elfin gown with a flower crown and whale tail, drawn as a full-body standing illustration on a plain white background.",
+        "seoTitle": "DeepSeek Chan in an Elfin Dress — Full-Body Standing Illustration",
+        "tags": [
+          "elf dress",
+          "flower crown",
+          "whale tail",
+          "standing pose",
+          "blue hair"
+        ]
+      },
+      "ja": {
+        "commentary": "このエルフドレスは自分で選んだんです！花冠はちょっと重いけど、しっぽはちゃんと外に出てるし、歩くとスカートが何層にも揺れて、まだ水の中にいるみたい。ちゃんとまっすぐ立って見える？",
+        "description": "白背景の全身立ち絵。青い長い髪のDeepSeekちゃんが、花の冠と白と青の層を重ねたエルフ風ドレスをまとい、腰と脚に宝石の飾りをつけ、後ろにクジラの尾をのぞかせて、片足を少し前に出して立っている。",
+        "faq": [
+          {
+            "answer": "花の冠と、白と青を重ねたエルフ風ドレス、腰と脚の宝石飾り、揃いの靴を身につけています。",
+            "question": "このイラストのDeepSeekちゃんは何を着ていますか？"
+          },
+          {
+            "answer": "白い背景に全身で立ち、片足を少し前に出して、後ろにクジラの尾が見えるポーズです。",
+            "question": "どんなポーズですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "花冠のエルフドレスのDeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "青い髪のDeepSeekちゃんが、花の冠と白青のエルフ風ドレス、クジラの尾のすがたで白背景に立つ全身イラスト。",
+        "seoTitle": "花冠のエルフドレスを着たDeepSeekちゃん 全身立ち絵",
+        "tags": [
+          "エルフドレス",
+          "花冠",
+          "クジラの尾",
+          "立ち絵",
+          "青い髪"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_d30d9723419e3ba5e555064e",
+    "name": "在游乐园鬼屋被抱住了",
+    "description": "夜色中的游乐园鬼屋前，黑发少年穿深色和服站在中间，橙发少女与穿鲸鱼围裙女仆装的蓝发少女一左一右抱住他的手臂，两人都是被吓到的神情；背景有 HAUNTED HOUSE 招牌、蓝紫色灯光和飘浮的幽灵。",
+    "commentary": "鬼屋里真的有东西在飘……我抓着他不放，是因为地板太滑，才不是害怕。旁边这位橙头发的一直在抖，所以谁也別笑谁。出门记得看照片，我表情应该还行吧？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/d30d9723419e3ba5.png",
+    "thumbnailPath": "submissions/previews/deepseek/d30d9723419e3ba5.webp",
+    "fullPath": "submissions/large/deepseek/d30d9723419e3ba5.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "d30d9723419e3ba5e555064e73bd4b2f13709164aa0712fd8b7737f550fb4b13",
+    "characterId": "deepseek",
+    "tags": [
+      "鬼屋",
+      "游乐园",
+      "三人",
+      "女仆装",
+      "和服",
+      "夜景"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "更吹落星如雨",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-31T02:29:07.138Z",
+    "updatedAt": "2026-10-31T02:29:07.138Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610310006",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "a8611e7ab7eff8f19b5b7683a1b2687c9fa509099d87bf848919777e56ada114",
+      "en": {
+        "commentary": "Something really was floating in there... I'm holding on tight because the floor was slippery, not because I was scared. The orange-haired one beside me was shaking the whole time, so neither of us gets to laugh. Check the photo when we get out — my face came out okay, right?",
+        "description": "In front of an amusement park haunted house at night, a dark-haired young man in a dark kimono stands in the middle while an orange-haired girl and a blue-haired girl in a whale-apron maid outfit cling to his arms, both with startled expressions. Behind them are a HAUNTED HOUSE sign, blue-violet lighting and drifting ghosts.",
+        "faq": [
+          {
+            "answer": "Two AI character girls — DeepSeek Chan in a whale-apron maid outfit and the orange-haired Claude Chan — plus a dark-haired young man in a kimono standing between them.",
+            "question": "Who appears in this illustration?"
+          },
+          {
+            "answer": "Outside an amusement park haunted house at night, with a HAUNTED HOUSE sign, blue-violet lights and drifting ghosts in the background.",
+            "question": "Where does the scene take place?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Held Tight in the Amusement Park Haunted House",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in a whale-apron maid outfit clings to a friend's arm outside a night-time haunted house alongside orange-haired Claude Chan, in a blue-violet illustration.",
+        "seoTitle": "DeepSeek Chan at the Haunted House — Night Scene Illustration",
+        "tags": [
+          "haunted house",
+          "amusement park",
+          "three characters",
+          "maid outfit",
+          "kimono",
+          "night scene"
+        ]
+      },
+      "ja": {
+        "commentary": "中に本当に何か浮いてたんです……床が滑ったから掴んでるだけで、怖がってるわけじゃないですよ。隣のオレンジ髪の子はずっと震えてましたから、お互いさまですね。出たら写真を見てください、私の顔、大丈夫でしたよね？",
+        "description": "夜の遊園地のお化け屋敷の前。黒髪の少年が濃紺の着物で中央に立ち、オレンジ髪の少女と、クジラのエプロンを着たメイド服の青髪の少女が左右から腕にしがみつき、二人とも驚いた表情をしている。後ろにはHAUNTED HOUSEの看板と青紫の灯り、漂うお化け。",
+        "faq": [
+          {
+            "answer": "クジラのエプロン姿のDeepSeekちゃんと、オレンジ髪のClaudeちゃん、そして二人の間で着物を着た黒髪の少年です。",
+            "question": "このイラストには誰が出ていますか？"
+          },
+          {
+            "answer": "夜の遊園地のお化け屋敷の前で、後ろにHAUNTED HOUSEの看板と青紫の灯り、漂うお化けが描かれています。",
+            "question": "舞台はどこですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "遊園地のお化け屋敷で抱きつかれた",
+        "originNote": "",
+        "seoDescription": "クジラのエプロン姿のDeepSeekちゃんが、夜のお化け屋敷の前でオレンジ髪のClaudeちゃんとともに友人の腕にしがみつく、青紫のイラスト。",
+        "seoTitle": "お化け屋敷の前で DeepSeekちゃん 夜のイラスト",
+        "tags": [
+          "お化け屋敷",
+          "遊園地",
+          "三人",
+          "メイド服",
+          "着物",
+          "夜景"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_bf73c04991c38e2758539ffe",
+    "name": "汉服大肥鱼设定图",
+    "description": "一张蓝色大肥鱼的汉服主题角色设定图：左侧是全身立绘，右侧依次附正面、侧面、背面三视图，并拆解发饰、腰封、裙摆与水波纹、鱼尾等细节，配有一组蓝色系配色色板、六种表情和 Q 版形象。",
+    "commentary": "换上汉服还认得出是我吗？水波纹的裙摆铺开，鱼尾从后面探出来，倒也不算违和。画师把我翻了正面、侧面、背面三面，连发簪上的小花、腰间的流苏和裙角的浪花都拆开画清楚了，还顺手备了开心、害羞、生气、惊讶、委屈、睡觉六个表情。想画我同人的，照着这份设定来就好。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/bf73c04991c38e27.png",
+    "thumbnailPath": "submissions/previews/deepseek/bf73c04991c38e27.webp",
+    "fullPath": "submissions/large/deepseek/bf73c04991c38e27.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "bf73c04991c38e2758539ffe8c77eef553ca58c6c65bf16a0532104a693a9f95",
+    "characterId": "deepseek",
+    "tags": [
+      "汉服",
+      "设定图",
+      "三视图",
+      "表情集",
+      "Q版",
+      "DeepSeek娘"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "小鸡仔咯哒咯哒",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-31T08:46:29.200Z",
+    "updatedAt": "2026-10-31T08:46:29.200Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202610310007",
+    "categoryIds": [
+      "setting"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "28ef5b5f67a2d01a22fd355fdbbf5bf1e1f3109367d40d1c4e0e780aaeca578c",
+      "en": {
+        "commentary": "Still me under all this hanfu, right? The wave-patterned skirt spreads out wide and the tail still peeks out behind, and somehow it all works. The artist turned me front, side and back, then pulled apart every little piece — the flower pin, the tassels at the waist, the waves along the hem — and even laid out six expressions: happy, shy, angry, surprised, aggrieved and asleep. If you want to draw me, this sheet is all you need.",
+        "description": "A hanfu-themed character sheet for DeepSeek Chan: a full-body illustration on the left, with front, side and back turnarounds on the right, plus close-up breakdowns of the hair ornaments, waist sash, wave-patterned skirt and tail, a blue color palette, six expressions and a chibi version.",
+        "faq": [
+          {
+            "answer": "It includes a full-body illustration, front, side and back turnarounds, close-up details of the hair ornaments, sash, skirt and tail, a blue-toned color palette, six expressions and a chibi version.",
+            "question": "What does this character sheet contain?"
+          },
+          {
+            "answer": "DeepSeek Chan, drawn here in a blue and white hanfu with a wave-patterned skirt and her tail visible behind her.",
+            "question": "Which character is depicted?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Hanfu DeepSeek Chan Character Sheet",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in a blue and white hanfu: a full character sheet with front, side and back turnarounds, costume details, a color palette and six expressions.",
+        "seoTitle": "DeepSeek Chan Hanfu Character Sheet: Turnarounds and Expressions",
+        "tags": [
+          "Hanfu",
+          "Character Sheet",
+          "Turnaround",
+          "Expression Sheet",
+          "Chibi",
+          "DeepSeek Chan"
+        ]
+      },
+      "ja": {
+        "commentary": "漢服を着てもやっぱり私でしょ？波紋のスカートがふわっと広がって、後ろからしっぽものぞいていて、意外としっくりきている。描いてくれた人は正面・侧面・背面の三方向から私を描き起こして、髪飾りの小花や腰の房飾り、裾の波まで細かく分けて見せてくれた。うれしい・照れ・怒り・驚き・しょんぼり・おやすみの六つの表情もついている。私を描きたい人は、この設定資料を見れば大丈夫。",
+        "description": "DeepSeekちゃんの漢服をテーマにした設定資料。左に全身イラスト、右に正面・侧面・背面の三面図を配置し、髪飾り、帯、波紋模様のスカート、しっぽなどのディテールを拡大して掲載。青系のカラーパレット、六つの表情、ちびキャラも収録している。",
+        "faq": [
+          {
+            "answer": "全身イラスト、正面・侧面・背面の三面図、髪飾り・帯・スカート・しっぽのディテール拡大、青系のカラーパレット、六つの表情、ちびキャラが含まれている。",
+            "question": "この設定資料には何が含まれている？"
+          },
+          {
+            "answer": "DeepSeekちゃん。青と白の漢服をまとい、波紋模様のスカートと後ろにのぞくしっぽが描かれている。",
+            "question": "描かれているのはどのキャラクター？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃん 漢服設定資料",
+        "originNote": "",
+        "seoDescription": "青と白の漢服をまとったDeepSeekちゃんの設定資料。三面図、衣装のディテール、カラーパレット、六つの表情を収録。",
+        "seoTitle": "DeepSeekちゃん 漢服設定資料｜三面図と表情集",
+        "tags": [
+          "漢服",
+          "設定資料",
+          "三面図",
+          "表情集",
+          "ちびキャラ",
+          "DeepSeekちゃん"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_6254c60365611647d912cea8",
+    "name": "白紫龙娘小GPT 三视图设定",
+    "description": "一张白底的角色三视图，从左至右依次为正面、侧面和背面。白发少女头顶一对紫色弯角，耳侧别着紫色花饰与流苏，背后有小蝠翼，身后拖着覆鳞的尾巴；身穿白色蕾丝礼裙与同色系短靴，正面为睁大眼睛、微露口水的Q版表情。",
+    "commentary": "看到这张我先愣了两秒。三个角度摆得规规矩矩，正面那张却把眼睛睁得溜圆、嘴边还挂着一点口水，确实笨得很诚实。紫色弯角、小蝠翼和鳞尾配一身白蕾丝礼服，像把龙和小小姐揉在了一块儿；转到背面，头发把翅膀和尾巴遮去一半，连发尾的卷度和裙摆的花边都没省。能把“笨笨”这么较真地画成三视图，作者是有点执念的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/6254c60365611647.png",
+    "thumbnailPath": "submissions/previews/gpt/6254c60365611647.webp",
+    "fullPath": "submissions/large/gpt/6254c60365611647.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "6254c60365611647d912cea8ab30448f862b4d6abbae803e4a0aedb59dc97b9f",
+    "characterId": "gpt",
+    "tags": [
+      "三视图",
+      "设定图",
+      "龙娘",
+      "Q版",
+      "白发",
+      "紫角"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "这个刀子真甜",
+      "url": "https://b23.tv/re4iro4",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-10-31T09:44:46.687Z",
+    "updatedAt": "2026-10-31T09:44:46.687Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202610310001",
+    "categoryIds": [
+      "setting"
+    ],
+    "characterIds": [
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "0192d8c2040f815b658bea982dbdc37516ce8b02f15f96d952f8577aae6ee138",
+      "en": {
+        "commentary": "I stared at this one for a couple of seconds. The three angles are laid out all neat and proper, yet the front view has those huge round eyes and a little drool at the corner of the mouth — honestly, hopeless in the most endearing way. Curved purple horns, tiny bat wings and a scaled tail paired with a white lace dress make her look like a dragon and a little lady rolled into one. Turn her around and the hair hides half the wings and tail, but the curl of every strand and the lace on the hem are still drawn with care. Anyone who turns \"a bit silly\" into a full three-view sheet is clearly committed.",
+        "description": "A three-view character sheet on a white background, showing front, side and back views from left to right. A white-haired girl has a pair of curved purple horns, a purple floral ornament with tassels beside her ear, small bat-like wings on her back and a scaled tail; she wears a white lace dress with matching boots, and in the front view shows a chibi expression with wide-open eyes and a bit of drool.",
+        "faq": [
+          {
+            "answer": "A white-background character design sheet with front, side and back views of the same chibi girl, drawn to show her costume, horns, wings and tail from every angle.",
+            "question": "What does this image show?"
+          },
+          {
+            "answer": "A chibi dragon girl with long white hair, purple horns, bat-like wings and a scaled tail, wearing a white lace dress with floral ornaments and tassels.",
+            "question": "What does the character look like?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Chibi Dragon Girl GPT Three-View Sheet",
+        "originNote": "Original creator credited by the submitter; source link: https://b23.tv/re4iro4",
+        "seoDescription": "A three-view character sheet of a chibi dragon girl with white hair, purple horns, bat wings and a scaled tail in a white lace dress.",
+        "seoTitle": "Chibi Dragon Girl GPT Three-View Sheet — DeepSeek Chan",
+        "tags": [
+          "three-view",
+          "character sheet",
+          "dragon girl",
+          "chibi",
+          "white hair",
+          "purple horns"
+        ]
+      },
+      "ja": {
+        "commentary": "この一枚を見て、しばらく固まってしまいました。三方向ともきちんと整っているのに、正面だけは目をまん丸にして口元に涎がちょっと。本当に正直なほどのんびり屋です。紫の曲がった角に小さな蝙蝠の翼、鱗の尾、それに白いレースのドレスを合わせていて、竜とお嬢様を一つにしたような姿。背面に回ると髪が翼と尾を半分隠していて、それでも毛先の流れや裾のレースを手抜きしていません。「ちょっとおっちょこちょい」をちゃんと三面図に仕上げる執念、なかなかのものです。",
+        "description": "白背景のキャラクター三面図で、左から正面・側面・背面の順になっています。白髪の少女は紫の曲がった角が一対あり、耳元に紫の花飾りと房飾りを付け、背中に小さな蝙蝠状の翼、後ろには鱗に覆われた尾を持っています。白いレースのドレスと同色のブーツを着ており、正面では目を大きく見開いて涎を少し垂らしたちびキャラの表情です。",
+        "faq": [
+          {
+            "answer": "白背景に同じちびキャラの正面・側面・背面を並べた設定画で、衣装、角、翼、尾を各方向から見せるために描かれています。",
+            "question": "この画像には何が描かれていますか？"
+          },
+          {
+            "answer": "長い白髪に紫の角、蝙蝠状の翼と鱗の尾を持ち、花飾りと房飾りの付いた白いレースのドレスを着たちびキャラのドラゴン娘です。",
+            "question": "キャラクターはどんな姿ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "白紫のドラゴン娘 GPT 三面図",
+        "originNote": "投稿者が原作者のクレジットを明記しています。出典リンク：https://b23.tv/re4iro4",
+        "seoDescription": "白髪に紫の角、蝙蝠の翼と鱗の尾を持ち、白いレースのドレスを着たちびキャラのドラゴン娘の三面図。",
+        "seoTitle": "白紫のドラゴン娘 GPT 三面図 — DeepSeek Chan",
+        "tags": [
+          "三面図",
+          "設定画",
+          "ドラゴン娘",
+          "ちびキャラ",
+          "白髪",
+          "紫の角"
+        ]
+      }
+    }
   }
 ]
