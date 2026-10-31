@@ -101,8 +101,8 @@ try {
    fs.mkdirSync(path.join(stage,fs.statSync(source).isDirectory()?relative:path.dirname(relative)),{recursive:true});
    for(const name of names)if(copyImmutableAsset(path.join(dist,name),path.join(stage,name),path.join(previous,name)))reusedAssets++;
   };
-  for(const file of ['avatar.png','favicon.ico','favicon.png','qq-group.png','credits/shuangshuang.jpg','events/national-day-2026.webp','characters.json','categories.json','blue-fish-ids.json','topics.json','site-data.json','site-data.js','submissions/works.json','owner-picks/works.json'])copy(file);
-  for(const dir of ['submissions/previews','submissions/large','owner-picks/previews','author-avatars','character-portraits'])copy(dir);
+  for(const file of ['avatar.png','favicon.ico','favicon.png','credits/shuangshuang.jpg','events/national-day-2026.webp','characters.json','categories.json','blue-fish-ids.json','topics.json','site-data.json','site-data.js','submissions/works.json','owner-picks/works.json'])copy(file);
+  for(const dir of ['submissions/previews','submissions/large','owner-picks/previews','author-avatars','character-portraits','community'])copy(dir);
   const icons=spawnSync(process.env.PYTHON||'python3',[path.join(root,'tools/prepare_apple_touch_icons.py'),path.join(dist,'favicon.png'),stage],{stdio:'inherit'});
   if(icons.error||icons.status!==0)throw Error('Apple touch icon generation failed: '+(icons.error?.message||icons.status));
   if(process.env.SKIP_OG!=='1') {

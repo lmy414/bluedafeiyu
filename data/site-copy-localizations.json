@@ -297,10 +297,6 @@
       "en": "About DeepSeek Chan - The Open Archive of AI Chan Reaction Images and Copyright Notes",
       "ja": "DeepSeek Chanについて - AIちゃんネタ画像オープンアーカイブと著作権のご案内"
     },
-    "了解蓝色大肥鱼 AI娘表情包开放档案、图片版权与授权、Google Analytics 统计隐私、评论机制、官方 QQ 交流群、角色设计致谢和删除申请方式。": {
-      "en": "Learn about the DeepSeek Chan open archive of AI Chan reaction images, image copyright and licensing, Google Analytics privacy, how comments work, the official QQ community group, character design credits and how to request a takedown.",
-      "ja": "DeepSeek ChanのAIちゃんネタ画像オープンアーカイブ、画像の著作権とライセンス、Google Analyticsによる統計のプライバシー、コメントの仕組み、公式QQ交流グループ、キャラクターデザインのクレジット、削除依頼の方法についてご案内します。"
-    },
     "上善无形": {
       "en": "Shangshan Wuxing",
       "ja": "上善無形"
@@ -308,10 +304,6 @@
     "霜霜": {
       "en": "Shuangshuang",
       "ja": "霜霜"
-    },
-    "QQ 群「AAAA肥鱼批发市场」（群号 {n0}）的加入二维码": {
-      "en": "QR code to join the QQ group \"AAAA Big Fish Wholesale Market\" (group number {n0})",
-      "ja": "QQグループ「AAAA肥魚卸売市場」（グループ番号 {n0}）に参加するためのQRコード"
     },
     "AI 娘表情包与二创作品 — 蓝色大肥鱼": {
       "en": "AI Chan Reaction Images and Fan Works — DeepSeek Chan",
@@ -2097,29 +2089,29 @@
       "en": "Browse {n0} AI Chan characters who have works in the archive, check their names, current aliases and representative works, and open each character's reaction image, fan art, design sheet and comic archive.",
       "ja": "{n0}人の、作品が収録されているAIちゃんキャラクターを一覧できます。名前や現在の別名、代表作品を確認して、各キャラクターのネタ画像・ファンアート・設定画・漫画のアーカイブへ移動できます。"
     },
-    "AAAA肥鱼批发市场社群与公开交流入口 — 蓝色大肥鱼": {
-      "en": "AAAA DeepSeek Chan Wholesale Market Community and Public Chat Links — DeepSeek Chan",
-      "ja": "AAAA DeepSeekちゃん卸売市場コミュニティと公開交流窓口 — DeepSeek Chan"
+    "Discord、QQ 群与微信公众号：加入蓝色大肥鱼社群 — 蓝色大肥鱼": {
+      "en": "Discord, QQ Group and WeChat: Join the DeepSeek Chan Community — DeepSeek Chan",
+      "ja": "Discord・QQグループ・WeChat：藍色大肥魚のコミュニティに参加 — 藍色大肥魚"
     },
-    "查看AAAA肥鱼批发市场 QQ 交流群、站长公开账号和二创交流入口，分享作品、参加活动或反馈归档问题。": {
-      "en": "Check out the AAAA DeepSeek Chan Wholesale Market QQ chat group, the site owner's public accounts and the fan-work chat entries — share your work, join an event or report a problem with the archive.",
-      "ja": "AAAA DeepSeekちゃん卸売市場のQQ交流グループ、管理人の公開アカウント、二次創作の交流窓口をまとめています。作品をシェアしたり、イベントに参加したり、アーカイブの不具合を報告したりできます。"
+    "查看蓝色大肥鱼的 Discord 社区、QQ 群「蓝色大肥鱼.com」（群号 1134100615）和微信公众号，获取加入链接与二维码，分享作品、参加活动或反馈归档问题。": {
+      "en": "Join the DeepSeek Chan community on Discord, in the QQ group “Blue Dafeiyu.com” (group number 1134100615), or follow the WeChat Official Account. Get the invite links and QR codes, share fan art, join events or report a problem with the archive.",
+      "ja": "DeepSeek ChanのDiscordコミュニティ、QQグループ「Blue Dafeiyu.com」（グループ番号 1134100615）、WeChat公式アカウントを案内します。参加リンクとQRコードから、作品の共有やイベント参加、アーカイブの不具合報告ができます。"
     },
-    "AAAA肥鱼批发市场": {
-      "en": "AAAA DeepSeek Chan Wholesale Market",
-      "ja": "AAAA DeepSeekちゃん卸売市場"
+    "从投稿页提交原图、名称、角色与作品类型，并选择是否署名。投稿进入审核队列，通过后批量发布；本站未承诺固定审核时限。也可以使用投稿页中的 GitHub 表单；投稿相关的问题可以到社群页的 Discord 或 QQ 群询问。": {
+      "en": "Submit the original image, title, characters and artwork type through the submission page, and choose whether to be credited. Submissions enter a review queue and approved works are published in batches. There is no guaranteed review time. A GitHub form is also linked on that page, and submission questions are welcome on Discord or in the QQ group linked from the community page.",
+      "ja": "投稿ページから元画像、作品名、キャラクター、種類を入力し、クレジットの有無を選択します。審査に通った作品はまとめて公開します。審査期間の保証はありません。GitHubフォームも同じページから利用できます。投稿についての質問は、コミュニティページのDiscordまたはQQグループでお気軽にどうぞ。"
     },
-    "复制群号": {
-      "en": "Copy group number",
-      "ja": "グループ番号をコピー"
+    "社群在哪里加入？": {
+      "en": "Where can I join the community?",
+      "ja": "コミュニティにはどこから参加できますか？"
     },
-    "QQ 群AAAA肥鱼批发市场（{n0}）二维码": {
-      "en": "QR code for the AAAA DeepSeek Chan Wholesale Market QQ group ({n0})",
-      "ja": "QQグループ「AAAA DeepSeekちゃん卸売市場」（{n0}）のQRコード"
+    "蓝色大肥鱼.com": {
+      "en": "Blue Dafeiyu.com",
+      "ja": "Blue Dafeiyu.com"
     },
-    "AAAA肥鱼批发市场 · {n0}": {
-      "en": "AAAA DeepSeek Chan Wholesale Market · {n0}",
-      "ja": "AAAA DeepSeekちゃん卸売市場 · {n0}"
+    "本站的公开交流在 Discord 和 QQ 群「蓝色大肥鱼.com」（群号 1134100615），微信公众号也可以扫码关注。社群页汇总了三个入口的链接和二维码，Discord、QQ 与微信都可以直接找到我们。": {
+      "en": "The public community lives on Discord and in the QQ group “Blue Dafeiyu.com” (group number 1134100615); you can also follow the WeChat Official Account by scanning its QR code. The community page collects all three links and QR codes, so you can reach us on Discord, QQ or WeChat.",
+      "ja": "公開コミュニティはDiscordとQQグループ「Blue Dafeiyu.com」（グループ番号 1134100615）で、WeChat公式アカウントもQRコードからフォローできます。コミュニティページに3つの入口のリンクとQRコードをまとめてあり、Discord・QQ・WeChatのどれからでも参加できます。"
     },
     "哔哩哔哩 · UID {n0}": {
       "en": "bilibili · UID {n0}",

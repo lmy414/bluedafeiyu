@@ -29,7 +29,8 @@ The interface supports Chinese, English and Japanese.
 | Interface languages | Chinese, English, Japanese |
 | Work types | Memes, illustrations, character sheets, comics |
 | Images | Stored in a separate public image archive |
-| Submissions | Site form, QQ group bot, GitHub Issue Forms |
+| Submissions | Site form, GitHub Issue Forms |
+| Community | Discord, QQ group "蓝色大肥鱼.com" |
 
 ## Quick Links
 
@@ -37,10 +38,14 @@ The interface supports Chinese, English and Japanese.
 | --- | --- |
 | Browse online | <https://xn--pssy23gqgbz2d718b.com/> |
 | Submit through the site | <https://xn--pssy23gqgbz2d718b.com/submit.html> |
-| Submit through QQ | @ the bot in the submission group with "投稿 标题 角色" and include the image in the same message |
+| Discord community | <https://discord.gg/pmECYDChY> |
+| QQ group "蓝色大肥鱼.com" | <https://qm.qq.com/q/mFL9GUZkWc> |
+| WeChat Official Account: scan the QR code on the community page | <https://xn--pssy23gqgbz2d718b.com/community.html#community-join> |
 | Submit via GitHub Issue | <https://github.com/lmy414/ai-girl-stickers/issues/new?template=sticker-submission.yml> |
 | Request attribution or takedown | <https://github.com/lmy414/ai-girl-stickers/issues/new?template=takedown-request.yml> |
 | Image archive | <https://github.com/lmy414/ai-girl-stickers> |
+
+Community chat has two entries: the Discord server and the QQ group "蓝色大肥鱼.com" (group number 1134100615). The WeChat Official Account is for following updates only; it is not used for chat or submissions. Submissions still go through the site form and GitHub Issue Forms.
 
 ## Repository Split
 
@@ -164,7 +169,7 @@ sequenceDiagram
 | `archive/` | Historical documents from before the repository split |
 | `dist/`, `.build/`, `frontend/out/` | Build or local runtime output. These are not frontend source files |
 
-See [`server/README.md`](server/README.md) and [`tools/intake/README.md`](tools/intake/README.md) for detailed instructions. Public submissions are available through the site form, the QQ group bot or the image archive's GitHub Issue Forms.
+See [`server/README.md`](server/README.md) and [`tools/intake/README.md`](tools/intake/README.md) for detailed instructions. Public submissions are available through the site form or the image archive's GitHub Issue Forms.
 
 ## Brand Assets
 
@@ -175,7 +180,6 @@ The README header uses `dist/avatar.png` from the image archive. Main brand asse
 | [`dist/avatar.png`](https://github.com/lmy414/ai-girl-stickers/blob/main/dist/avatar.png) | 96 × 96 | Site avatar and README logo |
 | [`dist/favicon.ico`](https://github.com/lmy414/ai-girl-stickers/blob/main/dist/favicon.ico) | 256 × 256 | Browser tab icon |
 | [`dist/favicon.png`](https://github.com/lmy414/ai-girl-stickers/blob/main/dist/favicon.png) | 512 × 512 | High-resolution site icon |
-| [`dist/qq-group.png`](https://github.com/lmy414/ai-girl-stickers/blob/main/dist/qq-group.png) | 518 × 518 | QQ group QR code |
 
 ## Local Preview
 
@@ -193,6 +197,6 @@ The build output is written to `.build/site/`. See [`frontend/README.md`](fronte
 
 ## Submissions and Copyright
 
-This is an unofficial fan archive. Submissions are accepted through the site form, the QQ group bot and the image archive's GitHub Issue Forms; attribution corrections and takedown requests still use the GitHub Issue Forms. See [`CONTRIBUTING.md`](https://github.com/lmy414/ai-girl-stickers/blob/main/CONTRIBUTING.md) for the full rules.
+This is an unofficial fan archive. Submissions are accepted through the site form and the image archive's GitHub Issue Forms; attribution corrections and takedown requests still use the GitHub Issue Forms. See [`CONTRIBUTING.md`](https://github.com/lmy414/ai-girl-stickers/blob/main/CONTRIBUTING.md) for the full rules.
 
 Image copyright always belongs to the original author. Publishing an image in this repository or including it on the website does not automatically grant an MIT license. Check the source and license shown on each work's detail page before reuse. The code in this repository is released under the MIT License; see [`LICENSE`](LICENSE).

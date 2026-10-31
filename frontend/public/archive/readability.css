@@ -7,7 +7,7 @@ body.archive {
 }
 .archive :is(h1,h2,h3,h4,label,.brand,.group-label,.date-sticker) { font-style: normal; }
 .archive :is(.page-head h1,.section-head h2,.hero-text h2,.character-info h1,.topic-hero h1,.community-hero h2,.event-hero h1,.error-page h1) { font-weight: 700; }
-.archive :is(.side-note,.role-card,.collection-card,.tilt-l,.tilt-r,.guide-card,.qq-card,.form-notice,.confirm-note,.sticker-tag,.email-title,.entry-card,.page-title,.section-label,.hero-paper,.qr-paper,.event-hero>figure) { transform: none; }
+.archive :is(.side-note,.role-card,.collection-card,.tilt-l,.tilt-r,.guide-card,.qq-card,.form-notice,.confirm-note,.sticker-tag,.email-title,.entry-card,.page-title,.section-label,.hero-paper,.event-hero>figure) { transform: none; }
 .archive main, .archive .main-wrap, .archive .section, .archive .filter-fields { min-width: 0; }
 .archive .document-page :is(.entry-title,.channel-head h3,.group-label) { font-weight: 700; }
 .archive .document-page .form-notice { font-weight: 400; }
@@ -74,8 +74,6 @@ body.archive {
   .archive .preview-dialog .preview-nav { gap: 8px; padding: 10px; }
   .archive .preview-step { min-width: 0; flex: 1; white-space: normal; }
   .archive .preview-position { flex: none; }
-  .archive .group-close { width: 44px; height: 44px; }
-  .archive .group-dialog h2 { margin-inline: 30px; }
   .archive .document-page .form :is(input[type=text],input[type=url],select,textarea) { font-size: 16px; }
   .archive .document-page .form-actions { display: flex; flex-wrap: wrap; gap: 12px; }
   .archive .document-page .btn { white-space: normal; text-align: center; }

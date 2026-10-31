@@ -116,14 +116,14 @@ body.archive.refined :is(.filter-select-menu, .lang-menu) {
   color: var(--text-primary);
   box-shadow: var(--shadow-2);
 }
-body.archive.refined :is(.preview-dialog, .group-dialog, .topic-download-dialog) {
+body.archive.refined :is(.preview-dialog, .topic-download-dialog) {
   border-color: var(--border-default);
   border-radius: var(--radius-card);
   background: var(--bg-raised);
   color: var(--text-primary);
   box-shadow: var(--shadow-3);
 }
-body.archive.refined :is(.group-dialog, .topic-download-dialog) h2 { font-family: var(--font-sans); }
+body.archive.refined .topic-download-dialog h2 { font-family: var(--font-sans); }
 
 /* Video cards use the same container as image cards, including on creator feeds. */
 body.archive.refined :is(.work-card, .video-card) {
@@ -139,6 +139,98 @@ body.archive.refined .video-copy { padding: var(--space-2) var(--space-3) var(--
 body.archive.refined .video-title { font-size: var(--text-sm); line-height: var(--leading-snug); }
 body.archive.refined :is(.panel, .intro-panel, .role-card, .collection-card, .creator-row-card, .friend-wall-card, .form-sheet) {
   border-radius: var(--radius-card);
+}
+
+/* Community contact cards: the community page and the About sidebar share this markup.
+   Cards stack on narrow screens; the About sidebar always uses the compact variant.
+   The .synced-prose prefix outweighs the document prose rules loaded earlier. */
+.synced-prose .community-contacts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  align-items: start;
+  gap: var(--space-5);
+}
+.synced-prose .community-contact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+  padding: var(--space-5);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-card);
+  background: var(--bg-surface);
+  box-shadow: var(--shadow-1);
+}
+.synced-prose p.community-contact-kicker {
+  margin: 0;
+  color: var(--brand);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-black);
+  letter-spacing: var(--tracking-wide);
+}
+.synced-prose h3.community-contact-title {
+  margin: 0;
+  font-size: var(--text-lg);
+  line-height: var(--leading-tight);
+  overflow-wrap: anywhere;
+}
+.synced-prose p.community-contact-text {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  line-height: var(--leading-loose);
+}
+.synced-prose p.community-contact-number {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2);
+  margin: 0;
+}
+.synced-prose .community-contact-label { color: var(--text-secondary); font-size: var(--text-xs); }
+.synced-prose .community-contact-digits {
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: var(--text-xl);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: var(--tracking-wide);
+  overflow-wrap: anywhere;
+}
+.synced-prose .community-contact-qr {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin: 0;
+}
+.synced-prose .community-contact-qr a { display: block; line-height: 0; }
+.synced-prose .community-contact-qr img {
+  display: block;
+  width: 100%;
+  max-width: 168px;
+  height: auto;
+  margin: 0;
+  border: 2px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  background: var(--paper-card);
+}
+.synced-prose .community-contact-qr figcaption { color: var(--text-secondary); font-size: var(--text-xs); }
+.synced-prose p.community-contact-acts { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: 0; }
+.synced-prose .community-contact-acts > .button { margin: 0; }
+.synced-prose .community-contacts--compact { grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: var(--space-4); max-width: 760px; }
+.synced-prose .community-contacts--compact .community-contact { gap: var(--space-2); padding: var(--space-4); }
+.synced-prose .community-contacts--compact h3.community-contact-title { font-size: var(--text-md); }
+.synced-prose .community-contacts--compact .community-contact-digits { font-size: var(--text-lg); }
+.synced-prose .community-contacts--compact .community-contact-qr img { max-width: 132px; }
+#community-join { margin-block: var(--space-7); scroll-margin-top: var(--space-6); }
+#community-join > :is(.eyebrow, .live-eyebrow) { margin: 0; }
+#community-join h2 { margin: var(--space-2) 0; font-size: var(--text-xl); }
+#community-join > p[data-community-join-lead] {
+  max-width: var(--measure-wide);
+  margin: 0 0 var(--space-4);
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  line-height: var(--leading-loose);
 }
 
 @media (max-width: 1100px) {

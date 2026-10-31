@@ -48,8 +48,6 @@ const SYNC_FILE_TARGETS = [
   "favicon.ico",
   "favicon.png",
   "avatar.png",
-  // 关于页「交流群」用的 QQ 群二维码。
-  "qq-group.png",
   "credits/shuangshuang.jpg",
   // 2026 国庆活动开屏弹窗与活动页用的表情包。
   "events/national-day-2026.webp",
@@ -72,6 +70,8 @@ const SYNC_DIR_TARGETS = [
   "author-avatars",
   // 角色页头部专用透明参考图；原作品与图库预览沿用原有图片。
   "character-portraits",
+  // 社群页与关于页共用的 QQ 群 / 微信公众号二维码；文件名带内容 hash。
+  "community",
 ];
 
 const SYNC_TARGETS = [

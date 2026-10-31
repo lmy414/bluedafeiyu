@@ -50,7 +50,7 @@ const bodyAttributes = accentAttributes(accent);
         <div class="side-sub">{communityNav.map(([k, t, h, key]) => <a href={h} aria-current={k === active ? 'page' : undefined} data-i18n={key}>{t}</a>)}</div>
       </nav>
       <div class="side-acts">
-        <a class="btn btn-ink" href="/community.html" data-i18n="v2.joinGroup">加入社群</a>
+        <a class="btn btn-ink" href="/community.html#community-join" data-i18n="v2.joinGroup">加入社群</a>
         <a class="btn btn-line" href="/submit.html" data-i18n="nav.submit">投稿</a>
         <a class="btn btn-line" href={SITE.repoContent} target="_blank" rel="noopener">GitHub</a>
       </div>
@@ -72,7 +72,7 @@ const bodyAttributes = accentAttributes(accent);
         <nav class="top-actions" aria-label="站点入口" data-i18n-attr="aria-label:v2.entries">
           <a class="ta-icon" href={SITE.repoContent} target="_blank" rel="noopener" title="GitHub · 内容与投稿仓库" aria-label="GitHub 内容与投稿仓库" data-i18n-attr="title:footer.content,aria-label:footer.content" set:html={GH_ICON} />
           <a class="btn btn-line btn-sm" href="/submit.html" data-i18n="nav.submit">投稿</a>
-          <a class="btn btn-ink btn-sm" href="/community.html" data-i18n="v2.joinGroup">加入社群</a>
+          <a class="btn btn-ink btn-sm" href="/community.html#community-join" data-i18n="v2.joinGroup">加入社群</a>
           <span class="ta-sep" aria-hidden="true"></span>
           <a class="btn btn-line btn-sm ta-about" href="/about.html" aria-current={active === 'about' ? 'page' : undefined} data-i18n="nav.about">关于</a>
           <div class="topnav" data-lang-host="top"></div>
@@ -84,7 +84,7 @@ const bodyAttributes = accentAttributes(accent);
       </main>
     </div>
   </div>
-  <template id="group-cta-tpl"><aside class="group-cta" aria-label="加入社群" data-i18n-attr="aria-label:v2.joinGroup"><img src={SITE.group.qr} alt={'QQ 群「' + SITE.group.name + '」二维码'} width="88" height="88" loading="lazy" data-i18n-attr="alt:qq.qrAlt" /><div><b data-i18n="v2.cta.title">加入「{SITE.group.name}」</b><p><span data-i18n="v2.cta.text">聊图、催更、投稿、参加活动。QQ 群号</span> <span class="qq-no">{SITE.group.number}</span></p><p class="cta-acts"><a class="btn btn-ink btn-sm" href={SITE.group.url} target="_blank" rel="noopener" data-i18n="qq.join">点击加入 QQ 群</a><button type="button" class="btn btn-ink btn-sm" data-copy-text={SITE.group.number} data-i18n="qq.copy">复制群号</button><a class="btn btn-line btn-sm" href="/community.html" data-i18n="v2.cta.more">社群介绍</a></p></div></aside></template>
+  <template id="group-cta-tpl"><aside class="group-cta" aria-label="加入社群" data-i18n-attr="aria-label:v2.joinGroup"><div><b data-i18n="v2.cta.title">加入社群</b><p><span data-i18n="v2.cta.text">Discord、QQ 群和公众号都可以找到我们。</span></p><p class="cta-acts"><a class="btn btn-ink btn-sm" href={SITE.community.discord.url} target="_blank" rel="noopener noreferrer" data-i18n="community.discordJoin">加入 Discord</a><a class="btn btn-line btn-sm" href={SITE.community.qq.url} target="_blank" rel="noopener noreferrer" data-i18n="community.qqJoin">打开 QQ 加群</a><a class="btn btn-line btn-sm" href="/community.html#community-join" data-i18n="v2.cta.more">社群介绍</a></p></div></aside></template>
   <EventPopup />
   <script is:inline src="/work-stats.js?v=20261023-components-1" defer></script>
   <script is:inline src="/v2.js?v=9" defer></script>

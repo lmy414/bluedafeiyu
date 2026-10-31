@@ -8,15 +8,32 @@ import { workImages } from '../../public/components/work-image.js';
 
 export const ORIGIN = 'https://xn--pssy23gqgbz2d718b.com';
 export const PAGE_SIZE = 24;
+// 顶栏「加入社群」等中性入口统一落到社群页的联系区；语言版本由 lang.js / 构建期本地化保留。
+export const COMMUNITY_JOIN = '/community.html#community-join';
 
-// 站点信息（沿用原站 about / QqModal / WorkInfo 的内容）
+// 站点信息（沿用原站 about / WorkInfo 的内容）
+// 社群：Discord、新 QQ 群与微信公众号同时开放。二维码随内容仓库的 dist/community/
+// 发布，由 tools/sync_content.mjs 同步进 dist/；QQ 群号在页面内用既有 data-copy 逻辑复制。
 export const SITE = {
-  group: {
-    name: 'AAAA肥鱼批发市场',
-    number: '1074853711',
-    url: 'https://qm.qq.com/q/THMPEsD42I',
-    qr: '/qq-group.png?v=1074853711',
-    notice: '原群被不知名原因爆破，特此开新群。大家聊天时请遵守群聊规范。'
+  community: {
+    discord: {
+      name: 'Discord',
+      url: 'https://discord.gg/pmECYDChY'
+    },
+    qq: {
+      name: '蓝色大肥鱼.com',
+      number: '1134100615',
+      url: 'https://qm.qq.com/q/mFL9GUZkWc',
+      qr: '/community/qq-1134100615-bc8e49b662df6b84.png',
+      qrWidth: 322,
+      qrHeight: 322
+    },
+    // 微信公众号只有关注二维码，没有可公开展示的名称 / 微信号；卡片只提供扫码关注。
+    wechat: {
+      qr: '/community/wechat-official-110b8756b8377c5b.png',
+      qrWidth: 430,
+      qrHeight: 430
+    }
   },
   repoContent: 'https://github.com/lmy414/ai-girl-stickers',
   repoSource: 'https://github.com/lmy414/bluedafeiyu',

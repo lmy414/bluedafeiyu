@@ -29,7 +29,8 @@ UI は中国語、英語、日本語に対応しています。
 | UI 言語 | 中国語、英語、日本語 |
 | 作品種別 | ミーム、イラスト、設定資料、漫画 |
 | 画像 | 独立した公開画像アーカイブに保存 |
-| 投稿方法 | サイト内フォーム、QQ グループ Bot、GitHub Issue フォーム |
+| 投稿方法 | サイト内フォーム、GitHub Issue フォーム |
+| コミュニティ | Discord、QQ グループ「蓝色大肥鱼.com」 |
 
 ## 主なリンク
 
@@ -37,10 +38,14 @@ UI は中国語、英語、日本語に対応しています。
 | --- | --- |
 | オンラインで閲覧 | <https://xn--pssy23gqgbz2d718b.com/> |
 | サイト内投稿 | <https://xn--pssy23gqgbz2d718b.com/submit.html> |
-| QQ グループ投稿 | 投稿グループで Bot を @ し、「投稿 标题 角色」と画像を同じメッセージで送信 |
+| Discord コミュニティ | <https://discord.gg/pmECYDChY> |
+| QQ グループ「蓝色大肥鱼.com」 | <https://qm.qq.com/q/mFL9GUZkWc> |
+| WeChat 公式アカウント：コミュニティページで QR コードを読み取る | <https://xn--pssy23gqgbz2d718b.com/community.html#community-join> |
 | GitHub Issue 投稿 | <https://github.com/lmy414/ai-girl-stickers/issues/new?template=sticker-submission.yml> |
 | クレジット修正・削除依頼 | <https://github.com/lmy414/ai-girl-stickers/issues/new?template=takedown-request.yml> |
 | 画像アーカイブ | <https://github.com/lmy414/ai-girl-stickers> |
+
+コミュニティの交流は Discord と QQ グループ「蓝色大肥鱼.com」（グループ番号 1134100615）で行えます。WeChat 公式アカウントは更新情報のフォロー用で、チャットや投稿には使用していません。投稿は引き続きサイト内フォームと GitHub Issue フォームから受け付けます。
 
 ## リポジトリの役割
 
@@ -164,7 +169,7 @@ sequenceDiagram
 | `archive/` | リポジトリ分割前の履歴資料 |
 | `dist/`、`.build/`、`frontend/out/` | ビルド時またはローカル実行時の生成物。フロントエンドのソースではありません |
 
-詳しい使い方は [`server/README.md`](server/README.md) と [`tools/intake/README.md`](tools/intake/README.md) を参照してください。一般投稿はサイト内フォーム、QQ グループ Bot、画像アーカイブの GitHub Issue フォームから受け付けます。
+詳しい使い方は [`server/README.md`](server/README.md) と [`tools/intake/README.md`](tools/intake/README.md) を参照してください。一般投稿はサイト内フォームまたは画像アーカイブの GitHub Issue フォームから受け付けます。
 
 ## ブランド素材
 
@@ -175,7 +180,6 @@ README のヘッダーでは、画像アーカイブの `dist/avatar.png` を使
 | [`dist/avatar.png`](https://github.com/lmy414/ai-girl-stickers/blob/main/dist/avatar.png) | 96 × 96 | サイトのアバターと README ロゴ |
 | [`dist/favicon.ico`](https://github.com/lmy414/ai-girl-stickers/blob/main/dist/favicon.ico) | 256 × 256 | ブラウザータブのアイコン |
 | [`dist/favicon.png`](https://github.com/lmy414/ai-girl-stickers/blob/main/dist/favicon.png) | 512 × 512 | 高解像度のサイトアイコン |
-| [`dist/qq-group.png`](https://github.com/lmy414/ai-girl-stickers/blob/main/dist/qq-group.png) | 518 × 518 | QQ グループの QR コード |
 
 ## ローカルプレビュー
 
@@ -193,6 +197,6 @@ python -m http.server 5173 -d .build/site
 
 ## 投稿と著作権
 
-これは非公式の同人アーカイブです。投稿はサイト内フォーム、QQ グループ Bot、画像アーカイブの GitHub Issue フォームから受け付けます。クレジット修正と削除依頼は引き続き GitHub Issue フォームを使用します。詳しいルールは [`CONTRIBUTING.md`](https://github.com/lmy414/ai-girl-stickers/blob/main/CONTRIBUTING.md) を参照してください。
+これは非公式の同人アーカイブです。投稿はサイト内フォームと画像アーカイブの GitHub Issue フォームから受け付けます。クレジット修正と削除依頼は引き続き GitHub Issue フォームを使用します。詳しいルールは [`CONTRIBUTING.md`](https://github.com/lmy414/ai-girl-stickers/blob/main/CONTRIBUTING.md) を参照してください。
 
 画像の著作権は常に原作者に帰属します。このリポジトリで公開されたことやサイトに掲載されたことによって、画像に MIT ライセンスが自動的に付与されることはありません。再利用する前に、各作品の個別ページに記載された出典とライセンスを確認してください。このリポジトリのコードは MIT ライセンスで公開しています。詳細は [`LICENSE`](LICENSE) を参照してください。

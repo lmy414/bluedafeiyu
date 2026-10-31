@@ -1,6 +1,6 @@
 ---
 import { archiveContext } from "../../lib/archive.mjs";
-import { SITE } from '../../lib/v2.mjs';
+import { SITE, COMMUNITY_JOIN } from '../../lib/v2.mjs';
 const { icon } = archiveContext;
 ---
 <header class="topbar">
@@ -12,7 +12,7 @@ const { icon } = archiveContext;
   </form>
   <div class="top-tools top-actions">
     <a class="saved-entry" href="/saved.html"><Fragment set:html={icon('heart',18)} /><span data-i18n="d.savedTitle">我的收藏</span></a>
-    <button type="button" class="button small top-group" data-group-open aria-haspopup="dialog" aria-controls="group-dialog"><Fragment set:html={icon('roles',16)} /><span data-i18n="qq.open">加群</span></button>
+    <a class="button small top-group" href={COMMUNITY_JOIN} aria-label="加入社群" data-i18n-attr="aria-label:v2.joinGroup"><Fragment set:html={icon('roles',16)} /><span class="top-group-label" data-i18n="v2.joinGroup">加入社群</span><span class="top-group-brand" data-i18n="v2.joinGroupShort">社群</span></a>
     <a class="button small top-github" href={SITE.repoContent} target="_blank" rel="noopener" title="内容与投稿仓库" data-i18n-attr="title:footer.content">GitHub</a>
     <button class="icon-button" data-theme-toggle hidden><Fragment set:html={icon('moon',19)} /></button>
     <div class="topnav" data-lang-host></div>

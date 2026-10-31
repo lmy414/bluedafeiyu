@@ -152,8 +152,8 @@ body.archive .detail-info .source-note { margin-top: 16px; font-size: 12px; line
 body.archive .comments-section { border-style: dashed; box-shadow: none; }
 
 /* Native dialogs inherit the same page language and remain keyboard operable. */
-body.archive :is(.preview-dialog,.group-dialog,.topic-download-dialog) { color: var(--j-ink); background: var(--j-paper); border: 1px solid var(--j-line); border-radius: 16px; box-shadow: 0 24px 100px #12233540; }
-body.archive :is(.preview-dialog,.group-dialog,.topic-download-dialog)::backdrop { background: #18324970; backdrop-filter: blur(7px); }
+body.archive :is(.preview-dialog,.topic-download-dialog) { color: var(--j-ink); background: var(--j-paper); border: 1px solid var(--j-line); border-radius: 16px; box-shadow: 0 24px 100px #12233540; }
+body.archive :is(.preview-dialog,.topic-download-dialog)::backdrop { background: #18324970; backdrop-filter: blur(7px); }
 body.archive .preview-dialog { width: min(1090px,calc(100vw - 48px)); padding: 0; max-height: calc(100dvh - 48px); }
 body.archive .preview-heading { min-height: 62px; padding: 17px 76px 17px 25px; border-color: var(--j-line); background: var(--j-paper); color: var(--j-ink); font-size: 14px; }
 body.archive .preview-heading>svg { color: var(--j-blue); }
@@ -183,17 +183,6 @@ body.archive .preview-step { min-height: 40px; padding: 8px 14px; border: 1px so
 body.archive .preview-step:hover:not(:disabled) { background: var(--j-soft); border-color: var(--j-blue); color: var(--j-blue); }
 body.archive .preview-position { color: var(--j-muted); }
 body.archive .preview-position b { color: var(--j-blue); font-size: 17px; }
-body.archive .group-dialog { padding: 32px; }
-body.archive .group-dialog h2 { font-size: 24px; font-weight: 750; }
-body.archive .group-close { top: 9px; right: 9px; width: 44px; height: 44px; border-radius: 8px; }
-body.archive .group-lede { color: var(--j-muted); font-size: 13px; }
-body.archive .group-dialog .group-qr { margin: 22px auto 18px; padding: 12px; width: min(250px,100%); border: 1px solid var(--j-line); border-radius: 8px; background: #fff; box-shadow: 0 3px 0 color-mix(in srgb,var(--j-line) 40%,transparent); }
-body.archive .group-dialog .group-qr img { width: 100%; }
-body.archive .group-dialog .group-qr figcaption { color: #68798c; font-size: 12px; }
-body.archive .group-copy { background: var(--j-soft); min-height: 50px; padding-inline: 14px; }
-body.archive .group-copy strong { font-size: 21px; color: var(--j-blue); letter-spacing: .04em; }
-body.archive .group-copy-status { font-size: 12px; }
-body.archive .group-join { min-height: 46px; }
 body.archive .topic-download-dialog { padding: 30px; }
 body.archive .topic-download-dialog h2 { padding-bottom: 15px; margin-bottom: 18px; border-bottom: 1px dashed var(--j-line); font-size: 23px; line-height: 1.5; }
 body.archive .topic-download-dialog p { font-size: 14px; color: var(--j-muted); }
@@ -256,9 +245,6 @@ body.archive .document-page .sticker-tag { padding: 3px 8px; border: 1px solid v
 body.archive .document-page .sticker-tag.is-on { color: var(--j-blue); border-color: color-mix(in srgb,var(--j-blue) 45%,var(--j-line)); }
 body.archive .document-page :is(.channel-head h3,.email-title) { font-size: 21px; font-weight: 700; }
 body.archive .document-page .sticky-note { background: color-mix(in srgb,var(--j-accent) 9%,var(--j-paper)); border-left: 3px solid var(--j-accent); }
-body.archive .document-page .group-qr { padding: 10px; border: 1px solid var(--j-line); border-radius: 8px; background: #fff; box-shadow: 0 3px 0 color-mix(in srgb,var(--j-line) 40%,transparent); }
-body.archive .document-page .group-qr figcaption { color: #68798c; font-size: 12px; }
-body.archive .document-page .qq-number { color: var(--j-blue); font-size: 23px; }
 body.archive .document-page .acknowledgement-card { gap: 20px; text-decoration: none; }
 body.archive .document-page .acknowledgement-card img { width: 82px; height: 82px; border: 1px solid var(--j-line); border-radius: 11px; }
 body.archive .document-page .acknowledgement-info h3 { font-size: 22px; }
@@ -269,9 +255,6 @@ body.archive .document-page .acknowledgement-action { font-size: 13px; color: va
 body.archive .community-hero { padding: 37px 40px; background: color-mix(in srgb,var(--j-soft) 60%,var(--j-paper)); }
 body.archive .community-hero h2 { color: var(--j-ink); font-size: 33px; }
 body.archive .community-hero p:not(.eyebrow) { color: var(--j-muted); font-size: 14px; line-height: 1.9; }
-body.archive .group-number { color: var(--j-blue); font-size: 30px; }
-body.archive .qr-paper { padding: 13px; border: 1px solid var(--j-line); border-radius: 6px; box-shadow: 0 5px 16px color-mix(in srgb,var(--j-ink) 8%,transparent); background: #fff; transform: none; }
-body.archive .qr-paper figcaption { font-size: 11px; color: #68798c; }
 body.archive .info-card .feature-icon { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin: 0 0 17px; border: 1px solid var(--j-line); border-radius: 10px; color: var(--j-blue); background: var(--j-soft); }
 body.archive .info-card code { display: block; margin-top: 17px; padding: 10px 12px; overflow-wrap: anywhere; white-space: normal; font-size: 12px; border-radius: 5px; background: var(--j-soft); color: var(--j-blue); }
 body.archive .social-links .button { white-space: normal; overflow-wrap: anywhere; text-align: left; }
@@ -378,7 +361,6 @@ body.archive .date-sticker { padding: 5px 9px; border: 1px solid var(--j-line); 
   body.archive .preview-step { min-height: 44px; padding-inline: 10px; }
   body.archive .preview-facts { padding-block: 12px; }
   body.archive .preview-actions .button { font-size: 13px; flex: 1 1 115px; }
-  body.archive .group-close { width: 44px; height: 44px; }
   body.archive .topic-download-dialog { padding: 25px; }
   body.archive .document-page { padding-top: 25px; }
   body.archive .document-page .page-title { font-size: 29px; }
@@ -394,7 +376,6 @@ body.archive .date-sticker { padding: 5px 9px; border: 1px solid var(--j-line); 
   body.archive .document-page .form-notice { padding: 14px 16px; font-size: 14px; }
   body.archive .community-hero { padding: 28px; }
   body.archive .community-hero h2 { font-size: 29px; }
-  body.archive .group-number { font-size: 27px; }
   body.archive .event-hero { padding: 25px; gap: 26px; }
   body.archive .event-hero h1 { font-size: 29px; }
   body.archive .event-hero>figure { width: auto; }
@@ -463,8 +444,6 @@ body.archive .date-sticker { padding: 5px 9px; border: 1px solid var(--j-line); 
   body.archive .document-page .acknowledgement-card img { width: 68px; height: 68px; }
   body.archive .document-page .acknowledgement-info h3 { font-size: 20px; }
   body.archive .document-page .acknowledgement-domain { font-size: 12px; }
-  body.archive .group-dialog { padding: 29px 24px; }
-  body.archive .group-dialog .group-qr { max-width: 220px; }
   body.archive .topic-download-dialog { padding: 24px 21px; }
   body.archive .topic-download-dialog h2 { font-size: 21px; }
   body.archive .preview-dialog .preview-art { padding: 20px; }
@@ -478,7 +457,6 @@ body.archive .date-sticker { padding: 5px 9px; border: 1px solid var(--j-line); 
   body.archive .community-hero { padding: 25px; }
   body.archive .community-hero h2 { font-size: 30px; }
   body.archive .community-hero .hero-actions { gap: 10px; }
-  body.archive .qr-paper { width: 202px; margin-top: 4px; }
   body.archive .event-hero { padding: 25px 23px; }
   body.archive .event-hero h1 { font-size: 28px; }
   body.archive .event-hero .hero-actions .button { font-size: 13px; padding: 11px 12px; }

@@ -1,3 +1,6 @@
+---
+import { COMMUNITY_JOIN } from '../lib/v2.mjs';
+---
 <section class="hero panel" aria-labelledby="hero-title">
       <span class="tape-strip" aria-hidden="true"></span>
       <div class="hero-body">
@@ -13,10 +16,10 @@
             <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 3.5 V12.5 M3.5 8 H12.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
             <span data-i18n="index.cta.submit">提交作品</span>
           </a>
-          <button type="button" class="btn hover-wiggle" id="btn-qq-group" aria-haspopup="dialog" aria-controls="qq-modal">
+          <a class="btn hover-wiggle" href={COMMUNITY_JOIN}>
             <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 3.5 H13.5 V10.5 H8 L5.5 13 V10.5 H2.5 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg>
-            <span data-i18n="index.cta.group">加入交流群</span>
-          </button>
+            <span data-i18n="v2.joinGroup">加入社群</span>
+          </a>
         </div>
       </div>
       <div class="hero-art" aria-hidden="true">

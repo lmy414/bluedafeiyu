@@ -1,6 +1,6 @@
 /* 蓝色大肥鱼 v2 前台交互（自 feiyufans/demo-v2 迁入）
    · 作品浮层：站内唯一的作品查看方式；地址同步为 /works/<slug>.html（冻结地址）
-   · 左侧抽屉（手机）、连续下滑 + 稳定瀑布流、随机排序、搜索页、复制群号 / 图片 / 链接
+   · 左侧抽屉（手机）、连续下滑 + 稳定瀑布流、随机排序、搜索页、复制图片 / 链接
    · 多语言：界面文案走 SiteLang.fmt(key, 中文兜底)，切换语言时重渲染浮层与计数
    · 评论：浮层里按作品 id 加载 Giscus（讨论串 sticker-<id>，与原详情页一致） */
 (function () {
@@ -18,13 +18,8 @@
     if (e.key === '/' && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) { var q = document.getElementById('q') || document.getElementById('q-top'); if (q) { e.preventDefault(); q.focus(); } }
   });
 
-  // —— 复制：群号、图片 ——
+  // —— 复制：图片 ——
   document.addEventListener('click', function (e) {
-    var t = e.target.closest('[data-copy-text]');
-    if (t) {
-      navigator.clipboard.writeText(t.getAttribute('data-copy-text')).then(function () { flash(t, T('ui.copied', '已复制')); }, function () { flash(t, T('v2.copyManual', '请手动复制')); });
-      return;
-    }
     var im = e.target.closest('[data-copy-img]');
     if (im) {
       // 剪贴板只接受 PNG：先画到 canvas 再转
@@ -279,7 +274,7 @@
     if (window.SiteLang) SiteLang.mountMenus();
     var panel = box.querySelector('.wm-panel'), stageEl = box.querySelector('.wm-stage'), img = stageEl.querySelector('img'), info = box.querySelector('.wm-info');
     var labels = function () {
-      box.querySelector('.wm-x').setAttribute('aria-label', T('index.qq.close', '关闭'));
+      box.querySelector('.wm-x').setAttribute('aria-label', T('ui.close', '关闭'));
       box.querySelector('.prev').setAttribute('aria-label', T('v2.prev', '上一张'));
       box.querySelector('.next').setAttribute('aria-label', T('v2.next', '下一张'));
     };

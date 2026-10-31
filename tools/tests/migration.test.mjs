@@ -58,8 +58,11 @@ const IMAGE_DIRS = [
   "dist/submissions/large",
   "dist/owner-picks/previews",
   "dist/data/blue-fish/previews",
+  "dist/author-avatars",
+  "dist/character-portraits",
+  "dist/community",
 ];
-const IMAGE_FILES = ["dist/favicon.ico", "dist/favicon.png", "dist/avatar.png", "dist/qq-group.png", "dist/credits/shuangshuang.jpg", "dist/events/national-day-2026.webp"];
+const IMAGE_FILES = ["dist/favicon.ico", "dist/favicon.png", "dist/avatar.png", "dist/credits/shuangshuang.jpg", "dist/events/national-day-2026.webp"];
 const TEMPLATE_REL = ".github/ISSUE_TEMPLATE/sticker-submission.yml";
 
 let passed = 0;
@@ -187,6 +190,11 @@ function main() {
     });
     ok("产物里没有 data/（构建期数据不进发布包）", () => {
       assert.ok(!fs.existsSync(path.join(outDir, "data")), "产物里不应有 data/");
+    });
+    ok("社群二维码随内容仓库发布", () => {
+      const communityDir = path.join(outDir, "community");
+      assert.ok(fs.existsSync(communityDir), "产物缺 community/");
+      assert.ok(fs.readdirSync(communityDir).some((name) => name.endsWith(".png")), "community/ 里没有二维码");
     });
 
     console.log("\n4) 投稿模板校验 / 生成指向内容仓");

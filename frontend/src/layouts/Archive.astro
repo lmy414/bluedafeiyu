@@ -8,7 +8,6 @@ import MobileNav from '../components/archive/MobileNav.astro';
 import PreviewDialog from '../components/archive/PreviewDialog.astro';
 import ShareCardDialog from '../components/archive/ShareCardDialog.astro';
 import TopicDownloadDialog from '../components/archive/TopicDownloadDialog.astro';
-import GroupDialog from '../components/archive/GroupDialog.astro';
 import { hasAiMarkdown } from '../../scripts/ai-content.mjs';
 import '../styles/archive.css';
 import themeScript from '../../public/theme.js?raw';
@@ -28,9 +27,9 @@ const { title, desc, path = '/', active = '', bodyPage = active, og, type = 'web
     <script is:inline set:html={themeScript}></script>
     <script is:inline set:html={componentRuntime}></script>
     {pageStyles.map(href => <link rel="stylesheet" {href} />)}
-    <script is:inline src="/archive-labels.js?v=20261025-1" defer></script>
-    <script is:inline src="/archive-copy.js?v=20261027-1" defer></script>
-    <script is:inline src="/lang.js?v=24" defer></script>
+    <script is:inline src="/archive-labels.js?v=20261031-1" defer></script>
+    <script is:inline src="/archive-copy.js?v=20261031-1" defer></script>
+    <script is:inline src="/lang.js?v=25" defer></script>
     <script is:inline src="/analytics.js" defer></script>
     {schemas.map(schema => <script is:inline type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, '\\u003c')} />)}
     <slot name="head" />
@@ -51,7 +50,6 @@ const { title, desc, path = '/', active = '', bodyPage = active, og, type = 'web
     <PreviewDialog />
     <ShareCardDialog />
     <TopicDownloadDialog />
-    <GroupDialog />
     <script is:inline src="/work-stats.js?v=20261023-components-1" defer></script>
     <script src="../scripts/archive-entry.js"></script>
     <script is:inline src="/archive/filter-select.js?v=3" defer></script>

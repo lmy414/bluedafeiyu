@@ -27,47 +27,8 @@
       font-weight: var(--weight-bold);
     }
 
-    /* ---- 群号：等宽体放大加粗，一眼能抄准；不加复制按钮，免得为一行静态内容引脚本 ---- */
-    .qq-number {
-      font-family: var(--font-mono);
-      font-size: var(--text-xl);
-      font-weight: var(--weight-bold);
-      letter-spacing: var(--tracking-wide);
-    }
-
-    /* ---- 交流群卡：左文右码，窄屏（站点既有 760px 断点）堆成上下；二维码图来自
-       内容仓库同步（dist/qq-group.png，站点仓不跟踪图片），当纸片贴在卡里。 ---- */
-    .about-card.group-card {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      align-items: center;
-      gap: var(--space-5);
-      max-width: var(--measure-wide);
-    }
-    .group-card .prose { min-width: 0; }
-    .group-qr {
-      margin: 0;
-      padding: var(--space-2);
-      background: var(--paper-card);
-      border: 2px solid var(--ink);
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-paper-sm);
-      text-align: center;
-    }
-    .group-qr img { display: block; width: 168px; height: auto; }
-    .group-qr figcaption {
-      margin-top: var(--space-1);
-      font-family: var(--font-hand);
-      font-size: var(--text-sm);
-      color: var(--text-secondary);
-    }
-    @media (max-width: 760px) {
-      .about-card.group-card { grid-template-columns: minmax(0, 1fr); }
-      .group-qr { justify-self: start; }
-    }
-
-    /* ---- 双栏布局：左侧正文加宽，右侧常驻交流群，填掉宽屏右侧的大片留白。
-       ≤1080px（平板及以下）退回单列，交流群回到正文流里。 ---- */
+    /* ---- 双栏布局：左侧正文加宽，右侧常驻社群联系卡，填掉宽屏右侧的大片留白。
+       ≤1080px（平板及以下）退回单列，联系卡回到正文流里。 ---- */
     .about-columns {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(280px, 340px);
@@ -79,15 +40,6 @@
     .about-main .about-card { max-width: var(--measure-wide); }
     .about-aside { position: sticky; top: var(--space-5); }
     .about-aside .section-label { margin-top: 0; }
-    /* 窄栏里交流群卡改纵向排：文字在上、二维码居中在下 */
-    .about-aside .about-card.group-card {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-3);
-      max-width: none;
-    }
-    .about-aside .group-card .prose { min-width: 0; }
-    .about-aside .group-qr { align-self: center; }
     @media (max-width: 1080px) {
       .about-columns { grid-template-columns: 1fr; }
       .about-aside { position: static; }

@@ -25,39 +25,6 @@ import {orderWorks, shuffledSlugs} from '../components/work-order.js';
   const drawGrid = list => `<div class="work-grid">${list.map(card).join('')}</div>`;
   async function copy(value, feedback) {const report = message => {if(feedback)feedback.textContent=message;else toast(message);};try { await navigator.clipboard.writeText(value);report(tx('ui.copied','已复制')); } catch { report(tx('d.copyFail','复制失败，请手动复制。')); } }
   installTopicDownloads({load,tx,toast});
-  const groupDialog = $('#group-dialog');
-  let groupFocus;
-  document.addEventListener('click', async event => {
-    const opener = event.target.closest('[data-group-open]');
-    if (opener && !groupDialog.open) {
-      groupFocus = opener;
-      $('[data-group-copy-status]', groupDialog).textContent = '';
-      groupDialog.showModal();
-    }
-    if (event.target.closest('[data-group-close]')) groupDialog.close();
-    const button = event.target.closest('[data-group-copy]');
-    if (!button || button.disabled) return;
-    const feedback = $('[data-group-copy-status]', groupDialog);
-    button.disabled = true;
-    try {
-      try { await navigator.clipboard.writeText(button.dataset.groupCopy); }
-      catch {
-        const field = document.createElement('textarea');
-        field.value = button.dataset.groupCopy;
-        SiteComponents.clipboardField(field);
-        groupDialog.append(field);
-        try { field.select(); if (!document.execCommand('copy')) throw Error('copy'); }
-        finally { field.remove(); }
-      }
-      feedback.textContent = tx('ui.copied', '已复制');
-    } catch { feedback.textContent = tx('d.copyFail', '复制失败，请手动复制。'); }
-    finally { button.disabled = false; button.focus(); }
-  });
-  groupDialog.addEventListener('close', () => groupFocus?.focus());
-  groupDialog.addEventListener('click', event => {
-    const rect = groupDialog.getBoundingClientRect();
-    if (event.target === groupDialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) groupDialog.close();
-  });
   document.addEventListener('click', event => {
     const button = event.target.closest('[data-copy-img]');
     if (!button || button.disabled) return;

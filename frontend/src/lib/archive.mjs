@@ -24,7 +24,8 @@ import {createGuidePages} from "../components/archive/GuidePages.mjs";
 import { aboutCopy, aboutQuestions } from './about-copy.mjs';
 import { videoCopy } from './video-copy.mjs';
 import { createVideoPages } from '../components/archive/VideoPages.mjs';
-import { createDemoPages } from './demo-design.mjs';
+import {createDemoPages} from './demo-design.mjs';
+import {registerCommunityContacts} from '../components/library/CommunityContacts.mjs';
 import {createPageModel} from '../components/library/page-model.mjs';
 import {videoArchive} from './video-archive.mjs';
 import {events} from './events.mjs';
@@ -62,6 +63,7 @@ for (const [i, row] of aboutQuestions.entries()) {
     translations.ja['d.about.faq.'+i+'.'+key] = row[offset+2];
   }
 }
+registerCommunityContacts(translations);
 for(const [key, en, ja] of [
   ['allRoles','All characters','すべてのキャラクター'],['allTypes','All types','すべての種類'],
   ['galleryTabs','Image archive views','画像の表示方法'],

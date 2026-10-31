@@ -36,7 +36,7 @@ export function decorateDocument(html,key,ctx) {
   const tr=(k,z,en,ja)=>ctx?.tr('design.'+k,z,en,ja)||z;
   const icon=name=>ctx?.icon(name,17)||'';
   const element=(tag,cls)=>{const node=document.createElement(tag);node.className=cls;return node;};
-  for(const node of body.querySelectorAll('[class]'))for(const cls of [...node.classList])if(!cls.startsWith('live-')&&!cls.startsWith('friend-wall-'))node.classList.add('live-'+cls);
+  for(const node of body.querySelectorAll('[class]')){if(node.closest('[data-community-contacts]'))continue;for(const cls of [...node.classList])if(!cls.startsWith('live-')&&!cls.startsWith('friend-wall-'))node.classList.add('live-'+cls);}
 
   if(key==='community'){
     const grid=body.querySelector('.live-info-grid');
@@ -47,8 +47,8 @@ export function decorateDocument(html,key,ctx) {
       const video=element('section','live-info-card');
       video.innerHTML=`<span class="participation-number" aria-hidden="true">02</span><h2>${tr('register','视频作者登记','Register as a video creator','動画クリエイター登録')}</h2><p>${tr('registrationLead','填写 UID 或主页链接和一句话说明，通过审核的 AI 娘二创视频自动收录。','Add your UID or profile URL and a short introduction. Approved AI-girl fan videos are published automatically.','UIDまたはプロフィールURLと紹介文を登録。審査を通過したAI娘の二次創作動画が自動公開されます。')}</p><a class="community-entry-link" href="/submit.html?media=video#creator-registration">${tr('start','开始登记 →','Register →','登録する →')}</a>`;
       feedback.insertAdjacentHTML('afterbegin','<span class="participation-number" aria-hidden="true">03</span>');
-      const join=body.querySelector('.live-community-hero a')?.getAttribute('href');
-      if(join)feedback.insertAdjacentHTML('beforeend',`<a class="community-entry-link" href="${ctx?.esc(join)||join}">${tr('joinCommunity','加入交流群 →','Join the community →','コミュニティに参加 →')}</a>`);
+      const join=body.querySelector('[data-community-join]')?.getAttribute('href') || body.querySelector('.live-community-hero a')?.getAttribute('href');
+      if(join)feedback.insertAdjacentHTML('beforeend',`<a class="community-entry-link" href="${ctx?.esc(join)||join}"${/^https?:/i.test(join)?' target="_blank" rel="noopener noreferrer"':''}>${tr('joinCommunityCard','加入社群 →','Join the community →','コミュニティに参加 →')}</a>`);
       const heading=element('h2','community-section-title');heading.innerHTML=tr('participationTitle','一起参与，让档案更完整。','Help the archive grow.','一緒にアーカイブを育てよう。');grid.before(heading);
       grid.replaceChildren(submission,video,feedback);activity.className='community-activity';grid.after(activity);
     }

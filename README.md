@@ -29,7 +29,8 @@
 | 界面语言 | 中文、English、日本語 |
 | 作品类型 | 梗图、插画、设定图、漫画 |
 | 图片来源 | 独立图片存档仓库 |
-| 投稿方式 | 站内、QQ 群、GitHub Issue 表单 |
+| 投稿方式 | 站内、GitHub Issue 表单 |
+| 社群 | Discord、QQ 群「蓝色大肥鱼.com」 |
 
 ## 常用入口
 
@@ -37,10 +38,14 @@
 | --- | --- |
 | 在线浏览 | <https://xn--pssy23gqgbz2d718b.com/> |
 | 站内投稿 | <https://xn--pssy23gqgbz2d718b.com/submit.html> |
-| QQ 群投稿 | 在投稿群 @机器人，发送「投稿 标题 角色」并附图 |
+| Discord 社群 | <https://discord.gg/pmECYDChY> |
+| QQ 群「蓝色大肥鱼.com」 | <https://qm.qq.com/q/mFL9GUZkWc> |
+| 微信公众号：到社群页扫码关注 | <https://xn--pssy23gqgbz2d718b.com/community.html#community-join> |
 | GitHub Issue 投稿 | <https://github.com/lmy414/ai-girl-stickers/issues/new?template=sticker-submission.yml> |
 | 署名或下架申请 | <https://github.com/lmy414/ai-girl-stickers/issues/new?template=takedown-request.yml> |
 | 图片存档仓库 | <https://github.com/lmy414/ai-girl-stickers> |
+
+社群交流有两个入口：Discord 服务器和 QQ 群「蓝色大肥鱼.com」（群号 1134100615）。微信公众号只用于关注更新，不用于聊天和投稿。投稿仍走站内投稿页和 GitHub Issue 表单。
 
 ## 仓库分工
 
@@ -164,7 +169,7 @@ sequenceDiagram
 | `archive/` | 拆分仓库前的历史文档 |
 | `dist/`、`.build/`、`frontend/out/` | 构建期或本地运行产物，不是前台源码，不要手工编辑 |
 
-投稿服务、收录工具的详细用法见 [`server/README.md`](server/README.md) 和 [`tools/intake/README.md`](tools/intake/README.md)。公开投稿可从站内投稿页、QQ 群机器人或图片仓 GitHub Issue 表单进入。
+投稿服务、收录工具的详细用法见 [`server/README.md`](server/README.md) 和 [`tools/intake/README.md`](tools/intake/README.md)。公开投稿可从站内投稿页或图片仓 GitHub Issue 表单进入。
 
 ## 站点图标
 
@@ -175,7 +180,6 @@ README 顶部使用图片仓的 `dist/avatar.png`。主要品牌资源如下：
 | [`dist/avatar.png`](https://github.com/lmy414/ai-girl-stickers/blob/main/dist/avatar.png) | 96 × 96 | 站点头像和 README Logo |
 | [`dist/favicon.ico`](https://github.com/lmy414/ai-girl-stickers/blob/main/dist/favicon.ico) | 256 × 256 | 浏览器标签页图标 |
 | [`dist/favicon.png`](https://github.com/lmy414/ai-girl-stickers/blob/main/dist/favicon.png) | 512 × 512 | 高清站点图标 |
-| [`dist/qq-group.png`](https://github.com/lmy414/ai-girl-stickers/blob/main/dist/qq-group.png) | 518 × 518 | QQ 交流群二维码 |
 
 ## 本地预览
 
@@ -199,6 +203,6 @@ python -m http.server 5173 -d .build/site
 
 ## 投稿与版权
 
-这是一个非官方同人整理项目。投稿可走站内投稿页、QQ 群机器人或图片仓 GitHub Issue 表单；署名更正与下架申请仍走 GitHub Issue 表单。具体规则见 [`CONTRIBUTING.md`](https://github.com/lmy414/ai-girl-stickers/blob/main/CONTRIBUTING.md)。
+这是一个非官方同人整理项目。投稿可走站内投稿页或图片仓 GitHub Issue 表单；署名更正与下架申请仍走 GitHub Issue 表单。具体规则见 [`CONTRIBUTING.md`](https://github.com/lmy414/ai-girl-stickers/blob/main/CONTRIBUTING.md)。
 
 作品图片的著作权归原作者。公开仓库或收录到站点，都不会让作品图片自动获得 MIT 授权。使用图片时，以作品详情页标注的来源与授权为准。本仓库代码按 MIT 许可发布，见 [`LICENSE`](LICENSE)。
