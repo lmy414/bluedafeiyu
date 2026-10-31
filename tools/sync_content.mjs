@@ -70,6 +70,8 @@ const SYNC_DIR_TARGETS = [
   "data/blue-fish/previews",
   // 作者型专题页的作者头像：按 topicId 命名（<topicId>.webp），内容仓库会提交该目录。
   "author-avatars",
+  // 角色页头部专用透明参考图；原作品与图库预览沿用原有图片。
+  "character-portraits",
 ];
 
 const SYNC_TARGETS = [

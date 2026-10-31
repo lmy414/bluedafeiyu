@@ -1,0 +1,33 @@
+import {renderCharacterBrand} from './CharacterBrand.mjs';
+import {resolveCharacterPortrait} from './CharacterPortrait.mjs';
+
+/** Reading sections use explicit archive types, never inferred tags or editorial memberships. */
+export function characterJourney(c, ctx) {
+  const {types, esc:e, tr, grid, sectionHead, button, workHref, roleCover, modelVendorLine, tagLink, breadcrumbs, old}=ctx;
+  const t=(key,zh,en,ja)=>tr('characterPage.'+key,zh,en,ja);
+  tr('allTags','全部标签','All tags','すべてのタグ');
+  const unknownCreator=t('unknownCreator','原作者未标注','Original creator not credited','原作者の記載なし');
+  const submissionCredit=t('submissionCredit','投稿署名','Submission credit','投稿クレジット');
+  const creatorText=work=>`<span class="character-origin-creator">${work.sa?`<span class="author-name">${e(work.sa)}</span>`:unknownCreator}</span>${work.a&&work.a!==work.sa?` <span class="character-submission-credit">${submissionCredit} <span class="author-name">${e(work.a)}</span></span>`:''}`;
+  const brand=renderCharacterBrand(c.id,tr);
+  const {work:cover,image:portrait}=resolveCharacterPortrait(c,roleCover(c));
+  const counts=types.map(type=>({type,n:c.list.filter(w=>w.k.includes(type.id)).length})).filter(row=>row.n);
+  const tags=[...new Set(c.list.flatMap(w=>w.tg))].slice(0,6);
+  const versions=c.list.filter(w=>w.k.some(k=>k==='setting'||k==='standing')).slice(0,3);
+  const expressions=c.list.filter(w=>w.k.includes('meme')).slice(0,4);
+  const sceneTags=[...new Set(expressions.flatMap(w=>w.tg))].slice(0,6);
+  const sceneControls=sceneTags.length?`<label class="character-scene-filter">${t('scenes','按已收录标签浏览','Browse archived tags','収録タグで探す')}<select data-character-scene><option value="" data-i18n="d.allTags">全部标签</option>${sceneTags.map(tag=>`<option value="${e(tag)}">${e(tag)}</option>`).join('')}</select></label>`:'';
+  const creditedGrid=list=>{let index=0;return grid(list).replace(/(<a class="work-title art-title"[^>]*>[\s\S]*?<\/a>)/g,title=>title+`<p class="character-work-author">${creatorText(list[index++])}</p>`);};
+  const expressionGrid=creditedGrid(expressions).replace(/data-slug="([^"]+)"/g,(attribute,slug)=>`${attribute} data-character-scene-tags="${e(JSON.stringify(expressions.find(w=>w.slug===slug)?.tg||[]))}"`);
+  const typeURL=id=>'/characters/'+c.id+'/'+id+'.html';
+  const typeName=type=>old('v2.type.'+type.id,type.name);
+  const aliases=c.aliases.length?tr('alsoKnown','也叫','Also known as','別名')+' '+e(c.aliases.join(' / ')):tr('roleArchive','二创作品档案','Fan art archive','二次創作アーカイブ');
+  const credit=cover.placeholder?'':`<a class="character-cover-credit" href="${workHref(cover)}"><span>${tr('coverWork','查看封面作品','View cover work','表紙の作品を見る')}</span><strong>${e(cover.n)}</strong><span class="character-cover-author">${creatorText(cover)}</span></a>`;
+  const hero=`${breadcrumbs([[old('v2.nav.characters','角色'),'/characters.html'],[e(c.name)]])}<header class="character-hero" data-brand="${e(c.id)}">${brand.decor}<div class="character-portrait"${portrait?' data-cutout':''}><img src="${e(portrait?.path||cover.i)}" alt="${cover.placeholder?'':e(cover.n)}" width="${portrait?.width||cover.w}" height="${portrait?.height||cover.h}" fetchpriority="high">${credit}</div><div class="character-info">${brand.line}<h1>${c.id==='deepseek'?tr('deepseekArchiveTitle','DeepSeek娘（鲸鱼娘）表情包','DeepSeek Chan memes','DeepSeekちゃんのスタンプ'):e(c.name)}</h1><p class="character-deck">${t('deck','从一种形象，认识更多创作。','One character. Many interpretations.','ひとつの名前から、さまざまな創作へ。')}</p>${modelVendorLine(c.id)}<p class="alias">${aliases}</p><p class="lede">${tr('charDescription','这里收录她的梗图、插画与不同二创形象。设计与故事以每张作品的原始来源为准。','Explore her memes, illustrations and fan interpretations. Designs and stories follow the original sources of each work.','ミーム、イラスト、さまざまな二次創作の姿を収録。デザインや物語は各作品の出典をご確認ください。')}</p><div class="tags">${tags.map(tagLink).join('')}</div><div class="character-page-actions">${button(expressions.length?'#character-expressions':'#all-works',expressions.length?t('findMemes','找表情包','Find memes','スタンプを探す'):t('browseWorks','浏览作品','Browse works','作品を見る'),'primary')}${versions.length?button('#character-versions',t('viewVersions','看立绘与设定','Explore character designs','立ち絵と設定を見る')):button('/submit.html?character='+c.id,tr('submitForHer','为她投稿','Submit for her','このキャラクターの作品を投稿'))}</div><p class="source-note">${t('source','社区拟人创作 · 非官方角色 · 各版本以原作者为准','Community personifications · Unofficial characters · Each design belongs to its creator','コミュニティの擬人化作品・非公式キャラクター・各デザインは原作者に基づきます')}</p></div>${brand.strip}</header>`;
+  const census=`<nav class="character-census" aria-labelledby="character-census-label"><span id="character-census-label" class="character-visually-hidden">${t('typesLabel','按真实作品类型浏览','Browse by archived type','作品の種類から探す')}</span><a href="#all-works" class="character-total"><b>${c.list.length}</b><span>${old('v2.work','作品')}</span></a>${counts.map(({type,n})=>`<a href="${typeURL(type.id)}"><b>${n}</b><span>${typeName(type)}</span></a>`).join('')}</nav>`;
+  let versionIndex=0;
+  const versionGrid=creditedGrid(versions).replace(/(<a class="work-title art-title"[^>]*>[\s\S]*?<\/a>)/g,title=>{const work=versions[versionIndex++];return title+`<p class="character-version-description">${e(work.d||work.n)}</p><a class="character-work-detail" href="${workHref(work)}">${t('workDetails','作品详情与来源','Work details and source','作品の詳細と出典')}</a>`;});
+  const versionsSection=versions.length?`<section class="section character-versions" id="character-versions"><p class="character-section-index">01 / CHARACTER DESIGNS</p>${sectionHead(t('versions','认识她的不同模样','Meet her different designs','さまざまな姿に出会う'),t('versionsNote','立绘与设定来自已收录作品，各版本保留原作者的表达。','Archived standing art and reference sheets, with each creator’s interpretation intact.','収録済みの立ち絵と設定画。各作者の表現をそのまま紹介します。'))}${versionGrid}<p class="character-section-note">${t('versionsCredit','打开作品，查看完整设计、作者说明与原始来源。','Open a work for its complete design, creator notes and original source.','作品を開くと、全体のデザイン、作者の説明、出典を確認できます。')}</p></section>`:'';
+  const expressionsSection=expressions.length?`<section class="section character-expressions" id="character-expressions"><p class="character-section-index">02 / EXPRESSIONS</p>${sectionHead(t('expressions','让她替你表达','Let her express it','気持ちを伝える一枚'),t('expressionsNote','从已收录的梗图开始，打开预览或进入详情找原图。','Start with archived memes. Preview a work or open its details for the original.','収録済みのミームから。プレビューや詳細で原画を確認できます。'))}${sceneControls}<a class="text-link" href="${typeURL('meme')}" data-character-type="meme">${t('allMemes','全部梗图','All memes','すべてのミーム')}</a>${expressionGrid}</section>`:'';
+  return {hero,census,versionsSection,expressionsSection,counts,typeURL,typeName};
+}

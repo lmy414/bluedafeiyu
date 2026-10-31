@@ -25,31 +25,6 @@ export function createDemoPages(ctx, pages) {
     if(url==='/community.html'||url==='/projects.html')p.content=decorateDocument(p.content,url.includes('community')?'community':url.includes('projects')?'projects':'events',ctx);
     if(url==='/characters.html')p.content=p.content.replace('class="role-grid"','class="role-grid character-grid character-index-grid"').replaceAll('class="role-card"','class="role-card character-card"').replaceAll('class="role-art"','class="role-art character-art"').replaceAll('class="role-body"','class="role-body character-copy"');
     if(url.startsWith('/characters/'))p.content=p.content.replace('class="character-hero"','class="character-hero live-character-header"').replace('class="character-portrait"','class="character-portrait live-character-portrait"');
-    if(/^\/characters\/[^/]+\.html$/.test(url)){
-      const {document}=parseHTML('<html><body>'+p.content+'</body></html>');
-      const hero=document.querySelector('.character-hero');
-      if(hero){
-        const character=chars.find(c=>url==='/characters/'+c.id+'.html');
-        hero.querySelector('h1 small')?.remove();
-        hero.querySelector('.character-portrait')?.classList.remove('character-portrait');
-        const facts=hero.querySelector('.character-facts');
-        if(facts&&character){facts.className='live-character-facts';facts.innerHTML=`<span><b>${character.list.length}</b> ${t('characterWorks','件作品','works','作品')}</span><span><b>${new Set(character.list.flatMap(w=>w.k)).size}</b> ${t('characterKinds','种作品类型','types','種類')}</span>`;}
-        const details=document.createElement('details');details.className='character-introduction';
-        details.innerHTML=`<summary>${t('characterIntroduction','角色介绍与收录说明','Character introduction and archive notes','キャラクター紹介と収録について')}${icon('chevron',13)}</summary>`;
-        const info=document.createElement('div');info.className='character-info';details.append(info);
-        for(const node of [...hero.querySelectorAll('.model-vendor,.lede,.tags,.source-note')]){
-          if(character?.id==='deepseek'&&node.matches('.lede'))continue;
-          info.append(node);
-        }
-        const reading=document.querySelector('.role-reading');if(reading)details.append(reading);
-        hero.after(details);
-        const highlights=[...document.body.children].find(node=>node.matches('.section')&&!node.id&&node.querySelector('.work-grid'));
-        if(highlights)highlights.remove();
-        const linked=[...document.body.children].find(node=>node.matches('.section')&&!node.id&&node.querySelector('.collection-grid'));
-        const all=document.querySelector('#all-works');if(linked&&all)all.after(linked);
-        p.content=document.body.innerHTML;
-      }
-    }
     if(url.startsWith('/works/'))p.transformContent(content=>content.replace('class="detail-info"','class="detail-info work-information"').replace('class="detail-image"','class="detail-image work-stage"'));
     if(url.startsWith('/creators/'))p.content=p.content.replace('class="page-head"','class="page-head author-header"');
   }

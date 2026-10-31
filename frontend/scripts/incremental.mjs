@@ -57,7 +57,10 @@ export function buildInputs(root) {
   const pythonRuntime=python.status===0?python.stdout:'unavailable';
   const publicEnvironment=Object.entries(process.env).filter(([key])=>key.startsWith('PUBLIC_')).sort(([a],[b])=>a.localeCompare(b));
   const envFiles=['.env','.env.local','.env.production','.env.production.local'].flatMap(name=>[path.join(root,name),path.join(root,'frontend',name)]).filter(file=>fs.existsSync(file)).map(file=>hash(fs.readFileSync(file)));
-  return {code:digestFiles(codeFiles),build:digestFiles(buildFiles),content:hash([digestFiles([...dataFiles,...assets]),snapshot]),runtime:hash([process.version,process.platform,process.env.NODE_ENV||'',Intl.DateTimeFormat().resolvedOptions().timeZone,process.env.SKIP_OG||'',process.env.PYTHON||'python3',pythonRuntime,fonts,publicEnvironment,envFiles])};
+  // Astro bundles every imported stylesheet into shared fingerprinted chunks, so a
+  // style edit renames the chunk that reused pages still link to.
+  const styles=digestFiles(codeFiles.filter(name=>name.startsWith('frontend/src/')&&name.endsWith('.css')));
+  return {code:digestFiles(codeFiles),build:digestFiles(buildFiles),styles,content:hash([digestFiles([...dataFiles,...assets]),snapshot]),runtime:hash([process.version,process.platform,process.env.NODE_ENV||'',Intl.DateTimeFormat().resolvedOptions().timeZone,process.env.SKIP_OG||'',process.env.PYTHON||'python3',pythonRuntime,fonts,publicEnvironment,envFiles])};
 }
 export function makePlan(inputs, routes, previous, validation, force = false) {
   const reasons=[];
@@ -65,6 +68,7 @@ export function makePlan(inputs, routes, previous, validation, force = false) {
   if (!validation.ok) reasons.push(validation.reason);
   if (previous && previous.inputs.build!==inputs.build) reasons.push('shared-assets-or-toolchain-changed');
   if (previous && previous.inputs.runtime!==inputs.runtime) reasons.push('build-runtime-changed');
+  if (previous && previous.inputs.styles!==inputs.styles) reasons.push('bundled-styles-changed');
   const full=reasons.length>0;
   if(!full && previous.inputs.code!==inputs.code) reasons.push('astro-template-dependencies-changed');
   const changed=Object.keys(routes).filter(route=>full || previous?.routes[route]!==routes[route]);

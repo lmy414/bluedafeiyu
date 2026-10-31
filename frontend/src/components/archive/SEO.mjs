@@ -186,10 +186,7 @@ export function createSEO(ctx) {
       content += `<section class="section intro-panel">${sectionHead('第一次来，怎样找到想要的图？')}<div class="reading-columns"><div><h3>按角色和类型找</h3><p>本站收录社区创作的 AI 娘表情包、插画、立绘设定与漫画。先选择角色，再按作品类型浏览；想按具体台词或情绪找图，可以使用搜索。</p><div class="role-entry-links">${chars.slice(0, 5).map(c => `<a class="tag" href="/characters/${c.id}.html">${esc(c.name)}表情包与二创</a>`).join('')}</div></div><div><h3>按主题连着看</h3><p>作者作品集保留投稿者的作品线索。日常场景选题把一组相关作品串起来，作品来源与授权仍保留在每张作品详情中。</p><a class="text-link" href="/topics.html">浏览作者作品集与主题合集</a></div></div>${questions([['蓝色大肥鱼与 DeepSeek娘是什么关系？', '<p>本站角色记录将“蓝色大肥鱼”和“鲸鱼娘”列为 DeepSeek娘的别名。本网站是非官方同人整理项目；这里收录的是社区二创，各作品来源请查看详情。</p>'], ['怎样下载原图并确认使用范围？', '<p>打开作品详情，使用“下载原图”查看原始图片，同时核对来源、署名和授权备注。图片可下载不代表可以任意转载或商用。</p><a class="text-link" href="/about.html#license">阅读授权说明</a>']])}</section>`;
     }
     if (c?.kind === 'character') {
-      const kinds = types.filter(t => c.list.some(w => w.k.includes(t.id))).map(t => kindNames[t.id]);
-      content = content.replace(`<h1>${esc(c.character.name)}</h1>`, `<h1>${esc(c.character.name)}<small>${esc(kinds.join('、'))}档案</small></h1>`);
-      const firstSection = content.indexOf('<section class="section"');
-      content = content.slice(0, firstSection) + roleNotes(c.character) + content.slice(firstSection);
+      content += roleNotes(c.character);
     }
     if ((c?.kind === 'character-type' || c?.kind === 'type') && c.list.length) {
       const heading = kindNames[c.type], sample = c.list.slice(0, 3).map(w => `《${w.n}》`).join('、');

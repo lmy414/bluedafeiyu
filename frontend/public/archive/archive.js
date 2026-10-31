@@ -88,6 +88,9 @@ import {orderWorks, shuffledSlugs} from '../components/work-order.js';
     if(event.key==='Tab'&&document.body.classList.contains('menu-open')){const items=$$('.sidebar a,.sidebar button').filter(x=>x.offsetParent);const first=items[0],last=items.at(-1);if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}}
   });
   document.addEventListener('click',e=>{const copyEl=e.target.closest('[data-copy]');if(copyEl)copy(copyEl.dataset.copy);const link=e.target.closest('[data-copy-link]');if(link)copy(new URL(localURL(link.dataset.copyLink||location.pathname),'https://xn--pssy23gqgbz2d718b.com').href,link.closest('[data-work-actions]')?.querySelector('[data-image-copy-status]'));});
+  document.querySelector('[data-character-scene]')?.addEventListener('change',event=>{
+    for(const card of document.querySelectorAll('[data-character-scene-tags]'))card.hidden=!!event.target.value&&!JSON.parse(card.dataset.characterSceneTags).includes(event.target.value);
+  });
   // All list controls use the same frozen public dataset and preserve their state in the URL.
   const listPage=document.body.hasAttribute('data-list-page'),searchPage=document.body.hasAttribute('data-search-page');
   if(listPage||searchPage){
@@ -125,8 +128,17 @@ import {orderWorks, shuffledSlugs} from '../components/work-order.js';
     if(globalArchive&&params.has('type')&&selected.type!==defaultState.type){location.replace(localURL(categoryURL().href));return;}
     const stateURL=()=>{const state=getState(),url=new URL(document.body.dataset.listBase||basePath(location.pathname),location.origin),fragment=new URLSearchParams();for(const[name,value]of Object.entries(state))if(value&&value!==defaultState[name]){if(searchPage&&name==='q')url.searchParams.set(name,value);else fragment.set(name,value);}url.hash=fragment.toString();return url;};
     const setURL=()=>{const state=getState();history.replaceState({...history.state,filters:state},'',localURL(stateURL().href));};
+    const syncCharacterTabs=()=>{
+      for(const link of document.querySelectorAll('.character-type-tabs [data-character-type]')){
+        const active=link.dataset.characterType===form.elements.type.value;
+        link.classList.toggle('is-active',active);
+        if(active)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current');
+      }
+    };
+    syncCharacterTabs();
     function render(reshuffle=false,append=false,preserveInitial=false){
       document.dispatchEvent(new Event('archive:filter-sync'));
+      syncCharacterTabs();
       const state=getState(),scores=state.q&&searchIndex?searchIndex.search(state.q):null;
       const characters=state.character.split(',').filter(Boolean);
       filtered=all.filter(w=>matchesCreationMethod(w,state.creation)&&characters.every(id=>w.cids.includes(id))&&(!state.type||w.k.includes(state.type))&&(!scores||scores.has(w.id)));
@@ -149,7 +161,7 @@ import {orderWorks, shuffledSlugs} from '../components/work-order.js';
       more.hidden=start+shown>=filtered.length;
       more.closest('.load-more-wrap').hidden=more.hidden;
     }
-    function update(reshuffle=false){clearTimeout(timer);shown=24;if(pageNumber>1){location.assign(localURL(stateURL().href));return;}setURL();if(dataset)render(reshuffle);}
+    function update(reshuffle=false){clearTimeout(timer);syncCharacterTabs();shown=24;if(pageNumber>1){location.assign(localURL(stateURL().href));return;}setURL();if(dataset)render(reshuffle);}
     form.addEventListener('change',event=>{
       if(event.target.name==='type'&&globalArchive){location.assign(localURL(categoryURL().href));return;}
       if(event.target.name==='character'&&document.body.dataset.character&&!getState().character.split(',').includes(document.body.dataset.character)){
@@ -158,6 +170,13 @@ import {orderWorks, shuffledSlugs} from '../components/work-order.js';
       }
       update(event.target.name==='sort');
     });form.addEventListener('submit',e=>e.preventDefault());
+    document.addEventListener('click',event=>{
+      const link=event.target.closest('[data-character-type]');
+      if(!link||!document.body.hasAttribute('data-character-page'))return;
+      if(event.button!==0||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
+      event.preventDefault();form.elements.type.value=link.dataset.characterType;update();
+      document.querySelector('#all-works')?.scrollIntoView({block:'start'});
+    });
     document.addEventListener('click',e=>{if(e.target.closest('[data-reset]')){setCharacters(defaultState.character);form.elements.type.value=defaultState.type;form.elements.sort.value=defaultState.sort;form.elements.direction.value=defaultState.direction;form.elements.creation.value='';if(query)query.value='';update();}});
     $('#search-form')?.addEventListener('submit',e=>{e.preventDefault();update();});
     let timer,composing=false;
@@ -168,7 +187,7 @@ import {orderWorks, shuffledSlugs} from '../components/work-order.js';
     $('[data-load-more]').addEventListener('click',()=>{shown+=24;render(false,true);});
     document.addEventListener('site:langchange',()=>{if(dataset)render(false);});
     load().then(async d=>{
-      if(searchPage){
+      if(searchPage||query){
         const {createSearchIndex}=await import('./search.js');
         searchIndex=createSearchIndex(d.works,d.characters,{characterName:(id,name)=>window.SiteLang?SiteLang.characterName(id,name):name});
       }

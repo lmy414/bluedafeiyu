@@ -5,6 +5,7 @@ import {createSearchIndex,normalizeSearchText} from '../public/archive/search.js
 import {createListing} from '../src/components/archive/Listing.mjs';
 import {createSearchPage} from '../src/components/archive/SearchPage.mjs';
 import {parseHTML} from 'linkedom';
+import {clientArchiveData} from '../src/lib/client-data.mjs';
 
 const work=(id,fields={})=>({id,slug:id,n:'普通作品',d:'',cm:'',tg:[],c:'',cids:[],roles:[],...fields});
 const ids=(index,query)=>[...index.search(query).keys()];
@@ -19,6 +20,39 @@ test('search finds descriptions and archive notes, with all keywords required ac
   assert.deepEqual(new Set(ids(index,'海边 烟花')),new Set(['description','commentary','split']));
   assert.deepEqual(ids(index,'睡觉'),['unrelated']);
   assert.deepEqual(ids(index,'海边 火山'),[]);
+});
+
+test('creator names and displayed credits remain searchable without unrelated authors matching',()=>{
+  const index=createSearchIndex([
+    work('creator',{n:'Reference sheet',sa:'Ninon',a:'',k:['setting']}),
+    work('credit',{n:'Portrait',sa:'ZipZipPipe',a:'Archive Credit',k:['standing']}),
+    work('collection',{owners:[{name:'Community Artist'}],k:['illustration']})
+  ]);
+  assert.deepEqual(ids(index,'Ninon'),['creator']);
+  assert.deepEqual(ids(index,'ZipZipPipe'),['credit']);
+  assert.deepEqual(ids(index,'Archive Credit'),['credit']);
+  assert.deepEqual(ids(index,'Community Artist'),['collection']);
+  assert.deepEqual(ids(index,'Unrelated Author'),[]);
+  assert.deepEqual(ids(index,'Ninon reference'),['creator']);
+  assert.deepEqual(ids(index,'Ninon portrait'),[]);
+});
+
+test('production locale catalogs feed named submission credits and origin creators into the shared index',()=>{
+  const translations={en:{name:'Reference',description:'Design sheet',commentary:'',tags:[]},ja:{name:'設定画',description:'デザイン',commentary:'',tags:[]}};
+  const data={works:[
+    work('submission',{n:'Reference',a:'Ninon',sa:'',i18n:translations}),
+    work('origin',{n:'Portrait',a:'',sa:'ZipZipPipe',i18n:translations}),
+    work('unrelated',{n:'Landscape',a:'Another Credit',sa:'Another Creator',i18n:translations})
+  ]};
+  for(const locale of ['zh','en','ja']){
+    const catalog=JSON.parse(JSON.stringify(clientArchiveData(data,locale)));
+    const index=createSearchIndex(catalog.works);
+    assert.deepEqual(ids(index,'Ninon'),['submission'],locale);
+    assert.deepEqual(ids(index,'ZipZipPipe'),['origin'],locale);
+    assert.deepEqual(ids(index,'Ninon reference'),['submission'],locale);
+    assert.deepEqual(ids(index,'Ninon landscape'),[],locale);
+    assert.deepEqual(ids(index,'Unrelated Artist'),[],locale);
+  }
 });
 
 test('Chinese words do not require spaces or contiguous matching',()=>{

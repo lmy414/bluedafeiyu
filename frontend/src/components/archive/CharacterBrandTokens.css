@@ -1,0 +1,757 @@
+/* Character pages use one shared skeleton (CharacterPage.css). This file only
+   publishes visual tokens: colour, type, radius, shadow, texture and the
+   decoration ink used by the official brand mark. No layout property lives here.
+   Values are adapted from .build/character-brand-research (official site colours,
+   computed heading/body stacks and official logotype usage). */
+
+/* Defaults plus the single mapping layer: brand tokens -> public theme variables.
+   The brand values live on the page body, but they are only *consumed* inside the
+   main content column (`.character-page` and its descendants). The site shell
+   (sidebar, top bar, footer, invite) keeps the default palette, so `main#main`
+   paints the brand ground while everything around it stays unchanged. */
+body.archive.refined[data-character-page] {
+  --brand-bg: #f6f8fa;
+  --brand-surface: #ffffff;
+  --brand-surface-2: #eef4f7;
+  --brand-ink: #203b50;
+  --brand-muted: #526b7d;
+  --brand-line: #dce5eb;
+  --brand-line-strong: #849aa9;
+  --brand-accent: #256e9b;
+  --brand-accent-2: #256e9b;
+  --brand-accent-3: #256e9b;
+  --brand-accent-ink: #ffffff;
+  --brand-link: #256e9b;
+  --brand-font-display: var(--font-sans);
+  --brand-font-body: var(--font-sans);
+  --brand-font-mono: var(--font-mono);
+  --brand-display-weight: 600;
+  --brand-display-tracking: -.03em;
+  --brand-radius: 16px;
+  --brand-radius-sm: 8px;
+  --brand-shadow: 0 8px 30px #163b5814;
+  --brand-shadow-sm: 0 1px 3px #163b580a;
+  --brand-border-style: solid;
+  --brand-page-pattern: none;
+  --brand-page-pattern-size: auto;
+  --brand-page-pattern-position: 0 0;
+  --brand-page-pattern-repeat: repeat;
+  --brand-hero-pattern: none;
+  --brand-deco-ink: var(--brand-ink);
+  --brand-deco-opacity: .1;
+  --brand-hero-wash: none;
+  --brand-hero-wash-size: auto;
+  --brand-hero-wash-position: 0 0;
+  --brand-hero-wash-opacity: 1;
+  --brand-hero-mark: var(--brand-deco-ink);
+  --brand-hero-mark-opacity: .14;
+  --brand-hero-accent: var(--brand-accent);
+  --brand-hero-accent-opacity: .18;
+  --brand-hero-rail-h: 0px;
+  --brand-hero-rail-bg: none;
+  --brand-hero-strip-opacity: 1;
+  --brand-logo-plate: none;
+  --brand-logo-radius: 0px;
+  --brand-logo-padding: 0px;
+  --brand-logo-filter: none;
+  --brand-scheme: light;
+
+}
+
+/* The content column consumes the tokens; no shell element is inside it. */
+body.archive.refined[data-character-page] .character-page {
+  --ground: var(--brand-bg);
+  --paper: var(--brand-surface);
+  --soft: var(--brand-surface-2);
+  --ink: var(--brand-ink);
+  --muted: var(--brand-muted);
+  --line: var(--brand-line);
+  --control-line: var(--brand-line-strong);
+  --blue: var(--brand-link);
+  --blue-soft: color-mix(in srgb, var(--brand-accent) 14%, var(--brand-surface));
+  --blue-hover: color-mix(in srgb, var(--brand-link) 82%, var(--brand-ink));
+  --on-blue: var(--brand-accent-ink);
+  --brand: var(--brand-accent);
+  --brand-hover: var(--brand-link);
+  --brand-soft: color-mix(in srgb, var(--brand-accent) 14%, var(--brand-surface));
+  --accent: var(--brand-accent);
+  --accent-soft: color-mix(in srgb, var(--brand-accent) 12%, var(--brand-surface));
+  --marker: var(--brand-accent);
+  --marker-soft: color-mix(in srgb, var(--brand-accent) 16%, var(--brand-surface));
+  --shadow: var(--brand-shadow);
+  --shadow-control: var(--brand-shadow-sm);
+  --radius-card: var(--brand-radius);
+  --radius-work: var(--brand-radius-sm);
+  --radius-control: var(--brand-radius-sm);
+  --font: var(--brand-font-body);
+  --page: var(--brand-bg);
+  --bg-app: var(--brand-bg);
+  --bg-surface: var(--brand-surface);
+  --bg-raised: var(--brand-surface);
+  --bg-inset: var(--brand-surface-2);
+  --bg-stage: var(--brand-surface-2);
+  --bg-hover: var(--brand-surface-2);
+  --border-default: var(--brand-line);
+  --border-subtle: var(--brand-line);
+  --border-strong: var(--brand-line-strong);
+  --text-primary: var(--brand-ink);
+  --text-secondary: var(--brand-muted);
+  color-scheme: var(--brand-scheme);
+  color: var(--brand-ink);
+  font-family: var(--brand-font-body);
+}
+
+/* ------------------------------------------------------------------ Claude */
+body.archive.refined[data-character-page="claude"] {
+  --brand-bg: #f4f2ec; --brand-surface: #faf9f5; --brand-surface-2: #f1eee6;
+  --brand-ink: #141413; --brand-muted: #68665e; --brand-line: #e2ded2; --brand-line-strong: #a9a49a;
+  --brand-accent: #b24f30; --brand-accent-2: #d97757; --brand-accent-3: #8f6a52; --brand-accent-ink: #fffaf6;
+  --brand-link: #9b452f; --brand-font-display: Georgia, "Songti SC", "Noto Serif CJK SC", serif;
+  --brand-display-weight: 500; --brand-display-tracking: -.02em;
+  --brand-radius: 6px; --brand-radius-sm: 4px;
+  --brand-hero-pattern: linear-gradient(180deg, transparent 60%, #d977571a);
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="claude"] {
+  --brand-bg: #1c1b18; --brand-surface: #24231f; --brand-surface-2: #2b2a25;
+  --brand-ink: #f4f1e8; --brand-muted: #c2bcb0; --brand-line: #3a3833; --brand-line-strong: #6d685e;
+  --brand-accent: #d97757; --brand-accent-2: #edaa8e; --brand-accent-3: #b98974; --brand-accent-ink: #241f1b;
+  --brand-link: #edaa8e; --brand-shadow: 0 8px 30px #0000004d; --brand-shadow-sm: 0 1px 3px #00000033;
+  --brand-scheme: dark;
+}
+
+/* ---------------------------------------------------------------- DeepSeek */
+body.archive.refined[data-character-page="deepseek"] {
+  --brand-bg: #eef4fb; --brand-surface: #ffffff; --brand-surface-2: #e6eefa;
+  --brand-ink: #152443; --brand-muted: #50617a; --brand-line: #d8e3f2; --brand-line-strong: #8ea3c0;
+  --brand-accent: #2a5fd0; --brand-accent-2: #4176e6; --brand-accent-3: #152443; --brand-accent-ink: #ffffff;
+  --brand-link: #2859bd; --brand-deco-ink: #4176e6;
+  --brand-font-display: Montserrat, "Avenir Next", "PingFang SC", var(--font-sans);
+  --brand-font-mono: "DM Sans", "Segoe UI", var(--font-sans);
+  --brand-radius: 24px; --brand-radius-sm: 12px;
+  --brand-page-pattern: radial-gradient(ellipse 90% 55% at 15% 0%, #4176e624, transparent 72%);
+  --brand-hero-pattern: radial-gradient(ellipse 60% 85% at 82% 12%, #4176e629, transparent 72%);
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="deepseek"] {
+  --brand-bg: #101b2e; --brand-surface: #152239; --brand-surface-2: #1c2c49;
+  --brand-ink: #eef4ff; --brand-muted: #bdcbe0; --brand-line: #2c4062; --brand-line-strong: #5d7799;
+  --brand-accent: #4f7ff0; --brand-accent-2: #7aa2ff; --brand-accent-3: #a7c5ff; --brand-accent-ink: #071022;
+  --brand-link: #a7c5ff; --brand-deco-ink: #7aa2ff; --brand-shadow: 0 8px 30px #00000052; --brand-shadow-sm: 0 1px 3px #00000038;
+  --brand-scheme: dark;
+}
+
+/* ------------------------------------------------------------------ Doubao */
+body.archive.refined[data-character-page="doubao"] {
+  --brand-bg: #f5f7fa; --brand-surface: #ffffff; --brand-surface-2: #f0f3f7;
+  --brand-ink: #222629; --brand-muted: #5f646a; --brand-line: #e4e8ee; --brand-line-strong: #9aa4b1;
+  --brand-accent: #0b57c9; --brand-accent-2: #006aff; --brand-accent-3: #6ea8ff; --brand-accent-ink: #ffffff;
+  --brand-link: #145bd3; --brand-font-display: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --brand-radius: 28px; --brand-radius-sm: 14px;
+  --brand-hero-pattern: radial-gradient(circle at 92% 8%, #006aff1f, transparent 55%);
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="doubao"] {
+  --brand-bg: #16181b; --brand-surface: #202327; --brand-surface-2: #272b30;
+  --brand-ink: #f6f7f8; --brand-muted: #b8bec7; --brand-line: #343943; --brand-line-strong: #6c7481;
+  --brand-accent: #3d8bff; --brand-accent-2: #6ea8ff; --brand-accent-3: #9bc9ff; --brand-accent-ink: #0b1220;
+  --brand-link: #9bc9ff; --brand-shadow: 0 8px 30px #00000052; --brand-shadow-sm: 0 1px 3px #00000038;
+  --brand-scheme: dark;
+}
+
+/* -------------------------------------------------------------------- Kimi */
+body.archive.refined[data-character-page="kimi"] {
+  --brand-bg: #0d0d0d; --brand-surface: #111111; --brand-surface-2: #191919;
+  --brand-ink: #f5f5f5; --brand-muted: #a8a8a8; --brand-line: #2c2c2c; --brand-line-strong: #6b6b6b;
+  --brand-accent: #0059cc; --brand-accent-2: #007cff; --brand-accent-3: #c3c3c3; --brand-accent-ink: #ffffff;
+  --brand-link: #d3d3d3; --brand-font-display: Inter, "Helvetica Neue", "PingFang SC", var(--font-sans);
+  --brand-font-mono: "Geist Mono", Consolas, var(--font-mono);
+  --brand-display-weight: 600; --brand-display-tracking: -.02em;
+  --brand-radius: 2px; --brand-radius-sm: 0px;
+  --brand-shadow: 0 12px 32px #00000066; --brand-shadow-sm: 0 1px 3px #0000004d;
+  --brand-deco-opacity: .34; --brand-scheme: dark;
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="kimi"] {
+  --brand-bg: #000000; --brand-surface: #0a0a0a; --brand-surface-2: #141414;
+  --brand-ink: #ffffff; --brand-muted: #b5b5b5; --brand-line: #262626; --brand-line-strong: #6b6b6b;
+  --brand-accent: #0059cc; --brand-accent-2: #007cff; --brand-accent-3: #d3d3d3; --brand-accent-ink: #ffffff;
+  --brand-link: #e6e6e6; --brand-deco-ink: #f5f5f5;
+  --brand-shadow: 0 12px 32px #000000a6; --brand-shadow-sm: 0 1px 3px #00000080;
+}
+
+/* -------------------------------------------------------------------- Qwen */
+body.archive.refined[data-character-page="qwen"] {
+  --brand-bg: #f1f4ff; --brand-surface: #ffffff; --brand-surface-2: #e8ecff;
+  --brand-ink: #111d46; --brand-muted: #526185; --brand-line: #dbe1f5; --brand-line-strong: #94a1c8;
+  --brand-accent: #082dff; --brand-accent-2: #4a63ff; --brand-accent-3: #bdcaff; --brand-accent-ink: #ffffff;
+  --brand-link: #082dff; --brand-font-display: Inter, "Noto Sans SC", "Segoe UI", var(--font-sans);
+  --brand-radius: 28px; --brand-radius-sm: 14px;
+  --brand-page-pattern: radial-gradient(ellipse 60% 45% at 100% 0%, #082dff1f, transparent 70%);
+  --brand-hero-pattern: linear-gradient(115deg, transparent 55%, #082dff1a);
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="qwen"] {
+  --brand-bg: #0d1428; --brand-surface: #111a37; --brand-surface-2: #17224a;
+  --brand-ink: #f6f8ff; --brand-muted: #bdc9e3; --brand-line: #27305c; --brand-line-strong: #5a689e;
+  --brand-accent: #4a63ff; --brand-accent-2: #7b8dff; --brand-accent-3: #bdcaff; --brand-accent-ink: #ffffff;
+  --brand-link: #bdcaff; --brand-shadow: 0 8px 30px #00000066; --brand-shadow-sm: 0 1px 3px #00000047;
+  --brand-scheme: dark;
+}
+
+/* ----------------------------------------------------------------- StepFun */
+body.archive.refined[data-character-page="stepfun"] {
+  --brand-bg: #f9f9f7; --brand-surface: #ffffff; --brand-surface-2: #f2f3ee;
+  --brand-ink: #1a1a1a; --brand-muted: #5b5e5b; --brand-line: #e2e3de; --brand-line-strong: #9b9d97;
+  --brand-accent: #006b8f; --brand-accent-2: #00a9ff; --brand-accent-3: #0a4a63; --brand-accent-ink: #ffffff;
+  --brand-link: #006b8f; --brand-font-display: Lora, "Source Han Serif CN", "Noto Serif SC", "Songti SC", Georgia, serif;
+  --brand-font-mono: "Source Han Sans CN", "PingFang SC", var(--font-sans);
+  --brand-display-weight: 600; --brand-radius: 0px; --brand-radius-sm: 0px;
+  --brand-page-pattern: repeating-linear-gradient(0deg, transparent 0 63px, #00a9ff12 63px 64px);
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="stepfun"] {
+  --brand-bg: #181918; --brand-surface: #202120; --brand-surface-2: #262725;
+  --brand-ink: #f7f7f2; --brand-muted: #bdc1bd; --brand-line: #343633; --brand-line-strong: #6d706c;
+  --brand-accent: #6ed6ff; --brand-accent-2: #00a9ff; --brand-accent-3: #b9f0ff; --brand-accent-ink: #06232e;
+  --brand-link: #6ed6ff; --brand-shadow: 0 8px 30px #00000052; --brand-shadow-sm: 0 1px 3px #00000038;
+  --brand-scheme: dark;
+}
+
+/* Z.ai / GLM --------------------------------------------------------------- */
+body.archive.refined[data-character-page="glm"] {
+  --brand-bg: #f5f5f5; --brand-surface: #ffffff; --brand-surface-2: #f0f0f0;
+  --brand-ink: #0d0d0d; --brand-muted: #5c5c5c; --brand-line: #e0e0e0; --brand-line-strong: #9a9a9a;
+  --brand-accent: #161616; --brand-accent-2: #3a3a3a; --brand-accent-3: #8a8a8a; --brand-accent-ink: #ffffff;
+  --brand-link: #161616; --brand-font-display: "Crimson Text", "Noto Serif SC", "Songti SC", Georgia, serif;
+  --brand-font-mono: Geist, "Segoe UI", var(--font-sans);
+  --brand-radius: 18px; --brand-radius-sm: 8px;
+  --brand-page-pattern: radial-gradient(circle, #0d0d0d1f 1px, transparent 1px);
+  --brand-page-pattern-size: 8px 8px;
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="glm"] {
+  --brand-bg: #141517; --brand-surface: #1b1c1e; --brand-surface-2: #232427;
+  --brand-ink: #f7f7f7; --brand-muted: #bcbcbc; --brand-line: #313337; --brand-line-strong: #6a6d72;
+  --brand-accent: #f2f2f2; --brand-accent-2: #cfcfcf; --brand-accent-3: #9d9d9d; --brand-accent-ink: #101113;
+  --brand-link: #eeeeee; --brand-shadow: 0 8px 30px #0000005c; --brand-shadow-sm: 0 1px 3px #00000042;
+  --brand-scheme: dark;
+}
+
+/* -------------------------------------------------------------------- MiMo */
+body.archive.refined[data-character-page="mimo"] {
+  --brand-bg: #faf7f5; --brand-surface: #ffffff; --brand-surface-2: #f3eee9;
+  --brand-ink: #1a1a1a; --brand-muted: #635a54; --brand-line: #e6ded7; --brand-line-strong: #a1938a;
+  --brand-accent: #111111; --brand-accent-2: #4a423c; --brand-accent-3: #a89b92; --brand-accent-ink: #ffffff;
+  --brand-link: #221f1d; --brand-font-display: MiSans, "Arial Black", "PingFang SC", var(--font-sans);
+  --brand-font-mono: "PT Serif", Georgia, "Noto Serif SC", serif;
+  --brand-display-weight: 800; --brand-display-tracking: -.05em;
+  --brand-logo-plate: #ffffff; --brand-logo-padding: 3px; --brand-logo-radius: 2px;
+  --brand-radius: 0px; --brand-radius-sm: 0px;
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="mimo"] {
+  --brand-bg: #1b1917; --brand-surface: #24211f; --brand-surface-2: #2c2825;
+  --brand-ink: #faf7f5; --brand-muted: #c6bbb1; --brand-line: #3a3531; --brand-line-strong: #7a6f67;
+  --brand-accent: #faf7f5; --brand-accent-2: #ded4cc; --brand-accent-3: #a99d94; --brand-accent-ink: #14110f;
+  --brand-link: #f4eee9; --brand-logo-filter: invert(1); --brand-shadow: 0 8px 30px #00000052; --brand-shadow-sm: 0 1px 3px #00000038;
+  --brand-scheme: dark;
+}
+
+/* ----------------------------------------------------------------- Gemini */
+body.archive.refined[data-character-page="gemini"] {
+  --brand-bg: #f7f9fd; --brand-surface: #ffffff; --brand-surface-2: #eff2fa;
+  --brand-ink: #1f1f1f; --brand-muted: #555d70; --brand-line: #e3e6f0; --brand-line-strong: #9aa3ba;
+  --brand-accent: #1a5cc8; --brand-accent-2: #4285f4; --brand-accent-3: #ea4335; --brand-accent-ink: #ffffff;
+  --brand-link: #1a5cc8; --brand-font-display: "Google Sans", "Trebuchet MS", "Microsoft YaHei", sans-serif;
+  --brand-display-weight: 500; --brand-radius: 30px; --brand-radius-sm: 14px;
+  --brand-page-pattern: radial-gradient(circle at 12% 0%, #4285f41f, transparent 52%), radial-gradient(circle at 88% 6%, #ea43351a, transparent 50%);
+  --brand-hero-pattern: radial-gradient(circle at 88% 6%, #4285f426, transparent 52%), radial-gradient(circle at 52% 100%, #ea43351c, transparent 52%);
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="gemini"] {
+  --brand-bg: #0f141e; --brand-surface: #151b28; --brand-surface-2: #1c2333;
+  --brand-ink: #edf2ff; --brand-muted: #b5c0d6; --brand-line: #28304a; --brand-line-strong: #5f6d92;
+  --brand-accent: #8ab4ff; --brand-accent-2: #a9c7ff; --brand-accent-3: #f28b82; --brand-accent-ink: #0b1220;
+  --brand-link: #a9c7ff; --brand-shadow: 0 8px 30px #00000066; --brand-shadow-sm: 0 1px 3px #00000047;
+  --brand-scheme: dark;
+}
+
+/* --------------------------------------------------------------------- GPT */
+body.archive.refined[data-character-page="gpt"] {
+  --brand-bg: #f6f6f5; --brand-surface: #fcfcfc; --brand-surface-2: #f1f1ef;
+  --brand-ink: #0d0d0d; --brand-muted: #5d5d5d; --brand-line: #e3e3e1; --brand-line-strong: #9b9b99;
+  --brand-accent: #0d0d0d; --brand-accent-2: #2f2f2f; --brand-accent-3: #8f8f8d; --brand-accent-ink: #ffffff;
+  --brand-link: #0d0d0d; --brand-font-display: "OpenAI Sans", Arial, "Microsoft YaHei", sans-serif;
+  --brand-display-weight: 600; --brand-radius: 24px; --brand-radius-sm: 12px;
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="gpt"] {
+  --brand-bg: #181818; --brand-surface: #212121; --brand-surface-2: #2a2a2a;
+  --brand-ink: #f5f5f5; --brand-muted: #b4b4b4; --brand-line: #353535; --brand-line-strong: #737373;
+  --brand-accent: #f5f5f5; --brand-accent-2: #d6d6d6; --brand-accent-3: #a3a3a3; --brand-accent-ink: #0d0d0d;
+  --brand-link: #f5f5f5; --brand-shadow: 0 8px 30px #0000005c; --brand-shadow-sm: 0 1px 3px #00000042;
+  --brand-scheme: dark;
+}
+
+/* -------------------------------------------------------------------- Grok */
+body.archive.refined[data-character-page="grok"] {
+  --brand-bg: #f9f8f7; --brand-surface: #ffffff; --brand-surface-2: #f2f1ef;
+  --brand-ink: #050505; --brand-muted: #666666; --brand-line: #e2e0dd; --brand-line-strong: #9b9895;
+  --brand-accent: #050505; --brand-accent-2: #262626; --brand-accent-3: #8c8c8c; --brand-accent-ink: #ffffff;
+  --brand-link: #050505; --brand-font-display: "Arial Black", "Helvetica Neue", "Microsoft YaHei", sans-serif;
+  --brand-display-weight: 900; --brand-display-tracking: -.05em;
+  --brand-radius: 0px; --brand-radius-sm: 0px;
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="grok"] {
+  --brand-bg: #0a0a0a; --brand-surface: #111111; --brand-surface-2: #191919;
+  --brand-ink: #f7f7f7; --brand-muted: #aaaaaa; --brand-line: #2e2e2e; --brand-line-strong: #6b6b6b;
+  --brand-accent: #f7f7f7; --brand-accent-2: #d4d4d4; --brand-accent-3: #a0a0a0; --brand-accent-ink: #0a0a0a;
+  --brand-link: #f7f7f7; --brand-shadow: 0 8px 30px #00000066; --brand-shadow-sm: 0 1px 3px #00000047;
+  --brand-scheme: dark;
+}
+
+/* ----------------------------------------------------------------- MiniMax */
+body.archive.refined[data-character-page="minimax"] {
+  --brand-bg: #fdf5f2; --brand-surface: #ffffff; --brand-surface-2: #fbece7;
+  --brand-ink: #181e25; --brand-muted: #63575d; --brand-line: #f0ded6; --brand-line-strong: #b39a90;
+  --brand-accent: #c8392f; --brand-accent-2: #ff6452; --brand-accent-3: #a36aff; --brand-accent-ink: #ffffff;
+  --brand-link: #b62b36; --brand-font-display: "Libre Baskerville", Georgia, "Songti SC", serif;
+  --brand-font-mono: Outfit, "Trebuchet MS", var(--font-sans);
+  --brand-display-weight: 400; --brand-radius: 14px; --brand-radius-sm: 8px;
+  --brand-page-pattern: radial-gradient(ellipse at top right, #a36aff1f, transparent 58%), radial-gradient(ellipse at bottom left, #ff70381f, transparent 58%);
+  --brand-hero-pattern: radial-gradient(ellipse at top right, #a36aff33, transparent 58%), radial-gradient(ellipse at bottom left, #ff703833, transparent 58%);
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="minimax"] {
+  --brand-bg: #1b1519; --brand-surface: #241c25; --brand-surface-2: #2d232c;
+  --brand-ink: #fff4ed; --brand-muted: #d4b7c1; --brand-line: #3c2c38; --brand-line-strong: #7d6472;
+  --brand-accent: #ff8b7d; --brand-accent-2: #ff6452; --brand-accent-3: #b79bff; --brand-accent-ink: #2a1014;
+  --brand-link: #ffb1a4; --brand-shadow: 0 8px 30px #0000005c; --brand-shadow-sm: 0 1px 3px #00000042;
+  --brand-scheme: dark;
+}
+
+/* ------------------------------------------------------------------ Mistral */
+body.archive.refined[data-character-page="mistral"] {
+  --brand-bg: #fbfbf8; --brand-surface: #ffffff; --brand-surface-2: #f4f3ec;
+  --brand-ink: #202025; --brand-muted: #5f5d58; --brand-line: #e6e4d8; --brand-line-strong: #a3a08f;
+  --brand-accent: #b23a09; --brand-accent-2: #fa500f; --brand-accent-3: #ffaf01; --brand-accent-ink: #ffffff;
+  --brand-link: #ad3309; --brand-font-display: "Arial Black", "Microsoft YaHei", sans-serif;
+  --brand-display-weight: 800; --brand-display-tracking: -.03em;
+  --brand-radius: 0px; --brand-radius-sm: 0px;
+  --brand-page-pattern: repeating-linear-gradient(90deg, transparent 0 95px, #fa500f14 95px 96px);
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="mistral"] {
+  --brand-bg: #171714; --brand-surface: #20201d; --brand-surface-2: #282823;
+  --brand-ink: #f3f2e9; --brand-muted: #bebaae; --brand-line: #383830; --brand-line-strong: #75746a;
+  --brand-accent: #ff7a45; --brand-accent-2: #ffaf01; --brand-accent-3: #fa500f; --brand-accent-ink: #1c0c05;
+  --brand-link: #ffb78c; --brand-shadow: 0 8px 30px #00000052; --brand-shadow-sm: 0 1px 3px #00000038;
+  --brand-scheme: dark;
+}
+
+/* --------------------------------------------------------------- Perplexity */
+body.archive.refined[data-character-page="perplexity"] {
+  --brand-bg: #fcfcf9; --brand-surface: #ffffff; --brand-surface-2: #f2f4f1;
+  --brand-ink: #0b2833; --brand-muted: #4f6064; --brand-line: #dde5e2; --brand-line-strong: #93a5a2;
+  --brand-accent: #14707c; --brand-accent-2: #20808d; --brand-accent-3: #6bb3bb; --brand-accent-ink: #ffffff;
+  --brand-link: #14707c; --brand-deco-ink: #20808d;
+  --brand-font-display: pplxSans, "Trebuchet MS", "Microsoft YaHei", sans-serif;
+  --brand-display-weight: 500; --brand-radius: 6px; --brand-radius-sm: 4px;
+  --brand-page-pattern: repeating-linear-gradient(0deg, transparent 0 31px, #20808d14 31px 32px);
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="perplexity"] {
+  --brand-bg: #0e1a1d; --brand-surface: #17282c; --brand-surface-2: #1e3238;
+  --brand-ink: #e5f3f3; --brand-muted: #a9c3c5; --brand-line: #2b4449; --brand-line-strong: #5f8085;
+  --brand-accent: #56b7c2; --brand-accent-2: #8ed4de; --brand-accent-3: #20808d; --brand-accent-ink: #06232a;
+  --brand-link: #8ed4de; --brand-deco-ink: #8ed4de; --brand-shadow: 0 8px 30px #0000005c; --brand-shadow-sm: 0 1px 3px #00000042;
+  --brand-scheme: dark;
+}
+
+/* -------------------------------------------------------------------- RWKV */
+body.archive.refined[data-character-page="rwkv"] {
+  --brand-bg: #ffffff; --brand-surface: #ffffff; --brand-surface-2: #f4f4f4;
+  --brand-ink: #333333; --brand-muted: #555555; --brand-line: #dcdcdc; --brand-line-strong: #9d9d9d;
+  --brand-accent: #2b2b2b; --brand-accent-2: #c7c7c7; --brand-accent-3: #7d7d7d; --brand-accent-ink: #ffffff;
+  --brand-link: #2b2b2b; --brand-logo-plate: #ffffff; --brand-logo-padding: 4px;
+  --brand-font-display: "Open Sans", "Segoe UI", Arial, sans-serif;
+  --brand-font-mono: "Open Sans", "Segoe UI", Arial, sans-serif;
+  --brand-display-weight: 300; --brand-radius: 0px; --brand-radius-sm: 0px;
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="rwkv"] {
+  --brand-bg: #171716; --brand-surface: #202124; --brand-surface-2: #28292c;
+  --brand-ink: #f1f1f1; --brand-muted: #c3c3c3; --brand-line: #34363a; --brand-line-strong: #6f7176;
+  --brand-accent: #d4d1ff; --brand-accent-2: #f1f1f1; --brand-accent-3: #9d9aa8; --brand-accent-ink: #17171a;
+  --brand-link: #d4d1ff; --brand-logo-filter: invert(1); --brand-shadow: 0 8px 30px #00000052; --brand-shadow-sm: 0 1px 3px #00000038;
+  --brand-scheme: dark;
+}
+
+/* ------------------------------------------------------------------- Llama */
+body.archive.refined[data-character-page="llama"] {
+  --brand-bg: #eef7ff; --brand-surface: #ffffff; --brand-surface-2: #e4f1fd;
+  --brand-ink: #123454; --brand-muted: #4c6880; --brand-line: #d6e8f8; --brand-line-strong: #8fa9be;
+  --brand-accent: #0757cb; --brand-accent-2: #0866ff; --brand-accent-3: #7fb4ff; --brand-accent-ink: #ffffff;
+  --brand-link: #0757cb; --brand-font-display: "Optimistic AI VF", "Trebuchet MS", "Microsoft YaHei", sans-serif;
+  --brand-radius: 28px; --brand-radius-sm: 14px;
+  --brand-page-pattern: radial-gradient(ellipse 80% 55% at 85% 0%, #0866ff1f, transparent 70%);
+  --brand-hero-pattern: radial-gradient(ellipse 70% 90% at 82% 108%, #0866ff2b, transparent 70%);
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="llama"] {
+  --brand-bg: #0f2133; --brand-surface: #142b43; --brand-surface-2: #1b3550;
+  --brand-ink: #f1f8ff; --brand-muted: #b9d1e5; --brand-line: #24405c; --brand-line-strong: #5c7c9a;
+  --brand-accent: #3d82ff; --brand-accent-2: #6fa8ff; --brand-accent-3: #a8d6ff; --brand-accent-ink: #04101f;
+  --brand-link: #a8d6ff; --brand-shadow: 0 8px 30px #00000066; --brand-shadow-sm: 0 1px 3px #00000047;
+  --brand-scheme: dark;
+}
+
+/* --------------------------------------------------------- Git (three sites) */
+body.archive.refined[data-character-page="git"] {
+  --brand-bg: #f6f7f9; --brand-surface: #ffffff; --brand-surface-2: #eff1f4;
+  --brand-ink: #1f2328; --brand-muted: #576069; --brand-line: #e0e4e8; --brand-line-strong: #98a1aa;
+  --brand-accent: #1f2328; --brand-accent-2: #fc6d26; --brand-accent-3: #c71d23; --brand-accent-ink: #ffffff;
+  --brand-link: #1f6f36; --brand-logo-plate: #ffffff; --brand-logo-padding: 3px; --brand-logo-radius: 4px;
+  --brand-font-display: "Mona Sans", "GitLab Sans", "Segoe UI", Arial, sans-serif;
+  --brand-radius: 12px; --brand-radius-sm: 6px;
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="git"] {
+  --brand-bg: #12141b; --brand-surface: #171923; --brand-surface-2: #1f222e;
+  --brand-ink: #f0edf7; --brand-muted: #bbc0cb; --brand-line: #2b2f3d; --brand-line-strong: #616879;
+  --brand-accent: #fc6d26; --brand-accent-2: #c71d23; --brand-accent-3: #f0edf7; --brand-accent-ink: #17110c;
+  --brand-link: #8fdfa0; --brand-shadow: 0 8px 30px #00000066; --brand-shadow-sm: 0 1px 3px #00000047;
+  --brand-scheme: dark;
+}
+
+/* ----------------------------------------------------------------- Hunyuan */
+body.archive.refined[data-character-page="hunyuan"] {
+  --brand-bg: #f5f9ff; --brand-surface: #ffffff; --brand-surface-2: #eaf2fe;
+  --brand-ink: #102238; --brand-muted: #4e6582; --brand-line: #d9e5f7; --brand-line-strong: #8ba3c0;
+  --brand-accent: #0046b8; --brand-accent-2: #0052d9; --brand-accent-3: #00baff; --brand-accent-ink: #ffffff;
+  --brand-link: #0052d9; --brand-font-display: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+  --brand-radius: 18px; --brand-radius-sm: 10px;
+  --brand-page-pattern: linear-gradient(90deg, #0052d912 1px, transparent 1px), linear-gradient(0deg, #0052d912 1px, transparent 1px);
+  --brand-page-pattern-size: 64px 64px;
+  --brand-hero-pattern: linear-gradient(110deg, #0052d91f, transparent 65%);
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="hunyuan"] {
+  --brand-bg: #0b1524; --brand-surface: #102137; --brand-surface-2: #16293f;
+  --brand-ink: #f4f9ff; --brand-muted: #b4c9e0; --brand-line: #24384f; --brand-line-strong: #5b7c9f;
+  --brand-accent: #1c5fc9; --brand-accent-2: #4d92ff; --brand-accent-3: #7ad4ff; --brand-accent-ink: #ffffff;
+  --brand-link: #a7ddf4; --brand-shadow: 0 8px 30px #0000005c; --brand-shadow-sm: 0 1px 3px #00000042;
+  --brand-scheme: dark;
+}
+
+/* ------------------------------------------------------------------ NovelAI */
+body.archive.refined[data-character-page="novelai"] {
+  --brand-bg: #0e1024; --brand-surface: #13152c; --brand-surface-2: #1a1c38;
+  --brand-ink: #e1e4ff; --brand-muted: #c0bddb; --brand-line: #2c2f52; --brand-line-strong: #63688f;
+  --brand-accent: #b7a1f8; --brand-accent-2: #fefaa8; --brand-accent-3: #7f74c8; --brand-accent-ink: #1a1630;
+  --brand-link: #fefaa8; --brand-font-display: Neco, Eczar, Georgia, "Noto Serif SC", "Songti SC", serif;
+  --brand-font-mono: "Source Sans Pro", "Segoe UI", var(--font-sans);
+  --brand-display-weight: 500; --brand-radius: 14px; --brand-radius-sm: 8px;
+  --brand-shadow: 0 12px 34px #0000006b; --brand-shadow-sm: 0 1px 3px #0000004d;
+  --brand-page-pattern: radial-gradient(circle at 28% 12%, #b7a1f824, transparent 58%);
+  --brand-hero-pattern: radial-gradient(circle at 82% 10%, #b7a1f82e, transparent 58%), radial-gradient(circle at 20% 92%, #fefaa81a, transparent 55%);
+  --brand-deco-opacity: .2; --brand-scheme: dark;
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="novelai"] {
+  --brand-bg: #08091a; --brand-surface: #0d0f24; --brand-surface-2: #14172f;
+  --brand-ink: #e6e8ff; --brand-muted: #b9b8d6; --brand-line: #232649; --brand-line-strong: #5a5f8a;
+  --brand-accent: #b7a1f8; --brand-accent-2: #fefaa8; --brand-accent-3: #7f74c8; --brand-accent-ink: #141129;
+  --brand-link: #fefaa8;
+  --brand-shadow: 0 12px 34px #00000085; --brand-shadow-sm: 0 1px 3px #00000066;
+}
+
+/* -------------------------------------------------------------- Hugging Face */
+body.archive.refined[data-character-page="huggingface"] {
+  --brand-bg: #fffdf6; --brand-surface: #ffffff; --brand-surface-2: #fff7e0;
+  --brand-ink: #20232b; --brand-muted: #5b616b; --brand-line: #ede4cb; --brand-line-strong: #b6a884;
+  --brand-accent: #7a5b00; --brand-accent-2: #ffd21e; --brand-accent-3: #ff9d0b; --brand-accent-ink: #fffdf6;
+  --brand-link: #775800; --brand-font-display: "Source Sans Pro", "Segoe UI", Arial, sans-serif;
+  --brand-radius: 22px; --brand-radius-sm: 12px;
+  --brand-page-pattern: radial-gradient(circle at 100% 0%, #ffd21e33, transparent 52%);
+  --brand-hero-pattern: radial-gradient(circle at 90% 10%, #ffd21e40, transparent 50%);
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="huggingface"] {
+  --brand-bg: #12141a; --brand-surface: #171a20; --brand-surface-2: #1e2229;
+  --brand-ink: #f6f7fb; --brand-muted: #bac0cc; --brand-line: #2b303a; --brand-line-strong: #646d7c;
+  --brand-accent: #ffd21e; --brand-accent-2: #ff9d0b; --brand-accent-3: #ffe680; --brand-accent-ink: #23200a;
+  --brand-link: #ffd95c; --brand-shadow: 0 8px 30px #00000066; --brand-shadow-sm: 0 1px 3px #00000047;
+  --brand-scheme: dark;
+}
+
+/* ------------------------------------------------------------------- ZCode */
+body.archive.refined[data-character-page="zcode"] {
+  --brand-bg: #0d0d0d; --brand-surface: #161616; --brand-surface-2: #1f1f1f;
+  --brand-ink: #fafafa; --brand-muted: #b0b0b0; --brand-line: #2e2e2e; --brand-line-strong: #707070;
+  --brand-accent: #ffffff; --brand-accent-2: #d0d0d0; --brand-accent-3: #8c8c8c; --brand-accent-ink: #111111;
+  --brand-link: #ffffff; --brand-font-display: GeistSans, "Segoe UI", Arial, sans-serif;
+  --brand-font-mono: GeistSans, "Segoe UI", Arial, sans-serif;
+  --brand-display-weight: 600; --brand-radius: 20px; --brand-radius-sm: 12px;
+  --brand-shadow: 0 12px 34px #00000075; --brand-shadow-sm: 0 1px 3px #0000004d;
+  --brand-page-pattern: radial-gradient(circle at 50% -12%, #ffffff1c, transparent 58%);
+  --brand-scheme: dark;
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="zcode"] {
+  --brand-bg: #000000; --brand-surface: #101010; --brand-surface-2: #191919;
+  --brand-ink: #fafafa; --brand-muted: #b5b5b5; --brand-line: #262626; --brand-line-strong: #707070;
+  --brand-accent: #ffffff; --brand-accent-2: #d0d0d0; --brand-accent-3: #8c8c8c; --brand-accent-ink: #111111;
+  --brand-link: #ffffff;
+  --brand-shadow: 0 12px 34px #00000099; --brand-shadow-sm: 0 1px 3px #00000066;
+}
+
+/* ---------------------------------------------------------------- OpenCode */
+body.archive.refined[data-character-page="opencode"] {
+  --brand-bg: #f8f7f5; --brand-surface: #fdfcf9; --brand-surface-2: #f1efeb;
+  --brand-ink: #211e1e; --brand-muted: #5f5c5c; --brand-line: #e4e0da; --brand-line-strong: #a09a94;
+  --brand-accent: #211e1e; --brand-accent-2: #656363; --brand-accent-3: #a8a2a2; --brand-accent-ink: #fdfcf9;
+  --brand-link: #211e1e;
+  --brand-font-display: "Berkeley Mono", "IBM Plex Mono", Consolas, "Courier New", monospace;
+  --brand-font-body: "Berkeley Mono", "IBM Plex Mono", Consolas, "Courier New", monospace;
+  --brand-font-mono: var(--brand-font-display);
+  --brand-radius: 0px; --brand-radius-sm: 0px;
+  --brand-page-pattern: repeating-linear-gradient(90deg, transparent 0 79px, #211e1e12 79px 80px);
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="opencode"] {
+  --brand-bg: #141212; --brand-surface: #1c1a1a; --brand-surface-2: #242121;
+  --brand-ink: #e8e4e4; --brand-muted: #b7b1b1; --brand-line: #322e2e; --brand-line-strong: #6e6868;
+  --brand-accent: #e8e4e4; --brand-accent-2: #b7b1b1; --brand-accent-3: #8a8484; --brand-accent-ink: #141212;
+  --brand-link: #d8d3d3; --brand-shadow: 0 8px 30px #0000005c; --brand-shadow-sm: 0 1px 3px #00000042;
+  --brand-scheme: dark;
+}
+
+/* Site collections keep a neutral archive identity; they are not products. */
+body.archive.refined[data-character-page="other"] {
+  --brand-bg: #fbf8ff; --brand-surface: #ffffff; --brand-surface-2: #f5f0ff;
+  --brand-ink: #2a2436; --brand-muted: #5f5573; --brand-line: #e7e0f4; --brand-line-strong: #a498bb;
+  --brand-accent: #6f4f9c; --brand-accent-2: #8868b4; --brand-accent-3: #b79ddb; --brand-accent-ink: #ffffff;
+  --brand-link: #694692; --brand-radius: 8px; --brand-radius-sm: 4px;
+  --brand-border-style: dashed;
+  --brand-page-pattern: repeating-linear-gradient(135deg, transparent 0 17px, #8868b40f 17px 18px);
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="other"] {
+  --brand-bg: #1b1822; --brand-surface: #24212d; --brand-surface-2: #2c2838;
+  --brand-ink: #f3eefc; --brand-muted: #c0b7d6; --brand-line: #3a3349; --brand-line-strong: #736a88;
+  --brand-accent: #c2a6ec; --brand-accent-2: #a98fd4; --brand-accent-3: #8a74ad; --brand-accent-ink: #1d1729;
+  --brand-link: #d2b7ef; --brand-shadow: 0 8px 30px #00000052; --brand-shadow-sm: 0 1px 3px #00000038;
+  --brand-scheme: dark;
+}
+
+/* ------------------------------------------------------- 站长自用 / owner picks */
+body.archive.refined[data-character-page="owner-picks"] {
+  --brand-bg: #f9fbfd; --brand-surface: #ffffff; --brand-surface-2: #eef3f8;
+  --brand-ink: #22303c; --brand-muted: #56656f; --brand-line: #e0e8ef; --brand-line-strong: #98a8b5;
+  --brand-accent: #3d5c78; --brand-accent-2: #52728e; --brand-accent-3: #adcce5; --brand-accent-ink: #ffffff;
+  --brand-link: #37546f; --brand-radius: 8px; --brand-radius-sm: 4px;
+  --brand-page-pattern: repeating-linear-gradient(0deg, transparent 0 27px, #22303c0f 27px 28px);
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="owner-picks"] {
+  --brand-bg: #18212a; --brand-surface: #202a34; --brand-surface-2: #27333f;
+  --brand-ink: #eef4f9; --brand-muted: #b1bfcb; --brand-line: #33414f; --brand-line-strong: #6b7d8d;
+  --brand-accent: #adcce5; --brand-accent-2: #8fb4d3; --brand-accent-3: #6d90ad; --brand-accent-ink: #18212a;
+  --brand-link: #adcce5; --brand-shadow: 0 8px 30px #00000052; --brand-shadow-sm: 0 1px 3px #00000038;
+  --brand-scheme: dark;
+}
+
+/* --------------------------------------------------- Hero decoration, per brand
+   The layer itself is fixed by CharacterPage.css: a wash layer plus a
+   shape/watermark layer and an accent layer across the whole hero, all below the
+   text, portrait and strip. Brands only publish colour, opacity and the wash
+   texture here, never slot geometry. CharacterBrand.mjs draws the shapes on one
+   shared 1000x700 canvas; large shapes stay in the portrait column and along the
+   bottom edge, so the copy column keeps only the faint wash. */
+body.archive.refined[data-character-page="claude"] {
+  --brand-hero-wash: radial-gradient(ellipse 74% 80% at 78% 46%, #d9775738, transparent 72%);
+  --brand-hero-mark-opacity: .16;
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="claude"] {
+  --brand-hero-wash: radial-gradient(ellipse 74% 80% at 78% 46%, #edaa8e2e, transparent 72%);
+}
+body.archive.refined[data-character-page="deepseek"] {
+  --brand-hero-wash: radial-gradient(ellipse 86% 68% at 74% 86%, #4176e63d, transparent 72%);
+  --brand-hero-mark: #4176e6; --brand-hero-mark-opacity: .22;
+  --brand-hero-accent: #4176e6; --brand-hero-accent-opacity: .3;
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="deepseek"] {
+  --brand-hero-wash: radial-gradient(ellipse 86% 68% at 74% 86%, #4f7ff04a, transparent 72%);
+  --brand-hero-mark: #7aa2ff;
+}
+body.archive.refined[data-character-page="doubao"] {
+  --brand-hero-wash: radial-gradient(circle at 82% 22%, #006aff26, transparent 62%);
+  --brand-hero-mark: #006aff; --brand-hero-mark-opacity: .2;
+  --brand-hero-accent: #6ea8ff; --brand-hero-accent-opacity: .28;
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="doubao"] {
+  --brand-hero-wash: radial-gradient(circle at 82% 22%, #3d8bff33, transparent 62%);
+  --brand-hero-mark: #6ea8ff;
+}
+body.archive.refined[data-character-page="kimi"] {
+  --brand-hero-wash: radial-gradient(ellipse 80% 56% at 72% 16%, #ffffff1a, transparent 70%);
+  --brand-hero-mark-opacity: .2;
+  --brand-hero-strip-opacity: .38;
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="kimi"] {
+  --brand-hero-wash: radial-gradient(ellipse 80% 56% at 72% 16%, #ffffff14, transparent 70%);
+}
+body.archive.refined[data-character-page="qwen"] {
+  --brand-hero-wash: linear-gradient(116deg, transparent 54%, #082dff1f 54% 66%, transparent 66%), linear-gradient(116deg, transparent 70%, #7b5cff26 70% 82%, transparent 82%);
+  --brand-hero-mark: #082dff; --brand-hero-mark-opacity: .2;
+  --brand-hero-accent: #7b5cff; --brand-hero-accent-opacity: .32;
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="qwen"] {
+  --brand-hero-wash: linear-gradient(116deg, transparent 54%, #4a63ff2e 54% 66%, transparent 66%), linear-gradient(116deg, transparent 70%, #b39dff2b 70% 82%, transparent 82%);
+  --brand-hero-mark: #7b8dff; --brand-hero-accent: #b39dff;
+}
+body.archive.refined[data-character-page="stepfun"] {
+  --brand-hero-wash: linear-gradient(90deg, #00a9ff0f 1px, transparent 1px), linear-gradient(0deg, #00a9ff0f 1px, transparent 1px);
+  --brand-hero-wash-size: 48px 48px;
+  --brand-hero-mark: #006b8f; --brand-hero-mark-opacity: .16;
+  --brand-hero-accent: #00a9ff; --brand-hero-accent-opacity: .3;
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="stepfun"] {
+  --brand-hero-wash: linear-gradient(90deg, #6ed6ff10 1px, transparent 1px), linear-gradient(0deg, #6ed6ff10 1px, transparent 1px);
+  --brand-hero-mark: #6ed6ff;
+}
+body.archive.refined[data-character-page="glm"] {
+  --brand-hero-wash: radial-gradient(circle, #0d0d0d0f 1px, transparent 1px);
+  --brand-hero-wash-size: 11px 11px;
+  --brand-hero-mark: #0d0d0d; --brand-hero-mark-opacity: .12;
+  --brand-hero-accent: #0d0d0d; --brand-hero-accent-opacity: .2;
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="glm"] {
+  --brand-hero-wash: radial-gradient(circle, #ffffff12 1px, transparent 1px);
+  --brand-hero-mark: #f7f7f7; --brand-hero-accent: #f7f7f7;
+}
+body.archive.refined[data-character-page="mimo"] {
+  --brand-hero-wash: repeating-linear-gradient(0deg, transparent 0 33px, #1a1a1a0f 33px 34px);
+  --brand-hero-mark-opacity: .16;
+  --brand-hero-accent-opacity: .26;
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="mimo"] {
+  --brand-hero-wash: repeating-linear-gradient(0deg, transparent 0 33px, #faf7f50f 33px 34px);
+}
+body.archive.refined[data-character-page="gemini"] {
+  --brand-hero-wash: radial-gradient(circle at 78% 22%, #4285f432, transparent 60%), radial-gradient(circle at 82% 86%, #a36aff32, transparent 62%);
+  --brand-hero-mark: #4285f4; --brand-hero-mark-opacity: .3;
+  --brand-hero-accent: #a36aff; --brand-hero-accent-opacity: .4;
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="gemini"] {
+  --brand-hero-mark: #8ab4ff; --brand-hero-accent: #c4a8ff;
+}
+body.archive.refined[data-character-page="gpt"] {
+  --brand-hero-wash: radial-gradient(circle at 76% 30%, #0d0d0d14, transparent 64%);
+  --brand-hero-mark: #0d0d0d; --brand-hero-mark-opacity: .12;
+  --brand-hero-accent: #0d0d0d; --brand-hero-accent-opacity: .18;
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="gpt"] {
+  --brand-hero-wash: radial-gradient(circle at 76% 30%, #f5f5f518, transparent 64%);
+  --brand-hero-mark: #f5f5f5; --brand-hero-accent: #f5f5f5;
+}
+body.archive.refined[data-character-page="grok"] {
+  --brand-hero-wash: linear-gradient(180deg, #0505050f, transparent 55%);
+  --brand-hero-mark: #050505; --brand-hero-mark-opacity: .12;
+  --brand-hero-accent: #050505; --brand-hero-accent-opacity: .2;
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="grok"] {
+  --brand-hero-wash: none;
+  --brand-hero-mark: #f7f7f7; --brand-hero-accent: #f7f7f7;
+}
+body.archive.refined[data-character-page="minimax"] {
+  --brand-hero-wash: radial-gradient(ellipse at 80% 18%, #a36aff34, transparent 60%), radial-gradient(ellipse at 80% 84%, #ff70383c, transparent 60%);
+  --brand-hero-mark: #c8392f; --brand-hero-mark-opacity: .2;
+  --brand-hero-accent: #ff9a76; --brand-hero-accent-opacity: .4;
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="minimax"] {
+  --brand-hero-mark: #ff8b7d; --brand-hero-accent: #b79bff;
+}
+body.archive.refined[data-character-page="mistral"] {
+  --brand-hero-wash: linear-gradient(135deg, #ffaf011a, transparent 62%);
+  --brand-hero-mark: #b23a09; --brand-hero-mark-opacity: .14;
+  --brand-hero-accent: #fa500f; --brand-hero-accent-opacity: .5;
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="mistral"] {
+  --brand-hero-mark: #ff7a45; --brand-hero-accent: #ffaf01;
+}
+body.archive.refined[data-character-page="llama"] {
+  --brand-hero-wash: radial-gradient(ellipse 84% 64% at 68% 88%, #0866ff33, transparent 74%);
+  --brand-hero-mark: #0757cb; --brand-hero-mark-opacity: .24;
+  --brand-hero-accent: #0866ff; --brand-hero-accent-opacity: .3;
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="llama"] {
+  --brand-hero-wash: radial-gradient(ellipse 84% 64% at 68% 88%, #6fa8ff33, transparent 74%);
+  --brand-hero-mark: #6fa8ff;
+}
+body.archive.refined[data-character-page="perplexity"] {
+  --brand-hero-wash: linear-gradient(90deg, #20808d0f 1px, transparent 1px), linear-gradient(0deg, #20808d0f 1px, transparent 1px);
+  --brand-hero-wash-size: 40px 40px;
+  --brand-hero-mark: #20808d; --brand-hero-mark-opacity: .18;
+  --brand-hero-accent: #20808d; --brand-hero-accent-opacity: .3;
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="perplexity"] {
+  --brand-hero-wash: linear-gradient(90deg, #8ed4de0f 1px, transparent 1px), linear-gradient(0deg, #8ed4de0f 1px, transparent 1px);
+  --brand-hero-mark: #8ed4de; --brand-hero-accent: #8ed4de;
+}
+body.archive.refined[data-character-page="rwkv"] {
+  --brand-hero-mark: #333333; --brand-hero-mark-opacity: .1;
+  --brand-hero-accent: #333333; --brand-hero-accent-opacity: .16;
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="rwkv"] {
+  --brand-hero-mark: #f1f1f1; --brand-hero-accent: #f1f1f1;
+}
+body.archive.refined[data-character-page="hunyuan"] {
+  --brand-hero-wash: linear-gradient(90deg, #0052d90f 1px, transparent 1px), linear-gradient(0deg, #0052d90f 1px, transparent 1px);
+  --brand-hero-wash-size: 56px 56px;
+  --brand-hero-mark: #0052d9; --brand-hero-mark-opacity: .2;
+  --brand-hero-accent: #0052d9; --brand-hero-accent-opacity: .28;
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="hunyuan"] {
+  --brand-hero-wash: linear-gradient(90deg, #4d92ff0f 1px, transparent 1px), linear-gradient(0deg, #4d92ff0f 1px, transparent 1px);
+  --brand-hero-mark: #4d92ff; --brand-hero-accent: #7ad4ff;
+}
+body.archive.refined[data-character-page="git"] {
+  --brand-hero-wash: linear-gradient(180deg, #fc6d261c, transparent 46%);
+  --brand-hero-mark: #1f2328; --brand-hero-mark-opacity: .18;
+  --brand-hero-accent: #fc6d26; --brand-hero-accent-opacity: .35;
+  --brand-hero-rail-h: 4px;
+  --brand-hero-rail-bg: linear-gradient(90deg, #fc6d26 0 120px, #c71d23 120px 100%);
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="git"] {
+  --brand-hero-wash: linear-gradient(180deg, #fc6d2624, transparent 46%);
+  --brand-hero-mark: #f0edf7;
+}
+body.archive.refined[data-character-page="novelai"] {
+  --brand-hero-wash: radial-gradient(circle at 78% 24%, #b7a1f842, transparent 58%), radial-gradient(circle at 80% 86%, #fefaa821, transparent 58%);
+  --brand-hero-mark: #b7a1f8; --brand-hero-mark-opacity: .28;
+  --brand-hero-accent: #fefaa8; --brand-hero-accent-opacity: .45;
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="novelai"] {
+  --brand-hero-wash: radial-gradient(circle at 78% 24%, #b7a1f842, transparent 58%), radial-gradient(circle at 80% 86%, #fefaa821, transparent 58%);
+}
+body.archive.refined[data-character-page="huggingface"] {
+  --brand-hero-wash: radial-gradient(ellipse 70% 78% at 84% 26%, #ffd21e42, transparent 66%), radial-gradient(ellipse 60% 50% at 82% 88%, #ff9d0b26, transparent 66%);
+  --brand-hero-mark: #ff9d0b; --brand-hero-mark-opacity: .22;
+  --brand-hero-accent: #ff9d0b; --brand-hero-accent-opacity: .35;
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="huggingface"] {
+  --brand-hero-wash: radial-gradient(circle at 82% 20%, #ffd21e2e, transparent 66%);
+  --brand-hero-mark: #ffd21e;
+}
+body.archive.refined[data-character-page="zcode"] {
+  --brand-hero-wash: radial-gradient(circle at 64% 0%, #ffffff1c, transparent 62%);
+  --brand-hero-mark: #fafafa; --brand-hero-mark-opacity: .16;
+  --brand-hero-accent: #d0d0d0; --brand-hero-accent-opacity: .22;
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="zcode"] {
+  --brand-hero-mark: #fafafa; --brand-hero-accent: #d0d0d0;
+}
+body.archive.refined[data-character-page="opencode"] {
+  --brand-hero-wash: repeating-linear-gradient(90deg, transparent 0 79px, #211e1e0f 79px 80px);
+  --brand-hero-mark-opacity: .16;
+  --brand-hero-accent-opacity: .28;
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="opencode"] {
+  --brand-hero-wash: repeating-linear-gradient(90deg, transparent 0 79px, #e8e4e40f 79px 80px);
+}
+body.archive.refined[data-character-page="other"] {
+  --brand-hero-wash: repeating-linear-gradient(135deg, transparent 0 17px, #8868b40f 17px 18px);
+  --brand-hero-mark: #694692; --brand-hero-mark-opacity: .2;
+  --brand-hero-accent: #8868b4; --brand-hero-accent-opacity: .3;
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="other"] {
+  --brand-hero-mark: #d2b7ef; --brand-hero-accent: #c2a6ec;
+}
+body.archive.refined[data-character-page="owner-picks"] {
+  --brand-hero-wash: repeating-linear-gradient(0deg, transparent 0 27px, #22303c0f 27px 28px);
+  --brand-hero-mark: #37546f; --brand-hero-mark-opacity: .16;
+  --brand-hero-accent: #52728e; --brand-hero-accent-opacity: .26;
+}
+:root[data-theme="dark"] body.archive.refined[data-character-page="owner-picks"] {
+  --brand-hero-mark: #adcce5; --brand-hero-accent: #8fb4d3;
+}

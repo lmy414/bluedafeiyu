@@ -106,7 +106,7 @@ export function applyNativeArchives(document,api,base,snapshot){
   let description;
   if(c.type){
     description=en?`Explore ${kind(api,c.type).toLowerCase()} featuring ${c.name}. This archive includes ${c.works.length} ${c.works.length===1?'work':'works'}. View each image, check its source and attribution, and download the original.`:`${c.name}の${kind(api,c.type)}を${c.works.length}件収録。画像の説明、出典、クレジットを確認し、元画像をご覧いただけます。`;
-    const section=document.querySelector('main > .intro-panel');
+    const section=document.querySelector('main > .intro-panel, main > .character-page > .intro-panel');
     const samples=c.works.slice(0,3).map(w=>en?'“'+native(w).name+'”':'「'+native(w).name+'」').join(en?', ':'、');
     const notes=en?{comic:'Comics may span several panels. Open the work to read it at full size.',setting:'Designs vary by creator. Check the original source for character details.',meme:'Search by dialogue, mood or chat situation, then open a work to download its original.',illustration:'Open a work to see the full composition, original source and artist credit.'}:{comic:'複数のコマがある漫画は、作品の詳細ページで拡大してお読みください。',setting:'デザインは作者ごとに異なります。設定の詳細は各作品の出典をご確認ください。',meme:'セリフ、気分、会話の場面で検索し、作品の詳細から元画像をご覧ください。',illustration:'作品の詳細では、全体の構図、出典、作者のクレジットをご確認いただけます。'};
     if(section){
@@ -122,6 +122,15 @@ export function applyNativeArchives(document,api,base,snapshot){
     for(const link of document.querySelectorAll('.character-info .tags a')){
       const tag=new URL(link.getAttribute('href'),'https://example.test').searchParams.get('q'),w=c.works.find(w=>w.tags.includes(tag));
       if(w)link.textContent=native(w).tags[w.tags.indexOf(tag)];
+    }
+    const cover=document.querySelector('.character-cover-credit');
+    if(cover){
+      const slug=cover.getAttribute('href')?.match(/\/works\/([^/]+)\.html$/)?.[1],work=snapshot.works.find(w=>w.slug===slug);
+      if(work?.i18n?.[language]){cover.querySelector('strong').textContent=work.i18n[language].name;document.querySelector('.live-character-portrait img')?.setAttribute('alt',work.i18n[language].name);}
+    }
+    for(const option of document.querySelectorAll('[data-character-scene] option[value]')){
+      const tag=option.getAttribute('value');if(!tag)continue;
+      const work=c.works.find(w=>w.tags.includes(tag));if(work)option.textContent=native(work).tags[work.tags.indexOf(tag)];
     }
     const section=document.querySelector('.role-reading');
     if(section && c.works.length){

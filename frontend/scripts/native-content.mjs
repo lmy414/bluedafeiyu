@@ -4,6 +4,14 @@ import { videoArchive } from '../src/lib/video-archive.mjs';
 import { videoTerminology } from '../src/lib/video-terminology.mjs';
 const escape=value=>String(value||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function applyNativeContent(document,api,base,snapshot) {
+  if(api.current==='zh-Hant'&&/^\/characters\/[^/]+\.html$/.test(base)){
+    const scope=document.querySelector('.character-page');
+    if(scope){
+      for(const node of scope.querySelectorAll('.character-cover-credit strong,.work-card .work-title,.character-version-description,[data-character-scene] option'))node.textContent=api.contentText(node.textContent);
+      for(const node of scope.querySelectorAll('.live-character-portrait img,.work-card img'))if(node.hasAttribute('alt'))node.setAttribute('alt',api.contentText(node.getAttribute('alt')));
+      for(const node of scope.querySelectorAll('[data-preview][aria-label]'))node.setAttribute('aria-label',api.contentText(node.getAttribute('aria-label')));
+    }
+  }
   const native=['en','ja'].includes(api.current);
   if(!native)return;
   const videoById = new Map(videoArchive.videos.map(v => [v.bvid, v]));
@@ -38,6 +46,7 @@ export function applyNativeContent(document,api,base,snapshot) {
     const w=bySlug.get(card.getAttribute('data-slug')),value=localized(w);if(!value)continue;
     card.querySelector('.work-title').textContent=value.name;
     card.querySelector('img')?.setAttribute('alt',value.description||value.name);
+    const description=card.querySelector('.character-version-description');if(description)description.textContent=value.description||value.name;
     for(const trigger of card.querySelectorAll('[data-preview][aria-label]'))trigger.setAttribute('aria-label',api.fmt('d.quickView','Preview')+' '+value.name);
     for(const role of card.querySelectorAll('.card-meta a')){const id=role.getAttribute('data-character-id')||w.characterId,dot=role.querySelector('i');role.replaceChildren();if(dot)role.appendChild(dot);role.appendChild(document.createTextNode(api.characterName(id,id)));}
   }

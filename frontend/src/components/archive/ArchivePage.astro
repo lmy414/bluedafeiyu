@@ -10,10 +10,13 @@ const bodyPage = page.url.startsWith('/works/') ? 'work' :
   /^\/categories\/.+/.test(page.url) ? 'categoryDetail' :
   /^\/topics\/.+/.test(page.url) ? 'topicDetail' : page.active === 'event' ? 'events' : page.active === 'home' ? 'index' : page.active;
 const firstSchema = meta.schemas[0];
+// Character detail, type and pagination routes share one page frame and brand.
+const characterId = page.url.match(/^\/characters\/([^/]+)(?:\/[^/]+)*\.html$/)?.[1];
+if (characterId) { attrs['data-character-page'] = characterId; attrs['data-brand'] = characterId; }
 if (firstSchema['@type'] === 'ImageObject') attrs['data-work-id'] = page.content.match(/data-comment-term="sticker-([^"]+)"/)?.[1];
 ---
 <Archive title={meta.title} desc={meta.description} path={page.url === '/index.html' ? '/' : page.url}
   active={page.active} {bodyPage} robots={meta.robots} canonical={meta.canonical} og={meta.og}
   bodyAttrs={attrs} schemas={meta.schemas}>
-  <Fragment set:html={page.content} />
+  {characterId ? <div class="character-page" data-brand={characterId}><Fragment set:html={page.content} /></div> : <Fragment set:html={page.content} />}
 </Archive>

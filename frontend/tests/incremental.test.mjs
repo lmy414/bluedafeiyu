@@ -65,6 +65,7 @@ test('plans cold starts, edits, additions, deletions and unchanged inputs',()=>{
  assert.equal(makePlan({...inputs,code:'new'},previous.routes,previous,{ok:true}).mode,'incremental');
  assert.equal(makePlan({...inputs,build:'new'},previous.routes,previous,{ok:true}).mode,'full');
  assert.equal(makePlan({...inputs,runtime:'new'},previous.routes,previous,{ok:true}).mode,'full');
+ assert.equal(makePlan({...inputs,code:'new',styles:'new'},previous.routes,previous,{ok:true}).mode,'full');
  assert.equal(makePlan(inputs,previous.routes,previous,{ok:true},true).mode,'full');
 });
 test('missing or corrupted release artifacts invalidate reuse; artifact paths stay inside the output',()=>{

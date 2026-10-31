@@ -81,7 +81,7 @@
     } else { control.select.selectedIndex = index; sync(control); close(true); }
     control.select.dispatchEvent(new Event('change', { bubbles: true }));
   }
-  document.querySelectorAll('#filter-form select').forEach(select => {
+  document.querySelectorAll('#filter-form select:not([hidden])').forEach(select => {
     const wrapper = document.createElement('div'); wrapper.className = 'filter-select'; wrapper.dataset.filter = select.name;
     select.before(wrapper); wrapper.append(select);
     const button = document.createElement('button'); button.type = 'button'; button.className = 'filter-select-button';

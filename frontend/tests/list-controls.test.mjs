@@ -7,6 +7,7 @@ import {parseHTML} from 'linkedom';
 import {renderWorkCard} from '../public/archive/work-card.js';
 import {matchesCreationMethod} from '../public/archive/creation-method.js';
 import {orderWorks,shuffledSlugs} from '../public/components/work-order.js';
+import {createSearchIndex} from '../public/archive/search.js';
 
 const root=path.resolve(import.meta.dirname,'../..');
 const out=process.env.SITE_OUT_DIR||path.join(root,'.build/site');
@@ -15,8 +16,10 @@ const works=Array.from({length:60},(_,i)=>({id:'id-'+i,slug:'work-'+String(i).pa
 const stats={available:true,works:Object.fromEntries(works.map((work,i)=>[work.id,{views:(i*7)%61,downloads:(i*13)%61}]))};
 const flush=()=>new Promise(resolve=>setImmediate(resolve));
 
-async function fixture({url='https://archive.test/browse.html',available=true,curated=false,statsReady=Promise.resolve(stats),initialCards=false}={}) {
+async function fixture({url='https://archive.test/browse.html',available=true,curated=false,statsReady=Promise.resolve(stats),initialCards=false,searchWorks=null}={}) {
   const {document,window}=parseHTML(fs.readFileSync(path.join(out,'browse.html'),'utf8'));
+  const dataWorks=searchWorks||works;
+  if(searchWorks){document.body.dataset.characterPage='deepseek';document.body.dataset.character='deepseek';document.querySelector('#filter-form').insertAdjacentHTML('afterend','<form id="search-form"><input id="search-q" name="q" type="search"></form>');}
   // linkedom deliberately omits form state; provide native selection semantics
   // while exercising the actual page controls, events, URLs and archive script.
   const form=document.querySelector('#filter-form');
@@ -30,15 +33,15 @@ async function fixture({url='https://archive.test/browse.html',available=true,cu
     selectedOptions:{get:()=>[...select.options].filter(option=>option.selected)}
   });
   Object.defineProperty(form,'elements',{value:controls});
-  document.querySelector('#results').dataset.list=JSON.stringify(works.map(work=>work.slug));
+  document.querySelector('#results').dataset.list=JSON.stringify(dataWorks.map(work=>work.slug));
   if(initialCards)document.querySelector('#results').innerHTML='<div class="work-grid">'+orderWorks(works,{sort:'latest',direction:'desc'}).slice(0,24).map(work=>renderWorkCard(work,{eager:true})).join('')+'</div>';
   const initialNodes=[...document.querySelectorAll('#results .work-card')];
   const location=new URL(url),navigations=[];
   location.assign=href=>navigations.push(href);location.replace=href=>navigations.push(href);
   const history={state:null,replaceState(state,_title,href){this.state=state;if(href)location.href=href;}};
   window.WorkStats={ready:statsReady,available:()=>available,metric:(id,mode)=>available?stats.works[id]?.[mode==='downloads'?'downloads':'views']||0:0};
-  const context={window,document,location,history,URL,URLSearchParams,performance:{getEntriesByType:()=>[]},navigator:{},Event:window.Event,CustomEvent:window.CustomEvent,setTimeout,clearTimeout,requestAnimationFrame:callback=>callback(),matchMedia:()=>({matches:false,addEventListener(){}}),addEventListener:window.addEventListener.bind(window),loadArchiveData:()=>Promise.resolve({works,characters:[]}),renderWorkCard,matchesCreationMethod,orderWorks,shuffledSlugs,installTopicDownloads(){},installWorkPreview(){},copyImage(){},console};
-  vm.runInNewContext(source,context);
+  const context={window,document,location,history,URL,URLSearchParams,performance:{getEntriesByType:()=>[]},navigator:{},Event:window.Event,CustomEvent:window.CustomEvent,setTimeout,clearTimeout,requestAnimationFrame:callback=>callback(),matchMedia:()=>({matches:false,addEventListener(){}}),addEventListener:window.addEventListener.bind(window),loadArchiveData:()=>Promise.resolve({works:dataWorks,characters:[]}),loadSearchModule:async()=>({createSearchIndex}),renderWorkCard,matchesCreationMethod,orderWorks,shuffledSlugs,installTopicDownloads(){},installWorkPreview(){},copyImage(){},console};
+  vm.runInNewContext(source.replace("await import('./search.js')",'await loadSearchModule()'),context);
   await flush();await flush();
   const visible=()=>[...document.querySelectorAll('#results .work-card')].map(card=>card.dataset.slug);
   const select=(name,value)=>{controls[name].value=value;controls[name].dispatchEvent(new window.Event('change',{bubbles:true}));};
@@ -100,4 +103,23 @@ test('collection defaults preserve the manual order while time and metric option
   assert.notDeepEqual(f.visible(),works.slice(0,24).map(work=>work.slug));
   f.click('[data-reset]');
   assert.equal(f.controls.sort.value,'curated');assert.deepEqual(f.visible(),works.slice(0,24).map(work=>work.slug));
+});
+
+test('role library author search intersects actual type filters and clears an unrelated author',async()=>{
+  const searchWorks=[
+    {...works[0],sa:'Ninon',a:'',k:['setting']},
+    {...works[1],sa:'Ninon',a:'',k:['illustration']},
+    {...works[2],sa:'ZipZipPipe',a:'',k:['setting']}
+  ];
+  const f=await fixture({url:'https://archive.test/characters/deepseek.html?q=Ninon',searchWorks});
+  assert.deepEqual(new Set(f.visible()),new Set([works[0].slug,works[1].slug]));
+  f.select('type','setting');
+  assert.deepEqual(f.visible(),[works[0].slug]);
+  f.document.querySelector('#search-q').value='Unrelated Author';
+  f.document.querySelector('#search-form').dispatchEvent(new f.document.defaultView.Event('submit',{bubbles:true,cancelable:true}));
+  assert.deepEqual(f.visible(),[]);
+  f.click('[data-reset]');
+  assert.equal(f.document.querySelector('#search-q').value,'');
+  assert.equal(f.controls.type.value,'');
+  assert.equal(f.visible().length,3);
 });

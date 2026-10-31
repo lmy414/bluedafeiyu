@@ -181,3 +181,16 @@ test('build failure summaries expose current audit causes and ignore stale repor
   assert.equal(summarizeAuditFailure(report,startedAt),'');
  }finally{fs.rmSync(temp,{recursive:true,force:true});}
 });
+
+test('Traditional role pages convert visible work text while retaining creator identities and filter values',async()=>{
+  const base='/characters/doubao.html';
+  const html='<html><head><title>角色档案</title><link rel="canonical" href="'+ORIGIN+base+'"><meta name="description" content="角色档案"></head><body data-archive data-i18n-page="characterDetail"><main><div class="character-page"><h1>豆包娘</h1><a class="character-cover-credit" href="/works/frozen.html"><strong>橘白礼服</strong><span class="author-name">简体作者</span></a><section class="character-versions"><article class="work-card"><a class="work-title" href="/works/frozen.html">角色设定图</a><p class="character-version-description">角色设定说明</p><span class="author-name">简体作者</span></article></section><select data-character-scene><option value="特写">特写</option></select></div></main></body></html>';
+  const {document}=parseHTML(await localizeHtml(html,base,LOCALES.find(locale=>locale.id==='zh-Hant'),snapshot));
+  assert.equal(document.querySelector('.character-cover-credit strong').textContent,'橘白禮服');
+  assert.equal(document.querySelector('.work-title').textContent,'角色設定圖');
+  assert.equal(document.querySelector('.character-version-description').textContent,'角色設定說明');
+  assert.equal(document.querySelector('[data-character-scene] option').textContent,'特寫');
+  assert.equal(document.querySelector('[data-character-scene] option').value,'特写');
+  for(const author of document.querySelectorAll('.author-name'))assert.equal(author.textContent,'简体作者');
+  assert.equal(document.querySelector('.character-cover-credit').getAttribute('href'),'/zh-hant/works/frozen.html');
+});

@@ -2,7 +2,7 @@
 // tools/preview_site.mjs —— 本地预览构建产物（只监听 127.0.0.1，不对外）
 // 用法：node tools/preview_site.mjs [--dir .build/site] [--port 5173]
 // · 首批图派生图（data/blue-fish/previews）不进发布包，线上由 shared/data 提供；
-//   本地预览时从 dist/data 只读挂载，页面才能看到这批图
+//   本地预览时只把 dist/data/blue-fish/previews 这一棵子树只读挂载，不暴露 dist/data 下其它清单
 // · 找不到的地址回发 404.html（与线上 nginx error_page 一致）
 import http from 'node:http';
 import fs from 'node:fs';
@@ -13,6 +13,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const arg = (name, dflt) => { const i = process.argv.indexOf(name); return i > 0 ? process.argv[i + 1] : dflt; };
 const SITE = path.resolve(root, arg('--dir', '.build/site'));
 const DATA = path.join(root, 'dist', 'data');
+const PREVIEWS = path.join(DATA, 'blue-fish', 'previews');
 const PORT = Number(arg('--port', '5173'));
 // Optional local submission service makes the preview form usable during acceptance.
 const submissionArg = arg('--submission-url', null);
@@ -24,7 +25,10 @@ const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=
 const inside = (base, file) => { const r = path.relative(base, file); return r && !r.startsWith('..') && !path.isAbsolute(r); };
 function resolve(urlPath) {
   let p; try { p = decodeURIComponent(urlPath); } catch { return null; }
-  if (p.startsWith('/data/blue-fish/')) { const f = path.join(DATA, p.slice('/data/'.length)); return inside(DATA, f) ? f : null; }
+  if (p.startsWith('/data/blue-fish/previews/')) {
+    const f = path.join(DATA, p.slice('/data/'.length));
+    return inside(PREVIEWS, f) ? f : null;
+  }
   let f = path.join(SITE, p);
   if (path.relative(SITE, f) !== '' && !inside(SITE, f)) return null;     // 防目录穿越
   if (fs.statSync(f, { throwIfNoEntry: false })?.isDirectory()) f = path.join(f, 'index.html');

@@ -1,0 +1,12 @@
+/* Sidebar section label with the collapse toggle on the same row, so the toggle no longer takes its own row under the brand. */
+body.archive .nav-heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin: 24px 0 8px 11px; }
+body.archive .nav-heading .nav-label { margin: 0; }
+body.archive .nav-heading .sidebar-collapse { flex-shrink: 0; align-self: center; margin: 0; }
+body.archive .sidebar-collapse svg { transition: transform .2s ease; }
+@media (min-width: 761px) {
+  body.archive.sidebar-collapsed .nav-heading { justify-content: center; margin: 18px 0 14px; }
+  body.archive.sidebar-collapsed .sidebar-collapse svg { transform: rotate(180deg); }
+}
+@media (max-width: 760px) {
+  body.archive .nav-heading { margin-top: 30px; }
+}

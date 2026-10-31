@@ -1,0 +1,5 @@
+/* Keep the full header controls within narrow phones, including longer locale labels. */
+@media (max-width: 360px) {
+  body.archive.refined .topbar { padding-inline: 12px; gap: 8px; }
+  body.archive.refined .top-tools.top-actions { gap: 6px; }
+}

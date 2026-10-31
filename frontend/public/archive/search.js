@@ -1,6 +1,6 @@
 import {Converter} from 'opencc-js/t2cn';
 
-// Loaded only by the search page. All text stays in the browser; no search API.
+// Shared by archive and search pages. All text stays in the browser; no search API.
 const simplify = Converter({from:'twp',to:'cn'});
 export const normalizeSearchText = value => simplify(String(value ?? '').normalize('NFKC'))
   .toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim().replace(/\s+/g,' ');
@@ -57,6 +57,7 @@ export function createSearchIndex(works,characters=[],{characterName=(_id,name)=
     };
     field([work.n],10);
     field(work.tg||[],9);
+    field([work.sa,work.a,...(work.owners||[]).map(owner=>owner.name)],8);
     field([work.c,...(work.roles||[]).map(role=>role.name),...(work.cids||[work.cid]).flatMap(cid=>byCharacter.get(cid)||[])],8);
     field([work.d],4);
     field([work.cm],2);
