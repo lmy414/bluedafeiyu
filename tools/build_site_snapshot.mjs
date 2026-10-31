@@ -13,6 +13,7 @@ import {sourceHash,validateI18n} from "./localization/contract.mjs";
 import { isSingleWorkType } from '../admin/src/lib/work-types.mjs';
 import { workCharacterIds } from './work-characters.mjs';
 import { workImages } from '../frontend/public/components/work-image.js';
+import { assertWorkImages, IMAGE_PLACEHOLDER } from './work-image-integrity.mjs';
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawnSync } from 'node:child_process';
@@ -94,6 +95,11 @@ function main() {
     if (!frozenEntry || !frozenEntry.id || !frozenEntry.slug) return;
     const filename = basename(record.previewPath || record.sourcePath);
     const preview = `data/blue-fish/previews/${encodeURIComponent(filename)}`;
+    // First-batch previews are local files too. A missing file gets the shared
+    // placeholder and the integrity gate below counts it just like a submission.
+    const previewImages = imageExists(preview)
+      ? { thumbUrl: preview, displayUrl: preview }
+      : { thumbUrl: IMAGE_PLACEHOLDER, displayUrl: IMAGE_PLACEHOLDER };
     const format = String(editorial.format || record.format || "").toLowerCase();
     const originalUrl = editorial.originalPath ? contentRawUrl(editorial.originalPath) : rawUrl(sourcePath);
     works.push({
@@ -125,8 +131,7 @@ function main() {
       path: originalUrl,
       thumbnailPath: preview,
       fullPath: preview,
-      thumbUrl: preview,
-      displayUrl: preview,
+      ...previewImages,
       originalUrl,
       tone: characterId,
       symbol: "",
@@ -180,6 +185,10 @@ function main() {
     topics: buildTopics(mergeTopicSources(readJson(path.join(DIST, "topics.json")), readJson(path.join(DIST, "data/serial-topics.json"))), unique),
     works: unique
   };
+  // Refuse to write the snapshot when too many published works lost their real
+  // images. This runs before either output file is touched and checks every
+  // source (submissions, owner picks, first-batch previews) through imageExists.
+  assertWorkImages(unique, {imageExists});
   const json = `${JSON.stringify(snapshot, null, 2)}\n`;
   const js = `window.SITE_DATA = ${JSON.stringify(snapshot)}; window.DEMO = window.SITE_DATA;\n`;
   const jsonChanged = writeIfChanged(path.join(DIST, "site-data.json"), json);

@@ -39,7 +39,7 @@ test('creator names and displayed credits remain searchable without unrelated au
 
 test('production locale catalogs feed named submission credits and origin creators into the shared index',()=>{
   const translations={en:{name:'Reference',description:'Design sheet',commentary:'',tags:[]},ja:{name:'設定画',description:'デザイン',commentary:'',tags:[]}};
-  const data={works:[
+  const data={characters:[],types:[],topics:[],works:[
     work('submission',{n:'Reference',a:'Ninon',sa:'',i18n:translations}),
     work('origin',{n:'Portrait',a:'',sa:'ZipZipPipe',i18n:translations}),
     work('unrelated',{n:'Landscape',a:'Another Credit',sa:'Another Creator',i18n:translations})

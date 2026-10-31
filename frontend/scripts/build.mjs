@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
-import {buildLanguagePages,languageSitemap,localizedPath,LOCALES,ORIGIN} from './localize-pages.mjs';
+import {buildLanguagePages,languageSitemap,localizedPath,LOCALES,ORIGIN,sitemapWorkImage} from './localize-pages.mjs';
 import {readSitemapHistory,updateSitemapHistory} from './sitemap-history.mjs';
 import {writeAiContent} from './ai-content.mjs';
 import {writeOpenApi} from './open-api.mjs';
@@ -153,7 +153,14 @@ try {
   catch(error){console.warn('[sitemap] previous history unavailable: '+error.message);}
   const unchangedPaths=new Set(reuse.flatMap(base=>LOCALES.map(locale=>localizedPath(base,locale))));
   const sitemap=updateSitemapHistory(urls.flatMap(base=>LOCALES.map(locale=>localizedPath(base,locale))),stage,previousSitemap,{unchangedPaths,now:buildTime});
-  fs.writeFileSync(path.join(stage,'sitemap.xml'),languageSitemap(urls,sitemap.lastmods));
+  const sitemapImages=new Map();
+  for(const work of snapshot.works||[]){
+    if(work.status!=='published')continue;
+    const image=sitemapWorkImage(work);
+    // Never advertise the placeholder: an unindexed image is better than a blank result.
+    if(image)sitemapImages.set('/works/'+work.slug+'.html',image);
+  }
+  fs.writeFileSync(path.join(stage,'sitemap.xml'),languageSitemap(urls,sitemap.lastmods,sitemapImages));
   history=Object.fromEntries(sitemap.records);
   console.log(`[sitemap] ${sitemap.unchanged} unchanged, ${sitemap.changed} changed, ${sitemap.added} new`);
   for(const base of urls)for(const locale of LOCALES) {
@@ -161,6 +168,11 @@ try {
    if(!fs.existsSync(path.join(stage,file.slice(1))))throw Error('Language page missing: '+route);
   }
  }
+ // A missing placeholder turns every fallback into a broken image (issue #33).
+ // Check the finished stage so noop and validated-prebuilt releases are covered too.
+ const placeholder=path.join(stage,'components','image-placeholder.svg');
+ let placeholderStat=null;try{placeholderStat=fs.statSync(placeholder);}catch{}
+ if(!placeholderStat?.isFile()||placeholderStat.size===0)throw Error('components/image-placeholder.svg is missing or empty from the release');
  const git=(dir)=>spawnSync('git',['-C',dir,'rev-parse','HEAD'],{encoding:'utf8'}).stdout?.trim()||null;
  const report={version:STATE_VERSION,mode:preflight?'prebuilt':plan.mode,reasons:preflight?['validated-prebuilt-artifact']:plan.reasons,preflight,sourceCommit:git(root),contentCommit:process.env.CONTENT_DIR?git(process.env.CONTENT_DIR):null,planned:preflight?.planned||{changed:plan.changed.length,reused:plan.reused.length,removed:plan.removed.length,sharedChanges:plan.sharedChanges},rendered:(plan.rendered||[]).length,localized,reusedAssets,navigationUpdates,markdown:ai,openApi,seconds:Number(((performance.now()-started)/1000).toFixed(2))};
  const state={version:STATE_VERSION,inputs:plan.inputs,routes:plan.routes,outputs:outputHashes(stage),sitemap:history};

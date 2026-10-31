@@ -1,10 +1,11 @@
 # tools/og_cards.py —— 生成社交分享卡片（1200x630 JPG）
 # 用法：python tools/og_cards.py <jobs.json> <缓存目录> <图片根目录> <logo>
 #   jobs.json：[{ "id": "w-xxx", "img": "submissions/large/..webp 或 https://…", "title", "sub", "tag", "quote" }]
-#   图片根目录：dist/（本地已同步的预览图）；站外原图（首批档案）按网址下载并缓存
-# 依赖 Pillow；字体用 OG_FONT_BOLD / OG_FONT_REGULAR 指定（默认 Windows 微软雅黑，Linux 需装 Noto Sans CJK）
+#   图片根目录：dist/（本地已同步的预览图）；本地缺图直接失败，站外 URL 才下载并缓存
+# 依赖 Pillow；占位 SVG 由本脚本光栅化；字体用 OG_FONT_BOLD / OG_FONT_REGULAR 指定
 # 内容没变的卡片不重画（缓存目录里记 .key）
-import hashlib, io, json, os, sys, urllib.parse, urllib.request
+import hashlib, io, json, os, re, sys, urllib.parse, urllib.request
+import xml.etree.ElementTree as ET
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 W, H = 1200, 630
@@ -31,16 +32,13 @@ def wrap(draw, text, f, width, lines):
         out[-1] += '…'
     return out
 
-ORIGIN = os.environ.get('OG_FALLBACK_ORIGIN', 'https://xn--pssy23gqgbz2d718b.com')
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PLACEHOLDER_SVG = os.path.join(ROOT, 'frontend', 'public', 'components', 'image-placeholder.svg')
 
-def source(img, base, cache):
-    # 本地同步的图片直接读（路径里可能是百分号编码的中文文件名）；
-    # 本地缺图（内容仓还没拉到最新）时退回线上同一路径，下载一次后缓存；站外网址同理
-    if not img.startswith('http'):
-        rel = urllib.parse.unquote(img.lstrip('/'))
-        local = os.path.join(base, *rel.split('/'))
-        if os.path.exists(local): return local
-        img = ORIGIN + '/' + img.lstrip('/')
+def is_placeholder(img):
+    return os.path.basename(urllib.parse.urlsplit(img).path) == 'image-placeholder.svg'
+
+def download(img, cache):
     dst = os.path.join(cache, 'src', hashlib.sha1(img.encode()).hexdigest()[:16])
     if not os.path.exists(dst):
         os.makedirs(os.path.dirname(dst), exist_ok=True)
@@ -50,15 +48,131 @@ def source(img, base, cache):
         os.replace(dst + '.tmp', dst)
     return dst
 
+def source(img, base, cache):
+    # 本地同步的图片直接读（路径里可能是百分号编码的中文文件名）。
+    # 本地缺图就是构建问题，直接失败；不再悄悄下载线上同名文件来掩盖失配。
+    if not img:
+        raise ValueError('分享卡片没有图片来源')
+    if is_placeholder(img):
+        if not os.path.isfile(PLACEHOLDER_SVG):
+            raise FileNotFoundError('占位图不存在：%s' % PLACEHOLDER_SVG)
+        return PLACEHOLDER_SVG
+    if img.lower().startswith('http'):
+        return download(img, cache)
+    rel = urllib.parse.unquote(img.lstrip('/'))
+    local = os.path.join(base, *rel.split('/'))
+    if not os.path.isfile(local):
+        raise FileNotFoundError('本地分享卡片图片不存在：%s（不再回退线上同名地址）' % local)
+    return local
+
+def svg_number(value, default=0.0):
+    return float(value) if value not in (None, '') else default
+
+def svg_color(value):
+    if value is None or value == 'none': return None
+    value = value.strip()
+    if value.startswith('#'):
+        raw = value[1:]
+        if len(raw) == 3: raw = ''.join(ch * 2 for ch in raw)
+        if len(raw) == 6: return tuple(int(raw[i:i + 2], 16) for i in (0, 2, 4))
+    raise ValueError('占位 SVG 含有不支持的填充/描边颜色：' + value)
+
+def svg_path_segments(d):
+    tokens = re.findall(r'[A-Za-z]|-?(?:\d+\.\d*|\.\d+|\d+)(?:[eE][-+]?\d+)?', d)
+    segments, points, x, y, start = [], [], 0.0, 0.0, (0.0, 0.0)
+    cmd, i = None, 0
+    def number():
+        nonlocal i
+        value = float(tokens[i]); i += 1
+        return value
+    while i < len(tokens):
+        if tokens[i].isalpha():
+            cmd = tokens[i]; i += 1
+            if cmd in 'Zz':
+                if points: points.append(points[0]); segments.append(points)
+                points, x, y = [], start[0], start[1]
+                cmd = None
+            continue
+        if cmd is None: raise ValueError('占位 SVG 路径缺少指令')
+        if cmd in 'Mm':
+            px, py = number(), number()
+            x, y = (px, py) if cmd == 'M' else (x + px, y + py)
+            if points: segments.append(points)
+            points, start = [(x, y)], (x, y)
+            cmd = 'L' if cmd == 'M' else 'l'
+        elif cmd in 'Ll':
+            px, py = number(), number()
+            x, y = (px, py) if cmd == 'L' else (x + px, y + py)
+            points.append((x, y))
+        elif cmd in 'Hh':
+            px = number(); x = px if cmd == 'H' else x + px
+            points.append((x, y))
+        elif cmd in 'Vv':
+            py = number(); y = py if cmd == 'V' else y + py
+            points.append((x, y))
+        else:
+            raise ValueError('占位 SVG 路径含有不支持的指令：' + cmd)
+    if points: segments.append(points)
+    return segments
+
+def render_placeholder_svg(path):
+    # 只光栅化 frontend/public/components/image-placeholder.svg 用到的图形子集
+    # （rect / circle / path）。遇到其它元素或颜色直接报错，不静默输出空图。
+    root = ET.parse(path).getroot()
+    width, height = round(svg_number(root.get('width'))), round(svg_number(root.get('height')))
+    if width <= 0 or height <= 0: raise ValueError('占位 SVG 缺少有效宽高：' + path)
+    image = Image.new('RGB', (width, height), (255, 255, 255))
+    draw = ImageDraw.Draw(image)
+    def walk(node, inherited):
+        tag = node.tag.rsplit('}', 1)[-1]
+        style = dict(inherited); style.update(node.attrib)
+        fill = svg_color(style.get('fill', '#000000'))
+        stroke = svg_color(style.get('stroke', 'none'))
+        stroke_width = max(1, round(svg_number(style.get('stroke-width'), 1)))
+        if tag in ('svg', 'g'):
+            for child in node: walk(child, style)
+        elif tag == 'rect':
+            x, y = svg_number(style.get('x')), svg_number(style.get('y'))
+            w, h = svg_number(style.get('width')), svg_number(style.get('height'))
+            radius = svg_number(style.get('rx'))
+            box = [x, y, x + w, y + h]
+            extra = {'outline': stroke, 'width': stroke_width} if stroke is not None else {}
+            if radius: draw.rounded_rectangle(box, radius=radius, fill=fill, **extra)
+            else: draw.rectangle(box, fill=fill, **extra)
+        elif tag == 'circle':
+            cx, cy, r = svg_number(style.get('cx')), svg_number(style.get('cy')), svg_number(style.get('r'))
+            box = [cx - r, cy - r, cx + r, cy + r]
+            extra = {'outline': stroke, 'width': stroke_width} if stroke is not None else {}
+            draw.ellipse(box, fill=fill, **extra)
+        elif tag == 'path':
+            joint = 'curve' if style.get('stroke-linejoin') == 'round' else None
+            for points in svg_path_segments(style.get('d', '')):
+                if fill is not None and len(points) > 2: draw.polygon(points, fill=fill)
+                if stroke is not None:
+                    draw.line(points, fill=stroke, width=stroke_width, joint=joint)
+                    if style.get('stroke-linecap') == 'round':
+                        for cx, cy in (points[0], points[-1]):
+                            draw.ellipse([cx - stroke_width / 2, cy - stroke_width / 2, cx + stroke_width / 2, cy + stroke_width / 2], fill=stroke)
+        else:
+            raise ValueError('占位 SVG 含有不支持的图形元素：' + tag)
+    walk(root, {})
+    return image
+
+def load_art(src):
+    if src.lower().endswith('.svg'):
+        if not is_placeholder(src): raise ValueError('分享卡片只支持占位 SVG 转位图：' + src)
+        return render_placeholder_svg(src)
+    return Image.open(src).convert('RGB')
+
 def card(job, src, dst, logo):
-    art = Image.open(src).convert('RGB')
-    art.thumbnail((1600, 1600))
+    art = load_art(src)
     im = Image.new('RGB', (W, H), PAPER)
     d = ImageDraw.Draw(im)
     for x in range(0, W, 30): d.line([(x, 0), (x, H)], GRID, 1)
     for y in range(0, H, 30): d.line([(0, y), (W, y)], GRID, 1)
-    # 左侧图片区：模糊铺底 + 完整原图，不裁切画面
+    # 左侧图片区：模糊铺底 + 完整原图，不裁切画面。占位 SVG 已转成位图，不会留空框。
     bx, by, bw, bh = 40, 40, 640, 550
+    art.thumbnail((1600, 1600))
     bg = art.copy(); bg.thumbnail((bw * 2, bh * 2))
     s = max(bw / bg.width, bh / bg.height)
     bg = bg.resize((int(bg.width * s) + 1, int(bg.height * s) + 1)).filter(ImageFilter.GaussianBlur(24))
@@ -119,7 +233,10 @@ if __name__ == '__main__':
         dst = os.path.join(out, j['id'] + '.jpg')
         stamp = os.path.join(out, j['id'] + '.key')
         try:
-            src = source(j['img'], base, out)
+            # Real image errors fail the card and the build. The only SVG we
+            # rasterize is the explicit shared placeholder, so a small number
+            # of missing works still gets a real card image instead of an empty frame.
+            src = source(j.get('img') or '', base, out)
             key = json.dumps([j, renderer_key, digest_file(src)], ensure_ascii=False, sort_keys=True)
             if os.path.exists(dst) and os.path.exists(stamp) and open(stamp, encoding='utf-8').read() == key:
                 continue   # 内容没变就不重画
@@ -128,5 +245,5 @@ if __name__ == '__main__':
         except Exception as e:
             failed.append('%s: %s' % (j['id'], e))
     print('分享卡片：共 %d 张，本次生成 %d 张%s' % (len(jobs), made, '，失败 %d 张' % len(failed) if failed else ''))
-    for f in failed[:20]: print('  ' + f)
+    for f in failed: print('  [失败] ' + f)
     sys.exit(1 if failed else 0)

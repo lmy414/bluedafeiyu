@@ -129,7 +129,7 @@ node tools/tests/migration.test.mjs --content-dir <内容仓>         # 迁移�
 - 发布脚本分别拉取代码仓与内容仓的 `main`，构建、预压缩、原子切换 `current`，健康检查失败自动回滚；
 - 不要用面板上传整包，也不要直接改服务器上的站点文件；
 - 回滚用 `ops/rollback-server.sh <release目录名>`，只切软链、不删文件；
-- **首批图的派生图（`data/blue-fish/previews/`）不在发布产物里**：`build.mjs` 跳过 `data/`，线上由 `DEPLOY_ROOT/shared/data` 这份持久副本硬链接进每个 release。所以**内容仓的 `dist/data/blue-fish/previews/` 一旦新增或替换文件，必须先把它刷进 `shared/data` 再发布**，否则页面对得上、图对不上。2026-09-25 新收编的 59 件作品用的就是这批派生图，发之前请确认 `shared/data/blue-fish/previews/` 里那 59 个文件名都在（清单本身在本仓库 `data/`，不在 `shared/data`）；
+- **首批图的派生图（`data/blue-fish/previews/`）不在发布产物里**：`build.mjs` 跳过 `data/`，线上由 `DEPLOY_ROOT/shared/data` 这份持久副本硬链接进每个 release。`ops/deploy-server.sh` 现在会在链接前把内容仓 `dist/data/blue-fish/previews/` 复制到临时目录，再逐文件 rename 进 `shared/data/blue-fish/previews/`：保留 shared 里的其它文件，旧 release 持有的旧 inode 不会被原地覆盖。硬链接完成后、切 `current` 前，脚本会用该 release 自己的 `works-v2.json` 跑实际产物缺图门禁（>1% 失败）；prebuilt/noop 也读产物清单，不回退到 `source/dist` 快照。发布日志里应能看到同步文件数、门禁通过或缺图 ID；
 - 服务器配置（`DEPLOY_ENV`、`DEPLOY_ROOT`、`SOURCE_DIR`、`CONTENT_DIR` 等）由维护者在服务器侧维护，不写进仓库。
 
 发布脚本为依赖安装、站点构建和预压缩分别建立 systemd 内存限制。默认总内存上限为 1280 MiB，Node 堆上限为 640 MiB，Swap 上限为 512 MiB。每步开始前要求至少 1024 MiB 可用内存。`BUILD_MEMORY_MAX_MB`、`BUILD_NODE_HEAP_MB` 和 `BUILD_MIN_AVAILABLE_MB` 分别控制总内存、Node 堆和最低可用内存。`[build-memory]` 日志每 5 秒记录可用内存和构建进程组占用，结束时输出峰值；失败时保留现行 `current`。

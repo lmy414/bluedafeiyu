@@ -79,10 +79,10 @@ Hermes Agent 负责看图初审、中文补全、英日编辑，以及署名与�
 1. 按仓库 Git 流程推送新代码，等待后台 GitHub Actions 测试、构建和 Release 完成。
 2. 备份后台数据库、旧发布软链和 Hermes 配置。服务器从 GitHub 更新代码，部署指定 Admin Release。新增迁移增加 `submissions.agent_progress`，以及 `takedown_requests.issue_data` 和 `agent_progress`。
 3. 更新宿主机桥接脚本。把插件和技能从已拉取的仓库安装到 Hermes 用户目录，权限归 Hermes 运行用户。
-4. 在容器中运行 `configure-editorial.py`。脚本备份配置，把原 `dafeiyu-review-cycle` 改为 Agent 任务并保持禁用。不要创建第二个审核定时器。
-5. 验证主 Agent 模型确实支持原生图片。插件会拒绝未知视觉能力，不回退到辅助模型。当前验证过的任务模型为 `deepseek/deepseek-v4.1-flash`，能力设置只作用于这个模型。
+4. 在容器中运行 `configure-editorial.py`。脚本备份配置，更新原 `dafeiyu-review-cycle` 的提示词、技能和工具集；默认保留该任务当前的 provider、model 和 enabled 状态，不再硬编码旧模型，也不会默认停用。需要显式改变运行状态时传 `--enable` 或 `--disable`。不要创建第二个审核定时器。
+5. 验证主 Agent 模型确实支持原生图片。插件会拒绝未知视觉能力，不回退到辅助模型。脚本只在当前任务实际使用的 provider 条目上，为该任务当前模型写入 `supports_vision`，不修改全局默认模型或其他任务。
 6. 验证 8 个工具已注册，SSH 鉴权成功，字段错误返回 422。用一个条目验证看图、中文、en、ja 和完成结果。
-7. 验证成功后启用原审核任务。拉取和发布任务继续保持原配置。普通字段写入和站长已确认的人工收录仍由原 systemd 执行器处理。
+7. 验证通过后按需启用原审核任务：保持其现有启用状态，或用安装脚本 `--enable` 显式启用；`--disable` 仅用于明确的停用操作。拉取和发布任务继续保持原配置。普通字段写入和站长已确认的人工收录仍由原 systemd 执行器处理。
 
 旧 `review-cycle --live`、`server/cli.mjs review` 和生产直接审核入口已停用。后台 `/ai-fill` 返回持久化任务编号，页面等待结果。关闭页面不取消任务。
 

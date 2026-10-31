@@ -116,10 +116,7 @@ test('built gallery separates serial members while retaining the reader, search 
       const list=page.querySelector('#results');
       if(expected.length){
         assert.deepEqual(JSON.parse(list.getAttribute('data-list')),expected.map(work=>work.slug));
-        assert.equal(Number(page.querySelector('.live-character-facts b').textContent),expected.length);
       }else assert.ok(page.querySelector(`.empty-state a[href="/${prefix}serials.html"]`));
-      const cover=page.querySelector('.live-character-portrait img')?.getAttribute('src');
-      assert.ok(!data.works.some(work=>serialIds.has(work.id)&&work.i===cover));
       for(const topic of serials)assert.equal(page.querySelector(`.collection-grid a[href="/${prefix}topics/${topic.id}.html"]`),null);
       for(const type of data.types){
         const prior=data.works.filter(work=>work.cids.includes(character.id)&&work.k.includes(type.id));

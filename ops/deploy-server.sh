@@ -15,10 +15,12 @@
 #      详情页 → sitemap → tools/build.mjs）；
 #   4b. 预压缩（默认开启）：对产物跑 tools/compress_static.mjs --precompress 生成 .gz
 #      （PRECOMPRESS=0/false/no/off 可关闭；必须在 chmod / 删 .build-output / cp -al 之前）；
-#   5. 先 chmod 构建产物，再 cp -al 硬链接 shared/data（顺序不能反）；
+#   5. 先 chmod 构建产物；把内容仓首批预览图以临时副本 + rename 同步进
+#      shared/data（保留其它文件），再 cp -al 硬链接 shared/data（顺序不能反）；
 #   6. 校验产物关键文件；
 #   7. nginx -t；
 #   8. 产物 mv 进 releases/<YYYYmmdd-HHMMSS>；
+#   8b. 用该 release 自己的 works-v2.json 与 release 根跑缺图门禁（>1% 失败）；
 #   9. 原子切 current；
 #  10. 健康检查；
 #  11. 任一健康检查失败：原子切回旧 current 并非零退出；
@@ -262,16 +264,41 @@ chmod 600 "${BUILD_STATE_DIR}/${STAMP}.json" "${LOG_DIR}/build-plan-${STAMP}.jso
 
 # 站点要托管的首批图片（dist/data/）不在发布产物里：build.mjs 会跳过 data/，
 # 线上统一由 DEPLOY_ROOT/shared/data 这份持久副本硬链接进每个 release。
-# 内容仓库跟踪的是 dist/data/blue-fish/previews/ 图片（清单已迁到代码仓库 data/），
-# shared/data 仍是线上权威副本；如果那些预览图有变化（例如把超限 GIF 换成动画
-# WebP），要另行把它刷进 shared/data，否则 release 里的预览图会与 site-data.json
-# 对不上。这份刷新是显式的运维动作，本脚本不自动覆盖 shared/data。
+# 内容仓库跟踪 dist/data/blue-fish/previews/ 图片（清单已迁到代码仓库 data/）。
+# 发布前把内容仓预览同步进 shared/data/blue-fish/previews：先在 staging 复制一份，
+# 再逐文件 rename 到 shared/data。rename 只替换 shared/data 里的目录项；已有 release
+# 仍持有旧 inode，不会被原地覆盖，也不会出现“源图已更新、旧 release 图也变了”。
+# shared/data 里的其它文件（如 blue-fish-classification.json）不删除、不改动。
 if [ ! -d "${SHARED_DATA_DIR}" ]; then
   die "共享数据目录不存在：${SHARED_DATA_DIR}"
 fi
-if [ ! -d "${CONTENT_DIR}/dist/data" ]; then
-  die "内容工作树里找不到 dist/data：${CONTENT_DIR}/dist/data"
+PREVIEW_SOURCE="${CONTENT_DIR}/dist/data/blue-fish/previews"
+if [ ! -d "${PREVIEW_SOURCE}" ]; then
+  die "内容工作树里找不到首批预览图：${PREVIEW_SOURCE}"
 fi
+if [ -z "$(find "${PREVIEW_SOURCE}" -type f -print -quit)" ]; then
+  die "内容工作树里的首批预览图为空：${PREVIEW_SOURCE}"
+fi
+log "同步首批预览图到共享数据（临时副本 + 原子 rename，保留 shared/data 其它文件）"
+SHARED_SYNC_DIR="${STAGING_DIR}/shared-data"
+rm -rf "${SHARED_SYNC_DIR}"
+mkdir -p "${SHARED_SYNC_DIR}/blue-fish/previews"
+cp -a "${PREVIEW_SOURCE}/." "${SHARED_SYNC_DIR}/blue-fish/previews/"
+find "${SHARED_SYNC_DIR}" -type d -exec chmod 755 {} +
+find "${SHARED_SYNC_DIR}" -type f -exec chmod 644 {} +
+mkdir -p "${SHARED_DATA_DIR}/blue-fish/previews"
+SYNCED_PREVIEWS=0
+while IFS= read -r -d '' rel; do
+  dest="${SHARED_DATA_DIR}/blue-fish/previews/${rel#./}"
+  mkdir -p "$(dirname "${dest}")"
+  mv -f "${SHARED_SYNC_DIR}/blue-fish/previews/${rel#./}" "${dest}"
+  SYNCED_PREVIEWS=$((SYNCED_PREVIEWS + 1))
+done < <(cd "${SHARED_SYNC_DIR}/blue-fish/previews" && find . -type f -print0)
+if [ "${SYNCED_PREVIEWS}" -eq 0 ]; then
+  die "首批预览图同步数量为 0，未继续发布"
+fi
+log "首批预览图已同步：${SYNCED_PREVIEWS} 个文件（旧 release 的共享 inode 不变）"
+
 log "硬链接共享数据：cp -al ${SHARED_DATA_DIR} ${STAGING_DIR}/site/data"
 # 硬链接共享 inode 与权限。这里是 cp -al 之后绝不能再对产物做 chmod -R 的原因：
 # 那会顺着硬链接改掉 shared/data 以及所有旧 release 里同一 inode 的权限。
@@ -288,6 +315,7 @@ for required in \
   "${STAGING_DIR}/site/404.html" \
   "${STAGING_DIR}/site/submissions/works.json" \
   "${STAGING_DIR}/site/site-data.json" \
+  "${STAGING_DIR}/site/works-v2.json" \
   "${STAGING_DIR}/site/open-api/v1/index.json" \
   "${STAGING_DIR}/site/open-api/v1/manifest.json" \
   "${STAGING_DIR}/site/open-api/v1/works/page/1.json" \
@@ -325,6 +353,19 @@ fi
 
 log "把产物移入 release：mv ${STAGING_DIR}/site ${RELEASE_PATH}"
 mv "${STAGING_DIR}/site" "${RELEASE_PATH}"
+
+# ---------------------------------------------------------------- 实际产物缺图门禁
+# 必须在 shared/data 硬链接完成之后、切 current 之前，检查 release 自己的清单。
+# prebuilt/noop 也读这份产物内的 works-v2.json，不回退到 source/dist 的旧快照。
+IMAGE_GATE="${SOURCE_DIR}/tools/work-image-integrity.mjs"
+if [ ! -f "${IMAGE_GATE}" ]; then
+  die "缺少发布图片门禁脚本：${IMAGE_GATE}，current 未切换"
+fi
+log "校验发布产物缺图：node ${IMAGE_GATE} ${RELEASE_PATH}/works-v2.json ${RELEASE_PATH}"
+if ! node "${IMAGE_GATE}" "${RELEASE_PATH}/works-v2.json" "${RELEASE_PATH}"; then
+  die "发布产物缺图比例超过 1% 或占位图不可用，current 未切换（保留待查 release：${RELEASE_PATH}）"
+fi
+log "发布产物缺图校验通过（>1% 才失败；<=1% 的缺图 ID 已由门禁打印）"
 
 # ---------------------------------------------------------------- 原子切链
 

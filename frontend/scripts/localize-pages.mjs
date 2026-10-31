@@ -26,6 +26,23 @@ const normalizeHome = p => p === '/index.html' ? '/' : p;
 export const localizedPath = (base, locale) => locale.prefix + normalizeHome(base);
 const escape = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&apos;' }[c]));
 
+// sitemap image: absolute URL through the punycode origin, or the remote URL
+// unchanged. The shared placeholder is never advertised as a work image.
+export function sitemapImageURL(value) {
+  if (typeof value !== 'string' || !value.trim()) return null;
+  let url;
+  try { url = new URL(value.trim(), ORIGIN + '/'); } catch { return null; }
+  if (url.protocol !== 'http:' && url.protocol !== 'https:') return null;
+  if (url.pathname.split('/').pop() === 'image-placeholder.svg') return null;
+  return url.href;
+}
+
+// Display image first; when it is missing or a placeholder, reuse the real
+// thumbnail of the same work (and never mix in another work's image).
+export function sitemapWorkImage(work) {
+  return sitemapImageURL(work?.displayUrl) || sitemapImageURL(work?.thumbUrl);
+}
+
 function setMeta(document, selector, value) {
   if (value != null) document.querySelector(selector)?.setAttribute('content', value);
 }
@@ -276,11 +293,14 @@ export async function buildLanguagePages(out, snapshot, baseFiles = null) {
   console.log('[i18n] ' + count + ' static language pages');
 }
 
-export function languageSitemap(paths, lastmods = new Map()) {
+export function languageSitemap(paths, lastmods = new Map(), images = new Map()) {
   const rows = paths.flatMap(base => LOCALES.map(locale => {
     const alternatives = LOCALES.concat([{ prefix: '', hreflang: 'x-default' }]).map(other => '<xhtml:link rel="alternate" hreflang="' + other.hreflang + '" href="' + escape(ORIGIN + localizedPath(base, other)) + '"/>').join('');
     const lastmod = lastmods.get(localizedPath(base, locale));
-    return '  <url><loc>' + escape(ORIGIN + localizedPath(base, locale)) + '</loc>' + (lastmod ? '<lastmod>' + escape(lastmod) + '</lastmod>' : '') + alternatives + '</url>';
+    // Work pages advertise their own image so image search indexes the real file.
+    const image = sitemapImageURL(images.get(base));
+    const imageTag = image ? '<image:image><image:loc>' + escape(image) + '</image:loc></image:image>' : '';
+    return '  <url><loc>' + escape(ORIGIN + localizedPath(base, locale)) + '</loc>' + (lastmod ? '<lastmod>' + escape(lastmod) + '</lastmod>' : '') + imageTag + alternatives + '</url>';
   }));
-  return '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + rows.join('\n') + '\n</urlset>\n';
+  return '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n' + rows.join('\n') + '\n</urlset>\n';
 }

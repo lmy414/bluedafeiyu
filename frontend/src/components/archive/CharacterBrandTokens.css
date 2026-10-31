@@ -5,10 +5,9 @@
    computed heading/body stacks and official logotype usage). */
 
 /* Defaults plus the single mapping layer: brand tokens -> public theme variables.
-   The brand values live on the page body, but they are only *consumed* inside the
-   main content column (`.character-page` and its descendants). The site shell
-   (sidebar, top bar, footer, invite) keeps the default palette, so `main#main`
-   paints the brand ground while everything around it stays unchanged. */
+   The values live on the page body and are consumed inside main#main, including
+   the share invitation and footer. The sidebar and top bar remain outside this
+   scope and keep the site palette. */
 body.archive.refined[data-character-page] {
   --brand-bg: #f6f8fa;
   --brand-surface: #ffffff;
@@ -58,8 +57,8 @@ body.archive.refined[data-character-page] {
 
 }
 
-/* The content column consumes the tokens; no shell element is inside it. */
-body.archive.refined[data-character-page] .character-page {
+/* One mapping for the complete page content, including its footer controls. */
+body.archive.refined[data-character-page] main#main {
   --ground: var(--brand-bg);
   --paper: var(--brand-surface);
   --soft: var(--brand-surface-2);

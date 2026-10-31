@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-# Run as root on the host, from a GitHub-updated repository. Agent job stays disabled.
+# Run as root on the host, from a GitHub-updated repository.
+# Usage: install-editorial.sh [--enable|--disable]
+# Default preserves the current dafeiyu-review-cycle provider, model, and enabled state.
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 HOME_DIR=/srv/apps/hermes-studio/data
@@ -25,5 +27,5 @@ printf '%s\n' 'hermes ALL=(root) NOPASSWD: /usr/local/sbin/dafeiyu-hermes-bridge
 visudo -cf "$TMP"
 install -m 440 "$TMP" /etc/sudoers.d/dafeiyu-hermes-editorial
 # Configuration is read from stdin inside the running container; no secrets copied.
-docker exec -i hermes-webui /opt/hermes/.venv/bin/python - < "$ROOT/ops/hermes/configure-editorial.py"
-printf 'Installed editorial tools. Existing review Agent remains disabled. Backup: %s\n' "$BACKUP"
+docker exec -i hermes-webui /opt/hermes/.venv/bin/python - "$@" < "$ROOT/ops/hermes/configure-editorial.py"
+printf 'Installed editorial tools. Review job settings preserved unless --enable/--disable was passed. Backup: %s\n' "$BACKUP"
