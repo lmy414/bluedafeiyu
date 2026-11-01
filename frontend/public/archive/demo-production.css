@@ -60,7 +60,7 @@ body.archive [hidden]{display:none!important}
 body.archive .main-wrap{margin-left:218px;min-width:0}
 body.archive .sidebar{width:218px}body.archive .brand>span{font:800 17px/1.5 var(--font)}body.archive .brand small{font:400 9px/1.7 var(--font)}
 body.archive .work-grid{--columns:5;--gap:18px;position:relative;display:grid;grid-template-columns:repeat(var(--columns),minmax(0,1fr));gap:var(--gap);align-items:start;margin:24px 0}
-body.archive .work-grid.is-laid-out{display:block}
+/* Keep grid display after placement so CSS resolves auto-fill tracks on resize. */
 body.archive .work-grid.is-laid-out>:is(.work-card,.video-card){position:absolute;top:0;left:0;margin:0}
 body.archive .work-card{padding:0;min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:6px;box-shadow:0 2px 0 #29465e06;background:var(--paper);break-inside:avoid}
 body.archive .work-art{display:block;padding:0;height:auto;aspect-ratio:auto;background:var(--soft)}

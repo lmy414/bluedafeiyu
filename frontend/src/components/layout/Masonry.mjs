@@ -11,11 +11,16 @@ export function masonryPositions(heights, columns, width, gap) {
   return {positions, height: heights.length ? Math.max(...bottoms) - gap : 0};
 }
 
-function layoutInitialMasonry(positions) {
+function masonryColumnCount(css) {
+  const tracks = css.gridTemplateColumns?.trim().split(/\s+/).filter(track => /^\d+(?:\.\d+)?px$/.test(track));
+  return tracks?.length || Number(css.getPropertyValue('--columns')) || 4;
+}
+
+function layoutInitialMasonry(positions, columnsForGrid) {
   const grid = document.currentScript.previousElementSibling;
   const items = [...grid.children].filter(item => item.matches('.work-card,.video-card') && !item.hidden);
   if (!items.length) return;
-  const css = getComputedStyle(grid), columns = Number(css.getPropertyValue('--columns')) || 4;
+  const css = getComputedStyle(grid), columns = columnsForGrid(css);
   const gap = parseFloat(css.getPropertyValue('--gap')) || 18;
   const width = (grid.clientWidth - gap * (columns - 1)) / columns;
   if (width <= 0) return;
@@ -27,7 +32,7 @@ function layoutInitialMasonry(positions) {
 
 // Inline only at the component boundary: no module fetch is needed for the first layout.
 export function initialMasonryScript() {
-  return `<script>(${layoutInitialMasonry.toString()})(${masonryPositions.toString()});</script>`;
+  return `<script>(${layoutInitialMasonry.toString()})(${masonryPositions.toString()}, ${masonryColumnCount.toString()});</script>`;
 }
 
 export function installMasonry() {
@@ -46,7 +51,7 @@ export function installMasonry() {
       if(grid.querySelector('[data-work-stats]:empty'))window.WorkStats?.paint();
       const items=[...grid.children].filter(el=>el.matches('.work-card,.video-card') && !el.hidden);
       if(!items.length){SiteComponents.masonryReset(grid);grid.classList.remove('is-laid-out');return;}
-      const css=getComputedStyle(grid), columns=Number(css.getPropertyValue('--columns'))||4;
+      const css=getComputedStyle(grid), columns=masonryColumnCount(css);
       const gap=parseFloat(css.getPropertyValue('--gap'))||18;
       const width=(grid.clientWidth-gap*(columns-1))/columns;
       if(width<=0)return;
