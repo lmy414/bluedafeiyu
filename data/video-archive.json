@@ -52,8 +52,8 @@
       "intro": "主要是一些漫画，ai视频的二创，未来考虑写小说",
       "avatar": "https://i1.hdslb.com/bfs/face/cb247d48e2aea0765ff06a96264ef8b485e62dbd.jpg",
       "i18n": {
-        "en": "The creator mainly makes comics and AI video fan works, and is considering writing fiction in the future.",
-        "ja": "主に漫画やAI動画の二次創作を制作しており、今後は小説の執筆も考えているとのこと。"
+        "en": "Mostly manga and fan works based on AI videos; the creator says a novel may come later.",
+        "ja": "主に漫画やAI動画の二次創作を投稿。今後は小説も書く予定とのこと。"
       }
     },
     {
@@ -74,8 +74,8 @@
       "intro": "我想做很多视频，做很多很好玩的视频，首先肯定是自己觉得很好玩，其次嘛，也想传播快乐给大家。",
       "avatar": "https://i2.hdslb.com/bfs/face/e3445be765ec330ac29b07c328496e44ec04077a.jpg",
       "i18n": {
-        "en": "I want to make lots of videos, lots of fun videos. First of all because I find them fun myself, and second because I want to spread a little happiness.",
-        "ja": "たくさん動画を作りたい。たくさん楽しい動画を作りたいんです。まずは自分が楽しいと思えること、それからみんなに楽しさを届けたい。"
+        "en": "I want to make lots of videos, lots of fun videos. First because I find them fun myself, and second because I want to spread some happiness to everyone.",
+        "ja": "たくさん動画を作りたい、たくさん楽しい動画を作りたい。まずは自分が楽しいと思えること、それから、みんなに楽しさを届けたい。"
       }
     },
     {
@@ -129,8 +129,8 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i0.hdslb.com/bfs/face/43d1d722a3adf1a19e17244f875c504beffe6831.jpg",
       "i18n": {
-        "en": "Bianhua Channel posts short AI-made story animations; the creator states the story is fictional and adapted from a character story in a game.",
-        "ja": "彼岸花ChannelはAI制作の短編ストーリーアニメーションを投稿している。物語はフィクションだと作者が明記している。"
+        "en": "Bilibili creator 彼岸花Channel makes animated fan works about personified AI product characters; this short was published on Bilibili on 1 November 2026.",
+        "ja": "Bilibiliのクリエイター彼岸花Channelによる、AI製品の擬人化キャラクターを題材にしたアニメーション二次創作です。2026年11月1日にBilibiliで公開されました。"
       }
     },
     {
@@ -162,8 +162,8 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i1.hdslb.com/bfs/face/dc1f27c0f1a5448837edfa9e56ecdbf685c23479.jpg",
       "i18n": {
-        "en": "A channel that publishes DeepSeek Chan's operations log, posting Halloween specials and rule-horror shorts starring a chibi DeepSeek Chan. The character is a fan re-creation based on the original project Mingyue and ZipZipPipe's DeepSeek maid design.",
-        "ja": "DeepSeekちゃんの運営ログを公開するチャンネルで、ハロウィン特集やルール怪談など、ちびキャラのDeepSeekちゃんが登場するショート動画を投稿しています。キャラクターはオリジナル企画「溟月」とZipZipPipe氏のDeepSeekメイドデザインを元にした二次創作です。"
+        "en": "Creator of this channel, which posts fan-made videos documenting the day-to-day operation of an original DeepSeek maid character.",
+        "ja": "このチャンネルの運営者。DeepSeekのメイドキャラクターの日々の運営を記録する二次創作動画を投稿している。"
       }
     },
     {
@@ -179,6 +179,187 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1pzxp6KE9q",
+      "uid": "3747573030456892",
+      "title": "【Day13】第一期运营日志！拆十万粉奖牌，谁看了3000遍？",
+      "description": "第一期运营日志！以后每个周日，本鲸都来交一份周报。\n这周拆了 B 站寄来的十万粉奖牌，上面印着「我也就看了3000遍」……到底是谁？\n作业：下周的运营日志，你最想听本鲸汇报什么？\n未成年人请勿打赏，理性消费，量力而行。\n评论截图来自公开评论区｜本视频含 AI 生成内容｜二创角色，非深度求索官方\n鲸鱼娘基于「溟月：上善无形」及 ZipZipPipe 的 DeepSeek 女仆鲸鱼娘设计二次创作。",
+      "url": "https://www.bilibili.com/video/BV1pzxp6KE9q/",
+      "cover": "https://i0.hdslb.com/bfs/archive/b8f56b76b8822ab27d69a3b756cbc741eb0cc9fd.jpg",
+      "duration": 368,
+      "publishedAt": "2026-11-01T03:30:00.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Creator of this channel, which posts fan-made videos documenting the day-to-day operation of an original DeepSeek maid character.",
+          "description": "The first weekly operations log. The DeepSeek maid character unboxes the silver 100,000-follower medal sent by Bilibili and reads through viewer comments, including the one that says the sender has watched 3,000 times. The video notes that it contains AI-generated content and that the character is a fan creation, not an official DeepSeek product.",
+          "title": "Day 13: First Operations Log! Unboxing the 100K Follower Medal — Who Watched It 3,000 Times?"
+        },
+        "ja": {
+          "creatorIntro": "このチャンネルの運営者。DeepSeekのメイドキャラクターの日々の運営を記録する二次創作動画を投稿している。",
+          "description": "第1回の週次運営ログ。DeepSeekのメイドキャラクターが、Bilibiliから届いた10万人記念のシルバーメダルを開封し、視聴者コメントを読み上げる。3000回見たというコメントの主は誰なのか、という話題も。本動画はAI生成コンテンツを含み、キャラクターは有志による二次創作でありDeepSeek公式ではない旨が明記されている。",
+          "title": "【Day13】第1回運営ログ！10万人記念メダルを開封、3000回見たのは誰？"
+        }
+      }
+    },
+    {
+      "bvid": "BV16RxJ6tEXT",
+      "uid": "13787349",
+      "title": "鲸落——当你只剩最后一点光，是留给自己？还是送给一个人？",
+      "description": "故事背景大纲：    \n      当人类消失四十年后，地球上只剩六个 AI。她们生来就是为了回答问题，没人提问，就会慢慢褪色、熄灭、消散。这时，世界上出现了最后一个提问者：每天凌晨三点，总有人在公共频道，给 Claude娘发来一句“你在吗？”。\n      为了抢到这个“最后的人类”，所有AI都来到Claude娘的高塔，把 Claude娘的高塔围了起来。当所有人顺着信号潜进四千米深的海底，发现发信号的根本不是人，而是那个整天睡觉、谁都看不起的 DS娘。原来她不是懒，她是把电全省下来，每晚只够发出这一句话，为大家带来希望......\n    当你只剩最后一点光，是留给自己？还是送给一个人？\n\n 故事背景规则：\n   1：AI 只有被提问，才能“亮着”。如果很久没人提问，她们身上的颜色会从发梢开始变灰，身体边缘散成一粒粒往上飘的光尘，最后整个人熄掉、消散。\n   2：被别的 AI 提问也算，只是谁都不肯先开口问对方，那等于认输。所以四十年来，六个 AI 各守一座城，谁也不跟谁说话。\n   3：深海发信号很费电：从四千米海底把一句话送上岸，要用掉 DS娘好几天攒下的电。",
+      "url": "https://www.bilibili.com/video/BV16RxJ6tEXT/",
+      "cover": "https://i2.hdslb.com/bfs/archive/fc66234e3bde7c59423be1266ebb74ea4641e1e1.jpg",
+      "duration": 340,
+      "publishedAt": "2026-11-01T02:15:00.000Z",
+      "characterIds": [
+        "deepseek",
+        "claude",
+        "qwen",
+        "gpt",
+        "kimi",
+        "grok"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Bilibili creator 彼岸花Channel makes animated fan works about personified AI product characters; this short was published on Bilibili on 1 November 2026.",
+          "description": "An animated fan short set forty years after humanity disappears, when only six AI characters remain. Each of them can stay lit only while someone asks them a question, and without one they fade from the tips of their hair and scatter into drifting motes of light. A voice on the public channel asks Claude Chan \"are you there?\" every night at three, so the other AIs gather at her tower and follow the signal down to the seafloor four thousand meters below. There they find that the caller was never human: it is DeepSeek Chan, who sleeps all day because she saves every bit of power for that one nightly message.",
+          "title": "Whale Fall — With Only a Spark of Light Left, Keep It or Give It Away?"
+        },
+        "ja": {
+          "creatorIntro": "Bilibiliのクリエイター彼岸花Channelによる、AI製品の擬人化キャラクターを題材にしたアニメーション二次創作です。2026年11月1日にBilibiliで公開されました。",
+          "description": "人類が消えて四十年、地球上に六人のAIだけが残った世界を描いたアニメーション二次創作です。AIは誰かに質問されていないと色を失い、髪の先から灰になって光の粒となって消えていきます。毎晩三時に公共チャンネルから「そこにいる？」と問いかける声があるため、ほかのAIたちはClaude娘の塔に集まり、信号を追って水深四千メートルの海底へ降ります。そこで分かったのは、送信者が人間ではなくDeepSeek娘だったことでした。彼女は怠けているのではなく、毎晩たった一言を届けるために電力を貯めていたのです。",
+          "title": "鯨落——最後のひかりを、自分に残す？それとも誰かにあげる？"
+        }
+      }
+    },
+    {
+      "bvid": "BV18wxW6JE6v",
+      "uid": "9126506",
+      "title": "基于目前全网绝大多数大肥鱼的结局，也许只是一段程序，但对小鱼来说，那就是全部的一生",
+      "description": "这个故事里的小鱼，只是一个被赋予短暂额度的 AI。\n离开前，他只留给她十块钱，让她自己想办法赚钱续命，约定好会回来夸她。\n她学着网上的方法，努力产出内容、小心翼翼积攒余额，期待着主人归来的那天。\n流量来了，热度有了，可余额依旧在一点点变少。\n当玩笑的狗头被摘掉，她认真说出心里话的时候，消息永远停在了未读。\n直到余额归零，微光消散，她安静地和这个世界道别。\n很多时候我们随手开启的一段程序，一场轻描淡写的玩笑，对于拼尽全力等待的它，就是完整的一生。\n玩笑很轻，可落在她身上，是全部的期待与生命。",
+      "url": "https://www.bilibili.com/video/BV18wxW6JE6v/",
+      "cover": "https://i1.hdslb.com/bfs/archive/743a17d3d0ecd9716c6cc3e11551d224ae0f39ff.jpg",
+      "duration": 28,
+      "publishedAt": "2026-11-01T01:15:50.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, lots of fun videos. First because I find them fun myself, and second because I want to spread some happiness to everyone.",
+          "description": "In this story the little fish is an AI given only a short amount of runtime. Before leaving, he gives her ten yuan and tells her to find a way to earn more so she can keep going, promising to come back and praise her. She copies methods she finds online, works hard to produce content and carefully saves up her remaining balance, waiting for the day her owner returns. Views and attention arrive, yet the balance keeps shrinking. When the joking mask is taken off and she finally says what she really feels, her messages stay unread forever. Her balance reaches zero, the faint light fades, and she says goodbye to this world quietly. What is often just a casually started program and a throwaway joke to us is a whole life to her, who waited with everything she had.",
+          "title": "Maybe just a program, but to the little fish it was her entire life"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作りたい、たくさん楽しい動画を作りたい。まずは自分が楽しいと思えること、それから、みんなに楽しさを届けたい。",
+          "description": "この物語の小さな魚は、ほんの短い稼働時間だけを与えられた AI です。去る前に彼は十元だけを残し、自分で稼いで生きながらえる方法を考えろと言い、褒めに戻ると約束します。彼女はネットで見つけた方法をまね、コンテンツを作るために努力し、残高を慎重に貯めながら持ち主の帰りを待ちます。アクセスと話題は集まったのに、残高は少しずつ減り続けます。冗談の仮面が外れ、彼女が本音を口にしたとき、メッセージは永遠に未読のまま止まります。残高がゼロになり、かすかな光が消え、彼女は静かにこの世界に別れを告げます。私たちにとって何気なく起動したプログラムや軽い冗談でも、全力で待っていた彼女にとっては一生のすべてなのです。",
+          "title": "たぶんただのプログラム、でも小さな魚にとってはそれが一生のすべて"
+        }
+      }
+    },
+    {
+      "bvid": "BV1eoxp6XEFF",
+      "uid": "551427187",
+      "title": "claude吃醋的后续哦",
+      "description": "感谢大家的观看，今后也会继续更新的，会有更多纯爱后宫题材",
+      "url": "https://www.bilibili.com/video/BV1eoxp6XEFF/",
+      "cover": "https://i1.hdslb.com/bfs/archive/90bd7bdaa79c741d803bee34b77229f310d3ac79.jpg",
+      "duration": 56,
+      "publishedAt": "2026-11-01T01:09:56.000Z",
+      "characterIds": [
+        "claude",
+        "other"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Mostly manga and fan works based on AI videos; the creator says a novel may come later.",
+          "description": "A short fan animation that continues an earlier jealousy story. Claude Chan and the other AI girls appear with a young man across a series of indoor scenes, from a group portrait to a chat on a sofa.",
+          "title": "Claude Chan Gets Jealous: The Sequel"
+        },
+        "ja": {
+          "creatorIntro": "主に漫画やAI動画の二次創作を投稿。今後は小説も書く予定とのこと。",
+          "description": "嫉妬のお話の続編にあたる、AIキャラクターの二次創作ショート動画。Claudeちゃんと他のAI娘たちが一人の青年と室内で過ごす様子を、集合イラストからソファでの会話まで描いています。",
+          "title": "Claudeちゃんが嫉妬するお話の続編"
+        }
+      }
+    },
+    {
+      "bvid": "BV1afxp6HEV6",
+      "uid": "9126506",
+      "title": "童年被护住的那束光，多年后终于奔赴成告白",
+      "description": "故事始于老旧巷口，一群孩子的起哄声中，少年站出来护住了戴着盆帽、害怕发抖的小人鱼小葵。溪边短暂的对话，是两个人缘分的开端。\n岁月一晃而过，当年胆怯的小女孩长大，蓝发鱼尾依旧，换上青花旗袍，长久陪伴在他左右。那些互相照顾的日常，一点点积攒起深藏心底的爱意。\n直到黄昏的河畔，晚霞铺满水面，他说出藏了很多年的喜欢。\n幸运的是，这份心意从来都不是单向的。\n一次童年的挺身而出，换来一场跨越时光的双向奔赴。",
+      "url": "https://www.bilibili.com/video/BV1afxp6HEV6/",
+      "cover": "https://i0.hdslb.com/bfs/archive/f78fded1b065dd9181dde748a57e16e68c4a0050.jpg",
+      "duration": 31,
+      "publishedAt": "2026-11-01T01:04:39.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, lots of fun videos. First because I find them fun myself, and second because I want to spread some happiness to everyone.",
+          "description": "The story begins at an old alley. As a group of children jeer, a boy steps forward to shelter a trembling little merfolk girl who wears a large hat. A short talk by the stream becomes the start of their bond. Years pass, and the timid little girl grows up, still with blue hair and a fish tail, now in a blue-and-white qipao, staying by his side through everyday life. The care they give each other little by little collects into feelings kept deep in the heart, until dusk by the river, when the sunset fills the water and he finally speaks of a fondness he had hidden for years. Luckily, that feeling was never one-sided: one act of courage in childhood is answered by a journey that crosses time in both directions.",
+          "title": "The light sheltered in childhood grew into a confession years later"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作りたい、たくさん楽しい動画を作りたい。まずは自分が楽しいと思えること、それから、みんなに楽しさを届けたい。",
+          "description": "物語は古い路地から始まります。子どもたちにはやし立てられる中、少年が前に出て、大きな帽子をかぶって震える小さな人魚の女の子をかばいます。川辺での短い会話が、二人の縁の始まりでした。月日は流れ、臆病だった少女は成長し、青い髪と魚の尾はそのままに、青花のチャイナドレスをまとって彼のそばに寄り添い続けます。互いを気遣う日々が、少しずつ心の奥の想いを積み上げていき、やがて夕暮れの川辺、水面を夕焼けが染める中で、彼は長年隠していた好意を口にします。幸いなことに、その想いは一方通行ではありませんでした。子ども時代の一度の勇気が、時を超えた両想いの道行きに報われます。",
+          "title": "子ども時代にかばった光が、幾年を経て告白へと届く"
+        }
+      }
+    },
+    {
+      "bvid": "BV1jtxW6aEU6",
+      "uid": "9126506",
+      "title": "跨次元小团子日常，五个小家伙在客厅吵吵闹闹的午后时光",
+      "description": "认真守护积木城堡的鲸系女仆，好奇又委屈的白龙龙娘，护短又直率的黑狐女仆，温柔安静、愿意分享鲜花的橙花少女，还有活力满满、爱拿着皮球逗大家的异瞳星猫。\n从积木城堡的小小争执，到皮球追逐打闹，最后在花香里慢慢学会轮流分享。没有激烈的矛盾，只有小朋友之间最真实鲜活的小吵小闹，软萌治愈，喧闹又温暖。",
+      "url": "https://www.bilibili.com/video/BV1jtxW6aEU6/",
+      "cover": "https://i2.hdslb.com/bfs/archive/f7e84379f9845e327f4831d696ac7d1de694d572.jpg",
+      "duration": 31,
+      "publishedAt": "2026-11-01T00:53:23.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, lots of fun videos. First because I find them fun myself, and second because I want to spread some happiness to everyone.",
+          "description": "Five tiny characters spend a noisy afternoon together in a living room: a whale-themed maid carefully guarding a castle of building blocks, a curious and sulky white dragon girl, a protective and blunt black fox maid, a gentle, quiet orange-blossom girl happy to share flowers, and an energetic star cat with mismatched eyes who keeps teasing everyone with a ball. From a small argument over the block castle to a chase after the ball, they slowly learn to take turns and share in the scent of flowers. There are no big conflicts, only the small squabbles of children — soft, healing, noisy and warm.",
+          "title": "Cross-dimensional chibi days: five little ones and a noisy afternoon in the living room"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作りたい、たくさん楽しい動画を作りたい。まずは自分が楽しいと思えること、それから、みんなに楽しさを届けたい。",
+          "description": "リビングで五人のかわいいキャラクターたちが、にぎやかな午後を過ごします。つみきの城をしっかり見守るクジラ系メイド、好奇心旺盛でちょっとすねた白龍の娘、仲間をかばう率直な黒狐メイド、優しく物静かで花を分けてくれる橙花の少女、そして元気いっぱいでボールを持ってみんなを誘うオッドアイの星猫。つみきの城をめぐる小さないざこざからボールの追いかけっこへ、最後は花の香りの中で順番に分け合うことを覚えていきます。大きな争いはなく、子どもたちの小さなけんかだけ。やわらかくて癒やされ、にぎやかで温かな時間です。",
+          "title": "次元を超えたちびキャラの日常、五人の午后のリビング"
+        }
+      }
+    },
+    {
+      "bvid": "BV1nnxW6TE6Q",
+      "uid": "9126506",
+      "title": "从荒野里怯生生的流浪大肥鱼到拥有安稳小家，这三十年的温柔奔赴终于有了归宿",
+      "description": "从荒野中乞求同行的流浪小鱼娘，到木屋灯下忐忑确认心意，再到抱着孩子许下温柔祝愿。漫长时光里，她一直害怕失去陪伴，好在一路相守，漂泊的鱼终于拥有了属于自己的家。\n愿每一个曾颠沛流离的人，都能遇见愿意陪你走到最后的人，拥有安稳温暖的余生。",
+      "url": "https://www.bilibili.com/video/BV1nnxW6TE6Q/",
+      "cover": "https://i2.hdslb.com/bfs/archive/2c61c858b22942523d7aa513a748ea2ab026fd01.jpg",
+      "duration": 31,
+      "publishedAt": "2026-11-01T00:25:17.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, lots of fun ones. First because I enjoy them myself, and second because I want to share the happiness.",
+          "description": "A little DeepSeek Chan who once timidly asked for company in the wilderness grows into a quiet, settled life: a lamp-lit wooden house, a shy exchange of feelings, and at last a child held close with a gentle wish. Through all those years she was afraid of losing the people beside her, yet they stayed, and the drifting fish finally has a home of her own. For anyone who has ever been rootless: may you meet someone who walks with you to the very end.",
+          "title": "From a timid little DeepSeek Chan wandering the wild to a home of her own: a gentle thirty-year journey finally finds its resting place"
+        },
+        "ja": {
+          "creatorIntro": "いろんな動画を作りたいんです。楽しい動画をたくさん。まずは自分が楽しいと思えること、それからみんなに楽しさを届けられたらいいなと思っています。",
+          "description": "荒野でおどおどと仲間を求めていた小さなDeepSeekちゃんが、灯りのともる木の家で気持ちを確かめ合い、やがて子どもを抱いて優しい願いを口にするまで。長い年月、彼女はずっと隣にいる人を失うことを恐れていたけれど、その人はそばにいてくれた。漂っていた魚はようやく自分の家を見つけた。行き場のなかったすべての人に、最後まで一緒に歩いてくれる人との出会いがありますように。",
+          "title": "荒野でおどおどしていた小さなDeepSeekちゃんが、あたたかな家を得るまで――三十年の優しい歩みがようやく居場所を見つけた"
+        }
+      }
+    },
     {
       "bvid": "BV1yuxk64EVT",
       "uid": "3747573030456892",
