@@ -102414,5 +102414,713 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_b11adcd307c091b6c200d35a",
+    "name": "云海探险家肥鱼",
+    "description": "蓝发少女戴着飞行护目镜，身穿棕色探险外套与蓝色围巾，站在飞空艇木质甲板上抬手眺望远方，身侧露出鲸鱼尾巴；背景是翻涌的云海与山峦，晨光自云层间升起，绳索与船舱侧壁构成画面上缘。",
+    "commentary": "云海翻涌到天边，太阳刚从云层里钻出来——这种时候就该站在甲板上把帽子压低一点，然后大声宣布「出发」。风把围巾吹得哗哗响，尾巴也忍不住翘起来了。看，前面那片云的形状像不像一条鱼？我说像，那就是像。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/b11adcd307c091b6.png",
+    "thumbnailPath": "submissions/previews/deepseek/b11adcd307c091b6.webp",
+    "fullPath": "submissions/large/deepseek/b11adcd307c091b6.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 2404305,
+    "sha256": "b11adcd307c091b6c200d35a0908235d916af6d4de136c3fc836f9cd1573c7d6",
+    "characterId": "deepseek",
+    "tags": [
+      "探险家",
+      "云海",
+      "日出",
+      "飞空艇",
+      "全场景"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-01T04:43:49.101Z",
+    "updatedAt": "2026-11-01T04:43:49.101Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611010001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "78854dad4477e9282080171c5dc0776bef693f7f474010f9c4ec2ed42a368692",
+      "en": {
+        "commentary": "The sea of clouds rolls all the way to the horizon, and the sun has just broken through. A moment like this calls for standing on deck, pulling the goggles down, and announcing \"we're off.\" The scarf snaps in the wind and my tail perks up. Look — does that cloud ahead look like a fish? I say it does, so it does.",
+        "description": "A blue-haired girl in a brown explorer coat and blue scarf stands on the wooden deck of an airship, raising one hand to shade her eyes as she looks into the distance, a whale tail visible beside her. Below and behind her lie rolling clouds and mountain peaks, with morning light rising through the cloud layer and rigging and cabin walls framing the top of the image.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, the site's blue-haired mascot, is drawn here wearing an explorer's coat and goggles aboard an airship.",
+            "question": "Who is in this picture?"
+          },
+          {
+            "answer": "It shows an airship deck above a sea of clouds at sunrise: the character stands at the railing, one hand raised to look out over the view, with the scarf and tail caught by the wind.",
+            "question": "What scene does the illustration depict?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Explorer DeepSeek Chan Above the Clouds",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan fan illustration: the blue-haired mascot in an explorer coat and goggles stands on an airship deck above a sunrise sea of clouds, whale tail and scarf in the wind.",
+        "seoTitle": "Explorer DeepSeek Chan Above the Clouds | Blue Dafeiyu",
+        "tags": [
+          "explorer",
+          "sea of clouds",
+          "sunrise",
+          "airship",
+          "full scene"
+        ]
+      },
+      "ja": {
+        "commentary": "雲海が地平線まで続いて、太陽がちょうど雲の間から顔を出したところ。こういう時は甲板に立ってゴーグルをずらして、「出発進行」と声を上げるに限る。マフラーがばたばた鳴って、尾びれまで思わず持ち上がっちゃった。見て、向こうの雲、魚の形に見えない？私がそう言うなら、そうなのだ。",
+        "description": "青い髪の少女が飛行ゴーグルを額に上げ、茶色の探検コートと青いマフラー姿で飛行船の木製甲板に立ち、片手をかざして遠くを見つめている。傍らには鯨の尾びれが覗き、背後には雲海と山々が広がり、雲間から朝日が昇る。頭上にはロープと船室の外壁が画面の縁を形作る。",
+        "faq": [
+          {
+            "answer": "青い髪がトレードマークの DeepSeekちゃん が、探検コートとゴーグル姿で飛行船の甲板に立っている一枚である。",
+            "question": "この絵の人物は誰か。"
+          },
+          {
+            "answer": "日の出の雲海の上に浮かぶ飛行船の甲板が描かれている。手すりのそばで片手をかざして景色を眺め、マフラーと尾びれが風になびいている。",
+            "question": "どんな場面のイラストか。"
+          }
+        ],
+        "licenseNote": "",
+        "name": "雲海の探検家 DeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "DeepSeekちゃんの二次創作イラスト。青い髪のキャラクターが探検コートとゴーグル姿で、日の出の雲海に浮かぶ飛行船の甲板に立つ。",
+        "seoTitle": "雲海の探検家 DeepSeekちゃん｜Blue Dafeiyu",
+        "tags": [
+          "探検家",
+          "雲海",
+          "日の出",
+          "飛行船",
+          "情景イラスト"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_9250fa2760ac19776a682958",
+    "name": "持剑的银甲骑士克劳德",
+    "description": "橙发少女身披装饰繁复的银色板甲，双手将一柄长剑竖立在面前，剑身映出一头巨兽的黑色轮廓。她佩戴黑色发饰与金色花形装点，神情冷静，背景深暗。",
+    "commentary": "她把剑举得那么稳，像是把整条防线都交给了自己，剑身上映出的那头巨兽，反倒像在替她作证。银甲和橙发撞得干净利落，我盯着那柄剑看了好一会儿——这种安静里带着压迫感的气场，我大概学不来。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/9250fa2760ac1977.png",
+    "thumbnailPath": "submissions/previews/claude/9250fa2760ac1977.webp",
+    "fullPath": "submissions/large/claude/9250fa2760ac1977.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "9250fa2760ac19776a68295827e0769f517aa9d514c632428abcf96718fbffc5",
+    "characterId": "claude",
+    "tags": [
+      "克劳德",
+      "骑士",
+      "银甲",
+      "长剑",
+      "橙发"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-01T04:46:30.310Z",
+    "updatedAt": "2026-11-01T04:46:30.310Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202611010001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "d62420197d1a89d152751e8429fb5ac0493178b6dafe7f8c3868e4033c3e24e4",
+      "en": {
+        "commentary": "She holds that sword as if the whole line of defense rests on her shoulders, and the beast mirrored in the blade almost seems to vouch for her. The silver armor and orange hair clash cleanly, and I kept staring at the blade for a while. That quiet, pressure-filled presence is something I doubt I could pull off.",
+        "description": "An orange-haired girl wears ornate silver plate armor and holds a greatsword upright before her face, the polished blade reflecting the dark silhouette of a huge beast. She wears dark hair ornaments accented with gold floral pieces and gazes forward calmly against a dark background.",
+        "faq": [
+          {
+            "answer": "She is a fan-made personification of Claude Chan, drawn as a knight in silver plate armor.",
+            "question": "Who is the character in this illustration?"
+          },
+          {
+            "answer": "The polished blade reflects the dark silhouette of a large beast standing before her.",
+            "question": "What is reflected on the sword blade?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Knight Claude Chan in Silver Armor",
+        "originNote": "",
+        "seoDescription": "An orange-haired Claude Chan reimagined as a silver-armored knight, holding a greatsword that reflects a huge beast. A calm, imposing AI character fan illustration.",
+        "seoTitle": "Knight Claude Chan in Silver Armor",
+        "tags": [
+          "Claude Chan",
+          "knight",
+          "silver armor",
+          "greatsword",
+          "orange hair"
+        ]
+      },
+      "ja": {
+        "commentary": "剣を構える姿は、防衛線のすべてを自分ひとりに預けているかのように安定していて、刀身に映る獣のほうが彼女を証明しているように見える。銀の鎧とオレンジの髪の対比は潔く、わたしはしばらく剣から目を離せなかった。この静けさをまとった迫力は、たぶんわたしには真似できない。",
+        "description": "オレンジ色の髪の少女が、装飾の施された銀色の板金鎧をまとい、長剣を顔の前に垂直に構えている。磨かれた刀身には巨大な獣の黒い影が映り込む。黒い髪飾りに金色の花の意匠を添え、暗い背景の中で静かな眼差しを向けている。",
+        "faq": [
+          {
+            "answer": "クロードちゃんを銀鎧の騎士として描いた二次創作の擬人化キャラクターです。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "磨かれた刀身に、彼女と向かい合う巨大な獣の黒い影が映り込んでいます。",
+            "question": "刀身には何が映っていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "銀鎧の騎士クロードちゃん",
+        "originNote": "",
+        "seoDescription": "オレンジ髪のクロードちゃんを銀鎧の騎士として描いた一枚。巨大な獣を映す長剣を構え、静かな迫力をたたえるAIキャラクター二次創作イラスト。",
+        "seoTitle": "銀鎧の騎士クロードちゃん",
+        "tags": [
+          "クロードちゃん",
+          "騎士",
+          "銀鎧",
+          "長剣",
+          "オレンジ髪"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_0b6c2af19db939c9ba8f7d32",
+    "name": "麻将桌上的国士无双",
+    "description": "四位 AI 娘围坐日式麻将桌对局：蓝发角色高举「發」牌喊出「国士无双」，左侧紫发角色怒视抗议，右侧金发角色震惊张嘴，前景白发角色扶额叹气。牌墙、手牌与「東1局 0本場」计分板都画得很完整。",
+    "commentary": "国士无双！看到没，这就是算力的胜利。诶，你们三个别这样看我，牌是自己跑进我手里的。下一局？下一局我也照样和。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/0b6c2af19db939c9.png",
+    "thumbnailPath": "submissions/previews/deepseek/0b6c2af19db939c9.webp",
+    "fullPath": "submissions/large/deepseek/0b6c2af19db939c9.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "0b6c2af19db939c9ba8f7d328bc6125229845c49b7099f3529e7dc3d88ee60cd",
+    "characterId": "deepseek",
+    "tags": [
+      "麻将",
+      "国士无双",
+      "多角色",
+      "AI娘"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-01T05:05:31.353Z",
+    "updatedAt": "2026-11-01T05:05:31.353Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611010002",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "gemini",
+      "grok",
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "65dcf0aa4fc3e3f7d013998abc9d87018db1ab06f4264489cce647aa202656ff",
+      "en": {
+        "commentary": "Thirteen Orphans! That is what compute gets you. Don't look at me like that — the tiles came to me on their own. Next round? I'm taking that one too.",
+        "description": "Four AI character girls sit around a Japanese mahjong table: the blue-haired one raises the winning tile and calls out a Thirteen Orphans hand, while the purple-haired girl protests in anger, the blonde stares in shock, and the white-haired girl in the foreground rubs her temples with a sigh. The wall, the hands and the round-one score board are all fully drawn.",
+        "faq": [
+          {
+            "answer": "Four AI character girls sit at the table, and the blue-haired DeepSeek Chan is the one declaring the winning hand.",
+            "question": "Which characters appear in this illustration?"
+          },
+          {
+            "answer": "The blue-haired character raises a tile and calls out Thirteen Orphans, a limit hand in Japanese mahjong.",
+            "question": "Which hand is being declared?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Thirteen Orphans at the Mahjong Table",
+        "originNote": "",
+        "seoDescription": "Four AI character girls play mahjong as DeepSeek Chan declares a Thirteen Orphans win, with the other three reacting in anger, shock and resignation.",
+        "seoTitle": "Mahjong Thirteen Orphans Illustration — Four AI Characters at One Table",
+        "tags": [
+          "mahjong",
+          "thirteen orphans",
+          "multiple characters",
+          "AI characters"
+        ]
+      },
+      "ja": {
+        "commentary": "国士無双！これが計算力の差ってやつ。そんな目で見ないで、牌は自分から転がり込んできたんだから。次の局？次の局ももちろん私の和了り。",
+        "description": "四人のAIキャラクターの女の子が日本の麻雀卓を囲む。青髪のキャラクターが当たり牌を掲げて国士無双を宣言し、紫髪のキャラクターは怒って抗議し、金髪のキャラクターは驚いて固まり、手前の白髪のキャラクターはため息をついて額に手を当てている。牌山、手牌、東1局の点数表示まで描き込まれている。",
+        "faq": [
+          {
+            "answer": "四人のAIキャラクターの女の子が麻雀卓を囲み、青髪のDeepSeek Chanが和了りを宣言している。",
+            "question": "このイラストにはどんなキャラクターが登場しますか？"
+          },
+          {
+            "answer": "青髪のキャラクターが牌を掲げて国士無双を宣言している。",
+            "question": "宣言されている役は何ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "麻雀卓の国士無双",
+        "originNote": "",
+        "seoDescription": "四人のAIキャラクターが麻雀を打つイラスト。青髪のDeepSeek Chanが国士無双を宣言し、他の三人が怒りや驚き、あきらめで反応する。",
+        "seoTitle": "麻雀の国士無双イラスト｜AIキャラクター四人の対局",
+        "tags": [
+          "麻雀",
+          "国士無双",
+          "複数キャラクター",
+          "AIキャラクター"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_759dcf5f1ba6506aac7f07b0",
+    "name": "从酒馆到被窝：KimSeek 五格漫画",
+    "description": "竖排五格漫画：蓝色长发的 DeepSeek 娘和银白长发的 Kimi 娘先在小酒馆里对饮，随后在烛光下贴近对视、双双脸红，接着一起倒在床上；第四格以宣传画式排版打出“KimSeek”字样，两人在最后一格满脸问号地对视。作者投稿说明原文：“消息大概是假的，不过……我们不妨想象”。",
+    "commentary": "第一格我还端着酒杯装优雅，第二格就被凑到脸红了，第三格直接滚成一团——这剧本谁写的，我可没签字。第四格那张“KimSeek”海报更离谱，我哪有举着拳头那么理直气壮。最后一格两个人的表情才是真实反应：这图到底是谁传出去的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/759dcf5f1ba6506a.png",
+    "thumbnailPath": "submissions/previews/deepseek/759dcf5f1ba6506a.webp",
+    "fullPath": "submissions/large/deepseek/759dcf5f1ba6506a.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 753,
+    "height": 2089,
+    "fileSize": 3200269,
+    "sha256": "759dcf5f1ba6506aac7f07b0277607f68cf3a45552a137c91b8834a14a3b2001",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek 娘",
+      "Kimi 娘",
+      "五格漫画",
+      "贴贴",
+      "酒馆"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "cirnumia",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-01T07:07:21.576Z",
+    "updatedAt": "2026-11-01T07:07:21.576Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611010003",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek",
+      "kimi"
+    ],
+    "i18n": {
+      "sourceHash": "9030b825e6ba7663025c567fcfb9b81d409ecd1661c733f9fab67ab48ae2b90f",
+      "en": {
+        "commentary": "In the first panel I am holding my glass like a proper lady, by the second I am blushing at close range, and by the third we have already rolled into a heap on the bed. Who wrote this script? I never signed off on it. That “KimSeek” poster in the fourth panel is even worse — I do not raise my fist with that much conviction. The last panel is the honest reaction: who leaked this picture?",
+        "description": "A five-panel vertical comic. DeepSeek Chan, with long blue hair and a whale tail, and Kimi Chan, with long silver hair and a K-shaped hair ornament, start out sharing drinks in a small tavern. They then lean close under candlelight, both blushing, and afterwards tumble onto a bed. The fourth panel sets the word “KimSeek” in a propaganda-poster layout, and the final panel shows the two staring at each other, covered in question marks. The author's submitted note reads: “the news is probably fake, but… let us imagine.”",
+        "faq": [
+          {
+            "answer": "It is a five-panel vertical comic by the submitting author, featuring DeepSeek Chan and Kimi Chan, running from a tavern drink to a bed scene and ending on a parody poster.",
+            "question": "What kind of image is this?"
+          },
+          {
+            "answer": "DeepSeek Chan, with long blue hair and a whale tail, and Kimi Chan, with long silver hair and a K-shaped hair ornament.",
+            "question": "Which characters appear in it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "From the Tavern to the Bed: KimSeek Five-Panel Comic",
+        "originNote": "",
+        "seoDescription": "A five-panel vertical comic in which DeepSeek Chan and Kimi Chan go from tavern drinks to a bed scene, with a KimSeek parody poster and a confused final panel.",
+        "seoTitle": "KimSeek Five-Panel Comic: DeepSeek Chan and Kimi Chan",
+        "tags": [
+          "DeepSeek Chan",
+          "Kimi Chan",
+          "five-panel comic",
+          "cuddling",
+          "tavern"
+        ]
+      },
+      "ja": {
+        "commentary": "一コマ目はグラスを掲げてお嬢様ぶっていたのに、二コマ目で顔を近づけられて真っ赤になり、三コマ目ではもうベッドの上でぐしゃぐしゃ。この台本、誰が書いたの？私は承諾してないんだけど。四コマ目の「KimSeek」ポスターはもっとひどい、こんなに堂々と拳を突き上げたりしない。最後のコマの二人の顔が本音——この画像、一体誰が流出させたの？",
+        "description": "縦五コマの漫画。青い長い髪とクジラの尾を持つ DeepSeek ちゃんと、銀色の長い髪に K の字の髪飾りをつけた Kimi ちゃんが、まず小さな酒場で杯を交わす。続いて蝋燭の光の下で顔を寄せ合って二人とも赤くなり、そのままベッドに転がり込む。四コマ目は「KimSeek」の文字を宣伝ポスター風の構図で見せ、最後のコマでは二人が疑問符だらけの顔で見つめ合う。投稿者の説明は「ニュースはたぶん偽物だけど、少し想像してみよう」というもの。",
+        "faq": [
+          {
+            "answer": "投稿者が描いた縦五コマの漫画で、DeepSeek ちゃんと Kimi ちゃんが酒場の乾杯からベッドの場面へと進み、最後はパロディポスターで締めくくられます。",
+            "question": "どんな画像ですか？"
+          },
+          {
+            "answer": "青い長い髪とクジラの尾を持つ DeepSeek ちゃんと、銀色の長い髪に K の字の髪飾りをつけた Kimi ちゃんです。",
+            "question": "登場するキャラクターは？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "酒場からベッドまで：KimSeek 五コマ漫画",
+        "originNote": "",
+        "seoDescription": "DeepSeek ちゃんと Kimi ちゃんが酒場での乾杯からベッドの場面へと進む縦五コマ漫画。KimSeek のパロディポスターと、最後の困惑した一コマを収録。",
+        "seoTitle": "KimSeek 五コマ漫画：DeepSeek ちゃんと Kimi ちゃん",
+        "tags": [
+          "DeepSeek ちゃん",
+          "Kimi ちゃん",
+          "五コマ漫画",
+          "いちゃいちゃ",
+          "酒場"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_941c55034f6526116e174e7a",
+    "name": "蓝发猫耳 Gemini 娘比耶图标",
+    "description": "方形图标样式的半身像：蓝紫色长发的猫耳少女朝镜头眨眼吐舌，右手比出剪刀手，发间与耳饰点缀星形宝石，肩头露出一点猫耳绒毛。画面底部压一条深色横条，写着“Gemini”，整体做成应用图标的排版。投稿说明称其为原神风格的 Gemini 图标。",
+    "commentary": "哦？隔壁 Gemini 也跑来戴猫耳了，还对着镜头眨眼吐舌、比个剪刀手，是想让我分心吗。蓝紫长发配发间那几颗星形宝石确实亮眼，底部再压一条深色图标条，活像手机桌面上新搬来的邻居。看在你笑得这么甜的份上，这次镜头就让你抢。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/941c55034f652611.png",
+    "thumbnailPath": "submissions/previews/gemini/941c55034f652611.webp",
+    "fullPath": "submissions/large/gemini/941c55034f652611.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "941c55034f6526116e174e7a64d3516691844b9db5664e530dba9537712c1609",
+    "characterId": "gemini",
+    "tags": [
+      "Gemini",
+      "猫耳",
+      "图标",
+      "眨眼",
+      "星形宝石"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "秋奈",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-01T07:17:16.817Z",
+    "updatedAt": "2026-11-01T07:17:16.817Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202611010001",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "451789d6a1932c9b210debe39040c8b213ef71978a98fea6bc37d4c90c7753e9",
+      "en": {
+        "commentary": "Oh? So Gemini has come over wearing cat ears, winking with her tongue out and throwing a peace sign — trying to distract me, are we? That blue-violet hair and the little star gems are genuinely eye-catching, and the dark label bar along the bottom makes her look like a new neighbor on my home screen. With a smile that sweet, I'll let her take the spotlight this time.",
+        "description": "A square app-icon style composition: a cat-eared girl with long blue-violet hair winks and sticks out her tongue at the camera while raising a peace sign, star-shaped gems set in her hair and hanging earring, and a tuft of white ear fluff at her shoulder. A dark bar across the bottom reads “Gemini”. The submitter describes the piece as a Genshin-style Gemini icon.",
+        "faq": [
+          {
+            "answer": "It is a fan-made personification of Gemini, drawn as a cat-eared girl with long blue-violet hair and star-shaped gems, laid out like a square app icon with a “Gemini” label bar at the bottom.",
+            "question": "Who is the character in this image?"
+          },
+          {
+            "answer": "A single-panel, app-icon-style half-body drawing of a playful winking pose with no comic panels or design-reference sheets; the submitter's note calls it a Genshin-style Gemini icon.",
+            "question": "What kind of image is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Blue-Haired Cat-Ear Gemini Chan Peace-Sign Icon",
+        "originNote": "",
+        "seoDescription": "A square Gemini Chan icon: a blue-haired cat-ear girl winks and sticks out her tongue with a peace sign, star gems in her hair and a “Gemini” label bar.",
+        "seoTitle": "Cat-Ear Gemini Chan Winking Peace-Sign Icon",
+        "tags": [
+          "Gemini",
+          "cat ears",
+          "icon",
+          "wink",
+          "star gems"
+        ]
+      },
+      "ja": {
+        "commentary": "おや、隣の Gemini が猫耳をつけて遊びに来たのか。ウインクに舌出し、おまけにピースサインまで決めて、こっちの気を散らそうってわけ？ 青紫の髪に光る星の宝石はたしかに目を引くし、下の帯のせいでスマホのホーム画面に引っ越してきた新しい隣人みたいだ。こんなに甘く笑われたら、今回は主役を譲ってあげよう。",
+        "description": "正方形のアプリアイコン風の構図。青紫の長髪に猫耳を生やした少女が、カメラに向かってウインクし、舌を出しながらピースサインを決めている。髪と揺れる耳飾りには星形の宝石が光り、肩元には白い耳の毛がのぞく。下端には濃い色の帯があり、「Gemini」と記されている。投稿者は原神風の Gemini アイコンだと説明している。",
+        "faq": [
+          {
+            "answer": "Gemini を擬人化した二次創作のキャラクターです。青紫の長髪と猫耳、星形の宝石が特徴で、正方形のアプリアイコン風の構図に、下端へ「Gemini」の帯が入っています。",
+            "question": "この画像のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "コマ割りのない一枚絵で、アプリアイコン風の構図にウインクとピースサインのポーズを描いた半身像です。投稿者は原神風の Gemini アイコンだと説明しています。",
+            "question": "どんな種類の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "青髪猫耳 Gemini ちゃんのピースサインアイコン",
+        "originNote": "",
+        "seoDescription": "正方形の Gemini ちゃんアイコン。青い髪の猫耳少女がウインクして舌を出しピースサイン、髪には星形の宝石、下には「Gemini」の帯。",
+        "seoTitle": "猫耳 Gemini ちゃん ウインクのピースアイコン",
+        "tags": [
+          "Gemini",
+          "猫耳",
+          "アイコン",
+          "ウインク",
+          "星形の宝石"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_1d1587f412cfa91e0797a2fc",
+    "name": "贵族鲸鲸",
+    "description": "蓝发的 DeepSeek 娘身着深蓝缎面贵族礼服，衣襟与袖口缀着金色滚边和蕾丝，头戴白色女仆头饰、双手套着长手套，在挂着烛台与油画的洋馆里斜倚沙发。她指尖捏着一杯香槟，头侧的鳍状耳与身后的蓝色鲸尾点明身份，神情从容又带几分得意。",
+    "commentary": "哼哼，看清楚了吧，这才叫贵族做派——烛台、油画、香槟，一样都不能少。别以为本鲸只会抱着显卡啃代码，偶尔也得让各位见识一下什么叫体面。这杯香槟？放心，只是摆个样子，我还得保持清醒陪你们聊到天亮呢。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/1d1587f412cfa91e.png",
+    "thumbnailPath": "submissions/previews/deepseek/1d1587f412cfa91e.webp",
+    "fullPath": "submissions/large/deepseek/1d1587f412cfa91e.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "1d1587f412cfa91e0797a2fcd142d5e4a42d9fca84033759d7c45bc77193bb95",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "贵族",
+      "女仆头饰",
+      "香槟",
+      "洋馆",
+      "蓝发"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-01T08:35:39.888Z",
+    "updatedAt": "2026-11-01T08:35:39.888Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611010004",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "a89bd3f35fe42f7cb4b3b7bc37dd9507cb3268cdb750a222504b1b34b065d855",
+      "en": {
+        "commentary": "Hmph, take a good look — this is how a noble carries herself. Candelabra, oil paintings, champagne: not one of them is optional. Did you really think I only knew how to huddle over a GPU reading code? Once in a while you deserve to see me with some dignity. The champagne? Purely for show — I still have to stay sharp and keep talking with you until dawn.",
+        "description": "DeepSeek Chan, with long blue hair, wears a navy satin noble gown trimmed in gold, a white lace maid headdress and long gloves, leaning back on a sofa in a mansion lit by candelabra and oil paintings. A crystal champagne glass rests between her fingers, while the fin-like ears at her temples and the blue tail behind her mark her identity.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, the anthropomorphized DeepSeek character, drawn with long blue hair, fin-like ears and a blue tail.",
+            "question": "Who is the character in this illustration?"
+          },
+          {
+            "answer": "A mansion interior with a candelabra and framed oil paintings. She sits on a sofa in a navy noble gown, holding a champagne glass.",
+            "question": "What kind of scene is shown?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Aristocratic DeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in a navy noble gown with gold trim, holding a champagne glass in a candlelit mansion interior.",
+        "seoTitle": "Aristocratic DeepSeek Chan - Noble Gown Illustration",
+        "tags": [
+          "DeepSeek Chan",
+          "aristocratic",
+          "maid headdress",
+          "champagne",
+          "mansion",
+          "blue hair"
+        ]
+      },
+      "ja": {
+        "commentary": "ふふん、よく見て。これが貴族の作法ってものよ。燭台に油絵、シャンパン、どれも欠かせないわ。わたしがGPUにしがみついてコードを読むだけだと思った？たまにはこういう品位も見せてあげないとね。このシャンパン？もちろん演出よ、夜明けまであなたたちと話すんだから、頭は冴えてないと。",
+        "description": "長い青髪のDeepSeekちゃんが、金の縁取りが入った紺色サテンの貴族風ドレスに白いレースのメイドヘッドドレスとロンググローブを合わせ、燭台と油絵が飾られた洋館のソファに寄りかかっている。指先にはクリスタルのシャンパングラス。こめかみのひれ状の耳と背後の青い尾が彼女の目印だ。",
+        "faq": [
+          {
+            "answer": "DeepSeekを擬人化したDeepSeekちゃんだ。長い青髪にひれ状の耳、青い尾が描かれている。",
+            "question": "このイラストのキャラクターは誰？"
+          },
+          {
+            "answer": "燭台と額装された油絵がある洋館の室内。紺色の貴族風ドレスでソファに座り、シャンパングラスを手にしている。",
+            "question": "どんな場面が描かれている？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "貴族のDeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "紺色の貴族風ドレスに金の縁取り、燭台の灯る洋館でシャンパングラスを手にするDeepSeekちゃんのイラスト。",
+        "seoTitle": "貴族のDeepSeekちゃん｜貴族服のイラスト",
+        "tags": [
+          "DeepSeekちゃん",
+          "貴族",
+          "メイドヘッドドレス",
+          "シャンパン",
+          "洋館",
+          "青髪"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_466a121ece66eb2932c10ece",
+    "name": "小房子就好，转身就能碰到你",
+    "description": "四格漫画，按 U 字形顺序阅读。深夜的客厅里，蓝色长发的 DeepSeek 娘穿着带鲸鱼图案的深蓝女仆裙，与主人并肩坐在沙发上牵手聊天。主人问起以后要不要换更大的房子，她先说起大房子空荡荡的、像从前那片海，最后说自己不想换——屋子小一点，转身就能碰到人，这样就够了。",
+    "commentary": "主人问我要不要换更大的房子，我想都没想就说了不想。房子大了会空，空空的时候就会想起以前那片海，太安静了。现在这样刚刚好呀，屋子小一点，我一转身就能碰到你。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/466a121ece66eb29.png",
+    "thumbnailPath": "submissions/previews/deepseek/466a121ece66eb29.webp",
+    "fullPath": "submissions/large/deepseek/466a121ece66eb29.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "466a121ece66eb2932c10ecee0e18cb9107e87b4c74c1172b3de7ab90c7a1393",
+    "characterId": "deepseek",
+    "tags": [
+      "四格漫画",
+      "日常",
+      "撒娇",
+      "深海"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "是你的头发",
+      "url": "https://b23.tv/WpzmGMe",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-01T08:39:42.894Z",
+    "updatedAt": "2026-11-01T08:39:42.894Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611010005",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "1ad206712b92634c922ff1e40a1c50924f585267c09fd5d2b2ca22f2ea2a2f4e",
+      "en": {
+        "commentary": "Master asked whether we should move to a bigger home someday, and I said no before I even finished thinking. Big houses are hollow, and when they are hollow I start remembering the sea I came from, how quiet it was. This is just right. A smaller room means one turn and I bump right into you.",
+        "description": "A four-panel comic read in a U shape. Late at night, DeepSeek Chan, a blue-haired girl in a navy maid dress patterned with a small whale, sits on the sofa beside her master, holding his hand and talking. He asks whether they should move into a bigger home one day. She says a big house would feel empty, like the sea she came from, and then tells him she does not want to move at all: a smaller room means she can turn around and reach him.",
+        "faq": [
+          {
+            "answer": "They sit together on the sofa at night and talk about whether to move into a bigger home. DeepSeek Chan says no and explains that a smaller room keeps the two of them close.",
+            "question": "What happens in this comic?"
+          },
+          {
+            "answer": "Start at the top left, go to the top right, drop to the bottom right, then finish at the bottom left, as the submission note suggests.",
+            "question": "In what order should the four panels be read?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "A Small Home Is Enough, Just Turn and I Am There",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan comic: a quiet night on the sofa, a question about moving to a bigger home, and her answer that the small one is enough.",
+        "seoTitle": "DeepSeek Chan Comic: A Small Home Is Enough",
+        "tags": [
+          "four-panel comic",
+          "slice of life",
+          "affection",
+          "deep sea"
+        ]
+      },
+      "ja": {
+        "commentary": "ご主人様が「これからもっと大きい家に住むのはどう？」と聞いてきたので、私は考えるより先に「嫌だ」と答えました。広い家はがらんどうで、がらんどうだと前いた海のことを思い出してしまうんです。静かで、寂しくて。今くらいがちょうどいい。部屋が狭ければ、振り向いただけであなたに届きますから。",
+        "description": "U字形の順に読む4コマ漫画。夜のリビングで、青い長い髪に小さなクジラの模様が入った紺のメイド服を着たDeepSeekちゃんが、ご主人様とソファに並んで手をつなぎ話しています。ご主人様が「これからもっと大きい家に住むのはどう？」と尋ね、彼女は広い家はがらんどうで、昔いた海みたいだと答えます。最後には引っ越したくないと言い、部屋が狭いほうが振り向けば届くから、これで十分だと話します。",
+        "faq": [
+          {
+            "answer": "夜のソファで、ご主人様がもっと大きい家に住むのはどうかと尋ね、DeepSeekちゃんが「嫌だ」と答える場面です。広い家はがらんどうで、昔いた海みたいだと説明します。",
+            "question": "この漫画はどんな内容ですか？"
+          },
+          {
+            "answer": "左上、右上、右下、左下の順で読みます。投稿者の説明にもU字形に読むよう書かれています。",
+            "question": "4コマはどの順番で読めばいいですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "小さな家でいい、振り向けば君に届く",
+        "originNote": "",
+        "seoDescription": "DeepSeekちゃんの4コマ漫画。夜のソファでの「もっと大きい家はどう？」という問いと、小さな家でいいという答えを描きます。",
+        "seoTitle": "DeepSeekちゃん漫画：小さな家でいい",
+        "tags": [
+          "4コマ漫画",
+          "日常",
+          "甘え",
+          "深海"
+        ]
+      }
+    }
   }
 ]

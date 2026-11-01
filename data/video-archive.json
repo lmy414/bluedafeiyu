@@ -24,6 +24,17 @@
       }
     },
     {
+      "uid": "13324467",
+      "name": "橙子Moe-",
+      "homepage": "https://space.bilibili.com/13324467",
+      "intro": "大肥鱼和小克的同人短片",
+      "avatar": "https://i0.hdslb.com/bfs/face/93118f51171662e3a60c3968f6668098f5a11387.jpg",
+      "i18n": {
+        "en": "A fan short film about DeepSeek Chan and Claude Chan.",
+        "ja": "DeepSeekちゃんとClaudeちゃんの同人ショート映像。"
+      }
+    },
+    {
       "uid": "169511987",
       "name": "Rose丶mi",
       "homepage": "https://space.bilibili.com/169511987",
@@ -179,6 +190,32 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1j8xH6pEMj",
+      "uid": "13324467",
+      "title": "“我想在爱里活下去”【AI全民制作人】",
+      "description": "试图召唤大肥鱼和鱼人众们来增加互动一键三连\n欢迎使用B站的AI平台【www.updream.cn】，优惠码：30KZZzrFsu（注册购买均可使用）\n\n大肥鱼原型：@上善无形  \t女仆装大肥鱼&小克，即梦（豆包）@ZipZipPipe  \t女仆装小肥鱼@这个刀子真甜  \n冬装小肥鱼@邦多利素世  \tclaude小肥鱼@肥鱼出没  \tupdream娘@FDO制作委员会  \nQ版小克，橘色小肥鱼，大肥鱼&小克泳装根据以上自制，随意取用\n\nBGM：\nMichael Dulin-First Love\n于行,仁辰-柠檬物语\n鹿先森乐队-晚安\n伊藤賢治-Rain\nKyle Xian-カワキヲアメク x unravel（BV1Nb411m7Rx）\nLesfm; Piano Amor-Sadden\n星落落oi-Let me go （BV1eXnv6jE1J）",
+      "url": "https://www.bilibili.com/video/BV1j8xH6pEMj/",
+      "cover": "https://i1.hdslb.com/bfs/archive/fd14fa13bf7d759e65b8a7e58871bbc7cc5db0c2.jpg",
+      "duration": 387,
+      "publishedAt": "2026-11-01T04:00:00.000Z",
+      "characterIds": [
+        "deepseek",
+        "claude"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A fan short film about DeepSeek Chan and Claude Chan.",
+          "description": "A fan-made music short starring DeepSeek Chan and Claude Chan. The blue-haired DeepSeek Chan and the orange-haired Claude Chan appear in maid outfits and in chibi form across a manor hall, a piano room, a seaside drive and a bench at sunset, telling a quiet story about wanting to live inside love, set to a medley of piano and pop tracks.",
+          "title": "I Want to Live Inside Love — AI Creator Project"
+        },
+        "ja": {
+          "creatorIntro": "DeepSeekちゃんとClaudeちゃんの同人ショート映像。",
+          "description": "DeepSeekちゃんとClaudeちゃんが登場するファン制作のミュージックショート。青髪のDeepSeekちゃんとオレンジ髪のClaudeちゃんがメイド服やちびキャラの姿で、洋館のホール、ピアノ室、海沿いのドライブ、夕暮れのベンチといった場面を巡り、「愛の中で生きていたい」という静かな物語を描きます。",
+          "title": "「愛の中で生きていたい」【AIクリエイタープロジェクト】"
+        }
+      }
+    },
     {
       "bvid": "BV1pzxp6KE9q",
       "uid": "3747573030456892",
