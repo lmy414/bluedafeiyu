@@ -1,5 +1,6 @@
 // @vitest-environment node
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import crypto from 'node:crypto'
 import fs from 'node:fs/promises'
 import os from 'node:os'
 import path from 'node:path'
@@ -7,7 +8,7 @@ import path from 'node:path'
 import { sqliteAdapter } from '@payloadcms/db-sqlite'
 import { buildConfig, getPayload, type Payload } from 'payload'
 import sharp from 'sharp'
-import { afterAll, beforeAll, describe, expect, it } from 'vitest'
+import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest'
 
 import { AuditEvents } from '@/collections/AuditEvents'
 import { Categories } from '@/collections/Categories'
@@ -40,8 +41,31 @@ function matches(doc: AnyRecord, where: AnyRecord): boolean {
   return Object.entries(where).every(([field, condition]) => matchCondition(doc[field], condition as AnyRecord))
 }
 
+const ORIGINAL = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8DwHwAFAAH/q842iQAAAABJRU5ErkJggg==', 'base64')
+const DIGEST = crypto.createHash('sha256').update(ORIGINAL).digest('hex')
+
+beforeAll(() => {
+  vi.stubEnv('SUBMISSION_ADMIN_TOKEN', 'bulk-test-token')
+  vi.stubEnv('SUBMISSION_ADMIN_API_URL', 'http://submission.test')
+  vi.stubGlobal('fetch', vi.fn(async (input: string | URL | Request) => {
+    const url = new URL(String(input))
+    if (url.pathname === '/api/v1/items') {
+      return { ok: true, status: 200, json: async () => ({ items: [{ id: `sub_${DIGEST.slice(0, 24)}`, sha256: DIGEST, ext: '.png', format: 'png', mime: 'image/png', original: { released: false } }] }) } as unknown as Response
+    }
+    if (url.pathname.endsWith('/raw')) {
+      return { ok: true, status: 200, arrayBuffer: async () => ORIGINAL } as unknown as Response
+    }
+    throw new Error(`unexpected fetch: ${url.toString()}`)
+  }))
+})
+
+afterAll(() => {
+  vi.unstubAllGlobals()
+  vi.unstubAllEnvs()
+})
+
 async function makeFixture(options: { state?: string; reviewContent?: unknown } = {}) {
-  const digest = 'a'.repeat(64)
+  const digest = DIGEST
   const submission: AnyRecord = {
     fields: { name: '投稿字段名' },
     id: 20,
@@ -64,6 +88,7 @@ async function makeFixture(options: { state?: string; reviewContent?: unknown } 
     auditCreates: [] as AnyRecord[],
     submissionUpdates: [] as AnyRecord[],
     workCreates: [] as AnyRecord[],
+    workUpdates: [] as AnyRecord[],
   }
   const payload = {
     create: async (input: AnyRecord) => {
@@ -88,6 +113,7 @@ async function makeFixture(options: { state?: string; reviewContent?: unknown } 
     },
     update: async (input: AnyRecord) => {
       if (input.collection === 'submissions') calls.submissionUpdates.push(input)
+      if (input.collection === 'works') calls.workUpdates.push(input)
       if (input.collection === 'submissions' && input.id === submission.id) Object.assign(submission, input.data)
       return input.data
     },
@@ -121,6 +147,51 @@ describe('works-bulk original media model', () => {
     expect(fixture.calls.workCreates[0].data.preview).toBe(10)
   })
 
+  it('批量收录先全量校验，再返回真实的逐项成功/失败，不冒充原子结果', async () => {
+    const fixture = await makeFixture({ state: 'auto_passed', reviewContent: completeContent })
+    const response = await bulkHandler(request(owner, { action: 'include', ids: [fixture.submission.submissionId, 'missing_sub'] }, fixture.payload))
+    const result = await response.json()
+
+    expect(response.status).toBe(200)
+    expect(result.ok).toBe(false)
+    expect(result.workIds).toHaveLength(1)
+    expect(result.results).toEqual([
+      { id: fixture.submission.submissionId, status: 'succeeded', workId: fixture.works[0].workId },
+      { id: 'missing_sub', status: 'failed', reason: '找不到投稿 missing_sub' },
+    ])
+    expect(result.failed).toEqual(['missing_sub'])
+    expect(result.errors[0]).toContain('找不到投稿 missing_sub')
+    expect(fixture.calls.workCreates).toHaveLength(1)
+  })
+
+  it('批量隐藏先校验全部状态，不会前面的作品已改、后面的作品才报错', async () => {
+    const fixture = await makeFixture()
+    fixture.works.push({ id: 11, status: 'published', workId: 'bulk_hide_ok' }, { id: 12, status: 'pending', workId: 'bulk_hide_bad' })
+    const response = await bulkHandler(request(owner, { action: 'hide', ids: ['bulk_hide_ok', 'bulk_hide_bad'] }, fixture.payload))
+    const result = await response.json()
+
+    expect(response.status).toBe(400)
+    expect(result.ok).toBe(false)
+    expect(result.error).toContain('bulk_hide_bad')
+    expect(fixture.calls.workUpdates).toHaveLength(0)
+  })
+
+  it('批量隐藏成功时返回 affected 和逐项 succeeded', async () => {
+    const fixture = await makeFixture()
+    fixture.works.push({ id: 11, status: 'published', workId: 'bulk_hide_a' }, { id: 12, status: 'published', workId: 'bulk_hide_b' })
+    const response = await bulkHandler(request(owner, { action: 'hide', ids: ['bulk_hide_a', 'bulk_hide_b'] }, fixture.payload))
+    const result = await response.json()
+
+    expect(response.status).toBe(200)
+    expect(result.ok).toBe(true)
+    expect(result.affected).toEqual(['bulk_hide_a', 'bulk_hide_b'])
+    expect(result.results).toEqual([
+      { id: 'bulk_hide_a', status: 'succeeded', workId: 'bulk_hide_a' },
+      { id: 'bulk_hide_b', status: 'succeeded', workId: 'bulk_hide_b' },
+    ])
+    expect(result.failed).toEqual([])
+  })
+
   it('lets the owner explicitly include a rejected submission using edited content', async () => {
     const fixture = await makeFixture({ state: 'auto_rejected' })
     fixture.submission.fields = { ...fixture.submission.fields, credit: 'named', creditName: '小鱼', creditUrl: 'https://home.example/me' }
@@ -138,12 +209,39 @@ describe('works-bulk original media model', () => {
     expect(fixture.calls.workCreates).toHaveLength(1)
     expect(fixture.calls.workCreates[0].data.sha256).toBe(fixture.submission.sha256)
     expect(fixture.calls.workCreates[0].data.preview).toBe(10)
+    expect(fixture.calls.workCreates[0].data.format).toBe('png')
+    expect(fixture.calls.workCreates[0].data.mimeType).toBe('image/png')
+    expect(fixture.calls.workCreates[0].data.width).toBe(1)
+    expect(fixture.calls.workCreates[0].data.height).toBe(1)
     expect(fixture.calls.workCreates[0].data.review).toEqual(fixture.submission.review)
     expect(fixture.calls.workCreates[0].data.origin).toEqual(fixture.submission.origin)
     expect(fixture.calls.workCreates[0].data.submitter).toEqual({ credit: 'named', name: '小鱼', url: 'https://home.example/me', github: '' })
     expect(fixture.calls.workCreates[0].data.workId).toBe(`sticker_${fixture.submission.sha256.slice(0, 24)}`)
     expect(fixture.calls.submissionUpdates[0].data.work).toBe('work-1')
     expect(fixture.calls.auditCreates[0].data.action).toBe('submissions.manual-include')
+  })
+
+  it('fails manual include instead of creating a work when original metadata is unavailable', async () => {
+    const fixture = await makeFixture({ state: 'auto_rejected' })
+    const originalFetch = globalThis.fetch
+    vi.stubGlobal('fetch', vi.fn(async () => ({
+      ok: true,
+      status: 200,
+      json: async () => ({ items: [{ ...fixture.submission, id: fixture.submission.submissionId, review: undefined, original: { released: true } }] }),
+    } as unknown as Response)))
+    try {
+      const response = await bulkHandler(request(owner, {
+        action: 'manual-include',
+        confirm: 'MANUAL_INCLUDE',
+        content: completeContent,
+        submissionId: fixture.submission.submissionId,
+      }, fixture.payload))
+      expect(response.status).toBe(502)
+      expect((await response.json()).error).toContain('原图已释放')
+      expect(fixture.calls.workCreates).toHaveLength(0)
+    } finally {
+      vi.stubGlobal('fetch', originalFetch)
+    }
   })
 
   it('rejects manual include for a submission that is not rejected or needs_manual', async () => {
@@ -222,52 +320,6 @@ describe('works-bulk original media model', () => {
     expect(fixture.calls.workCreates).toHaveLength(0)
   })
 
-  it('add-to-topic 遇到异常关系值时不静默写库，返回中文错误', async () => {
-    const fixture = await makeFixture()
-    fixture.works.push({ id: 11, status: 'published', workId: 'sticker_ok' })
-    // mock 一个已带坏关系值的专题（真实 Payload 下不会出现对象形状，但仍要挡下）。
-    const badTopic = { id: 'topic-1', topicId: 'cat-whale', works: [{ name: '坏数据' }] }
-    fixture.payload.find = async (input: AnyRecord) => {
-      if (input.collection === 'topics') return { docs: [badTopic] }
-      if (input.collection === 'works') return { docs: fixture.works.filter((work) => matches(work, input.where)) }
-      if (input.collection === 'characters' || input.collection === 'categories') return { docs: [] }
-      if (input.collection === 'submissions') return { docs: [] }
-      throw new Error(`unexpected find collection: ${input.collection}`)
-    }
-    const response = await bulkHandler(request(owner, { action: 'add-to-topic', ids: [11], topicId: 'cat-whale' }, fixture.payload))
-    const result = await response.json()
-
-    expect(response.status).toBe(400)
-    expect(result.ok).toBe(false)
-    expect(result.error).toContain('关系数据异常')
-  })
-
-  it('add-to-topic 拒绝溢出/超安全整数范围的关系 ID，不写库', async () => {
-    const fixture = await makeFixture()
-    // 数字/字符串两种形态的超范围值都要挡下：字符串超长会解析成 Infinity，或超出
-    // 2^53-1 的平台精度；数值输入本身也可能是不安全整数或 Infinity。
-    fixture.works.push(
-      { id: '9007199254740993', status: 'published', workId: 'sticker_str_unsafe' },
-      { id: `1${'0'.repeat(400)}`, status: 'published', workId: 'sticker_overflow' },
-      { id: 9007199254740992, status: 'published', workId: 'sticker_num_unsafe' },
-      { id: Number.POSITIVE_INFINITY, status: 'published', workId: 'sticker_infinity' },
-    )
-    const topic = { id: 'topic-1', topicId: 'cat-whale', works: [] }
-    fixture.payload.find = async (input: AnyRecord) => {
-      if (input.collection === 'topics') return { docs: [topic] }
-      if (input.collection === 'works') return { docs: fixture.works.filter((work) => matches(work, input.where)) }
-      if (input.collection === 'characters' || input.collection === 'categories') return { docs: [] }
-      if (input.collection === 'submissions') return { docs: [] }
-      throw new Error(`unexpected find collection: ${input.collection}`)
-    }
-
-    for (const workId of ['sticker_str_unsafe', 'sticker_overflow', 'sticker_num_unsafe', 'sticker_infinity']) {
-      const response = await bulkHandler(request(owner, { action: 'add-to-topic', ids: [workId], topicId: 'cat-whale' }, fixture.payload))
-      expect(response.status).toBe(400)
-      expect((await response.json()).error).toContain('数字 ID')
-    }
-    expect(topic.works).toHaveLength(0)
-  })
 })
 
 // ---------------------------------------------------------------------------

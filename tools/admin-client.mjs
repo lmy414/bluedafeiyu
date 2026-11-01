@@ -54,36 +54,11 @@ export async function makeClient(config, fetchImpl = fetch) {
     return data;
   }
   async function topic(data) {
-    const { workIds, coverWorkId, ...fields } = data;
-    if (workIds !== undefined) {
-      if (!Array.isArray(workIds))
-        throw new Error("workIds 必须为有序作品 ID 数组");
-      const docs = [];
-      for (let i = 0; i < workIds.length; i += 100) {
-        const q = new URLSearchParams({
-          "where[workId][in]": workIds.slice(i, i + 100).join(","),
-          depth: "0",
-          limit: "100",
-        });
-        docs.push(...(await request("GET", "/cms-api/works?" + q)).docs);
-      }
-      const byKey = new Map(docs.map((d) => [d.workId, d.id]));
-      if (workIds.some((id) => !byKey.has(id)))
-        throw new Error("专题包含不存在的作品 ID");
-      fields.works = workIds.map((id) => byKey.get(id));
-      if (coverWorkId) {
-        if (!byKey.has(coverWorkId)) throw new Error("封面必须属于专题作品");
-        fields.cover = byKey.get(coverWorkId);
-      }
-    } else if (coverWorkId) {
-      const q = new URLSearchParams({
-        "where[workId][equals]": coverWorkId,
-        limit: "1",
-      });
-      const cover = (await request("GET", "/cms-api/works?" + q)).docs[0];
-      if (!cover) throw new Error("封面作品不存在");
-      fields.cover = cover.id;
-    }
+    const { workIds, coverWorkId, works, cover, needsPublish, ...fields } = data;
+    if (workIds !== undefined || coverWorkId !== undefined || works !== undefined || cover !== undefined)
+      throw new Error("专题成员和封面只能由站长在后台维护；机器人只更新专题元数据");
+    if (needsPublish !== undefined)
+      throw new Error("needsPublish 由后台维护，机器人不能直接设置");
     const q = new URLSearchParams({
       "where[topicId][equals]": fields.topicId,
       limit: "1",
@@ -152,6 +127,12 @@ export function parseFlags(args) {
     "include",
     "request-id",
     "status",
+    "group",
+    "source",
+    "source-kind",
+    "keyword",
+    "owner",
+    "batch",
     "task",
     "page",
     "kind",
@@ -204,7 +185,7 @@ async function main() {
       : process.env.DAFEIYU_ADMIN_CONFIG || defaultConfig;
   if (!args.length || ["help", "--help", "-h"].includes(args[0])) {
     console.log(
-      "node tools/admin-client.mjs me | tasks | upload | include | topic | publish-plan | publish | retry | cancel | request\n使用 --input <JSON 文件> 或命令参数；--config <device.json> 选择设备。\n例：tasks --status running\n例：upload --file E:/作品/新图.png --character deepseek --category-id meme --include\n例：publish --confirm",
+      "node tools/admin-client.mjs me | tasks | upload | include | topic | publish-plan | publish | retry | cancel | request\n使用 --input <JSON 文件> 或命令参数；--config <device.json> 选择设备。\n例：tasks --group processing\n例：tasks --batch <批次号> --source-kind hermes\n例：upload --file E:/作品/新图.png --character deepseek --category-id meme --include\n例：publish --confirm",
     );
     return;
   }

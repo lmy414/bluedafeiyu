@@ -71,7 +71,7 @@ export async function uploadWork(req: PayloadRequest) {
     return json({ ...result, ...queued, submissionId: result.id }, response.status)
   }
   return json(
-    { ...result, submissionId: result.id, href: `/admin/review?mode=rejected&item=${doc.id}` },
+    { ...result, submissionId: result.id, href: `/admin/review?mode=decide&submission=${encodeURIComponent(result.id)}` },
     upstream.status,
   )
 }

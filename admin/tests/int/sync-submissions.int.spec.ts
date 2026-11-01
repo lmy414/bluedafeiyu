@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import crypto from 'node:crypto'
 import fs from 'node:fs/promises'
+import { createServer, type RequestListener } from 'node:http'
 import os from 'node:os'
 import path from 'node:path'
 
@@ -12,6 +13,8 @@ import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest'
 
 import { Categories } from '@/collections/Categories'
 import { AuditEvents } from '@/collections/AuditEvents'
+import { BulkJobs } from '@/collections/BulkJobs'
+import { TakedownRequests } from '@/collections/TakedownRequests'
 import { Characters } from '@/collections/Characters'
 import { LegacySnapshots } from '@/collections/LegacySnapshots'
 import { Media } from '@/collections/Media'
@@ -23,9 +26,26 @@ import { Creators } from '@/collections/Creators'
 import { Videos } from '@/collections/Videos'
 import { Works } from '@/collections/Works'
 import { exportSiteData } from '@/lib/export-site-data'
-import { applyPublishStatus } from '@/lib/publish'
+import { repairWorkImageMetadata } from '@/lib/image-metadata-repair'
+import { applyPublishStatus, buildPublishSnapshot } from '@/lib/publish'
 import { syncSubmissions } from '@/lib/sync-submissions'
+import { listTasks } from '@/endpoints/tasks'
+import { isGifWork } from '../../../frontend/public/archive/work-format.js'
 import { fixtureI18n } from '../../../tools/localization/test-fixture.mjs'
+import { resolveConfig } from '../../../server/config.mjs'
+import { createAdminHandler } from '../../../server/http.mjs'
+import { createQueue } from '../../../server/queue.mjs'
+
+type AdminHandlerFactory = (options: {
+  cfg: unknown
+  queue: unknown
+  reviewer: string | null
+  bridge: null
+  logger: Console
+}) => RequestListener
+
+// server/http.mjs 是 JS 模块，TS 对解构参数推断不完整；这里只固定测试用到的形状。
+const makeAdminHandler = createAdminHandler as unknown as AdminHandlerFactory
 
 const VALID_CREATED_AT = '2026-09-20T01:02:03.456Z'
 const ORIGINAL_FETCH = globalThis.fetch
@@ -37,6 +57,7 @@ let firstDigest: string
 let secondDigest: string
 let queueItems: any[]
 let rawStatusById = new Map<string, number>()
+const extraBytesById = new Map<string, Buffer>()
 let categoryRelationId: number
 
 function jsonResponse(value: unknown): Response {
@@ -65,6 +86,13 @@ async function makeJpeg(red: number, green: number, blue: number): Promise<Buffe
       width: 32,
     },
   }).jpeg().toBuffer()
+}
+
+async function makeGif(): Promise<Buffer> {
+  const frame = (red: number) => sharp({
+    create: { background: { b: 0, g: 0, r: red, alpha: 1 }, channels: 4, height: 8, width: 8 },
+  }).png().toBuffer()
+  return sharp([await frame(240), await frame(20)], { join: { animated: true } }).gif({ delay: 100 }).toBuffer()
 }
 
 function queueItem(input: { buffer: Buffer; createdAt?: string; name: string; suffix: string }) {
@@ -117,6 +145,8 @@ beforeAll(async () => {
       Topics,
       LegacySnapshots,
       PublishRuns,
+      BulkJobs,
+      TakedownRequests,
       Users,
     ],
     db: sqliteAdapter({
@@ -201,7 +231,7 @@ beforeAll(async () => {
       const id = decodeURIComponent(url.pathname.split('/').slice(-2, -1)[0] || '')
       const status = rawStatusById.get(id)
       if (status && status !== 200) return { ok: false, status } as Response
-      const bytes = bytesById.get(id)
+      const bytes = bytesById.get(id) || extraBytesById.get(id)
       if (!bytes) throw new Error(`unexpected raw request: ${id}`)
       return bytesResponse(bytes)
     }
@@ -492,4 +522,324 @@ describe('syncSubmissions timestamps and formats', () => {
       queueItems.splice(queueItems.length - 2, 2)
     }
   })
+
+  it('keeps GIF format and animation metadata when a later sync reuses an existing preview', async () => {
+    const originalItems = queueItems
+    const gif = await makeGif()
+    const item: any = queueItem({ buffer: gif, name: '二次同步 GIF', suffix: 'gif' })
+    item.ext = '.gif'
+    item.format = 'gif'
+    item.mime = 'image/gif'
+    item.state = 'received'
+    item.review = null
+    const digest = crypto.createHash('sha256').update(gif).digest('hex')
+    queueItems = [item]
+    extraBytesById.set(item.id, gif)
+    try {
+      const first = await syncSubmissions(payload, { baseUrl: 'http://submission.test', limit: 10, token: 'test-token' })
+      expect(first.errors).toEqual([])
+      const mirrored = await (payload as any).find({ collection: 'submissions', where: { submissionId: { equals: item.id } }, limit: 1, depth: 0, overrideAccess: true })
+      expect(mirrored.docs[0].media).toBeTruthy()
+
+      item.state = 'auto_passed'
+      item.review = { content: { name: '二次同步 GIF', description: '', commentary: '第一人称点评', characterId: 'sync-test-character', categoryIds: ['sync-test-category'], tags: ['gif'] } }
+      const second = await syncSubmissions(payload, { baseUrl: 'http://submission.test', limit: 10, token: 'test-token' })
+      expect(second.errors).toEqual([])
+
+      const work = await (payload as any).find({ collection: 'works', where: { sha256: { equals: digest } }, limit: 1, depth: 0, overrideAccess: true })
+      expect(work.docs).toHaveLength(1)
+      expect(work.docs[0].format).toBe('gif')
+      expect(work.docs[0].mimeType).toBe('image/gif')
+      expect(work.docs[0].isAnimated).toBe(true)
+      expect(work.docs[0].width).toBe(8)
+      expect(work.docs[0].height).toBe(8)
+      expect(work.docs[0].fileSize).toBe(gif.length)
+
+      const snapshot = await buildPublishSnapshot(payload, { runId: 'gif-metadata-test', plannedChanges: null })
+      const records = JSON.parse(snapshot.files['data/works.json'])
+      const record = records.find((entry: any) => entry.id === work.docs[0].workId)
+      expect(record.format).toBe('gif')
+      expect(record.mimeType).toBe('image/gif')
+      expect(record.isAnimated).toBe(true)
+      expect(record.path).toMatch(/\.gif$/)
+      expect(isGifWork({ format: record.format, mimeType: record.mimeType, originalUrl: record.path })).toBe(true)
+      const original = snapshot.originals.find((entry: any) => entry.workId === work.docs[0].workId)
+      expect(original.ext).toBe('.gif')
+      expect(original.targetPath).toMatch(/\.gif$/)
+    } finally {
+      queueItems = originalItems
+      extraBytesById.delete(item.id)
+      await (payload as any).delete({ collection: 'works', where: { sha256: { equals: digest } }, context: { audit: false }, overrideAccess: true })
+      await (payload as any).delete({ collection: 'submissions', where: { submissionId: { equals: item.id } }, context: { audit: false }, overrideAccess: true })
+    }
+  }, 60_000)
+
+  it('repairs historical missing GIF metadata from the local content repo without moving published paths', async () => {
+    const gif = await makeGif()
+    const digest = crypto.createHash('sha256').update(gif).digest('hex')
+    const rel = `dist/submissions/originals/sync-test-character/${digest.slice(0, 16)}.png`
+    const contentDir = await fs.mkdtemp(path.join(os.tmpdir(), 'bluedafeiyu-repair-'))
+    const localFile = path.join(contentDir, rel)
+    await fs.mkdir(path.dirname(localFile), { recursive: true })
+    await fs.writeFile(localFile, gif)
+    const rawUrl = `https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/${rel}`
+    const character = await (payload as any).find({ collection: 'characters', where: { characterId: { equals: 'sync-test-character' } }, limit: 1, overrideAccess: true })
+    const created = await (payload as any).create({
+      collection: 'works',
+      data: {
+        workId: `sticker_${digest.slice(0, 24)}`,
+        slug: `repair-${digest.slice(0, 8)}`,
+        name: '历史 GIF 元数据回填',
+        kind: 'submission',
+        channel: 'web',
+        submissionId: `sub_${digest.slice(0, 24)}`,
+        sha256: digest,
+        format: '',
+        mimeType: '',
+        isAnimated: false,
+        width: 0,
+        height: 0,
+        fileSize: 0,
+        character: character.docs[0].id,
+        characters: [character.docs[0].id],
+        categories: [categoryRelationId],
+        status: 'published',
+        needsPublish: false,
+        legacyPaths: { path: rawUrl },
+      },
+      context: { audit: false, skipNeedsPublish: true, skipFieldAccess: true },
+      overrideAccess: true,
+    })
+    try {
+      const dry = await repairWorkImageMetadata(payload, { contentDir, workIds: [created.workId] })
+      expect(dry.mode).toBe('dry-run')
+      expect(dry.repaired).toBe(1)
+      const untouched = await (payload as any).findByID({ collection: 'works', id: created.id, overrideAccess: true })
+      expect(untouched.format).toBe('')
+      expect(untouched.needsPublish).toBe(false)
+
+      const written = await repairWorkImageMetadata(payload, { contentDir, workIds: [created.workId], write: true })
+      expect(written.errors).toEqual([])
+      expect(written.repaired).toBe(1)
+      const saved = await (payload as any).findByID({ collection: 'works', id: created.id, overrideAccess: true })
+      expect(saved.format).toBe('gif')
+      expect(saved.mimeType).toBe('image/gif')
+      expect(saved.isAnimated).toBe(true)
+      expect(saved.width).toBe(8)
+      expect(saved.height).toBe(8)
+      expect(saved.fileSize).toBe(gif.length)
+      expect(saved.needsPublish).toBe(true)
+      expect(saved.legacyPaths.path).toBe(rawUrl)
+      expect(saved.slug).toBe(`repair-${digest.slice(0, 8)}`)
+
+      const exported = JSON.parse((await exportSiteData(payload, { treatPendingAsPublished: true }))['data/works.json'])
+      const record = exported.find((entry: any) => entry.id === created.workId)
+      expect(isGifWork(record)).toBe(true)
+    } finally {
+      await (payload as any).delete({ collection: 'works', id: created.id, context: { audit: false }, overrideAccess: true })
+      await fs.rm(contentDir, { recursive: true, force: true })
+    }
+  }, 60_000)
+
+  it('smoke: real queue + admin HTTP + sync keeps a GIF out of the png fallback', async () => {
+    const storageRoot = await fs.mkdtemp(path.join(os.tmpdir(), 'bluedafeiyu-gif-smoke-'))
+    const cfg = resolveConfig({
+      storageRoot,
+      adminToken: 'smoke-admin-token',
+      hermesReviewToken: 'smoke-hermes-token',
+      adminHost: '127.0.0.1',
+      adminPort: 18788,
+      publicHost: '127.0.0.1',
+      publicPort: 18790,
+    })
+    const queue = await createQueue(cfg)
+    const server = createServer(makeAdminHandler({
+      cfg,
+      queue,
+      reviewer: null,
+      bridge: null,
+      logger: console,
+    }))
+    await new Promise<void>((resolve, reject) => {
+      server.once('error', reject)
+      server.listen(0, '127.0.0.1', resolve)
+    })
+    const address = server.address()
+    if (!address || typeof address === 'string') throw new Error('admin smoke server 未取得端口')
+    const baseUrl = `http://127.0.0.1:${address.port}`
+
+    const character = await (payload as any).find({ collection: 'characters', where: { characterId: { equals: 'deepseek' } }, limit: 1, overrideAccess: true })
+    const category = await (payload as any).find({ collection: 'categories', where: { categoryId: { equals: 'meme' } }, limit: 1, overrideAccess: true })
+    const smokeCharacter = character.docs[0] || await (payload as any).create({
+      collection: 'characters', data: { characterId: 'deepseek', name: 'DeepSeek娘', status: 'active' }, context: { audit: false }, overrideAccess: true,
+    })
+    const smokeCategory = category.docs[0] || await (payload as any).create({
+      collection: 'categories', data: { categoryId: 'meme', name: '梗图', status: 'active' }, context: { audit: false }, overrideAccess: true,
+    })
+
+    const gif = await makeGif()
+    const digest = crypto.createHash('sha256').update(gif).digest('hex')
+    let submissionId = ''
+    const stubbedFetch = globalThis.fetch
+    globalThis.fetch = ORIGINAL_FETCH
+    try {
+      const queued = await queue.enqueue({
+        source: 'web',
+        sourceId: `smoke:${digest}`,
+        buffer: gif,
+        fields: { name: '真实 GIF 冒烟', character: 'deepseek', categoryId: 'meme' },
+        origin: { via: 'web' },
+      }) as unknown as { item: { id: string } }
+      submissionId = queued.item.id
+
+      const first = await syncSubmissions(payload, { baseUrl, limit: 10, token: 'smoke-admin-token' })
+      expect(first.errors).toEqual([])
+
+      const reviewResponse = await fetch(`${baseUrl}/api/v1/internal/review-results`, {
+        method: 'POST',
+        headers: { Authorization: 'Bearer smoke-hermes-token', 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          reviewer: 'hermes',
+          submissionId,
+          verdict: 'pass',
+          confidence: 0.99,
+          reason: 'smoke',
+          content: {
+            name: '真实 GIF 冒烟',
+            description: '真实 GIF 投稿冒烟验证',
+            commentary: '我来看看这张动图。',
+            characterId: 'deepseek',
+            categoryIds: ['meme'],
+            tags: ['gif'],
+          },
+        }),
+      })
+      expect(reviewResponse.status).toBe(200)
+      expect((await reviewResponse.json()).state).toBe('auto_passed')
+
+      const second = await syncSubmissions(payload, { baseUrl, limit: 10, token: 'smoke-admin-token' })
+      expect(second.errors).toEqual([])
+      const work = await (payload as any).find({ collection: 'works', where: { sha256: { equals: digest } }, limit: 1, depth: 0, overrideAccess: true })
+      expect(work.docs).toHaveLength(1)
+      expect(work.docs[0].format).toBe('gif')
+      expect(work.docs[0].mimeType).toBe('image/gif')
+      expect(work.docs[0].isAnimated).toBe(true)
+      expect(work.docs[0].width).toBe(8)
+      expect(work.docs[0].height).toBe(8)
+      expect(work.docs[0].fileSize).toBe(gif.length)
+
+      const snapshot = await buildPublishSnapshot(payload, { runId: 'gif-smoke', plannedChanges: null })
+      const records = JSON.parse(snapshot.files['data/works.json'])
+      const record = records.find((entry: any) => entry.id === work.docs[0].workId)
+      expect(record.path).toMatch(/\.gif$/)
+      expect(isGifWork(record)).toBe(true)
+      expect(snapshot.originals.find((entry: any) => entry.workId === work.docs[0].workId).ext).toBe('.gif')
+    } finally {
+      globalThis.fetch = stubbedFetch
+      await new Promise<void>((resolve) => server.close(() => resolve()))
+      await fs.rm(storageRoot, { recursive: true, force: true })
+      if (submissionId) await (payload as any).delete({ collection: 'submissions', where: { submissionId: { equals: submissionId } }, context: { audit: false }, overrideAccess: true })
+      await (payload as any).delete({ collection: 'works', where: { sha256: { equals: digest } }, context: { audit: false }, overrideAccess: true })
+      if (!character.docs[0]) await (payload as any).delete({ collection: 'characters', id: smokeCharacter.id, context: { audit: false }, overrideAccess: true })
+      if (!category.docs[0]) await (payload as any).delete({ collection: 'categories', id: smokeCategory.id, context: { audit: false }, overrideAccess: true })
+    }
+  }, 60_000)
+
+  it('server Agent HTTP -> admin sync -> console keeps the real Hermes batch', async () => {
+    const storageRoot = await fs.mkdtemp(path.join(os.tmpdir(), 'bluedafeiyu-batch-smoke-'))
+    const cfg = resolveConfig({
+      storageRoot,
+      adminToken: 'batch-admin-token',
+      hermesReviewToken: 'batch-hermes-token',
+      adminHost: '127.0.0.1',
+      adminPort: 18789,
+      publicHost: '127.0.0.1',
+      publicPort: 18791,
+    })
+    const queue = await createQueue(cfg)
+    const server = createServer(makeAdminHandler({ cfg, queue, reviewer: 'hermes', bridge: null, logger: console }))
+    await new Promise<void>((resolve, reject) => {
+      server.once('error', reject)
+      server.listen(0, '127.0.0.1', resolve)
+    })
+    const address = server.address()
+    if (!address || typeof address === 'string') throw new Error('batch smoke server 未取得端口')
+    const baseUrl = `http://127.0.0.1:${address.port}`
+    const gif = await makeGif()
+    const digest = crypto.createHash('sha256').update(gif).digest('hex')
+    let submissionId = ''
+    const stubbedFetch = globalThis.fetch
+    globalThis.fetch = ORIGINAL_FETCH
+    try {
+      const queued = await queue.enqueue({
+        source: 'web',
+        sourceId: `batch:${digest}`,
+        buffer: gif,
+        fields: { name: '服务器批次投稿', character: 'deepseek', categoryId: 'meme' },
+        origin: { via: 'web' },
+      }) as unknown as { item: { id: string } }
+      submissionId = queued.item.id
+      const call = async (body: Record<string, unknown>) => {
+        const response = await fetch(`${baseUrl}/api/v1/internal/agent`, {
+          method: 'POST',
+          headers: { Authorization: 'Bearer batch-hermes-token', 'Content-Type': 'application/json' },
+          body: JSON.stringify(body),
+        })
+        const value = await response.json()
+        return { httpStatus: response.status, ...value }
+      }
+      const batchId = 'cron:b0f01cac9b53:e2e-batch'
+      const claim = await call({ action: 'claim', id: submissionId, batchId, batchLabel: 'Hermes 审核批次', sourceKind: 'hermes' })
+      expect(claim.httpStatus).toBe(200)
+      const imageResponse = await fetch(`${baseUrl}/api/v1/internal/agent`, {
+        method: 'POST',
+        headers: { Authorization: 'Bearer batch-hermes-token', 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'image', id: submissionId, token: claim.token }),
+      })
+      expect(imageResponse.status).toBe(200)
+      expect((await imageResponse.arrayBuffer()).byteLength).toBeGreaterThan(0)
+      const draft = await call({
+        action: 'draft',
+        id: submissionId,
+        token: claim.token,
+        review: { verdict: 'manual', confidence: 0.6, reason: '证据不足，保留复核' },
+        content: {
+          name: '服务器批次投稿',
+          description: '真实服务器批次链路',
+          commentary: '等待人工复核。',
+          characterId: 'deepseek',
+          characterIds: ['deepseek'],
+          categoryIds: ['meme'],
+          tags: ['批次'],
+        },
+      })
+      expect(draft.httpStatus).toBe(200)
+      const complete = await call({ action: 'complete', id: submissionId, token: claim.token })
+      expect(complete.httpStatus).toBe(200)
+      expect(complete.state).toBe('needs_manual')
+      const synced = await syncSubmissions(payload, { baseUrl, limit: 10, token: 'batch-admin-token' })
+      expect(synced.errors).toEqual([])
+      const mirrored = await (payload as any).find({ collection: 'submissions', where: { submissionId: { equals: submissionId } }, limit: 1, depth: 0, overrideAccess: true })
+      expect(mirrored.docs[0].agentProgress).toMatchObject({ batchId, sourceKind: 'hermes' })
+      expect(mirrored.docs[0].agentProgress.batchHistory.at(-1)).toMatchObject({ batchId, status: 'completed' })
+      const owner = await (payload as any).create({ collection: 'users', data: { email: `batch-${Date.now()}@test.local`, password: 'test-password', role: 'owner' }, overrideAccess: true, context: { audit: false } })
+      try {
+        const tasks = await (await listTasks({ payload, user: owner, url: `http://localhost/?task=${encodeURIComponent(submissionId)}` } as any)).json()
+        expect(tasks.docs[0]).toMatchObject({ kind: 'submission', batchId, sourceKind: 'hermes', sourceLabel: 'Hermes Agent', batchItemCount: 1 })
+        expect(tasks.docs[0].group).toBe('decide')
+        const history = await (await listTasks({ payload, user: owner, url: 'http://localhost/?group=history&sourceKind=hermes' } as any)).json()
+        expect(history.batches.some((batch: any) => batch.batchId === batchId && batch.itemCount === 1 && batch.status === 'finished')).toBe(true)
+        expect(history.batchTotal).toBeGreaterThanOrEqual(1)
+        const inBatch = await (await listTasks({ payload, user: owner, url: `http://localhost/?batch=${encodeURIComponent(batchId)}` } as any)).json()
+        expect(inBatch.docs.some((row: any) => row.sourceId === submissionId)).toBe(true)
+      } finally {
+        await (payload as any).delete({ collection: 'users', id: owner.id, overrideAccess: true, context: { audit: false } })
+      }
+    } finally {
+      globalThis.fetch = stubbedFetch
+      await new Promise<void>((resolve) => server.close(() => resolve()))
+      await fs.rm(storageRoot, { recursive: true, force: true })
+      if (submissionId) await (payload as any).delete({ collection: 'submissions', where: { submissionId: { equals: submissionId } }, context: { audit: false }, overrideAccess: true })
+    }
+  }, 60_000)
 })

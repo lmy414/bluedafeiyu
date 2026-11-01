@@ -5,6 +5,7 @@ import React, { useEffect, useRef, useState } from 'react'
 
 import { useAdminApi } from './api'
 import { CHANNELS, formatDate, labelOf } from './constants'
+import { JobProgress, jobStageLabel, useBulkJob, type BulkJobState } from './JobProgress'
 import type { CategoryDoc, CharacterDoc, MediaDoc, SubmissionDoc, WorkDoc } from './types'
 import { asObject, relationID, workOriginalURL } from './types'
 
@@ -81,6 +82,21 @@ function submissionImage(submission: SubmissionDoc): string | undefined {
   return media?.thumbnailURL || media?.sizes?.thumbnail?.url || media?.url
 }
 
+/**
+ * GIF 只看原图格式/ MIME / 文件名，不看 isAnimated（动画 WebP 不是 GIF）。
+ * 元数据缺失时明确显示未知，不默认 png。
+ */
+function formatLabel(work?: WorkDoc, submission?: SubmissionDoc): string {
+  const media = asObject<MediaDoc>(work?.preview || submission?.media)
+  const raw = String(work?.format || media?.mimeType || media?.filename || media?.url || '').toLowerCase()
+  if (raw.includes('gif')) return 'GIF'
+  if (/webp/.test(raw)) return 'WebP'
+  if (/png/.test(raw)) return 'PNG'
+  if (/jpe?g/.test(raw)) return 'JPEG'
+  if (/apng/.test(raw)) return 'APNG'
+  return '格式未知'
+}
+
 function initialForm(
   item: DrawerItem,
   categories: CategoryDoc[],
@@ -149,10 +165,15 @@ function initialForm(
 }
 
 type WorkDrawerProps = {
+  activeJob?: WorkDoc['activeJob']
   categories: CategoryDoc[]
   characters: CharacterDoc[]
+  hasNext?: boolean
+  hasPrev?: boolean
   item: DrawerItem
+  onAddToTopic?: (work: WorkDoc) => void
   onClose: () => void
+  onNavigate?: (offset: number) => void
   onSaved: () => void
 }
 
@@ -185,15 +206,16 @@ export function WorkDrawer(props: WorkDrawerProps) {
   return <WorkEditor {...props} />
 }
 
-function WorkEditor({ categories, characters, item, onClose, onSaved }: WorkDrawerProps) {
+function WorkEditor({ activeJob, categories, characters, hasNext, hasPrev, item, onAddToTopic, onClose, onNavigate, onSaved }: WorkDrawerProps) {
   const { get, mutate } = useAdminApi()
   const submission = item.kind === 'submission' ? item.submission : undefined
   const work = item.kind === 'work' ? item.work : asObject<WorkDoc>(submission?.work)
   const [form, setForm] = useState(() => initialForm(item, categories, characters))
   const [saving, setSaving] = useState(false)
   const [message, setMessage] = useState('')
-  const [task, setTask] = useState('')
   const [submitted, setSubmitted] = useState('')
+  const [submittedJobId, setSubmittedJobId] = useState('')
+  const [detectedJobId, setDetectedJobId] = useState('')
   const requestKeys = useRef(new Map<string, string>())
   const formKey = JSON.stringify(form)
   const [events, setEvents] = useState<AuditEvent[]>([])
@@ -218,8 +240,71 @@ function WorkEditor({ categories, characters, item, onClose, onSaved }: WorkDraw
   const canInclude =
     submission && !submission.work && ['auto_rejected', 'needs_manual'].includes(submission.state)
   const editable = Boolean(work || canInclude)
+  const activeJobId = activeJob?.jobId || detectedJobId
+  const { job: polledJob } = useBulkJob(submittedJobId || activeJobId)
+  const job: BulkJobState | null =
+    polledJob ||
+    (activeJobId
+      ? {
+          cursor: activeJob?.cursor || 0,
+          jobId: activeJobId,
+          status: activeJob?.status || 'queued',
+          total: activeJob?.total || 0,
+        }
+      : null)
+  const jobRunning = Boolean(job && ['queued', 'running'].includes(job.status))
+  const jobBlocked = Boolean(jobRunning || (activeJobId && !job))
+  const jobState = job?.status || ''
+  type StatefulDoc = (WorkDoc | SubmissionDoc) & { processingState?: string; targetStatus?: string }
+  const stateRef = (work || submission) as StatefulDoc | undefined
+  const processState = stateRef?.processingState || (work ? (work.needsPublish ? 'needs_publish' : work.status) : submission?.state)
+  const currentState =
+    processState === 'needs_publish'
+      ? work?.liveVersion
+        ? '已有线上版本，发布后更新'
+        : stateRef?.targetStatus === 'hidden' || (work && ['hidden', 'removed', 'deleted'].includes(work.status))
+          ? work
+            ? `发布后${work.status === 'hidden' ? '隐藏' : work.status === 'removed' ? '移除' : '删除'}`
+            : '已保存，待发布'
+          : '已保存，待发布'
+      : processState === 'processing'
+        ? '后台任务处理中'
+        : processState === 'blocked'
+          ? '技术问题暂挂'
+          : processState === 'published'
+            ? '当前已上线'
+            : processState === 'hidden'
+              ? '已隐藏，公开站点可能仍保留旧版本'
+              : processState === 'removed'
+                ? '已移除，等待发布生效'
+                : processState === 'deleted'
+                  ? '已删除，等待发布生效'
+                  : processState === 'rejected'
+                    ? '已拒绝收录'
+                    : processState === 'needs_review'
+                      ? '等待人工判断'
+                      : submission?.work
+                        ? '已关联作品，状态以作品为准'
+                        : '尚未收录，提交后先进入待发布'
+  const completedJob = useRef('')
+  useEffect(() => {
+    if (!job || jobRunning || completedJob.current === job.jobId) return
+    completedJob.current = job.jobId
+    onSaved()
+    window.dispatchEvent(new Event('s3-bulk-submitted'))
+  }, [job, jobRunning, onSaved])
   const formAtOpen = useRef(formKey)
   const section = useRef<HTMLElement>(null)
+  const navigate = (offset: number) => {
+    if (!onNavigate) return
+    if (
+      formKey !== formAtOpen.current &&
+      submitted !== formKey &&
+      !window.confirm('当前修改尚未提交，切换后不会保留。继续浏览其他条目？')
+    )
+      return
+    onNavigate(offset)
+  }
   const close = () => {
     if (saving) return
     if (
@@ -241,6 +326,28 @@ function WorkEditor({ categories, characters, item, onClose, onSaved }: WorkDraw
     }
   }, [])
   useEffect(() => {
+    if (activeJob?.jobId) return
+    const key = work?.workId || submission?.submissionId
+    if (!key) return
+    let live = true
+    void get<{ docs: Array<SubmissionDoc | WorkDoc> }>('/console/list', {
+      kind: work ? 'works' : 'submissions',
+      keyword: key,
+      limit: 5,
+    })
+      .then((result) => {
+        if (!live) return
+        const row = (result.docs || []).find((doc) =>
+          'workId' in doc ? doc.workId === key : doc.submissionId === key,
+        )
+        if (row?.activeJob?.jobId) setDetectedJobId(row.activeJob.jobId)
+      })
+      .catch(() => undefined)
+    return () => {
+      live = false
+    }
+  }, [activeJob?.jobId, get, submission?.submissionId, work?.workId])
+  useEffect(() => {
     const target = work?.workId || submission?.submissionId
     if (target)
       void get<{ docs: AuditEvent[] }>('/audit-events', {
@@ -253,6 +360,10 @@ function WorkEditor({ categories, characters, item, onClose, onSaved }: WorkDraw
   }, [get, work?.workId, submission?.submissionId])
   async function submit() {
     if (saving || submitted === formKey) return
+    if (jobBlocked) {
+      setMessage('这条内容已有后台任务在执行，完成前不能重复提交。')
+      return
+    }
     if (!form.characters.length) {
       setMessage('请至少选择一个角色。')
       return
@@ -275,12 +386,12 @@ function WorkEditor({ categories, characters, item, onClose, onSaved }: WorkDraw
         confirm: work ? 'WRITE' : 'MANUAL_INCLUDE',
         requestId: requestKeys.current.get(key),
       })
-      setTask(response.job.jobId)
+      setSubmittedJobId(response.job.jobId)
       setSubmitted(formKey)
       setMessage(
         work
-          ? '修改任务已提交，文案校验和翻译会自动完成。'
-          : '人工收录任务已提交，补全文案、英日翻译和校验将自动完成，然后进入待发布。',
+          ? `任务已接收（${response.job.jobId}），文案校验和翻译将在后台执行；现在还不等于已保存或已上线。`
+          : `人工收录任务已接收（${response.job.jobId}），后台会补全文案、英日翻译和校验，完成后进入待发布，不等于已上线。`,
       )
       window.dispatchEvent(new Event('s3-bulk-submitted'))
       onSaved()
@@ -341,9 +452,31 @@ function WorkEditor({ categories, characters, item, onClose, onSaved }: WorkDraw
             <p className="s3-eyebrow">{work ? '编辑作品' : '看图审核'}</p>
             <h2>{title}</h2>
           </div>
-          <button className="s3-icon-button" type="button" aria-label="关闭" onClick={close}>
-            ×
-          </button>
+          <div className="s3-drawer-header-actions">
+            {onNavigate ? (
+              <>
+                <button
+                  className="s3-button s3-button--ghost s3-button--small"
+                  disabled={!hasPrev}
+                  onClick={() => navigate(-1)}
+                  type="button"
+                >
+                  上一张
+                </button>
+                <button
+                  className="s3-button s3-button--ghost s3-button--small"
+                  disabled={!hasNext}
+                  onClick={() => navigate(1)}
+                  type="button"
+                >
+                  下一张
+                </button>
+              </>
+            ) : null}
+            <button className="s3-icon-button" type="button" aria-label="关闭" onClick={close}>
+              ×
+            </button>
+          </div>
         </header>
         <div className="s3-review-layout">
           <div className="s3-review-image-pane">
@@ -360,7 +493,13 @@ function WorkEditor({ categories, characters, item, onClose, onSaved }: WorkDraw
                 查看原图
               </a>
             ) : null}
-            <p className="s3-muted">{labelOf(CHANNELS, work?.channel || submission?.source)}</p>
+            <p className="s3-muted">
+              {labelOf(CHANNELS, work?.channel || submission?.source)} · 格式：{formatLabel(work, submission)}
+            </p>
+            <div className={`s3-publish-state ${work?.status === 'published' && !work.needsPublish ? 'is-live' : ''}`}>
+              <span>当前状态</span>
+              <strong>{currentState}</strong>
+            </div>
             <section className="s3-review-reason">
               <h3>AI 审核理由</h3>
               <p>{String(review?.reason || review?.summary || '未记录，请核对图片与来源。')}</p>
@@ -475,13 +614,14 @@ function WorkEditor({ categories, characters, item, onClose, onSaved }: WorkDraw
                 {message}
               </p>
             ) : null}
-            {task ? (
-              <Link
-                className="s3-button s3-button--secondary"
-                href={`/admin?view=all&task=${encodeURIComponent(task)}`}
-              >
-                查看收录与翻译任务
+            {job ? <JobProgress job={job} onClose={undefined} showLinks /> : null}
+            {jobState === 'succeeded' && work ? (
+              <Link className="s3-button s3-button--secondary" href={`/admin/library?work=${encodeURIComponent(String(work.id))}`}>
+                打开当前作品核对
               </Link>
+            ) : null}
+            {jobState === 'succeeded' ? (
+              <p className="s3-muted">内容已写入后台；公开站点要等发布批次成功后才更新。</p>
             ) : null}
             <details className="s3-form-section">
               <summary>来源、原始字段与操作历史</summary>
@@ -583,9 +723,14 @@ function WorkEditor({ categories, characters, item, onClose, onSaved }: WorkDraw
         </div>
         <footer className="s3-drawer-footer">
           <span className="s3-muted">
-            {task ? '任务已保存，关闭页面后继续' : '收录完成后等待发布'}
+            {job ? jobStageLabel(job) : currentState}
           </span>
           <div className="s3-page-actions">
+            {work && onAddToTopic ? (
+              <button className="s3-button s3-button--secondary" onClick={() => onAddToTopic(work)} type="button">
+                加入专题
+              </button>
+            ) : null}
             <button
               className="s3-button s3-button--ghost"
               type="button"
@@ -598,16 +743,18 @@ function WorkEditor({ categories, characters, item, onClose, onSaved }: WorkDraw
               <button
                 className="s3-button s3-button--primary"
                 type="button"
-                disabled={saving || submitted === formKey}
+                disabled={saving || submitted === formKey || jobBlocked}
                 onClick={() => void submit()}
               >
                 {saving
                   ? '提交中…'
-                  : submitted === formKey
-                    ? '任务已提交'
-                    : work
-                      ? '保存修改'
-                      : '人工收录'}
+                  : jobBlocked
+                    ? '任务处理中'
+                    : submitted === formKey
+                      ? '任务已提交'
+                      : work
+                        ? '提交修改任务'
+                        : '提交收录任务'}
               </button>
             ) : null}
           </div>

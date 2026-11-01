@@ -1,10 +1,21 @@
 import type { CollectionConfig } from 'payload'
 
 import { TopicsUpsertEndpoint } from '../endpoints/topics-upsert'
+import { TopicMembershipEndpoints } from '../endpoints/topics-membership'
+import { TopicTranslationEndpoints } from '../endpoints/topics-translate'
 import { canDeleteContent, canManageContent, canReadContent } from '../lib/access'
 import { auditAfterChange, auditAfterDelete } from '../lib/audit'
+import { topicSourceHash } from '../lib/topics-translation'
 
 const topicIdPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
+
+function hasAnyTranslation(doc: any) {
+  return Boolean(doc?.nameEn || doc?.summaryEn || doc?.nameJa || doc?.summaryJa)
+}
+
+function completeTranslation(doc: any) {
+  return Boolean(doc?.nameEn && doc?.summaryEn && doc?.nameJa && doc?.summaryJa)
+}
 
 /**
  * 作者主页 / 渠道链接只允许 http、https；其余（javascript:、data: 等）一律拒绝。
@@ -125,6 +136,9 @@ function isEmptyAuthor(author: { bio?: unknown; channels?: unknown; name?: unkno
 
 const beforeChangeTopic = ({ data, operation, originalDoc, req }: any) => {
   const next = { ...data }
+  // Existing production databases require a non-null summary. Preserve that
+  // constraint while allowing a draft to start without an introduction.
+  if ((operation === 'create' && next.summary == null) || next.summary === null) next.summary = ''
   // 只在本批次确实带了 author 键时接管它。真正的「省略 author」判断在字段级
   // beforeValidateAuthor 里（那时 data 还没被 Payload 的 fallback 注入过）；
   // 这里只做兜底，保证落库形态一定是「子字段显式值 + channels 数组」，
@@ -148,6 +162,41 @@ const beforeChangeTopic = ({ data, operation, originalDoc, req }: any) => {
   if (originalDoc?.status === 'active' && next.topicId && next.topicId !== originalDoc.topicId) {
     throw new Error('专题上线后 topicId 不能修改')
   }
+  if (!req.context?.skipTranslationState) {
+    const name = next.name !== undefined ? next.name : originalDoc?.name
+    const summary = next.summary !== undefined ? next.summary : originalDoc?.summary
+    const sourceHash = topicSourceHash(name, summary)
+    const previousHash = originalDoc?.translationSourceHash || ''
+    const sourceChanged = Boolean(originalDoc) && (String(name || '') !== String(originalDoc.name || '') || String(summary || '') !== String(originalDoc.summary || ''))
+    const translationsChanged = ['nameEn', 'summaryEn', 'nameJa', 'summaryJa'].some(
+      (key) => next[key] !== undefined && next[key] !== originalDoc?.[key],
+    )
+    if (sourceChanged || translationsChanged) {
+      if (originalDoc) next.translationRevision = Number(originalDoc.translationRevision || 0) + 1
+      const merged = { ...(originalDoc || {}), ...next }
+      const hasTranslations = hasAnyTranslation(merged)
+      const complete = completeTranslation(merged)
+      if (sourceChanged && translationsChanged && complete) {
+        // Human edited Chinese and supplied complete EN/JA in the same save.
+        next.translationSourceHash = sourceHash
+        next.translationState = 'ready'
+      } else if (sourceChanged) {
+        // Legacy rows may have translations but no sourceHash. A Chinese edit
+        // invalidates them; never treat the missing hash as a new baseline.
+        next.translationSourceHash = previousHash || null
+        next.translationState = hasTranslations ? 'stale' : 'none'
+      } else {
+        // Manual translation edit with unchanged Chinese: record a real hash.
+        next.translationSourceHash = previousHash || sourceHash
+        next.translationState = complete ? 'ready' : hasTranslations ? 'stale' : 'none'
+      }
+      next.translationUpdatedAt = new Date().toISOString()
+    } else if (!originalDoc) {
+      const complete = completeTranslation({ ...next })
+      next.translationSourceHash = complete ? sourceHash : null
+      next.translationState = complete ? 'ready' : 'none'
+    }
+  }
   return next
 }
 
@@ -165,7 +214,7 @@ export const Topics: CollectionConfig = {
     update: canManageContent,
     delete: canDeleteContent,
   },
-  endpoints: [TopicsUpsertEndpoint],
+  endpoints: [TopicsUpsertEndpoint, ...TopicMembershipEndpoints, ...TopicTranslationEndpoints],
   hooks: {
     beforeChange: [beforeChangeTopic],
     afterChange: [auditAfterChange('topics')],
@@ -182,11 +231,24 @@ export const Topics: CollectionConfig = {
       validate: (value: unknown) => (typeof value === 'string' && topicIdPattern.test(value) ? true : 'topicId 必须是 kebab-case'),
     },
     { name: 'name', type: 'text', required: true, label: '名称' },
-    { name: 'summary', type: 'textarea', required: true, label: '简介' },
+    { name: 'summary', type: 'textarea', label: '简介' },
     { name: 'nameEn', type: 'text', label: '英文名称' },
     { name: 'summaryEn', type: 'textarea', label: '英文简介' },
     { name: 'nameJa', type: 'text', label: '日文名称' },
     { name: 'summaryJa', type: 'textarea', label: '日文简介' },
+    { name: 'translationState', type: 'select', defaultValue: 'none', label: '译文状态', admin: { readOnly: true }, options: [
+      { label: '无译文', value: 'none' },
+      { label: '可能过期', value: 'stale' },
+      { label: '排队中', value: 'queued' },
+      { label: '生成中', value: 'running' },
+      { label: '已就绪', value: 'ready' },
+      { label: '失败', value: 'failed' },
+    ] },
+    { name: 'translationSourceHash', type: 'text', label: '译文源摘要', admin: { readOnly: true } },
+    { name: 'translationRevision', type: 'number', defaultValue: 0, label: '人工内容修订号', admin: { readOnly: true } },
+    { name: 'translationUpdatedAt', type: 'date', label: '译文更新时间', admin: { readOnly: true } },
+    { name: 'translationError', type: 'textarea', label: '译文失败原因', admin: { readOnly: true } },
+    { name: 'translationJobId', type: 'text', label: '译文任务', admin: { readOnly: true } },
     { name: 'cover', type: 'relationship', relationTo: 'works', label: '封面作品' },
     { name: 'works', type: 'relationship', relationTo: 'works', hasMany: true, label: '收录作品' },
     {

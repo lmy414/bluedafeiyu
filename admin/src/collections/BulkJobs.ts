@@ -13,8 +13,8 @@ export const BulkJobs: CollectionConfig = {
   },
   fields: [
     { name: 'jobId', type: 'text', unique: true, index: true, required: true },
-    { name: 'operation', type: 'select', required: true, options: ['write-fields', 'ai-fill', 'translate', 'manual-include'] },
-    { name: 'target', type: 'select', required: true, options: ['works', 'submissions'] },
+    { name: 'operation', type: 'select', required: true, options: ['write-fields', 'ai-fill', 'translate', 'manual-include', 'translate-topic'] },
+    { name: 'target', type: 'select', required: true, options: ['works', 'submissions', 'topics'] },
     {
       name: 'status',
       type: 'select',

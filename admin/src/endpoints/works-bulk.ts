@@ -3,7 +3,8 @@ import type { Endpoint, PayloadRequest } from 'payload'
 
 import { json, readJsonBody, requireOwnerOrBot } from '../lib/endpoint-auth'
 import { writeAudit } from '../lib/audit'
-import { validateContent } from '../lib/sync-submissions'
+import { lookupSubmissionImageMetadata, validateContent } from '../lib/sync-submissions'
+import { addTopicMemberships } from '../lib/topics-membership'
 import { submissionAttribution } from '../lib/attribution.mjs'
 import { sourceHash } from '../lib/localization.mjs'
 
@@ -71,81 +72,201 @@ async function vocabulary(req: PayloadRequest) {
   }
 }
 
-async function includeSubmissions(req: PayloadRequest, ids: string[]): Promise<{ workIds: string[]; skipped: string[] }> {
+export type BulkItemResult = {
+  id: string
+  status: 'succeeded' | 'skipped' | 'failed'
+  workId?: string
+  reason?: string
+}
+
+type IncludePlan =
+  | { action: 'restore'; id: string; work: any }
+  | { action: 'link'; id: string; doc: any; target: any }
+  | {
+      action: 'create'
+      id: string
+      doc: any
+      check: any
+      image: any
+      character: any
+      categories: any[]
+      workId: string
+    }
+  | { action: 'skip'; id: string; reason: string; workId?: string }
+  | { action: 'fail'; id: string; reason: string }
+
+async function includeSubmissions(req: PayloadRequest, ids: string[]): Promise<{
+  workIds: string[]
+  skipped: string[]
+  failed: string[]
+  errors: string[]
+  results: BulkItemResult[]
+}> {
   const payload = req.payload as any
   const vocab = await vocabulary(req)
+  const plans: IncludePlan[] = []
+  // 先只读校验全部条目，避免后面的校验失败让前面的写入变成“看不见的部分成功”。
+  for (const id of ids) {
+    try {
+      const existingWork = await payload.find({ collection: 'works', where: { workId: { equals: id } }, limit: 1, depth: 0, overrideAccess: true })
+      const work = existingWork.docs[0]
+      if (work) {
+        if (work.status !== 'published' && work.status !== 'deleted')
+          plans.push({ action: 'restore', id, work })
+        else
+          plans.push({ action: 'skip', id, workId: work.workId, reason: `作品已${work.status === 'published' ? '上线' : '删除'}` })
+        continue
+      }
+      const submission = await payload.find({
+        collection: 'submissions',
+        where: { or: [{ submissionId: { equals: id } }, ...(/^\d+$/.test(id) ? [{ id: { equals: Number(id) } }] : [])] },
+        limit: 1,
+        depth: 1,
+        overrideAccess: true,
+      })
+      const doc = submission.docs[0]
+      if (!doc) {
+        plans.push({ action: 'fail', id, reason: `找不到投稿 ${id}` })
+        continue
+      }
+      const check = validateContent(doc.review?.content, vocab, { origin: doc.origin, submitter: submissionAttribution(doc.fields) })
+      if (!check.ok) {
+        plans.push({ action: 'fail', id, reason: `投稿 ${id} 内容不合法：${check.errors.join('；')}` })
+        continue
+      }
+      if (!doc.sha256) {
+        plans.push({ action: 'fail', id, reason: `投稿 ${id} 缺 sha256` })
+        continue
+      }
+      const duplicate = await payload.find({ collection: 'works', where: { sha256: { equals: doc.sha256 } }, limit: 1, depth: 0, overrideAccess: true })
+      if (duplicate.docs[0]) {
+        plans.push({ action: 'link', id, doc, target: duplicate.docs[0] })
+        continue
+      }
+      const character = vocab.characterDocs.find((item: any) => item.characterId === check.value.characterId)
+      const categories = vocab.categoryDocs.filter((item: any) => check.value.categoryIds.includes(item.categoryId))
+      let image
+      try {
+        image = await lookupSubmissionImageMetadata(String(doc.submissionId), String(doc.sha256))
+      } catch (error) {
+        plans.push({ action: 'fail', id, reason: (error as Error).message })
+        continue
+      }
+      plans.push({
+        action: 'create',
+        id,
+        doc,
+        check,
+        image,
+        character,
+        categories,
+        workId: `sticker_${String(doc.sha256).slice(0, 24)}`,
+      })
+    } catch (error) {
+      plans.push({ action: 'fail', id, reason: (error as Error).message })
+    }
+  }
+
   const workIds: string[] = []
   const skipped: string[] = []
-  for (const id of ids) {
-    const existingWork = await payload.find({ collection: 'works', where: { workId: { equals: id } }, limit: 1, depth: 0, overrideAccess: true })
-    if (existingWork.docs[0]) {
-      const work = existingWork.docs[0]
-      if (work.status !== 'published' && work.status !== 'deleted') {
+  const failed: string[] = []
+  const errors: string[] = []
+  const results: BulkItemResult[] = []
+  const succeed = (id: string, workId: string) => {
+    workIds.push(workId)
+    results.push({ id, status: 'succeeded', workId })
+  }
+  const skip = (id: string, reason: string, workId?: string) => {
+    skipped.push(id)
+    results.push({ id, status: 'skipped', ...(workId ? { workId } : {}), reason })
+  }
+  const fail = (id: string, reason: string) => {
+    failed.push(id)
+    errors.push(`${id}: ${reason}`)
+    results.push({ id, status: 'failed', reason })
+  }
+  for (const plan of plans) {
+    if (plan.action === 'fail') {
+      fail(plan.id, plan.reason)
+      continue
+    }
+    if (plan.action === 'skip') {
+      skip(plan.id, plan.reason, plan.workId)
+      continue
+    }
+    try {
+      if (plan.action === 'restore') {
         await payload.update({
           collection: 'works',
-          id: work.id,
+          id: plan.work.id,
           data: { status: 'pending', needsPublish: true, changeAction: 'add' },
           context: { audit: false, skipFieldAccess: true },
           overrideAccess: true,
           req,
         })
-        workIds.push(work.workId)
-      } else skipped.push(id)
-      continue
+        succeed(plan.id, plan.work.workId)
+        continue
+      }
+      if (plan.action === 'link') {
+        await payload.update({
+          collection: 'submissions',
+          id: plan.doc.id,
+          data: { work: plan.target.id },
+          context: { audit: false },
+          overrideAccess: true,
+          req,
+        })
+        skip(plan.id, '已存在同图作品，已关联', plan.target.workId)
+        continue
+      }
+      const created = await payload.create({
+        collection: 'works',
+        data: {
+          workId: plan.workId,
+          name: plan.check.value.name,
+          description: plan.check.value.description,
+          commentary: plan.check.value.commentary,
+          kind: 'submission',
+          channel: plan.doc.source || 'manual',
+          submissionId: plan.doc.submissionId,
+          sha256: plan.doc.sha256,
+          format: plan.image?.format,
+          mimeType: plan.image?.mimeType,
+          isAnimated: plan.image?.isAnimated,
+          width: plan.image?.width,
+          height: plan.image?.height,
+          fileSize: plan.image?.fileSize,
+          character: plan.character?.id,
+          characters: plan.check.value.characterIds.map((id: string) => vocab.characterDocs.find((item: any) => item.characterId === id)?.id),
+          categories: plan.categories.map((item: any) => item.id),
+          tags: plan.check.value.tags.map((value: string) => ({ value })),
+          preview: plan.doc.media?.id || plan.doc.media,
+          status: 'pending',
+          needsPublish: true,
+          changeAction: 'add',
+          review: plan.doc.review || null,
+          origin: plan.doc.origin || {},
+          submitter: submissionAttribution(plan.doc.fields || {}) || undefined,
+          legacySource: 'submission-sync',
+        },
+        context: { audit: false, skipNeedsPublish: true, skipFieldAccess: true },
+        overrideAccess: true,
+        req,
+      })
+      await payload.update({
+        collection: 'submissions',
+        id: plan.doc.id,
+        data: { work: created.id },
+        context: { audit: false },
+        overrideAccess: true,
+        req,
+      })
+      succeed(plan.id, created.workId)
+    } catch (error) {
+      fail(plan.id, (error as Error).message)
     }
-    const submission = await payload.find({
-      collection: 'submissions',
-      where: { or: [{ submissionId: { equals: id } }, ...(/^\d+$/.test(id) ? [{ id: { equals: Number(id) } }] : [])] },
-      limit: 1,
-      depth: 1,
-      overrideAccess: true,
-    })
-    const doc = submission.docs[0]
-    if (!doc) throw new Error(`找不到投稿 ${id}`)
-    const check = validateContent(doc.review?.content, vocab, { origin: doc.origin, submitter: submissionAttribution(doc.fields) })
-    if (!check.ok) throw new Error(`投稿 ${id} 内容不合法：${check.errors.join('；')}`)
-    if (!doc.sha256) throw new Error(`投稿 ${id} 缺 sha256`)
-    const duplicate = await payload.find({ collection: 'works', where: { sha256: { equals: doc.sha256 } }, limit: 1, depth: 0, overrideAccess: true })
-    if (duplicate.docs[0]) {
-      await payload.update({ collection: 'submissions', id: doc.id, data: { work: duplicate.docs[0].id }, context: { audit: false }, overrideAccess: true, req })
-      skipped.push(id)
-      continue
-    }
-    const character = vocab.characterDocs.find((item: any) => item.characterId === check.value.characterId)
-    const categories = vocab.categoryDocs.filter((item: any) => check.value.categoryIds.includes(item.categoryId))
-    const workId = `sticker_${String(doc.sha256).slice(0, 24)}`
-    const created = await payload.create({
-      collection: 'works',
-      data: {
-        workId,
-        name: check.value.name,
-        description: check.value.description,
-        commentary: check.value.commentary,
-        kind: 'submission',
-        channel: doc.source || 'manual',
-        submissionId: doc.submissionId,
-        sha256: doc.sha256,
-        character: character?.id,
-        characters: check.value.characterIds.map((id: string) => vocab.characterDocs.find((item: any) => item.characterId === id)?.id),
-        categories: categories.map((item: any) => item.id),
-        tags: check.value.tags.map((value: string) => ({ value })),
-        preview: doc.media?.id || doc.media,
-        status: 'pending',
-        needsPublish: true,
-        changeAction: 'add',
-        review: doc.review || null,
-        origin: doc.origin || {},
-        submitter: submissionAttribution(doc.fields || {}) || undefined,
-        legacySource: 'submission-sync',
-      },
-      context: { audit: false, skipNeedsPublish: true, skipFieldAccess: true },
-      overrideAccess: true,
-      req,
-    })
-    await payload.update({ collection: 'submissions', id: doc.id, data: { work: created.id }, context: { audit: false }, overrideAccess: true, req })
-    workIds.push(created.workId)
   }
-  return { workIds, skipped }
+  return { workIds, skipped, failed, errors, results }
 }
 
 async function manualInclude(req: PayloadRequest, body: BulkBody): Promise<Response> {
@@ -184,6 +305,12 @@ async function manualInclude(req: PayloadRequest, body: BulkBody): Promise<Respo
 
   const character = vocab.characterDocs.find((item: any) => item.characterId === check.value.characterId)
   const categories = vocab.categoryDocs.filter((item: any) => check.value.categoryIds.includes(item.categoryId))
+  let image
+  try {
+    image = await lookupSubmissionImageMetadata(String(doc.submissionId), String(doc.sha256))
+  } catch (error) {
+    return json({ ok: false, error: `无法读取原图元数据：${(error as Error).message}` }, 502)
+  }
   const workId = `sticker_${String(doc.sha256).slice(0, 24)}`
   const created = await payload.create({
     collection: 'works',
@@ -196,6 +323,12 @@ async function manualInclude(req: PayloadRequest, body: BulkBody): Promise<Respo
       channel: doc.source || 'manual',
       submissionId: doc.submissionId,
       sha256: doc.sha256,
+      format: image?.format,
+      mimeType: image?.mimeType,
+      isAnimated: image?.isAnimated,
+      width: image?.width,
+      height: image?.height,
+      fileSize: image?.fileSize,
       character: character?.id,
       characters: check.value.characterIds.map((id: string) => vocab.characterDocs.find((item: any) => item.characterId === id)?.id),
       categories: categories.map((item: any) => item.id),
@@ -247,11 +380,10 @@ export const bulkHandler = async (req: PayloadRequest): Promise<Response> => {
   if (action === 'delete' && body.confirm !== 'DELETE') return json({ ok: false, error: '删除需要 confirm=DELETE' }, 400)
 
   const payload = req.payload as any
-  const affected: any[] = []
   if (action === 'include') {
     const result = await includeSubmissions(req, ids)
     await writeAudit(req, { action: 'works.bulk.include', after: result, targetId: ids.join(','), targetType: 'works' })
-    return json({ ok: true, action, ...result })
+    return json({ ok: result.failed.length === 0, action, ...result })
   }
 
   const works = await findWorks(req, ids)
@@ -260,55 +392,84 @@ export const bulkHandler = async (req: PayloadRequest): Promise<Response> => {
     return json({ ok: false, error: '存在无法匹配的作品' }, 400)
   }
 
+  const affected: string[] = []
+  const skipped: string[] = []
+  const failed: string[] = []
+  const errors: string[] = []
+  const results: BulkItemResult[] = []
+  const succeed = (workId: string) => {
+    affected.push(workId)
+    results.push({ id: workId, status: 'succeeded', workId })
+  }
+  const fail = (id: string, reason: string) => {
+    failed.push(id)
+    errors.push(`${id}: ${reason}`)
+    results.push({ id, status: 'failed', reason })
+  }
+
   if (action === 'set-categories') {
     const categoryIds = Array.isArray(body.categoryIds) ? body.categoryIds.map(String) : []
     if (categoryIds.length !== 1) return json({ ok: false, error: '每张图必须且只能选择一个作品类型' }, 400)
     const categories = await payload.find({ collection: 'categories', where: { categoryId: { in: categoryIds } }, limit: 1000, depth: 0, overrideAccess: true })
     if (categories.docs.length !== categoryIds.length) return json({ ok: false, error: '分类不存在' }, 400)
     for (const work of works) {
-      await payload.update({ collection: 'works', id: work.id, data: { categories: categories.docs.map((item: any) => item.id) }, context: { audit: false, skipFieldAccess: true }, overrideAccess: true, req })
-      affected.push(work.workId)
+      try {
+        await payload.update({ collection: 'works', id: work.id, data: { categories: categories.docs.map((item: any) => item.id) }, context: { audit: false, skipFieldAccess: true }, overrideAccess: true, req })
+        succeed(work.workId)
+      } catch (error) {
+        fail(work.workId, (error as Error).message)
+      }
     }
   } else if (action === 'add-to-topic') {
     if (!body.topicId) return json({ ok: false, error: 'topicId 必填' }, 400)
     const topicResult = await payload.find({ collection: 'topics', where: { topicId: { equals: body.topicId } }, limit: 1, depth: 0, overrideAccess: true })
     const topic = topicResult.docs[0]
     if (!topic) return json({ ok: false, error: '专题不存在' }, 404)
-    const next: number[] = []
-    if (Array.isArray(topic.works)) {
-      for (const item of topic.works) {
-        const id = workRelationId(item)
-        if (id === null) return json({ ok: false, error: '专题已有作品关系数据异常' }, 400)
-        if (!next.includes(id)) next.push(id)
+    try {
+      const membership = await addTopicMemberships(payload, topic, ids, req)
+      for (const id of membership.added) succeed(id)
+      for (const id of membership.already) {
+        skipped.push(id)
+        affected.push(id)
+        results.push({ id, status: 'skipped', reason: '已在专题' })
+      }
+      for (const failure of membership.failed) fail(failure.id, failure.error)
+    } catch (error) {
+      for (const work of works) fail(work.workId, (error as Error).message)
+    }
+  } else {
+    const nextStatus = action === 'hide' ? 'hidden' : action === 'restore' ? 'published' : action === 'remove' ? 'removed' : 'deleted'
+    // 先校验所有作品状态，再开始写，避免后面的校验失败让前面的写入变成假失败。
+    for (const work of works) {
+      const valid =
+        (action === 'hide' && work.status === 'published') ||
+        (action === 'restore' && work.status === 'hidden') ||
+        (action === 'remove' && work.status === 'pending') ||
+        (action !== 'hide' && action !== 'restore' && action !== 'remove')
+      if (!valid) {
+        const expected = action === 'hide' ? '已发布' : action === 'restore' ? '隐藏' : '待发布'
+        return json({ ok: false, error: `作品 ${work.workId} 不是${expected}状态` }, 400)
       }
     }
     for (const work of works) {
-      const id = workRelationId(work.id)
-      if (id === null) return json({ ok: false, error: `作品 ${work.workId} 缺少有效的数字 ID` }, 400)
-      if (!next.includes(id)) next.push(id)
-      affected.push(work.workId)
-    }
-    await payload.update({ collection: 'topics', id: topic.id, data: { works: next }, context: { audit: false }, overrideAccess: true, req })
-  } else {
-    const nextStatus = action === 'hide' ? 'hidden' : action === 'restore' ? 'published' : action === 'remove' ? 'removed' : 'deleted'
-    for (const work of works) {
-      if (action === 'hide' && work.status !== 'published') return json({ ok: false, error: `作品 ${work.workId} 不是已发布状态` }, 400)
-      if (action === 'restore' && work.status !== 'hidden') return json({ ok: false, error: `作品 ${work.workId} 不是隐藏状态` }, 400)
-      if (action === 'remove' && work.status !== 'pending') return json({ ok: false, error: `作品 ${work.workId} 不是待发布状态` }, 400)
-      await payload.update({
-        collection: 'works',
-        id: work.id,
-        data: { status: nextStatus, needsPublish: true, changeAction: action },
-        context: { audit: false, skipFieldAccess: true },
-        overrideAccess: true,
-        req,
-      })
-      affected.push(work.workId)
+      try {
+        await payload.update({
+          collection: 'works',
+          id: work.id,
+          data: { status: nextStatus, needsPublish: true, changeAction: action },
+          context: { audit: false, skipFieldAccess: true },
+          overrideAccess: true,
+          req,
+        })
+        succeed(work.workId)
+      } catch (error) {
+        fail(work.workId, (error as Error).message)
+      }
     }
   }
 
   await writeAudit(req, { action: `works.bulk.${action}`, after: { affected, action, topicId: body.topicId }, before: works.map((work) => ({ status: work.status, workId: work.workId })), targetId: ids.join(','), targetType: 'works' })
-  return json({ ok: true, action, affected })
+  return json({ ok: failed.length === 0, action, affected, skipped, failed, errors, results })
 }
 
 export const WorksBulkEndpoint: Endpoint = {

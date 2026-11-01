@@ -14,23 +14,25 @@ export type PublishPlan = {
   deleted: any[]
   topics: any[]
   videos: any[]
-  summary: { added: number; updated: number; hidden: number; restored: number; deleted: number; topics: number; videos?: number; creators?: number }
+  pendingRun: { runId: string; status: string; createdAt: string } | null
+  summary: { added: number; updated: number; hidden: number; restored: number; deleted: number; topics: number; videos?: number; creators?: number; contents: number }
 }
 
 function briefWork(doc: any) {
-  return { id: doc.id, workId: doc.workId, name: doc.name, kind: doc.kind, status: doc.status, changeAction: doc.changeAction || null }
+  return { id: doc.id, workId: doc.workId, name: doc.name, kind: doc.kind, status: doc.status, needsPublish: Boolean(doc.needsPublish), changeAction: doc.changeAction || null }
 }
 
 function briefTopic(doc: any) {
-  return { id: doc.id, topicId: doc.topicId, name: doc.name, status: doc.status }
+  return { id: doc.id, topicId: doc.topicId, name: doc.name, status: doc.status, needsPublish: Boolean(doc.needsPublish) }
 }
 
 export async function buildPublishPlan(payload: Payload): Promise<PublishPlan> {
-  const [works, topics, videos, creators] = await Promise.all([
+  const [works, topics, videos, creators, activeRuns] = await Promise.all([
     (payload as any).find({ collection: 'works', depth: 0, limit: 2000, overrideAccess: true, pagination: false }),
     (payload as any).find({ collection: 'topics', depth: 0, limit: 1000, overrideAccess: true, pagination: false }),
     (payload as any).find({ collection: 'videos', where: { needsPublish: { equals: true } }, depth: 0, overrideAccess: true, pagination: false }),
     (payload as any).find({ collection: 'creators', where: { needsPublish: { equals: true } }, depth: 0, overrideAccess: true, pagination: false }),
+    (payload as any).find({ collection: 'publish-runs', where: { status: { in: ['queued', 'in_progress'] } }, sort: '-createdAt', limit: 1, depth: 0, overrideAccess: true }),
   ])
   const plan: PublishPlan = {
     added: [],
@@ -39,8 +41,11 @@ export async function buildPublishPlan(payload: Payload): Promise<PublishPlan> {
     restored: [],
     deleted: [],
     topics: [],
-    videos: [...videos.docs.map((v: any) => ({ id: v.id, name: v.title, status: v.status })), ...creators.docs.map((c: any) => ({ id: c.id, name: c.name, status: c.status }))],
-    summary: { added: 0, updated: 0, hidden: 0, restored: 0, deleted: 0, topics: 0 },
+    videos: [...videos.docs.map((v: any) => ({ id: v.id, name: v.title, status: v.status, needsPublish: Boolean(v.needsPublish) })), ...creators.docs.map((c: any) => ({ id: c.id, name: c.name, status: c.status, needsPublish: Boolean(c.needsPublish) }))],
+    pendingRun: activeRuns.docs[0]
+      ? { runId: String(activeRuns.docs[0].runId), status: String(activeRuns.docs[0].status), createdAt: String(activeRuns.docs[0].createdAt) }
+      : null,
+    summary: { added: 0, updated: 0, hidden: 0, restored: 0, deleted: 0, topics: 0, contents: 0 },
   }
   for (const work of works.docs) {
     if (!work.needsPublish && work.status !== 'pending') continue
@@ -62,6 +67,15 @@ export async function buildPublishPlan(payload: Payload): Promise<PublishPlan> {
     topics: plan.topics.length,
     ...(videos.docs.length ? { videos: videos.docs.length } : {}),
     ...(creators.docs.length ? { creators: creators.docs.length } : {}),
+    contents:
+      plan.added.length +
+      plan.updated.length +
+      plan.hidden.length +
+      plan.restored.length +
+      plan.deleted.length +
+      plan.topics.length +
+      videos.docs.length +
+      creators.docs.length,
   }
   return plan
 }

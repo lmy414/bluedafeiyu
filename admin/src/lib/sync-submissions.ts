@@ -68,8 +68,7 @@ function mimeForFormat(format: string, item: any): string {
   return `image/${format || 'png'}`
 }
 
-export type SubmissionPreview = {
-  bytes: Buffer
+export type SubmissionImageMetadata = {
   fileSize: number
   format: string
   height: number
@@ -79,10 +78,15 @@ export type SubmissionPreview = {
   width: number
 }
 
-export async function prepareSubmissionPreview(buffer: Buffer, item: any): Promise<SubmissionPreview> {
+export type SubmissionPreview = SubmissionImageMetadata & { bytes: Buffer }
+
+/** 只读原图元数据，不生成 WebP 预览；用于已有预览媒体时的补全。 */
+export async function readSubmissionImageMetadata(buffer: Buffer, item: any, expectedDigest = ''): Promise<SubmissionImageMetadata> {
   const digest = sha256(buffer)
   const expected = normalizeDigest(item?.sha256)
   if (expected && expected !== digest) throw new Error(`投稿原图 sha256 与队列记录不一致：${item?.id || ''}`)
+  const cmsDigest = normalizeDigest(expectedDigest)
+  if (cmsDigest && cmsDigest !== digest) throw new Error('原图 sha256 与作品记录不一致')
 
   const metadata = await sharp(buffer, { animated: true }).metadata()
   if (!metadata.width || !metadata.height) throw new Error(`无法读取原图尺寸：${item?.id || ''}`)
@@ -93,14 +97,7 @@ export async function prepareSubmissionPreview(buffer: Buffer, item: any): Promi
   const format = originalFormat(item, metadata)
   const isAnimated = Boolean(metadata.pages && metadata.pages > 1) || format === 'gif' || format === 'apng'
 
-  const { data } = await sharp(buffer, { animated: true })
-    .rotate()
-    .resize({ fit: 'inside', height: PREVIEW_EDGE, kernel: 'lanczos3', width: PREVIEW_EDGE, withoutEnlargement: true })
-    .webp({ effort: PREVIEW_EFFORT, quality: PREVIEW_QUALITY })
-    .toBuffer({ resolveWithObject: true })
-
   return {
-    bytes: data,
     fileSize: buffer.length,
     format,
     height,
@@ -109,6 +106,17 @@ export async function prepareSubmissionPreview(buffer: Buffer, item: any): Promi
     sha256: digest,
     width,
   }
+}
+
+export async function prepareSubmissionPreview(buffer: Buffer, item: any): Promise<SubmissionPreview> {
+  const metadata = await readSubmissionImageMetadata(buffer, item)
+  const { data } = await sharp(buffer, { animated: true })
+    .rotate()
+    .resize({ fit: 'inside', height: PREVIEW_EDGE, kernel: 'lanczos3', width: PREVIEW_EDGE, withoutEnlargement: true })
+    .webp({ effort: PREVIEW_EFFORT, quality: PREVIEW_QUALITY })
+    .toBuffer({ resolveWithObject: true })
+
+  return { ...metadata, bytes: data }
 }
 
 function normalizeSource(source: unknown): 'github-issue' | 'manual' | 'qq' | 'web' {
@@ -211,6 +219,21 @@ async function requestBytes(token: string, url: string): Promise<Buffer> {
     throw error
   }
   return Buffer.from(await response.arrayBuffer())
+}
+
+/**
+ * 人工收录/批量收录时按 submissionId 读取原图元数据。必须拿到完整、可校验的原图：
+ * 未配置投稿服务、队列找不到条目、原图已释放或 sha256 不符都会抛错，由调用方中止收录。
+ */
+export async function lookupSubmissionImageMetadata(submissionId: string, expectedDigest = ''): Promise<SubmissionImageMetadata> {
+  const baseUrl = String(process.env.SUBMISSION_ADMIN_API_URL || 'http://127.0.0.1:8788').replace(/\/+$/, '')
+  const token = process.env.SUBMISSION_ADMIN_TOKEN || ''
+  if (!token) throw new Error('投稿服务未配置 SUBMISSION_ADMIN_TOKEN，无法读取原图元数据')
+  const list = await requestJson(token, `${baseUrl}/api/v1/items?ids=${encodeURIComponent(submissionId)}`)
+  const item = (Array.isArray(list?.items) ? list.items : []).find((entry: any) => String(entry?.id) === submissionId)
+  if (!item) throw new Error(`投稿队列找不到 ${submissionId}`)
+  if (item.original?.released) throw new Error('原图已释放，无法读取完整元数据')
+  return readSubmissionImageMetadata(await requestBytes(token, `${baseUrl}/api/v1/items/${encodeURIComponent(submissionId)}/raw`), item, expectedDigest)
 }
 
 async function findOne(payload: Payload, collection: string, field: string, value: unknown): Promise<any | null> {
@@ -363,6 +386,7 @@ export async function syncSubmissions(
         let linkedWorkId = existingWork?.id || existingSubmission?.work
         let mediaId: number | string | null = existingSubmission?.media || existingWork?.preview || null
         let preview: SubmissionPreview | null = null
+        let imageMetadata: SubmissionImageMetadata | null = null
         let content: any = null
 
         if (!mediaId && !options.dryRun) {
@@ -380,6 +404,7 @@ export async function syncSubmissions(
         } else if (!mediaId) {
           mediaId = `dry-media-${queuedDigest.slice(0, 12)}`
         }
+        if (preview) imageMetadata = preview
         const digest = preview?.sha256 || queuedDigest || String(existingWork?.sha256 || '')
         if (digest && queuedDigest && digest !== queuedDigest) throw new Error(`投稿 sha256 不一致：${submissionId}`)
 
@@ -397,6 +422,13 @@ export async function syncSubmissions(
               if (options.dryRun) {
                 linkedWorkId = `dry-work-${digest.slice(0, 24)}`
               } else {
+                // 预览媒体可能来自更早的同步轮次，此时没有 preview 对象；只补读原图元数据，
+                // 不重制预览。读不到或 sha256 不符就让本轮收录失败，绝不用猜测字段建作品。
+                if (!imageMetadata) {
+                  const raw = await requestBytes(token, `${baseUrl}/api/v1/items/${encodeURIComponent(submissionId)}/raw`)
+                  imageMetadata = await readSubmissionImageMetadata(raw, item, digest)
+                }
+                const image = imageMetadata
                 const createdAt = normalizeIso(item.createdAt) || new Date().toISOString()
                 const created = await (payload as any).create({
                   collection: 'works',
@@ -409,12 +441,12 @@ export async function syncSubmissions(
                     channel: normalizeSource(item.source),
                     submissionId,
                     sha256: digest,
-                    format: preview?.format,
-                    mimeType: preview?.mimeType,
-                    isAnimated: preview?.isAnimated,
-                    width: preview?.width,
-                    height: preview?.height,
-                    fileSize: preview?.fileSize,
+                    format: image.format,
+                    mimeType: image.mimeType,
+                    isAnimated: image.isAnimated,
+                    width: image.width,
+                    height: image.height,
+                    fileSize: image.fileSize,
                     character: characterResult.docs.find((doc: any) => doc.characterId === content.characterId)?.id,
                     characters: content.characterIds.map((id: string) => characterResult.docs.find((doc: any) => doc.characterId === id)?.id),
                     categories: content.categoryIds.map((id: string) => categoryResult.docs.find((doc: any) => doc.categoryId === id)!.id),
@@ -454,7 +486,15 @@ export async function syncSubmissions(
           media: mediaId || undefined,
           fields: item.fields || {},
           review: item.review || null,
-          agentProgress: item.agent ? { stage: item.agent.stage, lastError: item.agent.lastError, draft: item.agent.draft } : null,
+          agentProgress: item.agent ? {
+            stage: item.agent.stage,
+            lastError: item.agent.lastError,
+            draft: item.agent.draft,
+            batchId: item.agent.batchId || null,
+            batchLabel: item.agent.batchLabel || null,
+            sourceKind: item.agent.sourceKind || null,
+            batchHistory: Array.isArray(item.agent.batchHistory) ? item.agent.batchHistory.slice(-20) : [],
+          } : null,
           state: item.state || 'received',
           stateHistory: item.stateHistory || [],
           origin: item.origin || {},

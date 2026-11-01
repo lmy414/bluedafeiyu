@@ -596,11 +596,17 @@ export interface Topic {
   id: number;
   topicId: string;
   name: string;
-  summary: string;
+  summary?: string | null;
   nameEn?: string | null;
   summaryEn?: string | null;
   nameJa?: string | null;
   summaryJa?: string | null;
+  translationState?: ('none' | 'stale' | 'queued' | 'running' | 'ready' | 'failed') | null;
+  translationSourceHash?: string | null;
+  translationRevision?: number | null;
+  translationUpdatedAt?: string | null;
+  translationError?: string | null;
+  translationJobId?: string | null;
   cover?: (number | null) | Work;
   works?: (number | Work)[] | null;
   /**
@@ -743,8 +749,8 @@ export interface LegacySnapshot {
 export interface BulkJob {
   id: number;
   jobId: string;
-  operation: 'write-fields' | 'ai-fill' | 'translate' | 'manual-include';
-  target: 'works' | 'submissions';
+  operation: 'write-fields' | 'ai-fill' | 'translate' | 'manual-include' | 'translate-topic';
+  target: 'works' | 'submissions' | 'topics';
   status: 'queued' | 'running' | 'succeeded' | 'partial' | 'failed' | 'cancelled';
   ids:
     | {
@@ -1128,6 +1134,12 @@ export interface TopicsSelect<T extends boolean = true> {
   summaryEn?: T;
   nameJa?: T;
   summaryJa?: T;
+  translationState?: T;
+  translationSourceHash?: T;
+  translationRevision?: T;
+  translationUpdatedAt?: T;
+  translationError?: T;
+  translationJobId?: T;
   cover?: T;
   works?: T;
   author?:

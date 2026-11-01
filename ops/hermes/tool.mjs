@@ -3,7 +3,7 @@
 import { pathToFileURL } from 'node:url';
 const ACTIONS = new Set(['list', 'rules', 'claim', 'get', 'image', 'draft', 'locale', 'validate', 'complete', 'release', 'sync']);
 export async function runTool(input, env = process.env, fetchImpl = fetch) {
-  if (!input || !ACTIONS.has(input.action) || !['submission', 'admin', 'requests', 'videos'].includes(input.target)) throw new Error('Invalid tool action or target');
+  if (!input || !ACTIONS.has(input.action) || !['submission', 'admin', 'requests', 'videos', 'topics'].includes(input.target)) throw new Error('Invalid tool action or target');
   const submission = input.target === 'submission';
   const base = submission ? (env.HERMES_REVIEW_API_URL || 'http://127.0.0.1:8790') : 'http://127.0.0.1:3100';
   const parsed = new URL(base);

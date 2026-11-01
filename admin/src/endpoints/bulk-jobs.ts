@@ -47,8 +47,12 @@ export async function createBulkJob(req: PayloadRequest, retryOf?: string, check
   const denied = ownerOnly(req)
   if (denied) return denied
   const body = await readJsonBody<any>(req)
-  if (!JOB_OPERATIONS.includes(body.operation) || !['works', 'submissions'].includes(body.target))
+  if (!JOB_OPERATIONS.includes(body.operation) || !['works', 'submissions', 'topics'].includes(body.target))
     return json({ error: '批量操作或目标非法' }, 400)
+  if (body.operation === 'translate-topic' && body.target !== 'topics')
+    return json({ error: '专题翻译任务必须使用 topics 目标' }, 400)
+  if (body.target === 'topics' && body.operation !== 'translate-topic')
+    return json({ error: '专题目标只支持译文任务' }, 400)
   if (
     body.operation === 'manual-include' &&
     (body.target !== 'submissions' || body.confirm !== 'MANUAL_INCLUDE')
@@ -79,6 +83,8 @@ export async function createBulkJob(req: PayloadRequest, retryOf?: string, check
         confirm: body.confirm || null,
         drafts: body.drafts || null,
         suggestOnly: body.suggestOnly === true,
+        baseTranslationRevision: body.baseTranslationRevision ?? null,
+        batchId: body.batchId || null,
       }),
     )
     .digest('hex')
@@ -100,6 +106,24 @@ export async function createBulkJob(req: PayloadRequest, retryOf?: string, check
     overrideAccess: true,
   })
   if (active.totalDocs >= 5) return json({ error: '已有 5 个批量任务等待处理，请稍后提交' }, 429)
+  const running = await (req.payload as any).find({
+    collection: 'bulk-jobs',
+    where: { and: [{ status: { in: RUNNABLE } }, { target: { equals: body.target } }] },
+    limit: 10,
+    depth: 0,
+    overrideAccess: true,
+  })
+  const conflict = running.docs.find((job: any) =>
+    (job.ids || []).some((id: unknown) => ids.includes(String(id))),
+  )
+  if (conflict)
+    return json(
+      {
+        error: `已有处理中任务 ${conflict.jobId}，请等待完成或先取消后再提交`,
+        job: summary(conflict),
+      },
+      409,
+    )
   let patch: any
   try {
     if (body.operation === 'write-fields' || (body.operation === 'ai-fill' && body.patch && Object.keys(body.patch).length))
@@ -139,20 +163,21 @@ export async function createBulkJob(req: PayloadRequest, retryOf?: string, check
     return json({ error: (error as Error).message }, 400)
   }
   const versions: Record<string, string> = {}
+  const key = body.target === 'works' ? 'workId' : body.target === 'topics' ? 'topicId' : 'submissionId'
   const selected = await (req.payload as any).find({
     collection: body.target,
-    where: { [body.target === 'works' ? 'workId' : 'submissionId']: { in: ids } },
+    where: { [key]: { in: ids } },
     depth: 0,
     limit: ids.length,
     pagination: false,
     overrideAccess: true,
   })
-  const byId = new Map<string, any>(
-    selected.docs.map((doc: any) => [body.target === 'works' ? doc.workId : doc.submissionId, doc]),
-  )
+  const byId = new Map<string, any>(selected.docs.map((doc: any) => [String(doc[key]), doc]))
   for (const id of ids) {
     const doc = byId.get(id)
     if (!doc) return json({ error: `条目不存在：${id}` }, 404)
+    if (body.operation === 'translate-topic' && (!String(doc.name || '').trim() || !String(doc.summary || '').trim()))
+      return json({ error: `专题 ${id} 缺少中文名称或简介，请先补全再生成译文` }, 400)
     versions[id] = fingerprint(doc, body.target)
   }
   const transactionID = await (req.payload.db as any).beginTransaction()
@@ -178,6 +203,11 @@ export async function createBulkJob(req: PayloadRequest, retryOf?: string, check
           confirmed: body.confirm || null,
           drafts,
           suggestOnly: body.suggestOnly === true,
+          ...(body.baseUpdatedAt ? { baseUpdatedAt: String(body.baseUpdatedAt).slice(0, 100) } : {}),
+          ...(body.sourceHash ? { sourceHash: String(body.sourceHash).slice(0, 100) } : {}),
+          ...(body.batchId ? { batchId: String(body.batchId).slice(0, 200) } : {}),
+          ...(body.batchLabel ? { batchLabel: String(body.batchLabel).slice(0, 200) } : {}),
+          ...(body.sourceKind ? { sourceKind: String(body.sourceKind).slice(0, 50) } : {}),
           ...(retryOf ? { retryOf } : {}),
           ...(checkpoints ? { checkpoints } : {}),
         },
@@ -198,6 +228,33 @@ export async function createBulkJob(req: PayloadRequest, retryOf?: string, check
         confirmed: body.confirm,
       },
     })
+    if (body.target === 'topics') {
+      await (req.payload as any).update({
+        collection: 'topics',
+        where: { topicId: { in: ids } },
+        data: { translationState: 'queued', translationJobId: jobId, translationError: null },
+        context: { skipTranslationState: true, skipNeedsPublish: true },
+        overrideAccess: true,
+        req: transactionReq,
+      })
+      const freshTopics = await (req.payload as any).find({
+        collection: 'topics',
+        where: { topicId: { in: ids } },
+        depth: 0,
+        limit: 1,
+        overrideAccess: true,
+        req: transactionReq,
+      })
+      const baseTranslationRevision = Number(freshTopics.docs[0]?.translationRevision || 0)
+      if (freshTopics.docs[0])
+        await (req.payload as any).update({
+          collection: 'bulk-jobs',
+          id: job.id,
+          data: { options: { ...job.options, sourceHash: body.sourceHash || job.options.sourceHash || null, baseTranslationRevision } },
+          overrideAccess: true,
+          req: transactionReq,
+        })
+    }
     await (req.payload.db as any).commitTransaction(transactionID)
   } catch (error) {
     await (req.payload.db as any).rollbackTransaction(transactionID)

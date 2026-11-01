@@ -45,7 +45,7 @@ export function BulkTools({
   target: 'works' | 'submissions'
   characters: CharacterDoc[]
   categories: CategoryDoc[]
-  onSubmitted: () => void
+  onSubmitted: (jobId?: string) => void
 }) {
   const { mutate } = useAdminApi()
   const [operation, setOperation] = useState<Operation | null>(null)
@@ -94,7 +94,7 @@ export function BulkTools({
     }
     setSending(true)
     try {
-      await mutate('/bulk/request', 'POST', {
+      const result = await mutate<{ job?: { jobId?: string } }>('/bulk/request', 'POST', {
         operation: operation === 'write-fields' && target === 'works' ? 'ai-fill' : operation,
         target,
         ids,
@@ -104,7 +104,7 @@ export function BulkTools({
         confirm: operation === 'manual-include' ? 'MANUAL_INCLUDE' : force ? 'OVERWRITE' : 'WRITE',
       })
       setOperation(null)
-      onSubmitted()
+      onSubmitted(result?.job?.jobId)
       window.dispatchEvent(new Event('s3-bulk-submitted'))
     } catch (error) {
       setMessage((error as Error).message)

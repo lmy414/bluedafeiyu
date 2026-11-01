@@ -19,6 +19,7 @@ import { readMedia, readOriginal } from '../lib/content-images'
 import { WORK_TYPE_RULES } from '../lib/work-types.mjs'
 import { isPlaceholderDescription } from '../lib/ai-fill'
 import { writeAudit } from '../lib/audit'
+import { parseTopicLocale, topicDraftOf, topicSourceHash, validateTopicI18n } from '../lib/topics-translation'
 
 const LEASE_MS = 10 * 60 * 1000
 const fail = (message: string, status = 409) => Object.assign(new Error(message), { status })
@@ -69,7 +70,11 @@ export async function agentHandler(req: PayloadRequest) {
       const jobs = await payload.find({
         collection: 'bulk-jobs',
         where: {
-          and: [{ status: { in: RUNNABLE } }, { operation: { in: ['ai-fill', 'translate', 'manual-include'] } }],
+          and: [
+            { status: { in: RUNNABLE } },
+            { operation: { in: ['ai-fill', 'translate', 'manual-include', 'translate-topic'] } },
+            { target: body.target === 'topics' ? { equals: 'topics' } : { in: ['works', 'submissions'] } },
+          ],
         },
         sort: 'createdAt',
         depth: 0,
@@ -83,8 +88,10 @@ export async function agentHandler(req: PayloadRequest) {
           .map((j: any) => ({
             jobId: j.jobId,
             operation: j.operation,
+            target: j.target,
             id: j.ids[j.cursor],
             stage: j.options.agent?.stage || 'queued',
+            batchId: j.options.agent?.batchId || j.options.batchId || null,
           })),
       })
     }
@@ -100,7 +107,7 @@ export async function agentHandler(req: PayloadRequest) {
     if (transactionID == null) throw fail('工具保存需要数据库事务', 500)
     const tx = { ...req, transactionID } as PayloadRequest
     let job = await findJob(payload, body.jobId, tx)
-    if (!job || !['ai-fill', 'translate', 'manual-include'].includes(job.operation))
+    if (!job || !['ai-fill', 'translate', 'manual-include', 'translate-topic'].includes(job.operation))
       throw fail('Agent 任务不存在', 404)
     if (!RUNNABLE.includes(job.status) || job.cursor >= job.ids.length)
       throw fail('任务已结束或取消')
@@ -132,77 +139,119 @@ export async function agentHandler(req: PayloadRequest) {
           status: 'running',
           options: {
             ...job.options,
+            ...(body.batchId ? { batchId: String(body.batchId).slice(0, 200) } : {}),
+            ...(body.batchLabel ? { batchLabel: String(body.batchLabel).slice(0, 200) } : {}),
+            ...(body.sourceKind ? { sourceKind: String(body.sourceKind).slice(0, 50) } : {}),
             agent: {
               ...job.options.agent,
               token: crypto.randomUUID(),
               expiresAt: now + LEASE_MS,
               draft,
               attempt: (job.options.agent?.attempt || 0) + 1,
-              stage: 'editing',
+              stage: job.operation === 'translate-topic' ? 'translating' : 'editing',
+              ...(body.batchId ? { batchId: String(body.batchId).slice(0, 200) } : {}),
+              ...(body.batchLabel ? { batchLabel: String(body.batchLabel).slice(0, 200) } : {}),
+              ...(body.sourceKind ? { sourceKind: String(body.sourceKind).slice(0, 50) } : {}),
             },
           },
         },
         overrideAccess: true,
         req: tx,
       })
+      if (job.target === 'topics')
+        await payload.update({
+          collection: 'topics',
+          where: { topicId: { equals: id } },
+          data: { translationState: 'running', translationError: null },
+          context: { skipTranslationState: true, skipNeedsPublish: true },
+          overrideAccess: true,
+          req: tx,
+        })
     } else {
       checkLease(job, body.token, now)
       if (body.id !== id) throw fail('任务游标已推进，请重新领取')
       if (
+        job.target !== 'topics' &&
         ['draft', 'locale', 'validate', 'complete'].includes(body.action) &&
         job.options.agent.imageToken !== body.token
       )
         throw fail('请先读取本次任务图片', 422)
       if (body.action === 'draft') {
-        const checked = validateContent(body.content, vocab)
-        if (!checked.ok || 'i18n' in body.content)
-          throw fail(!checked.ok ? checked.errors.join('；') : '请分语言提交译文', 422)
-        const base = jobDraftOf(doc,job,vocab,id)
-        if (
-          job.operation === 'translate' &&
-          Object.keys(contentOnly(base)).some(
-            (k) => JSON.stringify(base[k]) !== JSON.stringify(checked.value[k]),
+        if (job.target === 'topics') {
+          if (body.content?.i18n) throw fail('请分语言提交译文', 422)
+          const base = topicDraftOf(doc)
+          const name = String(body.content?.name || '').trim()
+          const summary = String(body.content?.summary || '').trim()
+          if (!name || !summary) throw fail('专题中文名称和简介不能为空', 422)
+          if (name !== base.name || summary !== base.summary)
+            throw fail('翻译任务不能修改中文名称或简介', 422)
+          const hash = topicSourceHash(base.name, base.summary)
+          draft = { ...base, i18n: { sourceHash: hash, ...(draft.i18n?.sourceHash === hash ? draft.i18n : {}) } }
+        } else {
+          const checked = validateContent(body.content, vocab)
+          if (!checked.ok || 'i18n' in body.content)
+            throw fail(!checked.ok ? checked.errors.join('；') : '请分语言提交译文', 422)
+          const base = jobDraftOf(doc,job,vocab,id)
+          if (
+            job.operation === 'translate' &&
+            Object.keys(contentOnly(base)).some(
+              (k) => JSON.stringify(base[k]) !== JSON.stringify(checked.value[k]),
+            )
           )
-        )
-          throw fail('翻译任务不能修改中文字段', 422)
-        if (['ai-fill', 'manual-include'].includes(job.operation)) {
-          for (const key of [
-            'name',
-            'description',
-            'commentary',
-            'characterId',
-            'characterIds',
-            'tags',
-            'categoryIds',
-          ]) {
-            const value = base[key]
-            const filled =
-              key === 'description'
-                ? !isPlaceholderDescription(value)
-                : Array.isArray(value)
-                  ? value.length > 0
-                  : Boolean(value)
-            if (filled && JSON.stringify(value) !== JSON.stringify(checked.value[key]))
-              throw fail(`已有 ${key} 不允许自动覆盖`, 422)
+            throw fail('翻译任务不能修改中文字段', 422)
+          if (['ai-fill', 'manual-include'].includes(job.operation)) {
+            for (const key of [
+              'name',
+              'description',
+              'commentary',
+              'characterId',
+              'characterIds',
+              'tags',
+              'categoryIds',
+            ]) {
+              const value = base[key]
+              const filled =
+                key === 'description'
+                  ? !isPlaceholderDescription(value)
+                  : Array.isArray(value)
+                    ? value.length > 0
+                    : Boolean(value)
+              if (filled && JSON.stringify(value) !== JSON.stringify(checked.value[key]))
+                throw fail(`已有 ${key} 不允许自动覆盖`, 422)
+            }
+          }
+          const hash = sourceHash({ ...checked.value, origin: draft.origin, license: draft.license })
+          draft = {
+            ...draft,
+            ...checked.value,
+            i18n: { sourceHash: hash, ...(draft.i18n?.sourceHash === hash ? draft.i18n : {}) },
           }
         }
-        const hash = sourceHash({ ...checked.value, origin: draft.origin, license: draft.license })
-        draft = {
-          ...draft,
-          ...checked.value,
-          i18n: { sourceHash: hash, ...(draft.i18n?.sourceHash === hash ? draft.i18n : {}) },
-        }
       } else if (body.action === 'locale') {
-        const hash = sourceHash(draft)
-        if (body.sourceHash !== hash) throw fail('中文版本已变化')
-        if (!['en', 'ja'].includes(body.language)) throw fail('语言只接受 en 或 ja', 400)
-        draft = {
-          ...draft,
-          i18n: {
-            ...draft.i18n,
-            sourceHash: hash,
-            [body.language]: validateLocale(body.content, body.language, draft),
-          },
+        if (job.target === 'topics') {
+          const hash = topicSourceHash(draft.name, draft.summary)
+          if (body.sourceHash !== hash) throw fail('中文版本已变化')
+          if (!['en', 'ja'].includes(body.language)) throw fail('语言只接受 en 或 ja', 400)
+          draft = {
+            ...draft,
+            i18n: {
+              ...draft.i18n,
+              sourceHash: hash,
+              [body.language]: parseTopicLocale(body.content, body.language),
+            },
+          }
+        } else {
+          const hash = sourceHash(draft)
+          if (body.sourceHash !== hash) throw fail('中文版本已变化')
+          if (!['en', 'ja'].includes(body.language)) throw fail('语言只接受 en 或 ja', 400)
+          draft = {
+            ...draft,
+            i18n: {
+              ...draft.i18n,
+              sourceHash: hash,
+              [body.language]: validateLocale(body.content, body.language, draft),
+            },
+          }
         }
       } else if (body.action === 'release') {
         const attempt = job.options.agent.attempt || 0
@@ -215,10 +264,14 @@ export async function agentHandler(req: PayloadRequest) {
           lastError: String(body.reason || '本轮未完成').slice(0, 1000),
         }
       } else if (body.action === 'complete' || body.action === 'validate') {
-        const check = validateContent(contentOnly(draft), vocab)
-        if (!check.ok) throw fail(check.errors.join('；'), 422)
-        validateI18n(draft.i18n, draft)
-        if (draft.i18n.sourceHash !== sourceHash(draft)) throw fail('译文已过期')
+        if (job.target === 'topics') {
+          validateTopicI18n(draft.i18n, topicSourceHash(draft.name, draft.summary))
+        } else {
+          const check = validateContent(contentOnly(draft), vocab)
+          if (!check.ok) throw fail(check.errors.join('；'), 422)
+          validateI18n(draft.i18n, draft)
+          if (draft.i18n.sourceHash !== sourceHash(draft)) throw fail('译文已过期')
+        }
       } else if (!['get', 'image'].includes(body.action)) throw fail('未知工具操作', 400)
       if (!['get', 'validate'].includes(body.action)) {
         const agent =
@@ -238,6 +291,25 @@ export async function agentHandler(req: PayloadRequest) {
           overrideAccess: true,
           req: tx,
         })
+        if (job.target === 'topics') {
+          const topicState =
+            body.action === 'release'
+              ? { translationState: 'failed', translationError: String(body.reason || '本轮未完成').slice(0, 1000) }
+              : body.action === 'claim'
+                ? { translationState: 'running', translationError: null }
+                : draft.i18n?.en && draft.i18n?.ja
+                  ? { translationState: 'running' }
+                  : {}
+          if (Object.keys(topicState).length)
+            await payload.update({
+              collection: 'topics',
+              where: { topicId: { equals: id } },
+              data: topicState,
+              context: { skipTranslationState: true, skipNeedsPublish: true },
+              overrideAccess: true,
+              req: tx,
+            })
+        }
       }
     }
     if (['claim', 'draft', 'locale', 'release'].includes(body.action))
@@ -267,11 +339,21 @@ export async function agentHandler(req: PayloadRequest) {
       })
     }
     if (body.action === 'complete') {
-      const done = await stepJob({ ...req, user } as PayloadRequest, job, {
-        ...contentOnly(draft),
-        i18n: draft.i18n,
-      })
+      const done = await stepJob({ ...req, user } as PayloadRequest, job, job.target === 'topics'
+        ? { name: draft.name, summary: draft.summary, i18n: draft.i18n }
+        : {
+            ...contentOnly(draft),
+            i18n: draft.i18n,
+          })
       const result = done.results.at(-1)
+      if (job.target === 'topics' && result?.status === 'failed')
+        await payload.update({
+          collection: 'topics',
+          where: { topicId: { equals: id } },
+          data: { translationState: 'failed', translationError: String(result.message || '译文写入失败').slice(0, 1000) },
+          context: { skipTranslationState: true, skipNeedsPublish: true },
+          overrideAccess: true,
+        })
       return json({
         ok: result?.status !== 'failed',
         status: done.status,

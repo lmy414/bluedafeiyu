@@ -32,7 +32,11 @@ const props = {
 }
 beforeEach(() => {
   vi.clearAllMocks()
-  api.get.mockResolvedValue({ docs: [] })
+  api.get.mockImplementation(async (path: string) =>
+    path === '/bulk/jobs'
+      ? { job: { jobId: 'test-job', status: 'queued', cursor: 0, total: 1, results: [] } }
+      : { docs: [] },
+  )
   api.mutate.mockResolvedValue({ job: { jobId: 'test-job' } })
 })
 afterEach(cleanup)
@@ -42,7 +46,7 @@ describe('统一人工收录与编辑任务', () => {
       React.createElement(WorkDrawer, { ...props, categories: [], characters: [] }),
     )
     expect(screen.getByText('正在读取编辑选项…')).toBeTruthy()
-    expect(screen.queryByRole('button', { name: '人工收录' })).toBeNull()
+    expect(screen.queryByRole('button', { name: '提交收录任务' })).toBeNull()
     view.rerender(React.createElement(WorkDrawer, props))
     expect((screen.getByRole('checkbox', { name: 'DeepSeek' }) as HTMLInputElement).checked).toBe(
       true,
@@ -54,8 +58,9 @@ describe('统一人工收录与编辑任务', () => {
   it('一次收录提交持久任务，保留人工草稿，移除单独翻译入口', async () => {
     render(React.createElement(WorkDrawer, props))
     expect(screen.queryByRole('button', { name: 'AI 补全与翻译' })).toBeNull()
-    fireEvent.click(screen.getByRole('button', { name: '人工收录' }))
-    await screen.findByText(/人工收录任务已提交/)
+    const submit = screen.getByRole('button', { name: '提交收录任务' })
+    fireEvent.click(submit)
+    await screen.findByText(/人工收录任务已接收/)
     expect(api.mutate).toHaveBeenCalledOnce()
     expect(api.mutate.mock.calls[0][2]).toMatchObject({
       operation: 'manual-include',
@@ -64,10 +69,12 @@ describe('统一人工收录与编辑任务', () => {
       confirm: 'MANUAL_INCLUDE',
       drafts: { sub_manual: content },
     })
-    expect(screen.getByRole('link', { name: '查看收录与翻译任务' }).getAttribute('href')).toContain(
+    expect((await screen.findByRole('link', { name: '查看任务中心' })).getAttribute('href')).toContain(
       'task=test-job',
     )
-    expect(screen.getByRole('button', { name: '任务已提交' }).hasAttribute('disabled')).toBe(true)
+    expect(submit.hasAttribute('disabled')).toBe(true)
+    fireEvent.click(submit)
+    expect(api.mutate).toHaveBeenCalledOnce()
     fireEvent.click(screen.getAllByRole('button', { name: '关闭' })[1])
     expect(props.onClose).toHaveBeenCalledOnce()
   })
@@ -92,8 +99,8 @@ describe('统一人工收录与编辑任务', () => {
       }),
     )
     fireEvent.click(screen.getByRole('checkbox', { name: 'Claude' }))
-    fireEvent.click(screen.getByRole('button', { name: '保存修改' }))
-    await screen.findByText(/修改任务已提交/)
+    fireEvent.click(screen.getByRole('button', { name: '提交修改任务' }))
+    await screen.findByText(/任务已接收/)
     expect(api.mutate.mock.calls[0][2]).toMatchObject({
       operation: 'ai-fill',
       target: 'works',
@@ -103,17 +110,17 @@ describe('统一人工收录与编辑任务', () => {
   it('请求失败可以重试，相同内容复用幂等编号', async () => {
     api.mutate.mockRejectedValueOnce(new Error('网络中断'))
     render(React.createElement(WorkDrawer, props))
-    fireEvent.click(screen.getByRole('button', { name: '人工收录' }))
+    fireEvent.click(screen.getByRole('button', { name: '提交收录任务' }))
     await screen.findByText('网络中断')
-    fireEvent.click(screen.getByRole('button', { name: '人工收录' }))
-    await screen.findByText(/人工收录任务已提交/)
+    fireEvent.click(screen.getByRole('button', { name: '提交收录任务' }))
+    await screen.findByText(/人工收录任务已接收/)
     expect(api.mutate.mock.calls[0][2].requestId).toBe(api.mutate.mock.calls[1][2].requestId)
   })
   it('缺少角色不发请求，继续保留人工编辑', async () => {
     render(React.createElement(WorkDrawer, props))
     fireEvent.click(screen.getByRole('checkbox', { name: 'DeepSeek' }))
     fireEvent.change(screen.getByLabelText('名称'), { target: { value: '尚未提交的名称' } })
-    fireEvent.click(screen.getByRole('button', { name: '人工收录' }))
+    fireEvent.click(screen.getByRole('button', { name: '提交收录任务' }))
     await screen.findByText('请至少选择一个角色。')
     expect(api.mutate).not.toHaveBeenCalled()
     expect((screen.getByLabelText('名称') as HTMLInputElement).value).toBe('尚未提交的名称')
@@ -127,8 +134,11 @@ describe('统一人工收录与编辑任务', () => {
         }),
     )
     render(React.createElement(WorkDrawer, props))
-    fireEvent.click(screen.getByRole('button', { name: '人工收录' }))
-    expect(screen.getByRole('button', { name: '提交中…' }).hasAttribute('disabled')).toBe(true)
+    const submit = screen.getByRole('button', { name: '提交收录任务' })
+    fireEvent.click(submit)
+    expect(submit.hasAttribute('disabled')).toBe(true)
+    fireEvent.click(submit)
+    expect(api.mutate).toHaveBeenCalledOnce()
     complete({ job: { jobId: 'durable' } })
     await waitFor(() => expect(props.onSaved).toHaveBeenCalledOnce())
   })

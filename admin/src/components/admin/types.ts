@@ -50,6 +50,15 @@ export type TopicDoc = {
   summary?: string
   topicId: string
   works?: Array<ID | WorkDoc>
+  translationState?: 'none' | 'stale' | 'queued' | 'running' | 'ready' | 'failed'
+  translationSourceHash?: string
+  translationUpdatedAt?: string
+  translationError?: string
+  translationJobId?: string
+  nameEn?: string
+  summaryEn?: string
+  nameJa?: string
+  summaryJa?: string
 }
 
 export type ReviewInfo = {
@@ -60,7 +69,16 @@ export type ReviewInfo = {
   [key: string]: unknown
 }
 
+export type ActiveJobRef = {
+  jobId: string
+  operation?: string
+  status: 'queued' | 'running' | string
+  cursor: number
+  total: number
+}
+
 export type WorkDoc = {
+  activeJob?: ActiveJobRef | null
   effectiveAuthor?: string
   metrics?: { views: number; downloads: number }
   categories?: Array<CategoryDoc | ID>
@@ -70,12 +88,22 @@ export type WorkDoc = {
   characters?: Array<CharacterDoc | ID>
   commentary?: string
   description?: string
+  format?: string
   id: ID
+  isAnimated?: boolean
   lastPublishedAt?: string
+  lastPublishRun?: number | null
   legacyData?: Record<string, unknown>
   legacyPaths?: { externalOriginalUrl?: null | string; fullPath?: null | string; path?: null | string; thumbnailPath?: null | string }
+  liveVersion?: boolean
+  mimeType?: string
   name: string
   needsPublish?: boolean
+  publication?: string
+  processingState?: string
+  sourceStatus?: string
+  targetStatus?: string
+  topicIds?: string[]
   origin?: Record<string, unknown> | null
   fields?: Record<string, unknown>
   path?: string
@@ -92,13 +120,21 @@ export type WorkDoc = {
 }
 
 export type SubmissionDoc = {
+  activeJob?: ActiveJobRef | null
+  activity?: string
   agentProgress?: { stage?: string; lastError?: string; draft?: Record<string, unknown> }
   effectiveAuthor?: string
   editorial?: Record<string, unknown>
   fields?: Record<string, unknown>
   id: ID
+  liveVersion?: boolean
   media?: MediaDoc | ID
   origin?: Record<string, unknown>
+  publication?: string
+  processingState?: string
+  sourceStatus?: string
+  targetStatus?: string | null
+  topicIds?: string[]
   review?: ReviewInfo
   sha256?: string
   source: string
@@ -108,6 +144,8 @@ export type SubmissionDoc = {
   syncedAt?: string
   title: string
   work?: ID | WorkDoc
+  workNeedsPublish?: boolean | null
+  workStatus?: string | null
 }
 
 export type PublishRun = {

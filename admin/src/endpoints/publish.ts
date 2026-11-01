@@ -40,6 +40,31 @@ const requestHandler = async (req: PayloadRequest): Promise<Response> => {
   if (active.docs[0]) return json({ ok: false, error: '已有排队或执行中的发布批次', run: active.docs[0] }, 409)
 
   const plan = await buildPublishPlan(req.payload)
+  const activeTopics = await payload.find({
+    collection: 'topics',
+    where: { and: [{ status: { equals: 'active' } }, { needsPublish: { equals: true } }] },
+    limit: 1000,
+    depth: 0,
+    pagination: false,
+    overrideAccess: true,
+  })
+  const incompleteTopics = activeTopics.docs.filter(
+    (topic: any) =>
+      !String(topic.summary || '').trim() ||
+      !String(topic.nameEn || '').trim() ||
+      !String(topic.summaryEn || '').trim() ||
+      !String(topic.nameJa || '').trim() ||
+      !String(topic.summaryJa || '').trim(),
+  )
+  if (incompleteTopics.length)
+    return json(
+      {
+        ok: false,
+        error: `专题缺少完整简介或英日译文：${incompleteTopics.map((topic: any) => topic.name).join('、')}`,
+        topics: incompleteTopics.map((topic: any) => ({ topicId: topic.topicId, name: topic.name })),
+      },
+      400,
+    )
   const requestedAt = new Date().toISOString()
   const runId = `run_${Date.now()}_${crypto.randomUUID().slice(0, 8)}`
   const run = await payload.create({

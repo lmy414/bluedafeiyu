@@ -44,6 +44,12 @@ description: 用原生工具审核蓝色大肥鱼投稿，补全中文字段，�
 7. 读取保存结果中的 sourceHash（工具简短回包的顶层字段）。分别撰写 en 和 ja，用 save_locale 分别校验、保存。英文成功但日文失败时只修日文，不重审图片。
 8. 用 finish 的 validate 检查，再 complete。只有工具确认成功才报告完成。complete 失败时查看错误并修正，不把最后回复当作写入证据。
 
+## 专题翻译任务
+
+用 `dafeiyu_tasks` 对 `topics` 执行 `list`，与图片任务共用每轮 3 个条目的预算。领取时传入 `target=topics`、`jobId` 和专题 `id`。保存工具返回的 token 和 `sourceHash`。
+
+根据已有中文名称和简介分别翻译英文、日文。用 `dafeiyu_save_topic_locale` 保存每种语言的 `name` 和 `summary`，再用 `dafeiyu_topic_finish` 执行 `validate` 和 `complete`。技术失败时调用 `dafeiyu_release`。中文或人工译文在任务期间发生变化时，按工具报错停止并保留新内容。不得修改专题成员、封面、作者、排序、状态或中文内容。
+
 ## 站长人工收录任务
 
 后台 `manual-include` 任务由站长明确提交，人工收录判断已保存在任务内。使用同一组 admin 工具补齐空白中文字段，生成缺失的英日译文，再 validate 和 complete。complete 会校验原图并创建待发布作品，无需再建翻译任务。已有人工文案、角色集合和类型必须保留。

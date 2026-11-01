@@ -14,8 +14,8 @@ _budgets = {}
 
 
 def bridge(action, args):
-    if args.get('target') not in ('submission', 'admin', 'requests', 'videos'):
-        return {'ok': False, 'error': 'target must be submission, admin or requests'}
+    if args.get('target') not in ('submission', 'admin', 'requests', 'videos', 'topics'):
+        return {'ok': False, 'error': 'target must be submission, admin, requests, videos or topics'}
     payload = {**args, 'action': action}
     encoded = json.dumps(payload, ensure_ascii=False).encode('utf-8')
     if len(encoded) > 128 * 1024:
@@ -45,6 +45,7 @@ def handle(action, args, **kwargs):
         task_id = str(kwargs.get('task_id') or '')
         if not job or not task_id.startswith('cron:' + job['id'] + ':'):
             return json.dumps({'ok': False, 'error': 'Editorial tools are restricted to the configured editorial cron task.'})
+        args = {**args, 'batchId': task_id, 'batchLabel': 'Hermes 审核批次', 'sourceKind': 'hermes'}
         if action == 'image':
             from agent.auxiliary_client import _read_main_provider, _read_main_model
             from agent.image_routing import _lookup_supports_vision
@@ -95,7 +96,7 @@ def handle(action, args, **kwargs):
 
 
 STRING = {'type': 'string'}
-COMMON = {'target': {'type': 'string', 'enum': ['submission', 'admin', 'requests', 'videos']}, 'id': STRING, 'jobId': STRING, 'token': STRING, 'imagePart': {'type': 'string', 'enum': ['cover', 'storyboard']}}
+COMMON = {'target': {'type': 'string', 'enum': ['submission', 'admin', 'requests', 'videos', 'topics']}, 'id': STRING, 'jobId': STRING, 'token': STRING, 'imagePart': {'type': 'string', 'enum': ['cover', 'storyboard']}}
 CONTENT = {'type': 'object', 'additionalProperties': False, 'properties': {
     'name': STRING, 'description': STRING, 'commentary': STRING, 'characterId': STRING,
     'characterIds': {'type': 'array', 'items': STRING, 'minItems': 1, 'uniqueItems': True},
@@ -112,6 +113,8 @@ LOCALE = {'type': 'object', 'additionalProperties': False, 'properties': {
     'faq': {'type': 'array', 'minItems': 2, 'maxItems': 2, 'items': {'type': 'object', 'additionalProperties': False, 'properties': {'question': STRING, 'answer': STRING}, 'required': ['question', 'answer']}},
 }, 'required': ['name', 'description', 'commentary', 'seoTitle', 'seoDescription', 'originNote', 'licenseNote', 'tags', 'faq']}
 
+
+TOPIC_LOCALE = {'type': 'object', 'additionalProperties': False, 'properties': {'name': STRING, 'summary': STRING}, 'required': ['name', 'summary']}
 
 def action_handle(args, **kwargs):
     action = args.get('action')
@@ -133,7 +136,9 @@ def register(ctx):
             'patch': {'type': 'object', 'additionalProperties': False, 'properties': {'author': STRING, 'url': STRING, 'licenseNote': STRING}},
         }, 'required': ['verdict', 'reason']}}, partial(handle, 'draft'), ['target', 'id', 'token', 'decision']),
         ('dafeiyu_save_locale', 'Validate and checkpoint one language you wrote. Use the sourceHash from the saved draft. Other languages and Chinese content survive validation errors.', {'language': {'type': 'string', 'enum': ['en', 'ja']}, 'sourceHash': STRING, 'content': LOCALE}, partial(handle, 'locale'), ['target', 'id', 'token', 'language', 'sourceHash', 'content']),
+        ('dafeiyu_save_topic_locale', 'For target topics only: validate and checkpoint either the English or Japanese name+summary. Use the sourceHash returned by dafeiyu_claim/dafeiyu_read. It never changes topicId, Chinese name/summary, works, cover, author, order or status.', {'language': {'type': 'string', 'enum': ['en', 'ja']}, 'sourceHash': STRING, 'content': TOPIC_LOCALE}, partial(handle, 'locale'), ['target', 'id', 'token', 'language', 'sourceHash', 'content']),
         ('dafeiyu_finish', 'Validate or complete a claimed task. pass requires valid Chinese, English, Japanese. reject/manual is only for actual content risks or uncertainty, not technical failures.', {'action': {'type': 'string', 'enum': ['validate', 'complete']}, 'review': REVIEW}, action_handle, ['target', 'id', 'token', 'action']),
+        ('dafeiyu_topic_finish', 'For target topics only: validate or complete the current translation job. It saves only nameEn/summaryEn/nameJa/summaryJa and fails if Chinese or manual translations changed.', {'action': {'type': 'string', 'enum': ['validate', 'complete']}}, action_handle, ['target', 'id', 'token', 'action']),
         ('dafeiyu_release', 'Checkpoint and release a task on technical error or time budget. Does not mark the submission manual or rejected.', {'reason': STRING}, partial(handle, 'release'), ['target', 'id', 'token', 'reason']),
     ]
     for name, description, extra, handler, required in tools:

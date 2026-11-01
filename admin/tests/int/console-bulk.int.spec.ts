@@ -23,7 +23,8 @@ import { AuditEvents } from '@/collections/AuditEvents'
 import { createBulkJob, cancelBulkJob, retryBulkJob } from '@/endpoints/bulk-jobs'
 import { stepJob, draftOf } from '@/lib/bulk-jobs'
 import { agentHandler } from '@/endpoints/agent'
-import { consoleList, consoleAuthors, parseConsoleQuery } from '@/lib/console-list'
+import { consoleList, consoleAuthors, consoleCounts, consoleCount, parseConsoleQuery } from '@/lib/console-list'
+import { buildPublishPlan } from '@/lib/publish'
 import { sourceHash } from '@/lib/localization.mjs'
 import { buildSiteDataTexts } from '@/lib/export-site-data'
 import { validateContent } from '@/lib/sync-submissions'
@@ -34,6 +35,8 @@ import { requestAgentHandler } from '@/endpoints/request-agent'
 import { issueSnapshot } from '@/lib/rights-requests'
 import { fixtureI18n } from '../../../tools/localization/test-fixture.mjs'
 import { listTasks } from '@/endpoints/tasks'
+import { addTopicMemberships, createQuickTopic, removeTopicMemberships, undoMemberships, findTopic } from '@/lib/topics-membership'
+import { topicSourceHash } from '@/lib/topics-translation'
 import { createDevice, devices, uploadWork } from '@/endpoints/automation'
 
 let payload: any, owner: any, bot: any, char: any, category: any, media: any, root: string, imageBytes: Buffer
@@ -126,9 +129,9 @@ describe('统一任务中心', () => {
     const current=await payload.create({collection:'publish-runs',data:{runId:'history-current-failed',status:'failed',step:'build',createdAt:'2026-10-03T00:00:00.000Z'},overrideAccess:true,context:{audit:false}})
     const success=await payload.create({collection:'publish-runs',data:{runId:'history-success',status:'succeeded',step:'complete',createdAt:'2026-10-02T00:00:00.000Z'},overrideAccess:true,context:{audit:false}})
     try {
-      const pending=await (await listTasks({...request({}),url:'http://localhost/?kind=publish&status=attention'})).json()
+      const pending=await (await listTasks({...request({}),url:'http://localhost/?kind=publish&group=intervene'})).json()
       expect(pending.docs.map((d:any)=>d.sourceId)).toEqual(['history-current-failed'])
-      const handled=await (await listTasks({...request({}),url:'http://localhost/?task=history-failed&status=completed'})).json()
+      const handled=await (await listTasks({...request({}),url:'http://localhost/?task=history-failed&group=history'})).json()
       expect(handled.docs[0].stage).toBe('superseded')
       expect((await payload.findByID({collection:'publish-runs',id:failed.id,overrideAccess:true})).status).toBe('failed')
     }finally{for(const doc of [failed,current,success])await payload.delete({collection:'publish-runs',id:doc.id,overrideAccess:true,context:{audit:false}})}
@@ -139,7 +142,7 @@ describe('统一任务中心', () => {
     expect((await listTasks(request({},bot))).status).toBe(403)
     const doc=await createSubmission('sub_task_unified')
     const job=await enqueue('manual-include','submissions',[doc.submissionId],{confirm:'MANUAL_INCLUDE'})
-    const result=await (await listTasks({...request({}),url:'http://localhost/?status=running'})).json()
+    const result=await (await listTasks({...request({}),url:'http://localhost/?group=processing'})).json()
     expect(result.docs.some((t:any)=>t.sourceId===job.jobId)).toBe(true)
     expect(result.docs.some((t:any)=>t.sourceId===String(doc.id))).toBe(false)
     expect(JSON.stringify(result)).not.toContain('versions')
@@ -181,8 +184,8 @@ describe('轻量列表服务端分页', () => {
     const work = await createWork('handled_work')
     await createSubmission('sub_unhandled')
     await createSubmission('sub_handled', { work: work.id })
-    expect((await consoleList(payload, query('kind=submissions&mode=rejected'))).totalDocs).toBe(1)
-    expect((await consoleList(payload, query('kind=submissions&mode=reviewed'))).totalDocs).toBe(1)
+    expect((await consoleList(payload, query('kind=submissions&state=needs_review'))).totalDocs).toBe(1)
+    expect((await consoleList(payload, query('kind=submissions&state=published'))).totalDocs).toBe(1)
   })
 })
 
@@ -204,7 +207,7 @@ describe('多角色真实数据库链路', () => {
     expect(saved.characters.map((c: any) => c.id)).toEqual([second.id, char.id])
     expect(saved.character.id).toBe(char.id)
     expect(saved.needsPublish).toBe(true)
-    const list = await consoleList(payload, query(`character=${second.id}`))
+    const list = await consoleList(payload, query('character=claude'))
     expect(list.totalDocs).toBe(1)
     expect((list.docs[0] as any).characters.map((c: any) => c.characterId)).toEqual(['claude', 'deepseek'])
     const exported = JSON.parse(buildSiteDataTexts({ works: [saved], characters: [], categories: [], topics: [] })['data/works.json'])[0]
@@ -407,4 +410,366 @@ describe('持久化批量任务', () => {
     } finally { vi.unstubAllGlobals(); if (oldToken === undefined) delete process.env.ADMIN_WORKER_TOKEN; else process.env.ADMIN_WORKER_TOKEN = oldToken }
   })
 
+})
+
+describe('后台工作流语义回归', () => {
+  it('投稿生命周期每个 mode 都有入口，列表与计数一致', async () => {
+    const pendingWork = await createWork('life_work_pending', { status: 'published', needsPublish: true })
+    const liveWork = await createWork('life_work_live', { status: 'published', needsPublish: false })
+    const hiddenWork = await createWork('life_work_hidden', { status: 'hidden', needsPublish: false })
+    await createSubmission('life_decide')
+    await createSubmission('life_processing', { state: 'received' })
+    await createSubmission('life_auto', { state: 'auto_passed' })
+    await createSubmission('life_failed', { state: 'publish_failed' })
+    await createSubmission('life_rejected', { state: 'rejected' })
+    await createSubmission('life_pending', { state: 'approved', work: pendingWork.id })
+    await createSubmission('life_published', { state: 'published', work: liveWork.id })
+    await createSubmission('life_hidden', { state: 'published', work: hiddenWork.id })
+    const counts = await consoleCounts(payload, query('kind=submissions&keyword=life_'))
+    expect(counts).toMatchObject({ all: 8, needs_review: 1, processing: 2, blocked: 1, rejected: 1, needs_publish: 1, published: 1, hidden: 1 })
+    for (const state of ['needs_review', 'processing', 'blocked', 'rejected', 'needs_publish', 'published', 'hidden']) {
+      const list = await consoleList(payload, query(`kind=submissions&state=${state}&keyword=life_`))
+      expect(list.totalDocs).toBe(counts[state])
+      expect(await consoleCount(payload, query(`kind=submissions&state=${state}&keyword=life_`))).toBe(counts[state])
+    }
+  })
+
+  it('待发布复用发布计划口径，已上线投稿进历史且不依赖发布批次号', async () => {
+    const live = await createWork('mutex_live', { status: 'published', needsPublish: true })
+    await createWork('mutex_fresh', { status: 'pending', needsPublish: true })
+    const done = await createWork('mutex_done', { status: 'published', needsPublish: false })
+    await createSubmission('mutex_linked', { state: 'auto_rejected', work: live.id })
+    await createSubmission('mutex_done_sub', { state: 'auto_passed', work: done.id })
+    await createSubmission('mutex_auto', { state: 'auto_passed' })
+    await createSubmission('mutex_rejected', { state: 'rejected' })
+    const tasks = await (await listTasks({ ...request({}), url: 'http://localhost/?keyword=mutex' })).json()
+    const publish = await (await listTasks({ ...request({}), url: 'http://localhost/?group=publish&keyword=mutex' })).json()
+    const content = publish.docs.filter((row: any) => row.unit === 'content')
+    expect(content).toHaveLength(2)
+    expect(content.every((row: any) => row.group === 'publish' && row.kind === 'content')).toBe(true)
+    const liveRow = content.find((row: any) => row.title === 'mutex_live')
+    const freshRow = content.find((row: any) => row.title === 'mutex_fresh')
+    expect(liveRow).toMatchObject({ liveVersion: true, content: { state: 'pending_publish', needsPublish: true, liveVersion: true } })
+    expect(freshRow).toMatchObject({ liveVersion: false, content: { state: 'pending_publish', needsPublish: true, liveVersion: false } })
+    expect(tasks.docs.some((row: any) => row.sourceId === 'mutex_linked')).toBe(false)
+    const doneRow = tasks.docs.find((row: any) => row.sourceId === 'mutex_done_sub')
+    expect(doneRow).toMatchObject({ group: 'history', content: { state: 'published', liveVersion: true, lastPublishRun: null } })
+    expect(tasks.docs.find((row: any) => row.sourceId === 'mutex_auto')).toMatchObject({ group: 'processing', stage: 'auto_passed' })
+    expect(publish.counts.content.publish).toBe(2)
+    expect(publish.counts.publish).toBe(2)
+    expect(publish.counts.tasks.all).toBe(3)
+    expect(publish.counts.all).toBe(3)
+    expect(publish.totalDocs).toBe(2)
+    expect(publish.docs.every((row: any) => row.unit === 'content')).toBe(true)
+    expect(tasks.docs.every((row: any) => row.unit === 'task')).toBe(true)
+  })
+
+  it('活跃人工收录任务覆盖投稿，不再同时在审核待处理', async () => {
+    const doc = await createSubmission('dedupe_active', { state: 'needs_manual' })
+    const job = await enqueue('manual-include', 'submissions', [doc.submissionId], { confirm: 'MANUAL_INCLUDE' })
+    const duplicate = await createBulkJob(request({ operation: 'manual-include', target: 'submissions', ids: [doc.submissionId], confirm: 'MANUAL_INCLUDE' }))
+    expect(duplicate.status).toBe(409)
+    expect((await duplicate.json()).job.jobId).toBe(job.jobId)
+    const tasks = await (await listTasks({ ...request({}), url: 'http://localhost/?keyword=dedupe_active' })).json()
+    expect(tasks.docs.some((row: any) => row.kind === 'submission')).toBe(false)
+    const jobRow = await (await listTasks({ ...request({}), url: `http://localhost/?task=${job.jobId}` })).json()
+    expect(jobRow.docs[0]).toMatchObject({ kind: 'bulk', group: 'processing', unit: 'task' })
+    expect(jobRow.docs[0].job).toMatchObject({ jobId: job.jobId, status: 'queued' })
+    const processing = await consoleList(payload, query('kind=submissions&state=processing&keyword=dedupe_active'))
+    expect(processing.totalDocs).toBe(1)
+    expect(processing.docs[0]).toMatchObject({ activity: 'processing', activeJob: { jobId: job.jobId, status: 'queued' } })
+    expect((await consoleList(payload, query('kind=submissions&state=needs_review&keyword=dedupe_active'))).totalDocs).toBe(0)
+    await cancelBulkJob(request({ jobId: job.jobId }))
+    const decide = await consoleList(payload, query('kind=submissions&state=needs_review&keyword=dedupe_active'))
+    expect(decide.totalDocs).toBe(1)
+    expect(decide.docs[0].activeJob).toBeNull()
+    const restored = await (await listTasks({ ...request({}), url: 'http://localhost/?keyword=dedupe_active' })).json()
+    expect(restored.docs[0]).toMatchObject({ kind: 'submission', group: 'decide', owner: 'owner' })
+  })
+
+  it('重试链只让最新子任务承载待办，祖先保留失败结果', async () => {
+    const createJob = async (jobId: string, status: string, options: any = {}) =>
+      payload.create({ collection: 'bulk-jobs', data: { jobId, operation: 'write-fields', target: 'works', status, ids: ['retry_item'], cursor: 0, results: status === 'failed' ? [{ id: 'retry_item', status: 'failed', error: '构建失败' }] : [], options, requestedBy: owner.id }, overrideAccess: true, context: { audit: false } })
+    const parent = await createJob('retry_parent', 'failed', { agent: { stage: 'failed' } })
+    let row = (await (await listTasks({ ...request({}), url: 'http://localhost/?task=retry_parent' })).json()).docs[0]
+    expect(row).toMatchObject({ group: 'intervene', canRetry: true, retriedBy: null })
+    await createJob('retry_child', 'queued', { retryOf: parent.jobId, agent: { stage: 'queued' } })
+    row = (await (await listTasks({ ...request({}), url: 'http://localhost/?task=retry_parent' })).json()).docs[0]
+    expect(row).toMatchObject({ group: 'history', canRetry: false, nextAction: '查看子任务' })
+    expect(row.retriedBy).toMatchObject({ jobId: 'retry_child', status: 'queued' })
+    expect(row.href).toBe('/admin?task=retry_child&kind=bulk')
+    const child = (await (await listTasks({ ...request({}), url: 'http://localhost/?task=retry_child' })).json()).docs[0]
+    expect(child).toMatchObject({ group: 'processing', canRetry: false, retryOf: 'retry_parent' })
+    await payload.update({ collection: 'bulk-jobs', where: { jobId: { equals: 'retry_child' } }, data: { status: 'failed', results: [{ id: 'retry_item', status: 'failed', error: '再次失败' }] }, overrideAccess: true, context: { audit: false } })
+    await createJob('retry_grandchild', 'queued', { retryOf: 'retry_child', agent: { stage: 'queued' } })
+    const parentAfter = (await (await listTasks({ ...request({}), url: 'http://localhost/?task=retry_parent' })).json()).docs[0]
+    const childAfter = (await (await listTasks({ ...request({}), url: 'http://localhost/?task=retry_child' })).json()).docs[0]
+    expect(parentAfter.group).toBe('history')
+    expect(childAfter).toMatchObject({ group: 'history', canRetry: false, retriedBy: { jobId: 'retry_grandchild' } })
+    expect((await (await listTasks({ ...request({}), url: 'http://localhost/?task=retry_grandchild' })).json()).docs[0].group).toBe('processing')
+    await payload.update({ collection: 'bulk-jobs', where: { jobId: { equals: 'retry_grandchild' } }, data: { status: 'cancelled' }, overrideAccess: true, context: { audit: false } })
+    const childFinal = (await (await listTasks({ ...request({}), url: 'http://localhost/?task=retry_child' })).json()).docs[0]
+    expect(childFinal).toMatchObject({ group: 'intervene', canRetry: true, retriedBy: null })
+    expect((await (await listTasks({ ...request({}), url: 'http://localhost/?task=retry_parent' })).json()).docs[0].group).toBe('history')
+  })
+
+  it('只有带依据的 retry 才显示自动等待，blocked 不承诺自动恢复', async () => {
+    const createJob = async (jobId: string, status: string, stage: string, retryAt = 0) =>
+      payload.create({ collection: 'bulk-jobs', data: { jobId, operation: 'write-fields', target: 'works', status, ids: ['evidence_item'], cursor: 0, results: [], options: { agent: { stage, retryAt } }, requestedBy: owner.id }, overrideAccess: true, context: { audit: false } })
+    await createJob('evidence_blocked', 'queued', 'blocked')
+    await createJob('evidence_retry_ok', 'queued', 'retry', Date.now() + 60_000)
+    await createJob('evidence_retry_unknown', 'queued', 'retry')
+    await createJob('evidence_done', 'succeeded', 'ready')
+    const get = async (id: string) => (await (await listTasks({ ...request({}), url: `http://localhost/?task=${id}` })).json()).docs[0]
+    expect(await get('evidence_blocked')).toMatchObject({ group: 'intervene', blocked: true, canRetry: true, autoRetryAt: null, nextAction: '查看失败项并重试' })
+    const retryOk = await get('evidence_retry_ok')
+    expect(retryOk).toMatchObject({ group: 'processing', autoRetryAt: expect.any(Number), nextAction: '等待自动重试', blocked: false })
+    expect(await get('evidence_retry_unknown')).toMatchObject({ group: 'intervene', autoRetryAt: null, stageLabel: '自动重试待确认' })
+    expect(await get('evidence_done')).toMatchObject({ group: 'history', nextAction: '查看结果' })
+  })
+
+  it('GIF/格式未知按原图语义过滤，稳定角色与类型跨作品/投稿一致', async () => {
+    const gif = await createWork('fmt_gif_hist', { format: 'gif', mimeType: 'image/png', isAnimated: false, needsPublish: true, legacyPaths: { path: 'submissions/fmt_wrong.png' } })
+    await createWork('fmt_anim_png', { format: 'png', mimeType: 'image/png', isAnimated: true })
+    await createWork('fmt_static_webp', { format: 'webp', mimeType: 'image/webp', isAnimated: true })
+    await createWork('fmt_unknown', { format: '', mimeType: '', legacyPaths: { path: '' } })
+    const gifSub = await createSubmission('fmt_sub_gif', { state: 'published', work: gif.id })
+    await createSubmission('fmt_sub_unknown')
+    const gifWorks = await consoleList(payload, query('kind=works&format=gif&keyword=fmt_'))
+    expect(gifWorks.docs.map((row: any) => row.workId)).toEqual(['fmt_gif_hist'])
+    expect(gifWorks.docs[0]).toMatchObject({ format: 'gif', isAnimated: false })
+    expect((await consoleList(payload, query('kind=works&format=static&keyword=fmt_'))).docs.map((row: any) => row.workId).sort()).toEqual(['fmt_anim_png', 'fmt_static_webp'])
+    expect((await consoleList(payload, query('kind=works&format=unknown&keyword=fmt_'))).docs.map((row: any) => row.workId)).toEqual(['fmt_unknown'])
+    expect((await consoleList(payload, query('kind=submissions&format=gif&keyword=fmt_sub'))).docs.map((row: any) => row.submissionId)).toEqual([gifSub.submissionId])
+    expect((await consoleList(payload, query('kind=submissions&format=unknown&keyword=fmt_sub'))).docs.map((row: any) => row.submissionId)).toEqual(['fmt_sub_unknown'])
+    expect((await consoleList(payload, query('kind=works&character=deepseek&type=meme&keyword=fmt_'))).totalDocs).toBe(4)
+    expect((await consoleList(payload, query('kind=submissions&character=deepseek&type=meme&keyword=fmt_sub'))).totalDocs).toBe(2)
+    const counts = await consoleCounts(payload, query('kind=works&format=gif&keyword=fmt_'))
+    expect(counts.all).toBe(1)
+    expect(counts.needs_publish).toBe(1)
+    const rows = await consoleList(payload, query('kind=works&keyword=fmt_'))
+    expect(rows.docs.every((row: any) => row.activeJob === null)).toBe(true)
+  })
+
+  it('任务行批次字段来自真实任务，可按 batch/sourceKind 过滤', async () => {
+    await createWork('batch_work')
+    const created = await createBulkJob(request({ operation: 'write-fields', target: 'works', ids: ['batch_work'], patch: { commentary: '批次测试' }, batchId: 'cli-batch-1', batchLabel: '本地批次', sourceKind: 'bulk-worker' }))
+    expect(created.status).toBe(202)
+    const job = (await created.json()).job
+    const row = (await (await listTasks({ ...request({}), url: `http://localhost/?task=${job.jobId}` })).json()).docs[0]
+    expect(row).toMatchObject({ batchId: 'cli-batch-1', batchLabel: expect.stringContaining('本地批次'), sourceKind: 'bulk-worker', sourceLabel: '后台执行器' })
+    const filtered = await (await listTasks({ ...request({}), url: 'http://localhost/?group=processing&batch=cli-batch-1' })).json()
+    expect(filtered.docs.map((item: any) => item.sourceId)).toContain(job.jobId)
+    const bySource = await (await listTasks({ ...request({}), url: 'http://localhost/?group=processing&sourceKind=bulk-worker' })).json()
+    expect(bySource.batches?.some((batch: any) => batch.batchId === 'cli-batch-1')).toBe(true)
+    await cancelBulkJob(request({ jobId: job.jobId }))
+  })
+
+  it('空 agent stage 回退真实状态，不把排队任务显示成未知状态', async () => {
+    await createWork('stage_real')
+    const job = await enqueue('ai-fill', 'works', ['stage_real'])
+    const read = async () => (await (await listTasks({ ...request({}), url: `http://localhost/?task=${job.jobId}` })).json()).docs[0]
+    expect(await read()).toMatchObject({ stage: 'queued', stageLabel: '排队中', status: 'queued' })
+    await payload.update({ collection: 'bulk-jobs', where: { jobId: { equals: job.jobId } }, data: { options: { ...job.options, agent: { ...(job.options.agent || {}), stage: '' } } }, overrideAccess: true, context: { audit: false } })
+    expect(await read()).toMatchObject({ stage: 'queued', stageLabel: '排队中', status: 'queued' })
+    const doc = await createSubmission('stage_empty_sub', { state: 'received', agentProgress: { stage: '' } })
+    const submission = (await (await listTasks({ ...request({}), url: `http://localhost/?task=${doc.submissionId}` })).json()).docs[0]
+    expect(submission).toMatchObject({ stage: 'received', stageLabel: '已收到', group: 'processing' })
+    await cancelBulkJob(request({ jobId: job.jobId }))
+  })
+
+  it('唯一处理状态由最新任务决定，失败不会被旧任务永久压住，也不伪造线上版本', async () => {
+    const work = await createWork('state_priority', { status: 'published', needsPublish: false })
+    const createJob = async (jobId: string, status: string, options: any = {}) =>
+      payload.create({ collection: 'bulk-jobs', data: { jobId, operation: 'write-fields', target: 'works', status, ids: [work.workId], cursor: 0, results: status === 'failed' ? [{ id: work.workId, status: 'failed', message: '失败' }] : [], options, requestedBy: owner.id }, overrideAccess: true, context: { audit: false } })
+    await createJob('state_failed', 'failed')
+    let row = (await consoleList(payload, query('kind=works&keyword=state_priority'))).docs[0]
+    expect(row).toMatchObject({ processingState: 'blocked', activeJob: null, liveVersion: true })
+    await createJob('state_queued', 'queued')
+    row = (await consoleList(payload, query('kind=works&keyword=state_priority'))).docs[0]
+    expect(row).toMatchObject({ processingState: 'processing', activeJob: { jobId: 'state_queued' }, liveVersion: true })
+    await payload.update({ collection: 'bulk-jobs', where: { jobId: { equals: 'state_queued' } }, data: { status: 'succeeded' }, overrideAccess: true, context: { audit: false } })
+    row = (await consoleList(payload, query('kind=works&keyword=state_priority'))).docs[0]
+    expect(row).toMatchObject({ processingState: 'published', activeJob: null })
+    const removed = await createWork('state_removed_no_live', { status: 'removed', needsPublish: true })
+    expect((await consoleList(payload, query('kind=works&keyword=state_removed_no_live'))).docs[0]).toMatchObject({
+      processingState: 'needs_publish', liveVersion: false, targetStatus: 'removed',
+    })
+    const hidden = await createWork('state_hidden_live', { status: 'hidden', needsPublish: true, lastPublishedAt: '2026-10-01T00:00:00.000Z' })
+    expect((await consoleList(payload, query('kind=works&keyword=state_hidden_live'))).docs[0]).toMatchObject({
+      processingState: 'needs_publish', liveVersion: true, targetStatus: 'hidden',
+    })
+    expect(((await consoleList(payload, query('kind=works&keyword=state_removed_no_live'))).docs[0] as any).workId).toBe(removed.workId)
+  })
+
+  it('专题成员原子加入、幂等、可撤销且保护既有成员与封面', async () => {
+    const a = await createWork('member_a')
+    const b = await createWork('member_b')
+    const c = await createWork('member_c')
+    const free = await createWork('member_free')
+    const topic = await payload.create({ collection: 'topics', data: { topicId: 'member-topic', name: '成员专题', summary: '成员', status: 'draft', works: [b.id], cover: b.id, order: 1 }, overrideAccess: true, context: { audit: false } })
+    const req = { ...request({}), user: owner }
+    const first = await addTopicMemberships(payload, topic, [a.workId, b.workId, a.workId], req as any)
+    expect(first).toMatchObject({ added: [a.workId], already: [b.workId], failed: [] })
+    const after = await payload.findByID({ collection: 'topics', id: topic.id, depth: 0, overrideAccess: true })
+    expect(after.works.map(Number)).toEqual([Number(b.id), Number(a.id)])
+    const undo = await undoMemberships(payload, first.undoToken!, req as any)
+    expect(undo.removed).toEqual([a.workId])
+    let current = await payload.findByID({ collection: 'topics', id: topic.id, depth: 0, overrideAccess: true })
+    expect(current.works.map(Number)).toEqual([Number(b.id)])
+    expect(Number(current.cover)).toBe(Number(b.id))
+    const coverAttempt = await removeTopicMemberships(payload, current, [b.workId], req as any)
+    expect(coverAttempt.removed).toEqual([])
+    expect(coverAttempt.kept[0].error).toContain('封面')
+    const concurrent = await Promise.all([
+      addTopicMemberships(payload, current, [a.workId], req as any),
+      addTopicMemberships(payload, current, [c.workId], req as any),
+    ])
+    expect(concurrent.flatMap((item) => item.added).sort()).toEqual([a.workId, c.workId])
+    current = await payload.findByID({ collection: 'topics', id: topic.id, depth: 0, overrideAccess: true })
+    expect(current.works.map(Number).sort()).toEqual([Number(a.id), Number(b.id), Number(c.id)].sort())
+    expect((await addTopicMemberships(payload, current, ['missing_work'], req as any)).failed[0].id).toBe('missing_work')
+    const quick = await createQuickTopic(payload, { topicId: 'quick-draft-topic', name: '快捷专题', summary: '', workIds: [a.workId] }, req as any)
+    expect(quick.created).toBe(true)
+    expect(quick.topic).toMatchObject({ topicId: 'quick-draft-topic', name: '快捷专题', summary: '', status: 'draft' })
+    expect(quick.membership.added).toEqual([a.workId])
+    expect((await consoleList(payload, query('kind=works&topic=none&keyword=member_'))).docs.map((row: any) => row.workId)).toEqual([free.workId])
+    expect((await consoleList(payload, query('kind=works&topic=member-topic'))).docs[0].topicIds).toContain('member-topic')
+  })
+
+  it('专题译文任务真实排队、校验 sourceHash，并保护人工字段与成员', async () => {
+    const topic = await payload.create({ collection: 'topics', data: { topicId: 'translate-topic-a', name: '翻译专题', summary: '中文简介', status: 'draft', works: [], order: 2 }, overrideAccess: true, context: { audit: false } })
+    const sourceHash = topicSourceHash(topic.name, topic.summary)
+    const created = await createBulkJob(request({ operation: 'translate-topic', target: 'topics', ids: [topic.topicId], baseUpdatedAt: topic.updatedAt, sourceHash }))
+    expect(created.status).toBe(202)
+    const job = (await created.json()).job
+    expect(job).toMatchObject({ operation: 'translate-topic', target: 'topics', status: 'queued' })
+    let read = await payload.findByID({ collection: 'topics', id: topic.id, depth: 0, overrideAccess: true })
+    expect(read).toMatchObject({ translationState: 'queued', translationJobId: job.jobId })
+    const headers = new Headers({ authorization: 'Bearer agent-test-token' })
+    process.env.ADMIN_WORKER_TOKEN = 'agent-test-token'
+    const call = async (body: any) => {
+      const response = await agentHandler({ ...request({ jobId: job.jobId, id: topic.topicId, ...body }), headers } as any)
+      return { status: response.status, ...(await response.json()) }
+    }
+    try {
+    const topicJobs = await call({ action: 'list', target: 'topics' })
+    const imageJobs = await call({ action: 'list', target: 'admin' })
+    expect(topicJobs.jobs.some((item: any) => item.jobId === job.jobId)).toBe(true)
+    expect(topicJobs.jobs.every((item: any) => item.target === 'topics')).toBe(true)
+    expect(imageJobs.jobs.some((item: any) => item.jobId === job.jobId)).toBe(false)
+    expect(imageJobs.jobs.every((item: any) => item.target !== 'topics')).toBe(true)
+      const claim = await call({ action: 'claim', batchId: 'cron_review_1', sourceKind: 'hermes' })
+      expect(claim.status).toBe(200)
+      const member = await createWork('translate_member')
+      await addTopicMemberships(payload, topic, [member.workId], request({}) as any)
+      expect((await payload.findByID({ collection: 'topics', id: topic.id, depth: 0, overrideAccess: true })).translationState).toBe('running')
+      const auth = { token: claim.token }
+      expect((await call({ action: 'draft', ...auth, content: { name: '翻译专题', summary: '中文简介' } })).status).toBe(200)
+      const en = await call({ action: 'locale', ...auth, language: 'en', sourceHash, content: { name: 'Translation Topic', summary: 'English summary' } })
+      expect(en.status).toBe(200)
+      const ja = await call({ action: 'locale', ...auth, language: 'ja', sourceHash, content: { name: '翻訳トピック', summary: '日本語の概要' } })
+      expect(ja.status).toBe(200)
+      const done = await call({ action: 'complete', ...auth })
+      expect(done).toMatchObject({ ok: true })
+    } finally {
+      if (process.env.ADMIN_WORKER_TOKEN === 'agent-test-token') delete process.env.ADMIN_WORKER_TOKEN
+    }
+    read = await payload.findByID({ collection: 'topics', id: topic.id, depth: 0, overrideAccess: true })
+    expect(read).toMatchObject({ name: '翻译专题', summary: '中文简介', nameEn: 'Translation Topic', summaryEn: 'English summary', nameJa: '翻訳トピック', summaryJa: '日本語の概要', translationState: 'ready' })
+    expect(read.works).toEqual([expect.any(Number)])
+    expect(read.topicId).toBe('translate-topic-a')
+    expect(read.translationSourceHash).toBe(sourceHash)
+    const task = (await (await listTasks({ ...request({}), url: `http://localhost/?task=${job.jobId}` })).json()).docs[0]
+    expect(task).toMatchObject({ kind: 'bulk', sourceKind: 'hermes', batchId: 'cron_review_1' })
+    const stale = await payload.update({ collection: 'topics', id: topic.id, data: { name: '中文已修改', needsPublish: true }, overrideAccess: true, context: { audit: false } })
+    const queued = await createBulkJob(request({ operation: 'translate-topic', target: 'topics', ids: [topic.topicId], baseUpdatedAt: stale.updatedAt, sourceHash }))
+    expect(queued.status).toBe(202)
+    const staleJob = (await queued.json()).job
+    const staleRead = await payload.findByID({ collection: 'topics', id: topic.id, depth: 0, overrideAccess: true })
+    expect(staleRead.nameEn).toBe('Translation Topic')
+    await payload.update({ collection: 'bulk-jobs', where: { jobId: { equals: staleJob.jobId } }, data: { status: 'cancelled' }, overrideAccess: true, context: { audit: false } })
+  })
+
+  it('翻译任务不能覆盖提交后的人工英日修改', async () => {
+    const topic = await payload.create({ collection: 'topics', data: { topicId: 'translate-topic-conflict', name: '冲突专题', summary: '中文简介', status: 'draft', works: [], order: 3 }, overrideAccess: true, context: { audit: false } })
+    const sourceHash = topicSourceHash(topic.name, topic.summary)
+    const created = await createBulkJob(request({ operation: 'translate-topic', target: 'topics', ids: [topic.topicId], force: true, confirm: 'OVERWRITE', sourceHash }))
+    expect(created.status).toBe(202)
+    const job = (await created.json()).job
+    process.env.ADMIN_WORKER_TOKEN = 'agent-test-token'
+    const headers = new Headers({ authorization: 'Bearer agent-test-token' })
+    const call = async (body: any) => {
+      const response = await agentHandler({ ...request({ jobId: job.jobId, id: topic.topicId, ...body }), headers } as any)
+      return { status: response.status, ...(await response.json()) }
+    }
+    try {
+      const claim = await call({ action: 'claim' })
+      expect(claim.status).toBe(200)
+      await payload.update({ collection: 'topics', id: topic.id, data: { nameEn: '人工英文名' }, overrideAccess: true, context: { audit: false } })
+      const auth = { token: claim.token }
+      await call({ action: 'locale', ...auth, language: 'en', sourceHash, content: { name: 'AI English', summary: 'AI summary' } })
+      await call({ action: 'locale', ...auth, language: 'ja', sourceHash, content: { name: 'AI 日本語', summary: 'AI 概要' } })
+      const done = await call({ action: 'complete', ...auth })
+      expect(done).toMatchObject({ ok: false })
+      const read = await payload.findByID({ collection: 'topics', id: topic.id, depth: 0, overrideAccess: true })
+      expect(read.nameEn).toBe('人工英文名')
+      expect(read.translationState).toBe('failed')
+    } finally {
+      if (process.env.ADMIN_WORKER_TOKEN === 'agent-test-token') delete process.env.ADMIN_WORKER_TOKEN
+    }
+  })
+
+  it('legacy 有译文但无 sourceHash 时改中文必须 stale，人工补齐后写回真实 hash', async () => {
+    const topic = await payload.create({ collection: 'topics', data: { topicId: 'legacy-translation-topic', name: '旧中文', summary: '旧简介', nameEn: 'Old EN', summaryEn: 'Old summary', nameJa: '旧日本語', summaryJa: '旧概要', status: 'draft', works: [], order: 4 }, overrideAccess: true, context: { audit: false } })
+    await payload.db.client.execute({ sql: "UPDATE topics SET translation_source_hash=NULL, translation_state='ready' WHERE id=?", args: [topic.id] })
+    const changed = await payload.update({ collection: 'topics', id: topic.id, data: { name: '新中文', summary: '新简介', needsPublish: true }, overrideAccess: true, context: { audit: false } })
+    expect(changed.translationState).toBe('stale')
+    expect(changed.translationSourceHash || '').toBe('')
+    expect(changed.nameEn).toBe('Old EN')
+    const manual = await payload.update({ collection: 'topics', id: topic.id, data: { nameEn: 'New EN', summaryEn: 'New summary', nameJa: '新日本語', summaryJa: '新概要' }, overrideAccess: true, context: { audit: false } })
+    expect(manual.translationState).toBe('ready')
+    expect(manual.translationSourceHash).toBe(topicSourceHash('新中文', '新简介'))
+    expect(manual.translationRevision).toBeGreaterThan(Number(topic.translationRevision || 0))
+  })
+
+  it('名称-only 专题不能创建永远做不完的翻译任务', async () => {
+    const quick = await createQuickTopic(payload, { topicId: 'translate-empty-topic', name: '只有名称', summary: '', workIds: [] }, request({}) as any)
+    expect(quick.topic.summary).toBe('')
+    const refused = await createBulkJob(request({ operation: 'translate-topic', target: 'topics', ids: ['translate-empty-topic'], sourceHash: topicSourceHash('只有名称', '') }))
+    expect(refused.status).toBe(400)
+    expect((await refused.json()).error).toContain('缺少中文名称或简介')
+    const jobs = await payload.find({ collection: 'bulk-jobs', where: { and: [{ target: { equals: 'topics' } }, { operation: { equals: 'translate-topic' } }] }, overrideAccess: true })
+    expect(jobs.docs.some((job: any) => (job.ids || []).includes('translate-empty-topic'))).toBe(false)
+    await payload.update({ collection: 'topics', id: quick.topic.id, data: { summary: '补全简介' }, overrideAccess: true, context: { audit: false } })
+    const accepted = await createBulkJob(request({ operation: 'translate-topic', target: 'topics', ids: ['translate-empty-topic'], sourceHash: topicSourceHash('只有名称', '补全简介') }))
+    expect(accepted.status).toBe(202)
+    const job = (await accepted.json()).job
+    await cancelBulkJob(request({ jobId: job.jobId }))
+  })
+
+  it('发布计划暴露 needsPublish、内容总数和真实排队批次', async () => {
+    const work = await createWork('plan_needs_publish', { status: 'published', needsPublish: true })
+    const topic = await payload.create({ collection: 'topics', data: { topicId: 'plan-topic', name: '计划专题', summary: '计划', status: 'draft', order: 99, works: [], needsPublish: true }, overrideAccess: true, context: { audit: false } })
+    const creator = await payload.create({ collection: 'creators', data: { uid: 'plan-creator', homepage: 'https://space.example/1', name: '计划作者', intro: '简介', status: 'active', needsPublish: true }, overrideAccess: true, context: { audit: false } })
+    const video = await payload.create({ collection: 'videos', data: { bvid: 'BVplan', creator: creator.id, title: '计划视频', source: { platform: 'bilibili' }, status: 'queued', needsPublish: true }, overrideAccess: true, context: { audit: false, skipNeedsPublish: true } })
+    try {
+      const plan = await buildPublishPlan(payload)
+      const item = plan.updated.find((entry: any) => entry.workId === work.workId)
+      expect(item).toMatchObject({ needsPublish: true, status: 'published' })
+      expect(plan.topics.find((entry: any) => entry.topicId === 'plan-topic')).toMatchObject({ needsPublish: true })
+      expect(plan.videos.some((entry: any) => entry.name === '计划视频')).toBe(true)
+      expect(plan.videos.some((entry: any) => entry.name === '计划作者')).toBe(true)
+      expect(plan.summary.contents).toBe(plan.added.length + plan.updated.length + plan.hidden.length + plan.restored.length + plan.deleted.length + plan.topics.length + plan.videos.length)
+      expect(plan.pendingRun).toBeNull()
+      const run = await payload.create({ collection: 'publish-runs', data: { runId: 'plan_pending_run', status: 'in_progress', step: 'build', trigger: 'manual' }, overrideAccess: true, context: { audit: false } })
+      const withRun = await buildPublishPlan(payload)
+      expect(withRun.pendingRun).toMatchObject({ runId: 'plan_pending_run', status: 'in_progress' })
+      await payload.delete({ collection: 'publish-runs', id: run.id, overrideAccess: true, context: { audit: false } })
+    } finally {
+      await payload.delete({ collection: 'videos', id: video.id, overrideAccess: true, context: { audit: false } })
+      await payload.delete({ collection: 'creators', id: creator.id, overrideAccess: true, context: { audit: false } })
+      await payload.delete({ collection: 'topics', id: topic.id, overrideAccess: true, context: { audit: false } })
+    }
+  })
 })

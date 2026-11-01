@@ -158,20 +158,28 @@ export async function videoAgent(payload, input, req, { client = createBilibiliC
     if (input.action === 'claim') {
       if (!['queued', 'reviewing'].includes(v.status) || v.lease?.expiresAt > now) throw fail('视频已被领取或处理');
       const token = crypto.randomUUID();
-      v = await save(payload, 'videos', id, { status: 'reviewing', lease: { token, expiresAt: now + LEASE_MS } }, tx);
-      return { ok: true, id, token, source: v.source, sourceHash: videoHash(v.source) };
+      const batchId = input.batchId ? String(input.batchId).slice(0, 200) : null;
+      const history = batchId ? [{ batchId, batchLabel: input.batchLabel ? String(input.batchLabel).slice(0, 200) : null, sourceKind: input.sourceKind ? String(input.sourceKind).slice(0, 50) : 'hermes', claimedAt: new Date(now).toISOString(), status: 'claimed' }] : [];
+      v = await save(payload, 'videos', id, { status: 'reviewing', lease: { token, expiresAt: now + LEASE_MS, ...(batchId ? { batchId, batchLabel: input.batchLabel ? String(input.batchLabel).slice(0, 200) : null, sourceKind: input.sourceKind ? String(input.sourceKind).slice(0, 50) : 'hermes', batchHistory: history } : {}) } }, tx);
+      return { ok: true, id, token, source: v.source, sourceHash: videoHash(v.source), ...(batchId ? { batchId } : {}) };
     }
     checkLease(v, input.token, now);
     if (input.action === 'get') return { ok: true, id, source: v.source, sourceHash: videoHash(v.source), review: v.review };
     if (input.action === 'release') {
-      await save(payload, 'videos', id, { status: 'queued', lease: null }, tx);
+      const history = Array.isArray(v.lease?.batchHistory) ? [...v.lease.batchHistory] : [];
+      const last = history[history.length - 1];
+      if (last) history[history.length - 1] = { ...last, status: 'released', finishedAt: new Date(now).toISOString(), error: String(input.reason || '本轮未完成').slice(0, 1000) };
+      await save(payload, 'videos', id, { status: 'queued', lease: history.length ? { batchHistory: history.slice(-20) } : null }, tx);
       return { ok: true, id, status: 'queued' };
     }
     if (input.action !== 'complete') throw fail('不支持的视频任务操作', 400);
     const chars = await payload.find({ collection: 'characters', where: { status: { equals: 'active' } }, pagination: false, depth: 0, overrideAccess: true, req: tx });
     validateReview(input.review, v, new Set(chars.docs.map(c => c.characterId)));
     const status = { pass: 'approved', reject: 'rejected', manual: 'manual' }[input.review.verdict];
-    await save(payload, 'videos', id, { status, review: { ...input.review, sourceHash: videoHash(v.source), reviewedAt: new Date(now).toISOString(), reviewer: 'hermes' }, lease: null, needsPublish: status === 'approved' }, tx);
+    const history = Array.isArray(v.lease?.batchHistory) ? [...v.lease.batchHistory] : [];
+    const last = history[history.length - 1];
+    if (last) history[history.length - 1] = { ...last, status: 'completed', finishedAt: new Date(now).toISOString(), verdict: input.review.verdict };
+    await save(payload, 'videos', id, { status, review: { ...input.review, sourceHash: videoHash(v.source), reviewedAt: new Date(now).toISOString(), reviewer: 'hermes' }, lease: history.length ? { batchHistory: history.slice(-20) } : null, needsPublish: status === 'approved' }, tx);
     if (status === 'approved') await save(payload, 'creators', typeof v.creator === 'object' ? v.creator.id : v.creator, { needsPublish: true }, tx);
     return { ok: true, id, status };
   });

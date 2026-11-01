@@ -11,12 +11,16 @@ import { IssueReplyEndpoints } from './issue-reply'
 import { PublishEndpoints } from './publish'
 import { RequestAgentEndpoints } from './request-agent'
 import { TaskEndpoints } from './tasks'
+import { TopicMembershipEndpoints } from './topics-membership'
+import { TopicTranslationEndpoints } from './topics-translate'
+import { ServerBatchEndpoints } from './server-batches'
 import { AutomationEndpoints } from './automation'
 import { VideoEndpoints } from './videos'
 
 export const endpoints: Endpoint[] = [
   ...VideoEndpoints,
   ...TaskEndpoints,
+  ...ServerBatchEndpoints,
   ...AutomationEndpoints,
   ...ConsoleEndpoints,
   ...BulkJobEndpoints,

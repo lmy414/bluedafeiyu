@@ -43,6 +43,27 @@ export function useConsoleVocabulary() {
   return vocab
 }
 
+/** Tab 计数与列表使用同一组筛选条件；服务端未提供时保持 null，不显示编造数字。 */
+export function useConsoleCounts(query: Record<string, QueryValue>) {
+  const { get } = useAdminApi()
+  const key = JSON.stringify(query)
+  const [counts, setCounts] = useState<Record<string, number> | null>(null)
+  useEffect(() => {
+    let live = true
+    void get<{ counts: Record<string, number> }>('/console/counts', JSON.parse(key))
+      .then((result) => {
+        if (live) setCounts(result.counts || null)
+      })
+      .catch(() => {
+        if (live) setCounts(null)
+      })
+    return () => {
+      live = false
+    }
+  }, [get, key])
+  return counts
+}
+
 export function useConsoleList<T>(query: Record<string, QueryValue>) {
   const { get } = useAdminApi()
   const [data, setData] = useState<ListResponse<T> & { metricsAvailable?: boolean }>({ docs: [], totalDocs: 0, totalPages: 1 })

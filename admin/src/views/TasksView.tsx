@@ -1,381 +1,947 @@
 'use client'
+
 import { Gutter } from '@payloadcms/ui'
 import Link from 'next/link'
-import { useSearchParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
+
+import { PageHeader } from '../components/admin/PageHeader'
+import { Pagination } from '../components/admin/Pagination'
+import { JobProgress } from '../components/admin/JobProgress'
 import { useAdminApi } from '../components/admin/api'
+import { STATUS_LABELS, formatDate } from '../components/admin/constants'
 import {
   OPERATIONS,
   TASK_KINDS,
   TASK_STATUSES,
   type ConsoleTask,
-  type TaskList,
+  type TaskCounts,
+  type TaskGroup,
 } from '../components/admin/task-types'
-import { PageHeader } from '../components/admin/PageHeader'
-import { Pagination } from '../components/admin/Pagination'
-import { formatDate } from '../components/admin/constants'
+import { useUrlState } from '../components/admin/useUrlState'
 import { UploadPanel } from '../components/admin/UploadPanel'
 
-const VIEWS = [
-  { value: 'attention', label: '待我处理' },
-  { value: 'running', label: '处理中' },
-  { value: 'ready', label: '待发布' },
-  { value: 'completed', label: '已完成' },
-  { value: 'all', label: '全部' },
-]
-const STAGES: Record<string, string> = {
-  superseded: '后续批次已成功发布，原失败记录保留',
-  editing: '补齐必要文案',
-  translating: '生成英日译文',
-  ready: '校验并保存内容',
-  blocked: '技术问题暂挂',
-  retry: '等待自动重试',
-  queued: '等待执行',
-  pending: '等待确认发布',
-  included: '已收录',
-  auto_rejected: '需要人工复核',
-  needs_manual: '需要人工复核',
-  awaiting_publish: '等待发布',
-  reply_queued: '等待回写结果',
-  active: '持续同步作者的公开视频',
-  approved: 'AI 审核通过',
-  rejected: '未通过收录审核',
-  manual: '证据不足，待复核',
-  paused: '作者同步已暂停',
+type TaskRow = ConsoleTask & {
+  batchId?: string | null
+  batchItemCount?: number | null
+  batchLabel?: string | null
+  sourceKind?: string | null
+  sourceLabel?: string | null
 }
+type TaskBatch = {
+  batchId: string
+  batchLabel?: string | null
+  count: number
+  itemCount?: number | null
+  sourceKind?: string | null
+  sourceLabel?: string | null
+  updatedAt?: string | null
+}
+type ServerBatch = {
+  batchId: string
+  batchLabel?: string | null
+  durationMs?: number | null
+  error?: string | null
+  fireId?: string | null
+  itemCount?: number | null
+  itemDetail?: string | null
+  jobId: string
+  sourceKind?: string | null
+  sourceLabel?: string | null
+  startedAt?: string | null
+  status?: string | null
+}
+type ServerBatchPayload = {
+  batches: ServerBatch[]
+  capturedAt?: string | null
+  capturedAtNote?: string | null
+  configured: boolean
+  generatedAt?: string | null
+  note?: string
+  source?: string
+}
+type TaskPayload = {
+  batchPage?: number
+  batchPageSize?: number
+  batchTotal?: number
+  batches?: TaskBatch[]
+  counts: TaskCounts
+  hasMore?: boolean
+  docs: TaskRow[]
+  page: number
+  totalDocs: number
+  totalPages: number
+}
+
+const GROUPS: Array<{ hint: string; label: string; value: TaskGroup }> = [
+  { value: 'decide', label: '需要判断', hint: '人工收录或复核' },
+  { value: 'intervene', label: '需要介入', hint: '失败或技术暂挂' },
+  { value: 'publish', label: '待发布', hint: '内容已保存，等你确认' },
+  { value: 'processing', label: '系统处理中', hint: '无需操作' },
+  { value: 'history', label: '历史与全部', hint: '已完成与全部记录' },
+]
+
+const CONTENT_TYPE_LABELS: Record<string, string> = {
+  creator: '作者资料',
+  topic: '专题',
+  video: '视频',
+  work: '作品',
+}
+
+const SOURCE_OPTIONS = [
+  { label: '全部来源', value: '' },
+  { label: 'Hermes', value: 'hermes' },
+  { label: '批量执行器', value: 'bulk-worker' },
+  { label: '发布执行器', value: 'publish-executor' },
+  { label: '视频同步', value: 'video-sync' },
+  { label: '作者同步', value: 'creator-sync' },
+  { label: '投稿同步', value: 'submission-sync' },
+  { label: '下架处理', value: 'rights-agent' },
+]
+
+const COLLAPSED_ROWS = 5
+const SERVER_STATUS_LABELS: Record<string, string> = {
+  failed: '失败',
+  finished: '已结束',
+  queued: '排队中',
+  running: '执行中',
+  succeeded: '成功',
+}
+
+function recordOf(value: unknown): Record<string, unknown> | null {
+  return value && typeof value === 'object' && !Array.isArray(value) ? (value as Record<string, unknown>) : null
+}
+
 export function TasksView() {
-  const params = useSearchParams(),
-    { get, mutate } = useAdminApi()
-  const [view, setView] = useState(params.get('view') || 'attention'),
-    [focus, setFocus] = useState(params.get('task') || '')
-  const [kind, setKind] = useState(''),
-    [page, setPage] = useState(1),
-    [data, setData] = useState<TaskList | null>(null)
-  const [selected, setSelected] = useState<ConsoleTask | null>(null),
-    [detail, setDetail] = useState<any>(null)
-  const [revision, setRevision] = useState(0),
-    [message, setMessage] = useState(''),
-    [error, setError] = useState(''),
-    [busy, setBusy] = useState(false),
-    [upload, setUpload] = useState(false)
+  const { get, mutate } = useAdminApi()
+  const { values, set } = useUrlState({
+    batch: '',
+    contentType: '',
+    group: 'decide',
+    kind: '',
+    keyword: '',
+    owner: '',
+    page: '1',
+    sourceKind: '',
+    task: '',
+  })
+  const group = (GROUPS.some((item) => item.value === values.group) ? values.group : 'decide') as TaskGroup
+  const focus = values.task
+  const page = Math.max(1, Number(values.page) || 1)
+  const [data, setData] = useState<TaskPayload | null>(null)
+  const [selected, setSelected] = useState<TaskRow | null>(null)
+  const [detail, setDetail] = useState<Record<string, unknown> | null>(null)
+  const [message, setMessage] = useState('')
+  const [actionError, setActionError] = useState('')
+  const [loading, setLoading] = useState(true)
+  const [busy, setBusy] = useState(false)
+  const [upload, setUpload] = useState(false)
+  const [keywordInput, setKeywordInput] = useState(values.keyword)
+  const [batchInput, setBatchInput] = useState(values.batch)
+  const [missing, setMissing] = useState(false)
+  const [expandedRows, setExpandedRows] = useState(false)
+  const [expandedBatch, setExpandedBatch] = useState('')
+  const [allBatches, setAllBatches] = useState(false)
+  const [batchItems, setBatchItems] = useState<TaskBatch[]>([])
+  const [batchHasMore, setBatchHasMore] = useState(false)
+  const [batchPage, setBatchPage] = useState(1)
+  const [batchTotal, setBatchTotal] = useState(0)
+  const [batchTasks, setBatchTasks] = useState<TaskRow[]>([])
+  const [batchLoading, setBatchLoading] = useState(false)
+  const [serverBatches, setServerBatches] = useState<ServerBatchPayload | null>(null)
+
   useEffect(() => {
-    if (params.get('task')) {
-      setFocus(params.get('task')!)
-      setView('all')
-      setPage(1)
-    }
-  }, [params])
+    setKeywordInput(values.keyword)
+  }, [values.keyword])
+  useEffect(() => {
+    setBatchInput(values.batch)
+  }, [values.batch])
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      if (keywordInput === values.keyword) return
+      set({ keyword: keywordInput, page: 1, task: '' })
+    }, 300)
+    return () => window.clearTimeout(timer)
+  }, [keywordInput, set, values.keyword])
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      if (batchInput === values.batch) return
+      set({ batch: batchInput, page: 1, task: '', group: batchInput ? 'history' : group })
+    }, 300)
+    return () => window.clearTimeout(timer)
+  }, [batchInput, group, set, values.batch])
+
   useEffect(() => {
     let live = true
     const load = async () => {
       try {
-        const result = await get<TaskList>('/console/tasks', {
-          status: view,
-          kind,
-          page,
-          task: focus,
-        })
+        const [result, summary] = await Promise.all([
+          get<TaskPayload>('/console/tasks', {
+            batch: values.batch || undefined,
+            contentType: values.contentType || undefined,
+            group:
+              focus || values.batch
+                ? values.kind === 'content' || values.contentType
+                  ? 'publish'
+                  : 'all'
+                : group,
+            kind: values.kind,
+            owner: values.owner,
+            task: focus || undefined,
+            keyword: values.keyword,
+            page,
+            sourceKind: values.sourceKind || undefined,
+          }),
+          get<{ counts: TaskCounts }>('/console/tasks', { summary: true, group: 'all' }),
+        ])
         if (!live) return
-        setData(result)
-        setError('')
-        setSelected(
-          (current) => result.docs.find((t) => t.key === current?.key) || result.docs[0] || null,
-        )
-      } catch (e) {
-        if (live) setError(e instanceof Error ? e.message : '任务读取失败')
+        setData({ ...result, counts: summary.counts || result.counts })
+        setActionError('')
+        setLoading(false)
+        const rows = result.docs || []
+        setSelected((current) => {
+          if (!rows.length) {
+            setMissing(Boolean(current))
+            return current
+          }
+          const key = current?.key
+          const same = key ? rows.find((task) => task.key === key) : undefined
+          if (same) {
+            setMissing(false)
+            return same
+          }
+          if (focus) {
+            const focused = rows.find(
+              (task) =>
+                task.sourceId === focus &&
+                (!values.contentType || task.contentType === values.contentType),
+            )
+            if (focused) return focused
+          }
+          if (!current) {
+            setMissing(false)
+            return rows[0]
+          }
+          if (current) setMissing(true)
+          return current
+        })
+      } catch (error) {
+        if (!live) return
+        setLoading(false)
+        setActionError(error instanceof Error ? error.message : '任务读取失败')
       }
     }
     void load()
-    const timer = setInterval(() => void load(), 5000)
-    window.addEventListener('s3-bulk-submitted', load)
+    const timer = window.setInterval(() => void load(), 5000)
+    const submitted = () => void load()
+    window.addEventListener('s3-bulk-submitted', submitted)
     return () => {
       live = false
-      clearInterval(timer)
-      window.removeEventListener('s3-bulk-submitted', load)
+      window.clearInterval(timer)
+      window.removeEventListener('s3-bulk-submitted', submitted)
     }
-  }, [get, view, kind, page, revision, focus])
+  }, [focus, get, group, page, values.batch, values.contentType, values.kind, values.keyword, values.owner, values.sourceKind])
+
+  useEffect(() => {
+    setSelected(null)
+    setMissing(false)
+    setExpandedRows(false)
+    setExpandedBatch('')
+    setAllBatches(false)
+    setBatchTasks([])
+  }, [group, page, values.batch, values.contentType, values.kind, values.keyword, values.owner, values.sourceKind])
+
   useEffect(() => {
     let live = true
     setDetail(null)
     const path =
-      selected?.kind === 'bulk'
-        ? '/bulk/jobs'
-        : selected?.kind === 'publish'
-          ? '/publish/runs/' + encodeURIComponent(selected.sourceId)
+      selected?.kind === 'publish'
+        ? `/publish/runs/${encodeURIComponent(selected.sourceId)}`
+        : selected?.kind === 'bulk' || selected?.job
+          ? '/bulk/jobs'
           : ''
-    if (path)
-      void get(path, selected?.kind === 'bulk' ? { jobId: selected.sourceId } : undefined)
-        .then((r) => {
-          if (live) setDetail(r)
-        })
-        .catch(() => {})
+    if (!path) return
+    const params = path === '/bulk/jobs' ? { jobId: selected?.job?.jobId || selected?.sourceId } : undefined
+    void get<Record<string, unknown>>(path, params)
+      .then((result) => {
+        if (live) setDetail(result)
+      })
+      .catch(() => undefined)
     return () => {
       live = false
     }
-  }, [get, selected?.key, selected?.updatedAt])
+  }, [get, selected?.job?.jobId, selected?.key, selected?.sourceId, selected?.updatedAt])
+
+  useEffect(() => {
+    let live = true
+    void get<ServerBatchPayload>('/console/server-batches')
+      .then((result) => {
+        if (live) setServerBatches(result)
+      })
+      .catch(() => {
+        if (live) setServerBatches(null)
+      })
+    return () => {
+      live = false
+    }
+  }, [get])
+
+  useEffect(() => {
+    setBatchItems([])
+    setBatchPage(1)
+    setBatchHasMore(false)
+    setBatchTotal(0)
+    if (!['processing', 'history'].includes(group) || values.keyword || values.batch) return
+    let live = true
+    void get<TaskPayload>('/console/tasks', {
+      batchPage: 1,
+      batchPageSize: 20,
+      group,
+      kind: values.kind,
+      owner: values.owner,
+      sourceKind: values.sourceKind || undefined,
+    })
+      .then((result) => {
+        if (!live) return
+        setBatchItems(result.batches || [])
+        setBatchTotal(Number(result.batchTotal || 0))
+        setBatchHasMore(Boolean(result.hasMore))
+        setBatchPage(Number(result.batchPage || 1))
+      })
+      .catch(() => undefined)
+    return () => {
+      live = false
+    }
+  }, [get, group, values.batch, values.kind, values.keyword, values.owner, values.sourceKind])
+
+  useEffect(() => {
+    if (!expandedBatch) {
+      setBatchTasks([])
+      return
+    }
+    let live = true
+    setBatchLoading(true)
+    void get<TaskPayload>('/console/tasks', {
+      batch: expandedBatch,
+      group: 'all',
+      page: 1,
+    })
+      .then((result) => {
+        if (live) setBatchTasks(result.docs || [])
+      })
+      .catch(() => {
+        if (live) setBatchTasks([])
+      })
+      .finally(() => {
+        if (live) setBatchLoading(false)
+      })
+    return () => {
+      live = false
+    }
+  }, [expandedBatch, get])
+
+  async function loadBatchPage(nextPage: number) {
+    if (!['processing', 'history'].includes(group) || values.keyword || values.batch) return
+    setBatchLoading(true)
+    try {
+      const result = await get<TaskPayload>('/console/tasks', {
+        batchPage: nextPage,
+        batchPageSize: 20,
+        group,
+        kind: values.kind,
+        owner: values.owner,
+        sourceKind: values.sourceKind || undefined,
+      })
+      setBatchItems(result.batches || [])
+      setBatchPage(Number(result.batchPage || nextPage))
+      setBatchTotal(Number(result.batchTotal || 0))
+      setBatchHasMore(Boolean(result.hasMore))
+      setExpandedBatch('')
+      setBatchTasks([])
+      setAllBatches(false)
+    } catch (cause) {
+      setActionError(cause instanceof Error ? cause.message : '批次分页读取失败')
+    } finally {
+      setBatchLoading(false)
+    }
+  }
+
   async function action(path: string) {
     if (!selected || busy) return
-    if (path.endsWith('cancel') && !window.confirm('取消尚未执行的条目？已完成的条目会保留。'))
-      return
+    if (path.endsWith('cancel') && !window.confirm('取消尚未执行的条目？已完成的条目会保留。')) return
     setBusy(true)
     setMessage('')
+    setActionError('')
     try {
-      const r = await mutate<any>(path, 'POST', { jobId: selected.sourceId })
-      if (r.job?.jobId && focus) setFocus(r.job.jobId)
-      setMessage('请求已提交，任务进度将自动更新。')
-      setRevision((v) => v + 1)
-    } catch (e) {
-      setMessage(e instanceof Error ? e.message : '操作失败')
+      const result = await mutate<{ job?: { jobId?: string }; ok?: boolean }>(path, 'POST', {
+        jobId: selected.job?.jobId || selected.sourceId,
+      })
+      const nextJob = result.job?.jobId
+      setMessage(
+        nextJob
+          ? `请求已接收，任务号 ${nextJob}；进度会在这里自动更新。`
+          : '请求已接收，任务进度会自动更新。',
+      )
+      if (nextJob) set({ task: nextJob, kind: 'bulk', page: 1 }, { mode: 'push' })
+      window.dispatchEvent(new Event('s3-bulk-submitted'))
+    } catch (error) {
+      setActionError(error instanceof Error ? error.message : '操作失败')
     } finally {
       setBusy(false)
     }
   }
+
   async function sync() {
     if (busy) return
     setBusy(true)
+    setMessage('')
+    setActionError('')
     try {
-      const r = await mutate<any>('/submissions/sync', 'POST')
-      setMessage(
-        `同步完成：新增 ${r.stats.createdSubmissions}，更新 ${r.stats.updatedSubmissions}${r.stats.errors?.length ? '；部分条目失败，请重试同步' : ''}。`,
+      const result = await mutate<{ stats: { createdSubmissions: number; errors?: unknown[]; updatedSubmissions: number } }>(
+        '/submissions/sync',
+        'POST',
       )
-      setRevision((v) => v + 1)
-    } catch (e) {
-      setMessage(e instanceof Error ? e.message : '同步失败')
+      setMessage(
+        `同步完成：新增 ${result.stats.createdSubmissions} 条，更新 ${result.stats.updatedSubmissions} 条${
+          result.stats.errors?.length ? '；部分条目失败，请查看任务记录后重试' : ''
+        }。`,
+      )
+      window.dispatchEvent(new Event('s3-bulk-submitted'))
+    } catch (error) {
+      setActionError(error instanceof Error ? error.message : '同步失败')
     } finally {
       setBusy(false)
     }
   }
+
+  const runDetail = recordOf(detail?.run)
+  const taskCounts = data?.counts.tasks
+  const contentCount = data?.counts.content.publish ?? 0
+  const countFor = (value: TaskGroup) =>
+    value === 'publish' ? contentCount : taskCounts?.[value] ?? data?.counts[value] ?? 0
+  const ownerLabel = (owner?: string) => (owner === 'owner' ? '需要你操作' : owner === 'system' ? '系统处理' : '无需操作')
+  const stageText = (task: TaskRow) =>
+    task.stageLabel && task.stageLabel !== '未知状态'
+      ? task.stageLabel
+      : task.job?.status === 'queued'
+        ? '排队等待执行器'
+        : task.job?.status === 'running'
+          ? '执行中'
+          : task.stageLabel || '等待状态回写'
+  const titleOf = (task: TaskRow) =>
+    task.kind === 'bulk' ? `${OPERATIONS[task.operation] || task.operation} · ${task.total} 项` : task.title
+  const shortTime = (value?: string) => {
+    if (!value) return ''
+    const date = new Date(value)
+    if (Number.isNaN(date.getTime())) return ''
+    return new Intl.DateTimeFormat('zh-CN', {
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      month: '2-digit',
+    }).format(date)
+  }
+  const reasonOf = (task: TaskRow) =>
+    task.reason ||
+    task.error ||
+    (task.stageLabel && task.stageLabel !== '未知状态' ? task.stageLabel : '') ||
+    task.job?.agentError ||
+    (task.unit === 'content' ? '内容已保存，等待发布' : '暂无额外说明')
+  const briefOf = (task: TaskRow) => {
+    const reason = reasonOf(task)
+    return reason === '暂无额外说明' ? nextAction(task) : reason
+  }
+  const nextAction = (task: TaskRow) =>
+    task.nextAction ||
+    (task.group === 'decide'
+      ? '看图判断是否收录'
+      : task.group === 'intervene'
+        ? '检查原因后决定是否重试'
+        : task.group === 'publish'
+          ? '到发布页核对变更'
+          : task.group === 'processing'
+            ? '无需操作，等待系统完成'
+            : '查看结果或历史记录')
+
+  const batches =
+    ['history', 'processing'].includes(group) && !focus && !values.batch && !values.keyword
+      ? batchItems
+      : []
+  const visibleBatches = allBatches ? batches : batches.slice(0, COLLAPSED_ROWS)
+  const batchPageCount = Math.max(1, Math.ceil((batchTotal || batches.length) / 20))
+  const batchIds = new Set(batches.map((batch) => batch.batchId))
+  const rows = data?.docs || []
+  const flatRows = batches.length ? rows.filter((task) => !task.batchId || !batchIds.has(task.batchId)) : rows
+  const visibleRows = expandedRows ? flatRows : flatRows.slice(0, COLLAPSED_ROWS)
+  const sourceLabelOf = (task: TaskRow) =>
+    task.unit === 'content'
+      ? '发布计划'
+      : task.sourceLabel || SOURCE_OPTIONS.find((item) => item.value === task.sourceKind)?.label || task.sourceKind || '系统'
+  const batchSourceLabel = (batch: TaskBatch) =>
+    batch.sourceLabel || SOURCE_OPTIONS.find((item) => item.value === batch.sourceKind)?.label || batch.sourceKind || '系统'
+
+  function selectTask(task: TaskRow) {
+    setSelected(task)
+    setMissing(false)
+    set(
+      {
+        contentType: task.contentType || '',
+        kind: task.kind,
+        page: 1,
+        task: task.sourceId,
+      },
+      { mode: 'push' },
+    )
+  }
+
+  function chooseGroup(value: TaskGroup) {
+    setSelected(null)
+    setMissing(false)
+    set({ group: value, kind: '', page: 1, task: '' }, { reset: ['task', 'page'] })
+  }
+
   return (
     <Gutter className="s3-admin-page s3-workspace">
       <PageHeader
-        title="任务中心"
-        description="网页与本地机器人共用任务；先处理需要你决定的事。"
         actions={
           <>
-            <button
-              className="s3-button s3-button--ghost"
-              type="button"
-              disabled={busy}
-              onClick={() => void sync()}
-            >
+            <button className="s3-button s3-button--ghost" disabled={busy} onClick={() => void sync()} type="button">
               同步投稿
             </button>
-            <button
-              className="s3-button s3-button--primary"
-              type="button"
-              onClick={() => setUpload(!upload)}
-            >
+            <button className="s3-button s3-button--primary" onClick={() => setUpload((value) => !value)} type="button">
               上传作品
             </button>
           </>
         }
+        description="先看需要你判断或介入的事；系统任务和已处理记录不占主屏。"
+        title="任务中心"
       />
       {upload ? (
         <UploadPanel
           onUploaded={(id) => {
             setUpload(false)
-            setFocus(id)
-            setView('all')
-            setRevision((v) => v + 1)
+            set({ task: id, kind: 'bulk', group: 'history' }, { mode: 'push' })
           }}
         />
       ) : null}
-      <div className="s3-task-tabs" role="group" aria-label="任务视图">
-        {VIEWS.map((v) => (
-          <button
-            type="button"
-            key={v.value}
-            aria-pressed={view === v.value}
-            onClick={() => {
-              setView(v.value)
-              setPage(1)
-              setFocus('')
-            }}
-          >
-            {v.label}
-            <span>{data?.counts[v.value] || 0}</span>
-          </button>
-        ))}
-      </div>
-      <div className="s3-result-line">
-        <label>
-          任务类型{' '}
-          <select
-            aria-label="任务类型"
-            value={kind}
-            onChange={(e) => {
-              setKind(e.target.value)
-              setPage(1)
-            }}
-          >
-            {TASK_KINDS.map((k) => (
-              <option key={k.value} value={k.value}>
-                {k.label}
-              </option>
-            ))}
-          </select>
-        </label>
-        <div>
-          <Link href="/admin/review?mode=rejected">看图审核</Link>
-          <Link href="/admin/publish">检查并发布内容</Link>
-          {focus ? (
-            <button type="button" className="s3-text-button" onClick={() => setFocus('')}>
-              查看全部任务
+
+      <div className="s3-toolbar s3-inbox-toolbar">
+        <div className="s3-segmented" role="group" aria-label="任务分组">
+          {GROUPS.map((item) => (
+            <button
+              aria-pressed={group === item.value}
+              key={item.value}
+              onClick={() => chooseGroup(item.value)}
+              type="button"
+            >
+              {item.label}
+              <span className="s3-segmented-count">
+                {countFor(item.value)}
+                {item.value === 'publish' ? ' 件' : ' 条'}
+              </span>
             </button>
-          ) : null}
+          ))}
+        </div>
+        <div className="s3-toolbar-filters">
+          <label>
+            <span className="s3-sr-only">任务类型</span>
+            <select
+              aria-label="任务类型"
+              onChange={(event) => set({ kind: event.target.value, page: 1, task: '' })}
+              value={values.kind}
+            >
+              {TASK_KINDS.map((item) => (
+                <option key={item.value} value={item.value}>
+                  {item.label}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label>
+            <span className="s3-sr-only">动作归属</span>
+            <select
+              aria-label="动作归属"
+              onChange={(event) => set({ owner: event.target.value, page: 1, task: '' })}
+              value={values.owner}
+            >
+              <option value="">全部归属</option>
+              <option value="owner">需要我操作</option>
+              <option value="system">系统处理</option>
+            </select>
+          </label>
+          <label>
+            <span className="s3-sr-only">机器人来源</span>
+            <select
+              aria-label="机器人来源"
+              onChange={(event) => set({ sourceKind: event.target.value, page: 1, task: '' })}
+              value={values.sourceKind}
+            >
+              {SOURCE_OPTIONS.map((item) => (
+                <option key={item.value} value={item.value}>
+                  {item.label}
+                </option>
+              ))}
+            </select>
+          </label>
+          <input
+            aria-label="搜索批次号"
+            onChange={(event) => setBatchInput(event.target.value)}
+            placeholder="批次号"
+            value={batchInput}
+          />
+          <input
+            aria-label="搜索任务"
+            onChange={(event) => setKeywordInput(event.target.value)}
+            placeholder="搜索标题或任务号"
+            value={keywordInput}
+          />
+          <button className="s3-button s3-button--ghost" onClick={() => set({ task: '', page: 1 })} type="button">
+            刷新
+          </button>
         </div>
       </div>
+
       {message ? (
-        <p role="status" className="s3-notice">
+        <p aria-live="polite" className="s3-notice">
           {message}
         </p>
       ) : null}
-      {error ? (
-        <p role="alert" className="s3-danger-copy">
-          {error}
+      {actionError ? (
+        <p className="s3-danger-copy" role="alert">
+          {actionError}
         </p>
       ) : null}
-      {!data && !error ? <p className="s3-loading">正在读取任务…</p> : null}
+      {focus ? (
+        <div className="s3-focus-line">
+          <span>正在查看任务 <code>{focus}</code></span>
+          <button className="s3-text-button" onClick={() => set({ task: '', group, page: 1 })} type="button">
+            返回当前分组
+          </button>
+        </div>
+      ) : null}
+
+      {group === 'processing' && serverBatches?.configured ? (
+        <details className="s3-server-batches">
+          <summary>
+            <span>服务器机器人批次快照</span>
+            <span className="s3-status s3-status--hidden">只读快照 · 非实时</span>
+            <span className="s3-muted">
+              {serverBatches.batches.length} 条 · 采集时间{serverBatches.capturedAt ? ` ${formatDate(serverBatches.capturedAt)}` : '未记录'}
+              {serverBatches.generatedAt ? ` · 快照生成 ${formatDate(serverBatches.generatedAt)}` : ''}
+            </span>
+          </summary>
+          <p className="s3-muted">
+            服务器只读快照，仅含历史 run 摘要；批次内逐项关联未记录，不把机器人输出里的完成文案当作已验证落库。
+            {serverBatches.capturedAtNote ? ` ${serverBatches.capturedAtNote}` : ''}
+          </p>
+          <ul>
+            {serverBatches.batches.map((batch) => (
+              <li key={batch.batchId}>
+                <div>
+                  <strong>{batch.batchLabel || batch.batchId}</strong>
+                  <small>
+                    {batch.sourceLabel || 'Hermes Agent'} · {batch.startedAt ? formatDate(batch.startedAt) : '时间未记录'}
+                    {batch.durationMs ? ` · ${Math.round(batch.durationMs / 1000)} 秒` : ''}
+                  </small>
+                </div>
+                <span className={`s3-status s3-status--${batch.status || 'unknown'}`}>
+                  {SERVER_STATUS_LABELS[batch.status || ''] || STATUS_LABELS[batch.status || ''] || batch.status || '状态未记录'}
+                </span>
+                <small>{batch.itemDetail || '未记录明细'}</small>
+                <details>
+                  <summary>任务与 fire ID</summary>
+                  <code>{batch.jobId}</code>
+                  {batch.fireId ? <code>{batch.fireId}</code> : null}
+                  {batch.error ? <span className="s3-danger-copy">{batch.error}</span> : null}
+                </details>
+              </li>
+            ))}
+            {!serverBatches.batches.length ? <li className="s3-muted">快照内暂无服务器批次。</li> : null}
+          </ul>
+        </details>
+      ) : null}
       <div className="s3-task-workspace">
-        <section className="s3-task-list" aria-label="任务列表">
-          {data?.docs.map((t) => (
-            <button
-              key={t.key}
-              type="button"
-              className="s3-task-row"
-              aria-pressed={selected?.key === t.key}
-              onClick={() => setSelected(t)}
-            >
-              <span className={`s3-status s3-status--${t.status}`}>
-                {TASK_STATUSES.find((s) => s.value === t.status)?.label || t.status}
-              </span>
-              <strong>
-                {OPERATIONS[t.operation] || t.title}
-                {t.kind === 'bulk' ? ` · ${t.total} 项` : ''}
-              </strong>
-              <span>
-                {t.kind === 'submission'
-                  ? t.title
-                  : t.kind === 'rights'
-                    ? t.title
-                    : STAGES[t.stage || ''] || t.stage || ''}
-              </span>
-              <small>
-                {t.actor || '站长'} · {formatDate(t.updatedAt)}
-              </small>
+        <section aria-label="任务列表" className="s3-task-list">
+          <div className="s3-list-heading">
+            <strong>{group === 'history' ? '历史与全部' : GROUPS.find((item) => item.value === group)?.label}</strong>
+            <span className="s3-muted">
+              {data ? `总计 ${data.totalDocs} 条` : '正在读取'}
+              {batchTotal ? ` · 共 ${batchTotal} 个系统批次` : ''}
+            </span>
+          </div>
+          {loading && !data ? <p className="s3-loading">正在读取任务…</p> : null}
+          {visibleBatches.map((batch) => {
+            const expanded = expandedBatch === batch.batchId
+            return (
+              <div className={`s3-batch-card ${expanded ? 'is-open' : ''}`} key={batch.batchId}>
+                <button
+                  aria-expanded={expanded}
+                  className="s3-batch-head"
+                  onClick={() => setExpandedBatch(expanded ? '' : batch.batchId)}
+                  type="button"
+                >
+                  <span>
+                    <strong>{batch.batchLabel || batch.batchId}</strong>
+                    <small>
+                      {batchSourceLabel(batch)} · {batch.itemCount ?? batch.count} 项 · {formatDate(batch.updatedAt || undefined)}
+                    </small>
+                  </span>
+                  <span className="s3-status s3-status--processing">{expanded ? '收起' : '展开'}</span>
+                </button>
+                {expanded ? (
+                  <div className="s3-batch-items">
+                    {batchLoading ? <p className="s3-muted">正在读取批次条目…</p> : null}
+                    {batchTasks.slice(0, 8).map((task) => (
+                      <button
+                        aria-pressed={selected?.key === task.key}
+                        className="s3-batch-item"
+                        key={task.key}
+                        onClick={() => selectTask(task)}
+                        type="button"
+                      >
+                        <span>{titleOf(task)}</span>
+                        <small>{stageText(task)}</small>
+                      </button>
+                    ))}
+                    {(batch.itemCount || 0) > 8 || batchTasks.length > 8 ? (
+                      <button
+                        className="s3-text-button"
+                        onClick={() => set({ batch: batch.batchId, group: 'history', page: 1, task: '' })}
+                        type="button"
+                      >
+                        查看该批次全部 {(batch.itemCount || batch.count).toLocaleString()} 项
+                      </button>
+                    ) : null}
+                    {!batchLoading && !batchTasks.length ? <p className="s3-muted">这个批次没有可显示的条目。</p> : null}
+                  </div>
+                ) : null}
+              </div>
+            )
+          })}
+          {batches.length > COLLAPSED_ROWS ? (
+            <button className="s3-show-more" onClick={() => setAllBatches((value) => !value)} type="button">
+              {allBatches
+                ? `收起，只看前 ${COLLAPSED_ROWS} 个批次`
+                : `查看本页全部 ${batches.length} 个批次`}
             </button>
-          ))}
-          {data && !data.docs.length ? (
-            <div className="s3-empty">
-              <h3>当前任务已处理完</h3>
-              <p>可以切换视图查看处理中或待发布内容。</p>
+          ) : null}
+          {batchTotal > 20 || batchPage > 1 ? (
+            <div className="s3-batch-pager" aria-label="系统批次分页">
+              <span>
+                第 {batchPage} / {batchPageCount} 批 · 共 {batchTotal} 个批次
+              </span>
+              <button
+                className="s3-button s3-button--ghost s3-button--small"
+                disabled={batchPage <= 1 || batchLoading}
+                onClick={() => void loadBatchPage(batchPage - 1)}
+                type="button"
+              >
+                上一页
+              </button>
+              <button
+                className="s3-button s3-button--ghost s3-button--small"
+                disabled={!batchHasMore || batchLoading}
+                onClick={() => void loadBatchPage(batchPage + 1)}
+                type="button"
+              >
+                {batchLoading ? '加载中…' : '下一页'}
+              </button>
             </div>
           ) : null}
+          {visibleRows.map((task) => (
+            <button
+              aria-pressed={selected?.key === task.key}
+              className={`s3-task-row s3-task-row--${task.group || group}`}
+              key={task.key}
+              onClick={() => selectTask(task)}
+              type="button"
+            >
+              <span className="s3-task-row-top">
+                <span className={`s3-status s3-status--${task.status}`}>
+                  {task.status === 'attention' ? '需处理' : TASK_STATUSES.find((item) => item.value === task.status)?.label || task.status}
+                </span>
+                <strong className="s3-task-title">{titleOf(task)}</strong>
+                <small className="s3-task-time">{shortTime(task.updatedAt)}</small>
+              </span>
+              <span className="s3-task-brief">{briefOf(task)}</span>
+            </button>
+          ))}
+          {flatRows.length > COLLAPSED_ROWS ? (
+            <button className="s3-show-more" onClick={() => setExpandedRows((value) => !value)} type="button">
+              {expandedRows ? `收起，只看前 ${COLLAPSED_ROWS} 条` : `展开本页其余 ${flatRows.length - COLLAPSED_ROWS} 条`}
+            </button>
+          ) : null}
+          {data && !data.docs.length && !batches.length ? (
+            <div className="s3-empty s3-empty--action">
+              <h3>{group === 'decide' ? '现在没有需要你判断的任务' : '这个分组是空的'}</h3>
+              <p>{group === 'decide' ? '可以查看待发布内容，或切换到历史与全部。' : '换一个分组或清除筛选条件。'}</p>
+              <div className="s3-page-actions">
+                <button className="s3-button s3-button--secondary" onClick={() => chooseGroup('publish')} type="button">
+                  查看待发布
+                </button>
+                <button className="s3-button s3-button--ghost" onClick={() => chooseGroup('history')} type="button">
+                  历史与全部
+                </button>
+              </div>
+            </div>
+          ) : null}
+          <Pagination
+            limit={30}
+            page={data?.page || page}
+            setPage={(next) => set({ page: next })}
+            totalDocs={data?.totalDocs}
+            totalPages={data?.totalPages || 1}
+          />
         </section>
-        <section className="s3-panel s3-task-detail" aria-label="任务详情">
+
+        <section aria-label="任务详情" className="s3-panel s3-task-detail">
           {selected ? (
             <>
-              <div className="s3-panel-heading">
-                <h2>{OPERATIONS[selected.operation] || selected.title}</h2>
+              <div className="s3-panel-heading s3-task-detail-head">
+                <div>
+                  <p className="s3-eyebrow">{selected.unit === 'content' ? '待发布内容' : '任务'}</p>
+                  <h2>{titleOf(selected)}</h2>
+                </div>
                 <span className={`s3-status s3-status--${selected.status}`}>
-                  {TASK_STATUSES.find((s) => s.value === selected.status)?.label}
+                  {selected.stageLabel || TASK_STATUSES.find((item) => item.value === selected.status)?.label || selected.status}
                 </span>
               </div>
-              {['submission', 'creator', 'video'].includes(selected.kind) ? <p>{selected.title}</p> : null}
-              <p className="s3-muted">
-                发起人：{selected.actor || '站长'} · 更新于 {formatDate(selected.updatedAt)}
-              </p>
-              <p className="s3-task-stage">
-                {STAGES[selected.stage || ''] ||
-                  selected.stage ||
-                  (selected.status === 'queued' ? '任务已接收，等待执行器' : '查看处理结果')}
-              </p>
-              {selected.total > 0 ? (
-                <p>
-                  已处理 {selected.current} / {selected.total} 项
+              {missing ? (
+                <p className="s3-notice">这条任务已不在当前筛选结果中；列表不会自动跳到别的任务。</p>
+              ) : null}
+              <div className={`s3-callout s3-callout--${selected.owner === 'owner' ? 'attention' : 'info'}`}>
+                <strong>{ownerLabel(selected.owner)}</strong>
+                <p>{reasonOf(selected)}</p>
+                <p className="s3-callout-next">下一步：{nextAction(selected)}</p>
+              </div>
+              <dl className="s3-detail-list">
+                <div>
+                  <dt>范围</dt>
+                  <dd>{selected.unit === 'content' ? '内容变更' : '任务执行'}</dd>
+                </div>
+                <div>
+                  <dt>发起</dt>
+                  <dd>{selected.actor || '系统'}</dd>
+                </div>
+                <div>
+                  <dt>最近更新</dt>
+                  <dd>{formatDate(selected.updatedAt)}</dd>
+                </div>
+                <div>
+                  <dt>来源</dt>
+                  <dd>{sourceLabelOf(selected)}</dd>
+                </div>
+                {selected.batchId ? (
+                  <div>
+                    <dt>真实批次</dt>
+                    <dd>
+                      {selected.batchLabel || selected.batchId}
+                      {selected.batchItemCount ? ` · ${selected.batchItemCount} 项` : ''}
+                    </dd>
+                  </div>
+                ) : null}
+                {selected.kind === 'bulk' && selected.total ? (
+                  <div>
+                    <dt>处理进度</dt>
+                    <dd>
+                      {selected.current} / {selected.total} 项
+                    </dd>
+                  </div>
+                ) : null}
+                {selected.unit === 'content' ? (
+                  <div>
+                    <dt>发布状态</dt>
+                    <dd>
+                      {selected.content?.liveVersion
+                        ? '已有线上版本，有未发布修改'
+                        : selected.content?.state === 'published'
+                          ? '已上线'
+                          : selected.content?.state === 'pending_publish'
+                            ? '已保存，待发布'
+                            : '状态未知'}
+                      {!selected.content?.liveVersion && selected.content?.needsPublish ? ' · 有未发布改动' : ''}
+                    </dd>
+                  </div>
+                ) : null}
+              </dl>
+              {selected.autoRetryAt ? (
+                <p className="s3-notice">系统会在 {formatDate(new Date(selected.autoRetryAt).toISOString())} 后自动重试；这不是人工恢复承诺。</p>
+              ) : null}
+              {selected.retriedBy ? (
+                <p className="s3-notice">
+                  已创建重试任务。原失败结果仍保留，当前进度请查看{' '}
+                  <Link href={selected.retriedBy.href || `/admin?task=${encodeURIComponent(selected.retriedBy.jobId)}&kind=bulk`}>
+                    子任务 {selected.retriedBy.jobId}
+                  </Link>
+                  {selected.retriedBy.status || selected.retriedByStatus
+                    ? `（${TASK_STATUSES.find((item) => item.value === (selected.retriedBy?.status || selected.retriedByStatus))?.label || selected.retriedBy.status || selected.retriedByStatus}）`
+                    : ''}
+                  。
                 </p>
               ) : null}
+              {selected.blocked ? (
+                <p className="s3-danger-copy">技术问题暂挂。重试前先看错误原因；后台不会自动恢复。</p>
+              ) : null}
               {selected.error ? <p className="s3-danger-copy">{selected.error}</p> : null}
-              {selected.operation === 'manual-include' ? (
-                <ol className="s3-workflow-steps">
-                  <li>保留人工收录判断</li>
-                  <li>补齐必要文案</li>
-                  <li>生成英文和日文</li>
-                  <li>校验图片与内容，进入待发布</li>
-                </ol>
+              {selected.job?.jobId || selected.kind === 'bulk' ? (
+                <JobProgress
+                  job={selected.kind === 'bulk' ? selected.job ?? undefined : undefined}
+                  jobId={selected.job?.jobId || selected.sourceId}
+                  showLinks={false}
+                />
               ) : null}
-              {selected.status === 'ready' ? (
-                <p className="s3-notice">内容已准备完成，公开网站将在发布成功后更新。</p>
+              {runDetail ? (
+                <section className="s3-form-section">
+                  <h3>发布批次</h3>
+                  <p className="s3-muted">步骤：{String(runDetail.step || '等待执行器')}</p>
+                  <p className="s3-muted">状态：{String(runDetail.status || '未知')}</p>
+                </section>
               ) : null}
-              <div className="s3-page-actions">
-                <Link
-                  className="s3-button s3-button--primary"
-                  href={selected.status === 'ready' ? '/admin/publish' : selected.href}
-                >
-                  {selected.kind === 'submission'
-                    ? '打开看图审核'
-                    : selected.kind === 'changes' || selected.status === 'ready'
-                      ? '检查待发布内容'
+              <div className="s3-page-actions s3-task-actions">
+                <Link className="s3-button s3-button--primary" href={selected.href || '/admin'}>
+                  {selected.unit === 'content'
+                    ? '打开发布页核对'
+                    : selected.group === 'decide'
+                      ? '打开看图审核'
                       : selected.kind === 'rights'
                         ? '处理申请'
-                        : '查看关联内容'}
+                        : selected.kind === 'publish'
+                          ? '查看发布批次'
+                          : '查看关联内容'}
                 </Link>
+                {selected.content?.workId ? (
+                  <Link className="s3-button s3-button--secondary" href={`/admin/library?work=${encodeURIComponent(selected.content.workId)}`}>
+                    打开作品
+                  </Link>
+                ) : null}
                 {selected.canRetry ? (
-                  <button
-                    className="s3-button s3-button--secondary"
-                    type="button"
-                    disabled={busy}
-                    onClick={() => void action('/bulk/retry')}
-                  >
-                    重试失败步骤
+                  <button className="s3-button s3-button--secondary" disabled={busy} onClick={() => void action('/bulk/retry')} type="button">
+                    {busy ? '提交中…' : '重试失败项'}
                   </button>
                 ) : null}
                 {selected.canCancel ? (
-                  <button
-                    className="s3-button s3-button--ghost"
-                    type="button"
-                    disabled={busy}
-                    onClick={() => void action('/bulk/cancel')}
-                  >
+                  <button className="s3-button s3-button--ghost" disabled={busy} onClick={() => void action('/bulk/cancel')} type="button">
                     取消剩余项
                   </button>
                 ) : null}
               </div>
-              {detail?.job?.results?.length ? (
-                <section className="s3-task-results">
-                  <h3>逐项处理结果</h3>
-                  <ul>
-                    {detail.job.results.map((r: any, i: number) => (
-                      <li key={r.id + i}>
-                        <strong>
-                          {r.status === 'succeeded'
-                            ? '完成'
-                            : r.status === 'skipped'
-                              ? '跳过'
-                              : '失败'}
-                        </strong>{' '}
-                        · {r.message}
-                        <small>{r.id}</small>
-                      </li>
-                    ))}
-                  </ul>
-                </section>
-              ) : null}
-              {detail?.run?.error ? <p className="s3-danger-copy">{detail.run.error}</p> : null}
               <details className="s3-form-section">
                 <summary>技术记录与任务编号</summary>
-                <p>{selected.sourceId}</p>
-                {detail?.run ? (
-                  <pre className="s3-log">{detail.run.log || '暂无执行日志'}</pre>
-                ) : null}
+                <p>
+                  <code>{selected.job?.jobId || selected.sourceId}</code>
+                </p>
+                <p className="s3-muted">{selected.stageLabel || selected.stage || '未返回阶段'}</p>
+                {runDetail ? <pre className="s3-log">{String(runDetail.log || '暂无执行日志')}</pre> : null}
               </details>
             </>
           ) : (
-            <p className="s3-muted">选择一条任务查看步骤和结果。</p>
+            <div className="s3-empty">
+              <h3>选择一条任务</h3>
+              <p>详情会显示为什么需要你、下一步和真实处理进度。</p>
+            </div>
           )}
         </section>
       </div>
-      <Pagination page={data?.page || page} totalPages={data?.totalPages || 1} setPage={setPage} />
     </Gutter>
   )
 }

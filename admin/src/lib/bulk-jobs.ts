@@ -6,8 +6,9 @@ import { sourceHash, validateI18n } from './localization.mjs'
 import { prepareSubmissionPreview, validateContent } from './sync-submissions'
 import { writeAudit } from './audit'
 import { submissionAttribution } from './attribution.mjs'
+import { parseTopicLocale, topicDraftOf, topicSourceHash, validateTopicI18n } from './topics-translation'
 
-export const JOB_OPERATIONS = ['write-fields', 'ai-fill', 'translate', 'manual-include'] as const
+export const JOB_OPERATIONS = ['write-fields', 'ai-fill', 'translate', 'manual-include', 'translate-topic'] as const
 export const EDIT_KEYS = [
   'name',
   'description',
@@ -51,6 +52,7 @@ export async function loadVocabulary(payload: any) {
 }
 
 export function draftOf(doc: any, target: string, vocab: any) {
+  if (target === 'topics') return topicDraftOf(doc)
   if (target === 'submissions') {
     const fields = doc.fields || {}
     const review = doc.review?.content || {}
@@ -93,6 +95,12 @@ export function contentOnly(draft: any) {
 }
 
 export function jobDraftOf(doc: any, job: any, vocab: any, id: string) {
+  if (job.target === 'topics') {
+    const source = topicDraftOf(doc)
+    const hash = topicSourceHash(source.name, source.summary)
+    const base = { ...source, i18n: { sourceHash: hash, ...(job.options?.agent?.draft?.i18n || {}) } }
+    return { ...base, ...(job.options?.checkpoints?.[id] || {}) }
+  }
   const draft = { ...draftOf(doc, job.target, vocab), ...(job.operation === 'write-fields' ? {} : job.options?.patch || {}), ...job.options?.drafts?.[id], ...job.options?.checkpoints?.[id] }
   if (draft.characterIds?.length && !draft.characterIds.includes(draft.characterId)) draft.characterId = draft.characterIds[0]
   return draft
@@ -115,22 +123,28 @@ export function fingerprint(doc: any, target: string) {
           status: doc.status,
           preview: doc.preview,
         }
-      : {
-          fields: doc.fields,
-          review: doc.review,
-          editorial: doc.editorial,
-          work: doc.work,
-          state: doc.state,
-          origin: doc.origin,
-          media: doc.media,
-        }
+      : target === 'topics'
+        ? {
+            name: doc.name,
+            summary: doc.summary,
+          }
+        : {
+            fields: doc.fields,
+            review: doc.review,
+            editorial: doc.editorial,
+            work: doc.work,
+            state: doc.state,
+            origin: doc.origin,
+            media: doc.media,
+          }
   return crypto.createHash('sha256').update(JSON.stringify(value)).digest('hex')
 }
 
 export async function targetDoc(payload: any, target: string, id: string, req?: PayloadRequest) {
+  const key = target === 'works' ? 'workId' : target === 'topics' ? 'topicId' : 'submissionId'
   const result = await payload.find({
     collection: target,
-    where: { [target === 'works' ? 'workId' : 'submissionId']: { equals: id } },
+    where: { [key]: { equals: id } },
     depth: 0,
     limit: 1,
     overrideAccess: true,
@@ -190,6 +204,33 @@ export async function prepareJobItem(
     throw new Error('已删除或移除的作品不能批量编辑')
   if (job.target === 'submissions' && doc.work)
     return { doc, skipped: '已关联作品，不重复处理', data: null }
+  if (job.operation === 'translate-topic') {
+    const sourceHash = topicSourceHash(doc.name, doc.summary)
+    if (job.options?.baseTranslationRevision != null && Number(doc.translationRevision || 0) !== Number(job.options.baseTranslationRevision))
+      throw new Error('专题中文或人工译文在提交后已修改，旧译文任务不能覆盖')
+    if (job.options?.sourceHash && String(job.options.sourceHash) !== sourceHash)
+      throw new Error('专题中文已修改，旧译文任务不能覆盖')
+    const complete = Boolean(doc.nameEn && doc.summaryEn && doc.nameJa && doc.summaryJa)
+    if (!job.options?.force && complete && doc.translationSourceHash === sourceHash)
+      return { doc, skipped: '已有有效英日译文', data: null }
+    if (!agentContent?.i18n) throw new Error('任务等待 Hermes Agent 通过工具处理，后台不调用模型')
+    const i18n = validateTopicI18n(agentContent.i18n, sourceHash)
+    return {
+      doc,
+      draft: { ...topicDraftOf(doc), i18n: agentContent.i18n },
+      data: {
+        nameEn: i18n.en.name,
+        summaryEn: i18n.en.summary,
+        nameJa: i18n.ja.name,
+        summaryJa: i18n.ja.summary,
+        translationState: 'ready',
+        translationSourceHash: sourceHash,
+        translationUpdatedAt: new Date().toISOString(),
+        translationError: null,
+        translationJobId: job.jobId,
+      },
+    }
+  }
   const draft = { ...jobDraftOf(doc, job, vocab, id), ...(agentContent || {}) }
   if (job.operation === 'write-fields') {
     const patch: any = validatePatch(job.options.patch, vocab)
@@ -382,14 +423,19 @@ export async function stepJob(req: PayloadRequest, job: any, agentContent?: any)
           collection: job.target,
           id: fresh.id,
           data: prepared.data,
-          context: { audit: false, skipFieldAccess: true },
+          context: { audit: false, skipFieldAccess: true, skipTranslationState: job.target === 'topics' },
           overrideAccess: true,
-          req: { ...txReq, context: { ...txReq.context, audit: false, skipFieldAccess: true } },
+          req: { ...txReq, context: { ...txReq.context, audit: false, skipFieldAccess: true, skipTranslationState: job.target === 'topics' } },
         })
         result = {
           id,
           status: 'succeeded',
-          message: job.target === 'works' ? '已保存，待发布' : '草稿已保存，原投稿和 AI 结论未修改',
+          message:
+            job.operation === 'translate-topic'
+              ? '英日译文已保存，待发布'
+              : job.target === 'works'
+                ? '已保存，待发布'
+                : '草稿已保存，原投稿和 AI 结论未修改',
         }
       }
     }

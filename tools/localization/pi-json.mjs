@@ -1,7 +1,7 @@
 import {spawn} from 'node:child_process';
-export async function piJSON(prompt, {cwd, cli='D:/dev/tools/npm-global/node_modules/@earendil-works/pi-coding-agent/dist/bundle/cli.js'}={}) {
+export async function piJSON(prompt, {cwd, cli='D:/dev/tools/npm-global/node_modules/@earendil-works/pi-coding-agent/dist/bundle/cli.js', provider='cpa', model='deepseek/deepseek-v4.1-flash'}={}) {
   return new Promise((resolve,reject)=>{
-    const child=spawn(process.execPath,[cli,'--provider','cpa','--model','deepseek/deepseek-v4.1-flash','--thinking','off','--mode','json','--print','--no-tools','--no-extensions','--no-skills','--no-prompt-templates','--no-context-files','--no-session','--offline'],{cwd,stdio:['pipe','pipe','pipe'],windowsHide:true});
+    const child=spawn(process.execPath,[cli,'--provider',provider,'--model',model,'--thinking','off','--mode','json','--print','--no-tools','--no-extensions','--no-skills','--no-prompt-templates','--no-context-files','--no-session','--offline'],{cwd,stdio:['pipe','pipe','pipe'],windowsHide:true});
     let pending='',final,stderr='';
     const timer=setTimeout(()=>{child.kill();reject(Error('PI timed out'));},12*60*1000);
     child.stdout.setEncoding('utf8');child.stderr.setEncoding('utf8');

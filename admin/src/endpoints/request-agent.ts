@@ -30,6 +30,10 @@ const view = (r: any) => ({
   work: r.agentProgress?.workInfo,
   draft: r.agentProgress?.draft,
   decision: r.agentProgress?.decision,
+  batchId: r.agentProgress?.batchId || null,
+  batchLabel: r.agentProgress?.batchLabel || null,
+  sourceKind: r.agentProgress?.sourceKind || null,
+  batchHistory: Array.isArray(r.agentProgress?.batchHistory) ? r.agentProgress.batchHistory.slice(-20) : [],
 })
 
 export async function requestAgentHandler(req: PayloadRequest) {
@@ -265,6 +269,18 @@ export async function requestAgentHandler(req: PayloadRequest) {
         expiresAt: now + LEASE,
         attempt: (progress.attempt || 0) + 1,
         stage: 'editing',
+        ...(body.batchId ? {
+          batchId: String(body.batchId).slice(0, 200),
+          batchLabel: body.batchLabel ? String(body.batchLabel).slice(0, 200) : null,
+          sourceKind: body.sourceKind ? String(body.sourceKind).slice(0, 50) : 'hermes',
+          batchHistory: [...(Array.isArray(progress.batchHistory) ? progress.batchHistory : []), {
+            batchId: String(body.batchId).slice(0, 200),
+            batchLabel: body.batchLabel ? String(body.batchLabel).slice(0, 200) : null,
+            sourceKind: body.sourceKind ? String(body.sourceKind).slice(0, 50) : 'hermes',
+            claimedAt: new Date(now).toISOString(),
+            status: 'claimed',
+          }].slice(-20),
+        } : {}),
       }
       record.issueData = live.snapshot
     } else {
@@ -355,6 +371,17 @@ export async function requestAgentHandler(req: PayloadRequest) {
         }
       }
       if (!['release', 'complete'].includes(body.action)) progress.expiresAt = now + LEASE
+      if (['complete', 'release'].includes(body.action) && Array.isArray(progress.batchHistory) && progress.batchHistory.length) {
+        const history = [...progress.batchHistory]
+        const last = history[history.length - 1]
+        history[history.length - 1] = {
+          ...last,
+          status: body.action === 'complete' ? 'completed' : 'released',
+          finishedAt: new Date(now).toISOString(),
+          ...(body.action === 'release' ? { error: String(body.reason || '本轮未完成').slice(0, 1000) } : {}),
+        }
+        progress.batchHistory = history.slice(-20)
+      }
     }
     record = await payload.update({
       collection: 'takedown-requests',

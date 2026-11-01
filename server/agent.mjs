@@ -13,10 +13,16 @@ function owner(item, token, now) {
 }
 export function agentView(item) {
   const state = item.agent || {};
+  const history = Array.isArray(state.batchHistory) ? state.batchHistory.slice(-20) : [];
+  const latest = history[history.length - 1] || null;
   return {
     id: item.id, source: item.source, fields: item.fields, origin: item.origin || {},
     state: item.state, stage: state.stage || 'queued', attempt: state.attempt || 0,
     draft: state.draft || null, review: state.review || null, lastError: state.lastError || null,
+    batchId: latest?.batchId || state.batchId || null,
+    batchLabel: latest?.batchLabel || state.batchLabel || null,
+    sourceKind: latest?.sourceKind || state.sourceKind || null,
+    batchHistory: history,
   };
 }
 
@@ -34,7 +40,10 @@ export async function agentAction(queue, action, input, { vocabulary, now = Date
       if (!eligible(current)) throw fault('条目不允许 Agent 处理');
       if (current.agent?.retryAt > now || current.agent?.stage === 'blocked' || (current.agent?.attempt || 0) >= 3) throw fault('条目暂挂，需站长检查后重试');
       if (current.agent?.token && current.agent.expiresAt > now) throw fault('任务正在处理');
-      current.agent = { ...current.agent, token, expiresAt: now + LEASE_MS, attempt: (current.agent?.attempt || 0) + 1, stage: current.agent?.draft ? 'translating' : 'reviewing', claimedAt: at() };
+      const batchId = input.batchId ? String(input.batchId).slice(0, 200) : null;
+      const history = Array.isArray(current.agent?.batchHistory) ? [...current.agent.batchHistory] : [];
+      if (batchId) history.push({ batchId, batchLabel: input.batchLabel ? String(input.batchLabel).slice(0, 200) : null, sourceKind: input.sourceKind ? String(input.sourceKind).slice(0, 50) : 'hermes', claimedAt: at(), status: 'claimed' });
+      current.agent = { ...current.agent, token, expiresAt: now + LEASE_MS, attempt: (current.agent?.attempt || 0) + 1, stage: current.agent?.draft ? 'translating' : 'reviewing', claimedAt: at(), ...(batchId ? { batchId, batchLabel: input.batchLabel ? String(input.batchLabel).slice(0, 200) : null, sourceKind: input.sourceKind ? String(input.sourceKind).slice(0, 50) : 'hermes', batchHistory: history.slice(-20) } : {}) };
     });
     return { ...agentView(item), token, expiresAt: item.agent.expiresAt };
   }
@@ -51,7 +60,10 @@ export async function agentAction(queue, action, input, { vocabulary, now = Date
     const saved = await queue.updateAgent(input.id, current => {
       owner(current, input.token, now);
       const attempts = current.agent.attempt || 0;
-      current.agent = { ...current.agent, token: null, expiresAt: 0, stage: attempts >= 3 ? 'blocked' : 'retry', retryAt: attempts >= 3 ? Number.MAX_SAFE_INTEGER : now + 5 * 60 * 1000, lastError: String(input.reason || 'Agent 本轮未完成').slice(0, 1000) };
+      const history = Array.isArray(current.agent.batchHistory) ? [...current.agent.batchHistory] : [];
+      const last = history[history.length - 1];
+      if (last) history[history.length - 1] = { ...last, status: 'released', finishedAt: at(), error: String(input.reason || 'Agent 本轮未完成').slice(0, 1000) };
+      current.agent = { ...current.agent, token: null, expiresAt: 0, stage: attempts >= 3 ? 'blocked' : 'retry', retryAt: attempts >= 3 ? Number.MAX_SAFE_INTEGER : now + 5 * 60 * 1000, lastError: String(input.reason || 'Agent 本轮未完成').slice(0, 1000), batchHistory: history.slice(-20) };
     });
     return agentView(saved);
   }
@@ -96,7 +108,16 @@ export async function agentAction(queue, action, input, { vocabulary, now = Date
       validateI18n(draft?.i18n, { ...draft, origin: item.origin || {} });
       if (draft.i18n.sourceHash !== sourceHash({ ...draft, origin: item.origin || {} })) throw fault('译文已过期');
     }
-    return { ready: true, result: { ...review, content: review.verdict === 'pass' ? draft : null }, item: agentView(item) };
+    const saved = action === 'complete'
+      ? await queue.updateAgent(input.id, current => {
+          owner(current, input.token, now);
+          const history = Array.isArray(current.agent.batchHistory) ? [...current.agent.batchHistory] : [];
+          const last = history[history.length - 1];
+          if (last) history[history.length - 1] = { ...last, status: 'completed', finishedAt: at(), verdict: review.verdict };
+          current.agent.batchHistory = history.slice(-20);
+        })
+      : item;
+    return { ready: true, result: { ...review, content: review.verdict === 'pass' ? draft : null }, item: agentView(saved) };
   }
   throw fault('未知 Agent 操作', 400);
 }

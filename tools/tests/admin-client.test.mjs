@@ -23,32 +23,26 @@ test("本地通道使用 owner API Key，拒绝跨站地址和凭证重定向", 
     /HTTPS/,
   );
 });
-test("专题作品顺序和封面由本地调用明确指定，发布需先明确确认", async () => {
+test("机器人只更新专题元数据，成员和封面必须由站长后台维护", async () => {
   const calls = [];
   const client = await makeClient(
     { baseUrl: "https://example.test", apiKey: "test" },
     async (url, o) => {
       calls.push({ url: String(url), ...o });
-      if (url.pathname === "/cms-api/works")
-        return Response.json({
-          docs: [
-            { workId: "b", id: 2 },
-            { workId: "a", id: 1 },
-          ],
-        });
       if (o.method === "GET") return Response.json({ docs: [] });
       return Response.json({ ok: true });
     },
   );
-  await client.execute("topic", {
-    topicId: "demo",
-    name: "示例",
-    summary: "简介",
-    workIds: ["a", "b"],
-    coverWorkId: "b",
-  });
-  assert.deepEqual(JSON.parse(calls.at(-1).body).works, [1, 2]);
-  assert.equal(JSON.parse(calls.at(-1).body).cover, 2);
+  await client.execute("topic", { topicId: "demo", name: "示例", summary: "简介" });
+  assert.equal(JSON.parse(calls.at(-1).body).works, undefined);
+  await assert.rejects(
+    () => client.execute("topic", { topicId: "demo", name: "示例", workIds: ["a"] }),
+    /只能由站长/,
+  );
+  await assert.rejects(
+    () => client.execute("topic", { topicId: "demo", name: "示例", coverWorkId: "a" }),
+    /只能由站长/,
+  );
   await assert.rejects(() => client.execute("publish"), /confirm/);
 });
 
