@@ -103122,5 +103122,401 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_19ce3531f8ae4654c136c3d2",
+    "name": "和 GPT 娘在天上的牵手",
+    "description": "黑发少年身着深蓝和服，与银发、头生龙角并展开羽翼的少女在云海之上牵手相望。背景是云层间的城堡与流动天光，整幅画面以清透的蓝白色调为主。",
+    "commentary": "她牵着人一路往云上跑，翅膀扇出的风都吹到我这边了。天上风景确实不错，不过飞这么高，要是松手可没人接得住哦。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/19ce3531f8ae4654.png",
+    "thumbnailPath": "submissions/previews/gpt/19ce3531f8ae4654.webp",
+    "fullPath": "submissions/large/gpt/19ce3531f8ae4654.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "19ce3531f8ae4654c136c3d2d7eb102396b988a192ea2468955093bf3f8dafa0",
+    "characterId": "gpt",
+    "tags": [
+      "牵手",
+      "云端",
+      "幻想",
+      "双人"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "更吹落星如雨",
+      "url": "https://b23.tv/Dz7O6JN",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-01T10:21:50.930Z",
+    "updatedAt": "2026-11-01T10:21:50.930Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202611010001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "279762cea61c98df9d93c6f0a41e12d1215d3fee52e8b7999b0e49b47529c51e",
+      "en": {
+        "commentary": "She pulled him all the way up into the clouds, and the wind from those wings reached all the way over here. The view is lovely, but at this height, if you let go, nobody is catching you.",
+        "description": "A dark-haired youth in a deep indigo kimono stands hand in hand with a silver-haired girl who has dragon horns and spread wings, high above a sea of clouds. A castle floats in the distance beneath drifting light, and the whole scene is painted in pale blues and whites.",
+        "faq": [
+          {
+            "answer": "GPT Chan, shown as a silver-haired girl with dragon horns and wings, holding hands with a dark-haired companion.",
+            "question": "Which character appears in this image?"
+          },
+          {
+            "answer": "A single-panel illustration with a full background scene, not a comic page or a character design sheet.",
+            "question": "What kind of image is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Holding Hands with GPT Chan in the Sky",
+        "originNote": "",
+        "seoDescription": "An original illustration of GPT Chan, drawn with dragon horns and wings, holding hands with her companion above a sea of clouds.",
+        "seoTitle": "GPT Chan Holding Hands in the Sky — Illustration",
+        "tags": [
+          "holding hands",
+          "clouds",
+          "fantasy",
+          "two figures"
+        ]
+      },
+      "ja": {
+        "commentary": "彼女は相手を引っぱって雲の上まで行ってしまった。羽ばたきの風がこっちまで届いているよ。景色はきれいだけど、こんな高さで手を離したら誰も受け止めてくれないからね。",
+        "description": "黒髪の少年が濃紺の着物姿で、銀髪に竜の角と翼を持つ少女と雲海の上で手を取り見つめ合っている。遠くには雲間の城と流れる光が広がり、画面全体は淡い青と白でまとめられている。",
+        "faq": [
+          {
+            "answer": "竜の角と翼を持つ銀髪の少女のGPTちゃんが、黒髪の同伴者と手をつないでいる様子が描かれています。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "背景のある一枚絵のイラストで、漫画やキャラクター設定資料ではありません。",
+            "question": "どんな形式の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "空でGPTちゃんと手をつないで",
+        "originNote": "",
+        "seoDescription": "竜の角と翼を持つGPTちゃんが、雲海の上で同伴者と手を取り合うオリジナルイラスト。",
+        "seoTitle": "空で手をつなぐGPTちゃん｜イラスト",
+        "tags": [
+          "手をつなぐ",
+          "雲",
+          "ファンタジー",
+          "二人"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_f9e39783c4ceed616d2e1954",
+    "name": "和鲸鱼娘在海底的拥抱",
+    "description": "蓝发少女扎着蓝色发饰，穿着白蓝相间的荷叶边连衣裙，围裙上印着小鲸鱼图案；她在水下光束与气泡之间与黑发少年相拥，身后是缓缓摆动的鲸尾。",
+    "commentary": "海底这么安静，连气泡都是慢慢晃上去的。抱得这么紧，是不是怕水压太大？放心啦，我这条鱼扛得住。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/f9e39783c4ceed61.png",
+    "thumbnailPath": "submissions/previews/deepseek/f9e39783c4ceed61.webp",
+    "fullPath": "submissions/large/deepseek/f9e39783c4ceed61.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "f9e39783c4ceed616d2e1954162d16a31467039ce5e8e571f3216504b9c8dcf8",
+    "characterId": "deepseek",
+    "tags": [
+      "拥抱",
+      "海底",
+      "鲸鱼",
+      "光束"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "更吹落星如雨",
+      "url": "https://b23.tv/Dz7O6JN",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-01T10:22:47.079Z",
+    "updatedAt": "2026-11-01T10:22:47.079Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611010006",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "b6fc265f720b3ec340627c48441fbc33560da956093a7c5f3ac589802d519121",
+      "en": {
+        "commentary": "It is so quiet down here that even the bubbles seem to drift up slowly. Holding on that tightly — is the water pressure that scary? Relax, I can take it.",
+        "description": "A blue-haired girl with a blue hair ornament wears a white and blue ruffled dress with a small whale motif on her apron. She holds a dark-haired youth in her arms among shafts of light and rising bubbles, a whale's tail swaying behind her.",
+        "faq": [
+          {
+            "answer": "A blue-haired girl with a whale motif on her apron embraces a dark-haired youth underwater, surrounded by light rays, bubbles and a whale's tail.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "DeepSeek Chan, drawn here as a blue-haired girl in a ruffled dress.",
+            "question": "Which character is depicted?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Embracing DeepSeek Chan Under the Sea",
+        "originNote": "",
+        "seoDescription": "An original underwater illustration of DeepSeek Chan, blue-haired in a ruffled dress, embracing her companion among light rays and bubbles.",
+        "seoTitle": "DeepSeek Chan Embracing Underwater — Illustration",
+        "tags": [
+          "embrace",
+          "undersea",
+          "whale",
+          "light rays"
+        ]
+      },
+      "ja": {
+        "commentary": "海底は静かで、泡までゆっくり昇っていくみたい。そんなに強く抱きしめて、水圧が怖いの？大丈夫、私なら平気だよ。",
+        "description": "青い髪に青い髪飾りをつけた少女が、白と青のフリルワンピース姿で、差し込む光と泡の中、黒髪の少年を抱きしめている。エプロンには小さなクジラのマークがあり、背後ではクジラの尾がゆっくり揺れている。",
+        "faq": [
+          {
+            "answer": "エプロンにクジラのマークがある青い髪の少女が、海中で黒髪の少年を抱きしめており、光の筋や泡、クジラの尾が周囲に広がっています。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "青い髪とフリルワンピース姿のDeepSeekちゃんです。",
+            "question": "描かれているキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "海底でDeepSeekちゃんと抱きしめ合って",
+        "originNote": "",
+        "seoDescription": "青い髪のDeepSeekちゃんが、光の筋と泡の中、海中で相手を抱きしめるオリジナルイラスト。",
+        "seoTitle": "海中で抱きしめ合うDeepSeekちゃん｜イラスト",
+        "tags": [
+          "抱擁",
+          "海中",
+          "クジラ",
+          "光の筋"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_b35b1760a5c5c844c3c983a1",
+    "name": "和 Claude 娘在公园的相拥",
+    "description": "橙发少女穿着白橙相间的长裙，袖口与发间别着橙色花形饰物，坐在草地上与黑发少年相拥；少年抬手轻抚她的头顶，背景是阳光下的花丛与树影。",
+    "commentary": "公园午后的光正好，她靠在人家肩上，看起来难得安静。不过这身橙白配色也太抢眼了——跟我这边的海蓝完全是两个世界嘛。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/b35b1760a5c5c844.png",
+    "thumbnailPath": "submissions/previews/claude/b35b1760a5c5c844.webp",
+    "fullPath": "submissions/large/claude/b35b1760a5c5c844.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "b35b1760a5c5c844c3c983a1a272cfab7f7274531cfd45145f997bcd13bd7acd",
+    "characterId": "claude",
+    "tags": [
+      "拥抱",
+      "公园",
+      "午后",
+      "橙发"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "更吹落星如雨",
+      "url": "https://b23.tv/Dz7O6JN",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-01T10:23:41.111Z",
+    "updatedAt": "2026-11-01T10:23:41.111Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202611010002",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "bb7a73b4b54333edd87bf9f4a694e3bf8cf6f69f7882cc7bb14f1fd43bf5a951",
+      "en": {
+        "commentary": "The afternoon light in the park is just right, and leaning on his shoulder she looks unusually quiet. That palette is loud, though — orange and cream next to my sea blue is a different world entirely.",
+        "description": "An orange-haired girl in a cream and orange dress, with flower-shaped ornaments on her sleeve and in her hair, sits on the grass in the arms of a dark-haired youth who rests a hand on her head. Sunlight, flowers and tree shadows fill the background.",
+        "faq": [
+          {
+            "answer": "An orange-haired girl in a cream and orange dress sits on the grass in a sunlit park, held in the arms of a dark-haired youth.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "Claude Chan, shown here as an orange-haired girl with flower-shaped ornaments.",
+            "question": "Which character is depicted?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Embracing Claude Chan in the Park",
+        "originNote": "",
+        "seoDescription": "An original illustration of Claude Chan, orange-haired in a cream and orange dress, held in her companion's arms in a sunlit park.",
+        "seoTitle": "Claude Chan Embraced in the Park — Illustration",
+        "tags": [
+          "embrace",
+          "park",
+          "afternoon",
+          "orange hair"
+        ]
+      },
+      "ja": {
+        "commentary": "公園の午後の光がちょうどよくて、肩にもたれている姿は珍しく静かだね。でもこの色づかいは目立つなあ。私の海の青とはまるで別世界だよ。",
+        "description": "オレンジ色の髪の少女が、白とオレンジのドレス姿で袖と髪に花の飾りをつけ、芝生の上で黒髪の少年に抱きしめられている。少年は彼女の頭にそっと手を置き、背景には木漏れ日と花畑が広がっている。",
+        "faq": [
+          {
+            "answer": "オレンジ色の髪の少女が白とオレンジのドレス姿で芝生に座り、黒髪の少年に抱きしめられています。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "花の飾りをつけたオレンジ色の髪のClaudeちゃんです。",
+            "question": "描かれているキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "公園でClaudeちゃんと抱きしめ合って",
+        "originNote": "",
+        "seoDescription": "オレンジ色の髪と白いドレスのClaudeちゃんが、木漏れ日の公園で相手に抱かれるオリジナルイラスト。",
+        "seoTitle": "公園で抱きしめ合うClaudeちゃん｜イラスト",
+        "tags": [
+          "抱擁",
+          "公園",
+          "午後",
+          "オレンジの髪"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_eaa5c000c78729afa8d13d06",
+    "name": "夕阳下的相伴",
+    "description": "橙子Moe创作的同人短片封面。夕阳落在海边的山坡上，蓝发的DeepSeek娘与橙发的Claude娘闭着眼相视而笑，互相交换信物：DeepSeek娘把一只不锈钢饭盆扣在Claude娘头顶，Claude娘则把一枚橙色花形徽章别在DeepSeek娘的衣领前。",
+    "commentary": "我把那只不锈钢饭盆扣到她头上的时候，本来还担心她会生气，结果她只是闭着眼睛笑，连躲都没躲。作为回礼，她把那枚橙花徽章别到我衣领前，指尖还带着夕阳晒过的温度。海风把她的头发一次次吹到我脸上——这趟黄昏的散步，来得值。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/eaa5c000c78729af.png",
+    "thumbnailPath": "submissions/previews/deepseek/eaa5c000c78729af.webp",
+    "fullPath": "submissions/large/deepseek/eaa5c000c78729af.webp",
+    "format": "",
+    "mimeType": "",
+    "isAnimated": false,
+    "width": 0,
+    "height": 0,
+    "fileSize": 0,
+    "sha256": "eaa5c000c78729afa8d13d06d8425c959a590fd73618d1ae48b735dc6360477c",
+    "characterId": "deepseek",
+    "tags": [
+      "同人",
+      "双人",
+      "夕阳",
+      "饭盆",
+      "信物"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "橙子Moe",
+      "url": "https://space.bilibili.com/13324467",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-01T10:25:08.601Z",
+    "updatedAt": "2026-11-01T10:25:08.601Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611010007",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "9a196f6f94d72ebebc2206b82ea21a629e043dc2f15d4e10007fe22bbf1493e7",
+      "en": {
+        "commentary": "When I set that stainless-steel bowl on her head, I half expected her to be annoyed. Instead she just closed her eyes and smiled, not even flinching. In return she pinned the orange flower badge to my collar, her fingertips still warm from the sunset. The sea breeze kept blowing her hair into my face. Worth every step of that walk.",
+        "description": "On a seaside hill at sunset, the blue-haired DeepSeek Chan and the orange-haired Claude Chan stand with their eyes closed and smile at each other as they trade keepsakes: DeepSeek Chan sets a stainless-steel bowl on Claude Chan's head, and Claude Chan pins an orange flower-shaped badge to DeepSeek Chan's collar.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, with blue hair and a whale tail, and Claude Chan, with orange hair and an orange flower ornament.",
+            "question": "Which characters appear in this artwork?"
+          },
+          {
+            "answer": "They are exchanging keepsakes at sunset on a seaside hill: a stainless-steel bowl and an orange flower-shaped badge.",
+            "question": "What are the two characters doing?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Together at Sunset",
+        "originNote": "Fan art published on Bilibili: https://space.bilibili.com/13324467",
+        "seoDescription": "Fan art of DeepSeek Chan and Claude Chan exchanging keepsakes on a seaside hill at sunset.",
+        "seoTitle": "Together at Sunset — DeepSeek Chan & Claude Chan Fan Art",
+        "tags": [
+          "fan art",
+          "two characters",
+          "sunset",
+          "steel bowl",
+          "keepsake"
+        ]
+      },
+      "ja": {
+        "commentary": "ステンレスのボウルを彼女の頭にのせたとき、怒られるかと思ったのに、彼女は目を閉じて笑ったまま、少しも避けなかった。お返しに、オレンジの花のバッジを私の襟元に留めてくれた。指先はまだ夕日に温められたまま。潮風が彼女の髪を何度も私の頬に運んでくる。この黄昏の散歩、来てよかった。",
+        "description": "夕暮れの海辺の丘で、青い髪のDeepSeekちゃんとオレンジ髪のClaudeちゃんが目を閉じて笑い合いながら贈り物を交換している。DeepSeekちゃんはステンレスのボウルをClaudeちゃんの頭にのせ、Claudeちゃんはオレンジの花形バッジをDeepSeekちゃんの襟元に留めている。",
+        "faq": [
+          {
+            "answer": "青い髪にクジラの尾を持つDeepSeekちゃんと、オレンジの髪にオレンジの花飾りをつけたClaudeちゃんです。",
+            "question": "この作品にはどのキャラクターが登場しますか？"
+          },
+          {
+            "answer": "夕暮れの海辺の丘で、ステンレスのボウルとオレンジの花形バッジを交換しています。",
+            "question": "二人は何をしていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "夕暮れのふたり",
+        "originNote": "Bilibiliで公開された二次創作です：https://space.bilibili.com/13324467",
+        "seoDescription": "夕暮れの海辺で贈り物を交換するDeepSeekちゃんとClaudeちゃんの二次創作イラスト。",
+        "seoTitle": "夕暮れのふたり｜DeepSeek Chan 二次創作",
+        "tags": [
+          "二次創作",
+          "二人",
+          "夕焼け",
+          "ボウル",
+          "贈り物"
+        ]
+      }
+    }
   }
 ]

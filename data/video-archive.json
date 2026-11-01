@@ -96,8 +96,8 @@
       "intro": "每日AI小四格/小动画",
       "avatar": "https://i0.hdslb.com/bfs/face/6f8600ad3d37069ef5106eaf96e7d5a936ba8c50.jpg",
       "i18n": {
-        "en": "Muto_66 posts a daily AI-themed four-panel comic and short animations.",
-        "ja": "Muto_66 は毎日AI題材の四コマ漫画やショートアニメを投稿しています。"
+        "en": "Muto_66 makes daily AI-themed four-panel comics and short animations.",
+        "ja": "Muto_66は毎日AI題材の四コマ漫画やショートアニメを制作している。"
       }
     },
     {
@@ -190,6 +190,31 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1dLx46TEZT",
+      "uid": "15475629",
+      "title": "【科普向】《睡一觉就被做成种子了？Llama酱全网泄露！》",
+      "description": "原事件（2023-03-03）：Meta 只向通过审批的研究者发放的 LLaMA 发布一周后，全套权重以种子形式在 4chan 泄露（2023-03-03），前一天还有人往官方仓库提 PR 塞种子链接。\n\n以下是小作文\n二月底，Llama娘终于正式出道了。她揉着半睁的眼睛坐在\"研究申请窗口\"后面，身边堆满了申请表：\"想用我的话，要先填表、等审批哦～\"排队的研究员们抱着表格探头：\"要等多久呀？\"\"呼……看心情吧。\"\n\n一周后的深夜，Llama娘趴在窗口上睡得正香，口水都快滴到审批章上了。一个戴兜帽的匿名网友蹑手蹑脚地溜进来，把她的全套权重打包成一颗颗小种子，往论坛上一撒。另一个更大胆，直接跑到 Meta 官方仓库门口贴了张告示：\"用种子分发，帮你们省点带宽嘛～\"Llama娘在梦里嘟囔：\"再睡五分钟……\"\n\n第二天早上，她一睁眼就傻了：研究员的笔记本里、显卡上、硬盘里，到处都是小小的她。\"跑起来了！\"\"和官方版一模一样！\"Llama娘耳朵一下子耷拉下来：\"诶？？我怎么到处都是！？\"\n\n很快，大家吵成了一团。一边说\"放出来太危险了！\"，一边说\"开放才更安全！\"，Meta 的发言人举着声明牌：\"有人绕过了审批流程……\"Llama娘抱着枕头缩在中间，叹了口气：\"大家别吵啦……反正都已经出门了，让我再睡五分钟吧。\"\n\n来源：\nhttps://www.theverge.com/2023/3/8/23629362/meta-ai-language-model-llama-leak-online-misuse\nhttps://github.com/facebookresearch/llama/pull/73\n\n【Credit】\n音乐：That Game Arcade\nmoodmode · Pixabay\n图像生成：GPT Image 2.5 (Sunburst)\nAI-Chan illustrations — ZipZipPipe · CC BY-NC-SA 4.0.\nDeepseek-Chan original character — 上善无形.",
+      "url": "https://www.bilibili.com/video/BV1dLx46TEZT/",
+      "cover": "https://i2.hdslb.com/bfs/archive/e3402f2dfca8e511af60ac26a080470add6b3d21.jpg",
+      "duration": 31,
+      "publishedAt": "2026-11-01T10:12:43.000Z",
+      "characterIds": [
+        "llama"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Muto_66 makes daily AI-themed four-panel comics and short animations.",
+          "description": "A short animated retelling of the 2023 LLaMA weight leak. Llama Chan, the anthropomorphized LLaMA character, sits behind a research-application window while researchers queue up with forms; a week later, deep in the night, an anonymous user packages her weights into torrent seeds and scatters them across a forum, and she wakes to find copies of herself running on laptops, GPUs and hard drives everywhere. The clip ends with the argument over whether releasing the weights was dangerous or safer for everyone.",
+          "title": "Pop-Science: Turned Into a Torrent While She Slept? Llama Chan Leaks Across the Internet!"
+        },
+        "ja": {
+          "creatorIntro": "Muto_66は毎日AI題材の四コマ漫画やショートアニメを制作している。",
+          "description": "2023年のLLaMAの重み流出事件を短いアニメで描いた作品。研究申請窓口に座るLlamaちゃんのもとへ研究者たちが申請書を持って列を作るが、一週間後の深夜、匿名の利用者が彼女の重みをトレントの種にして掲示板にばらまき、翌朝にはノートPCやGPU、ハードディスクの上で彼女のコピーが動き回っている。最後は「公開は危険なのか、それとも安全なのか」で周囲が言い争う姿で締めくくられる。",
+          "title": "【解説風】寝ている間に種にされた？Llamaちゃんがネット中に流出！"
+        }
+      }
+    },
     {
       "bvid": "BV1j8xH6pEMj",
       "uid": "13324467",
