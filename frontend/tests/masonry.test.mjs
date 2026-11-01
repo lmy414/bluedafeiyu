@@ -4,13 +4,13 @@ import {masonryPositions} from '../src/scripts/masonry.mjs';
 import {initialMasonryScript} from '../src/components/layout/Masonry.mjs';
 import vm from 'node:vm';
 
-test('initial component layout uses the shared placement before any module loads',()=>{
+test('initial layout uses resolved CSS tracks instead of stale viewport column hints',()=>{
   const items=[100,200,50].map(offsetHeight=>({offsetHeight,hidden:false,matches:()=>true}));
   const grid={children:items,clientWidth:412,classList:{add:value=>assert.equal(value,'is-laid-out')}};
   let placed;
   vm.runInNewContext(initialMasonryScript().replace(/^<script>|<\/script>$/g,''),{
     document:{currentScript:{previousElementSibling:grid}},
-    getComputedStyle:()=>({getPropertyValue:key=>key==='--columns'?'2':'12px'}),
+    getComputedStyle:()=>({gridTemplateColumns:'200px 200px',getPropertyValue:key=>key==='--columns'?'6':'12px'}),
     SiteComponents:{masonryWidth:(nodes,width)=>{assert.equal(nodes.length,3);assert.equal(width,200);},masonryPlace:(_grid,_items,result)=>{placed=JSON.parse(JSON.stringify(result));}}
   });
   assert.deepEqual(placed,masonryPositions([100,200,50],2,200,12));
