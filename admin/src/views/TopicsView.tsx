@@ -257,6 +257,13 @@ export function TopicsView() {
   const selectedTopic = topics.find((topic) => String(topic.id) === selectedId) as
     | (TopicDoc & TopicTranslation)
     | undefined
+  // Legacy topics can contain translations created before source hashes existed.
+  // A default "none" must not imply that those translations are absent or current.
+  const hasUntrackedTranslations =
+    (!selectedTopic?.translationState || selectedTopic.translationState === 'none') &&
+    [selectedTopic?.nameEn, selectedTopic?.summaryEn, selectedTopic?.nameJa, selectedTopic?.summaryJa].some(
+      (value) => Boolean(value?.trim()),
+    )
   const { job: translationJob } = useBulkJob(translationJobId)
   const translationDone = useRef('')
   const selectedWorks = draft.works.map((id) => workCache[id]).filter(Boolean) as WorkDoc[]
@@ -619,8 +626,10 @@ export function TopicsView() {
             <details className="s3-translation-section">
               <summary>
                 <span>英日翻译</span>
-                <span className={`s3-status s3-status--${selectedTopic?.translationState || 'draft'}`}>
-                  {TRANSLATION_LABELS[selectedTopic?.translationState || 'none'] || '翻译状态未记录'}
+                <span className={`s3-status s3-status--${hasUntrackedTranslations ? 'stale' : selectedTopic?.translationState || 'draft'}`}>
+                  {hasUntrackedTranslations
+                    ? '已有译文，来源未记录'
+                    : TRANSLATION_LABELS[selectedTopic?.translationState || 'none'] || '翻译状态未记录'}
                 </span>
               </summary>
               <div className="s3-translation-toolbar">
@@ -632,7 +641,10 @@ export function TopicsView() {
                   {selectedTopic?.translationState === 'stale' ? (
                     <p className="s3-danger-copy">中文已修改，现有英日译文可能过期，请更新翻译后再发布。</p>
                   ) : null}
-                  {dirty && ['ready', 'stale'].includes(selectedTopic?.translationState || '') ? (
+                  {hasUntrackedTranslations ? (
+                    <p className="s3-notice">已有译文未记录对应中文版本。更新完成后会替换现有译文，请先核对。</p>
+                  ) : null}
+                  {dirty && (hasUntrackedTranslations || ['ready', 'stale'].includes(selectedTopic?.translationState || '')) ? (
                     <p className="s3-notice">当前有未保存的中文修改；保存后请更新翻译，以免旧译文覆盖。</p>
                   ) : null}
                   {selectedTopic?.translationError ? <p className="s3-danger-copy">{selectedTopic.translationError}</p> : null}
@@ -649,7 +661,7 @@ export function TopicsView() {
                       ? '翻译已排队…'
                       : translationJob?.status === 'running'
                         ? '正在翻译…'
-                        : ['ready', 'stale'].includes(selectedTopic?.translationState || '')
+                        : hasUntrackedTranslations || ['ready', 'stale'].includes(selectedTopic?.translationState || '')
                           ? '更新英日翻译'
                           : '生成英日翻译'}
                 </button>
