@@ -66,7 +66,11 @@ function statusText(value?: string) {
 
 function planLink(item: PublishPlanItem, section: string) {
   if (section === 'topics') return item.topicId ? `/admin/topics-board?topic=${encodeURIComponent(item.topicId)}` : '/admin/topics-board'
-  if (section === 'videos') return '/admin/collections/videos'
+  if (section === 'videos') {
+    if (item.kind === 'creator') return `/admin/collections/creators/${encodeURIComponent(String(item.id))}`
+    if (item.kind === 'video') return `/admin/collections/videos/${encodeURIComponent(String(item.id))}`
+    return '/admin/collections/videos'
+  }
   if (item.workId) return `/admin/library?work=${encodeURIComponent(item.workId)}`
   return '/admin/library'
 }
@@ -225,7 +229,7 @@ export function PublishView() {
                         const work = item.workId ? workByID.get(item.workId) : undefined
                         const image = work ? workImageURL(work) : undefined
                         return (
-                          <div className="s3-plan-item" key={String(item.id)}>
+                          <div className="s3-plan-item" key={`${item.kind || section.key}:${String(item.id)}`}>
                             <div className="s3-plan-thumb">{image ? <img alt="" src={image} /> : <span>{section.key === 'topics' ? '专' : '作'}</span>}</div>
                             <span title={item.workId || item.topicId || String(item.id)}>
                               <strong>{item.name}</strong>

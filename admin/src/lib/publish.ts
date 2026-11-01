@@ -41,7 +41,10 @@ export async function buildPublishPlan(payload: Payload): Promise<PublishPlan> {
     restored: [],
     deleted: [],
     topics: [],
-    videos: [...videos.docs.map((v: any) => ({ id: v.id, name: v.title, status: v.status, needsPublish: Boolean(v.needsPublish) })), ...creators.docs.map((c: any) => ({ id: c.id, name: c.name, status: c.status, needsPublish: Boolean(c.needsPublish) }))],
+    videos: [
+      ...videos.docs.map((v: any) => ({ id: v.id, kind: 'video', name: v.title, status: v.status, needsPublish: Boolean(v.needsPublish) })),
+      ...creators.docs.map((c: any) => ({ id: c.id, kind: 'creator', name: c.name, status: c.status, needsPublish: Boolean(c.needsPublish) })),
+    ],
     pendingRun: activeRuns.docs[0]
       ? { runId: String(activeRuns.docs[0].runId), status: String(activeRuns.docs[0].status), createdAt: String(activeRuns.docs[0].createdAt) }
       : null,
