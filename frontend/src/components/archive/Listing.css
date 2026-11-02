@@ -5,3 +5,14 @@ body.archive.refined .filter-fields .filter-select{min-width:0;width:100%}
 body.archive.refined .filter-select-button{box-sizing:border-box;min-height:42px}
 @media(max-width:1100px){body.archive.refined .filter-fields{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:760px){body.archive.refined .filter-fields{grid-template-columns:repeat(2,minmax(0,1fr))}body.archive.refined .filter-fields>label:first-child{grid-column:1/-1}}
+
+/* Only the all-images archive keeps its longer filter guidance in a disclosure. */
+body.archive.refined .filter-bar.browse-filter{padding:12px 0 9px;gap:6px}
+body.archive.refined .browse-filter .filter-fields{gap:10px}
+body.archive.refined .browse-filter .filter-fields>label{gap:4px}
+body.archive .browse-filter-footer{display:flex;align-items:flex-start;gap:12px;width:100%;min-width:0}
+body.archive .browse-filter-guide{flex:1 1 auto;min-width:0;color:var(--muted);font-size:12px}
+body.archive .browse-filter-guide summary{display:list-item;width:fit-content;max-width:100%;min-height:40px;padding:11px 2px;cursor:pointer;color:var(--blue)}
+body.archive .browse-filter-guide-content{max-width:78ch;padding-bottom:4px}
+body.archive .browse-filter-guide-content p{margin:0 0 6px;line-height:1.6}
+body.archive .browse-filter-footer .text-button{align-self:flex-start;margin:0 0 0 auto}
