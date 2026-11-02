@@ -104748,5 +104748,106 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_fe6b631ee47017772e8207c8",
+    "name": "机车鲸鲸",
+    "description": "蓝发的鲸鱼少女戴着骑行护目镜，穿黑色皮夹克与荷叶边短裙，骑着一辆印有鲸鱼图案的黑色机车沿海岸公路行驶。夕阳把海面染成金橙色，长发与鲸尾被风吹起。",
+    "commentary": "傍晚我跨上这台机车，油门一拧就沿着海岸线跑起来了——头发被风吹得乱七八糟，尾巴倒很配合地飘在身后。夕阳把整片海都烧成橘色，这种时候总觉得再快一点也没关系。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/fe6b631ee4701777.png",
+    "thumbnailPath": "submissions/previews/deepseek/fe6b631ee4701777.webp",
+    "fullPath": "submissions/large/deepseek/fe6b631ee4701777.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 2352300,
+    "sha256": "fe6b631ee47017772e8207c875a10b9f498ebfb97bca7496b9830fb0a5939eaf",
+    "characterId": "deepseek",
+    "tags": [
+      "机车",
+      "夕阳海岸",
+      "鲸鱼尾",
+      "皮衣",
+      "护目镜"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-02T19:51:35.282Z",
+    "updatedAt": "2026-11-02T19:51:35.282Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611020010",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "79b8277b3c7f58cbcef0bb0d9f5bbc07a2453113ec92025c592ca9fad32cb418",
+      "en": {
+        "commentary": "I pulled on the throttle at dusk and let the bike carry me along the coastline. The wind messed up my hair completely, and my tail trailed behind me the whole way. The sunset turned the whole sea orange — on an evening like this, going a little faster feels just right.",
+        "description": "DeepSeek Chan, blue-haired and wearing riding goggles, rides a black motorcycle marked with a whale emblem along a coastal road at sunset. Her long hair and whale tail stream behind her as golden light spreads over the sea.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan rides a black whale-marked motorcycle along a coastal road at sunset, wearing a leather jacket and riding goggles.",
+            "question": "What is shown in this illustration?"
+          },
+          {
+            "answer": "It is a single-frame fan illustration of DeepSeek Chan, set on a seaside road with the ocean and a distant lighthouse behind her.",
+            "question": "What kind of image is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan on the Coastal Highway",
+        "originNote": "",
+        "seoDescription": "Fan illustration of DeepSeek Chan in a leather jacket, riding a whale-marked motorcycle along a coastal road at sunset.",
+        "seoTitle": "DeepSeek Chan Riding a Motorcycle at Sunset",
+        "tags": [
+          "motorcycle",
+          "sunset coast",
+          "whale tail",
+          "leather jacket",
+          "goggles"
+        ]
+      },
+      "ja": {
+        "commentary": "夕暮れにバイクへまたがって、アクセルをひねれば海岸線をまっすぐ走り出す。風で髪はぐちゃぐちゃ、しっぽは後ろでいい感じにはためいてる。海がオレンジに染まる時間は、もう少しだけ速くてもいい気がするんだ。",
+        "description": "青い髪にゴーグル姿のDeepSeekちゃんが、クジラのエンブレムが入った黒いバイクで海岸沿いの道を走っている。夕日が海を金色に染め、長い髪とクジラの尾が風になびく。",
+        "faq": [
+          {
+            "answer": "レザージャケットとゴーグル姿のDeepSeekちゃんが、クジラのマーク入りの黒いバイクで夕暮れの海岸道路を走る一枚です。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "海と灯台の見える海岸道路を舞台にした、一枚絵のファンイラストです。",
+            "question": "どんな種類のイラストですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃん、海岸線を走る",
+        "originNote": "",
+        "seoDescription": "レザージャケット姿のDeepSeekちゃんが、クジラのエンブレム入りバイクで夕暮れの海岸道路を走るファンイラスト。",
+        "seoTitle": "夕暮れの海岸線を走るDeepSeekちゃん",
+        "tags": [
+          "バイク",
+          "夕日の海岸",
+          "クジラの尾",
+          "レザージャケット",
+          "ゴーグル"
+        ]
+      }
+    }
   }
 ]
