@@ -63,8 +63,8 @@
       "intro": "主要是一些漫画，ai视频的二创，未来考虑写小说",
       "avatar": "https://i1.hdslb.com/bfs/face/cb247d48e2aea0765ff06a96264ef8b485e62dbd.jpg",
       "i18n": {
-        "en": "Mostly manga and fan works based on AI videos; the creator says a novel may come later.",
-        "ja": "主に漫画やAI動画の二次創作を投稿。今後は小説も書く予定とのこと。"
+        "en": "A creator who mainly makes manga and fan videos about AI characters.",
+        "ja": "漫画やAIキャラクターの二次創作動画を中心に制作しているクリエイターです。"
       }
     },
     {
@@ -190,6 +190,32 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV17yxa6XEdu",
+      "uid": "551427187",
+      "title": "笨手笨脚的claude娘",
+      "description": "感谢观看",
+      "url": "https://www.bilibili.com/video/BV17yxa6XEdu/",
+      "cover": "https://i1.hdslb.com/bfs/archive/60a394b5f127b11b4d622199b5cfcb0667a3aa25.jpg",
+      "duration": 26,
+      "publishedAt": "2026-11-01T23:22:31.000Z",
+      "characterIds": [
+        "claude",
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A creator who mainly makes manga and fan videos about AI characters.",
+          "description": "A short fan animation in which Claude Chan stumbles through a clumsy everyday moment, with DeepSeek Chan appearing alongside her.",
+          "title": "The Clumsy Claude Chan"
+        },
+        "ja": {
+          "creatorIntro": "漫画やAIキャラクターの二次創作動画を中心に制作しているクリエイターです。",
+          "description": "ドジなClaudeちゃんの日常を描いた短編二次創作アニメ。DeepSeekちゃんも一緒に登場します。",
+          "title": "ドジなClaudeちゃん"
+        }
+      }
+    },
     {
       "bvid": "BV1dLx46TEZT",
       "uid": "15475629",

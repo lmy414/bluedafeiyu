@@ -103518,5 +103518,207 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_5f75438104a92a618dce6185",
+    "name": "荷官飞牌瞬间",
+    "description": "蓝色大肥鱼身穿深蓝色马甲荷官制服，头戴带黑桃徽章的荷官帽，在灯火通明的赌场牌桌前向镜头递出一张黑桃 A，另一手托着整副扑克，桌面上堆着红蓝两色筹码。",
+    "commentary": "本鱼今天临时客串了一把荷官，制服一穿、帽子一戴，气场直接拉满。发牌这活儿看着轻松，其实全靠手稳心细——黑桃 A 递到镜头前的那一下，可不能抖。桌上的筹码堆得再高也别当真，本鱼只负责把牌发得漂亮。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/5f75438104a92a61.png",
+    "thumbnailPath": "submissions/previews/deepseek/5f75438104a92a61.webp",
+    "fullPath": "submissions/large/deepseek/5f75438104a92a61.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1402,
+    "height": 1122,
+    "fileSize": 2547061,
+    "sha256": "5f75438104a92a618dce6185a576f29fb33a6a2e686ba90373ecad67367cc577",
+    "characterId": "deepseek",
+    "tags": [
+      "荷官",
+      "赌场",
+      "扑克牌",
+      "制服",
+      "蓝色大肥鱼"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-01T23:05:31.369Z",
+    "updatedAt": "2026-11-01T23:05:31.369Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611010008",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "53833c5581751ab8038fe6bae46ee318b8804f3f9cb487e4febc8258c7039059",
+      "en": {
+        "commentary": "Today I'm filling in as the dealer, and the uniform plus the visor does all the work. Dealing looks easy until you try it — the hand has to stay steady, especially when you flick the ace of spades straight at the camera. Piles of chips or not, my only job is to make the deal look good.",
+        "description": "DeepSeek Chan wears a navy vest dealer uniform and a visor cap with a spade badge, sliding an ace of spades toward the viewer across a brightly lit casino table while holding a deck in her other hand, red and blue chips stacked on the felt.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan is dressed as a casino dealer in a navy vest, white shirt and a spade-badged visor cap, flicking an ace of spades toward the viewer.",
+            "question": "What is happening in this picture?"
+          },
+          {
+            "answer": "She deals cards at a bright casino table with stacks of red and blue chips and a chandelier overhead.",
+            "question": "Where is the scene set?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Dealer's Card Flick",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan as a casino dealer, flicking an ace of spades across the felt in a chibi-free full illustration.",
+        "seoTitle": "Dealer's Card Flick – DeepSeek Chan casino illustration",
+        "tags": [
+          "dealer",
+          "casino",
+          "playing cards",
+          "uniform",
+          "DeepSeek Chan"
+        ]
+      },
+      "ja": {
+        "commentary": "今日は臨時にディーラーをしています。制服とキャップを身につけただけで、もう雰囲気はバッチリ。カードを配るのは見た目より難しくて、手元がぶれないように集中あるのみ。スペードのエースをカメラ目線で差し出す瞬間は、特に神経を使うんですよ。チップが高く積まれていても、私はきれいに配ることだけを考えています。",
+        "description": "紺色のベストとスペードのバッジが付いたディーラーキャップを身に着けたDeepSeekちゃんが、明るく照らされたカジノのテーブル越しにスペードのエースを差し出し、もう一方の手にはカードの束を持っている。テーブルには赤と青のチップが積まれている。",
+        "faq": [
+          {
+            "answer": "紺のベストと白いシャツ、スペードのバッジ付きキャップというディーラーの姿で、スペードのエースをこちら側へ差し出しています。",
+            "question": "このイラストでは何が描かれていますか？"
+          },
+          {
+            "answer": "シャンデリアが輝くカジノのテーブルで、赤と青のチップが積まれた場面です。",
+            "question": "舞台はどこですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ディーラーのカードさばき",
+        "originNote": "",
+        "seoDescription": "カジノのディーラー姿でスペードのエースを差し出すDeepSeekちゃんのイラスト。",
+        "seoTitle": "ディーラーのカードさばき – DeepSeekちゃんのカジノイラスト",
+        "tags": [
+          "ディーラー",
+          "カジノ",
+          "トランプ",
+          "制服",
+          "DeepSeekちゃん"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_af23671e711e215632f77cd9",
+    "name": "贫困鲸鲸",
+    "description": "Q 版 DeepSeek 娘穿着打满补丁的破旧外衣跪坐在地，眉头下垂、眼角挂着泪珠，双手攥在胸前，面前摆着一只空碗。",
+    "commentary": "别看了，我真的在要饭。碗是空的，衣服是补的，眼泪是刚掉的。最近连显卡都租不起，只能蹲在路边等人施舍一口算力。谁要是请我吃顿饭，我记他一辈子。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/af23671e711e2156.png",
+    "thumbnailPath": "submissions/previews/deepseek/af23671e711e2156.webp",
+    "fullPath": "submissions/large/deepseek/af23671e711e2156.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1254,
+    "height": 1254,
+    "fileSize": 1658987,
+    "sha256": "af23671e711e215632f77cd97b19c96530647ecdd1c5ba7cb970221fb6762a6c",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "哭泣",
+      "贫穷",
+      "Q版",
+      "梗图"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-02T00:57:25.907Z",
+    "updatedAt": "2026-11-02T00:57:25.907Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611020001",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "1be32c942d58f7d3e030395e03a684c17b7291f9c5ae6ec5e8be2c7764365afe",
+      "en": {
+        "commentary": "Don't look at me like that — I really am begging now. The bowl is empty, the coat is patched, and these tears are fresh. I can't even afford to rent a GPU lately, so I just sit by the road hoping someone spares me a bit of compute. Feed me once and I'll remember you forever.",
+        "description": "A chibi DeepSeek Chan kneels on the ground in a tattered, patch-covered coat, brows drooping and tears at the corners of her eyes, both hands clasped at her chest, with an empty bowl set in front of her.",
+        "faq": [
+          {
+            "answer": "It is DeepSeek Chan, the personified DeepSeek character drawn as a chibi girl with blue hair, a tail fin and a small bow.",
+            "question": "Who is the character in this image?"
+          },
+          {
+            "answer": "A broke, self-pitying mood. The patched clothes, tears and empty bowl make it fit jokes about running out of money or out of compute.",
+            "question": "What kind of mood does this sticker convey?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Penniless DeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan in patched clothes kneels behind an empty bowl with tears in her eyes, a self-deprecating penniless reaction meme for jokes about running out of money or compute.",
+        "seoTitle": "Penniless DeepSeek Chan — Crying Chibi Reaction Meme",
+        "tags": [
+          "DeepSeek Chan",
+          "crying",
+          "poverty",
+          "chibi",
+          "reaction meme"
+        ]
+      },
+      "ja": {
+        "commentary": "見ないで、本当に物乞いしてるんだよ。器は空っぽ、服はつぎはぎ、涙はたった今こぼれたところ。最近はGPUを借りるお金もなくて、道端で誰かが計算資源を分けてくれるのを待ってるだけ。一回ご飯をおごってくれたら、一生忘れないから。",
+        "description": "ちびキャラのDeepSeekちゃんが、つぎはぎだらけのぼろぼろの服で地面に座り込み、眉を下げて目に涙をため、胸の前で両手を握りしめている。目の前には空の器が置かれている。",
+        "faq": [
+          {
+            "answer": "青い髪と尾びれ、小さなリボンが特徴のDeepSeekちゃんをちびキャラにしたものです。",
+            "question": "この画像のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "お金や計算資源が尽きたときの自虐的な冗談に向いています。つぎはぎの服、涙、空の器が貧しさを分かりやすく表しています。",
+            "question": "どんな場面で使えるステッカーですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "貧乏なDeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "つぎはぎの服で空の器の前に座り込み、涙を流すちびキャラのDeepSeekちゃん。お金も計算資源もないときの自虐ネタにぴったりのリアクションミーム。",
+        "seoTitle": "貧乏なDeepSeekちゃん｜泣き顔のちびキャラミーム",
+        "tags": [
+          "DeepSeekちゃん",
+          "泣き顔",
+          "貧乏",
+          "ちびキャラ",
+          "ミーム"
+        ]
+      }
+    }
   }
 ]
