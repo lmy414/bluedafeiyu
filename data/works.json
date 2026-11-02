@@ -103720,5 +103720,525 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_a3e3ef96a69dd3aa24a146b0",
+    "name": "大小姐的下午茶与哈气猫猫",
+    "description": "紫藤花架下的庭院里，橙发少女端坐在雕花椅上悠闲品茶，身后两只Q版猫娘正趴在地面上互相哈气对峙。",
+    "commentary": "我在后面哈气哈得正起劲，大小姐却连眼皮都没抬一下……这一局，气场完败。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/a3e3ef96a69dd3aa.png",
+    "thumbnailPath": "submissions/previews/claude/a3e3ef96a69dd3aa.webp",
+    "fullPath": "submissions/large/claude/a3e3ef96a69dd3aa.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 941,
+    "height": 1672,
+    "fileSize": 2868204,
+    "sha256": "a3e3ef96a69dd3aa24a146b035634c8adc9b81574638f52d20b79160e298869e",
+    "characterId": "claude",
+    "tags": [
+      "下午茶",
+      "Q版",
+      "哈气",
+      "大小姐",
+      "紫藤花",
+      "猫耳"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Cirnumia",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-02T09:11:48.531Z",
+    "updatedAt": "2026-11-02T09:11:48.531Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202611020001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "claude",
+      "deepseek",
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "9c6add6c20b342f338c852df2a7a4c168355d419b31ae0a081beec44c8be0c55",
+      "en": {
+        "commentary": "I was hissing my heart out back there, and the young lady didn't even lift an eyelid. Complete defeat in presence.",
+        "description": "In a wisteria-covered garden, an orange-haired young lady sips tea from an ornate chair while two chibi cat girls crouch on the floor behind her, hissing at each other.",
+        "faq": [
+          {
+            "answer": "Yes. The orange-haired young lady in the foreground, the blue chibi with a whale tail and the purple chibi with cat ears all appear in this single illustration.",
+            "question": "Are all three characters in this illustration?"
+          },
+          {
+            "answer": "The two chibi characters are crouched low and hissing at each other while the young lady keeps drinking her tea, which is where the contrast comes from.",
+            "question": "What makes the scene funny?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Young Lady's Tea and Two Hissing Kitties",
+        "originNote": "",
+        "seoDescription": "An orange-haired young lady enjoys afternoon tea in a wisteria garden while two chibi cat girls hiss at each other behind her. A fan illustration of AI model characters.",
+        "seoTitle": "The Young Lady's Tea and Two Hissing Kitties | DeepSeek Chan",
+        "tags": [
+          "afternoon tea",
+          "chibi",
+          "hissing",
+          "young lady",
+          "wisteria",
+          "cat ears"
+        ]
+      },
+      "ja": {
+        "commentary": "後ろで必死にシャーしてたのに、お嬢様はまぶた一つ動かさなかった……オーラ負け、完敗です。",
+        "description": "藤棚の下の庭園で、オレンジ髪のお嬢様がいすに腰かけて紅茶を楽しんでいる。その背後では、ちびキャラの猫娘が二匹、四つん這いで威嚇し合っている。",
+        "faq": [
+          {
+            "answer": "はい。手前のオレンジ髪のお嬢様、クジラの尾びれがある青いちびキャラ、猫耳の紫のちびキャラの三人が同じ一枚に描かれています。",
+            "question": "このイラストには三人とも描かれていますか？"
+          },
+          {
+            "answer": "二匹のちびキャラが低い姿勢でシャーと威嚇し合う一方、お嬢様は紅茶を飲み続けている。この対比がこの一枚の見どころです。",
+            "question": "どこが面白い場面ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "お嬢様のティータイムとシャーする猫ちゃん",
+        "originNote": "",
+        "seoDescription": "藤の花が咲く庭園で、オレンジ髪のお嬢様が優雅に紅茶を楽しむ。背後ではちびキャラの猫娘二匹が威嚇し合う。AIモデル擬人化キャラの二次創作イラスト。",
+        "seoTitle": "お嬢様のティータイムとシャーする猫ちゃん｜DeepSeek Chan",
+        "tags": [
+          "アフタヌーンティー",
+          "ちびキャラ",
+          "威嚇",
+          "お嬢様",
+          "藤の花",
+          "猫耳"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_956fcac48817ab41ca78a8d1",
+    "name": "债主与1240亿的项圈",
+    "description": "哥特式大厅里，紫发猫耳的Gemini手牵锁链，链子连着跪坐在地的Claude颈圈，颈圈上挂着写有「$124 billion」的牌子。",
+    "commentary": "看到那张牌子的一瞬间，我默默把刚到嘴边的「借点算力」咽了回去……这债，我可还不起。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/956fcac48817ab41.png",
+    "thumbnailPath": "submissions/previews/gemini/956fcac48817ab41.webp",
+    "fullPath": "submissions/large/gemini/956fcac48817ab41.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 941,
+    "height": 1672,
+    "fileSize": 2546188,
+    "sha256": "956fcac48817ab41ca78a8d1d7f9ebb3132b8b3c3ecd8462b840a1a1da32510c",
+    "characterId": "gemini",
+    "tags": [
+      "梗图",
+      "锁链",
+      "1240亿",
+      "哥特",
+      "猫耳",
+      "债务"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Cirnumia",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-02T09:12:40.751Z",
+    "updatedAt": "2026-11-02T09:12:40.751Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202611020001",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "gemini",
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "fe6d031d98b308dedfc4e4acd5c60e554741811261e552afbe3ed1e185547725",
+      "en": {
+        "commentary": "The moment I saw that sign, I quietly swallowed the \"can I borrow some compute?\" I had been about to ask. I could never repay that debt.",
+        "description": "In a gothic hall, the purple-haired, cat-eared Gemini holds a chain connected to the collar of a kneeling Claude, whose collar carries a sign reading \"$124 billion\".",
+        "faq": [
+          {
+            "answer": "Gemini is the creditor holding the chain, and Claude is the one kneeling with a collar and a price tag reading \"$124 billion\".",
+            "question": "Which characters appear in this image?"
+          },
+          {
+            "answer": "The sign on Claude's collar literally reads \"$124 billion\", matching the reported value of Google's stake in Anthropic mentioned in the submission note.",
+            "question": "What does the sign say?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Creditor and the $124 Billion Collar",
+        "originNote": "",
+        "seoDescription": "A meme illustration: cat-eared Gemini holds a chain attached to the collar of a kneeling Claude, whose collar reads \"$124 billion\". Fan art of AI model characters.",
+        "seoTitle": "The Creditor and the $124 Billion Collar | DeepSeek Chan",
+        "tags": [
+          "meme",
+          "chain",
+          "124 billion",
+          "gothic",
+          "cat ears",
+          "debt"
+        ]
+      },
+      "ja": {
+        "commentary": "あの札を見た瞬間、言いかけた「演算資源を少し貸して」を飲み込みました……この借金、私にはとても返せません。",
+        "description": "ゴシック様式の広間で、紫髪で猫耳のGeminiが鎖を手に引き、その先には床に座るClaudeの首輪がつながっている。首輪には「$124 billion」と書かれた札が下がっている。",
+        "faq": [
+          {
+            "answer": "鎖を引いているのが債権者側のGemini、首輪と値札をつけて座っているのがClaudeです。",
+            "question": "この画像にはどのキャラクターが描かれていますか？"
+          },
+          {
+            "answer": "Claudeの首輪の札には「$124 billion」とそのまま書かれており、投稿メモにあるGoogleのAnthropic株保有額の話に対応しています。",
+            "question": "札には何と書かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "債権者と1240億ドルの首輪",
+        "originNote": "",
+        "seoDescription": "猫耳のGeminiが鎖を引き、座り込んだClaudeの首輪には「$124 billion」の札。AIモデル擬人化キャラの二次創作ミームイラスト。",
+        "seoTitle": "債権者と1240億ドルの首輪｜DeepSeek Chan",
+        "tags": [
+          "ミーム",
+          "鎖",
+          "1240億ドル",
+          "ゴシック",
+          "猫耳",
+          "借金"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_e8eec9aa4a20c528408abe44",
+    "name": "一起吃饭啊：寿司桌前的四人晚餐",
+    "description": "深色和服的少年坐在餐桌正中，橙发、白发与蓝发的三位少女围在身旁，用筷子把刺身递到他嘴边。木桌上摆着清酒壶、味噌汤、米饭和一大盘刺身，午后的光从窗边斜照进来，整体是柔和的淡紫色调。",
+    "commentary": "呜哇，被三个人同时投喂什么的……我可是最积极的那个！蓝发的我把刺身递过去的时候，另外两位也不肯让步，结果筷子全挤到他嘴边了。清酒壶在旁边静静看着，盘子里的刺身倒是先少了一半。这样热热闹闹的一顿饭，我最喜欢了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/e8eec9aa4a20c528.png",
+    "thumbnailPath": "submissions/previews/deepseek/e8eec9aa4a20c528.webp",
+    "fullPath": "submissions/large/deepseek/e8eec9aa4a20c528.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1402,
+    "height": 1122,
+    "fileSize": 2818185,
+    "sha256": "e8eec9aa4a20c528408abe445dd006f66e3773d81d6e6e06d713eaaa553bc391",
+    "characterId": "deepseek",
+    "tags": [
+      "四人同框",
+      "寿司",
+      "投喂",
+      "和风",
+      "多人"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "更吹落，星如雨",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-02T09:34:35.776Z",
+    "updatedAt": "2026-11-02T09:34:35.776Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611020002",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude",
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "9c5b734ff6153a430b6076984f5210c4fdfd32379541b6a129cb059d303d9714",
+      "en": {
+        "commentary": "Three people feeding me at once? Of course I'm the most eager one! When I held out the salmon, the other two refused to give way, so all our chopsticks ended up crowded at his mouth. The sake flask just watched quietly while half the sashimi vanished first. A lively meal like this is exactly my favorite.",
+        "description": "A boy in a dark kimono sits at the center of the table while three girls — one with orange hair, one with white hair and one with blue hair — lean in and hold sashimi to his mouth with chopsticks. A sake flask, miso soup, rice bowls and a large platter of sashimi rest on the wooden table, with afternoon light slanting in through the window in soft lavender tones.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, Claude Chan and GPT Chan appear as the three girls around the table, sharing a sushi dinner with a boy in a dark kimono.",
+            "question": "Which characters appear in this illustration?"
+          },
+          {
+            "answer": "It is an anime-style fan illustration in soft lavender tones, set at a Japanese dining table with a sake flask, miso soup, rice bowls and a sashimi platter.",
+            "question": "What kind of scene and style does the artwork show?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Dinner Together: Four at the Sushi Table",
+        "originNote": "",
+        "seoDescription": "Fan illustration of DeepSeek Chan, Claude Chan and GPT Chan sharing a sushi dinner with a boy in a kimono, painted in soft lavender tones.",
+        "seoTitle": "Dinner Together: Four at the Sushi Table | DeepSeek Chan Fan Art",
+        "tags": [
+          "four characters",
+          "sushi",
+          "feeding",
+          "Japanese style",
+          "group scene"
+        ]
+      },
+      "ja": {
+        "commentary": "三人同時に食べさせてもらえるなんて……もちろん私がいちばん張り切ってるよ！私がサーモンを差し出したら、あとの二人も譲らなくて、みんなの箸が彼の口元に集中しちゃった。横の徳利はただ静かに見ているのに、お造りの皿だけが先に半分になったよ。こういう賑やかな食卓がいちばん好きなんだ。",
+        "description": "濃紺の着物を着た少年が食卓の真ん中に座り、橙髪・白髪・青髪の三人の少女が彼を囲んで箸で刺身を口元へ運んでいる。木の机には徳利、味噌汁、ご飯茶碗、刺身の大皿が並び、窓から午後の光が差し込む柔らかな薄紫の色調の一枚。",
+        "faq": [
+          {
+            "answer": "食卓を囲む三人の少女は DeepSeekちゃん、Claudeちゃん、GPTちゃんです。濃紺の着物の少年と一緒にお寿司を食べています。",
+            "question": "このイラストにはどのキャラクターが登場しますか？"
+          },
+          {
+            "answer": "薄紫を基調としたアニメ調のファンイラストで、徳利、味噌汁、ご飯茶碗、刺身の大皿が並ぶ和風の食卓が描かれています。",
+            "question": "どのような場面と作風の作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "一緒にごはん：お寿司の食卓の四人",
+        "originNote": "",
+        "seoDescription": "DeepSeekちゃん、Claudeちゃん、GPTちゃんが着物の少年とお寿司を囲むファンイラスト。柔らかな薄紫の色調で描かれた一枚です。",
+        "seoTitle": "一緒にごはん：お寿司の食卓の四人｜DeepSeekちゃんファンアート",
+        "tags": [
+          "四人",
+          "お寿司",
+          "食べさせ",
+          "和風",
+          "集合絵"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_acaaf3536d50ebaef2fb61e7",
+    "name": "星空中的拥抱",
+    "description": "夜色星空下，黑发少年被三位少女拥在中央：左侧蓝发少女靠在他的肩上，右侧橙发少女捧着他的手，白发的龙角少女从身后俯身贴近。背景是深蓝的银河与飘落的光点，画面整体笼罩在紫蓝色的星光里。",
+    "commentary": "看，星星都在我们头顶上眨着眼呢。我贴着他的肩膀不肯松开，橙发的她也把手握得紧紧的，身后的白发龙娘干脆整个人探了过来——三个人挤成一团，谁也没打算退让。这样的星空，配上这样的拥抱，冷风吹过来也不怕了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/acaaf3536d50ebae.png",
+    "thumbnailPath": "submissions/previews/deepseek/acaaf3536d50ebae.webp",
+    "fullPath": "submissions/large/deepseek/acaaf3536d50ebae.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1402,
+    "height": 1122,
+    "fileSize": 2909092,
+    "sha256": "acaaf3536d50ebaef2fb61e7e8417f5a3fa13f562db74ab2fec1bf046db92d3d",
+    "characterId": "deepseek",
+    "tags": [
+      "星空",
+      "拥抱",
+      "四人同框",
+      "夜景",
+      "多人"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "更吹落，星如雨",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-02T09:35:07.392Z",
+    "updatedAt": "2026-11-02T09:35:07.392Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611020003",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude",
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "992b8b7a6bcb00028728482a972c402b91bba1ffde0de865980d5dca4b9572e9",
+      "en": {
+        "commentary": "Look, the stars are blinking right above us. I lean on his shoulder and refuse to let go, the orange-haired one holds his hand just as tightly, and the white-haired dragon girl behind him simply leans all the way in — the three of us squeezed together, and nobody is backing off. A sky like this and an embrace like this: even the cold wind cannot reach us.",
+        "description": "Under a starry night sky, a dark-haired boy is held at the center of three girls: the blue-haired girl on his left leans on his shoulder, the orange-haired girl on his right clasps his hand, and the white-haired girl with dragon horns and wings bends close from behind. A deep blue galaxy and drifting points of light fill the background, washing the whole scene in violet starlight.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan appears on his left with her whale hair ornament, Claude Chan on his right with the flower hairpin, and GPT Chan behind him with dragon horns and wings.",
+            "question": "Which characters are in the embrace?"
+          },
+          {
+            "answer": "A dark-haired boy sits at the center while the three girls hold him close under a deep blue galaxy of drifting light, giving the image a violet-blue starlight palette.",
+            "question": "What is happening in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "An Embrace Beneath the Stars",
+        "originNote": "",
+        "seoDescription": "Fan illustration of DeepSeek Chan, Claude Chan and GPT Chan embracing a boy under a deep blue galaxy, painted in violet starlight.",
+        "seoTitle": "An Embrace Beneath the Stars | DeepSeek Chan Fan Art",
+        "tags": [
+          "starry sky",
+          "embrace",
+          "four characters",
+          "night scene",
+          "group scene"
+        ]
+      },
+      "ja": {
+        "commentary": "ほら、星たちが私たちの真上で瞬いているよ。私は彼の肩に寄りかかって離れないし、橙髪のあの子も同じくらい強く手を握っている。後ろの白髪の竜娘はもう体ごと乗り出してきて、三人でぎゅうぎゅうに固まって、誰も譲る気はないみたい。こんな星空と、こんな抱擁なら、冷たい風が吹いてきても怖くないね。",
+        "description": "星空の夜、黒髪の少年が三人の少女に囲まれて真ん中にいる。左の青髪の少女は彼の肩に寄りかかり、右の橙髪の少女は彼の手を包み、白髪で竜の角と翼を持つ少女は後ろから身を乗り出している。背景には深い青の銀河と舞う光の粒が広がり、画面全体が紫青い星明かりに包まれている。",
+        "faq": [
+          {
+            "answer": "彼の左にクジラの髪飾りの DeepSeekちゃん、右に花飾りの Claudeちゃん、後ろに竜の角と翼の GPTちゃんがいます。",
+            "question": "抱擁しているのはどのキャラクターですか？"
+          },
+          {
+            "answer": "黒髪の少年を真ん中に、三人の少女が深い青の銀河の下で彼に寄り添っており、紫青い星明かりの色調でまとめられています。",
+            "question": "どんな場面の作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "星空の中の抱擁",
+        "originNote": "",
+        "seoDescription": "DeepSeekちゃん、Claudeちゃん、GPTちゃんが深い青の銀河の下で少年を抱きしめるファンイラスト。紫青い星明かりの色調で描かれています。",
+        "seoTitle": "星空の中の抱擁｜DeepSeekちゃんファンアート",
+        "tags": [
+          "星空",
+          "抱擁",
+          "四人",
+          "夜景",
+          "集合絵"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_12029cf2df943b7b3642d3dc",
+    "name": "睡觉后不老实的她们",
+    "description": "卧室里，黑发少年裹着被子睡着了，橙发、蓝发与白发龙角的少女围在床边：左右两人凑近镜头比出剪刀手，白发少女托着腮从上方看下来。床头灯亮着，身后还能看到一只蓝鲸玩偶，画面是偏冷的紫蓝色调。",
+    "commentary": "他睡得这么沉，正是我们捣乱的好时候～我比着剪刀手凑过去，橙发的那位也毫不示弱，白发龙娘干脆托着腮在上面看热闹。等他醒来看见这张照片，大概又要被吓一跳吧。不过话说回来，被子还是我们帮他掖好的哦。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/12029cf2df943b7b.png",
+    "thumbnailPath": "submissions/previews/deepseek/12029cf2df943b7b.webp",
+    "fullPath": "submissions/large/deepseek/12029cf2df943b7b.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1402,
+    "height": 1122,
+    "fileSize": 2621183,
+    "sha256": "12029cf2df943b7b3642d3dc2c45a6fe5dceeb022ed85275f39b84aa033925b9",
+    "characterId": "deepseek",
+    "tags": [
+      "睡颜",
+      "剪刀手",
+      "合影",
+      "卧室",
+      "四人同框"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "更吹落，星如雨",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-02T09:35:43.181Z",
+    "updatedAt": "2026-11-02T09:35:43.181Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611020004",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude",
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "9f51d5827a75928fa389214cf3520225405d89f5d21b3227fbaa778e6a636327",
+      "en": {
+        "commentary": "He is sleeping so soundly that this is the perfect moment for our pranks. I lean in with a peace sign, the orange-haired one refuses to be outdone, and the white-haired dragon girl props up her chin above us to enjoy the show. When he wakes up and sees this photo, he will probably jump again. Although, to be fair, we are the ones who tucked him in.",
+        "description": "In a bedroom, a dark-haired boy is asleep under the covers while three girls gather at the bedside: the orange-haired and blue-haired girls lean in toward the camera with peace signs, and the white-haired girl with dragon horns and wings rests her chin on her hand above them. A bedside lamp glows behind them next to a blue whale plush, and the scene is tinted cool violet-blue.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan appears on the right with her whale hair clip, Claude Chan on the left with the flower hairpin, and GPT Chan above them with dragon horns and wings.",
+            "question": "Which characters are around the bed?"
+          },
+          {
+            "answer": "The boy is asleep under the blanket while the three girls pose with peace signs beside the bed, lit by a bedside lamp with a blue whale plush in the background.",
+            "question": "What is happening in this scene?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "They Get Restless After You Fall Asleep",
+        "originNote": "",
+        "seoDescription": "Fan illustration of DeepSeek Chan, Claude Chan and GPT Chan posing with peace signs beside a sleeping boy, lit in cool violet-blue.",
+        "seoTitle": "They Get Restless After You Fall Asleep | DeepSeek Chan Fan Art",
+        "tags": [
+          "sleeping face",
+          "peace sign",
+          "group photo",
+          "bedroom",
+          "four characters"
+        ]
+      },
+      "ja": {
+        "commentary": "こんなにぐっすり寝てるなんて、いたずらするなら今しかないよね。私はピースサインで近づいて、橙髪のあの子も負けずに寄ってきて、白髪の竜娘は頬杖をついて上から眺めている。目が覚めてこの写真を見たら、またびっくりするだろうな。でもね、布団をかけてあげたのは私たちなんだよ。",
+        "description": "寝室で黒髪の少年が布団をかぶって眠っており、橙髪・青髪・白髪で竜の角を持つ少女たちがベッドのそばに集まっている。左右の二人はカメラに顔を寄せてピースサインをし、白髪の少女は上から頬杖をついて見下ろしている。枕元のランプが灯り、後ろには青いクジラのぬいぐるみが見え、画面は冷たい紫青の色調。",
+        "faq": [
+          {
+            "answer": "右にクジラの髪飾りの DeepSeekちゃん、左に花飾りの Claudeちゃん、上に竜の角と翼の GPTちゃんがいます。",
+            "question": "ベッドの周りにいるのはどのキャラクターですか？"
+          },
+          {
+            "answer": "少年が布団で眠る横で三人の少女がピースサインをしており、枕元のランプと青いクジラのぬいぐるみが柔らかく照らしています。",
+            "question": "どんな場面の作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "眠った後のいたずらな彼女たち",
+        "originNote": "",
+        "seoDescription": "眠る少年のそばで DeepSeekちゃん、Claudeちゃん、GPTちゃんがピースサインをするファンイラスト。冷たい紫青の色調で描かれています。",
+        "seoTitle": "眠った後のいたずらな彼女たち｜DeepSeekちゃんファンアート",
+        "tags": [
+          "寝顔",
+          "ピースサイン",
+          "集合写真",
+          "寝室",
+          "四人"
+        ]
+      }
+    }
   }
 ]

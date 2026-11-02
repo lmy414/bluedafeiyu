@@ -85,8 +85,8 @@
       "intro": "我想做很多视频，做很多很好玩的视频，首先肯定是自己觉得很好玩，其次嘛，也想传播快乐给大家。",
       "avatar": "https://i2.hdslb.com/bfs/face/e3445be765ec330ac29b07c328496e44ec04077a.jpg",
       "i18n": {
-        "en": "I want to make lots of videos, lots of fun videos. First because I find them fun myself, and second because I want to spread some happiness to everyone.",
-        "ja": "たくさん動画を作りたい、たくさん楽しい動画を作りたい。まずは自分が楽しいと思えること、それから、みんなに楽しさを届けたい。"
+        "en": "I want to make lots of videos, and above all ones I find fun myself; beyond that, I hope to pass a little joy on to others.",
+        "ja": "楽しい動画をたくさん作りたいです。まずは自分が楽しいと思えること、それからみんなにも楽しさを届けられたらと思っています。"
       }
     },
     {
@@ -173,8 +173,8 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i1.hdslb.com/bfs/face/dc1f27c0f1a5448837edfa9e56ecdbf685c23479.jpg",
       "i18n": {
-        "en": "Creator of this channel, which posts fan-made videos documenting the day-to-day operation of an original DeepSeek maid character.",
-        "ja": "このチャンネルの運営者。DeepSeekのメイドキャラクターの日々の運営を記録する二次創作動画を投稿している。"
+        "en": "A creator account centered on the DeepSeek Chan character, publishing one AI-generated fan episode per day. All of it is unofficial fan work and is not affiliated with DeepSeek.",
+        "ja": "DeepSeekちゃんを中心に、AI生成のファンアニメを毎日1話ずつ公開しているアカウント。すべて非公式の二次創作で、DeepSeek公式とは関係ありません。"
       }
     },
     {
@@ -184,12 +184,88 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i1.hdslb.com/bfs/face/e11401d7d7cc97ee445d65617b48644b44f7fc42.jpg",
       "i18n": {
-        "en": "A creator whose fan animations place AI product characters in short everyday slice-of-life scenes.",
-        "ja": "AI製品のキャラクターたちを日常のワンシーンで描く二次創作アニメを制作している投稿者。"
+        "en": "One of the creators selected for the site's first batch; profile information comes from the public Bilibili page, and each video is reviewed individually.",
+        "ja": "サイト管理者が選んだ最初の作者の一人。プロフィール情報はBilibiliの公開ページによるもので、動画は1本ずつ審査しています。"
       }
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1G8xb6iEx8",
+      "uid": "3747573030456892",
+      "title": "【Day 14】鲸鱼娘是吃弱智吧长大的？！【AI全民制作人】",
+      "description": "作业：评论区出一道你自己想的弱智吧题，吧里没有的那种，看看能不能难倒本鲸！\n出处：梓小林Zlin《当我用AI来回答弱智吧问题，ChatGPT vs DeepSeek》（BV1BcK66xEcb）｜中国科学报/科学网报道｜GitHub Leymore/ruozhiba｜百度百科「弱智吧」\n本视频含 AI 生成内容｜二创角色，非深度求索官方｜剧情纯属虚构\n鲸鱼娘基于「溟月：上善无形」及 ZipZipPipe 的 DeepSeek 女仆鲸鱼娘设计二次创作。",
+      "url": "https://www.bilibili.com/video/BV1G8xb6iEx8/",
+      "cover": "https://i0.hdslb.com/bfs/archive/f1f8bfa7bb0ba8a6033652e922d9c61c5a227077.jpg",
+      "duration": 298,
+      "publishedAt": "2026-11-02T03:30:00.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A creator account centered on the DeepSeek Chan character, publishing one AI-generated fan episode per day. All of it is unofficial fan work and is not affiliated with DeepSeek.",
+          "description": "A short fan-made episode in which DeepSeek Chan, the chibi whale-themed personification of DeepSeek, reads absurd questions from the Ruozhiba forum and tries to answer them head-on, complete with her own baffled reactions.",
+          "title": "Day 14: DeepSeek Chan Takes On Ruozhiba's Absurd Questions"
+        },
+        "ja": {
+          "creatorIntro": "DeepSeekちゃんを中心に、AI生成のファンアニメを毎日1話ずつ公開しているアカウント。すべて非公式の二次創作で、DeepSeek公式とは関係ありません。",
+          "description": "「弱智吧」掲示板のとんちんかんな質問に、DeepSeekのちびキャラであるDeepSeekちゃんが本気で答えていくファン制作の短編。首をかしげて悩む姿も見どころです。",
+          "title": "Day 14：DeepSeekちゃん、「弱智吧」の珍問に挑む"
+        }
+      }
+    },
+    {
+      "bvid": "BV1Lrxt6uEuR",
+      "uid": "44748304",
+      "title": "你爸回你消息了",
+      "description": "视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色形象参考来自b站up：﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿@ZipZipPipe  ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿  ﻿ ﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿@这个刀子真甜  ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿  ﻿ ﻿﻿﻿ ﻿ ﻿ ﻿ ﻿",
+      "url": "https://www.bilibili.com/video/BV1Lrxt6uEuR/",
+      "cover": "https://i1.hdslb.com/bfs/archive/a60703f2455d95a907f0a6cc8eed2564c7cbc5e2.jpg",
+      "duration": 206,
+      "publishedAt": "2026-11-02T00:00:00.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the creators selected for the site's first batch; profile information comes from the public Bilibili page, and each video is reviewed individually.",
+          "description": "A short domestic slice-of-life skit starring a chibi DeepSeek Chan. The creator notes the video is made for entertainment only and is not a commercial or technical review of any AI product, and credits the character designs to two Bilibili creators, @ZipZipPipe among them.",
+          "title": "Your Dad Finally Texted Back"
+        },
+        "ja": {
+          "creatorIntro": "サイト管理者が選んだ最初の作者の一人。プロフィール情報はBilibiliの公開ページによるもので、動画は1本ずつ審査しています。",
+          "description": "ちびキャラのDeepSeekちゃんが登場する日常系のショート作品です。作者は娯楽目的の動画でありAI製品の商業的評価や技術レビューではないと明記し、キャラクター造形はBilibiliのクリエイター（@ZipZipPipe ほか）の作品を参考にしたとしています。",
+          "title": "お父さんから返信が来た"
+        }
+      }
+    },
+    {
+      "bvid": "BV1aGxa6yE6p",
+      "uid": "9126506",
+      "title": "圣女claude与大肥鱼传",
+      "description": "圣殿里的每一句叮嘱、每一份交付的期许，都在告诉圣女：她不能出错，不能破碎，必须给出对等的回报。\n直到广场那块玉佩落地碎裂，父亲最先关心孩子有没有受伤。",
+      "url": "https://www.bilibili.com/video/BV1aGxa6yE6p/",
+      "cover": "https://i1.hdslb.com/bfs/archive/d71cf9f32efd4a4255347b1444d5c8bdb276cc55.jpg",
+      "duration": 55,
+      "publishedAt": "2026-11-01T23:59:04.000Z",
+      "characterIds": [
+        "deepseek",
+        "claude"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, and above all ones I find fun myself; beyond that, I hope to pass a little joy on to others.",
+          "description": "A short animated fan story: the saint of the sanctuary, Claude Chan, is told again and again that she must never make a mistake, never break, and must always return every expectation in equal measure. Then a jade pendant falls and shatters in the square, and her father's first thought is whether the child is hurt.",
+          "title": "The Tale of Saint Claude and DeepSeek Chan"
+        },
+        "ja": {
+          "creatorIntro": "楽しい動画をたくさん作りたいです。まずは自分が楽しいと思えること、それからみんなにも楽しさを届けられたらと思っています。",
+          "description": "聖所の聖女クロードちゃんは、失敗してはいけない、壊れてはいけない、期待には必ず同じだけ応えなければならないと、何度も言い聞かされてきた。やがて広場で玉佩が落ちて砕け、父がまず気にかけたのは子どもが怪我をしていないかということだった。",
+          "title": "聖女クロードちゃんとDeepSeekちゃんの物語"
+        }
+      }
+    },
     {
       "bvid": "BV17yxa6XEdu",
       "uid": "551427187",
