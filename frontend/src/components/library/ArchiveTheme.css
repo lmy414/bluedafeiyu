@@ -108,9 +108,18 @@
   --grid-line: var(--line);
 }
 
+@media (min-width: 761px) {
+  body.archive.sidebar-collapsed { --sidebar: 74px; }
+}
+@media (max-width: 760px) {
+  body.archive { --sidebar: 0px; }
+}
 @media (max-width: 1100px) {
   :root { --gutter: 24px; }
 }
 @media (max-width: 760px) {
   :root { --gutter: 16px; --control-height: 44px; }
+}
+@media (max-width: 360px) {
+  :root { --gutter: 12px; }
 }

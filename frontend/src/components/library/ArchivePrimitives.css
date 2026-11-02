@@ -8,7 +8,17 @@ body.archive.refined main {
   max-width: var(--shell-max);
   padding-inline: var(--gutter);
 }
-body.archive.refined .topbar { padding-inline: var(--gutter); }
+body.archive.refined .topbar { padding-inline: 0; }
+body.archive.refined .topbar-inner {
+  display: flex;
+  align-items: center;
+  gap: inherit;
+  width: 100%;
+  max-width: var(--shell-max);
+  min-width: 0;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
 
 /* A single heading hierarchy for listings, documents and submission. */
 body.archive.refined .page-head {

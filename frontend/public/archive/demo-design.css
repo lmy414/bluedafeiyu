@@ -972,7 +972,6 @@ body[data-page="creator"] .author-content-heading { display:none; }
   .art-list { --columns:5; }
 }
 @media (min-width:1800px) {
-  :root { --sidebar:232px; }
   main { padding-inline:42px; }
   .topbar { padding-inline:42px; }
   .paper-feature { min-height:250px; }
@@ -985,7 +984,6 @@ body[data-page="creator"] .author-content-heading { display:none; }
   .feature-prints .photo-2 { left:34%; top:120px; }
 }
 @media (max-width:1250px) {
-  :root { --sidebar:192px; }
   .sidebar { padding-inline:20px 12px; }
   .brand strong { font-size:15px; }
   .brand img { width:34px; height:34px; }
@@ -1072,7 +1070,6 @@ body[data-page="creator"] .author-content-heading { display:none; }
   .section-heading h2 { font-size:19px; }
 }
 @media (max-width:760px) {
-  :root { --sidebar:0px; }
   body { padding-bottom:71px; }
   .sidebar { width:244px; z-index:70; transform:translateX(-105%); transition:transform .2s; padding:25px 19px 25px 25px; }
   .sidebar .brand strong { font-size:17px; }
@@ -1572,7 +1569,6 @@ body[data-page="creator"] .author-content-heading { display:none; }
 
 /* Keyboard, touch and narrow-screen treatment of the restored archive controls. */
 @media (min-width:761px) {
-  body.sidebar-collapsed { --sidebar:74px; }
   .sidebar-collapsed .sidebar { padding:20px 10px; align-items:stretch; }
   .sidebar-collapsed .brand { justify-content:center; margin-bottom:0; }
   .sidebar-collapsed .brand>span,.sidebar-collapsed .nav-label,.sidebar-collapsed .sidebar-note,.sidebar-collapsed .sidebar-original-links,.sidebar-collapsed .copyright { display:none; }
