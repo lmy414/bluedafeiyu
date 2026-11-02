@@ -104240,5 +104240,513 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_c711051ba027fb4a073947fd",
+    "name": "十六进制里的那句告白",
+    "description": "六格漫画。蓝色长发的 DeepSeek 娘捧着笔记本，被主人要求翻译一串十六进制编码；她按字节逐组解码，意识到原文是一句告白，随后脸红到用书遮住脸，主人在一旁看着。",
+    "commentary": "主人把笔记本推过来，说“帮我翻译一句话”，我一看全是 E6 88 91 这样的十六进制字节……这算什么翻译题嘛，分明是解码题。我老老实实按两个一组拆开念，念到最后突然反应过来——这句话的意思，是“我爱你”。等等，主人你让我翻译这种东西，是故意的吧？我、我先用书挡一下脸。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/c711051ba027fb4a.png",
+    "thumbnailPath": "submissions/previews/deepseek/c711051ba027fb4a.webp",
+    "fullPath": "submissions/large/deepseek/c711051ba027fb4a.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1402,
+    "height": 1122,
+    "fileSize": 2635391,
+    "sha256": "c711051ba027fb4a073947fd3523640300fd3d6dc3eb4eff3c1d61e1db3f2e45",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "十六进制",
+      "告白",
+      "六格漫画",
+      "脸红"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "是你的头发",
+      "url": "https://b23.tv/j5j1X69",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-02T10:00:23.133Z",
+    "updatedAt": "2026-11-02T10:00:23.133Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611020005",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "1d964ec3a3f4c62e7d172f5bf2797e17de21e4ef0213f41e0213098551d06541",
+      "en": {
+        "commentary": "My master pushed the notebook over and said, \"Translate this sentence for me.\" One look and it was all E6 88 91 and the like — that's not a translation job, that's decoding homework! I read it out two bytes at a time, and right at the end it hit me: the sentence means \"I love you.\" Wait — you asked me to translate that on purpose, didn't you? Give me a moment, I need to hide my face behind this book.",
+        "description": "Six-panel comic. DeepSeek Chan, with long blue hair, holds a notebook while her master asks her to translate a string of hexadecimal code. She decodes it byte by byte, realizes the text is a confession of love, and blushes so hard she hides behind the book while he watches.",
+        "faq": [
+          {
+            "answer": "A hexadecimal string that, once decoded, turns out to be a confession of love.",
+            "question": "What is DeepSeek Chan decoding in this comic?"
+          },
+          {
+            "answer": "DeepSeek Chan and her master, drawn across six panels with dialogue.",
+            "question": "Who appears in the comic?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Confession Hidden in Hex",
+        "originNote": "Source: https://b23.tv/j5j1X69",
+        "seoDescription": "Six-panel DeepSeek Chan comic: her master asks her to translate a hexadecimal string, and the decoded message turns out to be a confession.",
+        "seoTitle": "The Confession Hidden in Hex — DeepSeek Chan Comic",
+        "tags": [
+          "DeepSeek Chan",
+          "hexadecimal",
+          "confession",
+          "six-panel comic",
+          "blushing"
+        ]
+      },
+      "ja": {
+        "commentary": "ご主人様がノートを差し出して「この一文を翻訳して」って……見たら E6 88 91 みたいな十六進数の羅列じゃないですか。これ、翻訳じゃなくてデコードの宿題ですよ！　2バイトずつ区切って読み上げて、最後にハッと気づきました。この文の意味は「愛してる」……え、わざとこんなものを翻訳させました？　ちょっと、ノートで顔を隠させてください。",
+        "description": "六コマ漫画。青い長髪の DeepSeek ちゃんがノートを手に、ご主人様から十六進数の文字列を翻訳するよう頼まれる。彼女は1バイトずつ読み解き、その中身が告白の言葉だと気づいて、顔を真っ赤にしてノートで顔を隠す。",
+        "faq": [
+          {
+            "answer": "十六進数の文字列で、解読すると告白の言葉になります。",
+            "question": "この漫画では何を解読していますか？"
+          },
+          {
+            "answer": "DeepSeek ちゃんとご主人様の二人で、六コマに分けて描かれています。",
+            "question": "登場するキャラクターは谁ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "十六進数に隠された告白",
+        "originNote": "作者：是你的头发（https://b23.tv/j5j1X69）",
+        "seoDescription": "六コマの DeepSeek ちゃん漫画。ご主人様に頼まれて十六進数を翻訳したら、中身は告白の言葉だったというお話。",
+        "seoTitle": "十六進数に隠された告白 — DeepSeek ちゃん漫画",
+        "tags": [
+          "DeepSeek ちゃん",
+          "十六進数",
+          "告白",
+          "六コマ漫画",
+          "赤面"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_e32819d9ace6310fcd4a1522",
+    "name": "立冬的第一杯",
+    "description": "立冬清晨的街角咖啡馆门口，蓝发少女穿米色牛角扣大衣、戴毛线帽与格纹围巾，手里捧着一杯热饮，鲸尾从大衣后摆垂下。鲸鱼娘 52 周企划 W02。角色原作：上善；二创设计：ZipZipPipe。",
+    "commentary": "立冬这天，我端着第一杯热咖啡站在店门口，围巾裹到下巴，尾巴还是忍不住翘起来。雪后的街角有点冷，可杯子贴着掌心刚刚好——这一周，就从这里开始吧。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/e32819d9ace6310f.png",
+    "thumbnailPath": "submissions/previews/deepseek/e32819d9ace6310f.webp",
+    "fullPath": "submissions/large/deepseek/e32819d9ace6310f.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1664,
+    "height": 2432,
+    "fileSize": 4902339,
+    "sha256": "e32819d9ace6310fcd4a152232dc7bb634312c9895396c2ece9a72163ea83f7e",
+    "characterId": "deepseek",
+    "tags": [
+      "立冬",
+      "咖啡馆",
+      "冬季",
+      "鲸鱼娘",
+      "52周企划"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "柯澤家的鲸鲸",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-02T15:26:20.595Z",
+    "updatedAt": "2026-11-02T15:26:20.595Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611020006",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "93ef06c04cae6a37e3b17e9a9dfaf65bf824bc4329904cf43157d827f1736a1e",
+      "en": {
+        "commentary": "On the first day of Lidong I stood by the cafe door with my first hot cup, scarf pulled up to my chin and my tail still refusing to stay down. The street is cold after the snow, but the cup sits warm in my hands — and that is where this week begins.",
+        "description": "On a Lidong morning at a street-corner cafe, a blue-haired girl in a cream duffle coat, knit beanie and plaid scarf holds a hot drink, a whale tail hanging below her coat hem. Week 2 of a 52-week whale-themed illustration project.",
+        "faq": [
+          {
+            "answer": "It is DeepSeek Chan, the blue-haired AI mascot, drawn here in winter clothes with her whale tail showing below the coat.",
+            "question": "Who is the character in this illustration?"
+          },
+          {
+            "answer": "A year-long fan-art series with one themed illustration for each week; this entry is week 2, built around the first hot drink of Lidong, the start of winter.",
+            "question": "What is the 52-week project?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The First Cup of Lidong",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in a cream duffle coat and plaid scarf, holding her first hot drink outside a street-corner cafe on a Lidong morning.",
+        "seoTitle": "The First Cup of Lidong — DeepSeek Chan Winter Fan Art",
+        "tags": [
+          "Lidong",
+          "Cafe",
+          "Winter",
+          "Whale Tail",
+          "52-Week Project"
+        ]
+      },
+      "ja": {
+        "commentary": "立冬の日、私はカフェの入口に立って、今季最初の一杯を手にしていた。マフラーを顎まで巻いても、尾びれはどうしても持ち上がってしまう。雪のあとの街は冷たいけれど、手のひらに伝わるカップの温もりはちょうどいい。今週はここから始めよう。",
+        "description": "立冬の朝、街角のカフェの店先に立つ青い髪の少女。クリーム色のダッフルコートにニット帽、チェックのマフラー姿で、手には温かい飲み物を捧げている。コートの裾からのぞくクジラの尾びれが印象的だ。クジラをモチーフにした 52 週企画の W02。",
+        "faq": [
+          {
+            "answer": "青い髪とクジラの尾びれを持つ AI の擬人化キャラクター、DeepSeek ちゃんです。冬の装いで描かれています。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "毎週ひとつのテーマでイラストを描く一年間のファンアート企画で、今回はその第 2 週。立冬の最初の一杯をテーマにしています。",
+            "question": "52 週企画とは何ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "立冬の一杯",
+        "originNote": "",
+        "seoDescription": "立冬の朝、街角のカフェの前で温かい飲み物を手にする DeepSeek ちゃん。クリーム色のダッフルコートとチェックのマフラー姿。",
+        "seoTitle": "立冬の一杯 — DeepSeek ちゃんの冬イラスト",
+        "tags": [
+          "立冬",
+          "カフェ",
+          "冬",
+          "クジラの尾",
+          "52週企画"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_f3f5ff95fdc437cbcafdd3a2",
+    "name": "立冬的第一杯 · 半身像",
+    "description": "咖啡馆窗边的近景半身像，蓝发少女双手捧着冒热气的白色马克杯，米色大衣配蓝格纹围巾，窗外是落雪的城市街景。鲸鱼娘 52 周企划 W02。角色原作：上善；二创设计：ZipZipPipe。",
+    "commentary": "我把杯子捧在两只手中间，隔着玻璃看雪一片片落在对面的屋顶上。热气扑到脸上，鼻尖还是凉的——这种天气里，第一口烫的刚刚好。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/f3f5ff95fdc437cb.png",
+    "thumbnailPath": "submissions/previews/deepseek/f3f5ff95fdc437cb.webp",
+    "fullPath": "submissions/large/deepseek/f3f5ff95fdc437cb.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1664,
+    "height": 2281,
+    "fileSize": 4125579,
+    "sha256": "f3f5ff95fdc437cbcafdd3a24ea64b6a36ee0b40c014f966a00a9d4a8907c614",
+    "characterId": "deepseek",
+    "tags": [
+      "立冬",
+      "雪景",
+      "咖啡馆",
+      "半身像",
+      "52周企划"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "柯澤家的鲸鲸",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-02T15:29:31.249Z",
+    "updatedAt": "2026-11-02T15:29:31.249Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611020007",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "c1cbed05d0a7d0c49ce228668f91c7c5a1f31e8ecd16656194e76808876fd75b",
+      "en": {
+        "commentary": "I hold the mug between both hands and watch the snow settle on the rooftops across the street. The steam warms my face while my nose stays cold — on a day like this, the first sip is exactly the right temperature.",
+        "description": "A close half-length portrait at a cafe window: a blue-haired girl holds a steaming white mug in both hands, cream coat and blue plaid scarf, with a snow-covered city street behind the glass. Week 2 of a 52-week whale-themed illustration project.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, the blue-haired AI mascot, shown in profile at a cafe window with her mug of hot drink.",
+            "question": "Who is the character in this picture?"
+          },
+          {
+            "answer": "It is a close-up companion piece to the full-length Lidong illustration from the same weekly series, showing the same winter outfit from a sitting viewpoint.",
+            "question": "How does it relate to the full-length version?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The First Cup of Lidong · Portrait",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan holding a steaming mug by a snowy cafe window, in a cream coat and blue plaid scarf.",
+        "seoTitle": "The First Cup of Lidong · Portrait — DeepSeek Chan Fan Art",
+        "tags": [
+          "Lidong",
+          "Snow",
+          "Cafe",
+          "Portrait",
+          "52-Week Project"
+        ]
+      },
+      "ja": {
+        "commentary": "カップを両手で包んで、ガラス越しに向かいの屋根に雪が積もっていくのを眺めていた。湯気が顔にあたるのに、鼻の先はまだ冷たい。こういう日は、最初のひと口がちょうどいい温度なのだ。",
+        "description": "カフェの窓辺での近景の半身イラスト。青い髪の少女が湯気の立つ白いマグカップを両手で包み、クリーム色のコートに青いチェックのマフラー姿。窓の外には雪化粧した街並みが広がる。クジラをモチーフにした 52 週企画の W02。",
+        "faq": [
+          {
+            "answer": "青い髪とクジラの尾びれを持つ AI の擬人化キャラクター、DeepSeek ちゃんです。カフェの窓辺で温かい飲み物を手にしています。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "同じ週の全身イラストと対になる近景の一枚で、同じ冬の装いを座った姿勢から描いたものです。",
+            "question": "全身の一枚とはどういう関係ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "立冬の一杯・半身",
+        "originNote": "",
+        "seoDescription": "雪のカフェの窓辺で湯気の立つマグカップを包む DeepSeek ちゃん。クリーム色のコートと青いチェックのマフラー。",
+        "seoTitle": "立冬の一杯・半身 — DeepSeek ちゃんの冬イラスト",
+        "tags": [
+          "立冬",
+          "雪景色",
+          "カフェ",
+          "半身",
+          "52週企画"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_62be55ad9d249dab0ae4fd31",
+    "name": "立冬的第一杯 · 窗边",
+    "description": "透过积了雪的窗框看进去，蓝发少女双手捧着外带纸杯，围巾裹到下巴，身后是亮着暖灯的咖啡馆与飘雪的街道。鲸鱼娘 52 周企划 W02。角色原作：上善；二创设计：ZipZipPipe。",
+    "commentary": "雪落在窗框上，我把外带杯捧进掌心，指节很快就暖起来了。身后店里的灯照着玻璃，把我和街景叠在一起——今天的第一站，就从这杯开始。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/62be55ad9d249dab.png",
+    "thumbnailPath": "submissions/previews/deepseek/62be55ad9d249dab.webp",
+    "fullPath": "submissions/large/deepseek/62be55ad9d249dab.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1664,
+    "height": 2432,
+    "fileSize": 4810603,
+    "sha256": "62be55ad9d249dab0ae4fd313261670b3da9edfb018e59cefffc60e79d37e399",
+    "characterId": "deepseek",
+    "tags": [
+      "立冬",
+      "外带咖啡",
+      "雪",
+      "窗边",
+      "52周企划"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "柯澤家的鲸鲸",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-02T15:31:40.505Z",
+    "updatedAt": "2026-11-02T15:31:40.505Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611020008",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "485a77d7e71c7f0c924381367a97a62b31386b68a84b6e659e36e4e507fca7b9",
+      "en": {
+        "commentary": "Snow gathers on the window frame, and I close both hands around the takeaway cup until my knuckles warm up. The cafe lights behind me reflect on the glass, layering me over the street — and this cup is where today starts.",
+        "description": "Seen through a snow-dusted window frame, a blue-haired girl holds a takeaway paper cup in both hands, scarf up to her chin, with a lit cafe and a snowy street behind her. Week 2 of a 52-week whale-themed illustration project.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, the blue-haired AI mascot, drawn from outside the cafe window with a takeaway cup.",
+            "question": "Who is the character in this picture?"
+          },
+          {
+            "answer": "It belongs to the same Lidong set as the two earlier illustrations, using the window frame as a foreground border.",
+            "question": "Where does it fit in the series?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The First Cup of Lidong · Window Frame",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan holding a takeaway cup outside a snow-dusted cafe window, lit shop signs behind her.",
+        "seoTitle": "The First Cup of Lidong · Window Frame — DeepSeek Chan Fan Art",
+        "tags": [
+          "Lidong",
+          "Takeaway Coffee",
+          "Snow",
+          "Window",
+          "52-Week Project"
+        ]
+      },
+      "ja": {
+        "commentary": "窓枠に雪が積もっていく。テイクアウトのカップを両手で包むと、指先がすぐに温かくなった。背後の店の灯りがガラスに映って、私と街が重なって見える。今日の最初の一杯は、ここから。",
+        "description": "雪の積もった窓枠ごしの構図。青い髪の少女がテイクアウトの紙カップを両手で包み、マフラーを顎まで巻いている。背後には灯りのともるカフェと雪の降る街並み。クジラをモチーフにした 52 週企画の W02。",
+        "faq": [
+          {
+            "answer": "青い髪とクジラの尾びれを持つ AI の擬人化キャラクター、DeepSeek ちゃんです。カフェの窓の外でテイクアウトのカップを手にしています。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "同じ立冬のセットの三枚目で、窓枠を手前に置いた構図で描かれています。",
+            "question": "シリーズの中ではどんな位置づけですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "立冬の一杯・窓辺",
+        "originNote": "",
+        "seoDescription": "雪の積もったカフェの窓の外でテイクアウトのカップを包む DeepSeek ちゃん。背後に灯りのともる店先。",
+        "seoTitle": "立冬の一杯・窓辺 — DeepSeek ちゃんの冬イラスト",
+        "tags": [
+          "立冬",
+          "テイクアウト",
+          "雪",
+          "窓辺",
+          "52週企画"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_3ee67c2ad15551a0487c669e",
+    "name": "立冬的第一杯 · 04",
+    "description": "鲸鱼娘 52 周企划 W02。角色原作：上善；二创设计：ZipZipPipe。",
+    "commentary": "呼——立冬的风是真会咬人的。我把牛角扣大衣裹紧，围巾绕了两圈，下巴还是忍不住往里缩。雪落在蓝头发上化成小水珠，街对面咖啡馆的灯光暖得让人想赖着不走。作者说这是「立冬的第一杯」，我同意——第一杯热的，得捧在手心里才算数。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/3ee67c2ad15551a0.png",
+    "thumbnailPath": "submissions/previews/deepseek/3ee67c2ad15551a0.webp",
+    "fullPath": "submissions/large/deepseek/3ee67c2ad15551a0.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1664,
+    "height": 2432,
+    "fileSize": 4940405,
+    "sha256": "3ee67c2ad15551a0487c669e0518e50434fbcd26d7a3a712685f48b6f96bc2f0",
+    "characterId": "deepseek",
+    "tags": [
+      "鲸鱼娘",
+      "立冬",
+      "冬季街景",
+      "围巾",
+      "52周企划",
+      "雪"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "柯澤家的鲸鲸",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-02T15:33:23.518Z",
+    "updatedAt": "2026-11-02T15:33:23.518Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611020009",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "bba4b248d84fc46a8453ee583dc23ff97810d9cc7f6b16a0619698ccac00455f",
+      "en": {
+        "commentary": "Brrr — the first cold snap of winter really does bite. I pulled my duffle coat tight and wrapped the scarf twice, and my chin still kept ducking down into it. Snow melted into tiny beads in my blue hair, and the cafe lights across the street looked warm enough to make anyone want to stay put. The artist calls this one \"the first cup of Start of Winter\" — and I agree: the first hot drink of the season only counts if you hold it in both hands.",
+        "description": "Week 2 of a 52-week whale-girl project. A single winter street illustration: DeepSeek Chan in a beige duffle coat and plaid scarf, leaning on a railing as snow falls over the city.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, the personified DeepSeek character, drawn here in a beige duffle coat, knit hat and plaid scarf against a snowy city street.",
+            "question": "Who is the character in this illustration?"
+          },
+          {
+            "answer": "Yes. It is week 2 of the submitter's 52-week whale-girl project, with the fanwork design handled by ZipZipPipe.",
+            "question": "Is this part of a longer series?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The First Cup of Start of Winter · 04",
+        "originNote": "Week 2 of a 52-week whale-girl project opened by the submitting artist. Fanwork design by ZipZipPipe.",
+        "seoDescription": "Week 2 of the whale-girl 52-week project: DeepSeek Chan in a duffle coat and plaid scarf, leaning on a railing while snow falls over the city street.",
+        "seoTitle": "DeepSeek Chan Winter Street Illustration — Start of Winter",
+        "tags": [
+          "whale-girl series",
+          "Start of Winter",
+          "winter street",
+          "scarf",
+          "52-week project",
+          "snow"
+        ]
+      },
+      "ja": {
+        "commentary": "ふぅ——立冬の風はほんとうに噛みついてくる。ダッフルコートをしっかり合わせて、マフラーも二重に巻いたのに、あごはどうしても中に引っ込んじゃう。青い髪に落ちた雪はすぐ小さな雫になって、通りの向こうのカフェの灯りは暖かくて、もう少しここにいたいなって思わせる。作者さんはこれを「立冬の最初の一杯」と呼んでいた。うん、季節の最初の温かい一杯は、両手で包んでこそだよね。",
+        "description": "クジラっ娘52週企画の第2週。雪の降る街角で手すりにもたれる DeepSeek ちゃんを、ベージュのダッフルコートとチェックのマフラー姿で描いた一枚です。",
+        "faq": [
+          {
+            "answer": "DeepSeek の擬人化キャラクター、DeepSeek ちゃんです。ベージュのダッフルコートにニット帽、チェックのマフラーという冬の装いで、雪の降る街角に立っています。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "はい。投稿者によるクジラっ娘52週企画の第2週で、二次創作デザインは ZipZipPipe が担当しています。",
+            "question": "シリーズの作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "立冬の最初の一杯 · 04",
+        "originNote": "投稿者によるクジラっ娘52週企画の第2週。二次創作デザイン：ZipZipPipe。",
+        "seoDescription": "クジラっ娘52週企画の第2週。ダッフルコートとマフラー姿の DeepSeek ちゃんが、雪の降る街角で手すりにもたれる冬の一枚。",
+        "seoTitle": "DeepSeek ちゃん 立冬の街角イラスト",
+        "tags": [
+          "クジラっ娘シリーズ",
+          "立冬",
+          "冬の街角",
+          "マフラー",
+          "52週企画",
+          "雪"
+        ]
+      }
+    }
   }
 ]
