@@ -4,7 +4,7 @@ export function createListing(ctx) {
   // `character` turns the bar into the role-library variant: the role and type
   // selects stay as hidden state (the page fixes the role, type tabs drive the
   // type), and search, creation method, sort and direction share one row.
-  function filters(initialChar = '', initialType = '', initialSort = 'latest', list = works, character = null) {
+  function filters(initialChar = '', initialType = '', initialSort = 'latest', list = works, character = null, compact = false) {
     const counts = new Map();
     for (const work of list) for (const id of work.cids || [work.cid]) counts.set(id, (counts.get(id) || 0) + 1);
     const roles = chars.filter(c => counts.has(c.id));
@@ -21,13 +21,18 @@ export function createListing(ctx) {
       tr('characterPage.search','搜索作品、作者或标签','Search works, creators or tags','作品・作者・タグを検索');
       return `<form class="filter-bar character-filter" id="filter-form">${roleSelect}${typeSelect}${character.tabs}<div class="character-filter-row"><input id="search-q" name="q" type="search" autocomplete="off" aria-label="搜索作品、作者或标签" placeholder="搜索作品、作者或标签" data-i18n-attr="aria-label:d.characterPage.search,placeholder:d.characterPage.search">${creationSelect}${sortSelect}${directionSelect}${reset}</div><p class="character-visually-hidden" id="creation-filter-help">${creationHelp}</p></form>`;
     }
-    return `<form class="filter-bar" id="filter-form"><div class="filter-fields"><label>${tr('roleFilter','角色（多选）','Characters','キャラクター（複数可）')}${roleSelect}</label><label>${tr('typeFilter','类型','Type','種類')}${typeSelect}</label><label>${tr('creationFilter','创作方式','Creation method','制作方法')}${creationSelect}</label><label>${tr('sortFilter','排序','Sort','並び順')}${sortSelect}</label><label>${tr('sortDirection','顺序','Direction','順序')}${directionSelect}</label></div>${reset}<p class="filter-help" id="character-filter-help">${tr('roleMatchAll','可多选：同时包含全部所选角色（AND）','Select multiple: match all selected characters (AND)','複数選択：選んだキャラクターすべてを含む作品（AND）')}</p><p class="source-note creation-method-note" id="creation-filter-help">${creationHelp}</p></form>`;
+    const fields = `<div class="filter-fields"><label>${tr('roleFilter','角色（多选）','Characters','キャラクター（複数可）')}${roleSelect}</label><label>${tr('typeFilter','类型','Type','種類')}${typeSelect}</label><label>${tr('creationFilter','创作方式','Creation method','制作方法')}${creationSelect}</label><label>${tr('sortFilter','排序','Sort','並び順')}${sortSelect}</label><label>${tr('sortDirection','顺序','Direction','順序')}${directionSelect}</label></div>`;
+    const roleHelp = tr('roleMatchAll','可多选：同时包含全部所选角色（AND）','Select multiple: match all selected characters (AND)','複数選択：選んだキャラクターすべてを含む作品（AND）');
+    if (compact) {
+      return `<form class="filter-bar browse-filter" id="filter-form">${fields}<div class="browse-filter-footer"><details class="browse-filter-guide"><summary>${tr('browseFilterGuide','筛选说明','Filter guide','絞り込みの説明')}</summary><div class="browse-filter-guide-content"><p id="character-filter-help">${roleHelp}</p><p id="creation-filter-help">${creationHelp}</p></div></details>${reset}</div></form>`;
+    }
+    return `<form class="filter-bar" id="filter-form">${fields}${reset}<p class="filter-help" id="character-filter-help">${roleHelp}</p><p class="source-note creation-method-note" id="creation-filter-help">${creationHelp}</p></form>`;
   }
   function browsePage(list, base, title, type = '', char = '', n = 1, intro = '') {
     const galleryTabs=['/browse.html','/gifs.html'].includes(base)?renderArchiveTabs(base==='/gifs.html'?'gifs':'browse',ctx):'';
     const page = Math.min(n, Math.max(1, Math.ceil(list.length / 24)));
     const sliced = list.slice((page - 1) * 24, page * 24);
-    return `${pageHead(tr('archiveLabel','作品档案 / ARCHIVE','ARCHIVE / WORKS','作品アーカイブ / ARCHIVE'),title,intro || tr('browseLead','按角色与类型找图，或让随机顺序带你逛逛。','Filter by character and type, or explore in random order.','キャラクターや種類で絞り込むか、ランダムに楽しめます。'))}${galleryTabs}${filters(char,type,base.startsWith('/topics/')?'curated':'latest',list)}<div class="results-line"><p id="result-count" aria-live="polite">${list.length} ${old('v2.work','作品')}</p><small data-stats-note>${tr('statsSnapshot','下载量指按钮点击次数','Downloads count button clicks','ダウンロード数はボタンのクリック数')}</small></div><div id="results" data-list="${esc(JSON.stringify(list.map(w=>w.slug)))}">${grid(sliced,'',true)}</div><div class="load-more-wrap"><button class="button" type="button" data-load-more hidden>${tr('loadMore','再看一些','Load more','もっと見る')}</button></div><div class="related-note">${icon('book',23)}<p>${tr('tryTopics','想一次看完同一组作品？去合集里逛逛。','Want a themed selection? Explore the collections.','テーマに沿って楽しむなら、コレクションへ。')}</p><a class="text-link" href="/topics.html">${old('v2.nav.collections','合集')}${icon('arrow',16)}</a></div>`;
+    return `${pageHead(tr('archiveLabel','作品档案 / ARCHIVE','ARCHIVE / WORKS','作品アーカイブ / ARCHIVE'),title,intro || tr('browseLead','按角色与类型找图，或让随机顺序带你逛逛。','Filter by character and type, or explore in random order.','キャラクターや種類で絞り込むか、ランダムに楽しめます。'))}${galleryTabs}${filters(char,type,base.startsWith('/topics/')?'curated':'latest',list,null,base==='/browse.html')}<div class="results-line"><p id="result-count" aria-live="polite">${list.length} ${old('v2.work','作品')}</p><small data-stats-note>${tr('statsSnapshot','下载量指按钮点击次数','Downloads count button clicks','ダウンロード数はボタンのクリック数')}</small></div><div id="results" data-list="${esc(JSON.stringify(list.map(w=>w.slug)))}">${grid(sliced,'',true)}</div><div class="load-more-wrap"><button class="button" type="button" data-load-more hidden>${tr('loadMore','再看一些','Load more','もっと見る')}</button></div><div class="related-note">${icon('book',23)}<p>${tr('tryTopics','想一次看完同一组作品？去合集里逛逛。','Want a themed selection? Explore the collections.','テーマに沿って楽しむなら、コレクションへ。')}</p><a class="text-link" href="/topics.html">${old('v2.nav.collections','合集')}${icon('arrow',16)}</a></div>`;
   }
   return { filters, browsePage };
 }
