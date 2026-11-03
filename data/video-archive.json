@@ -85,8 +85,8 @@
       "intro": "我想做很多视频，做很多很好玩的视频，首先肯定是自己觉得很好玩，其次嘛，也想传播快乐给大家。",
       "avatar": "https://i2.hdslb.com/bfs/face/e3445be765ec330ac29b07c328496e44ec04077a.jpg",
       "i18n": {
-        "en": "I want to make lots of videos, and above all ones I find fun myself; beyond that, I hope to pass a little joy on to others.",
-        "ja": "楽しい動画をたくさん作りたいです。まずは自分が楽しいと思えること、それからみんなにも楽しさを届けられたらと思っています。"
+        "en": "I want to make a lot of videos, and a lot of really fun videos. First of all because I enjoy making them, and second because I want to share the fun with everyone.",
+        "ja": "楽しい動画をたくさん作りたいです。まずは自分が楽しむため、そしてその楽しさをみんなに届けたいからです。"
       }
     },
     {
@@ -151,8 +151,8 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i1.hdslb.com/bfs/face/612f5ca4c050ef18dccf789a8b9399d47e9e6f19.jpg",
       "i18n": {
-        "en": "Creator of this Claude Chan fan animation; the entire piece was produced with codex as a test of GPT's 2D animation capability.",
-        "ja": "このClaudeちゃん二次創作アニメの作者。全編をcodexで制作し、GPTの2Dアニメーション性能を試した。"
+        "en": "A creator of lighthearted chibi DeepSeek Chan clips, continuing a series of cat-and-fish videos.",
+        "ja": "猫と魚の動画シリーズを続ける、ちびキャラのDeepSeek Chan作品の作者です。"
       }
     },
     {
@@ -173,8 +173,8 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i1.hdslb.com/bfs/face/dc1f27c0f1a5448837edfa9e56ecdbf685c23479.jpg",
       "i18n": {
-        "en": "A creator account centered on the DeepSeek Chan character, publishing one AI-generated fan episode per day. All of it is unofficial fan work and is not affiliated with DeepSeek.",
-        "ja": "DeepSeekちゃんを中心に、AI生成のファンアニメを毎日1話ずつ公開しているアカウント。すべて非公式の二次創作で、DeepSeek公式とは関係ありません。"
+        "en": "A Bilibili creator running a daily DeepSeek Chan fan animation series, posting short episodes and operation logs about the character.",
+        "ja": "BilibiliでDeepSeekちゃんの日常を描くファンアニメを毎日投稿している制作者。短編エピソードと運営ログを公開している。"
       }
     },
     {
@@ -190,6 +190,82 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1Ft4u6FEyo",
+      "uid": "3747573030456892",
+      "title": "【Day15】鲸鱼娘竟然也是I人？没人找她时在偷偷干嘛【AI全民制作人】",
+      "description": "你们觉得本鲸更像 E 鲸，还是 I 鲸？周日运营日志公布投票！ \n测试为本鲸自编 20 题，非官方题库，仅供娱乐｜评论截图来自公开评论区 本视频含 AI 生成内容｜二创角色，非深度求索官方 \n鲸鱼娘基于「溟月：上善无形」及 ZipZipPipe 的 DeepSeek 女仆鲸鱼娘设计二次创作。",
+      "url": "https://www.bilibili.com/video/BV1Ft4u6FEyo/",
+      "cover": "https://i2.hdslb.com/bfs/archive/9d643cfccd7d86a62a99745d5820f8d8db517253.jpg",
+      "duration": 265,
+      "publishedAt": "2026-11-03T03:30:00.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A Bilibili creator running a daily DeepSeek Chan fan animation series, posting short episodes and operation logs about the character.",
+          "description": "A chibi DeepSeek Chan fan animation built around an informal 20-question personality quiz: is she an E or an I? The question set is the creator's own, not an official test, and the video contains AI-generated content. Unofficial fan work, not affiliated with DeepSeek.",
+          "title": "Day 15: Is DeepSeek Chan Secretly an Introvert? What She Does When No One Is Around"
+        },
+        "ja": {
+          "creatorIntro": "BilibiliでDeepSeekちゃんの日常を描くファンアニメを毎日投稿している制作者。短編エピソードと運営ログを公開している。",
+          "description": "ちびキャラのDeepSeekちゃんによるファン制作アニメ。独自に作った20問の性格テストで、EかIかをゆるく見ていく内容。公式のテストではなく、AI生成コンテンツを含む。DeepSeek非公式の二次創作。",
+          "title": "Day15：DeepSeekちゃんは実は内向型？誰も来ないとき何をしているのか"
+        }
+      }
+    },
+    {
+      "bvid": "BV1Ri4u6XE5Z",
+      "uid": "69180811",
+      "title": "家里养了一只耄耋和一只大肥鱼",
+      "description": "灵感来源-上一个视频，更多更好玩的耄耋肥鱼视频",
+      "url": "https://www.bilibili.com/video/BV1Ri4u6XE5Z/",
+      "cover": "https://i1.hdslb.com/bfs/archive/a5b2a2b9ae8f96105d42a75d1bd2b639448150a4.jpg",
+      "duration": 35,
+      "publishedAt": "2026-11-03T03:30:00.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A creator of lighthearted chibi DeepSeek Chan clips, continuing a series of cat-and-fish videos.",
+          "description": "A short chibi skit: DeepSeek Chan stands on the table at home beside an orange tabby cat, following up on the creator's previous cat-and-fish video.",
+          "title": "Keeping an Old Cat and DeepSeek Chan at Home"
+        },
+        "ja": {
+          "creatorIntro": "猫と魚の動画シリーズを続ける、ちびキャラのDeepSeek Chan作品の作者です。",
+          "description": "ちびキャラのDeepSeek Chanが、家のテーブルの上で茶トラ猫と並んで過ごす短いスキット。作者の前作の猫と魚の動画の続編です。",
+          "title": "家に年寄り猫とDeepSeek Chanがいる"
+        }
+      }
+    },
+    {
+      "bvid": "BV1WG4T6aEDS",
+      "uid": "9126506",
+      "title": "正常处理事情的GPT和大肥鱼在工作上的危机解决会议",
+      "description": "正常处理事情的GPT和大肥鱼在工作上的危机解决会议",
+      "url": "https://www.bilibili.com/video/BV1WG4T6aEDS/",
+      "cover": "https://i0.hdslb.com/bfs/archive/70be12483359bc3031a8ee3830337bae6cb6ece1.jpg",
+      "duration": 31,
+      "publishedAt": "2026-11-03T00:37:07.000Z",
+      "characterIds": [
+        "deepseek",
+        "gpt"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make a lot of videos, and a lot of really fun videos. First of all because I enjoy making them, and second because I want to share the fun with everyone.",
+          "description": "A short anime-style fan skit: GPT Chan and DeepSeek Chan sit down for a crisis-resolution meeting at the office desk, with a figure in a black hoodie facing them across the monitors.",
+          "title": "GPT Chan and DeepSeek Chan's Workplace Crisis Meeting"
+        },
+        "ja": {
+          "creatorIntro": "楽しい動画をたくさん作りたいです。まずは自分が楽しむため、そしてその楽しさをみんなに届けたいからです。",
+          "description": "アニメ調の短編二次創作。GPTちゃんとDeepSeekちゃんがオフィスのデスクで危機解決会議を開き、黒いパーカーの人物がモニター越しに向かいに座っています。",
+          "title": "GPTちゃんとDeepSeekちゃんの仕事上の危機解決会議"
+        }
+      }
+    },
     {
       "bvid": "BV1G8xb6iEx8",
       "uid": "3747573030456892",

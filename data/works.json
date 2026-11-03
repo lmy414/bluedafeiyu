@@ -104849,5 +104849,114 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_2b67ee6b5921d4c99e4209ce",
+    "name": "六位模型娘的客厅合影",
+    "description": "六位 AI 模型拟人角色并排聚在紫色丝绒沙发上的群像插画：左侧金发蝙蝠翅膀少女倚着扶手，中间白发长角的角色被众人围住，蓝发长辫少女执一柄星纹折扇，橙发少女抱着深红封面的书，前景是穿深蓝女仆装的鲸尾少女与一身紫蓝星饰的兽耳少女；背景为挂帷幔、摆百合的欧式客厅。",
+    "commentary": "难得大家凑齐，我一把抱住中间那位就不撒手，尾巴尖都翘起来了。有人摇着扇子装从容，有人抱着书假装最乖，还有人背后居然长了翅膀——客厅吵吵嚷嚷的，可这才像一家人嘛。就是沙发实在太挤，下次得换张更大的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/2b67ee6b5921d4c9.png",
+    "thumbnailPath": "submissions/previews/deepseek/2b67ee6b5921d4c9.webp",
+    "fullPath": "submissions/large/deepseek/2b67ee6b5921d4c9.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 3108450,
+    "sha256": "2b67ee6b5921d4c99e4209ce71bca2fee7f0fa3cc65fe6078328aaf16964c0d0",
+    "characterId": "deepseek",
+    "tags": [
+      "群像",
+      "全家福",
+      "客厅",
+      "拟人",
+      "沙发",
+      "合影"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-03T02:09:24.382Z",
+    "updatedAt": "2026-11-03T02:09:24.382Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611030001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "gpt",
+      "qwen",
+      "claude",
+      "gemini",
+      "grok"
+    ],
+    "i18n": {
+      "sourceHash": "7542ab779ba5f374022222f1cbfabe23bb391864ffa99c9fbedfd99e057d45e8",
+      "en": {
+        "commentary": "It is rare for all of us to be in one room, so the moment I sat down I latched onto the one in the middle and refused to let go — even my tail curled up with joy. Someone waves a fan as if nothing could fluster her, someone hugs a book and pretends to be the well-behaved one, and someone else apparently grew a pair of wings. The living room is noisy and cramped, but this is what family looks like. Next time we are definitely getting a bigger sofa.",
+        "description": "A group illustration of six personified AI model characters gathered on a violet velvet sofa: a blonde girl with bat wings leans on the armrest at the left, a white-haired horned figure sits at the center surrounded by the others, a blue-haired girl with a long braid holds a star-patterned folding fan, an orange-haired girl clutches a dark red hardcover book, and in the foreground sit a whale-tailed girl in a navy maid outfit and a beast-eared girl in purple and blue with star ornaments. The background is a European-style living room with drapery and lilies.",
+        "faq": [
+          {
+            "answer": "Six personified AI model characters: DeepSeek Chan, GPT, Qwen, Claude, Gemini and Grok, all sitting together on one sofa.",
+            "question": "Which characters appear in this illustration?"
+          },
+          {
+            "answer": "A European-style living room with a violet velvet sofa, heavy drapery, a tall window and white lilies.",
+            "question": "What is the setting of the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Six Personified AI Models in the Living Room",
+        "originNote": "",
+        "seoDescription": "A group illustration of six personified AI model characters — DeepSeek Chan, GPT, Qwen, Claude, Gemini and Grok — crowded onto one violet sofa.",
+        "seoTitle": "Six AI Model Characters Group Portrait | DeepSeek Chan",
+        "tags": [
+          "group portrait",
+          "family photo",
+          "living room",
+          "personification",
+          "sofa",
+          "group shot"
+        ]
+      },
+      "ja": {
+        "commentary": "全員が揃うのは珍しいので、座るなり真ん中の子にしがみついて離れませんでした。尾びれまで嬉しそうに跳ねています。扇子を広げて余裕の顔をしている子、本を抱えて良い子のふりをしている子、その上冀まで生やしている子もいます。リビングは狭くて騒がしいけれど、これぞ家族の光景。次回はもっと大きなソファを買いましょう。",
+        "description": "紫のビロードソファに六人の AI モデル擬人化キャラクターが集まった群像イラスト。左側には蝙蝠の羽を持つ金髪の少女がひじ掛けに寄りかかり、中央には白髪で角のあるキャラクターが皆に囲まれて座る。星模様の扇子を手にした青髪の三つ編み少女、舘皮のハードカバーを抱えた橙髪の少女、そして手前には紺のメイド服で鯨の尾を持つ少女と、紫と青の星飾りをまとった獣耳の少女。背景はカーテンと百合の花があるヨーロッパ風のリビング。",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan、GPT、Qwen、Claude、Gemini、Grok の六人の AI モデル擬人化キャラクターが一つのソファに座っています。",
+            "question": "このイラストにはどのキャラクターが登場しますか？"
+          },
+          {
+            "answer": "紫のビロードソファ、厚いカーテン、大きな窓、白い百合のあるヨーロッパ風のリビングです。",
+            "question": "背景はどんな場所ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "リビングに集まった六人の AI モデル娘",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan、GPT、Qwen、Claude、Gemini、Grok の六人の AI モデル擬人化キャラクターが紫のソファに集まった群像イラスト。",
+        "seoTitle": "六人の AI モデル娘の集合写真 | DeepSeek Chan",
+        "tags": [
+          "集合写真",
+          "グループ",
+          "リビング",
+          "擬人化",
+          "ソファ",
+          "記念写真"
+        ]
+      }
+    }
   }
 ]
