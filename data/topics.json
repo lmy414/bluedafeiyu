@@ -223,5 +223,70 @@
         "summary": "投稿 #133 の全18作品（WebP 17枚・GIF 1枚）を収録。元デザインの出典は Bilibili UID 116292090 で、匿名の投稿者が一部を変更してスタンプを生成したと申告しています。ZIPに著作権の声明やオープンライセンスは付属していません。利用前に各作品の出典と利用許諾をご確認ください。"
       }
     }
+  },
+  {
+    "id": "linguanus",
+    "name": "@linguanus · Tokentaker",
+    "summary": "收录 @linguanus 投稿的 Tokentaker 系列 AI 娘作品，以 Helltaker 风格呈现 DeepSeek、GPT、Claude 和 Gemini。",
+    "coverWorkId": "sticker_760f44bb60e3be805ba11fc4",
+    "status": "active",
+    "order": 10,
+    "createdAt": "2026-11-03T13:01:20.071Z",
+    "updatedAt": "2026-11-03T13:59:08.474Z",
+    "workIds": [
+      "sticker_69422ec67f83093268cf4c94",
+      "sticker_760f44bb60e3be805ba11fc4",
+      "sticker_25ec7773a41c9c0613487b3c",
+      "sticker_889cdadb16504ce27fa3fffd",
+      "sticker_7b47a1afb5a79984a92098dc",
+      "sticker_de65dc6ba8cea0bc5d529e22",
+      "sticker_dce2fd6fa5642e666b1231d8",
+      "sticker_0898f99c47cfda387f66de60",
+      "sticker_e6d8fc09cc871ccf3bb04dfe",
+      "sticker_d52f63bdb7862d3f2acbd1a6",
+      "sticker_92e55de1b3c1ee8f634e522e",
+      "sticker_98d4d22c75a8d639e5b835e3",
+      "sticker_175808cdc9ce42bc0c8da4a9",
+      "sticker_7a24487bb5e790d40a15b5a2",
+      "sticker_12e7750ef215590bfafdf88b",
+      "sticker_fcec4ab779f13ee1614f156f",
+      "sticker_75b15b962dfb17ed89dab22e",
+      "sticker_25f3940b7a0f1e84240500ae",
+      "sticker_817a6f409652b7e0130fecbb",
+      "sticker_1092a1f8dc1a3fb692c56039",
+      "sticker_2478225d4355b154c8c247e2",
+      "sticker_9db19268e451e4cd08ba44bb",
+      "sticker_2d69d98c7110a6189997cf93",
+      "sticker_da9a182810a09a87b9b1e0d0",
+      "sticker_0b07fe03c29623bea2c73332",
+      "sticker_3c99e595209aeab99416b2e6",
+      "sticker_640f316f47aff8ad91181a34",
+      "sticker_9f68bf03ca5e9e7c3303ddad",
+      "sticker_60769d42f4f26f12c6e20b9f",
+      "sticker_4bf868a9d8488eca37adb43b",
+      "sticker_4fdb7bdad568d03f1f391de7",
+      "sticker_acdce498776ad97c1c2947aa",
+      "sticker_f13f172e55915440b41fa59f"
+    ],
+    "i18n": {
+      "en": {
+        "name": "@linguanus · Tokentaker",
+        "summary": "A collection of Tokentaker AI-girl works submitted by @linguanus, featuring DeepSeek, GPT, Claude and Gemini in a Helltaker-inspired style."
+      },
+      "ja": {
+        "name": "@linguanus・Tokentaker",
+        "summary": "@linguanus による Tokentaker シリーズ。Helltaker 風の DeepSeek、GPT、Claude、Gemini の AI 娘作品を収録します。"
+      }
+    },
+    "author": {
+      "name": "@linguanus",
+      "url": "https://x.com/linguanus",
+      "channels": [
+        {
+          "platform": "X",
+          "url": "https://x.com/linguanus"
+        }
+      ]
+    }
   }
 ]
