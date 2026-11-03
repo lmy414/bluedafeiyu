@@ -11,7 +11,7 @@ const { icon } = archiveContext;
       <input type="search" id="top-q" name="q" placeholder="搜索作品、角色、作者或标签" data-i18n-attr="placeholder:d.siteSearch" autocomplete="off" /><kbd>/</kbd>
     </form>
     <div class="top-tools top-actions">
-      <a class="saved-entry" href="/saved.html"><Fragment set:html={icon('heart',18)} /><span data-i18n="d.savedTitle">我的收藏</span></a>
+      <a class="saved-entry" href="/saved.html" aria-label="我的收藏" data-i18n-attr="aria-label:d.savedTitle"><Fragment set:html={icon('heart',18)} /><span data-i18n="d.savedTitle">我的收藏</span></a>
       <a class="button small top-group" href={COMMUNITY_JOIN} aria-label="加入社群" data-i18n-attr="aria-label:v2.joinGroup"><Fragment set:html={icon('roles',16)} /><span class="top-group-label" data-i18n="v2.joinGroup">加入社群</span><span class="top-group-brand" data-i18n="v2.joinGroupShort">社群</span></a>
       <a class="button small top-github" href={SITE.repoContent} target="_blank" rel="noopener" title="内容与投稿仓库" data-i18n-attr="title:footer.content">GitHub</a>
       <button class="icon-button" data-theme-toggle hidden><Fragment set:html={icon('moon',19)} /></button>

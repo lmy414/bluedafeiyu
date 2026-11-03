@@ -30,7 +30,9 @@ test('homepage and mobile navigation work before scripts and keep production han
     assert.equal(document.querySelectorAll('.main-nav a').length,9,prefix);
     assert.equal(document.querySelector('[data-menu], [data-menu-close], .menu-scrim, [data-sidebar-collapse]'),null);
     assert.ok(document.querySelector('.mobile-bottom.mobile-nav'),'Uses the Demo mobile layout');
-    assert.ok(document.querySelector('.topbar .saved-entry[href$="/saved.html"]'));
+    const savedEntry=document.querySelector('.topbar .saved-entry[href$="/saved.html"]');
+    assert.ok(savedEntry);
+    assert.equal(savedEntry.getAttribute('aria-label'),({'':'我的收藏','en/':'Saved works','ja/':'お気に入り','zh-hant/':'我的收藏'})[prefix]);
     const topics=document.querySelectorAll('[data-design-slide]');assert.ok(topics.length>=2);
     assert.equal(document.querySelectorAll('[data-design-slide]:not([hidden])').length,1);
     assert.equal(document.querySelectorAll('.portal-primary > a').length,2);
