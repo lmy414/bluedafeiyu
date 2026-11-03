@@ -97,11 +97,15 @@ test('friend wall preserves existing destinations, classifies links, and rejects
   assert.doesNotThrow(()=>validateFriendLinks([{...valid,id:'legacy-record'}]));
 });
 
-test('Coco and water2H2O appear in their categories with native copy in all four languages',async()=>{
+test('selected friend links appear in their categories with native copy in all four languages',async()=>{
   const coco=friendLinks.find(row=>row.id==='cc-coco');
   const blog=friendLinks.find(row=>row.id==='water2h2o');
+  const sheets=friendLinks.find(row=>row.id==='ai-chan-sheets');
+  const game=friendLinks.find(row=>row.id==='deepseekchan');
   assert.equal(coco.category,'project');assert.equal(coco.url,'https://github.com/ninondev/cc-coco');
   assert.equal(blog.category,'website');assert.equal(blog.url,'https://water2h2o.com');
+  assert.equal(sheets.category,'project');assert.equal(sheets.url,'https://github.com/lmy414/ai-chan-sheets');
+  assert.equal(game.category,'website');assert.equal(game.url,'https://deepseekchan.com/');
   for(const locale of ['en','ja'])assert.equal(coco.i18n[locale].name,'Coco');
   const escape=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   for(const locale of LOCALES){
@@ -111,14 +115,14 @@ test('Coco and water2H2O appear in their categories with native copy in all four
     const html=`<html><head><title>Friends</title><link rel="canonical" href="${ORIGIN}/projects.html"><meta name="description"></head><body data-archive><main>${page[3]}</main></body></html>`;
     const {document}=parseHTML(await localizeHtml(html,'/projects.html',locale,{works:[],characters:[],topics:[]}));
     assert.equal(document.querySelectorAll('.friend-wall-card').length,friendLinks.length);
-    for(const row of [coco,blog]){
+    for(const row of [coco,blog,sheets,game]){
       const link=[...document.querySelectorAll(`[data-friend-section="${row.category}"] .friend-wall-card`)].find(a=>a.href===row.url);
       assert.ok(link);
       if(['en','ja'].includes(locale.id)){
         assert.equal(link.querySelector('h3').textContent,row.i18n[locale.id].name);
         assert.equal(link.querySelector('p').textContent,row.i18n[locale.id].description);
       }else if(locale.id==='zh-Hant'){
-        assert.match(link.querySelector('p').textContent,row===coco?/桌寵/:/個人部落格/);
+        assert.match(link.querySelector('p').textContent,({[coco.id]:/桌寵/,[blog.id]:/個人部落格/,[sheets.id]:/正面、側面、背面/,[game.id]:/抽卡遊戲/})[row.id]);
       }
     }
   }
