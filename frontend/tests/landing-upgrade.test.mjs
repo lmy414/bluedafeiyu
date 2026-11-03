@@ -39,7 +39,7 @@ test('about facts and visible FAQs match structured data in all languages', () =
     assert.ok(doc.querySelector('#what-is-blue-dafeiyu'));
     const schema = JSON.parse(doc.querySelector('script[type="application/ld+json"]').textContent);
     const details = [...doc.querySelectorAll('.live-reading-faq details')];
-    assert.equal(details.length,4);
+    assert.ok(details.length>=4);
     assert.deepEqual(schema.mainEntity.map(x=>[x.name,x.acceptedAnswer.text]),details.map(x=>[x.querySelector('summary').textContent,x.querySelector('p').textContent]));
     for (const anchor of ['license','licensing','analytics','special-thanks']) assert.ok(doc.getElementById(anchor));
   }

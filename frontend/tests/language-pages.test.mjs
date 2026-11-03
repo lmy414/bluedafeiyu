@@ -115,11 +115,12 @@ test('英文静态展示、SEO、结构化数据统一 Chan，保留 URL、标�
   assert.equal(data.contentUrl, 'https://example.test/DeepSeek娘.png');
 });
 
-test('英文首页和所有角色页的品牌、角色名称在无 JS 时也使用 Chan', () => {
+test('英文首页和所有角色页的站点名称、导航与角色名称在无 JS 时正确呈现', () => {
   for (const base of ['/index.html', '/characters.html', ...snapshot.characters.filter(c => c.status === 'active' && snapshot.works.some(w => w.characterId === c.id)).map(c => '/characters/' + c.id + '.html')]) {
     const doc = read('/en' + base);
     assert.equal(doc.querySelector('meta[property="og:site_name"]').getAttribute('content'), 'DeepSeek Chan', base);
-    assert.match(doc.querySelector('.sidebar').textContent, /DeepSeek Chan/, base);
+    assert.equal(doc.querySelector('.main-nav a[href="/en/"] span').textContent, 'Home', base);
+    assert.equal(doc.querySelector('.main-nav a[href="/en/creators.html"] span').textContent, 'Creators', base);
     assert.doesNotMatch(doc.querySelector('.sidebar').textContent, /蓝色大肥鱼|Blue Fish/, base);
     assert.doesNotMatch(doc.querySelector('main h1').textContent, /(?:DeepSeek|Claude|GPT|GLM|Kimi|Gemini|Grok|MiMo|Stepfun|通义千问|豆包)娘/, base);
   }

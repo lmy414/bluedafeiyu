@@ -8,11 +8,9 @@ import {characterSearchAliases} from '../src/lib/landing-copy.mjs';
 const out=process.env.SITE_OUT_DIR||path.resolve(import.meta.dirname,'../../.build/site');
 const read=route=>parseHTML(fs.readFileSync(path.join(out,route.endsWith('/')?route.slice(1)+'index.html':route.slice(1)),'utf8')).document;
 
-test('Traditional shared brand and DeepSeek archive breadcrumbs link to the Traditional home',()=>{
+test('Traditional navigation and DeepSeek archive breadcrumbs link to the Traditional home',()=>{
   const doc=read('/zh-hant/');
-  const subtitle=doc.querySelector('.brand strong');
-  assert.ok(subtitle.textContent.includes('藍色大肥魚'));
-  assert.equal(subtitle.closest('details'),null);
+  assert.equal(doc.querySelector('.main-nav a[href="/zh-hant/"] span').textContent,'首頁');
   assert.ok(doc.querySelector('.portal-heading').textContent.includes('藍色大肥魚'));
   const directory=path.join(out,'zh-hant/characters');
   const routes=fs.readdirSync(directory,{recursive:true}).filter(file=>/^deepseek(?:\/|\\|\.html)/.test(file)&&file.endsWith('.html'));
