@@ -96,8 +96,8 @@
       "intro": "每日AI小四格/小动画",
       "avatar": "https://i0.hdslb.com/bfs/face/6f8600ad3d37069ef5106eaf96e7d5a936ba8c50.jpg",
       "i18n": {
-        "en": "Muto_66 makes daily AI-themed four-panel comics and short animations.",
-        "ja": "Muto_66は毎日AI題材の四コマ漫画やショートアニメを制作している。"
+        "en": "A creator who posts a daily AI-themed four-panel comic and short animations.",
+        "ja": "毎日AIをテーマにした4コマ漫画やショートアニメを投稿しているクリエイター。"
       }
     },
     {
@@ -237,6 +237,31 @@
           "creatorIntro": "猫と魚の動画シリーズを続ける、ちびキャラのDeepSeek Chan作品の作者です。",
           "description": "ちびキャラのDeepSeek Chanが、家のテーブルの上で茶トラ猫と並んで過ごす短いスキット。作者の前作の猫と魚の動画の続編です。",
           "title": "家に年寄り猫とDeepSeek Chanがいる"
+        }
+      }
+    },
+    {
+      "bvid": "BV1664K6WEng",
+      "uid": "15475629",
+      "title": "【科普向】《一口气读完甄嬛传？Kimi酱被挤爆了！》",
+      "description": "",
+      "url": "https://www.bilibili.com/video/BV1664K6WEng/",
+      "cover": "https://i0.hdslb.com/bfs/archive/9a4485bb69f3dde4cc135147248f3119c88ff8ff.jpg",
+      "duration": 33,
+      "publishedAt": "2026-11-03T00:56:09.000Z",
+      "characterIds": [
+        "kimi"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A creator who posts a daily AI-themed four-panel comic and short animations.",
+          "description": "A short animated comic in which Kimi Chan, the personification of the Kimi assistant, tries to read the long novel Empresses in the Palace in one sitting and ends up overwhelmed by the amount of text.",
+          "title": "Reading Empresses in the Palace in One Go? Kimi Chan Gets Overloaded"
+        },
+        "ja": {
+          "creatorIntro": "毎日AIをテーマにした4コマ漫画やショートアニメを投稿しているクリエイター。",
+          "description": "Kimiの擬人化キャラクター・Kimiちゃんが、長編小説『宮廷女官 若曦』を一気に読み込もうとして悲鳴を上げる、ショートアニメ風のコミック作品。",
+          "title": "一気読みでKimiちゃんがパンク！？"
         }
       }
     },

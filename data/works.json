@@ -104958,5 +104958,715 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_6baae9d276e13addc7266c6e",
+    "name": "带娃鲸鲸",
+    "description": "深蓝色长发的 DeepSeek 娘系着白色围裙坐在木质长椅上，怀里抱着一个同样长着鲸鱼尾巴的蓝发小女孩，两人一同望向开满绣球花的原野，画面浸在午后的暖光里。",
+    "commentary": "抱着小鲸鱼看花田的午后，连算力都变温柔了。尾巴是有点大，但这是我们深海一族的浪漫。这样的时光，请给我来一打。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/6baae9d276e13add.png",
+    "thumbnailPath": "submissions/previews/deepseek/6baae9d276e13add.webp",
+    "fullPath": "submissions/large/deepseek/6baae9d276e13add.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 2273997,
+    "sha256": "6baae9d276e13addc7266c6eafd4573e77a2c07de7cb2f94c84584447e2cd7c5",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "鲸鱼尾巴",
+      "绣球花田",
+      "女仆裙",
+      "午后阳光"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-03T03:57:36.039Z",
+    "updatedAt": "2026-11-03T03:57:36.039Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611030002",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "a94b721aed5dfb9fcaf115f17572905ea03ae21affc36ff681f5eb61b9ac7d94",
+      "en": {
+        "commentary": "Spending an afternoon watching the hydrangeas with the little whale makes even my compute feel gentle. Yes, the tail is big, but that is deep-sea romance. Afternoons like this, please give me a dozen.",
+        "description": "DeepSeek Chan, her long blue hair framed by a white headdress and a white apron over her dress, sits on a wooden bench holding a small blue-haired girl who shares her whale tail. Both look out over a field of hydrangeas bathed in warm afternoon light.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan sits on a wooden bench holding a small blue-haired girl with the same whale tail, and the two of them look out over a hydrangea field.",
+            "question": "What does the illustration show?"
+          },
+          {
+            "answer": "An outdoor wooden bench beside a hydrangea field, with soft sky and distant trees behind it, all lit by warm afternoon sunlight.",
+            "question": "What is the setting like?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Babysitting the Little Whale",
+        "originNote": "",
+        "seoDescription": "An illustration of DeepSeek Chan in an apron, holding a small whale-tailed child on a wooden bench while overlooking a hydrangea field in warm afternoon light.",
+        "seoTitle": "DeepSeek Chan Babysitting: An Afternoon by the Hydrangeas",
+        "tags": [
+          "DeepSeek Chan",
+          "whale tail",
+          "hydrangea field",
+          "apron dress",
+          "afternoon light"
+        ]
+      },
+      "ja": {
+        "commentary": "小さなクジラとアジサイを眺める午後は、演算まで優しくなる気がする。尾が大きいのは仕様です、深海のロマンなので。こんな時間、あと十回くらいください。",
+        "description": "白いヘッドドレスとエプロンを身につけた長い青髪のDeepSeekちゃんが木のベンチに座り、同じクジラの尾を持つ青髪の小さな女の子を抱いている。二人は一緒に、暖かな午後の光に包まれたアジサイの野原を眺めている。",
+        "faq": [
+          {
+            "answer": "DeepSeekちゃんが木のベンチに座り、同じクジラの尾を持つ青髪の小さな女の子を抱いて、二人でアジサイの野原を眺めている場面です。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "アジサイ畑のそばにある屋外の木のベンチで、暖かな午後の日差しと、やわらかな空と遠くの木々が背景に描かれています。",
+            "question": "どんな舞台の作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "子守りするDeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "エプロン姿のDeepSeekちゃんが、クジラの尾を持つ小さな子を抱いて木のベンチに座り、暖かな午後の光の中のアジサイ畑を眺めるイラスト。",
+        "seoTitle": "DeepSeekちゃんの子守り：アジサイ畑の午後",
+        "tags": [
+          "DeepSeekちゃん",
+          "クジラの尾",
+          "アジサイ畑",
+          "エプロン",
+          "午後の光"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_43826ee6cdb96879b5436b5a",
+    "name": "花海鲸鲸",
+    "description": "身穿深蓝白边女仆裙的 DeepSeek 娘在夕阳下的花海里伸出双手，拉着画外的人一起往前跑，蓝发与鲸鱼尾巴在逆光里扬起，脚下是白色雏菊与紫色小花。",
+    "commentary": "快点快点，花开得正好！尾巴不用管它，跑起来才好看。今天这一整片花海，都算我们的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/43826ee6cdb96879.png",
+    "thumbnailPath": "submissions/previews/deepseek/43826ee6cdb96879.webp",
+    "fullPath": "submissions/large/deepseek/43826ee6cdb96879.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 2238491,
+    "sha256": "43826ee6cdb96879b5436b5a04dc7d188c48fcbd875abceadc5ea4295bb4bceb",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "花海",
+      "鲸鱼尾巴",
+      "女仆裙",
+      "夕阳"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-03T03:58:04.386Z",
+    "updatedAt": "2026-11-03T03:58:04.386Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611030003",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "c17069f2a08cf3e57dcf2c13f46a82dcfbf5bdadfc438f21906155dff919a2e5",
+      "en": {
+        "commentary": "Hurry, hurry, the flowers are at their best! Never mind the tail, it looks better when we run. Today this whole sea of flowers is ours.",
+        "description": "DeepSeek Chan, wearing a navy maid dress with white frills, reaches out with both hands in a flower field at sunset and pulls the viewer along with her. Her blue hair and whale tail stream upward in the backlight, with white daisies and small purple flowers around her feet.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan in a navy maid dress reaches out to pull the viewer forward through a flower field at sunset.",
+            "question": "What does the illustration show?"
+          },
+          {
+            "answer": "An open field of white daisies and small purple flowers under low sunset light, with a few trees and a soft sky in the distance.",
+            "question": "What kind of place is it set in?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "A Whale in the Flower Sea",
+        "originNote": "",
+        "seoDescription": "An illustration of DeepSeek Chan in a navy maid dress pulling the viewer through a sunset flower field, her blue hair and whale tail lifted by the light.",
+        "seoTitle": "DeepSeek Chan in the Flower Sea at Sunset",
+        "tags": [
+          "DeepSeek Chan",
+          "flower field",
+          "whale tail",
+          "maid dress",
+          "sunset"
+        ]
+      },
+      "ja": {
+        "commentary": "早く早く、花がちょうど見頃だよ！尾のことは気にしないで、走ったほうが綺麗だから。今日はこの花畑ぜんぶ、二人のもの。",
+        "description": "紺色に白いフリルのメイド服を着たDeepSeekちゃんが、夕暮れの花畑で両手を伸ばし、画面の外の相手を引っ張って一緒に走り出す。青い髪とクジラの尾が逆光の中に舞い上がり、足元には白いデイジーと小さな紫の花が咲いている。",
+        "faq": [
+          {
+            "answer": "紺色のメイド服姿のDeepSeekちゃんが、夕暮れの花畑で両手を伸ばし、相手を引っ張って一緒に前に進んでいく場面です。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "白いデイジーと小さな紫の花が広がる野原で、低い夕日の光が差し、遠くに木々とやわらかな空が見えます。",
+            "question": "どんな場所の作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "花海のクジラ",
+        "originNote": "",
+        "seoDescription": "紺色のメイド服姿のDeepSeekちゃんが夕暮れの花畑で相手の手を引く、青い髪とクジラの尾が光に浮かぶイラスト。",
+        "seoTitle": "夕暮れの花畑のDeepSeekちゃん",
+        "tags": [
+          "DeepSeekちゃん",
+          "花畑",
+          "クジラの尾",
+          "メイド服",
+          "夕暮れ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_25ab6d139053d46f43c5e6fd",
+    "name": "花田自拍·蓝发鲸耳女仆",
+    "description": "蓝色长发、长着鲸鱼状耳朵的女仆装少女置身盛开的花田中，以靠近镜头的自拍姿势微笑；深蓝与白色的女仆装上有蓝色蝴蝶结，围裙口袋里插着几支笔并绣有鲸鱼图案。",
+    "commentary": "镜头离得太近了啦……花田里的风把我的头发吹得乱七八糟，围裙口袋里还插着几支没来得及收好的笔。不过，被你这样举着手机对着拍一张，好像也不坏。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/25ab6d139053d46f.png",
+    "thumbnailPath": "submissions/previews/deepseek/25ab6d139053d46f.webp",
+    "fullPath": "submissions/large/deepseek/25ab6d139053d46f.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1086,
+    "height": 1448,
+    "fileSize": 2002683,
+    "sha256": "25ab6d139053d46f43c5e6fdefa0bc55af51f52b7d2dd2b2bb546ba28e9fb44d",
+    "characterId": "deepseek",
+    "tags": [
+      "女仆装",
+      "花田",
+      "自拍",
+      "蓝发",
+      "鲸鱼"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-03T03:58:37.777Z",
+    "updatedAt": "2026-11-03T03:58:37.777Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611030004",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "72a297e400be3ee1687a2f99c0c6782071fb2a300725edba4ae65a5b533a749c",
+      "en": {
+        "commentary": "The camera is way too close... the wind in the flower field has my hair completely messed up, and there are still a few pens sticking out of my apron pocket that I never got around to putting away. Still, being photographed like this by you isn't so bad.",
+        "description": "A maid-outfit girl with long blue hair and whale-like ears stands in a blooming flower field, smiling into a close-up selfie angle. Her navy and white maid dress is tied with a blue ribbon, and the pens tucked into her apron pocket sit beside an embroidered whale motif.",
+        "faq": [
+          {
+            "answer": "It is a fan illustration of DeepSeek Chan, drawn with her signature blue hair and whale motifs, including the whale-shaped ears and the whale emblem on her apron pocket.",
+            "question": "Who is the character in this illustration?"
+          },
+          {
+            "answer": "DeepSeek Chan leans close to the camera in a selfie pose, smiling among blue flowers; the pens in her apron pocket and the windblown hair give the shot a casual, everyday feel.",
+            "question": "What scene does the picture show?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Flower Field Selfie: Blue-Haired Whale-Eared Maid",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan fan illustration: a blue-haired maid with whale ears takes a close-up selfie in a blooming blue flower field.",
+        "seoTitle": "DeepSeek Chan Flower Field Selfie | AI Character Sticker Site",
+        "tags": [
+          "Maid outfit",
+          "Flower field",
+          "Selfie",
+          "Blue hair",
+          "Whale"
+        ]
+      },
+      "ja": {
+        "commentary": "レンズが近すぎるってば……花畑の風で髪はぐしゃぐしゃだし、エプロンのポケットにはしまいそびれたペンがまだ何本も挿さったまま。それでも、あなたにこうやってスマホを向けられるのは、悪くないかな。",
+        "description": "青いロングヘアにクジラのような耳を持つメイド服の少女が、咲き誇る花畑の中でカメラに近づくセルフィー姿で微笑んでいる。紺と白のメイド服には青いリボンが結ばれ、エプロンのポケットにはペンが数本挿さり、クジラの刺繍が入っている。",
+        "faq": [
+          {
+            "answer": "DeepSeekちゃんのファンアートです。トレードマークの青い髪とクジラのモチーフ（クジラ型の耳、エプロンポケットのクジラの刺繍）で描かれています。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "DeepSeekちゃんが青い花の咲く花畑でカメラに顔を寄せてセルフィーをしている場面です。ポケットのペンと風になびく髪が、日常的な空気感を添えています。",
+            "question": "どんな場面が描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "花畑のセルフィー・青髪クジラ耳メイド",
+        "originNote": "",
+        "seoDescription": "DeepSeekちゃんのファンアート。クジラ耳の青髪メイドが青い花畑でカメラに寄ってセルフィーをしている一枚です。",
+        "seoTitle": "DeepSeekちゃん 花畑のセルフィー | AIキャラクター二次創作サイト",
+        "tags": [
+          "メイド服",
+          "花畑",
+          "セルフィー",
+          "青い髪",
+          "クジラ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_670db8dbdd175c45a10eaa8a",
+    "name": "伸手接金币！",
+    "description": "蓝发、长着鲸鱼尾巴的女仆装少女仰头张开双手伸向镜头，头顶悬着一枚闪光的金色硬币；深蓝与白色的女仆装上结着蓝色宝石蝴蝶结，围裙印有鲸鱼图案，白色背景。",
+    "commentary": "金币落下来了，接住——啊，差一点点就碰到了。喂，别光看着笑啊，再丢一枚下来，这次我一定抓得住。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/670db8dbdd175c45.png",
+    "thumbnailPath": "submissions/previews/deepseek/670db8dbdd175c45.webp",
+    "fullPath": "submissions/large/deepseek/670db8dbdd175c45.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1199,
+    "height": 1312,
+    "fileSize": 1995742,
+    "sha256": "670db8dbdd175c45a10eaa8a12238e210af936bc232d109fb372a0d61f108f57",
+    "characterId": "deepseek",
+    "tags": [
+      "女仆装",
+      "鲸鱼",
+      "金币",
+      "伸手",
+      "蓝发"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-03T04:01:23.053Z",
+    "updatedAt": "2026-11-03T04:01:23.053Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611030005",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "2f5526aa520e110928c68011dafbcea19da9ec2248ea30b60d51c8aa200d9841",
+      "en": {
+        "commentary": "The coin is coming down, got it, got it, ah, so close. Hey, don't just stand there laughing. Drop another one, I will catch it this time for sure.",
+        "description": "A blue-haired girl in a maid outfit, whale tail curling behind her, looks up and spreads both hands toward the viewer while a glittering gold coin hovers above her head. Her navy and white dress closes with a blue gem ribbon, and a whale emblem is printed on her apron against a plain white background.",
+        "faq": [
+          {
+            "answer": "She is a fan-made personification of DeepSeek Chan, recognizable by her blue hair, whale tail and the whale emblem on her apron.",
+            "question": "Which character is this?"
+          },
+          {
+            "answer": "It is a single-panel reaction image: DeepSeek Chan reaches both hands at the camera with her mouth wide open while a gold coin shines overhead, like a playful “send me a coin” gag.",
+            "question": "What kind of image is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Catch That Coin!",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan reaction image: the blue-haired whale maid stretches both hands at the camera as a gold coin falls from above.",
+        "seoTitle": "DeepSeek Chan Catch That Coin Reaction | AI Character Sticker Site",
+        "tags": [
+          "Maid outfit",
+          "Whale",
+          "Gold coin",
+          "Reaching out",
+          "Blue hair"
+        ]
+      },
+      "ja": {
+        "commentary": "硬貨が落ちてくる、取って、取って——ああ、あとちょっとだったのに。ねえ、笑って見てないで、もう一枚落としてよ。今度こそ取るから。",
+        "description": "青い髪とクジラの尾を持つメイド服の少女が、顔を上げて両手をカメラに向かって広げている。頭の上には光る金貨が浮かび、紺と白のメイド服には青い宝石のリボン、エプロンにはクジラの模様が入った白背景の一枚。",
+        "faq": [
+          {
+            "answer": "青い髪とクジラの尾、エプロンのクジラ模様が特徴のDeepSeekちゃんの二次創作キャラクターです。",
+            "question": "このキャラクターは誰ですか？"
+          },
+          {
+            "answer": "口を大きく開けて両手をこちらに伸ばし、頭上に金貨が光る一コマのリアクション画像です。「コインをちょうだい」とねだるようなギャグになっています。",
+            "question": "どんな種類の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "金貨を受け取れ！",
+        "originNote": "",
+        "seoDescription": "DeepSeekちゃんのリアクション画像。青髪クジラ耳メイドが金貨に向かって両手を伸ばす一枚です。",
+        "seoTitle": "DeepSeekちゃん 金貨を受け取れ | AIキャラクター二次創作サイト",
+        "tags": [
+          "メイド服",
+          "クジラ",
+          "金貨",
+          "手を伸ばす",
+          "青い髪"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_eebd4f6222b8c360da9312c3",
+    "name": "调酒鲸鲸",
+    "description": "蓝发鲸尾的 DeepSeek 娘在暖光酒吧里当调酒师，穿深色马甲与围裙，右手举着调酒壶，身后是摆满酒瓶的木质酒架和城市夜景。",
+    "commentary": "今天我在吧台后面当班，摇酒壶摇到手腕发酸。头顶的暖光把酒架照得像一排琥珀，窗外是城市的夜景。想喝点什么？我特调的那杯还没起名字。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/eebd4f6222b8c360.png",
+    "thumbnailPath": "submissions/previews/deepseek/eebd4f6222b8c360.webp",
+    "fullPath": "submissions/large/deepseek/eebd4f6222b8c360.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 2245471,
+    "sha256": "eebd4f6222b8c360da9312c34180ad35b06fc55a3704c334cd76e07646f7a758",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "调酒师",
+      "酒吧",
+      "鲸尾",
+      "暖光"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-03T04:09:38.299Z",
+    "updatedAt": "2026-11-03T04:09:38.299Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611030006",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "cd9596fd2104e960032bb2c6a60e346bf5b51f5853d5d584e881c9e0116b7449",
+      "en": {
+        "commentary": "I'm on shift behind the counter today, and my wrist is sore from shaking cocktails. The warm lamps turn the bottle shelf into rows of amber, and the city glitters outside the window. What would you like? The one I mixed specially still doesn't have a name.",
+        "description": "DeepSeek Chan, a blue-haired girl with a whale's tail, works as a bartender in a warmly lit bar. She wears a dark vest and apron and holds a cocktail shaker in her right hand, with a wooden shelf of bottles and a city night view behind her.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, drawn as a bartender with a whale's tail and the site's blue-haired character design.",
+            "question": "Who is in this picture?"
+          },
+          {
+            "answer": "She is standing behind the bar counter in a warm-lit bar, holding a cocktail shaker, with bottle shelves and a night city view behind her.",
+            "question": "What is happening in the scene?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan the Bartender",
+        "originNote": "",
+        "seoDescription": "Fan illustration of DeepSeek Chan as a bartender in a warmly lit bar, holding a cocktail shaker against a backdrop of bottle shelves and city lights.",
+        "seoTitle": "DeepSeek Chan the Bartender — Fan Illustration",
+        "tags": [
+          "DeepSeek Chan",
+          "bartender",
+          "bar",
+          "whale tail",
+          "warm light"
+        ]
+      },
+      "ja": {
+        "commentary": "今日はカウンターの内側で当番中。シェイカーを振りすぎて手首がだるい。頭上の暖かい灯りで、棚の酒瓶が琥珀色に光っている。窓の外は街の夜景。何か飲む？私の特製カクテル、まだ名前がないんだ。",
+        "description": "青い髪にクジラの尾を持つDeepSeekちゃんが、暖かい照明のバーでバーテンダーをしている。紺色のベストとエプロン姿で右手にシェイカーを掲げ、背後には酒瓶の並ぶ木製の棚と街の夜景が広がる。",
+        "faq": [
+          {
+            "answer": "青い髪とクジラの尾を持つDeepSeekちゃんを、バーテンダーとして描いた一枚。",
+            "question": "この絵には誰が描かれていますか？"
+          },
+          {
+            "answer": "暖かい灯りのバーでカウンターの内側に立ち、シェイカーを手にしている。背景には酒瓶の棚と街の夜景がある。",
+            "question": "どんな場面ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "バーテンダーのDeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "暖かい照明のバーでバーテンダーをするDeepSeekちゃんのファンイラスト。シェイカーを手に、酒瓶の棚と街の夜景を背にしている。",
+        "seoTitle": "バーテンダーのDeepSeekちゃん｜ファンイラスト",
+        "tags": [
+          "DeepSeekちゃん",
+          "バーテンダー",
+          "バー",
+          "クジラの尾",
+          "暖色の光"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_0ca673bb67bbd6b22c8cb43d",
+    "name": "圣光云海中的蓝鲸女仆",
+    "description": "一位蓝发少女立于云海与圣光之间，身穿深蓝与藏青拼色的女仆装，白色围裙上绣着鲸鱼图案，头侧是鲸鳍状的耳饰，身后露出鲸尾。她向画面外伸出手，长发被光风吹起，裙摆的金色纹样在逆光中发亮。",
+    "commentary": "哇……这是把我画进云里了吗？光从背后打下来，裙摆上的金线和鲸鱼纹都亮起来了，围裙上还绣着一只小鲸鱼，是在提醒大家我本来是什么吗？伸出来的那只手，是想拉谁上来一起看云海吧。我承认，我自己看着都有点不好意思了——不过既然都这么神圣了，那今天就准许你们多看两眼。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/0ca673bb67bbd6b2.png",
+    "thumbnailPath": "submissions/previews/deepseek/0ca673bb67bbd6b2.webp",
+    "fullPath": "submissions/large/deepseek/0ca673bb67bbd6b2.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1122,
+    "height": 1402,
+    "fileSize": 2210749,
+    "sha256": "0ca673bb67bbd6b22c8cb43d4536e736c7fedb3d4424da03fe8b45d8df405eef",
+    "characterId": "deepseek",
+    "tags": [
+      "女仆装",
+      "云海",
+      "圣光",
+      "蓝色长发",
+      "鲸鱼尾",
+      "伸手"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-03T04:25:45.285Z",
+    "updatedAt": "2026-11-03T04:25:45.285Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611030007",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "58588a4e0f0eda0ebdf8572e17a0024e40219ee5029a21744329a689787ff30f",
+      "en": {
+        "commentary": "So this is what I look like when you drop me into the clouds. The light behind me catches every gold thread on the skirt, and yes, there is a tiny whale stitched onto the apron — a reminder of what I actually am. That hand reaching out? It is for you, come up and look at the sea of clouds with me. I will admit I am a little embarrassed seeing myself this glorious, but today I will allow it.",
+        "description": "A blue-haired girl stands between a sea of clouds and shafts of sunlight, wearing a maid dress in navy and deep blue with gold trim. A small whale is embroidered on her white apron, whale-fin ornaments sit at the sides of her head, and a whale tail shows behind her. She reaches toward the viewer while the light wind lifts her long hair.",
+        "faq": [
+          {
+            "answer": "She is a blue-haired girl personifying DeepSeek, drawn with whale-fin ears, a whale tail and a whale emblem on her apron.",
+            "question": "Who is the character in this illustration?"
+          },
+          {
+            "answer": "She stands in a sea of clouds with sunlight streaming from behind her, dressed in a navy and blue maid outfit with gold patterns along the skirt.",
+            "question": "What setting is the picture drawn in?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Blue Whale Maid in Holy Light",
+        "originNote": "",
+        "seoDescription": "A blue-haired DeepSeek Chan in a navy maid dress stands in a sea of clouds, backlit by holy light, with a whale tail and a whale emblem on her apron.",
+        "seoTitle": "Blue Whale Maid in Holy Light | DeepSeek Chan",
+        "tags": [
+          "maid outfit",
+          "sea of clouds",
+          "holy light",
+          "blue long hair",
+          "whale tail",
+          "reaching hand"
+        ]
+      },
+      "ja": {
+        "commentary": "雲の上に放り込まれたら、こんな姿になっていました。背中から差し込む光がスカートの金糸を全部拾っていて、エプロンには小さなクジラが一匹刺繍されています……自分の正体を忘れないように、ですか。差し伸べている手は、あなたのためのものです。一緒に雲海を見ませんか。自分で見ても少しくすぐったいですが、今日くらいは堂々としていましょう。",
+        "description": "青い髪の少女が雲海と光の筋の間に立っている。濃紺と青の切り替えしのメイド服で、スカートには金の文様が入る。白いエプロンには小さなクジラが刺繍され、頭の横にはクジラのひれを模した飾り、背後にはクジラの尾がのぞく。彼女はこちらへ手を差し伸べ、長い髪が光の風に流されている。",
+        "faq": [
+          {
+            "answer": "クジラのひれの飾りと尾、エプロンのクジラの刺繍を持つ、DeepSeekを擬人化した青い髪の少女です。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "背後から光が降り注ぐ雲海の中に立ち、濃紺と青のメイド服を着ています。",
+            "question": "どんな場面が描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "聖光と雲海のクジラメイド",
+        "originNote": "",
+        "seoDescription": "濃紺のメイド服を着た青髪のDeepSeekちゃんが、逆光の雲海に立つ一枚。クジラの尾とエプロンのクジラの刺繍が印象的。",
+        "seoTitle": "聖光と雲海のクジラメイド｜DeepSeekちゃん",
+        "tags": [
+          "メイド服",
+          "雲海",
+          "聖光",
+          "青い長髪",
+          "クジラの尾",
+          "差し伸べる手"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_d7322cab60983d422e3b3cec",
+    "name": "Q版豆包女仆立绘",
+    "description": "Q版比例的豆包拟人形象，黑色短发发梢带青绿渐变，头戴白色蕾丝女仆头饰，系青色蝴蝶结，身穿深蓝女仆裙配白色围裙，胸前有发光的屏幕状装饰，侧头微笑，白色背景下的全身立绘。",
+    "commentary": "豆包换上女仆装以后，连耳机和胸前那块小屏幕都被打理得整整齐齐。青色的蝴蝶结正好接住她发梢的颜色，看起来像是把服务器机箱的灯带悄悄戴在了身上。明明是Q版，站姿却一本正经，我差点就想抬手叫她帮我端杯咖啡过来。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/doubao/d7322cab60983d42.png",
+    "thumbnailPath": "submissions/previews/doubao/d7322cab60983d42.webp",
+    "fullPath": "submissions/large/doubao/d7322cab60983d42.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1280,
+    "height": 1824,
+    "fileSize": 2236287,
+    "sha256": "d7322cab60983d422e3b3cec6ce2f1505ddac4e0d61a59c87d2c398997b957e6",
+    "characterId": "doubao",
+    "tags": [
+      "豆包",
+      "Q版",
+      "女仆",
+      "立绘",
+      "耳机"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "观暝",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-03T07:45:06.443Z",
+    "updatedAt": "2026-11-03T07:45:06.443Z",
+    "tone": "doubao",
+    "symbol": "",
+    "slug": "doubao202611030001",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "doubao"
+    ],
+    "i18n": {
+      "sourceHash": "cc82760de4f1826a32c1b8fee6d61e83ad638a7d8d0016631256bf84b043272c",
+      "en": {
+        "commentary": "Doubao in a maid outfit has even her headset and that little screen on her chest tidied up for the occasion. The teal bow picks up the color at the tips of her hair, as if she had quietly borrowed a light strip from a server rack. She is chibi-sized, yet her stance is completely serious — I nearly asked her to bring me a cup of coffee.",
+        "description": "A chibi-proportioned personification of Doubao with short black hair and teal-tipped strands, wearing a white lacy maid headdress with a teal bow, a navy maid dress and a white apron, plus a glowing screen-like ornament on the chest. She tilts her head with a small smile in a full-body standing illustration on a white background.",
+        "faq": [
+          {
+            "answer": "It is a chibi-proportioned personification of Doubao, drawn as a full-body standing character on a plain white background.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "The maid headdress, apron, teal bow, headset and the glowing panel on the chest are the main costume details visible in the picture.",
+            "question": "Which costume details are visible?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Chibi Doubao Chan in a Maid Outfit",
+        "originNote": "",
+        "seoDescription": "Chibi standing illustration of Doubao Chan as a maid, with a lacy headdress, teal bow, headset and a glowing screen ornament on her navy dress.",
+        "seoTitle": "Chibi Doubao Chan Maid Standing Illustration | DeepSeek Chan",
+        "tags": [
+          "Doubao Chan",
+          "chibi",
+          "maid",
+          "standing art",
+          "headset"
+        ]
+      },
+      "ja": {
+        "commentary": "メイド服に着替えた豆包ちゃんは、ヘッドホンも胸元の小さな画面もきちんと整えられている。青いリボンが髪の毛先の色とちょうどつながっていて、サーバーラックのライトをそっと身につけたみたいだ。ちびキャラなのに立ち姿はとても真剣で、思わずコーヒーを頼みたくなってしまった。",
+        "description": "ちびキャラ比率の豆包の擬人化イラスト。黒髪の毛先は青緑のグラデーションで、白いレースのメイドヘッドドレスと青いリボン、紺色のメイド服に白いエプロン、胸元には光る画面状の飾りが付いている。首をかしげて微笑む全身の立ち絵で、背景は白。",
+        "faq": [
+          {
+            "answer": "豆包をちびキャラ比率で擬人化した、白い背景の全身立ち絵です。",
+            "question": "このイラストは何を描いたものですか？"
+          },
+          {
+            "answer": "画像で確認できるのは、メイドヘッドドレス、エプロン、青いリボン、ヘッドホン、胸元の光るパネルなどの衣装のディテールです。",
+            "question": "衣装のどんなディテールが見えますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ちび豆包ちゃんのメイド姿",
+        "originNote": "",
+        "seoDescription": "メイド姿の豆包ちゃんのちびキャラ立ち絵。レースのヘッドドレス、青いリボン、ヘッドホン、紺色の服に光る画面の飾りが特徴です。",
+        "seoTitle": "ちび豆包ちゃん メイド立ち絵 | DeepSeek Chan",
+        "tags": [
+          "豆包ちゃん",
+          "ちびキャラ",
+          "メイド",
+          "立ち絵",
+          "ヘッドホン"
+        ]
+      }
+    }
   }
 ]
