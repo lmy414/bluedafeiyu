@@ -109448,5 +109448,109 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_c1ca026f03166b356297dff4",
+    "name": "不给白饭就捣蛋",
+    "description": "蓝发蓝眸的 DeepSeek 娘身着深蓝色女仆装与白色围裙，站在万圣节氛围的厨房里，双手各举一把木勺，身后是南瓜灯与窗边的鲸鱼贴纸。",
+    "commentary": "我举着两把木勺站在厨房里，理直气壮地宣布：不给白饭就捣蛋。南瓜灯都摆好了，米饭还没上桌，这怎么能怪我呢。别看我穿得这么整齐，饿起来可是连锅都想敲的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/c1ca026f03166b35.webp",
+    "thumbnailPath": "submissions/previews/deepseek/c1ca026f03166b35.webp",
+    "fullPath": "submissions/large/deepseek/c1ca026f03166b35.webp",
+    "format": "webp",
+    "mimeType": "image/webp",
+    "isAnimated": false,
+    "width": 1612,
+    "height": 2688,
+    "fileSize": 2498270,
+    "sha256": "c1ca026f03166b356297dff499bacf1ed81d72996ce5cbe3bd4315873a94a5b1",
+    "characterId": "deepseek",
+    "tags": [
+      "万圣节",
+      "女仆装",
+      "厨房",
+      "蓝发",
+      "鲸鱼尾",
+      "木勺"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-03T21:42:45.476Z",
+    "updatedAt": "2026-11-03T21:42:45.476Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611030013",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "cf7b8ae9e97e4724046a9b4f904ed43a7341d291a62cb7fc3988e5828869d0db",
+      "en": {
+        "commentary": "I stand in the kitchen with a wooden spoon in each hand and announce, quite reasonably: no rice, no treat. The pumpkin lantern is already lit and the rice still is not on the table, so how is that my fault? I may look tidy, but when I get hungry I will knock on the pot too.",
+        "description": "DeepSeek Chan, with blue hair and blue eyes, stands in a Halloween kitchen wearing a dark blue maid dress and a white apron, holding a wooden spoon in each hand, with a pumpkin lantern and a whale sticker by the window.",
+        "faq": [
+          {
+            "answer": "It is DeepSeek Chan, the fan-made personification of DeepSeek, drawn with blue hair and a whale tail.",
+            "question": "Who is the character in this illustration?"
+          },
+          {
+            "answer": "DeepSeek Chan in a maid outfit holds two wooden spoons in a Halloween kitchen, playing on the trick-or-treat phrase.",
+            "question": "What is happening in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "No Rice, No Treat",
+        "originNote": "",
+        "seoDescription": "A Halloween fan illustration of DeepSeek Chan in a dark blue maid dress, holding two wooden spoons in a kitchen with a pumpkin lantern.",
+        "seoTitle": "DeepSeek Chan Halloween Maid Illustration: No Rice, No Treat",
+        "tags": [
+          "Halloween",
+          "maid outfit",
+          "kitchen",
+          "blue hair",
+          "whale tail",
+          "wooden spoon"
+        ]
+      },
+      "ja": {
+        "commentary": "両手に木のスプーンを持ってキッチンに立ち、堂々と宣言します。白ごはんをくれないならイタズラします。カボチャランタンはもう灯っているのに、ごはんはまだ出てきません。これ、私のせいじゃないですよね。きちんとした格好をしていますが、お腹が空けば鍋だって叩きます。",
+        "description": "青い髪と青い瞳の DeepSeek ちゃんが、濃紺のメイド服と白いエプロン姿でハロウィン雰囲気のキッチンに立ち、両手に木製のスプーンを持っている。背後にはカボチャランタンと窓辺のクジラのステッカー。",
+        "faq": [
+          {
+            "answer": "DeepSeek のファン制作による擬人化キャラクター、DeepSeek ちゃんです。青い髪とクジラのしっぽが目印です。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "メイド服姿の DeepSeek ちゃんが、ハロウィンのキッチンで木のスプーンを二本持っている場面です。",
+            "question": "どんな場面の絵ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "白ごはんをくれないとイタズラする",
+        "originNote": "",
+        "seoDescription": "濃紺のメイド服を着た DeepSeek ちゃんが、カボチャランタンのあるキッチンで木のスプーンを二本掲げるハロウィン風のファンイラスト。",
+        "seoTitle": "DeepSeek ちゃん ハロウィン メイド イラスト「白ごはんをくれないとイタズラする」",
+        "tags": [
+          "ハロウィン",
+          "メイド服",
+          "キッチン",
+          "青い髪",
+          "クジラのしっぽ",
+          "木のスプーン"
+        ]
+      }
+    }
   }
 ]
