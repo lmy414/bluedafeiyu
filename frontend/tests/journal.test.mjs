@@ -15,9 +15,22 @@ test('homepage ranks only submissions with actual positive recorded views',()=>{
 test('homepage and mobile navigation work before scripts and keep production handlers',()=>{
   for(const prefix of ['', 'en/','ja/','zh-hant/']){
     const {document}=parseHTML(fs.readFileSync(path.join(out,prefix+'index.html'),'utf8'));
-    assert.equal(document.querySelectorAll('.mobile-bottom a').length,5,prefix);
+    const localized=href=>href==='/'?'/'+prefix:'/'+prefix+href.slice(1);
+    const expected=['/','/browse.html','/videos.html','/creators.html','/projects.html#project','/community.html','/events.html','/projects.html#website','/about.html'].map(localized);
+    const mainLinks=[...document.querySelectorAll('.main-nav a')];
+    const mobileLinks=[...document.querySelectorAll('.mobile-bottom a')];
+    assert.deepEqual(mainLinks.map(link=>link.getAttribute('href')),expected,prefix);
+    assert.deepEqual(mobileLinks.map(link=>link.getAttribute('href')),expected,prefix);
+    for(const href of expected){
+      const pathname=href.split('#')[0];
+      assert.ok(fs.existsSync(path.join(out,pathname.endsWith('/')?pathname+'index.html':pathname)),href);
+    }
+    assert.equal(mainLinks.filter(link=>link.getAttribute('aria-current')==='page').length,1,prefix);
+    assert.equal(document.querySelectorAll('.mobile-bottom a').length,9,prefix);
+    assert.equal(document.querySelectorAll('.main-nav a').length,9,prefix);
+    assert.equal(document.querySelector('[data-menu], [data-menu-close], .menu-scrim, [data-sidebar-collapse]'),null);
     assert.ok(document.querySelector('.mobile-bottom.mobile-nav'),'Uses the Demo mobile layout');
-    assert.ok(document.querySelector('.mobile-bottom a[href$="/saved.html"]'));
+    assert.ok(document.querySelector('.topbar .saved-entry[href$="/saved.html"]'));
     const topics=document.querySelectorAll('[data-design-slide]');assert.ok(topics.length>=2);
     assert.equal(document.querySelectorAll('[data-design-slide]:not([hidden])').length,1);
     assert.equal(document.querySelectorAll('.portal-primary > a').length,2);

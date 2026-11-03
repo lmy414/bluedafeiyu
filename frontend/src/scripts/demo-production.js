@@ -1,11 +1,9 @@
 import {installMasonry} from './masonry.mjs';
 import {installPagedFeeds} from '../../public/components/paged-feed.js';
-import {installSidebarTooltip} from '../../public/components/sidebar-tooltip.js';
 import {installHomeDownloads} from '../../public/components/home-downloads.js';
 import './saved-ui.js';
 installMasonry();
 installPagedFeeds();
-installSidebarTooltip();
 installHomeDownloads();
 
 for (const slider of document.querySelectorAll('[data-design-slider]')) {
@@ -41,6 +39,11 @@ if(friendFilters.length){
   const select=()=>{
     const requested=location.hash.slice(1), category=['project','website'].includes(requested)?requested:'all';
     friendFilters.forEach(link=>{if(link.dataset.friendFilter===category)link.setAttribute('aria-current','true');else link.removeAttribute('aria-current');});
+    document.querySelectorAll('[data-project-nav]').forEach(link=>{
+      const selected=link.dataset.projectNav===(category==='project'?'communityProjects':'friendWall');
+      link.classList.toggle('is-active',selected);
+      if(selected)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current');
+    });
     document.querySelectorAll('[data-friend-section]').forEach(section=>section.hidden=category!=='all'&&section.dataset.friendSection!==category);
   };
   window.addEventListener('hashchange',select);select();

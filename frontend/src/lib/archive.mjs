@@ -71,6 +71,8 @@ for(const [key, en, ja] of [
   ['viewLarge','View image','画像を見る'],['longImage','Long image · view full','長い画像・全体を見る'],
   ['specialThanks','Special thanks','特別な感謝'],['visitWebsite','Visit website','サイトを見る'],
   ['brandName','DeepSeek Chan','藍色大肥魚'],['discover','Discover','見つける'],['gallery','All images','画像一覧'],['brandSub','AI-girl fan art archive','AI娘の二次創作アーカイブ'],
+  ['navHome','Home','ホーム'],['navImageHall','Image gallery','画像館'],['navCreators','Creators','クリエイター'],
+  ['navCommunityProjects','Community projects','コミュニティプロジェクト'],['navFriendWall','Friend links','リンク集'],['navAbout','About','サイト情報'],
   ['weeklyNav','AI Girl Weekly','AI娘ウィークリー'],
   ['explore','EXPLORE','ブラウズ'],['sideText','A home for every delightful image.','楽しい一枚を、大切に。'],['nonOfficial','Unofficial fan archive','非公式ファンアーカイブ'],
   ['footerText','AI-girl fan art archive · Images belong to their creators','AI娘の二次創作アーカイブ · 画像の権利は原作者に帰属します'],['rights','Sources & permissions','出典と利用許諾'],

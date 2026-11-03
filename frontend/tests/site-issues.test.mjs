@@ -165,6 +165,6 @@ test('image navigation exposes all five archive views and original-download trac
   }
   const gallery=read('/browse.html');
   assert.equal(gallery.querySelector('main h1').textContent,'全部图片');
-  assert.equal(gallery.querySelector('.main-nav a[href="/browse.html"] span').textContent,'全部图片');
+  assert.equal(gallery.querySelector('.main-nav a[href="/browse.html"] span').textContent,'图像馆');
   assert.equal(gallery.querySelector('.main-nav a[href="/videos.html"] span').textContent,'视频');
 });

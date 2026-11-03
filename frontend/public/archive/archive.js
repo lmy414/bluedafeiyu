@@ -38,21 +38,8 @@ import {orderWorks, shuffledSlugs} from '../components/work-order.js';
       error => report(error.message === 'unsupported' ? tx('v2.copyImgFail','浏览器不支持，请长按保存') : tx('d.copyImageFail','复制失败，请重试或下载原图')))
       .finally(() => {button.disabled = false;button.removeAttribute('aria-busy');});
   });
-  let menuPrevious;
-  const mobileQuery=matchMedia('(max-width:760px)');
-  const sidebar=$('#sidebar');
-  function syncDrawer(){const open=document.body.classList.contains('menu-open');sidebar.inert=mobileQuery.matches&&!open;$('.main-wrap').inert=mobileQuery.matches&&open;}
-  syncDrawer();mobileQuery.addEventListener('change',syncDrawer);
-  function menu(open) {
-    document.body.classList.toggle('menu-open',open);$('.menu-scrim').hidden=!open;$('[data-menu]').setAttribute('aria-expanded',String(open));
-    syncDrawer();
-    if(open){menuPrevious=document.activeElement;$('.sidebar a').focus();}else menuPrevious?.focus();
-  }
-  $('[data-menu]')?.addEventListener('click',()=>menu(true));$$('[data-menu-close]').forEach(el=>el.addEventListener('click',()=>menu(false)));
   document.addEventListener('keydown',event=>{
     if(event.key==='/'&&!/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)){event.preventDefault();$('#top-q').focus();}
-    if(event.key==='Escape'&&document.body.classList.contains('menu-open'))menu(false);
-    if(event.key==='Tab'&&document.body.classList.contains('menu-open')){const items=$$('.sidebar a,.sidebar button').filter(x=>x.offsetParent);const first=items[0],last=items.at(-1);if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}}
   });
   document.addEventListener('click',e=>{const copyEl=e.target.closest('[data-copy]');if(copyEl)copy(copyEl.dataset.copy);const link=e.target.closest('[data-copy-link]');if(link)copy(new URL(localURL(link.dataset.copyLink||location.pathname),'https://xn--pssy23gqgbz2d718b.com').href,link.closest('[data-work-actions]')?.querySelector('[data-image-copy-status]'));});
   document.querySelector('[data-character-scene]')?.addEventListener('change',event=>{
