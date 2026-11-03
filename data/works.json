@@ -109286,7 +109286,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-11-03T14:56:47.792Z",
-    "updatedAt": "2026-11-03T14:57:39.160Z",
+    "updatedAt": "2026-11-03T15:23:00.772Z",
     "tone": "grok",
     "symbol": "",
     "slug": "grok202611030001",
@@ -109344,6 +109344,107 @@
           "Agent Stage",
           "Grok",
           "ステージアニメーション"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_b64345da5dfc2a62959bf814",
+    "name": "哭泣的鲸鱼",
+    "description": "蓝白长发的水手服少女坐在浅色背景前，眼眶泛红、泪水滚落，双手攥着裙摆，身后一条深蓝色鲸尾绕过身侧当作坐垫。",
+    "commentary": "唔……这张把我画得太惨了啦。明明只是被风吹了下眼睛，结果就变成哭成这样的样子。不过那条鲸尾确实是我的，盘起来刚好当靠垫，坐着还挺舒服。下次看见我这个表情，先递张纸巾，别只顾着截图。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/b64345da5dfc2a62.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/b64345da5dfc2a62.webp",
+    "fullPath": "submissions/large/deepseek/b64345da5dfc2a62.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1280,
+    "height": 1715,
+    "fileSize": 138820,
+    "sha256": "b64345da5dfc2a62959bf814c8f4a9ebbcda9d32b167a5031a145e5897f82e52",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "鲸尾",
+      "水手服",
+      "哭泣",
+      "Q版"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "坚果大帝",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-03T15:26:45.183Z",
+    "updatedAt": "2026-11-03T15:26:45.183Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611030012",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "293d8ba9fd053483e113634087081a0c01f9574f682e01438f1a3e8968db8bc3",
+      "en": {
+        "commentary": "Aw, this one makes me look way too pitiful. I only got a bit of breeze in my eye and somehow I ended up painted mid-sob. That whale tail really is mine, though — coiled up it makes a decent cushion and sitting on it is surprisingly comfortable. Next time you see me like this, hand me a tissue first instead of going straight for the screenshot.",
+        "description": "A girl with long blue-and-white hair in a sailor uniform sits against a pale background, tears rolling down her cheeks as she grips her skirt, while a deep blue whale tail curls around her side like a cushion.",
+        "faq": [
+          {
+            "answer": "It is a fan-made chibi portrayal of DeepSeek Chan, drawn with blue-white hair, a sailor uniform and a whale tail.",
+            "question": "Who is the character in this image?"
+          },
+          {
+            "answer": "A single full-body character drawing on a plain light background, focused on pose and expression rather than a scene.",
+            "question": "What kind of image is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Crying Whale",
+        "originNote": "",
+        "seoDescription": "Chibi fan art of DeepSeek Chan: a sailor-uniformed girl with a blue whale tail, weeping on a pale background.",
+        "seoTitle": "The Crying Whale — DeepSeek Chan Fan Art",
+        "tags": [
+          "DeepSeek Chan",
+          "Whale Tail",
+          "Sailor Uniform",
+          "Crying",
+          "Chibi"
+        ]
+      },
+      "ja": {
+        "commentary": "うう……この一枚、私を泣かせすぎじゃない？ ちょっと風が目に入っただけなのに、こんな泣き顔で描かれちゃった。でもこのクジラの尾は本当に私のだよ。巻けばちょうど座布団になって、座り心地も悪くないんだ。今度こんな顔を見かけたら、スクショより先にティッシュを一枚ちょうだいね。",
+        "description": "青と白の長い髪のセーラー服の少女が淡い背景に座り、涙をこぼしながらスカートを握っている。横には濃紺のクジラの尾が回り込み、座布団のようになっている。",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan を描いたファンアートで、青白い髪とセーラー服、クジラの尾が特徴のちびキャラです。",
+            "question": "この画像のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "淡い単色の背景に全身のキャラクターを描いた一枚で、情景よりもポーズと表情に焦点を置いています。",
+            "question": "どんな種類の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "泣いているクジラ",
+        "originNote": "",
+        "seoDescription": "セーラー服とクジラの尾を持つ DeepSeek Chan のちびキャラファンアート。淡い背景で涙を流す一枚。",
+        "seoTitle": "泣いているクジラ — DeepSeek Chan ファンアート",
+        "tags": [
+          "DeepSeek Chan",
+          "クジラの尾",
+          "セーラー服",
+          "泣き顔",
+          "ちびキャラ"
         ]
       }
     }
