@@ -97091,7 +97091,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-29T10:25:34.521Z",
-    "updatedAt": "2026-10-29T10:25:34.521Z",
+    "updatedAt": "2026-11-03T14:37:54.036Z",
     "tone": "other",
     "symbol": "",
     "slug": "other202610290001",
@@ -97200,7 +97200,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-29T10:25:34.552Z",
-    "updatedAt": "2026-10-29T10:25:34.552Z",
+    "updatedAt": "2026-11-03T14:37:53.846Z",
     "tone": "claude",
     "symbol": "",
     "slug": "claude202610290002",
@@ -97309,7 +97309,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-29T10:25:34.569Z",
-    "updatedAt": "2026-10-29T10:25:34.569Z",
+    "updatedAt": "2026-11-03T14:37:53.666Z",
     "tone": "other",
     "symbol": "",
     "slug": "other202610290002",
@@ -97418,7 +97418,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-29T10:25:34.584Z",
-    "updatedAt": "2026-10-29T10:25:34.584Z",
+    "updatedAt": "2026-11-03T14:37:53.486Z",
     "tone": "other",
     "symbol": "",
     "slug": "other202610290003",
@@ -97527,7 +97527,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-29T10:25:34.600Z",
-    "updatedAt": "2026-10-29T10:25:34.600Z",
+    "updatedAt": "2026-11-03T14:37:53.271Z",
     "tone": "doubao",
     "symbol": "",
     "slug": "doubao202610290001",
@@ -97636,7 +97636,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-29T10:25:34.615Z",
-    "updatedAt": "2026-10-29T10:25:34.615Z",
+    "updatedAt": "2026-11-03T14:37:53.074Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202610290001",
@@ -97745,7 +97745,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-29T10:25:34.645Z",
-    "updatedAt": "2026-10-29T10:25:34.645Z",
+    "updatedAt": "2026-11-03T14:37:52.860Z",
     "tone": "other",
     "symbol": "",
     "slug": "other202610290004",
@@ -97855,7 +97855,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-29T10:25:34.659Z",
-    "updatedAt": "2026-10-29T10:25:34.659Z",
+    "updatedAt": "2026-11-03T14:37:52.663Z",
     "tone": "other",
     "symbol": "",
     "slug": "other202610290005",
@@ -97967,7 +97967,7 @@
     "license": {},
     "status": "published",
     "createdAt": "2026-10-29T10:25:34.672Z",
-    "updatedAt": "2026-10-29T10:25:34.672Z",
+    "updatedAt": "2026-11-03T14:37:52.463Z",
     "tone": "other",
     "symbol": "",
     "slug": "other202610290006",
@@ -109241,6 +109241,109 @@
           "Helltaker風",
           "ポートレート",
           "星の髪飾り"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_9249106558fabcb5972c1a00",
+    "name": "Agent Stage：Grok 正常版舞台动效",
+    "description": "开源项目 Agent Stage 中的 Grok 助手角色舞台循环动效，由 gaomails2024 投稿并允许本站收录。",
+    "commentary": "Grok 这身黑色蕾丝小礼服讲究得很，头饰、颈带、吊带和蕾丝丝袜一样没落下，站在透明底上还能保持那副淡淡的表情。背后几块彩色圆斑像是临时搭起来的舞台布景，倒把她的冷淡衬得更明显了。Agent Stage 里的循环动效，我盯着看了好一会儿。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/grok/9249106558fabcb5.webp",
+    "thumbnailPath": "submissions/previews/grok/9249106558fabcb5.webp",
+    "fullPath": "submissions/large/grok/9249106558fabcb5.webp",
+    "format": "webp",
+    "mimeType": "image/webp",
+    "isAnimated": true,
+    "width": 280,
+    "height": 515,
+    "fileSize": 461588,
+    "sha256": "9249106558fabcb5972c1a006d00cf9a80ec392a509cba2b2c3cddabf7331ba3",
+    "characterId": "grok",
+    "tags": [
+      "Agent Stage",
+      "Grok",
+      "舞台动效"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "gaomails2024",
+      "url": "https://github.com/gaomails2024/agent-stage",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "34c428df198bdb88b2d3fe83da4722d2c065d49854583d478da21f19edb44dea",
+        "member": "grok-bot-正常版舞台动效.webp",
+        "index": 6,
+        "count": 10
+      },
+      "author": "gaomails2024",
+      "sourceUrl": "https://github.com/gaomails2024/agent-stage/blob/1f7ff63f247a577b2006b39cdba137fc129ad222/docs/sticker-submission/grok-bot-%E6%AD%A3%E5%B8%B8%E7%89%88%E8%88%9E%E5%8F%B0%E5%8A%A8%E6%95%88.webp"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-03T14:56:47.792Z",
+    "updatedAt": "2026-11-03T14:57:39.160Z",
+    "tone": "grok",
+    "symbol": "",
+    "slug": "grok202611030001",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "grok"
+    ],
+    "i18n": {
+      "sourceHash": "9ef28d40bbe080b9d150118590a0cca69004a121596cbf461431278782c0791f",
+      "en": {
+        "commentary": "Grok's black lace dress is put together down to the last detail — headpiece, choker, garters and lace stockings all accounted for, and she keeps that cool expression even on a transparent background. The colored discs behind her look like stage scenery thrown up at the last minute, which only makes her seem more aloof. I watched this Agent Stage loop for quite a while.",
+        "description": "A looping stage animation of the Grok assistant character from the open-source project Agent Stage, submitted by gaomails2024 with permission for inclusion on this site.",
+        "faq": [
+          {
+            "answer": "Agent Stage is an open-source project that provides animated assistant characters, including this Grok character.",
+            "question": "What is Agent Stage?"
+          },
+          {
+            "answer": "It was submitted by gaomails2024, who allowed this site to include it.",
+            "question": "Who submitted this image?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Agent Stage: Grok Standard Stage Animation",
+        "originNote": "",
+        "seoDescription": "Grok in a black lace dress, a looping stage animation from the open-source project Agent Stage, submitted by gaomails2024.",
+        "seoTitle": "Agent Stage: Grok Standard Stage Animation",
+        "tags": [
+          "Agent Stage",
+          "Grok",
+          "Stage Animation"
+        ]
+      },
+      "ja": {
+        "commentary": "Grok の黒いレースのミニドレスは細部まで作り込まれていて、ヘッドドレス、チョーカー、ガーター、レースのストッキングまで揃っています。透明な背景の上でも涼しい表情は崩しません。後ろの色とりどりの丸は即席の舞台セットのようで、その分よけいにクールに見えます。Agent Stage のループアニメーション、しばらくじっと見てしまいました。",
+        "description": "オープンソースプロジェクト Agent Stage に収録された Grok アシスタントキャラクターのステージ用ループアニメーション。gaomails2024 による投稿で、当サイトへの掲載が許可されています。",
+        "faq": [
+          {
+            "answer": "Agent Stage は、アシスタントキャラクターのアニメーションを提供するオープンソースプロジェクトで、この Grok のキャラクターもそこに収録されています。",
+            "question": "Agent Stage とは何ですか？"
+          },
+          {
+            "answer": "gaomails2024 による投稿で、当サイトへの掲載が許可されています。",
+            "question": "この画像は誰が投稿しましたか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Agent Stage：Grok 通常版ステージアニメーション",
+        "originNote": "",
+        "seoDescription": "黒いレースのドレスを纏った Grok。オープンソースプロジェクト Agent Stage のループアニメーションで、gaomails2024 の投稿です。",
+        "seoTitle": "Agent Stage：Grok 通常版ステージアニメーション",
+        "tags": [
+          "Agent Stage",
+          "Grok",
+          "ステージアニメーション"
         ]
       }
     }
