@@ -6,7 +6,7 @@ const { icon } = archiveContext;
 const isPage = item => active === item.id || (active === 'projects' && item.id === 'friendWall');
 const isSection = item => !isPage(item) && item.id === 'browse' && ['characters', 'topics'].includes(active);
 ---
-<aside class="sidebar sidebar-rail" id="sidebar">
+<aside class="sidebar sidebar-rail" id="desktop-sidebar">
   <nav class="main-nav primary-nav" aria-label="站点导航" data-i18n-attr="aria-label:v2.siteNav">
     {navigation.map(item => <a class:list={['nav-link',{'is-active':isPage(item) || isSection(item)}]} href={item.href} title={item.label} aria-label={item.label} data-i18n-attr={`title:${item.key},aria-label:${item.key}`} data-project-nav={['communityProjects','friendWall'].includes(item.id) ? item.id : undefined} aria-current={isPage(item) ? 'page' : isSection(item) ? 'true' : undefined}>
       <Fragment set:html={icon(item.icon)} /><span data-i18n={item.key}>{item.label}</span>

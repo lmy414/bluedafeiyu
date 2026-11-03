@@ -1,13 +1,14 @@
 ---
 import { archiveContext } from "../../lib/archive.mjs";
-import { navigation } from './nav-items.mjs';
+import { mobileNavigation } from './nav-items.mjs';
 const { active = "" } = Astro.props;
 const { icon } = archiveContext;
-const isPage = item => active === item.id || (active === 'projects' && item.id === 'friendWall');
-const isSection = item => !isPage(item) && item.id === 'browse' && ['characters', 'topics'].includes(active);
 ---
-<nav class="mobile-bottom mobile-nav" aria-label="站点导航" data-i18n-attr="aria-label:v2.siteNav">
-  {navigation.map(item => <a href={item.href} title={item.label} aria-label={item.label} data-i18n-attr={`title:${item.key},aria-label:${item.key}`} data-project-nav={['communityProjects','friendWall'].includes(item.id) ? item.id : undefined} aria-current={isPage(item) ? 'page' : isSection(item) ? 'true' : undefined}>
+<nav class="mobile-bottom mobile-nav" aria-label="快捷导航" data-i18n-attr="aria-label:v2.siteNav">
+  {mobileNavigation.slice(0,4).map(item => <a href={item.href} aria-current={active === item.id ? 'page' : undefined}>
     <Fragment set:html={icon(item.icon,19)} /><span data-i18n={item.key}>{item.label}</span>
   </a>)}
+  <a class="mobile-saved" href="/saved.html" aria-current={active==='saved'?'page':undefined}>
+    <Fragment set:html={icon('heart',19)} /><span data-i18n="d.savedTitle">我的收藏</span>
+  </a>
 </nav>

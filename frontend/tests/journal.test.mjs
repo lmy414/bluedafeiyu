@@ -17,18 +17,24 @@ test('homepage and mobile navigation work before scripts and keep production han
     const {document}=parseHTML(fs.readFileSync(path.join(out,prefix+'index.html'),'utf8'));
     const localized=href=>href==='/'?'/'+prefix:'/'+prefix+href.slice(1);
     const expected=['/','/browse.html','/videos.html','/creators.html','/projects.html#project','/community.html','/events.html','/projects.html#website','/about.html'].map(localized);
-    const mainLinks=[...document.querySelectorAll('.main-nav a')];
+    const mainLinks=[...document.querySelectorAll('.sidebar-rail .main-nav a')];
     const mobileLinks=[...document.querySelectorAll('.mobile-bottom a')];
+    const drawerLinks=[...document.querySelectorAll('.mobile-drawer .drawer-nav a')];
     assert.deepEqual(mainLinks.map(link=>link.getAttribute('href')),expected,prefix);
-    assert.deepEqual(mobileLinks.map(link=>link.getAttribute('href')),expected,prefix);
+    assert.deepEqual(mobileLinks.map(link=>link.getAttribute('href')),['/','/browse.html','/videos.html','/creators.html','/saved.html'].map(localized),prefix);
+    assert.deepEqual(drawerLinks.map(link=>link.getAttribute('href')),['/','/browse.html','/videos.html','/creators.html'].map(localized).concat('https://weekly.xn--pssy23gqgbz2d718b.com/',['/community.html','/projects.html','/events.html'].map(localized)),prefix);
     for(const href of expected){
       const pathname=href.split('#')[0];
       assert.ok(fs.existsSync(path.join(out,pathname.endsWith('/')?pathname+'index.html':pathname)),href);
     }
     assert.equal(mainLinks.filter(link=>link.getAttribute('aria-current')==='page').length,1,prefix);
-    assert.equal(document.querySelectorAll('.mobile-bottom a').length,9,prefix);
-    assert.equal(document.querySelectorAll('.main-nav a').length,9,prefix);
-    assert.equal(document.querySelector('[data-menu], [data-menu-close], .menu-scrim, [data-sidebar-collapse]'),null);
+    assert.equal(mobileLinks.length,5,prefix);
+    assert.equal(mainLinks.length,9,prefix);
+    assert.equal(drawerLinks.length,8,prefix);
+    assert.equal(document.querySelector('[data-sidebar-collapse]'),null);
+    assert.equal(document.querySelector('[data-menu]')?.getAttribute('aria-controls'),'sidebar');
+    assert.ok(document.querySelector('.mobile-drawer [data-menu-close]'));
+    assert.ok(document.querySelector('.menu-scrim[data-menu-close][hidden]'));
     assert.ok(document.querySelector('.mobile-bottom.mobile-nav'),'Uses the Demo mobile layout');
     const savedEntry=document.querySelector('.topbar .saved-entry[href$="/saved.html"]');
     assert.ok(savedEntry);
