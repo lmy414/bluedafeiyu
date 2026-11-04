@@ -133,7 +133,7 @@ test('英文统一站名和所有 AI 娘的 Chan 名称，模板变量和动态�
   const work = { slug: 'frozen-slug', id: 'frozen-id', cid: 'deepseek', c: 'DeepSeek娘', n: '蓝色大肥鱼与Kimi娘', d: 'DeepSeek娘', k: ['meme'], i: '/image.webp', col: '#123', dt: '2026.10.06' };
   const card = renderWorkCard(work, { url: page.api.url, translate: page.api.fmt, names: page.api.translateNames });
   assert.match(card, /DeepSeek Chan与Kimi Chan/);
-  assert.match(card, /alt="DeepSeek Chan"/);
+  assert.match(card, /alt="DeepSeek Chan与Kimi Chan — DeepSeek Chan"/);
   assert.match(card, /href="\/en\/characters\/deepseek.html"/);
   assert.doesNotMatch(card, /DeepSeek娘|蓝色大肥鱼/);
   assert.equal(work.c, 'DeepSeek娘');

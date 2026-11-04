@@ -59,6 +59,7 @@ test('ordinary image and title clicks open the preview; only its detail link fol
   const f=fixture({prefix:'/ja'});
   assert.equal(f.click(f.document.querySelector('.work-art img')).defaultPrevented,true);
   await flush();assert.equal(f.dialog.open,true);assert.deepEqual(f.views,['id-a']);
+  assert.equal(f.document.querySelector('.preview-photo img').getAttribute('alt'),'Title a — Description');
   const detail=f.document.querySelector('.preview-detail-link');
   assert.equal(detail.href,'/ja/works/a.html');assert.equal(detail.textContent,'查看详情');
   assert.equal(f.click(detail).defaultPrevented,false);

@@ -118,7 +118,8 @@ test('real Astro builds: no-op, edits, additions, removals, cold-cache fallback 
  const added=structuredClone(edited);added.works.push(fixtureTags(structuredClone(ordered[24])));write(added);
  const addition=build('added','edited');assert.equal(addition.report.mode,'incremental');assert.ok(fs.existsSync(path.join(addition.out,'works',ordered[24].slug+'.html')));
  assert.ok(readApi(addition,'manifest.json').items.some(w=>w.id===ordered[24].id));
- const removed=structuredClone(added);const hidden=removed.works.shift();write(removed);
+ // Keep the guide-required roles pinned above; remove an ordinary fixture work.
+ const removed=structuredClone(added);const [hidden]=removed.works.splice(required.length,1);write(removed);
  const deletion=build('removed','added');assert.equal(deletion.report.mode,'incremental');
  for(const prefix of ['','en/','ja/','zh-hant/'])assert.equal(fs.existsSync(path.join(deletion.out,prefix+'works/'+hidden.slug+'.html')),false);
  assert.equal(fs.existsSync(path.join(deletion.out,'works/'+hidden.slug+'.html.md')),false);

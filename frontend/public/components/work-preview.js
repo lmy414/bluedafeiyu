@@ -1,3 +1,4 @@
+import {workImageAlt} from './image-alt.js';
 import {renderWorkActions} from './work-actions.js';
 import {workImageURL} from './work-image.js';
 
@@ -61,11 +62,11 @@ export function installWorkPreview({load, localize = w => w, translate:tx, url, 
       const heading = `<header class="preview-heading">${icon('image')}<span>${esc(tx('d.previewTitle','作品预览'))}</span><a class="button small preview-detail-link" href="${esc(url('/works/'+w.slug+'.html'))}">${esc(tx('d.fullDetail','查看详情'))}${icon('arrow')}</a></header>`;
       const actions = renderWorkActions(w, {preview:true,translate:tx,url});
       if (mode === 'image') {
-        body.innerHTML = `${heading}${actions}<div class="preview-zoom"><img src="${esc(w.l)}" alt="${esc(w.d||w.n)}" width="${width}" height="${height}"></div>`;
+        body.innerHTML = `${heading}${actions}<div class="preview-zoom"><img src="${esc(w.l)}" alt="${esc(workImageAlt(w))}" width="${width}" height="${height}"></div>`;
       } else {
         body.innerHTML = `${heading}${actions}
           <div class="preview-content">
-            <div class="preview-art"><figure class="preview-photo"><img src="${esc(w.l)}" alt="${esc(w.d||w.n)}" width="${width}" height="${height}"></figure></div>
+            <div class="preview-art"><figure class="preview-photo"><img src="${esc(w.l)}" alt="${esc(workImageAlt(w))}" width="${width}" height="${height}"></figure></div>
             <div class="preview-info">
               <div class="preview-topline">${w.roles.map(role=>`<a class="preview-role" data-character-id="${esc(role.id)}" href="${esc(url('/characters/'+role.id+'.html'))}">${components.roleDot(role.color)}${esc(role.name)}${icon('arrow')}</a>`).join('')}<span class="preview-kind">${w.k.map(id=>esc(tx('v2.type.'+id,id))).join(' · ')}</span></div>
               <h2>${esc(w.n)}</h2>

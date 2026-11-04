@@ -1,16 +1,16 @@
+import {workImageAlt} from '../public/components/image-alt.js';
 import {applyNativeArchives} from './native-archives.mjs';
 import {aboutCopy,aboutQuestions} from '../src/lib/about-copy.mjs';
 import { videoArchive } from '../src/lib/video-archive.mjs';
 import { videoTerminology } from '../src/lib/video-terminology.mjs';
 const escape=value=>String(value||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function applyNativeContent(document,api,base,snapshot) {
-  if(api.current==='zh-Hant'&&/^\/characters\/[^/]+\.html$/.test(base)){
-    const scope=document.querySelector('.character-page');
-    if(scope){
-      for(const node of scope.querySelectorAll('.character-cover-credit strong,.work-card .work-title,.character-version-description,[data-character-scene] option'))node.textContent=api.contentText(node.textContent);
-      for(const node of scope.querySelectorAll('.live-character-portrait img,.work-card img'))if(node.hasAttribute('alt'))node.setAttribute('alt',api.contentText(node.getAttribute('alt')));
-      for(const node of scope.querySelectorAll('[data-preview][aria-label]'))node.setAttribute('aria-label',api.contentText(node.getAttribute('aria-label')));
-    }
+  if(api.current==='zh-Hant'){
+    // Baked pages are not translated again by lang.js. Convert content image
+    // alternatives and their work labels here on every route, not just roles.
+    for(const node of document.querySelectorAll('.work-card img,.detail-image img,.comic-sheet img,.video-cover img,.live-character-portrait img,.character-portrait img,.topic-mosaic img,.role-card img'))node.setAttribute('alt',api.contentText(node.getAttribute('alt')));
+    for(const node of document.querySelectorAll('.work-card .work-title,.character-cover-credit strong,.character-version-description,[data-character-scene] option,[data-video-title]'))node.textContent=api.contentText(node.textContent);
+    for(const node of document.querySelectorAll('[data-preview][aria-label]'))node.setAttribute('aria-label',api.contentText(node.getAttribute('aria-label')));
   }
   const native=['en','ja'].includes(api.current);
   if(!native)return;
@@ -20,6 +20,7 @@ export function applyNativeContent(document,api,base,snapshot) {
     const video = videoById.get(card.getAttribute('data-video-bvid'));
     const value = video?.i18n?.[api.current];
     if (value) {
+      card.querySelector('[data-video-cover-alt]')?.setAttribute('alt',videoTerminology(value.title, api.current, video.characterIds, creatorNames));
       for (const field of ['title', 'description']) {
         const target=card.querySelector(`[data-video-${field}]`);
         if(target)target.textContent=videoTerminology(value[field], api.current, video.characterIds, creatorNames);
@@ -45,7 +46,7 @@ export function applyNativeContent(document,api,base,snapshot) {
   for(const card of document.querySelectorAll('.work-card[data-slug]')) {
     const w=bySlug.get(card.getAttribute('data-slug')),value=localized(w);if(!value)continue;
     card.querySelector('.work-title').textContent=value.name;
-    card.querySelector('img')?.setAttribute('alt',value.description||value.name);
+    card.querySelector('img')?.setAttribute('alt',workImageAlt(value));
     const description=card.querySelector('.character-version-description');if(description)description.textContent=value.description||value.name;
     for(const trigger of card.querySelectorAll('[data-preview][aria-label]'))trigger.setAttribute('aria-label',api.fmt('d.quickView','Preview')+' '+value.name);
     for(const role of card.querySelectorAll('.card-meta a')){const id=role.getAttribute('data-character-id')||w.characterId,dot=role.querySelector('i');role.replaceChildren();if(dot)role.appendChild(dot);role.appendChild(document.createTextNode(api.characterName(id,id)));}
@@ -58,7 +59,7 @@ export function applyNativeContent(document,api,base,snapshot) {
     if(originNote){if(value.originNote)originNote.textContent=value.originNote;else originNote.closest('[data-origin-note]')?.remove();}
     set('.breadcrumbs > span:last-child',value.name);
     for(const role of document.querySelectorAll('.detail-role')){const id=role.getAttribute('data-character-id')||work.characterId,dot=role.querySelector('i');role.replaceChildren();if(dot)role.appendChild(dot);role.appendChild(document.createTextNode(api.characterName(id,id)));}
-    document.querySelector('.detail-image img')?.setAttribute('alt',value.description||value.name);
+    document.querySelector('.detail-image img')?.setAttribute('alt',workImageAlt(value));
     const license=document.querySelector('.work-facts small');if(license)license.textContent=value.licenseNote;
     for(const tag of document.querySelectorAll('.detail-info .tags a')) {
       const original=new URL(tag.getAttribute('href'),'https://example.test').searchParams.get('q');const index=work.tags.indexOf(original);
