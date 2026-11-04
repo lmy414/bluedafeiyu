@@ -184,12 +184,39 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i1.hdslb.com/bfs/face/e11401d7d7cc97ee445d65617b48644b44f7fc42.jpg",
       "i18n": {
-        "en": "One of the creators selected for the site's first batch; profile information comes from the public Bilibili page, and each video is reviewed individually.",
-        "ja": "サイト管理者が選んだ最初の作者の一人。プロフィール情報はBilibiliの公開ページによるもので、動画は1本ずつ審査しています。"
+        "en": "冬冰 is a Bilibili creator who makes short comedic fan animation featuring personified AI characters.",
+        "ja": "冬冰は、AIキャラクターの擬人化を題材にした短編コメディアニメをBilibiliで発表しているクリエイターです。"
       }
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1qgxm6wEd2",
+      "uid": "44748304",
+      "title": "你比企鹅还圆",
+      "description": "视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色形象参考来自b站up：﻿﻿﻿﻿﻿﻿﻿﻿﻿@ZipZipPipe  ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿  ﻿ ﻿﻿﻿﻿﻿﻿﻿﻿﻿@这个刀子真甜  ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿  ﻿ ﻿﻿﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿﻿@邦多利素世  ﻿ ﻿",
+      "url": "https://www.bilibili.com/video/BV1qgxm6wEd2/",
+      "cover": "https://i0.hdslb.com/bfs/archive/27a2653195d619e9ae4fc88d2d1aaece86dc6ebe.jpg",
+      "duration": 235,
+      "publishedAt": "2026-11-04T00:00:00.000Z",
+      "characterIds": [
+        "deepseek",
+        "doubao",
+        "gemini"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "冬冰 is a Bilibili creator who makes short comedic fan animation featuring personified AI characters.",
+          "description": "A short comedic animation set in a greenhouse, where chibi personifications of AI characters — including a whale-hooded DeepSeek Chan — gather among the planters and tease each other about being round.",
+          "title": "You're Rounder Than a Penguin"
+        },
+        "ja": {
+          "creatorIntro": "冬冰は、AIキャラクターの擬人化を題材にした短編コメディアニメをBilibiliで発表しているクリエイターです。",
+          "description": "温室を舞台にした短編コメディアニメ。クジラのフードをかぶったちびキャラのDeepSeekちゃんをはじめ、AIキャラクターの擬人化たちがプランターの間で集まり、丸さをからかい合います。",
+          "title": "ペンギンより丸いんだね"
+        }
+      }
+    },
     {
       "bvid": "BV1Ft4u6FEyo",
       "uid": "3747573030456892",
