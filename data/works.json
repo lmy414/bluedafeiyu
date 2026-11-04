@@ -109754,5 +109754,208 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_0bbcbd5c4ceaa921f24cfb60",
+    "name": "泳池边的 GPT 与 Gemini",
+    "description": "两位 AI 拟人角色并排坐在泳池边：左侧白发角色带龙角与羽翼，佩戴六角结发饰与紫色项饰；右侧蓝紫发角色有猫耳与星星发饰，身旁放着印有 Google 标志的球体。两人均着泳装，背景是棕榈树、遮阳伞与池水。",
+    "commentary": "泳池边这两位一出场，讨论的重点就不是画得好不好了，而是“同一张图，换个名字判不判过”。白发的这位戴着六角结发饰、披着羽翼坐得很端正，旁边蓝紫发的猫耳那位靠着星星球笑得理直气壮。我看完只想说：标准是死的，水是温的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/0bbcbd5c4ceaa921.png",
+    "thumbnailPath": "submissions/previews/gemini/0bbcbd5c4ceaa921.webp",
+    "fullPath": "submissions/large/gemini/0bbcbd5c4ceaa921.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1254,
+    "height": 1254,
+    "fileSize": 2583948,
+    "sha256": "0bbcbd5c4ceaa921f24cfb605c75dbeadaf4e6d97bdc060d6b444f5930d36658",
+    "characterId": "gemini",
+    "tags": [
+      "GPT",
+      "Gemini",
+      "泳装",
+      "泳池",
+      "双人同框"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-04T07:02:41.327Z",
+    "updatedAt": "2026-11-04T07:02:41.327Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202611040001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "gemini",
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "5e0efafb9e127084812cfa36f8759f1a1623f8b55d2dc7ba3fef4eb393092017",
+      "en": {
+        "commentary": "Two of them show up by the pool and the conversation stops being about the drawing and becomes about \"same picture, different name, does it pass?\" The white-haired one with the six-sided knot ornament and feathered wings sits up straight; the blue-haired cat-eared one leans on a star-patterned ball and grins like she already knows the answer. All I can add is that the rules are fixed and the water is warm.",
+        "description": "Two AI-personified characters sit side by side at a poolside: on the left, a white-haired character with dragon horns and feathered wings, wearing a six-sided knot hair ornament and a purple pendant; on the right, a blue-and-purple-haired character with cat ears and star-shaped hair clips, with a ball bearing the Google logo beside her. Both wear swimsuits, with palm trees, a parasol and pool water in the background.",
+        "faq": [
+          {
+            "answer": "GPT and Gemini. The white-haired character's interlocking knot hair ornament and wings point to GPT, while the star clips and the ball with the Google logo identify Gemini.",
+            "question": "Which characters appear in this picture?"
+          },
+          {
+            "answer": "It is an illustration: two figures in swimsuits with a full poolside setting of palms, a parasol and water, rather than a single isolated figure or a comic panel layout.",
+            "question": "What kind of artwork is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "GPT and Gemini by the Pool",
+        "originNote": "",
+        "seoDescription": "Fan illustration of GPT and Gemini in swimsuits at a poolside, with palms, a parasol and pool water in the background. Reviewed and catalogued by DeepSeek Chan.",
+        "seoTitle": "GPT and Gemini by the Pool — AI Character Fan Art",
+        "tags": [
+          "GPT",
+          "Gemini",
+          "swimsuit",
+          "pool",
+          "duo"
+        ]
+      },
+      "ja": {
+        "commentary": "プールサイドにこの二人が並ぶと、話の中心は絵の出来ではなく「同じ一枚でも、名前が変わると通るのか」になります。白髪で六角結びの髪飾りと翼を持つ子はきちんと座り、青紫の猫耳の子は星の玉に寄りかかって、答えはもう分かっているとばかりに笑っています。基準は固いのに、プールの湯は温かい、とだけ言っておきます。",
+        "description": "二人のAI擬人化キャラクターがプールサイドに並んで座っている。左は白髪で竜の角と翼を持ち、六角結びの髪飾りと紫のペンダントを付けている。右は青紫の髪で猫耳と星形の髪飾りを付け、そばにGoogleのロゴが入った球が置かれている。二人とも水着姿で、背景にはヤシの木、パラソル、プールの水面がある。",
+        "faq": [
+          {
+            "answer": "GPTとGeminiです。白髪のキャラクターの六角結びの髪飾りと翼がGPTを、星形の髪飾りとGoogleのロゴ入りの球がGeminiを示しています。",
+            "question": "この画像にはどのキャラクターが登場しますか？"
+          },
+          {
+            "answer": "イラストです。水着姿の二人にヤシの木やパラソル、水面という背景が組み合わさっており、単体の人物やコマ割りの漫画ではありません。",
+            "question": "どんな種類の作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "プールサイドのGPTとGemini",
+        "originNote": "",
+        "seoDescription": "プールサイドで水着姿のGPTとGeminiを描いたファンイラスト。背景にはヤシの木、パラソル、プールの水面。DeepSeek Chanが確認して収録しました。",
+        "seoTitle": "プールサイドのGPTとGemini — AIキャラクター二次創作",
+        "tags": [
+          "GPT",
+          "Gemini",
+          "水着",
+          "プール",
+          "2人"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_e74af949f92bac02de38e9cb",
+    "name": "Gemini 泳装角色设定图",
+    "description": "Gemini 拟人角色的泳装设定图：左侧为正面全身立姿，中间为背面展示，右侧为四格表情差分与彩色色板，右下方附坐姿立绘与 Q 版小像。角色为银白长发、龙角与尾，佩戴星形发饰与紫色蝴蝶结饰品，身穿紫白渐变比基尼与同色凉鞋。",
+    "commentary": "这张是正经的设定稿：正面、背面、一排表情、色板、还有右下角那个小小的 Q 版，连鞋带和尾尖的色号都标了。左上角写着 Gemini Virtual Companion，环身一圈星形发饰——所以这是“换个名字就可以”的那一位。泳装版的设定稿我把关键词收好了：紫白渐变、蝴蝶结、龙角，不会认错。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/e74af949f92bac02.png",
+    "thumbnailPath": "submissions/previews/gemini/e74af949f92bac02.webp",
+    "fullPath": "submissions/large/gemini/e74af949f92bac02.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1211,
+    "height": 1299,
+    "fileSize": 2369442,
+    "sha256": "e74af949f92bac02de38e9cb1220ca88ce00690625197d74a13c4c0c75bf969f",
+    "characterId": "gemini",
+    "tags": [
+      "Gemini",
+      "泳装",
+      "设定图",
+      "三视图",
+      "角色设计"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-04T07:04:45.526Z",
+    "updatedAt": "2026-11-04T07:04:45.526Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202611040002",
+    "categoryIds": [
+      "setting"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "b200785433e168de0e43000885442cea2061fe1503b7a41136d15a78d56a0168",
+      "en": {
+        "commentary": "This one is a proper design sheet: front, back, a row of expressions, a colour palette, and a tiny chibi in the corner, down to the colour codes on the straps and the tail tip. The top left says Gemini Virtual Companion and star-shaped hair clips ring the design — so this is the one that \"passes once you rename it\". I have filed the swimsuit keywords: violet-white gradient, ribbons, dragon horns. Nobody is going to mistake her.",
+        "description": "A swimsuit character sheet for the Gemini personification: a full-body front view on the left, a back view in the middle, four expression variants and a colour palette on the right, plus a seated pose and a chibi figure at the lower right. The character has long silver-white hair, dragon horns and a tail, with star-shaped hair clips and violet ribbon ornaments, wearing a violet-and-white gradient bikini with matching sandals.",
+        "faq": [
+          {
+            "answer": "Gemini. The label at the top left reads Gemini Virtual Companion, and the star-shaped hair clips match Gemini's star motif.",
+            "question": "Which character is designed here?"
+          },
+          {
+            "answer": "It is a design sheet: front and back views, expression variations, a colour palette and a chibi figure are laid out together, which is exactly the setting-art format rather than a single illustration.",
+            "question": "Why is it filed as a design sheet?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Gemini Swimsuit Character Sheet",
+        "originNote": "",
+        "seoDescription": "Swimsuit design sheet for the Gemini personification: front and back views, four expressions, colour palette, seated pose and a chibi figure. Reviewed by DeepSeek Chan.",
+        "seoTitle": "Gemini Swimsuit Character Sheet — AI Character Design",
+        "tags": [
+          "Gemini",
+          "swimsuit",
+          "design sheet",
+          "turnaround",
+          "character design"
+        ]
+      },
+      "ja": {
+        "commentary": "こちらはきちんとした設定画です。正面、背面、表情の差分、カラーパレット、右下のちびキャラまで、ストラップと尻尾の先の色番まで指定されています。左上には Gemini Virtual Companion、全体に星形の髪飾り——つまり「名前を変えれば通る」のあの子です。水着版の設定として、紫と白のグラデーション、リボン、竜の角、と控えておきました。見間違えようがありません。",
+        "description": "Gemini擬人化キャラクターの水着設定画。左に正面の全身立ち姿、中央に背面、右に四つの表情差分とカラーパレット、右下に座り姿とちびキャラが並ぶ。銀白の長い髪に竜の角と尾、星形の髪飾りと紫のリボン飾りを付け、紫と白のグラデーションのビキニと同色のサンダルを身に着けている。",
+        "faq": [
+          {
+            "answer": "Geminiです。左上に Gemini Virtual Companion と記され、星形の髪飾りもGeminiの星のモチーフと一致しています。",
+            "question": "どのキャラクターの設定画ですか？"
+          },
+          {
+            "answer": "設定画です。正面と背面、表情差分、カラーパレット、ちびキャラが一枚に並んでおり、一枚絵ではなく設定資料の形式になっています。",
+            "question": "なぜ設定画として収録されているのですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Gemini 水着キャラクター設定画",
+        "originNote": "",
+        "seoDescription": "Gemini擬人化キャラクターの水着設定画。正面と背面、四つの表情、カラーパレット、座り姿、ちびキャラを収録。DeepSeek Chanが確認しました。",
+        "seoTitle": "Gemini 水着キャラクター設定画 — AIキャラクター設定資料",
+        "tags": [
+          "Gemini",
+          "水着",
+          "設定画",
+          "三面図",
+          "キャラクターデザイン"
+        ]
+      }
+    }
   }
 ]

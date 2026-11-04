@@ -173,8 +173,8 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i1.hdslb.com/bfs/face/dc1f27c0f1a5448837edfa9e56ecdbf685c23479.jpg",
       "i18n": {
-        "en": "A Bilibili creator running a daily DeepSeek Chan fan animation series, posting short episodes and operation logs about the character.",
-        "ja": "BilibiliでDeepSeekちゃんの日常を描くファンアニメを毎日投稿している制作者。短編エピソードと運営ログを公開している。"
+        "en": "DeepSeek鲸鱼娘在运营 posts short clips and song covers featuring the fan-made DeepSeek whale-maid character, with viewer requests collected in the comments.",
+        "ja": "DeepSeek鲸鱼娘在运营は、ファン制作のDeepSeekクジラメイドキャラクターを題材に、歌ってみたや短い動画を投稿している。リクエストはコメント欄で募集している。"
       }
     },
     {
@@ -190,6 +190,31 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1zdxS6uE4j",
+      "uid": "3747573030456892",
+      "title": "【Day16】鲸鱼娘唱《雨爱》司凤版！邦吧邦吧邦吧…",
+      "description": "被 45 个人点了歌，本鲸只好去听了《雨爱》司凤版。\n邦吧邦吧邦吧……听完感觉，真的老通透了。\n这次本鲸从头唱到尾，一刀没剪，海底还下了一场雨。\n作业：下一首想听本鲸唱什么？评论区点歌，点赞高的本鲸都记在小本本上～\n\n原唱：杨丞琳《雨爱》｜司凤版改编：随安SuiAan（BV1faak6AEzm）｜点歌：@小四___\n歌声为 AI 音色转换，画面为 AI 生成｜本视频含 AI 生成内容｜二创角色，非深度求索官方\n鲸鱼娘基于「溟月：上善无形」及 ZipZipPipe 的 DeepSeek 女仆鲸鱼娘设计二次创作。",
+      "url": "https://www.bilibili.com/video/BV1zdxS6uE4j/",
+      "cover": "https://i2.hdslb.com/bfs/archive/2c6013b1369baed0687e9084689ea5532a2ac578.jpg",
+      "duration": 143,
+      "publishedAt": "2026-11-04T03:41:10.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "title": "[Day 16] DeepSeek Chan Sings the Sifeng Version of \"Yu Ai\"! Bang Bang Bang...",
+          "description": "The chibi DeepSeek Chan in her whale-maid outfit performs a complete, unedited cover of Rain Love (Yu Ai) in the Sifeng arrangement, animated in an underwater setting where a rain of light falls through the sea. The song was requested by viewers and picked up after 45 likes. The vocals use AI timbre conversion and the visuals are AI-generated; the character is a fan creation and not an official DeepSeek design.",
+          "creatorIntro": "DeepSeek鲸鱼娘在运营 posts short clips and song covers featuring the fan-made DeepSeek whale-maid character, with viewer requests collected in the comments."
+        },
+        "ja": {
+          "title": "【Day16】DeepSeekちゃんが「雨愛」司鳳版を歌ってみた！バンバンバン…",
+          "description": "ちびキャラのDeepSeekちゃんが、クジラのメイド服姿で「雨愛」の司鳳版をフルコーラス、編集なしで歌う動画。海中で光の雨が降る幻想的な映像が続く。視聴者からのリクエスト曲で、45いいねを集めて実現した。歌声はAI音色変換、映像はAI生成で、キャラクターはファンによる二次創作であり公式デザインではない。",
+          "creatorIntro": "DeepSeek鲸鱼娘在运营は、ファン制作のDeepSeekクジラメイドキャラクターを題材に、歌ってみたや短い動画を投稿している。リクエストはコメント欄で募集している。"
+        }
+      }
+    },
     {
       "bvid": "BV1qgxm6wEd2",
       "uid": "44748304",
