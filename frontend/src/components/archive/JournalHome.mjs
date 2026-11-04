@@ -1,5 +1,6 @@
 export function journalHomeSections(ctx) {
-  const {topics,galleryWorks,snapshot,esc,tr,icon,grid}=ctx;
+  const {topics:allTopics,galleryWorks,snapshot,esc,tr,icon,grid}=ctx;
+  const topics=allTopics.filter(topic=>!topic.reader);
   const titles={maojing:['猫鲸的日常','Maojing, day by day','猫鯨の日常'],constructivism:['构成主义','Constructivism','構成主義']};
   const named=topic=>tr('journal.topic.'+topic.id,...(titles[topic.id]||[topic.name,topic.i18n?.en?.name||topic.name,topic.i18n?.ja?.name||topic.name]));
   const label=(key,zh,en,ja)=>tr('journal.'+key,zh,en,ja);

@@ -1,7 +1,8 @@
 import {journalHomeSections} from './JournalHome.mjs';
 import {homeDownloadSection} from './HomeDownloads.mjs';
 export function createDiscovery(ctx) {
-  const { works, chars, types, topics, bySlug, esc, tr, old, icon, button, grid, sectionHead, collectionCard, roleCard, pageHead, write } = ctx;
+  const { galleryWorks:works, chars, types, topics:allTopics, bySlug, esc, tr, old, icon, button, grid, sectionHead, collectionCard, roleCard, pageHead, write } = ctx;
+  const topics=allTopics.filter(topic=>!topic.reader);
 const featured = topics.find(t => t.id === 'maojing');
 const homeHead=(...args)=>pageHead(...args)
   .replace('<p class="lede">',`<p class="home-brand-lede">${tr("homeBrandLead","蓝色大肥鱼 · AI 娘表情包与二创档案","Blue Dafeiyu · AI girl memes and fan art","藍色大肥魚 · AI娘スタンプと二次創作アーカイブ")}</p><details class="journal-home-intro"><summary>${tr('journal.about','关于这个档案','About this archive','このアーカイブについて')}</summary><p class="lede">`)

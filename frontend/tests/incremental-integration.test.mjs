@@ -95,6 +95,10 @@ test('real Astro builds: no-op, edits, additions, removals, cold-cache fallback 
  }
  const serialFull=build('serial-added-full','noop',['--full']);sameArtifacts(serialIncremental.out,serialFull.out,'serial membership incremental artifacts');
  write(sample);
+ // Restore both the release and Astro's cache before testing an unrelated component edit.
+ const serialRestored=build('serial-restored','serial-added-full');
+ assert.equal(serialRestored.report.mode,'incremental');
+ sameArtifacts(serialRestored.out,initial.out,'removing serial membership restores the original release',[path.basename(extra)]);
  const orphan=path.join(fixture,'frontend/out/works/orphan-from-failed-build.html');
  fs.writeFileSync(orphan,'<html><body>未发布的临时作品</body></html>');
  const prebuilt=build('prebuilt','missing-baseline',[],{PUBLISH_PREBUILT_DIR:initial.out});

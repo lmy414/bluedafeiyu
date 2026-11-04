@@ -18,7 +18,8 @@ test('selected topic covers lead collection artwork without changing member orde
   const cover=data.works.find(work=>work.id===coverId);
   const doc=read('topics/'+topic.id+'.html');
   assert.equal(doc.querySelector(topic.reader?'.comic-sheet img':'.topic-mosaic img').getAttribute('src'),topic.reader?cover.l:cover.i,topic.id+' hero cover');
-  assert.equal(index.querySelector(`a[href="/topics/${topic.id}.html"] .collection-art img`).getAttribute('src'),cover.i,topic.id+' collection card cover');
+  if(topic.reader)assert.equal(index.querySelector(`.collection-card[href="/topics/${topic.id}.html"]`),null,topic.id+' stays in serials');
+  else assert.equal(index.querySelector(`a[href="/topics/${topic.id}.html"] .collection-art img`).getAttribute('src'),cover.i,topic.id+' collection card cover');
   const homeCard=home.querySelector(`.collection-grid a[href="/topics/${topic.id}.html"] .collection-art img`);
   if(homeCard)assert.equal(homeCard.getAttribute('src'),cover.i,topic.id+' homepage card cover');
   if(topic.reader)assert.deepEqual(data.topics.find(t=>t.id===topic.id).reader.pages,topic.reader.pages,topic.id+' original page order');

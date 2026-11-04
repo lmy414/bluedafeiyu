@@ -29,6 +29,7 @@ import {registerCommunityContacts} from '../components/library/CommunityContacts
 import {createPageModel} from '../components/library/page-model.mjs';
 import {videoArchive} from './video-archive.mjs';
 import {events} from './events.mjs';
+import {serialWorkIds as getSerialWorkIds} from '../../public/archive/topic-visibility.js';
 const root = process.env.SITE_SOURCE || path.resolve(process.cwd(), '..');
 const read = name => JSON.parse(fs.readFileSync(path.join(root, 'frontend/src/data', name), 'utf8'));
 const works = Object.entries(overlayData()).map(([slug,w])=>({...w,slug}));
@@ -38,19 +39,19 @@ const types = snapshot.categories.filter(t=>t.status==='active');
 // 同步进站点仓 dist/author-avatars/。这里按 topic 探测文件，缺失或探测失败时静默回退。
 const authorAvatarDir=path.join(path.dirname(process.env.SITE_SNAPSHOT||path.join(root,'dist/site-data.json')),'author-avatars');
 const topicAvatar=id=>{try{return fs.statSync(path.join(authorAvatarDir,id+'.webp')).isFile()?'/author-avatars/'+id+'.webp':null}catch{return null}};
+const serialWorkIds = getSerialWorkIds(snapshot.topics);
 const topics = snapshot.topics.filter(t=>t.status!=='removed').map(t=>{
-  const list=t.workIds.map(id=>byId.get(id)).filter(Boolean);
+  const list=t.workIds.map(id=>byId.get(id)).filter(w=>w&&(t.reader||!serialWorkIds.has(w.id)));
   const cover=list.find(w=>w.id===t.coverWorkId)||(t.reader?null:list[0]);
   const art=[cover,...list.filter(w=>w!==cover)].filter(Boolean).slice(0,3);
   return {...t,list,cover,art,avatar:topicAvatar(t.id),eyebrow:t.author?'作者作品集':'主题合集'};
-});
-const serialWorkIds = new Set(topics.filter(topic=>topic.reader).flatMap(topic=>topic.workIds));
+}).filter(t=>t.list.length);
 const galleryWorks = works.filter(work=>!serialWorkIds.has(work.id));
 const chars = snapshot.characters.filter(c=>c.status==='active').map(c=>{
   const allList=works.filter(w=>w.cids.includes(c.id));
   return {...c,allList,list:allList.filter(w=>!serialWorkIds.has(w.id))};
 }).filter(c=>c.allList.length).sort((a,b)=>b.list.length-a.list.length);
-const tagCounts=new Map();for(const w of works)for(const tag of w.tg)tagCounts.set(tag,(tagCounts.get(tag)||0)+1);
+const tagCounts=new Map();for(const w of galleryWorks)for(const tag of w.tg)tagCounts.set(tag,(tagCounts.get(tag)||0)+1);
 const translations={en:{'d.navigationToggle':'Toggle navigation','d.saveWork':'Save work','d.saveCreator':'Save creator','d.saved':'Saved','d.unsave':'Remove from saved','d.savedTitle':'Saved works','d.storageUnavailable':'Your browser could not save this item.'},ja:{'d.navigationToggle':'ナビゲーションを切り替え','d.saveWork':'作品を保存','d.saveCreator':'作者を保存','d.saved':'保存済み','d.unsave':'お気に入りから削除','d.savedTitle':'お気に入り','d.storageUnavailable':'ブラウザーに保存できませんでした。'}};
 for (const [key, row] of Object.entries(videoCopy)) { translations.en['d.' + key] = row[1]; translations.ja['d.' + key] = row[2]; }
 for (const [key, row] of Object.entries(shareCopy)) { translations.en['d.' + key] = row[1]; translations.ja['d.' + key] = row[2]; }

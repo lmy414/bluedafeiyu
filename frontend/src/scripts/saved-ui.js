@@ -1,6 +1,7 @@
 import {readSaved,toggleSaved} from '../../public/archive/saved-items.js';
 import {loadArchiveData} from '../../public/archive/data-loader.js';
 import {renderWorkCard} from '../../public/archive/work-card.js';
+import {nonSerialWorks} from '../../public/archive/topic-visibility.js';
 
 const text=(key,fallback)=>window.SiteLang?.t(key,fallback) || fallback;
 let frame;
@@ -47,7 +48,7 @@ if(document.querySelector('[data-saved-grid]')){
     const saved=new Set(readSaved('works'));
     if(saved.size && !data){try{data=await loadArchiveData();}catch{return;}}
     if(current!==generation)return;
-    const works=(data?.works || []).filter(w=>saved.has(w.slug));
+    const works=nonSerialWorks(data?.works || [],data?.topics).filter(w=>saved.has(w.slug));
     const grid=document.querySelector('[data-saved-grid]');
     grid.innerHTML=works.map(w=>renderWorkCard(window.SiteLang?.localWork(w)||w,{
       url:href=>window.SiteLang?.url(href)||href,translate:text,names:value=>window.SiteLang?.contentText(value)||value

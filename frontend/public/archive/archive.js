@@ -5,6 +5,7 @@ import {installTopicDownloads} from './topic-download.js?v=4';
 import {loadArchiveData} from './data-loader.js?v=1';
 import {matchesCreationMethod} from './creation-method.js';
 import {orderWorks, shuffledSlugs} from '../components/work-order.js';
+import {nonSerialWorks} from './topic-visibility.js';
 (() => {
   'use strict';
   const $ = (selector, parent = document) => parent.querySelector(selector);
@@ -161,7 +162,7 @@ import {orderWorks, shuffledSlugs} from '../components/work-order.js';
       if(['popular','downloads'].includes(form.elements.sort.value))await window.WorkStats?.ready;
       dataset=d;
       const slugs=result.dataset.list?JSON.parse(result.dataset.list):null;
-      all=slugs?slugs.map(s=>d.works.find(w=>w.slug===s)).filter(Boolean):d.works;
+      all=nonSerialWorks(slugs?slugs.map(s=>d.works.find(w=>w.slug===s)).filter(Boolean):d.works,d.topics);
       shown=history.state?.feedVersion===7?history.state.feedShown||24:24;
       if(['popular','downloads'].includes(form.elements.sort.value)&&!window.WorkStats?.available())form.elements.sort.value=defaultState.sort;
       if(['character','type','sort','direction','view','creation'].some(name=>params.has(name)))setURL();
