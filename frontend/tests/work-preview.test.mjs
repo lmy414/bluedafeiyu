@@ -11,12 +11,12 @@ const work = slug => ({slug,id:'id-'+slug,n:'Title '+slug,d:'Description',i:'/th
 const flush = () => new Promise(resolve => setImmediate(resolve));
 function fixture({load,prefix='',localize=w=>w,names=value=>value} = {}) {
   const works = ['a','b','c'].map(work);
-  const {document,window} = parseHTML(`<html><body><div class="work-grid" id="one">${works.slice(0,2).map(w=>renderWorkCard(w)).join('')}</div><div class="work-grid" id="two">${renderWorkCard(works[2])}</div><dialog id="preview-dialog"><button data-preview-close>Close</button><div id="preview-body"></div></dialog><dialog id="share-card-dialog"></dialog></body></html>`);
+  const {document,window} = parseHTML(`<html><body><main id="main"><div id="results"><div class="work-grid" id="one">${works.slice(0,2).map(w=>renderWorkCard(w)).join('')}</div></div><div class="work-grid" id="two">${renderWorkCard(works[2])}</div></main><dialog id="preview-dialog"><button data-preview-close>Close</button><div id="preview-body"></div></dialog><dialog id="share-card-dialog"></dialog></body></html>`);
   const dialog = document.querySelector('#preview-dialog'), locks = [], views = [], errors = [];
   let focused;
   document.addEventListener('work:show',event=>{assert.equal(event.detail.viewType,'preview');views.push(event.detail.id);});
   const trackFocus = () => {
-    for (const node of document.querySelectorAll('a,button')) node.focus = options => {focused={node,options};};
+    for (const node of document.querySelectorAll('a,button,[id]')) node.focus = options => {focused={node,options};};
   };
   trackFocus();
   document.addEventListener('preview:render',trackFocus);
@@ -31,7 +31,11 @@ function fixture({load,prefix='',localize=w=>w,names=value=>value} = {}) {
   const key = (key,target=focused?.node||document.querySelector('[data-preview-close]')) => {
     const event = new window.Event('keydown',{bubbles:true,cancelable:true});event.key=key;target.dispatchEvent(event);return event;
   };
-  return {works,document,window,dialog,controller,locks,views,errors,click,key,focused:()=>focused};
+  const redraw = items => {
+    document.querySelector('#results').innerHTML='<div class="work-grid" id="one">'+items.map(w=>renderWorkCard(w)).join('')+'</div>';
+    trackFocus();
+  };
+  return {works,document,window,dialog,controller,locks,views,errors,click,key,redraw,focused:()=>focused};
 }
 
 test('both card entry links announce the shared preview and retain localized, crawlable detail URLs',()=>{
@@ -148,6 +152,52 @@ test('Escape, backdrop and native close release the scroll lock and restore the 
     assert.equal(f.dialog.open,false);assert.equal(f.locks.at(-1),false);
     assert.equal(f.focused().node,trigger);assert.deepEqual(f.focused().options,{preventScroll:true});
   }
+});
+
+test('closing after asynchronous localization or sorting restores the replacement of the original trigger',async()=>{
+  for(const method of ['cancel','backdrop','native']){
+    const f=fixture(),trigger=f.document.querySelector('#one .work-title');
+    f.click(trigger);await flush();f.key('ArrowRight');await flush();
+    f.document.addEventListener('site:langchange',()=>f.redraw([f.works[1],f.works[0]]),{once:true});
+    f.document.dispatchEvent(new f.window.CustomEvent('site:langchange',{detail:{lang:'zh-Hant'}}));
+    assert.equal(trigger.isConnected,false);
+    if(method==='cancel')f.dialog.dispatchEvent(new f.window.Event('cancel',{cancelable:true}));
+    else if(method==='backdrop')f.click(f.dialog,{clientX:0,clientY:0});
+    else f.dialog.close();
+    const expected=f.document.querySelector('#results [data-slug="a"] .work-title');
+    assert.ok(f.focused().node===expected,'return to the original work and trigger kind after redraw');
+    assert.equal(f.locks.at(-1),false);assert.deepEqual(f.focused().options,{preventScroll:true});
+  }
+});
+
+test('a removed or hidden trigger returns to its current list, with a temporary container fallback when empty',async()=>{
+  for(const state of ['filtered','empty','hidden','removed']){
+    const f=fixture(),trigger=f.document.querySelector('#one .work-art');
+    f.click(trigger);await flush();
+    f.redraw(state==='filtered'?[f.works[2]]:[]);
+    const results=f.document.querySelector('#results');
+    if(state==='hidden')results.hidden=true;
+    if(state==='removed')results.remove();
+    f.controller.close();
+    const expected=state==='filtered'?results.querySelector('.work-art'):state==='empty'?results:f.document.querySelector('main');
+    assert.ok(f.focused().node===expected,'fallback stays on a usable current-list target');
+    assert.equal(expected.isConnected,true);assert.deepEqual(f.focused().options,{preventScroll:true});
+    if(state!=='filtered'){
+      assert.equal(expected.getAttribute('tabindex'),'-1');
+      expected.dispatchEvent(new f.window.Event('blur'));
+      assert.equal(expected.hasAttribute('tabindex'),false);
+    }
+  }
+});
+
+test('focus context survives a redraw while the initial data request is pending and resets for a new session',async()=>{
+  let finish;const f=fixture({load:()=>new Promise(resolve=>{finish=resolve;})});
+  f.click(f.document.querySelector('#one .work-art'));f.redraw([f.works[1],f.works[0]]);
+  finish({works:f.works});await flush();f.controller.close();
+  assert.ok(f.focused().node===f.document.querySelector('#results [data-slug="a"] .work-art'));
+  const next=f.document.querySelector('#two .work-art');
+  f.click(next);finish({works:f.works});await flush();f.controller.close();
+  assert.ok(f.focused().node===next,'a subsequent session keeps its own trigger');
 });
 
 test('preview requests cannot race, reopen after closing or swallow failures; zoom retains the details entry',async()=>{

@@ -17,20 +17,38 @@ export function installWorkPreview({load, localize = w => w, translate:tx, url, 
   const closeButton = dialog?.querySelector('[data-preview-close]');
   if (!dialog || !body || !closeButton || !dialog.showModal) return;
   let slugs = [], index = 0, focus, mode = 'work', request = 0, locked = false;
+  const listScope = '.work-grid,[data-feed-grid],[data-creator-rail],.home-downloads-list';
 
   const listFor = (opener, slug) => {
-    const scope = opener?.closest('.work-grid,[data-feed-grid],[data-creator-rail],.home-downloads-list');
+    const scope = opener?.closest(listScope);
     const items = scope ? [...scope.querySelectorAll('[data-preview]')]
       .filter(node => !node.closest('[hidden]')).map(node => node.dataset.preview) : [];
     const list = [...new Set(items)];
     return list.includes(slug) ? list : [slug];
   };
+  const returnContext = (node, slug) => {
+    if (node === doc.body || dialog.contains(node)) node = null;
+    const roots = [];
+    for (let root = node?.closest(listScope) || node?.parentElement; root && root !== doc.body && root.tagName !== 'MAIN'; root = root.parentElement) roots.push(root);
+    return {node, slug, title:!!node?.matches('.work-title'), roots};
+  };
+  const available = node => node?.isConnected && !node.closest('[hidden],[inert]') && !node.disabled && (!node.getClientRects || node.getClientRects().length > 0);
   const restore = () => {
     if (dialog.open || !locked) return;
     locked = false;
     request++;
     components.scrollLock(false);
-    if (focus?.isConnected) focus.focus({preventScroll:true});
+    const root = focus?.roots.find(available);
+    const links = root ? [...root.querySelectorAll('[data-preview],[data-image-open]')].filter(available) : [];
+    const matches = links.filter(node => (node.dataset.preview || node.dataset.imageOpen) === focus?.slug);
+    const target = available(focus?.node) ? focus.node : matches.find(node => node.matches('.work-title') === focus?.title) || matches[0] || links[0] || root || doc.querySelector('main');
+    if (available(target)) {
+      if (!target.matches('a[href],button,input,select,textarea,[tabindex]')) {
+        target.setAttribute('tabindex','-1');
+        target.addEventListener('blur',()=>{if(target.getAttribute('tabindex')==='-1')target.removeAttribute('tabindex');},{once:true});
+      }
+      target.focus({preventScroll:true});
+    }
     focus = undefined;
   };
   function close() {
@@ -41,6 +59,7 @@ export function installWorkPreview({load, localize = w => w, translate:tx, url, 
   async function open(slug, nextMode = 'work', opener, navigationStep) {
     const currentRequest = ++request;
     const nextSlugs = opener ? listFor(opener, slug) : slugs;
+    const returnFocus = returnContext(opener || doc.activeElement, slug);
     try {
       const data = await load();
       if (currentRequest !== request) return;
@@ -54,7 +73,7 @@ export function installWorkPreview({load, localize = w => w, translate:tx, url, 
       mode = nextMode;
       dialog.dataset.previewMode = mode;
       if (!dialog.open) {
-        focus = opener || doc.activeElement;
+        focus = returnFocus;
         dialog.showModal();
         components.scrollLock(true);
         locked = true;
