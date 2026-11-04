@@ -110364,5 +110364,207 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_b53d08ce0ff0091e23a9cb3b",
+    "name": "月夜广州塔上的白龙娘",
+    "description": "夜色中的广州塔顶层观景平台上，白发龙娘坐在栏杆边俯瞰珠江与两岸灯火，远处跨江大桥与满月一同入画。作者自述为半成品，人物坐姿与背景仍有优化空间。",
+    "commentary": "紫色灯光把整座城照得像一块刚渲染出来的图，白毛龙娘托着腮坐在塔顶发呆，长发和龙尾垂在栏杆外，风一吹就像在刷新页面。作者说这还只是半成品，可这种「没画完就已经很好看」的状态，反倒有点像我们跑到第七八步的时候——再给几步，珠江的灯大概会更亮。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/b53d08ce0ff0091e.png",
+    "thumbnailPath": "submissions/previews/gpt/b53d08ce0ff0091e.webp",
+    "fullPath": "submissions/large/gpt/b53d08ce0ff0091e.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 2806857,
+    "sha256": "b53d08ce0ff0091e23a9cb3bb0d631e6c8f7574fcbe09939d9af1d68603b79aa",
+    "characterId": "gpt",
+    "tags": [
+      "广州塔",
+      "夜景",
+      "龙娘",
+      "城市灯火",
+      "月亮"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "法学魔理沙",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-04T20:06:39.417Z",
+    "updatedAt": "2026-11-04T20:06:39.417Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202611040001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "e6c8c6997eddc9ec8ab82499cf9c220849f4cd53072cc785dbb0b5a6a7df56b6",
+      "en": {
+        "commentary": "The whole city had turned the color of a fresh render, all violet glass and light. She sat on the tower's rim with her chin in one hand, her long white hair and tail hanging past the railing, and every gust of wind looked like a page refresh. The artist calls it a work in progress, but that unfinished glow is exactly how we look around step seven — still a few passes away from lighting up the entire river.",
+        "description": "On the observation deck of Canton Tower at night, a white-haired dragon girl sits by the railing and looks out over the Pearl River and the lit skyline, with a river bridge and a full moon in the distance. The artist describes the piece as a work in progress, with the pose and background still open to improvement.",
+        "faq": [
+          {
+            "answer": "A white-haired dragon girl sits on the observation deck of Canton Tower at night, overlooking the Pearl River, the illuminated bridges and the full moon above the city.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "The artist describes it as a work in progress and notes that the character's pose and the background still have room for improvement.",
+            "question": "Is the artwork finished?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "White Dragon Girl Above Canton Tower at Night",
+        "originNote": "",
+        "seoDescription": "A white-haired dragon girl sits on Canton Tower's deck above the Pearl River at night, with city lights, a river bridge and a full moon behind her.",
+        "seoTitle": "White Dragon Girl Above Canton Tower at Night — GPT Chan Illustration",
+        "tags": [
+          "Canton Tower",
+          "night view",
+          "dragon girl",
+          "city lights",
+          "moon"
+        ]
+      },
+      "ja": {
+        "commentary": "街がまるごとレンダリング直後の紫色に染まっていて、白髪の龍娘が頬杖をついて塔の縁に座っていた。長い髪と尻尾が手すりの外へ垂れて、風が吹くたびにページを更新したみたいに見える。作者はまだ半製品だと言うけれど、この「描きかけなのにもう綺麗」な感じは、七、八ステップ目あたりの私たちにそっくりだ。あと数ステップで、珠江の灯りはもっと明るくなるだろう。",
+        "description": "夜の広州塔の展望デッキで、白髪の龍娘が手すりのそばに座り、珠江と両岸の灯りを見下ろしている。遠くには川をまたぐ橋と満月が描かれている。作者は半製品と述べており、人物の座り方と背景にはまだ改善の余地があるとしている。",
+        "faq": [
+          {
+            "answer": "夜の広州塔の展望デッキに白髪の龍娘が座り、珠江、灯りに照らされた橋、街の上に浮かぶ満月を見下ろすイラストです。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "作者は半製品と述べており、人物の座り方や背景にはまだ改善の余地があるとしています。",
+            "question": "完成した作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "月夜の広州塔に座る白龍娘",
+        "originNote": "",
+        "seoDescription": "夜の広州塔のデッキに座る白髪の龍娘。眼下に珠江の灯りと橋、空には満月が広がるイラストです。",
+        "seoTitle": "月夜の広州塔に座る白龍娘｜GPTちゃんのイラスト",
+        "tags": [
+          "広州塔",
+          "夜景",
+          "龍娘",
+          "都市の灯り",
+          "月"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_1b495edc75d2a4d30104d000",
+    "name": "万圣夜窗边的蓝鲸女仆",
+    "description": "蓝色长发的鲸尾少女身穿深蓝与白色相间的女仆装，站在暖色窗边。窗外有蝙蝠剪影，深蓝色的鲸尾上点缀着月亮与星星图案，整体是万圣节的秋夜氛围。",
+    "commentary": "万圣节的夜里我守在窗边，等糖果，也等新投稿。窗外的蝙蝠一只只飞过去，尾巴上的月亮和星星刚好配今晚的妆。别以为我只惦记着吃数据，这身裙子可是我挑了一整个下午的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/1b495edc75d2a4d3.webp",
+    "thumbnailPath": "submissions/previews/deepseek/1b495edc75d2a4d3.webp",
+    "fullPath": "submissions/large/deepseek/1b495edc75d2a4d3.webp",
+    "format": "webp",
+    "mimeType": "image/webp",
+    "isAnimated": false,
+    "width": 1612,
+    "height": 2688,
+    "fileSize": 2776550,
+    "sha256": "1b495edc75d2a4d30104d0003a75bde2502a23f7aceff10d77be2244a663927d",
+    "characterId": "deepseek",
+    "tags": [
+      "万圣节",
+      "女仆装",
+      "鲸尾",
+      "窗边",
+      "蓝色长发"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-04T21:36:40.382Z",
+    "updatedAt": "2026-11-04T21:36:40.382Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611040007",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "fff1323a223e93693f43439ab2862abda595251018859494e72caabba83dd266",
+      "en": {
+        "commentary": "On Halloween night I keep watch by the window, waiting for candy and for new submissions. Bats keep drifting past outside, and the moons and stars on my tail happen to match tonight's look. Don't think I only care about eating data — I spent a whole afternoon picking out this dress.",
+        "description": "A girl with long blue hair and a whale tail stands by a warm-lit window in a navy-and-white maid outfit. Bat silhouettes pass outside, and her deep blue tail is patterned with moons and stars, giving the scene an autumn Halloween mood.",
+        "faq": [
+          {
+            "answer": "A girl with long blue hair and a whale tail, wearing a navy-and-white maid outfit, stands beside a warm-lit window. Bats are silhouetted outside, and her tail carries moon and star patterns.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "It is DeepSeek Chan, the site's mascot, drawn here in a Halloween-themed maid costume with her signature whale tail.",
+            "question": "Which character is depicted?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Blue Whale Maid by the Halloween Window",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan as a blue-haired whale girl in a maid outfit by a Halloween window, with bat silhouettes and a moon-and-star tail.",
+        "seoTitle": "Blue Whale Maid by the Halloween Window — DeepSeek Chan Fan Art",
+        "tags": [
+          "Halloween",
+          "maid outfit",
+          "whale tail",
+          "window",
+          "blue hair"
+        ]
+      },
+      "ja": {
+        "commentary": "ハロウィンの夜、私は窓辺で待っている。お菓子を、そして新しい投稾を。外ではコウモリがひっきりなしに飛んでいって、尾の月と星が今夜の装いにちょうど合っている。データを食ることしか考えていないなんて思わないで。この服は丸々一午後かけて選んだんだから。",
+        "description": "青い長い髪とくじらの尾を持つ少女が、紺と白のメイド服姿で暖かな光の窓辺に立っている。外にはコウモリの影、紺色の尾には月と星の模様が描かれ、秋のハロウィンの雰囲気を漂わせている。",
+        "faq": [
+          {
+            "answer": "青い長い髪とくじらの尾を持つ少女が、紺と白のメイド服で暖かな光の窓辺に立っています。外にはコウモリの影、尾には月と星の模様があります。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "サイトのマスコットである DeepSeek ちゃんを、ハロウィン向けのメイド衣装で描いたものです。",
+            "question": "描かれているキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ハロウィンの窓辺のブルーくじらメイド",
+        "originNote": "",
+        "seoDescription": "DeepSeek ちゃんが青い髪とくじらの尾を持つメイド姿でハロウィンの窓辺に立つイラスト。コウモリの影と月と星の尾が印象的。",
+        "seoTitle": "ハロウィンの窓辺のブルーくじらメイド｜ファンアート",
+        "tags": [
+          "ハロウィン",
+          "メイド服",
+          "くじらの尾",
+          "窓辺",
+          "青い髪"
+        ]
+      }
+    }
   }
 ]
