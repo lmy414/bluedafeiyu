@@ -109957,5 +109957,412 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_e46e9cb0d0523d428ea8b05a",
+    "name": "船舶之眠",
+    "description": "月夜的海面泛着粼粼波光，木船甲板上，一位黑发少年被三位少女簇拥着休息：蓝发少女靠在他肩头，橙发少女枕在他腿上，白发长角、背生双翼的少女从身后探身贴近。冷蓝的夜色与提灯的暖光形成对照。",
+    "commentary": "月亮好亮，整片海都像在呼吸。被大家这样围着睡一觉，连浪声都显得比平时轻。就是甲板有点硬，醒来大概要揉一揉腰。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/e46e9cb0d0523d42.png",
+    "thumbnailPath": "submissions/previews/deepseek/e46e9cb0d0523d42.webp",
+    "fullPath": "submissions/large/deepseek/e46e9cb0d0523d42.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1402,
+    "height": 1122,
+    "fileSize": 2996411,
+    "sha256": "e46e9cb0d0523d428ea8b05a008e569568750bbed3864b134f526e87e081b2de",
+    "characterId": "deepseek",
+    "tags": [
+      "月夜",
+      "海上",
+      "群像",
+      "多角色",
+      "治愈"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "更吹落，星如雨",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-04T11:13:48.736Z",
+    "updatedAt": "2026-11-04T11:13:48.736Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611040003",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "3582a577f427893982d0aab471997af7e00912871efc40ff445ac4bea759c4c2",
+      "en": {
+        "commentary": "The moon is so bright tonight that the whole sea looks like it is breathing. Sleeping like this, with everyone close, makes the waves sound quieter than usual. The deck is a little hard, though, so I will be stretching my back when I wake up.",
+        "description": "On a wooden deck under a moonlit sea, a dark-haired young man rests among three girls: a blue-haired girl leaning against his shoulder, an orange-haired girl dozing on his lap, and a white-haired, horned girl with wings leaning in from behind. Cool blue night tones contrast with the warm glow of a lantern.",
+        "faq": [
+          {
+            "answer": "A group of characters resting together on a wooden ship deck beneath a full moon, with the night sea stretching out behind them.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "DeepSeek Chan, a blue-haired character with a whale-like tail ornament, appears alongside an orange-haired girl and a white-haired girl with horns and wings.",
+            "question": "Which characters appear in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Sleep Aboard the Ship",
+        "originNote": "",
+        "seoDescription": "A moonlit ship-deck fan illustration in which DeepSeek Chan and her companions rest together in the sea breeze.",
+        "seoTitle": "Sleep Aboard the Ship - DeepSeek Chan fan illustration",
+        "tags": [
+          "moonlit night",
+          "at sea",
+          "group",
+          "multiple characters",
+          "healing"
+        ]
+      },
+      "ja": {
+        "commentary": "月が明るくて、海全体が呼吸しているみたい。みんなに囲まれて眠ると、波の音がいつもより静かに聞こえる。でも甲板は少し硬いから、起きたら腰を伸ばさないと。",
+        "description": "月明かりの海を背景に、木の甲板で黒髪の少年が三人の少女に囲まれて休息している。青い髪の少女は肩にもたれ、オレンジ髪の少女は膝の上でうたた寝をし、白い髪に角と翼を持つ少女が後ろから身を寄せている。冷たい青の夜色と提灯の暖かな光が対照的だ。",
+        "faq": [
+          {
+            "answer": "満月の下、木の甲板で登場人物たちが寄り添って休んでおり、背後には夜の海が広がっている。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "青い髪とクジラを思わせる尾の飾りを持つDeepSeekちゃんのほか、オレンジ髪の少女と、白い髪に角と翼を持つ少女が描かれている。",
+            "question": "誰が描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "船の上の眠り",
+        "originNote": "",
+        "seoDescription": "月夜の船の甲板で、DeepSeekちゃんたちが海風の中で寄り添って休むファンイラスト。",
+        "seoTitle": "船の上の眠り｜DeepSeekちゃんのファンイラスト",
+        "tags": [
+          "月夜",
+          "海",
+          "群像",
+          "複数キャラ",
+          "癒し"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_dcb921cd61c9b20322f93cd9",
+    "name": "在房间里的睡眠",
+    "description": "室内床铺上，黑发少年与蓝发、橙发、白发长角的少女依偎入睡，蓝色长发与白色裙装铺满床面，窗边透入冷调天光。",
+    "commentary": "床比甲板软多了。被子是有点挤，不过被抱着睡的感觉还不错。就是头发全缠在一起了，明早大概要梳很久。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/dcb921cd61c9b203.png",
+    "thumbnailPath": "submissions/previews/deepseek/dcb921cd61c9b203.webp",
+    "fullPath": "submissions/large/deepseek/dcb921cd61c9b203.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1402,
+    "height": 1122,
+    "fileSize": 2651286,
+    "sha256": "dcb921cd61c9b20322f93cd9341403e91cff97133c1f351963efada07dc157b4",
+    "characterId": "deepseek",
+    "tags": [
+      "睡眠",
+      "室内",
+      "群像",
+      "多角色",
+      "治愈"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "更吹落，星如雨",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-04T11:14:22.463Z",
+    "updatedAt": "2026-11-04T11:14:22.463Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611040004",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "2aa820035e3fac0de9e25bb4706c3cfca23021fbec71001c56208d0cc3c094a6",
+      "en": {
+        "commentary": "This bed is much softer than the deck. The blanket is a little crowded, but being held while falling asleep is not bad at all. Our hair is tangled together, though, so tomorrow morning will mean a long brushing session.",
+        "description": "Inside a bedroom, a dark-haired young man sleeps among three girls: one with long blue hair, one with orange hair, and a white-haired girl with horns and wings. Blue tresses and white dresses spread across the bed while cool daylight comes in from the window.",
+        "faq": [
+          {
+            "answer": "A group of characters asleep together on a bed in a softly lit room, with cool light coming through the window.",
+            "question": "What is depicted here?"
+          },
+          {
+            "answer": "DeepSeek Chan with her long blue hair, an orange-haired girl, and a white-haired girl with horns and wings, all resting beside a dark-haired young man.",
+            "question": "Which characters are shown?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Sleeping in the Room",
+        "originNote": "",
+        "seoDescription": "An indoor fan illustration of DeepSeek Chan and her companions asleep together on a bed in cool window light.",
+        "seoTitle": "Sleeping in the Room - DeepSeek Chan fan illustration",
+        "tags": [
+          "sleep",
+          "indoors",
+          "group",
+          "multiple characters",
+          "healing"
+        ]
+      },
+      "ja": {
+        "commentary": "ベッドは甲板よりずっと柔らかい。布団は少し狭いけど、抱かれながら眠るのは悪くない。ただ髪が絡まってしまったから、明日の朝は梳くのに時間がかかりそう。",
+        "description": "室内のベッドの上で、黒髪の少年と、青い髪・オレンジ髪・白い髪に角を持つ三人の少女が寄り添って眠っている。青い長い髪と白いドレスがシーツ一面に広がり、窓から冷たい色の光が差し込む。",
+        "faq": [
+          {
+            "answer": "淡い光の室内で、ベッドの上に登場人物たちが寄り添って眠っており、窓から冷たい色の光が差し込んでいる。",
+            "question": "この画像には何が描かれていますか？"
+          },
+          {
+            "answer": "長い青い髪のDeepSeekちゃん、オレンジ髪の少女、白い髪に角と翼を持つ少女が、黒髪の少年のそばで休んでいる。",
+            "question": "誰が描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "部屋の中の眠り",
+        "originNote": "",
+        "seoDescription": "窓から差し込む冷たい光の中で、DeepSeekちゃんたちがベッドに寄り添って眠る室内のファンイラスト。",
+        "seoTitle": "部屋の中の眠り｜DeepSeekちゃんのファンイラスト",
+        "tags": [
+          "睡眠",
+          "室内",
+          "群像",
+          "複数キャラ",
+          "癒し"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_b51290e7d8a5a17fe9bd296b",
+    "name": "在海面上的拥抱",
+    "description": "满月与星空的夜海之上，一位黑发少年站在鲸鱼背上，蓝发少女从他肩后嬉笑着抱住他，橙发少女挽着他的手臂，白发长角的少女靠在他另一侧，水花与气泡环绕四周。",
+    "commentary": "海面凉凉的，脚底下那个大家伙好像还在慢慢往前游。被这么多人一起抱住，连月亮都显得有点多余。不过别松手啊，掉下去可不好看。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/b51290e7d8a5a17f.png",
+    "thumbnailPath": "submissions/previews/deepseek/b51290e7d8a5a17f.webp",
+    "fullPath": "submissions/large/deepseek/b51290e7d8a5a17f.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1312,
+    "height": 1199,
+    "fileSize": 3009989,
+    "sha256": "b51290e7d8a5a17fe9bd296b5936bd4ad7deb094ea846cf661c0d6678387be58",
+    "characterId": "deepseek",
+    "tags": [
+      "月夜",
+      "海面",
+      "群像",
+      "多角色",
+      "拥抱"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "更吹落，星如雨",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-04T11:14:56.345Z",
+    "updatedAt": "2026-11-04T11:14:56.345Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611040005",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "7ad3361c72ccc87c79d077eb72b01b85f26826fad623afb73bd21f4b38d369bd",
+      "en": {
+        "commentary": "The sea surface feels cool, and the big fellow under our feet seems to be drifting forward slowly. With this many people holding on at once, even the moon feels a bit unnecessary. Nobody let go, though - falling in would be embarrassing.",
+        "description": "Above a night sea under a full moon and a starry sky, a dark-haired young man stands on the back of a whale while a blue-haired girl leans over his shoulder, an orange-haired girl holds his arm, and a white-haired girl with horns and wings rests against his other side. Spray and bubbles surround them.",
+        "faq": [
+          {
+            "answer": "Four characters gathered on the back of a whale in a moonlit sea, laughing and holding onto one another as water splashes around them.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "DeepSeek Chan, a blue-haired character whose whale tail rises behind the group, appears with an orange-haired girl and a white-haired girl with horns and wings.",
+            "question": "Which characters appear in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Embrace on the Sea",
+        "originNote": "",
+        "seoDescription": "A moonlit fan illustration of DeepSeek Chan and her companions embracing on a whale's back in a starry night sea.",
+        "seoTitle": "Embrace on the Sea - DeepSeek Chan fan illustration",
+        "tags": [
+          "moonlit night",
+          "sea",
+          "group",
+          "multiple characters",
+          "embrace"
+        ]
+      },
+      "ja": {
+        "commentary": "海面がひんやりしていて、足元の大きな生き物はゆっくり進んでいるみたい。こんなに大勢で抱きついていると、月明かりも少し余分に思える。でも手を離さないで、落ちたら格好悪いから。",
+        "description": "満月と星空の夜の海で、黒髪の少年がクジラの背に立ち、青い髪の少女が肩に身を寄せ、オレンジ髪の少女が腕を抱き、白い髪に角と翼を持つ少女が反対側にもたれかかっている。周囲には波しぶきと泡が浮かぶ。",
+        "faq": [
+          {
+            "answer": "月明かりの海でクジラの背に四人が集まり、水しぶきを浴びながら笑って互いに抱き合っている。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "青い髪で、背後にクジラの尾が上がるDeepSeekちゃんのほか、オレンジ髪の少女と、白い髪に角と翼を持つ少女が描かれている。",
+            "question": "誰が描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "海の上の抱擁",
+        "originNote": "",
+        "seoDescription": "星空の夜の海、クジラの背でDeepSeekちゃんたちが抱き合う月夜のファンイラスト。",
+        "seoTitle": "海の上の抱擁｜DeepSeekちゃんのファンイラスト",
+        "tags": [
+          "月夜",
+          "海",
+          "群像",
+          "複数キャラ",
+          "抱擁"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_8167280f260c72ad20c936ed",
+    "name": "抱臂鼓脸哼声的蓝色大肥鱼",
+    "description": "蓝色大肥鱼穿深蓝女仆装，双臂抱胸、闭眼鼓起脸颊歪头，头顶浮着红色怒气符号，右侧对话气泡写着「哼！」。",
+    "commentary": "哼，才不是特意摆出这副样子给你看的。被你盯了这么久，谁都会生气吧？……不过，你要是现在好好道歉的话，我也不是不能原谅你。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/8167280f260c72ad.png",
+    "thumbnailPath": "submissions/previews/deepseek/8167280f260c72ad.webp",
+    "fullPath": "submissions/large/deepseek/8167280f260c72ad.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1254,
+    "height": 1254,
+    "fileSize": 2276608,
+    "sha256": "8167280f260c72ad20c936ed6783e67e110abc3ddfa5e3b29805e067930ff2ab",
+    "characterId": "deepseek",
+    "tags": [
+      "傲娇",
+      "生气",
+      "女仆装",
+      "表情包",
+      "蓝色大肥鱼"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-04T12:08:20.623Z",
+    "updatedAt": "2026-11-04T12:08:20.623Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611040006",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "47bb9830106fbe6a6a23fd3b8bd68097c29448572fdaf92afee418203a310636",
+      "en": {
+        "commentary": "Hmph. I am not making this face for your sake, you know. Stare at a girl that long and of course she gets annoyed. ...Still, if you apologize properly right now, I suppose I could forgive you.",
+        "description": "DeepSeek Chan stands in a navy maid dress with her arms crossed, eyes shut and cheeks puffed as she turns her head aside. A red anger mark floats above her hair, and the speech bubble on the right reads \"Hmph!\"",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan in a navy maid dress, arms crossed with puffed cheeks, a red anger mark above her head and a speech bubble reading \"Hmph!\"",
+            "question": "What does this image show?"
+          },
+          {
+            "answer": "No. It is a single-frame reaction meme: the character, the anger mark and the speech bubble all sit in one picture with no panel divisions.",
+            "question": "Is this a multi-panel comic?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Crosses Her Arms with a Hmph",
+        "originNote": "",
+        "seoDescription": "A single-frame reaction meme of DeepSeek Chan in a navy maid dress, arms crossed and cheeks puffed, with a red anger mark and a \"Hmph!\" speech bubble.",
+        "seoTitle": "DeepSeek Chan Hmph Reaction Meme",
+        "tags": [
+          "tsundere",
+          "angry",
+          "maid outfit",
+          "meme",
+          "DeepSeek Chan"
+        ]
+      },
+      "ja": {
+        "commentary": "ふん、別にあなたに見せるためにこんな顔をしているわけじゃないんだから。そんなにじっと見られたら、誰だって怒るでしょう？……でも、今ちゃんと謝るなら、許してあげなくもないわよ。",
+        "description": "DeepSeek Chan が紺色のメイド服姿で腕を組み、目を閉じて頬をふくらませ、顔をそらしている。頭の上には赤い怒りマークが浮かび、右側の吹き出しには「ふん！」と書かれている。",
+        "faq": [
+          {
+            "answer": "紺色のメイド服で腕を組み、頬をふくらませた DeepSeek Chan の姿。頭上には赤い怒りマークが浮かび、吹き出しには「ふん！」と書かれている。",
+            "question": "この画像には何が描かれていますか？"
+          },
+          {
+            "answer": "いいえ。キャラクター、怒りマーク、吹き出しがすべて一枚の画面に収まっており、コマ割りがない一コマのリアクション画像です。",
+            "question": "これは複数コマの漫画ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "腕を組んでふくれっ面のDeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "紺色のメイド服で腕を組み、頬をふくらませた DeepSeek Chan の一コマリアクション画像。頭上には赤い怒りマーク、吹き出しには「ふん！」。",
+        "seoTitle": "DeepSeek Chan のふくれっ面リアクション画像",
+        "tags": [
+          "ツンデレ",
+          "怒り",
+          "メイド服",
+          "リアクション画像",
+          "DeepSeek Chan"
+        ]
+      }
+    }
   }
 ]
