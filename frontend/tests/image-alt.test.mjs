@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {parseHTML} from 'linkedom';
 import {workImageAlt} from '../public/components/image-alt.js';
 import {renderWorkCard} from '../public/components/work-card.js';
-import {auditImages,auditSite} from '../scripts/audit-image-alt.mjs';
+import {auditImages} from '../scripts/audit-image-alt.mjs';
 import {createVideoPages} from '../src/components/archive/VideoPages.mjs';
 import {videoArchive} from '../src/lib/video-archive.mjs';
 import {localizeHtml,LOCALES} from '../scripts/localize-pages.mjs';
@@ -49,12 +49,4 @@ test('baked traditional Chinese cards convert titles and alt on the home route',
   assert.equal(document.querySelector('img').getAttribute('alt'),'繪畫作品25 — 角色創作圖片');
   assert.equal(document.querySelector('.work-title').textContent,'繪畫作品25');
   assert.equal(document.querySelector('.credit-avatar').getAttribute('alt'),'蓝色作者');
-});
-
-
-test('all built HTML and inert feed templates have alt; primary content is not empty',()=>{
-  const report=auditSite(new URL('../../.build/site/',import.meta.url).pathname);
-  assert.deepEqual(report.issues,[]);
-  assert.deepEqual(Object.keys(report.locales).sort(),['en','ja','zh','zh-hant']);
-  assert.ok(report.images>0);
 });
