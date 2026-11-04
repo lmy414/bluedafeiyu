@@ -1,0 +1,50 @@
+{
+  "pages": 7633,
+  "images": 113560,
+  "missing": 0,
+  "empty": 7060,
+  "descriptive": 106500,
+  "decorations": {
+    "named-collection-mosaic": 2964,
+    "adjacent-profile-author": 76,
+    "adjacent-video-author": 2356,
+    "named-author-link": 228,
+    "named-creator-preview": 1248,
+    "hidden-repeated-event-cover": 8,
+    "named-portal-entry": 16,
+    "named-feature-mosaic": 36,
+    "named-comic-cover": 4,
+    "adjacent-topic-author": 124
+  },
+  "locales": {
+    "zh": {
+      "pages": 1909,
+      "images": 28390,
+      "missing": 0,
+      "empty": 1765,
+      "descriptive": 26625
+    },
+    "en": {
+      "pages": 1908,
+      "images": 28390,
+      "missing": 0,
+      "empty": 1765,
+      "descriptive": 26625
+    },
+    "ja": {
+      "pages": 1908,
+      "images": 28390,
+      "missing": 0,
+      "empty": 1765,
+      "descriptive": 26625
+    },
+    "zh-hant": {
+      "pages": 1908,
+      "images": 28390,
+      "missing": 0,
+      "empty": 1765,
+      "descriptive": 26625
+    }
+  },
+  "issues": []
+}

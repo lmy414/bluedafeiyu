@@ -1,0 +1,248 @@
+{
+  "collectedAt": "2026-11-04",
+  "pageSourceCommit": "f847be2e0e7b37d8201ab534ff64523e31c1a86a",
+  "environment": "Local full build, Chromium headless, 1440x1000; not production",
+  "expectations": "Exact alt comparison against real site-data.json works, native en/ja translations and OpenCC zh-Hant conversion; DOM audited at each state",
+  "states": [
+    {
+      "locale": "zh",
+      "state": "home",
+      "url": "http://127.0.0.1:5173/index.html",
+      "images": 32,
+      "decorations": {
+        "named-portal-entry": 4,
+        "named-feature-mosaic": 9
+      },
+      "issues": []
+    },
+    {
+      "locale": "zh",
+      "state": "preview",
+      "url": "http://127.0.0.1:5173/index.html",
+      "images": 33,
+      "decorations": {
+        "named-portal-entry": 4,
+        "named-feature-mosaic": 9
+      },
+      "issues": [],
+      "slug": "deepseek202611030013",
+      "title": "不给白饭就捣蛋",
+      "alt": "不给白饭就捣蛋 — 蓝发蓝眸的 DeepSeek 娘身着深蓝色女仆装与白色围裙，站在万圣节氛围的厨房里，双手各举一把木勺，身后是南瓜灯与窗边的鲸鱼贴纸。"
+    },
+    {
+      "locale": "zh",
+      "state": "next",
+      "url": "http://127.0.0.1:5173/index.html",
+      "images": 33,
+      "decorations": {
+        "named-portal-entry": 4,
+        "named-feature-mosaic": 9
+      },
+      "issues": [],
+      "slug": "deepseek202611030012",
+      "title": "哭泣的鲸鱼",
+      "alt": "哭泣的鲸鱼 — 蓝白长发的水手服少女坐在浅色背景前，眼眶泛红、泪水滚落，双手攥着裙摆，身后一条深蓝色鲸尾绕过身侧当作坐垫。"
+    },
+    {
+      "locale": "zh",
+      "state": "zoom",
+      "url": "http://127.0.0.1:5173/works/deepseek202611030012.html",
+      "images": 13,
+      "decorations": {},
+      "issues": [],
+      "slug": "deepseek202611030012",
+      "title": "哭泣的鲸鱼",
+      "alt": "哭泣的鲸鱼 — 蓝白长发的水手服少女坐在浅色背景前，眼眶泛红、泪水滚落，双手攥着裙摆，身后一条深蓝色鲸尾绕过身侧当作坐垫。"
+    },
+    {
+      "locale": "zh",
+      "state": "gpt-role",
+      "url": "http://127.0.0.1:5173/characters/gpt.html",
+      "images": 44,
+      "decorations": {
+        "named-collection-mosaic": 9
+      },
+      "issues": []
+    },
+    {
+      "locale": "zh-Hant",
+      "state": "home",
+      "url": "http://127.0.0.1:5173/zh-hant/index.html",
+      "images": 32,
+      "decorations": {
+        "named-portal-entry": 4,
+        "named-feature-mosaic": 9
+      },
+      "issues": []
+    },
+    {
+      "locale": "zh-Hant",
+      "state": "preview",
+      "url": "http://127.0.0.1:5173/zh-hant/index.html",
+      "images": 33,
+      "decorations": {
+        "named-portal-entry": 4,
+        "named-feature-mosaic": 9
+      },
+      "issues": [],
+      "slug": "deepseek202611030013",
+      "title": "不給白飯就搗蛋",
+      "alt": "不給白飯就搗蛋 — 藍髮藍眸的 DeepSeek 娘身著深藍色女僕裝與白色圍裙，站在萬聖節氛圍的廚房裡，雙手各舉一把木勺，身後是南瓜燈與窗邊的鯨魚貼紙。"
+    },
+    {
+      "locale": "zh-Hant",
+      "state": "next",
+      "url": "http://127.0.0.1:5173/zh-hant/index.html",
+      "images": 33,
+      "decorations": {
+        "named-portal-entry": 4,
+        "named-feature-mosaic": 9
+      },
+      "issues": [],
+      "slug": "deepseek202611030012",
+      "title": "哭泣的鯨魚",
+      "alt": "哭泣的鯨魚 — 藍白長髮的水手服少女坐在淺色背景前，眼眶泛紅、淚水滾落，雙手攥著裙襬，身後一條深藍色鯨尾繞過身側當作坐墊。"
+    },
+    {
+      "locale": "zh-Hant",
+      "state": "zoom",
+      "url": "http://127.0.0.1:5173/zh-hant/works/deepseek202611030012.html",
+      "images": 13,
+      "decorations": {},
+      "issues": [],
+      "slug": "deepseek202611030012",
+      "title": "哭泣的鯨魚",
+      "alt": "哭泣的鯨魚 — 藍白長髮的水手服少女坐在淺色背景前，眼眶泛紅、淚水滾落，雙手攥著裙襬，身後一條深藍色鯨尾繞過身側當作坐墊。"
+    },
+    {
+      "locale": "zh-Hant",
+      "state": "gpt-role",
+      "url": "http://127.0.0.1:5173/zh-hant/characters/gpt.html",
+      "images": 44,
+      "decorations": {
+        "named-collection-mosaic": 9
+      },
+      "issues": []
+    },
+    {
+      "locale": "en",
+      "state": "home",
+      "url": "http://127.0.0.1:5173/en/index.html",
+      "images": 32,
+      "decorations": {
+        "named-portal-entry": 4,
+        "named-feature-mosaic": 9
+      },
+      "issues": []
+    },
+    {
+      "locale": "en",
+      "state": "preview",
+      "url": "http://127.0.0.1:5173/en/index.html",
+      "images": 33,
+      "decorations": {
+        "named-portal-entry": 4,
+        "named-feature-mosaic": 9
+      },
+      "issues": [],
+      "slug": "deepseek202611030013",
+      "title": "No Rice, No Treat",
+      "alt": "No Rice, No Treat — DeepSeek Chan, with blue hair and blue eyes, stands in a Halloween kitchen wearing a dark blue maid dress and a white apron, holding a wooden spoon in each hand, with a pumpkin lantern and a whale sticker by the window."
+    },
+    {
+      "locale": "en",
+      "state": "next",
+      "url": "http://127.0.0.1:5173/en/index.html",
+      "images": 33,
+      "decorations": {
+        "named-portal-entry": 4,
+        "named-feature-mosaic": 9
+      },
+      "issues": [],
+      "slug": "deepseek202611030012",
+      "title": "The Crying Whale",
+      "alt": "The Crying Whale — A girl with long blue-and-white hair in a sailor uniform sits against a pale background, tears rolling down her cheeks as she grips her skirt, while a deep blue whale tail curls around her side like a cushion."
+    },
+    {
+      "locale": "en",
+      "state": "zoom",
+      "url": "http://127.0.0.1:5173/en/works/deepseek202611030012.html",
+      "images": 13,
+      "decorations": {},
+      "issues": [],
+      "slug": "deepseek202611030012",
+      "title": "The Crying Whale",
+      "alt": "The Crying Whale — A girl with long blue-and-white hair in a sailor uniform sits against a pale background, tears rolling down her cheeks as she grips her skirt, while a deep blue whale tail curls around her side like a cushion."
+    },
+    {
+      "locale": "en",
+      "state": "gpt-role",
+      "url": "http://127.0.0.1:5173/en/characters/gpt.html",
+      "images": 44,
+      "decorations": {
+        "named-collection-mosaic": 9
+      },
+      "issues": []
+    },
+    {
+      "locale": "ja",
+      "state": "home",
+      "url": "http://127.0.0.1:5173/ja/index.html",
+      "images": 32,
+      "decorations": {
+        "named-portal-entry": 4,
+        "named-feature-mosaic": 9
+      },
+      "issues": []
+    },
+    {
+      "locale": "ja",
+      "state": "preview",
+      "url": "http://127.0.0.1:5173/ja/index.html",
+      "images": 33,
+      "decorations": {
+        "named-portal-entry": 4,
+        "named-feature-mosaic": 9
+      },
+      "issues": [],
+      "slug": "deepseek202611030013",
+      "title": "白ごはんをくれないとイタズラする",
+      "alt": "白ごはんをくれないとイタズラする — 青い髪と青い瞳の DeepSeek ちゃんが、濃紺のメイド服と白いエプロン姿でハロウィン雰囲気のキッチンに立ち、両手に木製のスプーンを持っている。背後にはカボチャランタンと窓辺のクジラのステッカー。"
+    },
+    {
+      "locale": "ja",
+      "state": "next",
+      "url": "http://127.0.0.1:5173/ja/index.html",
+      "images": 33,
+      "decorations": {
+        "named-portal-entry": 4,
+        "named-feature-mosaic": 9
+      },
+      "issues": [],
+      "slug": "deepseek202611030012",
+      "title": "泣いているクジラ",
+      "alt": "泣いているクジラ — 青と白の長い髪のセーラー服の少女が淡い背景に座り、涙をこぼしながらスカートを握っている。横には濃紺のクジラの尾が回り込み、座布団のようになっている。"
+    },
+    {
+      "locale": "ja",
+      "state": "zoom",
+      "url": "http://127.0.0.1:5173/ja/works/deepseek202611030012.html",
+      "images": 13,
+      "decorations": {},
+      "issues": [],
+      "slug": "deepseek202611030012",
+      "title": "泣いているクジラ",
+      "alt": "泣いているクジラ — 青と白の長い髪のセーラー服の少女が淡い背景に座り、涙をこぼしながらスカートを握っている。横には濃紺のクジラの尾が回り込み、座布団のようになっている。"
+    },
+    {
+      "locale": "ja",
+      "state": "gpt-role",
+      "url": "http://127.0.0.1:5173/ja/characters/gpt.html",
+      "images": 44,
+      "decorations": {
+        "named-collection-mosaic": 9
+      },
+      "issues": []
+    }
+  ]
+}
