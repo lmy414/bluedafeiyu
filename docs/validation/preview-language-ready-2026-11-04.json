@@ -1,0 +1,136 @@
+{
+  "pageSourceCommit": "2f20acfa196f1b08eda8b1548c9c1a4cc942e401",
+  "baseCommit": "1756a76",
+  "contentCommit": "18bff73e6854d268ca607ad8c104a760e368561c",
+  "environment": "Local build preview; no production deployment",
+  "before": {
+    "componentSha256": "4bd564cb45eeb67ab4c14c4abcd7b042d1ea5706c101e8d8f43dfb3e38619bf9",
+    "note": "Baseline served build f847be2; served work-preview.js is byte-identical to main 1756a76. Post-fix cases use the new full build with 1491 works.",
+    "delayMs": 3500,
+    "waitAfterReadyMs": 6000,
+    "before": "不给白饭就捣蛋 — 蓝发蓝眸的 DeepSeek 娘身着深蓝色女仆装与白色围裙，站在万圣节氛围的厨房里，双手各举一把木勺，身后是南瓜灯与窗边的鲸鱼贴纸。",
+    "after": "不给白饭就捣蛋 — 蓝发蓝眸的 DeepSeek 娘身着深蓝色女仆装与白色围裙，站在万圣节氛围的厨房里，双手各举一把木勺，身后是南瓜灯与窗边的鲸鱼贴纸。",
+    "expected": "不給白飯就搗蛋 — 藍髮藍眸的 DeepSeek 娘身著深藍色女僕裝與白色圍裙，站在萬聖節氛圍的廚房裡，雙手各舉一把木勺，身後是南瓜燈與窗邊的鯨魚貼紙。",
+    "bugReproduced": true
+  },
+  "after": {
+    "origin": "http://127.0.0.1:5175",
+    "browser": "154.0.8037.57",
+    "results": [
+      {
+        "theme": "light",
+        "scenario": "preview",
+        "delayMs": 3500,
+        "beforeAlt": "瞪眼鲸鲸 — 蓝色长发的 DeepSeek 娘戴白色荷叶边女仆头饰的近景特写，单边眉尾上挑、侧目斜视，模仿巨石强森的招牌挑眉表情。原作者留言为「巨石强森瞪眼」。",
+        "afterAlt": "瞪眼鯨鯨 — 藍色長髮的 DeepSeek 娘戴白色荷葉邊女僕頭飾的近景特寫，單邊眉尾上挑、側目斜視，模仿巨石強森的招牌挑眉表情。原作者留言為「巨石強森瞪眼」。",
+        "imageRetained": true,
+        "focusRetained": true,
+        "scrollRetained": true,
+        "viewCountUnchanged": true
+      },
+      {
+        "theme": "light",
+        "scenario": "step",
+        "delayMs": 3500,
+        "beforeAlt": "怕死鲸鲸 — 深蓝长发的 DeepSeek 娘穿深色女仆装在废弃显像管电视堆里侧躺，向画面外伸出手。原作者留言为「爸，我不想死」。",
+        "afterAlt": "怕死鯨鯨 — 深藍長髮的 DeepSeek 娘穿深色女僕裝在廢棄映象管電視堆裡側躺，向畫面外伸出手。原作者留言為「爸，我不想死」。",
+        "imageRetained": true,
+        "focusRetained": true,
+        "scrollRetained": true,
+        "viewCountUnchanged": true
+      },
+      {
+        "theme": "light",
+        "scenario": "zoom",
+        "delayMs": 3500,
+        "beforeAlt": "瞪眼鲸鲸 — 蓝色长发的 DeepSeek 娘戴白色荷叶边女仆头饰的近景特写，单边眉尾上挑、侧目斜视，模仿巨石强森的招牌挑眉表情。原作者留言为「巨石强森瞪眼」。",
+        "afterAlt": "瞪眼鯨鯨 — 藍色長髮的 DeepSeek 娘戴白色荷葉邊女僕頭飾的近景特寫，單邊眉尾上挑、側目斜視，模仿巨石強森的招牌挑眉表情。原作者留言為「巨石強森瞪眼」。",
+        "imageRetained": true,
+        "focusRetained": true,
+        "scrollRetained": true,
+        "viewCountUnchanged": true
+      },
+      {
+        "locale": "zh",
+        "theme": "light",
+        "scenario": "ready-preview",
+        "alt": "瞪眼鲸鲸 — 蓝色长发的 DeepSeek 娘戴白色荷叶边女仆头饰的近景特写，单边眉尾上挑、侧目斜视，模仿巨石强森的招牌挑眉表情。原作者留言为「巨石强森瞪眼」。"
+      },
+      {
+        "locale": "zh-Hant",
+        "theme": "light",
+        "scenario": "ready-preview",
+        "alt": "瞪眼鯨鯨 — 藍色長髮的 DeepSeek 娘戴白色荷葉邊女僕頭飾的近景特寫，單邊眉尾上挑、側目斜視，模仿巨石強森的招牌挑眉表情。原作者留言為「巨石強森瞪眼」。"
+      },
+      {
+        "locale": "en",
+        "theme": "light",
+        "scenario": "ready-preview",
+        "alt": "The Eyebrow Glare — A close-up of DeepSeek Chan in a white ruffled maid headdress, one eyebrow arched and eyes cutting sideways toward the viewer in a parody of Dwayne Johnson's signature look. The submitter's note reads, \"Dwayne Johnson's glare.\""
+      },
+      {
+        "locale": "ja",
+        "theme": "light",
+        "scenario": "ready-preview",
+        "alt": "ジト目でチラ見 — 青い長髪のDeepSeekちゃんが白いフリルのメイドヘッドドレスを付けた顔のアップ。片方の眉を上げて横目でにらみ、ドウェイン・ジョンソンの有名な表情を意識している。投稿者の元コメントは「ドウェイン・ジョンソンのにらみ」。"
+      },
+      {
+        "theme": "dark",
+        "scenario": "preview",
+        "delayMs": 3500,
+        "beforeAlt": "瞪眼鲸鲸 — 蓝色长发的 DeepSeek 娘戴白色荷叶边女仆头饰的近景特写，单边眉尾上挑、侧目斜视，模仿巨石强森的招牌挑眉表情。原作者留言为「巨石强森瞪眼」。",
+        "afterAlt": "瞪眼鯨鯨 — 藍色長髮的 DeepSeek 娘戴白色荷葉邊女僕頭飾的近景特寫，單邊眉尾上挑、側目斜視，模仿巨石強森的招牌挑眉表情。原作者留言為「巨石強森瞪眼」。",
+        "imageRetained": true,
+        "focusRetained": true,
+        "scrollRetained": true,
+        "viewCountUnchanged": true
+      },
+      {
+        "theme": "dark",
+        "scenario": "step",
+        "delayMs": 3500,
+        "beforeAlt": "怕死鲸鲸 — 深蓝长发的 DeepSeek 娘穿深色女仆装在废弃显像管电视堆里侧躺，向画面外伸出手。原作者留言为「爸，我不想死」。",
+        "afterAlt": "怕死鯨鯨 — 深藍長髮的 DeepSeek 娘穿深色女僕裝在廢棄映象管電視堆裡側躺，向畫面外伸出手。原作者留言為「爸，我不想死」。",
+        "imageRetained": true,
+        "focusRetained": true,
+        "scrollRetained": true,
+        "viewCountUnchanged": true
+      },
+      {
+        "theme": "dark",
+        "scenario": "zoom",
+        "delayMs": 3500,
+        "beforeAlt": "瞪眼鲸鲸 — 蓝色长发的 DeepSeek 娘戴白色荷叶边女仆头饰的近景特写，单边眉尾上挑、侧目斜视，模仿巨石强森的招牌挑眉表情。原作者留言为「巨石强森瞪眼」。",
+        "afterAlt": "瞪眼鯨鯨 — 藍色長髮的 DeepSeek 娘戴白色荷葉邊女僕頭飾的近景特寫，單邊眉尾上挑、側目斜視，模仿巨石強森的招牌挑眉表情。原作者留言為「巨石強森瞪眼」。",
+        "imageRetained": true,
+        "focusRetained": true,
+        "scrollRetained": true,
+        "viewCountUnchanged": true
+      },
+      {
+        "locale": "zh",
+        "theme": "dark",
+        "scenario": "ready-preview",
+        "alt": "瞪眼鲸鲸 — 蓝色长发的 DeepSeek 娘戴白色荷叶边女仆头饰的近景特写，单边眉尾上挑、侧目斜视，模仿巨石强森的招牌挑眉表情。原作者留言为「巨石强森瞪眼」。"
+      },
+      {
+        "locale": "zh-Hant",
+        "theme": "dark",
+        "scenario": "ready-preview",
+        "alt": "瞪眼鯨鯨 — 藍色長髮的 DeepSeek 娘戴白色荷葉邊女僕頭飾的近景特寫，單邊眉尾上挑、側目斜視，模仿巨石強森的招牌挑眉表情。原作者留言為「巨石強森瞪眼」。"
+      },
+      {
+        "locale": "en",
+        "theme": "dark",
+        "scenario": "ready-preview",
+        "alt": "The Eyebrow Glare — A close-up of DeepSeek Chan in a white ruffled maid headdress, one eyebrow arched and eyes cutting sideways toward the viewer in a parody of Dwayne Johnson's signature look. The submitter's note reads, \"Dwayne Johnson's glare.\""
+      },
+      {
+        "locale": "ja",
+        "theme": "dark",
+        "scenario": "ready-preview",
+        "alt": "ジト目でチラ見 — 青い長髪のDeepSeekちゃんが白いフリルのメイドヘッドドレスを付けた顔のアップ。片方の眉を上げて横目でにらみ、ドウェイン・ジョンソンの有名な表情を意識している。投稿者の元コメントは「ドウェイン・ジョンソンのにらみ」。"
+      }
+    ]
+  }
+}
