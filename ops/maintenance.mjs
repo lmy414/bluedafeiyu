@@ -9,6 +9,8 @@ export const REPORT_ROOT = '/var/lib/dafeiyu-maintenance';
 export const RELEASE_GROUPS = [
   { root: '/srv/www/dafeiyu/releases', current: '/srv/www/dafeiyu/current', pattern: /^\d{8}-\d{6}$/ },
   { root: '/srv/apps/dafeiyu-admin/releases', current: '/srv/apps/dafeiyu-admin/app', pattern: /^admin-[a-f0-9]+-\d{8}-\d{6}-\d+$/ },
+  { root: '/srv/other-services/emao-studio/releases', current: '/srv/other-services/emao-studio/current', pattern: /^[a-f0-9]{40}$/, sortBy: 'mtime' },
+  { root: '/srv/other-services/emao-site/releases', current: '/srv/other-services/emao-site/current', pattern: /^[a-f0-9]{40}$/, sortBy: 'mtime' },
 ];
 export const HEALTH_URLS = ['https://xn--pssy23gqgbz2d718b.com/'];
 export const FILE_RULES = [
@@ -43,14 +45,20 @@ export async function planReleases(group) {
   const active = await fs.realpath(group.current);
   if (path.dirname(active) !== group.root) throw new Error(`当前版本不在发布目录内：${group.current}`);
   const entries = [];
+  const modified = new Map();
   for (const name of await fs.readdir(group.root)) {
     if (!group.pattern.test(name)) continue;
     const file = path.join(group.root, name);
     const info = await fs.lstat(file);
-    if (info.isDirectory() && !info.isSymbolicLink() && info.dev === stat.dev) entries.push(file);
+    if (info.isDirectory() && !info.isSymbolicLink() && info.dev === stat.dev) {
+      entries.push(file);
+      modified.set(file, info.mtimeMs);
+    }
   }
   if (!entries.includes(active)) throw new Error(`当前版本未通过校验：${active}`);
-  const newest = entries.filter((file) => file !== active).sort((a, b) => releaseDate(path.basename(b)).localeCompare(releaseDate(path.basename(a))) || b.localeCompare(a));
+  // Emao uses commit hashes as names; their lexical order does not identify the latest release.
+  const newest = entries.filter((file) => file !== active).sort((a, b) =>
+    (group.sortBy === 'mtime' ? modified.get(b) - modified.get(a) : releaseDate(path.basename(b)).localeCompare(releaseDate(path.basename(a)))) || b.localeCompare(a));
   const keep = [active, ...newest.slice(0, 1)];
   return { root: group.root, current: group.current, active, keep, remove: entries.filter((file) => !keep.includes(file)).sort() };
 }
@@ -117,10 +125,11 @@ export function formatReport(report) {
     `过期原图${report.status === 'dry-run' ? '候选' : '清理'}：${report.status === 'dry-run' ? report.originals?.due || 0 : report.originals?.released || 0} 条（保留 3 天，投稿记录保留）`,
     `旧发布版本：${report.releases?.reduce((sum, item) => sum + item.count, 0) || 0} 个（各保留当前版本及最近一个历史版本）`,
     `过期日志和缓存：${report.files?.reduce((sum, item) => sum + item.count, 0) || 0} 个文件`,
-    `本轮释放：${gib((report.after?.available || 0) - (report.before?.available || 0))} GiB`,
-    `磁盘：${report.after?.percent ?? report.before?.percent ?? '?'}%｜剩余：${gib(report.after?.available || report.before?.available)} GiB`,
+    `业务盘本轮释放：${gib((report.after?.available || 0) - (report.before?.available || 0))} GiB`,
+    `业务盘：${report.after?.percent ?? report.before?.percent ?? '?'}%｜剩余：${gib(report.after?.available || report.before?.available)} GiB`,
     `服务及网站检查：${report.healthOk ? '通过' : report.status === 'dry-run' ? '未执行' : '见失败项'}`,
   ];
+  if (report.systemAfter) lines.push(`系统盘：${report.systemAfter.percent}%｜剩余：${gib(report.systemAfter.available)} GiB｜本轮释放：${gib(report.systemAfter.available - report.systemBefore.available)} GiB`);
   for (const error of report.errors || []) lines.push(`失败：${error.step}｜${error.message}`);
   return lines.join('\n');
 }
@@ -129,6 +138,7 @@ export async function maintain({ apply = false, releasesOnly = false, command = 
   serverName = process.env.MAINTENANCE_SERVER_NAME || hostname(), healthUrls = HEALTH_URLS } = {}) {
   const report = { schema: 'dafeiyu-maintenance/1', serverName, startedAt: new Date().toISOString(), status: 'running', errors: [], releases: [], files: [] };
   report.before = await diskUsage(diskPath);
+  report.systemBefore = await diskUsage('/');
   async function step(name, fn) {
     try { return await fn(); } catch (error) { report.errors.push({ step: name, message: String(error.message).slice(0, 1000) }); return null; }
   }
@@ -145,6 +155,7 @@ export async function maintain({ apply = false, releasesOnly = false, command = 
     let count = 0;
     for (const file of plan.remove) {
       if (apply) {
+        if (await fs.realpath(plan.current) !== plan.active) throw new Error('当前版本已变化，跳过删除');
         const stat = await fs.lstat(file);
         if (!stat.isDirectory() || stat.isSymbolicLink() || await fs.realpath(file) !== file || path.dirname(file) !== group.root) throw new Error(`删除前校验失败：${file}`);
         assertNoMounts(file, await fs.readFile('/proc/self/mountinfo', 'utf8'));
@@ -174,6 +185,7 @@ export async function maintain({ apply = false, releasesOnly = false, command = 
     report.healthOk = report.errors.length === errorsBeforeHealth;
   }
   report.after = await diskUsage(diskPath);
+  report.systemAfter = await diskUsage('/');
   report.finishedAt = new Date().toISOString();
   report.status = report.errors.length ? 'partial' : apply ? 'success' : 'dry-run';
   return report;

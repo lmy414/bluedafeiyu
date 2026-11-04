@@ -31,6 +31,77 @@ test('保留正在运行的旧版本和最新一个版本，忽略非发布目�
   await assert.rejects(planReleases({ root, current, pattern: /^\d{8}-\d{6}$/ }), /当前版本不在发布目录/);
 });
 
+test('Emao 哈希版本按发布时间保留当前和最近历史版本，不按哈希排序', async (t) => {
+  const dir = await fixture(t);
+  const root = path.join(dir, 'releases');
+  const active = 'a'.repeat(40);
+  const previous = '1'.repeat(40);
+  const old = ['e'.repeat(40), 'f'.repeat(40)];
+  for (const [index, name] of [active, ...old, previous].entries()) {
+    const file = path.join(root, name);
+    await fs.mkdir(file, { recursive: true });
+    await fs.utimes(file, new Date(1700000000000 + index * 10000), new Date(1700000000000 + index * 10000));
+  }
+  await fs.mkdir(path.join(root, 'pending-upload'));
+  await fs.writeFile(path.join(root, '2'.repeat(40)), 'not a directory');
+  const external = path.join(dir, 'external');
+  await fs.mkdir(external);
+  await fs.symlink(external, path.join(root, '0'.repeat(40)), 'junction');
+  const current = path.join(dir, 'current');
+  await fs.symlink(path.join(root, active), current, 'junction');
+  const groups = RELEASE_GROUPS.filter(({ root }) => root.startsWith('/srv/other-services/emao-'));
+  assert.equal(groups.length, 2);
+  for (const group of groups) {
+    const plan = await planReleases({ ...group, root, current });
+    assert.deepEqual(plan.keep.map((file) => path.basename(file)), [active, previous]);
+    assert.deepEqual(plan.remove.map((file) => path.basename(file)), old);
+  }
+  await fs.rm(path.join(root, previous), { recursive: true });
+  for (const name of old) await fs.rm(path.join(root, name), { recursive: true });
+  const plan = await planReleases({ ...groups[0], root, current });
+  assert.deepEqual(plan.keep, [path.join(root, active)]);
+  assert.deepEqual(plan.remove, []);
+});
+
+test('删除过程中 current 改变时中止，保留新切换的当前版本', { skip: process.platform !== 'linux' }, async (t) => {
+  const dir = await fixture(t);
+  const root = path.join(dir, 'releases');
+  const names = ['0'.repeat(40), '1'.repeat(40), 'a'.repeat(40), 'b'.repeat(40)];
+  for (const [index, name] of names.entries()) {
+    const file = path.join(root, name);
+    await fs.mkdir(file, { recursive: true });
+    await fs.writeFile(path.join(file, 'payload'), name);
+    await fs.utimes(file, new Date(1700000000000 + index * 10000), new Date(1700000000000 + index * 10000));
+  }
+  const current = path.join(dir, 'current');
+  await fs.symlink(path.join(root, names[2]), current);
+  const originalRm = fs.rm.bind(fs);
+  t.mock.method(fs, 'rm', async (file, options) => {
+    await originalRm(file, options);
+    if (file === path.join(root, names[0])) {
+      await fs.unlink(current);
+      await fs.symlink(path.join(root, names[1]), current);
+    }
+  });
+  const report = await maintain({ apply: true, releasesOnly: true,
+    releaseGroups: [{ root, current, pattern: /^[a-f0-9]{40}$/, sortBy: 'mtime' }],
+    diskPath: dir, command: async (binary) => binary.endsWith('curl') ? '200' : '' });
+  t.mock.restoreAll();
+  assert.equal(report.status, 'partial');
+  assert.match(report.errors[0].message, /当前版本已变化/);
+  assert.equal(await fs.readFile(path.join(root, names[1], 'payload'), 'utf8'), names[1]);
+  assert.equal(await fs.realpath(current), path.join(root, names[1]));
+});
+
+test('系统盘和业务盘分别报告，Emao 释放空间不会显示为业务盘释放', () => {
+  const gib = 1073741824;
+  const report = formatReport({ status: 'success', finishedAt: new Date().toISOString(),
+    before: { available: 5 * gib }, after: { available: 5 * gib, percent: 84 },
+    systemBefore: { available: 9 * gib }, systemAfter: { available: 11.5 * gib, percent: 80 } });
+  assert.match(report, /业务盘本轮释放：0\.00 GiB/);
+  assert.match(report, /系统盘：80%｜剩余：11\.50 GiB｜本轮释放：2\.50 GiB/);
+});
+
 test('只删过期归档日志，保留当前日志、近期读取文件和目录外软链', async (t) => {
   const dir = await fixture(t);
   const root = path.join(dir, 'logs');
