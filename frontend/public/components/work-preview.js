@@ -38,7 +38,7 @@ export function installWorkPreview({load, localize = w => w, translate:tx, url, 
     dialog.close();
     restore();
   }
-  async function open(slug, nextMode = 'work', opener) {
+  async function open(slug, nextMode = 'work', opener, navigationStep) {
     const currentRequest = ++request;
     const nextSlugs = opener ? listFor(opener, slug) : slugs;
     try {
@@ -80,14 +80,16 @@ export function installWorkPreview({load, localize = w => w, translate:tx, url, 
       }
       doc.dispatchEvent(new doc.defaultView.Event('preview:render'));
       dialog.scrollTop = 0;
-      closeButton.focus({preventScroll:true});
+      // The requested step can become disabled at a boundary; keep focus in navigation.
+      const stepControl = navigationStep && (body.querySelector(`[data-preview-step="${navigationStep}"]:not([disabled])`) || body.querySelector('[data-preview-step]:not([disabled])'));
+      (stepControl || closeButton).focus({preventScroll:true});
     } catch {
       if (currentRequest === request) toast(tx('d.loadFail','数据加载失败，请刷新页面。'));
     }
   }
   const step = offset => {
     const slug = slugs[index+offset];
-    if (slug) return open(slug);
+    if (slug) return open(slug, 'work', undefined, offset);
   };
   doc.addEventListener('click', event => {
     if (event.defaultPrevented || (event.button ?? 0) !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;

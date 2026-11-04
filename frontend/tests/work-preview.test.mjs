@@ -15,7 +15,11 @@ function fixture({load,prefix='',localize=w=>w,names=value=>value} = {}) {
   const dialog = document.querySelector('#preview-dialog'), locks = [], views = [], errors = [];
   let focused;
   document.addEventListener('work:show',event=>{assert.equal(event.detail.viewType,'preview');views.push(event.detail.id);});
-  for (const node of document.querySelectorAll('a,button')) node.focus = options => {focused={node,options};};
+  const trackFocus = () => {
+    for (const node of document.querySelectorAll('a,button')) node.focus = options => {focused={node,options};};
+  };
+  trackFocus();
+  document.addEventListener('preview:render',trackFocus);
   dialog.showModal = () => {dialog.open=true;};
   dialog.close = () => {dialog.open=false;dialog.dispatchEvent(new window.Event('close'));};
   dialog.getBoundingClientRect = () => ({top:10,bottom:600,left:10,right:800});
@@ -24,7 +28,7 @@ function fixture({load,prefix='',localize=w=>w,names=value=>value} = {}) {
     const event = new window.Event('click',{bubbles:true,cancelable:true});
     Object.assign(event,{button:0,...props});node.dispatchEvent(event);return event;
   };
-  const key = (key,target=document.querySelector('[data-preview-close]')) => {
+  const key = (key,target=focused?.node||document.querySelector('[data-preview-close]')) => {
     const event = new window.Event('keydown',{bubbles:true,cancelable:true});event.key=key;target.dispatchEvent(event);return event;
   };
   return {works,document,window,dialog,controller,locks,views,errors,click,key,focused:()=>focused};
@@ -91,6 +95,48 @@ test('delegation covers newly appended cards and keeps next/previous inside the 
   f.key('ArrowLeft');await flush();assert.equal(f.document.querySelector('.preview-info h2').textContent,'Title b');
   f.controller.close();f.click(f.document.querySelector('#two .work-art'));await flush();
   assert.equal(f.document.querySelector('.preview-position').textContent,'01/01');
+});
+
+test('click and keyboard navigation focus the current step control, including both list boundaries',async()=>{
+  const f=fixture(),trigger=f.document.querySelector('#one .work-art');
+  f.document.querySelector('#one').insertAdjacentHTML('beforeend',renderWorkCard(work('c')));
+  f.click(trigger);await flush();
+  assert.equal(f.focused().node,f.document.querySelector('[data-preview-close]'));
+  const checkStep = direction => {
+    const button=f.document.querySelector(`[data-preview-step="${direction}"]`);
+    assert.ok(f.focused().node===button,'focus stays on the current navigation control');
+    assert.equal(button.disabled,false);assert.equal(button.isConnected,true);
+    assert.deepEqual(f.focused().options,{preventScroll:true});
+  };
+  f.click(f.document.querySelector('[data-preview-step="1"]'));await flush();checkStep(1);
+  const before=f.focused();
+  f.document.dispatchEvent(new f.window.CustomEvent('site:langchange',{detail:{lang:'zh-Hant'}}));
+  assert.equal(f.focused(),before);
+  f.key('ArrowRight');await flush();checkStep(-1);
+  assert.equal(f.document.querySelector('.preview-info h2').textContent,'Title c');
+  f.key('ArrowLeft');await flush();checkStep(-1);
+  f.key('ArrowLeft');await flush();checkStep(1);
+  assert.deepEqual(f.views,['id-a','id-b','id-c','id-b','id-a']);
+  f.key('ArrowRight',f.document.querySelector('.preview-detail-link'));await flush();checkStep(1);
+  assert.equal(f.document.querySelector('.preview-detail-link').href,'/works/b.html');
+  f.controller.close();assert.equal(f.focused().node,trigger);
+});
+
+test('obsolete or cancelled navigation cannot move focus, and failed navigation remains usable',async()=>{
+  const pending=[],f=fixture({load:()=>new Promise((resolve,reject)=>pending.push({resolve,reject}))});
+  const trigger=f.document.querySelector('#one .work-art');
+  f.click(trigger);pending[0].resolve({works:f.works});await flush();
+  f.key('ArrowRight');f.key('ArrowRight');
+  pending[2].resolve({works:f.works});await flush();
+  const latest=f.focused();assert.equal(latest.node.dataset.previewStep,'-1');
+  pending[1].resolve({works:f.works});await flush();assert.equal(f.focused(),latest);
+  f.key('ArrowLeft');pending[3].reject(Error('offline'));await flush();
+  assert.equal(f.errors.length,1);assert.equal(f.focused(),latest);assert.equal(latest.node.isConnected,true);
+  f.key('ArrowLeft');f.controller.close();const restored=f.focused();
+  pending[4].resolve({works:f.works});await flush();
+  assert.equal(f.dialog.open,false);assert.equal(f.focused(),restored);assert.equal(restored.node,trigger);
+  f.click(trigger);pending[5].resolve({works:f.works});await flush();
+  assert.equal(f.focused().node,f.document.querySelector('[data-preview-close]'));
 });
 
 test('Escape, backdrop and native close release the scroll lock and restore the exact trigger without scrolling',async()=>{
