@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {parseHTML} from 'linkedom';
+import {Converter} from 'opencc-js/cn2t';
 import {renderWorkCard} from '../public/components/work-card.js';
 import {installWorkPreview,workPreviewAttributes} from '../public/components/work-preview.js';
 import {createCreatorViews} from '../src/components/archive/CreatorViews.mjs';
@@ -8,7 +9,7 @@ import {applyNativeContent} from '../scripts/native-content.mjs';
 
 const work = slug => ({slug,id:'id-'+slug,n:'Title '+slug,d:'Description',i:'/thumb.webp',l:'/large.webp',o:'/original.gif',w:400,h:400,k:['meme'],roles:[{id:'deepseek',name:'DeepSeek',color:'#36f'}],tg:[],dt:'2026.10.26',f:'GIF',s:'40 KB',lk:'unknown',lt:'Unknown',owners:[{name:'Artist',href:'/creators/artist.html'}]});
 const flush = () => new Promise(resolve => setImmediate(resolve));
-function fixture({load,prefix=''} = {}) {
+function fixture({load,prefix='',localize=w=>w,names=value=>value} = {}) {
   const works = ['a','b','c'].map(work);
   const {document,window} = parseHTML(`<html><body><div class="work-grid" id="one">${works.slice(0,2).map(w=>renderWorkCard(w)).join('')}</div><div class="work-grid" id="two">${renderWorkCard(works[2])}</div><dialog id="preview-dialog"><button data-preview-close>Close</button><div id="preview-body"></div></dialog><dialog id="share-card-dialog"></dialog></body></html>`);
   const dialog = document.querySelector('#preview-dialog'), locks = [], views = [], errors = [];
@@ -18,7 +19,7 @@ function fixture({load,prefix=''} = {}) {
   dialog.showModal = () => {dialog.open=true;};
   dialog.close = () => {dialog.open=false;dialog.dispatchEvent(new window.Event('close'));};
   dialog.getBoundingClientRect = () => ({top:10,bottom:600,left:10,right:800});
-  const controller = installWorkPreview({document,load:load||async function(){return {works};},translate:(_key,text)=>text,url:href=>prefix+href,names:value=>value,toast:message=>errors.push(message),components:{scrollLock:value=>locks.push(value),roleDot:()=>'<i></i>'}});
+  const controller = installWorkPreview({document,localize,load:load||async function(){return {works};},translate:(_key,text)=>text,url:href=>prefix+href,names,toast:message=>errors.push(message),components:{scrollLock:value=>locks.push(value),roleDot:()=>'<i></i>'}});
   const click = (node,props={}) => {
     const event = new window.Event('click',{bubbles:true,cancelable:true});
     Object.assign(event,{button:0,...props});node.dispatchEvent(event);return event;
@@ -126,4 +127,66 @@ test('creator overview rails use the same preview attributes for images while vi
   assert.equal(document.querySelector('.creator-work-preview[data-preview]').dataset.preview,'a');
   const video=document.querySelector('.creator-work-preview[data-video-bvid]');
   assert.equal(video.hasAttribute('data-preview'),false);assert.equal(video.target,'_blank');
+});
+
+
+test('late Traditional readiness refreshes the open preview in place, including next work and zoom',async()=>{
+  const convert=Converter({from:'cn',to:'twp'});
+  let ready=false;
+  const names=text=>ready?convert(text).replace(/孃/g,'娘'):text;
+  const works=['a','b'].map(slug=>({...work(slug),n:'鲸鱼画册 '+slug,d:'蓝发少女与鲸鱼',cm:'画册说明',tg:['绘画']}));
+  const localize=w=>({...w,n:names(w.n),d:names(w.d),cm:names(w.cm),tg:w.tg.map(names)});
+  const f=fixture({load:async()=>({works}),localize,names});
+  await f.controller.open('a','work',f.document.querySelector('.work-art'));
+  assert.match(f.document.querySelector('.preview-photo img').alt,/鲸鱼/);
+  await f.controller.open('b'); // change the work before the converter finishes
+  const image=f.document.querySelector('.preview-photo img'), title=f.document.querySelector('h2');
+  const before={src:image.src,views:f.views.length,focus:f.focused(),locks:f.locks.length};
+  f.dialog.scrollTop=57;
+  ready=true;
+  f.document.dispatchEvent(new f.window.CustomEvent('site:langchange',{detail:{lang:'zh-Hant'}}));
+  assert.equal(f.document.querySelector('.preview-photo img'),image);
+  assert.equal(image.alt,'鯨魚畫冊 b — 藍髮少女與鯨魚');
+  assert.equal(title.textContent,'鯨魚畫冊 b');
+  assert.equal(f.document.querySelector('.preview-note p').textContent,'畫冊說明');
+  assert.equal(image.src,before.src);assert.equal(f.dialog.scrollTop,57);
+  assert.equal(f.views.length,before.views);assert.equal(f.focused(),before.focus);assert.equal(f.locks.length,before.locks);
+  ready=false;await f.controller.open('a','image');
+  const zoom=f.document.querySelector('.preview-zoom img');
+  ready=true;f.document.dispatchEvent(new f.window.CustomEvent('site:langchange',{detail:{lang:'zh-Hant'}}));
+  assert.equal(f.document.querySelector('.preview-zoom img'),zoom);
+  assert.equal(zoom.alt,'鯨魚畫冊 a — 藍髮少女與鯨魚');
+  await f.controller.open('b');assert.equal(f.document.querySelector('.preview-photo img').alt,'鯨魚畫冊 b — 藍髮少女與鯨魚');
+  f.controller.close();
+  f.document.dispatchEvent(new f.window.CustomEvent('site:langchange',{detail:{lang:'zh-Hant'}}));
+  assert.equal(f.dialog.open,false);
+});
+
+test('readiness during an in-flight open cannot restore an obsolete preview or affect other locales',async()=>{
+  let finish,ready=false;
+  const names=text=>ready?text.replaceAll('画','畫'):text;
+  const f=fixture({load:()=>new Promise(resolve=>{finish=resolve;}),names,localize:w=>({...w,n:names(w.n),d:names(w.d)})});
+  const pending=f.controller.open('a');
+  ready=true;f.document.dispatchEvent(new f.window.CustomEvent('site:langchange',{detail:{lang:'zh-Hant'}}));
+  finish({works:[{...work('a'),n:'画a',d:'画稿'}]});await pending;
+  const image=f.document.querySelector('.preview-photo img');
+  assert.equal(image.alt,'畫a — 畫稿');
+  for(const lang of ['zh','en','ja']){
+    image.alt='画';f.document.dispatchEvent(new f.window.CustomEvent('site:langchange',{detail:{lang}}));assert.equal(image.alt,'画',lang);
+  }
+});
+
+
+test('late readiness while the next work loads updates only the current DOM and keeps the pending navigation',async()=>{
+  let ready=false,finish,calls=0;
+  const names=text=>ready?text.replaceAll('画','畫'):text;
+  const works=['a','b'].map(slug=>({...work(slug),n:'画'+slug,d:'画稿'}));
+  const f=fixture({load:()=>++calls===1?Promise.resolve({works}):new Promise(resolve=>{finish=resolve;}),names,localize:w=>({...w,n:names(w.n),d:names(w.d)})});
+  await f.controller.open('a');
+  const image=f.document.querySelector('.preview-photo img'),pending=f.controller.open('b');
+  ready=true;f.document.dispatchEvent(new f.window.CustomEvent('site:langchange',{detail:{lang:'zh-Hant'}}));
+  assert.equal(image.alt,'畫a — 畫稿');
+  finish({works});await pending;
+  assert.equal(f.document.querySelector('.preview-photo img').alt,'畫b — 畫稿');
+  assert.deepEqual(f.views,['id-a','id-b']);
 });

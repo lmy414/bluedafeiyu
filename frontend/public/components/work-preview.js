@@ -107,6 +107,21 @@ export function installWorkPreview({load, localize = w => w, translate:tx, url, 
     const rect = dialog.getBoundingClientRect();
     if (event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) close();
   });
+  // OpenCC can finish after the dialog has rendered. Convert the currently
+  // visible content in place: do not reload an image, reset focus/scroll, or
+  // emit another view. A pending open/step uses the ready converter itself.
+  doc.addEventListener('site:langchange', event => {
+    if (event.detail?.lang !== 'zh-Hant' || !dialog.open) return;
+    const refresh = node => {
+      if (node.nodeType === 3) { node.textContent = names(node.textContent); return; }
+      if (node.nodeType !== 1) return;
+      for (const attr of ['alt','aria-label','title']) {
+        if (node.hasAttribute(attr)) node.setAttribute(attr, names(node.getAttribute(attr)));
+      }
+      for (const child of node.childNodes) refresh(child);
+    };
+    refresh(body);
+  });
   doc.addEventListener('keydown', event => {
     if (!dialog.open || mode !== 'work' || doc.querySelector('#share-card-dialog')?.open || event.defaultPrevented || event.ctrlKey || event.metaKey || event.altKey) return;
     if (event.target.closest('input,textarea,select,[contenteditable]:not([contenteditable="false"])')) return;
