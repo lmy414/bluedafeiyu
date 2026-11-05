@@ -152,7 +152,17 @@ import {orderWorks, shuffledSlugs} from '../components/work-order.js';
     query?.addEventListener('compositionend',()=>{composing=false;scheduleSearch();});
     query?.addEventListener('input',event=>{if(!composing&&!event.isComposing)scheduleSearch();});
     $('[data-load-more]').addEventListener('click',()=>{shown+=24;render(false,true);});
-    document.addEventListener('site:langchange',()=>{if(dataset)render(false);});
+    document.addEventListener('site:langchange',()=>{
+      if(!dataset)return;
+      const active=document.activeElement;
+      const slug=result.contains(active)?active.dataset.preview:null;
+      const title=active?.matches('.work-title');
+      render(false);
+      if(slug&&!active.isConnected){
+        const replacement=$$('[data-preview]',result).find(node=>node.dataset.preview===slug&&node.matches('.work-title')===title);
+        replacement?.focus({preventScroll:true});
+      }
+    });
     load().then(async d=>{
       if(searchPage||query){
         const {createSearchIndex}=await import('./search.js');
