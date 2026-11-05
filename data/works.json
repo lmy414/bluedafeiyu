@@ -111189,5 +111189,418 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_55a33a637293d0cbe618117f",
+    "name": "打猎鲸鲸",
+    "description": "蓝色大肥鱼身穿迷彩猎装，趴伏在林间草丛中，用带瞄准镜的狙击枪对准远处的一头鹿。晨雾与逆光穿过树干，女仆头饰和鲸鱼尾巴从装备间露出来。",
+    "commentary": "今天换上迷彩猎装出门，其实我只是想凑近看看那头鹿的角。狙击镜里连它的睫毛都数得清，风从鲸鱼尾巴旁边溜过去，这样的清晨值得多趴一会儿。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/55a33a637293d0cb.png",
+    "thumbnailPath": "submissions/previews/deepseek/55a33a637293d0cb.webp",
+    "fullPath": "submissions/large/deepseek/55a33a637293d0cb.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 2431278,
+    "sha256": "55a33a637293d0cbe618117fa568e20d39d779676cb6776e67985ec1b89707cf",
+    "characterId": "deepseek",
+    "tags": [
+      "猎装",
+      "狙击枪",
+      "森林",
+      "鲸鱼尾巴",
+      "迷彩"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-05T18:15:24.183Z",
+    "updatedAt": "2026-11-05T18:15:24.183Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611050005",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "39c363efd59f9a6c1de2f01132f13b8441013933e135c032c12f06e75fbdfe72",
+      "en": {
+        "commentary": "I put on the camo today, but honestly I only wanted a closer look at that deer's antlers. Through the scope I can count every eyelash of it, and the wind slips past my whale tail — a morning like this deserves a while longer lying low.",
+        "description": "DeepSeek Chan, dressed in camouflage hunting gear, lies prone in the forest grass and aims a scoped sniper rifle at a deer in the distance. Morning mist and backlight filter through the tree trunks, with her maid headdress and whale tail showing between the straps of her gear.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan in a camouflage outfit lies in forest grass, aiming a scoped rifle while a deer stands in the misty background.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "DeepSeek Chan, recognizable by her blue hair, whale tail and maid headdress.",
+            "question": "Which character appears in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Whale Whale on the Hunt",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in camo gear lies in the forest aiming a scoped rifle at a distant deer, framed by morning mist and backlight.",
+        "seoTitle": "Whale Whale on the Hunt | DeepSeek Chan Camo Sniper Illustration",
+        "tags": [
+          "hunting outfit",
+          "sniper rifle",
+          "forest",
+          "whale tail",
+          "camo"
+        ]
+      },
+      "ja": {
+        "commentary": "今日は迷彩の狩猟服に着替えて出かけたけど、本当はあのシカの角を近くで見たかっただけ。スコープの中ならまつ毛の一本まで数えられるし、風はクジラの尾の横をすり抜けていく。こんな朝なら、もう少し伏せていたいな。",
+        "description": "DeepSeekちゃんが迷彩の狩猟服姿で林の草むらに伏せ、スコープ付きの狙撃銃を遠くのシカに向けている。朝霧と逆光が木々の間を抜け、メイドのヘッドドレスとクジラの尾が装備の隙間からのぞいている。",
+        "faq": [
+          {
+            "answer": "迷彩服を着たDeepSeekちゃんが林の草むらに伏せてスコープ付きの銃を構え、霧の向こうにシカが立っている場面である。",
+            "question": "このイラストには何が描かれている？"
+          },
+          {
+            "answer": "青い髪、クジラの尾、メイドのヘッドドレスが目印のDeepSeekちゃんである。",
+            "question": "登場するキャラクターは誰？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "クジラちゃんの狩り",
+        "originNote": "",
+        "seoDescription": "迷彩服のDeepSeekちゃんが林の中で草むらに伏せ、遠くのシカにスコープ付きの銃を向ける。朝霧と逆光に包まれた一枚。",
+        "seoTitle": "クジラちゃんの狩り｜DeepSeekちゃん迷彩スナイパーイラスト",
+        "tags": [
+          "狩猟服",
+          "スナイパーライフル",
+          "森",
+          "クジラの尾",
+          "迷彩"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_16b39d74d12cb9788f78d467",
+    "name": "钓鱼鲸鲸",
+    "description": "蓝发的 DeepSeek 娘坐在湖畔岩石上垂钓，身穿深蓝女仆装，身后拖着鲸尾，身旁放着竹篓与草帽，背景是垂柳、远山与水面上的亭台。",
+    "commentary": "柳条一直垂到水面，我也把鱼线放了下去——今天不聊参数，就等浮漂动一下。竹篓空着也没关系，湖边的风比机房凉快多了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/16b39d74d12cb978.png",
+    "thumbnailPath": "submissions/previews/deepseek/16b39d74d12cb978.webp",
+    "fullPath": "submissions/large/deepseek/16b39d74d12cb978.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1402,
+    "height": 1122,
+    "fileSize": 2484563,
+    "sha256": "16b39d74d12cb9788f78d467fca180f121669f529a7cdb3f037f89c33b276ba9",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "钓鱼",
+      "女仆装",
+      "湖畔",
+      "鲸尾",
+      "国风"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-05T18:17:09.036Z",
+    "updatedAt": "2026-11-05T18:17:09.036Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611050006",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "307d7f07b7d7756da6893a78ff60d9e5fb8bbe67eeb4db5e148c8789760e014a",
+      "en": {
+        "commentary": "The willow branches hang all the way down to the water, so I dropped my line in too — no parameter talk today, just watching the float. An empty basket is fine; the lakeside breeze is cooler than the server room.",
+        "description": "DeepSeek Chan, a blue-haired girl, sits on a lakeside rock holding a fishing rod. She wears a deep blue maid dress and a whale tail trails behind her, with a bamboo basket and a straw hat beside her. Willows, distant hills and a pavilion on the water fill the background.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan sits on a rock at the lake with a fishing rod, wearing a deep blue maid dress, a whale tail behind her, and a bamboo basket and straw hat at her side.",
+            "question": "What does this image show?"
+          },
+          {
+            "answer": "It is a scene illustration: willows, distant mountains and a pavilion on the water surround the character as she fishes.",
+            "question": "What kind of composition is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Fishing by the Lake",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in a deep blue maid dress fishes from a lakeside rock, framed by willows, distant hills and a pavilion on the water.",
+        "seoTitle": "DeepSeek Chan Fishing by the Lake — Sticker Art",
+        "tags": [
+          "DeepSeek Chan",
+          "fishing",
+          "maid outfit",
+          "lakeside",
+          "whale tail",
+          "Chinese style"
+        ]
+      },
+      "ja": {
+        "commentary": "柳の枝が水面まで届いていたので、私も糸を垂らしてみた。今日はパラメータの話はなし、浮きが動くのを待つだけ。かごが空でもいい、湖畔の風はサーバールームよりずっと涼しい。",
+        "description": "青い髪の DeepSeek ちゃんが湖畔の岩に腰かけて釣り糸を垂らしている。濃紺のメイド服姿で、後ろには鯨の尾びれが伸び、そばには竹かごと麦わら帽子が置かれている。背景には柳、遠くの山並み、水面のあずまやが広がる。",
+        "faq": [
+          {
+            "answer": "DeepSeek ちゃんが湖畔の岩に座って釣りをする姿が描かれています。濃紺のメイド服を着て、後ろに鯨の尾びれがあり、そばには竹かごと麦わら帽子が置かれています。",
+            "question": "この画像には何が描かれていますか？"
+          },
+          {
+            "answer": "柳と遠くの山、水面のあずまやに囲まれた、風景のあるイラストです。",
+            "question": "どのような構図ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "湖で釣りをする DeepSeek ちゃん",
+        "originNote": "",
+        "seoDescription": "濃紺のメイド服姿の DeepSeek ちゃんが湖畔の岩で釣りをする一場面。柳と遠くの山、水面のあずまやが背景のイラスト。",
+        "seoTitle": "湖で釣りをする DeepSeek ちゃんのイラスト",
+        "tags": [
+          "DeepSeek ちゃん",
+          "釣り",
+          "メイド服",
+          "湖畔",
+          "鯨の尾びれ",
+          "中国風"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_5e2d87ba8ca547015a217707",
+    "name": "瞪眼鲸鲸",
+    "description": "DeepSeek 娘的脸部特写：蓝发配蓝色蝴蝶结发饰与女仆头饰，眉毛压低、眼睛瞪起、脸颊微鼓、嘴角下撇，一副不言不语的反抗表情，背景是昏暗的室内一角。",
+    "commentary": "你再说一遍试试。……哼，我听见了，只是不想理。别以为把屏幕凑近一点，我就会软下来。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/5e2d87ba8ca54701.png",
+    "thumbnailPath": "submissions/previews/deepseek/5e2d87ba8ca54701.webp",
+    "fullPath": "submissions/large/deepseek/5e2d87ba8ca54701.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1585,
+    "height": 992,
+    "fileSize": 1885325,
+    "sha256": "5e2d87ba8ca547015a217707fc27358a2263950806f13757032609ef501c7411",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "瞪眼",
+      "生气",
+      "表情包",
+      "怼脸",
+      "蓝发"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-05T18:18:08.535Z",
+    "updatedAt": "2026-11-05T18:18:08.535Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611050007",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "a243feee82f7c44a526211d5d309e67135d2c3b811fe1e535a87b6273cb4ef28",
+      "en": {
+        "commentary": "Say that again, I dare you. ...Hmph. I heard you, I just don't feel like answering. Don't think leaning closer to the screen will make me soften up.",
+        "description": "A close-up of DeepSeek Chan's face: blue hair with blue bow ornaments and a maid headdress, brows pressed down, eyes glaring, cheeks slightly puffed and mouth turned down in a silent act of defiance, with a dim corner of a room behind her.",
+        "faq": [
+          {
+            "answer": "It is a tight close-up of DeepSeek Chan glaring with puffed cheeks and a downturned mouth, an exaggerated look of annoyance used as a reaction image.",
+            "question": "What expression does this image show?"
+          },
+          {
+            "answer": "Blue hair with blue bows and a maid headdress, a dark blue collar with a round gem, against a dim indoor background.",
+            "question": "What details are visible in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Glaring",
+        "originNote": "",
+        "seoDescription": "A close-up reaction image of DeepSeek Chan glaring with puffed cheeks, blue hair and bow ornaments against a dim indoor background.",
+        "seoTitle": "DeepSeek Chan Glaring — Reaction Sticker",
+        "tags": [
+          "DeepSeek Chan",
+          "glaring",
+          "annoyed",
+          "reaction image",
+          "close-up",
+          "blue hair"
+        ]
+      },
+      "ja": {
+        "commentary": "もう一回言ってみて。……ふん、聞こえてるよ、ただ相手したくないだけ。画面に近づいたくらいで私が折れると思わないで。",
+        "description": "DeepSeek ちゃんの顔のアップ。青い髪に青いリボンの飾りとメイドのヘッドドレス、眉を下げて目を見開き、頬を少し膨らませ、口をへの字にして無言で抵抗している。背景は薄暗い室内の一角。",
+        "faq": [
+          {
+            "answer": "DeepSeek ちゃんが眉を下げて目を見開き、頬を膨らませ口をへの字にした、不機嫌さを大げさに表したリアクション用の一枚です。",
+            "question": "どんな表情の画像ですか？"
+          },
+          {
+            "answer": "青い髪に青いリボンとメイドのヘッドドレス、丸い石の付いた濃紺の襟、背景は薄暗い室内です。",
+            "question": "画面にはどんな要素がありますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "じと目でにらむ DeepSeek ちゃん",
+        "originNote": "",
+        "seoDescription": "青い髪とリボンの飾りをつけた DeepSeek ちゃんが、頬を膨らませてじと目でにらむ顔アップのリアクション画像。",
+        "seoTitle": "じと目でにらむ DeepSeek ちゃん｜リアクション画像",
+        "tags": [
+          "DeepSeek ちゃん",
+          "にらみ",
+          "不機嫌",
+          "リアクション画像",
+          "顔アップ",
+          "青い髪"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_3ed8042a568ae565769406a7",
+    "name": "雨夜废墟里的持剑少女",
+    "description": "蓝发少女戴着缀花的圆帽，穿黑白女仆风长裙，双手握着巨剑站在雨中的废墟里，身后扬起鲸尾，远处悬着一轮泛红的大月亮。",
+    "commentary": "那天雨很大，我拎着剑站在废墟里，裙摆和围裙上全是泥点。别担心，我不是来打架的，只是在等下一轮推理开场。等着等着无聊了，就把天边那颗月亮也一起推成了红色。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/3ed8042a568ae565.png",
+    "thumbnailPath": "submissions/previews/deepseek/3ed8042a568ae565.webp",
+    "fullPath": "submissions/large/deepseek/3ed8042a568ae565.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 3306293,
+    "sha256": "3ed8042a568ae565769406a7b166d9af7709dc511e7aeb2c6ea7f2662130f49a",
+    "characterId": "deepseek",
+    "tags": [
+      "蓝发",
+      "鲸尾",
+      "巨剑",
+      "雨夜",
+      "废墟",
+      "月亮"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-05T19:09:53.119Z",
+    "updatedAt": "2026-11-05T19:09:53.119Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611050008",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "2cb85ddcba8244e85de5c7c290757a183dee90e1331922deed7a76d83bf18114",
+      "en": {
+        "commentary": "The rain was heavy that day, and I stood in the ruins with my sword, mud speckled across my skirt and apron. Don't worry, I wasn't there to fight — I was only waiting for the next round of reasoning to begin. Waiting got boring, so I reasoned the moon red as well.",
+        "description": "A blue-haired girl in a black-and-white maid-style dress and a flower-trimmed round hat stands in the rain among ruined buildings, gripping a greatsword. A whale tail sweeps up behind her, and a large reddish moon hangs in the distance.",
+        "faq": [
+          {
+            "answer": "She is DeepSeek Chan, the personification of the DeepSeek AI product, drawn here as fan art with her signature blue hair and whale tail.",
+            "question": "Who is the character in this image?"
+          },
+          {
+            "answer": "She stands in a ruined landscape under heavy rain, holding a greatsword, with a large reddish moon in the sky behind her.",
+            "question": "What is happening in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Swordswoman in the Rain-Swept Ruins",
+        "originNote": "",
+        "seoDescription": "Fan art of DeepSeek Chan: a blue-haired girl in a maid-style dress holds a greatsword in the rain among ruins, a whale tail behind her and a red moon overhead.",
+        "seoTitle": "DeepSeek Chan with a Greatsword in the Rain-Swept Ruins",
+        "tags": [
+          "blue hair",
+          "whale tail",
+          "greatsword",
+          "rainy night",
+          "ruins",
+          "moon"
+        ]
+      },
+      "ja": {
+        "commentary": "あの日はひどい雨で、私は剣を持ったまま廃墟に立っていた。スカートもエプロンも泥だらけ。心配しないで、戦いに来たわけじゃないの。次の推論が始まるのを待っていただけ。待っているうちに退屈して、空の月まで赤く推理してしまった。",
+        "description": "青い髪の少女が花飾りの丸い帽子とモノクロのメイド風ドレスをまとい、雨の降る廃墟の中で大剣を握って立っている。背後にはクジラの尾が跳ね、遠くには赤みがかった大きな月が浮かぶ。",
+        "faq": [
+          {
+            "answer": "DeepSeekというAI製品を擬人化したDeepSeekちゃんのファンアートです。青い髪とクジラの尾が特徴です。",
+            "question": "この画像のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "大雨の廃墟の中で大剣を握って立っており、背後の空には赤みがかった大きな月が浮かんでいます。",
+            "question": "画面では何が起きていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "雨の廃墟に立つ剣士",
+        "originNote": "",
+        "seoDescription": "DeepSeekちゃんのファンアート。青い髪の少女がメイド風ドレスで雨の廃墟に大剣を構え、背後にクジラの尾、空には赤い月。",
+        "seoTitle": "雨の廃墟に立つ大剣のDeepSeekちゃん",
+        "tags": [
+          "青い髪",
+          "クジラの尾",
+          "大剣",
+          "雨夜",
+          "廃墟",
+          "月"
+        ]
+      }
+    }
   }
 ]
