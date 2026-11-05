@@ -1,16 +1,3 @@
-/* A compact desktop rail that follows the archive's light and dark theme. */
-:root {
-  --rail-surface: var(--soft);
-  --rail-border: var(--line);
-  --rail-text: var(--ink);
-  --rail-hover: color-mix(in srgb, var(--blue) 10%, var(--paper));
-  --rail-active: color-mix(in srgb, var(--blue) 22%, var(--paper));
-  --rail-focus: var(--blue);
-}
-:root[data-theme="dark"] {
-  --rail-hover: color-mix(in srgb, var(--blue) 16%, var(--paper));
-  --rail-active: color-mix(in srgb, var(--blue) 30%, var(--paper));
-}
 body.archive { --sidebar: 76px; }
 body.archive.refined:not(.sidebar-collapsed) .sidebar-rail {
   width: var(--sidebar);

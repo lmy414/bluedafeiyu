@@ -1,6 +1,7 @@
 import {workImageAlt} from './image-alt.js';
 import {renderWorkActions} from './work-actions.js';
 import {workImageURL} from './work-image.js';
+import {loadPreviewMetadata,renderPreviewMetadata,updatePreviewTags} from './preview-metadata.js';
 
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
 const icon = name => {
@@ -11,7 +12,7 @@ const icon = name => {
 // Keep real detail URLs for no-JS browsing, link menus and search engines.
 export const workPreviewAttributes = slug => `data-preview="${esc(slug)}" aria-haspopup="dialog" aria-controls="preview-dialog"`;
 
-export function installWorkPreview({load, localize = w => w, translate:tx, url, names, toast, document:doc = globalThis.document, components = globalThis.SiteComponents}) {
+export function installWorkPreview({load, localize = w => w, translate:tx, url, names, toast, loadMetadata=loadPreviewMetadata, document:doc = globalThis.document, components = globalThis.SiteComponents}) {
   const dialog = doc.querySelector('#preview-dialog');
   const body = doc.querySelector('#preview-body');
   const closeButton = dialog?.querySelector('[data-preview-close]');
@@ -30,7 +31,8 @@ export function installWorkPreview({load, localize = w => w, translate:tx, url, 
     if (node === doc.body || dialog.contains(node)) node = null;
     const roots = [];
     for (let root = node?.closest(listScope) || node?.parentElement; root && root !== doc.body && root.tagName !== 'MAIN'; root = root.parentElement) roots.push(root);
-    return {node, slug, title:!!node?.matches('.work-title'), roots};
+    const selector = ['.quick-view','.work-art','.work-title','[data-image-open]'].find(selector=>node?.matches(selector));
+    return {node, slug, selector, roots};
   };
   const available = node => node?.isConnected && !node.closest('[hidden],[inert]') && !node.disabled && (!node.getClientRects || node.getClientRects().length > 0);
   const restore = () => {
@@ -41,7 +43,7 @@ export function installWorkPreview({load, localize = w => w, translate:tx, url, 
     const root = focus?.roots.find(available);
     const links = root ? [...root.querySelectorAll('[data-preview],[data-image-open]')].filter(available) : [];
     const matches = links.filter(node => (node.dataset.preview || node.dataset.imageOpen) === focus?.slug);
-    const target = available(focus?.node) ? focus.node : matches.find(node => node.matches('.work-title') === focus?.title) || matches[0] || links[0] || root || doc.querySelector('main');
+    const target = available(focus?.node) ? focus.node : matches.find(node => focus?.selector && node.matches(focus.selector)) || matches[0] || links[0] || root || doc.querySelector('main');
     if (available(target)) {
       if (!target.matches('a[href],button,input,select,textarea,[tabindex]')) {
         target.setAttribute('tabindex','-1');
@@ -81,21 +83,44 @@ export function installWorkPreview({load, localize = w => w, translate:tx, url, 
       const heading = `<header class="preview-heading">${icon('image')}<span>${esc(tx('d.previewTitle','作品预览'))}</span><a class="button small preview-detail-link" href="${esc(url('/works/'+w.slug+'.html'))}">${esc(tx('d.fullDetail','查看详情'))}${icon('arrow')}</a></header>`;
       const actions = renderWorkActions(w, {preview:true,translate:tx,url});
       if (mode === 'image') {
+        dialog.removeAttribute('aria-labelledby');
         body.innerHTML = `${heading}${actions}<div class="preview-zoom"><img src="${esc(w.l)}" alt="${esc(workImageAlt(w))}" width="${width}" height="${height}"></div>`;
       } else {
+        dialog.setAttribute('aria-labelledby','preview-work-title');
         body.innerHTML = `${heading}${actions}
           <div class="preview-content">
             <div class="preview-art"><figure class="preview-photo"><img src="${esc(w.l)}" alt="${esc(workImageAlt(w))}" width="${width}" height="${height}"></figure></div>
             <div class="preview-info">
               <div class="preview-topline">${w.roles.map(role=>`<a class="preview-role" data-character-id="${esc(role.id)}" href="${esc(url('/characters/'+role.id+'.html'))}">${components.roleDot(role.color)}${esc(role.name)}${icon('arrow')}</a>`).join('')}<span class="preview-kind">${w.k.map(id=>esc(tx('v2.type.'+id,id))).join(' · ')}</span></div>
-              <h2>${esc(w.n)}</h2>
+              <h2 id="preview-work-title">${esc(w.n)}</h2>
               <div class="preview-note"><span class="eyebrow">${esc(tx('d.fishComment','大肥鱼说'))}</span><p>${esc(w.cm||w.d)}</p></div>
-              ${w.tg.length?`<div class="tags preview-tags">${w.tg.slice(0,6).map((t,i)=>`<a class="tag" href="${esc(url('/search.html?q='+encodeURIComponent(w.sourceTags?.[i]||t)))}"><span aria-hidden="true">#</span>${esc(names(t))}</a>`).join('')}</div>`:''}
+              ${w.tg.length?`<div class="tags preview-tags">${w.tg.map((t,i)=>`<a class="tag" href="${esc(url('/search.html?q='+encodeURIComponent(w.sourceTags?.[i]||t)))}"><span aria-hidden="true">#</span>${esc(names(t))}</a>`).join('')}</div>`:''}
               <dl class="preview-facts"><div><dt>${esc(tx('d.previewFormat','原图格式'))}</dt><dd>${esc(w.f||'—')}</dd></div><div><dt>${esc(tx('d.previewSize','文件大小'))}</dt><dd>${esc(w.s||'—')}</dd></div><div class="preview-permission"><dt>${esc(tx('d.previewPermission','使用许可'))}</dt><dd>${esc(tx('license.'+w.lk,w.lt))}</dd></div></dl>
             </div>
           </div>
           <nav class="preview-nav" aria-label="${esc(tx('d.previewNavigation','作品切换'))}"><button type="button" class="preview-step" data-preview-step="-1" ${index===0?'disabled':''}>${icon('back')}${esc(tx('d.prevWork','上一张'))}</button><span class="preview-position"><b>${String(index+1).padStart(2,'0')}</b><span>/</span>${String(slugs.length).padStart(2,'0')}</span><button type="button" class="preview-step" data-preview-step="1" ${index===slugs.length-1?'disabled':''}>${esc(tx('d.nextWork','下一张'))}${icon('arrow')}</button></nav>`;
         doc.dispatchEvent(new doc.defaultView.CustomEvent('work:show',{detail:{id:w.id,viewType:'preview'}}));
+        const info = body.querySelector('.preview-info');
+        Promise.all([loadMetadata(w.id),doc.defaultView.WorkStats?.ready]).then(([metadata,statistics]) => {
+          if (currentRequest !== request || !dialog.open || !info.isConnected) return;
+          const lang = doc.defaultView.SiteLang?.current || 'zh';
+          // The compact gallery omits redundant role tags. The preview uses the full record.
+          if (Array.isArray(metadata.tags)) {
+            let tags = info.querySelector('.preview-tags');
+            if (!tags && metadata.tags.length) {
+              tags = doc.createElement('div');tags.className = 'tags preview-tags';
+              info.querySelector('.preview-facts').before(tags);
+            }
+            if (tags) updatePreviewTags(tags,metadata,{names,url,language:lang});
+          }
+          info.insertAdjacentHTML('beforeend',renderPreviewMetadata(metadata,statistics,{translate:tx,names,url,language:lang}));
+        }).catch(() => {
+          if (currentRequest !== request || !dialog.open || !info.isConnected) return;
+          const message = doc.createElement('p');
+          message.className = 'preview-complete-details';
+          message.textContent = tx('d.previewMetadata.loadFailed','完整信息暂不可用，可打开作品详情。');
+          info.append(message);
+        });
       }
       doc.dispatchEvent(new doc.defaultView.Event('preview:render'));
       dialog.scrollTop = 0;
@@ -136,6 +161,7 @@ export function installWorkPreview({load, localize = w => w, translate:tx, url, 
     const refresh = node => {
       if (node.nodeType === 3) { node.textContent = names(node.textContent); return; }
       if (node.nodeType !== 1) return;
+      if (node.classList.contains('author-name')) return;
       for (const attr of ['alt','aria-label','title']) {
         if (node.hasAttribute(attr)) node.setAttribute(attr, names(node.getAttribute(attr)));
       }

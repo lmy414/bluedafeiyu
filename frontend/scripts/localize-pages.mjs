@@ -87,6 +87,14 @@ function pageMeta(document, api, base, snapshot, archive) {
     title: ({zh:'友情链接墙 — 蓝色大肥鱼','zh-Hant':'友情連結牆 — 藍色大肥魚',en:'Friend Link Wall | DeepSeek Chan',ja:'リンクウォール | 藍色大肥魚'})[locale],
     description: ({zh:'按项目类、网站类浏览友情链接，发现有趣的项目与网站。','zh-Hant':'按專案類、網站類瀏覽友情連結，發現有趣的專案與網站。',en:'Browse friend links by projects and websites, and discover interesting places connected to the archive.',ja:'プロジェクトとウェブサイトに分けたリンク集から、アーカイブにつながる楽しい場所を見つけましょう。'})[locale]
   };
+  if (base === '/community-projects.html') landing = {
+    title: ({zh:'社区项目 — 蓝色大肥鱼','zh-Hant':'社區專案 — 藍色大肥魚',en:'Community projects | DeepSeek Chan',ja:'コミュニティのプロジェクト | 藍色大肥魚'})[locale],
+    description: ({zh:'社区推荐的开源项目、创作工具与二创资源。','zh-Hant':'社區推薦的開源專案、創作工具與二創資源。',en:'Explore community projects, creative tools and fan-art resources.',ja:'コミュニティのプロジェクト、制作ツール、二次創作の資料を探せます。'})[locale]
+  };
+  if (base === '/friend-links.html') landing = {
+    title: ({zh:'友链墙 — 蓝色大肥鱼','zh-Hant':'友鏈牆 — 藍色大肥魚',en:'Friend links | DeepSeek Chan',ja:'リンク集 | 藍色大肥魚'})[locale],
+    description: ({zh:'从友链继续探索有趣的网站与创作者。','zh-Hant':'從友鏈繼續探索有趣的網站與創作者。',en:'Discover more websites and creators through our friend links.',ja:'リンク先のウェブサイトやクリエイターを見つけましょう。'})[locale]
+  };
   const guide = guides.find(g => guidePath(g) === base);
   if (guide) landing = { title: localizedCopy(guide.name,locale) + (locale === 'en' ? ' | DeepSeek Chan' : locale === 'ja' ? ' | 藍色大肥魚' : ' — 蓝色大肥鱼'), description: localizedCopy(guide.summary,locale) };
   if (base === '/category.html' && ['en','ja'].includes(locale)) landing = {
@@ -219,7 +227,7 @@ export async function localizeHtml(html, base, locale, snapshot) {
         const route = new URL(archivePath,ORIGIN).pathname.replace(/^\/(en|ja)(?=\/)/,'');
         const guide = guides.find(g=>guidePath(g)===route);
         if (guide) value.name = localizedCopy(guide.name,locale.id);
-        else if (route === '/category.html' || route === '/projects.html') value.name = document.title;
+        else if (['/category.html','/projects.html','/community-projects.html','/friend-links.html'].includes(route)) value.name = document.title;
         else if (route === '/saved.html' || route === '/videos.html' || route === '/creators.html' || route.startsWith('/creators/')) value.name = document.title;
       }
       if (base === '/index.html' && ['WebSite','Organization'].includes(value['@type'])) {

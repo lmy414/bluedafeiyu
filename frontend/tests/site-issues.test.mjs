@@ -95,20 +95,23 @@ test('character descriptions merge search aliases into a single non-repeating li
   }
 });
 
-test('the homepage supplies a complete editorial download row and original-download tracking in every language',()=>{
+test('home ranking fallbacks retain twelve real preview destinations in every language',()=>{
   const archive=JSON.parse(fs.readFileSync(path.join(out,'archive-data.json'),'utf8'));
-  const work=archive.works.find(w=>w.slug==='deepseek202609300025');
+  const bySlug=new Map(archive.works.map(work=>[work.slug,work]));
   for(const locale of LOCALES){
     const section=read(localizedPath('/',locale)).querySelector('#popular-downloads');
     assert.ok(section,locale.id);
-    const download=section.querySelector('[data-download-work]');
-    assert.equal(download.dataset.downloadWork,work.id);
-    assert.equal(download.getAttribute('href'),work.o);
-    const picks=[...section.querySelectorAll('.home-download-pick')];
-    assert.equal(picks.length,4,locale.id+' complete row');
-    assert.equal(new Set(picks.map(pick=>pick.querySelector('[data-download-work]').dataset.downloadWork)).size,4);
-    assert.ok(section.querySelector('[data-home-download-note]'));
-    assert.ok(section.querySelector(`a[href="${localizedPath('/works/'+work.slug+'.html',locale)}"]`));
+    const picks=[...section.querySelectorAll('.work-card')];
+    assert.equal(picks.length,12,locale.id+' complete wall');
+    assert.equal(new Set(picks.map(pick=>pick.dataset.slug)).size,12);
+    for(const pick of picks){
+      const work=bySlug.get(pick.dataset.slug),image=pick.querySelector('.work-art');
+      assert.ok(work);assert.equal(image.dataset.preview,work.slug);
+      assert.equal(image.getAttribute('href'),localizedPath('/works/'+work.slug+'.html',locale));
+      assert.ok(work.o);assert.ok(image.querySelector('img').alt);
+    }
+    assert.ok(section.querySelector('[data-home-ranking-note]'));
+    assert.equal(section.querySelector('.home-download-action'),null);
   }
 });
 
