@@ -33,7 +33,7 @@ export function installHomeRankings() {
   const ranked = new Map();
   let snapshot;
   const tx = (key, fallback, vars) => window.SiteLang?.fmt(key, fallback, vars) || fallback.replace(/\{(\w+)\}/g,(_,name)=>vars?.[name] ?? '');
-  const paint = () => {
+  const paint = event => {
     for (const section of sections) {
       const mode = section.dataset.homeRanking, works = ranked.get(mode);
       if (!works?.length) continue;
@@ -46,7 +46,7 @@ export function installHomeRankings() {
         names:value => window.SiteLang?.contentText(value) || value
       })).join('');
       const cards = [...grid.querySelectorAll('.work-card')];
-      if (cards.length === works.length && cards.every((card,index)=>card.dataset.slug===works[index].slug)) {
+      if (event?.type === 'site:langchange' && cards.length === works.length && cards.every((card,index)=>card.dataset.slug===works[index].slug)) {
         const template = document.createElement('div');template.innerHTML = markup;
         cards.forEach((card,index)=>updateCardCopy(card,template.children[index]));
       } else grid.innerHTML = markup;

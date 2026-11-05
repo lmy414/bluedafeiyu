@@ -35,11 +35,12 @@ test('ranking localization preserves the current control and never reclaims a us
   window.WorkStats={ready:new Promise(resolve=>{ready=resolve;}),paint(){}};
   window.SiteLang={localWork:work=>converted?{...work,n:'Localized '+work.n}:work,contentText:value=>value,url:value=>value,fmt:(_key,fallback)=>fallback};
   try{
-    const initial=document.querySelector('.work-grid');initial.innerHTML=works.map(work=>renderWorkCard(work)).join('');
+    const initial=document.querySelector('.work-grid');initial.innerHTML=works.map(work=>renderWorkCard({...work,i:'/stale.webp'})).join('');
     installHomeRankings();const pending=initial.querySelector('[data-slug="a"] .quick-view');pending.focus();calls=[];
-    ready({available:true,works:{a:{views:4,downloads:2},b:{views:8,downloads:5}}});await new Promise(resolve=>setImmediate(resolve));
+    ready({available:true,works:{a:{views:8,downloads:2},b:{views:4,downloads:5}}});await new Promise(resolve=>setImmediate(resolve));
     assert.equal(document.activeElement,initial.querySelector('[data-slug="a"] .quick-view'));
     assert.notEqual(document.activeElement,pending);assert.deepEqual(calls.map(c=>c.options),[{preventScroll:true}]);
+    assert.equal(initial.querySelector('[data-slug="a"] img').getAttribute('src'),'/thumb.webp','initial data refresh replaces stale image data even when IDs match');
     converted=true;
     for(const mode of ['popular','downloads'])for(const selector of ['.work-art','.quick-view','.work-title','[data-save]']){
       const grid=document.querySelector(`[data-home-ranking="${mode}"] .work-grid`);
