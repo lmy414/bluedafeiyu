@@ -5,6 +5,7 @@ import { workAttribution } from '../../../admin/src/lib/attribution.mjs';
 import { imageRights } from './image-metadata.mjs';
 import { workCharacterIds } from '../../../tools/work-characters.mjs';
 import { workImages } from '../../public/components/work-image.js';
+import { nonSerialWorks } from '../../public/archive/topic-visibility.js';
 
 export const ORIGIN = 'https://xn--pssy23gqgbz2d718b.com';
 export const PAGE_SIZE = 24;
@@ -157,7 +158,7 @@ export function overlayData() {
 }
 // 搜索索引（/search-index.json）：只含检索字段
 export function searchIndex() {
-  return works.map(w => ({ id: w.id, s: w.slug, n: w.name, c: w.roles.map(role => role.name).join(' · '), a: w.roles.flatMap(role => role.aliases).join(' '), t: (w.tags || []).join(' '), d: w.description || '', i: w.thumb, w: w.width, h: w.height, k: w.cats }));
+  return nonSerialWorks(works, allTopics).map(w => ({ id: w.id, s: w.slug, n: w.name, c: w.roles.map(role => role.name).join(' · '), a: w.roles.flatMap(role => role.aliases).join(' '), t: (w.tags || []).join(' '), d: w.description || '', i: w.thumb, w: w.width, h: w.height, k: w.cats }));
 }
 
 export const GH_ICON = "<svg viewBox=\"0 0 16 16\" width=\"18\" height=\"18\" aria-hidden=\"true\" fill=\"currentColor\"><path d=\"M8 0a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.05-.49.05-.49.8.06 1.23.83 1.23.83.72 1.23 1.88.87 2.34.67.07-.52.28-.87.5-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.66 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 8 0Z\"/></svg>";

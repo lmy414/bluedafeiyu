@@ -93,9 +93,9 @@ test('dependency analysis never renders a lazy detail; transforms execute once o
  assert.equal(model.cacheKey,model.cacheKey);assert.equal(renders,0);assert.equal(enriches,0);
  assert.equal(model.content,'body transformed');assert.equal(model.content,'body transformed');assert.equal(renders,1);
 });
-function keys(works,topics=[]) {
+function keys(works,topics=[],galleryWorks=works) {
  const pages=new Map();
- const ctx={works,types:[],topics,tr:(_key,value)=>value,snapshot:{works},workHref:w=>'/works/'+w.slug+'.html',seo:{metadata:()=>({}),enrich:(_url,value)=>value}};
+ const ctx={works,galleryWorks,types:[],topics,tr:(_key,value)=>value,snapshot:{works},workHref:w=>'/works/'+w.slug+'.html',seo:{metadata:()=>({}),enrich:(_url,value)=>value}};
  ctx.write=(url,title,active,body,options)=>pages.set(url,createPageModel(ctx,url,title,active,body,options));
  createWorkPages(ctx);
  return Object.fromEntries([...pages].map(([url,p])=>[url,p.cacheKey]));
@@ -113,4 +113,16 @@ test('recommendation dependencies include new candidates, selected edits and rem
  assert.notEqual(keys(edited)['/works/target.html'],before['/works/target.html']);
  const topic={id:'chosen',list:[works[0],works[2]]};
  assert.notEqual(keys(works,[topic])['/works/target.html'],before['/works/target.html']);
+});
+
+test('serial pages retain details without entering ordinary recommendation dependencies',()=>{
+ const ordinary=[work('target',['match']),work('ordinary',['match'])];
+ const serial=work('serial',['match']);
+ const topic={id:'story',reader:{pages:[{number:1,workId:serial.id}]},list:[serial]};
+ const before=keys(ordinary);
+ const after=keys([...ordinary,serial],[topic],ordinary);
+ assert.equal(after['/works/target.html'],before['/works/target.html']);
+ assert.ok(after['/works/serial.html']);
+ serial.d='changed serial image';
+ assert.equal(keys([...ordinary,serial],[topic],ordinary)['/works/target.html'],before['/works/target.html']);
 });

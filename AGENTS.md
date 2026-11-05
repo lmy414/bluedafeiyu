@@ -26,16 +26,24 @@
 | `blue-fish-ids.json` | `dist/blue-fish-ids.json` |
 | `works.json` | `dist/submissions/works.json` |
 | `owner-picks.json` | `dist/owner-picks/works.json` |
-| `topics.json` | `dist/topics.json`（专题：**站长人工精选**的作品合集，不分类；快照里带成 `topics`，供 `topics.html` 与首页专题轮播用） |
+| `topics.json` | `dist/topics.json`（站长按相关性维护的专题合集，不改变作品类型；快照里带成 `topics`，供专题页面使用） |
 | `blue-fish-classification.json` | `dist/data/blue-fish-classification.json`（构建期读，不进产物） |
 | `blue-fish-editorial.json` | `dist/data/blue-fish-editorial.json`（构建期读，不进产物） |
 | `work-localizations.json` | `dist/data/work-localizations.json`（按作品 ID 和中文内容摘要合并英日译文） |
 
 视频另有 `data/video-archive.json`，由后台只导出通过 AI 审核的视频及作者公开资料，前端构建直接读取。它不加入图片作品和六种图片类型。作者登记、公开接口、审核队列及维护方式见 `docs/Bilibili作者登记与视频同步.md`。未审视频、领取令牌和失败记录不得导出。
 
-连载漫画专题的显式编排保存在 `data/serial-topics.json`，构建时覆盖同 ID 的 CMS 专题或追加缺失专题，避免后续后台导出移除已编排连载。该清单仅用于站长指定的连载，不按作者或标签自动归集。`reader.totalPages` 是原稿总页数，`reader.pages` 显式关联原稿页码与稳定作品 ID；封面不占正文页码，未发布页保留缺页提示。页面使用组件库 `ComicSeries.mjs` 输出封面目录和 `/topics/<id>/page/<原稿页码>.html`，无需 JavaScript 即可前后翻页。图片档案的连载专区为 `/serials.html`；清单中的封面和正文页不进入首页、普通图库或角色档案的作品流。作品的搜索结果、详情地址和公开 API 继续保留。补页前仍需正常审核收录，再将新作品 ID 与原页码写入清单。头像沿用内容仓 `dist/author-avatars/<id>.webp`。
+专题是在已收录图片上建立的分类和集合。普通专题按主题、画风等高度相关的内容，或按同一作者、同一部漫画组织作品，不要求所有图片都有专题。同一图片可以同时属于多个专题；新增或移除某个专题的关联，只影响该专题，不改动其他专题的关联，也不改变图片在原有图库中的相对顺序、作品 ID、地址和文件位置。
 
-专题收录的作品由站长人工精选，**不要自动把作品批量归进专题**；专题元数据可由 owner/bot 经后台 upsert 接口创建或更新，本仓库不预置具体专题记录。每条字段：`id`（kebab-case，发布后冻结，用于 `topics/<id>.html`；旧 hash 链接仍可用）、`name`、`summary`、`coverWorkId`、`status`（`active` 才上线）、`order`（升序）、`createdAt`/`updatedAt`、`workIds`（显式收录的作品 id，按此顺序展示）。构建时下架或不存在的 `workIds` 会被跳过并警告，封面失效退回首张，收录清空的专题不上线。
+专题包括两种特殊形式：角色专题汇集同一角色的全部公开投稿，使用已有角色数据与专门设计的角色落地页；连载专题组织同一整部连载或连环漫画，使用专门的目录和阅读页。连载是展示范围的例外：连载专题及其封面、正文图片仅在连载栏目展示，不混入普通图片，包括角色专题的普通作品流。
+
+连载漫画专题的显式编排保存在 `data/serial-topics.json`，构建时覆盖同 ID 的 CMS 专题或追加缺失专题，避免后续后台导出移除已编排连载。该清单仅用于站长指定的连载，不按作者或标签自动归集。`reader.totalPages` 是原稿总页数，`reader.pages` 显式关联原稿页码与稳定作品 ID；封面不占正文页码，未发布页保留缺页提示。页面使用组件库 `ComicSeries.mjs` 输出封面目录和 `/topics/<id>/page/<原稿页码>.html`，无需 JavaScript 即可前后翻页。连载专区为 `/serials.html`。
+
+连载专题不进入普通专题目录、首页专题轮播或其他普通专题的推荐；连载封面和正文页不进入首页图片推荐、普通图库、角色作品流、类型页、普通专题图片流、作者图片列表、全站图片搜索或收藏图片列表。跨专题关联保留，但普通列表不能借此展示连载图片。
+
+既有作品详情地址和公开 API 保留，连载阅读页仍可链接作品详情与原图。展示过滤复用 `frontend/public/archive/topic-visibility.js`，不改写原始作品或专题成员。补页前仍需正常审核收录，再将新作品 ID 与原页码写入清单。头像沿用内容仓 `dist/author-avatars/<id>.webp`。
+
+普通专题收录的作品由站长人工精选，**不要自动把作品批量归进专题**；专题元数据可由 owner/bot 经后台 upsert 接口创建或更新，本仓库不预置具体专题记录。每条字段：`id`（kebab-case，发布后冻结，用于 `topics/<id>.html`；旧 hash 链接仍可用）、`name`、`summary`、`coverWorkId`、`status`（`active` 才上线）、`order`（升序）、`createdAt`/`updatedAt`、`workIds`（显式收录的作品 id，按此顺序展示）。构建时下架或不存在的 `workIds` 会被跳过并警告，封面失效退回首张，收录清空的专题不上线。
 
 后台另提供受鉴权的专题 upsert 接口（`POST /cms-api/topics/upsert`，owner 或 bot 均可调用），只允许按严格白名单维护文案与作者元数据：`topicId`（查找键）、`name`/`summary` 与英日译名、`author`（省略保留、`null` 清空）、`status`、`order`；`works`、`cover`、`needsPublish` 等键一律 400 拒绝。**作品与封面只能由站长在后台关联**，机器人不得通过该接口改动；机器人也不能把已关联作品的专题改成草稿。一条 `active` 但没有任何作品的专题不会生成专题页面。
 
@@ -133,3 +141,13 @@ node tools/tests/migration.test.mjs --content-dir <内容仓>         # 迁移�
 - 服务器配置（`DEPLOY_ENV`、`DEPLOY_ROOT`、`SOURCE_DIR`、`CONTENT_DIR` 等）由维护者在服务器侧维护，不写进仓库。
 
 发布脚本为依赖安装、站点构建和预压缩分别建立 systemd 内存限制。默认总内存上限为 1280 MiB，Node 堆上限为 640 MiB，Swap 上限为 512 MiB。每步开始前要求至少 1024 MiB 可用内存。`BUILD_MEMORY_MAX_MB`、`BUILD_NODE_HEAP_MB` 和 `BUILD_MIN_AVAILABLE_MB` 分别控制总内存、Node 堆和最低可用内存。`[build-memory]` 日志每 5 秒记录可用内存和构建进程组占用，结束时输出峰值；失败时保留现行 `current`。
+
+## UI Design Principles
+
+Avoid unnecessary secondary labels, descriptions, and redundant explanatory text. Let the layout communicate structure and meaning through visual hierarchy, grouping, spacing, alignment, typography, and clear control names.
+
+Before adding any text, ask whether it provides essential information or merely repeats what the interface already communicates.
+
+Prefer improving unclear layouts over adding explanatory paragraphs. Keep interfaces concise, purposeful, and visually balanced.
+
+Preserve essential labels, accessibility, input constraints, error messages, and confirmation text for consequential actions. Never sacrifice usability for minimalism.

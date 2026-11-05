@@ -1,4 +1,5 @@
 import {videoArchive} from './video-archive.mjs';
+import {nonSerialWorks} from '../../public/archive/topic-visibility.js';
 
 export const creatorRank = uid => ({'4168597':0, '4456176':1}[uid] ?? 2);
 export const archiveDate = date => String(date || '').replaceAll('.', '-');
@@ -9,11 +10,12 @@ export function archiveCreators(topics, archive = videoArchive) {
     videos:archive.videos.filter(v => v.uid === c.uid)
   }]));
   for (const topic of topics.filter(t => t.author)) {
+    const images = nonSerialWorks(topic.list, topics);
     const uid = topic.author.channels.map(c => c.url.match(/space\.bilibili\.com\/(\d+)/)?.[1]).find(Boolean);
     const key = uid || topic.id;
     const existing = authors.get(key);
     if (existing) {
-      existing.images = [...new Map([...existing.images, ...topic.list].map(w => [w.id,w])).values()];
+      existing.images = [...new Map([...existing.images, ...images].map(w => [w.id,w])).values()];
       existing.topic = topic;
       existing.intro ||= topic.author.bio || '';
       existing.avatar ||= topic.avatar || '';
@@ -23,7 +25,7 @@ export function archiveCreators(topics, archive = videoArchive) {
       name:topic.author.name, intro:topic.author.bio || '', avatar:topic.avatar || '',
       href:'/creators/' + (uid ? 'bilibili-' + uid : topic.id) + '.html',
       homepage:topic.author.channels[0].url, channels:topic.author.channels,
-      images:topic.list, videos:[], topic
+      images, videos:[], topic
     });
   }
   return [...authors.values()].map(c => {

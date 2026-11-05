@@ -11,7 +11,7 @@ export function publicArchiveData(data) {
 }
 
 export function clientArchiveData(data, locale) {
-  return {characters:data.characters.map(character=>pick(character,['id','name','aliases'])),types:data.types.map(type=>pick(type,['id','name'])),topics:data.topics.map(topic=>pick(topic,['id','name','slugs'])),works:data.works.map(work => ({...pick(work,workFields),
+  return {characters:data.characters.map(character=>pick(character,['id','name','aliases'])),types:data.types.map(type=>pick(type,['id','name'])),topics:data.topics.map(topic=>pick(topic,topic.reader?['id','name','slugs','reader','workIds']:['id','name','slugs'])),works:data.works.map(work => ({...pick(work,workFields),
     ...(['en','ja'].includes(locale) ? {i18n:{[locale]:pick(work.i18n[locale],translationFields)}} : {})
   }))};
 }

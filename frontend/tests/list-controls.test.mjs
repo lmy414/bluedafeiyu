@@ -8,6 +8,7 @@ import {renderWorkCard} from '../public/archive/work-card.js';
 import {matchesCreationMethod} from '../public/archive/creation-method.js';
 import {orderWorks,shuffledSlugs} from '../public/components/work-order.js';
 import {createSearchIndex} from '../public/archive/search.js';
+import {nonSerialWorks} from '../public/archive/topic-visibility.js';
 
 const root=path.resolve(import.meta.dirname,'../..');
 const out=process.env.SITE_OUT_DIR||path.join(root,'.build/site');
@@ -16,7 +17,7 @@ const works=Array.from({length:60},(_,i)=>({id:'id-'+i,slug:'work-'+String(i).pa
 const stats={available:true,works:Object.fromEntries(works.map((work,i)=>[work.id,{views:(i*7)%61,downloads:(i*13)%61}]))};
 const flush=()=>new Promise(resolve=>setImmediate(resolve));
 
-async function fixture({url='https://archive.test/browse.html',available=true,curated=false,statsReady=Promise.resolve(stats),initialCards=false,searchWorks=null}={}) {
+async function fixture({url='https://archive.test/browse.html',available=true,curated=false,statsReady=Promise.resolve(stats),initialCards=false,searchWorks=null,topics=[],globalSearch=false}={}) {
   const {document,window}=parseHTML(fs.readFileSync(path.join(out,'browse.html'),'utf8'));
   window.SiteLang=undefined;
   // Model native focus, including the body fallback when a focused node is removed.
@@ -24,6 +25,7 @@ async function fixture({url='https://archive.test/browse.html',available=true,cu
   window.HTMLElement.prototype.focus=function(options){this.ownerDocument.focusedNode=this;this.ownerDocument.focusOptions=options;};
   const dataWorks=searchWorks||works;
   if(searchWorks){document.body.dataset.characterPage='deepseek';document.body.dataset.character='deepseek';document.querySelector('#filter-form').insertAdjacentHTML('afterend','<form id="search-form"><input id="search-q" name="q" type="search"></form>');}
+  if(globalSearch){document.body.setAttribute('data-search-page','');document.querySelector('#filter-form').insertAdjacentHTML('afterend','<form id="search-form"><input id="search-q" name="q" type="search"></form><section id="search-discovery"></section>');}
   // linkedom deliberately omits form state; provide native selection semantics
   // while exercising the actual page controls, events, URLs and archive script.
   const form=document.querySelector('#filter-form');
@@ -38,13 +40,14 @@ async function fixture({url='https://archive.test/browse.html',available=true,cu
   });
   Object.defineProperty(form,'elements',{value:controls});
   document.querySelector('#results').dataset.list=JSON.stringify(dataWorks.map(work=>work.slug));
+  if(globalSearch)delete document.querySelector('#results').dataset.list;
   if(initialCards)document.querySelector('#results').innerHTML='<div class="work-grid">'+orderWorks(works,{sort:'latest',direction:'desc'}).slice(0,24).map(work=>renderWorkCard(work,{eager:true})).join('')+'</div>';
   const initialNodes=[...document.querySelectorAll('#results .work-card')];
   const location=new URL(url),navigations=[];
   location.assign=href=>navigations.push(href);location.replace=href=>navigations.push(href);
   const history={state:null,replaceState(state,_title,href){this.state=state;if(href)location.href=href;}};
   window.WorkStats={ready:statsReady,available:()=>available,metric:(id,mode)=>available?stats.works[id]?.[mode==='downloads'?'downloads':'views']||0:0};
-  const context={window,document,location,history,URL,URLSearchParams,performance:{getEntriesByType:()=>[]},navigator:{},Event:window.Event,CustomEvent:window.CustomEvent,setTimeout,clearTimeout,requestAnimationFrame:callback=>callback(),matchMedia:()=>({matches:false,addEventListener(){}}),addEventListener:window.addEventListener.bind(window),loadArchiveData:()=>Promise.resolve({works:dataWorks,characters:[]}),loadSearchModule:async()=>({createSearchIndex}),renderWorkCard,matchesCreationMethod,orderWorks,shuffledSlugs,installTopicDownloads(){},installWorkPreview(){},copyImage(){},console};
+  const context={window,document,location,history,URL,URLSearchParams,performance:{getEntriesByType:()=>[]},navigator:{},Event:window.Event,CustomEvent:window.CustomEvent,setTimeout,clearTimeout,requestAnimationFrame:callback=>callback(),matchMedia:()=>({matches:false,addEventListener(){}}),addEventListener:window.addEventListener.bind(window),loadArchiveData:()=>Promise.resolve({works:dataWorks,characters:[],topics}),loadSearchModule:async()=>({createSearchIndex}),renderWorkCard,matchesCreationMethod,nonSerialWorks,orderWorks,shuffledSlugs,installTopicDownloads(){},installWorkPreview(){},copyImage(){},console};
   vm.runInNewContext(source.replace("await import('./search.js')",'await loadSearchModule()'),context);
   await flush();await flush();
   Object.defineProperty(context,'SiteLang',{get:()=>window.SiteLang});
@@ -159,4 +162,16 @@ test('role library author search intersects actual type filters and clears an un
   assert.equal(f.document.querySelector('#search-q').value,'');
   assert.equal(f.controls.type.value,'');
   assert.equal(f.visible().length,3);
+});
+
+test('global search and collection controls exclude serial pages even when another topic contains them',async()=>{
+  const topics=[{id:'story',reader:{},workIds:[works[59].id]},{id:'artist',workIds:[works[59].id,works[58].id]}];
+  for(const options of [{globalSearch:true,url:'https://archive.test/search.html?q=Work'},{curated:true}]){
+    const f=await fixture({...options,topics});
+    f.click('[data-load-more]');f.click('[data-load-more]');
+    assert.equal(f.visible().length,59);
+    assert.ok(!f.visible().includes(works[59].slug));
+    assert.ok(f.visible().includes(works[58].slug));
+    assert.equal(new Set(f.visible()).size,59);
+  }
 });

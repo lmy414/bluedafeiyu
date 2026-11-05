@@ -1,20 +1,19 @@
 import {workCharacterIds} from '../../tools/work-characters.mjs';
 import {characterSearchAliases} from '../src/lib/landing-copy.mjs';
 import {isGifWork} from '../public/archive/work-format.js';
+import {nonSerialWorks} from '../public/archive/topic-visibility.js';
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const kind=(api,id)=>api.fmt('v2.type.'+id,id);
 function context(base,api,snapshot){
-  const galleryWorks=()=>{
-    const serialIds=new Set((snapshot.topics||[]).filter(topic=>topic.reader).flatMap(topic=>topic.workIds));
-    return snapshot.works.filter(work=>!serialIds.has(work.id));
-  };
+  const galleryWorks=()=>nonSerialWorks(snapshot.works,snapshot.topics);
   if(/^\/gifs(?:\/page\/\d+)?\.html$/.test(base))return {format:'gif',works:galleryWorks().filter(isGifWork),name:api.current==='en'?'GIFs':'GIFアニメ',title:api.current==='en'?'AI Girl GIF Archive':'AI娘のGIFアニメ'};
   const topicId=base.match(/^\/topics\/([^/]+)(?:\/page\/\d+)?\.html$/)?.[1];
   const topic=topicId&&(snapshot.topics||[]).find(t=>t.id===topicId);
   if(topic){
     const value=topic.i18n?.[api.current];
     const name=value?.name||api.contentText(topic.name);
-    const works=topic.workIds.map(id=>snapshot.works.find(w=>w.id===id)).filter(Boolean);
+    const members=topic.workIds.map(id=>snapshot.works.find(w=>w.id===id)).filter(Boolean);
+    const works=topic.reader?members:nonSerialWorks(members,snapshot.topics);
     return {topic,works,name,title:api.current==='en'?name+' · AI girl art collection':name+'・AI娘作品集',summary:value?.summary||api.contentText(topic.summary)};
   }
   const role=base.match(/^\/characters\/([^/]+)(?:\/(meme|illustration|setting|comic|standing|other))?(?:\/page\/\d+)?\.html$/);

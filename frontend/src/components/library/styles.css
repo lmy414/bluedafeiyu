@@ -22,6 +22,7 @@
 /* One theme and shared controls for every public route, including legacy widgets. */
 @import './ArchiveTheme.css';
 @import './ArchivePrimitives.css';
+@import '../archive/CollectionCards.css';
 @import '../archive/CreationMethod.css';
 @import '../archive/WorkPreview.css';
 @import '../archive/Listing.css';

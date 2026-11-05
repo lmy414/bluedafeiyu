@@ -1,0 +1,89 @@
+/* Collection previews share one compact content and action layout. */
+body.archive.refined .collection-download-card {
+  gap: 10px;
+}
+
+body.archive.refined .collection-card {
+  display: flex;
+  flex-direction: column;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+body.archive.refined .collection-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  min-width: 0;
+}
+
+body.archive.refined .collection-copy .eyebrow {
+  margin: 0;
+  line-height: 1.5;
+}
+
+body.archive.refined .collection-copy :is(h2, h3) {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+body.archive.refined .collection-copy p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  min-height: 5.1em;
+  margin: 0 0 4px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+body.archive.refined .collection-count {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+body.archive.refined .collection-total {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+body.archive.refined .collection-count > svg {
+  flex: none;
+  color: var(--blue);
+}
+
+body.archive.refined .collection-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+body.archive.refined .collection-actions > .button {
+  min-height: 36px;
+  margin: 0;
+  padding: 7px 11px;
+  font-size: 12px;
+}
+
+@media (max-width: 760px) {
+  body.archive.refined .collection-actions > .button {
+    min-height: 44px;
+  }
+}
