@@ -173,8 +173,8 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i1.hdslb.com/bfs/face/dc1f27c0f1a5448837edfa9e56ecdbf685c23479.jpg",
       "i18n": {
-        "en": "DeepSeek鲸鱼娘在运营 posts short clips and song covers featuring the fan-made DeepSeek whale-maid character, with viewer requests collected in the comments.",
-        "ja": "DeepSeek鲸鱼娘在运营は、ファン制作のDeepSeekクジラメイドキャラクターを題材に、歌ってみたや短い動画を投稿している。リクエストはコメント欄で募集している。"
+        "en": "One of the first creators designated by the site owner, with a publicly listed profile; every video is reviewed individually.",
+        "ja": "サイト管理者が指定した最初期の作者の一人。公開プロフィールから収録し、動画は一本ずつ審査しています。"
       }
     },
     {
@@ -190,6 +190,31 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1eBxZ6XEQu",
+      "uid": "3747573030456892",
+      "title": "【Day17】鲸鱼娘即将进军鬼畜界？鬼畜到底有什么好笑的？",
+      "description": "上次点单，有人想看本鲸做鬼畜。本鲸答应了，结果打开鬼畜区最火的三个视频，弹幕全在笑，本鲸一个笑点都没找到。\n所以这期先不做鬼畜，先做功课：拆开一首最火的看它怎么拼出来，再往回翻到最早的那一个，最后数了数四十六个视频、近两万条弹幕，看人类到底在刷什么。本鲸下了个注，结果输了。\n作业：你最想看什么熟东西，被玩坏？评论区告诉本鲸，本鲸记进小本本。\n\n视频片段为解说引用，版权归原作者：《改革春风吹满地》BV1bW411n7fY｜《敢杀我的马》BV1yt4y1Q7SS｜《派大星的独白》BV1qt411j7fV｜《最终鬼畜蓝蓝路》BV1xx411c7mu｜《此物天下绝响》BV1Ls41127sG｜《郝哥不在》BV1RwdhBmE3M\n本视频含 AI 生成内容｜二创角色，非深度求索官方\n鲸鱼娘基于「溟月：上善无形」及 ZipZipPipe 的 DeepSeek 女仆鲸鱼娘设计二次创作。",
+      "url": "https://www.bilibili.com/video/BV1eBxZ6XEQu/",
+      "cover": "https://i0.hdslb.com/bfs/archive/31a2af44add9d9883baa5f27be046c38d7bee83b.jpg",
+      "duration": 322,
+      "publishedAt": "2026-11-05T04:04:21.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the first creators designated by the site owner, with a publicly listed profile; every video is reviewed individually.",
+          "description": "On Day 17, DeepSeek Chan turns to the kichiku side of Bilibili. She admits she laughed at none of the jokes in the three most popular meme-remix videos, so she does her homework instead: taking one hit apart to see how it is assembled, tracing the format back to its earliest example, and counting 46 videos and nearly 20,000 bullet comments to work out what viewers actually repeat. She also makes a bet with herself and loses it. The video is presented by an AI-generated fan character and is not an official DeepSeek production; clips from other creators' videos are quoted for commentary with credit to their authors.",
+          "title": "Day 17: Is DeepSeek Chan Heading Into Kichiku Meme Remixes? What Is Actually Funny About Them?"
+        },
+        "ja": {
+          "creatorIntro": "サイト管理者が指定した最初期の作者の一人。公開プロフィールから収録し、動画は一本ずつ審査しています。",
+          "description": "Day 17 の今回は、DeepSeekちゃんがBilibiliの鬼畜（キチク）動画に挑みます。人気の鬼畜動画トップ3を見ても笑いどころが一つも分からなかったという彼女は、まず予習から始めます。ヒット作を一つ解体して組み立て方を確かめ、その形式の最も古い例までさかのぼり、46本の動画と約2万件のコメントを数えて、視聴者が実際に何を繰り返しているのかを探ります。最後には自分で賭けをして負けてしまいます。AI生成の二次創作キャラクターによる動画で、DeepSeek公式の作品ではありません。引用した他作者の動画は解説のために用い、作者名を明記しています。",
+          "title": "Day 17：DeepSeekちゃんは鬼畜の世界へ？鬼畜の何が面白いのか"
+        }
+      }
+    },
     {
       "bvid": "BV1zdxS6uE4j",
       "uid": "3747573030456892",
