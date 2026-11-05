@@ -81,6 +81,7 @@
   --rail-text: var(--ink);
   --rail-active: var(--blue-soft);
   --rail-hover: var(--soft);
+  --rail-focus: var(--blue);
 
 }
 
