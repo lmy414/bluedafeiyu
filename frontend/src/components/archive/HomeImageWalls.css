@@ -59,4 +59,3 @@ html:root body.archive.refined :is(.home-latest,.home-popular,.home-downloads) :
 }
 html:root body.archive.refined :is(.home-latest,.home-popular,.home-downloads) .work-art { border-radius:2px; }
 html:root body.archive.refined :is(.home-latest,.home-popular,.home-downloads) .work-art:focus-visible { outline:3px solid var(--blue); outline-offset:2px; }
-

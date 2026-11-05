@@ -28,4 +28,3 @@ html:root body.archive .preview-stats-source { color:var(--muted); font-size:11p
 @media(max-width:760px) {
   html:root body.archive .preview-complete-details dl>div { grid-template-columns:80px minmax(0,1fr); gap:8px; }
 }
-
