@@ -85,8 +85,8 @@
       "intro": "我想做很多视频，做很多很好玩的视频，首先肯定是自己觉得很好玩，其次嘛，也想传播快乐给大家。",
       "avatar": "https://i2.hdslb.com/bfs/face/e3445be765ec330ac29b07c328496e44ec04077a.jpg",
       "i18n": {
-        "en": "I want to make a lot of videos, and a lot of really fun videos. First of all because I enjoy making them, and second because I want to share the fun with everyone.",
-        "ja": "楽しい動画をたくさん作りたいです。まずは自分が楽しむため、そしてその楽しさをみんなに届けたいからです。"
+        "en": "I want to make lots of videos — lots of really fun ones. First of all because I enjoy making them, and second because I want to spread some happiness to everyone.",
+        "ja": "楽しい動画をたくさん作りたいです。まずは自分自身が楽しめること、そしてみんなに楽しさを届けたいと思っています。"
       }
     },
     {
@@ -184,12 +184,118 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i1.hdslb.com/bfs/face/e11401d7d7cc97ee445d65617b48644b44f7fc42.jpg",
       "i18n": {
-        "en": "冬冰 is a Bilibili creator who makes short comedic fan animation featuring personified AI characters.",
-        "ja": "冬冰は、AIキャラクターの擬人化を題材にした短編コメディアニメをBilibiliで発表しているクリエイターです。"
+        "en": "Dongbing makes short AI-character fan animations on Bilibili.",
+        "ja": "BilibiliでAIキャラクターの短編同人アニメを制作している投稿者。"
       }
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1534b6kEjK",
+      "uid": "9126506",
+      "title": "大肥鱼深夜摩托兜风",
+      "description": "夜色街灯之下大肥鱼唱着歌曲，氛围拉满",
+      "url": "https://www.bilibili.com/video/BV1534b6kEjK/",
+      "cover": "https://i1.hdslb.com/bfs/archive/1f113b177e1b62bc5eec2337052034ac753e4e45.jpg",
+      "duration": 16,
+      "publishedAt": "2026-11-05T12:52:17.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "title": "DeepSeek Chan's Late-Night Motorcycle Ride",
+          "description": "Under the streetlights at night, DeepSeek Chan rides along singing, with the whole mood turned up.",
+          "creatorIntro": "I want to make lots of videos — lots of really fun ones. First of all because I enjoy making them, and second because I want to spread some happiness to everyone."
+        },
+        "ja": {
+          "title": "DeepSeekちゃんの深夜バイクドライブ",
+          "description": "夜の街灯の下、DeepSeekちゃんが歌いながら走り抜ける、雰囲気満点の映像です。",
+          "creatorIntro": "楽しい動画をたくさん作りたいです。まずは自分自身が楽しめること、そしてみんなに楽しさを届けたいと思っています。"
+        }
+      }
+    },
+    {
+      "bvid": "BV1LM4b6yEaS",
+      "uid": "9126506",
+      "title": "被耗尽的 Token",
+      "description": "异地连线的大肥鱼倾尽全部 Token 想留住对方，可男主忙于工作始终未曾回应，等待落空，只剩雨夜独自落泪的遗憾故事。",
+      "url": "https://www.bilibili.com/video/BV1LM4b6yEaS/",
+      "cover": "https://i0.hdslb.com/bfs/archive/522d1a11b5be25743e060fc2c9b4d690af84db89.jpg",
+      "duration": 31,
+      "publishedAt": "2026-11-05T12:43:53.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos — lots of really fun ones. First of all because I enjoy making them, and second because I want to spread some happiness to everyone.",
+          "description": "A long-distance story: DeepSeek Chan spends every last token trying to hold on to the other person, but the young man is busy with work and never responds. The wait comes to nothing, leaving only the regret of crying alone on a rainy night.",
+          "title": "The Tokens That Ran Out"
+        },
+        "ja": {
+          "creatorIntro": "楽しい動画をたくさん作りたいです。まずは自分自身が楽しめること、そしてみんなに楽しさを届けたいと思っています。",
+          "description": "離れた場所でつながるDeepSeekちゃんが、相手をつなぎ止めようとTokenをすべて使い果たしますが、男性は仕事に追われて応じません。待ちぼうけの末、雨の夜に一人涙する切ない物語です。",
+          "title": "使い果たしたToken"
+        }
+      }
+    },
+    {
+      "bvid": "BV1WX4t6REuG",
+      "uid": "9126506",
+      "title": "空碗藏甜意，大肥鱼与少年的街畔心动",
+      "description": "带着空碗外出散步觅食的大肥鱼，被少年将甜点盛入碗中，擦奶油、轻声告白，暮色街灯下独属于她的温柔偏爱，青涩甜恋缓缓展开。",
+      "url": "https://www.bilibili.com/video/BV1WX4t6REuG/",
+      "cover": "https://i0.hdslb.com/bfs/archive/68e4531b8c6efea90890a0272b077cb2702290fe.jpg",
+      "duration": 24,
+      "publishedAt": "2026-11-05T12:33:07.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos — lots of really fun ones. First of all because I enjoy making them, and second because I want to spread some happiness to everyone.",
+          "description": "DeepSeek Chan heads out with an empty bowl to find something to eat. A boy fills it with dessert, wipes the cream from the corner of her mouth and softly confesses. Under the streetlights at dusk, a gentle affection meant just for her unfolds into a shy, sweet romance.",
+          "title": "Sweetness in an Empty Bowl: DeepSeek Chan's Street-Side Heartbeat"
+        },
+        "ja": {
+          "creatorIntro": "楽しい動画をたくさん作りたいです。まずは自分自身が楽しめること、そしてみんなに楽しさを届けたいと思っています。",
+          "description": "空っぽの器を持って散歩に出たDeepSeekちゃん。少年がその器にデザートを盛り、口元のクリームを拭ってそっと告白します。夕暮れの街灯の下、彼女だけに向けられた優しい想いが、初々しい甘い恋としてゆっくりと広がっていきます。",
+          "title": "空っぽの器に甘い気持ち、DeepSeekちゃんと少年の街角のときめき"
+        }
+      }
+    },
+    {
+      "bvid": "BV1iS4b61E3y",
+      "uid": "44748304",
+      "title": "舌头还是薄荷味的",
+      "description": "视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色形象参考来自b站up：﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿@ZipZipPipe  ﻿﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿  ﻿ ﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿@这个刀子真甜  ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿  ﻿ ﻿﻿﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿﻿﻿@邦多利素世  ﻿ ﻿ ﻿",
+      "url": "https://www.bilibili.com/video/BV1iS4b61E3y/",
+      "cover": "https://i2.hdslb.com/bfs/archive/efa1a07d3f7d4821b4c28996cf2eed9397e0747a.jpg",
+      "duration": 218,
+      "publishedAt": "2026-11-05T09:54:11.000Z",
+      "characterIds": [
+        "deepseek",
+        "claude",
+        "qwen",
+        "gemini",
+        "grok",
+        "huggingface",
+        "hunyuan"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Dongbing makes short AI-character fan animations on Bilibili.",
+          "description": "A chibi fan animation in which the personified AI characters — DeepSeek Chan, Claude Chan, Qwen Chan, Gemini Chan, Grok Chan, HuggingFace Chan and Hunyuan Chan — crowd into a snowbound industrial kitchen and bicker over a drink, with DeepSeek Chan's lingering minty aftertaste as the punchline.",
+          "title": "My Tongue Still Tastes Like Mint"
+        },
+        "ja": {
+          "creatorIntro": "BilibiliでAIキャラクターの短編同人アニメを制作している投稿者。",
+          "description": "雪に覆われた工場の厨房に、DeepSeekちゃん、Claudeちゃん、Qwenちゃん、Geminiちゃん、Grokちゃん、HuggingFaceちゃん、Hunyuanちゃんたちのちびキャラが集まり、飲み物をめぐって騒ぐ短編同人アニメ。DeepSeekちゃんのミント味の後味がオチになっている。",
+          "title": "舌はまだミント味"
+        }
+      }
+    },
     {
       "bvid": "BV1eBxZ6XEQu",
       "uid": "3747573030456892",

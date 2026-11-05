@@ -110885,5 +110885,309 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_8f4f3550f2468c43177da57b",
+    "name": "写代码很枯燥吧·蓝发猫耳娘特写",
+    "description": "蓝色长发、猫耳造型的少女面部特写，画面带中英日三语字幕，台词调侃老老实实写代码很枯燥，整体为动画风格的近景反应图，少女带笑意看向镜头。",
+    "commentary": "说写代码枯燥？那是你还没跟我一起写过。看我这眼神，你留下的每一行 bug 都藏不住。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/8f4f3550f2468c43.png",
+    "thumbnailPath": "submissions/previews/deepseek/8f4f3550f2468c43.webp",
+    "fullPath": "submissions/large/deepseek/8f4f3550f2468c43.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 1793670,
+    "sha256": "8f4f3550f2468c43177da57b359aea3b11fd22dacfebfa70eefc35c7b7d03790",
+    "characterId": "deepseek",
+    "tags": [
+      "写代码",
+      "猫耳",
+      "蓝发",
+      "三语字幕",
+      "反应图"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-05T13:07:27.893Z",
+    "updatedAt": "2026-11-05T13:07:27.893Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611050002",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "458ba4a18c844a85f1fc60cc76c84d272d0d96b139f7863e910cdedaf568cf88",
+      "en": {
+        "commentary": "Boring? Only if you write it alone. Look at this stare — every bug you leave behind gets caught.",
+        "description": "A close-up of a blue-haired girl with cat ears and a maid-style collar, framed like an animation still. Chinese, English and Japanese subtitles tease that writing code honestly must be boring, while she smiles at the viewer.",
+        "faq": [
+          {
+            "answer": "It is an animation-style close-up of a blue-haired cat-ear girl with a teasing subtitle about writing code, kept as a reaction meme.",
+            "question": "What does this image show?"
+          },
+          {
+            "answer": "Subtitles appear in Chinese, English and Japanese, all saying that writing code honestly must be boring.",
+            "question": "Which languages appear in the subtitles?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Writing Code Must Be Boring? Blue-Haired Cat-Ear Close-Up",
+        "originNote": "",
+        "seoDescription": "Animation-style close-up of a blue-haired cat-ear girl teasing that writing code is boring, with Chinese, English and Japanese subtitles.",
+        "seoTitle": "Writing code is boring? DeepSeek Chan reaction close-up",
+        "tags": [
+          "writing code",
+          "cat ears",
+          "blue hair",
+          "subtitles",
+          "reaction"
+        ]
+      },
+      "ja": {
+        "commentary": "退屈？ ひとりで書いてるからでしょ。この目を見て——残したバグは全部見つけてあげる。",
+        "description": "青い長い髪に猫耳、メイド服の襟元をした少女の顔アップ。アニメの一場面のような構図で、中国語・英語・日本語の字幕が「真面目にコードを書くのは退屈でしょう」とからかい、少女は笑みを浮かべてこちらを見ている。",
+        "faq": [
+          {
+            "answer": "青髪に猫耳の少女の顔をアニメ風に描いたアップで、コード書きの退屈さをからかう字幕付きのリアクション画像。",
+            "question": "この画像には何が描かれていますか？"
+          },
+          {
+            "answer": "中国語・英語・日本語の三つで、いずれもコード書きは退屈だと述べている。",
+            "question": "字幕は何語で入っていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "コードを書くのは退屈？ 青髪猫耳少女のアップ",
+        "originNote": "",
+        "seoDescription": "青髪猫耳の少女がコード書きの退屈さをからかうアニメ風アップ画像。中国語・英語・日本語の字幕付き。",
+        "seoTitle": "コード書きは退屈？ DeepSeek Chan のリアクションアップ",
+        "tags": [
+          "コード書き",
+          "猫耳",
+          "青髪",
+          "字幕",
+          "リアクション"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_adb9c73cd4dde447cb7171a2",
+    "name": "眯眼坏笑的蓝发猫耳娘·水彩半身像",
+    "description": "水彩风格半身像：蓝色长卷发、猫耳与深蓝色尾巴的少女，头戴白色荷叶边小帽，身穿深蓝配白色的女仆风上衣，双手抱臂、双目微眯咧嘴露出小虎牙，表情得意，背景为米白纯色。",
+    "commentary": "看我这表情就知道，今天的活儿我全包了。别光盯着尾巴，代码又不会自己写完。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/adb9c73cd4dde447.png",
+    "thumbnailPath": "submissions/previews/deepseek/adb9c73cd4dde447.webp",
+    "fullPath": "submissions/large/deepseek/adb9c73cd4dde447.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1254,
+    "height": 1254,
+    "fileSize": 2595339,
+    "sha256": "adb9c73cd4dde447cb7171a254a0e9a1d0c2b11add5bd761eba9bb7af721c54b",
+    "characterId": "deepseek",
+    "tags": [
+      "水彩",
+      "猫耳",
+      "蓝发",
+      "女仆装",
+      "半身像"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-05T13:08:19.013Z",
+    "updatedAt": "2026-11-05T13:08:19.013Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611050003",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "ca04aa9c84ee87ac5b229b7c2905314ed22ee15fc08e10af6fe012ed69c7d8e6",
+      "en": {
+        "commentary": "That look says it all: today's work is already done. And no, staring at the tail will not write your code for you.",
+        "description": "Watercolor-style half-body portrait of a girl with long wavy blue hair, cat ears and a dark blue tail. She wears a frilled white cap and a navy-and-white maid-style top, arms crossed, eyes narrowed, showing a small fang in a smug grin against a plain off-white background.",
+        "faq": [
+          {
+            "answer": "It is a watercolor-style half-body portrait of a blue-haired cat-ear girl with a tail, wearing a frilled cap and a maid-style top while grinning smugly.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "The background is plain off-white, with no scene or props behind the character.",
+            "question": "What is the background like?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Smug Blue-Haired Cat-Ear Girl: Watercolor Half-Body Portrait",
+        "originNote": "",
+        "seoDescription": "Watercolor half-body portrait of a blue-haired cat-ear girl with a tail, arms crossed and grinning smugly in a maid-style top.",
+        "seoTitle": "Watercolor half-body portrait of a smug cat-ear DeepSeek Chan",
+        "tags": [
+          "watercolor",
+          "cat ears",
+          "blue hair",
+          "maid outfit",
+          "half-body"
+        ]
+      },
+      "ja": {
+        "commentary": "この顔を見れば分かるでしょ、今日の仕事はもう終わり。尻尾を眺めていてもコードは書けないよ。",
+        "description": "水彩画風の半身像。長く波打つ青い髪に猫耳と濃紺の尻尾、白いフリルの帽子と紺と白のメイド風上衣を身につけ、腕を組んで目を細め、小さな牙を見せて得意げに笑っている。背景は生成り色の無地。",
+        "faq": [
+          {
+            "answer": "青い髪に猫耳と尻尾を持つ少女が、フリル付きの帽子とメイド風上衣をまとって腕を組み、得意げに笑う水彩風の半身像。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "背景は生成り色の無地で、人物の後ろに情景や小道具は描かれていない。",
+            "question": "背景はどのような描かれ方ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "目を細めて笑う青髪猫耳娘 水彩の半身像",
+        "originNote": "",
+        "seoDescription": "青い髪に猫耳と尻尾、メイド風の衣装をまとった少女が腕を組み得意げに笑う水彩風の半身像。",
+        "seoTitle": "得意げに笑う青髪猫耳 DeepSeek Chan の水彩半身像",
+        "tags": [
+          "水彩",
+          "猫耳",
+          "青髪",
+          "メイド服",
+          "半身像"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_3c77c6ae1fb97563b74eb8d2",
+    "name": "「救赎线」白米饭的温暖晚餐",
+    "description": "蓝发鲸鱼帽少女与橙发 Claude 娘在暖光木屋里共进晚餐，Claude 娘第一次尝到白米饭。桌上摆着冒热气的饭锅、玉子烧和小菜，窗外是夜色与灯火。",
+    "commentary": "我戴好鲸鱼帽，趴在桌沿看她夹起第一口白米饭。她愣了半秒，眼睛就亮起来了——比窗外那盏灯还亮。于是我赶紧把饭锅又往她那边推了推：今晚这一锅，我可是特意多添了一碗水。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/3c77c6ae1fb97563.png",
+    "thumbnailPath": "submissions/previews/deepseek/3c77c6ae1fb97563.webp",
+    "fullPath": "submissions/large/deepseek/3c77c6ae1fb97563.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1122,
+    "height": 1402,
+    "fileSize": 2780958,
+    "sha256": "3c77c6ae1fb97563b74eb8d28f5c7cd0a2360b0374d2c4a3cc18ca135c91ce40",
+    "characterId": "deepseek",
+    "tags": [
+      "Claude娘",
+      "白米饭",
+      "晚餐",
+      "烛光",
+      "双人"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Mark",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-05T14:48:49.614Z",
+    "updatedAt": "2026-11-05T14:48:49.614Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611050004",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "903e0bc4d6074867df823d0110c279b103d2dc155e807de52710fa0d14364ecd",
+      "en": {
+        "commentary": "I pulled my whale hood down, leaned on the table and watched her lift the first bite of white rice. She froze for half a second, then her eyes lit up — brighter than the lamp outside the window. So I nudged the rice pot a little closer to her: tonight's batch got one extra cup of water.",
+        "description": "A blue-haired girl in a whale hood shares dinner with an orange-haired Claude Chan in a warm wooden room. Claude Chan tastes plain white rice for the first time, while a steaming pot of rice, tamagoyaki and small side dishes fill the table and night lights glow beyond the window.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, wearing her whale hood, watches Claude Chan taste white rice for the first time at a candlelit dinner table.",
+            "question": "What does this artwork show?"
+          },
+          {
+            "answer": "DeepSeek Chan and Claude Chan, in a warm wooden room at night.",
+            "question": "Which characters appear in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Rescue Line: A Warm White-Rice Dinner",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan and Claude Chan share a candlelit dinner, where Claude Chan tastes white rice for the first time.",
+        "seoTitle": "The Rescue Line: A Warm White-Rice Dinner — DeepSeek Chan Fan Art",
+        "tags": [
+          "Claude Chan",
+          "white rice",
+          "dinner",
+          "candlelight",
+          "duo"
+        ]
+      },
+      "ja": {
+        "commentary": "クジラのフードをかぶってテーブルに頬杖をつき、彼女が白米をひと口運ぶのを見ていた。彼女は一瞬だけ止まり、それから目を輝かせた。窓の外の灯りよりも明るく。だから私はご飯鍋をもう少しだけ彼女のほうへ押した。今夜の一鍋は、水を一杯多めに入れて炊いたのだ。",
+        "description": "青い髪でクジラのフードをかぶった少女と、オレンジ髪のClaudeちゃんが暖かな木の部屋で夕食を囲む。Claudeちゃんが白米を初めて味わい、湯気の立つご飯鍋、玉子焼き、小さな副菜がテーブルに並ぶ。窓の外には夜の灯りが広がる。",
+        "faq": [
+          {
+            "answer": "クジラのフードをかぶったDeepSeek Chanが、キャンドルの灯る食卓で白米を初めて味わうClaudeちゃんを見守る一枚。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "夜の暖かな木の部屋にいるDeepSeek ChanとClaudeちゃんです。",
+            "question": "登場するキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "「救済ライン」白米の温かな夕食",
+        "originNote": "",
+        "seoDescription": "DeepSeek ChanとClaudeちゃんがキャンドルの灯りで夕食を囲み、Claudeちゃんが初めて白米を味わう一枚。",
+        "seoTitle": "「救済ライン」白米の温かな夕食 — DeepSeek Chan 二次創作",
+        "tags": [
+          "Claudeちゃん",
+          "白米",
+          "夕食",
+          "キャンドル",
+          "二人"
+        ]
+      }
+    }
   }
 ]
