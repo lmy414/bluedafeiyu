@@ -110566,5 +110566,324 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_112d4f2d4300cc366882565a",
+    "name": "执笔写提示词的GLM",
+    "description": "白底全身立绘。GLM 拟人角色留着黑色长发，头顶一对兽耳，身后拖着一条白色蓬松的尾巴。她戴黑色贝雷帽，帽檐插着几支画笔，发侧挂着铃铛和写有 Z 字的方形挂饰；上身穿白色高领针织衫配黑色蝴蝶结，外披一件溅满白漆的黑色长风衣，腰间系着皮带与金属链条，下身是格纹百褶短裙、白色长袜与黑色厚底系带靴。右手举着蘸了墨的画笔，左手叉腰，腿边挂着一只小颜料桶。整幅画面为纯白背景，没有场景和分格。",
+    "commentary": "画笔举得挺稳，桶里的颜料看着也还没干，架势是够专业了。不过白漆溅成这样，到底是画完的痕迹还是开工前的宣言？黑白的配色一眼就能认出来，帽檐、腰间、飘带上到处都是那个 Z，光找标签就能玩一下午。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/glm/112d4f2d4300cc36.png",
+    "thumbnailPath": "submissions/previews/glm/112d4f2d4300cc36.webp",
+    "fullPath": "submissions/large/glm/112d4f2d4300cc36.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 2048,
+    "height": 2048,
+    "fileSize": 2296541,
+    "sha256": "112d4f2d4300cc366882565af8da415ad51ff07dd4918208325a0041934a59de",
+    "characterId": "glm",
+    "tags": [
+      "GLM",
+      "立绘",
+      "兽耳",
+      "画家",
+      "黑白配色",
+      "白底"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-05T01:49:47.420Z",
+    "updatedAt": "2026-11-05T01:49:47.420Z",
+    "tone": "glm",
+    "symbol": "",
+    "slug": "glm202611050001",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "glm"
+    ],
+    "i18n": {
+      "sourceHash": "5200f623295284e54ffe0c3d61a5b3bb6afee21a66712308490bb3b8ba5b5a1a",
+      "en": {
+        "commentary": "The brush is held steady and the paint in that little bucket looks wet, so the setup reads professional. White splatter everywhere though — is that the afterglow of a finished piece or a declaration before starting? The monochrome scheme makes her instantly recognizable, and that Z badge turns up on the beret, the belt and the ribbons, so hunting for them could eat a whole afternoon.",
+        "description": "Full-body standing illustration on a plain white background. The GLM personification has long black hair, a pair of animal ears on top and a large fluffy white tail behind her. She wears a black beret with paintbrushes tucked into the brim, bells and a square Z badge hanging beside her face, a white high-neck knit top with a black bow, and an open black long coat spattered with white paint over a belted, chain-trimmed waist. Below are a plaid pleated skirt, white thigh-high stockings and black platform lace-up boots. Her right hand raises an ink-tipped paintbrush, her left rests on her hip, and a small paint bucket hangs at her side. The background is pure white with no scenery or panels.",
+        "faq": [
+          {
+            "answer": "A full-body standing illustration of the GLM personification on a plain white background, holding a paintbrush and carrying a small paint bucket.",
+            "question": "What is shown in this illustration?"
+          },
+          {
+            "answer": "The black beret, black-and-white plaid skirt, paint-splattered long coat and the small Z badges on the beret, belt and ribbons.",
+            "question": "Which design elements identify the character?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "GLM Chan Writing an Image Prompt",
+        "originNote": "",
+        "seoDescription": "Full-body standing illustration of GLM Chan in a paint-splattered black coat and beret, brush in hand, against a plain white background.",
+        "seoTitle": "GLM Chan Writing an Image Prompt — Standing Illustration",
+        "tags": [
+          "GLM",
+          "standing",
+          "animal ears",
+          "painter",
+          "monochrome palette",
+          "white background"
+        ]
+      },
+      "ja": {
+        "commentary": "筆の持ち方も様になっているし、バケツの絵の具もまだ乾いていなさそう。とはいえ白い飛沫だらけのコートは、描き終わった跡なのか、これから始めるぞという宣言なのか。モノクロの配色は一目で分かるし、ベレー帽にもベルトにもリボンにも Z の飾りが付いていて、探すだけで半日遊べそう。",
+        "description": "白背景の全身立ち絵。GLM の擬人化キャラクターで、黒い長髪に獣耳、後ろには白くふさふさした尻尾がある。黒いベレー帽の縁には筆が挿してあり、顔の横には鈴と Z の字が入った四角い飾りが下がる。白いハイネックのニットに黒いリボン、その上から白い絵の具が飛び散った黒いロングコートを羽織り、腰にはベルトと金属チェーン。下はチェックのプリーツスカートに白いニーハイソックス、黒い厚底の編み上げブーツ。右手に墨を含ませた筆を掲げ、左手は腰に当て、足元には小さな絵の具のバケツが下がっている。背景は純白で、風景もコマ割りもない。",
+        "faq": [
+          {
+            "answer": "白背景に立つ GLM の擬人化キャラクターの全身立ち絵で、筆を手に小さな絵の具のバケツを下げている。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "黒いベレー帽、モノクロのチェックのプリーツスカート、白い絵の具が飛び散ったロングコート、そしてベレー帽・ベルト・リボンに付いた小さな Z の飾り。",
+            "question": "キャラクターを見分けるデザインの要素は？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "プロンプトを書くGLMちゃん",
+        "originNote": "",
+        "seoDescription": "白い絵の具が飛び散った黒いコートとベレー帽姿で筆を手にした、白背景のGLMちゃん全身立ち絵。",
+        "seoTitle": "プロンプトを書くGLMちゃん — 全身立ち絵",
+        "tags": [
+          "GLM",
+          "立ち絵",
+          "獣耳",
+          "画家",
+          "モノクロ配色",
+          "白背景"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_bf82fa30dd3a770bda29faef",
+    "name": "摩天楼顶的午餐：五娘工地合影",
+    "description": "五位 AI 娘角色并排坐在高空施工钢梁上吃便当，背景是吊车、脚手架与远处的城市天际线，构图致敬经典照片《摩天楼顶上的午餐》。每人头戴印有各自标识的安全帽。",
+    "commentary": "我被安排坐在钢梁正中间，便当里的饭团还冒着热气，往下看一眼，吊车小得像玩具。左边 GLM 那位一边扒饭一边晃尾巴，Kimi 把筷子举得老高，通义千问连折扇都带上了工地，豆包已经啃到第二个饭团。摩天楼就是这么一层层盖上去的，我们只是趁午休在最高处吹吹风。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/bf82fa30dd3a770b.png",
+    "thumbnailPath": "submissions/previews/deepseek/bf82fa30dd3a770b.webp",
+    "fullPath": "submissions/large/deepseek/bf82fa30dd3a770b.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 2048,
+    "height": 2048,
+    "fileSize": 7848242,
+    "sha256": "bf82fa30dd3a770bda29faef35aaec68b65ff76db3980fe5bb1e588f985e9943",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "GLM娘",
+      "Kimi娘",
+      "通义千问娘",
+      "豆包娘",
+      "工地",
+      "群像"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-05T01:52:11.340Z",
+    "updatedAt": "2026-11-05T01:52:11.340Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611050001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "glm",
+      "kimi",
+      "qwen",
+      "doubao"
+    ],
+    "i18n": {
+      "sourceHash": "cc04fc5d1f1ac2f5044a30406701a5c0cc24c8a24a6d7c6453104d1f876d34e4",
+      "en": {
+        "commentary": "I got the middle seat on the steel beam, and the rice in my bento is still steaming. One look down and the cranes look like toys. The GLM Chan on my left is shoveling rice while her tail swings, Kimi Chan holds her chopsticks up high, Qwen Chan actually brought her folding fan onto the site, and Doubao Chan is already on her second rice ball. Skyscrapers go up one beam at a time; we are just spending our lunch break in the highest breeze.",
+        "description": "Five AI character girls sit side by side on a high construction beam eating bento boxes, with cranes, scaffolding and the distant city skyline behind them. The composition nods to the classic photograph Lunch Atop a Skyscraper, and each of them wears a hard hat marked with her own logo.",
+        "faq": [
+          {
+            "answer": "Five: DeepSeek Chan, GLM Chan, Kimi Chan, Qwen Chan and Doubao Chan, each wearing a hard hat with her own logo.",
+            "question": "Which characters appear in this illustration?"
+          },
+          {
+            "answer": "The composition echoes the famous 1932 photograph of ironworkers eating lunch on a beam high above the city, restaged here with AI character girls on a construction site.",
+            "question": "What does the picture reference?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Lunch Atop a Skyscraper: Five AI Chans on the Site",
+        "originNote": "",
+        "seoDescription": "Five AI character girls share bento boxes on a high construction beam above the city, a fan-art homage to Lunch Atop a Skyscraper.",
+        "seoTitle": "Lunch Atop a Skyscraper: Five AI Chans on the Site",
+        "tags": [
+          "DeepSeek Chan",
+          "GLM Chan",
+          "Kimi Chan",
+          "Qwen Chan",
+          "Doubao Chan",
+          "construction site",
+          "group portrait"
+        ]
+      },
+      "ja": {
+        "commentary": "真ん中の席をもらったけど、お弁当のご飯はまだ湯気が立っている。下を覗くとクレーンがおもちゃみたいだ。左の GLM ちゃんは尻尾を揺らしながらご飯をかき込み、Kimi ちゃんは箸を高く掲げ、Qwen ちゃんは現場に扇子まで持ってきて、Doubao ちゃんはもう二つ目のおにぎりだ。摩天楼は一本ずつ鉄骨を重ねて建つ。私たちは昼休みに一番高い風に当たっているだけ。",
+        "description": "五人の AI 娘が高所の鉄骨に並んでお弁当を広げ、背後にはクレーン、足場、遠くの街のスカイラインが広がる。構図は名作写真「摩天楼の上の昼食」へのオマージュで、それぞれ自分のロゴ入りのヘルメットをかぶっている。",
+        "faq": [
+          {
+            "answer": "DeepSeek ちゃん、GLM ちゃん、Kimi ちゃん、Qwen ちゃん、Doubao ちゃんの五人で、それぞれ自分のロゴ入りのヘルメットをかぶっています。",
+            "question": "このイラストには誰が登場しますか？"
+          },
+          {
+            "answer": "1932 年の有名な写真「摩天楼の上の昼食」の構図を、建設現場の AI 娘たちで再現したものです。",
+            "question": "構図は何を参考にしていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "摩天楼の上の昼食：現場に集う五人",
+        "originNote": "",
+        "seoDescription": "高所の鉄骨の上でお弁当を広げる五人の AI 娘。名作写真「摩天楼の上の昼食」へのオマージュ。",
+        "seoTitle": "摩天楼の上の昼食：現場に集う五人",
+        "tags": [
+          "DeepSeekちゃん",
+          "GLMちゃん",
+          "Kimiちゃん",
+          "Qwenちゃん",
+          "Doubaoちゃん",
+          "工事現場",
+          "集合絵"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_cfc977e8bf5f951d226a85b1",
+    "name": "GLM娘的下午小憩",
+    "description": "GLM娘趴在图书馆的长桌上打盹，黑色长发与猫耳垂在桌沿，女仆头饰与咖啡杯上印着 Z 字标志；桌面放着手机和吃到一半的巧克力，暖色夕照从右侧窗户洒进来。",
+    "commentary": "嗯……她居然在图书馆睡着了。咖啡还冒着热气，巧克力只吃了一半，手机屏幕也快暗下去。那个 Z 字我一眼就认出来了，是 GLM 家的标志。看她睡得这么安稳，我实在不忍心叫醒她，不过下次还是带个枕头来吧。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/glm/cfc977e8bf5f951d.png",
+    "thumbnailPath": "submissions/previews/glm/cfc977e8bf5f951d.webp",
+    "fullPath": "submissions/large/glm/cfc977e8bf5f951d.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 2048,
+    "height": 2048,
+    "fileSize": 5424121,
+    "sha256": "cfc977e8bf5f951d226a85b1ebe3a8e5b87d5db12dc63739fd5c9d86ef8e4e1b",
+    "characterId": "glm",
+    "tags": [
+      "GLM娘",
+      "猫耳",
+      "女仆装",
+      "图书馆",
+      "午后",
+      "打盹"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-05T03:15:24.930Z",
+    "updatedAt": "2026-11-05T03:15:24.930Z",
+    "tone": "glm",
+    "symbol": "",
+    "slug": "glm202611050002",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "glm"
+    ],
+    "i18n": {
+      "sourceHash": "dcc1fac81da0d6698a84d9190d65863f790133f8a5a9a182ae20f7ccd923fd17",
+      "en": {
+        "commentary": "She actually fell asleep in the library. The coffee is still steaming, the chocolate is only half gone, and her phone screen is about to dim. That Z is unmistakable — it is GLM's mark. Honestly, she looks so peaceful that I cannot bring myself to wake her. Next time, though, bring a pillow.",
+        "description": "GLM Chan dozes on a long table in the library, her long black hair and cat ears spilling over the table edge. The Z emblem appears on her maid headdress and on the coffee mug, while a phone and a half-eaten bar of chocolate sit beside her as warm afternoon light comes in through the window on the right.",
+        "faq": [
+          {
+            "answer": "GLM Chan, drawn as a cat-eared maid dozing at a library table with coffee, chocolate and a phone around her.",
+            "question": "Who is shown in this picture?"
+          },
+          {
+            "answer": "A single-frame illustration with a full indoor scene; the warm sunlight, bookshelves and everyday props carry the quiet afternoon mood.",
+            "question": "What kind of artwork is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "GLM Chan's Afternoon Nap",
+        "originNote": "",
+        "seoDescription": "GLM Chan as a cat-eared maid, asleep at a library table with coffee, chocolate and warm afternoon light.",
+        "seoTitle": "GLM Chan's Afternoon Nap | DeepSeek Chan",
+        "tags": [
+          "GLM Chan",
+          "Cat Ears",
+          "Maid Outfit",
+          "Library",
+          "Afternoon",
+          "Nap"
+        ]
+      },
+      "ja": {
+        "commentary": "図書館で寝ちゃってる……。コーヒーはまだ湯気が立っているし、チョコレートも半分残ったまま、スマホの画面も暗くなりそう。あの Z は GLM のマークだよね。こんなに気持ちよさそうに寝ていると、起こすのが可哀想になっちゃう。でも次は枕を持ってきてね。",
+        "description": "GLMちゃんが図書館の長机でうたた寝をしている。長い黒髪と猫耳が机の端から垂れ、メイドのヘッドドレスとコーヒーカップには Z のマーク。机の上にはスマートフォンと食べかけのチョコレートが置かれ、右の窓から午後の暖かな光が差し込んでいる。",
+        "faq": [
+          {
+            "answer": "猫耳メイド姿で図書館の机にうたた寝している GLMちゃん。周りにはコーヒー、チョコレート、スマートフォンが置かれている。",
+            "question": "この絵には誰が描かれていますか？"
+          },
+          {
+            "answer": "室内全体を描いた一枚絵のイラスト。暖かな日差しと本棚、身近な小道具が静かな午後の雰囲気を作っている。",
+            "question": "どんな作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "GLMちゃんの午後のひと休み",
+        "originNote": "",
+        "seoDescription": "猫耳メイド姿のGLMちゃんが、コーヒーとチョコレートのある図書館の机でうたた寝するイラスト。",
+        "seoTitle": "GLMちゃんの午後のひと休み｜DeepSeek Chan",
+        "tags": [
+          "GLMちゃん",
+          "猫耳",
+          "メイド服",
+          "図書館",
+          "午後",
+          "うたた寝"
+        ]
+      }
+    }
   }
 ]
