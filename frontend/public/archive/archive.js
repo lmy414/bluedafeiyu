@@ -156,10 +156,10 @@ import {orderWorks, shuffledSlugs} from '../components/work-order.js';
       if(!dataset)return;
       const active=document.activeElement;
       const slug=result.contains(active)?active.dataset.preview:null;
-      const title=active?.matches('.work-title');
+      const entry=active?.matches('button.card-preview')?'button.card-preview':active?.matches('a.work-title')?'a.work-title':'a.work-art';
       render(false);
       if(slug&&!active.isConnected){
-        const replacement=$$('[data-preview]',result).find(node=>node.dataset.preview===slug&&node.matches('.work-title')===title);
+        const replacement=$$('[data-preview]',result).find(node=>node.dataset.preview===slug&&node.matches(entry));
         replacement?.focus({preventScroll:true});
       }
     });

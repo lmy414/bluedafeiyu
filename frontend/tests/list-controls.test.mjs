@@ -54,8 +54,8 @@ async function fixture({url='https://archive.test/browse.html',available=true,cu
   return {document,window,controls,location,history,visible,select,click,navigations,initialNodes};
 }
 
-test('language readiness retains the currently focused work and image/title entry after replacing cards',async()=>{
-  for(const kind of ['work-art','work-title']){
+test('language readiness retains the currently focused work and image, quick-preview or title entry after replacing cards',async()=>{
+  for(const kind of ['work-art','card-preview','work-title']){
     let ready=false;
     const siteLang={url:href=>href,contentText:text=>text,localWork:work=>ready?{...work,n:'Translated '+work.n}:work,fmt:(_key,fallback,vars)=>fallback.replace(/\{(\w+)\}/g,(_,key)=>vars?.[key]??'')};
     const f=await fixture();f.window.SiteLang=siteLang;
@@ -74,13 +74,14 @@ test('language readiness retains the currently focused work and image/title entr
 });
 
 test('language readiness respects focus moved to another work or outside the result list',async()=>{
-  for(const target of ['.work-title','select[name="sort"]','[data-preview-close]','body']){
+  for(const target of ['.work-title','.card-preview','select[name="sort"]','[data-preview-close]','body']){
     const f=await fixture();
     const first=f.document.querySelector('.work-art');first.focus();
-    const node=target==='.work-title'?f.document.querySelectorAll('.work-title')[2]:f.document.querySelector(target);
+    const cardTarget=target==='.work-title'||target==='.card-preview';
+    const node=cardTarget?f.document.querySelectorAll(target)[2]:f.document.querySelector(target);
     const slug=node.dataset.preview;node.focus();
     f.document.dispatchEvent(new f.window.CustomEvent('site:langchange',{detail:{lang:'zh-Hant'}}));
-    if(target==='.work-title')assert.ok(f.document.activeElement===f.document.querySelector(`[data-preview="${slug}"].work-title`),'the current work wins over the previous trigger');
+    if(cardTarget)assert.ok(f.document.activeElement===f.document.querySelector(`[data-preview="${slug}"]${target}`),'the current work and entry kind win over the previous trigger');
     else assert.ok(f.document.activeElement===node,'focus outside the cards is retained');
   }
 });
