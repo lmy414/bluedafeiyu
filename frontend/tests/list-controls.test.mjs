@@ -18,6 +18,10 @@ const flush=()=>new Promise(resolve=>setImmediate(resolve));
 
 async function fixture({url='https://archive.test/browse.html',available=true,curated=false,statsReady=Promise.resolve(stats),initialCards=false,searchWorks=null}={}) {
   const {document,window}=parseHTML(fs.readFileSync(path.join(out,'browse.html'),'utf8'));
+  window.SiteLang=undefined;
+  // Model native focus, including the body fallback when a focused node is removed.
+  Object.defineProperty(document,'activeElement',{get:()=>document.focusedNode?.isConnected?document.focusedNode:document.body});
+  window.HTMLElement.prototype.focus=function(options){this.ownerDocument.focusedNode=this;this.ownerDocument.focusOptions=options;};
   const dataWorks=searchWorks||works;
   if(searchWorks){document.body.dataset.characterPage='deepseek';document.body.dataset.character='deepseek';document.querySelector('#filter-form').insertAdjacentHTML('afterend','<form id="search-form"><input id="search-q" name="q" type="search"></form>');}
   // linkedom deliberately omits form state; provide native selection semantics
@@ -43,11 +47,44 @@ async function fixture({url='https://archive.test/browse.html',available=true,cu
   const context={window,document,location,history,URL,URLSearchParams,performance:{getEntriesByType:()=>[]},navigator:{},Event:window.Event,CustomEvent:window.CustomEvent,setTimeout,clearTimeout,requestAnimationFrame:callback=>callback(),matchMedia:()=>({matches:false,addEventListener(){}}),addEventListener:window.addEventListener.bind(window),loadArchiveData:()=>Promise.resolve({works:dataWorks,characters:[]}),loadSearchModule:async()=>({createSearchIndex}),renderWorkCard,matchesCreationMethod,orderWorks,shuffledSlugs,installTopicDownloads(){},installWorkPreview(){},copyImage(){},console};
   vm.runInNewContext(source.replace("await import('./search.js')",'await loadSearchModule()'),context);
   await flush();await flush();
+  Object.defineProperty(context,'SiteLang',{get:()=>window.SiteLang});
   const visible=()=>[...document.querySelectorAll('#results .work-card')].map(card=>card.dataset.slug);
   const select=(name,value)=>{controls[name].value=value;controls[name].dispatchEvent(new window.Event('change',{bubbles:true}));};
   const click=selector=>document.querySelector(selector).dispatchEvent(new window.Event('click',{bubbles:true}));
-  return {document,controls,location,history,visible,select,click,navigations,initialNodes};
+  return {document,window,controls,location,history,visible,select,click,navigations,initialNodes};
 }
+
+test('language readiness retains the currently focused work and image, quick-preview or title entry after replacing cards',async()=>{
+  for(const kind of ['work-art','card-preview','work-title']){
+    let ready=false;
+    const siteLang={url:href=>href,contentText:text=>text,localWork:work=>ready?{...work,n:'Translated '+work.n}:work,fmt:(_key,fallback,vars)=>fallback.replace(/\{(\w+)\}/g,(_,key)=>vars?.[key]??'')};
+    const f=await fixture();f.window.SiteLang=siteLang;
+    f.select('direction','asc');f.click('[data-load-more]');
+    const before=f.visible(),href=f.location.href,shown=f.history.state.feedShown;
+    const trigger=f.document.querySelector(`[data-slug="${before[30]}"] .${kind}`);
+    trigger.focus();ready=true;
+    f.document.dispatchEvent(new f.window.CustomEvent('site:langchange',{detail:{lang:'zh-Hant'}}));
+    const replacement=f.document.querySelector(`[data-slug="${before[30]}"] .${kind}`);
+    assert.equal(trigger.isConnected,false);
+    assert.ok(f.document.activeElement===replacement,'focus stays on the replacement of the same work and entry kind');
+    assert.equal(f.document.focusOptions.preventScroll,true);
+    assert.match(replacement.closest('.work-card').querySelector('.work-title').textContent,/^Translated /);
+    assert.deepEqual(f.visible(),before);assert.equal(f.location.href,href);assert.equal(f.history.state.feedShown,shown);
+  }
+});
+
+test('language readiness respects focus moved to another work or outside the result list',async()=>{
+  for(const target of ['.work-title','.card-preview','select[name="sort"]','[data-preview-close]','body']){
+    const f=await fixture();
+    const first=f.document.querySelector('.work-art');first.focus();
+    const cardTarget=target==='.work-title'||target==='.card-preview';
+    const node=cardTarget?f.document.querySelectorAll(target)[2]:f.document.querySelector(target);
+    const slug=node.dataset.preview;node.focus();
+    f.document.dispatchEvent(new f.window.CustomEvent('site:langchange',{detail:{lang:'zh-Hant'}}));
+    if(cardTarget)assert.ok(f.document.activeElement===f.document.querySelector(`[data-preview="${slug}"]${target}`),'the current work and entry kind win over the previous trigger');
+    else assert.ok(f.document.activeElement===node,'focus outside the cards is retained');
+  }
+});
 
 test('loading the catalog retains matching static cards and their eager images, then filters normally',async()=>{
   const f=await fixture({initialCards:true});
