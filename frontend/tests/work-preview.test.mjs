@@ -9,7 +9,7 @@ import {applyNativeContent} from '../scripts/native-content.mjs';
 
 const work = slug => ({slug,id:'id-'+slug,n:'Title '+slug,d:'Description',i:'/thumb.webp',l:'/large.webp',o:'/original.gif',w:400,h:400,k:['meme'],roles:[{id:'deepseek',name:'DeepSeek',color:'#36f'}],tg:[],dt:'2026.10.26',f:'GIF',s:'40 KB',lk:'unknown',lt:'Unknown',owners:[{name:'Artist',href:'/creators/artist.html'}]});
 const flush = () => new Promise(resolve => setImmediate(resolve));
-function fixture({load,prefix='',localize=w=>w,names=value=>value} = {}) {
+function fixture({load,loadMetadata,prefix='',localize=w=>w,names=value=>value} = {}) {
   const works = ['a','b','c'].map(work);
   const {document,window} = parseHTML(`<html><body><main id="main"><div id="results"><div class="work-grid" id="one">${works.slice(0,2).map(w=>renderWorkCard(w)).join('')}</div></div><div class="work-grid" id="two">${renderWorkCard(works[2])}</div></main><dialog id="preview-dialog"><button data-preview-close>Close</button><div id="preview-body"></div></dialog><dialog id="share-card-dialog"></dialog></body></html>`);
   const dialog = document.querySelector('#preview-dialog'), locks = [], views = [], errors = [];
@@ -23,7 +23,7 @@ function fixture({load,prefix='',localize=w=>w,names=value=>value} = {}) {
   dialog.showModal = () => {dialog.open=true;};
   dialog.close = () => {dialog.open=false;dialog.dispatchEvent(new window.Event('close'));};
   dialog.getBoundingClientRect = () => ({top:10,bottom:600,left:10,right:800});
-  const controller = installWorkPreview({document,localize,load:load||async function(){return {works};},translate:(_key,text)=>text,url:href=>prefix+href,names,toast:message=>errors.push(message),components:{scrollLock:value=>locks.push(value),roleDot:()=>'<i></i>'}});
+  const controller = installWorkPreview({document,localize,loadMetadata,load:load||async function(){return {works};},translate:(_key,text)=>text,url:href=>prefix+href,names,toast:message=>errors.push(message),components:{scrollLock:value=>locks.push(value),roleDot:()=>'<i></i>'}});
   const click = (node,props={}) => {
     const event = new window.Event('click',{bubbles:true,cancelable:true});
     Object.assign(event,{button:0,...props});node.dispatchEvent(event);return event;
@@ -50,6 +50,28 @@ test('both card entry links announce the shared preview and retain localized, cr
   assert.equal(document.querySelector('a button'),null);
   const unsafe=parseHTML(`<a ${workPreviewAttributes('x" onclick="bad')}></a>`).document.querySelector('a');
   assert.equal(unsafe.getAttribute('onclick'),null);
+});
+
+test('complete metadata and all tags survive preview navigation without stale or post-close updates',async()=>{
+  const pending=new Map();
+  const f=fixture({loadMetadata:id=>new Promise(resolve=>pending.set(id,resolve))});
+  f.window.WorkStats={ready:Promise.resolve({available:true,works:{'id-b':{views:8,downloads:0}}})};
+  f.works[0].tg=Array.from({length:8},(_,i)=>'tag-'+i);
+  f.click(f.document.querySelector('.work-art'));await flush();
+  assert.equal(f.document.querySelectorAll('.preview-tags a').length,8);
+  assert.equal(f.dialog.getAttribute('aria-labelledby'),'preview-work-title');
+  f.click(f.document.querySelector('[data-slug="b"] .work-art'));await flush();
+  pending.get('id-a')({id:'id-a',author:{name:'Old author'}});await flush();
+  assert.equal(f.document.querySelector('[data-complete-preview]'),null);
+  pending.get('id-b')({id:'id-b',author:{name:'Current author'},source:{url:'https://example.com/original'}});await flush();
+  assert.equal(f.document.querySelector('[data-preview-field="author"] dd').textContent,'Current author');
+  assert.equal(f.document.querySelector('[data-preview-field="downloads"] dd').textContent,'0');
+  assert.equal(f.document.querySelector('[data-preview-field="source"] a').href,'https://example.com/original');
+  assert.deepEqual(f.views,['id-a','id-b']);
+  f.click(f.document.querySelector('[data-slug="a"] .work-art'));await flush();f.controller.close();
+  pending.get('id-a')({id:'id-a',author:{name:'Cancelled author'}});await flush();
+  assert.equal(f.document.querySelector('[data-complete-preview]'),null);
+  assert.equal(f.dialog.open,false);
 });
 
 test('native card localization updates every labeled preview trigger rather than only the first',()=>{

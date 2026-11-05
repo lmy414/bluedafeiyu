@@ -4,7 +4,7 @@ import { mobileNavigation } from './nav-items.mjs';
 import {navigationCountPlaceholder} from '../library/navigation-count.mjs';
 const { active = "" } = Astro.props;
 const { icon, works } = archiveContext;
-const isPage = item => active === item.id;
+const isPage = item => active === item.id || (active === 'projects' && item.id === 'friendWall');
 const isSection = item => !isPage(item) && item.id === 'browse' && ['characters', 'topics'].includes(active);
 ---
 <aside class="sidebar mobile-drawer" id="sidebar">
@@ -17,7 +17,7 @@ const isSection = item => !isPage(item) && item.id === 'browse' && ['characters'
     <p class="nav-label" data-i18n="d.explore">逛一逛</p>
   </div>
   <nav class="main-nav primary-nav drawer-nav" aria-label="站点导航" data-i18n-attr="aria-label:v2.siteNav">
-    {mobileNavigation.map(item => <a class:list={['nav-link',{'is-active':isPage(item) || isSection(item)}]} href={item.href} title={item.label} aria-label={item.label} data-i18n-attr={`title:${item.key},aria-label:${item.key}`} aria-current={isPage(item) ? 'page' : isSection(item) ? 'true' : undefined}>
+    {mobileNavigation.map(item => <a class:list={['nav-link',{'is-active':isPage(item) || isSection(item)}]} href={item.href} title={item.label} aria-label={item.label} data-i18n-attr={`title:${item.key},aria-label:${item.key}`} data-project-nav={['communityProjects','friendWall'].includes(item.id) ? item.id : undefined} aria-current={isPage(item) ? 'page' : isSection(item) ? 'true' : undefined}>
       <Fragment set:html={icon(item.icon)} /><span data-i18n={item.key}>{item.label}</span>
       {item.id === 'browse' && <small data-library-work-total>{import.meta.env.DEV ? works.length : navigationCountPlaceholder}</small>}
     </a>)}

@@ -1,0 +1,62 @@
+/* Intrinsic-ratio image walls on the home page. */
+body.archive.refined :is(.home-latest,.home-downloads,.home-popular,.journal-popular) .work-grid {
+  --gap:6px;
+  gap:6px;
+}
+body.archive.refined :is(.home-latest,.home-downloads,.home-popular,.journal-popular) .work-card {
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+  background:transparent;
+}
+body.archive.refined :is(.home-latest,.home-downloads,.home-popular,.journal-popular) .work-art,
+body.archive.refined :is(.home-latest,.home-downloads,.home-popular,.journal-popular) .work-art.is-long {
+  display:block;
+  height:auto;
+  min-height:0;
+  aspect-ratio:auto;
+  border:0;
+  border-radius:2px;
+  background:transparent;
+  padding:0;
+}
+body.archive.refined :is(.home-latest,.home-downloads,.home-popular,.journal-popular) .work-art img,
+body.archive.refined :is(.home-latest,.home-downloads,.home-popular,.journal-popular) .work-art.is-long img {
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:none;
+  aspect-ratio:auto;
+  object-fit:contain;
+  border:0;
+  border-radius:2px;
+}
+body.archive.refined :is(.home-latest,.home-downloads,.home-popular,.journal-popular) .work-text { padding:5px 2px 4px; }
+body.archive.refined :is(.home-latest,.home-downloads,.home-popular,.journal-popular) .work-title {
+  display:block;
+  max-height:none;
+  overflow:visible;
+  white-space:normal;
+  overflow-wrap:anywhere;
+  text-overflow:clip;
+  -webkit-line-clamp:unset;
+}
+body.archive.refined :is(.home-latest,.home-downloads,.home-popular,.journal-popular) .card-roles {
+  overflow:visible;
+  flex-wrap:wrap;
+}
+body.archive.refined :is(.home-latest,.home-downloads,.home-popular,.journal-popular) .card-roles a {
+  overflow:visible;
+  white-space:normal;
+  overflow-wrap:anywhere;
+  text-overflow:clip;
+}
+@media(max-width:760px) { body.archive.refined :is(.home-latest,.home-downloads,.home-popular) .work-grid { --gap:4px; gap:4px; } }
+
+/* The three home walls show only images; all metadata remains in the preview. */
+body.archive.refined :is(.home-latest,.home-popular,.home-downloads) :is(.work-text,.art-license,.art-kind,.type-label,.art-open,.long-image-note,.quick-view,.card-save,.card-share) {
+  display:none;
+}
+body.archive.refined :is(.home-latest,.home-popular,.home-downloads) .work-art { border-radius:2px; }
+body.archive.refined :is(.home-latest,.home-popular,.home-downloads) .work-art:focus-visible { outline:3px solid var(--blue); outline-offset:2px; }
+

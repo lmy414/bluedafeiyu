@@ -16,13 +16,13 @@ test('homepage and mobile navigation work before scripts and keep production han
   for(const prefix of ['', 'en/','ja/','zh-hant/']){
     const {document}=parseHTML(fs.readFileSync(path.join(out,prefix+'index.html'),'utf8'));
     const localized=href=>href==='/'?'/'+prefix:'/'+prefix+href.slice(1);
-    const expected=['/','/browse.html','/videos.html','/creators.html','/projects.html#project','/community.html','/events.html','/projects.html#website','/about.html'].map(localized);
+    const expected=['/','/browse.html','/videos.html','/creators.html','/community-projects.html','/community.html','/events.html','/friend-links.html','/about.html'].map(localized);
     const mainLinks=[...document.querySelectorAll('.sidebar-rail .main-nav a')];
     const mobileLinks=[...document.querySelectorAll('.mobile-bottom a')];
     const drawerLinks=[...document.querySelectorAll('.mobile-drawer .drawer-nav a')];
     assert.deepEqual(mainLinks.map(link=>link.getAttribute('href')),expected,prefix);
     assert.deepEqual(mobileLinks.map(link=>link.getAttribute('href')),['/','/browse.html','/videos.html','/creators.html','/saved.html'].map(localized),prefix);
-    assert.deepEqual(drawerLinks.map(link=>link.getAttribute('href')),['/','/browse.html','/videos.html','/creators.html'].map(localized).concat('https://weekly.xn--pssy23gqgbz2d718b.com/',['/community.html','/projects.html','/events.html'].map(localized)),prefix);
+    assert.deepEqual(drawerLinks.map(link=>link.getAttribute('href')),['/','/browse.html','/videos.html','/creators.html'].map(localized).concat('https://weekly.xn--pssy23gqgbz2d718b.com/',['/community.html','/community-projects.html','/friend-links.html','/about.html','/events.html'].map(localized)),prefix);
     for(const href of expected){
       const pathname=href.split('#')[0];
       assert.ok(fs.existsSync(path.join(out,pathname.endsWith('/')?pathname+'index.html':pathname)),href);
@@ -30,7 +30,7 @@ test('homepage and mobile navigation work before scripts and keep production han
     assert.equal(mainLinks.filter(link=>link.getAttribute('aria-current')==='page').length,1,prefix);
     assert.equal(mobileLinks.length,5,prefix);
     assert.equal(mainLinks.length,9,prefix);
-    assert.equal(drawerLinks.length,8,prefix);
+    assert.equal(drawerLinks.length,10,prefix);
     assert.equal(document.querySelector('[data-sidebar-collapse]'),null);
     assert.equal(document.querySelector('[data-menu]')?.getAttribute('aria-controls'),'sidebar');
     assert.ok(document.querySelector('.mobile-drawer [data-menu-close]'));
@@ -41,7 +41,9 @@ test('homepage and mobile navigation work before scripts and keep production han
     assert.equal(savedEntry.getAttribute('aria-label'),({'':'我的收藏','en/':'Saved works','ja/':'お気に入り','zh-hant/':'我的收藏'})[prefix]);
     const topics=document.querySelectorAll('[data-design-slide]');assert.ok(topics.length>=2);
     assert.equal(document.querySelectorAll('[data-design-slide]:not([hidden])').length,1);
-    assert.equal(document.querySelectorAll('.portal-primary > a').length,2);
+    assert.equal(document.querySelectorAll('.portal-primary > a').length,1);
+    assert.equal(document.querySelector('.portal-welcome-actions'),null);
+    assert.equal(document.querySelector('.portal-videos'),null);
     assert.equal(document.querySelectorAll('.portal-secondary > a').length,3);
     assert.ok(document.querySelector('[data-design-slide] a[href*="/topics/"]'));
     assert.ok(document.querySelector('.portal-participate a[href$="/submit.html"]'));

@@ -1,17 +1,17 @@
 /* Public archive theme. Legacy names are aliases, never a second palette. */
 :root {
   color-scheme: light;
-  --ground: #f6f8fa;
-  --paper: #ffffff;
-  --ink: #203b50;
-  --muted: #526b7d;
-  --line: #dce5eb;
-  --soft: #eef4f7;
-  --blue: #256e9b;
-  --blue-soft: #e6f1f8;
-  --on-blue: #ffffff;
-  --blue-hover: #1c5c84;
-  --control-line: #849aa9;
+  --ground: #f5f8fe;
+  --paper: #fff;
+  --ink: #203b61;
+  --muted: #587191;
+  --line: #a7bbd8;
+  --soft: #f0f5ff;
+  --blue: #285fcb;
+  --blue-soft: #eaf1ff;
+  --on-blue: #fff;
+  --blue-hover: #1d4ca8;
+  --control-line: #6d8aaf;
   --shadow: 0 8px 30px #163b5814;
   --shadow-control: 0 1px 3px #163b580a;
   --sidebar: 218px;
@@ -71,21 +71,32 @@
   --j-line: var(--line);
   --j-blue: var(--blue);
   --j-soft: var(--soft);
+  --notebook-rule: #235cb710;
+  --notebook-margin: #3670c82c;
+  --notebook-edge: #254c7e;
+  --notebook-shadow: #294d7925;
+  --notebook-tape: #bdd5ff9c;
+  --rail-surface: var(--paper);
+  --rail-border: var(--notebook-edge);
+  --rail-text: var(--ink);
+  --rail-active: var(--blue-soft);
+  --rail-hover: var(--soft);
+
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --ground: #111c25;
-  --paper: #1a2a35;
-  --ink: #e4eef4;
-  --muted: #a3b9c9;
-  --line: #304450;
-  --soft: #213642;
-  --blue: #9ad4f2;
-  --blue-soft: #203d50;
-  --on-blue: #102a3a;
-  --blue-hover: #b9e4fa;
-  --control-line: #728b9d;
+  --ground: #101c30;
+  --paper: #172740;
+  --ink: #e7efff;
+  --muted: #adc0dc;
+  --line: #547198;
+  --soft: #1c304d;
+  --blue: #9bbfff;
+  --blue-soft: #243e65;
+  --on-blue: #12243f;
+  --blue-hover: #c0d6ff;
+  --control-line: #8ba6cb;
   --shadow: 0 8px 30px #00000033;
   --shadow-control: 0 1px 3px #0000001a;
   /* These names also exist in the legacy dark tokens; reset them here. */
@@ -106,6 +117,12 @@
   --sticky-2: var(--soft);
   --sticky-3: var(--paper);
   --grid-line: var(--line);
+  --notebook-rule: #89b3ee0e;
+  --notebook-margin: #89b3ee2b;
+  --notebook-edge: #7898c3;
+  --notebook-shadow: #030b1799;
+  --notebook-tape: #618ed45e;
+
 }
 
 @media (min-width: 761px) {

@@ -17,7 +17,7 @@ import {createSearchPage} from "../components/archive/SearchPage.mjs";
 import {createCommunityPage} from "../components/archive/CommunityPage.mjs";
 import {createEventPage} from "../components/archive/EventPage.mjs";
 import {createUtilityPages} from "../components/archive/UtilityPages.mjs";
-import {createFriendWall} from '../components/archive/FriendWall.mjs';
+import {createFriendWall, createIndependentFriendPages} from '../components/archive/FriendWall.mjs';
 import {friendLinks} from './friend-links.mjs';
 import {shareCopy} from './share-copy.mjs';
 import {createGuidePages} from "../components/archive/GuidePages.mjs";
@@ -82,6 +82,12 @@ for(const [key, en, ja] of [
   ['loadFail','Could not load data. Please refresh.','データを読み込めませんでした。再読み込みしてください。'],
   ['fullDetail','View full details','詳細を見る'],['prevWork','Previous image','前の画像'],['nextWork','Next image','次の画像'],
   ['previewTitle','Work preview','作品プレビュー'],['previewClose','Close preview','プレビューを閉じる'],['previewFormat','Original format','元画像の形式'],['previewSize','File size','ファイルサイズ'],['previewPermission','Usage permission','利用許諾'],['previewNavigation','Browse preview images','プレビュー画像を切り替え'],
+  ['previewMetadata.title','Complete work information','作品の詳細情報'],['previewMetadata.created','Added','収録日時'],['previewMetadata.updated','Updated','更新日'],
+  ['previewMetadata.author','Original artist','原作者'],['previewMetadata.credit','Submission credit','投稿者の表記'],['previewMetadata.source','Original source','元の出典'],
+  ['previewMetadata.dimensions','Original size','元画像サイズ'],['previewMetadata.rights','Copyright','著作権'],['previewMetadata.license','License note','ライセンスの注記'],
+  ['previewMetadata.views','Views','閲覧数'],['previewMetadata.downloads','Download clicks','ダウンロードクリック数'],['previewMetadata.id','Work ID','作品 ID'],
+  ['previewMetadata.unknownAuthor','Original artist not specified','原作者の記載なし'],['previewMetadata.unknown','Not specified','記載なし'],['previewMetadata.unavailable','Statistics unavailable','統計は利用できません'],
+  ['previewMetadata.viewSource','View source','出典を見る'],['previewMetadata.loadFailed','Complete information is unavailable. Open the work details.','詳細情報を取得できません。作品詳細をご覧ください。'],
   ['fileTooLarge','Images must be 10 MB or smaller.','画像は10 MB以下にしてください。'],['fileType','Please choose a supported image format.','対応する画像形式を選んでください。'],
   ['commentsFail','Comments could not load. Please try again later.','コメントを読み込めませんでした。後でもう一度お試しください。']
 ]){translations.en['d.'+key]=en;translations.ja['d.'+key]=ja;}
@@ -134,6 +140,7 @@ createCommunityPage(ctx);
 createEventPage(ctx);
 createUtilityPages(ctx);
 createFriendWall(ctx);
+createIndependentFriendPages(ctx);
 Object.assign(ctx,createVideoPages(ctx));
 createDemoPages(ctx,pages);
 ctx.seo.generatePages(ctx.write,ctx.browsePage,ctx.breadcrumbs);

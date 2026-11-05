@@ -1,10 +1,10 @@
 import {installMasonry} from './masonry.mjs';
 import {installPagedFeeds} from '../../public/components/paged-feed.js';
-import {installHomeDownloads} from '../../public/components/home-downloads.js';
+import {installHomeRankings} from '../../public/components/home-rankings.js';
 import './saved-ui.js';
 installMasonry();
 installPagedFeeds();
-installHomeDownloads();
+installHomeRankings();
 
 for (const slider of document.querySelectorAll('[data-design-slider]')) {
   const slides=[...slider.querySelectorAll('[data-design-slide]')];
