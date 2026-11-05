@@ -14,6 +14,7 @@ function fixture({load,loadMetadata,prefix='',localize=w=>w,names=value=>value} 
   const {document,window} = parseHTML(`<html><body><main id="main"><div id="results"><div class="work-grid" id="one">${works.slice(0,2).map(w=>renderWorkCard(w)).join('')}</div></div><div class="work-grid" id="two">${renderWorkCard(works[2])}</div></main><dialog id="preview-dialog"><button data-preview-close>Close</button><div id="preview-body"></div></dialog><dialog id="share-card-dialog"></dialog></body></html>`);
   const dialog = document.querySelector('#preview-dialog'), locks = [], views = [], errors = [];
   let focused;
+  Object.defineProperty(document,'activeElement',{get:()=>focused?.node?.isConnected?focused.node:document.body});
   document.addEventListener('work:show',event=>{assert.equal(event.detail.viewType,'preview');views.push(event.detail.id);});
   const trackFocus = () => {
     for (const node of document.querySelectorAll('a,button,[id]')) node.focus = options => {focused={node,options};};
@@ -72,6 +73,34 @@ test('complete metadata and all tags survive preview navigation without stale or
   pending.get('id-a')({id:'id-a',author:{name:'Cancelled author'}});await flush();
   assert.equal(f.document.querySelector('[data-complete-preview]'),null);
   assert.equal(f.dialog.open,false);
+});
+
+test('delayed complete tags retain the focused link and respect a user move to another dialog control',async()=>{
+  for(const entry of ['.work-art','.quick-view','.work-title'])for(const move of [false,true]){
+    let finish;
+    const f=fixture({loadMetadata:()=>new Promise(resolve=>{finish=resolve;})});
+    f.works[0].tg=['rice','night'];
+    f.click(f.document.querySelector('#one '+entry));await flush();
+    const tag=f.document.querySelector('.preview-tags a');tag.focus();
+    const target=move?f.document.querySelector('.preview-detail-link'):tag;
+    if(move)target.focus();
+    const before=f.focused();
+    finish({id:'id-a',tags:['DeepSeek','rice','night']});await flush();
+    assert.equal(f.document.querySelectorAll('.preview-tags a').length,3);
+    assert.equal(f.document.querySelectorAll('.preview-tags a')[1],tag,'existing tag identity is retained');
+    assert.equal(f.document.activeElement,target,entry+' keeps the user-selected control');
+    assert.equal(f.focused(),before,'the response does not call focus');
+  }
+});
+
+test('closing after a list repaint restores quick, image and title entries by control type',async()=>{
+  for(const entry of ['.quick-view','.work-art','.work-title']){
+    const f=fixture(),trigger=f.document.querySelector('#one '+entry);
+    f.click(trigger);await flush();f.redraw(f.works.slice(0,2));
+    f.controller.close();
+    assert.equal(f.document.activeElement,f.document.querySelector('#one [data-slug="a"] '+entry));
+    assert.deepEqual(f.focused().options,{preventScroll:true});
+  }
 });
 
 test('native card localization updates every labeled preview trigger rather than only the first',()=>{

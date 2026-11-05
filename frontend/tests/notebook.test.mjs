@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {parseHTML} from 'linkedom';
-import {selectHomeRanking,HOME_RANKING_COUNT} from '../public/components/home-rankings.js';
+import {selectHomeRanking,HOME_RANKING_COUNT,installHomeRankings} from '../public/components/home-rankings.js';
 import {renderPreviewMetadata,renderPreviewTags} from '../public/components/preview-metadata.js';
 import {createIndependentFriendPages} from '../src/components/archive/FriendWall.mjs';
 import {friendLinks} from '../src/lib/friend-links.mjs';
@@ -20,6 +20,38 @@ test('home view and download rankings use only actual metrics and retain determi
   assert.deepEqual(selectHomeRanking(works,{available:true,works:{}},'downloads'),[]);
   assert.deepEqual(selectHomeRanking(works,{available:true,works:{'id-1':{views:0}}},'popular'),[]);
   assert.equal(JSON.stringify(works),before);
+});
+
+test('ranking localization preserves the current control and never reclaims a user-moved focus',async()=>{
+  const works=['a','b'].map((id,i)=>({id,slug:id,at:i,n:'Work '+id,d:'Description',i:'/thumb.webp',l:'/large.webp',o:'/original.png',k:['meme'],roles:[{id:'deepseek',name:'DeepSeek',color:'#36f'}],tg:[],dt:'2026.11.05',lk:'unknown',lt:'Unknown'}));
+  const {document,window}=parseHTML('<html><body><input id="search"><section data-home-ranking="popular"><div class="work-grid"></div><p data-home-ranking-note></p></section><section data-home-ranking="downloads"><div class="work-grid"></div><p data-home-ranking-note></p></section><dialog><button id="dialog-control">Close</button></dialog></body></html>');
+  const previous={document:globalThis.document,window:globalThis.window,fetch:globalThis.fetch,focus:window.HTMLElement.prototype.focus};
+  let active=document.body,calls=[];
+  Object.defineProperty(document,'activeElement',{get:()=>active?.isConnected?active:document.body});
+  window.HTMLElement.prototype.focus=function(options){active=this;calls.push({node:this,options});};
+  globalThis.document=document;globalThis.window=window;
+  globalThis.fetch=async()=>({ok:true,json:async()=>({works})});
+  window.WorkStats={ready:Promise.resolve({available:true,works:{a:{views:8,downloads:2},b:{views:4,downloads:5}}}),paint(){}};
+  window.SiteLang={localWork:work=>work,contentText:value=>value,url:value=>value,fmt:(_key,fallback)=>fallback};
+  try{
+    installHomeRankings();await new Promise(resolve=>setImmediate(resolve));
+    for(const mode of ['popular','downloads'])for(const selector of ['.work-art','.quick-view','.work-title','[data-save]']){
+      const grid=document.querySelector(`[data-home-ranking="${mode}"] .work-grid`);
+      const before=grid.querySelector('[data-slug="a"] '+selector);before.focus();calls=[];
+      document.dispatchEvent(new window.CustomEvent('site:langchange',{detail:{lang:'zh-Hant'}}));
+      assert.equal(document.activeElement,grid.querySelector('[data-slug="a"] '+selector));
+      assert.notEqual(document.activeElement,before);
+      assert.deepEqual(calls.map(c=>c.options),[{preventScroll:true}]);
+    }
+    for(const selector of ['#search','#dialog-control']){
+      const target=document.querySelector(selector);target.focus();calls=[];
+      document.dispatchEvent(new window.CustomEvent('site:langchange',{detail:{lang:'zh-Hant'}}));
+      assert.equal(document.activeElement,target);assert.equal(calls.length,0);
+    }
+  }finally{
+    window.HTMLElement.prototype.focus=previous.focus;
+    for(const key of ['document','window','fetch'])if(previous[key]===undefined)delete globalThis[key];else globalThis[key]=previous[key];
+  }
 });
 
 test('preview preserves original attribution, safe source URLs, true zero and unavailable statistics',()=>{

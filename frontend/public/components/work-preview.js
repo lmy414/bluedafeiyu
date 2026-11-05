@@ -1,7 +1,7 @@
 import {workImageAlt} from './image-alt.js';
 import {renderWorkActions} from './work-actions.js';
 import {workImageURL} from './work-image.js';
-import {loadPreviewMetadata,renderPreviewMetadata,renderPreviewTags} from './preview-metadata.js';
+import {loadPreviewMetadata,renderPreviewMetadata,updatePreviewTags} from './preview-metadata.js';
 
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
 const icon = name => {
@@ -31,7 +31,8 @@ export function installWorkPreview({load, localize = w => w, translate:tx, url, 
     if (node === doc.body || dialog.contains(node)) node = null;
     const roots = [];
     for (let root = node?.closest(listScope) || node?.parentElement; root && root !== doc.body && root.tagName !== 'MAIN'; root = root.parentElement) roots.push(root);
-    return {node, slug, title:!!node?.matches('.work-title'), roots};
+    const selector = ['.quick-view','.work-art','.work-title','[data-image-open]'].find(selector=>node?.matches(selector));
+    return {node, slug, selector, roots};
   };
   const available = node => node?.isConnected && !node.closest('[hidden],[inert]') && !node.disabled && (!node.getClientRects || node.getClientRects().length > 0);
   const restore = () => {
@@ -42,7 +43,7 @@ export function installWorkPreview({load, localize = w => w, translate:tx, url, 
     const root = focus?.roots.find(available);
     const links = root ? [...root.querySelectorAll('[data-preview],[data-image-open]')].filter(available) : [];
     const matches = links.filter(node => (node.dataset.preview || node.dataset.imageOpen) === focus?.slug);
-    const target = available(focus?.node) ? focus.node : matches.find(node => node.matches('.work-title') === focus?.title) || matches[0] || links[0] || root || doc.querySelector('main');
+    const target = available(focus?.node) ? focus.node : matches.find(node => focus?.selector && node.matches(focus.selector)) || matches[0] || links[0] || root || doc.querySelector('main');
     if (available(target)) {
       if (!target.matches('a[href],button,input,select,textarea,[tabindex]')) {
         target.setAttribute('tabindex','-1');
@@ -110,7 +111,7 @@ export function installWorkPreview({load, localize = w => w, translate:tx, url, 
               tags = doc.createElement('div');tags.className = 'tags preview-tags';
               info.querySelector('.preview-facts').before(tags);
             }
-            if (tags) tags.innerHTML = renderPreviewTags(metadata,{names,url,language:lang});
+            if (tags) updatePreviewTags(tags,metadata,{names,url,language:lang});
           }
           info.insertAdjacentHTML('beforeend',renderPreviewMetadata(metadata,statistics,{translate:tx,names,url,language:lang}));
         }).catch(() => {

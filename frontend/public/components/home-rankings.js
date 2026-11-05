@@ -21,10 +21,21 @@ export function installHomeRankings() {
     for (const section of sections) {
       const mode = section.dataset.homeRanking, works = ranked.get(mode);
       if (!works?.length) continue;
-      section.querySelector('.work-grid').innerHTML = works.map(work => renderWorkCard(window.SiteLang?.localWork(work) || work, {
+      const grid = section.querySelector('.work-grid'), active = document.activeElement;
+      const card = grid.contains(active) ? active.closest('.work-card') : null;
+      const controls = 'a[href],button,input,select,textarea,[tabindex]';
+      const position = card ? [...card.querySelectorAll(controls)].indexOf(active) : -1;
+      grid.innerHTML = works.map(work => renderWorkCard(window.SiteLang?.localWork(work) || work, {
         url:href => window.SiteLang?.url(href) || href, translate:tx,
         names:value => window.SiteLang?.contentText(value) || value
       })).join('');
+      // Restore only the control removed by this synchronous repaint, using its
+      // stable work and position. Focus moved outside the grid stays untouched.
+      if (position >= 0 && !active.isConnected && document.activeElement === document.body) {
+        const replacement = [...grid.querySelectorAll('.work-card')].find(node=>node.dataset.slug===card.dataset.slug);
+        const target = replacement?.querySelectorAll(controls)[position] || grid.querySelector('.work-art');
+        if (target && !target.disabled && (!target.getClientRects || target.getClientRects().length)) target.focus({preventScroll:true});
+      }
       const note = section.querySelector('[data-home-ranking-note]');
       note.textContent = tx('d.homeRanking.'+(mode==='popular'?'viewsBasis':'downloadsBasis'), mode==='popular'?'按累计浏览次数排序。':'按累计下载按钮点击次数排序。');
       const date = new Date(snapshot.syncedAt);

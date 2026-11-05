@@ -6,6 +6,34 @@ export function renderPreviewTags(work, {language='zh',names=value=>value,url=va
   return (work.tags || []).map((original,index)=>`<a class="tag" href="${escape(url('/search.html?q='+encodeURIComponent(original)))}"><span aria-hidden="true">#</span>${escape(names(localized?.[index] || original))}</a>`).join('');
 }
 
+export function updatePreviewTags(container, work, options) {
+  const doc = container.ownerDocument, active = doc.activeElement;
+  const activeHref = container.contains(active) ? active.getAttribute('href') : null;
+  const template = doc.createElement('div');
+  template.innerHTML = renderPreviewTags(work,options);
+  const existing = new Map();
+  for (const link of container.querySelectorAll('a[href]')) {
+    const href = link.getAttribute('href');
+    if (!existing.has(href)) existing.set(href,[]);
+    existing.get(href).push(link);
+  }
+  const retained = new Set();
+  let cursor = container.firstChild;
+  for (const next of [...template.children]) {
+    const link = existing.get(next.getAttribute('href'))?.shift() || next;
+    if (link !== next && link.innerHTML !== next.innerHTML) link.replaceChildren(...next.childNodes);
+    retained.add(link);
+    if (link === cursor) cursor = cursor.nextSibling;
+    else container.insertBefore(link,cursor);
+  }
+  for (const child of [...container.childNodes]) if (!retained.has(child)) child.remove();
+  // Reordering may move a focused link. Never undo a user's move to another control.
+  if (activeHref && doc.activeElement === doc.body) {
+    const target = [...container.querySelectorAll('a[href]')].find(link=>link.getAttribute('href')===activeHref);
+    target?.focus({preventScroll:true});
+  }
+}
+
 export function loadPreviewMetadata(id) {
   if (!cache.has(id)) {
     const request = fetch('/open-api/v1/works/'+encodeURIComponent(id)+'.json').then(response => {
