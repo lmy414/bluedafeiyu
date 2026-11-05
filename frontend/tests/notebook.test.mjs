@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {parseHTML} from 'linkedom';
 import {selectHomeRanking,HOME_RANKING_COUNT,installHomeRankings} from '../public/components/home-rankings.js';
+import {renderWorkCard} from '../public/components/work-card.js';
 import {renderPreviewMetadata,renderPreviewTags} from '../public/components/preview-metadata.js';
 import {createIndependentFriendPages} from '../src/components/archive/FriendWall.mjs';
 import {friendLinks} from '../src/lib/friend-links.mjs';
@@ -26,22 +27,28 @@ test('ranking localization preserves the current control and never reclaims a us
   const works=['a','b'].map((id,i)=>({id,slug:id,at:i,n:'Work '+id,d:'Description',i:'/thumb.webp',l:'/large.webp',o:'/original.png',k:['meme'],roles:[{id:'deepseek',name:'DeepSeek',color:'#36f'}],tg:[],dt:'2026.11.05',lk:'unknown',lt:'Unknown'}));
   const {document,window}=parseHTML('<html><body><input id="search"><section data-home-ranking="popular"><div class="work-grid"></div><p data-home-ranking-note></p></section><section data-home-ranking="downloads"><div class="work-grid"></div><p data-home-ranking-note></p></section><dialog><button id="dialog-control">Close</button></dialog></body></html>');
   const previous={document:globalThis.document,window:globalThis.window,fetch:globalThis.fetch,focus:window.HTMLElement.prototype.focus};
-  let active=document.body,calls=[];
+  let active=document.body,calls=[],converted=false,ready;
   Object.defineProperty(document,'activeElement',{get:()=>active?.isConnected?active:document.body});
   window.HTMLElement.prototype.focus=function(options){active=this;calls.push({node:this,options});};
   globalThis.document=document;globalThis.window=window;
   globalThis.fetch=async()=>({ok:true,json:async()=>({works})});
-  window.WorkStats={ready:Promise.resolve({available:true,works:{a:{views:8,downloads:2},b:{views:4,downloads:5}}}),paint(){}};
-  window.SiteLang={localWork:work=>work,contentText:value=>value,url:value=>value,fmt:(_key,fallback)=>fallback};
+  window.WorkStats={ready:new Promise(resolve=>{ready=resolve;}),paint(){}};
+  window.SiteLang={localWork:work=>converted?{...work,n:'Localized '+work.n}:work,contentText:value=>value,url:value=>value,fmt:(_key,fallback)=>fallback};
   try{
-    installHomeRankings();await new Promise(resolve=>setImmediate(resolve));
+    const initial=document.querySelector('.work-grid');initial.innerHTML=works.map(work=>renderWorkCard(work)).join('');
+    installHomeRankings();const pending=initial.querySelector('[data-slug="a"] .quick-view');pending.focus();calls=[];
+    ready({available:true,works:{a:{views:4,downloads:2},b:{views:8,downloads:5}}});await new Promise(resolve=>setImmediate(resolve));
+    assert.equal(document.activeElement,initial.querySelector('[data-slug="a"] .quick-view'));
+    assert.notEqual(document.activeElement,pending);assert.deepEqual(calls.map(c=>c.options),[{preventScroll:true}]);
+    converted=true;
     for(const mode of ['popular','downloads'])for(const selector of ['.work-art','.quick-view','.work-title','[data-save]']){
       const grid=document.querySelector(`[data-home-ranking="${mode}"] .work-grid`);
       const before=grid.querySelector('[data-slug="a"] '+selector);before.focus();calls=[];
       document.dispatchEvent(new window.CustomEvent('site:langchange',{detail:{lang:'zh-Hant'}}));
       assert.equal(document.activeElement,grid.querySelector('[data-slug="a"] '+selector));
-      assert.notEqual(document.activeElement,before);
-      assert.deepEqual(calls.map(c=>c.options),[{preventScroll:true}]);
+      assert.equal(document.activeElement,before,'localization retains node identity');
+      assert.equal(calls.length,0,'localization does not call focus');
+      assert.equal(grid.querySelector('[data-slug="a"] .work-title').textContent,'Localized Work a');
     }
     for(const selector of ['#search','#dialog-control']){
       const target=document.querySelector(selector);target.focus();calls=[];

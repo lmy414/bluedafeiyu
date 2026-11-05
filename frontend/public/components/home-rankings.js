@@ -3,6 +3,22 @@ import {orderWorks} from './work-order.js';
 
 export const HOME_RANKING_COUNT = 12;
 
+// Localization changes copy and link labels, keeping focus, loaded images and
+// component-owned masonry geometry on the existing card nodes.
+function updateCardCopy(current, next) {
+  if (current.nodeType !== next.nodeType || current.nodeName !== next.nodeName) return;
+  if (current.nodeType === 3) {
+    if (current.data !== next.data) current.data = next.data;
+    return;
+  }
+  if (current.nodeType !== 1 || current.matches('[data-work-stats],[data-save]')) return;
+  for (const name of ['aria-label','title','alt','href']) {
+    if (next.hasAttribute(name) && current.getAttribute(name) !== next.getAttribute(name)) current.setAttribute(name,next.getAttribute(name));
+  }
+  const children = [...current.childNodes], translated = [...next.childNodes];
+  if (children.length === translated.length) children.forEach((child,index)=>updateCardCopy(child,translated[index]));
+}
+
 export function selectHomeRanking(works, snapshot, mode) {
   if (snapshot?.available !== true || !snapshot.works || !['popular','downloads'].includes(mode)) return [];
   const field = mode === 'downloads' ? 'downloads' : 'views';
@@ -25,10 +41,15 @@ export function installHomeRankings() {
       const card = grid.contains(active) ? active.closest('.work-card') : null;
       const controls = 'a[href],button,input,select,textarea,[tabindex]';
       const position = card ? [...card.querySelectorAll(controls)].indexOf(active) : -1;
-      grid.innerHTML = works.map(work => renderWorkCard(window.SiteLang?.localWork(work) || work, {
+      const markup = works.map(work => renderWorkCard(window.SiteLang?.localWork(work) || work, {
         url:href => window.SiteLang?.url(href) || href, translate:tx,
         names:value => window.SiteLang?.contentText(value) || value
       })).join('');
+      const cards = [...grid.querySelectorAll('.work-card')];
+      if (cards.length === works.length && cards.every((card,index)=>card.dataset.slug===works[index].slug)) {
+        const template = document.createElement('div');template.innerHTML = markup;
+        cards.forEach((card,index)=>updateCardCopy(card,template.children[index]));
+      } else grid.innerHTML = markup;
       // Restore only the control removed by this synchronous repaint, using its
       // stable work and position. Focus moved outside the grid stays untouched.
       if (position >= 0 && !active.isConnected && document.activeElement === document.body) {
