@@ -1,6 +1,11 @@
 const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
 const cache = new Map();
 
+export function renderPreviewTags(work, {language='zh',names=value=>value,url=value=>value} = {}) {
+  const localized = work.i18n?.[language]?.tags;
+  return (work.tags || []).map((original,index)=>`<a class="tag" href="${escape(url('/search.html?q='+encodeURIComponent(original)))}"><span aria-hidden="true">#</span>${escape(names(localized?.[index] || original))}</a>`).join('');
+}
+
 export function loadPreviewMetadata(id) {
   if (!cache.has(id)) {
     const request = fetch('/open-api/v1/works/'+encodeURIComponent(id)+'.json').then(response => {

@@ -1,7 +1,7 @@
 import {workImageAlt} from './image-alt.js';
 import {renderWorkActions} from './work-actions.js';
 import {workImageURL} from './work-image.js';
-import {loadPreviewMetadata,renderPreviewMetadata} from './preview-metadata.js';
+import {loadPreviewMetadata,renderPreviewMetadata,renderPreviewTags} from './preview-metadata.js';
 
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
 const icon = name => {
@@ -103,6 +103,15 @@ export function installWorkPreview({load, localize = w => w, translate:tx, url, 
         Promise.all([loadMetadata(w.id),doc.defaultView.WorkStats?.ready]).then(([metadata,statistics]) => {
           if (currentRequest !== request || !dialog.open || !info.isConnected) return;
           const lang = doc.defaultView.SiteLang?.current || 'zh';
+          // The compact gallery omits redundant role tags. The preview uses the full record.
+          if (Array.isArray(metadata.tags)) {
+            let tags = info.querySelector('.preview-tags');
+            if (!tags && metadata.tags.length) {
+              tags = doc.createElement('div');tags.className = 'tags preview-tags';
+              info.querySelector('.preview-facts').before(tags);
+            }
+            if (tags) tags.innerHTML = renderPreviewTags(metadata,{names,url,language:lang});
+          }
           info.insertAdjacentHTML('beforeend',renderPreviewMetadata(metadata,statistics,{translate:tx,names,url,language:lang}));
         }).catch(() => {
           if (currentRequest !== request || !dialog.open || !info.isConnected) return;

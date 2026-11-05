@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {parseHTML} from 'linkedom';
 import {selectHomeRanking,HOME_RANKING_COUNT} from '../public/components/home-rankings.js';
-import {renderPreviewMetadata} from '../public/components/preview-metadata.js';
+import {renderPreviewMetadata,renderPreviewTags} from '../public/components/preview-metadata.js';
 import {createIndependentFriendPages} from '../src/components/archive/FriendWall.mjs';
 import {friendLinks} from '../src/lib/friend-links.mjs';
 import {localizeHtml,LOCALES} from '../scripts/localize-pages.mjs';
@@ -40,6 +40,17 @@ test('preview preserves original attribution, safe source URLs, true zero and un
   }
   const unsafe=parseHTML(renderPreviewMetadata({...work,description:'<img onerror="bad">',author:{name:'<script>bad</script>'}},null,options)).document;
   assert.equal(unsafe.querySelector('script,img'),null);
+});
+
+test('complete preview tags include role-name tags omitted from compact cards and keep original search keys',()=>{
+  const work={tags:['Claude娘','白米饭','晚餐','烛光','双人'],i18n:{en:{tags:['Claude Chan','white rice','dinner','candlelight','duo']}}};
+  const {document}=parseHTML(renderPreviewTags(work,{language:'en',url:path=>'/en'+path}));
+  const links=[...document.querySelectorAll('a')];
+  assert.equal(links.length,5);
+  for(const [i,link] of links.entries()){
+    assert.equal(link.textContent,'#'+work.i18n.en.tags[i]);
+    assert.equal(new URL(link.href,'https://example.test').searchParams.get('q'),work.tags[i]);
+  }
 });
 
 test('community projects and friend links have separate localized pages and unchanged external destinations',async()=>{
