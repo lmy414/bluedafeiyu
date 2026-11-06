@@ -21,6 +21,7 @@ function layoutInitialMasonry(positions, columnsForGrid) {
   const items = [...grid.children].filter(item => item.matches('.work-card,.video-card') && !item.hidden);
   if (!items.length) return;
   const css = getComputedStyle(grid), columns = columnsForGrid(css);
+  if (css.getPropertyValue('--work-layout').trim() === 'grid') return;
   const gap = parseFloat(css.getPropertyValue('--gap')) || 18;
   const width = (grid.clientWidth - gap * (columns - 1)) / columns;
   if (width <= 0) return;
@@ -52,6 +53,9 @@ export function installMasonry() {
       const items=[...grid.children].filter(el=>el.matches('.work-card,.video-card') && !el.hidden);
       if(!items.length){SiteComponents.masonryReset(grid);grid.classList.remove('is-laid-out');return;}
       const css=getComputedStyle(grid), columns=masonryColumnCount(css);
+      if(css.getPropertyValue('--work-layout').trim()==='grid'){
+        SiteComponents.masonryReset(grid,items);grid.classList.remove('is-laid-out');return;
+      }
       const gap=parseFloat(css.getPropertyValue('--gap'))||18;
       const width=(grid.clientWidth-gap*(columns-1))/columns;
       if(width<=0)return;

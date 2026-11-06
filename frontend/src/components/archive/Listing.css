@@ -16,3 +16,23 @@ body.archive .browse-filter-guide summary{display:list-item;width:fit-content;ma
 body.archive .browse-filter-guide-content{max-width:78ch;padding-bottom:4px}
 body.archive .browse-filter-guide-content p{margin:0 0 6px;line-height:1.6}
 body.archive .browse-filter-footer .text-button{align-self:flex-start;margin:0 0 0 auto}
+
+/* Image/GIF archives keep masonry and intrinsic image proportions, without card chrome. */
+html:root body.archive.refined[data-i18n-page="browse"][data-list-page] #results .work-card {
+  border:0;
+  border-radius:var(--radius-md);
+  box-shadow:none;
+  background:transparent;
+}
+html:root body.archive.refined[data-i18n-page="browse"][data-list-page] #results .work-art,
+html:root body.archive.refined[data-i18n-page="browse"][data-list-page] #results .work-art img {
+  border:0;
+  border-radius:var(--radius-md);
+}
+html:root body.archive.refined[data-i18n-page="browse"][data-list-page] #results :is(.work-text,.art-license,.art-kind,.type-label,.art-open,.long-image-note,.quick-view,.card-save,.card-share) {
+  display:none;
+}
+html:root body.archive.refined[data-i18n-page="browse"][data-list-page] #results .work-art:focus-visible {
+  outline:3px solid var(--blue);
+  outline-offset:-3px;
+}

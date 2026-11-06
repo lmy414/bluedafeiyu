@@ -21,6 +21,15 @@ test('unequal images pack into the shortest column instead of aligned rows',()=>
   assert.deepEqual(result.positions,[{left:0,top:0},{left:216,top:0},{left:432,top:0},{left:0,top:116},{left:432,top:166}]);
   assert.equal(result.height,286);
 });
+
+test('aligned image grids keep native flow without masonry geometry on first paint',()=>{
+  const grid={children:[{offsetHeight:100,hidden:false,matches:()=>true}],clientWidth:412};
+  vm.runInNewContext(initialMasonryScript().replace(/^<script>|<\/script>$/g,''),{
+    document:{currentScript:{previousElementSibling:grid}},
+    getComputedStyle:()=>({gridTemplateColumns:'200px 200px',getPropertyValue:key=>key==='--work-layout'?'grid':'12px'}),
+    SiteComponents:{masonryWidth:()=>assert.fail('native grid must size its own cards'),masonryPlace:()=>assert.fail('native grid must place its own cards')}
+  });
+});
 test('appending cards keeps existing positions and never overlaps at phone or desktop widths',()=>{
   const heights=[120,400,230,95,300,180,210,100];
   for(const columns of [2,4,6]){
