@@ -1,4 +1,4 @@
-/* Shared image-wall presentation; the three home sections align in native grids. */
+/* Shared image-wall presentation; home rows keep each image's aspect ratio. */
 html:root body.archive.refined :is(.home-latest,.home-downloads,.home-popular,.journal-popular) .work-grid {
   --gap:6px;
   gap:6px;
@@ -60,27 +60,14 @@ html:root body.archive.refined :is(.home-latest,.home-popular,.home-downloads) :
 html:root body.archive.refined :is(.home-latest,.home-popular,.home-downloads) .work-art { border-radius:2px; }
 html:root body.archive.refined :is(.home-latest,.home-popular,.home-downloads) .work-art:focus-visible { outline:3px solid var(--blue); outline-offset:-3px; }
 
-/* Keep all 12 picks in complete rows, including after rankings refresh. */
+/* The justified component sets row geometry before images load and after refresh. */
 html:root body.archive.refined :is(.home-latest,.home-popular,.home-downloads) .work-grid {
-  --work-layout:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
+  --justified-height:180px;
 }
-html:root body.archive.refined :is(.home-latest,.home-popular,.home-downloads) .work-art,
-html:root body.archive.refined :is(.home-latest,.home-popular,.home-downloads) .work-art.is-long {
-  aspect-ratio:1;
-}
-html:root body.archive.refined :is(.home-latest,.home-popular,.home-downloads) .work-art img,
-html:root body.archive.refined :is(.home-latest,.home-popular,.home-downloads) .work-art.is-long img {
+html:root body.archive.refined :is(.home-latest,.home-popular,.home-downloads) .work-grid--justified.is-laid-out .work-art,
+html:root body.archive.refined :is(.home-latest,.home-popular,.home-downloads) .work-grid--justified.is-laid-out .work-art img {
   height:100%;
-  object-fit:cover;
-  object-position:center;
-}
-@media(min-width:1350px) {
-  html:root body.archive.refined :is(.home-latest,.home-popular,.home-downloads) .work-grid { grid-template-columns:repeat(6,minmax(0,1fr)); }
-}
-@media(max-width:1050px) {
-  html:root body.archive.refined :is(.home-latest,.home-popular,.home-downloads) .work-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
 }
 @media(max-width:760px) {
-  html:root body.archive.refined :is(.home-latest,.home-popular,.home-downloads) .work-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  html:root body.archive.refined :is(.home-latest,.home-popular,.home-downloads) .work-grid { --justified-height:120px; }
 }
