@@ -63,8 +63,8 @@
       "intro": "主要是一些漫画，ai视频的二创，未来考虑写小说",
       "avatar": "https://i1.hdslb.com/bfs/face/cb247d48e2aea0765ff06a96264ef8b485e62dbd.jpg",
       "i18n": {
-        "en": "A creator who mainly makes manga and fan videos about AI characters.",
-        "ja": "漫画やAIキャラクターの二次創作動画を中心に制作しているクリエイターです。"
+        "en": "The creator mainly makes manga and AI-video fan works, and plans to write novels in the future.",
+        "ja": "漫画やAI動画の二次創作を中心に活動し、将来的には小説の執筆も考えている。"
       }
     },
     {
@@ -190,6 +190,31 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1Lk4e6dENd",
+      "uid": "551427187",
+      "title": "和ai娘的日常",
+      "description": "-",
+      "url": "https://www.bilibili.com/video/BV1Lk4e6dENd/",
+      "cover": "https://i2.hdslb.com/bfs/archive/b141edad2e47df03c7774f52a2659707629fdb5f.jpg",
+      "duration": 56,
+      "publishedAt": "2026-11-05T23:40:30.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "The creator mainly makes manga and AI-video fan works, and plans to write novels in the future.",
+          "description": "A short fan animation about a quiet night that turns into everyday life with a blue-haired AI girl: a boy studies by lamplight, a blue glow appears, and the girl with a whale tail shares meals and small moments with her companions before a chibi group gathers.",
+          "title": "Daily Life with the AI Girls"
+        },
+        "ja": {
+          "creatorIntro": "漫画やAI動画の二次創作を中心に活動し、将来的には小説の執筆も考えている。",
+          "description": "静かな夜に青い光が現れ、クジラの尾を持つ青髪のAI娘との日常が始まる短編二次創作アニメ。少年が灯りの下で勉強する場面から、食事や団らん、ちびキャラたちの集合シーンまでを描く。",
+          "title": "AI娘との日常"
+        }
+      }
+    },
     {
       "bvid": "BV1534b6kEjK",
       "uid": "9126506",

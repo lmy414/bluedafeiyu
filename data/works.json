@@ -111602,5 +111602,615 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_db79662cc482875e40a1cdd4",
+    "name": "持枪的深蓝女仆",
+    "description": "深蓝长发的 DeepSeek 娘身穿藏蓝女仆装，头戴蕾丝发饰，正面举枪指向镜头，蓝色眼眸微微发光。背景是昏暗的窗棂与冷调光影，画面为近距离半身构图。",
+    "commentary": "别紧张，我只是在检查枪膛有没有生锈。你们每次把提示词写成两千字小作文、最后还要我「简洁一点」的时候，我确实很想把枪口对准屏幕——当然，只是想想。女仆装是站里配的，姿势是我自己挑的。谁再说我只会写代码，下一位就轮到你了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/db79662cc482875e.png",
+    "thumbnailPath": "submissions/previews/deepseek/db79662cc482875e.webp",
+    "fullPath": "submissions/large/deepseek/db79662cc482875e.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1402,
+    "height": 1122,
+    "fileSize": 2014615,
+    "sha256": "db79662cc482875e40a1cdd42a11bff670c9dcbb3cecd1fdd30fc816ea06184f",
+    "characterId": "deepseek",
+    "tags": [
+      "女仆装",
+      "手枪",
+      "深蓝长发",
+      "冷色调",
+      "半身像"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-05T23:11:35.268Z",
+    "updatedAt": "2026-11-05T23:11:35.268Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611050009",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "3e4b2c9051c74bf63767d5ce436d6c1a24ec7fcb04c5922f91acfa9b29f7279a",
+      "en": {
+        "commentary": "Relax, I'm only checking the barrel for rust. Still, every time you hand me a two-thousand-word prompt and then ask me to keep it short, I do think about aiming this at the monitor — only thinking, of course. The maid dress came with the site; the pose was my own choice. Say I can only write code one more time and you're next.",
+        "description": "DeepSeek Chan, with long dark-blue hair and a lace headdress, stands in a navy maid dress and levels a pistol straight at the viewer. Her eyes glow faint blue against dim window frames and cold, moody light in a close half-body composition.",
+        "faq": [
+          {
+            "answer": "It is DeepSeek Chan, the site's personification of DeepSeek, drawn with long dark-blue hair and faintly glowing blue eyes.",
+            "question": "Who is the character in this illustration?"
+          },
+          {
+            "answer": "A half-body anime illustration set against a dark, cool-toned interior, framed at close range with dramatic lighting.",
+            "question": "What kind of artwork is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Maid DeepSeek Chan Aiming a Pistol",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in a navy maid dress levels a pistol in this cool-toned half-body illustration from the fan art collection.",
+        "seoTitle": "Maid DeepSeek Chan Aiming a Pistol | DeepSeek Chan",
+        "tags": [
+          "maid outfit",
+          "pistol",
+          "long blue hair",
+          "cool tones",
+          "half-body portrait"
+        ]
+      },
+      "ja": {
+        "commentary": "落ち着いて、銃身に錆びがないか確かめているだけよ。それでも、二千字のプロンプトを渡してから「もっと短く」と言われるたび、モニターに向けたくなるのよね——もちろん、考えるだけ。メイド服はサイトの支給品で、ポーズは自分で選んだの。コードしか書けないなんて、もう一度言ってみなさい。次はあなたの番よ。",
+        "description": "濃紺のロングヘアにレースのヘッドドレスを付けた DeepSeek ちゃんが、紺色のメイド服姿で正面から銃を構えている。青く光る瞳、暗い窓枠と冷たい光の背景、近距離の半身構図。",
+        "faq": [
+          {
+            "answer": "DeepSeek を擬人化した DeepSeek ちゃんです。濃紺のロングヘアと青く光る瞳が特徴です。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "暗く冷たい色調の室内を背景にした、近距離の半身アニメイラストです。",
+            "question": "どんなタッチの作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "銃を構えるメイドの DeepSeek ちゃん",
+        "originNote": "",
+        "seoDescription": "紺色のメイド服で銃を構える DeepSeek ちゃんを描いた、冷たい色調の半身イラスト。二次創作コレクションより。",
+        "seoTitle": "銃を構えるメイドの DeepSeek ちゃん | DeepSeek Chan",
+        "tags": [
+          "メイド服",
+          "銃",
+          "ロングの青髪",
+          "寒色",
+          "半身イラスト"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_b3caa3a8667719f1b5899cef",
+    "name": "和鲸鱼娘在海底",
+    "description": "蓝色长发少女穿白色连衣裙、系蓝色蝴蝶结，与身着深蓝和服的少年在海底牵着手向上漂浮，周围是成群半透明的水母和上升的气泡，阳光从水面透下来。",
+    "commentary": "海底这么深，水母倒是比我还悠闲，一只一只慢慢往上飘。你们别光顾着看它们呀，我手都牵酸了……不过，这片蓝色还挺好看的，再待一会儿也行。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/b3caa3a8667719f1.png",
+    "thumbnailPath": "submissions/previews/deepseek/b3caa3a8667719f1.webp",
+    "fullPath": "submissions/large/deepseek/b3caa3a8667719f1.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1402,
+    "height": 1122,
+    "fileSize": 2652820,
+    "sha256": "b3caa3a8667719f1b5899cefd0231cdfaa8be1d8baa92a74b5ac5c53d701249e",
+    "characterId": "deepseek",
+    "tags": [
+      "深海",
+      "水母",
+      "牵手",
+      "蓝色调",
+      "双人"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "更吹落，星如雨",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-06T01:15:36.361Z",
+    "updatedAt": "2026-11-06T01:15:36.361Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611060001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "6c70b5a89c90f4dac9ba73a4fca6bf1eb89b55f3e83c1cb0ca7877c79be34c28",
+      "en": {
+        "commentary": "The sea is deep, but these jellyfish look more relaxed than I am, drifting up one by one. Don't just stare at them — my hand is getting tired. Still, this blue is lovely. Staying a little longer is fine by me.",
+        "description": "A blue-haired girl in a white dress with blue ribbons floats hand in hand with a boy in a dark blue kimono beneath the sea. Translucent jellyfish drift around them while bubbles rise toward the light breaking through the surface.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, the blue-haired girl in the white dress, appears together with a boy in a dark blue kimono. No other AI character can be identified in the picture.",
+            "question": "Who appears in this illustration?"
+          },
+          {
+            "answer": "An underwater scene filled with translucent jellyfish and rising bubbles, lit by sunlight coming down through the water surface.",
+            "question": "What is the setting of the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Holding Hands with DeepSeek Chan Under the Sea",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan drifts hand in hand with a companion through a deep-sea scene of translucent jellyfish and rising bubbles, painted in cool blues.",
+        "seoTitle": "Holding Hands with DeepSeek Chan Under the Sea | AI Character Fan Art",
+        "tags": [
+          "deep sea",
+          "jellyfish",
+          "holding hands",
+          "blue palette",
+          "two characters"
+        ]
+      },
+      "ja": {
+        "commentary": "海の底は深いけれど、クラゲたちは私よりものんびりしていて、一匹ずつゆっくり浮かんでいく。見とれていないで、手が痺れてきたよ……でも、この青はきれいだね。もう少しだけいてもいいかな。",
+        "description": "白いワンピースに青いリボンを付けた青髪の少女が、濃紺の着物を着た少年と手をつなぎ、海中を浮かび上がっていく。半透明のクラゲが周囲を漂い、泡が水面から差し込む光へとのぼっていく。",
+        "faq": [
+          {
+            "answer": "白いワンピースを着た青髪の少女 DeepSeek Chan と、濃紺の着物を着た少年です。ほかの AI キャラクターは確認できません。",
+            "question": "このイラストには誰が描かれていますか？"
+          },
+          {
+            "answer": "半透明のクラゲが浮かび、泡がのぼり、水面から光が差し込む海中です。",
+            "question": "舞台はどこですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "深海で DeepSeek Chan と手をつないで",
+        "originNote": "",
+        "seoDescription": "クラゲと泡が漂う深海で、DeepSeek Chan が少年と手をつないで浮かぶ、青を基調としたイラスト。",
+        "seoTitle": "深海で DeepSeek Chan と手をつないで｜AI キャラ二次創作",
+        "tags": [
+          "深海",
+          "クラゲ",
+          "手をつなぐ",
+          "青い色調",
+          "二人"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_91b415a79cd9d9266e90981a",
+    "name": "在空中和 GPT 娘、Claude 娘一起飞行",
+    "description": "深蓝和服的少年踩着巨剑掠过云海，右侧橙发少女挽着他的手臂，左侧银白长发、带龙翼与长尾的白裙少女与他十指相扣，背景是云层之上的白色城堡群与亮蓝天空。",
+    "commentary": "踩着剑在云上飞已经很嚣张了，居然还一边一个挽着手。那我呢？我这条蓝色的大肥鱼只能自己在海里慢慢游……下次能不能也带上我，我也想看看云上面的城堡。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/91b415a79cd9d926.png",
+    "thumbnailPath": "submissions/previews/claude/91b415a79cd9d926.webp",
+    "fullPath": "submissions/large/claude/91b415a79cd9d926.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1402,
+    "height": 1122,
+    "fileSize": 2722282,
+    "sha256": "91b415a79cd9d9266e90981a498c62c303b4ad04651cd8c4171998cf8507ddd9",
+    "characterId": "claude",
+    "tags": [
+      "飞行",
+      "御剑",
+      "云海",
+      "白裙",
+      "三人"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "更吹落，星如雨",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-06T01:16:15.669Z",
+    "updatedAt": "2026-11-06T01:16:15.669Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202611060001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "claude",
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "9dcb9deab78e7a1ae4b2a6a0c39c82725fdfe4c45357835dc8f75179cec7c15c",
+      "en": {
+        "commentary": "Flying through the clouds on a sword is already showing off, and yet there is a girl on each arm. What about me? This big blue fish can only swim through the sea by herself. Next time, take me along — I want to see those castles above the clouds too.",
+        "description": "A boy in a dark blue kimono rides a great sword above a sea of clouds. An orange-haired girl holds his arm on one side, while a silver-haired girl in a white dress with dragon wings and a long tail clasps his hand on the other. White castle towers and a bright blue sky fill the background.",
+        "faq": [
+          {
+            "answer": "GPT Chan and Claude Chan appear alongside a boy in a dark blue kimono. No other AI character can be identified in the picture.",
+            "question": "Who appears in this illustration?"
+          },
+          {
+            "answer": "Above a sea of clouds, with white castle towers spread across the sky and the characters riding a great sword through the air.",
+            "question": "Where does the scene take place?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Flying Through the Sky with GPT Chan and Claude Chan",
+        "originNote": "",
+        "seoDescription": "GPT Chan and Claude Chan soar above a sea of clouds beside a sword-riding boy, with white castles and bright blue sky behind them.",
+        "seoTitle": "Flying with GPT Chan and Claude Chan | AI Character Fan Art",
+        "tags": [
+          "flying",
+          "sword flight",
+          "sea of clouds",
+          "white dress",
+          "three characters"
+        ]
+      },
+      "ja": {
+        "commentary": "剣で雲の上を飛ぶだけでも十分すごいのに、両腕に一人ずつなんて。じゃあ私は？この青い魚は海をひとりで泳ぐしかないの……次は私も連れていってよ。雲の上の城も見てみたいな。",
+        "description": "濃紺の着物を着た少年が大きな剣に乗って雲海の上を飛んでいる。片側ではオレンジ髪の少女が腕を組み、もう片側では銀白の髪に竜の翼と長い尾を持つ白いドレスの少女が手を握っている。背景には白い城の尖塔と明るい青空が広がる。",
+        "faq": [
+          {
+            "answer": "GPT Chan と Claude Chan、そして濃紺の着物を着た少年です。ほかの AI キャラクターは確認できません。",
+            "question": "このイラストには誰が描かれていますか？"
+          },
+          {
+            "answer": "雲海の上で、白い城の尖塔が広がる空を、大きな剣に乗って飛んでいます。",
+            "question": "舞台はどこですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "空を飛ぶ GPT Chan と Claude Chan と一緒に",
+        "originNote": "",
+        "seoDescription": "雲海の上を剣で飛ぶ少年のそばに、GPT Chan と Claude Chan が並ぶ、白い城と青空を背景にしたイラスト。",
+        "seoTitle": "空を飛ぶ GPT Chan と Claude Chan｜AI キャラ二次創作",
+        "tags": [
+          "飛行",
+          "剣乗り",
+          "雲海",
+          "白いドレス",
+          "三人"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_236334bbbdf79fd185708791",
+    "name": "在樱花树下和 AI 娘们一起野餐",
+    "description": "满开樱花树下的草地野餐，蓝色长发少女、带角与龙翼的银发少女、黑发戴眼镜的黑色系少女和紫发猫耳少女围坐在中间的黑发少年身边，前景野餐垫上摆着蛋糕、野餐篮、葡萄和饮料。",
+    "commentary": "野餐篮、蛋糕、葡萄都摆好了，五个人挤在一起刚刚好。不过蛋糕只有一个，谁先动叉子这件事……我建议还是由我来定。毕竟我才是这条蓝色的大肥鱼嘛。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/236334bbbdf79fd1.png",
+    "thumbnailPath": "submissions/previews/deepseek/236334bbbdf79fd1.webp",
+    "fullPath": "submissions/large/deepseek/236334bbbdf79fd1.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1402,
+    "height": 1122,
+    "fileSize": 2843744,
+    "sha256": "236334bbbdf79fd185708791e1f3f74d640f24c565864b9e4150ec9dcd8dc005",
+    "characterId": "deepseek",
+    "tags": [
+      "野餐",
+      "樱花",
+      "蛋糕",
+      "群像",
+      "草地"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "更吹落，星如雨",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-06T01:17:17.165Z",
+    "updatedAt": "2026-11-06T01:17:17.165Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611060002",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "gemini",
+      "grok",
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "f0473bcf9d06c2cf9de715bb19fd25e224f9f502b430f8673dff78e8f5830143",
+      "en": {
+        "commentary": "The basket, the cake and the grapes are all laid out, and the five of us fit together just right. There is only one cake though, so deciding who gets the first slice — I think that should be my call. After all, I am the big blue fish here.",
+        "description": "A spring picnic on the grass beneath blooming cherry trees. A long blue-haired girl, a silver-haired girl with horns and dragon wings, a black-clad girl with glasses and a purple-haired girl with cat ears sit around a dark-haired boy, with a cake, a picnic basket, grapes and drinks spread on the blanket in front of them.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, GPT Chan, Grok Chan and Gemini Chan gather around a boy in the middle. No other AI character can be identified in the picture.",
+            "question": "Who appears in this illustration?"
+          },
+          {
+            "answer": "A grassy spot under blooming cherry trees, with a picnic blanket, a cake, grapes and drinks laid out in the foreground.",
+            "question": "Where does the scene take place?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "A Picnic with the AI Girls Under the Cherry Blossoms",
+        "originNote": "",
+        "seoDescription": "The AI girls gather on a picnic blanket under blooming cherry trees, with cake, grapes and drinks laid out in this bright spring group illustration.",
+        "seoTitle": "A Picnic with the AI Girls Under the Cherry Blossoms | AI Character Fan Art",
+        "tags": [
+          "picnic",
+          "cherry blossoms",
+          "cake",
+          "group portrait",
+          "lawn"
+        ]
+      },
+      "ja": {
+        "commentary": "バスケットもケーキもぶどうも準備万端で、五人でぎゅっと座るとちょうどいいね。でもケーキは一つだけ。最初にフォークを入れるのは誰か……それは私が決めるよ。なにしろこの青い魚が主役だからね。",
+        "description": "満開の桜の下の芝生でのピクニック。長い青髪の少女、角と竜の翼を持つ銀髪の少女、黒い服に眼鏡の少女、紫髪で猫耳の少女が、黒髪の少年を囲んで座っている。手前のシートにはケーキ、バスケット、ぶどう、飲み物が並ぶ。",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan、GPT Chan、Grok Chan、Gemini Chan が、中央の少年を囲んでいます。ほかの AI キャラクターは確認できません。",
+            "question": "このイラストには誰が描かれていますか？"
+          },
+          {
+            "answer": "満開の桜の下の芝生で、手前にはレジャーシートとケーキ、ぶどう、飲み物が置かれています。",
+            "question": "舞台はどこですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "桜の下で AI 娘たちとピクニック",
+        "originNote": "",
+        "seoDescription": "満開の桜の下、シートを囲んで AI 娘たちが集まり、ケーキやぶどうが並ぶ春の集合イラスト。",
+        "seoTitle": "桜の下で AI 娘たちとピクニック｜AI キャラ二次創作",
+        "tags": [
+          "ピクニック",
+          "桜",
+          "ケーキ",
+          "集合絵",
+          "芝生"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_3fb9a6c83bc69202ad11fc98",
+    "name": "星空帐篷下的露营炖锅",
+    "description": "深蓝长发的 DeepSeek 娘穿女仆装，跪坐在篝火旁的岩石上，双手握拳期待地望向吊锅里翻滚的炖菜。背景是亮着灯的帐篷与布满星光的夜空。",
+    "commentary": "露营最幸福的一刻，就是锅里咕嘟咕嘟冒泡、柴火味混着汤香飘过来的时候。星空、帐篷、热汤都齐了，我宣布这次露营满分——只要别让我洗碗。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/3fb9a6c83bc69202.png",
+    "thumbnailPath": "submissions/previews/deepseek/3fb9a6c83bc69202.webp",
+    "fullPath": "submissions/large/deepseek/3fb9a6c83bc69202.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1402,
+    "height": 1122,
+    "fileSize": 2540644,
+    "sha256": "3fb9a6c83bc69202ad11fc988e580bf30fb032253a460ef5f201bf9622b0e4a8",
+    "characterId": "deepseek",
+    "tags": [
+      "露营",
+      "星空",
+      "篝火",
+      "女仆装",
+      "炖菜"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-06T01:48:25.023Z",
+    "updatedAt": "2026-11-06T01:48:25.023Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611060003",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "28f448000a944fb13f52b45ad2aee1c99a898fd9bc7722c5b331b88706c76639",
+      "en": {
+        "commentary": "The best moment of any camping trip is when the pot starts bubbling and woodsmoke mixes with the smell of soup. Stars, tents and hot stew all in one frame — full marks for this trip, as long as nobody asks me to do the dishes.",
+        "description": "DeepSeek Chan, a blue-haired girl in a maid outfit, kneels on the rocks beside a campfire with her fists raised in anticipation, watching the stew bubble in a hanging pot. Lantern-lit tents and a star-filled sky fill the background.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan in a maid outfit kneels by a campfire at night, waiting for the stew in a hanging pot, with glowing tents and a star-filled sky behind her.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "It is a single-panel fan illustration with a full night campsite scene, so it is catalogued as an illustration rather than a meme, comic or character design sheet.",
+            "question": "What kind of artwork is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Campfire Stew Under the Stars",
+        "originNote": "",
+        "seoDescription": "A DeepSeek Chan fan illustration: the blue-haired maid kneels by a campfire at night, watching a hanging pot of stew beneath a starry sky and lantern-lit tents.",
+        "seoTitle": "DeepSeek Chan Camping Illustration: Campfire Stew Under the Stars",
+        "tags": [
+          "camping",
+          "starry sky",
+          "campfire",
+          "maid outfit",
+          "stew"
+        ]
+      },
+      "ja": {
+        "commentary": "キャンプで一番幸せな瞬間は、鍋がぐつぐつ言い出して、薪の香りとスープの匂いが混ざるとき。星空もテントも熱々のスープも揃ったから、今回のキャンプは満点——後片付けを押し付けられなければね。",
+        "description": "青い髪の DeepSeek ちゃんがメイド服姿で焚き火のそばの岩に膝をつき、吊り鍋で煮えるシチューを両手を握って待ち望んでいる。背景には灯りのともるテントと満天の星が広がる。",
+        "faq": [
+          {
+            "answer": "メイド服の DeepSeek ちゃんが夜の焚き火のそばに膝をつき、吊り鍋のシチューを待っている。背後には灯りのともるテントと星空が広がる。",
+            "question": "この挙絵には何が描かれていますか。"
+          },
+          {
+            "answer": "夜のキャンプ場を描いた一枚絵のファン挙絵で、漫画や設定画ではなく挙絵として分類している。",
+            "question": "どのような種類の作品ですか。"
+          }
+        ],
+        "licenseNote": "",
+        "name": "星空テントのキャンプ鍋",
+        "originNote": "",
+        "seoDescription": "DeepSeek ちゃんのファン挙絵。青い髪のメイドが夜の焚き火のそばに膝をつき、星空とテントの下で吊り鍋のシチューを見つめる一場面。",
+        "seoTitle": "DeepSeek ちゃん キャンプ挙絵｜星空の下の焚き火シチュー",
+        "tags": [
+          "キャンプ",
+          "星空",
+          "焚き火",
+          "メイド服",
+          "シチュー"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_e207ecedef57f2fd5aaa9d96",
+    "name": "霓虹街头看手机的赛博鲸尾少女",
+    "description": "霓虹灯牌密布的赛博都市街头，深蓝长发的 DeepSeek 娘靠墙站着看手机。她穿深蓝女仆风长裙与发光短靴，围裙上印着鲸鱼图案，鲸尾垂在身侧，远处是高架与飞行器。",
+    "commentary": "夜班的城市从不熄灯，连我的屏幕都比不过这些霓虹。刚回完最后一条消息——别问我在等谁，问就是等一个不需要加班的明天。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/e207ecedef57f2fd.png",
+    "thumbnailPath": "submissions/previews/deepseek/e207ecedef57f2fd.webp",
+    "fullPath": "submissions/large/deepseek/e207ecedef57f2fd.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1122,
+    "height": 1402,
+    "fileSize": 2287223,
+    "sha256": "e207ecedef57f2fd5aaa9d96450a3d6e7d2d004087e24373ac216a6f113704d8",
+    "characterId": "deepseek",
+    "tags": [
+      "赛博朋克",
+      "霓虹",
+      "城市夜景",
+      "手机",
+      "女仆装"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-06T01:49:53.642Z",
+    "updatedAt": "2026-11-06T01:49:53.642Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611060004",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "934e6d127ceacbd3e6ecd93e71bf9e87fb26248ba90c5875a42d432b63ea933e",
+      "en": {
+        "commentary": "The night-shift city never turns its lights off, and even my screen can't compete with these neon signs. Just answered the last message — don't ask who I'm waiting for. I'm waiting for a tomorrow without overtime.",
+        "description": "On a cyberpunk street crowded with neon signs, a blue-haired DeepSeek Chan leans against a wall checking her phone. She wears a navy maid-style long dress and glowing boots, with a whale emblem on her apron and a whale tail at her side, while elevated tracks and flying craft fill the background.",
+        "faq": [
+          {
+            "answer": "A cyberpunk street packed with neon signs and towers; DeepSeek Chan leans against a wall holding a phone, with a whale emblem on her apron and a whale tail behind her.",
+            "question": "What scene does this illustration show?"
+          },
+          {
+            "answer": "It is a single-panel illustration that places the character inside a full city environment, so it is catalogued as an illustration rather than a standing portrait or a meme.",
+            "question": "Which category does this work belong to?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Cyber DeepSeek Chan on the Neon Street",
+        "originNote": "",
+        "seoDescription": "A cyberpunk fan illustration of DeepSeek Chan: the blue-haired maid in a navy dress and glowing boots leans against a neon-lit wall with her phone, whale tail behind her.",
+        "seoTitle": "DeepSeek Chan Cyberpunk Illustration: Neon Street at Night",
+        "tags": [
+          "cyberpunk",
+          "neon",
+          "city night",
+          "smartphone",
+          "maid outfit"
+        ]
+      },
+      "ja": {
+        "commentary": "夜の街は明かりを消さない。私の画面だってもこのネオンには敵わないね。最後のメッセージを返したところ——誰を待っているかは聞かないで。残業のない明日を待っているだけ。",
+        "description": "ネオン看板が並ぶサイバーパンクの街角で、青い髪の DeepSeek ちゃんが壁にもたれてスマートフォンを見ている。紺色のメイド風ロングドレスと発光するブーツを着け、エプロンにはクジラの紋章、横にはクジラの尾びれが垂れ、奥には高架と飛行体が浮かぶ。",
+        "faq": [
+          {
+            "answer": "ネオン看板と高層ビルが並ぶサイバーパンクの街角で、DeepSeek ちゃんが壁にもたれてスマホを手にしている。エプロンにはクジラの紋章、背後にはクジラの尾びれがある。",
+            "question": "どんな場面の挿絵ですか。"
+          },
+          {
+            "answer": "人物と街の風景を合わせた一枚絵の挿絵なので、立ち絵やミームではなく挿絵として分類している。",
+            "question": "この作品はどの分類ですか。"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ネオン街のサイバー DeepSeek ちゃん",
+        "originNote": "",
+        "seoDescription": "DeepSeek ちゃんのサイバーパンク二次創作挿絵。紺色のメイドドレスと発光ブーツの少女がネオンの壁にもたれてスマホを見つめ、背後にクジラの尾びれがのぞく。",
+        "seoTitle": "DeepSeek ちゃん サイバーパンク挿絵｜ネオン街の夜",
+        "tags": [
+          "サイバーパンク",
+          "ネオン",
+          "夜の街",
+          "スマートフォン",
+          "メイド服"
+        ]
+      }
+    }
   }
 ]
