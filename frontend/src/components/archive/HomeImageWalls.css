@@ -57,7 +57,7 @@ html:root body.archive.refined :is(.home-latest,.home-downloads,.home-popular,.j
 html:root body.archive.refined :is(.home-latest,.home-popular,.home-downloads) :is(.work-text,.art-license,.art-kind,.type-label,.art-open,.long-image-note,.quick-view,.card-save,.card-share) {
   display:none;
 }
-html:root body.archive.refined :is(.home-latest,.home-popular,.home-downloads) :is(.work-card,.work-art,.work-art img) { border-radius:var(--radius-md); }
+html:root body.archive.refined :is(.home-latest,.home-popular,.home-downloads) :is(.work-card,.work-card .work-art,.work-card .work-art img) { border-radius:var(--radius-md); }
 html:root body.archive.refined :is(.home-latest,.home-popular,.home-downloads) .work-art:focus-visible { outline:3px solid var(--blue); outline-offset:-3px; }
 
 /* The justified component sets row geometry before images load and after refresh. */
