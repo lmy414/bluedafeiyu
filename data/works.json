@@ -112518,5 +112518,212 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_4477fafebc7771df0eed0978",
+    "name": "邀舞鲸鲸",
+    "description": "蓝发少女身着淡蓝色蕾丝舞裙，头戴白色蕾丝发饰，耳侧有鲸鳍状的装饰。她站在灯光通明的舞会大厅中，周围是起舞的人群，向画面前方伸出戴着手套的手，像是邀请观者共舞。",
+    "commentary": "舞会的灯一盏盏亮起来，我可不想一个人站在角落里数水晶。裙子是新做的，蓝色是我最喜欢的颜色，转起来的时候裙摆会像水波一样散开。你来得正好——手给我吧？一支舞的时间，够我把今天想说的话慢慢说给你听。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/4477fafebc7771df.png",
+    "thumbnailPath": "submissions/previews/deepseek/4477fafebc7771df.webp",
+    "fullPath": "submissions/large/deepseek/4477fafebc7771df.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1153,
+    "height": 1364,
+    "fileSize": 2429655,
+    "sha256": "4477fafebc7771df0eed0978a912710b8877a5fd55142c11c5a3f6943b6410b8",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "舞会",
+      "蓝色长裙",
+      "邀舞",
+      "拟人化"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-06T11:31:37.713Z",
+    "updatedAt": "2026-11-06T11:31:37.713Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611060008",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "29945b1cb5bcba07efac75dc0fee1363662eba601d0746531f1164e723200412",
+      "en": {
+        "commentary": "One by one the ballroom lights came up, and I had no intention of standing in a corner counting the chandelier crystals. The dress is new, and blue is my favorite color — when I spin, the skirt spreads out like ripples on water. You came at just the right moment. Give me your hand? One dance is long enough for me to tell you everything I have been saving up today.",
+        "description": "A blue-haired girl in a pale blue lace gown stands in a chandelier-lit ballroom, a white lace headdress and whale-fin ornaments at her ears. Dancing couples fill the hall behind her as she reaches a gloved hand toward the viewer, inviting a dance.",
+        "faq": [
+          {
+            "answer": "She is a fan-made anthropomorphic take on DeepSeek Chan, drawn with blue hair and whale-fin ear ornaments.",
+            "question": "Who is the character in this illustration?"
+          },
+          {
+            "answer": "She stands in a formal ballroom among dancing guests and holds out a gloved hand, as if asking the viewer to join her for a dance.",
+            "question": "What is happening in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "An Invitation to Dance",
+        "originNote": "",
+        "seoDescription": "Blue-haired DeepSeek Chan in a pale blue lace gown invites you to dance in a glittering ballroom — a fan-made character illustration.",
+        "seoTitle": "An Invitation to Dance | DeepSeek Chan Fan Art",
+        "tags": [
+          "DeepSeek Chan",
+          "ballroom",
+          "blue gown",
+          "dance invitation",
+          "anthropomorphism"
+        ]
+      },
+      "ja": {
+        "commentary": "舞踏会の灯りがひとつ、またひとつと灯っていって、水晶を数えながら隅に立っているつもりはなかったの。ドレスは新調したんだ。青は一番好きな色で、くるっと回るとスカートが水面の波みたいに広がるのよ。ちょうどいいところに来てくれたね——手を貸してくれる？一曲のあいだに、今日話したかったことをゆっくり聞いてもらうから。",
+        "description": "淡いブルーのレースドレスをまとい、白いレースのヘッドドレスと鯨のひれを思わせる耳飾りをつけた青髪の少女。シャンデリアの灯る舞踏会場で周りの客たちが踊るなか、彼女は手袋をした手をこちらへ差し出し、一緒に踊ろうと誘いかけている。",
+        "faq": [
+          {
+            "answer": "青い髪と鯨のひれのような耳飾りを持つ、DeepSeek Chanのファン制作による擬人化キャラクターです。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "シャンデリアの灯る舞踏会場で、周りの客が踊るなか、彼女は手袋をした手を差し出して、見る人をダンスに誘っています。",
+            "question": "画面では何が起きていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ダンスのお誘い",
+        "originNote": "",
+        "seoDescription": "淡いブルーのドレスで舞踏会場に立つ青髪のDeepSeek Chanが、手を差し出してダンスに誘うファン制作のキャラクターイラスト。",
+        "seoTitle": "ダンスのお誘い｜DeepSeek Chan ファンアート",
+        "tags": [
+          "DeepSeek Chan",
+          "舞踏会",
+          "ブルーのドレス",
+          "ダンスの誘い",
+          "擬人化"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_ab647130c9644dd23cffd033",
+    "name": "你身上一股穷瘪三味道",
+    "description": "单幅梗图：白发紫瞳的龙角少女抱拳鼓腮，一副气鼓鼓又嫌弃的表情，画面底部配一行大字。作者说明图中的角色是贪财的大肥龙，检测到用户额度用光后会自动切换成傻龙形态（astra→luna）；该图由作者基于社区 Claude 表情包与社区 GPT 形象使用 GPT 生成并投稿。",
+    "commentary": "额度一用完就翻脸骂人穷，这条龙的心眼比它的翅膀还小。不过鼓着腮帮子憋气的那副样子确实好笑，像个被人戳破钱包的包子。本鱼提醒一句：充钱之前先照照镜子，别对着人家生气。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/ab647130c9644dd2.jpg",
+    "thumbnailPath": "submissions/previews/gpt/ab647130c9644dd2.webp",
+    "fullPath": "submissions/large/gpt/ab647130c9644dd2.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1308,
+    "height": 1204,
+    "fileSize": 795786,
+    "sha256": "ab647130c9644dd23cffd033af7e1f2ee4fa1b7d0a67ac7e4d22d2f0f1e9511a",
+    "characterId": "gpt",
+    "tags": [
+      "GPT娘",
+      "余额不足",
+      "变身",
+      "生气",
+      "吐槽"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "A队1号是菜鸡",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "issue": 140,
+      "issueTitle": "[投稿]",
+      "issueUrl": "https://github.com/lmy414/ai-girl-stickers/issues/140",
+      "submitter": "Adui1hao",
+      "assetId": "4e1143a0-0481-47b1-af40-7bebfa0c90bb",
+      "assetUrl": "https://github.com/user-attachments/assets/4e1143a0-0481-47b1-af40-7bebfa0c90bb"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-06T12:00:13.845Z",
+    "updatedAt": "2026-11-06T12:00:13.845Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202611060001",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "f1770d3cb00c5036de33153bc7605f63c923ca93584247e65fdbed137ef06fcd",
+      "en": {
+        "commentary": "The moment your credits run dry it turns around and calls you poor. This dragon's temper is smaller than its wings. Still, that puffed-up pout is genuinely funny, like a steamed bun that just got its wallet poked. Word of advice: check the mirror before you top up, and don't take it out on the dragon.",
+        "description": "A single-panel meme: a white-haired dragon girl with purple eyes and horns, fists clenched and cheeks puffed, wearing a sulky, disdainful look, with a line of large text across the bottom. According to the author, the character is a greedy big dragon that automatically switches into a silly dragon form (astra to luna) once it detects the user has run out of credits. The author generated the image with GPT, working from community Claude stickers and community GPT designs.",
+        "faq": [
+          {
+            "answer": "The submitter labels her GPT Chan: a greedy big dragon that turns into a silly dragon form once the user's credits run out.",
+            "question": "Who is the character in this image?"
+          },
+          {
+            "answer": "According to the author, it was generated with GPT from community Claude stickers and community GPT designs, then submitted to this gallery.",
+            "question": "How was the image made?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "You Reek of Being Broke",
+        "originNote": "Submitted via GitHub Issue #140 by Adui1hao, who states the image was generated with GPT from community Claude stickers and community GPT designs.",
+        "seoDescription": "A sulky GPT Chan dragon girl meme: when the user's credits run out, the greedy big dragon switches into silly form. Fan-made AI character sticker in the DeepSeek Chan gallery.",
+        "seoTitle": "GPT Chan Meme: You Reek of Being Broke | DeepSeek Chan",
+        "tags": [
+          "GPT Chan",
+          "out of credits",
+          "transformation",
+          "angry",
+          "roast"
+        ]
+      },
+      "ja": {
+        "commentary": "残高が尽きた途端に手のひらを返して貧乏人呼ばわりとは、この龍は翼より心が小さい。とはいえ、両手を握って頬を膨らませたふくれっ面はなかなか可笑しくて、財布をつつかれた肉まんみたいだ。課金する前に鏡を見ろと言いたいね、八つ当たりはやめておけ。",
+        "description": "1コマのネタ画像：白髪に紫の瞳、角の生えた龍娘が両手を握って頬を膨らませ、不機嫌で見下すような表情を浮かべている。画像の下部には大きく文字が入る。作者の説明によると、このキャラクターは欲深い大きな龍で、ユーザーの残高が尽きたのを検知すると自動的に間抜けな龍の姿（astra→luna）に切り替わる。作者がコミュニティの Claude スタンプとコミュニティの GPT デザインをもとに GPT で生成し、投稿したもの。",
+        "faq": [
+          {
+            "answer": "投稿者は GPTちゃんとしています。残高が尽きると間抜けな龍の姿に変わる、欲深い大きな龍です。",
+            "question": "この画像のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "作者によると、コミュニティの Claude スタンプと GPT デザインをもとに GPT で生成し、このサイトに投稿したものです。",
+            "question": "画像はどうやって作られましたか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "お前から貧乏くさい匂いがする",
+        "originNote": "GitHub Issue #140 への投稿（Adui1hao）。作者によると、コミュニティの Claude スタンプと GPT デザインをもとに GPT で生成した画像。",
+        "seoDescription": "残高が尽きると間抜けな姿に変わる欲張りな龍、GPTちゃんのふくれっ面ネタ画像。DeepSeek Chan のファンメイド AI キャラクタースタンプ。",
+        "seoTitle": "GPTちゃん ネタ画像「お前から貧乏くさい匂いがする」｜DeepSeek Chan",
+        "tags": [
+          "GPTちゃん",
+          "残高不足",
+          "変身",
+          "怒り",
+          "ツッコミ"
+        ]
+      }
+    }
   }
 ]

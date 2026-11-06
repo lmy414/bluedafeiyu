@@ -85,8 +85,8 @@
       "intro": "我想做很多视频，做很多很好玩的视频，首先肯定是自己觉得很好玩，其次嘛，也想传播快乐给大家。",
       "avatar": "https://i2.hdslb.com/bfs/face/e3445be765ec330ac29b07c328496e44ec04077a.jpg",
       "i18n": {
-        "en": "I want to make lots of videos — lots of really fun ones. First of all because I enjoy making them, and second because I want to spread some happiness to everyone.",
-        "ja": "楽しい動画をたくさん作りたいです。まずは自分自身が楽しめること、そしてみんなに楽しさを届けたいと思っています。"
+        "en": "I want to make lots of videos, and really fun ones at that. First of all because I find them fun myself, and secondly because I want to share the joy with everyone.",
+        "ja": "楽しい動画をたくさん作りたいです。まずは自分が楽しいと思えること、そしてその楽しさをみんなに届けたいと思っています。"
       }
     },
     {
@@ -190,6 +190,83 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1vu466kEa8",
+      "uid": "9126506",
+      "title": "假装服务器繁忙的吃白饭的大肥鱼",
+      "description": "假装服务器繁忙的吃白饭的大肥鱼",
+      "url": "https://www.bilibili.com/video/BV1vu466kEa8/",
+      "cover": "https://i1.hdslb.com/bfs/archive/0c5053c4ec91fd25873af388a10fb0ce329084a3.jpg",
+      "duration": 16,
+      "publishedAt": "2026-11-06T12:58:15.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, and really fun ones at that. First of all because I find them fun myself, and secondly because I want to share the joy with everyone.",
+          "description": "A short fan animation set in an office: DeepSeek Chan sprawls on the sofa eating snacks while a colleague dozes off at the desk, pretending the servers are simply too busy.",
+          "title": "DeepSeek Chan Pretends the Servers Are Busy"
+        },
+        "ja": {
+          "creatorIntro": "楽しい動画をたくさん作りたいです。まずは自分が楽しいと思えること、そしてその楽しさをみんなに届けたいと思っています。",
+          "description": "オフィスを舞台にしたファン制作のショートアニメ。DeepSeekちゃんがソファでお菓子を食べながらくつろぎ、同僚がデスクで居眠りする中、サーバーが混雑しているふりをしています。",
+          "title": "サーバー混雑を装うDeepSeekちゃん"
+        }
+      }
+    },
+    {
+      "bvid": "BV1qK466yETa",
+      "uid": "9126506",
+      "title": "难道是真的claude?",
+      "description": "难道是真的claude?",
+      "url": "https://www.bilibili.com/video/BV1qK466yETa/",
+      "cover": "https://i2.hdslb.com/bfs/archive/752288043c6a94f4d547b768bb04334870f748b8.jpg",
+      "duration": 16,
+      "publishedAt": "2026-11-06T12:50:20.000Z",
+      "characterIds": [
+        "deepseek",
+        "claude"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, and really fun ones at that. First of all because I find them fun myself, and secondly because I want to share the joy with everyone.",
+          "description": "A short fan animation in an office: DeepSeek Chan can barely hold back her laughter at the desk while the tall, orange-haired Claude Chan stands beside her.",
+          "title": "Wait, Is That Really Claude?"
+        },
+        "ja": {
+          "creatorIntro": "楽しい動画をたくさん作りたいです。まずは自分が楽しいと思えること、そしてその楽しさをみんなに届けたいと思っています。",
+          "description": "オフィスを舞台にしたファン制作のショートアニメ。デスクで笑いをこらえるDeepSeekちゃんのそばに、オレンジ髪のClaudeちゃんが立っています。",
+          "title": "まさか、本当にClaude？"
+        }
+      }
+    },
+    {
+      "bvid": "BV1e34663Ehw",
+      "uid": "9126506",
+      "title": "大肥鱼：老板，再来1亿token",
+      "description": "大肥鱼：老板，再来1亿token",
+      "url": "https://www.bilibili.com/video/BV1e34663Ehw/",
+      "cover": "https://i1.hdslb.com/bfs/archive/3266ecccd32407a15b0b036c917733a52498efc9.jpg",
+      "duration": 29,
+      "publishedAt": "2026-11-06T12:37:35.000Z",
+      "characterIds": [
+        "deepseek",
+        "claude"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, and really fun ones at that. First of all because I find them fun myself, and secondly because I want to share the joy with everyone.",
+          "description": "A short fan animation: DeepSeek Chan, spoon in hand and eyes sparkling, orders another hundred million tokens, and her orange-haired companion looks on in the warm light of the room.",
+          "title": "DeepSeek Chan: Boss, Another 100 Million Tokens!"
+        },
+        "ja": {
+          "creatorIntro": "楽しい動画をたくさん作りたいです。まずは自分が楽しいと思えること、そしてその楽しさをみんなに届けたいと思っています。",
+          "description": "ファン制作のショートアニメ。スプーンを手に目を輝かせたDeepSeekちゃんが「トークンをもう1億」と注文し、オレンジ髪の相棒が暖かな灯りの部屋でそれを見ています。",
+          "title": "DeepSeekちゃん：店長、トークンもう1億ください！"
+        }
+      }
+    },
     {
       "bvid": "BV1Fd4q6yETX",
       "uid": "15475629",
