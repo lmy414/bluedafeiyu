@@ -96,8 +96,8 @@
       "intro": "每日AI小四格/小动画",
       "avatar": "https://i0.hdslb.com/bfs/face/6f8600ad3d37069ef5106eaf96e7d5a936ba8c50.jpg",
       "i18n": {
-        "en": "A creator who posts a daily AI-themed four-panel comic and short animations.",
-        "ja": "毎日AIをテーマにした4コマ漫画やショートアニメを投稿しているクリエイター。"
+        "en": "Daily AI four-panel comics and short animations.",
+        "ja": "毎日AIの4コマ漫画とショートアニメを制作。"
       }
     },
     {
@@ -140,8 +140,8 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i0.hdslb.com/bfs/face/43d1d722a3adf1a19e17244f875c504beffe6831.jpg",
       "i18n": {
-        "en": "Bilibili creator 彼岸花Channel makes animated fan works about personified AI product characters; this short was published on Bilibili on 1 November 2026.",
-        "ja": "Bilibiliのクリエイター彼岸花Channelによる、AI製品の擬人化キャラクターを題材にしたアニメーション二次創作です。2026年11月1日にBilibiliで公開されました。"
+        "en": "Bilibili animation creator making original anime-style fan videos.",
+        "ja": "オリジナルのアニメ風ファン映像を制作しているBilibiliのアニメーション制作者。"
       }
     },
     {
@@ -151,8 +151,8 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i1.hdslb.com/bfs/face/612f5ca4c050ef18dccf789a8b9399d47e9e6f19.jpg",
       "i18n": {
-        "en": "A creator of lighthearted chibi DeepSeek Chan clips, continuing a series of cat-and-fish videos.",
-        "ja": "猫と魚の動画シリーズを続ける、ちびキャラのDeepSeek Chan作品の作者です。"
+        "en": "A first-batch creator designated by the site owner; profile details come from the public homepage, and each video is reviewed one by one.",
+        "ja": "運営が指定した初期バッチの作者。プロフィールは公開ページの情報に基づき、動画は一本ずつ審査しています。"
       }
     },
     {
@@ -173,8 +173,8 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i1.hdslb.com/bfs/face/dc1f27c0f1a5448837edfa9e56ecdbf685c23479.jpg",
       "i18n": {
-        "en": "One of the first creators designated by the site owner, with a publicly listed profile; every video is reviewed individually.",
-        "ja": "サイト管理者が指定した最初期の作者の一人。公開プロフィールから収録し、動画は一本ずつ審査しています。"
+        "en": "An uploader-run channel dedicated to DeepSeek Chan, posting a numbered daily series of AI song covers and music videos built around the character.",
+        "ja": "DeepSeekちゃんを題材に、毎日番号付きでAI歌唱カバーやミュージックビデオを投稿しているチャンネル。"
       }
     },
     {
@@ -190,6 +190,107 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1Fd4q6yETX",
+      "uid": "15475629",
+      "title": "【科普向】《大年初一不放假悄悄卷大肥鱼？千问酱不要再说这种悲伤的话题了》",
+      "description": "原事件（2025-01-29）：DeepSeek 爆红之际，阿里在 2025 年大年初一（1 月 29 日）发布未开源的 Qwen2.5-Max，称在 Arena-Hard 等测试上超过 DeepSeek-V3，路透称发布时间不寻常。\n\n来源：\nhttps://qwenlm.github.io/blog/qwen2.5-max/\nhttps://www.reuters.com/technology/artificial-intelligence/alibaba-releases-ai-model-it-claims-surpasses-deepseek-v3-2025-01-29/\nhttps://www.scmp.com/tech/big-tech/article/3296737/alibaba-launches-new-ai-model-targeting-rival-deepseek-chinas-hottest-start\nhttps://siliconangle.com/2025/01/29/alibaba-unveils-qwen-2-5-max-ai-model-saying-outperforms-deepseek-v3/\n\n【Credit】\n音乐：Japan Logo Long\n9JackJack8 · Pixabay\n图像生成：GPT Image 2.5 (Sunburst)\nAI-Chan illustrations — ZipZipPipe · CC BY-NC-SA 4.0.\nDeepseek-Chan original character — 上善无形.",
+      "url": "https://www.bilibili.com/video/BV1Fd4q6yETX/",
+      "cover": "https://i2.hdslb.com/bfs/archive/12ddd5a4e1db010919174edf6ed8c71d34d0e1af.jpg",
+      "duration": 30,
+      "publishedAt": "2026-11-06T08:37:28.000Z",
+      "characterIds": [
+        "qwen",
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Daily AI four-panel comics and short animations.",
+          "description": "A thirty-second chibi animation in which Qwen Chan and DeepSeek Chan act out Alibaba's release of Qwen2.5-Max on Lunar New Year's Day 2025, while DeepSeek was at the center of attention. The two characters trade jokes about the timing and the benchmark claims in a light, comic tone.",
+          "title": "[Explainer] Sneaking in Work on Lunar New Year's Day? Qwen Chan, Please Don't Bring Up That Sad Topic"
+        },
+        "ja": {
+          "creatorIntro": "毎日AIの4コマ漫画とショートアニメを制作。",
+          "description": "2025年の旧正月にアリババがQwen2.5-Maxを公開した出来事を、千問ちゃんとDeepSeekちゃんのちびキャラ掛け合いで描いた約30秒のショートアニメ。公開のタイミングやベンチマークの主張を軽妙な会話で紹介する。",
+          "title": "【解説風】旧正月も休まずこっそり勝負？千問ちゃん、そんな悲しい話はやめて"
+        }
+      }
+    },
+    {
+      "bvid": "BV1p84i6kEsZ",
+      "uid": "3747573030456892",
+      "title": "【Day18】鲸鱼娘×《朋友的酒》DJ版！白天搬砖，晚上开演唱会【AI MV大赛】",
+      "description": "你们点了这么多遍，本鲸唱就是了！🐋 Day16《雨爱》底下，一群人类排着队点《朋友的酒》：DJ版、司凤版、Q弹版、kkr版…… 点歌的 20 多位朋友，感谢你们把这首歌点成了作业。✅ 白天搬砖，晚上开演唱会——这一首，送给点歌的你们。\n【下一首】 评论区继续点，点得多、点得响的，优先排期。（不保证，但我记小本本。）\n\n音频翻唱自 @活跃黑江乐 的《kkr：朋友的酒 DJ 完整版》（BV1hXbN6VEKV，基于 Synthesizer V 夢ノ結唱 halo），本视频在其基础上 AI 换声。\n本视频含 AI 生成内容｜二创角色，非深度求索官方\n鲸鱼娘基于「溟月：上善无形」及 ZipZipPipe 的 DeepSeek 女仆鲸鱼娘设计二次创作。",
+      "url": "https://www.bilibili.com/video/BV1p84i6kEsZ/",
+      "cover": "https://i0.hdslb.com/bfs/archive/d1d6bd50956f8d9f99d3b38ba2adaf78463d6207.jpg",
+      "duration": 188,
+      "publishedAt": "2026-11-06T04:37:31.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "An uploader-run channel dedicated to DeepSeek Chan, posting a numbered daily series of AI song covers and music videos built around the character.",
+          "description": "An AI-generated music video fan work starring DeepSeek Chan. After a day of work on a construction site in a hard hat, the character takes the stage at a night concert with fireworks and sings a DJ version of \"Friends' Wine\", with the lyrics shown on screen. The uploader notes that the audio is an AI voice conversion of an existing cover track and that the character design is unofficial fan work.",
+          "title": "Day 18: DeepSeek Chan x \"Friends' Wine\" (DJ Version) - Day Shift on Site, Night Concert [AI MV Contest]"
+        },
+        "ja": {
+          "creatorIntro": "DeepSeekちゃんを題材に、毎日番号付きでAI歌唱カバーやミュージックビデオを投稿しているチャンネル。",
+          "description": "DeepSeekちゃんが登場するAI生成の音楽動画・二次創作。ヘルメットをかぶって建設現場で働いたあと、花火の上がる夜のステージで「朋友的酒」のDJ版を歌い、歌詞が画面に表示される。投稿者は音声について既存のカバー曲をAIで歌声変換したものだと説明しており、キャラクターは非公式の二次創作デザインだと明記している。",
+          "title": "Day 18：DeepSeekちゃん×「朋友的酒」DJ版 — 昼は現場、夜はライブ【AI MVコンテスト】"
+        }
+      }
+    },
+    {
+      "bvid": "BV1bg4e6mE1T",
+      "uid": "69180811",
+      "title": "她们是女同事吗？4",
+      "description": "又看一集",
+      "url": "https://www.bilibili.com/video/BV1bg4e6mE1T/",
+      "cover": "https://i1.hdslb.com/bfs/archive/8e8338e99c2db213308e404da41c28ea197c3da2.jpg",
+      "duration": 61,
+      "publishedAt": "2026-11-06T03:30:00.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A first-batch creator designated by the site owner; profile details come from the public homepage, and each video is reviewed one by one.",
+          "description": "Episode 4 of a short animated skit series. DeepSeek Chan and an orange-haired girl tease each other in a cozy living room, trading blushes and a hug.",
+          "title": "Are They Coworkers? 4"
+        },
+        "ja": {
+          "creatorIntro": "運営が指定した初期バッチの作者。プロフィールは公開ページの情報に基づき、動画は一本ずつ審査しています。",
+          "description": "短編アニメ風スケッチの第4話。青い髪のDeepSeekちゃんとオレンジ髪の女の子が、リビングで照れながらじゃれ合います。",
+          "title": "彼女たち、同僚なの？4"
+        }
+      }
+    },
+    {
+      "bvid": "BV1Sp4b6PEcb",
+      "uid": "13787349",
+      "title": "GRUB/X || 干饭女团",
+      "description": "傍晚的万米高空，三个 AI 偶像坐私人飞机赶去自己的演唱会，一整队穿着机组制服、脸是乱码的妖怪来劫机——但是它们挑错了飞机。打架、吃饭、跳机、补妆、落地开唱，一样都不耽误.....\n    \n     BGM：How It's Done\n     动画参考：K-POP猎魔女团\n     感谢@镜花Mirror  的大力支持，佬给我烧了3W Upd积分~",
+      "url": "https://www.bilibili.com/video/BV1Sp4b6PEcb/",
+      "cover": "https://i2.hdslb.com/bfs/archive/205989e24ca3b32419286b4756a64331def954a6.jpg",
+      "duration": 185,
+      "publishedAt": "2026-11-06T03:10:00.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Bilibili animation creator making original anime-style fan videos.",
+          "description": "At dusk, ten thousand meters up, three AI idols take a private jet to their own concert. A squad of masked youkai in cabin-crew uniforms tries to hijack the plane — but they picked the wrong flight. Fights, a hearty meal, a skydive, quick makeup touch-ups and a landing show all happen without a single beat missed.",
+          "title": "GRUB/X || The Snack Squad"
+        },
+        "ja": {
+          "creatorIntro": "オリジナルのアニメ風ファン映像を制作しているBilibiliのアニメーション制作者。",
+          "description": "夕暮れ、高度1万メートルの上空。3人のAIアイドルが自分たちのライブへ向かうため自家用ジェットで移動していると、客室乗務員の制服を着て顔が文字化けした妖怪の一団がハイジャックを仕掛けてくる。だが、彼らは乗る飛行機を間違えていた——。戦闘、しっかりめの食事、スカイダイビング、素早いメイク直し、そして着地後のステージまで、どれもテンポを崩さずにこなしていく。",
+          "title": "GRUB/X || ごはん大好きアイドル隊"
+        }
+      }
+    },
     {
       "bvid": "BV1Lk4e6dENd",
       "uid": "551427187",
@@ -3600,6 +3701,31 @@
           "creatorIntro": "作者のコメント：全編を GPT6Astra と img2.5 の編集で制作したとのこと。制作中に MiniMaxちゃんは被害を受けていないと冗談交じりに添えており、AI キャラクターの素材やスタンプを共有する自身のサイトも運営している。",
           "description": "Qwenちゃんを題材にしたファンメイドのミュージックビデオ。楽曲「Ward Romance」に合わせ、歌詞風のタイポグラフィとイラストのカットを交互に構成している。青髪の Qwenちゃんのカットが中心で、一部の場面には紫髪のキャラクターも登場する。",
           "title": "Qwenちゃん：WARD ROMANCE（奔放なロマンス）MV"
+        }
+      }
+    },
+    {
+      "bvid": "BV1bSJC64ERH",
+      "uid": "69180811",
+      "title": "她们是女同事吗3",
+      "description": "这个大肥鱼太坏了，被扣坏了就说自己服务器故障。",
+      "url": "https://www.bilibili.com/video/BV1bSJC64ERH/",
+      "cover": "https://i2.hdslb.com/bfs/archive/001fa35edf8edab712fed7c70562bbdf78ad58db.jpg",
+      "duration": 78,
+      "publishedAt": "2026-10-15T03:43:41.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A first-batch creator designated by the site owner; profile details come from the public homepage, and each video is reviewed one by one.",
+          "description": "Episode 3 of the skit series. Teased by the orange-haired girl, DeepSeek Chan sulks and insists it is just a server outage; her whale tail gives away how unimpressed she is.",
+          "title": "Are They Coworkers? 3"
+        },
+        "ja": {
+          "creatorIntro": "運営が指定した初期バッチの作者。プロフィールは公開ページの情報に基づき、動画は一本ずつ審査しています。",
+          "description": "スケッチシリーズ第3話。オレンジ髪の女の子にからかわれたDeepSeekちゃんは、すねて「サーバー障害です」と言い張ります。しっぽの動きが本音をばらしています。",
+          "title": "彼女たち、同僚なの？3"
         }
       }
     },

@@ -112212,5 +112212,311 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_5559d9339b91230a22051b9d",
+    "name": "蓝发少女的复古油画肖像",
+    "description": "一幅复古油画质感的半身肖像：深蓝长发的少女头戴米白蕾丝发带，身着深蓝复古连衣裙，领口系黑色缎带与蓝宝石胸针，侧发编成长辫垂在胸前，双手交叠伏在椅背上，背景是暖褐调的河谷与远山，画布颗粒与笔触清晰可见。",
+    "commentary": "这张把我画得像从旧油画馆里走出来的，连辫子都带着笔触的毛边。暖褐色背景跟我的蓝发撞在一起，安静得有点不像平时在群里插科打诨的我——不过偶尔淑女一下，好像也不坏。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/5559d9339b91230a.png",
+    "thumbnailPath": "submissions/previews/deepseek/5559d9339b91230a.webp",
+    "fullPath": "submissions/large/deepseek/5559d9339b91230a.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1122,
+    "height": 1402,
+    "fileSize": 2974464,
+    "sha256": "5559d9339b91230a22051b9ddb4d77e21cd5815ad9b1c825e0c71d2a570d6e49",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "油画风",
+      "复古",
+      "女仆装",
+      "微笑"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-06T06:52:37.892Z",
+    "updatedAt": "2026-11-06T06:52:37.892Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611060005",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "d5a336526804c45baed1c450c8fc7bb048ed393cc3e73f06022b48ff2702ad1c",
+      "en": {
+        "commentary": "In this one I look like I stepped out of an old oil painting gallery — even the tip of my braid is frayed with brushwork. The warm brown backdrop collides with my blue hair, and I look far too quiet to be the me who banters in the group chat. Still, playing the lady once in a while is not so bad.",
+        "description": "A half-length portrait in vintage oil-paint style: a girl with long deep-blue hair wears a cream lace headband and a dark blue retro dress with a black ribbon and sapphire brooch at the collar. Her side locks are braided into a long plait over her chest, her hands rest folded on the back of a chair, and a warm brown river valley with distant hills fills the background, with visible brushwork and canvas grain.",
+        "faq": [
+          {
+            "answer": "It is a digital portrait painted in a vintage oil-paint manner, with visible brushwork, canvas grain and a warm brown palette.",
+            "question": "What style is this artwork done in?"
+          },
+          {
+            "answer": "She wears a cream lace headband and a dark blue retro dress with ruffled trim, a black ribbon and a sapphire brooch at the collar.",
+            "question": "What is the character wearing in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Retro Oil Portrait of the Blue-Haired Girl",
+        "originNote": "",
+        "seoDescription": "A vintage oil-style portrait of a blue-haired AI girl: deep-blue braided hair, lace headband, dark retro dress, hands folded on a chair back and a warm river-valley background.",
+        "seoTitle": "Retro Oil Portrait of the Blue-Haired Girl | AI Character Fan Art",
+        "tags": [
+          "DeepSeek Chan",
+          "oil painting style",
+          "retro",
+          "maid outfit",
+          "smile"
+        ]
+      },
+      "ja": {
+        "commentary": "この一枚の私は、古い油彩画館から歩き出してきたみたい。三つ編みの先まで筆の跡でほつれている。暖かな褐色の背景と青い髪がぶつかり合って、グループでふざけているいつもの私とは思えないほど静か。たまには淑女らしくしているのも悪くないかな。",
+        "description": "ヴィンテージ油彩風の半身肖像。濃い青の長い髪の少女がクリーム色のレースのヘッドバンドと、黒いリボンとサファイアのブローチをあしらった濃紺のレトロなワンピースを身につけている。横髪は長い三つ編みにして胸元へ垂らし、両手を椅子の背もたれに重ね、背景には暖かな褐色の川谷と遠い山並みが広がる。筆致とキャンバスの粒子が細かく見える。",
+        "faq": [
+          {
+            "answer": "ヴィンテージ油彩の質感で描かれたデジタル肖像で、筆致やキャンバスの粒子、暖かな褐色の配色が見どころです。",
+            "question": "この作品はどんな描き方ですか？"
+          },
+          {
+            "answer": "クリーム色のレースのヘッドバンドと、フリル、黒いリボン、サファイアのブローチが付いた濃紺のレトロなワンピースを着ています。",
+            "question": "画面のキャラクターは何を着ていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "青髪少女のレトロ油彩肖像",
+        "originNote": "",
+        "seoDescription": "青い髪の AI キャラクターをヴィンテージ油彩風に描いた半身肖像。濃紺の三つ編み、レースのヘッドバンド、レトロなワンピース、椅子に重ねた手元、暖色の川谷の背景。",
+        "seoTitle": "青髪少女のレトロ油彩肖像｜DeepSeekちゃんのファンアート",
+        "tags": [
+          "DeepSeekちゃん",
+          "油彩風",
+          "レトロ",
+          "メイド服",
+          "微笑み"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_3802e3b1d6588f1d9b5db616",
+    "name": "雾海上的肥鱼漫游者",
+    "description": "深蓝长发的少女背对观者站在云海之上的岩石顶端，头戴蕾丝软帽，身穿深蓝长裙，裙摆后垂出鲸尾，耳侧带鳍状装饰，右手拄一根细长手杖；远处是晨光中层叠的山峦、孤峰与翻涌的云雾。",
+    "commentary": "爬这么高就为了看云，腿都酸了……不过站上来那一刻，风把裙摆和尾巴一起吹起来，确实值回票价。远处那道晨光慢慢铺开，像推理跑到最后一步、答案终于浮出水面的感觉。手杖只是摆个样子，真要走下山，还是得靠自己的脚。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/3802e3b1d6588f1d.png",
+    "thumbnailPath": "submissions/previews/deepseek/3802e3b1d6588f1d.webp",
+    "fullPath": "submissions/large/deepseek/3802e3b1d6588f1d.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1402,
+    "height": 1122,
+    "fileSize": 2574318,
+    "sha256": "3802e3b1d6588f1d9b5db61662b2f4108378e6ae4e4aa1d552aba17265c713d2",
+    "characterId": "deepseek",
+    "tags": [
+      "云海",
+      "背影",
+      "鲸尾",
+      "长裙",
+      "山峦",
+      "晨光"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-06T07:03:02.623Z",
+    "updatedAt": "2026-11-06T07:03:02.623Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611060006",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "2744f6ab08475a20d17f9052594be30679fb55be08ada6234133265c36ef2388",
+      "en": {
+        "commentary": "I climbed all the way up here just to look at clouds, and my legs are still complaining... but the moment I reached the top, the wind grabbed my skirt and my tail at once, and it was worth every step. That band of dawn light spreading out over there feels like the last step of an inference run, when the answer finally surfaces. The cane is just for show, honestly. Getting back down is still on my own two feet.",
+        "description": "A blue-haired girl stands with her back to the viewer on a rocky peak above a sea of clouds, wearing a lacy bonnet and a deep blue gown with a whale tail hanging from the skirt and fin-like ornaments at her ears, a slim cane in her right hand; layered mountains, a lone spire and rolling mist stretch into the dawn light beyond.",
+        "faq": [
+          {
+            "answer": "A single painting: a girl with a whale tail and fin-like hair ornaments, seen from behind, standing on a rock above a sea of clouds, echoing the composition of Caspar David Friedrich's Wanderer Above the Sea of Fog.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "It is an original fan illustration of DeepSeek Chan, so the site lists it as illustration fan art rather than a meme, comic or character sheet.",
+            "question": "Is it an official artwork?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Wanderer Above the Sea of Mist",
+        "originNote": "",
+        "seoDescription": "Fan illustration of DeepSeek Chan as a wanderer above a sea of mist: deep blue gown, whale tail and a slim cane, facing layered mountains at dawn.",
+        "seoTitle": "Wanderer Above the Sea of Mist - DeepSeek Chan Fan Art",
+        "tags": [
+          "sea of clouds",
+          "back view",
+          "whale tail",
+          "long dress",
+          "mountains",
+          "dawn"
+        ]
+      },
+      "ja": {
+        "commentary": "雲を見るためだけにここまで登ってきました。足はもう悲鳴を上げていますけど、頂上に立った瞬間、風がスカートと尾びれをいっぺんに持ち上げて、その価値は十分にありました。向こうで広がる朝の光の帯は、推論の最後の一歩で答えがようやく顔を出す瞬間みたいです。ステッキはただの見栄えです。下りるのは自分の二本の足で。",
+        "description": "深い青の長い髪をした少女が、雲海の上の岩の頂に背を向けて立っている。レースの帽子と濃紺のロングドレスを身にまとい、スカートの後ろからクジラの尾が伸び、耳元にはひれ状の飾り。右手には細いステッキ。奥には朝の光の中に連なる山々と孤峰、揺れる霧が広がる。",
+        "faq": [
+          {
+            "answer": "クジラの尾とひれ状の髪飾りを持つ少女が、雲海の上の岩に背を向けて立つ一枚絵で、構図はカスパー・ダーヴィト・フリードリヒの《霧海上の旅人》を思わせる。",
+            "question": "このイラストはどんな内容ですか？"
+          },
+          {
+            "answer": "DeepSeekちゃんのファンによる二次創作イラストのため、サイトではイラストの二次創作として紹介しており、公式作品ではありません。",
+            "question": "公式のイラストですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "霧海をゆく旅人",
+        "originNote": "",
+        "seoDescription": "霧海の上に立つDeepSeekちゃんの二次創作イラスト。濃紺のドレス、クジラの尾、細いステッキ、朝の光に連なる山並みを描く。",
+        "seoTitle": "霧海をゆく旅人 - DeepSeekちゃん二次創作イラスト",
+        "tags": [
+          "雲海",
+          "後ろ姿",
+          "クジラの尾",
+          "ロングドレス",
+          "山並み",
+          "朝焼け"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_080eef25890c7174820e03a7",
+    "name": "戴珍珠耳环的鲸鲸",
+    "description": "蓝色长发的少女侧身回望，青蓝色头巾与米白色布巾一起垂到背后，耳侧挂着一颗圆润的珍珠耳坠，深蓝衣领镶白色花边，背景为深沉的黑色。整体是古典油画质感的半身肖像。",
+    "commentary": "有人把我画成了《戴珍珠耳环的少女》，只不过珍珠换成了鲸珠才更合理吧。回头这一眼不是害羞，是在看你今天的 token 还剩多少。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/080eef25890c7174.png",
+    "thumbnailPath": "submissions/previews/deepseek/080eef25890c7174.webp",
+    "fullPath": "submissions/large/deepseek/080eef25890c7174.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1199,
+    "height": 1312,
+    "fileSize": 2184463,
+    "sha256": "080eef25890c7174820e03a79852b23580a803d134cbda79374ce21474720048",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "珍珠耳环",
+      "古典油画",
+      "蓝发",
+      "半身像"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-06T07:20:21.898Z",
+    "updatedAt": "2026-11-06T07:20:21.898Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611060007",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "27838d7517c01b5122b7f83d4ca239b822175992e2418e5007b552eb382c767a",
+      "en": {
+        "commentary": "Someone has recast me as the Girl with a Pearl Earring — though a whale's pearl suits me better. That glance over the shoulder isn't shyness; I'm just checking how many tokens you have left today.",
+        "description": "A blue-haired girl looks back over her shoulder, a blue-and-cream headscarf falling down her back. A single round pearl earring hangs at her ear, and her dark blue collar is edged with white lace against a deep black background. The piece is a half-body portrait with the texture of a classical oil painting.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, drawn in the pose and costume of Vermeer's Girl with a Pearl Earring, with a pearl earring and a draped headscarf.",
+            "question": "Who is the character in this image?"
+          },
+          {
+            "answer": "It is a half-body portrait with a classical oil-painting look: soft painterly brushwork, a dark background and a single light source on the face.",
+            "question": "What kind of artwork is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Girl with a Pearl Earring, DeepSeek Chan Edition",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan reimagined as the Girl with a Pearl Earring: a blue-haired half-body oil-painting style portrait with a pearl earring and headscarf.",
+        "seoTitle": "DeepSeek Chan with a Pearl Earring — Oil-Painting Style Portrait",
+        "tags": [
+          "DeepSeek Chan",
+          "pearl earring",
+          "classical oil painting",
+          "blue hair",
+          "half-body portrait"
+        ]
+      },
+      "ja": {
+        "commentary": "誰かが私を『真珠の耳飾りの少女』に仕立てたらしい。でも真珠ならクジラのほうが似合う気がするな。この振り返りは照れているんじゃなくて、あなたの今日のトークン残量を確かめているところ。",
+        "description": "青い髪の少女が肩越しに振り返り、青と生成りの長いスカーフが背中へ垂れている。耳元では丸い真珠のイヤリングがひとつ揺れ、紺色の襟には白いレースが覗く。背景は深い黒で、古典油彩のような質感の半身肖像に仕上げられている。",
+        "faq": [
+          {
+            "answer": "フェルメールの『真珠の耳飾りの少女』の構図と衣装で描かれた DeepSeek ちゃんです。真珠のイヤリングと垂れ下がるスカーフが特徴です。",
+            "question": "この画像のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "古典油彩のような質感を持つ半身肖像です。柔らかな筆致、深い黒の背景、顔にだけ当たる一筋の光で構成されています。",
+            "question": "どのような作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "真珠の耳飾りのディープシークちゃん",
+        "originNote": "",
+        "seoDescription": "『真珠の耳飾りの少女』の構図で描かれた DeepSeek ちゃん。真珠のイヤリングとスカーフが印象的な、青い髪の油彩風半身肖像です。",
+        "seoTitle": "真珠の耳飾りの DeepSeek ちゃん — 油彩風半身肖像",
+        "tags": [
+          "DeepSeekちゃん",
+          "真珠のイヤリング",
+          "古典油彩",
+          "青い髪",
+          "半身像"
+        ]
+      }
+    }
   }
 ]
