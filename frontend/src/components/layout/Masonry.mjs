@@ -27,7 +27,9 @@ export function justifiedPositions(aspects, width, targetHeight, gap) {
       const filledHeight = available / sum, last = end === ratios.length;
       const height = last ? Math.min(target, filledHeight) : filledHeight;
       const empty = last ? 1 - (height * sum + spacing * (end - start - 1)) / width : 0;
-      const cost = ((height - target) / target) ** 2 + empty ** 2 + costs[end];
+      // Prefer readable rows over a tightly filled tail, without oversized hero rows.
+      const heightCost = ((height - target) / target) ** 2 * (height > target ? 4 : 1);
+      const cost = heightCost + .15 * empty ** 2 + costs[end];
       if (cost < costs[start]) { costs[start] = cost; breaks[start] = end; }
     }
   }
@@ -37,7 +39,7 @@ export function justifiedPositions(aspects, width, targetHeight, gap) {
     const end = breaks[start], sum = ratios.slice(start, end).reduce((a,b) => a+b, 0);
     const filledHeight = (width - spacing * (end - start - 1)) / sum;
     const height = end === ratios.length ? Math.min(target, filledHeight) : filledHeight;
-    let left = 0;
+    let left = end === ratios.length ? Math.max(0, (width - height * sum - spacing * (end - start - 1)) / 2) : 0;
     for (let i = start; i < end; i++) {
       const itemWidth = ratios[i] * height;
       positions.push({left, top, width:itemWidth, height});

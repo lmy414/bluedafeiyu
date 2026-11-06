@@ -59,26 +59,43 @@ test('mixed wide and portrait images retain their ratios in compact, non-overlap
     });
     const entries=[...rows];
     entries.forEach(([top,row],index)=>{
-      assert.equal(row[0].left,0);
       row.forEach((point,i)=>{
         assert.equal(point.height,row[0].height);
         if(i)assert.ok(Math.abs(point.left-row[i-1].left-row[i-1].width-gap)<1e-8);
       });
       if(index<entries.length-1){
+        assert.equal(row[0].left,0);
         assert.ok(Math.abs(row.at(-1).left+row.at(-1).width-width)<1e-8);
         assert.ok(Math.abs(entries[index+1][0]-top-row[0].height-gap)<1e-8);
-      }else assert.ok(row[0].height<=target);
+      }else {
+        assert.ok(row[0].height<=target);
+        assert.ok(Math.abs(row[0].left-(width-row.at(-1).left-row.at(-1).width))<1e-8);
+      }
     });
     assert.ok(Math.abs(result.height-result.positions.at(-1).top-result.positions.at(-1).height)<1e-8);
   }
 });
 
 test('short final rows keep their natural size rather than stretching a lone portrait',()=>{
-  assert.deepEqual(justifiedPositions([9/16],1000,180,6),{positions:[{left:0,top:0,width:101.25,height:180}],height:180});
+  assert.deepEqual(justifiedPositions([9/16],1000,180,6),{positions:[{left:449.375,top:0,width:101.25,height:180}],height:180});
   assert.deepEqual(justifiedPositions([],1000,180,6),{positions:[],height:0});
   assert.deepEqual(justifiedPositions([1],0,180,6),{positions:[],height:0});
   const invalid=justifiedPositions([0,NaN,Infinity,1/20,20],288,120,4);
   assert.ok(invalid.positions.every(point=>Object.values(point).every(Number.isFinite)));
+});
+
+test('home rows leave room for portraits without an oversized first landscape or squeezed tail',()=>{
+  const ratios=[16/9,1.6,1.25,16/9,.8,1,16/9,1,1,1,.6,16/9];
+  const desktop=justifiedPositions(ratios,1234,200,10);
+  const rows=[...Map.groupBy(desktop.positions,point=>point.top).values()];
+  assert.deepEqual(rows.map(row=>row.length),[4,5,3]);
+  assert.ok(rows.every(row=>row[0].height>=180&&row[0].height<=220));
+  assert.equal(desktop.positions[10].width,120);
+  assert.ok(desktop.positions.every(point=>point.width<400));
+  const phone=justifiedPositions(ratios,358,135,8);
+  const first=[...Map.groupBy(phone.positions,point=>point.top).values()][0];
+  assert.equal(first.length,2);
+  assert.ok(phone.positions[0].width<200);
 });
 test('appending cards keeps existing positions and never overlaps at phone or desktop widths',()=>{
   const heights=[120,400,230,95,300,180,210,100];

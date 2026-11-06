@@ -57,17 +57,19 @@ html:root body.archive.refined :is(.home-latest,.home-downloads,.home-popular,.j
 html:root body.archive.refined :is(.home-latest,.home-popular,.home-downloads) :is(.work-text,.art-license,.art-kind,.type-label,.art-open,.long-image-note,.quick-view,.card-save,.card-share) {
   display:none;
 }
-html:root body.archive.refined :is(.home-latest,.home-popular,.home-downloads) .work-art { border-radius:2px; }
+html:root body.archive.refined :is(.home-latest,.home-popular,.home-downloads) :is(.work-card,.work-art,.work-art img) { border-radius:var(--radius-md); }
 html:root body.archive.refined :is(.home-latest,.home-popular,.home-downloads) .work-art:focus-visible { outline:3px solid var(--blue); outline-offset:-3px; }
 
 /* The justified component sets row geometry before images load and after refresh. */
 html:root body.archive.refined :is(.home-latest,.home-popular,.home-downloads) .work-grid {
-  --justified-height:180px;
+  --justified-height:200px;
+  --gap:10px;
+  gap:10px;
 }
 html:root body.archive.refined :is(.home-latest,.home-popular,.home-downloads) .work-grid--justified.is-laid-out .work-art,
 html:root body.archive.refined :is(.home-latest,.home-popular,.home-downloads) .work-grid--justified.is-laid-out .work-art img {
   height:100%;
 }
 @media(max-width:760px) {
-  html:root body.archive.refined :is(.home-latest,.home-popular,.home-downloads) .work-grid { --justified-height:120px; }
+  html:root body.archive.refined :is(.home-latest,.home-popular,.home-downloads) .work-grid { --justified-height:135px; --gap:8px; gap:8px; }
 }
