@@ -59,7 +59,7 @@ export async function planReleases(group) {
           if (await fs.realpath(dist) !== dist || await fs.realpath(manifest) !== manifest) continue;
           if (!(await fs.lstat(manifest)).isFile()) continue;
           const version = JSON.parse(await fs.readFile(manifest, 'utf8'));
-          if (version.sourceCommit !== name.slice(0, 40) || version.sourceDirty !== false) continue;
+          if (!version || typeof version !== 'object' || version.sourceCommit !== name.slice(0, 40) || version.sourceDirty !== false) continue;
         } catch (error) {
           if (error.code === 'ENOENT' || error instanceof SyntaxError) continue;
           throw error;
