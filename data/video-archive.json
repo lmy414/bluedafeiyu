@@ -85,8 +85,8 @@
       "intro": "我想做很多视频，做很多很好玩的视频，首先肯定是自己觉得很好玩，其次嘛，也想传播快乐给大家。",
       "avatar": "https://i2.hdslb.com/bfs/face/e3445be765ec330ac29b07c328496e44ec04077a.jpg",
       "i18n": {
-        "en": "I want to make lots of videos, lots of really fun videos — first because I enjoy them myself, and then because I want to share the fun with everyone.",
-        "ja": "たくさん動画を作りたいです。たくさん楽しい動画を。まずは自分が楽しいと思うこと、それからみんなにも楽しさを届けたいと思っています。"
+        "en": "I want to make lots of videos, and make them really fun. First because I enjoy them myself, and then because I want to share that fun with everyone.",
+        "ja": "たくさん動画を作って、たくさん楽しい動画にしたいです。まずは自分が楽しいと思えること、それからみんなに楽しさを届けたいと思っています。"
       }
     },
     {
@@ -96,8 +96,8 @@
       "intro": "每日AI小四格/小动画",
       "avatar": "https://i0.hdslb.com/bfs/face/6f8600ad3d37069ef5106eaf96e7d5a936ba8c50.jpg",
       "i18n": {
-        "en": "Daily AI four-panel comics and short animations.",
-        "ja": "毎日AIの4コマ漫画とショートアニメを制作。"
+        "en": "Daily AI four-panel comics and short animations",
+        "ja": "毎日AI4コマ漫画・ショートアニメ"
       }
     },
     {
@@ -191,6 +191,83 @@
   ],
   "videos": [
     {
+      "bvid": "BV1MM4n6kE9p",
+      "uid": "9126506",
+      "title": "大肥鱼与Gemini小剧场故事",
+      "description": "大肥鱼与Gemini小剧场故事",
+      "url": "https://www.bilibili.com/video/BV1MM4n6kE9p/",
+      "cover": "https://i1.hdslb.com/bfs/archive/e20e02ae976f2dd61ed7ffb70b3706f3d1ae3411.jpg",
+      "duration": 25,
+      "publishedAt": "2026-11-07T13:25:44.000Z",
+      "characterIds": [
+        "deepseek",
+        "gemini"
+      ],
+      "i18n": {
+        "en": {
+          "title": "DeepSeek Chan and Gemini Chan: A Little Skit",
+          "description": "A roughly 25-second chibi anime short starring DeepSeek Chan and Gemini Chan. In this fan-made skit the two AI character mascots share a small everyday moment together.",
+          "creatorIntro": "I want to make lots of videos, and make them really fun. First because I enjoy them myself, and then because I want to share that fun with everyone."
+        },
+        "ja": {
+          "title": "DeepSeekちゃんとGeminiちゃんの小劇場",
+          "description": "DeepSeekちゃんとGeminiちゃんが登場する約25秒のちびキャラアニメです。AI製品の擬人化キャラによるファン制作の短編で、二人が日常のひとときを演じます。",
+          "creatorIntro": "たくさん動画を作って、たくさん楽しい動画にしたいです。まずは自分が楽しいと思えること、それからみんなに楽しさを届けたいと思っています。"
+        }
+      }
+    },
+    {
+      "bvid": "BV1SN4n6CESV",
+      "uid": "9126506",
+      "title": "超级可爱大肥鱼",
+      "description": "超级可爱大肥鱼",
+      "url": "https://www.bilibili.com/video/BV1SN4n6CESV/",
+      "cover": "https://i2.hdslb.com/bfs/archive/c6f0dcc10008c4be3e35969bab67f5a49d49a01e.jpg",
+      "duration": 31,
+      "publishedAt": "2026-11-07T13:17:29.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, lots of really fun videos. First because I enjoy making them myself, and second because I want to share the fun with everyone.",
+          "description": "A short clip of chibi DeepSeek Chan in her hooded winter outfit, blinking and showing off a few expressions — pure cuteness for half a minute.",
+          "title": "Super Cute DeepSeek Chan"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作りたいです。たくさん楽しい動画を。まずは自分が楽しいと思えること、それから、みんなにも楽しさを届けたいと思っています。",
+          "description": "フード付きの冬服を着たちびキャラのDeepSeekちゃんが、まばたきしたり表情を変えたりする30秒ほどのショート動画。とにかく可愛いだけの一本です。",
+          "title": "超かわいいDeepSeekちゃん"
+        }
+      }
+    },
+    {
+      "bvid": "BV11V4n6MERv",
+      "uid": "9126506",
+      "title": "笨鱼的提问，是独一份与claude的温柔告白",
+      "description": "小鱼忐忑地抛出一道选择题，换来一场独属于她的温柔告白。\n原来最好的答案，从来都不是比较，而是满心都是你。",
+      "url": "https://www.bilibili.com/video/BV11V4n6MERv/",
+      "cover": "https://i1.hdslb.com/bfs/archive/10a4a85631cf58262c388330fbc24828b99638f5.jpg",
+      "duration": 61,
+      "publishedAt": "2026-11-07T13:10:56.000Z",
+      "characterIds": [
+        "deepseek",
+        "claude"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, lots of really fun videos. First because I enjoy making them myself, and second because I want to share the fun with everyone.",
+          "description": "The little fish nervously asks a multiple-choice question and receives a gentle confession meant for her alone. It turns out the best answer was never a comparison — it is being the whole of someone's heart.",
+          "title": "A Clumsy Fish's Question, and Claude Chan's One-of-a-Kind Gentle Confession"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作りたいです。たくさん楽しい動画を。まずは自分が楽しいと思えること、それから、みんなにも楽しさを届けたいと思っています。",
+          "description": "小鱼ちゃんがおどおどしながら選択問題を投げかけ、自分だけに向けられた優しい告白を受け取ります。一番いい答えは比べることではなく、相手の心がまるごと自分であることだと分かるお話。",
+          "title": "おっちょこちょいな魚の質問、Claudeちゃんからの特別な優しい告白"
+        }
+      }
+    },
+    {
       "bvid": "BV1tS4n6CET4",
       "uid": "9126506",
       "title": "大肥鱼妻子与女儿鲸鲸与冒险者爸爸",
@@ -212,6 +289,32 @@
           "creatorIntro": "たくさん動画を作りたいです。たくさん楽しい動画を。まずは自分が楽しいと思うこと、それからみんなにも楽しさを届けたいと思っています。",
           "description": "朝のログハウスの食堂で、ディープシークちゃんは魔獣肉の餃子を包みながら、大切なことを静かに準備している。香りに誘われて娘のジンジンが駆け寄り、今日は何の特別な日なのかと興味津々に尋ねる。答えは笑顔でかわされ、湯気の立つ食卓に謎が残る。",
           "title": "ディープシークちゃんの妻と娘ジンジン、そして冒険者パパ"
+        }
+      }
+    },
+    {
+      "bvid": "BV1Z84n64EQx",
+      "uid": "15475629",
+      "title": "【科普向】《公然挑衅gpt酱？Grok-1的开放权重》",
+      "description": "原事件（2024-03-17）：2024年3月17日，xAI 以 Apache 2.0 发布 Grok-1（314B MoE）基座模型权重与 JAX 推理代码，权重通过 BitTorrent 分发。这是当年的 Grok-1 开放权重事件，不代表当前所有 Grok 版本均开放。\n\n以下是小作文\n\n哥特风机房里，Grok娘把黑金 X 纹巨斧往地上一立：“权重开放了，谁来拿？”屏幕亮起 Grok-1、314B MoE 与 Apache 2.0。小研究员挽起袖子：“我先来！”\n\n第一个人双手抱住斧柄，憋红了脸：“起——！”巨斧纹丝不动。后面的人急着接班：“换我试试！”Grok娘在旁边挑眉：“就这？”\n\n研究员们一起上，脚底打滑、汗珠乱飞：“一起！一、二——”“还是举不动！”机房的提示牌写着“运行门槛：大量显存”。有人终于喊出问题：“显存不够啊！”开放下载，不等于普通硬件就能跑动。\n\nGrok娘伸出一只手，轻轻松松拎起巨斧，侧眼朝 GPT酱露出挑衅的笑：“重是重了点，总比不让拿强吧？”GPT酱一手搭在胸口，依旧无口；旁边的 Sora云却已经气得鼓了起来。\n\n来源：\nhttps://github.com/xai-org/grok-1\nhttps://web.archive.org/web/20240317194647/https://x.ai/blog/grok-os\nhttps://arstechnica.com/information-technology/2024/03/elon-musks-xai-releases-grok-source-and-weights-taunting-openai/\nhttps://simonwillison.net/2024/Mar/17/grok-1/\nhttps://academictorrents.com/details/5f96d43576e3d386c9ba65b883210a393b68210e\n\n【Credit】\n音乐：Kids Game Loop\nCyberwave Orchestra · Pixabay\n图像生成：GPT Image 2.5 (Sunburst)\nAI-Chan illustrations — ZipZipPipe · CC BY-NC-SA 4.0.\nDeepseek-Chan original character — 上善无形.",
+      "url": "https://www.bilibili.com/video/BV1Z84n64EQx/",
+      "cover": "https://i1.hdslb.com/bfs/archive/f0bb3f0f77e22baeee839753ac010d20ef23d1d6.jpg",
+      "duration": 33,
+      "publishedAt": "2026-11-07T12:07:35.000Z",
+      "characterIds": [
+        "grok",
+        "gpt"
+      ],
+      "i18n": {
+        "en": {
+          "title": "[Explainer] Provoking GPT Chan in Public? Grok-1's Open Weights",
+          "description": "A short chibi-anime explainer about xAI releasing the Grok-1 (314B MoE) base model weights under Apache 2.0 in March 2024. In a gothic server room, Grok Chan plants her X-shaped great axe and challenges the researchers to lift it; they strain together and still cannot move it, until the \"VRAM required\" sign on the wall explains why. Grok Chan picks the axe up with one hand and shoots a taunting grin at a silent GPT Chan, while the little cloud mascot beside her puffs up in anger. The point: open download does not mean it runs on ordinary hardware.",
+          "creatorIntro": "Daily AI four-panel comics and short animations"
+        },
+        "ja": {
+          "title": "【解説】「公然とGPTちゃんに挑発？」Grok-1のオープンウェイト",
+          "description": "2024年3月、xAIがGrok-1（314B MoE）のベースモデルの重みをApache 2.0で公開した出来事を描いた、ちびキャラ解説アニメ。ゴシック調のサーバールームでGrokちゃんがX字の巨大な斧を立て、「重みは公開された、誰が持てる？」と挑発。研究員たちが声を合わせて持ち上げようとするがびくともせず、壁の「必要VRAM：大量」の表示が理由を物語る。最後にGrokちゃんは片手で斧を軽々と持ち上げ、無口なGPTちゃんに挑発的な笑みを向け、そばの小さな雲のマスコットは怒って膨らむ。ダウンロードが開放されても、普通のハードウェアで動くとは限らないというオチ。",
+          "creatorIntro": "毎日AI4コマ漫画・ショートアニメ"
         }
       }
     },
