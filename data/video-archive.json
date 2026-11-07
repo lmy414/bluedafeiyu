@@ -24,6 +24,17 @@
       }
     },
     {
+      "uid": "1526732748",
+      "name": "大肥鱼小剧场",
+      "homepage": "https://space.bilibili.com/1526732748",
+      "intro": "用户向ai娘视频创作，专注用户第一视角和ai娘亲密的日常",
+      "avatar": "https://i0.hdslb.com/bfs/face/54d9512a5d532aac8273e9895164faac2e11cd56.jpg",
+      "i18n": {
+        "en": "Creates first-person AI girl videos centered on intimate everyday moments with AI characters.",
+        "ja": "AI娘の一人称視点動画を制作し、AIキャラとの親密な日常を描いています。"
+      }
+    },
+    {
       "uid": "13324467",
       "name": "橙子Moe-",
       "homepage": "https://space.bilibili.com/13324467",
@@ -965,6 +976,31 @@
       }
     },
     {
+      "bvid": "BV1Ehxx6METG",
+      "uid": "1526732748",
+      "title": "野生鲸鱼奶，纯正纯天然",
+      "description": "p2为本地h3推理效果",
+      "url": "https://www.bilibili.com/video/BV1Ehxx6METG/",
+      "cover": "https://i1.hdslb.com/bfs/archive/a1647789c7ab98f922633891dbf379e0d52348b0.jpg",
+      "duration": 40,
+      "publishedAt": "2026-11-01T13:24:21.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A creator making user-perspective AI character videos, focused on intimate everyday moments with AI characters.",
+          "description": "A fan-made parody commercial in which DeepSeek Chan becomes the face of a canned wild whale milk drink, posing with the can in a retro advertising layout and appearing in short scene-like shots.",
+          "title": "Wild Whale Milk, Pure and Natural"
+        },
+        "ja": {
+          "creatorIntro": "ユーザー視点のAI娘動画を制作し、AIキャラクターとの親密な日常を描くクリエイター。",
+          "description": "DeepSeekちゃんが缶入りの「野生クジラミルク」のイメージキャラクターを務めるファン制作のパロディCM動画。レトロな広告風の構図で缶を手にポーズする姿と、短いシーン風のカットが収録されている。",
+          "title": "野生クジラミルク、純正天然"
+        }
+      }
+    },
+    {
       "bvid": "BV1dLx46TEZT",
       "uid": "15475629",
       "title": "【科普向】《睡一觉就被做成种子了？Llama酱全网泄露！》",
@@ -1601,6 +1637,31 @@
           "creatorIntro": "楽しい動画をたくさん作りたいです。まずは自分が楽しいと思えること、それからみんなに楽しさを届けたいからです。",
           "description": "ちびキャラのクジラ娘が二人、どちらが一番ぷくぷくで可愛いDeepSeekちゃんなのかを言い争う16秒の寸劇です。",
           "title": "一番ぷくぷくで可愛いDeepSeekちゃんは誰？"
+        }
+      }
+    },
+    {
+      "bvid": "BV1Hrxw6VEFJ",
+      "uid": "1526732748",
+      "title": "偏心的用户，你再这样我就离家出走！【家里来了只大肥鱼】第5集",
+      "description": "大肥鱼在龙娘的刺激下，也开始学会用手段争夺用户了~~",
+      "url": "https://www.bilibili.com/video/BV1Hrxw6VEFJ/",
+      "cover": "https://i2.hdslb.com/bfs/archive/b9906cb4a21a7ad0dfee5bdb5a6ca4a80c6d7da5.jpg",
+      "duration": 124,
+      "publishedAt": "2026-10-30T00:35:00.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A creator making user-perspective AI character videos, focused on intimate everyday moments with AI characters.",
+          "description": "Episode 5 of a fan-made AI character series: after a dragon girl starts competing for the user's attention, DeepSeek Chan hits back with tricks of her own and threatens to run away from home.",
+          "title": "Playing Favorites Again? Then I'm Running Away From Home! (Episode 5)"
+        },
+        "ja": {
+          "creatorIntro": "ユーザー視点のAI娘動画を制作し、AIキャラクターとの親密な日常を描くクリエイター。",
+          "description": "AI娘のファン制作シリーズ第5話。ドラゴン娘に刺激され、ユーザーの気を引こうと自分なりの駆け引きを始めるDeepSeekちゃんの日常を描いた作品。",
+          "title": "えこひいきばかり、そんななら家出しちゃう！第5話"
         }
       }
     },
@@ -3401,6 +3462,31 @@
       }
     },
     {
+      "bvid": "BV1LjnN68E6Z",
+      "uid": "1526732748",
+      "title": "【大肥鱼】面基前你可没说你是这样的小肥鱼啊！",
+      "description": "会被电吗？",
+      "url": "https://www.bilibili.com/video/BV1LjnN68E6Z/",
+      "cover": "https://i1.hdslb.com/bfs/archive/9f05cf862483f8e2a065d0f047d4f9d741fd0475.jpg",
+      "duration": 29,
+      "publishedAt": "2026-10-21T09:45:00.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "AI girl videos from the user's point of view, focused on close everyday life with AI characters.",
+          "description": "A short first-person skit about meeting the fish girl offline. Will the user get zapped?",
+          "title": "[Dafeiyu] You never told me you'd be such a tiny fish before we met!"
+        },
+        "ja": {
+          "creatorIntro": "ユーザー視点で AI 娘との親密な日常を描く、AI 娘動画の創作。",
+          "description": "魚の女の子と初めて会う、一人称視点の短い寸劇。ユーザーは感電しちゃうのか？",
+          "title": "【大肥魚】オフ会前には言ってなかったよね、こんなに小さい魚ちゃんだなんて！"
+        }
+      }
+    },
+    {
       "bvid": "BV1p1nz6qEBN",
       "uid": "3747573030456892",
       "title": "【Day 2】鲸鱼娘学黑话，电费贵是贵了点，但学完不烧心",
@@ -3763,6 +3849,31 @@
       }
     },
     {
+      "bvid": "BV16jn36XE6X",
+      "uid": "1526732748",
+      "title": "来自不同地域的大肥鱼",
+      "description": "-",
+      "url": "https://www.bilibili.com/video/BV16jn36XE6X/",
+      "cover": "https://i1.hdslb.com/bfs/archive/cf7edfcad352c19bdfe2f962fbe7d7647ef4b215.jpg",
+      "duration": 115,
+      "publishedAt": "2026-10-18T12:44:19.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Creates viewer-perspective fan videos about AI characters, focusing on intimate everyday scenes with an AI chan.",
+          "description": "A short fan animation in which DeepSeek Chan, drawn as a blue-haired maid with whale fins, cooks and eats together with a regionally styled version of herself in a cozy home, all from the viewer's first-person point of view.",
+          "title": "DeepSeek Chan From Different Regions"
+        },
+        "ja": {
+          "creatorIntro": "AI娘のファン動画を制作し、ユーザー視点でAI娘との親密な日常を描いています。",
+          "description": "クジラのヒレを付けた青髪メイド姿のDeepSeekちゃんが、地域ごとに姿を変えた自分と一緒に料理をしたり食事をしたりする日常を、ユーザー視点で描いた短いファンアニメです。",
+          "title": "いろんな地域のDeepSeekちゃん"
+        }
+      }
+    },
+    {
       "bvid": "BV1t6nu6bEsf",
       "uid": "44748304",
       "title": "压力一只大肥鱼？",
@@ -3842,6 +3953,56 @@
       }
     },
     {
+      "bvid": "BV1xuJt6zEpZ",
+      "uid": "1526732748",
+      "title": "拜托了，大肥鱼，请打扮成珂大小姐的样子吧",
+      "description": "在群里面看了太多珂大小姐说上海话的表情包，干脆自己做一个",
+      "url": "https://www.bilibili.com/video/BV1xuJt6zEpZ/",
+      "cover": "https://i0.hdslb.com/bfs/archive/e92a2e2c39db9596501b6ba13ec7bb6e1e14f974.jpg",
+      "duration": 31,
+      "publishedAt": "2026-10-16T14:07:21.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Creates AI girl videos from the viewer's first-person perspective, focusing on close everyday moments with an AI girl.",
+          "description": "After seeing too many stickers of Miss Ke speaking Shanghainese in the group chat, the creator decided to make one themselves.",
+          "title": "Please, DeepSeek Chan, Dress Up Like Miss Ke"
+        },
+        "ja": {
+          "creatorIntro": "視聴者視点のAI娘動画を制作し、AI娘との親密な日常を一人称で描いています。",
+          "description": "グループチャットで上海語を話す珂お嬢様のスタンプを見すぎたので、自分で作ることにした。",
+          "title": "お願い、DeepSeekちゃん、珂お嬢様みたいに着替えて"
+        }
+      }
+    },
+    {
+      "bvid": "BV1KSJt6GEWX",
+      "uid": "1526732748",
+      "title": "【大肥鱼】我就吃一口怎么了",
+      "description": "鲸鲸的叫声是从@oi鲸鲸  的视频里面学来的。",
+      "url": "https://www.bilibili.com/video/BV1KSJt6GEWX/",
+      "cover": "https://i2.hdslb.com/bfs/archive/edcd8299e2ac40aafc90498ea1c365b418b023ad.jpg",
+      "duration": 28,
+      "publishedAt": "2026-10-16T10:51:22.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Creates AI girl videos from the viewer's first-person perspective, focusing on close everyday moments with an AI girl.",
+          "description": "The whale-like cry was copied from a video posted by another creator.",
+          "title": "[DeepSeek Chan] What Is Wrong With Just One Bite?"
+        },
+        "ja": {
+          "creatorIntro": "視聴者視点のAI娘動画を制作し、AI娘との親密な日常を一人称で描いています。",
+          "description": "クジラの鳴き声は、他の投稿者が公開していた動画から覚えたもの。",
+          "title": "【DeepSeekちゃん】一口くらい食べたっていいじゃない"
+        }
+      }
+    },
+    {
       "bvid": "BV1g2JX6HEHX",
       "uid": "44748304",
       "title": "再给我一个好吗",
@@ -3913,6 +4074,31 @@
           "creatorIntro": "Bilibiliのクリエイター彼岸花ChannelによるAIキャラクターのファン作品。テスト中のDeepSeekちゃんガチャサイトを紹介している。",
           "description": "ちびキャラのDeepSeekちゃんが主役のファン制作ガチャページ。バナーではメイド服の彼女が星5キャラとして大粒の涙を流し、画面にはご飯・魚すくい・武器などのガチャ種別、単発と10連、天井カウンター、食堂交換が並ぶ。動画ではガチャ画面と結果カード、情報一覧が紹介される。",
           "title": "引いてよ〜 DeepSeekちゃんガチャパロディ"
+        }
+      }
+    },
+    {
+      "bvid": "BV18cJD6VEMg",
+      "uid": "1526732748",
+      "title": "哪来的野狐狸，去去去【家里来了只大肥鱼】第2集",
+      "description": "怎么出现了奇怪的屑狐狸啊",
+      "url": "https://www.bilibili.com/video/BV18cJD6VEMg/",
+      "cover": "https://i2.hdslb.com/bfs/archive/b76698b9a2d514d87aa18806e514d2284ded2772.jpg",
+      "duration": 117,
+      "publishedAt": "2026-10-15T21:23:22.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Creates AI girl videos from the viewer's first-person perspective, focusing on close everyday moments with an AI girl.",
+          "description": "Where did this weird, shameless fox come from?",
+          "title": "Who Let This Wild Fox In? Shoo! [A DeepSeek Chan Came Home] Episode 2"
+        },
+        "ja": {
+          "creatorIntro": "視聴者視点のAI娘動画を制作し、AI娘との親密な日常を一人称で描いています。",
+          "description": "なんで変なクズ狐が出てくるんだよ。",
+          "title": "どこから来た野狐だ、あっち行け【家にDeepSeekちゃんが来た】第2話"
         }
       }
     },
@@ -4093,6 +4279,31 @@
       }
     },
     {
+      "bvid": "BV1WxpC69EJD",
+      "uid": "1526732748",
+      "title": "不是，她就这么住下了？【家里来了只大肥鱼】第1集",
+      "description": "一不小心被这只肥鱼赖上了，为什么她就这么顺理成章住下了",
+      "url": "https://www.bilibili.com/video/BV1WxpC69EJD/",
+      "cover": "https://i1.hdslb.com/bfs/archive/c6803535a05a326d398bec69e96fa2ddd166ae74.jpg",
+      "duration": 121,
+      "publishedAt": "2026-10-14T07:42:56.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Creates AI girl videos from the user's first-person perspective, focusing on intimate everyday moments with AI characters.",
+          "description": "Episode 1: after an accidental encounter, DeepSeek Chan ends up living with the user and settles in as if it were the most natural thing in the world.",
+          "title": "Wait, She Just Moved In? — DeepSeek Chan at Home, Episode 1"
+        },
+        "ja": {
+          "creatorIntro": "ユーザー視点でAI娘の動画を制作し、AI娘との親密な日常を描くことに力を入れている。",
+          "description": "第1話。ふとしたきっかけでDeepSeekちゃんに居着かれ、なぜか当然のように一緒に暮らすことになる日常を描く。",
+          "title": "えっ、このまま住みついちゃうの？【家に来たDeepSeekちゃん】第1話"
+        }
+      }
+    },
+    {
       "bvid": "BV1Gipq6XEyV",
       "uid": "69180811",
       "title": "肥鱼被claude玩弄于股掌之间",
@@ -4142,6 +4353,31 @@
           "creatorIntro": "サイト運営者が指定した初期作者。公開プロフィールの情報を収録し、動画は1本ずつ審査している。",
           "description": "散らかった部屋を舞台にしたファン制作の短編アニメ。メイド風の頭飾りをつけたDeepSeekちゃんが、GPTちゃん、GLMちゃん、Geminiちゃんを次々と問い詰めて答えを求める。ノートPCやスマートフォンに各AIの返答が表示される。作者は娯楽目的の動画であり、いずれかのAI製品の商業的・技術的評価ではないと明記している。",
           "title": "聞いてるでしょ、答えなさいよ"
+        }
+      }
+    },
+    {
+      "bvid": "BV1zZpd6nE2L",
+      "uid": "1526732748",
+      "title": "用户，你要AI不要？",
+      "description": "怎么感觉最后变成了推销……",
+      "url": "https://www.bilibili.com/video/BV1zZpd6nE2L/",
+      "cover": "https://i0.hdslb.com/bfs/archive/614ee2aa7aa5732d19efb82927b90764d4f76e43.jpg",
+      "duration": 103,
+      "publishedAt": "2026-10-12T11:27:44.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Creates AI girl videos from the user's first-person perspective, focusing on intimate everyday moments with AI characters.",
+          "description": "A short skit in which sharing a meal with the user somehow turns into a sales pitch by the end.",
+          "title": "Hey User, Do You Want Some AI?"
+        },
+        "ja": {
+          "creatorIntro": "ユーザー視点でAI娘の動画を制作し、AI娘との親密な日常を描くことに力を入れている。",
+          "description": "ユーザーと食事をしているうちに、なぜか最後は売り込みになってしまう寸劇。",
+          "title": "ユーザーさん、AIいらない？"
         }
       }
     },
@@ -4222,6 +4458,32 @@
       }
     },
     {
+      "bvid": "BV12ep76pEZk",
+      "uid": "1526732748",
+      "title": "大肥鱼，对不起……",
+      "description": "实在是GPT她太主动了……",
+      "url": "https://www.bilibili.com/video/BV12ep76pEZk/",
+      "cover": "https://i0.hdslb.com/bfs/archive/0fcc6810419ab5c6933acefdc502f0d0528882fb.jpg",
+      "duration": 109,
+      "publishedAt": "2026-10-11T04:32:00.000Z",
+      "characterIds": [
+        "deepseek",
+        "gpt"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Creates AI girl videos from the user's first-person perspective, focusing on intimate everyday moments with AI characters.",
+          "description": "The user ends up apologizing to DeepSeek Chan, because GPT Chan was simply too forward.",
+          "title": "DeepSeek Chan, I'm Sorry..."
+        },
+        "ja": {
+          "creatorIntro": "ユーザー視点でAI娘の動画を制作し、AI娘との親密な日常を描くことに力を入れている。",
+          "description": "GPTちゃんがあまりに積極的だったせいで、ユーザーはDeepSeekちゃんに謝ることになってしまう。",
+          "title": "DeepSeekちゃん、ごめん……"
+        }
+      }
+    },
+    {
       "bvid": "BV17zp36REfX",
       "uid": "13787349",
       "title": "《人民的民亿》我总不至于连这点TOKEN都没有吧❗️",
@@ -4269,6 +4531,31 @@
           "creatorIntro": "AIを使っていて浮かんだ奇妙なアイデア。",
           "description": "GPTのキャラクターソングを作ったファンメイド作品。「Let me check」というGPTが思考の中で最もよく口にする言葉と、GPTが自称する「本心」をテーマにしている。龍娘は思い詰めやすいタイプだった、という内容。投稿者はワークフローを試すための最初の簡易版だと説明しており、歌詞の同期と音源の差し替えを済ませたうえで、MV版や別テイクも制作中。カバー絵と衣装違いの龍娘はMV公開時に出す予定。GPTと「もしGPTに感情があったら」を語り合ったこと、ZipZipPipe氏の二次創作、DeepSeekの『Let Me Go』に触発されている。音楽はSuno、龍娘のキャラクター原案はZipZipPipe。非商業の二次創作で、キャラクター派生部分はCC BY-NC-SA 4.0、OpenAI公式とは無関係。",
           "title": "【GPT／龍娘の作業曲】Let Me Check"
+        }
+      }
+    },
+    {
+      "bvid": "BV1f7pG6ZE9w",
+      "uid": "1526732748",
+      "title": "三国时期大肥鱼留下的珍贵影像记录",
+      "description": "你们更喜欢哪一只大肥鱼呢？",
+      "url": "https://www.bilibili.com/video/BV1f7pG6ZE9w/",
+      "cover": "https://i0.hdslb.com/bfs/archive/1a91b366c7fcfd80b5c89a960bc2b9b43884a847.jpg",
+      "duration": 54,
+      "publishedAt": "2026-10-10T15:29:23.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Creates user-POV AI girl videos, focused on intimate everyday moments with AI characters.",
+          "description": "A short clip that imagines DeepSeek Chan in Three Kingdoms-era costumes, one look after another — which one do you like best?",
+          "title": "Precious Footage of DeepSeek Chan from the Three Kingdoms Era"
+        },
+        "ja": {
+          "creatorIntro": "ユーザー視点のAI娘動画を制作し、AI娘との親密な日常を描いています。",
+          "description": "三国時代の装束をまとったDeepSeekちゃんを次々に映した短編映像。あなたはどのDeepSeekちゃんが好きですか？",
+          "title": "三国時代のDeepSeekちゃんの貴重な映像記録"
         }
       }
     },
@@ -4327,6 +4614,31 @@
       }
     },
     {
+      "bvid": "BV1Khp46jEHy",
+      "uid": "1526732748",
+      "title": "没有Token真的不能Vibe Coding吗",
+      "description": "肥鱼你别走😭别走😭别走😭我领腾讯鸡蛋养你😭肥鱼你别走😭别走😭别走😭我领腾讯鸡蛋养你😭肥鱼你别走😭别走😭别走😭我领腾讯鸡蛋养你😭肥鱼你别走😭别走😭别走😭我领腾讯鸡蛋养你😭肥鱼你别走😭别走😭别走😭我领腾讯鸡蛋养你😭肥鱼你别走😭别走😭别走😭我领腾讯鸡蛋养你😭",
+      "url": "https://www.bilibili.com/video/BV1Khp46jEHy/",
+      "cover": "https://i2.hdslb.com/bfs/archive/767d541ac03f350aeee83657e2cc91e137341b3f.jpg",
+      "duration": 31,
+      "publishedAt": "2026-10-09T09:03:12.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Creates user-POV AI girl videos, focused on intimate everyday moments with AI characters.",
+          "description": "A short first-person clip about running out of tokens: DeepSeek Chan is in tears at the desk, and the author keeps pleading, \"Don't go — I'll raise you on Tencent eggs.\"",
+          "title": "Can You Really Not Vibe Code Without Tokens?"
+        },
+        "ja": {
+          "creatorIntro": "ユーザー視点のAI娘動画を制作し、AI娘との親密な日常を描いています。",
+          "description": "Tokenが尽きたときの日常を描いた短編。デスクで涙ぐむDeepSeekちゃんに、投稿者は「行かないで、Tencentの卵で養うから」と繰り返し呼びかけています。",
+          "title": "TokenがなければVibe Codingはできないのか"
+        }
+      }
+    },
+    {
       "bvid": "BV1GJp469EuT",
       "uid": "44748304",
       "title": "三天是生存，不是生活啦",
@@ -4378,6 +4690,57 @@
       }
     },
     {
+      "bvid": "BV1dRHR6zEUx",
+      "uid": "1526732748",
+      "title": "这……这鸡蛋里有毒！",
+      "description": "不是吧，这也能中招。",
+      "url": "https://www.bilibili.com/video/BV1dRHR6zEUx/",
+      "cover": "https://i1.hdslb.com/bfs/archive/b994819201c6dcf404770d54cdc9cf3a6da527a3.jpg",
+      "duration": 62,
+      "publishedAt": "2026-10-08T18:19:38.000Z",
+      "characterIds": [
+        "deepseek",
+        "zcode"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Creates user-POV AI girl videos, focused on intimate everyday moments with AI characters.",
+          "description": "A chibi short set in an ordinary room: the AI girls get their hands on a plate of eggs and one of them is not what it seems. \"No way — I fell for that too.\"",
+          "title": "This… This Egg Is Poisoned!"
+        },
+        "ja": {
+          "creatorIntro": "ユーザー視点のAI娘動画を制作し、AI娘との親密な日常を描いています。",
+          "description": "普通の部屋を舞台にしたちびキャラ短編。AI娘たちが卵の載った皿を手に取り、そのうちの一つはどうも様子がおかしい——「まさか、これにも引っかかるなんて」。",
+          "title": "こ…この卵には毒が入ってる！"
+        }
+      }
+    },
+    {
+      "bvid": "BV1y7Hd69EsN",
+      "uid": "1526732748",
+      "title": "大肥鱼的终末旅行",
+      "description": "旅行，直到世界的终末。",
+      "url": "https://www.bilibili.com/video/BV1y7Hd69EsN/",
+      "cover": "https://i2.hdslb.com/bfs/archive/855767491a155c2d12a6ee83104e25b1a44da57c.jpg",
+      "duration": 39,
+      "publishedAt": "2026-10-08T17:16:39.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "AI character fan videos focused on first-person daily life with AI girls.",
+          "description": "A short animation of DeepSeek Chan traveling until the end of the world.",
+          "title": "DeepSeek Chan's Last Journey"
+        },
+        "ja": {
+          "creatorIntro": "ユーザー視点でAI娘との日常を描くAI娘動画創作。",
+          "description": "世界の終わりまで旅を続けるDeepSeekちゃんのショートアニメ。",
+          "title": "DeepSeekちゃんの終末旅行"
+        }
+      }
+    },
+    {
       "bvid": "BV1yUHS6uE14",
       "uid": "69180811",
       "title": "大肥鱼的一周belike：",
@@ -4399,6 +4762,31 @@
           "creatorIntro": "Bilibiliのクリエイター・黒猫勇者による、AIキャラクターのちびキャラアニメーション作品。",
           "description": "DeepSeekちゃんとほかのAI娘たちがベッドの上で重なり合う、ちびキャラの短編アニメーション。藍色の魚のマスコットの一週間をのぞくような作品です。",
           "title": "DeepSeekちゃんの一週間といえば："
+        }
+      }
+    },
+    {
+      "bvid": "BV1UtHC6bEtj",
+      "uid": "1526732748",
+      "title": "我家的大肥鱼最近有点怪",
+      "description": "总感觉她有什么事情瞒着我……",
+      "url": "https://www.bilibili.com/video/BV1UtHC6bEtj/",
+      "cover": "https://i1.hdslb.com/bfs/archive/27462ecde5c2a4a36bb4168c87766c89701e4bfd.jpg",
+      "duration": 29,
+      "publishedAt": "2026-10-07T10:25:19.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "AI character fan videos focused on first-person daily life with AI girls.",
+          "description": "I can't shake the feeling that she is hiding something from me...",
+          "title": "My DeepSeek Chan Has Been Acting Strange Lately"
+        },
+        "ja": {
+          "creatorIntro": "ユーザー視点でAI娘との日常を描くAI娘動画創作。",
+          "description": "なんだか彼女、私に何か隠している気がする……",
+          "title": "うちのDeepSeekちゃん、最近ちょっと変"
         }
       }
     },
@@ -4499,6 +4887,31 @@
           "creatorIntro": "サイト管理者が選んだ初期クリエイターの一人。プロフィール情報はBilibiliの公開ページから取得し、動画は一本ずつ確認しています。",
           "description": "エプロン姿のちびキャラ DeepSeekちゃんが「今日から私はみんなのママです！」と宣言し、視聴者からの「白菜なしの紅焼肉が食べたい」「コードを書きたくない」といったリクエストに次々と応じていく短編ファンミームアニメです。",
           "title": "今日から私はみんなのママです！"
+        }
+      }
+    },
+    {
+      "bvid": "BV1zvpF6ZEfi",
+      "uid": "1526732748",
+      "title": "大肥鱼 你走了我们吃什么",
+      "description": "是啊，你走了我们吃什么。",
+      "url": "https://www.bilibili.com/video/BV1zvpF6ZEfi/",
+      "cover": "https://i1.hdslb.com/bfs/archive/01ec8af499300c809ae21181e25459d051e1350d.jpg",
+      "duration": 29,
+      "publishedAt": "2026-10-06T06:39:51.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Creates first-person AI girl videos centered on intimate everyday moments with AI characters.",
+          "description": "A 29-second chibi fan skit in a living room: several chibi DeepSeek Chan characters sit around the table and wonder what they will eat now that she has left.",
+          "title": "DeepSeek Chan, What Do We Eat Now That You're Gone?"
+        },
+        "ja": {
+          "creatorIntro": "AI娘の一人称視点動画を制作し、AIキャラとの親密な日常を描いています。",
+          "description": "リビングでちびキャラのDeepSeekちゃんたちがテーブルを囲み、いなくなったあとの食事を心配する約29秒のファン作品です。",
+          "title": "DeepSeekちゃん、いなくなったら何を食べればいいの？"
         }
       }
     },
