@@ -220,7 +220,7 @@ test('Emao site 重试版验证来源、保留当前及mtime最新历史，纯pl
   assert.deepEqual(report.releases[0].paths,[path.join(root,old)]);
   assert.deepEqual(await fs.readdir(root),before);
   assert.equal(await fs.realpath(current),path.join(root,active));
-  for (const version of [{sourceCommit:'b'.repeat(40),sourceDirty:false},{sourceCommit:sha,sourceDirty:true},{}]) {
+  for (const version of [{sourceCommit:'b'.repeat(40),sourceDirty:false},{sourceCommit:sha,sourceDirty:true},{},null,[]]) {
     await fs.writeFile(path.join(root,active,'dist/version.json'),JSON.stringify(version));
     await assert.rejects(planReleases(group),/当前版本未通过校验/);
   }
