@@ -9,12 +9,21 @@ const named = value => {
 };
 const abs = value => new URL(value, ORIGIN + '/').href;
 
+export function workLicenseURL(value) {
+  if (typeof value !== 'string' || !/^https?:\/\//i.test(value) || /[\s\\]/.test(value)) return '';
+  try {
+    const url = new URL(value);
+    return ['http:', 'https:'].includes(url.protocol) && url.hostname && !url.username && !url.password ? url.href : '';
+  } catch { return ''; }
+}
+
 // 投稿者的展示署名不等于作者身份；未知信息保留为说明，不生成虚构 Person。
 export function imageRights(work) {
   const attribution = workAttribution(work);
   const creator = named(work.origin?.author);
   const credit = named(attribution.name) || (!attribution.explicit ? named(work.submitter?.name) : '');
   const type = LICENSE_TYPES.has(work.license?.type) ? work.license.type : 'unknown';
+  const licenseURL = workLicenseURL(work.license?.url);
   return {
     type,
     creator,
@@ -23,8 +32,8 @@ export function imageRights(work) {
     copyrightNotice: type === 'cc0'
       ? '作品标注为 CC0 公共领域；以作品授权说明为准。'
       : creator ? `图片版权归原作者 ${creator} 所有。` : '图片版权归原作者所有；原作者未标注。',
-    license: `${ORIGIN}/about.html#license-${type}`,
-    acquireLicensePage: `${ORIGIN}/about.html#licensing`
+    license: licenseURL || `${ORIGIN}/about.html#license-${type}`,
+    acquireLicensePage: licenseURL || `${ORIGIN}/about.html#licensing`
   };
 }
 

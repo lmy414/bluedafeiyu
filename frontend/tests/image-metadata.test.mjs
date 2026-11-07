@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import { imageMetadata, imageRights } from '../src/lib/image-metadata.mjs';
+import { imageMetadata, imageRights, workLicenseURL } from '../src/lib/image-metadata.mjs';
 
 const sample = { name: '测试作品', slug: 'test', displayUrl: '/images/test.webp', thumbUrl: '/images/thumb.webp', tags: [] };
 test('未知作者不变成投稿者或占位 Person，授权备注不变成网址', () => {
@@ -39,9 +39,13 @@ test('所有发布页的四项字段有可达锚点，结构化数据与浮层�
     assert.ok(meta, work.slug);
     for (const key of ['license', 'acquireLicensePage']) {
       const url = new URL(meta[key]);
-      assert.equal(url.protocol, 'https:');
-      assert.equal(url.pathname, '/about.html');
-      assert.ok(about.includes(`id="${url.hash.slice(1)}"`), `${work.slug}: ${key}`);
+      const explicit = workLicenseURL(work.license?.url);
+      if (explicit) assert.equal(meta[key], explicit);
+      else {
+        assert.equal(url.protocol, 'https:');
+        assert.equal(url.pathname, '/about.html');
+        assert.ok(about.includes(`id="${url.hash.slice(1)}"`), `${work.slug}: ${key}`);
+      }
       assert.equal(meta[key], overlay[work.slug].rights[key]);
     }
     for (const key of ['creditText', 'copyrightNotice']) {
@@ -51,6 +55,6 @@ test('所有发布页的四项字段有可达锚点，结构化数据与浮层�
       assert.ok(html.includes(escaped), `${work.slug}: ${key} 未显示`);
     }
     assert.equal(meta.creator?.name, imageRights(work).creator || undefined, work.slug + ': creator must match the recorded original artist');
-    assert.ok(!meta.license.includes('creativecommons.org'), '没有版本依据时不指定 CC 版本');
+    if (!workLicenseURL(work.license?.url)) assert.ok(!meta.license.includes('creativecommons.org'), '没有版本依据时不指定 CC 版本');
   }
 });
