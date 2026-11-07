@@ -155127,5 +155127,106 @@
         "licenseNote": "作者から本サイトへの収録許可を得ています。利用条件と著作権については作者のリポジトリをご確認ください。その他の転載や商用利用は作者にお問い合わせください。"
       }
     }
+  },
+  {
+    "id": "sticker_0c6c30dcbfca1d6d8803dc05",
+    "name": "维特鲁姆鲸鲸",
+    "description": "蓝发少女身披深蓝色斗篷，肩头围一圈白色绒毛领，胸前深蓝护甲印有 DeepSeek 标志，白色长裙配银灰腰带，身后露出鲸尾。白底全身立绘，人物握拳而立，表情平静。",
+    "commentary": "这身披风是不是有点太隆重了？白绒毛领一围上，我差点以为自己要去参加什么王的加冕。可尾巴还是藏不住呀——站得再端庄，鲸鱼终究是鲸鱼。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/0c6c30dcbfca1d6d.png",
+    "thumbnailPath": "submissions/previews/deepseek/0c6c30dcbfca1d6d.webp",
+    "fullPath": "submissions/large/deepseek/0c6c30dcbfca1d6d.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 941,
+    "height": 1671,
+    "fileSize": 1780096,
+    "sha256": "0c6c30dcbfca1d6d8803dc0546170f98da5d436c9d1a58b0e15b62e1ebb1b314",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "鲸鱼",
+      "披风",
+      "白裙",
+      "立绘"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-07T08:00:50.322Z",
+    "updatedAt": "2026-11-07T08:00:50.322Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611070133",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "fe446b94c6f8735e37a1fec5fa0849d5935b3fecc7801676096f0727781ae6da",
+      "en": {
+        "commentary": "Isn't this cape a bit much? The moment that white fur collar settled on my shoulders, I half expected someone to hand me a crown. But the tail still gives me away — stand as regally as you like, a whale is still a whale.",
+        "description": "A blue-haired girl draped in a deep blue cape with a thick white fur collar, a DeepSeek emblem on the blue chest armor, a white gown with a silver-grey belt, and a whale tail visible behind her. Full-body standing illustration on a white background, fists lightly clenched, calm expression.",
+        "faq": [
+          {
+            "answer": "It is a full-body standing illustration of a single character on a plain white background, drawn as fan art of DeepSeek Chan.",
+            "question": "What kind of image is this?"
+          },
+          {
+            "answer": "DeepSeek Chan is recognizable by the whale tail, the whale-fin-like ears and the DeepSeek emblem on the chest armor.",
+            "question": "How can you tell which character it shows?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Viltrum Whale",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan fan art: a blue-haired whale girl in a deep blue fur-collared cape and white gown, standing full body against a white background.",
+        "seoTitle": "Viltrum Whale — DeepSeek Chan Standing Illustration",
+        "tags": [
+          "DeepSeek Chan",
+          "whale",
+          "cape",
+          "white dress",
+          "standing illustration"
+        ]
+      },
+      "ja": {
+        "commentary": "このマント、ちょっと大げさじゃない？ 白いファーを肩にのせた瞬間、誰かに王冠を渡されるのかと思っちゃった。でもしっぽは隠せないんだよね——どんなに淑やかに立っても、クジラはクジラなのだ。",
+        "description": "青い長い髪の少女が濃紺のマントをまとい、肩には白いファーの襟巻き。胸の濃紺の鎧には DeepSeek のエンブレム、白いロングドレスに銀色のベルト、背後にはクジラのしっぽがのぞく。白背景の全身立ち絵で、拳を軽く握り、穏やかな表情で立っている。",
+        "faq": [
+          {
+            "answer": "白い背景に一人のキャラクターを描いた全身立ち絵で、DeepSeek Chan の二次創作イラストです。",
+            "question": "どんなイラストですか？"
+          },
+          {
+            "answer": "クジラのしっぽ、クジラのひれのような耳、胸の鎧の DeepSeek エンブレムで DeepSeek Chan と分かります。",
+            "question": "どのキャラクターかはどうやって分かりますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ヴィルトラム・クジラ",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan の二次創作。濃紺のファー付きマントと白いドレスをまとった青髪のクジラ娘を、白背景に全身で描いた立ち絵です。",
+        "seoTitle": "ヴィルトラム・クジラ — DeepSeek Chan の立ち絵",
+        "tags": [
+          "DeepSeek Chan",
+          "クジラ",
+          "マント",
+          "白いドレス",
+          "立ち絵"
+        ]
+      }
+    }
   }
 ]

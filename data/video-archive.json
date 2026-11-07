@@ -85,8 +85,8 @@
       "intro": "我想做很多视频，做很多很好玩的视频，首先肯定是自己觉得很好玩，其次嘛，也想传播快乐给大家。",
       "avatar": "https://i2.hdslb.com/bfs/face/e3445be765ec330ac29b07c328496e44ec04077a.jpg",
       "i18n": {
-        "en": "I want to make lots of videos, and really fun ones at that. First of all because I find them fun myself, and secondly because I want to share the joy with everyone.",
-        "ja": "楽しい動画をたくさん作りたいです。まずは自分が楽しいと思えること、そしてその楽しさをみんなに届けたいと思っています。"
+        "en": "I want to make lots of videos, lots of really fun videos — first because I enjoy them myself, and then because I want to share the fun with everyone.",
+        "ja": "たくさん動画を作りたいです。たくさん楽しい動画を。まずは自分が楽しいと思うこと、それからみんなにも楽しさを届けたいと思っています。"
       }
     },
     {
@@ -190,6 +190,31 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1tS4n6CET4",
+      "uid": "9126506",
+      "title": "大肥鱼妻子与女儿鲸鲸与冒险者爸爸",
+      "description": "晨间木屋餐厅，大肥鱼正在包魔兽肉饺子，悄悄筹备一件重要的事。女儿鲸鲸闻香跑来，好奇追问今天是什么特别日子，大肥鱼笑着卖起关子，悬念留在热气腾腾的餐桌边。",
+      "url": "https://www.bilibili.com/video/BV1tS4n6CET4/",
+      "cover": "https://i0.hdslb.com/bfs/archive/6befe7bba32b1be28f05404916cab51ba4107aea.jpg",
+      "duration": 31,
+      "publishedAt": "2026-11-07T12:37:06.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, lots of really fun videos — first because I enjoy them myself, and then because I want to share the fun with everyone.",
+          "description": "In a morning cabin kitchen, DeepSeek Chan is folding monster-meat dumplings while quietly preparing something important. Daughter Jingjing runs over, drawn by the aroma, and eagerly asks what makes today so special; the answer is kept behind a smile, leaving the suspense hanging over the steaming table.",
+          "title": "DeepSeek Chan's Wife and Daughter Jingjing, and the Adventurer Dad"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作りたいです。たくさん楽しい動画を。まずは自分が楽しいと思うこと、それからみんなにも楽しさを届けたいと思っています。",
+          "description": "朝のログハウスの食堂で、ディープシークちゃんは魔獣肉の餃子を包みながら、大切なことを静かに準備している。香りに誘われて娘のジンジンが駆け寄り、今日は何の特別な日なのかと興味津々に尋ねる。答えは笑顔でかわされ、湯気の立つ食卓に謎が残る。",
+          "title": "ディープシークちゃんの妻と娘ジンジン、そして冒険者パパ"
+        }
+      }
+    },
     {
       "bvid": "BV1Tt476wExU",
       "uid": "3747573030456892",
