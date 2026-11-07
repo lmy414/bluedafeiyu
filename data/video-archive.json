@@ -184,12 +184,44 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i1.hdslb.com/bfs/face/e11401d7d7cc97ee445d65617b48644b44f7fc42.jpg",
       "i18n": {
-        "en": "Dongbing makes short AI-character fan animations on Bilibili.",
-        "ja": "BilibiliでAIキャラクターの短編同人アニメを制作している投稿者。"
+        "en": "Bilibili creator Dongbing, who posts short animated clips built around AI product mascot characters.",
+        "ja": "Bilibiliの投稿者・冬冰。AI製品の擬人化キャラクターを題材にしたショートアニメを投稿している。"
       }
     }
   ],
   "videos": [
+    {
+      "bvid": "BV13u4V6ZEty",
+      "uid": "44748304",
+      "title": "快给我啃一口垫垫肚子",
+      "description": "视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色形象参考来自b站up：﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿@ZipZipPipe  ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿  ﻿ ﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿@这个刀子真甜  ﻿",
+      "url": "https://www.bilibili.com/video/BV13u4V6ZEty/",
+      "cover": "https://i0.hdslb.com/bfs/archive/6a934a69f8faea19f8db325fc741619709fb0b66.jpg",
+      "duration": 232,
+      "publishedAt": "2026-11-07T00:00:00.000Z",
+      "characterIds": [
+        "deepseek",
+        "qwen",
+        "grok",
+        "claude",
+        "doubao",
+        "gpt",
+        "glm",
+        "gemini"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Bilibili creator Dongbing, who posts short animated clips built around AI product mascot characters.",
+          "description": "A short animated skit in which the chibi mascot girls of several AI products — DeepSeek Chan, Qwen Chan, Grok Chan, Claude Chan, Doubao Chan, GPT Chan, GLM Chan and Gemini Chan — gather on a raft at sea, share food and banter while a tiny blue-haired girl begs for a bite to hold her over.",
+          "title": "Let Me Have a Bite to Hold Me Over"
+        },
+        "ja": {
+          "creatorIntro": "Bilibiliの投稿者・冬冰。AI製品の擬人化キャラクターを題材にしたショートアニメを投稿している。",
+          "description": "DeepSeekちゃん、千問ちゃん、Grokちゃん、Claudeちゃん、豆包ちゃん、GPTちゃん、GLMちゃん、Geminiちゃんなど複数のAI製品のちびキャラが海のいかだに集まり、食事を分け合いながら軽口を叩くショートアニメ。青髪の小さな娘が「一口かじらせて」とねだる場面が中心。",
+          "title": "ちょっと一口かじらせて腹ごしらえ"
+        }
+      }
+    },
     {
       "bvid": "BV1vu466kEa8",
       "uid": "9126506",

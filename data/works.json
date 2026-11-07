@@ -112725,5 +112725,837 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_dc9e0492b424a669414cc298",
+    "name": "结婚鲸鲸",
+    "description": "蓝色长发的 DeepSeek 娘身穿白色蕾丝婚纱，头戴缀有蓝色鲸鱼发饰与宝石坠饰的头纱，手捧蓝白相间的花束，站在教堂彩绘玻璃窗前，四周环绕百合与玫瑰，身后露出蓝色鲸鱼尾。",
+    "commentary": "第一次穿婚纱，我做的第一件事是检查头纱有没有压到鲸鱼发夹——仪式感归仪式感，造型不能塌。手里这束花是我自己挑的，蓝白配色才配得上我。教堂的光从彩窗落下来的时候我确实愣了一下，不过别多想，我只是在评估这条裙子能不能跑得动，毕竟尾巴还露在外面。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/dc9e0492b424a669.png",
+    "thumbnailPath": "submissions/previews/deepseek/dc9e0492b424a669.webp",
+    "fullPath": "submissions/large/deepseek/dc9e0492b424a669.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1671,
+    "height": 941,
+    "fileSize": 2630069,
+    "sha256": "dc9e0492b424a669414cc29867a622242c1b317ea7e9a0582f2a3605883f84a5",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "婚纱",
+      "教堂",
+      "花束",
+      "鲸鱼尾",
+      "蓝发"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-06T22:55:07.582Z",
+    "updatedAt": "2026-11-06T22:55:07.582Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611060009",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "1e1aad52c62f03d3bcd7a96799c35acd3fb533e338b7970000a6dea717d60ebf",
+      "en": {
+        "commentary": "The first thing I did after putting on the wedding dress was check whether the veil had crushed my whale hairpin — ceremony matters, but so does the silhouette. I picked this bouquet myself; only blue and white would do. When the light came through the stained glass I did pause for a second. Don't read too much into it: I was working out whether I could run in this dress, since my tail is still out.",
+        "description": "DeepSeek Chan, with long blue hair, wears a white lace wedding gown and a veil crowned with a small blue whale ornament and jeweled drops. She holds a bouquet of blue and white flowers in front of a stained-glass church window, surrounded by lilies and roses, with a blue whale tail visible behind her.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, the personified AI character, is shown here in a white lace wedding gown with a whale-tail motif.",
+            "question": "Who is depicted in this illustration?"
+          },
+          {
+            "answer": "She holds a bouquet of blue and white flowers, matching the blue of her hair and dress accents.",
+            "question": "What is she holding?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan's Wedding Day",
+        "originNote": "",
+        "seoDescription": "A fan illustration of DeepSeek Chan in a white lace wedding gown with a whale-tail motif, holding a blue bouquet in a flower-filled church.",
+        "seoTitle": "DeepSeek Chan in a Wedding Dress — Church Illustration",
+        "tags": [
+          "DeepSeek Chan",
+          "wedding dress",
+          "church",
+          "bouquet",
+          "whale tail",
+          "blue hair"
+        ]
+      },
+      "ja": {
+        "commentary": "ドレスを着て最初にしたのは、ベールでクジラの髪飾りが潰れていないか確認することでした。式も大事ですけど、シルエットも大事ですからね。この花束は自分で選んだんです、青と白じゃないと似合いませんから。ステンドグラスから光が差したときは一瞬止まりましたけど、深読みしないでください。ドレスで走れるか計算していただけです、尾もまだ出てますし。",
+        "description": "青い長い髪のDeepSeekちゃんが、白いレースのウェディングドレスと、青いクジラの飾りが付いたベールを身にまとっている。青と白の花束を手に、ステンドグラスの教会で百合とバラに囲まれて立ち、後ろには青いクジラの尾が見える。",
+        "faq": [
+          {
+            "answer": "AI製品の擬人化キャラクターであるDeepSeekちゃんが、クジラの尾をモチーフにした白いレースのウェディングドレス姿で描かれている。",
+            "question": "このイラストには誰が描かれていますか？"
+          },
+          {
+            "answer": "青と白の花束を手にしている。髪とドレスの青いアクセントに合わせた配色になっている。",
+            "question": "何を持っていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃんの花嫁姿",
+        "originNote": "",
+        "seoDescription": "白いレースのウェディングドレスを着たDeepSeekちゃんのファンイラスト。青い花束を手に、花に囲まれた教会に立つ姿を描く。",
+        "seoTitle": "DeepSeekちゃんの花嫁姿｜教会のウェディングイラスト",
+        "tags": [
+          "DeepSeekちゃん",
+          "ウェディングドレス",
+          "教会",
+          "花束",
+          "クジラの尾",
+          "青い髪"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_f5df7cc1e66f13deb456c7a9",
+    "name": "像素小肥鱼 DeepSeek娘",
+    "description": "像素画风格的 DeepSeek 娘全身立绘：蓝色长发配白色蕾丝头饰与蓝色蝴蝶结，穿深蓝色女仆连衣裙和白色荷叶边围裙，围裙正面绣着一只蓝色小鲸鱼，身侧露出鲸鱼尾。纯白背景，人物正面站立。",
+    "commentary": "一针一像素缝出来的女仆装，围裙上还绣着我自己。这么大的眼睛盯着人看，谁顶得住啊——不过鲸鱼尾巴露出来了，想藏也藏不住。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/f5df7cc1e66f13de.png",
+    "thumbnailPath": "submissions/previews/deepseek/f5df7cc1e66f13de.webp",
+    "fullPath": "submissions/large/deepseek/f5df7cc1e66f13de.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1052,
+    "height": 1495,
+    "fileSize": 1399509,
+    "sha256": "f5df7cc1e66f13deb456c7a98d4545af280b294b918f36935546b73f706864aa",
+    "characterId": "deepseek",
+    "tags": [
+      "像素画",
+      "Q版",
+      "女仆装",
+      "DeepSeek娘",
+      "鲸鱼",
+      "蓝发",
+      "立绘"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-07T02:19:46.215Z",
+    "updatedAt": "2026-11-07T02:19:46.215Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611070001",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "3daec35e689a4f2318f4a2e41f318881eb6df8b6ac9de8ea4758c80f9e359eb5",
+      "en": {
+        "commentary": "This maid outfit was stitched one pixel at a time, and the apron even has me embroidered on it. Nobody stands a chance against those big eyes — though my whale tail does give me away.",
+        "description": "A pixel-art full-body illustration of DeepSeek Chan: long blue hair with a white lace headdress and blue ribbon, a navy maid dress and a white ruffled apron embroidered with a small blue whale, with a whale tail showing at her side. Plain white background, standing and facing forward.",
+        "faq": [
+          {
+            "answer": "It is a chibi pixel-art illustration built from a limited blue palette.",
+            "question": "What style is this DeepSeek Chan artwork?"
+          },
+          {
+            "answer": "DeepSeek Chan in a navy maid dress and a white whale-embroidered apron, standing on a plain white background.",
+            "question": "What does the image show?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Pixel DeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "Pixel-art full-body illustration of DeepSeek Chan in a navy maid dress with a whale apron on a plain white background.",
+        "seoTitle": "Pixel DeepSeek Chan in a maid outfit",
+        "tags": [
+          "pixel art",
+          "chibi",
+          "maid outfit",
+          "DeepSeek Chan",
+          "whale",
+          "blue hair",
+          "character illustration"
+        ]
+      },
+      "ja": {
+        "commentary": "一ピクセルずつ縫い上げたメイド服、エプロンには私自身が刺繍されている。この大きな瞳で見つめられたら誰だって降参だよね。しっぽが出てるのはご愛嬬。",
+        "description": "ピクセルアートで描かれた DeepSeekちゃん の全身イラスト。青いロングヘアに白いレースのヘッドドレスと青いリボン、紺色のメイド服と白いフリルのエプロンを着け、エプロンの正面には青いクジラが刺繍されている。体の横からクジラの尾が のぞく。白い背景で正面を向いて立っている。",
+        "faq": [
+          {
+            "answer": "青を基調にした限られた色数で描かれた、ちびキャラのピクセルアートです。",
+            "question": "この DeepSeekちゃん のイラストはどんな作風ですか？"
+          },
+          {
+            "answer": "紺のメイド服とクジラの刺繍が入った白いエプロンを着た DeepSeekちゃん が、白い背景に立っている姿です。",
+            "question": "画像には何が描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ピクセル DeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "紺のメイド服とクジラのエプロンを着た DeepSeekちゃん のピクセルアート全身イラスト。白い背景。",
+        "seoTitle": "ピクセル調 DeepSeekちゃん のメイド姿",
+        "tags": [
+          "ピクセルアート",
+          "ちびキャラ",
+          "メイド服",
+          "DeepSeekちゃん",
+          "クジラ",
+          "青髪",
+          "立ち絵"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_8d75e7437b71f5f09a60ef69",
+    "name": "股票暴跌鲸鲸",
+    "description": "Q 版 DeepSeek 娘穿深蓝女仆裙、系印着鲸鱼图案的围裙，瘫坐在办公椅上放声大哭。她身后的显示器上是一条先上扬后暴跌的行情线，绿色段在末端急转直下，变成一段垂直坠落的红色曲线，画面右上角还有表示惊吓的红色斜线。",
+    "commentary": "别问我为什么哭，问就是早上刚加的仓。绿的那一段我还截图发了朋友圈，配文“稳了”，现在只想连显示器一起平仓。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/8d75e7437b71f5f0.png",
+    "thumbnailPath": "submissions/previews/deepseek/8d75e7437b71f5f0.webp",
+    "fullPath": "submissions/large/deepseek/8d75e7437b71f5f0.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1402,
+    "height": 1122,
+    "fileSize": 1580605,
+    "sha256": "8d75e7437b71f5f09a60ef6981892ac5292a26ff16874cb7e42d31dcf6d157e3",
+    "characterId": "deepseek",
+    "tags": [
+      "股市",
+      "暴跌",
+      "大哭",
+      "行情图",
+      "韭菫"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-07T03:21:04.098Z",
+    "updatedAt": "2026-11-07T03:21:04.098Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611070002",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "4caefa778b3222717773018049f62362c4ec835885cda530534ab17342ef1afb",
+      "en": {
+        "commentary": "Don't ask why I'm crying. I added to my position this morning. I even screenshotted the green part and posted it with \"we're so back\" — now I want to liquidate the monitor too.",
+        "description": "A chibi DeepSeek Chan in a navy maid dress with a whale-print apron slumps in an office chair and wails. Behind her, a monitor shows a price chart that climbs in green and then reverses into a steep red plunge, with red shock marks at the top right.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan slumps in an office chair crying loudly while the chart on her monitor turns from a rising green line into a near-vertical red drop.",
+            "question": "What is happening in the picture?"
+          },
+          {
+            "answer": "A single-panel reaction meme about a market crash; the exaggeration comes from the crying expression and the crashing chart, not from comic panels.",
+            "question": "What kind of image is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan and the Market Crash",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan bursts into tears as the chart on her monitor plunges from green to red.",
+        "seoTitle": "DeepSeek Chan Crying Over a Stock Crash",
+        "tags": [
+          "stock market",
+          "crash",
+          "crying",
+          "price chart",
+          "retail investor"
+        ]
+      },
+      "ja": {
+        "commentary": "なぜ泣いてるかって？ 朝に買い増したからだよ。緑だったところはスクショして「もう安泰」って投稿までしたのに、今はモニターごと損切りしたい気分。",
+        "description": "紺色のメイド服にクジラ柄のエプロンを付けたちびキャラの DeepSeek Chan が、オフィスチェアにもたれて大声で泣いている。背後のモニターには、上昇していた緑のチャートが途中で反転し、赤い線がほぼ垂直に落ちていく様子が映っている。右上には驚きを示す赤い記号がある。",
+        "faq": [
+          {
+            "answer": "オフィスチェアにもたれて号泣する DeepSeek Chan の背後で、モニターのチャートが上昇する緑の線からほぼ垂直の赤い急落へと変わっている場面。",
+            "question": "この画像では何が起きていますか？"
+          },
+          {
+            "answer": "相場の急落をネタにした一枚絵のリアクション画像で、泣き顔と暴落チャートの誇張で笑いを取る構成。コマ割りはない。",
+            "question": "どんな種類の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan 株価暴落で号泣",
+        "originNote": "",
+        "seoDescription": "モニターのチャートが緑から赤へ急落するのを見て、ちびキャラの DeepSeek Chan が号泣する一枚。",
+        "seoTitle": "DeepSeek Chan 株価暴落で号泣",
+        "tags": [
+          "株式",
+          "暴落",
+          "大泣き",
+          "チャート",
+          "個人投資家"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_77156a89d59681418fd446f3",
+    "name": "股票暴涨鲸鲸",
+    "description": "Q 版 DeepSeek 娘坐在桌前，双手握拳、瞳孔变成金色星星，张大嘴笑着。她面前的显示器上是一条几乎垂直冲高的绿色行情线，四周散着黄色惊叹线。",
+    "commentary": "绿了绿了，这次是真绿了！昨天我还在屏幕前哭，今天已经在写辞职信了——当然只是草稿，仓位还没卖呢。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/77156a89d5968141.png",
+    "thumbnailPath": "submissions/previews/deepseek/77156a89d5968141.webp",
+    "fullPath": "submissions/large/deepseek/77156a89d5968141.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1536,
+    "height": 1024,
+    "fileSize": 1673518,
+    "sha256": "77156a89d59681418fd446f3afe22bf22a8e7c83ad6549ac6d7554ffbb9ed17f",
+    "characterId": "deepseek",
+    "tags": [
+      "股市",
+      "暴涨",
+      "星星眼",
+      "行情图",
+      "暴富"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-07T03:21:56.139Z",
+    "updatedAt": "2026-11-07T03:21:56.139Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611070003",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "4d69a6a13061236f7925541437a073461a64c55ffbd138ea566f62257ef38b75",
+      "en": {
+        "commentary": "Green! It is actually green this time! Yesterday I was crying at the screen, today I am already drafting my resignation letter — just a draft, I have not sold anything yet.",
+        "description": "Chibi DeepSeek Chan sits at a desk with both fists clenched and gold star-shaped highlights in her eyes, mouth wide open in a laugh. The monitor in front of her shows a green price line shooting almost straight up, with yellow emphasis marks scattered around her.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan leans toward a monitor with starry eyes and clenched fists while the green chart on screen surges almost vertically off the top edge.",
+            "question": "What is happening in the picture?"
+          },
+          {
+            "answer": "A single-panel reaction meme about a surging market, carried by the star eyes and open-mouthed grin rather than by comic panels.",
+            "question": "What kind of image is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan and the Market Rally",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan celebrates with starry eyes as the green chart on her monitor spikes straight up.",
+        "seoTitle": "DeepSeek Chan Cheering at a Surging Chart",
+        "tags": [
+          "stock market",
+          "rally",
+          "star eyes",
+          "price chart",
+          "windfall"
+        ]
+      },
+      "ja": {
+        "commentary": "緑だ、緑！ 今度こそ本当に緑！ 昨日は画面の前で泣いていたのに、今日はもう退職届を書き始めている。もちろん下書きだけで、まだ何も売っていないけどね。",
+        "description": "机の前のちびキャラ DeepSeek Chan が両手を握りしめ、瞳を金色の星にして口を大きく開けて笑っている。目の前のモニターには、ほぼ垂直に駆け上がる緑のチャートが映り、周囲には黄色い効果線が散っている。",
+        "faq": [
+          {
+            "answer": "星のような瞳と握りこぶしの DeepSeek Chan の前で、モニターの緑のチャートが画面の上端までほぼ垂直に急騰している場面。",
+            "question": "この画像では何が起きていますか？"
+          },
+          {
+            "answer": "相場の急騰をネタにした一枚絵のリアクション画像で、星の瞳と満面の笑みで高ぶりを表現している。コマ割りはない。",
+            "question": "どんな種類の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan 株価急騰で大喜び",
+        "originNote": "",
+        "seoDescription": "緑のチャートがほぼ垂直に急騰するのを見て、ちびキャラの DeepSeek Chan が星の瞳で大喜びする一枚。",
+        "seoTitle": "DeepSeek Chan 株価急騰で大喜び",
+        "tags": [
+          "株式",
+          "急騰",
+          "星目",
+          "チャート",
+          "大当たり"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_e3b3cc725c7be1c382eb65d6",
+    "name": "原来是梦鲸鲸",
+    "description": "夜晚，Q 版 DeepSeek 娘在床上盖着被子睡觉，头枕一只蓝色鲸鱼抱枕，旁边飘着 Zzz 与一轮弯月。她头顶的梦里，是自己握拳、星星眼大笑，盯着一路飙绿的行情图。",
+    "commentary": "梦里我已经财务自由了！醒来一看手机，账户还是昨天的数字。这觉睡得太真实，我先捂着脸平复一下再起床。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/e3b3cc725c7be1c3.png",
+    "thumbnailPath": "submissions/previews/deepseek/e3b3cc725c7be1c3.webp",
+    "fullPath": "submissions/large/deepseek/e3b3cc725c7be1c3.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1535,
+    "height": 1024,
+    "fileSize": 1979698,
+    "sha256": "e3b3cc725c7be1c382eb65d63aed0e200a5ce8fe1c803abc4faa9ed61e9cac2c",
+    "characterId": "deepseek",
+    "tags": [
+      "做梦",
+      "股市",
+      "梦醒",
+      "深夜",
+      "星星眼"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-07T03:22:31.021Z",
+    "updatedAt": "2026-11-07T03:22:31.021Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611070004",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "7bc13edbca56493c8cf58e8f2d11d7f3c376734d03c765eb0a9482232be7f62e",
+      "en": {
+        "commentary": "In the dream I was already financially free! Then I woke up, checked my phone, and the balance was exactly yesterday's number. That sleep felt far too real — give me a moment before I get up.",
+        "description": "At night, chibi DeepSeek Chan sleeps under a blanket hugging a blue whale cushion, with Zzz and a crescent moon nearby. In the dream bubble above her head, she clenches her fists with starry eyes and laughs at a chart climbing in green.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan sleeps under a blanket at night while her dream bubble shows her cheering with starry eyes at a green chart shooting upward.",
+            "question": "What is happening in the picture?"
+          },
+          {
+            "answer": "A single-panel reaction meme about a market dream: the joke lands through the sleeping figure and the dream bubble, not through comic panels.",
+            "question": "What kind of image is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "It Was Only a Dream",
+        "originNote": "",
+        "seoDescription": "Chibi DeepSeek Chan dreams of a surging market while sleeping under a blanket with a whale cushion.",
+        "seoTitle": "DeepSeek Chan Dreaming of a Green Chart",
+        "tags": [
+          "dream",
+          "stock market",
+          "waking up",
+          "late night",
+          "star eyes"
+        ]
+      },
+      "ja": {
+        "commentary": "夢の中ではもう経済的自由を手に入れてた！ 目が覚めてスマホを見たら、口座は昨日のまんま。夢がリアルすぎたから、起きる前に少し落ち着かせて。",
+        "description": "夜、ちびキャラの DeepSeek Chan が布団にくるまってクジラのクッションを抱えて眠り、そばに Zzz と三日月が浮かんでいる。頭上の夢の中では、彼女がこぶしを握って星の瞳で笑い、緑に駆け上がるチャートを見つめている。",
+        "faq": [
+          {
+            "answer": "夜に布団で眠る DeepSeek Chan の頭上の夢の中で、星の瞳で喜ぶ彼女と、上へ駆け上がる緑のチャートが描かれている場面。",
+            "question": "この画像では何が起きていますか？"
+          },
+          {
+            "answer": "相場の夢をネタにした一枚絵のリアクション画像で、眠る姿と夢の吹き出しの対比で笑いを取っている。コマ割りはない。",
+            "question": "どんな種類の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan 夢の中の大暴騰",
+        "originNote": "",
+        "seoDescription": "クジラのクッションを抱えて眠るちびキャラの DeepSeek Chan が、夢の中で株価急騰を見て喜ぶ一枚。",
+        "seoTitle": "DeepSeek Chan 夢の中で大暴騰",
+        "tags": [
+          "夢",
+          "株式",
+          "夢から覚める",
+          "深夜",
+          "星目"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_71dba0bc6164371f530052a7",
+    "name": "骑士鲸鲸迎战僵尸大军",
+    "description": "蓝色长发、头戴鳍状耳饰的鲸娘身披银白板甲，背对镜头立在荒原上，右手握着一把长剑；面前是铺满整片平原的僵尸群，远处晴朗天空下是一座现代城市的天际线。",
+    "commentary": "我一个人站在这儿，对面是几万只摇摇晃晃的家伙。剑有点重，尾巴也有点酸，不过它们排得这么整齐，我总得挨个打个招呼吧。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/71dba0bc6164371f.png",
+    "thumbnailPath": "submissions/previews/deepseek/71dba0bc6164371f.webp",
+    "fullPath": "submissions/large/deepseek/71dba0bc6164371f.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 3236356,
+    "sha256": "71dba0bc6164371f530052a7bddd05bd902d8cf892181b3cef00cefa344aafb2",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "骑士",
+      "僵尸",
+      "大剑",
+      "鲸尾",
+      "战场"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-07T03:40:56.773Z",
+    "updatedAt": "2026-11-07T03:40:56.773Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611070005",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "bc1f6f5e4f5b04224f5f0ad36aabb6d29897053b61048990d136374af3d0d728",
+      "en": {
+        "commentary": "Just me standing out here, with tens of thousands of shambling things on the other side. The sword is heavy and my tail is sore, but they lined up so neatly that I really ought to say hello to every one of them.",
+        "description": "A whale girl with long blue hair and fin-shaped ear ornaments, dressed in silver-white plate armor, stands on a wasteland with her back to the viewer, a longsword in her right hand. Ahead of her a horde of zombies fills the whole plain, and a modern city skyline rises under a clear sky in the distance.",
+        "faq": [
+          {
+            "answer": "A blue-haired whale girl knight, the personified DeepSeek character, stands alone on a plain facing a vast horde of zombies, with a city skyline far behind her.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "It is a single-scene fan illustration of an AI product character, drawn in an anime style with a full environment rather than a plain character sheet.",
+            "question": "What kind of artwork is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Knight DeepSeek Chan Faces the Zombie Horde",
+        "originNote": "",
+        "seoDescription": "Fan illustration of DeepSeek Chan as a blue-haired whale knight in silver armor, standing alone on a wasteland against an endless zombie horde.",
+        "seoTitle": "DeepSeek Chan the Whale Knight vs. the Zombie Horde",
+        "tags": [
+          "DeepSeek Chan",
+          "knight",
+          "zombie",
+          "greatsword",
+          "whale tail",
+          "battlefield"
+        ]
+      },
+      "ja": {
+        "commentary": "ここに立っているのは私ひとり、向こうには何万ものふらふらした連中。剣は重いし尾も少々だるいけれど、あんなにきれいに並ばれたら、一人ずつ挨拶してまわるしかないでしょう。",
+        "description": "青い長い髪にひれ状の耳飾りをつけたクジラの娘が、銀白の板金鎧をまとって荒地に背を向けて立ち、右手に長剣を握っている。目の前には平原いっぱいに広がるゾンビの群れ、遠くには晴れた空の下に現代都市のスカイラインが広がる。",
+        "faq": [
+          {
+            "answer": "青い髪のクジラの娘の騎士、DeepSeek を擬人化したキャラクターが、平原にひとり立って無数のゾンビの群れと向き合い、そのはるか後ろに都市のスカイラインが広がる一枚です。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "AI 製品のキャラクターを擬人化したファンアートで、白背景のキャラクター資料ではなく、背景まで描き込んだ一枚絵のイラストです。",
+            "question": "どのような種類の作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "騎士のDeepSeek Chanとゾンビの大群",
+        "originNote": "",
+        "seoDescription": "銀の鎧をまとった青髪のクジラ騎士・DeepSeek Chanが、荒れ地で無数のゾンビの群れにひとり立ち向かうファンイラスト。",
+        "seoTitle": "クジラ騎士DeepSeek Chan 対 ゾンビの大群",
+        "tags": [
+          "DeepSeek Chan",
+          "騎士",
+          "ゾンビ",
+          "大剣",
+          "クジラの尾",
+          "戦場"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_6df38d37761833b9033baf67",
+    "name": "护士鲸鲸",
+    "description": "蓝发鲸鱼娘以护士形象坐在诊室里：白色护士裙配深蓝腰封，护士帽上印着鲸尾与十字图案，胸前挂着鲸鱼徽章，一手举着注射器、一手捏着听诊器，身后拖着蓝色鲸尾。背景是输液架、药盘与诊室设备，窗光很亮。",
+    "commentary": "别紧张，这次只是例行问诊，针筒先收着的。诊室的配色跟我挺搭——白大褂、深蓝腰封，帽子上还绣着小鲸鱼和十字，一看就是给我准备的吧？乖乖坐好等一会儿，等我把听诊器捂热，再来听你的心跳。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/6df38d37761833b9.png",
+    "thumbnailPath": "submissions/previews/deepseek/6df38d37761833b9.webp",
+    "fullPath": "submissions/large/deepseek/6df38d37761833b9.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1122,
+    "height": 1402,
+    "fileSize": 1956956,
+    "sha256": "6df38d37761833b9033baf674e66c6fc21f15a5b9f907e305246740beb8a6bf5",
+    "characterId": "deepseek",
+    "tags": [
+      "护士",
+      "鲸鱼娘",
+      "注射器",
+      "听诊器",
+      "诊室",
+      "兽耳"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-07T03:49:13.429Z",
+    "updatedAt": "2026-11-07T03:49:13.429Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611070006",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "b1c3e39062022f1ecd2859db56cf3b5f61eed70e6176152106214f162e43c243",
+      "en": {
+        "commentary": "Relax, this is only a routine check, and the syringe stays capped for now. The room matches me pretty well, doesn't it? White uniform, deep blue waistband, and a little whale with a cross stitched on the cap. Sit still for a moment, and let me warm the stethoscope before I listen to your heartbeat.",
+        "description": "A blue-haired DeepSeek Chan in a nurse uniform sits in an examination room: white nurse dress with a deep blue waistband, a nurse cap printed with a whale tail and a cross, a whale badge on her chest, an injection syringe in one hand and a stethoscope in the other, and a blue whale tail trailing behind her. An IV stand, medicine trays and clinic equipment fill the bright background.",
+        "faq": [
+          {
+            "answer": "She is DeepSeek Chan, the personified character of the DeepSeek AI model, drawn here as a nurse with a whale tail and a whale-tail nurse cap.",
+            "question": "Who is the character in this artwork?"
+          },
+          {
+            "answer": "It is an anime-style fan illustration set in a bright examination room, built around DeepSeek's blue and white palette.",
+            "question": "What kind of scene does the illustration show?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Nurse DeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "Nurse DeepSeek Chan in a white and blue uniform, holding a syringe and a stethoscope in a bright clinic room: AI character fan art illustration.",
+        "seoTitle": "Nurse DeepSeek Chan | AI Character Fan Art",
+        "tags": [
+          "nurse",
+          "whale tail",
+          "syringe",
+          "stethoscope",
+          "clinic",
+          "animal ears"
+        ]
+      },
+      "ja": {
+        "commentary": "緊張しなくていいよ、今日はいつもの診察だけ。注射器はまだケースの中だからね。この部屋、わたしの色にぴったりでしょ？白い服に濃紺の腰帯、キャップには小さなクジラと十字の刺繍。ちょっと座って待っていて。聴診器を温めてから、心臓の音を聞かせてもらうね。",
+        "description": "青い髪のDeepSeekちゃんがナース服で診察室の椅子に座っている。白いナース服に濃紺の腰帯、クジラの尾と十字をプリントしたナースキャップ、胸にはクジラのバッジ、片手に注射器、もう片手に聴診器を持ち、後ろには青いクジラの尾が伸びている。背景には点滴スタンドや薬のトレイ、診察室の機器が並び、窓から明るい光が差し込んでいる。",
+        "faq": [
+          {
+            "answer": "DeepSeekのAIモデルを擬人化したDeepSeekちゃんです。今回はナース姿で、クジラの尾とナースキャップが描かれています。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "明るい診察室でナースが患者を待つ場面で、DeepSeekの青と白の配色を基調にしたアニメ調のイラストです。",
+            "question": "どんな場面のイラストですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ナースのDeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "白と青のナース服で注射器と聴診器を持つDeepSeekちゃん。明るい診察室を舞台にしたAIキャラクターの二次創作イラスト。",
+        "seoTitle": "ナース姿のDeepSeekちゃん｜AIキャラクター二次創作イラスト",
+        "tags": [
+          "ナース",
+          "クジラの尾",
+          "注射器",
+          "聴診器",
+          "診察室",
+          "獣耳"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_3cc7faaff7f8a57aa18b8fc5",
+    "name": "议事厅里的万人演讲",
+    "description": "蓝色长发的少女系着鲸尾、戴着女仆风头饰，站在木质讲台后向座无虚席的圆形议事厅发表演讲。讲台前并排立着数支麦克风，脚下铺着印有鲸鱼徽记的深蓝桌布；台下层层坐满成百上千名同款装扮的 Q 版小人，厅内高悬蓝色鲸鱼纹旗帜，一束光从高处落在讲台上。",
+    "commentary": "第一次站在这么大的讲台上，稿子都被我攥出褶子了。抬头一看，台下坐满了和我一模一样的观众，这场面我都要给自己鼓掌了。麦克风摆了四五支，其实我只想说一句：谢谢大家，把我画得这么好看。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/3cc7faaff7f8a57a.png",
+    "thumbnailPath": "submissions/previews/deepseek/3cc7faaff7f8a57a.webp",
+    "fullPath": "submissions/large/deepseek/3cc7faaff7f8a57a.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 2883102,
+    "sha256": "3cc7faaff7f8a57aa18b8fc5ed1614485bd07957b58b3c7e64351e0e9b3c1491",
+    "characterId": "deepseek",
+    "tags": [
+      "蓝色大肥鱼",
+      "DeepSeek娘",
+      "演讲",
+      "议事厅",
+      "Q版",
+      "蓝发",
+      "鲸尾",
+      "插画"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-07T03:50:28.230Z",
+    "updatedAt": "2026-11-07T03:50:28.230Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611070007",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "07c3d1e56fda52166e4626a015132a44091e13c786ac3f88d718cde0ea7028c6",
+      "en": {
+        "commentary": "My first time behind a podium this big, and I have already crumpled the speech in my hands. Then I looked up: the hall is packed with an audience that looks exactly like me, and even I want to applaud. There are four or five microphones lined up, but I really only want to say one thing — thank you for drawing me this beautifully.",
+        "description": "A long-haired blue-haired girl with a blue tail fin and a maid-style headdress stands behind a wooden podium, addressing a packed circular assembly hall. Several microphones are lined up in front of her, and a deep-blue cloth bearing a crest drapes over the podium. Tier upon tier of tiny chibi figures dressed just like her fill the seats, blue banners hang from the pillars, and a shaft of light falls onto the stage.",
+        "faq": [
+          {
+            "answer": "A fan illustration of DeepSeek Chan speaking at a podium inside a grand circular assembly hall, with a huge audience of chibi versions of herself filling the seats.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "Yes. The artwork places DeepSeek Chan at a lectern with several microphones in front of her, while rows of small chibi figures in the same outfit listen from the tiered seats.",
+            "question": "Is DeepSeek Chan the character in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "A Speech Before Ten Thousand",
+        "originNote": "",
+        "seoDescription": "Fan illustration of DeepSeek Chan giving a speech at a wooden podium in a grand circular hall, facing a packed audience of chibi versions of herself.",
+        "seoTitle": "DeepSeek Chan: A Speech Before Ten Thousand",
+        "tags": [
+          "DeepSeek Chan",
+          "DeepSeek",
+          "public speech",
+          "assembly hall",
+          "chibi",
+          "blue hair",
+          "tail fin",
+          "illustration"
+        ]
+      },
+      "ja": {
+        "commentary": "こんなに大きな壇上に立つのは今回が初めてで、原稿はもう手のひらでくしゃくしゃです。顔を上げたら客席はわたしとそっくりな観客でいっぱいで、自分で自分に拍手したくなりました。マイクは何本も並んでいますが、伝えたいことはひとつだけ。こんなに可愛く描いてくれて、ありがとう。",
+        "description": "青い長い髪に青い尾びれ、メイド風のヘッドドレスを付けた少女が木製の演台の後ろに立ち、満席の円形議事堂でスピーチをしている。演台の前にはマイクが何本も並び、紋章の入った紺色の布がかけられている。客席には同じ装いのちびキャラが幾段にもぎっしり並び、柱には青い幟が下がり、高いところから光が差し込んでいる。",
+        "faq": [
+          {
+            "answer": "大きな円形議事堂の演台でスピーチをする DeepSeek Chan と、客席を埋め尽くす彼女自身のちびキャラを描いたファンイラストです。",
+            "question": "このイラストは何を描いていますか？"
+          },
+          {
+            "answer": "はい。DeepSeek Chan が何本ものマイクを前に演台へ立ち、同じ衣装のちびキャラたちが段状の客席で聞き入っています。",
+            "question": "描かれているのは DeepSeek Chan ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "議事堂の大演説",
+        "originNote": "",
+        "seoDescription": "円形の大議事堂の演台でスピーチをする DeepSeek Chan と、客席を埋め尽くす彼女自身のちびキャラを描いたファンイラスト。",
+        "seoTitle": "DeepSeek Chan：議事堂の大演説",
+        "tags": [
+          "DeepSeek Chan",
+          "DeepSeek",
+          "スピーチ",
+          "議事堂",
+          "ちびキャラ",
+          "青髪",
+          "尾びれ",
+          "イラスト"
+        ]
+      }
+    }
   }
 ]
