@@ -246,8 +246,10 @@ export async function localizeHtml(html, base, locale, snapshot) {
     }
     if (data['@type'] === 'ImageObject') {
       data.url = ORIGIN + localizedPath(base, locale);
-      data.license = ORIGIN + toPage(data.license);
-      data.acquireLicensePage = ORIGIN + toPage(data.acquireLicensePage);
+      for (const key of ['license', 'acquireLicensePage']) {
+        const target = new URL(data[key], ORIGIN + base);
+        if (target.origin === ORIGIN) data[key] = ORIGIN + toPage(data[key]);
+      }
       if (locale.id !== 'zh') {
         data.name = work?.i18n?.[locale.id]?.name || document.querySelector('main h1')?.textContent || data.name;
         data.description = work?.i18n?.[locale.id]?.description || desc;

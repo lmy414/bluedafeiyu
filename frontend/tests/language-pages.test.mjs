@@ -73,8 +73,10 @@ test('作品的冻结标识、作者、图片和评论串跨语言一致，许�
       assert.equal(data.contentUrl, original.contentUrl);
       assert.equal(data.thumbnailUrl, original.thumbnailUrl);
       assert.equal(data.url, ORIGIN + localizedPath(base, locale));
-      assert.equal(new URL(data.license).pathname, locale.prefix + '/about.html');
-      assert.equal(new URL(data.acquireLicensePage).pathname, locale.prefix + '/about.html');
+      for (const key of ['license', 'acquireLicensePage']) {
+        if (work.license?.url) assert.equal(data[key], work.license.url);
+        else assert.equal(new URL(data[key]).pathname, locale.prefix + '/about.html');
+      }
       assert.equal(document.querySelector('[data-static-work]').getAttribute('data-comment-term'), 'sticker-' + work.id);
       assert.ok(!data.creditText.includes('{credit}'));
       assert.ok(!data.copyrightNotice.includes('{creator}'));
