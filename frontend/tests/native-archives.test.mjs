@@ -194,3 +194,18 @@ test('Traditional role pages convert visible work text while retaining creator i
   for(const author of document.querySelectorAll('.author-name'))assert.equal(author.textContent,'简体作者');
   assert.equal(document.querySelector('.character-cover-credit').getAttribute('href'),'/zh-hant/works/frozen.html');
 });
+
+test('paginated type breadcrumbs use native archive labels for every character and category route',async()=>{
+ const fixture={...snapshot,characters:[...snapshot.characters,{id:'claude',name:'Claude娘',aliases:[]}],works:[]};
+ for(const language of ['en','ja'])for(const type of ['meme','illustration','setting','comic','standing','other'])for(const owner of ['characters/claude','categories'])for(const page of [2,3]){
+  const parent='/'+owner+'/'+type+'.html',base=parent.replace('.html','/page/'+page+'.html');
+  const chinese='Claude娘'+({meme:'表情包与梗图',illustration:'二创插画',setting:'设定图',comic:'漫画',standing:'立绘',other:'其他作品'}[type]);
+  const html='<html><head><title>'+chinese+'</title><link rel="canonical" href="'+ORIGIN+base+'"><meta name="description" content="作品档案"></head><body data-i18n-page="characterDetail"><main><div class="breadcrumbs"><a href="'+parent+'">'+chinese+'</a><span>第 '+page+' 页</span></div><header class="page-head"><h1>'+chinese+'</h1><p class="lede">作品档案</p></header></main></body></html>';
+  const {document}=parseHTML(await localizeHtml(html,base,LOCALES.find(l=>l.id===language),fixture));
+  const label=document.querySelector('.breadcrumbs a').textContent;
+  assert.equal(label,document.querySelector('h1').textContent,language+' '+base);
+  assert.equal(document.querySelector('.breadcrumbs a').getAttribute('href'),'/'+language+parent);
+  assert.equal(document.querySelector('.breadcrumbs > span:last-child').textContent,language==='en'?'Page '+page:page+'ページ目');
+  if(language==='en')assert.doesNotMatch(label,/[\u3400-\u9fff]/u);
+ }
+});

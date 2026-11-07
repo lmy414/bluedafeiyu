@@ -101,7 +101,14 @@ export function applyNativeArchives(document,api,base,snapshot){
   const page=base.match(/\/page\/(\d+)\.html$/)?.[1];
   const crumb=document.querySelector('.breadcrumbs > span:last-child');if(crumb)crumb.textContent=page?(en?'Page '+page:page+'ページ目'):c.title;
   for(const link of document.querySelectorAll('.breadcrumbs a')){
-    const id=link.getAttribute('href')?.match(/^\/characters\/([^/]+)\.html$/)?.[1];if(id)link.textContent=roleName(id);
+    const href=link.getAttribute('href');
+    const id=href?.match(/^\/characters\/([^/]+)\.html$/)?.[1];
+    if(id)link.textContent=roleName(id);
+    else{
+      // Pagination links back to a type archive, not only a character's main page.
+      const archive=context(href||'',api,snapshot);
+      if(archive?.type)link.textContent=archive.title;
+    }
   }
   let description;
   if(c.type){
