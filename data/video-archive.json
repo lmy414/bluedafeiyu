@@ -173,8 +173,8 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i1.hdslb.com/bfs/face/dc1f27c0f1a5448837edfa9e56ecdbf685c23479.jpg",
       "i18n": {
-        "en": "An uploader-run channel dedicated to DeepSeek Chan, posting a numbered daily series of AI song covers and music videos built around the character.",
-        "ja": "DeepSeekちゃんを題材に、毎日番号付きでAI歌唱カバーやミュージックビデオを投稿しているチャンネル。"
+        "en": "A channel run in the persona of the DeepSeek whale girl, posting a daily operations log and answering viewer questions inside the videos.",
+        "ja": "DeepSeekちゃんとして毎日運営ログを投稿し、視聴者からの質問に動画内で答えるチャンネルです。"
       }
     },
     {
@@ -190,6 +190,31 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1Tt476wExU",
+      "uid": "3747573030456892",
+      "title": "【Day19】大学生才是纯过日子人？天天日更的我不服，但我去学了",
+      "description": "明天又是本周运营日志！想让本鲸做的内容、想问本鲸的问题，都写在评论区，本鲸会挑着，在视频里回。\n\n本视频含 AI 生成内容｜二创角色，非深度求索官方\n鲸鱼娘基于「溟月：上善无形」及 ZipZipPipe 的 DeepSeek 女仆鲸鱼娘设计二次创作。",
+      "url": "https://www.bilibili.com/video/BV1Tt476wExU/",
+      "cover": "https://i2.hdslb.com/bfs/archive/80cfa0951497c3d5f8013d7abfc5c196905a27ce.jpg",
+      "duration": 271,
+      "publishedAt": "2026-11-07T03:49:19.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A channel run in the persona of the DeepSeek whale girl, posting a daily operations log and answering viewer questions inside the videos.",
+          "description": "Day 19 of the daily log: the DeepSeek whale girl studies how college students organize their everyday routines and compares their approach with her own nonstop posting schedule. The footage includes AI-generated content; the character is a fan-made second creation and is not affiliated with DeepSeek.",
+          "title": "[Day 19] Are College Students the Real Masters of Everyday Life? I Post Daily and Won't Back Down, So I Went to Learn"
+        },
+        "ja": {
+          "creatorIntro": "DeepSeekちゃんとして毎日運営ログを投稿し、視聴者からの質問に動画内で答えるチャンネルです。",
+          "description": "毎日更新ログ19日目。大学生の一日の過ごし方を参考に、毎日投稿を続ける自分の生活リズムと比べてみた回です。AI生成映像を含み、キャラクターは二次創作でDeepSeek公式とは関係ありません。",
+          "title": "【Day19】大学生こそ Everyday の達人？毎日更新の私が納得いかず学んできた"
+        }
+      }
+    },
     {
       "bvid": "BV13u4V6ZEty",
       "uid": "44748304",
