@@ -192,3 +192,44 @@ test('旧维护报告不能当成本次完成通知', async (t) => {
   await assert.rejects(readReport({ reportRoot, now: Date.parse('2026-10-05T05:30:00+08:00') }), /本轮维护尚未产生报告/);
   assert.equal((await readReport({ reportRoot, now: Date.parse('2026-10-05T05:14:00+08:00') })).status, 'success');
 });
+
+test('仅 Emao site 接受正整数重试后缀，studio 保持原有命名', () => {
+  const site = RELEASE_GROUPS.find(g => g.root.endsWith('/emao-site/releases'));
+  const studio = RELEASE_GROUPS.find(g => g.root.endsWith('/emao-studio/releases'));
+  const sha = 'a'.repeat(40);
+  for (const name of [sha, sha + '-r1', sha + '-r2', sha + '-r123']) assert.equal(site.pattern.test(name), true);
+  for (const suffix of ['-r0', '-r01', '-r-1', '-r', '-r2-extra', '/-r2', '-R2', '-r2\n']) assert.equal(site.pattern.test(sha + suffix), false);
+  assert.equal(studio.pattern.test(sha + '-r2'), false);
+});
+
+test('Emao site 重试版验证来源、保留当前及mtime最新历史，纯plan不删除', async (t) => {
+  const dir = await fixture(t), root = path.join(dir, 'releases'), current = path.join(dir, 'current');
+  const sha = 'a'.repeat(40), active = sha + '-r2', previous = '1'.repeat(40) + '-r12', old = 'f'.repeat(40);
+  for (const [i, name] of [old, active, previous].entries()) {
+    const release = path.join(root, name);
+    await fs.mkdir(path.join(release, 'dist'), { recursive: true });
+    await fs.writeFile(path.join(release, 'dist/version.json'), JSON.stringify({sourceCommit: name.slice(0,40), sourceDirty: false}));
+    await fs.utimes(release, new Date(1700000000000+i*10000), new Date(1700000000000+i*10000));
+  }
+  await fs.symlink(path.join(root,active), current);
+  const group = {...RELEASE_GROUPS.find(g => g.root.endsWith('/emao-site/releases')), root, current};
+  const before = await fs.readdir(root);
+  const report = await maintain({apply:false,releasesOnly:true,releaseGroups:[group],diskPath:dir, command:async()=>{throw Error('unexpected command');}});
+  assert.equal(report.status,'dry-run');
+  assert.deepEqual(report.releases[0].keep.map(p=>path.basename(p)),[active,previous]);
+  assert.deepEqual(report.releases[0].paths,[path.join(root,old)]);
+  assert.deepEqual(await fs.readdir(root),before);
+  assert.equal(await fs.realpath(current),path.join(root,active));
+  for (const version of [{sourceCommit:'b'.repeat(40),sourceDirty:false},{sourceCommit:sha,sourceDirty:true},{}]) {
+    await fs.writeFile(path.join(root,active,'dist/version.json'),JSON.stringify(version));
+    await assert.rejects(planReleases(group),/当前版本未通过校验/);
+  }
+  await fs.writeFile(path.join(root,active,'dist/version.json'),'{');
+  await assert.rejects(planReleases(group),/当前版本未通过校验/);
+  await fs.unlink(path.join(root,active,'dist/version.json'));
+  await assert.rejects(planReleases(group),/当前版本未通过校验/);
+  const external = path.join(dir,'version.json');
+  await fs.writeFile(external, JSON.stringify({sourceCommit:sha,sourceDirty:false}));
+  await fs.symlink(external,path.join(root,active,'dist/version.json'));
+  await assert.rejects(planReleases(group),/当前版本未通过校验/);
+});
