@@ -10,7 +10,7 @@ export const RELEASE_GROUPS = [
   { root: '/srv/www/dafeiyu/releases', current: '/srv/www/dafeiyu/current', pattern: /^\d{8}-\d{6}$/ },
   { root: '/srv/apps/dafeiyu-admin/releases', current: '/srv/apps/dafeiyu-admin/app', pattern: /^admin-[a-f0-9]+-\d{8}-\d{6}-\d+$/ },
   { root: '/srv/other-services/emao-studio/releases', current: '/srv/other-services/emao-studio/current', pattern: /^[a-f0-9]{40}$/, sortBy: 'mtime' },
-  { root: '/srv/other-services/emao-site/releases', current: '/srv/other-services/emao-site/current', pattern: /^[a-f0-9]{40}$/, sortBy: 'mtime' },
+  { root: '/srv/other-services/emao-site/releases', current: '/srv/other-services/emao-site/current', pattern: /^[a-f0-9]{40}(?:-r[1-9][0-9]*)?$/, sortBy: 'mtime', retryManifest: true },
 ];
 export const HEALTH_URLS = ['https://xn--pssy23gqgbz2d718b.com/'];
 export const FILE_RULES = [
@@ -51,6 +51,20 @@ export async function planReleases(group) {
     const file = path.join(group.root, name);
     const info = await fs.lstat(file);
     if (info.isDirectory() && !info.isSymbolicLink() && info.dev === stat.dev) {
+      if (group.retryManifest && /-r[1-9][0-9]*$/.test(name)) {
+        // Retry directories must prove they contain a clean build of the named commit.
+        const dist = path.join(file, 'dist');
+        const manifest = path.join(dist, 'version.json');
+        try {
+          if (await fs.realpath(dist) !== dist || await fs.realpath(manifest) !== manifest) continue;
+          if (!(await fs.lstat(manifest)).isFile()) continue;
+          const version = JSON.parse(await fs.readFile(manifest, 'utf8'));
+          if (version.sourceCommit !== name.slice(0, 40) || version.sourceDirty !== false) continue;
+        } catch (error) {
+          if (error.code === 'ENOENT' || error instanceof SyntaxError) continue;
+          throw error;
+        }
+      }
       entries.push(file);
       modified.set(file, info.mtimeMs);
     }
