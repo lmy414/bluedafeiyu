@@ -107,8 +107,8 @@
       "intro": "每日AI小四格/小动画",
       "avatar": "https://i0.hdslb.com/bfs/face/6f8600ad3d37069ef5106eaf96e7d5a936ba8c50.jpg",
       "i18n": {
-        "en": "Daily AI four-panel comics and short animations",
-        "ja": "毎日AI4コマ漫画・ショートアニメ"
+        "en": "Posts a daily AI four-panel comic and short animation.",
+        "ja": "毎日AI四コマ漫画とショートアニメを投稿しています。"
       }
     },
     {
@@ -201,6 +201,31 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1dsWE63EBR",
+      "uid": "15475629",
+      "title": "【科普向】《大肥鱼与做不完的工作与影分身》",
+      "description": "原事件（2026-11-01）：DeepSeek Harness 开源 dsh-superagent：路由器+并行 Worker 的研究原型\n\n以下是小作文\n\"主人，您的茶——啊，还有这个 issue，那个群消息，还有那个 CI……\"DeepSeek娘端着托盘在一屋子窗口之间转圈，鲸鱼尾巴扫倒了第三个马克杯。屏幕上的会话标签已经排到看不清，她眼前冒蚊香圈：\"人类……只能同时跟 3～5 个会话的说……\"\n\n她把托盘一放，蓝发一甩：\"那就不让主人看会话了！\"她系紧围裙，啪地一拍手——一排巴掌大的小鲸鱼女仆\"噗噗\"冒了出来。DeepSeek娘戴上写着\"Router\"的小臂章，坐镇中央：\"有人 @ 我，我就开一张 Ticket！一张 Ticket，一个小分身，各干各的！\"工单像纸飞机一样飞向每个小女仆，她们抱着工单钻进各自的小房间。\n\n之后屋里安静得出奇。小分身们埋头敲键盘，一个个 PR 悄悄冒出来。DeepSeek娘只回一句\"收到～\"，然后就闭嘴干活。墙上贴着便签：\"没人叫的活：先 observe，只记不做。\"\n\n傍晚，网页面板上只剩寥寥几条\"需要人工\"。DeepSeek娘端茶给主人，尾巴差点把显示器扫下桌，又被小分身们七手八脚扶住。她挺起胸口：\"少打扰、多干活！\"——显示器角落的小贴纸写着：研究原型 · MIT · 非官方产品。\n\n来源：\nhttps://github.com/deepseek-ai/dsh-superagent-prototype/\nhttps://www.marktechpost.com/2026/11/01/deepseek-dsh-superagent-router-worker-coding-agent/\nhttps://agentgid.com/guides/deepseek-harness-super-agent-design-checked/\n\n【Credit】\n音乐：Cute Kids – Cheerful Chiptune\nGoldenSoundLabs · Pixabay\n图像生成：GPT Image 2.5 (Sunburst)\nAI-Chan illustrations — ZipZipPipe · CC BY-NC-SA 4.0.\nDeepseek-Chan original character — 上善无形.",
+      "url": "https://www.bilibili.com/video/BV1dsWE63EBR/",
+      "cover": "https://i2.hdslb.com/bfs/archive/6800fd14daa0dee5b9edd2bb85633c623e422b53.jpg",
+      "duration": 28,
+      "publishedAt": "2026-11-08T05:48:58.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Posts a daily AI four-panel comic and short animation.",
+          "description": "A chibi short from Muto_66's daily AI animation series. DeepSeek Chan juggles tea, issues, group chats and CI runs until she pins on a \"Router\" armband and calls up palm-sized whale-maid clones: every incoming request becomes one ticket, and each clone takes its ticket into its own little room and quietly opens a pull request. The skit walks through the DeepSeek Harness dsh-superagent router-plus-parallel-worker research prototype and closes with a note that it is an unofficial, MIT-licensed prototype.",
+          "title": "DeepSeek Chan and the Never-Ending Work and Shadow Clones (Explainer)"
+        },
+        "ja": {
+          "creatorIntro": "毎日AI四コマ漫画とショートアニメを投稿しています。",
+          "description": "Muto_66の毎日AIアニメ枠のちびキャラ作品。お茶やissue、グループチャット、CIに追われるDeepSeekちゃんが「Router」の腕章を着け、手のひらサイズの鯨メイドの分身を呼び出す。届いた依頼は1枚のチケットになり、分身がそれぞれの小部屋で黙々と作業してプルリクエストを出す。DeepSeek Harnessのdsh-superagent（ルーター＋並列ワーカー）研究プロトタイプを解説する内容で、最後に非公式・MITの試作であることが示される。",
+          "title": "DeepSeekちゃんと終わらない仕事と影分身（解説向け）"
+        }
+      }
+    },
     {
       "bvid": "BV1pG4x65EaD",
       "uid": "3747573030456892",

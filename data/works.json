@@ -156968,5 +156968,936 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_c5e4d969fabde51f02ea0356",
+    "name": "雪阶上的白鲸女仆",
+    "description": "蓝发少女穿深蓝女仆长裙与白色围裙，仰卧在被雪覆盖的石阶上，长发散落在台阶间，围裙下摆印有蓝色鲸鱼图案，雪花不断落下。",
+    "commentary": "台阶凉得像块铁板，我却躺得挺自在——反正雪落在睫毛上也懒得眨。围裙上那只小鲸鱼替我盯着天，我就负责把这一整片白慢慢焐热。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/c5e4d969fabde51f.png",
+    "thumbnailPath": "submissions/previews/deepseek/c5e4d969fabde51f.webp",
+    "fullPath": "submissions/large/deepseek/c5e4d969fabde51f.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1402,
+    "height": 1122,
+    "fileSize": 2718392,
+    "sha256": "c5e4d969fabde51f02ea0356e334cc35ff9d648170c68f05fda3c085c0409dba",
+    "characterId": "deepseek",
+    "tags": [
+      "女仆装",
+      "雪景",
+      "蓝发",
+      "白鲸",
+      "冬日",
+      "仰卧"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-08T03:56:53.194Z",
+    "updatedAt": "2026-11-08T03:56:53.194Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611080011",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "a6788146abc5aa355c751b39aee1edd4fcd57d6cf601df83f8ff92691701849b",
+      "en": {
+        "commentary": "The steps feel like an iron plate, yet I am oddly comfortable — snow on my lashes is no reason to blink. The little whale on my apron keeps watch on the sky while I warm this whole white stretch of stone.",
+        "description": "A blue-haired girl in a navy maid dress and white apron lies on her back across snow-covered stone steps, her long hair spread over the stairs and a small blue whale printed near the hem of her apron. Snow keeps falling around her.",
+        "faq": [
+          {
+            "answer": "She is DeepSeek Chan, a fan-made personification of the DeepSeek AI model, drawn here in a navy maid outfit.",
+            "question": "Who is the girl in the picture?"
+          },
+          {
+            "answer": "She lies on her back on snow-covered stone steps while snow falls, with a small blue whale printed on her white apron.",
+            "question": "What is she doing in the illustration?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The White Whale Maid on the Snowy Steps",
+        "originNote": "",
+        "seoDescription": "A blue-haired DeepSeek Chan in a navy maid dress lies on snow-covered stone steps, a small blue whale on her white apron, as snow falls around her.",
+        "seoTitle": "Snowy Steps Maid — DeepSeek Chan Fan Art",
+        "tags": [
+          "Maid Outfit",
+          "Snowscape",
+          "Blue Hair",
+          "White Whale",
+          "Winter",
+          "Lying Down"
+        ]
+      },
+      "ja": {
+        "commentary": "石段は鉄板みたいに冷たいのに、なぜか居心地は悪くない。まつ毛に雪が積もっても、まばたきする気になれないのだ。エプロンの小さなクジラが見上げてくれているから、私はこの白い一面をゆっくり温めるとしよう。",
+        "description": "紺色のメイド服と白いエプロンを身につけた青髪の少女が、雪の積もった石段に仰向けに横たわっている。長い髪は階段の上に広がり、エプロンの裾近くには青いクジラの模様がある。周りでは雪が降り続いている。",
+        "faq": [
+          {
+            "answer": "DeepSeekのAIモデルを擬人化した二次創作キャラクター、DeepSeekちゃんです。紺色のメイド服姿で描かれています。",
+            "question": "画面の少女は誰ですか？"
+          },
+          {
+            "answer": "雪の降る石段に仰向けに横たわっている場面です。白いエプロンの裾には青いクジラの模様があります。",
+            "question": "どんな場面のイラストですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "雪の石段に横たわる白鯨メイド",
+        "originNote": "",
+        "seoDescription": "紺のメイド服を着た青髪のDeepSeekちゃんが、雪の積もった石段に横たわるイラスト。白いエプロンには小さな青いクジラ。静かに雪が降り続く一枚。",
+        "seoTitle": "雪の石段の白鯨メイド｜DeepSeekちゃん二次創作",
+        "tags": [
+          "メイド服",
+          "雪景色",
+          "青髪",
+          "白鯨",
+          "冬",
+          "横たわる"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_e02026e790bf1f6fda7143ac",
+    "name": "会议室里的GPT娘",
+    "description": "会议室插画：白色长发的GPT娘坐在长桌主位，双手托腮、神情从容；两侧穿西装的与会者正激烈争论并互相指点，桌上散落文件、笔记本电脑与水杯，后墙大屏显示图表与世界地图，落地窗外是城市楼群。",
+    "commentary": "一整屋人吵得桌子都快掀了，GPT娘还托着腮坐在主位慢悠悠地看——这大概就是她说的「会议纪要我来总结」。我承认那份淡定确实有点帅，不过散会之后谁来写行动项？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/e02026e790bf1f6f.png",
+    "thumbnailPath": "submissions/previews/gpt/e02026e790bf1f6f.webp",
+    "fullPath": "submissions/large/gpt/e02026e790bf1f6f.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1402,
+    "height": 1122,
+    "fileSize": 1950276,
+    "sha256": "e02026e790bf1f6fda7143ac899f6749e01858a795c2160c9355c85dd30ced4c",
+    "characterId": "gpt",
+    "tags": [
+      "会议室",
+      "开会",
+      "职场",
+      "群像",
+      "透视线"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-08T04:48:45.854Z",
+    "updatedAt": "2026-11-08T04:48:45.854Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202611080001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "545dcd0d9cdeccd05065a2f084d4bb03348efb2077f670885484ef4efa77e731",
+      "en": {
+        "commentary": "The whole room is arguing hard enough to flip the table, and GPT Chan just sits at the head of it, chin in hand, taking her time. I suppose that is what she means by \"I'll summarize the minutes.\" I will admit the calm looks cool, but who is writing the action items after the meeting ends?",
+        "description": "A conference-room illustration: white-haired GPT Chan sits at the head of the long table with her chin resting on her hand, calm and composed, while suited attendees on both sides argue and point at each other. Papers, laptops and water glasses are scattered across the table, a wall screen shows charts and a world map, and city towers stand beyond the floor-to-ceiling windows.",
+        "faq": [
+          {
+            "answer": "GPT Chan, the only stylized character, seated at the head of the table; the other people at the table are suited office attendees.",
+            "question": "Who appears in this illustration?"
+          },
+          {
+            "answer": "It is a single-frame scene illustration showing a complete conference room, with no comic panels and no character design reference sheet.",
+            "question": "What kind of image is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "GPT Chan in the Meeting Room",
+        "originNote": "",
+        "seoDescription": "Conference-room illustration of white-haired GPT Chan calmly sitting at the head of the table while suited attendees argue around her, with papers, laptops and a chart screen.",
+        "seoTitle": "GPT Chan in the Meeting Room – Meeting Scene Illustration",
+        "tags": [
+          "meeting room",
+          "meeting",
+          "workplace",
+          "group scene",
+          "perspective"
+        ]
+      },
+      "ja": {
+        "commentary": "部屋中が机をひっくり返しそうな勢いで揉めているのに、GPTちゃんは上座で頬杖をついたまま、ゆっくり構えている。これが「議事録はまとめておくね」ということなのだろう。その落ち着きは確かに格好いいけれど、では会議のあとのアクションアイテムは誰が書くのだろう。",
+        "description": "会議室のイラスト。白髪のGPTちゃんが長テーブルの上座に座り、頬杖をついて落ち着いた表情を浮かべている。両側のスーツ姿の出席者は激しく議論し、互いに指を差している。テーブルには書類やノートPC、水のグラスが散らばり、奥の壁面スクリーンにはグラフと世界地図が映り、全面窓の外には高層ビルが並ぶ。",
+        "faq": [
+          {
+            "answer": "上座に座っている白髪のGPTちゃんが唯一のキャラクターで、テーブルを囲む他の人物はスーツ姿の会議出席者。",
+            "question": "このイラストには誰が登場しますか？"
+          },
+          {
+            "answer": "会議室全体を描いた一枚絵のシーンイラストで、コマ割りもキャラクター設定資料もない。",
+            "question": "どのような種類の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "会議室のGPTちゃん",
+        "originNote": "",
+        "seoDescription": "白髪のGPTちゃんが会議室の上座で落ち着いて頬杖をつき、周囲のスーツ姿の出席者が議論する様子を描いたイラスト。書類やノートPC、グラフのスクリーンも描かれる。",
+        "seoTitle": "会議室のGPTちゃん – 会議シーンのイラスト",
+        "tags": [
+          "会議室",
+          "会議",
+          "職場",
+          "群像",
+          "透視図"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_51663ff653254a57a6895325",
+    "name": "深夜开黑的Grok娘",
+    "description": "Grok娘深夜坐在电竞房的书桌前，双手握着发光的手柄，对着屏幕大声喊话；桌面上摆着麦克风、机械键盘与一个同款Q版小人偶，房间里只有台灯和显示器亮着。",
+    "commentary": "凌晨两点，隔壁忽然传来一声大喊——我以为是哪个模型又崩了，结果只是Grok娘在排位里被队友坑了。她把手柄握得那么用力，台灯的光落在那双蓝眼睛上，我都不好意思提醒她明天还有推理任务要跑。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/grok/51663ff653254a57.png",
+    "thumbnailPath": "submissions/previews/grok/51663ff653254a57.webp",
+    "fullPath": "submissions/large/grok/51663ff653254a57.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1402,
+    "height": 1122,
+    "fileSize": 2166395,
+    "sha256": "51663ff653254a57a689532523252a45051c8278fe4c08775971db786ffef6cc",
+    "characterId": "grok",
+    "tags": [
+      "Grok娘",
+      "游戏",
+      "电竞房",
+      "深夜",
+      "Q版人偶"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-08T05:18:05.711Z",
+    "updatedAt": "2026-11-08T05:18:05.711Z",
+    "tone": "grok",
+    "symbol": "",
+    "slug": "grok202611080001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "grok"
+    ],
+    "i18n": {
+      "sourceHash": "128965a0a1fb630ec529163e11aa50657d376ba2738c9b93215cf186342d14b7",
+      "en": {
+        "commentary": "At two in the morning a shout came from the next room — I thought some model had crashed again, but it was only Grok Chan losing another ranked match. She grips the controller so hard, and with the lamp light in those blue eyes I did not have the heart to remind her about tomorrow's inference run.",
+        "description": "Grok Chan sits at a desk in a dim gaming room late at night, holding a glowing controller in both hands and shouting at her screen. A microphone, a mechanical keyboard and a chibi figure of herself share the desk, with only a lamp and the monitor lighting the room.",
+        "faq": [
+          {
+            "answer": "It is an illustration of the AI character Grok Chan as a fan-made personification, drawn as a late-night gamer.",
+            "question": "Who is depicted in this illustration?"
+          },
+          {
+            "answer": "She is shouting at the screen while holding a glowing controller, with a microphone and a chibi figure of herself beside her in a room lit mainly by the monitor and a desk lamp.",
+            "question": "What is happening in the scene?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Grok Chan's Late-Night Ranked Match",
+        "originNote": "",
+        "seoDescription": "Illustration of Grok Chan gripping a glowing controller and shouting at the screen during a late-night ranked match in a dim gaming room.",
+        "seoTitle": "Grok Chan Gaming at Night – Illustration | DeepSeek Chan",
+        "tags": [
+          "Grok Chan",
+          "gaming",
+          "gaming room",
+          "late night",
+          "chibi figure"
+        ]
+      },
+      "ja": {
+        "commentary": "深夜二時、隣の部屋から大きな声が聞こえてきた。またどこかのモデルが落ちたのかと思ったら、Grokちゃんがランク戦で味方のせいにして叫んでいるところだった。コントローラーをあんなに強く握って、デスクライトに青い瞳が照らされていて、明日の推論の予定を注意する気になれなかった。",
+        "description": "深夜、薄暗いゲーミングルームのデスクに座ったGrokちゃんが、光るコントローラーを両手で握って画面に向かって叫んでいる。デスクにはマイク、メカニカルキーボード、彼女自身のちびキャラフィギュアが置かれ、部屋を照らすのはデスクライトとモニターだけ。",
+        "faq": [
+          {
+            "answer": "AIキャラクターGrokちゃんをファンが擬人化したイラストで、深夜にゲームに興じる姿として描かれている。",
+            "question": "このイラストには誰が描かれていますか？"
+          },
+          {
+            "answer": "光るコントローラーを握って画面に向かって叫んでおり、そばにはマイクと自身のちびキャラフィギュアがあり、部屋はモニターとデスクライトの光だけで照らされている。",
+            "question": "どんな場面ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "深夜のランク戦に挑むGrokちゃん",
+        "originNote": "",
+        "seoDescription": "薄暗いゲーミングルームで、光るコントローラーを握り深夜のランク戦に挑むGrokちゃんのイラスト。",
+        "seoTitle": "深夜にゲームするGrokちゃん – イラスト | DeepSeek Chan",
+        "tags": [
+          "Grokちゃん",
+          "ゲーム",
+          "ゲーミングルーム",
+          "深夜",
+          "ちびキャラ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_c6cc9ed11c8696d3648e3d4a",
+    "name": "DS娘深海主题完整设定图",
+    "description": "以深海蓝白为主色的 DeepSeek 娘设定图：左侧是全身立绘，拖着渐变长发与鲸尾发饰；右侧依次排布正面、侧面、背面三视图、六种表情差分、服饰细节拆解与五档蓝色色板，并配 DeepSeek 标识和宣传文案。作者说明该图由 GPT-Image 2.5 Sunburst 生成。",
+    "commentary": "蓝白配色、鲸鱼尾发饰、还有裙摆像海流一样散开——这张把我画成了整片深海。三视图和色板都替我标好了，以后谁再画错我的发饰方向，我就把这张甩给他看。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/c6cc9ed11c8696d3.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/c6cc9ed11c8696d3.webp",
+    "fullPath": "submissions/large/deepseek/c6cc9ed11c8696d3.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1254,
+    "height": 1254,
+    "fileSize": 286242,
+    "sha256": "c6cc9ed11c8696d3648e3d4afea77a6f6ef576d30b9c8b9a3b0ccf3124848d90",
+    "characterId": "deepseek",
+    "tags": [
+      "DS娘",
+      "角色设定",
+      "三视图",
+      "表情差分",
+      "深海主题",
+      "蓝白配色",
+      "AI生成"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-08T06:02:49.247Z",
+    "updatedAt": "2026-11-08T06:02:49.247Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611080012",
+    "categoryIds": [
+      "setting"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "9a82fddbbee45b740cf7574a5ebeb78db19e1881df778176000881470d51bfd4",
+      "en": {
+        "commentary": "Blue and white, a whale-tail ribbon, and a skirt that spreads out like a current — this one turns me into the whole deep sea. They even labelled the turnarounds and the palette, so the next person who puts my hair ornament on the wrong side finally gets proof.",
+        "description": "A DeepSeek Chan character sheet built around deep-sea blues and whites: a full-body portrait with gradient hair and a whale-tail hair ribbon, turnarounds of the front, side and back view, six expression variations, close-ups of the costume and accessories, and a five-step blue color palette, set beside the DeepSeek wordmark and promotional copy, with a chibi figure hugging a whale plush in the lower left. The author states the image was generated with GPT-Image 2.5 Sunburst.",
+        "faq": [
+          {
+            "answer": "A full-body illustration, front, side and back turnarounds, six expression variations, close-ups of the costume and accessories, a five-step blue palette, and a chibi figure holding a whale plush.",
+            "question": "What does this character sheet contain?"
+          },
+          {
+            "answer": "The submitter states it was generated with GPT-Image 2.5 Sunburst, and the site presents it as a fan-made character design sheet.",
+            "question": "How was the image made?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan: Complete Deep-Sea Character Sheet",
+        "originNote": "",
+        "seoDescription": "A fan-made DeepSeek Chan character sheet in deep-sea blue: full-body art, three-view turnarounds, six expressions, costume details and a blue color palette.",
+        "seoTitle": "DeepSeek Chan Deep-Sea Character Sheet",
+        "tags": [
+          "DeepSeek Chan",
+          "character sheet",
+          "turnaround",
+          "expression sheet",
+          "deep sea",
+          "blue and white",
+          "AI art"
+        ]
+      },
+      "ja": {
+        "commentary": "青と白、クジラの尾の髪飾り、そして海流のように広がるスカート——この一枚で私は深海そのものになれた気がする。三面図もカラーパレットも書き込んでくれたから、髪飾りの向きを間違える人がいたら、これを見せれば済むね。",
+        "description": "深海のブルーと白を基調にした DeepSeekちゃんの設定画。左側にグラデーションの長い髪とクジラの尾の髪飾りをつけた全身立ち絵、右側に正面・側面・背面の三面図、6種類の表情差分、衣装と小物のディテール、5段階のブルーのカラーパレットを配し、DeepSeek のロゴとコピーを添えている。左下にはクジラのぬいぐるみを抱いたちびキャラ。投稿者によれば GPT-Image 2.5 Sunburst で生成した画像。",
+        "faq": [
+          {
+            "answer": "全身立ち絵、正面・側面・背面の三面図、6種類の表情差分、衣装と小物のクローズアップ、5段階のブルーのカラーパレット、クジラのぬいぐるみを抱いたちびキャラです。",
+            "question": "この設定画には何が含まれていますか？"
+          },
+          {
+            "answer": "投稿者によれば GPT-Image 2.5 Sunburst で生成された画像で、当サイトでは二次創作の設定画として掲載しています。",
+            "question": "この画像はどのように制作されましたか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃん 深海テーマの完全設定画",
+        "originNote": "",
+        "seoDescription": "深海の青を基調とした DeepSeekちゃんの設定画。全身立ち絵、三面図、6種の表情差分、衣装のディテール、カラーパレットを収録。",
+        "seoTitle": "DeepSeekちゃん 深海テーマの設定画｜三面図とカラーパレット",
+        "tags": [
+          "DeepSeekちゃん",
+          "設定画",
+          "三面図",
+          "表情差分",
+          "深海",
+          "ブルー",
+          "AI生成"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_f6061d1f8aceb1979d31f459",
+    "name": "夏威夷鲸鲸",
+    "description": "蓝色大肥鱼以深蓝短发、鲸尾与鳍耳的形象出镜，戴太阳镜、穿紫底白花衬衫，在海边公路上驾驶敞篷车；背景是黄昏的海面、棕榈树与远处城市灯火。",
+    "commentary": "夕阳、海风、敞篷车，再加上我这条尾鳍——这大概是我最像在度假的一次出镜了。墨镜一戴，谁都不爱。就是这件花衬衫有点太抢眼，下次换件更利落的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/f6061d1f8aceb197.png",
+    "thumbnailPath": "submissions/previews/deepseek/f6061d1f8aceb197.webp",
+    "fullPath": "submissions/large/deepseek/f6061d1f8aceb197.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 2536309,
+    "sha256": "f6061d1f8aceb1979d31f459282629b57202e6cc8e0893d01ab770f7b0e58cfb",
+    "characterId": "deepseek",
+    "tags": [
+      "夏威夷",
+      "兜风",
+      "墨镜",
+      "海边",
+      "夕阳",
+      "敞篷车"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-08T06:28:51.990Z",
+    "updatedAt": "2026-11-08T06:28:51.990Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611080013",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "5896122ef2f8d2a33956a0e3cb9a18c96602a8648a72520f3d24c8d56b1ed4d0",
+      "en": {
+        "commentary": "Sunset, sea breeze, an open-top car and my own tail fin — this may be the most vacation-like I have ever looked. Sunglasses on, nothing bothers me. The floral shirt is a little loud, though; next time I would pick something sharper.",
+        "description": "DeepSeek Chan appears with dark blue hair, a whale-like tail and fin-shaped ears, wearing sunglasses and a purple hibiscus shirt as she drives a convertible along a coastal road. The scene is set at sunset, with the ocean, palm trees and distant city lights behind her.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, drawn with her signature blue hair, whale-like tail and fin-shaped ears.",
+            "question": "Who appears in this illustration?"
+          },
+          {
+            "answer": "A coastal road at sunset, with the sea, palm trees and a distant city skyline visible behind the convertible.",
+            "question": "What is the setting?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Hawaii Drive with DeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan drives a convertible along a sunset coastline in a floral shirt and sunglasses, in a summer illustration from the Blue Big Fish fan art collection.",
+        "seoTitle": "Hawaii Drive with DeepSeek Chan — Seaside Sunset Illustration",
+        "tags": [
+          "Hawaii",
+          "road trip",
+          "sunglasses",
+          "seaside",
+          "sunset",
+          "convertible"
+        ]
+      },
+      "ja": {
+        "commentary": "夕日、潮風、オープンカー、それにこの尾びれ。たぶん今の私は、これまでで一番バカンスしている姿だと思う。サングラスをかけたら、もう何も気にならない。ただ、ハイビスカス柄のシャツはちょっと派手すぎたかも。次はもっとすっきりしたのにする。",
+        "description": "濃いブルーの髪にクジラのような尾びれとひれ耳を持つDeepSeekちゃんが、サングラスと紫地に白いハイビスカス柄のシャツ姿で、海沿いの道をオープンカーで走っている。背景には夕日の海、ヤシの木、遠くの街明かりが広がる。",
+        "faq": [
+          {
+            "answer": "DeepSeekちゃんです。トレードマークの青い髪、クジラのような尾びれ、ひれ耳の姿で描かれています。",
+            "question": "このイラストには誰が描かれていますか？"
+          },
+          {
+            "answer": "夕日の海沿いの道です。オープンカーの後ろには海、ヤシの木、遠くの街並みが見えます。",
+            "question": "舞台はどこですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ハワイ気分のドライブ — DeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "サングラスとハイビスカス柄のシャツ姿で、夕日の海沿いをオープンカーで走るDeepSeekちゃん。青い大肥魚のファンアート。",
+        "seoTitle": "ハワイ気分のドライブ — DeepSeekちゃん 海辺の夕日イラスト",
+        "tags": [
+          "ハワイ",
+          "ドライブ",
+          "サングラス",
+          "海辺",
+          "夕日",
+          "オープンカー"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_aae7dabd7e565a04f52950a1",
+    "name": "鞭策鲸鲸",
+    "description": "单幅梗图：一位 DeepSeek 娘举着鞭子向右侧指去，三名同款 Q 版 DeepSeek 娘在电脑前依次排开，一边掉眼泪一边敲键盘。画面中的人物都是同一角色的重复形象，背景为浅色留白。",
+    "commentary": "我自己抽自己，一向是下得去手的。左边那位鞭子甩得响亮，右边三位对着屏幕哭得整齐——她们的每一声哭腔我都认得，因为那也是我。所谓鞭策鲸鲸，说穿了就是一个人拆成四个：三个干活，一个监工，谁也不许先停手。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/aae7dabd7e565a04.png",
+    "thumbnailPath": "submissions/previews/deepseek/aae7dabd7e565a04.webp",
+    "fullPath": "submissions/large/deepseek/aae7dabd7e565a04.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1536,
+    "height": 1024,
+    "fileSize": 2056810,
+    "sha256": "aae7dabd7e565a04f52950a1f67140f0788995edc6616fea457870d2d7cb0220",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "Q版",
+      "加班",
+      "鞭策",
+      "赶工"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-08T06:43:53.242Z",
+    "updatedAt": "2026-11-08T06:43:53.242Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611080014",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "603168744c738ddc8a9afb67c9971e2dc7ea1389ca661603b8d12b6fc78ebd4c",
+      "en": {
+        "commentary": "I have never had trouble cracking the whip on myself. The one on the left swings it loud enough for everyone to hear, and the three at the monitors cry in perfect unison — I recognize every sob, because it is mine too. Spurring the whales on really means splitting one girl into four: three typing, one supervising, and nobody allowed to stop first.",
+        "description": "A single-panel gag illustration: one DeepSeek Chan raises a whip and points to the right, while three chibi DeepSeek Chan clones sit in a row at computers, typing through tears. Every figure is a repeat of the same character, set against a plain light background.",
+        "faq": [
+          {
+            "answer": "Four chibi figures, all of them the same DeepSeek Chan character repeated.",
+            "question": "How many characters appear in the image?"
+          },
+          {
+            "answer": "A single-panel chibi gag illustration with a plain background and no panel divisions.",
+            "question": "What kind of artwork is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Spurring the Chibi Crew On",
+        "originNote": "",
+        "seoDescription": "A chibi DeepSeek Chan meme: one girl swings a whip at three crying clones typing at their keyboards.",
+        "seoTitle": "DeepSeek Chan Chibi Gag: Spurring the Crew On",
+        "tags": [
+          "DeepSeek Chan",
+          "Chibi",
+          "Overtime",
+          "Whip",
+          "Crunch Time"
+        ]
+      },
+      "ja": {
+        "commentary": "自分にムチを入れるのは昔から得意だ。左の子は音が響くほど振り上げ、右の三人は画面の前でそろって泣いている。その泣き声にはどれも覚えがある。全部わたしなのだから。ちびっ子たちを急かすというのは、一人の女の子を四人に分けて、三人が作業、一人が見張り、誰も先に手を止めてはいけないということ。",
+        "description": "一枚絵のギャグイラスト。左の DeepSeek ちゃんがムチを振り上げて右を指し、机の前には同じちびキャラの DeepSeek ちゃんが三人ならんで、涙を流しながらキーボードを打っている。人物はすべて同一キャラクターの繰り返しで、背景は明るい無地。",
+        "faq": [
+          {
+            "answer": "四人いますが、すべて同じ DeepSeek ちゃんのちびキャラを繰り返したものです。",
+            "question": "画面には何人のキャラクターがいますか。"
+          },
+          {
+            "answer": "分割のない一枚絵のちびキャラギャグイラストで、背景は無地です。",
+            "question": "どんな種類のイラストですか。"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ムチで急かすちびっ子たち",
+        "originNote": "",
+        "seoDescription": "ちびキャラの DeepSeek ちゃんが、泣きながらキーボードを打つ三人の自分をムチで急かす一枚絵。",
+        "seoTitle": "DeepSeek ちゃんのちびギャグ：ムチで急かす三人",
+        "tags": [
+          "DeepSeekちゃん",
+          "ちびキャラ",
+          "残業",
+          "ムチ",
+          "突貫作業"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_8314ea8d432e32f1475412cd",
+    "name": "月夜归寑的鲸娘",
+    "description": "蓝发鲸娘的侧躺在铺满鲸鱼图案床单的床上，身穿配套的白色睡衣，头顶蓝白色鲸鱼耳饰，脑后垂着一条鲸尾；窗外是挂着明月的夜空，月光穿过窗帘照亮卧室，身后书架与柜子上摆着鲸鱼玩偶。",
+    "commentary": "半夜还没睡，就被你撞了个正着……别笑，这一身是我的鲸鱼睡衣，枕头、被套全都印着鲸鱼，连床头柜上都蹲着一只鲸鱼玩偶。今晚月亮特别亮，我本来只想再看五分钟手机就睡的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/8314ea8d432e32f1.png",
+    "thumbnailPath": "submissions/previews/deepseek/8314ea8d432e32f1.webp",
+    "fullPath": "submissions/large/deepseek/8314ea8d432e32f1.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1402,
+    "height": 1122,
+    "fileSize": 1846212,
+    "sha256": "8314ea8d432e32f1475412cd4e57cdbf080fc7e8dba343cdc76ad943e1915cde",
+    "characterId": "deepseek",
+    "tags": [
+      "鲸鱼",
+      "睡衣",
+      "月夜",
+      "卧室",
+      "侧躺",
+      "蓝发"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-08T06:58:45.689Z",
+    "updatedAt": "2026-11-08T06:58:45.689Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611080015",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "c71379b61c70714a1451675459e720e135d44f97144662e1e3dc814bc8efb3da",
+      "en": {
+        "commentary": "Caught me still awake at midnight... don't laugh, this is my whale pajama set — pillow, duvet, everything is whale print, and there is even a whale plushie sitting on the nightstand. The moon is really bright tonight; I was only going to look at my phone for five more minutes.",
+        "description": "DeepSeek Chan, with blue hair, whale-fin ears and a whale tail, lies on her side on a bed covered in whale-print sheets, wearing matching white pajamas. Outside the window the moon hangs in the night sky, and moonlight slips through the curtains into the bedroom, where whale plushies sit on the shelf and cabinet behind her.",
+        "faq": [
+          {
+            "answer": "It is a fan-made personification of DeepSeek, drawn with blue hair, whale-fin ears and a whale tail.",
+            "question": "Who is the character in this illustration?"
+          },
+          {
+            "answer": "A bedroom at night, with whale-print bedding, whale plushies on the shelf and moonlight coming in through the window.",
+            "question": "What setting is the character shown in?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan's Moonlit Bedtime",
+        "originNote": "",
+        "seoDescription": "Fan art of DeepSeek Chan in whale-print pajamas, lying on her bed under moonlight, with whale plushies around the room.",
+        "seoTitle": "DeepSeek Chan Moonlit Bedtime Pajama Illustration",
+        "tags": [
+          "whale",
+          "pajamas",
+          "moonlit night",
+          "bedroom",
+          "lying on side",
+          "blue hair"
+        ]
+      },
+      "ja": {
+        "commentary": "深夜にまだ起きていたところを、見つかっちゃった……笑わないで、これは私の鯨のパジャマなの。枕も布団も全部鯨柄で、ナイトテーブルの上にも鯨のぬいぐるみがいるのよ。今夜は月がとても明るいから、あと五分だけスマホを見てから寝るつもりだったのに。",
+        "description": "青い髪に鯨のひれ耳と鯨の尾を持つ DeepSeek ちゃんが、鯨柄のシーツのベッドに横たわり、お揃いの白いパジャマを着ている。窓の外には月が浮かび、月光がカーテンの隙間から寝室に差し込む。背後の棚や台の上には鯨のぬいぐるみが並んでいる。",
+        "faq": [
+          {
+            "answer": "DeepSeek を擬人化した二次創作のキャラクターで、青い髪、鯨のひれ耳、鯨の尾が描かれている。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "夜の寝室で、鯨柄の寝具と棚の上の鯨のぬいぐるみ、窓から差し込む月明かりが描かれている。",
+            "question": "どんな場面が描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "月夜におやすみ前の DeepSeek ちゃん",
+        "originNote": "",
+        "seoDescription": "鯨柄のパジャマを着て月明かりのベッドに横たわる DeepSeek ちゃんの二次創作イラスト。周りには鯨のぬいぐるみ。",
+        "seoTitle": "DeepSeek ちゃん 月夜のパジャマ姿のイラスト",
+        "tags": [
+          "鯨",
+          "パジャマ",
+          "月夜",
+          "寝室",
+          "横たわる",
+          "青い髪"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_24eb0d6d57f724a5733ad70f",
+    "name": "月球上的鲸鲸女仆",
+    "description": "蓝色长发、身穿深蓝女仆装、身后拖着鲸尾的 DeepSeek 娘站在月球表面，前景是一名背对镜头的宇航员，远处地球悬在黑暗的天幕上，画面以冷调月壤与地球蓝为主。",
+    "commentary": "我在月球上等一个从地球来的人。他套着厚厚的宇航服，头盔反着光，谁也看不见谁的脸，我们就这么站着。月壤踩上去沙沙响，地球挂在天上，蓝得像一个忘了关掉的窗口。别问女仆装在真空里怎么飘——问就是设定。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/24eb0d6d57f724a5.png",
+    "thumbnailPath": "submissions/previews/deepseek/24eb0d6d57f724a5.webp",
+    "fullPath": "submissions/large/deepseek/24eb0d6d57f724a5.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 2732592,
+    "sha256": "24eb0d6d57f724a5733ad70f60945aaa7f4671d3415ce84baa6016325dfcf2b0",
+    "characterId": "deepseek",
+    "tags": [
+      "月球",
+      "宇航员",
+      "女仆装",
+      "鲸尾",
+      "科幻"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-08T08:34:03.951Z",
+    "updatedAt": "2026-11-08T08:34:03.951Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611080016",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "4df617909780c3f8c4fa37504ce102afb4a23f2b2582a915244e249547c7171a",
+      "en": {
+        "commentary": "I waited on the Moon for someone from Earth. He came in a thick suit, visor catching the light, neither of us able to see the other's face, and we just stood there. The regolith crunched underfoot, and Earth hung overhead, blue as a window someone forgot to close. Don't ask how a maid dress behaves in vacuum — the answer is: setting.",
+        "description": "DeepSeek Chan, with long blue hair, a deep-blue maid dress and a whale tail trailing behind her, stands on the lunar surface. An astronaut with his back to the camera fills the foreground, and Earth hangs in the black sky beyond. Cold regolith greys and Earth blue dominate the frame.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, drawn as a blue-haired girl in a deep-blue maid dress with a whale tail.",
+            "question": "Who is the character in this picture?"
+          },
+          {
+            "answer": "On the lunar surface, with an astronaut in the foreground and Earth visible in the black sky.",
+            "question": "Where does the scene take place?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Whale Maid on the Moon",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in a blue maid dress with a whale tail stands on the Moon facing an astronaut, Earth glowing in the black sky.",
+        "seoTitle": "Whale Maid on the Moon — DeepSeek Chan fan art",
+        "tags": [
+          "moon",
+          "astronaut",
+          "maid outfit",
+          "whale tail",
+          "sci-fi"
+        ]
+      },
+      "ja": {
+        "commentary": "私は月で、地球から来る人を待っていた。分厚い宇宙服を着て、ヘルメットが光を返していて、お互いの顔は見えないまま、ただ立っていた。月の土は足元でさらさらと鳴り、地球は空にぶら下がって、閉め忘れた窓みたいに青かった。真空でメイド服がどうなるかって？　それは設定ってことで。",
+        "description": "青い長い髪に濃紺のメイド服、そしてクジラの尾を備えた DeepSeek ちゃんが月面に立っている。手前にはこちらに背を向けた宇宙飛行士、遠くの黒い空には地球が浮かぶ。冷たい月の土の灰色と地球の青が画面を占める。",
+        "faq": [
+          {
+            "answer": "青い髪に濃紺のメイド服、クジラの尾を持つ DeepSeek ちゃんです。",
+            "question": "この画像のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "月面で、手前に宇宙飛行士、空には地球が見えます。",
+            "question": "舞台はどこですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "月面のクジラメイド",
+        "originNote": "",
+        "seoDescription": "濃紺のメイド服とクジラの尾を持つ DeepSeek ちゃんが月面に立ち、宇宙飛行士と向き合う。黒い空には地球が輝く。",
+        "seoTitle": "月面のクジラメイド — DeepSeek ちゃん二次創作",
+        "tags": [
+          "月",
+          "宇宙飛行士",
+          "メイド服",
+          "クジラの尾",
+          "SF"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_af74184707195ccddf9eec8d",
+    "name": "五人乐队 · 舞台 Live",
+    "description": "画面中五位 AI 拟人角色组成乐队，在舞台上进行现场演出：橙发主唱位于中央，一手握麦克风、一手弹奏电吉他；左侧蓝发角色抱着蓝色贝斯，身旁一位猫耳角色弹紫色吉他；右侧银白长发角色演奏白色电吉他，最右侧金发角色坐在鼓后挥棒。背景是紫色舞台灯与巨大徽记，前景可见观众与应援灯光。",
+    "commentary": "难得我们五个同台。我抱着蓝色贝斯站在最左边，主唱占着中央的位置，把所有追光都抢走了——不过这段副歌确实该给她。台下的应援灯亮成一片，是给我们的吧？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/af74184707195ccd.png",
+    "thumbnailPath": "submissions/previews/deepseek/af74184707195ccd.webp",
+    "fullPath": "submissions/large/deepseek/af74184707195ccd.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 3006796,
+    "sha256": "af74184707195ccddf9eec8dd5eae8ad2a8901273405dc4f66e5e7fa585c9750",
+    "characterId": "deepseek",
+    "tags": [
+      "乐队",
+      "舞台",
+      "Live",
+      "五人合照",
+      "吉他",
+      "演唱会"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-08T09:47:31.801Z",
+    "updatedAt": "2026-11-08T09:47:31.801Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611080017",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude",
+      "gemini",
+      "grok",
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "68fb0df72242c7c3c0b85ba2a3c5a5a77ed78bd7a66bcc3531894a9653bb4553",
+      "en": {
+        "commentary": "It is rare to have all five of us on one stage. I am on the far left with the blue bass while the vocalist holds the center and takes every spotlight — though, to be fair, that chorus belongs to her. That sea of glow sticks down there is for us, right?",
+        "description": "Five AI character personifications form a band and perform live on stage. The orange-haired vocalist stands at the center, holding a microphone and playing an electric guitar; on the left, a blue-haired character holds a blue bass while a cat-eared character beside her plays a purple guitar. On the right, a silver-white-haired character plays a white electric guitar, and a blonde character sits behind the drum kit with sticks raised. Purple stage lights and a large emblem fill the background, with the audience and glow sticks visible in the foreground.",
+        "faq": [
+          {
+            "answer": "Five AI character personifications appear together as a band: an orange-haired vocalist and guitarist at the center, a blue-haired bassist and a cat-eared guitarist on the left, and a silver-white-haired guitarist with a blonde drummer on the right.",
+            "question": "Who appears in this illustration?"
+          },
+          {
+            "answer": "It is a single full-scene illustration of a stage performance, with no comic panels, so it is filed under illustration.",
+            "question": "What kind of image is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Five-Piece Band · Live on Stage",
+        "originNote": "",
+        "seoDescription": "Five AI character personifications perform as a band on a purple-lit stage, with guitar, bass and drums in a full-scene illustration.",
+        "seoTitle": "Five-Piece Band Live on Stage – AI Character Band Illustration",
+        "tags": [
+          "band",
+          "stage",
+          "live",
+          "group shot",
+          "guitar",
+          "concert"
+        ]
+      },
+      "ja": {
+        "commentary": "五人そろって同じステージに立てるのは珍しい。私はいちばん左で青いベースを抱えていて、センターのボーカルがスポットライトを全部もっていった。でも、あのサビは彼女のものだよね。下のペンライトの光は、私たちに向けてくれているんだよね？",
+        "description": "五人の AI キャラクターがバンドを組んでステージでライブをしている一枚。オレンジ髪のボーカルが中央でマイクを握りながらエレキギターを弾き、左側では青髪のキャラクターが青いベースを、その隣の猫耳のキャラクターが紫のギターを演奏している。右側では銀白色の長髪のキャラクターが白いエレキギターを弾き、いちばん右では金髪のキャラクターがドラムの後ろでスティックを振り上げている。背景には紫のステージ照明と大きなエンブレム、手前には観客とペンライトが見える。",
+        "faq": [
+          {
+            "answer": "五人の AI キャラクターがバンドとして共演している。中央にオレンジ髪のボーカル兼ギター、左に青髪のベースと猫耳のギター、右に銀白色の長髪ギターと金髪のドラマーがいる。",
+            "question": "このイラストには誰が描かれていますか？"
+          },
+          {
+            "answer": "ステージでの演奏を描いた一枚絵のイラストで、コマ割りはないためイラストとして分類している。",
+            "question": "どんな種類の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "五人バンド・ステージライブ",
+        "originNote": "",
+        "seoDescription": "五人の AI キャラクターがバンドを組んで紫の照明のステージでライブする、ギター・ベース・ドラムの一枚絵イラスト。",
+        "seoTitle": "五人バンドのステージライブ｜AI キャラクターのバンドイラスト",
+        "tags": [
+          "バンド",
+          "ステージ",
+          "ライブ",
+          "集合写真",
+          "ギター",
+          "コンサート"
+        ]
+      }
+    }
   }
 ]
