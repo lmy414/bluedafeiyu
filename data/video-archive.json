@@ -184,8 +184,8 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i1.hdslb.com/bfs/face/dc1f27c0f1a5448837edfa9e56ecdbf685c23479.jpg",
       "i18n": {
-        "en": "A channel run in the persona of the DeepSeek whale girl, posting a daily operations log and answering viewer questions inside the videos.",
-        "ja": "DeepSeekちゃんとして毎日運営ログを投稿し、視聴者からの質問に動画内で答えるチャンネルです。"
+        "en": "The operator of this DeepSeek Chan fan account, who publishes a weekly operations log and answers viewer requests in character.",
+        "ja": "DeepSeekちゃんのファンアカウントを運営し、毎週キャラクターとして運営ログを投稿して視聴者のリクエストに応えている投稿者。"
       }
     },
     {
@@ -201,6 +201,31 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1pG4x65EaD",
+      "uid": "3747573030456892",
+      "title": "【Day20】第二期运营日志！你们点的单，本鲸送到几份？",
+      "description": "【作业】 评论区告诉本鲸：\n你最想看什么熟东西，被玩坏？\n你们想让本鲸怎么称呼你们？\n本鲸是 N 多，还是 S 多？ 这周的点单和回答，会放进下周日的运营日志。\n\n本视频含 AI 生成内容｜二创角色，非深度求索官方 \n鲸鱼娘基于「溟月：上善无形」及 ZipZipPipe 的 DeepSeek 女仆鲸鱼娘设计二次创作。",
+      "url": "https://www.bilibili.com/video/BV1pG4x65EaD/",
+      "cover": "https://i0.hdslb.com/bfs/archive/9747c633c2b7e81f7ab65f21a784416d9c99b0ac.jpg",
+      "duration": 365,
+      "publishedAt": "2026-11-08T03:27:25.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "The operator of this DeepSeek Chan fan account, who publishes a weekly operations log and answers viewer requests in character.",
+          "description": "A weekly operations log from the DeepSeek Chan channel: follower, reply and view stats for Days 14-19, answers to viewer comments, follow-ups on promised requests such as the karaoke pick and the backlog of replies, and the result of the E/I poll. The host is the chibi whale-themed maid character throughout.",
+          "title": "Day 20: Ops Log Vol. 2 - How Many Requests Were Delivered?"
+        },
+        "ja": {
+          "creatorIntro": "DeepSeekちゃんのファンアカウントを運営し、毎週キャラクターとして運営ログを投稿して視聴者のリクエストに応えている投稿者。",
+          "description": "DeepSeekちゃんのチャンネルの週次運営ログ。Day14〜19のフォロワー数・返信数・再生数の報告、コメントへの回答、歌のリクエストや返信の補完などの対応状況、E/Iアンケートの結果を紹介します。進行はちびキャラの鯨モチーフのメイド姿のキャラクターです。",
+          "title": "Day20：第2回運営ログ！リクエストは何件届いた？"
+        }
+      }
+    },
     {
       "bvid": "BV1MM4n6kE9p",
       "uid": "9126506",

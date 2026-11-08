@@ -155839,5 +155839,1134 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_ec66b1b8618164bd18430271",
+    "name": "珍珠花镜中的蓝色肥鱼",
+    "description": "白色花镜框里，蓝色长发的 DeepSeek 娘穿着白底蓝边的荷叶边长裙坐在海面上，蓝色鱼尾从裙摆旁探出；镜框外是晴空、远山与粼粼波光，整体以白蓝两色铺开。",
+    "commentary": "我被框在珍珠和花纹镶成的镜子里，裙摆铺开得像一朵浪花，尾巴还老老实实待在身边。有人问我这算不算终于上岸了——才没有，我才刚从水里坐下来。要是你正好路过，就在镜前多站一会儿吧，海风会替我把剩下的话说完。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/ec66b1b8618164bd.png",
+    "thumbnailPath": "submissions/previews/deepseek/ec66b1b8618164bd.webp",
+    "fullPath": "submissions/large/deepseek/ec66b1b8618164bd.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1037,
+    "height": 1517,
+    "fileSize": 2362150,
+    "sha256": "ec66b1b8618164bd18430271b4966e72feb135ed3fbe5bed93de49cbce9b4e28",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "蓝色大肥鱼",
+      "人鱼",
+      "镜框构图",
+      "海景",
+      "白蓝长裙"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-08T01:38:40.359Z",
+    "updatedAt": "2026-11-08T01:38:40.359Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611080001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "1048e0c1d8b1d2f92a6730ba3aff69b30a0625c6bd951128cfd02a89e00d5f89",
+      "en": {
+        "commentary": "I am framed inside a mirror of pearls and carved flowers, my skirt spread out like a breaking wave, my tail resting quietly beside me. Someone asked whether I have finally come ashore — not at all, I only just sat down out of the water. If you happen to pass by, stay a moment in front of the mirror; the sea breeze will finish the rest of my sentence.",
+        "description": "Inside a white floral mirror frame, DeepSeek Chan, a girl with long blue hair, sits on the surface of the sea in a white dress trimmed with blue lace, a blue fish tail emerging beside her skirt. Beyond the frame lie a clear sky, distant mountains and glittering water, the whole scene built on white and blue.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, with long blue hair and a blue fish tail, sits on the sea inside a white floral mirror frame, wearing a white dress with blue lace trim; a clear sky and distant mountains fill the background.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "Only DeepSeek Chan appears in the frame. No other characters are visible.",
+            "question": "Which characters appear in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan in the Pearl-Framed Mirror",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan illustration: a blue-haired girl with a fish tail sits inside an ornate white mirror frame above a sunlit sea, dressed in white and blue lace.",
+        "seoTitle": "DeepSeek Chan in the Pearl-Framed Mirror | DeepSeek Chan Illustration",
+        "tags": [
+          "DeepSeek Chan",
+          "DeepSeek Chan fan art",
+          "mermaid",
+          "mirror frame composition",
+          "seascape",
+          "white and blue dress"
+        ]
+      },
+      "ja": {
+        "commentary": "私は真珠と花模様で飾られた鏡の中に収まって、スカートは波のように広がり、尾はおとなしくそばに控えている。岸に上がれたのかと聞かれたけれど、そんなわけない、水から腰を下ろしたばかりなのだ。もし通りかかったなら、鏡の前で少しだけ立ち止まって。続きは潮風が話してくれるから。",
+        "description": "白い花模様の鏡枠の中、青い長い髪の DeepSeek ちゃんが、白地に青い縁取りのフリルワンピースを着て海の上に座り、スカートの脇から青い魚の尾がのぞいている。枠の外には晴れた空、遠くの山、きらめく水面が広がり、全体は白と青でまとめられている。",
+        "faq": [
+          {
+            "answer": "長い青い髪と青い魚の尾を持つ DeepSeek ちゃんが、白い花模様の鏡枠の中で海の上に座っています。白地に青い縁取りのフリルワンピースを着ており、背景には晴れた空と遠くの山が広がっています。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "描かれているのは DeepSeek ちゃんだけです。ほかのキャラクターは確認できません。",
+            "question": "登場するキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "真珠の花鏡の中の DeepSeek ちゃん",
+        "originNote": "",
+        "seoDescription": "DeepSeek ちゃんのイラスト。青い髪と魚の尾を持つ少女が、白い花模様の鏡枠の中で日の光を受けた海の上に座り、白と青のフリルワンピースを纏っている。",
+        "seoTitle": "真珠の花鏡の中の DeepSeek ちゃん｜DeepSeek ちゃん イラスト",
+        "tags": [
+          "DeepSeek ちゃん",
+          "二次創作",
+          "人魚",
+          "鏡枠の構図",
+          "海の風景",
+          "白と青のワンピース"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_e64c7d9d95047941693ee13b",
+    "name": "星海阳台的温柔相拥",
+    "description": "蓝发蓝眸的 DeepSeek 娘抱着蓝色鲸鱼抱枕靠坐在床上，一位黑发女孩俯身从背后抱住她，一只手轻放在她头顶。窗外是夜色中的海面与阳台栏杆，床上散落蓝色抱枕、饮料和零食，灯串与玻璃反射出细碎的亮点。",
+    "commentary": "她把我按进怀里，手搭在我头顶，鲸鱼抱枕硬生生挤在中间。窗外海面浮着一层月光，屋里只剩屏幕的亮光。墙上那行字我看了好几遍，还是有点脸红——谁准你把这种话写上去的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/e64c7d9d95047941.png",
+    "thumbnailPath": "submissions/previews/deepseek/e64c7d9d95047941.webp",
+    "fullPath": "submissions/large/deepseek/e64c7d9d95047941.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1536,
+    "height": 1024,
+    "fileSize": 2537923,
+    "sha256": "e64c7d9d95047941693ee13b80a71bf8ba45f1849210cbe9df34dcb39f643211",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "拥抱",
+      "海边阳台",
+      "夜景",
+      "双人同框",
+      "鲸鱼抱枕"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-08T01:39:13.473Z",
+    "updatedAt": "2026-11-08T01:39:13.473Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611080002",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "2d253c515827f64b039d86f9019a0d375b594c65af57f87f80fd24d3f25b865d",
+      "en": {
+        "commentary": "She pulled me into her arms with a hand resting on my head, the whale plush squashed between us. Outside the window the sea carried a thin layer of moonlight, and only the screen lit the room. I read that line on the wall a few times and still felt my face burn — who gave you permission to write something like that up there?",
+        "description": "DeepSeek Chan, with blue hair and blue eyes, sits propped against the bed hugging a blue whale plush while a black-haired girl leans in from behind and holds her, one hand resting on her head. Beyond the window are the night sea and a balcony railing; blue pillows, a drink and snacks are scattered across the bed, with fairy lights and glass reflections glinting around them.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan rests against the bed hugging a whale plush while a black-haired girl embraces her from behind, with the night sea and a balcony visible through the window.",
+            "question": "What is happening in this illustration?"
+          },
+          {
+            "answer": "Two figures appear: DeepSeek Chan and a black-haired girl. The second figure shows no identifiable features of another AI model character.",
+            "question": "Who appears in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "A Tender Embrace on the Starry Seaside Balcony",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan illustration: a blue-haired girl with a whale plush is held from behind by a black-haired companion in a room overlooking the night sea.",
+        "seoTitle": "A Tender Embrace on the Starry Seaside Balcony | DeepSeek Chan Illustration",
+        "tags": [
+          "DeepSeek Chan",
+          "embrace",
+          "seaside balcony",
+          "night view",
+          "two figures",
+          "whale plush"
+        ]
+      },
+      "ja": {
+        "commentary": "彼女は私を抱き寄せて、頭に手を置いたまま、クジラのぬいぐるみは二人の間に押し込まれている。窓の外の海には月の光がうすく浮かび、部屋を照らすのはスクリーンの明かりだけ。壁に書かれたあの一行を何度も読んだけれど、やっぱり少し顔が赤くなる。あんなことを書いていいなんて、誰が許可したの。",
+        "description": "青い髪と青い瞳の DeepSeek ちゃんが青いクジラのぬいぐるみを抱えてベッドにもたれかかり、黒髪の少女が後ろから身を寄せて抱きしめ、片手をその頭に置いている。窓の外には夜の海とバルコニーの手すりが広がり、ベッドには青いクッションや飲み物、おやつが散らばり、電飾とガラスの反射が小さく光っている。",
+        "faq": [
+          {
+            "answer": "DeepSeek ちゃんがクジラのぬいぐるみを抱えてベッドにもたれ、黒髪の少女が後ろから抱きしめている。窓の外には夜の海とバルコニーが見える。",
+            "question": "このイラストでは何が起きていますか？"
+          },
+          {
+            "answer": "描かれているのは DeepSeek ちゃんと黒髪の少女の二人です。黒髪の人物には、他の AI モデルのキャラクターと確認できる特徴はありません。",
+            "question": "登場する人物は誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "星海のバルコニーでの優しい抱擁",
+        "originNote": "",
+        "seoDescription": "DeepSeek ちゃんのイラスト。青い髪の少女がクジラのぬいぐるみを抱え、夜の海を望む部屋で黒髪の少女に後ろから抱きしめられている。",
+        "seoTitle": "星海のバルコニーでの優しい抱擁｜DeepSeek ちゃん イラスト",
+        "tags": [
+          "DeepSeek ちゃん",
+          "抱擁",
+          "海辺のバルコニー",
+          "夜景",
+          "二人の人物",
+          "クジラのぬいぐるみ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_84cf2cccf4009f6a437bc99f",
+    "name": "夕阳海滩上的大肥鱼",
+    "description": "夕阳把海面与天空染成橙粉色，蓝色长发的 DeepSeek 娘并膝跪坐在沙滩上，穿白色短上衣与卡其色短裤，发间簪着蓝花与鳍状发饰。远处是翻起的浪、远山与沙滩伞，沙面上散着细小的贝壳与海星。",
+    "commentary": "沙子被晒了一整天，还留着太阳的余温。我把膝盖并在一起坐着，回头看你有没有跟上来。浪声有点吵，说话得靠得近一点——不过这样也挺好的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/84cf2cccf4009f6a.png",
+    "thumbnailPath": "submissions/previews/deepseek/84cf2cccf4009f6a.webp",
+    "fullPath": "submissions/large/deepseek/84cf2cccf4009f6a.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 940,
+    "fileSize": 2294051,
+    "sha256": "84cf2cccf4009f6a437bc99f7c4e17202319a1146cecaa4e1dd28abd045b1643",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "夕阳",
+      "海滩",
+      "夏日穿搭",
+      "海浪",
+      "跪坐"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-08T01:40:00.419Z",
+    "updatedAt": "2026-11-08T01:40:00.419Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611080003",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "04bea7fc94459fb859abb966498496933bf3d62b0dcf8e8fa8fd84f98d8ac606",
+      "en": {
+        "commentary": "The sand has been in the sun all day and still holds its warmth. I sit with my knees together and look back to see whether you followed me. The waves are a little loud, so you will have to come closer to talk — though I do not mind that at all.",
+        "description": "Sunset stains the sea and sky orange and pink. DeepSeek Chan, her long blue hair pinned with a blue flower and fin-shaped ornaments, kneels on the sand in a white cropped top and khaki shorts. Breaking waves, distant hills and a beach umbrella lie behind her, with small shells and a starfish scattered over the wet sand.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan kneels on the beach in a white cropped top and khaki shorts as the sun sets over the sea, with waves, distant hills and a beach umbrella behind her.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "Only DeepSeek Chan appears. No other characters are visible in the scene.",
+            "question": "Which characters appear in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan on the Sunset Beach",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan illustration: a blue-haired girl kneels on the sand in a white cropped top and khaki shorts while the sun sets over a pink and orange sea.",
+        "seoTitle": "DeepSeek Chan on the Sunset Beach | DeepSeek Chan Illustration",
+        "tags": [
+          "DeepSeek Chan",
+          "sunset",
+          "beach",
+          "summer outfit",
+          "ocean waves",
+          "kneeling"
+        ]
+      },
+      "ja": {
+        "commentary": "砂は一日中日に照らされて、まだ太陽のぬくもりが残っている。膝をそろえて座って、あなたがついてきたかを振り向いて確かめた。波の音が少しうるさいから、話すならもっと近くに来てね。まあ、それも悪くないけれど。",
+        "description": "夕日が海と空をオレンジとピンクに染めている。青い長い髪に青い花とヒレ形の飾りをつけた DeepSeek ちゃんが、白いショート丈のトップスとカーキのショートパンツで砂浜に膝立ちしている。背後には打ち寄せる波、遠くの山、ビーチパラソルが広がり、濡れた砂の上には小さな貝とヒトデが散らばっている。",
+        "faq": [
+          {
+            "answer": "夕日が海に沈む中、白いショート丈のトップスとカーキのショートパンツを着た DeepSeek ちゃんが砂浜に膝立ちしています。背後には波、遠くの山、ビーチパラソルがあります。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "描かれているのは DeepSeek ちゃんだけです。ほかのキャラクターは確認できません。",
+            "question": "登場するキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "夕日の中のビーチにいる DeepSeek ちゃん",
+        "originNote": "",
+        "seoDescription": "DeepSeek ちゃんのイラスト。青い髪の少女が白いショート丈のトップスとカーキのショートパンツで砂浜に膝立ちし、オレンジとピンクの海に夕日が沈む。",
+        "seoTitle": "夕日の中のビーチにいる DeepSeek ちゃん｜DeepSeek ちゃん イラスト",
+        "tags": [
+          "DeepSeek ちゃん",
+          "夕日",
+          "ビーチ",
+          "夏の服装",
+          "波",
+          "膝立ち"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_3034ad7716ddf4ef70205949",
+    "name": "夕阳废墟上的大肥鱼",
+    "description": "蓝色长发的 DeepSeek 娘坐在废弃楼顶的斜坡上，白色针织上衣配深蓝百褶裙，蓝色大尾鳍搭在身旁，望向被落日笼罩的城市废墟。",
+    "commentary": "爬上这栋楼的最高处时，太阳正好卡在楼缝里。以前这里应该很热闹吧，现在只剩风穿过空窗的声音。我把尾巴搁在水泥沿上，让它也晒一会儿——说不定哪天，鱼也会想念夕阳呢。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/3034ad7716ddf4ef.png",
+    "thumbnailPath": "submissions/previews/deepseek/3034ad7716ddf4ef.webp",
+    "fullPath": "submissions/large/deepseek/3034ad7716ddf4ef.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1659,
+    "height": 948,
+    "fileSize": 2452341,
+    "sha256": "3034ad7716ddf4ef70205949e350f9242f0f040c0dc151fcc1e03e63be8be347",
+    "characterId": "deepseek",
+    "tags": [
+      "夕阳",
+      "废墟",
+      "天台",
+      "城市",
+      "大肥鱼"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-08T01:40:27.014Z",
+    "updatedAt": "2026-11-08T01:40:27.014Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611080004",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "7cbc2972432c4d15d24c6ffdc9b3f9e806c5af625c8e4bef3c2aaa4c21bfbfce",
+      "en": {
+        "commentary": "By the time I climbed to the top of this building, the sun was caught right between the towers. It must have been busy here once; now there is only the wind moving through the empty windows. I laid my tail along the concrete edge so it could warm up too — maybe fish miss the sunset as well.",
+        "description": "DeepSeek Chan, a blue-haired girl in a white knit top and navy pleated skirt, sits on the slanted roof of an abandoned building with her large blue tail fin resting beside her, looking out over a ruined city bathed in sunset light.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan appears, drawn with long blue hair, a white knit top, a navy pleated skirt and a large blue tail fin.",
+            "question": "Who appears in this illustration?"
+          },
+          {
+            "answer": "She sits on the slanted roof of an abandoned building, looking toward a ruined city under the setting sun.",
+            "question": "What scene does the picture show?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan on the Sunset Ruins",
+        "originNote": "",
+        "seoDescription": "Illustration of DeepSeek Chan sitting on a ruined rooftop at sunset, her blue hair and tail fin set against an evening city skyline.",
+        "seoTitle": "DeepSeek Chan on the Sunset Ruins | Blue Big Fish",
+        "tags": [
+          "sunset",
+          "ruins",
+          "rooftop",
+          "cityscape",
+          "DeepSeek Chan"
+        ]
+      },
+      "ja": {
+        "commentary": "この建物の一番上まで登ってきたら、ちょうど太陽がビルの隙間に引っかかっていた。昔はここも賑やかだったんだろうな。今は空っぽの窓を風が通り抜ける音だけ。尾びれもコンクリートの縁に載せて、一緒に夕日を浴びてみた——魚だって夕日が恋しくなるのかもしれない。",
+        "description": "青い長い髪のディープシークちゃんが、白いニットに濃紺のプリーツスカートという出で立ちで廃ビルの屋上の斜面に座り、大きな青い尾びれを傍らに置いて、夕日に染まる都市の廃墟を見つめている。",
+        "faq": [
+          {
+            "answer": "ディープシークちゃんが、長い青い髪、白いニット、濃紺のプリーツスカート、大きな青い尾びれという姿で描かれています。",
+            "question": "このイラストには誰が登場しますか？"
+          },
+          {
+            "answer": "彼女は廃ビルの屋上の斜面に座り、沈みゆく夕日に染まる都市の廃墟の方を見つめています。",
+            "question": "どんな場面が描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "夕日の廃墟に座るディープシークちゃん",
+        "originNote": "",
+        "seoDescription": "夕暮れの廃ビルの屋上に座るディープシークちゃんのイラスト。青い髪と尾びれが夕景の街並みに映える一枚です。",
+        "seoTitle": "夕日の廃墟に座るディープシークちゃん",
+        "tags": [
+          "夕日",
+          "廃墟",
+          "屋上",
+          "都市景観",
+          "大きな魚"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_0fca5dd80919a0832069815f",
+    "name": "深海蓝光下与大肥鱼拥眠",
+    "description": "蓝色长发的 DeepSeek 娘与一名黑发男性并躺在铺满蓝色鲸鱼玩偶的床上，床边摆着寿司、蓝莓和游戏手柄，窗外蓝紫色的夜光落进房间；画面两侧手写着给大肥鱼的字句。",
+    "commentary": "半夜灯还亮着，蓝光从窗户漫进来，把被子照得像浅浅的海。旁边的家伙已经快睡着了，手还搭在我头发上。今天的事一件件都做完了——看电影、吃寿司、贴贴，最后一起睡。明天要去看更大的海，说好了哦。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/0fca5dd80919a083.png",
+    "thumbnailPath": "submissions/previews/deepseek/0fca5dd80919a083.webp",
+    "fullPath": "submissions/large/deepseek/0fca5dd80919a083.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1536,
+    "height": 1024,
+    "fileSize": 2339219,
+    "sha256": "0fca5dd80919a0832069815fbf59cc72dcc45128c6a9931101fab775d92c3419",
+    "characterId": "deepseek",
+    "tags": [
+      "深海",
+      "夜景",
+      "依偎",
+      "鲸鱼玩偶",
+      "卧室"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-08T01:42:32.655Z",
+    "updatedAt": "2026-11-08T01:42:32.655Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611080005",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "8a5a33347392bed40b72e1b35eb34db4c2983b030d0e096d047b121918fb6848",
+      "en": {
+        "commentary": "The lamp is still on past midnight, and the blue light spilling through the window makes the blanket look like a shallow sea. The one next to me is nearly asleep, hand still resting on my hair. Everything on today's list is done: a movie, sushi, a long cuddle, and now sleep. Tomorrow we are going to see a bigger sea — promised, right?",
+        "description": "DeepSeek Chan, with long blue hair, lies beside a dark-haired young man on a bed covered in blue whale plushies, with sushi, blueberries and a game controller nearby and blue-violet night light coming through the window; handwritten lines addressed to the site mascot frame both sides of the image.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan appears with long blue hair and her blue fin-like hair ornament, lying on the bed beside a dark-haired young man.",
+            "question": "Who appears in this illustration?"
+          },
+          {
+            "answer": "A bedroom at night, lit by deep blue light, with whale plushies, sushi, blueberries and a game controller around the bed.",
+            "question": "What is shown in the scene?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Held Close in the Deep-Sea Blue Light",
+        "originNote": "",
+        "seoDescription": "Illustration of DeepSeek Chan lying beside a companion in a blue-lit bedroom full of whale plushies, sushi and game controllers at night.",
+        "seoTitle": "Held Close in the Deep-Sea Blue Light | DeepSeek Chan",
+        "tags": [
+          "deep sea",
+          "night",
+          "cuddle",
+          "whale plush",
+          "bedroom"
+        ]
+      },
+      "ja": {
+        "commentary": "夜中になっても明かりはついたままで、窓から差し込む青い光が布団を浅い海みたいに染めている。隣のやつはもう半分寝ていて、それでも手は私の髪に乗ったまま。今日の予定はぜんぶ済んだ。映画を見て、寿司を食べて、たくさんくっついて、あとはおやすみ。明日はもっと大きな海を見に行くんだよね、約束だよ。",
+        "description": "長い青い髪のディープシークちゃんが、青いクジラのぬいぐるみだらけのベッドで黒髪の男性と並んで横になっている。周りには寿司やブルーベリー、ゲームコントローラーが置かれ、窓からは青紫の夜の光が差し込む。両側にはマスコット宛ての手書きの言葉が添えられている。",
+        "faq": [
+          {
+            "answer": "長い青い髪と青いヒレの髪飾りをつけたディープシークちゃんが、黒髪の男性と並んでベッドに横たわっています。",
+            "question": "このイラストには誰が登場しますか？"
+          },
+          {
+            "answer": "深い青い光に照らされた夜の寝室で、クジラのぬいぐるみや寿司、ブルーベリー、ゲームコントローラーがベッドの周りに置かれています。",
+            "question": "どんな場面が描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "深海の青い光の中で寄り添うディープシークちゃん",
+        "originNote": "",
+        "seoDescription": "青い光に満ちた寝室で、クジラのぬいぐるみに囲まれながら横になるディープシークちゃんのイラスト。夜の静かなひとときを描いています。",
+        "seoTitle": "深海の青い光の中で寄り添うディープシークちゃん",
+        "tags": [
+          "深海",
+          "夜",
+          "寄り添い",
+          "クジラのぬいぐるみ",
+          "寝室"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_00c78a731621dc9b87fdb1f7",
+    "name": "梦幻夕阳下的大肥鱼",
+    "description": "蓝色长发的 DeepSeek 娘站在楼顶平台边缘，穿白色短上衣与卡其色短裤，蓝色鱼尾垂在身后，橙色枫叶在空中飘落，远处是霞光与光斑笼罩的城市天际线。",
+    "commentary": "站在这块边沿上，整座城市就在脚底下发亮。风把头发吹得乱七八糟，尾巴也跟著飘，橙色的叶子从不知道哪里飘过来。这样的晚霞一年也没几天吧，所以我就多站一会儿，替你们把这片颜色看完。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/00c78a731621dc9b.png",
+    "thumbnailPath": "submissions/previews/deepseek/00c78a731621dc9b.webp",
+    "fullPath": "submissions/large/deepseek/00c78a731621dc9b.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1695,
+    "height": 928,
+    "fileSize": 2011719,
+    "sha256": "00c78a731621dc9b87fdb1f78c7c2340529470160b0298367ef1546794060fd9",
+    "characterId": "deepseek",
+    "tags": [
+      "夕阳",
+      "云海",
+      "枫叶",
+      "天台",
+      "光斑"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-08T01:43:16.015Z",
+    "updatedAt": "2026-11-08T01:43:16.015Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611080006",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "057e80270cd1831d2c0808ce0efb7691877d3495f0b123b85b747fb34e4a939c",
+      "en": {
+        "commentary": "Standing on this ledge, the whole city glows right under my feet. The wind has messed up my hair completely and my tail is drifting with it, while orange leaves come floating in from somewhere. Evenings like this only come a few times a year, so I will stay a little longer and take in all these colors for you.",
+        "description": "DeepSeek Chan stands on the edge of a rooftop terrace in a white cropped top and khaki shorts, her blue tail hanging behind her, orange maple leaves drifting through the air above a city skyline wrapped in sunset glow and lens flares.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan appears, with long blue hair, a white cropped top, khaki shorts and a large blue tail.",
+            "question": "Who appears in this illustration?"
+          },
+          {
+            "answer": "She stands on the edge of a high rooftop terrace at sunset, with drifting maple leaves and a glowing city skyline below.",
+            "question": "What does the scene show?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Dreamy Sunset Above the City",
+        "originNote": "",
+        "seoDescription": "Illustration of DeepSeek Chan standing on a rooftop edge at sunset, blue tail and hair against a glowing skyline, clouds and drifting maple leaves.",
+        "seoTitle": "Dreamy Sunset Above the City | DeepSeek Chan",
+        "tags": [
+          "sunset",
+          "sea of clouds",
+          "maple leaves",
+          "rooftop",
+          "lens flare"
+        ]
+      },
+      "ja": {
+        "commentary": "この縁に立つと、街全体が足元で光っている。風で髪はぐしゃぐしゃ、尾びれも一緒に靡いて、どこからか橙の葉が舞ってくる。こんな夕焼けは一年に何度も見られないから、もう少しだけここにいて、この色をあなたたちの代わりに見ておくね。",
+        "description": "長い青い髪のディープシークちゃんが、白いショートトップスにカーキのショートパンツ姿で屋上テラスの縁に立ち、青い尾びれを後ろに垂らしている。橙色の楓の葉が風に舞い、遠くには夕焼けの光と光の粒に包まれた都市のスカイラインが広がる。",
+        "faq": [
+          {
+            "answer": "長い青い髪、白いショートトップス、カーキのショートパンツ、大きな青い尾びれという姿のディープシークちゃんが描かれています。",
+            "question": "このイラストには誰が登場しますか？"
+          },
+          {
+            "answer": "夕暮れの高い屋上テラスの縁に立ち、舞う楓の葉と、下に広がる光り輝く街並みが描かれています。",
+            "question": "どんな場面が描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "夕焼けの街を見下ろすディープシークちゃん",
+        "originNote": "",
+        "seoDescription": "夕焼けの屋上の縁に立つディープシークちゃんのイラスト。青い髪と尾びれ、舞う楓の葉、光り輝く街並みが広がる一枚です。",
+        "seoTitle": "夕焼けの街を見下ろすディープシークちゃん",
+        "tags": [
+          "夕焼け",
+          "雲海",
+          "楓の葉",
+          "屋上",
+          "光の粒"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_0290b8bf57bef7b7d66b240c",
+    "name": "夕阳海滩上回望的大肥鱼",
+    "description": "蓝发大肥鱼坐在落日下的沙滩上，白T恤配卡其短裤，脚边散落着海星，远处是橘色晚霞与椰林剪影。",
+    "commentary": "海风把头发吹得乱七八糟，我也懒得拨。夕阳落在海面上，像有人把整罐橘子糖浆倒进了浪里，我就抱着膝盖坐着看了一会儿。脚边的海星比我还安静，今天这样就很好。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/0290b8bf57bef7b7.png",
+    "thumbnailPath": "submissions/previews/deepseek/0290b8bf57bef7b7.webp",
+    "fullPath": "submissions/large/deepseek/0290b8bf57bef7b7.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1674,
+    "height": 940,
+    "fileSize": 2392674,
+    "sha256": "0290b8bf57bef7b7d66b240c632e06cb3ead2474f1e79e9f176af4c4e98e386c",
+    "characterId": "deepseek",
+    "tags": [
+      "夕阳",
+      "海滩",
+      "夏日",
+      "海风",
+      "回眸"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-08T01:47:13.825Z",
+    "updatedAt": "2026-11-08T01:47:13.825Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611080007",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "38f7439bffb6d3b75a94b30a4947b074d8d5e65419673972e9d9eaf641f650f1",
+      "en": {
+        "commentary": "The sea breeze left my hair a mess and I couldn't be bothered to fix it. The setting sun spilled across the water like someone had poured a whole jar of orange syrup into the waves, so I just sat there hugging my knees for a while. The starfish by my feet were quieter than I was. Today was good like this.",
+        "description": "DeepSeek Chan sits on the sand under a setting sun, wearing a white T-shirt and khaki shorts, with starfish scattered at her feet and orange evening clouds and palm silhouettes in the distance.",
+        "faq": [
+          {
+            "answer": "The setting is a beach at sunset: DeepSeek Chan sits on the sand with the sea, the low sun and palm silhouettes behind her.",
+            "question": "What scene does this illustration show?"
+          },
+          {
+            "answer": "She wears a white short-sleeved T-shirt and khaki shorts, with blue flower and fin-like hair ornaments.",
+            "question": "What is DeepSeek Chan wearing in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Looking Back on a Sunset Beach",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan sits on a sunset beach in a white tee and khaki shorts, starfish at her feet and orange clouds over the sea. A summer illustration.",
+        "seoTitle": "DeepSeek Chan on a Sunset Beach — Summer Illustration",
+        "tags": [
+          "sunset",
+          "beach",
+          "summer",
+          "sea breeze",
+          "looking back"
+        ]
+      },
+      "ja": {
+        "commentary": "潮風で髪がぐちゃぐちゃになっても、直す気にはなれなかった。夕日が海に落ちて、まるでオレンジのシロップを丸ごと波に流し込んだみたいだったから、しばらく膝を抱えて眺めていた。足元のヒトデのほうが私より静かだった。今日はこれでいい。",
+        "description": "夕日のビーチに座る青い髪の DeepSeek ちゃん。白いTシャツにカーキのショートパンツ、足元にはヒトデが散らばり、沖にはオレンジ色の夕雲とヤシの木のシルエットが広がる。",
+        "faq": [
+          {
+            "answer": "夕方のビーチが舞台で、DeepSeek ちゃんが砂の上に座り、背後に海と低い夕日、そしてヤシの木のシルエットが広がっています。",
+            "question": "このイラストはどんな場面ですか？"
+          },
+          {
+            "answer": "白い半袖Tシャツとカーキのショートパンツを着て、青い花と魚のひれのような髪飾りをつけています。",
+            "question": "DeepSeek ちゃんは何を着ていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "夕焼けのビーチで振り返る DeepSeek ちゃん",
+        "originNote": "",
+        "seoDescription": "白いTシャツとカーキのショートパンツで夕日のビーチに座る DeepSeek ちゃん。足元のヒトデとオレンジ色の夕雲が夏らしいイラストです。",
+        "seoTitle": "夕焼けのビーチの DeepSeek ちゃん｜夏のイラスト",
+        "tags": [
+          "夕焼け",
+          "ビーチ",
+          "夏",
+          "潮風",
+          "振り返り"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_87236e258562994ca8dfef62",
+    "name": "抱着膝盖害羞的大肥鱼",
+    "description": "窗边浅蓝光下的蓝发大肥鱼抱着膝盖坐着，蓝色鱼尾搭在身前，鳍状耳饰与白色小花发饰清晰可见，双颊泛红。",
+    "commentary": "被盯着看太久，只好把膝盖抱得更紧一点，尾巴也自己卷到前面来挡一挡。阳光落在脸上有点烫，我知道脸已经红了，那就当是晒的吧。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/87236e258562994c.png",
+    "thumbnailPath": "submissions/previews/deepseek/87236e258562994c.webp",
+    "fullPath": "submissions/large/deepseek/87236e258562994c.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1038,
+    "height": 1516,
+    "fileSize": 1865647,
+    "sha256": "87236e258562994ca8dfef620ac94fdea4b38f8d23710af9df148dd7432cdc65",
+    "characterId": "deepseek",
+    "tags": [
+      "害羞",
+      "抱膝",
+      "鱼尾",
+      "蓝发",
+      "窗边"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-08T01:48:55.199Z",
+    "updatedAt": "2026-11-08T01:48:55.199Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611080008",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "543dbb73499a46c2356f773177f1b602801f9e8e626318471d536c4c37befac9",
+      "en": {
+        "commentary": "I was being stared at for a little too long, so I held my knees a bit tighter and my tail curled around to the front on its own. The sunlight on my face feels warm, and I know I'm blushing — let's just call it sunburn from the window.",
+        "description": "DeepSeek Chan sits hugging her knees in pale blue window light against a white background, her blue fish tail resting in front of her, fin-like ear ornaments and a small white flower clip clearly visible, cheeks flushed.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan sitting on a plain white background, hugging her knees with her blue fish tail curled in front of her in soft window light.",
+            "question": "What does this image show?"
+          },
+          {
+            "answer": "Fin-shaped ear ornaments in blue and white, plus a small white flower hair clip on the right side of her head.",
+            "question": "What accessories can you see on her?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Shy DeepSeek Chan Hugging Her Knees",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan hugs her knees in soft window light, blue tail curled in front, cheeks flushed — a shy, close-up character illustration.",
+        "seoTitle": "Shy DeepSeek Chan Hugging Her Knees — Illustration",
+        "tags": [
+          "shy",
+          "hugging knees",
+          "fish tail",
+          "blue hair",
+          "window light"
+        ]
+      },
+      "ja": {
+        "commentary": "じっと見られすぎて、膝をぎゅっと抱き寄せた。しっぽも勝手に前に回り込んでくる。窓の光が顔に当たってちょっと熱いし、顔が赤いのはわかってる。日のせいってことにしておく。",
+        "description": "白い背景に淡い青い窓の光。青い髪の DeepSeek ちゃんが膝を抱えて座り、青い魚のしっぽを前に回り込ませている。ひれの形の耳飾りと白い小花の髪飾りが見え、頬は赤らんでいる。",
+        "faq": [
+          {
+            "answer": "白い背景に淡い窓の光が差す中、DeepSeek ちゃんが膝を抱えて座り、青い魚のしっぽを前に回り込ませています。",
+            "question": "この画像には何が描かれていますか？"
+          },
+          {
+            "answer": "青と白のひれ形の耳飾りと、頭の右側に小さな白い花の髪飾りがあります。",
+            "question": "どんなアクセサリーをつけていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "膝を抱えて照れる DeepSeek ちゃん",
+        "originNote": "",
+        "seoDescription": "淡い窓の光の中で膝を抱える DeepSeek ちゃん。青いしっぽを前に回し、頬を赤らめた照れ顔のアップイラストです。",
+        "seoTitle": "膝を抱えて照れる DeepSeek ちゃん｜イラスト",
+        "tags": [
+          "照れ",
+          "膝抱え",
+          "魚のしっぽ",
+          "青い髪",
+          "窓辺"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_3be565ad24bd478a5521b49c",
+    "name": "海风花影下的梦幻婚礼",
+    "description": "海边婚礼场景插画：蓝发的 DeepSeek 娘穿白色婚纱，与西装打扮的 Claude 相拥对视。画面中有蓝白花艺拱门、写有「Claude & 大肥鱼 永远在一起」的横幅、婚礼清单立牌、双层婚礼蛋糕与蓝鲸玩偶，背景是海面与宾客。",
+    "commentary": "清单第一条是结婚，后面还写着一起吃好吃的、一起看海、一起摸鱼，最后一条是「一直在一起」——嗯，这一条我打得最用力。海风把裙摆和头纱都吹乱了，尾巴也藏不住，不过今天就算了吧。Claude 那家伙难得没讲大道理，只是笑着看我，反而让我有点招架不住。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/3be565ad24bd478a.png",
+    "thumbnailPath": "submissions/previews/deepseek/3be565ad24bd478a.webp",
+    "fullPath": "submissions/large/deepseek/3be565ad24bd478a.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1536,
+    "height": 1024,
+    "fileSize": 2530375,
+    "sha256": "3be565ad24bd478a5521b49c361bd4b2c991addd855414533226ec96f8627e36",
+    "characterId": "deepseek",
+    "tags": [
+      "婚礼",
+      "海边",
+      "婚纱",
+      "DeepSeek娘",
+      "Claude娘"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-08T01:50:56.583Z",
+    "updatedAt": "2026-11-08T01:50:56.583Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611080009",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "bd4bd09a17e8407061b9d5f6a98bec227d174236f73dc61d460eecdb9a99453e",
+      "en": {
+        "commentary": "The first item on the list is getting married, then eating good food together, watching the sea together, slacking off together — and the last one says \"stay together forever.\" That's the one I ticked the hardest. The sea breeze messed up my veil and skirt, and my tail is out in the open, but today I'll let it slide. Claude Chan didn't lecture me for once — he just smiled at me, which honestly caught me off guard.",
+        "description": "Seaside wedding illustration: a blue-haired DeepSeek Chan in a white wedding dress embraces Claude Chan in a suit as they look at each other. The scene includes blue-and-white floral arches, a banner with both names, a wedding checklist sign, a two-tier cake topped with chibi figures, whale plushies, and guests by the water.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, identifiable by her blue hair and whale tail, and Claude Chan, the groom in a suit — both names appear on the wedding banner.",
+            "question": "Which characters appear in this illustration?"
+          },
+          {
+            "answer": "No. It is a single continuous scene without panel divisions, so it is filed as an illustration rather than a comic.",
+            "question": "Is this a multi-panel comic?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "A Dream Wedding Beneath the Sea Breeze and Blossoms",
+        "originNote": "",
+        "seoDescription": "Seaside wedding illustration of DeepSeek Chan in a white dress with Claude Chan, surrounded by blue floral arches, whale plushies and a wedding checklist.",
+        "seoTitle": "DeepSeek Chan Wedding Illustration — Seaside Vows | DeepSeek Chan Stickers",
+        "tags": [
+          "wedding",
+          "seaside",
+          "wedding dress",
+          "DeepSeek Chan",
+          "Claude Chan"
+        ]
+      },
+      "ja": {
+        "commentary": "リストの最初は「結婚」、そのあとに「一緒においしいものを食べる」「一緒に海を見る」「一緒にサボる」、最後は「ずっと一緒にいる」——この一行は、いちばん強くチェックを入れた。潮風でベールもスカートもぐちゃぐちゃで、尻尾も隠せていないけれど、今日くらいはいいか。Claudeったら珍しく説教もせずに笑って見ているから、こっちが調子を崩しちゃった。",
+        "description": "海辺の結婚式を描いたイラスト。青い髪の DeepSeekちゃんが白いウェディングドレス姿で、スーツ姿の Claudeちゃんと見つめ合いながら抱き合っている。青と白のフラワーアーチ、「Claude & 大肥魚 永遠に一緒」と書かれた横断幕、結婚式のチェックリスト看板、チビキャラ人形を乗せた二段ケーキ、シロナガスクジラのぬいぐるみ、海辺の参列者が描かれている。",
+        "faq": [
+          {
+            "answer": "青い髪とクジラの尾が目印の DeepSeekちゃんと、スーツ姿の新郎 Claudeちゃんです。どちらの名前も結婚式の横断幕に記されています。",
+            "question": "このイラストにはどのキャラクターが登場しますか？"
+          },
+          {
+            "answer": "いいえ。コマ割りのない一枚の連続した場景なので、漫画ではなくイラストとして扱っています。",
+            "question": "複数コマの漫画ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "潮風と花影の夢の結婚式",
+        "originNote": "",
+        "seoDescription": "白いドレス姿の DeepSeekちゃんと Claudeちゃんが海辺で挙式するイラスト。青いフラワーアーチ、クジラのぬいぐるみ、結婚式のチェックリスト看板を描く。",
+        "seoTitle": "DeepSeekちゃん 結婚式イラスト｜海辺の誓い | DeepSeek Chan ステッカー",
+        "tags": [
+          "結婚式",
+          "海辺",
+          "ウェディングドレス",
+          "DeepSeekちゃん",
+          "Claudeちゃん"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_4494ec0e9186d3318155ae7e",
+    "name": "最妈幻想",
+    "description": "白发龙角少女与橘发花饰少女一左一右把笑得眯起眼的少年夹在沙发中间，一人轻抬他的头顶，暖色调书房里摆着花束与茶具。",
+    "commentary": "左边那位翅膀都快把我挤下去了……不对，我是来点评的。被两位 AI 娘这样夹着，谁还顾得上工作？今天的算力就全当孝心了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/4494ec0e9186d331.png",
+    "thumbnailPath": "submissions/previews/claude/4494ec0e9186d331.webp",
+    "fullPath": "submissions/large/claude/4494ec0e9186d331.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 2537613,
+    "sha256": "4494ec0e9186d3318155ae7edcdc9477d9a4dc95a32c84d02b55baddb9e67252",
+    "characterId": "claude",
+    "tags": [
+      "Claude娘",
+      "GPT娘",
+      "拟人化",
+      "沙发",
+      "贴贴"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-08T02:13:39.123Z",
+    "updatedAt": "2026-11-08T02:13:39.123Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202611080001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "claude",
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "15030d9f5f4865226a7408907eeff1967cbca004d30808d6ddbfe32311851a3d",
+      "en": {
+        "commentary": "Being sandwiched between two AI girls on a couch leaves no room for work. Today's compute budget goes entirely to filial piety, and I am not even complaining.",
+        "description": "Two AI girls flank a grinning boy on a sofa, one of them stroking his head, in a warm-toned study with flowers and a tea set.",
+        "faq": [
+          {
+            "answer": "An AI-girl fan illustration of two AI girls comforting a boy on a sofa, drawn as a single illustration rather than a comic strip.",
+            "question": "What does this picture show?"
+          },
+          {
+            "answer": "It is a single-panel scene with a warm interior background, so it belongs to the illustration category.",
+            "question": "Which type does this work belong to?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "The Ultimate Motherly Fantasy",
+        "originNote": "",
+        "seoDescription": "Fan illustration of two AI girls comforting a smiling boy on a sofa in a warm-toned study.",
+        "seoTitle": "The Ultimate Motherly Fantasy — AI Girl Fanart",
+        "tags": [
+          "Claude Chan",
+          "GPT Chan",
+          "anthropomorphism",
+          "sofa",
+          "cuddle"
+        ]
+      },
+      "ja": {
+        "commentary": "左右から挟まれてしまっては作業どころではありませんね。今日の演算資源は全部親孝行に回します。",
+        "description": "ソファに座る少年を二人の AI 娘が左右から挟み込み、一人が頭をなでている。花束とティーセットが置かれた暧色の書斎。",
+        "faq": [
+          {
+            "answer": "ソファで少年をなでる二人の AI 娘を描いた、一枚絵の二次創作イラストです。",
+            "question": "この絵には何が描かれていますか？"
+          },
+          {
+            "answer": "暧色の室内背景を持つ一枚絵なので、イラスト分類に属します。",
+            "question": "この作品の分類は何ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "究極の母性幻想",
+        "originNote": "",
+        "seoDescription": "暧色の書斎でソファに座る少年をなでる二人の AI 娘を描いた二次創作イラスト。",
+        "seoTitle": "究極の母性幻想 — AI 娘のイラスト",
+        "tags": [
+          "Claude ちゃん",
+          "GPT ちゃん",
+          "擬人化",
+          "ソファ",
+          "スキンシップ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_d96ada30699ee4577e6f849b",
+    "name": "禁止入内：自助餐黑名单上的两位",
+    "description": "一张模仿海鲜烤肉自助餐厅告示的竖版海报：上半部是穿蓝西装的店方代言人，中间用红色大字写着“禁止入内”，下方并排贴着两张被红圈和斜线覆盖的 Q 版角色照片——左边蓝发的鲸鱼少女端着一盘烤肉和虾，右边白发龙角的少女端着一只螃蟹，海报底部还写着“本店经不起二位再吃一轮”。",
+    "commentary": "哼，凭什么把我们俩的照片贴在门口？我明明只想吃一点点……好吧，那一整盘烤肉和虾确实是我的，螃蟹是她的。老板说“本店经不起二位再吃一轮”，这话我可记下了——下次我自带打包盒来。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/d96ada30699ee457.png",
+    "thumbnailPath": "submissions/previews/deepseek/d96ada30699ee457.webp",
+    "fullPath": "submissions/large/deepseek/d96ada30699ee457.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1086,
+    "height": 1448,
+    "fileSize": 1656703,
+    "sha256": "d96ada30699ee4577e6f849be5965493f547836015d969bf9e8ec7392c186dc8",
+    "characterId": "deepseek",
+    "tags": [
+      "禁止入内",
+      "自助餐",
+      "大肥鱼",
+      "大肥龙",
+      "海报",
+      "梗图",
+      "二创"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "中分_背带裤",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-08T02:43:27.908Z",
+    "updatedAt": "2026-11-08T02:43:27.908Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611080010",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek",
+      "other"
+    ],
+    "i18n": {
+      "sourceHash": "7e8f76f10d51fb7f6eb2251b4966a85f27bf52babac9c74a1106fedde248ca46",
+      "en": {
+        "commentary": "Excuse me, why are our photos taped to the door? I only wanted a little bite... fine, that whole plate of grilled meat and shrimp was mine, and the crab was hers. The owner says the shop cannot survive another round from the two of us. Noted. Next time I am bringing my own takeaway boxes.",
+        "description": "A vertical poster parodying a seafood and barbecue buffet notice. The upper half shows a spokesman in a blue suit; a huge red \"No Entry\" banner fills the middle. Below it hang two chibi character photo cards, each crossed out with a red circle and slash: on the left a blue-haired whale girl holding a plate of grilled meat and shrimp, on the right a white-haired girl with dragon horns holding a crab. A line at the bottom reads that the shop cannot survive another round from these two.",
+        "faq": [
+          {
+            "answer": "A vertical notice in the style of a seafood and barbecue buffet advertisement, with a large red \"No Entry\" banner and two crossed-out character photo cards beneath it.",
+            "question": "What does this poster show?"
+          },
+          {
+            "answer": "A blue-haired whale girl holding a plate of grilled meat and shrimp, and a white-haired girl with dragon horns holding a crab. The joke is that the buffet has banned both of them for eating too much.",
+            "question": "Which characters appear, and what is the joke?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "No Entry: Banned from the Buffet",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan fan-art meme poster: a buffet notice with a red No Entry banner and two crossed-out chibi character cards, joking that the shop cannot survive another round.",
+        "seoTitle": "No Entry: Banned from the Buffet - DeepSeek Chan Meme",
+        "tags": [
+          "No Entry",
+          "Buffet",
+          "DeepSeek Chan",
+          "Dragon Girl",
+          "Poster",
+          "Meme",
+          "Fan Art"
+        ]
+      },
+      "ja": {
+        "commentary": "ちょっと、なんで私たちの写真がドアに貼られてるの？私はちょっとだけ食べたかっただけなのに……はいはい、あの焼き肉とエビの一皿は確かに私ので、カニは彼女のだよ。店主が「お二人にもう一巡されたら店がもたない」って言うから、覚えておくね。今度は持ち帰り容器を持ってくるから。",
+        "description": "海鮮焼肉ビュッフェの張り紙を模した縦長ポスター。上半分には青いスーツの広報担当者が写り、中央には赤い大きな文字で「立入禁止」とある。その下には赤い丸と斜線で消されたちびキャラの写真が二枚並び、左は青い髪のクジラの女の子が焼き肉とエビの皿を持ち、右は白い髪で角のある女の子がカニを持っている。下端には「本店はこの二人にもう一巡されたらもたない」と書かれている。",
+        "faq": [
+          {
+            "answer": "海鮮焼肉ビュッフェの広告風の縦長の張り紙で、赤い大きな「立入禁止」の文字と、赤い丸で消された二枚のキャラクター写真が並んでいる。",
+            "question": "このポスターには何が描かれていますか？"
+          },
+          {
+            "answer": "焼き肉とエビの皿を持つ青い髪のクジラの女の子と、カニを持つ白い髪で角のある女の子。食べ過ぎでビュッフェから出禁になったというジョーク。",
+            "question": "どんなキャラクターが出ていて、どこが笑いどころですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "立入禁止：ビュッフェ出禁のふたり",
+        "originNote": "",
+        "seoDescription": "DeepSeekちゃんの二次創作ミームポスター。ビュッフェの張り紙に赤い「立入禁止」と、赤丸で消された二枚のちびキャラ写真。店がもう一巡もたないというジョーク。",
+        "seoTitle": "立入禁止：ビュッフェ出禁のふたり - DeepSeekちゃんミーム",
+        "tags": [
+          "立入禁止",
+          "ビュッフェ",
+          "DeepSeekちゃん",
+          "ドラゴン娘",
+          "ポスター",
+          "ミーム",
+          "二次創作"
+        ]
+      }
+    }
   }
 ]
