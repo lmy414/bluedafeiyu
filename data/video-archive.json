@@ -96,8 +96,8 @@
       "intro": "我想做很多视频，做很多很好玩的视频，首先肯定是自己觉得很好玩，其次嘛，也想传播快乐给大家。",
       "avatar": "https://i2.hdslb.com/bfs/face/e3445be765ec330ac29b07c328496e44ec04077a.jpg",
       "i18n": {
-        "en": "I want to make lots of videos, and make them really fun. First because I enjoy them myself, and then because I want to share that fun with everyone.",
-        "ja": "たくさん動画を作って、たくさん楽しい動画にしたいです。まずは自分が楽しいと思えること、それからみんなに楽しさを届けたいと思っています。"
+        "en": "I want to make lots of videos, and lots of fun ones. First because I enjoy them myself, and also because I want to share the fun with everyone.",
+        "ja": "たくさん動画を作りたい、たくさん楽しい動画を作りたい。まずは自分が楽しいと思うこと、それからみんなに楽しさを届けたい。"
       }
     },
     {
@@ -201,6 +201,56 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1U6WE6cEj5",
+      "uid": "9126506",
+      "title": "大肥鱼舞蹈",
+      "description": "大肥鱼舞蹈",
+      "url": "https://www.bilibili.com/video/BV1U6WE6cEj5/",
+      "cover": "https://i0.hdslb.com/bfs/archive/a039b0d4e28c4c34cc8d97e365750fd46235b637.jpg",
+      "duration": 25,
+      "publishedAt": "2026-11-08T13:23:23.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, and lots of fun ones. First because I enjoy them myself, and also because I want to share the fun with everyone.",
+          "description": "A 3D animated short in which DeepSeek Chan, the blue-haired chibi mascot in a white hoodie and ribbon, dances around a room with a blue-lit shelf and then on a metal staircase.",
+          "title": "DeepSeek Chan Dance"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作りたい、たくさん楽しい動画を作りたい。まずは自分が楽しいと思うこと、それからみんなに楽しさを届けたい。",
+          "description": "白いパーカーの青髪ちびキャラ、DeepSeekちゃんが青い照明の棚のある部屋や金属製の階段でダンスを踊る3Dアニメーション。",
+          "title": "DeepSeekちゃんのダンス"
+        }
+      }
+    },
+    {
+      "bvid": "BV1DqWE6AEMP",
+      "uid": "9126506",
+      "title": "不给糖就捣蛋",
+      "description": "不给糖就捣蛋",
+      "url": "https://www.bilibili.com/video/BV1DqWE6AEMP/",
+      "cover": "https://i2.hdslb.com/bfs/archive/eb02825425a036045f2d9fdb8ce570978d53f6f5.jpg",
+      "duration": 15,
+      "publishedAt": "2026-11-08T13:12:30.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, and lots of fun ones. First because I enjoy them myself, and also because I want to share the fun with everyone.",
+          "description": "A short Halloween fan video in which DeepSeek Chan, the blue-haired chibi mascot, appears in a dark costume holding a pumpkin basket and leans close to the camera to ask for candy.",
+          "title": "Trick or Treat"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作りたい、たくさん楽しい動画を作りたい。まずは自分が楽しいと思うこと、それからみんなに楽しさを届けたい。",
+          "description": "ハロウィンの短い二次創作動画。青髪のちびキャラ、DeepSeekちゃんが黒っぽい衣装とカボチャのバスケットで登場し、カメラに顔を近づけてお菓子をねだる。",
+          "title": "お菓子をくれないとイタズラするよ"
+        }
+      }
+    },
     {
       "bvid": "BV1dsWE63EBR",
       "uid": "15475629",
