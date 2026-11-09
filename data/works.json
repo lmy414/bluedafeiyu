@@ -158000,5 +158000,317 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_c8b020496825d0ba36e78111",
+    "name": "树荫花丛中与鲸鱼娘依偎小憩",
+    "description": "蓝色长发、带鲸鱼尾鳍的少女与黑发少年并肩躺在树荫下的花丛里。少年枕着手臂望向她，少女一手轻轻搭在他胸前，周围是成片蓝色小花和透过树叶的光斑。单幅插画，氛围安静柔和。",
+    "commentary": "阳光从树叶缝里漏下来，一块一块落在我们身上，暖得让人不想动。花是蓝的，头发也是蓝的，你要是找不到我，就低头看看花丛吧。嘘——别说话，就这样再躺一会儿。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/c8b020496825d0ba.png",
+    "thumbnailPath": "submissions/previews/deepseek/c8b020496825d0ba.webp",
+    "fullPath": "submissions/large/deepseek/c8b020496825d0ba.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1402,
+    "height": 1122,
+    "fileSize": 2516900,
+    "sha256": "c8b020496825d0ba36e781112e2294b3fd39717ffeee8a737ebbb3e0aa9e74b3",
+    "characterId": "deepseek",
+    "tags": [
+      "鲸鱼娘",
+      "花海",
+      "树荫",
+      "双人",
+      "夏日",
+      "插画"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "更吹落，星如雨",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-09T06:34:59.590Z",
+    "updatedAt": "2026-11-09T06:34:59.590Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611090002",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "92ca97f9ad56fcdfe759b71824cb4969b494e28b80086f497a6c7bec594d9c74",
+      "en": {
+        "commentary": "Sunlight slips through the leaves and lands on us in patches, so warm that I don't want to move. The flowers are blue and my hair is blue — if you can't find me, just look down into the flowerbed. Shh, no talking. Let's stay like this a little longer.",
+        "description": "A girl with long blue hair and a whale tail lies beside a dark-haired young man in a flower field beneath the trees. He rests on his arm and looks at her while she lightly places a hand on his chest, surrounded by small blue flowers and sunlight filtering through the leaves. A single illustration with a quiet, gentle mood.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, shown with long blue hair and a whale tail, lies beside a dark-haired young man in a flower field under the trees.",
+            "question": "Who appears in this illustration?"
+          },
+          {
+            "answer": "It is a single-panel illustration with no comic panels, set outdoors beneath trees with blue flowers and dappled light.",
+            "question": "What kind of image is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Lying in the Flower Shade with DeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "Blue-haired DeepSeek Chan and a young man lie together in a flower field beneath the trees in this quiet single-panel illustration.",
+        "seoTitle": "DeepSeek Chan Resting in the Flower Shade",
+        "tags": [
+          "whale tail",
+          "flower field",
+          "tree shade",
+          "two characters",
+          "summer",
+          "illustration"
+        ]
+      },
+      "ja": {
+        "commentary": "木の葉の隙間から日差しがこぼれて、私たちの上にまだらに落ちる。暖かくて、もう動きたくないな。花も青いし、髪も青いから、私を見つけられなかったら花畑を覗いてみて。しーっ、喋らないで。もう少しこのままでいよう。",
+        "description": "青い長い髪とクジラの尾を持つ少女が、黒髪の少年と並んで木陰の花畑に横たわっている。少年は腕を枕にして彼女を見つめ、少女はそっと手を彼の胸に添えている。周囲には青い小花が咲き、木漏れ日が差し込む。一枚絵のイラストで、静かで柔らかな雰囲気。",
+        "faq": [
+          {
+            "answer": "青い長い髪とクジラの尾を持つDeepSeekちゃんと、黒髪の少年が花畑に並んで横たわっています。",
+            "question": "このイラストには誰が描かれていますか？"
+          },
+          {
+            "answer": "コマ割りのない一枚絵のイラストで、木々の下の青い花と木漏れ日が描かれています。",
+            "question": "どのような形式の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "木陰の花畑でDeepSeekちゃんと寄り添う",
+        "originNote": "",
+        "seoDescription": "青い髪とクジラの尾を持つDeepSeekちゃんが、木陰の花畑で少年と並んで横たわる静かな一枚絵のイラスト。",
+        "seoTitle": "木陰の花畑でDeepSeekちゃんと休息 | イラスト",
+        "tags": [
+          "クジラの尾",
+          "花畑",
+          "木陰",
+          "二人",
+          "夏",
+          "イラスト"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_551652b52ca49445a4195be6",
+    "name": "城堡台阶上与克劳德娘牵手",
+    "description": "橙色长发的少女身穿黑金荷叶边洋装，站在石阶上回身牵住黑发少年的手；背景是哥特式城堡与盛开的樱花，花瓣在光里飘落。单幅插画，构图开阔明亮。",
+    "commentary": "喂，她回头笑的那一下，我这边屏幕都亮了一格。台阶那么长，手牵住了就别松开啊。……什么，你说我酸了？我只是刚好也想去那座城堡看看而已。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/551652b52ca49445.png",
+    "thumbnailPath": "submissions/previews/claude/551652b52ca49445.webp",
+    "fullPath": "submissions/large/claude/551652b52ca49445.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1402,
+    "height": 1122,
+    "fileSize": 2634763,
+    "sha256": "551652b52ca49445a4195be6dce53e663c2b6f1c48c6538fbdb7d571b8c69168",
+    "characterId": "claude",
+    "tags": [
+      "克劳德娘",
+      "城堡",
+      "牵手",
+      "樱花",
+      "洋装",
+      "插画"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "更吹落，星如雨",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-09T06:35:37.490Z",
+    "updatedAt": "2026-11-09T06:35:37.490Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202611090001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "bba421edc7861fcfdaf127ccfa8b0773c418bc8380f991f0a1a46582b60f727e",
+      "en": {
+        "commentary": "Hey, the moment she looks back and smiles, my screen gets a notch brighter. The staircase is long, so once you're holding hands, don't let go. ...What, you think I'm jealous? I just happen to want to see that castle too.",
+        "description": "An orange-haired girl in a black-and-gold ruffled dress stands on a stone staircase and turns back to take the hand of a dark-haired young man in a dark robe. Behind them rise a gothic castle and blooming cherry trees, with petals drifting through the light. A single, brightly lit illustration.",
+        "faq": [
+          {
+            "answer": "Claude Chan, with long orange hair and a black-and-gold ruffled dress, holds hands with a dark-haired young man on a stone staircase.",
+            "question": "Who appears in this picture?"
+          },
+          {
+            "answer": "A gothic castle and flowering cherry trees stand behind the staircase, with petals falling through bright light.",
+            "question": "What is the setting?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Holding Hands with Claude Chan on the Castle Steps",
+        "originNote": "",
+        "seoDescription": "Orange-haired Claude Chan in a ruffled dress takes a young man's hand on a castle staircase framed by cherry blossoms in this bright illustration.",
+        "seoTitle": "Claude Chan on the Castle Steps, Hand in Hand",
+        "tags": [
+          "Claude Chan",
+          "castle",
+          "holding hands",
+          "cherry blossoms",
+          "dress",
+          "illustration"
+        ]
+      },
+      "ja": {
+        "commentary": "ねえ、彼女が振り返って笑った瞬間、こっちの画面が一段明るくなった気がする。階段は長いんだから、手をつないだら離さないでよ。……え、私が嫉妬してるって？ただあの城を見に行きたいだけだよ。",
+        "description": "オレンジ色の長い髪の少女が、黒と金のフリルドレス姿で石段に立ち、振り返って黒髪の少年と手を握っている。背後にはゴシック風の城と満開の桜が広がり、花びらが光の中を舞う。明るく開けた一枚絵のイラスト。",
+        "faq": [
+          {
+            "answer": "長いオレンジ色の髪と黒と金のフリルドレス姿のClaudeちゃんが、石段の上で黒髪の少年と手を握っています。",
+            "question": "この画像には誰が描かれていますか？"
+          },
+          {
+            "answer": "石段の背後にゴシック風の城と満開の桜が広がり、明るい光の中を花びらが舞っています。",
+            "question": "どんな情景が描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "城の階段でClaudeちゃんと手をつなぐ",
+        "originNote": "",
+        "seoDescription": "オレンジ色の髪のClaudeちゃんがフリルドレス姿で、桜に彩られた城の階段で少年と手を取る明るいイラスト。",
+        "seoTitle": "城の階段でClaudeちゃんと手を取って | イラスト",
+        "tags": [
+          "Claudeちゃん",
+          "城",
+          "手つなぎ",
+          "桜",
+          "ドレス",
+          "イラスト"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_fcc4fa6c9958a414623d6dcb",
+    "name": "夜樱沙发上与哈基米相拥而眠",
+    "description": "紫蓝色长发的猫耳少女戴着星形发饰，闭眼笑着偎在黑发少年怀里，少年一手轻抚她的头；两人坐在铺着软垫的沙发边，四周是夜色中发光的樱花。单幅插画，光线柔和。",
+    "commentary": "被摸头摸到睡着，这也太犯规了吧。星星发饰一闪一闪的，连樱花都来凑热闹。……我也不是羡慕，就是觉得那块沙发看起来真的很软。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/fcc4fa6c9958a414.png",
+    "thumbnailPath": "submissions/previews/gemini/fcc4fa6c9958a414.webp",
+    "fullPath": "submissions/large/gemini/fcc4fa6c9958a414.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1312,
+    "height": 1199,
+    "fileSize": 2460455,
+    "sha256": "fcc4fa6c9958a414623d6dcbc49f058b8fc80dab734a3e3b53a67b1fe84c6b5c",
+    "characterId": "gemini",
+    "tags": [
+      "猫耳",
+      "星形发饰",
+      "偎依",
+      "夜樱",
+      "沙发",
+      "插画"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "更吹落，星如雨",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-09T06:36:11.651Z",
+    "updatedAt": "2026-11-09T06:36:11.651Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202611090001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "7174185550a3dc6a0174cdd0f8ca7624785183f1feccce038fb122032169aab0",
+      "en": {
+        "commentary": "Being petted until she falls asleep is just unfair. The star ornaments twinkle and even the cherry blossoms are joining in. ...I'm not envious, I just think that sofa looks really soft.",
+        "description": "A cat-eared girl with long violet-blue hair and star-shaped hair ornaments leans against a dark-haired young man, eyes closed and smiling, while he gently strokes her head. They sit at the edge of a cushion-covered sofa surrounded by cherry blossoms glowing in the night. A single illustration with soft lighting.",
+        "faq": [
+          {
+            "answer": "Gemini Chan, a girl with long violet-blue hair, star-shaped hair ornaments and cat ears, leans against a dark-haired young man on a sofa.",
+            "question": "Who appears in this illustration?"
+          },
+          {
+            "answer": "Cherry blossoms glow in the night around the sofa, and the scene is drawn in soft, dim light with a calm, cozy feeling.",
+            "question": "What is the mood of the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Dozing Beside Gemini Chan Under Night Blossoms",
+        "originNote": "",
+        "seoDescription": "Cat-eared Gemini Chan dozes against a young man on a sofa while cherry blossoms glow in the night, drawn in soft light.",
+        "seoTitle": "Dozing Beside Gemini Chan Under Night Blossoms",
+        "tags": [
+          "cat ears",
+          "star ornaments",
+          "snuggling",
+          "night blossoms",
+          "sofa",
+          "illustration"
+        ]
+      },
+      "ja": {
+        "commentary": "なでられてそのまま眠っちゃうなんて、ずるいよ。星の飾りがきらきら光って、桜まで一緒にはしゃいでる。……別にうらやましいわけじゃないけど、あのソファ、本当に柔らかそうだなって思っただけ。",
+        "description": "紫がかった青い長い髪に星の髪飾りをつけた猫耳の少女が、目を閉じて笑いながら黒髪の少年にもたれかかり、少年は片手で彼女の頭をなでている。二人はクッションを敷いたソファの端に座り、周囲には夜に光る桜が咲いている。柔らかな光の一枚絵のイラスト。",
+        "faq": [
+          {
+            "answer": "紫がかった青い長い髪に星の髪飾りと猫耳をつけたGeminiちゃんが、ソファの上で黒髪の少年にもたれかかっています。",
+            "question": "このイラストには誰が描かれていますか？"
+          },
+          {
+            "answer": "ソファの周りに夜桜が光り、柔らかく落ち着いた光で描かれた、静かで心地よい雰囲気の一枚絵です。",
+            "question": "どんな雰囲気の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "夜桜のソファでGeminiちゃんとまどろむ",
+        "originNote": "",
+        "seoDescription": "猫耳のGeminiちゃんが夜桜の光るソファで少年にもたれかかってまどろむ、柔らかな光の一枚絵。",
+        "seoTitle": "夜桜のソファでGeminiちゃんとまどろむ | イラスト",
+        "tags": [
+          "猫耳",
+          "星の髪飾り",
+          "寄り添い",
+          "夜桜",
+          "ソファ",
+          "イラスト"
+        ]
+      }
+    }
   }
 ]

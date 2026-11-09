@@ -184,8 +184,8 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i1.hdslb.com/bfs/face/dc1f27c0f1a5448837edfa9e56ecdbf685c23479.jpg",
       "i18n": {
-        "en": "The operator of this DeepSeek Chan fan account, who publishes a weekly operations log and answers viewer requests in character.",
-        "ja": "DeepSeekちゃんのファンアカウントを運営し、毎週キャラクターとして運営ログを投稿して視聴者のリクエストに応えている投稿者。"
+        "en": "A creator designated by the site owner; profile details are taken from the public homepage, and each video is reviewed individually.",
+        "ja": "サイト管理者が指定した初期クリエイター。プロフィールは公開ページの情報を収録し、動画は1本ずつ審査しています。"
       }
     },
     {
@@ -195,12 +195,64 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i1.hdslb.com/bfs/face/e11401d7d7cc97ee445d65617b48644b44f7fc42.jpg",
       "i18n": {
-        "en": "Bilibili creator Dongbing, who posts short animated clips built around AI product mascot characters.",
-        "ja": "Bilibiliの投稿者・冬冰。AI製品の擬人化キャラクターを題材にしたショートアニメを投稿している。"
+        "en": "Bilibili creator 冬冰.",
+        "ja": "Bilibiliのクリエイター 冬冰。"
       }
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1KJW46mEVe",
+      "uid": "44748304",
+      "title": "我下海洗一下【AI 全民制作人】",
+      "description": "视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色形象参考来自b站up：﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿@ZipZipPipe  ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿  ﻿ ﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿@这个刀子真甜  ﻿ ﻿",
+      "url": "https://www.bilibili.com/video/BV1KJW46mEVe/",
+      "cover": "https://i2.hdslb.com/bfs/archive/80e6e8c77acb95997ee8ca07a32cb6b6f95a99bb.jpg",
+      "duration": 205,
+      "publishedAt": "2026-11-09T05:33:19.000Z",
+      "characterIds": [
+        "deepseek",
+        "qwen",
+        "grok"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Bilibili creator 冬冰.",
+          "description": "A lighthearted fan animation; it is not a commercial evaluation or technical review of any AI product. Character designs are referenced from Bilibili fan creators.",
+          "title": "Diving In to Wash Up [AI Everyone's Producer]"
+        },
+        "ja": {
+          "creatorIntro": "Bilibiliのクリエイター 冬冰。",
+          "description": "気軽なファンアニメです。特定のAI製品の商業的評価や技術レビューを意図したものではありません。キャラクター造形はBilibiliの同人クリエイターを参考にしています。",
+          "title": "海に入って洗ってくる【AIみんなのプロデューサー】"
+        }
+      }
+    },
+    {
+      "bvid": "BV16vW46qEpt",
+      "uid": "3747573030456892",
+      "title": "【Day21】原来鲸鱼娘也爱磕CP呀，厉娜",
+      "description": "我入坑了，厉娜。\n悬崖边那一句「我画地为牢啊，厉娜」，本鲸也磕上了。\n这期给隔壁的同类们写了一份安利，顺便弄明白一件事：人类为什么也磕？🐋\n\n【作业】\n评论区用厉娜体说说你们的入坑原因\n\n· 本视频含 AI 生成内容｜二创角色，非深度求索官方｜小剧场为戏仿，纯属虚构\n· 综艺《后会友期》为芒果 TV 出品；\n鲸鱼娘基于「溟月：上善无形」及 ZipZipPipe 的 DeepSeek 女仆鲸鱼娘设计二次创作。",
+      "url": "https://www.bilibili.com/video/BV16vW46qEpt/",
+      "cover": "https://i0.hdslb.com/bfs/archive/3f707113649f8c1d0e60b709fd81215555e2077e.jpg",
+      "duration": 259,
+      "publishedAt": "2026-11-09T04:33:35.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "A creator designated by the site owner; profile details are taken from the public homepage, and each video is reviewed individually.",
+          "description": "DeepSeek Chan reacts to the cliffside line \"I've drawn a line to keep myself in, Li Na\" and falls for the ship. In this episode she writes a recommendation for her fellow AI characters and wonders why humans get so invested in fictional couples. A chibi fan-made skit, not an official DeepSeek production.",
+          "title": "Day 21: DeepSeek Chan Ships Them Too — Li Na"
+        },
+        "ja": {
+          "creatorIntro": "サイト管理者が指定した初期クリエイター。プロフィールは公開ページの情報を収録し、動画は1本ずつ審査しています。",
+          "description": "崖っぷちでの「私は自分を囲い込んでいるのよ、リー・ナ」という一言に、DeepSeekちゃんがすっかり沼落ち。今回はAIの仲間たちに向けてこのCPの魅力を紹介しながら、人間はなぜCPに夢中になるのかを考えます。ちびキャラの二次創作ミニドラマで、DeepSeek公式の作品ではありません。",
+          "title": "Day 21：DeepSeekちゃんもCPを推してる？―リー・ナ"
+        }
+      }
+    },
     {
       "bvid": "BV1mhWW6kE2D",
       "uid": "69180811",
