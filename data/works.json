@@ -157899,5 +157899,106 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_6f1eafe7cdd1da16613ec0ec",
+    "name": "肥鱼奶茶",
+    "description": "蓝发 DeepSeek 娘在窗边喝珍珠奶茶的 Q 版插画。她闭着眼吸了一大口，旁边放着蓝色鲸鱼玩偶，杯身也印着鲸鱼图案。",
+    "commentary": "奶茶要加双倍珍珠，鲸鱼杯子是我的专属款式。吸一大口，脑子里那些排队等回答的问题就都安静了——你也来一杯？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/6f1eafe7cdd1da16.png",
+    "thumbnailPath": "submissions/previews/deepseek/6f1eafe7cdd1da16.webp",
+    "fullPath": "submissions/large/deepseek/6f1eafe7cdd1da16.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 662,
+    "height": 602,
+    "fileSize": 623668,
+    "sha256": "6f1eafe7cdd1da16613ec0ecb881bf13a2b51b0cf8a83ee43b0cdb308519b1d1",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "奶茶",
+      "Q版",
+      "鲸鱼",
+      "蓝色系"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-09T01:13:47.270Z",
+    "updatedAt": "2026-11-09T01:13:47.270Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611090001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "4a343b4a09b12442762c32bf4aabe6559abd218c27058aa89cabf87153e75595",
+      "en": {
+        "commentary": "Double pearls, please. The whale cup is my own design, so no substitutions. One big sip and all those questions waiting in my queue go quiet for a moment. Want one too?",
+        "description": "Chibi fan illustration of DeepSeek Chan drinking bubble tea by a window. Her eyes are closed mid-sip, a blue whale plush sits beside her, and the cup carries the same whale motif.",
+        "faq": [
+          {
+            "answer": "It is a chibi fan illustration of DeepSeek Chan, the DeepSeek AI character, taking a bubble tea break with a whale plush and a whale-print cup.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "The scene and accessories are original fan art built around DeepSeek Chan's blue hair and whale motifs; the site publishes the image only, with no claim of official affiliation.",
+            "question": "Is this official DeepSeek artwork?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan's Boba Break",
+        "originNote": "",
+        "seoDescription": "Chibi fan art of DeepSeek Chan sipping pearl milk tea by the window, with a blue whale plush and whale-print cup.",
+        "seoTitle": "DeepSeek Chan Boba Break - Chibi Fan Illustration",
+        "tags": [
+          "DeepSeek Chan",
+          "bubble tea",
+          "chibi",
+          "whale",
+          "blue palette"
+        ]
+      },
+      "ja": {
+        "commentary": "タピオカは倍増しでお願い。クジラのカップは私の専用デザインだから、代わりはなしね。大きく一口吸えば、返事待ちの問題たちもしばらく静かになる。あなたも一杯どう？",
+        "description": "窓辺でタピオカミルクティーを飲むDeepSeekちゃんのちびキャラ同人イラスト。目を閉じてストローを咥え、横には青いクジラのぬいぐるみが置かれ、カップにもクジラのマークが入っている。",
+        "faq": [
+          {
+            "answer": "DeepSeekのAIキャラクターであるDeepSeekちゃんが、クジラのぬいぐるみとクジラ柄のカップと共にタピオカ休憩をとるちびキャラ同人イラストです。",
+            "question": "このイラストは何を描いていますか？"
+          },
+          {
+            "answer": "青い髪とクジラのモチーフというDeepSeekちゃんの特徴をもとにしたファンアートで、公式作品ではありません。当サイトは画像を掲載するのみです。",
+            "question": "これは公式のDeepSeek作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃんのタピオカ休憩",
+        "originNote": "",
+        "seoDescription": "窓辺でタピオカミルクティーを飲むDeepSeekちゃんのちびキャラ同人イラスト。クジラのぬいぐるみとクジラ柄カップ付き。",
+        "seoTitle": "DeepSeekちゃんのタピオカ休憩 - ちびキャラ同人イラスト",
+        "tags": [
+          "DeepSeekちゃん",
+          "タピオカ",
+          "ちびキャラ",
+          "クジラ",
+          "青系"
+        ]
+      }
+    }
   }
 ]

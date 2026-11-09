@@ -162,8 +162,8 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i1.hdslb.com/bfs/face/612f5ca4c050ef18dccf789a8b9399d47e9e6f19.jpg",
       "i18n": {
-        "en": "A first-batch creator designated by the site owner; profile details come from the public homepage, and each video is reviewed one by one.",
-        "ja": "運営が指定した初期バッチの作者。プロフィールは公開ページの情報に基づき、動画は一本ずつ審査しています。"
+        "en": "One of the site's first-batch creators; the profile comes from a public page, and every video is reviewed individually.",
+        "ja": "サイト管理者が指定した初期作者の一人。公開プロフィールをもとに収録し、動画は一本ずつ審査しています。"
       }
     },
     {
@@ -201,6 +201,31 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1mhWW6kE2D",
+      "uid": "69180811",
+      "title": "肥鱼：BLG牛批！",
+      "description": "总决赛加油！",
+      "url": "https://www.bilibili.com/video/BV1mhWW6kE2D/",
+      "cover": "https://i0.hdslb.com/bfs/archive/c0f93e4e34ffe0f20d1b2dda948b7ef9e751cbcd.jpg",
+      "duration": 42,
+      "publishedAt": "2026-11-09T02:51:24.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the site's first-batch creators; the profile comes from a public page, and every video is reviewed individually.",
+          "description": "A short chibi fan animation in which the characters cheer for BLG and send their support ahead of the finals.",
+          "title": "DeepSeek Chan: BLG Is Awesome!"
+        },
+        "ja": {
+          "creatorIntro": "サイト管理者が指定した初期作者の一人。公開プロフィールをもとに収録し、動画は一本ずつ審査しています。",
+          "description": "BLGを応援するちびキャラの短編二次創作アニメ。決勝戦に向けたエールを描いています。",
+          "title": "DeepSeekちゃん：BLG最高！"
+        }
+      }
+    },
     {
       "bvid": "BV1U6WE6cEj5",
       "uid": "9126506",
