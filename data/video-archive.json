@@ -118,8 +118,8 @@
       "intro": "每日AI小四格/小动画",
       "avatar": "https://i0.hdslb.com/bfs/face/6f8600ad3d37069ef5106eaf96e7d5a936ba8c50.jpg",
       "i18n": {
-        "en": "Posts a daily AI four-panel comic and short animation.",
-        "ja": "毎日AI四コマ漫画とショートアニメを投稿しています。"
+        "en": "Muto_66 posts a daily AI-themed four-panel comic and short animation.",
+        "ja": "毎日AIをテーマにした4コマ漫画やショートアニメを投稿している。"
       }
     },
     {
@@ -212,6 +212,31 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1BYWP6zEkz",
+      "uid": "15475629",
+      "title": "【科普向】《猫咪跳三圈半？海螺酱的动物奥运会爆火了！》",
+      "description": "原事件（2025-06-18）：MiniMax 于 2025-06-18 发布 Hailuo 02，随后猫咪奥运会跳水短片出圈。\n\n以下是小作文\n“各位观众！今天发布的是——Hailuo 02！”MiniMax娘把橙色海螺举过头顶，报童帽上的声波标志一闪。全息胶片框里滚过：原生1080p、极限物理。她挺起风衣领子：“体操那种高难度？现在我也能拍稳啦！”工程师刚鼓掌，她已经冲到门口，然后愣住了：“咦，网上怎么全是猫？”\n\n创作者对着键盘猛敲：“猫咪，奥运会跳台，转体三圈半——”屏幕里橘猫走上跳板，眨眼，凌空翻转，毛发被风掀起，入水水花炸开。MiniMax娘把海螺当话筒大喊：“毛也在飘！水也会溅！”播放数字几小时就破了百万。\n\n海外平台同时刷起橘色跳台，国内话题则滚成“宠物奥运会”。MiniMax娘把海螺递到一只戴金牌的猫咪面前：“请问夺冠感受？”猫咪只是舔了舔爪子。她笑着挥起录音机：“早知道会火啦——大家一直想拍，以前只是拍不出来嘛！”\n\n来源：\nhttps://www.minimax.io/news/minimax-hailuo-02\nhttps://www.minimax.cn/news/minimax-hailuo-02\nhttps://www.techradar.com/computing/artificial-intelligence/forget-virtual-pets-the-next-ai-video-craze-is-cats-doing-olympic-diving-and-its-all-thanks-to-this-new-google-veo-3-rival\nhttp://www.newschinamag.com/newschina/print.do?article_id=8406&magazine_id=121&section_id=5\n\n【Credit】\n音乐：Japan Logo Long\n9JackJack8 · Pixabay\n图像生成：GPT Image 2.5 (Sunburst)\nAI-Chan illustrations — ZipZipPipe · CC BY-NC-SA 4.0.\nDeepseek-Chan original character — 上善无形.",
+      "url": "https://www.bilibili.com/video/BV1BYWP6zEkz/",
+      "cover": "https://i2.hdslb.com/bfs/archive/d7103bac38ea75fd1a09a9d58fb77647ff272f6a.jpg",
+      "duration": 30,
+      "publishedAt": "2026-11-09T20:39:54.000Z",
+      "characterIds": [
+        "minimax"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Muto_66 posts a daily AI-themed four-panel comic and short animation.",
+          "description": "A short animated clip in which MiniMax Chan, the personified MiniMax mascot, announces the release of Hailuo 02 and then chases the cat diving videos that went viral right after it. The character appears in chibi comic panels and in a poolside interview with a medal-winning cat, and the clip ends with a source and credit card.",
+          "title": "MiniMax Chan Explains: Cats Spin Three and a Half Times as the Hailuo Animal Olympics Goes Viral"
+        },
+        "ja": {
+          "creatorIntro": "毎日AIをテーマにした4コマ漫画やショートアニメを投稿している。",
+          "description": "MiniMaxの擬人化キャラクターであるミニマックスちゃんが、Hailuo 02の公開を告げ、その直後に話題になった猫の飛び込み動画を追いかける短編アニメーション。ちびキャラのコミック調カットと、プールサイドで金メダルの猫にインタビューする場面で構成され、最後に出典とクレジットのカードが入る。",
+          "title": "【解説】猫が三回転半？ミニマックスちゃんのアニマル五輪が大バズり！"
+        }
+      }
+    },
     {
       "bvid": "BV1zcWh6jEjZ",
       "uid": "9126506",
