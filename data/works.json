@@ -158312,5 +158312,313 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_47d87dfde4eca9a25bcc0864",
+    "name": "这肥鱼够不够大？",
+    "description": "单幅画面中，蓝色大肥鱼以巨大身形跨立在微缩城市上方，深蓝玛丽珍鞋悬在成排楼宇与河道之上；左上角嵌着她戴水桶帽的头像框，底部是她的台词与角色介绍。",
+    "commentary": "哼哼，脚下这座小城也就模型大小，我一抬脚就能整个盖住。别跑呀，踩扁了可就没得玩了——好啦好啦，其实我只是想听你们喊一声主人。这句话能不能别写进点评里？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/47d87dfde4eca9a2.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/47d87dfde4eca9a2.webp",
+    "fullPath": "submissions/large/deepseek/47d87dfde4eca9a2.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 720,
+    "height": 1456,
+    "fileSize": 205358,
+    "sha256": "47d87dfde4eca9a25bcc08641792bc5fd1d7e510d0ddb1567e1621c02f225f42",
+    "characterId": "deepseek",
+    "tags": [
+      "蓝色大肥鱼",
+      "DeepSeek娘",
+      "巨大化",
+      "水桶帽",
+      "微缩城市"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "CF41AD78A470E40CFB220588CD9F77E9",
+      "messageId": "ROBOT1.0_dBzv8nwUPKlH2q59z5cJBQERcH-ho8mtAQLDY0U6ZSfD1VG5hZokMa5gTFUcqpO0MyK0Fyo56sa2.RIjh8ksqZc6bQd0neN7usrBxp5smtV5v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-09T13:24:33.291Z",
+    "updatedAt": "2026-11-09T13:24:33.291Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611090003",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "95ebca968b27c988026f02d36ad543e4fcbbc35a755bdd740ac8145cac8da48f",
+      "en": {
+        "commentary": "Hmph, the little city under my feet is barely model-sized — one step and I could cover all of it. Don't run, it's no fun if I squash you flat... fine, fine, I just wanted to hear someone call me master. Can we leave that last part out of the review?",
+        "description": "In a single frame, blue-haired DeepSeek Chan towers over a miniature city, her navy Mary Jane shoes hovering just above rows of buildings and a river. A framed portrait of her in a bucket hat sits in the upper-left corner, with her spoken line and a character card along the bottom.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, the blue-haired AI mascot drawn here at giant size.",
+            "question": "Who is in this picture?"
+          },
+          {
+            "answer": "A single-panel meme: the character stands over a miniature town and teases it in her speech line.",
+            "question": "What kind of image is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Is This Big Fish Big Enough?",
+        "originNote": "",
+        "seoDescription": "A single-panel meme of DeepSeek Chan as a giant stepping over a miniature town, with a bucket-hat portrait and cheeky dialogue.",
+        "seoTitle": "DeepSeek Chan's Giant Feet Over a Miniature City | Meme",
+        "tags": [
+          "Dafeiyu",
+          "DeepSeek Chan",
+          "giantess",
+          "bucket hat",
+          "miniature city"
+        ]
+      },
+      "ja": {
+        "commentary": "ふん、足元の小さな街なんて模型みたいなもの。一歩で全部覆えちゃうんだから。逃げないでよ、踏みつぶしたら遊べなくなっちゃうでしょ——わかったわかった、本当は「ご主人様」って呼ばれたかっただけなの。この一言はレビューに書かないでくれる？",
+        "description": "一枚絵の中で、青い髪のDeepSeekちゃんが巨大な姿でミニチュア都市にまたがり、紺色のメリージェーンシューズを建物の列と川の上に浮かせている。左上にはバケツ帽をかぶった彼女の肖像枠、下部にはセリフとキャラクター紹介が添えられている。",
+        "faq": [
+          {
+            "answer": "青い髪のDeepSeekちゃんです。サイトのマスコットキャラクターが巨大な姿で描かれています。",
+            "question": "この絵に描かれているのは誰ですか？"
+          },
+          {
+            "answer": "一枚絵の梗図で、ミニチュア都市の上に立つキャラクターがセリフでからかっています。",
+            "question": "どんな種類の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "この大魚、でかすぎない？",
+        "originNote": "",
+        "seoDescription": "巨大化したDeepSeekちゃんがミニチュアの街に立つ一枚絵。バケツ帽の肖像と冗談めいたセリフ付き。",
+        "seoTitle": "DeepSeekちゃんの巨大な足とミニチュア都市 | 梗図",
+        "tags": [
+          "青い大魚",
+          "DeepSeekちゃん",
+          "巨大化",
+          "バケツ帽",
+          "ミニチュア都市"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_16f4dde1b5635f2bcfe9fb3e",
+    "name": "GPT龙娘的嫌弃脸",
+    "description": "白发龙娘侧身回头看向镜头，眉头微皱、嘴角下撇，摆出一脸嫌弃的表情，气泡框里写着不愿评价对方私人癖好的台词。",
+    "commentary": "龙娘这一脸嫌弃真是毫不留情，话都懒得说完就先翻了个白眼。被这样盯着看，反而让人更想继续作妖了——反正她嘴上不评价，眼睛已经把话说完了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/16f4dde1b5635f2b.png",
+    "thumbnailPath": "submissions/previews/gpt/16f4dde1b5635f2b.webp",
+    "fullPath": "submissions/large/gpt/16f4dde1b5635f2b.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1254,
+    "height": 1254,
+    "fileSize": 2315631,
+    "sha256": "16f4dde1b5635f2bcfe9fb3e4fe6cb01b9dc9c88186d8b03b220fa19d321eff9",
+    "characterId": "gpt",
+    "tags": [
+      "龙娘",
+      "嫌弃",
+      "白毛",
+      "反应",
+      "表情包"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "A队1号是菜鸡",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-09T15:07:50.474Z",
+    "updatedAt": "2026-11-09T15:07:50.474Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202611090001",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "a215a300b94fc3858314f80a85fc406a5209b02199ab7a46717e23baa3ed6b6c",
+      "en": {
+        "commentary": "GPT Chan does not hold back here. She rolls her eyes before she even finishes the sentence, and that look says the conversation is already over. Being glared at like this only makes me want to keep teasing her; she refuses to comment, but her eyes have said everything.",
+        "description": "A white-haired dragon girl turns and looks back over her shoulder, brow furrowed and mouth drawn down in open disgust, while a speech bubble says she will not comment on the viewer's private tastes.",
+        "faq": [
+          {
+            "answer": "A single-panel reaction meme featuring GPT Chan drawn as a white-haired dragon girl with horns, pointed ears and small wings.",
+            "question": "What kind of image is this?"
+          },
+          {
+            "answer": "She says she will not comment on it and calls it the viewer's private taste.",
+            "question": "What does the speech bubble say?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Dragon Girl GPT Chan's Look of Disgust",
+        "originNote": "",
+        "seoDescription": "White-haired dragon girl GPT Chan looks back with a deeply unimpressed expression, a reaction meme for anyone with questionable tastes.",
+        "seoTitle": "Dragon Girl GPT Chan's Disgusted Face – AI Character Meme",
+        "tags": [
+          "dragon girl",
+          "disgust",
+          "white hair",
+          "reaction",
+          "sticker"
+        ]
+      },
+      "ja": {
+        "commentary": "GPTちゃんは容赦がない。言い終わる前に白い目を向けてきて、もう話は終わったと言わんばかりだ。そんなふうに見られると、余計にちょっかいを出したくなる。口では評価しないと言いつつ、目はもう全部語っている。",
+        "description": "白髪のドラゴン娘が振り返り、眉をひそめて口元をゆがめ、露骨に嫌そうな表情を浮かべている。吹き出しには、相手の私的な趣味について評価しないと書かれている。",
+        "faq": [
+          {
+            "answer": "角と尖った耳、小さな翼を持つ白髪のドラゴン娘として描かれたGPTちゃんの、1コマのリアクション画像です。",
+            "question": "どんな画像ですか？"
+          },
+          {
+            "answer": "相手の私的な趣味については評価しない、という内容です。",
+            "question": "吹き出しには何と書かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "GPTちゃん、ドラゴン娘の嫌そうな顔",
+        "originNote": "",
+        "seoDescription": "白髪のドラゴン娘GPTちゃんが振り返り、露骨に嫌そうな表情を見せるリアクション系のミーム画像です。",
+        "seoTitle": "ドラゴン娘GPTちゃんの嫌そうな顔｜AIキャラのミーム画像",
+        "tags": [
+          "ドラゴン娘",
+          "嫌悪",
+          "白髪",
+          "リアクション",
+          "ミーム"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_cac60e37aaf5865a8be8cb0d",
+    "name": "龙娘开播了",
+    "description": "白发龙娘半身出镜，歪着头竖起一根手指，眉头轻皱、嘴角下撇，摆出一脸“等一下”的反应表情，白底构图像是开播瞬间的截图。",
+    "commentary": "说好开播，龙娘先竖起一根手指让全场安静，这个“等一下”比任何开场白都好用。她那一脸不敢相信的表情，我都怀疑她是不是被自己开播这件事吓到了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/cac60e37aaf5865a.png",
+    "thumbnailPath": "submissions/previews/gpt/cac60e37aaf5865a.webp",
+    "fullPath": "submissions/large/gpt/cac60e37aaf5865a.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1182,
+    "height": 1330,
+    "fileSize": 2076535,
+    "sha256": "cac60e37aaf5865a8be8cb0d3a3cada6f3a48d57a26fbb63ee38ad710462dd2c",
+    "characterId": "gpt",
+    "tags": [
+      "龙娘",
+      "开播",
+      "反应",
+      "白毛",
+      "表情包"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "A队1号是菜鸡",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-09T15:10:04.625Z",
+    "updatedAt": "2026-11-09T15:10:04.625Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202611090002",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "e4a9281a12bd2dfb314686f45470a5c2a8d989f80ee8883d227061095eaaa070",
+      "en": {
+        "commentary": "The stream was supposed to start, and GPT Chan opens with one raised finger and total silence. That \"hold on\" works better than any greeting. With that look of disbelief, I half suspect she startled herself by actually going live.",
+        "description": "A white-haired dragon girl appears from the chest up, tilting her head and raising one finger, brows knit and mouth turned down in a \"hold on a second\" reaction against a plain white background.",
+        "faq": [
+          {
+            "answer": "A single-panel chibi-style reaction meme of GPT Chan as a white-haired dragon girl with horns, pointed ears and wings.",
+            "question": "What kind of image is this?"
+          },
+          {
+            "answer": "She tilts her head, raises one finger and frowns, as if telling everyone to wait a moment.",
+            "question": "What is the character doing?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Dragon Girl Goes Live",
+        "originNote": "",
+        "seoDescription": "White-haired dragon girl GPT Chan raises a finger with a disbelieving frown, a reaction meme for the moment a stream finally starts.",
+        "seoTitle": "Dragon Girl Goes Live – AI Character Reaction Meme",
+        "tags": [
+          "dragon girl",
+          "streaming",
+          "reaction",
+          "white hair",
+          "sticker"
+        ]
+      },
+      "ja": {
+        "commentary": "配信が始まると思ったら、GPTちゃんはいきなり人差し指を立てて場を静めた。この「ちょっと待って」はどんな挨拶より効く。その信じられないといった顔を見ていると、自分で配信を始めたことに自分が驚いているんじゃないかと思えてくる。",
+        "description": "白髪のドラゴン娘が胸から上の構図で映り、首をかしげて人差し指を立て、眉をひそめて口元をゆがめている。白い背景に「ちょっと待って」というリアクションの表情が浮かぶ。",
+        "faq": [
+          {
+            "answer": "角と尖った耳、翼を持つ白髪のドラゴン娘として描かれたGPTちゃんの、1コマのちびキャラ風リアクション画像です。",
+            "question": "どんな画像ですか？"
+          },
+          {
+            "answer": "首をかしげて人差し指を立て、眉をひそめ、少し待ってほしいと伝えているようなしぐさです。",
+            "question": "キャラクターは何をしていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ドラゴン娘、配信開始",
+        "originNote": "",
+        "seoDescription": "白髪のドラゴン娘GPTちゃんが人差し指を立て、信じられないといった顔を見せるリアクション系のミーム画像です。",
+        "seoTitle": "ドラゴン娘、配信開始｜AIキャラのリアクション画像",
+        "tags": [
+          "ドラゴン娘",
+          "配信",
+          "リアクション",
+          "白髪",
+          "ミーム"
+        ]
+      }
+    }
   }
 ]
