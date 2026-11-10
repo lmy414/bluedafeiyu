@@ -622,30 +622,70 @@ export function planBatch(cfg, entries, manifests, { nowIso = new Date().toISOSt
 
 /**
  * 发布锁：在私有中转区 logs/ 下用 wx 独占文件，跨进程互斥（systemd 单实例也会撞上重跑）。
- * 锁陈旧（默认 6 小时）时自动回收，避免进程被杀后永久卡死。
+ * 旧锁期限只用于诊断；不自动回收，避免删除仍在使用或已交接的锁。
  */
+// Locks are never reclaimed by age. A dead owner requires reviewed recovery while
+// every publisher is quiescent; automatic unlink has an unavoidable successor race.
 export async function acquirePublishLock(intake, { now = () => Date.now(), staleMs = 6 * 60 * 60 * 1000 } = {}) {
   const dir = intake.logDir || path.join(intake.root, 'logs');
   fs.mkdirSync(dir, { recursive: true, mode: 0o700 });
   const file = path.join(dir, 'publish.lock');
-  for (let attempt = 0; attempt < 50; attempt += 1) {
+  let fd;
+  try {
+    fd = fs.openSync(file, 'wx', 0o600);
+  } catch (error) {
+    if (error.code !== 'EEXIST') throw error;
+    let detail = '锁状态不明，需要维护者核对';
     try {
-      const fd = fs.openSync(file, 'wx', 0o600);
-      fs.writeSync(fd, JSON.stringify({ pid: process.pid, at: now() }));
-      fs.closeSync(fd);
-      return async () => {
-        try { fs.rmSync(file, { force: true }); } catch { /* 锁文件已被清掉即可 */ }
-      };
-    } catch (error) {
-      if (error.code !== 'EEXIST') throw error;
-      try {
-        const stat = fs.statSync(file);
-        if (now() - stat.mtimeMs > staleMs) { fs.rmSync(file, { force: true }); continue; }
-      } catch { /* 锁刚好消失，重试 */ }
-      throw new Error(`另一个发布正在进行（拿不到 ${file}）`);
-    }
+      const stat = fs.lstatSync(file);
+      const owner = stat.isFile() ? JSON.parse(fs.readFileSync(file, 'utf8')) : null;
+      if (owner && Number.isSafeInteger(owner.pid) && owner.pid > 0) {
+        let alive = true;
+        try { process.kill(owner.pid, 0); }
+        catch (probe) { if (probe.code === 'ESRCH') alive = false; }
+        detail = alive ? `PID ${owner.pid} 仍存在或无法排除` : `PID ${owner.pid} 已退出，需要维护者核对并恢复`;
+      }
+      if (now() - stat.mtimeMs > staleMs) detail += '；超过旧锁期限但不自动删除';
+    } catch { /* A partially written or disappearing lock is still contention. */ }
+    throw Object.assign(new Error(`另一个发布正在进行或锁待恢复（${file}；${detail}）`), { code: 'PUBLISH_LOCK_BUSY' });
   }
-  throw new Error(`获取发布锁超时：${file}`);
+  const token = crypto.randomUUID();
+  let identity = null;
+  if (process.platform === 'linux') {
+    try {
+      const stat = fs.readFileSync(`/proc/${process.pid}/stat`, 'utf8');
+      identity = {
+        bootId: fs.readFileSync('/proc/sys/kernel/random/boot_id', 'utf8').trim(),
+        startTime: stat.slice(stat.lastIndexOf(')') + 2).split(' ')[19],
+      };
+    } catch { /* Identity is diagnostic only; never grants stale reclamation. */ }
+  }
+  let ownedStat;
+  try {
+    fs.writeSync(fd, JSON.stringify({ pid: process.pid, at: now(), token, identity }));
+    fs.fsyncSync(fd);
+    ownedStat = fs.fstatSync(fd);
+  } catch (error) {
+    fs.closeSync(fd); // Preserve a possibly partial lock rather than risk replacement.
+    throw error;
+  }
+  let released = false;
+  let lost = false;
+  return async () => {
+    if (released) return;
+    const failure = () => Object.assign(new Error(`发布锁所有权已变化，保留现场：${file}`), { code: 'PUBLISH_LOCK_OWNERSHIP_LOST' });
+    if (lost) throw failure();
+    try {
+      const stat = fs.lstatSync(file);
+      if (!stat.isFile() || stat.dev !== ownedStat.dev || stat.ino !== ownedStat.ino || JSON.parse(fs.readFileSync(file, 'utf8')).token !== token) throw failure();
+      // Only this owner removes the path. No participant may replace a held lock.
+      fs.unlinkSync(file);
+      released = true;
+    } catch (error) {
+      lost = true;
+      throw failure();
+    } finally { fs.closeSync(fd); }
+  };
 }
 
 /* ---------------------------------------------------------------- 批次日志 */

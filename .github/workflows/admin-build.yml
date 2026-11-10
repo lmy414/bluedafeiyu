@@ -9,6 +9,14 @@ on:
       - feat/bilibili-creator-registration
     paths:
       - 'admin/**'
+      - 'ops/admin/publish-worker.mjs'
+      - 'ops/admin/recover-interrupted-publish.mjs'
+      - 'ops/publish-batch.mjs'
+      - 'ops/tests/admin-publish-worker.test.mjs'
+      - 'ops/tests/publish-batch.test.mjs'
+      - 'ops/tests/interrupted-publish.test.mjs'
+      - 'ops/tests/publish-contention.test.mjs'
+      - '.github/workflows/admin-build.yml'
   workflow_dispatch:
 
 permissions:
@@ -36,6 +44,9 @@ jobs:
       - name: Install dependencies
         working-directory: admin
         run: npm ci --no-audit --no-fund
+
+      - name: Test publish lock, admission and interrupted requests
+        run: node --test ops/tests/publish-contention.test.mjs ops/tests/admin-publish-worker.test.mjs ops/tests/publish-batch.test.mjs ops/tests/interrupted-publish.test.mjs
 
       - name: Test submission service and admin
         env:

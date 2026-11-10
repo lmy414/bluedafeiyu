@@ -20,6 +20,7 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { setTimeout as sleep } from 'node:timers/promises';
 
 import {
   acquirePublishLock,
@@ -730,7 +731,7 @@ function writeFallbackJournal(requestDir, journal) {
   return file;
 }
 
-export async function processPublishRequest({ request, env = process.env, deps = {} } = {}) {
+export async function processPublishRequest({ request, env = process.env, deps = {}, heldLock = null } = {}) {
   const runId = validateRunId(request?.runId);
   const log = deps.log || ((message) => process.stderr.write(`[admin-publish] ${message}\n`));
   const fetchImpl = deps.fetchImpl || globalThis.fetch;
@@ -762,7 +763,7 @@ export async function processPublishRequest({ request, env = process.env, deps =
     const contentCfg = { ...cfg, branch: cfg.contentBranch };
 
     step = 'lock';
-    lock = await acquirePublishLock(cfg.intake, { staleMs: cfg.staleLockMs });
+    if (!heldLock) lock = await acquirePublishLock(cfg.intake, { staleMs: cfg.staleLockMs });
 
     step = 'status';
     await postRunStatus(cfg, runId, { status: 'in_progress', step: 'preflight', log: '开始后台发布' }, fetchImpl);
@@ -1007,6 +1008,34 @@ function printResult(result) {
   process.stdout.write(`${JSON.stringify(resultForOutput(result))}\n`);
 }
 
+// Keep the path-triggered oneshot alive while contended. Exiting immediately with
+// publish.request present would repeatedly retrigger systemd and hit its start limit.
+// 55 minutes is below the installed 60-minute service timeout; queued work is never claimed.
+export async function waitForPublishLock(cfg, { log = () => {}, now = Date.now, delay = sleep, signal,
+  timeoutMs = 55 * 60 * 1000, intervalMs = 5000 } = {}) {
+  const start = now();
+  let lastLog = -Infinity;
+  let contended = false;
+  for (;;) {
+    signal?.throwIfAborted();
+    try {
+      const release = await acquirePublishLock(cfg.intake, { staleMs: cfg.staleLockMs });
+      return Object.assign(release, { contended });
+    }
+    catch (error) {
+      if (error.code !== 'PUBLISH_LOCK_BUSY') throw error;
+      contended = true;
+      const elapsed = now() - start;
+      if (elapsed - lastLog >= 5 * 60 * 1000) {
+        logLine(log, `发布请求仍在排队，未接管：${error.message}`);
+        lastLog = elapsed;
+      }
+      if (elapsed >= timeoutMs) throw Object.assign(new Error('等待发布锁超时；请求保留排队，请检查持锁任务或人工恢复遗留锁'), { code: 'PUBLISH_LOCK_BUSY' });
+      await delay(Math.min(intervalMs, timeoutMs - elapsed), undefined, { signal });
+    }
+  }
+}
+
 export async function main(argv = process.argv.slice(2), deps = {}) {
   const env = deps.env || process.env;
   const log = deps.log || ((message) => process.stderr.write(`[admin-publish] ${message}\n`));
@@ -1022,25 +1051,46 @@ export async function main(argv = process.argv.slice(2), deps = {}) {
     return 0;
   }
 
-  let taken;
+  let heldLock;
   try {
-    taken = takeRequest({
-      requestDir: path.resolve(env.ADMIN_PUBLISH_REQUEST_DIR || '/srv/apps/dafeiyu-admin/run'),
-      runId: args.runId,
-      log,
-    });
+    const cfg = resolveWorkerConfig(env);
+    heldLock = await waitForPublishLock(cfg, { ...deps.lockWait, log });
   } catch (error) {
-    printResult({ runId: args.runId, status: 'failed', summary: defaultSummary(), commits: { site: null, content: null }, releasePath: null, error: errorMessage(error) });
-    return 1;
+    printResult({ runId: args.runId, status: 'queued', error: errorMessage(error) });
+    // Config/permission failures also leave PathExists true; throttle those exits.
+    if (error.code !== 'PUBLISH_LOCK_BUSY' && error.name !== 'AbortError') await (deps.lockWait?.delay || sleep)(5000);
+    return 75; // No take, failed status, journal, or notification on contention.
   }
-  if (taken.skipped) {
-    printResult({ runId: taken.runId, status: 'skipped', summary: defaultSummary(), commits: { site: null, content: null }, releasePath: null, error: null });
-    return 0;
-  }
+  try {
+    if (heldLock.contended) {
+      // Never spend the remaining oneshot budget building after waiting. PathExists
+      // starts a fresh invocation with the full build timeout; it must acquire again.
+      printResult({ runId: args.runId, status: 'queued', error: null });
+      return 75;
+    }
+    let taken;
+    try {
+      taken = takeRequest({
+        requestDir: path.resolve(env.ADMIN_PUBLISH_REQUEST_DIR || '/srv/apps/dafeiyu-admin/run'),
+        runId: args.runId,
+        log,
+      });
+    } catch (error) {
+      printResult({ runId: args.runId, status: 'failed', summary: defaultSummary(), commits: { site: null, content: null }, releasePath: null, error: errorMessage(error) });
+      await (deps.lockWait?.delay || sleep)(5000); // Malformed/unclaimable requests remain on disk.
+      return 1;
+    }
+    if (taken.skipped) {
+      printResult({ runId: taken.runId, status: 'skipped', summary: defaultSummary(), commits: { site: null, content: null }, releasePath: null, error: null });
+      return 0;
+    }
 
-  const result = await processPublishRequest({ request: taken.request, env, deps: { ...deps, log } });
-  printResult(result);
-  return result.status === 'failed' ? 1 : 0;
+    const result = await processPublishRequest({ request: taken.request, env, deps: { ...deps, log }, heldLock });
+    printResult(result);
+    return result.status === 'failed' ? 1 : 0;
+  } finally {
+    await heldLock();
+  }
 }
 
 const invokedDirectly = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;

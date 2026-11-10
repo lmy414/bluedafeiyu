@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import fs from 'node:fs/promises'
 import path from 'node:path'
 import crypto from 'node:crypto'
 
@@ -9,6 +8,7 @@ import { json, readJsonBody, requireOwnerOrBot, requireWorker } from '../lib/end
 import { writeAudit } from '../lib/audit'
 import { applyPublishStatus, buildPublishPlan, buildPublishSnapshot } from '../lib/publish'
 import { queueRightsReplies } from '../lib/rights-requests'
+import { enqueuePublishRequest } from '../lib/publish-request.mjs'
 
 function requestDir(): string {
   return path.resolve(process.env.ADMIN_PUBLISH_REQUEST_DIR || path.resolve(process.cwd(), 'run'))
@@ -85,16 +85,12 @@ const requestHandler = async (req: PayloadRequest): Promise<Response> => {
   })
 
   const targetDir = requestDir()
-  const target = path.join(targetDir, 'publish.request')
-  const temp = path.join(targetDir, `.publish.request.${runId}.tmp`)
   const actor = (req.user as any)?.displayName || (req.user as any)?.email || 'system'
   try {
-    await fs.mkdir(targetDir, { recursive: true })
-    await fs.writeFile(temp, `${JSON.stringify({ runId, requestedAt, actor })}\n`, 'utf8')
-    await fs.rename(temp, target)
+    await enqueuePublishRequest(targetDir, { runId, requestedAt, actor })
   } catch (error) {
-    await fs.rm(temp, { force: true }).catch(() => undefined)
     await payload.update({ collection: 'publish-runs', id: run.id, data: { status: 'failed', error: (error as Error).message, finishedAt: new Date().toISOString() }, context: { audit: false }, overrideAccess: true, req })
+    if ((error as NodeJS.ErrnoException).code === 'EEXIST') return json({ ok: false, error: '已有排队中的发布请求，请稍后重试' }, 409)
     return json({ ok: false, error: `写发布请求失败：${(error as Error).message}` }, 500)
   }
   await writeAudit(req, { action: 'publish.request', after: { runId, requestedAt, actor }, targetId: run.id, targetType: 'publish-runs' })

@@ -11,7 +11,7 @@ import os from 'node:os';
 import path from 'node:path';
 
 import { SNAPSHOT_SITE_FILES, main, releasePublishedOriginals, resolveWorkerConfig } from '../admin/publish-worker.mjs';
-import { runToolchain, runDeploy } from '../publish-batch.mjs';
+import { runToolchain, runDeploy, acquirePublishLock } from '../publish-batch.mjs';
 
 const TINY_PNG = Buffer.from(
   'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8DwHwAFAAH/q842iQAAAABJRU5ErkJggg==',
@@ -832,4 +832,41 @@ test('重复触发：publish.request 已改名时第二次只跳过，不再请�
   assert.equal(JSON.parse(second.out).status, 'skipped');
   assert.equal(state.snapshotCalls, 1);
   assert.equal(state.statuses.length, 2);
+});
+
+test('另一站点持锁时不接管请求，释放后仅发布一次', async t => {
+  const runId = 'run-after-external-release';
+  const ws = await makeWorkspace(t, { works: [baselineRecord()] });
+  const state = { statuses: [], snapshot: null };
+  const backend = await startBackend(t, state);
+  const submission = await startSubmissionService(t, state);
+  state.snapshot = snapshotFrom(ws, runId);
+  const env = envFor(ws, backend, { submissionServiceUrl: submission.url });
+  const cfg = resolveWorkerConfig(env);
+  writeRequest(ws, runId);
+  const externalRelease = await acquirePublishLock(cfg.intake);
+  let waits = 0;
+  let waitedMs = 0;
+  const result = await capture(() => main([], { env, exec: makeFakeExec(state), fetchImpl: makePublishFetch(state), runIssueReconcile: () => {},
+    lockWait: { now: () => waitedMs, delay: async ms => {
+      assert.equal(ms, 5000);
+      assert.equal(state.statuses.length, 0);
+      assert.ok(fs.existsSync(path.join(cfg.requestDir, 'publish.request')));
+      assert.ok(!fs.existsSync(path.join(cfg.requestDir, `publish.request.${runId}.taken`)));
+      waits++;
+      waitedMs = 55 * 60 * 1000 - 1; // Lock clears just before the waiting budget ends.
+      await externalRelease();
+    } },
+  }));
+  assert.equal(result.code, 75, result.err);
+  assert.equal(waits, 1);
+  assert.equal(state.statuses.length, 0);
+  assert.ok(fs.existsSync(path.join(cfg.requestDir, 'publish.request')));
+  assert.ok(!fs.existsSync(path.join(cfg.requestDir, `publish.request.${runId}.taken`)));
+  const fresh = await capture(() => main([], { env, exec: makeFakeExec(state), fetchImpl: makePublishFetch(state), runIssueReconcile: () => {} }));
+  assert.equal(fresh.code, 0, fresh.err);
+  assert.equal(state.snapshotCalls, 1);
+  assert.deepEqual(state.statuses.map(s => s.status), ['in_progress', 'succeeded']);
+  assert.ok(fs.existsSync(path.join(cfg.requestDir, `publish.request.${runId}.taken`)));
+  assert.ok(!fs.existsSync(path.join(cfg.intake.logDir, 'publish.lock')));
 });
