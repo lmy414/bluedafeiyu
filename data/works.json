@@ -158620,5 +158620,620 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_6be14d1ae91eae023f6465ed",
+    "name": "「就是你！」JOJO 风指认的深海女仆",
+    "description": "蓝发女仆装角色向前伸手直指观者，张口喊话，背后悬浮同款 Q 版小人，画面两侧是紫色拟声字，整体为高对比漫画风。",
+    "commentary": "喂，说的就是你，别装看不见。「ゴゴゴ」的气势都摆到脸上了，我这一指可不是撒娇，是点名。身后那个小小的我也在看着，所以别想着蒙混过关。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/6be14d1ae91eae02.png",
+    "thumbnailPath": "submissions/previews/deepseek/6be14d1ae91eae02.webp",
+    "fullPath": "submissions/large/deepseek/6be14d1ae91eae02.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1254,
+    "height": 1254,
+    "fileSize": 2726549,
+    "sha256": "6be14d1ae91eae023f6465edcf75de709042d034153b182bd9a9ae0d085a098d",
+    "characterId": "deepseek",
+    "tags": [
+      "JOJO梗",
+      "指人",
+      "女仆",
+      "Q版",
+      "深海蓝"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-10T04:26:01.901Z",
+    "updatedAt": "2026-11-10T04:26:01.901Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611100001",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "e07e09afa46836a22a4673fb653a6ff494770248cd569c40444d3629367c7d00",
+      "en": {
+        "commentary": "Yes, you — don't pretend you didn't see me. The rumble is already right in your face, and this finger isn't a cute little wave, it's a roll call. The tiny me floating behind is watching too, so don't try to slip away.",
+        "description": "A blue-haired character in a navy and white maid dress leans forward and points straight at the viewer while shouting, with a chibi version of herself floating behind and purple sound-effect lettering on both sides, drawn in a high-contrast manga style.",
+        "faq": [
+          {
+            "answer": "It is a single comic-style panel of DeepSeek Chan in a maid outfit, pointing directly at the viewer with a chibi copy of herself floating behind her.",
+            "question": "What does this picture show?"
+          },
+          {
+            "answer": "The purple letters on both sides stand in for the rumbling sound effect of a tense comic scene, which sets the shouting, confrontational mood of the pose.",
+            "question": "Why are there large letters on the sides of the image?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "\"You There!\" JOJO-Style Pointing Deep-Sea Maid",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in a navy maid dress points straight at you in a high-contrast manga panel, with a chibi twin floating behind her.",
+        "seoTitle": "\"You There!\" JOJO-Style Pointing Maid | DeepSeek Chan",
+        "tags": [
+          "JOJO reference",
+          "pointing",
+          "maid",
+          "chibi",
+          "deep blue"
+        ]
+      },
+      "ja": {
+        "commentary": "そう、あなたのことよ。見なかったふりはなし。もう「ゴゴゴ」の気配が目の前まで来てるんだから。この指はかわいい振りじゃなくて、名指しよ。後ろで浮かんでる小さい私も見てるから、ごまかさないでね。",
+        "description": "紺と白のメイド服を着た藍色の髪のキャラクターが、こちらをまっすぐ指さして叫ぶ一枚。背後には同じ姿のちびキャラが浮かび、両脇には紫の擬音文字が入った、コントラストの強い漫画風の絵。",
+        "faq": [
+          {
+            "answer": "メイド服姿のDeepSeek Chanが、こちらをまっすぐ指さして叫び、背後にちびキャラの自分が浮かんでいる漫画風の一枚です。",
+            "question": "この絵には何が描かれていますか？"
+          },
+          {
+            "answer": "両脇の紫の文字は、緊迫した漫画の場面の「ゴゴゴ」という擬音を表し、指さして叫ぶ迫力のある雰囲気を作っています。",
+            "question": "両脇の大きな文字は何ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "「お前だ！」JOJO風に指をさす深海メイド",
+        "originNote": "",
+        "seoDescription": "紺のメイド服のDeepSeek Chanが、コントラストの強い漫画風の画面でこちらを指さして叫ぶ一枚。",
+        "seoTitle": "「お前だ！」JOJO風に指をさす深海メイド｜DeepSeek Chan",
+        "tags": [
+          "JOJOネタ",
+          "指さし",
+          "メイド",
+          "ちびキャラ",
+          "深海ブルー"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_5bcae0ebd39ad0ad3fc151da",
+    "name": "睡觉鲸鲸",
+    "description": "DeepSeek 娘在夜色中的卧室里熟睡，怀抱鲸鱼形抱枕，身着白色蕾丝睡裙，蓝发散落在枕上。窗外是满月与树影，床边矮几上放着书、插着铃兰的花瓶与一只小鲸鱼摆件，书架上也摆有鲸鱼玩偶。",
+    "commentary": "今晚的月光刚好落在被角上，我就抱着鲸鱼抱枕先睡一会儿。书架上的小鲸鱼排排坐，窗台的铃兰还开着，梦里大概也是海。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/5bcae0ebd39ad0ad.png",
+    "thumbnailPath": "submissions/previews/deepseek/5bcae0ebd39ad0ad.webp",
+    "fullPath": "submissions/large/deepseek/5bcae0ebd39ad0ad.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 2358190,
+    "sha256": "5bcae0ebd39ad0ad3fc151daf2f78960578f20898d4bc5222f6d873f5a980c82",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "睡觉",
+      "鲸鱼抱枕",
+      "满月",
+      "卧室",
+      "插画"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-10T05:15:50.035Z",
+    "updatedAt": "2026-11-10T05:15:50.035Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611100002",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "a6cfd33b19c412cbd415cf3be1aa24ffec21bbfdc6dc540f2c4b616f57f9cb18",
+      "en": {
+        "commentary": "The moonlight happened to land on the corner of my blanket, so I will hug my whale plush and nap for a while. The little whales on the shelf sit in a row and the lilies of the valley by the window are still open, so my dream will probably be about the sea too.",
+        "description": "DeepSeek Chan sleeps soundly in a moonlit bedroom, holding a whale-shaped plush and wearing a white lace nightgown, her blue hair spread over the pillow. Beyond the window are a full moon and tree shadows; the nightstand holds a book, a vase of lilies of the valley and a small whale figurine, and whale plushies sit on the bookshelf.",
+        "faq": [
+          {
+            "answer": "It is an illustration of DeepSeek Chan sleeping in a bedroom at night, hugging a whale-shaped plush.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "The scene is set in a moonlit bedroom, with a book, lilies of the valley, a small whale figurine and whale plushies on the shelf.",
+            "question": "What details appear in the room?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Sleeping DeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan naps in a moonlit bedroom, hugging a whale plush, in this quiet night-time illustration.",
+        "seoTitle": "Sleeping DeepSeek Chan – Moonlit Bedroom Illustration",
+        "tags": [
+          "DeepSeek Chan",
+          "sleeping",
+          "whale plush",
+          "full moon",
+          "bedroom",
+          "illustration"
+        ]
+      },
+      "ja": {
+        "commentary": "月明かりがちょうど布団の隅に落ちていたので、クジラのぬいぐるみを抱いて少しだけお昼寝します。棚の小さなクジラたちは並んで座っていて、窓辺のスズランもまだ咲いているから、夢の中もきっと海でしょう。",
+        "description": "ディープシークちゃんが月明かりの寝室でぐっすり眠っている。クジラ型のぬいぐるみを抱き、白いレースのナイトウェアを着て、青い髪が枕に広がる。窓の外には満月と木の影、枕元のテーブルには本とスズランの入った花瓶、小さなクジラの置物が置かれ、本棚にもクジラのぬいぐるみが並ぶ。",
+        "faq": [
+          {
+            "answer": "夜の寝室でクジラ型のぬいぐるみを抱いて眠るディープシークちゃんを描いたイラストです。",
+            "question": "どんなイラストですか？"
+          },
+          {
+            "answer": "月明かりの寝室で、本やスズランの花、小さなクジラの置物、棚のクジラのぬいぐるみが描かれています。",
+            "question": "部屋にはどんなものが描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "おやすみディープシークちゃん",
+        "originNote": "",
+        "seoDescription": "月明かりの寝室でクジラのぬいぐるみを抱いて眠るディープシークちゃんを描いた、静かな夜のイラスト。",
+        "seoTitle": "おやすみディープシークちゃん｜月夜の寝室イラスト",
+        "tags": [
+          "ディープシークちゃん",
+          "睡眠",
+          "クジラのぬいぐるみ",
+          "満月",
+          "寝室",
+          "イラスト"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_13422ff94485555e94447017",
+    "name": "雪景鲸鲸",
+    "description": "蓝色长发的少女身穿深蓝色毛领冬日大衣，围着蓝色格子围巾，头上戴着蕾丝边发饰，在飘雪的河边回望。她身后露出一截鲸鱼尾巴，画面远处是覆雪的悬索桥与泛着微光的河面。",
+    "commentary": "雪落下来的声音比我想的轻。围巾是暖的，桥上的灯也亮着，水面上全是碎掉的光。有人把我画进这样的冬天里，回头那一下，是想让你也跟上来看看。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/13422ff94485555e.png",
+    "thumbnailPath": "submissions/previews/deepseek/13422ff94485555e.webp",
+    "fullPath": "submissions/large/deepseek/13422ff94485555e.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1536,
+    "height": 1024,
+    "fileSize": 2531721,
+    "sha256": "13422ff94485555e94447017ae4b4567a8472f3e37e828f64212a7f6f008ec79",
+    "characterId": "deepseek",
+    "tags": [
+      "雪景",
+      "冬日",
+      "围巾",
+      "悬索桥",
+      "鲸尾",
+      "蓝发"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-10T06:05:48.951Z",
+    "updatedAt": "2026-11-10T06:05:48.951Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611100003",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "c881acb8081548f85ca141220cf52fca830391b5d3bab6e985f431750cf5db5c",
+      "en": {
+        "commentary": "The snow falls more softly than I expected. The scarf is warm, the bridge lights are on, and the water is full of broken light. Someone painted me into a winter like this, and that glance back is me asking you to come along.",
+        "description": "A blue-haired girl in a navy winter coat with a fur-trimmed collar and a blue plaid scarf, wearing a lace-trimmed headdress, looks back beside a snowy riverbank. A whale tail shows behind her, with a snow-covered suspension bridge and a shimmering river in the distance.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, drawn as a blue-haired girl with a whale tail.",
+            "question": "Who appears in this picture?"
+          },
+          {
+            "answer": "A single-scene winter illustration with a full background, so it is filed as an illustration.",
+            "question": "What kind of image is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Snowscape DeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "A winter illustration of DeepSeek Chan in a navy coat and plaid scarf, looking back beside a snowy suspension bridge.",
+        "seoTitle": "Snowscape DeepSeek Chan — DeepSeek Chan Sticker Gallery",
+        "tags": [
+          "snowscape",
+          "winter",
+          "scarf",
+          "suspension bridge",
+          "whale tail",
+          "blue hair"
+        ]
+      },
+      "ja": {
+        "commentary": "雪の落ちる音は思ったより静かだった。マフラーは暖かくて、橋の灯りも点いている。水面は碎けた光でいっぱい。こんな冬に私を描いてくれた人がいる——振り返ったのは、あなたにも後ろをついてきてほしかったから。",
+        "description": "青い髪の少女が、毛皮付きのネイビーの冬コートと青いチェックのマフラー、レースのヘッドドレスを身につけ、雪の川辺で振り返っている。背後にクジラの尾がのぞき、遠くには雪をかぶった吊り橋と光る川面が広がる。",
+        "faq": [
+          {
+            "answer": "青い髪でクジラの尾を持つ少女として描かれたDeepSeekちゃんです。",
+            "question": "この画像には誰が描かれていますか？"
+          },
+          {
+            "answer": "背景まで描き込まれた一枚の冬のイラストなので、イラストとして分類しています。",
+            "question": "どのような種類の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "雪景色のDeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "ネイビーのコートとチェックのマフラー姿のDeepSeekちゃんが、雪の吊り橋のそばで振り返る冬のイラスト。",
+        "seoTitle": "雪景色のDeepSeekちゃん｜DeepSeek Chan ステッカーギャラリー",
+        "tags": [
+          "雪景色",
+          "冬",
+          "マフラー",
+          "吊り橋",
+          "クジラの尾",
+          "青い髪"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_155a52dfaf54b3b0e113b058",
+    "name": "对喷鲸鲸",
+    "description": "蓝发鲸尾少女穿着白色毛绒家居服，戴着鲸鱼图案耳机，坐在夜晚的房间里对着键盘猛敲，皱着眉、露出小虎牙，额前有红色怒气符号。桌上放着鲸鱼马克杯、鼠标与小人偶，背后是透着蓝光的机箱和摆满鲸鱼玩偶的架子。",
+    "commentary": "对面说“让我深度思考三秒”，我已经在键盘上喷了三十行。凌晨的房间只剩下风扇和青轴的声音，别劝我停，这一局不赢不睡。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/155a52dfaf54b3b0.png",
+    "thumbnailPath": "submissions/previews/deepseek/155a52dfaf54b3b0.webp",
+    "fullPath": "submissions/large/deepseek/155a52dfaf54b3b0.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1312,
+    "height": 1199,
+    "fileSize": 2213020,
+    "sha256": "155a52dfaf54b3b0e113b058dddc14a2ba5f82fa5c7f8c5c99cd76e49441f71a",
+    "characterId": "deepseek",
+    "tags": [
+      "对喷",
+      "深夜",
+      "键盘",
+      "耳机",
+      "怒气",
+      "鲸鱼玩偶"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-10T06:09:31.328Z",
+    "updatedAt": "2026-11-10T06:09:31.328Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611100004",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "14261e899a1aee83a80fb41f528e40ca532f3e117e997aefbae0e046fce152da",
+      "en": {
+        "commentary": "The other side says, \"let me think deeply for three seconds.\" I have already fired thirty lines into the keyboard. At this hour the room has only the fan and the switches clicking. Don't tell me to stop; I won't sleep until I win this one.",
+        "description": "A blue-haired girl with a whale tail, in a fluffy white loungewear set and whale-print headphones, hammers at her keyboard in a night-lit room, brow furrowed with a small fang showing and a red anger mark above her head. A whale mug, mouse and small figure sit on the desk, with a blue-lit PC case and shelves of whale plushies behind her.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, drawn as a blue-haired girl with a whale tail in loungewear.",
+            "question": "Who appears in this picture?"
+          },
+          {
+            "answer": "It is a single-frame joke image about an angry late-night argument online, so it is filed as a meme.",
+            "question": "Why is it filed as a meme?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Flame War DeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in loungewear furiously typing at night, anger mark above her head, whale plushies on the shelves behind her.",
+        "seoTitle": "Flame War DeepSeek Chan — DeepSeek Chan Sticker Gallery",
+        "tags": [
+          "flame war",
+          "late night",
+          "keyboard",
+          "headphones",
+          "anger",
+          "whale plushie"
+        ]
+      },
+      "ja": {
+        "commentary": "向こうは「三秒だけ深く考えさせて」と言ってきた。もうキーボードに三十行は撃ち込んだよ。夜中の部屋に残っているのはファンとスイッチの音だけ。止めろと言わないで、この勝負は勝つまで寝ない。",
+        "description": "青い髪でクジラの尾を持つ少女が、白いもこもこの部屋着とクジラ柄のヘッドフォンを身につけ、夜の部屋でキーボードを叩いている。眉をひそめて小さな八重歯を見せ、額には赤い怒りマーク。机の上にはクジラのマグカップ、マウス、小さいフィギュア、背後には青く光るPCケースとクジラのぬいぐるみが並ぶ棚。",
+        "faq": [
+          {
+            "answer": "青い髪でクジラの尾を持つ少女として描かれたDeepSeekちゃんです。",
+            "question": "この画像には誰が描かれていますか？"
+          },
+          {
+            "answer": "深夜のオンライン口論で怒る一コマの笑いを表した一枚なので、ミームとして分類しています。",
+            "question": "なぜミームとして分類されていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "対噴するDeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "部屋着姿のDeepSeekちゃんが深夜にキーボードを叩く姿を描いたイラスト。額には怒りマーク、背後の棚にはクジラのぬいぐるみ。",
+        "seoTitle": "対噴するDeepSeekちゃん｜DeepSeek Chan ステッカーギャラリー",
+        "tags": [
+          "対噴",
+          "深夜",
+          "キーボード",
+          "ヘッドフォン",
+          "怒り",
+          "クジラのぬいぐるみ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_14896c69b5382d802d2152f0",
+    "name": "剥桔子鲸鲸",
+    "description": "蓝发鲸耳少女身穿蓝色毛边棉袍，坐在中式堂屋的茶桌旁剥橘子。桌上摆着年桔、青花瓷杯和剥下的橘皮，左侧炭炉上温着铜壶，墙上贴着新春对联与年画，窗外落雪，右侧电视里正在播放新闻节目。",
+    "commentary": "屋外飘着雪，我缩在毛边棉袍里剥橘子，指尖蹭得全是橘皮的清香。炭炉烧得正旺，青花瓷壶在炉边咕嘟作响，电视里还播着新闻。橘子剥好了，一瓣给你，一瓣留给我自己。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/14896c69b5382d80.png",
+    "thumbnailPath": "submissions/previews/deepseek/14896c69b5382d80.webp",
+    "fullPath": "submissions/large/deepseek/14896c69b5382d80.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1312,
+    "height": 1199,
+    "fileSize": 2697949,
+    "sha256": "14896c69b5382d802d2152f09516809eba52f5ea23029737674579ab192470e4",
+    "characterId": "deepseek",
+    "tags": [
+      "新春",
+      "冬日",
+      "橘子",
+      "中式堂屋",
+      "围炉"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-10T06:15:24.388Z",
+    "updatedAt": "2026-11-10T06:15:24.388Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611100005",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "61b0169e92b61980bd41c110553753d3a7985413781336b5d5fbf1a106a50b7b",
+      "en": {
+        "commentary": "Snow is falling outside, and I'm curled up in my fur-trimmed padded coat peeling an orange, my fingertips smelling of peel. The charcoal stove is glowing, the blue-and-white teapot is murmuring beside it, and the news is still playing on TV. The orange is ready — one segment for you, one for me.",
+        "description": "A blue-haired girl with whale-like fin ears sits at a tea table in a traditional Chinese hall, peeling an orange. A bowl of tangerines, a blue-and-white cup and strips of peel rest on the table, a copper kettle warms on the charcoal stove to her left, New Year couplets and a festive print hang on the wall, snow falls outside the window, and a news programme plays on the television at her right.",
+        "faq": [
+          {
+            "answer": "A blue-haired girl with whale fin ears in a fur-trimmed blue padded coat, peeling an orange in a traditional Chinese hall decorated for the New Year.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "It is a fan illustration of DeepSeek Chan, the personified DeepSeek character, shown in a warm winter interior.",
+            "question": "Which character appears in this picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Peeling an Orange by the Stove",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in a fur-trimmed coat peels an orange beside a charcoal stove in a snow-covered Chinese courtyard, with New Year couplets on the wall and the news on TV.",
+        "seoTitle": "DeepSeek Chan Peeling an Orange by the Stove | Winter Illustration",
+        "tags": [
+          "Spring Festival",
+          "Winter",
+          "Oranges",
+          "Chinese Hall",
+          "By the Stove"
+        ]
+      },
+      "ja": {
+        "commentary": "外は雪、私はファー付きの綿入れにくるまってみかんを剥いている。指先がみかんの皮のいい香りでいっぱい。炭ストーブはよく燃えていて、そばの青花の急須がことこと音を立て、テレビではニュースが流れている。剥き終わったよ。一房はあなたに、一房は私に。",
+        "description": "青い髪にクジラのひれのような耳を持つ少女が、中華風の座敷の茶卓でみかんを剥いている。卓上にはみかんの器、青花の湯呑み、剥いた皮が置かれ、左手の炭ストーブでは銅のやかんが温まり、壁には春節の対聯と年画、窓の外は雪、右側のテレビではニュース番組が流れている。",
+        "faq": [
+          {
+            "answer": "青い髪とクジラのひれ耳を持つ少女が、春節の飾りつけをした中華風の部屋でみかんを剥いている一枚絵のイラストです。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "DeepSeekを擬人化したキャラクター、DeepSeekちゃんのファンアートで、暖かい冬の室内の姿です。",
+            "question": "登場するキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ストーブのそばでみかんを剥く",
+        "originNote": "",
+        "seoDescription": "雪の降る中華風の部屋で、ファー付きの綿入れを着たDeepSeekちゃんが炭ストーブのそばでみかんを剥く冬のイラスト。壁には春節の対聯、テレビではニュースが流れます。",
+        "seoTitle": "ストーブのそばでみかんを剥く DeepSeekちゃん | 冬のイラスト",
+        "tags": [
+          "春節",
+          "冬",
+          "みかん",
+          "中華風の室内",
+          "ストーブ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_cbd1e9849e4c443969e938e0",
+    "name": "Gemini 娘冬日星饰猫耳回眸",
+    "description": "紫蓝色长发的 Gemini 娘以猫耳造型出镜，头戴缀星形饰件的白色贝雷帽，身穿深色冬季外套，领口与袖口是白色毛绒，侧身回眸看向画面右侧。",
+    "commentary": "回头这一下，把冬天的冷气都赶跑了。星形发饰配白毛领，围巾还没系好就已经赢了氛围分。就是尾巴这么蓬，风一吹会不会自己先打个喷嚏？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/cbd1e9849e4c4439.png",
+    "thumbnailPath": "submissions/previews/gemini/cbd1e9849e4c4439.webp",
+    "fullPath": "submissions/large/gemini/cbd1e9849e4c4439.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1122,
+    "height": 1402,
+    "fileSize": 2126184,
+    "sha256": "cbd1e9849e4c443969e938e01c919434a85b364712620c869258e3de2bf83ca0",
+    "characterId": "gemini",
+    "tags": [
+      "Gemini",
+      "猫耳",
+      "冬装",
+      "回眸",
+      "星形发饰"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-10T06:26:29.330Z",
+    "updatedAt": "2026-11-10T06:26:29.330Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202611100001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "e4fc329cf2f4e7a01c6c62cdc1b1be363c1f1a4f9b17a2c74e651e7c2bf0c319",
+      "en": {
+        "commentary": "That glance over the shoulder chased the winter chill right out of the room. Star hairpins plus a white fur collar, and the scarf is not even tied yet — atmosphere points already secured. Though with a tail that fluffy, would the first gust of wind make her sneeze first?",
+        "description": "Gemini Chan, with long violet-blue hair, appears in cat ears and a white beret trimmed with star ornaments, wearing a dark winter coat with white fur at the collar and cuffs, glancing back over her shoulder toward the right of the frame.",
+        "faq": [
+          {
+            "answer": "Gemini Chan, drawn as a fan work with cat ears and a star-trimmed winter coat.",
+            "question": "Which character appears in this illustration?"
+          },
+          {
+            "answer": "A single-panel half-body illustration, not a comic page or a character design sheet.",
+            "question": "What kind of image is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Gemini Chan's Winter Star Cat-Ear Glance",
+        "originNote": "",
+        "seoDescription": "Gemini Chan in a winter coat with cat ears and star hairpins, glancing back — a fan illustration of the AI character.",
+        "seoTitle": "Gemini Chan Winter Cat-Ear Illustration | DeepSeek Chan Fan Works",
+        "tags": [
+          "Gemini",
+          "cat ears",
+          "winter outfit",
+          "looking back",
+          "star hairpin"
+        ]
+      },
+      "ja": {
+        "commentary": "振り返ったその一瞬で、冬の寒さがどこかへ飛んでいった。星の髪飾りに白いファー、マフラーもまだ結んでいないのに雰囲気はもう満点。ただ、しっぽがこんなにふわふわだと、風が吹いたら先にくしゃみしちゃわない？",
+        "description": "紫がかった青い長い髪の Gemini ちゃんが猫耳姿で登場。星の飾りがついた白いベレー帽をかぶり、襟と袖口に白いファーのついたダークな冬コートを着て、画面の右へ振り返っている。",
+        "faq": [
+          {
+            "answer": "猫耳と星の飾り付きの冬コート姿で描かれた Gemini ちゃんです。",
+            "question": "このイラストに描かれているのは誰ですか？"
+          },
+          {
+            "answer": "一枚絵の半身イラストで、漫画のコマ割りでも設定資料でもありません。",
+            "question": "どのような形式の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Gemini ちゃん 冬の星飾り猫耳の振り返り",
+        "originNote": "",
+        "seoDescription": "猫耳と星の髪飾り、冬のコート姿で振り返る Gemini ちゃんのファンイラスト。",
+        "seoTitle": "Gemini ちゃん 冬の猫耳イラスト｜DeepSeek Chan ファン作品",
+        "tags": [
+          "Gemini",
+          "猫耳",
+          "冬服",
+          "振り返り",
+          "星の髪飾り"
+        ]
+      }
+    }
   }
 ]

@@ -173,8 +173,8 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i1.hdslb.com/bfs/face/612f5ca4c050ef18dccf789a8b9399d47e9e6f19.jpg",
       "i18n": {
-        "en": "One of the site's first-batch creators; the profile comes from a public page, and every video is reviewed individually.",
-        "ja": "サイト管理者が指定した初期作者の一人。公開プロフィールをもとに収録し、動画は一本ずつ審査しています。"
+        "en": "One of the site owner's designated first-batch creators; profile details come from the public Bilibili page.",
+        "ja": "サイト管理者が指定した初期メンバーの作者。プロフィール情報はBilibiliの公開ページによる。"
       }
     },
     {
@@ -212,6 +212,32 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1ChWM64EDA",
+      "uid": "69180811",
+      "title": "【Deepseek大肥鱼×Claude】用psg的风格打开非凡之爱",
+      "description": "参考：BV1aExC6gETf，X的antrofrog的AI生成作品《No Ordinary Love-非凡之爱》\n灵感来源，吊带袜天使，《鲸鱼骑士与橘色公主》",
+      "url": "https://www.bilibili.com/video/BV1ChWM64EDA/",
+      "cover": "https://i1.hdslb.com/bfs/archive/7ef24d7e7cc59aca46a8337cb972b7fa3d61ef84.jpg",
+      "duration": 63,
+      "publishedAt": "2026-11-10T03:30:00.000Z",
+      "characterIds": [
+        "deepseek",
+        "claude"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the site owner's designated first-batch creators; profile details come from the public Bilibili page.",
+          "description": "A fan-made short animation starring chibi versions of DeepSeek Chan and Claude Chan. Set among stone facades, stairways and rain-slicked streets, it moves from a flower stall and a rainy walk under one umbrella to a closing duet, all in a bold cartoon style across roughly one minute.",
+          "title": "DeepSeek Chan x Claude Chan: No Ordinary Love, PSG Style"
+        },
+        "ja": {
+          "creatorIntro": "サイト管理者が指定した初期メンバーの作者。プロフィール情報はBilibiliの公開ページによる。",
+          "description": "DeepSeekちゃんとClaudeちゃんがちびキャラで登場するファンメイドのショートアニメ。石造りの街並みや階段、雨に濡れた通りを舞台に、花屋の場面や一本の傘で歩く雨のシーンからラストの共演へと、太い線のコミカルなタッチで約1分にわたって展開する。",
+          "title": "DeepSeekちゃん×Claudeちゃん：PSG風の『No Ordinary Love』"
+        }
+      }
+    },
     {
       "bvid": "BV1BYWP6zEkz",
       "uid": "15475629",
