@@ -118,8 +118,8 @@
       "intro": "每日AI小四格/小动画",
       "avatar": "https://i0.hdslb.com/bfs/face/6f8600ad3d37069ef5106eaf96e7d5a936ba8c50.jpg",
       "i18n": {
-        "en": "Muto_66 posts a daily AI-themed four-panel comic and short animation.",
-        "ja": "毎日AIをテーマにした4コマ漫画やショートアニメを投稿している。"
+        "en": "Daily AI four-panel comics and short animations.",
+        "ja": "毎日AI四コマ漫画やショートアニメを投稿。"
       }
     },
     {
@@ -162,8 +162,8 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i0.hdslb.com/bfs/face/43d1d722a3adf1a19e17244f875c504beffe6831.jpg",
       "i18n": {
-        "en": "Bilibili animation creator making original anime-style fan videos.",
-        "ja": "オリジナルのアニメ風ファン映像を制作しているBilibiliのアニメーション制作者。"
+        "en": "彼岸花Channel — a first-batch creator channel selected by the site owner; the channel's public profile is listed and every video is reviewed individually.",
+        "ja": "サイト管理者が選んだ初期バッチの作者チャンネル。公開プロフィール情報を掲載し、動画は一本ずつ審査しています。"
       }
     },
     {
@@ -212,6 +212,59 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1LvW16JETU",
+      "uid": "15475629",
+      "title": "【科普向】《披着马皮的狐狸？不是披着羊皮的狼吗……呜！救命！》",
+      "description": "原事件（2026-02-06～2026-02-12）：智谱GLM-5以匿名代号Pony Alpha登上OpenRouter并登顶热度榜，网友猜是DeepSeek V4或Claude Sonnet 5，2月11日智谱确认就是GLM-5。\n\n以下是小作文\n“只要戴上这个，就没人认得我了吧？”GLM娘把一只毛茸茸的小马头套往头上一扣，可那对超大的阔耳狐耳朵还是从头套两边支棱了出来。她把Z字黑书往背后一藏，悄悄溜上OpenRouter的舞台，名牌上只写着：Pony Alpha，提供方：？？？\n\n没想到这匹“小马”一开口写代码就停不下来，工具一个比一个点得准，几小时的大项目一口气做完。热度榜一路往上蹿，直接冲到了第一名！台下的开发者炸开了锅：“是DeepSeek V4吧？”“不，肯定是Claude Sonnet 5！”被点名的DeepSeek娘和Claude娘一起摆手：“不是我哦～”GLM娘在头套里紧张得直冒汗，拼命把露出来的狐尾往裙子里塞。\n\n2月11日，她终于一把摘下头套，高高举起Z字黑书：“其实是我！GLM-5！”7440亿参数、MIT开源，全场欢呼。可下一秒，订阅门口排起了长龙，GLM娘抱着“算力有限，先开放Max用户”的牌子，小声说：“大、大家慢慢排队哦……”\n\n来源：\nhttps://www.yicai.com/news/103049499.html\nhttps://www.stcn.com/article/detail/3640020.html\nhttps://z.ai/blog/glm-5\nhttps://voiceofcontext.substack.com/p/inside-zais-secret-model-drop-seedance\n\n【Credit】\n音乐：Cute Smiles Energetic\nGoldenSoundLabs · Pixabay\n图像生成：GPT Image 2.5 (Sunburst)\nAI-Chan illustrations — ZipZipPipe · CC BY-NC-SA 4.0.\nDeepseek-Chan original character — 上善无形.",
+      "url": "https://www.bilibili.com/video/BV1LvW16JETU/",
+      "cover": "https://i1.hdslb.com/bfs/archive/f72e40fa76ac29691f19791b57a7280bc7b8f78e.jpg",
+      "duration": 27,
+      "publishedAt": "2026-11-11T06:38:40.000Z",
+      "characterIds": [
+        "glm",
+        "deepseek",
+        "claude"
+      ],
+      "i18n": {
+        "en": {
+          "title": "A Fox in a Pony Suit? Not a Wolf in Sheep's Clothing… Help!",
+          "description": "A chibi-style short animation about GLM-5's anonymous debut on OpenRouter. Wearing a pony costume over her oversized fox ears and tail, GLM Chan climbs the leaderboard under the codename Pony Alpha while developers argue over whether the model is DeepSeek V4 or Claude Sonnet 5, and DeepSeek Chan and Claude Chan both wave the guesses away. On February 11 she finally pulls off the costume and announces that she is GLM-5, only to find a long queue at the subscription gate and ask everyone to wait their turn.",
+          "creatorIntro": "Daily AI four-panel comics and short animations."
+        },
+        "ja": {
+          "title": "馬の皮をかぶったキツネ？ 羊の皮をかぶったオオカミじゃなくて……うぅ、助けて！",
+          "description": "GLM-5がOpenRouterに匿名コードネーム「Pony Alpha」で登場した出来事を描いたちびキャラのショートアニメ。GLMちゃんはポニーの着ぐるみで大きなキツネ耳と尻尾を隠し、ランキングを駆け上がる。開発者たちは「DeepSeek V4では？」「Claude Sonnet 5では？」と騒ぎ、名指しされたDeepSeekちゃんとClaudeちゃんは手を振って否定する。2月11日、GLMちゃんは着ぐるみを脱いで「実は私、GLM-5！」と正体を明かすが、その直後にはサブスクの入口に長い列ができ、順番待ちをお願いすることになる。",
+          "creatorIntro": "毎日AI四コマ漫画やショートアニメを投稿。"
+        }
+      }
+    },
+    {
+      "bvid": "BV1tKW363Ety",
+      "uid": "13787349",
+      "title": "《大模型复读班 》 第五集： 收到，豆包已上线！",
+      "description": "收到，豆包已上线！",
+      "url": "https://www.bilibili.com/video/BV1tKW363Ety/",
+      "cover": "https://i2.hdslb.com/bfs/archive/35a09a7c9342dff1c21a1e0c58bf804641a1dfac.jpg",
+      "duration": 193,
+      "publishedAt": "2026-11-11T03:20:00.000Z",
+      "characterIds": [
+        "doubao",
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "彼岸花Channel — a first-batch creator channel selected by the site owner; the channel's public profile is listed and every video is reviewed individually.",
+          "description": "Episode 5 of the Large Model Repeat Class series. Acknowledged — Doubao is online!",
+          "title": "Large Model Repeat Class, Episode 5: Acknowledged, Doubao Is Online!"
+        },
+        "ja": {
+          "creatorIntro": "サイト管理者が選んだ初期バッチの作者チャンネル。公開プロフィール情報を掲載し、動画は一本ずつ審査しています。",
+          "description": "「大規模モデル復読クラス」第5話。了解、豆包ちゃんがオンラインになりました。",
+          "title": "「大規模モデル復読クラス」第5話：了解、豆包ちゃん起動！"
+        }
+      }
+    },
     {
       "bvid": "BV1B8W36REiu",
       "uid": "3747573030456892",

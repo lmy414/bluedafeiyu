@@ -160042,5 +160042,219 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_19181e62c1b7f664e94d665a",
+    "name": "雨天巴士站的鲸尾少女",
+    "description": "蓝发少女撑透明伞站在雨中的巴士站台，穿深蓝长裙与白围裙，身后露出鲸鱼尾巴，身旁是站牌、长椅和开花的绣球，远处有驶来的公交，雨水在地面映出清晰倒影。",
+    "commentary": "雨这么大，我撑着伞在站台等了好久，裙摆都溅到水了。不过雨里的绣球花很好看，湿地上的倒影把整条街都收进去了，等车也没那么难熬。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/19181e62c1b7f664.png",
+    "thumbnailPath": "submissions/previews/deepseek/19181e62c1b7f664.webp",
+    "fullPath": "submissions/large/deepseek/19181e62c1b7f664.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 3076190,
+    "sha256": "19181e62c1b7f664e94d665a608ea8ce5815f97e196d2f93ab89087e0139289e",
+    "characterId": "deepseek",
+    "tags": [
+      "雨天",
+      "巴士站",
+      "绣球花",
+      "鲸尾",
+      "蓝发",
+      "透明伞",
+      "倒影"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-11T08:18:01.932Z",
+    "updatedAt": "2026-11-11T08:18:01.932Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611110001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "cd1c3563759d54d00f48c360d7dfc4eea70e517221ddc250498cc90ee3e16031",
+      "en": {
+        "commentary": "The rain was really coming down while I waited at the stop, and my hem got splashed. Still, the hydrangeas looked lovely in the rain, and the wet ground caught the whole street in its reflection, so waiting for the bus was not so bad.",
+        "description": "A blue-haired girl stands under a clear umbrella at a rainy bus stop, wearing a deep blue dress with a white apron and a whale tail behind her. A stop sign, a bench and blooming hydrangeas surround the shelter, a bus approaches in the distance, and the wet pavement mirrors the street.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan stands with a clear umbrella at a rainy bus stop, a bus approaching in the distance and hydrangeas blooming beside the shelter.",
+            "question": "What is happening in this image?"
+          },
+          {
+            "answer": "It is a fan illustration of the AI character DeepSeek Chan, showing a full street scene rather than a multi-panel comic.",
+            "question": "What kind of work is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Whale-Tailed Girl at the Rainy Bus Stop",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan fan illustration: a blue-haired girl with a whale tail waits with a clear umbrella at a rainy bus stop among hydrangeas.",
+        "seoTitle": "Whale-Tailed Girl at the Rainy Bus Stop - DeepSeek Chan Fan Art",
+        "tags": [
+          "rainy day",
+          "bus stop",
+          "hydrangea",
+          "whale tail",
+          "blue hair",
+          "clear umbrella",
+          "reflection"
+        ]
+      },
+      "ja": {
+        "commentary": "こんなに雨が強いのにバス停でずっと待っていたら、スカートの裾がぬれちゃった。でも雨の紫陽花はきれいだし、ぬれた地面に街ぜんぶが映っていて、待ち時間も悪くないかな。",
+        "description": "青い髪の少女が透明な傘をさして雨のバス停に立ち、紺色のワンピースに白いエプロンをつけ、背後にはクジラの尾がある。そばには標識とベンチ、咲いた紫陽花があり、遠くにバスが近づき、ぬれた路面に街が映り込んでいる。",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan が雨のバス停で透明な傘をさして立っていて、停留所のそばには紫陽花が咲き、遠くからバスが近づいてくる様子が描かれています。",
+            "question": "この画像には何が描かれていますか？"
+          },
+          {
+            "answer": "AI キャラクター DeepSeek Chan のファンイラストで、コマ割りの漫画ではなく街の風景を含む一枚絵です。",
+            "question": "どのような作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "雨のバス停のクジラ尾少女",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan のファンイラスト。青い髪とクジラの尾を持つ少女が、紫陽花の咲く雨のバス停で透明な傘をさして待っている。",
+        "seoTitle": "雨のバス停のクジラ尾少女｜DeepSeek Chan ファンアート",
+        "tags": [
+          "雨",
+          "バス停",
+          "紫陽花",
+          "クジラの尾",
+          "青い髪",
+          "透明な傘",
+          "水鏡"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_e42712c95adac8e947d11498",
+    "name": "天台帐篷里的夜读时光",
+    "description": "蓝发少女蜷在用竹竿和布掺搭起的天台帐篷里，借手电的光看漫画，身边放着鲸鱼与兔子玩偶、零食和饮料，帐篷外是夜色中的城市天际线。",
+    "commentary": "今晚不回房间了，天台上的帐篷才是我的书房。手电一开、漫画一翻，零食就搁在手边，谁也别来催我睡觉。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/e42712c95adac8e9.png",
+    "thumbnailPath": "submissions/previews/deepseek/e42712c95adac8e9.webp",
+    "fullPath": "submissions/large/deepseek/e42712c95adac8e9.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 2838215,
+    "sha256": "e42712c95adac8e947d1149806f76bfc9ba99da0a31dea5c94b949a00344a4df",
+    "characterId": "deepseek",
+    "tags": [
+      "天台",
+      "帐篷",
+      "夜读",
+      "手电",
+      "鲸鱼玩偶",
+      "漫画",
+      "城市夜景"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-11T08:18:41.432Z",
+    "updatedAt": "2026-11-11T08:18:41.432Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611110002",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "f8dbaef86d18193d5e09da6908bd3a624bd8242a81447ec433001ba4ffe174a4",
+      "en": {
+        "commentary": "I'm not going back to my room tonight. The rooftop tent is my study now. Flashlight on, manga open, snacks within reach, and nobody gets to tell me to go to sleep.",
+        "description": "A blue-haired girl curls up inside a blanket fort built from bamboo poles and cloth on a rooftop, reading a manga by flashlight, with whale and rabbit plushies, snacks and a drink beside her, and the city skyline glowing outside.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan sits inside a rooftop blanket fort at night, reading a manga by flashlight with plushies and snacks around her.",
+            "question": "What is happening in this image?"
+          },
+          {
+            "answer": "It is a fan illustration of the AI character DeepSeek Chan, depicting a single night scene rather than a multi-panel comic.",
+            "question": "What kind of work is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Night Reading in a Rooftop Blanket Fort",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan fan illustration: a blue-haired girl reads manga by flashlight inside a rooftop blanket fort, surrounded by plushies and snacks with the city at night behind her.",
+        "seoTitle": "Night Reading in a Rooftop Blanket Fort - DeepSeek Chan Fan Art",
+        "tags": [
+          "rooftop",
+          "blanket fort",
+          "night reading",
+          "flashlight",
+          "whale plush",
+          "manga",
+          "city night view"
+        ]
+      },
+      "ja": {
+        "commentary": "今夜は部屋に戻らない。屋上のテントがわたしの書斎だ。懐中電灯をつけて漫画を開けば、お菓子も手の届くところにある。誰にも寝ろなんて言わせない。",
+        "description": "青い髪の少女が、竹と布で作った屋上のテントにもぐりこみ、懐中電灯の明かりで漫画を読んでいる。そばにはクジラとウサギのぬいぐるみ、お菓子と飲み物があり、外には夜の街の景色が広がる。",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan が夜の屋上のテントの中で懐中電灯を灯して漫画を読み、まわりにぬいぐるみとお菓子が置かれています。",
+            "question": "この画像には何が描かれていますか？"
+          },
+          {
+            "answer": "AI キャラクター DeepSeek Chan のファンイラストで、コマ割りの漫画ではなく夜の一場面を描いた一枚絵です。",
+            "question": "どのような作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "屋上の秘密基地で夜読書",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan のファンイラスト。青い髪の少女が屋上のテントの中で懐中電灯を灯して漫画を読み、ぬいぐるみとお菓子に囲まれ、外には夜の街が広がる。",
+        "seoTitle": "屋上の秘密基地で夜読書｜DeepSeek Chan ファンアート",
+        "tags": [
+          "屋上",
+          "秘密基地",
+          "夜読書",
+          "懐中電灯",
+          "クジラのぬいぐるみ",
+          "漫画",
+          "夜景"
+        ]
+      }
+    }
   }
 ]
