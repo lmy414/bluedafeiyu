@@ -44,6 +44,8 @@ export async function planReleases(group) {
   if (!stat) return { root: group.root, keep: [], remove: [] };
   const active = await fs.realpath(group.current);
   if (path.dirname(active) !== group.root) throw new Error(`当前版本不在发布目录内：${group.current}`);
+  const activeInfo = await fs.lstat(active);
+  if (!activeInfo.isDirectory() || activeInfo.isSymbolicLink() || activeInfo.dev !== stat.dev) throw new Error(`当前版本未通过校验：${active}`);
   const entries = [];
   const modified = new Map();
   for (const name of await fs.readdir(group.root)) {
@@ -55,7 +57,7 @@ export async function planReleases(group) {
       modified.set(file, info.mtimeMs);
     }
   }
-  if (!entries.includes(active)) throw new Error(`当前版本未通过校验：${active}`);
+  // Naming limits deletion candidates; a validated current target is always kept.
   // Emao uses commit hashes as names; their lexical order does not identify the latest release.
   const newest = entries.filter((file) => file !== active).sort((a, b) =>
     (group.sortBy === 'mtime' ? modified.get(b) - modified.get(a) : releaseDate(path.basename(b)).localeCompare(releaseDate(path.basename(a)))) || b.localeCompare(a));

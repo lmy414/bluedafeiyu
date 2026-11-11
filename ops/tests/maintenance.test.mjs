@@ -31,6 +31,35 @@ test('保留正在运行的旧版本和最新一个版本，忽略非发布目�
   await assert.rejects(planReleases({ root, current, pattern: /^\d{8}-\d{6}$/ }), /当前版本不在发布目录/);
 });
 
+test('特殊名称的当前版本仍被保留，删除候选继续严格匹配发布命名', async (t) => {
+  const dir = await fixture(t);
+  const root = path.join(dir, 'releases');
+  const active = 'admin-abc1234-worker-safe-20260104';
+  const previous = 'admin-def5678-20260103-000000-3';
+  const old = 'admin-123abcd-20260101-000000-1';
+  const unknown = 'admin-unrecognized-backup';
+  const group = { ...RELEASE_GROUPS.find(({ root }) => root.endsWith('/dafeiyu-admin/releases')), root, current: path.join(dir, 'current') };
+  for (const name of [active, previous, old, unknown]) await fs.mkdir(path.join(root, name), { recursive: true });
+  await fs.symlink(path.join(root, active), group.current, 'junction');
+  const plan = await planReleases(group);
+  assert.deepEqual(plan.keep.map((file) => path.basename(file)), [active, previous]);
+  assert.deepEqual(plan.remove, [path.join(root, old)]);
+  const report = await maintain({ releasesOnly: true, releaseGroups: [group], diskPath: dir });
+  assert.equal(report.status, 'dry-run');
+  assert.deepEqual(report.errors, []);
+  assert.equal(report.releases[0].count, 1);
+  for (const name of [active, previous, old, unknown]) assert.equal((await fs.stat(path.join(root, name))).isDirectory(), true);
+});
+
+test('当前版本指向普通文件时拒绝清理', async (t) => {
+  const dir = await fixture(t);
+  const root = path.join(dir, 'releases');
+  await fs.mkdir(root);
+  const current = path.join(root, 'not-a-directory');
+  await fs.writeFile(current, 'keep');
+  await assert.rejects(planReleases({ root, current, pattern: /^admin-/ }), /当前版本未通过校验/);
+});
+
 test('Emao 哈希版本按发布时间保留当前和最近历史版本，不按哈希排序', async (t) => {
   const dir = await fixture(t);
   const root = path.join(dir, 'releases');
