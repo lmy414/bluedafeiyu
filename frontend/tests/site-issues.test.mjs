@@ -10,8 +10,8 @@ const read=route=>parseHTML(fs.readFileSync(path.join(out,route.endsWith('/')?ro
 
 test('Traditional navigation and DeepSeek archive breadcrumbs link to the Traditional home',()=>{
   const doc=read('/zh-hant/');
-  assert.equal(doc.querySelector('.main-nav a[href="/zh-hant/"] span').textContent,'首頁');
-  assert.ok(doc.querySelector('.portal-heading').textContent.includes('藍色大肥魚'));
+  assert.equal(doc.querySelector('.sidebar a[aria-current="page"][href="/zh-hant/"] span').textContent,'全部圖片');
+  assert.ok(doc.querySelector('.hero h1').textContent.includes('藍色大肥魚'));
   const directory=path.join(out,'zh-hant/characters');
   const routes=fs.readdirSync(directory,{recursive:true}).filter(file=>/^deepseek(?:\/|\\|\.html)/.test(file)&&file.endsWith('.html'));
   assert.ok(routes.length>2);
@@ -95,22 +95,21 @@ test('character descriptions merge search aliases into a single non-repeating li
   }
 });
 
-test('home ranking fallbacks retain twelve real preview destinations in every language',()=>{
+test('redesigned home retains thirty real preview destinations in every language',()=>{
   const archive=JSON.parse(fs.readFileSync(path.join(out,'archive-data.json'),'utf8'));
   const bySlug=new Map(archive.works.map(work=>[work.slug,work]));
   for(const locale of LOCALES){
-    const section=read(localizedPath('/',locale)).querySelector('#popular-downloads');
+    const section=read(localizedPath('/',locale)).querySelector('[data-feed-grid]');
     assert.ok(section,locale.id);
     const picks=[...section.querySelectorAll('.work-card')];
-    assert.equal(picks.length,12,locale.id+' complete wall');
-    assert.equal(new Set(picks.map(pick=>pick.dataset.slug)).size,12);
+    assert.equal(picks.length,30,locale.id+' complete wall');
+    assert.equal(new Set(picks.map(pick=>pick.dataset.slug)).size,30);
     for(const pick of picks){
       const work=bySlug.get(pick.dataset.slug),image=pick.querySelector('.work-art');
       assert.ok(work);assert.equal(image.dataset.preview,work.slug);
       assert.equal(image.getAttribute('href'),localizedPath('/works/'+work.slug+'.html',locale));
       assert.ok(work.o);assert.ok(image.querySelector('img').alt);
     }
-    assert.ok(section.querySelector('[data-home-ranking-note]'));
     assert.equal(section.querySelector('.home-download-action'),null);
   }
 });

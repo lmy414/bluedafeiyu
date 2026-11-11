@@ -71,8 +71,9 @@ test('homepage bundles styles and keeps lower galleries lazy in all four languag
     assert.match(styles[0].getAttribute('href'),/^\/_astro\/.+\.css$/);
     const images=[...document.querySelectorAll('img')];
     assert.equal(images.filter(img=>img.getAttribute('fetchpriority')==='high').length,1);
-    const recent=document.querySelector('.portal-curated');
-    assert.equal(recent.querySelectorAll('img[loading=eager]').length,0);
+    const recent=document.querySelector('[data-feed-grid]');
+    assert.equal(recent.querySelectorAll('img[loading=eager]').length,5);
+    assert.equal(recent.querySelectorAll('img[loading=lazy]').length,25);
     assert.ok(document.querySelector('script[type=module][src^="/_astro/"]'));
     for(const name of ['archive-copy','archive-labels'])assert.equal(!!document.querySelector(`script[src^="/${name}.js"]`),['en/','ja/'].includes(prefix),prefix+' runtime dictionaries');
   }

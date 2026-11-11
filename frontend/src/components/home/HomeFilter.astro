@@ -1,0 +1,7 @@
+---
+const {name,label,labelKey,options}=Astro.props;
+---
+<div class="lang-picker filter-picker" data-filter-picker={name}>
+  <button type="button" class="chip lang-trigger" aria-haspopup="listbox" aria-expanded="false" aria-controls={name+'-options'}><span data-i18n={labelKey}>{label}</span><svg class="icon lang-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+  <ul class="lang-panel" role="listbox" aria-label={label} data-i18n-attr={'aria-label:'+labelKey} id={name+'-options'} hidden>{options.map((option,index)=><li class="lang-option" role="option" aria-selected={index===0?'true':'false'} tabindex="-1" data-href={option.href} data-i18n={option.key} data-character-id={option.character} data-character-name={option.character} data-character-label={option.name}>{option.name}</li>)}</ul>
+</div>

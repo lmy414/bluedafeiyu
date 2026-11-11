@@ -1,3 +1,4 @@
+import {homeCopy} from '../components/home/home-copy.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { site as snapshot } from './site.mjs';
@@ -146,5 +147,6 @@ createDemoPages(ctx,pages);
 ctx.seo.generatePages(ctx.write,ctx.browsePage,ctx.breadcrumbs);
 export const archivePages=pages;
 export const archiveContext=ctx;
+for (const [key,row] of Object.entries(homeCopy)) { translations.en['d.home.'+key]=row[1]; translations.ja['d.home.'+key]=row[2]; }
 export const archiveTranslations=translations;
 export const archiveData={works,characters:chars.map(({list,allList,...c})=>c),types,topics:topics.map(({list,cover,art,avatar,...t})=>({...t,slugs:list.map(w=>w.slug)}))};
