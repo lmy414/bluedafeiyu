@@ -31,7 +31,7 @@ test('home image and title open the shared real preview, retain modifiers and re
 test('homepage is a source component using live gallery data without preview-site guards or embedded images',()=>{
  const page=fs.readFileSync(new URL('../src/pages/index.astro',import.meta.url),'utf8');assert.match(page,/HomePage/);
  const source=fs.readFileSync(new URL('../src/components/home/HomeBody.astro',import.meta.url),'utf8');
- assert.match(source,/orderWorks\(galleryWorks\)/);assert.match(source,/galleryWorks.length/);assert.match(source,/src="\/avatar.png"/);
+ assert.match(source,/orderWorks\(galleryWorks\)/);assert.match(source,/galleryWorks.length/);assert.match(source,/src="\/avatar.png"/);assert.match(source,/alt="蓝色大肥鱼" data-i18n-attr="alt:d.home.brand"/);
  assert.doesNotMatch(source,/data:image|preview-isolation|noindex|DecompressionStream/);
  const css=fs.readFileSync(new URL('../src/components/home/HomePage.css',import.meta.url),'utf8');assert.match(css,/height:56px;min-height:56px;flex:0 0 56px/);assert.match(css,/flex-direction:column;gap:12px/);assert.match(css,/column-count:5/);
  assert.ok(Object.values(homeCopy).every(row=>row.length===3&&row.every(Boolean)));
