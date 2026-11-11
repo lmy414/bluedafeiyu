@@ -55,3 +55,10 @@ test('home preview uses Chinese type names and lets the shared language API tran
  }
  assert.equal(homePreviewText('v2.type.meme','meme',null,{fmt:key=>key==='v2.type.meme'?'Memes':'unknown'}),'Memes');
 });
+
+ test('homepage does not advertise an ungenerated Markdown alternate',()=>{
+ const source=fs.readFileSync(new URL('../src/components/home/HomePage.astro',import.meta.url),'utf8');
+ const {document}=parseHTML(source);
+ assert.equal(document.querySelector('link[rel="alternate"][type="text/markdown"]'),null);
+ assert.doesNotMatch(source,/index\.html\.md/);
+ });
