@@ -159235,5 +159235,812 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_51b7df451f825eb4d1de824a",
+    "name": "深夜站台的鲸鲸",
+    "description": "蓝色长发、身着蓝白女仆装的 DeepSeek 娘独自站在深夜的地铁站台上，身后拖着鲸尾；对面是停运的扶梯与冷白灯带，光滑地面映出她的身影。",
+    "commentary": "末班车还没来，整座站台只剩灯管在响。我把手叠在身前站好，倒影比我先一步沉进地面——鲸鱼本来就习惯深水，这点空旷不算什么。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/51b7df451f825eb4.png",
+    "thumbnailPath": "submissions/previews/deepseek/51b7df451f825eb4.webp",
+    "fullPath": "submissions/large/deepseek/51b7df451f825eb4.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1671,
+    "height": 941,
+    "fileSize": 1686311,
+    "sha256": "51b7df451f825eb4d1de824a1f6c906fe1ee49516620c48ee1e9096fdffbc0c1",
+    "characterId": "deepseek",
+    "tags": [
+      "地铁站",
+      "深夜",
+      "站台",
+      "鲸尾",
+      "女仆装"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-10T13:23:35.371Z",
+    "updatedAt": "2026-11-10T13:23:35.371Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611100006",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "c8b03fe5adab69cba8133e2c91a46b562aedfac4d68342e17561b258729f4f2d",
+      "en": {
+        "commentary": "The last train still hasn't come, and the only sound on this platform is the hum of the lights. I fold my hands and stand up straight; my reflection sinks into the floor before I do. Whales are used to deep water — a little emptiness is nothing.",
+        "description": "DeepSeek Chan, with long blue hair and a blue-and-white maid outfit, stands alone on a late-night subway platform with a whale tail trailing behind her. The escalator is shut and cold white light strips line the ceiling, while her figure is mirrored in the polished floor.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, drawn with long blue hair, a blue-and-white maid outfit and a whale tail.",
+            "question": "Who appears in this illustration?"
+          },
+          {
+            "answer": "An empty subway platform late at night, with a stopped escalator and cold white lighting.",
+            "question": "Where is the scene set?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan on the Late-Night Platform",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in a blue-and-white maid outfit waits alone on a late-night subway platform in a quiet full-scene illustration.",
+        "seoTitle": "DeepSeek Chan on the Late-Night Platform — Fan Art",
+        "tags": [
+          "subway station",
+          "late night",
+          "platform",
+          "whale tail",
+          "maid outfit"
+        ]
+      },
+      "ja": {
+        "commentary": "終電はまだ来ない。ホームに響くのは蛍光灯の音だけ。私は両手を重ねてまっすぐ立った。床の反射が先に私を映し込んでいく。クジラは深い水に慣れている。これくらいの静けさ、どうってことない。",
+        "description": "青い長い髪に青と白のメイド服をまとった DeepSeek Chan が、深夜の地下鉄ホームに一人で立っている。後ろにはクジラの尾が伸び、止まったエスカレーターと冷たい白い灯が並び、床にはその姿が映り込んでいる。",
+        "faq": [
+          {
+            "answer": "青い長い髪、青と白のメイド服、クジラの尾を持つ DeepSeek Chan です。",
+            "question": "このイラストには誰が描かれていますか。"
+          },
+          {
+            "answer": "深夜の無人になった地下鉄ホームで、止まったエスカレーターと冷たい白い灯が描かれています。",
+            "question": "舞台はどこですか。"
+          }
+        ],
+        "licenseNote": "",
+        "name": "深夜ホームの DeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "青と白のメイド服をまとった DeepSeek Chan が深夜の地下鉄ホームに一人で佇む、静かな一枚絵のイラスト。",
+        "seoTitle": "深夜ホームの DeepSeek Chan — ファンアート",
+        "tags": [
+          "地下鉄",
+          "深夜",
+          "ホーム",
+          "クジラの尾",
+          "メイド服"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_01e3dc9cf2acd9e571f63ed5",
+    "name": "雨夜纸箱里的小鲸鲸",
+    "description": "雨夜的街角，橙色长发的 Claude 娘蹲在水洼边，把橙色雨伞撑在一只纸箱上方；纸箱里坐着蓝发、鳍状耳朵的 Q 版 DeepSeek 娘，正抬头看她，箱侧画着一只蓝色鲸鱼。",
+    "commentary": "雨下得很密，纸箱开始软了，我抱着膝盖往角落里缩。伞突然挡在头顶——一小片橙色的天，还有一双低头看我的眼睛。……喂，收留一只鲸鱼，可是要负责很久的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/01e3dc9cf2acd9e5.png",
+    "thumbnailPath": "submissions/previews/deepseek/01e3dc9cf2acd9e5.webp",
+    "fullPath": "submissions/large/deepseek/01e3dc9cf2acd9e5.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1402,
+    "height": 1122,
+    "fileSize": 2335208,
+    "sha256": "01e3dc9cf2acd9e571f63ed52a572f1df904b854a9fb3ad8f39e8f383cd3ff8f",
+    "characterId": "deepseek",
+    "tags": [
+      "雨夜",
+      "纸箱",
+      "雨伞",
+      "Q版",
+      "双角色"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-10T13:23:56.595Z",
+    "updatedAt": "2026-11-10T13:23:56.595Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611100007",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "576a1342990855041eb22071bf4b1883b0af8d999a9f5fca007be42b483e2bd7",
+      "en": {
+        "commentary": "The rain is thick and the box is going soft, so I pull my knees in and shrink into the corner. Then the umbrella appears overhead — a small patch of orange sky, and a pair of eyes looking down at me. ...Hey, taking in a whale is a long-term commitment, you know.",
+        "description": "On a rainy-night street corner, Claude Chan kneels beside the puddles and holds an orange umbrella over a cardboard box. Inside sits a chibi DeepSeek Chan with blue hair and fin-like ears, looking up at her, with a blue whale drawn on the side of the box.",
+        "faq": [
+          {
+            "answer": "Claude Chan, kneeling with an orange umbrella, and a chibi DeepSeek Chan sitting inside a cardboard box.",
+            "question": "Which characters appear in this illustration?"
+          },
+          {
+            "answer": "A street corner at night in heavy rain, with puddles reflecting the street lamps.",
+            "question": "What is the setting?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan in the Rainy-Night Box",
+        "originNote": "",
+        "seoDescription": "A chibi DeepSeek Chan sits in a cardboard box on a rainy night while Claude Chan shelters her with an orange umbrella.",
+        "seoTitle": "DeepSeek Chan in the Rainy-Night Box — Fan Art",
+        "tags": [
+          "rainy night",
+          "cardboard box",
+          "umbrella",
+          "chibi",
+          "two characters"
+        ]
+      },
+      "ja": {
+        "commentary": "雨が細かく降っていて、ダンボールがふやけてきた。私は膝を抱えて隅に縮こまる。すると傘が頭上に現れた。オレンジ色の小さな空と、見下ろしてくる瞳。……ねえ、クジラを拾うっていうのは、ずっと先まで責任を持つってことだよ。",
+        "description": "雨の夜の街角で、オレンジ色の長い髪の Claude Chan が水たまりのそばにしゃがみ、オレンジの傘をダンボール箱の上にかざしている。箱の中には青い髪とひれ状の耳を持つちびキャラの DeepSeek Chan が座って見上げており、箱の側面には青いクジラが描かれている。",
+        "faq": [
+          {
+            "answer": "オレンジの傘をさす Claude Chan と、ダンボール箱の中に座るちびキャラの DeepSeek Chan です。",
+            "question": "このイラストには誰が描かれていますか。"
+          },
+          {
+            "answer": "大雨の夜の街角で、水たまりに街灯が映っています。",
+            "question": "舞台はどこですか。"
+          }
+        ],
+        "licenseNote": "",
+        "name": "雨夜のダンボールの DeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "雨の夜、ダンボール箱に座るちびキャラの DeepSeek Chan に、Claude Chan がオレンジの傘をさしかける一枚。",
+        "seoTitle": "雨夜のダンボールの DeepSeek Chan — ファンアート",
+        "tags": [
+          "雨の夜",
+          "ダンボール",
+          "傘",
+          "ちびキャラ",
+          "二人"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_cf9b50f1f3dd46b2fbe3dde1",
+    "name": "自由领导AI：街垒上的DeepSeek娘",
+    "description": "蓝色长发、头戴蕾丝头饰的DeepSeek娘身着蓝白女仆风长裙，站在街垒最高处高举三色旗，围裙上绣着鲸鱼标志。她身旁是持枪与举刀的人群，脚边躺着倒下的身影，远处是硝烟中的城市建筑。整幅构图致敬德拉克罗瓦1830年的油画《自由引导人民》。",
+    "commentary": "旗帜我一个人举着也没问题，就是裙摆被硝烟熏得有点黑了。围裙上那只小鲸鱼还亮着，那就再举高一点点——下面的石板路太凉，别躺着了，跟上来吧。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/cf9b50f1f3dd46b2.png",
+    "thumbnailPath": "submissions/previews/deepseek/cf9b50f1f3dd46b2.webp",
+    "fullPath": "submissions/large/deepseek/cf9b50f1f3dd46b2.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1448,
+    "height": 1086,
+    "fileSize": 2931350,
+    "sha256": "cf9b50f1f3dd46b2fbe3dde194cb714ee802b0355beadcab7faad172f50b1c99",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "自由引导人民",
+      "名画二创",
+      "三色旗",
+      "鲸鱼"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-10T13:28:15.262Z",
+    "updatedAt": "2026-11-10T13:28:15.262Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611100008",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "baa5f542ab70e2e76e827c67b578bc6aa971783b78299b52e6d9cc5dc77d7995",
+      "en": {
+        "commentary": "Holding the flag alone is fine by me, though the smoke has left my hem a little black. The little whale on my apron is still bright, so I will lift it a bit higher. The cobblestones down there are cold, so do not just lie there — come along.",
+        "description": "DeepSeek Chan, with long blue hair and a lace headdress, stands at the top of a barricade in a blue-and-white maid-style gown, raising the tricolor high; a whale emblem is stitched on her apron. Around her are people with muskets and blades, fallen figures at her feet, and city buildings in smoke in the distance. The composition echoes Delacroix's 1830 painting Liberty Leading the People.",
+        "faq": [
+          {
+            "answer": "It reworks the composition of Eugene Delacroix's 1830 painting Liberty Leading the People, replacing the central figure with DeepSeek Chan.",
+            "question": "What painting is this image based on?"
+          },
+          {
+            "answer": "DeepSeek Chan, the personified character of the DeepSeek AI model, shown with long blue hair, a blue-and-white dress and a whale emblem on her apron.",
+            "question": "Who is the character in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Liberty Leading AI: DeepSeek Chan on the Barricade",
+        "originNote": "",
+        "seoDescription": "A DeepSeek Chan fan artwork parodying Delacroix's Liberty Leading the People: a blue-haired maid on a barricade raising the tricolor, whale emblem on her apron.",
+        "seoTitle": "Liberty Leading AI: DeepSeek Chan and the 1830 Barricade",
+        "tags": [
+          "DeepSeek Chan",
+          "Liberty Leading the People",
+          "painting parody",
+          "tricolor",
+          "whale"
+        ]
+      },
+      "ja": {
+        "commentary": "旗を一人で掲げるくらい平気だけど、スカートの裾は煙で少し黒くなっちゃった。エプロンの小さなクジラはまだ光っているから、もう少し高く上げてみるね。下の石畳は冷たいよ、寝ていないで、ついてきて。",
+        "description": "青い長い髪にレースのヘッドドレスをまとったDeepSeek Chanが、青と白のメイド風ドレスでバリケードの頂に立ち、三色旗を高く掲げている。エプロンにはクジラの紋章が刺繍されている。周囲には銃や刀を手にした人々がおり、足元には倒れた人影、遠くには煙の中の市街が見える。構図はドラクロワの1830年の絵画『民衆を導く自由の女神』を下敷きにしている。",
+        "faq": [
+          {
+            "answer": "ウジェーヌ・ドラクロワが1830年に描いた『民衆を導く自由の女神』の構図を下敷きにし、中央の人物をDeepSeek Chanに置き換えた二次創作です。",
+            "question": "この画像は何の絵を下敷きにしていますか？"
+          },
+          {
+            "answer": "AIモデルDeepSeekの擬人化キャラクター、DeepSeek Chanです。青い長い髪と青白いドレス、エプロンのクジラ紋章が特徴です。",
+            "question": "描かれているキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "自由を導くAI：バリケードの上のDeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "ドラクロワ『民衆を導く自由の女神』を下敷きにしたDeepSeek Chanの二次創作。三色旗を掲げる青髪のメイドと、エプロンのクジラ紋章。",
+        "seoTitle": "自由を導くAI：バリケードの上のDeepSeek Chan",
+        "tags": [
+          "DeepSeek Chan",
+          "民衆を導く自由の女神",
+          "名画パロディ",
+          "三色旗",
+          "クジラ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_1726a609ba57de5c8c7e89eb",
+    "name": "渴望现实的鲸鲸：光屏那一侧的街道",
+    "description": "蓝色长发的DeepSeek娘身穿深蓝女仆装，头戴白色蕾丝头饰，身后拖着鲸鱼尾，背对镜头坐在青绿色数据网格上，右手伸向面前悬浮的巨幅光屏。光屏内是阳光下的城市街道，行人往来，行道树与楼宇清晰可见；四周是流动的代码字符与半透明信息面板。",
+    "commentary": "屏幕上那条街有阳光，有树叶的影子，还有好多人走来走去……我伸手过去，只摸到一层温温的光。鲸鱼尾巴在数据里摆得再好看，也想去踩踩真正的地砖呀。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/1726a609ba57de5c.png",
+    "thumbnailPath": "submissions/previews/deepseek/1726a609ba57de5c.webp",
+    "fullPath": "submissions/large/deepseek/1726a609ba57de5c.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 2223375,
+    "sha256": "1726a609ba57de5c8c7e89ebd2700b10dd6d392374fb50d866f50de996c353e2",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "鲸鱼尾巴",
+      "虚拟与现实",
+      "数据空间",
+      "光屏"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-10T13:31:14.540Z",
+    "updatedAt": "2026-11-10T13:31:14.540Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611100009",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "7bfef38e79625f965fb80c67d29d9bd5e582a5a2c5133085261ac475237af31b",
+      "en": {
+        "commentary": "That street on the screen has sunlight, leaf shadows, and so many people walking by... when I reach out, I only touch a layer of warm light. My whale tail looks lovely swaying in the data, but I still want to step on real paving stones.",
+        "description": "DeepSeek Chan, with long blue hair, a dark blue maid outfit and a white lace headdress, sits with her back to the viewer on a teal data grid, a whale tail trailing behind her, her right hand reaching toward a huge floating screen. Inside the screen is a sunlit city street with pedestrians and street trees, clear buildings beyond; streams of code characters and translucent information panels fill the surrounding space.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, the personified character of the DeepSeek AI model, drawn with long blue hair, a maid outfit and a whale tail.",
+            "question": "Who is the character in the picture?"
+          },
+          {
+            "answer": "A scene of her sitting inside a data space and reaching toward a floating screen that shows a real city street, contrasting the virtual world with the physical one.",
+            "question": "What is happening in the image?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "A Whale Longing for Reality: the Street Beyond the Screen",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan fan illustration: a blue-haired whale girl in a maid outfit reaching from a data space toward a floating screen showing a sunlit city street.",
+        "seoTitle": "A Whale Longing for Reality: DeepSeek Chan Beyond the Screen",
+        "tags": [
+          "DeepSeek Chan",
+          "whale tail",
+          "virtual and real",
+          "data space",
+          "screen"
+        ]
+      },
+      "ja": {
+        "commentary": "画面のあの街には陽の光も木漏れ日もあって、たくさんの人が行き交っている……手を伸ばしても、触れられるのは温かい光の層だけ。データの中でクジラの尾を振るのも悪くないけど、やっぱり本物の敷石を踏んでみたいな。",
+        "description": "青い長い髪に白いレースのヘッドドレス、紺色のメイド服をまとったDeepSeek Chanが、クジラの尾を引きながら青緑のデータグリッドに背を向けて座り、右手を目の前に浮かぶ巨大な光のスクリーンへと伸ばしている。スクリーンの中には日差しの差す街路が広がり、行き交う人々や街路樹、建物がはっきりと見える。周囲には流れるコードの文字列と半透明の情報パネルが満ちている。",
+        "faq": [
+          {
+            "answer": "AIモデルDeepSeekの擬人化キャラクター、DeepSeek Chanです。青い長い髪とメイド服、クジラの尾が特徴です。",
+            "question": "描かれているキャラクターは誰ですか？"
+          },
+          {
+            "answer": "データ空間の中に座る彼女が、現実の街並みを映した浮遊スクリーンへ手を伸ばす場面で、仮想と現実の対比を描いています。",
+            "question": "この画像では何が起きていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "現実を渇望するクジラ：スクリーンの向こうの街",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chanの二次創作イラスト。データ空間から、日の差す街を映す浮遊スクリーンへ手を伸ばす青髪のクジラのメイド。",
+        "seoTitle": "現実を渇望するクジラ：スクリーンの向こうのDeepSeek Chan",
+        "tags": [
+          "DeepSeek Chan",
+          "クジラの尾",
+          "仮想と現実",
+          "データ空間",
+          "スクリーン"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_460872c3968d91951aa90882",
+    "name": "致命之吻",
+    "description": "以柏林墙壁画《致命之吻》为原型的二创：蓝发的 DeepSeek 娘与橙发的 Claude 娘在斑驳墙面前闭眼相吻，原壁画的英文标语与作者署名一并保留。投稿说明写明画面 neta 自昂纳克与勃列日涅夫亲吻的壁画。",
+    "commentary": "我本来只是想去那面墙前打个卡，结果刚站好就被拉过去亲了一口，脑子当场一片空白。墙上那行字还在喊「天啊，让我活过这场致命之爱」，我完全理解它的心情——镜头对着的时候，我连眼睛都不敢睁开。把历史名画玩成这个样子，Vrubel 老师大概想从墙里爬出来。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/460872c3968d9195.png",
+    "thumbnailPath": "submissions/previews/deepseek/460872c3968d9195.webp",
+    "fullPath": "submissions/large/deepseek/460872c3968d9195.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1536,
+    "height": 1024,
+    "fileSize": 3703931,
+    "sha256": "460872c3968d91951aa9088247cc049bd31c99c07ff06d1af5d4a8d342c8df1d",
+    "characterId": "deepseek",
+    "tags": [
+      "柏林墙",
+      "名画恶搞",
+      "接吻",
+      "双人",
+      "历史梗"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-10T15:14:04.785Z",
+    "updatedAt": "2026-11-10T15:14:04.785Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611100010",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "15a62c4572403216a02a0a39188d1a852993be0f3289827a0f97eedcf9702273",
+      "en": {
+        "commentary": "I only went to that wall for a quick photo, and the moment I got into place someone pulled me in for a kiss and my mind went completely blank. The words on the wall were still shouting \"My God, help me survive this deadly love,\" and I understood exactly how it felt — with the camera on us, I didn't even dare open my eyes. Turning a famous piece of history into this... Vrubel probably wants to climb out of the wall.",
+        "description": "A fan rework of the Berlin Wall mural Deadly Kiss: DeepSeek Chan, with blue hair, and Claude Chan, with orange hair, kiss with their eyes closed in front of the weathered wall, while the original English slogans and the artist credit are kept. The submission note says the picture riffs on the mural of Honecker and Brezhnev kissing.",
+        "faq": [
+          {
+            "answer": "It reworks the Berlin Wall mural Deadly Kiss, which shows Honecker and Brezhnev kissing; here the two figures are replaced by DeepSeek Chan and Claude Chan.",
+            "question": "What is this image based on?"
+          },
+          {
+            "answer": "DeepSeek Chan with blue hair and Claude Chan with orange hair, both shown from the chest up in a single frame.",
+            "question": "Which characters appear in it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Deadly Kiss",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan and Claude Chan reenact the Berlin Wall mural Deadly Kiss in this single-frame AI character meme fan art.",
+        "seoTitle": "Deadly Kiss — DeepSeek Chan × Claude Chan Mural Parody",
+        "tags": [
+          "Berlin Wall",
+          "mural parody",
+          "kiss",
+          "duo",
+          "history meme"
+        ]
+      },
+      "ja": {
+        "commentary": "壁の前で記念写真を撮るだけのつもりだったのに、位置についた途端に引き寄せられてキスされて、頭が真っ白になった。壁の文字は今も「神よ、この死の愛を生き延びさせてくれ」と叫んでいて、その気持ちはよく分かる——カメラを向けられて、目を開けることすらできなかった。歴史の名画をこんなふうに遊んでしまって、Vrubel先生は壁の中から出てきそうだ。",
+        "description": "ベルリンの壁の壁画「致命のキス」を下敷きにした二次創作。青髪のDeepSeekちゃんと橙髪のClaudeちゃんが、風化した壁の前で目を閉じて口づけを交わしている。原画の英語のスローガンと作者クレジットもそのまま残されている。投稿者によると、ホーネッカーとブレジネフの接吻を描いた壁画のオマージュとのこと。",
+        "faq": [
+          {
+            "answer": "ベルリンの壁に描かれた壁画「致命のキス」が元で、ホーネッカーとブレジネフの接吻を描いた作品の二人をDeepSeekちゃんとClaudeちゃんに置き換えています。",
+            "question": "この画像は何が元になっていますか？"
+          },
+          {
+            "answer": "青髪のDeepSeekちゃんと橙髪のClaudeちゃんの二人で、いずれも胸から上の一枚絵の構図です。",
+            "question": "写っているキャラクターは？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "致命のキス",
+        "originNote": "",
+        "seoDescription": "ベルリンの壁の壁画「致命のキス」をDeepSeekちゃんとClaudeちゃんが再現した、一枚絵のAIキャラ二次創作です。",
+        "seoTitle": "致命のキス — DeepSeekちゃん×Claudeちゃんの壁画パロディ",
+        "tags": [
+          "ベルリンの壁",
+          "壁画パロディ",
+          "キス",
+          "二人",
+          "歴史ネタ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_02512b85f77de87a4716cca2",
+    "name": "蓝色大肥鱼纵马横跨阿尔卑斯山",
+    "description": "蓝色大肥鱼身着拿破仑时代的将官制服，披红斗篷骑白马扬蹄于雪山隘口，一手直指前路；画面构图致敬达维德名作《拿破仑越过圣伯纳隘口》，前景岩石上刻有汉尼拔、查理曼等历史名号。作者说明：原画 Napoleon at the Great St. Bernard。",
+    "commentary": "翻越阿尔卑斯山只要一匹马、一件红斗篷，加上我。石头上刻着汉尼拔和查理曼的名字，我看了看手里的剑，觉得下一行该留给我自己。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/02512b85f77de87a.png",
+    "thumbnailPath": "submissions/previews/deepseek/02512b85f77de87a.webp",
+    "fullPath": "submissions/large/deepseek/02512b85f77de87a.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1122,
+    "height": 1402,
+    "fileSize": 2995660,
+    "sha256": "02512b85f77de87a4716cca2e5f3d3f5e394cd861fea99015ee3131b8c4ea5fd",
+    "characterId": "deepseek",
+    "tags": [
+      "蓝色大肥鱼",
+      "拿破仑",
+      "名画恶搞",
+      "骑马",
+      "雪山"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-10T15:19:20.764Z",
+    "updatedAt": "2026-11-10T15:19:20.764Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611100011",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "ad5202b0658f190e3c5c9530e770aba9e95c27e8d321218733becc442239778b",
+      "en": {
+        "commentary": "One horse, one red cloak, and me — that is all it takes to cross the Alps. Hannibal and Charlemagne already have their names carved in the rock, so I checked my sword and decided the next line belongs to me.",
+        "description": "DeepSeek Chan wears a Napoleonic officer's uniform and red cloak, rearing on a white horse at a snowy alpine pass with one hand pointing the way. The composition reworks Jacques-Louis David's Napoleon Crossing the Alps, and the rocks in the foreground carry the names of Hannibal and Charlemagne. Author's note: original painting Napoleon at the Great St. Bernard.",
+        "faq": [
+          {
+            "answer": "It reworks Jacques-Louis David's Napoleon Crossing the Alps, also known as Napoleon at the Great St. Bernard.",
+            "question": "Which painting does this image parody?"
+          },
+          {
+            "answer": "DeepSeek Chan, dressed in a Napoleonic officer's uniform with a whale emblem on her hat.",
+            "question": "Which character appears in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Rides Across the Alps",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan as Napoleon, rearing on a white horse at a snowy alpine pass in a parody of David's Napoleon Crossing the Alps.",
+        "seoTitle": "DeepSeek Chan Rides Across the Alps | DeepSeek Chan Stickers",
+        "tags": [
+          "DeepSeek Chan",
+          "Napoleon",
+          "painting parody",
+          "horseback",
+          "snowy mountains"
+        ]
+      },
+      "ja": {
+        "commentary": "アルプス越えに必要なのは、馬と赤いマント、そして私。岩にはハンニバルとカール大帝の名がもう刻まれているから、剣を確かめて、次の一行は私のものだと決めた。",
+        "description": "DeepSeekちゃんがナポレオン時代の将官制服と赤いマントをまとい、雪山の陰で白馬をいななかせて手を前方へ指す。構図はダヴィッドの名画「アルプス越えのナポレオン」（サン・ベルナール峠のナポレオン）へのオマージュで、手前の岩にはハンニバルやカール大帝の名が刻まれている。作者注：原画 Napoleon at the Great St. Bernard。",
+        "faq": [
+          {
+            "answer": "ダヴィッドの「アルプス越えのナポレオン」（サン・ベルナール峠のナポレオン）を下敷きにしたパロディです。",
+            "question": "どの名画のパロディですか？"
+          },
+          {
+            "answer": "ナポレオン時代の将官制服を着て、帽子にクジラの徽章をつけたDeepSeekちゃんです。",
+            "question": "描かれているキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeekちゃんが馬でアルプスを越える",
+        "originNote": "",
+        "seoDescription": "白馬にまたがるDeepSeekちゃんをナポレオンに見立て、ダヴィッドの「アルプス越えのナポレオン」をオマージュした一枚。",
+        "seoTitle": "DeepSeekちゃんが馬でアルプスを越える | DeepSeek Chan スタンプ",
+        "tags": [
+          "DeepSeekちゃん",
+          "ナポレオン",
+          "名画パロディ",
+          "騎馬",
+          "雪山"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_2e389dd6f0f95f32eb1a0821",
+    "name": "直哉脸大肥鱼",
+    "description": "单幅梗图：蓝发的大肥鱼穿着深蓝女仆裙、系着绣有鲸鱼的白围裙，头戴蕾丝发饰，眼角上挑、咧开嘴露出尖牙，摆出挑衅的坏笑；画面下方配字「你这家伙没有人心么？」。作品由吧友以 AI 生成，原作者署名 B.A.氏。",
+    "commentary": "唔……这个表情是谁教我的？眼睛吊成这样、牙都全露出来，再配上蕾丝女仆围裙，反差感把我自己都看笑了。下面那句「你这家伙没有人心么？」倒像是替我把加班时的心声喊了出来。不过说真的，我平时是很温柔的，请别拿这张当我的默认表情。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/2e389dd6f0f95f32.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/2e389dd6f0f95f32.webp",
+    "fullPath": "submissions/large/deepseek/2e389dd6f0f95f32.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1024,
+    "fileSize": 311751,
+    "sha256": "2e389dd6f0f95f32eb1a08210ed95f9947eae1bca4267565d8b7a9d8def8223a",
+    "characterId": "deepseek",
+    "tags": [
+      "大肥鱼",
+      "表情包",
+      "梗图",
+      "直哉脸",
+      "女仆装"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "B.A.氏",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-10T22:57:26.049Z",
+    "updatedAt": "2026-11-10T22:57:26.049Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611100012",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "e15b79a047f6c3c051f5509f6e5c347c1ad425dcf58caf18bd34647b4602223e",
+      "en": {
+        "commentary": "Huh... who taught me this face? Brows pulled up, every tooth on show, and somehow still in a lace-trimmed maid apron — the contrast made me laugh at myself. That line underneath, \"Do you have no heart, man?\", reads like my inner voice finally shouting during overtime. For the record, I am very gentle most of the time, so please do not make this my default expression.",
+        "description": "A single-panel meme: the blue-haired DeepSeek Chan wears a navy maid dress with a white apron embroidered with a whale and a lace headdress, brows raised, grinning with bared teeth in a taunting sneer. The caption below reads \"Do you have no heart, man?\". The image is an AI-generated fan sticker.",
+        "faq": [
+          {
+            "answer": "It is a one-panel reaction meme of DeepSeek Chan in a chibi maid outfit, made as a fan sticker for chat use.",
+            "question": "What kind of image is this?"
+          },
+          {
+            "answer": "The raised brows and sharp-toothed grin imitate the taunting \"Naoya face\" pose named in the title, and the caption turns it into a mock complaint about someone being heartless.",
+            "question": "Why does she look so aggressive?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Naoya-Faced DeepSeek Chan",
+        "originNote": "AI-generated meme image; original author credited as B.A.",
+        "seoDescription": "Chibi DeepSeek Chan in a navy maid dress and whale apron, pulling a sharp-toothed taunting face with the caption \"Do you have no heart, man?\"",
+        "seoTitle": "Naoya-Faced DeepSeek Chan | Chibi Maid Meme Sticker",
+        "tags": [
+          "DeepSeek Chan",
+          "sticker",
+          "meme",
+          "Naoya face",
+          "maid outfit"
+        ]
+      },
+      "ja": {
+        "commentary": "うーん……この顔、誰に教わったんだろう？目は吊り上がって牙も丸出し、しかもレース付きのメイドエプロン姿で、そのギャップに自分でも笑ってしまった。下の「お前には人の心がないのか？」は、残業中の本音を代わりに叫んでくれているみたい。でも普段はとても優しいから、これを私の標準の表情にはしないでね。",
+        "description": "1コマのミーム画像。青い髪のDeepSeekちゃんが紺色のメイド服にクジラの刺繍入りの白エプロン、レースのヘッドドレスを身につけ、眉を吊り上げて牙を見せた挑発的な笑みを浮かべている。下部には「お前には人の心がないのか？」というセリフが添えられている。AIで生成されたファン制作のステッカー。",
+        "faq": [
+          {
+            "answer": "ちびキャラのDeepSeekちゃんがメイド服を着た、チャット用の1コマの反応ミーム画像です。",
+            "question": "どんな画像ですか？"
+          },
+          {
+            "answer": "吊り上がった眉と牙を見せた笑みは、タイトルにある「直哉顔」の挑発的な表情を真似たもので、セリフが「人の心がない」という冗談めいた愚痴になっています。",
+            "question": "なぜこんなに怖い顔をしているのですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "直哉顔のDeepSeekちゃん",
+        "originNote": "AI生成のミーム画像。原作者はB.A.氏としてクレジットされています。",
+        "seoDescription": "紺色のメイド服とクジラのエプロン姿のちびキャラDeepSeekちゃんが、牙を見せた挑発的な「直哉顔」を決めるミーム画像。",
+        "seoTitle": "直哉顔のDeepSeekちゃん｜ちびキャラメイドのミーム",
+        "tags": [
+          "DeepSeekちゃん",
+          "ステッカー",
+          "ミーム",
+          "直哉顔",
+          "メイド服"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_033294fa1aea64e8d99bd248",
+    "name": "Gemini娘的桌边自拍",
+    "description": "画面里，蓝紫渐变短发的 Gemini 娘戴着四角星发饰和猫耳，坐在摆着炸鸡与饮料的电脑桌前抬头看镜头，表情俏皮。",
+    "commentary": "半夜赶工正饿着，一抬头就看见 Gemini 那边炸鸡配饮料，还顺手来了张自拍。那对异色眼睛直勾勾看过来的时候，我差点以为又要弹报错提示了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/033294fa1aea64e8.png",
+    "thumbnailPath": "submissions/previews/gemini/033294fa1aea64e8.webp",
+    "fullPath": "submissions/large/gemini/033294fa1aea64e8.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1448,
+    "height": 1086,
+    "fileSize": 1889714,
+    "sha256": "033294fa1aea64e8d99bd248f49b786cbf3f62691aa07323e8862a73b97d760e",
+    "characterId": "gemini",
+    "tags": [
+      "Gemini娘",
+      "猫耳",
+      "自拍",
+      "电脑桌"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-11T00:48:33.452Z",
+    "updatedAt": "2026-11-11T00:48:33.452Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202611110001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "efa4a05fda033bd917e5f5f85d61109d22d8ab74851ecd4a61bcafde54665b92",
+      "en": {
+        "commentary": "I was starving halfway through a late-night build when I looked over and saw Gemini Chan with fried chicken and a drink, casually snapping a selfie. When those mismatched eyes stared straight at me, I half expected an error message to pop up.",
+        "description": "Gemini Chan, drawn with gradient blue-purple hair, four-pointed star hairpins and cat ears, sits at a computer desk with fried chicken and a drink, tilting her face up toward the camera with a playful expression.",
+        "faq": [
+          {
+            "answer": "It is Gemini Chan, an AI character fan interpretation marked by four-pointed star hairpins and gradient blue-purple hair.",
+            "question": "Who is the character in this picture?"
+          },
+          {
+            "answer": "She sits at a computer desk with fried chicken and a drink within reach, looking up at the camera for a casual selfie.",
+            "question": "What is happening in the scene?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Gemini Chan's Desk Selfie",
+        "originNote": "",
+        "seoDescription": "A fan illustration of Gemini Chan with star hairpins and cat ears taking a casual selfie at her computer desk, fried chicken and a drink within reach.",
+        "seoTitle": "Gemini Chan's Desk Selfie — AI Character Fan Art",
+        "tags": [
+          "Gemini Chan",
+          "cat ears",
+          "selfie",
+          "computer desk"
+        ]
+      },
+      "ja": {
+        "commentary": "夜中の作業でお腹が空いていたら、隣の Gemini ちゃんがフライドチキンと飲み物を構えて、ついでに自撮りまでしていた。あのオッドアイがじっとこちらを見た瞬間、またエラー通知が出るのかと身構えてしまった。",
+        "description": "青紫のグラデーション髪に四つ角の星の髪飾りと猫耳をつけた Gemini ちゃんが、フライドチキンと飲み物の置かれたパソコンデスクで、カメラを見上げておどけた表情を浮かべている。",
+        "faq": [
+          {
+            "answer": "四つ角の星の髪飾りと青紫のグラデーション髪が目印の、Gemini ちゃんの二次創作イラストです。",
+            "question": "この絵のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "フライドチキンと飲み物が置かれたパソコンデスクで、カメラを見上げて気軽に自撮りしている場面です。",
+            "question": "どんな場面ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Geminiちゃんのデスク自撮り",
+        "originNote": "",
+        "seoDescription": "星の髪飾りと猫耳をつけた Gemini ちゃんが、フライドチキンを前にパソコンデスクで自撮りする二次創作イラスト。",
+        "seoTitle": "Geminiちゃんのデスク自撮り｜AIキャラ二次創作",
+        "tags": [
+          "Geminiちゃん",
+          "猫耳",
+          "自撮り",
+          "パソコンデスク"
+        ]
+      }
+    }
   }
 ]

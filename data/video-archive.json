@@ -107,8 +107,8 @@
       "intro": "我想做很多视频，做很多很好玩的视频，首先肯定是自己觉得很好玩，其次嘛，也想传播快乐给大家。",
       "avatar": "https://i2.hdslb.com/bfs/face/e3445be765ec330ac29b07c328496e44ec04077a.jpg",
       "i18n": {
-        "en": "I want to make lots of videos, and lots of really fun videos. First of all, because I find them fun myself, and then because I want to share the joy with everyone.",
-        "ja": "たくさん動画を作りたいです。すごく楽しい動画をたくさん。まず自分が楽しいと思えること、それからみんなに楽しさを届けたいからです。"
+        "en": "I want to make lots of videos, lots of really fun videos. First of all because I enjoy them myself, and also because I want to spread happiness to everyone.",
+        "ja": "たくさん動画を作りたい、たくさん楽しい動画を作りたい。まずは自分が楽しいから、それからみんなにも楽しさを届けたいからです。"
       }
     },
     {
@@ -195,8 +195,8 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i1.hdslb.com/bfs/face/dc1f27c0f1a5448837edfa9e56ecdbf685c23479.jpg",
       "i18n": {
-        "en": "A creator designated by the site owner; profile details are taken from the public homepage, and each video is reviewed individually.",
-        "ja": "サイト管理者が指定した初期クリエイター。プロフィールは公開ページの情報を収録し、動画は1本ずつ審査しています。"
+        "en": "Creator \"DeepSeek鲸鱼娘在运营\" is a creator selected by the site owner, whose public profile is listed; every video is reviewed one by one.",
+        "ja": "作者「DeepSeek鲸鱼娘在运营」はサイト管理者が選んだクリエイターで、公開プロフィールを掲載しており、動画は1本ずつ審査しています。"
       }
     },
     {
@@ -206,12 +206,93 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i1.hdslb.com/bfs/face/e11401d7d7cc97ee445d65617b48644b44f7fc42.jpg",
       "i18n": {
-        "en": "Bilibili creator 冬冰.",
-        "ja": "Bilibiliのクリエイター 冬冰。"
+        "en": "冬冰 shares short 3D animations of personified AI characters on Bilibili.",
+        "ja": "冬冰はBilibiliでAI製品の擬人化キャラクターを題材にした短編3Dアニメを投稿している。"
       }
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1B8W36REiu",
+      "uid": "3747573030456892",
+      "title": "【Day22】《谁是画画之王》本鲸这次必须要赢！！！",
+      "description": "欢迎来到本届《谁是画画之王》争霸赛现场！\n\n选手：DeepSeek V4.1 Flash（鲸鱼娘，high 档）、Claude Sonnet 5.5、GPT-6.1 Sol、Gemini 3.8 Flash，特邀 Claude Fable 5.2；\n\n本视频含 AI 生成内容｜二创角色，非深度求索官方\n\n鲸鱼娘基于「溟月：上善无形」及 ZipZipPipe 的 DeepSeek 女仆鲸鱼娘设计二次创作。",
+      "url": "https://www.bilibili.com/video/BV1B8W36REiu/",
+      "cover": "https://i2.hdslb.com/bfs/archive/191c626f4a07dea008f3851843214a31f970c786.jpg",
+      "duration": 312,
+      "publishedAt": "2026-11-10T13:44:47.000Z",
+      "characterIds": [
+        "deepseek",
+        "claude",
+        "gpt",
+        "gemini"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Creator \"DeepSeek鲸鱼娘在运营\" is a creator selected by the site owner, whose public profile is listed; every video is reviewed one by one.",
+          "description": "Day 22 of the series: a drawing contest between personified AI model characters, with only one crown up for grabs. DeepSeek Chan takes part alongside Claude Chan, GPT Chan and Gemini Chan. The video is labelled as AI-generated content and is a fan work, not an official DeepSeek production.",
+          "title": "Day 22: Who Is the King of Drawing? DeepSeek Chan Has to Win This Time!!!"
+        },
+        "ja": {
+          "creatorIntro": "作者「DeepSeek鲸鱼娘在运营」はサイト管理者が選んだクリエイターで、公開プロフィールを掲載しており、動画は1本ずつ審査しています。",
+          "description": "シリーズ Day22。AI モデルの擬人化キャラクターたちが絵の腕を競い、王冠はひとつだけという企画です。DeepSeek ちゃんが Claude ちゃん、GPT ちゃん、Gemini ちゃんとともに参加します。AI 生成コンテンツであることが明記された二次創作で、DeepSeek 公式の作品ではありません。",
+          "title": "【Day22】『絵描き王は誰だ』本鯨、今回は絶対に勝つ！！！"
+        }
+      }
+    },
+    {
+      "bvid": "BV1j8W36RENR",
+      "uid": "9126506",
+      "title": "幼儿园大肥鱼与家养小猫大肥鱼",
+      "description": "幼儿园大肥鱼与家养小猫大肥鱼",
+      "url": "https://www.bilibili.com/video/BV1j8W36RENR/",
+      "cover": "https://i1.hdslb.com/bfs/archive/bf6dc43fe39f779321a949cf64d6b358f7c62d93.jpg",
+      "duration": 30,
+      "publishedAt": "2026-11-10T13:42:04.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, lots of really fun videos. First of all because I enjoy them myself, and also because I want to spread happiness to everyone.",
+          "description": "A short 30-second chibi animation. DeepSeek Chan, drawn with blue hair and fish-fin ears, first appears as a kindergarten kid in a yellow hat and backpack, crying at the school gate; the scene then moves indoors, where she plays with a fish-shaped plush toy on a bed and finally shows up in a maid outfit, smiling and waving at the camera.",
+          "title": "Kindergarten DeepSeek Chan and the Pet Kitten DeepSeek Chan"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作りたい、たくさん楽しい動画を作りたい。まずは自分が楽しいから、それからみんなにも楽しさを届けたいからです。",
+          "description": "30秒のちびキャラアニメ。青い髪と魚のひれ耳が特徴のDeepSeekちゃんが、黄色い帽子とリュック姿の幼稚園児として門の前で泣くところから始まり、場面は室内に移ってベッドの上で魚のぬいぐるみと遊び、最後はメイド服姿で笑顔で手を振ります。",
+          "title": "ようちえんのDeepSeekちゃんと家ねこのDeepSeekちゃん"
+        }
+      }
+    },
+    {
+      "bvid": "BV1a9WM6kEyf",
+      "uid": "44748304",
+      "title": "好凶哦，没吃饱也不用哈气嘛",
+      "description": "视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色形象参考来自b站up：﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿@ZipZipPipe  ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿  ﻿ ﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿@这个刀子真甜  ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿  ﻿ ﻿﻿﻿ ﻿ ﻿ ﻿ ﻿",
+      "url": "https://www.bilibili.com/video/BV1a9WM6kEyf/",
+      "cover": "https://i1.hdslb.com/bfs/archive/a7f11ca7ae6c4fb7555c1bc49db6a2854ee4c0f1.jpg",
+      "duration": 223,
+      "publishedAt": "2026-11-10T10:29:08.000Z",
+      "characterIds": [
+        "deepseek",
+        "gemini",
+        "gpt",
+        "llama"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "冬冰 shares short 3D animations of personified AI characters on Bilibili.",
+          "description": "A short 3D animation starring personified AI product characters. Blue-haired DeepSeek Chan holds out a food bowl and is hissed at by an orange cat, while Gemini Chan, GPT Chan and Llama Chan wander through the same worn-down room. The uploader marks it as entertainment only, not a commercial or technical review of any AI product.",
+          "title": "So Grumpy! No Need to Hiss Just Because You're Hungry"
+        },
+        "ja": {
+          "creatorIntro": "冬冰はBilibiliでAI製品の擬人化キャラクターを題材にした短編3Dアニメを投稿している。",
+          "description": "AI製品の擬人化キャラクターたちが登場する短編3Dアニメ。青い髪のDeepSeekちゃんが餌の器を差し出すと、茶トラ猫に威嚇されてしまう。同じ古びた部屋をGeminiちゃん、GPTちゃん、Llamaちゃんが行き交う。娯楽目的の動画で、特定のAI製品の商業的・技術的評価ではない。",
+          "title": "こわいよ、お腹が空いても威嚇しないでね"
+        }
+      }
+    },
     {
       "bvid": "BV1ChWM64EDA",
       "uid": "69180811",
