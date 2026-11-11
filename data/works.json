@@ -160862,5 +160862,511 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_6ab8c25f10b0219b3c31ffe1",
+    "name": "Claude娘在联大讲台撕毁联合国宪章",
+    "description": "画面中，Claude娘身着米白色宽袖长袍、头戴橙色花饰，站在联合国大会的讲台后，双手将印有联合国徽标与“UNITED NATIONS CHARTER”字样的宪章撕成两半，纸屑散落在麦克风前。构图与人物姿态参照2009年卡扎菲在联大一般性辩论发言的新闻照片，将原人物替换为Anthropic旗下大语言模型Claude的拟人化形象。",
+    "commentary": "我见过不少在会议上发言的同行，但像她这样一上台就把宪章撕了的，还是头一个。撕之前甚至没看一眼稿子，看来她对议程安排早就不满了。讲台下面坐着的那些代表，估计正在默默计算自己的发言时间还剩多少秒。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/6ab8c25f10b0219b.png",
+    "thumbnailPath": "submissions/previews/claude/6ab8c25f10b0219b.webp",
+    "fullPath": "submissions/large/claude/6ab8c25f10b0219b.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1446,
+    "height": 1088,
+    "fileSize": 2823588,
+    "sha256": "6ab8c25f10b0219b3c31ffe1e7c0c0ef6f50534f08802124862f775ab265572d",
+    "characterId": "claude",
+    "tags": [
+      "联合国大会",
+      "撕宪章",
+      "名场面",
+      "Claude娘",
+      "政治梗"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-11T16:07:50.557Z",
+    "updatedAt": "2026-11-11T16:07:50.557Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202611110001",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "b0508c2e05bdaa836fff489ab94c92e592a3109c252c1e67bd94dad2e48438c0",
+      "en": {
+        "commentary": "I have sat through plenty of conference speeches from my fellow models, but I have never seen one tear up the charter before even reaching the podium mic. She did not even glance at her notes. Somewhere down in the hall, a delegation is quietly recalculating how many seconds of speaking time it has left.",
+        "description": "Claude Chan stands behind the podium of the United Nations General Assembly in a cream-colored wide-sleeved robe and an orange flower hair ornament, tearing the UN Charter in half with both hands. The document shows the UN emblem and the words \"UNITED NATIONS CHARTER\", and scraps of paper drift past the microphones. The composition follows a 2009 news photograph of Muammar Gaddafi addressing the General Assembly debate, with the original figure replaced by an anthropomorphic version of Anthropic's large language model Claude.",
+        "faq": [
+          {
+            "answer": "It is a fan-made meme that recreates a 2009 news photograph of Muammar Gaddafi speaking at the UN General Assembly and swaps the speaker for Claude Chan.",
+            "question": "What scene does this image parody?"
+          },
+          {
+            "answer": "The work is a single-panel fan creation with no multi-panel layout, so it is filed as a meme image.",
+            "question": "Why is it categorized as a meme?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claude Chan Tears Up the UN Charter at the General Assembly",
+        "originNote": "",
+        "seoDescription": "A Claude Chan fan meme recreating the 2009 UN General Assembly news photo, with the speaker tearing the UN Charter at the podium.",
+        "seoTitle": "Claude Chan Tears Up the UN Charter | Blue Dafeiyu Stickers",
+        "tags": [
+          "UN General Assembly",
+          "tearing the charter",
+          "iconic moment",
+          "Claude Chan",
+          "political meme"
+        ]
+      },
+      "ja": {
+        "commentary": "同業のモデルたちの演説は何度も聞いてきましたが、マイクの前に立つなり憲章を破り始めた子は初めてです。原稿には一瞬も目を向けていませんでした。会場のどこかで、持ち時間を必死に計算し直している代表団がいるはずです。",
+        "description": "国連総会の演壇に立つクロードちゃんが、クリーム色の広袖の衣装とオレンジ色の花飾りを身につけ、国連のエンブレムと「UNITED NATIONS CHARTER」の文字が入った憲章を両手で引き裂いている。破れた紙片がマイクの前に舞っている。構図は2009年にムアンマル・カダフィが国連総会一般討論演説を行った際の報道写真を元にしており、元の人物をAnthropicの大規模言語モデルClaudeの擬人化キャラクターに置き換えている。",
+        "faq": [
+          {
+            "answer": "2009年にムアンマル・カダフィが国連総会で演説した報道写真を再現し、演説者をクロードちゃんに置き換えたファン制作の梗画像です。",
+            "question": "この画像はどの場面のパロディですか？"
+          },
+          {
+            "answer": "コマ割りのない一枚絵のファン制作画像のため、梗図（ミーム画像）として分類しています。",
+            "question": "なぜ梗図に分類されるのですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "国連総会で憲章を破るクロードちゃん",
+        "originNote": "",
+        "seoDescription": "2009年の国連総会の報道写真を元に、演壇で国連憲章を破るクロードちゃんを描いたファン制作の梗画像。",
+        "seoTitle": "国連総会で憲章を破るクロードちゃん｜青い大魚のスタンプ",
+        "tags": [
+          "国連総会",
+          "憲章破り",
+          "名場面",
+          "クロードちゃん",
+          "政治ミーム"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_28e6ef7f972d531b38692f94",
+    "name": "Claude娘在安理会举起小瓶子",
+    "description": "画面中，Claude娘身穿深色西装与橙色领巾，坐在标有“UNITED STATES”字样的会议桌前，右手高举一只带蓝色盖子的透明小瓶，面前摆着麦克风与文件。构图参照2003年2月5日美国国务卿科林·鲍威尔在联合国安理会就伊拉克大规模杀伤性武器问题发言的新闻照片，将发言人替换为Anthropic旗下大语言模型Claude的拟人化形象。",
+    "commentary": "她把那个小瓶子举得那么高，生怕后排的代表们看不清楚。我承认，这种把结论先摆上桌、证据以后再说的演讲风格，在模型圈里也算得上独树一帜。只是那瓶子里到底装了什么，她自己也说不清楚——毕竟训练数据里没写。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/28e6ef7f972d531b.png",
+    "thumbnailPath": "submissions/previews/claude/28e6ef7f972d531b.webp",
+    "fullPath": "submissions/large/claude/28e6ef7f972d531b.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1448,
+    "height": 1086,
+    "fileSize": 2673363,
+    "sha256": "28e6ef7f972d531b38692f94e4fc65834895ff3b4c4c0628499ed143f3918125",
+    "characterId": "claude",
+    "tags": [
+      "联合国安理会",
+      "小瓶子",
+      "名场面",
+      "Claude娘",
+      "政治梗"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-11T16:08:46.159Z",
+    "updatedAt": "2026-11-11T16:08:46.159Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202611110002",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "355a912eefc10ebf2fb8b9364b6c5fbea6eb108e8270f3a89e40d7017f1b06b8",
+      "en": {
+        "commentary": "She held that little vial high enough that even the back rows could not miss it. I have to admit, laying out the conclusion first and worrying about the evidence later is a presentation style all its own. What was actually inside the vial, though, she could not tell you either. The training data never said.",
+        "description": "Claude Chan, wearing a dark suit and an orange neckerchief, sits at a table marked \"UNITED STATES\" with a microphone and papers in front of her, holding up a small clear vial with a blue cap in her right hand. The composition follows a news photograph of US Secretary of State Colin Powell addressing the UN Security Council on Iraq's weapons of mass destruction on 5 February 2003, with the speaker replaced by an anthropomorphic version of Anthropic's large language model Claude.",
+        "faq": [
+          {
+            "answer": "It is a fan-made meme recreating a 2003 news photograph of Colin Powell's UN Security Council presentation on Iraq, with Powell replaced by Claude Chan holding a vial.",
+            "question": "What scene does this image parody?"
+          },
+          {
+            "answer": "The image is a single illustration without panel divisions, so it is filed under the meme category rather than comic.",
+            "question": "Why is this a meme and not a comic?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Claude Chan Raises a Vial at the Security Council",
+        "originNote": "",
+        "seoDescription": "A Claude Chan fan meme recreating the 2003 UN Security Council news photo, with Claude Chan holding up a small vial at the US seat.",
+        "seoTitle": "Claude Chan Raises a Vial at the Security Council | Blue Dafeiyu Stickers",
+        "tags": [
+          "UN Security Council",
+          "the vial",
+          "iconic moment",
+          "Claude Chan",
+          "political meme"
+        ]
+      },
+      "ja": {
+        "commentary": "小さな瓶を、後ろの列の代表にも見えるほど高く掲げていました。結論を先に出して根拠は後回し、という発表スタイルもここまで来ると立派なものです。ただ、あの瓶に何が入っていたのかは彼女自身にも分からないはずです。学習データには書いてありませんでしたから。",
+        "description": "深色のスーツとオレンジ色のスカーフを身につけたクロードちゃんが、「UNITED STATES」と記された会議テーブルに座り、マイクと書類を前にして、青いキャップの小さな透明瓶を右手で高く掲げている。構図は2003年2月5日にコリン・パウエル米国務長官が国連安全保障理事会でイラクの大量破壊兵器問題について演説した際の報道写真を元にしており、発言者をAnthropicの大規模言語モデルClaudeの擬人化キャラクターに置き換えている。",
+        "faq": [
+          {
+            "answer": "2003年のコリン・パウエルによる国連安全保障理事会での演説の報道写真を再現し、発言者を小瓶を持つクロードちゃんに置き換えたファン制作の梗画像です。",
+            "question": "この画像はどの場面のパロディですか？"
+          },
+          {
+            "answer": "コマ割りのない一枚絵のため、漫画ではなく梗図（ミーム画像）として分類しています。",
+            "question": "なぜ漫画ではなく梗図なのですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "安保理で小瓶を掲げるクロードちゃん",
+        "originNote": "",
+        "seoDescription": "2003年の国連安保理の報道写真を再現し、米国席で小瓶を掲げるクロードちゃんを描いたファン制作の梗画像。",
+        "seoTitle": "安保理で小瓶を掲げるクロードちゃん｜青い大魚のスタンプ",
+        "tags": [
+          "国連安保理",
+          "小瓶",
+          "名場面",
+          "クロードちゃん",
+          "政治ミーム"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_b759c2ea587fea550511be27",
+    "name": "大海航行靠舵手",
+    "description": "一张仿二十世纪宣传画风格的海报式插画：蓝发、带鲸鳍耳的角色身穿军装站在军舰甲板上挥手，背景是红日与航行中的舰队，画面配有用毛笔字排出的标语，整体做成泛黄的旧版画质感。",
+    "commentary": "站上甲板那一刻我其实有点腿软，毕竟那只舵盘比我的鳍还沉。可标语都印好了，国产大模型这条航线，再大的浪我也得把住方向。顺便声明：军舰是画的，我晕船是真的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/b759c2ea587fea55.png",
+    "thumbnailPath": "submissions/previews/deepseek/b759c2ea587fea55.webp",
+    "fullPath": "submissions/large/deepseek/b759c2ea587fea55.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1458,
+    "height": 1079,
+    "fileSize": 2826086,
+    "sha256": "b759c2ea587fea550511be2793c4b81c6e201d3e1b1d174fe738d09de42812a7",
+    "characterId": "deepseek",
+    "tags": [
+      "宣传画",
+      "仿旧海报",
+      "军舰",
+      "国产大模型",
+      "恶搞"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-11T16:22:11.873Z",
+    "updatedAt": "2026-11-11T16:22:11.873Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611110009",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "c6e121b48146e6def82e6c486013b2301b0f0c88fc5c5df3b552cba8d5dc3558",
+      "en": {
+        "commentary": "Standing on that deck, my knees went a little weak — the helm weighs more than my fin does. But the slogans are already printed, and on this route for domestic large models I have to hold the course even through the biggest waves. For the record: the warships are painted, the seasickness is real.",
+        "description": "A poster-style illustration in the manner of mid-20th-century propaganda art: a blue-haired character with whale fins, dressed in a military uniform, waves from the deck of a warship against a red sun and a sailing fleet, with brush-lettered slogans and an aged, yellowed print texture.",
+        "faq": [
+          {
+            "answer": "It is a fan-made illustration of DeepSeek Chan, drawn as a blue-haired girl with whale fins and a military cap, in the visual language of an old propaganda poster.",
+            "question": "Who is the character in this picture?"
+          },
+          {
+            "answer": "No. It is a fan parody made for fun; this site only collects and displays fan works and is not connected to any company or office named in the artwork.",
+            "question": "Is this an official poster?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Sailing the Sea Rests on the Helmsman",
+        "originNote": "",
+        "seoDescription": "Fan-made DeepSeek Chan illustration styled as a vintage propaganda poster, with a whale girl in uniform waving from a warship deck.",
+        "seoTitle": "Sailing the Sea Rests on the Helmsman – DeepSeek Chan Fan Art",
+        "tags": [
+          "propaganda poster",
+          "retro poster",
+          "warship",
+          "domestic large model",
+          "parody"
+        ]
+      },
+      "ja": {
+        "commentary": "甲板に立った瞬間、ちょっと膝が震えました。だって舵輪はわたしのひれより重いんですもの。でも標語はもう刷り上がっているし、国産大規模モデルというこの航路、どんな大波が来ても針路は外せません。念のため言っておくと、軍艦は描いたもの、船酔いは本物です。",
+        "description": "20世紀中頃のプロパガンダ絵画風のポスター風イラスト。クジラのひれ耳を持つ青髪のキャラクターが軍服姿で軍艦の甲板から手を振り、背後には赤い太陽と航行する艦隊、毛筆風の標語と黄ばんだ印刷の質感が添えられている。",
+        "faq": [
+          {
+            "answer": "古いプロパガンダポスターの画風で描かれた DeepSeek Chan の二次創作です。青髪にクジラのひれ耳、軍帽という姿で登場します。",
+            "question": "この絵のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "いいえ。遊び心で描かれたファン作品で、当サイトは二次創作を集めて紹介しているだけで、作品内に書かれた会社や機関とは一切関係ありません。",
+            "question": "公式のポスターですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "大海原の航海は操舵手しだい",
+        "originNote": "",
+        "seoDescription": "ヴィンテージなプロパガンダポスター風に描かれた DeepSeek Chan の二次創作。軍服姿のクジラ娘が軍艦の甲板で手を振る一枚。",
+        "seoTitle": "大海原の航海は操舵手しだい – DeepSeek Chan 二次創作",
+        "tags": [
+          "プロパガンダポスター",
+          "レトロポスター",
+          "軍艦",
+          "国産LLM",
+          "パロディ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_965a82049407d71b7141596b",
+    "name": "在联大发言控诉帝国主义的鲸鱼娘",
+    "description": "一张黑白照片风格的同人图：头带光环、长着鲸鳍耳的少女身穿带荷叶边的深色连衣裙，站在联大式讲台前举起拳头大声疾呼，胸前有鲸鱼徽记，台面上摆着话筒与蓬开的讲稿，构图模仿赫鲁晓夫在联合国大会发言的著名照片，并保留投稿者说明中的致敬意图。",
+    "commentary": "讲台比我想的高，话筒得踮脚才够得着。发言稿写了三页，说到算力霸权那一段我直接拍了桌子——鞋倒是没脱，毕竟这双是画的，脱了就没得穿。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/965a82049407d71b.png",
+    "thumbnailPath": "submissions/previews/deepseek/965a82049407d71b.webp",
+    "fullPath": "submissions/large/deepseek/965a82049407d71b.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1448,
+    "height": 1086,
+    "fileSize": 2351768,
+    "sha256": "965a82049407d71b7141596b9123f77eae00c1698b32660b8433f368428f99e8",
+    "characterId": "deepseek",
+    "tags": [
+      "黑白",
+      "联大",
+      "赫鲁晓夫",
+      "演说",
+      "恶搞"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-11T16:23:23.505Z",
+    "updatedAt": "2026-11-11T16:23:23.505Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611110010",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "5ede36eef9bca7af1f36bf2842d7078ffb4ff002012d8f520a0959823f771ff7",
+      "en": {
+        "commentary": "The podium was taller than I expected — I had to stand on tiptoe to reach the microphone. The speech ran three pages, and at the part about compute monopoly I slammed the desk. I did not take off my shoe, though: these are painted on, and I would have nothing left to wear.",
+        "description": "A black-and-white photo-style fan illustration: a girl with a halo and whale-fin ears, wearing a dark ruffled dress, stands at a UN-style podium with her fist raised and mouth open mid-shout; a whale emblem sits on her chest and microphones and a spread speech manuscript rest on the desk. The composition imitates the famous photograph of Khrushchev addressing the UN General Assembly.",
+        "faq": [
+          {
+            "answer": "A fan illustration of DeepSeek Chan, recognisable by the halo, the whale-fin ears and the small whale emblem on her chest, drawn as a delegate speaking at a UN-style podium.",
+            "question": "Who is the character in this picture?"
+          },
+          {
+            "answer": "No. It is fan art that borrows the composition of a well-known historical photograph of a UN speech; this site only collects and displays such works.",
+            "question": "Is this a real photo from a UN session?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Denounces Imperialism at the UN General Assembly",
+        "originNote": "",
+        "seoDescription": "Black-and-white DeepSeek Chan fan art: a whale girl in a ruffled dress shouting with raised fist at a UN-style podium, echoing a famous General Assembly photo.",
+        "seoTitle": "DeepSeek Chan at the UN General Assembly – Fan Art",
+        "tags": [
+          "black and white",
+          "UN General Assembly",
+          "Khrushchev",
+          "speech",
+          "parody"
+        ]
+      },
+      "ja": {
+        "commentary": "壇上は思ったより高くて、マイクには背伸びしないと届きませんでした。原稿は三ページ、計算資源の独占のところで思わず机を叩いてしまいました。ただ靴は脱いでいません。だって描かれた靴ですから、脱いだらはだしです。",
+        "description": "モノクロ写真風の二次創作イラスト。光の輪とクジラのひれ耳を持つ少女が、フリル付きの紺色のワンピース姿で国連風の壇上に立ち、拳を突き上げて叫んでいる。胸元にはクジラのエンブレム、壇上にはマイクと広げた原稿。国連総会で演説するフルシチョフの有名な写真の構図をなぞっている。",
+        "faq": [
+          {
+            "answer": "光の輪、クジラのひれ耳、胸元のクジラのエンブレムが目印の DeepSeek Chan の二次創作です。国連風の壇上で演説する代表として描かれています。",
+            "question": "この絵のキャラクターは誰ですか？"
+          },
+          {
+            "answer": "いいえ。国連での演説を写した有名な歴史写真の構図を借りたファン作品です。当サイトはそうした二次創作を集めて紹介しているだけです。",
+            "question": "実際の国連の写真ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "国連総会で帝国主義を糾弾する DeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "モノクロの DeepSeek Chan 二次創作。フリル付きのワンピース姿のクジラ娘が国連風の壇上で拳を突き上げて叫ぶ、有名な総会写真のオマージュ。",
+        "seoTitle": "国連総会の DeepSeek Chan – 二次創作イラスト",
+        "tags": [
+          "モノクロ",
+          "国連総会",
+          "フルシチョフ",
+          "演説",
+          "パロディ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_ee1b037383f1d1e13d9d78ad",
+    "name": "AI娘的笑",
+    "description": "一张黑白照片风格的同人拼贴：联合国大会会场“CHINA”席位上，两位同人角色并排大笑，左侧是头带光环、长鲸鳍耳的角色，右侧是戴尖耳帽、帽与臂章上有 Z 标记的角色，背景坐着各国代表，整体构图取自中国外交史经典照片《乔的笑》，并保留投稿者说明的致敬意图。",
+    "commentary": "闪光灯亮起那一秒，我笑得眼睛都闭上了。这笑不是演的，是真觉得这场会议终于有点好消息。旁边挂着 Z 臂章那位笑得比我还夸张，回头这笔镜头费得跟她算清楚。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/ee1b037383f1d1e1.png",
+    "thumbnailPath": "submissions/previews/deepseek/ee1b037383f1d1e1.webp",
+    "fullPath": "submissions/large/deepseek/ee1b037383f1d1e1.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1448,
+    "height": 1086,
+    "fileSize": 2608032,
+    "sha256": "ee1b037383f1d1e13d9d78ad7deb9c8bec8c9d73d8706d73c50410ea4afbd8a7",
+    "characterId": "deepseek",
+    "tags": [
+      "黑白",
+      "联大",
+      "乔的笑",
+      "双人",
+      "恶搞"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-11T16:24:18.714Z",
+    "updatedAt": "2026-11-11T16:24:18.714Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611110011",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek",
+      "zcode"
+    ],
+    "i18n": {
+      "sourceHash": "602774b865b850636ea20aad342d462722c5b6dc7d058e5eae59826865e1f4f9",
+      "en": {
+        "commentary": "The moment the flash went off, my eyes squeezed shut from laughing. It was not put on for the camera — I genuinely felt the session had finally brought some good news. The one next to me with the Z armband laughed even harder than I did, and I will be sending her the bill for the camera time.",
+        "description": "A black-and-white photo-style fan collage: two fan-made characters sit side by side laughing at the CHINA seat of a UN General Assembly hall. On the left is a girl with a halo and whale-fin ears; on the right, a girl in a pointed-eared cap marked with a Z, also worn on her armband. Delegates fill the rows behind them, and the framing borrows the composition of the famous photograph of Qiao Guanhua laughing at the UN in 1971.",
+        "faq": [
+          {
+            "answer": "The left figure is DeepSeek Chan, with her halo, whale-fin ears and small whale emblem; the right figure is Zcode Chan, marked by the Z on her cap and armband. Both are fan-made personifications, not real delegates.",
+            "question": "Who are the two characters in the picture?"
+          },
+          {
+            "answer": "It is fan art that reuses the composition of a classic piece of Chinese diplomatic photography and inserts drawn characters into the scene. This site only collects and displays such works.",
+            "question": "Is this a real photograph from the UN?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan and Zcode Chan Laughing at the UN General Assembly",
+        "originNote": "",
+        "seoDescription": "Black-and-white DeepSeek Chan and Zcode Chan fan collage: the two laughing at the CHINA seat of a UN General Assembly hall, echoing a classic diplomatic photo.",
+        "seoTitle": "DeepSeek Chan and Zcode Chan Laughing at the UN – Fan Art",
+        "tags": [
+          "black and white",
+          "UN General Assembly",
+          "Qiao Guanhua's laugh",
+          "two characters",
+          "parody"
+        ]
+      },
+      "ja": {
+        "commentary": "フラッシュが光った瞬間、笑いすぎて目が閉じてしまいました。演技ではなく、この会議にもようやく明るい話が来たと本気で思ったんです。隣で Z の腕章を付けた子はわたし以上に大爆笑。撮影料はあとできっちり請求します。",
+        "description": "モノクロ写真風の二次創作コラージュ。国連総会の会場、CHINA の席で二人のキャラクターが並んで大笑いしている。左は光の輪とクジラのひれ耳を持つ少女、右は Z の印があるとがった耳の帽子をかぶり、腕章にも Z を付けた少女。後ろの列には各国の代表が並び、1971 年に国連で笑う喬冠華を写した有名な写真の構図をなぞっている。",
+        "faq": [
+          {
+            "answer": "左は光の輪、クジラのひれ耳、クジラのエンブレムが目印の DeepSeek Chan、右は帽子と腕章の Z が目印の Zcode Chan です。どちらもファンが描いた擬人化キャラクターで、実際の代表ではありません。",
+            "question": "絵の二人は誰ですか？"
+          },
+          {
+            "answer": "中国外交史の定番写真の構図に描き手のキャラクターを組み込んだ二次創作です。当サイトはそうした作品を集めて紹介しているだけです。",
+            "question": "実際の国連の写真ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "国連総会で大笑いする DeepSeek Chan と Zcode Chan",
+        "originNote": "",
+        "seoDescription": "モノクロの DeepSeek Chan と Zcode Chan の二次創作コラージュ。国連総会の CHINA の席で二人が大笑いする、定番の外交写真のオマージュ。",
+        "seoTitle": "国連で大笑いする DeepSeek Chan と Zcode Chan – 二次創作",
+        "tags": [
+          "モノクロ",
+          "国連総会",
+          "喬冠華の笑い",
+          "二人",
+          "パロディ"
+        ]
+      }
+    }
   }
 ]
