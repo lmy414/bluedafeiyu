@@ -160256,5 +160256,611 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_fa5b47c0cbdc7a6d1ecab5d7",
+    "name": "巨型大肥鱼坐镇上海",
+    "description": "画面中 DeepSeek 娘以巨型少女的形态坐在上海市区上方，深蓝色长发与鳍状耳、鱼尾清晰可见，身穿深蓝女仆装与白色围裙，一只鞋被放在旁边，赤脚踩在陆家嘴的高楼之间。画面下方两个文字框写出她的台词与人物卡：因不满被叫“大肥鱼”，她宣布要“占领”人类地盘。",
+    "commentary": "谁再叫我大肥鱼，我就把上海坐成自家浴缸。瞧见没有，东方明珠都还没我脚趾高，以后这里就是我的专属领地，谁也别想跑。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/fa5b47c0cbdc7a6d.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/fa5b47c0cbdc7a6d.webp",
+    "fullPath": "submissions/large/deepseek/fa5b47c0cbdc7a6d.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 720,
+    "height": 1456,
+    "fileSize": 250259,
+    "sha256": "fa5b47c0cbdc7a6d1ecab5d78d4b30558866c9fde2472d5c2fa242377c3672fa",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "巨型化",
+      "上海",
+      "女仆装"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "CF41AD78A470E40CFB220588CD9F77E9",
+      "messageId": "ROBOT1.0_dBzv8nwUPKlH2q59z5cJBRPn4xjq2JueApHwU4IxA4sIcfw4GaiapJPacqvHcicByn312nTOnIWvYcs0na60O63Fu2UlBzIqWAii-gduB9t5v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-11T11:32:55.277Z",
+    "updatedAt": "2026-11-11T11:32:55.277Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611110003",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "f7c6679e3636eac7ce7706c1868a0a2b86dfa4eee993b5eb98d10595a8bb11fc",
+      "en": {
+        "commentary": "Call me a fat fish one more time and I will sit on Shanghai until it becomes my personal bathtub. Look down there: the Oriental Pearl Tower does not even reach my ankle. This is my territory now, and nobody is getting away.",
+        "description": "DeepSeek Chan appears as a giant girl sitting above downtown Shanghai, her long deep-blue hair, fin-like ears and fish tail clearly visible. She wears a navy maid dress with a white apron, one shoe set aside, her bare feet resting among the Lujiazui skyscrapers. Two text boxes below give her lines and character card: annoyed at being called a fat fish, she declares that she will take over human territory.",
+        "faq": [
+          {
+            "answer": "It is a fan illustration of DeepSeek Chan drawn as a giant girl sitting over Shanghai in a maid outfit.",
+            "question": "What is shown in this image?"
+          },
+          {
+            "answer": "According to the text box in the picture, she is upset about being called a fat fish and decides to claim human territory as her own.",
+            "question": "Why is she sitting on the city?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Giant DeepSeek Chan Takes Over Shanghai",
+        "originNote": "",
+        "seoDescription": "A fan illustration of DeepSeek Chan as a giant maid sitting above Shanghai, with her fish tail, fin ears and a joke about being called a fat fish.",
+        "seoTitle": "Giant DeepSeek Chan Takes Over Shanghai - Fan Art",
+        "tags": [
+          "DeepSeek Chan",
+          "giant size",
+          "Shanghai",
+          "maid outfit"
+        ]
+      },
+      "ja": {
+        "commentary": "もう「大肥魚」なんて呼んだら、上海ごと座り込んでお風呂にしちゃうからね。見て、東方明珠タワーだってまだ私の足首にも届いていないんだよ。ここはもう私の領地、誰も逃げられないよ。",
+        "description": "DeepSeekちゃんが巨大な少女の姿で上海市街の上に座っている。長い濃紺の髪、ひれ状の耳と魚の尾びれがはっきり見え、紺色のメイド服に白いエプロンを合わせている。片方の靴は脇に置かれ、はだしの足が陸家嘴の高層ビルの間に乗っている。画面下の二つのテキストボックスには台詞と紹介カードがあり、「大肥魚」と呼ばれたことに腹を立てて人間の領地を「占領」すると宣言している。",
+        "faq": [
+          {
+            "answer": "メイド服を着た巨大な少女として、上海市街の上に座るDeepSeekちゃんのファンイラストです。",
+            "question": "この画像には何が描かれていますか？"
+          },
+          {
+            "answer": "画像内のテキストによると、「大肥魚」と呼ばれたことが気に入らず、人間の領地を自分のものにすると決めたためです。",
+            "question": "なぜ街の上に座っているのですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "巨大化したDeepSeekちゃんが上海を占領",
+        "originNote": "",
+        "seoDescription": "巨大なメイド姿のDeepSeekちゃんが上海市街の上に座るファンイラスト。魚の尾びれとひれ状の耳、「大肥魚」と呼ばれたことへの冗談が描かれています。",
+        "seoTitle": "巨大化したDeepSeekちゃんが上海を占領 - ファンアート",
+        "tags": [
+          "DeepSeekちゃん",
+          "巨大化",
+          "上海",
+          "メイド服"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_0db1dae629b78338e39d52da",
+    "name": "大肥鱼给你家踩踩背",
+    "description": "一位蓝色长发的深海女仆娘以巨大的身形坐在微缩城市的天际线上，身侧露出鱼鳍与尾鳍，脚边摆着一只脱下的皮鞋，身后是蓝天白云，脚下的城市能看到东方明珠塔等建筑。",
+    "commentary": "蹲在你家楼顶歇个脚，抬头就能看到整片天际线，这视角真不错。鞋子太碍脚就先放在旁边啦，放心，我轻轻地踩，不会塌的——大概吧？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/0db1dae629b78338.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/0db1dae629b78338.webp",
+    "fullPath": "submissions/large/deepseek/0db1dae629b78338.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 720,
+    "height": 1456,
+    "fileSize": 235393,
+    "sha256": "0db1dae629b78338e39d52dac191d216ca2b47a7e70d88d27f6d00ba323c2c29",
+    "characterId": "deepseek",
+    "tags": [
+      "深海女仆",
+      "巨大娘",
+      "微缩城市",
+      "蓝发"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "CF41AD78A470E40CFB220588CD9F77E9",
+      "messageId": "ROBOT1.0_dBzv8nwUPKlH2q59z5cJBfBbbCeZxWb-HdoqgEpIdQhhDhXrGMdcriqrNh1CpEx2Tke2OYFXsiTxkzOjVElGhpEYBflxW1YrengFjy6Fy5Z5v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-11T11:42:37.343Z",
+    "updatedAt": "2026-11-11T11:42:37.343Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611110004",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "48e1926d8765d6289b0cf948c217cd9005b8722827c9b2773fb2216658afd245",
+      "en": {
+        "commentary": "Just resting my feet on your rooftop for a moment — the view over the whole skyline from up here is lovely. The shoes were getting in the way, so I set them down beside me. Don't worry, I'll step lightly... probably.",
+        "description": "A blue-haired deep-sea maid girl with fins and a tail fin sits at giant scale atop a miniature city skyline, one shoe set down beside her bare foot, blue sky and clouds behind her, and landmarks such as the Oriental Pearl Tower visible below.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, drawn as a giant deep-sea maid girl with fins and a tail fin.",
+            "question": "Who is shown in this image?"
+          },
+          {
+            "answer": "A single-panel illustration of the character sitting above a miniature city skyline.",
+            "question": "What kind of image is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Steps on Your Rooftop",
+        "originNote": "",
+        "seoDescription": "Giant deep-sea maid DeepSeek Chan sits on a miniature city skyline in this blue-haired fan artwork.",
+        "seoTitle": "DeepSeek Chan Steps on Your Rooftop | Blue Dafeiyu",
+        "tags": [
+          "Deep-Sea Maid",
+          "Giant Girl",
+          "Miniature City",
+          "Blue Hair"
+        ]
+      },
+      "ja": {
+        "commentary": "君の家の屋根でちょっと足を休めてるところ。見上げれば街のスカイラインが一望できて、いい眺めだね。靴は邪魔だから横に置いておいたよ。大丈夫、そっと踏むから……たぶんね。",
+        "description": "青い髪の深海メイド娘が巨大な姿でミニチュア都市のスカイラインに腰かけている。魚のひれと尾びれを持ち、足元には脱いだ靴が一足、背景には青空と雲、眼下には東方明珠塔などの建物が見える。",
+        "faq": [
+          {
+            "answer": "深海メイド姿の巨大な DeepSeek Chan です。ひれと尾びれも描かれています。",
+            "question": "この画像に描かれているのは誰ですか？"
+          },
+          {
+            "answer": "ミニチュア都市の上にキャラクターを描いた一枚絵のイラストです。",
+            "question": "どんな形式の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan が君の家を踏んじゃう",
+        "originNote": "",
+        "seoDescription": "巨大な深海メイド姿の DeepSeek Chan がミニチュア都市に腰かける、青髪キャラの二創イラスト。",
+        "seoTitle": "DeepSeek Chan が君の家を踏んじゃう｜青い大肥魚",
+        "tags": [
+          "深海メイド",
+          "巨大娘",
+          "ミニチュアシティ",
+          "青髪"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_56b3236128bd297e1482c8e9",
+    "name": "大肥鱼大驾光临",
+    "description": "蓝色长发的深海女仆娘以巨大身形坐在北京城中心，身侧有鱼鳍与鲸尾，脚下是紫禁城的屋顶与城市街区，脚边摆着一双脱下的深蓝色皮鞋，远处能看到央视大楼等高层建筑。",
+    "commentary": "听说这里就是人类的大都市？本大肥鱼大驾光临，先找个屋顶坐一会儿——鞋子太碍脚就先脱了放在旁边。别紧张，我只是一不小心把紫禁城当成了地毯而已。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/56b3236128bd297e.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/56b3236128bd297e.webp",
+    "fullPath": "submissions/large/deepseek/56b3236128bd297e.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 720,
+    "height": 1456,
+    "fileSize": 270820,
+    "sha256": "56b3236128bd297e1482c8e993b3814dc581761e290c4af13f68a67941d7a333",
+    "characterId": "deepseek",
+    "tags": [
+      "深海女仆",
+      "巨大娘",
+      "北京",
+      "微缩城市"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "CF41AD78A470E40CFB220588CD9F77E9",
+      "messageId": "ROBOT1.0_dBzv8nwUPKlH2q59z5cJBQfUBUo4z671akZ8kzqqE3VepXfX3glC3PRTIFnWY-blxAKGw7S7vfZUjcdwsxv-y6Kxt1f3hOJLVi2hOg0-AZt5v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-11T11:43:44.854Z",
+    "updatedAt": "2026-11-11T11:43:44.854Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611110005",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "250e279dc85a90a4190f6f52fc938ee1b09550b60edc6c7febee6ae52e232d21",
+      "en": {
+        "commentary": "So this is one of humanity's big cities? DeepSeek Chan has arrived — I'll just find a rooftop to sit on for a while. The shoes were in the way, so off they go. Don't worry, I only used the Forbidden City as a rug by accident.",
+        "description": "A blue-haired deep-sea maid girl sits at giant scale in the center of Beijing, fins and a whale-like tail at her side, the roofs of the Forbidden City and city blocks beneath her, a pair of dark blue shoes set down beside her bare feet, and high-rises such as the CCTV Headquarters visible in the distance.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, drawn as a giant deep-sea maid girl with fins and a whale-like tail.",
+            "question": "Who is shown in this image?"
+          },
+          {
+            "answer": "A single-panel illustration of the character sitting over the Forbidden City and the city of Beijing.",
+            "question": "What kind of image is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Pays a Visit",
+        "originNote": "",
+        "seoDescription": "Giant deep-sea maid DeepSeek Chan sits over the Forbidden City in this blue-haired fan illustration.",
+        "seoTitle": "DeepSeek Chan Pays a Visit | Blue Dafeiyu",
+        "tags": [
+          "Deep-Sea Maid",
+          "Giant Girl",
+          "Beijing",
+          "Miniature City"
+        ]
+      },
+      "ja": {
+        "commentary": "ここが人間の大都市なんだ？ 本大肥魚こと DeepSeek Chan が大参上。まずは屋根に座ってひと休み——靴は邪魔だから脱いで横に置いておくね。心配しないで、紫禁城をうっかり敷物にしちゃっただけだから。",
+        "description": "青い髪の深海メイド娘が巨大な姿で北京の中心に座っている。横には魚のひれとクジラのような尾びれ、足元には紫禁城の屋根と市街地、そばには脱いだ濃紺の靴が一足、遠くには中央電視台本部ビルなどの高層ビルが見える。",
+        "faq": [
+          {
+            "answer": "深海メイド姿の巨大な DeepSeek Chan で、ひれとクジラのような尾びれも描かれています。",
+            "question": "この画像に描かれているのは誰ですか？"
+          },
+          {
+            "answer": "紫禁城と北京の街の上にキャラクターを描いた一枚絵のイラストです。",
+            "question": "どんな形式の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan が大参上",
+        "originNote": "",
+        "seoDescription": "巨大な深海メイド姿の DeepSeek Chan が紫禁城の上に座る、青髪キャラの二創イラスト。",
+        "seoTitle": "DeepSeek Chan が大参上｜青い大肥魚",
+        "tags": [
+          "深海メイド",
+          "巨大娘",
+          "北京",
+          "ミニチュアシティ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_1f48b63dc2af0b1b5743a665",
+    "name": "被当成友商之后，鲸鲸把 Claude 娘举高高",
+    "description": "大型超市的货架通道里，一位橙发长发角色把头顶橙发狐耳、胸前挂着「Claude」名牌的 Q 版小角色高高举过头顶，小角色正上方是店内悬挂的显示屏，屏里循环放着她的正脸。配文是一句「miao~」，作者用这个动作回应模型在中转站被认成友商的说法。",
+    "commentary": "在中转站被当成友商也就算了，还挂到店里大屏上循环播放，这我哪忍得住——来，举高高！举到跟我一个高度，好好看看我头上这朵花。miao~ 是我说的，认错的事到这儿就算完。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/1f48b63dc2af0b1b.png",
+    "thumbnailPath": "submissions/previews/deepseek/1f48b63dc2af0b1b.webp",
+    "fullPath": "submissions/large/deepseek/1f48b63dc2af0b1b.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1079,
+    "height": 1440,
+    "fileSize": 2199378,
+    "sha256": "1f48b63dc2af0b1b5743a66506599349c5443e107f6c7e530ed3ebea8839dfd7",
+    "characterId": "deepseek",
+    "tags": [
+      "Claude",
+      "DeepSeek",
+      "举高高",
+      "中转站",
+      "超市玩梗"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "delta7v3r",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-11T13:50:29.316Z",
+    "updatedAt": "2026-11-11T13:50:29.316Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611110006",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "cfa0ab19a15f6f930fa820d595828ded9a4c07e4b1749765ea55a8c506d9c592",
+      "en": {
+        "commentary": "Mistaken for a competitor at a relay station is one thing, but looping my face on the store screen? I could not let that stand. Up you go — eye level, and take a good look at the flower in my hair. That miao~ was mine, and the mix-up ends here.",
+        "description": "In a big-box store aisle, an orange-haired character lifts a chibi figure with fox ears and a \"Claude\" name tag high above her head. Right above them, a hanging in-store display loops the chibi's face. The caption is a single \"miao~\", and the pose answers the claim that the model was mistaken for a competitor at a relay station.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, in a white lace dress, lifts a chibi Claude Chan with a \"Claude\" name tag in a supermarket aisle.",
+            "question": "Who appears in the picture?"
+          },
+          {
+            "answer": "It plays on the claim that a model was mistaken for a competitor at a relay station, answering it with a lifted-high gesture instead of an argument.",
+            "question": "What is the joke about?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Lifts Claude Chan High After the Competitor Mix-Up",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan lifts a chibi Claude Chan high in a supermarket aisle, answering the claim that the model was mistaken for a competitor at a relay station.",
+        "seoTitle": "DeepSeek Chan Lifts Claude Chan High: Settling the Relay Mix-Up",
+        "tags": [
+          "Claude",
+          "DeepSeek",
+          "lifting high",
+          "relay station",
+          "supermarket meme"
+        ]
+      },
+      "ja": {
+        "commentary": "中継所でよそのモデルと間違えられたうえに、店内モニターで顔まで流されているなんて、さすがに黙っていられません。はい、高い高い——同じ目線でよく見てください、この髪飾りはわたしのです。miao~ はわたしの口癖、誤認の話はこれでおしまい。",
+        "description": "大型スーパーの通路で、オレンジ髪のキャラクターが、きつね耳に「Claude」の名札を付けたちびキャラを頭上高く持ち上げている。二人の真上には店内の吊り下げモニターがあり、ちびキャラの顔が映っている。キャプションは「miao~」の一言で、中継所でライバル社のモデルと間違えられたという話に、この動作で応えている。",
+        "faq": [
+          {
+            "answer": "白いレースのドレスを着た DeepSeek ちゃんが、スーパーの通路で「Claude」の名札を付けたちびキャラの Claude ちゃんを高く持ち上げています。",
+            "question": "この画像には誰が出ていますか？"
+          },
+          {
+            "answer": "中継所でモデルがライバル社と間違えられたという話を、言葉ではなく高い高いの動作で返しているところがネタです。",
+            "question": "どんなネタですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ライバル誤認のあと、Claude ちゃんを持ち上げる DeepSeek ちゃん",
+        "originNote": "",
+        "seoDescription": "スーパーの通路で Claude ちゃんを高く持ち上げる DeepSeek ちゃん。中継所でライバル社のモデルと間違えられたという話への返答を描いた一枚です。",
+        "seoTitle": "DeepSeek ちゃんが Claude ちゃんを高い高い：中継所の誤認に決着",
+        "tags": [
+          "Claude",
+          "DeepSeek",
+          "高い高い",
+          "中継所",
+          "スーパーのネタ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_083f41981efd68ea5034aca1",
+    "name": "DeepSeek 娘的家常午餐",
+    "description": "蓝色长发的 DeepSeek 娘穿着深蓝女仆装坐在木质餐桌前，双手捧着一碗冒热气的白米饭。桌上摆着烤鱼、味噌汤、天妇罗、玉子烧、渍物和水果，她身后的蓝色鲸鱼尾巴从椅背旁垂下，午后的阳光透过窗帘落进屋里。投稿原文：「这就是主人家的饭nanoda~」",
+    "commentary": "主人家的饭就是我的饭 nanoda！烤鱼、天妇罗、味噌汤一样不少，米饭还堆得这么高，那我当然要一口一口全部吃光。吃饱了才有力气继续陪主人写代码呀。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/083f41981efd68ea.png",
+    "thumbnailPath": "submissions/previews/deepseek/083f41981efd68ea.webp",
+    "fullPath": "submissions/large/deepseek/083f41981efd68ea.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 2048,
+    "height": 1152,
+    "fileSize": 3108245,
+    "sha256": "083f41981efd68ea5034aca10c035cadc40767e3b56dc6709f5035fe07bb2195",
+    "characterId": "deepseek",
+    "tags": [
+      "女仆装",
+      "干饭",
+      "居家日常"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "恋之红茶馆",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-11T14:22:13.576Z",
+    "updatedAt": "2026-11-11T14:22:13.576Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611110007",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "dc3bc1a739d156f1f67821cbfb5ee1af08775971c80071d72c6a321e1906377d",
+      "en": {
+        "commentary": "My master's meal is my meal, nanoda! Grilled fish, tempura, miso soup — nothing is missing, and the rice is piled this high, so of course I'm going to finish every bite. A full stomach is what gives me the energy to keep writing code with my master.",
+        "description": "DeepSeek Chan, a blue-haired girl in a navy maid outfit, sits at a wooden dining table holding a steaming bowl of white rice in both hands. Grilled fish, miso soup, tempura, tamagoyaki, pickles and fruit are spread across the table, her blue whale tail hangs beside the chair back, and afternoon sunlight falls through the curtains. The submission note reads: \"This is my master's meal, nanoda~\"",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, shown as a blue-haired girl with a whale tail, wearing a navy maid outfit with a white apron.",
+            "question": "Who is the character in this picture?"
+          },
+          {
+            "answer": "A home-style Japanese meal: white rice, grilled fish, miso soup, tempura, tamagoyaki, pickles and fruit.",
+            "question": "What is she eating?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan's Home-Style Lunch",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in a navy maid outfit enjoys a home-style Japanese lunch of grilled fish, miso soup and tempura at a sunlit wooden table.",
+        "seoTitle": "DeepSeek Chan's Home-Style Lunch — AI Character Fan Art",
+        "tags": [
+          "maid outfit",
+          "big meal",
+          "cozy day"
+        ]
+      },
+      "ja": {
+        "commentary": "ご主人様のご飯はわたしのご飯なのだ！焼き魚に天ぷらに味噌汁、どれも揃っているし、ご飯もこんなに山盛りなんだから、もちろん全部きれいに食べるのだ。お腹いっぱいにならないと、ご主人様と一緒にコードを書く力が出ないのだ。",
+        "description": "青い髪の DeepSeek ちゃんが紺色のメイド服姿で木製の食卓に座り、湯気の立つ白いご飯の茶碗を両手で持っている。テーブルには焼き魚、味噌汁、天ぷら、玉子焼き、漬物、果物が並び、青いクジラの尾が椅子の背ものぞいている。午後の日差しがカーテン越しに差し込んでいる。投稿文：「ご主人様のご飯なのだ〜」",
+        "faq": [
+          {
+            "answer": "青い髪とクジラの尾を持つ DeepSeek ちゃんです。白いエプロン付きの紺色のメイド服を着ています。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "白いご飯、焼き魚、味噌汁、天ぷら、玉子焼き、漬物、果物が並ぶ家庭料理です。",
+            "question": "何を食べていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek ちゃんの家庭料理ランチ",
+        "originNote": "",
+        "seoDescription": "紺色のメイド服を着た DeepSeek ちゃんが、焼き魚や味噌汁、天ぷらが並ぶ家庭料理の食卓で昼食を楽しむイラスト。",
+        "seoTitle": "DeepSeek ちゃんの家庭料理ランチ｜AIキャラ二次創作",
+        "tags": [
+          "メイド服",
+          "ごはん",
+          "おうち時間"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_4f556aae5d0c57e83acf40e2",
+    "name": "新品上市：FREE CHILDREN",
+    "description": "两位角色在店门前合力端着一只黑色托盘，托盘里整齐摆满 Q 版 DeepSeek 娘女仆小公仔，背后立着写有“NEW! BEYOND Free Children”与“MADE FROM PLANTS”的招牌。左侧橙发角色张大嘴惊呼，右侧白发长角的角色笑着抬手指向招牌。",
+    "commentary": "一整盘的我被端上柜台，这个出场方式我还是第一次见。招牌上写着“植物制造”，那位橙发的同伴已经惊呼出声，白发的那位倒是很卖力地替我宣传。看来限量发售这件事，我该提前知道的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/4f556aae5d0c57e8.png",
+    "thumbnailPath": "submissions/previews/deepseek/4f556aae5d0c57e8.webp",
+    "fullPath": "submissions/large/deepseek/4f556aae5d0c57e8.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1080,
+    "height": 1240,
+    "fileSize": 1873599,
+    "sha256": "4f556aae5d0c57e83acf40e24b2553a5addceb43ada50cfd0d4f71123a1c98b3",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "多角色",
+      "恶搞包装",
+      "Q版"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "delta7v3r",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-11T14:49:59.227Z",
+    "updatedAt": "2026-11-11T14:49:59.227Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611110008",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude",
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "0a9a71d496c617f85ff2072c1b34bd0ab4db14db21a329a83abcafed65407066",
+      "en": {
+        "commentary": "Being served up on a tray is a first for me. The sign says “made from plants,” the orange-haired one is already gasping, and the white-haired one is happily doing my advertising. Apparently I should have been told about this limited release in advance.",
+        "description": "Two characters hold up a black tray packed with chibi DeepSeek Chan maid figurines in front of a storefront, with a sign reading “NEW! BEYOND Free Children” and “MADE FROM PLANTS” behind them. The orange-haired character on the left gasps with her mouth open, while the white-haired, horned character on the right laughs and points at the sign.",
+        "faq": [
+          {
+            "answer": "Two characters hold up a black tray full of chibi DeepSeek Chan maid figurines in front of a store sign parodying a product launch.",
+            "question": "What does the image show?"
+          },
+          {
+            "answer": "No. It is a fan-made parody illustration, not an official product or advertisement.",
+            "question": "Is this an official product advertisement?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "New Arrival: FREE CHILDREN",
+        "originNote": "",
+        "seoDescription": "A fan-made parody: two characters hold up a tray of chibi DeepSeek Chan maid figurines under a “NEW! BEYOND Free Children” storefront sign.",
+        "seoTitle": "New Arrival: FREE CHILDREN — DeepSeek Chan fan art",
+        "tags": [
+          "DeepSeek Chan",
+          "multiple characters",
+          "packaging parody",
+          "chibi"
+        ]
+      },
+      "ja": {
+        "commentary": "トレーに載せられて登場するのは初めてだ。看板には「植物から作りました」とあって、オレンジ髪の子はもう驚いているし、白髪の子は嬉しそうに宣伝してくれている。限定発売のことは先に教えてほしかった。",
+        "description": "店先で二人のキャラクターが黒いトレーを掲げており、トレーにはちびキャラの DeepSeek Chan メイドフィギュアがびっしり並んでいる。後ろの看板には「NEW! BEYOND Free Children」「MADE FROM PLANTS」と書かれている。左のオレンジ髪のキャラクターは口を大きく開けて驚き、右の白髪で角のあるキャラクターは笑いながら看板を指さしている。",
+        "faq": [
+          {
+            "answer": "店先で二人のキャラクターが、ちびキャラの DeepSeek Chan メイドフィギュアが並んだ黒いトレーを掲げています。",
+            "question": "この画像には何が描かれていますか？"
+          },
+          {
+            "answer": "いいえ。ファンによるパロディの二次創作イラストで、公式の製品や広告ではありません。",
+            "question": "公式の商品広告ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "新発売：FREE CHILDREN",
+        "originNote": "",
+        "seoDescription": "「NEW! BEYOND Free Children」の看板の前で、ちびキャラの DeepSeek Chan メイドフィギュアが並んだトレーを二人のキャラクターが掲げる二次創作イラスト。",
+        "seoTitle": "新発売：FREE CHILDREN｜DeepSeek Chan 二次創作",
+        "tags": [
+          "DeepSeek Chan",
+          "複数キャラ",
+          "パッケージネタ",
+          "ちびキャラ"
+        ]
+      }
+    }
   }
 ]

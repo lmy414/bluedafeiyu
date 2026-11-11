@@ -107,8 +107,8 @@
       "intro": "我想做很多视频，做很多很好玩的视频，首先肯定是自己觉得很好玩，其次嘛，也想传播快乐给大家。",
       "avatar": "https://i2.hdslb.com/bfs/face/e3445be765ec330ac29b07c328496e44ec04077a.jpg",
       "i18n": {
-        "en": "I want to make lots of videos, lots of really fun videos. First of all because I enjoy them myself, and also because I want to spread happiness to everyone.",
-        "ja": "たくさん動画を作りたい、たくさん楽しい動画を作りたい。まずは自分が楽しいから、それからみんなにも楽しさを届けたいからです。"
+        "en": "I want to make lots of videos, lots of really fun videos. First of all because I enjoy them myself, and secondly because I want to spread some joy to everyone.",
+        "ja": "楽しい動画をたくさん作りたいです。まずは自分が楽しいと思えること、それから、みんなに楽しさを届けたいと思っています。"
       }
     },
     {
@@ -212,6 +212,56 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV11iW26qEDj",
+      "uid": "9126506",
+      "title": "擅长吃白饭的超级可爱大肥鱼",
+      "description": "擅长吃白饭的超级可爱大肥鱼",
+      "url": "https://www.bilibili.com/video/BV11iW26qEDj/",
+      "cover": "https://i0.hdslb.com/bfs/archive/dfb074a0c6b48cb89773950b63625c6e7a08c8a6.jpg",
+      "duration": 31,
+      "publishedAt": "2026-11-11T11:45:42.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, lots of really fun videos. First of all because I enjoy them myself, and secondly because I want to spread some joy to everyone.",
+          "description": "A short chibi 3D animation in which DeepSeek Chan, a pot worn as a helmet, eats a bowl of plain white rice and gives a little salute to the camera.",
+          "title": "The Super Cute DeepSeek Chan Who Is Great at Eating Plain Rice"
+        },
+        "ja": {
+          "creatorIntro": "楽しい動画をたくさん作りたいです。まずは自分が楽しいと思えること、それから、みんなに楽しさを届けたいと思っています。",
+          "description": "鍋をかぶったちびキャラのDeepSeekちゃんが、白ごはんを一杯食べてカメラに敬礼する短編3Dアニメーション。",
+          "title": "白ごはんを食べるのが得意な超かわいいDeepSeekちゃん"
+        }
+      }
+    },
+    {
+      "bvid": "BV1r1W26hExv",
+      "uid": "9126506",
+      "title": "哥斯拉大肥鱼干掉金门大桥",
+      "description": "哥斯拉大肥鱼干掉金门大桥",
+      "url": "https://www.bilibili.com/video/BV1r1W26hExv/",
+      "cover": "https://i0.hdslb.com/bfs/archive/cef0f112ccf877b43af30798361a4d755cd2a9fc.jpg",
+      "duration": 31,
+      "publishedAt": "2026-11-11T11:39:56.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "title": "Godzilla DeepSeek Chan Takes Down the Golden Gate Bridge",
+          "description": "A short 3D animation in which a chibi DeepSeek Chan in a whale hood grows to kaiju size, rises from the sea beside the Golden Gate Bridge and brings the bridge down.",
+          "creatorIntro": "I want to make lots of videos, lots of really fun videos. First of all because I enjoy them myself, and secondly because I want to spread some joy to everyone."
+        },
+        "ja": {
+          "title": "ゴジラ化したDeepSeekちゃんがゴールデンゲートブリッジを倒す",
+          "description": "クジラのフードをかぶったちびキャラのDeepSeekちゃんが怪獣サイズに巨大化し、海から現れてゴールデンゲートブリッジを破壊する短編3Dアニメーション。",
+          "creatorIntro": "楽しい動画をたくさん作りたいです。まずは自分が楽しいと思えること、それから、みんなに楽しさを届けたいと思っています。"
+        }
+      }
+    },
     {
       "bvid": "BV1LvW16JETU",
       "uid": "15475629",
