@@ -3,7 +3,7 @@ import {archiveContext} from '../../lib/archive.mjs';
 import {orderWorks} from '../../../public/components/work-order.js';
 import {renderHomeCard} from './HomeCard.mjs';
 import HomeFilter from './HomeFilter.astro';
-const {galleryWorks,chars,topics}=archiveContext;
+const {galleryWorks,chars,topics,serialWorkIds}=archiveContext;
 const latest=orderWorks(galleryWorks).slice(0,30);
 const cards=latest.map((work,index)=>renderHomeCard(work,{eager:index<5,priority:index===0})).join('');
 ---
@@ -83,26 +83,27 @@ const cards=latest.map((work,index)=>renderHomeCard(work,{eager:index<5,priority
       </section>
 
       <section aria-labelledby="gallery-title">
-        <div class="section-head"><h2 id="gallery-title" data-i18n="d.home.allImages">全部图片</h2><span data-i18n-tpl="d.home.imageCount" data-i18n-vars={JSON.stringify({count:galleryWorks.length.toLocaleString("en-US")})}>{galleryWorks.length.toLocaleString("en-US")} 张图片</span></div>
+        <div class="section-head"><h2 id="gallery-title" data-i18n="d.home.allImages">全部图片</h2><span data-home-count aria-live="polite" data-i18n-tpl="d.home.imageCount" data-i18n-vars={JSON.stringify({count:galleryWorks.length.toLocaleString("en-US")})}>{galleryWorks.length.toLocaleString("en-US")} 张图片</span></div>
         <div class="filters">
-          <div class="chips"><a class="chip is-active" href="/browse.html" data-i18n="d.home.all">全部</a>
-<a class="chip" href="/categories/meme.html" data-i18n="d.home.meme">梗图</a>
-<a class="chip" href="/categories/illustration.html" data-i18n="d.home.illustration">插画</a>
-<a class="chip" href="/categories/setting.html" data-i18n="d.home.setting">设定图</a>
-<a class="chip" href="/categories/comic.html" data-i18n="d.home.comic">漫画</a>
-<a class="chip" href="/categories/standing.html" data-i18n="d.home.standing">立绘</a>
-<a class="chip" href="/categories/other.html" data-i18n="d.home.other">其他</a>
-<a class="chip" href="/gifs.html">GIF</a>
+          <div class="chips"><a class="chip is-active" data-home-type="" href="/browse.html" data-i18n="d.home.all">全部</a>
+<a class="chip" data-home-type="meme" href="/categories/meme.html" data-i18n="d.home.meme">梗图</a>
+<a class="chip" data-home-type="illustration" href="/categories/illustration.html" data-i18n="d.home.illustration">插画</a>
+<a class="chip" data-home-type="setting" href="/categories/setting.html" data-i18n="d.home.setting">设定图</a>
+<a class="chip" data-home-type="comic" href="/categories/comic.html" data-i18n="d.home.comic">漫画</a>
+<a class="chip" data-home-type="standing" href="/categories/standing.html" data-i18n="d.home.standing">立绘</a>
+<a class="chip" data-home-type="other" href="/categories/other.html" data-i18n="d.home.other">其他</a>
+<a class="chip" data-home-type="gif" href="/gifs.html">GIF</a>
 <HomeFilter name="character" label="全部角色" labelKey="d.allRoles" options={[{name:"全部角色",key:"d.allRoles",href:"/browse.html"},...chars.map(c=>({name:c.name,character:c.id,href:"/browse.html#character="+c.id}))]} /></div>
           <div class="filter-actions">
             <div class="lang-picker filter-picker" data-filter-picker="sort"><button type="button" class="action lang-trigger" aria-haspopup="listbox" aria-expanded="false" aria-controls="sort-options"><span data-i18n="d.home.latest">最新收录</span><svg class="icon lang-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><ul class="lang-panel" role="listbox" aria-label="最新收录" data-i18n-attr="aria-label:d.home.latest" id="sort-options" hidden><li class="lang-option" role="option" aria-selected="true" tabindex="-1" data-href="/browse.html#sort=latest" data-i18n="d.home.latest">最新收录</li><li class="lang-option" role="option" aria-selected="false" tabindex="-1" data-href="/browse.html#sort=random" data-i18n="d.home.random">随机浏览</li></ul></div>
-            <a class="action" href="/browse.html"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg><span data-i18n="d.home.filter">筛选</span></a>
+            <a class="action" data-home-reset href="/browse.html"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg><span data-i18n="d.clear">清除条件</span></a>
           </div>
         </div>
-        <div class="masonry" data-feed-grid><Fragment set:html={cards} /></div>
+        <p data-home-empty hidden data-i18n="d.noResults">还没找到合适的作品。</p>
+        <div class="masonry" data-feed-grid data-excluded-ids={JSON.stringify([...serialWorkIds])}><Fragment set:html={cards} /></div>
 <div class="loadmore">
-          <span data-i18n-tpl="d.home.shown" data-i18n-vars={JSON.stringify({shown:latest.length,total:galleryWorks.length.toLocaleString("en-US")})}>已展示 {latest.length} / {galleryWorks.length.toLocaleString("en-US")} 张</span>
-          <a href="/browse.html"><span data-i18n="d.home.browse">浏览全部图片</span> <svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+          <span data-home-shown data-i18n-tpl="d.home.shown" data-i18n-vars={JSON.stringify({shown:latest.length,total:galleryWorks.length.toLocaleString("en-US")})}>已展示 {latest.length} / {galleryWorks.length.toLocaleString("en-US")} 张</span>
+          <a data-home-more href="/browse.html"><span data-i18n="d.loadMore">加载更多</span> <svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
         </div>
       </section>
 

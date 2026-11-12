@@ -6,12 +6,13 @@ import vm from 'node:vm';
 import {parseHTML} from 'linkedom';
 import {renderWorkCard} from '../public/archive/work-card.js';
 import {matchesCreationMethod} from '../public/archive/creation-method.js';
+import {filterWorks} from '../public/components/work-filter.js';
 import {orderWorks,shuffledSlugs} from '../public/components/work-order.js';
 import {createSearchIndex} from '../public/archive/search.js';
 
 const root=path.resolve(import.meta.dirname,'../..');
 const out=process.env.SITE_OUT_DIR||path.join(root,'.build/site');
-const source=fs.readFileSync(path.join(root,'frontend/public/archive/archive.js'),'utf8').replace(/^import .+;\n/gm,'');
+const source=fs.readFileSync(path.join(root,'frontend/public/archive/archive.js'),'utf8').replace(/^import .+;\r?\n/gm,'');
 const works=Array.from({length:60},(_,i)=>({id:'id-'+i,slug:'work-'+String(i).padStart(2,'0'),n:'Work '+i,c:'DeepSeek',cid:'deepseek',cids:i%2?['deepseek']:['deepseek','gpt'],roles:[{id:'deepseek',name:'DeepSeek'}],k:['meme'],tg:[],i:'/image.webp',o:'https://example.test/'+i+'.png',dt:'2026-10-23',createdAt:new Date(Date.UTC(2026,9,23,0,i)).toISOString(),w:400,h:400}));
 const stats={available:true,works:Object.fromEntries(works.map((work,i)=>[work.id,{views:(i*7)%61,downloads:(i*13)%61}]))};
 const flush=()=>new Promise(resolve=>setImmediate(resolve));
@@ -44,7 +45,7 @@ async function fixture({url='https://archive.test/browse.html',available=true,cu
   location.assign=href=>navigations.push(href);location.replace=href=>navigations.push(href);
   const history={state:null,replaceState(state,_title,href){this.state=state;if(href)location.href=href;}};
   window.WorkStats={ready:statsReady,available:()=>available,metric:(id,mode)=>available?stats.works[id]?.[mode==='downloads'?'downloads':'views']||0:0};
-  const context={window,document,location,history,URL,URLSearchParams,performance:{getEntriesByType:()=>[]},navigator:{},Event:window.Event,CustomEvent:window.CustomEvent,setTimeout,clearTimeout,requestAnimationFrame:callback=>callback(),matchMedia:()=>({matches:false,addEventListener(){}}),addEventListener:window.addEventListener.bind(window),loadArchiveData:()=>Promise.resolve({works:dataWorks,characters:[]}),loadSearchModule:async()=>({createSearchIndex}),renderWorkCard,matchesCreationMethod,orderWorks,shuffledSlugs,installTopicDownloads(){},installWorkPreview(){},copyImage(){},console};
+  const context={window,document,location,history,URL,URLSearchParams,performance:{getEntriesByType:()=>[]},navigator:{},Event:window.Event,CustomEvent:window.CustomEvent,setTimeout,clearTimeout,requestAnimationFrame:callback=>callback(),matchMedia:()=>({matches:false,addEventListener(){}}),addEventListener:window.addEventListener.bind(window),loadArchiveData:()=>Promise.resolve({works:dataWorks,characters:[]}),loadSearchModule:async()=>({createSearchIndex}),renderWorkCard,matchesCreationMethod,filterWorks,orderWorks,shuffledSlugs,installTopicDownloads(){},installWorkPreview(){},copyImage(){},console};
   vm.runInNewContext(source.replace("await import('./search.js')",'await loadSearchModule()'),context);
   await flush();await flush();
   Object.defineProperty(context,'SiteLang',{get:()=>window.SiteLang});

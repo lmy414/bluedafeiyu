@@ -249,3 +249,5 @@ html[data-theme="dark"]{--scroll-track:#101A21;--scroll-thumb:#425D70;--scroll-h
 .loadmore a [data-i18n]{font:inherit;color:inherit}
 
 .lang-option[aria-selected="false"] .lang-check{display:none}
+
+.home-page [data-home-more][hidden],.home-page [data-home-empty][hidden]{display:none}
