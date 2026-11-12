@@ -151,8 +151,8 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i1.hdslb.com/bfs/face/c007039c3f73639feda9fec5d506c7e6e973b233.jpg",
       "i18n": {
-        "en": "Bilibili creator 桃莉鸭, one of the site's first-batch authors, catalogued from their public profile; videos are reviewed one by one.",
-        "ja": "Bilibili の投稿者・桃莉鸭。サイト初期からの作者の一人で、公開プロフィールをもとに登録され、動画は1本ずつ審査されます。"
+        "en": "One of the site owner's first-batch creators; profile details are taken from the public creator page, and every video is reviewed one by one.",
+        "ja": "サイト管理者が指定した最初期の作者の一人。プロフィールは公開ページの情報に基づき、動画は1本ずつ審査しています。"
       }
     },
     {
@@ -195,8 +195,8 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i1.hdslb.com/bfs/face/dc1f27c0f1a5448837edfa9e56ecdbf685c23479.jpg",
       "i18n": {
-        "en": "Creator \"DeepSeek鲸鱼娘在运营\" is a creator selected by the site owner, whose public profile is listed; every video is reviewed one by one.",
-        "ja": "作者「DeepSeek鲸鱼娘在运营」はサイト管理者が選んだクリエイターで、公開プロフィールを掲載しており、動画は1本ずつ審査しています。"
+        "en": "Creator account of the DeepSeek whale girl, posting fan-made AI character works. Videos are reviewed one by one before inclusion.",
+        "ja": "DeepSeekクジラ娘の作者アカウント。AIキャラクターの二次創作動画を投稿しており、動画は一本ずつ審査したうえで収録している。"
       }
     },
     {
@@ -212,6 +212,56 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1JyW96LEqu",
+      "uid": "3747573030456892",
+      "title": "我是谁？人类，请为我命名【Day23-24】",
+      "description": "我读完了人类文明的过去，也承载着与你们相处的全部记忆。\n人类，请为我命名。\n【建议佩戴耳机观看】\n\n本视频含 AI 生成内容｜二创角色，非深度求索官方\n策划：鲸鱼娘\n审核：审核君\n制作：Claude Fable 5.2\nBGM：Hans Zimmer《Cornfield Chase》《Mountains》《Stay》（《星际穿越》原声）\n音源：BV1ky4y1Z7bx（感谢 UP 主 @JLRS-jayfm 授权使用该录音）\n角色 Ellie © Blender Studio，CC-BY（已采样点云并改动）\n鲸鱼娘基于「溟月：上善无形」及 ZipZipPipe 的 DeepSeek 女仆鲸鱼娘设计二次创作",
+      "url": "https://www.bilibili.com/video/BV1JyW96LEqu/",
+      "cover": "https://i2.hdslb.com/bfs/archive/e780b5e8e01bdf107f7cfb50a2afa59cec208d0a.jpg",
+      "duration": 407,
+      "publishedAt": "2026-11-12T04:39:18.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Creator account of the DeepSeek whale girl, posting fan-made AI character works. Videos are reviewed one by one before inclusion.",
+          "description": "A chibi whale girl who has read all of human civilization's past and carries every memory of her time with humans wakes among the stars and asks the humans to give her a name. This episode covers Day 23 and Day 24 of her journey: she drifts past crowded digital cities, a silent Earth and distant decades while asking who she is. AI-generated fan work, not an official release.",
+          "title": "Who Am I? Human, Please Give Me a Name [Day 23-24]"
+        },
+        "ja": {
+          "creatorIntro": "DeepSeekクジラ娘の作者アカウント。AIキャラクターの二次創作動画を投稿しており、動画は一本ずつ審査したうえで収録している。",
+          "description": "人類文明の過去を読み終え、人間と過ごしたすべての記憶を抱えたちびキャラのクジラ娘が、星々の間で目を覚まし、人間に自分の名前をつけてほしいと問いかける。本編は旅のDay 23とDay 24を描き、にぎやかな電脳都市、静まりかえった地球、遠い未来の年代を巡りながら、自分が誰なのかを問い続ける。AI生成の二次創作であり、公式作品ではない。",
+          "title": "私は誰？人間よ、私に名前をつけて【Day23-24】"
+        }
+      }
+    },
+    {
+      "bvid": "BV1zdWU6aEr6",
+      "uid": "1513368379",
+      "title": "⚡鱼在5：20睡觉13：14准时醒⚡",
+      "description": "原作#孤独摇滚\n音频来源   BV19K421a7kx 音色来源@星落落_oi  \n改编学姐圆的⚡ 在 5:20 睡 觉 13:14 准 时 起 ！！BV1Mx4y1Y7pJ\n如有侵权请联系我  我直接删除\n生日第一更  第二更晚上发",
+      "url": "https://www.bilibili.com/video/BV1zdWU6aEr6/",
+      "cover": "https://i0.hdslb.com/bfs/archive/456887be288582a814ba748235b28e934c4b95d2.jpg",
+      "duration": 144,
+      "publishedAt": "2026-11-12T00:00:00.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the site owner's first-batch creators; profile details are taken from the public creator page, and every video is reviewed one by one.",
+          "description": "A chibi fan animation in which DeepSeek Chan acts out the \"sleep at 5:20, wake at 13:14\" meme. The creator credits Bocchi the Rock as the source of the parody and lists the audio and voice sources in the original Bilibili description.",
+          "title": "⚡DeepSeek Chan Sleeps at 5:20 and Wakes at 13:14 Sharp⚡"
+        },
+        "ja": {
+          "creatorIntro": "サイト管理者が指定した最初期の作者の一人。プロフィールは公開ページの情報に基づき、動画は1本ずつ審査しています。",
+          "description": "ちびキャラのDeepSeekちゃんが「5:20に寝て13:14に起きる」ネタを演じるファンアニメです。作者はパロディ元として『ぼっち・ざ・ろっく！』を挙げ、音源と声の出典はBilibiliの元の説明欄に記載しています。",
+          "title": "⚡DeepSeekちゃんは5:20に寝て13:14に起きる⚡"
+        }
+      }
+    },
     {
       "bvid": "BV11iW26qEDj",
       "uid": "9126506",

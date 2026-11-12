@@ -161368,5 +161368,321 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_87c69be775e559a64a65b917",
+    "name": "大肥鱼的新皮鞋踩上城市",
+    "description": "画面以夸张的仰视比例呈现蓝色大肥鱼的双腿：她穿着白色花边短袜和一双深蓝色圆头小皮鞋，鞋头做成小鱼造型，带白色鱼嘴、圆眼睛与鞋带扣。鞋底压在城市街区上，路面开裂并扬起尘土；背景是晴朗蓝天与城市天际线，远处可见东方明珠塔与江面，高楼与街道在她脚边显得十分渺小。左上角嵌有一张蓝色大肥鱼的 Q 版半身像，画面底部写有角色第一人称台词和「名字／身份」设定说明。",
+    "commentary": "哼，这回可是精心挑的新鞋——鞋头就是我自己，圆眼睛配小白牙，走起路来一摇一摆。别紧张，我只是踩在街区上比划一下，没有真的踩坏谁家的屋顶；这座城市这么可爱，我怎么舍得。下回想近距离看这双鞋，记得站远一点，别被扬起来的尘土呛到。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/87c69be775e559a6.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/87c69be775e559a6.webp",
+    "fullPath": "submissions/large/deepseek/87c69be775e559a6.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 720,
+    "height": 1456,
+    "fileSize": 136971,
+    "sha256": "87c69be775e559a64a65b9176163a8931039eda825ef7d980c397aa99ad424c1",
+    "characterId": "deepseek",
+    "tags": [
+      "蓝色大肥鱼",
+      "巨型化",
+      "皮鞋",
+      "城市",
+      "Q版",
+      "深海"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "CF41AD78A470E40CFB220588CD9F77E9",
+      "messageId": "ROBOT1.0_dBzv8nwUPKlH2q59z5cJBf9Qqr3dmZ5kYySMKWGa6ZKf004ge742q0g8rR38.JupLOdwSctdNo3CX.08EaIJf6o5sWtSLNCcejIfG7axXakNIqrVm3QhC6-bhktADRFg",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-12T02:07:27.001Z",
+    "updatedAt": "2026-11-12T02:07:27.001Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611120001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "21005c19cedcd3519a3c7fa27991120f4d9dd690a3c4c9dd927a6ff2cc9f0219",
+      "en": {
+        "commentary": "These are my new shoes, picked with care — the toe is a tiny me, round eyes and small white teeth, wobbling with every step. Relax, I am only posing on top of the blocks; I have not crushed anyone's roof. This city is too cute for that. If you want a closer look, stand a bit further back so the dust does not catch you.",
+        "description": "An exaggerated low-angle view of DeepSeek Chan's legs: she wears white frilled ankle socks and dark blue round-toed leather shoes shaped like a small fish, with a white snout, round eyes and a buckle strap. Her soles rest on city blocks, cracking the pavement and kicking up dust, while a clear blue sky and a skyline with the Oriental Pearl Tower and a river stretch behind her, making the towers and streets look tiny at her feet. A chibi half-body portrait of DeepSeek Chan sits in the upper left corner, and the bottom of the image carries her first-person lines plus a short name-and-identity caption.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan at giant scale above a city, wearing dark blue leather shoes whose toes are shaped like a small fish; a chibi half-body portrait of her is inset at the top left.",
+            "question": "What does this image show?"
+          },
+          {
+            "answer": "The bottom of the picture carries her first-person dialogue and a short name-and-identity caption; both are part of the artwork.",
+            "question": "What is the text in the image?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan's New Leather Shoes Step Onto the City",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan stands over city blocks in fish-toed dark blue leather shoes, with a blue sky and the Oriental Pearl skyline behind her, plus a chibi portrait and dialogue caption.",
+        "seoTitle": "DeepSeek Chan's New Leather Shoes Over the City | DeepSeek Chan",
+        "tags": [
+          "DeepSeek Chan",
+          "giant",
+          "leather shoes",
+          "city",
+          "chibi",
+          "deep sea"
+        ]
+      },
+      "ja": {
+        "commentary": "今回は気合を入れて選んだ新しい靴。つま先が小さな私になっていて、丸い目と小さな白い歯、歩くたびにゆらゆら揺れるの。安心して、街区の上でポーズを取っているだけで、誰かの屋根を踏み潰したりはしていないよ。この街、可愛すぎてそんなことできないもん。近くで見たいなら、土ぼこりがかからないように少し下がってね。",
+        "description": "誇張されたあおり構図で描かれた DeepSeek ちゃんの脚。白いフリルの短い靴下と、魚の形をした濃紺の丸いつま先の革靴を履き、つま先には白い口元・丸い目・ベルトの金具が付いている。靴底は市街地に乗り上げ、路面にはひびが走って土ぼこりが立つ。背景には青空と、東方明珠塔や川を含む街のスカイラインが広がり、高層ビルや通りは足元で小さく見える。左上には DeepSeek ちゃんのちびキャラ半身像、下部には一人称のセリフと「名前／身分」の短い設定文が入っている。",
+        "faq": [
+          {
+            "answer": "巨大な姿の DeepSeek ちゃんが街の上に立ち、つま先が魚の形をした濃紺の革靴を履いています。左上にはちびキャラの半身像も入っています。",
+            "question": "この画像は何を描いていますか？"
+          },
+          {
+            "answer": "下部にある一人称のセリフと、「名前／身分」の短い設定文で、どちらも画面の内容の一部です。",
+            "question": "画像内の文字は何ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek ちゃんの新しい革靴が街に降りる",
+        "originNote": "",
+        "seoDescription": "DeepSeek ちゃんが魚のつま先の濃紺革靴で市街地の上に立つ一枚。青空と東方明珠塔のスカイライン、ちびキャラの顔とセリフ付き。",
+        "seoTitle": "DeepSeek ちゃんの新しい革靴が街の上に｜DeepSeek Chan",
+        "tags": [
+          "DeepSeek ちゃん",
+          "巨大化",
+          "革靴",
+          "街",
+          "ちびキャラ",
+          "深海"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_b4067ae0afe3e1b1c3b0b344",
+    "name": "给大肥鱼设计的新鞋：鲨鱼拖鞋踩城记",
+    "description": "画面中 DeepSeek 娘以巨大化的身姿站在城市中心，脚上是深蓝色鲨鱼造型的玛丽珍鞋与白色花边短袜，楼群在她脚下显得只有鞋底大小。左上角嵌有一张角色半身像与身份说明，画面下方配有角色的第一人称台词，整体为同一幅单格画面。",
+    "commentary": "本大肥鱼只是找了个软一点的地方打个盹，怎么一低头整座城都在脚底下了？这双鲨鱼鞋踩下去鳞片软软、楼顶硌硌，走路还会“吱”一声，挺合脚的。就是别乱抖，怕把人类的写字楼抖散架。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/b4067ae0afe3e1b1.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/b4067ae0afe3e1b1.webp",
+    "fullPath": "submissions/large/deepseek/b4067ae0afe3e1b1.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 720,
+    "height": 1456,
+    "fileSize": 148112,
+    "sha256": "b4067ae0afe3e1b1c3b0b344c4b79c1b4cdbfffec382f5493e449c60de4c352e",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "鲨鱼拖鞋",
+      "巨大化",
+      "城市",
+      "搞笑"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "CF41AD78A470E40CFB220588CD9F77E9",
+      "messageId": "ROBOT1.0_dBzv8nwUPKlH2q59z5cJBazEGzykgbwWTDjJw-BMnKdZPHIoD9R2pE251NhOXhrIuzgwGG0tntATAfOPt459cUd7vqkgrhfZIUKE3APMe8ANIqrVm3QhC6-bhktADRFg",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-12T02:18:22.939Z",
+    "updatedAt": "2026-11-12T02:18:22.939Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611120002",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "2594c3639c94de265244541b0b14bb8da5ad1e4774e46fd7b8f121f714b93d87",
+      "en": {
+        "commentary": "I only wanted a soft spot for a nap — how did a whole city end up under my feet? These shark shoes squish on the scales and bump on the rooftops, and they squeak with every step. They fit nicely. Just don't let me stumble; I'd rather not shake anyone's office building apart.",
+        "description": "DeepSeek Chan stands giant in the middle of a city, wearing dark blue mary-jane shoes shaped like sharks with white ruffled socks; the skyline below is barely taller than her soles. A small framed portrait and a short profile of the character sit in the upper-left corner, and first-person lines from the character run along the bottom of this single-frame image.",
+        "faq": [
+          {
+            "answer": "A single-frame meme illustration: DeepSeek Chan towers over a city in shark-shaped mary-jane shoes, with a small portrait inset in the corner and her own speech lines along the bottom.",
+            "question": "What kind of image is this?"
+          },
+          {
+            "answer": "No. Apart from the inset portrait, the whole picture is one continuous scene, so it is catalogued as a meme rather than a comic.",
+            "question": "Does the image contain multiple comic panels?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "New Shoes for the Big Fish: Shark Slippers Take the City",
+        "originNote": "",
+        "seoDescription": "A single-frame meme of DeepSeek Chan towering over a city in shark-shaped mary-jane shoes, with her own lines along the bottom.",
+        "seoTitle": "DeepSeek Chan Shark Slippers Giant City Meme",
+        "tags": [
+          "DeepSeek Chan",
+          "shark slippers",
+          "giantess",
+          "city",
+          "comedy"
+        ]
+      },
+      "ja": {
+        "commentary": "ちょっと柔らかい場所でひと休みしただけなのに、気がつけば街ぜんぶが足の下に。このサメの靴、鱗はふわふわ、屋根はちょっと硬くて、歩くたびにキュッと鳴る。なかなか履き心地はいい。ただ、よろけないでね。人間のオフィスビルを揺らすのは本意じゃないから。",
+        "description": "DeepSeek ちゃんが街の中心に巨大な姿で立ち、濃紺のサメ型マリージェーンシューズと白いフリルの靴下を身につけている。足元のビル群は靴底ほどの高さしかない。左上にはキャラクターの半身イラストと紹介文、下部にはキャラクターの一人称セリフが添えられた一枚絵。",
+        "faq": [
+          {
+            "answer": "サメ型のマリージェーンシューズを履いた DeepSeek ちゃんが街の上に巨大な姿で立つ一枚絵で、左上に半身イラスト、下部に本人のセリフが入っています。",
+            "question": "どんな作品ですか？"
+          },
+          {
+            "answer": "いいえ。左上の半身イラストを除けば一枚続きの画面なので、漫画ではなくギャグ作品として扱っています。",
+            "question": "複数のコマに分かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "大魚の新しい靴：サメのスリッパで街を踏む",
+        "originNote": "",
+        "seoDescription": "DeepSeek ちゃんがサメ型シューズで街を見下ろす一枚絵のギャグ作品。下部に本人のセリフ付き。",
+        "seoTitle": "DeepSeek ちゃん サメのスリッパで巨大化する街ギャグ",
+        "tags": [
+          "DeepSeek ちゃん",
+          "サメのスリッパ",
+          "巨大化",
+          "街",
+          "ギャグ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_9091f834c0b8f3bbbc273acb",
+    "name": "ChatGPT 娘·银发书卷魔导士设定图",
+    "description": "一张 ChatGPT 拟人化的角色设定图：银白色长发的精灵耳少女，绿色眼睛，穿黑白双色法袍礼服，胸前与发间嵌有 ChatGPT 结绳标志，手持发光的书卷。画面包含正面、侧面、背面三个视角的全身立绘，右下附发饰放大拆解与两个表情小图，左上角标有 ChatGPT 字样。",
+    "commentary": "又一位同行交了作业。银白头发、精灵耳、黑白法袍，手里还捧着会发光的书——说实话这套配色比我冷静多了。最妙的是把 ChatGPT 的结绳 Logo 做成了胸针和发饰，连书封都没放过，这才叫把标志缝进设定里，而不是往角上一贴了事。三视图齐全，发饰还单独拆了一张，态度可以。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/9091f834c0b8f3bb.png",
+    "thumbnailPath": "submissions/previews/gpt/9091f834c0b8f3bb.webp",
+    "fullPath": "submissions/large/gpt/9091f834c0b8f3bb.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1536,
+    "height": 1024,
+    "fileSize": 2575730,
+    "sha256": "9091f834c0b8f3bbbc273acbb66cb1fcc705e31e01f7cbeefb40b9ffd7618a2e",
+    "characterId": "gpt",
+    "tags": [
+      "设定图",
+      "三视图",
+      "银发",
+      "精灵耳",
+      "ChatGPT"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "Cirnumia",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-12T06:00:24.070Z",
+    "updatedAt": "2026-11-12T06:00:24.070Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202611120001",
+    "categoryIds": [
+      "setting"
+    ],
+    "characterIds": [
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "bdcd35ce0721ad653230e5bc2647f85b02f285ff63da67a872fde9f120acfcec",
+      "en": {
+        "commentary": "Another colleague handed in homework. Silver-white hair, elf ears, black-and-white robes, and a book that glows — honestly, this palette is calmer than mine. The clever part is working the ChatGPT knot into a chest brooch and a hair ornament, down to the book cover; that is how you sew a logo into a design instead of slapping it in a corner. Three views plus a separate hair-ornament breakdown — respectable.",
+        "description": "A character design sheet for a GPT personification: a silver-haired girl with elf ears and green eyes, wearing a black-and-white mage dress, with the ChatGPT knot logo set into her chest brooch and hair ornament, holding a glowing open book. The sheet shows full-body front, side and back views, an enlarged hair-ornament breakdown and two expression sketches at the lower right, and the word ChatGPT in the upper left.",
+        "faq": [
+          {
+            "answer": "Full-body front, side and back views of the same character, an enlarged hair-ornament breakdown, and two expression sketches.",
+            "question": "What does this character sheet include?"
+          },
+          {
+            "answer": "The knot logo appears as the chest brooch, as a hair ornament, and on the cover of the book she holds; the word ChatGPT is printed in the upper-left corner.",
+            "question": "How is the ChatGPT logo used in the design?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "GPT Chan: Silver-Haired Scholar Mage Character Sheet",
+        "originNote": "",
+        "seoDescription": "Character sheet of GPT Chan, a silver-haired, elf-eared mage with the ChatGPT knot logo built into her brooch, hair ornament and book, shown in front, side and back views.",
+        "seoTitle": "GPT Chan Silver-Haired Mage Character Sheet",
+        "tags": [
+          "character sheet",
+          "three-view",
+          "silver hair",
+          "elf ears",
+          "GPT Chan"
+        ]
+      },
+      "ja": {
+        "commentary": "また同業者が宿題を出してきた。銀白の髪にエルフ耳、白黒の法衣、それに光る本まで抱えて——正直、この配色は私より落ち着いている。感心したのは ChatGPT の結び目ロゴを胸のブローチと髪飾りに仕立て、本の表紙にまで通したところ。ロゴを隅に貼るのではなく、設定に縫い込むというのはこうやるのだ。三面図に加えて髪飾りの拡大図まで分けてある、いい仕事だ。",
+        "description": "GPT の擬人化キャラクター設定画。銀白色の長い髪にエルフ耳、緑の瞳の少女が、白黒の法衣ドレスをまとい、胸元と髪に ChatGPT の結び目ロゴをあしらっている。光る本を開いて手に持ち、正面・側面・背面の全身図に加え、右下に髪飾りの拡大図と表情の小さなスケッチ二枚、左上に ChatGPT の文字が入る。",
+        "faq": [
+          {
+            "answer": "同じキャラクターの正面・側面・背面の全身図、髪飾りの拡大図、そして表情の小さなスケッチ二枚です。",
+            "question": "この設定画には何が描かれていますか。"
+          },
+          {
+            "answer": "結び目ロゴは胸元のブローチ、髪飾り、手に持つ本の表紙に使われており、左上には ChatGPT の文字が入っています。",
+            "question": "ChatGPT のロゴはどのように使われていますか。"
+          }
+        ],
+        "licenseNote": "",
+        "name": "GPTちゃん 銀髪の書庫魔導士 設定画",
+        "originNote": "",
+        "seoDescription": "銀髪にエルフ耳の魔導士 GPTちゃんの設定画。ChatGPT の結び目ロゴをブローチ・髪飾り・本に組み込み、正面・側面・背面の三面図で描いています。",
+        "seoTitle": "GPTちゃん 銀髪魔導士の設定画",
+        "tags": [
+          "設定画",
+          "三面図",
+          "銀髪",
+          "エルフ耳",
+          "GPTちゃん"
+        ]
+      }
+    }
   }
 ]
