@@ -134,4 +134,4 @@ node tools/tests/migration.test.mjs --content-dir <内容仓>         # 迁移�
 
 发布脚本为依赖安装、站点构建和预压缩分别建立 systemd 内存限制。默认总内存上限为 1280 MiB，Node 堆上限为 640 MiB，Swap 上限为 512 MiB。每步开始前要求至少 1024 MiB 可用内存。`BUILD_MEMORY_MAX_MB`、`BUILD_NODE_HEAP_MB` 和 `BUILD_MIN_AVAILABLE_MB` 分别控制总内存、Node 堆和最低可用内存。`[build-memory]` 日志每 5 秒记录可用内存和构建进程组占用，结束时输出峰值；失败时保留现行 `current`。
 
-首批原图上游重命名可在 `data/blue-fish-editorial.json` 增加 `upstreamOriginalPath`（仅 `media/文件名`）：必须先核对旧、新文件 Git blob 与实际下载字节一致及新地址成功访问。此字段仅更换下载目标，不得改 `sourcePath`、冻结 ID/slug 或预览路径；自托管 `originalPath` 优先。
+首批原图上游重命名统一记录在 `data/blue-fish-original-overrides.json`：键是冻结的旧 sourcePath，值仅为经核验的新 `media/文件名`。必须核对旧、新 Git blob 与实际字节一致并验证访问成功。构建只更换原图下载目标，不改 sourcePath、ID/slug 或预览路径；自托管 originalPath 优先。该文件由源码版本控制，不放入 CMS 导出文件白名单，避免后台旧快照覆盖修复。
