@@ -4,6 +4,7 @@ import {orderWorks} from '../../../public/components/work-order.js';
 import {renderHomeCard} from './HomeCard.mjs';
 import HomeFilter from './HomeFilter.astro';
 const {galleryWorks,chars,topics,serialWorkIds}=archiveContext;
+const {activePage='home'}=Astro.props;
 const latest=orderWorks(galleryWorks).slice(0,30);
 const cards=latest.map((work,index)=>renderHomeCard(work,{eager:index<5,priority:index===0})).join('');
 ---
@@ -20,8 +21,8 @@ const cards=latest.map((work,index)=>renderHomeCard(work,{eager:index<5,priority
     </div>
     <nav class="nav-section" aria-label="图片与角色" data-i18n-attr="aria-label:d.home.imagesRoles">
       <div class="nav-label" data-i18n="d.home.imagesRoles">图片与角色</div>
-      <a aria-label="全部图片" data-i18n-attr="aria-label:d.home.allImages" aria-current="page" class="nav-item is-active" href="/"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><path d="M18 22H4a2 2 0 0 1-2-2V6"/><path d="m22 13-1.296-1.296a2.41 2.41 0 0 0-3.408 0L11 18"/><circle cx="12" cy="8" r="2"/><rect width="16" height="16" x="6" y="2" rx="2"/></svg><span data-i18n="d.home.allImages">全部图片</span></a>
-<a aria-label="角色百科" data-i18n-attr="aria-label:d.home.characters" class="nav-item" href="/characters.html"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg><span data-i18n="d.home.characters">角色百科</span></a>
+      <a aria-label="全部图片" data-i18n-attr="aria-label:d.home.allImages" aria-current={activePage==='home'?'page':undefined} class:list={['nav-item',{'is-active':activePage==='home'}]} href="/"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><path d="M18 22H4a2 2 0 0 1-2-2V6"/><path d="m22 13-1.296-1.296a2.41 2.41 0 0 0-3.408 0L11 18"/><circle cx="12" cy="8" r="2"/><rect width="16" height="16" x="6" y="2" rx="2"/></svg><span data-i18n="d.home.allImages">全部图片</span></a>
+<a aria-label="角色百科" data-i18n-attr="aria-label:d.home.characters" aria-current={activePage==='characters'?'page':undefined} class:list={['nav-item',{'is-active':activePage==='characters'}]} href="/characters.html"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg><span data-i18n="d.home.characters">角色百科</span></a>
 <a aria-label="主题合集" data-i18n-attr="aria-label:d.home.topics" class="nav-item" href="/topics.html"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg><span data-i18n="d.home.topics">主题合集</span></a>
 <a aria-label="连载漫画" data-i18n-attr="aria-label:d.home.serials" class="nav-item" href="/serials.html"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg><span data-i18n="d.home.serials">连载漫画</span></a>
 <a aria-label="视频" data-i18n-attr="aria-label:d.home.videos" class="nav-item" href="/videos.html"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><polygon points="6 3 20 12 6 21 6 3"/></svg><span data-i18n="d.home.videos">视频</span></a>
@@ -65,6 +66,7 @@ const cards=latest.map((work,index)=>renderHomeCard(work,{eager:index<5,priority
     </header>
 
     <main class="content" id="main">
+    {Astro.slots.has('default') ? <slot /> : <>
       <section class="hero">
         <div class="hero-copy">
           <div class="eyebrow"><span>AI GIRL ARCHIVE</span><i></i></div>
@@ -147,6 +149,7 @@ const cards=latest.map((work,index)=>renderHomeCard(work,{eager:index<5,priority
           <button class="share-btn" id="share" data-share-card="/index.html" type="button"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg><span data-i18n="d.home.shareCard">分享卡片</span></button>
         </div>
       </section>
+    </>}
     </main>
   </div>
 </div>

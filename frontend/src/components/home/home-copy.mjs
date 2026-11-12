@@ -1,5 +1,6 @@
 // Copy for the independently redesigned homepage; shared locale pipeline.
 export const homeCopy={
+"characterIndexLead":["从她的名字开始。{count} 个角色，许多种模样，先找到熟悉的她。", "Start with her name. {count} characters, many interpretations. Find a familiar face.", "彼女の名前から。{count}人のキャラクター、それぞれの姿。まずは気になる彼女を見つけよう。"],"characterIndexAbout":["关于这些角色", "About these characters", "キャラクターについて"],"characterIndexNotes":["本站整理社区中的 AI 产品拟人化二创。不同作品可能采用不同设计；角色别名来自现有档案，作品来源与署名请查看各自详情。", "This archive collects community fan personifications of AI products. Designs may vary between works. Aliases come from existing character records; sources and attribution are listed on each work page.", "AI製品を擬人化したコミュニティの二次創作を収録しています。デザインは作品ごとに異なります。愛称は既存の記録に基づき、出典とクレジットは各作品に掲載しています。"],"characterIndexSubmit":["为喜欢的角色投张图", "Submit art of your favorite character", "好きなキャラクターの作品を投稿"],"characterIndexCount":["{count} 件作品", "{count} works", "{count}作品"],
   "downloads":["下载最多","Most downloaded","ダウンロード順"],
   "popular":["热度最高","Most viewed","閲覧数順"],
   "statsLoading":["正在加载真实统计…","Loading statistics…","統計を読み込み中…"],
