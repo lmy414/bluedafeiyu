@@ -1,0 +1,24 @@
+---
+import {archiveContext} from '../../lib/archive.mjs';
+import {resolveCharacterPortrait} from '../archive/CharacterPortrait.mjs';
+const order=['deepseek','gemini','claude','gpt','qwen','kimi','grok','other','glm','doubao','minimax','mistral','mimo','stepfun','git','llama','perplexity','rwkv','hunyuan','novelai','huggingface','zcode','opencode','owner-picks'];
+const chars=[...archiveContext.chars].sort((a,b)=>(order.indexOf(a.id)<0?999:order.indexOf(a.id))-(order.indexOf(b.id)<0?999:order.indexOf(b.id)));
+const cards=chars.map(c=>({character:c,portrait:resolveCharacterPortrait(c,c.list[0])}));
+---
+<section class="character-index-heading">
+  <h1 data-i18n="d.home.characters">角色百科</h1>
+  <p data-i18n-tpl="d.home.characterIndexLead" data-i18n-vars={JSON.stringify({count:chars.length})}>从她的名字开始。{chars.length} 个角色，许多种模样，先找到熟悉的她。</p>
+</section>
+<div class="character-index-grid">
+  {cards.map(({character:c,portrait:{image,work}},index)=><a class="character-index-card" href={'/characters/'+c.id+'.html'}>
+    <div class="character-index-art"><img src={image?.path||work?.i||'/avatar.png'} width={image?.width||work?.w||96} height={image?.height||work?.h||96} alt={c.name} loading={index<6?'eager':'lazy'} decoding="async" /></div>
+    <h2 data-character-name={c.id} data-character-label={c.name}>{c.name}</h2>
+    <p data-i18n-tpl="d.home.characterIndexCount" data-i18n-vars={JSON.stringify({count:c.list.length.toLocaleString('en-US')})}>{c.list.length.toLocaleString('en-US')} 件作品</p>
+  </a>)}
+</div>
+<section class="character-index-about">
+  <h2 data-i18n="d.home.characterIndexAbout">关于这些角色</h2>
+  <p data-i18n="d.home.characterIndexNotes">本站整理社区中的 AI 产品拟人化二创。不同作品可能采用不同设计；角色别名来自现有档案，作品来源与署名请查看各自详情。</p>
+  <a class="btn btn-primary" href="/submit.html" data-i18n="d.home.characterIndexSubmit">为喜欢的角色投张图</a>
+</section>
+<footer class="character-index-footer"><span data-i18n="d.home.brand">蓝色大肥鱼</span><nav><a href="/about.html" data-i18n="d.home.about">关于</a><a href="/about.html#license" data-i18n="d.home.license">阅读授权说明</a></nav></footer>
