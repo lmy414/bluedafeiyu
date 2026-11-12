@@ -135,15 +135,26 @@ test('built gallery separates serial members while retaining the reader, search 
       }
     }
     const directory=read(prefix+'serials.html');
-    assert.equal(directory.querySelector('.gallery-tabs [aria-current="page"]').getAttribute('href'),'/'+prefix+'serials.html');
-    for(const route of ['browse.html','characters.html','topics.html','gifs.html'])assert.ok(read(prefix+route).querySelector(`.gallery-tabs a[href="/${prefix}serials.html"]`));
+    assert.equal(directory.querySelector('.nav-item[aria-current="page"]').getAttribute('href'),'/'+prefix+'serials.html');
+    for(const route of ['browse.html','characters.html','topics.html','gifs.html'])assert.ok(read(prefix+route).querySelector(`a[href="/${prefix}serials.html"]`));
+    const collections=read(prefix+'topics.html');
+    const cards=[...collections.querySelectorAll('[data-collection-id]')];
+    assert.deepEqual(cards.map(card=>card.getAttribute('data-collection-id')),data.topics.filter(topic=>!topic.reader).map(topic=>topic.id));
+    assert.equal(collections.querySelector('.nav-item[aria-current="page"]').getAttribute('href'),'/'+prefix+'topics.html');
+    for(const card of cards){
+      const topic=data.topics.find(topic=>topic.id===card.getAttribute('data-collection-id'));
+      assert.equal(card.getAttribute('href'),'/'+prefix+'topics/'+topic.id+'.html');
+      assert.equal(Number(JSON.parse(card.querySelector('[data-i18n-vars]').getAttribute('data-i18n-vars')).count),topic.workIds.length);
+    }
     assert.equal(directory.querySelectorAll('.comic-card').length,serials.length);
     for(const topic of serials){
       const card=directory.querySelector(`[data-comic-series="${topic.id}"]`);
       assert.equal(card.querySelector('a').getAttribute('href'),'/'+prefix+'topics/'+topic.id+'.html');
       const cover=data.works.find(work=>work.id===topic.coverWorkId);
       if(cover)assert.equal(card.querySelector('img').getAttribute('src'),cover.i);
-      if(prefix==='en/'||prefix==='ja/')assert.equal(card.querySelector('h2').textContent,topic.i18n[prefix.slice(0,-1)].name);
+      assert.ok(card.querySelector(`a[href="/${prefix}topics/${topic.id}/page/1.html"]`));
+      if(topic.reader.credits)assert.equal(card.querySelector('.serial-index-credits').textContent,topic.reader.creditsI18n?.[prefix.slice(0,-1)]||topic.reader.credits);
+      if(prefix==='en/'||prefix==='ja/')assert.equal(card.querySelector('h3').textContent,topic.i18n[prefix.slice(0,-1)].name);
       const reader=read(prefix+'topics/'+topic.id+'.html');
       assert.ok(reader.querySelector(`.breadcrumbs a[href="/${prefix}serials.html"]`));
       assert.ok(reader.querySelector(`.comic-intro-actions a[href="/${prefix}topics/${topic.id}/page/1.html"]`));

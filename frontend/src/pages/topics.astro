@@ -1,6 +1,4 @@
 ---
-import ArchivePage from "../components/archive/ArchivePage.astro";
-import { archivePages } from "../lib/archive.mjs";
-const page = archivePages.get("/topics.html");
+import CollectionIndexPage from '../components/collections/CollectionIndexPage.astro';
 ---
-<ArchivePage page={page} />
+<CollectionIndexPage kind="topics" />

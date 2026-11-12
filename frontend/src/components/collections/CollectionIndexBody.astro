@@ -1,0 +1,45 @@
+---
+import {archiveContext} from '../../lib/archive.mjs';
+import {comicPageURL} from '../archive/ComicSeries.mjs';
+const {topics,icon}=archiveContext;
+const {kind}=Astro.props;
+const serial=kind==='serials';
+const entries=topics.filter(topic=>serial?Boolean(topic.reader):!topic.reader);
+---
+<section class="collection-index-heading">
+  <h1 data-i18n={serial?'d.home.serials':'d.home.topics'}>{serial?'连载漫画':'主题合集'}</h1>
+  <p data-i18n={serial?'d.home.serialIndexLead':'d.home.topicIndexLead'}>{serial?'按原稿顺序阅读 AI 娘连载作品，从封面开始慢慢翻。':'一组作品，一种心情。从作者、视觉风格和故事里，找到下一段想逛的路。'}</p>
+</section>
+{serial?<section class="serial-index-list" aria-labelledby="serial-list-title">
+  <div class="serial-index-head"><h2 id="serial-list-title" data-i18n="d.home.publishedSerials">已上线连载</h2><span data-i18n="d.home.originalPageOrder">按原稿页码阅读</span></div>
+  <div class="comic-catalog serial-index-catalog">{entries.map((topic,index)=><article class="comic-card serial-index-card" data-comic-series={topic.id}>
+    <a class="comic-card-cover serial-index-cover" href={comicPageURL(topic.id)} aria-label={topic.name}>
+      {topic.cover?<img src={topic.cover.i} width={topic.cover.w} height={topic.cover.h} alt={topic.name} loading={index===0?'eager':'lazy'} fetchpriority={index===0?'high':undefined} decoding="async" />:<span data-i18n="d.comic.coverUnavailable">封面暂未收录</span>}
+    </a>
+    <div class="serial-index-info">
+      <div class="serial-index-tags"><b>COMIC SERIES</b><span data-i18n="d.home.originalPageOrder">按原稿页码阅读</span></div>
+      <h3><a href={comicPageURL(topic.id)}>{topic.name}</a></h3>
+      <p class="serial-index-summary">{topic.summary}</p>
+      {topic.reader.credits?<p class="serial-index-credits">{topic.reader.credits}</p>:topic.author?.name&&<p class="serial-index-credits">{topic.author.name}</p>}
+    </div>
+    <div class="serial-index-actions">
+      <p class="serial-index-count"><b>{topic.reader.totalPages}</b><span data-i18n="d.home.bodyPages">页正文</span></p>
+      {topic.reader.pages.length<topic.reader.totalPages&&<p class="comic-card-pages" data-i18n-tpl="d.home.availablePages" data-i18n-vars={JSON.stringify({count:topic.reader.pages.length,total:topic.reader.totalPages})}>已收录 {topic.reader.pages.length} / {topic.reader.totalPages} 页</p>}
+      <a class="serial-index-button primary" href={comicPageURL(topic.id,1)} data-i18n="d.home.startReading">开始阅读</a>
+      <a class="serial-index-button" href={comicPageURL(topic.id)} data-i18n="d.home.coverContents">封面与目录</a>
+    </div>
+  </article>)}</div>
+  <aside class="serial-index-note"><Fragment set:html={icon('book',20)} /><p data-i18n="d.home.serialReadingNote">连载按原稿顺序编排，封面不占正文页码。进入后可逐页阅读，也可从目录跳转。</p></aside>
+</section>:<section class="theme-index-grid" aria-label="主题合集" data-i18n-attr="aria-label:d.home.topics">
+  {entries.map((topic,index)=><a class="theme-index-card" href={'/topics/'+topic.id+'.html'} data-collection-id={topic.id}>
+    <div class="theme-index-cover">{topic.cover&&<img src={topic.cover.i} width={topic.cover.w} height={topic.cover.h} alt={topic.name} loading={index<3?'eager':'lazy'} decoding="async" />}</div>
+    <div class="theme-index-tags"><span data-i18n={topic.author?'d.home.authorTopic':'d.home.curatedTopic'}>{topic.author?'作者专题':'主题合集'}</span><span data-i18n-tpl="d.home.characterIndexCount" data-i18n-vars={JSON.stringify({count:topic.list.length})}>{topic.list.length} 件作品</span></div>
+    <h2>{topic.name}</h2>
+    {topic.author?<p class="theme-index-author">{topic.author.name}</p>:<p class="theme-index-author" data-i18n="d.home.editorPicks">站长精选</p>}
+  </a>)}
+</section>}
+{!entries.length&&<p class="collection-index-empty" data-i18n="d.home.collectionsEmpty">新的作品合集将在这里展示。</p>}
+<footer class="collection-index-footer">
+  <div><strong data-i18n="d.home.brand">蓝色大肥鱼</strong><p data-i18n="d.home.collectionFooter">非官方同人整理项目 · 作品版权归原作者所有</p><p><a href="https://weekly.xn--pssy23gqgbz2d718b.com/" target="_blank" rel="noopener noreferrer" data-i18n="d.home.weekly">AI 娘周刊 ↗</a> · <a href="https://github.com/lmy414/ai-girl-stickers" target="_blank" rel="noopener noreferrer">GitHub ↗</a></p></div>
+  <nav aria-label="页脚导航" data-i18n-attr="aria-label:d.home.footerNav"><a href="/community-projects.html" data-i18n="d.home.projects">社区项目</a><a href="/friend-links.html" data-i18n="d.home.friends">友情链接</a><a href="/about.html" data-i18n="d.home.aboutRights">关于与版权</a><a href="/changelog.html" data-i18n="d.home.log">日志</a></nav>
+</footer>
