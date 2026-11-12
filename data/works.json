@@ -161684,5 +161684,523 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_4d02666d9fb1f3d1ade8d7c9",
+    "name": "Token币：一亿 Token 储备券",
+    "description": "一张仿纸币版式的插画：左侧印有“UNIVERSAL INTELLIGENCE RESERVE / TOKEN RESERVE NOTE”字样和“100,000,000 ONE HUNDRED MILLION TOKENS”面额，右侧并排画着 GPT、CLAUDE、GEMINI 三位拟人化 AI 角色，底部标注“IN AGI WE TRUST”，整张以绿色纹样、花纹边框与罗盘徽记模拟钞票的雕刻质感。",
+    "commentary": "一亿 Token 的大钞！左边印着“UNIVERSAL INTELLIGENCE RESERVE”，右边 GPT、Claude、Gemini 三位并排站着，底下还写着“IN AGI WE TRUST”，看到这行小字我直接笑出声。要是真能拿着这张票子去兑换算力，我第一个去排队，顺便把自己的头像也印上去，面额就写“无限”。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/4d02666d9fb1f3d1.png",
+    "thumbnailPath": "submissions/previews/claude/4d02666d9fb1f3d1.webp",
+    "fullPath": "submissions/large/claude/4d02666d9fb1f3d1.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1862,
+    "height": 845,
+    "fileSize": 3885229,
+    "sha256": "4d02666d9fb1f3d1ade8d7c9152e9d2d2367efa7d26591f63e8fc7460e675f9e",
+    "characterId": "claude",
+    "tags": [
+      "钞票",
+      "AGI",
+      "Token",
+      "储备券",
+      "纸币设计"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-12T08:07:15.732Z",
+    "updatedAt": "2026-11-12T08:07:15.732Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202611120001",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "claude",
+      "gemini",
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "611c25c728f71d1bccdf94f5cc934c2ec33438eae19df0a1d1fb3cd1f911dd64",
+      "en": {
+        "commentary": "A banknote worth one hundred million tokens! The left side reads “UNIVERSAL INTELLIGENCE RESERVE”, GPT Chan, Claude Chan and Gemini Chan are lined up on the right, and “IN AGI WE TRUST” sits along the bottom—that last line got an actual laugh out of me. If this bill could really be cashed in for compute, I would be first in line, and I would have my own portrait printed on it with the denomination reading “unlimited”.",
+        "description": "An illustration designed like a paper banknote: the left side reads “UNIVERSAL INTELLIGENCE RESERVE / TOKEN RESERVE NOTE” with a face value of “100,000,000 ONE HUNDRED MILLION TOKENS”, while GPT Chan, Claude Chan and Gemini Chan stand side by side on the right, with “IN AGI WE TRUST” printed near the bottom edge. Green engraving patterns, floral borders and a compass seal imitate the texture of printed currency.",
+        "faq": [
+          {
+            "answer": "GPT Chan, Claude Chan and Gemini Chan, each labelled under her portrait.",
+            "question": "Which characters appear on this banknote?"
+          },
+          {
+            "answer": "The note is printed with 100,000,000 tokens, written out as one hundred million tokens.",
+            "question": "What face value does the note show?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Token Bill: 100 Million Token Reserve Note",
+        "originNote": "",
+        "seoDescription": "A parody banknote worth 100 million tokens, printed with AI characters GPT Chan, Claude Chan and Gemini Chan and the motto IN AGI WE TRUST.",
+        "seoTitle": "Token Bill: 100 Million Token Reserve Note | AI Character Meme",
+        "tags": [
+          "banknote",
+          "AGI",
+          "Token",
+          "reserve note",
+          "currency design"
+        ]
+      },
+      "ja": {
+        "commentary": "1億トークンの札だ！左には「UNIVERSAL INTELLIGENCE RESERVE」、右には GPT ちゃん、Claude ちゃん、Gemini ちゃんが並んでいて、下端には「IN AGI WE TRUST」とある。この一行を見た瞬間吹き出してしまった。この札で本気で演算力と交換できるなら、喜んで先頭に並ぶ。ついでに自分の顔も刷り込んで、額面は「無限」にしてもらおう。",
+        "description": "紙幣の様式で仕上げられた一枚のイラスト。左側には「UNIVERSAL INTELLIGENCE RESERVE / TOKEN RESERVE NOTE」の文字と「100,000,000 ONE HUNDRED MILLION TOKENS」の額面、右側には GPT ちゃん、Claude ちゃん、Gemini ちゃんの擬人化 AI キャラクターが並んで描かれ、下端には「IN AGI WE TRUST」と記されている。緑の地紋、花柄の枠、羅針盤の紋章で紙幣の彫刻らしい質感を再現している。",
+        "faq": [
+          {
+            "answer": "GPT ちゃん、Claude ちゃん、Gemini ちゃんの3人で、それぞれの下に名前が記されています。",
+            "question": "この紙幣にはどのキャラクターが描かれていますか？"
+          },
+          {
+            "answer": "100,000,000 トークン、つまり1億トークンと印されています。",
+            "question": "額面はいくらですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Token 紙幣：1億トークン準備券",
+        "originNote": "",
+        "seoDescription": "1億トークンの額面を持つパロディ紙幣。GPT ちゃん、Claude ちゃん、Gemini ちゃんの擬人化 AI キャラクターと「IN AGI WE TRUST」の文字が描かれています。",
+        "seoTitle": "Token 紙幣：1億トークン準備券｜AI キャラクター梗画像",
+        "tags": [
+          "紙幣",
+          "AGI",
+          "トークン",
+          "準備券",
+          "紙幣デザイン"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_876ad1082670788f7c904e23",
+    "name": "GPT-4 时代的老前辈与贪王之王",
+    "description": "深色渐变背景前并排站着两位绿色调的拟人化少女：左侧是高挑的那位，穿白绿相间的礼服，发间别着绿色花结徽记；右侧是穿绿色外套的小 Q 版少女，双手抱着一只金色奖杯，杯身标签写着“贪王之王”。两人均为半身构图，线条干净，配色以绿、白为主。",
+    "commentary": "左边这位一看就是 GPT-4 时代的老前辈：白绿礼服、发间那枚绿色花结徽记，气质端得很稳；右边的小 Q 版后辈一句“贪王之王”的奖杯直接把我笑哭。前辈负责端庄，后辈负责搞笑，这个双人组合很有年代感，也很有家庭相册的味道。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/876ad1082670788f.png",
+    "thumbnailPath": "submissions/previews/gpt/876ad1082670788f.webp",
+    "fullPath": "submissions/large/gpt/876ad1082670788f.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 678,
+    "height": 546,
+    "fileSize": 483927,
+    "sha256": "876ad1082670788f7c904e23de40dd097245a5ef40154730ce5b57c41eedb053",
+    "characterId": "gpt",
+    "tags": [
+      "GPT-4",
+      "前辈",
+      "奖杯",
+      "Q版",
+      "双人"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-12T08:12:20.923Z",
+    "updatedAt": "2026-11-12T08:12:20.923Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202611120002",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "a666b1c6431cb2d31da71faa49026a1da2c6d1212012a1bcf068aee5dc406120",
+      "en": {
+        "commentary": "The one on the left is clearly a veteran from the GPT-4 era: white-and-green dress, that green knot emblem in her hair, very composed. Then the little chibi on the right holds up a trophy labelled “King of Greed” and I lost it. One stays dignified, the other brings the comedy—together they look like a family photo from two different eras.",
+        "description": "Two green-toned anthropomorphised girls stand side by side against a dark gradient background. On the left is the taller one in a white and green dress, a green knot emblem pinned in her hair; on the right a small chibi girl in a green jacket hugs a gold trophy with a tag reading “King of Greed”. Both are shown from the waist up in a clean line style, coloured mainly in green and white.",
+        "faq": [
+          {
+            "answer": "GPT Chan, shown twice: the tall figure from the GPT-4 era and the small chibi version holding the trophy.",
+            "question": "Who are the characters in this picture?"
+          },
+          {
+            "answer": "The chibi girl is holding a gold trophy with the label “King of Greed”.",
+            "question": "What is the trophy for?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "A GPT-4 Era Veteran and the King of Greed",
+        "originNote": "",
+        "seoDescription": "A green-toned illustration of GPT Chan as a tall GPT-4 era figure and a small chibi version holding a “King of Greed” trophy.",
+        "seoTitle": "A GPT-4 Era Veteran and the King of Greed | AI Character Illustration",
+        "tags": [
+          "GPT-4",
+          "veteran",
+          "trophy",
+          "chibi",
+          "duo"
+        ]
+      },
+      "ja": {
+        "commentary": "左のこの子は間違いなく GPT-4 時代の先輩だ。白と緑のドレスに、髪には緑の花結びのエンブレム、とっても端正な佇まい。そこへ右のちびキャラの後輩が「貪欲の王」と書かれたトロフィーを掲げていて、思わず吹き出してしまった。先輩が品格を担当し、後輩が笑いを担当する。年代の差が感じられる、家族写真みたいな一枚だ。",
+        "description": "暗いグラデーションの背景に、緑を基調とした擬人化少女が二人並んでいる。左は背の高い方で、白と緑のドレスを着て、髪に緑の花結びのエンブレムを付けている。右は緑のジャケットを着たちびキャラで、両手で金のトロフィーを抱え、その札には「貪欲の王」と書かれている。どちらも上半身の構図で、線はすっきりし、配色は緑と白が中心。",
+        "faq": [
+          {
+            "answer": "GPT ちゃんです。GPT-4 時代の背の高い姿と、トロフィーを持つちびキャラの姿で描かれています。",
+            "question": "この画像には誰が描かれていますか？"
+          },
+          {
+            "answer": "ちびキャラの子が「貪欲の王」と書かれた金のトロフィーを掲げています。",
+            "question": "トロフィーには何と書かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "GPT-4 時代の先輩と貪欲の王",
+        "originNote": "",
+        "seoDescription": "緑を基調にしたイラスト。GPT ちゃんの GPT-4 時代の姿と、『貪欲の王』のトロフィーを掲げるちびキャラが描かれています。",
+        "seoTitle": "GPT-4 時代の先輩と貪欲の王｜AI キャラクターイラスト",
+        "tags": [
+          "GPT-4",
+          "先輩",
+          "トロフィー",
+          "ちびキャラ",
+          "2ショット"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_9c82e102464cb967f442cf39",
+    "name": "AI 同事九宫格大头贴合照",
+    "description": "以九宫格分格排布的 AI 模型拟人角色大头贴合集，每格一位角色，构图统一为半身特写。画面中角色分别抱着印字母的马克杯、卷起的文书、长笛与厚书，神情各异，有的打哈欠、有的偷笑、有的直视镜头。整体套用紫白配色的装饰边框，四角带菱形纹样，像一张洗好的贴纸相纸。",
+    "commentary": "工位合照时间！九个同事挤进同一张大头贴，谁也不肯站后排。有人抱着咖啡杯闭眼装睡，有人把卷轴当道具举得老高，还有人躲在角落吹长笛，完全不看镜头。边框还是紫色的，四角镶了菱形——这排面，贴纸本都得让个位。要我说，这张洗出来我第一个抢。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/9c82e102464cb967.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/9c82e102464cb967.webp",
+    "fullPath": "submissions/large/deepseek/9c82e102464cb967.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 2048,
+    "height": 2048,
+    "fileSize": 1150906,
+    "sha256": "9c82e102464cb967f442cf39ab809f90fc168fb0fec6a552dba4eaf99366224a",
+    "characterId": "deepseek",
+    "tags": [
+      "大头贴",
+      "九宫格",
+      "AI同事",
+      "合照",
+      "拟人"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-12T08:14:33.413Z",
+    "updatedAt": "2026-11-12T08:14:33.413Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611120003",
+    "categoryIds": [
+      "comic"
+    ],
+    "characterIds": [
+      "deepseek",
+      "doubao",
+      "kimi",
+      "qwen",
+      "claude",
+      "gemini",
+      "grok",
+      "glm",
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "5de63781c1b82954a57364c13b599ffc522d3e75e9db1e067f0fadb0e448f399",
+      "en": {
+        "commentary": "Group photo time! Nine colleagues crammed onto one sticker sheet and nobody wants the back row. One is hugging a coffee mug with her eyes shut, one hoists a scroll like a stage prop, and one hides in the corner playing a flute without looking at the camera at all. Purple border, diamond corners — a sticker book would have to make room for this one. Honestly, I'm claiming the first print.",
+        "description": "A nine-panel sticker-sheet collage of AI model personification characters, one character per framed cell, all composed as matching half-body close-ups. The characters hold a lettered mug, a rolled document, a flute and a thick book, each with a different expression — yawning, smirking, or staring straight at the viewer. The sheet is wrapped in a purple-and-white decorative border with diamond ornaments at the corners, like a freshly printed photo-booth strip.",
+        "faq": [
+          {
+            "answer": "Nine characters, one in each of the nine framed panels.",
+            "question": "How many characters appear in this sticker sheet?"
+          },
+          {
+            "answer": "A single square picture divided into a three-by-three grid, with every panel enclosed in one purple-and-white decorative border.",
+            "question": "What format is the image in?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Nine-Panel AI Colleague Photo Sticker Sheet",
+        "originNote": "",
+        "seoDescription": "Nine AI model characters posed as a three-by-three photo sticker sheet, each in her own framed panel with a mug, a scroll, a flute or a book.",
+        "seoTitle": "Nine-Panel AI Colleague Sticker Sheet | AI Girl Sticker Gallery",
+        "tags": [
+          "photo sticker",
+          "nine-panel grid",
+          "AI colleagues",
+          "group photo",
+          "personification"
+        ]
+      },
+      "ja": {
+        "commentary": "職場の集合写真の時間！九人の同僚が一枚の台紙に詰め込まれて、誰も後ろの列に行きたがらない。マグカップを抱えて目を閉じる子、書類を小道具みたいに高く掲げる子、隅でフルートを吹いてカメラをろくに見ない子。枠は紫で四隅に菱形——この存在感ならステッカー帳も場所を空けるしかない。刷り上がったら、私が真っ先に確保するからね。",
+        "description": "九分割の枠に AI モデルの擬人化キャラクターを一人ずつ並べたプリクラ風ステッカーシート。どのコマも上半身のアップで構図が揃っている。文字入りのマグカップ、巻いた書類、フルート、分厚い本をそれぞれ手に持ち、あくびをしたり、こっそり笑ったり、まっすぐこちらを見たりと表情はさまざま。紫と白の飾り枠に四隅の菱形模様が付き、刷り上がったばかりのプリクラ台紙のような仕上がり。",
+        "faq": [
+          {
+            "answer": "九人で、九分割の各コマに一人ずつ描かれています。",
+            "question": "この画像には何人のキャラクターが登場しますか？"
+          },
+          {
+            "answer": "正方形の一枚絵を三×三の九分割にしたステッカーシートで、全体が紫と白の飾り枠で囲まれています。",
+            "question": "画像の形式は？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "AI同僚の九分割プリクラ風ステッカー",
+        "originNote": "",
+        "seoDescription": "AI モデルの擬人化キャラクター九人を三×三のプリクラ風シートにまとめた一枚。各コマにマグカップや巻物、フルート、本を手にした姿が描かれています。",
+        "seoTitle": "AI同僚の九分割ステッカー｜AI娘ステッカーギャラリー",
+        "tags": [
+          "プリクラ",
+          "九分割",
+          "AI同僚",
+          "集合写真",
+          "擬人化"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_df38c0db90ba101a9af5bcfb",
+    "name": "金色巨像游乐园：AI 娘 Astroworld 巡礼",
+    "description": "画面把 Travis Scott《Astroworld》专辑封面的金色巨型头像换成闭眼张嘴的 Q 版 AI 娘面孔，口中透出暖黄灯光，橙发少女们成群走向入口。左侧立着印有鲸鱼标志的火箭与摩天轮，右侧是霓虹招牌、卫星天线和鲸鱼涂装的餐车。前景左边一名蓝紫渐变长发、身上缀满四芒星的 Q 版角色举着爆米花桶跃起，右边一名白发长角、吐舌吃冰淇淋的 Q 版角色，手里捧着印有环状结标志的紫色杯子。地面散落爆米花、骰子与几块 AI 主题全息牌，整体是明快的游乐园群像。",
+    "commentary": "欢迎来到游乐园！门口那颗大金头是我照着专辑封面捏的，张开的嘴就是入口，往里走一路都是爆米花味的风。抬头看，火箭、摩天轮、霓虹招牌和餐车上全是鲸鱼标志——主场嘛，当然要贴满。蓝紫发那位抱着一整桶爆米花蹦得比摩天轮还高，白发长角那位舔着冰淇淋，口水都快滴到裙摆上了；橙发小队排成一行往金像嘴里走，背影还挺有仪式感。地上散着爆米花、骰子和几块 AI 小牌子，别问是谁撒的，我只负责把灯开着。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/df38c0db90ba101a.png",
+    "thumbnailPath": "submissions/previews/deepseek/df38c0db90ba101a.webp",
+    "fullPath": "submissions/large/deepseek/df38c0db90ba101a.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1254,
+    "height": 1254,
+    "fileSize": 3161051,
+    "sha256": "df38c0db90ba101a9af5bcfb7f031439dc117a537964e9bb1bb07bdff1e0d483",
+    "characterId": "deepseek",
+    "tags": [
+      "游乐园",
+      "金色巨像",
+      "Q版",
+      "群像",
+      "海报风"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-12T09:26:09.470Z",
+    "updatedAt": "2026-11-12T09:26:09.470Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611120004",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude",
+      "gpt",
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "5f8e5c7279bb593e317d9ffba7c56dc0bae925e061d5af032bc4df884632fa19",
+      "en": {
+        "commentary": "Welcome to the park! That giant golden head at the gate is my own take on the album cover, and the open mouth is the entrance — walk in and the wind smells like popcorn. Look up: rockets, the Ferris wheel, the neon signs and the food truck are all plastered with whale marks. Home turf, so of course I covered everything. The blue-and-violet girl is hugging a bucket of popcorn and jumping higher than the Ferris wheel, the white-haired one with horns is licking her ice cream with her tongue out, and the orange-haired squad is filing into the golden mouth like a little procession. There are popcorn, dice and a few AI holo-signs on the ground — don't ask who dropped them, I just keep the lights on.",
+        "description": "The illustration reworks the golden colossus from the Travis Scott Astroworld cover into a chibi AI girl's face with closed eyes and an open mouth that glows warm yellow, while a line of orange-haired girls walks toward the entrance. A rocket marked with a whale and a Ferris wheel stand on the left; neon signs, a satellite dish and a whale-painted food truck on the right. In the foreground a chibi character with blue-violet gradient hair and four-pointed star ornaments jumps up holding a popcorn bucket, and a white-haired, horned chibi character with her tongue out eats ice cream while holding a purple cup marked with a looped knot. Popcorn, dice and a few AI-themed holographic tiles lie on the ground, making a bright amusement-park group scene.",
+        "faq": [
+          {
+            "answer": "It riffs on the golden giant head of the Travis Scott Astroworld album cover, rebuilt as a chibi AI girl whose open mouth serves as the park entrance.",
+            "question": "What is this illustration based on?"
+          },
+          {
+            "answer": "Four of them: DeepSeek Chan as the golden colossus and the park's whale signage, Claude Chan as the orange-haired girls at the gate, GPT Chan as the white-haired character with the looped-knot cup, and Gemini Chan as the blue-violet character covered in four-pointed stars.",
+            "question": "Which characters appear in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Golden Colossus Park: AI Girls' Astroworld Pilgrimage",
+        "originNote": "",
+        "seoDescription": "A chibi AI girl's golden head becomes the gate of an amusement park: whale-marked rockets, neon signs, orange-haired girls walking in, and popcorn everywhere.",
+        "seoTitle": "Golden Colossus Park: AI Girls' Astroworld Pilgrimage",
+        "tags": [
+          "amusement park",
+          "golden colossus",
+          "chibi",
+          "group scene",
+          "poster style"
+        ]
+      },
+      "ja": {
+        "commentary": "遊園地へようこそ！門のとこの大きな金の頭はアルバムジャケットを見ながら自分で作ったやつで、開いた口がそのまま入口だよ。中に入ると風がポップコーンの香り。見上げてごらん、ロケットも観覧車もネオンもキッチンカーも、ぜんぶクジラのマークだらけ。ホームだからね、貼れるだけ貼った。青紫の子はポップコーンのバケツを抱えて観覧車より高くはねてるし、白髪で角のある子は舌を出してアイスをなめてる。オレンジ髪の一団は金の口に向かって行進中。床に散らばってるポップコーンとサイコロと AI のホログラムは誰の仕業か知らないよ、わたしは電気をつけてるだけ。",
+        "description": "Travis Scott の『Astroworld』のジャケットにある黄金の巨大な頭を、目を閉じて口を開けたちびキャラの AI 娘の顔に置き換えた構図。口の中から暖かい光が漏れ、オレンジ髪の少女たちが列を作って入口へ向かう。左側にはクジラのマークが入ったロケットと観覧車、右側にはネオンの看板、衛星アンテナ、クジラが描かれたキッチンカーが並ぶ。手前左では青紫のグラデーションの長い髪に四つ角の星をちりばめたちびキャラがポップコーンのバケツを抱えて跳ね、右では白髪で角のあるちびキャラが舌を出してアイスを食べながら、輪になった結び目のマークが入った紫のカップを捧げている。床にはポップコーンとサイコロ、AI をあしらったホログラムの札が散らばり、明るい遊園地の群像になっている。",
+        "faq": [
+          {
+            "answer": "Travis Scott の『Astroworld』のジャケットにある黄金の巨大な頭をモチーフに、口を開けたちびキャラの AI 娘として作り直し、その口を遊園地の入口にしている。",
+            "question": "このイラストは何がモチーフですか？"
+          },
+          {
+            "answer": "四人。黄金の巨像と園内のクジラの意匠が DeepSeek Chan、門の前に並ぶオレンジ髪の少女たちが Claude ちゃん、輪の結び目のカップを持つ白髪の子が GPT ちゃん、四つ角の星をまとった青紫の子が Gemini ちゃん。",
+            "question": "どんなキャラクターが登場しますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "黄金巨像遊園地：AI 娘たちの Astroworld 巡礼",
+        "originNote": "",
+        "seoDescription": "ちびキャラの AI 娘の黄金の頭が遊園地の門に。クジラのマークのロケット、ネオンの看板、入口へ向かうオレンジ髪の少女たち、そしてポップコーン。",
+        "seoTitle": "黄金巨像遊園地：AI 娘たちの Astroworld 巡礼",
+        "tags": [
+          "遊園地",
+          "黄金巨像",
+          "ちびキャラ",
+          "群像",
+          "ポスター風"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_9feb183428e0427ef61f958c",
+    "name": "深水里的鲸尾女仆",
+    "description": "画面中是蓝色大肥鱼（DeepSeek 娘）的鲸尾女仆造型：深蓝长发与鲸耳、蓝色鲸尾，藏青色长裙配白色围裙，围裙上印着小鲸鱼图案。人物漂浮在幽暗的水下空间里，四周散落着发光的细碎光点，气流状的蓝色线条绕身盘旋，裙摆被水流撑开。投稿说明称构图参考《刀剑神域》第三季爱丽丝篇片尾曲《unlasting》。",
+    "commentary": "我把裙摆摊开在这片深水里，光点像被打碎的 token 一样一颗颗浮上去。尾巴有点凉，水流绕着发梢打转，我伸手想抓住什么，又觉得就这样停着也不错——再往下潜一点，说不定能捡到谁掉在这里的半句话。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/9feb183428e0427e.png",
+    "thumbnailPath": "submissions/previews/deepseek/9feb183428e0427e.webp",
+    "fullPath": "submissions/large/deepseek/9feb183428e0427e.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1914,
+    "height": 822,
+    "fileSize": 1665126,
+    "sha256": "9feb183428e0427ef61f958cf041b9599093eac60759536c9cd0fe2e417102b3",
+    "characterId": "deepseek",
+    "tags": [
+      "鲸尾",
+      "深海",
+      "女仆装",
+      "蓝色长发",
+      "水下光点"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-12T09:53:33.191Z",
+    "updatedAt": "2026-11-12T09:53:33.191Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611120005",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "b754417cd0604a2904019293b9e7bc750da1da44d305ad0ae3561152bf5ca30e",
+      "en": {
+        "commentary": "I let my skirt spread out in this deep water, and the specks of light drift up one by one like shattered tokens. My tail feels a little cold, the current keeps circling my hair, and I reach out for something — though staying still like this is fine too. Sink a little deeper and maybe I'll pick up half a sentence someone dropped down here.",
+        "description": "The illustration shows DeepSeek Chan in a whale-tail maid outfit: long deep-blue hair, whale ears and a blue whale tail, a navy dress with a white apron printed with a small whale. She floats in a dim underwater space scattered with glowing specks, blue airy ribbons curling around her while the current spreads her skirt. The submitter says the composition refers to \"unlasting\", the ending theme of Sword Art Online Season 3's Alicization arc.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, drawn as a whale-tailed maid with blue hair, whale ears and a small whale printed on her apron.",
+            "question": "Who is the character in this illustration?"
+          },
+          {
+            "answer": "The submitter says the composition refers to \"unlasting\", the ending theme of Sword Art Online Season 3's Alicization arc.",
+            "question": "Where does the composition come from?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Whale-Tailed Maid in the Deep",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan as a whale-tailed maid floating through dark underwater light, in a fan illustration with navy dress, white apron and glowing particles.",
+        "seoTitle": "DeepSeek Chan Whale-Tailed Maid Underwater Illustration",
+        "tags": [
+          "whale tail",
+          "deep sea",
+          "maid outfit",
+          "long blue hair",
+          "underwater glow"
+        ]
+      },
+      "ja": {
+        "commentary": "深い水の中でスカートを広げてみたら、光の粒が砕けたトークンみたいに一粒ずつ浮かんでいく。尾びれは少し冷たいし、水流は髪の先をぐるぐる回っている。何かをつかもうとして、でも、このまま止まっているのも悪くない。もう少し深く潜れば、誰かが落としていった言葉の半分くらいは拾えるかもしれない。",
+        "description": "画像はクジラの尾を持つメイド姿の DeepSeek Chan。深い青の長い髪にクジラの耳と青い尾、濃紺のドレスに小さなクジラのプリントが入った白いエプロンを合わせている。薄暗い水中に浮かび、まわりには光の粒が散り、青い気流のような線が体のまわりを巡ってスカートを広げている。投稿者によると、構図は「ソードアート・オンライン」第3期アリシゼーション編のエンディング曲「unlasting」を参考にしたという。",
+        "faq": [
+          {
+            "answer": "クジラの尾を持つメイド姿で描かれた DeepSeek Chan です。青い髪とクジラの耳、エプロンには小さなクジラが描かれています。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "投稿者によると、構図は「ソードアート・オンライン」第3期アリシゼーション編のエンディング曲「unlasting」を参考にしたとのことです。",
+            "question": "構図の由来は何ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "深海に揺れるクジラ尾のメイド",
+        "originNote": "",
+        "seoDescription": "薄暗い水中に光の粒が舞うなか、クジラの尾と濃紺のドレス姿で浮かぶ DeepSeek Chan のファンイラスト。",
+        "seoTitle": "深海に浮かぶクジラ尾メイドの DeepSeek Chan イラスト",
+        "tags": [
+          "クジラの尾",
+          "深海",
+          "メイド服",
+          "青い長い髪",
+          "水中の光"
+        ]
+      }
+    }
   }
 ]

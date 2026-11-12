@@ -119,7 +119,7 @@
       "avatar": "https://i0.hdslb.com/bfs/face/6f8600ad3d37069ef5106eaf96e7d5a936ba8c50.jpg",
       "i18n": {
         "en": "Daily AI four-panel comics and short animations.",
-        "ja": "毎日AI四コマ漫画やショートアニメを投稿。"
+        "ja": "毎日AIの4コマ漫画やショートアニメを投稿しています。"
       }
     },
     {
@@ -212,6 +212,31 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV16ZWX62EYn",
+      "uid": "15475629",
+      "title": "【科普向】《姐姐换工作引起的大搬家？GitLab酱才不是想跟姐姐呆在一起啦》",
+      "description": "原事件（2018-06-03～2018-06-04）：微软75亿美元收购GitHub，引发开发者“搬去GitLab”的搬家潮，GitLab导入量暴涨10倍、24小时迁入10万+仓库，而它自己还托管在微软Azure上、正往Google Cloud搬家。\n\n以下是小作文\n6月3日一大早，GitHub娘捧着猫头咖啡杯刚坐下，就看见门口排起了长队——开发者们抱着纸箱、拖着行李，箱子上贴着同一张标签：#movingtogitlab。“诶？大家要去哪儿呀？”她的章鱼触手一慌，毛线团滚了一地。\n\n隔壁小屋里，GitLab娘正安安静静地折纸小狐狸，桌上的监控屏突然“哔哔”狂响：导入量——平时的10倍！她把厚厚的版本记录本一合，狐尾炸成蒲公英：“十、十倍？！快加服务器！”一边扩容一边还不忘挂出牌子：“新搬来的，高级套餐一年打2.5折哦～”\n\n6月4日，新闻里正式官宣：75亿美元，GitHub被收购了。搬家大军更是一拥而上，24小时搬进来10万多个仓库，GitLab娘被纸箱埋到只剩一对狐耳：“屋、屋子要挤爆啦！”\n\n好不容易爬出来喘口气，她抬头一看机房门牌——“托管于：Azure”。GitHub娘端着咖啡从门口探出头，笑眯眯地说：“妹妹，你家好像也住在我新老板那儿哦～”GitLab娘满头大汗地抱起搬家箱：“我、我也正在搬家啦！”\n\n来源：\nhttps://about.gitlab.com/blog/movingtogitlab/\nhttps://news.microsoft.com/2018/06/04/microsoft-to-acquire-github-for-7-5-billion/\nhttps://thenextweb.com/news/devs-are-flooding-to-gitlab-amidst-github-microsoft-acquisition-rumors\nhttps://www.datacenterknowledge.com/cloud/how-did-gitlab-scale-up-for-the-slashdot-effect-point-and-click\n\n【Credit】\n音乐：That Game Arcade\nmoodmode · Pixabay\n图像生成：GPT Image 2.5 (Sunburst)\n视频生成：Seedance 2.0 Mini\nAI-Chan illustrations — ZipZipPipe · CC BY-NC-SA 4.0.\nDeepseek-Chan original character — 上善无形.",
+      "url": "https://www.bilibili.com/video/BV16ZWX62EYn/",
+      "cover": "https://i1.hdslb.com/bfs/archive/59790b9ef2a0ed01956fcda622f7f42b9b7b9ecd.jpg",
+      "duration": 46,
+      "publishedAt": "2026-11-12T07:40:14.000Z",
+      "characterIds": [
+        "git"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Daily AI four-panel comics and short animations.",
+          "description": "A short illustrated story about Microsoft's 2018 acquisition of GitHub and the wave of developers migrating to GitLab. Framed as two sisters, GitLab Chan sees her import traffic jump tenfold, gets buried under moving boxes while scaling up her servers, then realizes her own machines are hosted on Azure.",
+          "title": "A Big Move Because Her Sister Changed Jobs? GitLab Chan Isn't Staying Just to Be With Her Sister"
+        },
+        "ja": {
+          "creatorIntro": "毎日AIの4コマ漫画やショートアニメを投稿しています。",
+          "description": "2018年のマイクロソフトによるGitHub買収と、開発者が一斉にGitLabへ移った「#movingtogitlab」の出来事を、姉妹に見立てたキャラクターで描いたショートストーリー。GitLabちゃんはインポート数が10倍に跳ね上がり、サーバーを増やしながら段ボールの山に埋もれ、自分の環境もAzure上にあることに気づきます。",
+          "title": "お姉ちゃんの転職が大引っ越しに？GitLabちゃんはお姉ちゃんと一緒にいたいわけじゃないんだからね"
+        }
+      }
+    },
     {
       "bvid": "BV1JyW96LEqu",
       "uid": "3747573030456892",
