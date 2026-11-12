@@ -3,7 +3,7 @@ import {renderWorkCard} from './work-card.js?v=20261023-3';
 import {copyImage} from './image-copy.js?v=1';
 import {installTopicDownloads} from './topic-download.js?v=4';
 import {loadArchiveData} from './data-loader.js?v=1';
-import {matchesCreationMethod} from './creation-method.js';
+import {filterWorks} from '../components/work-filter.js';
 import {orderWorks, shuffledSlugs} from '../components/work-order.js';
 (() => {
   'use strict';
@@ -107,8 +107,7 @@ import {orderWorks, shuffledSlugs} from '../components/work-order.js';
       document.dispatchEvent(new Event('archive:filter-sync'));
       syncCharacterTabs();
       const state=getState(),scores=state.q&&searchIndex?searchIndex.search(state.q):null;
-      const characters=state.character.split(',').filter(Boolean);
-      filtered=all.filter(w=>matchesCreationMethod(w,state.creation)&&characters.every(id=>w.cids.includes(id))&&(!state.type||w.k.includes(state.type))&&(!scores||scores.has(w.id)));
+      filtered=filterWorks(all,state,{scores});
       if(state.sort==='random'&&(reshuffle||!render.randomOrder))render.randomOrder=shuffledSlugs(all);
       filtered=orderWorks(filtered,{...state,scores,metric:(id,mode)=>window.WorkStats?.metric(id,mode)||0,randomOrder:render.randomOrder});
       if(searchPage&&!state.q&&!state.character&&!state.type&&!state.creation){count.textContent=tx('d.searchPrompt','输入关键词开始查找。');result.innerHTML='';$('#search-discovery').hidden=false;$('[data-load-more]').hidden=true;$('.load-more-wrap').hidden=true;return;}
