@@ -1,5 +1,10 @@
 // Copy for the independently redesigned homepage; shared locale pipeline.
 export const homeCopy={
+  "downloads":["下载最多","Most downloaded","ダウンロード順"],
+  "popular":["热度最高","Most viewed","閲覧数順"],
+  "statsLoading":["正在加载真实统计…","Loading statistics…","統計を読み込み中…"],
+  "statsUnavailable":["统计暂不可用，已按最新收录展示。","Statistics are unavailable. Showing newest additions.","統計を取得できないため、新着順で表示しています。"],
+  "statsMeaning":["热度按浏览次数排序；下载量为下载按钮点击次数。","Popularity uses views; downloads count download-button clicks.","人気順は閲覧数、ダウンロード数はダウンロードボタンのクリック回数です。"],
   "homeLabel":["蓝色大肥鱼首页","DeepSeek Chan home","藍色大肥魚ホーム"],
   "themeLabel":["切换深色模式","Toggle dark mode","ダークモード切替"],
   "brand": [

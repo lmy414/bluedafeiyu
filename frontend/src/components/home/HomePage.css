@@ -251,3 +251,6 @@ html[data-theme="dark"]{--scroll-track:#101A21;--scroll-thumb:#425D70;--scroll-h
 .lang-option[aria-selected="false"] .lang-check{display:none}
 
 .home-page [data-home-more][hidden],.home-page [data-home-empty][hidden]{display:none}
+
+.home-sort-status{color:var(--muted);font-size:12px;margin:0 0 16px}
+.home-sort-status[hidden]{display:none}

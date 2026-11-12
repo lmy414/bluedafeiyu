@@ -13,26 +13,33 @@ export function installHomeFeed({document=globalThis.document,window=globalThis.
   const pickers=[...document.querySelectorAll('[data-filter-picker]')];
   const defaults={character:'',type:'',sort:'latest',q:''};
   const state={...defaults};
-  let all,index,shown=30,randomOrder,timer,composing=false;
+  let all,index,shown=30,randomOrder,timer,composing=false,statsReady=false,statsFallback=false;
+  const metricSort=()=>['popular','downloads'].includes(state.sort);
+  const statsStatus=document.querySelector('[data-home-sort-status]');
   const tx=(key,text,vars)=>window.SiteLang?window.SiteLang.fmt(key,text,vars):text.replace(/\{(\w+)\}/g,(_,key)=>vars?.[key]??'');
   function readURL(){
     Object.assign(state,defaults);
     const params=new URLSearchParams(window.location.search);
     for(const [key,value] of new URLSearchParams(window.location.hash.slice(1)))params.set(key,value);
     for(const key of Object.keys(state))if(params.has(key))state[key]=params.get(key);
-    if(!['latest','random'].includes(state.sort))state.sort='latest';
+    if(!['latest','random','popular','downloads'].includes(state.sort))state.sort='latest';
     if(!chips.some(chip=>chip.dataset.homeType===state.type))state.type='';
     const allowed=new Set([...document.querySelectorAll('[data-filter-picker="character"] [data-character-id]')].map(option=>option.dataset.characterId));
     state.character=[...new Set(state.character.split(',').filter(id=>allowed.has(id)))].join(',');
     query.value=state.q;
   }
   function sync(){
+    if(statsStatus){
+      statsStatus.hidden=!metricSort()&&!statsFallback;
+      statsStatus.textContent=statsFallback?tx('d.home.statsUnavailable','统计暂不可用，已按最新收录展示。'):!statsReady?tx('d.home.statsLoading','正在加载真实统计…'):tx('d.home.statsMeaning','热度按浏览次数排序；下载量为下载按钮点击次数。');
+    }
     for(const chip of chips){const active=chip.dataset.homeType===state.type;chip.classList.toggle('is-active',active);chip.setAttribute('aria-current',active?'true':'false');}
     for(const picker of pickers){
       const character=picker.dataset.filterPicker==='character';
       const selected=state.character.split(',').filter(Boolean),labels=[];
       for(const option of picker.querySelectorAll('[role=option]')){
         const value=character?option.dataset.characterId||'':new URL(option.dataset.href,window.location.href).hash.split('sort=')[1];
+        if(!character&&['popular','downloads'].includes(value))option.setAttribute('aria-disabled',String(!statsReady||!window.WorkStats?.available()));
         const active=character?(value?selected.includes(value):!selected.length):value===state.sort;
         option.setAttribute('aria-selected',String(active));if(active)labels.push(option.textContent);
       }
@@ -45,9 +52,13 @@ export function installHomeFeed({document=globalThis.document,window=globalThis.
     url.hash=params.toString();window.history.replaceState(window.history.state,'',url.href);
   }
   function render(preserveInitial=false){
+    if(metricSort()&&statsReady&&!window.WorkStats?.available()){
+      state.sort='latest';statsFallback=true;setURL();
+    }
     sync();if(!all)return;
+    if(metricSort()&&!statsReady){more.hidden=true;return;}
     const scores=state.q?index.search(state.q):null;
-    const filtered=orderWorks(filterWorks(all,state,{scores,allowGif:true}),{sort:state.sort,randomOrder});
+    const filtered=orderWorks(filterWorks(all,state,{scores,allowGif:true}),{sort:state.sort,randomOrder,metric:(id,mode)=>window.WorkStats?.metric(id,mode)||0});
     const visible=filtered.slice(0,shown);
     const sameCards=preserveInitial===true&&grid.children.length===visible.length&&visible.every((work,i)=>grid.children[i].dataset.slug===work.slug);
     if(!sameCards)grid.innerHTML=visible.map(work=>renderHomeCard(window.SiteLang?window.SiteLang.localWork(work):work,{url:href=>window.SiteLang?window.SiteLang.url(href):href,translate:tx,names:text=>window.SiteLang?window.SiteLang.contentText(text):text})).join('');
@@ -56,7 +67,7 @@ export function installHomeFeed({document=globalThis.document,window=globalThis.
     document.querySelector('[data-home-empty]').hidden=filtered.length>0;
     more.hidden=shown>=filtered.length;
   }
-  function update(){clearTimeout(timer);shown=30;setURL();render();}
+  function update(){statsFallback=false;clearTimeout(timer);shown=30;setURL();render();}
   for(const chip of chips)chip.addEventListener('click',event=>{event.preventDefault();state.type=chip.dataset.homeType;update();});
   document.querySelector('[data-home-reset]').addEventListener('click',event=>{event.preventDefault();Object.assign(state,defaults);query.value='';update();});
   more.addEventListener('click',event=>{event.preventDefault();shown+=30;render();});
@@ -66,6 +77,7 @@ export function installHomeFeed({document=globalThis.document,window=globalThis.
     const focus=option=>{option.focus({preventScroll:true});option.scrollIntoView?.({block:'nearest'});};
     const open=i=>{panel.hidden=false;button.setAttribute('aria-expanded','true');focus(options[i]);};
     const choose=option=>{
+      if(option.getAttribute('aria-disabled')==='true')return;
       if(picker.dataset.filterPicker==='character'){
         const id=option.dataset.characterId,selected=new Set(state.character.split(',').filter(Boolean));
         if(!id)selected.clear();else if(selected.has(id))selected.delete(id);else selected.add(id);
@@ -92,11 +104,20 @@ export function installHomeFeed({document=globalThis.document,window=globalThis.
   window.addEventListener('hashchange',()=>{readURL();shown=30;render();});
   document.addEventListener('site:langchange',render);
   readURL();sync();
-  const ready=load().then(data=>{
+  const statistics=(async()=>{
+    // Module/defer fetch timing can vary. Wait for deferred scripts before
+    // deciding that WorkStats is missing, then await its actual snapshot.
+    if(!window.WorkStats&&document.readyState==='loading')await new Promise(resolve=>document.addEventListener('DOMContentLoaded',resolve,{once:true}));
+    try{await window.WorkStats?.ready;}catch{}
+    statsReady=true;
+    // A pending snapshot must never repaint over a newer sort/reset choice.
+    if(metricSort())render();else sync();
+  })();
+  const ready=load().then(async data=>{
     const excluded=new Set(JSON.parse(grid.dataset.excludedIds||'[]'));
     all=data.works.filter(work=>!excluded.has(work.id));
     index=createSearchIndex(all,data.characters,{characterName:(id,name)=>window.SiteLang?window.SiteLang.characterName(id,name):name});
-    randomOrder=shuffledSlugs(all);render(true);
+    randomOrder=shuffledSlugs(all);if(metricSort())await statistics;render(true);
   }).catch(()=>{count.textContent=tx('d.loadFail','数据加载失败，请刷新页面。');});
   return {ready};
 }
