@@ -1,3 +1,4 @@
+import {localizeHome} from '../src/components/home/localize-home.mjs';
 import {workImageAlt} from '../public/components/image-alt.js';
 import {applyNativeArchives} from './native-archives.mjs';
 import {aboutCopy,aboutQuestions} from '../src/lib/about-copy.mjs';
@@ -5,6 +6,7 @@ import { videoArchive } from '../src/lib/video-archive.mjs';
 import { videoTerminology } from '../src/lib/video-terminology.mjs';
 const escape=value=>String(value||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function applyNativeContent(document,api,base,snapshot) {
+  localizeHome(document,api);
   if(api.current==='zh-Hant'){
     // Baked pages are not translated again by lang.js. Convert content image
     // alternatives and their work labels here on every route, not just roles.

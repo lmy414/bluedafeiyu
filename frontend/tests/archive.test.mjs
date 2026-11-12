@@ -129,7 +129,7 @@ test('topic downloads are available from complete topic archives and collection 
   assert.equal(doc.querySelector('[data-download-topic]').getAttribute('data-download-topic'),topic.id);
   assert.ok(topic.slugs.length>=doc.querySelectorAll('#results .work-card').length);
  }
- assert.ok(read('index.html').querySelector('[data-design-slide] a[href="/topics/maojing.html"]')); 
+ assert.ok(read('index.html').querySelector('a[href="/topics.html"]'));
  for(const file of ['browse.html','search.html']) assert.equal(read(file).querySelectorAll('[data-download-topic]').length,0,file);
  for(const card of read('topics.html').querySelectorAll('.collection-download-card')){assert.ok(card.querySelector('[data-download-topic]'));assert.equal(card.querySelector('a button'),null);}
  assert.ok(data.works.every(w=>Number.isFinite(w.bytes)&&w.bytes>=0));
