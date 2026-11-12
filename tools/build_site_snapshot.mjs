@@ -5,7 +5,7 @@
 //     categoryIds 与第一人称 commentary）。这些清单的权威副本都在本仓库 data/
 //     （内容仓库只管图片），由 tools/stage_data.mjs 先暂存进本仓库 dist/。
 // 写：dist/site-data.json、dist/site-data.js。幂等、无网络、确定性。
-//     经同文件核验的上游重命名仅由显式 upstreamOriginalPath 修正；既有投稿/owner-picks path 不改写。
+//     经同文件核验的上游重命名仅由独立 original-overrides 映射 修正；既有投稿/owner-picks path 不改写。
 
 import {upstreamOriginalPath} from "./upstream-original-path.mjs";
 import {mergeTopicSources, normalizeComicReader} from "./comic-series.mjs";
@@ -63,6 +63,7 @@ function main() {
   const editorialByPath = fs.existsSync(editorialPath)
     ? new Map(Object.entries(readJson(editorialPath)))
     : new Map();
+  const originalOverrides = readJson(path.join(DIST, "data", "blue-fish-original-overrides.json"));
   const works = [];
   const imageExists = value => /^https?:/.test(value) || fs.existsSync(path.join(DIST, decodeURIComponent(value).replace(/^\/+/, '')));
 
@@ -102,7 +103,7 @@ function main() {
       ? { thumbUrl: preview, displayUrl: preview }
       : { thumbUrl: IMAGE_PLACEHOLDER, displayUrl: IMAGE_PLACEHOLDER };
     const format = String(editorial.format || record.format || "").toLowerCase();
-    const originalUrl = editorial.originalPath ? contentRawUrl(editorial.originalPath) : rawUrl(upstreamOriginalPath(sourcePath, editorial));
+    const originalUrl = editorial.originalPath ? contentRawUrl(editorial.originalPath) : rawUrl(upstreamOriginalPath(sourcePath, originalOverrides));
     works.push({
       id: frozenEntry.id,
       slug: frozenEntry.slug,

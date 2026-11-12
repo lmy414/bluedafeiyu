@@ -47,6 +47,7 @@ const STAGE_TARGETS = [
   { from: "serial-topics.json", to: "data/serial-topics.json" },
   { from: "blue-fish-classification.json", to: "data/blue-fish-classification.json" },
   { from: "blue-fish-editorial.json", to: "data/blue-fish-editorial.json" },
+  { from: "blue-fish-original-overrides.json", to: "data/blue-fish-original-overrides.json" },
 ];
 
 function log(message) {
