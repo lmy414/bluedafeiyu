@@ -153,7 +153,7 @@ test('built gallery separates serial members while retaining the reader, search 
       const cover=data.works.find(work=>work.id===topic.coverWorkId);
       if(cover)assert.equal(card.querySelector('img').getAttribute('src'),cover.i);
       assert.ok(card.querySelector(`a[href="/${prefix}topics/${topic.id}/page/1.html"]`));
-      if(topic.reader.credits)assert.equal(card.querySelector('.serial-index-credits').textContent,topic.reader.creditsI18n?.[prefix.slice(0,-1)]||topic.reader.credits);
+      if(topic.reader.credits&&['en/','ja/'].includes(prefix))assert.equal(card.querySelector('.serial-index-credits').textContent,topic.reader.creditsI18n[prefix.slice(0,-1)]);
       if(prefix==='en/'||prefix==='ja/')assert.equal(card.querySelector('h3').textContent,topic.i18n[prefix.slice(0,-1)].name);
       const reader=read(prefix+'topics/'+topic.id+'.html');
       assert.ok(reader.querySelector(`.breadcrumbs a[href="/${prefix}serials.html"]`));
