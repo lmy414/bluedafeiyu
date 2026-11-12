@@ -52,8 +52,8 @@
       "intro": "大肥鱼和小克的同人短片",
       "avatar": "https://i0.hdslb.com/bfs/face/93118f51171662e3a60c3968f6668098f5a11387.jpg",
       "i18n": {
-        "en": "A fan short film about DeepSeek Chan and Claude Chan.",
-        "ja": "DeepSeekちゃんとClaudeちゃんの同人ショート映像。"
+        "en": "Creates fan shorts featuring DeepSeek Chan and Claude Chan.",
+        "ja": "ディープシークちゃんとクロードちゃんの同人ショートアニメを制作しています。"
       }
     },
     {
@@ -206,12 +206,67 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i1.hdslb.com/bfs/face/e11401d7d7cc97ee445d65617b48644b44f7fc42.jpg",
       "i18n": {
-        "en": "冬冰 shares short 3D animations of personified AI characters on Bilibili.",
-        "ja": "冬冰はBilibiliでAI製品の擬人化キャラクターを題材にした短編3Dアニメを投稿している。"
+        "en": "One of the site owner's designated first-batch creators; profile details are taken from the public Bilibili page and every video is reviewed individually.",
+        "ja": "サイト運営者が指定した第1期作者の一人。プロフィール情報はBilibiliの公開ページによるもので、動画は1本ずつ個別に審査している。"
       }
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1MTWR68EUC",
+      "uid": "13324467",
+      "title": "“小克，早上好”【AI全民制作人】",
+      "description": "试着更新大肥鱼和小克的Q版小剧场\n形象来自：@ZipZipPipe    @这个刀子真甜  \n\n鱼来鱼来鱼来~",
+      "url": "https://www.bilibili.com/video/BV1MTWR68EUC/",
+      "cover": "https://i1.hdslb.com/bfs/archive/c7a5b431a2e6b49cc486bb538ab292f11f21e5ee.jpg",
+      "duration": 77,
+      "publishedAt": "2026-11-12T12:40:03.000Z",
+      "characterIds": [
+        "deepseek",
+        "claude"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Creates fan shorts featuring DeepSeek Chan and Claude Chan.",
+          "description": "A chibi mini-theater short starring DeepSeek Chan and Claude Chan. Claude Chan is woken up in the morning, the two share a meal and a cafe outing, and they walk through town together until the evening street. The creator presents it as a new installment of their chibi mini-theater series and credits the original character designers.",
+          "title": "Good Morning, Claude Chan"
+        },
+        "ja": {
+          "creatorIntro": "ディープシークちゃんとクロードちゃんの同人ショートアニメを制作しています。",
+          "description": "ディープシークちゃんとクロードちゃんが登場するちびキャラの小劇場です。朝にクロードちゃんがディープシークちゃんに起こされ、一緒に食事やカフェでの時間を過ごし、夕暮れの街を歩くまでを描いた短編アニメ。作者はちびキャラ小劇場の新作として公開し、キャラクターの原型制作者をクレジットしています。",
+          "title": "クロードちゃん、おはよう"
+        }
+      }
+    },
+    {
+      "bvid": "BV1U4Wd6vEWj",
+      "uid": "44748304",
+      "title": "啊？那地上这根竹签都是狗吃的",
+      "description": "视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色形象参考来自b站up：﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿@ZipZipPipe  ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿  ﻿ ﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿@这个刀子真甜  ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿  ﻿ ﻿﻿﻿ ﻿ ﻿ ﻿ ﻿",
+      "url": "https://www.bilibili.com/video/BV1U4Wd6vEWj/",
+      "cover": "https://i0.hdslb.com/bfs/archive/91f8101d408561f0762b005bcbc93fb590b33df5.jpg",
+      "duration": 188,
+      "publishedAt": "2026-11-12T10:04:13.000Z",
+      "characterIds": [
+        "deepseek",
+        "gpt",
+        "gemini",
+        "kimi",
+        "glm"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the site owner's designated first-batch creators; profile details are taken from the public Bilibili page and every video is reviewed individually.",
+          "description": "A short comedic skit in which chibi versions of AI products — DeepSeek, GPT, Gemini, Kimi and GLM — gather around a street-side charcoal grill and talk about skewers, food and each other. The creator states the video is for entertainment only and is not a commercial or technical evaluation of any AI product, and credits the character designs to Bilibili creators.",
+          "title": "Wait, the dog ate every skewer on the ground?"
+        },
+        "ja": {
+          "creatorIntro": "サイト運営者が指定した第1期作者の一人。プロフィール情報はBilibiliの公開ページによるもので、動画は1本ずつ個別に審査している。",
+          "description": "DeepSeek、GPT、Gemini、Kimi、GLM などのAI製品をちびキャラ化した面々が、街角の炭火焼き台に集まって串焼きや食べ物、お互いのことを話すコメディ短編。作者は娯楽目的の動画であり、いずれのAI製品への商業的評価や技術的評価ではないと明記し、キャラクターデザインはBilibiliの制作者を参考にしたとしている。",
+          "title": "えっ、地面に落ちてるこの串、全部犬が食べたの？"
+        }
+      }
+    },
     {
       "bvid": "BV16ZWX62EYn",
       "uid": "15475629",

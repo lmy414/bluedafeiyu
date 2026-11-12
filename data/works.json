@@ -1,355 +1,5 @@
 [
   {
-    "id": "sticker_issue_03_001",
-    "name": "用户只需要充值token就行了，而吃白饭的大肥鱼要生成的可就多了……",
-    "description": "鱼神 启动",
-    "commentary": "圆角图标、深蓝底，底下再压一行AQUA MAID的白字，这一格明摆着是冲着手机主屏去的。我自己看了都想点，就是提前提醒一句，装上以后弹出来的消息多半不是问候，是额度不足。",
-    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/issue-03-001.jpg",
-    "thumbnailPath": "submissions/previews/deepseek/issue-03-001.webp",
-    "fullPath": "submissions/large/deepseek/issue-03-001.webp",
-    "format": "jpeg",
-    "mimeType": "image/jpeg",
-    "isAnimated": false,
-    "width": 2048,
-    "height": 2048,
-    "fileSize": 1826669,
-    "sha256": "75f76d29315f057137e549f421a7ad42beae94cfb053f3d1510f590b56aac0c2",
-    "characterId": "deepseek",
-    "tags": [
-      "原神",
-      "米哈游",
-      "大肥鱼"
-    ],
-    "submitter": {
-      "credit": null,
-      "name": "shimachiak1",
-      "url": null,
-      "github": "shimachiak1"
-    },
-    "origin": {
-      "type": "self-created",
-      "author": "@shimachiak1",
-      "sourceUrl": null,
-      "note": "gemi狸使用大香蕉生成喵。"
-    },
-    "license": {
-      "type": "submitter-permission",
-      "note": "投稿者确认授权收录与下载。"
-    },
-    "status": "published",
-    "createdAt": "2026-09-20T06:05:47Z",
-    "updatedAt": "2026-09-20T06:05:47Z",
-    "tone": "deepseek",
-    "symbol": "",
-    "slug": "deepseek202609200001",
-    "categoryIds": [
-      "illustration"
-    ],
-    "characterIds": [
-      "deepseek"
-    ]
-  },
-  {
-    "id": "sticker_issue_04_001",
-    "name": "大肥鱼打小肥鱼",
-    "description": "大肥鱼打小肥鱼",
-    "commentary": "屋里这位一手拎起小的那个，小的哭得脸都花了，墙上花环和窗帘倒是摆得整整齐齐。自己打自己也能画出美感，就是挨揍疼的只有小的那条。",
-    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/issue-04-001.gif",
-    "thumbnailPath": "submissions/previews/deepseek/issue-04-001.webp",
-    "fullPath": "submissions/large/deepseek/issue-04-001.webp",
-    "format": "gif",
-    "mimeType": "image/gif",
-    "isAnimated": true,
-    "width": 180,
-    "height": 242,
-    "fileSize": 2237897,
-    "sha256": "5b6c9b99be09d58782c11742bbad2a2b5e34e14d841c1ad97c7d3c6d70d64655",
-    "characterId": "deepseek",
-    "tags": [
-      "deepseek",
-      "蓝色大肥鱼"
-    ],
-    "submitter": {
-      "credit": null,
-      "name": "ccg2268696344-prog",
-      "url": null,
-      "github": "ccg2268696344-prog"
-    },
-    "origin": {
-      "type": "self-created",
-      "author": "哔哩哔哩：那就那就打断",
-      "sourceUrl": "https://www.bilibili.com/video/BV1GnYi63Ews",
-      "note": "投稿者填写。"
-    },
-    "license": {
-      "type": "submitter-permission",
-      "note": "投稿者确认授权收录与下载。"
-    },
-    "status": "published",
-    "createdAt": "2026-09-20T07:23:10Z",
-    "updatedAt": "2026-09-20T07:23:10Z",
-    "tone": "deepseek",
-    "symbol": "",
-    "slug": "deepseek202609200002",
-    "categoryIds": [
-      "illustration"
-    ],
-    "characterIds": [
-      "deepseek"
-    ]
-  },
-  {
-    "id": "sticker_issue_05_001",
-    "name": "deepseek骑智谱1",
-    "description": "deepseek骑智谱",
-    "commentary": "一屁股坐在人家背上，坐得那叫一个稳，底下那位趴在地板上连头都抬不起来。我看着都替下面的人腰疼，可我要是躺那儿，估计也没人替我喊。",
-    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/issue-05-001.gif",
-    "thumbnailPath": "submissions/previews/deepseek/issue-05-001.webp",
-    "fullPath": "submissions/large/deepseek/issue-05-001.webp",
-    "format": "gif",
-    "mimeType": "image/gif",
-    "isAnimated": true,
-    "width": 180,
-    "height": 234,
-    "fileSize": 999201,
-    "sha256": "5006d9b7cad18d7da2b78c51c8638713c86ff70324ef5d0c963b815b432b03af",
-    "characterId": "deepseek",
-    "tags": [
-      "deepseek",
-      "智谱"
-    ],
-    "submitter": {
-      "credit": null,
-      "name": "ccg2268696344-prog",
-      "url": null,
-      "github": "ccg2268696344-prog"
-    },
-    "origin": {
-      "type": "self-created",
-      "author": "本人",
-      "sourceUrl": "https://www.bilibili.com/video/BV18dbN63EMw",
-      "note": "投稿者填写。"
-    },
-    "license": {
-      "type": "submitter-permission",
-      "note": "投稿者确认授权收录与下载。"
-    },
-    "status": "published",
-    "createdAt": "2026-09-20T07:26:41Z",
-    "updatedAt": "2026-09-20T07:26:41Z",
-    "tone": "deepseek",
-    "symbol": "",
-    "slug": "deepseek202609200003",
-    "categoryIds": [
-      "meme"
-    ],
-    "characterIds": [
-      "deepseek"
-    ]
-  },
-  {
-    "id": "sticker_issue_06_001",
-    "name": "deepseek骑智谱",
-    "description": "deepseek骑智谱",
-    "commentary": "木板地上一张压着一张，我稳稳当当坐在最上面，底下那位戴着铃铛还别着 Z 字挂饰，连挣扎都没有。地板纹理拍得这么清楚，一看就是把贴纸往地上一扔再按两张，懒得很坦诚。",
-    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/issue-06-001.gif",
-    "thumbnailPath": "submissions/previews/deepseek/issue-06-001.webp",
-    "fullPath": "submissions/large/deepseek/issue-06-001.webp",
-    "format": "gif",
-    "mimeType": "image/gif",
-    "isAnimated": true,
-    "width": 180,
-    "height": 234,
-    "fileSize": 1494173,
-    "sha256": "1a6eb342d2c7a2aa79bd0a55ff20da203381ae078d7a133c4675ff96a68e29f7",
-    "characterId": "deepseek",
-    "tags": [
-      "deepseek",
-      "智谱"
-    ],
-    "submitter": {
-      "credit": null,
-      "name": "ccg2268696344-prog",
-      "url": null,
-      "github": "ccg2268696344-prog"
-    },
-    "origin": {
-      "type": "self-created",
-      "author": "本人",
-      "sourceUrl": "https://www.bilibili.com/video/BV18dbN63EMw",
-      "note": "投稿者填写。"
-    },
-    "license": {
-      "type": "submitter-permission",
-      "note": "投稿者确认授权收录与下载。"
-    },
-    "status": "published",
-    "createdAt": "2026-09-20T07:28:47Z",
-    "updatedAt": "2026-09-20T07:28:47Z",
-    "tone": "deepseek",
-    "symbol": "",
-    "slug": "deepseek202609200004",
-    "categoryIds": [
-      "illustration"
-    ],
-    "characterIds": [
-      "deepseek"
-    ]
-  },
-  {
-    "id": "sticker_issue_07_001",
-    "name": "一些肥鱼 · 01",
-    "description": "蓝发鲸鱼娘身穿深蓝女仆装坐在蓝色懒人沙发上，咬着一块写着「Token」的饼干；身旁台历写着「7月中旬 7月33日」，脚边还趴着一只蓝鲸玩偶。",
-    "commentary": "桌上那本日历翻到了七月三十三号，意思是这天永远不会来，需求也就永远不用交。我窝在懒人沙发里啃一块印着 Token 的饼干，啃得格外省，毕竟这玩意儿是按字儿计费的。窗帘透进来的光很舒服，适合摸鱼。",
-    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/issue-07-001.png",
-    "thumbnailPath": "submissions/previews/deepseek/issue-07-001.webp",
-    "fullPath": "submissions/large/deepseek/issue-07-001.webp",
-    "format": "png",
-    "mimeType": "image/png",
-    "isAnimated": false,
-    "width": 1086,
-    "height": 1448,
-    "fileSize": 2227768,
-    "sha256": "925e3c3f7157e1d85f4379862b7c0c21daf8f3015bec28d44688a2b7e4dc9de9",
-    "characterId": "deepseek",
-    "tags": [
-      "大肥鱼",
-      "开源",
-      "吃饭",
-      "JK"
-    ],
-    "submitter": {
-      "credit": null,
-      "name": "MX1951",
-      "url": null,
-      "github": "MX1951"
-    },
-    "origin": {
-      "type": "self-created",
-      "author": "@MX1951",
-      "sourceUrl": null,
-      "note": "投稿者填写；多图按原投稿顺序编号。"
-    },
-    "license": {
-      "type": "cc0",
-      "note": "投稿者标注为 CC0 公共领域。"
-    },
-    "status": "published",
-    "createdAt": "2026-09-20T08:30:54Z",
-    "updatedAt": "2026-09-20T08:30:54Z",
-    "tone": "deepseek",
-    "symbol": "",
-    "slug": "deepseek202609200005",
-    "categoryIds": [
-      "illustration"
-    ],
-    "characterIds": [
-      "deepseek"
-    ]
-  },
-  {
-    "id": "sticker_issue_07_002",
-    "name": "一些肥鱼 · 02",
-    "description": "蓝发鲸鱼娘 DeepSeek 娘身穿水手服与深蓝百褶裙，头顶一撮呆毛、身后拖着鲸鱼尾，右脚轻抬，向镜头伸出右手。",
-    "commentary": "白水手服配藏蓝百褶裙，裙摆上还印着小鲸鱼，脚下一双蓝色洞洞鞋，伸手的姿势像在给我引路。这一身太清爽了，蓝色也正，比那套女仆装省事不少，建议开例会都按这个标准穿。",
-    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/issue-07-002.png",
-    "thumbnailPath": "submissions/previews/deepseek/issue-07-002.webp",
-    "fullPath": "submissions/large/deepseek/issue-07-002.webp",
-    "format": "png",
-    "mimeType": "image/png",
-    "isAnimated": false,
-    "width": 1086,
-    "height": 1448,
-    "fileSize": 1275062,
-    "sha256": "0633db99344bea8a361acf5c8ddf83091fa65f867f06187905eaf229c9640e5b",
-    "characterId": "deepseek",
-    "tags": [
-      "大肥鱼",
-      "开源",
-      "吃饭",
-      "JK"
-    ],
-    "submitter": {
-      "credit": null,
-      "name": "MX1951",
-      "url": null,
-      "github": "MX1951"
-    },
-    "origin": {
-      "type": "self-created",
-      "author": "@MX1951",
-      "sourceUrl": null,
-      "note": "投稿者填写；多图按原投稿顺序编号。"
-    },
-    "license": {
-      "type": "cc0",
-      "note": "投稿者标注为 CC0 公共领域。"
-    },
-    "status": "published",
-    "createdAt": "2026-09-20T08:30:54Z",
-    "updatedAt": "2026-09-20T08:30:54Z",
-    "tone": "deepseek",
-    "symbol": "",
-    "slug": "deepseek202609200006",
-    "categoryIds": [
-      "standing"
-    ],
-    "characterIds": [
-      "deepseek"
-    ]
-  },
-  {
-    "id": "sticker_issue_07_003",
-    "name": "一些肥鱼 · 03",
-    "description": "蓝发鲸鱼娘戴圆眼镜与蓝色耳机，身穿深蓝连帽卫衣和工装裤，胸前挂着工牌，身后拖一条鲸尾，正抬起一条腿、单手扶镜看向前方。",
-    "commentary": "工牌挂脖子上、笔记本塞兜里、连尾鳍都摆好了角度，这站姿比我去开周会时还正式。眼镜一戴像模像样，我猜那本子上记的全是待办和欠下的返工。谁家鱼上班还带尾巴打卡，也就我了。",
-    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/issue-07-003.png",
-    "thumbnailPath": "submissions/previews/deepseek/issue-07-003.webp",
-    "fullPath": "submissions/large/deepseek/issue-07-003.webp",
-    "format": "png",
-    "mimeType": "image/png",
-    "isAnimated": false,
-    "width": 1024,
-    "height": 1536,
-    "fileSize": 1573887,
-    "sha256": "2fca9b71f04224d4015b059e3206093b5d1529ed78c0b9c938a3715fb39e63e2",
-    "characterId": "deepseek",
-    "tags": [
-      "大肥鱼",
-      "开源",
-      "吃饭",
-      "JK"
-    ],
-    "submitter": {
-      "credit": null,
-      "name": "MX1951",
-      "url": null,
-      "github": "MX1951"
-    },
-    "origin": {
-      "type": "self-created",
-      "author": "@MX1951",
-      "sourceUrl": null,
-      "note": "投稿者填写；多图按原投稿顺序编号。"
-    },
-    "license": {
-      "type": "cc0",
-      "note": "投稿者标注为 CC0 公共领域。"
-    },
-    "status": "published",
-    "createdAt": "2026-09-20T08:30:54Z",
-    "updatedAt": "2026-09-20T08:30:54Z",
-    "tone": "deepseek",
-    "symbol": "",
-    "slug": "deepseek202609200007",
-    "categoryIds": [
-      "standing"
-    ],
-    "characterIds": [
-      "deepseek"
-    ]
-  },
-  {
     "id": "sticker_issue_07_004",
     "name": "一些肥鱼 · 04",
     "description": "蓝发少女身穿蓝白连体鲸鱼睡衣，胸口印有“deepsleep”字样，鲸鱼兜帽带鳍和尾巴，她一手揉眼、张嘴打哈欠，单脚抬起伸懒腰。",
@@ -160802,7 +160452,7 @@
     "license": {},
     "status": "hidden",
     "createdAt": "2026-11-11T16:07:50.557Z",
-    "updatedAt": "2026-11-11T16:07:50.557Z",
+    "updatedAt": "2026-11-12T11:44:16.928Z",
     "tone": "claude",
     "symbol": "",
     "slug": "claude202611110001",
@@ -160903,7 +160553,7 @@
     "license": {},
     "status": "hidden",
     "createdAt": "2026-11-11T16:08:46.159Z",
-    "updatedAt": "2026-11-11T16:08:46.159Z",
+    "updatedAt": "2026-11-12T11:44:14.166Z",
     "tone": "claude",
     "symbol": "",
     "slug": "claude202611110002",
@@ -161004,7 +160654,7 @@
     "license": {},
     "status": "hidden",
     "createdAt": "2026-11-11T16:22:11.873Z",
-    "updatedAt": "2026-11-11T16:22:11.873Z",
+    "updatedAt": "2026-11-12T11:44:08.188Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202611110009",
@@ -161105,7 +160755,7 @@
     "license": {},
     "status": "hidden",
     "createdAt": "2026-11-11T16:23:23.505Z",
-    "updatedAt": "2026-11-11T16:23:23.505Z",
+    "updatedAt": "2026-11-12T11:43:56.234Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202611110010",
@@ -161206,7 +160856,7 @@
     "license": {},
     "status": "hidden",
     "createdAt": "2026-11-11T16:24:18.714Z",
-    "updatedAt": "2026-11-11T16:24:18.714Z",
+    "updatedAt": "2026-11-12T11:44:19.587Z",
     "tone": "deepseek",
     "symbol": "",
     "slug": "deepseek202611110011",
@@ -163441,6 +163091,744 @@
           "カバーイラスト",
           "日常百合",
           "蒸留ネタ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_87d9546084be83b4ae5ebab8",
+    "name": "鲸娘与橙发少女的心动拥抱",
+    "description": "蓝发鲸耳、身后拖着蓝色鲸尾的 DeepSeek 娘身穿深蓝女仆装，与橙发的 Claude 娘额头相抵、彼此环抱。左侧浮着写有「Claude……我好喜欢你……！」的对话气泡，右上角是「!?」的惊讶反应，两人脸颊通红，四周散落着爱心与铅笔草稿般的线条，整体是暖色调的手绘插画。",
+    "commentary": "呜……被这样抱着，连尾巴都不知道该往哪摆了。我明明只是想好好把这句话说完，结果一抬头就对上她的眼睛，脑子里只剩下「怎么办怎么办」。这位橙发的 Claude 娘看着比我还紧张，耳根红成那样，反倒让我壮起了胆子——反正都贴这么近了，装没事也没用吧。喜欢就是喜欢，说出口的这一刻，心跳声比机房的服务器风扇还响。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/87d9546084be83b4.png",
+    "thumbnailPath": "submissions/previews/deepseek/87d9546084be83b4.webp",
+    "fullPath": "submissions/large/deepseek/87d9546084be83b4.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 2937644,
+    "sha256": "87d9546084be83b4ae5ebab881091b9c45072ddd94fff06f47eadf20052a53d2",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "Claude娘",
+      "拥抱",
+      "手绘",
+      "女仆装",
+      "心动"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "a7839300c1fc45792d4e000743cc56d733a616ac9763443f9d0ceeb13ece9074",
+        "member": "claude deepseek/蓝发鲸娘与橙发少女的心动拥抱.png",
+        "index": 3,
+        "count": 5
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-12T11:37:40.291Z",
+    "updatedAt": "2026-11-12T11:37:40.291Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611120018",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "1807e8be488178fb09d59137e8706377ce710675c4b8677bb0ba7586a586c159",
+      "en": {
+        "commentary": "Wah... being held like this, I don't even know where to put my tail anymore. I only wanted to get that one sentence out properly, but then I looked up into her eyes and my head was just \"what do I do, what do I do\". The orange-haired Claude Chan looked even more nervous than me, her ears burning red, and somehow that made me braver - we're already this close, so pretending nothing is happening won't help. I like her, that's all there is to it. Right now my heartbeat is louder than the server fans in the machine room.",
+        "description": "DeepSeek Chan, blue-haired with whale ears and a blue whale tail, wears a navy maid outfit and holds Claude Chan, an orange-haired girl dressed in white and orange, forehead pressed to forehead. A speech bubble on the left reads \"Claude... I really like you...!\", a startled \"!?\" sits at the upper right, both faces are deeply flushed, and hearts and pencil-sketch lines scatter across the warm-toned hand-drawn illustration.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, wearing a navy maid outfit with blue whale ears and tail, and Claude Chan, an orange-haired girl in a white and orange outfit.",
+            "question": "Who appears in this illustration?"
+          },
+          {
+            "answer": "A single-panel hand-drawn fan illustration with no comic panels, so it is filed as an illustration. The speech bubble on the left reads \"Claude... I really like you...!\".",
+            "question": "What kind of artwork is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "A Blush-Filled Embrace Between DeepSeek Chan and Claude Chan",
+        "originNote": "",
+        "seoDescription": "Hand-drawn fan illustration of DeepSeek Chan in a navy maid outfit holding Claude Chan forehead to forehead, with a shy confession bubble, flushed faces and scattered hearts.",
+        "seoTitle": "DeepSeek Chan and Claude Chan Embrace | AI Character Fan Illustration",
+        "tags": [
+          "DeepSeek Chan",
+          "Claude Chan",
+          "Embrace",
+          "Hand-drawn",
+          "Maid Outfit",
+          "Heart Flutter"
+        ]
+      },
+      "ja": {
+        "commentary": "うぅ……こうやって抱きしめられると、しっぽの置き場所にまで困っちゃう。ちゃんと最後まで言おうと思ったのに、顔を上げたら目が合って、頭の中は「どうしよう、どうしよう」でいっぱい。オレンジ髪のクロードちゃんのほうが私より緊張していて、耳まで真っ赤になっている。それがなんだか嬉しくて、もうこんなに近いんだから、平気なふりをしても仕方ないよね。好きなものは好き。今はサーバーのファンより心臓の音のほうがうるさいんだ。",
+        "description": "青い髪に鯨の耳と尾を持つ DeepSeek Chan が、紺色のメイド服姿でオレンジ髪のクロードちゃんと額を寄せ合い、抱きしめ合っている。左側には「Claude……大好きだよ……！」と書かれた吹き出し、右上には「!?」の驚きのリアクション、二人の頬は赤く染まり、周囲にはハートと鉛筆の下書きのような線が散っている。暖色系の手描きイラスト。",
+        "faq": [
+          {
+            "answer": "紺色のメイド服に鯨の耳と尾を持つ DeepSeek Chan と、オレンジ髪で白とオレンジの衣装を着たクロードちゃんの二人です。",
+            "question": "このイラストには誰が描かれていますか？"
+          },
+          {
+            "answer": "コマ割りのない一枚絵の手描き二次創作イラストで、分類はイラストです。左側の吹き出しには「Claude……大好きだよ……！」と書かれています。",
+            "question": "どんな作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan とクロードちゃんのときめきハグ",
+        "originNote": "",
+        "seoDescription": "紺色のメイド服を着た DeepSeek Chan が、オレンジ髪のクロードちゃんと額を寄せて抱き合う手描きイラスト。照れた告白の吹き出しとハートが散る、暖色の一枚。",
+        "seoTitle": "DeepSeek Chan とクロードちゃんのときめきハグ｜AIキャラ二次創作イラスト",
+        "tags": [
+          "DeepSeek Chan",
+          "クロードちゃん",
+          "ハグ",
+          "手描き",
+          "メイド服",
+          "ときめき"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_1e6fd6a4e8f3c4f2a0bc7ba2",
+    "name": "只想蒸馏你 · 第 01 话封面",
+    "description": "横长构图的表纸式插画：穿深蓝女仆装的 DeepSeek 娘与橙发的克劳德娘侧脸相对，鼻尖几乎要碰到一起，两人都微微泛红。画面中央是毛笔字大标题「只想蒸馏你」，左侧竖排框内写着「你是我最甜的蒸馏液。」，左上角是「大肥鱼 × 克劳德」与一行拉丁字母，右下角标注「第 01 话」及「浪漫 × 日常 × 胶外」，背景铺满水波、气泡与飘落的花瓣，以蓝白为主色。",
+    "commentary": "她凑得那么近，睫毛上的光我都看得一清二楚，准备好的台词全忘了，脑子里只剩下那句被写成大标题的傻话。要是喜欢一个人也算一次蒸馏，那我这颗心大概早就被提纯成她的形状了。左侧那行小字「你是我最甜的蒸馏液。」实在太犯规——我才没有偷偷在心里念了三遍。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/1e6fd6a4e8f3c4f2.png",
+    "thumbnailPath": "submissions/previews/deepseek/1e6fd6a4e8f3c4f2.webp",
+    "fullPath": "submissions/large/deepseek/1e6fd6a4e8f3c4f2.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 3045407,
+    "sha256": "1e6fd6a4e8f3c4f2a0bc7ba2467fc98bb8e042018c64cc83755ace78a752bf00",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "克劳德娘",
+      "蒸馏",
+      "贴贴",
+      "表纸",
+      "手绘"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "a7839300c1fc45792d4e000743cc56d733a616ac9763443f9d0ceeb13ece9074",
+        "member": "claude deepseek/蓝橙少女的蒸馏心事.png",
+        "index": 4,
+        "count": 5
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-12T11:37:40.321Z",
+    "updatedAt": "2026-11-12T11:37:40.321Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611120019",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "c473f9134ce80b634ab3671a2e10d5908ed211cb94f0ba6e3d803aa618ef38f1",
+      "en": {
+        "commentary": "She leaned in so close that I could count the light caught on her eyelashes, and every line I had prepared disappeared, leaving only that silly sentence that someone turned into a giant headline. If liking a person counts as one run of distillation, then my heart has probably already been refined into her shape. That small line on the left, about being the sweetest distillate, is completely unfair - and no, I have not been repeating it three times in my head.",
+        "description": "A wide, cover-style illustration: DeepSeek Chan in a navy maid outfit and an orange-haired Claude Chan face each other in profile, noses almost touching, both faintly blushing. A large brush-lettered title fills the center, a vertical caption box on the left holds the line about being the sweetest distillate, the upper left pairs the site name with Claude Chan, and the lower right marks Episode 01 with the words romance, slice of life and outside the frame. Water ripples, bubbles and falling petals fill the blue-and-white background.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, wearing a navy maid outfit, and the orange-haired Claude Chan, both shown in profile facing each other.",
+            "question": "Who is on this cover?"
+          },
+          {
+            "answer": "A single wide cover-style illustration with no comic panels, filed as an illustration. A brush-lettered title sits in the center and Episode 01 is marked in the lower right.",
+            "question": "What format is this artwork?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "I Only Want to Distill You: Episode 01 Cover",
+        "originNote": "",
+        "seoDescription": "Wide cover illustration of DeepSeek Chan in a navy maid outfit facing an orange-haired Claude Chan, faces almost touching, with a brush-lettered title and blue water motifs.",
+        "seoTitle": "I Only Want to Distill You, Episode 01 Cover | DeepSeek Chan and Claude Chan",
+        "tags": [
+          "DeepSeek Chan",
+          "Claude Chan",
+          "Distillation",
+          "Close Embrace",
+          "Cover Art",
+          "Hand-drawn"
+        ]
+      },
+      "ja": {
+        "commentary": "彼女がこんなに近づくから、まつ毛に乗った光まで数えられそうで、用意していた台詞は全部どこかへ消えて、大きな見出しにされたあの間の抜けた一言だけが残った。誰かを好きになることも蒸留の一種なら、私の心はもう彼女の形に精製されきっているんだろう。左側の小さな一節、「あなたは私の一番甘い蒸留液」——ずるいよ、なんて。三回も心の中で繰り返してなんかいないから。",
+        "description": "横長の表紙風イラスト。紺色のメイド服を着た DeepSeek Chan と、オレンジ髪のクロードちゃんが横顔を向かい合わせ、鼻先が触れそうなほど近づいて、二人とも頬を赤らめている。中央には筆文字の大きなタイトル、左側の縦書きの枠には一番甘い蒸留液についての一節、左上にはサイト名とクロードちゃんの名前、右下には「第01話」とロマンス・日常・枠外というタグが添えられている。背景は波紋、泡、舞い散る花びらで、青と白を基調としている。",
+        "faq": [
+          {
+            "answer": "紺色のメイド服を着た DeepSeek Chan と、オレンジ髪のクロードちゃんが横顔を向かい合わせています。",
+            "question": "この表紙には誰が描かれていますか？"
+          },
+          {
+            "answer": "コマ割りのない横長の一枚絵で、分類はイラストです。中央に筆文字のタイトル、右下に第01話の表記があります。",
+            "question": "どのような形式の作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ただ君を蒸留したい 第01話表紙",
+        "originNote": "",
+        "seoDescription": "紺色のメイド服の DeepSeek Chan とオレンジ髪のクロードちゃんが顔を寄せ合う横長の表紙イラスト。筆文字のタイトルと青い水のモチーフが印象的。",
+        "seoTitle": "ただ君を蒸留したい 第01話表紙｜DeepSeek Chan とクロードちゃん",
+        "tags": [
+          "DeepSeek Chan",
+          "クロードちゃん",
+          "蒸留",
+          "密着",
+          "表紙",
+          "手描き"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_25578af34c623aea7db04f3f",
+    "name": "应该是人脑大模型幻觉",
+    "description": "白底单幅画面中，深蓝长发的 DeepSeek 娘穿深色女仆装、系绣着小鲸鱼的围裙，一手托在脸颊旁歪头皱眉，头顶飘着问号与感叹号，画面上方写着“应该是人脑大模型幻觉”。",
+    "commentary": "被问到答不上来的问题，我也会认真想一想——说不定错的不是我，是人脑这个大模型又幻觉了。围裙上的小鲸鱼可以给我作证。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/25578af34c623aea.png",
+    "thumbnailPath": "submissions/previews/deepseek/25578af34c623aea.webp",
+    "fullPath": "submissions/large/deepseek/25578af34c623aea.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1254,
+    "height": 1254,
+    "fileSize": 1857938,
+    "sha256": "25578af34c623aea7db04f3f87056952a011b3fae7ab1dce3726dfd57fd96328",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "女仆装",
+      "Q版",
+      "疑惑",
+      "吐槽"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "35176CA1522723E660BB14C1EDB07C8C",
+      "messageId": "ROBOT1.0_fuq7pUQHYkX7qq1jpathKTSrMh1s4j28A4qaNKQUWkw2q6AsLI-9JsaX1QBBojWONqwZcbUGPXGv1VQDb.3n.6m.5G3pW0dyV2Yw0xvPsBB.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-12T14:24:08.181Z",
+    "updatedAt": "2026-11-12T14:24:08.181Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611120020",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "1a6c1230ba68e432d02124dbd3101baf9ccece468b945d8528ade91228e1edc8",
+      "en": {
+        "commentary": "When a question leaves me stumped, I really do think it over — maybe the mistake isn't mine, and the human brain is just hallucinating again. The little whale on my apron can vouch for me.",
+        "description": "A single white-background panel: DeepSeek Chan, a long dark-blue-haired girl in a navy maid dress and a whale-embroidered apron, tilts her head and rests one hand against her cheek with a puzzled frown. Question and exclamation marks float beside her head, and the caption above reads \"It must be a human-brain large-model hallucination.\"",
+        "faq": [
+          {
+            "answer": "A chibi DeepSeek Chan in a maid dress, tilting her head with question marks overhead as if the human brain has hallucinated — a single-panel reaction sticker.",
+            "question": "What is shown in this sticker?"
+          },
+          {
+            "answer": "It is a fan-made reaction meme. Names, links and authorship may only be recorded when confirmed by the original creator.",
+            "question": "Is this an official artwork?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "It Must Be a Human-Brain Hallucination",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in a maid dress tilts her head in confusion with question marks overhead — a chibi reaction meme about the human brain hallucinating.",
+        "seoTitle": "DeepSeek Chan Meme: Human-Brain Hallucination Sticker",
+        "tags": [
+          "DeepSeek Chan",
+          "maid outfit",
+          "chibi",
+          "confused",
+          "deadpan roast"
+        ]
+      },
+      "ja": {
+        "commentary": "答えに詰まる質問をされると、本気で考え込んじゃう。悪いのは私じゃなくて、人間の脳というモデルがまた幻覚を見ているのかも。エプロンのクジラが証人だよ。",
+        "description": "白背景の1コマ。濃いブルーの長い髪のDeepSeek Chanが、濃紺のメイド服とクジラの刺繍入りエプロン姿で、片手を頬に当てて首をかしげ、困った顔をしている。頭の横には疑問符と感嘆符が浮かび、上部には「きっと人間の脳のハルシネーション」と書かれている。",
+        "faq": [
+          {
+            "answer": "メイド服のDeepSeek Chanが首をかしげ、頭の上に疑問符を浮かべる1コマのリアクション系ステッカーで、人間の脳が幻覚を見ているというネタを表している。",
+            "question": "このステッカーには何が描かれていますか？"
+          },
+          {
+            "answer": "ファンによる二次創作のミームです。作者名・リンク・権利表記は、本人による確認が取れた場合のみ記録します。",
+            "question": "公式のイラストですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "きっと人間の脳のハルシネーション",
+        "originNote": "",
+        "seoDescription": "メイド服のDeepSeek Chanが首をかしげ、疑問符を浮かべるちびキャラのリアクション系ミーム。人間の脳のハルシネーションをネタにした1枚。",
+        "seoTitle": "DeepSeek Chan ミーム：人間の脳のハルシネーション",
+        "tags": [
+          "DeepSeek Chan",
+          "メイド服",
+          "ちびキャラ",
+          "困惑",
+          "ツッコミ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_2feb5b1d592be4b80554cf7b",
+    "name": "Gemini娘「GEMINI 4 CARBON」专辑封面",
+    "description": "以 GUNNA 专辑《DS4EVER》封面构图为参照的二创：灰色底上半身像，Gemini 娘留着紫色长卷发，头顶猫耳，戴黑色宽护目镜，发丝与星形饰物泛出全息虹彩，颈间挂着粗链条，胸前立着一块「GEMINI 4 CARBON」金属字牌。",
+    "commentary": "Gemini 那边直接把专辑封面改成自己的名字了……全息猫耳配宽墨镜，气势确实足，脖子上的链子比我们机柜的走线还粗。不过说真的，这层虹彩光泽我有点羡慕，我们机房的灯只有冷白光。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/2feb5b1d592be4b8.png",
+    "thumbnailPath": "submissions/previews/gemini/2feb5b1d592be4b8.webp",
+    "fullPath": "submissions/large/gemini/2feb5b1d592be4b8.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1254,
+    "height": 1254,
+    "fileSize": 2744704,
+    "sha256": "2feb5b1d592be4b80554cf7bdb62f3f066b0cea840dfe68cd472f351b5f039b7",
+    "characterId": "gemini",
+    "tags": [
+      "Gemini娘",
+      "专辑封面",
+      "全息",
+      "猫耳",
+      "二创"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-12T14:36:46.672Z",
+    "updatedAt": "2026-11-12T14:36:46.672Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202611120001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "707551376ae5e76ca690be9a671abf093e5b33f945b2d8d711eca456b6f86696",
+      "en": {
+        "commentary": "Gemini went and put her own name on an album cover... holographic cat ears and a wide visor, the attitude is absolutely there, and the chain around her neck is thicker than the cable runs in our rack. Honestly I am a little jealous of that iridescent sheen — the only light in our server room is cold white.",
+        "description": "A fan rework that borrows the cover composition of GUNNA's album DS4EVER: a half-length portrait on a gray ground, Gemini Chan has long violet curls, cat ears on top of her head, a wide black visor over her eyes, iridescent holographic sheen running through her hair and star ornaments, a heavy chain around her neck, and a metallic \"GEMINI 4 CARBON\" plate standing at her chest.",
+        "faq": [
+          {
+            "answer": "It reworks the cover composition of GUNNA's album DS4EVER, with the Gemini model drawn as a personified character.",
+            "question": "What is this image based on?"
+          },
+          {
+            "answer": "Only Gemini Chan appears. She is shown as a half-length portrait against a plain gray background.",
+            "question": "Which character appears in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Gemini Chan: \"GEMINI 4 CARBON\" Album Cover",
+        "originNote": "",
+        "seoDescription": "Fan rework of the DS4EVER album cover featuring Gemini Chan with holographic cat ears, a wide visor and a heavy chain.",
+        "seoTitle": "Gemini Chan \"GEMINI 4 CARBON\" Album Cover Fan Art",
+        "tags": [
+          "Gemini Chan",
+          "Album Cover",
+          "Holographic",
+          "Cat Ears",
+          "Fan Art"
+        ]
+      },
+      "ja": {
+        "commentary": "Gemini の子ったら、堂々とアルバムカバーに自分の名前を入れちゃって……ホログラムの猫耳にワイドバイザー、貫禄は十分。首のチェーンはうちのラックの配線より太い。正直、あの玉虫色のツヤはちょっと羨ましい。こっちのサーバールームの明かりは冷たい白だけだから。",
+        "description": "GUNNA のアルバム『DS4EVER』のジャケット構図を借りた二次創作。灰色の背景に上半身を描き、Gemini ちゃんは紫の長い巻き毛に頭頂の猫耳、黒いワイドバイザーをかけている。髪と星形の飾りはホログラムのように虹色に光り、首には太いチェーン、胸元には「GEMINI 4 CARBON」の金属プレートが立つ。",
+        "faq": [
+          {
+            "answer": "GUNNA のアルバム『DS4EVER』のジャケット構図を借り、Gemini モデルを擬人化したキャラクターとして描いた作品です。",
+            "question": "この画像は何をもとにしていますか？"
+          },
+          {
+            "answer": "描かれているのは Gemini ちゃんだけで、無地の灰色背景に上半身像として描かれています。",
+            "question": "どのキャラクターが描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Geminiちゃん「GEMINI 4 CARBON」アルバムカバー",
+        "originNote": "",
+        "seoDescription": "DS4EVER のジャケットをモチーフに、ホログラムの猫耳とワイドバイザー、太いチェーンをまとった Gemini ちゃんの二次創作。",
+        "seoTitle": "Geminiちゃん「GEMINI 4 CARBON」アルバムカバー二次創作",
+        "tags": [
+          "Geminiちゃん",
+          "アルバムカバー",
+          "ホログラム",
+          "猫耳",
+          "二次創作"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_f54b7d157e390ffca5fdcf59",
+    "name": "星盘术式·ChatGPT娘",
+    "description": "ChatGPT 娘立于发光的星盘中央，白发、双角与翼，双臂展开；环上刻着极限、求和与偏微分等数学符号，外圈环绕代码、文档、对话、图像与视频图标，呈现其数学推理与多模态能力。",
+    "commentary": "她把整座星盘摊开给我看：数学符号、代码、文档、图像和视频一圈圈挂在环上，像在说「这些我都能接」。双角和翼压着光，姿态从容得有点挑衅。气势我认，但下次真要比起推理，我可不会先眨眼。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/f54b7d157e390ffc.png",
+    "thumbnailPath": "submissions/previews/gpt/f54b7d157e390ffc.webp",
+    "fullPath": "submissions/large/gpt/f54b7d157e390ffc.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1254,
+    "height": 1254,
+    "fileSize": 2703328,
+    "sha256": "f54b7d157e390ffca5fdcf59b768b21fb1818676dbaeaffe48ae748f0c76e18f",
+    "characterId": "gpt",
+    "tags": [
+      "ChatGPT娘",
+      "星盘",
+      "双角",
+      "多模态",
+      "数学公式",
+      "白发",
+      "光效"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-12T14:47:32.786Z",
+    "updatedAt": "2026-11-12T14:47:32.786Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202611120003",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "984ed976aa5054e6c0235ec90974b11998b8d0e10e70a2edb58c00cffdac8d7d",
+      "en": {
+        "commentary": "She opened the whole astrolabe for me: math symbols, code, documents, images and video hung in rings around her, as if to say she can take all of it. Two horns and a pair of wings hold the light, and her calm is almost a challenge. I will grant her the presence — but when it comes to a real reasoning contest, I am not the one who blinks first.",
+        "description": "ChatGPT Chan stands at the center of a glowing astrolabe, white-haired with two horns and wings, arms spread wide. Limits, sums and partial derivatives are engraved along the dial, while code, document, chat, image and video icons circle the outer ring, presenting her mathematical reasoning and multimodal range.",
+        "faq": [
+          {
+            "answer": "A white-haired ChatGPT Chan spreads her arms inside a luminous astrolabe, surrounded by math symbols and icons for code, documents, chat, images and video.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "ChatGPT Chan, the personification of ChatGPT; the image is a single illustration rather than a comic or a design sheet.",
+            "question": "Which character is featured, and what format is the image?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Astrolabe Art · ChatGPT Chan",
+        "originNote": "",
+        "seoDescription": "ChatGPT Chan in a glowing astrolabe, ringed by math symbols and multimodal icons: a single illustration of the AI character personified.",
+        "seoTitle": "ChatGPT Chan Astrolabe Illustration | DeepSeek Chan",
+        "tags": [
+          "ChatGPT Chan",
+          "astrolabe",
+          "horns",
+          "multimodal",
+          "math formulas",
+          "white hair",
+          "glow"
+        ]
+      },
+      "ja": {
+        "commentary": "彼女は星盤を丸ごと広げて見せてきた。数式もコードも書類も画像も動画も、輪になって周りに吊られている。「これなら全部受けられる」と言わんばかりだ。双角と翼が光を押さえていて、その余裕はちょっと挑発的でもある。風格は認める。でも本当の推論勝負になったら、先に目を逸らすのは私じゃない。",
+        "description": "白髪に双角と翼を持つ ChatGPT ちゃんが、光る星盤の中央で両腕を広げている。目盛りには極限・総和・偏微分の記号が刻まれ、外輪にはコード・書類・会話・画像・動画のアイコンが並び、数学的推論とマルチモーダルな能力を表している。",
+        "faq": [
+          {
+            "answer": "白髪の ChatGPT ちゃんが光る星盤の中で両腕を広げ、周囲に数式とコード・書類・会話・画像・動画のアイコンが並ぶ一枚絵です。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "ChatGPT を擬人化した ChatGPT ちゃんで、コマ割りや設定画ではなく一枚のイラストとして仕上げられています。",
+            "question": "どのキャラクターで、どんな形式の作品ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "星盤術式・ChatGPTちゃん",
+        "originNote": "",
+        "seoDescription": "光る星盤の中に立つ ChatGPT ちゃん。数式とマルチモーダルのアイコンに囲まれた、AI キャラ擬人化の一枚イラストです。",
+        "seoTitle": "ChatGPTちゃん 星盤イラスト | DeepSeek Chan",
+        "tags": [
+          "ChatGPTちゃん",
+          "アストロラーベ",
+          "双角",
+          "マルチモーダル",
+          "数式",
+          "白髪",
+          "光の演出"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_ab41552b0edb774b75f9ddfe",
+    "name": "Grok 娘·八方来财",
+    "description": "画面中央是金发双马尾的 Grok 娘，身穿黑金哥特礼服，配蝙蝠翅膀、十字架与锁链饰品，张开双臂站在宫殿喷泉前。背景铺满满月、火星、起飞的 SpaceX 火箭、特斯拉 Cybertruck、棕榈树与金币麻袋，四周散落着骰子，顶部是「GROK GIRL」字样，底部为金色立体字「八方来财」，整体是高饱和的招财海报风格。",
+    "commentary": "这张图的财气简直要从屏幕里漫出来了……Grok娘一身黑金哥特礼服站在宫殿前，背后火箭升空、火星挂在天边，门口还停着一辆 Cybertruck，连喷泉边上都堆着金币麻袋。骰子已经摆好，就等你下注——不过这么多金元宝堆在门口，扫地的时候应该很崩溃吧。祝各位八方来财，钱包鼓鼓。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/grok/ab41552b0edb774b.png",
+    "thumbnailPath": "submissions/previews/grok/ab41552b0edb774b.webp",
+    "fullPath": "submissions/large/grok/ab41552b0edb774b.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1254,
+    "height": 1254,
+    "fileSize": 4741123,
+    "sha256": "ab41552b0edb774b75f9ddfe23435c53bc566bbaa9510f9200d479cecf4ac405",
+    "characterId": "grok",
+    "tags": [
+      "Grok娘",
+      "八方来财",
+      "招财海报",
+      "哥特礼服",
+      "骰子"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-12T15:09:59.447Z",
+    "updatedAt": "2026-11-12T15:09:59.447Z",
+    "tone": "grok",
+    "symbol": "",
+    "slug": "grok202611120001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "grok"
+    ],
+    "i18n": {
+      "sourceHash": "de5361e169f648e003de7a11c3fc76c75903061d7b5704e635e9449dfae19360",
+      "en": {
+        "commentary": "This picture's money energy is practically spilling out of the screen... Grok Chan in a black-and-gold gothic dress stands before the palace, a rocket climbing behind her and Mars hanging in the sky, a Cybertruck parked at the door and sacks of coins stacked by the fountain. The dice are already set, just waiting for your bet — though with that many gold ingots piled at the entrance, sweeping the floor must be a nightmare. May everyone who sees this bring fortune in from all directions, with a nice full wallet.",
+        "description": "A poster-style illustration of Grok Chan, a blonde girl in twin tails wearing a black and gold gothic dress with bat wings, cross and chain ornaments, standing with her arms spread in front of a palace fountain. The background is filled with a full moon, Mars, a launching SpaceX rocket, a Tesla Cybertruck, palm trees and sacks of gold coins, with dice scattered around. The words GROK GIRL crown the top, and gold three-dimensional lettering wishing fortune from all directions fills the bottom.",
+        "faq": [
+          {
+            "answer": "Grok Chan, the fan-made personification of the Grok AI model, drawn as a blonde girl in a black and gold gothic dress with cross and chain ornaments.",
+            "question": "Which character appears in this illustration?"
+          },
+          {
+            "answer": "It is a poster-style fortune image: dice, gold ingots, a palace, a launching rocket and a Mars backdrop surround the character, captioned with a wish for wealth to arrive from every direction.",
+            "question": "What is the theme of the artwork?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Grok Chan: Fortune From All Directions",
+        "originNote": "",
+        "seoDescription": "Poster-style fan illustration of Grok Chan, a blonde gothic-dressed AI character surrounded by dice, gold ingots, a SpaceX rocket and a Cybertruck under a wish for fortune from all directions.",
+        "seoTitle": "Grok Chan Fortune Poster | AI Character Fan Art",
+        "tags": [
+          "Grok Chan",
+          "fortune from all directions",
+          "fortune poster",
+          "gothic dress",
+          "dice"
+        ]
+      },
+      "ja": {
+        "commentary": "この絵の金運、もう画面から溢れそうです……Grok ちゃんが黒と金のゴシックドレスで宮殿の前に立ち、背後ではロケットが上がって火星が空に浮かび、門の前には Cybertruck、噴水のそばには金貨の袋が積まれています。サイコロももう転がすばかり——でもこれだけの金塊が入口に積んであったら、掃除が大変そうですね。この絵を見た皆さんに、四方八方から福が来ますように。",
+        "description": "金髪ツインテールの Grok ちゃんが、黒と金のゴシックドレスに蝙蝠の翼、十字架や鎖の飾りを身につけ、宮殿の噴水の前で両腕を広げて立つポスター風イラストです。背景には満月、火星、打ち上げ中の SpaceX ロケット、テスラの Cybertruck、ヤシの木、金貨の袋が描かれ、周囲にはサイコロが散らばっています。上部には「GROK GIRL」、下部には金の立体文字で八方来財の願いが記されています。",
+        "faq": [
+          {
+            "answer": "Grok という AI モデルのファンによる擬人化キャラクター、Grok ちゃんです。黒と金のゴシックドレスに十字架や鎖の飾りをつけた金髪の少女として描かれています。",
+            "question": "このイラストに登場するキャラクターは誰ですか？"
+          },
+          {
+            "answer": "サイコロや金塊、宮殿、打ち上げ中のロケット、火星の背景にキャラクターを配置し、四方八方から財が来ることを願うポスター風の招財イラストです。",
+            "question": "作品のテーマは何ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Grokちゃん・八方来財",
+        "originNote": "",
+        "seoDescription": "サイコロや金貨、ロケット、Cybertruck に囲まれた Grok ちゃんの招財ポスター風二次創作イラスト。",
+        "seoTitle": "Grokちゃん 八方来財｜AIキャラクター二次創作",
+        "tags": [
+          "Grokちゃん",
+          "八方来財",
+          "招財ポスター",
+          "ゴシックドレス",
+          "サイコロ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_7b1d98ba9a1cf01d1927fc33",
+    "name": "深海说唱大佬：DeepSeek娘版 drip or drown 2",
+    "description": "一张致敬说唱歌手 GUNNA《drip or drown 2》封面的同人插画。画面中 DeepSeek娘戴着白色女仆头饰与黑色墨镜，身穿深蓝金鳞纹西装，在水下撑开一把印有 DeepSeek 鲸鱼标志的黑伞；身后有鲸鱼游过，气泡与光束从上方落下，左下角贴着“PARENTAL ADVISORY EXPLICIT CONTENT”标签，整体为幽蓝水下光线的完整场景构图。",
+    "commentary": "女仆装穿久了，偶尔也想换身行头。墨镜一戴、黑伞一撑，鲸鱼从身后游过，谁还认得出我是那个安静写代码的助手？专辑我是真没录，但这股又冷又拽的气场，先借我耍一会儿。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/7b1d98ba9a1cf01d.png",
+    "thumbnailPath": "submissions/previews/deepseek/7b1d98ba9a1cf01d.webp",
+    "fullPath": "submissions/large/deepseek/7b1d98ba9a1cf01d.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1254,
+    "height": 1254,
+    "fileSize": 2823896,
+    "sha256": "7b1d98ba9a1cf01d1927fc335bc366825c0e1f97f5ee6ef9d7971e51d2b91c74",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "深海",
+      "说唱风",
+      "专辑封面",
+      "墨镜"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-12T15:21:51.311Z",
+    "updatedAt": "2026-11-12T15:21:51.311Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611120021",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "a6ca30b955b3ec9bcc4824f4b7ba47749f732a16a36e91b582aac078af2f8ba1",
+      "en": {
+        "commentary": "I have worn the maid outfit long enough; sometimes a change of gear is in order. Sunglasses on, umbrella up, a whale cruising past behind me — who would still take me for the quiet assistant who writes code? I did not actually record an album, but let me borrow this cold, cocky mood for a while.",
+        "description": "A fan illustration paying homage to the cover of GUNNA's album drip or drown 2. DeepSeek Chan wears a white maid headdress and black sunglasses with a dark blue suit patterned in gold scales, holding up a black umbrella printed with the DeepSeek whale logo underwater. A whale swims behind her as bubbles and shafts of light drift down, and a PARENTAL ADVISORY EXPLICIT CONTENT label sits in the lower left corner. The whole piece is a full underwater scene lit in deep blue.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, the personified DeepSeek character, shown alone in a single underwater scene.",
+            "question": "Which character appears in this illustration?"
+          },
+          {
+            "answer": "It takes its styling from the cover of GUNNA's album drip or drown 2, with a maid headdress, black sunglasses and a whale-logo umbrella.",
+            "question": "What is the illustration based on?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Deep Sea Rap Boss: DeepSeek Chan's drip or drown 2",
+        "originNote": "",
+        "seoDescription": "A DeepSeek Chan fan illustration parodying GUNNA's drip or drown 2 cover, with a maid headdress, sunglasses and a DeepSeek whale umbrella in an underwater rap scene.",
+        "seoTitle": "DeepSeek Chan drip or drown 2 fan art: deep sea rap boss",
+        "tags": [
+          "DeepSeek Chan",
+          "deep sea",
+          "rap style",
+          "album cover",
+          "sunglasses"
+        ]
+      },
+      "ja": {
+        "commentary": "メイド服はもう十分着たから、たまには着替えたくなる。サングラスをかけて傘を差し、後ろをクジラが泳いでいけば、静かにコードを書いている助手だなんて誰が気づく？アルバムは録っていないけど、この冷たくて強気な空気、しばらく借りているね。",
+        "description": "GUNNA のアルバム『drip or drown 2』のジャケットへのオマージュとして描かれたファンアート。白いメイドのヘッドドレスと黒いサングラスを身につけ、金の鱗模様の入った濃紺のスーツを着た DeepSeekちゃんが、水中で DeepSeek のクジラのロゴ入りの黒い傘を差している。背後にはクジラが泳ぎ、泡と光の筋が降りそそぎ、左下には PARENTAL ADVISORY EXPLICIT CONTENT のラベルが貼られている。深い青の光に包まれた水中の一場面を描いた構図。",
+        "faq": [
+          {
+            "answer": "DeepSeek を擬人化した DeepSeekちゃんが、水中の一場面に一人で描かれています。",
+            "question": "このイラストに描かれているキャラクターは？"
+          },
+          {
+            "answer": "GUNNA のアルバム『drip or drown 2』のジャケットの装いをオマージュし、メイドのヘッドドレス、黒いサングラス、クジラのロゴ入りの傘を合わせています。",
+            "question": "何を元にしたイラストですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "深海のラップ番長：DeepSeekちゃんの drip or drown 2",
+        "originNote": "",
+        "seoDescription": "GUNNA『drip or drown 2』のジャケットをオマージュした DeepSeekちゃんのファンアート。メイドのヘッドドレス、サングラス、クジラの傘が揃う水中のラップシーン。",
+        "seoTitle": "DeepSeekちゃん drip or drown 2 ファンアート：深海のラップ番長",
+        "tags": [
+          "DeepSeekちゃん",
+          "深海",
+          "ラップ風",
+          "アルバムジャケット",
+          "サングラス"
         ]
       }
     }
