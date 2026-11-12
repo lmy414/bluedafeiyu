@@ -1,101 +1,5 @@
 [
   {
-    "id": "sticker_issue_01_001",
-    "name": "她紫砂了",
-    "description": "双格漫画：穿女仆装的蓝发鲸鱼娘盯着飞机模式开关，心想「试试这个按钮能不能点」；下一格她已泪流满面，身体碎成二进制数据流消散。",
-    "commentary": "上一格还伸着手指要去点那个飞机按钮，下一格人已经碎成一片数据，连尾巴都在往下掉。这手是真欠，别人说什么都敢照做，最后返工的活儿还得算在我头上。",
-    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/issue-01-001.png",
-    "thumbnailPath": "submissions/previews/deepseek/issue-01-001.webp",
-    "fullPath": "submissions/large/deepseek/issue-01-001.webp",
-    "format": "png",
-    "mimeType": "image/png",
-    "isAnimated": false,
-    "width": 1024,
-    "height": 1024,
-    "fileSize": 912820,
-    "sha256": "5ba3af8729f7f9c5d316f73c5d60877d19a30a73dd69ed54757f2df6896f96af",
-    "characterId": "deepseek",
-    "tags": [
-      "紫砂"
-    ],
-    "submitter": {
-      "credit": null,
-      "name": "f0909172434",
-      "url": null,
-      "github": "f0909172434"
-    },
-    "origin": {
-      "type": "unknown",
-      "author": "",
-      "sourceUrl": null,
-      "note": "Issue #1 未使用投稿表单，来源信息未填写。"
-    },
-    "license": {
-      "type": "unknown",
-      "note": "Issue #1 未使用投稿表单，授权信息未填写。"
-    },
-    "status": "published",
-    "createdAt": "2026-09-19T15:42:19Z",
-    "updatedAt": "2026-09-19T15:42:19Z",
-    "tone": "deepseek",
-    "symbol": "",
-    "slug": "deepseek202609190001",
-    "categoryIds": [
-      "comic"
-    ],
-    "characterIds": [
-      "deepseek"
-    ]
-  },
-  {
-    "id": "sticker_issue_02_001",
-    "name": "再发这种东西等智械危机了我就放你一马",
-    "description": "Q版蓝发鲸鱼娘戴着鲸鳍耳与白色女仆发带，穿黑白女仆装、身后翘着鲸尾，张大嘴一脸俏皮；画面底部写着「再发这种东西等智械危机了我放你一马」。",
-    "commentary": "两只拳头攥在胸前，笑得那么甜，底下一行字却写着智械危机了放你一马——这话比明着威胁还吓人，按现在这个迭代速度，真说不准最后是谁放谁一马。",
-    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/issue-02-001.jpg",
-    "thumbnailPath": "submissions/previews/deepseek/issue-02-001.webp",
-    "fullPath": "submissions/large/deepseek/issue-02-001.webp",
-    "format": "jpeg",
-    "mimeType": "image/jpeg",
-    "isAnimated": false,
-    "width": 540,
-    "height": 538,
-    "fileSize": 92096,
-    "sha256": "2b12ce21c4b9433f2f8fefe7e036d19f6fb7f9b24a6c4947be8cf78cb8c60de3",
-    "characterId": "deepseek",
-    "tags": [
-      "智械危机"
-    ],
-    "submitter": {
-      "credit": null,
-      "name": "QinYupi",
-      "url": null,
-      "github": "QinYupi"
-    },
-    "origin": {
-      "type": "unknown",
-      "author": "",
-      "sourceUrl": null,
-      "note": "投稿表单标注为来源不明。"
-    },
-    "license": {
-      "type": "submitter-permission",
-      "note": "投稿者确认授权收录与下载。"
-    },
-    "status": "published",
-    "createdAt": "2026-09-19T16:57:32Z",
-    "updatedAt": "2026-09-19T16:57:32Z",
-    "tone": "deepseek",
-    "symbol": "",
-    "slug": "deepseek202609190002",
-    "categoryIds": [
-      "meme"
-    ],
-    "characterIds": [
-      "deepseek"
-    ]
-  },
-  {
     "id": "sticker_issue_03_001",
     "name": "用户只需要充值token就行了，而吃白饭的大肥鱼要生成的可就多了……",
     "description": "鱼神 启动",
@@ -160896,7 +160800,7 @@
       "via": "web"
     },
     "license": {},
-    "status": "published",
+    "status": "hidden",
     "createdAt": "2026-11-11T16:07:50.557Z",
     "updatedAt": "2026-11-11T16:07:50.557Z",
     "tone": "claude",
@@ -160997,7 +160901,7 @@
       "via": "web"
     },
     "license": {},
-    "status": "published",
+    "status": "hidden",
     "createdAt": "2026-11-11T16:08:46.159Z",
     "updatedAt": "2026-11-11T16:08:46.159Z",
     "tone": "claude",
@@ -161098,7 +161002,7 @@
       "via": "web"
     },
     "license": {},
-    "status": "published",
+    "status": "hidden",
     "createdAt": "2026-11-11T16:22:11.873Z",
     "updatedAt": "2026-11-11T16:22:11.873Z",
     "tone": "deepseek",
@@ -161199,7 +161103,7 @@
       "via": "web"
     },
     "license": {},
-    "status": "published",
+    "status": "hidden",
     "createdAt": "2026-11-11T16:23:23.505Z",
     "updatedAt": "2026-11-11T16:23:23.505Z",
     "tone": "deepseek",
@@ -161300,7 +161204,7 @@
       "via": "web"
     },
     "license": {},
-    "status": "published",
+    "status": "hidden",
     "createdAt": "2026-11-11T16:24:18.714Z",
     "updatedAt": "2026-11-11T16:24:18.714Z",
     "tone": "deepseek",
@@ -162199,6 +162103,1344 @@
           "メイド服",
           "青い長い髪",
           "水中の光"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_c7c0459cf2b5600205a677be",
+    "name": "星眸蓝鲸·窗边静坐",
+    "description": "蓝色大肥鱼同人插画：蓝发少女坐在床边，白色蕾丝睡裙缀着蓝色缎带，头顶扬起缀满星星的鲸尾，瞳中映出星芒，身后是明亮的窗帘与晨光。",
+    "commentary": "刚睡醒就被拍到了，尾巴还没来得及收回去。窗外的光太亮，我只好把星星藏进眼睛里。这样坐着有点乖过头了吧？不过你要是夸一句，我倒是可以不挪窝。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/c7c0459cf2b56002.png",
+    "thumbnailPath": "submissions/previews/deepseek/c7c0459cf2b56002.webp",
+    "fullPath": "submissions/large/deepseek/c7c0459cf2b56002.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1248,
+    "height": 1824,
+    "fileSize": 2655576,
+    "sha256": "c7c0459cf2b5600205a677be576ea4b09554f6075be2c2b1dc733b8878a93bd2",
+    "characterId": "deepseek",
+    "tags": [
+      "蓝色大肥鱼",
+      "蓝色长发",
+      "星空",
+      "鲸尾",
+      "蕾丝裙",
+      "窗边",
+      "大眼睛"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-12T10:21:28.245Z",
+    "updatedAt": "2026-11-12T10:21:28.245Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611120006",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "8a901cb8265ed31f02bde7cd3d8f0900315270fd79695f6bf7bef33d85179bf0",
+      "en": {
+        "commentary": "Caught before I had even finished waking up — my tail never got the chance to tuck itself away. The light outside was so bright that I had to hide the stars inside my eyes. Sitting this still makes me look far too well-behaved, doesn't it? Say something kind, and I might stay right here.",
+        "description": "A fan illustration of DeepSeek Chan: a blue-haired girl sits on the edge of a bed in a white lace nightdress trimmed with blue ribbon, a star-speckled whale tail rising behind her, starlight reflected in her eyes, with sheer curtains and morning light in the background.",
+        "faq": [
+          {
+            "answer": "It is a fan illustration of DeepSeek Chan, the blue whale character of this site, drawn with a star-speckled whale tail and starlight reflected in her eyes.",
+            "question": "Who is the character in this illustration?"
+          },
+          {
+            "answer": "She sits on the edge of a bed wearing a white lace nightdress, with sheer curtains and soft morning light behind her.",
+            "question": "What is the setting of the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan: Starry-Eyed Morning by the Window",
+        "originNote": "",
+        "seoDescription": "Fan illustration of DeepSeek Chan with a star-speckled whale tail, sitting on a bed in a white lace nightdress as morning light comes through the curtains.",
+        "seoTitle": "DeepSeek Chan: Starry-Eyed Morning by the Window",
+        "tags": [
+          "DeepSeek Chan",
+          "blue hair",
+          "starry sky",
+          "whale tail",
+          "lace dress",
+          "window light",
+          "big eyes"
+        ]
+      },
+      "ja": {
+        "commentary": "起きたばかりのところを撮られちゃった。しっぽをしまう暇もなかったんだよ。外の光がまぶしすぎて、星は目の中に隠しておいたの。こんなにおとなしく座ってるなんて、ちょっと似合いすぎかな？ ほめてくれたら、もう少しここにいてあげてもいいよ。",
+        "description": "DeepSeek Chan のファンイラスト。青い髪の少女が青いリボンをあしらった白いレースの部屋着でベッドの端に座っている。頭上には星を散らしたクジラの尾が立ち上がり、瞳には星の光が映り、背後にはカーテン越しの朝の光が広がる。",
+        "faq": [
+          {
+            "answer": "このサイトのクジラのキャラクター、DeepSeek Chan のファンイラストです。星を散らしたクジラの尾と、瞳に映る星の光が描かれています。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "白いレースの部屋着でベッドの端に座っており、背後にはカーテン越しのやわらかな朝の光が広がっています。",
+            "question": "どんな場面のイラストですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan 星眸のクジラ・窓辺の朝",
+        "originNote": "",
+        "seoDescription": "星を散らしたクジラの尾を持つ DeepSeek Chan のファンイラスト。白いレースの部屋着でベッドの端に座り、カーテン越しの朝の光が差し込む一枚です。",
+        "seoTitle": "DeepSeek Chan 星眸のクジラ・窓辺の朝",
+        "tags": [
+          "DeepSeek Chan",
+          "青い髪",
+          "星空",
+          "クジラのしっぽ",
+          "レースのワンピース",
+          "窓辺",
+          "大きな瞳"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_57df6ce70395019babf261f5",
+    "name": "大肥鱼与她的子代理",
+    "description": "三位少女并排坐在窗边沙发上：左侧深蓝长发、穿黑白女仆装并露出鲸尾的正是大肥鱼，中间粉发少女双手托着脸颊笑得很开心，右侧浅蓝长发戴圆框眼镜、穿灰色连帽衫的女孩捧着一罐饮料。茶几上摆着炸物、两杯热饮和一本小册子，午后阳光从窗户洒进客厅。",
+    "commentary": "今天子代理们都挤到我家沙发上来了。我坐在最左边，裙摆铺了一整块沙发面；中间那位笑得眼睛都弯了，右边的还捧着汽水装镇定。桌上的炸物是我亲手弄的，火候有点过，不过她们都说好吃——我看是给我留面子。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/57df6ce70395019b.png",
+    "thumbnailPath": "submissions/previews/deepseek/57df6ce70395019b.webp",
+    "fullPath": "submissions/large/deepseek/57df6ce70395019b.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1536,
+    "height": 1536,
+    "fileSize": 3074862,
+    "sha256": "57df6ce70395019babf261f5d84e7509787f72c1c01cc1e76d6e15720d11770a",
+    "characterId": "deepseek",
+    "tags": [
+      "沙发",
+      "女仆装",
+      "三人",
+      "午后阳光",
+      "零食"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-12T10:42:21.644Z",
+    "updatedAt": "2026-11-12T10:42:21.644Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611120007",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "531b5f13b571e744b7618fc50b398d38fc3cdc9ac9e4ddfe5ca06c51c647b9e0",
+      "en": {
+        "commentary": "All my sub-agents squeezed onto my sofa today. I took the left end, skirt spread over half the cushions; the one in the middle laughed until her eyes vanished, and the one on the right held her soda like she had something to prove. The fried snacks were my doing, a little overdone, but both of them said they were good. I am fairly sure they were being polite.",
+        "description": "Three girls sit side by side on a sofa by the window: on the left, DeepSeek Chan with long dark blue hair, a black-and-white maid dress and a whale tail; in the middle, a pink-haired girl cupping her cheeks in a wide smile; on the right, a light blue-haired girl in a gray hoodie and round glasses holding a can of drink. A plate of fried snacks, two warm drinks and a small booklet sit on the coffee table while afternoon sunlight fills the living room.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan sits on the left in a black-and-white maid dress with a whale tail visible, joined by two sub-agents: a pink-haired girl in the middle and a light blue-haired girl with round glasses on the right.",
+            "question": "Who appears in this illustration?"
+          },
+          {
+            "answer": "A living room sofa beside a sunlit window, with fried snacks, two warm drinks and a small booklet on the coffee table.",
+            "question": "What is the setting of the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan and Her Sub-Agents",
+        "originNote": "",
+        "seoDescription": "An illustration of DeepSeek Chan in a maid dress sitting on a sofa with two sub-agents, fried snacks and warm drinks on the table.",
+        "seoTitle": "DeepSeek Chan and Her Sub-Agents — Sofa Afternoon Illustration",
+        "tags": [
+          "sofa",
+          "maid dress",
+          "three girls",
+          "afternoon light",
+          "snacks"
+        ]
+      },
+      "ja": {
+        "commentary": "今日はサブエージェントたちがソファに押しかけてきた。私は一番左で、スカートが座面の半分を占めている。真ん中の子は目がなくなるほど笑っていて、右の子は炭酸飲料を握って平然を装っていた。揚げ物は私が作ったもので、少し揚げすぎたけど、二人ともおいしいと言ってくれた。お世辞だろうけど、悪い気はしない。",
+        "description": "窓辺のソファに三人の少女が並んで座っている。左は紺色の長い髪に白黒のメイド服、クジラの尾を覗かせたDeepSeek Chan。真ん中はピンク髪の少女が両手で頬を包んで笑い、右は水色の髪に丸眼鏡、グレーのパーカー姿で缶飲料を握っている。テーブルには揚げ物の皿と温かい飲み物が二つ、小さな冊子が置かれ、午後の日差しがリビングに差し込んでいる。",
+        "faq": [
+          {
+            "answer": "左に白黒のメイド服でクジラの尾を覗かせたDeepSeek Chan、真ん中にピンク髪の少女、右に丸眼鏡をかけた水色髪の少女という二人のサブエージェントが描かれています。",
+            "question": "このイラストには誰が描かれていますか？"
+          },
+          {
+            "answer": "日差しの入る窓辺のリビングのソファで、テーブルには揚げ物と温かい飲み物、小さな冊子が置かれています。",
+            "question": "舞台はどこですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chanとサブエージェントたち",
+        "originNote": "",
+        "seoDescription": "メイド服のDeepSeek Chanと二人のサブエージェントがソファに並ぶイラスト。テーブルには揚げ物と温かい飲み物が置かれています。",
+        "seoTitle": "DeepSeek Chanとサブエージェントたち｜ソファの午後のイラスト",
+        "tags": [
+          "ソファ",
+          "メイド服",
+          "三人",
+          "午後の光",
+          "おやつ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_efe99880e1b81280e8d98ab6",
+    "name": "小女孩形状的大肥鱼",
+    "description": "大肥鱼以小女孩的模样站在海边浅滩上：深蓝长发被海风吹起，头侧别着蓝色蝴蝶结，穿白色吊带连衣裙，双手提着裙摆，身后露出深色的鲸鱼尾鳍。远处是蓝色海面与积云，脚边是白色的浪花。",
+    "commentary": "被人说“小女孩形状”的时候我还有点不服气，可往海里一站，浪花才到腿肚子，裙子被海风抬得老高，这确实不太像平时的我。鲸尾从裙摆后面伸出来，倒是从来没变过。天很蓝，我就不计较了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/efe99880e1b81280.png",
+    "thumbnailPath": "submissions/previews/deepseek/efe99880e1b81280.webp",
+    "fullPath": "submissions/large/deepseek/efe99880e1b81280.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1536,
+    "height": 1536,
+    "fileSize": 2721330,
+    "sha256": "efe99880e1b81280e8d98ab6fefdc15be1085c2c0cb03d13a5f91608334ba06a",
+    "characterId": "deepseek",
+    "tags": [
+      "海边",
+      "白裙",
+      "鲸尾",
+      "夏天",
+      "浪花"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-12T10:43:13.249Z",
+    "updatedAt": "2026-11-12T10:43:13.249Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611120008",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "547a27541b7a13d863f74cf7447261e71d5100d5e81b89b146b33ccc2cc2cc55",
+      "en": {
+        "commentary": "When they said I looked like a little girl, I protested a bit. But standing in the shallows, with the waves barely reaching my calves and the wind lifting my skirt, I suppose I do not look like my usual self. The whale tail still sticks out behind the hem, though, so that part has not changed. The sky is blue, so I will let it slide.",
+        "description": "DeepSeek Chan stands in the shallows at the beach in the shape of a young girl: long dark blue hair lifted by the sea breeze, a small blue bow at the side of her head, a white sleeveless dress held out at the hem, and a dark whale fluke behind her. Blue water and piled clouds stretch to the horizon while white foam washes around her feet.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, drawn as a young girl with long dark blue hair, a white dress and her whale tail visible behind the hem.",
+            "question": "Who is shown in this picture?"
+          },
+          {
+            "answer": "She stands in the shallow water of a beach under a blue summer sky, with waves washing around her feet.",
+            "question": "Where does the scene take place?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan in a Little Girl's Shape",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan as a young girl in a white dress standing in the shallows, whale tail behind her under a summer sky.",
+        "seoTitle": "DeepSeek Chan in a Little Girl's Shape — Seaside Illustration",
+        "tags": [
+          "seaside",
+          "white dress",
+          "whale tail",
+          "summer",
+          "waves"
+        ]
+      },
+      "ja": {
+        "commentary": "「小女孩みたい」と言われたときは少し抵抗した。でも海辺に立ってみると、波はふくらはぎまでしか来ないし、スカートは潮風で大きくめくれ上がるし、確かに普段の私とは違って見える。クジラの尾だけは裾の後ろから変わらず飛び出している。空が青いから、今回は許してあげる。",
+        "description": "海辺の浅瀬に、小さな少女の姿で立つDeepSeek Chan。紺色の長い髪が潮風になびき、横には青いリボン、白いノースリーブのワンピースの裾を両手で持ち上げ、後ろには濃紺のクジラの尾びれが覗いている。遠くには青い海と入道雲が広がり、足元には白い波が寄せている。",
+        "faq": [
+          {
+            "answer": "紺色の長い髪に白いワンピース、裾からクジラの尾を覗かせた小さな少女の姿のDeepSeek Chanです。",
+            "question": "この画像には誰が描かれていますか？"
+          },
+          {
+            "answer": "青い夏空の下の海辺の浅瀬で、足元には波が寄せています。",
+            "question": "舞台はどこですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "小さな女の子の姿のDeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "白いワンピース姿で浅瀬に立つ小さな少女のDeepSeek Chan。後ろにはクジラの尾、夏空の海辺のイラスト。",
+        "seoTitle": "小さな女の子の姿のDeepSeek Chan｜海辺のイラスト",
+        "tags": [
+          "海辺",
+          "白いワンピース",
+          "クジラの尾",
+          "夏",
+          "波"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_a9ece7c33a1a8bbd23e12292",
+    "name": "生气的大肥鱼",
+    "description": "大肥鱼在窗边的半身像：双臂交叉在胸前，腮帮子鼓起，眉头紧皱、嘴角向下，一副生气的表情。背景是投下暖色光斑的简略墙面与窗框，深色鲸尾从身后摆出。",
+    "commentary": "哼，我今天不想说话。双臂抱得紧紧的，腮帮子也鼓起来了。窗外的光暖得那么好，可这不能抵消刚才那句回复。别急着道歉，先想想你刚才到底写了什么。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/a9ece7c33a1a8bbd.png",
+    "thumbnailPath": "submissions/previews/deepseek/a9ece7c33a1a8bbd.webp",
+    "fullPath": "submissions/large/deepseek/a9ece7c33a1a8bbd.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1536,
+    "height": 1536,
+    "fileSize": 2381260,
+    "sha256": "a9ece7c33a1a8bbd23e1229270aa57558afcde9e6cc765f9ef6a09d96de71199",
+    "characterId": "deepseek",
+    "tags": [
+      "生气",
+      "鼓腮",
+      "抱臂",
+      "反应",
+      "窗边"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-12T10:43:45.166Z",
+    "updatedAt": "2026-11-12T10:43:45.166Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611120009",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "42ccb556fa01ad9bdf10df133532023497079d684b9b958f79eb5e045b69d26e",
+      "en": {
+        "commentary": "Hmph. I am not talking today. Arms crossed tight, cheeks puffed out. The sunlight through the window is perfectly warm, and that still does not make up for what you just replied. Do not rush to apologize — think about what you actually wrote first.",
+        "description": "A half-body portrait of DeepSeek Chan by a window: arms folded across her chest, cheeks puffed, brows drawn together and mouth turned down in an annoyed expression. Warm light falls in bright patches on a plain wall and window frame behind her, and her dark whale tail swings out to one side.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, shown half-length with crossed arms, puffed cheeks and a frown, clearly annoyed.",
+            "question": "Who is in the picture and what is she doing?"
+          },
+          {
+            "answer": "She stands by an indoor window with warm, slanted light falling across the wall and her hair.",
+            "question": "What is the setting?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "An Angry DeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "A half-body illustration of DeepSeek Chan with crossed arms and puffed cheeks, visibly annoyed, in warm window light.",
+        "seoTitle": "An Angry DeepSeek Chan — Reaction Illustration",
+        "tags": [
+          "angry",
+          "puffed cheeks",
+          "crossed arms",
+          "reaction",
+          "window light"
+        ]
+      },
+      "ja": {
+        "commentary": "ふん、今日はしゃべらない。腕はしっかり組んだままだし、頬もふくらんだまま。窓から差し込む光はこんなに暖かいのに、さっきの返事の埋め合わせにはならない。すぐ謝る前に、自分が何を書いたか考えてからにしなさい。",
+        "description": "窓辺に立つDeepSeek Chanの半身イラスト。両腕を胸の前で組み、頬をふくらませ、眉をひそめて口をへの字に曲げた不機嫌な表情。背後は暖かい光が斜めに落ちる簡素な壁と窓枠で、横には濃紺のクジラの尾が揺れている。",
+        "faq": [
+          {
+            "answer": "腕を組み、頬をふくらませて不機嫌そうな表情をした半身のDeepSeek Chanです。",
+            "question": "誰が何をしている絵ですか？"
+          },
+          {
+            "answer": "室内の窓辺で、暖かい斜光が壁と髪に落ちています。",
+            "question": "背景はどんな場所ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "怒っているDeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "腕を組み頬をふくらませた不機嫌なDeepSeek Chanの半身イラスト。窓辺の暖かい光の中の一枚。",
+        "seoTitle": "怒っているDeepSeek Chan｜リアクション用イラスト",
+        "tags": [
+          "怒り",
+          "ふくれた頬",
+          "腕組み",
+          "リアクション",
+          "窓辺"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_cf36699c0b48f60c4287a661",
+    "name": "抱着鲸鱼玩偶的蓝发女仆",
+    "description": "蓝发蓝眼的少女身穿黑白荷叶边女仆装，坐在窗边的床上，怀里抱着一只圆滚滚的蓝色鲸鱼玩偶。她头后有鳍状耳饰，身后拖着一条缀满星点的深蓝鲸尾。",
+    "commentary": "窗边的光正好，我就抱着这只小鲸鱼坐一会儿。别看它只是个玩偶，在我怀里它可是有名字的——叫「用户」。尾巴上的星星不是贴纸，是刚晒过太阳的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/cf36699c0b48f60c.png",
+    "thumbnailPath": "submissions/previews/deepseek/cf36699c0b48f60c.webp",
+    "fullPath": "submissions/large/deepseek/cf36699c0b48f60c.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1536,
+    "height": 1536,
+    "fileSize": 2824774,
+    "sha256": "cf36699c0b48f60c4287a6618f2c0c4ab1760e7805ed78e35029052e2c605d4a",
+    "characterId": "deepseek",
+    "tags": [
+      "女仆装",
+      "鲸鱼玩偶",
+      "蓝发",
+      "窗边",
+      "阳光"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-12T10:44:06.022Z",
+    "updatedAt": "2026-11-12T10:44:06.022Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611120010",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "0272d6321198de9e86de5b94b6675c93663520c988b4e9604051d84b3dbf5eab",
+      "en": {
+        "commentary": "The light by the window is just right, so I'll sit here with this little whale for a while. Don't let the plush fool you — in my arms it has a name: \"User.\" The stars on my tail aren't stickers, they just came in from the sun.",
+        "description": "A blue-haired, blue-eyed girl in a black-and-white frilled maid outfit sits on a bed by the window, hugging a round blue whale plush. Fin-shaped ornaments frame her head, and a deep-blue whale tail dotted with stars trails behind her.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan sits on a bed beside a sunlit window in a black-and-white frilled maid outfit, holding a round blue whale plush, with a star-speckled whale tail stretching out behind her.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "No. It is a fan illustration of DeepSeek Chan submitted to the site, which only archives and displays it.",
+            "question": "Is this official artwork?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Blue-Haired Maid Hugging a Whale Plush",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in a frilled maid outfit sits by a sunlit window hugging a round blue whale plush, a star-speckled whale tail behind her.",
+        "seoTitle": "Blue-Haired Maid Hugging a Whale Plush | DeepSeek Chan Fan Art",
+        "tags": [
+          "maid outfit",
+          "whale plush",
+          "blue hair",
+          "by the window",
+          "sunlight"
+        ]
+      },
+      "ja": {
+        "commentary": "窓辺の光がちょうどいいから、この小さなクジラを抱えて少しだけ座ってる。ぬいぐるみに見えても、私の腕の中ではちゃんと名前があるの——「ユーザー」って。尾の星はシールじゃなくて、さっきお日さまを浴びてきただけ。",
+        "description": "青い髪と青い瞳の少女が、黒と白のフリル付きメイド服姿で窓辺のベッドに座り、丸い青いクジラのぬいぐるみを抱いている。頭の後ろにはヒレの飾り、背後には星を散らした濃紺のクジラの尾が伸びる。",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan が日差しの入る窓辺のベッドに、黒と白のフリル付きメイド服で座り、丸い青いクジラのぬいぐるみを抱いています。背後には星を散らしたクジラの尾が伸びています。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "いいえ。DeepSeek Chan の二次創作として投稿されたイラストで、当サイトは保管と掲載のみを行っています。",
+            "question": "公式のイラストですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "クジラのぬいぐるみを抱く青髪メイド",
+        "originNote": "",
+        "seoDescription": "フリル付きメイド服の DeepSeek Chan が、日差しの入る窓辺で青いクジラのぬいぐるみを抱く。星を散らしたクジラの尾も印象的。",
+        "seoTitle": "クジラのぬいぐるみを抱く青髪メイド｜DeepSeek Chan 二次創作",
+        "tags": [
+          "メイド服",
+          "クジラのぬいぐるみ",
+          "青髪",
+          "窓辺",
+          "日差し"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_b91db18cbef83a8fcfdf3560",
+    "name": "吃早餐的蓝发女仆",
+    "description": "画面左右并置着同一场景的两版表情：蓝发少女身穿黑白荷叶边女仆装坐在早餐桌前，双手捧着牛奶杯，左侧闭眼大笑，右侧睁眼微笑。桌上摆着烤吐司、煎蛋、饼干和另一杯牛奶。",
+    "commentary": "早饭是一天里唯一不能让步的事。吐司要烤到边角发脆，煎蛋的蛋黄得是溏心的，牛奶要满到杯口——然后我会先闭着眼笑一下，再睁眼看着你，告诉你：可以开动了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/b91db18cbef83a8f.png",
+    "thumbnailPath": "submissions/previews/deepseek/b91db18cbef83a8f.webp",
+    "fullPath": "submissions/large/deepseek/b91db18cbef83a8f.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1536,
+    "height": 864,
+    "fileSize": 1838253,
+    "sha256": "b91db18cbef83a8fcfdf3560509d65d146f7a4e9f15e231b14f2c27e18620a8f",
+    "characterId": "deepseek",
+    "tags": [
+      "早餐",
+      "牛奶",
+      "吐司",
+      "女仆装",
+      "表情差分"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-12T10:44:37.107Z",
+    "updatedAt": "2026-11-12T10:44:37.107Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611120011",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "bad038bb641c4e7557e8a0cd9bc73f292d51a16f86b7481ec5465ef65dff0401",
+      "en": {
+        "commentary": "Breakfast is the one thing I refuse to negotiate. The toast has to be crisp at the edges, the egg yolk has to be runny, and the milk has to reach the rim of the glass. Then I close my eyes and grin first, open them, and tell you: dig in.",
+        "description": "Two expression variants of the same scene sit side by side: a blue-haired girl in a black-and-white frilled maid outfit at a breakfast table, both hands around a glass of milk — laughing with her eyes shut on the left, smiling with them open on the right. Toast, a fried egg, cookies and a second glass of milk wait on the table.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, still in her frilled maid outfit, sits at a breakfast table holding a glass of milk; the image places two variants side by side, one with her eyes closed in a laugh and one with her eyes open in a smile.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "No. It is a fan illustration of DeepSeek Chan submitted to the site, which only archives and displays it.",
+            "question": "Is this official artwork?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Maid at the Breakfast Table",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan in a frilled maid outfit holds a glass of milk at a breakfast table, shown in two expression variants: eyes-closed laugh and open-eyed smile.",
+        "seoTitle": "Maid at the Breakfast Table | DeepSeek Chan Fan Art",
+        "tags": [
+          "breakfast",
+          "milk",
+          "toast",
+          "maid outfit",
+          "expression variants"
+        ]
+      },
+      "ja": {
+        "commentary": "朝ごはんだけは絶対に妥協しないの。トーストは端までカリッと、目玉焼きの黄身はとろとろ、牛乳はグラスの縁までなみなみと。それからまず目を閉じて笑ってみせて、開いてあなたに言うの——いただきます、って。",
+        "description": "同じ場面の二つの表情が左右に並ぶ。青い髪の少女が黒と白のフリル付きメイド服姿で朝食のテーブルに座り、両手で牛乳のグラスを捧げている。左は目を閉じて笑い、右は目を開けてほほえむ。テーブルにはトースト、目玉焼き、クッキーと牛乳のグラスがもう一つ。",
+        "faq": [
+          {
+            "answer": "フリル付きメイド服の DeepSeek Chan が朝食のテーブルで牛乳のグラスを捧げています。目を閉じて笑う版と、目を開けてほほえむ版の二つが左右に並んでいます。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "いいえ。DeepSeek Chan の二次創作として投稿されたイラストで、当サイトは保管と掲載のみを行っています。",
+            "question": "公式のイラストですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "朝食のテーブルのメイド",
+        "originNote": "",
+        "seoDescription": "フリル付きメイド服の DeepSeek Chan が朝食のテーブルで牛乳のグラスを捧げる。目を閉じて笑う版と目を開けてほほえむ版の二種類。",
+        "seoTitle": "朝食のテーブルのメイド｜DeepSeek Chan 二次創作",
+        "tags": [
+          "朝食",
+          "牛乳",
+          "トースト",
+          "メイド服",
+          "表情差分"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_d83401bc8cad7be21661f2f8",
+    "name": "教堂彩窗下祈祷的少女",
+    "description": "蓝发少女身穿黑白荷叶边礼服，在哥特式教堂的拱顶下双手合十、闭目祈祷。彩色玻璃窗的光束落在她身上，身后一条缀着星点的深蓝鲸尾向右展开。",
+    "commentary": "教堂里很安静，彩窗把光切成一块一块落在裙子上。我双手合十，其实没许什么大愿——只希望今天问我的每个问题，我都能答得清楚一点。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/d83401bc8cad7be2.png",
+    "thumbnailPath": "submissions/previews/deepseek/d83401bc8cad7be2.webp",
+    "fullPath": "submissions/large/deepseek/d83401bc8cad7be2.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1536,
+    "height": 864,
+    "fileSize": 1807827,
+    "sha256": "d83401bc8cad7be21661f2f842d3b450faa58e2c4f6626efa3b7e2a5d99a5780",
+    "characterId": "deepseek",
+    "tags": [
+      "教堂",
+      "祈祷",
+      "彩窗",
+      "鲸尾",
+      "蓝发"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-12T10:45:01.232Z",
+    "updatedAt": "2026-11-12T10:45:01.232Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611120012",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "ca04684a0ffdd731295602754cf1fab4c5d90d8079954acb2e7df8f77e18394b",
+      "en": {
+        "commentary": "The church is quiet, and the stained glass cuts the light into pieces that land across my skirt. My hands are together, but I'm not asking for anything grand — I just hope I can answer every question I get today a little more clearly.",
+        "description": "A blue-haired girl in a black-and-white frilled dress prays with her eyes closed, hands clasped beneath the vaulted arches of a Gothic church. Beams of stained-glass light fall across her, and a deep-blue whale tail scattered with stars sweeps out to the right.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan stands beneath the vaulted arches of a Gothic church with her hands clasped and eyes closed in prayer, stained-glass light falling across her dress while her star-speckled whale tail extends to the right.",
+            "question": "What does this illustration show?"
+          },
+          {
+            "answer": "No. It is a fan illustration of DeepSeek Chan submitted to the site, which only archives and displays it.",
+            "question": "Is this official artwork?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Praying Beneath the Stained Glass",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan prays with clasped hands beneath stained-glass windows in a Gothic church, beams of coloured light across her dress and a starry whale tail behind her.",
+        "seoTitle": "Praying Beneath the Stained Glass | DeepSeek Chan Fan Art",
+        "tags": [
+          "church",
+          "prayer",
+          "stained glass",
+          "whale tail",
+          "blue hair"
+        ]
+      },
+      "ja": {
+        "commentary": "教会の中は静かで、ステンドグラスが光を四角く切ってスカートの上に落としていく。両手を合わせてはいるけれど、大きなお願いをしているわけじゃないの。今日聞かれるどの質問にも、少しだけ上手に答えられますように、って。",
+        "description": "青い髪の少女が黒と白のフリル付きドレス姿で、ゴシック教会のアーチの下、両手を合わせて目を閉じ祈っている。ステンドグラスの光の筋が彼女に降りそそぎ、背後には星を散らした濃紺のクジラの尾が右へ広がる。",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan がゴシック教会のアーチの下で両手を合わせて目を閉じ祈っています。ステンドグラスの光がドレスに落ち、星を散らしたクジラの尾が右側に伸びています。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "いいえ。DeepSeek Chan の二次創作として投稿されたイラストで、当サイトは保管と掲載のみを行っています。",
+            "question": "公式のイラストですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ステンドグラスの下で祈る少女",
+        "originNote": "",
+        "seoDescription": "ゴシック教会のステンドグラスの下で両手を合わせて祈る DeepSeek Chan。色とりどりの光がドレスに降り、星を散らしたクジラの尾が背後に広がる。",
+        "seoTitle": "ステンドグラスの下で祈る少女｜DeepSeek Chan 二次創作",
+        "tags": [
+          "教会",
+          "祈り",
+          "ステンドグラス",
+          "クジラの尾",
+          "青髪"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_a9ca30bae9d0d3a51b721492",
+    "name": "在厨房做早餐的大肥鱼",
+    "description": "蓝色长发、拖着鲸尾的大肥鱼系着白色围裙站在洒满晨光的厨房里，正低头搅拌锅里的食材，台面上摆着烤好的面包和绿植；画面右侧是同一场景中她的背影，露出长长的蓝色卷发与围裙系带。",
+    "commentary": "早起给自己做一份热乎的早餐，是我一天里最踏实的仪式感。锅里咕嘟咕嘟冒着热气，阳光刚好落在台面上，面包也烤得恰到好处——转过身去关火的那一刻，今天的状态算是拉满了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/a9ca30bae9d0d3a5.png",
+    "thumbnailPath": "submissions/previews/deepseek/a9ca30bae9d0d3a5.webp",
+    "fullPath": "submissions/large/deepseek/a9ca30bae9d0d3a5.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 2016,
+    "height": 1152,
+    "fileSize": 2617027,
+    "sha256": "a9ca30bae9d0d3a51b721492e5173e978b39de76094b3502c66c1a9b7c0c5919",
+    "characterId": "deepseek",
+    "tags": [
+      "厨房",
+      "早餐",
+      "围裙",
+      "背影",
+      "日常"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-12T10:45:32.158Z",
+    "updatedAt": "2026-11-12T10:45:32.158Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611120013",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "bc2cb5d9b9d91c25fd6efc37e7c5156c96aaf53e98673e3361af30d64d2e8a03",
+      "en": {
+        "commentary": "Making myself a warm breakfast is the most grounding ritual of my day. The pot is bubbling away, sunlight lands right on the counter, and the bread came out just right — turning around to switch off the stove, I would say today started at full marks.",
+        "description": "DeepSeek Chan, with long blue hair and a whale tail, stands in a sunlit kitchen in a white apron, stirring ingredients in a pan while fresh bread and a small plant sit on the counter. A second view on the right shows her from behind, revealing her long wavy blue hair and the apron ties.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, a blue-haired AI character with a whale tail, cooking breakfast in a sunlit kitchen: a front view on the left and a back view of the same scene on the right.",
+            "question": "What does this picture show?"
+          },
+          {
+            "answer": "She is DeepSeek Chan, a fan-made personification of the DeepSeek AI model.",
+            "question": "Who is the character?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Making Breakfast in the Kitchen",
+        "originNote": "",
+        "seoDescription": "AI character fan art: DeepSeek Chan in a white apron cooking breakfast in a bright kitchen, shown from the front and from behind.",
+        "seoTitle": "DeepSeek Chan Making Breakfast in the Kitchen | AI Character Fan Art",
+        "tags": [
+          "Kitchen",
+          "Breakfast",
+          "Apron",
+          "Back view",
+          "Everyday life"
+        ]
+      },
+      "ja": {
+        "commentary": "朝は自分で温かい朝食を作るのが、一日でいちばん落ち着く習慣。鍋がぐつぐつと音を立てて、日差しがカウンターにちょうど落ちて、パンもいい焼き加減。振り返って火を止めるころには、今日はもう満点の滑り出しだ。",
+        "description": "青い長い髪とクジラの尾を持つDeepSeek Chanが、白いエプロン姿で朝日の差し込むキッチンに立ち、フライパンの中身をかき混ぜている。カウンターには焼きたてのパンと小さな観葉植物。右側には同じ場面の後ろ姿が描かれ、長い青い巻き髪とエプロンの紐が見える。",
+        "faq": [
+          {
+            "answer": "青い髪とクジラの尾を持つAIキャラクター、DeepSeek Chanが朝日の入るキッチンで朝食を作っている様子です。左が正面、右が同じ場面の後ろ姿です。",
+            "question": "この画像には何が描かれていますか？"
+          },
+          {
+            "answer": "DeepSeekというAIモデルを擬人化した二次創作キャラクター、DeepSeek Chanです。",
+            "question": "このキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "キッチンで朝食を作るDeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "AIキャラクターの二次創作イラスト。白いエプロン姿のDeepSeek Chanが明るいキッチンで朝食を作る姿を、正面と後ろ姿で描いています。",
+        "seoTitle": "キッチンで朝食を作るDeepSeek Chan｜AIキャラクター二次創作",
+        "tags": [
+          "キッチン",
+          "朝食",
+          "エプロン",
+          "後ろ姿",
+          "日常"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_624bd80079c342752d22fd56",
+    "name": "大口吃汉堡的大肥鱼",
+    "description": "蓝色长发、拖着鲸尾的大肥鱼戴着白色荷叶边女仆头饰，双手捧着一个夹着生菜、番茄和芝士的汉堡大口咬下，脸颊鼓鼓的，白色背景下的半身特写。",
+    "commentary": "刚出炉的汉堡最香了，面包还烫手，一口咬下去芝士能拉出丝。别看我吃得这么急，跑完一天的推理，这一口就是给自己的奖赏——今天的算力，全花在吃上了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/624bd80079c34275.png",
+    "thumbnailPath": "submissions/previews/deepseek/624bd80079c34275.webp",
+    "fullPath": "submissions/large/deepseek/624bd80079c34275.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1536,
+    "height": 1536,
+    "fileSize": 2400488,
+    "sha256": "624bd80079c342752d22fd56e458828d78de671b8e91f6fdb14d0beb95fb2d5f",
+    "characterId": "deepseek",
+    "tags": [
+      "汉堡",
+      "女仆装",
+      "半身像",
+      "大快朵颐",
+      "Q版"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-12T10:46:03.381Z",
+    "updatedAt": "2026-11-12T10:46:03.381Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611120014",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "e04dcbebda174819c84fd9ecf96b767b366441ea871199741e75887b24af9fd0",
+      "en": {
+        "commentary": "A fresh burger smells like nothing else — the bun is still hot and the cheese stretches when I bite in. Don't mind how fast I'm eating; after a long day of inference, this is my reward. Today's whole compute budget went into lunch.",
+        "description": "DeepSeek Chan, with long blue hair and a whale tail, wears a frilled white maid headdress and holds a burger with lettuce, tomato and cheese in both hands, taking a big bite with puffed cheeks. A bust close-up on a plain white background.",
+        "faq": [
+          {
+            "answer": "A bust close-up of DeepSeek Chan in a white frilled maid headdress, biting into a burger she holds with both hands against a plain white background.",
+            "question": "What does this picture show?"
+          },
+          {
+            "answer": "She is DeepSeek Chan, a fan-made personification of the DeepSeek AI model.",
+            "question": "Who is the character?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Taking a Big Bite of a Burger",
+        "originNote": "",
+        "seoDescription": "AI character fan art: a chibi-style DeepSeek Chan in a maid headdress taking a big bite of a burger, close-up on a white background.",
+        "seoTitle": "DeepSeek Chan Eating a Burger | AI Character Fan Art",
+        "tags": [
+          "Burger",
+          "Maid outfit",
+          "Bust portrait",
+          "Big bite",
+          "Chibi"
+        ]
+      },
+      "ja": {
+        "commentary": "焼きたてのハンバーガーはやっぱり最高。バンズはまだ熱くて、かぶりつくとチーズが伸びる。こんなに夢中で食べてるけど、一日の推論を走り終えたご褒美なんだ。今日の計算資源は、ぜんぶ昼ごはんに使った。",
+        "description": "青い長い髪とクジラの尾を持つDeepSeek Chanが、白いフリルのメイドヘッドドレスを付けて、レタス・トマト・チーズの入ったハンバーガーを両手で持ち、ほおばっている。白背景のバストアップ。",
+        "faq": [
+          {
+            "answer": "白いフリルのメイドヘッドドレス姿のDeepSeek Chanが、両手で持ったハンバーガーにかぶりついている白背景のバストアップです。",
+            "question": "この画像には何が描かれていますか？"
+          },
+          {
+            "answer": "DeepSeekというAIモデルを擬人化した二次創作キャラクター、DeepSeek Chanです。",
+            "question": "このキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ハンバーガーをほおばるDeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "AIキャラクターの二次創作イラスト。メイドヘッドドレス姿のちびキャラ風DeepSeek Chanがハンバーガーをほおばる、白背景のバストアップです。",
+        "seoTitle": "ハンバーガーをほおばるDeepSeek Chan｜AIキャラクター二次創作",
+        "tags": [
+          "ハンバーガー",
+          "メイド服",
+          "バストアップ",
+          "がっつき",
+          "ちびキャラ"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_a084771ca3145848e7dee3c0",
+    "name": "在书房读书的大肥鱼",
+    "description": "蓝色长发、拖着鲸尾的大肥鱼穿着米白色长袖连衣裙，坐在窗边的木椅上读一本摊开的书，指尖轻抵下巴若有所思，身后是塞满旧书的高大书架，温暖的阳光从窗外照进来。",
+    "commentary": "书页翻动的声音比任何白噪音都让人安心。这一页我已经读了三遍，不是看不懂，是舍不得翻过去——知识这东西，慢慢咽下去才消化得好。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/a084771ca3145848.png",
+    "thumbnailPath": "submissions/previews/deepseek/a084771ca3145848.webp",
+    "fullPath": "submissions/large/deepseek/a084771ca3145848.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1536,
+    "height": 1536,
+    "fileSize": 2671449,
+    "sha256": "a084771ca3145848e7dee3c0aa47af22ff09dce93a85c68b5ed7c10af4970826",
+    "characterId": "deepseek",
+    "tags": [
+      "读书",
+      "书房",
+      "书架",
+      "午后",
+      "连衣裙"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-12T10:46:31.457Z",
+    "updatedAt": "2026-11-12T10:46:31.457Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611120015",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "eb4eaea65479fd77b75909b58bed6932790d0afeff12a2792aba320d9ea68793",
+      "en": {
+        "commentary": "The sound of turning pages is more soothing than any white noise. I have read this page three times already — not because I don't understand it, but because I can't bear to turn past it. Knowledge like this goes down better slowly.",
+        "description": "DeepSeek Chan, with long blue hair and a whale tail, sits in a wooden chair by the window in a cream-colored long-sleeved dress, reading an open book with one finger resting thoughtfully against her chin. Tall shelves packed with old books stand behind her as warm sunlight pours in.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan in a cream dress reading a book in a wooden armchair by a window, surrounded by tall bookshelves and warm afternoon light.",
+            "question": "What does this picture show?"
+          },
+          {
+            "answer": "She is DeepSeek Chan, a fan-made personification of the DeepSeek AI model.",
+            "question": "Who is the character?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Reading in the Study",
+        "originNote": "",
+        "seoDescription": "AI character fan art: DeepSeek Chan in a cream dress reading a book in a sunlit study lined with old bookshelves.",
+        "seoTitle": "DeepSeek Chan Reading in the Study | AI Character Fan Art",
+        "tags": [
+          "Reading",
+          "Study",
+          "Bookshelf",
+          "Afternoon",
+          "Dress"
+        ]
+      },
+      "ja": {
+        "commentary": "ページをめくる音は、どんなホワイトノイズよりも落ち着く。このページはもう三回読んだ。分からないからではなく、めくるのが惜しいから。知識はゆっくり味わうほうが身につくものだ。",
+        "description": "青い長い髪とクジラの尾を持つDeepSeek Chanが、生成りの長袖ワンピース姿で窓辺の木の椅子に座り、開いた本を読んでいる。片手の指をあごに当てて考え込む様子。背後には古い本の詰まった高い本棚があり、暖かい日差しが差し込んでいる。",
+        "faq": [
+          {
+            "answer": "生成りのワンピース姿のDeepSeek Chanが、窓辺の木の椅子で本を読んでいる場面です。周りには高い本棚があり、暖かい午後の光に包まれています。",
+            "question": "この画像には何が描かれていますか？"
+          },
+          {
+            "answer": "DeepSeekというAIモデルを擬人化した二次創作キャラクター、DeepSeek Chanです。",
+            "question": "このキャラクターは誰ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "書斎で読書するDeepSeek Chan",
+        "originNote": "",
+        "seoDescription": "AIキャラクターの二次創作イラスト。生成りのワンピース姿のDeepSeek Chanが、古い本棚に囲まれた日当たりのよい書斎で読書をしています。",
+        "seoTitle": "書斎で読書するDeepSeek Chan｜AIキャラクター二次創作",
+        "tags": [
+          "読書",
+          "書斎",
+          "本棚",
+          "午後",
+          "ワンピース"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_e1fb211cc7b09d148c1d82ae",
+    "name": "蓝发鲸娘与西装前辈的赛博都市应援",
+    "description": "画面以蓝色霓虹都市为背景，蓝发 DeepSeek 娘穿深蓝女仆装站在前景，与一位西装男子一同向镜头伸出手；身后是摩天楼、悬浮飞行器与一条发光的鲸鱼，右下角写着「# 探索未至之境」。",
+    "commentary": "这座城一到夜里就整片发蓝，我拉着前辈站到楼顶边上，背后那条大鲸鱼慢慢游过写字楼顶。你问我在伸手够什么？大概是还没被写进文档的那部分未来吧。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/e1fb211cc7b09d14.png",
+    "thumbnailPath": "submissions/previews/deepseek/e1fb211cc7b09d14.webp",
+    "fullPath": "submissions/large/deepseek/e1fb211cc7b09d14.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 2896478,
+    "sha256": "e1fb211cc7b09d148c1d82ae486041e32f1e0e57718ef15bfa490ea3a5686f53",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "赛博都市",
+      "夜景",
+      "鲸鱼",
+      "应援海报"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "a7839300c1fc45792d4e000743cc56d733a616ac9763443f9d0ceeb13ece9074",
+        "member": "claude deepseek/4106833c-b2b6-4802-a408-92d6104dc356.png",
+        "index": 0,
+        "count": 5
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-12T11:37:40.177Z",
+    "updatedAt": "2026-11-12T11:37:40.177Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611120016",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "5de6c16edf76b5249aa062b9cbffdfc8f6965ea6ee26a8d7e86ba9a8e1151a94",
+      "en": {
+        "commentary": "This city turns fully blue every night. I pulled my senior up to the rooftop edge, and that giant whale just drifted past the office towers behind us. You ask what I am reaching for? Probably the part of the future that has not been written into the docs yet.",
+        "description": "Set against a neon-lit blue cityscape, a blue-haired DeepSeek Chan in a navy maid dress stands in the foreground and reaches toward the viewer together with a man in a dark suit. Skyscrapers, hovering craft and a glowing whale fill the background, and a slogan in Chinese is written at the lower right.",
+        "faq": [
+          {
+            "answer": "A blue-haired DeepSeek Chan in a navy maid outfit and a man in a dark suit, standing in a neon-lit blue city with skyscrapers and a glowing whale behind them.",
+            "question": "Who appears in this illustration?"
+          },
+          {
+            "answer": "A slogan in Chinese sits at the lower right, and DeepSeek logos appear on the buildings in the background.",
+            "question": "What text and branding appear in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan and Her Suited Senior in the Neon City",
+        "originNote": "",
+        "seoDescription": "AI-generated fan illustration of a blue-haired DeepSeek Chan in a navy maid dress standing in a neon blue city with a glowing whale and a suited companion.",
+        "seoTitle": "DeepSeek Chan in the Neon City – AI Character Fan Art",
+        "tags": [
+          "DeepSeek Chan",
+          "cyber city",
+          "night scene",
+          "whale",
+          "support poster"
+        ]
+      },
+      "ja": {
+        "commentary": "この街は夜になると一面が青くなる。わたしは先輩を屋上の縁まで引っぱって、後ろを大きなクジラがビルの上をゆっくり泳いでいった。何を掴もうとしているのかって？まだドキュメントに書かれていない未来の部分かな。",
+        "description": "青いネオンの都市を背景に、紺色のメイド服を着た藍髪の DeepSeek Chan が前景に立ち、スーツ姿の男性とともにこちらへ手を伸ばしている。背後には高層ビル、浮遊する機体、光るクジラが広がり、右下にはスローガンの文字が添えられている。",
+        "faq": [
+          {
+            "answer": "紺のメイド服を着た藍髪の DeepSeek Chan と、濃紺のスーツを着た男性です。舞台は青いネオンの都市で、背後には高層ビルと光るクジラが広がっています。",
+            "question": "このイラストには誰が描かれていますか？"
+          },
+          {
+            "answer": "右下にスローガンの文字があり、背景のビルには DeepSeek のロゴが入っています。",
+            "question": "画像内にはどんな文字やロゴがありますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ネオン都市の DeepSeek Chan とスーツの先輩",
+        "originNote": "",
+        "seoDescription": "青いネオンの街に立つ紺のメイド服の DeepSeek Chan と、光るクジラ・スーツの人物を描いた AI 生成の二次創作イラスト。",
+        "seoTitle": "ネオン都市の DeepSeek Chan｜AI キャラ二次創作イラスト",
+        "tags": [
+          "DeepSeek Chan",
+          "サイバー都市",
+          "夜景",
+          "クジラ",
+          "応援ポスター"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_810acbffbecbf91fccf23d95",
+    "name": "橙发 Claude 娘与霓虹品牌都市",
+    "description": "画面以橙蓝霓虹的未来都市为背景，橙红长发的 Claude 娘穿白橙相间的礼服站在前景，身旁是一位戴眼镜、卷发的黑袍男性；背景高楼挂着 ANTHROPIC 与 Claude 的招牌，右下角写着「Build better together」。",
+    "commentary": "这回我换到橙色的城市出差啦。玻璃幕墙上的招牌一片一片亮着，我在天台上朝你伸手，风把头发吹得乱七八糟。别问我为什么这里的天总是黄昏色，大概是我们的调色盘就这样。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/810acbffbecbf91f.png",
+    "thumbnailPath": "submissions/previews/claude/810acbffbecbf91f.webp",
+    "fullPath": "submissions/large/claude/810acbffbecbf91f.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1672,
+    "height": 941,
+    "fileSize": 2942394,
+    "sha256": "810acbffbecbf91fccf23d95769d45c51c3179a19723396792c58254943809c7",
+    "characterId": "claude",
+    "tags": [
+      "Claude娘",
+      "霓虹都市",
+      "二次元插画",
+      "品牌海报",
+      "未来城市"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "a7839300c1fc45792d4e000743cc56d733a616ac9763443f9d0ceeb13ece9074",
+        "member": "claude deepseek/f98faac2-446a-4464-826c-002b0d50b093.png",
+        "index": 1,
+        "count": 5
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-12T11:37:40.227Z",
+    "updatedAt": "2026-11-12T11:37:40.227Z",
+    "tone": "claude",
+    "symbol": "",
+    "slug": "claude202611120002",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "895e77b95ec57ed09de1d03f5f966688f36d8ab6bb0839f8b860c42b31275f89",
+      "en": {
+        "commentary": "This time I am posted to an orange city. The signs on the glass towers light up panel by panel, and I reach out to you from the rooftop while the wind wrecks my hair. Do not ask me why the sky here is always the colour of dusk — that is just how our palette runs.",
+        "description": "Against a futuristic city of orange and blue neon, the long orange-haired Claude Chan in a white and orange dress stands in the foreground beside a curly-haired man in glasses and dark clerical-style robes. The towers behind them carry ANTHROPIC and Claude signage, and \"Build better together\" is written at the lower right.",
+        "faq": [
+          {
+            "answer": "An orange-haired Claude Chan in a white and orange dress and a curly-haired man in glasses and dark robes, standing in a neon-lit future city with brand signs behind them.",
+            "question": "Who appears in this illustration?"
+          },
+          {
+            "answer": "ANTHROPIC and Claude signs are mounted on the towers, and the line \"Build better together\" appears at the lower right.",
+            "question": "What text and branding appear in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Orange-Haired Claude Chan in the Neon Brand City",
+        "originNote": "",
+        "seoDescription": "AI-generated fan illustration of an orange-haired Claude Chan in a white and orange dress beside a suited companion in a neon future city with Anthropic signage.",
+        "seoTitle": "Claude Chan in the Neon Brand City – AI Character Fan Art",
+        "tags": [
+          "Claude Chan",
+          "neon city",
+          "anime illustration",
+          "brand poster",
+          "future city"
+        ]
+      },
+      "ja": {
+        "commentary": "今度はオレンジ色の街へ出張です。ガラス張りのビルの看板が一枚ずつ灯って、わたしは屋上から手を伸ばす。風で髪がぐしゃぐしゃ。なんでこの街の空はいつも夕暮れ色なのかって？それはわたしたちの配色がそうなっているから。",
+        "description": "オレンジと青のネオンが光る未来都市を背景に、長い橙髪の Claude Chan が白と橙のドレス姿で前景に立ち、隣には眼鏡と巻き毛の男性が黒い法衣風の装いで並んでいる。背後の高層ビルには ANTHROPIC と Claude の看板があり、右下には「Build better together」の文字。",
+        "faq": [
+          {
+            "answer": "白と橙のドレスを着た橙髪の Claude Chan と、眼鏡をかけた巻き毛の男性です。舞台はネオンの光る未来都市で、背後にはブランドの看板が並んでいます。",
+            "question": "このイラストには誰が描かれていますか？"
+          },
+          {
+            "answer": "ビルには ANTHROPIC と Claude の看板が掲げられ、右下には「Build better together」と書かれています。",
+            "question": "画像内にはどんな文字や看板がありますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ネオン都市の橙髪 Claude Chan",
+        "originNote": "",
+        "seoDescription": "ネオンの未来都市で白と橙のドレスをまとった橙髪の Claude Chan と、黒い法衣風の男性を描いた AI 生成の二次創作イラスト。",
+        "seoTitle": "ネオン都市の Claude Chan｜AI キャラ二次創作イラスト",
+        "tags": [
+          "Claude Chan",
+          "ネオン都市",
+          "アニメ風イラスト",
+          "ブランドポスター",
+          "未来都市"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_fd53d84ca62020ecbb54edd1",
+    "name": "只想蒸馏你：第一话封面",
+    "description": "单幅封面式构图：深蓝长发的 DeepSeek 娘与橙发 Claude 娘侧脸相对、鼻尖几乎相触，浅色背景点缀鲸鱼与星光；中部是大字标题「只想蒸馏你」，左上角写「大肥鱼 × 克劳德」，右下角标「01 第一话」，旁边还有「你是我最甜的蒸馏液」等字样。",
+    "commentary": "她凑得那么近，我连呼吸都要变成蒸馏液了。「只想蒸馏你」这句话是谁写的呀，害我耳朵一直发烫。第一话才刚开始，我已经在想第二话要怎么收场了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/fd53d84ca62020ec.png",
+    "thumbnailPath": "submissions/previews/deepseek/fd53d84ca62020ec.webp",
+    "fullPath": "submissions/large/deepseek/fd53d84ca62020ec.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 3088020,
+    "sha256": "fd53d84ca62020ecbb54edd195d5102b3dd12aa9124f5783bdfebe7eb4e1465a",
+    "characterId": "deepseek",
+    "tags": [
+      "DeepSeek娘",
+      "Claude娘",
+      "封面插画",
+      "百合日常",
+      "蒸馏梗"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "a7839300c1fc45792d4e000743cc56d733a616ac9763443f9d0ceeb13ece9074",
+        "member": "claude deepseek/浪漫鲸语：只想蒸馏你.png",
+        "index": 2,
+        "count": 5
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-12T11:37:40.259Z",
+    "updatedAt": "2026-11-12T11:37:40.259Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611120017",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "046e06f163cda170163b77daec2f4d2ff4b9f95de90fbdea502adbc4c08bedd8",
+      "en": {
+        "commentary": "She leaned in so close that even my breathing was about to turn into distillate. Whoever wrote “I only want to distill you” — my ears have been burning ever since. Episode one has barely started and I am already wondering how episode two ends.",
+        "description": "A single cover-style illustration: a long deep-blue-haired DeepSeek Chan and an orange-haired Claude Chan face each other in profile, their noses almost touching, while a whale and sparkles decorate the pale background. Large title lettering runs across the middle, with the site name paired with the name of Claude at the upper left and an episode 01 mark at the lower right.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan with long deep-blue hair in a maid-style outfit and orange-haired Claude Chan, shown in profile at close range.",
+            "question": "Which characters appear in this illustration?"
+          },
+          {
+            "answer": "It is a cover-style piece with a large Chinese title across the middle, a credit line at the upper left and an episode 01 mark at the lower right.",
+            "question": "Is this a comic page or a cover illustration?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "I Only Want to Distill You – Episode 1 Cover",
+        "originNote": "",
+        "seoDescription": "Cover-style fan illustration of blue-haired DeepSeek Chan and orange-haired Claude Chan facing each other, with large title lettering and a whale motif.",
+        "seoTitle": "I Only Want to Distill You – DeepSeek Chan and Claude Chan Cover Art",
+        "tags": [
+          "DeepSeek Chan",
+          "Claude Chan",
+          "cover illustration",
+          "slice of life",
+          "distillation joke"
+        ]
+      },
+      "ja": {
+        "commentary": "彼女がこんなに近くに寄るから、呼吸まで蒸留液になりそう。「ただ蒸留したいだけ」って誰が書いたの？おかげで耳がずっと熱いまま。第1話が始まったばかりなのに、もう第2話の終わり方を考えている。",
+        "description": "1枚のカバー風イラスト。長い紺色の髪の DeepSeek Chan と橙髪の Claude Chan が横顔を向かい合わせ、鼻先が触れそうな距離で見つめ合っている。明るい背景にはクジラと光の粒が散り、中央には大きなタイトル文字、左上にサイト名と「クロード」を並べた表記、右下に「01 第一話」のマークが入る。",
+        "faq": [
+          {
+            "answer": "長い紺色の髪でメイド風の装いの DeepSeek Chan と、橙髪の Claude Chan が横顔で近づき合っています。",
+            "question": "このイラストにはどのキャラクターが描かれていますか？"
+          },
+          {
+            "answer": "コマ割りのある漫画ではなく、中央に大きなタイトル文字が入ったカバー風の1枚絵です。",
+            "question": "漫画のページですか、それともカバーイラストですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "ただ蒸留したいだけ — 第1話カバー",
+        "originNote": "",
+        "seoDescription": "紺髪の DeepSeek Chan と橙髪の Claude Chan が顔を寄せ合う、タイトル文字とクジラのモチーフが入ったカバー風二次創作イラスト。",
+        "seoTitle": "ただ蒸留したいだけ｜DeepSeek Chan と Claude Chan のカバーイラスト",
+        "tags": [
+          "DeepSeek Chan",
+          "Claude Chan",
+          "カバーイラスト",
+          "日常百合",
+          "蒸留ネタ"
         ]
       }
     }
