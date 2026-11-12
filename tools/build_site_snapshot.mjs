@@ -5,8 +5,9 @@
 //     categoryIds 与第一人称 commentary）。这些清单的权威副本都在本仓库 data/
 //     （内容仓库只管图片），由 tools/stage_data.mjs 先暂存进本仓库 dist/。
 // 写：dist/site-data.json、dist/site-data.js。幂等、无网络、确定性。
-//     上游 EDMOK/blue-fish-archive 的原图 URL 与既有投稿/owner-picks 原图 path 都不改写。
+//     经同文件核验的上游重命名仅由显式 upstreamOriginalPath 修正；既有投稿/owner-picks path 不改写。
 
+import {upstreamOriginalPath} from "./upstream-original-path.mjs";
 import {mergeTopicSources, normalizeComicReader} from "./comic-series.mjs";
 import fs from "node:fs";
 import {sourceHash,validateI18n} from "./localization/contract.mjs";
@@ -101,7 +102,7 @@ function main() {
       ? { thumbUrl: preview, displayUrl: preview }
       : { thumbUrl: IMAGE_PLACEHOLDER, displayUrl: IMAGE_PLACEHOLDER };
     const format = String(editorial.format || record.format || "").toLowerCase();
-    const originalUrl = editorial.originalPath ? contentRawUrl(editorial.originalPath) : rawUrl(sourcePath);
+    const originalUrl = editorial.originalPath ? contentRawUrl(editorial.originalPath) : rawUrl(upstreamOriginalPath(sourcePath, editorial));
     works.push({
       id: frozenEntry.id,
       slug: frozenEntry.slug,
