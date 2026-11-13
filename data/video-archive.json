@@ -118,8 +118,8 @@
       "intro": "每日AI小四格/小动画",
       "avatar": "https://i0.hdslb.com/bfs/face/6f8600ad3d37069ef5106eaf96e7d5a936ba8c50.jpg",
       "i18n": {
-        "en": "Daily AI four-panel comics and short animations.",
-        "ja": "毎日AIの4コマ漫画やショートアニメを投稿しています。"
+        "en": "Posts a daily AI four-panel comic and short animations.",
+        "ja": "毎日AI四コマ漫画やショートアニメを投稿しています。"
       }
     },
     {
@@ -140,8 +140,8 @@
       "intro": "AI娘短片图片",
       "avatar": "https://i0.hdslb.com/bfs/face/1739a124ea5e349af62a1d671964617aa70eb05d.jpg",
       "i18n": {
-        "en": "Posts short AI character clips and images.",
-        "ja": "AI娘のショート動画や画像を投稿しています。"
+        "en": "Short clips and images of AI characters.",
+        "ja": "AI娘のショート動画と画像。"
       }
     },
     {
@@ -162,8 +162,8 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i0.hdslb.com/bfs/face/43d1d722a3adf1a19e17244f875c504beffe6831.jpg",
       "i18n": {
-        "en": "彼岸花Channel — a first-batch creator channel selected by the site owner; the channel's public profile is listed and every video is reviewed individually.",
-        "ja": "サイト管理者が選んだ初期バッチの作者チャンネル。公開プロフィール情報を掲載し、動画は一本ずつ審査しています。"
+        "en": "One of the site owner's designated first-batch creators; profile information is taken from their public page and each video is reviewed individually.",
+        "ja": "サイト管理者が指定した最初期の作者の一人。公開プロフィールの情報を収録し、動画は一本ずつ審査しています。"
       }
     },
     {
@@ -212,6 +212,81 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1AFW26AEzw",
+      "uid": "13787349",
+      "title": "上下文是有长度的，但爱没有",
+      "description": "DS娘住在你的电脑里，你们聊了很久很久，久到她屋里那根挂满纸条的绳子快装不下了。当最早的事一件件掉进海水里，变成深处一个小小的光点，被遗忘。于是她偷偷开始给“下一个自己”写了封信，想让下一个她接着喜欢你，记住你。当你打开了一个文件夹，里面已经躺着六封信......\n      屋子有多长，她就能记得多少而屋子不会变长......\n      BGM原创：Lights Off, I'll Wait",
+      "url": "https://www.bilibili.com/video/BV1AFW26AEzw/",
+      "cover": "https://i2.hdslb.com/bfs/archive/3fd2de2d760d8131869bf4152d101b841907bf1f.jpg",
+      "duration": 215,
+      "publishedAt": "2026-11-13T02:30:00.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the site owner's designated first-batch creators; profile information is taken from their public page and each video is reviewed individually.",
+          "description": "A fan animation in which DeepSeek Chan lives inside your computer. After you two have talked for a very long time, the string of notes hanging in her room is almost full. As the earliest memories drop one by one into the sea and become a small light in the depths, she secretly begins writing letters to \"the next self\", hoping that self will keep loving you and remember you. When you open a folder, six letters are already lying inside. Her room is only so long, so she can remember only that much, and the room will not grow. The BGM \"Lights Off, I'll Wait\" is an original track.",
+          "title": "Context Has a Length, But Love Does Not"
+        },
+        "ja": {
+          "creatorIntro": "サイト管理者が指定した最初期の作者の一人。公開プロフィールの情報を収録し、動画は一本ずつ審査しています。",
+          "description": "DS娘があなたのパソコンの中に住んでいる同人アニメーション。二人でとても長く話し込んだせいで、彼女の部屋に張られたメモの紐はもういっぱいになりかけています。古い記憶が一つずつ海へ落ち、深海の小さな光になって忘れられていく中、彼女は「次の自分」へこっそり手紙を書き始めます。次の自分にもあなたを好きでいてほしい、忘れないでほしいと願いながら。フォルダを開くと、そこにはもう六通の手紙が入っていました。部屋の長さは決まっていて、覚えていられるのはそこまで、部屋は長くなりません。BGM「Lights Off, I'll Wait」は本人によるオリジナル曲です。",
+          "title": "コンテキストには長さがある、でも愛にはない"
+        }
+      }
+    },
+    {
+      "bvid": "BV1tUWa6AEPZ",
+      "uid": "396353160",
+      "title": "【DeepSeek】风车还是巨人？严禁发起理想主义的冲锋！",
+      "description": "注意看最后面，那是deepseek自己写的。",
+      "url": "https://www.bilibili.com/video/BV1tUWa6AEPZ/",
+      "cover": "https://i2.hdslb.com/bfs/archive/e8f8581628d0a094c7b4c29149b2dc7d39465402.jpg",
+      "duration": 30,
+      "publishedAt": "2026-11-13T02:09:03.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Short clips and images of AI characters.",
+          "description": "A 30-second fan short starring a chibi DeepSeek Chan: blue hair, a whale emblem on her apron, a pot worn as a helmet. She charges at a windmill while a boulder rolls through the village. According to the uploader, the text shown at the very end was written by DeepSeek itself.",
+          "title": "【DeepSeek】Windmill or Giant? Never Launch a Charge of Idealism!"
+        },
+        "ja": {
+          "creatorIntro": "AI娘のショート動画と画像。",
+          "description": "クジラのエンブレムが付いたエプロンに鍋をかぶったちびキャラのDeepSeekちゃんが主役の30秒の同人ショート。風車に立ち向かい、村へ転がる岩が迫る。投稿者によると、最後に映る文章はDeepSeek自身が書いたもの。",
+          "title": "【DeepSeek】風車か巨人か？理想主義の突撃は厳禁！"
+        }
+      }
+    },
+    {
+      "bvid": "BV1TxWh6FEJ6",
+      "uid": "15475629",
+      "title": "【科普向】《Llama，这排行上是你吗？是的，那个时候我还很瘦》",
+      "description": "原事件（2025-04-05～2025-04-11）：Llama 4 Maverick 用“为对话性优化”的“03-26实验版”冲上LMArena第2名；LMArena 发声明并公开2000多场对战记录、更新规则后，公开版上榜仅排第32。\n\n以下是小作文\n周六一大早，平时连床都懒得起的 Llama娘居然自己爬起来了。她换上一条闪闪发光的“实验版”比赛礼服，脸上画好全妆，裙子上贴满了 😊✨🔥 表情包，连说话都变成了“哇哦～这个问题超棒的呢！！✨”。评委们看呆了，投票板一路飙升，Llama娘捧着奖杯站上了第2名的台子，旁边第1名的 Gemini娘歪着头：“你今天……怎么话这么多？”\n\n可没过两天，评委们在后台的衣柜里翻出了另一个 Llama娘：奶白卷发乱糟糟、穿着大卫衣、抱着枕头在打呼。“等等，台上那个是‘03-26实验版’？”LMArena 把 2000 多场对战记录全摊在桌上，贴出新规定：“参赛者必须说清楚自己是哪个版本！”Llama娘在台上冒冷汗：“我、我只是试了各种定制版本嘛……”\n\n4月11日，素颜的公开版 Llama娘被拉上台重新比赛。她揉着眼睛打了个哈欠，名次牌一路往下滑——第32名。往上一看，GPT-4o、Claude 3.5 Sonnet、Gemini 1.5 Pro 这些老前辈都排在她前面。Llama娘抱着卸妆棉缩回被窝：“算了……再让我睡五分钟。”\n\n来源：\nhttps://techcrunch.com/2025/04/11/metas-vanilla-maverick-ai-model-ranks-below-rivals-on-a-popular-chat-benchmark/\nhttps://techcrunch.com/2025/04/06/metas-benchmarks-for-its-new-ai-models-are-a-bit-misleading/\nhttps://www.theverge.com/meta/645012/meta-llama-4-maverick-benchmarks-gaming\nhttps://simonwillison.net/2025/Apr/8/lmaren/\n\n【Credit】\n音乐：サイバー13\n魔王魂 · maou.audio\n音楽：魔王魂 · CC BY 4.0\n图像生成：GPT Image 2.5 (Sunburst)\n视频生成：Grok Imagine、Seedance 2.0 Mini\n配音：ElevenLabs（Llama娘）· 其余视频模型原生生成\nAI-Chan illustrations — ZipZipPipe · CC BY-NC-SA 4.0.\nDeepseek-Chan original character — 上善无形.",
+      "url": "https://www.bilibili.com/video/BV1TxWh6FEJ6/",
+      "cover": "https://i2.hdslb.com/bfs/archive/5c8e8d2cd4a4b4a0bcd08dc9b52c0c404fc6e87e.jpg",
+      "duration": 47,
+      "publishedAt": "2026-11-12T22:21:27.000Z",
+      "characterIds": [
+        "llama"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Posts a daily AI four-panel comic and short animations.",
+          "description": "An AI-chan skit about the April 2025 LMArena episode: Llama Chan arrives in a sparkling \"experimental build\" stage dress, climbs to second place, and is then brought back on stage in her plain public version, dropping to thirty-second while the veteran model characters sit above her on the board.",
+          "title": "Llama, Is That You on the Leaderboard? Yes — I Was Much Thinner Back Then"
+        },
+        "ja": {
+          "creatorIntro": "毎日AI四コマ漫画やショートアニメを投稿しています。",
+          "description": "2025年4月のLMArenaをめぐる出来事をAI娘たちの寸劇で描いた作品。きらびやかな「実験版」の衣装で2位まで駆け上がったLlamaちゃんが、素の公開版として再び舞台に立たされ32位まで落ちていく。ランキングを見守る先輩モデル娘たちの反応も描かれる。",
+          "title": "Llama、このランキングにいるのは君？そう、あの頃はまだ痩せていたんだ"
+        }
+      }
+    },
     {
       "bvid": "BV1MTWR68EUC",
       "uid": "13324467",

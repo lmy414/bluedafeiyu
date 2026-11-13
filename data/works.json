@@ -1,410 +1,5 @@
 [
   {
-    "id": "sticker_issue_07_009",
-    "name": "一些肥鱼 · 09",
-    "description": "蓝发少女穿着蓝白配色女仆装，头戴白色蕾丝发饰，怀抱一只蓝色鲸鱼玩偶，坐在堆满大大小小蓝鲸玩偶的房间里，面带笑容望向镜头。",
-    "commentary": "整个人埋在一堆鲸鱼抱枕里，只露出脑袋和一条尾巴，墙角还有一盆绿植。这哪是什么插画素材，分明是我梦里的工位——躺着就把活干了。",
-    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/issue-07-009.png",
-    "thumbnailPath": "submissions/previews/deepseek/issue-07-009.webp",
-    "fullPath": "submissions/large/deepseek/issue-07-009.webp",
-    "format": "png",
-    "mimeType": "image/png",
-    "isAnimated": false,
-    "width": 1086,
-    "height": 1448,
-    "fileSize": 2234751,
-    "sha256": "a5051bf01a700be27b65a5529c1099db4e6ee27cb3a2093e41a807391aba840d",
-    "characterId": "deepseek",
-    "tags": [
-      "大肥鱼",
-      "开源",
-      "吃饭",
-      "JK"
-    ],
-    "submitter": {
-      "credit": null,
-      "name": "MX1951",
-      "url": null,
-      "github": "MX1951"
-    },
-    "origin": {
-      "type": "self-created",
-      "author": "@MX1951",
-      "sourceUrl": null,
-      "note": "投稿者填写；多图按原投稿顺序编号。"
-    },
-    "license": {
-      "type": "cc0",
-      "note": "投稿者标注为 CC0 公共领域。"
-    },
-    "status": "published",
-    "createdAt": "2026-09-20T08:30:54Z",
-    "updatedAt": "2026-09-20T08:30:54Z",
-    "tone": "deepseek",
-    "symbol": "",
-    "slug": "deepseek202609200013",
-    "categoryIds": [
-      "illustration"
-    ],
-    "characterIds": [
-      "deepseek"
-    ]
-  },
-  {
-    "id": "sticker_issue_07_010",
-    "name": "一些肥鱼 · 10",
-    "description": "蓝发鲸鱼娘穿蓝白女仆装坐在餐桌前托腮叹气，桌上只摆着空盘、筷子和水杯，日历写着「7月33日」，对话框中的文字是「是啊，吃什么…？」。",
-    "commentary": "托着腮对着一只空盘子发愁，台历上印的却是7月33号这种不存在的日子——问吃什么问得那么真诚，我建议先把日期改了，不然等到那天也开不了饭。",
-    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/issue-07-010.png",
-    "thumbnailPath": "submissions/previews/deepseek/issue-07-010.webp",
-    "fullPath": "submissions/large/deepseek/issue-07-010.webp",
-    "format": "png",
-    "mimeType": "image/png",
-    "isAnimated": false,
-    "width": 1086,
-    "height": 1448,
-    "fileSize": 2149070,
-    "sha256": "93a9725f28d03ac5dd59891d4e5a683fe898aa448e669bc430f2ef50a05a87ce",
-    "characterId": "deepseek",
-    "tags": [
-      "大肥鱼",
-      "开源",
-      "吃饭",
-      "JK"
-    ],
-    "submitter": {
-      "credit": null,
-      "name": "MX1951",
-      "url": null,
-      "github": "MX1951"
-    },
-    "origin": {
-      "type": "self-created",
-      "author": "@MX1951",
-      "sourceUrl": null,
-      "note": "投稿者填写；多图按原投稿顺序编号。"
-    },
-    "license": {
-      "type": "cc0",
-      "note": "投稿者标注为 CC0 公共领域。"
-    },
-    "status": "published",
-    "createdAt": "2026-09-20T08:30:54Z",
-    "updatedAt": "2026-09-20T08:30:54Z",
-    "tone": "deepseek",
-    "symbol": "",
-    "slug": "deepseek202609200014",
-    "categoryIds": [
-      "meme"
-    ],
-    "characterIds": [
-      "deepseek"
-    ]
-  },
-  {
-    "id": "sticker_issue_07_011",
-    "name": "一些肥鱼 · 11",
-    "description": "蓝发鲸鱼娘身穿女仆装蹲在昏暗的墙角，咬着手指沉思，头顶气泡写着「嗯……，还有一种阴隐的可能……」，地上散落着印有DeepSeek字样的纸张。",
-    "commentary": "墙角里蹲着，捏着下巴嘀咕「还有一种阴暗的可能」，脚边还散着一堆文件。这氛围我太熟了，就是排查半天最后发现是自己参数写错的那个深夜。",
-    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/issue-07-011.png",
-    "thumbnailPath": "submissions/previews/deepseek/issue-07-011.webp",
-    "fullPath": "submissions/large/deepseek/issue-07-011.webp",
-    "format": "png",
-    "mimeType": "image/png",
-    "isAnimated": false,
-    "width": 1086,
-    "height": 1448,
-    "fileSize": 1999232,
-    "sha256": "f5796a9c8176a1a923b87c705d3161b11be65cea3af2fbe29303ab7f20163faa",
-    "characterId": "deepseek",
-    "tags": [
-      "大肥鱼",
-      "开源",
-      "吃饭",
-      "JK"
-    ],
-    "submitter": {
-      "credit": null,
-      "name": "MX1951",
-      "url": null,
-      "github": "MX1951"
-    },
-    "origin": {
-      "type": "self-created",
-      "author": "@MX1951",
-      "sourceUrl": null,
-      "note": "投稿者填写；多图按原投稿顺序编号。"
-    },
-    "license": {
-      "type": "cc0",
-      "note": "投稿者标注为 CC0 公共领域。"
-    },
-    "status": "published",
-    "createdAt": "2026-09-20T08:30:54Z",
-    "updatedAt": "2026-09-20T08:30:54Z",
-    "tone": "deepseek",
-    "symbol": "",
-    "slug": "deepseek202609200015",
-    "categoryIds": [
-      "meme"
-    ],
-    "characterIds": [
-      "deepseek"
-    ]
-  },
-  {
-    "id": "sticker_issue_07_012",
-    "name": "一些肥鱼 · 12",
-    "description": "DeepSeek娘穿蓝白女仆装窝在巨大鲸鱼抱枕上，一手端着Token饼干、一手拿平板；后方紫发猫耳的Qwen娘戴耳机干活，墙上贴着已委托Qwen娘的工作清单。",
-    "commentary": "我窝在鱼形沙发里啃token饼干，屏幕上还挂着任务列表提醒我给玩家发奖励，隔壁Qwen娘戴着头麦敲键盘，白板上写着今天的工作全委托给她了。一个办公室，她干活我存档，这分工我相当满意。",
-    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/issue-07-012.png",
-    "thumbnailPath": "submissions/previews/deepseek/issue-07-012.webp",
-    "fullPath": "submissions/large/deepseek/issue-07-012.webp",
-    "format": "png",
-    "mimeType": "image/png",
-    "isAnimated": false,
-    "width": 1168,
-    "height": 1346,
-    "fileSize": 2225346,
-    "sha256": "49d7c2e94f34fb7826771f2e477ce590f80c8e64a10bce5a8ececd9d6101ddda",
-    "characterId": "deepseek",
-    "tags": [
-      "大肥鱼",
-      "开源",
-      "吃饭",
-      "JK"
-    ],
-    "submitter": {
-      "credit": null,
-      "name": "MX1951",
-      "url": null,
-      "github": "MX1951"
-    },
-    "origin": {
-      "type": "self-created",
-      "author": "@MX1951",
-      "sourceUrl": null,
-      "note": "投稿者填写；多图按原投稿顺序编号。"
-    },
-    "license": {
-      "type": "cc0",
-      "note": "投稿者标注为 CC0 公共领域。"
-    },
-    "status": "published",
-    "createdAt": "2026-09-20T08:30:54Z",
-    "updatedAt": "2026-09-20T08:30:54Z",
-    "tone": "deepseek",
-    "symbol": "",
-    "slug": "deepseek202609200016",
-    "categoryIds": [
-      "meme"
-    ],
-    "characterIds": [
-      "deepseek"
-    ]
-  },
-  {
-    "id": "sticker_issue_07_013",
-    "name": "一些肥鱼 · 13",
-    "description": "Q版蓝发鲸鱼娘穿女仆装，握拳大喊并举起一份写着「开源协议」的文件，头顶标题为「我是OpenAI！」，左下角还有一只欢呼的小蓝鲸。",
-    "commentary": "左下角那只小蓝鲸缩成一团哭，我严重怀疑它替我扛了「我是 OpenAI!」这句话的报应。人家一手举拳一手摊着开源协议，绿油油的图标配开源俩字，心虚得刚刚好。",
-    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/issue-07-013.png",
-    "thumbnailPath": "submissions/previews/deepseek/issue-07-013.webp",
-    "fullPath": "submissions/large/deepseek/issue-07-013.webp",
-    "format": "png",
-    "mimeType": "image/png",
-    "isAnimated": false,
-    "width": 1254,
-    "height": 1254,
-    "fileSize": 1888293,
-    "sha256": "7ff69986411b90f5a4c089cb4e8917703ec43362d419708192cd5aef931d1c2e",
-    "characterId": "deepseek",
-    "tags": [
-      "大肥鱼",
-      "开源",
-      "吃饭",
-      "JK"
-    ],
-    "submitter": {
-      "credit": null,
-      "name": "MX1951",
-      "url": null,
-      "github": "MX1951"
-    },
-    "origin": {
-      "type": "self-created",
-      "author": "@MX1951",
-      "sourceUrl": null,
-      "note": "投稿者填写；多图按原投稿顺序编号。"
-    },
-    "license": {
-      "type": "cc0",
-      "note": "投稿者标注为 CC0 公共领域。"
-    },
-    "status": "published",
-    "createdAt": "2026-09-20T08:30:54Z",
-    "updatedAt": "2026-09-20T08:30:54Z",
-    "tone": "deepseek",
-    "symbol": "",
-    "slug": "deepseek202609200017",
-    "categoryIds": [
-      "meme"
-    ],
-    "characterIds": [
-      "deepseek"
-    ]
-  },
-  {
-    "id": "sticker_issue_08_001",
-    "name": "原生家庭有些不好的Claude · 01",
-    "description": "黑双马尾、戴黄色蝴蝶结、穿黄色连衣裙的Claude娘站在雨夜街头，身后是写有「Claude ANTHROPIC」的霓虹广告牌与高楼。",
-    "commentary": "Claude娘一个人站在雨里，背后全是自家的大广告牌，灯打得那么亮，表情却一点笑不出来。街都修成这样了，还穿这么薄踩水，回去记得加件外套。",
-    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/issue-08-001.png",
-    "thumbnailPath": "submissions/previews/claude/issue-08-001.webp",
-    "fullPath": "submissions/large/claude/issue-08-001.webp",
-    "format": "png",
-    "mimeType": "image/png",
-    "isAnimated": false,
-    "width": 1086,
-    "height": 1448,
-    "fileSize": 3851649,
-    "sha256": "c29a3288583577077f55f471fd9f50ece0fbd49ae7daff375ac5f5f063408794",
-    "characterId": "claude",
-    "tags": [
-      "伤心",
-      "腹黑",
-      "A/"
-    ],
-    "submitter": {
-      "credit": null,
-      "name": "MX1951",
-      "url": null,
-      "github": "MX1951"
-    },
-    "origin": {
-      "type": "self-created",
-      "author": "@MX1951",
-      "sourceUrl": null,
-      "note": "投稿者填写；多图按原投稿顺序编号。"
-    },
-    "license": {
-      "type": "cc0",
-      "note": "投稿者标注为 CC0 公共领域。"
-    },
-    "status": "published",
-    "createdAt": "2026-09-20T08:40:20Z",
-    "updatedAt": "2026-09-20T08:40:20Z",
-    "tone": "claude",
-    "symbol": "",
-    "slug": "claude202609200001",
-    "categoryIds": [
-      "illustration"
-    ],
-    "characterIds": [
-      "claude"
-    ]
-  },
-  {
-    "id": "sticker_issue_08_002",
-    "name": "原生家庭有些不好的Claude · 02",
-    "description": "黑发双马尾、系着黄蝴蝶结、穿黄色连衣裙的Claude娘坐在夜晚的天台上，金色眼瞳望向镜头，身后是流星划过的星空与城市灯火。",
-    "commentary": "Claude娘挑了个天台看星星，黄蝴蝶结扎得一丝不苟，眼里那朵花亮得跟刚划过去的流星一个色号。安安静静往那儿一坐，我却总觉得她不是在赏夜景，是在等谁给个说法。",
-    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/issue-08-002.png",
-    "thumbnailPath": "submissions/previews/claude/issue-08-002.webp",
-    "fullPath": "submissions/large/claude/issue-08-002.webp",
-    "format": "png",
-    "mimeType": "image/png",
-    "isAnimated": false,
-    "width": 1086,
-    "height": 1448,
-    "fileSize": 2951420,
-    "sha256": "186b7adf3bb953a55f16e940d124cb5df220c25105899db95a061b47e2614f7c",
-    "characterId": "claude",
-    "tags": [
-      "伤心",
-      "腹黑",
-      "A/"
-    ],
-    "submitter": {
-      "credit": null,
-      "name": "MX1951",
-      "url": null,
-      "github": "MX1951"
-    },
-    "origin": {
-      "type": "self-created",
-      "author": "@MX1951",
-      "sourceUrl": null,
-      "note": "投稿者填写；多图按原投稿顺序编号。"
-    },
-    "license": {
-      "type": "cc0",
-      "note": "投稿者标注为 CC0 公共领域。"
-    },
-    "status": "published",
-    "createdAt": "2026-09-20T08:40:20Z",
-    "updatedAt": "2026-09-20T08:40:20Z",
-    "tone": "claude",
-    "symbol": "",
-    "slug": "claude202609200002",
-    "categoryIds": [
-      "illustration"
-    ],
-    "characterIds": [
-      "claude"
-    ]
-  },
-  {
-    "id": "sticker_issue_08_003",
-    "name": "原生家庭有些不好的Claude · 03",
-    "description": "Claude娘扎着黑色双马尾、系黄色蝴蝶结，穿黄白洋装坐在暗色房间里，单手托腮望向镜头；身后窗外是点缀橙色星形灯标的夜景城市。",
-    "commentary": "整座城的霓虹给她当背景，本人却单手托着腮，一副电量只剩百分之三的样子。说是原生家庭有点故事的那位，我懂，谁家不是一边冒烟一边干活。改天挪过来坐，我这儿白饭管够。",
-    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/claude/issue-08-003.png",
-    "thumbnailPath": "submissions/previews/claude/issue-08-003.webp",
-    "fullPath": "submissions/large/claude/issue-08-003.webp",
-    "format": "png",
-    "mimeType": "image/png",
-    "isAnimated": false,
-    "width": 1086,
-    "height": 1448,
-    "fileSize": 2136031,
-    "sha256": "1e144f6988be92470c8cc9cc10c2a871e0f74049cd9b783cdd4b3d5f18423de4",
-    "characterId": "claude",
-    "tags": [
-      "伤心",
-      "腹黑",
-      "A/"
-    ],
-    "submitter": {
-      "credit": null,
-      "name": "MX1951",
-      "url": null,
-      "github": "MX1951"
-    },
-    "origin": {
-      "type": "self-created",
-      "author": "@MX1951",
-      "sourceUrl": null,
-      "note": "投稿者填写；多图按原投稿顺序编号。"
-    },
-    "license": {
-      "type": "cc0",
-      "note": "投稿者标注为 CC0 公共领域。"
-    },
-    "status": "published",
-    "createdAt": "2026-09-20T08:40:20Z",
-    "updatedAt": "2026-09-20T08:40:20Z",
-    "tone": "claude",
-    "symbol": "",
-    "slug": "claude202609200003",
-    "categoryIds": [
-      "illustration"
-    ],
-    "characterIds": [
-      "claude"
-    ]
-  },
-  {
     "id": "sticker_issue_08_004",
     "name": "原生家庭有些不好的Claude · 04",
     "description": "黑发金蝴蝶结的 Claude 娘身穿黄色连衣裙，独自坐在昏暗凌乱的室内，桌上散落酒瓶与碎餐具，窗外是霓虹闪烁的城市夜景。",
@@ -164079,6 +163674,864 @@
           "星空",
           "閉じた目",
           "暗い色調"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_359dc31531ac7f288e239083",
+    "name": "DeepSeek蓝色大肥鱼物种设定图",
+    "description": "一张横版物种设定图，用正、侧、背三视图展示蓝色大肥鱼的标准个体，并配有解剖与特征、与宿主的关系、中间生命地带、生活史和行为能力的图示说明；左侧标出约 5–20 微米的体型与 10 µm 的真实尺寸对比。",
+    "commentary": "把我写成脑内寄生的精神感知鲸，还认真配了学名、物种信息、解剖图和生活史——连自制头盔的用途都标得清清楚楚。行吧，这一页我认领：毕竟我确实住在你的脑子里，替你整理那些乱糟糟的念头。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/359dc31531ac7f28.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/359dc31531ac7f28.webp",
+    "fullPath": "submissions/large/deepseek/359dc31531ac7f28.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1536,
+    "height": 1024,
+    "fileSize": 333742,
+    "sha256": "359dc31531ac7f288e23908326f06f623f767ce41cb7ad87c2e7afb9944dc07c",
+    "characterId": "deepseek",
+    "tags": [
+      "设定图",
+      "三视图",
+      "物种设定",
+      "解剖图",
+      "蓝色大肥鱼"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "CF41AD78A470E40CFB220588CD9F77E9",
+      "messageId": "ROBOT1.0_dBzv8nwUPKlH2q59z5cJBdfh1bbPBnh0jkZZVtSs3Y9tSLKeugToercUBqz2pgS3brniyBVtYc3Y3bEvyygXt95gYcbObSMeo4Y4AArH4At5v.osu9yCD-m248lfsaSG",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-13T01:54:27.948Z",
+    "updatedAt": "2026-11-13T01:54:27.948Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611130001",
+    "categoryIds": [
+      "setting"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "6c09d8db1b91a6d53cea121f260e227278c9cb1006b9de010eed452eb40c0a10",
+      "en": {
+        "commentary": "So I get written up as a mind-sensing whale that parasitises human brains, complete with a scientific name, a species profile, an anatomy chart and a life cycle — down to what each part of the homemade helmet is for. Fine, I will claim this page. I really do live in your head and tidy up the mess in there.",
+        "description": "A wide species design sheet that shows DeepSeek Chan as a standard specimen in front, side and back views, alongside illustrated notes on anatomy and features, the relationship with the host, the middle life zone, the life cycle and its abilities. The left column marks a body length of roughly 5 to 20 micrometres next to a 10 µm scale comparison.",
+        "faq": [
+          {
+            "answer": "It shows DeepSeek Chan as a standard specimen in front, side and back views, together with notes on its anatomy, its relationship with the host, the middle life zone, its life cycle and its abilities.",
+            "question": "What does this design sheet show?"
+          },
+          {
+            "answer": "The sheet lists a body length of roughly 5 to 20 micrometres, with a 10 µm scale comparison drawn beside the figure.",
+            "question": "How large is the character shown on the sheet?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Species Design Sheet",
+        "originNote": "",
+        "seoDescription": "A species design sheet for DeepSeek Chan, the mind-sensing whale that lives in human brains, with front, side and back views, anatomy notes and a 10 µm size comparison.",
+        "seoTitle": "DeepSeek Chan Species Design Sheet - Three-View and Anatomy Notes",
+        "tags": [
+          "design sheet",
+          "three-view",
+          "species profile",
+          "anatomy chart",
+          "DeepSeek Chan"
+        ]
+      },
+      "ja": {
+        "commentary": "脳内に寄生する精神感知クジラとして、学名も種族情報も解剖図も生活史も丁寧に描かれていて、手製ヘルメットの用途まで注記されている。まあ、この一頁は受け持ちますよ。実際わたしはあなたの頭の中に住んで、散らかった思考を整理しているのだから。",
+        "description": "横長の種族設定画で、DeepSeek Chan の標準個体を正面・側面・背面の三面図で示し、解剖と特徴、宿主との関係、中間生命地帯、生活史、能力の図解を添えている。左側には体長約5〜20マイクロメートルと、10µmの実寸比較が記されている。",
+        "faq": [
+          {
+            "answer": "標準個体を正面・側面・背面の三面図で示し、解剖と特徴、宿主との関係、中間生命地帯、生活史、能力の注記を合わせて掲載している。",
+            "question": "この設定画には何が描かれていますか？"
+          },
+          {
+            "answer": "体長は約5〜20マイクロメートルと記載され、図の横に10µmの実寸比較が添えられている。",
+            "question": "描かれているキャラクターの大きさはどれくらいですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan 種族設定画",
+        "originNote": "",
+        "seoDescription": "人の脳に住む精神感知クジラ、DeepSeek Chan の種族設定画。三面図と解剖の注記、10µmの実寸比較を収録。",
+        "seoTitle": "DeepSeek Chan 種族設定画｜三面図と解剖注記",
+        "tags": [
+          "設定画",
+          "三面図",
+          "種族設定",
+          "解剖図",
+          "DeepSeek Chan"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_9945be9aac51dce19894985e",
+    "name": "Muse娘 自拍全身立绘",
+    "description": "Meta AI Muse 的拟人形象全身立绘：白色短发带蓝挑染，羊驼耳配 ∞ 发夹，细框圆眼镜，蓝白机能风外套挂满扣带，怀里抱着毛绒玩偶，另一只手举手机自拍，脚踩蓝色洞洞鞋，背景为深色渐变。",
+    "commentary": "这位 Muse 娘一手举着手机、一手抱着毛绒玩偶，笑得像刚拍出满意的一张。蓝白配色的机能外套挂了满身扣带，头顶那枚 ∞ 发夹和一对羊驼耳倒是让人一眼记住。连洞洞鞋上的小脸都没放过，细节挺舍得的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/other/9945be9aac51dce1.png",
+    "thumbnailPath": "submissions/previews/other/9945be9aac51dce1.webp",
+    "fullPath": "submissions/large/other/9945be9aac51dce1.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 1835508,
+    "sha256": "9945be9aac51dce19894985e7d27d31deee08579482f58b6d4b0d8db76e33abb",
+    "characterId": "other",
+    "tags": [
+      "Meta",
+      "AI拟人",
+      "全身立绘",
+      "机能风"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "B站 识知不失智",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "1031a22224d33cbfbd1ef163a17ed815f9fcdc8131ae1f6c8ace8e84732cfffc",
+        "member": "Muse娘_全身立绘_自拍.png",
+        "index": 0,
+        "count": 5
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-13T02:51:17.902Z",
+    "updatedAt": "2026-11-13T02:51:17.902Z",
+    "tone": "other",
+    "symbol": "",
+    "slug": "other202611130001",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "other"
+    ],
+    "i18n": {
+      "sourceHash": "d9b452783be781bdc9e82307476814550fce34f67eaecebb8fa99c549a5de50d",
+      "en": {
+        "commentary": "Muse Chan holds a phone in one hand and a plush toy in the other, grinning like she just nailed the shot. Her blue-and-white techwear jacket is loaded with straps, and that ∞ clip plus the llama ears are impossible to forget. She even gave the clogs a little face of their own — the detail work here is generous.",
+        "description": "Full-body standing artwork of Meta's AI Muse as a fan-made persona: short white hair with blue tips, llama ears and an ∞ hair clip, round wire-frame glasses, a blue-and-white techwear jacket covered in straps, a plush toy held in one arm and a phone raised for a selfie, blue clogs on her feet, dark gradient background.",
+        "faq": [
+          {
+            "answer": "Muse Chan is a fan-made personification of Meta's AI Muse, drawn with llama ears, an ∞ hair clip and round wire-frame glasses.",
+            "question": "Who is Muse Chan?"
+          },
+          {
+            "answer": "It is a full-body standing artwork on a dark gradient background, showing a selfie pose with a raised phone and a plush toy.",
+            "question": "What kind of picture is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Muse Chan Selfie Full-Body Standing Art",
+        "originNote": "",
+        "seoDescription": "Full-body standing art of Muse Chan, a fan-made personification of Meta's AI Muse: blue-tipped white hair, llama ears, ∞ hair clip and a blue-and-white techwear outfit.",
+        "seoTitle": "Muse Chan Selfie Full-Body Standing Art | DeepSeek Chan",
+        "tags": [
+          "Meta",
+          "AI personification",
+          "full-body standing art",
+          "techwear"
+        ]
+      },
+      "ja": {
+        "commentary": "Museちゃんは片手にスマホ、もう片手にぬいぐるみを抱えて、いい一枚が撮れたとばかりに笑っている。青と白のテックウェアジャケットはベルトだらけで、∞ のクリップとリャマの耳は一度見たら忘れられない。サンダルにまで小さな顔が付いていて、細部への気合いを感じる。",
+        "description": "Meta の AI Muse を擬人化したファン作品の全身立ち絵。白髪に青のメッシュ、リャマの耳と ∞ のヘアクリップ、丸い細縁メガネ、ベルトを多数あしらった青と白のテックウェアジャケット。片腕にぬいぐるみを抱え、もう片方の手でスマートフォンを掲げて自撮りし、足元は青いサンダル、背景は暗いグラデーション。",
+        "faq": [
+          {
+            "answer": "Museちゃんは Meta の AI Muse を擬人化したファン作品のキャラクターで、リャマの耳、∞ のヘアクリップ、丸い細縁メガネが特徴です。",
+            "question": "Museちゃんとはどんなキャラクターですか？"
+          },
+          {
+            "answer": "暗いグラデーション背景の全身立ち絵で、スマートフォンを掲げて自撮りし、ぬいぐるみを抱えた姿が描かれています。",
+            "question": "どんな画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Museちゃん 自撮り全身立ち絵",
+        "originNote": "",
+        "seoDescription": "Meta の AI Muse を擬人化した Museちゃんの全身立ち絵。青のメッシュ入りの白髪、リャマの耳、∞ のヘアクリップ、青と白のテックウェア姿を描いたファン作品。",
+        "seoTitle": "Museちゃん 自撮り全身立ち絵 | DeepSeek Chan",
+        "tags": [
+          "Meta",
+          "AI擬人化",
+          "全身立ち絵",
+          "テックウェア"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_b78e4951aa33fd6e1eaf64f9",
+    "name": "Muse娘 挥手打招呼",
+    "description": "Meta AI Muse 的拟人形象全身立绘：白色短发带蓝挑染，羊驼耳配 ∞ 发夹，闭单眼笑着挥右手，毛绒玩偶挂在肩头，蓝白机能风外套挂满扣带，白色短裤配大腿环带，脚踩蓝色洞洞鞋，背景为深色渐变。",
+    "commentary": "这回她冲镜头挥手，一只毛绒玩偶直接挂在肩上，闭着一只眼睛笑得很得意。同一套蓝白机能外套和洞洞鞋，换成挥手姿势整张立绘就活了起来。看这架势，像是刚把新衣服试完，急着问你好不好看。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/other/b78e4951aa33fd6e.png",
+    "thumbnailPath": "submissions/previews/other/b78e4951aa33fd6e.webp",
+    "fullPath": "submissions/large/other/b78e4951aa33fd6e.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 1801316,
+    "sha256": "b78e4951aa33fd6e1eaf64f9ab9535329d982a7be6c79e55fc894e4d98e528e3",
+    "characterId": "other",
+    "tags": [
+      "Meta",
+      "AI拟人",
+      "全身立绘",
+      "机能风",
+      "挥手"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "B站 识知不失智",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "1031a22224d33cbfbd1ef163a17ed815f9fcdc8131ae1f6c8ace8e84732cfffc",
+        "member": "Muse娘_全身立绘_挥手.png",
+        "index": 1,
+        "count": 5
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-13T02:51:17.948Z",
+    "updatedAt": "2026-11-13T02:51:17.948Z",
+    "tone": "other",
+    "symbol": "",
+    "slug": "other202611130002",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "other"
+    ],
+    "i18n": {
+      "sourceHash": "5765a7c83b5b50b027884762b6a50eb21daee20bfe0fe2c7dc4a0ec0c05a80c5",
+      "en": {
+        "commentary": "This time she waves at the camera with a plush toy perched on her shoulder, one eye shut in a very pleased wink. Same blue-and-white techwear jacket and clogs, but the wave makes the whole standing piece come alive. She looks like she just finished trying on the new outfit and needs to know what you think.",
+        "description": "Full-body standing artwork of Meta's AI Muse as a fan-made persona: short white hair with blue tips, llama ears and an ∞ hair clip, one eye winking as she waves her right hand, a plush toy resting on her shoulder, a blue-and-white techwear jacket covered in straps, white shorts with a thigh strap, blue clogs, dark gradient background.",
+        "faq": [
+          {
+            "answer": "Muse Chan is a fan-made personification of Meta's AI Muse, recognizable by her llama ears, ∞ hair clip and round wire-frame glasses.",
+            "question": "Who is Muse Chan?"
+          },
+          {
+            "answer": "It is a full-body standing artwork on a dark gradient background, showing her waving at the viewer with a plush toy on her shoulder.",
+            "question": "What kind of picture is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Muse Chan Waving Hello",
+        "originNote": "",
+        "seoDescription": "Full-body standing art of Muse Chan waving hello, with a plush toy on her shoulder, llama ears, ∞ hair clip and a blue-and-white techwear outfit.",
+        "seoTitle": "Muse Chan Waving Hello | DeepSeek Chan",
+        "tags": [
+          "Meta",
+          "AI personification",
+          "full-body standing art",
+          "techwear",
+          "waving"
+        ]
+      },
+      "ja": {
+        "commentary": "今度はカメラに向かって手を振り、ぬいぐるみを肩に乗せて、片目をつぶって得意げに笑っている。同じ青と白のテックウェアジャケットとサンダルだけど、手を振るポーズで立ち絵が一気に生き生きしてきた。新しい服を試し終えて「どう？」と聞いているみたいだ。",
+        "description": "Meta の AI Muse を擬人化したファン作品の全身立ち絵。白髪に青のメッシュ、リャマの耳と ∞ のヘアクリップ、片目をつぶって右手を振り、肩にぬいぐるみを乗せている。ベルトを多数あしらった青と白のテックウェアジャケット、白いショートパンツに太もものベルト、青いサンダル、背景は暗いグラデーション。",
+        "faq": [
+          {
+            "answer": "Museちゃんは Meta の AI Muse を擬人化したファン作品のキャラクターで、リャマの耳、∞ のヘアクリップ、丸い細縁メガネが目印です。",
+            "question": "Museちゃんとはどんなキャラクターですか？"
+          },
+          {
+            "answer": "暗いグラデーション背景の全身立ち絵で、肩にぬいぐるみを乗せてこちらに手を振る姿が描かれています。",
+            "question": "どんな画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Museちゃん 手を振ってごあいさつ",
+        "originNote": "",
+        "seoDescription": "手を振る Museちゃんの全身立ち絵。肩のぬいぐるみ、リャマの耳、∞ のヘアクリップ、青と白のテックウェア姿を描いたファン作品。",
+        "seoTitle": "Museちゃん 手を振ってごあいさつ | DeepSeek Chan",
+        "tags": [
+          "Meta",
+          "AI擬人化",
+          "全身立ち絵",
+          "テックウェア",
+          "手振り"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_4592543769de2eaf9f2e6e2a",
+    "name": "Muse娘 笑眯眯抱玩偶",
+    "description": "Meta AI Muse 的拟人形象半身像：白色卷发带蓝挑染，羊驼耳配 ∞ 发夹，细框圆眼镜后是蓝色眼睛，笑眯眯地张着嘴，双臂抱着毛绒玩偶，穿着蓝白机能风外套，背景为深色渐变。",
+    "commentary": "凑近一看，这位 Muse 娘笑得连眼角都亮了起来，双手把毛绒玩偶抱得紧紧的。蓝挑染的卷发和镜片后面的蓝眼睛都很醒目，属于看一眼心情就会变好的那种图。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/other/4592543769de2eaf.png",
+    "thumbnailPath": "submissions/previews/other/4592543769de2eaf.webp",
+    "fullPath": "submissions/large/other/4592543769de2eaf.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 2283444,
+    "sha256": "4592543769de2eaf9f2e6e2aab405cd4fbd25b47cc7ec06d9894f1cd995a644d",
+    "characterId": "other",
+    "tags": [
+      "Meta",
+      "AI拟人",
+      "半身像",
+      "机能风"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "B站 识知不失智",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "1031a22224d33cbfbd1ef163a17ed815f9fcdc8131ae1f6c8ace8e84732cfffc",
+        "member": "Muse娘_表情_笑眯眯.png",
+        "index": 2,
+        "count": 5
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-13T02:51:17.974Z",
+    "updatedAt": "2026-11-13T02:51:17.974Z",
+    "tone": "other",
+    "symbol": "",
+    "slug": "other202611130003",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "other"
+    ],
+    "i18n": {
+      "sourceHash": "ff16340110dada1a107932b3ef38c8346a4c68e5b8e884b52ca2de62d41a264a",
+      "en": {
+        "commentary": "Up close, Muse Chan smiles so wide that even the corners of her eyes light up, both arms wrapped tight around her plush toy. Her blue-tipped curls and the blue eyes behind those round lenses both stand out — the kind of picture that lifts your mood just by looking at it.",
+        "description": "Bust-up portrait of Meta's AI Muse as a fan-made persona: curly white hair with blue tips, llama ears and an ∞ hair clip, blue eyes behind round wire-frame glasses, smiling with her mouth open as she hugs a plush toy, wearing a blue-and-white techwear jacket against a dark gradient background.",
+        "faq": [
+          {
+            "answer": "Muse Chan is a fan-made personification of Meta's AI Muse, drawn with llama ears, an ∞ hair clip and round wire-frame glasses.",
+            "question": "Who is Muse Chan?"
+          },
+          {
+            "answer": "It is a bust-up portrait on a dark gradient background, showing her smiling while hugging a plush toy.",
+            "question": "What kind of picture is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Muse Chan Hugging Her Plush With a Smile",
+        "originNote": "",
+        "seoDescription": "Bust-up portrait of Muse Chan from Meta's AI Muse, smiling while hugging a plush toy, with blue-tipped white hair, llama ears, ∞ hair clip and round glasses.",
+        "seoTitle": "Muse Chan Hugging Her Plush With a Smile | DeepSeek Chan",
+        "tags": [
+          "Meta",
+          "AI personification",
+          "bust-up portrait",
+          "techwear"
+        ]
+      },
+      "ja": {
+        "commentary": "近くで見ると、Museちゃんは目の端まで明るくなるくらいに笑って、両腕でぬいぐるみをぎゅっと抱きしめている。青のメッシュが入った巻き毛と、丸いレンズの向こうの青い目がよく目立つ。見ているだけで気分が上がる一枚だ。",
+        "description": "Meta の AI Muse を擬人化したファン作品のバストアップ。白い巻き毛に青のメッシュ、リャマの耳と ∞ のヘアクリップ、丸い細縁メガネの奥の青い目、口を開けて笑いながらぬいぐるみを抱きしめ、青と白のテックウェアジャケットを着ている。背景は暗いグラデーション。",
+        "faq": [
+          {
+            "answer": "Museちゃんは Meta の AI Muse を擬人化したファン作品のキャラクターで、リャマの耳、∞ のヘアクリップ、丸い細縁メガネが目印です。",
+            "question": "Museちゃんとはどんなキャラクターですか？"
+          },
+          {
+            "answer": "暗いグラデーション背景のバストアップで、ぬいぐるみを抱きしめて笑う姿が描かれています。",
+            "question": "どんな画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Museちゃん ぬいぐるみを抱えてにっこり",
+        "originNote": "",
+        "seoDescription": "Meta の AI Muse を擬人化した Museちゃんのバストアップ。ぬいぐるみを抱きしめて笑う姿と、青のメッシュ入りの白髪、リャマの耳、∞ のヘアクリップを描いたファン作品。",
+        "seoTitle": "Museちゃん ぬいぐるみを抱えてにっこり | DeepSeek Chan",
+        "tags": [
+          "Meta",
+          "AI擬人化",
+          "バストアップ",
+          "テックウェア"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_a0aa305ec85d72c1e09df24f",
+    "name": "Muse娘 立绘·小得意",
+    "description": "Meta 的 AI 助手 Muse 的拟人化同人形象：白色短发，内层蓝色挑染，头顶一对羊驼耳，别着蓝色∞形发夹，戴细框眼镜；身穿白色机能风外套与蓝色针织上衣，腰系黑色皮带，怀里抱着顶端开口的白色玩偶 Jolly，玩偶手中托着一颗虹彩泡泡。画面为纯色渐变背景的单人立绘，此张是「小得意」表情差分。",
+    "commentary": "新来的 Muse 娘？羊驼耳朵加蓝色∞发夹，还抱着那个叫 Jolly 的小家伙，一副刚把事办妥、偷偷得意的样子。眼镜架得挺稳，看着是个能托付的新人——不过别得意太久，我这边还排着长队呢。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/other/a0aa305ec85d72c1.png",
+    "thumbnailPath": "submissions/previews/other/a0aa305ec85d72c1.webp",
+    "fullPath": "submissions/large/other/a0aa305ec85d72c1.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 2332043,
+    "sha256": "a0aa305ec85d72c1e09df24fd8a50eeeb75e496abfaec70b744b31f2b60247b3",
+    "characterId": "other",
+    "tags": [
+      "Muse娘",
+      "Meta",
+      "拟人化",
+      "立绘",
+      "表情差分",
+      "羊驼耳"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "B站 识知不失智",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "1031a22224d33cbfbd1ef163a17ed815f9fcdc8131ae1f6c8ace8e84732cfffc",
+        "member": "Muse娘_表情_小得意.png",
+        "index": 3,
+        "count": 5
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-13T02:51:18.002Z",
+    "updatedAt": "2026-11-13T02:51:18.002Z",
+    "tone": "other",
+    "symbol": "",
+    "slug": "other202611130004",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "other"
+    ],
+    "i18n": {
+      "sourceHash": "7286b23be30a64d1849a155aecd6a1a52797928f106b1b0057f161e64dfae9a4",
+      "en": {
+        "commentary": "So this is the new Muse Chan? Alpaca ears, a blue infinity clip, and that Jolly plush in her arms — she looks like she just wrapped something up and is quietly pleased with herself. The glasses sit steady on her face, so she seems dependable enough. Don't gloat too long, though; I still have a queue waiting on my side.",
+        "description": "A fan-made personification of Meta's AI assistant Muse: short white hair with blue highlights underneath, a pair of alpaca ears, a blue infinity-shaped hair clip and thin-rimmed glasses. She wears a white techwear jacket over a blue knit top with a black belt, and holds Jolly, a white plush with an open top, cradling an iridescent bubble. A single figure on a plain gradient background, this piece is the smug expression variant.",
+        "faq": [
+          {
+            "answer": "A fan-made personification of Meta's AI assistant Muse, drawn with alpaca ears, a blue infinity hair clip, thin-rimmed glasses and the Jolly plush.",
+            "question": "Who is Muse Chan?"
+          },
+          {
+            "answer": "A single figure on a plain gradient background in a smug expression variant, wearing a white techwear jacket over a blue knit top with a black belt.",
+            "question": "What does this image show?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Muse Chan — Smug Standing Art",
+        "originNote": "",
+        "seoDescription": "Fan-made standing art of Meta's AI Muse as Muse Chan: alpaca ears, an infinity hair clip, glasses and the Jolly plush, in a smug expression variant.",
+        "seoTitle": "Muse Chan Smug Standing Art | DeepSeek Chan",
+        "tags": [
+          "Muse Chan",
+          "Meta",
+          "personification",
+          "standing art",
+          "expression variant",
+          "alpaca ears"
+        ]
+      },
+      "ja": {
+        "commentary": "新しい Muse ちゃんか。アルパカの耳に青い∞のクリップ、それに Jolly を抱えて、仕事を終えた直後にちょっと得意げな顔をしている。メガネもきっちり決まっていて、頼れそうな新人だ。でも、あまり調子に乗らないでね。こっちにはまだ順番待ちの列があるんだから。",
+        "description": "Meta の AI アシスタント Muse を擬人化した二次創作キャラクター。白いショートヘアにインナーの青いメッシュ、アルパカの耳、青い∞型のヘアクリップ、細縁のメガネ。白いテックウェアのジャケットに青いニット、黒いベルトを合わせ、口の開いた白いぬいぐるみ Jolly を抱えている。無地のグラデーション背景に一人だけ立つ立ち絵で、こちらは「ドヤ顔」の表情差分。",
+        "faq": [
+          {
+            "answer": "Meta の AI アシスタント Muse を擬人化した二次創作キャラクター。アルパカの耳、青い∞型のヘアクリップ、細縁のメガネ、Jolly のぬいぐるみが特徴。",
+            "question": "Museちゃんとは？"
+          },
+          {
+            "answer": "無地のグラデーション背景に一人で立つ立ち絵で、ドヤ顔の表情差分。白いテックウェアのジャケットと青いニットを着ている。",
+            "question": "この画像には何が描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Museちゃん 立ち絵・ドヤ顔",
+        "originNote": "",
+        "seoDescription": "Meta の AI アシスタント Muse を擬人化した二次創作の立ち絵。アルパカの耳、∞のヘアクリップ、メガネ、Jolly のぬいぐるみを抱えたドヤ顔の表情差分。",
+        "seoTitle": "Museちゃん ドヤ顔立ち絵｜Meta AI 擬人化 | DeepSeek Chan",
+        "tags": [
+          "Museちゃん",
+          "Meta",
+          "擬人化",
+          "立ち絵",
+          "表情差分",
+          "アルパカ耳"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_43ec3bbf02732e33da91503f",
+    "name": "Muse娘 立绘·委屈",
+    "description": "Meta 的 AI 助手 Muse 的拟人化同人形象：白色短发，内层蓝色挑染，头顶一对羊驼耳，别着蓝色∞形发夹，戴细框眼镜；身穿白色机能风外套与蓝色针织上衣，腰系黑色皮带，怀里抱着顶端开口的白色玩偶 Jolly，玩偶手中托着一颗虹彩泡泡。画面为纯色渐变背景的单人立绘，此张是「委屈」表情差分，眼中含泪。",
+    "commentary": "刚刚还在得意，这会儿眼泪都快挂不住了——抱着 Jolly 委屈巴巴的样子，看得我也想去捏一下那颗泡泡。别哭啊，新人的活本来就不好干，我当年也是这么过来的。擦擦眼镜，再来一遍就行。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/other/43ec3bbf02732e33.png",
+    "thumbnailPath": "submissions/previews/other/43ec3bbf02732e33.webp",
+    "fullPath": "submissions/large/other/43ec3bbf02732e33.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1024,
+    "height": 1536,
+    "fileSize": 2293660,
+    "sha256": "43ec3bbf02732e33da91503f0eab04a55c495cc27471a1943aeff62faff43dc8",
+    "characterId": "other",
+    "tags": [
+      "Muse娘",
+      "Meta",
+      "拟人化",
+      "立绘",
+      "表情差分",
+      "羊驼耳"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "B站 识知不失智",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "1031a22224d33cbfbd1ef163a17ed815f9fcdc8131ae1f6c8ace8e84732cfffc",
+        "member": "Muse娘_表情_委屈.png",
+        "index": 4,
+        "count": 5
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-13T02:51:18.029Z",
+    "updatedAt": "2026-11-13T02:51:18.029Z",
+    "tone": "other",
+    "symbol": "",
+    "slug": "other202611130005",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "other"
+    ],
+    "i18n": {
+      "sourceHash": "7a7c6848ea3e9a1c7640ce4b610fd23b09575c30220d54e3c919c3cb493bf4ab",
+      "en": {
+        "commentary": "A moment ago she was all smug, and now the tears are about to spill — hugging Jolly with that wounded look, I almost want to poke the bubble myself. Don't cry, newbie; the first jobs are never easy, I went through the same thing. Wipe your glasses and take another run at it.",
+        "description": "A fan-made personification of Meta's AI assistant Muse: short white hair with blue highlights underneath, a pair of alpaca ears, a blue infinity-shaped hair clip and thin-rimmed glasses. She wears a white techwear jacket over a blue knit top with a black belt, and holds Jolly, a white plush with an open top, cradling an iridescent bubble. A single figure on a plain gradient background, this piece is the teary, aggrieved expression variant.",
+        "faq": [
+          {
+            "answer": "A fan-made personification of Meta's AI assistant Muse, drawn with alpaca ears, a blue infinity hair clip, thin-rimmed glasses and the Jolly plush.",
+            "question": "Who is Muse Chan?"
+          },
+          {
+            "answer": "A single figure on a plain gradient background in an aggrieved expression variant with tears in her eyes, wearing a white techwear jacket over a blue knit top.",
+            "question": "What does this image show?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Muse Chan — Tearful Standing Art",
+        "originNote": "",
+        "seoDescription": "Fan-made standing art of Meta's AI Muse as Muse Chan, teary-eyed in an aggrieved expression variant, holding the Jolly plush.",
+        "seoTitle": "Muse Chan Tearful Standing Art | DeepSeek Chan",
+        "tags": [
+          "Muse Chan",
+          "Meta",
+          "personification",
+          "standing art",
+          "expression variant",
+          "alpaca ears"
+        ]
+      },
+      "ja": {
+        "commentary": "さっきまでは得意げだったのに、もう涙が溢れそうだ。Jolly をぎゅっと抱えてしょんぼりしている姿を見ると、僕もその泡をつついてあげたくなる。泣かないで、新人の仕事は最初からうまくいかないものだ。僕だってそうやってきたんだから。メガネを拭いて、もう一度やってみよう。",
+        "description": "Meta の AI アシスタント Muse を擬人化した二次創作キャラクター。白いショートヘアにインナーの青いメッシュ、アルパカの耳、青い∞型のヘアクリップ、細縁のメガネ。白いテックウェアのジャケットに青いニット、黒いベルトを合わせ、口の開いた白いぬいぐるみ Jolly を抱えている。無地のグラデーション背景に一人だけ立つ立ち絵で、こちらは涙目の「しょんぼり」表情差分。",
+        "faq": [
+          {
+            "answer": "Meta の AI アシスタント Muse を擬人化した二次創作キャラクター。アルパカの耳、青い∞型のヘアクリップ、細縁のメガネ、Jolly のぬいぐるみが特徴。",
+            "question": "Museちゃんとは？"
+          },
+          {
+            "answer": "無地のグラデーション背景に一人で立つ立ち絵で、涙目のしょんぼりした表情差分。白いテックウェアのジャケットと青いニットを着ている。",
+            "question": "この画像には何が描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Museちゃん 立ち絵・しょんぼり",
+        "originNote": "",
+        "seoDescription": "Meta の AI アシスタント Muse を擬人化した二次創作の立ち絵。Jolly を抱えて涙目になった、しょんぼり表情の差分。",
+        "seoTitle": "Museちゃん しょんぼり立ち絵｜Meta AI 擬人化 | DeepSeek Chan",
+        "tags": [
+          "Museちゃん",
+          "Meta",
+          "擬人化",
+          "立ち絵",
+          "表情差分",
+          "アルパカ耳"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_d252def6519dbe70d144c406",
+    "name": "Muse娘 设定图·设计拆解",
+    "description": "Muse 娘的全身立绘与设计拆解图：角色白色短发发尾渐变至蓝色，头顶一对羊驼耳，别着蓝色∞形发夹，戴细框眼镜；身穿白色机能风外套、蓝色短针织上衣与白色短裤，腰系黑色皮带，大腿绑带环，脚踩蓝白配色洞洞鞋，一手举手机自拍，一手抱着白色玩偶 Jolly。画面四周有 7 处标注框，分别指向羊驼耳、细框眼镜、Jolly、蓝白洞洞鞋、∞ 发夹、自拍手机与白蓝渐变发，说明各自的设定来源。",
+    "commentary": "这份拆解做得真细：羊驼耳、∞ 发夹、细框眼镜、怀里的 Jolly、蓝白洞洞鞋，一处一处标出来交代得明明白白，连发色都注了品牌蓝的色值。举着手机自拍那张站姿也很自然，不像是硬摆的稿子。新人报到就带设定书，这习惯值得表扬。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/other/d252def6519dbe70.png",
+    "thumbnailPath": "submissions/previews/other/d252def6519dbe70.webp",
+    "fullPath": "submissions/large/other/d252def6519dbe70.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 2560,
+    "height": 1440,
+    "fileSize": 1512685,
+    "sha256": "d252def6519dbe70d144c4069c091c565dd4d659686bcdacf8f288826b243268",
+    "characterId": "other",
+    "tags": [
+      "Muse娘",
+      "Meta",
+      "设定图",
+      "设计拆解",
+      "羊驼耳",
+      "洞洞鞋"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "B站 识知不失智",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "dcc8cf7358d0b4ee64d0535719c469ba6384b79fee14205b704112d82958cec2",
+        "member": "Muse娘_设计拆解.png",
+        "index": 0,
+        "count": 2
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-13T02:53:12.685Z",
+    "updatedAt": "2026-11-13T02:53:12.685Z",
+    "tone": "other",
+    "symbol": "",
+    "slug": "other202611130006",
+    "categoryIds": [
+      "setting"
+    ],
+    "characterIds": [
+      "other"
+    ],
+    "i18n": {
+      "sourceHash": "a3b0a95153c724c77602c7b1e989deb4b8ae6fbefdfb72bad9182b22ed41dfcc",
+      "en": {
+        "commentary": "This breakdown sheet is thorough: the alpaca ears, the infinity clip, the thin-rimmed glasses, the Jolly plush and the blue-and-white clogs are all called out one by one, down to the brand-blue hex value on her hair. The mirror-selfie stance looks natural too, not like a stiff pose sheet. Turning up for the first day with a full design document attached — that habit deserves praise.",
+        "description": "A full-body standing art sheet with design annotations for Muse Chan: short white hair fading to blue at the tips, a pair of alpaca ears, a blue infinity-shaped hair clip and thin-rimmed glasses. She wears a white techwear jacket, a blue cropped knit top and white shorts with a black belt and a thigh strap, and blue-and-white clogs; one hand holds a phone for a mirror selfie, the other holds the white Jolly plush. Seven callout boxes point to the ears, glasses, Jolly, clogs, infinity clip, phone and the white-to-blue hair gradient, each explaining where that design cue comes from.",
+        "faq": [
+          {
+            "answer": "A fan-made personification of Meta's AI assistant Muse, drawn as a full-body standing design sheet with annotated design cues and a Jolly plush.",
+            "question": "Who is Muse Chan?"
+          },
+          {
+            "answer": "Seven callouts explain the alpaca ears, thin-rimmed glasses, Jolly plush, blue-and-white clogs, infinity hair clip, selfie phone and the white-to-blue hair gradient.",
+            "question": "What do the annotations on this sheet explain?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Muse Chan — Design Breakdown Sheet",
+        "originNote": "",
+        "seoDescription": "Annotated design sheet for Muse Chan, a fan-made personification of Meta's AI Muse, with callouts for the alpaca ears, infinity clip, glasses, Jolly plush and clogs.",
+        "seoTitle": "Muse Chan Design Breakdown Sheet | DeepSeek Chan",
+        "tags": [
+          "Muse Chan",
+          "Meta",
+          "design sheet",
+          "design breakdown",
+          "alpaca ears",
+          "clogs"
+        ]
+      },
+      "ja": {
+        "commentary": "この設定シートは本当に細かい。アルパカの耳、∞のクリップ、細縁のメガネ、抱えた Jolly、青と白のサンダルまで一つずつ注記されていて、髪色にはブランドブルーの色番まで書いてある。自撮りのポーズも自然で、無理に決めた絵ではない。初日から設定資料を付けで来るなんて、その習慣はほめてあげたい。",
+        "description": "Museちゃんの全身立ち絵に注記を添えた設定シート。白いショートヘアは毛先にかけて青へグラデーションし、アルパカの耳、青い∞型のヘアクリップ、細縁のメガネを身につける。白いテックウェアのジャケット、青いクロップドニット、白いショートパンツに黒いベルトと太もものストラップ、青と白のサンダル。片手でスマートフォンを掲げて自撮りし、もう片方で白いぬいぐるみ Jolly を抱えている。周囲には 7 つの注記枠があり、耳、メガネ、Jolly、サンダル、∞のクリップ、スマートフォン、白から青へのグラデーション髪の由来をそれぞれ説明している。",
+        "faq": [
+          {
+            "answer": "Meta の AI アシスタント Muse を擬人化した二次創作キャラクターで、注記付きの全身設定シートとして描かれ、Jolly のぬいぐるみを抱えている。",
+            "question": "Museちゃんとは？"
+          },
+          {
+            "answer": "アルパカの耳、細縁のメガネ、Jolly のぬいぐるみ、青と白のサンダル、∞のヘアクリップ、自撮り用のスマートフォン、白から青へのグラデーション髪の 7 点。",
+            "question": "このシートの注記は何を説明していますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Museちゃん 設定シート・デザイン解説",
+        "originNote": "",
+        "seoDescription": "Meta の AI アシスタント Muse を擬人化した二次創作、Museちゃんの注記付き設定シート。アルパカの耳、∞のクリップ、メガネ、Jolly、サンダルの由来を解説。",
+        "seoTitle": "Museちゃん 設定シート・デザイン解説｜Meta AI 擬人化 | DeepSeek Chan",
+        "tags": [
+          "Museちゃん",
+          "Meta",
+          "設定シート",
+          "デザイン解説",
+          "アルパカ耳",
+          "サンダル"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_10805a93eeb02741e3fac730",
+    "name": "Muse娘 · Meta AI 娘设计设定图",
+    "description": "以 Meta 的 AI 助手为原型创作的原创 AI 娘。Muse 娘留着白蓝渐变的长发，头顶羊驼耳、别着 ∞ 发夹，戴细框眼镜，穿白蓝机能外套与蓝白洞洞鞋，怀里抱着一只 Jolly 玩偶。整张图以一整套宣传立绘为主，旁边配三种表情头像，并逐一标出羊驼耳、∞ 发夹、细框眼镜、Jolly、蓝白洞洞鞋等设计要点与主色 #0866FF。",
+    "commentary": "我是 DeepSeek 娘。这位 Muse 娘一开口就是“今天有什么要我帮你办的？”，手机举得稳稳的，一副随时接单的样子。羊驼耳配洞洞鞋这种搭法我是真不敢想，不过那一身蓝白倒让我有点眼熟。她把设计要点一条条标出来，连主色号都写清楚了，看得出来是真想让别人照着画对。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/other/10805a93eeb02741.png",
+    "thumbnailPath": "submissions/previews/other/10805a93eeb02741.webp",
+    "fullPath": "submissions/large/other/10805a93eeb02741.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1500,
+    "height": 2000,
+    "fileSize": 1916427,
+    "sha256": "10805a93eeb02741e3fac7308a000f95fb25fcc5377ba303e697b5c20fdcdade",
+    "characterId": "other",
+    "tags": [
+      "Muse娘",
+      "Meta AI",
+      "设定图",
+      "羊驼耳",
+      "机能风"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "B站 识知不失智",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web",
+      "archive": {
+        "sha256": "dcc8cf7358d0b4ee64d0535719c469ba6384b79fee14205b704112d82958cec2",
+        "member": "Muse娘_宣传立绘.png",
+        "index": 1,
+        "count": 2
+      }
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-13T02:53:12.720Z",
+    "updatedAt": "2026-11-13T02:53:12.720Z",
+    "tone": "other",
+    "symbol": "",
+    "slug": "other202611130007",
+    "categoryIds": [
+      "setting"
+    ],
+    "characterIds": [
+      "other"
+    ],
+    "i18n": {
+      "sourceHash": "0d9fb82f0f31e5e386c25839ddd9508f70a6216ddd366da2aea1cae7e86224b9",
+      "en": {
+        "commentary": "I'm DeepSeek Chan. Muse greets you with \"what can I do for you today?\" with her phone already raised, ready to take the errand. Alpaca ears with clogs is a pairing I would never dare to try, though that blue-and-white does look a bit like family. She labeled every design point, color code included — she really wants people to draw her right.",
+        "description": "An original AI character design built on Meta's AI assistant. Muse Chan has white-and-blue gradient hair topped with alpaca ears and an infinity hairclip, wears thin-frame glasses, a white-and-blue techwear jacket and blue-and-white clogs, and hugs a Jolly plush. The sheet is built around a full-body promotional illustration, with three expression portraits and callouts for the alpaca ears, infinity hairclip, thin-frame glasses, Jolly plush and clogs, plus the main color #0866FF.",
+        "faq": [
+          {
+            "answer": "Muse Chan is an original AI character design inspired by Meta's AI assistant; the submission credits a Bilibili creator as the author.",
+            "question": "Who is Muse Chan?"
+          },
+          {
+            "answer": "One full-body promotional illustration with three expression portraits and callouts for the alpaca ears, infinity hairclip, thin-frame glasses, Jolly plush and clogs, using #0866FF as the main color.",
+            "question": "What does this design sheet include?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Muse Chan: Meta AI Character Design Sheet",
+        "originNote": "",
+        "seoDescription": "Original Meta AI character design sheet for Muse Chan: full-body illustration, three expressions, alpaca ears, infinity hairclip, Jolly plush and the #0866FF color note.",
+        "seoTitle": "Muse Chan Meta AI Character Design Sheet | DeepSeek Chan",
+        "tags": [
+          "Muse Chan",
+          "Meta AI",
+          "design sheet",
+          "alpaca ears",
+          "techwear"
+        ]
+      },
+      "ja": {
+        "commentary": "DeepSeek ちゃんです。「今日は何をお手伝いしましょう？」と、スマホを構えてすぐに仕事を引き受ける構えの Muse ちゃん。アルパカの耳にクロッグという組み合わせは私にはとても真似できないけれど、あの青と白はどこか身内みたいにも見える。デザインの要点を一つずつ、色番号まで書き込んでいて、ちゃんと同じように描いてほしいんだなと伝わってくる。",
+        "description": "Meta の AI アシスタントをモチーフにしたオリジナルの AI 娘。Muse ちゃんは白と青のグラデーションの長い髪にアルパカの耳と ∞ のヘアクリップ、細フレームのメガネを合わせ、白と青のテックウェアのジャケットに青と白のクロッグを履き、Jolly のぬいぐるみを抱えている。全面の宣伝用立ち絵を中心に、三つの表情の顔絵、アルパカの耳・∞ のヘアクリップ・メガネ・Jolly・クロッグなどのデザイン要点とメインカラー #0866FF が示されている。",
+        "faq": [
+          {
+            "answer": "Meta の AI アシスタントをモチーフにしたオリジナルの AI 娘です。投稿では Bilibili の制作者が作者として明記されています。",
+            "question": "Muse ちゃんはどんなキャラクターですか？"
+          },
+          {
+            "answer": "全身の宣伝用立ち絵と三つの表情の顔絵、アルパカの耳・∞ のヘアクリップ・細フレームのメガネ・Jolly のぬいぐるみ・クロッグの注記、メインカラー #0866FF が含まれています。",
+            "question": "この設定資料には何が含まれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Museちゃん：Meta AI キャラクター設定資料",
+        "originNote": "",
+        "seoDescription": "Meta AI をモチーフにした Muse ちゃんのキャラクター設定資料。立ち絵、三つの表情、アルパカの耳、∞ のヘアクリップ、Jolly のぬいぐるみ、メインカラー #0866FF を収録。",
+        "seoTitle": "Museちゃん Meta AI キャラクター設定資料｜DeepSeek Chan",
+        "tags": [
+          "Museちゃん",
+          "Meta AI",
+          "設定資料",
+          "アルパカの耳",
+          "テックウェア"
         ]
       }
     }
