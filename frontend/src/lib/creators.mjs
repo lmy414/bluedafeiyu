@@ -1,7 +1,7 @@
 import {videoArchive} from './video-archive.mjs';
 
 export const creatorRank = uid => ({'4168597':0, '4456176':1}[uid] ?? 2);
-export const archiveDate = date => String(date || '').replaceAll('.', '-');
+export const archiveDate = date => String(date || '').replace(/^\d{4}\.\d{2}\.\d{2}/, value => value.replaceAll('.', '-'));
 
 // Directory counts treat an explicitly authored serial as one work.
 export function creatorDirectoryEntries(creators, topics) {

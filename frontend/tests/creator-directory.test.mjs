@@ -1,12 +1,14 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {parseHTML} from 'linkedom';
-import {archiveCreators,creatorDirectoryEntries} from '../src/lib/creators.mjs';
+import {archiveDate,archiveCreators,creatorDirectoryEntries} from '../src/lib/creators.mjs';
 import {createPrimitives} from '../src/components/archive/primitives.mjs';
 import {createCreatorViews} from '../src/components/archive/CreatorViews.mjs';
 import {compareCreatorRows,installCreatorRails} from '../public/components/creator-directory.js';
 
 test('directory groups only explicitly authored serial pages into one cover and leaves archive inputs intact',()=>{
+  assert.equal(archiveDate('2026-11-02T18:00:00.509Z'),'2026-11-02T18:00:00.509Z');
+  assert.equal(archiveDate('2026.11.02'),'2026-11-02');
   const image=id=>({id,slug:id,n:id,i:'/preview.webp',w:150,h:200,dt:'2026.11.01'});
   const pages=['cover','page-1','page-2'].map(image);
   const topic={id:'serial',name:'Serial title',updatedAt:'2026-11-02',reader:{},cover:pages[0],list:pages,author:{name:'ADK',channels:[{platform:'Art',url:'https://example.com/artist'}]}};
@@ -23,9 +25,10 @@ test('directory groups only explicitly authored serial pages into one cover and 
   assert.equal(document.querySelector('[data-creator-series]').getAttribute('href'),'/topics/serial.html');
   assert.match(document.querySelector('.creator-directory-counts strong').textContent,/1 部连载/);
   assert.equal(document.querySelector('[data-creator-series]').getAttribute('target'),'_blank');
-  const many={...entry,serialCount:0,media:Array.from({length:12},(_,i)=>({kind:'image',item:image('art-'+i),date:'2026-11-02'}))};
+  const many={...entry,serialCount:0,media:Array.from({length:12},(_,i)=>({kind:'image',item:image('art-'+i),date:'2026-11-02T18:00:00Z'}))};
   const limited=parseHTML(creatorDirectory([many])).document;
   assert.equal(limited.querySelectorAll('.creator-directory-preview').length,8);
+  assert.equal(limited.querySelector('.creator-directory-preview time').textContent,'2026-11-03');
 });
 
 test('creator sorting supports update date, count and name with deterministic ties',()=>{
