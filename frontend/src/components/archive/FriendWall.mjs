@@ -1,5 +1,5 @@
 import {friendLinks} from '../../lib/friend-links.mjs';
-import {renderCommunityProjects} from './LinkDirectories.mjs';
+import {renderCommunityProjects,renderFriendDirectory} from './LinkDirectories.mjs';
 
 export function createFriendWall(ctx) {
   const {esc, tr, pageHead, write, icon} = ctx;
@@ -17,20 +17,8 @@ export function createFriendWall(ctx) {
 }
 
 export function createIndependentFriendPages(ctx) {
-  const {esc, tr, pageHead, write, icon} = ctx;
-  const visit = tr('friendsVisit','去逛逛','Visit','訪問する');
+  const {tr, write} = ctx;
   write('/community-projects.html','社区项目','communityProjects',renderCommunityProjects(ctx),{attrs:'data-independent-section="project" data-link-directory-page'});
   tr('links.projects.filters','项目筛选','Project filters','プロジェクトの絞り込み');
-  const sections = [
-    {category:'website', path:'/friend-links.html', active:'friendWall', eyebrow:'FRIEND LINKS',
-      title:tr('friendLinksTitle','友链墙','Friend links','リンク集'),
-      lead:tr('friendLinksLead','从友链继续探索有趣的网站与创作者。','Discover more websites and creators through our friend links.','リンク先のウェブサイトやクリエイターを見つけましょう。'),
-      heading:tr('friendsCategory.website','网站类','Websites','ウェブサイト')}
-  ];
-  for (const section of sections) {
-    const cards = friendLinks.filter(row=>row.category===section.category).map(row=>`<a class="friend-wall-card" href="${esc(row.url)}" target="_blank" rel="noopener noreferrer"><span class="friend-wall-mark" aria-hidden="true">${icon(section.category==='project'?'github':'link',25)}</span><span class="friend-wall-domain">${esc(new URL(row.url).hostname)}</span><h3>${tr('friend.'+row.id+'.name',row.name,row.i18n.en.name,row.i18n.ja.name)}</h3><p>${tr('friend.'+row.id+'.description',row.description,row.i18n.en.description,row.i18n.ja.description)}</p><span class="friend-wall-visit">${visit}${icon('external',16)}</span></a>`).join('');
-    write(section.path, section.category==='project'?'社区项目':'友链墙', section.active,
-      `${pageHead(section.eyebrow,section.title,section.lead)}<div class="document-layout"><div class="document-reader"><article class="synced-prose"><section class="friend-wall-section" data-friend-section="${section.category}" aria-labelledby="friend-${section.category}"><h2 id="friend-${section.category}">${section.heading}</h2><div class="friend-wall-grid">${cards}</div></section></article></div></div>`,
-      {attrs:`data-independent-section="${section.category}"`});
-  }
+  write('/friend-links.html','友情链接','friendWall',renderFriendDirectory(ctx),{attrs:'data-independent-section="website" data-link-directory-page'});
 }

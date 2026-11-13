@@ -8,7 +8,7 @@ test('redesigned directories reuse the established homepage frame and controls',
  assert.match(shell,/home\/HomePage.css/);
  assert.match(shell,/components\/home-controls.js/);
  assert.doesNotMatch(shell,/layouts\/Archive|archive\/archive.js/);
- for(const route of ['videos','creators','community-projects'])assert.match(read('../src/pages/'+route+'.astro'),/DirectoryPage/);
+ for(const route of ['videos','creators','community-projects','friend-links'])assert.match(read('../src/pages/'+route+'.astro'),/DirectoryPage/);
 });
 test('shared sidebar selects exactly the requested directory route',()=>{
  const source=read('../src/components/home/HomeBody.astro');
