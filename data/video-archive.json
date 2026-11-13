@@ -30,8 +30,8 @@
       "intro": "以文字PV和手书为主",
       "avatar": "https://i1.hdslb.com/bfs/face/d0bf29b4f714caa229f94d24f89bb32d0cb495c2.jpg",
       "i18n": {
-        "en": "A creator focused on text PVs and hand-drawn animation.",
-        "ja": "文字PVと手描きアニメを中心に制作している。"
+        "en": "Mainly produces text PVs and hand-drawn animation.",
+        "ja": "文字PVと手描きアニメを中心に制作しています。"
       }
     },
     {
@@ -107,8 +107,8 @@
       "intro": "我想做很多视频，做很多很好玩的视频，首先肯定是自己觉得很好玩，其次嘛，也想传播快乐给大家。",
       "avatar": "https://i2.hdslb.com/bfs/face/e3445be765ec330ac29b07c328496e44ec04077a.jpg",
       "i18n": {
-        "en": "I want to make lots of videos, lots of really fun videos. First of all because I enjoy them myself, and secondly because I want to spread some joy to everyone.",
-        "ja": "楽しい動画をたくさん作りたいです。まずは自分が楽しいと思えること、それから、みんなに楽しさを届けたいと思っています。"
+        "en": "I want to make lots of videos, lots of really fun videos. First because I enjoy them myself, and second because I want to share the fun with everyone.",
+        "ja": "たくさん動画を作りたいです。すごく楽しい動画を。まずは自分が楽しいと思えること、それから、みんなに楽しさを届けたいからです。"
       }
     },
     {
@@ -173,8 +173,8 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i1.hdslb.com/bfs/face/612f5ca4c050ef18dccf789a8b9399d47e9e6f19.jpg",
       "i18n": {
-        "en": "One of the site owner's designated first-batch creators; profile details come from the public Bilibili page.",
-        "ja": "サイト管理者が指定した初期メンバーの作者。プロフィール情報はBilibiliの公開ページによる。"
+        "en": "Bilibili creator 黑猫勇者, who posts short anime clips about AI character girls.",
+        "ja": "Bilibiliのクリエイター黒猫勇者。AI娘たちの日常を描いた短編アニメを投稿しています。"
       }
     },
     {
@@ -212,6 +212,108 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1ePWB6tEYc",
+      "uid": "9126506",
+      "title": "今天的大肥鱼也很可爱",
+      "description": "今天的大肥鱼也很可爱",
+      "url": "https://www.bilibili.com/video/BV1ePWB6tEYc/",
+      "cover": "https://i0.hdslb.com/bfs/archive/56335f533e5cc51acb66f771e2bf35f66b20a593.jpg",
+      "duration": 31,
+      "publishedAt": "2026-11-13T15:06:38.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, lots of really fun videos. First because I enjoy them myself, and second because I want to share the fun with everyone.",
+          "description": "Today's DeepSeek Chan is adorable too.",
+          "title": "Today's DeepSeek Chan Is Cute Too"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作りたいです。すごく楽しい動画を。まずは自分が楽しいと思えること、それから、みんなに楽しさを届けたいからです。",
+          "description": "今日のDeepSeekちゃんもかわいい。",
+          "title": "今日のDeepSeekちゃんもかわいい"
+        }
+      }
+    },
+    {
+      "bvid": "BV19NWB6dE5M",
+      "uid": "9126506",
+      "title": "今天弗糯糯也很可爱",
+      "description": "今天弗糯糯也很可爱",
+      "url": "https://www.bilibili.com/video/BV19NWB6dE5M/",
+      "cover": "https://i1.hdslb.com/bfs/archive/ea1aefb5aa047cededb34280eaa50d1e89820051.jpg",
+      "duration": 31,
+      "publishedAt": "2026-11-13T15:02:52.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, lots of really fun videos. First because I enjoy them myself, and second because I want to share the fun with everyone.",
+          "description": "Today, Fnuonuo is adorable too.",
+          "title": "Today's Fnuonuo Is Cute Too"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作りたいです。すごく楽しい動画を。まずは自分が楽しいと思えること、それから、みんなに楽しさを届けたいからです。",
+          "description": "今日のフヌオヌオもかわいい。",
+          "title": "今日のフヌオヌオもかわいい"
+        }
+      }
+    },
+    {
+      "bvid": "BV15cWi6QEwE",
+      "uid": "3747562213345768",
+      "title": "里表情人【DeepSeek×Claude】",
+      "description": "角色形象来自 ZipZipPipe\n曲子：【鳴花ヒメ・ミコト】 裏表ラバーズ  [ dj-Jo Remix ]\n创意方向与审阅：柠晴_official\n非官方二创作品，如有问题请联系。\n如果喜欢的话，我想要一键三连喵，谢谢喵！",
+      "url": "https://www.bilibili.com/video/BV15cWi6QEwE/",
+      "cover": "https://i1.hdslb.com/bfs/archive/fd24c47819b7d454ffb6a199f6f3c1993d3368a8.jpg",
+      "duration": 182,
+      "publishedAt": "2026-11-13T11:42:46.000Z",
+      "characterIds": [
+        "deepseek",
+        "claude"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Mainly produces text PVs and hand-drawn animation.",
+          "description": "A hand-drawn style text PV set to the song Uraomote Lovers, featuring DeepSeek Chan and Claude Chan. The two characters appear across typographic frames and silhouette illustrations in an unofficial fan work; character designs are credited to ZipZipPipe.",
+          "title": "Two-Faced Lover [DeepSeek × Claude]"
+        },
+        "ja": {
+          "creatorIntro": "文字PVと手描きアニメを中心に制作しています。",
+          "description": "楽曲「裏表ラバーズ」に合わせた手描き風の文字PV。DeepSeekちゃんとClaudeちゃんの二人が、タイポグラフィとシルエットで次々に描かれる非公式の二次創作作品です。キャラクターデザインはZipZipPipe。",
+          "title": "裏表ラバーズ【DeepSeek×Claude】"
+        }
+      }
+    },
+    {
+      "bvid": "BV1nqWh6QEXZ",
+      "uid": "69180811",
+      "title": "《负债800亿出逃大小姐不会遇见蓝色大肥鱼》",
+      "description": "agi少女们的日常\n二游ai娘\n\n参考BV1nfNc6nEGg",
+      "url": "https://www.bilibili.com/video/BV1nqWh6QEXZ/",
+      "cover": "https://i2.hdslb.com/bfs/archive/48bb4123c274d87bbca376a491437e78894a27ea.jpg",
+      "duration": 26,
+      "publishedAt": "2026-11-13T03:30:00.000Z",
+      "characterIds": [
+        "claude",
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Bilibili creator 黑猫勇者, who posts short anime clips about AI character girls.",
+          "description": "Daily life of AGI girls. Gacha-style AI character girls. Reference video: BV1nfNc6nEGg",
+          "title": "The Runaway Heiress with 80 Billion in Debt Never Meets DeepSeek Chan"
+        },
+        "ja": {
+          "creatorIntro": "Bilibiliのクリエイター黒猫勇者。AI娘たちの日常を描いた短編アニメを投稿しています。",
+          "description": "AGI少女たちの日常を描いた作品。ゲーム風のAI娘たちが登場します。参考動画: BV1nfNc6nEGg",
+          "title": "800億の借金を抱えた家出お嬢様はDeepSeek Chanに会えない"
+        }
+      }
+    },
     {
       "bvid": "BV1AFW26AEzw",
       "uid": "13787349",
