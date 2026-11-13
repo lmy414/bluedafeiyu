@@ -15,3 +15,24 @@ export function installCreatorRails(root = document) {
     },{passive:false});
   }
 }
+
+export function installCreatorDirectory(root = document) {
+const creatorSearch=root.querySelector('[data-design-creator-search]');
+if(creatorSearch){
+  const directory=root.querySelector('[data-design-creators]');
+  const rows=[...directory.children];
+  const update=()=>{
+    const query=creatorSearch.elements.q.value.toLocaleLowerCase().trim();
+    const sort=creatorSearch.elements.sort.value;
+    const rank=row=>({'4168597':0,'4456176':1}[row.dataset.uid]??2);
+    const sorted=[...rows].sort((a,b)=>directory.hasAttribute('data-creator-directory')?compareCreatorRows(a,b,sort):rank(a)-rank(b)||(sort==='latest'?b.dataset.latest.localeCompare(a.dataset.latest):a.dataset.name.localeCompare(b.dataset.name)));
+    let count=0;
+    sorted.forEach(row=>{row.hidden=!!query&&!row.textContent.toLocaleLowerCase().includes(query);if(!row.hidden)count++;directory.append(row);});
+    root.querySelector('[data-design-creator-count]').textContent=count;
+    root.querySelector('[data-creator-empty]').hidden=count!==0;
+  };
+  creatorSearch.addEventListener('submit',event=>{event.preventDefault();update();});
+  creatorSearch.addEventListener('input',update);creatorSearch.addEventListener('change',update);
+}
+
+}

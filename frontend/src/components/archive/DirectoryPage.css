@@ -1,0 +1,7 @@
+/* Page-specific aliases inherit the established homepage palette and frame. */
+.directory-page{--font-sans:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;--on-blue:#fff;--blue-hover:#1947b7;--video-banner:var(--pale);--video-platform:var(--blue-dark);--video-on-platform:#fff;--creator-panel:var(--card);--link-card:var(--card);--link-card-line:var(--card-line);--link-chip:var(--chip);--blue-soft:var(--pale);--mono:ui-monospace,monospace}
+html[data-theme="dark"] .directory-page{--on-blue:#0f171d;--blue-hover:#9ebcff}
+.directory-page .content>[class]{padding-top:0}
+.directory-page [hidden]{display:none!important}
+.directory-page .directory-skip-link{position:fixed;top:8px;left:8px;z-index:100;transform:translateY(-200%);padding:8px 16px;background:var(--surface);color:var(--blue);border:1px solid var(--blue);border-radius:8px}
+.directory-page .directory-skip-link:focus{transform:translateY(0)}

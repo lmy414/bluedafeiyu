@@ -1,4 +1,4 @@
-import {compareCreatorRows,installCreatorRails} from '../../public/components/creator-directory.js';
+import {installCreatorDirectory,installCreatorRails} from '../../public/components/creator-directory.js';
 import {installMasonry} from './masonry.mjs';
 import {installPagedFeeds} from '../../public/components/paged-feed.js';
 import {installHomeRankings} from '../../public/components/home-rankings.js';
@@ -50,23 +50,7 @@ if(friendFilters.length){
   window.addEventListener('hashchange',select);select();
 }
 
-const creatorSearch=document.querySelector('[data-design-creator-search]');
-if(creatorSearch){
-  const directory=document.querySelector('[data-design-creators]');
-  const rows=[...directory.children];
-  const update=()=>{
-    const query=creatorSearch.elements.q.value.toLocaleLowerCase().trim();
-    const sort=creatorSearch.elements.sort.value;
-    const rank=row=>({'4168597':0,'4456176':1}[row.dataset.uid]??2);
-    const sorted=[...rows].sort((a,b)=>directory.hasAttribute('data-creator-directory')?compareCreatorRows(a,b,sort):rank(a)-rank(b)||(sort==='latest'?b.dataset.latest.localeCompare(a.dataset.latest):a.dataset.name.localeCompare(b.dataset.name)));
-    let count=0;
-    sorted.forEach(row=>{row.hidden=!!query&&!row.textContent.toLocaleLowerCase().includes(query);if(!row.hidden)count++;directory.append(row);});
-    document.querySelector('[data-design-creator-count]').textContent=count;
-    document.querySelector('[data-creator-empty]').hidden=count!==0;
-  };
-  creatorSearch.addEventListener('submit',event=>{event.preventDefault();update();});
-  creatorSearch.addEventListener('input',update);creatorSearch.addEventListener('change',update);
-}
+installCreatorDirectory();
 
 for(const row of document.querySelectorAll('.creator-row-card')){
   const rail=row.querySelector('[data-creator-rail]');

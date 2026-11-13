@@ -1,4 +1,5 @@
 import {friendLinks} from '../../lib/friend-links.mjs';
+import {renderCommunityProjects} from './LinkDirectories.mjs';
 
 export function createFriendWall(ctx) {
   const {esc, tr, pageHead, write, icon} = ctx;
@@ -18,11 +19,9 @@ export function createFriendWall(ctx) {
 export function createIndependentFriendPages(ctx) {
   const {esc, tr, pageHead, write, icon} = ctx;
   const visit = tr('friendsVisit','去逛逛','Visit','訪問する');
+  write('/community-projects.html','社区项目','communityProjects',renderCommunityProjects(ctx),{attrs:'data-independent-section="project" data-link-directory-page'});
+  tr('links.projects.filters','项目筛选','Project filters','プロジェクトの絞り込み');
   const sections = [
-    {category:'project', path:'/community-projects.html', active:'communityProjects', eyebrow:'COMMUNITY PROJECTS',
-      title:tr('communityProjectsTitle','社区项目','Community projects','コミュニティのプロジェクト'),
-      lead:tr('communityProjectsLead','社区推荐的开源项目、创作工具与二创资源。','Explore community projects, creative tools and fan-art resources.','コミュニティのプロジェクト、制作ツール、二次創作の資料を探せます。'),
-      heading:tr('friendsCategory.project','项目类','Projects','プロジェクト')},
     {category:'website', path:'/friend-links.html', active:'friendWall', eyebrow:'FRIEND LINKS',
       title:tr('friendLinksTitle','友链墙','Friend links','リンク集'),
       lead:tr('friendLinksLead','从友链继续探索有趣的网站与创作者。','Discover more websites and creators through our friend links.','リンク先のウェブサイトやクリエイターを見つけましょう。'),
