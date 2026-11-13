@@ -11,6 +11,9 @@
   --blue-soft: #eaf1ff;
   --on-blue: #fff;
   --blue-hover: #1d4ca8;
+  --video-banner: #e8eef9;
+  --video-platform: #183f4e;
+  --video-on-platform: #fff;
   --control-line: #6d8aaf;
   --shadow: 0 8px 30px #163b5814;
   --shadow-control: 0 1px 3px #163b580a;
@@ -97,6 +100,8 @@
   --blue-soft: #243e65;
   --on-blue: #12243f;
   --blue-hover: #c0d6ff;
+  --video-banner: #16283f;
+  --video-platform: #0e2a4a;
   --control-line: #8ba6cb;
   --shadow: 0 8px 30px #00000033;
   --shadow-control: 0 1px 3px #0000001a;

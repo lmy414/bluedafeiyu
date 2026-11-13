@@ -10,7 +10,7 @@ export function applyNativeContent(document,api,base,snapshot) {
   if(api.current==='zh-Hant'){
     // Baked pages are not translated again by lang.js. Convert content image
     // alternatives and their work labels here on every route, not just roles.
-    for(const node of document.querySelectorAll('.work-card img,.detail-image img,.comic-sheet img,.video-cover img,.live-character-portrait img,.character-portrait img,.topic-mosaic img,.role-card img'))node.setAttribute('alt',api.contentText(node.getAttribute('alt')));
+    for(const node of document.querySelectorAll('.work-card img,.detail-image img,.comic-sheet img,[data-video-cover-alt],.live-character-portrait img,.character-portrait img,.topic-mosaic img,.role-card img'))node.setAttribute('alt',api.contentText(node.getAttribute('alt')));
     for(const node of document.querySelectorAll('.work-card .work-title,.character-cover-credit strong,.character-version-description,[data-character-scene] option,[data-video-title]'))node.textContent=api.contentText(node.textContent);
     for(const node of document.querySelectorAll('[data-preview][aria-label]'))node.setAttribute('aria-label',api.contentText(node.getAttribute('aria-label')));
   }
