@@ -1,0 +1,52 @@
+html:root body.archive.refined[data-creator-directory-page] main { background-image:none; }
+.creator-directory { display:flex; flex-direction:column; gap:28px; max-width:1344px; margin:0 auto; padding-top:20px; font-family:var(--font-sans); }
+html:root body.archive.refined .creator-directory :is(h1,h2,h3) { font-family:var(--font-sans); }
+html:root body.archive.refined .creator-directory .page-head { margin:0; padding:8px 0 0; border:0; background:none; box-shadow:none; }
+html:root body.archive.refined .creator-directory .page-head::after,html:root body.archive.refined .creator-directory .page-head h1::after { display:none; }
+.creator-directory .page-head>div { display:flex; flex-direction:column; gap:12px; }
+html:root body.archive.refined .creator-directory .eyebrow { display:flex; flex-direction:column; align-items:flex-start; gap:6px; margin:0; padding:0; border:0; color:var(--blue); font-family:var(--font-sans); font-size:11px; font-weight:750; letter-spacing:.02em; }
+.creator-directory .eyebrow::after { content:""; width:118px; height:2px; background:var(--blue); }
+html:root body.archive.refined .creator-directory .page-head h1 { margin:0; font-size:36px; font-weight:800; line-height:1.25; letter-spacing:-.4px; }
+html:root body.archive.refined .creator-directory .page-head .lede { margin:0; color:var(--muted); font-size:14px; line-height:1.5; }
+.creator-directory-filter { display:flex; flex-wrap:wrap; align-items:flex-end; gap:24px; }
+.creator-directory-filter label { display:flex; flex-direction:column; gap:10px; min-width:0; font-size:14px; font-weight:650; }
+.creator-directory-find { flex:1; }
+.creator-directory-filter :is(input,select) { width:100%; height:48px; padding:12px 16px; border:1px solid var(--line); border-radius:8px; background:var(--paper); color:var(--ink); font-family:var(--font-sans); font-size:14px; }
+.creator-directory-filter select { min-width:180px; cursor:pointer; }
+.creator-directory-filter input::placeholder { color:var(--muted); }
+.creator-directory-meta { margin:0; padding-bottom:14px; color:var(--muted); font-size:12px; }
+.creator-directory-list { display:flex; flex-direction:column; gap:12px; }
+.creator-directory-card { display:flex; flex-direction:column; gap:10px; min-width:0; padding:10px 16px; border-radius:12px; background:var(--creator-panel); }
+.creator-directory-head { display:flex; align-items:center; flex-wrap:wrap; gap:12px; }
+body.archive .creator-directory-head .avatar { display:grid; place-items:center; width:44px; height:44px; margin:0; overflow:hidden; border:0; border-radius:50%; background:var(--soft); }
+.creator-directory-head .avatar img { display:block; width:100%; height:100%; object-fit:cover; }
+.creator-directory-identity { display:flex; flex:1; flex-direction:column; gap:1px; min-width:170px; }
+body.archive.refined .creator-directory-identity h2 { margin:0; font-size:16px; font-weight:750; line-height:1.3; }
+.creator-directory-identity p { margin:0; color:var(--muted); font-size:11px; }
+.creator-directory-counts { display:flex; flex-direction:column; gap:1px; min-width:150px; }
+.creator-directory-counts strong { font-size:13px; font-weight:750; }
+.creator-directory-counts small { color:var(--muted); font-size:10px; }
+.creator-directory-all { display:inline-flex; align-items:center; justify-content:center; gap:6px; min-height:34px; margin-left:auto; padding:6px 12px; border-radius:8px; background:var(--blue); color:var(--on-blue); font-size:12px; font-weight:650; white-space:nowrap; }
+.creator-directory-rail { --creator-preview-width:150px; --creator-preview-gap:12px; display:flex; gap:var(--creator-preview-gap); width:min(100%,calc(4*var(--creator-preview-width) + 3*var(--creator-preview-gap))); overflow-x:auto; overscroll-behavior-x:contain; scroll-snap-type:x proximity; padding-bottom:4px; }
+.creator-directory-rail::-webkit-scrollbar { height:5px; }
+.creator-directory-rail::-webkit-scrollbar-thumb { background:var(--line); border-radius:3px; }
+.creator-directory-rail::-webkit-scrollbar-track { background:transparent; }
+body.archive .creator-directory-rail .creator-directory-preview { display:flex; flex:0 0 var(--creator-preview-width); flex-direction:column; gap:4px; min-width:0; padding:0; border:0; border-radius:0; background:none; box-shadow:none; scroll-snap-align:start; }
+body.archive .creator-directory-rail .creator-preview-cover { position:relative; display:block; height:auto; aspect-ratio:16/9; overflow:hidden; border-radius:8px; background:var(--soft); }
+.creator-directory-rail .creator-preview-cover img { display:block; width:100%; height:100%; object-fit:cover; transition:transform .35s ease; }
+.creator-directory-preview:hover img { transform:scale(1.02); }
+body.archive .creator-directory-rail .preview-media-kind { position:absolute; top:5px; right:5px; bottom:auto; left:auto; display:inline-flex; align-items:center; gap:3px; height:18px; padding:0 7px; border-radius:9px; background:var(--video-platform); color:var(--video-on-platform); font-size:10px; font-weight:600; }
+body.archive .creator-directory-rail .preview-media-kind svg { display:none; }
+body.archive .creator-directory-rail .creator-preview-title { display:block; overflow:hidden; min-height:0; margin:0; padding:0; color:var(--ink); font-family:var(--font-sans); font-size:12px; font-weight:650; line-height:1.35; text-overflow:ellipsis; white-space:nowrap; }
+body.archive .creator-directory-rail time { margin:0; color:var(--muted); font-size:10px; line-height:1.2; }
+.creator-directory a:hover { color:var(--blue); }
+.creator-directory .creator-directory-all:hover { background:var(--blue-hover); color:var(--on-blue); }
+.creator-directory :is(a,input,select,[tabindex]):focus-visible { outline:2px solid var(--blue); outline-offset:3px; }
+.creator-directory-empty { padding:20px; border-radius:8px; background:var(--creator-panel); color:var(--muted); }
+.creator-directory-empty h2 { margin:0 0 8px; font-size:18px; }
+.creator-directory-empty p { margin:0; font-size:13px; }
+@media(max-width:1240px) { html:root body.archive.refined .creator-directory .page-head h1 { font-size:34px; } .creator-directory-rail { --creator-preview-width:136px; --creator-preview-gap:10px; } }
+@media(max-width:900px) { .creator-directory-rail { --creator-preview-width:130px; } .creator-directory-counts { min-width:0; } }
+@media(max-width:820px) { html:root body.archive.refined .creator-directory .page-head h1 { font-size:30px; } .creator-directory-filter { gap:16px; } .creator-directory-meta { flex-basis:100%; padding:0; } }
+@media(max-width:560px) { .creator-directory { padding-top:18px; } html:root body.archive.refined .creator-directory .page-head h1 { font-size:26px; } .creator-directory-find { flex-basis:100%; } .creator-directory-filter select { min-width:0; } .creator-directory-sort { flex:1; } .creator-directory-meta { flex-basis:auto; padding-bottom:14px; } .creator-directory-head { gap:10px; } .creator-directory-identity { min-width:0; } .creator-directory-counts { flex-basis:100%; } .creator-directory-all { width:100%; } .creator-directory-rail { --creator-preview-width:124px; } }
+@media(prefers-reduced-motion:reduce) { .creator-directory-rail img { transition:none; } }
