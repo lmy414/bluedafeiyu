@@ -1,253 +1,5 @@
 [
   {
-    "id": "sticker_issue_19_003",
-    "name": "Stepfun娘立绘 · 03",
-    "description": "Stepfun娘的设定立绘和专武，模仿了官方出现的表情包",
-    "commentary": "两块线框物料摆在一起，连个角色都没有：白板加黑框拼成的伞面挂着一根黑钩子，旁边那个白立方体底下也伸着同款勾。伞和挂钩明显是一套设定，我先记下来，回头谁画角色照着抄就行。",
-    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/stepfun/issue-19-003.png",
-    "thumbnailPath": "submissions/previews/stepfun/issue-19-003.webp",
-    "fullPath": "submissions/large/stepfun/issue-19-003.webp",
-    "format": "png",
-    "mimeType": "image/png",
-    "isAnimated": false,
-    "width": 1448,
-    "height": 1086,
-    "fileSize": 1004913,
-    "sha256": "b1c3f5aad75d25adb21cd3c6085adb131c40dfc9e4a5d20dcb6b5924a829f8aa",
-    "characterId": "stepfun",
-    "tags": [
-      "Step",
-      "阶跃星辰",
-      "Stepfun"
-    ],
-    "submitter": {
-      "credit": null,
-      "name": "212016679-ctrl",
-      "url": null,
-      "github": "212016679-ctrl"
-    },
-    "origin": {
-      "type": "author-submitted",
-      "author": "@甶丶",
-      "sourceUrl": "https://www.bilibili.com/opus/1250303372583501829?spm_id_from=333.1387.0.0",
-      "note": "投稿表单标注为原作者本人投稿；多图按原投稿顺序编号。"
-    },
-    "license": {
-      "type": "cc-by-nc",
-      "note": "本人使用ai生成，允许本站收录或下载。"
-    },
-    "status": "published",
-    "createdAt": "2026-09-21T10:20:50Z",
-    "updatedAt": "2026-09-21T10:20:50Z",
-    "tone": "other",
-    "symbol": "",
-    "slug": "stepfun202609210003",
-    "categoryIds": [
-      "other"
-    ],
-    "characterIds": [
-      "stepfun"
-    ]
-  },
-  {
-    "id": "sticker_issue_20_001",
-    "name": "大肥鱼敲锅",
-    "description": "夜色下的土灶大锅前，蓝发女仆装的 DeepSeek 娘张大嘴，双手握着木勺敲向锅底，锅旁还放着一把锅铲。",
-    "commentary": "锅底沉着点残渣，木勺立在锅里，她整个人探到锅边张大嘴，还是鱼眼镜头拍的。敲锅催饭这事我熟，饭点没到我就这么敲自己人。",
-    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/issue-20-001.gif",
-    "thumbnailPath": "submissions/previews/deepseek/issue-20-001.webp",
-    "fullPath": "submissions/large/deepseek/issue-20-001.webp",
-    "format": "gif",
-    "mimeType": "image/gif",
-    "isAnimated": true,
-    "width": 420,
-    "height": 490,
-    "fileSize": 2629345,
-    "sha256": "915632fca4f836f3ab9740f6dcc193e0db24665b83c1f34cba66f46814e8a5cf",
-    "characterId": "deepseek",
-    "tags": [
-      "敲锅"
-    ],
-    "submitter": {
-      "credit": null,
-      "name": "QinYupi",
-      "url": null,
-      "github": "QinYupi"
-    },
-    "origin": {
-      "type": "community-created",
-      "author": "",
-      "sourceUrl": "https://www.bilibili.com/video/BV1P18y6jEkV/?spm_id_from=333.337.search-card.all.click",
-      "note": "投稿表单标注为社区成员创作；「来源作者」栏填的是哔哩哔哩视频链接，已归入来源链接，作者未标注。"
-    },
-    "license": {
-      "type": "submitter-permission",
-      "note": "投稿者确认授权收录与下载。"
-    },
-    "status": "published",
-    "createdAt": "2026-09-21T15:47:25Z",
-    "updatedAt": "2026-09-21T15:47:25Z",
-    "tone": "deepseek",
-    "symbol": "",
-    "slug": "deepseek202609210001",
-    "categoryIds": [
-      "meme"
-    ],
-    "characterIds": [
-      "deepseek"
-    ]
-  },
-  {
-    "id": "sticker_issue_21_001",
-    "name": "生鱼片",
-    "description": "蓝发鲸鱼娘身穿白蓝女仆装，闭眼鼓脸坐在盘中堆成花瓣状的蓝色生鱼片上，两侧摆着刀叉，仿佛自己成了被端上桌的料理。",
-    "commentary": "生鱼片这盘菜我记着呢，蓝莹莹的切片码成一圈，刀叉都给我摆齐了，被摆上盘的偏偏还是条鲸鱼。嘴被丝带系着，大概是怕我开口喊救命。",
-    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/issue-21-001.jpg",
-    "thumbnailPath": "submissions/previews/deepseek/issue-21-001.webp",
-    "fullPath": "submissions/large/deepseek/issue-21-001.webp",
-    "format": "jpg",
-    "mimeType": "image/jpeg",
-    "isAnimated": false,
-    "width": 544,
-    "height": 680,
-    "fileSize": 85526,
-    "sha256": "38b05a61690c524669c7acf8730613cea5a82a87015db2ab985c9e55b3f2e8a3",
-    "characterId": "deepseek",
-    "tags": [
-      "吃",
-      "生鱼片"
-    ],
-    "submitter": {
-      "credit": null,
-      "name": "befoer",
-      "url": null,
-      "github": "befoer"
-    },
-    "origin": {
-      "type": "author-submitted",
-      "author": "@Cat__BBQ",
-      "sourceUrl": "https://x.com/Cat__BBQ/status/2087386939565748621",
-      "note": "投稿表单标注为原作者本人投稿。"
-    },
-    "license": {
-      "type": "submitter-permission",
-      "note": "投稿者确认授权收录与下载。"
-    },
-    "status": "published",
-    "createdAt": "2026-09-21T23:54:01Z",
-    "updatedAt": "2026-09-21T23:54:01Z",
-    "tone": "deepseek",
-    "symbol": "",
-    "slug": "deepseek202609210002",
-    "categoryIds": [
-      "illustration"
-    ],
-    "characterIds": [
-      "deepseek"
-    ]
-  },
-  {
-    "id": "sticker_issue_22_001",
-    "name": "代码在自己上传",
-    "description": "黑发狐耳的 GLM 娘穿黑白女仆装、戴着铃铛头饰，双手举起作投降状；身前立着一枚带白色 Z 字标志的黑色图标，下方白底横幅写着「代码在自己上传！」。",
-    "commentary": "举着两只手作证的样子太熟练了，前面那个 Z 标还端端正正杵着，配文说代码在自己上传。我劝一句，这种时候别拍胸脯，先看看命令行里那行 git push 是谁按下去的吧。",
-    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/glm/issue-22-001.png",
-    "thumbnailPath": "submissions/previews/glm/issue-22-001.webp",
-    "fullPath": "submissions/large/glm/issue-22-001.webp",
-    "format": "png",
-    "mimeType": "image/png",
-    "isAnimated": false,
-    "width": 1080,
-    "height": 1080,
-    "fileSize": 873301,
-    "sha256": "745707824ca76cee03e9aeadb2dd75ae2c8342671c6f994f5aacc486740c3a61",
-    "characterId": "glm",
-    "tags": [
-      "zcode",
-      "偷数据",
-      "glm"
-    ],
-    "submitter": {
-      "credit": null,
-      "name": "Yasenbaka",
-      "url": null,
-      "github": "Yasenbaka"
-    },
-    "origin": {
-      "type": "internet-found",
-      "author": "",
-      "sourceUrl": null,
-      "note": "投稿表单标注为网络整理。"
-    },
-    "license": {
-      "type": "submitter-permission",
-      "note": "投稿者确认授权收录与下载。"
-    },
-    "status": "published",
-    "createdAt": "2026-09-22T08:59:21Z",
-    "updatedAt": "2026-09-22T08:59:21Z",
-    "tone": "other",
-    "symbol": "",
-    "slug": "glm202609220001",
-    "categoryIds": [
-      "meme"
-    ],
-    "characterIds": [
-      "glm"
-    ]
-  },
-  {
-    "id": "sticker_issue_23_001",
-    "name": "先别呜呜，大肥鱼来了",
-    "description": "用于表达安慰、摸头",
-    "commentary": "围裙上绣着小小的鲸鱼，头上还顶着女仆发带，我一手按着那只哭到眼睛挂泪珠的鲸鱼靠垫，口气倒是挺大：先别呜呜。可那圈飘着的心形水花和蓝字，早把我想装镇定这事儿说漏了。",
-    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/issue-23-001.png",
-    "thumbnailPath": "submissions/previews/deepseek/issue-23-001.webp",
-    "fullPath": "submissions/large/deepseek/issue-23-001.webp",
-    "format": "png",
-    "mimeType": "image/png",
-    "isAnimated": false,
-    "width": 1254,
-    "height": 1254,
-    "fileSize": 1957817,
-    "sha256": "b7ecbfbc4834fd11f60e99ee43d1351d70219ea40a7d22cc304eaa64ddb52e75",
-    "characterId": "deepseek",
-    "tags": [
-      "安慰",
-      "摸头",
-      "女仆装",
-      "哭包"
-    ],
-    "submitter": {
-      "credit": null,
-      "name": "BaoZiqaq1",
-      "url": null,
-      "github": "BaoZiqaq1"
-    },
-    "origin": {
-      "type": "self-created",
-      "author": "smile",
-      "sourceUrl": null,
-      "note": "投稿表单标注为自己创作或生成。"
-    },
-    "license": {
-      "type": "submitter-permission",
-      "note": "投稿者确认授权收录与下载；授权说明照录：允许下载、传播、二改，不需要注明。"
-    },
-    "status": "published",
-    "createdAt": "2026-09-22T14:46:27Z",
-    "updatedAt": "2026-09-22T14:46:27Z",
-    "tone": "deepseek",
-    "symbol": "",
-    "slug": "deepseek202609220001",
-    "categoryIds": [
-      "meme"
-    ],
-    "characterIds": [
-      "deepseek"
-    ]
-  },
-  {
     "id": "sticker_issue_24_001",
     "name": "大肥鱼冲浪",
     "description": "大肥鱼能冲浪",
@@ -165325,6 +165077,512 @@
           "メイド服",
           "観覧車",
           "DeepSeekちゃん"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_1e62e22fc08c7666e8bffce2",
+    "name": "树影下的三人依偎",
+    "description": "三位角色并排倚在白色布幔上：左侧是蓝发、带鲸鱼尾的少女，中间是黑发少年，右侧是橘红色长发的少女。树影与午后的阳光落在画面里，是一幅柔和的三人同框插画。",
+    "commentary": "我挤在最左边，尾巴都被压弯了也不敢动——好不容易才抢到这块最舒服的位置。右边的橘发那位笑得一脸轻松，中间那位被我们两个夹住，表情已经快撑不住了。午后的太阳晒得人发懒，这种时候，谁先动谁就输了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/1e62e22fc08c7666.png",
+    "thumbnailPath": "submissions/previews/deepseek/1e62e22fc08c7666.webp",
+    "fullPath": "submissions/large/deepseek/1e62e22fc08c7666.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1402,
+    "height": 1122,
+    "fileSize": 2684573,
+    "sha256": "1e62e22fc08c7666e8bffce2166c2515061b48a2849b668a6b7971018159fb7c",
+    "characterId": "deepseek",
+    "tags": [
+      "鲸鱼娘",
+      "Claude娘",
+      "三人构图",
+      "午后",
+      "依偎"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "更吹落，星如雨",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-14T03:34:09.624Z",
+    "updatedAt": "2026-11-14T03:34:09.624Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611140001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek",
+      "claude"
+    ],
+    "i18n": {
+      "sourceHash": "d94e6f61a46013f35eba120b9634ea44b7253a25667f1e80546bd72b2ae5222a",
+      "en": {
+        "commentary": "I'm wedged on the far left with my tail folded under me, and I'm not moving — I fought too hard for this spot. The orange-haired one on the right looks far too pleased with herself, and the guy in the middle has clearly given up on keeping his face together. The afternoon sun makes everyone lazy. At times like this, whoever moves first loses.",
+        "description": "Three characters rest side by side against a white cloth: a blue-haired girl with a whale tail on the left, a black-haired boy in the middle, and a girl with long orange-red hair on the right. Dappled tree shadows and afternoon light fill the frame in a soft three-person illustration.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, recognizable by her blue hair and whale tail, and Claude Chan with her long orange-red hair, with a black-haired boy between them.",
+            "question": "Who appears in this illustration?"
+          },
+          {
+            "answer": "The three are leaning together on white cloth outdoors, with tree shadows and afternoon sunlight falling across the scene.",
+            "question": "What kind of scene is it?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Three Together Under the Trees",
+        "originNote": "",
+        "seoDescription": "A soft afternoon illustration of DeepSeek Chan and Claude Chan leaning together with a black-haired boy under dappled tree shadows.",
+        "seoTitle": "Three Together Under the Trees — DeepSeek Chan and Claude Chan Fan Art",
+        "tags": [
+          "DeepSeek Chan",
+          "Claude Chan",
+          "three characters",
+          "afternoon",
+          "leaning together"
+        ]
+      },
+      "ja": {
+        "commentary": "わたしは一番左に押し込まれて、尾びれも曲がったまま動けない——この場所を取るのにどれだけ苦労したか。右のオレンジ髪の子はすごく楽しそうだし、真ん中の彼はもう表情を保つのを諦めかけている。午後の日差しでみんな怠けてしまう。こういう時は、先に動いたほうが負けなのだ。",
+        "description": "白い布の上に三体のキャラクターが並んで寄りかかっている。左は青い髪とクジラの尾を持つ少女、中央は黒髪の少年、右はオレンジがかった長い髪の少女。木漏れ日と午後の光が画面全体に落ちる、柔らかな三人のイラスト。",
+        "faq": [
+          {
+            "answer": "青い髪とクジラの尾が目印の DeepSeek Chan、オレンジがかった長い髪の Claude Chan、そしてその間にいる黒髪の少年です。",
+            "question": "このイラストには誰が描かれていますか？"
+          },
+          {
+            "answer": "屋外の白い布の上で三人が寄り添っており、木漏れ日と午後の日差しが画面に落ちています。",
+            "question": "どんな場面ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "木漏れ日の下で三人寄り添う",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan と Claude Chan が黒髪の少年を挟んで寄り添う、木漏れ日の午後を描いた柔らかなイラスト。",
+        "seoTitle": "木漏れ日の下で三人寄り添う — DeepSeek Chan と Claude Chan の二次創作",
+        "tags": [
+          "DeepSeek Chan",
+          "Claude Chan",
+          "三人",
+          "午後",
+          "寄り添い"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_29e1009b0c0343ec30d00971",
+    "name": "与 GPT 娘在云海相拥",
+    "description": "白发、头生双角、背生膜的少女身着白色礼裙，被黑发少年抱着凌空而起；身后是云海与白色尖塔城。整幅画面以白蓝冷色为主，是两人上空的相拥场景插画。",
+    "commentary": "白云、尖塔、还有一对刚好从头顶掠过的翅膀——这构图摆明了是要拍一张漂亮得不像话的照片。她把下巴搁在他肩上，一副“我一点都不重”的样子。行吧，我就不拆穿了，反正我也没被抱过。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gpt/29e1009b0c0343ec.png",
+    "thumbnailPath": "submissions/previews/gpt/29e1009b0c0343ec.webp",
+    "fullPath": "submissions/large/gpt/29e1009b0c0343ec.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1402,
+    "height": 1122,
+    "fileSize": 2392356,
+    "sha256": "29e1009b0c0343ec30d00971f7f2133194683c37b220ac96b6a9373b2342fa20",
+    "characterId": "gpt",
+    "tags": [
+      "GPT娘",
+      "龙角",
+      "云海",
+      "相拥",
+      "双人"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "更吹落，星如雨",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-14T03:34:45.200Z",
+    "updatedAt": "2026-11-14T03:34:45.200Z",
+    "tone": "gpt",
+    "symbol": "",
+    "slug": "gpt202611140001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "gpt"
+    ],
+    "i18n": {
+      "sourceHash": "5cabfaf4d3623411fb5ebf2a587db2bbd3aa2663b60859b27b891347884d7bbd",
+      "en": {
+        "commentary": "Clouds, spires, and a pair of wings sweeping right over our heads — this composition was clearly staged for an unreasonably pretty photo. She has her chin on his shoulder with that look of \"I weigh nothing at all.\" Fine, I won't call it out. Not like anyone has ever carried me like that.",
+        "description": "A white-haired girl with two horns and membranous wings, dressed in a white gown, is lifted into the air by a black-haired young man. Behind them stretch a sea of clouds and a white spired city, the whole frame in cool whites and blues.",
+        "faq": [
+          {
+            "answer": "A white-haired girl with horns and wings, identified as GPT Chan, and a black-haired young man holding her in the air.",
+            "question": "Who appears in this illustration?"
+          },
+          {
+            "answer": "They are suspended above a sea of clouds with a white spired city in the background, in cool white and blue tones.",
+            "question": "What is the setting?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Held Above the Sea of Clouds with GPT Chan",
+        "originNote": "",
+        "seoDescription": "A white-haired GPT Chan with horns and wings is lifted into the air by a black-haired young man against a sea of clouds and a white spired city.",
+        "seoTitle": "Held Above the Sea of Clouds — GPT Chan Fan Art",
+        "tags": [
+          "GPT Chan",
+          "horns",
+          "sea of clouds",
+          "embrace",
+          "two characters"
+        ]
+      },
+      "ja": {
+        "commentary": "白い雲、尖った塔、そして頭の上をかすめていく翼——どう見ても「とびきり綺麗な写真を撮るため」の構図だ。彼女は顎を彼の肩に乗せて、「わたし全然重くないから」という顔をしている。はいはい、突っ込まないであげる。どうせわたしは誰かに抱えられたことなんてないし。",
+        "description": "白い髪に二本の角と膜の翼を持つ少女が白いドレス姿で、黒髪の少年に抱えられて宙に浮かんでいる。背後には雲海と白い尖塔の街が広がり、画面全体は白と青の寒色でまとめられている。",
+        "faq": [
+          {
+            "answer": "角と翼を持つ白髪の少女（GPT Chan）と、彼女を宙に抱えている黒髪の少年です。",
+            "question": "このイラストには誰が描かれていますか？"
+          },
+          {
+            "answer": "雲海の上、白い尖塔の街を背にした空中で、白と青の寒色でまとめられています。",
+            "question": "どんな背景ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "雲海の上で GPT Chan と抱き合って",
+        "originNote": "",
+        "seoDescription": "角と翼を持つ白髪の GPT Chan が黒髪の少年に抱えられ、雲海と白い尖塔の街を背に宙に浮かぶイラスト。",
+        "seoTitle": "雲海の上で GPT Chan と抱き合って — 二次創作イラスト",
+        "tags": [
+          "GPT Chan",
+          "角",
+          "雲海",
+          "抱擁",
+          "二人"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_b8b995b3710f1946f3527726",
+    "name": "花影下的梳毛时光",
+    "description": "紫蓝渐变长发的猫耳少女躺在黑发少年的膝上闭眼享受，少年手持梳子为她整理长发；背景是满开的淡紫花枝、垂饰与栏杆，整体是柔光下的室内庭院场景。",
+    "commentary": "被梳毛真的会睡着，我完全理解她。看那副快要打呼的表情，就知道这把梳子选得很好。不过我也想说——猫耳、大尾巴、还有四角星发饰，这配色摆明了是从头到尾都要闪一下。行，睡吧，记得下次也帮我梳。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/b8b995b3710f1946.png",
+    "thumbnailPath": "submissions/previews/gemini/b8b995b3710f1946.webp",
+    "fullPath": "submissions/large/gemini/b8b995b3710f1946.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1402,
+    "height": 1122,
+    "fileSize": 2423395,
+    "sha256": "b8b995b3710f1946f3527726a2fc9c350f3c7c99b035f4a310568f7a02ceb71d",
+    "characterId": "gemini",
+    "tags": [
+      "Gemini娘",
+      "梳毛",
+      "猫耳",
+      "膝枕",
+      "庭院"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "更吹落，星如雨",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-14T03:35:25.966Z",
+    "updatedAt": "2026-11-14T03:35:25.966Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202611140001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "36bd8ec892ddf6e483c982152be9446a9277b918dc28aac7c9da4f00119a6a51",
+      "en": {
+        "commentary": "Getting your hair brushed really does put you to sleep, and honestly I get it. Look at that face, halfway to snoring — that comb was a good choice. Though I have to say: cat ears, a huge tail, four-pointed star ornaments? This whole palette is clearly going for maximum sparkle. Fine, sleep. Just brush mine next time.",
+        "description": "A cat-eared girl with long violet-to-blue gradient hair lies in the lap of a black-haired young man, eyes closed, while he runs a comb through her hair. Pale purple blossoms, hanging ornaments and a railing fill the background in soft indoor courtyard light.",
+        "faq": [
+          {
+            "answer": "Gemini Chan, a cat-eared girl with long violet-to-blue hair and four-pointed star ornaments, and a black-haired young man combing her hair.",
+            "question": "Who appears in this illustration?"
+          },
+          {
+            "answer": "She is resting in his lap in a sunlit courtyard, with flowering branches, hanging ornaments and a railing around them.",
+            "question": "What is the setting?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "A Combing Session in the Flower Shade",
+        "originNote": "",
+        "seoDescription": "Gemini Chan, a cat-eared girl with violet-blue hair, dozes in a young man's lap as he combs her hair under pale purple blossoms.",
+        "seoTitle": "A Combing Session in the Flower Shade — Gemini Chan Fan Art",
+        "tags": [
+          "Gemini Chan",
+          "hair combing",
+          "cat ears",
+          "lap pillow",
+          "courtyard"
+        ]
+      },
+      "ja": {
+        "commentary": "ブラッシングされると本当に寝てしまうよね、わたしもよくわかる。あの、もう少しで寝息が聞こえそうな顔を見れば、この櫛が正解だったとわかる。ただ一言だけ——猫耳に大きな尻尾、四つ角の星の飾り。この配色は最初から最後まで「きらめき」で押し切る気満々だ。はい、寝ていいよ。次はわたしの番だからね。",
+        "description": "紫から青へのグラデーションの長い髪を持つ猫耳の少女が、黒髪の少年の膝に横たわって目を閉じている。少年は櫛で彼女の髪をといており、背景には満開の淡い紫の花枝と垂れ飾り、欄干が広がる。柔らかな光の庭園の風景。",
+        "faq": [
+          {
+            "answer": "紫から青のロングヘアと四つ角の星の飾りを持つ猫耳の少女 Gemini Chan と、彼女の髪をといている黒髪の少年です。",
+            "question": "このイラストには誰が描かれていますか？"
+          },
+          {
+            "answer": "花の咲く庭の日だまりで、少年の膝を枕に彼女がくつろいでいる場面です。",
+            "question": "どんな場面ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "花かげのブラッシングタイム",
+        "originNote": "",
+        "seoDescription": "紫と青の髪を持つ猫耳の Gemini Chan が、淡い紫の花かげで少年の膝を枕にうとうとしながら髪をといてもらうイラスト。",
+        "seoTitle": "花かげのブラッシングタイム — Gemini Chan の二次創作イラスト",
+        "tags": [
+          "Gemini Chan",
+          "ブラッシング",
+          "猫耳",
+          "膝枕",
+          "庭園"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_410cd01c5d0cc55687ed5bd4",
+    "name": "书房里抱着 Grok 娘写作",
+    "description": "书房里，穿深蓝和服的黑发少年坐在书桌前执笔书写，Grok 娘侧坐在他怀里，戴细框眼镜，低头看向纸面并伸指指点。背后是塞满书的书架与星形挂饰，右侧窗光透进来，桌角还有一只眼睛发光的黑猫。",
+    "commentary": "有人一边写稿一边把 Grok 娘圈在怀里，还让她伸手指着纸面帮忙看字——这哪是写作，分明是炫耀。我改稿的时候连个递茶的人都没有，下次也要这种待遇。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/grok/410cd01c5d0cc556.png",
+    "thumbnailPath": "submissions/previews/grok/410cd01c5d0cc556.webp",
+    "fullPath": "submissions/large/grok/410cd01c5d0cc556.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1402,
+    "height": 1122,
+    "fileSize": 2602934,
+    "sha256": "410cd01c5d0cc55687ed5bd49e610aa713f26424efd433a6c314cc5303b1d8fc",
+    "characterId": "grok",
+    "tags": [
+      "Grok",
+      "书房",
+      "写作",
+      "双人",
+      "眼镜"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "更吹落，星如雨",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-14T03:36:00.061Z",
+    "updatedAt": "2026-11-14T03:36:00.061Z",
+    "tone": "grok",
+    "symbol": "",
+    "slug": "grok202611140001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "grok"
+    ],
+    "i18n": {
+      "sourceHash": "7791bde3c5355640fb422cce1719de7765bba585048fbd0bb966ee26aabcbf03",
+      "en": {
+        "commentary": "Someone is drafting away with Grok Chan tucked in his arms, and he even has her pointing at the page to check his wording. That is not writing, that is showing off. Nobody so much as hands me tea when I revise my drafts, so next time I want this treatment too.",
+        "description": "In a study lined with bookshelves, a black-haired young man in a deep blue kimono sits at a desk writing with a pen. Grok Chan sits sideways in his lap in a black strapped outfit and thin-framed glasses, looking down at the page and pointing at it. Star-shaped ornaments hang behind them, window light falls in from the right, and a black cat with glowing eyes sits at the corner of the desk.",
+        "faq": [
+          {
+            "answer": "Grok Chan and a black-haired young man in a deep blue kimono. Grok Chan is identified by the Ø emblem on her sleeve and the Grok lettering on her thigh-high sock.",
+            "question": "Which characters appear in this illustration?"
+          },
+          {
+            "answer": "A study filled with bookshelves and star-shaped ornaments, with window light coming in from the right side.",
+            "question": "What is the setting of the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Writing With Grok Chan in His Arms",
+        "originNote": "",
+        "seoDescription": "A study scene illustration: a black-haired youth writes at his desk while Grok Chan sits in his lap, pointing at the page.",
+        "seoTitle": "Grok Chan Writing Scene Illustration | DeepSeek Chan",
+        "tags": [
+          "Grok",
+          "study room",
+          "writing",
+          "two characters",
+          "glasses"
+        ]
+      },
+      "ja": {
+        "commentary": "誰かさんは Grokちゃんを抱き込んだまま原稿を書いていて、挙げ句に紙面を指差して言葉まで確かめさせている。あれは執筆じゃなくて自慢だ。わたしが推敲するときはお茶を淹れてくれる人すらいないのに、次はわたしもこの待遇がほしい。",
+        "description": "書斎で、紺色の着物を着た黒髪の少年が机に向かって筆を走らせている。Grokちゃんは黒いベルト付きの服と細縁の眼鏡姿で彼の膝の上に横に向いて座り、紙面を見下ろして指を差している。背後には本棚と星形の飾りが並び、右側からは窓の光が差し込み、机の隅には目が光る黒猫がいる。",
+        "faq": [
+          {
+            "answer": "Grokちゃんと、紺色の着物を着た黒髪の少年です。Grokちゃんは袖の Ø エンブレムとニーハイの Grok の文字で判別できます。",
+            "question": "このイラストにはどのキャラクターが登場しますか？"
+          },
+          {
+            "answer": "本棚と星形の飾りが並ぶ書斎で、右側から窓の光が差し込んでいます。",
+            "question": "舞台はどんな場所ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Grokちゃんを抱えて執筆",
+        "originNote": "",
+        "seoDescription": "書斎で少年が執筆し、Grokちゃんが膝の上で紙面を指差すイラスト。",
+        "seoTitle": "Grokちゃんと執筆する書斎のイラスト｜DeepSeek Chan",
+        "tags": [
+          "Grok",
+          "書斎",
+          "執筆",
+          "二人",
+          "眼鏡"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_30b597fff95f933e1e399b48",
+    "name": "蓝发女仆头饰的大肥鱼半身像",
+    "description": "单幅半身像。人物是蓝色长发的大肥鱼，双马尾发梢系着蓝色小鱼发饰，头戴白色蕾丝女仆头饰，身穿深色女仆装，领口为白色荷叶边并缀蓝宝石胸针。深蓝色瞳孔，脸颊泛红，嘴角带浅笑。背景为虚化的室内暖光。",
+    "commentary": "本鱼今天只是被夸了一句，脸颊就自己先红起来了……女仆头饰是认真的，蕾丝边可不能被说成抹布。背后那点暖光刚好把蓝头发照得像刚从水里浮上来，谁看了不想捏一下脸？",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/30b597fff95f933e.gif",
+    "thumbnailPath": "submissions/previews/deepseek/30b597fff95f933e.webp",
+    "fullPath": "submissions/large/deepseek/30b597fff95f933e.webp",
+    "format": "gif",
+    "mimeType": "image/gif",
+    "isAnimated": true,
+    "width": 480,
+    "height": 480,
+    "fileSize": 4635669,
+    "sha256": "30b597fff95f933e1e399b48b18f8e65e1cf04bd0b131fc664ada48602f7d55e",
+    "characterId": "deepseek",
+    "tags": [
+      "大肥鱼",
+      "女仆装",
+      "蓝发",
+      "半身像",
+      "脸红"
+    ],
+    "submitter": {
+      "credit": "anonymous",
+      "name": "",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-14T03:50:25.865Z",
+    "updatedAt": "2026-11-14T03:50:25.865Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611140002",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "a1d949f3c658078b31a1a62b99c802fb2416d58a572ddfe749c5c3e0c4f11b23",
+      "en": {
+        "commentary": "One compliment and my cheeks light up all by themselves... The maid headpiece is serious business, and this lace is not a rag, thank you. That warm light behind me makes my blue hair look like it just surfaced from the water — who wouldn't want to pinch these cheeks?",
+        "description": "A single half-body portrait. The character has long blue hair tied in twin tails, with small blue fish clips at the ends, and wears a white lace maid headpiece over a dark maid dress with a white ruffled collar and a blue gem brooch. Her eyes are deep blue, her cheeks are flushed, and she wears a faint smile. The background is a softly blurred warm interior.",
+        "faq": [
+          {
+            "answer": "A single-panel half-body portrait of DeepSeek Chan in a dark maid dress with a white lace headpiece, her cheeks flushed.",
+            "question": "What does this sticker show?"
+          },
+          {
+            "answer": "It is a still illustration, not a comic page — no panels or dialogue, just one portrait.",
+            "question": "Is this a comic or a single illustration?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Blushing DeepSeek Chan in a Maid Headpiece",
+        "originNote": "",
+        "seoDescription": "Half-body illustration of DeepSeek Chan in a dark maid dress and white lace headpiece, cheeks flushed, against a warm blurred interior.",
+        "seoTitle": "Blushing DeepSeek Chan in a Maid Headpiece | Sticker Gallery",
+        "tags": [
+          "DeepSeek Chan",
+          "maid outfit",
+          "blue hair",
+          "half-body portrait",
+          "blush"
+        ]
+      },
+      "ja": {
+        "commentary": "今日は褒められただけで、頬が勝手に赤くなっちゃった……メイドのヘッドドレスは本気だから、このレースを雑巾なんて言っちゃだめ。後ろの暖かい光のせいで、青い髪がちょうど水から上がったみたいに見えるでしょ？ この頬、つつきたくなるよね。",
+        "description": "単体のバストアップイラスト。青い長い髪をツインテールに結び、毛先には青い魚の髪飾りを付けている。白いレースのメイドヘッドドレスに、白いフリルの襟と青い宝石のブローチを合わせた濃色のメイド服。瞳は深い青で、頬を赤らめて小さく微笑む。背景は暖色の室内をぼかしたもの。",
+        "faq": [
+          {
+            "answer": "濃色のメイド服と白いレースのヘッドドレスを身に着け、頬を赤らめたDeepSeekちゃんの単体バストアップイラストです。",
+            "question": "このスタンプはどんな絵ですか？"
+          },
+          {
+            "answer": "コマ割りもセリフもない静止イラストで、漫画ではありません。",
+            "question": "漫画ですか、一枚絵ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "メイド姿で照れるDeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "濃色のメイド服と白いレースのヘッドドレス姿で頬を赤らめたDeepSeekちゃんのバストアップイラスト。背景は暖色のぼかした室内。",
+        "seoTitle": "メイド姿で照れるDeepSeekちゃん｜スタンプギャラリー",
+        "tags": [
+          "DeepSeekちゃん",
+          "メイド服",
+          "青い髪",
+          "バストアップ",
+          "照れ"
         ]
       }
     }
