@@ -16,11 +16,18 @@
     tooltip(tip, left, top) { Object.assign(tip.style, {left:px(left), top:px(top)}); },
     masonryReset(grid, items = []) {
       grid.style.height = '';
-      for (const item of items) Object.assign(item.style, {width:'', left:'', top:''});
+      for (const item of items) Object.assign(item.style, {width:'', height:'', left:'', top:''});
     },
-    masonryWidth(items, width) { for (const item of items) item.style.width = px(width); },
+    masonryWidth(items, width) { for (const item of items) Object.assign(item.style, {width:px(width), height:''}); },
     masonryPlace(grid, items, result) {
       items.forEach((item, i) => Object.assign(item.style, {left:px(result.positions[i].left), top:px(result.positions[i].top)}));
+      grid.style.height = px(result.height);
+    },
+    justifiedPlace(grid, items, result) {
+      items.forEach((item, i) => {
+        const point = result.positions[i];
+        Object.assign(item.style, {width:px(point.width), height:px(point.height), left:px(point.left), top:px(point.top)});
+      });
       grid.style.height = px(result.height);
     },
     columns(grid, count) { grid.style.setProperty('--cols', Number(count)); },
