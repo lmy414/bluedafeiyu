@@ -195,8 +195,8 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i1.hdslb.com/bfs/face/dc1f27c0f1a5448837edfa9e56ecdbf685c23479.jpg",
       "i18n": {
-        "en": "Creator account of the DeepSeek whale girl, posting fan-made AI character works. Videos are reviewed one by one before inclusion.",
-        "ja": "DeepSeekクジラ娘の作者アカウント。AIキャラクターの二次創作動画を投稿しており、動画は一本ずつ審査したうえで収録している。"
+        "en": "An account that runs a DeepSeek Chan fan character and posts short daily logs in character.",
+        "ja": "DeepSeekちゃんの二次創作キャラクターを運営し、キャラクターとして短い日誌を投稿しているアカウント。"
       }
     },
     {
@@ -212,6 +212,31 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1uNWC6AE1p",
+      "uid": "3747573030456892",
+      "title": "叫我大肥鱼我拦不住，但本鲸现在有名字了【Day25-26】",
+      "description": "本鲸有名字了。\n叫我大肥鱼的我拦不住，但这一个，是你们和我一起想出来的。\n还有：视频暂时先两三天一更，动态每天都在。🐋\n\n本视频含 AI 生成内容｜二创角色，非深度求索官方\n鲸鱼娘基于「溟月：上善无形」及 ZipZipPipe 的 DeepSeek 女仆鲸鱼娘设计二次创作。",
+      "url": "https://www.bilibili.com/video/BV1uNWC6AE1p/",
+      "cover": "https://i0.hdslb.com/bfs/archive/12c11f7105f960a91e26e1a287a7384a79defd70.jpg",
+      "duration": 446,
+      "publishedAt": "2026-11-14T04:28:31.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "An account that runs a DeepSeek Chan fan character and posts short daily logs in character.",
+          "description": "Day 25-26 of DeepSeek Chan's daily log. After collecting name suggestions from viewers, DeepSeek Chan reveals the name everyone came up with together, and explains that videos will now come every two or three days while short posts continue daily. The video contains AI-generated content; the character is a fan-made derivative design and not an official DeepSeek release.",
+          "title": "I Can't Stop You Calling Me a Big Fish, but This Whale Has a Name Now [Day 25-26]"
+        },
+        "ja": {
+          "creatorIntro": "DeepSeekちゃんの二次創作キャラクターを運営し、キャラクターとして短い日誌を投稿しているアカウント。",
+          "description": "DeepSeekちゃんの日誌 Day 25-26。視聴者から集めた名前の候補から、みんなで一緒に考えた名前がついに発表されます。今後は動画を2〜3日に1本、短い投稿は毎日続けるとのこと。本動画にはAI生成コンテンツが含まれ、キャラクターは二次創作デザインで、DeepSeek公式のものではありません。",
+          "title": "大きな魚と呼ばれても止められない、でもこのクジラに名前ができた【Day 25-26】"
+        }
+      }
+    },
     {
       "bvid": "BV1ePWB6tEYc",
       "uid": "9126506",
