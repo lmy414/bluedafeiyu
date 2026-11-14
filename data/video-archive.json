@@ -119,7 +119,7 @@
       "avatar": "https://i0.hdslb.com/bfs/face/6f8600ad3d37069ef5106eaf96e7d5a936ba8c50.jpg",
       "i18n": {
         "en": "Posts a daily AI four-panel comic and short animations.",
-        "ja": "毎日AI四コマ漫画やショートアニメを投稿しています。"
+        "ja": "毎日AI4コマ漫画とショートアニメを投稿しています。"
       }
     },
     {
@@ -206,12 +206,69 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i1.hdslb.com/bfs/face/e11401d7d7cc97ee445d65617b48644b44f7fc42.jpg",
       "i18n": {
-        "en": "One of the site owner's designated first-batch creators; profile details are taken from the public Bilibili page and every video is reviewed individually.",
-        "ja": "サイト運営者が指定した第1期作者の一人。プロフィール情報はBilibiliの公開ページによるもので、動画は1本ずつ個別に審査している。"
+        "en": "The uploader presents the clip as entertainment only and states it is not a commercial or technical evaluation of any AI product, and credits the character designs to Bilibili creators including @ZipZipPipe.",
+        "ja": "投稿者は娯楽目的の動画であり、いかなるAI製品の商業的評価や技術的レビューではないと明記している。キャラクター形象の参考元として、Bilibili のクリエイター @ZipZipPipe などの名前を挙げている。"
       }
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1ZRs36hEdD",
+      "uid": "44748304",
+      "title": "只要摇摇头张张嘴",
+      "description": "视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色形象参考来自b站up：﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿@ZipZipPipe  ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿  ﻿ ﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿@这个刀子真甜  ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿  ﻿ ﻿﻿﻿ ﻿ ﻿ ﻿ ﻿",
+      "url": "https://www.bilibili.com/video/BV1ZRs36hEdD/",
+      "cover": "https://i1.hdslb.com/bfs/archive/a78065a23034b614409f6731ba9f595c696b3957.jpg",
+      "duration": 233,
+      "publishedAt": "2026-11-14T08:57:48.000Z",
+      "characterIds": [
+        "deepseek",
+        "gpt",
+        "qwen",
+        "claude",
+        "kimi",
+        "glm"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "The uploader presents the clip as entertainment only and states it is not a commercial or technical evaluation of any AI product, and credits the character designs to Bilibili creators including @ZipZipPipe.",
+          "description": "Chibi DeepSeek Chan shares a single room with GPT Chan, Qwen Chan, Claude Chan, Kimi Chan and GLM Chan in a short comedic fan animation, trading jokes back and forth. Roughly four minutes of character banter, with no product review or technical discussion.",
+          "title": "Just Shake Your Head and Open Your Mouth"
+        },
+        "ja": {
+          "creatorIntro": "投稿者は娯楽目的の動画であり、いかなるAI製品の商業的評価や技術的レビューではないと明記している。キャラクター形象の参考元として、Bilibili のクリエイター @ZipZipPipe などの名前を挙げている。",
+          "description": "ちびキャラのDeepSeekちゃんが、GPTちゃん、Qwenちゃん、Claudeちゃん、Kimiちゃん、GLMちゃんと同じ部屋で言葉を交わす、約4分のコメディ風同人アニメ。製品レビューや技術的な話題は含まれない。",
+          "title": "首を振って、口を開けるだけ"
+        }
+      }
+    },
+    {
+      "bvid": "BV1k4sG6zEDR",
+      "uid": "15475629",
+      "title": "【科普向】《她们三个晚上要干啥……咳咳我是说恭喜4 Hydrogen重振Gemini荣光》",
+      "description": "原事件（截至2026-11-13）：谷歌近期连续发布多个Gemini 4系列模型；在Artificial Analysis Intelligence Index头条榜上，Claude Fable 5.2为第一，Gemini 4 Carbon为第二，最新发布的4 Hydrogen 又便宜又快甚至在 Artificial Arena超过了Astra。\n\n来源：\nhttps://artificialanalysis.ai/\nhttps://artificialanalysis.ai/leaderboards/models\n\n【Credit】\n灵感来源：谷歌最近连续发布的多个模型\n图像生成：GPT Image 2.6 (Sunburst)\n视频生成：Seedance 2.5\n超分与补帧：Video2X（Real-ESRGAN · RIFE）\n配音：Seedance 原生配音 · DeepSeek娘倒吸一口气为 ElevenLabs\nAI-Chan illustrations — ZipZipPipe · CC BY-NC-SA 4.0.\nDeepseek-Chan original character — 上善无形.",
+      "url": "https://www.bilibili.com/video/BV1k4sG6zEDR/",
+      "cover": "https://i0.hdslb.com/bfs/archive/fcb0b911c695b306203bbc43c8170532fc4a4993.jpg",
+      "duration": 51,
+      "publishedAt": "2026-11-14T08:20:54.000Z",
+      "characterIds": [
+        "gemini",
+        "claude",
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Posts a daily AI four-panel comic and short animations.",
+          "description": "A short animation starring Gemini Chan, Claude Chan and DeepSeek Chan: the three of them gather in the evening and chat about Google's recent wave of Gemini 4 releases, closing with a look at the Artificial Analysis leaderboard. The characters are drawn as AI product personifications, with the animation made from AI-generated illustrations.",
+          "title": "[Explainer] What Are These Three Doing Tonight... Ahem, I Mean Congrats to 4 Hydrogen for Restoring Gemini's Glory"
+        },
+        "ja": {
+          "creatorIntro": "毎日AI4コマ漫画とショートアニメを投稿しています。",
+          "description": "Geminiちゃん、Claudeちゃん、DeepSeekちゃんの三人が夜に集まり、Googleが相次いで発表したGemini 4シリーズについて語るショートアニメです。最後にArtificial Analysisのランキング画面を紹介します。AI製品の擬人化キャラクターによる作品で、映像はAI生成イラストを素材に構成されています。",
+          "title": "【解説】あの三人、今夜は何をするの……ゴホン、4 HydrogenでGeminiの栄光復活おめでとう"
+        }
+      }
+    },
     {
       "bvid": "BV1uNWC6AE1p",
       "uid": "3747573030456892",
