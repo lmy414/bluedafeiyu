@@ -704,5 +704,40 @@
         }
       ]
     }
+  },
+  {
+    "id": "bilibili-1640452570",
+    "name": "小杨树的奇迹 · 作品集",
+    "summary": "收录小杨树的奇迹的两幅 Kimi 娘插画《音涟笛雪》和《弦月白奏》。",
+    "coverWorkId": "sticker_940153e63ba0bbf591374afd",
+    "status": "active",
+    "order": 12,
+    "createdAt": "2026-11-21T05:45:35.734Z",
+    "updatedAt": "2026-11-21T05:45:57.880Z",
+    "workIds": [
+      "sticker_940153e63ba0bbf591374afd",
+      "sticker_e6b5c0c28471de306aaa4900"
+    ],
+    "i18n": {
+      "en": {
+        "name": "小杨树的奇迹 · Artwork Collection",
+        "summary": "Two Kimi Chan illustrations by 小杨树的奇迹, one featuring a flute and the other a violin."
+      },
+      "ja": {
+        "name": "小杨树的奇迹・作品集",
+        "summary": "小杨树的奇迹によるキミちゃんのイラスト2点。フルートとバイオリンを演奏する姿をそれぞれ描いています。"
+      }
+    },
+    "author": {
+      "name": "小杨树的奇迹",
+      "url": "https://space.bilibili.com/1640452570",
+      "channels": [
+        {
+          "platform": "Bilibili",
+          "label": "哔哩哔哩",
+          "url": "https://space.bilibili.com/1640452570"
+        }
+      ]
+    }
   }
 ]
