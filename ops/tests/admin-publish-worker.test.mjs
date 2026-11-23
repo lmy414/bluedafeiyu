@@ -308,7 +308,7 @@ async function startSubmissionService(t, state) {
     state.submissionPaths = state.submissionPaths || [];
     state.submissionPaths.push(url.pathname);
     state.submissionAuth = req.headers.authorization || '';
-    res.writeHead(200, { 'content-type': state.submissionMime || 'image/png' }); res.end(state.submissionBody || TINY_PNG);
+    res.writeHead(state.submissionStatus || 200, { 'content-type': state.submissionMime || 'image/png' }); res.end(state.submissionBody || TINY_PNG);
   });
   await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
   t.after(() => new Promise((resolve) => server.close(resolve)));
@@ -364,7 +364,10 @@ function makePublishFetch(state) {
   };
 }
 
-async function runOriginalPublish(t, { runId, submissionId, workId, rawStatus = 404, releaseStatus = 200, healthUrl = 'https://health.test/', notifier }) {
+async function runOriginalPublish(t, {
+  runId, submissionId, workId, rawStatus = 404, releaseStatus = 200,
+  healthUrl = 'https://health.test/', notifier, submissionStatus = 200, intakeOriginal,
+}) {
   const record = {
     id: workId,
     name: '原图发布测试',
@@ -375,13 +378,14 @@ async function runOriginalPublish(t, { runId, submissionId, workId, rawStatus = 
   };
   const ws = await makeWorkspace(t);
   const digest = sha256(TINY_PNG);
+  if (intakeOriginal) fs.writeFileSync(path.join(ws.intake, 'inbox', `${digest}.png`), intakeOriginal);
   const targetPath = `dist/submissions/originals/deepseek/${digest.slice(0, 16)}.png`;
   const snapshot = snapshotFrom(ws, runId, {
     files: { 'data/works.json': `${JSON.stringify([record], null, 2)}\n` },
     originals: [{ workId: record.id, sha256: digest, characterId: 'deepseek', ext: 'png', targetPath, submissionId }],
     summary: { added: 1, updated: 0, hidden: 0, restored: 0, deleted: 0, topics: 0 },
   });
-  const state = { statuses: [], snapshot, submissionBody: TINY_PNG, rawStatus, releaseStatus };
+  const state = { statuses: [], snapshot, submissionBody: TINY_PNG, submissionStatus, rawStatus, releaseStatus };
   const backend = await startBackend(t, state);
   const submission = await startSubmissionService(t, state);
   const exec = makeFakeExec(state);
@@ -394,6 +398,41 @@ async function runOriginalPublish(t, { runId, submissionId, workId, rawStatus = 
     runIssueReconcile: () => {},
   }));
   return { result, state, targetPath, ws, exec };
+}
+
+test('原图接口 410 时发布中转区 SHA-256 一致的副本', async (t) => {
+  const fixture = await runOriginalPublish(t, {
+    runId: 'run-expired-with-intake',
+    submissionId: 'sub_expired_with_intake',
+    workId: 'sticker_expired_with_intake',
+    submissionStatus: 410,
+    intakeOriginal: TINY_PNG,
+  });
+  assert.equal(fixture.result.code, 0, fixture.result.err);
+  assert.equal(fixture.state.statuses.at(-1).status, 'succeeded');
+  const committed = spawnSync('git', ['--git-dir', fixture.ws.contentBare, 'show', `main:${fixture.targetPath}`]);
+  assert.equal(committed.status, 0, committed.stderr?.toString());
+  assert.deepEqual(committed.stdout, TINY_PNG);
+});
+
+for (const scenario of [
+  { name: '缺中转副本', status: 410, expected: /HTTP 410.*中转区/ },
+  { name: '中转副本哈希不同', status: 410, original: Buffer.from('unrelated'), expected: /sha256 不匹配/ },
+  { name: '投稿服务暂时失败', status: 503, original: TINY_PNG, expected: /HTTP 503/ },
+]) {
+  test(`${scenario.name}时发布在下载阶段中止`, async (t) => {
+    const fixture = await runOriginalPublish(t, {
+      runId: 'run-original-unavailable',
+      submissionId: 'sub_original_unavailable',
+      workId: 'sticker_original_unavailable',
+      submissionStatus: scenario.status,
+      intakeOriginal: scenario.original,
+    });
+    assert.equal(fixture.result.code, 1);
+    assert.match(JSON.parse(fixture.result.out).error, scenario.expected);
+    assert.equal(fixture.state.statuses.at(-1).step, 'download');
+    assert.equal(fixture.exec.state.deployRuns, undefined);
+  });
 }
 
 test('发布成功后通知飞书', async (t) => {

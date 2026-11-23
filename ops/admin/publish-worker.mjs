@@ -6,7 +6,7 @@
  *   node ops/admin/publish-worker.mjs --run <runId>
  *
  * 发布内容不在本文件里生成。后台先通过 /cms-api/publish/snapshot 给出数据文件和原图清单，
- * 本文件再按 submissionId 从投稿服务管理口取原图，校验后写内容仓；原图不经过后台媒体目录。
+ * 本文件从投稿服务管理口或私有中转区取原图，校验后写内容仓。原图不经过后台媒体目录。
  *
  * 安全边界：
  *   - 只通过 HTTP 访问后台；ADMIN_WORKER_TOKEN 只放在 Authorization 头里，不写日志；
@@ -22,6 +22,7 @@ import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { setTimeout as sleep } from 'node:timers/promises';
 
+import { itemFile } from '../../tools/intake/core.mjs';
 import {
   acquirePublishLock,
   clearPrebuilt,
@@ -473,8 +474,23 @@ export async function downloadOriginals(cfg, snapshot, { fetchImpl, exec = defau
     } else {
       const url = submissionRawUrl(cfg, item.submissionId);
       const response = await fetchImpl(url, { headers: { Authorization: `Bearer ${cfg.submissionToken}` }, signal: timeoutSignal(cfg.httpTimeoutMs) });
-      if (!response.ok) throw new Error(`读取投稿原图 HTTP ${response.status}：${item.submissionId}`);
-      buffer = Buffer.from(await response.arrayBuffer());
+      if (response.ok) {
+        buffer = Buffer.from(await response.arrayBuffer());
+      } else if (response.status === 410) {
+        // 已审核原图可以先进入私有中转区，投稿队列中的副本可能在发布前到期。
+        const file = itemFile(cfg.intake, { sha256: item.sha256, ext: targetImageExt(rel) });
+        const intakeRel = path.relative(cfg.intake.root, file).split(path.sep).join('/');
+        const { abs: source } = repoPath(cfg.intake.root, intakeRel, '中转区原图');
+        const stat = fs.lstatSync(source, { throwIfNoEntry: false });
+        if (!stat) throw new Error(`读取投稿原图 HTTP 410：${item.submissionId}，中转区无原图副本`);
+        if (!stat.isFile() || stat.size > cfg.intake.maxBytes) {
+          throw new Error(`中转区原图不是普通文件或超过大小上限：${item.submissionId}`);
+        }
+        buffer = fs.readFileSync(source);
+        logLine(log, `读取中转区原图副本：${item.submissionId}`);
+      } else {
+        throw new Error(`读取投稿原图 HTTP ${response.status}：${item.submissionId}`);
+      }
     }
     if (sha256(buffer) !== item.sha256) throw new Error(`原图 sha256 不匹配：${rel}`);
     fs.mkdirSync(path.dirname(abs), { recursive: true });
