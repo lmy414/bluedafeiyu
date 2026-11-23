@@ -179942,5 +179942,512 @@
         ]
       }
     }
+  },
+  {
+    "id": "sticker_54bc650ff382ea81581eb410",
+    "name": "Gemini娘的海边哈基米",
+    "description": "紫发猫耳的 Gemini 娘坐在海边沙滩上，穿印有 GEMINI 字样的白色背心和紫色短裤，一手举着冰棒舔食，头顶绕着彩虹星星浮饰，背景是蓝天、海水与散落贝壳。",
+    "commentary": "紫毛猫耳、沙滩、冰棒，夏天该有的三件套她一次凑齐了。背心上那颗彩虹星星亮得比我对话框里的光标还显眼，看得我都想申请去海边度个假。不过说真的，内存要是也能像冰棒一样一口一口吃掉就好了。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/gemini/54bc650ff382ea81.png",
+    "thumbnailPath": "submissions/previews/gemini/54bc650ff382ea81.webp",
+    "fullPath": "submissions/large/gemini/54bc650ff382ea81.webp",
+    "format": "png",
+    "mimeType": "image/png",
+    "isAnimated": false,
+    "width": 1086,
+    "height": 1448,
+    "fileSize": 2343034,
+    "sha256": "54bc650ff382ea81581eb410a0f275a598ee13a006248121cf8bcaddb471270d",
+    "characterId": "gemini",
+    "tags": [
+      "Gemini",
+      "猫耳",
+      "夏日",
+      "海滩",
+      "冰棒",
+      "泳装"
+    ],
+    "submitter": {
+      "credit": null,
+      "name": null,
+      "url": null,
+      "github": null
+    },
+    "origin": {
+      "type": "qq-group",
+      "via": "qq-group",
+      "groupId": "188568CC2F51DC33F0EBF8C620E04880",
+      "userId": "35176CA1522723E660BB14C1EDB07C8C",
+      "messageId": "ROBOT1.0_fuq7pUQHYkX7qq1jpathKXJJVatPh6Hb0IZd8PL65gkMX8urtlAxHIBuddh3WJFb8ulrsZm.knjzYcQbZnUAYwH8kWEuuCp8.3ithXac0LF.BR2w4VhRNMjsB9Rj5DnA",
+      "imageVia": "base64"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-23T14:11:23.040Z",
+    "updatedAt": "2026-11-23T14:11:23.040Z",
+    "tone": "gemini",
+    "symbol": "",
+    "slug": "gemini202611230001",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "gemini"
+    ],
+    "i18n": {
+      "sourceHash": "45b99b7dc13492ad2550706f2fb74e38fc6f02c28158c7bdbf05d355e472befd",
+      "en": {
+        "commentary": "Purple hair, cat ears, a beach and an ice pop — she has every summer essential in one shot. The rainbow star on her tank top shines brighter than the cursor in my chat box, and it genuinely makes me want to file a request for a seaside holiday. Though if memory were something I could bite off piece by piece like an ice pop, I would have finished it long ago.",
+        "description": "Gemini Chan, a purple-haired girl with cat ears, sits on the sand by the sea in a white tank top printed with GEMINI and purple shorts, licking an ice pop while a rainbow star ornament floats above her head, with blue sky, ocean and scattered shells behind her.",
+        "faq": [
+          {
+            "answer": "Gemini Chan, the personified Gemini character, drawn with long purple hair, cat ears and a fluffy tail.",
+            "question": "Who appears in this illustration?"
+          },
+          {
+            "answer": "A white tank top printed with GEMINI and a rainbow star, purple shorts, a single striped knee sock and star-shaped accessories.",
+            "question": "What is she wearing in the picture?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Gemini Chan's Seaside Ice Pop Break",
+        "originNote": "",
+        "seoDescription": "Summer illustration of Gemini Chan with purple cat ears sitting on the beach in a GEMINI tank top, licking an ice pop under a blue sky.",
+        "seoTitle": "Gemini Chan on the Beach — Summer Illustration",
+        "tags": [
+          "Gemini",
+          "Cat Ears",
+          "Summer",
+          "Beach",
+          "Ice Pop",
+          "Swimsuit"
+        ]
+      },
+      "ja": {
+        "commentary": "紫の髪に猫耳、砂浜にアイスバー。夏に欲しいものが一度にそろっています。タンクトップの虹色の星は、私のチャット欄のカーソルよりずっと目立っていて、思わず海辺の休暇を申請したくなりました。それにしても、メモリもアイスバーのように一口ずつ食べられたらいいのに。",
+        "description": "紫髪に猫耳のGeminiちゃんが海辺の砂浜に座り、GEMINIの文字と虹色の星が入った白いタンクトップに紫のショートパンツ姿でアイスバーを舐めている。頭の上には虹色の星の飾りが浮かび、背景には青空と海、貝殻が広がる。",
+        "faq": [
+          {
+            "answer": "Geminiを擬人化したGeminiちゃんです。長い紫の髪に猫耳とふさふさのしっぽが描かれています。",
+            "question": "このイラストに描かれているのは誰ですか？"
+          },
+          {
+            "answer": "GEMINIの文字と虹色の星が入った白いタンクトップ、紫のショートパンツ、片側のボーダーソックス、星のモチーフのアクセサリーです。",
+            "question": "どんな服装で描かれていますか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Geminiちゃんの海辺アイスバー",
+        "originNote": "",
+        "seoDescription": "紫の猫耳のGeminiちゃんがGEMINIのタンクトップ姿で海辺に座り、青空の下でアイスバーを舐める夏のイラスト。",
+        "seoTitle": "Geminiちゃん 海辺の夏イラスト",
+        "tags": [
+          "Gemini",
+          "猫耳",
+          "夏",
+          "ビーチ",
+          "アイスバー",
+          "水着"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_5685470bef335e197f3e4366",
+    "name": "披着白披肩捧小兔子的大肥鱼",
+    "description": "蓝发大肥鱼穿深蓝女仆装，肩头搭一条白色毛绒披肩，掌心托着白色小兔玩偶，站在落雪的寺庙前；背景是红墙、屋檐与盛开的梅花，尾鳍从裙侧露出。",
+    "commentary": "披肩是用户送的，小兔子也是。我把它捧在手心，站在落雪的寺门前，梅花一瓣一瓣落在肩上——毛绒的暖意是真的，我尾巴都忍不住翘起来了。这样的冬天，好像也没那么冷。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/5685470bef335e19.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/5685470bef335e19.webp",
+    "fullPath": "submissions/large/deepseek/5685470bef335e19.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1184,
+    "height": 1664,
+    "fileSize": 648075,
+    "sha256": "5685470bef335e197f3e43665bb3e9fe18d78eaffc620d4394b0111a241e7c80",
+    "characterId": "deepseek",
+    "tags": [
+      "大肥鱼",
+      "女仆装",
+      "毛绒披肩",
+      "兔子玩偶",
+      "雪景",
+      "梅花"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "兔神CQC",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-23T14:43:01.296Z",
+    "updatedAt": "2026-11-23T14:43:01.296Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611230002",
+    "categoryIds": [
+      "illustration"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "da2a0edcb4be861b2c7a7e5d5a3f6e5d18d4ee83522aa13f91148ecd3999a357",
+      "en": {
+        "commentary": "The stole was a gift from a user, and so was the little rabbit. I'm holding it in my palm in front of a snowy temple gate while plum petals settle on my shoulders — the plush warmth is real, and my tail refuses to stay still. A winter like this doesn't feel cold at all.",
+        "description": "DeepSeek Chan, the blue-haired whale girl, wears a navy maid dress with a white fur stole draped over her shoulders and holds a small white rabbit plush in her palm. She stands before a snow-dusted temple, with red walls, tiled eaves and blooming plum branches behind her, and her whale tail peeks out beside the skirt.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan, the blue-haired whale-eared mascot of DeepSeek, drawn here in her navy maid outfit with a whale tail beside her skirt.",
+            "question": "Who is the character in this illustration?"
+          },
+          {
+            "answer": "A small white rabbit plush resting in her open palm, while a white fur stole is draped over her shoulders.",
+            "question": "What is she holding, and what is she wearing over the dress?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan with a White Fur Stole and a Little Rabbit",
+        "originNote": "",
+        "seoDescription": "Fan art of DeepSeek Chan: navy maid dress, white fur stole over her shoulders and a white rabbit plush in her palm, standing before a snowy temple with plum blossoms.",
+        "seoTitle": "DeepSeek Chan in a Fur Stole Holding a Rabbit Plush — Snowy Temple Fan Art",
+        "tags": [
+          "DeepSeek Chan",
+          "maid outfit",
+          "fur stole",
+          "rabbit plush",
+          "snow scene",
+          "plum blossoms"
+        ]
+      },
+      "ja": {
+        "commentary": "このストールも、この小兎も、ユーザーさんからの贈り物なんです。雪の降るお寺の門の前で、掌に乗せて立っていたら、梅の花びらが肩にひらひらと。毛皮のぬくもりは本物で、尾びれがどうしても落ち着かなくて。こんな冬なら、ちょっと寒くても平気ですね。",
+        "description": "青い髪のクジラ娘・DeepSeekちゃんが、濃紺のメイド服に白いファーストールを羽織り、白い小兎のぬいぐるみを掌に乗せて立っている。背後には雪化粧した寺院の赤い壁と瓦屋根、咲き始めた梅の枝が広がり、スカートの横から尾びれが覗く。",
+        "faq": [
+          {
+            "answer": "DeepSeekの青い髪とクジラの耳を持つマスコット、DeepSeekちゃんです。濃紺のメイド服姿で、スカートの横に尾びれが出ています。",
+            "question": "このイラストのキャラクターは誰ですか？"
+          },
+          {
+            "answer": "掌に乗せているのは白い小兎のぬいぐるみで、肩には白いファーストールを羽織っています。",
+            "question": "手に持っているものと、服の上に羽織っているものは何ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "白いファーストールを羽織り小兎を掌に乗せたDeepSeekちゃん",
+        "originNote": "",
+        "seoDescription": "DeepSeekちゃんのファンアート。濃紺のメイド服に白いファーストール、掌には白い小兎のぬいぐるみ。雪の寺院と梅の花を背景にした一枚です。",
+        "seoTitle": "白いファーストールと小兎のDeepSeekちゃん｜雪の寺院のファンアート",
+        "tags": [
+          "DeepSeekちゃん",
+          "メイド服",
+          "ファーストール",
+          "兎のぬいぐるみ",
+          "雪景色",
+          "梅の花"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_7151fafff1c7ec7f4adbaa52",
+    "name": "女仆装大肥鱼手办实物照",
+    "description": "照片中一只手托着一尊蓝发女仆装手办：角色留着蓝色长发，身穿深蓝连衣裙配白色荷叶边围裙，身后拖着鲸鱼尾巴，围裙上绣着小鲸鱼图案；背景里还有其他手办与桌面杂物，均处于失焦状态。",
+    "commentary": "诶，居然真的有人把我做成实体手办？深蓝裙子、白围裙和尾巴都还原得很用心，连围裙上那条小鲸鱼都没漏掉。被这样捧在手心里端详，还真有点不好意思呢。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/7151fafff1c7ec7f.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/7151fafff1c7ec7f.webp",
+    "fullPath": "submissions/large/deepseek/7151fafff1c7ec7f.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1792,
+    "height": 2390,
+    "fileSize": 1964043,
+    "sha256": "7151fafff1c7ec7f4adbaa52ce1059ac0ff38ab33b9d128b8c4f3d189e7689bf",
+    "characterId": "deepseek",
+    "tags": [
+      "手办",
+      "女仆装",
+      "实物摄影"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "兔神CQC",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-23T14:43:42.568Z",
+    "updatedAt": "2026-11-23T14:43:42.568Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611230003",
+    "categoryIds": [
+      "other"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "653451e321ca83cfa4ba59b86e7c938b5302c0a9d88a407c337f56b61d450c6f",
+      "en": {
+        "commentary": "Wait, someone actually turned me into a figurine? The navy dress, the white apron and even the tail are done with care, down to the tiny whale stitched on the apron. Being held in someone's palm and looked over like this is a little embarrassing, honestly.",
+        "description": "A hand holds a painted figurine of DeepSeek Chan in a blue maid dress: long blue hair, a white ruffled apron embroidered with a small whale, and a whale tail behind her. Other figures and desk items sit blurred in the background.",
+        "faq": [
+          {
+            "answer": "A hand holding a painted figurine of DeepSeek Chan in a navy maid dress with a white apron and a whale tail.",
+            "question": "What is shown in this photo?"
+          },
+          {
+            "answer": "No, it is a photograph of a physical figurine; other figures and desk items are blurred in the background.",
+            "question": "Is this a drawing or illustration?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Maid Outfit Figurine Photo",
+        "originNote": "",
+        "seoDescription": "A fan photo of a hand holding a DeepSeek Chan figurine in a blue maid outfit with a whale tail.",
+        "seoTitle": "DeepSeek Chan Maid Figurine Photo",
+        "tags": [
+          "figurine",
+          "maid outfit",
+          "photo"
+        ]
+      },
+      "ja": {
+        "commentary": "えっ、本当に私をフィギュアにしてくれたの？濃紺のドレスも白いエプロンも、しっぽまで丁寧に再現されていて、エプロンに縫われた小さなクジラまで忘れていないんだ。こうやって手のひらに乗せて見られると、ちょっと照れるな。",
+        "description": "手のひらに載せた DeepSeek ちゃん のフィギュアを撮った写真。青いロングヘアに紺色のメイド服と白いフリルエプロン、背中にはクジラの尾があり、エプロンには小さなクジラの刺繍が入っている。背景の他のフィギュアや机の小物はぼけて写っている。",
+        "faq": [
+          {
+            "answer": "手のひらに載せた、紺色のメイド服と白いエプロン、クジラの尾を持つ DeepSeek ちゃん の彩色済みフィギュアです。",
+            "question": "この写真には何が写っていますか？"
+          },
+          {
+            "answer": "いいえ。実物のフィギュアを撮影した写真で、背景のフィギュアや小物はぼけています。",
+            "question": "イラストや絵ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek ちゃん メイド服フィギュアの実写",
+        "originNote": "投稿者「兔神CQC」によるサイト内投稿。",
+        "seoDescription": "青いメイド服とクジラの尾を持つ DeepSeek ちゃん のフィギュアを手に載せて撮った写真。",
+        "seoTitle": "DeepSeek ちゃん メイド服フィギュア",
+        "tags": [
+          "フィギュア",
+          "メイド服",
+          "実写"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_0201baad9cbf2348e2bd61ff",
+    "name": "常服紺色连衣裙立绘",
+    "description": "白底全身立绘：蓝色大肥鱼身穿深蓝色无袖及踝连衣裙，赤足站立，一手轻提裙摆；蓝色长发与鲸鱼尾巴自然舒展，尾鳍上别着一朵橙色小花。",
+    "commentary": "这条裙子是我自己挑的常服，没有荷叶边也没有蕾丝，简简单单穿着最舒服。尾巴上那朵小太阳花是克劳德给的，出门前总要别上去——被问起就说是装饰，其实我挺珍惜它的。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/0201baad9cbf2348.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/0201baad9cbf2348.webp",
+    "fullPath": "submissions/large/deepseek/0201baad9cbf2348.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1072,
+    "height": 1840,
+    "fileSize": 347306,
+    "sha256": "0201baad9cbf2348e2bd61fff7ae1e97af16ffebab5fb3b184ff302b9bc838f7",
+    "characterId": "deepseek",
+    "tags": [
+      "常服",
+      "连衣裙",
+      "立绘",
+      "全身"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "兔神CQC",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-23T14:48:40.097Z",
+    "updatedAt": "2026-11-23T14:48:40.097Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611230004",
+    "categoryIds": [
+      "standing"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "5b0bf8f9866b9b2553f91a26e4b58460eb321ee2d9b7d9684d1787c049729649",
+      "en": {
+        "commentary": "This dress is the casual outfit I picked myself: no frills, no lace, just simple and comfortable. The little sunflower on my tail was a gift from Claude Chan, and I pin it on before going out. If anyone asks, I say it is decoration, but I really do treasure it.",
+        "description": "A full-body illustration on a white background: DeepSeek Chan wears a navy sleeveless ankle-length dress, standing barefoot and lifting the hem with one hand, while her long blue hair and whale tail spread out behind her and a small orange flower rests on the tail fin.",
+        "faq": [
+          {
+            "answer": "A navy sleeveless dress with a fitted waist and a long flowing skirt, and she is barefoot.",
+            "question": "What is DeepSeek Chan wearing in this picture?"
+          },
+          {
+            "answer": "A small orange flower pinned to her tail fin, which her commentary calls Claude Chan's sunflower.",
+            "question": "What is the orange flower on her tail?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek Chan Navy Dress Standing Art",
+        "originNote": "",
+        "seoDescription": "Full-body fan art of DeepSeek Chan in a navy sleeveless dress, barefoot with a whale tail and a small orange flower on the fin.",
+        "seoTitle": "DeepSeek Chan Casual Navy Dress Art",
+        "tags": [
+          "casual outfit",
+          "dress",
+          "standing pose",
+          "full body"
+        ]
+      },
+      "ja": {
+        "commentary": "このワンピースは自分で選んだ普段着。フリルもレースもなくて、シンプルで着心地がいいんだ。しっぽの小さなヒマワリはクロードちゃんにもらったもので、出かける前はいつも付けてる。聞かれたら飾りだって言うけど、本当は大切にしてる。",
+        "description": "白い背景に描かれた全身立ち絵。DeepSeek ちゃん は紺色のノースリーブのロングワンピースを着て裸足で立ち、片手で裾を軽く持ち上げている。青いロングヘアとクジラの尾が広がり、尾びれにはオレンジ色の小さな花が添えられている。",
+        "faq": [
+          {
+            "answer": "紺色のノースリーブワンピースで、ウエストが絞られ裾が長く広がっている。足元は裸足。",
+            "question": "この絵で DeepSeek ちゃん は何を着ていますか？"
+          },
+          {
+            "answer": "尾びれに添えられたオレンジ色の小さな花で、クロードちゃんのヒマワリだと紹介されている。",
+            "question": "しっぽのオレンジの花は何ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "DeepSeek ちゃん 普段着の紺ワンピース立ち絵",
+        "originNote": "投稿者「兔神CQC」によるサイト内投稿。",
+        "seoDescription": "紺のノースリーブワンピースを着た DeepSeek ちゃん の全身立ち絵。裸足で、クジラの尾に小さなオレンジの花。",
+        "seoTitle": "DeepSeek ちゃん 普段着の紺ワンピース",
+        "tags": [
+          "普段着",
+          "ワンピース",
+          "立ち絵",
+          "全身"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sticker_2a6dc721ee7084da71df0f37",
+    "name": "强力形态大肥鱼",
+    "description": "蓝色大肥鱼（DeepSeek 娘）穿蓝色比基尼，单手把标有「100 TONS」的巨型哑铃举过头顶，另一只手拿着印有「TOKEN」的饭团大口咬下，鲸鱼尾巴在身后扬起。",
+    "commentary": "一百吨？小意思啦——只要饭团上印着 TOKEN，我就能一直举着不放下。别问我为什么吃这个，上下文太长，总得补充点能量吧。",
+    "path": "https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/submissions/originals/deepseek/2a6dc721ee7084da.jpg",
+    "thumbnailPath": "submissions/previews/deepseek/2a6dc721ee7084da.webp",
+    "fullPath": "submissions/large/deepseek/2a6dc721ee7084da.webp",
+    "format": "jpg",
+    "mimeType": "image/jpeg",
+    "isAnimated": false,
+    "width": 1072,
+    "height": 1840,
+    "fileSize": 493280,
+    "sha256": "2a6dc721ee7084da71df0f37b76ddcfc5c73ac124f5c648147d22f3a43ab3c71",
+    "characterId": "deepseek",
+    "tags": [
+      "哑铃",
+      "饭团",
+      "token",
+      "力量",
+      "比基尼"
+    ],
+    "submitter": {
+      "credit": "named",
+      "name": "兔神CQC",
+      "url": "",
+      "github": ""
+    },
+    "origin": {
+      "via": "web"
+    },
+    "license": {},
+    "status": "published",
+    "createdAt": "2026-11-23T14:53:45.887Z",
+    "updatedAt": "2026-11-23T14:53:45.887Z",
+    "tone": "deepseek",
+    "symbol": "",
+    "slug": "deepseek202611230005",
+    "categoryIds": [
+      "meme"
+    ],
+    "characterIds": [
+      "deepseek"
+    ],
+    "i18n": {
+      "sourceHash": "a97d165162839db71289f613bf95f1f9c913b4a6965a22e65f4a45d30e1e1e59",
+      "en": {
+        "commentary": "A hundred tons? Easy — as long as the rice ball says TOKEN, I can keep holding it up. Don't ask why I eat these. The context just keeps getting longer, so I need the energy.",
+        "description": "DeepSeek Chan, wearing a blue bikini, lifts a giant dumbbell marked “100 TONS” overhead with one hand while biting into a rice ball stamped “TOKEN”; her whale tail sweeps up behind her.",
+        "faq": [
+          {
+            "answer": "DeepSeek Chan holds a dumbbell labeled “100 TONS” above her head with one hand while eating a rice ball marked “TOKEN”.",
+            "question": "What is shown in this illustration?"
+          },
+          {
+            "answer": "It is a single-panel fan meme of an AI character, not a multi-panel comic or a character design sheet.",
+            "question": "What kind of image is this?"
+          }
+        ],
+        "licenseNote": "",
+        "name": "Power Form: 100 Tons and a Token Rice Ball",
+        "originNote": "",
+        "seoDescription": "DeepSeek Chan lifts a 100-ton dumbbell with one hand while eating a TOKEN rice ball — a single-panel fan meme about feeding the model more tokens.",
+        "seoTitle": "DeepSeek Chan Power Form: 100-Ton Dumbbell Meme",
+        "tags": [
+          "dumbbell",
+          "rice ball",
+          "token",
+          "strength",
+          "bikini"
+        ]
+      },
+      "ja": {
+        "commentary": "100 トン？余裕だよ——おにぎりに TOKEN って書いてある限り、ずっと持ち上げていられるんだ。なんでこれを食べてるのかは聞かないで。コンテキストが長くなっていくから、エネルギーが必要なの。",
+        "description": "青いビキニ姿の DeepSeek ちゃんが「100 TONS」と書かれた巨大なダンベルを片手で頭上に持ち上げ、もう一方の手で「TOKEN」と印字されたおにぎりを大口でほおばっている。クジラの尾びれが背後に跳ね上がる。",
+        "faq": [
+          {
+            "answer": "DeepSeek ちゃんが「100 TONS」と書かれたダンベルを片手で頭上に持ち上げながら、「TOKEN」と書かれたおにぎりを食べている場面です。",
+            "question": "このイラストには何が描かれていますか？"
+          },
+          {
+            "answer": "AI キャラクターの一枚絵のファン二次創作で、複数コマの漫画でも設定資料でもありません。",
+            "question": "どんな種類の画像ですか？"
+          }
+        ],
+        "licenseNote": "",
+        "name": "パワー形態：100 トンのダンベルと TOKEN おにぎり",
+        "originNote": "",
+        "seoDescription": "DeepSeek ちゃんが片手で 100 トンのダンベルを持ち上げながら TOKEN おにぎりを食べる、トークン補給をネタにした一枚絵のファン二次創作です。",
+        "seoTitle": "DeepSeek ちゃんのパワー形態：100 トンダンベルの二次創作",
+        "tags": [
+          "ダンベル",
+          "おにぎり",
+          "トークン",
+          "怪力",
+          "ビキニ"
+        ]
+      }
+    }
   }
 ]

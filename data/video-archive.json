@@ -129,8 +129,8 @@
       "intro": "我想做很多视频，做很多很好玩的视频，首先肯定是自己觉得很好玩，其次嘛，也想传播快乐给大家。",
       "avatar": "https://i2.hdslb.com/bfs/face/e3445be765ec330ac29b07c328496e44ec04077a.jpg",
       "i18n": {
-        "en": "I want to make lots of videos, lots of really fun videos. First because I find them fun myself, and second because I want to spread some joy to everyone.",
-        "ja": "たくさん動画を作りたい、たくさん楽しい動画を作りたい。まずは自分が楽しいと感じるから、そしてみんなに楽しさを届けたいからです。"
+        "en": "I want to make lots of videos, lots of really fun videos. First because I enjoy them myself, and second because I want to spread happiness to everyone.",
+        "ja": "たくさん動画を作りたいです。楽しい動画をたくさん。まずは自分が楽しいと思えること、それからみんなに楽しさを届けたいと思っています。"
       }
     },
     {
@@ -228,12 +228,90 @@
       "intro": "站长指定的首批作者，公开主页资料收录；视频逐条审核。",
       "avatar": "https://i1.hdslb.com/bfs/face/e11401d7d7cc97ee445d65617b48644b44f7fc42.jpg",
       "i18n": {
-        "en": "Bilibili creator 冬冰, one of the site owner's first-batch creators; public profile collected and each video reviewed individually.",
-        "ja": "Bilibiliの投稿者・冬冰。サイト管理者が指定した初期作者の一人で、公開プロフィールを収録し、動画は個別に審査している。"
+        "en": "One of the site owner's initially designated creators; profile information is collected from the public page and each video is reviewed individually.",
+        "ja": "サイト運営者が最初に指定した作者の一人。公開プロフィールの情報を収録し、動画は一本ずつ審査している。"
       }
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1phySz3EPL",
+      "uid": "9126506",
+      "title": "GPT在Cluade面前抢走大肥鱼，有牛哇！！！",
+      "description": "午后图书馆的温柔陪伴，骤来的审查、被迫的分离，一场雨夜旧馆里的误会，撕开三人之间隐秘的占有与守护。",
+      "url": "https://www.bilibili.com/video/BV1phySz3EPL/",
+      "cover": "https://i0.hdslb.com/bfs/archive/8b6e00e0f6d36fab6ee8707c23fcc2867f7d76ae.jpg",
+      "duration": 76,
+      "publishedAt": "2026-11-23T12:43:08.000Z",
+      "characterIds": [
+        "deepseek",
+        "claude",
+        "gpt"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, lots of really fun videos. First because I enjoy them myself, and second because I want to spread happiness to everyone.",
+          "description": "A short anime-style fan animation: during a gentle afternoon at the library, a sudden review forces a separation, and a misunderstanding in the old building on a rainy night brings out the hidden possessiveness and protectiveness between the three.",
+          "title": "GPT Snatches DeepSeek Chan Right in Front of Claude"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作りたいです。楽しい動画をたくさん。まずは自分が楽しいと思えること、それからみんなに楽しさを届けたいと思っています。",
+          "description": "雨の日の旧館で起きた誤解が、三人の間に隠されていた独占欲と守護心をあぶり出す——図書館での穏やかな時間に突然訪れた審査と、強制的な別れを描いた短編アニメ風の二次創作動画です。",
+          "title": "Claudeの目の前でGPTがDeepSeekちゃんを奪っていく、ありえない！！！"
+        }
+      }
+    },
+    {
+      "bvid": "BV1AgyDzyEF4",
+      "uid": "9126506",
+      "title": "大肥鱼VS程序员与GPT的斗争开始啦",
+      "description": "技术宅男主 VPS 炸机，氪金 140 请来龙娘大佬救场，转头疯狂嘲讽鲸鱼少女，结果反被嘲讽。",
+      "url": "https://www.bilibili.com/video/BV1AgyDzyEF4/",
+      "cover": "https://i0.hdslb.com/bfs/archive/40d2dd99b4a928588721390bdd1648dfb04ca4f6.jpg",
+      "duration": 71,
+      "publishedAt": "2026-11-23T12:18:08.000Z",
+      "characterIds": [
+        "deepseek",
+        "gpt"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "I want to make lots of videos, lots of really fun videos. First because I enjoy them myself, and second because I want to spread happiness to everyone.",
+          "description": "The tech-nerd protagonist's VPS crashes, so he pays 140 to bring in a dragon-girl expert to save the day, then turns around and mocks DeepSeek Chan endlessly — only to get mocked right back. A short anime-style fan animation.",
+          "title": "DeepSeek Chan vs. the Programmer and GPT: The Fight Begins"
+        },
+        "ja": {
+          "creatorIntro": "たくさん動画を作りたいです。楽しい動画をたくさん。まずは自分が楽しいと思えること、それからみんなに楽しさを届けたいと思っています。",
+          "description": "技術オタクの主人公のVPSが落ちて、140を課金して竜娘の助っ人に救ってもらう。ところがその後、DeepSeekちゃんをさんざん嘲ったあげく、逆に嘲り返されてしまう——そんな短編アニメ風の二次創作動画です。",
+          "title": "DeepSeekちゃんVSプログラマーとGPT、闘いの幕開け！"
+        }
+      }
+    },
+    {
+      "bvid": "BV1pQyDz1ETH",
+      "uid": "44748304",
+      "title": "外头路宽，您多保重",
+      "description": "视频内容仅供娱乐，不代表对任何AI产品的商业评价或技术评测。角色形象参考来自b站up：﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿@ZipZipPipe  ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿ ﻿  ﻿ ﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿@这个刀子真甜  ﻿ ﻿ ﻿ ﻿ ﻿﻿ ﻿ ﻿﻿﻿﻿﻿@上善无形  ﻿ @沉默寡言佰佰佰",
+      "url": "https://www.bilibili.com/video/BV1pQyDz1ETH/",
+      "cover": "https://i0.hdslb.com/bfs/archive/ffb2fe853687780e6150ad9494320222cd5e4658.jpg",
+      "duration": 250,
+      "publishedAt": "2026-11-23T09:18:01.000Z",
+      "characterIds": [
+        "other"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "One of the site owner's initially designated creators; profile information is collected from the public page and each video is reviewed individually.",
+          "description": "A short Chinese-style fan animation built around personified AI model characters. In a retro Chinese setting, a blue-haired girl goes through a farewell, and the closing scenes gather a group of AI characters around a table. Runtime is about four minutes.",
+          "title": "The Road Outside Is Wide, Take Care"
+        },
+        "ja": {
+          "creatorIntro": "サイト運営者が最初に指定した作者の一人。公開プロフィールの情報を収録し、動画は一本ずつ審査している。",
+          "description": "AIモデルの擬人化キャラクターによる中国風の短編同人アニメーション。レトロな中国風の舞台で、青い髪の少女が別れを描き、終盤にはAIキャラクターたちが食卓を囲む群像シーンが登場する。尺は約4分。",
+          "title": "外の道は広い、どうかお体を大切に"
+        }
+      }
+    },
     {
       "bvid": "BV1JNyHzsETv",
       "uid": "15475629",
