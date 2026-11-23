@@ -140,8 +140,8 @@
       "intro": "每日AI小四格/小动画",
       "avatar": "https://i0.hdslb.com/bfs/face/6f8600ad3d37069ef5106eaf96e7d5a936ba8c50.jpg",
       "i18n": {
-        "en": "Daily AI four-panel comics and short animations.",
-        "ja": "毎日AI四コマ漫画・ショートアニメ。"
+        "en": "Posts daily AI four-panel comics and short animations.",
+        "ja": "毎日AI四コマ漫画やショートアニメを投稿している。"
       }
     },
     {
@@ -234,6 +234,31 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1JNyHzsETv",
+      "uid": "15475629",
+      "title": "【科普向】《大肥鱼：万一主人说的是外语怎么办……》",
+      "description": "原事件（2025-01-20）：DeepSeek 在论文《DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning》中记录，仅用大规模强化学习、不先做监督微调训练出的 DeepSeek-R1-Zero，虽然推理能力很强，但存在可读性差和语言混用问题：模型在逐步思考时，回答里会把多种语言（常见为中英文）夹杂在一起。后续的 DeepSeek-R1 为此加入了可读的冷启动数据，并在强化学习中引入语言一致性奖励。\n\n来源：\nhttps://arxiv.org/html/2501.12948v1\n\n【Credit】\n音乐：Under the Blooms (Cute Cat Marimba)\nMakiYoshida_art · Pixabay\n图像生成：GPT Image 2.5 (Sunburst)\n视频生成与配音：MiniMax-H3-Lite（原生配音）\nAI-Chan illustrations — ZipZipPipe · CC BY-NC-SA 4.0.\nDeepseek-Chan original character — 上善无形.",
+      "url": "https://www.bilibili.com/video/BV1JNyHzsETv/",
+      "cover": "https://i0.hdslb.com/bfs/archive/bf14aeb26b47b7d14fa130753a381cc07ef11b58.jpg",
+      "duration": 39,
+      "publishedAt": "2026-11-23T07:05:01.000Z",
+      "characterIds": [
+        "deepseek"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Posts daily AI four-panel comics and short animations.",
+          "description": "A 39-second chibi animation set in a cafe, starring DeepSeek Chan as a maid who frets over the idea of her master speaking a foreign language. The short riffs on the language-mixing problem DeepSeek-R1-Zero showed while reasoning and on the cold-start data and language-consistency reward later added to DeepSeek-R1, with the creator citing the DeepSeek-R1 paper.",
+          "title": "DeepSeek Chan: What If My Master Speaks a Foreign Language…"
+        },
+        "ja": {
+          "creatorIntro": "毎日AI四コマ漫画やショートアニメを投稿している。",
+          "description": "カフェを舞台にした約39秒のちびキャラアニメ。メイド姿のDeepSeekちゃんが、ご主人様が外国語を話したらどうしようと慌てる。DeepSeek-R1-Zeroの推論中に見られた言語混在と、その後のDeepSeek-R1で加わったコールドスタートデータと言語一貫性報酬をゆるく紹介しており、投稿者はDeepSeek-R1の論文を出典として挙げている。",
+          "title": "DeepSeekちゃん：ご主人様が外国語を話したら……"
+        }
+      }
+    },
     {
       "bvid": "BV1uLyLzWE4j",
       "uid": "9126506",
