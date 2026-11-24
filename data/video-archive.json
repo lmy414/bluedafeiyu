@@ -140,8 +140,8 @@
       "intro": "每日AI小四格/小动画",
       "avatar": "https://i0.hdslb.com/bfs/face/6f8600ad3d37069ef5106eaf96e7d5a936ba8c50.jpg",
       "i18n": {
-        "en": "Posts daily AI four-panel comics and short animations.",
-        "ja": "毎日AI四コマ漫画やショートアニメを投稿している。"
+        "en": "Posts a daily AI four-panel comic and short animation.",
+        "ja": "毎日AI四コマ漫画やショートアニメを投稿しています。"
       }
     },
     {
@@ -234,6 +234,32 @@
     }
   ],
   "videos": [
+    {
+      "bvid": "BV1HCydz4EYz",
+      "uid": "15475629",
+      "title": "【科普向】《白龙小姐（坏笑）strawberry 里到底有几个 r 啊？》",
+      "description": "原事件（2024-08 / 09）：“How many r's are in strawberry?”曾一度在全网成为考验大模型的著名梗图，GPT-4o 等主流大模型当时常常直接脱口而出“2 个”。阿尔伯塔大学 AI 研究员 Matthew Guzdial 在 TechCrunch 采访中指出，Transformer 并不是逐字母读字，而是先把单词拆成「straw」「berry」等词元编码，所以看不清词元里藏着几个 r。直至 2024 年 9 月 12 日，OpenAI 正式推出此前内部代号正是“Strawberry”的 o1-preview 与 o1-mini，通过强化学习在作答前逐步思维链推演，这类逐字数数题终于不再翻车。\n\n来源：\nhttps://techcrunch.com/2024/08/27/why-ai-cant-spell-strawberry/\nhttps://simonwillison.net/2024/Sep/12/openai-o1/\n\n【Credit】\n音乐：Clutz Cheerful Opening\nGoldenSoundLabs · Pixabay\n图像生成：GPT Image 2.5 (Sunburst)\n视频生成与配音：MiniMax-H3-Lite（原生配音）\nAI-Chan illustrations — ZipZipPipe · CC BY-NC-SA 4.0.\nDeepseek-Chan original character — 上善无形.",
+      "url": "https://www.bilibili.com/video/BV1HCydz4EYz/",
+      "cover": "https://i0.hdslb.com/bfs/archive/ce81ec827ea3d6578247febc5c0aa9588bae2d65.jpg",
+      "duration": 38,
+      "publishedAt": "2026-11-23T22:42:38.000Z",
+      "characterIds": [
+        "deepseek",
+        "other"
+      ],
+      "i18n": {
+        "en": {
+          "creatorIntro": "Posts a daily AI four-panel comic and short animation.",
+          "description": "A short chibi animation in which the AI character girls around a tea table take up the classic question of how many r's are hiding in the word \"strawberry\". The host explains that language models do not read words letter by letter but encode them as tokens such as \"straw\" and \"berry\", which is why counting characters used to trip them up, and notes that OpenAI's o1-preview and o1-mini, developed under the internal codename \"Strawberry\", finally handled this kind of counting puzzle through step-by-step reasoning before answering.",
+          "title": "Miss White Dragon (Smirking): Just How Many r's Are in \"strawberry\"?"
+        },
+        "ja": {
+          "creatorIntro": "毎日AI四コマ漫画やショートアニメを投稿しています。",
+          "description": "ティーテーブルを囲んだちびキャラのAI娘たちが、「strawberry」の中に r がいくつ隠れているかという定番の問いを扱うショートアニメです。言語モデルは単語を一文字ずつではなく「straw」「berry」のようなトークン単位で符号化して読むため、文字を数えるのが苦手だったこと、そして社内コードネーム「Strawberry」で開発された OpenAI の o1-preview と o1-mini が、答える前に段階的な推論を行うことでこの種の数え上げ問題に対応したことを紹介します。",
+          "title": "白龍さん（ニヤリ）「strawberry」の中に r はいくつあるの？"
+        }
+      }
+    },
     {
       "bvid": "BV1phySz3EPL",
       "uid": "9126506",
