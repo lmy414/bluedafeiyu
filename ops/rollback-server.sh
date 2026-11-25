@@ -5,7 +5,7 @@
 # 用法：ops/rollback-server.sh <release目录名>
 #   必须显式给出 releases/ 下的目录名，没有默认值。
 #
-# 行为：加载同样的配置 -> 校验目标 release 存在 -> 原子切 current -> 健康检查；
+# 行为：加载同样的配置 -> 校验目标 release 和作品图片 -> 原子切 current -> 健康检查；
 #       健康检查失败则把 current 指回原目标并非零退出。
 #       不重新构建、不删除任何文件、不动 shared/data、不动 acme。
 #       回滚不构建，所以内容仓库相关的 CONTENT_* 变量只读取并打印，不是必填项。
@@ -37,7 +37,7 @@ esac
 # ---------------------------------------------------------------- 配置加载
 
 CONFIG_FILE="${DEPLOY_ENV:-}"
-CONFIG_VARS=(DEPLOY_ROOT SOURCE_DIR REPO_URL BRANCH HEALTH_URL CONTENT_REPO_URL CONTENT_BRANCH CONTENT_DIR SHARED_DATA_DIR RELEASES_DIR CURRENT_LINK)
+CONFIG_VARS=(DEPLOY_ROOT SOURCE_DIR REPO_URL BRANCH HEALTH_URL CONTENT_REPO_URL CONTENT_BRANCH CONTENT_DIR RELEASES_DIR CURRENT_LINK)
 
 declare -A __preset=()
 for name in "${CONFIG_VARS[@]}"; do
@@ -89,6 +89,19 @@ if [ ! -f "${RELEASE_PATH}/index.html" ]; then
   die "目标 release 不存在或缺少 index.html：${RELEASE_PATH}"
 fi
 
+# ---------------------------------------------------------------- 防并发
+
+exec 9>"${DEPLOY_ROOT}/.deploy.lock"
+if ! flock -n 9; then
+  die "另一个发布/回滚正在进行（拿不到 ${DEPLOY_ROOT}/.deploy.lock），退出"
+fi
+log "已获得发布锁 ${DEPLOY_ROOT}/.deploy.lock"
+
+IMAGE_GATE="${SOURCE_DIR}/tools/work-image-integrity.mjs"
+if ! node "${IMAGE_GATE}" "${RELEASE_PATH}/works-v2.json" "${RELEASE_PATH}"; then
+  die "目标 release 图片校验失败，current 未切换"
+fi
+
 OLD_TARGET=""
 if [ -L "${CURRENT_LINK}" ]; then
   OLD_TARGET="$(readlink "${CURRENT_LINK}")"
@@ -100,14 +113,6 @@ fi
 if [ "${OLD_TARGET}" = "releases/${RELEASE_NAME}" ]; then
   log "current 已经指向目标 release，无需切换"
 fi
-
-# ---------------------------------------------------------------- 防并发
-
-exec 9>"${DEPLOY_ROOT}/.deploy.lock"
-if ! flock -n 9; then
-  die "另一个发布/回滚正在进行（拿不到 ${DEPLOY_ROOT}/.deploy.lock），退出"
-fi
-log "已获得发布锁 ${DEPLOY_ROOT}/.deploy.lock"
 
 # ---------------------------------------------------------------- 原子切链
 
@@ -129,31 +134,14 @@ restore_current() {
 
 # ---------------------------------------------------------------- 健康检查
 
-# 取一张预览图用于回读。必须换算成相对站点根的路径，否则拼出的 URL 会带
-# 服务器绝对路径（如 //srv/www/...），落在文档根之外必然 404。
-PREVIEW_ABS="$(
-  set +o pipefail
-  find "${RELEASE_PATH}/submissions/previews" -type f -name '*.webp' 2>/dev/null | sort | head -n 1
-)"
-PREVIEW_REL="${PREVIEW_ABS#"${RELEASE_PATH}"/}"
-if [ -z "${PREVIEW_REL}" ]; then
-  log "健康检查失败：release 里找不到 submissions/previews/*.webp"
-  restore_current
-  die "健康检查失败（无预览图可回读），current 已还原"
-fi
-
 check_ok() {
-  local url="$1" expected_len="${2:-0}"
+  local url="$1"
   local result code size
   result="$(curl -sS -o /dev/null -w '%{http_code} %{size_download}' --max-time 20 "${url}" || echo '000 0')"
   code="${result%% *}"
   size="${result##* }"
   if [ "${code}" != "200" ]; then
     log "健康检查失败：${url} 返回 ${code}"
-    return 1
-  fi
-  if [ "${expected_len}" -gt 0 ] && [ "${size}" -le 0 ]; then
-    log "健康检查失败：${url} 内容长度为 0"
     return 1
   fi
   log "健康检查通过：${url} -> 200（${size} bytes）"
@@ -168,10 +156,8 @@ for path in "/" "/robots.txt" "/submissions/works.json"; do
   fi
 done
 
-if [ -z "${HEALTH_FAILED}" ]; then
-  if ! check_ok "${HEALTH_URL}/${PREVIEW_REL}" 1; then
-    HEALTH_FAILED="${HEALTH_URL}/${PREVIEW_REL}"
-  fi
+if [ -z "${HEALTH_FAILED}" ] && ! node "${IMAGE_GATE}" "${RELEASE_PATH}/works-v2.json" "${RELEASE_PATH}" --http "${HEALTH_URL}"; then
+  HEALTH_FAILED="作品图片 HTTP 回读"
 fi
 
 if [ -n "${HEALTH_FAILED}" ]; then
@@ -182,6 +168,6 @@ fi
 log "回滚成功"
 log "旧 release：${OLD_TARGET:-（无）}"
 log "新 release：releases/${RELEASE_NAME}"
-log "健康检查：全部通过（首页 / robots.txt / submissions/works.json / ${PREVIEW_REL}）"
+log "健康检查：全部通过（首页 / robots.txt / submissions/works.json / 作品图片）"
 
 # 注意：绝不删除任何 release、绝不删除 shared/data、绝不删除 acme。

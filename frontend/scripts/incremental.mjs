@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import {spawnSync} from 'node:child_process';
+import {LEGACY_PREVIEW_DIR} from '../../tools/work-image-integrity.mjs';
 
 export const STATE_VERSION = 2;
 export const STATE_FILE = '.build-state.json';
@@ -60,7 +61,8 @@ function artifactStamp(file) {
   return [stat.dev,stat.ino,stat.size,stat.mtimeNs,stat.ctimeNs].join(':');
 }
 export function outputHashes(dir, known = new Map(), stamps = null) {
-  const served=filesIn(dir).filter(name=>!name.startsWith('data/') && !name.startsWith('.build-') && name!=='build-info.json' && !/\.(gz|br)$/.test(name));
+  const served=filesIn(dir).filter(name=>(!name.startsWith('data/') || name.startsWith(LEGACY_PREVIEW_DIR + '/'))
+    && !name.startsWith('.build-') && name!=='build-info.json' && !/\.(gz|br)$/.test(name));
   return Object.fromEntries(served.map(name=>{
     const file=safeFile(dir,name);
     const digest=known.get(name) ?? hash(fs.readFileSync(file));

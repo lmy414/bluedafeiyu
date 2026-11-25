@@ -1,11 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import http from 'node:http';
 import os from 'node:os';
 import path from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
-import {IMAGE_PLACEHOLDER, assertWorkImages, missingWorkImages, workImagePresent} from '../work-image-integrity.mjs';
+import {IMAGE_PLACEHOLDER, assertReleaseWorkImages, assertWorkImages, checkReleaseImageResponses, missingWorkImages, workImagePresent} from '../work-image-integrity.mjs';
 import {workImages} from '../../frontend/public/components/work-image.js';
 import {languageSitemap, sitemapWorkImage, ORIGIN} from '../../frontend/scripts/localize-pages.mjs';
 
@@ -165,14 +166,57 @@ test('the release gate checks published files and requires a nonempty placeholde
   const run = root => spawnSync(process.execPath, [gate, overlay, root], {encoding: 'utf8'});
   const complete = run(source);
   assert.equal(complete.status, 0, complete.stderr);
-  assert.match(complete.stdout, /2\/2 works have an image/);
+  assert.match(complete.stdout, /2\/2 works have thumbnail and display images/);
   const incomplete = run(release);
   assert.notEqual(incomplete.status, 0);
   assert.match(incomplete.stderr, /缺图作品 1\/2[\s\S]*source-only/);
+  const manifest = JSON.parse(fs.readFileSync(overlay, 'utf8'));
+  manifest.shared.l = '/submissions/previews/present.svg';
+  fs.writeFileSync(overlay, JSON.stringify(manifest));
+  const missingThumb = run(release);
+  assert.notEqual(missingThumb.status, 0);
+  assert.match(missingThumb.stderr, /source-only: thumb=/);
+  assert.doesNotMatch(missingThumb.stderr, /display=/);
   put(source, 'components/image-placeholder.svg', '');
   const emptyPlaceholder = run(source);
   assert.notEqual(emptyPlaceholder.status, 0);
   assert.match(emptyPlaceholder.stderr, /Missing or empty \/components\/image-placeholder\.svg/);
+});
+
+test('the HTTP gate samples the legacy preview and rejects stale, empty and HTML responses', async t => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'work-release-http-'));
+  const image = 'data/blue-fish/previews/first.webp';
+  const files = {'components/image-placeholder.svg': '<svg/>', [image]: 'webp-fixture'};
+  for (const [name, body] of Object.entries(files)) {
+    fs.mkdirSync(path.dirname(path.join(root, name)), {recursive: true});
+    fs.writeFileSync(path.join(root, name), body);
+  }
+  fs.writeFileSync(path.join(root, 'works-v2.json'), JSON.stringify({
+    first: {id: 'first', i: '/' + image, l: '/' + image}
+  }));
+  let failure;
+  const server = http.createServer((req, res) => {
+    const url = new URL(req.url, 'http://localhost');
+    const name = url.pathname.slice(1);
+    const isLegacy = name === image;
+    const mime = isLegacy ? 'image/webp' : 'image/svg+xml; charset=utf-8';
+    if (isLegacy && failure === '404') return res.writeHead(404).end();
+    if (isLegacy && failure === 'html') return res.writeHead(200, {'Content-Type': 'text/html'}).end('error page');
+    res.writeHead(200, {'Content-Type': mime});
+    res.end(isLegacy && failure !== undefined ? failure : files[name]);
+  });
+  await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
+  t.after(() => {
+    server.close();
+    fs.rmSync(root, {recursive: true, force: true});
+  });
+  const {samples} = assertReleaseWorkImages(root);
+  const verify = () => checkReleaseImageResponses(`http://127.0.0.1:${server.address().port}`, samples);
+  await verify();
+  for (const [mode, error] of [['404', /first\.webp: HTTP 404/], ['html', /Content-Type text\/html/], ['', /body differs/], ['stale', /body differs/]]) {
+    failure = mode;
+    await assert.rejects(verify, error);
+  }
 });
 
 test('thumb and display fall back to each other inside the same work', () => {

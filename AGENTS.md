@@ -43,7 +43,7 @@
 
 可选字段 `author` 表示「来源作者专题」，结构 `{ name, url?, bio?, channels: [{ platform, label?, url }] }`：`channels` 第一项即首选联系方式，每行 `platform` 与 `url` 必填，`url`（含 `author.url`）只接受 http/https；没有 `author` 时专题维持共享合集版式，有 `author` 时前台改用独立作者版式并展示作者名（不做头像），缺作者名或首选渠道会直接构建失败。作者型专题记录按需创建，本仓库不预置。
 
-`dist/data/blue-fish/previews/` 不在这张表里：它是 `tools/sync_content.mjs` 从内容仓 `dist/data/blue-fish/previews/` **同步进来的首批预览图**；上表两张 blue-fish JSON 则是**站点仓 `data/` 的清单暂存副本**。三者都落在 `dist/data/`，而 Astro 发布步骤不复制 `dist/data/`，所以这批预览图与两张 JSON 都**不进发布包**；线上的首批预览图由 `DEPLOY_ROOT/shared/data` 持久副本硬链接提供（见「更新与发布」）。
+`tools/sync_content.mjs` 从内容仓同步首批预览到 `dist/data/blue-fish/previews/`。构建把这批预览写入发布产物的 `data/blue-fish/previews/`，并纳入增量构建的文件清单。两张 blue-fish JSON 仅在构建期间读取。
 
 ## 文档在哪
 
@@ -131,7 +131,7 @@ node tools/tests/migration.test.mjs --content-dir <内容仓>         # 迁移�
 - 发布脚本分别拉取代码仓与内容仓的 `main`，构建、预压缩、原子切换 `current`，健康检查失败自动回滚；
 - 不要用面板上传整包，也不要直接改服务器上的站点文件；
 - 回滚用 `ops/rollback-server.sh <release目录名>`，只切软链、不删文件；
-- **首批图的派生图（`data/blue-fish/previews/`）不在发布产物里**：`build.mjs` 跳过 `data/`，线上由 `DEPLOY_ROOT/shared/data` 这份持久副本硬链接进每个 release。`ops/deploy-server.sh` 现在会在链接前把内容仓 `dist/data/blue-fish/previews/` 复制到临时目录，再逐文件 rename 进 `shared/data/blue-fish/previews/`：保留 shared 里的其它文件，旧 release 持有的旧 inode 不会被原地覆盖。硬链接完成后、切 `current` 前，脚本会用该 release 自己的 `works-v2.json` 跑实际产物缺图门禁（>1% 失败）；prebuilt/noop 也读产物清单，不回退到 `source/dist` 快照。发布日志里应能看到同步文件数、门禁通过或缺图 ID；
+- 每次构建、发布和回滚都用目标目录的 `works-v2.json` 逐项校验缩略图、大图和默认占位图。任一作品缺图即中止，日志列出作品 ID 和图片路径。切换后按图片目录抽查 HTTP 200、图片类型和文件内容，失败时自动恢复上一版。直接恢复备份产物时也须先运行 `node tools/work-image-integrity.mjs <目标目录>/works-v2.json <目标目录>`。
 - 服务器配置（`DEPLOY_ENV`、`DEPLOY_ROOT`、`SOURCE_DIR`、`CONTENT_DIR` 等）由维护者在服务器侧维护，不写进仓库。
 
 发布脚本为依赖安装、站点构建和预压缩分别建立 systemd 内存限制。默认总内存上限为 1280 MiB，Node 堆上限为 640 MiB，Swap 上限为 512 MiB。每步开始前要求至少 1024 MiB 可用内存。`BUILD_MEMORY_MAX_MB`、`BUILD_NODE_HEAP_MB` 和 `BUILD_MIN_AVAILABLE_MB` 分别控制总内存、Node 堆和最低可用内存。`[build-memory]` 日志每 5 秒记录可用内存和构建进程组占用，结束时输出峰值；失败时保留现行 `current`。

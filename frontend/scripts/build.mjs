@@ -8,6 +8,7 @@ import {readSitemapHistory,updateSitemapHistory,languageSitemap,sitemapWorkImage
 import {localizedPath,LOCALES,ORIGIN} from './site-locales.mjs';
 import {STATE_VERSION,STATE_FILE,readState,hash,outputHashes,copyImmutableAsset,filesIn,excludeInvalidArtifacts} from './incremental.mjs';
 import {buildShareCards} from './og-output.mjs';
+import {assertReleaseWorkImages,LEGACY_PREVIEW_DIR} from '../../tools/work-image-integrity.mjs';
 
 const started=performance.now();
 let phaseStart=started;
@@ -129,7 +130,7 @@ try {
    }
   };
   for(const file of ['avatar.png','favicon.ico','credits/shuangshuang.jpg','events/national-day-2026.webp','characters.json','categories.json','blue-fish-ids.json','topics.json','site-data.json','site-data.js','submissions/works.json','owner-picks/works.json'])copy(file);
-  for(const dir of ['submissions/previews','submissions/large','owner-picks/previews','author-avatars','character-portraits','community'])copy(dir);
+  for(const dir of ['submissions/previews','submissions/large','owner-picks/previews',LEGACY_PREVIEW_DIR,'author-avatars','character-portraits','community'])copy(dir);
   const icons=spawnSync(process.env.PYTHON||'python3',[path.join(root,'tools/prepare_apple_touch_icons.py'),path.join(dist,'favicon.png'),stage],{stdio:'inherit'});
   if(icons.error||icons.status!==0)throw Error('Apple touch icon generation failed: '+(icons.error?.message||icons.status));
   if(process.env.SKIP_OG!=='1') {
@@ -194,11 +195,8 @@ try {
   console.log(`[sitemap] ${sitemap.unchanged} unchanged, ${sitemap.changed} changed, ${sitemap.added} new`);
   endPhase('sitemap');
  }
- // A missing placeholder turns every fallback into a broken image (issue #33).
- // Check the finished stage so noop and validated-prebuilt releases are covered too.
- const placeholder=path.join(stage,'components','image-placeholder.svg');
- let placeholderStat=null;try{placeholderStat=fs.statSync(placeholder);}catch{}
- if(!placeholderStat?.isFile()||placeholderStat.size===0)throw Error('components/image-placeholder.svg is missing or empty from the release');
+ // Check the finished stage, including noop and validated prebuilt output.
+ assertReleaseWorkImages(stage);
  const git=(dir)=>spawnSync('git',['-C',dir,'rev-parse','HEAD'],{encoding:'utf8'}).stdout?.trim()||null;
  const artifacts={};
  const outputs=outputHashes(stage,knownOutputs,artifacts);

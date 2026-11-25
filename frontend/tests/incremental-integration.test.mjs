@@ -34,7 +34,9 @@ test('real Astro builds: no-op, edits, additions, removals, cold-cache fallback 
  // Editorial guides require these characters even when the newest 24 works
  // all belong to the same character. Keep the fixture independent of intake order.
  const required=['deepseek','gemini'].map(id=>candidates.find(w=>(w.characterIds||[w.characterId]).includes(id)));
- assert.ok(required.every(Boolean),'integration fixtures need the guide characters');
+ const legacyWork=candidates.find(work=>work.thumbUrl?.replace(/^\//,'').startsWith('data/blue-fish/previews/'));
+ assert.ok(required.every(Boolean) && legacyWork,'integration fixtures need the guide characters and a legacy preview');
+ required.push(legacyWork);
  const ordered=[...new Map([...required,...candidates].map(w=>[w.id,w])).values()];
  const sample=structuredClone({...original,works:ordered.slice(0,24),topics:[]});
  // Keep the search page's fixed suggestions translated in the deliberately small catalog.
@@ -73,6 +75,10 @@ test('real Astro builds: no-op, edits, additions, removals, cold-cache fallback 
  };
  write(sample);
  const initial=build('initial',null,['--full']);assert.equal(initial.report.mode,'full');
+ const legacyFile=decodeURIComponent(legacyWork.thumbUrl).replace(/^\//,'');
+ assert.deepEqual(fs.readFileSync(path.join(initial.out,legacyFile)),fs.readFileSync(path.join(fixture,'dist',legacyFile)));
+ assert.ok(outputHashes(initial.out)[legacyFile],'legacy previews must be in the release inventory');
+ assert.equal(fs.existsSync(path.join(initial.out,'data/blue-fish-classification.json')),false);
  for(const name of ['apple-touch-icon.png','apple-touch-icon-precomposed.png']) {
    const png=fs.readFileSync(path.join(initial.out,name));
    assert.equal(png.toString('hex',0,8),'89504e470d0a1a0a');

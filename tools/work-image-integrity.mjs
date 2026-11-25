@@ -4,11 +4,12 @@
 // real files are still visible, so it refuses to continue with too many gaps.
 import fs from 'node:fs';
 import path from 'node:path';
+import {randomUUID} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
-import {workImageURL} from '../frontend/public/components/work-image.js';
+import {IMAGE_PLACEHOLDER, workImageURL} from '../frontend/public/components/work-image.js';
 
-
-export const IMAGE_PLACEHOLDER = '/components/image-placeholder.svg';
+export {IMAGE_PLACEHOLDER};
+export const LEGACY_PREVIEW_DIR = 'data/blue-fish/previews';
 export const MISSING_IMAGE_LIMIT = 0.01;
 
 const remoteImage = value => /^https?:\/\//i.test(value);
@@ -67,23 +68,25 @@ export function assertWorkImages(works, {log = console, limit = MISSING_IMAGE_LI
   return missing;
 }
 
-// Validate the exact published overlay against the release after shared assets
-// have been linked. This also covers releases that reuse a prebuilt artifact.
-if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  const [overlayFile, imageRoot] = process.argv.slice(2);
-  if (!overlayFile || !imageRoot || process.argv.length !== 4) {
-    throw new Error('Usage: node tools/work-image-integrity.mjs <works-v2.json> <release-root>');
-  }
+// The published overlay already contains the resolved thumbnail and display URLs.
+// Each serves a different surface, so check both even when one still works.
+export function assertReleaseWorkImages(imageRoot, overlayFile = path.join(imageRoot, 'works-v2.json')) {
   const root = path.resolve(imageRoot);
-  const imageExists = value => {
-    const pathname = decodeURIComponent(new URL(value, 'https://archive.invalid/').pathname);
+  const files = new Map();
+  const releaseImage = value => {
+    const url = new URL(value, 'https://archive.invalid/');
+    const pathname = decodeURIComponent(url.pathname);
+    if (files.has(pathname)) return files.get(pathname);
     const file = path.resolve(root, '.' + pathname);
     const relative = path.relative(root, file);
-    if (relative === '..' || relative.startsWith('..' + path.sep) || path.isAbsolute(relative)) return false;
+    if (relative === '..' || relative.startsWith('..' + path.sep) || path.isAbsolute(relative)) return null;
     const entry = fs.statSync(file, {throwIfNoEntry: false});
-    return !!entry?.isFile() && entry.size > 0;
+    const image = entry?.isFile() && entry.size > 0 ? {url: url.pathname, file} : null;
+    files.set(pathname, image);
+    return image;
   };
-  if (!imageExists(IMAGE_PLACEHOLDER)) {
+  const placeholder = releaseImage(IMAGE_PLACEHOLDER);
+  if (!placeholder) {
     throw new Error('[publish-images] Missing or empty ' + IMAGE_PLACEHOLDER);
   }
   const overlay = JSON.parse(fs.readFileSync(overlayFile, 'utf8'));
@@ -91,9 +94,65 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     throw new Error('[publish-images] Expected the published works-v2.json overlay');
   }
   const works = Object.values(overlay);
-  if (works.some(work => typeof work?.id !== 'string')) {
-    throw new Error('[publish-images] Published works must have stable IDs');
+  if (!works.length || works.some(work => typeof work?.id !== 'string' || !work.id)) {
+    throw new Error('[publish-images] Expected a nonempty list of works with stable IDs');
   }
-  const missing = assertWorkImages(works, {imageExists});
-  console.log(`[publish-images] ${works.length - missing.length}/${works.length} works have an image in ${root}`);
+  const samples = new Map([['placeholder', placeholder]]);
+  const missing = [];
+  for (const work of works) {
+    const broken = [];
+    for (const [field, value] of [['thumb', work.i], ['display', work.l]]) {
+      const source = workImageURL(value, '');
+      if (!isPlaceholderImage(source) && remoteImage(source)) continue;
+      const image = isPlaceholderImage(source) ? null : releaseImage(source);
+      if (!image) {
+        broken.push(`${field}=${source || '(missing)'}`);
+        continue;
+      }
+      const group = image.url.startsWith('/' + LEGACY_PREVIEW_DIR + '/')
+        ? LEGACY_PREVIEW_DIR
+        : image.url.split('/').slice(0, 3).join('/');
+      if (!samples.has(group)) samples.set(group, image);
+    }
+    if (broken.length) missing.push(`${work.id}: ${broken.join(', ')}`);
+  }
+  if (missing.length) {
+    throw new Error(`[publish-images] 缺图作品 ${missing.length}/${works.length}\n${missing.join('\n')}`);
+  }
+  return {total: works.length, samples: [...samples.values()]};
+}
+
+export async function checkReleaseImageResponses(healthUrl, samples) {
+  const probe = randomUUID();
+  await Promise.all(samples.map(async ({url, file}) => {
+    const target = new URL(url, healthUrl);
+    target.searchParams.set('__deploy_image_probe', probe);
+    const response = await fetch(target, {signal: AbortSignal.timeout(20_000)});
+    const type = response.headers.get('content-type')?.split(';', 1)[0].trim();
+    const expectedType = {'.webp': 'image/webp', '.svg': 'image/svg+xml'}[path.extname(url).toLowerCase()];
+    if (response.status !== 200 || !type?.startsWith('image/') || (expectedType && type !== expectedType)) {
+      await response.body?.cancel();
+      throw new Error(`[publish-images] ${target.pathname}: HTTP ${response.status}, Content-Type ${type || '(missing)'}`);
+    }
+    const body = Buffer.from(await response.arrayBuffer());
+    if (!body.equals(fs.readFileSync(file))) {
+      throw new Error(`[publish-images] ${target.pathname}: HTTP body differs from release file`);
+    }
+    console.log(`[publish-images] HTTP ${response.status} ${type} ${body.length} bytes ${target.pathname}`);
+  }));
+}
+
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  const [overlayFile, imageRoot, option, healthUrl] = process.argv.slice(2);
+  if (!overlayFile || !imageRoot || (option && (option !== '--http' || !healthUrl)) || process.argv.length > 6) {
+    throw new Error('Usage: node tools/work-image-integrity.mjs <works-v2.json> <release-root> [--http <health-url>]');
+  }
+  try {
+    const {total, samples} = assertReleaseWorkImages(imageRoot, overlayFile);
+    console.log(`[publish-images] ${total}/${total} works have thumbnail and display images in ${imageRoot}`);
+    if (healthUrl) await checkReleaseImageResponses(healthUrl, samples);
+  } catch (error) {
+    console.error(error.message);
+    process.exitCode = 1;
+  }
 }

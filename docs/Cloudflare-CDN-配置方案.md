@@ -138,7 +138,7 @@
 1. **Bypass cache**：`http.request.uri.path eq "/" or ends_with(http.request.uri.path, ".html")`，
    防止以后误开“Cache Everything”伤到 HTML，保证切 `current` 立刻可见。
 2. **Edge TTL 覆盖 30 天、Browser TTL 沿用源站**：`/submissions/previews/*`、`/submissions/large/*`、`/data/*`（图片）、`/owner-picks/*`。
-   源站只给 7 天，把**边缘**拉到 30 天能再砍一截回源；浏览器仍 7 天，改图不会长滞。
+   生产图片规则为 `Images edge TTL 30d, no error caching`。HTTP 400 及以上在边缘按 `No store` 处理，浏览器沿用源站响应头。源站自定义 404 页返回 `Cache-Control: no-store`。补回图片后，按受影响的 URL 前缀清理旧缓存，再用原网址确认返回 200。
 3. **Bypass cache**：`/data/*.json`、`/submissions/works.json`（默认已不缓存，显式锁死）。
 4. 开 **Tiered Cache**（免费）：回源走上层 tier，进一步减少源站命中；开完清一次缓存。
 

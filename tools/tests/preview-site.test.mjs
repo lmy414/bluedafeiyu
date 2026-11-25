@@ -15,17 +15,19 @@ const svg='<svg xmlns="http://www.w3.org/2000/svg" width="2" height="2"><rect wi
 const freePort=()=>new Promise((resolve,reject)=>{const server=net.createServer();server.once('error',reject);server.listen(0,'127.0.0.1',()=>{const {port}=server.address();server.close(()=>resolve(port));});});
 const started=child=>new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(new Error('preview server did not start')),15000);child.stdout.on('data',chunk=>{if(String(chunk).includes('[preview]')){clearTimeout(timer);resolve();}});child.once('exit',code=>{clearTimeout(timer);reject(new Error(`preview server exited ${code}`));});});
 
-test('preview mounts only dist previews and never exposes sibling data catalogs',async t=>{
+test('preview serves the release previews without exposing source catalogs',async t=>{
   const root=fs.mkdtempSync(path.join(os.tmpdir(),'preview-site-'));
   const tools=path.join(root,'tools');
   const site=path.join(root,'site');
-  const previews=path.join(root,'dist','data','blue-fish','previews');
+  const previews=path.join(site,'data','blue-fish','previews');
   fs.mkdirSync(tools,{recursive:true});
   fs.mkdirSync(site,{recursive:true});
   fs.mkdirSync(previews,{recursive:true});
+  fs.mkdirSync(path.join(root,'dist','data','blue-fish','previews'),{recursive:true});
   fs.copyFileSync(path.join(repo,'tools','preview_site.mjs'),path.join(tools,'preview_site.mjs'));
   fs.writeFileSync(path.join(site,'404.html'),'<!doctype html><meta charset="utf-8"><title>fixture-404</title>');
   fs.writeFileSync(path.join(previews,'test.svg'),svg);
+  fs.writeFileSync(path.join(root,'dist','data','blue-fish','previews','source-only.svg'),svg);
   fs.writeFileSync(path.join(root,'dist','data','work-localizations.json'),JSON.stringify({private:privateMarker}));
   fs.writeFileSync(path.join(root,'dist','data','blue-fish-classification.json'),JSON.stringify({private:privateMarker}));
 
@@ -43,6 +45,8 @@ test('preview mounts only dist previews and never exposes sibling data catalogs'
   assert.equal(image.status,200);
   assert.match(image.headers.get('content-type')||'',/^image\/svg\+xml/);
   assert.match(await image.text(),/<svg[\s>]/);
+  const sourceOnly=await fetch(`${base}/data/blue-fish/previews/source-only.svg`);
+  assert.equal(sourceOnly.status,404);
 
   for(const url of [
     '/data/blue-fish/..%2fwork-localizations.json',
