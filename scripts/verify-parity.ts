@@ -54,6 +54,10 @@ async function legacyMediaPaths(args: Args, legacy: Awaited<ReturnType<typeof lo
     if (path) paths.add(path);
   };
   for (const portrait of Object.values(legacy.portraits)) add(portrait.path);
+  for (const id of Object.keys(manifest?.assets ?? {})) {
+    if (id.startsWith('og:')) paths.add(`/og/${encodeURIComponent(id.slice(3))}`);
+    if (/^site:(?:community|credits)\//.test(id)) paths.add(`/${id.slice(5)}`);
+  }
   for (const creator of legacy.creators) add(creator.avatar);
   for (const topic of legacy.topics) {
     add(topic.author?.avatar?.src || topic.author?.avatar);
@@ -75,7 +79,7 @@ async function legacyMediaPaths(args: Args, legacy: Awaited<ReturnType<typeof lo
   return [...paths].sort();
 }
 
-async function checkLegacyMedia(site: string, path: string, mediaOrigin: string, stop: AbortSignal) {
+async function checkLegacyMedia(site: string, path: string, mediaOrigin: string, stop: AbortSignal, expectedOg?: string) {
   let current = new URL(path, site);
   const siteOrigin = current.origin;
   const seen = new Set<string>();
@@ -84,12 +88,14 @@ async function checkLegacyMedia(site: string, path: string, mediaOrigin: string,
     const context = `老站图片路径 ${path}${hop ? ` → ${current.href}` : ''}`;
     if (seen.has(current.href)) throw new Error(`${context} 重定向循环`);
     seen.add(current.href);
-    const response = await fetch(current, { method: 'HEAD', cache: 'no-store', redirect: 'manual', signal: AbortSignal.any([stop, AbortSignal.timeout(15_000)]) })
+    const response = await fetch(current, { method: isImage ? 'HEAD' : 'GET', cache: 'no-store', redirect: 'manual', signal: AbortSignal.any([stop, AbortSignal.timeout(15_000)]) })
       .catch((error: unknown) => { throw new Error(`${context} 请求失败`, { cause: error }); });
     if (response.status === 200) {
       const mime = response.headers.get('content-type')?.toLowerCase();
       if (isImage && !mime?.startsWith('image/')) throw new Error(`${context} HTTP 200 返回了非图片内容`);
       if (isImage && hop && current.origin !== mediaOrigin) throw new Error(`${context} 301 最终未指向 R2 公开地址`);
+      if (expectedOg && current.href !== expectedOg) throw new Error(`${context} 分享图未指向现行发布清单中的 R2 对象`);
+      if (!isImage && (await response.text()).trim() !== `google-site-verification: ${googleVerification.slice(1)}`) throw new Error('Google 验证文件正文不匹配');
       return hop ? 301 : 200;
     }
     if (response.status !== 301) throw new Error(`${context} HTTP ${response.status}（要求 200 或 301）`);
@@ -124,15 +130,23 @@ export async function verifyParity(args: Args, db?: Database) {
   const media = new Map<string, { id: string; sha?: string }>();
   const mediaBase = process.env.R2_PUBLIC_BASE_URL || 'https://img.xn--pssy23gqgbz2d718b.com';
   const mediaUrl = (key: string) => `${mediaBase}/${key.split('/').map(encodeURIComponent).join('/')}`;
-  const legacyMedia = { paths: historicalMedia.length, ok: 0, redirected: 0 };
+  const legacyMedia = { paths: historicalMedia.length, ok: 0, redirected: 0, failed: 0, notFound: 0 };
   if (args.site && !args.offline) {
     const site = args.site;
     const mediaOrigin = new URL(mediaBase).origin;
     const stop = new AbortController();
     try {
       await bounded(historicalMedia, args.concurrency, async path => {
-        if (await checkLegacyMedia(site, path, mediaOrigin, stop.signal) === 200) legacyMedia.ok++;
-        else legacyMedia.redirected++;
+        const og = path.startsWith('/og/') && manifest?.assets[`og:${decodeURIComponent(path.slice(4))}`];
+        try {
+          if (await checkLegacyMedia(site, path, mediaOrigin, stop.signal, og ? mediaUrl(og.key) : undefined) === 200) legacyMedia.ok++;
+          else legacyMedia.redirected++;
+        } catch (error) {
+          const message = (error as Error).message;
+          legacyMedia.failed++;
+          if (/HTTP 404\b/.test(message)) legacyMedia.notFound++;
+          fail('site/legacy-media', path, message);
+        }
       });
     } finally { stop.abort(); }
   }
@@ -149,7 +163,10 @@ export async function verifyParity(args: Args, db?: Database) {
         else media.set(mediaUrl(key), { id: row.id, ...(key === entry.r2OriginalKey && { sha: entry.sha256 }) });
       }
     }
-    for (const [id, entry] of Object.entries(manifest.assets)) media.set(mediaUrl(entry.key), { id });
+    for (const [id, entry] of Object.entries(manifest.assets)) {
+      if (!entry.width || !entry.height) fail('manifest/asset', id, '缺少有效宽高');
+      media.set(mediaUrl(entry.key), { id, sha: entry.sha256 });
+    }
   } else if (!args.dryRun) fail('manifest', '*', '缺少 r2-migration-manifest.json');
   for (const row of expected) for (const language of ['en', 'ja']) {
     if (!row.i18n?.[language]?.name || !row.i18n[language].description) fail('legacy/i18n', row.id, `旧站缺少 ${language} 标题或说明`);

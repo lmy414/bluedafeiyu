@@ -215,7 +215,8 @@ export async function reconcileIssues(ctx: HermesContext, options: { readToken?:
         for (const item of checked) {
           index++;
           if (item.state === 'published') {
-            const [work] = await db.select().from(works).where(and(eq(works.sha256, item.sha256), eq(works.status, 'published')));
+            const identity = item.workId ? eq(works.id, item.workId) : item.sha256 && eq(works.sha256, item.sha256);
+            const [work] = identity ? await db.select().from(works).where(and(identity, eq(works.status, 'published'))) : [];
             if (work && await checkPage(work.slug)) published.push(`${config.SITE_PUBLIC_URL}/works/${work.slug}.html`);
             else pending = true;
           } else if (['rejected', 'auto_rejected'].includes(item.state)) {

@@ -1,8 +1,8 @@
 #!/usr/bin/env -S tsx --conditions=development
 import { execFile } from 'node:child_process';
-import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';
+import { mkdir, readdir, readFile, rename, writeFile } from 'node:fs/promises';
 import { createRequire } from 'node:module';
-import { dirname, extname, resolve, sep } from 'node:path';
+import { dirname, extname, join, resolve, sep } from 'node:path';
 import { promisify } from 'node:util';
 import { readBytes, sha256 } from '../apps/api/src/routes/hermes/protocol.js';
 import { runCli } from '../apps/api/src/jobs/runtime.js';
@@ -63,15 +63,43 @@ function size(meta: Metadata) {
   return { width: rotate ? frame : meta.width || 0, height: rotate ? meta.width || 0 : frame };
 }
 
+function iconSize(bytes: Buffer) {
+  if (bytes.length < 6 || bytes.readUInt32LE(0) !== 65536) throw new Error('ICO 文件头无效');
+  const count = bytes.readUInt16LE(4);
+  if (!count || bytes.length < 6 + count * 16) throw new Error('ICO 图像目录无效');
+  let largest = { width: 0, height: 0 };
+  for (let i = 0; i < count; i++) {
+    const at = 6 + 16 * i;
+    const width = bytes[at] || 256, height = bytes[at + 1] || 256;
+    const length = bytes.readUInt32LE(at + 8), offset = bytes.readUInt32LE(at + 12);
+    if (!length || offset < 6 + count * 16 || offset + length > bytes.length) throw new Error('ICO 图像范围无效');
+    if (width * height > largest.width * largest.height) largest = { width, height };
+  }
+  return largest;
+}
+
 export async function migrateMedia(args: Args) {
   const { works: publicWorks, portraits, creators, events, links, topics } = await loadLegacy(args.legacy);
   const works = sqliteWorks(readSqlite(args.sqlite), publicWorks);
+  const ogRoot = args.release && join(args.release, 'og');
+  const ogFiles = ogRoot ? (await readdir(ogRoot, { withFileTypes: true })).filter(item => item.isFile() && /\.(?:jpe?g|png|webp)$/i.test(item.name)) : [];
+  if (ogRoot || !args.dryRun) {
+    const names = new Set(ogFiles.map(file => file.name));
+    for (const row of works) {
+      if (names.has(`archive--works-${row.slug}-html.jpg`) !== (row.status === 'published')) throw new Error(`现行发布目录的 OG 图与作品状态不一致 ${row.id}`);
+    }
+  }
   const sharp = apiRequire('sharp');
   const client = args.dryRun ? null : await import('../apps/api/src/jobs/r2.js');
   const r2 = client?.openR2();
   const bucket = process.env.R2_MEDIA_BUCKET || 'dafeiyu-media';
+  if (bucket !== 'dafeiyu-media') throw new Error('正式媒体迁移仅允许 dafeiyu-media 桶');
   const uploading = new Map<string, Promise<void>>();
+  const objects: NonNullable<Manifest['objects']> = {};
   const put: Put = async (key, bytes, mime) => {
+    const digest = sha256(bytes);
+    if (objects[key] && objects[key]!.sha256 !== digest) throw new Error(`相同对象键对应不同字节 ${key}`);
+    objects[key] = { sha256: digest, bytes: bytes.length, mime };
     if (!r2 || !client) return;
     const prior = uploading.get(key);
     if (prior) return prior;
@@ -79,7 +107,7 @@ export async function migrateMedia(args: Args) {
     uploading.set(key, request);
     try { await request; } catch (error) { uploading.delete(key); throw error; }
   };
-  const report: Manifest = { version: 1, uploaded: Boolean(r2), generatedAt: new Date().toISOString(), works: {}, assets: {}, missing: [],
+  const report: Manifest = { version: 1, uploaded: false, generatedAt: new Date().toISOString(), works: {}, assets: {}, objects, missing: [],
     summary: { expectedWorks: works.length, works: 0, assets: 0, missing: 0, verifiedHashes: 0, tombstones: 0 },
   };
   const source = async (value: string, fallbacks: string[] = [], preferGit = false) => {
@@ -117,7 +145,8 @@ export async function migrateMedia(args: Args) {
         const upstreamImage = args.upstream && row.path?.startsWith(upstreamPrefix)
           ? await local(args.upstream, decodeURIComponent(row.path.slice(upstreamPrefix.length)), true) || await local(args.upstream, row.historicalOriginal, true) : null;
         const historical = row.status === 'hidden' && row.sha256 && row.path?.startsWith(contentPrefix) ? await history(args.content, localPart(row.path)) : null;
-        const original = existingMedia || upstreamImage || (historical && sha256(historical) === row.sha256 ? historical : null) ||
+        const verifiedLocal = existingMedia && row.sha256 && sha256(existingMedia) === row.sha256 ? existingMedia : null;
+        const original = verifiedLocal || upstreamImage || (historical && sha256(historical) === row.sha256 ? historical : null) ||
           await source(row.path || '', row.historicalOriginal ? [row.historicalOriginal, `blue-fish-originals/${row.historicalOriginal.split('/').at(-1)}`] : [], true);
         if (!Buffer.isBuffer(original)) throw new Error('旧后台图片不可读');
         const digest = sha256(original);
@@ -148,9 +177,21 @@ export async function migrateMedia(args: Args) {
       const path = `dist/author-avatars/${row.id}.webp`;
       return await exists(resolve(args.content, path)) ? [{ id: `topic:${row.id}`, key: `assets/avatars/topics/${row.id}.webp`, path }] : [];
     }));
-    const assets: { id: string; key: string; path: string; sha?: string; convert?: boolean }[] = [
+    const siteAssets = [];
+    for (const directory of ['community', 'credits']) {
+      const dir = join(args.content, 'dist', directory);
+      if (!await exists(dir)) continue;
+      for (const file of await readdir(dir, { withFileTypes: true })) {
+        if (!file.isFile() || !/\.(?:jpe?g|png|webp)$/i.test(file.name)) continue;
+        const path = `${directory}/${file.name}`;
+        siteAssets.push({ id: `site:${path}`, key: `assets/site/${path}`, path });
+      }
+    }
+    const assets: { id: string; key: string; path: string; root?: string; sha?: string; convert?: boolean }[] = [
+      ...ogFiles.map(file => ({ id: `og:${file.name}`, key: `og/legacy/${file.name}`, path: file.name, root: ogRoot })),
+      ...siteAssets,
       ...Object.entries(portraits).map(([id, row]) => ({ id: `portrait:${id}`, key: `assets/portraits/${id}.webp`, path: row.path, sha: row.outputSha256 })),
-      ...creators.filter(row => row.avatar).map(row => ({ id: `creator:${row.uid}`, key: `assets/avatars/creators/bilibili-${row.uid}.webp`, path: row.avatar, convert: true })),
+      ...creators.map(row => ({ id: `creator:${row.uid}`, key: `assets/avatars/creators/bilibili-${row.uid}.webp`, path: row.avatar || '', convert: true })),
       ...events.filter(row => row.cover?.src).map(row => ({ id: `event:${row.id}`, key: `assets/site/events/${row.id}${extname(row.cover.src)}`, path: row.cover.src })),
       ...links.filter(row => row.avatar?.src || row.avatar).map(row => ({ id: `link:${row.id}`, key: `assets/site/links/${row.id}.webp`, path: row.avatar?.src || row.avatar, convert: true })),
       ...topicAvatars.flat(),
@@ -159,13 +200,23 @@ export async function migrateMedia(args: Args) {
     const assetRows = await bounded(assets, args.concurrency, async item => {
       try {
         const creatorUid = item.id.startsWith('creator:') ? item.id.slice(8) : '';
-        const avatarName = creators.find(row => String(row.uid) === creatorUid)?.name?.toLowerCase();
-        let bytes = await source(item.path, creatorUid ? [`dist/author-avatars/bilibili-${creatorUid}.webp`, `dist/author-avatars/${creatorUid}.webp`,
-          ...(/^[a-z0-9_-]+$/.test(avatarName || '') ? [`dist/author-avatars/${avatarName}.webp`] : [])] : [], true);
+        let bytes: Buffer | null = item.root ? await local(item.root, item.path) : null;
+        if (creatorUid && /^\d+$/.test(creatorUid)) {
+          const roots = [join(args.legacy, 'frontend/public/creator-avatars'), args.creatorAvatars].filter((dir): dir is string => !!dir);
+          for (const dir of roots) {
+            for (const ext of ['jpg', 'jpeg', 'png', 'webp', 'gif', 'avif']) {
+              bytes = await local(dir, `${creatorUid}.${ext}`);
+              if (bytes) break;
+            }
+            if (bytes) break;
+          }
+        }
+        bytes ??= await source(item.path, creatorUid ? [`dist/author-avatars/bilibili-${creatorUid}.webp`, `dist/author-avatars/${creatorUid}.webp`] : [], true);
         if (item.sha && sha256(bytes) !== item.sha) throw new Error('资产 SHA-256 不符');
-        if (item.convert) bytes = await sharp(bytes).rotate().resize(400, 400, { fit: 'inside', withoutEnlargement: true }).webp().toBuffer();
+        if (item.convert) bytes = await sharp(bytes).rotate().resize(400, 400, { fit: 'inside', withoutEnlargement: true }).webp().toBuffer() as Buffer;
         const ext = extname(item.key).slice(1);
-        const dimensions = ext === 'ico' ? { width: null, height: null } : size(await sharp(bytes).metadata());
+        const dimensions = ext === 'ico' ? iconSize(bytes) : size(await sharp(bytes).metadata());
+        if (!dimensions.width || !dimensions.height) throw new Error('无法读取资产尺寸');
         await put(item.key, bytes, extMime(ext));
         const entry: Asset = { key: item.key, sha256: sha256(bytes), ...dimensions, bytes: bytes.length };
         return [item.id, entry] as const;
@@ -173,6 +224,7 @@ export async function migrateMedia(args: Args) {
     });
     for (const row of assetRows) if (row) report.assets[row[0]] = row[1];
     report.missing.sort((a, b) => a.id.localeCompare(b.id));
+    report.uploaded = Boolean(r2) && !report.missing.length;
     Object.assign(report.summary, { works: Object.keys(report.works).length, assets: Object.keys(report.assets).length, missing: report.missing.length,
       tombstones: Object.values(report.works).filter(row => !row.r2OriginalKey).length,
     });
@@ -182,7 +234,7 @@ export async function migrateMedia(args: Args) {
 
 runCli(import.meta.url, async () => {
   const args = options();
-  if (args.help) { console.log('migrate-r2.ts [--legacy PATH] [--content PATH] [--upstream PATH] [--manifest PATH] [--sqlite PATH] [--concurrency N] [--offline] [--dry-run]'); return; }
+  if (args.help) { console.log('migrate-r2.ts [--legacy PATH] [--content PATH] [--upstream PATH] [--legacy-release PATH] [--creator-avatars PATH] [--manifest PATH] [--sqlite PATH] [--concurrency N] [--offline] [--dry-run]'); return; }
   const report = await migrateMedia(args);
   if (!args.dryRun) {
     await mkdir(dirname(args.manifest), { recursive: true });

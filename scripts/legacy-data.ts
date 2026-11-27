@@ -9,7 +9,7 @@ const blueFishDate = '2026-09-15T00:00:00+08:00';
 const contentRaw = 'https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/';
 const upstreamRaw = 'https://raw.githubusercontent.com/EDMOK/blue-fish-archive/main/';
 export const digestPattern = /^[a-f0-9]{64}$/;
-export const legacyKeys = ['--legacy', '--content', '--manifest', '--sqlite', '--site', '--api', '--concurrency', '--upstream'];
+export const legacyKeys = ['--legacy', '--content', '--manifest', '--sqlite', '--site', '--api', '--concurrency', '--upstream', '--legacy-release', '--creator-avatars', '--cutover-backup', '--queue', '--ga4'];
 
 export function options(args = process.argv.slice(2)) {
   const result = new Map<string, string>();
@@ -25,6 +25,9 @@ export function options(args = process.argv.slice(2)) {
     legacy: resolve(result.get('--legacy') || process.env.DAFEIYU_LEGACY_ROOT || join(home, 'bluedafeiyu')),
     content: resolve(result.get('--content') || process.env.DAFEIYU_LEGACY_CONTENT || join(home, 'AI娘表情包')),
     upstream: result.get('--upstream') || process.env.DAFEIYU_LEGACY_UPSTREAM,
+    release: result.get('--legacy-release') || process.env.DAFEIYU_LEGACY_RELEASE,
+    creatorAvatars: result.get('--creator-avatars') || process.env.DAFEIYU_CREATOR_AVATARS,
+    backup: result.get('--cutover-backup'), queue: result.get('--queue'), ga4: result.get('--ga4'),
     manifest: resolve(result.get('--manifest') || join(root, 'scripts', 'r2-migration-manifest.json')),
     sqlite: result.get('--sqlite') || process.env.DAFEIYU_LEGACY_SQLITE,
     site: result.get('--site') || process.env.SITE_PUBLIC_URL,
@@ -67,6 +70,7 @@ export type Manifest = {
   version: 1; uploaded: boolean; generatedAt: string;
   works: Record<string, Media & { workId: string; status: string }>;
   assets: Record<string, Asset>;
+  objects?: Record<string, { sha256: string; bytes: number; mime: string }>;
   missing: { id: string; error: string }[];
   summary: { expectedWorks: number; works: number; assets: number; missing: number; verifiedHashes: number; tombstones: number };
 };

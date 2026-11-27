@@ -27,6 +27,8 @@ function SubmissionEditor({ row, characters, categories, reload, close }: { row:
   };
   const originalUrl = safeUrl(row.originalUrl);
   const previewUrl = originalUrl ?? safeUrl(row.previewUrl);
+  const legacyPreview = asObject(row.review?.legacyPreview);
+  const attachmentName = originalUrl ? '投稿原图' : legacyPreview ? '旧 CMS WebP 预览' : '预览图';
   const canProcess = row.state !== 'published';
   const draftReview = asObject(row.agentProgress?.review);
   const reason = row.review?.reason ?? row.review?.reasoning ?? row.review?.summary ?? draftReview?.reason;
@@ -40,8 +42,9 @@ function SubmissionEditor({ row, characters, categories, reload, close }: { row:
   return <Panel focus title={edit.name || row.id} action={<button onClick={close}>收起</button>}>
     <div className="review-grid panel-body">
       <div className="stack">
-        {previewUrl ? <a className="preview checker draft-corners" href={previewUrl} target="_blank" rel="noreferrer"><img src={previewUrl} alt={edit.name ? `投稿原图 ${edit.name}` : '投稿原图'} /></a> : <p className="empty">暂无原图预览</p>}
-        {previewUrl && <a href={previewUrl} target="_blank" rel="noreferrer">在新标签页打开{originalUrl ? '原图' : '预览图'}</a>}
+        {typeof legacyPreview?.note === 'string' && <p>{legacyPreview.note}</p>}
+        {previewUrl ? <a className="preview checker draft-corners" href={previewUrl} target="_blank" rel="noreferrer"><img src={previewUrl} alt={`在新标签页打开${attachmentName}`} /></a> : <p className="empty">暂无原图预览</p>}
+        {previewUrl && <a href={previewUrl} target="_blank" rel="noreferrer">在新标签页打开{attachmentName}</a>}
         <dl className="status-rows"><div><dt>来源</dt><dd>{options(sources).find(item => item.id === row.source)?.name ?? row.source}</dd></div><div><dt>状态</dt><dd><Status value={row.state} labels={submissionStates} /></dd></div><div><dt>Hermes 阶段</dt><dd>{typeof stage === 'string' ? stage : '—'}</dd></div></dl>
         <section><h3>AI 审核理由</h3><p className="preserve">{typeof reason === 'string' ? reason : '暂无审核理由'}</p></section>
         <RecordDetails label="审核详情" value={Object.keys(row.review ?? {}).length ? row.review : draftReview} />
@@ -50,16 +53,16 @@ function SubmissionEditor({ row, characters, categories, reload, close }: { row:
       </div>
       <div className="stack">
         {canProcess && <>
-          <form className="stack" onSubmit={event => {
+          {!legacyPreview && <form className="stack" onSubmit={event => {
             const form = readForm(event);
             void mutation.run(async () => adminApi(`${path}/publish`, { method: 'POST', body: readWork(form, edit, true) }), () => onSuccess('投稿已收录上线'));
-          }}><WorkEditor value={edit} characters={characters} categories={categories} publishing /><div className="actions"><button className="primary" disabled={mutation.busy}>收录并上线</button></div></form>
+          }}><WorkEditor value={edit} characters={characters} categories={categories} publishing /><div className="actions"><button className="primary" disabled={mutation.busy}>收录并上线</button></div></form>}
           <form className="separated stack" onSubmit={event => {
             const form = readForm(event);
             void mutation.run(() => adminApi(`${path}/reject`, { method: 'POST', body: { reason: fieldValue(form, 'reason') } }), () => onSuccess('投稿已拒绝'));
           }}><Field label="拒绝理由" name="reason" required multiline /><div className="actions">
             <button className="quiet-danger" disabled={mutation.busy}>拒绝投稿</button>
-            <button type="button" disabled={mutation.busy} onClick={() => void mutation.run(() => adminApi(`${path}/retry`, { method: 'POST' }), () => onSuccess('投稿已提交重审'))}>触发重审</button>
+            {!legacyPreview && <button type="button" disabled={mutation.busy} onClick={() => void mutation.run(() => adminApi(`${path}/retry`, { method: 'POST' }), () => onSuccess('投稿已提交重审'))}>触发重审</button>}
           </div></form>
         </>}
         <ErrorText message={mutation.error} />

@@ -67,6 +67,7 @@ async function previewDatabase() {
   const pg = new PGlite({ extensions: { pg_trgm } });
   try {
     await pg.exec(await readFile(join(root, 'apps/api/drizzle/0000_init.sql'), 'utf8'));
+    await pg.exec(await readFile(join(root, 'apps/api/drizzle/0001_legacy_submission_digest.sql'), 'utf8'));
     return { db: drizzle(pg, { schema }), close: () => pg.close() };
   } catch (error) {
     await pg.close();
@@ -443,7 +444,7 @@ async function main() {
     let imported: Awaited<ReturnType<typeof importData>>;
     try {
       imported = await importData(connection.db, { legacy, brands, works: legacy.works, manifest,
-        sqlite: readSqlite(), sqliteImages: new Map(), withoutMedia: [] }, { ...args, site: web });
+        sqlite: readSqlite(), sqliteImages: new Map(), withoutMedia: [], queue: new Map(), archiveLinks: new Map(), ga4: undefined }, { ...args, site: web });
     } finally {
       if (previousMediaBase === undefined) delete process.env.R2_PUBLIC_BASE_URL;
       else process.env.R2_PUBLIC_BASE_URL = previousMediaBase;

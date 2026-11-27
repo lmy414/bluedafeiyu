@@ -104,7 +104,8 @@ export async function purgeWorkCaches({ db, cloudflare, r2 }: PublishDeps, work:
 }
 
 function mediaKeys(work: WorkRow) {
-  return uniqueStrings([work.r2OriginalKey, work.r2ThumbKey, work.r2DisplayKey, `og/works/${work.id}.png`]);
+  const archived = `og/legacy/archive--works-${work.slug}-html.jpg`;
+  return uniqueStrings([work.r2OriginalKey, work.r2ThumbKey, work.r2DisplayKey, `og/works/${work.id}.png`, work.origin.legacyOgKey === archived && archived]);
 }
 
 async function publish(deps: PublishDeps, input: DirectWorkInput | { submissionId: string; editorial?: JsonObject }, actor: Actor): Promise<WorkRow> {
@@ -116,13 +117,14 @@ async function publish(deps: PublishDeps, input: DirectWorkInput | { submissionI
     if ('submissionId' in input) {
       const [candidate] = await tx.select({ sha256: submissions.sha256 }).from(submissions).where(eq(submissions.id, input.submissionId));
       if (!candidate) throw new ApiError(404, 'submission_not_found', '投稿不存在');
-      await lockHash(tx, candidate.sha256);
+      if (candidate.sha256) await lockHash(tx, candidate.sha256);
       [item] = await tx.select().from(submissions).where(eq(submissions.id, input.submissionId)).for('update');
       if (!item) throw new ApiError(404, 'submission_not_found', '投稿不存在');
       if (item.state === 'published' && item.workId) {
         const [work] = await tx.select().from(works).where(eq(works.id, item.workId));
         if (work) return { work, stagingKey: item.r2StagingKey };
       }
+      if (!item.sha256 || item.review.legacyPreview) throw new ApiError(409, 'original_required', '发布前请补齐可核验的投稿原图');
       if (!['auto_passed', 'approved'].includes(item.state) && !(actor.actorType === 'owner' && input.editorial)) throw new ApiError(409, 'submission_not_approved', '投稿尚未通过审核');
     }
     const priorityFields = (data: JsonObject) => ({ ...data,

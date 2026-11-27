@@ -30,12 +30,14 @@ export function createAdminSubmissionRoutes(ctx: AppContext) {
   routes.get('/submissions/:id', async c => {
     const [row] = await db.select().from(submissions).where(eq(submissions.id, c.req.param('id')));
     if (!row) throw new ApiError(404, 'submission_not_found', '投稿不存在');
-    let originalUrl = row.r2StagingKey && row.state !== 'published' ? await services.r2.signReadUrl(config.R2_STAGING_BUCKET, row.r2StagingKey) : null;
+    const attachment = row.r2StagingKey && row.state !== 'published' ? await services.r2.signReadUrl(config.R2_STAGING_BUCKET, row.r2StagingKey) : null;
+    const previewUrl = row.review.legacyPreview ? attachment : null;
+    let originalUrl = row.review.legacyPreview ? null : attachment;
     if (row.workId) {
       const [work] = await db.select({ status: works.status, key: works.r2OriginalKey }).from(works).where(eq(works.id, row.workId));
       if (work && !['removed', 'deleted'].includes(work.status)) originalUrl = services.r2.publicUrl(work.key);
     }
-    return c.json({ ...row, originalUrl });
+    return c.json({ ...row, originalUrl, previewUrl });
   });
   routes.post('/submissions/:id/publish', async c => {
     const id = c.req.param('id');
@@ -52,6 +54,7 @@ export function createAdminSubmissionRoutes(ctx: AppContext) {
       const [previous] = await tx.select().from(submissions).where(eq(submissions.id, id)).for('update');
       if (!previous) throw new ApiError(404, 'submission_not_found', '投稿不存在');
       if (previous.state === 'published') throw new ApiError(409, 'submission_published', '已上线投稿须在作品库处理');
+      if (action === 'retry' && previous.review.legacyPreview) throw new ApiError(409, 'original_required', '旧 CMS WebP 预览仅供人工复核');
       const state = action === 'retry' ? 'received' : 'rejected';
       const [updated] = await tx.update(submissions).set({ ...submissionChange(previous, state, 'owner', new Date(), body.reason),
         agentProgress: action === 'retry' ? {} : { ...previous.agentProgress, token: null, expiresAt: 0 } }).where(eq(submissions.id, id)).returning();

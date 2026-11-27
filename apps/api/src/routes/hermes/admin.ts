@@ -149,7 +149,8 @@ export async function adminAgent(ctx: HermesContext, body: Wire) {
             } else if (submission) {
               const include = operation === 'manual-include';
               if (include) {
-                const [existing] = await tx.select({ id: works.id }).from(works).where(eq(works.sha256, submission.sha256));
+                if (submission.review.legacyPreview) fail('发布前请补齐可核验的投稿原图');
+                const [existing] = submission.sha256 ? await tx.select({ id: works.id }).from(works).where(eq(works.sha256, submission.sha256)) : [];
                 if (existing && (submission.state !== 'published' || submission.workId !== existing.id)) fail('同图作品已存在，请人工确认关联');
                 publication = { submissionId: id, jobId: row.id, token: body.token, cursor, result, status };
               }

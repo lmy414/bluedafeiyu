@@ -22,7 +22,6 @@ const workOgPath = /^\/og\/archive--(?:(?:zh-hant|en|ja)-)?works-([a-z0-9_-]+)-h
 const shortWorkOgPath = /^\/og\/works-([a-z0-9_-]+)\.(?:jpe?g|png|webp)$/;
 const siteOgPath = /^\/og\/[a-z0-9._-]+\.(?:jpe?g|png|webp)$/;
 const hashedSubmissionPath = /^\/submissions\/(previews|large|originals)\/[^/]+\/([a-f0-9]{16})\.[a-z0-9]+$/;
-const communityImage = '/community/qq-join-6d07ffd364068fdf.png';
 
 function normalizePath(value: unknown) {
   if (typeof value !== 'string' || !value || value.length > 4096) return undefined;
@@ -60,7 +59,7 @@ function imageKey(image: ImageKeys, variant: Variant) {
   return image.original;
 }
 
-export function createLegacyMediaRoutes({ db, services }: AppContext) {
+export function createLegacyMediaRoutes({ db, services, config }: AppContext) {
   const routes = new Hono();
   let cache: { index: AliasIndex; expiresAt: number } | undefined;
   let refreshing: Promise<AliasIndex> | undefined;
@@ -118,15 +117,19 @@ export function createLegacyMediaRoutes({ db, services }: AppContext) {
 
   async function resolve(path: string) {
     const stripped = withoutDist(path);
-    if (stripped === '/qq-group.png' || stripped === '/community/qq-1134100615-bc8e49b662df6b84.png') return communityImage;
-
     const publicUrl = (key: string | null | undefined) => key ? services.r2.publicUrl(key) : undefined;
+    if (stripped === '/qq-group.png' || stripped === '/community/qq-1134100615-bc8e49b662df6b84.png') return publicUrl(`assets/site${stripped}`);
     const ogSlug = (workOgPath.exec(stripped) ?? shortWorkOgPath.exec(stripped))?.[1];
     if (ogSlug) {
-      const [row] = await db.select(keys).from(works).where(and(published, eq(works.slug, ogSlug))).limit(1);
-      return publicUrl(row && (row.display || row.thumb));
+      const [row] = await db.select({ ...keys, legacyOg: sql<string | null>`${works.origin}->>'legacyOgKey'` }).from(works).where(and(published, eq(works.slug, ogSlug))).limit(1);
+      const archived = `og/legacy/archive--works-${ogSlug}-html.jpg`;
+      return publicUrl(row && (row.legacyOg === archived ? archived : row.display || row.thumb));
     }
-    if (siteOgPath.test(stripped)) return '/avatar.png';
+    if (siteOgPath.test(stripped)) {
+      const key = `og/legacy/${stripped.slice('/og/'.length)}`;
+      if (await services.r2.headObject(config.R2_MEDIA_BUCKET, key)) return publicUrl(key);
+      return publicUrl('assets/site/avatar.png');
+    }
 
     const portrait = portraitPath.exec(stripped)?.[1];
     if (portrait) {

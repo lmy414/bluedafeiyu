@@ -4,6 +4,7 @@ import { drizzle } from 'drizzle-orm/pg-proxy';
 import { createApp } from '../app.js';
 import { loadConfig } from '../config.js';
 import type { Database } from '../db/client.js';
+import { createR2 } from '../services/r2.js';
 
 const config = loadConfig({ DATABASE_URL: 'postgres://test@127.0.0.1/test', R2_ACCOUNT_ID: 'a'.repeat(32),
   R2_ACCESS_KEY_ID: 'test', R2_SECRET_ACCESS_KEY: 'test', SESSION_SECRET: 'b'.repeat(32) });
@@ -43,7 +44,7 @@ function preview() {
         return { rows: published.filter(row => row.sha256.startsWith(String(params[1]).slice(0, -1))).slice(0, 2).map(row => row.keys) };
       }
       const key = statement.includes('"slug" =') ? 'slug' : 'id';
-      return { rows: published.filter(row => row[key] === params[1]).map(row => row.keys) };
+      return { rows: published.filter(row => row[key] === params[1]).map(row => statement.includes('legacyOgKey') && row.id === 'art' ? [...row.keys, 'og/legacy/archive--works-art-html.jpg'] : row.keys) };
     }
     if (statement.includes('from "characters"')) {
       assert(params.includes('active'));
@@ -63,7 +64,9 @@ function preview() {
     }
     assert.fail(`Unexpected query: ${statement}`);
   }) as unknown as Database;
-  const app = createApp({ db, config });
+  const r2 = createR2(config);
+  r2.headObject = async (_bucket, key) => key === 'og/legacy/archive-home.jpg' ? { $metadata: {} } : null;
+  const app = createApp({ db, config, services: { r2 } });
   const request = (path?: string) => app.request(path === undefined ? '/api/v1/legacy-media' : `/api/v1/legacy-media?path=${encodeURIComponent(path)}`);
   return { request, main, rows, indexReads: () => indexReads };
 }
@@ -155,12 +158,13 @@ test('legacy portrait and author avatars resolve only for visible entities', asy
 test('legacy OG images and community aliases resolve to the requested fallback targets', async () => {
   const { request, main, indexReads } = preview();
   for (const locale of ['', 'zh-hant-', 'en-', 'ja-']) {
-    await redirects(await request(`/og/archive--${locale}works-art-html.jpg`), `${media}/display/art.webp`);
+    await redirects(await request(`/og/archive--${locale}works-art-html.jpg`), `${media}/og/legacy/archive--works-art-html.jpg`);
   }
   await redirects(await request('/og/works-og-thumb.webp'), `${media}/thumbs/og-thumb.webp`);
-  await redirects(await request('/og/archive-home.png'), '/avatar.png');
-  await redirects(await request('/qq-group.png'), '/community/qq-join-6d07ffd364068fdf.png');
-  await redirects(await request('/dist/community/qq-1134100615-bc8e49b662df6b84.png'), '/community/qq-join-6d07ffd364068fdf.png');
+  await redirects(await request('/og/archive-home.jpg'), `${media}/og/legacy/archive-home.jpg`);
+  await redirects(await request('/og/archive-home.png'), `${media}/assets/site/avatar.png`);
+  await redirects(await request('/qq-group.png'), `${media}/assets/site/qq-group.png`);
+  await redirects(await request('/dist/community/qq-1134100615-bc8e49b662df6b84.png'), `${media}/assets/site/community/qq-1134100615-bc8e49b662df6b84.png`);
   main.status = 'hidden';
   await misses(await request('/og/archive--works-art-html.png'));
   main.status = 'deleted';

@@ -25,16 +25,17 @@ export async function putVerifiedMedia(r2: S3Client, bucket: string, key: string
     if (error.$metadata?.httpStatusCode === 404) return null;
     throw error;
   });
-  if (head?.ContentLength === bytes.length && head.ContentType === mime) {
-    if (head.Metadata?.sha256 === digest) return;
-    if (!head.Metadata?.sha256) {
-      const existing = await r2.send(new GetObjectCommand(object));
-      if (existing.Body && createHash('sha256').update(await existing.Body.transformToByteArray()).digest('hex') === digest) return;
-    }
-  }
-  await r2.send(new PutObjectCommand({ ...object, Body: bytes, ContentType: mime, CacheControl: 'public, max-age=31536000, immutable',
+  const cache = bucket === 'dafeiyu-staging' ? 'private, no-store' : 'public, max-age=31536000, immutable';
+  const matches = async () => {
+    const stored = await r2.send(new GetObjectCommand(object));
+    if (!stored.Body) return false;
+    const content = await stored.Body.transformToByteArray();
+    return stored.ContentType === mime && stored.CacheControl === cache && content.length === bytes.length &&
+      createHash('sha256').update(content).digest('hex') === digest;
+  };
+  if (head?.ContentLength === bytes.length && head.ContentType === mime && head.CacheControl === cache && await matches()) return;
+  await r2.send(new PutObjectCommand({ ...object, Body: bytes, ContentType: mime, CacheControl: cache,
     Metadata: { sha256: digest }, ContentMD5: createHash('md5').update(bytes).digest('base64'),
   }));
-  const verified = await r2.send(new HeadObjectCommand(object));
-  if (verified.ContentLength !== bytes.length || verified.Metadata?.sha256 !== digest) throw new Error(`R2 回读校验失败 ${key}`);
+  if (!await matches()) throw new Error(`R2 回读校验失败 ${key}`);
 }

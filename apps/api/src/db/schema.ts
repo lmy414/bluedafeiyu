@@ -84,11 +84,12 @@ export const topicWorks = pgTable('topic_works', {
 
 export const submissions = pgTable('submissions', {
   id: text('id').primaryKey(), source: submissionSource('source').notNull(), sourceIds: strings('source_ids'),
-  sha256: text('sha256').notNull().unique(), r2StagingKey: text('r2_staging_key').notNull(), fields: object('fields'),
+  sha256: text('sha256').unique(), r2StagingKey: text('r2_staging_key').notNull(), fields: object('fields'),
   editorial: object('editorial'), review: object('review'), agentProgress: object('agent_progress'), state: submissionState('state').notNull().default('received'),
   stateHistory: jsonb('state_history').$type<JsonObject[]>().notNull().default([]), origin: object('origin'),
   workId: text('work_id').references((): AnyPgColumn => works.id), ...timestamps(),
-}, t => [index('submissions_state_created_idx').on(t.state, t.createdAt), index('submissions_source_ids_idx').using('gin', t.sourceIds)]);
+}, t => [index('submissions_state_created_idx').on(t.state, t.createdAt), index('submissions_source_ids_idx').using('gin', t.sourceIds),
+  check('submissions_require_original_digest', sql`${t.sha256} IS NOT NULL OR ${t.state} = 'published'`)]);
 
 export const creators = pgTable('creators', {
   id: text('id').primaryKey(), uid: text('uid').notNull().unique(), homepage: text('homepage').notNull(), name: text('name').notNull().default(''),

@@ -10,6 +10,7 @@ import { imageFormat, sha256 } from '../apps/api/src/routes/hermes/protocol.js';
 import { runCli, requiredEnv } from '../apps/api/src/jobs/runtime.js';
 import { digestPattern, exists, legacyPathsByWork, loadLegacy, options, readBrandTokens, readJson, stringIds } from './legacy-data.js';
 import { parseArray, parseJson, readSqlite, sqliteWorks } from './legacy-sqlite.js';
+import { previewNote, readBackupAttachment, readFileQueue, readGa4 } from './legacy-cutover.js';
 
 const apiRequire = createRequire(new URL('../apps/api/package.json', import.meta.url));
 const date = (value: unknown) => {
@@ -77,11 +78,32 @@ export async function readImportPlan(args: Args) {
     }
     if (topic.coverWorkId && !workIds.has(topic.coverWorkId)) throw new Error(`专题封面作品不存在 ${topic.id}/${topic.coverWorkId}`);
   }
-  const sources = sqlite.submissions.filter(row => row.submission_id && !['published', 'rejected', 'auto_rejected'].includes(row.state));
-  const sqliteImages = new Map<string, { key: string; bytes: Buffer; mime: string }>();
+  if (args.backup && !args.queue) throw new Error('切流备份导入需指定 --queue，以纳入独立文件队列');
+  const ga4 = args.ga4 || args.backup ? await readGa4(args.ga4 || join(args.backup!, 'analytics-ga4.json'), works) : undefined;
+  const queue = await readFileQueue(args.queue);
+  const backupRows = args.backup ? await readJson<Wire[]>(join(args.backup, 'pending-originals-outstanding.json')) : [];
+  const allowedPreviews = new Map<string, string>(backupRows.map(row => [row.submission_id, row.sha256]));
+  const sources = sqlite.submissions.filter(row => row.submission_id && row.work_id == null && !['published', 'rejected', 'auto_rejected'].includes(row.state));
+  const sqliteImages = new Map<string, { key: string; bytes: Buffer; mime: string; previewSha?: string }>();
+  const known = new Map(sqlite.submissions.map(row => [row.submission_id, row]));
+  const archiveLinks = new Map<string, string>();
+  for (const row of sqlite.submissions.filter(item => item.sha256 == null)) {
+    const work = sqlite.works.find(item => `legacy_${item.work_id}` === row.submission_id && item.preview_id === row.media_id);
+    if (row.state !== 'published' || !work) throw new Error(`缺少可核对的历史投稿作品关系 ${row.submission_id}`);
+    archiveLinks.set(row.submission_id, work.work_id);
+  }
+  for (const row of queue.values()) {
+    const prior = known.get(row.id);
+    if (prior && prior.sha256 !== row.sha256) throw new Error(`队列与 SQLite 投稿标识冲突 ${row.id}`);
+    if (!prior || sources.includes(prior)) sqliteImages.set(row.id, row.attachment);
+  }
   for (const row of sources) {
-    if (row.state === 'published') continue;
+    if (sqliteImages.has(row.submission_id)) continue;
     const media = sqlite.media.find(record => record.id === row.media_id);
+    if (args.backup) {
+      const attachment = await readBackupAttachment(args.backup, row, media, allowedPreviews);
+      if (attachment) { sqliteImages.set(row.submission_id, attachment); continue; }
+    }
     const candidates = [media?.filename && join(args.legacy, 'admin', 'media', media.filename),
       media?.filename && args.sqlite && join(resolve(args.sqlite, '..'), 'media', media.filename),
       media?.source_path && join(args.content, media.source_path),
@@ -98,7 +120,7 @@ export async function readImportPlan(args: Args) {
     if (!format || sha256(bytes) !== row.sha256) throw new Error(`旧投稿原图校验失败 ${row.submission_id}`);
     sqliteImages.set(row.submission_id, { key: `submissions/${row.submission_id}/${row.sha256}.${format.ext}`, bytes, mime: format.mime });
   }
-  return { legacy, works, sqlite, sqliteImages, manifest, brands, withoutMedia };
+  return { legacy, works, sqlite, sqliteImages, manifest, brands, withoutMedia, ga4, queue, archiveLinks };
 }
 
 async function upsert(tx: DbTransaction, table: Parameters<DbTransaction['insert']>[0], rows: Wire[], target: unknown, immutable: string[] = []) {
@@ -127,10 +149,11 @@ export async function importData(db: Database, plan: Awaited<ReturnType<typeof r
   const asset = (id: string) => manifest?.assets[id];
   const assetUrl = (key: string) => `${mediaBase}/${key.split('/').map(encodeURIComponent).join('/')}`;
   if (sqliteImages.size) {
-    const { openR2, putObject } = await import('../apps/api/src/jobs/r2.js');
+    const { openR2, putVerifiedMedia } = await import('../apps/api/src/jobs/r2.js');
+    if ((process.env.R2_STAGING_BUCKET || 'dafeiyu-staging') !== 'dafeiyu-staging') throw new Error('投稿只可上传至 dafeiyu-staging');
     const r2 = openR2();
     try {
-      for (const image of sqliteImages.values()) await putObject(r2, process.env.R2_STAGING_BUCKET || 'dafeiyu-staging', image.key, image.bytes, image.mime);
+      for (const image of sqliteImages.values()) await putVerifiedMedia(r2, 'dafeiyu-staging', image.key, image.bytes, image.mime);
     } finally { r2.destroy(); }
   }
   return db.transaction(async tx => {
@@ -165,11 +188,25 @@ export async function importData(db: Database, plan: Awaited<ReturnType<typeof r
     const submissionIds = new Map(sqlite.submissions.map(row => [row.id, row.submission_id]));
     const sourceIds = new Map<unknown, string[]>();
     for (const row of sqlite.submissions_source_ids) sourceIds.set(row._parent_id, [...sourceIds.get(row._parent_id) || [], row.value]);
-    const submissionRows = sqlite.submissions.filter(row => row.submission_id).map(row => ({ id: row.submission_id,
-      source: row.source, sourceIds: stringIds(sourceIds.get(row.id)), sha256: row.sha256, r2StagingKey: sqliteImages.get(row.submission_id)?.key || '',
-      fields: parseJson(row.fields), editorial: parseJson(row.editorial), review: parseJson(row.review), origin: parseJson(row.origin), state: row.state,
-      stateHistory: parseArray(row.state_history), agentProgress: { ...parseJson(row.agent_progress), token: null, expiresAt: 0 }, ...timestamps(row),
-    }));
+    const submissionRows = sqlite.submissions.filter(row => row.submission_id).map(row => {
+      const queue = plan.queue.get(row.submission_id);
+      const image = sqliteImages.get(row.submission_id);
+      const review = parseJson(row.review);
+      const history = parseArray(row.state_history);
+      if (image?.previewSha) {
+        review.legacyPreview = { sha256: image.previewSha, note: previewNote, previousState: row.state };
+        if (row.state !== 'needs_manual') history.push({ from: row.state, to: 'needs_manual', event: 'migration', reason: previewNote, at: row.updated_at });
+      }
+      return { id: row.submission_id, source: row.source, sourceIds: stringIds([...(sourceIds.get(row.id) || []), ...(queue?.sourceIds || [])]),
+        sha256: row.sha256, r2StagingKey: image?.key || '', fields: parseJson(row.fields), editorial: parseJson(row.editorial), review,
+        origin: parseJson(row.origin), state: image?.previewSha ? 'needs_manual' : row.state,
+        stateHistory: history, agentProgress: { ...parseJson(row.agent_progress), token: null, expiresAt: 0 }, ...timestamps(row) };
+    });
+    const importedIds = new Set(submissionRows.map(row => row.id));
+    for (const item of plan.queue.values()) if (!importedIds.has(item.id)) submissionRows.push({ id: item.id,
+      source: item.source, sourceIds: stringIds(item.sourceIds), sha256: item.sha256, r2StagingKey: item.attachment.key,
+      fields: item.fields, editorial: item.editorial || {}, review: item.review || {}, origin: item.origin || {}, state: item.state,
+      stateHistory: item.stateHistory || [], agentProgress: { ...item.agentProgress, token: null, expiresAt: 0 }, ...timestamps(item) });
     await upsert(tx, schema.submissions, submissionRows, schema.submissions.id, ['id']);
 
     const publicWorks = new Set(plan.works.filter(row => row.status === 'published').map(row => row.id));
@@ -177,10 +214,12 @@ export async function importData(db: Database, plan: Awaited<ReturnType<typeof r
       const media = manifest?.works[row.id] || bareMedia(row)!;
       const { sha256, r2OriginalKey, r2ThumbKey, r2DisplayKey, width, height, thumbWidth, thumbHeight, displayWidth, displayHeight, format, mimeType, fileSize, isAnimated } = media;
       const included = sqlite.works.find(item => item.work_id === row.id);
-      const linked = submissionIds.get(included?.submission_id) || sqlite.submissions.find(item => item.work_id === included?.id)?.submission_id;
+      const archivalId = `legacy_${row.id}`;
+      const linked = submissionIds.get(included?.submission_id) || (included && sqlite.submissions.find(item => item.work_id === included.id)?.submission_id) || (plan.archiveLinks.has(archivalId) ? archivalId : null);
       const origin = { ...row.origin, ...(row.sourceIssue && { sourceIssue: row.sourceIssue }),
         ...(row.kind === 'blue-fish' && row.historicalOriginal && { legacy: { sourcePath: row.historicalOriginal, editorial: row.historicalEditorial } }),
         legacyPaths: legacyPaths.get(row.id)!,
+        ...(asset(`og:archive--works-${row.slug}-html.jpg`) && { legacyOgKey: asset(`og:archive--works-${row.slug}-html.jpg`)!.key }),
       };
       const value: typeof schema.works.$inferSelect = { id: row.id, slug: row.slug, kind: row.kind, channel: row.channel || null, submissionId: linked || null,
         name: row.name ?? '', description: row.description ?? '', commentary: row.commentary ?? '', primaryCharacterId: row.characterId, categoryId: row.categoryIds[0],
@@ -198,11 +237,26 @@ export async function importData(db: Database, plan: Awaited<ReturnType<typeof r
       return value;
     }));
     await upsert(tx, schema.works, works, schema.works.id, ['id', 'slug', 'sha256', 'viewCount', 'downloadCount']);
+    if (plan.ga4) {
+      const snapshot = plan.ga4;
+      const checkpoint = uuid('ga4-counts');
+      const [last] = await tx.select().from(schema.auditEvents).where(eq(schema.auditEvents.id, checkpoint));
+      const prior = (last?.diff.applied || {}) as Record<string, { views: number; downloads: number }>;
+      if (last && Date.parse(String(last.diff.syncedAt)) > Date.parse(snapshot.syncedAt)) throw new Error('GA4 快照早于已回填版本');
+      const applied = Object.fromEntries(works.filter(row => snapshot.works[row.id]).map(row => [row.id, snapshot.works[row.id]!]));
+      if (Object.keys(prior).some(id => !applied[id])) throw new Error('GA4 快照遗漏已回填作品');
+      const changes = Object.entries(applied).map(([id, value]) => ({ id, views: value.views - (prior[id]?.views || 0), downloads: value.downloads - (prior[id]?.downloads || 0) }));
+      const updated = await tx.execute(sql`update works w set view_count = w.view_count + d.views, download_count = w.download_count + d.downloads from jsonb_to_recordset(${JSON.stringify(changes)}::jsonb) as d(id text, views bigint, downloads bigint) where w.id=d.id returning w.id,w.view_count,w.download_count`);
+      const totals: Wire[] = Array.isArray(updated) ? updated : (updated as unknown as { rows: Wire[] }).rows;
+      if (totals.length !== changes.length || totals.some(row => Number(row.view_count) < applied[row.id]!.views || Number(row.download_count) < applied[row.id]!.downloads)) throw new Error('GA4 回填行数或历史计数不完整');
+      const diff = { syncedAt: snapshot.syncedAt, applied, unmatched: Object.fromEntries(Object.entries(snapshot.works).filter(([id]) => !applied[id])) };
+      await tx.insert(schema.auditEvents).values({ id: checkpoint, actorType: 'system', action: 'import-ga4', entityType: 'migration', entityId: 'ga4', diff }).onConflictDoUpdate({ target: schema.auditEvents.id, set: { diff } });
+    }
     const idList = works.map(row => row.id);
     if (idList.length) await tx.delete(schema.workCharacters).where(inArray(schema.workCharacters.workId, idList));
     await upsert(tx, schema.workCharacters, plan.works.flatMap(row => row.characterIds.map((id: string) => ({ workId: row.id, characterId: id }))), [schema.workCharacters.workId, schema.workCharacters.characterId], ['workId', 'characterId']);
     for (const entry of sqlite.submissions) {
-      const id = workIds.get(entry.work_id);
+      const id = workIds.get(entry.work_id) || plan.archiveLinks.get(entry.submission_id);
       if (id && idList.includes(id)) await tx.update(schema.submissions).set({ workId: id }).where(eq(schema.submissions.id, entry.submission_id));
     }
 
@@ -310,7 +364,7 @@ export async function importData(db: Database, plan: Awaited<ReturnType<typeof r
 
 runCli(import.meta.url, async () => {
   const args = options();
-  if (args.help) { console.log('import-data.ts [--legacy PATH] [--content PATH] [--manifest PATH] [--sqlite PATH] [--dry-run]'); return; }
+  if (args.help) { console.log('import-data.ts [--legacy PATH] [--content PATH] [--manifest PATH] [--sqlite PATH] [--cutover-backup PATH --queue PATH] [--ga4 FILE] [--dry-run]'); return; }
   const plan = await readImportPlan(args);
   if (args.dryRun) {
     const legacyPaths = await legacyPathsByWork(args.legacy, plan.works, plan.legacy.works);
