@@ -1,0 +1,18 @@
+[Unit]
+Description=蓝色大肥鱼 v2 Bilibili video sync
+Wants=network-online.target
+After=network-online.target postgresql.service
+
+[Service]
+Type=oneshot
+User=dafeiyu-v2
+Group=dafeiyu-v2
+WorkingDirectory=/srv/new-business/dafeiyu-v2/apps/api
+EnvironmentFile=/etc/dafeiyu-v2/api.env
+ExecStart=/usr/bin/node dist/jobs/video-sync.js
+TimeoutStartSec=3min
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+UMask=0027

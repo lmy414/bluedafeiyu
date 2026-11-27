@@ -1,0 +1,10 @@
+[Unit]
+Description=Reconcile GitHub Issues every ten minutes
+
+[Timer]
+OnCalendar=*-*-* *:00/10:00
+AccuracySec=1s
+Unit=dafeiyu-v2-issue-reconcile.service
+
+[Install]
+WantedBy=timers.target

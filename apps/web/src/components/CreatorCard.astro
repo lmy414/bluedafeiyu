@@ -1,0 +1,32 @@
+---
+import CreatorAvatar from './CreatorAvatar.astro';
+import CreatorStats from './CreatorStats.astro';
+import Icon from './Icon.astro';
+import { field, publicUrl, type Creator } from '../lib/api';
+import { copy, htmlLang, localePath, type Locale } from '../lib/i18n';
+import { creatorPath } from '../lib/site';
+interface Props { locale: Locale; creator: Creator }
+const { locale, creator } = Astro.props;
+const name = field(locale, creator, 'name');
+const intro = field(locale, creator, 'intro');
+const href = localePath(locale, creatorPath(creator.id));
+const date = creator.latestAt && Number.isFinite(Date.parse(creator.latestAt)) ? new Intl.DateTimeFormat(htmlLang[locale], { dateStyle: 'medium' }).format(new Date(creator.latestAt)) : '';
+const previews = (creator.previews ?? []).flatMap((preview) => {
+  const thumb = publicUrl(preview.thumbUrl);
+  const absolute = publicUrl(preview.href);
+  if (!thumb || !preview.href) return [];
+  const path = absolute ? new URL(absolute).pathname : preview.href;
+  const local = preview.kind !== 'video' && /^\/(?:zh-hant\/|en\/|ja\/)?(?:topics|works)\/[^/?#]+$/.test(path);
+  const href = local ? localePath(locale, path.replace(/^\/(zh-hant|en|ja)(?=\/)/, '')) : absolute;
+  return href ? [{ ...preview, href, thumb, external: !local }] : [];
+}).slice(0, 3);
+---
+
+<article class="archive-panel creator-card">
+  <header class="creator-identity"><CreatorAvatar {creator} /><div><h2><a href={href}>{name}</a></h2><div class="creator-meta mono">{creator.uid && <span>UID {creator.uid}</span>}{date && <time datetime={creator.latestAt ?? undefined}>{date}</time>}</div></div><a class="creator-open" href={href} aria-label={`${copy(locale, ['查看档案', 'View profile', 'プロフィールを見る'])} · ${name}`}><Icon name="arrowRight" /></a></header>
+  {intro && <p class="creator-intro">{intro}</p>}
+  <CreatorStats {locale} {creator} />
+  {previews.length > 0 && <div class="creator-previews">{previews.map((item) => <a href={item.href} aria-label={item.title} title={item.title} data-preview-kind={item.kind} target={item.external ? '_blank' : undefined} rel={item.external ? 'noopener noreferrer' : undefined}>
+    <Icon name={item.kind === 'video' ? 'videos' : item.kind === 'serial' ? 'serials' : 'gallery'} /><img src={item.thumb} alt="" width="160" height="112" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-fallback-image />
+  </a>)}</div>}
+</article>

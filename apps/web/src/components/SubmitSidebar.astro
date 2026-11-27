@@ -1,0 +1,55 @@
+---
+import Icon from './Icon.astro';
+import { copy, localePath, tr, type Locale } from '../lib/i18n';
+import { issueUrl } from '../lib/site';
+
+interface Props { locale: Locale; mode: 'single' | 'zip' | 'creator' }
+const { locale, mode } = Astro.props;
+const c = (zh: string, en: string, ja: string) => copy(locale, [zh, en, ja]);
+const creator = mode === 'creator';
+const archive = mode === 'zip';
+const steps = creator ? [
+  ['characters', c('登记作者账号', 'Register your account', '作者アカウントを登録'), c('粘贴 B 站个人主页地址，或填写纯数字 UID。', 'Paste your Bilibili profile URL or enter your numeric UID.', 'BilibiliのプロフィールURLまたは数字のUIDを入力します。')],
+  ['refresh', c('同步近期投稿', 'Sync recent uploads', '最近の投稿を同期'), c('RSSHub 定期同步近期投稿，逐条核对作者与视频内容，仅收录 AI 娘相关二创。', 'RSSHub regularly syncs recent uploads. Each video is reviewed for creator attribution and relevance to AI-girl fan works.', 'RSSHubが最近の投稿を定期的に同期します。作者と内容を確認し、AI娘の二次創作を収録します。')],
+  ['videos', c('归集过审视频', 'Archive approved videos', '審査済み動画を収録'), c('过审后自动归入创作者档案与 B 站视频目录。', 'Approved videos appear automatically on creator profiles and in the video archive.', '審査に通ると、作者プロフィールと動画一覧に自動で掲載されます。')],
+] as const : [
+  ['submit', c('上传原图与标注', 'Upload and credit the original', '原画をアップロードして情報を入力'), c('填写作品名称、角色与分类。有原始链接时请一并填写。', 'Add the title, characters, category and original source link when available.', '作品名、キャラクター、分類を入力し、元の出典があればリンクを添えます。')],
+  ['bot', c('自动审核与多语翻译', 'Automated review and translation', '自動審査と多言語翻訳'), c('AI 核对图片与投稿信息，并补齐多语文案。需要确认的作品进入人工复核。', 'AI checks submissions and prepares translations. Items that need confirmation go to manual review.', 'AIが画像と投稿情報を確認し、翻訳を用意します。確認が必要な作品は人が再審査します。')],
+  ['check', c('审核通过后实时上线', 'Publish once approved', '審査通過後に公開'), c('通过审核的作品会发布到相应角色和分类的档案中。', 'Approved works are published in their character and category archives.', '審査済みの作品は該当するキャラクターと分類の一覧に公開されます。')],
+] as const;
+const hint = tr(locale, archive ? 'zipHint' : 'fileHint');
+---
+
+<aside class="submit-sidebar sticky-page-aside" aria-label={creator ? c('视频自动同步说明', 'Video sync guide', '動画の自動同期について') : c('预览与投稿帮助', 'Preview and submission help', 'プレビューと投稿案内')}>
+  {!creator && <section class="archive-panel submit-preview" aria-labelledby="submit-preview-title" data-file-preview>
+    <h2 id="submit-preview-title">{c('文件实时预览', 'File preview', 'ファイルプレビュー')}</h2>
+    <div class="submit-preview-empty" data-file-empty>
+      <span class="archive-mark"><Icon name={archive ? 'folderZip' : 'gallery'} /></span>
+      <strong>{archive ? c('等待选择 ZIP 压缩包', 'Choose a ZIP archive to preview', 'ZIPを選択してください') : c('等待选择图片', 'Choose an image to preview', '画像を選択してください')}</strong>
+      <small>{hint}</small>
+    </div>
+    <div class="submit-preview-selected" data-file-selected hidden>
+      {archive ? <div class="submit-preview-frame"><span class="archive-mark"><Icon name="folderZip" /></span></div> : <div class="submit-preview-frame" data-file-image-frame hidden><img data-file-image alt={c('所选图片预览', 'Selected image preview', '選択した画像のプレビュー')} /></div>}
+      <div class="submit-preview-caption" aria-live="polite"><strong data-file-name></strong><span class="mono muted" data-file-meta></span></div>
+    </div>
+  </section>}
+  <section class="archive-panel submit-guide" aria-labelledby="submit-guide-title">
+    <h2 id="submit-guide-title">{creator ? c('视频自动同步说明', 'Video sync guide', '動画の自動同期について') : c('投稿与审核说明', 'Submission and review', '投稿と審査について')}</h2>
+    <ol class="submit-steps">
+      {steps.map(([icon, title, description]) => <li><span class="archive-mark"><Icon name={icon} /></span><div><h3>{title}</h3><p>{description}</p></div></li>)}
+    </ol>
+    {!creator && <div class="submit-tips">
+      <p>{c('转载作品请注明原作者与授权范围。已有同一图片的投稿或收录记录时，系统会提醒重复。', 'For reposts, credit the original creator and describe the permission granted. The system flags images that are already submitted or archived.', '転載作品は原作者と利用許諾の範囲を記載してください。投稿済み・収録済みの画像は重複として通知されます。')}</p>
+      <a class="text-link" href={localePath(locale, '/about#licensing')}>{c('查看授权填写说明', 'Read the licensing guide', '利用許諾の案内を見る')} <Icon name="arrowRight" /></a>
+    </div>}
+    <div class="button-row">
+      {creator ? <>
+        <a class="console-btn" href={localePath(locale, '/creators')}>{tr(locale, 'creators')}<Icon name="arrowRight" /></a>
+        <a class="console-btn" href={localePath(locale, '/videos')}>{tr(locale, 'videos')}<Icon name="arrowRight" /></a>
+      </> : <>
+        <a class="console-btn" href={`${issueUrl}/new/choose`}>{c('GitHub 投稿', 'Submit on GitHub', 'GitHubで投稿')}<Icon name="externalLink" /></a>
+        <a class="console-btn" href={localePath(locale, '/community#community-join')}>{c('QQ 群反馈', 'QQ group feedback', 'QQグループで問い合わせ')}<Icon name="arrowRight" /></a>
+      </>}
+    </div>
+  </section>
+</aside>

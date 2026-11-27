@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from './Icon.astro';
+import NationalDayRecap from './NationalDayRecap.astro';
+import { nationalDay } from '../content/national-day';
+import { api, publicUrl, type EventItem } from '../lib/api';
+import { archivedNationalDay, eventSummary, eventTitle, isEventOpen } from '../lib/active-event';
+import { copy, htmlLang, localePath, tr, type Locale } from '../lib/i18n';
+import { segment } from '../lib/site';
+interface Props { locale: Locale; path: string; eventId?: string; data: Awaited<ReturnType<typeof api.events>> }
+const { locale, path, eventId, data } = Astro.props;
+const c = (...text: string[]) => copy(locale, text);
+const url = (href: string) => localePath(locale, href);
+const isNational = (event: EventItem) => event.slug === nationalDay.id;
+const editions = data.items.some(isNational) ? data.items : [...data.items, archivedNationalDay];
+const event = eventId ? editions.find(({ id, slug }) => eventId === id || eventId === slug) : undefined;
+const active = editions.filter(item => isEventOpen(item));
+const archive = editions.filter((item) => item.status === 'archived' || (item.endsAt && Date.parse(item.endsAt) < Date.now()));
+const tab = (event ? active.includes(event) : path === '/events/current' || (path === '/events' && active.length > 0)) ? 'current' : 'archive';
+const list = (tab === 'current' ? active : archive).sort((a, b) => (b.endsAt ?? '').localeCompare(a.endsAt ?? ''));
+const current = c('当期活动', 'Current events', '開催中のイベント');
+const archived = c('往期活动回顾', 'Past events', '過去のイベント');
+const titleOf = (item: EventItem) => eventTitle(locale, item);
+const summaryOf = (item: EventItem) => eventSummary(locale, item);
+const rawCover = (item: EventItem) => publicUrl(item.payload?.cover?.src);
+const coverOf = (item: EventItem) => rawCover(item) ?? (isNational(item) ? nationalDay.cover : undefined);
+const title = event ? (isNational(event) ? `${titleOf(event)} · ${c('活动回顾', 'Event archive', 'イベント記録')}` : titleOf(event)) : path === '/events' ? tr(locale, 'events') : tab === 'archive' ? archived : current;
+const description = event ? summaryOf(event) : c('参与当下的共创，也回看每一次相聚。', 'Join current collaborations and revisit each past edition.', '開催中の共同制作に参加し、これまでの各回を振り返りましょう。');
+const exhibition = publicUrl(event?.payload?.exhibition) || (event && isNational(event) ? nationalDay.exhibition : undefined);
+const repository = publicUrl(event?.payload?.repository) || (event && isNational(event) ? nationalDay.repository : undefined);
+const date = (value?: string | null) => value && Number.isFinite(Date.parse(value)) ? new Intl.DateTimeFormat(htmlLang[locale], { dateStyle: 'long', timeZone: 'Asia/Shanghai' }).format(new Date(value)) : '';
+const crumbs = event ? [{ label: tr(locale, 'events'), href: '/events' }, { label: tab === 'archive' ? archived : current, href: `/events/${tab}` }, { label: title }] : undefined;
+---
+
+<BaseLayout {locale} {path} {title} {description} {crumbs} image={event && coverOf(event)} jsonLd={{ '@type': event ? 'WebPage' : 'CollectionPage' }}>
+  <div class="archive-document events-page">
+    <header class="archive-heading"><h1 class="page-title">{title}</h1><p>{description}</p></header>
+    <nav class="archive-chips" aria-label={tr(locale, 'events')}><a class="filter-pill" href={url('/events/current')} aria-current={tab === 'current' ? 'page' : undefined}>{current}</a><a class="filter-pill" href={url('/events/archive')} aria-current={tab === 'archive' ? 'page' : undefined}>{archived}</a></nav>
+    {event ? <>
+      <article class="archive-panel event-feature">
+        <div><p class="filter-pill event-status">{isNational(event) ? copy(locale, nationalDay.status) : tab === 'current' ? current : archived}</p>
+          <h2>{titleOf(event)}</h2>
+          <p>{isNational(event) ? c('本次设计征集已于北京时间 2026 年 10 月 26 日 23:59 截止，活动页面现已归档。', 'Submissions closed October 26, 2026 at 23:59 Beijing time. This page preserves the event archive.', '募集は北京時間2026年10月26日23時59分に終了しました。このページはイベントの記録です。') : date(event.endsAt)}</p>
+          {event.payload?.body && !isNational(event) && <p>{event.payload.body}</p>}
+          <div class="button-row">{exhibition && <a class="console-btn console-btn-primary" href={exhibition} target="_blank" rel="noopener noreferrer">{c('浏览投稿作品', 'Browse submitted designs', '投稿作品を見る')}<Icon name="externalLink" /></a>}{repository && <a class="console-btn" href={repository} target="_blank" rel="noopener noreferrer">{c('查看活动仓库', 'View event repository', 'イベントリポジトリを見る')}<Icon name="externalLink" /></a>}{publicUrl(event.payload?.url) && !isNational(event) && <a class="console-btn" href={publicUrl(event.payload?.url)} target="_blank" rel="noopener noreferrer">{tr(locale, 'events')}<Icon name="externalLink" /></a>}</div>
+        </div>
+        {coverOf(event) && <img class="event-cover" src={coverOf(event)} alt={isNational(event) ? copy(locale, nationalDay.alt) : ''} width={event.payload?.cover?.width ?? (isNational(event) ? 720 : undefined)} height={event.payload?.cover?.height ?? (isNational(event) ? 900 : undefined)} data-fallback-image data-fallback-src={isNational(event) ? nationalDay.cover : undefined} referrerpolicy="no-referrer" />}
+      </article>
+      {isNational(event) && <NationalDayRecap {locale} exhibition={exhibition ?? nationalDay.exhibition} />}
+    </> : list.length ? <div class="archive-stack">{list.map((item) => <article class="archive-panel event-feature event-list-card">
+      <div><span class="filter-pill event-status">{isNational(item) ? copy(locale, nationalDay.status) : tab === 'current' ? current : archived}</span><h2><a href={url(`/events/${segment(item.slug)}`)}>{titleOf(item)}</a></h2>
+      {date(item.endsAt) && <p>{c('征集截止', 'Submission deadline', '募集締切')} · <time class="mono" datetime={item.endsAt}>{date(item.endsAt)}</time></p>}<p>{summaryOf(item)}</p>
+      <a class="console-btn console-btn-primary" href={url(`/events/${segment(item.slug)}`)}>{tab === 'archive' ? c('查看回顾', 'View recap', '記録を見る') : c('查看活动', 'View event', 'イベントを見る')}<Icon name="arrowRight" /></a></div>
+      {coverOf(item) && <img class="event-cover" src={coverOf(item)} alt="" width={item.payload?.cover?.width ?? (isNational(item) ? 720 : undefined)} height={item.payload?.cover?.height ?? (isNational(item) ? 900 : undefined)} data-fallback-image data-fallback-src={isNational(item) ? nationalDay.cover : undefined} referrerpolicy="no-referrer" />}
+    </article>)}</div> : <section class="archive-panel archive-highlight event-empty"><span class="archive-mark"><Icon name="clock" /></span><h2>{tab === 'current' ? c('暂无进行中的活动', 'No current events', '現在開催中のイベントはありません') : c('活动回顾即将收录', 'Event recaps coming soon', 'イベント記録は準備中です')}</h2><p>{c('新的共创正在等待发生，先看看大家之前留下的创作吧。', 'While we wait for the next event, revisit the community’s earlier creations.', '次のイベントを待ちながら、これまでのみんなの創作を振り返ってみましょう。')}</p>{tab === 'current' && <a class="console-btn console-btn-primary" href={url('/events/archive')}>{c('查看往期活动回顾', 'Browse past events', '過去のイベントを見る')}<Icon name="arrowRight" /></a>}</section>}
+  </div>
+</BaseLayout>

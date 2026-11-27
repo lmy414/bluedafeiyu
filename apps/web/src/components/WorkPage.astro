@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import WorkBench from './WorkBench.astro';
+import { type WorkDetail, workMedia } from '../lib/api';
+import { parseLocale, type Locale } from '../lib/i18n';
+import { siteOrigin } from '../lib/site';
+import { workSeo } from '../lib/work-seo';
+import { workView } from '../lib/work-view';
+interface Props { locale: Locale; path: string; result: WorkDetail }
+const { locale, path, result } = Astro.props;
+const { work } = result;
+const item = workView(locale, result);
+const seo = workSeo(locale, work, siteOrigin(Astro.url), []);
+const media = workMedia(work);
+const hasDisplayDimensions = media.displayWidth && media.displayHeight;
+const image = hasDisplayDimensions ? media.display : media.original || media.display;
+---
+
+<BaseLayout {locale} {path} title={item.title} seoTitle={seo.title} description={seo.description} {image}
+  imageWidth={hasDisplayDimensions ? media.displayWidth : media.original ? media.width : undefined}
+  imageHeight={hasDisplayDimensions ? media.displayHeight : media.original ? media.height : undefined} imageAlt={item.alt}
+  crumbs={[...(item.characterHref ? [{ label: item.character, href: parseLocale(item.characterHref).path }] : []), { label: item.title }]}
+  jsonLd={{ primaryImageOfPage: { '@id': seo.image['@id'] } }} schemas={[seo.image]}>
+  <WorkBench {locale} {item} />
+</BaseLayout>

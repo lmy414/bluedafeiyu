@@ -1,0 +1,84 @@
+---
+import ErrorPage from '../components/ErrorPage.astro';
+import GalleryPage from '../components/GalleryPage.astro';
+import TopicPage from '../components/TopicPage.astro';
+import WorkPage from '../components/WorkPage.astro';
+import DirectoryPage from '../components/DirectoryPage.astro';
+import StaticPage from '../components/StaticPage.astro';
+import AboutPage from '../components/AboutPage.astro';
+import CommunityPage from '../components/CommunityPage.astro';
+import ChangelogPage from '../components/ChangelogPage.astro';
+import GuidePage from '../components/GuidePage.astro';
+import CreatorsPage from '../components/CreatorsPage.astro';
+import CreatorPage from '../components/CreatorPage.astro';
+import EventsPage from '../components/EventsPage.astro';
+import LinkDirectoryPage from '../components/LinkDirectoryPage.astro';
+import { nationalDay } from '../content/national-day';
+import { api } from '../lib/api';
+import { eventCacheSeconds, loadActiveEvent } from '../lib/active-event';
+import { loadCreator } from '../lib/creators';
+import { legacyMediaResponse } from '../lib/legacy-media';
+import { localePath, parseLocale, prepareLocale } from '../lib/i18n';
+import { resolvePage, type DirectoryView } from '../lib/routes';
+import { loadDirectory, loadGallery, loadTopic, loadWork } from '../lib/page-data';
+import { seoResponse } from '../lib/seo';
+import { pageNumber, workPath } from '../lib/site';
+
+const legacyMedia = await legacyMediaResponse(Astro.url, Astro.request.method);
+if (legacyMedia) return legacyMedia;
+const { locale, path } = parseLocale(Astro.url.pathname);
+await prepareLocale(locale);
+const document = await seoResponse(locale, path, Astro.url);
+if (document) return document;
+const route = resolvePage(path);
+if (route.view === 'redirect') {
+  const next = new URL(route.href, 'http://localhost');
+  let query = Astro.url.search;
+  if (next.search) {
+    const params = new URLSearchParams(query);
+    for (const [key, value] of next.searchParams) params.set(key, value);
+    query = `?${params}`;
+  }
+  return Astro.redirect(`${localePath(locale, next.pathname, next.pathname === '/' && /^\/saved(?:\.html)?$/.test(path) ? '' : query)}${next.hash}`, 301);
+}
+const id = 'id' in route ? route.id : undefined;
+const directory = new Set<string>(['characters', 'topics', 'serials', 'videos']);
+const directoryView = directory.has(route.view) ? route.view as DirectoryView : undefined;
+const query = Astro.url.searchParams;
+Astro.locals.activeEvent = loadActiveEvent(locale, query.get('preview-event-popup'));
+const [work, galleryData, topicData, directoryData, creatorData, eventData] = await Promise.all([
+  route.view === 'work' ? loadWork(locale, route.id) : undefined,
+  route.view === 'gallery' || route.view === 'character' ? loadGallery(locale, path, query, route.view === 'gallery' ? id : undefined, route.view === 'character' ? id : undefined) : undefined,
+  route.view === 'topic' || route.view === 'reader' ? loadTopic(locale, route.id, route.view === 'reader' ? route.page : undefined) : undefined,
+  directoryView ? loadDirectory(locale, directoryView, query) : undefined,
+  route.view === 'creator' ? loadCreator(locale, route.id, pageNumber(query.get('page'))) : undefined,
+  route.view === 'event' || route.view === 'events' ? api.events(locale, 'all') : undefined,
+]);
+if (route.view === 'work' && work?.ok && work.value.work.slug !== route.id) {
+  return Astro.redirect(localePath(locale, workPath(work.value.work.slug), Astro.url.search), 301);
+}
+const missingEvent = route.view === 'event' && route.id !== nationalDay.id && !eventData?.items.some((item) => item.id === route.id || item.slug === route.id);
+const routeError = work && !work.ok ? work.status : galleryData?.status ?? topicData?.status ?? creatorData?.status ?? (missingEvent ? eventData?.unavailable ? 503 : 404 : route.view === 'not-found' ? 404 : undefined);
+const degraded = galleryData?.unavailable || topicData?.characters?.unavailable || directoryData?.unavailable || eventData?.unavailable || creatorData?.videos?.unavailable;
+Astro.response.status = routeError ? routeError >= 500 || routeError === 429 ? 503 : 404 : galleryData?.listing.unavailable || directoryData?.unavailable ? 503 : 200;
+const hasPreview = query.has('preview-event-popup');
+Astro.response.headers.set('Cache-Control', routeError || degraded || route.view === 'submit' || hasPreview ? 'no-store' : `public, max-age=${eventCacheSeconds}, s-maxage=${eventCacheSeconds}`);
+---
+
+{routeError ? <ErrorPage {locale} {path} status={Astro.response.status} /> : (
+  <>
+    {galleryData && <GalleryPage {locale} {path} data={galleryData} />}
+    {work?.ok && <WorkPage {locale} {path} result={work.value} />}
+    {topicData && (route.view === 'topic' || route.view === 'reader') && <TopicPage {locale} {path} id={route.id} readerPage={route.view === 'reader' ? route.page : undefined} data={topicData} />}
+    {directoryView && directoryData && <DirectoryPage {locale} {path} view={directoryView} data={directoryData} />}
+    {route.view === 'submit' && <StaticPage {locale} {path} />}
+    {route.view === 'about' && <AboutPage {locale} {path} />}
+    {route.view === 'community' && <CommunityPage {locale} {path} />}
+    {route.view === 'changelog' && <ChangelogPage {locale} {path} />}
+    {route.view === 'guide' && <GuidePage {locale} {path} guide={route.guide} />}
+    {route.view === 'creators' && <CreatorsPage {locale} {path} />}
+    {creatorData && !creatorData.status && <CreatorPage {locale} {path} data={creatorData} />}
+    {eventData && <EventsPage {locale} {path} data={eventData} eventId={route.view === 'event' ? route.id : undefined} />}
+    {(route.view === 'links' || route.view === 'projects') && <LinkDirectoryPage {locale} {path} projects={route.view === 'projects'} />}
+  </>
+)}

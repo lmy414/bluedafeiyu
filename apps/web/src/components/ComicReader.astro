@@ -1,0 +1,68 @@
+---
+import GiscusComments from './GiscusComments.astro';
+import Icon from './Icon.astro';
+import WorkCounts from './WorkCounts.astro';
+import { field, workMedia, type api } from '../lib/api';
+import { copy, localePath, tr, type Locale } from '../lib/i18n';
+import { readerPath, topicPath, workImageAlt, workPath } from '../lib/site';
+interface Props { locale: Locale; id: string; name: string; credit: string; reader: Extract<Awaited<ReturnType<typeof api.topicPage>>, { ok: true }>['value'] }
+const { locale, id, name, credit, reader } = Astro.props;
+const { topic, work, totalPages, pageNumber } = reader;
+const media = work && workMedia(work);
+const t = (key: Parameters<typeof tr>[1]) => tr(locale, key);
+const url = (href: string) => localePath(locale, href);
+const pages = Array.from({ length: totalPages }, (_, index) => ({ number: index + 1, href: url(readerPath(id, index + 1)) }));
+const present = new Set((topic.pages ?? topic.reader?.pages ?? []).map(page => page.pageNumber));
+const fitScreen = copy(locale, ['适应一屏', 'Fit screen', '画面に収める']);
+const fitWidth = copy(locale, ['适应宽度', 'Fit width', '幅に合わせる']);
+const info = copy(locale, ['评论与本页信息', 'Comments and page info', 'コメントとページ情報']);
+const archive = copy(locale, ['作品档案', 'Work archive', '作品アーカイブ']);
+const title = work ? field(locale, work, 'name') : name;
+const details = work ? { href: url(workPath(work.slug)), title } : undefined;
+const navigation = [
+  { page: reader.previous, rel: 'prev', label: t('previousPage'), icon: 'arrowLeft' },
+  { page: reader.next, rel: 'next', label: t('nextPage'), icon: 'arrowRight' },
+] as const;
+---
+
+<article class="reader" data-reader data-fit="screen" data-work-id={work?.id} data-work-slug={work?.slug}>
+  <nav class="reader-controls" aria-label={t('originalPage')}>
+    <h1><a href={url(topicPath(id))} title={name}>{name}</a></h1>
+    <div class="reader-tools">
+      <a class="console-btn reader-nav-button" href={reader.previous ? url(readerPath(id, reader.previous)) : undefined} rel="prev" aria-disabled={!reader.previous ? 'true' : undefined} aria-label={t('previousPage')} title={t('previousPage')}><Icon name="arrowLeft" /><span>{t('previousPage')}</span></a>
+      <label class="reader-jump mono" title={t('originalPage')}>
+        <span aria-hidden="true">{pageNumber} / {totalPages}</span><Icon name="chevronDown" />
+        <select data-reader-jump aria-label={`${t('originalPage')} ${pageNumber} / ${totalPages}`}>
+          {pages.map(({ number, href }) => <option value={href} selected={number === pageNumber}>{number} / {totalPages}{present.has(number) ? '' : ` · ${t('missing')}`}</option>)}
+        </select>
+      </label>
+      <a class="console-btn reader-nav-button" href={reader.next ? url(readerPath(id, reader.next)) : undefined} rel="next" aria-disabled={!reader.next ? 'true' : undefined} aria-label={t('nextPage')} title={t('nextPage')}><span>{t('nextPage')}</span><Icon name="arrowRight" /></a>
+      <button class="console-btn reader-fit" type="button" data-reader-fit data-screen={fitScreen} data-width={fitWidth} title={fitScreen} aria-label={fitWidth} aria-pressed="false"><Icon name="zoomIn" /><span>{fitScreen}</span></button>
+      {work && media?.original && <a class="console-btn reader-download" href={media.original} target="_blank" rel="noopener" data-download data-work-slug={work.slug} data-file-name={title} data-file-format={media.format} aria-label={t('download')} title={t('download')}><Icon name="download" /><span>{t('download')}</span></a>}
+    </div>
+  </nav>
+  <div class="reader-layout">
+    <figure class="reader-image">
+      {work && media?.display ? <img src={media.display} alt={workImageAlt(title, field(locale, work, 'description'))} width={media.displayWidth} height={media.displayHeight} decoding="async" fetchpriority="high" referrerpolicy="no-referrer" /> : <div class="empty-state"><Icon name="serials" /><p>{t('missing')}</p></div>}
+      {navigation.map(({ page, rel, label, icon }) => page && <a class={`reader-hotspot reader-hotspot-${rel}`} href={url(readerPath(id, page))} {rel} aria-label={label}><span><Icon name={icon} /></span></a>)}
+    </figure>
+    <details class="reader-side" data-reader-side>
+      <summary class="console-btn reader-side-trigger" title={info} aria-label={info}><Icon name="comment" /><span>{info}</span><Icon name="chevronDown" /></summary>
+      <div class="reader-drawer" data-reader-drawer>
+        {work && <div class="reader-page-info">
+          <h2 class="section-title">{title}</h2>
+          <WorkCounts {locale} slug={work.slug} viewCount={work.viewCount} downloadCount={work.downloadCount} />
+          <div class="button-row">
+            {media?.original && <a class="console-btn console-btn-primary" href={media.original} target="_blank" rel="noopener" data-download data-work-slug={work.slug} data-file-name={title} data-file-format={media.format}><Icon name="download" />{t('download')}</a>}
+            {details && <a class="console-btn" href={details.href}>{archive}<Icon name="arrowRight" /></a>}
+          </div>
+        </div>}
+        <nav class="reader-page-list" aria-label={t('originalPage')}><h2 class="section-title">{t('originalPage')}</h2><div class="reader-index">
+          {pages.map(({ number, href }) => <a class="console-btn" {href} aria-current={number === pageNumber ? 'page' : undefined} aria-label={`${t('originalPage')} ${number}${present.has(number) ? '' : ` · ${t('missing')}`}`} data-missing={present.has(number) ? undefined : ''}>{number}</a>)}
+        </div></nav>
+        {credit && <p class="muted">{credit}</p>}
+        {work && <GiscusComments id={work.id} {locale} panelId="reader-comments" href={url(readerPath(id, pageNumber))} />}
+      </div>
+    </details>
+  </div>
+</article>

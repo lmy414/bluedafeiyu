@@ -1,0 +1,9 @@
+---
+import ErrorPage from '../components/ErrorPage.astro';
+import { parseLocale, prepareLocale } from '../lib/i18n';
+const { locale, path } = parseLocale(Astro.url.pathname);
+await prepareLocale(locale);
+Astro.response.status = 404;
+Astro.response.headers.set('Cache-Control', 'no-store');
+---
+<ErrorPage {locale} {path} />

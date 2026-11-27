@@ -1,0 +1,89 @@
+---
+import { categoryIds, field, type Taxon } from '../lib/api';
+import { copy, localePath, tr, htmlLang, type Locale } from '../lib/i18n';
+import { categoryName, configuredSorts, creationHref, getSort, segment } from '../lib/site';
+import { characterQuery, parseCharacters } from '../lib/character-filter';
+import Icon from './Icon.astro';
+
+interface Props {
+  locale: Locale;
+  path: string;
+  title: string;
+  crumbs?: Array<{ label: string; href?: string }>;
+  tabs?: boolean;
+  category?: string;
+  count?: number;
+  countType?: 'entries' | 'count';
+  sortable?: boolean;
+  characters?: Taxon[];
+  categories?: Taxon[];
+}
+const { locale, path, title, crumbs, tabs, category, count, countType = 'count', sortable, characters = [], categories = [] } = Astro.props;
+const t = (key: Parameters<typeof tr>[1]) => tr(locale, key);
+const search = Astro.url.searchParams;
+const selectedCharacters = parseCharacters(search);
+const nonAi = search.get('creation') === 'non-ai';
+const isProfile = path.startsWith('/characters/');
+const toggleHref = creationHref(locale, path, search);
+const c = (zh: string, en: string, ja: string) => copy(locale, [zh, en, ja]);
+const options = new Map(characters.map(item => [item.id, field(locale, item, 'name')]));
+const effectiveSort = getSort(search.get('sort'));
+const tabQuery = new URLSearchParams();
+for (const key of ['sort', 'tag']) {
+  const value = search.get(key);
+  if (value) tabQuery.set(key, value);
+}
+if (nonAi) tabQuery.set('creation', 'non-ai');
+const qs = characterQuery(tabQuery, selectedCharacters);
+const filterLink = (ids: string[], clearCreation = false) => {
+  const query = new URLSearchParams(search);
+  query.delete('page');
+  query.delete('cursor');
+  if (clearCreation) query.delete('creation');
+  return localePath(locale, path, characterQuery(query, ids));
+};
+const trail = [{ label: t('home'), href: '/' }, ...(crumbs ?? [{ label: title }])];
+---
+
+<div class="sheet-tabs-bar">
+  {tabs ? (
+    <nav class="category-tabs" aria-label={t('categories')}>
+      <a class="category-tab" href={localePath(locale, '/', qs)} aria-current={!category ? 'page' : undefined}>{t('all')}</a>
+      {categoryIds.map((id) => <a class="category-tab" href={localePath(locale, `/categories/${segment(id)}`, qs)} aria-current={category === id ? 'page' : undefined}>{categoryName(locale, id, categories.find((item) => item.id === id))}</a>)}
+      {sortable && <span class="creation-divider" aria-hidden="true"></span>}
+      {sortable && <a class="filter-pill creation-toggle" href={toggleHref} role="button" aria-pressed={nonAi ? 'true' : 'false'} title={t('nonAiHelp')}>{t('nonAiWorks')}</a>}
+    </nav>
+  ) : (
+    <nav class="inline-crumbs" aria-label={t('crumbs')}>
+      <ol>{trail.map((item, index) => <li>
+        {!!index && <span class="crumb-sep" aria-hidden="true">/</span>}
+        {item.href ? <a href={localePath(locale, item.href)}>{item.label}</a> : <span aria-current="page">{item.label}</span>}
+      </li>)}</ol>
+    </nav>
+  )}
+  {(count !== undefined || sortable) && <div class="bar-controls">
+    {count !== undefined && <span class="bar-count mono">{new Intl.NumberFormat(htmlLang[locale]).format(count)} {t(countType)}</span>}
+    {sortable && <form class="inline-sort" action={localePath(locale, path)} method="get" data-auto-filter>
+      {!tabs && !isProfile && <a class="filter-pill creation-toggle" href={toggleHref} role="button" aria-pressed={nonAi ? 'true' : 'false'} title={t('nonAiHelp')}>{t('nonAiWorks')}</a>}
+      {nonAi && <input type="hidden" name="creation" value="non-ai" />}
+      {Array.from(search).filter(([key]) => ['q', 'tag', 'category'].includes(key)).map(([key, value]) => <input type="hidden" name={key} value={value} />)}
+      {characters.length ? <select name="character" multiple aria-label={t('characters')} data-order={selectedCharacters.join(',')}
+        data-hint={c('可多选：同时包含全部所选角色（AND）', 'Select multiple: works must contain every selected character (AND).', '複数選択可：選んだすべてのキャラクターを含む作品（AND）')}
+        data-selected-label={c('已选角色', 'Selected characters', '選択したキャラクター')}
+        data-apply={t('filter')} data-clear={t('clearSelection')}
+        data-limit={c('最多可选 12 个角色。', 'You can select up to 12 characters.', 'キャラクターは12人まで選択できます。')}>
+        {[...options].map(([id, name]) => <option value={id} selected={selectedCharacters.includes(id)}>{name}</option>)}
+        {selectedCharacters.filter(id => !options.has(id)).map(id => <option value={id} selected>{id}</option>)}
+      </select> : selectedCharacters.length > 0 && <input type="hidden" name="character" value={selectedCharacters.join(',')} />}
+      <select name="sort" aria-label={t('sort')}>
+        {Object.entries(configuredSorts).map(([value, label]) => <option value={value} selected={effectiveSort === value}>{t(label)}</option>)}
+      </select>
+      <button type="submit" class="console-btn">{t('filter')}</button>
+    </form>}
+  </div>}
+  {sortable && (selectedCharacters.length > 0 || nonAi) && <div class="character-filter-chips" aria-label={c('已选筛选条件', 'Active filters', '適用中の絞り込み')}>
+    {selectedCharacters.map(id => <a class="filter-pill" href={filterLink(selectedCharacters.filter(character => character !== id))} aria-label={`${c('移除', 'Remove', '解除')} ${options.get(id) ?? id}`} title={`${c('移除', 'Remove', '解除')} ${options.get(id) ?? id}`}><span>{options.get(id) ?? id}</span><Icon name="close" /></a>)}
+    {selectedCharacters.length > 1 && <a class="text-link" href={filterLink([], true)}>{c('清除筛选', 'Clear filters', '絞り込みを解除')}</a>}
+    {nonAi && <><a class="filter-pill creation-toggle is-pressed" href={toggleHref} aria-label={`${c('移除', 'Remove', '解除')} ${t('nonAiWorks')}`}>{t('nonAiWorks')}<Icon name="close" /></a><small class="creation-note">{t('nonAiHelp')}</small></>}
+  </div>}
+</div>

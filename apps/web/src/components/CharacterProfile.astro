@@ -1,0 +1,48 @@
+---
+import { field, mediaUrl, type Character, type Taxon } from '../lib/api';
+import { htmlLang, localizedText, localePath, tr, type Locale } from '../lib/i18n';
+import { categoryName, characterDescription, characterPath, colorToken, creationHref } from '../lib/site';
+import { characterQuery } from '../lib/character-filter';
+
+interface Props {
+  character: Character;
+  locale: Locale;
+  category?: string;
+  categories: Taxon[];
+  categoryTotals: { id: string; total?: number }[];
+}
+const { character, locale, category, categories, categoryTotals } = Astro.props;
+const t = (key: Parameters<typeof tr>[1]) => tr(locale, key);
+const title = field(locale, character, 'name');
+const description = characterDescription(locale, character);
+const portrait = mediaUrl(character.portraitUrl, character.portraitKey);
+const tokens = character.brandTokens;
+const accent = colorToken(tokens?.['--character-accent'] ?? tokens?.['--accent'] ?? tokens?.accent ?? tokens?.primary);
+const dayAccent = accent ?? colorToken(typeof tokens?.light === 'object' && tokens.light['--brand-accent']);
+const nightAccent = colorToken(typeof tokens?.dark === 'object' && tokens.dark['--brand-accent']);
+const style = [dayAccent && `--profile-accent-light:${dayAccent}`, nightAccent && `--profile-accent-dark:${nightAccent}`].filter(Boolean).join(';');
+const format = new Intl.NumberFormat(htmlLang[locale]);
+const filters = categoryTotals.filter((entry) => entry.total !== 0 || category === entry.id);
+const nonAi = Astro.url.searchParams.get('creation') === 'non-ai';
+const href = (id?: string) => {
+  const params = new URLSearchParams(Astro.url.search);
+  for (const key of ['category', 'page', 'cursor']) params.delete(key);
+  if (id) params.set('category', id);
+  return localePath(locale, characterPath(character.id), characterQuery(params));
+};
+---
+
+<section class="character-hero" style={style || undefined}>
+  <div class="character-profile-copy">
+    <h1 class="page-title">{title}</h1>
+    {(character.aliases?.length ?? 0) > 0 && <ul class="profile-aliases" aria-label={t('aliases')}>{character.aliases?.map((alias) => <li>{localizedText(locale, alias)}</li>)}</ul>}
+    {description && <p class="profile-description">{description}</p>}
+    {character.workCount !== undefined && <dl class="profile-total"><dt>{t('totalWorks')}</dt><dd class="mono">{format.format(character.workCount)}</dd></dl>}
+    <nav class="profile-filters" aria-label={t('categoryBreakdown')}>
+      <a class="filter-pill" href={href()} aria-current={category ? undefined : 'page'}>{t('all')}</a>
+      {filters.map(({ id, total }) => <a class="filter-pill" href={href(id)} aria-current={category === id ? 'page' : undefined}>{categoryName(locale, id, categories.find((entry) => entry.id === id))}{total !== undefined && <span class="mono">{format.format(total)}</span>}</a>)}
+      <a class="filter-pill creation-toggle" href={creationHref(locale, characterPath(character.id), Astro.url.searchParams)} role="button" aria-pressed={nonAi ? 'true' : 'false'} title={t('nonAiHelp')}>{t('nonAiWorks')}</a>
+    </nav>
+  </div>
+  {portrait && <figure class="profile-portrait draft-corners"><img src={portrait} alt={title} width={character.portraitWidth || undefined} height={character.portraitHeight || undefined} decoding="async" referrerpolicy="no-referrer" /></figure>}
+</section>

@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CategoryChips from './CategoryChips.astro';
+import WorkGrid from './WorkGrid.astro';
+import Icon from './Icon.astro';
+import { guides } from '../content/landing-copy';
+import { api, field, workMedia } from '../lib/api';
+import { copy, localePath, tr, type Locale } from '../lib/i18n';
+import { loadCategoryTotals } from '../lib/page-data';
+import { characterPath, siteOrigin, workPath } from '../lib/site';
+interface Props { locale: Locale; path: string; guide: typeof guides[number] }
+const { locale, path, guide } = Astro.props;
+const c = (...text: string[]) => copy(locale, text);
+const title = copy(locale, guide.name);
+const description = copy(locale, guide.summary);
+const [listing, totals, characters, categories] = await Promise.all([
+  api.works({ lang: locale, character: guide.character, category: guide.type, pageSize: 12 }),
+  loadCategoryTotals({ lang: locale, character: guide.character }), api.characters(locale), api.categories(locale),
+]);
+if (listing.unavailable || totals.some(({ total }) => total === undefined) || characters.unavailable || categories.unavailable) Astro.response.headers.set('Cache-Control', 'no-store');
+const crumbs = [{ label: tr(locale, 'topics'), href: '/topics' }, { label: title }];
+const all = localePath(locale, characterPath(guide.character), guide.type ? `?category=${guide.type}` : '');
+const works = listing.items.slice(0, 12);
+const first = works[0];
+const itemList = { '@type': 'ItemList', itemListElement: works.map((item, index) => ({ '@type': 'ListItem', position: index + 1, name: field(locale, item, 'name'), url: new URL(localePath(locale, workPath(item.slug)), siteOrigin(Astro.url)).href })) };
+---
+
+<BaseLayout {locale} {path} {title} {description} {crumbs} image={first && workMedia(first).thumb} count={listing.unavailable ? undefined : listing.total} jsonLd={{ '@type': 'CollectionPage', mainEntity: itemList }}>
+  <div class="archive-document">
+    <header class="archive-heading"><h1 class="page-title">{title}</h1><p>{description}</p></header>
+    <div class="archive-grid archive-grid-two">
+      <section class="archive-panel archive-highlight"><h2>{c('快速导览入口', 'Quick links', 'すぐに探す')}</h2><p>{c('每张作品均保留来源、署名与使用许可说明。打开预览或详情页即可下载原图，并核对允许的使用范围。', 'Each work retains its source, credits and permission notes. Open its preview or details to download the original and check how it may be used.', '各作品に出典、クレジット、利用許諾を掲載しています。プレビューや詳細で元画像を保存し、利用可能な範囲をご確認ください。')}</p>
+        <div class="button-row"><a class="console-btn console-btn-primary" href={all}>{c('浏览全部相关作品', 'Browse all related works', '関連作品をすべて見る')}<Icon name="arrowRight" /></a><a class="console-btn" href={localePath(locale, '/about#license')}>{c('来源与授权', 'Sources & permissions', '出典と利用許諾')}</a></div>
+      </section>
+      <section class="archive-panel"><h2>{c('按类型找图', 'Browse by type', '種類から探す')}</h2><CategoryChips {locale} character={guide.character} {totals} categories={categories.items} /></section>
+    </div>
+    <section class="archive-section"><h2>{c('精选推荐作品', 'Selected works', 'おすすめの作品')}</h2><WorkGrid {locale} listing={{ items: works, unavailable: listing.unavailable }} characters={characters.items} /></section>
+  </div>
+</BaseLayout>

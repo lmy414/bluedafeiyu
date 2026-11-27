@@ -1,0 +1,97 @@
+---
+import Icon from './Icon.astro';
+import GiscusComments from './GiscusComments.astro';
+import WorkCounts from './WorkCounts.astro';
+import WorkRecommendation from './WorkRecommendation.astro';
+import { localePath, tr, type Locale } from '../lib/i18n';
+import { workLabels, workRightsForm, type WorkView } from '../lib/work-view';
+interface Props { locale: Locale; item?: WorkView; modal?: boolean }
+const { locale, item, modal = false } = Astro.props;
+const t = (key: Parameters<typeof tr>[1]) => tr(locale, key);
+const labels = workLabels(locale);
+const commentsId = modal ? 'preview-comments' : 'work-comments';
+const groups = { characters: t('characters'), category: t('categories'), tags: '#', topics: t('topics') };
+const groupKeys = Object.keys(groups) as (keyof typeof groups)[];
+const factLabels = { author: labels.author, credit: labels.credit, source: t('source'), sourceNote: labels.sourceNote, license: t('license'), specs: labels.specs, date: labels.date };
+const factKeys = Object.keys(factLabels) as (keyof typeof factLabels)[];
+---
+
+<article class="sheet-workbench" data-workbench data-locale={locale} data-site={t('site')} data-preview-title={t('preview')} data-work-id={item?.id} data-work-slug={item?.slug} data-work-href={item?.href}>
+  <div class="wb-main">
+  <section class="wb-visual">
+    <header class="wb-head">
+      <div class="wb-identity">
+        <h1 class="wb-title" id={modal ? 'preview-title' : undefined} data-view-title>{item?.title || t('preview')}</h1>
+        <p class="wb-sub">
+          <a class="wb-pill" data-view-link="characterHref" data-view-text="character" href={item?.characterHref} hidden={!item?.characterHref}>{item?.character}</a>
+          <a class="wb-pill" data-view-link="categoryHref" data-view-text="category" href={item?.categoryHref} hidden={!item?.categoryHref}>{item?.category}</a>
+        </p>
+      </div>
+      <div class="wb-tools">
+        <div class="wb-nav" data-view-nav aria-label={t('preview')} hidden={!modal && !item?.previous && !item?.next}>
+          {modal ? <button type="button" class="icon-button" data-view-prev aria-label={t('prev')} title={t('prev')}><Icon name="chevronLeft" /></button> : <a class="icon-button" href={item?.previous || undefined} rel="prev" aria-disabled={!item?.previous ? 'true' : undefined} aria-label={t('prev')} title={t('prev')}><Icon name="chevronLeft" /></a>}
+          <span class="mono" data-view-position aria-live="polite" hidden={!modal}></span>
+          {modal ? <button type="button" class="icon-button" data-view-next aria-label={t('next')} title={t('next')}><Icon name="chevronRight" /></button> : <a class="icon-button" href={item?.next || undefined} rel="next" aria-disabled={!item?.next ? 'true' : undefined} aria-label={t('next')} title={t('next')}><Icon name="chevronRight" /></a>}
+        </div>
+        <div class="wb-zoom-group" role="group" aria-label={t('reset')}>
+          <button class="wb-tool-chip" type="button" data-view-zoom="out" aria-label={t('zoomOut')}><Icon name="minus" /></button>
+          <button class="wb-tool-chip mono" type="button" data-view-zoom="reset" aria-label={t('reset')}>100%</button>
+          <button class="wb-tool-chip" type="button" data-view-zoom="in" aria-label={t('zoomIn')}><Icon name="plus" /></button>
+        </div>
+      </div>
+    </header>
+    <figure class="wb-figure">
+      <div class="wb-stage" data-view-stage tabindex="0" aria-label={t('preview')}>
+        <div class="viewer-canvas"><img data-view-image src={item?.display} alt={item?.alt ?? ''} width={item?.displayWidth} height={item?.displayHeight} decoding="async" referrerpolicy="no-referrer" fetchpriority="high" hidden={!item?.display} /></div>
+      </div>
+      <figcaption class="wb-specs mono" data-view-text="specs">{item?.specs || '—'}</figcaption>
+    </figure>
+  </section>
+  <div class="wb-side">
+    <section class="wb-information" aria-label={labels.description}>
+      <div class="wb-actions">
+        <a class="console-btn console-btn-primary" href={item?.original} target="_blank" rel="noopener" data-view-link="original" data-download data-work-slug={item?.slug} data-file-name={item?.title} data-file-format={item?.format} hidden={!item?.original}><Icon name="download" />{t('download')}</a>
+        <button class="console-btn" type="button" data-work-copy data-copied={labels.copied}><Icon name="link" />{labels.copy}</button>
+        <a class="console-btn wb-comment-link" href={`#${commentsId}`} data-work-comments><Icon name="comment" />{t('comments')}</a>
+        {modal ? <form class="wb-exit" method="dialog"><button class="icon-button" type="submit" aria-label={t('close')} autofocus><Icon name="close" /></button></form> : <a class="console-btn wb-exit" href={localePath(locale, '/')}><Icon name="arrowLeft" />{labels.back}</a>}
+      </div>
+      <div class="wb-fetch-status" data-work-status hidden><span role="status" data-loading={t('loading')} data-error={t('unavailable')}></span><button type="button" class="console-btn" data-work-retry hidden>{labels.retry}</button></div>
+      <aside class="wb-fish" data-view-optional="commentary" hidden={!item?.commentary}>
+        <h2><img class="brand-mark" src="/avatar.png" alt="" width="25" height="25" />{labels.fish}</h2>
+        <p data-view-text="commentary">{item?.commentary}</p>
+      </aside>
+      <div class="wb-description" data-view-optional="description" hidden={!item?.description}>
+        <h2>{labels.description}</h2><p data-view-text="description">{item?.description}</p>
+      </div>
+      <div class="wb-groups">
+        {groupKeys.map(key => <div class="wb-link-group" data-work-group={key} hidden={!item?.links[key].length}>
+          {key !== 'tags' && <span>{groups[key]}</span>}
+          <div class="wb-chips">{item?.links[key].map(link => <a class="spec-tag" href={link.href}>{link.label}</a>)}</div>
+        </div>)}
+      </div>
+      <dl class="wb-facts">
+        {factKeys.map(key => {
+          const fact = item?.facts[key];
+          return <div data-work-fact={key} hidden={key === 'sourceNote' && !fact?.text}>
+            <dt>{factLabels[key]}</dt>
+            <dd>
+              <span data-fact-text data-fact-muted={key === 'license' && !fact?.external ? '' : undefined} hidden={Boolean(fact?.href && !fact.linkLabel)}>{fact?.text || '—'}</span>
+              <a class="text-link" data-fact-link href={fact?.href} target={fact?.external ? '_blank' : undefined} rel={fact?.external ? 'noopener noreferrer' : undefined} hidden={!fact?.href}><span data-fact-label>{fact?.linkLabel || fact?.text}</span>{key === 'license' && <Icon name="info" />}</a>
+              <p data-fact-note hidden={!fact?.note}>{fact?.note}</p>
+              <p data-fact-notice hidden={!fact?.notice}>{fact?.notice}</p>
+            </dd>
+          </div>;
+        })}
+        <div><dt>{labels.stats}</dt><dd><WorkCounts {locale} slug={item?.slug} viewCount={item?.viewCount} downloadCount={item?.downloadCount} /></dd></div>
+      </dl>
+      <a class="text-link wb-rights" href={workRightsForm} target="_blank" rel="noopener noreferrer">{t('corrections')}<Icon name="externalLink" /></a>
+    </section>
+    <GiscusComments id={item?.id} {locale} panelId={commentsId} href={item?.href} />
+  </div>
+  </div>
+  <section class="wb-related" data-work-related hidden={!item?.recommendations.length}>
+    <h2 class="section-title">{labels.related}</h2>
+    <div class="wb-related-grid">{item?.recommendations.map(recommendation => <WorkRecommendation item={recommendation} />)}</div>
+  </section>
+  {modal && <template data-work-recommendation><WorkRecommendation /></template>}
+</article>

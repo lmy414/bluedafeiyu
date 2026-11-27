@@ -1,0 +1,14 @@
+---
+import { renderIconSvg, type IconName } from '../../../../packages/shared/src/design/icons';
+import { BRAND_MARK_SVG } from '../../../../packages/shared/src/design/brand';
+
+interface Props { name: IconName | 'brand' | 'comment' | 'github' | 'events'; class?: string }
+const { name, class: extra } = Astro.props;
+const classes = ['icon', extra].filter(Boolean).join(' ');
+const svg = name === 'brand' ? BRAND_MARK_SVG : name === 'comment' || name === 'github' || name === 'events' ? undefined : renderIconSvg(name, classes);
+---
+
+{name === 'comment' && <svg class={classes} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10.5c0 3.6-3.6 6.5-8 6.5-1 0-2-.15-2.9-.44L5 19l.95-3.95C4.7 13.9 4 12.3 4 10.5 4 6.9 7.6 4 12 4s8 2.9 8 6.5Z"/><path d="M8 10.5h8"/></svg>}
+{name === 'github' && <svg class={classes} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .75a11.25 11.25 0 0 0-3.56 21.92c.56.1.77-.24.77-.54v-1.94c-3.13.68-3.79-1.33-3.79-1.33-.51-1.3-1.25-1.64-1.25-1.64-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 .1.75 1.31 3.26 1 .1-.73.39-1.23.71-1.51-2.49-.28-5.11-1.24-5.11-5.56 0-1.23.44-2.23 1.16-3.02-.12-.28-.5-1.43.11-2.98 0 0 .95-.3 3.1 1.15a10.79 10.79 0 0 1 5.64 0c2.15-1.45 3.09-1.15 3.09-1.15.62 1.55.24 2.7.12 2.98.72.79 1.16 1.79 1.16 3.02 0 4.33-2.63 5.28-5.13 5.56.4.35.76 1.03.76 2.08v2.87c0 .3.2.65.77.54A11.25 11.25 0 0 0 12 .75Z"/></svg>}
+{name === 'events' && <svg class={classes} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="5.5" width="16" height="15" rx="2"/><path d="M8 3.5v4m8-4v4M4 9.5h16m-8 2.25.64 1.44 1.55.16-1.16 1.04.32 1.54-1.35-.79-1.35.79.32-1.54-1.16-1.04 1.55-.16Z"/></svg>}
+{svg && <Fragment set:html={svg} />}

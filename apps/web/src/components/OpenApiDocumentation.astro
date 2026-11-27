@@ -1,0 +1,39 @@
+---
+import { openApiCopy as text, openApiRoutes, openApiFields } from '../content/open-api-copy';
+import { copy, localePath, type Locale } from '../lib/i18n';
+import { siteOrigin } from '../lib/site';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const c = (key: keyof typeof text) => copy(locale, text[key]);
+const api = '/open-api/v1/';
+const base = new URL(api, siteOrigin(Astro.url)).href;
+const tables = [[openApiRoutes, 'apiPathHeader'], [openApiFields, 'apiFieldHeader']] as const;
+---
+
+<section class="archive-panel" id="open-api">
+  <h2 id="open-data-api">{c('apiTitle')}</h2>
+  <p>{c('apiIntro')}</p>
+  <h3>{c('apiBase')}</h3>
+  <p><code>{base}</code></p>
+  <div class="button-row">
+    <a class="console-btn" href={`${api}index.json`}>{c('apiEntry')}</a>
+    <a class="console-btn mono" href={`${api}manifest.json`}>manifest.json</a>
+    <a class="console-btn mono" href={`${api}works.json`}>works.json</a>
+  </div>
+  <h3 id="api-paths-title">{c('apiRoutesTitle')}</h3>
+  {tables.map(([rows, header], index) => {
+    const table = <table class="archive-table">
+      <thead><tr><th scope="col">{c(header)}</th><th scope="col">{c('apiMeaningHeader')}</th></tr></thead>
+      <tbody>{rows.map(([paths, key]) => <tr><th scope="row">{paths.split(' · ').map((part) => <code>{part}</code>)}</th><td>{c(key)}</td></tr>)}</tbody>
+    </table>;
+    return index === 0 ? <>
+      <div class="archive-table-region" role="region" tabindex="0" aria-labelledby="api-paths-title">{table}</div>
+      <p>{c('apiParameters')}</p><p>{c('apiFilters')}</p>
+    </> : <details class="archive-details"><summary id="api-fields-title">{c('apiResponseTitle')}</summary><div class="archive-details-body">
+      <p>{c('apiEnvelope')}</p><div class="archive-table-region" role="region" tabindex="0" aria-labelledby="api-fields-title">{table}</div>
+    </div></details>;
+  })}
+  <h3>{c('apiSyncTitle')}</h3>
+  <p>{c('apiSync')}</p><p>{c('apiConsistency')}</p><p>{c('apiErrors')}</p><p>{c('apiRights')}</p>
+  <div class="button-row">{['llms.txt', 'llms-full.txt'].map((name) => <a class="console-btn mono" href={localePath(locale, `/${name}`)}>{name}</a>)}</div>
+</section>

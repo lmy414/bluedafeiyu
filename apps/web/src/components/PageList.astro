@@ -1,0 +1,27 @@
+---
+import type { Page } from '../lib/api';
+import { copy, htmlLang, tr, type Locale } from '../lib/i18n';
+import { pageHref } from '../lib/site';
+interface Props { locale: Locale; path: string; listing: Page<unknown> }
+const { locale, path, listing } = Astro.props;
+const t = (key: Parameters<typeof tr>[1]) => tr(locale, key);
+const href = (page: number) => pageHref(locale, path, Astro.url.searchParams, page);
+const current = listing.page;
+const totalPages = Math.max(current, Math.ceil((listing.total ?? 0) / (listing.pageSize || 24)));
+const pages = [...new Set([1, current - 1, current, current + 1, totalPages])].filter(page => page > 0 && page <= totalPages).sort((a, b) => a - b);
+const digits = new Intl.NumberFormat(htmlLang[locale]);
+const status = copy(locale, [`第 ${digits.format(current)} / ${digits.format(totalPages)} 页`, `Page ${digits.format(current)} of ${digits.format(totalPages)}`, `${digits.format(current)} / ${digits.format(totalPages)} ページ`]);
+---
+
+{!listing.items.length && <div class="empty-state"><p>{t(listing.unavailable ? 'unavailable' : 'empty')}</p></div>}
+{!listing.unavailable && (listing.total > 0 || current > 1) && <nav class="batch-pagination directory-pagination" aria-label={copy(locale, ['分页', 'Pagination', 'ページ移動'])}>
+  {current > 1 ? <a class="console-btn" rel="prev" href={href(current - 1)}>{t('previousPage')}</a> : <span class="console-btn" aria-disabled="true">{t('previousPage')}</span>}
+  <div class="pagination-numbers">
+    {pages.map((page, index) => <>
+      {index > 0 && page - pages[index - 1]! > 1 && <span class="pagination-gap" aria-hidden="true">…</span>}
+      {page === current ? <span class="console-btn console-btn-primary" aria-current="page">{digits.format(page)}</span> : <a class="console-btn" href={href(page)}>{digits.format(page)}</a>}
+    </>)}
+  </div>
+  {current < totalPages ? <a class="console-btn" rel="next" href={href(current + 1)}>{t('nextPage')}</a> : <span class="console-btn" aria-disabled="true">{t('nextPage')}</span>}
+  <span class="pagination-status mono">{status}</span>
+</nav>}

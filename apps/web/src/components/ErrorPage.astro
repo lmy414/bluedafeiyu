@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from './Icon.astro';
+import { localePath, tr, type Locale } from '../lib/i18n';
+interface Props { locale: Locale; path: string; status?: number }
+const { locale, path, status = 404 } = Astro.props;
+const unavailable = status >= 500 || status === 429;
+const title = tr(locale, unavailable ? 'unavailable' : 'notFound');
+---
+
+<BaseLayout {locale} {path} {title} noindex>
+  <div class="empty-state">
+    <Icon name={unavailable ? 'alert' : 'search'} />
+    <h1 class="page-title">{title}</h1>
+    <p><a class="console-btn" href={localePath(locale, '/')}><Icon name="home" />{tr(locale, 'home')}</a></p>
+  </div>
+</BaseLayout>

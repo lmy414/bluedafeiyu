@@ -1,0 +1,134 @@
+---
+import '../styles/app.css';
+import '../styles/workbench.css';
+import '../styles/comic-reader.css';
+import Sidebar from '../components/Sidebar.astro';
+import Topbar from '../components/Topbar.astro';
+import CategoryTabsBar from '../components/CategoryTabsBar.astro';
+import PreviewModal from '../components/PreviewModal.astro';
+import EventPromoModal from '../components/EventPromoModal.astro';
+import { loadActiveEvent } from '../lib/active-event';
+import { htmlLang, localePath, locales, tr, type Locale } from '../lib/i18n';
+import SiteFooter from '../components/SiteFooter.astro';
+import { sourceRepository, contentRepository, siteOrigin } from '../lib/site';
+import type { Taxon } from '../lib/api';
+import { characterQuery } from '../lib/character-filter';
+
+interface Props {
+  locale: Locale; path: string; title: string; description?: string;
+  crumbs?: Array<{ label: string; href?: string }>;
+  tabs?: boolean; category?: string; count?: number; countType?: 'entries' | 'count'; sortable?: boolean;
+  categoryOptions?: Taxon[]; characterOptions?: Taxon[];
+  image?: string; imageWidth?: number; imageHeight?: number; imageAlt?: string;
+  noindex?: boolean; jsonLd?: Record<string, unknown>; schemas?: Record<string, unknown>[]; seoTitle?: string; readerMode?: boolean;
+}
+const { locale, path, title, description, crumbs, tabs, category, count, countType, sortable, categoryOptions, characterOptions, image, imageWidth, imageHeight, imageAlt, jsonLd, noindex, schemas = [], seoTitle, readerMode } = Astro.props;
+const t = (key: Parameters<typeof tr>[1]) => tr(locale, key);
+const siteName = t('site');
+const pageTitle = seoTitle ?? (title === siteName ? title : `${title} · ${siteName}`);
+const pageDescription = description || t('lead');
+const origin = siteOrigin(Astro.url);
+const canonicalQuery = new URLSearchParams(Astro.url.search);
+for (const key of [...canonicalQuery.keys()]) {
+  if (path.startsWith('/works/') || !['q', 'page', 'workPage', 'character', 'category', 'tag', 'creator', 'creation'].includes(key)) canonicalQuery.delete(key);
+}
+if (canonicalQuery.get('creation') !== 'non-ai') canonicalQuery.delete('creation');
+if (canonicalQuery.get('page') === '1') canonicalQuery.delete('page');
+const query = characterQuery(canonicalQuery);
+const absolute = (lang: Locale, href: string, search = '') => new URL(localePath(lang, href, search), origin).href;
+const canonical = absolute(locale, path, query);
+const website = path === '/' && !query;
+const aliases = ['大肥鱼', '鲸鱼娘', 'DeepSeek娘', 'Blue Dafeiyu'];
+const organization = { '@type': 'Organization', '@id': new URL('/#organization', origin).href, name: siteName, logo: new URL('/favicon.png', origin).href, sameAs: [sourceRepository, contentRepository] };
+const trail = [{ label: t('home'), href: '/' }, ...(crumbs ?? [{ label: title, href: undefined }])];
+const searchAction = { '@type': 'SearchAction', target: { '@type': 'EntryPoint', urlTemplate: absolute(locale, '/search') + '?q={search_term_string}' }, 'query-input': 'required name=search_term_string' };
+const breadcrumbs = { '@type': 'BreadcrumbList', itemListElement: trail.map((item, index) => ({ '@type': 'ListItem', position: index + 1, name: item.label, item: item.href ? absolute(locale, item.href) : canonical })) };
+const pageSchema = { '@type': 'WebPage', name: title, description: pageDescription, url: canonical, inLanguage: htmlLang[locale], ...jsonLd,
+  ...(website && { '@type': 'WebSite', alternateName: aliases, publisher: { '@id': organization['@id'] }, potentialAction: searchAction }) };
+const structured = JSON.stringify({ '@context': 'https://schema.org', '@graph': [pageSchema, ...(website ? [organization] : !tabs || crumbs ? [breadcrumbs] : []), ...schemas],
+}).replace(/</g, '\\u003c');
+const gaId = process.env.PUBLIC_GA_ID || import.meta.env.PUBLIC_GA_ID || '';
+const canLoadGa = /^(?:GT|G)-[A-Z0-9]+$/.test(gaId);
+const measurementId = process.env.PUBLIC_GA_MEASUREMENT_ID || import.meta.env.PUBLIC_GA_MEASUREMENT_ID || (gaId === 'GT-NS92WVPQ' ? 'G-4LWN9Z2WT2' : gaId);
+const previewParam = Astro.url.searchParams.get('preview-event-popup');
+const { activeEvent, preview } = await (Astro.locals.activeEvent ?? loadActiveEvent(locale, previewParam)) ?? {};
+const promoEvent = preview?.event ?? (activeEvent?.payload?.popup?.enabled === false ? undefined : activeEvent);
+const onEventsPage = path === '/events' || path.startsWith('/events/');
+---
+
+<!doctype html>
+<html lang={htmlLang[locale]} data-ga-measurement={canLoadGa && /^G-[A-Z0-9]+$/.test(measurementId) ? measurementId : undefined}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="canonical" href={canonical} />
+    {locales.map((lang) => <link rel="alternate" hreflang={htmlLang[lang]} href={absolute(lang, path, query)} />)}
+    <link rel="alternate" hreflang="x-default" href={absolute('zh', path, query)} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:type" content={image ? 'article' : 'website'} />
+    <meta property="og:url" content={canonical} />
+    {image && <>
+      <meta property="og:image" content={new URL(image, origin).href} />
+      {imageWidth && <meta property="og:image:width" content={String(imageWidth)} />}
+      {imageHeight && <meta property="og:image:height" content={String(imageHeight)} />}
+      {imageAlt && <meta property="og:image:alt" content={imageAlt} />}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:image" content={new URL(image, origin).href} />
+      {imageAlt && <meta name="twitter:image:alt" content={imageAlt} />}
+    </>}
+    {(noindex || previewParam !== null) && <meta name="robots" content="noindex,follow" />}
+    <script is:inline>
+      (() => {
+        let chosen;
+        try { chosen = localStorage.getItem('dafeiyu-theme'); } catch {}
+        const theme = chosen === 'light' || chosen === 'dark' ? chosen : matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+      })();
+    </script>
+    <script is:inline type="application/ld+json" set:html={structured}></script>
+    {canLoadGa && <script is:inline define:vars={{ gaId }}>
+      window.dataLayer = window.dataLayer || [];
+      const gtag = window.gtag ||= function () { window.dataLayer.push(arguments); };
+      gtag('consent', 'default', {
+        analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+        functionality_storage: 'denied', personalization_storage: 'denied', security_storage: 'granted',
+      });
+      gtag('js', new Date());
+      gtag('config', gaId, {
+        anonymize_ip: true, allow_google_signals: false, allow_ad_personalization_signals: false,
+        send_page_view: true, cookie_flags: 'SameSite=None;Secure',
+      });
+    </script>}
+    {canLoadGa && <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>}
+  </head>
+  <body data-download-fail={t('downloadFail')} data-open-original={t('original')}>
+    <a class="skip-link" href="#content">{t('skip')}</a>
+    <Sidebar {locale} {path} {activeEvent} />
+    <dialog id="mobile-navigation" class="nav-dialog" aria-label={t('nav')} {...{ closedby: 'any' }}><Sidebar {locale} {path} {activeEvent} drawer /></dialog>
+    <div class="workspace-main">
+      <Topbar {locale} {activeEvent} />
+      <div class:list={['sheet-shell', { 'reader-shell': readerMode }]}>
+        <CategoryTabsBar {locale} {path} {title} {crumbs} {tabs} {category} {count} {countType} {sortable} categories={categoryOptions} characters={characterOptions} />
+        <main class="sheet-body" id="content" tabindex="-1">
+          <slot />
+          {!readerMode && <SiteFooter {locale} />}
+        </main>
+      </div>
+    </div>
+    <PreviewModal locale={locale} />
+    {promoEvent && <EventPromoModal {locale} event={promoEvent} isPreview={preview?.isPreview} {onEventsPage} />}
+    <div class="toast" data-toast role="status" aria-live="polite" hidden></div>
+    <script>
+      import '../scripts/gallery';
+      import { initializeEventModal } from '../scripts/event-modal';
+      initializeEventModal();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+---
+import CategoryChips from './CategoryChips.astro';
+import { characterSearchAliases } from '../content/landing-copy';
+import { field, type Character, type Taxon, type Work } from '../lib/api';
+import { copy, htmlLang, localePath, localizedText, tr, type Locale } from '../lib/i18n';
+import { characterPath, workTags } from '../lib/site';
+interface Props { locale: Locale; character?: Character; category?: string; title: string; items: Work[]; categories: Taxon[]; totals?: { id: string; total?: number }[] }
+const { locale, character, category, title, items, categories, totals = [] } = Astro.props;
+const c = (...text: string[]) => copy(locale, text);
+const name = character ? field(locale, character, 'name') : title;
+const editorialAlias = character && (characterSearchAliases as Partial<Record<string, string[]>>)[character.id];
+const aliases = [...new Set([...(character?.aliases ?? []).map((alias) => localizedText(locale, alias)), ...(Array.isArray(editorialAlias) ? [copy(locale, editorialAlias)] : [])])];
+const frequency = new Map<string, number>();
+for (const work of items) for (const tag of new Set(workTags(locale, work))) if (tag) frequency.set(tag, (frequency.get(tag) ?? 0) + 1);
+const common = [...frequency].sort((a, b) => b[1] - a[1]).slice(0, 4).map(([tag]) => tag);
+const digits = new Intl.NumberFormat(htmlLang[locale]);
+const value = character?.workCount;
+const total = value === undefined ? '' : digits.format(value);
+const samples = items.slice(0, 3).map((item) => field(locale, item, 'name')).join(locale === 'en' ? ', ' : '、');
+const categoryHint = category === 'comic' ? c('多格分镜适合进入详情放大阅读。', 'Open the details to enlarge multi-panel comics.', 'コマのある漫画は詳細ページで拡大して読めます。')
+  : category === 'setting' ? c('设定内容以各作者的原始发布说明为准。', 'Check the original creator’s notes for each design.', '設定は各作者の元の説明をご確認ください。')
+  : category === 'meme' ? c('可以按台词、情绪和聊天场景继续搜索，再查看作品详情选择原图。', 'Search by dialogue, emotions or chat scenarios, then open a work to choose the original image.', 'セリフ、気分、会話の場面で検索し、詳細から元画像を選べます。')
+  : c('进入作品详情可查看完整构图、原始来源和作者署名。', 'Open a work for the full composition, original source and creator credit.', '詳細ページで全体の構図、元の出典、作者クレジットを確認できます。');
+const firstCategory = totals.find((item) => item.id === 'meme' && item.total) ?? totals.find((item) => item.total);
+---
+
+{character && <section class="archive-panel reading-panel" id="archive-scope">
+  <h2>{c(`${name}的收录范围`, `What the ${name} archive covers`, `${name}の収録範囲`)}</h2>
+  {total && <p>{c(`这份档案目前收录 ${total} 件${name}作品。`, `This archive currently includes ${total} works featuring ${name}.`, `このアーカイブでは現在、${name}の作品を${total}件収録しています。`)}</p>}
+  {aliases.length > 0 && <p><strong>{tr(locale, 'aliases')}</strong> · {aliases.join(' · ')}</p>}
+  {common.length > 0 && <div class="archive-chips"><span>{c('当前页常见标签', 'Common tags on this page', 'このページで多いタグ')}</span>{common.map((tag) => <a class="filter-pill" href={localePath(locale, '/', `?${new URLSearchParams({ tag, character: character.id })}`)}>{tag}</a>)}</div>}
+  <h3>{c('按类型找图', 'Browse by type', '種類から探す')}</h3><CategoryChips {locale} character={character.id} {totals} {categories} />
+  <p>{c('本站展示社区二创，不同作者的设计以各作品的原始来源为准。', 'This archive covers community fan works. Check the original sources for each creator’s design.', 'コミュニティの二次創作を収録しています。各作者のデザインは作品の元の出典をご確認ください。')}</p>
+  <details class="archive-details"><summary>{c(`怎样找到${name}的表情包？`, `How do I find ${name} stickers?`, `${name}のスタンプはどう探せますか？`)}</summary><div class="archive-details-body"><p>{c('可在角色档案中按类型筛选。没有梗图收录时，可以先浏览其他已有类型。', 'Filter by type in the character archive. If no memes are archived, browse another available type.', 'キャラクターページの種類別フィルターをご利用ください。ミームの収録がなければ、ほかの種類をご覧ください。')}</p>{firstCategory && <a class="text-link" href={localePath(locale, characterPath(character.id), `?category=${firstCategory.id}`)}>{tr(locale, 'quickBrowse')}</a>}</div></details>
+  <details class="archive-details"><summary>{c('下载后可以转载或商用吗？', 'Can I repost or use downloads commercially?', 'ダウンロード後に転載・商用利用できますか？')}</summary><div class="archive-details-body"><p>{c('收录和下载不等于获得转载、改编或商业使用许可。请核对作品详情的作者、来源和授权备注，授权不明时先联系权利人。', 'Download access does not grant permission to repost, adapt or use the work commercially. Check the work’s credit, source and license, and contact the rights holder if permission is unclear.', 'ダウンロードできても、転載・改変・商用利用が許可されるわけではありません。作者、出典、利用許諾を確認し、不明なときは権利者にお問い合わせください。')}</p><a class="text-link" href={localePath(locale, '/about#licensing')}>{c('查看取得使用许可的方法', 'How to obtain permission', '利用許諾の取り方')}</a></div></details>
+</section>}
+{category && items.length > 0 && <section class="archive-panel reading-panel"><h2>{c('这一栏可以怎样看？', 'How to browse this section', 'この欄の見方')}</h2><p>{c(`本栏整理 ${title}，包括《${samples}》等已收录作品。`, `Browse archived works in ${title}, including ${samples}.`, `${title}の収録作品を探せます。収録例：${samples}。`)} {categoryHint}</p><a class="text-link" href={localePath(locale, character ? characterPath(character.id) : '/characters')}>{c('按角色继续找作品', 'Find more works by character', 'キャラクター別に探す')}</a></section>}

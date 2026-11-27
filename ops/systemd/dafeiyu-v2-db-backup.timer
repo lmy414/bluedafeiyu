@@ -1,0 +1,11 @@
+[Unit]
+Description=Back up PostgreSQL daily at 03:30 Hong Kong time
+
+[Timer]
+OnCalendar=*-*-* 03:30:00 Asia/Hong_Kong
+AccuracySec=1s
+Persistent=true
+Unit=dafeiyu-v2-db-backup.service
+
+[Install]
+WantedBy=timers.target

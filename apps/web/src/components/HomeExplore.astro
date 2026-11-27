@@ -1,0 +1,42 @@
+---
+import Icon from './Icon.astro';
+import RepositoryLinks from './RepositoryLinks.astro';
+import { guides, guidePath } from '../content/landing-copy';
+import { copy, localePath, tr, type Locale } from '../lib/i18n';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const c = (...text: string[]) => copy(locale, text);
+const t = (key: Parameters<typeof tr>[1]) => tr(locale, key);
+const pages = [
+  ['creators', '/creators', 'edit', c('按作者浏览图片合集、连载漫画和二创视频。', 'Browse image collections, serials and fan videos by creator.', '作者ごとに画像集、連載漫画、二次創作動画を探せます。')],
+  ['community', '/community', 'globe', c('加入 Discord 或 QQ 群，也可扫码关注微信。', 'Join on Discord or QQ, or follow the WeChat account.', 'DiscordやQQへの参加、WeChatのフォローはこちら。')],
+  ['events', '/events', 'clock', c('参与共创，回看往期投稿与活动记录。', 'Join collaborations and revisit past submissions and events.', '共同制作に参加し、過去の投稿やイベントを振り返れます。')],
+  ['projects', '/community-projects', 'topics', c('发现社区维护的图片档案、开源工具与设定图。', 'Discover community archives, open-source tools and design sheets.', 'コミュニティの画像アーカイブ、公開ツール、設定資料を紹介します。')],
+  ['links', '/friend-links', 'link', c('从朋友的网站继续发现有趣的二创。', 'Find more fan projects through our friends’ sites.', '友だちのサイトから、さらに二次創作に出会えます。')],
+  ['about', '/about', 'shield', c('了解站点、图片授权与署名规则。', 'Read about the archive, image licensing and attribution.', 'サイト、画像の利用許諾とクレジットについて。')],
+] as const;
+---
+
+<section class="home-explore" id="explore-community" aria-labelledby="explore-title">
+  <h2 class="visually-hidden" id="explore-title">{c('探索与社区', 'Explore & community', '作品とコミュニティを探す')}</h2>
+  <section class="explore-guides" aria-labelledby="explore-guides-title">
+    <h3 id="explore-guides-title">{c('专题导览', 'Fan art guides', 'ファンアートガイド')}</h3>
+    <ol class="explore-guide-list" role="list">
+      {guides.map((guide, index) => <li><a href={localePath(locale, guidePath(guide))}>
+        <span class="explore-guide-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+        <div><strong>{copy(locale, guide.name)}</strong><p>{copy(locale, guide.summary)}</p></div>
+        <Icon name="arrowRight" />
+      </a></li>)}
+    </ol>
+  </section>
+  <section class="explore-community" aria-labelledby="explore-community-title">
+    <h3 id="explore-community-title">{c('社区与生态', 'Community & ecosystem', 'コミュニティと関連サイト')}</h3>
+    <ul class="explore-entry-grid" role="list">
+      {pages.map(([key, href, icon, description]) => <li><a href={localePath(locale, href)}>
+        <Icon name={icon} />
+        <div><strong>{key === 'about' ? c('关于与版权', 'About & licensing', 'サイトと著作権') : t(key)}</strong><p>{description}</p></div>
+      </a></li>)}
+    </ul>
+    <RepositoryLinks {locale} compact />
+  </section>
+</section>

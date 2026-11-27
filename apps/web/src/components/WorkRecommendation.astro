@@ -1,0 +1,9 @@
+---
+import type { WorkPreview } from '../lib/work-view';
+interface Props { item?: WorkPreview }
+const { item } = Astro.props;
+---
+<a class="work-recommendation" href={item?.href} data-preview={item ? JSON.stringify(item) : undefined}>
+  <span class="wb-rec-media"><img src={item?.thumb} alt={item?.alt ?? ''} width={item?.thumbWidth} height={item?.thumbHeight} loading="lazy" decoding="async" referrerpolicy="no-referrer" /></span>
+  <span class="wb-rec-title">{item?.title}</span>
+</a>

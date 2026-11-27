@@ -1,0 +1,58 @@
+---
+import Icon from './Icon.astro';
+import { copy, htmlLang, localeNames, localePath, locales, tr, type Locale } from '../lib/i18n';
+import { additionalItems, navGroups } from '../lib/site';
+import { eventTitle } from '../lib/active-event';
+import type { EventItem } from '../lib/api';
+
+interface Props { locale: Locale; path: string; drawer?: boolean; activeEvent?: EventItem }
+const { locale, path, drawer = false, activeEvent } = Astro.props;
+const t = (key: Parameters<typeof tr>[1]) => tr(locale, key);
+const url = (href: string) => localePath(locale, href);
+const active = (href: string) => path === href || path.startsWith(`${href}/`) || (href === '/' && /^\/(categories|search|works)(\/|$)/.test(path));
+const eventTip = activeEvent && `${t('eventLive')} · ${eventTitle(locale, activeEvent)}`;
+---
+
+<aside class:list={['rail-sidebar', { 'rail-drawer': drawer }]} aria-label={t('nav')}>
+  <div class="rail-top">
+    <a class="rail-brand" href={url('/')} data-tip={t('site')} aria-label={t('site')}>
+      <img class="brand-mark" src="/avatar.png" alt="" width="32" height="32" />
+      <span class="rail-drawer-text">{t('site')}</span>
+    </a>
+    {drawer && <form method="dialog"><button class="icon-button" aria-label={t('close')} autofocus><Icon name="close" /></button></form>}
+  </div>
+  <nav class="rail-nav" aria-label={t('nav')}>
+    {navGroups.map(({ label, items }, index) => <>
+      {index > 0 && <hr class="rail-separator" role="separator" />}
+      <div class="rail-group" role="group" aria-label={copy(locale, label)}>
+        {drawer && <p class="rail-group-heading" aria-hidden="true">{copy(locale, label)}</p>}
+        {items.map(({ href, key, icon }) => {
+          const live = key === 'events' && eventTip;
+          const label = live ? `${t(key)} · ${live}` : t(key);
+          return <a class:list={['rail-item', { 'is-active': active(href), 'rail-event-live': live }]} href={url(href)} data-tip={label} aria-label={label} aria-current={path === href ? 'page' : undefined}>
+            <Icon name={icon} /><span class="rail-drawer-text">{t(key)}</span>
+            {live && <span class="event-live-dot" aria-hidden="true"></span>}
+          </a>;
+        })}
+      </div>
+    </>)}
+  </nav>
+  <div class="rail-bottom">
+    <hr class="rail-separator" role="separator" />
+    <details class="rail-more-wrap" data-disclosure>
+      <summary class="rail-item" data-tip={t('language')} aria-label={t('language')}><Icon name="globe" /><span class="rail-drawer-text">{t('language')}</span></summary>
+      <div class="rail-popover">
+        {locales.map((lang) => <a class="rail-popover-link" href={localePath(lang, path, Astro.url.search)} aria-current={lang === locale ? 'page' : undefined} lang={htmlLang[lang]} hreflang={htmlLang[lang]}>{localeNames[lang]}</a>)}
+      </div>
+    </details>
+    <button class="rail-item theme-toggle" type="button" aria-label={t('dark')} aria-pressed="false" data-tip={t('dark')} data-theme-toggle hidden>
+      <Icon name="moon" class="theme-moon" /><Icon name="sun" class="theme-sun" /><span class="rail-drawer-text">{t('dark')}</span>
+    </button>
+    <details class="rail-more-wrap" data-disclosure>
+      <summary class="rail-item" data-tip={t('more')} aria-label={t('more')}><Icon name="more" /><span class="rail-drawer-text">{t('more')}</span></summary>
+      <div class="rail-popover">
+        {additionalItems.map(({ href, key }) => <a class="rail-popover-link" href={url(href)} aria-current={href === path ? 'page' : undefined}>{t(key)}</a>)}
+      </div>
+    </details>
+  </div>
+</aside>

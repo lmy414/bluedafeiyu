@@ -1,0 +1,21 @@
+---
+import Icon from './Icon.astro';
+import type { IconName } from '../../../../packages/shared/src/design/icons';
+interface Props { title: string; href: string; image?: string; width?: number; height?: number; description?: string; note?: string; icon: IconName; external?: boolean; variant?: 'character' | 'topic' }
+const { title, href, image, width, height, description, note, icon, external, variant } = Astro.props;
+const portraitCover = variant === 'topic' && Boolean(width && height && width / height < .8);
+---
+
+<a class="directory-card-link" href={href} target={external ? '_blank' : undefined} rel={external ? 'noopener' : undefined}>
+  <article class:list={['directory-card', variant && `directory-card--${variant}`]}>
+    {image ? portraitCover ? <div class="directory-media directory-composite">
+      <img class="directory-backdrop" src={image} alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+      <img class="directory-foreground" src={image} alt="" {width} {height} loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+    </div> : <img class="directory-media directory-image" src={image} alt="" {width} {height} loading="lazy" decoding="async" referrerpolicy="no-referrer" /> : <div class="directory-media"><Icon name={icon} /></div>}
+    <div class="directory-copy">
+      <h2>{title}</h2>
+      {description && <p>{description}</p>}
+      {note && <small class="mono">{note}</small>}
+    </div>
+  </article>
+</a>

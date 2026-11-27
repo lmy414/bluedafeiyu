@@ -1,0 +1,80 @@
+---
+import Icon from './Icon.astro';
+import SubmitSidebar from './SubmitSidebar.astro';
+import { categoryIds, field, type Taxon } from '../lib/api';
+import { copy, localePath, tr, type Locale } from '../lib/i18n';
+import { categoryName, issueUrl } from '../lib/site';
+interface Props { locale: Locale; mode: 'single' | 'zip' | 'creator'; characters: Taxon[]; categories: Taxon[] }
+const { locale, mode, characters, categories } = Astro.props;
+const t = (key: Parameters<typeof tr>[1]) => tr(locale, key);
+const c = (zh: string, en: string, ja: string) => copy(locale, [zh, en, ja]);
+const sitekey = (process.env.PUBLIC_TURNSTILE_SITEKEY || import.meta.env.PUBLIC_TURNSTILE_SITEKEY || '').trim();
+const choices = [ ['single', 'single'], ['zip', 'bulk'], ['creator', 'register'] ] as const;
+const archive = mode === 'zip';
+const creator = mode === 'creator';
+const endpoint = creator ? '/api/v1/creators' : `/api/v1/submissions${archive ? '/zip' : ''}`;
+const canSubmit = Boolean(sitekey) && (creator || characters.length > 0);
+const pickerText = archive ? c('点击选择 ZIP 压缩包，或拖放到此处', 'Choose a ZIP archive or drop it here', 'ZIPを選択するか、ここにドロップ') : c('点击选择图片，或拖放到此处', 'Choose an image or drop it here', '画像を選択するか、ここにドロップ');
+const types = archive ? '.zip,application/zip,application/x-zip-compressed' : '.png,.jpg,.jpeg,.gif,.webp,.apng,image/png,image/jpeg,image/gif,image/webp,image/apng';
+---
+
+<div class="submit-shell" data-submit-workspace>
+  <div class="submit-main">
+  <nav class="submit-tabs" aria-label={t('submit')}>
+    {choices.map(([value, label]) => <a class="console-btn submit-tab" aria-current={mode === value ? 'page' : undefined} href={localePath(locale, '/submit', value === 'single' ? '' : `?mode=${value}`)}>{t(label)}</a>)}
+  </nav>
+  <form class="submit-form" action={endpoint} method="post" enctype="multipart/form-data" data-submit={mode}
+    data-sending={t('sending')} data-success={t('success')} data-error={t('submitFail')} data-invalid={t('invalid')}
+    data-verify={t('verify')} data-limit={t('limited')} data-size={t('tooLarge')} data-offline={t('submitUnavailable')} data-duplicate={t('duplicate')}>
+    {creator ? <>
+      <div class="field"><label for="homepage">{t('homepage')}</label><input id="homepage" name="homepage" type="text" required maxlength="2048" placeholder="https://space.bilibili.com/…" autocapitalize="none" spellcheck="false" /></div>
+      <div class="field"><label for="intro">{t('creatorIntro')}</label><textarea id="intro" name="intro" rows="3" maxlength="500"></textarea></div>
+    </> : <>
+      <div class="field upload-field" data-upload
+        data-format-error={c('文件格式不受支持，请按提示选择文件。', 'Choose a file in one of the supported formats.', '対応する形式のファイルを選択してください。')}
+        data-single-error={c('请一次选择一个文件。', 'Choose one file at a time.', 'ファイルは一度に1つ選択してください。')}
+        data-decode-error={c('无法读取此图片，请选择一张可以正常打开的图片。', 'This image could not be read. Choose a readable image.', 'この画像を読み込めません。開ける画像を選択してください。')}>
+        <input class="upload-input visually-hidden" id="upload-file" type="file" name={archive ? 'zip' : 'image'} accept={types} aria-describedby="upload-hint upload-error" required />
+        <label class="upload-zone" for="upload-file" data-dropzone>
+          <span class="archive-mark"><Icon name={archive ? 'folderZip' : 'submit'} /></span>
+          <span><strong data-upload-empty-label>{pickerText}</strong><strong data-upload-replace-label hidden>{c('重新选择文件', 'Choose a different file', 'ファイルを選び直す')}</strong>
+            {!archive && <span class="upload-paste">{c('支持 Ctrl+V / ⌘V 粘贴图片', 'Paste an image with Ctrl+V or ⌘V', 'Ctrl+V／⌘Vで画像を貼り付け')}</span>}
+            <small id="upload-hint">{t(archive ? 'zipHint' : 'fileHint')}</small>
+          </span>
+        </label>
+        <div class="upload-inline" data-upload-selected hidden>
+          {!archive && <span data-file-image-frame class="upload-inline-image" hidden><img data-file-image alt="" /></span>}
+          <p><strong data-file-name></strong><span class="muted mono" data-file-meta></span></p>
+          <button class="console-btn" type="button" data-upload-clear><Icon name="trash" />{t('clearSelection')}</button>
+        </div>
+        <p id="upload-error" class="form-message" data-error="true" data-upload-error aria-live="polite"></p>
+      </div>
+      <div class="field"><label for="work-name">{t('name')}</label><input id="work-name" name="name" required maxlength="120" /></div>
+      <div class="field"><label for="work-description">{t('description')}</label><textarea id="work-description" name="description" rows="3" maxlength="500"></textarea></div>
+      <div class="field"><label for="source-url">{c('原始来源链接（选填）', 'Original source URL (optional)', '元の出典URL（任意）')}</label><input id="source-url" name="sourceUrl" type="url" maxlength="2048" /></div>
+      <div class="form-grid">
+        <div class="field"><label for="primary-character">{t('mainCharacter')}</label><select id="primary-character" name="character" required><option value="">{t('choose')}</option>{characters.map((item) => <option value={item.id}>{field(locale, item, 'name')}</option>)}</select></div>
+        <div class="field"><label for="work-category">{t('category')}</label><select id="work-category" name="categoryId" required><option value="">{t('choose')}</option>{categoryIds.map((id) => <option value={id}>{categoryName(locale, id, categories.find((item) => item.id === id))}</option>)}</select></div>
+      </div>
+      <fieldset><legend>{t('extraCharacters')}</legend><div class="character-choices">{characters.map((item) => <label class="check-line"><input name="characterIds" type="checkbox" value={item.id} />{field(locale, item, 'name')}</label>)}</div></fieldset>
+      <label class="check-line"><input type="checkbox" name="nonAi" value="true" />{t('nonAi')}</label>
+      <div class="form-grid">
+        <div class="field"><label for="credit-name">{t('creditName')}</label><input id="credit-name" name="creditName" autocomplete="nickname" maxlength="120" /></div>
+        <div class="field"><label for="credit-url">{t('creditUrl')}</label><input id="credit-url" name="creditUrl" type="url" autocomplete="url" maxlength="2048" /></div>
+      </div>
+      <label class="check-line"><input type="checkbox" name="confirmRights" value="true" required />{t('rights')}</label>
+      <label class="check-line"><input type="checkbox" name="confirmReview" value="true" required />{t('review')}</label>
+      <label class="check-line"><input type="checkbox" name="confirmFanProject" value="true" required />{t('fan')}</label>
+    </>}
+    {canSubmit && <div data-turnstile-sitekey={sitekey}></div>}
+    {!canSubmit && <p class="form-hint">{t('submitUnavailable')}</p>}
+    {canSubmit && <noscript><p class="form-hint">{t('submitUnavailable')}</p></noscript>}
+    <p class="form-message" role="status" tabindex="-1" data-submit-message></p>
+    <div class="button-row">
+      <button class="console-btn console-btn-primary" type="submit" disabled><Icon name="submit" />{t(creator ? 'register' : 'submit')}</button>
+      <a class="console-btn" href={`${issueUrl}/new/choose`}>GitHub <Icon name="externalLink" /></a>
+    </div>
+  </form>
+  </div>
+  <SubmitSidebar {locale} {mode} />
+</div>

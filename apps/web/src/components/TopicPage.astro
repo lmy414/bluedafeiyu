@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from './Icon.astro';
+import WorkGrid from './WorkGrid.astro';
+import CreatorAvatar from './CreatorAvatar.astro';
+import ComicReader from './ComicReader.astro';
+import { topicReading } from '../content/topic-reading';
+import { api, field, publicUrl, topicWorks, workMedia, type Page, type Work } from '../lib/api';
+import { copy, localePath, localizedText, tr, type Locale } from '../lib/i18n';
+import { creatorPath, pageHref, pageNumber, readerPath, siteOrigin, topicPath, workPath } from '../lib/site';
+import { creatorChannels, topicCreator } from '../lib/creators';
+import type { loadTopic } from '../lib/page-data';
+interface Props { locale: Locale; path: string; id: string; readerPage?: number; data: Awaited<ReturnType<typeof loadTopic>> }
+const { locale, path, id, readerPage, data } = Astro.props;
+const { reader, topic, characters } = data;
+const t = (key: Parameters<typeof tr>[1]) => tr(locale, key);
+const url = (href: string) => localePath(locale, href);
+const name = topic ? field(locale, topic, 'name') : '';
+const description = topic ? field(locale, topic, 'summary') : '';
+const title = readerPage ? `${name} · ${t('originalPage')} ${readerPage}` : name;
+const cover = topic?.coverWork ?? topic?.cover;
+const coverMedia = cover && workMedia(cover);
+const coverUrl = publicUrl(topic?.coverUrl) || coverMedia?.thumb;
+const allWorks = topic ? topicWorks(topic) : [];
+const page = pageNumber(Astro.url.searchParams.get('page'));
+const perPage = 24;
+const listing: Page<Work> = { page, items: allWorks.slice((page - 1) * perPage, page * perPage), total: allWorks.length, nextPage: page * perPage < allWorks.length ? page + 1 : null, unavailable: false };
+const next = listing.nextPage ? pageHref(locale, path, Astro.url.searchParams, listing.nextPage) : undefined;
+const previous = page > 1 ? pageHref(locale, path, Astro.url.searchParams, page - 1) : undefined;
+const pack = allWorks.flatMap((work) => {
+  const { original, format } = workMedia(work);
+  return original ? [{ original, format, name: field(locale, work, 'name') || work.slug }] : [];
+});
+const pages = topic?.reader?.pages ?? topic?.pages ?? [];
+const total = reader?.totalPages ?? topic?.reader?.totalPages ?? topic?.readerConfig?.totalPages ?? 0;
+const presentPages = new Set(pages.map((entry) => entry.pageNumber));
+const credits = topic?.readerConfig?.credits;
+const translatedCredits = locale === 'en' || locale === 'ja' ? topic?.readerConfig?.creditsI18n?.[locale] : undefined;
+const credit = localizedText(locale, typeof credits === 'string' ? credits : '', typeof translatedCredits === 'string' ? translatedCredits : '');
+const work = reader?.work;
+const media = work && workMedia(work);
+const topicAuthor = !reader && topicCreator(topic);
+const profile = topicAuthor && (topicAuthor.uid || topic?.author?.creatorId || topic?.author?.id) ? await api.creator(topicAuthor.id, locale) : undefined;
+const author = topicAuthor && (profile?.ok ? { ...topicAuthor, ...profile.value.creator, name: topicAuthor.name, intro: topicAuthor.intro || profile.value.creator.intro, channels: [...(topicAuthor.channels ?? []), ...(profile.value.creator.channels ?? [])] } : topicAuthor);
+const channels = author ? creatorChannels(author) : [];
+const notes = Object.hasOwn(topicReading, id) ? topicReading[id] : undefined;
+const crumbs = [{ label: t(topic?.isSerial ? 'serials' : 'topics'), href: topic?.isSerial ? '/serials' : '/topics' }, ...(readerPage ? [{ label: name, href: topicPath(id) }] : []), { label: readerPage ? `${t('originalPage')} ${readerPage}` : name }];
+const itemList = { '@type': 'ItemList', itemListElement: listing.items.map((item, index) => ({ '@type': 'ListItem', position: (page - 1) * perPage + index + 1, name: field(locale, item, 'name'), url: new URL(url(workPath(item.slug)), siteOrigin(Astro.url)).href })) };
+---
+
+  <BaseLayout {locale} {path} {title} {description} {crumbs} readerMode={Boolean(reader)} image={media?.display || coverUrl} count={!reader ? topic?.isSerial ? total : listing.total : undefined} countType={topic?.isSerial ? 'entries' : 'count'}
+    jsonLd={{ '@type': reader ? 'ComicIssue' : topic?.isSerial ? 'ComicSeries' : 'CollectionPage', image: media?.display || coverUrl, position: readerPage, mainEntity: !reader && !topic?.isSerial ? itemList : undefined, author: topic?.author?.name ? { '@type': 'Person', name: topic.author.name, url: publicUrl(topic.author.url) } : undefined }}>
+    {reader ? <ComicReader {locale} {id} {name} {credit} {reader} /> : <>
+      <section class="topic-hero">
+        <div>
+          <h1 class="page-title">{name}</h1>
+          {description && <p>{description}</p>}
+           {author && <div class="topic-author"><CreatorAvatar creator={author} /><div><a class="text-link" href={url(creatorPath(author.id))}>{localizedText(locale, author.name)}</a>{author.intro && <p>{field(locale, author, 'intro')}</p>}</div></div>}
+           {channels.length > 0 && <div class="button-row">{channels.map(({ href, label }) => <a class="console-btn" {href} target="_blank" rel="noopener noreferrer">{label}<Icon name="externalLink" /></a>)}</div>}
+          {topic?.isSerial && total > 0 && <p><a class="console-btn console-btn-primary" href={url(readerPath(id, 1))}><Icon name="serials" />{t('startRead')}</a></p>}
+          {!topic?.isSerial && pack.length > 0 && <div data-zip data-topic-id={id} data-name={name} data-files={JSON.stringify(pack)} data-loading={t('zipCollect')} data-ready={t('zipReady')} data-cancelled={t('zipCancelled')} data-error={t('downloadFail')}>
+            <button class="console-btn console-btn-primary" type="button" data-zip-start><Icon name="folderZip" />{t('zip')}</button>
+            <div class="zip-progress" data-zip-controls hidden><progress value="0" max={pack.length} aria-label={t('zip')}></progress><button class="console-btn" type="button" data-zip-cancel>{t('cancel')}</button></div>
+            <p role="status" data-zip-status></p>
+          </div>}
+        </div>
+        {coverUrl && <div><img src={coverUrl} alt={name} width={coverMedia?.thumbWidth} height={coverMedia?.thumbHeight} decoding="async" referrerpolicy="no-referrer" /></div>}
+      </section>
+      {notes && <section class="archive-panel topic-reading"><h2>{copy(locale, notes.heading)}</h2><p>{copy(locale, notes.note)}</p><p>{copy(locale, ['收录顺序与作品范围按原合集展示，图片来源与授权记录见各作品详情。', 'The works follow the original collection order. See each work for its source and permissions.', '元の作品集の順序で表示します。出典と利用許諾は各作品の詳細をご確認ください。'])}</p></section>}
+      {topic?.isSerial ? <>
+        {total > 0 && <nav class="reader-index" aria-label={t('originalPage')}>
+          {Array.from({ length: total }, (_, index) => index + 1).map((original) => <a class="console-btn" href={url(readerPath(id, original))} aria-label={`${t('originalPage')} ${original}${presentPages.has(original) ? '' : ` · ${t('missing')}`}`} data-missing={presentPages.has(original) ? undefined : ''}>{original}</a>)}
+        </nav>}
+        {credit && <p class="muted">{credit}</p>}
+      </> : <WorkGrid {locale} {listing} characters={characters?.items} {next} {previous} />}
+    </>}
+  </BaseLayout>

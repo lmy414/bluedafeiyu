@@ -1,0 +1,10 @@
+[Unit]
+Description=Run Bilibili video sync every minute
+
+[Timer]
+OnCalendar=minutely
+AccuracySec=1s
+Unit=dafeiyu-v2-video-sync.service
+
+[Install]
+WantedBy=timers.target

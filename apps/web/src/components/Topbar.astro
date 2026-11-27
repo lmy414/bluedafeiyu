@@ -1,0 +1,30 @@
+---
+import Icon from './Icon.astro';
+import { localePath, tr, type Locale } from '../lib/i18n';
+import { segment, sourceRepository } from '../lib/site';
+import { eventPopupLabel, eventTitle } from '../lib/active-event';
+import type { EventItem } from '../lib/api';
+
+interface Props { locale: Locale; activeEvent?: EventItem }
+const { locale, activeEvent } = Astro.props;
+const t = (key: Parameters<typeof tr>[1]) => tr(locale, key);
+const q = Astro.url.searchParams.get('q')?.trim().slice(0, 100) ?? '';
+const liveTitle = activeEvent && `${t('eventLive')} · ${eventTitle(locale, activeEvent)}`;
+---
+
+<header class="topbar">
+  <button class="icon-button menu-toggle" type="button" aria-label={t('openNav')} aria-haspopup="dialog" aria-controls="mobile-navigation" data-nav-toggle><Icon name="menu" /></button>
+  <form class="top-search" action={localePath(locale, '/search')} method="get" role="search" aria-label={t('search')}>
+    <button type="submit" aria-label={t('search')}><Icon name="search" /></button>
+    <input type="search" name="q" placeholder={t('searchLabel')} value={q} aria-label={t('searchLabel')} maxlength="100" data-global-search />
+    <kbd class="kbd search-kbd" aria-hidden="true">/</kbd>
+  </form>
+  <div class="top-actions">
+    {activeEvent && <a class="console-btn top-live-event" href={localePath(locale, `/events/${segment(activeEvent.slug)}`)} aria-label={liveTitle} title={liveTitle}>
+      <span class="event-live-dot" aria-hidden="true"></span><Icon name="events" /><span class="top-live-state">{t('eventLive')}</span><span class="top-live-label">{eventPopupLabel(locale, activeEvent, 'shortLabel') || eventTitle(locale, activeEvent)}</span>
+    </a>}
+    <a class="console-btn top-github" href={sourceRepository} target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub · lmy414/bluedafeiyu"><Icon name="github" /></a>
+    <a class="console-btn top-community" href={localePath(locale, '/community')} aria-label={t('community')}><Icon name="comment" /><span>{t('community')}</span></a>
+    <a class="console-btn console-btn-primary" href={localePath(locale, '/submit')}><Icon name="submit" /><span>{t('submit')}</span></a>
+  </div>
+</header>

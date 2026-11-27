@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import history from '../content/changelog.json';
+import { copy, localePath, tr, type Locale } from '../lib/i18n';
+import { sourceRepository } from '../lib/site';
+interface Props { locale: Locale; path: string }
+const { locale, path } = Astro.props;
+const t = (key: Parameters<typeof tr>[1]) => tr(locale, key);
+const title = t('changelog');
+const lead = copy(locale, ['本站的变更记录，大事小事都记一笔。', 'A record of updates to the archive, big and small.', 'アーカイブの大小さまざまな変更を記録しています。']);
+const entries = [{ date: '2026-11-27', title: ['蓝色大肥鱼 v2 架构重构与蓝白工作台上线', 'Blue Dafeiyu v2 architecture and blue-and-white workspace launch', '藍色大肥魚 v2の再構築と青白ワークスペースの公開'], points: [
+  ['前台改用 Astro 服务端渲染和 Hono API，保留作品地址、四语路由和原有评论串。', 'Moved the frontend to server-rendered Astro and a Hono API, preserving work URLs, four language routes and existing discussions.', 'AstroのサーバーレンダリングとHono APIに移行し、作品URL、4言語ルート、既存のコメントを引き継ぎました。'],
+  ['上线蓝白工作台、最短列瀑布流、看图台与连载阅读器，并恢复社区与开放数据入口。', 'Launched the blue-and-white workspace, shortest-column gallery, image viewer and serial reader, and restored community and open-data pages.', '青白のワークスペース、最短列ギャラリー、画像ビューアー、連載リーダーを導入し、コミュニティと公開データへの入口を復元しました。'],
+] }, ...history];
+const nav = [['/community', 'community'], ['/about', 'about'], ['/events/current', 'events'], ['/friend-links', 'links']] as const;
+---
+
+<BaseLayout {locale} {path} {title} description={lead}>
+  <div class="archive-document changelog-page">
+    <header class="archive-heading"><h1 class="page-title">{title}</h1><p>{lead}</p></header>
+    <nav class="archive-chips" aria-label={t('more')}>{nav.map(([href, key]) => <a class="filter-pill" href={localePath(locale, href)}>{t(key)}</a>)}</nav>
+    <ol class="archive-timeline changelog-timeline">
+      {entries.map((entry, index) => <li><article class:list={['archive-panel', { 'changelog-latest': index === 0 }]}><time class="mono" datetime={entry.date}>{entry.date}</time><div><h2>{copy(locale, entry.title)}</h2><ul>{entry.points.map((point) => <li>{copy(locale, point)}</li>)}</ul></div></article></li>)}
+    </ol>
+    <p class="muted">{copy(locale, ['更早的完整变更记录见仓库归档。', 'The repository preserves the earlier changelog.', 'それ以前の変更履歴はリポジトリのアーカイブにあります。'])} <a class="text-link mono" href={`${sourceRepository}/blob/main/archive/2026-09-24/CHANGELOG.md`} target="_blank" rel="noopener noreferrer">CHANGELOG.md</a></p>
+  </div>
+</BaseLayout>

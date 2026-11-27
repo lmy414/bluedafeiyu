@@ -1,0 +1,50 @@
+---
+import Icon from './Icon.astro';
+import { field, type SiteCounts, type Taxon } from '../lib/api';
+import { copy, htmlLang, localePath, tr, type Locale } from '../lib/i18n';
+import { characterPath } from '../lib/site';
+interface Props { locale: Locale; counts?: SiteCounts; characters?: Taxon[] }
+const { locale, counts, characters = [] } = Astro.props;
+const t = (key: Parameters<typeof tr>[1]) => tr(locale, key);
+const href = (path: string) => localePath(locale, path);
+const c = (zh: string, en: string, ja: string) => copy(locale, [zh, en, ja]);
+const digits = new Intl.NumberFormat(htmlLang[locale]);
+const combined = counts?.topics == null && counts?.serials == null ? undefined : (counts?.topics ?? 0) + (counts?.serials ?? 0);
+const metrics = [
+  { icon: 'gallery', label: c('收录作品', 'Archived works', '収録作品'), value: counts?.works, path: '#latest-works' },
+  { icon: 'characters', label: c('收录角色', 'Characters', '収録キャラクター'), value: counts?.characters, path: '/characters' },
+  { icon: 'videos', label: c('二创视频', 'Fan videos', '二次創作動画'), value: counts?.videos, path: '/videos' },
+  { icon: 'topics', label: c('专题与连载', 'Topics & series', '特集・連載'), value: combined, path: '/topics' },
+  { icon: 'eye', label: c('累计浏览', 'Total views', '累計閲覧数'), value: counts?.totalViews },
+  { icon: 'download', label: c('累计下载', 'Total downloads', '累計ダウンロード数'), value: counts?.totalDownloads },
+] as const;
+const popular = ['deepseek', 'claude', 'gemini'].flatMap((id) => {
+  const character = characters.find((entry) => entry.id === id);
+  return character ? [{ label: field(locale, character, 'name'), path: characterPath(id) }] : [];
+});
+const quickLinks = [...popular, { label: t('meme'), path: '/categories/meme' }, { label: t('comic'), path: '/categories/comic' }];
+---
+
+<section class="home-hero" aria-label={t('site')}>
+  <div class="hero-intro">
+    <h1 class="hero-brand">{t('site')}</h1>
+    <p class="hero-lead">{t('lead')}</p>
+    <form class="hero-search" action={href('/search')} role="search" aria-label={t('search')}>
+      <button type="submit" aria-label={t('search')}><Icon name="search" /></button>
+      <input type="search" name="q" aria-label={t('searchLabel')} placeholder={t('searchLabel')} maxlength="100" />
+    </form>
+    <nav class="hero-quicklinks" aria-label={t('quickBrowse')}>
+      {quickLinks.map((item) => <a class="filter-pill" href={href(item.path)}>{item.label}</a>)}
+    </nav>
+  </div>
+  <ul class="hero-metrics" role="list" aria-label={c('收录与访问统计', 'Archive and traffic statistics', '収録・アクセス統計')}>
+    {metrics.map(metric => {
+      const path = 'path' in metric ? metric.path.startsWith('#') ? metric.path : href(metric.path) : undefined;
+      const Card = path ? 'a' : 'div';
+      return <li><Card class="hero-metric" href={path}>
+        <span class="hero-metric-label"><Icon name={metric.icon} />{metric.label}</span>
+        <strong>{typeof metric.value === 'number' && Number.isFinite(metric.value) ? digits.format(metric.value) : '—'}</strong>
+      </Card></li>;
+    })}
+  </ul>
+</section>
