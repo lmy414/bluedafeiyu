@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HomeHero from './HomeHero.astro';
+import CharacterProfile from './CharacterProfile.astro';
+import WorkGrid from './WorkGrid.astro';
+import Icon from './Icon.astro';
+import HomeExplore from './HomeExplore.astro';
+import GalleryReading from './GalleryReading.astro';
+import { homeMeta, characterSearchAliases } from '../content/landing-copy';
+import { field, mediaUrl } from '../lib/api';
+import { copy, localePath, tr, type Locale } from '../lib/i18n';
+import { characterQuery } from '../lib/character-filter';
+import { categoryName, characterDescription, pageHref, siteOrigin, workPath } from '../lib/site';
+import type { loadGallery } from '../lib/page-data';
+interface Props { locale: Locale; path: string; data: Awaited<ReturnType<typeof loadGallery>> }
+const { locale, path, data } = Astro.props;
+const { q, tag, page, isHome, isGif, category: currentCategory, listing, characters, categories, profile, categoryTotals, counts } = data;
+const t = (key: Parameters<typeof tr>[1]) => tr(locale, key);
+const params = Astro.url.searchParams;
+const character = profile?.ok ? profile.value : undefined;
+const title = character ? field(locale, character, 'name') : isHome ? t('site') : isGif ? t('gifs') : q || path === '/search' ? t('search') : currentCategory ? categoryName(locale, currentCategory, categories.items.find((item) => item.id === currentCategory)) : path === '/categories' ? t('categories') : t('gallery');
+const crumbs = character ? [{ label: t('characters'), href: '/characters' }, { label: title }] : undefined;
+const next = listing.nextPage ? pageHref(locale, path, params, listing.nextPage) : undefined;
+const previous = page > 1 ? pageHref(locale, path, params, page - 1) : undefined;
+const portrait = character && mediaUrl(character.portraitUrl, character.portraitKey);
+const home = isHome && !listing.unavailable ? homeMeta(counts?.works ?? listing.total, locale) : undefined;
+const knownAlias = character && (characterSearchAliases as Partial<Record<string, string[]>>)[character.id];
+const alias = Array.isArray(knownAlias) ? copy(locale, knownAlias) : '';
+const search = path === '/search';
+const showHeading = path !== '/' || Boolean(q || tag);
+const heading = [title, q, tag && `#${tag}`].filter(Boolean).join(' · ');
+const clearParams = new URLSearchParams(params);
+for (const key of ['q', 'tag', 'page', 'cursor']) clearParams.delete(key);
+const seoTitle = home?.title ?? (character ? `${title}${alias ? ` (${alias})` : ''} · ${copy(locale, ['二创作品档案', 'Fan art archive', '二次創作アーカイブ'])} · ${t('site')}` : search ? `${copy(locale, ['搜索 AI 娘作品、角色与标签', 'Search AI-girl works, characters and tags', 'AI娘の作品・キャラクター・タグを検索'])} · ${t('site')}` : undefined);
+const countDescription = !listing.unavailable && copy(locale, [`浏览 ${listing.total} 件${title}作品，查看原图、来源、署名与使用许可。`, `Browse ${listing.total} works in ${title}, with originals, sources, credits and usage permissions.`, `${title}の作品${listing.total}件を閲覧し、元画像、出典、クレジット、利用許諾を確認できます。`]);
+const characterIntro = character && characterDescription(locale, character);
+const description = home?.description || (search ? copy(locale, ['用作品名、角色别名、图片说明或标签查找已收录的 AI 娘作品，并按角色与作品类型筛选。', 'Search archived AI-girl art by title, character alias, description or tag. Filter by character and artwork type.', '作品名、キャラクターの別名、説明、タグからAI娘の作品を検索し、キャラクターや作品の種類で絞り込めます。']) : [characterIntro, countDescription].filter(Boolean).join(' ')) || undefined;
+const itemList = { '@type': 'ItemList', itemListElement: listing.items.map((item, index) => ({ '@type': 'ListItem', position: (page - 1) * 24 + index + 1, name: field(locale, item, 'name'), url: new URL(localePath(locale, workPath(item.slug)), siteOrigin(Astro.url)).href })) };
+---
+
+  <BaseLayout {locale} {path} {title} {seoTitle} {description} {crumbs} tabs={!character && !q && path !== '/search' && !isGif} category={currentCategory} count={listing.unavailable ? undefined : listing.total} sortable characterOptions={character ? [] : characters.items} categoryOptions={categories.items} image={portrait || undefined}
+    noindex={listing.unavailable || search || Boolean(q)} jsonLd={character ? { '@type': 'ProfilePage', mainEntity: { '@type': 'Thing', name: title, description, image: portrait || undefined }, hasPart: itemList } : isHome ? undefined : { '@type': 'CollectionPage', mainEntity: itemList }}>
+    {isHome ? <HomeHero {locale} {counts} characters={characters.items} /> : character ? <CharacterProfile {character} {locale} category={currentCategory} categories={categories.items} categoryTotals={categoryTotals ?? []} /> : showHeading && <div class="console-page-head"><h1 class="page-title">{heading}</h1>{(q || tag) && <a class="console-btn" href={localePath(locale, path, characterQuery(clearParams))}><Icon name="close" />{q ? t('clear') : t('clearSelection')}</a>}</div>}
+    {isHome && <h2 class="gallery-heading" id="latest-works" tabindex="-1">{t('latestWorks')}</h2>}
+    <WorkGrid {locale} {listing} characters={characters.items} {next} {previous} searching={Boolean(q)} />
+    {isHome && <HomeExplore {locale} />}
+    {(character || currentCategory) && <GalleryReading {locale} {character} {title} category={currentCategory} items={listing.items} categories={categories.items} totals={categoryTotals} />}
+  </BaseLayout>

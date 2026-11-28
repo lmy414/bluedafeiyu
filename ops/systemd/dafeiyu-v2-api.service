@@ -1,0 +1,23 @@
+[Unit]
+Description=蓝色大肥鱼 v2 API and management console
+Wants=network-online.target
+After=network-online.target postgresql.service
+
+[Service]
+Type=exec
+User=dafeiyu-v2
+Group=dafeiyu-v2
+WorkingDirectory=/srv/new-business/dafeiyu-v2/apps/api
+EnvironmentFile=/etc/dafeiyu-v2/api.env
+ExecStart=/usr/bin/node dist/index.js
+Restart=on-failure
+RestartSec=3s
+TimeoutStopSec=30s
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+UMask=0027
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CreatorCard from './CreatorCard.astro';
+import PageList from './PageList.astro';
+import Icon from './Icon.astro';
+import { creatorDirectory } from '../lib/creators';
+import { copy, localePath, tr, type Locale } from '../lib/i18n';
+import { pageNumber } from '../lib/site';
+interface Props { locale: Locale; path: string }
+const { locale, path } = Astro.props;
+const listing = await creatorDirectory(locale, pageNumber(Astro.url.searchParams.get('page')));
+if (listing.unavailable) { Astro.response.status = 503; Astro.response.headers.set('Cache-Control', 'no-store'); }
+const title = tr(locale, 'creators');
+const description = copy(locale, ['浏览社区作者的图片作品与合集、连载漫画和二创视频。点击作者进入专属档案。', 'Browse community creators’ images and collections, serial comics and fan videos. Open a creator’s profile to explore their work.', 'コミュニティの作者ごとに画像と作品集、連載漫画、二次創作動画を探せます。作者のプロフィールから作品をご覧ください。']);
+---
+
+<BaseLayout {locale} {path} {title} {description} count={listing.unavailable ? undefined : listing.total} countType="entries" jsonLd={{ '@type': 'CollectionPage' }}>
+  <div class="archive-document">
+    <header class="archive-heading archive-heading-actions"><div><h1 class="page-title">{title}</h1><p>{description}</p></div><a href={localePath(locale, '/submit?mode=creator')} class="console-btn console-btn-primary"><Icon name="videos" />{copy(locale, ['视频作者登记', 'Register as a video creator', '動画作者の登録'])}</a></header>
+    <div class="archive-grid creator-grid">{listing.items.map((creator) => <CreatorCard {locale} {creator} />)}</div>
+    <PageList {locale} {path} {listing} />
+  </div>
+</BaseLayout>

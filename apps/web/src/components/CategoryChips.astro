@@ -1,0 +1,12 @@
+---
+import type { Taxon } from '../lib/api';
+import { htmlLang, localePath, type Locale } from '../lib/i18n';
+import { categoryName, characterPath } from '../lib/site';
+interface Props { locale: Locale; character: string; totals: { id: string; total?: number }[]; categories: Taxon[] }
+const { locale, character, totals, categories } = Astro.props;
+const digits = new Intl.NumberFormat(htmlLang[locale]);
+---
+
+<div class="archive-chips">
+  {totals.filter(({ total }) => total !== undefined && total > 0).map(({ id, total }) => <a class="filter-pill" href={localePath(locale, characterPath(character), `?${new URLSearchParams({ category: id })}`)}>{categoryName(locale, id, categories.find((item) => item.id === id))}<span class="mono">{digits.format(total!)}</span></a>)}
+</div>

@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LinkCard from './LinkCard.astro';
+import Icon from './Icon.astro';
+import { api, field, mediaUrl, publicUrl, type FriendLink } from '../lib/api';
+import { copy, htmlLang, localePath, tr, type Locale } from '../lib/i18n';
+import { contentRepository, issueUrl, sourceRepository } from '../lib/site';
+interface Props { locale: Locale; path: string; projects: boolean }
+const { locale, path, projects } = Astro.props;
+const c = (...text: string[]) => copy(locale, text);
+const t = (key: Parameters<typeof tr>[1]) => tr(locale, key);
+const data = await api.links(locale);
+if (data.unavailable) { Astro.response.status = 503; Astro.response.headers.set('Cache-Control', 'no-store'); }
+const filters = { all: t('all'), owner: c('站长项目', 'Maintainer projects', '運営者のプロジェクト'), meme: t('meme'), setting: t('setting'), other: t('other') };
+type Filter = keyof typeof filters;
+const selected = Astro.url.searchParams.get('category');
+const current = selected && Object.hasOwn(filters, selected) ? selected as Filter : 'all';
+const projectsById: Partial<Record<string, Filter>> = { 'ai-girl-stickers': 'owner', bluedafeiyu: 'owner', 'ai-girl-gallery': 'meme', 'ai-chan-sheets': 'setting' };
+const group = (item: FriendLink): Filter => {
+  const value = item.projectCategory ?? item.category;
+  return value && value !== 'all' && Object.hasOwn(filters, value) ? value as Filter : projectsById[item.id] ?? 'other';
+};
+const valid = data.items.filter((item) => publicUrl(item.url));
+const catalog = valid.filter((item) => projects ? item.kind === 'project' : item.kind === 'friend' || item.category === 'website');
+if (projects && catalog.some((item) => item.id === 'ai-girl-stickers') && !catalog.some((item) => item.id === 'ai-girl-gallery')) {
+  catalog.push({ id: 'ai-girl-gallery', kind: 'project', url: contentRepository, name: 'AI 娘表情包图库', description: '梗图与表情包素材仓，支持打包下载与投稿。', i18n: { en: { name: 'AI girl meme gallery', description: 'A meme and sticker archive with batch downloads and submissions.' }, ja: { name: 'AI娘のスタンプギャラリー', description: 'まとめてダウンロードや投稿ができるミーム・スタンプのアーカイブ。' } } });
+}
+const items = !projects || current === 'all' ? catalog : catalog.filter((item) => group(item) === current);
+const title = t(projects ? 'projects' : 'links');
+const lead = projects ? c('图片档案、开源工具与角色创作项目。', 'Image archives, open-source tools and character projects.', '画像アーカイブ、オープンソースのツール、キャラクター制作のプロジェクト。') : c('收录朋友们的网站与项目，一起把 AI 娘的角落做得更好玩。', 'Explore friends’ websites and projects from the AI-girl community.', '友だちのサイトやプロジェクトから、AI娘のコミュニティをもっと楽しめます。');
+const requestTitle = projects ? c('提交社区项目', 'Suggest a community project', 'コミュニティプロジェクトを提案') : c('提交友情链接', 'Suggest a friend link', 'リンクを提案');
+const submission = new URL(projects ? `${sourceRepository}/issues/new` : `${issueUrl}/new`);
+submission.searchParams.set('title', requestTitle);
+---
+
+<BaseLayout {locale} {path} {title} description={lead} count={data.unavailable ? undefined : items.length} countType="entries" jsonLd={{ '@type': 'CollectionPage' }}>
+  <div class="archive-document link-directory">
+    <header class="archive-heading archive-heading-actions"><div><h1 class="page-title">{title}</h1><p>{lead}</p></div><div class="button-row"><a class="console-btn" href={localePath(locale, projects ? '/friend-links' : '/community-projects')}>{t(projects ? 'links' : 'projects')}<Icon name="arrowRight" /></a><a class="console-btn console-btn-primary" href={submission.href} target="_blank" rel="noopener noreferrer">{requestTitle}<Icon name="externalLink" /></a></div></header>
+    {projects && <nav class="archive-chips" aria-label={c('项目筛选', 'Project filters', 'プロジェクトの絞り込み')}>{Object.entries(filters).map(([id, label]) => <a class="filter-pill" href={localePath(locale, path, id === 'all' ? '' : `?category=${id}`)} aria-current={current === id ? 'page' : undefined}>{label}</a>)}<span class="mono muted">{new Intl.NumberFormat(htmlLang[locale]).format(items.length)} {t('entries')}</span></nav>}
+    {items.length ? <div class="archive-grid">{items.map((item) => <LinkCard href={publicUrl(item.url)!} title={field(locale, item, 'name')} description={field(locale, item, 'description')} avatar={mediaUrl(item.avatarUrl, item.avatarKey)} note={projects ? filters[group(item)] : undefined} external />)}</div> : <div class="empty-state"><p>{data.unavailable ? t('unavailable') : c('这个分类暂时还没有项目，先看看其他的。', 'There are no entries in this category yet.', 'このカテゴリーにはまだ掲載がありません。')}</p></div>}
+    <p class="muted">{projects ? c('外部项目由各自作者维护，访问时会前往对应站点或仓库。', 'External projects are maintained by their creators.', '外部プロジェクトはそれぞれの作者が管理しています。') : c('友链按收录顺序排列。想交换友链，欢迎通过社群联系。', 'Links follow their archive order. Contact us through the community to exchange links.', 'リンクは収録順です。相互リンクをご希望の方はコミュニティからご連絡ください。')}</p>
+  </div>
+</BaseLayout>

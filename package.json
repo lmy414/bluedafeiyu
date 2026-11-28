@@ -1,32 +1,19 @@
 {
-  "name": "bluedafeiyu",
+  "name": "bluedafeiyu-v2",
   "private": true,
   "type": "module",
-  "description": "蓝色大肥鱼（AI娘表情包）站点源码：Astro 静态前台、数据与构建脚本",
+  "packageManager": "pnpm@11.22.0",
   "engines": {
-    "node": ">=18"
+    "node": ">=22.12.0"
   },
   "scripts": {
-    "stage": "node tools/stage_data.mjs",
-    "sync": "node tools/sync_content.mjs",
-    "snapshot": "node tools/build_site_snapshot.mjs",
-    "build": "node tools/build_site.mjs",
-    "build:api": "node tools/build_open_api.mjs",
-    "test:frontend": "node --test tools/tests/submit-form.test.mjs && npm --prefix frontend test",
-    "prepare-works": "node tools/prepare_works.mjs",
-    "template": "node tools/sync_issue_template.mjs",
-    "favicon": "python tools/prepare_favicon.py",
-    "derivatives": "python tools/generate_image_derivatives.py",
-    "compress": "node tools/compress_static.mjs",
-    "compress:write": "node tools/compress_static.mjs --precompress",
-    "serve": "node server/cli.mjs serve",
-    "doctor": "node server/cli.mjs doctor",
-    "recover": "node server/cli.mjs recover",
-    "review:received": "node server/cli.mjs review-received",
-    "pull:issues": "node server/cli.mjs pull-issues",
-    "publish:batch": "node ops/publish-batch.mjs",
-    "test:server": "node --test 'server/**/*.test.mjs'",
-    "test:publish": "node --test ops/tests/publish-batch.test.mjs",
-    "test:hermes": "node --test ops/hermes/tests/hermes.test.mjs"
+    "dev:api": "pnpm --filter @dafeiyu/api dev",
+    "dev:web": "pnpm --filter @dafeiyu/web dev",
+    "dev:admin": "pnpm --filter @dafeiyu/admin dev",
+    "build": "pnpm --filter @dafeiyu/shared build && pnpm --filter @dafeiyu/api build && pnpm --filter @dafeiyu/admin build && pnpm --filter @dafeiyu/web build",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r test",
+    "db:generate": "pnpm --filter @dafeiyu/api db:generate",
+    "db:migrate": "pnpm --filter @dafeiyu/api db:migrate"
   }
 }

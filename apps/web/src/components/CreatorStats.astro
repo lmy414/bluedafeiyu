@@ -1,0 +1,9 @@
+---
+import type { Creator } from '../lib/api';
+import { copy, htmlLang, tr, type Locale } from '../lib/i18n';
+interface Props { locale: Locale; creator: Creator }
+const { locale, creator } = Astro.props;
+const stats = [[tr(locale, 'totalWorks'), creator.totalCount], [copy(locale, ['图片', 'Images', '画像']), creator.workCount], [copy(locale, ['视频', 'Videos', '動画']), creator.videoCount], [copy(locale, ['连载', 'Serials', '連載']), creator.serialCount]] as const;
+const digits = new Intl.NumberFormat(htmlLang[locale]);
+---
+{stats.some(([, count]) => count !== undefined) && <dl class="creator-stats">{stats.map(([label, count]) => count === undefined ? null : <div><dt>{label}</dt><dd class="mono">{digits.format(count)}</dd></div>)}</dl>}

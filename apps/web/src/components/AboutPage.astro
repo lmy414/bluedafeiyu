@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LinkCard from './LinkCard.astro';
+import Icon from './Icon.astro';
+import RepositoryLinks from './RepositoryLinks.astro';
+import OpenApiDocumentation from './OpenApiDocumentation.astro';
+import { aboutCopy, aboutDescription, aboutQuestions, aboutSEO } from '../content/about-copy';
+import extra from '../content/about-extra.json';
+import { api, field } from '../lib/api';
+import { copy, htmlLang, localePath, tr, type Locale } from '../lib/i18n';
+import { additionalItems, characterPath, issueUrl } from '../lib/site';
+interface Props { locale: Locale; path: string }
+const { locale, path } = Astro.props;
+const t = (key: Parameters<typeof tr>[1]) => tr(locale, key);
+const loc = (value: readonly string[]) => copy(locale, value);
+const old = (key: keyof typeof extra) => loc(extra[key]);
+const url = (href: string) => localePath(locale, href);
+const [archive, taxonomy, characters] = await Promise.all([api.archiveCount(), api.archiveCharacters(), api.characters(locale)]);
+const archiveTotal = archive.ok ? archive.value.counts?.works : undefined;
+const deepseekTotal = taxonomy.ok ? taxonomy.value.items?.find(({ id }) => id === 'deepseek')?.count : undefined;
+if (archiveTotal === undefined || deepseekTotal === undefined || characters.unavailable) Astro.response.headers.set('Cache-Control', 'no-store');
+const digits = new Intl.NumberFormat(htmlLang[locale]);
+const license = old('about.license.title');
+const privacy = old('about.privacy.title');
+const credits = old('about.credits.title');
+const takedown = old('about.takedown.title');
+const sections = [
+  ['what-is-blue-dafeiyu', loc(aboutCopy.whatTitle)], ['faq', loc(aboutCopy.faqTitle)], ['open-api', t('openApi')],
+  ['license', license], ['analytics', privacy], ['credits', credits], ['repositories', t('repoHeading')], ['takedown', takedown],
+];
+const questions = aboutQuestions.map((row) => ({ question: loc(row.slice(0, 3)), answer: loc(row.slice(3)) }));
+const faq = { '@type': 'FAQPage', inLanguage: htmlLang[locale], mainEntity: questions.map(({ question, answer }) => ({ '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer } })) };
+const licenseRows = [
+  ['unknown', 'about.rights.unknown'], ['submitter-permission', 'about.rights.submitter'], ['author-permission', 'about.rights.author'],
+  ['cc0', 'about.rights.cc0'], ['cc-by', 'about.rights.by'], ['cc-by-nc', 'about.rights.byNc'],
+] as const;
+---
+
+<BaseLayout {locale} {path} title={loc(aboutCopy.pageTitle)} seoTitle={loc(aboutSEO)} description={loc(aboutDescription)} schemas={[faq]}>
+  <div class="archive-document about-layout">
+    <header class="archive-heading about-heading"><h1 class="page-title">{loc(aboutCopy.pageTitle)}</h1><p>{loc(aboutCopy.pageLead)}</p></header>
+    <aside class="about-aside sticky-page-aside">
+      <nav class="archive-panel about-toc" aria-labelledby="about-toc-title">
+        <h2 id="about-toc-title"><Icon name="fileText" />{loc(aboutCopy.contents)}</h2>
+        <ul>{sections.map(([id, label]) => <li><a href={`#${id}`}>{label}<Icon name="chevronRight" /></a></li>)}</ul>
+      </nav>
+      <section class="archive-panel about-quick" aria-labelledby="about-quick-title">
+        <h2 id="about-quick-title"><Icon name="dashboard" />{loc(['公开归档', 'Public archive', '公開アーカイブ'])}</h2>
+        <dl class="archive-stats"><div><dt>{loc(aboutCopy.countLabel)}</dt><dd class="mono">{archiveTotal === undefined ? '—' : digits.format(archiveTotal)}</dd></div><div><dt><a class="text-link" href={url('/characters/deepseek')}>{loc(['DeepSeek娘作品', 'Works featuring DeepSeek Chan', 'DeepSeekちゃんの作品'])}</a></dt><dd class="mono">{deepseekTotal === undefined ? '—' : digits.format(deepseekTotal)}</dd></div></dl>
+        <div class="button-row"><a class="console-btn" href={url('/')}>{t('gallery')}<Icon name="arrowRight" /></a><a class="console-btn" href={url('/submit')}>{t('submit')}<Icon name="arrowRight" /></a></div>
+      </section>
+    </aside>
+    <div class="archive-document about-content">
+    <section class="archive-panel" id="what-is-blue-dafeiyu">
+      <h2>{loc(aboutCopy.whatTitle)}</h2><p>{loc(aboutCopy.whatText)}</p>
+      <a class="text-link" href="https://news.17173.com/content/08212026/094421441.shtml" target="_blank" rel="noopener noreferrer">{loc(aboutCopy.source)}</a>
+      <h3>{old('about.site.title')}</h3><p>{old('siteIntro')}</p><p>{old('siteActions')}</p>
+      <p><a class="text-link" href={url('/submit')}>{t('submit')}</a></p>
+      <h3>{loc(aboutCopy.charactersTitle)}</h3><div class="archive-chips">{characters.items.map((item) => <a class="filter-pill" href={url(characterPath(item.id))}>{field(locale, item, 'name')}</a>)}</div>
+      {characters.unavailable && <p>{t('unavailable')}</p>}
+    </section>
+    <section class="archive-panel" id="faq"><h2>{loc(aboutCopy.faqTitle)}</h2>
+      {questions.map(({ question, answer }, index) => <details class="archive-details"><summary>{question}</summary><div class="archive-details-body"><p>{answer}</p>{index === 1 && <a class="text-link" href="#licensing">{old('about.rights.acquireTitle')}</a>}{index === 2 && <a class="text-link" href={url('/submit')}>{t('submit')}</a>}{index === 4 && <a class="text-link" href={url('/community#community-join')}>{t('community')}</a>}</div></details>)}
+    </section>
+    <OpenApiDocumentation {locale} />
+    <section class="archive-panel" id="license"><h2>{license}</h2><p>{old('codeLicense')}</p><p>{old('artLicense')}</p><p>{old('about.license.p3')}</p>
+      <ul>{licenseRows.map(([id, key]) => <li id={`license-${id}`}>{old(key)}</li>)}</ul>
+      <h3 id="licensing">{old('about.rights.acquireTitle')}</h3><p>{old('about.rights.acquireBody')}</p>
+    </section>
+    <section class="archive-panel" id="analytics"><h2>{privacy}</h2><ul><li>{old('analytics')}</li><li>{old('ads')}</li><li>{loc(['站点字体随网站提供。评论由 GitHub Discussions 托管，本站不自行保存评论者身份。', 'Site fonts are served locally. GitHub Discussions hosts comments, and the site does not store commenters’ identities.', 'フォントはサイトから配信します。コメントはGitHub Discussionsで管理され、当サイトは投稿者の身元を保存しません。'])}</li></ul><h3 id="comments">{t('comments')}</h3><p>{old('comments')}</p></section>
+    <section class="archive-panel" id="credits"><h2>{credits}</h2><p>{old('about.credits.p')}</p>
+      <ul><li><a class="text-link" href="https://space.bilibili.com/4456176" target="_blank" rel="noopener noreferrer">{loc(['上善无形', '上善无形', '上善無形'])}</a>{old('about.credits.design')}</li><li><a class="text-link" href="https://space.bilibili.com/4168597" target="_blank" rel="noopener noreferrer">ZipZipPipe</a>{old('about.credits.redesign')}</li></ul>
+      <h3 id="special-thanks">{loc(['特别致谢', 'Special thanks', '特別な謝辞'])}</h3>
+      <LinkCard title="霜霜" href="https://wldss.cn/" avatar="/credits/shuangshuang.jpg" external />
+    </section>
+    <section class="archive-panel" id="repositories"><h2>{t('repoHeading')}</h2><RepositoryLinks {locale} /></section>
+    <section class="archive-panel" id="takedown"><h2>{takedown}</h2><p>{old('about.takedown.p1')}</p><p>{old('takedownPriority')}</p><a class="console-btn console-btn-primary" href={`${issueUrl}/new?template=takedown-request.yml`} target="_blank" rel="noopener noreferrer">{old('about.takedown.btn')}<Icon name="externalLink" /></a></section>
+    <section class="archive-panel" id="site-pages"><h2>{loc(aboutCopy.sitePages)}</h2><nav class="archive-chips" aria-label={loc(aboutCopy.sitePages)}>
+      {[{ href: '/creators', key: 'creators' }, { href: '/videos', key: 'videos' }, { href: '/events', key: 'events' }, ...additionalItems].filter(({ href }) => !href.startsWith('/about')).map(({ href, key }) => <a class="filter-pill" href={url(href)}>{t(key)}</a>)}
+    </nav></section>
+    </div>
+  </div>
+</BaseLayout>

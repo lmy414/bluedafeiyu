@@ -1,0 +1,8 @@
+---
+import { mediaUrl, type Creator } from '../lib/api';
+interface Props { creator: Creator }
+const { creator } = Astro.props;
+const avatar = mediaUrl(creator.avatarUrl, creator.avatarKey);
+const initial = Array.from(creator.name.trim().replace(/^@/, ''))[0] || '?';
+---
+<span class="archive-mark creator-avatar" aria-hidden="true">{initial}{avatar && <img src={avatar} alt="" width="72" height="72" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-fallback-image />}</span>

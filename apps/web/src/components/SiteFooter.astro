@@ -1,0 +1,22 @@
+---
+import Icon from './Icon.astro';
+import { localePath, tr, type Locale } from '../lib/i18n';
+import { additionalItems, contentRepository, sourceRepository, weeklyUrl } from '../lib/site';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = (key: Parameters<typeof tr>[1]) => tr(locale, key);
+const external = [[weeklyUrl, 'weekly'], [sourceRepository, 'siteRepo'], [contentRepository, 'contentRepo']] as const;
+const [community, ...otherPages] = additionalItems;
+const pages = [{ href: '/creators', key: 'creators' }, community, { href: '/events', key: 'events' }, ...otherPages, { href: '/llms.txt', key: 'aiIndex' }] as const;
+---
+
+<footer class="site-footer">
+  <div class="footer-brand">
+    <a class="footer-identity" href={localePath(locale, '/')}><img class="brand-mark" src="/avatar.png" alt="" width="32" height="32" /><strong>{t('site')}</strong></a>
+    <p>{t('archiveCredit')}</p>
+    <div class="footer-external">{external.map(([href, key]) => <a href={href} target="_blank" rel="noopener noreferrer">{t(key)}<Icon name="externalLink" /></a>)}</div>
+  </div>
+  <nav class="footer-links" aria-label={t('footerNav')}>
+    {pages.map(({ href, key }) => <a href={localePath(locale, href)}>{t(key)}</a>)}
+  </nav>
+</footer>

@@ -1,0 +1,35 @@
+---
+import Icon from './Icon.astro';
+import { copy, type Locale } from '../lib/i18n';
+interface Props { locale: Locale; exhibition: string }
+const { locale, exhibition } = Astro.props;
+const c = (...text: string[]) => copy(locale, text);
+const timeline = [
+  ['2026-10-26T23:59:59+08:00', '2026.10.26 · 23:59', c('征集截止（已结束）', 'Submission deadline (closed)', '募集締切（終了）')],
+  ['2026-11-06T23:59:59+08:00', '2026.11.06 · 23:59', c('原定人气投票截止', 'Originally scheduled voting deadline', '当初予定の人気投票締切')],
+  ['2026-11-07', '2026.11.07', c('原定结果公布日期', 'Originally scheduled results announcement', '当初予定の結果発表日')],
+] as const;
+---
+
+<section class="archive-panel" id="exhibition">
+  <h2>{c('投稿作品展览', 'Submission exhibition', '投稿作品の展示')}</h2>
+  <p>{c('所有被合并的作品会保留在投稿展览中。前往展览查看各位作者的设计、作品介绍与可运行的网页。', 'All merged submissions remain in the exhibition. Visit it for each creator’s design, introduction and runnable website.', 'マージされた作品は投稿展示に残ります。各作者のデザイン、紹介文、実際に動くウェブサイトをご覧いただけます。')}</p>
+  <a class="console-btn" href={exhibition} target="_blank" rel="noopener noreferrer">{c('打开作品展览', 'Open exhibition', '展示を開く')}<Icon name="externalLink" /></a>
+</section>
+<section class="archive-panel" id="results">
+  <h2>{c('评选进度与结果', 'Selection progress and results', '選考の進捗と結果')}</h2>
+  <p>{c('征集已结束，评选结果待公布。投票入口与最终结果以活动仓库公告为准。', 'Submissions are closed and results are pending. Check the event repository for voting announcements and final results.', '募集は終了し、選考結果は発表待ちです。投票の案内と最終結果はイベントリポジトリのお知らせをご確認ください。')}</p>
+  <ol class="archive-timeline event-timeline">{timeline.map(([datetime, date, label]) => <li><time class="mono" {datetime}>{date}</time><span>{label}</span></li>)}</ol>
+  <p>{c('以上时间均为北京时间。', 'All dates and times use Beijing time.', '日程・時刻はいずれも北京時間です。')}</p>
+</section>
+<details class="archive-details event-rules" id="rules"><summary>{c('查看原活动规则', 'View the original event rules', '当初のイベントルールを見る')}</summary><div class="archive-details-body">
+  <p>{c('新版网站已经上线，但站长还是不太满意，想看看大家心目中的 AI 娘二创站应该长什么样。', 'The redesigned site had launched, and the curator wanted to see what everyone envisioned for an AI-girl fan site.', '新しいサイトが公開されましたが、運営者はまだ満足しておらず、皆さんが思い描くAI娘の二次創作サイトを見たいと考えました。')}</p>
+  <p>{c('不限 AI，不限工具，不限技术栈。可以古法手搓，也可以给 AI 许愿。', 'Any AI, tool or tech stack was welcome. Build by hand or ask AI to help.', 'AI、ツール、技術スタックは自由。手作業でも、AIに頼んでも参加できました。')}</p>
+  <div class="archive-grid archive-grid-two">
+    <section class="archive-panel"><h3>{c('采用奖', 'Adoption prize', '採用賞')}</h3><strong class="prize-amount mono">{c('88 元', '88 RMB', '88元')}</strong><p>{c('你的设计会成为网站未来的前台，上线时署名。', 'The selected design would become the future frontend, with credit when it launched.', '採用されたデザインは今後のフロントエンドになり、公開時に作者名を掲載します。')}</p></section>
+    <section class="archive-panel"><h3>{c('人气奖', 'Popularity prize', '人気賞')}</h3><strong class="prize-amount mono">{c('66 元', '66 RMB', '66元')}</strong><p>{c('投稿满 3 份时设立。截稿后在 GitHub 投票 Issue 里给喜欢的作品点 👍，可投多个，得票最多的获奖。', 'Offered with at least three entries. After the deadline, voters could give a 👍 to any number of entries in the GitHub voting issue. The most votes wins.', '応募が3件以上で設置。締切後にGitHubの投票Issueで好きな作品に👍を付け、最多得票の作品が受賞します。複数投票可。')}</p></section>
+  </div>
+  <p>{c('奖金为 DeepSeek 开放平台 API 额度，可以折现；两个奖可以同一个人拿。奖金由站长个人出资，本活动与 DeepSeek 官方无关。', 'Prizes were DeepSeek API credits redeemable for cash. One person could win both prizes. The curator funded the contest independently of DeepSeek.', '賞金は現金化可能なDeepSeek APIクレジット。同じ人が両方を受賞できます。運営者の個人負担による企画で、DeepSeek公式とは関係ありません。')}</p>
+  <h3>{c('原参与方式（征集已截止）', 'Original participation instructions (submissions closed)', '当初の参加方法（募集終了）')}</h3>
+  <ol><li>{c('Fork 活动仓库', 'Fork the event repository', 'イベントリポジトリをフォーク')}</li><li>{c('放入你的静态网页', 'Add your static pages', '静的ページを追加')} <code>submissions/&lt;GITHUB_USERNAME&gt;/index.html</code></li><li>{c('提交 PR。页面能打开、内容和主题相关，就会被合并，合并后就算参与成功。', 'Submit a PR. Entries that open and fit the theme are merged, which completes the submission.', 'PRを提出します。ページが開き、テーマに合う作品はマージされ、参加が完了します。')}</li></ol>
+</div></details>

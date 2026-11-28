@@ -1,0 +1,23 @@
+{
+  "name": "@dafeiyu/web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "start": "node ./start.mjs",
+    "preview": "astro preview",
+    "typecheck": "astro sync && tsc --noEmit"
+  },
+  "dependencies": {
+    "@astrojs/node": "^9.5.0",
+    "@dafeiyu/shared": "workspace:*",
+    "astro": "^5.16.0",
+    "fflate": "^0.8.2",
+    "opencc-js": "^1.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.9.0"
+  }
+}

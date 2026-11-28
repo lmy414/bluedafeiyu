@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from './Icon.astro';
+import LinkCard from './LinkCard.astro';
+import RepositoryLinks from './RepositoryLinks.astro';
+import { copy, localePath, tr, type Locale } from '../lib/i18n';
+interface Props { locale: Locale; path: string }
+const { locale, path } = Astro.props;
+const c = (...text: string[]) => copy(locale, text);
+const url = (href: string) => localePath(locale, href);
+const title = c('来社群坐坐。', 'Come hang out with the community.', 'コミュニティで話しましょう。');
+const lead = c('聊图、分享二创、参与活动，一起把这个档案整理好。Discord、QQ 群和微信公众号都在这里。', 'Share fan art, join events and help organize the archive. Find our Discord, QQ group and WeChat Official Account here.', '作品を共有し、イベントに参加して、アーカイブを一緒に育てましょう。Discord、QQグループ、WeChat公式アカウントはこちらです。');
+const qq = 'https://qm.qq.com/q/pLsmlo1J0Q';
+const current = c('当期活动', 'Current events', '開催中のイベント');
+const history = c('往期回顾', 'Past events', '過去のイベント');
+const submissions = [
+  { icon: 'submit', href: '/submit', title: c('图片与 ZIP 投稿', 'Image & ZIP submissions', '画像・ZIPの投稿'), description: c('提交新图、表情包合集或角色设定图。', 'Submit new images, meme packs or character sheets.', '新しい画像、スタンプ集、キャラクター設定を投稿できます。') },
+  { icon: 'videos', href: '/submit?mode=creator', title: c('视频作者登记', 'Video creator registration', '動画作者の登録'), description: c('填写 UID 或主页链接，收录你的二创视频。', 'Register your UID or profile to archive your fan videos.', 'UIDまたはプロフィールURLで二次創作動画を登録できます。') },
+  { icon: 'topics', href: '/about#takedown', title: c('一起整理档案', 'Help maintain the archive', 'アーカイブを一緒に整理'), description: c('补充来源、修正信息，反馈页面问题。', 'Add sources, correct information or report page issues.', '出典の追加、情報の修正、不具合の報告ができます。') },
+] as const;
+const rules = [
+  c('围绕 AI 娘与二创交流', 'Keep discussions about AI girls and fan art', 'AI娘と二次創作を中心に交流'),
+  c('转载注明出处，尊重原作者', 'Credit sources and respect creators', '転載には出典を記載し、原作者を尊重'),
+  c('不发真人肖像、不发 R18 内容、不刷屏', 'No photos of real people, R18 content or spam', '実在人物の写真、R18コンテンツ、連投は禁止'),
+];
+---
+
+<BaseLayout {locale} {path} title={tr(locale, 'community')} seoTitle={c('Discord、QQ 群与微信公众号：加入蓝色大肥鱼社群', 'Join Blue Dafeiyu on Discord, QQ and WeChat', 'Discord・QQ・WeChatで藍色大肥魚のコミュニティに参加')} description={lead}>
+  <div class="archive-document">
+    <header class="archive-heading"><h1 class="page-title">{title}</h1><p>{lead}</p></header>
+    <section id="community-join" class="archive-section">
+      <h2>{c('选择加入方式', 'Choose how to join', '参加方法を選ぶ')}</h2>
+      <div class="community-join-grid">
+        <article class="archive-panel community-discord">
+          <div class="community-card-top"><span class="archive-mark"><Icon name="characters" /></span><span class="filter-pill">{c('即时交流', 'Live chat', 'リアルタイムの交流')}</span></div>
+          <h3>Discord</h3><p>{c('聊新图、分享二创、参与站点建议，和国内外同好一起讨论 AI 娘的设定与作品。', 'Share new works, fan art and site suggestions, and discuss AI girl designs with fans around the world.', '新しい作品や二次創作、サイトへの意見を共有し、世界のファンとAI娘の設定や作品について話しましょう。')}</p>
+          <a class="console-btn console-btn-primary" href="https://discord.gg/pmECYDChY" target="_blank" rel="noopener noreferrer">{c('加入 Discord', 'Join Discord', 'Discordに参加')}<Icon name="externalLink" /></a>
+        </article>
+        <article class="archive-panel community-qr"><div>
+          <h3>{c('QQ 群「蓝色大肥鱼」', 'Blue Dafeiyu QQ group', 'QQグループ「藍色大肥魚」')}</h3><p>{c('点击按钮或扫描二维码加入，一起聊图、分享二创。', 'Use the invite or scan the QR code to join and share fan art.', '招待リンクまたはQRコードから参加して、作品や二次創作について話しましょう。')}</p>
+          <a class="console-btn" href={qq} target="_blank" rel="noopener noreferrer">{c('加入 QQ 群', 'Join the QQ group', 'QQグループに参加')}<Icon name="externalLink" /></a>
+        </div><img src="/community/qq-join-6d07ffd364068fdf.png" width="296" height="296" alt={c('QQ 群加入二维码', 'QR code for joining the QQ group', 'QQグループ参加用QRコード')} decoding="async" /></article>
+        <article class="archive-panel community-qr"><div>
+          <h3>{c('微信公众号', 'WeChat Official Account', 'WeChat公式アカウント')}</h3><p>{c('微信扫码关注，获取更新与精选二创。', 'Scan with WeChat for updates and selected fan art.', 'WeChatでQRコードを読み取ると、更新情報や二次創作の紹介を受け取れます。')}</p>
+        </div><img src="/community/wechat-official-110b8756b8377c5b.png" width="430" height="430" alt={c('微信公众号关注二维码', 'QR code for following on WeChat', 'WeChat公式アカウントのフォロー用QRコード')} decoding="async" /></article>
+      </div>
+    </section>
+    <div class="archive-grid archive-grid-two">
+      <section class="archive-section"><h2>{c('投稿与反馈', 'Submissions & feedback', '投稿とフィードバック')}</h2><div class="archive-stack">{submissions.map((item) => <LinkCard {...item} href={url(item.href)} />)}</div></section>
+      <section class="archive-section"><h2>{c('活动与回顾', 'Events & recaps', 'イベントと記録')}</h2><article class="archive-panel archive-highlight"><span class="archive-mark"><Icon name="clock" /></span><h3>{c('每一份创作，都值得留下。', 'Every creation deserves a place.', '一つひとつの創作を、記録に。')}</h3><p>{c('在活动页查看当期共创，或从往期目录回顾每一期活动的作品与记录。', 'Explore current collaborations or revisit works and records from past events.', '開催中の共同制作や、過去のイベントの作品と記録をご覧ください。')}</p><div class="button-row"><a class="console-btn console-btn-primary" href={url('/events/current')}>{current}<Icon name="arrowRight" /></a><a class="console-btn" href={url('/events/archive')}>{history}<Icon name="arrowRight" /></a></div></article></section>
+    </div>
+    <section class="archive-panel community-rules"><h2><Icon name="shield" />{c('交流规则', 'Community rules', '交流のルール')}</h2><ul>{rules.map((rule) => <li><Icon name="check" />{rule}</li>)}</ul></section>
+    <section class="archive-section"><h2>{c('也可以在这里找到站长', 'Find the curator elsewhere', '運営者のほかのアカウント')}</h2>
+      <div class="archive-stack"><div class="archive-grid archive-grid-two"><LinkCard href="https://space.bilibili.com/321480847" title={c('哔哩哔哩', 'Bilibili', 'Bilibili')} note="UID 321480847" icon="videos" external /><LinkCard href="https://x.com/mirror960896" title="X" note="@mirror960896" external /></div><RepositoryLinks {locale} /></div>
+    </section>
+  </div>
+</BaseLayout>

@@ -1,0 +1,14 @@
+---
+import { htmlLang, type Locale } from '../lib/i18n';
+import { workLabels } from '../lib/work-view';
+interface Props { locale: Locale; slug?: string; viewCount?: number; downloadCount?: number }
+const { locale, slug, viewCount, downloadCount } = Astro.props;
+const labels = workLabels(locale);
+const digits = new Intl.NumberFormat(htmlLang[locale]);
+const count = (value: number | undefined) => Number.isSafeInteger(value) && value! >= 0 ? digits.format(value!) : '—';
+---
+
+<span class="work-counts mono" data-work-counts data-work-slug={slug} data-initial-views={viewCount} data-initial-downloads={downloadCount}>
+  <span><span data-view-count>{count(viewCount)}</span> {labels.views}</span>
+  <span><span data-download-count>{count(downloadCount)}</span> {labels.downloads}</span>
+</span>

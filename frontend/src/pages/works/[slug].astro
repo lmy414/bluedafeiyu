@@ -1,9 +1,0 @@
----
-import WorkDetailPage from "../../components/archive/WorkDetailPage.astro";
-import { archivePages } from "../../lib/archive.mjs";
-export function getStaticPaths() {
- return [...archivePages].flatMap(([url,page])=>{const match=url.match(/^\/works\/([^\/]+)\.html$/);return match?[{params:{slug: match[1]},props:{page}}]:[];});
-}
-const {page}=Astro.props;
----
-<WorkDetailPage page={page} />

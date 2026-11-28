@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CreatorAvatar from './CreatorAvatar.astro';
+import CreatorStats from './CreatorStats.astro';
+import Icon from './Icon.astro';
+import LinkCard from './LinkCard.astro';
+import PageList from './PageList.astro';
+import SerialCard from './SerialCard.astro';
+import VideoCard from './VideoCard.astro';
+import WorkGrid from './WorkGrid.astro';
+import { field } from '../lib/api';
+import { creatorChannels, loadCreator } from '../lib/creators';
+import { copy, localePath, tr, type Locale } from '../lib/i18n';
+import { pageNumber, topicPath } from '../lib/site';
+interface Props { locale: Locale; path: string; data: Exclude<Awaited<ReturnType<typeof loadCreator>>, { status: number }> }
+const { locale, path, data } = Astro.props;
+const { creator, topics, serials, works, videos } = data;
+const t = (key: Parameters<typeof tr>[1]) => tr(locale, key);
+const title = field(locale, creator, 'name');
+const description = field(locale, creator, 'intro');
+const channels = creatorChannels(creator);
+const crumbs = [{ label: t('creators'), href: '/creators' }, { label: title }];
+const workPage = pageNumber(Astro.url.searchParams.get('workPage'));
+const size = 24;
+const pageLink = (page: number) => {
+  const query = new URLSearchParams(Astro.url.search);
+  if (page === 1) query.delete('workPage'); else query.set('workPage', String(page));
+  return localePath(locale, path, query.size ? `?${query}` : '');
+};
+const listing = { items: works.slice((workPage - 1) * size, workPage * size), unavailable: false };
+const next = workPage * size < works.length ? pageLink(workPage + 1) : undefined;
+const previous = workPage > 1 ? pageLink(workPage - 1) : undefined;
+const workTitle = copy(locale, ['图片作品与合集', 'Images & collections', '画像と作品集']);
+---
+
+<BaseLayout {locale} {path} {title} {description} {crumbs} jsonLd={{ '@type': 'ProfilePage', mainEntity: { '@type': 'Person', name: title, description, sameAs: channels.map(({ href }) => href) } }}>
+  <div class="archive-document creator-page">
+    <header class="archive-panel creator-profile"><CreatorAvatar {creator} /><div><h1 class="page-title">{title}</h1>{creator.uid && <span class="mono muted">UID {creator.uid}</span>}{description && <p>{description}</p>}
+      <CreatorStats {locale} {creator} />
+      {channels.length > 0 && <div class="button-row">{channels.map(({ href, label }) => <a class="console-btn" {href} target="_blank" rel="noopener noreferrer">{label}<Icon name="externalLink" /></a>)}</div>}
+    </div></header>
+    {serials.length > 0 && <section class="archive-section"><h2>{t('serials')}</h2><div class="serial-grid">{serials.map((topic) => <SerialCard {locale} {topic} />)}</div></section>}
+    {(works.length > 0 || topics.length > 0) && <section class="archive-section"><h2>{workTitle}</h2>
+      {topics.length > 0 && <div class="archive-grid">{topics.map((topic) => <LinkCard href={localePath(locale, topicPath(topic.id))} title={field(locale, topic, 'name')} description={field(locale, topic, 'summary')} icon="topics" />)}</div>}
+      {works.length > 0 && <WorkGrid {locale} {listing} {next} {previous} />}
+    </section>}
+    {videos && (videos.total > 0 || videos.unavailable) && <section class="archive-section" id="creator-videos"><h2>{t('videos')}</h2>
+      <div class="directory-grid">{videos.items.map((video) => <VideoCard {locale} {video} hideAuthor />)}</div><PageList {locale} {path} listing={videos} />
+    </section>}
+    {!works.length && !topics.length && !serials.length && !videos?.total && !videos?.unavailable && <div class="empty-state"><p>{t('empty')}</p></div>}
+  </div>
+</BaseLayout>

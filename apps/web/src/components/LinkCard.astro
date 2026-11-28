@@ -1,0 +1,20 @@
+---
+import Icon from './Icon.astro';
+import type { IconName } from '../../../../packages/shared/src/design/icons';
+interface Props { href: string; title: string; description?: string; avatar?: string; note?: string; icon?: IconName; external?: boolean }
+const { href, title, description, avatar, note, icon = 'link', external = false } = Astro.props;
+const domain = external ? new URL(href).hostname : undefined;
+---
+
+<a class="archive-link-card" href={href} target={external ? '_blank' : undefined} rel={external ? 'noopener noreferrer' : undefined}>
+  <span class="archive-mark">
+    <Icon name={icon} />
+    {avatar && <img src={avatar} alt="" width="48" height="48" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-fallback-image />}
+  </span>
+  <div class="archive-link-copy">
+    <strong>{title}</strong>
+    {description && <p>{description}</p>}
+    {(domain || note) && <div class="archive-card-tags">{domain && <span class="mono">{domain}</span>}{note && <span>{note}</span>}</div>}
+  </div>
+  <Icon name={external ? 'externalLink' : 'arrowRight'} class="archive-link-arrow" />
+</a>

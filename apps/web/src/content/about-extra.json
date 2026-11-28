@@ -1,0 +1,137 @@
+{
+  "about.site.title": [
+    "关于本站",
+    "About this site",
+    "当サイトについて"
+  ],
+  "about.credits.title": [
+    "致谢",
+    "Acknowledgements",
+    "謝辞"
+  ],
+  "about.takedown.title": [
+    "署名与删除",
+    "Attribution and removal",
+    "クレジットと削除"
+  ],
+  "about.license.title": [
+    "许可与版权",
+    "License & copyright",
+    "ライセンスと著作権"
+  ],
+  "about.privacy.title": [
+    "统计与隐私",
+    "Analytics & privacy",
+    "統計とプライバシー"
+  ],
+  "about.rights.acquireTitle": [
+    "如何取得图片使用许可",
+    "How to obtain permission to use an image",
+    "画像の利用許諾を得る方法"
+  ],
+  "about.license.p3": [
+    "标注为「授权状态不明」的作品，请先联系原作者取得许可，勿直接商用。",
+    "For works marked “license status unclear”, contact the original author for permission first — don't use them commercially.",
+    "「ライセンス状態不明」の作品は、まず原作者に連絡して許諾を得てください。商用利用はしないでください。"
+  ],
+  "about.rights.unknown": [
+    "授权状态不明：本站未确认图片的使用许可；收录和提供下载不代表授予转载、改编或商业使用权。",
+    "License status unclear: this site has not verified permission to use the image. Archiving and downloads do not grant redistribution, adaptation or commercial rights.",
+    "ライセンス状態不明：当サイトは画像の利用許諾を確認できていません。収録やダウンロードの提供は、転載・改変・商用利用の許諾を意味しません。"
+  ],
+  "about.rights.submitter": [
+    "投稿者确认授权收录与下载：仅记录投稿者对本站收录和下载的许可，其他用途需向权利人另行确认。",
+    "Submitter permission: records permission for this site to archive the image and offer downloads. Confirm other uses with the rights holder.",
+    "投稿者の許諾：当サイトへの収録とダウンロード提供に対する許諾を記録しています。それ以外の用途は権利者に確認してください。"
+  ],
+  "about.rights.author": [
+    "原作者明确授权：具体允许的用途以作品的授权备注为准；未明确允许的用途请联系原作者。",
+    "Author permission: permitted uses are recorded in the work's license notes. Contact the original author for uses not explicitly covered.",
+    "原作者の許諾：許諾された用途は各作品のライセンス備考に従ってください。明記されていない用途は原作者に確認してください。"
+  ],
+  "about.rights.cc0": [
+    "CC0 公共领域：作品记录标注为 CC0；使用时仍需核实原始声明及第三方权利。",
+    "CC0 public domain: the work is recorded as CC0. Verify the original declaration and any third-party rights before use.",
+    "CC0 パブリックドメイン：作品は CC0 として記録されています。利用前に元の宣言と第三者の権利を確認してください。"
+  ],
+  "about.rights.by": [
+    "CC BY 署名：遵守原作者声明的署名条件；协议版本以原始声明为准，本站不推定版本。",
+    "CC BY attribution: follow the original author's attribution conditions. The license version comes from the original declaration; this site does not assume a version.",
+    "CC BY 表示：原作者が示したクレジット条件に従ってください。バージョンは元の宣言に従い、当サイトでは推定しません。"
+  ],
+  "about.rights.byNc": [
+    "CC BY-NC 署名·非商用：遵守署名和非商业使用条件；协议版本以原始声明为准，商业用途需另行取得许可。",
+    "CC BY-NC attribution, non-commercial: follow attribution and non-commercial conditions. Check the original declaration for the version; commercial use needs separate permission.",
+    "CC BY-NC 表示・非営利：クレジットと非営利の条件に従ってください。バージョンは元の宣言を確認し、商用利用には別途許諾を得てください。"
+  ],
+  "about.rights.acquireBody": [
+    "打开对应作品，查看来源作者、来源链接和授权备注，通过原作者的公开主页或原始发布页面联系权利人，并说明作品链接、用途及是否商用。作者或来源未标注时，可通过下方「署名与删除申请」提交作品链接，请维护者协助核实来源；本站无法代未知权利人授权。",
+    "Open the work and check its source author, source link and license notes. Contact the rights holder through their public profile or original post, specifying the work, intended use and whether it is commercial. If the author or source is missing, use the Attribution & removal form below with the work URL so maintainers can help identify the source. This site cannot grant permission on behalf of an unknown rights holder.",
+    "作品の出所の作者、リンク、ライセンス備考を確認し、公開プロフィールや元の投稿から権利者に連絡してください。作品 URL、用途、商用利用の有無を伝えてください。作者や出所が不明な場合は、下の署名・削除申請に作品 URL を添えて出所の確認を依頼できます。当サイトは不明な権利者に代わって許諾できません。"
+  ],
+  "about.credits.p": [
+    "感谢以下创作者为本站所收录角色提供设计基础：",
+    "Thanks to the following creators for the character designs our archived characters are based on:",
+    "当サイトの収録キャラのデザイン基礎を作ってくださったクリエイターの皆さんに感謝します："
+  ],
+  "about.credits.design": [
+    "：角色设计；",
+    " character design;",
+    "：キャラクターデザイン；"
+  ],
+  "about.credits.redesign": [
+    "：角色二次设计。",
+    " character redesign.",
+    "：キャラクター二次デザイン。"
+  ],
+  "about.takedown.p1": [
+    "原作者需要补署名、修改来源信息或下架作品，走 GitHub 上的「署名与删除申请」表单，维护者会尽快处理。",
+    "Original authors who need credit added, source info corrected, or a work taken down can use the GitHub “attribution & takedown request” form; maintainers will handle it as soon as possible.",
+    "原作者による署名の追加・出所情報の修正・作品の削除のご依頼は、GitHub の「署名と削除申請」フォームからどうぞ。メンテナーができるだけ早く対応します。"
+  ],
+  "about.takedown.btn": [
+    "打开署名与删除申请",
+    "Open attribution & takedown request",
+    "署名・削除申請を開く"
+  ],
+  "siteIntro": [
+    "「蓝色大肥鱼」是收集 AI 娘二创表情包的开放档案：作品按角色归档，支持按名称、Tag 与角色别名检索；每张作品都有独立详情页，可以查看来源与授权、下载原图，还带一个独立的评论区。更新日志见页脚。",
+    "“DeepSeek Chan” is an open archive of AI-girl fan stickers: works are archived by character and searchable by name, tag and character alias; every work has its own detail page where you can check source & license, download the original, and leave comments in a dedicated thread. The changelog is linked in the footer.",
+    "「DeepSeek Chan」はAI娘の二次創作スタンプのオープンアーカイブです。作品はキャラ別にアーカイブされ、名前・タグ・別名で検索できます。各作品に詳細ページがあり、出所とライセンスの確認、原図のダウンロード、独立したコメント欄を備えています。更新履歴はフッターから。"
+  ],
+  "siteActions": [
+    "你能在这里做的事：按角色与分类浏览全部作品；用关键词搜名称、Tag 或别名；进详情页拿原图；在作品下留言讨论；也可以把自己的作品投稿进来。",
+    "Here's what you can do here: browse all works by character and category; search by name, tag or alias; open a detail page to grab the original; discuss under each work; or submit your own work.",
+    "できること：キャラやカテゴリで全作品を閲覧する。名前・タグ・別名で検索する。詳細ページで原図を手に入れる。作品の下でコメントする。あるいは自分の作品を投稿することもできます。"
+  ],
+  "codeLicense": [
+    "本站的程序代码以 MIT 协议发布，随便用。",
+    "This site's source code is released under the MIT license — use it freely.",
+    "当サイトのソースコードはMITライセンスで公開しています。ご自由にどうぞ。"
+  ],
+  "artLicense": [
+    "但投稿或被收录的表情包不会因为进了本站仓库就自动获得 MIT 授权——图片的著作权始终归原作者所有。能不能用、怎么用，以每张作品详情页标注的来源与授权为准。",
+    "But stickers submitted or archived here do not automatically get an MIT license just for being in this site's repo — image copyright always belongs to the original author. What you may do with each image is governed by the source & license noted on its detail page.",
+    "ただし投稿・収録されたスタンプは、当サイトのリポジトリに入ったからといって自動的にMITライセンスになるわけではありません。画像の著作権は常に原作者に帰属します。使えるかどうかは、各作品の詳細ページに記載の出所とライセンスに従ってください。"
+  ],
+  "analytics": [
+    "本站使用 Google Analytics 4 统计聚合的页面访问、来源、设备与性能数据，用于发现加载问题和改进页面；Google 可能设置第一方分析 Cookie。",
+    "This site uses Google Analytics 4 to collect aggregated page-visit, source, device and performance data, in order to spot loading issues and improve pages; Google may set first-party analytics cookies.",
+    "当サイトは Google Analytics 4 を使って、ページ訪問・参照元・端末・パフォーマンスの集計データを収集します。読み込み問題の発見とページ改善のためであり、Google はファーストパーティの分析 Cookie を設定することがあります。"
+  ],
+  "ads": [
+    "广告个性化、Google Signals 与广告存储均已关闭；本站不建立账号画像；作品浏览和下载点击只做聚合统计，用于公开展示和排序。",
+    "Ads personalization, Google Signals and ad storage are all disabled; this site builds no user profiles. Aggregate work views and download clicks are displayed and used for sorting.",
+    "広告のパーソナライズ、Google Signals、広告ストレージはすべて無効化しています。アカウントのプロファイリングは行わず、作品の閲覧数とダウンロードクリック数を集計して表示・並べ替えに使用します。"
+  ],
+  "comments": [
+    "评论由 GitHub Discussions（Giscus）托管，需要登录 GitHub 账号才能发言；一张作品对应一个独立讨论串，互不串台。",
+    "Comments are hosted on GitHub Discussions (Giscus) and require signing in with a GitHub account; each work has its own independent thread, and threads never mix.",
+    "コメントは GitHub Discussions（Giscus）でホストされています。コメントには GitHub アカウントでのログインが必要です。作品ごとに独立したスレッドが立ち、混線しません。"
+  ],
+  "takedownPriority": [
+    "收到有效的版权投诉后，会先下架相关作品，再核实情况。",
+    "Upon a valid copyright complaint we take the work down first, then look into it.",
+    "有効な著作権の申し立てを受けた場合はまず該当作品を下架してから状況を確認します。"
+  ]
+}

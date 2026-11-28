@@ -1,9 +1,0 @@
----
-import CharacterArchivePage from "../../../components/archive/CharacterArchivePage.astro";
-import { archivePages } from "../../../lib/archive.mjs";
-export function getStaticPaths() {
- return [...archivePages].flatMap(([url,page])=>{const match=url.match(/^\/characters\/([^\/]+)\/((?!page$)[^\/]+)\.html$/);return match?[{params:{id: match[1], type: match[2]},props:{page}}]:[];});
-}
-const {page}=Astro.props;
----
-<CharacterArchivePage {page} />

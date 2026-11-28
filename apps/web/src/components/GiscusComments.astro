@@ -1,0 +1,14 @@
+---
+import { giscusLang, tr, type Locale } from '../lib/i18n';
+import { workLabels } from '../lib/work-view';
+interface Props { id?: string; locale: Locale; panelId: string; href?: string }
+const { id, locale, panelId, href } = Astro.props;
+const label = tr(locale, 'comments');
+---
+
+<section class="comments-panel" id={panelId} tabindex="-1" aria-labelledby={`${panelId}-title`} data-giscus-panel data-term={id ? `sticker-${id}` : undefined} data-lang={giscusLang[locale]} data-href={href}>
+  <h2 class="section-title" id={`${panelId}-title`}>{label}</h2>
+  <p>{workLabels(locale).commentsHint}</p>
+  <div class="giscus" data-giscus-mount data-title={label}></div>
+  <noscript><a class="text-link" href="https://github.com/lmy414/lmy414-blog-comments/discussions">GitHub Discussions</a></noscript>
+</section>

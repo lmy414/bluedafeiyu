@@ -1,0 +1,372 @@
+[
+  {
+    "date": "2026-10-23",
+    "title": [
+      "Demo 组件迁移与浏览体验修复",
+      "Demo component migration and browsing fixes",
+      "デモコンポーネントの移行と閲覧体験の修正"
+    ],
+    "points": [
+      [
+        "补齐图片瀑布流、图库标签、图片预览与当前浏览器内的收藏。",
+        "Restored the masonry gallery, tags, image previews and bookmarks in the current browser.",
+        "画像のメイソンリー、タグ、プレビュー、ブラウザー内のお気に入りを補いました。"
+      ],
+      [
+        "作者档案展示真实头像、图片与视频作品，完善搜索、排序和作品翻阅。",
+        "Creator profiles show real avatars, images and videos. Search, sorting and navigation between works were improved.",
+        "作者プロフィールに実際のアバター、画像、動画を表示し、検索、並べ替え、作品間の移動を改善しました。"
+      ],
+      [
+        "统一导航、字号与阅读层级，修复社群、活动和说明页，适配桌面、手机与四种语言。",
+        "Unified navigation, type sizes and reading hierarchy. Fixed community, event and information pages for desktop, mobile and all four languages.",
+        "ナビゲーション、文字サイズ、見出し階層を統一し、コミュニティ・イベント・案内ページをPC、スマートフォン、4言語に対応させました。"
+      ]
+    ]
+  },
+  {
+    "date": "2026-10-23",
+    "title": [
+      "新版前台与自动视频收录上线",
+      "New frontend and automatic video archiving",
+      "新しいフロントエンドと動画の自動収録を公開"
+    ],
+    "points": [
+      [
+        "首页、社群、角色、创作者与说明页面采用新版布局，完善手机端和深色模式。",
+        "The home, community, character, creator and information pages adopted the new layout, with improved mobile and dark modes.",
+        "ホーム、コミュニティ、キャラクター、作者、案内ページに新レイアウトを採用し、モバイルとダークモードを改善しました。"
+      ],
+      [
+        "作者登记、RSSHub 同步、AI 审核与自动发布已接通，上线结果发送到飞书群。",
+        "Connected creator registration, RSSHub sync, AI review and automatic publishing, with publication updates sent to Feishu.",
+        "作者登録、RSSHub同期、AI審査、自動公開をつなぎ、公開結果をFeishuに通知するようにしました。"
+      ]
+    ]
+  },
+  {
+    "date": "2026-10-23",
+    "title": [
+      "作者登记、视频同步与自动发布",
+      "Creator registration, video sync and automatic publishing",
+      "作者登録、動画同期、自動公開"
+    ],
+    "points": [
+      [
+        "填写 Bilibili UID 或主页链接和一句话说明，即可加入同步队列。",
+        "Enter a Bilibili UID or profile link and a short introduction to join the sync queue.",
+        "BilibiliのUIDまたはプロフィールURLと短い紹介を入力すると、同期キューに登録されます。"
+      ],
+      [
+        "接入 RSSHub 发现近期投稿，逐条检查作者归属、封面和预览帧，只收录 AI 娘二创。",
+        "RSSHub discovers recent uploads. Creator attribution, thumbnails and preview frames are checked individually so the archive includes AI-girl fan works.",
+        "RSSHubで新着投稿を見つけ、作者、サムネイル、プレビュー画像を個別に確認してAI娘の二次創作を収録します。"
+      ],
+      [
+        "审核通过的视频与作者资料自动进入发布队列，审核和上线结果同步到飞书群。",
+        "Approved videos and creator profiles enter the publishing queue automatically. Review and publication results are sent to Feishu.",
+        "審査を通過した動画と作者情報は自動的に公開キューに入り、審査・公開結果はFeishuに通知されます。"
+      ]
+    ]
+  },
+  {
+    "date": "2026-10-04",
+    "title": [
+      "新版前台与主题浏览",
+      "New Frontend and Theme Browsing",
+      "新フロントエンドとテーマ閲覧"
+    ],
+    "points": [
+      [
+        "上线发现首页、角色档案、主题合集与完整作品详情，保留原有作品地址和评论记录。",
+        "Launched the Discover homepage, character profiles, theme collections, and full artwork detail pages, while keeping existing artwork URLs and comment records.",
+        "発見ホーム、キャラクタープロフィール、テーマ別コレクション、完全な作品詳細ページを公開し、既存の作品URLとコメント記録を維持しました。"
+      ],
+      [
+        "图库统一使用“再看一些”连续浏览；筛选栏、下拉框和预览弹窗共用组件。",
+        "The gallery now uses a single “See more” flow for continuous browsing; the filter bar, dropdowns and preview lightbox share one set of components.",
+        "ギャラリーは「もっと見る」による連続閲覧に統一し、フィルターバー・ドロップダウン・プレビューモーダルは共通コンポーネント化しました。"
+      ],
+      [
+        "延续网格纸与手绘纸卡主题，支持手机、黑夜模式和四种界面语言。",
+        "Keeps the grid-paper and hand-drawn paper-card look, with support for phones, dark mode and four interface languages.",
+        "方眼紙と手描きの紙カードのテーマをそのままに、スマホ・ダークモード・4言語のインターフェースに対応しました。"
+      ]
+    ]
+  },
+  {
+    "date": "2026-09-29",
+    "title": [
+      "站内投稿加入人机验证与限速",
+      "On-site submissions Added bot verification and rate limiting",
+      "サイト内投稿ボット対策とレート制限を追加"
+    ],
+    "points": [
+      [
+        "站内快速投稿表单接入 Cloudflare Turnstile 人机验证，多数情况下自动通过，必要时点一下即可。",
+        "The quick on-site submission form now uses Cloudflare Turnstile bot verification — it usually passes on its own, and a single click is all it takes when it doesn't.",
+        "サイト内のクイック投稿フォームに Cloudflare Turnstile のボット検証を導入しました。ほとんどの場合は自動で通過し、必要なときはワンクリックで済みます。"
+      ],
+      [
+        "每个 IP 每小时最多提交 10 次，超出会提示稍后再试。",
+        "Each IP can submit up to 10 times per hour. Further attempts ask the user to try again later.",
+        "IPごとに1時間に10回まで投稿でき、上限を超えると時間をおいて再試行するよう案内します。"
+      ],
+      [
+        "验证框固定为浅色，和站点配色保持一致。",
+        "The verification widget stays light at all times, matching the site's color scheme.",
+        "検証ウィジェットは常にライト表示で、サイトの配色に合わせています。"
+      ]
+    ]
+  },
+  {
+    "date": "2026-09-29",
+    "title": [
+      "QQ 群投稿开放",
+      "QQ group submissions Opened",
+      "QQグループ投稿オープン"
+    ],
+    "points": [
+      [
+        "在投稿群里 @机器人，发送「投稿 标题 角色」并在同一条消息里附图即可投稿，参数不对会逐项提醒。",
+        "In the submission group, @ the bot and send it the submission command followed by the title and character, with the image attached in the same message; if any parameter is off, it flags each one.",
+        "投稿グループでボットをメンションし、「投稿 标题 角色」と送って、同じメッセージに画像を添付すれば投稿できます。パラメータが正しくない場合は項目ごとに指摘してくれます。"
+      ],
+      [
+        "角色名支持常用别名，也认「娘」后缀，比如 deepseek娘。",
+        "Character names accept the usual aliases and the -chan suffix as well, e.g. DeepSeek Chan.",
+        "キャラクター名はよく使われる別名に対応し、「娘」の接尾辞も認識します（例：deepseek娘）。"
+      ],
+      [
+        "群投稿每个自然小时共 10 张，整点重置，回复里会显示本小时剩余次数。",
+        "The group can submit ten images per clock hour. The quota resets on the hour and the reply shows the remaining slots.",
+        "グループ投稿は毎時10枚までで、正時に枠がリセットされます。返信にはその時間の残り枠を表示します。"
+      ],
+      [
+        "站内、GitHub、QQ 三个入口的投稿统一进入审核队列，审核通过后批量发布。",
+        "Submissions from all three channels — on-site, GitHub and QQ — go into one review queue, then publish in batches once approved.",
+        "サイト内・GitHub・QQ の3つの入口からの投稿はすべて同じ審査キューに入り、承認後にまとめて公開されます。"
+      ]
+    ]
+  },
+  {
+    "date": "2026-09-28",
+    "title": [
+      "前台迁移到 Astro",
+      "Front end Moved to Astro",
+      "フロントエンドAstro へ移行"
+    ],
+    "points": [
+      [
+        "全部页面改用 Astro 静态构建，页面结构和访问地址保持不变。",
+        "Every page is now built statically with Astro, with page structure and URLs unchanged.",
+        "全ページを Astro の静的ビルドに切り替えました。ページ構成と URL はそのままです。"
+      ],
+      [
+        "旧的页面生成脚本已清理下线。",
+        "The old page-generation scripts have been retired.",
+        "古いページ生成スクリプトは削除しました。"
+      ]
+    ]
+  },
+  {
+    "date": "2026-09-27",
+    "title": [
+      "专题页上线，首页新增专题轮播",
+      "Topic pages Launched, with a new topic carousel on the home page",
+      "特集ページ公開、トップページに特集カルーセルを追加"
+    ],
+    "points": [
+      [
+        "新增专题页，按主题把相关作品串在一起看。",
+        "Added topic pages that group related works by theme so you can browse them together.",
+        "特集ページを追加し、テーマごとに関連作品をまとめて見られるようにしました。"
+      ],
+      [
+        "首页加入专题轮播，最新专题一眼可见。",
+        "A topic carousel on the home page puts the newest topic right up front.",
+        "トップページに特集カルーセルを追加し、最新の特集がひと目でわかるようにしました。"
+      ]
+    ]
+  },
+  {
+    "date": "2026-09-26",
+    "title": [
+      "英语 / 日语界面支持上线",
+      "English / Japanese Interface language support goes live",
+      "英語 / 日本語多言語インターフェース公開"
+    ],
+    "points": [
+      [
+        "新增英语与日语界面，顶栏右侧「中 / EN / 日」贴纸一键切换，选择记忆在本机，也认 ?lang= 参数与浏览器语言。",
+        "Added English and Japanese interfaces: the three-language sticker on the right of the top bar switches with a single click, your choice is remembered on this device, and the ?lang= parameter and your browser language are respected too.",
+        "英語と日本語のインターフェースを追加しました。トップバー右側の「中 / EN / 日」ステッカーでワンクリックに切り替えられ、選択はこの端末に記憶されます。?lang= パラメータやブラウザの言語も認識します。"
+      ],
+      [
+        "七个手写页与 250 个详情页的界面文案全部接入翻译层；分类名、品类词、来源与授权标签同步翻译。",
+        "Translated interface copy for seven hand-built pages and 250 work pages, including category names, artwork types, sources and license labels.",
+        "手書きの7ページと作品詳細250ページのUIを翻訳に対応させ、分類名、作品種別、出典、ライセンスのラベルも翻訳しました。"
+      ],
+      [
+        "作品名、Tag 与详情页正文是内容数据，保持中文原文；日文下自动切用日文字体栈。",
+        "Work titles, tags and detail-page body text are content data, so they stay in the original Chinese; under Japanese the site automatically switches to a Japanese font stack.",
+        "作品名・タグ・詳細ページ本文はコンテンツデータのため中国語原文のまま。日本語表示では自動的に日本語フォントスタックに切り替わります。"
+      ]
+    ]
+  },
+  {
+    "date": "2026-09-25",
+    "title": [
+      "投稿表单简化",
+      "Submission form Simplified",
+      "投稿フォームシンプル化"
+    ],
+    "points": [
+      [
+        "GitHub 投稿现在只需上传图片、填写图片名称和角色，一句话说明可选。",
+        "GitHub submissions now just need the image uploaded plus an image name and character; the one-line description is optional.",
+        "GitHub からの投稿は、画像のアップロードと画像名・キャラクターの記入だけでOK。一言説明は任意になりました。"
+      ],
+      [
+        "Tag、分类、来源、授权和详情页正文改由维护者看图审核时补齐，投稿者不用先理解完整收录契约。",
+        "Tags, category, source, license and detail-page body text are now filled in by the maintainer while reviewing the image, so submitters no longer need to understand the whole listing spec up front.",
+        "タグ・カテゴリ・出典・ライセンス・詳細ページ本文は、管理人が画像を確認しながら補完する形になり、投稿者が収録のルール全体を先に理解する必要はなくなりました。"
+      ],
+      [
+        "站内快速投稿与飞书通道仍未开放，当前真实入口仍是 GitHub Issue 表单。",
+        "The on-site quick submission and Feishu channel still aren't open — the real way in is still the GitHub Issue form.",
+        "サイト内のクイック投稿と Feishu チャンネルはまだ開放されていません。現在の実質的な受付窓口は、引き続き GitHub Issue フォームです。"
+      ]
+    ]
+  },
+  {
+    "date": "2026-09-25",
+    "title": [
+      "自定义 404页上线",
+      "Custom 404 The page goes live",
+      "カスタム404ページ公開"
+    ],
+    "points": [
+      [
+        "新增站点自己的 404 页：大号 404、几条可能原因，以及回首页 / 翻分类 / 去投稿三个出口。",
+        "Added a branded 404 page with a large status code, common causes, and links to home, categories and submissions.",
+        "大きな404表示、よくある原因、ホーム・分類・投稿へのリンクを備えた独自の404ページを追加しました。"
+      ],
+      [
+        "页面照旧返回 404 状态码并标记 noindex，不会被搜索引擎当成正常页面收进去。",
+        "The page returns HTTP 404 and is marked noindex so search engines exclude it.",
+        "HTTP 404を返し、検索エンジンに登録されないようnoindexを指定しました。"
+      ],
+      [
+        "404 页与其它静态页一样参与 gzip 预压缩与构建校验；产物里少了它，构建和发布都会直接失败。",
+        "The 404 page is precompressed with gzip and checked during builds. A missing page causes the build and release to fail.",
+        "404ページもgzip事前圧縮とビルド検証の対象です。成果物にない場合はビルドと公開を中止します。"
+      ]
+    ]
+  },
+  {
+    "date": "2026-09-25",
+    "title": [
+      "逐张视觉复核重分类，新增漫画分类",
+      "Image-by-image visual review Reclassifying, and a new Comics category",
+      "1枚ずつ視覚的に再確認再分類と「漫画」カテゴリの新設"
+    ],
+    "points": [
+      [
+        "191 件作品全部重看一遍图，按实际画面重分到梗图 / 插画 / 设定图 / 漫画。",
+        "Reviewed all 191 works visually and reclassified them as memes, illustrations, design sheets or comics.",
+        "191作品をすべて見直し、実際の画像に沿ってミーム、イラスト、設定画、漫画に再分類しました。"
+      ],
+      [
+        "新立「漫画」分类，收多格分镜、连环画与条漫。",
+        "Created a new Comics category for multi-panel sequences, picture stories and webtoon-style strips.",
+        "「漫画」カテゴリを新設し、複数コマの分鏡、絵物語、縦スクロール漫画を収録します。"
+      ],
+      [
+        "详情页正文改为蓝色大肥鱼第一人称评价，逐张手写。",
+        "Detail page copy is now a first-person comment from DeepSeek Chan, handwritten for each image.",
+        "詳細ページの本文は DeepSeek Chan による一人称の感想に変更し、1枚ずつ手書きしました。"
+      ],
+      [
+        "首批 59 件当时没有名字与标签、一直没上线的图，这次看图补齐名字与标签后全部收编，作品总数 191 → 250。",
+        "Added names and tags to the 59 unpublished images from the first batch and archived them, raising the total from 191 to 250.",
+        "初回分の未公開画像59枚に作品名とタグを付けて収録し、総数が191件から250件になりました。"
+      ],
+      [
+        "这 59 张的原图转为本站自托管，下载不再依赖上游档案馆。",
+        "The archive now hosts the originals of those 59 images directly.",
+        "この59枚の元画像は当サイトで直接配信するようにしました。"
+      ],
+      [
+        "修掉标题与图片 alt 里标签与「AI娘二创」粘连的问题（如 glmAI娘二创 → glm AI娘二创）。",
+        "Fixed the missing space in titles and image alt text where tags were glued to \"AI Chan fan art\" (e.g. glmAI Chan fan art → glm AI Chan fan art).",
+        "タイトルと画像 alt でタグと「AI娘二次創作」がくっついてしまう問題を修正しました（例：glmAI娘二次創作 → glm AI娘二次創作）。"
+      ]
+    ]
+  },
+  {
+    "date": "2026-09-22",
+    "title": [
+      "架构边界基准与数据边界落地",
+      "Architecture boundaries Ground rules and data boundaries land",
+      "アーキテクチャ境界基準とデータ境界の策定"
+    ],
+    "points": [
+      [
+        "新增《架构边界》规范基准。",
+        "Added a spec document for \"Architecture boundaries\".",
+        "「アーキテクチャ境界」の規範基準を追加しました。"
+      ],
+      [
+        "角色与分类迁出代码为 JSON 清单。",
+        "Moved characters and categories out of the code into JSON lists.",
+        "キャラクターとカテゴリをコードから JSON の一覧に移行しました。"
+      ],
+      [
+        "构建补引用完整性断言。",
+        "Added reference-integrity assertions to the build.",
+        "ビルドに参照整合性のアサーションを追加しました。"
+      ]
+    ]
+  },
+  {
+    "date": "2026-09-22",
+    "title": [
+      "第三批投稿收录（#19–#22）",
+      "Third batch Submissions added (#19–#22)",
+      "第3弾投稿を収録（#19–#22）"
+    ],
+    "points": [
+      [
+        "收录 6 张图。",
+        "Archived six images.",
+        "画像6枚を収録しました。"
+      ],
+      [
+        "新立 Stepfun 娘与 GLM 娘两个角色。",
+        "Introduced two new characters: StepFun Chan and GLM Chan.",
+        "StepFunちゃんと GLMちゃん、2人のキャラクターを新設しました。"
+      ]
+    ]
+  },
+  {
+    "date": "2026-09-21",
+    "title": [
+      "第一期加载优化落地",
+      "First edition Loading optimizations Shipped",
+      "第1期読み込みの最適化リリース"
+    ],
+    "points": [
+      [
+        "投稿补缩略图与详情图派生。",
+        "Added thumbnail and detail-image derivatives for submissions.",
+        "投稿のサムネイルと詳細画像の派生を追加しました。"
+      ],
+      [
+        "发布包 73.7 MB → 8.3 MB。",
+        "Reduced the release package from 73.7 MB to 8.3 MB.",
+        "公開パッケージを73.7 MBから8.3 MBに縮小しました。"
+      ]
+    ]
+  }
+]

@@ -1,0 +1,18 @@
+[Unit]
+Description=蓝色大肥鱼 v2 GitHub Issue reconciliation
+Wants=network-online.target
+After=network-online.target postgresql.service
+
+[Service]
+Type=oneshot
+User=dafeiyu-v2
+Group=dafeiyu-v2
+WorkingDirectory=/srv/new-business/dafeiyu-v2/apps/api
+EnvironmentFile=/etc/dafeiyu-v2/api.env
+ExecStart=/usr/bin/node dist/jobs/issue-reconcile.js
+TimeoutStartSec=8min
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+UMask=0027

@@ -1,0 +1,72 @@
+---
+import Icon from './Icon.astro';
+import { nationalDay } from '../content/national-day';
+import { eventPopupLabel, eventSummary, eventTitle, isEventOpen } from '../lib/active-event';
+import { publicUrl, type EventItem } from '../lib/api';
+import { copy, htmlLang, localizedText, localePath, tr, type Locale } from '../lib/i18n';
+import { segment } from '../lib/site';
+
+interface Props { locale: Locale; event: EventItem; isPreview?: boolean; onEventsPage: boolean }
+const { locale, event, isPreview = false, onEventsPage } = Astro.props;
+const t = (key: Parameters<typeof tr>[1]) => tr(locale, key);
+const c = (zh: string, en: string, ja: string) => copy(locale, [zh, en, ja]);
+const { popup, cover } = event.payload ?? {};
+const national = event.slug === nationalDay.id;
+const open = isEventOpen(event);
+const label = (key: Parameters<typeof eventPopupLabel>[2]) => eventPopupLabel(locale, event, key);
+const badge = label('badge') || (open ? t('eventLive') : national ? copy(locale, nationalDay.status) : c('往期活动', 'Past event', '過去のイベント'));
+const headline = label('headline') || eventTitle(locale, event);
+const description = label('description') || eventSummary(locale, event);
+const date = event.endsAt && Number.isFinite(Date.parse(event.endsAt)) ? new Intl.DateTimeFormat('sv-SE', { dateStyle: 'short', timeZone: 'Asia/Shanghai' }).format(new Date(event.endsAt)) : undefined;
+const deadline = c('截止至', 'Deadline', '締切');
+function safeUrl(value?: string) {
+  if (typeof value === 'string' && /^\/(?!\/)[^\s\\\x00-\x1f\x7f]*$/.test(value)) {
+    const url = new URL(value, Astro.url.origin);
+    if (url.origin === Astro.url.origin && !url.pathname.startsWith('//')) return `${url.pathname}${url.search}${url.hash}`;
+  }
+  return publicUrl(value);
+}
+const coverSrc = safeUrl(cover?.src) || (national ? nationalDay.cover : undefined);
+const cta = safeUrl(popup?.ctaUrl) ?? localePath(locale, `/events/${segment(event.slug)}`);
+const secondary = safeUrl(popup?.secondaryUrl) ?? safeUrl(event.payload?.exhibition) ?? (national ? nationalDay.exhibition : undefined);
+const linkTarget = (url: string) => new URL(url, Astro.url).origin === Astro.url.origin ? undefined : '_blank';
+const translatedHighlights = popup?.i18n?.[locale]?.highlights;
+const highlightText = Array.isArray(translatedHighlights) ? translatedHighlights : popup?.highlights;
+const highlights = Array.isArray(highlightText) ? highlightText.filter(item => typeof item === 'string' && item.trim()).slice(0, 4).map(item => highlightText === translatedHighlights ? item : localizedText(locale, item)) : (isPreview && national ? [
+  c('采用奖 88 元 · 人气奖 66 元', '88 RMB adoption prize · 66 RMB popularity prize', '採用賞 88元・人気賞 66元'),
+  c('征集已于北京时间 10 月 26 日 23:59 截止', 'Submissions closed October 26 at 23:59 Beijing time', '募集は北京時間10月26日23:59に終了'),
+] : []);
+const rawVersion = popup?.popupVersion ?? popup?.version ?? event.payload?.popupVersion;
+const version = typeof rawVersion === 'string' || typeof rawVersion === 'number' ? rawVersion : undefined;
+---
+
+<dialog class:list={['event-promo-modal', { 'event-promo-with-cover': coverSrc }]} data-event-promo data-event-id={event.id} data-popup-version={version}
+  data-preview={isPreview ? '' : undefined} data-events-page={onEventsPage ? '' : undefined} data-ends-at={event.endsAt}
+  aria-labelledby="event-promo-title" aria-describedby={description ? 'event-promo-description' : undefined} {...{ closedby: 'any' }}>
+  <form method="dialog" class="event-promo-close"><button class="icon-button" type="submit" aria-label={t('close')} autofocus><Icon name="close" /></button></form>
+  <div class="event-promo-scroll">
+    <div class="event-promo-layout">
+      {coverSrc && <figure class="event-promo-cover">
+        <img src={coverSrc} alt={national ? copy(locale, nationalDay.alt) : localizedText(locale, typeof cover?.alt === 'string' ? cover.alt : undefined)} width={cover?.width} height={cover?.height}
+          decoding="async" referrerpolicy="no-referrer" data-fallback-image data-fallback-src={national ? nationalDay.cover : undefined} />
+      </figure>}
+      <div class="event-promo-copy">
+        <div class="event-promo-meta">
+          <span class="event-promo-badge">{open && <span class="event-live-dot" aria-hidden="true"></span>}{badge}</span>
+          {isPreview && <span class="event-promo-preview">{t('eventPreview')}</span>}
+          {date && <time class="event-promo-deadline mono" datetime={event.endsAt ?? undefined}>{deadline} {date}</time>}
+        </div>
+        <h2 id="event-promo-title">{headline}</h2>
+        {description && <p id="event-promo-description">{description}</p>}
+        {highlights.length > 0 && <ul class="event-promo-highlights" role="list">
+          {highlights.map(item => <li><Icon name="check" />{item}</li>)}
+        </ul>}
+        <div class="button-row event-promo-actions">
+          <a class="console-btn console-btn-primary" href={cta} target={linkTarget(cta)} rel={linkTarget(cta) ? 'noopener noreferrer' : undefined}>{label('ctaLabel') || t('eventDetails')}<Icon name="arrowRight" /></a>
+          {secondary ? <a class="console-btn" href={secondary} target={linkTarget(secondary)} rel={linkTarget(secondary) ? 'noopener noreferrer' : undefined}>{label('secondaryLabel') || t('eventExhibition')}<Icon name={linkTarget(secondary) ? 'externalLink' : 'arrowRight'} /></a> : <form method="dialog"><button type="submit" class="console-btn">{t('eventLater')}</button></form>}
+        </div>
+        <p class="event-promo-note">{t('eventReminder')}</p>
+      </div>
+    </div>
+  </div>
+</dialog>

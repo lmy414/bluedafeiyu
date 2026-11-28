@@ -1,0 +1,27 @@
+---
+import Icon from './Icon.astro';
+import { field, type Video } from '../lib/api';
+import { videoCover, videoHref } from '../lib/creators';
+import { htmlLang, localePath, tr, type Locale } from '../lib/i18n';
+import { creatorPath } from '../lib/site';
+interface Props { locale: Locale; video: Video; hideAuthor?: boolean }
+const { locale, video, hideAuthor } = Astro.props;
+const name = field(locale, { ...video, i18n: video.i18n ?? video.review?.i18n }, 'title');
+const href = videoHref(video);
+const cover = videoCover(video);
+const authorId = video.creator?.id ?? video.creatorId;
+const date = video.publishedAt && Number.isFinite(Date.parse(video.publishedAt)) ? new Intl.DateTimeFormat(htmlLang[locale], { dateStyle: 'medium', timeZone: 'Asia/Shanghai' }).format(new Date(video.publishedAt)) : undefined;
+const Heading = hideAuthor ? 'h3' : 'h2';
+---
+
+<article class="directory-card video-card">
+  <a class="directory-media video-cover" href={href} target="_blank" rel="noopener noreferrer" aria-label={`${tr(locale, 'videoExternal')} · ${name}`}>
+    <Icon name="videos" />
+    {cover && <img src={cover} alt="" width="480" height="270" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-video-cover />}
+    <span class="video-badge" aria-hidden="true">Bilibili</span>
+  </a>
+  <div class="directory-copy"><Heading><a href={href} target="_blank" rel="noopener noreferrer">{name}</a></Heading>
+    {!hideAuthor && video.creator && authorId && <a class="text-link" href={localePath(locale, creatorPath(authorId))}>{field(locale, video.creator, 'name')}</a>}
+    {date && <time class="mono" datetime={video.publishedAt}>{date}</time>}
+  </div>
+</article>

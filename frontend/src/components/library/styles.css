@@ -1,9 +1,0 @@
-/* Public shell and shared primitives only. Business pages import their own CSS. */
-@import 'DesignSystem.css';
-@import 'ArchiveContent.css';
-@import 'Headings.css';
-@import 'Controls.css';
-@import 'CatalogFilters.css';
-@import 'Catalog.css';
-@import 'Overlays.css';
-@import '../../../public/components/runtime.css';

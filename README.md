@@ -1,208 +1,34 @@
-<div align="center">
-  <img src="https://raw.githubusercontent.com/lmy414/ai-girl-stickers/main/dist/avatar.png" width="112" alt="蓝色大肥鱼站点图标">
-  <h1>蓝色大肥鱼</h1>
-  <p><strong>AI 娘二创表情包开放档案</strong></p>
-  <p>
-    <a href="https://xn--pssy23gqgbz2d718b.com/"><img src="https://img.shields.io/website?url=https%3A%2F%2Fxn--pssy23gqgbz2d718b.com%2F&style=for-the-badge&label=site&up_message=online&down_message=offline" alt="站点在线状态"></a>
-    <a href="frontend/"><img src="https://img.shields.io/badge/frontend-Astro%20static-BC52EE?style=for-the-badge&logo=astro&logoColor=white" alt="前台使用 Astro 静态构建"></a>
-    <a href="package.json"><img src="https://img.shields.io/badge/Node.js-22.12%2B-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="需要 Node.js 22.12 或更高版本"></a>
-    <a href="LICENSE"><img src="https://img.shields.io/badge/code%20license-MIT-2ea44f?style=for-the-badge" alt="代码使用 MIT 许可"></a>
-  </p>
-  <p>
-    <strong>简体中文</strong> ·
-    <a href="README.en.md">English</a> ·
-    <a href="README.ja.md">日本語</a>
-  </p>
-</div>
+# 蓝色大肥鱼 v2
 
----
+蓝色大肥鱼（`xn--pssy23gqgbz2d718b.com`）的完整重构版本，独立开发于本目录，上线验收前不改动旧站 `bluedafeiyu/` 与现行生产服务。
 
-“蓝色大肥鱼”是一个 AI 娘二创表情包开放档案。站内收集梗图、插画、设定图和漫画，并按角色归档。站点支持按名称、Tag 和角色别名搜索。每件作品都有独立详情页，可查看来源与授权，也提供原图下载入口。
+## 技术栈
 
-界面支持中文、英文和日文。
-
-## 项目概览
-
-| 项目 | 内容 |
-| --- | --- |
-| 前台 | Astro 构建的纯静态站点 |
-| 界面语言 | 中文、English、日本語 |
-| 作品类型 | 梗图、插画、设定图、漫画 |
-| 图片来源 | 独立图片存档仓库 |
-| 投稿方式 | 站内、GitHub Issue 表单 |
-| 社群 | Discord、QQ 群「蓝色大肥鱼.com」 |
-
-## 常用入口
-
-| 用途 | 地址 |
-| --- | --- |
-| 在线浏览 | <https://xn--pssy23gqgbz2d718b.com/> |
-| 站内投稿 | <https://xn--pssy23gqgbz2d718b.com/submit.html> |
-| Discord 社群 | <https://discord.gg/pmECYDChY> |
-| QQ 群「蓝色大肥鱼.com」 | <https://qm.qq.com/q/mFL9GUZkWc> |
-| 微信公众号：到社群页扫码关注 | <https://xn--pssy23gqgbz2d718b.com/community.html#community-join> |
-| GitHub Issue 投稿 | <https://github.com/lmy414/ai-girl-stickers/issues/new?template=sticker-submission.yml> |
-| 署名或下架申请 | <https://github.com/lmy414/ai-girl-stickers/issues/new?template=takedown-request.yml> |
-| 图片存档仓库 | <https://github.com/lmy414/ai-girl-stickers> |
-
-社群交流有两个入口：Discord 服务器和 QQ 群「蓝色大肥鱼.com」（群号 1134100615）。微信公众号只用于关注更新，不用于聊天和投稿。投稿仍走站内投稿页和 GitHub Issue 表单。
-
-## 仓库分工
-
-| 仓库 | 负责内容 |
-| --- | --- |
-| `bluedafeiyu`（本仓库） | Astro 前台、结构化数据、构建脚本、投稿服务代码和发布工具 |
-| `ai-girl-stickers` | 投稿原图、派生图、站点图片资源，以及投稿和下架表单 |
-
-站点仓负责生成页面，图片仓负责保存位图。本仓库不跟踪图片文件，线上资源由构建流程从图片仓同步。
-
-## 系统架构
-
-以下三张图只描述组件关系和流程，不包含线上主机、端口、密钥等部署细节。
-
-### 站点架构
-
-```mermaid
-flowchart LR
-  subgraph 访客
-    V[浏览器]
-    Q[QQ 投稿群]
-    G[GitHub Issue 表单]
-  end
-  subgraph 边缘
-    CF[Cloudflare CDN<br/>Turnstile 人机验证]
-  end
-  subgraph 服务器
-    NG[Nginx]
-    ST[静态站点<br/>Astro 构建产物]
-    SUB[统一投稿服务<br/>server/]
-    ADM[后台<br/>Payload CMS]
-    PUB[发布执行器<br/>ops/admin/]
-    HM[Hermes Agent<br/>AI 审核 · 定时任务 · QQ 插件]
-  end
-  subgraph GitHub
-    SR[(站点仓<br/>bluedafeiyu)]
-    CR[(图片仓<br/>ai-girl-stickers)]
-  end
-  FS[飞书群通知]
-
-  V --> CF --> NG
-  NG --> ST
-  NG -->|"/api 投稿"| SUB
-  NG -->|"后台"| ADM
-  Q --> HM -->|"QQ 入站"| SUB
-  G -.->|定时拉取附件| SUB
-  HM -->|"审核结果回写"| SUB
-  SUB -->|"同步待发布"| ADM
-  ADM -->|"发布请求"| PUB
-  PUB -->|"提交清单"| SR
-  PUB -->|"提交原图与派生图"| CR
-  PUB -->|"构建部署"| ST
-  V -.->|原图下载| CR
-  SUB & PUB & HM --> FS
-```
-
-### 数据处理流程
-
-```mermaid
-flowchart TD
-  A1[站内投稿<br/>Turnstile + 每 IP 每小时 10 次] --> C
-  A2[QQ 群投稿<br/>@机器人 + 每小时 10 张] --> C
-  A3[GitHub Issue<br/>标签过滤 + 附件白名单] --> C
-  C[按 sha256 去重入队<br/>状态 received] --> D[Hermes AI 审核]
-  D -->|"通过"| E[auto_passed<br/>生成名称 · 标签 · 分类 · 正文]
-  D -->|"拒绝"| F[auto_rejected<br/>记录理由]
-  D -->|"不确定"| M[needs_manual]
-  M --> H[后台人工复核]
-  F --> H
-  E --> I[后台待发布]
-  H -->|"人工收录"| I
-  I --> J[发布执行器]
-  J --> K[写原图 · 生成派生图 · 更新 works.json]
-  K --> L[构建校验 → 推送两仓 → 部署]
-  L --> N[释放服务器原图<br/>下载改走 GitHub Raw]
-  L --> O[上线结果通知]
-```
-
-### 同步流程
-
-```mermaid
-sequenceDiagram
-  autonumber
-  participant GH as GitHub Issue
-  participant HM as Hermes 定时任务
-  participant SUB as 投稿服务
-  participant ADM as 后台
-  participant PUB as 发布执行器
-  participant REPO as 站点仓 / 图片仓
-  participant FS as 飞书群
-
-  HM->>SUB: 每天 3 次拉取 Issue 附件
-  SUB-->>FS: 收到投稿
-  loop 每 5 分钟
-    HM->>SUB: 取待审条目并回写审核结果
-    SUB-->>FS: 审核结果
-    HM->>ADM: 同步投稿到待发布
-    HM->>GH: 对账：已上线 → 回复作品链接并关闭<br/>未通过 → 写明理由（AI / 人工审核）并关闭
-    HM-->>FS: Issue 已回复并关闭
-  end
-  loop 每 6 小时
-    HM->>ADM: 同步后读取发布计划
-    ADM->>PUB: 有变更则发起发布
-    PUB->>REPO: 提交并推送，构建部署
-    PUB->>SUB: 释放已推送的原图
-    PUB-->>FS: 上线成功 / 失败
-  end
-  ADM->>GH: 后台快捷回复并关闭 Issue（站长手动）
-```
-## 仓库结构
-
-| 路径 | 内容 |
-| --- | --- |
-| `frontend/` | Astro 前台源码。页面在 `src/pages/`，布局和组件在 `src/layouts/`、`src/components/`，静态资源在 `public/` |
-| `data/` | 角色、分类、作品、站长自用、专题和编辑叠加层的权威 JSON 清单 |
-| `tools/` | 构建、内容同步、数据暂存、快照生成、图片派生和静态压缩脚本 |
-| `server/` | 网站、QQ 群和 GitHub Issue 的统一投稿服务，已上线 |
-| `tools/intake/` | 维护者用的收录中转工具，负责查重、暂存和 Issue 附件导入 |
-| `ops/` | 部署、回滚、审核发布自动化和服务器配置示例 |
-| `docs/` | 访问提速、CDN、投稿自动化和 Hermes 审核等维护文档 |
-| `archive/` | 拆分仓库前的历史文档 |
-| `dist/`、`.build/`、`frontend/out/` | 构建期或本地运行产物，不是前台源码，不要手工编辑 |
-
-投稿服务、收录工具的详细用法见 [`server/README.md`](server/README.md) 和 [`tools/intake/README.md`](tools/intake/README.md)。公开投稿可从站内投稿页或图片仓 GitHub Issue 表单进入。
-
-## 站点图标
-
-README 顶部使用图片仓的 `dist/avatar.png`。主要品牌资源如下：
-
-| 文件 | 尺寸 | 用途 |
+| 层级 | 选型 | 说明 |
 | --- | --- | --- |
-| [`dist/avatar.png`](https://github.com/lmy414/ai-girl-stickers/blob/main/dist/avatar.png) | 96 × 96 | 站点头像和 README Logo |
-| [`dist/favicon.ico`](https://github.com/lmy414/ai-girl-stickers/blob/main/dist/favicon.ico) | 256 × 256 | 浏览器标签页图标 |
-| [`dist/favicon.png`](https://github.com/lmy414/ai-girl-stickers/blob/main/dist/favicon.png) | 512 × 512 | 高清站点图标 |
+| 前台 | Astro 5 SSR（`@astrojs/node`） | 沿用三视库布局骨架，改为蓝白视觉体系与新图标 |
+| 后端 | Hono + TypeScript | 统一承接公开接口、投稿入站、后台接口与 Hermes 兼容接口 |
+| 数据库 | PostgreSQL + Drizzle ORM | 单一数据真源，支持多语言、标签筛选与模糊搜索 |
+| 后台 CMS | React + Vite（静态托管于 `/admin`） | 自研轻量管理台，替换原 Payload CMS |
+| 媒体存储 | Cloudflare R2 | 托管原图、派生图、立绘、头像、分享图与数据库备份 |
+| 评论系统 | Giscus | 保留既有 `sticker-<id>` 映射，延续历史评论 |
 
-## 本地预览
+## 目录规划
 
-普通浏览不需要本地环境。修改前台或核对构建时，需要 Node.js 22.12 或更高版本，还要准备图片存档仓库。
-
-```powershell
-cd frontend
-npm ci
-cd ..
-node tools/build_site.mjs --content-dir <图片存档仓库路径> --out .build/site
-python -m http.server 5173 -d .build/site
+```text
+bluedafeiyu-v2/
+  apps/
+    api/          Hono 统一后端、Drizzle Schema、迁移与后台任务
+    web/          Astro 5 SSR 前台（四语言、图库、连载、视频、OpenAPI 代理）
+    admin/        React + Vite 轻量 CMS 管理台
+  packages/
+    shared/       共享类型、枚举、校验规则、蓝白设计变量与图标资产
+  scripts/        R2 迁移、旧数据导入、完整性校验与备份脚本
+  ops/            Nginx 配置、systemd 单元与部署脚本
+  docs/           架构、接口与运维文档
 ```
 
-构建结果在 `.build/site/`。前台细节见 [`frontend/README.md`](frontend/README.md)，自动化部署和服务器配置见 [`docs/`](docs/)。
+## 文档入口
 
-## 开放数据接口
-
-公开图片作品同时导出为纯静态 JSON API，入口为 `/open-api/v1/index.json`。支持全量与分页读取、单件详情、角色、六种作品类型、标签、人工专题、作者作品集和角色与类型交集；原图地址沿用现有外部来源。
-
-调用格式见站内 [关于页「开放数据接口」](https://xn--pssy23gqgbz2d718b.com/about.html#open-data-api) 和 [接口维护说明](docs/静态开放API.md)。不提供客户端程序示例。
-
-## 投稿与版权
-
-这是一个非官方同人整理项目。投稿可走站内投稿页或图片仓 GitHub Issue 表单；署名更正与下架申请仍走 GitHub Issue 表单。具体规则见 [`CONTRIBUTING.md`](https://github.com/lmy414/ai-girl-stickers/blob/main/CONTRIBUTING.md)。
-
-作品图片的著作权归原作者。公开仓库或收录到站点，都不会让作品图片自动获得 MIT 授权。使用图片时，以作品详情页标注的来源与授权为准。本仓库代码按 MIT 许可发布，见 [`LICENSE`](LICENSE)。
+- [架构与重构方案](docs/架构与重构方案.md)：完整架构、R2 规范、数据库 Schema、Hermes 复用协议、UI 规范与分阶段施工计划。
+- [开发约定](AGENTS.md)：本仓库的硬性红线、开发边界与验收要求。

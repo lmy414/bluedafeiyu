@@ -1,139 +1,31 @@
 # AGENTS.md
 
-给在这个仓库里干活的代理和贡献者看的上手说明。
+本文件规定 `bluedafeiyu-v2/` 的开发边界与验收红线。动手改代码前，先阅读 [架构与重构方案](docs/架构与重构方案.md)。
 
-## 这是什么项目
+## 项目边界
 
-“蓝色大肥鱼”是 AI 娘二创表情包站，前端由 Astro 在构建时生成**纯静态** HTML；源码在 `frontend/src/`，无需线上 Node 运行时。站点仓另外带两段**服务端程序**——`server/`（统一投稿服务）与 `tools/intake/`（维护者收录中转），它们只在内地服务器本地运行、线上尚未开通，前端本身仍是静态站点。
+- 本目录与旧站 `E:\quick-site-studio\bluedafeiyu` 完全隔离。验收切流前，不得修改旧站源码、旧数据库或线上现行发布目录。
+- 线上测试部署目录为 `locvps-hk` 的 `/srv/new-business/dafeiyu-v2`，测试域名为 `v2.xn--pssy23gqgbz2d718b.com`。
+- 密钥、R2 凭证、数据库连接串和第三方令牌只放服务器环境文件，不得提交到 Git。
 
-源码、结构化数据与内容分成两个仓库：
+## Git 分支与切流
 
-| 仓库 | 放什么 |
-|---|---|
-| `lmy414/bluedafeiyu`（本仓库） | Astro 页面、样式、构建与发布脚本、`data/` 结构化清单、全部自动化脚本，以及 `server/` 统一投稿服务与 `tools/intake/` 收录中转 |
-| `lmy414/ai-girl-stickers` | 图片（投稿原图、派生图、站点图标、QQ 群二维码）与投稿 Issue 模板 |
+- v2 代码推送到原仓库 `lmy414/bluedafeiyu` 的独立 `v2` 分支。远端地址为 `git@github-lmy414:lmy414/bluedafeiyu.git`。
+- 测试期固定从 `v2` 部署。验收切流前，v2 开发与部署不得向 `main` 推送或合入任何改动。
+- 主域切流前，在旧 `main` 的最终提交上打 `v1-final` 标签，并从同一提交创建 `archive/v1` 分支。将标签和归档分支推送到原仓库后，再把 `v2` 合入 `main`。
 
-线上地址：<https://xn--pssy23gqgbz2d718b.com/>（中文域名一律写 punycode）。
+## 不可变契约
 
-本仓库**不跟踪任何图片**（`*.png`/`*.jpg`/`*.gif`/`*.webp`/`*.ico` 等一律忽略），但**跟踪结构化数据**：角色、分类、投稿清单、id 冻结映射与首批编辑叠加层都在仓库根的 `data/`。构建时 `data/` 由 `tools/stage_data.mjs` 暂存成 `dist/` 下的产物路径，图片则由 `tools/sync_content.mjs` 从内容仓库同步。**构建不读内容仓库的任何 JSON 或脚本。**
+1. **作品标识冻结**：已发布作品的 `workId`（如 `sticker_<hash>`）与 `slug` 不得重算。`slug` 决定详情页地址，`workId` 决定 Giscus 评论串 `sticker-<id>` 与 OpenAPI 单件路径。
+2. **四语言一致**：前台保持简体中文、繁体中文、英语和日语完整支持。缺少英日译文的作品不自动上线。
+3. **无收藏与访客账号**：前台不提供收藏功能、不设访客登录系统。
+4. **Hermes 协议兼容**：后端必须保持原有 5 个回环接口与 QQ 入站接口的字段与状态码契约，确保线上 `hermes-webui` 容器无需改动插件即可接入。
+5. **媒体全走 R2**：原图、缩略图、展示图、头像、立绘与 OG 图统一托管在 R2 公开桶，OpenAPI 与站内下载共用同一公开地址，不经应用服务器代理图片字节。
+6. **下架即生效**：隐藏或删除作品时，同步更新数据库状态；彻底删除时移除 R2 公开对象并清理 Cloudflare 缓存，数据库保留 `sha256` 墓碑防止重复投稿。
+7. **老站图片路径零 404**。仍公开的图片必须在原路径返回 `200`，或以 `301` 永久重定向至可访问的新 R2 公开地址。上线前全量核验，严禁上线后出现老图片 `404`。
 
-`data/` 的构建暂存映射（`tools/stage_data.mjs` 里写死）：
+## 视觉规范
 
-| `data/` | 产物路径 |
-|---|---|
-| `characters.json` | `dist/characters.json` |
-| `categories.json` | `dist/categories.json` |
-| `blue-fish-ids.json` | `dist/blue-fish-ids.json` |
-| `works.json` | `dist/submissions/works.json` |
-| `owner-picks.json` | `dist/owner-picks/works.json` |
-| `topics.json` | `dist/topics.json`（专题：**站长人工精选**的作品合集，不分类；快照里带成 `topics`，供 `topics.html` 与首页专题轮播用） |
-| `blue-fish-classification.json` | `dist/data/blue-fish-classification.json`（构建期读，不进产物） |
-| `blue-fish-editorial.json` | `dist/data/blue-fish-editorial.json`（构建期读，不进产物） |
-| `work-localizations.json` | `dist/data/work-localizations.json`（按作品 ID 和中文内容摘要合并英日译文） |
-
-视频另有 `data/video-archive.json`，由后台只导出通过 AI 审核的视频及作者公开资料，前端构建直接读取。它不加入图片作品和六种图片类型。作者登记、公开接口、审核队列及维护方式见 `docs/Bilibili作者登记与视频同步.md`。未审视频、领取令牌和失败记录不得导出。
-
-连载漫画专题的显式编排保存在 `data/serial-topics.json`，构建时覆盖同 ID 的 CMS 专题或追加缺失专题，避免后续后台导出移除已编排连载。该清单仅用于站长指定的连载，不按作者或标签自动归集。`reader.totalPages` 是原稿总页数，`reader.pages` 显式关联原稿页码与稳定作品 ID；封面不占正文页码，未发布页保留缺页提示。页面使用组件库 `ComicSeries.mjs` 输出封面目录和 `/topics/<id>/page/<原稿页码>.html`，无需 JavaScript 即可前后翻页。图片档案的连载专区为 `/serials.html`；清单中的封面和正文页不进入首页、普通图库或角色档案的作品流。作品的搜索结果、详情地址和公开 API 继续保留。补页前仍需正常审核收录，再将新作品 ID 与原页码写入清单。头像沿用内容仓 `dist/author-avatars/<id>.webp`。
-
-专题收录的作品由站长人工精选，**不要自动把作品批量归进专题**；专题元数据可由 owner/bot 经后台 upsert 接口创建或更新，本仓库不预置具体专题记录。每条字段：`id`（kebab-case，发布后冻结，用于 `topics/<id>.html`；旧 hash 链接仍可用）、`name`、`summary`、`coverWorkId`、`status`（`active` 才上线）、`order`（升序）、`createdAt`/`updatedAt`、`workIds`（显式收录的作品 id，按此顺序展示）。构建时下架或不存在的 `workIds` 会被跳过并警告，封面失效退回首张，收录清空的专题不上线。
-
-后台另提供受鉴权的专题 upsert 接口（`POST /cms-api/topics/upsert`，owner 或 bot 均可调用），只允许按严格白名单维护文案与作者元数据：`topicId`（查找键）、`name`/`summary` 与英日译名、`author`（省略保留、`null` 清空）、`status`、`order`；`works`、`cover`、`needsPublish` 等键一律 400 拒绝。**作品与封面只能由站长在后台关联**，机器人不得通过该接口改动；机器人也不能把已关联作品的专题改成草稿。一条 `active` 但没有任何作品的专题不会生成专题页面。
-
-本地机器人通道使用独立 `owner` 身份，与站长共用全部业务权限，可通过原生 REST API 关联专题作品、封面和排序。上述 `topics/upsert` 白名单和 `bot` 限制仍适用于旧服务机器人。上传、人工收录、内容编辑和发布统一从任务中心查询；人工收录在同一任务中完成缺失文案与英日翻译。接入方法见 `docs/本地机器人操作通道.md`。
-
-可选字段 `author` 表示「来源作者专题」，结构 `{ name, url?, bio?, channels: [{ platform, label?, url }] }`：`channels` 第一项即首选联系方式，每行 `platform` 与 `url` 必填，`url`（含 `author.url`）只接受 http/https；没有 `author` 时专题维持共享合集版式，有 `author` 时前台改用独立作者版式并展示作者名（不做头像），缺作者名或首选渠道会直接构建失败。作者型专题记录按需创建，本仓库不预置。
-
-`tools/sync_content.mjs` 从内容仓同步首批预览到 `dist/data/blue-fish/previews/`。构建把这批预览写入发布产物的 `data/blue-fish/previews/`，并纳入增量构建的文件清单。两张 blue-fish JSON 仅在构建期间读取。
-
-## 文档在哪
-
-历史文档已归档到**本仓库**的 `archive/2026-09-24/`（内容仓没有这份 archive）：
-
-- `架构边界.md`：分层边界与硬性规则；
-- `数据契约.md`：字段与枚举的唯一来源；
-- `docs/SEO规范.md`：详情页文案与结构化数据口径；
-- `docs/维护与发布.md`：发布拓扑与 `ops/` 脚本细节。
-
-归档文档记录的是仓库拆分前的单仓库形态，与现状冲突时以本文件和实际代码为准。
-
-## 前端维护原则
-
-2026-11-17 用户已授权按本地新版本整体更新公开前端，清理全部历史样式和重复组件，并建立统一规范。该次更新完成后，所有页面继续使用同一套组件库维护。不得恢复旧样式叠加或另建一套页面外壳。
-
-2026-11-17 用户曾要求“只提交推送，不发布”，随后明确更新为“推送了然后上线”。当前已授权先推送功能分支，完成检查后快进正式 `main` 并部署。检查与后续维护记录见 `docs/前端改版待验收记录-20261117.md`。
-
-每次本地更新前，先核对线上 `build-info.json`、远端 `main` 和本地主目录，保存未提交改动后安全同步。发布完成后再次同步本地主目录和图片仓，核对本地、远端和线上版本。功能开发使用独立工作树。
-
-修改共享组件前确认影响范围。页面只组合组件，样式归属明确，并完成相关测试、构建和浏览器验收。规范入口见 `docs/前端组件库与增量构建.md`。
-
-## 本地构建
-
-```powershell
-cd frontend
-npm ci
-cd ..
-node tools/build_site.mjs --content-dir <内容仓绝对路径> --out .build/site
-python -m http.server 5173 -d .build/site
-```
-
-权威清单仍在 `data/`；`dist/` 只暂存清单、快照及图片，不含可维护的前台页面。构建依次暂存数据、同步图片、生成快照，再由 `frontend/src/pages/` 输出 `.html`。改版式改 Astro 页面/组件；不要手工编辑 `.build/site/`。作品 `id`、`slug` 冻结，构建期不运行 `tools/prepare_works.mjs`。
-
-作品详情正文来自 `data/works.json` 或 `data/owner-picks.json` 的 `commentary`，SEO 文案公式在 `frontend/src/lib/seo.mjs`。六类单选类型由 `data/categories.json` 自动生成 `/categories/<id>.html`；专题由 `data/topics.json` 自动生成 `/topics/<id>.html`，每个专题需有有效作品。旧的 `/category.html` 与 `/topics.html` 仍保留。
-
-搜索专题导览的文案在 `frontend/src/lib/landing-copy.mjs`，页面由 `GuidePages.mjs` 生成。导览链接到现有角色、类型和作品，不修改后台人工精选专题的成员。`gemini-memes`、`deepseek-whale` 和 `deepseek-girl` 是导览保留 ID，后台专题不要使用这三个 ID。
-
-界面支持简体中文（`zh`，默认）、繁体中文（`zh-Hant`）、英语（`en`）和日语（`ja`）。简体保留原 URL，其他语言使用 `/zh-hant/`、`/en/` 和 `/ja/` 前缀。`frontend/scripts/localize-pages.mjs` 在 Astro 构建后复用 `frontend/public/lang.js` 生成各语言静态 HTML、canonical、hreflang 和 sitemap。语言菜单跳转到当前页面的对应版本，地址固定页面语言，不受浏览器偏好影响。动态链接用 `SiteLang.url()` 保持当前语言；图片、脚本和数据共用根目录资源。繁体动态文案按需加载站内 OpenCC，特殊用词在 `traditionalOverrides` 中维护。动态文案改动后要检查繁体转换和英、日词典。`frontend/public/page-scripts/` 管页内特有脚本，组件样式统一由 `frontend/src/components/library/styles.css` 引入；公共布局与可复用结构在 `frontend/src/layouts/`、`components/`。后台 `admin/` 独立运行，不参与公开前端。
-
-英日详情页必须有真实译文。存量译文在 `data/work-localizations.json`，新内容从后台的 `i18n` 导出；中文修改后必须重新生成译文。公共文案由 Astro 直接读取 `data/site-copy-localizations.json`，命名与维护规则见 `docs/多语言内容维护.md`。发布前运行 `node tools/localization/audit-pages.mjs <构建目录>` 检查正文及结构化数据。
-
-sitemap 的 `lastmod` 根据页面正文、SEO 文案和结构化数据变化更新。重复部署沿用原日期。服务器构建用 `SITE_PREVIOUS_DIR` 读取现行发布目录的 sitemap 与 HTML；本地默认读取旧输出目录。公开 JSON 和 `/data/blue-fish/previews/` 允许抓取，robots 只限制后台与内部审核接口。作者未知时保留缺省 `creator`。维护细则见 `docs/抓取与更新时间.md`。
-
-首批（blue-fish）记录的归一有两条容易踩的线：`build_site_snapshot.mjs` **先合并 `data/blue-fish-editorial.json` 叠加层，再判“够不够格当作品”**（名字 / 标签 / 角色三者齐全）。顺序反了，那 59 条补过名字的记录会重新掉线；叠加层里带 `originalPath` 的记录原图走内容仓（`lmy414/ai-girl-stickers`）的 Raw，没带的仍指上游档案馆。
-
-## 结构化数据与脚本
-
-迁移后所有清单与自动化脚本都在本仓库（内容仓只留图片 / 文档 / Issue 模板）；另外两段**站点仓程序**也在这里：`server/`（统一投稿服务）与 `tools/intake/`（收录中转）。
-
-```bash
-node tools/stage_data.mjs                                          # data/ → dist/ 暂存
-node tools/prepare_works.mjs                                       # 冻结 id/slug、补 slug 与兜底 categoryIds
-node tools/sync_issue_template.mjs --check --content-dir <内容仓>  # 校验内容仓投稿模板下拉
-node tools/sync_issue_template.mjs --write --content-dir <内容仓>  # 从 data/characters.json 生成模板
-python tools/generate_image_derivatives.py --content-dir <内容仓>  # 派生图（写内容仓图片、改本仓 data/works.json）
-python tools/prepare_favicon.py --content-dir <内容仓>             # 站点图标
-node tools/tests/migration.test.mjs --content-dir <内容仓>         # 迁移回归测试（瘦身内容仓也能构建）
-```
-
-- `id` / `slug` 一经发布即冻结：`slug` 决定详情页 URL，`id` 决定评论串（`sticker-<id>`），都不能重算；
-- `data/blue-fish-editorial.json` 是按 `sourcePath` 认图的编辑叠加层（59 条补名字 / 标签的记录靠它上线），**不要删**；
-- `data/blue-fish-classification.json` 是上游 raw 清单；仓库外导入流程会重新生成它，编辑结论要写在叠加层里；
-- 投稿模板归内容仓（`.github/ISSUE_TEMPLATE/`），但下拉**由本仓库从 `data/characters.json` 生成**。
-- 修改作品角色不移动已发布图片：派生图脚本从记录的 `path` 读取原图目录，缩略图和大图沿用同一目录；不要用可编辑的 `characterId` 重算图片路径。内容仓稀疏检出时，已有的完整派生图可以继续复用。
-
-## Git 流程
-
-公开前端的业务页面必须引用站内组件库。缺少组件或变体时先维护组件库，再在页面引用。禁止在页面、业务模板和普通脚本中手写内联 CSS 或直接改写元素样式。必要的动态尺寸、定位与颜色由组件内部封装，入口为 `frontend/public/components/runtime.js`。新增 CSS 必须归属组件；现有兼容样式的归属见 `frontend/component-library.json`。构建与提交前执行 `npm --prefix frontend run check:components`。说明与命令见 `docs/前端组件库与增量构建.md`。
-
-站点默认增量构建。每次发布先计算影响范围，使用上次成功发布的基线，复用未变化的页面及资源。首次构建、公共依赖变化或基线不可靠时允许完整重建，并记录原因。不要删除 `.build/astro-cache/` 来处理普通更新。显式完整重建使用 `--full`，`--force-clean` 只控制旧输出目录的清理。修改构建或组件边界时必须执行增量集成测试，对照同一输入的完整构建结果。
-
-1. 从最新 `main` 开功能分支，用 `feat/`、`fix/`、`docs/`、`chore/` 前缀；
-2. **显式列文件名暂存，禁止 `git add -A` 和 `git add .`**；
-3. 本地构建过一遍，并起服务在浏览器里验收；
-4. 提交信息用前缀 + 中文简述；
-5. 推送功能分支，复核后快进 `main` 再推送。
-
-## 更新与发布
-
-**每次更新都由服务器从 GitHub 拉取，不要本地上传。**
-
-- 先推送 `origin/main`；**推送不等于发布**；
-- 发布在服务器侧跑 `ops/deploy-server.sh` 的**副本**（脚本会先 `git fetch` 加 `reset --hard origin/main`。直接跑工作树里的这份脚本，`reset --hard` 会在运行中把它替换掉）；
-- 发布脚本分别拉取代码仓与内容仓的 `main`，构建、预压缩、原子切换 `current`，健康检查失败自动回滚；
-- 不要用面板上传整包，也不要直接改服务器上的站点文件；
-- 回滚用 `ops/rollback-server.sh <release目录名>`，只切软链、不删文件；
-- 每次构建、发布和回滚都用目标目录的 `works-v2.json` 逐项校验缩略图、大图和默认占位图。任一作品缺图即中止，日志列出作品 ID 和图片路径。切换后按图片目录抽查 HTTP 200、图片类型和文件内容，失败时自动恢复上一版。直接恢复备份产物时也须先运行 `node tools/work-image-integrity.mjs <目标目录>/works-v2.json <目标目录>`。
-- 服务器配置（`DEPLOY_ENV`、`DEPLOY_ROOT`、`SOURCE_DIR`、`CONTENT_DIR` 等）由维护者在服务器侧维护，不写进仓库。
-
-发布脚本为依赖安装、站点构建和预压缩分别建立 systemd 内存限制。默认总内存上限为 1280 MiB，Node 堆上限为 640 MiB，Swap 上限为 512 MiB。每步开始前要求至少 1024 MiB 可用内存。`BUILD_MEMORY_MAX_MB`、`BUILD_NODE_HEAP_MB` 和 `BUILD_MIN_AVAILABLE_MB` 分别控制总内存、Node 堆和最低可用内存。`[build-memory]` 日志每 5 秒记录可用内存和构建进程组占用，结束时输出峰值；失败时保留现行 `current`。
-
-首批原图上游重命名统一记录在 `data/blue-fish-original-overrides.json`：键是冻结的旧 sourcePath，值仅为经核验的新 `media/文件名`。必须核对旧、新 Git blob 与实际字节一致并验证访问成功。构建只更换原图下载目标，不改 sourcePath、ID/slug 或预览路径；自托管 originalPath 优先。该文件由源码版本控制，不放入 CMS 导出文件白名单，避免后台旧快照覆盖修复。
+- 沿用三视库（`D:\Codex\Projects\triview`）的工作台画廊布局骨架：左侧 64 px 图标 Rail、顶部 46 px 顶栏、49 px 二级 Tab/面包屑栏、等宽数字计数与精密角标。
+- 配色固定为蓝白主调（含深海蓝灰暗色模式），角色档案页允许在内容区注入角色专属强调色。
+- Brand Mark 与线性图标重新设计，统一 1.45 px 描边风格。

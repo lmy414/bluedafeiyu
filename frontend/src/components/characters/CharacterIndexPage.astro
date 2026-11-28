@@ -1,9 +1,0 @@
----
-import Archive from '../../layouts/Archive.astro';
-import '../library/Guides.css';
-import './CharacterIndex.css';
-import CharacterIndexBody from './CharacterIndexBody.astro';
-import {archivePages} from '../../lib/archive.mjs';
-const {meta}=archivePages.get('/characters.html');
----
-<Archive title={meta.title} desc={meta.description} path="/characters.html" active="characters" schemas={meta.schemas}><CharacterIndexBody /></Archive>

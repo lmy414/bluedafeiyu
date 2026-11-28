@@ -1,0 +1,26 @@
+---
+import WorkCard from './WorkCard.astro';
+import Icon from './Icon.astro';
+import { tr, type Locale } from '../lib/i18n';
+import type { Page, Taxon, Work } from '../lib/api';
+import masonry from '../scripts/masonry.js?raw';
+interface Props { locale: Locale; listing: Pick<Page<Work>, 'items' | 'unavailable'>; characters?: Taxon[]; next?: string; previous?: string; searching?: boolean; eager?: boolean }
+const { locale, listing, characters, next, previous, searching, eager = true } = Astro.props;
+const t = (key: Parameters<typeof tr>[1]) => tr(locale, key);
+---
+
+<div class="work-listing" data-work-listing>
+  {listing.items.length > 0 && <>
+    <div class="gallery-grid">{listing.items.map((work, order) => <WorkCard work={work} {locale} {characters} {order} eager={eager && order < 3} />)}</div>
+    <script is:inline set:html={masonry}></script>
+  </>}
+  {listing.unavailable || listing.items.length === 0 ? <div class="empty-state">
+    <Icon name="gallery" />
+    <p>{listing.unavailable ? t('unavailable') : t(searching ? 'emptySearch' : 'empty')}</p>
+  </div> : null}
+  <div class="batch-pagination" data-work-pagination>
+    {previous && <a class="console-btn" href={previous} data-work-previous><Icon name="chevronLeft" />{t('previousPage')}</a>}
+    {next && <a href={next} class="console-btn" rel="next" data-work-more>{t('load')}<Icon name="chevronDown" /></a>}
+  </div>
+  <p class="listing-status" role="status" data-work-status data-loading={t('loading')} data-loaded={t('loaded')} data-error={t('unavailable')}></p>
+</div>

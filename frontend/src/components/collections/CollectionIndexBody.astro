@@ -1,5 +1,0 @@
----
-import {archivePages} from '../../lib/archive.mjs';
-const {kind}=Astro.props;
----
-<Fragment set:html={archivePages.get('/'+kind+'.html').content} />

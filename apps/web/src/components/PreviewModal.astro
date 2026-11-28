@@ -1,0 +1,9 @@
+---
+import WorkBench from './WorkBench.astro';
+import type { Locale } from '../lib/i18n';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+---
+<dialog class="sheet-modal" id="preview-modal" aria-labelledby="preview-title" {...{ closedby: 'any' }}>
+  <div class="sheet-modal-scroll"><WorkBench {locale} modal /></div>
+</dialog>

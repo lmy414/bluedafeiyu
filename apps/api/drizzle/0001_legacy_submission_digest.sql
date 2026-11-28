@@ -1,0 +1,2 @@
+ALTER TABLE "submissions" ALTER COLUMN "sha256" DROP NOT NULL;--> statement-breakpoint
+ALTER TABLE "submissions" ADD CONSTRAINT "submissions_require_original_digest" CHECK ("submissions"."sha256" IS NOT NULL OR "submissions"."state" = 'published');

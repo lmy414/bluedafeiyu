@@ -1,0 +1,37 @@
+---
+import Icon from './Icon.astro';
+import { type Work, type Taxon, workMedia } from '../lib/api';
+import { tr, type Locale } from '../lib/i18n';
+import { workPreview } from '../lib/site';
+
+interface Props { work: Work; locale: Locale; characters?: Taxon[]; eager?: boolean; order: number }
+const { work, locale, characters, eager = false, order } = Astro.props;
+const preview = workPreview(locale, work, characters);
+const { title, href, display, character, category, original, format } = preview;
+const { thumb, thumbWidth, thumbHeight } = workMedia(work);
+const ratio = thumbWidth && thumbHeight ? thumbWidth / thumbHeight : 1;
+const minRatio = 0.58;
+const long = ratio < minRatio;
+const download = tr(locale, 'download');
+---
+
+<article class="work-tile" data-work-card data-work-id={work.id} data-order={order}>
+  <div class="tile-frame">
+    <a class="tile-link" href={href} data-preview={display ? JSON.stringify(preview) : undefined} aria-label={title} style={`--thumb-ratio:${Math.max(minRatio, ratio)}`} data-long={long ? '' : undefined}>
+      {thumb ? <img src={thumb} alt={preview.alt} width={thumbWidth} height={thumbHeight} loading={eager ? 'eager' : 'lazy'} decoding="async" referrerpolicy="no-referrer" /> : <Icon name="gallery" />}
+      {long && <span class="long-image-tag">{tr(locale, 'longImage')}</span>}
+    </a>
+    <div class="tile-top-bar">
+      {character && <span class="spec-tag">{character}</span>}
+      {category && <span class="spec-tag">{category}</span>}
+    </div>
+    <div class="tile-bottom-bar">
+      <span class="tile-caption">{title}</span>
+      {original && <a class="icon-button tile-download-btn" href={original} target="_blank" rel="noopener" title={download} aria-label={`${download} ${title}`} data-download data-work-slug={work.slug} data-file-name={title} data-file-format={format}><Icon name="download" /></a>}
+    </div>
+  </div>
+  <div class="tile-mobile-meta">
+    <a href={href} class="tile-mobile-title" data-preview={display ? JSON.stringify(preview) : undefined}>{title}<small>{[character, category].filter(Boolean).join(' · ')}</small></a>
+    {original && <a class="icon-button" href={original} target="_blank" rel="noopener" aria-label={`${download} ${title}`} data-download data-work-slug={work.slug} data-file-name={title} data-file-format={format}><Icon name="download" /></a>}
+  </div>
+</article>

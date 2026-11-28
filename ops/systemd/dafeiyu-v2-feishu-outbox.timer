@@ -1,0 +1,10 @@
+[Unit]
+Description=Process the Feishu notification outbox every minute
+
+[Timer]
+OnCalendar=minutely
+AccuracySec=1s
+Unit=dafeiyu-v2-feishu-outbox.service
+
+[Install]
+WantedBy=timers.target

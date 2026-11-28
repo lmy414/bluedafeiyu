@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import DirectoryCard from './DirectoryCard.astro';
+import SerialCard from './SerialCard.astro';
+import VideoCard from './VideoCard.astro';
+import PageList from './PageList.astro';
+import LinkCard from './LinkCard.astro';
+import Icon from './Icon.astro';
+import { guides, guidePath } from '../content/landing-copy';
+import { topicReading } from '../content/topic-reading';
+import { field, mediaUrl, publicUrl, workMedia, type Page } from '../lib/api';
+import { copy, htmlLang, localizedText, localePath, tr, type Locale } from '../lib/i18n';
+import { characterPath, topicPath } from '../lib/site';
+import type { DirectoryView } from '../lib/routes';
+import type { loadDirectory } from '../lib/page-data';
+interface Props { locale: Locale; path: string; view: DirectoryView; data: Awaited<ReturnType<typeof loadDirectory>> }
+const { locale, path, view, data } = Astro.props;
+const { characters, topics, videos } = data;
+const t = (key: Parameters<typeof tr>[1]) => tr(locale, key);
+const url = (href: string) => localePath(locale, href);
+const listing: Page<unknown> | undefined = characters ?? topics ?? videos;
+const title = t(view);
+const digits = new Intl.NumberFormat(htmlLang[locale]);
+const guideHeading = copy(locale, ['专题导览', 'Fan art guides', 'ファンアートガイド']);
+const description = characters ? copy(locale, [`浏览 ${characters.total} 位 AI 娘角色，查看别名与作品，并进入角色的表情包、插画、设定图与漫画档案。`, `Browse ${characters.total} AI-girl characters, see aliases and artworks, and open their meme, illustration, design sheet and comic archives.`, `AI娘${characters.total}人の別名と作品を確認し、ミーム、イラスト、設定画、漫画を探せます。`]) : view === 'topics' ? copy(locale, ['浏览猫鲸作者作品集、社区主题合集与专题导览。每件作品均保留来源、署名和授权记录。', 'Explore the Maojing creator collection, curated community albums and fan-art guides. Work pages retain sources, credits and permissions.', '猫鯨の作者作品集、コミュニティの特集、ファンアートガイドを閲覧できます。各作品に出典、クレジットと利用許諾を掲載しています。']) : undefined;
+---
+
+<BaseLayout {locale} {path} {title} {description} count={listing?.unavailable ? undefined : listing?.total} countType="entries" noindex={listing?.unavailable} jsonLd={{ '@type': 'CollectionPage' }}>
+  <header class="console-page-head archive-heading"><div><h1 class="page-title">{title}</h1>{description && <p>{description}</p>}</div>
+    {view === 'videos' && <div class="button-row"><a class="console-btn" href={url('/creators')}><Icon name="characters" />{t('creators')}</a><a class="console-btn" href={url('/submit?mode=creator')}><Icon name="submit" />{t('register')}</a></div>}
+  </header>
+  {characters && <div class="directory-grid character-grid">{characters.items.map((item) => <DirectoryCard title={field(locale, item, 'name')} href={url(characterPath(item.id))} image={mediaUrl(item.portraitUrl, item.portraitKey)} width={item.portraitWidth || undefined} height={item.portraitHeight || undefined} icon="characters" variant="character" description={item.aliases?.map((alias) => localizedText(locale, alias)).join(' · ')} note={item.workCount === undefined ? undefined : `${digits.format(item.workCount)} ${t('count')}`} />)}</div>}
+  {topics && view === 'serials' && <div class="serial-grid">{topics.items.map((item) => <SerialCard topic={item} {locale} />)}</div>}
+  {topics && view === 'topics' && <>
+    <section class="archive-section directory-guides"><h2>{guideHeading}</h2><div class="archive-grid">{guides.map((guide) => <LinkCard href={url(guidePath(guide))} title={copy(locale, guide.name)} description={copy(locale, guide.summary)} icon="topics" />)}</div></section>
+    <div class="directory-grid topic-grid">{topics.items.map((item) => {
+      const cover = item.coverWork ?? item.cover;
+      const media = cover && workMedia(cover);
+      return <DirectoryCard title={field(locale, item, 'name')} href={url(topicPath(item.id))} image={publicUrl(item.coverUrl) || media?.thumb} width={media?.thumbWidth} height={media?.thumbHeight} icon="topics" variant="topic" description={field(locale, item, 'summary')} note={item.workCount === undefined ? undefined : `${digits.format(item.workCount)} ${t('count')}`} />;
+    })}</div>
+    <section class="archive-section directory-guides"><h2>{copy(locale, ['历史专题', 'Earlier collections', '過去の特集'])}</h2><div class="archive-grid">{Object.entries(topicReading).filter(([id, entry]) => entry?.name && !topics.items.some((item) => item.id === id)).map(([id, entry]) => <LinkCard href={url(topicPath(id))} title={copy(locale, entry!.name!)} description={copy(locale, entry!.summary!)} icon="topics" />)}</div></section>
+  </>}
+  {videos && <div class="directory-grid">{videos.items.map((video) => <VideoCard {locale} {video} />)}</div>}
+  {listing && <PageList {locale} {path} {listing} />}
+</BaseLayout>

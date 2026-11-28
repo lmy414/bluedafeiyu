@@ -1,72 +1,13 @@
-# bluedafeiyu: Astro 前台源码在 frontend/；权威数据在 data/；dist/ 仅为构建期暂存。
-
-# OS / editor
-.DS_Store
-Thumbs.db
-.vscode/
-
-# 依赖与本地运行时产物
 node_modules/
-__pycache__/
-.sites-runtime/
-
-# 本地配置与密钥
+dist/
+.astro/
+.vite/
+.build/
+.cache/
 .env
 .env.*
 !.env.example
 *.log
-
-# 构建产物
-/.build/
-
-# 可选：把内容仓库克隆到本仓库同级 content/ 时，整个目录不进 git
-/content/
-
-# 并行子代理的 git worktree（不进仓库）
-/.worktrees/
-
-# ---------------------------------------------------------------- 结构化数据（跟踪）
-# data/ 是角色 / 分类 / 投稿清单 / id 冻结映射 / 首批编辑叠加层的权威副本，
-# **进 git**。构建期由 tools/stage_data.mjs 暂存成 dist/ 下的产物路径。
-# 这里只登记占位说明，不加忽略规则：
-
-# ---------------------------------------------------------------- 内容仓库同步物
-# tools/sync_content.mjs 从内容仓库同步进来的图片与投稿模板副本：一次都不跟踪。
-# 注意 data/ 下的清单不再从内容仓库同步——它们在仓库根 data/ 里跟踪，
-# 由 tools/stage_data.mjs 暂存成下面这些 dist/ 路径。
-/dist/characters.json
-/dist/categories.json
-/dist/blue-fish-ids.json
-/dist/topics.json
-/dist/favicon.ico
-/dist/favicon.png
-/dist/avatar.png
-/dist/data/
-/dist/submissions/
-/dist/owner-picks/
-/dist/events/
-# 投稿模板副本（内容仓库根的 .github/ 同步进来），构建期只读、不进发布包
-/dist/.github/
-# 旧版 dist/ 中可能残留不再作为源码的页面和脚本：不再提交。
-/dist/*.html
-/dist/*.css
-/dist/*.js
-/dist/*.txt
-/dist/*.xml
-
-# ---------------------------------------------------------------- 构建生成物
-# tools/build_site_snapshot.mjs 的产出
-/dist/site-data.json
-/dist/site-data.js
-/dist/works/
-/dist/sitemap.xml
-
-# ---------------------------------------------------------------- 图片
-# 本仓库不跟踪任何图片位图；图片归内容仓库
-*.png
-*.jpg
-*.jpeg
-*.gif
-*.webp
-*.ico
-ops/hermes/qq-submission/rate_state.json
+*.tsbuildinfo
+.DS_Store
+Thumbs.db

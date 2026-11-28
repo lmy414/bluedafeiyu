@@ -1,0 +1,23 @@
+[Unit]
+Description=蓝色大肥鱼 v2 Astro web
+Wants=network-online.target dafeiyu-v2-api.service
+After=network-online.target dafeiyu-v2-api.service
+
+[Service]
+Type=exec
+User=dafeiyu-v2
+Group=dafeiyu-v2
+WorkingDirectory=/srv/new-business/dafeiyu-v2/apps/web
+EnvironmentFile=/etc/dafeiyu-v2/web.env
+ExecStart=/usr/bin/node start.mjs
+Restart=on-failure
+RestartSec=3s
+TimeoutStopSec=30s
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+UMask=0027
+
+[Install]
+WantedBy=multi-user.target
