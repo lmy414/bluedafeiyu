@@ -1,11 +1,23 @@
 import { readFile, readdir } from 'node:fs/promises';
-import { createRequire } from 'node:module';
 import { join } from 'node:path';
 import type { Wire } from '../apps/api/src/routes/hermes/protocol.js';
 import { imageFormat, sha256 } from '../apps/api/src/routes/hermes/protocol.js';
 import { digestPattern, exists, readJson } from './legacy-data.js';
 
-export const previewNote = '原图在旧站迁移前已缺失，已保留旧 CMS WebP 预览供人工复核';
+export async function readExcludedSubmissions(backup: string, submissions: Wire[]) {
+  const bytes = await readFile(join(backup, 'pending-originals-outstanding.json'));
+  // The approved A2 list is part of the immutable pre-cutover backup.
+  if (sha256(bytes) !== 'f9876f2c5d68d3879fd7da6786dcce594b38d51872e2c978b26d6c2044c178af') throw new Error('A2 排除清单与批准的备份不一致');
+  const excluded = new Map<string, string>();
+  const known = new Map(submissions.map(row => [row.submission_id, row]));
+  for (const { submission_id: id, sha256: digest } of JSON.parse(bytes.toString('utf8'))) {
+    const row = known.get(id);
+    if (!row || row.sha256 !== digest || row.work_id != null || row.state === 'published' || excluded.has(id)) throw new Error(`A2 排除记录与 SQLite 不符 ${id}`);
+    excluded.set(id, digest);
+  }
+  if (excluded.size !== 36) throw new Error('A2 排除清单数量不符');
+  return excluded;
+}
 
 export async function readFileQueue(root?: string) {
   const items = new Map<string, Wire>();
@@ -24,7 +36,7 @@ export async function readFileQueue(root?: string) {
   return items;
 }
 
-export async function readBackupAttachment(backup: string, row: Wire, media: Wire | undefined, allowedPreviews: Map<string, string>) {
+export async function readBackupAttachment(backup: string, row: Wire) {
   const digest = row.sha256;
   if (!digestPattern.test(digest) || !/^sub_[A-Za-z0-9_-]+$/.test(row.submission_id)) throw new Error('私有投稿标识或摘要无效');
   const original = join(backup, 'recovered-originals', digest);
@@ -34,15 +46,6 @@ export async function readBackupAttachment(backup: string, row: Wire, media: Wir
     if (!format || sha256(bytes) !== digest) throw new Error(`恢复原图校验失败 ${row.submission_id}`);
     return { key: `submissions/${row.submission_id}/${digest}.${format.ext}`, bytes, mime: format.mime };
   }
-  if (allowedPreviews.get(row.submission_id) !== digest) return;
-  const path = join(backup, 'verified-cms-previews', `${digest}.webp`);
-  if (!await exists(path)) throw new Error(`缺少可归属该投稿的旧 CMS WebP 预览 ${row.submission_id}`);
-  const bytes = await readFile(path);
-  const sharp = createRequire(new URL('../apps/api/package.json', import.meta.url))('sharp');
-  const metadata = await sharp(bytes).metadata();
-  if (media?.filename !== `${digest}.webp` || metadata.format !== 'webp' || bytes.length !== media.filesize || metadata.width !== media.width || metadata.height !== media.height) throw new Error(`旧 CMS WebP 元数据不符 ${row.submission_id}`);
-  const previewSha = sha256(bytes);
-  return { key: `submissions/${row.submission_id}/legacy-preview-${previewSha}.webp`, bytes, mime: 'image/webp', previewSha };
 }
 
 type Counts = { views: number; downloads: number };

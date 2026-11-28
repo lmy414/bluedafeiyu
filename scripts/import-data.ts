@@ -10,7 +10,7 @@ import { imageFormat, sha256 } from '../apps/api/src/routes/hermes/protocol.js';
 import { runCli, requiredEnv } from '../apps/api/src/jobs/runtime.js';
 import { digestPattern, exists, legacyPathsByWork, loadLegacy, options, readBrandTokens, readJson, stringIds } from './legacy-data.js';
 import { parseArray, parseJson, readSqlite, sqliteWorks } from './legacy-sqlite.js';
-import { previewNote, readBackupAttachment, readFileQueue, readGa4 } from './legacy-cutover.js';
+import { readBackupAttachment, readExcludedSubmissions, readFileQueue, readGa4 } from './legacy-cutover.js';
 
 const apiRequire = createRequire(new URL('../apps/api/package.json', import.meta.url));
 const date = (value: unknown) => {
@@ -81,10 +81,15 @@ export async function readImportPlan(args: Args) {
   if (args.backup && !args.queue) throw new Error('切流备份导入需指定 --queue，以纳入独立文件队列');
   const ga4 = args.ga4 || args.backup ? await readGa4(args.ga4 || join(args.backup!, 'analytics-ga4.json'), works) : undefined;
   const queue = await readFileQueue(args.queue);
-  const backupRows = args.backup ? await readJson<Wire[]>(join(args.backup, 'pending-originals-outstanding.json')) : [];
-  const allowedPreviews = new Map<string, string>(backupRows.map(row => [row.submission_id, row.sha256]));
+  const excluded = args.backup ? await readExcludedSubmissions(args.backup, sqlite.submissions) : new Map<string, string>();
+  sqlite.submissions = sqlite.submissions.filter(row => !excluded.has(row.submission_id));
+  for (const [id, digest] of excluded) {
+    const item = queue.get(id);
+    if (item && item.sha256 !== digest) throw new Error(`队列与 A2 排除清单标识冲突 ${id}`);
+    queue.delete(id);
+  }
   const sources = sqlite.submissions.filter(row => row.submission_id && row.work_id == null && !['published', 'rejected', 'auto_rejected'].includes(row.state));
-  const sqliteImages = new Map<string, { key: string; bytes: Buffer; mime: string; previewSha?: string }>();
+  const sqliteImages = new Map<string, { key: string; bytes: Buffer; mime: string }>();
   const known = new Map(sqlite.submissions.map(row => [row.submission_id, row]));
   const archiveLinks = new Map<string, string>();
   for (const row of sqlite.submissions.filter(item => item.sha256 == null)) {
@@ -101,7 +106,7 @@ export async function readImportPlan(args: Args) {
     if (sqliteImages.has(row.submission_id)) continue;
     const media = sqlite.media.find(record => record.id === row.media_id);
     if (args.backup) {
-      const attachment = await readBackupAttachment(args.backup, row, media, allowedPreviews);
+      const attachment = await readBackupAttachment(args.backup, row);
       if (attachment) { sqliteImages.set(row.submission_id, attachment); continue; }
     }
     const candidates = [media?.filename && join(args.legacy, 'admin', 'media', media.filename),
@@ -120,7 +125,7 @@ export async function readImportPlan(args: Args) {
     if (!format || sha256(bytes) !== row.sha256) throw new Error(`旧投稿原图校验失败 ${row.submission_id}`);
     sqliteImages.set(row.submission_id, { key: `submissions/${row.submission_id}/${row.sha256}.${format.ext}`, bytes, mime: format.mime });
   }
-  return { legacy, works, sqlite, sqliteImages, manifest, brands, withoutMedia, ga4, queue, archiveLinks };
+  return { legacy, works, sqlite, sqliteImages, manifest, brands, withoutMedia, ga4, queue, archiveLinks, excluded };
 }
 
 async function upsert(tx: DbTransaction, table: Parameters<DbTransaction['insert']>[0], rows: Wire[], target: unknown, immutable: string[] = []) {
@@ -191,16 +196,10 @@ export async function importData(db: Database, plan: Awaited<ReturnType<typeof r
     const submissionRows = sqlite.submissions.filter(row => row.submission_id).map(row => {
       const queue = plan.queue.get(row.submission_id);
       const image = sqliteImages.get(row.submission_id);
-      const review = parseJson(row.review);
-      const history = parseArray(row.state_history);
-      if (image?.previewSha) {
-        review.legacyPreview = { sha256: image.previewSha, note: previewNote, previousState: row.state };
-        if (row.state !== 'needs_manual') history.push({ from: row.state, to: 'needs_manual', event: 'migration', reason: previewNote, at: row.updated_at });
-      }
       return { id: row.submission_id, source: row.source, sourceIds: stringIds([...(sourceIds.get(row.id) || []), ...(queue?.sourceIds || [])]),
-        sha256: row.sha256, r2StagingKey: image?.key || '', fields: parseJson(row.fields), editorial: parseJson(row.editorial), review,
-        origin: parseJson(row.origin), state: image?.previewSha ? 'needs_manual' : row.state,
-        stateHistory: history, agentProgress: { ...parseJson(row.agent_progress), token: null, expiresAt: 0 }, ...timestamps(row) };
+        sha256: row.sha256, r2StagingKey: image?.key || '', fields: parseJson(row.fields), editorial: parseJson(row.editorial), review: parseJson(row.review),
+        origin: parseJson(row.origin), state: row.state,
+        stateHistory: parseArray(row.state_history), agentProgress: { ...parseJson(row.agent_progress), token: null, expiresAt: 0 }, ...timestamps(row) };
     });
     const importedIds = new Set(submissionRows.map(row => row.id));
     for (const item of plan.queue.values()) if (!importedIds.has(item.id)) submissionRows.push({ id: item.id,
@@ -208,6 +207,10 @@ export async function importData(db: Database, plan: Awaited<ReturnType<typeof r
       fields: item.fields, editorial: item.editorial || {}, review: item.review || {}, origin: item.origin || {}, state: item.state,
       stateHistory: item.stateHistory || [], agentProgress: { ...item.agentProgress, token: null, expiresAt: 0 }, ...timestamps(item) });
     await upsert(tx, schema.submissions, submissionRows, schema.submissions.id, ['id']);
+    if (plan.excluded.size) {
+      const unexpected = await tx.select({ id: schema.submissions.id }).from(schema.submissions).where(inArray(schema.submissions.id, [...plan.excluded.keys()]));
+      if (unexpected.length) throw new Error('目标库中存在 A2 排除的历史投稿');
+    }
 
     const publicWorks = new Set(plan.works.filter(row => row.status === 'published').map(row => row.id));
     const works = await Promise.all(plan.works.map(async row => {
@@ -375,7 +378,8 @@ runCli(import.meta.url, async () => {
         original: mapped.filter(paths => paths.original.length).length },
       videos: plan.legacy.videos.length, characters: plan.legacy.roles.length, topics: plan.legacy.topics.length, serials: plan.legacy.serialIds.size,
       editorial: plan.legacy.editorialCount, mediaManifestMissing: plan.withoutMedia.length,
-      sqliteTables: Object.fromEntries(Object.entries(plan.sqlite).map(([key, rows]) => [key, rows.length])),
+       excludedSubmissions: plan.excluded.size, stagingOriginals: plan.sqliteImages.size, fileQueue: plan.queue.size,
+       sqliteTables: Object.fromEntries(Object.entries(plan.sqlite).map(([key, rows]) => [key, rows.length])),
     };
   }
   const { createDb } = await import('../apps/api/src/db/client.js');
