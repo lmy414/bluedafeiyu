@@ -13,6 +13,7 @@ export const bvidPattern = /^BV[1-9A-HJ-NP-Za-km-z]{10}$/;
 export const legacyVideoId = (id: string) => /^[1-9]\d*$/.test(id) ? id : String(BigInt(`0x${sha256(Buffer.from(id)).slice(0, 24)}`));
 const uidPattern = /^[1-9]\d{0,16}$/;
 const imageHost = /^(?:[a-z0-9-]+\.)*(?:hdslb\.com|biliimg\.com)$/;
+const unavailableVideo = (error: unknown) => [-404, 62002, 62012].includes((error as { code?: number })?.code ?? 0);
 
 function biliImage(value: string) {
   const url = new URL(value.startsWith('//') ? `https:${value}` : value);
@@ -67,9 +68,16 @@ export function createBilibiliClient(fetcher = fetch) {
       const ids = new Set<string>();
       for (const item of feed.item) {
         const link = new URL(item.link);
-        const bvid = link.pathname.match(/^\/video\/([^/]+)\/?$/)?.[1];
-        if (link.origin !== 'https://www.bilibili.com' || link.username || link.password || !bvid || !bvidPattern.test(bvid)) throw new Error('RSSHub 视频链接非法');
-        ids.add(bvid);
+        const id = link.pathname.match(/^\/video\/([^/]+)\/?$/)?.[1];
+        if (link.origin !== 'https://www.bilibili.com' || link.username || link.password || !id) throw new Error('RSSHub 视频链接非法');
+        if (bvidPattern.test(id)) { ids.add(id); continue; }
+        const aid = /^av([1-9]\d{0,15})$/.exec(id)?.[1];
+        if (!aid) throw new Error('RSSHub 视频链接非法');
+        let video: Wire;
+        try { video = await api('/x/web-interface/view', { aid }); }
+        catch (error) { if (unavailableVideo(error)) continue; throw error; }
+        if (String(video?.aid) !== aid || !bvidPattern.test(video?.bvid)) throw new Error('平台返回的视频编号与 AV 链接不符');
+        if (String(video.owner?.mid) === uid) ids.add(video.bvid);
       }
       return [...ids];
     },
@@ -84,7 +92,7 @@ export function createBilibiliClient(fetcher = fetch) {
       if (!bvidPattern.test(bvid) || !uidPattern.test(uid)) throw new Error('视频编号或作者 UID 非法');
       let video: Wire;
       try { video = await api('/x/web-interface/view', { bvid }); }
-      catch (error) { if ([-404, 62002, 62012].includes((error as { code: number }).code)) return null; throw error; }
+      catch (error) { if (unavailableVideo(error)) return null; throw error; }
       if (video?.bvid !== bvid || String(video.owner?.mid) !== uid || video.state !== 0 || !video.title || !video.cid) return null;
       let storyboard = null;
       try {
