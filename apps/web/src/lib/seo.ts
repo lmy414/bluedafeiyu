@@ -1,4 +1,4 @@
-import { api, categoryIds, field, type Page, type Work, workMedia } from './api';
+import { api, categoryIds, field, localizedCharacterName, type Page, type Work, workMedia } from './api';
 import { copy, htmlLang, localePath, locales, prepareLocale, tr, type Locale } from './i18n';
 import { guides, guidePath } from '../content/landing-copy';
 import { nationalDay } from '../content/national-day';
@@ -109,7 +109,7 @@ export async function seoResponse(locale: Locale, path: string, url: URL) {
     if (works.unavailable || characters.unavailable || topics.unavailable) return response(t('unavailable'), 'text/plain', 503);
     const references = [
       '', `## ${t('characters')}`,
-      ...characters.items.map((item) => `- [${md(field(locale, item, 'name'))}](${canonical(`${characterPath(item.id)}.md`)}): ${md(characterDescription(locale, item))}`),
+      ...characters.items.map((item) => `- [${md(localizedCharacterName(locale, item))}](${canonical(`${characterPath(item.id)}.md`)}): ${md(characterDescription(locale, item))}`),
       '', `## ${t('topics')}`,
       ...[...topics.items, ...works.serials].map((item) => `- [${md(field(locale, item, 'name'))}](${canonical(`${topicPath(item.id)}.md`)}): ${md(field(locale, item, 'summary'))}`),
       '', ...works.items.map((work) => workDocument(work, locale, origin)),
@@ -133,7 +133,7 @@ export async function seoResponse(locale: Locale, path: string, url: URL) {
     const result = await api.character(id, locale);
     if (!result.ok) return response(tr(locale, result.status === 404 ? 'notFound' : 'unavailable'), 'text/plain', result.status === 404 ? 404 : 503);
     const character = result.value;
-    return response(`# ${md(field(locale, character, 'name'))}\n\n${characterDescription(locale, character)}\n\n<${canonical(characterPath(id))}>\n`, 'text/markdown');
+    return response(`# ${md(localizedCharacterName(locale, character))}\n\n${characterDescription(locale, character)}\n\n<${canonical(characterPath(id))}>\n`, 'text/markdown');
   }
   const guide = guides.find((entry) => entry.id === id);
   if (guide) return response(`# ${md(copy(locale, guide.name))}\n\n${copy(locale, guide.summary)}\n\n<${canonical(guidePath(guide))}>\n`, 'text/markdown');

@@ -1,4 +1,4 @@
-import { field, workMedia, type Character, type Work } from './api';
+import { field, localizedCharacterName, workMedia, type Character, type Work } from './api';
 import { copy, htmlLang, localePath, tr, type Locale } from './i18n';
 import { categoryName, imageMetadata, workPath, workTags } from './site';
 import { characterAliases, releaseDate, workCharacters } from './work-view';
@@ -16,7 +16,7 @@ export function workSeo(locale: Locale, work: Work, origin: string, catalog: Cha
   const commentary = field(locale, work, 'commentary');
   const media = workMedia(work);
   const tags = workTags(locale, work);
-  const roles = workCharacters(work, catalog).map(role => ({ '@type': 'Thing', name: field(locale, role, 'name'), alternateName: characterAliases(locale, role) }));
+  const roles = workCharacters(work, catalog).map(role => ({ '@type': 'Thing', name: localizedCharacterName(locale, role), alternateName: characterAliases(locale, role) }));
   const character = roles[0]?.name ?? '';
   const aliases = [...new Set(roles.flatMap(role => role.alternateName))];
   const id = work.categoryId ?? work.categoryIds?.[0] ?? 'other';
@@ -31,7 +31,8 @@ export function workSeo(locale: Locale, work: Work, origin: string, catalog: Cha
   const description = `${[field(locale, work, 'seoDescription') || recorded || commentary || name, subtitle].filter(Boolean).join(' ')} ${copy(locale, ['可查看高清图片、原始来源和授权，并下载原图。', 'View the full image, its source and license, and download the original.', '高画質画像、出典、利用許諾を確認し、原画をダウンロードできます。'])}`;
   const rights = imageMetadata(locale, work);
   const about = new URL(localePath(locale, '/about'), origin).href;
-  const archiveCredit = copy(locale, ['蓝色大肥鱼（整理收录）', 'Blue Dafeiyu (archived by)', '藍色大肥魚（収録・整理）']);
+  const siteName = tr(locale, 'site');
+  const archiveCredit = copy(locale, ['蓝色大肥鱼（整理收录）', `${siteName} (archived by)`, `${siteName}（収録・整理）`]);
   const date = releaseDate(work);
   const mime: Record<string, string> = { jpg: 'image/jpeg', jpeg: 'image/jpeg', png: 'image/png', gif: 'image/gif', webp: 'image/webp', apng: 'image/apng', avif: 'image/avif' };
   const format = media.format?.toLowerCase() ?? '';

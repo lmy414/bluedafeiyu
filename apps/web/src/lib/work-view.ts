@@ -1,4 +1,4 @@
-import { field, workMedia, type Character, type WorkDetail, type Work } from './api';
+import { field, localizedCharacterName, workMedia, type Character, type WorkDetail, type Work } from './api';
 import { copy, htmlLang, localePath, localizedText, tr, type Locale } from './i18n';
 import { characterPath, imageMetadata, issueUrl, topicPath, workPath, workPreview, workTags } from './site';
 import { characterSearchAliases } from '../content/landing-copy';
@@ -6,7 +6,7 @@ import { characterSearchAliases } from '../content/landing-copy';
 export function workLabels(locale: Locale) {
   const c = (zh: string, en: string, ja: string) => copy(locale, [zh, en, ja]);
   return {
-    fish: locale === 'zh-hant' ? '大肥魚說' : c('大肥鱼说', 'FISH NOTES', '大肥魚のひとこと'),
+    fish: locale === 'zh-hant' ? '大肥魚說' : c('大肥鱼说', 'DeepSeek Chan’s notes', 'DeepSeek Chanのひとこと'),
     description: c('画面说明', 'Image description', '画像の説明'),
     author: c('来源作者', 'Original creator', '原作者'),
     unknownAuthor: c('原作者未标注', 'Original creator unrecorded', '原作者は未記載'),
@@ -82,7 +82,7 @@ export function workView(locale: Locale, detail: WorkDetail, catalog: Character[
   const topicLinks = new Map(topics.map(topic => [topic.id, field(locale, topic, 'name')]));
   for (const id of work.topicIds ?? []) if (!topicLinks.has(id)) topicLinks.set(id, id);
   const links: Record<'characters' | 'category' | 'tags' | 'topics', WorkLink[]> = {
-    characters: roles.map(role => ({ label: field(locale, role, 'name'), href: localePath(locale, characterPath(role.id)) })),
+    characters: roles.map(role => ({ label: localizedCharacterName(locale, role), href: localePath(locale, characterPath(role.id)) })),
     category: preview.categoryHref ? [{ label: preview.category, href: preview.categoryHref }] : [],
     tags: workTags(locale, work).map((tag, index) => ({ label: `#${tag}`, href: localePath(locale, '/', `?${new URLSearchParams({ tag: work.tags?.[index] ?? tag })}`) })),
     topics: [...topicLinks].map(([id, label]) => ({ label, href: localePath(locale, topicPath(id)) })),

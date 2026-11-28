@@ -11,6 +11,7 @@ import { runCli, requiredEnv } from '../apps/api/src/jobs/runtime.js';
 import { digestPattern, exists, legacyPathsByWork, loadLegacy, options, readBrandTokens, readJson, stringIds } from './legacy-data.js';
 import { parseArray, parseJson, readSqlite, sqliteWorks } from './legacy-sqlite.js';
 import { readBackupAttachment, readExcludedSubmissions, readFileQueue, readGa4 } from './legacy-cutover.js';
+import { defaultCharacterName } from '../packages/shared/src/character-names.js';
 
 const apiRequire = createRequire(new URL('../apps/api/package.json', import.meta.url));
 const date = (value: unknown) => {
@@ -128,14 +129,15 @@ export async function readImportPlan(args: Args) {
   return { legacy, works, sqlite, sqliteImages, manifest, brands, withoutMedia, ga4, queue, archiveLinks, excluded };
 }
 
-async function upsert(tx: DbTransaction, table: Parameters<DbTransaction['insert']>[0], rows: Wire[], target: unknown, immutable: string[] = []) {
+async function upsert(tx: DbTransaction, table: Parameters<DbTransaction['insert']>[0], rows: Wire[], target: unknown,
+  immutable: string[] = [], conflictOverrides: Record<string, unknown> = {}) {
   if (!rows.length) return;
   const { getTableColumns, sql } = apiRequire('drizzle-orm');
   const columns = getTableColumns(table) as Record<string, { name: string }>;
   for (let i = 0; i < rows.length; i += 100) {
     const chunk = rows.slice(i, i + 100);
     const fields = Object.keys(columns).filter(key => chunk.every(row => Object.hasOwn(row, key)) && !immutable.includes(key));
-    const set = Object.fromEntries(fields.map(key => [key, sql.raw(`excluded."${columns[key]!.name}"`)]));
+    const set = Object.fromEntries(fields.map(key => [key, conflictOverrides[key] ?? sql.raw(`excluded."${columns[key]!.name}"`)]));
     // The application schema owns every table and conflict target passed here.
     if (fields.length) await tx.insert(table).values(chunk).onConflictDoUpdate({ target: target as never, set });
     else await tx.insert(table).values(chunk).onConflictDoNothing({ target: target as never });
@@ -163,11 +165,31 @@ export async function importData(db: Database, plan: Awaited<ReturnType<typeof r
   }
   return db.transaction(async tx => {
     await tx.execute(sql`select pg_advisory_xact_lock(hashtextextended('dafeiyu-v2-legacy-import', 0))`);
-    const roleRows = legacy.roles.map((row, index) => ({ id: row.id, name: row.name, aliases: stringIds(row.aliases), description: row.description || '', i18n: row.i18n || {},
-      portraitKey: asset(`portrait:${row.id}`)?.key ?? null, portraitWidth: asset(`portrait:${row.id}`)?.width ?? null, portraitHeight: asset(`portrait:${row.id}`)?.height ?? null,
-      brandTokens: { ...brands[row.id], ...(brands[row.id]?.light?.['--brand-accent'] && { '--character-accent': brands[row.id]!.light['--brand-accent'] }), ...row.brandTokens }, sortOrder: row.order ?? index, status: row.status || 'active',
-    }));
-    await upsert(tx, schema.characters, roleRows, schema.characters.id, ['id']);
+    const roleRows = legacy.roles.map((row, index) => {
+      const i18n = { ...row.i18n };
+      for (const locale of ['en', 'ja'] as const) {
+        const name = defaultCharacterName(row.id, locale);
+        if (name && !i18n[locale]?.name?.trim()) i18n[locale] = { ...i18n[locale], name };
+      }
+      return { id: row.id, name: row.name, aliases: stringIds(row.aliases), description: row.description || '', i18n,
+        portraitKey: asset(`portrait:${row.id}`)?.key ?? null, portraitWidth: asset(`portrait:${row.id}`)?.width ?? null, portraitHeight: asset(`portrait:${row.id}`)?.height ?? null,
+        brandTokens: { ...brands[row.id], ...(brands[row.id]?.light?.['--brand-accent'] && { '--character-accent': brands[row.id]!.light['--brand-accent'] }), ...row.brandTokens }, sortOrder: row.order ?? index, status: row.status || 'active',
+      };
+    });
+    // Merge each locale at write time so a concurrent admin edit keeps precedence.
+    const savedTranslations = schema.characters.i18n;
+    await upsert(tx, schema.characters, roleRows, schema.characters.id, ['id'], { i18n: sql`
+      excluded.i18n || ${savedTranslations} || coalesce((
+        select jsonb_object_agg(incoming.locale, incoming.fields || case
+          when jsonb_typeof(${savedTranslations} -> incoming.locale) is distinct from 'object' then '{}'::jsonb
+          when incoming.fields ? 'name' and coalesce(btrim(${savedTranslations} -> incoming.locale ->> 'name'), '') = ''
+            then (${savedTranslations} -> incoming.locale) - 'name'
+          else ${savedTranslations} -> incoming.locale
+        end)
+        from jsonb_each(excluded.i18n) as incoming(locale, fields)
+        where incoming.locale in ('en', 'ja') and jsonb_typeof(incoming.fields) = 'object'
+      ), '{}'::jsonb)
+    ` });
     await upsert(tx, schema.categories, legacy.categories.map((row, index) => ({ id: row.id, name: row.name, description: row.description || '', i18n: row.i18n || {}, sortOrder: row.order ?? index, status: row.status || 'active' })), schema.categories.id, ['id']);
     await upsert(tx, schema.events, legacy.events.map(row => ({ id: row.id, slug: row.id, title: row.title?.[0] || row.title, summary: row.summary?.[0] || row.summary || '',
       i18n: Object.fromEntries(['en', 'ja'].map((lang, index) => [lang, { title: row.title?.[index + 1] || '', summary: row.summary?.[index + 1] || '', statusLabel: row.statusLabel?.[index + 1] || '', coverAlt: row.coverAlt?.[index + 1] || '' }])),

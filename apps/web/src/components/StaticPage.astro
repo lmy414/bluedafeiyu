@@ -9,7 +9,7 @@ const rawMode = Astro.url.searchParams.get('mode');
 const mode = rawMode === 'zip' || rawMode === 'creator' ? rawMode : 'single';
 const [characters, categories] = mode !== 'creator' ? await Promise.all([api.characters(locale), api.categories(locale)]) : [];
 const title = tr(locale, 'submit');
-const seoTitle = copy(locale, ['投稿 AI 娘二创作品：来源与授权填写指南 · 蓝色大肥鱼', 'Submit AI-girl fan art: sources and permissions · Blue Dafeiyu', 'AI娘の二次創作を投稿：出典と利用許諾 · 藍色大肥魚']);
+const seoTitle = copy(locale, ['投稿 AI 娘二创作品：来源与授权填写指南 · 蓝色大肥鱼', 'Submit AI-girl fan art: sources and permissions · DeepSeek Chan', 'AI娘の二次創作を投稿：出典と利用許諾 · DeepSeek Chan']);
 const description = copy(locale, ['了解 AI 娘图片投稿需要填写的角色、作品类型、原始来源、署名和授权信息。站内投稿和 GitHub 表单均会进入审核队列。', 'Learn what to include in a fan art submission: character, artwork type, original source, credit and permissions. Both web and GitHub submissions enter the review queue.', 'AI娘の画像を投稿する際のキャラクター、作品の種類、元の出典、クレジット、利用許諾について。サイトとGitHubからの投稿は審査を行います。']);
 ---
 

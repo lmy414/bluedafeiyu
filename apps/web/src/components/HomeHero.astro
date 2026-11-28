@@ -1,6 +1,6 @@
 ---
 import Icon from './Icon.astro';
-import { field, type SiteCounts, type Taxon } from '../lib/api';
+import { localizedCharacterName, type SiteCounts, type Taxon } from '../lib/api';
 import { copy, htmlLang, localePath, tr, type Locale } from '../lib/i18n';
 import { characterPath } from '../lib/site';
 interface Props { locale: Locale; counts?: SiteCounts; characters?: Taxon[] }
@@ -20,7 +20,7 @@ const metrics = [
 ] as const;
 const popular = ['deepseek', 'claude', 'gemini'].flatMap((id) => {
   const character = characters.find((entry) => entry.id === id);
-  return character ? [{ label: field(locale, character, 'name'), path: characterPath(id) }] : [];
+  return character ? [{ label: localizedCharacterName(locale, character), path: characterPath(id) }] : [];
 });
 const quickLinks = [...popular, { label: t('meme'), path: '/categories/meme' }, { label: t('comic'), path: '/categories/comic' }];
 ---

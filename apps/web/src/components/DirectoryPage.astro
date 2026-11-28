@@ -8,7 +8,7 @@ import LinkCard from './LinkCard.astro';
 import Icon from './Icon.astro';
 import { guides, guidePath } from '../content/landing-copy';
 import { topicReading } from '../content/topic-reading';
-import { field, mediaUrl, publicUrl, workMedia, type Page } from '../lib/api';
+import { field, localizedCharacterName, mediaUrl, publicUrl, workMedia, type Page } from '../lib/api';
 import { copy, htmlLang, localizedText, localePath, tr, type Locale } from '../lib/i18n';
 import { characterPath, topicPath } from '../lib/site';
 import type { DirectoryView } from '../lib/routes';
@@ -29,7 +29,7 @@ const description = characters ? copy(locale, [`浏览 ${characters.total} 位 A
   <header class="console-page-head archive-heading"><div><h1 class="page-title">{title}</h1>{description && <p>{description}</p>}</div>
     {view === 'videos' && <div class="button-row"><a class="console-btn" href={url('/creators')}><Icon name="characters" />{t('creators')}</a><a class="console-btn" href={url('/submit?mode=creator')}><Icon name="submit" />{t('register')}</a></div>}
   </header>
-  {characters && <div class="directory-grid character-grid">{characters.items.map((item) => <DirectoryCard title={field(locale, item, 'name')} href={url(characterPath(item.id))} image={mediaUrl(item.portraitUrl, item.portraitKey)} width={item.portraitWidth || undefined} height={item.portraitHeight || undefined} icon="characters" variant="character" description={item.aliases?.map((alias) => localizedText(locale, alias)).join(' · ')} note={item.workCount === undefined ? undefined : `${digits.format(item.workCount)} ${t('count')}`} />)}</div>}
+  {characters && <div class="directory-grid character-grid">{characters.items.map((item) => <DirectoryCard title={localizedCharacterName(locale, item)} href={url(characterPath(item.id))} image={mediaUrl(item.portraitUrl, item.portraitKey)} width={item.portraitWidth || undefined} height={item.portraitHeight || undefined} icon="characters" variant="character" description={item.aliases?.map((alias) => localizedText(locale, alias)).join(' · ')} note={item.workCount === undefined ? undefined : `${digits.format(item.workCount)} ${t('count')}`} />)}</div>}
   {topics && view === 'serials' && <div class="serial-grid">{topics.items.map((item) => <SerialCard topic={item} {locale} />)}</div>}
   {topics && view === 'topics' && <>
     <section class="archive-section directory-guides"><h2>{guideHeading}</h2><div class="archive-grid">{guides.map((guide) => <LinkCard href={url(guidePath(guide))} title={copy(locale, guide.name)} description={copy(locale, guide.summary)} icon="topics" />)}</div></section>

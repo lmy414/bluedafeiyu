@@ -1,5 +1,5 @@
 ---
-import { field, mediaUrl, type Character, type Taxon } from '../lib/api';
+import { localizedCharacterName, mediaUrl, type Character, type Taxon } from '../lib/api';
 import { htmlLang, localizedText, localePath, tr, type Locale } from '../lib/i18n';
 import { categoryName, characterDescription, characterPath, colorToken, creationHref } from '../lib/site';
 import { characterQuery } from '../lib/character-filter';
@@ -13,7 +13,7 @@ interface Props {
 }
 const { character, locale, category, categories, categoryTotals } = Astro.props;
 const t = (key: Parameters<typeof tr>[1]) => tr(locale, key);
-const title = field(locale, character, 'name');
+const title = localizedCharacterName(locale, character);
 const description = characterDescription(locale, character);
 const portrait = mediaUrl(character.portraitUrl, character.portraitKey);
 const tokens = character.brandTokens;

@@ -6,7 +6,7 @@ import RepositoryLinks from './RepositoryLinks.astro';
 import OpenApiDocumentation from './OpenApiDocumentation.astro';
 import { aboutCopy, aboutDescription, aboutQuestions, aboutSEO } from '../content/about-copy';
 import extra from '../content/about-extra.json';
-import { api, field } from '../lib/api';
+import { api, localizedCharacterName } from '../lib/api';
 import { copy, htmlLang, localePath, tr, type Locale } from '../lib/i18n';
 import { additionalItems, characterPath, issueUrl } from '../lib/site';
 interface Props { locale: Locale; path: string }
@@ -46,7 +46,7 @@ const licenseRows = [
       </nav>
       <section class="archive-panel about-quick" aria-labelledby="about-quick-title">
         <h2 id="about-quick-title"><Icon name="dashboard" />{loc(['公开归档', 'Public archive', '公開アーカイブ'])}</h2>
-        <dl class="archive-stats"><div><dt>{loc(aboutCopy.countLabel)}</dt><dd class="mono">{archiveTotal === undefined ? '—' : digits.format(archiveTotal)}</dd></div><div><dt><a class="text-link" href={url('/characters/deepseek')}>{loc(['DeepSeek娘作品', 'Works featuring DeepSeek Chan', 'DeepSeekちゃんの作品'])}</a></dt><dd class="mono">{deepseekTotal === undefined ? '—' : digits.format(deepseekTotal)}</dd></div></dl>
+        <dl class="archive-stats"><div><dt>{loc(aboutCopy.countLabel)}</dt><dd class="mono">{archiveTotal === undefined ? '—' : digits.format(archiveTotal)}</dd></div><div><dt><a class="text-link" href={url('/characters/deepseek')}>{loc(['DeepSeek娘作品', 'Works featuring DeepSeek Chan', 'DeepSeek Chanの作品'])}</a></dt><dd class="mono">{deepseekTotal === undefined ? '—' : digits.format(deepseekTotal)}</dd></div></dl>
         <div class="button-row"><a class="console-btn" href={url('/')}>{t('gallery')}<Icon name="arrowRight" /></a><a class="console-btn" href={url('/submit')}>{t('submit')}<Icon name="arrowRight" /></a></div>
       </section>
     </aside>
@@ -56,7 +56,7 @@ const licenseRows = [
       <a class="text-link" href="https://news.17173.com/content/08212026/094421441.shtml" target="_blank" rel="noopener noreferrer">{loc(aboutCopy.source)}</a>
       <h3>{old('about.site.title')}</h3><p>{old('siteIntro')}</p><p>{old('siteActions')}</p>
       <p><a class="text-link" href={url('/submit')}>{t('submit')}</a></p>
-      <h3>{loc(aboutCopy.charactersTitle)}</h3><div class="archive-chips">{characters.items.map((item) => <a class="filter-pill" href={url(characterPath(item.id))}>{field(locale, item, 'name')}</a>)}</div>
+      <h3>{loc(aboutCopy.charactersTitle)}</h3><div class="archive-chips">{characters.items.map((item) => <a class="filter-pill" href={url(characterPath(item.id))}>{localizedCharacterName(locale, item)}</a>)}</div>
       {characters.unavailable && <p>{t('unavailable')}</p>}
     </section>
     <section class="archive-panel" id="faq"><h2>{loc(aboutCopy.faqTitle)}</h2>

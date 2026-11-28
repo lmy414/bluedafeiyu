@@ -1,5 +1,6 @@
 import { localizedText, type Locale } from './i18n';
 import { CATEGORY_IDS, type WorkSummary } from '../../../../packages/shared/src/types/index';
+import { defaultCharacterName } from '../../../../packages/shared/src/character-names';
 
 type TextField = 'name' | 'title' | 'description' | 'summary' | 'commentary' | 'intro' | 'seoTitle' | 'seoDescription';
 type Translation = Partial<Record<TextField | 'originNote' | 'licenseNote', string>> & { tags?: string[] };
@@ -341,6 +342,13 @@ export const categoryIds = CATEGORY_IDS;
 export function field(locale: Locale, record: Partial<Record<TextField, string>> & { i18n?: Translations }, key: TextField, fallback?: string) {
   const translation = locale === 'en' || locale === 'ja' ? record.i18n?.[locale] : undefined;
   return localizedText(locale, record[key] ?? fallback, translation?.[key]);
+}
+
+export function localizedCharacterName(locale: Locale, character: Taxon) {
+  if (locale === 'zh' || locale === 'zh-hant') return field(locale, character, 'name');
+  return character.i18n?.[locale]?.name?.trim()
+    || defaultCharacterName(character.id, locale)
+    || character.name.trim().replace(/(.+?)\s*娘$/u, '$1 Chan');
 }
 
 export function publicUrl(value?: string | null): string | undefined {

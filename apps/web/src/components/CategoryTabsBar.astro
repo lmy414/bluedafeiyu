@@ -1,5 +1,5 @@
 ---
-import { categoryIds, field, type Taxon } from '../lib/api';
+import { categoryIds, localizedCharacterName, type Taxon } from '../lib/api';
 import { copy, localePath, tr, htmlLang, type Locale } from '../lib/i18n';
 import { categoryName, configuredSorts, creationHref, getSort, segment } from '../lib/site';
 import { characterQuery, parseCharacters } from '../lib/character-filter';
@@ -26,7 +26,7 @@ const nonAi = search.get('creation') === 'non-ai';
 const isProfile = path.startsWith('/characters/');
 const toggleHref = creationHref(locale, path, search);
 const c = (zh: string, en: string, ja: string) => copy(locale, [zh, en, ja]);
-const options = new Map(characters.map(item => [item.id, field(locale, item, 'name')]));
+const options = new Map(characters.map(item => [item.id, localizedCharacterName(locale, item)]));
 const effectiveSort = getSort(search.get('sort'));
 const tabQuery = new URLSearchParams();
 for (const key of ['sort', 'tag']) {

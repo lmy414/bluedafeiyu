@@ -1,13 +1,13 @@
 ---
 import CategoryChips from './CategoryChips.astro';
 import { characterSearchAliases } from '../content/landing-copy';
-import { field, type Character, type Taxon, type Work } from '../lib/api';
+import { field, localizedCharacterName, type Character, type Taxon, type Work } from '../lib/api';
 import { copy, htmlLang, localePath, localizedText, tr, type Locale } from '../lib/i18n';
 import { characterPath, workTags } from '../lib/site';
 interface Props { locale: Locale; character?: Character; category?: string; title: string; items: Work[]; categories: Taxon[]; totals?: { id: string; total?: number }[] }
 const { locale, character, category, title, items, categories, totals = [] } = Astro.props;
 const c = (...text: string[]) => copy(locale, text);
-const name = character ? field(locale, character, 'name') : title;
+const name = character ? localizedCharacterName(locale, character) : title;
 const editorialAlias = character && (characterSearchAliases as Partial<Record<string, string[]>>)[character.id];
 const aliases = [...new Set([...(character?.aliases ?? []).map((alias) => localizedText(locale, alias)), ...(Array.isArray(editorialAlias) ? [copy(locale, editorialAlias)] : [])])];
 const frequency = new Map<string, number>();

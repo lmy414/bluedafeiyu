@@ -8,7 +8,7 @@ const { locale, path } = Astro.props;
 const t = (key: Parameters<typeof tr>[1]) => tr(locale, key);
 const title = t('changelog');
 const lead = copy(locale, ['本站的变更记录，大事小事都记一笔。', 'A record of updates to the archive, big and small.', 'アーカイブの大小さまざまな変更を記録しています。']);
-const entries = [{ date: '2026-11-27', title: ['蓝色大肥鱼 v2 架构重构与蓝白工作台上线', 'Blue Dafeiyu v2 architecture and blue-and-white workspace launch', '藍色大肥魚 v2の再構築と青白ワークスペースの公開'], points: [
+const entries = [{ date: '2026-11-27', title: ['蓝色大肥鱼 v2 架构重构与蓝白工作台上线', 'DeepSeek Chan v2 architecture and blue-and-white workspace launch', 'DeepSeek Chan v2の再構築と青白ワークスペースの公開'], points: [
   ['前台改用 Astro 服务端渲染和 Hono API，保留作品地址、四语路由和原有评论串。', 'Moved the frontend to server-rendered Astro and a Hono API, preserving work URLs, four language routes and existing discussions.', 'AstroのサーバーレンダリングとHono APIに移行し、作品URL、4言語ルート、既存のコメントを引き継ぎました。'],
   ['上线蓝白工作台、最短列瀑布流、看图台与连载阅读器，并恢复社区与开放数据入口。', 'Launched the blue-and-white workspace, shortest-column gallery, image viewer and serial reader, and restored community and open-data pages.', '青白のワークスペース、最短列ギャラリー、画像ビューアー、連載リーダーを導入し、コミュニティと公開データへの入口を復元しました。'],
 ] }, ...history];

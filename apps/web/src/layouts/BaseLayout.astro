@@ -38,7 +38,7 @@ const query = characterQuery(canonicalQuery);
 const absolute = (lang: Locale, href: string, search = '') => new URL(localePath(lang, href, search), origin).href;
 const canonical = absolute(locale, path, query);
 const website = path === '/' && !query;
-const aliases = ['大肥鱼', '鲸鱼娘', 'DeepSeek娘', 'Blue Dafeiyu'];
+const aliases = locale === 'en' || locale === 'ja' ? ['Blue Dafeiyu'] : ['大肥鱼', '鲸鱼娘', 'DeepSeek娘', 'Blue Dafeiyu'];
 const organization = { '@type': 'Organization', '@id': new URL('/#organization', origin).href, name: siteName, logo: new URL('/favicon.png', origin).href, sameAs: [sourceRepository, contentRepository] };
 const trail = [{ label: t('home'), href: '/' }, ...(crumbs ?? [{ label: title, href: undefined }])];
 const searchAction = { '@type': 'SearchAction', target: { '@type': 'EntryPoint', urlTemplate: absolute(locale, '/search') + '?q={search_term_string}' }, 'query-input': 'required name=search_term_string' };

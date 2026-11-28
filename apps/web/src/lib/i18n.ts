@@ -8,12 +8,15 @@ let loadingTraditional: Promise<void> | undefined;
 
 export async function prepareLocale(locale: Locale) {
   if (locale !== 'zh-hant' || traditional) return;
-  loadingTraditional ??= import('opencc-js/cn2t').then(({ Converter }) => { traditional = Converter({ from: 'cn', to: 'twp' }); });
+  loadingTraditional ??= import('opencc-js/cn2t').then(({ Converter }) => {
+    const convert = Converter({ from: 'cn', to: 'twp' });
+    traditional = (text) => convert(text).replaceAll('孃', '娘');
+  });
   try { await loadingTraditional; } catch (error) { loadingTraditional = undefined; throw error; }
 }
 
 const phrases = {
-  site: ['蓝色大肥鱼', 'Blue Dafeiyu', '青い大肥魚'],
+  site: ['蓝色大肥鱼', 'DeepSeek Chan', 'DeepSeek Chan'],
   lead: ['查找 AI 娘表情包、插画和同人漫画。', 'Find AI Girl stickers, illustrations and fan comics.', 'AI 娘のスタンプ、イラスト、同人漫画を探せます。'],
   home: ['首页', 'Home', 'ホーム'], gallery: ['图库', 'Gallery', 'ギャラリー'],
   characters: ['角色', 'Characters', 'キャラクター'], topics: ['专题', 'Collections', '特集'],
@@ -74,12 +77,12 @@ const phrases = {
   recommendations: ['相关作品', 'Related works', '関連作品'], aliases: ['别名', 'Aliases', '別名'],
   totalWorks: ['作品总数', 'Total works', '作品総数'], categoryBreakdown: ['按类型查看', 'Browse by category', 'カテゴリー別に見る'],
   pageCount: ['页', 'pages', 'ページ'],
-  introDeepseek: ['DeepSeek 娘是社区以 DeepSeek 为原型创作的拟人角色。这里收录她的表情包、插画、设定图与漫画。', 'DeepSeek Chan is the community’s personification of DeepSeek. The archive collects her stickers, illustrations, design sheets and comics.', 'DeepSeek ちゃんは、DeepSeek をもとにコミュニティが創作した擬人化キャラクターです。スタンプ、イラスト、設定画、漫画を収録しています。'],
-  introGpt: ['GPT 娘是社区围绕 GPT 与 ChatGPT 创作的拟人角色。', 'GPT Chan is a fan personification of GPT and ChatGPT.', 'GPT ちゃんは、GPT や ChatGPT をもとにしたファンの擬人化キャラクターです。'],
-  introClaude: ['Claude 娘是社区创作者围绕 Claude 创作的拟人角色。', 'Claude Chan is a community-created personification of Claude.', 'Claude ちゃんは、Claude をもとにコミュニティが創作した擬人化キャラクターです。'],
-  introGlm: ['GLM 娘是与 GLM、智谱相关的社区拟人角色。', 'GLM Chan is a fan personification associated with GLM and Zhipu.', 'GLM ちゃんは、GLM や Zhipu に関連するファンの擬人化キャラクターです。'],
-  introGemini: ['Gemini 娘是社区围绕 Gemini 创作的拟人角色。', 'Gemini Chan is a fan personification of Gemini.', 'Gemini ちゃんは、Gemini をもとにしたファンの擬人化キャラクターです。'],
-  introKimi: ['Kimi 娘是社区围绕 Kimi 创作的拟人角色。', 'Kimi Chan is a community fan personification of Kimi.', 'Kimi ちゃんは、Kimi をもとにコミュニティが創作した擬人化キャラクターです。'],
+  introDeepseek: ['DeepSeek 娘是社区以 DeepSeek 为原型创作的拟人角色。这里收录她的表情包、插画、设定图与漫画。', 'DeepSeek Chan is the community’s personification of DeepSeek. The archive collects her stickers, illustrations, design sheets and comics.', 'DeepSeek Chanは、DeepSeek をもとにコミュニティが創作した擬人化キャラクターです。スタンプ、イラスト、設定画、漫画を収録しています。'],
+  introGpt: ['GPT 娘是社区围绕 GPT 与 ChatGPT 创作的拟人角色。', 'GPT Chan is a fan personification of GPT and ChatGPT.', 'GPT Chanは、GPT や ChatGPT をもとにしたファンの擬人化キャラクターです。'],
+  introClaude: ['Claude 娘是社区创作者围绕 Claude 创作的拟人角色。', 'Claude Chan is a community-created personification of Claude.', 'Claude Chanは、Claude をもとにコミュニティが創作した擬人化キャラクターです。'],
+  introGlm: ['GLM 娘是与 GLM、智谱相关的社区拟人角色。', 'GLM Chan is a fan personification associated with GLM and Zhipu.', 'GLM Chanは、GLM や Zhipu に関連するファンの擬人化キャラクターです。'],
+  introGemini: ['Gemini 娘是社区围绕 Gemini 创作的拟人角色。', 'Gemini Chan is a fan personification of Gemini.', 'Gemini Chanは、Gemini をもとにしたファンの擬人化キャラクターです。'],
+  introKimi: ['Kimi 娘是社区围绕 Kimi 创作的拟人角色。', 'Kimi Chan is a community fan personification of Kimi.', 'Kimi Chanは、Kimi をもとにコミュニティが創作した擬人化キャラクターです。'],
   startRead: ['开始阅读', 'Start reading', '読む'], previousPage: ['上一页', 'Previous page', '前のページ'], nextPage: ['下一页', 'Next page', '次のページ'],
   originalPage: ['原稿页码', 'Original page', '原稿ページ'], missing: ['这一原稿页尚未收录。', 'This original page is not in the archive yet.', 'この原稿ページはまだ収録されていません。'],
   zip: ['下载专题 ZIP', 'Download collection ZIP', '特集を ZIP でダウンロード'], cancel: ['取消', 'Cancel', 'キャンセル'],
@@ -107,11 +110,11 @@ const phrases = {
   submitFail: ['提交失败，请稍后重试。', 'Submission failed. Try again shortly.', '送信に失敗しました。時間をおいてお試しください。'],
   tooLarge: ['文件超出大小限制。', 'The file exceeds the size limit.', 'ファイルのサイズが上限を超えています。'],
   apiCopy: ['通过公开只读 API 查询作品、分类、角色和专题。图片字段提供 R2 原图、缩略图和展示图直链。', 'Use the public read-only API for works, categories, characters and collections. Image fields link directly to R2 originals, thumbnails and display assets.', '公開読み取り API で作品、カテゴリー、キャラクター、特集を取得できます。画像フィールドは R2 の原画・サムネイル・表示用画像への直リンクです。'],
-  aboutCopy: ['蓝色大肥鱼是 AI 娘同人作品档案。作品页保留来源、署名与授权信息，著作权归原作者。', 'Blue Dafeiyu is an AI Girl fanwork archive. Work pages show source, credit and license information. Copyright stays with each creator.', '青い大肥魚は AI 娘のファン作品アーカイブです。作品ページに出典・クレジット・ライセンスを掲載し、著作権は原作者に帰属します。'],
+  aboutCopy: ['蓝色大肥鱼是 AI 娘同人作品档案。作品页保留来源、署名与授权信息，著作权归原作者。', 'DeepSeek Chan is an AI Girl fanwork archive. Work pages show source, credit and license information. Copyright stays with each creator.', 'DeepSeek Chanは AI 娘のファン作品アーカイブです。作品ページに出典・クレジット・ライセンスを掲載し、著作権は原作者に帰属します。'],
   feedback: ['问题反馈', 'Report an issue', '問題を報告'], corrections: ['署名、来源或下架申请', 'Credit, source or takedown requests', 'クレジット・出典の訂正や削除申請'],
   videoExternal: ['在 B 站观看', 'Watch on Bilibili', 'Bilibili で見る'], archiveEvents: ['活动归档', 'Past events', '過去のイベント'],
   eventExhibition: ['征集作品展', 'Submissions exhibition', '応募作品展示'],
-  release: ['蓝色大肥鱼 v2', 'Blue Dafeiyu v2', '青い大肥魚 v2'],
+  release: ['蓝色大肥鱼 v2', 'DeepSeek Chan v2', 'DeepSeek Chan v2'],
   releaseCopy: ['图库采用服务端筛选与分页。作品继续使用原有地址和评论串，图片通过公开媒体域名下载。', 'The gallery now uses server-side filters and pagination. Work addresses and discussion threads carry over, and images download from the public media domain.', 'ギャラリーの絞り込みとページ送りをサーバー側で処理します。作品 URL とコメント欄を引き継ぎ、画像は公開メディアドメインから取得できます。'],
 } as const;
 

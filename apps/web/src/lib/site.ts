@@ -1,4 +1,4 @@
-import { attribution, field, workMedia, type Work, type Taxon, type Attribution, categoryIds, publicUrl } from './api';
+import { attribution, field, localizedCharacterName, workMedia, type Work, type Taxon, type Attribution, categoryIds, publicUrl } from './api';
 import { copy, localePath, localizedText, tr, type Locale, type Phrase } from './i18n';
 import { characterIntros } from '../content/landing-copy';
 import { characterQuery } from './character-filter';
@@ -55,7 +55,7 @@ export function colorToken(value: unknown) {
 export function characterName(locale: Locale, work: Work, characters: Taxon[] = []) {
   const id = work.primaryCharacterId ?? work.characterId ?? work.characterIds?.[0];
   const character = work.character ?? work.characters?.find((entry) => entry.id === id) ?? characters.find((entry) => entry.id === id);
-  return character ? field(locale, character, 'name') : id ?? '';
+  return character ? localizedCharacterName(locale, character) : id ? localizedCharacterName(locale, { id, name: id }) : '';
 }
 
 export function characterDescription(locale: Locale, character: Taxon) {

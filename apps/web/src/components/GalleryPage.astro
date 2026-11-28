@@ -7,7 +7,7 @@ import Icon from './Icon.astro';
 import HomeExplore from './HomeExplore.astro';
 import GalleryReading from './GalleryReading.astro';
 import { homeMeta, characterSearchAliases } from '../content/landing-copy';
-import { field, mediaUrl } from '../lib/api';
+import { field, localizedCharacterName, mediaUrl } from '../lib/api';
 import { copy, localePath, tr, type Locale } from '../lib/i18n';
 import { characterQuery } from '../lib/character-filter';
 import { categoryName, characterDescription, pageHref, siteOrigin, workPath } from '../lib/site';
@@ -18,7 +18,7 @@ const { q, tag, page, isHome, isGif, category: currentCategory, listing, charact
 const t = (key: Parameters<typeof tr>[1]) => tr(locale, key);
 const params = Astro.url.searchParams;
 const character = profile?.ok ? profile.value : undefined;
-const title = character ? field(locale, character, 'name') : isHome ? t('site') : isGif ? t('gifs') : q || path === '/search' ? t('search') : currentCategory ? categoryName(locale, currentCategory, categories.items.find((item) => item.id === currentCategory)) : path === '/categories' ? t('categories') : t('gallery');
+const title = character ? localizedCharacterName(locale, character) : isHome ? t('site') : isGif ? t('gifs') : q || path === '/search' ? t('search') : currentCategory ? categoryName(locale, currentCategory, categories.items.find((item) => item.id === currentCategory)) : path === '/categories' ? t('categories') : t('gallery');
 const crumbs = character ? [{ label: t('characters'), href: '/characters' }, { label: title }] : undefined;
 const next = listing.nextPage ? pageHref(locale, path, params, listing.nextPage) : undefined;
 const previous = page > 1 ? pageHref(locale, path, params, page - 1) : undefined;
