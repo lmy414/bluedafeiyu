@@ -124,7 +124,9 @@ export async function seoResponse(locale: Locale, path: string, url: URL) {
   if (match[1] === 'works') {
     const result = await api.work(id, locale);
     if (!result.ok) return response(tr(locale, result.status === 404 ? 'notFound' : 'unavailable'), 'text/plain', result.status === 404 ? 404 : 503);
-    if (result.value.work.slug !== id) return Response.redirect(canonical(`/works/${segment(result.value.work.slug)}.md`), 301);
+    if (result.value.work.slug !== id) return new Response(null, {
+      status: 301, headers: { Location: canonical(`/works/${segment(result.value.work.slug)}.md`) },
+    });
     return response(workDocument(result.value.work, locale, origin), 'text/markdown');
   }
   if (match[1] === 'characters') {
