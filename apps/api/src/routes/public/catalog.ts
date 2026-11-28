@@ -2,7 +2,7 @@ import { and, asc, count, desc, eq, gte, inArray, isNull, lt, lte, not, or, sql 
 import { Hono } from 'hono';
 import type { Context } from 'hono';
 import type { AppContext } from '../../app.js';
-import { categories, characters, creators, events, friendLinks, topicWorks, topics, videos, works } from '../../db/schema.js';
+import { categories, characters, creators, events, friendLinks, topicWorks, topics, videos, workCharacters, works } from '../../db/schema.js';
 import { ApiError } from '../../errors.js';
 import { object, safeUrl, text } from '../../services/work-data.js';
 import { likePattern, pageResult, pagination } from '../query.js';
@@ -47,10 +47,14 @@ export function createCatalogRoutes(ctx: AppContext) {
   const { db, services } = ctx;
   const routes = new Hono();
   routes.get('/characters', async c => {
-    const rows = await db.select({ row: characters, workCount: sql<number>`(SELECT count(*)::int FROM works
-      WHERE ${published} AND NOT ${serialWork} AND (works.primary_character_id=characters.id OR EXISTS
-        (SELECT 1 FROM work_characters wc WHERE wc.work_id=works.id AND wc.character_id=characters.id)))` })
-      .from(characters).where(activeCharacter).orderBy(asc(characters.sortOrder), asc(characters.id));
+    const visible = db.$with('visible_works').as(db.select({ id: works.id, primary: works.primaryCharacterId })
+      .from(works).where(and(published, not(serialWork))));
+    const memberships = db.$with('role_memberships').as(db.select({ id: visible.id, role: visible.primary }).from(visible)
+      .union(db.select({ id: visible.id, role: workCharacters.characterId }).from(visible)
+        .innerJoin(workCharacters, eq(workCharacters.workId, visible.id))));
+    const rows = await db.with(visible, memberships).select({ row: characters, workCount: count(memberships.id) })
+      .from(characters).leftJoin(memberships, eq(memberships.role, characters.id)).where(activeCharacter)
+      .groupBy(characters.id).orderBy(asc(characters.sortOrder), asc(characters.id));
     return c.json({ items: rows.map(({ row, workCount }) => publicCharacter(ctx, row, workCount)), total: rows.length });
   });
   routes.get('/characters/:id', async c => {
