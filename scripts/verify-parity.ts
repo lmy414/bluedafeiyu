@@ -277,10 +277,13 @@ export async function verifyParity(args: Args, db?: Database) {
   if ((!args.dryRun || args.site || args.api) && !args.offline) await bounded([...media], args.concurrency, async ([url, asset]) => {
     try {
       const response = await request(url, '', 'HEAD');
-      if (!response.ok || !response.headers.get('content-type')?.startsWith('image/') || Number(response.headers.get('content-length')) < 1) throw new Error(`不可访问或非图片 HTTP ${response.status}`);
-      if (asset.sha && process.env.DAFEIYU_VERIFY_MEDIA_SHA256 === 'true') {
+      const length = response.headers.get('content-length');
+      if (!response.ok || !response.headers.get('content-type')?.startsWith('image/') || (length !== null && Number(length) < 1)) throw new Error(`不可访问或非图片 HTTP ${response.status}`);
+      if (length === null || (asset.sha && process.env.DAFEIYU_VERIFY_MEDIA_SHA256 === 'true')) {
         const body = await request(url, '');
-        if (!body.ok || sha256(await readBytes(body, 100 * 1024 * 1024)) !== asset.sha) throw new Error('公开原图 SHA-256 不符');
+        if (!body.ok || !body.headers.get('content-type')?.startsWith('image/')) throw new Error(`读取图片失败 HTTP ${body.status}`);
+        const bytes = await readBytes(body, 100 * 1024 * 1024);
+        if (!bytes.length || (asset.sha && sha256(bytes) !== asset.sha)) throw new Error('公开图片为空或 SHA-256 不符');
       }
       checkedMedia++;
     } catch (error) { fail('r2/reachability', asset.id, `${url} ${(error as Error).message}`); }
