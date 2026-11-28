@@ -1,6 +1,6 @@
 import { apiBase, publicUrl } from './api';
 
-const legacyPrefix = /^\/(?:dist\/)?(?:submissions|owner-picks|data\/blue-fish|character-portraits|creator-avatars|author-avatars|og)\//i;
+const legacyPrefix = /^\/(?:dist\/)?(?:submissions|owner-picks|blue-fish-originals|data\/blue-fish|character-portraits|creator-avatars|author-avatars|og)\//i;
 const legacyFiles = new Set(['/qq-group.png', '/community/qq-1134100615-bc8e49b662df6b84.png']);
 
 function redirectLocation(value: unknown, request: URL) {
